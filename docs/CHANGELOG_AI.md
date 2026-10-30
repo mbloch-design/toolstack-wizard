@@ -1,3 +1,13 @@
+## 2026-10-30 · Design system : les cas du site tranchés
+
+- Chapitre « À passer en design » de la planche : 9 cas réglés, 1 planifié, rangés en atomes, molécules et organismes.
+- Ma stack : jauge de coupe (`.tt-cutgauge`, système partagé) sous le budget dès qu'un montant est à examiner ; carte choisie du duel entourée de bleu, montant en vert, validation en 180 ms conservée ; « Passer » en bouton gris.
+- Soumettre un outil et Contact passent au vouvoiement ; tests unitaires et e2e alignés.
+- Champs du site au filet et halo bleu de la planche ; texte indicatif en gris.
+- Exception écrite : le bandeau de consentement garde deux boutons de même poids.
+- Planifié : vouvoiement du catalogue (≈ 1 800 phrases, source Supabase), chantier de contenu relu à la main.
+- Typecheck, 1 044 tests, gate des tokens, e2e soumission (16), accessibilité et hero Ma stack passent.
+
 ## 2026-10-30 · Design system : la planche devient la référence du site
 
 - Fichiers partagés `src/styles/tooltrim-system.css` (tokens `--tt-*`, composants `.tt-*`) et `src/styles/tooltrim-system.js` (comportement), importés par le site et inlinés dans la planche. Source de la planche dans `design-system/planche.html`, build `npm run planche` ; la planche reconstruite est identique à la version publiée (comparaison pixel, clair et sombre).

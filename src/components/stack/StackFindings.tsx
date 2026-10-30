@@ -4,6 +4,7 @@ import StackUsageReview from "./StackUsageReview";
 import { Fragment, useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { Rocket, UserRound, BarChart3, Moon, Zap, Check, ChevronDown, CircleDot, ClipboardCheck, Flame, Plus, Scale, Target, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
+import CutGauge from "@/components/stack/CutGauge";
 import { Link } from "@/lib/routerLinks";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
@@ -324,7 +325,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 : share >= 50 ? t(`${lead.tool.name} en paie ${share >= 75 ? "presque tout" : "plus de la moitié"} à lui seul.`, `${lead.tool.name} pays for ${share >= 75 ? "almost all of it" : "over half of it"} on its own.`)
                 : t("Pas de tyran dans la stack : le budget est bien réparti.", "No tyrant in this stack: the budget is spread out.");
               return <p className="mf-price-quip"><span>{t(`Soit ${format(total * 12)} par an.`, `That is ${format(total * 12)} a year.`)}</span> {quip}</p>;
-            })()}{(() => {
+            })()}{toReview > 0 && total > 0 && <CutGauge total={total} toReview={Math.min(toReview, total)} format={format} t={t} />}{(() => {
               // Can the total be trusted? A tool counts once its cost is certain.
               const unsure = items.filter((item) => item.kind === "price" || item.kind === "freemium");
               const pct = toolCount > 0 ? Math.round(((toolCount - unsure.length) / toolCount) * 100) : 100;

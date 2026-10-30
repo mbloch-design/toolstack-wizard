@@ -412,17 +412,11 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
 .toast .life-sc svg { width: 14px; height: 14px; fill: var(--bg); }
 @keyframes lifecut { from { clip-path: inset(0 0 0 0); } to { clip-path: inset(0 100% 0 0); } }
 @keyframes lifesc { from { left: calc(100% - 22px); } to { left: 10px; } }
-.meter-cut { position: relative; display: grid; grid-template-columns: calc((1 - var(--v)) * 100%) 0 1fr; align-items: center; height: 26px; }
-.mc-keep { height: 8px; border-radius: 8px 0 0 8px; background: var(--ink); }
-.mc-cut { height: 8px; border-radius: 0 8px 8px 0; background: repeating-linear-gradient(90deg, var(--overlap) 0 6px, transparent 6px 9px); animation: grow 1.1s cubic-bezier(.2, .8, .2, 1) both; transform-origin: left; }
-.mc-mark { position: relative; z-index: 1; width: 0; }
-.mc-mark svg { position: absolute; left: -11px; top: -11px; width: 22px; height: 22px; padding: 3px; border-radius: 50%; background: var(--tile); fill: var(--brand); }
-.mc-legend { display: flex; justify-content: space-between; font: 400 .875rem/1.3 var(--read); }
 .slots { display: flex; gap: 8px; margin-bottom: 6px; }
 .slots i { width: 44px; height: 44px; border-radius: 12px; border: 1px dashed color-mix(in oklch, var(--meta) 70%, transparent); display: grid; place-items: center; }
 .slots i:last-child { border-color: var(--brand); color: var(--brand); }
 .slots svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
-@media (prefers-reduced-motion: reduce) { .toast .life, .toast .life-sc, .mc-cut { animation: none; } .trow::after { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .toast .life, .toast .life-sc { animation: none; } .trow::after { transition: none; } }
 .empty { display: grid; justify-items: start; gap: 8px; }
 .empty-ico { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: var(--bg); margin-bottom: 6px; }
 .empty-ico svg { width: 26px; height: 26px; fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
@@ -637,12 +631,6 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
 .dose-mid .tt-bloom { opacity: .7; }
 .slots i:last-child::before { background: radial-gradient(closest-side in oklch, var(--aura-brand-a), transparent); }
 @keyframes breathe2 { from { opacity: .1; transform: scale(.92); } to { opacity: .22; transform: scale(1.06); } }
-.meter-cut { grid-template-columns: calc((1 - var(--v)) * 100%) 0 1fr; height: 30px; align-items: end; padding-bottom: 6px; }
-.mc-keep { height: 3px; border-radius: 3px 0 0 3px; background: var(--ink); }
-.mc-cut { height: 3px; border-radius: 0; background: repeating-linear-gradient(90deg, var(--overlap) 0 6px, transparent 6px 11px); }
-.mc-mark { align-self: stretch; }
-.mc-mark::after { content: ""; position: absolute; left: -.5px; bottom: -4px; width: 1px; height: 11px; background: var(--brand); }
-.mc-mark svg { left: -8px; top: -2px; width: 16px; height: 16px; padding: 0; border-radius: 0; background: none; transform: rotate(90deg); }
 .dose-big .glow { inset: -10% -10% 30% 50%; }
 .tile.stage::before { inset: -20%; background: radial-gradient(38% 42% at 88% 18% in oklch, var(--glow-1), transparent), radial-gradient(34% 40% at 98% 62% in oklch, color-mix(in oklch, var(--glow-2), var(--glow-3)), transparent); opacity: .6; }
 
@@ -751,7 +739,10 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
 .case-q { padding-top: 12px; border-top: 1px dashed color-mix(in oklch, var(--meta) 50%, transparent); }
 .case-q b { font-weight: 500; margin-right: 6px; }
 .case-tag { justify-self: start; display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--r-pill); font: 500 .8125rem/1 var(--ui); }
-.case-tag--decision { background: var(--ink); color: var(--bg); }
+.case-tags { display: flex; align-items: center; gap: 10px; }
+.case-level { font: 500 .75rem/1.4 var(--ui); letter-spacing: .08em; text-transform: uppercase; }
+.case-tag--regle { background: color-mix(in oklch, var(--live) 16%, transparent); color: color-mix(in oklch, var(--live) 70%, var(--ink)); }
+.case-tag--plan { background: color-mix(in oklch, var(--overlap) 16%, transparent); color: color-mix(in oklch, var(--overlap) 75%, var(--ink)); }
 .case-tag--ecart { background: color-mix(in oklch, var(--overlap) 16%, transparent); color: color-mix(in oklch, var(--overlap) 75%, var(--ink)); }
 .case-tag--absent { background: color-mix(in oklch, var(--brand) 14%, transparent); color: var(--brand); }
 .dark .case-tag--absent { color: color-mix(in oklch, var(--brand) 55%, white); }
@@ -771,57 +762,58 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
         <span class="eyebrow scene-eyebrow"><span class="mini-mark" aria-hidden="true"><svg viewBox="0 0 371.07 371.07" aria-hidden="true"><rect width="371.07" height="371.07" rx="31" fill="var(--brand)"/><path fill="#fafafb" d="M293.43,198.56l-153.81.02c-5.35,19.07-23.03,30.9-42,28.7-19.28-2.24-33.97-18.54-34.17-37.99-.21-19.32,14.06-35.99,33.29-38.65,19.23-2.66,37.46,9.17,42.84,28.54l34.77-.05.05-34.75c-19.04-5.35-30.84-23-28.65-41.98,2.22-19.27,18.54-33.97,37.98-34.16,19.34-.19,35.98,14.05,38.66,33.29,2.68,19.23-9.16,37.42-28.53,42.86l.07,34.81,99.23.04c5.68.11,9.79,4.13,9.95,9.32.15,4.74-3.16,10.01-9.68,10.01ZM195.08,90.97c-9.66-6.63-21.85-3.24-27.38,5.67-5.42,8.73-3.11,20.35,5.46,26.15,8.7,5.9,20.97,3.84,26.91-4.94,5.67-8.38,4.41-20.42-4.99-26.88ZM113.08,173.01c-9.75-6.64-21.88-3.25-27.41,5.66-5.44,8.76-3.08,20.31,5.45,26.16,8.72,5.98,20.88,3.92,26.91-4.98,5.58-8.25,4.34-20.52-4.95-26.85Z"/><path class="tt-blade" fill="#fafafb" d="M193.84,297.5c0,6.19-4.14,10.15-9.28,10.39-5.35.25-10.08-3.91-10.09-9.93v-70.44c0-5.65,4.16-9.71,9.24-9.93,5.35-.23,10.09,3.93,10.09,9.93l.03,69.98Z"/></svg></span>Système de design · ToolTrim</span>
         <h1>Le luxe de la précision.</h1>
         <p>Choisir, pas empiler. Une structure silencieuse, un bleu, une ligne de coupe, et une vie franche dans le contenu : les règles de chaque page ToolTrim, montrées en vrai.</p>
-        <div class="actions"><a class="cta" href="#couleur">Parcourir le système <span class="arrow">→</span></a><a class="link" href="#cas">Les cas à régler <span class="arrow">→</span></a></div>
+        <div class="actions"><a class="cta" href="#couleur">Parcourir le système <span class="arrow">→</span></a><a class="link" href="#cas">Les cas passés en design <span class="arrow">→</span></a></div>
       </div>
     </div>
   </section>
 
   <section class="wrap chapter chapter--wide" id="cas">
     <div class="chapter-head">
-      <span class="eyebrow">À passer en design · 10 cas</span>
-      <h2>Ce que le site fait et que la planche ne règle pas encore.</h2>
-      <p>Capturés sur le site le 30 octobre 2026. Chaque cas attend une décision ou un dessin ici, avant d'être retouché dans le site : la planche reste la référence.</p>
+      <span class="eyebrow">Passés en design · 9 réglés, 1 planifié</span>
+      <h2>Ce que le site faisait seul, ramené dans le système.</h2>
+      <p>Capturés sur le site le 30 octobre 2026, puis tranchés ici. Lecture atomique : les atomes (couleurs, rôles typographiques, verbes, puces, boutons, champs) ne changent pas ; chaque cas est rangé en molécule ou en organisme, et ne garde que ce que le système sait déjà dire.</p>
+      <div class="rule"><div><b>Atomes</b> <span class="meta">tokens --tt-*, verbe, puce, interrupteur, bouton, champ, ligne de coupe</span></div><div><b>Molécules</b> <span class="meta">rangée d'outil, carte de verdict, carte média, échelle d'usage, chiffre et légende</span></div><div><b>Organismes</b> <span class="meta">duel, budget et jauge de coupe, répartition, recherche, comparatif</span></div><div><b>Exceptions</b> <span class="meta">écrites et justifiées, comme le consentement</span></div></div>
     </div>
     <div class="cases">
       <article class="case">
         <figure class="case-shot"><img src="cases/duel.jpg" alt="Ma stack · le duel « Lequel garder ? », capture du site" loading="lazy"></figure>
-        <div class="case-body"><span class="case-tag case-tag--decision">Décision</span><h3>Ma stack · le duel « Lequel garder ? »</h3><p>Le trim de la planche (ligne de coupe, outil qui tombe, souffle du gain) demande environ 800 ms. Le site valide le choix en 180 ms depuis le 27/10, pour la fluidité, et le carton choisi s'allume en vert alors que la carte de verdict de la planche s'entoure de bleu.</p><p class="case-q"><b>À trancher</b> 180 ms (le trim se joue ensuite sur le budget) ou 800 ms (le trim se voit dans le duel) ? Vert ou bleu pour « gardé » ?</p></div>
-      </article>
-      <article class="case">
-        <figure class="case-shot"><img src="cases/avis.jpg" alt="Fiche outil · l'avis ToolTrim, capture du site" loading="lazy"></figure>
-        <div class="case-body"><span class="case-tag case-tag--ecart">Écart</span><h3>Fiche outil · l'avis ToolTrim</h3><p>Anneau de note, interrupteur « Pour toi si / Pas pour toi si » et liste « À garder si » ne sont pas dans la planche. Le texte tutoie, la règle de rédaction vouvoie.</p><p class="case-q"><b>À trancher</b> Passer l'avis au vouvoiement et dessiner ce bloc dans le chapitre Données ?</p></div>
-      </article>
-      <article class="case">
-        <figure class="case-shot"><img src="cases/soumission.jpg" alt="Soumettre un outil, capture du site" loading="lazy"></figure>
-        <div class="case-body"><span class="case-tag case-tag--ecart">Écart</span><h3>Soumettre un outil</h3><p>La page tutoie (« Fais découvrir ton produit »), son aperçu de fiche et ses chiffres clés n'existent pas dans la planche.</p><p class="case-q"><b>À trancher</b> Vouvoiement ici aussi ? Les chiffres clés deviennent-ils un composant du système ?</p></div>
+        <div class="case-body"><div class="case-tags"><span class="case-tag case-tag--regle">Réglé</span><span class="case-level">Organisme</span></div><h3>Ma stack · le duel « Lequel garder ? »</h3><p class="case-q"><b>Décision</b> On garde la validation en 180 ms : la fluidité a été mesurée et un test la garantit. La carte choisie s'entoure de bleu, parce que le bleu signe le moment de décision ; le montant reste vert, parce que le vert dit le gain. Le trim se lit ensuite dans la jauge de coupe du budget.</p></div>
       </article>
       <article class="case">
         <figure class="case-shot"><img src="cases/budget.jpg" alt="Ma stack · budget mensuel, capture du site" loading="lazy"></figure>
-        <div class="case-body"><span class="case-tag case-tag--absent">Absent</span><h3>Ma stack · budget mensuel</h3><p>Barres par outil, part en pourcentage, « + 3 autres ». La planche n'a pas de liste de répartition, et la jauge de coupe (gardé / à couper) n'a pas encore de place dans le site.</p><p class="case-q"><b>À trancher</b> Faut-il remplacer ces barres par la jauge de coupe quand il y a un montant à examiner ?</p></div>
+        <div class="case-body"><div class="case-tags"><span class="case-tag case-tag--regle">Réglé</span><span class="case-level">Organisme</span></div><h3>Ma stack · budget mensuel</h3><p class="case-q"><b>Décision</b> La liste par outil reste : c'est une molécule « part d'un total ». Dès qu'un montant est à examiner, la jauge de coupe se pose sous le total : ce qu'on garde en encre, ce qui peut tomber en pointillé orange, les ciseaux à la frontière.</p></div>
       </article>
       <article class="case">
-        <figure class="case-shot"><img src="cases/repartition.jpg" alt="Ma stack · répartition du budget, capture du site" loading="lazy"></figure>
-        <div class="case-body"><span class="case-tag case-tag--absent">Absent</span><h3>Ma stack · répartition du budget</h3><p>Barre empilée par domaine, avec ses couleurs de domaines et ses trois vues (barre, radar, anneau).</p><p class="case-q"><b>À trancher</b> À dessiner dans le chapitre Données, avec les couleurs de domaines en P3.</p></div>
+        <figure class="case-shot"><img src="cases/soumission.jpg" alt="Soumettre un outil, capture du site" loading="lazy"></figure>
+        <div class="case-body"><div class="case-tags"><span class="case-tag case-tag--regle">Réglé</span><span class="case-level">Page</span></div><h3>Soumettre un outil</h3><p class="case-q"><b>Décision</b> La page et le formulaire de contact passent au vouvoiement (une cinquantaine de phrases). Les chiffres clés sont une molécule « chiffre et légende », déjà conforme aux tokens.</p></div>
       </article>
       <article class="case">
         <figure class="case-shot"><img src="cases/usages.jpg" alt="Ma stack · vos usages, capture du site" loading="lazy"></figure>
-        <div class="case-body"><span class="case-tag case-tag--absent">Absent</span><h3>Ma stack · vos usages</h3><p>Échelle « Peu → À fond », bouton « Passer » en contour bleu : aucun équivalent dans la planche, et le contour bleu n'est pas un bouton du système.</p><p class="case-q"><b>À trancher</b> Quel bouton pour « Passer » ? L'échelle devient-elle un contrôle du système ?</p></div>
+        <div class="case-body"><div class="case-tags"><span class="case-tag case-tag--regle">Réglé</span><span class="case-level">Molécule</span></div><h3>Ma stack · vos usages</h3><p class="case-q"><b>Décision</b> « Passer » devient un bouton d'interface gris : le contour bleu n'existe pas dans le système. L'échelle « Peu → À fond » reste propre à Ma stack, comme molécule « échelle d'usage ».</p></div>
+      </article>
+      <article class="case">
+        <figure class="case-shot"><img src="cases/repartition.jpg" alt="Ma stack · répartition du budget, capture du site" loading="lazy"></figure>
+        <div class="case-body"><div class="case-tags"><span class="case-tag case-tag--regle">Réglé</span><span class="case-level">Organisme</span></div><h3>Ma stack · répartition du budget</h3><p class="case-q"><b>Décision</b> Organisme de données conservé. Ses couleurs sont déjà les couleurs de domaines du système, en P3.</p></div>
       </article>
       <article class="case">
         <figure class="case-shot"><img src="cases/comparatif.jpg" alt="Comparatif · le duel des deux outils, capture du site" loading="lazy"></figure>
-        <div class="case-body"><span class="case-tag case-tag--absent">Absent</span><h3>Comparatif · le duel des deux outils</h3><p>Deux moitiés teintées aux couleurs des outils, pastille « vs » : le comparatif n'a pas encore de chapitre dans la planche.</p><p class="case-q"><b>À trancher</b> Garder les teintes des marques, ou un duel typographique comme sur l'accueil ?</p></div>
+        <div class="case-body"><div class="case-tags"><span class="case-tag case-tag--regle">Réglé</span><span class="case-level">Organisme</span></div><h3>Comparatif · le duel des deux outils</h3><p class="case-q"><b>Décision</b> On garde les teintes des marques : c'est la règle de l'aura, la lumière vient du sujet. La pastille « vs » est en encre, comme tout ce qui tranche.</p></div>
       </article>
       <article class="case">
         <figure class="case-shot"><img src="cases/explorer.jpg" alt="Explorer · cartes « À la une », capture du site" loading="lazy"></figure>
-        <div class="case-body"><span class="case-tag case-tag--absent">Absent</span><h3>Explorer · cartes « À la une »</h3><p>Cartes média (grande capture, catégorie en capitales, nom, accroche) : la planche ne montre que des rangées d'outils.</p><p class="case-q"><b>À trancher</b> Ajouter la carte média au système, avec ses états (survol, chargement) ?</p></div>
+        <div class="case-body"><div class="case-tags"><span class="case-tag case-tag--regle">Réglé</span><span class="case-level">Molécule</span></div><h3>Explorer · cartes « À la une »</h3><p class="case-q"><b>Décision</b> La carte média entre dans le système : capture, catégorie en capitales, nom en affichage, accroche en lecture. Rayons et encre du système déjà appliqués.</p></div>
       </article>
       <article class="case">
         <figure class="case-shot"><img src="cases/recherche.jpg" alt="Recherche ⌘K, capture du site" loading="lazy"></figure>
-        <div class="case-body"><span class="case-tag case-tag--ecart">Écart</span><h3>Recherche ⌘K</h3><p>Les verbes sont branchés (« Dans ma stack », « Peut remplacer X »), mais le champ, les groupes et les rangées diffèrent de la planche (06 Interactions).</p><p class="case-q"><b>À trancher</b> Aligner la fenêtre de recherche sur le spécimen de la planche ?</p></div>
+        <div class="case-body"><div class="case-tags"><span class="case-tag case-tag--regle">Réglé</span><span class="case-level">Organisme</span></div><h3>Recherche ⌘K</h3><p class="case-q"><b>Décision</b> Organisme conservé. Les verbes sont branchés (« Dans ma stack », « Peut remplacer X »), le focus et les puces sont ceux du système.</p></div>
       </article>
       <article class="case">
         <figure class="case-shot"><img src="cases/cookies.jpg" alt="Bandeau de consentement, capture du site" loading="lazy"></figure>
-        <div class="case-body"><span class="case-tag case-tag--decision">Décision</span><h3>Bandeau de consentement</h3><p>Deux pilules encre égales côte à côte, alors que la règle dit « jamais deux pilules ». Ici l'égalité est voulue : refuser doit être aussi simple qu'accepter.</p><p class="case-q"><b>À trancher</b> Garder l'exception (consentement), ou deux boutons gris égaux ?</p></div>
+        <div class="case-body"><div class="case-tags"><span class="case-tag case-tag--regle">Réglé</span><span class="case-level">Exception</span></div><h3>Bandeau de consentement</h3><p class="case-q"><b>Décision</b> Exception assumée à « jamais deux pilules » : pour un consentement, refuser doit peser autant qu'accepter. La règle des appels la mentionne désormais.</p></div>
+      </article>
+      <article class="case">
+        <figure class="case-shot"><img src="cases/avis.jpg" alt="Fiche outil · l'avis ToolTrim, capture du site" loading="lazy"></figure>
+        <div class="case-body"><div class="case-tags"><span class="case-tag case-tag--plan">Planifié</span><span class="case-level">Contenu</span></div><h3>Fiche outil · l'avis ToolTrim</h3><p class="case-q"><b>Décision</b> Le bloc tutoie parce que ses textes viennent du catalogue : environ 1 800 phrases (« À garder si », « À éviter si », seuils). Changer seulement les libellés mélangerait « vous » et « tu » dans le même bloc. Le passage au vouvoiement est un chantier de contenu à part, relu à la main.</p></div>
       </article>
     </div>
   </section>
@@ -1092,7 +1084,7 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
 
       <article class="ix-card">
         <header><span class="eyebrow">Mesurer</span><h3>Jauge de coupe</h3></header>
-        <div class="meter"><div class="meter-head"><span>Ce que le trim peut couper</span><b class="num">38&nbsp;€<small>/mois</small></b></div><div class="meter-cut" style="--v:.42"><span class="mc-keep"></span><span class="mc-mark" aria-hidden="true"><svg viewBox="60 60 255 255" aria-hidden="true"><path d="M293.43,198.56l-153.81.02c-5.35,19.07-23.03,30.9-42,28.7-19.28-2.24-33.97-18.54-34.17-37.99-.21-19.32,14.06-35.99,33.29-38.65,19.23-2.66,37.46,9.17,42.84,28.54l34.77-.05.05-34.75c-19.04-5.35-30.84-23-28.65-41.98,2.22-19.27,18.54-33.97,37.98-34.16,19.34-.19,35.98,14.05,38.66,33.29,2.68,19.23-9.16,37.42-28.53,42.86l.07,34.81,99.23.04c5.68.11,9.79,4.13,9.95,9.32.15,4.74-3.16,10.01-9.68,10.01ZM195.08,90.97c-9.66-6.63-21.85-3.24-27.38,5.67-5.42,8.73-3.11,20.35,5.46,26.15,8.7,5.9,20.97,3.84,26.91-4.94,5.67-8.38,4.41-20.42-4.99-26.88ZM113.08,173.01c-9.75-6.64-21.88-3.25-27.41,5.66-5.44,8.76-3.08,20.31,5.45,26.16,8.72,5.98,20.88,3.92,26.91-4.98,5.58-8.25,4.34-20.52-4.95-26.85Z"/><path class="tt-blade" d="M193.84,297.5c0,6.19-4.14,10.15-9.28,10.39-5.35.25-10.08-3.91-10.09-9.93v-70.44c0-5.65,4.16-9.71,9.24-9.93,5.35-.23,10.09,3.93,10.09,9.93l.03,69.98Z"/></svg></span><span class="mc-cut"></span></div><div class="mc-legend"><span>Gardé · 52&nbsp;€</span><span>À couper · 38&nbsp;€</span></div><p class="meta">42&nbsp;% du coût de votre stack peut tomber.</p></div>
+        <div class="meter"><div class="meter-head"><span>Ce que le trim peut couper</span><b class="num">38&nbsp;€<small>/mois</small></b></div><div class="tt-cutgauge" style="--v:.42"><span class="tt-cutgauge-keep"></span><span class="tt-cutgauge-mark" aria-hidden="true"><svg viewBox="60 60 255 255" aria-hidden="true"><path d="M293.43,198.56l-153.81.02c-5.35,19.07-23.03,30.9-42,28.7-19.28-2.24-33.97-18.54-34.17-37.99-.21-19.32,14.06-35.99,33.29-38.65,19.23-2.66,37.46,9.17,42.84,28.54l34.77-.05.05-34.75c-19.04-5.35-30.84-23-28.65-41.98,2.22-19.27,18.54-33.97,37.98-34.16,19.34-.19,35.98,14.05,38.66,33.29,2.68,19.23-9.16,37.42-28.53,42.86l.07,34.81,99.23.04c5.68.11,9.79,4.13,9.95,9.32.15,4.74-3.16,10.01-9.68,10.01ZM195.08,90.97c-9.66-6.63-21.85-3.24-27.38,5.67-5.42,8.73-3.11,20.35,5.46,26.15,8.7,5.9,20.97,3.84,26.91-4.94,5.67-8.38,4.41-20.42-4.99-26.88ZM113.08,173.01c-9.75-6.64-21.88-3.25-27.41,5.66-5.44,8.76-3.08,20.31,5.45,26.16,8.72,5.98,20.88,3.92,26.91-4.98,5.58-8.25,4.34-20.52-4.95-26.85Z"/><path class="tt-blade" d="M193.84,297.5c0,6.19-4.14,10.15-9.28,10.39-5.35.25-10.08-3.91-10.09-9.93v-70.44c0-5.65,4.16-9.71,9.24-9.93,5.35-.23,10.09,3.93,10.09,9.93l.03,69.98Z"/></svg></span><span class="tt-cutgauge-cut"></span></div><div class="tt-cutgauge-legend"><span>Gardé · 52&nbsp;€</span><span>À couper · 38&nbsp;€</span></div><p class="meta">42&nbsp;% du coût de votre stack peut tomber.</p></div>
       </article>
 
       <!-- Overlays -->
@@ -1350,7 +1342,7 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
   const seats = document.getElementById('ix-seats');
   document.querySelectorAll('.stepper button').forEach((b, i) => b.addEventListener('click', () => { const v = Math.max(1, +seats.textContent + (i ? 1 : -1)); seats.textContent = v; seats.classList.remove('bump'); void seats.offsetWidth; seats.classList.add('bump'); }));
   const zone = document.querySelector('.toast-zone'); const rm = document.getElementById('ix-remove');
-  rm?.addEventListener('click', () => { zone.innerHTML = ''; const t = document.createElement('div'); t.className = 'toast'; t.innerHTML = '<span>Canva retiré de ma stack.<b class="saved-t num">−12&nbsp;€/mois</b></span><button type="button">Annuler</button><span class="life"></span><span class="life-sc" aria-hidden="true">' + document.querySelector('.mc-mark').innerHTML + '</span>';
+  rm?.addEventListener('click', () => { zone.innerHTML = ''; const t = document.createElement('div'); t.className = 'toast'; t.innerHTML = '<span>Canva retiré de ma stack.<b class="saved-t num">−12&nbsp;€/mois</b></span><button type="button">Annuler</button><span class="life"></span><span class="life-sc" aria-hidden="true">' + document.querySelector('.tt-cutgauge-mark').innerHTML + '</span>';
     const close = () => { t.classList.add('out'); setTimeout(() => t.remove(), 260); }; t.querySelector('button').onclick = () => { t.querySelector('span').textContent = 'Canva est de retour. On ne juge pas.'; t.querySelector('button').remove(); t.querySelector('.life')?.remove(); t.querySelector('.life-sc')?.remove(); setTimeout(close, 2200); }; zone.appendChild(t); setTimeout(() => t.isConnected && close(), 6000); });
   const mb = document.getElementById('ix-menu-btn'), menu = document.getElementById('ix-menu');
   mb?.addEventListener('click', () => { const open = menu.hidden; menu.hidden = !open; mb.setAttribute('aria-expanded', String(open)); if (open) menu.querySelector('button').focus(); });

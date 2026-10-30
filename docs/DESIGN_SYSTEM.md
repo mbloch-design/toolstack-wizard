@@ -204,6 +204,7 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 - **Boutons d'interface** (formulaires, panneaux, back-office) : `.tt-button-primary` (pilule encre 40px) et `.tt-button-secondary` (pilule gris froid, sans contour), 14px/500.
 - **Action de section** : `.tt-section-action`, 15px/500 encre, flèche 16px.
 - Ne plus créer de bouton local (`.foo-btn`, `.foo-cta`) : composer avec ces quatre classes.
+- **Exception écrite (30 oct. 2026)** : le bandeau de consentement garde deux boutons de même poids. Refuser doit être aussi simple qu'accepter.
 - Les rails éditoriaux utilisent `CarouselControls` et `CarouselPagination` : boutons circulaires de 36px, icônes de 16px, état désactivé à faible contraste et pagination active en pilule de 20px. Ne pas recréer de contrôles locaux.
 - Dans une galerie ou un rail, les images portent la présence visuelle ; la typographie ne doit pas les concurrencer.
 - Les kickers sont facultatifs. Ne pas en ajouter uniquement pour donner artificiellement de la hauteur au header.

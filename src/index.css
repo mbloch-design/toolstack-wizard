@@ -42037,3 +42037,19 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 /* Champs : fond clair, filet fin, et au focus un filet bleu avec un halo doux. */
 .ms-page .so-name input { background: var(--tt-bg); box-shadow: 0 0 0 1px var(--tt-line); border-radius: var(--tt-r-card); transition: box-shadow var(--tt-dur-state) ease; }
 .ms-page .so-name input:focus { background: var(--tt-bg); box-shadow: 0 0 0 1px var(--tt-brand), 0 0 0 5px color-mix(in oklch, var(--tt-brand) 16%, transparent); }
+/* Cas réglés depuis la planche (30 oct. 2026, chapitre « À passer en design »). */
+/* Budget : la jauge de coupe sous le total, quand un montant est à examiner. */
+.ms-page .mf .mf-cutgauge { display: grid; gap: 4px; margin-top: var(--space-sm); }
+/* Duel : la carte choisie s'entoure de bleu (le bleu signe le moment de décision) ; le montant reste vert (le gain). */
+.ms-page .mf .mf-face[data-state="kept"] { background: var(--ms-card); box-shadow: inset 0 0 0 2px var(--tt-brand), 0 16px 34px -18px color-mix(in oklch, var(--tt-brand) 50%, transparent); }
+.ms-page .mf .mf-face[data-state="kept"] .mf-face-cta { background: var(--tt-brand); }
+/* Vos usages : « Passer » est un bouton d'interface gris, pas un contour bleu. */
+.ms-page .mf .mu-card .mu-next.mu-skip { background: var(--tt-tile); color: var(--tt-ink); box-shadow: none; }
+.ms-page .mf .mu-card .mu-next.mu-skip:hover { background: var(--tt-tile-2); }
+/* Champs du site sur l'atome « champ » de la planche : filet fin au repos,
+   filet bleu et halo doux au focus ; le texte indicatif en gris, seul gris
+   admis puisqu'il n'est pas du contenu. */
+.tt-form-input { border-color: var(--tt-line); border-radius: var(--tt-r-chip); background: var(--tt-bg); transition: border-color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease; }
+.tt-form-input:hover { border-color: color-mix(in oklch, var(--tt-ink) 30%, var(--tt-line)); }
+.tt-form-input:focus, .tt-form-input:focus-visible { border-color: var(--tt-brand); background: var(--tt-bg); box-shadow: 0 0 0 4px color-mix(in oklch, var(--tt-brand) 16%, transparent); }
+:is(.tt-form-input, .ms-page .so-name input, .gs-searchbar input)::placeholder { color: var(--tt-meta); opacity: 1; }
