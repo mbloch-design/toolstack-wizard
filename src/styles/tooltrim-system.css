@@ -259,12 +259,22 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-share-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* ── Molécule : l'échelle d'usage ──────────────────────────────────────── */
-/* Cinq marches qui montent ; la marche choisie s'entoure de bleu. */
-.tt-scale { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
-.tt-scale button { display: grid; justify-items: center; align-content: end; gap: 8px; min-width: 0; min-height: 96px; padding: 10px 4px; }
-.tt-scale button > .tt-note { max-width: 100%; overflow-wrap: anywhere; text-align: center; font-size: .8125rem; line-height: 1.2; }
-.tt-scale-bar { width: 100%; max-width: 44px; height: calc(var(--h, 20) * .56px); min-height: 6px; border-radius: var(--tt-r-chip) var(--tt-r-chip) 3px 3px; background: var(--tt-tile-2); transition: background-color var(--tt-dur-state) ease; }
-.tt-scale button[aria-pressed="true"] .tt-scale-bar { background: var(--tt-ink); }
+/* Une seule mesure qui monte, comme un indicateur de signal : cinq barres
+   fines, sans boîte. Le choix remplit l'escalier en encre, de gauche à
+   droite ; la marche retenue prend le bleu (le moment de décision). Au
+   survol, l'escalier se pré-remplit en encre légère. Groupe radio au clavier. */
+.tt-scale { container-type: inline-size; --tt-scale-off: color-mix(in oklch, var(--tt-ink) 9%, transparent); --tt-scale-hint: color-mix(in oklch, var(--tt-ink) 26%, transparent);
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; align-items: end; }
+.tt-scale button { display: grid; grid-template-rows: 72px auto; gap: 10px; justify-items: center; min-width: 0; padding: 6px 0 0; border: 0; background: none; color: var(--tt-ink); cursor: pointer; font: inherit; }
+.tt-scale-bar { align-self: end; width: 18px; height: calc(8px + var(--h, 20) * .64px); border-radius: var(--tt-r-pill) var(--tt-r-pill) 3px 3px; background: var(--tt-scale-off); transform-origin: bottom; transition: background-color 280ms var(--tt-ease) calc(var(--i, 0) * 45ms), transform 420ms var(--tt-spring); }
+.tt-scale-label { font: var(--tt-note-font); text-align: center; overflow-wrap: normal; hyphens: manual; transition: font-weight var(--tt-dur-state) ease; }
+.tt-scale button:not([data-on]):has(~ button:hover) .tt-scale-bar, .tt-scale button:not([data-on]):hover .tt-scale-bar { background: var(--tt-scale-hint); transition-delay: 0ms; }
+.tt-scale button:hover .tt-scale-bar { transform: scaleY(1.04); }
+.tt-scale button[data-on] .tt-scale-bar { background: var(--tt-ink); }
+.tt-scale button[aria-checked="true"] .tt-scale-bar { background: var(--tt-brand); transform: scaleY(1.06); }
+.tt-scale button[aria-checked="true"] .tt-scale-label { font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); }
+@container (max-width: 380px) { .tt-scale-label { font-size: .75rem; } .tt-scale button[aria-checked="true"] .tt-scale-label { font-size: .75rem; } }
+.tt-scale button:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 4px; border-radius: var(--tt-r-chip); }
 
 /* ── Organisme : la carte de décision ───────────────────────────────────── */
 /* Assemblée d'atomes : la tuile, un surtitre et ses étapes en traits fins,
