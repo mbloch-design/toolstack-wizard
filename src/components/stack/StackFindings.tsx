@@ -75,16 +75,6 @@ interface Props {
 
 export type FitRow = { tool: ToolSummary; cost: number; usage?: number; setUsage: (value: number | null) => void; detailHref: string };
 
-/** The text block of a card: one large figure, the sentence that says what it means, one quiet line of detail. */
-function Lead({ figure, say, sub, tag, extra, color }: { figure: ReactNode; say: ReactNode; sub?: ReactNode; tag?: ReactNode; extra?: ReactNode; color?: string }) {
-  return <div className="mf-lead" style={color ? { ["--lead" as string]: color } : undefined}>
-    {tag && <p className="mf-lead-tag">{tag}</p>}
-    <h3><b className="mf-lead-fig">{figure}</b> <span className="mf-lead-say">{say}</span></h3>
-    {sub && <p className="mf-lead-sub">{sub}</p>}
-    {extra}
-  </div>;
-}
-
 type AreaShare = Props["areas"][number];
 /**
  * Where the money goes, read like iPhone storage: one bar split by area, a
@@ -149,44 +139,35 @@ function BudgetBar({ areas, total, format, t, view }: { areas: AreaShare[]; tota
   const keep = view === "bar" ? 3 : 4;
   const label = paid.map((area) => `${area.label} ${pct(area.amount)} %`).join(", ");
   const focus = areas.find((area) => area.id === active);
-  return <div className="mf-bb" data-active={active ? "" : undefined} data-view={view}>
-    {/* The chart has its title, like any chart: what it shows, and the whole it splits. */}
-    <p className="mf-bb-title"><span>{t("Répartition des montants renseignés", "Recorded costs by area")}</span><b>{format(total)}<small>{t("/mois", "/mo")}</small></b></p>
-    {view === "bar" && <div key="bar" className="mf-bb-bar mf-bb-stage" role="img" aria-label={label}>
-      {paid.map((area) => <i key={area.id} style={{ flexGrow: area.amount, background: area.color }} data-on={active === area.id ? "" : undefined}
-        onPointerEnter={() => setActive(area.id)} onPointerLeave={() => setActive(open)}>{pct(area.amount) >= 12 && <span>{pct(area.amount)} %</span>}</i>)}
+  // Organisme « répartition » du système : la barre fine (ou le radar, l'anneau), puis la légende.
+  return <div className="tt-split-body" data-active={active ? "" : undefined} data-view={view}>
+    {view === "bar" && <div key="bar" className="tt-split-bar" role="img" aria-label={label}>
+      {paid.map((area) => <i key={area.id} style={{ ["--f" as string]: area.amount, ["--c" as string]: area.color }} data-on={active === area.id ? "" : undefined}
+        onPointerEnter={() => setActive(area.id)} onPointerLeave={() => setActive(open)} />)}
     </div>}
-    {/* Bare: the legend beside it names the axes. */}
-    {view === "radar" && <div key="radar" className="mf-bb-radar mf-bb-stage"><SplitRadar areas={areas} active={active} onPoint={(id) => setActive(id ?? open)} label={label} /></div>}
-    {view === "ring" && <div key="ring" className="mf-bb-ring mf-bb-stage">
+    {view === "radar" && <div key="radar" className="tt-split-stage"><SplitRadar areas={areas} active={active} onPoint={(id) => setActive(id ?? open)} label={label} /></div>}
+    {view === "ring" && <div key="ring" className="tt-split-stage tt-split-ring">
       <SplitRing areas={paid} active={active} onPoint={(id) => setActive(id ?? open)} label={label} />
       {/* The centre answers the pointer: the total, or the area pointed at. */}
-      <span className="mf-bb-ring-c" aria-hidden="true"><b>{focus ? `${pct(focus.amount)} %` : format(total)}</b><small>{focus ? focus.label : t("par mois", "a month")}</small></span>
+      <span className="tt-split-ring-c" aria-hidden="true"><b className="tt-amount">{focus ? `${pct(focus.amount)} %` : format(total)}</b><small className="tt-note">{focus ? focus.label : t("par mois", "a month")}</small></span>
     </div>}
-    {/* The legend is a row of chips: the chart keeps the space. Pointing at a chip
-        lights its area; the caption under the chart names it, in a slot of fixed height. */}
-    {/* A fixed number of entries, the rest in one: the box keeps its size.
-        Three pills under the bar, four rows beside the radar and the ring. */}
-    <ul key={`chips-${view}`} className="mf-bb-chips">{(paid.length > keep + 1 ? paid.slice(0, keep) : paid).map((area, index) => <li key={area.id} style={{ ["--i" as string]: index }}>
+    {/* The legend: one row per area, its tools beside it. Pointing at a row lights its share. */}
+    <ul key={`legend-${view}`} className="tt-split-legend">{(paid.length > keep + 1 ? paid.slice(0, keep) : paid).map((area) => <li key={area.id} style={{ ["--c" as string]: area.color }}>
       <button type="button" aria-pressed={open === area.id} data-on={active === area.id ? "" : undefined}
         onPointerEnter={() => setActive(area.id)} onPointerLeave={() => setActive(open)} onFocus={() => setActive(area.id)} onBlur={() => setActive(open)}
         onClick={() => { const next = open === area.id ? null : area.id; setOpen(next); setActive(next); }}>
-        <i style={{ background: area.color }} aria-hidden="true" /><span>{area.label}</span><b className="mf-bb-chip-amount">{format(area.amount)}</b><small>{pct(area.amount)} %</small>
-        {/* The area's tools, always there: nothing appears or moves on hover. */}
-        {area.tools?.length ? <span className="mf-bb-chip-tools" aria-hidden="true">{area.tools.slice(0, 3).map((row) => <span key={row.tool.id}><ToolLogo tool={row.tool} size={16} /></span>)}{area.tools.length > 3 && <em>+{area.tools.length - 3}</em>}</span> : null}
+        <i aria-hidden="true" /><span className="tt-label">{area.label}</span>
+        {area.tools?.length ? <span className="tt-logos" aria-hidden="true">{area.tools.slice(0, 3).map((row) => <ToolLogo key={row.tool.id} tool={row.tool} size={20} className="tt-logo-tile" />)}</span> : <span />}
+        <span className="tt-amount">{format(area.amount)}</span><span className="tt-note">{pct(area.amount)} %</span>
       </button>
     </li>)}
     {paid.length > keep + 1 && (() => {
       const rest = paid.slice(keep);
       const pointed = rest.find((area) => area.id === active);
-      // The last pill stands for the small areas; pointing at one of their segments names it here.
-      return <li className="mf-bb-rest" style={{ ["--i" as string]: keep }}>
-        <span className="mf-bb-rest-pill" data-on={pointed ? "" : undefined}>
-          <span className="mf-bb-rest-dots" aria-hidden="true">{rest.map((area) => <i key={area.id} style={{ background: area.color }} data-on={pointed?.id === area.id ? "" : undefined} />)}</span>
-          {pointed ? <><span>{pointed.label}</span><b className="mf-bb-chip-amount">{format(pointed.amount)}</b></>
-            : <><span>{t(`${rest.length} autres`, `${rest.length} more`)}</span><b className="mf-bb-chip-amount">{format(rest.reduce((sum, area) => sum + area.amount, 0))}</b></>}
-        </span>
-      </li>;
+      return <li style={{ ["--c" as string]: pointed?.color || "var(--tt-meta)" }}><span className="tt-split-rest">
+        <i aria-hidden="true" />{pointed ? <><span className="tt-label">{pointed.label}</span><span /><span className="tt-amount">{format(pointed.amount)}</span><span className="tt-note">{pct(pointed.amount)} %</span></>
+          : <><span className="tt-label">{t(`${rest.length} autres`, `${rest.length} more`)}</span><span /><span className="tt-amount">{format(rest.reduce((sum, area) => sum + area.amount, 0))}</span><span className="tt-note">{pct(rest.reduce((sum, area) => sum + area.amount, 0))} %</span></>}
+      </span></li>;
     })()}</ul>
   </div>;
 }
@@ -306,67 +287,64 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   return <section className="mf" aria-label={t("Ma stack en bref", "My stack at a glance")}>
     <div className="mf-grid" data-starter={toolCount === 1 ? "" : undefined} data-sparse={top && total === 0 && fit.length === 0 ? "" : undefined} data-compact={!top && toolCount > 1 && total === 0 && fit.length === 0 ? "" : undefined} data-next={groups.length} data-done={top ? undefined : ""}>
       {/* 1. Read first: what the stack costs, and the verdict under it. */}
-      <article className="mf-card mf-price" data-open={openCard === "price" ? "" : undefined} data-all={priceAll ? "" : undefined}>
-        <p className="mf-k tt-kicker">{icon(Wallet)}{spend.length === 0 && items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Votre budget", "Your budget") : items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel renseigné", "Known budget so far") : t("Budget mensuel renseigné", "Recorded monthly budget")}{expander("price", t("le coût", "the cost"))}</p>
+      {/* Organisme « budget » du système (planche, chapitre 06 et gabarit Ma stack). */}
+      <article className="mf-card tt-budget" data-card="price" data-open={openCard === "price" ? "" : undefined} data-all={priceAll ? "" : undefined}>
+        <div className="tt-head"><span className="tt-eyebrow">{spend.length === 0 && items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Votre budget", "Your budget") : items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel renseigné", "Known budget so far") : t("Budget mensuel renseigné", "Recorded monthly budget")}</span>{expander("price", t("le coût", "the cost"))}</div>
         {/* An unknown price is never shown as free: no figure without a known price, and a partial total says so. */}
         {(() => { const missing = items.filter((item) => item.kind === "price" || item.kind === "freemium").length;
           return spend.length === 0 && missing > 0
-            ? <div className="mf-budget-onboarding">
-                <p className="mf-budget-step">{t("Premier petit pas", "One small first step")}</p>
-                <h3>{t("On fait les comptes ?", "Let's talk budget.")}</h3>
-                <p className="mf-budget-reassurance">{t("Promis, pas de tableur.", "No spreadsheet required. Promise.")}</p>
-                <p>{t("Dites-nous quelle formule vous utilisez. Gratuite ou payante, chaque réponse aide à y voir plus clair.", "Tell us which plan you use. Free or paid, every answer makes the picture clearer.")}</p>
-                <button type="button" className="mk-link" onClick={() => { const next = items.find(item => item.kind === "price" || item.kind === "freemium"); if(next){setFirst(next.key);setLater(keys=>keys.filter(key=>key!==next.key));setOpenCard("now");requestAnimationFrame(()=>document.getElementById("mf-now-title")?.scrollIntoView({block:"center",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));} }}>{t("Préciser ma première formule", "Choose my first plan")}</button>
+            ? <div className="tt-budget-start">
+                <span className="tt-eyebrow">{t("Premier petit pas", "One small first step")}</span>
+                <h3 className="tt-title-m">{t("On fait les comptes ?", "Let's talk budget.")}</h3>
+                <p className="tt-text">{t("Dites-nous quelle formule vous utilisez. Gratuite ou payante, chaque réponse aide à y voir plus clair.", "Tell us which plan you use. Free or paid, every answer makes the picture clearer.")}</p>
+                <p className="tt-note">{t("Promis, pas de tableur.", "No spreadsheet required. Promise.")}</p>
+                <button type="button" className="tt-btn tt-btn--grey" onClick={() => { const next = items.find(item => item.kind === "price" || item.kind === "freemium"); if(next){setFirst(next.key);setLater(keys=>keys.filter(key=>key!==next.key));setOpenCard("now");requestAnimationFrame(()=>document.getElementById("mf-now-title")?.scrollIntoView({block:"center",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));} }}>{t("Préciser ma première formule", "Choose my first plan")}</button>
               </div>
-            : <><Figure value={format(total)} unit={t("/mois", "/mo")} />{spend.length > 0 && total > 0 && (() => {
+            : <><p className="tt-figure"><Odometer text={format(total)} /><small>{t("/mois", "/mo")}</small></p>{spend.length > 0 && total > 0 && (() => {
               // The figure, then one line that reads it: the year, and who pays for what.
               const lead = spend.reduce((a, b) => b.amount > a.amount ? b : a), share = Math.round((lead.amount / total) * 100);
               const quip = spend.length === 1 ? t("Un seul abonnement, et il fait tout le travail.", "One subscription doing all the work.")
                 : share >= 50 ? t(`${lead.tool.name} en paie ${share >= 75 ? "presque tout" : "plus de la moitié"} à lui seul.`, `${lead.tool.name} pays for ${share >= 75 ? "almost all of it" : "over half of it"} on its own.`)
                 : t("Pas de tyran dans la stack : le budget est bien réparti.", "No tyrant in this stack: the budget is spread out.");
-              return <p className="mf-price-quip"><span>{t(`Soit ${format(total * 12)} par an.`, `That is ${format(total * 12)} a year.`)}</span> {quip}</p>;
+              return <p className="tt-text"><b>{t(`Soit ${format(total * 12)} par an.`, `That is ${format(total * 12)} a year.`)}</b> {quip}</p>;
             })()}{toReview > 0 && total > 0 && <CutGauge total={total} toReview={Math.min(toReview, total)} format={format} t={t} />}{(() => {
               // Can the total be trusted? A tool counts once its cost is certain.
               const unsure = items.filter((item) => item.kind === "price" || item.kind === "freemium");
               const pct = toolCount > 0 ? Math.round(((toolCount - unsure.length) / toolCount) * 100) : 100;
               const prices = unsure.filter((item) => item.kind === "price").length, plans = unsure.length - prices;
               const left = [prices > 0 && t(`${prices} prix`, `${prices} price${s(prices)}`), plans > 0 && t(`${plans} formule${s(plans)}`, `${plans} plan${s(plans)}`)].filter(Boolean).join(t(" et ", " and "));
-              const ring = <svg className="mf-trust-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" /><circle cx="18" cy="18" r="15" style={{ strokeDasharray: `${(pct / 100) * 94.2} 94.2` }} /></svg>;
-              const dots = <span className="mf-trust-dots" aria-hidden="true">{Array.from({ length: toolCount }, (_, index) => <i key={index} data-sure={index < toolCount - unsure.length ? "" : undefined} />)}</span>;
+              const ring = <svg className="tt-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" /><circle cx="18" cy="18" r="15" style={{ strokeDasharray: `${(pct / 100) * 94.2} 94.2` }} /></svg>;
               // One tap brings the next open question to the decision card, which lights up.
               return unsure.length > 0
-                ? <button type="button" className="mf-trust" onClick={() => { setFirst(unsure[0].key); setLater((keys) => keys.filter((key) => key !== unsure[0].key)); setFlash(Date.now()); }}>
-                    {ring}<span className="mf-trust-text"><b>{t(`${toolCount - unsure.length} outil${s(toolCount - unsure.length)} sur ${toolCount} renseigné${s(toolCount - unsure.length)}`, `${toolCount - unsure.length} of ${toolCount} tools priced`)}</b><small>{t(`Estimation partielle : ${left} à confirmer`, `Partial estimate: ${left} to confirm`)}</small>{dots}</span>
+                ? <button type="button" className="tt-budget-trust" onClick={() => { setFirst(unsure[0].key); setLater((keys) => keys.filter((key) => key !== unsure[0].key)); setFlash(Date.now()); }}>
+                    {ring}<span><span className="tt-label">{t(`${toolCount - unsure.length} outil${s(toolCount - unsure.length)} sur ${toolCount} renseigné${s(toolCount - unsure.length)}`, `${toolCount - unsure.length} of ${toolCount} tools priced`)}</span><span className="tt-note">{t(`Estimation partielle : ${left} à confirmer`, `Partial estimate: ${left} to confirm`)}</span></span>
                   </button>
-                : toolCount > 0 && <p className="mf-trust" data-exact=""><span className="mf-trust-check" aria-hidden="true">{icon(Check)}</span><span className="mf-trust-text"><b>{t("Budget renseigné", "Budget recorded")}</b><small>{t("Estimation selon les prix et formules renseignés.", "Estimate based on the prices and plans recorded.")}</small>{dots}</span></p>;
+                : toolCount > 0 && <p className="tt-budget-trust"><span className="tt-check tt-check--live" aria-hidden="true">{icon(Check)}</span><span><span className="tt-label">{t("Budget renseigné", "Budget recorded")}</span><span className="tt-note">{t("Estimation selon les prix et formules renseignés.", "Estimate based on the prices and plans recorded.")}</span></span></p>;
             })()}</>; })()}
-        {converted && <p className="mf-invoice-help">{t(`Conversion en ${currency} au taux de référence du ${CURRENCY_RATE_DATE}.`, `Converted to ${currency} using reference rates dated ${CURRENCY_RATE_DATE}.`)}</p>}
+        {converted && <p className="tt-note">{t(`Conversion en ${currency} au taux de référence du ${CURRENCY_RATE_DATE}.`, `Converted to ${currency} using reference rates dated ${CURRENCY_RATE_DATE}.`)}</p>}
         {spend.length > 0 ? <>
-          {/* Your stack, by what it costs: the tools that weigh most, each with a thin
-              bar for its share; the others as a strip of their logos. */}
-          <ul className="mf-shares">{shown.map((line, index) => <li key={line.tool.id} style={{ ["--c" as string]: areaColorOf.get(line.tool.id) || AREA_OTHER, ["--w" as string]: `${total > 0 ? (line.amount / total) * 100 : 0}%`, ["--i" as string]: index }}>
-            <span className="mf-shares-logo" aria-hidden="true"><ToolLogo tool={line.tool} size={22} /></span>
-            <span className="mf-shares-name">{line.tool.name}</span>
-            <b>{format(line.amount)}</b>
-            <span className="mf-shares-bar" aria-hidden="true"><i /></span>
-            <small>{total > 0 ? Math.round((line.amount / total) * 100) : 0} %</small>
+          {/* Molécule « part d'un total » : logo, nom, filet à la couleur du domaine, montant, pourcentage. */}
+          <ul className="tt-shares">{shown.map((line) => <li key={line.tool.id} className="tt-share" style={{ ["--c" as string]: areaColorOf.get(line.tool.id) || AREA_OTHER, ["--w" as string]: `${total > 0 ? (line.amount / total) * 100 : 0}%` }}>
+            <ToolLogo tool={line.tool} size={24} className="tt-logo-tile" />
+            <span className="tt-label tt-share-name">{line.tool.name}</span>
+            <span className="tt-share-bar" aria-hidden="true"><i /></span>
+            <span className="tt-amount">{format(line.amount)}</span>
+            <span className="tt-note">{total > 0 ? Math.round((line.amount / total) * 100) : 0} %</span>
           </li>)}</ul>
-          {spend.length > shown.length && <button type="button" className="mf-others" onClick={() => setPriceAll(true)} aria-expanded={false}>
-            <span className="mf-others-logos" aria-hidden="true">{spend.slice(shown.length, shown.length + 3).map((line) => <span key={line.tool.id}><ToolLogo tool={line.tool} size={18} /></span>)}</span>
-            <span>{t(`+ ${spend.length - shown.length} autre${s(spend.length - shown.length)}`, `+ ${spend.length - shown.length} more`)}</span>
-            <b>{format(otherAmount)}</b>
+          {spend.length > shown.length && <button type="button" className="tt-share-more" onClick={() => setPriceAll(true)} aria-expanded={false}>
+            <span className="tt-logos" aria-hidden="true">{spend.slice(shown.length, shown.length + 3).map((line) => <ToolLogo key={line.tool.id} tool={line.tool} size={24} className="tt-logo-tile" />)}</span>
+            <span className="tt-label">{t(`+ ${spend.length - shown.length} autre${s(spend.length - shown.length)}`, `+ ${spend.length - shown.length} more`)}</span>
+            <span className="tt-amount">{format(otherAmount)}</span>
           </button>}
-          {priceAll && spend.length > 4 && <TextLink className="mf-less" onClick={() => setPriceAll(false)}>{t("Réduire", "Show less")}</TextLink>}
-        </> : !items.some(item => item.kind === "price" || item.kind === "freemium") && freeTools.length !== toolCount && <p className="mf-empty">{t("Aucun abonnement payant renseigné.", "No paid plans recorded.")}</p>}
-        {freeTools.length > 0 && <div className="mf-cost-complement">
+          {priceAll && spend.length > 4 && <TextLink onClick={() => setPriceAll(false)}>{t("Réduire", "Show less")}</TextLink>}
+        </> : !items.some(item => item.kind === "price" || item.kind === "freemium") && freeTools.length !== toolCount && <p className="tt-note">{t("Aucun abonnement payant renseigné.", "No paid plans recorded.")}</p>}
+        {freeTools.length > 0 && <div className="tt-budget-free">
           {/* Free tools cost nothing, so they take one line: their logos side by side, the names for screen readers and on hover. */}
-          <ul className="mf-cost-zero">{freeTools.slice(0, 6).map(tool => <li key={tool.id} title={tool.name}><ToolLogo tool={tool} size={22} /><span className="sr-only">{tool.name}</span></li>)}{freeTools.length > 6 && <li className="mf-cost-more" title={freeTools.slice(6).map(tool => tool.name).join(", ")}>+{freeTools.length - 6}<span className="sr-only">{freeTools.slice(6).map(tool => tool.name).join(", ")}</span></li>}</ul>
-          <p>{t(`${freeTools.length} outil${s(freeTools.length)} gratuit${s(freeTools.length)} · sans coût ajouté`, `${freeTools.length} free tool${s(freeTools.length)} · no added cost`)}</p>
+          <ul className="tt-logos" data-free-tools="">{freeTools.slice(0, 6).map(tool => <li key={tool.id} title={tool.name}><ToolLogo tool={tool} size={24} className="tt-logo-tile" /><span className="sr-only">{tool.name}</span></li>)}{freeTools.length > 6 && <li className="tt-tag" title={freeTools.slice(6).map(tool => tool.name).join(", ")}>+{freeTools.length - 6}<span className="sr-only">{freeTools.slice(6).map(tool => tool.name).join(", ")}</span></li>}</ul>
+          <p className="tt-note">{t(`${freeTools.length} outil${s(freeTools.length)} gratuit${s(freeTools.length)} · sans coût ajouté`, `${freeTools.length} free tool${s(freeTools.length)} · no added cost`)}</p>
         </div>}
-        {spend.length > 0 && items.some(item => item.kind === "price" || item.kind === "freemium") && <p className="mf-cost-scope">{t("Les outils à renseigner ne sont pas inclus dans ce montant.", "Tools awaiting a price or plan are not included in this amount.")}</p>}
-        {saved > 0 && <p className="mf-verdict">{icon(Check, "var(--color-pro)")}<span>{t("Budget estimé allégé de ", "Estimated budget reduced by ")}<b className="mf-gain"><span className="tt-bloom tt-bloom--on" aria-hidden="true" /><span>{format(saved)}</span></b>{t(" par mois.", " a month.")}</span></p>}
-        {/* Once nothing is left to decide the decision card goes; what can be reopened lives here. */}
-
+        {spend.length > 0 && items.some(item => item.kind === "price" || item.kind === "freemium") && <p className="tt-note">{t("Les outils à renseigner ne sont pas inclus dans ce montant.", "Tools awaiting a price or plan are not included in this amount.")}</p>}
+        {saved > 0 && <p className="tt-note tt-budget-gain">{t("Budget estimé allégé de ", "Estimated budget reduced by ")}<b className="tt-amount tt-gain" data-gain=""><span className="tt-bloom tt-bloom--on" aria-hidden="true" /><span>{format(saved)}</span></b>{t(" par mois.", " a month.")}</p>}
       </article>
 
       {/* 2. The one thing to do now, or the summary once everything is settled. */}
@@ -512,8 +490,8 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         <p>{t("Un outil, c’est un début. Ajoutez les autres : dès deux, on repère ce qui se recoupe et ce que ça coûte.", "One tool is a start. Add the others: from two on, we spot what overlaps and what it costs.")}</p>
         <Button variant="primary" icon={<Plus size={18} aria-hidden />} onClick={onAddTool}>{t("Ajouter un autre outil", "Add another tool")}</Button>
       </article>}
-      {toolCount > 1 && total > 0 && <article className="mf-card mf-balance" data-open={openCard === "bal" ? "" : undefined}>
-        <div className="mf-k tt-kicker">{icon(Layers3)}<span className="mf-k-label">{t("Répartition du budget", "Budget split")}</span>{spend.length > 0 && areas.length > 0 && <SplitViews view={splitView} onChange={setSplitView} t={t} radar={areas.length >= 4} />}{expander("bal", t("la répartition", "the split"))}</div>
+      {toolCount > 1 && total > 0 && <article className="mf-card tt-split" data-card="split" data-open={openCard === "bal" ? "" : undefined}>
+        <div className="tt-head"><span className="tt-eyebrow">{t("Répartition", "Split")}</span><span className="tt-split-tools">{spend.length > 0 && areas.length > 0 && <SplitViews view={splitView} onChange={setSplitView} t={t} radar={areas.length >= 4} />}{expander("bal", t("la répartition", "the split"))}</span></div>
         {spend.length > 0 && areas.length > 0 ? (() => {
           const lead = [...areas].sort((x, y) => y.amount - x.amount)[0];
           const share = total > 0 ? Math.round((lead.amount / total) * 100) : 0;
@@ -521,15 +499,12 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           const heavy = share >= 50;
           const spread = areas.filter((area) => area.amount > 0).length;
           // One line of humour under the reading, from the same shares.
-          const quip = <p className="mf-lead-quip">{share >= 75 ? t("Le reste du budget fait de la figuration.", "The rest of the budget is an extra.") : heavy ? t("Le reste se partage les miettes.", "The rest share the crumbs.") : t("Une stack équilibrée. C’est rare, ça se respecte.", "A balanced stack. Rare, and respected.")}</p>;
-          const tag = share >= 75 ? <><Flame size={14} aria-hidden />{t("Premier poste renseigné", "Largest recorded cost")}</> : share >= 50 ? <><TrendingUp size={14} aria-hidden />{t("Premier poste renseigné", "Largest recorded cost")}</> : <><Scale size={14} aria-hidden />{t("Montants par domaine", "Costs by area")}</>;
-          return <>{heavy
-            ? <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={quip} figure={<Odometer text={`${share}\u00a0%`} />} say={t(`du budget renseigné pour ${lead.label.replace(/ /g, "\u00a0")}.`, `of recorded costs for ${lead.label}.`)}
-                sub={t(`${format(lead.amount)} sur ${format(total)} chaque mois.`, `${format(lead.amount)} of ${format(total)} every month.`)} />
-            : <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={quip} figure={t(`${spread} domaines`, `${spread} areas`)} say={t("se partagent les montants renseignés.", "share the recorded costs.")}
-                sub={t(`Le plus gros, ${lead.label}, en prend ${share} %.`, `The largest, ${lead.label}, takes ${share}%.`)} />}
-          <BudgetBar areas={areas} total={total} format={format} t={t} view={splitView === "radar" && areas.length < 4 ? "bar" : splitView} /></>;
-        })() : <p className="mf-t">{areas.length < 3 ? t("La répartition apparaît dès trois domaines dans votre stack.", "The split appears from three areas in your stack.") : t("Aucun coût connu à répartir pour l’instant.", "No known cost to spread yet.")}</p>}
+          const quip = share >= 75 ? t("Le reste du budget fait de la figuration.", "The rest of the budget is an extra.") : heavy ? t("Le reste se partage les miettes.", "The rest share the crumbs.") : t("Une stack équilibrée. C’est rare, ça se respecte.", "A balanced stack. Rare, and respected.");
+          return <>
+            <h3 className="tt-title-m">{heavy ? t(`${lead.label} prend ${share} % du budget renseigné.`, `${lead.label} takes ${share}% of recorded costs.`) : t(`${spread} domaines se partagent le budget renseigné.`, `${spread} areas share the recorded costs.`)}</h3>
+            <p className="tt-note">{heavy ? t(`${format(lead.amount)} sur ${format(total)} chaque mois. `, `${format(lead.amount)} of ${format(total)} every month. `) : t(`Le plus gros, ${lead.label}, en prend ${share} %. `, `The largest, ${lead.label}, takes ${share}%. `)}{quip}</p>
+            <BudgetBar areas={areas} total={total} format={format} t={t} view={splitView === "radar" && areas.length < 4 ? "bar" : splitView} /></>;
+        })() : <p className="tt-text">{areas.length < 3 ? t("La répartition apparaît dès trois domaines dans votre stack.", "The split appears from three areas in your stack.") : t("Aucun coût connu à répartir pour l’instant.", "No known cost to spread yet.")}</p>}
       </article>}
 
       {toolCount > 1 && (fit.length > 0 || !top || history) && <StackUsageReview key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format}

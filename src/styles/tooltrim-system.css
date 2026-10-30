@@ -263,10 +263,33 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 /* Une ligne d'organisme : à gauche le titre, à droite l'état ou l'action. */
 .tt-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 
+/* ── Organisme : le budget ──────────────────────────────────────────────── */
+.tt-budget { display: grid; align-content: start; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-budget .tt-figure { display: flex; align-items: baseline; margin: 0; }
+/* Le compteur garde des chiffres proportionnels : la forme des chiffres d'Uncut Sans. */
+.tt-figure :is(.mk-odo, .mk-odo *) { font-variant-numeric: normal; }
+.tt-budget-start { display: grid; gap: 10px; justify-items: start; }
+.tt-budget-trust { display: grid; grid-template-columns: 20px minmax(0, 1fr); align-items: start; gap: 10px; margin: 0; padding: 0; border: 0; background: none; color: var(--tt-ink); font: inherit; text-align: left; }
+button.tt-budget-trust { cursor: pointer; }
+.tt-budget-trust > span:last-child { display: grid; gap: 2px; }
+.tt-ring { width: 20px; height: 20px; transform: rotate(-90deg); }
+.tt-ring circle { fill: none; stroke: var(--tt-tile-2); stroke-width: 4; }
+.tt-ring circle + circle { stroke: var(--tt-live); stroke-linecap: round; }
+.tt-budget-free { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.tt-logos { display: inline-flex; align-items: center; margin: 0; padding: 0; list-style: none; }
+.tt-logos > * + * { margin-left: -6px; }
+.tt-logos .tt-logo-tile, .tt-share .tt-logo-tile, .tt-share-more .tt-logo-tile { width: 24px; height: 24px; box-shadow: 0 0 0 2px var(--tt-tile), var(--tt-logo-shadow); }
+.tt-share-more { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; width: 100%; min-height: 40px; padding: 0; border: 0; background: none; color: var(--tt-ink); font: inherit; text-align: left; cursor: pointer; }
+.tt-budget-gain { position: relative; padding-top: 12px; border-top: 1px dashed color-mix(in oklch, var(--tt-meta) 50%, transparent); }
+.tt-gain { position: relative; isolation: isolate; display: inline-block; }
+.tt-gain > span:not(.tt-bloom) { position: relative; z-index: 1; }
+.tt-gain .tt-bloom { inset: -180% -110%; filter: blur(16px); }
+
 /* ── Molécule : la part d'un total ─────────────────────────────────────── */
 /* Logo, nom, filet de part à la couleur du domaine, montant, pourcentage. */
 .tt-shares { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
-.tt-share { display: grid; grid-template-columns: 24px minmax(0, 1fr) 72px auto 40px; align-items: center; gap: 12px; min-height: 40px; }
+.tt-share { display: grid; grid-template-columns: 24px minmax(0, 1fr) auto 44px; grid-template-areas: "logo name amount pct" "logo bar bar bar"; align-items: center; gap: 4px 12px; min-height: 44px; }
+.tt-share > .tt-logo-tile { grid-area: logo; } .tt-share > .tt-share-name { grid-area: name; } .tt-share > .tt-amount { grid-area: amount; } .tt-share > .tt-note:last-child { grid-area: pct; } .tt-share > .tt-share-bar { grid-area: bar; }
 .tt-share > .tt-logo-tile { width: 24px; height: 24px; }
 .tt-share-bar { height: 3px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); overflow: hidden; }
 .tt-share-bar i { display: block; height: 100%; width: var(--w, 0%); border-radius: inherit; background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow 900ms var(--tt-ease) both; }
@@ -294,20 +317,36 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 /* ── Organisme : l'en-tête de page ──────────────────────────────────────── */
 /* Surtitre, grand titre, une note de contexte ; l'action rare à droite. */
 .tt-pagehead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px; }
-.tt-pagehead > div { display: grid; gap: 10px; }
+.tt-pagehead > div, .tt-pagehead-title, .tt-pagehead-intro { display: grid; gap: 10px; }
+.tt-pagehead-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
 
 /* ── Organisme : l'en-tête de section ───────────────────────────────────── */
 .tt-sectionhead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; }
 .tt-sectionhead > div { display: grid; gap: 6px; max-width: 60ch; }
+
+.tt-section { display: grid; gap: 24px; }
+.tt-section-foot { display: flex; justify-content: center; }
+.tt-mediacards { margin: 0; padding: 0; list-style: none; }
 
 /* ── Organisme : la répartition ─────────────────────────────────────────── */
 /* Le chiffre, une barre empilée fine à la couleur des domaines, la légende. */
 .tt-split { display: grid; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-split-bar { display: flex; gap: 3px; height: 10px; }
 .tt-split-bar i { flex: var(--f, 1); min-width: 6px; border-radius: var(--tt-r-pill); background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow 900ms var(--tt-ease) both; }
-.tt-split-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px 24px; margin: 0; padding: 0; list-style: none; }
-.tt-split-legend li { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto; align-items: center; gap: 10px; min-height: 28px; }
-.tt-split-legend li > i { width: 10px; height: 10px; border-radius: var(--tt-r-round); background: var(--c, var(--tt-ink)); }
+.tt-split-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 4px 24px; margin: 0; padding: 0; list-style: none; }
+.tt-split-legend li > :is(button, span) { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto auto 44px; align-items: center; gap: 10px; width: 100%; min-height: 40px; padding: 0 8px; border: 0; border-radius: var(--tt-r-chip); background: none; color: var(--tt-ink); font: inherit; text-align: left; }
+.tt-split-legend li > button { cursor: pointer; transition: background-color var(--tt-dur-state) ease; }
+.tt-split-legend li > button:is(:hover, [data-on], [aria-pressed="true"]) { background: var(--tt-tile-2); }
+.tt-split-legend li i { width: 10px; height: 10px; border-radius: var(--tt-r-round); background: var(--c, var(--tt-ink)); }
+.tt-split-legend .tt-note:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.tt-split-legend .tt-logos .tt-logo-tile { width: 20px; height: 20px; }
+.tt-split-body { display: grid; gap: 16px; }
+.tt-split-body[data-active] .tt-split-bar i:not([data-on]) { opacity: .35; }
+.tt-split-bar i { transition: opacity var(--tt-dur-state) ease; }
+.tt-split-stage { display: grid; place-items: center; min-height: 200px; }
+.tt-split-ring { position: relative; }
+.tt-split-ring-c { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 2px; pointer-events: none; }
+.tt-split-tools { display: inline-flex; align-items: center; gap: 8px; }
 
 /* ── Molécule : la carte d'outil ─────────────────────────────────────────── */
 /* Une tuile : le logo et ce qu'il coûte en haut, le nom, puis son état. */
@@ -319,6 +358,14 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-toolcard > .tt-amount { grid-area: amount; justify-self: end; }
 .tt-toolcard > .tt-label { grid-area: name; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tt-toolcard > .tt-tag { grid-area: state; justify-self: start; }
+.tt-toolcard-wrap { position: relative; }
+.tt-toolcard.is-selected { box-shadow: var(--tt-row-ring-on); }
+.tt-toolcard > .tt-toolcard-foot { grid-area: state; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; min-width: 0; }
+/* En liste : une rangée par outil, mêmes atomes. */
+.tt-toolcards[data-layout="list"] { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+.tt-toolcards[data-layout="list"] .tt-toolcard { grid-template-columns: 40px minmax(0, 1fr) auto auto; grid-template-areas: "logo name state amount"; align-items: center; padding: 10px 16px 10px 10px; border-radius: var(--tt-r-card); }
+.tt-groups { display: grid; gap: 28px; }
+.tt-group { display: grid; gap: 12px; }
 .tt-groupname { display: flex; align-items: baseline; gap: 10px; }
 .tt-groupname > i { align-self: center; width: 8px; height: 8px; border-radius: var(--tt-r-round); background: var(--c, var(--tt-ink)); }
 

@@ -4,7 +4,7 @@ for(const lang of ['fr','en'] as const) for(const width of [320,1440]) test(`dis
  const value=state(['firefly','notion']);
  await control(request,'seed',{email:'discovery@example.invalid',state:value});
  await page.goto(`/${lang}/ma-stack`);await login(page,lang,'discovery@example.invalid');await saved(page,lang);
- const section=page.locator('.ms-recos');await expect(section).toBeVisible();await section.evaluate(el=>el.scrollIntoView({block:'center'}));
+ const section=page.locator('[data-section="discovery"]');await expect(section).toBeVisible();await section.evaluate(el=>el.scrollIntoView({block:'center'}));
  const cards=section.locator('[data-discovery-tool]');await expect(cards).toHaveCount(3);
  const firstSlugs=await cards.evaluateAll(items=>items.map(item=>item.getAttribute('data-discovery-tool')));
  expect(firstSlugs.filter(slug=>slug?.startsWith('adobe-')).length).toBeLessThanOrEqual(1);
@@ -48,7 +48,7 @@ test.describe('touch discovery',()=>{
   await control(request,'seed',{email:'touch-discovery@example.invalid',state:state(['firefly','notion'])});
   await page.goto('/fr/ma-stack');await login(page,'fr','touch-discovery@example.invalid');await saved(page,'fr');
   expect(await page.evaluate(()=>matchMedia('(pointer: coarse)').matches)).toBe(true);
-  const add=page.locator('.ms-recos .tce-hover-action').first();await expect(add).toBeVisible();
+  const add=page.locator('[data-section="discovery"] .tce-hover-action').first();await expect(add).toBeVisible();
   const rect=await add.boundingBox();expect(rect!.width).toBeGreaterThanOrEqual(44);expect(rect!.height).toBeGreaterThanOrEqual(44);
  });
 });

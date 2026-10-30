@@ -37,10 +37,10 @@ for (const lang of ["fr", "en"]) for (const width of [390, 1440]) {
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
     const consent = page.getByRole("button", { name: lang === "fr" ? "Refuser" : "Refuse", exact: true });
     if (await consent.isVisible()) await consent.click();
-    await expect(page.locator(".ms-tool")).toHaveCount(8);
+    await expect(page.locator(".tt-toolcard")).toHaveCount(8);
     // Every card names its cost, including unpriced ones.
-    const map = page.locator(".ms-inv");
-    await expect(map.locator(".ms-inv-cost")).toHaveCount(8);
+    const map = page.locator("#ms-all-grid");
+    await expect(map.locator(".tt-toolcard .tt-amount")).toHaveCount(8);
     // The same attested fallback as the tool page powers the free-tier
     // question and the monthly budget after declaring a payment.
     for (const name of ["Claude", "Perplexity"]) await expect(map.getByRole("button", { name: new RegExp(`^${name}, `) })).toContainText("Freemium");
@@ -54,17 +54,17 @@ for (const lang of ["fr", "en"]) for (const width of [390, 1440]) {
       await answerPlan(deck, paid, lang as "fr" | "en");
       await expect(top).not.toHaveText(title);
     }
-    for (const name of ["Claude", "Perplexity"]) await expect(map.getByRole("button", { name: new RegExp(`^${name}, `) }).locator(".ms-inv-cost")).toHaveText(lang === "fr" ? "17 €/mois" : "$20/mo");
+    for (const name of ["Claude", "Perplexity"]) await expect(map.getByRole("button", { name: new RegExp(`^${name}, `) }).locator(".tt-amount")).toHaveText(lang === "fr" ? "17 €/mois" : "$20/mo");
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     fs.mkdirSync("/private/tmp/tooltrim-stack-budget", { recursive: true });
     await map.screenshot({ path: `/private/tmp/tooltrim-stack-budget/${lang}-${width}.png` });
     // An unpriced tool is hatched and opens its sheet to enter the price.
-    const unknown = map.locator('.ms-inv-card:has(.ms-inv-cost[data-tone="unknown"])').first();
+    const unknown = map.locator('.tt-toolcard:has(.tt-amount[data-tone="unknown"])').first();
     await expect(unknown).toBeVisible();
     await unknown.click();
     await expect(page.locator(".ms-tool-sheet")).toBeVisible();
     await page.keyboard.press("Escape");
     await page.reload({ waitUntil: "domcontentloaded" });
-    for (const name of ["Claude", "Perplexity"]) await expect(map.getByRole("button", { name: new RegExp(`^${name}, `) }).locator(".ms-inv-cost")).toHaveText(lang === "fr" ? "17 €/mois" : "$20/mo");
+    for (const name of ["Claude", "Perplexity"]) await expect(map.getByRole("button", { name: new RegExp(`^${name}, `) }).locator(".tt-amount")).toHaveText(lang === "fr" ? "17 €/mois" : "$20/mo");
   });
 }

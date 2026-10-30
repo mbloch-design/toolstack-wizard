@@ -59,13 +59,13 @@ export default function StackPersonalWelcome({ empty, pending = 0, children }: {
         : t("Votre stack, à votre rythme. Vous gardez la main.", "Your stack, at your pace. You stay in control.");
   const rate = dailyRate ? convertAmount(dailyRate.amount, dailyRate.currency, currency) : null;
   const money = (amount: number) => formatAmount(Math.round(amount), currency, lang);
-  return <div className="ms-personal-welcome">
-    <p className="ms-personal-greeting">{hello} <span className="ms-personal-wave" aria-hidden="true">👋</span></p>
+  return <div className="tt-pagehead-intro">
+    <p className="tt-text" data-greeting>{hello} <span aria-hidden="true">👋</span></p>
     {children}
-    <p className="ms-personal-message">{message}</p>
-    {(trade || rate) && <p className="ms-personal-facts">
-      {trade && <span className="ms-personal-chip">{t(...TRADE_LABELS[trade])}</span>}
-      {rate && <span className="ms-personal-chip" title={t("Sur une journée de 7 heures", "On a 7-hour day")}>{t(`${money(rate)}/jour · votre heure ≈ ${money(rate / 7)}`, `${money(rate)}/day · your hour ≈ ${money(rate / 7)}`)}</span>}
+    <p className="tt-text" data-welcome-message>{message}</p>
+    {(trade || rate) && <p className="tt-pagehead-facts">
+      {trade && <span className="tt-tag">{t(...TRADE_LABELS[trade])}</span>}
+      {rate && <span className="tt-tag" title={t("Sur une journée de 7 heures", "On a 7-hour day")}>{t(`${money(rate)}/jour · votre heure ≈ ${money(rate / 7)}`, `${money(rate)}/day · your hour ≈ ${money(rate / 7)}`)}</span>}
     </p>}
   </div>;
 }

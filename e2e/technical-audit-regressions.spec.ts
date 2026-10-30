@@ -69,5 +69,5 @@ test("corrupt decisions do not hide valid decisions or crash my stack", async ({
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
   await expect(page.getByRole("heading", { name: "Mes outils", exact: true })).toBeVisible();
   await expect(page.locator(".mf")).toContainText("gardée volontairement");
-  await expect(page.locator(".ms-tool")).toHaveCount(2);
+  await expect(page.locator(".tt-toolcard")).toHaveCount(2);
 });

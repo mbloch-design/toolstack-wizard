@@ -47,12 +47,12 @@ for (const lang of ["fr", "en"]) {
   test(`${lang}: an unknown stack cost is not free and a mixed total is partial`, async ({ page }) => {
     await page.addInitScript(({ key, state }) => { if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(state)); }, { key: stackKey, state: seed(["adp-workforce"]) });
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
-    await expect(page.locator(".mf-price")).toContainText(lang === "fr" ? "Coût non renseigné" : "Cost unknown");
-    await expect(page.locator(".mf-price")).not.toContainText(/Gratuit|Free|rien de payant|nothing paid/i);
+    await expect(page.locator('[data-card="price"]')).toContainText(lang === "fr" ? "Coût non renseigné" : "Cost unknown");
+    await expect(page.locator('[data-card="price"]')).not.toContainText(/Gratuit|Free|rien de payant|nothing paid/i);
     await page.locator(".ms-tools-actions").getByRole("button", { name: lang === "fr" ? "Ajouter un outil" : "Add a tool", exact: true }).click();
     await page.getByRole("searchbox").fill("chatgpt");
     await page.getByRole("button", { name: lang === "fr" ? "Ajouter ChatGPT" : "Add ChatGPT", exact: true }).click();
-    await expect(page.locator(".ms-tool")).toHaveCount(2);
+    await expect(page.locator(".tt-toolcard")).toHaveCount(2);
     await page.evaluate(() => {
       const key = "tooltrim-personal-stack-v4:anonymous";
       const state = JSON.parse(localStorage.getItem(key) || "{}");
@@ -60,8 +60,8 @@ for (const lang of ["fr", "en"]) {
       localStorage.setItem(key, JSON.stringify(state));
     });
     await page.reload({ waitUntil: "domcontentloaded" });
-    await expect(page.locator(".mf-price")).toContainText(lang === "fr" ? "Estimation partielle" : "Partial estimate");
-    await expect(page.locator(".ms-tool")).toHaveCount(2);
+    await expect(page.locator('[data-card="price"]')).toContainText(lang === "fr" ? "Estimation partielle" : "Partial estimate");
+    await expect(page.locator(".tt-toolcard")).toHaveCount(2);
   });
 }
 

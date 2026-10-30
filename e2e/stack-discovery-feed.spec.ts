@@ -30,7 +30,7 @@ for(const lang of ['fr','en'])for(const width of [390,1440]){
   await page.goBack();await expect(card).toBeVisible();await expect(card.getByRole('button')).toBeDisabled();
   await page.getByRole('button',{name:lang==='fr'?'Retour à Ma stack':'Back to My stack',exact:true}).click();
   await expect.poll(()=>new URL(page.url()).pathname).toBe(`/${lang}/ma-stack`);
-  await expect(page.locator('.ms-tool')).toHaveCount(4);await page.reload();await expect(page.locator('.ms-tool')).toHaveCount(4);
+  await expect(page.locator('.tt-toolcard')).toHaveCount(4);await page.reload();await expect(page.locator('.tt-toolcard')).toHaveCount(4);
   const envelope=await page.evaluate(()=>JSON.parse(localStorage.getItem('tooltrim-personal-stack-v4:anonymous')||'{}'));
   expect(envelope.version).toBe(4);
   const state=envelope.selection;

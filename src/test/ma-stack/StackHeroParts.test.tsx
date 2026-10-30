@@ -41,7 +41,7 @@ describe("StackFindings", () => {
     expect(screen.getByText("Budget partiel renseigné")).toBeTruthy();
     expect(screen.getByText("2 outils sur 4 renseignés")).toBeTruthy();
     expect(screen.queryByText(/fiable à|Total exact/)).toBeNull();
-    expect(container.querySelector(".mf-bb")).not.toBeNull();
+    expect(container.querySelector(".tt-split-body")).not.toBeNull();
     expect(screen.queryByText(/dès trois domaines/)).toBeNull();
   });
   it("accounts for all four tools when only two have a paid cost", () => {
@@ -49,7 +49,7 @@ describe("StackFindings", () => {
     expect(screen.getByText("2 outils gratuits · sans coût ajouté")).toBeTruthy();
     expect(screen.getByText("Figma")).toBeTruthy();
     expect(screen.getByText("Audacity")).toBeTruthy();
-    expect(container.querySelectorAll(".mf-cost-zero > li")).toHaveLength(2);
+    expect(container.querySelectorAll("[data-free-tools] > li")).toHaveLength(2);
     expect(screen.queryByText(/autres/)).toBeNull();
   });
   it("does not invent a zero budget before the first plan is selected", () => {
@@ -90,8 +90,7 @@ describe("StackFindings", () => {
   it("shows the budget by vertical as a radar", () => {
     module([card("Canva")]);
     expect(screen.getByRole("img", { name: "RH 58 %, IT 17 %" })).toBeTruthy();
-    expect(screen.getByRole("text", { name: "58\u00a0%" })).toBeTruthy();
-    expect(screen.getByText("du budget renseigné pour RH.")).toBeTruthy();
+    expect(screen.getByText("RH prend 58 % du budget renseigné.")).toBeTruthy();
   });
   it("shows a pair as two faces, each with what it saves, and tags the cheaper one", () => {
     const { container } = module([pair]);
@@ -130,7 +129,7 @@ describe("StackFindings", () => {
   it("drops the decision card once nothing is left, the saving stays on the price card", () => {
     const { container } = module([], { saved: 67, total: 379, toReview: 0 });
     expect(container.querySelector(".mf-now")).toBeNull();
-    expect(container.querySelector(".mf-price")?.textContent).toMatch(/Budget estimé allégé de 67 € par mois/);
+    expect(container.querySelector('[data-card="price"]')?.textContent).toMatch(/Budget estimé allégé de 67 € par mois/);
   });
 });
 

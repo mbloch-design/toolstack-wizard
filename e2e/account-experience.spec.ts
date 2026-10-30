@@ -339,7 +339,7 @@ for (const width of [390, 1440]) test(`partial stack budget stays consistent ${w
  await control(request,'seed',{email:'partial-budget@example.invalid',state:full});
  await page.goto('/en/ma-stack'); await login(page,'en','partial-budget@example.invalid'); await saved(page,'en');
  await expect(page.getByText('Known budget so far',{exact:true})).toBeVisible();
- const expandPrice = page.locator('.mf-price .mf-expand[aria-expanded="false"]');
+ const expandPrice = page.locator('[data-card="price"] .mf-expand[aria-expanded="false"]');
  if(await expandPrice.isVisible()) await expandPrice.click();
  await expect(page.getByText('2 of 4 tools priced',{exact:true})).toBeVisible();
  await expect(page.getByText('Stack saving',{exact:true})).toHaveCount(0);
@@ -356,10 +356,10 @@ test('budget includes the two free tools alongside two paid tools', async ({page
  full.billing={paid:['motion-array','grammarly'],reviewed:['motion-array','grammarly','figma','audacity'],choices:{'motion-array':{source:'custom',amount:29,currency:'USD',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'USD',period:'monthly'}}};
  await control(request,'seed',{email:'four-tools-budget@example.invalid',state:full});
  await page.goto('/en/ma-stack');await login(page,'en','four-tools-budget@example.invalid');await saved(page,'en');
- await expect(page.locator('.mf-price')).toContainText('2 free tools · no added cost');
- await expect(page.locator('.mf-cost-zero')).toContainText('Figma');
- await expect(page.locator('.mf-cost-zero')).toContainText('Audacity');
- await expect(page.locator('.mf-shares li')).toHaveCount(2);
+ await expect(page.locator('[data-card="price"]')).toContainText('2 free tools · no added cost');
+ await expect(page.locator('[data-free-tools]')).toContainText('Figma');
+ await expect(page.locator('[data-free-tools]')).toContainText('Audacity');
+ await expect(page.locator('[data-card="price"] .tt-share')).toHaveCount(2);
  await page.screenshot({path:'test-results/accounts/four-tools-budget.png',fullPage:true});
 });
 
@@ -368,7 +368,7 @@ test('first unconfirmed plan has no zero budget or empty analysis cards', async 
  await control(request,'seed',{email:'first-budget@example.invalid',state:state(['notion'])});
  await page.goto('/en/ma-stack');await login(page,'en','first-budget@example.invalid');await saved(page,'en');
  await expect(page.locator('.mf-budget-onboarding')).toContainText("Let's talk budget.");
- await expect(page.locator('.mf-price')).not.toContainText('$0');
+ await expect(page.locator('[data-card="price"]')).not.toContainText('$0');
  await expect(page.locator('.mf-balance')).toHaveCount(0);
  await expect(page.locator('.mf-fit')).toHaveCount(0);
  await expect(page.locator('.mf-now')).toContainText('Notion');
@@ -396,11 +396,11 @@ for(const width of [390,1440]) test(`personal welcome recognises the signed-in o
  await page.setViewportSize({width,height:1000});
  await control(request,'seed',{email:'welcome@example.invalid',displayName:'Michael',state:state(['notion'])});
  await page.goto('/fr/ma-stack');await login(page,'fr','welcome@example.invalid','fixture-password','Michael');
- await expect(page.locator('.ms-personal-greeting')).toContainText(/(Bonjour|Bonsoir), Michael/);
- await expect(page.locator('.ms-personal-message')).toContainText('Promis, aucune ne mord');
+ await expect(page.locator('[data-greeting]')).toContainText(/(Bonjour|Bonsoir), Michael/);
+ await expect(page.locator('[data-welcome-message]')).toContainText('Promis, aucune ne mord');
  await expect(page.getByRole('heading',{name:'Mes outils',exact:true})).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
- const greeting=await page.locator('.ms-personal-greeting').boundingBox();const title=await page.getByRole('heading',{name:'Mes outils',exact:true}).boundingBox();expect(title!.y).toBeGreaterThan(greeting!.y);
+ const greeting=await page.locator('[data-greeting]').boundingBox();const title=await page.getByRole('heading',{name:'Mes outils',exact:true}).boundingBox();expect(title!.y).toBeGreaterThan(greeting!.y);
  await page.screenshot({path:`test-results/accounts/personal-welcome-${width}.png`,fullPage:true,animations:'disabled'});
 });
 
@@ -413,7 +413,7 @@ for(const width of [390,1440]) test(`one paid tool offers a next step instead of
  await expect(page.locator('.ms-inventory-heading .ms-save-indicator')).toHaveAttribute('title','Stack saved');
  await expect(page.locator('.ms-page > .ms-empty-autosave')).toHaveCount(0);
  await expect(page.locator('.mf-balance')).toHaveCount(0);await expect(page.locator('.mf-fit')).toHaveCount(0);
- if(width>760){await expect.poll(async()=>{const price=await page.locator('.mf-price').boundingBox();const next=await page.locator('.mf-starter-next').boundingBox();return Math.abs(price!.y-next!.y);}).toBeLessThan(3);}
+ if(width>760){await expect.poll(async()=>{const price=await page.locator('[data-card="price"]').boundingBox();const next=await page.locator('.mf-starter-next').boundingBox();return Math.abs(price!.y-next!.y);}).toBeLessThan(3);}
  await page.screenshot({path:`test-results/accounts/starter-space-${width}.png`,fullPage:true,animations:'disabled'});
  await page.getByRole('button',{name:'Add another tool',exact:true}).click();
  await expect(page.getByRole('searchbox',{name:'Add a tool to my stack'})).toBeVisible();
@@ -426,7 +426,7 @@ test('general header sign-in opens the personal stack',async({page,request})=>{
  await emailForm(page,'header-return@example.invalid','fixture-password');
  await page.locator('.ac-form').getByRole('button',{name:'Sign in',exact:true}).click();
  await expect(page).toHaveURL(/\/en\/ma-stack$/);
- await expect(page.locator('.ms-personal-greeting')).toContainText('Michael');
+ await expect(page.locator('[data-greeting]')).toContainText('Michael');
 });
 
 
@@ -465,9 +465,9 @@ for (const lang of ['fr', 'en'] as const) test(`${lang}: default OAuth opens the
  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
  const pendingLog=(await control(request,'state')).requests;
  expect(pendingLog.some((r:{path:string;method:string})=>r.path==='/api/account-profile'&&r.method==='GET')).toBe(true);
- await expect(page.locator('.so, .ms-tool, .ms-welcome')).toHaveCount(0);
+ await expect(page.locator('.so, .tt-toolcard, .ms-welcome')).toHaveCount(0);
  await expect(page.locator('.ms-arrival')).toBeHidden({timeout:10000});
- await expect(page.locator('.ms-tool')).toHaveCount(1);
+ await expect(page.locator('.tt-toolcard')).toHaveCount(1);
  const log=(await control(request,'state')).requests;
  expect(log.filter((r:{path:string;method:string})=>r.path==='/api/stack-account'&&r.method==='GET')).toHaveLength(1);
 });
@@ -498,7 +498,7 @@ test('a slow stack route module retains the same arrival presentation', async ({
   await expect(page.locator('.ms-arrival')).toBeVisible();
   await expect(page.getByRole('heading',{name:'My stack',exact:true})).toBeVisible();
  } finally { release(); }
- await expect(page.locator('.ms-tool')).toHaveCount(1);
+ await expect(page.locator('.tt-toolcard')).toHaveCount(1);
 });
 
 for (const width of [390,1440]) test(`switching stack language ${width} keeps the document, account and saved state`, async ({page,request}) => {
@@ -513,7 +513,7 @@ for (const width of [390,1440]) test(`switching stack language ${width} keeps th
  }else await page.getByRole('link',{name:'Site in English. Switch to French',exact:true}).click();
  await expect(page).toHaveURL('/fr/ma-stack');
  expect(await page.evaluate(()=>(window as unknown as {languageMarker?:string}).languageMarker)).toBe('same-document');
- await expect(page.locator('.ms-tool')).toHaveCount(1);await saved(page,'fr');
+ await expect(page.locator('.tt-toolcard')).toHaveCount(1);await saved(page,'fr');
  expect((await control(request,'state')).requests.filter((r:{path:string})=>r.path==='/api/stack-account'||r.path==='/api/account-profile').length).toBe(before);
 });
 
@@ -638,7 +638,7 @@ for(const lang of ['fr','en'] as const) test(`all-free stack ${lang}: compact bu
  await page.setViewportSize({width:1440,height:900});await page.goto(`/${lang}/ma-stack`);await login(page,lang,`free-only-${lang}@example.invalid`);await saved(page,lang);
  await expect(page.locator('.mu-card')).toBeVisible();
  await expect(page.locator('.mf-grid')).toHaveCSS('grid-template-areas','"price fit"');
- await expect.poll(async()=>{const price=await page.locator('.mf-price').boundingBox();const review=await page.locator('.mu-card').boundingBox();return Math.abs(price!.y-review!.y);}).toBeLessThan(2);
+ await expect.poll(async()=>{const price=await page.locator('[data-card="price"]').boundingBox();const review=await page.locator('.mu-card').boundingBox();return Math.abs(price!.y-review!.y);}).toBeLessThan(2);
  await expect.poll(async()=>(await page.locator('.mu-card').boundingBox())!.height).toBeGreaterThanOrEqual(289); // no-scroll contract: 290px is a floor
  await expect(page.locator('.mu-card')).toContainText(lang==='fr'?'Votre stack, sans abonnement payant.':'Your stack has no paid plans.');
  await expect(page.locator('.mf-balance')).toHaveCount(0);
@@ -829,7 +829,7 @@ for(const lang of ['en','fr'] as const) for(const width of [320,1440]) test(`inv
  await expect(card.getByRole('textbox')).toBeVisible();
  expect(await card.locator('.mf-now-q h3').evaluate(el=>getComputedStyle(el).paddingRight)).toBe('0px');
  expect((await snapshot(page)).billing.choices.github).toBeUndefined();
- expect(await page.locator('.mf-price .mk-odo').first().getAttribute('aria-label')).toMatch(/200/);
+ expect(await page.locator('[data-card="price"] .mk-odo').first().getAttribute('aria-label')).toMatch(/200/);
  await expect(card.getByRole('combobox',{name:en?'Invoice currency':'Devise de facture'})).toHaveValue('USD');
  await card.getByRole('textbox').fill(en?'12.50':'12,50');
  await card.getByRole('combobox').selectOption('GBP');
@@ -850,7 +850,7 @@ for(const lang of ['en','fr'] as const) for(const width of [320,1440]) test(`inv
  await card.getByRole('button',{name:en?'Save':'Enregistrer',exact:true}).click();await saved(page,lang);
  expect((await snapshot(page)).billing.choices.github).toEqual({source:'custom',amount:12.5,currency:'GBP',period:'monthly'});
  expect((await snapshot(page)).billing.choices.cursor?.seats).toBe(5);
- await expect(page.locator('.mf-price')).toContainText('2026-08-27');
+ await expect(page.locator('[data-card="price"]')).toContainText('2026-08-27');
  await page.reload();await saved(page,lang);
  expect((await snapshot(page)).billing.choices.github?.currency).toBe('GBP');
  // Restore unknown price to exercise the explicit direct-editor link.
@@ -880,7 +880,7 @@ for(const lang of ['en','fr'] as const) for(const width of [320,1440]) test(`inv
 test('invoice zero can become paid again and editor cancellation restores a visible focus target',async({page,request})=>{
  const value=state(['notion','vercel']);value.billing={paid:['notion'],reviewed:['notion','vercel'],choices:{notion:{source:'custom',amount:0,currency:'USD',period:'monthly'}}};
  await control(request,'seed',{email:'zero-invoice@example.invalid',state:value});await page.goto('/en/ma-stack');await login(page,'en','zero-invoice@example.invalid');await saved(page);
- await page.locator('.ms-inv').getByRole('button',{name:/^Notion,/}).click();const sheet=page.getByRole('dialog');
+ await page.locator('#ms-all-grid').getByRole('button',{name:/^Notion,/}).click();const sheet=page.getByRole('dialog');
  const paid=sheet.getByRole('switch',{name:'Paid subscription for Notion',exact:true});await expect(paid).toHaveAttribute('aria-checked','false');await paid.click();
  await expect(paid).toHaveAttribute('aria-checked','true');expect((await snapshot(page)).billing.choices.notion).toBeUndefined();
  const adjust=sheet.getByRole('button',{name:'Edit my subscription'});await adjust.click();
@@ -892,7 +892,7 @@ test('invoice zero can become paid again and editor cancellation restores a visi
 
 test('invoice draft cannot cross a personal-stack scope change',async({page,request})=>{
  const first=state(['github','vercel']);first.billing={paid:['github'],reviewed:['github','vercel'],choices:{github:{source:'custom',amount:15,currency:'USD',period:'monthly'}}};
- await control(request,'seed',{email:'scope-invoice@example.invalid',state:first});await page.goto('/en/ma-stack');await login(page,'en','scope-invoice@example.invalid');await saved(page);await page.locator('.ms-inv').getByRole('button',{name:/^GitHub,/}).click();
+ await control(request,'seed',{email:'scope-invoice@example.invalid',state:first});await page.goto('/en/ma-stack');await login(page,'en','scope-invoice@example.invalid');await saved(page);await page.locator('#ms-all-grid').getByRole('button',{name:/^GitHub,/}).click();
  const sheet=page.getByRole('dialog');await sheet.getByRole('button',{name:'Edit my subscription'}).click();
  await sheet.getByLabel('Billed amount',{exact:true}).fill('111');
  const second=state(['github','vercel']);second.billing={paid:['github'],reviewed:['github','vercel'],choices:{github:{source:'custom',amount:29,currency:'GBP',period:'monthly'}}};
@@ -905,5 +905,5 @@ test('invoice draft cannot cross a personal-stack scope change',async({page,requ
 test('invoice native cents remain visible in the recorded budget',async({page,request})=>{
  const value=state(['cursor','github','vercel']);value.billing={paid:['cursor','github'],reviewed:['cursor','github','vercel'],choices:{cursor:{source:'plan',label:'Teams',amount:40,currency:'USD',period:'monthly',perSeat:true,seats:5},github:{source:'custom',amount:12.5,currency:'USD',period:'monthly'}}};
  await control(request,'seed',{email:'cents-invoice@example.invalid',state:value});await page.goto('/en/ma-stack');await login(page,'en','cents-invoice@example.invalid');await saved(page);
- await expect(page.locator('.mf-price .mk-odo').first()).toHaveAttribute('aria-label','$212.50');
+ await expect(page.locator('[data-card="price"] .mk-odo').first()).toHaveAttribute('aria-label','$212.50');
 });

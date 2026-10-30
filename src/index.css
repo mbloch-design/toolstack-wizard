@@ -7135,8 +7135,6 @@
 /* Sprint 26 — homepage flow: section rhythm without full-width separators */
 
 /* Sprint 27 — hero audit preview as precise decision object */
-@layer components {
-}
 
 /* Sprint 28 — homepage conversion copy hierarchy */
 @layer components {
@@ -7946,21 +7944,10 @@ section[id]:not(.cp-guide-section) {
 /* ── 1. Baseline ────────────────────────────────────────── */
 .tt-footer-tagline {
   margin: 0 0 var(--space-md);
-  font-family: var(--font-brand);
-  font-size: clamp(30px, 3.2vw, 44px);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
-  color: var(--tt-footer-text);
 }
 .tt-footer-intro {
   margin: 0;
   max-width: 56ch;
-  font-family: var(--font-ui);
-  font-size: var(--tt-size-body);
-  line-height: 1.55;
-  letter-spacing: -0.015em;
-  color: var(--tt-footer-muted);
 }
 .tt-footer-actions {
   display: flex;
@@ -8018,11 +8005,6 @@ section[id]:not(.cp-guide-section) {
   gap: 14px;
 }
 .tt-footer-col-label {
-  font-family: var(--font-ui);
-  font-size: var(--tt-size-fact-compact);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  color: var(--tt-footer-muted);
   margin-bottom: 4px;
 }
 .tt-footer-col a {
@@ -8053,12 +8035,6 @@ section[id]:not(.cp-guide-section) {
   border-top: 1px solid var(--tt-footer-border);
 }
 .tt-footer-partners-label {
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--tt-footer-muted);
   white-space: nowrap;
 }
 .tt-footer-badges {
@@ -8091,11 +8067,6 @@ section[id]:not(.cp-guide-section) {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  font-family: var(--font-ui);
-  font-size: var(--tt-size-fact-compact);
-  font-weight: 450;
-  letter-spacing: -0.01em;
-  color: var(--tt-footer-muted);
 }
 .tt-footer-legal a {
   color: var(--tt-footer-muted);
@@ -12392,32 +12363,20 @@ section[id]:not(.cp-guide-section) {
   gap: 8px;
   min-width: 0;
   overflow: hidden;
-  font-family: var(--font-ui);
-  font-size: 14px;
 }
 .asv2-topbar-breadcrumb > a {
   flex: 0 0 auto;
-  color: color-mix(in srgb, var(--color-text) 62%, var(--color-muted));
-  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
-}
-.asv2-topbar-breadcrumb > a:hover {
-  color: var(--color-text);
-  font-weight: 600;
 }
 .asv2-topbar-breadcrumb > span {
   flex: 0 1 auto;
   overflow: hidden;
-  color: var(--color-muted);
-  font-weight: 500;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .asv2-topbar-breadcrumb > span:last-child {
   flex-shrink: 1;
-  color: var(--color-text-strong);
-  font-weight: 650;
 }
 
 .asv2-topbar-right {
@@ -17459,9 +17418,7 @@ img[data-logo-loading] {
 
   .ms-tool { display: flex; align-items: center; text-align: left; gap: var(--space-sm); min-width: 0; width: 100%; padding: var(--space-xs) var(--space-sm); border-radius: var(--tt-surface-radius-info); background: transparent; transition: background 160ms ease; }
 
-  .ms-tool:hover, .ms-tool--selected { background: hsl(var(--secondary)); }
-
-  .ms-tool--selected { outline: 1px solid hsl(var(--border)); }
+  .ms-tool:hover { background: hsl(var(--secondary)); }
   .ms-storage-notice { font-size: var(--tt-size-card-body); line-height: 1.5; margin-bottom: var(--space-lg); }
 
   .ms-unavailable { margin-top: var(--space-xl); }
@@ -17478,9 +17435,6 @@ img[data-logo-loading] {
   }
   @media (prefers-reduced-motion: reduce) {
   .ms-tool { transition: none; } }
-}
-
-@layer components {
 }
 /* ── Ma stack : repasse design (7 oct.) ──
    Même ton que la fiche outil : surfaces plates, filets fins, pilules,
@@ -17634,7 +17588,6 @@ img[data-logo-loading] {
 /* My tools: quiet Add and Edit actions instead of a hero CTA. */
 .ms-page .ms-tools-actions { display: flex; gap: 8px; }
 /* Edit mode, iOS home screen: cards wiggle, a minus badge removes. */
-.ms-page .ms-card-wrap { position: relative; display: grid; min-width: 0; }
 .ms-page .ms-card-remove { position: absolute; top: -8px; left: -8px; z-index: 2; display: grid; place-items: center; width: 26px; height: 26px; border-radius: var(--radius-circle); background: var(--color-text); color: #fff; box-shadow: 0 2px 6px rgba(15, 15, 15, .25); animation: ms-badge-in 260ms cubic-bezier(.34, 1.56, .64, 1) both; }
 .ms-page .ms-card-remove:hover { background: #d70015; }
 .ms-page .ms-card-remove:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
@@ -18089,7 +18042,6 @@ img[data-logo-loading] {
    block, rows separated by an inset hairline, no per-row card, shadow or
    tint; price on one quiet line, chevron at the end. */
 @media (max-width: 640px) {
-  .ms-page .ms-card-wrap { animation: none; }
   .ms-page .ms-card-id strong { font-size: 15px; font-weight: 600; }
   .ms-page .ms-card-id span { font-size: 12.5px; }
 }
@@ -18182,22 +18134,21 @@ img[data-logo-loading] {
 .tt-footer .tt-footer-logo { display: inline-flex; margin-bottom: 28px; border-radius: var(--radius-2xs); }
 .tt-footer .tt-footer-logo img { display: block; width: 96px; height: auto; }
 .dark .tt-footer .tt-footer-logo img { filter: invert(1); }
-.tt-footer .tt-footer-tagline { margin: 0 0 14px; font: 600 30px/1.1 var(--font-ui); letter-spacing: -.03em; }
-.tt-footer .tt-footer-intro { max-width: 40ch; font: 400 15px/1.55 var(--font-ui); letter-spacing: -.005em; color: var(--tt-footer-link); }
+.tt-footer .tt-footer-tagline { margin: 0 0 14px; }
+.tt-footer .tt-footer-intro { max-width: 40ch; }
 .tt-footer .tt-footer-actions { justify-content: flex-start; }
 .tt-footer .tt-footer-action { font: 500 14px/1 var(--font-ui); }
 
 /* Link columns: a title, then links at reading size. */
 .tt-footer .tt-footer-nav { grid-column: 5 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 24px; row-gap: 40px; align-content: start; }
 .tt-footer .tt-footer-col { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; min-width: 0; }
-.tt-footer .tt-footer-col-label { margin-bottom: 4px; font: 600 14px/1.3 var(--font-ui); letter-spacing: -.01em; color: var(--tt-footer-ink); }
+.tt-footer .tt-footer-col-label { margin-bottom: 4px; }
 .tt-footer .tt-footer-col a { font: 400 15px/1.4 var(--font-ui); letter-spacing: -.01em; color: var(--tt-footer-link); text-decoration: none; transition: color 160ms ease; }
 .tt-footer .tt-footer-col a:hover { color: var(--tt-footer-ink); }
 
 /* Badges: a labelled strip between two hairlines, uniform cells, grey until
    hovered. */
 .tt-footer .tt-footer-partners { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 12px 24px; align-items: center; padding: 24px 0; border-top: 1px solid var(--tt-footer-border); }
-.tt-footer .tt-footer-partners-label { font: 600 14px/1.3 var(--font-ui); letter-spacing: -.01em; text-transform: none; color: var(--tt-footer-ink); }
 .tt-footer .tt-footer-badges { display: contents; }
 .tt-footer .tt-footer-badge { display: flex; align-items: center; justify-content: flex-start; height: 32px; min-width: 0; opacity: .6; filter: grayscale(1); transition: opacity 160ms ease, filter 160ms ease; }
 .tt-footer .tt-footer-badge:hover, .tt-footer .tt-footer-badge:focus-visible { opacity: 1; filter: none; }
@@ -18206,7 +18157,7 @@ img[data-logo-loading] {
 
 /* Legal rail: the last line of the page, legal left, language right. */
 .tt-footer .tt-footer-rail { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 20px 0 32px; border-top: 1px solid var(--tt-footer-border); }
-.tt-footer .tt-footer-legal { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font: 400 13px/1.4 var(--font-ui); color: var(--tt-footer-muted); }
+.tt-footer .tt-footer-legal { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
 .tt-footer .tt-footer-legal a { font: inherit; color: inherit; text-decoration: none; }
 .tt-footer .tt-footer-legal a:hover { color: var(--tt-footer-ink); }
 .tt-footer .tt-footer-linkbutton { appearance: none; border: 0; background: none; padding: 0; cursor: pointer; font: inherit; color: inherit; }
@@ -18237,7 +18188,6 @@ img[data-logo-loading] {
 }
 @media (max-width: 640px) {
   .tt-footer .tt-footer-main { row-gap: 48px; padding-bottom: 48px; }
-  .tt-footer .tt-footer-tagline { font-size: 28px; }
   .tt-footer .tt-footer-actions { flex-direction: column; align-items: stretch; }
   .tt-footer .tt-footer-action { width: 100%; }
   .tt-footer .tt-footer-col { gap: 4px; }
@@ -18708,9 +18658,7 @@ img[data-logo-loading] {
 
 /* ── Footer in the home's voice (29 Oct 2026): display slogan, ink text,
    the hero's call pair (ink pill + quiet arrow link), lighter column titles. */
-.tt-footer .tt-footer-tagline { font: 500 clamp(28px, 2.6vw, 36px)/1.08 var(--font-brand); letter-spacing: -.035em; color: var(--color-text-strong); }
 .tt-footer .tt-footer-promise { color: var(--color-text-strong); font: 400 16px/1.5 var(--font-ui); letter-spacing: -.01em; }
-.tt-footer .tt-footer-col-label { color: var(--color-text-strong); font: 500 14px/1.3 var(--font-ui); letter-spacing: -.005em; }
 .tt-footer .tt-footer-nav a { color: var(--color-text-strong); font: 400 15px/1.4 var(--font-ui); }
 .tt-footer .tt-footer-nav a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 .tt-footer .tt-footer-actions { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: var(--space-xs) var(--space-xl); }
@@ -18719,7 +18667,6 @@ img[data-logo-loading] {
 .tt-footer .tt-footer-action--secondary { min-height: 36px; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; color: var(--color-text-strong); font: 500 15px/1 var(--font-ui); letter-spacing: -.01em; }
 .tt-footer .tt-footer-action--secondary:hover { background: none; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 .tt-footer .tt-footer-action:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 3px; }
-.tt-footer .tt-footer-partners-label { color: var(--color-text-strong); font-weight: 500; }
 
 /* Comparisons (29 Oct 2026, take 5): the question is the duel. Each logo
    sits inside the sentence at text height (as Apple sets small product
@@ -18856,10 +18803,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 @layer components {
-  .ms-explore-stack { align-self: flex-start; margin-top: var(--space-md); min-height: 44px; gap: var(--space-xs); }
-}
-
-@layer components {
   .ms-page .ms-budget-other { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--color-border); }
   .ms-page .ms-budget-other h3 { margin: 0; font-size: 14px; font-weight: 600; }
   .ms-page .ms-budget-other .ms-budget-other-list { margin-top: 16px; }
@@ -18915,15 +18858,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page :is(.ms-top, .mf, .ms-board, .ms-howto, .ms-mod--add) { font-family: var(--ap-font); }
 
 /* ── Hero: a status line, the title, one sentence. ─────────────────────── */
-.ms-page .ms-top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-md) var(--space-lg); margin: var(--space-sm) 0 var(--space-2xl); }
-.ms-page .ms-top > div:first-child { flex: 1 1 420px; }
-.ms-page .ms-top-status { display: inline-flex; align-items: center; gap: var(--space-xs); margin: 0 0 var(--space-sm); color: var(--ms-meta); font: 600 13px/1 var(--ap-font); }
-.ms-page .ms-top-status i { width: 6px; height: 6px; border-radius: var(--radius-circle); background: var(--color-live); }
-.ms-page .ms-top h1 { margin: 0; color: var(--ms-ink); font: 600 48px/1 var(--ap-display); letter-spacing: -.045em; }
-.ms-page .ms-top p:not(.ms-top-status) { max-width: 58ch; margin: var(--space-sm) 0 0; color: var(--ms-meta); font: 400 17px/1.4 var(--ap-font); letter-spacing: -.01em; }
-.ms-page .ms-top .ms-explore-stack { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 40px; padding: 0 var(--space-md); border-radius: var(--radius-pill); background: var(--ms-tile); color: var(--ms-ink); font: 500 14px/1 var(--ap-font); text-decoration: none; transition: background-color 180ms ease; }
-.ms-page .ms-top .ms-explore-stack:hover { background: var(--ms-track); }
-.ms-page .ms-top .ms-explore-stack:focus-visible { outline: 2px solid var(--ms-ink); outline-offset: 2px; }
 
 /* ── Kit ────────────────────────────────────────────────────────────────── */
 .ms-page .mk-app { position: relative; display: grid; flex: none; place-items: center; width: 36px; height: 36px; border-radius: var(--radius); background: var(--color-logo-plate, var(--color-surface)); box-shadow: 0 0 0 .5px rgb(0 0 0 / .08); }
@@ -18984,12 +18918,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf-t { margin: var(--space-xs) 0 0; color: var(--ms-text2); font: 400 15px/1.45 var(--ap-font); letter-spacing: -.005em; }
 
 /* Price: the figure, the split by tool in data colours, a quiet verdict. */
-.ms-page .mf-price .mk-figure { font-size: clamp(60px, 6.4vw, 84px); }
 @keyframes mk-grow { from { transform: scaleX(0); } }
-.ms-page .mf-empty { margin: var(--space-lg) 0; color: var(--ms-meta); font-size: 15px; }
-.ms-page .mf-verdict { display: flex; align-items: flex-start; gap: var(--space-xs); margin: auto 0 0; padding-top: var(--space-md); box-shadow: inset 0 1px 0 var(--ms-line); color: var(--ms-text2); font: 400 14px/1.4 var(--ap-font); }
-.ms-page .mf-verdict svg { flex: none; margin-top: 2px; }
-.ms-page .mf-verdict b { color: var(--ms-ink); font-weight: 600; }
 
 /* The decision: colour, not black (22/10/2026). A bright wash of its tools'
    brand colours, Apple "pop"; ink type on top. The card's own tokens are
@@ -19015,12 +18944,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    Price               | balance (wide)  | what if */
 .ms-page .mf-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, .95fr); grid-template-rows: minmax(250px, auto) minmax(210px, auto); align-items: stretch; }
 .ms-page .mf-card { padding: var(--space-lg); }
-.ms-page .mf-price { grid-column: 1; grid-row: 1 / span 2; }
 .ms-page .mf-now { grid-column: 2 / span 2; grid-row: 1; }
 .ms-page .mf-balance { grid-column: 2 / span 2; grid-row: 2; }
 .ms-page .mf-grid:not(:has(.mf-queue-card)) .mf-now { grid-column: 2 / span 3; }
 .ms-page .mf-grid:not(:has(.mf-whatif)) .mf-balance { grid-column: 2 / span 3; }
-.ms-page .mf-price .mk-figure { font-size: clamp(48px, 4.6vw, 64px); }
 .ms-page .mf-card h3 { font-size: 20px; }
 .ms-page .mf-now .mf-t { font-size: 14px; }
 .ms-page .mf-now .mf-vs { padding-top: var(--space-md); gap: 6px; font-size: 13px; }
@@ -19028,16 +18955,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Balance: a small radar beside the ranked areas. */
 /* Height budget: the bottom row is as tall as its content, the list shows 4. */
 .ms-page .mf-grid { grid-template-rows: auto auto; }
-.ms-page .mf-price .mf-verdict { margin-top: auto; }
 /* Price rows: the row fills with the tool's share (a storage bar you read as a list). */
-.ms-page .mf-shares { display: grid; gap: var(--space-xs); margin: var(--space-lg) 0 0; padding: 0; list-style: none; }
-.ms-page .mf-shares li { position: relative; display: grid; grid-template-columns: 24px minmax(0, 1fr) auto auto; align-items: center; gap: var(--space-sm); min-height: 44px; padding: 0 var(--space-md) 0 var(--space-sm); overflow: hidden; border-radius: var(--radius-lg); background: var(--ms-card); isolation: isolate; }
-.ms-page .mf-shares li::before { content: ""; position: absolute; inset: 0 auto 0 0; z-index: -1; width: var(--w); background: color-mix(in srgb, var(--c) 20%, var(--ms-card)); box-shadow: inset -3px 0 0 var(--c); transform-origin: left; animation: mk-grow 800ms var(--ms-ease) both; animation-delay: calc(var(--i, 0) * 80ms); }
-.ms-page .mf-shares-logo { display: grid; place-items: center; }
-.ms-page .mf-shares-logo > * { border-radius: var(--radius-xs); }
-.ms-page .mf-shares-logo i { width: 10px; height: 10px; border-radius: var(--radius-circle); background: var(--c); }
-.ms-page .mf-shares-name { overflow: hidden; color: var(--ms-ink); font: 500 15px/1.2 var(--ap-font); text-overflow: ellipsis; white-space: nowrap; }
-.ms-page .mf-shares b { color: var(--ms-ink); font: 600 16px/1 var(--ap-display); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 /* Balance: a large bare radar, its legend beside it in bigger type. */
 .ms-page .mf-balance .mk-radar { max-width: 230px; }
 /* What if: say what it does, then tap a tool to take it out. */
@@ -19045,7 +18963,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Price rows: logo, name, amount and share, then the share as a bar in the row's colour. */
 /* Block icons: a small tinted chip per block, the one twist of colour on each label. */
 .ms-page .mf-k.tt-kicker > svg { display: grid; box-sizing: content-box; width: 14px; height: 14px; padding: 6px; border-radius: var(--radius); background: color-mix(in srgb, var(--k, var(--ms-ink)) 12%, transparent); color: var(--k, var(--ms-ink)); }
-.ms-page .mf-price .mf-k { --k: var(--color-chart-create); }
 .ms-page .mf-now .mf-k { --k: var(--a1); }
 .ms-page .mf-balance .mf-k { --k: var(--color-chart-automation); }
 .ms-page .mf-card:hover .mf-k > svg { animation: mf-wiggle 500ms ease; }
@@ -19118,16 +19035,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* ── The stack: title bar, lenses, map or list ───────────────────────────── */
 .ms-page .ms-board { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
 .ms-page .ms-board > * { min-width: 0; }
-.ms-page .ms-stage-bar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-md); margin-bottom: var(--space-lg); }
-.ms-page .ms-stage-title { margin: 0; color: var(--ms-ink); font: 600 32px/1.1 var(--ap-display); letter-spacing: -.035em; }
-.ms-page .ms-stage-bar .ms-tools-actions { display: flex; gap: var(--space-xs); order: 2; margin-left: auto; }
-.ms-page .ms-stage-bar::after { content: ""; order: 2; flex-basis: 100%; height: 0; }
 
 /* Map: one lane per area on a grey tile; the tools are white pills. */
 
 /* List: a grey tile, hairline rows. */
-.ms-page .ms-card-wrap { position: relative; }
-.ms-page .ms-card-wrap + .ms-card-wrap::before { content: ""; position: absolute; top: 0; left: 72px; right: var(--space-xl); height: 1px; background: var(--ms-line); }
 .ms-page .mk-row-lead { display: flex; }
 .ms-page .mk-row-text { display: grid; gap: 3px; min-width: 0; }
 .ms-page .mk-row-text > span { overflow: hidden; font: 500 15px/1.3 var(--ap-font); letter-spacing: -.01em; text-overflow: ellipsis; white-space: nowrap; }
@@ -19163,7 +19074,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 @media (max-width: 860px) {
   .ms-page .mf-grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
-  .ms-page .mf-price, .ms-page .mf-now { grid-row: auto; grid-column: auto; }
+  .ms-page .mf-now { grid-row: auto; grid-column: auto; }
   .ms-page .mf-now { min-height: 260px; }
   .ms-page .mf-stage { position: static; margin-bottom: var(--space-md); }
   .ms-page .mf-now .mf-k, .ms-page .mf-now h3, .ms-page .mf-now .mf-t { margin-right: 0; }
@@ -19173,14 +19084,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf-vs div { grid-template-columns: 110px minmax(0, 1fr) 72px; }
 }
 @media (max-width: 760px) {
-  .ms-page .ms-top { margin-bottom: var(--space-xl); }
-  .ms-page .ms-top h1 { font-size: 38px; }
-  .ms-page .ms-top p:not(.ms-top-status) { font-size: 16px; }
   .ms-page .mf-card { padding: var(--space-lg); }
-  .ms-page .ms-stage-title { flex: 1 0 100%; font-size: 28px; }
-  .ms-page .ms-stage-bar .ms-tools-actions { width: 100%; margin-left: 0; }
-  .ms-page .ms-stage-bar .ms-tools-actions .mk-button { flex: 1; }
-  .ms-page .ms-card-wrap + .ms-card-wrap::before { left: 64px; right: var(--space-lg); }
 }
 
 @layer components {
@@ -20950,9 +20854,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 @layer components {
-}
-
-@layer components {
   .ms-page--start { max-width: 1120px; }
   .ms-empty-autosave { display: flex; align-items: center; gap: 8px; margin: 28px 0 0; font-size: 13px; line-height: 1.5; color: var(--color-text-meta, var(--color-text-meta)); }
   .ac-page--transition { display: grid; place-items: center; min-height: min(65vh, 600px); padding-block: 48px; }
@@ -21549,27 +21450,9 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 /* Findings, compaction pass (22/10/2026): higher specificity than the earlier
    blocks so the internal layouts hold; rows stacked where columns are narrow. */
-.ms-page .mf .mf-shares { gap: 6px; margin-top: var(--space-md); }
-.ms-page .mf .mf-shares li { grid-template-columns: 22px minmax(0, 1fr) auto; min-height: 46px; padding: 0 var(--space-md) 0 var(--space-sm); }
-.ms-page .mf .mf-shares-name { display: grid; gap: 2px; font-size: 14.5px; }
-.ms-page .mf .mf-shares-name small { color: var(--ms-meta); font: 500 11.5px/1 var(--ap-font); }
 .ms-page .mf .mf-balance .mk-radar { max-width: 180px; }
 .ms-page .mf .mf-balance .mk-radar { max-width: 160px; }
 /* Price list: clean rows (logo, name, amount), a thin share bar under the name. */
-.ms-page .mf .mf-shares { display: grid; gap: var(--space-sm); margin: var(--space-lg) 0 0; padding: 0; list-style: none; }
-.ms-page .mf .mf-shares li { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; grid-template-areas: "logo name amount" "logo bar pct"; align-items: center; column-gap: var(--space-sm); row-gap: 6px; min-height: 0; padding: 0; overflow: visible; background: none; }
-.ms-page .mf .mf-shares li::before { content: none; }
-.ms-page .mf .mf-shares-logo { grid-area: logo; display: grid; place-items: center; width: 32px; height: 32px; border-radius: var(--radius); background: var(--color-logo-plate, var(--color-surface)); box-shadow: inset 0 0 0 1px var(--ms-line); }
-.ms-page .mf .mf-shares-name { grid-area: name; display: block; overflow: hidden; color: var(--ms-ink); font: 500 15px/1.2 var(--ap-font); text-overflow: ellipsis; white-space: nowrap; }
-.ms-page .mf .mf-shares li b { grid-area: amount; color: var(--ms-ink); font: 600 16px/1 var(--ap-display); letter-spacing: -.02em; text-align: right; font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-shares-bar { grid-area: bar; position: relative; height: 4px; border-radius: var(--radius-pill); background: var(--ms-track); overflow: hidden; }
-.ms-page .mf .mf-shares-bar i { position: absolute; inset: 0 auto 0 0; width: var(--w); border-radius: inherit; background: var(--c); transform-origin: left; animation: mk-grow 800ms var(--ms-ease) both; animation-delay: calc(var(--i, 0) * 80ms); }
-.ms-page .mf .mf-shares li small { grid-area: pct; color: var(--ms-meta); font: 500 11.5px/1 var(--ap-font); text-align: right; font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-others { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); margin: var(--space-md) 0 0; color: var(--ms-meta); font: 500 13.5px/1.2 var(--ap-font); }
-.ms-page .mf .mf-others b { color: var(--ms-ink); font: 600 15px/1 var(--ap-display); font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-others-logos { display: flex; }
-.ms-page .mf .mf-others-logos > span { display: grid; place-items: center; width: 26px; height: 26px; margin-left: -6px; border-radius: var(--radius-sm); background: var(--color-logo-plate, var(--color-surface)); box-shadow: 0 0 0 2px var(--ms-tile); }
-.ms-page .mf .mf-others-logos > span:first-child { margin-left: 0; }
 /* Radar, fine and delicate: hairline rings, no spokes fill, a light veil, small dots. */
 .ms-page .mf .mk-radar-ring { stroke: color-mix(in srgb, var(--ms-ink) 9%, transparent); stroke-width: .6; stroke-dasharray: 1.5 2.5; fill: none; }
 .ms-page .mf .mk-radar-ring:last-of-type { stroke-dasharray: none; fill: none; }
@@ -21603,8 +21486,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-k.tt-kicker { margin-bottom: var(--space-sm); }
 .ms-page .mf .mf-card.mf-now h3 { margin: 0 0 var(--space-md); padding-right: 0; color: var(--ms-ink); font: 500 17px/1.3 var(--ap-font); letter-spacing: -.01em; }
 .ms-page .mf .mf-card.mf-now h3 { margin-bottom: 4px; padding-right: 150px; font: 600 22px/1.2 var(--ap-display); letter-spacing: -.02em; }
-.ms-page .mf .mf-price .mf-shares { margin-top: var(--space-md); }
-.ms-page .mf .mf-price .mf-others { margin-bottom: var(--space-md); }
 .ms-page .mf .mf-now .mf-bar-actions { margin-top: auto; }
 .ms-page .mf .mf-now .mf-t { margin-bottom: var(--space-md); }
 .ms-page .mf .mf-cheaper-row { grid-template-columns: minmax(0, 1fr) auto; padding: var(--space-xs) var(--space-md); }
@@ -21653,7 +21534,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     grid-template-areas: "price now now health" "price now now cheaper" "bal bal bal bal";
     align-items: stretch;
   }
-  .ms-page .mf .mf-grid > .mf-price { grid-area: price; }
   .ms-page .mf .mf-grid > .mf-now { grid-area: now; }
   .ms-page .mf .mf-grid > .mf-balance { grid-area: bal; height: auto; }
 
@@ -21671,9 +21551,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-balance .mk-radar { max-width: 190px; }
   .ms-page .mf .mf-now { display: flex; flex-direction: column; }
   .ms-page .mf .mf-now .mf-bar-actions { margin-top: auto; padding-top: var(--space-md); }
-}
-@media (min-width: 1181px) {
-  .ms-page .mf .mf-price .mf-shares { gap: var(--space-sm); }
 }
 @media (max-width: 760px) {
   .ms-page .mf .mf-balance .mk-radar { max-width: 240px; }
@@ -21719,30 +21596,11 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* À vérifier: a progress line, what waits with its reason, the checked ones as icons. */
 
 /* ===== All my tools: a grid of cards ===== */
-.ms-page .ms-all .ms-stage-bar .ms-tools-actions { margin-left: auto; }
 
 /* Ma Stack discovery reuses the catalogue media card and stack section controls. */
 @layer components {
   .tce-media-context { margin: var(--space-xs) 0 0; color: var(--color-text-secondary); font: 400 var(--tt-size-card-body)/1.45 var(--font-ui); }
-  .ms-page .ms-recos-sub { margin: var(--space-xs) 0 0; color: var(--color-text-secondary); font: 400 var(--tt-size-body)/1.45 var(--font-ui); max-width: 60ch; }
-  .ms-page .ms-recos .ms-stage-bar { align-items: flex-end; justify-content: space-between; gap: var(--space-lg); }
-  .ms-page .ms-recos-more { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; flex-shrink: 0; color: var(--color-text); font: 500 var(--tt-size-card-body)/1.3 var(--font-ui); text-decoration: underline; text-underline-offset: var(--space-2xs); }
-  .ms-page .ms-recos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: var(--space-lg); margin: 0; padding: 0; list-style: none; }
-  .ms-page .ms-reco { min-width: 0; }
-  .ms-page .ms-recos .tce-hover-action { min-width: 44px; min-height: 44px; }
-  .ms-page .ms-recos .tce-card--media .tc-image { aspect-ratio: 16 / 10; }
-  .ms-page .ms-discovery-renew { display: flex; justify-content: center; margin-top: var(--space-lg); }
-  .ms-page .ms-discovery-renew .mk-button { min-height: 44px !important; } /* Legacy unlayered kit sets 40px. */
-  .ms-page .ms-discovery-empty { margin: 0; color: var(--color-text-secondary); font: 400 var(--tt-size-body)/1.5 var(--font-ui); }
-  @media (max-width: 760px) {
-    .ms-page .ms-recos .ms-stage-bar { align-items: flex-start; flex-direction: column; gap: var(--space-sm); }
-    .ms-page .ms-recos-grid { display: flex; overflow-x: auto; scroll-snap-type: x proximity; scroll-padding-inline: var(--space-2xs); overscroll-behavior-x: contain; padding: var(--space-2xs) var(--space-2xs) var(--space-sm); scrollbar-width: thin; }
-    .ms-page .ms-recos-grid > li { flex: 0 0 86%; scroll-snap-align: start; }
-  }
-}
-
-@media (max-width: 760px) {
-  .ms-page .ms-all .ms-stage-bar .ms-tools-actions { margin-left: 0; }
+  .ms-page .ms-reco { min-width: 0; } /* Legacy unlayered kit sets 40px. */
 }
 .ms-page .ms-sort { position: relative; display: inline-flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 30px 0 14px; border-radius: 99px; background: var(--ms-tile); color: var(--ms-meta); font: 500 14px/1 var(--ap-font); cursor: pointer; }
 .ms-page .ms-sort select { appearance: none; border: 0; background: none; color: var(--ms-ink); font: inherit; font-weight: 600; cursor: pointer; outline: none; }
@@ -21808,70 +21666,22 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 /* ===== Ma stack inventory (23/10): one card, two layouts, groups with subtotals ===== */
-.ms-page .ms-all-sum { margin: 6px 0 0; color: var(--ms-meta); font: 500 15px/1.3 var(--ap-font); font-variant-numeric: tabular-nums; }
-.ms-page .ms-all .ms-stage-bar { align-items: flex-end; justify-content: space-between; }
 .ms-page .ms-inv-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-sm); margin-bottom: var(--space-lg); }
 .ms-page .ms-inv-tools { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs); }
 .ms-page .ms-inv-filters button[data-id="review"] span { color: var(--ms-alert); }
 .ms-page .ms-inv-filters button[data-id="overlap"] span { color: var(--ms-overlap); }
-.ms-page .ms-inv { display: grid; gap: var(--space-xl); }
-.ms-page .ms-inv-head { display: flex; align-items: center; gap: var(--space-xs); margin-bottom: var(--space-sm); }
-.ms-page .ms-inv-head i { width: 8px; height: 8px; border-radius: 50%; }
-.ms-page .ms-inv-head h3 { margin: 0; color: var(--ms-ink); font: 600 16px/1.2 var(--ap-font); }
-.ms-page .ms-inv-head span { color: var(--ms-meta); font: 500 14px/1.2 var(--ap-font); font-variant-numeric: tabular-nums; }
-.ms-page .ms-inv-empty { margin: 0; padding: var(--space-xl); border-radius: var(--ms-r); background: var(--ms-tile); color: var(--ms-meta); text-align: center; }
 
 /* The card: same five pieces in both layouts. */
-.ms-page .ms-inv-card { position: relative; width: 100%; height: 100%; border: 0; background: var(--ms-tile); color: var(--ms-ink); font: inherit; text-align: left; cursor: pointer; transition: transform 200ms var(--ms-ease), box-shadow 200ms ease, background-color 160ms ease; }
-.ms-page .ms-inv-name { overflow: hidden; font: 600 15px/1.25 var(--ap-font); text-overflow: ellipsis; }
-.ms-page .ms-inv-area { display: inline-flex; align-items: center; gap: 6px; min-width: 0; overflow: hidden; color: var(--ms-meta); font: 400 13px/1.2 var(--ap-font); white-space: nowrap; text-overflow: ellipsis; }
-.ms-page .ms-inv-area i { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--ms-meta); }
-.ms-page .ms-inv-cost { font: 600 15px/1 var(--ap-display); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.ms-page .ms-inv-cost[data-tone="free"] { color: var(--ms-meta); font-weight: 500; }
-.ms-page .ms-inv-cost[data-tone="unknown"] { color: var(--ms-alert); }
-.ms-page .ms-inv-status { justify-self: start; padding: 3px 9px; border-radius: 99px; font: 500 12px/1.2 var(--ap-font); white-space: nowrap; }
-.ms-page .ms-inv-status[data-status="ok"] { background: var(--ms-good-soft); color: var(--ms-good); }
-.ms-page .ms-inv-status[data-status="review"] { background: color-mix(in srgb, var(--ms-alert) 12%, var(--ms-card)); color: var(--ms-alert); }
-.ms-page .ms-inv-status[data-status="overlap"] { background: color-mix(in srgb, var(--ms-overlap) 12%, var(--ms-card)); color: var(--ms-overlap); }
-.ms-page .ms-inv-card:focus-visible { outline: 2px solid var(--ms-ink); outline-offset: 2px; }
 
 /* Grid: cards. */
-.ms-page .ms-inv[data-layout="grid"] .ms-inv-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-sm); }
-.ms-page .ms-inv[data-layout="grid"] .ms-inv-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "logo cost" "name name" "area area" "status status"; align-items: start; row-gap: 6px; padding: var(--space-md); border-radius: var(--radius-xl); }
-.ms-page .ms-inv[data-layout="grid"] .ms-inv-logo { grid-area: logo; margin-bottom: var(--space-xs); }
-.ms-page .ms-inv[data-layout="grid"] .ms-inv-cost { grid-area: cost; }
-.ms-page .ms-inv[data-layout="grid"] .ms-inv-name { grid-area: name; white-space: nowrap; }
-.ms-page .ms-inv[data-layout="grid"] .ms-inv-area { grid-area: area; }
-.ms-page .ms-inv[data-layout="grid"] .ms-inv-status { grid-area: status; margin-top: 4px; }
-.ms-page .ms-inv[data-layout="grid"] .ms-inv-card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -16px rgb(0 0 0 / .3); }
 
 /* List: rows in columns, Outil · Domaine · Coût · Statut. */
-.ms-page .ms-inv[data-layout="list"] .ms-inv-items { display: grid; overflow: hidden; border-radius: var(--ms-r); background: var(--ms-tile); }
-.ms-page .ms-inv[data-layout="list"] .ms-card-wrap + .ms-card-wrap { box-shadow: inset 0 1px 0 var(--ms-line); }
-.ms-page .ms-inv[data-layout="list"] .ms-inv-card { display: grid; grid-template-columns: 36px minmax(0, 1.4fr) minmax(0, 1fr) 110px 110px; align-items: center; gap: var(--space-md); min-height: 60px; padding: 8px var(--space-lg); border-radius: 0; background: none; }
-.ms-page .ms-inv[data-layout="list"] .ms-inv-card:hover { background: var(--ms-hover); }
-.ms-page .ms-inv[data-layout="list"] .ms-inv-name { white-space: nowrap; }
-.ms-page .ms-inv[data-layout="list"] .ms-inv-cost { justify-self: end; }
-.ms-page .ms-inv[data-layout="list"] .ms-inv-status { justify-self: end; }
-.ms-page .ms-inv .ms-card-wrap { position: relative; }
-.ms-page .ms-inv .ms-tool--selected { box-shadow: inset 0 0 0 2px var(--ms-ink); }
 
 @media (max-width: 760px) {
   .ms-page .ms-inv-bar { align-items: stretch; }
   .ms-page .ms-inv-tools { width: 100%; }
   .ms-page .ms-inv-tools .ms-sort { flex: 1; }
-  .ms-page .ms-inv[data-layout="grid"] .ms-inv-items { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xs); }
-  .ms-page .ms-inv[data-layout="grid"] .ms-inv-card { padding: var(--space-sm); }
-  .ms-page .ms-inv[data-layout="list"] .ms-inv-card { grid-template-columns: 32px minmax(0, 1fr) auto; grid-template-areas: "logo name cost" "logo area status"; row-gap: 4px; column-gap: var(--space-sm); padding: 10px var(--space-md); }
-  .ms-page .ms-inv[data-layout="list"] .ms-inv-logo { grid-area: logo; }
-  .ms-page .ms-inv[data-layout="list"] .ms-inv-name { grid-area: name; }
-  .ms-page .ms-inv[data-layout="list"] .ms-inv-area { grid-area: area; }
-  .ms-page .ms-inv[data-layout="list"] .ms-inv-cost { grid-area: cost; }
-  .ms-page .ms-inv[data-layout="list"] .ms-inv-status { grid-area: status; }
 }
-.ms-page .ms-inv[data-grouped][data-layout="grid"] .ms-inv-area { display: none; }
-.ms-page .ms-inv[data-grouped][data-layout="grid"] .ms-inv-card { grid-template-areas: "logo cost" "name name" "status status"; }
-.ms-page .ms-inv[data-grouped][data-layout="list"] .ms-inv-area { visibility: hidden; }
 
 /* The decision block reads as the one place to act (23/10): the only raised
    white card of the bento, a fine ring in the rare ToolTrim blue, a filled label. */
@@ -21906,32 +21716,18 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-fit > .mf-k { --k: var(--ms-good); }
 
 /* Budget bar, like iPhone storage. */
-.ms-page .mf .mf-bb { margin-top: var(--space-md); }
-.ms-page .mf .mf-bb-bar { display: flex; gap: 2px; height: 14px; overflow: hidden; border-radius: 99px; background: var(--ms-track); }
-.ms-page .mf .mf-bb-bar i { min-width: 4px; transition: opacity 200ms ease, transform 200ms var(--ms-ease); transform-origin: center; animation: mf-bb-grow 800ms var(--ms-ease) both; }
-.ms-page .mf .mf-bb[data-active] .mf-bb-bar i:not([data-on]) { opacity: .25; }
 @keyframes mf-bb-grow { from { transform: scaleX(0); } }
 
 /* Right size. */
-@media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-bb-bar i { animation: none; } }
 /* Icon in the label row, at the right: never over the headline. */
 .ms-page .mf .mf-card > .mf-k { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); min-height: 36px; padding-right: 0; }
 .ms-page .mf .mf-card > .mf-k > svg { position: static; order: 2; flex: none; width: 36px; height: 36px; padding: 9px; }
 .ms-page .mf .mf-now > .mf-k { justify-content: flex-start; }
 /* Tighter rows: the bento stays as short as its content. */
 .ms-page .mf .mf-fit .mf-t, .ms-page .mf .mf-balance .mf-t { font-size: 14px; }
-.ms-page .mf .mf-price .mf-shares { gap: 10px; }
 /* Three views of the split. */
 .ms-page .mf .mf-bb-views { margin-bottom: var(--space-md); }
 .ms-page .mf .mf-bb-views button { min-height: 30px; padding: 0 12px; font-size: 13px; }
-.ms-page .mf .mf-bb-radar { display: grid; place-items: center; }
-.ms-page .mf .mf-bb-radar .mk-radar { width: 100%; max-width: 260px; overflow: visible; }
-.ms-page .mf .mf-bb-ring { position: relative; display: grid; place-items: center; }
-.ms-page .mf .mf-bb-ring .mk-donut { width: 180px; height: 180px; }
-.ms-page .mf .mf-bb-ring .mk-donut circle { stroke-width: 12; fill: none; transition: opacity 200ms ease; }
-.ms-page .mf .mf-bb-ring-c { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; pointer-events: none; }
-.ms-page .mf .mf-bb-ring-c b { color: var(--ms-ink); font: 600 26px/1 var(--ap-display); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-bb-ring-c small { margin-top: 4px; color: var(--ms-meta); font: 500 12px/1.2 var(--ap-font); }
 
 /* Face-off, playful (23/10): big logos, a lift on hover, and a choice that
    feels good: the kept face lights up with a check, the other swipes away,
@@ -21944,111 +21740,45 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @keyframes mf-gone { to { transform: translateX(calc(var(--dir, 1) * 120%)) rotate(calc(var(--dir, 1) * 14deg)); opacity: 0; } }
 @keyframes mf-gain { 0% { transform: translate(-50%, 10px) scale(.8); opacity: 0; } 30% { transform: translate(-50%, -6px) scale(1.06); opacity: 1; } 100% { transform: translate(-50%, -26px) scale(1); opacity: 0; } }
 /* Total reliability, as a meter: a ring, one dot per tool, the next question on tap. */
-.ms-page .mf .mf-trust { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; gap: var(--space-sm); width: 100%; margin: var(--space-sm) 0 0; padding: 10px var(--space-sm); border: 0; border-radius: var(--radius-lg); background: var(--ms-card); color: var(--ms-ink); font: inherit; text-align: left; }
-.ms-page .mf button.mf-trust { cursor: pointer; transition: box-shadow 160ms ease, transform 160ms ease; }
-.ms-page .mf button.mf-trust:hover { box-shadow: inset 0 0 0 1.5px var(--color-accent); transform: translateY(-1px); }
-.ms-page .mf .mf-trust-ring { width: 40px; height: 40px; transform: rotate(-90deg); }
-.ms-page .mf .mf-trust-ring circle { fill: none; stroke-width: 4; stroke: var(--ms-track); }
-.ms-page .mf .mf-trust-ring circle + circle { stroke: var(--ms-alert); stroke-linecap: round; transition: stroke-dasharray 700ms var(--ms-ease); }
-.ms-page .mf .mf-trust[data-exact] .mf-trust-ring circle + circle { stroke: var(--ms-good); }
-.ms-page .mf .mf-trust-text { display: grid; gap: 3px; min-width: 0; }
-.ms-page .mf .mf-trust-text b { font: 600 14px/1.2 var(--ap-font); }
-.ms-page .mf .mf-trust-text small { color: var(--ms-meta); font: 400 12.5px/1.3 var(--ap-font); }
-.ms-page .mf .mf-trust-dots { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 3px; }
-.ms-page .mf .mf-trust-dots i { width: 7px; height: 7px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--ms-alert); }
-.ms-page .mf .mf-trust-dots i[data-sure] { background: var(--ms-good); box-shadow: none; }
 .ms-page .mf .mf-now[data-flash] { animation: mf-flash 900ms ease-out; }
 @keyframes mf-flash { 0% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-accent) 40%, transparent), 0 18px 40px -22px rgb(0 0 0 / .4); } 100% { } }
 
 /* Text architecture shared by the cards (23/10): label + icon, figure, sentence, detail. */
 .ms-page .mf .mf-card > .mf-k { width: 100%; }
-.ms-page .mf .mf-lead { display: grid; gap: 6px; margin-top: var(--space-sm); }
-.ms-page .mf .mf-lead h3 { display: grid; gap: 4px; margin: 0; }
-.ms-page .mf .mf-lead-fig { color: var(--ms-ink); font: 600 40px/1 var(--ap-display); letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-lead-say { color: var(--ms-ink); font: 500 17px/1.3 var(--ap-font); letter-spacing: -.01em; text-wrap: balance; }
-.ms-page .mf .mf-lead-sub { margin: 0; color: var(--ms-meta); font: 400 14px/1.45 var(--ap-font); text-wrap: pretty; }
-.ms-page .mf .mf-fit .mf-lead-fig { color: var(--ms-good); }
 /* The view switch sits at the top right of the chart, out of the reading path. */
-.ms-page .mf .mf-bb { position: relative; margin-top: var(--space-lg); }
 .ms-page .mf .mf-bb-views { display: flex; justify-content: flex-end; margin: 0 0 var(--space-sm) auto; width: max-content; }
 
 /* Compact price card (23/10): one line per tool, a bar chart read as a table. */
-.ms-page .mf .mf-price .mf-shares { display: grid; gap: 0; margin-top: var(--space-md); }
-.ms-page .mf .mf-price .mf-shares li { display: grid; grid-template-columns: 24px minmax(0, 1.2fr) minmax(36px, 1fr) auto 34px; align-items: center; column-gap: var(--space-xs); min-height: 34px; padding: 0; }
-.ms-page .mf .mf-price .mf-shares-logo { grid-column: 1; grid-row: 1; width: 24px; height: 24px; }
-.ms-page .mf .mf-price .mf-shares-logo > * { width: 24px !important; height: 24px !important; }
-.ms-page .mf .mf-price .mf-shares-name { grid-column: 2; grid-row: 1; overflow: hidden; font: 500 14px/1.2 var(--ap-font); text-overflow: ellipsis; white-space: nowrap; }
-.ms-page .mf .mf-price .mf-shares-bar { grid-column: 3; grid-row: 1; position: static; width: auto; height: 6px; margin: 0; border-radius: 99px; background: var(--ms-track); overflow: hidden; }
-.ms-page .mf .mf-price .mf-shares-bar i { display: block; width: var(--w); min-width: 3px; height: 100%; border-radius: inherit; background: var(--c); }
-.ms-page .mf .mf-price .mf-shares li > b { grid-column: 4; grid-row: 1; justify-self: end; font: 600 14px/1 var(--ap-display); font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-price .mf-shares li > small { grid-column: 5; grid-row: 1; justify-self: end; color: var(--ms-meta); font: 500 11.5px/1 var(--ap-font); font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-price .mf-others { min-height: 34px; margin: 2px 0 0; }
 /* Reliability on one line: ring, figure, what is left. */
-.ms-page .mf .mf-trust { grid-template-columns: 28px minmax(0, 1fr); gap: var(--space-xs); margin-top: var(--space-xs); padding: 8px 10px; }
-.ms-page .mf .mf-trust-ring { width: 28px; height: 28px; }
-.ms-page .mf .mf-trust-dots { display: none; }
-.ms-page .mf .mf-trust-text { gap: 1px; }
-.ms-page .mf .mf-trust-text b { font-size: 13.5px; }
-.ms-page .mf .mf-trust-text small { font-size: 12px; }
 /* Big logos stay inside their slot. */
 /* Compact lower row (23/10). */
-.ms-page .mf .mf-lead-fig { font-size: 32px; }
-.ms-page .mf .mf-lead-say { font-size: 15.5px; }
-.ms-page .mf .mf-lead-sub { font-size: 13px; }
-.ms-page .mf .mf-lead { margin-top: var(--space-xs); gap: 4px; }
 .ms-page .mf .mf-balance > .mf-k > svg { display: none; }
-.ms-page .mf .mf-balance .mf-bb { position: static; margin-top: var(--space-md); }
 .ms-page .mf .mf-balance { position: relative; }
 .ms-page .mf .mf-balance .mf-bb-views { position: absolute; top: var(--space-xl); right: var(--space-xl); margin: 0; }
 .ms-page .mf .mf-bb-views button { min-height: 28px; padding: 0 10px; font-size: 12.5px; }
-.ms-page .mf .mf-bb-ring .mk-donut { width: 150px; height: 150px; }
-.ms-page .mf .mf-bb-radar .mk-radar { max-width: 220px; }
 .ms-page .mf .mf-now .mf-bar-actions, .ms-page .mf .mf-now[data-kind="pair"] .mf-bar-actions { padding-top: var(--space-sm); }
-.ms-page .mf .mf-price .mf-shares li::before, .ms-page .mf .mf-price .mf-shares li::after { content: none !important; display: none !important; }
-.ms-page .mf .mf-price .mf-shares li { position: relative; min-height: 40px; background: none; }
-.ms-page .mf .mf-price .mf-shares-bar { position: relative !important; inset: auto !important; }
-.ms-page .mf .mf-price .mf-shares-bar i { position: static !important; }
 .ms-page .mf .mf-balance > .mf-k { padding-right: 200px; }
 .ms-page .mf .mf-balance .mf-bb-views { top: calc(var(--space-xl) - 2px); }
-.ms-page .mf .mf-price .mf-shares li { grid-template-columns: 24px minmax(0, 1fr) 72px 56px 34px; }
 
 /* Bento v7 (23/10): price beside the decision on the first row; the split,
    wide, beside optimisation on the second. The wide split puts its chart on
    the left and the legend on the right. */
 @media (min-width: 1181px) {
   .ms-page .mf .mf-grid { grid-template-areas: "price now now" "bal bal fit"; }
-  .ms-page .mf .mf-balance .mf-bb { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: var(--space-xl); align-items: center; }
-  .ms-page .mf .mf-balance .mf-bb-bar, .ms-page .mf .mf-balance .mf-bb-radar, .ms-page .mf .mf-balance .mf-bb-ring { grid-column: 1; grid-row: 1 / span 2; }
-  .ms-page .mf .mf-balance .mf-bb-bar { height: 18px; }
 }
-.ms-page .mf .mf-price .mf-shares li { grid-template-columns: 24px minmax(0, 1fr) 52px 50px 30px; }
 @media (min-width: 1181px) {
   .ms-page .mf .mf-now[data-kind="pair"] .mf-duel { margin-top: var(--space-lg); }
 }
 @media (min-width: 1181px) {
   .ms-page .mf .mf-balance { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); grid-template-rows: auto 1fr; column-gap: var(--space-xl); align-items: start; }
   .ms-page .mf .mf-balance > .mf-k { grid-column: 1 / -1; }
-  .ms-page .mf .mf-balance > .mf-lead { grid-column: 1; grid-row: 2; }
-  .ms-page .mf .mf-balance > .mf-bb { grid-column: 2; grid-row: 2; display: block; margin-top: var(--space-xs); }
 }
 
 /* Above the fold (23/10): the title is one line, the bento fits under it. */
-.ms-page .ms-top { align-items: center; margin: 0 0 var(--space-md); }
-.ms-page .ms-top > div:first-child { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px var(--space-md); }
-.ms-page .ms-top h1 { font-size: 30px; letter-spacing: -.035em; }
-.ms-page .ms-top-status { margin: 0; }
-.ms-page .ms-top .ms-explore-stack { margin: 0; min-height: 36px; }
 
 /* ===== Above the fold (23/10): summaries, detail on demand ===== */
 .ms-page .mf .mf-expand { display: none; }
 .ms-page .mf .mf-card { padding: var(--space-lg); }
-.ms-page .mf .mf-price .mk-figure { font-size: clamp(44px, 4.2vw, 60px); }
-.ms-page .mf .mf-others { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-xs); width: 100%; min-height: 34px; padding: 0; border: 0; background: none; color: var(--ms-meta); font: 500 13.5px/1 var(--ap-font); text-align: left; cursor: pointer; }
-.ms-page .mf .mf-others:hover span:not(.mf-others-logos) { color: var(--ms-ink); text-decoration: underline; text-underline-offset: 3px; }
-.ms-page .mf .mf-others b { color: var(--ms-ink); font: 600 14px/1 var(--ap-display); }
-.ms-page .mf .mf-less { margin-top: 4px; font-size: 13px; }
-.ms-page .mf .mf-verdict { margin-top: var(--space-sm); }
-.ms-page .mf .mf-fit .mf-lead-sub { display: none; }
 @media (min-width: 761px) {
   /* Compact face-off: two faces side by side, logo left, the choice right. */
   .ms-page .mf .mf-now[data-kind="pair"] .mf-face-name { grid-column: 2; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -22063,18 +21793,13 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-card > .mf-k > svg { display: none; }
   .ms-page .mf .mf-card { padding: var(--space-md); }
   .ms-page .mf .mf-card:not([data-open]) > :not(.mf-k):not(.mf-lead):not(h3):not(.mk-figure):not(.mf-now-q) { display: none; }
-  .ms-page .mf .mf-card:not([data-open]) .mf-lead-sub { display: none; }
-  .ms-page .mf .mf-card:not([data-open]) .mf-lead { margin-top: 0; }
-  .ms-page .mf .mf-card:not([data-open]) .mf-lead-fig { font-size: 26px; }
-  .ms-page .mf .mf-card:not([data-open]).mf-price .mk-figure { font-size: 40px; }
   .ms-page .mf .mf-card:not([data-open]).mf-now h3 { margin-bottom: 0; font-size: 19px; }
   .ms-page .mf .mf-grid { gap: var(--space-xs); }
 }
 /* Tablet and phone: one column for the phone, two for the tablet; the
    decision comes first on a phone so the action is in the first screen. */
 @media (max-width: 1180px) {
-  .ms-page .mf .mf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-template-areas: "price now" "bal fit"; }
-  .ms-page .mf .mf-grid > .mf-price { grid-area: price; } .ms-page .mf .mf-grid > .mf-now { grid-area: now; }
+  .ms-page .mf .mf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-template-areas: "price now" "bal fit"; } .ms-page .mf .mf-grid > .mf-now { grid-area: now; }
   .ms-page .mf .mf-grid > .mf-balance { grid-area: bal; } .ms-page .mf .mf-grid > .mf-fit { grid-area: fit; }
 }
 @media (max-width: 760px) {
@@ -22084,17 +21809,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Short screens: tighter figures and lines, so both rows stay above the fold. */
 @media (min-width: 761px) and (max-height: 860px) {
   .ms-page .mf .mf-card { padding: var(--space-md) var(--space-lg); }
-  .ms-page .mf .mf-price .mk-figure { font-size: 48px; }
-  .ms-page .mf .mf-price .mf-shares li { min-height: 32px; }
-  .ms-page .mf .mf-trust { padding: 6px 10px; }
-  .ms-page .mf .mf-trust-text small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .ms-page .mf .mf-lead-fig { font-size: 28px; }
-  .ms-page .mf .mf-lead-sub { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
   .ms-page .mf .mf-now h3 { font-size: 21px; }
   .ms-page .mf .mf-card > .mf-k { min-height: 30px; }
   .ms-page .mf .mf-card > .mf-k > svg { width: 30px; height: 30px; padding: 7px; }
 }
-.ms-page .mf .mf-trust-text small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @media (max-width: 1180px) { .ms-page .mf .mf-grid { grid-auto-rows: auto; } }
 @media (max-width: 760px) {
   .ms-page .mf .mf-balance > .mf-k { padding-right: 0; }
@@ -22105,13 +21823,12 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    The boxes keep their size; the content is designed to fit. Long content
    (lists, legend) scrolls inside its box. No drop shadow and no outline, as
    in the design system: contrast comes from fills. */
-.ms-page .mf .mf-card, .ms-page .mf .mf-grid > .mf-now, .ms-page .mf .mf-plan, .ms-page .mf .mf-trust { box-shadow: none !important; }
+.ms-page .mf .mf-card, .ms-page .mf .mf-grid > .mf-now, .ms-page .mf .mf-plan { box-shadow: none !important; }
 .ms-page .mf .mf-grid > .mf-now { background: var(--color-accent-soft); }
 .ms-page .mf .mf-now .mf-plan { background: var(--ms-card); transition: background-color 160ms ease, transform 200ms var(--ms-ease); }
 .ms-page .mf .mf-now .mf-plan:hover, .ms-page .mf .mf-now .mf-plan:focus-visible { background: color-mix(in srgb, var(--color-accent) 10%, var(--ms-card)); }
 .ms-page .mf .mf-now[data-flash] { animation: mf-flash-fill 900ms ease-out; }
 @keyframes mf-flash-fill { 0% { background: color-mix(in srgb, var(--color-accent) 22%, var(--ms-card)); } }
-.ms-page .mf button.mf-trust:hover { box-shadow: none; background: color-mix(in srgb, var(--color-accent) 8%, var(--ms-card)); }
 
 /* Live effect on the total, and the seat stepper. */
 .ms-page .mf .mf-preview { margin: var(--space-md) 0 0; color: var(--ms-text2, var(--ms-meta)); font: 400 14px/1.3 var(--ap-font); }
@@ -22136,31 +21853,13 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-grid { --row1: clamp(360px, calc((100svh - 220px) * .56), 380px); --row2: clamp(230px, calc((100svh - 220px) * .44), 290px); grid-template-rows: var(--row1) var(--row2); grid-auto-rows: auto; }
   .ms-page .mf .mf-grid > .mf-card { height: auto; min-height: 0; overflow: hidden; }
   /* Lists that can grow scroll inside their box. */
-  .ms-page .mf .mf-price .mf-shares { min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
-  .ms-page .mf .mf-price { min-height: 0; }
-  .ms-page .mf .mf-price .mf-shares { flex: 1 1 auto; }
   /* The chart has one size whatever the view. */
-  .ms-page .mf .mf-balance > .mf-bb { display: grid; grid-template-rows: 130px minmax(0, 1fr); align-items: center; min-height: 0; height: 100%; }
-  .ms-page .mf .mf-bb-bar { align-self: center; }
-  .ms-page .mf .mf-bb-radar, .ms-page .mf .mf-bb-ring { height: 130px; }
-  .ms-page .mf .mf-bb-radar .mk-radar { height: 130px; width: auto; max-width: none; }
-  .ms-page .mf .mf-bb-ring .mk-donut { width: 124px; height: 124px; }
-  .ms-page .mf .mf-bb-ring-c b { font-size: 20px; }
   .ms-page .mf .mf-balance { grid-template-rows: auto minmax(0, 1fr); }
 }
 @media (min-width: 761px) {
-  .ms-page .mf .mf-balance > .mf-bb { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 110px minmax(0, 1fr); align-content: start; }
   .ms-page .mf .mf-balance .mf-bb-views { grid-row: 1; }
-  .ms-page .mf .mf-balance .mf-bb-bar, .ms-page .mf .mf-balance .mf-bb-radar, .ms-page .mf .mf-balance .mf-bb-ring { grid-column: 1; grid-row: 2; }
-  .ms-page .mf .mf-bb-radar, .ms-page .mf .mf-bb-ring { height: 110px; }
-  .ms-page .mf .mf-bb-radar .mk-radar { height: 110px; }
-  .ms-page .mf .mf-bb-ring .mk-donut { width: 104px; height: 104px; }
-  .ms-page .mf .mf-bb-ring-c b { font-size: 17px; }
   /* In the price list, the "others" row closes the list; no row is ever cut. */
-  .ms-page .mf .mf-price .mf-shares { flex: 0 0 auto; overflow: visible; }
-  .ms-page .mf .mf-price[data-all] .mf-shares { flex: 1 1 auto; overflow-y: auto; }
 }
-@media (min-width: 761px) { .ms-page .mf .mf-price .mf-shares li { min-height: 36px; } .ms-page .mf .mf-price .mk-figure { margin-bottom: 0; } }
 .ms-page .mf .mf-now[data-step="seats"] > .mf-t { display: none; }
 .ms-page .mf .mf-seats { gap: var(--space-xs); padding: var(--space-sm) var(--space-md); }
 .ms-page .mf .mf-seats-row { gap: var(--space-sm); }
@@ -22229,57 +21928,19 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @media (min-width: 761px) {
   .ms-page .mf .mf-balance { position: relative; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); grid-template-rows: 36px minmax(0, 1fr); column-gap: var(--space-lg); row-gap: var(--space-sm); }
   .ms-page .mf .mf-balance > .mf-k { grid-column: 1 / -1; grid-row: 1; padding-right: 0; }
-  .ms-page .mf .mf-balance > .mf-lead { grid-column: 1; grid-row: 2; align-self: center; margin: 0; }
-  .ms-page .mf .mf-balance > .mf-bb { grid-column: 2; grid-row: 2; display: grid; grid-template-columns: var(--cell) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; column-gap: var(--space-lg); align-items: center; height: 100%; min-height: 0; margin: 0; padding: var(--space-md); border-radius: var(--radius-xl); background: var(--ms-card); --cell: min(150px, calc(var(--row2) - 110px)); }
   .ms-page .mf .mf-balance .mf-bb-views { position: absolute; top: var(--space-lg); right: var(--space-lg); margin: 0; }
-  .ms-page .mf .mf-balance .mf-bb-bar, .ms-page .mf .mf-balance .mf-bb-radar, .ms-page .mf .mf-balance .mf-bb-ring { grid-column: 1; grid-row: 1 / span 2; width: var(--cell); height: var(--cell); justify-self: center; }
-  .ms-page .mf .mf-balance .mf-less { grid-column: 2; grid-row: 2; justify-self: start; margin: 0; }
   /* Upright bar: segments stack from the bottom. */
-  .ms-page .mf .mf-balance .mf-bb-bar { flex-direction: column-reverse; width: 44px; height: var(--cell); border-radius: 14px; }
-  .ms-page .mf .mf-balance .mf-bb-bar i { min-width: 0; min-height: 4px; transform-origin: bottom; animation-name: mf-bb-rise; }
   @keyframes mf-bb-rise { from { transform: scaleY(0); } }
-  .ms-page .mf .mf-balance .mf-bb-radar .mk-radar { width: var(--cell); height: var(--cell); overflow: visible; }
-  .ms-page .mf .mf-balance .mf-bb-ring .mk-donut { width: var(--cell); height: var(--cell); }
-  .ms-page .mf .mf-balance .mf-bb-ring-c b { font-size: 18px; }
 }
 @media (min-width: 761px) {
-  .ms-page .mf .mf-balance > .mf-k .mf-k-label { margin-right: auto; }
   .ms-page .mf .mf-balance > .mf-k .mf-bb-views { position: static; margin: 0; }
-  .ms-page .mf .mf-balance > .mf-bb { grid-template-columns: auto minmax(0, 1fr); }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-bar { width: 44px; }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] { column-gap: var(--space-xl); }
 }
 @media (max-width: 760px) { .ms-page .mf .mf-balance > .mf-k .mf-bb-views { display: none; } .ms-page .mf .mf-balance[data-open] > .mf-k .mf-bb-views { display: flex; } }
 
 /* Split chart, legend as chips (23/10): the chart owns the panel. */
 @media (min-width: 761px) {
-  .ms-page .mf .mf-balance > .mf-bb { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto auto; row-gap: 6px; align-items: center; justify-items: center; padding: var(--space-sm) var(--space-md); --cell: calc(var(--row2) - 150px); }
-  .ms-page .mf .mf-balance .mf-bb-bar, .ms-page .mf .mf-balance .mf-bb-radar, .ms-page .mf .mf-balance .mf-bb-ring { grid-column: 1; grid-row: 1; }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-bar { flex-direction: row; width: 100%; height: 32px; border-radius: 10px; }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-bar i { display: grid; place-items: center; min-height: 0; min-width: 4px; transform-origin: left; animation-name: mf-bb-grow; }
-  .ms-page .mf .mf-bb-bar i span { color: #fff; font: 600 12px/1 var(--ap-font); font-variant-numeric: tabular-nums; }
-}
-.ms-page .mf .mf-bb-chips { display: flex; flex-wrap: wrap; gap: 4px; width: 100%; margin: 0; padding: 0; list-style: none; }
-.ms-page .mf .mf-bb-chips button { display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 10px 0 8px; border: 0; border-radius: 99px; background: var(--ms-tile); color: var(--ms-ink); font: 500 12.5px/1 var(--ap-font); cursor: pointer; transition: opacity 200ms ease, background-color 160ms ease; }
-.ms-page .mf .mf-bb-chips button[aria-pressed="true"] { background: var(--ms-ink); color: var(--ms-card); }
-.ms-page .mf .mf-bb-chips button[aria-pressed="true"] small { color: inherit; opacity: .7; }
-.ms-page .mf .mf-bb-chips i { width: 8px; height: 8px; border-radius: 3px; }
-.ms-page .mf .mf-bb-chips small { color: var(--ms-meta); font: 500 11.5px/1 var(--ap-font); font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-bb[data-active] .mf-bb-chips button:not([data-on]) { opacity: .45; }
-@media (min-width: 761px) {
-  .ms-page .mf .mf-balance > .mf-bb { --cell: calc(var(--row2) - 124px); justify-items: stretch; }
   /* Radar and ring: square cell on the left, chips stacked on the right, detail under them. */
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) { grid-template-columns: var(--cell) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; column-gap: var(--space-lg); }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) :is(.mf-bb-radar, .mf-bb-ring) { grid-column: 1; grid-row: 1 / span 2; width: var(--cell); height: var(--cell); }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips { grid-column: 2; grid-row: 1; flex-direction: column; flex-wrap: nowrap; align-self: center; gap: 2px; overflow-y: auto; max-height: 100%; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips button { width: 100%; min-height: 24px; background: none; padding: 0 6px; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips button span { flex: 1; overflow: hidden; text-align: left; text-overflow: ellipsis; white-space: nowrap; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips button[aria-pressed="true"] { background: var(--ms-tile); color: var(--ms-ink); }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-radar .mk-radar, .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-ring .mk-donut { width: var(--cell); height: var(--cell); }
   /* Bar: the bar across, the detail, the chips in rows. */
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto minmax(0, 1fr); align-content: center; row-gap: var(--space-sm); }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-bar { grid-row: 1; }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-chips { grid-row: 3; align-self: start; overflow-y: auto; max-height: 100%; }
 }
 
 /* Split charts that answer the pointer, and a legend made to be read (23/10). */
@@ -22295,34 +21956,11 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-radar-hit { fill: transparent; cursor: pointer; }
 .ms-page .mf .mf-radar-dot { stroke: var(--ms-card); stroke-width: 1.2; transition: r 200ms var(--ms-ease), opacity 200ms ease; pointer-events: none; }
 .ms-page .mf .mf-radar[data-active] .mf-radar-dot:not([data-on]) { opacity: .35; }
-.ms-page .mf .mf-bb-bar i { cursor: pointer; transition: opacity 200ms ease, filter 200ms ease; }
-.ms-page .mf .mf-bb-bar i[data-on] { filter: brightness(1.08); }
-.ms-page .mf .mf-bb-ring-c b { font-size: 22px; }
-.ms-page .mf .mf-bb-ring-c small { font-size: 12.5px; color: var(--ms-text2, var(--ms-meta)); }
 /* Legend: larger type, ink figures. */
-.ms-page .mf .mf-bb-chips button { min-height: 30px; font-size: 14px; }
-.ms-page .mf .mf-bb-chips small { color: var(--ms-ink); font-size: 13px; font-weight: 600; }
-.ms-page .mf .mf-bb-chips i { width: 10px; height: 10px; }
-@media (min-width: 761px) {
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips { gap: 4px; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips button { min-height: 28px; font-size: 14px; }
-}
-.ms-page .mf .mf-bb-bar i span { font-size: 13px; }
 @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-ring circle, .ms-page .mf .mf-radar-dot { transition: none; } }
 /* Chips: the amount only where the legend stands beside the chart. */
-.ms-page .mf .mf-bb-chip-amount { display: none; }
-@media (min-width: 761px) {
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) { grid-template-rows: minmax(0, 1fr); }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips { grid-row: 1; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips button { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto 34px; gap: 8px; min-height: 26px; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chip-amount { display: block; justify-self: end; color: var(--ms-ink); font: 600 14px/1 var(--ap-display); font-variant-numeric: tabular-nums; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips small { justify-self: end; color: var(--ms-meta); font-weight: 500; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips button[data-on] { background: var(--ms-tile); }
-}
 @media (min-width: 761px) {
   .ms-page .mf .mf-balance { grid-template-columns: minmax(0, .66fr) minmax(0, 1.34fr); }
-  .ms-page .mf .mf-balance > .mf-bb { --cell: calc(var(--row2) - 134px); }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips button { grid-template-columns: 10px minmax(0, 1fr) auto 32px; }
 }
 
 /* Radar labels, playful lead, and a micro-animation for every change of state (23/10). */
@@ -22331,7 +21969,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-radar-label[data-on] { fill: var(--ms-ink); font-weight: 700; }
 .ms-page .mf .mf-radar[data-active] .mf-radar-label:not([data-on]) { opacity: .45; }
 /* Entering a view: the chart zooms in; the radar unfolds from the centre, its dots pop one by one; the ring turns into place. */
-.ms-page .mf .mf-bb-stage { animation: mf-view-in 420ms cubic-bezier(.2, .8, .2, 1) both; }
 @keyframes mf-view-in { from { opacity: 0; transform: scale(.94); } }
 .ms-page .mf .mf-radar-shape { transform-box: view-box; transform-origin: 50px 50px; animation: mf-radar-in 620ms cubic-bezier(.3, 1.4, .5, 1) both; }
 @keyframes mf-radar-in { from { transform: scale(.1); opacity: 0; } }
@@ -22340,138 +21977,50 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-radar g:nth-of-type(4) { animation-delay: 480ms; } .ms-page .mf .mf-radar g:nth-of-type(n+5) { animation-delay: 540ms; }
 .ms-page .mf .mf-ring { animation: mf-ring-in 700ms cubic-bezier(.2, .8, .2, 1) both; }
 @keyframes mf-ring-in { from { transform: rotate(-70deg) scale(.9); opacity: 0; } }
-.ms-page .mf .mf-bb-chips li { animation: mf-in 360ms cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(120ms + var(--i, 0) * 50ms); }
-.ms-page .mf .mf-bb-ring-c b, .ms-page .mf .mf-bb-ring-c small { transition: opacity 160ms ease; }
-.ms-page .mf .mf-bb-chips button { transition: opacity 200ms ease, background-color 160ms ease, transform 200ms var(--ms-ease); }
-.ms-page .mf .mf-bb-chips button[data-on] { transform: translateX(2px); }
 /* Left zone: a playful tag, the figure in the lead area's colour, its tools as a fanned deck. */
-.ms-page .mf .mf-lead-tag { display: inline-flex; align-items: center; gap: 6px; margin: 0 0 4px; color: var(--lead, var(--ms-ink)); font: 600 12.5px/1 var(--ap-font); }
-.ms-page .mf .mf-lead-tag::before { content: ""; width: 8px; height: 8px; border-radius: 3px; background: var(--lead, var(--ms-ink)); animation: mf-pill 420ms cubic-bezier(.3, 1.8, .5, 1) both; }
-.ms-page .mf .mf-balance .mf-lead-fig { color: var(--lead, var(--ms-ink)); }
 @keyframes mf-deal { from { opacity: 0; transform: translateY(8px) rotate(0); } }
 @media (prefers-reduced-motion: reduce) {
-  .ms-page .mf .mf-bb-stage, .ms-page .mf .mf-radar-shape, .ms-page .mf .mf-radar g, .ms-page .mf .mf-ring, .ms-page .mf .mf-bb-chips li, .ms-page .mf .mf-lead-tag::before { animation: none; }
-  .ms-page .mf .mf-bb-chips button { transition: none; }
+  .ms-page .mf .mf-radar-shape, .ms-page .mf .mf-radar g, .ms-page .mf .mf-ring { animation: none; }
 }
 .ms-page .mf .mf-radar-label { font-size: 9px; }
 .ms-page .mf .mk-odo-sym { white-space: pre; }
 @media (max-width: 760px) { .ms-page .mf .mf-card:not([data-open]) :is(.mf-lead-deck, .mf-lead-tag) { display: none; } }
 @media (min-width: 761px) {
   /* Bar: centred in its zone; the chips carry the amount, the bar already shows the share. */
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] { grid-template-rows: auto auto auto; align-content: center; row-gap: var(--space-md); }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-bar { height: 40px; }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-chips { align-self: center; overflow: visible; max-height: none; }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-chip-amount { display: inline; color: var(--ms-ink); font: 600 13.5px/1 var(--ap-display); font-variant-numeric: tabular-nums; }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-chips small { display: none; }
   /* Radar and ring: a square cell as tall as the panel. */
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) { grid-template-columns: auto minmax(0, 1fr); }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) :is(.mf-bb-radar, .mf-bb-ring) { width: auto; height: 100%; aspect-ratio: 1; max-height: 100%; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) :is(.mf-radar, .mf-ring) { width: 100%; height: 100%; }
 }
 /* No stray movement: the detail line keeps its height when empty; chips do not shift. */
-.ms-page .mf .mf-bb-chips button[data-on] { transform: none; }
 /* View switch with icons; tag with its icon instead of a dot; the detail line is never cut. */
 .ms-page .mf .mf-bb-views button { display: inline-flex; align-items: center; gap: 6px; }
-.ms-page .mf .mf-lead-tag::before { content: none; }
-.ms-page .mf .mf-lead-tag svg { flex: none; animation: mf-pill 420ms cubic-bezier(.3, 1.8, .5, 1) both; }
-.ms-page .mf .mf-balance .mf-lead-sub { display: block; -webkit-line-clamp: unset; overflow: visible; }
 
 /* Pills carry the tools; optimisation reads like a little personality test (23/10). */
-.ms-page .mf .mf-bb-chip-tools { display: inline-flex; align-items: center; margin-left: 4px; }
-.ms-page .mf .mf-bb-chip-tools > span { display: inline-grid; margin-left: -4px; border-radius: 5px; box-shadow: 0 0 0 1.5px var(--ms-tile); }
-.ms-page .mf .mf-bb-chip-tools > span:first-child { margin-left: 0; }
-.ms-page .mf .mf-bb-chip-tools em { margin-left: 4px; color: var(--ms-meta); font: 600 11px/1 var(--ap-font); font-style: normal; }
-@media (min-width: 761px) {
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chip-tools { display: none; }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-chips button { min-height: 34px; padding: 0 12px 0 10px; }
-}
 /* Fit question card: one column, nothing overlaps; the step is dots in the label row. */
-.ms-page .mf .mf-fit .mf-k-label { margin-right: auto; }
-.ms-page .mf .mf-fit .mf-lead-fig { font-size: 28px; }
-.ms-page .mf .mf-fit .mf-lead { margin-top: 2px; }
 /* Three steps of use, side by side. */
 .ms-page .mf .mf-preview { grid-template-columns: auto auto 1em 6.4em 5em; }
 .ms-page .mf .mf-preview b { display: inline-flex; align-items: baseline; justify-content: flex-start; gap: 1px; text-align: left; }
 .ms-page .mf .mf-preview b small.mf-preview-unit { color: var(--ms-meta); font: 400 12.5px/1 var(--ap-font); }
-@media (min-width: 761px) { .ms-page .mf .mf-price .mf-shares li { min-height: 32px; } .ms-page .mf .mf-price .mf-trust { margin-top: 4px; } }
 
 /* Five-level usage gauge (23/10): rising bars, read against the power gauge above. */
 
 /* One surface per box (23/10): no box inside a box. Structure comes from
    space and type; only choices (tiles, pills) keep a fill, because they are buttons. */
-.ms-page .mf .mf-balance > .mf-bb { padding: 0; border-radius: 0; background: none; }
-.ms-page .mf .mf-trust, .ms-page .mf button.mf-trust { padding: 0; border-radius: 0; background: none; }
-.ms-page .mf button.mf-trust:hover { background: none; }
-.ms-page .mf button.mf-trust:hover .mf-trust-text b { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }
 .ms-page .mf .mf-seats { padding: 0; border-radius: 0; background: none; }
 
 /* Budget split, structured (23/10): two columns on one top line and one bottom line. */
-.ms-page .mf .mf-bb-title { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-sm); width: 100%; margin: 0; }
-.ms-page .mf .mf-bb-title span { color: var(--ms-ink); font: 600 14px/1.2 var(--ap-font); }
-.ms-page .mf .mf-bb-title b { display: inline-flex; align-items: baseline; gap: 1px; color: var(--ms-ink); font: 600 14px/1 var(--ap-display); font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-bb-title small { color: var(--ms-meta); font: 400 12px/1 var(--ap-font); }
-@media (min-width: 761px) {
-  .ms-page .mf .mf-balance > .mf-lead { display: flex; flex-direction: column; align-self: stretch; justify-content: flex-start; height: 100%; }
-  .ms-page .mf .mf-balance > .mf-bb { align-self: stretch; align-content: stretch; }
-  .ms-page .mf .mf-balance .mf-bb-title { grid-column: 1 / -1; grid-row: 1; align-self: start; padding-top: 1px; }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] { grid-template-rows: auto minmax(0, 1fr) auto; row-gap: var(--space-sm); align-content: stretch; }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-bar { grid-row: 2; align-self: center; }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-chips { grid-row: 3; align-self: end; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) { grid-template-rows: auto minmax(0, 1fr); row-gap: var(--space-sm); }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) :is(.mf-bb-radar, .mf-bb-ring) { grid-row: 2; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips { grid-row: 2; }
-}
 /* Pills are choices: a white fill on the grey card, the only fill left in the zone. */
-@media (min-width: 761px) { .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-chips button { background: var(--ms-card); } .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-chip-tools > span { box-shadow: 0 0 0 1.5px var(--ms-card); } }
 /* The pill for the small areas: same shape as the others, never wraps. */
-.ms-page .mf .mf-bb-chips { flex-wrap: wrap; }
-.ms-page .mf .mf-bb-rest-pill { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 12px 0 10px; border-radius: 99px; background: var(--ms-card); color: var(--ms-text2, var(--ms-meta)); font: 500 14px/1 var(--ap-font); white-space: nowrap; }
-.ms-page .mf .mf-bb-rest-pill[data-on] { color: var(--ms-ink); }
-.ms-page .mf .mf-bb-rest-dots { display: inline-flex; gap: 2px; }
-.ms-page .mf .mf-bb-rest-dots i { width: 6px; height: 10px; border-radius: 2px; transition: opacity 160ms ease, transform 200ms cubic-bezier(.3, 1.6, .5, 1); }
-.ms-page .mf .mf-bb-rest-pill[data-on] .mf-bb-rest-dots i:not([data-on]) { opacity: .3; }
-.ms-page .mf .mf-bb-rest-dots i[data-on] { transform: scaleY(1.3); }
-.ms-page .mf .mf-bb-rest .mf-bb-chip-amount { display: inline; color: var(--ms-ink); font: 600 13.5px/1 var(--ap-display); font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-bb-chips button { white-space: nowrap; }
 @media (min-width: 761px) {
   /* In the side list the rest is a row like the others. */
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-rest-pill { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto 32px; gap: 8px; width: 100%; min-height: 26px; padding: 0 6px; background: none; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-rest-dots { gap: 1px; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-rest-dots i { width: 3px; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-rest-pill .mf-bb-chip-amount { justify-self: end; font-size: 14px; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) .mf-bb-chips { overflow: visible; }
 }
 
 /* Lighter cards (23/10): smaller icon tiles everywhere, a lighter price card, a tighter optimisation card. */
 .ms-page .mf .mf-card > .mf-k > svg { width: 30px; height: 30px; padding: 7px; border-radius: 9px; background: color-mix(in srgb, var(--k, var(--ms-ink)) 9%, transparent); }
 .ms-page .mf .mf-card > .mf-k { min-height: 30px; }
 /* Price: lighter figure, a thin reliability ring, no rule above the saving. */
-@media (min-width: 761px) { .ms-page .mf .mf-price .mk-figure { font-size: clamp(40px, 3.6vw, 52px); letter-spacing: -.045em; } }
-.ms-page .mf .mf-price .mk-figure small { font-size: 15px; }
-.ms-page .mf .mf-trust { grid-template-columns: 18px minmax(0, 1fr); gap: 8px; align-items: start; }
-.ms-page .mf .mf-trust-ring { width: 18px; height: 18px; margin-top: 1px; }
-.ms-page .mf .mf-trust-ring circle { stroke-width: 5; }
-.ms-page .mf .mf-trust-text b { font-weight: 600; font-size: 13.5px; }
-.ms-page .mf .mf-trust-text small { font-size: 12.5px; }
-.ms-page .mf .mf-price .mf-shares-logo, .ms-page .mf .mf-price .mf-shares-logo > * { width: 22px !important; height: 22px !important; }
-.ms-page .mf .mf-price .mf-shares-name { font-weight: 450; }
-.ms-page .mf .mf-price .mf-shares li > b { font-weight: 550; }
-.ms-page .mf .mf-price .mf-shares-bar { height: 4px; }
-.ms-page .mf .mf-others-logos > span > * { width: 18px !important; height: 18px !important; }
-.ms-page .mf .mf-price .mf-verdict { margin-top: auto; padding-top: var(--space-sm); border-top: 0; font-size: 13px; }
 /* Optimisation: smaller lead, the question sits at the bottom, the gauge on one line with its label. */
-.ms-page .mf .mf-fit .mf-lead-fig { font-size: 24px; }
-.ms-page .mf .mf-fit .mf-lead-say { font-size: 14.5px; }
 .ms-page .mf .mf-card > .mf-k > svg { box-sizing: border-box; }
 /* Optimisation: the tool and its gauge follow the lead; the gauge grows to use the box. */
 /* One block, top-aligned, even gaps: title, bar, pills read as one unit (23/10). */
-@media (min-width: 761px) {
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] { grid-template-rows: auto auto auto; align-content: start; row-gap: var(--space-md); }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-bar { grid-row: 2; align-self: start; height: 44px; }
-  .ms-page .mf .mf-balance .mf-bb[data-view="bar"] .mf-bb-chips { grid-row: 3; align-self: start; }
-  .ms-page .mf .mf-balance > .mf-lead { justify-content: flex-start; }
-  .ms-page .mf .mf-balance > .mf-lead .mf-lead-tag { min-height: 20px; }
-}
 
 /* Decision, livelier (23/10): the tool on stage, tier icons, price gauges that fill. */
 .ms-page .mf .mf-now h3.mf-now-q { display: flex; align-items: center; gap: var(--space-sm); }
@@ -22495,19 +22044,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-preview span.mf-preview-delta { justify-self: end; margin: 0; animation-name: mf-fade; }
 @keyframes mf-fade { from { opacity: 0; } }
 /* Price head, airier (23/10): the figure breathes; reliability is a quiet line under it. */
-.ms-page .mf .mf-price .mk-figure { margin: var(--space-sm) 0 0; line-height: .95; }
-.ms-page .mf .mf-price .mk-figure small { margin-left: 4px; font-size: 14px; color: var(--ms-meta); }
-.ms-page .mf .mf-trust, .ms-page .mf button.mf-trust { grid-template-columns: 14px minmax(0, 1fr); gap: 8px; margin-top: var(--space-md); }
-.ms-page .mf .mf-trust-ring { width: 14px; height: 14px; margin-top: 2px; }
-.ms-page .mf .mf-trust-ring circle { stroke-width: 6; }
-.ms-page .mf .mf-trust-text { gap: 2px; }
-.ms-page .mf .mf-trust-text b { font: 500 13px/1.35 var(--ap-font); color: var(--ms-ink); }
-.ms-page .mf .mf-trust-text small { font: 400 12.5px/1.4 var(--ap-font); color: var(--ms-meta); }
-.ms-page .mf .mf-price .mf-shares { margin-top: var(--space-lg); }
-@media (min-width: 761px) and (max-height: 860px) {
-  .ms-page .mf .mf-price .mf-shares { margin-top: var(--space-sm); }
-  .ms-page .mf .mf-trust, .ms-page .mf button.mf-trust { margin-top: var(--space-sm); }
-}
 .ms-page .mf .mf-now .mf-plan-name { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; white-space: normal; line-height: 1.25; min-height: 2.5em; }
 .ms-page .mf .mf-now .mf-plan-name svg { display: inline; margin-right: 5px; vertical-align: -2px; }
 /* Delta bubble over the new total. */
@@ -22536,9 +22072,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: auto; grid-template-areas: "now now" "price fit" "bal bal"; align-items: stretch; }
   .ms-page .mf .mf-grid > .mf-card { height: auto; overflow: visible; }
   .ms-page .mf .mf-grid > .mf-now { min-height: 0; }
-  .ms-page .mf .mf-price .mf-shares { overflow: visible; max-height: none; }
-  .ms-page .mf .mf-balance > .mf-bb { --cell: 180px; min-height: 200px; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) :is(.mf-bb-radar, .mf-bb-ring) { height: var(--cell); width: var(--cell); }
 }
 /* Narrow tablet: one column, the same order. */
 @media (min-width: 761px) and (max-width: 900px) {
@@ -22564,9 +22097,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 /* Collection header and toolbar (23/10): one block; one primary action; view controls together. */
-.ms-page .ms-all .ms-stage-bar { align-items: center; margin-bottom: var(--space-md); }
-.ms-page .ms-all .ms-stage-title { font-size: 28px; }
-.ms-page .ms-all-sum { margin-top: 4px; font-size: 14px; }
 .ms-page .ms-inv-bar { margin-bottom: var(--space-md); padding-bottom: var(--space-sm); box-shadow: inset 0 -1px 0 var(--ms-line); }
 .ms-page .ms-inv-edit .mk-button { min-height: 38px; background: none; }
 .ms-page .ms-inv-edit .mk-button:hover { background: var(--ms-tile); }
@@ -22628,33 +22158,15 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @media (min-width: 901px) and (max-width: 1180px) { .ms-page .mf .mf-grid:not(:has(.mf-now)) { grid-template-areas: "price fit" "bal bal"; } }
 @media (min-width: 761px) and (max-width: 900px) { .ms-page .mf .mf-grid:not(:has(.mf-now)) { grid-template-areas: "price" "fit" "bal"; } }
 @media (max-width: 760px) { .ms-page .mf .mf-grid:not(:has(.mf-now)) { grid-template-areas: "price" "bal" "fit"; } }
-.ms-page .mf .mf-price .mf-history { margin-top: 6px; color: var(--ms-meta); font: 400 13px/1.4 var(--ap-font); }
 /* All decided (23/10): masonry. Rows follow content; the right column stacks split and
    optimisation at their natural height; the price card, with more tools, stands beside them. */
 @media (min-width: 1181px) {
   .ms-page .mf .mf-grid:not(:has(.mf-now)) { grid-template-rows: auto auto; align-items: start; }
   .ms-page .mf .mf-grid:not(:has(.mf-now)) > .mf-card { height: auto; overflow: visible; }
-  .ms-page .mf .mf-grid:not(:has(.mf-now)) > .mf-price { align-self: stretch; height: 100%; }
-  .ms-page .mf .mf-grid:not(:has(.mf-now)) .mf-balance > .mf-bb { --cell: 150px; height: auto; }
 }
 .ms-page .mf .mf-now .mf-now-q { display: flex; align-items: center; gap: var(--space-sm); }
 .ms-page .mf .mf-now .mf-now-q h3 { margin: 0; }
 @media (max-width: 760px) { .ms-page .mf .mf-card.mf-now:not([data-open]) > .mf-now-q { display: flex; } .ms-page .mf .mf-card.mf-now:not([data-open]) .mf-now-q h3 { margin: 0; font-size: 19px; } }
-
-@layer components {
-  .ms-page .mf .mf-price .mf-shares li { grid-template-columns: 24px minmax(0, 1.2fr) minmax(24px, 1fr) auto max-content; }
-  .ms-page .mf .mf-price .mf-shares li > small { white-space: nowrap; }
-}
-
-@layer components {
-  .ms-page .mf-cost-complement { margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--color-border); }
-  .ms-page .mf-cost-complement > p, .ms-page .mf-cost-scope { font-size: var(--tt-size-card-body); line-height: 1.5; color: var(--color-text-meta); }
-  .ms-page .mf-cost-zero { display: grid; gap: var(--space-sm); margin-top: var(--space-sm); }
-  .ms-page .mf-cost-zero li { display: flex; align-items: center; gap: var(--space-sm); font-size: var(--tt-size-card-body); }
-  .ms-page .mf-cost-zero li b { margin-left: auto; color: var(--color-text-secondary); font-weight: 400; }
-  .ms-page .mf-cost-scope { margin-top: var(--space-md); }
-  .ms-page .mf .mf-price .mf-trust-text small { white-space: normal; overflow: visible; text-overflow: clip; }
-}
 
 @layer components {
   @media (min-width: 761px) {
@@ -22989,12 +22501,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .so-hour b { color: var(--ms-ink); font-weight: 600; }
 @media (prefers-reduced-motion: reduce) { .ms-page .so-rate-value { animation: none; } }
 .ms-page .so-rate-chips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: min(440px, 100%); }
-@layer components {
-  .ms-personal-welcome { margin-bottom: var(--space-lg); }
-  .ms-personal-greeting { margin: 0; font-family: var(--font-brand); font-size: var(--tt-size-body-large); font-weight: 500; line-height: 1.4; overflow-wrap: anywhere; color: var(--color-text); }
-  .ms-personal-greeting span { display: inline-block; margin-left: var(--space-xs); font-size: var(--tt-size-body); }
-  .ms-personal-message { max-width: 64ch; margin: var(--space-xs) 0 0; font-size: var(--tt-size-card-body); line-height: 1.6; color: var(--color-text-secondary); }
-}
 
 @layer components { .ms-page .mf .mf-preview { grid-template-columns: max-content max-content; column-gap: var(--space-md); } }
 
@@ -23015,7 +22521,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   @media (min-width: 761px) {
     .ms-page .mf .mf-grid[data-starter] { grid-template-columns: minmax(280px, 1fr) minmax(0, 2fr) !important; grid-template-rows: auto !important; grid-template-areas: "price next" !important; }
     .ms-page .mf .mf-grid[data-starter]:has(.mf-now) { grid-template-areas: "price now" !important; }
-    .ms-page .mf .mf-grid[data-starter] > .mf-price { grid-area: price !important; }
     .ms-page .mf .mf-grid[data-starter] > .mf-starter-next { grid-area: next !important; }
     .ms-page .mf .mf-grid[data-starter] > .mf-now { grid-area: now !important; }
   }
@@ -23028,34 +22533,13 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 @layer components {
-  .ms-page .ms-personal-hero { align-items: center; margin-bottom: var(--space-lg); }
-  .ms-personal-hero .ms-personal-welcome { margin: 0; }
-  .ms-personal-title-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-md); margin-block: var(--space-sm); }
-  .ms-personal-hero .ms-personal-message { margin-top: 0; font-size: var(--tt-size-body); }
-  .ms-personal-hero .ms-top-status { margin: 0; }
-  .mf-budget-onboarding { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-md); margin-top: var(--space-lg); }
-  .mf-budget-step { font-size: var(--tt-size-kicker); text-transform: uppercase; letter-spacing: .08em; color: var(--color-text-meta); }
-  .mf-budget-onboarding h3 { margin: 0; font-family: var(--font-brand); font-size: var(--tt-size-section-h); line-height: 1.15; letter-spacing: -.03em; }
-  .mf-budget-onboarding > p { color: var(--color-text-secondary); font-size: var(--tt-size-card-body); line-height: 1.6; }
-  .mf-budget-onboarding .mf-budget-reassurance { margin-top: calc(-1 * var(--space-sm)); color: var(--color-text); font-size: var(--tt-size-body); }
-  @media(max-width:760px) { .ms-page .mf .mf-price .mf-budget-onboarding { display: flex !important; margin-top: var(--space-md); } .ms-personal-hero { gap: var(--space-md); } }
 }
 
 /* Editorial hero and onboarding override the older unlayered compact header. */
 @layer components {
-  .ms-page .ms-personal-hero > .ms-personal-welcome { display: block !important; }
-  .ms-page .ms-personal-hero h1 { font-size: var(--tt-size-page-title) !important; line-height: 1.08; }
-  .ms-page .ms-personal-hero .ms-personal-message { margin: 0 !important; font-size: var(--tt-size-body) !important; }
-  .ms-page .mf .mf-budget-onboarding h3 { font-size: var(--tt-size-section-h) !important; line-height: 1.15; }
   .ms-page .mf .mf-preview { grid-template-columns: max-content max-content !important; column-gap: var(--space-md) !important; }
 }
 /* Presence at the top of the space (23/10/2026): a real hello, a line with a smile, what we know. */
-.ms-page .ms-top.ms-personal-hero p.ms-personal-greeting { display: flex; align-items: center; gap: 8px; margin: 0 0 2px; color: var(--ms-ink); font: 600 clamp(22px, 2.2vw, 28px)/1.15 var(--ap-display); letter-spacing: -.02em; }
-.ms-page .ms-personal-greeting .ms-personal-wave { display: inline-block; margin: 0; font-size: .9em; transform-origin: 70% 80%; animation: so-wave 1.5s 400ms ease-in-out 2; }
-.ms-page .ms-top.ms-personal-hero p.ms-personal-message { max-width: 60ch; margin: 4px 0 0; color: var(--ms-text2, var(--ms-meta)); font: 400 16px/1.45 var(--ap-font); }
-.ms-page .ms-top p.ms-personal-facts, .ms-page .ms-personal-facts { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--space-sm) 0 0; }
-.ms-page .ms-personal-chip { display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: var(--radius-pill); background: var(--color-accent-soft); color: var(--color-accent); font: 600 13px/1 var(--ap-font); font-variant-numeric: tabular-nums; animation: mf-pop 360ms 200ms cubic-bezier(.3, 1.6, .5, 1) both; }
-.ms-page .ms-personal-chip + .ms-personal-chip { animation-delay: 280ms; }
 /* Plan tiles: the name on one line, its qualifier under it; a fixed rhythm so prices align. */
 .ms-page .mf .mf-now .mf-plan-name { display: flex; align-items: flex-start; gap: 6px; white-space: normal; }
 .ms-page .mf .mf-now .mf-plan-name > svg { flex: none; margin-top: 2px; }
@@ -23081,7 +22565,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-welcome-toast-text small { opacity: .85; font-size: 13px; line-height: 1.3; }
 .ms-welcome-toast-spark { position: absolute; right: 22px; top: 50%; pointer-events: none; }
 .ms-welcome-toast-spark i { position: absolute; width: 6px; height: 6px; margin: -3px; border-radius: 50%; background: var(--color-on-primary); opacity: 0; transform: rotate(var(--a)); animation: so-burst 760ms 520ms cubic-bezier(.2, .8, .2, 1) both; }
-@media (prefers-reduced-motion: reduce) { .ms-page .ms-personal-wave, .ms-page .ms-personal-chip, .ms-welcome-toast, .ms-welcome-toast-logos > span { animation: none; } .ms-welcome-toast-spark { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ms-welcome-toast, .ms-welcome-toast-logos > span { animation: none; } .ms-welcome-toast-spark { display: none; } }
 /* A long name wraps with the greeting instead of running off the screen. */
 .ms-page .so-hello-final > span { overflow-wrap: anywhere; }
 
@@ -23519,34 +23003,8 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    reads it (the year, who pays for what), the rest quietly below. The list
    sits at the bottom of the card, so the card's height is shared between the
    figure and the list instead of a blank at the end. */
-.ms-page .mf .mf-grid > .mf-card.mf-price { display: flex !important; flex-direction: column; background: radial-gradient(110% 80% at 0% 0%, color-mix(in srgb, var(--color-text-strong) 4%, transparent), transparent 60%), var(--color-surface-soft); }
-.ms-page .mf .mf-price > .mf-k { font: 600 14px/1.2 var(--font-ui) !important; letter-spacing: 0 !important; text-transform: none !important; color: var(--color-text-secondary) !important; }
-.ms-page .mf .mf-price > .mf-k > svg { width: 16px !important; height: 16px !important; padding: 0 !important; margin-right: 6px; background: none !important; color: var(--color-text-secondary) !important; border-radius: 0 !important; box-shadow: none !important; }
-.ms-page .mf .mf-price .mk-figure { margin-top: 12px; }
-.ms-page .mf .mf-price .mf-price-quip { margin: 6px 0 0; max-width: 34ch; font: 400 15px/1.4 var(--font-ui); color: var(--color-text-secondary); text-wrap: pretty; animation: mf-quip-in 420ms cubic-bezier(.2, .8, .2, 1) 500ms both; }
-.ms-page .mf .mf-price .mf-price-quip > span { color: var(--color-text-strong); font-weight: 600; font-variant-numeric: tabular-nums; }
 @keyframes mf-quip-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-.ms-page .mf .mf-price .mf-trust { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding: 0; background: none; box-shadow: none; }
-.ms-page .mf .mf-price .mf-trust .mf-trust-text b { font: 600 13px/1.25 var(--font-ui); }
-.ms-page .mf .mf-price .mf-trust .mf-trust-text small { font: 400 12px/1.3 var(--font-ui); color: var(--color-text-secondary); }
-.ms-page .mf .mf-price .mf-trust .mf-trust-dots { display: none; }
-.ms-page .mf .mf-price .mf-trust-check { display: grid; place-items: center; flex: none; width: 24px; height: 24px; border-radius: var(--radius-circle); background: var(--color-good, var(--ms-good)); color: var(--color-surface); }
-.ms-page .mf .mf-price .mf-trust-check svg { width: 14px; height: 14px; stroke-width: 2.6; }
-.ms-page .mf .mf-price .mf-shares { margin-top: auto !important; padding-top: 16px; }
-.ms-page .mf .mf-price .mf-shares-name { font: 500 14px/1.25 var(--font-ui); }
-.ms-page .mf .mf-price .mf-shares b { font: 600 14px/1.2 var(--font-ui); font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-price .mf-shares small { font: 500 12px/1.2 var(--font-ui); color: var(--color-text-secondary); font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-price .mf-shares-bar { height: 6px !important; border-radius: 3px !important; background: color-mix(in srgb, var(--color-text-strong) 8%, transparent) !important; }
-.ms-page .mf .mf-price .mf-shares-bar i { border-radius: 3px !important; }
-.ms-page .mf .mf-price .mf-others { margin: 6px -10px 0; width: calc(100% + 20px); padding: 8px 10px; border-radius: 12px; font: 500 14px/1.2 var(--font-ui); color: var(--color-text-secondary); transition: background-color 160ms ease; }
-.ms-page .mf .mf-price .mf-others:hover { background: color-mix(in srgb, var(--color-text-strong) 5%, transparent); }
-.ms-page .mf .mf-price .mf-others-logos > span { box-shadow: 0 0 0 2px var(--color-surface-soft); border-radius: 6px; }
-.ms-page .mf .mf-price .mf-others-logos > span + span { margin-left: -6px; }
-.ms-page .mf .mf-price .mf-cost-scope { margin-top: 10px; font: 400 12px/1.4 var(--font-ui) !important; color: var(--color-text-secondary); }
-@media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-price .mf-price-quip { animation: none; } }
 /* An exact budget needs no footnote: the check says it. */
-.ms-page .mf .mf-price .mf-trust[data-exact] .mf-trust-text small { display: none; }
-.ms-page .mf .mf-price .mf-trust[data-exact] .mf-trust-check { width: 20px; height: 20px; }
 
 /* Decision card, redesign of 28 Oct 2026: the question in front; the label,
    the step and the budget preview recede. No answer looks chosen before the
@@ -23570,22 +23028,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    its area's colour, inline), a line of humour under it, the bar and a quiet
    legend. No tag, no floating logo, no pill per area. */
 @layer components {
-  .ms-page .mf .mf-balance .mf-lead-tag { display: none !important; }
-  .ms-page .mf .mf-balance .mf-lead h3 { font: 600 22px/1.25 var(--font-ui) !important; letter-spacing: -.02em !important; color: var(--color-text-strong) !important; text-wrap: balance; }
-  .ms-page .mf .mf-balance .mf-lead-fig { display: inline !important; font: inherit !important; font-size: 1em !important; color: var(--lead, var(--color-stack-tools-ink, var(--color-primary))) !important; }
-  .ms-page .mf .mf-balance .mf-lead-say { display: inline !important; font: inherit !important; }
-  .ms-page .mf .mf-balance .mf-lead-sub { margin-top: 8px !important; font: 400 14px/1.4 var(--font-ui) !important; color: var(--color-text-secondary) !important; }
-  .ms-page .mf .mf-balance .mf-lead-quip { margin: 14px 0 0; font: italic 400 15px/1.4 var(--font-ui); color: var(--color-text-secondary); animation: mf-quip-in 420ms cubic-bezier(.2, .8, .2, 1) 400ms both; }
-  .ms-page .mf .mf-balance .mf-bb-title { font: 600 14px/1.2 var(--font-ui) !important; color: var(--color-text-secondary) !important; }
-  .ms-page .mf .mf-balance .mf-bb-chips { gap: 6px 20px !important; }
-  .ms-page .mf .mf-balance .mf-bb-chips button { padding: 6px 10px !important; margin-left: -10px; background: none !important; box-shadow: none !important; border: 0 !important; font: 500 14px/1.2 var(--font-ui) !important; transition: background-color 160ms ease !important; }
-  .ms-page .mf .mf-balance .mf-bb-chips button:hover, .ms-page .mf .mf-balance .mf-bb-chips button[aria-pressed="true"] { background: color-mix(in srgb, var(--color-text-strong) 6%, transparent) !important; }
-  .ms-page .mf .mf-balance .mf-lead h3 { display: block !important; }
   .ms-page .mf .mf-balance :is(.mf-lead-fig, .mf-lead-say) { font-size: 22px !important; line-height: 1.25 !important; font-weight: 600 !important; letter-spacing: -.02em !important; }
-  .ms-page .mf .mf-balance .mf-bb-chip-amount { font: 600 14px/1.2 var(--font-ui) !important; font-variant-numeric: tabular-nums; color: var(--color-text-strong); }
-  .ms-page .mf .mf-balance .mf-bb-chip-tools > * { box-shadow: 0 0 0 2px var(--color-surface-soft) !important; border-radius: 5px; }
-  .ms-page .mf .mf-balance .mf-bb-chip-tools > * + * { margin-left: -3px !important; }
-  @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-balance .mf-lead-quip { animation: none; } }
 }
 
 /* One-tool card and the all-settled grid (29 Oct 2026): the starter shows its
@@ -23601,7 +23044,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-starter-next h2 { font: 600 26px/1.15 var(--font-ui) !important; letter-spacing: -.025em !important; }
   .ms-page .mf .mf-starter-next p { max-width: 46ch; font: 400 15px/1.5 var(--font-ui) !important; color: var(--color-text-secondary) !important; }
   .ms-page .mf .mf-starter-next .mk-button, .ms-page .mf .mf-starter-next button { background: var(--color-stack-tools-ink, var(--color-primary)) !important; border-color: transparent !important; color: var(--color-surface) !important; }
-  .ms-page .mf .mf-grid[data-done] .mf-price .mf-shares { margin-top: 28px !important; }
   @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-starter-next .mf-starter-seat { transition: none; animation: none !important; transform: none !important; } }
 }
 @layer components {
@@ -23624,8 +23066,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-starter-next > :is(button, .mk-button):active { transform: scale(.97); }
   @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-starter-next > :is(button, .mk-button) svg { transition: none; } }
   /* Ring and radar: the legend keeps room for full area names, the chart takes what is left. */
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) { grid-template-columns: minmax(0, auto) minmax(220px, 1fr) !important; }
-  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) :is(.mf-bb-radar, .mf-bb-ring) { max-width: 100%; }
   /* Dark theme: the usage card had no dark surface, so its light tint swallowed the text. */
   .dark .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-ink: #afc4ff; background: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--mu-ink) 10%, transparent), transparent 60%), #1c2540 !important; }
   /* No-scroll contract (29/10/2026): no box of the bento scrolls or cuts its content. Rows keep
@@ -23660,21 +23100,13 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     .ms-page .mf .mf-grid:has(.mf-now):not([data-sparse]):not([data-starter]):not([data-compact]) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) !important; grid-template-rows: max-content 1fr !important; grid-template-areas: "now now price" "fit bal price" !important; }
   }
   /* Free tools: one line of logos, then the sentence. */
-  .ms-page .mf .mf-cost-complement { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-  .ms-page .mf .mf-cost-complement > p { margin: 0; }
-  .ms-page .mf .mf-cost-zero { display: flex !important; flex-direction: row !important; gap: 0 !important; margin: 0 !important; padding: 0 !important; list-style: none; }
-  .ms-page .mf .mf-cost-zero > li { display: grid !important; place-items: center; width: 30px; height: 30px; margin: 0 0 0 -6px !important; padding: 0 !important; border: 0 !important; border-radius: 9px; background: var(--color-surface); box-shadow: 0 0 0 2px var(--color-surface-soft); }
-  .ms-page .mf .mf-cost-zero > li:first-child { margin-left: 0 !important; }
-  .ms-page .mf .mf-cost-zero > .mf-cost-more { font: 600 11px/1 var(--font-ui); color: var(--color-text-secondary); }
   /* The budget reads top-down: total, status, then its lines, with no hole in the middle. */
-  .ms-page .mf .mf-grid > .mf-card.mf-price .mf-shares { margin-top: 8px !important; }
   /* Row 2 under the decision: the usage review on two columns. The split is an insight more than
      a task, so it closes the bento on the full width, sentence left and chart right. */
   @media (min-width: 1181px) {
     .ms-page .mf .mf-grid:has(.mf-now):not([data-sparse]):not([data-starter]):not([data-compact]) { grid-template-rows: max-content max-content max-content !important; grid-template-areas: "now now price" "fit fit price" "bal bal bal" !important; }
   }
   /* Down the sidebar: total and lines at the top, free tools and the scope note settle at the bottom. */
-  .ms-page .mf .mf-grid > .mf-card.mf-price .mf-cost-complement { margin-top: auto !important; padding-top: 16px; }
   /* Duplicate decision, visual pass: the dropped tool shows crossed out at the kept logo's foot,
      the saving is a filled pill, the cheaper answer carries a green outline. */
   .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both) { row-gap: 10px !important; }
@@ -23874,9 +23306,6 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .ms-page .so-primary:active { transform: scale(.98); box-shadow: var(--tt-lead-shadow-press); }
 /* Lot 3 (30 oct. 2026) : l'ADN dans les pages. Le souffle du gain derrière
    l'économie ; la limite d'un champ répond avec un sourire. */
-.ms-page .mf .mf-gain { position: relative; isolation: isolate; display: inline-block; }
-.ms-page .mf .mf-gain > span:not(.tt-bloom) { position: relative; z-index: 1; }
-.ms-page .mf .mf-gain .tt-bloom { inset: -180% -110%; filter: blur(16px); }
 .ms-page .mf .mf-stepper [aria-disabled="true"] { opacity: .4; }
 .ms-page .mf .mf-stepper--nope { animation: tt-nope 360ms cubic-bezier(.36, .07, .19, .97); }
 .ms-page .mf .mf-seats-nudge { min-height: 1.3em; margin: 6px 0 0; color: var(--tt-ink); font: 400 .875rem/1.3 var(--tt-read); }
@@ -23885,7 +23314,6 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .gs-result .gs-result-verdict { flex: none; margin-left: auto; }
 .gs-result:has(.gs-result-verdict) .gs-result-arrow { margin-left: 8px; }
 /* La ligne de coupe souligne chaque économie : le budget allégé se pose dessus. */
-.ms-page .mf-verdict { box-shadow: none; background: linear-gradient(90deg, var(--ms-line) 0 var(--tt-dash), transparent var(--tt-dash) calc(var(--tt-dash) + var(--tt-dash-gap))) 0 0 / calc(var(--tt-dash) + var(--tt-dash-gap)) 1px repeat-x; }
 /* Copier : l'icône devient une coche qui rebondit, le libellé arrive en glissant. */
 .td-decision-share:is([data-state="copied"], [data-state="shared"]) svg { color: var(--tt-live); animation: tt-bump 420ms cubic-bezier(.34, 1.6, .64, 1); }
 .td-decision-share:is([data-state="copied"], [data-state="shared"]) span { animation: tt-label-in 320ms var(--tt-ease) both; }
@@ -23966,40 +23394,16 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
    Chaque élément de la page lit le token de son atome (src/styles/tooltrim-system.css).
    Modifier un atome dans le système modifie donc ces éléments aussi. Les
    !important ne servent qu'à passer devant les couches historiques. */
-/* Fil d'Ariane (tout le site) */
-.asv2-topbar .asv2-topbar-breadcrumb.tt-crumbs, .asv2-topbar .asv2-topbar-breadcrumb.tt-crumbs > :is(a, span) { font: var(--tt-note-font) !important; letter-spacing: 0 !important; color: var(--tt-ink) !important; }
-.asv2-topbar .asv2-topbar-breadcrumb.tt-crumbs > .tt-crumbs-sep { color: var(--tt-meta) !important; }
-.asv2-topbar .asv2-topbar-breadcrumb.tt-crumbs > [aria-current="page"] { font-weight: 500 !important; }
+/* Fil d'Ariane (tout le site) : molécule .tt-crumbs du système, sans surcharge. */
 /* En-tête de Ma stack */
-.ms-page .ms-top .ms-personal-title-row h1 { font: var(--tt-title-xl-font) !important; letter-spacing: var(--tt-title-xl-tracking) !important; color: var(--tt-ink) !important; }
-.ms-page .ms-top .ms-top-status { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
-.ms-page .ms-top .ms-explore-stack { min-height: 40px; padding: 0 18px; border: 0; border-radius: var(--tt-r-pill); background: var(--tt-tile); color: var(--tt-ink); font: var(--tt-label-font) !important; letter-spacing: var(--tt-label-tracking); box-shadow: none; }
-.ms-page .ms-top .ms-explore-stack:hover { background: var(--tt-tile-2); }
 /* Titres de section et leurs lignes */
 .ms-page :is(.ms-stage-title, .ms-mod h2) { font: var(--tt-title-section-font) !important; letter-spacing: var(--tt-title-section-tracking) !important; color: var(--tt-ink) !important; }
-.ms-page .ms-all-sum, .ms-page .ms-recos .ms-stage-bar p { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
-.ms-page .ms-recos .ms-stage-bar p { font: var(--tt-text-font) !important; }
 /* Groupes et cartes d'outils */
-.ms-page .ms-inv-group > header, .ms-page .ms-inv-group :is(h3, .ms-inv-group-head) { font: var(--tt-label-font) !important; color: var(--tt-ink) !important; }
-.ms-page .ms-inv .ms-inv-card { border-radius: var(--tt-r-tile); background: var(--tt-tile); box-shadow: none; color: var(--tt-ink); transition: transform var(--tt-dur-press) ease, background-color var(--tt-dur-state) ease; }
-.ms-page .ms-inv .ms-inv-card:hover { background: var(--tt-tile-2); }
-.ms-page .ms-inv .ms-inv-card:active { transform: scale(.985); }
-.ms-page .ms-inv .ms-inv-name { font: var(--tt-label-font) !important; letter-spacing: var(--tt-label-tracking) !important; color: var(--tt-ink) !important; }
-.ms-page .ms-inv .ms-inv-cost { font: var(--tt-amount-font) !important; letter-spacing: var(--tt-amount-tracking) !important; color: var(--tt-ink) !important; font-variant-numeric: tabular-nums; }
-.ms-page .ms-inv .ms-inv-area { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
-.ms-page .ms-inv .ms-inv-logo :is(img, .tool-logo, .mk-app) { border-radius: var(--tt-logo-radius); box-shadow: var(--tt-logo-shadow); }
-.ms-page .ms-inv .ms-inv-status { display: inline-flex; align-items: center; justify-self: start; min-height: 22px; padding: 0 8px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); color: var(--tt-ink); font: var(--tt-tag-font) !important; }
-.ms-page .ms-inv .ms-inv-status[data-status="overlap"] { background: color-mix(in oklch, var(--tt-overlap) 14%, transparent); color: color-mix(in oklch, var(--tt-overlap) 78%, var(--tt-ink)); }
-.ms-page .ms-inv .ms-inv-status[data-status="ok"] { background: color-mix(in oklch, var(--tt-live) 14%, transparent); color: var(--tt-gain-ink); }
 /* « À découvrir » : cartes média et nouvelles pistes */
-.ms-page .ms-recos :is(h3, strong) { font: var(--tt-label-font) !important; letter-spacing: var(--tt-label-tracking) !important; color: var(--tt-ink) !important; }
-.ms-page .ms-recos p:not(.ms-stage-bar p), .ms-page .ms-recos small { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
-/* Pied de page (tout le site) */
-.tt-footer .tt-footer-tagline { font: var(--tt-title-section-font) !important; letter-spacing: var(--tt-title-section-tracking) !important; color: var(--tt-ink) !important; }
-.tt-footer .tt-footer-intro, .tt-footer .tt-footer-promise p:not(.tt-footer-tagline) { font: var(--tt-text-font) !important; color: var(--tt-ink) !important; }
-.tt-footer .tt-footer-col-label, .tt-footer .tt-footer-partners-label { font: var(--tt-eyebrow-font) !important; letter-spacing: var(--tt-eyebrow-tracking) !important; text-transform: uppercase; color: var(--tt-ink) !important; }
-.tt-footer .tt-footer-nav a, .tt-footer .tt-footer-col a { font: var(--tt-label-font) !important; letter-spacing: var(--tt-label-tracking) !important; color: var(--tt-ink) !important; }
-.tt-footer .tt-footer-legal, .tt-footer .tt-footer-legal :is(a, p, span, button) { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
+/* Pied de page (tout le site) : ses éléments portent leurs classes d'atome. Les liens
+   des colonnes et des mentions héritent de l'atome de leur conteneur. */
+.tt-footer .tt-footer-col a.tt-label { font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); color: var(--tt-ink); }
+.tt-footer .tt-footer-legal :is(a, span, button) { font: inherit; letter-spacing: inherit; color: inherit; }
 /* « Vos usages » : l'organisme du système (.tt-usage), planche chapitre 06. */
 .ms-page .mf .mf-grid > .mu-card.tt-usage, .ms-page .mf .mu-card.tt-usage { display: grid; align-content: start; gap: 18px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile) !important; box-shadow: none !important; color: var(--tt-ink); }
 .ms-page .mf .mu-card.tt-usage::before, .ms-page .mf .mu-card.tt-usage::after { display: none; }
@@ -24016,20 +23420,6 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .dark .ms-page .mf .mf-grid > .mf-card.mu-card.tt-usage, .ms-page .mf .mf-grid > .mf-card.mu-card.tt-usage { background: var(--tt-tile) !important; }
 .ms-page .mf .mu-card.tt-usage .mu-scene.mu-question { grid-template-columns: minmax(0, 1fr) !important; grid-template-areas: none !important; }
 .ms-page .mf .mu-card.tt-usage .mu-question > * { grid-area: auto !important; }
-/* Budget : l'organisme de la planche (chapitre 06), élément par élément sur ses atomes. */
-.ms-page .mf .mf-grid > .mf-card.mf-price, .dark .ms-page .mf .mf-grid > .mf-card.mf-price { padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile) !important; box-shadow: none !important; color: var(--tt-ink); }
-.ms-page .mf .mf-price > .mf-k { font: var(--tt-eyebrow-font) !important; letter-spacing: var(--tt-eyebrow-tracking) !important; text-transform: uppercase !important; color: var(--tt-ink) !important; }
-.ms-page .mf .mf-price > .mf-k svg { display: none; }
-.ms-page .mf .mf-price .mk-figure { font: var(--tt-figure-font) !important; letter-spacing: var(--tt-figure-tracking) !important; color: var(--tt-ink) !important; }
-.ms-page .mf .mf-price .mk-figure small { font: var(--tt-unit-font) !important; letter-spacing: 0 !important; margin-left: 3px; }
-.ms-page .mf .mf-price .mf-price-quip { font: var(--tt-text-font) !important; color: var(--tt-ink) !important; }
-.ms-page .mf .mf-price .mf-price-quip > span:first-child { font-weight: 500; }
-.ms-page .mf .mf-price .mf-trust-text b { font: var(--tt-label-font) !important; letter-spacing: var(--tt-label-tracking) !important; color: var(--tt-ink) !important; }
-.ms-page .mf .mf-price .mf-trust-text small { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
-.ms-page .mf .mf-price .mf-trust-check { background: var(--tt-live) !important; color: #fff !important; border-radius: var(--tt-r-round); }
-.ms-page .mf .mf-price .mf-shares-name { font: var(--tt-label-font) !important; letter-spacing: var(--tt-label-tracking) !important; color: var(--tt-ink) !important; }
-.ms-page .mf .mf-price .mf-shares b, .ms-page .mf .mf-price .mf-others b { font: var(--tt-amount-font) !important; letter-spacing: var(--tt-amount-tracking) !important; color: var(--tt-ink) !important; font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-price .mf-shares small { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-price .mf-shares-logo > * { border-radius: var(--tt-logo-radius) !important; box-shadow: var(--tt-logo-shadow); }
-.ms-page .mf .mf-price .mf-others > span:not(.mf-others-logos), .ms-page .mf .mf-price .mf-cost-complement p, .ms-page .mf .mf-price .mf-cost-scope, .ms-page .mf .mf-price .mf-verdict { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
-.ms-page .mf .mf-price .mf-verdict b { font: var(--tt-amount-font) !important; color: var(--tt-gain-ink) !important; }
+/* L'organisme budget dans la grille de Ma stack : il remplace l'habillage historique de .mf-card. */
+.ms-page .mf .mf-grid > .mf-card.tt-budget, .dark .ms-page .mf .mf-grid > .mf-card.tt-budget { display: grid; align-content: start; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile) !important; box-shadow: none !important; }
+.ms-page .mf .mf-grid > .mf-card.tt-split, .dark .ms-page .mf .mf-grid > .mf-card.tt-split { display: grid; align-content: start; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile) !important; box-shadow: none !important; }

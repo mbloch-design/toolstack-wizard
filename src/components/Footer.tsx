@@ -74,8 +74,8 @@ const Footer = () => {
               <img src={logoToolTrim} alt="" width={96} height={21} />
             </Link>
             {/* The pile follows the last word, even when the line wraps. */}
-            <p className="tt-footer-tagline">{tagline.slice(0, tagline.lastIndexOf(" ") + 1)}<span className="tt-footer-tagline-end">{tagline.slice(tagline.lastIndexOf(" ") + 1)}<FooterTrim /></span></p>
-            <p className="tt-footer-intro">
+            <p className="tt-footer-tagline tt-title-section">{tagline.slice(0, tagline.lastIndexOf(" ") + 1)}<span className="tt-footer-tagline-end">{tagline.slice(tagline.lastIndexOf(" ") + 1)}<FooterTrim /></span></p>
+            <p className="tt-footer-intro tt-text">
               {t(
                 "ToolTrim aide les freelances à choisir, comparer et rationaliser leurs outils SaaS, sans empiler les abonnements.",
                 "ToolTrim helps freelancers choose, compare and streamline their SaaS tools without piling up subscriptions.",
@@ -99,33 +99,33 @@ const Footer = () => {
         <section className="tt-footer-nav">
           {/* Four links per column, so no column trails a gap. */}
           <nav aria-label={t("Décider", "Decide")} className="tt-footer-col">
-            <span className="tt-footer-col-label">{t("Décider", "Decide")}</span>
-            <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
-            <Link to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>
-            <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
-            <Link to={`${prefix}/ma-stack`}>{t("Ma stack", "My stack")}</Link>
+            <span className="tt-footer-col-label tt-eyebrow">{t("Décider", "Decide")}</span>
+            <Link className="tt-label" to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
+            <Link className="tt-label" to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>
+            <Link className="tt-label" to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
+            <Link className="tt-label" to={`${prefix}/ma-stack`}>{t("Ma stack", "My stack")}</Link>
           </nav>
           <nav aria-label={t("Explorer", "Explore")} className="tt-footer-col">
-            <span className="tt-footer-col-label">{t("Explorer", "Explore")}</span>
-            <Link to={`${prefix}/tools`}>{t("Catalogue des outils", "Tool catalog")}</Link>
-            <Link to={`${prefix}/explorer`}>{t("Associer des outils", "Pair tools")}</Link>
-            <Link to={`${prefix}/search`}>{t("Rechercher un outil", "Search a tool")}</Link>
-            <Link to={`${prefix}/category`}>{t("Toutes les catégories", "All categories")}</Link>
+            <span className="tt-footer-col-label tt-eyebrow">{t("Explorer", "Explore")}</span>
+            <Link className="tt-label" to={`${prefix}/tools`}>{t("Catalogue des outils", "Tool catalog")}</Link>
+            <Link className="tt-label" to={`${prefix}/explorer`}>{t("Associer des outils", "Pair tools")}</Link>
+            <Link className="tt-label" to={`${prefix}/search`}>{t("Rechercher un outil", "Search a tool")}</Link>
+            <Link className="tt-label" to={`${prefix}/category`}>{t("Toutes les catégories", "All categories")}</Link>
           </nav>
           {/* The categories closest to a freelancer's budget, all indexable. */}
           <nav aria-label={t("Catégories", "Categories")} className="tt-footer-col">
-            <span className="tt-footer-col-label">{t("Catégories", "Categories")}</span>
-            <Link to={`${prefix}/category/ia-generaliste`}>{t("IA généraliste", "AI tools")}</Link>
-            <Link to={`${prefix}/category/finance-facturation`}>{t("Finance et facturation", "Finance and invoicing")}</Link>
-            <Link to={`${prefix}/category/gestion-projet`}>{t("Gestion de projet", "Project management")}</Link>
-            <Link to={`${prefix}/category/automatisation`}>{t("Automatisation", "Automation")}</Link>
+            <span className="tt-footer-col-label tt-eyebrow">{t("Catégories", "Categories")}</span>
+            <Link className="tt-label" to={`${prefix}/category/ia-generaliste`}>{t("IA généraliste", "AI tools")}</Link>
+            <Link className="tt-label" to={`${prefix}/category/finance-facturation`}>{t("Finance et facturation", "Finance and invoicing")}</Link>
+            <Link className="tt-label" to={`${prefix}/category/gestion-projet`}>{t("Gestion de projet", "Project management")}</Link>
+            <Link className="tt-label" to={`${prefix}/category/automatisation`}>{t("Automatisation", "Automation")}</Link>
           </nav>
           <nav aria-label="ToolTrim" className="tt-footer-col">
-            <span className="tt-footer-col-label">ToolTrim</span>
-            <Link to={`${prefix}/about`}>{t("À propos", "About")}</Link>
-            <Link to={`${prefix}/transparency`}>{t("Méthodologie et transparence", "Methodology and transparency")}</Link>
-            <Link to={`${prefix}/contact`}>{t("Contact", "Contact")}</Link>
-            <Link to={`${prefix}/submit`}>{t("Soumettre un outil", "Submit a tool")}</Link>
+            <span className="tt-footer-col-label tt-eyebrow">ToolTrim</span>
+            <Link className="tt-label" to={`${prefix}/about`}>{t("À propos", "About")}</Link>
+            <Link className="tt-label" to={`${prefix}/transparency`}>{t("Méthodologie et transparence", "Methodology and transparency")}</Link>
+            <Link className="tt-label" to={`${prefix}/contact`}>{t("Contact", "Contact")}</Link>
+            <Link className="tt-label" to={`${prefix}/submit`}>{t("Soumettre un outil", "Submit a tool")}</Link>
           </nav>
         </section>
         </div>
@@ -133,7 +133,7 @@ const Footer = () => {
         {/* 3. Directory badges stay visible (Michael, 8 Oct 2026): uniform
             cells, grey until hovered, the label in the first cell. */}
         <section className="tt-footer-partners" aria-label={t("Repéré sur", "Featured on")}>
-          <span className="tt-footer-partners-label">{t("Repéré sur", "Featured on")}</span>
+          <span className="tt-footer-partners-label tt-eyebrow">{t("Repéré sur", "Featured on")}</span>
             <div className="tt-footer-badges">
               {BADGES.map((badge) => (
                 <a key={badge.href} href={badge.href} target="_blank" rel={badge.rel} title={badge.title} className="tt-footer-badge" aria-label={badge.label}>
@@ -146,7 +146,7 @@ const Footer = () => {
 
         {/* 4. Legal rail, last, as on every product site */}
         <section className="tt-footer-rail">
-          <div className="tt-footer-legal">
+          <div className="tt-footer-legal tt-note">
             <span>{t(`Copyright © ${year} ToolTrim. Tous droits réservés.`, `Copyright © ${year} ToolTrim. All rights reserved.`)}</span>
             <Link to={`${prefix}/legal-notice`}>{t("Mentions légales", "Legal notice")}</Link>
             <Link to={`${prefix}/privacy-policy`}>{t("Confidentialité", "Privacy")}</Link>

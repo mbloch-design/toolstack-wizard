@@ -40,13 +40,13 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
     await expect(page.getByRole("heading", { level: 1, name: fr ? "Mes outils" : "My tools" })).toBeVisible();
     // Read first: what the stack costs, then the one decision of the moment.
-    await expect(page.locator(".mf-price")).toContainText(fr ? "Budget partiel renseigné" : "Known budget so far");
+    await expect(page.locator('[data-card="price"]')).toContainText(fr ? "Budget partiel renseigné" : "Known budget so far");
     const map = page.getByRole("group", { name: fr ? "Mes outils" : "My tools", exact: true });
-    await expect(map.locator(".ms-tool")).toHaveCount(10);
-    await expect(page.locator(".ms-tool")).toHaveCount(10);
+    await expect(map.locator(".tt-toolcard")).toHaveCount(10);
+    await expect(page.locator(".tt-toolcard")).toHaveCount(10);
     // Every card says what the tool costs and its status.
-    await expect(map.locator(".ms-inv-cost")).toHaveCount(10);
-    await expect(map.locator(".ms-inv-status")).toHaveCount(10);
+    await expect(map.locator(".tt-toolcard .tt-amount")).toHaveCount(10);
+    await expect(map.locator(".tt-toolcard .tt-tag")).toHaveCount(10);
     // The map opens the tool sheet.
     await map.getByRole("button").first().click();
     await expect(page.locator(".ms-tool-sheet")).toBeVisible();
@@ -67,9 +67,9 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
     await expect(deck.locator(".mf-choice--both")).toBeVisible();
     // The same stack as cards, then as a list.
     await page.locator(".ms-layout").getByRole("button", { name: fr ? "Liste" : "List", exact: true }).click();
-    await expect(page.locator('.ms-inv[data-layout="list"] .ms-inv-card')).toHaveCount(10);
+    await expect(page.locator('#ms-all-grid[data-layout="list"] .tt-toolcard')).toHaveCount(10);
     await page.locator(".ms-layout").getByRole("button", { name: fr ? "Grille" : "Grid", exact: true }).click();
-    await expect(page.locator('.ms-inv[data-layout="grid"] .ms-inv-card')).toHaveCount(10);
+    await expect(page.locator('#ms-all-grid[data-layout="grid"] .tt-toolcard')).toHaveCount(10);
     expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBe(0);
   });
 }

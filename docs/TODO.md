@@ -21,7 +21,10 @@ Légende : **[décision]** = attend un arbitrage de Michael.
 - [x] Champs du site (`.tt-form-input`, prénom de Ma stack, recherche) au filet et halo bleu de la planche ; texte indicatif en gris (30/10/2026).
 - [ ] P2 Design system : Ma stack garde un bouton principal bleu (« C'est parti ») ; la planche dit encre. À aligner avec le lot 2.
 - [x] Ma stack sur le système, du fil d'Ariane au pied de page (30/10/2026) : « Vos usages » en organisme `.tt-usage`, budget, inventaire, découverte et pied de page branchés sur les atomes.
-- [ ] P2 Design system : remplacer à terme le « pont d'atomes » de Ma stack (règles `!important` en fin de `index.css`) par un markup en classes `.tt-*` et supprimer les couches historiques `mf-*` / `ms-*` / `mu-*` devenues inutiles.
+- [ ] P2 (en cours) Design system : remplacer à terme le « pont d'atomes » de Ma stack (règles `!important` en fin de `index.css`) par un markup en classes `.tt-*` et supprimer les couches historiques `mf-*` / `ms-*` / `mu-*` devenues inutiles.
+  - [x] 31/10/2026 : en-tête de page, budget, répartition, inventaire, découverte, fil d'Ariane et pied de page écrits en classes `.tt-*` ; 510 règles mortes de plus retirées de `index.css`. Restent : barre d'outils de l'inventaire (filtres, tri, vues, Modifier), cartes média `ToolCardEditorial`, surcharges `.mf-grid > .mf-card`.
+- [ ] P2 E2E `stack-budget.spec.ts` (FR) : le prix de Claude s'affiche « 17,17 €/mois », le test attend « 17 €/mois ». Vient des prix exacts (`c8335c7e`) ou d'une conversion : vérifier la règle de devise (31/10/2026).
+- [ ] P2 E2E `responsive-shell.spec.ts` « Explorer et Ma stack » : la graine écrit encore `tooltrim-ma-stack-mvp-v2`, la page s'ouvre vide ; réécrire sur le magasin personnel (31/10/2026).
 - [ ] P3 Design system : la vitrine de micro-animations de la planche garde sa propre inclinaison ; la brancher sur `[data-tt-tilt]` du système.
 - [ ] P3 Design system, en dernier : les ciseaux du logo qui font « clic » (prêt dans le système, `.tt-blade`).
 - [x] P1 E2E comptes : `full personal state survives new device` (×4) visait `.ms-account`, absent une fois la stack synchronisée ; il vise désormais la pastille « Stack enregistrée » (23/10/2026).
