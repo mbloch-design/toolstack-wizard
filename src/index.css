@@ -42064,19 +42064,19 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
    rangées. Remplace le fond teinté, la pastille bleue, les faces centrées et
    inclinées. La structure vient du système (.tt-decision, .tt-choice) ; ces
    règles neutralisent les couches historiques de .mf-now. */
-.ms-page .mf .mf-grid > .mf-now, .ms-page .mf .mf-now, .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) { gap: 0; padding: 28px; border-radius: var(--tt-r-tile); background: var(--tt-tile); box-shadow: none; color: var(--tt-ink); }
+.ms-page .mf .mf-grid > .mf-now, .ms-page .mf .mf-now, .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) { gap: 0; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); box-shadow: none; color: var(--tt-ink); }
 .dark .ms-page .mf .mf-grid > .mf-now, .dark .ms-page .mf .mf-now { box-shadow: none; }
 .ms-page .mf .mf-now .mf-k.tt-decision-head { display: flex; align-items: center; gap: 12px; margin: 0 0 16px; color: var(--tt-ink); }
 .ms-page .mf .mf-now .mf-k.tt-decision-head .mf-step { margin-left: auto; color: var(--tt-ink); }
 .ms-page .mf .mf-now .mf-now-q { margin: 0; }
-.ms-page .mf .mf-now .mf-now-q h3.tt-decision-title { margin: 0; font: 500 1.5rem/1.15 var(--tt-display); letter-spacing: -.02em; color: var(--tt-ink); }
-.ms-page .mf .mf-now p.mf-t.tt-decision-detail { margin: 8px 0 0; font: var(--tt-w-text) 1rem/1.55 var(--tt-read); color: var(--tt-ink); }
+.ms-page .mf .mf-now .mf-now-q h3.tt-decision-title { margin: 0; font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); color: var(--tt-ink); }
+.ms-page .mf .mf-now p.mf-t.tt-decision-detail { margin: 8px 0 0; font: var(--tt-text-font); color: var(--tt-ink); }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-duel.tt-choices { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin: 20px 0 0; }
-.ms-page .mf .mf-now[data-kind="pair"] .tt-choice { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; flex-direction: row; align-items: center; justify-items: stretch; gap: 14px; min-height: 64px; padding: 12px 18px 12px 12px; border: 0; border-radius: var(--tt-r-card); background: var(--tt-bg); color: var(--tt-ink); text-align: left; box-shadow: 0 0 0 1px var(--tt-line); transform: none; rotate: none; }
-.ms-page .mf .mf-now[data-kind="pair"] .tt-choice:hover:not(:disabled) { background: var(--tt-bg); box-shadow: 0 0 0 1px color-mix(in oklch, var(--tt-ink) 35%, var(--tt-line)); transform: none; }
+.ms-page .mf .mf-now[data-kind="pair"] .tt-choice { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; flex-direction: row; align-items: center; justify-items: stretch; gap: 14px; min-height: 64px; padding: var(--tt-row-pad); border: 0; border-radius: var(--tt-r-card); background: var(--tt-bg); color: var(--tt-ink); text-align: left; box-shadow: var(--tt-row-ring); transform: none; rotate: none; }
+.ms-page .mf .mf-now[data-kind="pair"] .tt-choice:hover:not(:disabled) { background: var(--tt-bg); box-shadow: var(--tt-row-ring-hover); transform: none; }
 .ms-page .mf .mf-now[data-kind="pair"] .tt-choice:active:not(:disabled) { transform: scale(.985); }
-.ms-page .mf .mf-now[data-kind="pair"] .tt-choice[data-state="kept"] { background: var(--tt-bg); box-shadow: 0 0 0 2px var(--tt-brand); }
-.ms-page .mf .mf-now[data-kind="pair"] .tt-choice[data-state="gone"] { opacity: .45; transform: none; }
+.ms-page .mf .mf-now[data-kind="pair"] .tt-choice[data-state="kept"] { background: var(--tt-bg); box-shadow: var(--tt-row-ring-on); }
+.ms-page .mf .mf-now[data-kind="pair"] .tt-choice[data-state="gone"] { opacity: var(--tt-row-gone); transform: none; }
 .ms-page .mf .mf-now[data-kind="pair"] .tt-choice .tool-logo, .ms-page .mf .mf-now[data-kind="pair"] .tt-choice img { width: 40px; height: 40px; }
 .ms-page .mf .mf-now[data-kind="pair"] .tt-choice .tt-choice-logos :is(.tool-logo, img) { width: 28px; height: 28px; }
 @container (max-width: 460px) {
@@ -42088,16 +42088,16 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .ms-page .mf .mf-now[data-kind="pair"] .mf-bar-actions, .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) .mf-bar-actions { justify-content: space-between; margin-top: 20px; padding-top: 0; }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-links { justify-content: flex-start; }
 /* Questions de formule : les tuiles prennent l'atome « carte de verdict ». */
-.ms-page .mf .mf-now .mf-plan { border-radius: var(--tt-r-card); background: var(--tt-bg); box-shadow: 0 0 0 1px var(--tt-line); color: var(--tt-ink); transition: box-shadow var(--tt-dur-state) ease, opacity var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
-.ms-page .mf .mf-now .mf-plan:hover, .ms-page .mf .mf-now .mf-plan:focus-visible { background: var(--tt-bg); box-shadow: 0 0 0 1px color-mix(in oklch, var(--tt-ink) 35%, var(--tt-line)); }
-.ms-page .mf .mf-now .mf-plan[data-state="kept"] { box-shadow: 0 0 0 2px var(--tt-brand); }
-.ms-page .mf .mf-now .mf-plan[data-state="gone"] { opacity: .45; }
+.ms-page .mf .mf-now .mf-plan { border-radius: var(--tt-r-card); background: var(--tt-bg); box-shadow: var(--tt-row-ring); color: var(--tt-ink); transition: box-shadow var(--tt-dur-state) ease, opacity var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
+.ms-page .mf .mf-now .mf-plan:hover, .ms-page .mf .mf-now .mf-plan:focus-visible { background: var(--tt-bg); box-shadow: var(--tt-row-ring-hover); }
+.ms-page .mf .mf-now .mf-plan[data-state="kept"] { box-shadow: var(--tt-row-ring-on); }
+.ms-page .mf .mf-now .mf-plan[data-state="gone"] { opacity: var(--tt-row-gone); }
 /* Couches historiques plus spécifiques (mode sombre teinté, titre en Inter gras, nom en gras). */
 .ms-page .mf .mf-grid > .mf-now.mf-card[data-kind]:has(.mf-k), .dark .ms-page .mf .mf-grid > .mf-now.mf-card[data-kind]:has(.mf-k), .ms-page .mf .mf-now.mf-card[data-kind]:has(.mf-k) { background: var(--tt-tile); box-shadow: none; }
-.ms-page .mf .mf-grid > .mf-now.mf-card[data-kind] .mf-now-q h3.tt-decision-title, .ms-page .mf .mf-now.mf-card[data-kind] .mf-now-q h3.tt-decision-title { font: 500 1.5rem/1.15 var(--tt-display); letter-spacing: -.02em; color: var(--tt-ink); }
+.ms-page .mf .mf-grid > .mf-now.mf-card[data-kind] .mf-now-q h3.tt-decision-title, .ms-page .mf .mf-now.mf-card[data-kind] .mf-now-q h3.tt-decision-title { font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); color: var(--tt-ink); }
 .ms-page .mf .mf-now .tt-choice .mf-face-name { font: inherit; color: inherit; }
 /* Le titre d'une décision et l'anneau du choix retenu (les anciennes règles portaient !important et un sélecteur d'élément). */
-.ms-page .mf .mf-now .mf-now-q h3.tt-decision-title { font: 500 1.5rem/1.15 var(--tt-display) !important; letter-spacing: -.02em; }
-.ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button.tt-choice[data-state="kept"] { box-shadow: 0 0 0 2px var(--tt-brand); }
-.ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button.tt-choice[data-state="gone"] { opacity: .45; }
+.ms-page .mf .mf-now .mf-now-q h3.tt-decision-title { font: var(--tt-title-l-font) !important; letter-spacing: var(--tt-title-l-tracking); }
+.ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button.tt-choice[data-state="kept"] { box-shadow: var(--tt-row-ring-on); }
+.ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button.tt-choice[data-state="gone"] { opacity: var(--tt-row-gone); }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .tt-choice .mf-face-name { font-weight: inherit !important; font-size: inherit !important; color: inherit !important; }

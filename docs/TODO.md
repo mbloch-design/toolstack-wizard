@@ -20,6 +20,7 @@ Légende : **[décision]** = attend un arbitrage de Michael.
 - [ ] P1 Contenu : passer le catalogue au vouvoiement (≈ 1 800 phrases : `keepIf`, `avoidIf`, `threshold`, descriptions, étapes ; source Supabase), puis les libellés « Pour toi si / Pas pour toi si » de la fiche outil. Relecture humaine, pas de conversion aveugle.
 - [x] Champs du site (`.tt-form-input`, prénom de Ma stack, recherche) au filet et halo bleu de la planche ; texte indicatif en gris (30/10/2026).
 - [ ] P2 Design system : Ma stack garde un bouton principal bleu (« C'est parti ») ; la planche dit encre. À aligner avec le lot 2.
+- [ ] P1 Design system : appliquer au site les organismes « budget » et « vos usages » dessinés dans la planche (chapitre 06), comme la carte de décision : markup en atomes, sortie des classes historiques `mf-price` / `mf-shares` / `mu-*` (couches `@layer` avec `!important`), tests alignés.
 - [ ] P3 Design system : la vitrine de micro-animations de la planche garde sa propre inclinaison ; la brancher sur `[data-tt-tilt]` du système.
 - [ ] P3 Design system, en dernier : les ciseaux du logo qui font « clic » (prêt dans le système, `.tt-blade`).
 - [x] P1 E2E comptes : `full personal state survives new device` (×4) visait `.ms-account`, absent une fois la stack synchronisée ; il vise désormais la pastille « Stack enregistrée » (23/10/2026).

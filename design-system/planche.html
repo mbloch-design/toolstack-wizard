@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Système ToolTrim</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -755,6 +756,35 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
 .dk-links { display: inline-flex; gap: 20px; }
 .dk-budget { display: inline-flex; align-items: baseline; gap: 8px; font: var(--w-text) .875rem/1 var(--read); }
 .dk-budget b { font: 500 1.25rem/1 var(--display); letter-spacing: -.02em; } .dk-budget small { margin-left: -6px; }
+
+/* Atomes : chapitre et atelier. */
+.lab { display: grid; grid-template-columns: minmax(260px, 340px) minmax(0, 1fr); gap: 12px; align-items: start; }
+.lab-panel { position: sticky; top: 16px; gap: 14px; }
+.lab-row { display: grid; grid-template-columns: minmax(0, 1fr) 64px; gap: 4px 12px; align-items: center; }
+.lab-row input { grid-column: 1 / -1; grid-row: 2; width: 100%; accent-color: var(--brand); }
+.lab-row output { grid-column: 2; grid-row: 1; text-align: right; }
+.atoms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.atom { display: grid; gap: 14px; align-content: space-between; padding: 22px; border-radius: var(--tt-r-tile); background: var(--tile); }
+.atom-spec { display: flex; align-items: center; min-height: 64px; }
+.atom-meta { display: grid; gap: 4px; }
+.atom-meta b { font: 500 .9375rem/1.3 var(--ui); }
+.atom-meta code { font: 500 .8125rem/1.3 ui-monospace, monospace; color: var(--brand); }
+.atom-where { padding-top: 6px; border-top: 1px dashed color-mix(in oklch, var(--meta) 50%, transparent); }
+@media (max-width: 900px) { .lab, .atoms { grid-template-columns: 1fr; } .lab-panel { position: static; } }
+/* Organismes budget et usages (démos, faites d'atomes). */
+.bd-trust { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; align-items: start; }
+.bd-gain { padding-top: 12px; border-top: 1px dashed color-mix(in oklch, var(--meta) 50%, transparent); }
+.us-tool { display: grid; grid-template-columns: 52px minmax(0, 1fr); align-items: center; gap: 14px; }
+.dk-logo--l { width: 52px !important; height: 52px !important; } .dk-logo--l svg { width: 28px; height: 28px; }
+.us-quip { font-style: italic; }
+.us-nav { display: inline-flex; gap: 8px; flex: none; }
+.us-nav .tt-btn { white-space: nowrap; }
+.org-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 12px; align-items: start; }
+.org-col { display: grid; gap: 12px; }
+/* Les organismes posés sur le fond de page, comme sur le site : la tuile se détache. */
+.ix-card:has(.org-pair), .ix-card:has(#dk) { background: var(--bg); box-shadow: 0 0 0 1px var(--line); }
+#us .tt-head { flex-wrap: wrap; }
+@media (max-width: 900px) { .org-pair { grid-template-columns: 1fr; } }
 </style>
 
 <main>
@@ -771,6 +801,47 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
         <h1>Le luxe de la précision.</h1>
         <p>Choisir, pas empiler. Une structure silencieuse, un bleu, une ligne de coupe, et une vie franche dans le contenu : les règles de chaque page ToolTrim, montrées en vrai.</p>
         <div class="actions"><a class="cta" href="#couleur">Parcourir le système <span class="arrow">→</span></a><a class="link" href="#cas">Les cas passés en design <span class="arrow">→</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap chapter chapter--wide" id="atomes">
+    <div class="chapter-head">
+      <span class="eyebrow">Atomes · la source de chaque box</span>
+      <h2>Modifier un atome, c'est modifier toutes les boxes.</h2>
+      <p>Chaque atome est défini une seule fois dans le système partagé (<code>src/styles/tooltrim-system.css</code>), par un token. Les molécules et les organismes, ici comme sur le site, ne font que l'assembler. L'atelier ci-dessous change les atomes en direct : toute la planche suit. Copiez les réglages et transmettez-les : je les reporte dans le système, et le site suit à son tour.</p>
+    </div>
+    <div class="lab">
+      <div class="lab-panel tt-tile">
+        <div class="tt-head"><span class="tt-eyebrow">Atelier des atomes</span><button type="button" class="tt-btn tt-btn--grey" id="lab-reset">Réinitialiser</button></div>
+          <label class="lab-row"><span class="tt-label">Titre L</span><input type="range" data-k="tl" min="1.1" max="2.4" step="0.05" value="1.5"><output class="tt-note num">1.5rem</output></label>
+          <label class="lab-row"><span class="tt-label">Surtitre, approche</span><input type="range" data-k="ey" min="0" max="0.2" step="0.01" value="0.08"><output class="tt-note num">0.08em</output></label>
+          <label class="lab-row"><span class="tt-label">Tuile, marge intérieure</span><input type="range" data-k="pad" min="12" max="44" step="1" value="28"><output class="tt-note num">28px</output></label>
+          <label class="lab-row"><span class="tt-label">Tuile, arrondi</span><input type="range" data-k="rt" min="0" max="40" step="1" value="24"><output class="tt-note num">24px</output></label>
+          <label class="lab-row"><span class="tt-label">Rangée, arrondi</span><input type="range" data-k="rc" min="0" max="28" step="1" value="16"><output class="tt-note num">16px</output></label>
+          <label class="lab-row"><span class="tt-label">Choix écartés, opacité</span><input type="range" data-k="gone" min="0.15" max="0.9" step="0.05" value="0.45"><output class="tt-note num">0.45</output></label>
+          <label class="lab-row"><span class="tt-label">Bleu ToolTrim, teinte</span><input type="range" data-k="bh" min="200" max="300" step="1" value="264"><output class="tt-note num">264°</output></label>
+          <label class="lab-row"><span class="tt-label">Vert du gain, teinte</span><input type="range" data-k="gh" min="110" max="190" step="1" value="151.5"><output class="tt-note num">151.5°</output></label>
+        <button type="button" class="tt-btn" id="lab-copy">Copier les réglages</button>
+        <p class="tt-note" id="lab-out" aria-live="polite">Aucun réglage modifié.</p>
+      </div>
+      <div class="atoms">
+        <div class="atom"><div class="atom-spec"><span class="tt-eyebrow">Votre décision</span></div><div class="atom-meta"><b>Surtitre</b><code>.tt-eyebrow</code><span class="tt-note">--tt-eyebrow-font, --tt-eyebrow-tracking</span><span class="tt-note atom-where">Utilisé dans : Carte de décision, budget, usages, chapitres</span></div></div>
+        <div class="atom"><div class="atom-spec"><span class="tt-title-l">Trello et Asana font le même travail.</span></div><div class="atom-meta"><b>Titre L</b><code>.tt-title-l</code><span class="tt-note">--tt-title-l-font, --tt-title-l-tracking</span><span class="tt-note atom-where">Utilisé dans : Carte de décision</span></div></div>
+        <div class="atom"><div class="atom-spec"><span class="tt-title-m">ChatGPT</span></div><div class="atom-meta"><b>Titre M</b><code>.tt-title-m</code><span class="tt-note">--tt-title-m-font, --tt-title-m-tracking</span><span class="tt-note atom-where">Utilisé dans : Vos usages, cartes du système</span></div></div>
+        <div class="atom"><div class="atom-spec"><span class="tt-label">Garder Trello</span></div><div class="atom-meta"><b>Libellé</b><code>.tt-label</code><span class="tt-note">--tt-label-font, --tt-label-tracking</span><span class="tt-note atom-where">Utilisé dans : Choix, parts du budget, confiance, boutons</span></div></div>
+        <div class="atom"><div class="atom-spec"><p class="tt-text">Usage commun : gestion de projet.</p></div><div class="atom-meta"><b>Texte</b><code>.tt-text</code><span class="tt-note">--tt-text-font</span><span class="tt-note atom-where">Utilisé dans : Phrases des cartes</span></div></div>
+        <div class="atom"><div class="atom-spec"><p class="tt-note">Asana quitte la stack · seul, 6&nbsp;€/mois</p></div><div class="atom-meta"><b>Note</b><code>.tt-note</code><span class="tt-note">--tt-note-font</span><span class="tt-note atom-where">Utilisé dans : Détails de rangées, légendes, pourcentages</span></div></div>
+        <div class="atom"><div class="atom-spec"><span class="tt-figure">64&nbsp;€<small>/mois</small></span></div><div class="atom-meta"><b>Grand chiffre</b><code>.tt-figure</code><span class="tt-note">--tt-figure-font, --tt-figure-tracking</span><span class="tt-note atom-where">Utilisé dans : Budget</span></div></div>
+        <div class="atom"><div class="atom-spec"><span class="tt-amount" data-gain>−11&nbsp;€<small>/mois</small></span></div><div class="atom-meta"><b>Montant</b><code>.tt-amount · [data-gain]</code><span class="tt-note">--tt-amount-font, --tt-gain-ink</span><span class="tt-note atom-where">Utilisé dans : Choix, parts, budget estimé</span></div></div>
+        <div class="atom"><div class="atom-spec"><span class="tt-tag">Le moins cher</span></div><div class="atom-meta"><b>Étiquette</b><code>.tt-tag</code><span class="tt-note">--tt-tag-font</span><span class="tt-note atom-where">Utilisé dans : Choix</span></div></div>
+        <div class="atom"><div class="atom-spec"><span class="tt-verdict tt-verdict--swap">Peut remplacer Trello</span></div><div class="atom-meta"><b>Verbe</b><code>.tt-verdict</code><span class="tt-note">couleurs --tt-ink, --tt-brand, --tt-live</span><span class="tt-note atom-where">Utilisé dans : Recherche, rangées d'outil</span></div></div>
+        <div class="atom"><div class="atom-spec"><span class="tt-logo-tile dk-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.147 0H2.853A2.86 2.86 0 000 2.853v18.294A2.86 2.86 0 002.853 24h18.294A2.86 2.86 0 0024 21.147V2.853A2.86 2.86 0 0021.147 0zM10.34 17.287a.953.953 0 01-.953.953h-4a.954.954 0 01-.954-.953V5.38a.953.953 0 01.954-.953h4a.954.954 0 01.953.953zm9.233-5.467a.944.944 0 01-.953.947h-4a.947.947 0 01-.953-.947V5.38a.953.953 0 01.953-.953h4a.954.954 0 01.953.953z"/></svg></span></div><div class="atom-meta"><b>Logo</b><code>.tt-logo-tile</code><span class="tt-note">--tt-logo-radius, --tt-logo-shadow</span><span class="tt-note atom-where">Utilisé dans : Partout où un outil apparaît</span></div></div>
+        <div class="atom"><div class="atom-spec"><span class="tt-check"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></span></div><div class="atom-meta"><b>Coche</b><code>.tt-check</code><span class="tt-note">--tt-brand</span><span class="tt-note atom-where">Utilisé dans : Choix retenu, budget renseigné (verte)</span></div></div>
+        <div class="atom"><div class="atom-spec"><span class="tt-steps"><span class="tt-steps-track"><i data-on></i><i data-on></i><i></i></span>2 sur 3</span></div><div class="atom-meta"><b>Étapes</b><code>.tt-steps</code><span class="tt-note">--tt-eyebrow-font</span><span class="tt-note atom-where">Utilisé dans : Carte de décision, vos usages</span></div></div>
+        <div class="atom"><div class="atom-spec"><span style="display:inline-flex;gap:8px"><span class="tt-btn">Valider</span><span class="tt-btn tt-btn--grey">Passer</span></span></div><div class="atom-meta"><b>Bouton</b><code>.tt-btn · --grey</code><span class="tt-note">--tt-label-font</span><span class="tt-note atom-where">Utilisé dans : Vos usages, formulaires</span></div></div>
+        <div class="atom"><div class="atom-spec"><span class="tt-row" style="display:block;padding:12px 16px" data-state="kept"><span class="tt-label">Choisie</span></span></div><div class="atom-meta"><b>Rangée</b><code>.tt-row · data-state</code><span class="tt-note">--tt-row-ring, -hover, -on, --tt-row-gone</span><span class="tt-note atom-where">Utilisé dans : Choix, échelle d'usage</span></div></div>
+        <div class="atom"><div class="atom-spec"><span class="tt-tile" style="display:block;padding:14px"><span class="tt-note">Toutes les boxes</span></span></div><div class="atom-meta"><b>Tuile</b><code>.tt-tile</code><span class="tt-note">--tt-tile-pad, --tt-r-tile</span><span class="tt-note atom-where">Utilisé dans : Toutes les boxes</span></div></div>
       </div>
     </div>
   </section>
@@ -1030,6 +1101,29 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
           <div class="tt-decision-foot"><span class="dk-links"><a class="link2" href="#interactions">Comparer en détail</a><a class="link2" href="#interactions">Plus tard</a></span><span class="dk-budget">Budget estimé <b class="num">64&nbsp;€</b><small>/mois</small></span></div>
         </div>
         <p class="meta">Atomes : tuile, surtitre et étapes, titre d'affichage, phrase de lecture, logo, verbe, étiquette, montant (vert = gain), anneau bleu du choix retenu, coche qui rebondit. Les autres choix s'effacent ; la décision passe en 180&nbsp;ms.</p>
+      </article>
+      <article class="ix-card ix-card--wide">
+        <header><span class="eyebrow">Compter, mesurer</span><h3>Organismes · le budget et vos usages</h3></header>
+        <div class="org-pair">
+          <div class="org-col"><div class="tt-tile">
+          <div class="tt-head"><span class="tt-eyebrow">Budget mensuel renseigné</span></div>
+          <span class="tt-figure">64&nbsp;€<small>/mois</small></span>
+          <p class="tt-text"><b>Soit 768&nbsp;€ par an.</b> Notion en paie plus de la moitié à lui seul.</p>
+          <div><div class="tt-cutgauge" style="--v:.27"><span class="tt-cutgauge-keep"></span><span class="tt-cutgauge-mark" aria-hidden="true"><svg viewBox="60 60 255 255" aria-hidden="true"><path d="M293.43,198.56l-153.81.02c-5.35,19.07-23.03,30.9-42,28.7-19.28-2.24-33.97-18.54-34.17-37.99-.21-19.32,14.06-35.99,33.29-38.65,19.23-2.66,37.46,9.17,42.84,28.54l34.77-.05.05-34.75c-19.04-5.35-30.84-23-28.65-41.98,2.22-19.27,18.54-33.97,37.98-34.16,19.34-.19,35.98,14.05,38.66,33.29,2.68,19.23-9.16,37.42-28.53,42.86l.07,34.81,99.23.04c5.68.11,9.79,4.13,9.95,9.32.15,4.74-3.16,10.01-9.68,10.01ZM195.08,90.97c-9.66-6.63-21.85-3.24-27.38,5.67-5.42,8.73-3.11,20.35,5.46,26.15,8.7,5.9,20.97,3.84,26.91-4.94,5.67-8.38,4.41-20.42-4.99-26.88ZM113.08,173.01c-9.75-6.64-21.88-3.25-27.41,5.66-5.44,8.76-3.08,20.31,5.45,26.16,8.72,5.98,20.88,3.92,26.91-4.98,5.58-8.25,4.34-20.52-4.95-26.85Z"/><path class="tt-blade" d="M193.84,297.5c0,6.19-4.14,10.15-9.28,10.39-5.35.25-10.08-3.91-10.09-9.93v-70.44c0-5.65,4.16-9.71,9.24-9.93,5.35-.23,10.09,3.93,10.09,9.93l.03,69.98Z"/></svg></span><span class="tt-cutgauge-cut"></span></div><p class="tt-cutgauge-legend"><span>Gardé · 47&nbsp;€</span><span>À examiner · 17&nbsp;€</span></p></div>
+          <div class="bd-trust"><span class="tt-check tt-check--live"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></span><span><span class="tt-label">Budget renseigné</span><p class="tt-note">Estimation selon les prix et formules renseignés.</p></span></div>
+          <ul class="tt-shares"><li class="tt-share" style="--c:var(--area-violet);--w:56%"><span class="tt-logo-tile dk-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></span><span class="tt-label tt-share-name">Notion</span><span class="tt-share-bar"><i></i></span><span class="tt-amount">36&nbsp;€</span><span class="tt-note">56&nbsp;%</span></li><li class="tt-share" style="--c:var(--area-amber);--w:23%"><span class="tt-logo-tile dk-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg></span><span class="tt-label tt-share-name">Figma</span><span class="tt-share-bar"><i></i></span><span class="tt-amount">15&nbsp;€</span><span class="tt-note">23&nbsp;%</span></li><li class="tt-share" style="--c:var(--area-violet);--w:9%"><span class="tt-logo-tile dk-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.147 0H2.853A2.86 2.86 0 000 2.853v18.294A2.86 2.86 0 002.853 24h18.294A2.86 2.86 0 0024 21.147V2.853A2.86 2.86 0 0021.147 0zM10.34 17.287a.953.953 0 01-.953.953h-4a.954.954 0 01-.954-.953V5.38a.953.953 0 01.954-.953h4a.954.954 0 01.953.953zm9.233-5.467a.944.944 0 01-.953.947h-4a.947.947 0 01-.953-.947V5.38a.953.953 0 01.953-.953h4a.954.954 0 01.953.953z"/></svg></span><span class="tt-label tt-share-name">Trello</span><span class="tt-share-bar"><i></i></span><span class="tt-amount">6&nbsp;€</span><span class="tt-note">9&nbsp;%</span></li></ul>
+          <p class="tt-note bd-gain">Budget estimé allégé de <b class="tt-amount" data-gain>11&nbsp;€</b> par mois.</p>
+        </div>
+        <p class="meta">Atomes : tuile, surtitre, grand chiffre, texte, coche verte, libellé, note, logo, montant. Molécules : jauge de coupe, part d'un total.</p></div>
+          <div class="org-col"><div class="tt-tile" id="us">
+          <div class="tt-head"><span class="tt-eyebrow">Vos usages</span><span class="tt-steps"><span class="tt-steps-track" aria-hidden="true"><i data-on></i><i></i><i></i><i></i><i></i><i></i></span>1 sur 6</span></div>
+          <div class="us-tool"><span class="tt-logo-tile dk-logo dk-logo--l"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></span><span><span class="tt-title-m">Notion</span><p class="tt-note">36&nbsp;€/mois · vous l'utilisez…</p></span></div>
+          <div class="tt-scale" role="group" aria-label="Fréquence d'usage"><button type="button" class="tt-row" aria-pressed="false" style="--h:14"><span class="tt-scale-bar"></span><span class="tt-note">Peu</span></button><button type="button" class="tt-row" aria-pressed="false" style="--h:32"><span class="tt-scale-bar"></span><span class="tt-note">Parfois</span></button><button type="button" class="tt-row" aria-pressed="false" style="--h:52"><span class="tt-scale-bar"></span><span class="tt-note">Régulier</span></button><button type="button" class="tt-row" aria-pressed="false" style="--h:74"><span class="tt-scale-bar"></span><span class="tt-note">Souvent</span></button><button type="button" class="tt-row" aria-pressed="false" style="--h:100"><span class="tt-scale-bar"></span><span class="tt-note">À fond</span></button></div>
+          <p class="tt-note us-quip">Du figurant au copilote : à vous de caster.</p>
+          <div class="tt-head"><a class="link2" href="#interactions">Faire une pause</a><span class="us-nav"><button type="button" class="tt-btn tt-btn--grey tt-btn--icon" aria-label="Outil précédent">‹</button><button type="button" class="tt-btn tt-btn--grey">Passer ›</button></span></div>
+        </div>
+        <p class="meta">Atomes : tuile, surtitre, étapes, logo, titre M, note, rangée, boutons gris. Molécule : échelle d'usage, dont la marche choisie passe à l'encre et s'entoure de bleu.</p></div>
+        </div>
       </article>
       <article class="ix-card">
         <header><span class="eyebrow">Filtrer</span><h3>Puces de filtre</h3></header>
@@ -1399,9 +1493,35 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
     cs.forEach((c) => c.addEventListener('click', () => {
       if (cs.some((x) => x.dataset.state)) { cs.forEach((x) => { delete x.dataset.state; x.querySelector('.tt-choice-check')?.remove(); }); return; }
       cs.forEach((x) => { x.dataset.state = x === c ? 'kept' : 'gone'; });
-      const mark = c.querySelector('.tt-choice-logo, .tt-choice-logos'); const k = document.createElement('span'); k.className = 'tt-choice-check'; k.setAttribute('aria-hidden', 'true');
+      const mark = c.querySelector('.tt-choice-logo, .tt-choice-logos'); const k = document.createElement('span'); k.className = 'tt-choice-check tt-check'; k.setAttribute('aria-hidden', 'true');
       k.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg>'; mark.appendChild(k);
     })); }
+
+  // Atelier des atomes : chaque curseur réécrit un token d'atome sur :root ; toute la planche suit.
+  const LAB = {
+    tl: (v) => ({ '--tt-title-l-font': `500 ${v}rem/1.15 var(--tt-display)` }),
+    ey: (v) => ({ '--tt-eyebrow-tracking': `${v}em` }),
+    pad: (v) => ({ '--tt-tile-pad': `${v}px` }),
+    rt: (v) => ({ '--tt-r-tile': `${v}px` }),
+    rc: (v) => ({ '--tt-r-card': `${v}px` }),
+    gone: (v) => ({ '--tt-row-gone': `${v}` }),
+    bh: (v) => ({ '--tt-brand': `oklch(0.52 0.27 ${v})` }),
+    gh: (v) => ({ '--tt-live': `oklch(0.675 0.204 ${v})` }),
+  };
+  const labIn = [...document.querySelectorAll('.lab-row input')], labOut = document.getElementById('lab-out');
+  const changed = {};
+  labIn.forEach((input) => { input.dataset.base = input.value; input.addEventListener('input', () => {
+    const out = input.parentElement.querySelector('output'); out.textContent = input.value + (out.textContent.replace(/^[\d.]+/, ''));
+    const decl = LAB[input.dataset.k](input.value); Object.entries(decl).forEach(([k, v]) => { document.documentElement.style.setProperty(k, v); if (input.value === input.dataset.base) delete changed[k]; else changed[k] = v; });
+    labOut.textContent = Object.keys(changed).length ? Object.keys(changed).length + ' atome(s) modifié(s). Copiez et transmettez les réglages.' : 'Aucun réglage modifié.';
+  }); });
+  document.getElementById('lab-reset')?.addEventListener('click', () => { labIn.forEach((input) => { input.value = input.dataset.base; input.dispatchEvent(new Event('input')); }); });
+  document.getElementById('lab-copy')?.addEventListener('click', async () => {
+    const css = ':root {\n' + Object.entries(changed).map(([k, v]) => `  ${k}: ${v};`).join('\n') + '\n}';
+    try { await navigator.clipboard.writeText(css); labOut.textContent = 'Réglages copiés. Collez-les dans la conversation.'; } catch { labOut.textContent = css; }
+  });
+  // Échelle d'usage : une marche à la fois.
+  document.querySelectorAll('#us .tt-scale button').forEach((b, i, all) => b.addEventListener('click', () => all.forEach((x) => { x.setAttribute('aria-pressed', String(x === b)); x.dataset.state = x === b ? 'kept' : ''; if (x !== b) delete x.dataset.state; })));
   // Le sourire
   const reduceM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const markTile = document.querySelector('.dna-mark-tile');

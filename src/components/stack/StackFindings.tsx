@@ -388,7 +388,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           const both = top.actions.find((action) => !top.tools.some((candidate) => action.label.endsWith(candidate.name)));
           const sum = (top.costs?.[0] ?? 0) + (top.costs?.[1] ?? 0);
           const state = (index: number) => picked === null ? undefined : picked === index ? "kept" : "gone";
-          const check = <span className="tt-choice-check" aria-hidden="true"><Check strokeWidth={3} /></span>;
+          const check = <span className="tt-choice-check tt-check" aria-hidden="true"><Check strokeWidth={3} /></span>;
           return <div className="mf-duel mf-choice-group tt-choices" data-picked={picked !== null ? picked : undefined}>
             {top.tools.slice(0, 2).map((tool, index) => {
               const keep = top.actions.find((action) => action.label.endsWith(tool.name));

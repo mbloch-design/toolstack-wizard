@@ -14,6 +14,7 @@ La planche « Système ToolTrim » est la source de vérité du design du site, 
 - **Un composant passe dans le site** en déménageant de la planche vers `tooltrim-system.css` avec le préfixe `tt-` ; la planche l'utilise alors depuis ce fichier.
 - **Sens inverse** : un cas du site que la planche ne couvre pas est d'abord ajouté au chapitre « À passer en design » de la planche (capture dans `design-system/cases/`, statut Décision / Écart / Absent, question à trancher), avant d'être retravaillé.
 - Mode sombre : classe `.dark` (le site la pose ; la planche aussi, d'après `data-theme` ou le système). La gate des tokens scanne aussi le fichier partagé.
+- **Système atomique (30 oct. 2026)** : chaque atome est un token composite (`--tt-eyebrow-font`, `--tt-title-l-font`, `--tt-label-font`, `--tt-text-font`, `--tt-note-font`, `--tt-figure-font`, `--tt-amount-font`, `--tt-gain-ink`, `--tt-tile-pad`, `--tt-row-ring*`, `--tt-row-gone`, `--tt-logo-*`…) et une classe (`.tt-eyebrow`, `.tt-title-l`, `.tt-label`, `.tt-text`, `.tt-note`, `.tt-figure`, `.tt-amount`, `.tt-tag`, `.tt-tile`, `.tt-row`, `.tt-logo-tile`, `.tt-check`, `.tt-steps`, `.tt-btn`). Molécules (`.tt-choice`, `.tt-share`, `.tt-scale`, `.tt-cutgauge`) et organismes (`.tt-decision`) ne lisent que ces tokens, comme les règles du site qui les empruntent. Modifier un atome = modifier son token, une seule fois. La planche a un chapitre « Atomes » avec un atelier qui change les tokens en direct et copie les réglages.
 
 ## ToolLogo — composant unique pour les logos outils
 

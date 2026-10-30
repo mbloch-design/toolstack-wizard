@@ -1,3 +1,9 @@
+## 2026-10-30 · Design system : la couche d'atomes
+
+- Le système partagé est rangé en couches : tokens, atomes (token composite + classe), molécules, organismes. La carte de décision, la carte de verdict et les surcharges du site lisent les tokens d'atome : modifier un atome se répercute partout.
+- Planche : chapitre « Atomes » (chaque atome, sa classe, ses tokens, où il est utilisé) et atelier qui modifie les atomes en direct et copie les réglages ; organismes « budget » et « vos usages » dessinés uniquement en atomes (molécules « part d'un total » et « échelle d'usage »). Déclaration UTF-8 ajoutée à la source de la planche.
+- Site : carte de décision inchangée visuellement, désormais branchée sur les atomes. 1 044 tests, typecheck et gate passent.
+
 ## 2026-10-30 · Ma stack : la carte de décision redessinée dans le système
 
 - Organisme `.tt-decision` et molécule `.tt-choice` (carte de verdict) ajoutés au système partagé, dessinés dans la planche (chapitre 06, « Décider »), puis appliqués à la carte de décision de Ma stack : tuile gris froid, surtitre et étapes en traits fins, titre en Uncut Sans, phrase en Inter, trois cartes de verdict en rangées (logo, « Garder X », ce qui quitte la stack, montant vert du gain), « Garder les deux » en dernier. Choix retenu : anneau bleu et coche qui rebondit ; les autres s'effacent ; validation en 180 ms conservée.
