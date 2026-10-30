@@ -41866,3 +41866,23 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .td-tool-page .td-explore-map-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 0 18px; border: 0; border-radius: var(--radius-pill); background: var(--color-surface-soft); color: var(--color-text-strong); font: 500 14px/1 var(--font-ui); box-shadow: none; }
 .td-tool-page .td-explore-map-btn:hover { background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface-soft)); }
 .td-tool-page :is(.td-decision-cta-main, .td-decision-cta-alt, .td-decision-compare, .td-localnav-cta, .td-mobile-actionbar-cta, .td-explore-map-btn):focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 3px; }
+
+/* Remaining page calls on the CTA rule (29 Oct 2026). CSS only.
+   Comparison outbound: the affiliate trial leads (ink pill), the other
+   brand's plans defer (link). When both offers are shown as equals, both
+   are grey pills: the page stays neutral between the two tools. */
+.cp-guide-outbound-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: auto; min-height: 40px; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; color: var(--color-text-strong); font: 500 15px/1.2 var(--font-ui); letter-spacing: -.01em; text-decoration: none; }
+.cp-guide-outbound-button:hover { background: none; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.cp-guide-outbound-button.cp-guide-outbound-button--primary { min-height: 52px; padding: 0 26px 0 30px; border-radius: var(--radius-pill); background: var(--color-text-strong); color: var(--color-bg); }
+.cp-guide-outbound-button.cp-guide-outbound-button--primary:hover { background: var(--color-hover-strong); text-decoration: none; }
+.cp-guide-outbound-grid:has(.cp-guide-outbound-item + .cp-guide-outbound-item .cp-guide-outbound-button--primary) .cp-guide-outbound-button--primary { min-height: 48px; background: var(--color-surface-soft); color: var(--color-text-strong); }
+.cp-guide-outbound-grid:has(.cp-guide-outbound-item + .cp-guide-outbound-item .cp-guide-outbound-button--primary) .cp-guide-outbound-button--primary:hover { background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface-soft)); }
+.cp-guide-outbound-button svg { width: 16px; height: 16px; stroke-width: 1.6; }
+/* About, transparency, contact: the quiet call is a link. */
+.ab-cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-xl); }
+.ab-cta-secondary { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0; border: 0; border-radius: 0; background: none; color: var(--color-text-strong); font: 500 15px/1 var(--font-ui); letter-spacing: -.01em; text-decoration: none; }
+.ab-cta-secondary:hover { background: none; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+/* Stacks « load more » and the submit form's back button: interface grey pill. */
+.sk-load-more-btn, .sp-button-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 0 18px; border: 0; border-radius: var(--radius-pill); background: var(--color-surface-soft); color: var(--color-text-strong); font: 500 14px/1 var(--font-ui); letter-spacing: -.005em; box-shadow: none; cursor: pointer; }
+.sk-load-more-btn:hover, .sp-button-secondary:hover { border: 0; background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface-soft)); }
+:is(.cp-guide-outbound-button, .ab-cta-secondary, .sk-load-more-btn, .sp-button-secondary):focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 3px; }

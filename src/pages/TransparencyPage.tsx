@@ -269,7 +269,7 @@ const TransparencyPage = () => {
           {/* ── CTA ── */}
           <div className="ab-cta">
             <Link to={`${prefix}/contact`} className="tt-button-primary">
-              {t("Une question ? Écris-nous →", "A question? Write to us →")}
+              {t("Une question ? Écrivez-nous →", "A question? Write to us →")}
             </Link>
             <Link to={`${prefix}/transparency`} className="ab-cta-secondary">
               {t("Voir la méthodologie", "See the methodology")}
