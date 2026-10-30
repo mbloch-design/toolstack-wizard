@@ -4,6 +4,17 @@ Référence du système de design éditorial. Mis à jour au fil des sessions.
 
 ---
 
+## La planche est la référence (30 oct. 2026)
+
+La planche « Système ToolTrim » est la source de vérité du design du site, jamais l'inverse.
+
+- **Un seul fichier partagé** : `src/styles/tooltrim-system.css`. Tokens `--tt-*` et composants `.tt-*` (le signe qui fait clic, la ligne de coupe, le fil, les trois verbes, le souffle du gain, le trim). Le site l'importe en tête de `src/index.css` ; la planche l'inline.
+- **La source de la planche** vit dans `design-system/planche.html`. Ses tokens courts (`--brand`, `--ink`…) sont des alias des `--tt-*`. `npm run planche` construit `design-system/dist/systeme-tooltrim.html` (police du site inlinée), qu'on republie sur le même lien d'artefact.
+- **Modifier le design** : changer `tooltrim-system.css` (ou la planche pour un composant pas encore partagé), reconstruire, republier. Le site suit au prochain build.
+- **Un composant passe dans le site** en déménageant de la planche vers `tooltrim-system.css` avec le préfixe `tt-` ; la planche l'utilise alors depuis ce fichier.
+- **Sens inverse** : un cas du site que la planche ne couvre pas est d'abord ajouté au chapitre « À passer en design » de la planche (capture dans `design-system/cases/`, statut Décision / Écart / Absent, question à trancher), avant d'être retravaillé.
+- Mode sombre : classe `.dark` (le site la pose ; la planche aussi, d'après `data-theme` ou le système). La gate des tokens scanne aussi le fichier partagé.
+
 ## ToolLogo — composant unique pour les logos outils
 
 **Règle absolue** : tout affichage d'un logo outil doit passer par `<ToolLogo tool={...} size={N} />`.

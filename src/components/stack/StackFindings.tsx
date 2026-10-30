@@ -228,6 +228,8 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   // A per-user plan asks how many people, with a stepper: never a free field.
   const [seatPlan, setSeatPlan] = useState<string | null>(null);
   const [seats, setSeats] = useState(1);
+  // At the floor the stepper answers with a smile instead of going dead (système ToolTrim).
+  const [seatNudge, setSeatNudge] = useState(false);
   // A tapped plan lights up, the others step back, then the answer goes through.
   const [pickedTile, setPickedTile] = useState<string | null>(null);
   const answerTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -361,7 +363,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           <p>{t(`${freeTools.length} outil${s(freeTools.length)} gratuit${s(freeTools.length)} · sans coût ajouté`, `${freeTools.length} free tool${s(freeTools.length)} · no added cost`)}</p>
         </div>}
         {spend.length > 0 && items.some(item => item.kind === "price" || item.kind === "freemium") && <p className="mf-cost-scope">{t("Les outils à renseigner ne sont pas inclus dans ce montant.", "Tools awaiting a price or plan are not included in this amount.")}</p>}
-        {saved > 0 && <p className="mf-verdict">{icon(Check, "var(--color-pro)")}<span>{t("Budget estimé allégé de ", "Estimated budget reduced by ")}<b>{format(saved)}</b>{t(" par mois.", " a month.")}</span></p>}
+        {saved > 0 && <p className="mf-verdict">{icon(Check, "var(--color-pro)")}<span>{t("Budget estimé allégé de ", "Estimated budget reduced by ")}<b className="mf-gain"><span className="tt-bloom tt-bloom--on" aria-hidden="true" /><span>{format(saved)}</span></b>{t(" par mois.", " a month.")}</span></p>}
         {/* Once nothing is left to decide the decision card goes; what can be reopened lives here. */}
 
       </article>
@@ -431,13 +433,14 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 <div className="mf-seats-presets" role="group" aria-label={t("Tailles d’équipe", "Team sizes")}>
                   {[1, 2, 5, 10, 25].map((n) => <button key={n} type="button" aria-pressed={seats === n} onClick={() => set(n)}>{n}</button>)}
                 </div>
-                <div className="mf-stepper" role="group" aria-label={t("Nombre de personnes", "Number of people")}>
-                  <button type="button" onClick={() => set(seats - 1)} disabled={seats <= 1} aria-label={t("Une personne de moins", "One fewer")}>−</button>
+                <div className={`mf-stepper${seatNudge ? " mf-stepper--nope" : ""}`} role="group" aria-label={t("Nombre de personnes", "Number of people")} onAnimationEnd={() => setSeatNudge(false)}>
+                  <button type="button" onClick={() => { if (seats <= 1) { setSeatNudge(false); requestAnimationFrame(() => setSeatNudge(true)); return; } setSeatNudge(false); set(seats - 1); }} aria-disabled={seats <= 1} aria-label={t("Une personne de moins", "One fewer")}>−</button>
                   <output aria-live="polite">{seats}</output>
                   <button type="button" onClick={() => set(seats + 1)} aria-label={t("Une personne de plus", "One more")}>+</button>
                 </div>
                 <Button variant="primary" className="mf-seats-ok" onClick={() => chosen.pick(seats)}>{t("Valider", "Confirm")}</Button>
               </div>
+              <p className="mf-seats-nudge" aria-live="polite">{seatNudge ? t("Il faut bien quelqu’un pour payer.", "Someone has to pay.") : ""}</p>
               {/* The team, drawn: one figure per person, each new one pops in. */}
               <div className="mf-seats-crew" aria-hidden="true">
                 <span className="mf-seats-people">{Array.from({ length: shown }, (_, index) => <i key={index}><UserRound size={18} /></i>)}{seats > 12 && <em>+{seats - 12}</em>}</span>

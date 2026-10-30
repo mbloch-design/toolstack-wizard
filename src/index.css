@@ -1,6 +1,9 @@
 /* Tailwind 4 loads the existing ToolTrim theme explicitly. Keep the editorial
    class safelist and exclude unreachable dashboard sources from detection. */
 @import "tailwindcss" source(none);
+/* Système ToolTrim : tokens et composants partagés avec la planche design
+   system (design-system/planche.html), qui est la référence. */
+@import "./styles/tooltrim-system.css";
 @config "../tailwind.config.ts";
 @source "./";
 @source not "./components/dashboard";
@@ -41912,3 +41915,125 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-account-outline-button:hover { border: 0; background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface-soft)); }
 .ec-cta { color: var(--color-text-strong); font-weight: 500; }
 :is(.tt-page-hero-cta > .tt-button-primary, .ss-cta, .sl-final-cta, .sp-payment-cta, .sp-upgrade-cta, .ss-dock-cta, .sp-hero-cta-secondary, .sp-shot-cta, .ms-account-text-button, .ms-account-outline-button):focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 3px; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Système ToolTrim appliqué au site (30 oct. 2026).
+   La planche (design-system/planche.html) est la référence : les tokens
+   historiques du site deviennent des alias des tokens --tt-* du système
+   partagé (src/styles/tooltrim-system.css). Modifier le système modifie le
+   site. Bloc en fin de fichier : il passe après les anciennes définitions.
+   ───────────────────────────────────────────────────────────────────────── */
+:root, .dark {
+  --color-bg: var(--tt-bg);
+  --color-text: var(--tt-ink);
+  --color-text-strong: var(--tt-ink);
+  /* Règle de la planche : le gris ne sert jamais pour du texte. */
+  --color-muted: var(--tt-ink);
+  --color-muted-light: var(--tt-ink);
+  --color-text-secondary: var(--tt-ink);
+  --color-text-meta: var(--tt-ink);
+  --color-title-accent: var(--tt-ink);
+  --color-border: var(--tt-line);
+  --color-accent: var(--tt-brand);
+  --color-live: var(--tt-live);
+  --font-brand: var(--tt-display);
+  --font-ui: var(--tt-ui);
+}
+:root { --color-surface: var(--tt-bg); --color-surface-soft: var(--tt-tile); --background: 0 0% 100%; }
+.dark { --color-surface: var(--tt-tile); --color-surface-soft: var(--tt-tile-2); --background: 240 7% 6%; --foreground: 60 15% 94%; --muted-foreground: 60 15% 94%; }
+
+/* Typographie : trois rôles. Inter à taille optique pour lire, Inter Tight
+   pour l'interface, Uncut Sans pour l'affichage (titres, déjà en place). */
+body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0; font-weight: var(--tt-w-text); }
+:where(button, input, select, textarea, label, nav, [role="tab"], [role="menuitem"]) { font-family: var(--tt-ui); }
+
+/* L'appel qui mène : la pilule encre de la planche (dégradé, arête de
+   lumière, ombre posée, ressort au survol) et son étoile filante, armée par
+   src/styles/tooltrim-system.js. Mêmes sélecteurs que la règle CTA. */
+:is(.tt-cta, .tt-page-hero-cta > .tt-button-primary, .ss-cta, .sl-final-cta, .sp-payment-cta, .sp-upgrade-cta),
+.home-v2 .hv2-stage .hv2-cta,
+.td-hero-actions .td-hero-site-link,
+.td-tool-page .td-decision-cta-main,
+.cp-guide-outbound-button.cp-guide-outbound-button--primary,
+.tt-footer .tt-footer-action--primary {
+  background: var(--tt-lead-bg); color: var(--tt-bg); box-shadow: var(--tt-lead-shadow);
+  transition: transform 280ms var(--tt-spring), box-shadow 220ms ease;
+}
+:is(.tt-cta, .tt-page-hero-cta > .tt-button-primary, .ss-cta, .sl-final-cta, .sp-payment-cta, .sp-upgrade-cta):hover,
+.home-v2 .hv2-stage .hv2-cta:hover,
+.td-hero-actions .td-hero-site-link:hover,
+.td-tool-page .td-decision-cta-main:hover,
+.cp-guide-outbound-button.cp-guide-outbound-button--primary:hover,
+.tt-footer .tt-footer-action--primary:hover {
+  background: var(--tt-lead-bg); color: var(--tt-bg); box-shadow: var(--tt-lead-shadow-hover); transform: translateY(-1px);
+}
+:is(.tt-cta, .tt-page-hero-cta > .tt-button-primary, .ss-cta, .sl-final-cta, .sp-payment-cta, .sp-upgrade-cta):active,
+.home-v2 .hv2-stage .hv2-cta:active,
+.td-hero-actions .td-hero-site-link:active,
+.td-tool-page .td-decision-cta-main:active,
+.cp-guide-outbound-button.cp-guide-outbound-button--primary:active,
+.tt-footer .tt-footer-action--primary:active {
+  box-shadow: var(--tt-lead-shadow-press); transform: scale(.98); transition-duration: 90ms;
+}
+/* When two offers stand as equals, the comparison stays neutral (grey pills). */
+.cp-guide-outbound-grid:has(.cp-guide-outbound-item + .cp-guide-outbound-item .cp-guide-outbound-button--primary) .cp-guide-outbound-button--primary { background: var(--color-surface-soft); color: var(--color-text-strong); box-shadow: none; }
+
+/* Lot 2 (30 oct. 2026) : surfaces, focus et contrôles de la planche. */
+:root {
+  --radius-card: var(--tt-r-card);
+  --radius-lg: var(--tt-r-card);
+  --radius-xl: var(--tt-r-tile);
+  --radius-surface: var(--tt-r-tile);
+  --radius-stack-card: var(--tt-r-tile);
+  --radius-pill: var(--tt-r-pill);
+}
+/* Focus : un seul anneau sur tout le site, bleu P3, 2px, décalé de 3px. */
+:focus-visible { outline-color: var(--tt-focus) !important; outline-offset: 3px; }
+/* Onglets : le trait de l'onglet actif est bleu. */
+.td-tool-page :is(.td-tool-subnav, .td-localnav-links) a:is([aria-current="page"], [aria-current="location"])::after { background: var(--tt-tab-ink); }
+/* Puces de filtre : la puce active passe en encre, une coche se dessine. */
+.tt-pill { font-weight: 500; transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
+.tt-pill:active:not(:disabled) { transform: scale(.97); }
+.tt-pill--active:not(.tt-pill--more) { background: var(--tt-chip-on); color: var(--tt-bg); }
+.tt-pill--active:not(.tt-pill--more)::before { content: ""; width: 5px; height: 10px; border: solid currentColor; border-width: 0 1.6px 1.6px 0; transform: rotate(45deg) translate(-1px, -2px); animation: tt-chip-check var(--tt-dur-state) ease both; }
+@keyframes tt-chip-check { from { width: 0; opacity: 0; } }
+/* Interrupteurs : piste pilule, vert « actif », pastille à ressort qui s'écrase à la pression. */
+.ms-switch-track { width: 46px; height: 28px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); transition: background-color var(--tt-dur-state) ease; }
+.ms-switch-track > span { width: 22px; height: 22px; box-shadow: 0 1px 2px rgb(0 0 0 / .2), 0 3px 8px -2px rgb(0 0 0 / .2); transition: transform 360ms cubic-bezier(.34, 1.4, .64, 1), width 200ms ease; }
+.ms-switch:active .ms-switch-track > span { width: 26px; }
+.ms-switch[aria-checked="true"] .ms-switch-track { background: var(--tt-switch-on); }
+.ms-switch[aria-checked="true"] .ms-switch-track > span { transform: translateX(18px); }
+.ms-switch[aria-checked="true"]:active .ms-switch-track > span { transform: translateX(14px); }
+.ms-switch { color: var(--tt-ink); font-weight: 500; }
+/* Liens d'accompagnement : le trait se dessine au survol, de gauche à droite, et repart par la droite. */
+:is(.tt-cta-link, .tt-section-action) { text-decoration: none; background: linear-gradient(currentColor, currentColor) 100% 100% / 0 1px no-repeat; transition: background-size 320ms var(--tt-ease); }
+:is(.tt-cta-link, .tt-section-action):hover { background-position: 0 100%; background-size: 100% 1px; text-decoration: none; }
+/* Ma stack : le départ de l'accueil est un appel qui mène, en encre comme partout. */
+.ms-page .so-primary { background: var(--tt-lead-bg); color: var(--tt-bg); box-shadow: var(--tt-lead-shadow); font-weight: 500; transition: transform 280ms var(--tt-spring), box-shadow 220ms ease; }
+.ms-page .so-primary:hover { transform: translateY(-1px); box-shadow: var(--tt-lead-shadow-hover); }
+.ms-page .so-primary:active { transform: scale(.98); box-shadow: var(--tt-lead-shadow-press); }
+/* Lot 3 (30 oct. 2026) : l'ADN dans les pages. Le souffle du gain derrière
+   l'économie ; la limite d'un champ répond avec un sourire. */
+.ms-page .mf .mf-gain { position: relative; isolation: isolate; display: inline-block; }
+.ms-page .mf .mf-gain > span:not(.tt-bloom) { position: relative; z-index: 1; }
+.ms-page .mf .mf-gain .tt-bloom { inset: -180% -110%; filter: blur(16px); }
+.ms-page .mf .mf-stepper [aria-disabled="true"] { opacity: .4; }
+.ms-page .mf .mf-stepper--nope { animation: tt-nope 360ms cubic-bezier(.36, .07, .19, .97); }
+.ms-page .mf .mf-seats-nudge { min-height: 1.3em; margin: 6px 0 0; color: var(--tt-ink); font: 400 .875rem/1.3 var(--tt-read); }
+@media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-stepper--nope { animation: none; } }
+/* Les verbes dans la recherche : une étiquette sûre, à droite du résultat. */
+.gs-result .gs-result-verdict { flex: none; margin-left: auto; }
+.gs-result:has(.gs-result-verdict) .gs-result-arrow { margin-left: 8px; }
+/* La ligne de coupe souligne chaque économie : le budget allégé se pose dessus. */
+.ms-page .mf-verdict { box-shadow: none; background: linear-gradient(90deg, var(--ms-line) 0 var(--tt-dash), transparent var(--tt-dash) calc(var(--tt-dash) + var(--tt-dash-gap))) 0 0 / calc(var(--tt-dash) + var(--tt-dash-gap)) 1px repeat-x; }
+/* Copier : l'icône devient une coche qui rebondit, le libellé arrive en glissant. */
+.td-decision-share:is([data-state="copied"], [data-state="shared"]) svg { color: var(--tt-live); animation: tt-bump 420ms cubic-bezier(.34, 1.6, .64, 1); }
+.td-decision-share:is([data-state="copied"], [data-state="shared"]) span { animation: tt-label-in 320ms var(--tt-ease) both; }
+@keyframes tt-label-in { from { opacity: 0; transform: translateY(6px); } }
+/* Les gris qui restaient dans Ma stack passent à l'encre (règle de la planche). */
+.ms-page { --ms-meta: var(--tt-ink); --ms-text2: var(--tt-ink); }
+.ms-page .mf .mu-card .mu-quiet, .ms-page .mk-link--quiet { color: var(--tt-ink); }
+.ms-page .mf-now .mk-link--quiet { color: var(--ms-on-ink); }
+/* Champs : fond clair, filet fin, et au focus un filet bleu avec un halo doux. */
+.ms-page .so-name input { background: var(--tt-bg); box-shadow: 0 0 0 1px var(--tt-line); border-radius: var(--tt-r-card); transition: box-shadow var(--tt-dur-state) ease; }
+.ms-page .so-name input:focus { background: var(--tt-bg); box-shadow: 0 0 0 1px var(--tt-brand), 0 0 0 5px color-mix(in oklch, var(--tt-brand) 16%, transparent); }

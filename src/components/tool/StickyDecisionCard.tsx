@@ -228,7 +228,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
         </Link>}
         <Popover open={shareOpen} onOpenChange={setShareOpen}>
           <PopoverTrigger asChild>
-            <button type="button" className="td-decision-share" aria-expanded={shareOpen} title={t("Partager", "Share")}>
+            <button type="button" className="td-decision-share" data-state={shareStatus} aria-expanded={shareOpen} title={t("Partager", "Share")}>
               {shareStatus === "shared" || shareStatus === "copied" ? <Check aria-hidden /> : <Share2 aria-hidden />}
               <span aria-live="polite">{shareLabel}</span>
             </button>

@@ -6,6 +6,7 @@ import { useLang } from "@/hooks/useLang";
 import { useCategories, usePosts, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { guideSearchKey, useCatalogSearch } from "@/hooks/useCatalogSearch";
 import ToolLogo from "@/components/ToolLogo";
+import { useStackPins } from "@/hooks/useStackPins";
 import { trackEvent } from "@/lib/analytics";
 import { displayText } from "@/lib/typography";
 import { CATALOG_NEEDS } from "@/data/catalogNeeds";
@@ -132,6 +133,18 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
   }, [onClose]);
 
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
+  // Système ToolTrim, les verbes : face à la stack de la personne, un résultat
+  // dit seulement ce qui est sûr. Déjà dans la stack, ou alternative au
+  // catalogue d'un outil de la stack. Rien sans stack.
+  const { state: stackState } = useStackPins();
+  const verdictOf = useCallback((tool: ToolSummary): { kind: "keep" | "swap"; label: string } | null => {
+    const pinned = stackState.pinnedToolSlugs;
+    if (!pinned.length) return null;
+    const slug = tool.slug || tool.id;
+    if (pinned.includes(slug)) return { kind: "keep", label: t("Dans ma stack", "In my stack") };
+    const replaced = pinned.map((pin) => toolBySlug.get(pin)).find((other) => other && (other.alternatives?.includes(slug) || tool.alternatives?.includes(other.slug || other.id)));
+    return replaced ? { kind: "swap", label: t(`Peut remplacer ${replaced.name}`, `Could replace ${replaced.name}`) } : null;
+  }, [stackState.pinnedToolSlugs, t, toolBySlug]);
   const toolById = useMemo(() => new Map(tools.map((tool) => [tool.id, tool])), [tools]);
   const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
   const postBySearchKey = useMemo(() => new Map(posts.map((post) => [guideSearchKey(post, lang), post])), [posts, lang]);
@@ -328,6 +341,7 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
                               <strong><Highlight text={displayText(result.label, lang)} query={query} /></strong>
                               {result.meta && <small>{result.meta}</small>}
                             </span>
+                            {(() => { const verdict = result.tool ? verdictOf(result.tool) : null; return verdict && <span className={`tt-verdict tt-verdict--${verdict.kind} gs-result-verdict`}>{verdict.label}</span>; })()}
                             <ArrowRight className="gs-result-arrow" aria-hidden />
                           </button>
                         );

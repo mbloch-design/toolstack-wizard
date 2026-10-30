@@ -1,3 +1,14 @@
+## 2026-10-30 · Design system : la planche devient la référence du site
+
+- Fichiers partagés `src/styles/tooltrim-system.css` (tokens `--tt-*`, composants `.tt-*`) et `src/styles/tooltrim-system.js` (comportement), importés par le site et inlinés dans la planche. Source de la planche dans `design-system/planche.html`, build `npm run planche` ; la planche reconstruite est identique à la version publiée (comparaison pixel, clair et sombre).
+- Lot 1 appliqué au site : les tokens historiques (`--color-bg`, surfaces, encre, bordure, accent, statut, polices) deviennent des alias des `--tt-*`, mode sombre compris ; texte secondaire et métadonnées passent à l'encre (règle « jamais de petit gris ») ; lecture en Inter à taille optique, interface en Inter Tight ; les appels qui mènent (hero, fiche outil, comparatif, pages secondaires, pied de page) prennent la pilule de la planche et son étoile filante au survol.
+- Lot 2 : rayons du système (cartes 16, tuiles 24), anneau de focus bleu unique, trait bleu sous l'onglet actif, puces actives en encre avec coche, interrupteurs à ressort, liens au trait qui se dessine, départ de Ma stack en encre avec étoile filante. Tokens de contrôle (`--tt-focus`, `--tt-tab-ink`, `--tt-switch-on`, `--tt-chip-on`) dans le système.
+- Lot 3, premier passage : sourire poli à l'annulation d'un retrait et à la limite du compteur de personnes ; souffle du gain derrière le budget allégé de Ma stack.
+- Lot 3, suite : verbes dans la recherche (« Dans ma stack », « Peut remplacer X »), ligne de coupe sous le budget allégé, coche qui rebondit à la copie du lien, gris de Ma stack à l'encre, champ du prénom au filet bleu.
+- E2E ciblés : accessibilité, hero Ma stack et fluidité passent (fluidité instable 1/36 sur serveur de dev) ; `card-system` échoue déjà sur `main` (3 tests), noté dans la to-do.
+- Les ciseaux du logo sont préparés dans le système mais pas appliqués (dernier chantier). Trim du duel Ma stack en attente d'arbitrage (`docs/TODO.md`).
+- La gate des tokens scanne aussi le fichier partagé. Typecheck, gate et 1 044 tests passent.
+
 ## 2026-10-30 — CI : assertions navigateur et récupération déterministe
 
 - Périmètre limité aux tests : aucun changement de composant, de CSS ou de comportement produit. Les quatre parcours Ma Stack attendent le titre de doublon actuellement publié et vérifient les deux choix individuels ainsi que « Garder les deux ».

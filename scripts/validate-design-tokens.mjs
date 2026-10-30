@@ -21,7 +21,8 @@ const require = createRequire(import.meta.url);
 const postcss = require("postcss");
 
 const ROOT = process.cwd();
-const CSS_FILE = "src/index.css";
+// The shared system (also read by the design-system sheet) obeys the same rules.
+const CSS_FILES = ["src/index.css", "src/styles/tooltrim-system.css"];
 const TSX_ROOTS = ["src/components", "src/pages"];
 const BASELINE = "scripts/design-tokens-baseline.json";
 
@@ -60,6 +61,7 @@ function walkFiles(dir, out = []) {
 function scanCss() {
   const hexes = [];
   const radii = [];
+  for (const CSS_FILE of CSS_FILES) {
   const css = readFileSync(join(ROOT, CSS_FILE), "utf8");
   const root = postcss.parse(css, { from: CSS_FILE });
 
@@ -81,6 +83,7 @@ function scanCss() {
       radii.push({ file: CSS_FILE, line, text: `${decl.prop}: ${decl.value}` });
     }
   });
+  }
   return { hexes, radii };
 }
 

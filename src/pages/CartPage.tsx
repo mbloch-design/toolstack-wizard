@@ -338,7 +338,8 @@ export default function CartPage() {
     requestAnimationFrame(() => addRef.current?.focus({ preventScroll: true }));
     toast(t(`${name} retiré de ma stack.`, `${name} removed from your stack.`), {
       duration: 6000,
-      action: { label: t("Annuler", "Undo"), onClick: () => restoreTool(entry, index) },
+      // Système ToolTrim, le sourire : poli, une fois par geste.
+      action: { label: t("Annuler", "Undo"), onClick: () => { restoreTool(entry, index); toast(t(`${name} est de retour. On ne juge pas.`, `${name} is back. No judgement.`), { duration: 2500 }); } },
     });
   }
   // Filter motion (FLIP): cards leaving the filter fade out first, the ones
