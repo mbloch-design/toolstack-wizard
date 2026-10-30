@@ -293,11 +293,6 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
 .results .ico svg, .trow .ico svg, .sheet .ico svg { width: 20px; height: 20px; fill: #111; }
 .hint { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font: 400 .875rem/1.4 var(--read); }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; }
-.fchip { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 14px; border: 0; border-radius: var(--r-pill); background: var(--bg); color: var(--ink); font: 500 .875rem/1 var(--ui); cursor: pointer; box-shadow: 0 0 0 1px var(--line); transition: background-color 240ms ease, color 240ms ease, box-shadow 240ms ease, padding 240ms ease; }
-.fchip::before { content: ""; width: 0; height: 10px; border: solid currentColor; border-width: 0 1.6px 1.6px 0; transform: rotate(45deg) translate(-1px, -2px); opacity: 0; transition: width 240ms ease, opacity 200ms ease; }
-.fchip[aria-pressed="true"] { background: var(--ink); color: var(--bg); box-shadow: none; }
-.fchip[aria-pressed="true"]::before { width: 5px; opacity: 1; }
-.fchip:active { transform: scale(.97); }
 .row-ctl { display: flex; align-items: center; justify-content: space-between; gap: 16px; font: 400 1rem/1.4 var(--read); cursor: pointer; }
 .switch { position: relative; flex: none; width: 46px; height: 28px; border: 0; border-radius: var(--r-pill); background: var(--tile-2); cursor: pointer; transition: background-color 240ms ease; }
 .switch i { position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgb(0 0 0 / .2), 0 3px 8px -2px rgb(0 0 0 / .2); transition: transform 360ms cubic-bezier(.34, 1.4, .64, 1), width 200ms ease; }
@@ -400,7 +395,6 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
 .trow { grid-template-columns: 36px minmax(0, 1fr) auto 20px; position: relative; }
 .trow::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 0; border-top: 1px dashed var(--brand); transform: scaleX(0); transform-origin: left; transition: transform 420ms cubic-bezier(.65, 0, .35, 1); }
 .trow:hover::after { transform: scaleX(1); }
-.fchip--dup { gap: 6px; } .fchip--dup b { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: var(--overlap); color: #fff; font: 500 .75rem/1 var(--ui); }
 .paid { margin-left: 6px; font: 500 .875rem/1 var(--ui); transition: opacity 240ms ease, text-decoration-color 240ms ease; text-decoration: line-through; text-decoration-color: transparent; }
 .row-ctl:has(.switch[aria-checked="false"]) .paid { opacity: .45; text-decoration-color: currentColor; }
 .plans--verdict .plan { grid-template-columns: 32px minmax(0, 1fr) auto; }
@@ -422,7 +416,7 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
 .empty-ico { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: var(--bg); margin-bottom: 6px; }
 .empty-ico svg { width: 26px; height: 26px; fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
 .empty strong { font: 500 1.0625rem/1.3 var(--ui); }
-:is(.side a, .tabs button, .fchip, .switch, .plan, .stepper button, .trow, .faq summary, .tipbtn, .toast button, .menu button, .sheet-close, .results li, kbd):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+:is(.side a, .tabs button, .switch, .plan, .stepper button, .trow, .faq summary, .tipbtn, .toast button, .menu button, .sheet-close, .results li, kbd):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 @media (max-width: 900px) { .ix { grid-template-columns: 1fr; } .ix-card--wide { grid-column: auto; } .ix-nav { grid-template-columns: 1fr; } .chapter--wide .rule { grid-template-columns: 1fr; } }
 
 /* ── Data, forms, icons ── */
@@ -659,11 +653,10 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
 .empty:hover .slots i { animation: hop 520ms cubic-bezier(.34, 1.6, .64, 1) both; }
 .empty:hover .slots i:nth-child(2) { animation-delay: 70ms; } .empty:hover .slots i:nth-child(3) { animation-delay: 140ms; }
 @keyframes hop { 40% { transform: translateY(-5px); } }
-.fchip--dup[aria-pressed="true"] b { animation: twin 420ms cubic-bezier(.34, 1.6, .64, 1); }
 @keyframes twin { 30% { transform: scale(1.35); } }
 .smile-rule { grid-column: 1 / -1; margin-top: 32px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 900px) { .smile-rule { grid-template-columns: 1fr; } }
-@media (prefers-reduced-motion: reduce) { .tt-blade, .ti, .cling-say, .stepper, .slots i, .fchip--dup b { animation: none !important; } }
+@media (prefers-reduced-motion: reduce) { .tt-blade, .ti, .cling-say, .stepper, .slots i, .tt-fchip--dup .tt-fchip-count { animation: none !important; } }
 
 /* Micro-animations : vitrine jouable. */
 .mx-head { grid-column: 1 / -1; display: grid; gap: 6px; margin-top: 40px; }
@@ -791,7 +784,6 @@ kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; 
 .gb-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
 .gb-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 12px; align-items: start; }
 .gb-section { display: grid; gap: 20px; }
-.gb-filters { display: flex; gap: 8px; }
 .gb-group { display: grid; gap: 12px; }
 .gb-shot { display: grid; place-items: center; background: linear-gradient(135deg in oklch, var(--tile), var(--tile-2)); }
 .dk-logo.gb-big { width: 64px !important; height: 64px !important; } .dk-logo.gb-big svg { width: 34px; height: 34px; }
@@ -904,7 +896,7 @@ a.tt-btn, a.tt-btn:hover { text-decoration: none; }
       </div>
       <section class="gb-section">
         <div class="tt-sectionhead"><div><h3 class="tt-title-section">Ma stack</h3><p class="tt-note">8 outils · 111&nbsp;€/mois</p></div><span class="tt-btn">+ Ajouter un outil</span></div>
-        <div class="gb-filters"><span class="fchip" aria-pressed="true">Tous 8</span><span class="fchip" aria-pressed="false">Doublons 4</span></div>
+        <div class="tt-toolbar"><div class="tt-fchips"><button type="button" class="tt-fchip" aria-pressed="true">Tous<span class="tt-fchip-count">8</span></button><button type="button" class="tt-fchip tt-fchip--dup" aria-pressed="false">Doublons<span class="tt-fchip-count">4</span></button></div><div class="tt-toolbar-tools"><label class="tt-select"><span>Trier :</span><select aria-label="Trier mes outils"><option>Domaine</option><option>Coût</option><option>Nom</option><option>Ajout récent</option></select><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></label><div class="tt-iconswitch" role="group" aria-label="Affichage"><button type="button" aria-pressed="true" aria-label="Grille"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button><button type="button" aria-pressed="false" aria-label="Liste"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></button></div><button type="button" class="tt-btn tt-btn--grey" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.17 6.81a2.83 2.83 0 0 0-4-4L3.84 16.17a2 2 0 0 0-.5.83l-1.32 4.35a.5.5 0 0 0 .62.62l4.35-1.32a2 2 0 0 0 .83-.5z"/></svg>Modifier</button></div></div>
         <div class="gb-group"><p class="tt-groupname" style="--c:var(--area-violet)"><i></i><span class="tt-label">Organiser</span><span class="tt-note">3 outils · 53&nbsp;€/mois</span></p>
           <div class="tt-toolcards"><button type="button" class="tt-toolcard"><span class="tt-logo-tile dk-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></span><span class="tt-amount">36&nbsp;€<small>/mois</small></span><span class="tt-label">Notion</span><span class="tt-tag tt-tag--overlap">Doublon</span></button><button type="button" class="tt-toolcard"><span class="tt-logo-tile dk-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.147 0H2.853A2.86 2.86 0 000 2.853v18.294A2.86 2.86 0 002.853 24h18.294A2.86 2.86 0 0024 21.147V2.853A2.86 2.86 0 0021.147 0zM10.34 17.287a.953.953 0 01-.953.953h-4a.954.954 0 01-.954-.953V5.38a.953.953 0 01.954-.953h4a.954.954 0 01.953.953zm9.233-5.467a.944.944 0 01-.953.947h-4a.947.947 0 01-.953-.947V5.38a.953.953 0 01.953-.953h4a.954.954 0 01.953.953z"/></svg></span><span class="tt-amount">6&nbsp;€<small>/mois</small></span><span class="tt-label">Trello</span><span class="tt-tag tt-tag--overlap">Doublon</span></button><button type="button" class="tt-toolcard"><span class="tt-logo-tile dk-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.78 12.653c-2.882 0-5.22 2.336-5.22 5.22s2.338 5.22 5.22 5.22 5.22-2.34 5.22-5.22-2.336-5.22-5.22-5.22zm-13.56 0c-2.88 0-5.22 2.337-5.22 5.22s2.338 5.22 5.22 5.22 5.22-2.338 5.22-5.22-2.336-5.22-5.22-5.22zm12-6.525c0 2.883-2.337 5.22-5.22 5.22-2.882 0-5.22-2.337-5.22-5.22 0-2.88 2.338-5.22 5.22-5.22 2.883 0 5.22 2.34 5.22 5.22z"/></svg></span><span class="tt-amount">11&nbsp;€<small>/mois</small></span><span class="tt-label">Asana</span><span class="tt-tag tt-tag--overlap">Doublon</span></button></div></div>
         <div class="gb-group"><p class="tt-groupname" style="--c:var(--area-amber)"><i></i><span class="tt-label">Créer</span><span class="tt-note">2 outils · 23&nbsp;€/mois</span></p>
@@ -1206,12 +1198,12 @@ a.tt-btn, a.tt-btn:hover { text-decoration: none; }
       <article class="ix-card">
         <header><span class="eyebrow">Filtrer</span><h3>Puces de filtre</h3></header>
         <div class="filters" role="group" aria-label="Filtres">
-          <button type="button" class="fchip" aria-pressed="true">Gratuit</button>
-          <button type="button" class="fchip" aria-pressed="false">Freemium</button>
-          <button type="button" class="fchip" aria-pressed="true">IA</button>
-          <button type="button" class="fchip" aria-pressed="false">Français</button>
-          <button type="button" class="fchip" aria-pressed="false">Open source</button>
-          <button type="button" class="fchip fchip--dup" aria-pressed="false">Fait doublon <b class="num">2</b></button>
+          <button type="button" class="tt-fchip" aria-pressed="true">Gratuit</button>
+          <button type="button" class="tt-fchip" aria-pressed="false">Freemium</button>
+          <button type="button" class="tt-fchip" aria-pressed="true">IA</button>
+          <button type="button" class="tt-fchip" aria-pressed="false">Français</button>
+          <button type="button" class="tt-fchip" aria-pressed="false">Open source</button>
+          <button type="button" class="tt-fchip tt-fchip--dup" aria-pressed="false">Fait doublon <span class="tt-fchip-count">2</span></button>
         </div>
         <p class="meta">Une puce active passe en encre, une coche se dessine. La puce « Fait doublon » est propre à ToolTrim : elle isole ce qui peut être coupé.</p>
       </article>
@@ -1531,7 +1523,9 @@ a.tt-btn, a.tt-btn:hover { text-decoration: none; }
   const sel = (i) => res.forEach((r, k) => r.setAttribute('aria-selected', String(k === i)));
   res.forEach((r, i) => r.addEventListener('mouseenter', () => sel(i)));
   sin?.addEventListener('keydown', (e) => { const cur = res.findIndex((r) => r.getAttribute('aria-selected') === 'true'); if (e.key === 'ArrowDown') { e.preventDefault(); sel((cur + 1) % res.length); } if (e.key === 'ArrowUp') { e.preventDefault(); sel((cur - 1 + res.length) % res.length); } });
-  document.querySelectorAll('.fchip').forEach((c) => c.addEventListener('click', () => c.setAttribute('aria-pressed', String(c.getAttribute('aria-pressed') !== 'true'))));
+  document.querySelectorAll('.tt-fchip').forEach((c) => c.addEventListener('click', () => c.setAttribute('aria-pressed', String(c.getAttribute('aria-pressed') !== 'true'))));
+  document.querySelectorAll('.tt-iconswitch').forEach((g) => g.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; g.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); }));
+  document.querySelectorAll('.tt-toolbar-tools > .tt-btn').forEach((b) => b.addEventListener('click', () => { const on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', String(on)); b.lastChild.textContent = on ? 'Terminé' : 'Modifier'; }));
   document.querySelectorAll('.switch').forEach((c) => c.addEventListener('click', (e) => { e.preventDefault(); c.setAttribute('aria-checked', String(c.getAttribute('aria-checked') !== 'true')); }));
   const plans = [...document.querySelectorAll('.plan')]; plans.forEach((p) => p.addEventListener('click', () => plans.forEach((x) => x.setAttribute('aria-checked', String(x === p)))));
   const seats = document.getElementById('ix-seats');

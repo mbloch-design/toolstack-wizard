@@ -15,7 +15,7 @@ import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
 import { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
 import StackToolSheet from "@/components/stack/StackToolSheet";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
-import { ActionRow, AppIcon, Button, Segmented } from "@/components/stack/StackKit";
+import { ActionRow, AppIcon, Button } from "@/components/stack/StackKit";
 import { comparisonPath } from "@/lib/comparisonLinks";
 import { decisionSavingInCurrency, latestRemovedStackDecisions } from "@/lib/stackDecisions";
 import { useLang } from "@/hooks/useLang";
@@ -568,24 +568,25 @@ export default function CartPage() {
               : [{ id: "all", label: "", tools: shown, subtotal: 0 }];
             return <>
               {/* Three controls, three affordances: filter chips for what needs me, menus to group and sort, icons for the layout. */}
-              <div className="ms-inv-bar">
-                <Segmented mode="toggle" className="ms-inv-filters" label={t("Filtrer par statut", "Filter by status")} value={statusFilter} onChange={(id) => setStatusFilter(id)}
-                  options={[{ id: "all", label: t("Tous", "All"), count: counts.all }, ...(counts.review ? [{ id: "review" as const, label: t("À vérifier", "To check"), count: counts.review }] : []), ...(counts.overlap ? [{ id: "overlap" as const, label: t("Doublons", "Overlaps"), count: counts.overlap }] : [])]} />
-                <div className="ms-inv-tools">
-
-                  <label className="ms-sort"><span>{t("Trier :", "Sort:")}</span>
+              <div className="tt-toolbar">
+                <div className="tt-fchips" role="group" aria-label={t("Filtrer par statut", "Filter by status")}>
+                  {[{ id: "all" as const, label: t("Tous", "All"), count: counts.all }, ...(counts.review ? [{ id: "review" as const, label: t("À vérifier", "To check"), count: counts.review }] : []), ...(counts.overlap ? [{ id: "overlap" as const, label: t("Doublons", "Overlaps"), count: counts.overlap }] : [])].map((option) =>
+                    <button key={option.id} type="button" className={`tt-fchip${option.id === "overlap" ? " tt-fchip--dup" : ""}`} aria-pressed={statusFilter === option.id} onClick={() => setStatusFilter(option.id)}>{option.label}<span className="tt-fchip-count">{option.count}</span></button>)}
+                </div>
+                <div className="tt-toolbar-tools">
+                  <label className="tt-select"><span>{t("Trier :", "Sort:")}</span>
                     <select value={sortBy} onChange={(event) => sortTo(event.target.value as typeof sortBy)} aria-label={t("Trier mes outils", "Sort my tools")}>
                       <option value="area">{t("Domaine", "Area")}</option>
                       <option value="cost">{t("Coût", "Cost")}</option>
                       <option value="name">{t("Nom", "Name")}</option>
                       <option value="recent">{t("Ajout récent", "Recently added")}</option>
-                    </select><ChevronDown size={14} aria-hidden /></label>
-                  <div className="ms-layout" role="group" aria-label={t("Affichage", "Layout")}>
-                    <button type="button" aria-pressed={layout === "grid"} aria-label={t("Grille", "Grid")} title={t("Grille", "Grid")} onClick={() => setLayout("grid")}><LayoutGrid size={16} aria-hidden /></button>
-                    <button type="button" aria-pressed={layout === "list"} aria-label={t("Liste", "List")} title={t("Liste", "List")} onClick={() => setLayout("list")}><List size={16} aria-hidden /></button>
+                    </select><ChevronDown aria-hidden /></label>
+                  <div className="tt-iconswitch" role="group" aria-label={t("Affichage", "Layout")}>
+                    <button type="button" aria-pressed={layout === "grid"} aria-label={t("Grille", "Grid")} title={t("Grille", "Grid")} onClick={() => setLayout("grid")}><LayoutGrid aria-hidden /></button>
+                    <button type="button" aria-pressed={layout === "list"} aria-label={t("Liste", "List")} title={t("Liste", "List")} onClick={() => setLayout("list")}><List aria-hidden /></button>
                   </div>
                   {/* Edit acts on the grid right below, so it lives with the other view controls. */}
-                  <span className="ms-inv-edit"><Button aria-pressed={editing} icon={editing ? <Check size={16} aria-hidden /> : <Pencil size={16} aria-hidden />} onClick={() => { setSearchOpen(false); setEditing((value) => !value); }}>{editing ? t("Terminé", "Done") : t("Modifier", "Edit")}</Button></span>
+                  <button type="button" className="tt-btn tt-btn--grey" aria-pressed={editing} onClick={() => { setSearchOpen(false); setEditing((value) => !value); }}>{editing ? <Check aria-hidden /> : <Pencil aria-hidden />}{editing ? t("Terminé", "Done") : t("Modifier", "Edit")}</button>
                 </div>
               </div>
               <div id="ms-all-grid" className="tt-groups" data-layout={layout} data-grouped={groupBy === "area" ? "" : undefined} data-editing={editing || undefined} ref={gridRef} role="group" aria-label={t("Mes outils", "My tools")}>

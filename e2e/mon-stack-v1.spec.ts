@@ -74,19 +74,19 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
     await expect(page.locator(".tt-toolcard")).toHaveCount(slugs.length);
     // Three layouts of the same tools; the sort menu reorders them.
-    await page.locator(".ms-layout").getByRole("button", { name: lang === "fr" ? "Liste" : "List", exact: true }).click();
+    await page.locator(".tt-iconswitch").getByRole("button", { name: lang === "fr" ? "Liste" : "List", exact: true }).click();
     await expect(page.locator('#ms-all-grid[data-layout="list"]')).toHaveCount(1);
     await page.getByRole("combobox", { name: lang === "fr" ? "Trier mes outils" : "Sort my tools" }).selectOption("name");
     const names = await page.locator(".tt-toolcard .tt-label").allTextContents();
     expect(names).toEqual([...names].sort((a, b) => a.localeCompare(b, lang)));
     await expect(page.locator(".tt-toolcard")).toHaveCount(slugs.length);
     // Edit mode: a minus badge removes a tool, Undo restores it.
-    await page.locator(".ms-inv-edit").getByRole("button", { name: lang === "fr" ? "Modifier" : "Edit" }).click();
+    await page.locator(".tt-toolbar-tools").getByRole("button", { name: lang === "fr" ? "Modifier" : "Edit" }).click();
     await page.locator(".ms-card-remove").first().dispatchEvent("click"); // cards wiggle in edit mode
     await expect(page.locator(".tt-toolcard")).toHaveCount(slugs.length - 1);
     await page.getByRole("button", { name: lang === "fr" ? "Annuler" : "Undo", exact: true }).click();
     await expect(page.locator(".tt-toolcard")).toHaveCount(slugs.length);
-    await page.locator(".ms-inv-edit").getByRole("button", { name: lang === "fr" ? "Terminé" : "Done" }).click();
+    await page.locator(".tt-toolbar-tools").getByRole("button", { name: lang === "fr" ? "Terminé" : "Done" }).click();
     await page.locator(".tt-toolcard").first().focus();
     await page.keyboard.press("Enter");
     await expect(page.locator(".ms-tool-sheet")).toBeVisible();

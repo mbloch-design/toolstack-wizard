@@ -21602,19 +21602,9 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .tce-media-context { margin: var(--space-xs) 0 0; color: var(--color-text-secondary); font: 400 var(--tt-size-card-body)/1.45 var(--font-ui); }
   .ms-page .ms-reco { min-width: 0; } /* Legacy unlayered kit sets 40px. */
 }
-.ms-page .ms-sort { position: relative; display: inline-flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 30px 0 14px; border-radius: 99px; background: var(--ms-tile); color: var(--ms-meta); font: 500 14px/1 var(--ap-font); cursor: pointer; }
-.ms-page .ms-sort select { appearance: none; border: 0; background: none; color: var(--ms-ink); font: inherit; font-weight: 600; cursor: pointer; outline: none; }
-.ms-page .ms-sort:focus-within { box-shadow: 0 0 0 2px var(--ms-ink); }
-.ms-page .ms-sort svg { position: absolute; right: 12px; color: var(--ms-ink); pointer-events: none; }
-.ms-page .ms-layout { display: inline-flex; padding: 3px; border-radius: 99px; background: var(--ms-tile); }
-.ms-page .ms-layout button { display: grid; place-items: center; width: 36px; height: 34px; border: 0; border-radius: 99px; background: none; color: var(--ms-meta); cursor: pointer; }
-.ms-page .ms-layout button[aria-pressed="true"] { background: var(--ms-card); color: var(--ms-ink); box-shadow: 0 1px 3px rgb(0 0 0 / .1); }
 .ms-page .ms-all .ms-tools-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs); }
 /* The lens view reuses the .ms-map hooks; its own pictures win over the old chip map. */
 /* Grid card: domain on its line, the possible duplicate as its own tag below. */
-@media (max-width: 760px) {
-  .ms-page .ms-all .ms-sort { flex: 1; }
-}
 
 /* Total reliability (23/10): a gauge, then what weighs on the total, each row bringing its question to the deck. */
 
@@ -21666,22 +21656,12 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 /* ===== Ma stack inventory (23/10): one card, two layouts, groups with subtotals ===== */
-.ms-page .ms-inv-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-sm); margin-bottom: var(--space-lg); }
-.ms-page .ms-inv-tools { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs); }
-.ms-page .ms-inv-filters button[data-id="review"] span { color: var(--ms-alert); }
-.ms-page .ms-inv-filters button[data-id="overlap"] span { color: var(--ms-overlap); }
 
 /* The card: same five pieces in both layouts. */
 
 /* Grid: cards. */
 
 /* List: rows in columns, Outil · Domaine · Coût · Statut. */
-
-@media (max-width: 760px) {
-  .ms-page .ms-inv-bar { align-items: stretch; }
-  .ms-page .ms-inv-tools { width: 100%; }
-  .ms-page .ms-inv-tools .ms-sort { flex: 1; }
-}
 
 /* The decision block reads as the one place to act (23/10): the only raised
    white card of the bento, a fine ring in the rare ToolTrim blue, a filled label. */
@@ -22078,12 +22058,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "now" "price" "fit" "bal"; }
 }
 /* One sort menu, as wide as its text; a quiet focus ring for the keyboard only. */
-.ms-page .ms-sort { min-height: 38px; padding: 0 32px 0 14px; }
-.ms-page .ms-sort select { field-sizing: content; min-width: 0; }
-.ms-page .ms-sort:focus-within { box-shadow: none; }
-.ms-page .ms-sort:has(select:focus-visible) { box-shadow: 0 0 0 2px var(--color-accent); }
-.ms-page .ms-inv-tools { gap: var(--space-xs); }
-@media (max-width: 760px) { .ms-page .ms-inv-tools .ms-sort { flex: 0 1 auto; } }
 /* Decision action bar on tablet: links left, total right, one line. */
 @media (max-width: 1180px) {
   .ms-page .mf .mf-now .mf-bar-actions { display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: var(--space-md); }
@@ -22097,13 +22071,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 /* Collection header and toolbar (23/10): one block; one primary action; view controls together. */
-.ms-page .ms-inv-bar { margin-bottom: var(--space-md); padding-bottom: var(--space-sm); box-shadow: inset 0 -1px 0 var(--ms-line); }
-.ms-page .ms-inv-edit .mk-button { min-height: 38px; background: none; }
-.ms-page .ms-inv-edit .mk-button:hover { background: var(--ms-tile); }
-.ms-page .ms-inv-edit .mk-button[aria-pressed="true"] { background: var(--ms-ink); color: var(--ms-card); }
-.ms-page .ms-sort:has(select:focus-visible), .ms-page .ms-sort:focus-within { box-shadow: none; background: var(--color-accent-soft); }
-.ms-page .ms-sort select:focus, .ms-page .ms-sort select:focus-visible { outline: none; }
-.ms-page .ms-sort:hover { background: color-mix(in srgb, var(--ms-ink) 7%, var(--ms-tile)); }
 
 /* Plan tiles as choices (23/10): a radio mark, one structure, prices on one level. */
 .ms-page .mf .mf-now .mf-plan { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: 2.5em auto 1.3em; align-content: start; row-gap: 6px; padding: var(--space-md) var(--space-md) var(--space-sm); padding-right: 44px; }
@@ -22530,9 +22497,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-inventory-heading { display: flex; align-items: center; gap: var(--space-sm); }
   .ms-save-indicator { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; color: var(--color-text-meta); border-radius: var(--radius-sm); }
   .ms-save-indicator:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
-}
-
-@layer components {
 }
 
 /* Editorial hero and onboarding override the older unlayered compact header. */

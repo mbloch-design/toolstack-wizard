@@ -66,9 +66,9 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
     await expect(deck.locator(".mf-choice--keep")).toHaveCount(2);
     await expect(deck.locator(".mf-choice--both")).toBeVisible();
     // The same stack as cards, then as a list.
-    await page.locator(".ms-layout").getByRole("button", { name: fr ? "Liste" : "List", exact: true }).click();
+    await page.locator(".tt-iconswitch").getByRole("button", { name: fr ? "Liste" : "List", exact: true }).click();
     await expect(page.locator('#ms-all-grid[data-layout="list"] .tt-toolcard')).toHaveCount(10);
-    await page.locator(".ms-layout").getByRole("button", { name: fr ? "Grille" : "Grid", exact: true }).click();
+    await page.locator(".tt-iconswitch").getByRole("button", { name: fr ? "Grille" : "Grid", exact: true }).click();
     await expect(page.locator('#ms-all-grid[data-layout="grid"] .tt-toolcard')).toHaveCount(10);
     expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBe(0);
   });

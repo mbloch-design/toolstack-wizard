@@ -259,6 +259,39 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-btn--icon { width: 40px; padding: 0; }
 .tt-btn:active { transform: scale(.97); }
 .tt-btn svg { width: 16px; height: 16px; }
+
+/* Molécule : la puce de filtre. Au repos un filet ; choisie, l'encre et une coche
+   qui se dessine. Le nombre suit le libellé ; en doublon, il passe en orange. */
+.tt-fchips { display: flex; flex-wrap: wrap; gap: 8px; }
+.tt-fchip { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 14px; border: 0; border-radius: var(--tt-r-pill); background: var(--tt-bg); color: var(--tt-ink); font: var(--tt-tag-font); letter-spacing: 0; cursor: pointer; box-shadow: 0 0 0 1px var(--tt-line); transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
+.tt-fchip::before { content: ""; width: 0; height: 10px; border: solid currentColor; border-width: 0 1.6px 1.6px 0; transform: rotate(45deg) translate(-1px, -2px); opacity: 0; transition: width var(--tt-dur-state) ease, opacity 200ms ease; }
+.tt-fchip[aria-pressed="true"] { background: var(--tt-ink); color: var(--tt-bg); box-shadow: none; }
+.tt-fchip[aria-pressed="true"]::before { width: 5px; opacity: 1; }
+.tt-fchip:active { transform: scale(.97); }
+.tt-fchip:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; }
+.tt-fchip-count { font-variant-numeric: tabular-nums; opacity: .6; }
+.tt-fchip--dup .tt-fchip-count { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: var(--tt-overlap); color: #fff; opacity: 1; }
+
+/* Molécule : le menu de tri. Une pilule grise, le libellé puis la valeur. */
+.tt-select { position: relative; display: inline-flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 34px 0 16px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); color: var(--tt-ink); font: var(--tt-note-font); cursor: pointer; }
+.tt-select select { appearance: none; border: 0; background: none; color: inherit; font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); cursor: pointer; }
+.tt-select select:focus { outline: none; }
+.tt-select:focus-within { outline: 2px solid var(--tt-focus); outline-offset: 3px; }
+.tt-select svg { position: absolute; right: 14px; width: 14px; height: 14px; pointer-events: none; }
+
+/* Molécule : la bascule d'affichage. Des icônes dans une pilule grise ; la vue
+   en cours se pose en carte claire, comme un interrupteur à plusieurs positions. */
+.tt-iconswitch { display: inline-flex; gap: 2px; padding: 3px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); }
+.tt-iconswitch button { display: inline-grid; place-items: center; width: 34px; height: 34px; border: 0; border-radius: var(--tt-r-pill); background: none; color: var(--tt-meta); cursor: pointer; transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease; }
+.tt-iconswitch button[aria-pressed="true"] { background: var(--tt-bg); color: var(--tt-ink); box-shadow: 0 1px 2px color-mix(in oklch, var(--tt-ink) 12%, transparent); }
+.tt-iconswitch button:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 2px; }
+.tt-iconswitch svg { width: 16px; height: 16px; }
+
+/* Organisme : la barre d'une liste. Les filtres à gauche, la façon de voir à droite. */
+.tt-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 24px; padding-bottom: 16px; box-shadow: inset 0 -1px 0 var(--tt-line); }
+.tt-toolbar-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.tt-btn--grey[aria-pressed="true"] { background: var(--tt-ink); color: var(--tt-bg); }
+@media (max-width: 560px) { .tt-toolbar-tools { width: 100%; } .tt-toolbar-tools .tt-select { flex: 1; } }
 .tt-check--live { background: var(--tt-live); }
 /* Une ligne d'organisme : à gauche le titre, à droite l'état ou l'action. */
 .tt-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
