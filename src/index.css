@@ -1,6 +1,7 @@
 /* Tailwind 4 loads the existing ToolTrim theme explicitly. Keep the editorial
    class safelist and exclude unreachable dashboard sources from detection. */
 @import "tailwindcss" source(none);
+@import "./styles/ui.css";
 @config "../tailwind.config.ts";
 @source "./";
 @source not "./components/dashboard";
@@ -76,6 +77,15 @@
 ───────────────────────────────────────────── */
 @layer base {
   :root {
+    /* Shared neutral controls (canonical prepared control scale). */
+    --tt-size-control-small: 13px;
+    --radius-control-lifecycle: 10px;
+    --tt-size-stack-invoice: 26px;
+    --tt-size-control-search: 17px;
+    --tt-size-control-name: 18px;
+    --tt-size-control-segmented: 13.5px;
+    --color-action-hover: #3A3A38;
+    --color-action-danger: #ad302b;
     /* ────────────────────────────────────────────
        DESIGN TOKENS — Awwwards editorial palette
        ToolTrim blue is the ONLY accent colour.
@@ -439,6 +449,7 @@
     --color-con-soft:       #2E2015;
     --color-on-primary:     #FFFFFF;
     --color-alert:          #F0874A;
+    --color-action-danger: #ff9d95;
     --color-border:        #2E2E2E;
     --color-border-soft:   #262626;
     --color-border-strong: #DEDED6;
