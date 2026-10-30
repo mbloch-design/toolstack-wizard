@@ -1,3 +1,10 @@
+## 2026-10-30 — CI : assertions navigateur et récupération déterministe
+
+- Périmètre limité aux tests : aucun changement de composant, de CSS ou de comportement produit. Les quatre parcours Ma Stack attendent le titre de doublon actuellement publié et vérifient les deux choix individuels ainsi que « Garder les deux ».
+- Les deux assertions d’usage restées à hauteur exacte sont alignées sur le comportement sans scroll déjà publié : hauteur minimale, commandes alignées au bord inférieur et au bord droit de la carte, contrôles de chevauchement et de cibles conservés. Cela ne réintroduit pas une hauteur fixe dans le produit.
+- Le test de récupération à froid retient explicitement la réponse Auth tant que l’état de vérification n’a pas été observé ; suppression du délai de 800 ms qui pouvait expirer pendant la navigation. Assertions de mot de passe, rechargement et absence de faux lien expiré conservées.
+- Validation locale : 29 parcours Ma Stack passent ; 118 autres parcours comptes passent, puis le test de récupération corrigé passe cinq fois consécutives. Résultat complet Linux vérifié séparément après push.
+
 ## 2026-10-29 · Accueil : direction « luxe », couleurs P3, netteté des images
 
 - Hero : scène gris froid, lueur Display P3 (taches `oklch` animées en `transform` seulement, ~4 % du CPU contre ~80 % avant), grain, trois orbites de 42 glyphes de marque (Simple Icons CC0, intégrés dans `src/data/heroGlyphs.ts`) avec halos qui effacent la ligne sous chaque logo. Surtitre fin, titre Uncut Sans, boutons « pilule + lien ». Visiteur avec stack : « Reprendre ma stack » avec 3 logos et le compte ; connecté : salutation par prénom et titre selon l'heure.

@@ -59,7 +59,12 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
     await answerPlan(deck, false, lang);
     await expect(deck.getByRole("heading", { level: 3 })).not.toHaveText(first || "");
     await deck.getByRole("button", { name: fr ? /^Aucun n’est payant/ : /^None is paid/ }).click();
-    await expect(deck.getByRole("heading", { level: 3 })).toContainText(fr ? " ou " : " or ");
+    await expect(deck.getByRole("heading", { level: 3 })).toHaveText(fr
+      ? "ChatGPT et Claude font le même travail."
+      : "ChatGPT and Claude do the same job.");
+    // The pair decision still offers both individual tools and keeping both.
+    await expect(deck.locator(".mf-face")).toHaveCount(2);
+    await expect(deck.locator(".mf-duel-both")).toBeVisible();
     // The same stack as cards, then as a list.
     await page.locator(".ms-layout").getByRole("button", { name: fr ? "Liste" : "List", exact: true }).click();
     await expect(page.locator('.ms-inv[data-layout="list"] .ms-inv-card')).toHaveCount(10);
