@@ -1,3 +1,4 @@
+import { selectNativeComparePlan } from "./nativeComparePlan.js";
 import pricingTruthCsv from "@/data/pricing_truth.csv?raw";
 import type { Tool } from "@/data/types";
 import type { Currency } from "@/hooks/useCurrency";
@@ -89,17 +90,7 @@ export function getNativeComparePrice(tool: NativePricingInput, preferredCurrenc
   // The English record can carry the vendor's USD grid while the French one
   // carries its EUR grid (vendors that publish both): look at both, then let
   // the requested currency pick. Never a conversion.
-  const candidates = [...(tool.pricing_v5?.plans || []), ...(tool.pricing_v5En?.plans || [])].filter(
-    (item) => item.isComparePlan && !item.isFree && item.nativeAmount != null
-    && (item.nativeCurrency === "EUR" || item.nativeCurrency === "USD" || item.nativeCurrency === "GBP"),
-  );
-  // Un outil peut publier le meme plan dans plusieurs devises reelles (lemlist :
-  // $69 pour un compte US, 69 EUR pour un compte zone euro, pas une conversion,
-  // deux prix vendeur distincts). Quand c'est le cas, plusieurs plans portent
-  // isComparePlan : on prend celui qui correspond a la devise demandee, sinon
-  // le premier attesté pour ne rien casser sur les outils a devise unique.
-  const match = preferredCurrency ? candidates.find((item) => item.nativeCurrency === preferredCurrency) : undefined;
-  const plan = match || candidates[0];
+  const plan = selectNativeComparePlan([...(tool.pricing_v5?.plans || []), ...(tool.pricing_v5En?.plans || [])], preferredCurrency);
   if (plan) {
     const amount = plan.billingPeriod === "annual" ? plan.nativeAmount! / 12 : plan.nativeAmount!;
     return { amount, currency: plan.nativeCurrency as Currency, source: "canonical_plan" };

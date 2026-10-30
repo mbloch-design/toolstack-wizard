@@ -216,3 +216,45 @@ it("preserves a newer draft when reverting a stale edit", async () => {
   expect(f.res.statusCode).toBe(409);
   expect(m.save).not.toHaveBeenCalled();
 });
+it("saves incomplete drafts and returns server capability and validation metadata", async () => {
+  m.save.mockImplementation(async (value) => ({ ...value, version: 2 }));
+  const f = await call("PUT", {
+    slug: "one",
+    version: 1,
+    baseHash: draft.baseHash,
+    value: { ...tool, name: "" },
+    capabilities: { editablePaths: ["id"] },
+  });
+  expect(f.res.statusCode).toBe(200);
+  expect(f.body).toMatchObject({
+    tool: { name: "" },
+    capabilities: { canSaveDraft: true, canPublishAll: true },
+    validation: expect.arrayContaining([
+      expect.objectContaining({
+        path: "name",
+        severity: "error",
+        stage: "publish",
+      }),
+    ]),
+  });
+});
+it("returns publication blockers grouped by slug and keeps the batch durable", async () => {
+  m.snapshot.mockResolvedValue({
+    revision: 2,
+    drafts: [{ ...draft, value: { ...tool, name: "" } }],
+  });
+  const f = await call("POST", { revision: 2 });
+  expect(f.res.statusCode).toBe(400);
+  expect(f.body).toMatchObject({
+    error: {
+      code: "INVALID_CATALOG_TOOL",
+      issuesBySlug: {
+        one: expect.arrayContaining([
+          expect.objectContaining({ path: "name", stage: "publish" }),
+        ]),
+      },
+    },
+  });
+  expect(m.write).not.toHaveBeenCalled();
+  expect(m.cleanup).not.toHaveBeenCalled();
+});

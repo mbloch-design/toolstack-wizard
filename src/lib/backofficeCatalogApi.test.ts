@@ -85,3 +85,53 @@ it("rejects malformed commit URLs and transport failures", async () => {
     code: "CATALOG_UNAVAILABLE",
   });
 });
+it("preserves grouped publication issues for inline feedback", async () => {
+  const issuesBySlug = {
+    one: [
+      {
+        path: "pricing_v5.plans.0.observedOn",
+        code: "SOURCE_DATE_REQUIRED",
+        stage: "publish",
+        severity: "error",
+      },
+    ],
+  };
+  vi.mocked(fetch).mockResolvedValue(
+    new Response(
+      JSON.stringify({ error: { code: "INVALID_CATALOG_TOOL", issuesBySlug } }),
+      { status: 400 },
+    ),
+  );
+  await expect(publishCatalogDrafts(1)).rejects.toMatchObject({ issuesBySlug });
+});
+it("defaults absent capability metadata to deny while accepting older detail responses", async () => {
+  const tool = { id: "one", slug: "one", name: "One" };
+  vi.mocked(fetch).mockResolvedValue(
+    new Response(
+      JSON.stringify({
+        tool,
+        published: tool,
+        baseHash: "hash",
+        version: 1,
+        draft: null,
+        conflict: false,
+      }),
+    ),
+  );
+  expect(
+    await saveCatalogDraft({
+      slug: "one",
+      version: 0,
+      baseHash: "hash",
+      value: tool,
+    }),
+  ).toMatchObject({
+    capabilities: {
+      editablePaths: [],
+      canSaveDraft: false,
+      canDiscardDraft: false,
+      canPublishAll: false,
+    },
+    validation: [],
+  });
+});

@@ -151,10 +151,10 @@ it("rejects impossible source dates", () => {
 });
 it.each([
   [["seo", "metaDescription"], true],
-  [["seo", "aiAngle"], false],
+  [["seo", "aiAngle"], true],
   [["pricing_v5", "plans", 0, "nativeAmount"], true],
   [["pricing_v5", "plans", 0, "featureHighlights", 2], true],
-  [["pricing_v5", "billing_options"], false],
+  [["pricing_v5", "billing_options"], true],
   [["pricing_v5", "plans", 0, "unknown"], false],
   [["slug"], false],
   [["seo", "constructor"], false],

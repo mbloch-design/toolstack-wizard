@@ -182,4 +182,25 @@ suite("catalogue Lua against isolated real Redis", () => {
     ]);
     await expect(getCatalogSnapshot()).rejects.toMatchObject({ status: 503 });
   });
+  it("persists and reloads incomplete draft fields through real Lua CAS", async () => {
+    const initial = draft();
+    const value = {
+      ...initial.value,
+      name: "",
+      pricing_v5: {
+        plans: [
+          {
+            planKey: "new",
+            displayName: "",
+            nativeAmount: null,
+            detailsSourceUrl: "",
+            observedOn: "",
+          },
+        ],
+      },
+    };
+    const saved = await saveCatalogDraft({ ...initial, value }, 0);
+    expect((await getCatalogSnapshot()).drafts[0]).toEqual(saved);
+    expect(saved.value.name).toBe("");
+  });
 });

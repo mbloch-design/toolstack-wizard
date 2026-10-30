@@ -117,3 +117,33 @@ it("stores payload JSON verbatim so Lua cannot turn empty arrays into objects", 
     value: { pros: [], verdict: { keepIf: [] } },
   });
 });
+it("reloads incomplete durable drafts without applying publication rules", async () => {
+  const incomplete = {
+    ...draft,
+    value: {
+      ...tool,
+      name: "",
+      pricing_v5: {
+        plans: [
+          {
+            planKey: "new",
+            displayName: "",
+            nativeAmount: null,
+            detailsSourceUrl: "",
+            observedOn: "",
+          },
+        ],
+      },
+    },
+  };
+  redis.mockResolvedValue([
+    "revision",
+    "4",
+    "draft:one",
+    JSON.stringify({ version: 4, data: incomplete }),
+  ]);
+  expect(await getCatalogSnapshot()).toEqual({
+    revision: 4,
+    drafts: [incomplete],
+  });
+});

@@ -241,7 +241,7 @@ it("freezes editable fields while a save is pending so newer input cannot be ove
 it("preserves unsupported nested fields visibly read-only instead of offering edits that the server rejects", async () => {
   api.detail.mockResolvedValue({
     ...detail,
-    tool: { ...tool, seo: { ...tool.seo, aiAngle: "Contexte IA existant" } },
+    tool: { ...tool, seo: { ...tool.seo, legacyContext: "Contexte IA existant" } },
   });
   render(<CatalogEditor />);
   fireEvent.click(
@@ -251,5 +251,5 @@ it("preserves unsupported nested fields visibly read-only instead of offering ed
   fireEvent.click(screen.getByRole("button", { name: "SEO" }));
   expect(screen.getByText("Contexte IA existant")).toBeVisible();
   expect(screen.getByText(/Lecture seule/)).toBeVisible();
-  expect(screen.queryByLabelText("ai Angle")).not.toBeInTheDocument();
+  expect(screen.queryByLabelText("legacy Context")).not.toBeInTheDocument();
 });

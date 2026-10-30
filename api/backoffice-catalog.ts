@@ -3,6 +3,10 @@ import { readAccountBody } from "./_account-body.js";
 import { AccountApiError, requireAccount } from "./_account-auth.js";
 import {
   validateCatalogTool,
+  validateCatalogDraft,
+  catalogCapabilities,
+  catalogValidationIssues,
+  type CatalogCapabilities,
   CatalogValidationError,
   type CatalogEditorDetail,
   type CatalogTool,
@@ -27,7 +31,11 @@ const query = (req: VercelRequest, key: string, fallback = "") => {
   if (typeof v !== "string") throw catalogError(400, "INVALID_CATALOG_QUERY");
   return v;
 };
-function detail(tool: CatalogTool, draft?: CatalogDraft): CatalogEditorDetail {
+function detail(
+  tool: CatalogTool,
+  capabilities: CatalogCapabilities,
+  draft?: CatalogDraft,
+): CatalogEditorDetail {
   return {
     tool: draft?.value ?? tool,
     published: tool,
@@ -35,6 +43,11 @@ function detail(tool: CatalogTool, draft?: CatalogDraft): CatalogEditorDetail {
     version: draft?.version ?? 0,
     draft: draft ? draftSummary(draft) : null,
     conflict: !!draft && draft.baseHash !== catalogHash(tool),
+    capabilities,
+    validation: catalogValidationIssues(
+      draft?.base ?? tool,
+      draft?.value ?? tool,
+    ),
   };
 }
 function version(v: unknown): number {
@@ -59,6 +72,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (!allowed.size) throw catalogError(503, "BACKOFFICE_UNAVAILABLE");
     if (!account.email || !allowed.has(account.email.toLowerCase()))
       throw catalogError(403, "BACKOFFICE_FORBIDDEN");
+    const capabilities = catalogCapabilities({ isAdmin: true });
     let body: Record<string, unknown> = {};
     if (req.method !== "GET") {
       const parsed = await readAccountBody(
@@ -91,11 +105,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const bySlug = new Map(source.tools.map((t) => [t.slug, t]));
     if (req.method === "POST") {
       if (!snapshot.drafts.length) throw catalogError(400, "CATALOG_NO_DRAFTS");
+      if (!capabilities.canPublishAll)
+        throw catalogError(403, "BACKOFFICE_FORBIDDEN");
+      const issuesBySlug = Object.fromEntries(
+        snapshot.drafts
+          .map((d) => [
+            d.slug,
+            catalogValidationIssues(d.base, d.value).filter(
+              (issue) => issue.severity === "error",
+            ),
+          ])
+          .filter(([, issues]) => (issues as unknown[]).length),
+      );
+      if (Object.keys(issuesBySlug).length)
+        return res
+          .status(400)
+          .json({ error: { code: "INVALID_CATALOG_TOOL", issuesBySlug } });
       const replacements = new Map<string, CatalogTool>();
       for (const d of snapshot.drafts) {
         const current = bySlug.get(d.slug);
         if (!current) throw catalogError(409, "CATALOG_SOURCE_CONFLICT");
-        validateCatalogTool(d.base, d.value);
+        validateCatalogTool(d.base, d.value, capabilities);
         if (catalogHash(current) === catalogHash(d.value)) continue;
         if (catalogHash(current) !== d.baseHash)
           throw catalogError(409, "CATALOG_SOURCE_CONFLICT");
@@ -129,33 +159,33 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           (!needle || `${t.name} ${t.slug}`.toLowerCase().includes(needle)) &&
           (only !== "true" || summaries.has(t.slug)),
       );
-      return res
-        .status(200)
-        .json({
-          revision: snapshot.revision,
-          tools: filtered
-            .slice((page - 1) * 25, page * 25)
-            .map((t) => ({
-              slug: t.slug,
-              name: t.name,
-              category: typeof t.category === "string" ? t.category : "",
-              draft: summaries.get(t.slug) ?? null,
-            })),
-          drafts,
-          total: filtered.length,
-          page,
-          pageSize: 25,
-          headSha: source.headSha,
-        });
+      return res.status(200).json({
+        revision: snapshot.revision,
+        capabilities,
+        tools: filtered.slice((page - 1) * 25, page * 25).map((t) => ({
+          slug: t.slug,
+          name: t.name,
+          category: typeof t.category === "string" ? t.category : "",
+          draft: summaries.get(t.slug) ?? null,
+        })),
+        drafts,
+        total: filtered.length,
+        page,
+        pageSize: 25,
+        headSha: source.headSha,
+      });
     }
     const slug = req.method === "GET" ? query(req, "slug") : body.slug;
     if (!validSlug(slug)) throw catalogError(400, "INVALID_CATALOG_REQUEST");
     const tool = bySlug.get(slug);
     if (!tool) throw catalogError(404, "CATALOG_TOOL_NOT_FOUND");
     const draft = snapshot.drafts.find((d) => d.slug === slug);
-    if (req.method === "GET") return res.status(200).json(detail(tool, draft));
+    if (req.method === "GET")
+      return res.status(200).json(detail(tool, capabilities, draft));
     const expected = version(body.version);
     if (req.method === "DELETE") {
+      if (!capabilities.canDiscardDraft)
+        throw catalogError(403, "BACKOFFICE_FORBIDDEN");
       await deleteCatalogDraft(slug, expected);
       return res.status(200).json({ ok: true });
     }
@@ -165,9 +195,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       (draft && draft.baseHash !== body.baseHash)
     )
       throw catalogError(409, "CATALOG_SOURCE_CONFLICT");
-    const value = validateCatalogTool(tool, body.value);
+    const value = validateCatalogDraft(tool, body.value, capabilities);
     if (
       value.category !== tool.category &&
+      value.category !== "" &&
+      value.category != null &&
       !source.tools.some((t) => t.category === value.category)
     )
       throw catalogError(400, "INVALID_CATALOG_TOOL");
@@ -175,7 +207,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       // A no-op still compares the supplied version atomically: a newer
       // saved draft must survive a stale tab reverting its local edits.
       await deleteCatalogDraft(slug, expected);
-      return res.status(200).json(detail(tool));
+      return res.status(200).json(detail(tool, capabilities));
     }
     const saved = await saveCatalogDraft(
       {
@@ -188,7 +220,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
       expected,
     );
-    return res.status(200).json(detail(tool, saved));
+    return res.status(200).json(detail(tool, capabilities, saved));
   } catch (error) {
     const e =
       error instanceof AccountApiError
@@ -196,6 +228,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         : error instanceof CatalogValidationError
           ? catalogError(400, error.code)
           : catalogError();
-    return res.status(e.status).json({ error: { code: e.code } });
+    return res
+      .status(e.status)
+      .json({
+        error: {
+          code: e.code,
+          ...(error instanceof CatalogValidationError
+            ? { issues: error.issues }
+            : {}),
+        },
+      });
   }
 }

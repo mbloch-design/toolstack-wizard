@@ -4,12 +4,16 @@ import type {
   CatalogEditorDetail,
   CatalogPublication,
   CatalogTool,
+  CatalogValidationIssue,
+  CatalogCapabilities,
 } from "./backofficeCatalog";
 
 export class CatalogApiError extends Error {
   constructor(
     readonly status: number,
     readonly code: string,
+    readonly issuesBySlug: Record<string, CatalogValidationIssue[]> = {},
+    readonly issues: CatalogValidationIssue[] = [],
   ) {
     super(code);
     this.name = "CatalogApiError";
@@ -43,6 +47,8 @@ async function request(
         typeof value?.error?.code === "string"
           ? value.error.code
           : "CATALOG_UNAVAILABLE",
+        parseIssueGroups(value?.error?.issuesBySlug),
+        parseIssues(value?.error?.issues),
       );
     if (!value || typeof value !== "object")
       throw new CatalogApiError(503, "CATALOG_UNAVAILABLE");
@@ -74,7 +80,7 @@ export async function loadCatalogWorkspace({
     !Number.isSafeInteger(value.total)
   )
     throw new CatalogApiError(503, "CATALOG_UNAVAILABLE");
-  return value;
+  return { ...value, capabilities: parseCapabilities(value.capabilities) };
 }
 export async function loadCatalogDetail(
   slug: string,
@@ -91,7 +97,11 @@ function parseDetail(value: unknown): CatalogEditorDetail {
     !Number.isSafeInteger(result.version)
   )
     throw new CatalogApiError(503, "CATALOG_UNAVAILABLE");
-  return result;
+  return {
+    ...result,
+    capabilities: parseCapabilities(result.capabilities),
+    validation: parseIssues(result.validation),
+  };
 }
 export async function saveCatalogDraft(input: {
   slug: string;
@@ -119,4 +129,47 @@ export async function publishCatalogDrafts(
   )
     throw new CatalogApiError(503, "CATALOG_UNAVAILABLE");
   return value;
+}
+
+function parseCapabilities(value: unknown): CatalogCapabilities {
+  if (!value || typeof value !== "object")
+    return {
+      editablePaths: [],
+      canSaveDraft: false,
+      canDiscardDraft: false,
+      canPublishAll: false,
+    };
+  const c = value as CatalogCapabilities;
+  return {
+    editablePaths: Array.isArray(c.editablePaths)
+      ? c.editablePaths.filter((p) => typeof p === "string")
+      : [],
+    canSaveDraft: c.canSaveDraft === true,
+    canDiscardDraft: c.canDiscardDraft === true,
+    canPublishAll: c.canPublishAll === true,
+  };
+}
+function parseIssues(value: unknown): CatalogValidationIssue[] {
+  return Array.isArray(value)
+    ? value.filter(
+        (v): v is CatalogValidationIssue =>
+          !!v &&
+          typeof v.path === "string" &&
+          typeof v.code === "string" &&
+          ["draft", "publish"].includes(v.stage) &&
+          ["error", "warning"].includes(v.severity),
+      )
+    : [];
+}
+function parseIssueGroups(
+  value: unknown,
+): Record<string, CatalogValidationIssue[]> {
+  return value && typeof value === "object" && !Array.isArray(value)
+    ? Object.fromEntries(
+        Object.entries(value).map(([slug, issues]) => [
+          slug,
+          parseIssues(issues),
+        ]),
+      )
+    : {};
 }

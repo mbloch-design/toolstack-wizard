@@ -185,7 +185,9 @@ export interface ToolPricingPlan {
   isComparePlan: boolean;
   nativeAmount: number | null;
   nativeCurrency: string | null;
-  billingPeriod?: "monthly" | "annual" | null;
+  billingPeriod?: "month" | "year" | "monthly" | "annual" | "quarterly" | "one_time" | "one-time" | "usage" | "week" | "day" | null;
+  priceStatus?: "paid" | "free" | "quote" | "unknown" | "usage";
+  priceObservationId?: string;
   billingCommitment?: "monthly" | "annual_prepaid" | null;
   taxInclusion?: "ht" | "ttc" | "unknown" | null;
   observedMarket?: string | null;

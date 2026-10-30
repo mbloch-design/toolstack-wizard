@@ -4,7 +4,7 @@ import {
   catalogHash,
   type CatalogDraft,
 } from "./_backoffice-catalog-contract.js";
-import { validateCatalogTool } from "../src/lib/backofficeCatalog.js";
+import { validateCatalogDraft } from "../src/lib/backofficeCatalog.js";
 export const CATALOG_HASH = "tt:catalog-editor:v1";
 export type CatalogSnapshot = {
   revision: number;
@@ -48,7 +48,7 @@ export async function getCatalogSnapshot(): Promise<CatalogSnapshot> {
         catalogHash(d.base) !== d.baseHash
       )
         throw new Error();
-      validateCatalogTool(d.base, d.value);
+      validateCatalogDraft(d.base, d.value);
       drafts.push(d);
     }
     if (
