@@ -68,3 +68,6 @@ supabase/.temp/
 .claude/skills/
 .claude/settings.json
 skills-lock.json
+
+# Local design prototypes and execution ledgers
+.superpowers/
