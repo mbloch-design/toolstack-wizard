@@ -91,19 +91,21 @@
 :root {
   /* Texte */
   /* Échelle validée (planche, chapitre 02) : 64 · 42 · 21 · 17 lecture · 16 texte · 14 détail ·
-     12 en capitales seulement. Graisses 400 et 500, un cran plus fin en sombre. */
+     12 en capitales seulement. Graisses 400 et 500, un cran plus fin en sombre.
+     Interlettrage : Inter (lecture, interface) à 0 ; Uncut Sans de −0,017 em (petit)
+     à −0,022 em (64) ; capitales +0,08 em. */
   --tt-eyebrow-font: var(--tt-w-strong) .75rem/1.4 var(--tt-ui);   --tt-eyebrow-tracking: .08em;
   --tt-title-xl-font: var(--tt-w-strong) clamp(2.625rem, 5vw, 4rem)/1.04 var(--tt-display); --tt-title-xl-tracking: -.022em;
   /* Titre L et titre M partagent le palier 21 de l'échelle. */
   --tt-title-l-font: var(--tt-w-strong) 1.3125rem/1.2 var(--tt-display);  --tt-title-l-tracking: -.017em;
   --tt-title-m-font: var(--tt-w-strong) 1.3125rem/1.2 var(--tt-display); --tt-title-m-tracking: -.017em;
   --tt-title-section-font: var(--tt-w-strong) 2.625rem/1.08 var(--tt-display); --tt-title-section-tracking: -.021em;
-  --tt-label-font: var(--tt-w-strong) 1rem/1.3 var(--tt-ui);   --tt-label-tracking: -.005em;
+  --tt-label-font: var(--tt-w-strong) 1rem/1.3 var(--tt-ui);   --tt-label-tracking: 0;
   --tt-text-font: var(--tt-w-text) 1rem/1.55 var(--tt-read);
   --tt-note-font: var(--tt-w-text) .875rem/1.4 var(--tt-read);
   /* Chiffres */
   --tt-figure-font: var(--tt-w-strong) 2.625rem/1 var(--tt-display);   --tt-figure-tracking: -.021em;
-  --tt-amount-font: var(--tt-w-strong) 1.0625rem/1 var(--tt-display); --tt-amount-tracking: -.01em;
+  --tt-amount-font: var(--tt-w-strong) 1.0625rem/1 var(--tt-display); --tt-amount-tracking: -.017em;
   --tt-unit-font: var(--tt-w-text) .875rem/1 var(--tt-read);
   --tt-gain-ink: color-mix(in oklch, var(--tt-live) 72%, var(--tt-ink));
   /* Surfaces */
@@ -227,7 +229,7 @@
 .tt-amount { font: var(--tt-amount-font); letter-spacing: var(--tt-amount-tracking); white-space: nowrap; color: var(--tt-ink); }
 :is(.tt-figure, .tt-amount) small { margin-left: 3px; font: var(--tt-unit-font); letter-spacing: 0; }
 :is(.tt-figure, .tt-amount)[data-gain] { color: var(--tt-gain-ink); }
-.tt-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); color: var(--tt-ink); white-space: nowrap; }
+.tt-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); letter-spacing: 0; color: var(--tt-ink); white-space: nowrap; }
 .tt-tag--overlap { background: color-mix(in oklch, var(--tt-overlap) 14%, transparent); color: color-mix(in oklch, var(--tt-overlap) 78%, var(--tt-ink)); }
 .tt-tag--live { background: color-mix(in oklch, var(--tt-live) 14%, transparent); color: var(--tt-gain-ink); }
 /* Le fil d'Ariane : des liens en note, un séparateur en filigrane, la page courante appuyée. */
@@ -395,7 +397,7 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-choice-text { display: grid; gap: 2px; min-width: 0; }
 .tt-choice-name { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); }
 .tt-choice-note { font: var(--tt-note-font); }
-.tt-choice-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); }
+.tt-choice-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); letter-spacing: 0; }
 .tt-choice-amount { font: var(--tt-amount-font); letter-spacing: var(--tt-amount-tracking); white-space: nowrap; }
 .tt-choice-amount small { margin-left: 2px; font: var(--tt-unit-font); }
 .tt-choice-amount[data-gain] { color: var(--tt-gain-ink); }

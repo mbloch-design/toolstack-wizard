@@ -23816,6 +23816,7 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .cp-guide-outbound-button.cp-guide-outbound-button--primary,
 .tt-footer .tt-footer-action--primary {
   background: var(--tt-lead-bg); color: var(--tt-bg); box-shadow: var(--tt-lead-shadow);
+  letter-spacing: 0; /* Inter Tight à 0 : règle d'interlettrage */
   transition: transform 280ms var(--tt-spring), box-shadow 220ms ease;
 }
 :is(.tt-cta, .tt-page-hero-cta > .tt-button-primary, .ss-cta, .sl-final-cta, .sp-payment-cta, .sp-upgrade-cta):hover,
