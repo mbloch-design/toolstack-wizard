@@ -76,8 +76,6 @@ export default function ToolGallery({ images, imageAlts = [], videos = [], toolN
       className="tg-main-video"
       src={media.video.provider === 'wistia'
         ? `https://fast.wistia.net/embed/iframe/${media.video.videoId}?autoPlay=true`
-        : media.video.provider === 'iframe'
-        ? media.video.embedUrl
         : `https://www.youtube-nocookie.com/embed/${media.video.videoId}?autoplay=1&rel=0`}
       title={lang === "en" ? media.video.titleEn : media.video.titleFr}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -224,7 +224,28 @@
 .dark .tt-spark-host, :root[data-theme="dark"] .tt-spark-host { --tt-edge-head: var(--tt-edge-3); }
 @media (prefers-reduced-motion: reduce) { .tt-edge, .tt-spark { display: none; } }
 
+/* ── Retour : la notification ───────────────────────────────────────────── */
+/* Une pilule d'encre posée en bas : le message, puis une action douce. */
+.tt-toast { display: flex; align-items: center; gap: 14px; padding: 12px 12px 12px 16px; border-radius: var(--tt-r-card); background: var(--tt-ink); color: var(--tt-bg); box-shadow: 0 16px 36px -16px rgb(0 0 0 / .5); font: var(--tt-w-text) .9375rem/1.4 var(--tt-read); }
+.tt-toast-action { margin-left: auto; min-height: 32px; padding: 0 12px; border: 0; border-radius: var(--tt-r-pill); background: color-mix(in srgb, var(--tt-bg) 16%, transparent); color: var(--tt-bg); font: 500 .875rem/1 var(--tt-ui); cursor: pointer; }
+
+/* ── Attendre : le reflet ───────────────────────────────────────────────── */
+/* Un reflet traverse la forme du contenu à venir. Jamais de rond qui tourne. */
+.tt-skeleton { background: linear-gradient(90deg, var(--tt-tile-2) 0 40%, color-mix(in srgb, var(--tt-bg) 70%, var(--tt-tile-2)) 50%, var(--tt-tile-2) 60% 100%) 0 0 / 300% 100%; animation: tt-shimmer 1.6s ease-in-out infinite; }
+@keyframes tt-shimmer { from { background-position: 100% 0; } to { background-position: 0 0; } }
+.tt-loadcap { font: var(--tt-w-text) .9375rem/1.4 var(--tt-read); color: var(--tt-ink); transition: opacity 300ms ease, transform 300ms ease; }
+.tt-loadcap[data-swap] { opacity: 0; transform: translateY(4px); }
+
+/* ── Survoler : la carte s'incline vers vous ────────────────────────────── */
+/* Armée par tooltrim-system.js sur [data-tt-tilt] : quelques degrés vers le
+   pointeur, un reflet doux qui le suit. */
+.tt-tilt-host { transform: perspective(700px) rotateX(var(--tt-rx, 0deg)) rotateY(var(--tt-ry, 0deg)); transition: transform 500ms var(--tt-ease); will-change: transform; position: relative; }
+.tt-tilt-host:hover { transition-duration: 120ms; }
+.tt-tilt-host::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; mix-blend-mode: soft-light; transition: opacity 300ms ease;
+  background: radial-gradient(160px 110px at var(--tt-sx, 50%) var(--tt-sy, 50%), rgb(255 255 255 / .55), transparent 70%); }
+.tt-tilt-host:hover::after { opacity: 1; }
+
 @media (prefers-reduced-motion: reduce) {
-  .tt-blade, .tt-thread::before, .tt-bloom, .tt-cutgauge-cut, .tt-fall, .tt-cling, .tt-settle, .tt-bump { animation: none !important; transition: none !important; }
+  .tt-blade, .tt-thread::before, .tt-bloom, .tt-cutgauge-cut, .tt-skeleton, .tt-tilt-host, .tt-fall, .tt-cling, .tt-settle, .tt-bump { animation: none !important; transition: none !important; }
   .tt-fall, .tt-cling { opacity: 0; }
 }

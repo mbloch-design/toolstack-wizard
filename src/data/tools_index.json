@@ -60688,7 +60688,7 @@
     "name": "DisplaySwitcher",
     "toolTrimRating": {
       "valeurAjoutee": 3,
-      "simplicite": 2,
+      "simplicite": 3,
       "utilisation": 4,
       "puissance": 2,
       "reversibilite": 4,
@@ -60716,6 +60716,7 @@
       }
     ],
     "websiteUrl": "https://nebulasoftware.com/product/displayswitcher/",
+    "ogImageUrl": "/tool-media/displayswitcher/monitor-inputs.png",
     "substitution_cluster_v2": "workstation-utility",
     "functional_needs": [
       "transfert-fichiers",

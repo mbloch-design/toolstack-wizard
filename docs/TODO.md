@@ -20,6 +20,7 @@ Légende : **[décision]** = attend un arbitrage de Michael.
 - [ ] P1 Contenu : passer le catalogue au vouvoiement (≈ 1 800 phrases : `keepIf`, `avoidIf`, `threshold`, descriptions, étapes ; source Supabase), puis les libellés « Pour toi si / Pas pour toi si » de la fiche outil. Relecture humaine, pas de conversion aveugle.
 - [x] Champs du site (`.tt-form-input`, prénom de Ma stack, recherche) au filet et halo bleu de la planche ; texte indicatif en gris (30/10/2026).
 - [ ] P2 Design system : Ma stack garde un bouton principal bleu (« C'est parti ») ; la planche dit encre. À aligner avec le lot 2.
+- [ ] P3 Design system : la vitrine de micro-animations de la planche garde sa propre inclinaison ; la brancher sur `[data-tt-tilt]` du système.
 - [ ] P3 Design system, en dernier : les ciseaux du logo qui font « clic » (prêt dans le système, `.tt-blade`).
 - [x] P1 E2E comptes : `full personal state survives new device` (×4) visait `.ms-account`, absent une fois la stack synchronisée ; il vise désormais la pastille « Stack enregistrée » (23/10/2026).
 - [ ] **[décision]** Landing Ma stack : confirmer « gratuit, sans carte bancaire » et « supprimez vos données quand vous voulez » comme engagements publics.

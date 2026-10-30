@@ -10,6 +10,7 @@ import { installToolTrimSystem } from "./styles/tooltrim-system.js";
 // que le bloc « Système ToolTrim appliqué au site » de index.css).
 installToolTrimSystem({
   sparkSelector: ".tt-cta, .tt-page-hero-cta > .tt-button-primary, .ss-cta, .sl-final-cta, .sp-payment-cta, .sp-upgrade-cta, .hv2-cta, .td-hero-site-link, .td-decision-cta-main, .cp-guide-outbound-button--primary, .tt-footer-action--primary, .so-primary",
+  tiltSelector: ".tt-pepite-media",
 });
 
 const container = document.getElementById("root")!;

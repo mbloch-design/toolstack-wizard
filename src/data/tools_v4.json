@@ -297848,9 +297848,9 @@
     "category": "organization",
     "shortDescription": "Application de bureau (Linux/macOS/Windows) qui bascule l'entrée vidéo d'un moniteur compatible DDC/CI par simple clic, et transfère texte et fichiers entre plusieurs ordinateurs sans configuration réseau ni pare-feu.",
     "shortDescriptionEn": "Desktop application (Linux/macOS/Windows) that switches a DDC/CI-compatible monitor's video input with a single click, and transfers text and files between computers with no network or firewall configuration needed.",
-    "description": "DisplaySwitcher remplace les boutons physiques d'un moniteur par un bouton logiciel pour changer d'entrée vidéo (HDMI, DisplayPort). L'outil s'appuie sur le standard DDC/CI, supporté par la plupart des moniteurs récents : si un ordinateur ne peut pas basculer le moniteur directement, un autre ordinateur connecté et compatible peut déclencher le changement à sa place.\n\nEn plus du changement d'entrée, l'application tourne sur chaque poste et sert aussi à transférer du texte et des fichiers entre ordinateurs par copier-coller, glisser-déposer ou navigateur de fichiers intégré, y compris entre systèmes d'exploitation différents, sans configuration réseau ni pare-feu à ouvrir.\n\nSur Linux, l'accès aux périphériques DDC/CI passe par /dev/i2c-* et demande une configuration système (ajout au groupe i2c ou règle udev) ; sous Wayland, certains environnements bloquent l'accès bas niveau et une session X11 peut être nécessaire. La version Mac ne cible que les puces Apple Silicon, pas les Mac Intel.\n\nTarif unique à 5,95 $/mois, avec un mois d'essai gratuit (carte bancaire requise pour démarrer l'essai, résiliable depuis le compte sans contact nécessaire).",
-    "longDescription": "DisplaySwitcher cible un problème précis : un moniteur multi-entrées compatible DDC/CI qui ne propose pas de logiciel de bascule pour tous les systèmes d'exploitation utilisés (cas fréquent avec les moniteurs Dell, qui ne couvrent souvent que Windows). L'application tourne sur Linux, macOS (Apple Silicon) et Windows, et permet à n'importe quel ordinateur connecté de déclencher le changement d'entrée, y compris pour un poste qui ne le supporterait pas nativement.\n\nAu-delà du switch moniteur, l'outil ajoute un transfert de texte et de fichiers entre postes par copier-coller, glisser-déposer ou navigateur de fichiers, sans réseau à configurer. Sur Linux, l'accès DDC/CI nécessite une configuration système (groupe i2c ou règle udev), et Wayland peut bloquer l'accès bas niveau (X11 recommandé en cas de blocage).\n\nTarif unique à 5,95 $/mois, essai d'un mois avec carte bancaire requise au départ.",
-    "longDescriptionEn": "DisplaySwitcher targets a specific problem: a multi-input DDC/CI-compatible monitor whose manufacturer software doesn't cover every OS in use (a common case with Dell monitors, which often support Windows only). The app runs on Linux, macOS (Apple Silicon) and Windows, letting any connected computer trigger the input switch, including for a machine that couldn't do it natively.\n\nBeyond monitor switching, the tool adds text and file transfer between machines via copy-paste, drag-and-drop or a built-in file browser, with no network setup required. On Linux, DDC/CI access needs system configuration (i2c group or udev rule), and Wayland can block low-level access (X11 recommended if it fails).\n\nSingle pricing tier at $5.95/month, one-month trial with a credit card required upfront.",
+    "description": "DisplaySwitcher remplace les boutons physiques d'un moniteur par un bouton logiciel pour changer d'entrée vidéo (HDMI, DisplayPort). L'outil s'appuie sur le standard DDC/CI, supporté par la plupart des moniteurs récents : si un ordinateur ne peut pas basculer le moniteur directement, un autre ordinateur connecté et compatible peut déclencher le changement à sa place.\n\nEn plus du changement d'entrée, l'application tourne sur chaque poste et sert aussi à transférer du texte et des fichiers entre ordinateurs par copier-coller, glisser-déposer ou navigateur de fichiers intégré, y compris entre systèmes d'exploitation différents, sans configuration réseau ni pare-feu à ouvrir.\n\nL'installeur configure l'accès DDC/CI automatiquement sur Linux ; seuls les utilisateurs ayant eux-mêmes restreint les permissions système (accès /dev/i2c-*) doivent appliquer manuellement le correctif documenté (groupe i2c ou règle udev). La version Mac ne cible que les puces Apple Silicon, pas les Mac Intel.\n\nTarif unique à 5,95 $/mois, avec un mois d'essai gratuit (carte bancaire requise pour démarrer l'essai, résiliable depuis le compte sans contact nécessaire).",
+    "longDescription": "DisplaySwitcher cible un problème précis : un moniteur multi-entrées compatible DDC/CI qui ne propose pas de logiciel de bascule pour tous les systèmes d'exploitation utilisés (cas fréquent avec les moniteurs Dell, qui ne couvrent souvent que Windows). L'application tourne sur Linux, macOS (Apple Silicon) et Windows, et permet à n'importe quel ordinateur connecté de déclencher le changement d'entrée, y compris pour un poste qui ne le supporterait pas nativement.\n\nAu-delà du switch moniteur, l'outil ajoute un transfert de texte et de fichiers entre postes par copier-coller, glisser-déposer ou navigateur de fichiers, sans réseau à configurer. L'installeur Linux configure l'accès DDC/CI automatiquement ; seuls les utilisateurs ayant restreint eux-mêmes les permissions système doivent appliquer un correctif manuel documenté.\n\nTarif unique à 5,95 $/mois, essai d'un mois avec carte bancaire requise au départ.",
+    "longDescriptionEn": "DisplaySwitcher targets a specific problem: a multi-input DDC/CI-compatible monitor whose manufacturer software doesn't cover every OS in use (a common case with Dell monitors, which often support Windows only). The app runs on Linux, macOS (Apple Silicon) and Windows, letting any connected computer trigger the input switch, including for a machine that couldn't do it natively.\n\nBeyond monitor switching, the tool adds text and file transfer between machines via copy-paste, drag-and-drop or a built-in file browser, with no network setup required. The Linux installer configures DDC/CI access automatically; only users who've restricted system permissions themselves need to apply a documented manual fix.\n\nSingle pricing tier at $5.95/month, one-month trial with a credit card required upfront.",
     "pricing": {
       "free": "Pas de plan gratuit permanent. Essai d'un mois, carte bancaire requise, résiliable depuis le compte.",
       "paid": "5,95 $/mois, formule unique."
@@ -297862,8 +297862,8 @@
     "defaultMonthlyPrice": 5.11,
     "pricing_v5": {
       "cautions": [
-        "L'essai gratuit d'un mois demande une carte bancaire dès l'inscription, contrairement à un essai sans engagement classique.",
-        "La version Mac ne fonctionne que sur Apple Silicon, pas sur les Mac Intel."
+        "La version Mac ne fonctionne que sur Apple Silicon, pas sur les Mac Intel.",
+        "L'essai gratuit d'un mois demande une carte bancaire dès l'inscription, contrairement à un essai sans engagement classique."
       ],
       "cautionsEn": [
         "The one-month free trial requires a credit card at signup, unlike a typical no-commitment trial.",
@@ -297971,12 +297971,12 @@
       "Text and file transfer across different operating systems avoids USB sticks or network shares to configure."
     ],
     "cons": [
-      "Sur Linux, l'accès DDC/CI demande une configuration système (groupe i2c ou règle udev), et Wayland peut bloquer l'accès bas niveau.",
-      "La version Mac ne fonctionne que sur Apple Silicon ; aucun support pour les Mac Intel."
+      "La version Mac ne fonctionne que sur Apple Silicon ; aucun support pour les Mac Intel.",
+      "Essai gratuit d'un mois, mais carte bancaire requise dès l'inscription."
     ],
     "consEn": [
-      "On Linux, DDC/CI access requires system configuration (i2c group or udev rule), and Wayland can block low-level access.",
-      "The Mac version only runs on Apple Silicon; no support for Intel Macs."
+      "The Mac version only runs on Apple Silicon; no support for Intel Macs.",
+      "One-month free trial, but a credit card is required at signup."
     ],
     "useCases": [
       "Basculer l'entrée vidéo d'un moniteur multi-sources d'un simple clic plutôt qu'avec les boutons physiques du moniteur, y compris depuis un ordinateur qui ne le supporterait pas seul.",
@@ -298022,23 +298022,23 @@
     },
     "force_silence": false,
     "timeGainedHoursPerMonth": null,
-    "ogImageUrl": "",
+    "ogImageUrl": "/tool-media/displayswitcher/monitor-inputs.png",
     "toolTrimRating": {
       "valeurAjoutee": 3,
-      "simplicite": 2,
+      "simplicite": 3,
       "utilisation": 4,
       "puissance": 2,
       "reversibilite": 4,
       "evidence": {
         "valeurAjoutee": "À 5,95 $/mois, l'outil remplace un geste physique répété plusieurs fois par jour, une économie de temps réelle mais limitée à un cas d'usage précis (moniteur DDC/CI, plusieurs ordinateurs) (nebulasoftware.com/product/displayswitcher, vérifié le 29/10/2026).",
-        "simplicite": "Sur Linux, l'installation demande une configuration système (groupe i2c ou règle udev) documentée mais technique, et Wayland peut nécessiter de repasser en X11 ; pas un premier résultat immédiat pour un non-technicien (docs.nebulasoftware.com, vérifié le 29/10/2026).",
+        "simplicite": "L'installeur configure l'accès DDC/CI automatiquement sur Linux pour la majorité des utilisateurs ; un correctif manuel documenté (groupe i2c) n'est nécessaire que si les permissions système ont été restreintes au préalable (docs.nebulasoftware.com, vérifié le 30/10/2026).",
         "utilisation": "Bascule l'entrée vidéo DDC/CI depuis n'importe quel ordinateur connecté et transfère texte/fichiers entre OS comme annoncé, avec mises à jour automatiques de l'installeur et de l'application (nebulasoftware.com/product/displayswitcher, vérifié le 29/10/2026).",
         "puissance": "Se limite à deux fonctions précises (switch moniteur DDC/CI, transfert texte/fichiers) sans aller au-delà ; pas d'automatisation ou de fonctionnalités avancées mentionnées (nebulasoftware.com/product/displayswitcher, vérifié le 29/10/2026).",
         "reversibilite": "Résiliable depuis la page de compte sans contact nécessaire selon le site, et l'application se désinstalle via un script dédié documenté (docs.nebulasoftware.com, vérifié le 29/10/2026)."
       },
       "evidenceEn": {
         "valeurAjoutee": "At $5.95/month, the tool replaces a physical action repeated several times a day, a real but narrowly scoped time saving (DDC/CI monitor, multiple computers) (nebulasoftware.com/product/displayswitcher, verified 2026-10-29).",
-        "simplicite": "On Linux, installation requires system configuration (i2c group or udev rule) that's documented but technical, and Wayland may require switching to X11; not an instant first result for a non-technical user (docs.nebulasoftware.com, verified 2026-10-29).",
+        "simplicite": "The Linux installer configures DDC/CI access automatically for most users; a documented manual fix (i2c group) is only needed if system permissions were restricted beforehand (docs.nebulasoftware.com, verified 2026-10-30).",
         "utilisation": "Switches DDC/CI video input from any connected computer and transfers text/files across OSes as advertised, with auto-updating installer and app (nebulasoftware.com/product/displayswitcher, verified 2026-10-29).",
         "puissance": "Limited to two specific functions (DDC/CI monitor switch, text/file transfer) without going further; no automation or advanced features mentioned (nebulasoftware.com/product/displayswitcher, verified 2026-10-29).",
         "reversibilite": "Cancellable from the account page with no contact needed per the site, and the app uninstalls via a documented dedicated script (docs.nebulasoftware.com, verified 2026-10-29)."
@@ -298062,8 +298062,8 @@
       "source_domain": "nebulasoftware.com",
       "usage_sensitive": false,
       "cautions": [
-        "The one-month free trial requires a credit card at signup, unlike a typical no-commitment trial.",
-        "The Mac version only runs on Apple Silicon, not Intel Macs."
+        "The Mac version only runs on Apple Silicon, not Intel Macs.",
+        "The one-month free trial requires a credit card at signup, unlike a typical no-commitment trial."
       ],
       "plans": [
         {

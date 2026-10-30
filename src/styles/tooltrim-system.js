@@ -50,7 +50,7 @@ function fit(host) {
  * survol des éléments [data-tt-spark] et de ceux qui correspondent à
  * `sparkSelector`. Un seul écouteur délégué pour toute la page.
  */
-export function installToolTrimSystem({ sparkSelector = "" } = {}) {
+export function installToolTrimSystem({ sparkSelector = "", tiltSelector = "" } = {}) {
   if (typeof window === "undefined" || window.__ttSystem) return;
   window.__ttSystem = true;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -63,6 +63,26 @@ export function installToolTrimSystem({ sparkSelector = "" } = {}) {
     host.classList.add("tt-spark-host");
     fit(host);
     arm(host);
+  }, { passive: true });
+  // La carte qui s'incline : quelques degrés vers le pointeur, et retour au repos.
+  const tilt = ["[data-tt-tilt]", tiltSelector].filter(Boolean).join(", ");
+  document.addEventListener("pointermove", (event) => {
+    if (reduce.matches || !hover.matches || !(event.target instanceof Element)) return;
+    const card = event.target.closest(tilt);
+    if (!card) return;
+    card.classList.add("tt-tilt-host");
+    const box = card.getBoundingClientRect(), x = (event.clientX - box.left) / box.width, y = (event.clientY - box.top) / box.height;
+    card.style.setProperty("--tt-ry", `${((x - .5) * 8).toFixed(2)}deg`);
+    card.style.setProperty("--tt-rx", `${((.5 - y) * 6).toFixed(2)}deg`);
+    card.style.setProperty("--tt-sx", `${(x * 100).toFixed(1)}%`);
+    card.style.setProperty("--tt-sy", `${(y * 100).toFixed(1)}%`);
+  }, { passive: true });
+  document.addEventListener("pointerout", (event) => {
+    if (!(event.target instanceof Element)) return;
+    const card = event.target.closest(".tt-tilt-host");
+    if (!card || (event.relatedTarget instanceof Node && card.contains(event.relatedTarget))) return;
+    card.style.setProperty("--tt-rx", "0deg");
+    card.style.setProperty("--tt-ry", "0deg");
   }, { passive: true });
   document.addEventListener("pointermove", (event) => {
     if (!(event.target instanceof Element)) return;

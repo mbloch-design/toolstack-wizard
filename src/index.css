@@ -42053,3 +42053,10 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .tt-form-input:hover { border-color: color-mix(in oklch, var(--tt-ink) 30%, var(--tt-line)); }
 .tt-form-input:focus, .tt-form-input:focus-visible { border-color: var(--tt-brand); background: var(--tt-bg); box-shadow: 0 0 0 4px color-mix(in oklch, var(--tt-brand) 16%, transparent); }
 :is(.tt-form-input, .ms-page .so-name input, .gs-searchbar input)::placeholder { color: var(--tt-meta); opacity: 1; }
+/* Notifications : le toast d'encre de la planche (atome « retour »). */
+[data-sonner-toast]:not(:has(.stack-toast)) { border: 0 !important; border-radius: var(--tt-r-card) !important; background: var(--tt-ink) !important; color: var(--tt-bg) !important; box-shadow: 0 16px 36px -16px rgb(0 0 0 / .5) !important; font: var(--tt-w-text) .9375rem/1.4 var(--tt-read) !important; }
+[data-sonner-toast]:not(:has(.stack-toast)) [data-description] { color: color-mix(in srgb, var(--tt-bg) 80%, transparent) !important; }
+[data-sonner-toast]:not(:has(.stack-toast)) [data-button] { min-height: 32px; padding: 0 12px; border-radius: var(--tt-r-pill) !important; background: color-mix(in srgb, var(--tt-bg) 16%, transparent) !important; color: var(--tt-bg) !important; font: 500 .875rem/1 var(--tt-ui) !important; }
+/* Chargement de l'explorateur : le reflet de la planche, pas la pulsation. */
+.ex-skeleton { animation: tt-shimmer 1.6s ease-in-out infinite; background: linear-gradient(90deg, var(--tt-tile-2) 0 40%, color-mix(in srgb, var(--tt-bg) 70%, var(--tt-tile-2)) 50%, var(--tt-tile-2) 60% 100%) 0 0 / 300% 100%; }
+@media (prefers-reduced-motion: reduce) { .ex-skeleton { animation: none; } }

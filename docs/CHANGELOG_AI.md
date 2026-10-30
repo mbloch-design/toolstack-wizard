@@ -7,6 +7,7 @@
 - Exception écrite : le bandeau de consentement garde deux boutons de même poids.
 - Planifié : vouvoiement du catalogue (≈ 1 800 phrases, source Supabase), chantier de contenu relu à la main.
 - Typecheck, 1 044 tests, gate des tokens, e2e soumission (16), accessibilité et hero Ma stack passent.
+- Suite design : atomes « retour » (toast d'encre), « attendre » (reflet `.tt-skeleton` et phrase `.tt-loadcap`, composant `LoadingCaption`) et molécule « carte qui s'incline » (`[data-tt-tilt]`, cartes « À la une » de l'explorateur) ajoutés au système partagé et appliqués.
 
 ## 2026-10-30 · Design system : la planche devient la référence du site
 
