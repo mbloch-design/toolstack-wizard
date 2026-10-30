@@ -272,6 +272,7 @@
     --color-on-primary:     #FFFFFF;  /* text on the ToolTrim blue */
     /* Alerte « payé en double » : orange brûlé, 5:1 sur blanc. */
     --color-alert:          #BE490A;
+    --color-on-alert:       var(--color-on-primary);
 
     --color-border:        #E6E6E6;
     --color-border-soft:   #E7E7E0;
@@ -449,6 +450,7 @@
     --color-con-soft:       #2E2015;
     --color-on-primary:     #FFFFFF;
     --color-alert:          #F0874A;
+    --color-on-alert:       var(--color-bg);
     --color-action-danger: #ff9d95;
     --color-border:        #2E2E2E;
     --color-border-soft:   #262626;

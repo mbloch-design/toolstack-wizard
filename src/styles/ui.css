@@ -40,7 +40,7 @@
 .ui-button[data-size="compact"] { --ui-control-height: 40px; }
 .ui-button[data-variant="primary"] { border-color: var(--color-text); background: var(--color-text); color: var(--color-surface); }
 .ui-button[data-variant="quiet"] { border-color: transparent; background: transparent; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 30%, transparent); text-underline-offset: 3px; }
-.ui-button[data-variant="danger"] { border-color: var(--color-alert); background: var(--color-alert); color: var(--color-on-primary); }
+.ui-button[data-variant="danger"] { border-color: var(--color-alert); background: var(--color-alert); color: var(--color-on-alert); }
 .ui-button[data-appearance="stack"] { border-radius: var(--radius-pill); border-color: transparent; font-weight: 500; }
 .ui-button[data-appearance="stack"][data-variant="secondary"] { background: var(--color-surface-soft); color: var(--color-text-strong); }
 .ui-button[data-appearance="account"] { border-radius: var(--tt-radius-sm); padding: var(--space-sm) var(--space-md); }
