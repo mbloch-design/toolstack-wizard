@@ -138,7 +138,11 @@ for (const theme of ['light', 'dark'] as const) test(`account surfaces remain re
   await readable('.ba-login, .ba-login-field input');
   await seededAdmin(page, request); await openBackOffice(page);
   await readable('.bo-button, .bo-search-field, .bo-metrics', null);
-  await page.getByRole('button', { name: 'View stack for admin@example.invalid', exact: true }).click(); await readable('.bo-detail', null);
+  await page.getByRole('button', { name: 'View stack for admin@example.invalid', exact: true }).click();
+  // The loading shell has the same class and is replaced by the profile.
+  // Measure the settled panel, not a node detached during evaluateAll.
+  await expect(page.locator('.bo-detail').getByRole('heading', { level: 2 })).toHaveText('admin@example.invalid');
+  await readable('.bo-detail', null);
   await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
   await page.goto('/en/ma-stack'); await page.getByRole('button', { name: 'I already have an account', exact: true }).click();
