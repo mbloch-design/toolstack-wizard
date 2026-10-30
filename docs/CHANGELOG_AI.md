@@ -21,6 +21,14 @@
 
 ## 2026-10-30 — CI : assertions navigateur et récupération déterministe
 
+## 2026-10-30 — Accueil : supprimer le flash CSS et le changement de typo initial
+
+- Cause reproduite en production : le CSS critique ne retient pas les sélecteurs descendants du hero actuel. Le titre s’affichait d’abord en Inter Tight à 56 px, puis en Uncut Sans à 63,36 px sur desktop à l’arrivée du CSS principal différé.
+- Les accueils `/`, `/fr` et `/en` appliquent désormais le CSS principal avant le premier affichage. Aucun style ni composant visuel modifié ; le CSS compilé conserve exactement l’empreinte de production `index-Bbyfqpi-.css`. Les autres routes conservent leur chargement différé.
+- Régression navigateur intégrée à la suite sur HTML généré : CSS ralenti, typo du titre et du chrome stable en FR/EN à 1 440 et 390 px. Le test échoue sur la production avant correction et les quatre cas passent sur le build corrigé.
+- Validation : build de production complet PASS, TypeScript complet PASS, 1 044 tests applicatifs, 41 contrats SEO et 4 parcours navigateur PASS. Le build régénère aussi les fichiers LLM pour inclure DisplaySwitcher, déjà présent dans les données de main.
+- Le remplacement du HTML de l’accueil par `createRoot` reste un sujet distinct ; aucun changement d’hydratation dans ce correctif.
+
 - Périmètre limité aux tests : aucun changement de composant, de CSS ou de comportement produit. Les quatre parcours Ma Stack attendent le titre de doublon actuellement publié et vérifient les deux choix individuels ainsi que « Garder les deux ».
 - Les deux assertions d’usage restées à hauteur exacte sont alignées sur le comportement sans scroll déjà publié : hauteur minimale, commandes alignées au bord inférieur et au bord droit de la carte, contrôles de chevauchement et de cibles conservés. Cela ne réintroduit pas une hauteur fixe dans le produit.
 - Le test de récupération à froid retient explicitement la réponse Auth tant que l’état de vérification n’a pas été observé ; suppression du délai de 800 ms qui pouvait expirer pendant la navigation. Assertions de mot de passe, rechargement et absence de faux lien expiré conservées.
