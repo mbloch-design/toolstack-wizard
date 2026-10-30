@@ -20,13 +20,13 @@ export function stackTerritories(tools: ToolSummary[], categories: Category[], l
   })).sort((a, b) => a.label.localeCompare(b.label, lang));
 }
 
-export type NativePrice = { amount: number; currency: string; period: "monthly" | "annual" | "once" };
-type PricedTool = Pick<Tool, "pricing" | "pricingEn"> & Partial<Pick<Tool, "id" | "slug">> & { priceUndisclosed?: boolean; nativePrices?: NativePrice[] };
+export type NativePrice = { amount: number; currency: string; period: "monthly" | "annual" | "once" | "usage"; unit?: string };
+type PricedTool = Pick<Tool, "pricing" | "pricingEn"> & Partial<Pick<Tool, "id" | "slug">> & { priceUndisclosed?: boolean; nativePrices?: NativePrice[]; hasConfirmedFreePlan?: boolean };
 
 function attestedFallback(tool: PricedTool) {
   // An explicit canonical price (including one-time or unsupported currency)
   // and an undisclosed/quote price must not be replaced by an older record.
-  if (tool.priceUndisclosed || tool.nativePrices?.length || /sur devis|contact.{0,12}(vente|sales)|custom pricing|quote/i.test(tool.pricing?.paid || "")) return undefined;
+  if (typeof tool.hasConfirmedFreePlan === "boolean" || tool.priceUndisclosed || tool.nativePrices?.length || /sur devis|contact.{0,12}(vente|sales)|custom pricing|quote/i.test(tool.pricing?.paid || "")) return undefined;
   return NATIVE_PRICES[tool.slug || ""] || NATIVE_PRICES[tool.id || ""];
 }
 
@@ -51,7 +51,7 @@ export function formatNativePrice(price: NativePrice, lang: string): string {
   const money = lang === "en" && symbol.length === 1 ? `${symbol}${value}` : `${value}\u00a0${symbol}`;
   const period = price.period === "monthly" ? (lang === "en" ? "/mo" : "/mois")
     : price.period === "annual" ? (lang === "en" ? "/yr" : "/an")
-    : (lang === "en" ? " one-time" : " achat unique");
+    : price.period === "usage" ? ` ${price.unit || (lang === "en" ? "usage based" : "selon l’usage")}` : (lang === "en" ? " one-time" : " achat unique");
   return `${money}${period}`;
 }
 
@@ -63,11 +63,12 @@ export function stackCatalogPrice(tool: PricedTool, lang: string): string | null
   const pricing = tool.pricing;
   const paid = pricing?.paid?.trim();
   const quote = /sur devis|contact.{0,12}(vente|sales)|custom pricing|quote/i.test(paid || "");
-  const free = (hasGenuineFreeTier(pricing?.free) && /gratuit|free|open.?source/i.test(pricing?.free || ""))
-    || attestedFallback(tool)?.freeCoreAvailable === true;
+  const free = tool.hasConfirmedFreePlan ?? ((hasGenuineFreeTier(pricing?.free) && /gratuit|free|open.?source/i.test(pricing?.free || ""))
+    || attestedFallback(tool)?.freeCoreAvailable === true);
   const native = tool.priceUndisclosed ? null : pickNativePrice(tool, lang);
   if (tool.priceUndisclosed) return quote ? (lang === "en" ? "Custom pricing" : "Sur devis") : null;
   if (free && (native || quote)) return "Freemium";
+  if (tool.hasConfirmedFreePlan === true && !native && !quote) return lang === "en" ? "Free" : "Gratuit";
   if (free && (!paid || /^(?:non|aucun|pas d[e’']|none|no paid|gratuit)/i.test(paid))) return lang === "en" ? "Free" : "Gratuit";
   if (native) return `${lang === "en" ? "From" : "Dès"} ${formatNativePrice(native, lang)}`;
   if (quote) return lang === "en" ? "Custom pricing" : "Sur devis";

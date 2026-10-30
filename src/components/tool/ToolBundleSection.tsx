@@ -13,6 +13,7 @@ const humanizeSlug = (s: string) =>
 interface Props {
   tool: Tool;
   tools?: ToolSummary[];
+  controlled?: boolean;
   lang?: string;
   t: (fr: string, en: string) => string;
 }
@@ -25,7 +26,7 @@ type Member = { slug: string; name: string; logo?: string | null; websiteUrl?: s
  * Membres du catalogue local ; rafraîchissement catalog_api sur opt-in explicite.
  * Rend `null` si aucun bundle.
  */
-export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) {
+export default function ToolBundleSection({ tool, tools = [], lang, t, controlled = false }: Props) {
   const L = lang === "en" ? "en" : "fr";
   const selfKey = tool.slug || tool.id;
   // Clé de bundle : le parent de l'outil (s'il est membre), sinon l'outil lui-même (s'il est parent).
@@ -39,7 +40,7 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
   const localParent = localParentTool
     ? { slug: localParentTool.slug || localParentTool.id, name: localParentTool.name, logo: localParentTool.logo, websiteUrl: localParentTool.websiteUrl }
     : null;
-  const remoteReads = catalogRemoteReadsEnabled();
+  const remoteReads = !controlled && catalogRemoteReadsEnabled();
   const snapshotKey = JSON.stringify([bundleKey, L]);
   const [remoteBundle, setRemoteBundle] = useState<{ key: string; members: Member[]; parent: Member | null } | null>(null);
   const currentRemote = remoteReads && remoteBundle?.key === snapshotKey ? remoteBundle : null;

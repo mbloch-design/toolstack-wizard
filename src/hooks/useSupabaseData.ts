@@ -141,8 +141,10 @@ export type ToolSummary = Pick<
   compareMonthlyPrice?: number | null;
   /** "Prix non public" sentinel: a 0 comparison price means unknown, not free. */
   priceUndisclosed?: boolean;
+  /** Canonical price intent, present only after an explicitly authored status. */
+  hasConfirmedFreePlan?: boolean;
   /** Attested compare-plan price in the vendor's currency (gen-tools-index.mjs). */
-  nativePrices?: { amount: number; currency: string; period: "monthly" | "annual" | "once" }[];
+  nativePrices?: { amount: number; currency: string; period: "monthly" | "annual" | "once" | "usage"; unit?: string }[];
   /** Explicit catalogue alternatives (slugs), from the light index. */
   alternatives?: string[];
   // Date de publication, utilisée pour trier la section Nouveautés de l'accueil.
@@ -192,6 +194,7 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   betterAlternative: t.betterAlternative || t.better_alternative || null,
   compareMonthlyPrice: Number(t.compareMonthlyPrice ?? t.pricing_v5?.compare_price_monthly_eur) || null,
   priceUndisclosed: Boolean(t.priceUndisclosed || /non public/i.test(t.pricing_v5?.compare_plan_name || "")),
+  ...(typeof t.hasConfirmedFreePlan === "boolean" ? { hasConfirmedFreePlan: t.hasConfirmedFreePlan } : {}),
   ...(t.nativePrices ? { nativePrices: t.nativePrices } : {}),
   ...(t.alternatives ? { alternatives: t.alternatives } : {}),
 })).filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug || t.id));

@@ -13,6 +13,7 @@ import toolDemand from "@/data/tool_demand.json";
  * positive evidence of a genuine free tier.
  */
 export function hasFreePlan(tool: ToolSummary): boolean {
+  if (typeof tool.hasConfirmedFreePlan === "boolean") return tool.hasConfirmedFreePlan;
   const pricing = tool.pricing as { free?: string } | string | null | undefined;
   if (pricing && typeof pricing === "object") return hasGenuineFreeTier(pricing.free);
   if (typeof pricing === "string") return !tool.priceUndisclosed && /gratuit|free|open.?source/i.test(pricing);

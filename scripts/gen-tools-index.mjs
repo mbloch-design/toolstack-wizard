@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { nativeSummaryPrices, nativeMonthlyAmount, selectNativeComparePlan, hasExplicitNonNumericPricing } from "../src/lib/nativeComparePlan.mjs";
 import { readFile, writeFile } from "node:fs/promises";
 
 const sourcePath = "src/data/tools_v4.json";
@@ -9,19 +10,6 @@ const tools = JSON.parse(await readFile(sourcePath, "utf8"));
 
 if (!Array.isArray(tools)) {
   throw new Error(`${sourcePath} doit contenir un tableau d’outils.`);
-}
-
-// Compare plan amounts as published, one per real currency, never converted.
-// period: "monthly" | "annual" | "once".
-function nativePricesOf(tool) {
-  const out = [];
-  for (const plan of [...(tool.pricing_v5?.plans || []), ...(tool.pricing_v5En?.plans || [])]) {
-    if (!plan?.isComparePlan || plan.isFree || !(plan.nativeAmount > 0) || !plan.nativeCurrency) continue;
-    if (out.some((entry) => entry.currency === plan.nativeCurrency)) continue;
-    const period = plan.billingPeriod === "monthly" ? "monthly" : plan.billingPeriod === "annual" ? "annual" : "once";
-    out.push({ amount: plan.nativeAmount, currency: plan.nativeCurrency, period });
-  }
-  return out;
 }
 
 const seen = new Set();
@@ -37,6 +25,12 @@ const summaries = tools.map((tool, index) => {
   }
   seen.add(slug);
 
+  const plans = [...(tool.pricing_v5?.plans || []), ...(tool.pricing_v5En?.plans || [])];
+  const explicit = plans.some(plan => plan.priceStatus != null);
+  const compare = selectNativeComparePlan(plans, "EUR");
+  const nonnumeric = hasExplicitNonNumericPricing(tool);
+  // Foreign native prices remain native. Do not reuse stale normalized legacy values.
+  const monthly = explicit ? (nonnumeric || !compare ? 0 : compare?.nativeCurrency === "EUR" ? nativeMonthlyAmount(compare.nativeAmount, compare.billingPeriod) : undefined) : tool.pricing_v5?.compare_price_monthly_eur;
   const pricing = tool.pricing || { free: "", paid: "" };
   const affiliateLink = tool.affiliateLink || "";
   const websiteUrl = tool.websiteUrl || affiliateLink;
@@ -62,16 +56,17 @@ const summaries = tools.map((tool, index) => {
       : {}),
     ...((typeof pricing === "string" && pricing) || pricing.free || pricing.paid ? { pricing } : {}),
     ...(tool.pricingEn ? { pricingEn: tool.pricingEn } : {}),
-    ...(tool.defaultMonthlyPrice ? { defaultMonthlyPrice: tool.defaultMonthlyPrice } : {}),
-    ...(tool.pricing_v5?.compare_price_monthly_eur != null
-      ? { compareMonthlyPrice: tool.pricing_v5.compare_price_monthly_eur }
+    ...(explicit ? { hasConfirmedFreePlan: plans.some(plan => plan.priceStatus === "free" || (plan.priceStatus == null && plan.isFree)) } : {}),
+    ...(!explicit && tool.defaultMonthlyPrice ? { defaultMonthlyPrice: tool.defaultMonthlyPrice } : {}),
+    ...(monthly != null
+      ? { compareMonthlyPrice: monthly }
       : {}),
     // Attested entry price in the vendor's own currency (compare plan of
     // pricing_v5 / pricing_v5En): what light views (catalogue cards, My stack)
     // may show without reading prices out of editorial text or converting.
-    ...(nativePricesOf(tool).length ? { nativePrices: nativePricesOf(tool) } : {}),
+    ...(nativeSummaryPrices(tool).length ? { nativePrices: nativeSummaryPrices(tool) } : {}),
     // "Prix non public" sentinel: a 0 that means unknown, not free.
-    ...(/non public/i.test(tool.pricing_v5?.compare_plan_name || "") ? { priceUndisclosed: true } : {}),
+    ...(nonnumeric || /non public/i.test(tool.pricing_v5?.compare_plan_name || "") ? { priceUndisclosed: true } : {}),
     ...(affiliateLink ? { affiliateLink } : {}),
     ...(websiteUrl && websiteUrl !== affiliateLink ? { websiteUrl } : {}),
     ...(tool.ogImageUrl ? { ogImageUrl: tool.ogImageUrl } : {}),

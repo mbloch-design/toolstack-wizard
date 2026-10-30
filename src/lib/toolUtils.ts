@@ -2,6 +2,7 @@
  * Shared tool utility functions — single source of truth.
  * Previously duplicated in ToolDetailPage, CategoryPage, GuidesPage, HomePage, HeroSection.
  */
+import { explicitNonNumericStatus } from "./nativeComparePlan";
 import type { Tool } from "@/data/types";
 import type { Currency } from "@/hooks/useCurrency";
 import { formatCurrencyAmount } from "@/lib/currency";
@@ -9,8 +10,9 @@ import { resolveDisplayPrice } from "@/lib/nativePricing";
 import { isPriceUndisclosed } from "@/lib/pricing";
 
 /** True if the tool's paid pricing is a one-time/perpetual license, not a subscription. */
-export function isOneTimePrice(tool: { pricing?: { paid?: string }; pricing_v5?: { compare_plan_kind?: string | null } | null }): boolean {
-  return tool.pricing_v5?.compare_plan_kind === "one_time"
+export function isOneTimePrice(tool: { pricing?: { paid?: string }; pricing_v5?: { compare_plan_kind?: string | null; plans?: import("@/data/types").ToolPricingPlan[] } | null }): boolean {
+  return tool.pricing_v5?.plans?.some(plan => plan.isComparePlan && ["one_time", "one-time"].includes(plan.billingPeriod || "")) === true
+    || tool.pricing_v5?.compare_plan_kind === "one_time"
     || (!tool.pricing_v5?.compare_plan_kind && /licence à vie|licence perp[ée]tuelle|one-?time|perpetual license|lifetime license/i.test(tool.pricing?.paid || ""));
 }
 
@@ -22,6 +24,8 @@ export function formatPriceLabel(
   currency: Currency = "EUR",
   lang: string = "fr",
 ): string {
+  const intent = explicitNonNumericStatus(tool);
+  if (intent) return intent === "usage" ? t("Selon l’usage", "Usage based") : intent === "quote" ? t("Sur devis", "Contact sales") : t("Prix non communiqué", "Price not public");
   const access = tool.pricing_v5?.compare_plan_kind;
   if (access === "included") return t(`Inclus dans ${tool.pricing_v5?.compare_plan_name || "la suite"}`, `Included in ${tool.pricing_v5?.compare_plan_name || "the suite"}`);
   if (access === "discontinued") return t("Produit arrêté", "Discontinued");

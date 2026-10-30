@@ -1,3 +1,5 @@
+import type { CatalogEditingPresentation } from "@/lib/catalogEditingPresentation";
+import type { Currency } from "@/lib/currencyRates";
 import type { Tool } from "@/data/types";
 import { ExternalLink, Package } from "@/lib/icons";
 import { hasConfirmedFreeTier, hasGenuineFreeTier, isPlaceholderPricingText, isPriceUndisclosed } from "@/lib/pricing";
@@ -17,6 +19,8 @@ interface Props {
   lang?: string;
   t: (fr: string, en: string) => string;
   onOfficialClick?: () => void;
+  controlledCurrency?: Currency;
+  editing?: CatalogEditingPresentation;
 }
 
 /** A plan's content is often one long comma list. Split it into short lines at
@@ -70,8 +74,10 @@ function isUntranslated(en: { free?: string; paid?: string } | null | undefined,
   return en.paid === fr.paid && FRENCH_MARKERS.test(en.paid);
 }
 
-export default function ToolPricingSection({ tool, displayPrice, lang, t, onOfficialClick }: Props) {
-  const { currency } = useCurrency();
+export default function ToolPricingSection({ tool, displayPrice, lang, t, onOfficialClick, controlledCurrency, editing }: Props) {
+  const { currency: contextCurrency } = useCurrency();
+  const currency = controlledCurrency ?? contextCurrency;
+  const pricingRoot = lang === "en" ? "pricing_v5En" : "pricing_v5";
   // `pricingEn` existe sur 837 outils, mais 169 d'entre eux en sont une copie
   // mot pour mot du francais : le texte n'a jamais ete traduit. On le detecte
   // et on retombe sur la formulation generique anglaise plutot que de servir un
@@ -87,7 +93,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
     ? (isUntranslated(tool.pricingEn, tool.pricing) ? enFallback : (tool.pricingEn || enFallback))
     : tool.pricing;
   // Variante de prix dans la langue de la page (résumés/plans localisés) ; repli sûr sur pricing_v5.
-  const pv5 = lang === "en" && tool.pricing_v5En ? tool.pricing_v5En : tool.pricing_v5;
+  const pv5 = editing ? (lang === "en" ? tool.pricing_v5En : tool.pricing_v5) : lang === "en" && tool.pricing_v5En ? tool.pricing_v5En : tool.pricing_v5;
   // A tool can publish the same plan in more than one real currency (lemlist:
   // $69 for a US account, 69 EUR for a euro-zone account — two genuine vendor
   // prices, not a conversion). Both carry isComparePlan so price resolution
@@ -97,7 +103,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
   const allPlans = pv5?.plans || [];
   const compareCandidates = allPlans.filter((p) => p.isComparePlan && !p.isFree);
   const preferredCompare = compareCandidates.find((p) => p.nativeCurrency === currency) || compareCandidates[0];
-  const canonicalPlans = allPlans.filter((p) => !p.isComparePlan || p.isFree || p === preferredCompare);
+  const canonicalPlans = editing ? allPlans : allPlans.filter((p) => !p.isComparePlan || p.isFree || p === preferredCompare);
   // Texte de carte gratuite qualifié (licence vs coût total) fourni par la projection canonique.
   const freeCard = (pv5 as { free_plan_card?: string } | undefined)?.free_plan_card || null;
   // Bulk placeholders (« Gratuit ou open source selon usage », « Options
@@ -144,22 +150,26 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
   // conteneur, cf. index.css) : colonnes d'au moins 220 px, lignes
   // équilibrées ; défilement horizontal sur mobile seulement.
   type Column = {
-    key: string; name: string; price: string | null; unit: string | null;
+    index?: number; key: string; name: string; price: string | null; unit: string | null;
     condition: string | null; features: string[]; reference: boolean; free: boolean; soon: boolean;
   };
   const columns: Column[] = canonicalPlans.length > 0
-    ? canonicalPlans.map((plan) => ({
+    ? canonicalPlans.map((plan, index) => ({
+        index,
         key: plan.planKey,
         name: plan.isFree ? freeLabel(plan.pricingUnit) : plan.displayName,
-        price: plan.isFree && plan.pricingUnit === "trial"
+        price: plan.priceStatus === "quote" ? t("Sur devis", "Contact sales")
+          : plan.priceStatus === "unknown" ? t("Prix non communiqué", "Price not public")
+          : plan.priceStatus === "usage" && !(Number(plan.nativeAmount) > 0) ? t("Selon l’usage", "Usage-based")
+          : plan.isFree && plan.pricingUnit === "trial"
           ? plan.displayName
           : plan.isFree
             // Free plan in the vendor's own currency: "0 $US" next to "15 $US".
             ? formatCurrencyAmount(0, (canonicalPlans.find((p) => !p.isFree && p.nativeCurrency)?.nativeCurrency as typeof currency) || currency, lang || "fr")
             : plan.nativeAmount != null ? formatNativeAmount(plan.nativeAmount, plan.nativeCurrency) : null,
-        unit: plan.isFree
+        unit: ["quote", "unknown"].includes(plan.priceStatus || "") || (plan.priceStatus === "usage" && !(Number(plan.nativeAmount) > 0)) ? null : plan.isFree
           ? (plan.pricingUnit === "open_source" ? t("licence", "license") : null)
-          : plan.billingPeriod === "monthly" ? t("/mois", "/mo") : plan.billingPeriod === "annual" ? t("/an", "/yr") : null,
+          : ["monthly", "month"].includes(plan.billingPeriod || "") ? t("/mois", "/mo") : ["annual", "year"].includes(plan.billingPeriod || "") ? t("/an", "/yr") : plan.billingPeriod === "quarterly" ? t("/trimestre", "/quarter") : plan.billingPeriod === "week" ? t("/semaine", "/week") : plan.billingPeriod === "day" ? t("/jour", "/day") : plan.billingPeriod === "usage" ? plan.pricingUnit || null : null,
         condition: plan.comingSoon
           ? t("Pas encore disponible à l’achat", "Not purchasable yet")
           : plan.isFree && plan.pricingUnit === "trial"
@@ -179,7 +189,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
         free: !!plan.isFree,
         soon: !!plan.comingSoon,
       }))
-    : [
+    : editing ? [] : [
         ...(hasFree ? [{
           key: "free", name: t("Gratuit", "Free"), price: formatCurrencyAmount(0, currency, lang || "fr"), unit: null,
           condition: pricing?.free || null, features: [], reference: false, free: true, soon: false,
@@ -217,29 +227,33 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
           )}
         </p>
       )}
-      {hasPlanCards && columns.length > 0 && (
+      {(hasPlanCards || editing) && columns.length > 0 && (
         <div className="td-plans" data-plans={Math.min(columns.length, 8)} role="list">
           {columns.map((column) => (
             <article
               key={column.key}
               role="listitem"
-              className={`td-plan${column.reference ? " td-plan--reference" : ""}${column.soon ? " td-plan--soon" : ""}`}
+              className={`td-plan${editing ? " bo-inline-plan" : ""}${column.reference ? " td-plan--reference" : ""}${column.soon ? " td-plan--soon" : ""}`}
             >
               <header className="td-plan-head">
-                <h3 className="td-plan-name">{column.name}</h3>
+                {editing && column.index != null ? <div className="td-plan-name">{editing.field([pricingRoot, "plans", column.index, "displayName"])}</div> : <h3 className="td-plan-name">{column.name}</h3>}
                 {column.reference && <span className="td-plan-badge">{t("Prix retenu par ToolTrim", "ToolTrim reference price")}</span>}
                 {column.soon && <span className="td-plan-badge">{t("Bientôt", "Coming soon")}</span>}
               </header>
               {/* Every card keeps the same four rows (head, price, condition, features),
                   even when one is empty, so rows line up across cards. */}
-              {column.price ? (
+              {editing && column.index != null ? <div className="td-plan-price bo-inline-price">
+                {editing.field([pricingRoot, "plans", column.index, "nativeAmount"])}
+                {editing.field([pricingRoot, "plans", column.index, "nativeCurrency"])}
+                {editing.field([pricingRoot, "plans", column.index, "priceStatus"])}
+              </div> : column.price ? (
                 <p className="td-plan-price">
                   <strong>{column.price}</strong>
                   {column.unit && <span>{column.unit}</span>}
                 </p>
               ) : <span className="td-plan-slot" aria-hidden="true" />}
               {column.condition ? <p className="td-plan-condition">{column.condition}</p> : <span className="td-plan-slot" aria-hidden="true" />}
-              {column.features.length > 0 ? (
+              {editing && column.index != null ? <div className="td-plan-features bo-inline-plan-settings">{editing.planDetails(pricingRoot, column.index)}{editing.planActions(pricingRoot, column.index)}</div> : column.features.length > 0 ? (
                 <ul className="td-plan-features">
                   {column.features.flatMap(splitPlanFeature).map((line) => <li key={line}>{line}</li>)}
                 </ul>
@@ -248,6 +262,8 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
           ))}
         </div>
       )}
+      {editing?.planCollection(pricingRoot)}
+      {editing?.priceSummary(currency)}
       {(officialUrl || verifiedOn) && (
         <p className="td-plans-foot">
           {verifiedOn && <span>{t(`Vérifiés le ${formatDay(verifiedOn)}`, `Checked on ${formatDay(verifiedOn)}`)}</span>}

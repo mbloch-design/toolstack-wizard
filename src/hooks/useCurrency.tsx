@@ -15,7 +15,7 @@ type CurrencyContextValue = {
   toggleCurrency: () => void;
 };
 
-const CurrencyContext = createContext<CurrencyContextValue>({
+export const CurrencyContext = createContext<CurrencyContextValue>({
   currency: "EUR",
   setCurrency: () => undefined,
   toggleCurrency: () => undefined,

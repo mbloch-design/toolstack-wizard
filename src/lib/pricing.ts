@@ -1,3 +1,6 @@
+import { blocksLegacyPriceFallback, hasExplicitNonNumericPricing, nativeMonthlyAmount, selectNativeComparePlan } from "./nativeComparePlan";
+import { convertAmount, isCurrency } from "./currencyRates";
+import type { ToolPricingPlan } from "@/data/types";
 /**
  * Whether a tool's `pricing.free` text describes a genuine free tier
  * (usable indefinitely, no card required) rather than a time-limited trial.
@@ -43,15 +46,21 @@ export function isFreemiumPricing(pricing: { free?: string | null; paid?: string
  * "free", and must never be printed as "Free" or as a plan name.
  */
 export function isPriceUndisclosed(tool: {
-  pricing_v5?: { compare_plan_name?: string | null } | null;
+  pricing_v5?: { compare_plan_name?: string | null; plans?: ToolPricingPlan[] } | null;
+  pricing_v5En?: { plans?: ToolPricingPlan[] } | null;
 }): boolean {
-  return /non public/i.test(tool.pricing_v5?.compare_plan_name || "");
+  return hasExplicitNonNumericPricing(tool) || /non public/i.test(tool.pricing_v5?.compare_plan_name || "");
 }
 
 export function resolveMonthlyPrice(tool: {
-  pricing_v5?: { compare_price_monthly_eur?: number | null } | null;
+  pricing_v5?: { compare_price_monthly_eur?: number | null; plans?: ToolPricingPlan[] } | null;
+  pricing_v5En?: { plans?: ToolPricingPlan[] } | null;
   defaultMonthlyPrice?: number | null;
 }): number {
+  const plans = [...(tool.pricing_v5?.plans ?? []), ...(tool.pricing_v5En?.plans ?? [])];
+  const explicit = selectNativeComparePlan(plans, "EUR");
+  if (explicit?.priceStatus && explicit.nativeAmount != null && isCurrency(explicit.nativeCurrency)) return convertAmount(nativeMonthlyAmount(explicit.nativeAmount, explicit.billingPeriod), explicit.nativeCurrency, "EUR");
+  if (blocksLegacyPriceFallback(tool)) return 0;
   const verified = tool.pricing_v5?.compare_price_monthly_eur;
   if (typeof verified === "number" && Number.isFinite(verified) && verified >= 0) return verified;
   const legacy = tool.defaultMonthlyPrice;
@@ -105,7 +114,8 @@ export function isPlaceholderPricingText(text: string | null | undefined): boole
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function hasConfirmedFreeTier(tool: any): boolean {
   const plans = [...(tool?.pricing_v5?.plans || []), ...(tool?.pricing_v5En?.plans || [])];
-  if (plans.some((plan) => plan?.isFree)) return true;
+  if (plans.some((plan) => plan?.priceStatus === "free" || (plan?.priceStatus == null && plan?.isFree))) return true;
+  if (plans.some((plan) => plan?.priceStatus)) return false;
   const free = tool?.pricing?.free;
   return hasGenuineFreeTier(free) && !isPlaceholderPricingText(free);
 }

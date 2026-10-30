@@ -2,9 +2,12 @@ import { isToolCoverBlocked } from "@/lib/toolImageBlocklist";
 import { localizeGuideCategory } from "@/lib/guideCategory";
 import { useParams, useLocation } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { useLang } from "@/hooks/useLang";
-import { useCurrency } from "@/hooks/useCurrency";
-import { useToolBySlug, useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
+import type { Category, Lang, Tool } from "@/data/types";
+import type { Currency } from "@/lib/currencyRates";
+import type { CatalogEditingPresentation } from "@/lib/catalogEditingPresentation";
+import { LangContext, useLang } from "@/hooks/useLang";
+import { CurrencyContext, useCurrency } from "@/hooks/useCurrency";
+import { useToolBySlug, useToolSummaries, useCategories, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink, Lightbulb } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
@@ -75,14 +78,46 @@ function splitUseCase(value: string): { title: string; detail?: string } {
   return { title: value };
 }
 
+export type ToolDetailSubPage = "presentation" | "prix" | "alternatives" | "faq" | "avis";
+export type ToolDetailPresentationProps = {
+  tool: Tool | null;
+  tools: ToolSummary[];
+  categories: Category[];
+  lang: Lang;
+  currency: Currency;
+  subPage?: ToolDetailSubPage;
+  loading?: boolean;
+  /** Controlled entry is private by default. Only the route loader opts into public effects. */
+  privateMode?: boolean;
+  editing?: CatalogEditingPresentation;
+};
+
 const ToolDetailPage = () => {
-  const { lang, t, prefix } = useLang();
+  const { lang } = useLang();
   const { currency } = useCurrency();
   const { slug } = useParams();
-  const location = useLocation();
   const { tool, loading } = useToolBySlug(slug);
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
+  return <ToolDetailPresentation tool={tool} tools={tools} categories={categories}
+    lang={lang} currency={currency} loading={loading} privateMode={false} />;
+};
+
+/** The single fiche JSX, shared by public routes/prerender and controlled drafts. */
+export function ToolDetailPresentation(props: ToolDetailPresentationProps) {
+  return <LangContext.Provider value={{ lang: props.lang, prefix: `/${props.lang}`, t: (fr, en) => props.lang === "en" ? en : fr }}>
+    <CurrencyContext.Provider value={{ currency: props.currency, setCurrency: () => undefined, toggleCurrency: () => undefined }}>
+      <ToolDetailPresentationContent {...props} />
+    </CurrencyContext.Provider>
+  </LangContext.Provider>;
+}
+function ToolDetailPresentationContent({ tool, tools, categories, lang, currency,
+  subPage: controlledSubPage, loading = false, privateMode = true, editing,
+}: ToolDetailPresentationProps) {
+  const t = (fr: string, en: string) => lang === "en" ? en : fr;
+  const prefix = `/${lang}`;
+  const { slug } = useParams();
+  const location = useLocation();
   const heroRef = useRef<HTMLDivElement | null>(null);
   const scrollBodyRef = useRef<HTMLDivElement | null>(null);
   // Compact bars: armed once the hero actions have scrolled out of view.
@@ -96,17 +131,17 @@ const ToolDetailPage = () => {
   // resolve to the same intent page (`/prix` and `/prix/`, for example).
   const normalizedPathname = location.pathname.replace(/\/+$/, "");
   const pathEnd = normalizedPathname.split("/").pop() || "";
-  const subPage: "presentation" | "prix" | "alternatives" | "faq" | "avis" =
+  const subPage: ToolDetailSubPage = controlledSubPage ?? (
     pathEnd === "prix" || pathEnd === "pricing" ? "prix"
     : pathEnd === "alternatives" ? "alternatives"
     : pathEnd === "faq" ? "faq"
     : pathEnd === "avis" || pathEnd === "reviews" ? "avis"
-    : "presentation";
+    : "presentation");
   const headingSuffix = toolPageHeadingSuffix(subPage === "faq" ? "presentation" : subPage, lang);
 
   /* ── SEO ── */
   useEffect(() => {
-    if (!tool) return;
+    if (privateMode || !tool) return;
     // Same builders as the prerender (src/lib/toolSeo.ts): the tab title and
     // the description must not change once the page hydrates.
     // /faq permanently redirects to the fiche (vercel.json): same tags.
@@ -131,7 +166,7 @@ const ToolDetailPage = () => {
     if (tool.pricing_v5?.verified_on) setMeta("article:modified_time", tool.pricing_v5.verified_on);
     setHreflang(canonicalPath);
     return () => cleanupSeo([]);
-  }, [tool, lang, subPage]);
+  }, [tool, lang, subPage, privateMode]);
 
   /* ── Tous les hooks doivent être déclarés AVANT les returns conditionnels ──
      (Rules of Hooks — sinon React error #300/#310 en concurrent mode)        */
@@ -141,6 +176,7 @@ const ToolDetailPage = () => {
   // view. Content stays visible without JS (crawlers, prerender): the page
   // only opts in once mounted, and reduced-motion users get no animation.
   useEffect(() => {
+    if (privateMode) return;
     const body = scrollBodyRef.current;
     if (!body || typeof IntersectionObserver === "undefined") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -160,12 +196,13 @@ const ToolDetailPage = () => {
       observer.disconnect();
       targets.forEach((target) => target.classList.remove("td-reveal", "is-revealed"));
     };
-  }, [tool?.slug, lang, loading, subPage]);
+  }, [tool?.slug, lang, loading, subPage, privateMode]);
 
   // Re-run once loading ends: while the tool loads, the page renders a
   // spinner and the hero does not exist yet, so the observer would never
   // attach and the bars would never show.
   useEffect(() => {
+    if (privateMode) return;
     setActionBarArmed(false);
     // The bars take over once the in-page tabs have left the screen, so the two
     // tab rows are never visible together.
@@ -180,12 +217,13 @@ const ToolDetailPage = () => {
     });
     observer.observe(strip);
     return () => observer.disconnect();
-  }, [tool?.slug, lang, loading, subPage]);
+  }, [tool?.slug, lang, loading, subPage, privateMode]);
 
   // On the overview every section is on the page: the tabs follow the section
   // being read instead of staying on "Overview". Subpages keep their own tab.
   const [sectionInView, setSectionInView] = useState("presentation");
   useEffect(() => {
+    if (privateMode) return;
     setSectionInView("presentation");
     if (subPage !== "presentation" || loading) return;
     const ids = ["prix", "alternatives", "avis", "faq"];
@@ -208,7 +246,7 @@ const ToolDetailPage = () => {
       document.removeEventListener("scroll", onScroll, { capture: true });
       if (frame) cancelAnimationFrame(frame);
     };
-  }, [tool?.slug, lang, loading, subPage]);
+  }, [tool?.slug, lang, loading, subPage, privateMode]);
 
 
   /* ── Loading / not found ── */
@@ -408,7 +446,7 @@ const ToolDetailPage = () => {
   const mobileCtaLabel = tool.slug !== "tapstitch" && !(lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr)
     ? t("Visiter le site", "Visit site")
     : primaryCtaLabel;
-  const trackOutbound = (location: string, label: string) => trackEvent("outbound_tool_click", {
+  const trackOutbound = (location: string, label: string) => !privateMode && trackEvent("outbound_tool_click", {
     tool_slug: tool.slug || tool.id,
     tool_name: tool.name,
     cta_location: location,
@@ -417,7 +455,7 @@ const ToolDetailPage = () => {
     language: lang,
     is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
   });
-  const trackAlternative = (to: string, source: string) => trackEvent("alternative_click", { tool_slug: tool.slug || tool.id, to_slug: to, source });
+  const trackAlternative = (to: string, source: string) => !privateMode && trackEvent("alternative_click", { tool_slug: tool.slug || tool.id, to_slug: to, source });
   const hasFreeplan   = hasGenuineFreeTier(tool.pricing?.free);
   // Was `!!(tool.pricing?.free && tool.pricing?.paid)` — pure truthiness,
   // so a free field describing the ABSENCE of a free plan ("Pas de plan
@@ -454,13 +492,13 @@ const ToolDetailPage = () => {
     (tool as any).functional_needs?.length > 0 ||
     (tool as any).relevantFor?.length > 0 ||
     (tool as any).verticals?.length > 0;
-  const showEditorialOverview = hasEditorialIntro || hasEditorialFacts;
+  const showEditorialOverview = !!editing || hasEditorialIntro || hasEditorialFacts;
   const isPresentation = subPage === "presentation";
-  const showAnalysis = isPresentation || subPage === "avis";
-  const showPricing = isPresentation || subPage === "prix";
-  const showAlternatives = isPresentation || subPage === "alternatives";
-  const showDeepDive = isPresentation;
-  const showReview = isPresentation || subPage === "avis";
+  const showAnalysis = !!editing || isPresentation || subPage === "avis";
+  const showPricing = !!editing || isPresentation || subPage === "prix";
+  const showAlternatives = !!editing || isPresentation || subPage === "alternatives";
+  const showDeepDive = !!editing || isPresentation;
+  const showReview = !!editing || isPresentation || subPage === "avis";
   const showFaq = isPresentation || subPage === "faq";
   const relatedGuides = getGuidesForTool(tool.slug || tool.id, lang);
   const relatedStacks = getStacksForTool(tool.slug || tool.id, lang);
@@ -494,14 +532,20 @@ const ToolDetailPage = () => {
     ? "FAQ"
     : null;
 
+  const DescriptionTag = editing ? "div" : "p";
   return (
     <article
       className="min-h-screen td-tool-page"
       style={toolAccent ? ({ "--tool-accent": toolAccent } as React.CSSProperties) : undefined}
+      data-private-fiche={privateMode || undefined}
+      onClickCapture={privateMode ? (event) => { if ((event.target as Element).closest("a")) { event.preventDefault(); event.stopPropagation(); } } : undefined}
+      onContextMenuCapture={privateMode ? (event) => { if ((event.target as Element).closest("a")) event.preventDefault(); } : undefined}
+      onDragStartCapture={privateMode ? (event) => { if ((event.target as Element).closest("a")) event.preventDefault(); } : undefined}
+      onAuxClickCapture={privateMode ? (event) => { if ((event.target as Element).closest("a")) { event.preventDefault(); event.stopPropagation(); } } : undefined}
       itemScope
       itemType="https://schema.org/WebPage"
     >
-      <ToolJsonLd
+      {!privateMode && <ToolJsonLd
         tool={tool} category={category} displayPrice={displayPrice}
         verifiedOn={verifiedOn} alternatives={alternatives} lang={lang}
         includeFaq={subPage === "faq" || subPage === "presentation"}
@@ -511,7 +555,7 @@ const ToolDetailPage = () => {
           subPage === "avis" ? (lang === "en" ? "/reviews" : "/avis") :
           subPage === "faq" ? "/faq" : ""
         }`}
-      />
+      />}
 
       {/* ══════════════════════════════════════════════════════════
           HERO — tool identity & positioning
@@ -542,7 +586,7 @@ const ToolDetailPage = () => {
                   </li>
                 ))}
                 <li className="td-localnav-pin">
-                  <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" flyFrom=".td-hero-logo" />
+                  {!privateMode && <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" flyFrom=".td-hero-logo" />}
                 </li>
               </ul>
               <a
@@ -550,7 +594,7 @@ const ToolDetailPage = () => {
                 target="_blank"
                 rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
                 className="td-localnav-cta"
-                onClick={() => trackEvent("outbound_tool_click", {
+                onClick={() => !privateMode && trackEvent("outbound_tool_click", {
                   tool_slug: tool.slug || tool.id,
                   tool_name: tool.name,
                   cta_location: "tool_local_nav",
@@ -607,7 +651,7 @@ const ToolDetailPage = () => {
                         <div className="td-hero-name-block">
                           <div className="td-hero-title-row">
                             <h1 className="td-hero-h1">
-                              {tool.name}
+                              {editing ? editing.field(["name"], tool.name) : tool.name}
                               {/* Sub-pages say what they are about: "NordPass pricing". */}
                               {headingSuffix ? <span className="td-hero-h1-page">{headingSuffix}</span> : null}
                             </h1>
@@ -616,20 +660,21 @@ const ToolDetailPage = () => {
                               <strong className="td-hero-promo-code">{tool.promoCode}</strong>
                             </span>}
                           </div>
-                          {tool.shortDescription && (
-                            <p className="td-hero-desc">
-                              {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
-                            </p>
+                          {(tool.shortDescription || editing) && (
+                            <DescriptionTag className="td-hero-desc">
+                              {editing ? editing.field([lang === "en" ? "shortDescriptionEn" : "shortDescription"], t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)) : t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
+                            </DescriptionTag>
                           )}
                         </div>
 
+                        {editing?.block([lang === "en" ? "shortDescription" : "shortDescriptionEn", "description", "descriptionEn", "tagline"], t("Présentation et traductions", "Presentation and translations"), { advanced: true })}
                         <div className="td-hero-actions">
                         {primaryCtaUrl && <a
                           href={primaryCtaUrl}
                           target="_blank"
                           rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
                           className="td-hero-site-link"
-                          onClick={() => trackEvent("outbound_tool_click", {
+                          onClick={() => !privateMode && trackEvent("outbound_tool_click", {
                             tool_slug: tool.slug || tool.id,
                             tool_name: tool.name,
                             cta_location: "tool_hero",
@@ -642,9 +687,9 @@ const ToolDetailPage = () => {
                           {primaryCtaLabel}
                           <ExternalLink aria-hidden />
                         </a>}
-                        <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" flyFrom=".td-hero-logo" />
+                        {!privateMode && <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" flyFrom=".td-hero-logo" />}
                         </div>
-                        <ToolStackOverlapNote tool={tool} prefix={prefix} lang={lang} t={t} />
+                        {!privateMode && <ToolStackOverlapNote tool={tool} prefix={prefix} lang={lang} t={t} />}
                       </div>
 
                     </div>
@@ -683,6 +728,11 @@ const ToolDetailPage = () => {
               ) : null;
             })()}
 
+            {editing && <section className="td-section bo-inline-media">
+              {editing.block(["logo", "ogImageUrl", "galleryImages"], t("Images de la fiche", "Listing images"), { advanced: true })}
+              <p className="bo-inline-note">{t(`Le rendu combine la couverture et la galerie du catalogue avec ${getToolMediaImages(tool.slug || tool.id).length} média(s) de la sélection éditoriale. Les corrections de logos et les images de secours publiques restent applicables. Modifier une URL n’ajoute pas de fichier ; aucun téléversement n’est proposé.`, `The display combines catalogue cover and gallery URLs with ${getToolMediaImages(tool.slug || tool.id).length} curated media item(s). Public logo corrections and fallback images still apply. Editing a URL does not upload a file; uploads are not supported.`)}</p>
+            </section>}
+
             <nav className="td-tool-subnav" aria-label={t(`Explorer la fiche ${tool.name}`, `Explore the ${tool.name} review`)}>
               {subpageLinks.map((item) => (
                 <Link key={item.key} to={item.to} aria-current={activeTab === item.key ? (isPresentation && item.key !== "presentation" ? "location" : "page") : undefined}>
@@ -704,16 +754,16 @@ const ToolDetailPage = () => {
                     </h2>
                   </header>
                   <div className="td-editorial-intro-copy">
-                    {editorialParas.map((para: string, i: number) => (
+                    {editing ? editing.field([lang === "en" ? "longDescriptionEn" : "longDescription"], editorialParas.join("\n\n")) : editorialParas.map((para: string, i: number) => (
                       <p key={i} className={i === 0 ? "td-analysis-lead" : "td-analysis-paragraph"}>
                         {para}
                       </p>
                     ))}
-                    {editorialOverview.useCases.length > 0 && (
+                    {(editorialOverview.useCases.length > 0 || editing) && (
                       <section className="td-editorial-intro-usecases">
                         <h3 className="td-eyebrow">{t("Usages concrets", "Practical uses")}</h3>
                         <div className="td-overview-group td-overview-group--uses">
-                          <ul>{editorialOverview.useCases.map((useCase: string) => {
+                          {editing ? editing.field([lang === "en" ? "useCasesEn" : "useCases"]) : <ul>{editorialOverview.useCases.map((useCase: string) => {
                             const { title, detail } = splitUseCase(useCase);
                             return (
                               <li key={useCase}>
@@ -724,28 +774,29 @@ const ToolDetailPage = () => {
                                 </span>
                               </li>
                             );
-                          })}</ul>
+                          })}</ul>}
                         </div>
                       </section>
                     )}
-                    {((tool as any).covers?.length > 0 || (tool as any).functional_needs?.length > 0) && (
+                    {((tool as any).covers?.length > 0 || (tool as any).functional_needs?.length > 0 || editing) && (
                       <section className="td-editorial-intro-features">
                         <h3 className="td-eyebrow">{t("Fonctionnalités et usages", "Features & use cases")}</h3>
-                        <ToolFeaturesBlock
+                        {editing ? editing.block(["covers", "functional_needs"], t("Fonctionnalités et besoins", "Features and needs")) : <ToolFeaturesBlock
                           covers={(tool as any).covers || []}
                           functionalNeeds={(tool as any).functional_needs || []}
                           toolName={tool.name}
                           t={t}
-                        />
+                        />}
                       </section>
                     )}
+                    {editing?.block([lang === "en" ? "longDescription" : "longDescriptionEn", lang === "en" ? "useCases" : "useCasesEn", "ia_use_case", "substitution_cluster_v2", "substitutable"], t("Autres usages et traductions", "Other uses and translations"), { advanced: true })}
                   </div>
                 </div>
 
                 <aside className="td-editorial-facts" aria-label={t(`Informations sur ${tool.name}`, `${tool.name} facts`)}>
                   <section className="td-editorial-fact-group">
                     <h3>{t("Pour qui", "Best for")}</h3>
-                    <ToolAudienceBlock
+                    {editing ? editing.block([lang === "en" ? "relevantForEn" : "relevantFor", "soloRelevance", "teamRelevance"], t("Pour qui", "Audience")) : <ToolAudienceBlock
                       relevantFor={(tool as any).relevantFor?.length > 0
                         ? (tool as any).relevantFor
                         : (tool as any).verticals?.length > 0
@@ -755,19 +806,14 @@ const ToolDetailPage = () => {
                       teamRelevance={tool.teamRelevance}
                       toolName={tool.name}
                       t={t}
-                    />
+                    />}
                   </section>
 
+                  {editing?.block(["category", "tool_type", "personas", "verticals", lang === "en" ? "relevantFor" : "relevantForEn"], t("Classement et profils", "Classification and profiles"), { advanced: true })}
                   <dl className="td-editorial-fact-list">
                     <div>
                       <dt>{t("Prix", "Pricing")}</dt>
-                      <dd>{["included", "discontinued", "beta"].includes(tool.pricing_v5?.compare_plan_kind || "")
-                        ? formatPriceLabel(tool, displayPrice, t, currency, lang)
-                        : displayPrice === 0 && !isOneTimePrice(tool)
-                        ? (isPriceUndisclosed(tool) ? t("Prix non communiqué", "Price not public") : t("Gratuit", "Free"))
-                        : displayPrice != null && (displayPrice > 0 || isOneTimePrice(tool))
-                          ? formatPriceLabel(tool, displayPrice, t, currency, lang)
-                          : t("Sur devis", "Contact sales")}</dd>
+                      <dd>{formatPriceLabel(tool, displayPrice, t, currency, lang)}</dd>
                     </div>
                     {catName && category && (
                       <div>
@@ -796,7 +842,7 @@ const ToolDetailPage = () => {
                   {primaryCtaUrl && (
                     <section className="td-editorial-fact-group">
                       <h3>{t("Lien", "Link")}</h3>
-                      <a className="td-editorial-official-link" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackEvent("outbound_tool_click", {
+                      <a className="td-editorial-official-link" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => !privateMode && trackEvent("outbound_tool_click", {
                         tool_slug: tool.slug || tool.id,
                         tool_name: tool.name,
                         cta_location: "tool_facts_rail",
@@ -810,6 +856,7 @@ const ToolDetailPage = () => {
                       </a>
                     </section>
                   )}
+                  {editing?.block(["websiteUrl", "affiliateLink", "affiliateCtaLabelFr", "affiliateCtaLabelEn", "affiliateDisclosureFr", "affiliateDisclosureEn", "promoCode", "promoDescriptionFr", "promoDescriptionEn"], t("Site, liens et offre commerciale", "Website, links and commercial offer"), { advanced: true })}
                 </aside>
               </section>
             )}
@@ -853,6 +900,9 @@ const ToolDetailPage = () => {
             {showAnalysis && (
               <div id="analyse" className="td-subpage-content">
                 <section className="td-decision-flow">
+                  {editing?.block([lang === "en" ? "prosEn" : "pros", lang === "en" ? "consEn" : "cons"], t("Points forts et limites", "Strengths and limitations"))}
+                  {editing?.block([lang === "en" ? "verdictEn" : "verdict"], t("Verdict et conditions de décision", "Verdict and decision criteria"))}
+                  {editing?.block([lang === "en" ? "pros" : "prosEn", lang === "en" ? "cons" : "consEn", lang === "en" ? "verdict" : "verdictEn", "timeGainedHoursPerMonth"], t("Analyse et traductions complémentaires", "Additional analysis and translations"), { advanced: true })}
                 {/* 1 · Décision rapide — 3 blocs éditoriaux */}
                 {(() => {
                   const { keepItems, avoidItems } = resolveVerdict(tool, lang);
@@ -906,12 +956,13 @@ const ToolDetailPage = () => {
                   {pricingDetail && <ToolPricingAnswer detail={pricingDetail} />}
                   <ToolPricingSection
                     tool={tool} displayPrice={displayPrice}
-                    lang={lang} t={t}
+                    lang={lang} t={t} controlledCurrency={currency} editing={editing}
                     onOfficialClick={() => trackOutbound("tool_pricing", "official_pricing")}
                   />
+                  {editing?.block(["pricing", "pricingEn", "defaultMonthlyPrice", "pricing_v5", "pricing_v5En"], t("Sources, textes et paramètres tarifaires", "Pricing sources, descriptions and settings"), { advanced: true, omit: ["plans"] })}
                   {pricingDetail && <ToolPricingExtras detail={pricingDetail} toolName={tool.name} t={t} />}
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
-                  <ToolBundleSection tool={tool} tools={tools} lang={lang} t={t} />
+                  <ToolBundleSection controlled={privateMode} tool={tool} tools={tools} lang={lang} t={t} />
                   {subPage === "prix" && renderSubpageLinks("prix")}
                 </div>
               </div>
@@ -921,13 +972,14 @@ const ToolDetailPage = () => {
                 SECTION: Alternatives — moved up alongside Prix, see comment
                 above.
             ════════════════════════════════ */}
-            {showAlternatives && hasAlternativesContent && (
+            {showAlternatives && (hasAlternativesContent || !!editing) && (
               <div id="alternatives" className="td-subpage-content">
                 <div className="td-section">
                   <h2 className="td-title">
                     {t("Alternatives.", "Alternatives.")} <span className="tt-title-muted">{t(`Que choisir à la place de ${tool.name} ?`, `What could replace ${tool.name}?`)}</span>
                   </h2>
 
+                  {editing?.block(["alternatives", "betterAlternative", "freeAlternative", "downgradePlan", "migrationGuide", "relations"], t("Alternatives et migration", "Alternatives and migration"), { advanced: true })}
                   {alternatives.length > 0 && (
                     <ToolComparisonTable
                       tool={tool} alternatives={alternatives}
@@ -1086,7 +1138,7 @@ const ToolDetailPage = () => {
                       {/* The numeric score already lives in the sticky/mobile
                           decision card. This section explains it instead of
                           printing the same large metric twice. */}
-                      {ts.source === "v2" && tool.toolTrimRating ? (
+                      {editing ? <>{editing.block(["toolTrimRating"], t("Critères, preuves et dates de notation", "Rating criteria, evidence and dates"))}<p className="bo-inline-note">{t("La note finale reste calculée à partir des cinq critères. Elle n’est pas saisissable.", "The final score remains calculated from the five criteria. It cannot be entered directly.")}</p></> : ts.source === "v2" && tool.toolTrimRating ? (
                         <div className="td-review-rationale-v2">
                           <div className="td-review-verdict-header">
                             <span className="td-score-axis-heading">
@@ -1181,9 +1233,13 @@ const ToolDetailPage = () => {
                 {/* 9 · Intégrations / Plugins — the block owns its own
                      td-section wrapper and returns null when there's
                      nothing to show, so no empty divider renders. */}
+                {editing?.block(["host_app", "bundle_parent", "integrates_with", "complements", "articles"], t("Écosystème et contenus associés", "Ecosystem and related content"), { advanced: true })}
                 <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
 
                 {/* 10 · L'angle IA : augmenter ou remplacer ? — same. */}
+                {editing?.block(["seo"], t("Référencement par langue et sous-page, angle IA", "Search metadata by language and page, AI angle"), { advanced: true })}
+                {editing?.block(["lifecycle", "decision_policy_v3", "force_silence", "pivot_integration_source", "prescription_block_reasons", "prescription_context_questions"], t("Cycle de vie et recommandations", "Lifecycle and recommendations"), { advanced: true })}
+                {editing?.block(["id", "slug", "research", "prescription_output", "prescription_quality", "bestFor", "tags", "nameEn", "categoryId", "gallery_images", "link", "website", "lifecycleStatus", "pricingTiers", "verdictFr"], t("Informations protégées et compatibilité", "Protected information and compatibility"), { advanced: true })}
                 <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
 
                 {/* Quiet structured recap for search and extraction. Keeping
@@ -1291,14 +1347,14 @@ const ToolDetailPage = () => {
                   <strong>{tool.name}</strong>
                   {mobileBarPrice && <span>{mobileBarPrice}</span>}
                 </div>
-                <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="icon" flyFrom=".td-hero-logo" />
+                {!privateMode && <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="icon" flyFrom=".td-hero-logo" />}
                 <a
                   href={primaryCtaUrl}
                   target="_blank"
                   rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
                   className="td-mobile-actionbar-cta"
                   aria-label={primaryCtaLabel}
-                  onClick={() => trackEvent("outbound_tool_click", {
+                  onClick={() => !privateMode && trackEvent("outbound_tool_click", {
                     tool_slug: tool.slug || tool.id,
                     tool_name: tool.name,
                     cta_location: "tool_mobile_bar",
@@ -1324,7 +1380,7 @@ const ToolDetailPage = () => {
                 <span>{t("Alternative la plus proche :", "Closest alternative:")} <strong>{clusterTools[0].name}</strong></span>
                 <ArrowRight aria-hidden />
               </Link>}
-              <StickyDecisionCard {...cardProps} section="share" />
+              {!privateMode && <StickyDecisionCard {...cardProps} section="share" />}
             </div>
           </article>
           {/* end main content */}
@@ -1341,7 +1397,7 @@ const ToolDetailPage = () => {
                 t={t}
                 tools={tools as any}
               />
-              <StickyDecisionCard {...cardProps} section="share" />
+              {!privateMode && <StickyDecisionCard {...cardProps} section="share" />}
           </aside>
 
         </div>

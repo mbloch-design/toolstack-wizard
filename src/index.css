@@ -41925,3 +41925,47 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-account-outline-button:hover { border: 0; background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface-soft)); }
 .ec-cta { color: var(--color-text-strong); font-weight: 500; }
 :is(.tt-page-hero-cta > .tt-button-primary, .ss-cta, .sl-final-cta, .sp-payment-cta, .sp-upgrade-cta, .ss-dock-cta, .sp-hero-cta-secondary, .sp-shot-cta, .ms-account-text-button, .ms-account-outline-button):focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 3px; }
+
+@layer components {
+  /* Controlled catalogue authoring stays inside the actual fiche blocks. */
+  .bo-inline-block, .bo-inline-settings { margin-block: 16px; min-width: 0; font: 400 14px/1.5 var(--font-ui); color: var(--color-text); }
+  .bo-inline-block > h3, .bo-inline-array > h4 { margin: 0 0 10px; font: 550 15px/1.4 var(--font-ui); }
+  .bo-inline-settings > summary { cursor: pointer; padding-block: 10px; font-weight: 550; }
+  .bo-inline-settings[open] > summary { margin-bottom: 10px; border-bottom: 1px solid var(--color-border); }
+  .bo-inline-fields, .bo-inline-object { display: grid; gap: 12px; min-width: 0; }
+  .bo-inline-object { padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+  .bo-inline-object > legend { padding-inline: 6px; font-weight: 550; }
+  .bo-inline-field { display: block; min-width: 0; font: 400 14px/1.45 var(--font-ui); white-space: normal; }
+  .bo-inline-field .ui-field { gap: 5px; }
+  .bo-inline-field .ui-textarea { min-height: 42px; resize: vertical; }
+  .bo-inline-field > .ui-button { margin-top: 3px; }
+  .bo-inline-array { min-width: 0; }
+  .bo-inline-array-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 8px; margin-bottom: 10px; }
+  .bo-inline-collection-actions, .bo-inline-plan-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .bo-inline-collection-actions > p, .bo-inline-note, .bo-inline-protected { font: 400 13px/1.5 var(--font-ui); color: var(--color-text-meta); white-space: normal; overflow-wrap: anywhere; }
+  .bo-inline-protected { padding: 10px; background: var(--color-surface-soft); border-radius: var(--radius-md); }
+  .bo-inline-protected p { margin: 4px 0; }
+  .bo-inline-protected dl { padding-left: 12px; }
+  .bo-inline-protected dt { font-weight: 550; }
+  .bo-inline-protected dd { margin: 0 0 6px; }
+  .bo-inline-union > p { font: 400 13px/1.5 var(--font-ui); }
+  .td-tool-page .td-pricing .bo-inline-plan > .td-plan-head { grid-row: 1; }
+  .td-tool-page .td-pricing .bo-inline-plan > .td-plan-price { grid-row: 2; }
+  .td-tool-page .td-pricing .bo-inline-plan > .td-plan-condition, .td-tool-page .td-pricing .bo-inline-plan > .td-plan-slot { grid-row: 3; }
+  .td-tool-page .td-pricing .bo-inline-plan > .bo-inline-plan-settings { grid-row: 4; }
+  .td-tool-page .td-pricing .bo-inline-price { display: grid; align-items: start; gap: 8px; white-space: normal; }
+  .td-tool-page .td-pricing .bo-inline-plan .td-plan-name { width: 100%; }
+  .td-tool-page .td-pricing .bo-inline-plan .bo-inline-settings { margin-block: 0; }
+  .td-tool-page .td-pricing .bo-inline-plan .bo-inline-field { font-size: 14px; }
+  .td-tool-page[data-private-fiche] a { cursor: default; }
+  @media (max-width: 640px) {
+    .bo-inline-array-row { grid-template-columns: minmax(0, 1fr); }
+    .bo-inline-collection-actions .ui-button, .bo-inline-plan-actions .ui-button { min-height: 44px; }
+  }
+}
+
+@layer components {
+  .bo-inline-provenance { margin-block: 14px; padding-block: 12px; border-block: 1px solid var(--color-border); font: 400 13px/1.5 var(--font-ui); color: var(--color-text-meta); overflow-wrap: anywhere; }
+  .bo-inline-provenance strong { color: var(--color-text); font-weight: 550; }
+  .bo-inline-provenance p { margin: 4px 0 0; }
+}

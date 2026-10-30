@@ -53,7 +53,8 @@ export function toolPriceFacts(tool: SeoTool) {
   // licence filed under an "account" kind, and was titled « from $600/mo ».
   const comparePlan = [...(tool.pricing_v5?.plans || []), ...(tool.pricing_v5En?.plans || [])]
     .find((plan: SeoTool) => plan?.isComparePlan && !plan?.isFree);
-  const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time"
+  const oneTime = ["one_time", "one-time"].includes(comparePlan?.billingPeriod)
+    || tool.pricing_v5?.compare_plan_kind === "one_time"
     || comparePlan?.pricingUnit === "one_time"
     || (!tool.pricing_v5?.compare_plan_kind && !hasPrice && !free && /licence à vie|licence perp[ée]tuelle|one-?time|perpetual license|lifetime license/i.test(String(tool.pricing?.paid || "")));
   return { price, hasPrice, oneTime, free };

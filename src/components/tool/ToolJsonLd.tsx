@@ -3,7 +3,7 @@ import type { Tool, Category } from "@/data/types";
 import { setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { buildToolFaqs } from "@/lib/toolFaq";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
-import { hasGenuineFreeTier } from "@/lib/pricing";
+import { hasConfirmedFreeTier } from "@/lib/pricing";
 import { getToolTutorials } from "@/data/toolTutorials";
 import { safeExternalUrl } from "@/lib/externalLink";
 import { nativePriceFromTool } from "@/lib/currencyRates";
@@ -51,7 +51,7 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
     // Without a price the vendor publishes, only an honest free offer can be declared.
     const unattested = !maxonAnnual && !nativePrice && !(displayPrice > 0);
     const noVerifiedOffer = ["included", "beta", "discontinued", "unknown"].includes(tool.pricing_v5?.compare_plan_kind || "")
-      || (unattested && !hasGenuineFreeTier(tool.pricing?.free));
+      || (unattested && !hasConfirmedFreeTier(tool));
     const host = String((tool as { host_app?: string }).host_app || "").toLowerCase();
     const operatingSystem = host === "macos" ? "macOS" : host ? undefined : "Web";
     const canonicalUrl = pageCanonicalUrl || `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
@@ -110,7 +110,7 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
             priceCurrency: offerCurrency,
             priceSpecification: { "@type": "UnitPriceSpecification", price: String(offerPrice), priceCurrency: offerCurrency, billingDuration: "P1Y" },
           }
-        : hasGenuineFreeTier(tool.pricing?.free) && offerPrice > 0
+        : hasConfirmedFreeTier(tool) && offerPrice > 0
         ? {
             "@type": "AggregateOffer",
             lowPrice: "0",

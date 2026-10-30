@@ -10,6 +10,7 @@
 
 // Chemin relatif volontaire : vite.config.ts importe ce module sous Node pour
 // le prerendu, et l'alias @/ n'est pas resolu dans ses propres imports.
+import { selectNativeComparePlan, nativeMonthlyAmount, blocksLegacyPriceFallback } from "./nativeComparePlan.js";
 import { NATIVE_PRICES } from "../data/nativePrices.js";
 
 export type Currency = "EUR" | "USD" | "GBP";
@@ -91,22 +92,15 @@ export type NativePrice = { amount: number; currency: Currency };
 export function nativePriceFromTool(tool: any, preferredCurrency?: Currency): NativePrice | null {
   // Both records, see getNativeComparePrice: a vendor publishing USD and EUR
   // has its USD grid on pricing_v5En and its EUR grid on pricing_v5.
-  const candidates = [...(tool?.pricing_v5?.plans || []), ...(tool?.pricing_v5En?.plans || [])].filter(
-    (item: any) => item?.isComparePlan && !item?.isFree && item?.nativeAmount != null && isCurrency(item?.nativeCurrency),
-  );
-  // Meme logique que getNativeComparePrice (nativePricing.ts) : un outil peut
-  // publier le meme plan en plusieurs devises reelles (lemlist : $69 US,
-  // 69 EUR zone euro), pas une conversion. On prend celle qui correspond a la
-  // devise demandee, sinon la premiere attestee.
-  const match = preferredCurrency ? candidates.find((item: any) => item.nativeCurrency === preferredCurrency) : undefined;
-  const plan = match || candidates[0];
+  const plan = selectNativeComparePlan<any>([...(tool?.pricing_v5?.plans || []), ...(tool?.pricing_v5En?.plans || [])], preferredCurrency);
   if (plan) {
     // Comparison labels are monthly. An annual subscription's native total
     // must not be presented as a monthly charge; one-time licences stay intact.
     const amount = Number(plan.nativeAmount);
-    return { amount: plan.billingPeriod === "annual" ? amount / 12 : amount, currency: plan.nativeCurrency };
+    return { amount: nativeMonthlyAmount(amount, plan.billingPeriod), currency: plan.nativeCurrency };
   }
 
+  if (blocksLegacyPriceFallback(tool)) return null;
   const attested = NATIVE_PRICES[tool?.slug] || NATIVE_PRICES[tool?.id];
   if (attested) return { amount: attested.amount, currency: attested.currency };
 

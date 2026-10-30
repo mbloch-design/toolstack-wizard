@@ -1,4 +1,4 @@
-import { selectNativeComparePlan } from "./nativeComparePlan.js";
+import { selectNativeComparePlan, nativeMonthlyAmount, blocksLegacyPriceFallback } from "./nativeComparePlan.js";
 import pricingTruthCsv from "@/data/pricing_truth.csv?raw";
 import type { Tool } from "@/data/types";
 import type { Currency } from "@/hooks/useCurrency";
@@ -92,9 +92,10 @@ export function getNativeComparePrice(tool: NativePricingInput, preferredCurrenc
   // the requested currency pick. Never a conversion.
   const plan = selectNativeComparePlan([...(tool.pricing_v5?.plans || []), ...(tool.pricing_v5En?.plans || [])], preferredCurrency);
   if (plan) {
-    const amount = plan.billingPeriod === "annual" ? plan.nativeAmount! / 12 : plan.nativeAmount!;
+    const amount = nativeMonthlyAmount(plan.nativeAmount!, plan.billingPeriod);
     return { amount, currency: plan.nativeCurrency as Currency, source: "canonical_plan" };
   }
+  if (blocksLegacyPriceFallback(tool)) return null;
   const id = tool.slug || tool.id;
   return pricingTruth.get(id) || pricingTruth.get(tool.id) || null;
 }
