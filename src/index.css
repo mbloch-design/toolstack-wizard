@@ -41886,3 +41886,12 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .sk-load-more-btn, .sp-button-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 0 18px; border: 0; border-radius: var(--radius-pill); background: var(--color-surface-soft); color: var(--color-text-strong); font: 500 14px/1 var(--font-ui); letter-spacing: -.005em; box-shadow: none; cursor: pointer; }
 .sk-load-more-btn:hover, .sp-button-secondary:hover { border: 0; background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface-soft)); }
 :is(.cp-guide-outbound-button, .ab-cta-secondary, .sk-load-more-btn, .sp-button-secondary):focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 3px; }
+
+/* Account area on the CTA rule (30 Oct 2026). Sign-in provider buttons keep
+   their own shape (Google, GitHub conventions). */
+.ac-button:not(.ac-provider), .ac-text-button { font-weight: 500; letter-spacing: -.005em; }
+.ac-button:not(.ac-provider) { min-height: 40px; padding: 0 18px; border: 0; border-radius: var(--radius-pill); background: var(--color-surface-soft); color: var(--color-text-strong); box-shadow: none; }
+.ac-button:not(.ac-provider):hover { border: 0; background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface-soft)); box-shadow: none; }
+.ac-button.ac-button--primary { background: var(--color-text-strong); color: var(--color-bg); }
+.ac-button.ac-button--primary:hover { background: var(--color-hover-strong); }
+.ac-text-button { color: var(--color-text-strong); }
