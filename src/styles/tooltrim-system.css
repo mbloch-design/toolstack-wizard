@@ -276,6 +276,35 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 @container (max-width: 380px) { .tt-scale-label { font-size: .75rem; } .tt-scale button[aria-checked="true"] .tt-scale-label { font-size: .75rem; } }
 .tt-scale button:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 4px; border-radius: var(--tt-r-chip); }
 
+/* ── Organisme : vos usages ────────────────────────────────────────────── */
+/* Pensé pour le geste : répondre fait avancer, tout se joue sur une bande.
+   En-tête : retour, étapes, « Plus tard ». Puis l'outil, puis l'échelle avec
+   « Passer » en sixième colonne. L'outil suivant glisse à sa place. */
+.tt-usage { container-type: inline-size; display: grid; gap: 18px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-usage-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; }
+.tt-usage-where { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.tt-usage-acts { display: inline-flex; align-items: center; gap: 8px; margin-left: auto; }
+.tt-usage-back { display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: var(--tt-r-round); background: var(--tt-tile-2); color: var(--tt-ink); cursor: pointer; transition: opacity var(--tt-dur-state) ease; }
+.tt-usage-back:disabled { display: none; }
+.tt-usage-later { min-height: 32px; padding: 0 4px; border: 0; background: none; color: var(--tt-ink); font: var(--tt-label-font); cursor: pointer; }
+.tt-usage-tool { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; gap: 14px; transition: opacity 260ms ease, transform 420ms var(--tt-ease); }
+.tt-usage-tool > .tt-logo-tile { width: 48px; height: 48px; }
+.tt-usage-tool[data-leaving] { opacity: 0; transform: translateX(-16px); }
+.tt-usage-tool[data-entering] { opacity: 0; transform: translateX(16px); transition: none; }
+.tt-usage-band { display: grid; grid-template-columns: minmax(0, 5fr) minmax(56px, 1fr); align-items: end; gap: 6px; }
+.tt-usage-skip { display: grid; grid-template-rows: 72px auto; gap: 10px; justify-items: center; padding: 6px 0 0; border: 0; background: none; color: var(--tt-ink); font: var(--tt-note-font); cursor: pointer; }
+.tt-usage-skip i { align-self: end; width: 18px; height: 18px; border-radius: var(--tt-r-pill); box-shadow: inset 0 0 0 1.5px var(--tt-scale-off, color-mix(in oklch, var(--tt-ink) 18%, transparent)); }
+.tt-usage-skip:hover i { box-shadow: inset 0 0 0 1.5px var(--tt-ink); }
+.tt-usage-tool > .tt-check { justify-self: center; width: 32px; height: 32px; } .tt-usage-tool > .tt-check svg { width: 18px; height: 18px; }
+/* Étroit : l'échelle prend toute la largeur, « Passer » descend dessous, à portée du pouce. */
+@container (max-width: 440px) {
+  .tt-usage-band { grid-template-columns: 1fr; }
+  .tt-usage-skip { grid-template-rows: none; justify-self: end; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 4px; font: var(--tt-label-font); }
+  .tt-usage-skip i { display: none; }
+  .tt-usage-skip span::after { content: " ›"; }
+}
+@media (prefers-reduced-motion: reduce) { .tt-usage-tool { transition: none; } }
+
 /* ── Organisme : la carte de décision ───────────────────────────────────── */
 /* Assemblée d'atomes : la tuile, un surtitre et ses étapes en traits fins,
    le titre en affichage, une phrase en lecture, puis des cartes de verdict
