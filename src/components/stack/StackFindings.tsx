@@ -375,40 +375,47 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         {/* The image of the decision: its tools, large, on a halo of their brand colours. */}
         {top.kind !== "pair" && <div className="mf-stage" aria-hidden="true">{top.tools.length > 1 ? <Duo a={top.tools[0]} b={top.tools[1]} large /> : <AppIcon tool={top.tools[0]} large />}</div>}
         <h2 id="mf-now-title" tabIndex={-1} className="sr-only">{t("Prochaine décision", "Next decision")}</h2>
-        <p className="mf-k tt-kicker"><span className="mf-k-pill">{guide && (top.kind === "price" || top.kind === "freemium") ? t("Étape suivante", "Next step") : t("Votre décision", "Your decision")}</span>{expander("now", t("la décision", "the decision"))}
-          {peak > 1 && <span className="mf-step" aria-label={t(`Étape ${step} sur ${peak}`, `Step ${step} of ${peak}`)}><span className="mf-step-track" aria-hidden="true"><i style={{ width: `${(step / peak) * 100}%` }} /></span>{t(`${step} sur ${peak}`, `${step} of ${peak}`)}</span>}</p>
+        {/* Organisme « carte de décision » du système : surtitre, étapes en traits fins. */}
+        <p className="mf-k tt-decision-head"><span className="tt-eyebrow">{guide && (top.kind === "price" || top.kind === "freemium") ? t("Étape suivante", "Next step") : t("Votre décision", "Your decision")}</span>{expander("now", t("la décision", "the decision"))}
+          {peak > 1 && <span className="mf-step tt-steps" aria-label={t(`Étape ${step} sur ${peak}`, `Step ${step} of ${peak}`)}>{peak <= 8 && <span className="tt-steps-track" aria-hidden="true">{Array.from({ length: peak }, (_, index) => <i key={index} data-on={index < step ? "" : undefined} />)}</span>}{t(`${step} sur ${peak}`, `${step} of ${peak}`)}</span>}</p>
         {/* The tool in question, on stage: its logo bounces in beside the question. */}
-        <div className="mf-now-q">{top.kind !== "pair" && <span className="mf-now-logo" aria-hidden="true"><ToolLogo tool={top.tools[0]} size={36} /></span>}<h3>{top.kind === "price" && !(top.plans && top.plans.length) ? t(`Combien vous coûte ${top.tools[0].name} par mois\u00a0?`, `How much does ${top.tools[0].name} cost you a month?`) : top.title}</h3></div>
-        <p className="mf-t">{guide && (top.kind === "price" || top.kind === "freemium") ? t("Pour un budget juste, dites-nous laquelle vous payez. Gratuite, ça compte aussi.", "For an honest budget, tell us which one you pay. Free counts too.") : top.detail}</p>
-        {/* A duplicate is a face-off: one tap on a face keeps it, and each face says what it saves. */}
-        {top.kind === "pair" && <div className="mf-duel mf-choice-group" data-picked={picked !== null ? picked : undefined}>{top.tools.slice(0, 2).map((tool, index) => {
-          const keep = top.actions.find((action) => action.label.endsWith(tool.name));
-          const own = top.costs?.[index] ?? 0, other = top.costs?.[1 - index] ?? 0; // the cheaper face gets the tag
-          return <Fragment key={tool.id}>
-            {index === 1 && top.actions.filter((action) => !top.tools.some((candidate) => action.label.endsWith(candidate.name))).map((action) =>
-                <button key={action.label} type="button" className="mf-duel-both" onClick={() => pick(2, action.onClick)} disabled={picked !== null}
-                  data-state={picked === null ? undefined : picked === 2 ? "kept" : "gone"}
-                  aria-label={action.label}
-                  onPointerEnter={() => setPreview(total)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total)} onBlur={() => setPreview(null)}>
-                  <span className="mf-choice-logos" aria-hidden="true">{top.tools.slice(0, 2).map((item) => <ToolLogo key={item.id} tool={item} size={28} />)}<Sparkles size={14} /></span>
-                  <span className="mf-choice-both-label">{action.label}</span>
-                  <span className="mf-face-out" data-gain="0">{t("Budget inchangé", "Budget unchanged")}</span>
-                  <span className="mf-face-cost">{t(`les deux, ${format((top.costs?.[0] ?? 0) + (top.costs?.[1] ?? 0))}/mois`, `both, ${format((top.costs?.[0] ?? 0) + (top.costs?.[1] ?? 0))}/mo`)}</span>
-                </button>)}
-            <button type="button" className="mf-face" disabled={picked !== null} onClick={() => pick(index, keep?.onClick)} aria-label={keep?.ariaLabel || keep?.label}
-              onPointerEnter={() => setPreview(total - other)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total - other)} onBlur={() => setPreview(null)}
-              data-state={picked === null ? undefined : picked === index ? "kept" : "gone"} data-best={own < other ? "" : undefined}>
-              {own < other && <span className="mf-face-tag">{t("Le moins cher", "Cheaper")}</span>}
-              {/* Who stays and who goes, at a glance: the kept logo, the other one crossed out at its foot. */}
-              <span className="mf-face-logo"><ToolLogo tool={tool} size={40} />{picked === index && <span className="mf-face-check" aria-hidden="true"><Check size={16} strokeWidth={3} /></span>}
-                {top.tools[1 - index] && <span className="mf-face-drop" aria-hidden="true"><ToolLogo tool={top.tools[1 - index]} size={20} /></span>}</span>
-              <span className="mf-face-name">{tool.name}</span>
-              {/* What the choice does to the budget: keeping one drops the other's cost. */}
-              <span className="mf-face-out" data-gain={other > 0 ? "" : "0"}>{other > 0 ? `−${format(other)}${t("/mois", "/mo")}` : t("Aucune économie", "No saving")}</span>
-              <span className="mf-face-cost">{own > 0 ? t(`seul, ${format(own)}/mois`, `alone, ${format(own)}/mo`) : t("seul, gratuit", "alone, free")}</span>
-            </button>
-          </Fragment>;
-        })}</div>}
+        <div className="mf-now-q">{top.kind !== "pair" && <span className="mf-now-logo" aria-hidden="true"><ToolLogo tool={top.tools[0]} size={36} /></span>}<h3 className="tt-decision-title">{top.kind === "price" && !(top.plans && top.plans.length) ? t(`Combien vous coûte ${top.tools[0].name} par mois\u00a0?`, `How much does ${top.tools[0].name} cost you a month?`) : top.title}</h3></div>
+        <p className="mf-t tt-decision-detail">{guide && (top.kind === "price" || top.kind === "freemium") ? t("Pour un budget juste, dites-nous laquelle vous payez. Gratuite, ça compte aussi.", "For an honest budget, tell us which one you pay. Free counts too.") : top.detail}</p>
+        {/* A duplicate: three verdict cards (système ToolTrim, molécule « carte de
+            verdict »). Keep one, keep the other, or keep both; each says what
+            it does to the budget. The chosen card rings blue, the others fade. */}
+        {top.kind === "pair" && (() => {
+          const both = top.actions.find((action) => !top.tools.some((candidate) => action.label.endsWith(candidate.name)));
+          const sum = (top.costs?.[0] ?? 0) + (top.costs?.[1] ?? 0);
+          const state = (index: number) => picked === null ? undefined : picked === index ? "kept" : "gone";
+          const check = <span className="tt-choice-check" aria-hidden="true"><Check strokeWidth={3} /></span>;
+          return <div className="mf-duel mf-choice-group tt-choices" data-picked={picked !== null ? picked : undefined}>
+            {top.tools.slice(0, 2).map((tool, index) => {
+              const keep = top.actions.find((action) => action.label.endsWith(tool.name));
+              const own = top.costs?.[index] ?? 0, other = top.costs?.[1 - index] ?? 0;
+              const gone = top.tools[1 - index];
+              return <button key={tool.id} type="button" className="mf-choice--keep tt-choice" disabled={picked !== null} onClick={() => pick(index, keep?.onClick)} aria-label={keep?.ariaLabel || keep?.label}
+                onPointerEnter={() => setPreview(total - other)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total - other)} onBlur={() => setPreview(null)}
+                data-state={state(index)} data-best={own < other ? "" : undefined}>
+                <span className="tt-choice-logo"><ToolLogo tool={tool} size={40} />{picked === index && check}</span>
+                <span className="tt-choice-text">
+                  <span className="tt-choice-name"><span>{t("Garder", "Keep")} <span className="mf-face-name">{tool.name}</span></span>{own < other && <span className="tt-choice-tag">{t("Le moins cher", "Cheaper")}</span>}</span>
+                  <span className="tt-choice-note">{gone ? t(`${gone.name} quitte la stack`, `${gone.name} leaves the stack`) : ""} · {own > 0 ? t(`seul, ${format(own)}/mois`, `alone, ${format(own)}/mo`) : t("seul, gratuit", "alone, free")}</span>
+                </span>
+                <span className="tt-choice-amount" data-gain={other > 0 ? "" : undefined}>{other > 0 ? <>−{format(other)}<small>{t("/mois", "/mo")}</small></> : t("Aucune économie", "No saving")}</span>
+              </button>;
+            })}
+            {both && <button type="button" className="mf-choice--both tt-choice" onClick={() => pick(2, both.onClick)} disabled={picked !== null} data-state={state(2)} aria-label={both.label}
+              onPointerEnter={() => setPreview(total)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total)} onBlur={() => setPreview(null)}>
+              <span className="tt-choice-logos" aria-hidden="true">{top.tools.slice(0, 2).map((item) => <ToolLogo key={item.id} tool={item} size={28} />)}{picked === 2 && check}</span>
+              <span className="tt-choice-text">
+                <span className="tt-choice-name">{both.label}</span>
+                <span className="tt-choice-note">{t(`Les deux restent · ${format(sum)}/mois`, `Both stay · ${format(sum)}/mo`)}</span>
+              </span>
+              <span className="tt-choice-amount">{t("Inchangé", "Unchanged")}</span>
+            </button>}
+          </div>;
+        })()}
         {/* Pick your plan: one tap answers; another amount is the fallback. */}
         {(() => {
           // Every plan question reads the same way: tiles to tap. With no plan in

@@ -177,6 +177,53 @@
 .tt-cutgauge-legend { display: flex; justify-content: space-between; gap: 12px; font: var(--tt-w-text) .875rem/1.3 var(--tt-read); color: var(--tt-ink); }
 @keyframes tt-grow { from { transform: scaleX(0); } }
 
+/* ── Organisme : la carte de décision ───────────────────────────────────── */
+/* Assemblée d'atomes : la tuile, un surtitre et ses étapes en traits fins,
+   le titre en affichage, une phrase en lecture, puis des cartes de verdict
+   en rangées. Le bleu ne sert qu'au choix retenu. */
+.tt-decision { display: grid; gap: 16px; padding: 28px; border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-decision-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tt-eyebrow { font: 500 .75rem/1.4 var(--tt-ui); letter-spacing: .08em; text-transform: uppercase; font-feature-settings: "case"; color: var(--tt-ink); }
+.tt-steps { display: inline-flex; align-items: center; gap: 8px; font: 500 .75rem/1 var(--tt-ui); letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.tt-steps-track { display: inline-flex; gap: 3px; }
+.tt-steps-track i { width: 14px; height: 2px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); }
+.tt-steps-track i[data-on] { background: var(--tt-ink); }
+.tt-decision-title { margin: 0; font: 500 1.5rem/1.15 var(--tt-display); letter-spacing: -.02em; text-wrap: balance; }
+.tt-decision-detail { margin: 0; font: var(--tt-w-text) 1rem/1.55 var(--tt-read); }
+.tt-decision-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding-top: 4px; }
+
+/* ── Molécule : la carte de verdict (un choix) ──────────────────────────── */
+.tt-choices { display: grid; gap: 8px; container-type: inline-size; }
+.tt-choice { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: 12px 18px 12px 12px; border: 0; border-radius: var(--tt-r-card); background: var(--tt-bg); color: var(--tt-ink); text-align: left; font: inherit; cursor: pointer;
+  box-shadow: 0 0 0 1px var(--tt-line); transition: box-shadow var(--tt-dur-state) ease, opacity var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
+.tt-choice:hover:not(:disabled) { box-shadow: 0 0 0 1px color-mix(in oklch, var(--tt-ink) 35%, var(--tt-line)); }
+.tt-choice:active:not(:disabled) { transform: scale(.985); }
+.tt-choice:disabled { cursor: default; }
+.tt-choice[data-state="kept"], .tt-choice[data-state="kept"]:hover { box-shadow: 0 0 0 2px var(--tt-brand); }
+.tt-choice[data-state="gone"] { opacity: .45; }
+.tt-choice-logo { position: relative; display: grid; place-items: center; width: 44px; height: 44px; }
+.tt-choice-logo > :is(img, .tool-logo) { width: 40px; height: 40px; }
+.tt-choice-logos { position: relative; display: flex; align-items: center; width: 44px; }
+.tt-choice-logos > * { width: 28px; height: 28px; flex: none; border-radius: var(--tt-r-chip); box-shadow: 0 0 0 2px var(--tt-bg); }
+.tt-choice-logos > * + * { margin-left: -10px; margin-top: 12px; }
+.tt-choice-check { position: absolute; top: -4px; right: -4px; display: grid; place-items: center; width: 20px; height: 20px; border-radius: var(--tt-r-round); background: var(--tt-brand); color: #fff; box-shadow: 0 0 0 2px var(--tt-bg); animation: tt-bump 420ms cubic-bezier(.34, 1.6, .64, 1); }
+.tt-choice-check svg { width: 12px; height: 12px; }
+.tt-choice-text { display: grid; gap: 2px; min-width: 0; }
+.tt-choice-name { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font: 500 .9375rem/1.3 var(--tt-ui); }
+.tt-choice-note { font: var(--tt-w-text) .875rem/1.4 var(--tt-read); }
+.tt-choice-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 8px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: 500 .75rem/1 var(--tt-ui); }
+.tt-choice-amount { font: 500 1.0625rem/1 var(--tt-display); letter-spacing: -.01em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tt-choice-amount small { margin-left: 2px; font: var(--tt-w-text) .75rem/1 var(--tt-read); }
+.tt-choice-amount[data-gain] { color: color-mix(in oklch, var(--tt-live) 72%, var(--tt-ink)); }
+/* Étroit : le montant passe sous le texte, la rangée garde sa lecture. */
+@container (max-width: 460px) {
+  .tt-choice { grid-template-columns: 40px minmax(0, 1fr); grid-template-areas: "logo text" "logo amount"; row-gap: 6px; align-items: start; padding: 14px 16px 14px 12px; }
+  .tt-choice > :first-child { grid-area: logo; }
+  .tt-choice-text { grid-area: text; }
+  .tt-choice-amount { grid-area: amount; }
+}
+.dark .tt-choice-amount[data-gain], :root[data-theme="dark"] .tt-choice-amount[data-gain] { color: color-mix(in oklch, var(--tt-live) 75%, white); }
+
 /* ── Le trim : ce qui part tombe, ce qui reste se resserre ──────────────── */
 .tt-fall { animation: tt-fall 600ms cubic-bezier(.4, 0, .2, 1) forwards; }
 @keyframes tt-fall { to { transform: translateY(36px) rotate(14deg) scale(.8); opacity: 0; } }
@@ -246,6 +293,6 @@
 .tt-tilt-host:hover::after { opacity: 1; }
 
 @media (prefers-reduced-motion: reduce) {
-  .tt-blade, .tt-thread::before, .tt-bloom, .tt-cutgauge-cut, .tt-skeleton, .tt-tilt-host, .tt-fall, .tt-cling, .tt-settle, .tt-bump { animation: none !important; transition: none !important; }
+  .tt-blade, .tt-thread::before, .tt-bloom, .tt-cutgauge-cut, .tt-skeleton, .tt-choice-check, .tt-tilt-host, .tt-fall, .tt-cling, .tt-settle, .tt-bump { animation: none !important; transition: none !important; }
   .tt-fall, .tt-cling { opacity: 0; }
 }

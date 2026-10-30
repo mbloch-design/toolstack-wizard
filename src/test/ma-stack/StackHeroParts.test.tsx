@@ -18,7 +18,7 @@ describe("StackFindings", () => {
     ] }]);
     const both = screen.getByRole("button", { name: "Garder les deux" });
     expect(container.querySelector(".mf-duel")?.contains(both)).toBe(true);
-    expect([...container.querySelectorAll(".mf-duel > button")].map(button => button.getAttribute("aria-label"))).toEqual(["Garder Asana", "Garder les deux", "Garder Linear"]);
+    expect([...container.querySelectorAll(".mf-duel > button")].map(button => button.getAttribute("aria-label"))).toEqual(["Garder Asana", "Garder Linear", "Garder les deux"]);
     expect(container.querySelector(".mf-links")?.contains(both)).toBe(false);
     fireEvent.click(both);
     await waitFor(() => expect(keepBoth).toHaveBeenCalledOnce());
@@ -95,7 +95,7 @@ describe("StackFindings", () => {
   });
   it("shows a pair as two faces, each with what it saves, and tags the cheaper one", () => {
     const { container } = module([pair]);
-    expect([...container.querySelectorAll(".mf-face")].map((node) => node.textContent)).toEqual(["Le moins cherAsana−40 €/moisseul, 33 €/mois", "Linear−33 €/moisseul, 40 €/mois"]);
+    expect([...container.querySelectorAll(".mf-choice--keep")].map((node) => node.textContent)).toEqual(["Garder AsanaLe moins cherLinear quitte la stack · seul, 33 €/mois−40 €/mois", "Garder LinearAsana quitte la stack · seul, 40 €/mois−33 €/mois"]);
   });
   it("answers the decision on top", () => {
     const onClick = vi.fn();

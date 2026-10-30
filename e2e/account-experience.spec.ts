@@ -561,11 +561,11 @@ test('reviewing a kept pair preserves its answer until a replacement is confirme
   expect(await page.locator('.mf-now').evaluate(el=>{const box=el.getBoundingClientRect();return Array.from(el.querySelectorAll('.mf-choice-group button')).every(b=>b.getBoundingClientRect().bottom<=box.bottom+1);})).toBe(true);
   await expect(page.locator('.mf-choice-group').getByRole('button',{name:'Cancel review',exact:true})).toHaveCount(0);
   if(width===390) await expect(page.locator('.mf-now .mf-expand')).toHaveAttribute('aria-expanded','true');
-  for(const face of await page.locator('.mf-face').all()) {
+  for(const face of await page.locator('.mf-choice--keep').all()) {
   await face.hover();
   await expect.poll(async()=>face.evaluate(el=>{
-   const logo=el.querySelector('.mf-face-logo')!.getBoundingClientRect();
-   const image=el.querySelector('.mf-face-logo > :first-child')!.getBoundingClientRect();
+   const logo=el.querySelector('.tt-choice-logo')!.getBoundingClientRect();
+   const image=el.querySelector('.tt-choice-logo > :first-child')!.getBoundingClientRect();
    const name=el.querySelector('.mf-face-name')!.getBoundingClientRect();
    return image.width<=logo.width+1 && (image.right<=name.left || image.bottom<=name.top);
   })).toBe(true);

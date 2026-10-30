@@ -1,3 +1,9 @@
+## 2026-10-30 · Ma stack : la carte de décision redessinée dans le système
+
+- Organisme `.tt-decision` et molécule `.tt-choice` (carte de verdict) ajoutés au système partagé, dessinés dans la planche (chapitre 06, « Décider »), puis appliqués à la carte de décision de Ma stack : tuile gris froid, surtitre et étapes en traits fins, titre en Uncut Sans, phrase en Inter, trois cartes de verdict en rangées (logo, « Garder X », ce qui quitte la stack, montant vert du gain), « Garder les deux » en dernier. Choix retenu : anneau bleu et coche qui rebondit ; les autres s'effacent ; validation en 180 ms conservée.
+- Fond teinté, pastille bleue, faces centrées et inclinées retirés ; les boutons quittent les classes `mf-face` / `mf-duel-both` (couches historiques en `@layer` avec `!important`) pour `mf-choice--keep` / `mf-choice--both`. Tests unitaires et e2e alignés.
+- Vérifié : 1 044 tests, typecheck, gate, e2e fluidité des décisions et hero Ma stack. Les e2e `account-experience` exigent la messagerie locale et les fournisseurs OAuth du banc dédié, absents du serveur de dev.
+
 ## 2026-10-30 · Design system : les cas du site tranchés
 
 - Chapitre « À passer en design » de la planche : 9 cas réglés, 1 planifié, rangés en atomes, molécules et organismes.
