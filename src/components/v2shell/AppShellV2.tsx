@@ -453,13 +453,13 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               sits on the left; search lives at the right, in one place.
               The same search control remains available on mobile. */}
           {breadcrumb && (
-            <nav className="asv2-topbar-breadcrumb" aria-label={t("Fil d’Ariane", "Breadcrumb")}>
+            <nav className="asv2-topbar-breadcrumb tt-crumbs" aria-label={t("Fil d’Ariane", "Breadcrumb")}>
               {breadcrumb.flatMap((item, i) => {
                 const isLast = i === breadcrumb.length - 1;
-                const sep = i > 0 ? [<span key={`sep-${i}`}>/</span>] : [];
+                const sep = i > 0 ? [<span key={`sep-${i}`} className="tt-crumbs-sep" aria-hidden="true">/</span>] : [];
                 const node = item.href && !isLast
                   ? <Link key={`l-${i}`} to={item.href}>{item.label}</Link>
-                  : <span key={`s-${i}`}>{item.label}</span>;
+                  : <span key={`s-${i}`} aria-current={isLast ? "page" : undefined}>{item.label}</span>;
                 return [...sep, node];
               })}
             </nav>

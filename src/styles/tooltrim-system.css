@@ -94,6 +94,7 @@
   --tt-title-xl-font: 500 clamp(2.75rem, 5.4vw, 4.5rem)/1.04 var(--tt-display); --tt-title-xl-tracking: -.022em;
   --tt-title-l-font: 500 1.5rem/1.15 var(--tt-display);  --tt-title-l-tracking: -.02em;
   --tt-title-m-font: 500 1.3125rem/1.2 var(--tt-display); --tt-title-m-tracking: -.017em;
+  --tt-title-section-font: 500 2rem/1.1 var(--tt-display); --tt-title-section-tracking: -.022em;
   --tt-label-font: 500 .9375rem/1.3 var(--tt-ui);   --tt-label-tracking: -.005em;
   --tt-text-font: var(--tt-w-text) 1rem/1.55 var(--tt-read);
   --tt-note-font: var(--tt-w-text) .875rem/1.4 var(--tt-read);
@@ -213,6 +214,7 @@
 /* ── Atomes : les classes ──────────────────────────────────────────────── */
 .tt-eyebrow { font: var(--tt-eyebrow-font); letter-spacing: var(--tt-eyebrow-tracking); text-transform: uppercase; font-feature-settings: "case"; color: var(--tt-ink); }
 .tt-title-xl { margin: 0; font: var(--tt-title-xl-font); letter-spacing: var(--tt-title-xl-tracking); text-wrap: balance; color: var(--tt-ink); }
+.tt-title-section { margin: 0; font: var(--tt-title-section-font); letter-spacing: var(--tt-title-section-tracking); text-wrap: balance; color: var(--tt-ink); }
 .tt-title-l { margin: 0; font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); text-wrap: balance; color: var(--tt-ink); }
 .tt-title-m { margin: 0; font: var(--tt-title-m-font); letter-spacing: var(--tt-title-m-tracking); text-wrap: balance; color: var(--tt-ink); }
 .tt-label { font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); color: var(--tt-ink); }
@@ -223,6 +225,14 @@
 :is(.tt-figure, .tt-amount) small { margin-left: 3px; font: var(--tt-unit-font); letter-spacing: 0; }
 :is(.tt-figure, .tt-amount)[data-gain] { color: var(--tt-gain-ink); }
 .tt-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 8px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); color: var(--tt-ink); white-space: nowrap; }
+.tt-tag--overlap { background: color-mix(in oklch, var(--tt-overlap) 14%, transparent); color: color-mix(in oklch, var(--tt-overlap) 78%, var(--tt-ink)); }
+.tt-tag--live { background: color-mix(in oklch, var(--tt-live) 14%, transparent); color: var(--tt-gain-ink); }
+/* Le fil d'Ariane : des liens en note, un séparateur en filigrane, la page courante appuyée. */
+.tt-crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font: var(--tt-note-font); color: var(--tt-ink); }
+.tt-crumbs a { color: inherit; text-decoration: none; background: linear-gradient(currentColor, currentColor) 100% 100% / 0 1px no-repeat; transition: background-size 320ms var(--tt-ease); }
+.tt-crumbs a:hover { background-position: 0 100%; background-size: 100% 1px; }
+.tt-crumbs-sep { color: var(--tt-meta); }
+.tt-crumbs [aria-current="page"] { font-weight: 500; }
 .tt-tile { display: grid; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-row { border: 0; border-radius: var(--tt-r-card); background: var(--tt-bg); color: var(--tt-ink); box-shadow: var(--tt-row-ring); transition: box-shadow var(--tt-dur-state) ease, opacity var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
 button.tt-row { cursor: pointer; font: inherit; text-align: left; }

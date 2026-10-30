@@ -42101,3 +42101,42 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button.tt-choice[data-state="kept"] { box-shadow: var(--tt-row-ring-on); }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button.tt-choice[data-state="gone"] { opacity: var(--tt-row-gone); }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .tt-choice .mf-face-name { font-weight: inherit !important; font-size: inherit !important; color: inherit !important; }
+
+/* ── Pont des atomes : Ma stack, du fil d'Ariane au pied de page (30 oct. 2026)
+   Chaque élément de la page lit le token de son atome (src/styles/tooltrim-system.css).
+   Modifier un atome dans le système modifie donc ces éléments aussi. Les
+   !important ne servent qu'à passer devant les couches historiques. */
+/* Fil d'Ariane (tout le site) */
+.asv2-topbar .asv2-topbar-breadcrumb.tt-crumbs, .asv2-topbar .asv2-topbar-breadcrumb.tt-crumbs > :is(a, span) { font: var(--tt-note-font) !important; letter-spacing: 0 !important; color: var(--tt-ink) !important; }
+.asv2-topbar .asv2-topbar-breadcrumb.tt-crumbs > .tt-crumbs-sep { color: var(--tt-meta) !important; }
+.asv2-topbar .asv2-topbar-breadcrumb.tt-crumbs > [aria-current="page"] { font-weight: 500 !important; }
+/* En-tête de Ma stack */
+.ms-page .ms-top .ms-personal-title-row h1 { font: var(--tt-title-xl-font) !important; letter-spacing: var(--tt-title-xl-tracking) !important; color: var(--tt-ink) !important; }
+.ms-page .ms-top .ms-top-status { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
+.ms-page .ms-top .ms-explore-stack { min-height: 40px; padding: 0 18px; border: 0; border-radius: var(--tt-r-pill); background: var(--tt-tile); color: var(--tt-ink); font: var(--tt-label-font) !important; letter-spacing: var(--tt-label-tracking); box-shadow: none; }
+.ms-page .ms-top .ms-explore-stack:hover { background: var(--tt-tile-2); }
+/* Titres de section et leurs lignes */
+.ms-page :is(.ms-stage-title, .ms-mod h2) { font: var(--tt-title-section-font) !important; letter-spacing: var(--tt-title-section-tracking) !important; color: var(--tt-ink) !important; }
+.ms-page .ms-all-sum, .ms-page .ms-recos .ms-stage-bar p { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
+.ms-page .ms-recos .ms-stage-bar p { font: var(--tt-text-font) !important; }
+/* Groupes et cartes d'outils */
+.ms-page .ms-inv-group > header, .ms-page .ms-inv-group :is(h3, .ms-inv-group-head) { font: var(--tt-label-font) !important; color: var(--tt-ink) !important; }
+.ms-page .ms-inv .ms-inv-card { border-radius: var(--tt-r-tile); background: var(--tt-tile); box-shadow: none; color: var(--tt-ink); transition: transform var(--tt-dur-press) ease, background-color var(--tt-dur-state) ease; }
+.ms-page .ms-inv .ms-inv-card:hover { background: var(--tt-tile-2); }
+.ms-page .ms-inv .ms-inv-card:active { transform: scale(.985); }
+.ms-page .ms-inv .ms-inv-name { font: var(--tt-label-font) !important; letter-spacing: var(--tt-label-tracking) !important; color: var(--tt-ink) !important; }
+.ms-page .ms-inv .ms-inv-cost { font: var(--tt-amount-font) !important; letter-spacing: var(--tt-amount-tracking) !important; color: var(--tt-ink) !important; font-variant-numeric: tabular-nums; }
+.ms-page .ms-inv .ms-inv-area { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
+.ms-page .ms-inv .ms-inv-logo :is(img, .tool-logo, .mk-app) { border-radius: var(--tt-logo-radius); box-shadow: var(--tt-logo-shadow); }
+.ms-page .ms-inv .ms-inv-status { display: inline-flex; align-items: center; justify-self: start; min-height: 22px; padding: 0 8px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); color: var(--tt-ink); font: var(--tt-tag-font) !important; }
+.ms-page .ms-inv .ms-inv-status[data-status="overlap"] { background: color-mix(in oklch, var(--tt-overlap) 14%, transparent); color: color-mix(in oklch, var(--tt-overlap) 78%, var(--tt-ink)); }
+.ms-page .ms-inv .ms-inv-status[data-status="ok"] { background: color-mix(in oklch, var(--tt-live) 14%, transparent); color: var(--tt-gain-ink); }
+/* « À découvrir » : cartes média et nouvelles pistes */
+.ms-page .ms-recos :is(h3, strong) { font: var(--tt-label-font) !important; letter-spacing: var(--tt-label-tracking) !important; color: var(--tt-ink) !important; }
+.ms-page .ms-recos p:not(.ms-stage-bar p), .ms-page .ms-recos small { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
+/* Pied de page (tout le site) */
+.tt-footer .tt-footer-tagline { font: var(--tt-title-section-font) !important; letter-spacing: var(--tt-title-section-tracking) !important; color: var(--tt-ink) !important; }
+.tt-footer .tt-footer-intro, .tt-footer .tt-footer-promise p:not(.tt-footer-tagline) { font: var(--tt-text-font) !important; color: var(--tt-ink) !important; }
+.tt-footer .tt-footer-col-label, .tt-footer .tt-footer-partners-label { font: var(--tt-eyebrow-font) !important; letter-spacing: var(--tt-eyebrow-tracking) !important; text-transform: uppercase; color: var(--tt-ink) !important; }
+.tt-footer .tt-footer-nav a, .tt-footer .tt-footer-col a { font: var(--tt-label-font) !important; letter-spacing: var(--tt-label-tracking) !important; color: var(--tt-ink) !important; }
+.tt-footer .tt-footer-legal, .tt-footer .tt-footer-legal :is(a, p, span, button) { font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
