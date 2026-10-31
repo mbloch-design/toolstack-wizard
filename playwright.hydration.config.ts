@@ -10,7 +10,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   failOnFlakyTests: !!process.env.CI,
   reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : base.reporter,
-  testMatch: "**/tool-hydration.spec.ts",
+  testMatch: ["**/tool-hydration.spec.ts", "**/home-loading.spec.ts"],
   testIgnore: [],
   use: { ...base.use, contextOptions: { ...base.use?.contextOptions, reducedMotion: "no-preference" }, baseURL: process.env.PLAYWRIGHT_BASE_URL || "http://127.0.0.1:8087" },
   webServer: process.env.PLAYWRIGHT_BASE_URL ? undefined : {

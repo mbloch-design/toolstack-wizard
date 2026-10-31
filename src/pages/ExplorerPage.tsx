@@ -16,6 +16,7 @@ import { useAddToStack } from "@/hooks/useAddToStack";
 import { scrollToTop, scrollContainerCandidate } from "@/lib/scroll";
 import { setSeoTags, setNoindex, removeNoindex, cleanupSeo, hasNonCanonicalSearchParams, SEO_BASE } from "@/lib/seo";
 import { trackEvent, whenAnalyticsReady } from "@/lib/analytics";
+import LoadingCaption from "@/components/motion/LoadingCaption";
 import {
   buildExplorationCandidates,
   usesAuditedExplorationRelations,
@@ -900,6 +901,7 @@ export default function ExplorerPage() {
           </div>
           {hasMoreCandidates && (
             <>
+              {isLoadingMore && <LoadingCaption phrases={[t("On aiguise les ciseaux…", "Sharpening the scissors…"), t("On compare les prix…", "Comparing prices…"), t("On vérifie les doublons…", "Checking for overlaps…")]} />}
               {isLoadingMore && (
                 <div className="ex-masonry-columns ex-masonry-skeletons" aria-hidden="true">
                   {Array.from({ length: Math.min(masonryColumnCount, filteredCandidates.length - visibleCandidates.length) }, (_, index) => (

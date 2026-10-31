@@ -246,6 +246,12 @@ export const TOOL_TUTORIALS: Record<string, ToolTutorial[]> = {
     sourceUrl: "https://www.youtube.com/watch?v=9Q5BoiIFBiY",
     publishedOn: "2025-06-09", verifiedOn: "2026-07-28",
   }],
+  displayswitcher: [{
+    provider: "youtube", videoId: "7Vg6Cy2w2Bw",
+    titleFr: "Présentation officielle de DisplaySwitcher", titleEn: "Official DisplaySwitcher overview",
+    author: "Nebula Software", duration: "Nebula Software",
+    sourceUrl: "https://www.youtube.com/watch?v=7Vg6Cy2w2Bw", verifiedOn: "2026-10-30",
+  }],
 };
 
 export function getToolTutorials(slug: string | undefined): ToolTutorial[] {

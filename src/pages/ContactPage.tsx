@@ -126,7 +126,7 @@ const ContactPage = () => {
                       : "We'll verify the submitted information. Publication still depends on our editorial criteria.",
                   )
                 : t(
-                    "On revient vers toi dans les 48 heures. Pas de réponse automatique : un humain lit ton message.",
+                    "On revient vers vous dans les 48 heures. Pas de réponse automatique : un humain lit votre message.",
                     "We'll get back to you within 48 hours. No auto-reply: a human reads your message.",
                   )}
             </p>
@@ -172,7 +172,7 @@ const ContactPage = () => {
           <p className="tt-page-hero-desc">
             {isToolSubmission
               ? t(
-                  "Présente-nous ton outil. Chaque proposition est vérifiée par un humain. Le badge accélère la revue, sans acheter la publication.",
+                  "Présentez-nous votre outil. Chaque proposition est vérifiée par un humain. Le badge accélère la revue, sans acheter la publication.",
                   "Tell us about your tool. Every submission is checked by a human. The badge speeds up review without buying publication.",
                 )
               : isPartnership
@@ -218,7 +218,7 @@ const ContactPage = () => {
 
               {isToolSubmission && (
                 <div className="tt-form-field">
-                  <label htmlFor="contact-role" className="tt-form-label">{t("Ton lien avec l'outil", "Your relationship to the tool")}</label>
+                  <label htmlFor="contact-role" className="tt-form-label">{t("Votre lien avec l'outil", "Your relationship to the tool")}</label>
                   <select id="contact-role" name="submitterRole" required defaultValue="" className="tt-form-input">
                     <option value="" disabled>{t("Sélectionner…", "Select…")}</option>
                     <option value="founder">{t("Fondateur·rice / équipe", "Founder / team")}</option>
@@ -236,7 +236,7 @@ const ContactPage = () => {
                     name="name"
                     type="text"
                     required
-                    placeholder={t("Ton nom", "Your name")}
+                    placeholder={t("Votre nom", "Your name")}
                     className="tt-form-input"
                     autoComplete="name"
                   />
@@ -285,7 +285,7 @@ const ContactPage = () => {
                   maxLength={2000}
                   placeholder={isToolSubmission
                     ? t("À qui s'adresse l'outil, quel problème résout-il et qu'est-ce qui le distingue ?", "Who is the tool for, what problem does it solve, and what makes it different?")
-                    : t("Décris ta demande…", "Describe your request…")}
+                    : t("Décrivez votre demande…", "Describe your request…")}
                   className="tt-form-input tt-form-textarea"
                 />
               </div>
@@ -316,7 +316,7 @@ const ContactPage = () => {
                     <img src="/tooltrim-badge.svg" alt={t("Découvrir ToolTrim", "Discover ToolTrim")} width={200} height={50} />
                   </div>
                   <div className="cn-badge-copy">
-                    <p>{t("Ajoute ce badge sur une page publique de ton site, puis indique son URL ci-dessous. Un lien vers ToolTrim est requis pour permettre la vérification.", "Add this badge to a public page on your website, then enter its URL below. A link to ToolTrim is required so we can verify it.")}</p>
+                    <p>{t("Ajoutez ce badge sur une page publique de votre site, puis indiquez son URL ci-dessous. Un lien vers ToolTrim est requis pour permettre la vérification.", "Add this badge to a public page on your website, then enter its URL below. A link to ToolTrim is required so we can verify it.")}</p>
                     <code>{'<a href="https://tooltrim.com"><img src="https://tooltrim.com/tooltrim-badge.svg" alt="Discover ToolTrim"></a>'}</code>
                   </div>
                   <div className="tt-form-field">
@@ -393,7 +393,7 @@ const ContactPage = () => {
                     {t(". Mise en avant visuelle payante bientôt disponible. Détail complet sur la ", ". Paid visual placement coming soon. Full detail on the ")}
                     <Link to={`${prefix}/transparency#financement`} className="ab-inline-link">{t("page transparence", "transparency page")}</Link>.
                   </> : <>
-                    {t("Ta réponse est probablement déjà dans la ", "Your answer is probably already in our ")}
+                    {t("Votre réponse est probablement déjà dans la ", "Your answer is probably already in our ")}
                     <Link to={`${prefix}/transparency`} className="ab-inline-link">{t("méthodologie", "methodology")}</Link>
                     {t(" ou dans la ", " or our ")}
                     <Link to={`${prefix}/transparency`} className="ab-inline-link">{t("page transparence", "transparency page")}</Link>.

@@ -21,7 +21,7 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) {
     const other = await second.newPage(); const otherErrors: string[] = []; other.on('pageerror', error => otherErrors.push(error.message)); await other.goto(`/${lang}/ma-stack`);
     await login(other, lang, 'roundtrip@example.invalid'); await saved(other, lang);
     expect(await snapshot(other)).toEqual(full);
-    await other.locator('.ms-tool').filter({ hasText: 'Notion' }).click();
+    await other.locator('.tt-toolcard').filter({ hasText: 'Notion' }).click();
     await other.getByRole('button', { name: lang === 'fr' ? 'Retirer de ma stack' : 'Remove from my stack', exact: true }).click();
     await saved(other, lang);
     await other.reload(); await saved(other, lang);

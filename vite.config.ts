@@ -1490,6 +1490,14 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             try {
               const markup = await renderHomePage(`/${lp.lang}`);
               html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+              // The critical extractor only retains simple class selectors.
+              // Homepage typography uses descendant selectors, so deferring the
+              // full bundle paints the generic hero before the editorial one.
+              // Apply the existing final CSS before the homepage's first paint.
+              html = html.replace(
+                /(<link rel="stylesheet" crossorigin href="\/assets\/[^\"]+\.css") media="print" onload="this.media='all'"/g,
+                "$1",
+              );
               if (compiledCssPath) {
                 const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
                 if (utilityCss) {

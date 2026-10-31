@@ -32,10 +32,10 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   await page.screenshot({path:test.info().outputPath(`stack-explorer-inspector-${lang}-${width}.png`)});
   await page.keyboard.press('Escape');
   await expect(page.locator('.ms-tool-sheet')).toHaveCount(0);
-  await expect(page.locator('.ms-tool[data-tool-id="figma"]')).toBeFocused();
-  await expect(page.locator('.ms-tool')).toHaveCount(2);
+  await expect(page.locator('.tt-toolcard[data-tool-id="figma"]')).toBeFocused();
+  await expect(page.locator('.tt-toolcard')).toHaveCount(2);
   await page.reload({waitUntil:'domcontentloaded'});
-  await expect(page.locator('.ms-tool')).toHaveCount(2);
+  await expect(page.locator('.tt-toolcard')).toHaveCount(2);
   const envelope=await page.evaluate(()=>JSON.parse(localStorage.getItem('tooltrim-personal-stack-v4:anonymous')||'{}'));
   expect(envelope.version).toBe(4);
   const stored=envelope.selection;

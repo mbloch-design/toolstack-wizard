@@ -1,4 +1,52 @@
+## 2026-10-30 · Ma stack sur le système, du fil d'Ariane au pied de page
+
+- Fil d'Ariane (tout le site) en molécule `.tt-crumbs` ; atome titre de section ; étiquettes `.tt-tag--overlap` / `--live`. Un pont d'atomes branche l'en-tête, les titres de section, les groupes, les cartes d'outils, « À découvrir », le budget et le pied de page sur les tokens d'atome.
+- « Vos usages » devient l'organisme `.tt-usage` de la planche : répondre à la souris fait avancer (700 ms pour lire la phrase), « Passer » / « Suivant » / « Terminer » au bout de l'échelle, retour et pause dans l'en-tête, échelle en barres fines. Au clavier, les flèches choisissent sans avancer. Test ajouté.
+- Vérifié : 1 045 tests, typecheck, gate, e2e accessibilité et hero Ma stack. Échecs connus inchangés : `pricing-audit-regressions` ×3 (déjà en to-do), fluidité instable sur serveur de dev.
+
+## 2026-10-30 · Design system : la couche d'atomes
+
+- Le système partagé est rangé en couches : tokens, atomes (token composite + classe), molécules, organismes. La carte de décision, la carte de verdict et les surcharges du site lisent les tokens d'atome : modifier un atome se répercute partout.
+- Planche : chapitre « Atomes » (chaque atome, sa classe, ses tokens, où il est utilisé) et atelier qui modifie les atomes en direct et copie les réglages ; organismes « budget » et « vos usages » dessinés uniquement en atomes (molécules « part d'un total » et « échelle d'usage »). Déclaration UTF-8 ajoutée à la source de la planche.
+- Site : carte de décision inchangée visuellement, désormais branchée sur les atomes. 1 044 tests, typecheck et gate passent.
+
+## 2026-10-30 · Ma stack : la carte de décision redessinée dans le système
+
+- Organisme `.tt-decision` et molécule `.tt-choice` (carte de verdict) ajoutés au système partagé, dessinés dans la planche (chapitre 06, « Décider »), puis appliqués à la carte de décision de Ma stack : tuile gris froid, surtitre et étapes en traits fins, titre en Uncut Sans, phrase en Inter, trois cartes de verdict en rangées (logo, « Garder X », ce qui quitte la stack, montant vert du gain), « Garder les deux » en dernier. Choix retenu : anneau bleu et coche qui rebondit ; les autres s'effacent ; validation en 180 ms conservée.
+- Fond teinté, pastille bleue, faces centrées et inclinées retirés ; les boutons quittent les classes `mf-face` / `mf-duel-both` (couches historiques en `@layer` avec `!important`) pour `mf-choice--keep` / `mf-choice--both`. Tests unitaires et e2e alignés.
+- Vérifié : 1 044 tests, typecheck, gate, e2e fluidité des décisions et hero Ma stack. Les e2e `account-experience` exigent la messagerie locale et les fournisseurs OAuth du banc dédié, absents du serveur de dev.
+
+## 2026-10-30 · Design system : les cas du site tranchés
+
+- Chapitre « À passer en design » de la planche : 9 cas réglés, 1 planifié, rangés en atomes, molécules et organismes.
+- Ma stack : jauge de coupe (`.tt-cutgauge`, système partagé) sous le budget dès qu'un montant est à examiner ; carte choisie du duel entourée de bleu, montant en vert, validation en 180 ms conservée ; « Passer » en bouton gris.
+- Soumettre un outil et Contact passent au vouvoiement ; tests unitaires et e2e alignés.
+- Champs du site au filet et halo bleu de la planche ; texte indicatif en gris.
+- Exception écrite : le bandeau de consentement garde deux boutons de même poids.
+- Planifié : vouvoiement du catalogue (≈ 1 800 phrases, source Supabase), chantier de contenu relu à la main.
+- Typecheck, 1 044 tests, gate des tokens, e2e soumission (16), accessibilité et hero Ma stack passent.
+- Suite design : atomes « retour » (toast d'encre), « attendre » (reflet `.tt-skeleton` et phrase `.tt-loadcap`, composant `LoadingCaption`) et molécule « carte qui s'incline » (`[data-tt-tilt]`, cartes « À la une » de l'explorateur) ajoutés au système partagé et appliqués.
+
+## 2026-10-30 · Design system : la planche devient la référence du site
+
+- Fichiers partagés `src/styles/tooltrim-system.css` (tokens `--tt-*`, composants `.tt-*`) et `src/styles/tooltrim-system.js` (comportement), importés par le site et inlinés dans la planche. Source de la planche dans `design-system/planche.html`, build `npm run planche` ; la planche reconstruite est identique à la version publiée (comparaison pixel, clair et sombre).
+- Lot 1 appliqué au site : les tokens historiques (`--color-bg`, surfaces, encre, bordure, accent, statut, polices) deviennent des alias des `--tt-*`, mode sombre compris ; texte secondaire et métadonnées passent à l'encre (règle « jamais de petit gris ») ; lecture en Inter à taille optique, interface en Inter Tight ; les appels qui mènent (hero, fiche outil, comparatif, pages secondaires, pied de page) prennent la pilule de la planche et son étoile filante au survol.
+- Lot 2 : rayons du système (cartes 16, tuiles 24), anneau de focus bleu unique, trait bleu sous l'onglet actif, puces actives en encre avec coche, interrupteurs à ressort, liens au trait qui se dessine, départ de Ma stack en encre avec étoile filante. Tokens de contrôle (`--tt-focus`, `--tt-tab-ink`, `--tt-switch-on`, `--tt-chip-on`) dans le système.
+- Lot 3, premier passage : sourire poli à l'annulation d'un retrait et à la limite du compteur de personnes ; souffle du gain derrière le budget allégé de Ma stack.
+- Lot 3, suite : verbes dans la recherche (« Dans ma stack », « Peut remplacer X »), ligne de coupe sous le budget allégé, coche qui rebondit à la copie du lien, gris de Ma stack à l'encre, champ du prénom au filet bleu.
+- E2E ciblés : accessibilité, hero Ma stack et fluidité passent (fluidité instable 1/36 sur serveur de dev) ; `card-system` échoue déjà sur `main` (3 tests), noté dans la to-do.
+- Les ciseaux du logo sont préparés dans le système mais pas appliqués (dernier chantier). Trim du duel Ma stack en attente d'arbitrage (`docs/TODO.md`).
+- La gate des tokens scanne aussi le fichier partagé. Typecheck, gate et 1 044 tests passent.
+
 ## 2026-10-30 — CI : assertions navigateur et récupération déterministe
+
+## 2026-10-30 — Accueil : supprimer le flash CSS et le changement de typo initial
+
+- Cause reproduite en production : le CSS critique ne retient pas les sélecteurs descendants du hero actuel. Le titre s’affichait d’abord en Inter Tight à 56 px, puis en Uncut Sans à 63,36 px sur desktop à l’arrivée du CSS principal différé.
+- Les accueils `/`, `/fr` et `/en` appliquent désormais le CSS principal avant le premier affichage. Aucun style ni composant visuel modifié ; le CSS compilé conserve exactement l’empreinte de production `index-Bbyfqpi-.css`. Les autres routes conservent leur chargement différé.
+- Régression navigateur intégrée à la suite sur HTML généré : CSS ralenti, typo du titre et du chrome stable en FR/EN à 1 440 et 390 px. Le test échoue sur la production avant correction et les quatre cas passent sur le build corrigé.
+- Validation : build de production complet PASS, TypeScript complet PASS, 1 044 tests applicatifs, 41 contrats SEO et 4 parcours navigateur PASS. Le build régénère aussi les fichiers LLM pour inclure DisplaySwitcher, déjà présent dans les données de main.
+- Le remplacement du HTML de l’accueil par `createRoot` reste un sujet distinct ; aucun changement d’hydratation dans ce correctif.
 
 - Périmètre limité aux tests : aucun changement de composant, de CSS ou de comportement produit. Les quatre parcours Ma Stack attendent le titre de doublon actuellement publié et vérifient les deux choix individuels ainsi que « Garder les deux ».
 - Les deux assertions d’usage restées à hauteur exacte sont alignées sur le comportement sans scroll déjà publié : hauteur minimale, commandes alignées au bord inférieur et au bord droit de la carte, contrôles de chevauchement et de cibles conservés. Cela ne réintroduit pas une hauteur fixe dans le produit.

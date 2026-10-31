@@ -8,6 +8,25 @@ Légende : **[décision]** = attend un arbitrage de Michael.
 
 ## En cours
 
+- [ ] **[décision]** Trim dans le duel de Ma stack : le geste (ligne de coupe, outil qui tombe, souffle du gain) demande ~800 ms, mais la décision est validée en 180 ms depuis `cc0780e3` (27/10, fluidité, test « settles a pair within 200 ms »). Options : garder 180 ms et jouer le trim après coup sur le budget, ou rallonger à ~800 ms (30/10/2026).
+- [x] Design system : 10 cas du site absents de la planche ajoutés au chapitre « À passer en design » de la planche, avec capture (`design-system/cases/`), statut et question à trancher (30/10/2026). Les décisions se prennent dans la planche.
+- [x] Design system lot 1 (30/10/2026) : tokens du site en alias des `--tt-*`, typographie trois rôles, appels qui mènent avec étoile filante.
+- [x] Design system lot 2 (30/10/2026) : rayons (cartes 16, tuiles 24), focus bleu unique, trait bleu des onglets, puces avec coche, interrupteurs à ressort, liens au trait qui se dessine, départ de Ma stack en encre. Restent : champs, cartes de verdict.
+- [ ] P1 E2E `card-system.spec.ts` : 3 tests échouent déjà sur `main` sans le design system (carte média introuvable, capture compacte, bouton « Ouvrir Travailler avec l'IA » absent), vérifié le 30/10/2026 dans un worktree propre. Après le design system, la capture compacte devra être régénérée.
+- [ ] P2 E2E `stack-decision-fluidity.spec.ts` : instable sur serveur de dev (1 échec sur 36, cas différent à chaque passe : boutons pas encore désactivés juste après le clic), 30/10/2026.
+- [x] Design system lot 3, premier passage (30/10/2026) : « … est de retour. On ne juge pas. » à l'annulation d'un retrait, le compteur de personnes répond « Il faut bien quelqu'un pour payer. » à la limite, souffle du gain derrière le budget allégé.
+- [x] Design system lot 3, suite (30/10/2026) : les verbes dans la recherche (« Dans ma stack », « Peut remplacer X », seulement quand c'est sûr), ligne de coupe sous le budget allégé, copie du lien qui se change en coche, gris restants de Ma stack à l'encre, champ du prénom au filet et halo bleus.
+- [x] Cas du chapitre « À passer en design » tranchés (30/10/2026) : jauge de coupe sous le budget de Ma stack, carte choisie du duel entourée de bleu (180 ms conservés), « Passer » en bouton gris, Soumettre et Contact au vouvoiement, exception écrite pour le consentement.
+- [ ] P1 Contenu : passer le catalogue au vouvoiement (≈ 1 800 phrases : `keepIf`, `avoidIf`, `threshold`, descriptions, étapes ; source Supabase), puis les libellés « Pour toi si / Pas pour toi si » de la fiche outil. Relecture humaine, pas de conversion aveugle.
+- [x] Champs du site (`.tt-form-input`, prénom de Ma stack, recherche) au filet et halo bleu de la planche ; texte indicatif en gris (30/10/2026).
+- [ ] P2 Design system : Ma stack garde un bouton principal bleu (« C'est parti ») ; la planche dit encre. À aligner avec le lot 2.
+- [x] Ma stack sur le système, du fil d'Ariane au pied de page (30/10/2026) : « Vos usages » en organisme `.tt-usage`, budget, inventaire, découverte et pied de page branchés sur les atomes.
+- [ ] P2 (en cours) Design system : remplacer à terme le « pont d'atomes » de Ma stack (règles `!important` en fin de `index.css`) par un markup en classes `.tt-*` et supprimer les couches historiques `mf-*` / `ms-*` / `mu-*` devenues inutiles.
+  - [x] 31/10/2026 : en-tête de page, budget, répartition, inventaire, découverte, fil d'Ariane et pied de page écrits en classes `.tt-*` ; 510 règles mortes de plus retirées de `index.css`. Barre de l'inventaire faite le 31/10 (`.tt-toolbar`, `.tt-fchip`, `.tt-select`, `.tt-iconswitch`, aussi dans la planche). Tableau `.tt-board` (décision et usages à gauche, budget à droite, répartition dessous, comme la planche) et premier outil `.tt-starter` faits le 31/10 ; toute la grille `.mf-grid` retirée. Restent : cartes média `ToolCardEditorial`, intérieur historique de la carte de décision (`mf-now`) et de « Vos usages » (`mu-*`).
+- [ ] P2 E2E `stack-budget.spec.ts` (FR) : le prix de Claude s'affiche « 17,17 €/mois », le test attend « 17 €/mois ». Vient des prix exacts (`c8335c7e`) ou d'une conversion : vérifier la règle de devise (31/10/2026).
+- [ ] P2 E2E `responsive-shell.spec.ts` « Explorer et Ma stack » : la graine écrit encore `tooltrim-ma-stack-mvp-v2`, la page s'ouvre vide ; réécrire sur le magasin personnel (31/10/2026).
+- [ ] P3 Design system : la vitrine de micro-animations de la planche garde sa propre inclinaison ; la brancher sur `[data-tt-tilt]` du système.
+- [ ] P3 Design system, en dernier : les ciseaux du logo qui font « clic » (prêt dans le système, `.tt-blade`).
 - [x] P1 E2E comptes : `full personal state survives new device` (×4) visait `.ms-account`, absent une fois la stack synchronisée ; il vise désormais la pastille « Stack enregistrée » (23/10/2026).
 - [ ] **[décision]** Landing Ma stack : confirmer « gratuit, sans carte bancaire » et « supprimez vos données quand vous voulez » comme engagements publics.
 - [ ] P2 Onboarding : recompter `src/data/tradeTools.ts` quand les stacks éditoriales changent beaucoup (comptage du 23/10/2026).

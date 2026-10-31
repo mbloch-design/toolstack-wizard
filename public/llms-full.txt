@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1247
+# Records: 1248
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
@@ -53906,6 +53906,49 @@
         "Dynamic QR codes depend on an active subscription",
         "Public rates are displayed monthly but billed annually",
         "CSV export and detailed analytics require Core or a higher plan"
+      ]
+    }
+  },
+  {
+    "name": "DisplaySwitcher",
+    "slug": "displayswitcher",
+    "url_fr": "https://tooltrim.com/fr/tool/displayswitcher",
+    "url_en": "https://tooltrim.com/en/tool/displayswitcher",
+    "website": "https://nebulasoftware.com/product/displayswitcher/",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent. Essai d'un mois, carte bancaire requise, résiliable depuis le compte.",
+      "paid": "5,95 $/mois, formule unique."
+    },
+    "description_fr": "Application de bureau (Linux/macOS/Windows) qui bascule l'entrée vidéo d'un moniteur compatible DDC/CI par simple clic, et transfère texte et fichiers entre plusieurs ordinateurs sans configuration réseau ni pare-feu.",
+    "description_en": "Desktop application (Linux/macOS/Windows) that switches a DDC/CI-compatible monitor's video input with a single click, and transfers text and files between computers with no network or firewall configuration needed.",
+    "price_verified_on": "2026-10-29",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Ton moniteur supporte DDC/CI et tu bascules régulièrement entre plusieurs ordinateurs dont au moins un n'a pas de logiciel de switch fourni par le fabricant",
+      "avoid_if": "Ton moniteur ne supporte pas DDC/CI, ou tu n'utilises qu'un seul ordinateur sur ce poste : l'outil n'a alors aucune utilité",
+      "strengths": [
+        "Fonctionne depuis n'importe quel ordinateur connecté, y compris pour faire basculer un moniteur depuis un poste qui ne le supporterait pas nativement",
+        "Le transfert de texte et de fichiers entre systèmes d'exploitation différents évite les clés USB ou les partages réseau à configurer"
+      ],
+      "weaknesses": [
+        "Sur Linux, l'accès DDC/CI demande une configuration système (groupe i2c ou règle udev), et Wayland peut bloquer l'accès bas niveau",
+        "La version Mac ne fonctionne que sur Apple Silicon ; aucun support pour les Mac Intel"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "Your monitor supports DDC/CI and you regularly switch between several computers, at least one of which has no manufacturer-provided switching software",
+      "avoid_if": "Your monitor doesn't support DDC/CI, or you only use one computer at that desk: the tool then serves no purpose",
+      "strengths": [
+        "Works from any connected computer, including triggering a switch from a machine that couldn't do it natively on its own",
+        "Text and file transfer across different operating systems avoids USB sticks or network shares to configure"
+      ],
+      "weaknesses": [
+        "On Linux, DDC/CI access requires system configuration (i2c group or udev rule), and Wayland can block low-level access",
+        "The Mac version only runs on Apple Silicon; no support for Intel Macs"
       ]
     }
   }

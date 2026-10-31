@@ -54,7 +54,7 @@ for (const [lang, width] of [['fr',390], ['en',1440]] as const) {
       ['event','explorer_save',{source_type:'stack',intent:'stack'}],
       ['event','explorer_back',{source_type:'stack'}],
     ]);
-    await expect(page.locator('.ms-tool')).toHaveCount(2);
+    await expect(page.locator('.tt-toolcard')).toHaveCount(2);
     const payload = JSON.stringify(await events(page));
     expect(payload).not.toMatch(/private-client|Client confidentiel|Private client|figma/);
   });

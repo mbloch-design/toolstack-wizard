@@ -66,6 +66,10 @@
     {
       "source": "/:lang(fr|en)/tool/kit",
       "headers": [{ "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://rtfyfuwfdpnsogovkwai.supabase.co https://*.google-analytics.com https://www.googletagmanager.com https://cdn.simpleicons.org https://t3.gstatic.com https://icons.duckduckgo.com; media-src 'self' https://piktochart.com https://resource.flexclip.com https://www.mybetterdayai.com https://assets.faceready.co https://maniana.ai; frame-src https://fast.wistia.net/embed/iframe/z0e60vz71d; object-src 'none'; base-uri 'self'" }]
+    },
+    {
+      "source": "/:lang(fr|en)/tool/displayswitcher",
+      "headers": [{ "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://rtfyfuwfdpnsogovkwai.supabase.co https://*.google-analytics.com https://www.googletagmanager.com https://cdn.simpleicons.org https://t3.gstatic.com https://icons.duckduckgo.com; media-src 'self' https://piktochart.com https://resource.flexclip.com https://www.mybetterdayai.com https://assets.faceready.co https://maniana.ai; frame-src https://www.youtube-nocookie.com/embed/7Vg6Cy2w2Bw; object-src 'none'; base-uri 'self'" }]
     }
   ],
   "redirects": [

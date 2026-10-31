@@ -29,7 +29,7 @@ it("verifies a return without paid=1 and removes the draft only after a successf
   await screen.findByText("Paiement confirmé : fiche prioritaire");
   expect(window.localStorage.getItem("tt_submit_draft")).not.toBeNull();
   fireEvent.click(screen.getByRole("button",{name:"Envoyer pour revue →"}));
-  await screen.findByText("Ta fiche prioritaire est lancée.");
+  await screen.findByText("Votre fiche prioritaire est lancée.");
   expect(window.localStorage.getItem("tt_submit_draft")).toBeNull();
   const sent = JSON.parse(String(request.mock.calls.find(([url])=>String(url).endsWith("/api/contact"))?.[1]?.body));
   expect(sent.checkoutId).toBe("ch_local123"); expect(sent.paymentReference).toBe("7ec2090a-9157-43c9-9238-f8931667420d"); expect(sent.paid).toBe(true);
@@ -87,9 +87,9 @@ it("keeps the accepted success screen even if clearing storage fails",async()=>{
  mount(); await screen.findByText("Paiement confirmé : fiche prioritaire");
  window.localStorage.removeItem=()=>{throw new DOMException("blocked","SecurityError");};
  fireEvent.click(screen.getByRole("button",{name:"Envoyer pour revue →"}));
- await screen.findByText("Ta fiche prioritaire est lancée.");
+ await screen.findByText("Votre fiche prioritaire est lancée.");
  await act(async()=>{await new Promise(resolve=>setTimeout(resolve,30));});
- expect(screen.getByText("Ta fiche prioritaire est lancée.")).toBeInTheDocument();
+ expect(screen.getByText("Votre fiche prioritaire est lancée.")).toBeInTheDocument();
 });
 it("binds payments started from a free-plan upgrade",async()=>{
  request.mockImplementation(async()=>new Response(JSON.stringify({success:true})));
@@ -128,7 +128,7 @@ it("does not crash or trust malformed saved fields",async()=>{
 it('legacy_paid_reference_preserved_as_stable_submission_id',async()=>{
  request.mockImplementation(async()=>new Response(JSON.stringify({verified:true,success:true})));
  mount();await screen.findByText('Paiement confirmé : fiche prioritaire');
- fireEvent.click(screen.getByRole('button',{name:'Envoyer pour revue →'}));await screen.findByText('Ta fiche prioritaire est lancée.');
+ fireEvent.click(screen.getByRole('button',{name:'Envoyer pour revue →'}));await screen.findByText('Votre fiche prioritaire est lancée.');
  const sent=request.mock.calls.find(([url])=>String(url).endsWith('/api/contact'));
  expect(JSON.parse(String(sent?.[1]?.body)).submissionId).toBe(draft.paymentReference);
 });
@@ -165,7 +165,7 @@ it('successful_free_badge_is_not_blocked_by_progress_email_failure',async()=>{
 it('complete_free_details_survive_failed_submission_and_reload',async()=>{
  window.localStorage.clear();request.mockImplementation(async url=>new Response(JSON.stringify(String(url).endsWith('/verify-badge')?{token:'badge-proof'}:String(url).endsWith('/contact')?{error:'submission_store_unavailable'}:{success:true}),{status:String(url).endsWith('/contact')?503:200}));
  const view=mount('/fr/submit');await completeFreeBadge();await screen.findByText('Badge vérifié : revue standard');
- fireEvent.change(screen.getByLabelText("Ton lien avec l'outil"),{target:{value:'founder'}});fireEvent.change(screen.getByLabelText('Ton nom'),{target:{value:'Ada'}});fireEvent.change(screen.getByLabelText('Ce que nous devons comprendre'),{target:{value:'Complete description'}});
+ fireEvent.change(screen.getByLabelText("Votre lien avec l'outil"),{target:{value:'founder'}});fireEvent.change(screen.getByLabelText('Votre nom'),{target:{value:'Ada'}});fireEvent.change(screen.getByLabelText('Ce que nous devons comprendre'),{target:{value:'Complete description'}});
  fireEvent.click(screen.getByRole('button',{name:'Envoyer pour revue →'}));await screen.findByRole('alert');
  const saved=JSON.parse(window.localStorage.getItem('tt_submit_draft')!);expect(saved).toMatchObject({name:'Ada',submitterRole:'founder',message:'Complete description',badgeUrl:'https://example.com/badge',verificationToken:'badge-proof'});
  view.unmount();mount('/fr/submit');await completeFreeBadge();await screen.findByText('Badge vérifié : revue standard');expect(screen.getByLabelText('Ce que nous devons comprendre')).toHaveValue('Complete description');
@@ -174,7 +174,7 @@ it('lost_accepted_paid_reply_recovers_on_reload_when_creem_is_down',async()=>{
  request.mockImplementation(async url=>{if(String(url).endsWith('/contact'))throw new TypeError('response lost');return new Response(JSON.stringify({verified:true}));});
  const view=mount();await screen.findByText('Paiement confirmé : fiche prioritaire');fireEvent.click(screen.getByRole('button',{name:'Envoyer pour revue →'}));await screen.findByRole('alert');
  view.unmount();request.mockClear();request.mockImplementation(async url=>new Response(JSON.stringify(String(url).endsWith('/contact')?{success:true}:{error:'payment_verification_unavailable'}),{status:String(url).endsWith('/contact')?200:503}));
- mount();await screen.findByText('Ta fiche prioritaire est lancée.');expect(request.mock.calls.some(([url])=>String(url).endsWith('/verify-payment'))).toBe(false);expect(JSON.parse(String(request.mock.calls[0][1]?.body)).replayOnly).toBe(true);
+ mount();await screen.findByText('Votre fiche prioritaire est lancée.');expect(request.mock.calls.some(([url])=>String(url).endsWith('/verify-payment'))).toBe(false);expect(JSON.parse(String(request.mock.calls[0][1]?.body)).replayOnly).toBe(true);
 });
 
 it('earlier_accepted_attempt_recovers_before_trying_newer_unaccepted_drafts',async()=>{
@@ -183,18 +183,18 @@ it('earlier_accepted_attempt_recovers_before_trying_newer_unaccepted_drafts',asy
  const attempted=JSON.parse(window.localStorage.getItem('tt_submit_draft')!);window.localStorage.setItem('tt_submit_draft:'+draft.paymentReference,JSON.stringify(attempted));
  window.localStorage.setItem('tt_submit_draft',JSON.stringify({...draft,paymentReference:'be43674d-33c4-41d0-9490-82b9695b7c7a',toolName:'Newer'}));
  request.mockClear();request.mockImplementation(async url=>new Response(JSON.stringify(String(url).endsWith('/contact')?{success:true}:{error:'payment_verification_unavailable'}),{status:String(url).endsWith('/contact')?200:503}));
- mount();await screen.findByText('Ta fiche prioritaire est lancée.');expect(request.mock.calls.some(([url])=>String(url).endsWith('/verify-payment'))).toBe(false);
+ mount();await screen.findByText('Votre fiche prioritaire est lancée.');expect(request.mock.calls.some(([url])=>String(url).endsWith('/verify-payment'))).toBe(false);
  expect(JSON.parse(window.localStorage.getItem('tt_submit_draft')!).toolName).toBe('Newer');
 });
 
 it('malformed_final_success_keeps_the_complete_recovery_draft',async()=>{
  request.mockImplementation(async url=>new Response(JSON.stringify(String(url).endsWith('/contact')?{}:{verified:true})));
  mount();await screen.findByText('Paiement confirmé : fiche prioritaire');fireEvent.click(screen.getByRole('button',{name:'Envoyer pour revue →'}));await screen.findByRole('alert');
- expect(window.localStorage.getItem('tt_submit_draft')).not.toBeNull();expect(screen.queryByText('Ta fiche prioritaire est lancée.')).not.toBeInTheDocument();
+ expect(window.localStorage.getItem('tt_submit_draft')).not.toBeNull();expect(screen.queryByText('Votre fiche prioritaire est lancée.')).not.toBeInTheDocument();
 });
 it('lost_accepted_free_reply_recovers_without_rechecking_an_unavailable_badge_page',async()=>{
  window.localStorage.clear();request.mockImplementation(async url=>{if(String(url).endsWith('/contact'))throw new TypeError('lost reply');return new Response(JSON.stringify(String(url).endsWith('/verify-badge')?{token:'badge-proof'}:{success:true}));});
- const view=mount('/fr/submit');await completeFreeBadge();await screen.findByText('Badge vérifié : revue standard');fireEvent.change(screen.getByLabelText("Ton lien avec l'outil"),{target:{value:'founder'}});fireEvent.change(screen.getByLabelText('Ton nom'),{target:{value:'Ada'}});fireEvent.change(screen.getByLabelText('Ce que nous devons comprendre'),{target:{value:'Full free details'}});fireEvent.click(screen.getByRole('button',{name:'Envoyer pour revue →'}));await screen.findByRole('alert');view.unmount();
+ const view=mount('/fr/submit');await completeFreeBadge();await screen.findByText('Badge vérifié : revue standard');fireEvent.change(screen.getByLabelText("Votre lien avec l'outil"),{target:{value:'founder'}});fireEvent.change(screen.getByLabelText('Votre nom'),{target:{value:'Ada'}});fireEvent.change(screen.getByLabelText('Ce que nous devons comprendre'),{target:{value:'Full free details'}});fireEvent.click(screen.getByRole('button',{name:'Envoyer pour revue →'}));await screen.findByRole('alert');view.unmount();
  request.mockClear();request.mockImplementation(async url=>new Response(JSON.stringify(String(url).endsWith('/contact')?{success:true}:{error:'page_unreachable'}),{status:String(url).endsWith('/contact')?200:503}));
  mount('/fr/submit');await screen.findByText(/est dans la file de revue standard\./);expect(JSON.parse(String(request.mock.calls[0][1]?.body)).replayOnly).toBe(true);expect(request.mock.calls.some(([url])=>String(url).endsWith('/verify-badge'))).toBe(false);
 });

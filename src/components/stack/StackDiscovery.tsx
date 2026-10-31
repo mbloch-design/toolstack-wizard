@@ -37,14 +37,14 @@ export default function StackDiscovery({ candidates, lang, prefix, sourceIds, se
     });
     trackEvent('stack_explorer_click', { source: 'recos_refresh' });
   };
-  return <section className="ms-mod ms-recos" aria-labelledby="ms-recos-title">
-    <header className="ms-stage-bar">
-      <div><h2 id="ms-recos-title" className="ms-stage-title">{t('À découvrir', 'Discover something new')}</h2>
-        <p className="ms-recos-sub">{t('D’autres approches à découvrir autour de vos outils. La prochaine bonne pioche est peut-être ici.', 'Fresh approaches around your tools. Your next good find could be here.')}</p>
+  return <section className="tt-section" data-section="discovery" aria-labelledby="ms-recos-title">
+    <header className="tt-sectionhead">
+      <div><h2 id="ms-recos-title" className="tt-title-section">{t('À découvrir', 'Discover something new')}</h2>
+        <p className="tt-text">{t('D’autres approches à découvrir autour de vos outils. La prochaine bonne pioche est peut-être ici.', 'Fresh approaches around your tools. Your next good find could be here.')}</p>
       </div>
-      <Link className="ms-recos-more" to={getExplorerHref(prefix, { type: 'stack' })} state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`, ...(explorerSources?.length ? { explorerStackSources: explorerSources } : {}) }} onClick={() => trackEvent('stack_explorer_click', { source: 'recos' })}><Compass size={16} aria-hidden />{t('Explorer les pistes', 'Explore more ideas')}</Link>
+      <Link className="link2 tt-label" to={getExplorerHref(prefix, { type: 'stack' })} state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`, ...(explorerSources?.length ? { explorerStackSources: explorerSources } : {}) }} onClick={() => trackEvent('stack_explorer_click', { source: 'recos' })}><Compass size={16} aria-hidden />{t('Explorer les pistes', 'Explore more ideas')}</Link>
     </header>
-    {round.cards.length > 0 ? <ul ref={list} className="ms-recos-grid" aria-label={t("Idées à découvrir", "Ideas to discover")}>{round.cards.map(candidate => {
+    {round.cards.length > 0 ? <ul ref={list} className="tt-mediacards" aria-label={t("Idées à découvrir", "Ideas to discover")}>{round.cards.map(candidate => {
       const { tool } = candidate;
       const added = selectedIds.includes(tool.id);
       const pending = pendingSlug === (tool.slug || tool.id);
@@ -59,7 +59,7 @@ export default function StackDiscovery({ candidates, lang, prefix, sourceIds, se
             {pending ? <RefreshCw size={20} aria-hidden /> : added ? <Check size={20} aria-hidden /> : <Plus size={20} aria-hidden />}
           </button>} />
       </li>;
-    })}</ul> : <p className="ms-discovery-empty">{t('La curiosité ne s’arrête pas aux liens du catalogue. Ouvrez l’Explorer pour choisir votre piste.', 'Curiosity goes beyond catalogue connections. Open the Explorer to choose your direction.')}</p>}
-    {more && <div className="ms-discovery-renew"><Button variant="secondary" icon={<RefreshCw size={16} aria-hidden />} onClick={renew}>{t('D’autres pistes', 'More ideas')}</Button></div>}
+    })}</ul> : <p className="tt-text">{t('La curiosité ne s’arrête pas aux liens du catalogue. Ouvrez l’Explorer pour choisir votre piste.', 'Curiosity goes beyond catalogue connections. Open the Explorer to choose your direction.')}</p>}
+    {more && <div className="tt-section-foot"><Button variant="secondary" icon={<RefreshCw size={16} aria-hidden />} onClick={renew}>{t('D’autres pistes', 'More ideas')}</Button></div>}
   </section>;
 }

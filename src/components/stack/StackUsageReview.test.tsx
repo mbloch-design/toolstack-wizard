@@ -197,10 +197,10 @@ it.each([1,2,3,4,5])('records level %i without advancing or overwriting another 
 it('labels the current tool position independently of recorded answers while reviewing', () => {
   render(<Harness initial={[1,5]} />);
   fireEvent.click(screen.getByRole('button',{name:'Revoir mes usages'}));
-  expect(screen.getByLabelText('Outil 1 sur 2')).toHaveTextContent('1 / 2');
+  expect(screen.getByLabelText('Outil 1 sur 2')).toHaveTextContent('1 sur 2');
   expect(screen.getByRole('button',{name:'Outil précédent'})).toBeDisabled();
   fireEvent.click(screen.getByRole('button',{name:'Suivant'}));
-  expect(screen.getByLabelText('Outil 2 sur 2')).toHaveTextContent('2 / 2');
+  expect(screen.getByLabelText('Outil 2 sur 2')).toHaveTextContent('2 sur 2');
   expect(screen.getByRole('button',{name:'Terminer'})).toBeEnabled();
 });
 
@@ -233,4 +233,18 @@ it('offers a real per-tool summary with direct correction and missing answers', 
   fireEvent.click(screen.getByRole('button',{name:'Résumé'}));
   expect(screen.getByRole('button',{name:'Modifier l’usage de Grammarly : Souvent'})).toBeVisible();
   expect(screen.getByLabelText('Recorded values')).toHaveTextContent('[1,4]');
+});
+
+it('advances on its own after a pointer answer, but not after a keyboard choice', () => {
+  vi.useFakeTimers();
+  render(<Harness />);
+  fireEvent.click(screen.getByRole('radio', { name: 'Peu — Usage faible' }), { detail: 1 });
+  expect(screen.getByRole('heading', { name: 'Motion Array' })).toBeVisible();
+  act(() => { vi.advanceTimersByTime(700); });
+  expect(screen.getByRole('heading', { name: 'Grammarly' })).toBeVisible();
+  fireEvent.click(screen.getByRole('radio', { name: 'Souvent — Usage soutenu' }));
+  act(() => { vi.advanceTimersByTime(1000); });
+  expect(screen.getByRole('heading', { name: 'Grammarly' })).toBeVisible();
+  expect(screen.getByLabelText('Recorded values')).toHaveTextContent('[1,4]');
+  vi.useRealTimers();
 });

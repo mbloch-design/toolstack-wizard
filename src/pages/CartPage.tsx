@@ -15,7 +15,7 @@ import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
 import { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
 import StackToolSheet from "@/components/stack/StackToolSheet";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
-import { ActionRow, AppIcon, Button, Segmented } from "@/components/stack/StackKit";
+import { ActionRow, AppIcon, Button } from "@/components/stack/StackKit";
 import { comparisonPath } from "@/lib/comparisonLinks";
 import { decisionSavingInCurrency, latestRemovedStackDecisions } from "@/lib/stackDecisions";
 import { useLang } from "@/hooks/useLang";
@@ -338,7 +338,8 @@ export default function CartPage() {
     requestAnimationFrame(() => addRef.current?.focus({ preventScroll: true }));
     toast(t(`${name} retiré de ma stack.`, `${name} removed from your stack.`), {
       duration: 6000,
-      action: { label: t("Annuler", "Undo"), onClick: () => restoreTool(entry, index) },
+      // Système ToolTrim, le sourire : poli, une fois par geste.
+      action: { label: t("Annuler", "Undo"), onClick: () => { restoreTool(entry, index); toast(t(`${name} est de retour. On ne juge pas.`, `${name} is back. No judgement.`), { duration: 2500 }); } },
     });
   }
   // Filter motion (FLIP): cards leaving the filter fade out first, the ones
@@ -414,15 +415,15 @@ export default function CartPage() {
     const status = statusOf(tool);
     const cost = info.kind === "paid" ? `${info.cost}${t("/mois", "/mo")}` : info.kind === "unknown" ? t("Prix ?", "Price?") : info.cost;
     const areaLabel = area ? (area.id === "assist" ? t("IA", "AI") : area.label) : "";
-    return <div key={tool.id} className="ms-card-wrap" data-flip-id={tool.id}>
-      <button type="button" data-tool-id={tool.id} data-status={status} className={`ms-tool ms-inv-card${active ? " ms-tool--selected" : ""}`} aria-haspopup="dialog"
+    return <div key={tool.id} className="tt-toolcard-wrap" data-flip-id={tool.id}>
+      <button type="button" data-tool-id={tool.id} data-tool-name={tool.name} data-status={status} className={`tt-toolcard${active ? " is-selected" : ""}`} aria-haspopup="dialog"
         aria-label={`${tool.name}, ${cost}, ${statusLabel[status]}`} tabIndex={editing ? -1 : undefined}
         onClick={(event) => { if (editing) return; lastToolButton.current = event.currentTarget; if (active) closeInspector(); else selectTool(toolKey(tool)); }}>
-        <span className="ms-inv-logo" aria-hidden="true"><AppIcon tool={tool} /></span>
-        <span className="ms-inv-name" aria-hidden="true">{tool.name}</span>
-        <span className="ms-inv-area" aria-hidden="true"><i style={area ? { background: colorOf(area.id) } : undefined} />{areaLabel}</span>
-        <span className="ms-inv-cost" data-tone={info.kind} aria-hidden="true">{cost}</span>
-        <span className="ms-inv-status" data-status={status} aria-hidden="true">{statusLabel[status]}</span>
+        {/* Molécule « carte d'outil » du système : logo, montant, nom, état. */}
+        <ToolLogo tool={tool} size={40} className="tt-logo-tile" />
+        <span className="tt-amount" data-tone={info.kind} aria-hidden="true">{info.kind === "paid" ? <>{info.cost}<small>{t("/mois", "/mo")}</small></> : cost}</span>
+        <span className="tt-label" aria-hidden="true">{tool.name}</span>
+        <span className="tt-toolcard-foot" aria-hidden="true"><span className={`tt-tag${status === "overlap" ? " tt-tag--overlap" : status === "ok" ? " tt-tag--live" : ""}`}>{statusLabel[status]}</span>{groupBy !== "area" && areaLabel && <span className="tt-note">{areaLabel}</span>}</span>
       </button>
       {/* Edit mode (iOS home screen): a minus badge removes the tool, with undo. */}
       {editing && <button type="button" className="ms-card-remove" onClick={() => removeTool(slug, tool.name)} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}><Minus size={14} aria-hidden /></button>}
@@ -494,15 +495,17 @@ export default function CartPage() {
         is checked, then the stack itself at the centre, read through lenses,
         and the next decision beside it. On a phone the deck comes first. */}
     {/* Hero (22/10/2026): a status line, the title, one sentence. */}
-    <header className="ms-top ms-personal-hero">
+    {/* Organisme « en-tête de page » du système : surtitre, grand titre, note ; l'action rare à droite. */}
+    <header className="tt-pagehead">
       <StackPersonalWelcome empty={false} pending={deckItems.length + usagePending}>
-        <div className="ms-personal-title-row">
-          <h1 ref={inventoryHeadingRef} tabIndex={-1}>{t("Mes outils", "My tools")}</h1>
-          <p className="ms-top-status">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""} dans votre stack`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""} in your stack`)}</p>
+        <div className="tt-pagehead-title">
+          <span className="tt-eyebrow">{t("Ma stack", "My stack")}</span>
+          <h1 ref={inventoryHeadingRef} tabIndex={-1} className="tt-title-xl">{t("Mes outils", "My tools")}</h1>
+          <p className="tt-note">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""} dans votre stack`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""} in your stack`)}</p>
         </div>
       </StackPersonalWelcome>
       {state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) && <Link
-          className="ms-explore-stack" to={getExplorerHref(prefix, { type: "stack" })}
+          className="tt-btn tt-btn--grey" to={getExplorerHref(prefix, { type: "stack" })}
           state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`,
             explorerStackSources: state.toolEntries.filter(entry => entry.intent === "stack").flatMap(entry => { const tool = lookup.get(entry.toolSlug); return tool ? [toolKey(tool)] : []; }) }}
           onClick={() => trackEvent("stack_explorer_click", { source: "whole_stack" })}>
@@ -543,10 +546,10 @@ export default function CartPage() {
       <div className="ms-board">
         {/* 1. The stack itself, one box to see it: by area, as cards or as a list, sorted from a menu. Add and edit live here. */}
         <section className="ms-mod ms-mod--inventory ms-all" aria-labelledby="ms-all-title">
-          <div className="ms-stage-bar">
+          <div className="tt-sectionhead">
             <div>
-              <div className="ms-inventory-heading"><h2 id="ms-all-title" tabIndex={-1} className="ms-stage-title">{t("Ma stack", "My stack")}</h2><StackAccountPanel placement="inline" /></div>
-              <p className="ms-all-sum">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</p>
+              <div className="ms-inventory-heading"><h2 id="ms-all-title" tabIndex={-1} className="tt-title-section">{t("Ma stack", "My stack")}</h2><StackAccountPanel placement="inline" /></div>
+              <p className="tt-note">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</p>
             </div>
             <div className="ms-tools-actions">
               {/* The one primary action of the section. */}
@@ -565,33 +568,34 @@ export default function CartPage() {
               : [{ id: "all", label: "", tools: shown, subtotal: 0 }];
             return <>
               {/* Three controls, three affordances: filter chips for what needs me, menus to group and sort, icons for the layout. */}
-              <div className="ms-inv-bar">
-                <Segmented mode="toggle" className="ms-inv-filters" label={t("Filtrer par statut", "Filter by status")} value={statusFilter} onChange={(id) => setStatusFilter(id)}
-                  options={[{ id: "all", label: t("Tous", "All"), count: counts.all }, ...(counts.review ? [{ id: "review" as const, label: t("À vérifier", "To check"), count: counts.review }] : []), ...(counts.overlap ? [{ id: "overlap" as const, label: t("Doublons", "Overlaps"), count: counts.overlap }] : [])]} />
-                <div className="ms-inv-tools">
-
-                  <label className="ms-sort"><span>{t("Trier :", "Sort:")}</span>
+              <div className="tt-toolbar">
+                <div className="tt-fchips" role="group" aria-label={t("Filtrer par statut", "Filter by status")}>
+                  {[{ id: "all" as const, label: t("Tous", "All"), count: counts.all }, ...(counts.review ? [{ id: "review" as const, label: t("À vérifier", "To check"), count: counts.review }] : []), ...(counts.overlap ? [{ id: "overlap" as const, label: t("Doublons", "Overlaps"), count: counts.overlap }] : [])].map((option) =>
+                    <button key={option.id} type="button" className={`tt-fchip${option.id === "overlap" ? " tt-fchip--dup" : ""}`} aria-pressed={statusFilter === option.id} onClick={() => setStatusFilter(option.id)}>{option.label}<span className="tt-fchip-count">{option.count}</span></button>)}
+                </div>
+                <div className="tt-toolbar-tools">
+                  <label className="tt-select"><span>{t("Trier :", "Sort:")}</span>
                     <select value={sortBy} onChange={(event) => sortTo(event.target.value as typeof sortBy)} aria-label={t("Trier mes outils", "Sort my tools")}>
                       <option value="area">{t("Domaine", "Area")}</option>
                       <option value="cost">{t("Coût", "Cost")}</option>
                       <option value="name">{t("Nom", "Name")}</option>
                       <option value="recent">{t("Ajout récent", "Recently added")}</option>
-                    </select><ChevronDown size={14} aria-hidden /></label>
-                  <div className="ms-layout" role="group" aria-label={t("Affichage", "Layout")}>
-                    <button type="button" aria-pressed={layout === "grid"} aria-label={t("Grille", "Grid")} title={t("Grille", "Grid")} onClick={() => setLayout("grid")}><LayoutGrid size={16} aria-hidden /></button>
-                    <button type="button" aria-pressed={layout === "list"} aria-label={t("Liste", "List")} title={t("Liste", "List")} onClick={() => setLayout("list")}><List size={16} aria-hidden /></button>
+                    </select><ChevronDown aria-hidden /></label>
+                  <div className="tt-iconswitch" role="group" aria-label={t("Affichage", "Layout")}>
+                    <button type="button" aria-pressed={layout === "grid"} aria-label={t("Grille", "Grid")} title={t("Grille", "Grid")} onClick={() => setLayout("grid")}><LayoutGrid aria-hidden /></button>
+                    <button type="button" aria-pressed={layout === "list"} aria-label={t("Liste", "List")} title={t("Liste", "List")} onClick={() => setLayout("list")}><List aria-hidden /></button>
                   </div>
                   {/* Edit acts on the grid right below, so it lives with the other view controls. */}
-                  <span className="ms-inv-edit"><Button aria-pressed={editing} icon={editing ? <Check size={16} aria-hidden /> : <Pencil size={16} aria-hidden />} onClick={() => { setSearchOpen(false); setEditing((value) => !value); }}>{editing ? t("Terminé", "Done") : t("Modifier", "Edit")}</Button></span>
+                  <button type="button" className="tt-btn tt-btn--grey" aria-pressed={editing} onClick={() => { setSearchOpen(false); setEditing((value) => !value); }}>{editing ? <Check aria-hidden /> : <Pencil aria-hidden />}{editing ? t("Terminé", "Done") : t("Modifier", "Edit")}</button>
                 </div>
               </div>
-              <div id="ms-all-grid" className="ms-inv" data-layout={layout} data-grouped={groupBy === "area" ? "" : undefined} data-editing={editing || undefined} ref={gridRef} role="group" aria-label={t("Mes outils", "My tools")}>
-                {groups.map((group) => <section key={group.id} className="ms-inv-group" aria-label={group.label || undefined}>
-                  {group.label && <header className="ms-inv-head"><i aria-hidden="true" style={{ background: colorOf(group.id) }} /><h3>{group.label}</h3>
-                    <span>{t(`${group.tools.length} outil${group.tools.length > 1 ? "s" : ""}`, `${group.tools.length} tool${group.tools.length > 1 ? "s" : ""}`)}{group.subtotal > 0 && <> · {money(group.subtotal)}{group.tools.some(tool => unreviewed.some(item => item.id === tool.id) || unknownTools.some(item => item.id === tool.id)) && t(" · partiel", " · partial")}</>}</span></header>}
-                  <div className="ms-inv-items">{group.tools.map(renderTool)}</div>
+              <div id="ms-all-grid" className="tt-groups" data-layout={layout} data-grouped={groupBy === "area" ? "" : undefined} data-editing={editing || undefined} ref={gridRef} role="group" aria-label={t("Mes outils", "My tools")}>
+                {groups.map((group) => <section key={group.id} className="tt-group" aria-label={group.label || undefined}>
+                  {group.label && <header className="tt-groupname" style={{ ["--c" as string]: colorOf(group.id) }}><i aria-hidden="true" /><h3 className="tt-label">{group.label}</h3>
+                    <span className="tt-note">{t(`${group.tools.length} outil${group.tools.length > 1 ? "s" : ""}`, `${group.tools.length} tool${group.tools.length > 1 ? "s" : ""}`)}{group.subtotal > 0 && <> · {money(group.subtotal)}{group.tools.some(tool => unreviewed.some(item => item.id === tool.id) || unknownTools.some(item => item.id === tool.id)) && t(" · partiel", " · partial")}</>}</span></header>}
+                  <div className="tt-toolcards" data-layout={layout}>{group.tools.map(renderTool)}</div>
                 </section>)}
-                {shown.length === 0 && <p className="ms-inv-empty">{t("Rien ici. Tout est à jour.", "Nothing here. All up to date.")}</p>}
+                {shown.length === 0 && <p className="tt-note">{t("Rien ici. Tout est à jour.", "Nothing here. All up to date.")}</p>}
               </div>
             </>;
           })()}

@@ -4,6 +4,19 @@ Référence du système de design éditorial. Mis à jour au fil des sessions.
 
 ---
 
+## La planche est la référence (30 oct. 2026)
+
+La planche « Système ToolTrim » est la source de vérité du design du site, jamais l'inverse.
+
+- **Un seul fichier partagé** : `src/styles/tooltrim-system.css`. Tokens `--tt-*` et composants `.tt-*` (le signe qui fait clic, la ligne de coupe, le fil, les trois verbes, le souffle du gain, le trim). Le site l'importe en tête de `src/index.css` ; la planche l'inline.
+- **La source de la planche** vit dans `design-system/planche.html`. Ses tokens courts (`--brand`, `--ink`…) sont des alias des `--tt-*`. `npm run planche` construit `design-system/dist/systeme-tooltrim.html` (police du site inlinée), qu'on republie sur le même lien d'artefact.
+- **Modifier le design** : changer `tooltrim-system.css` (ou la planche pour un composant pas encore partagé), reconstruire, republier. Le site suit au prochain build.
+- **Un composant passe dans le site** en déménageant de la planche vers `tooltrim-system.css` avec le préfixe `tt-` ; la planche l'utilise alors depuis ce fichier.
+- **Sens inverse** : un cas du site que la planche ne couvre pas est d'abord ajouté au chapitre « À passer en design » de la planche (capture dans `design-system/cases/`, statut Décision / Écart / Absent, question à trancher), avant d'être retravaillé.
+- Mode sombre : classe `.dark` (le site la pose ; la planche aussi, d'après `data-theme` ou le système). La gate des tokens scanne aussi le fichier partagé.
+- **Système atomique (30 oct. 2026)** : chaque atome est un token composite (`--tt-eyebrow-font`, `--tt-title-l-font`, `--tt-label-font`, `--tt-text-font`, `--tt-note-font`, `--tt-figure-font`, `--tt-amount-font`, `--tt-gain-ink`, `--tt-tile-pad`, `--tt-row-ring*`, `--tt-row-gone`, `--tt-logo-*`…) et une classe (`.tt-eyebrow`, `.tt-title-l`, `.tt-label`, `.tt-text`, `.tt-note`, `.tt-figure`, `.tt-amount`, `.tt-tag`, `.tt-tile`, `.tt-row`, `.tt-logo-tile`, `.tt-check`, `.tt-steps`, `.tt-btn`). Molécules (`.tt-choice`, `.tt-share`, `.tt-scale`, `.tt-cutgauge`) et organismes (`.tt-decision`) ne lisent que ces tokens, comme les règles du site qui les empruntent. Modifier un atome = modifier son token, une seule fois. La planche a un chapitre « Atomes » avec un atelier qui change les tokens en direct et copie les réglages.
+- **Ma stack composée du système (31 oct. 2026)** : la page s'écrit en classes `.tt-*` du fil d'Ariane au pied de page : en-tête `.tt-pagehead`, budget `.tt-budget`, répartition `.tt-split`, inventaire `.tt-groups` / `.tt-toolcards` avec sa barre `.tt-toolbar` (puces `.tt-fchip`, tri `.tt-select`, affichage `.tt-iconswitch`, « Modifier » en `.tt-btn--grey`), découverte `.tt-section` / `.tt-mediacards`. Le haut de page est le tableau `.tt-board`, lu constat, action, détail : `.tt-board-side` à gauche (budget : ce que coûte la stack, ce qui est à examiner), `.tt-board-main` à droite (décision ou premier outil `.tt-starter`, puis vos usages), la répartition en pleine largeur dessous. L'ordre du DOM est l'ordre de lecture, donc la même suite sur une colonne (sous 900 px). Les mêmes molécules servent la planche (gabarit Ma stack).
+
 ## ToolLogo — composant unique pour les logos outils
 
 **Règle absolue** : tout affichage d'un logo outil doit passer par `<ToolLogo tool={...} size={N} />`.
@@ -193,6 +206,7 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 - **Boutons d'interface** (formulaires, panneaux, back-office) : `.tt-button-primary` (pilule encre 40px) et `.tt-button-secondary` (pilule gris froid, sans contour), 14px/500.
 - **Action de section** : `.tt-section-action`, 15px/500 encre, flèche 16px.
 - Ne plus créer de bouton local (`.foo-btn`, `.foo-cta`) : composer avec ces quatre classes.
+- **Exception écrite (30 oct. 2026)** : le bandeau de consentement garde deux boutons de même poids. Refuser doit être aussi simple qu'accepter.
 - Les rails éditoriaux utilisent `CarouselControls` et `CarouselPagination` : boutons circulaires de 36px, icônes de 16px, état désactivé à faible contraste et pagination active en pilule de 20px. Ne pas recréer de contrôles locaux.
 - Dans une galerie ou un rail, les images portent la présence visuelle ; la typographie ne doit pas les concurrencer.
 - Les kickers sont facultatifs. Ne pas en ajouter uniquement pour donner artificiellement de la hauteur au header.
