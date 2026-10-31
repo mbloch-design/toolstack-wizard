@@ -8008,11 +8008,6 @@ section[id]:not(.cp-guide-section) {
   margin-bottom: 4px;
 }
 .tt-footer-col a {
-  font-family: var(--font-ui);
-  font-size: var(--tt-size-fact-compact);
-  font-weight: 450;
-  letter-spacing: -0.01em;
-  color: var(--tt-footer-text);
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 4px;
@@ -18143,7 +18138,7 @@ img[data-logo-loading] {
 .tt-footer .tt-footer-nav { grid-column: 5 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 24px; row-gap: 40px; align-content: start; }
 .tt-footer .tt-footer-col { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; min-width: 0; }
 .tt-footer .tt-footer-col-label { margin-bottom: 4px; }
-.tt-footer .tt-footer-col a { font: 400 15px/1.4 var(--font-ui); letter-spacing: -.01em; color: var(--tt-footer-link); text-decoration: none; transition: color 160ms ease; }
+.tt-footer .tt-footer-col a { text-decoration: none; transition: color 160ms ease; }
 .tt-footer .tt-footer-col a:hover { color: var(--tt-footer-ink); }
 
 /* Badges: a labelled strip between two hairlines, uniform cells, grey until
@@ -23182,7 +23177,8 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 /* « À découvrir » : cartes média et nouvelles pistes */
 /* Pied de page (tout le site) : ses éléments portent leurs classes d'atome. Les liens
    des colonnes et des mentions héritent de l'atome de leur conteneur. */
-.tt-footer .tt-footer-col a.tt-label { font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); color: var(--tt-ink); }
+/* Les liens des colonnes portent l'atome label par la colonne : pas de classe par lien, 3,4 Mio de HTML en moins sur 13 000 pages. */
+.tt-footer .tt-footer-col a { font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); color: var(--tt-ink); }
 .tt-footer .tt-footer-legal :is(a, span, button) { font: inherit; letter-spacing: inherit; color: inherit; }
 /* « Vos usages » : l'organisme du système (.tt-usage), planche chapitre 06. */
 .ms-page .mf .mu-card.tt-usage { display: grid; align-content: start; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile) !important; box-shadow: none !important; color: var(--tt-ink); }
