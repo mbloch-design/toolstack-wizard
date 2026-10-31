@@ -109,7 +109,9 @@
   --tt-unit-font: var(--tt-w-text) .875rem/1 var(--tt-read);
   --tt-gain-ink: color-mix(in oklch, var(--tt-live) 72%, var(--tt-ink));
   /* Surfaces */
-  --tt-tile-pad: 28px;
+  --tt-tile-pad: 32px;             /* l'air autour du contenu d'une carte */
+  --tt-tile-gap: 20px;             /* entre les blocs d'une carte */
+  --tt-board-gap: 20px;            /* entre les cartes d'un bento */
   --tt-row-pad: 12px 18px 12px 12px;
   --tt-row-ring: 0 0 0 1px var(--tt-line);
   --tt-row-ring-hover: 0 0 0 1px color-mix(in oklch, var(--tt-ink) 35%, var(--tt-line));
@@ -238,7 +240,7 @@
 .tt-crumbs a:hover { background-position: 0 100%; background-size: 100% 1px; }
 .tt-crumbs-sep { color: var(--tt-meta); }
 .tt-crumbs [aria-current="page"] { font-weight: 500; }
-.tt-tile { display: grid; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-tile { display: grid; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-row { border: 0; border-radius: var(--tt-r-card); background: var(--tt-bg); color: var(--tt-ink); box-shadow: var(--tt-row-ring); transition: box-shadow var(--tt-dur-state) ease, opacity var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
 button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-row:is(button, a):hover:not(:disabled) { box-shadow: var(--tt-row-ring-hover); }
@@ -297,7 +299,7 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-head { display: flex; align-items: center; justify-content: space-between; gap: 8px 12px; flex-wrap: wrap; }
 
 /* ── Organisme : le budget ──────────────────────────────────────────────── */
-.tt-budget { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-budget { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-budget .tt-figure { display: flex; align-items: baseline; margin: 0; }
 /* Le compteur garde des chiffres proportionnels : la forme des chiffres d'Uncut Sans. */
 .tt-figure :is(.mk-odo, .mk-odo *) { font-variant-numeric: normal; }
@@ -363,22 +365,28 @@ button.tt-budget-trust { cursor: pointer; }
 
 /* ── Organisme : la répartition ─────────────────────────────────────────── */
 /* Le chiffre, une barre empilée fine à la couleur des domaines, la légende. */
-/* Organisme : le tableau de Ma stack, lu constat, action, détail. À gauche le budget
-   (ce que coûte la stack, ce qui est à examiner), à droite la décision puis vos usages,
-   la répartition dessous en pleine largeur. L'ordre du DOM est l'ordre de lecture :
-   sur une colonne, on lit la même suite. */
-.tt-board { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 12px; align-items: start; }
-.tt-board-main, .tt-board-side { display: grid; gap: 12px; min-width: 0; }
+/* Organisme : le tableau de Ma stack, un bento lu constat, action, détail.
+   Rangée 1 : le budget (ce que coûte la stack, ce qui est à examiner), puis la décision
+   qui l'explique. Rangée 2 : vos usages, puis la répartition. Les cartes d'une rangée
+   ont la même hauteur et leurs bords s'alignent. L'ordre du DOM est l'ordre de lecture :
+   sur une colonne, on lit la même suite. Une carte absente laisse sa place à sa voisine. */
+.tt-board { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "budget decide" "usage split"; gap: var(--tt-board-gap); align-items: stretch; }
+.tt-board:not(:has(> :is(.tt-decision, .tt-starter))) { grid-template-areas: "budget usage" "split split"; }
+.tt-board:not(:has(> .tt-usage)) { grid-template-areas: "budget decide" "split split"; }
+.tt-board:not(:has(> .tt-split)) { grid-template-areas: "budget decide" "usage usage"; }
+.tt-board:not(:has(> .tt-split)):not(:has(> .tt-usage)) { grid-template-areas: "budget decide"; }
+.tt-board:not(:has(> .tt-split)):not(:has(> :is(.tt-decision, .tt-starter))) { grid-template-areas: "budget usage"; }
 /* Le tableau place seul ses cartes : aucune position héritée ne passe. */
-.tt-board > .tt-board-main > [class], .tt-board > .tt-board-side > [class] { grid-area: auto; min-width: 0; height: auto; }
-.tt-board > .tt-split { grid-column: 1 / -1; min-width: 0; }
-.tt-board-main:empty { display: none; }
-.tt-board:has(> .tt-board-main:empty) { grid-template-columns: minmax(0, 1fr); }
-@media (max-width: 900px) { .tt-board { grid-template-columns: minmax(0, 1fr); } }
+.tt-board > .tt-budget[class] { grid-area: budget; }
+.tt-board > :is(.tt-decision, .tt-starter)[class] { grid-area: decide; }
+.tt-board > .tt-usage[class] { grid-area: usage; }
+.tt-board > .tt-split[class] { grid-area: split; }
+.tt-board > [class] { min-width: 0; height: auto; margin: 0; }
+@media (max-width: 900px) { .tt-board, .tt-board[class] { grid-template-columns: minmax(0, 1fr); grid-template-areas: none; } .tt-board > [class][class] { grid-area: auto; } }
 
 /* Organisme : le premier outil. Une place prise, deux places libres en pointillé
    qui se penchent au survol, puis l'appel à en ajouter d'autres. */
-.tt-starter { display: grid; justify-items: start; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-starter { display: grid; justify-items: start; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-starter .tt-title-m { margin: 0; }
 .tt-starter .tt-text { max-width: 46ch; }
 .tt-seats { display: flex; gap: 10px; }
@@ -390,7 +398,7 @@ button.tt-budget-trust { cursor: pointer; }
 .tt-starter:hover .tt-seat:nth-child(3) { transform: rotate(5deg) translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { .tt-seat { transition: none; } .tt-starter:hover .tt-seat { transform: none; } }
 
-.tt-split { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-split { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-split-bar { display: flex; gap: 3px; height: 10px; }
 .tt-split-bar i { flex: var(--f, 1); min-width: 6px; border-radius: var(--tt-r-pill); background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow 900ms var(--tt-ease) both; }
 .tt-split-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 4px 24px; margin: 0; padding: 0; list-style: none; }
@@ -451,7 +459,7 @@ button.tt-budget-trust { cursor: pointer; }
 /* Pensé pour le geste : répondre fait avancer, tout se joue sur une bande.
    En-tête : retour, étapes, « Plus tard ». Puis l'outil, puis l'échelle avec
    « Passer » en sixième colonne. L'outil suivant glisse à sa place. */
-.tt-usage { container-type: inline-size; display: grid; gap: 18px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-usage { container-type: inline-size; display: grid; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-usage-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; }
 .tt-usage-where { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
 .tt-usage-acts { display: inline-flex; align-items: center; gap: 8px; margin-left: auto; }
@@ -480,7 +488,7 @@ button.tt-budget-trust { cursor: pointer; }
 /* Assemblée d'atomes : la tuile, un surtitre et ses étapes en traits fins,
    le titre en affichage, une phrase en lecture, puis des cartes de verdict
    en rangées. Le bleu ne sert qu'au choix retenu. */
-.tt-decision { display: grid; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-decision { display: grid; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-decision-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .tt-decision-title { margin: 0; font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); text-wrap: balance; }
 .tt-decision-detail { margin: 0; font: var(--tt-text-font); }

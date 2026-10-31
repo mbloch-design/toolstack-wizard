@@ -23207,7 +23207,7 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .tt-footer .tt-footer-col a.tt-label { font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); color: var(--tt-ink); }
 .tt-footer .tt-footer-legal :is(a, span, button) { font: inherit; letter-spacing: inherit; color: inherit; }
 /* « Vos usages » : l'organisme du système (.tt-usage), planche chapitre 06. */
-.ms-page .mf .mu-card.tt-usage { display: grid; align-content: start; gap: 18px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile) !important; box-shadow: none !important; color: var(--tt-ink); }
+.ms-page .mf .mu-card.tt-usage { display: grid; align-content: start; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile) !important; box-shadow: none !important; color: var(--tt-ink); }
 .ms-page .mf .mu-card.tt-usage::before, .ms-page .mf .mu-card.tt-usage::after { display: none; }
 .ms-page .mf .mu-card.tt-usage .tt-usage-head h2 { margin: 0; font: var(--tt-eyebrow-font) !important; letter-spacing: var(--tt-eyebrow-tracking) !important; text-transform: uppercase; color: var(--tt-ink) !important; }
 .ms-page .mf .mu-card.tt-usage .mu-scene { display: grid; gap: 18px; padding: 0; animation: tt-usage-in 420ms var(--tt-ease) both; }
