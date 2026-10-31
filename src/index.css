@@ -18904,11 +18904,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 /* ── Findings: price, the one decision, what comes next ──────────────────── */
 .ms-page .mf { margin: 0 0 var(--space-3xl); }
-.ms-page .mf-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: minmax(300px, auto); gap: var(--space-sm); }
 .ms-page .mf-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: var(--space-xl); border-radius: var(--ms-r); background: var(--ms-tile); animation: mf-rise 560ms var(--ms-ease) both; }
-.ms-page .mf-grid > :nth-child(2) { animation-delay: 60ms; }
-.ms-page .mf-grid > :nth-child(3) { animation-delay: 120ms; }
-.ms-page .mf-grid > :nth-child(4) { animation-delay: 180ms; }
 @keyframes mf-rise { from { opacity: 0; transform: translateY(12px); } }
 .ms-page .mf-now { grid-column: span 2; }
 /* Label: words only, the type does the work. */
@@ -18942,19 +18938,15 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Bento (22/10/2026): four columns, blocks of different sizes, ~480px tall.
    Price (tall, narrow) | decision (wide) | coming up
    Price               | balance (wide)  | what if */
-.ms-page .mf-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, .95fr); grid-template-rows: minmax(250px, auto) minmax(210px, auto); align-items: stretch; }
 .ms-page .mf-card { padding: var(--space-lg); }
 .ms-page .mf-now { grid-column: 2 / span 2; grid-row: 1; }
 .ms-page .mf-balance { grid-column: 2 / span 2; grid-row: 2; }
-.ms-page .mf-grid:not(:has(.mf-queue-card)) .mf-now { grid-column: 2 / span 3; }
-.ms-page .mf-grid:not(:has(.mf-whatif)) .mf-balance { grid-column: 2 / span 3; }
 .ms-page .mf-card h3 { font-size: 20px; }
 .ms-page .mf-now .mf-t { font-size: 14px; }
 .ms-page .mf-now .mf-vs { padding-top: var(--space-md); gap: 6px; font-size: 13px; }
 .ms-page .mf-now .mf-vs + .mf-bar-actions, .ms-page .mf-bar-actions { margin-top: var(--space-md); padding-top: var(--space-md); }
 /* Balance: a small radar beside the ranked areas. */
 /* Height budget: the bottom row is as tall as its content, the list shows 4. */
-.ms-page .mf-grid { grid-template-rows: auto auto; }
 /* Price rows: the row fills with the tool's share (a storage bar you read as a list). */
 /* Balance: a large bare radar, its legend beside it in bigger type. */
 .ms-page .mf-balance .mk-radar { max-width: 230px; }
@@ -18973,18 +18965,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf-balance .mk-radar { max-width: 170px; }
 /* Coming up, in a narrow column: icons above, one line of text. */
 /* What if: a live total and one switch per paid tool. */
-@media (max-width: 1180px) {
-  .ms-page .mf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; }
-  .ms-page .mf-grid > .mf-card { grid-column: auto; grid-row: auto; }
-  .ms-page .mf-grid .mf-now, .ms-page .mf-grid .mf-balance { grid-column: 1 / -1; }
-}
-@media (max-width: 760px) {
-  .ms-page .mf-grid { grid-template-columns: minmax(0, 1fr); }
-}
-
-@media (max-width: 860px) {
-  .ms-page .mf-grid .mf-balance { grid-column: auto; grid-row: auto; }
-}
 /* Radar: the budget by vertical, a soft gradient shape. */
 .ms-page .mk-radar { display: block; width: 100%; max-width: 280px; height: auto; margin: 0 auto; overflow: visible; }
 .ms-page .mf-balance { overflow: hidden; }
@@ -19073,7 +19053,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mk-odo-strip { transition: none; }
 }
 @media (max-width: 860px) {
-  .ms-page .mf-grid { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
   .ms-page .mf-now { grid-row: auto; grid-column: auto; }
   .ms-page .mf-now { min-height: 260px; }
   .ms-page .mf-stage { position: static; margin-bottom: var(--space-md); }
@@ -21481,8 +21460,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mk-radar-label[data-empty] text { opacity: .55; }
 /* Review pass (22/10/2026): one anatomy per card (label, headline at one size,
    content), rows sized by content, no gaps in the middle of cards. */
-.ms-page .mf .mf-grid { grid-template-rows: auto auto; align-items: start; }
-.ms-page .mf .mf-grid > .mf-card { height: 100%; }
 .ms-page .mf .mf-k.tt-kicker { margin-bottom: var(--space-sm); }
 .ms-page .mf .mf-card.mf-now h3 { margin: 0 0 var(--space-md); padding-right: 0; color: var(--ms-ink); font: 500 17px/1.3 var(--ap-font); letter-spacing: -.01em; }
 .ms-page .mf .mf-card.mf-now h3 { margin-bottom: 4px; padding-right: 150px; font: 600 22px/1.2 var(--ap-display); letter-spacing: -.02em; }
@@ -21528,14 +21505,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Proportion follows importance: price and decision lead, health and cheaper share a side column,
    balance is a low band underneath. */
 @media (min-width: 1181px) {
-  .ms-page .mf .mf-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1.15fr) minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1fr) auto;
-    grid-template-areas: "price now now health" "price now now cheaper" "bal bal bal bal";
-    align-items: stretch;
-  }
-  .ms-page .mf .mf-grid > .mf-now { grid-area: now; }
-  .ms-page .mf .mf-grid > .mf-balance { grid-area: bal; height: auto; }
 
   /* Balance band: the sentence on the left, the radar and its figures on the right. */
   .ms-page .mf .mf-balance { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr); grid-template-rows: auto 1fr; column-gap: var(--space-xl); align-items: start; padding-block: var(--space-lg); }
@@ -21569,12 +21538,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Bento v3 (23/10): the decision only as tall as it needs; cheaper and health
    share the row under it; balance stands as a column on the right. */
 @media (min-width: 1181px) {
-  .ms-page .mf .mf-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-rows: auto auto;
-    grid-template-areas: "price now now bal" "price cheaper health bal";
-  }
-  .ms-page .mf .mf-grid > .mf-balance { height: 100%; }
   .ms-page .mf .mf-balance { display: flex; flex-direction: column; padding-block: var(--space-lg); }
   .ms-page .mf .mf-balance .mk-radar { max-width: 200px; }
 }
@@ -21611,10 +21574,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Bento v4 (23/10): where the money goes, wide, beside the price; the decision
    stands as a tall column on the right, its faces stacked like a card deck. */
 @media (min-width: 1181px) {
-  .ms-page .mf .mf-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.15fr);
-    grid-template-areas: "price bal bal now" "price cheaper health now";
-  }
   .ms-page .mf .mf-balance { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); grid-template-rows: auto 1fr; column-gap: var(--space-lg); align-items: start; }
   .ms-page .mf .mf-balance > .mf-k { grid-column: 1; }
   .ms-page .mf .mf-balance .mk-radar { max-width: 170px; }
@@ -21628,8 +21587,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-links { justify-content: flex-start; gap: var(--space-2xs) var(--space-md); }
 }
 @media (min-width: 1181px) {
-  .ms-page .mf .mf-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr); }
-  .ms-page .mf .mf-grid > .mf-now { display: flex; flex-direction: column; }
   .ms-page .mf .mf-card.mf-now h3 { padding-right: 0; }
   .ms-page .mf .mf-now .mf-t { max-width: none; }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-face-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -21645,9 +21602,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-bar-actions { margin-top: 0; }
 }
 /* Bento v5: no box just to say "all good": the optimisation box takes the space. */
-@media (min-width: 1181px) {
-  .ms-page .mf .mf-grid { grid-template-areas: "price bal bal now" "price cheaper cheaper now"; }
-}
 /* Budget split (23/10): verdict, one line of proof, then a radar as large as its figures. */
 @media (min-width: 1181px) {
   .ms-page .mf .mf-balance { grid-template-rows: auto auto auto 1fr; }
@@ -21665,7 +21619,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 /* The decision block reads as the one place to act (23/10): the only raised
    white card of the bento, a fine ring in the rare ToolTrim blue, a filled label. */
-.ms-page .mf .mf-grid > .mf-now { background: var(--ms-card); box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--color-accent) 55%, transparent), 0 18px 40px -22px color-mix(in srgb, var(--color-accent) 45%, rgb(0 0 0 / .4)); }
 .ms-page .mf .mf-now .mf-plan { background: var(--ms-tile); box-shadow: none; }
 .ms-page .mf .mf-now .mf-plan:hover { box-shadow: inset 0 0 0 1.5px var(--color-accent); }
 @media (min-width: 1181px) {
@@ -21679,8 +21632,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    the finding as the headline, one line of why, the icon top right, the
    actions bottom right. */
 @media (min-width: 1181px) {
-  .ms-page .mf .mf-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto auto; grid-template-areas: "price now now" "price bal fit"; }
-  .ms-page .mf .mf-grid > .mf-fit { grid-area: fit; }
   /* The decision is wide again: faces side by side. */
   .ms-page .mf .mf-now[data-kind="pair"] .mf-duel { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); margin-block: var(--space-md) 0; }
   .ms-page .mf .mf-now .mf-plans { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
@@ -21744,9 +21695,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    wide, beside optimisation on the second. The wide split puts its chart on
    the left and the legend on the right. */
 @media (min-width: 1181px) {
-  .ms-page .mf .mf-grid { grid-template-areas: "price now now" "bal bal fit"; }
-}
-@media (min-width: 1181px) {
   .ms-page .mf .mf-now[data-kind="pair"] .mf-duel { margin-top: var(--space-lg); }
 }
 @media (min-width: 1181px) {
@@ -21774,16 +21722,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-card { padding: var(--space-md); }
   .ms-page .mf .mf-card:not([data-open]) > :not(.mf-k):not(.mf-lead):not(h3):not(.mk-figure):not(.mf-now-q) { display: none; }
   .ms-page .mf .mf-card:not([data-open]).mf-now h3 { margin-bottom: 0; font-size: 19px; }
-  .ms-page .mf .mf-grid { gap: var(--space-xs); }
 }
 /* Tablet and phone: one column for the phone, two for the tablet; the
    decision comes first on a phone so the action is in the first screen. */
-@media (max-width: 1180px) {
-  .ms-page .mf .mf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-template-areas: "price now" "bal fit"; } .ms-page .mf .mf-grid > .mf-now { grid-area: now; }
-  .ms-page .mf .mf-grid > .mf-balance { grid-area: bal; } .ms-page .mf .mf-grid > .mf-fit { grid-area: fit; }
-}
 @media (max-width: 760px) {
-  .ms-page .mf .mf-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "price" "now" "bal" "fit"; }
   .ms-page .mf .mf-card:not([data-open]) { min-height: 0; }
 }
 /* Short screens: tighter figures and lines, so both rows stay above the fold. */
@@ -21793,7 +21735,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-card > .mf-k { min-height: 30px; }
   .ms-page .mf .mf-card > .mf-k > svg { width: 30px; height: 30px; padding: 7px; }
 }
-@media (max-width: 1180px) { .ms-page .mf .mf-grid { grid-auto-rows: auto; } }
 @media (max-width: 760px) {
   .ms-page .mf .mf-balance > .mf-k { padding-right: 0; }
   .ms-page .mf .mf-balance .mf-bb-views { position: static; margin: 0 0 var(--space-sm); }
@@ -21803,8 +21744,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    The boxes keep their size; the content is designed to fit. Long content
    (lists, legend) scrolls inside its box. No drop shadow and no outline, as
    in the design system: contrast comes from fills. */
-.ms-page .mf .mf-card, .ms-page .mf .mf-grid > .mf-now, .ms-page .mf .mf-plan { box-shadow: none !important; }
-.ms-page .mf .mf-grid > .mf-now { background: var(--color-accent-soft); }
+.ms-page .mf .mf-card, .ms-page .mf .mf-plan { box-shadow: none !important; }
 .ms-page .mf .mf-now .mf-plan { background: var(--ms-card); transition: background-color 160ms ease, transform 200ms var(--ms-ease); }
 .ms-page .mf .mf-now .mf-plan:hover, .ms-page .mf .mf-now .mf-plan:focus-visible { background: color-mix(in srgb, var(--color-accent) 10%, var(--ms-card)); }
 .ms-page .mf .mf-now[data-flash] { animation: mf-flash-fill 900ms ease-out; }
@@ -21830,8 +21770,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @media (min-width: 761px) {
   /* Fixed heights from the space left under the title line. The first row never drops under 360px:
      below that, a plan question is cut (23/10/2026); a decision must never be truncated. */
-  .ms-page .mf .mf-grid { --row1: clamp(360px, calc((100svh - 220px) * .56), 380px); --row2: clamp(230px, calc((100svh - 220px) * .44), 290px); grid-template-rows: var(--row1) var(--row2); grid-auto-rows: auto; }
-  .ms-page .mf .mf-grid > .mf-card { height: auto; min-height: 0; overflow: hidden; }
   /* Lists that can grow scroll inside their box. */
   /* The chart has one size whatever the view. */
   .ms-page .mf .mf-balance { grid-template-rows: auto minmax(0, 1fr); }
@@ -22048,15 +21986,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-now .mf-k, .ms-page .mf .mf-now h3, .ms-page .mf .mf-now .mf-t { margin-right: 0; }
 /* Tablet: the decision first, full width; price and optimisation side by side;
    the split full width. Heights follow content (masonry), no fixed rows. */
-@media (min-width: 761px) and (max-width: 1180px) {
-  .ms-page .mf .mf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: auto; grid-template-areas: "now now" "price fit" "bal bal"; align-items: stretch; }
-  .ms-page .mf .mf-grid > .mf-card { height: auto; overflow: visible; }
-  .ms-page .mf .mf-grid > .mf-now { min-height: 0; }
-}
 /* Narrow tablet: one column, the same order. */
-@media (min-width: 761px) and (max-width: 900px) {
-  .ms-page .mf .mf-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "now" "price" "fit" "bal"; }
-}
 /* One sort menu, as wide as its text; a quiet focus ring for the keyboard only. */
 /* Decision action bar on tablet: links left, total right, one line. */
 @media (max-width: 1180px) {
@@ -22064,11 +21994,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-now .mf-links { flex: 1 1 auto; justify-content: flex-start; }
 }
 @media (max-width: 760px) { .ms-page .mf .mf-now .mf-bar-actions { flex-wrap: wrap; } }
-@media (min-width: 761px) and (max-width: 1180px) {
-  .ms-page .mf .mf-grid .mf-now .mf-bar-actions { flex-direction: row; flex-wrap: nowrap; }
-  .ms-page .mf .mf-grid .mf-now .mf-bar-actions .mf-links { order: 0; }
-  .ms-page .mf .mf-grid .mf-now .mf-bar-actions .mf-preview { order: 1; margin-left: auto; }
-}
 
 /* Collection header and toolbar (23/10): one block; one primary action; view controls together. */
 
@@ -22121,26 +22046,11 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-now[data-kind="price"] .mf-price-field { margin-top: var(--space-md); }
 /* Face-off: logo in its own column, never over the name. */
 /* Nothing left to decide: no decision card; price stands tall, split and optimisation take the width. */
-@media (min-width: 1181px) { .ms-page .mf .mf-grid:not(:has(.mf-now)) { grid-template-areas: "price bal bal" "price fit fit"; } }
-@media (min-width: 901px) and (max-width: 1180px) { .ms-page .mf .mf-grid:not(:has(.mf-now)) { grid-template-areas: "price fit" "bal bal"; } }
-@media (min-width: 761px) and (max-width: 900px) { .ms-page .mf .mf-grid:not(:has(.mf-now)) { grid-template-areas: "price" "fit" "bal"; } }
-@media (max-width: 760px) { .ms-page .mf .mf-grid:not(:has(.mf-now)) { grid-template-areas: "price" "bal" "fit"; } }
 /* All decided (23/10): masonry. Rows follow content; the right column stacks split and
    optimisation at their natural height; the price card, with more tools, stands beside them. */
-@media (min-width: 1181px) {
-  .ms-page .mf .mf-grid:not(:has(.mf-now)) { grid-template-rows: auto auto; align-items: start; }
-  .ms-page .mf .mf-grid:not(:has(.mf-now)) > .mf-card { height: auto; overflow: visible; }
-}
 .ms-page .mf .mf-now .mf-now-q { display: flex; align-items: center; gap: var(--space-sm); }
 .ms-page .mf .mf-now .mf-now-q h3 { margin: 0; }
 @media (max-width: 760px) { .ms-page .mf .mf-card.mf-now:not([data-open]) > .mf-now-q { display: flex; } .ms-page .mf .mf-card.mf-now:not([data-open]) .mf-now-q h3 { margin: 0; font-size: 19px; } }
-
-@layer components {
-  @media (min-width: 761px) {
-    .ms-page .mf .mf-grid[data-sparse] { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto; grid-template-areas: "price now now"; align-items: stretch; }
-    .ms-page .mf .mf-grid[data-sparse]:not(:has(.mf-now)) { grid-template-areas: "price price price"; }
-  }
-}
 
 /* ===== Stack starter (23/10): signed out and empty stack ===== */
 .ms-page .ss { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: var(--space-xl); align-items: start; margin-top: var(--space-md); font-family: var(--ap-font); }
@@ -22471,27 +22381,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 @layer components { .ms-page .mf .mf-preview { grid-template-columns: max-content max-content; column-gap: var(--space-md); } }
 
-@layer components {
-  .ms-page .mf-starter-next { grid-area: next; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-md); }
-  .ms-page .mf-starter-next h2 { margin: 0; font-family: var(--font-brand); font-size: var(--tt-size-section-h); line-height: 1.2; letter-spacing: -.025em; }
-  .ms-page .mf-starter-next p { max-width: 48ch; color: var(--color-text-secondary); font-size: var(--tt-size-body); line-height: 1.6; }
-  @media (min-width: 761px) {
-    .ms-page .mf .mf-grid[data-starter] { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); grid-template-rows: auto; grid-template-areas: "price next"; align-items: stretch; }
-    .ms-page .mf .mf-grid[data-starter]:has(.mf-now) { grid-template-areas: "price now"; }
-    .ms-page .mf .mf-grid[data-starter] > .mf-card { min-height: 0; height: auto; overflow: visible; }
-  }
-  @media (max-width: 760px) { .ms-page .mf .mf-grid[data-starter] { grid-template-areas: "price" "now" "next"; grid-template-rows: auto; } }
-}
-
 /* The legacy bento has unlayered placements; constrain the starter to one row. */
-@layer components {
-  @media (min-width: 761px) {
-    .ms-page .mf .mf-grid[data-starter] { grid-template-columns: minmax(280px, 1fr) minmax(0, 2fr) !important; grid-template-rows: auto !important; grid-template-areas: "price next" !important; }
-    .ms-page .mf .mf-grid[data-starter]:has(.mf-now) { grid-template-areas: "price now" !important; }
-    .ms-page .mf .mf-grid[data-starter] > .mf-starter-next { grid-area: next !important; }
-    .ms-page .mf .mf-grid[data-starter] > .mf-now { grid-area: now !important; }
-  }
-}
 
 @layer components {
   .ms-inventory-heading { display: flex; align-items: center; gap: var(--space-sm); }
@@ -22554,8 +22444,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
      the card's full width (no narrow column floating in the middle), a meter
      in the card's own ink, a line-up of answers instead of a clipped list,
      and a line of casting humour read from the answers. */
-  .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: 285px; --mu-ink: var(--color-stack-tools-ink); --mu-track: color-mix(in srgb, var(--mu-ink) 12%, var(--color-surface)); --mu-hint: color-mix(in srgb, var(--mu-ink) 38%, var(--color-surface));
-    box-sizing: border-box; display: grid; grid-template-rows: max-content minmax(0, 1fr) max-content; gap: 12px; height: var(--mu-height) !important; min-height: var(--mu-height); max-height: var(--mu-height); padding: 20px 22px 14px; overflow: hidden; align-self: start; container-type: inline-size; background: var(--color-stack-tools-soft); }
   .ms-page .mf .mu-card > * { min-width: 0; }
   .ms-page .mf .mu-card .mu-count { flex: none; padding: 4px 10px; border-radius: var(--radius-pill); background: var(--color-surface); color: var(--color-text-secondary); font: 600 12px/1.2 var(--font-ui); font-variant-numeric: tabular-nums; }
   .ms-page .mf .mu-card .mu-scene { min-height: 0; min-width: 0; animation: mu-scene-in 220ms cubic-bezier(.2, .8, .2, 1) both; }
@@ -22609,15 +22497,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mu-card .mu-history .ms-decided { margin: 0; }
   .ms-page .mf .mu-card .mu-history .mu-pair + .mu-pair { margin-top: var(--space-sm); padding-top: var(--space-sm); border-top: 1px solid var(--color-border-soft); }
 
-  @media (max-width: 760px) { .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: 330px; padding: 18px 16px 12px; } }
-  @media (min-width: 761px) and (max-width: 1180px) { .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: 295px; } }
-  @media (min-width: 1181px) { .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: var(--row2, 290px); } }
-
   /* Hierarchy pass (28 Oct 2026, "tout est au premier plan"): one thing in
      front per scene (the tool, or the verdict), everything else recedes:
      no white boxes, quiet counts, the meter on the card itself, a soft glow
      for freshness. */
-  .ms-page .mf .mf-grid > .mf-card.mu-card { background: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--mu-ink) 9%, transparent), transparent 60%), var(--color-stack-tools-soft); }
   .ms-page .mf .mu-card .mu-count { padding: 0; background: none; color: var(--color-text-secondary); font-weight: 500; }
   .ms-page .mf .mu-card .mu-preview { font-style: normal; }
   .ms-page .mf .mu-card .mu-footer { border-top: 0; padding-top: 0; }
@@ -22917,17 +22800,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 @layer components {
   /* Shared row height follows the tallest card; preserve multi-row bento spans. */
-  @media (min-width: 761px) {
-    .ms-page .mf .mf-grid { align-items: stretch !important; }
-    .ms-page .mf .mf-grid > .mf-card { align-self: stretch !important; height: auto !important; }
-  }
   /* Override the legacy unlayered bento areas only when these are the two remaining cards. */
-  @media (min-width: 761px) {
-    .ms-page .mf .mf-grid[data-compact] { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) !important; grid-template-areas: "price fit" !important; grid-template-rows: auto !important; align-items: stretch; }
-  }
-  @media (max-width: 760px) {
-    .ms-page .mf .mf-grid[data-compact] { grid-template-areas: "price" "fit" !important; grid-template-rows: auto auto !important; }
-  }
 }
 
 @layer components {
@@ -22999,44 +22872,15 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    tool beside two free seats that wiggle on hover; the primary action uses
    the stack ink. In the tall budget card, the list follows the figure. */
 @layer components {
-  .ms-page .mf .mf-starter-next .mf-starter-seats { display: flex; gap: 10px; margin-bottom: 18px; }
-  .ms-page .mf .mf-starter-next .mf-starter-seat { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; border: 1.5px dashed color-mix(in srgb, var(--color-text-strong) 22%, transparent); color: var(--color-text-secondary); transition: transform 260ms cubic-bezier(.34, 1.5, .64, 1), border-color 160ms ease, color 160ms ease; }
-  .ms-page .mf .mf-starter-next .mf-starter-seat[data-on] { border: 0; background: var(--color-surface); box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text-strong) 8%, transparent), 0 6px 16px color-mix(in srgb, var(--color-text-strong) 8%, transparent); animation: mu-icon-nod 420ms cubic-bezier(.34, 1.5, .64, 1) both; }
-  .ms-page .mf .mf-starter-next:hover .mf-starter-seat:not([data-on]) { border-color: var(--color-stack-tools-ink, var(--color-primary)); color: var(--color-stack-tools-ink, var(--color-primary)); }
-  .ms-page .mf .mf-starter-next:hover .mf-starter-seat:nth-child(2) { transform: rotate(-6deg) translateY(-2px); }
-  .ms-page .mf .mf-starter-next:hover .mf-starter-seat:nth-child(3) { transform: rotate(5deg) translateY(-2px); transition-delay: 40ms; }
-  .ms-page .mf .mf-starter-next h2 { font: 600 26px/1.15 var(--font-ui) !important; letter-spacing: -.025em !important; }
-  .ms-page .mf .mf-starter-next p { max-width: 46ch; font: 400 15px/1.5 var(--font-ui) !important; color: var(--color-text-secondary) !important; }
-  .ms-page .mf .mf-starter-next .mk-button, .ms-page .mf .mf-starter-next button { background: var(--color-stack-tools-ink, var(--color-primary)) !important; border-color: transparent !important; color: var(--color-surface) !important; }
-  @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-starter-next .mf-starter-seat { transition: none; animation: none !important; transform: none !important; } }
 }
 @layer components {
   /* Side by side when wide: the words and the button on the left, the seats
      on the right, larger, slightly fanned. The button's plus sits in its own
      disc and turns a quarter on hover, like a seat being added. */
-  .ms-page .mf .mf-starter-next { container-type: inline-size; }
-  @container (min-width: 620px) {
-    .ms-page .mf .mf-starter-next { display: grid !important; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "title seats" "copy seats" "action seats"; column-gap: 40px; align-content: center; }
-    .ms-page .mf .mf-starter-next h2 { grid-area: title; }
-    .ms-page .mf .mf-starter-next p { grid-area: copy; }
-    .ms-page .mf .mf-starter-next > button, .ms-page .mf .mf-starter-next > .mk-button { grid-area: action; justify-self: start; }
-    .ms-page .mf .mf-starter-next .mf-starter-seats { grid-area: seats; align-self: center; margin: 0; gap: 14px; }
-    .ms-page .mf .mf-starter-next .mf-starter-seat { width: 76px; height: 76px; border-radius: 20px; }
-    .ms-page .mf .mf-starter-next .mf-starter-seat:nth-child(1) { transform: rotate(-4deg); }
-    .ms-page .mf .mf-starter-next .mf-starter-seat:nth-child(3) { transform: rotate(4deg); }
-  }
-  .ms-page .mf .mf-starter-next > :is(button, .mk-button) svg { box-sizing: content-box; padding: 3px; border-radius: var(--radius-circle); background: var(--color-surface); color: var(--color-stack-tools-ink, var(--color-primary)); transition: transform 320ms cubic-bezier(.34, 1.5, .64, 1); }
-  .ms-page .mf .mf-starter-next > :is(button, .mk-button):hover svg { transform: rotate(90deg) scale(1.08); }
-  .ms-page .mf .mf-starter-next > :is(button, .mk-button):active { transform: scale(.97); }
-  @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-starter-next > :is(button, .mk-button) svg { transition: none; } }
   /* Ring and radar: the legend keeps room for full area names, the chart takes what is left. */
   /* Dark theme: the usage card had no dark surface, so its light tint swallowed the text. */
-  .dark .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-ink: #afc4ff; background: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--mu-ink) 10%, transparent), transparent 60%), #1c2540 !important; }
   /* No-scroll contract (29/10/2026): no box of the bento scrolls or cuts its content. Rows keep
      their reference height as a floor and grow with the tallest card; names wrap instead of fading. */
-  .ms-page .mf .mf-grid { grid-template-rows: minmax(var(--row1, auto), auto) minmax(var(--row2, auto), auto) !important; grid-auto-rows: auto !important; }
-  .ms-page .mf .mf-grid > .mf-card, .ms-page .mf .mf-grid > .mf-card.mu-card { height: auto !important; max-height: none !important; overflow: visible !important; }
-  .ms-page .mf .mf-grid > .mf-card.mu-card { min-height: var(--mu-height); }
   .ms-page .mf :is(.mf-shares, .mf-bb-legend, .mf-bb-chips, .mf-fit-list), .ms-page .mf .mu-card :is(.mu-question, .mu-summary, .mu-history, .mu-answer-list) { overflow: visible !important; max-height: none !important; }
   .ms-page .mf :is(.mf-plan-name, .mf-plan-name > span, .mf-plan-name em, .mf-shares-name, .mf-face-name, .mf-bb-name, .mf-cheaper-text span, .mf-cheaper-text small, .mf-area-tiles span, .mf-trust-text small, .mf-seats-sum, .mf-bb-caption small, .mf-lead-sub, .mf-bb-chips button span),
   .ms-page .mf .mu-card :is(.mu-tool h3, .mu-gauge button small, .mu-answer-name) { overflow: visible !important; text-overflow: clip !important; white-space: normal !important; -webkit-line-clamp: unset !important; overflow-wrap: anywhere; }
@@ -23060,16 +22904,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   /* Bento hierarchy (29/10/2026): the decision is what to do now, so it leads, wide and at its own
      height. The budget is what those decisions produce, so it runs down the right like an order
      summary. Usage and split fill the space under the decision; any extra height goes to them. */
-  @media (min-width: 1181px) {
-    .ms-page .mf .mf-grid:has(.mf-now):not([data-sparse]):not([data-starter]):not([data-compact]) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) !important; grid-template-rows: max-content 1fr !important; grid-template-areas: "now now price" "fit bal price" !important; }
-  }
   /* Free tools: one line of logos, then the sentence. */
   /* The budget reads top-down: total, status, then its lines, with no hole in the middle. */
   /* Row 2 under the decision: the usage review on two columns. The split is an insight more than
      a task, so it closes the bento on the full width, sentence left and chart right. */
-  @media (min-width: 1181px) {
-    .ms-page .mf .mf-grid:has(.mf-now):not([data-sparse]):not([data-starter]):not([data-compact]) { grid-template-rows: max-content max-content max-content !important; grid-template-areas: "now now price" "fit fit price" "bal bal bal" !important; }
-  }
   /* Down the sidebar: total and lines at the top, free tools and the scope note settle at the bottom. */
   /* Duplicate decision, visual pass: the dropped tool shows crossed out at the kept logo's foot,
      the saving is a filled pill, the cheaper answer carries a green outline. */
@@ -23316,8 +23154,8 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
    rangées. Remplace le fond teinté, la pastille bleue, les faces centrées et
    inclinées. La structure vient du système (.tt-decision, .tt-choice) ; ces
    règles neutralisent les couches historiques de .mf-now. */
-.ms-page .mf .mf-grid > .mf-now, .ms-page .mf .mf-now, .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) { gap: 0; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); box-shadow: none; color: var(--tt-ink); }
-.dark .ms-page .mf .mf-grid > .mf-now, .dark .ms-page .mf .mf-now { box-shadow: none; }
+.ms-page .mf .mf-now, .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) { gap: 0; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); box-shadow: none; color: var(--tt-ink); }
+.dark .ms-page .mf .mf-now { box-shadow: none; }
 .ms-page .mf .mf-now .mf-k.tt-decision-head { display: flex; align-items: center; gap: 12px; margin: 0 0 16px; color: var(--tt-ink); }
 .ms-page .mf .mf-now .mf-k.tt-decision-head .mf-step { margin-left: auto; color: var(--tt-ink); }
 .ms-page .mf .mf-now .mf-now-q { margin: 0; }
@@ -23345,8 +23183,8 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .ms-page .mf .mf-now .mf-plan[data-state="kept"] { box-shadow: var(--tt-row-ring-on); }
 .ms-page .mf .mf-now .mf-plan[data-state="gone"] { opacity: var(--tt-row-gone); }
 /* Couches historiques plus spécifiques (mode sombre teinté, titre en Inter gras, nom en gras). */
-.ms-page .mf .mf-grid > .mf-now.mf-card[data-kind]:has(.mf-k), .dark .ms-page .mf .mf-grid > .mf-now.mf-card[data-kind]:has(.mf-k), .ms-page .mf .mf-now.mf-card[data-kind]:has(.mf-k) { background: var(--tt-tile); box-shadow: none; }
-.ms-page .mf .mf-grid > .mf-now.mf-card[data-kind] .mf-now-q h3.tt-decision-title, .ms-page .mf .mf-now.mf-card[data-kind] .mf-now-q h3.tt-decision-title { font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); color: var(--tt-ink); }
+.ms-page .mf .mf-now.mf-card[data-kind]:has(.mf-k) { background: var(--tt-tile); box-shadow: none; }
+.ms-page .mf .mf-now.mf-card[data-kind] .mf-now-q h3.tt-decision-title { font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); color: var(--tt-ink); }
 .ms-page .mf .mf-now .tt-choice .mf-face-name { font: inherit; color: inherit; }
 /* Le titre d'une décision et l'anneau du choix retenu (les anciennes règles portaient !important et un sélecteur d'élément). */
 .ms-page .mf .mf-now .mf-now-q h3.tt-decision-title { font: var(--tt-title-l-font) !important; letter-spacing: var(--tt-title-l-tracking); }
@@ -23369,7 +23207,7 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .tt-footer .tt-footer-col a.tt-label { font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); color: var(--tt-ink); }
 .tt-footer .tt-footer-legal :is(a, span, button) { font: inherit; letter-spacing: inherit; color: inherit; }
 /* « Vos usages » : l'organisme du système (.tt-usage), planche chapitre 06. */
-.ms-page .mf .mf-grid > .mu-card.tt-usage, .ms-page .mf .mu-card.tt-usage { display: grid; align-content: start; gap: 18px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile) !important; box-shadow: none !important; color: var(--tt-ink); }
+.ms-page .mf .mu-card.tt-usage { display: grid; align-content: start; gap: 18px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile) !important; box-shadow: none !important; color: var(--tt-ink); }
 .ms-page .mf .mu-card.tt-usage::before, .ms-page .mf .mu-card.tt-usage::after { display: none; }
 .ms-page .mf .mu-card.tt-usage .tt-usage-head h2 { margin: 0; font: var(--tt-eyebrow-font) !important; letter-spacing: var(--tt-eyebrow-tracking) !important; text-transform: uppercase; color: var(--tt-ink) !important; }
 .ms-page .mf .mu-card.tt-usage .mu-scene { display: grid; gap: 18px; padding: 0; animation: tt-usage-in 420ms var(--tt-ease) both; }
@@ -23381,9 +23219,6 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .ms-page .mf .mu-card.tt-usage[data-view="question"] .mu-footer { display: none; }
 @media (prefers-reduced-motion: reduce) { .ms-page .mf .mu-card.tt-usage .mu-scene { animation: none; } }
 /* Les couches historiques plus spécifiques : fond radial (et sa version sombre !important), grille côte à côte. */
-.dark .ms-page .mf .mf-grid > .mf-card.mu-card.tt-usage, .ms-page .mf .mf-grid > .mf-card.mu-card.tt-usage { background: var(--tt-tile) !important; }
 .ms-page .mf .mu-card.tt-usage .mu-scene.mu-question { grid-template-columns: minmax(0, 1fr) !important; grid-template-areas: none !important; }
 .ms-page .mf .mu-card.tt-usage .mu-question > * { grid-area: auto !important; }
 /* L'organisme budget dans la grille de Ma stack : il remplace l'habillage historique de .mf-card. */
-.ms-page .mf .mf-grid > .mf-card.tt-budget, .dark .ms-page .mf .mf-grid > .mf-card.tt-budget { display: grid; align-content: start; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile) !important; box-shadow: none !important; }
-.ms-page .mf .mf-grid > .mf-card.tt-split, .dark .ms-page .mf .mf-grid > .mf-card.tt-split { display: grid; align-content: start; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile) !important; box-shadow: none !important; }

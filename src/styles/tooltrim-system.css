@@ -294,10 +294,10 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 @media (max-width: 560px) { .tt-toolbar-tools { width: 100%; } .tt-toolbar-tools .tt-select { flex: 1; } }
 .tt-check--live { background: var(--tt-live); }
 /* Une ligne d'organisme : à gauche le titre, à droite l'état ou l'action. */
-.tt-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tt-head { display: flex; align-items: center; justify-content: space-between; gap: 8px 12px; flex-wrap: wrap; }
 
 /* ── Organisme : le budget ──────────────────────────────────────────────── */
-.tt-budget { display: grid; align-content: start; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-budget { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-budget .tt-figure { display: flex; align-items: baseline; margin: 0; }
 /* Le compteur garde des chiffres proportionnels : la forme des chiffres d'Uncut Sans. */
 .tt-figure :is(.mk-odo, .mk-odo *) { font-variant-numeric: normal; }
@@ -363,7 +363,34 @@ button.tt-budget-trust { cursor: pointer; }
 
 /* ── Organisme : la répartition ─────────────────────────────────────────── */
 /* Le chiffre, une barre empilée fine à la couleur des domaines, la légende. */
-.tt-split { display: grid; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+/* Organisme : le tableau de Ma stack, lu constat, action, détail. À gauche le budget
+   (ce que coûte la stack, ce qui est à examiner), à droite la décision puis vos usages,
+   la répartition dessous en pleine largeur. L'ordre du DOM est l'ordre de lecture :
+   sur une colonne, on lit la même suite. */
+.tt-board { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 12px; align-items: start; }
+.tt-board-main, .tt-board-side { display: grid; gap: 12px; min-width: 0; }
+/* Le tableau place seul ses cartes : aucune position héritée ne passe. */
+.tt-board > .tt-board-main > [class], .tt-board > .tt-board-side > [class] { grid-area: auto; min-width: 0; height: auto; }
+.tt-board > .tt-split { grid-column: 1 / -1; min-width: 0; }
+.tt-board-main:empty { display: none; }
+.tt-board:has(> .tt-board-main:empty) { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 900px) { .tt-board { grid-template-columns: minmax(0, 1fr); } }
+
+/* Organisme : le premier outil. Une place prise, deux places libres en pointillé
+   qui se penchent au survol, puis l'appel à en ajouter d'autres. */
+.tt-starter { display: grid; justify-items: start; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-starter .tt-title-m { margin: 0; }
+.tt-starter .tt-text { max-width: 46ch; }
+.tt-seats { display: flex; gap: 10px; }
+.tt-seat { display: grid; place-items: center; width: 52px; height: 52px; border: 1.5px dashed var(--tt-line); border-radius: var(--tt-logo-radius); color: var(--tt-meta); transition: transform var(--tt-dur-state) var(--tt-spring), color var(--tt-dur-state) ease, border-color var(--tt-dur-state) ease; }
+.tt-seat[data-on] { border: 0; background: var(--tt-bg); box-shadow: var(--tt-logo-shadow); }
+.tt-seat svg { width: 18px; height: 18px; }
+.tt-starter:hover .tt-seat:not([data-on]) { border-color: var(--tt-ink); color: var(--tt-ink); }
+.tt-starter:hover .tt-seat:nth-child(2) { transform: rotate(-6deg) translateY(-2px); }
+.tt-starter:hover .tt-seat:nth-child(3) { transform: rotate(5deg) translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .tt-seat { transition: none; } .tt-starter:hover .tt-seat { transform: none; } }
+
+.tt-split { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-split-bar { display: flex; gap: 3px; height: 10px; }
 .tt-split-bar i { flex: var(--f, 1); min-width: 6px; border-radius: var(--tt-r-pill); background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow 900ms var(--tt-ease) both; }
 .tt-split-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 4px 24px; margin: 0; padding: 0; list-style: none; }

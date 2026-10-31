@@ -104,7 +104,7 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
     event.preventDefault(); choose(to); radios.current[to]?.focus({ preventScroll: true });
   };
 
-  return <article className="mf-card mf-fit mu-card tt-usage" data-open="" data-view={question ? "question" : view === "history" ? "history" : "summary"} aria-label={t("Vos usages et vos choix", "Your use and choices")}>
+  return <article className="mf-fit mu-card tt-usage" data-open="" data-view={question ? "question" : view === "history" ? "history" : "summary"} aria-label={t("Vos usages et vos choix", "Your use and choices")}>
     <header className="tt-usage-head">
       <span className="tt-usage-where">
         <h2 ref={heading} tabIndex={-1} className="tt-eyebrow">{t(view === "history" || rows.length === 0 ? "Vos choix" : "Vos usages", view === "history" || rows.length === 0 ? "Your choices" : "Your use")}</h2>
