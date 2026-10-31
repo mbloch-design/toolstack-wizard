@@ -1,3 +1,4 @@
+import { nativePlanIntent } from "./nativeComparePlan";
 /**
  * Titles and meta descriptions of tool pages (fiche, pricing, alternatives,
  * reviews), shared by the prerender (vite.config.ts) and ToolDetailPage.
@@ -40,8 +41,8 @@ export type ToolSeoPage = "presentation" | "prix" | "alternatives" | "avis";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type SeoTool = any;
 
-export function toolPriceFacts(tool: SeoTool) {
-  const price = nativePriceFromTool(tool)?.amount ?? resolveMonthlyPrice(tool);
+export function toolPriceFacts(tool: SeoTool, preferredCurrency?: "EUR" | "USD" | "GBP") {
+  const price = nativePriceFromTool(tool, preferredCurrency)?.amount ?? resolveMonthlyPrice(tool);
   const hasPrice = price != null && price > 0;
   // Only a free tier ToolTrim can stand behind: bulk placeholders such as
   // « Gratuit ou plan gratuit disponible » made Logic Pro ($199.99) « free ».
@@ -51,9 +52,9 @@ export function toolPriceFacts(tool: SeoTool) {
   // mention a licence without being sold that way first. The compare plan's
   // own unit is: TouchDesigner's « Commercial » plan is a $600 one-time
   // licence filed under an "account" kind, and was titled « from $600/mo ».
-  const comparePlan = [...(tool.pricing_v5?.plans || []), ...(tool.pricing_v5En?.plans || [])]
-    .find((plan: SeoTool) => plan?.isComparePlan && !plan?.isFree);
-  const oneTime = ["one_time", "one-time"].includes(comparePlan?.billingPeriod)
+  const selected = nativePlanIntent(tool, preferredCurrency);
+  const comparePlan = selected.plan;
+  const oneTime = selected.explicit ? selected.oneTime : ["one_time", "one-time"].includes(String(comparePlan?.billingPeriod))
     || tool.pricing_v5?.compare_plan_kind === "one_time"
     || comparePlan?.pricingUnit === "one_time"
     || (!tool.pricing_v5?.compare_plan_kind && !hasPrice && !free && /licence à vie|licence perp[ée]tuelle|one-?time|perpetual license|lifetime license/i.test(String(tool.pricing?.paid || "")));
@@ -130,7 +131,7 @@ function override(tool: SeoTool, page: ToolSeoPage, field: "Title" | "MetaDescri
   if (typeof value !== "string" || !value.trim()) return undefined;
   let text = value;
   if (text.includes("{price}")) {
-    const { price, hasPrice } = toolPriceFacts(tool);
+    const { price, hasPrice } = toolPriceFacts(tool, lang === "en" ? "USD" : "EUR");
     if (!hasPrice) return undefined;
     text = text.split("{price}").join(priceLabel(tool, price, lang));
   }
@@ -150,7 +151,7 @@ export function toolSeoTitle(tool: SeoTool, page: ToolSeoPage, lang: string, yea
   if (custom) return /\|\s*ToolTrim\s*$/.test(custom) ? custom : fitBrandedTitle(custom);
   const name = tool.name || tool.slug || tool.id;
   const fr = lang === "fr";
-  const { price, hasPrice, oneTime, free } = toolPriceFacts(tool);
+  const { price, hasPrice, oneTime, free } = toolPriceFacts(tool, lang === "en" ? "USD" : "EUR");
   const access = tool.pricing_v5?.compare_plan_kind;
   const suite = tool.pricing_v5?.compare_plan_name || "la suite";
   if (page === "prix" && access === "included") return fitBrandedTitle(fr ? `${name} prix ${year} : inclus dans ${suite}` : `${name} pricing ${year}: included in ${suite}`);
@@ -200,7 +201,7 @@ export function toolSeoTitle(tool: SeoTool, page: ToolSeoPage, lang: string, yea
 function presentationDescription(tool: SeoTool, lang: string): string {
   const fr = lang === "fr";
   const long = fr ? (tool.longDescription || "") : (tool.longDescriptionEn || tool.longDescription || "");
-  const { price, hasPrice, oneTime, free } = toolPriceFacts(tool);
+  const { price, hasPrice, oneTime, free } = toolPriceFacts(tool, lang === "en" ? "USD" : "EUR");
   const access = tool.pricing_v5?.compare_plan_kind;
   const suite = tool.pricing_v5?.compare_plan_name || (fr ? "la suite" : "the suite");
   let base = localizedShort(tool, lang).replace(/\s+/g, " ").trim();
@@ -243,7 +244,7 @@ export function toolSeoDescription(tool: SeoTool, page: ToolSeoPage, lang: strin
 
   const name = tool.name || tool.slug || tool.id;
   const fr = lang === "fr";
-  const { price, hasPrice, oneTime, free } = toolPriceFacts(tool);
+  const { price, hasPrice, oneTime, free } = toolPriceFacts(tool, lang === "en" ? "USD" : "EUR");
   const excerpt = clauseExcerpt(localizedShort(tool, lang), 90);
   // Its own sentence: lowercasing it to splice it in broke proper nouns.
   const what = excerpt ? ` ${closeSentence(excerpt)}` : "";

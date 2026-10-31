@@ -41,7 +41,7 @@ export function convertAmount(amount: number, from: Currency, to: Currency): num
   return (amount / EUR_RATES[from]) * EUR_RATES[to];
 }
 
-export function formatAmount(amount: number, currency: Currency, lang: string): string {
+export function formatAmount(amount: number, currency: string, lang: string): string {
   // Whole amounts stay whole (12 €); any cent shows both digits (9,50 €, not
   // 9,5 €), the way a price is written everywhere else.
   const cents = Math.round(amount * 100) % 100 !== 0;
@@ -66,7 +66,7 @@ export function usdFromEur(eurAmount: number): string {
   return formatAmount(Math.round(convertAmount(eurAmount, "EUR", "USD")), "USD", "en");
 }
 
-export type NativePrice = { amount: number; currency: Currency };
+export type NativePrice = { amount: number; currency: string };
 
 /**
  * Devise et montant réellement publiés par l'éditeur, uniquement quand c'est
@@ -109,7 +109,7 @@ export function nativePriceFromTool(tool: any, preferredCurrency?: Currency): Na
 
 export type ToolPriceDisplay = {
   amount: number;
-  currency: Currency;
+  currency: string;
   /** true quand le montant vient d'une conversion et non du prix affiché par l'éditeur. */
   converted: boolean;
   text: string;

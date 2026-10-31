@@ -103,3 +103,41 @@ it("does not resurrect an old paid comparison after the current offers become ex
   expect(toolPriceFacts(tool).hasPrice).toBe(false);
   expect(toolPriceFacts(tool).free).toBe(true);
 });
+
+it.each(["CAD", "AUD", "CHF", "JPY"])(
+  "retains a paid native %s offer without relabelling it as euros or free",
+  (currency) => {
+    const tool = make("paid", "monthly", 120);
+    tool.pricing_v5!.plans![0].nativeCurrency = currency;
+    expect(nativePriceFromTool(tool)).toMatchObject({ amount: 120, currency });
+    const label = formatPriceLabel(tool, resolveMonthlyPrice(tool), (fr) => fr);
+    expect(label).not.toMatch(/Gratuit|€/);
+    expect(label).toContain("120");
+    expect(toolPriceFacts(tool).hasPrice).toBe(true);
+    expect(toolPriceLine(tool, "en", (_, en) => en).priceLine).not.toMatch(
+      /Free|€/,
+    );
+  },
+);
+it("uses an EN-only explicit one-time offer consistently across labels, mobile and SEO", () => {
+  const tool = make("paid", "one_time", 120);
+  tool.pricing_v5En = tool.pricing_v5;
+  tool.pricing_v5 = null;
+  tool.pricing_v5En!.plans![0].nativeCurrency = "USD";
+  expect(formatPriceLabel(tool, 120, (_, en) => en, "USD", "en")).not.toContain(
+    "/mo",
+  );
+  expect(isOneTimePrice(tool)).toBe(true);
+  expect(toolPriceFacts(tool).oneTime).toBe(true);
+  expect(toolPriceLine(tool, "en", (_, en) => en).priceLine).toContain(
+    "one-time",
+  );
+});
+it("prefers an explicit recurring offer over retained legacy one-time metadata", () => {
+  const tool = make("paid", "monthly", 120);
+  tool.pricing_v5!.compare_plan_kind = "one_time";
+  expect(formatPriceLabel(tool, 120, (fr) => fr)).toContain("/mois");
+  expect(isOneTimePrice(tool)).toBe(false);
+  expect(toolPriceFacts(tool).oneTime).toBe(false);
+  expect(toolPriceLine(tool, "fr", (fr) => fr).priceLine).toContain("/mois");
+});

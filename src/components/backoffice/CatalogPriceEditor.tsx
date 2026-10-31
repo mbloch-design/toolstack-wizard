@@ -28,6 +28,8 @@ export type RemovedOffer = {
   index: number;
   plan: Record<string, unknown>;
   references: Record<string, string[]>;
+  referencesAfter: Record<string, string[]>;
+  wasReference: boolean;
 };
 export function useOfferOperations(context: CatalogEditingValue) {
   const [removed, setRemoved] = useState<RemovedOffer[]>([]);
@@ -75,6 +77,19 @@ export function useOfferOperations(context: CatalogEditingValue) {
       (parent.plans as Record<string, unknown>[])[index],
     );
     parent.plans = (parent.plans as unknown[]).filter((_, i) => i !== index);
+    const referencesAfter: Record<string, string[]> = {};
+    for (const pricingRoot of ["pricing_v5", "pricing_v5En"]) {
+      const rows = catalogValueAt(next, [pricingRoot, "plans"]);
+      referencesAfter[pricingRoot] = Array.isArray(rows)
+        ? rows
+            .filter(
+              (row) =>
+                row.nativeCurrency === plan.nativeCurrency && row.isComparePlan,
+            )
+            .map((row) => String(row.planKey))
+            .sort()
+        : [];
+    }
     if (applyChanges(context, differences(context.value, next)))
       setRemoved((old) => [
         ...old,
@@ -84,6 +99,8 @@ export function useOfferOperations(context: CatalogEditingValue) {
           index,
           plan: removedPlan,
           references,
+          referencesAfter,
+          wasReference: plan.isComparePlan === true,
         },
       ]);
   }
@@ -97,17 +114,40 @@ export function useOfferOperations(context: CatalogEditingValue) {
       parent = next[item.root] as Record<string, unknown>;
     const plans = parent.plans as Record<string, unknown>[];
     if (plans.some((plan) => plan.planKey === item.plan.planKey)) return;
-    plans.splice(item.index, 0, item.plan);
-    for (const pricingRoot of Object.keys(item.references)) {
-      const rows = catalogValueAt(next, [pricingRoot, "plans"]);
-      if (Array.isArray(rows))
-        rows.forEach((row) => {
-          if (row.nativeCurrency === item.plan.nativeCurrency)
-            row.isComparePlan = item.references[pricingRoot].includes(
-              row.planKey,
-            );
-        });
-    }
+    // Invert only the reference decision made by this removal, while its post-state is still current.
+    const restoreReferences =
+      item.wasReference &&
+      ["pricing_v5", "pricing_v5En"].every((pricingRoot) => {
+        const rows = catalogValueAt(next, [pricingRoot, "plans"]);
+        const current = Array.isArray(rows)
+          ? rows
+              .filter(
+                (row) =>
+                  row.nativeCurrency === item.plan.nativeCurrency &&
+                  row.isComparePlan,
+              )
+              .map((row) => String(row.planKey))
+              .sort()
+          : [];
+        return (
+          JSON.stringify(current) ===
+          JSON.stringify(item.referencesAfter[pricingRoot] ?? [])
+        );
+      });
+    const restored = structuredClone(item.plan);
+    if (item.wasReference && !restoreReferences) restored.isComparePlan = false;
+    plans.splice(item.index, 0, restored);
+    if (restoreReferences)
+      for (const pricingRoot of Object.keys(item.references)) {
+        const rows = catalogValueAt(next, [pricingRoot, "plans"]);
+        if (Array.isArray(rows))
+          rows.forEach((row) => {
+            if (row.nativeCurrency === item.plan.nativeCurrency)
+              row.isComparePlan = item.references[pricingRoot].includes(
+                row.planKey,
+              );
+          });
+      }
     if (applyChanges(context, differences(context.value, next)))
       setRemoved((old) => old.filter((candidate) => candidate !== item));
   }
@@ -361,6 +401,14 @@ export function ComparisonPriceSummary({
               `Calculated monthly equivalent: ${money(nativeMonthlyAmount(amount, plan.billingPeriod))}.`,
             )}
       </p>
+      {!["EUR", "USD", "GBP"].includes(String(plan.nativeCurrency)) && (
+        <p>
+          {t(
+            "La comparaison normalisée en euros ne prend pas en charge cette devise ; le prix reste affiché dans sa devise native, sans conversion.",
+            "Normalized euro comparison does not support this currency; the price stays in its native currency without conversion.",
+          )}
+        </p>
+      )}
       {comparison.fallback === "other_currency" && (
         <p>
           {t(

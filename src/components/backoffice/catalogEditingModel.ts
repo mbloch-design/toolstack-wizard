@@ -634,7 +634,8 @@ export function catalogInheritedText(
   path: CatalogPath,
 ): string {
   if (
-    catalogValueAt(value, path) != null ||
+    (catalogValueAt(value, path) != null &&
+      catalogValueAt(value, path) !== "") ||
     !path.some((part) => typeof part === "string" && part.endsWith("En"))
   )
     return "";

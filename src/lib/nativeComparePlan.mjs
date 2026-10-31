@@ -6,13 +6,26 @@ export function selectNativeComparePlan(plans, preferredCurrency) {
       !p.isFree &&
       (p.priceStatus == null || p.priceStatus === "paid") &&
       p.nativeAmount != null &&
-      ["EUR", "USD", "GBP"].includes(String(p.nativeCurrency)),
+      /^[A-Z]{3}$/.test(String(p.nativeCurrency)),
   );
   return (
     (preferredCurrency
       ? candidates.find((p) => p.nativeCurrency === preferredCurrency)
       : undefined) ?? candidates[0]
   );
+}
+/** Explicit billing intent belongs to the same selected native offer as its amount. */
+export function nativePlanIntent(tool, preferredCurrency) {
+  const plan = selectNativeComparePlan(
+    [...(tool.pricing_v5?.plans ?? []), ...(tool.pricing_v5En?.plans ?? [])],
+    preferredCurrency,
+  );
+  const explicit = plan?.priceStatus != null;
+  const oneTime =
+    plan?.billingPeriod != null
+      ? ["one_time", "one-time"].includes(plan.billingPeriod)
+      : plan?.pricingUnit === "one_time";
+  return { plan, explicit, oneTime };
 }
 export function nativeMonthlyAmount(amount, period) {
   return period === "annual" || period === "year"

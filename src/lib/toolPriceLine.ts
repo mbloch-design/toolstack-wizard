@@ -1,4 +1,4 @@
-import { explicitNonNumericStatus } from "./nativeComparePlan";
+import { explicitNonNumericStatus, nativePlanIntent } from "./nativeComparePlan";
 import type { Tool } from "@/data/types";
 import { formatToolPrice } from "@/lib/currencyRates";
 import { hasConfirmedFreeTier, isPriceUndisclosed, resolveMonthlyPrice } from "@/lib/pricing";
@@ -9,8 +9,9 @@ export function toolPriceLine(tool: Tool, lang: "fr" | "en", t: (fr: string, en:
   const free = hasConfirmedFreeTier(tool);
   const monthly = resolveMonthlyPrice(tool);
   const v5 = lang === "en" ? (tool as any).pricing_v5En || tool.pricing_v5 : tool.pricing_v5;
-  const comparePlan = (v5?.plans || []).find((plan: any) => plan.isComparePlan);
-  const oneTime = comparePlan ? (["one_time", "one-time"].includes(comparePlan.billingPeriod) || (comparePlan.billingPeriod == null && comparePlan.nativeAmount > 0)) : false;
+  const selected = nativePlanIntent(tool, lang === "en" ? "USD" : "EUR");
+  const comparePlan = selected.plan || (v5?.plans || []).find((plan: any) => plan.isComparePlan);
+  const oneTime = selected.explicit ? selected.oneTime : comparePlan ? (["one_time", "one-time"].includes(comparePlan.billingPeriod) || (comparePlan.billingPeriod == null && comparePlan.nativeAmount > 0)) : false;
   const onQuote = isPriceUndisclosed(tool) || /devis|quote|non public|not public/i.test(String(pricing?.paid || ""));
   const priceText = monthly > 0 || (comparePlan?.nativeAmount ?? 0) > 0
     ? formatToolPrice(tool, monthly, lang === "en" ? "USD" : "EUR", lang).text

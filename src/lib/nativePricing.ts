@@ -7,7 +7,7 @@ type NativePricingInput = Pick<Tool, "id" | "slug" | "pricing_v5" | "pricing_v5E
 
 type NativePrice = {
   amount: number;
-  currency: Currency;
+  currency: string;
   source: "canonical_plan" | "pricing_truth";
   /** Register row read explicitly on the vendor page. */
   official?: boolean;
@@ -15,7 +15,7 @@ type NativePrice = {
 
 export type ResolvedDisplayPrice = {
   amount: number;
-  currency: Currency;
+  currency: string;
   converted: boolean;
   nativePrice: NativePrice | null;
 };
@@ -93,7 +93,7 @@ export function getNativeComparePrice(tool: NativePricingInput, preferredCurrenc
   const plan = selectNativeComparePlan([...(tool.pricing_v5?.plans || []), ...(tool.pricing_v5En?.plans || [])], preferredCurrency);
   if (plan) {
     const amount = nativeMonthlyAmount(plan.nativeAmount!, plan.billingPeriod);
-    return { amount, currency: plan.nativeCurrency as Currency, source: "canonical_plan" };
+    return { amount, currency: plan.nativeCurrency!, source: "canonical_plan" };
   }
   if (blocksLegacyPriceFallback(tool)) return null;
   const id = tool.slug || tool.id;

@@ -4,6 +4,8 @@ type Plan = {
   nativeAmount?: unknown;
   nativeCurrency?: unknown;
   priceStatus?: unknown;
+  billingPeriod?: unknown;
+  pricingUnit?: unknown;
 };
 type Input =
   | {
@@ -29,3 +31,8 @@ export function explicitNonNumericStatus(
 ): "quote" | "unknown" | "usage" | null;
 
 export function blocksLegacyPriceFallback(tool: Input): boolean;
+
+export function nativePlanIntent(
+  tool: Input,
+  preferredCurrency?: string,
+): { plan: Plan | undefined; explicit: boolean; oneTime: boolean };

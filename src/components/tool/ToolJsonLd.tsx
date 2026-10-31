@@ -6,6 +6,7 @@ import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { hasConfirmedFreeTier } from "@/lib/pricing";
 import { getToolTutorials } from "@/data/toolTutorials";
 import { safeExternalUrl } from "@/lib/externalLink";
+import { nativePlanIntent } from "@/lib/nativeComparePlan";
 import { nativePriceFromTool } from "@/lib/currencyRates";
 
 interface Props {
@@ -42,15 +43,16 @@ function reviewNotes(pros: unknown, cons: unknown) {
 
 export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq = false, canonicalUrl: pageCanonicalUrl }: Props) {
   useEffect(() => {
-    const nativePrice = nativePriceFromTool(tool);
-    const maxonAnnual = tool.pricing_v5?.source_domain === "maxon.net"
+    const intent = nativePlanIntent(tool, lang === "en" ? "USD" : "EUR");
+    const nativePrice = nativePriceFromTool(tool, lang === "en" ? "USD" : "EUR");
+    const maxonAnnual = !intent.explicit && tool.pricing_v5?.source_domain === "maxon.net"
       ? tool.pricing_v5.plans?.find((plan) => plan.isComparePlan && plan.billingPeriod === "annual" && plan.nativeAmount != null)
       : null;
     const offerPrice = maxonAnnual?.nativeAmount ?? nativePrice?.amount ?? displayPrice;
     const offerCurrency = maxonAnnual?.nativeCurrency ?? nativePrice?.currency ?? "EUR";
     // Without a price the vendor publishes, only an honest free offer can be declared.
     const unattested = !maxonAnnual && !nativePrice && !(displayPrice > 0);
-    const noVerifiedOffer = ["included", "beta", "discontinued", "unknown"].includes(tool.pricing_v5?.compare_plan_kind || "")
+    const noVerifiedOffer = (!intent.explicit && ["included", "beta", "discontinued", "unknown"].includes(tool.pricing_v5?.compare_plan_kind || ""))
       || (unattested && !hasConfirmedFreeTier(tool));
     const host = String((tool as { host_app?: string }).host_app || "").toLowerCase();
     const operatingSystem = host === "macos" ? "macOS" : host ? undefined : "Web";

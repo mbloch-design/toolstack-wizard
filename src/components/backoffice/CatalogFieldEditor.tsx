@@ -479,6 +479,32 @@ function ProtectedValue({ value }: { value: unknown }) {
     );
   return <span>{value == null ? "—" : String(value)}</span>;
 }
+function effectiveSourceExplanation(
+  context: CatalogEditingValue,
+  path: CatalogPath,
+): string | null {
+  if (path.length !== 1) return null;
+  const notes: Record<string, [string, string]> = {
+    articles: [
+      "Les guides affichés proviennent de la sélection éditoriale des guides, pas de cette liste d’articles enregistrée. Cette liste reste conservée sans pilotage du bloc Guides public.",
+      "The displayed guides come from the editorial guide selection, not this stored articles list. This list is retained but does not drive the public Guides block.",
+    ],
+    alternatives: [
+      "Seules les alternatives enregistrées comme identifiants d’outils alimentent actuellement les cartes publiques. Les objets historiques avec nom et motif restent conservés sans carte publique correspondante.",
+      "Only alternatives stored as tool identifiers currently feed public cards. Historical name/reason objects are retained without a corresponding public card.",
+    ],
+    migrationGuide: [
+      "Le guide de migration est conservé sans bloc public dédié dans la fiche actuelle.",
+      "The migration guide is stored without a dedicated public block in the current listing.",
+    ],
+    downgradePlan: [
+      "Le déclassement est conservé sans bloc public dédié dans la fiche actuelle.",
+      "Downgrade information is stored without a dedicated public block in the current listing.",
+    ],
+  };
+  const note = notes[String(path[0])];
+  return note ? catalogText(context, note[0], note[1]) : null;
+}
 export function CatalogFieldEditor({
   context,
   path,
@@ -527,10 +553,22 @@ export function CatalogFieldEditor({
         </small>
       </div>
     );
+  const showRootNotes =
+    !supplied ||
+    registration.schema.kind !== "union" ||
+    supplied.kind === "union";
+  const sourceExplanation = showRootNotes
+    ? effectiveSourceExplanation(context, path)
+    : null;
+  const sourceNote = sourceExplanation ? (
+    <p className="bo-inline-note">{sourceExplanation}</p>
+  ) : null;
   const inheritedPreview =
-    inherited ?? catalogInheritedText(context.value, path);
+    inherited != null && inherited !== ""
+      ? inherited
+      : catalogInheritedText(context.value, path);
   const inheritanceNote =
-    value == null && inheritedPreview ? (
+    showRootNotes && (value == null || value === "") && inheritedPreview ? (
       <p className="bo-inline-note">
         {t("Contenu hérité :", "Inherited content:")} {inheritedPreview}.{" "}
         {t(
@@ -542,6 +580,7 @@ export function CatalogFieldEditor({
   if (schema.kind === "union")
     return (
       <>
+        {sourceNote}
         {inheritanceNote}
         <UnionField context={context} path={path} schema={schema} />
       </>
@@ -549,6 +588,7 @@ export function CatalogFieldEditor({
   if (schema.kind === "array")
     return (
       <>
+        {sourceNote}
         {inheritanceNote}
         <ArrayField context={context} path={path} schema={schema} />
       </>
@@ -580,7 +620,7 @@ export function CatalogFieldEditor({
     value !== undefined &&
     registration.deletion === "remove";
   const help =
-    value == null && inheritedPreview ? (
+    (value == null || value === "") && inheritedPreview ? (
       <>
         {t("Contenu affiché par repli :", "Inherited display content:")}{" "}
         {inheritedPreview}.{" "}
@@ -599,6 +639,7 @@ export function CatalogFieldEditor({
     return (
       <fieldset className="bo-inline-object" data-catalog-path={path.join(".")}>
         <legend>{label}</legend>
+        {sourceNote}
         {inheritanceNote}
         {value == null ? (
           <Button size="compact" disabled={disabled} onClick={() => change({})}>

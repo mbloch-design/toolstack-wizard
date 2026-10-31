@@ -240,4 +240,41 @@ it("places complete typed authoring at the corresponding blocks of the actual fi
   expect(
     screen.getByRole("button", { name: "Ajouter une offre" }),
   ).toBeEnabled();
+  expect(container.querySelector("#approfondir")).toHaveTextContent(
+    /Les guides affichés proviennent de la sélection éditoriale des guides/,
+  );
+  expect(container.querySelector("#alternatives")).toHaveTextContent(
+    /sans bloc public dédié/,
+  );
+});
+it("keeps an accepted CAD offer amount in its native currency in the actual pricing card", () => {
+  const tool = mapToolFromJson({
+    ...raw,
+    pricing_v5: {
+      plans: [
+        {
+          planKey: "cad",
+          displayName: "CAD Pro",
+          priceStatus: "paid",
+          isFree: false,
+          isComparePlan: true,
+          nativeAmount: 120,
+          nativeCurrency: "CAD",
+          billingPeriod: "monthly",
+        },
+      ],
+    },
+  });
+  const { container } = render(
+    <ToolPricingSection
+      tool={tool}
+      displayPrice={0}
+      lang="en"
+      t={(_, en) => en}
+    />,
+  );
+  expect(container.querySelector(".td-plan-price")).not.toHaveTextContent("€");
+  expect(container.querySelector(".td-plan-price")).toHaveTextContent(
+    /CA\$|CAD/,
+  );
 });

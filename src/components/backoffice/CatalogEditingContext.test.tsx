@@ -606,3 +606,135 @@ it("explains a missing localized list fallback without copying it when adding th
   );
   expect(changed.mock.lastCall?.[0].prosEn).toEqual([""]);
 });
+
+it("undoes removing a reference without overwriting a newer Enterprise reference decision", async () => {
+  const Editor = await loadEditor();
+  const changed = vi.fn();
+  const pro = (base.pricing_v5 as any).plans[0];
+  const initial = {
+    ...base,
+    pricing_v5: {
+      plans: [
+        pro,
+        {
+          ...pro,
+          planKey: "basic",
+          displayName: "Basic",
+          isComparePlan: false,
+        },
+        {
+          ...pro,
+          planKey: "enterprise",
+          displayName: "Enterprise",
+          isComparePlan: false,
+        },
+      ],
+    },
+  };
+  const { container } = render(
+    <Harness Editor={Editor} offers value={initial} onValue={changed} />,
+  );
+  const card = container.querySelector(".td-plan") as HTMLElement;
+  fireEvent.change(
+    within(card).getByLabelText("Prix de référence après retrait"),
+    { target: { value: "basic" } },
+  );
+  fireEvent.click(
+    within(card).getByRole("button", { name: "Retirer l’offre" }),
+  );
+  fireEvent.change(screen.getAllByLabelText("Prix de référence ToolTrim")[1], {
+    target: { value: "true" },
+  });
+  fireEvent.click(
+    screen.getByRole("button", { name: "Annuler le retrait de Pro" }),
+  );
+  const plans = changed.mock.lastCall?.[0].pricing_v5.plans;
+  expect(plans.find((p: any) => p.planKey === "enterprise").isComparePlan).toBe(
+    true,
+  );
+  expect(plans.find((p: any) => p.planKey === "pro").isComparePlan).toBe(false);
+});
+it("does not restore an old reference flag onto a now-nonnumeric offer when undoing another removal", async () => {
+  const Editor = await loadEditor();
+  const changed = vi.fn();
+  const pro = (base.pricing_v5 as any).plans[0];
+  const initial = {
+    ...base,
+    pricing_v5: {
+      plans: [
+        pro,
+        {
+          ...pro,
+          planKey: "basic",
+          displayName: "Basic",
+          isComparePlan: false,
+        },
+      ],
+    },
+  };
+  render(<Harness Editor={Editor} offers value={initial} onValue={changed} />);
+  fireEvent.click(
+    screen.getAllByRole("button", { name: "Retirer l’offre" })[1],
+  );
+  fireEvent.change(screen.getByLabelText("Type de prix"), {
+    target: { value: "quote" },
+  });
+  fireEvent.click(
+    screen.getByRole("button", { name: "Annuler le retrait de Basic" }),
+  );
+  const proAfter = changed.mock.lastCall?.[0].pricing_v5.plans.find(
+    (p: any) => p.planKey === "pro",
+  );
+  expect(proAfter.priceStatus).toBe("quote");
+  expect(proAfter.isComparePlan).toBe(false);
+});
+it("explains the effective public source for stored articles and unsupported relationship representations", async () => {
+  const Editor = await loadEditor();
+  render(
+    <Harness
+      Editor={Editor}
+      roots={["articles", "alternatives", "migrationGuide", "downgradePlan"]}
+    />,
+  );
+  expect(
+    screen.getByText(
+      /Les guides affichés proviennent de la sélection éditoriale des guides/,
+    ),
+  ).toBeTruthy();
+  expect(
+    screen.getByText(
+      /Seules les alternatives enregistrées comme identifiants d’outils/,
+    ),
+  ).toBeTruthy();
+  expect(
+    screen.getByText(
+      /Le guide de migration est conservé sans bloc public dédié/,
+    ),
+  ).toBeTruthy();
+  expect(
+    screen.getByText(/Le déclassement est conservé sans bloc public dédié/),
+  ).toBeTruthy();
+});
+it("explains an explicitly empty English translation fallback without writing inherited text", async () => {
+  const Editor = await loadEditor();
+  const changed = vi.fn();
+  render(
+    <Harness
+      Editor={Editor}
+      value={{
+        ...base,
+        shortDescription: "French short fallback",
+        shortDescriptionEn: "",
+        longDescription: "French long fallback",
+        longDescriptionEn: "",
+      }}
+      roots={["shortDescriptionEn", "longDescriptionEn"]}
+      lang="en"
+      onValue={changed}
+    />,
+  );
+  expect(screen.getByText(/French short fallback/)).toBeTruthy();
+  expect(screen.getByText(/French long fallback/)).toBeTruthy();
+  expect(screen.getByLabelText(/short description.*English/i)).toHaveValue("");
+  expect(changed).not.toHaveBeenCalled();
+});

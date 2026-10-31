@@ -60,6 +60,8 @@ export function resolveMonthlyPrice(tool: {
   const plans = [...(tool.pricing_v5?.plans ?? []), ...(tool.pricing_v5En?.plans ?? [])];
   const explicit = selectNativeComparePlan(plans, "EUR");
   if (explicit?.priceStatus && explicit.nativeAmount != null && isCurrency(explicit.nativeCurrency)) return convertAmount(nativeMonthlyAmount(explicit.nativeAmount, explicit.billingPeriod), explicit.nativeCurrency, "EUR");
+  // No invented FX for currencies outside the normalized EUR comparison model. Native display remains available.
+  if (explicit?.priceStatus && !isCurrency(explicit.nativeCurrency)) return 0;
   if (blocksLegacyPriceFallback(tool)) return 0;
   const verified = tool.pricing_v5?.compare_price_monthly_eur;
   if (typeof verified === "number" && Number.isFinite(verified) && verified >= 0) return verified;

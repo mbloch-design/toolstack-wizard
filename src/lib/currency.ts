@@ -10,7 +10,7 @@ export function convertCurrencyAmount(
 
 export function formatCurrencyAmount(
   amount: number,
-  currency: Currency,
+  currency: string,
   lang: string,
 ): string {
   return formatAmount(amount, currency, lang);

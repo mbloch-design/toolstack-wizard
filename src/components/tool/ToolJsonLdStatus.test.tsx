@@ -38,3 +38,45 @@ it("does not regenerate a free structured offer from stale free prose when expli
   );
   expect(data).not.toHaveProperty("offers");
 });
+it("uses the selected English native amount when locale grids have different explicit billing intent", () => {
+  const plan = {
+    planKey: "local",
+    displayName: "Local",
+    priceStatus: "paid",
+    nativeAmount: 120,
+    nativeCurrency: "EUR",
+    billingPeriod: "monthly",
+    isFree: false,
+    isComparePlan: true,
+  };
+  const tool = mapToolFromJson({
+    id: "locale-jsonld",
+    slug: "locale-jsonld",
+    name: "Locale",
+    pricing_v5: { compare_plan_kind: "one_time", plans: [plan] },
+    pricing_v5En: {
+      plans: [
+        {
+          ...plan,
+          nativeAmount: 240,
+          nativeCurrency: "USD",
+          billingPeriod: "one_time",
+        },
+      ],
+    },
+  });
+  render(
+    <ToolJsonLd
+      category={undefined}
+      tool={tool}
+      displayPrice={120}
+      verifiedOn={null}
+      alternatives={[]}
+      lang="en"
+    />,
+  );
+  const data = JSON.parse(
+    document.querySelector("#tool-software-jsonld")?.textContent || "{}",
+  );
+  expect(data.offers).toMatchObject({ price: "240", priceCurrency: "USD" });
+});

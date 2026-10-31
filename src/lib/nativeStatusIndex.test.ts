@@ -74,3 +74,43 @@ it("builds light public prices from explicit intent and extended periods without
     rmSync(root, { recursive: true, force: true });
   }
 });
+
+it("retains absent-status foreign currency native entries in the generated index", () => {
+  const root = mkdtempSync(resolve(tmpdir(), "tooltrim-native-legacy-"));
+  try {
+    mkdirSync(resolve(root, "src/data"), { recursive: true });
+    writeFileSync(
+      resolve(root, "src/data/tools_v4.json"),
+      JSON.stringify([
+        {
+          id: "cad-legacy",
+          slug: "cad-legacy",
+          name: "CAD legacy",
+          pricing_v5: {
+            plans: [
+              {
+                planKey: "cad",
+                isComparePlan: true,
+                nativeAmount: 120,
+                nativeCurrency: "CAD",
+                billingPeriod: "monthly",
+              },
+            ],
+          },
+        },
+      ]),
+    );
+    execFileSync(process.execPath, [resolve("scripts/gen-tools-index.mjs")], {
+      cwd: root,
+    });
+    const [row] = JSON.parse(
+      readFileSync(resolve(root, "src/data/tools_index.json"), "utf8"),
+    );
+    expect(row.nativePrices).toEqual([
+      { amount: 120, currency: "CAD", period: "monthly" },
+    ]);
+    expect(row).not.toHaveProperty("hasConfirmedFreePlan");
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
+});

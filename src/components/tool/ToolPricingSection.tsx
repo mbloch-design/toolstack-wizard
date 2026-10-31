@@ -120,7 +120,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
   // Toujours le montant publié par l'éditeur, dans sa devise réelle : jamais
   // de conversion, cf. resolveDisplayPrice/formatToolPrice.
   const formatNativeAmount = (amount: number, nativeCurrency: string | null) => {
-    const source = nativeCurrency === "USD" || nativeCurrency === "EUR" || nativeCurrency === "GBP" ? nativeCurrency : "EUR";
+    const source = nativeCurrency && /^[A-Z]{3}$/.test(nativeCurrency) ? nativeCurrency : "EUR";
     return formatCurrencyAmount(amount, source, lang || "fr");
   };
 
