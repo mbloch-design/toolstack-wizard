@@ -18906,7 +18906,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mk-segmented > button:focus-visible { outline: 2px solid var(--ms-ink); outline-offset: 1px; }
 
 /* ── Findings: price, the one decision, what comes next ──────────────────── */
-.ms-page .mf { margin: 0 0 var(--space-3xl); }
+.ms-page .mf { margin: 0; }
 .ms-page .mf-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: var(--space-xl); border-radius: var(--ms-r); background: var(--ms-tile); animation: mf-rise 560ms var(--ms-ease) both; }
 @keyframes mf-rise { from { opacity: 0; transform: translateY(12px); } }
 .ms-page .mf-now { grid-column: span 2; }
@@ -19012,7 +19012,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Summary once everything is settled. */
 
 /* ── The stack: title bar, lenses, map or list ───────────────────────────── */
-.ms-page .ms-board { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+/* Le rythme vient de .tt-page (système). */
 .ms-page .ms-board > * { min-width: 0; }
 
 /* Map: one lane per area on a grey tile; the tools are white pills. */
@@ -19056,7 +19056,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf-now { min-height: 260px; }
   .ms-page .mf-stage { position: static; margin-bottom: var(--space-md); }
   .ms-page .mf-now .mf-k, .ms-page .mf-now h3, .ms-page .mf-now .mf-t { margin-right: 0; }
-  .ms-page .mf-bar-actions { flex-direction: column-reverse; align-items: stretch; }
+
   .ms-page .mf-answers { flex-wrap: wrap; }
   .ms-page .mf-answers .mk-button { flex: 1 1 auto; }
   .ms-page .mf-vs div { grid-template-columns: 110px minmax(0, 1fr) 72px; }

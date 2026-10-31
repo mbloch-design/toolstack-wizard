@@ -83,6 +83,7 @@
   --tt-dur-press: 120ms;
   --tt-dur-state: 240ms;
   --tt-dur-move: 420ms;
+  --tt-dur-reveal: 600ms;          /* une donnée qui se remplit à l’arrivée */
 }
 /* ── Atomes : un token composite par atome ──────────────────────────────
    Chaque atome est défini UNE fois ici. Les classes .tt-* ci-dessous, les
@@ -107,11 +108,14 @@
   --tt-figure-font: var(--tt-w-strong) 2.625rem/1 var(--tt-display);   --tt-figure-tracking: -.021em;
   --tt-amount-font: var(--tt-w-strong) 1.0625rem/1 var(--tt-display); --tt-amount-tracking: -.017em;
   --tt-unit-font: var(--tt-w-text) .875rem/1 var(--tt-read);
-  --tt-gain-ink: color-mix(in oklch, var(--tt-live) 72%, var(--tt-ink));
+  --tt-gain-ink: color-mix(in oklch, var(--tt-live) 55%, var(--tt-ink));   /* 5:1 sur sa teinte, AA */
+  --tt-overlap-strong: color-mix(in oklch, var(--tt-overlap) 85%, black); /* fond plein sous du blanc, 5,3:1 */
+  --tt-on-color: #fff;             /* texte sur un fond de couleur plein */
   /* Surfaces */
   --tt-tile-pad: 32px;             /* l'air autour du contenu d'une carte */
   --tt-tile-gap: 20px;             /* entre les blocs d'une carte */
   --tt-board-gap: 20px;            /* entre les cartes d'un bento */
+  --tt-page-gap: 40px;             /* entre les blocs d'une page : en-tête, bento, sections */
   --tt-row-pad: 12px 18px 12px 12px;
   --tt-row-ring: 0 0 0 1px var(--tt-line);
   --tt-row-ring-hover: 0 0 0 1px color-mix(in oklch, var(--tt-ink) 35%, var(--tt-line));
@@ -211,7 +215,7 @@
    ciseaux à la frontière. --v = part à couper, de 0 à 1. */
 .tt-cutgauge { --v: .5; position: relative; display: grid; grid-template-columns: calc((1 - var(--v)) * 100%) 0 1fr; align-items: end; height: 30px; padding-bottom: 6px; }
 .tt-cutgauge-keep { height: 3px; border-radius: var(--tt-r-pill) 0 0 var(--tt-r-pill); background: var(--tt-ink); }
-.tt-cutgauge-cut { height: 3px; background: repeating-linear-gradient(90deg, var(--tt-overlap) 0 var(--tt-dash), transparent var(--tt-dash) calc(var(--tt-dash) + var(--tt-dash-gap))); transform-origin: left; animation: tt-grow 1.1s var(--tt-ease) both; }
+.tt-cutgauge-cut { height: 3px; background: repeating-linear-gradient(90deg, var(--tt-overlap) 0 var(--tt-dash), transparent var(--tt-dash) calc(var(--tt-dash) + var(--tt-dash-gap))); transform-origin: left; animation: tt-grow var(--tt-dur-reveal) var(--tt-ease) both; }
 .tt-cutgauge-mark { position: relative; z-index: 1; width: 0; align-self: stretch; }
 .tt-cutgauge-mark::after { content: ""; position: absolute; left: -.5px; bottom: -4px; width: 1px; height: 11px; background: var(--tt-brand); }
 .tt-cutgauge-mark svg { position: absolute; left: -8px; top: -2px; width: 16px; height: 16px; fill: var(--tt-brand); transform: rotate(90deg); }
@@ -219,7 +223,7 @@
 @keyframes tt-grow { from { transform: scaleX(0); } }
 
 /* ── Atomes : les classes ──────────────────────────────────────────────── */
-.tt-eyebrow { font: var(--tt-eyebrow-font); letter-spacing: var(--tt-eyebrow-tracking); text-transform: uppercase; font-feature-settings: "case"; color: var(--tt-ink); }
+.tt-eyebrow { margin: 0; font: var(--tt-eyebrow-font); letter-spacing: var(--tt-eyebrow-tracking); text-transform: uppercase; font-feature-settings: "case"; color: var(--tt-ink); }
 .tt-title-xl { margin: 0; font: var(--tt-title-xl-font); letter-spacing: var(--tt-title-xl-tracking); text-wrap: balance; color: var(--tt-ink); }
 .tt-title-section { margin: 0; font: var(--tt-title-section-font); letter-spacing: var(--tt-title-section-tracking); text-wrap: balance; color: var(--tt-ink); }
 .tt-title-l { margin: 0; font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); text-wrap: balance; color: var(--tt-ink); }
@@ -283,7 +287,7 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-fchip:active { transform: scale(.97); }
 .tt-fchip:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; }
 .tt-fchip-count { font-variant-numeric: tabular-nums; opacity: .6; }
-.tt-fchip--dup .tt-fchip-count { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: var(--tt-overlap); color: #fff; opacity: 1; }
+.tt-fchip--dup .tt-fchip-count { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: var(--tt-overlap-strong); color: var(--tt-on-color); opacity: 1; }
 
 /* Molécule : le menu de tri. Une pilule grise, le libellé puis la valeur. */
 .tt-select { position: relative; display: inline-flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 34px 0 16px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); color: var(--tt-ink); font: var(--tt-note-font); cursor: pointer; }
@@ -338,7 +342,7 @@ button.tt-budget-trust { cursor: pointer; }
 .tt-share > .tt-logo-tile { grid-area: logo; } .tt-share > .tt-share-name { grid-area: name; } .tt-share > .tt-amount { grid-area: amount; } .tt-share > .tt-note:last-child { grid-area: pct; } .tt-share > .tt-share-bar { grid-area: bar; }
 .tt-share > .tt-logo-tile { width: 24px; height: 24px; }
 .tt-share-bar { height: 3px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); overflow: hidden; }
-.tt-share-bar i { display: block; height: 100%; width: var(--w, 0%); border-radius: inherit; background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow 900ms var(--tt-ease) both; }
+.tt-share-bar i { display: block; height: 100%; width: var(--w, 0%); border-radius: inherit; background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow var(--tt-dur-reveal) var(--tt-ease) both; }
 .tt-share > .tt-note:last-child { text-align: right; font-variant-numeric: tabular-nums; }
 .tt-share-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
@@ -376,6 +380,11 @@ button.tt-budget-trust { cursor: pointer; }
 
 /* ── Organisme : la répartition ─────────────────────────────────────────── */
 /* Le chiffre, une barre empilée fine à la couleur des domaines, la légende. */
+/* Organisme : la page. Un seul rythme vertical entre ses blocs (en-tête, bento,
+   sections), le même sur ordinateur et sur téléphone. */
+.tt-page { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--tt-page-gap); }
+.tt-page > * { margin-block: 0; }
+
 /* Organisme : le tableau de Ma stack, un bento lu constat, action, détail.
    Rangée 1 : le budget (ce que coûte la stack, ce qui est à examiner), puis la décision
    qui l'explique. Rangée 2 : vos usages, puis la répartition. Les cartes d'une rangée
@@ -411,7 +420,7 @@ button.tt-budget-trust { cursor: pointer; }
 
 .tt-split { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-split-bar { display: flex; gap: 3px; height: 10px; }
-.tt-split-bar i { flex: var(--f, 1); min-width: 6px; border-radius: var(--tt-r-pill); background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow 900ms var(--tt-ease) both; }
+.tt-split-bar i { flex: var(--f, 1); min-width: 6px; border-radius: var(--tt-r-pill); background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow var(--tt-dur-reveal) var(--tt-ease) both; }
 .tt-split-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 4px 24px; margin: 0; padding: 0; list-style: none; }
 .tt-split-legend li > :is(button, span) { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto auto 44px; align-items: center; gap: 10px; width: 100%; min-height: 40px; padding: 0 8px; border: 0; border-radius: var(--tt-r-chip); background: none; color: var(--tt-ink); font: inherit; text-align: left; }
 .tt-split-legend li > button { cursor: pointer; transition: background-color var(--tt-dur-state) ease; }
@@ -525,6 +534,8 @@ button.tt-budget-trust { cursor: pointer; }
 .tt-decision-title { margin: 0; font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); text-wrap: balance; }
 .tt-decision-detail { margin: calc(8px - var(--tt-tile-gap)) 0 0; font: var(--tt-text-font); }
 .tt-decision-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin-top: auto; }
+/* L'effet du choix sur le total se tient à droite, même renvoyé à la ligne. */
+.tt-decision-preview { margin: 0 0 0 auto; }
 
 /* ── Molécule : la carte de verdict (un choix) ──────────────────────────── */
 .tt-choices { display: grid; gap: 8px; container-type: inline-size; }

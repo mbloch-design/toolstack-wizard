@@ -487,7 +487,7 @@ export default function CartPage() {
     {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupérée depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
   </div>;
 
-  return <div className="ms-page">
+  return <div className="ms-page tt-page">
     {/* Topbar breadcrumb like every other page ("Home / My stack"); a personal
         page, so no structured data. */}
     <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} includeSchema={false} />
@@ -543,7 +543,7 @@ export default function CartPage() {
       })()}
       {/* Where the stack is saved: this browser, or the account. */}
       <StackAccountPanel empty={false} placement="notice" />
-      <div className="ms-board">
+      <div className="ms-board tt-page">
         {/* 1. The stack itself, one box to see it: by area, as cards or as a list, sorted from a menu. Add and edit live here. */}
         <section className="ms-mod ms-mod--inventory ms-all" aria-labelledby="ms-all-title">
           <div className="tt-sectionhead">

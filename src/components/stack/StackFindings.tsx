@@ -2,7 +2,7 @@ import StackInvoiceEntry from "./StackInvoiceEntry";
 import { CURRENCY_RATE_DATE, type Currency } from "@/lib/currencyRates";
 import StackUsageReview from "./StackUsageReview";
 import { Fragment, useCallback, useEffect, useRef, useState, type ReactNode } from "react";
-import { Rocket, UserRound, BarChart3, Moon, Zap, Check, ChevronDown, CircleDot, ClipboardCheck, Flame, Plus, Scale, Target, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
+import { Rocket, UserRound, BarChart3, Moon, Zap, Check, CircleDot, ClipboardCheck, Flame, Plus, Scale, Target, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import CutGauge from "@/components/stack/CutGauge";
 import { Link } from "@/lib/routerLinks";
@@ -198,10 +198,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   const [priceAll, setPriceAll] = useState(false);
   const [splitView, setSplitView] = useState<SplitView>("bar");
   // On a phone each card is a summary line; one opens at a time.
-  const [openCard, setOpenCard] = useState<string | null>(null);
-  useEffect(() => { if (reviewFindingKey) setOpenCard("now"); }, [reviewFindingKey]);
-  const expander = (id: string, name: string) => <button type="button" className="mf-expand" aria-expanded={openCard === id}
-    aria-label={openCard === id ? t(`Replier ${name}`, `Collapse ${name}`) : t(`Ouvrir ${name}`, `Open ${name}`)} onClick={() => setOpenCard(openCard === id ? null : id)}><ChevronDown size={18} aria-hidden /></button>;
+  // No accordion: in one column every card stays open, in reading order (the decision is the page’s action).
   // The face just picked: it lights up, the other swipes away, the saving
   // rises, then the answer goes through. Instant with reduced motion.
   const [picked, setPicked] = useState<number | null>(null);
@@ -291,8 +288,8 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       {/* Organisme « tableau » du système (planche, gabarit Ma stack), un bento lu constat, action, détail : budget et décision, puis vos usages et la répartition. L'ordre du DOM est l'ordre de lecture, sur mobile aussi. */}
       {/* 1. Read first: what the stack costs, and the verdict under it. */}
       {/* Organisme « budget » du système (planche, chapitre 06 et gabarit Ma stack). */}
-      <article className="tt-budget" data-card="price" data-open={openCard === "price" ? "" : undefined} data-all={priceAll ? "" : undefined}>
-        <div className="tt-head"><span className="tt-eyebrow">{spend.length === 0 && items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Votre budget", "Your budget") : items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel renseigné", "Known budget so far") : t("Budget mensuel renseigné", "Recorded monthly budget")}</span>{expander("price", t("le coût", "the cost"))}</div>
+      <article className="tt-budget" data-card="price" data-all={priceAll ? "" : undefined}>
+        <div className="tt-head"><h2 className="tt-eyebrow">{spend.length === 0 && items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Votre budget", "Your budget") : items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel renseigné", "Known budget so far") : t("Budget mensuel renseigné", "Recorded monthly budget")}</h2></div>
         {/* An unknown price is never shown as free: no figure without a known price, and a partial total says so. */}
         {(() => { const missing = items.filter((item) => item.kind === "price" || item.kind === "freemium").length;
           return spend.length === 0 && missing > 0
@@ -301,7 +298,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 <h3 className="tt-title-m">{t("On fait les comptes ?", "Let's talk budget.")}</h3>
                 <p className="tt-text">{t("Dites-nous quelle formule vous utilisez. Gratuite ou payante, chaque réponse aide à y voir plus clair.", "Tell us which plan you use. Free or paid, every answer makes the picture clearer.")}</p>
                 <p className="tt-note">{t("Promis, pas de tableur.", "No spreadsheet required. Promise.")}</p>
-                <button type="button" className="tt-btn tt-btn--grey" onClick={() => { const next = items.find(item => item.kind === "price" || item.kind === "freemium"); if(next){setFirst(next.key);setLater(keys=>keys.filter(key=>key!==next.key));setOpenCard("now");requestAnimationFrame(()=>document.getElementById("mf-now-title")?.scrollIntoView({block:"center",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));} }}>{t("Préciser ma première formule", "Choose my first plan")}</button>
+                <button type="button" className="tt-btn tt-btn--grey" onClick={() => { const next = items.find(item => item.kind === "price" || item.kind === "freemium"); if(next){setFirst(next.key);setLater(keys=>keys.filter(key=>key!==next.key));requestAnimationFrame(()=>document.getElementById("mf-now-title")?.scrollIntoView({block:"center",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));} }}>{t("Préciser ma première formule", "Choose my first plan")}</button>
               </div>
             : <><p className="tt-figure"><Odometer text={format(total)} /><small>{t("/mois", "/mo")}</small></p>{spend.length > 0 && total > 0 &&
               // The figure, then the year. Who pays for what is the split's job, just below.
@@ -345,13 +342,13 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         {saved > 0 && <p className="tt-note tt-budget-gain">{t("Budget estimé allégé de ", "Estimated budget reduced by ")}<b className="tt-amount tt-gain" data-gain=""><span className="tt-bloom tt-bloom--on" aria-hidden="true" /><span>{format(saved)}</span></b>{t(" par mois.", " a month.")}</p>}
       </article>
       {/* 2. The one thing to do now, or the summary once everything is settled. */}
-      {top ? <section key={`${top.key}-${flash}`} data-step={seatPlan ? "seats" : undefined} className="mf-card mf-now tt-decision" data-flash={flash ? "" : undefined} data-open={openCard === "now" ? "" : undefined} aria-labelledby="mf-now-title" data-kind={top.kind}
+      {top ? <section key={`${top.key}-${flash}`} data-step={seatPlan ? "seats" : undefined} className="mf-card mf-now tt-decision" data-flash={flash ? "" : undefined} data-open="" aria-labelledby="mf-now-title" data-kind={top.kind}
         style={{ ["--a1" as string]: accentOf(top.tools[0]), ["--a2" as string]: accentOf(top.tools[1] || top.tools[0]) }}>
         {/* The image of the decision: its tools, large, on a halo of their brand colours. */}
         {top.kind !== "pair" && <div className="mf-stage" aria-hidden="true">{top.tools.length > 1 ? <Duo a={top.tools[0]} b={top.tools[1]} large /> : <AppIcon tool={top.tools[0]} large />}</div>}
         <h2 id="mf-now-title" tabIndex={-1} className="sr-only">{t("Prochaine décision", "Next decision")}</h2>
         {/* Organisme « carte de décision » du système : surtitre, étapes en traits fins. */}
-        <p className="mf-k tt-decision-head"><span className="tt-eyebrow">{guide && (top.kind === "price" || top.kind === "freemium") ? t("Étape suivante", "Next step") : t("Votre décision", "Your decision")}</span>{expander("now", t("la décision", "the decision"))}
+        <p className="mf-k tt-decision-head"><span className="tt-eyebrow">{guide && (top.kind === "price" || top.kind === "freemium") ? t("Étape suivante", "Next step") : t("Votre décision", "Your decision")}</span>
           {peak > 1 && <span className="mf-step tt-steps" aria-label={t(`Étape ${step} sur ${peak}`, `Step ${step} of ${peak}`)}>{peak <= 8 && <span className="tt-steps-track" aria-hidden="true">{Array.from({ length: peak }, (_, index) => <i key={index} data-on={index < step ? "" : undefined} />)}</span>}{t(`${step} sur ${peak}`, `${step} of ${peak}`)}</span>}</p>
         {/* The tool in question, on stage: its logo bounces in beside the question. */}
         <div className="mf-now-q">{top.kind !== "pair" && <span className="mf-now-logo" aria-hidden="true"><ToolLogo tool={top.tools[0]} size={36} /></span>}<h3 className="tt-decision-title">{top.kind === "price" && !(top.plans && top.plans.length) ? t(`Combien vous coûte ${top.tools[0].name} par mois\u00a0?`, `How much does ${top.tools[0].name} cost you a month?`) : top.title}</h3></div>
@@ -463,7 +460,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           </div>
           {(top.savePrice || (top.plans && top.plans.length > 0)) && top.kind === "price" && top.actions.map((action) => <TextLink className="mf-invoice-details" key={action.label} onClick={action.onClick}>{t("Devise, utilisateurs ou facture annuelle", "Currency, users or yearly billing")}</TextLink>)}
           {/* The effect on the total, on the bar's right: today's figure, then where an answer takes it. */}
-          {(top.plans?.length || top.kind === "pair" || top.savePrice || (top.kind === "freemium" && top.options)) && <p className="mf-preview" aria-live="polite">
+          {(top.plans?.length || top.kind === "pair" || top.savePrice || (top.kind === "freemium" && top.options)) && <p className="mf-preview tt-decision-preview" aria-live="polite">
             <span className="mf-preview-k tt-note">{items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel", "Partial budget") : t("Budget estimé", "Estimated budget")}</span>
             <b className="mf-preview-next tt-amount" data-on={preview !== null ? "" : undefined}>{preview === null && total === 0 && items.some(item => item.kind === "price" || item.kind === "freemium") ? t("À renseigner", "Not set yet") : <>{format(preview ?? total)}<small className="mf-preview-unit">{t("/mois", "/mo")}</small></>}
               {/* The difference pops over the amount like a notification bubble: overlaid, it moves nothing. */}
@@ -487,8 +484,8 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       </article>}
       {toolCount > 1 && (fit.length > 0 || !top || history) && <StackUsageReview key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format}
         complete={!top && fit.every(row => !!row.usage)} freeOnly={total === 0 && freeTools.length === toolCount} history={history} onReviewTools={onReviewTools} />}
-      {toolCount > 1 && total > 0 && <article className="tt-split" data-card="split" data-open={openCard === "bal" ? "" : undefined}>
-        <div className="tt-head"><span className="tt-eyebrow">{t("Répartition", "Split")}</span><span className="tt-split-tools">{spend.length > 0 && areas.length > 0 && <SplitViews view={splitView} onChange={setSplitView} t={t} radar={areas.length >= 4} />}{expander("bal", t("la répartition", "the split"))}</span></div>
+      {toolCount > 1 && total > 0 && <article className="tt-split" data-card="split">
+        <div className="tt-head"><h2 className="tt-eyebrow">{t("Répartition", "Split")}</h2><span className="tt-split-tools">{spend.length > 0 && areas.length > 0 && <SplitViews view={splitView} onChange={setSplitView} t={t} radar={areas.length >= 4} />}</span></div>
         {spend.length > 0 && areas.length > 0 ? (() => {
           const lead = [...areas].sort((x, y) => y.amount - x.amount)[0];
           const share = total > 0 ? Math.round((lead.amount / total) * 100) : 0;
