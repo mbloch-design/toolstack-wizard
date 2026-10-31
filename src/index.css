@@ -18854,7 +18854,8 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   --ms-ink-tile: var(--color-surface-warm);
   --ms-on-ink: var(--color-text-strong);
 }
-.ms-page :is(.ms-top, .mf, .ms-board, .ms-howto, .ms-mod--add) * { font-family: inherit; }
+/* Les contrôles héritent la police de leur zone ; spécificité nulle, un atome .tt-* passe toujours devant. */
+:where(.ms-page :is(.ms-top, .mf, .ms-board, .ms-howto, .ms-mod--add)) :where(button, input, select, textarea) { font-family: inherit; }
 .ms-page :is(.ms-top, .mf, .ms-board, .ms-howto, .ms-mod--add) { font-family: var(--ap-font); }
 
 /* ── Hero: a status line, the title, one sentence. ─────────────────────── */
@@ -18872,9 +18873,11 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 .ms-page .mk-figure { display: flex; align-items: baseline; gap: var(--space-2xs); margin: 0; color: var(--ms-ink); font: 600 var(--tt-size-page-title)/1 var(--ap-display); letter-spacing: -.05em; }
 .ms-page .mk-figure small { color: var(--ms-meta); font: 500 17px/1 var(--ap-font); letter-spacing: -.01em; }
-.ms-page .mk-odo { display: inline-flex; line-height: 1; font-variant-numeric: tabular-nums; }
+.ms-page .mk-odo { display: inline-flex; line-height: 1; }
 .ms-page .mk-odo-col { display: inline-block; height: 1em; overflow: hidden; -webkit-mask-image: linear-gradient(transparent, black 14%, black 86%, transparent); mask-image: linear-gradient(transparent, black 14%, black 86%, transparent); }
-.ms-page .mk-odo-strip { display: flex; flex-direction: column; transition-property: transform; transition-timing-function: cubic-bezier(.16, 1, .3, 1); will-change: transform; }
+.ms-page .mk-odo-col { position: relative; }
+.ms-page .mk-odo-size { display: block; height: 1em; line-height: 1em; visibility: hidden; }
+.ms-page .mk-odo-strip { position: absolute; inset: 0 0 auto; align-items: center; display: flex; flex-direction: column; transition-property: transform; transition-timing-function: cubic-bezier(.16, 1, .3, 1); will-change: transform; }
 .ms-page .mk-odo-strip > span, .ms-page .mk-odo-sym { display: block; height: 1em; line-height: 1em; }
 .ms-page .mk-odo-sym { display: inline-block; }
 
@@ -18908,10 +18911,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @keyframes mf-rise { from { opacity: 0; transform: translateY(12px); } }
 .ms-page .mf-now { grid-column: span 2; }
 /* Label: words only, the type does the work. */
-.ms-page .mf-k.tt-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs); margin: 0 0 var(--space-sm); color: var(--ms-meta); font: 600 13px/1.2 var(--ap-font); letter-spacing: -.005em; text-transform: none; }
+.ms-page .mf-k.tt-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs); margin: 0 0 var(--space-sm); }
 .ms-page .mf-k.tt-kicker > svg { display: none; }
-.ms-page .mf-card h3 { margin: 0; color: var(--ms-ink); font: 600 24px/1.15 var(--ap-display); letter-spacing: -.03em; }
-.ms-page .mf-t { margin: var(--space-xs) 0 0; color: var(--ms-text2); font: 400 15px/1.45 var(--ap-font); letter-spacing: -.005em; }
+.ms-page .mf-card h3 { margin: 0; }
+.ms-page .mf-t { margin: var(--space-xs) 0 0; }
 
 /* Price: the figure, the split by tool in data colours, a quiet verdict. */
 @keyframes mk-grow { from { transform: scaleX(0); } }
@@ -18926,7 +18929,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     radial-gradient(110% 130% at 72% 115%, color-mix(in srgb, var(--a2) 30%, var(--ms-card)), transparent 62%),
     color-mix(in srgb, var(--a1) 8%, var(--ms-card)); }
 .dark .ms-page .mf-now { box-shadow: inset 0 0 0 1px var(--color-border); }
-.ms-page .mf-now .mf-k.tt-kicker { color: color-mix(in srgb, var(--a1) 55%, var(--ms-ink)); }
 .ms-page .mf-now .mf-stage .mk-app { background: var(--color-logo-plate, var(--color-surface)); box-shadow: 0 8px 20px -10px rgb(0 0 0 / .32); animation: mf-pop 560ms cubic-bezier(.3, 1.5, .5, 1) both; }
 .ms-page .mf-now .mf-stage .mk-duo > .mk-app:last-child { animation-delay: 90ms; }
 @keyframes mf-pop { from { opacity: 0; transform: scale(.6) rotate(-8deg); } }
@@ -18941,8 +18943,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf-card { padding: var(--space-lg); }
 .ms-page .mf-now { grid-column: 2 / span 2; grid-row: 1; }
 .ms-page .mf-balance { grid-column: 2 / span 2; grid-row: 2; }
-.ms-page .mf-card h3 { font-size: 20px; }
-.ms-page .mf-now .mf-t { font-size: 14px; }
 .ms-page .mf-now .mf-vs { padding-top: var(--space-md); gap: 6px; font-size: 13px; }
 .ms-page .mf-now .mf-vs + .mf-bar-actions, .ms-page .mf-bar-actions { margin-top: var(--space-md); padding-top: var(--space-md); }
 /* Balance: a small radar beside the ranked areas. */
@@ -18979,12 +18979,11 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mk-radar-label .mk-radar-value { fill: var(--ms-meta); font-weight: 600; font-variant-numeric: tabular-nums; }
 .ms-page .mk-radar-label[data-empty] text { fill: var(--ms-meta); opacity: .6; }
 @media (prefers-reduced-motion: reduce) { .ms-page .mk-radar-shape, .ms-page .mf-now .mf-stage .mk-app { animation: none; } }
-.ms-page .mf-now .mf-k.tt-kicker, .ms-page .mf-now .mf-step { color: color-mix(in srgb, var(--ms-on-ink) 62%, transparent); }
 .ms-page .mf-now h3 { color: var(--ms-on-ink); }
-.ms-page .mf-now .mf-t { max-width: 52ch; color: color-mix(in srgb, var(--ms-on-ink) 74%, transparent); }
+.ms-page .mf-now .mf-t { max-width: 52ch; }
 .ms-page .mf-stage { position: absolute; top: var(--space-xl); right: var(--space-xl); display: flex; }
 .ms-page .mf-now .mf-k, .ms-page .mf-now h3, .ms-page .mf-now .mf-t { margin-right: 150px; }
-.ms-page .mf-step { display: inline-flex; align-items: center; gap: var(--space-xs); margin-left: var(--space-xs); color: var(--ms-meta); font: 500 12.5px/1 var(--ap-font); font-variant-numeric: tabular-nums; }
+.ms-page .mf-step { display: inline-flex; align-items: center; gap: var(--space-xs); margin-left: var(--space-xs); }
 .ms-page .mf-now .mk-duo b { background: var(--ms-ink-tile); box-shadow: 0 0 0 2px var(--ms-ink-tile); color: var(--ms-on-ink); }
 /* A pair: each tool's monthly cost as a bar. */
 .ms-page .mf-vs { display: grid; gap: var(--space-xs); margin: var(--space-md) 0 0; font: 400 14px/1.3 var(--ap-font); }
@@ -21461,8 +21460,8 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Review pass (22/10/2026): one anatomy per card (label, headline at one size,
    content), rows sized by content, no gaps in the middle of cards. */
 .ms-page .mf .mf-k.tt-kicker { margin-bottom: var(--space-sm); }
-.ms-page .mf .mf-card.mf-now h3 { margin: 0 0 var(--space-md); padding-right: 0; color: var(--ms-ink); font: 500 17px/1.3 var(--ap-font); letter-spacing: -.01em; }
-.ms-page .mf .mf-card.mf-now h3 { margin-bottom: 4px; padding-right: 150px; font: 600 22px/1.2 var(--ap-display); letter-spacing: -.02em; }
+.ms-page .mf .mf-card.mf-now h3 { margin: 0 0 var(--space-md); padding-right: 0; }
+.ms-page .mf .mf-card.mf-now h3 { margin-bottom: 4px; padding-right: 150px; }
 .ms-page .mf .mf-now .mf-bar-actions { margin-top: auto; }
 .ms-page .mf .mf-now .mf-t { margin-bottom: var(--space-md); }
 .ms-page .mf .mf-cheaper-row { grid-template-columns: minmax(0, 1fr) auto; padding: var(--space-xs) var(--space-md); }
@@ -21494,7 +21493,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Duplicate face-off: two faces, one tap keeps one. */
 .ms-page .mf .mf-now[data-kind="pair"] { display: flex; flex-direction: column; }
 .ms-page .mf .mf-duel { display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch; gap: var(--space-sm); margin-top: var(--space-lg); }
-.ms-page .mf .mf-face-name { font-family: var(--font-brand); font-size: 1.25rem; font-weight: 600; letter-spacing: -.01em; margin-top: var(--space-xs); }
+.ms-page .mf .mf-face-name { margin-top: var(--space-xs); }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-bar-actions { justify-content: center; margin-top: var(--space-md); }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-links { gap: var(--space-2xs) var(--space-lg); justify-content: center; }
 .ms-page .mf .mf-now .mf-review-cancel { display: inline-flex; align-items: center; min-height: 44px; }
@@ -21529,10 +21528,9 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    faces carry the colour through the logos, not a wash behind them. */
 .ms-page .mf .mf-now { background: var(--ms-tile); }
 .ms-page .mf .mf-now .mf-k { --k: var(--ms-alert); }
-.ms-page .mf .mf-now .mf-k.tt-kicker { color: var(--ms-meta); }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-t { margin-bottom: 0; }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-duel { margin-top: var(--space-md); gap: var(--space-xs); }
-.ms-page .mf .mf-now[data-kind="pair"] .mf-face-name { margin-top: var(--space-2xs); font-size: 16px; }
+.ms-page .mf .mf-now[data-kind="pair"] .mf-face-name { margin-top: var(--space-2xs); }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-bar-actions { margin-top: var(--space-sm); padding-top: 0; }
 
 /* Bento v3 (23/10): the decision only as tall as it needs; cheaper and health
@@ -21642,7 +21640,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-card { display: flex; flex-direction: column; }
 /* Icon top right, label quiet: the headline says what the box is about. */
 .ms-page .mf .mf-card > .mf-k { position: relative; padding-right: 48px; }
-.ms-page .mf .mf-card > .mf-k > svg { position: absolute; top: -4px; right: 0; width: 40px; height: 40px; padding: 10px; border-radius: 12px; background: color-mix(in srgb, var(--k, var(--ms-ink)) 12%, var(--ms-card)); color: var(--k, var(--ms-ink)); }
+.ms-page .mf .mf-card > .mf-k > svg { position: absolute; top: -4px; right: 0; width: 40px; height: 40px; padding: 10px; border-radius: 12px; background: color-mix(in srgb, var(--k, var(--ms-ink)) 12%, var(--ms-card)); }
 .ms-page .mf .mf-balance > .mf-k { --k: var(--color-chart-automation); }
 .ms-page .mf .mf-fit > .mf-k { --k: var(--ms-good); }
 
@@ -21655,7 +21653,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-card > .mf-k > svg { position: static; order: 2; flex: none; width: 36px; height: 36px; padding: 9px; }
 .ms-page .mf .mf-now > .mf-k { justify-content: flex-start; }
 /* Tighter rows: the bento stays as short as its content. */
-.ms-page .mf .mf-fit .mf-t, .ms-page .mf .mf-balance .mf-t { font-size: 14px; }
 /* Three views of the split. */
 .ms-page .mf .mf-bb-views { margin-bottom: var(--space-md); }
 .ms-page .mf .mf-bb-views button { min-height: 30px; padding: 0 12px; font-size: 13px; }
@@ -21664,7 +21661,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    feels good: the kept face lights up with a check, the other swipes away,
    the saving rises. */
 @media (min-width: 1181px) {
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-name { margin-top: var(--space-xs); font-size: 17px; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-name { margin-top: var(--space-xs); }
 }
 @keyframes mf-or-breathe { 50% { transform: scale(1.08); } }
 @keyframes mf-kept { 0% { transform: scale(1); } 45% { transform: scale(1.05); } 100% { transform: scale(1.02); } }
@@ -21712,7 +21709,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-face-name { grid-column: 2; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-duel { margin-top: var(--space-md); }
   .ms-page .mf .mf-now .mf-bar-actions, .ms-page .mf .mf-now[data-kind="pair"] .mf-bar-actions { margin-top: auto; }
-  .ms-page .mf .mf-now h3 { font-size: 24px; }
 }
 /* Phone: four summary cards; one opens at a time. */
 @media (max-width: 760px) {
@@ -21721,7 +21717,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-card > .mf-k > svg { display: none; }
   .ms-page .mf .mf-card { padding: var(--space-md); }
   .ms-page .mf .mf-card:not([data-open]) > :not(.mf-k):not(.mf-lead):not(h3):not(.mk-figure):not(.mf-now-q) { display: none; }
-  .ms-page .mf .mf-card:not([data-open]).mf-now h3 { margin-bottom: 0; font-size: 19px; }
+  .ms-page .mf .mf-card:not([data-open]).mf-now h3 { margin-bottom: 0; }
 }
 /* Tablet and phone: one column for the phone, two for the tablet; the
    decision comes first on a phone so the action is in the first screen. */
@@ -21731,7 +21727,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Short screens: tighter figures and lines, so both rows stay above the fold. */
 @media (min-width: 761px) and (max-height: 860px) {
   .ms-page .mf .mf-card { padding: var(--space-md) var(--space-lg); }
-  .ms-page .mf .mf-now h3 { font-size: 21px; }
   .ms-page .mf .mf-card > .mf-k { min-height: 30px; }
   .ms-page .mf .mf-card > .mf-k > svg { width: 30px; height: 30px; padding: 7px; }
 }
@@ -21751,11 +21746,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @keyframes mf-flash-fill { 0% { background: color-mix(in srgb, var(--color-accent) 22%, var(--ms-card)); } }
 
 /* Live effect on the total, and the seat stepper. */
-.ms-page .mf .mf-preview { margin: var(--space-md) 0 0; color: var(--ms-text2, var(--ms-meta)); font: 400 14px/1.3 var(--ap-font); }
-.ms-page .mf .mf-preview b { color: var(--ms-ink); font: 600 15px/1 var(--ap-display); font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-preview span[data-dir] { margin-left: 4px; padding: 2px 8px; border-radius: 99px; font: 600 12.5px/1 var(--ap-font); }
-.ms-page .mf .mf-preview span[data-dir="down"] { background: var(--ms-good-soft); color: var(--ms-good); }
-.ms-page .mf .mf-preview span[data-dir="up"] { background: color-mix(in srgb, var(--ms-alert) 10%, var(--ms-card)); color: var(--ms-alert); }
+.ms-page .mf .mf-preview { margin: var(--space-md) 0 0; }
+.ms-page .mf .mf-preview span[data-dir] { margin-left: 4px; padding: 2px 8px; border-radius: 99px; }
+.ms-page .mf .mf-preview span[data-dir="down"] { background: var(--ms-good-soft); }
+.ms-page .mf .mf-preview span[data-dir="up"] { background: color-mix(in srgb, var(--ms-alert) 10%, var(--ms-card)); }
 .ms-page .mf .mf-seats { display: grid; gap: var(--space-sm); margin-top: var(--space-md); padding: var(--space-md); border-radius: var(--radius-lg); background: var(--ms-card); }
 .ms-page .mf .mf-seats-q { margin: 0; color: var(--ms-ink); font: 500 15px/1.35 var(--ap-font); }
 .ms-page .mf .mf-seats-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md); }
@@ -21797,13 +21791,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-now .mf-plan:hover > b, .ms-page .mf .mf-now .mf-plan:focus-visible > b { color: var(--color-accent); }
 /* The total, on the action bar's right. */
 .ms-page .mf .mf-now .mf-bar-actions { align-items: center; }
-.ms-page .mf .mf-preview { display: inline-flex; align-items: baseline; gap: 6px; margin: 0 0 0 auto; color: var(--ms-meta); font: 400 13.5px/1 var(--ap-font); white-space: nowrap; }
-.ms-page .mf .mf-preview-k { color: var(--ms-meta); }
-.ms-page .mf .mf-preview b { color: var(--ms-ink); font: 600 17px/1 var(--ap-display); font-variant-numeric: tabular-nums; transition: color 160ms ease; }
-.ms-page .mf .mf-preview b[data-dim] { color: var(--ms-meta); font-weight: 500; }
+.ms-page .mf .mf-preview { display: inline-flex; align-items: baseline; gap: 6px; margin: 0 0 0 auto; white-space: nowrap; }
+.ms-page .mf .mf-preview b { transition: color 160ms ease; }
 .ms-page .mf .mf-preview-delta { align-self: center; padding: 3px 9px; border-radius: 99px; background: var(--ms-card); color: var(--ms-ink); font: 600 12px/1 var(--ap-font); font-variant-numeric: tabular-nums; }
 .ms-page .mf .mf-preview-delta[data-dir="down"] { color: var(--ms-good); }
-.ms-page .mf .mf-preview-unit { color: var(--ms-meta); }
 .ms-page .mf .mf-preview span.mf-preview-delta[data-dir] { margin-left: 2px; background: var(--ms-card); color: var(--ms-ink); }
 .ms-page .mf .mf-preview span.mf-preview-delta[data-dir="down"] { color: var(--ms-good); }
 /* A still line: fixed columns, tabular digits, slots hidden rather than added. */
@@ -21916,7 +21907,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Three steps of use, side by side. */
 .ms-page .mf .mf-preview { grid-template-columns: auto auto 1em 6.4em 5em; }
 .ms-page .mf .mf-preview b { display: inline-flex; align-items: baseline; justify-content: flex-start; gap: 1px; text-align: left; }
-.ms-page .mf .mf-preview b small.mf-preview-unit { color: var(--ms-meta); font: 400 12.5px/1 var(--ap-font); }
 
 /* Five-level usage gauge (23/10): rising bars, read against the power gauge above. */
 
@@ -21956,7 +21946,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-preview .mf-preview-delta { justify-self: end; }
 .ms-page .mf .mf-preview-k { justify-self: end; white-space: nowrap; transition: color 160ms ease; }
 .ms-page .mf .mf-preview b.mf-preview-next { justify-self: end; justify-content: flex-end; transition: color 160ms ease; }
-.ms-page .mf .mf-preview b.mf-preview-next[data-on] { color: var(--color-accent); }
 .ms-page .mf .mf-preview b.mf-preview-next .mk-odo { justify-content: flex-end; }
 .ms-page .mf .mf-preview { grid-template-columns: 7em 7.5em 6.4em; }
 .ms-page .mf .mf-preview span.mf-preview-delta { justify-self: end; margin: 0; animation-name: mf-fade; }
@@ -21978,7 +21967,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-preview b span.mf-preview-delta[data-dir="down"] { background: var(--ms-good); color: #fff; }
 /* Same type at rest and on hover: only the figure and its colour change. */
 .ms-page .mf .mf-preview { grid-template-columns: auto 6.4em; }
-.ms-page .mf .mf-preview b.mf-preview-next { font: 600 17px/1 var(--ap-font); font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
 
 /* ===== Responsive bento (23/10) ===== */
 /* The tool's logo now sits in the question: the old stage never shows. */
@@ -22050,7 +22038,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    optimisation at their natural height; the price card, with more tools, stands beside them. */
 .ms-page .mf .mf-now .mf-now-q { display: flex; align-items: center; gap: var(--space-sm); }
 .ms-page .mf .mf-now .mf-now-q h3 { margin: 0; }
-@media (max-width: 760px) { .ms-page .mf .mf-card.mf-now:not([data-open]) > .mf-now-q { display: flex; } .ms-page .mf .mf-card.mf-now:not([data-open]) .mf-now-q h3 { margin: 0; font-size: 19px; } }
+@media (max-width: 760px) { .ms-page .mf .mf-card.mf-now:not([data-open]) > .mf-now-q { display: flex; } .ms-page .mf .mf-card.mf-now:not([data-open]) .mf-now-q h3 { margin: 0; } }
 
 /* ===== Stack starter (23/10): signed out and empty stack ===== */
 .ms-page .ss { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: var(--space-xl); align-items: start; margin-top: var(--space-md); font-family: var(--ap-font); }
@@ -22405,9 +22393,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-now .mf-plans:has(.mf-plan-name em) .mf-plan-name { min-height: 34px; }
 .ms-page .mf .mf-plan-time { color: var(--color-accent); font: 500 12px/1.25 var(--ap-font); }
 /* The bar's right side: the label above the figure, never glued to it. */
-.ms-page .mf .mf-preview { display: inline-grid; justify-items: end; gap: 3px; line-height: 1.1; }
-.ms-page .mf .mf-preview-k { font: 500 12px/1 var(--ap-font); }
-.ms-page .mf .mf-preview b:not(:has(small)) { color: var(--ms-meta); font: 600 15px/1 var(--ap-font); }
+.ms-page .mf .mf-preview { display: inline-grid; justify-items: end; gap: 3px; }
 /* Welcome toast: the person's logos drop in, two short lines, a little spark. */
 .ms-welcome-toast { position: relative; display: flex; align-items: center; gap: 12px; width: min(380px, calc(100vw - 32px)); padding: 12px 16px 12px 12px; border-radius: 20px; background: var(--color-accent); color: var(--color-on-primary); font-family: var(--ap-font, inherit); overflow: hidden; animation: so-in 420ms cubic-bezier(.2, .8, .2, 1) both; }
 .ms-welcome-toast-logos { display: inline-flex; flex: none; }
@@ -22445,7 +22431,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
      in the card's own ink, a line-up of answers instead of a clipped list,
      and a line of casting humour read from the answers. */
   .ms-page .mf .mu-card > * { min-width: 0; }
-  .ms-page .mf .mu-card .mu-count { flex: none; padding: 4px 10px; border-radius: var(--radius-pill); background: var(--color-surface); color: var(--color-text-secondary); font: 600 12px/1.2 var(--font-ui); font-variant-numeric: tabular-nums; }
+  .ms-page .mf .mu-card .mu-count { padding: 4px 10px; border-radius: var(--radius-pill); background: var(--color-surface); }
   .ms-page .mf .mu-card .mu-scene { min-height: 0; min-width: 0; animation: mu-scene-in 220ms cubic-bezier(.2, .8, .2, 1) both; }
 
   /* Question: the tool, the meter, the reaction. Side by side when wide. */
@@ -22501,7 +22487,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
      front per scene (the tool, or the verdict), everything else recedes:
      no white boxes, quiet counts, the meter on the card itself, a soft glow
      for freshness. */
-  .ms-page .mf .mu-card .mu-count { padding: 0; background: none; color: var(--color-text-secondary); font-weight: 500; }
+  .ms-page .mf .mu-card .mu-count { padding: 0; background: none; }
   .ms-page .mf .mu-card .mu-preview { font-style: normal; }
   .ms-page .mf .mu-card .mu-footer { border-top: 0; padding-top: 0; }
   .ms-page .mf .mu-card .mu-next.mu-skip { background: none; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--mu-ink) 28%, transparent); }
@@ -22773,7 +22759,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @layer components {
   .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) { --mf-choice-peach: #FFE1CC; --mf-choice-line: #F5A66C; --mf-choice-detail: #A34E22; background: #EDF2FF; }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-duel.mf-choice-group { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: var(--space-xs); margin: var(--space-lg) 0 0; }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-name { grid-column: 1; grid-row: 2; margin: 0; width: 100%; overflow: visible; text-overflow: clip; white-space: normal; overflow-wrap: anywhere; font: 600 14px/1.3 var(--font-ui); }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-name { grid-column: 1; grid-row: 2; margin: 0; width: 100%; overflow: visible; text-overflow: clip; white-space: normal; overflow-wrap: anywhere; }
   .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) .mf-bar-actions { margin-top: var(--space-lg); padding-top: 0; }
 }
 
@@ -22847,9 +22833,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    the step and the budget preview recede. No answer looks chosen before the
    person picks one: every face starts neutral, and the hovered one lifts. */
 @layer components {
-  .ms-page .mf .mf-now .mf-step { color: var(--color-text-secondary); font: 500 12px/1.2 var(--font-ui); }
-  .ms-page .mf .mf-now .mf-now-q h3 { font: 600 24px/1.2 var(--font-ui) !important; letter-spacing: -.025em !important; }
-  .ms-page .mf .mf-now > .mf-t { font: 400 15px/1.45 var(--font-ui) !important; color: var(--color-text-secondary) !important; }
   .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan) { border: 0 !important; box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text-strong) 6%, transparent) !important; transition: transform 200ms cubic-bezier(.34, 1.4, .64, 1), box-shadow 200ms ease !important; }
   .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan):hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 0 0 2px var(--color-stack-tools-ink, var(--color-primary)), 0 12px 28px color-mix(in srgb, var(--color-text-strong) 10%, transparent) !important; }
   .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan):active:not(:disabled) { transform: scale(.98); }
@@ -22857,7 +22840,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-now .mf-plan-name > span { white-space: normal !important; overflow: visible !important; text-wrap: balance; line-height: 1.2; }
   .ms-page .mf .mf-now .mf-plan-radio { border-width: 1.5px !important; }
   .ms-page .mf .mf-now .mf-seats-ok { background: var(--color-stack-tools-ink, var(--color-primary)) !important; border-color: transparent !important; }
-  .ms-page .mf .mf-now .mf-preview-k { font: 500 12px/1.2 var(--font-ui) !important; color: var(--color-text-secondary) !important; }
   @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan) { transition: none !important; transform: none !important; } }
 }
 
@@ -22896,7 +22878,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both)::after { content: ""; position: absolute; top: 12px; right: 12px; width: 18px; height: 18px; box-sizing: border-box; border: 1.5px solid color-mix(in srgb, var(--color-text-strong) 22%, transparent); border-radius: var(--radius-circle); transition: border-color 160ms ease, border-width 160ms ease; }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both):hover:not(:disabled)::after { border: 5px solid var(--color-stack-tools-ink, var(--color-primary)); }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both)[data-state="kept"]::after { border: 5px solid var(--color-good, var(--ms-good)); }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face-name, .mf-choice-both-label) { grid-row: 2 !important; font: 600 15px/1.25 var(--font-ui) !important; color: var(--color-text-strong); }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face-name, .mf-choice-both-label) { grid-row: 2 !important; }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-now-q h3 { text-wrap: balance; }
   @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both)::after { transition: none; } }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both) { padding-top: 38px !important; }
@@ -23154,14 +23136,14 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
    rangées. Remplace le fond teinté, la pastille bleue, les faces centrées et
    inclinées. La structure vient du système (.tt-decision, .tt-choice) ; ces
    règles neutralisent les couches historiques de .mf-now. */
-.ms-page .mf .mf-now, .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) { gap: 0; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); box-shadow: none; color: var(--tt-ink); }
+.ms-page .mf .mf-now, .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) { gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); box-shadow: none; color: var(--tt-ink); }
 .dark .ms-page .mf .mf-now { box-shadow: none; }
-.ms-page .mf .mf-now .mf-k.tt-decision-head { display: flex; align-items: center; gap: 12px; margin: 0 0 16px; color: var(--tt-ink); }
+.ms-page .mf .mf-now .mf-k.tt-decision-head { display: flex; align-items: center; gap: 12px; margin: 0; color: var(--tt-ink); }
 .ms-page .mf .mf-now .mf-k.tt-decision-head .mf-step { margin-left: auto; color: var(--tt-ink); }
 .ms-page .mf .mf-now .mf-now-q { margin: 0; }
-.ms-page .mf .mf-now .mf-now-q h3.tt-decision-title { margin: 0; font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); color: var(--tt-ink); }
-.ms-page .mf .mf-now p.mf-t.tt-decision-detail { margin: 8px 0 0; font: var(--tt-text-font); color: var(--tt-ink); }
-.ms-page .mf .mf-now[data-kind="pair"] .mf-duel.tt-choices { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin: 20px 0 0; }
+.ms-page .mf .mf-now .mf-now-q h3.tt-decision-title { margin: 0; }
+.ms-page .mf .mf-now p.mf-t.tt-decision-detail { margin: calc(8px - var(--tt-tile-gap)) 0 0; }
+.ms-page .mf .mf-now[data-kind="pair"] .mf-duel.tt-choices { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin: 0; }
 .ms-page .mf .mf-now[data-kind="pair"] .tt-choice { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; flex-direction: row; align-items: center; justify-items: stretch; gap: 14px; min-height: 64px; padding: var(--tt-row-pad); border: 0; border-radius: var(--tt-r-card); background: var(--tt-bg); color: var(--tt-ink); text-align: left; box-shadow: var(--tt-row-ring); transform: none; rotate: none; }
 .ms-page .mf .mf-now[data-kind="pair"] .tt-choice:hover:not(:disabled) { background: var(--tt-bg); box-shadow: var(--tt-row-ring-hover); transform: none; }
 .ms-page .mf .mf-now[data-kind="pair"] .tt-choice:active:not(:disabled) { transform: scale(.985); }
@@ -23175,7 +23157,7 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
   .ms-page .mf .mf-now[data-kind="pair"] .tt-choice .tt-choice-text { grid-area: text; }
   .ms-page .mf .mf-now[data-kind="pair"] .tt-choice .tt-choice-amount { grid-area: amount; }
 }
-.ms-page .mf .mf-now[data-kind="pair"] .mf-bar-actions, .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) .mf-bar-actions { justify-content: space-between; margin-top: 20px; padding-top: 0; }
+.ms-page .mf .mf-now[data-kind="pair"] .mf-bar-actions, .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) .mf-bar-actions { justify-content: space-between; margin-top: auto; padding-top: 0; }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-links { justify-content: flex-start; }
 /* Questions de formule : les tuiles prennent l'atome « carte de verdict ». */
 .ms-page .mf .mf-now .mf-plan { border-radius: var(--tt-r-card); background: var(--tt-bg); box-shadow: var(--tt-row-ring); color: var(--tt-ink); transition: box-shadow var(--tt-dur-state) ease, opacity var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
@@ -23184,13 +23166,9 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .ms-page .mf .mf-now .mf-plan[data-state="gone"] { opacity: var(--tt-row-gone); }
 /* Couches historiques plus spécifiques (mode sombre teinté, titre en Inter gras, nom en gras). */
 .ms-page .mf .mf-now.mf-card[data-kind]:has(.mf-k) { background: var(--tt-tile); box-shadow: none; }
-.ms-page .mf .mf-now.mf-card[data-kind] .mf-now-q h3.tt-decision-title { font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); color: var(--tt-ink); }
-.ms-page .mf .mf-now .tt-choice .mf-face-name { font: inherit; color: inherit; }
 /* Le titre d'une décision et l'anneau du choix retenu (les anciennes règles portaient !important et un sélecteur d'élément). */
-.ms-page .mf .mf-now .mf-now-q h3.tt-decision-title { font: var(--tt-title-l-font) !important; letter-spacing: var(--tt-title-l-tracking); }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button.tt-choice[data-state="kept"] { box-shadow: var(--tt-row-ring-on); }
 .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button.tt-choice[data-state="gone"] { opacity: var(--tt-row-gone); }
-.ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .tt-choice .mf-face-name { font-weight: inherit !important; font-size: inherit !important; color: inherit !important; }
 
 /* ── Pont des atomes : Ma stack, du fil d'Ariane au pied de page (30 oct. 2026)
    Chaque élément de la page lit le token de son atome (src/styles/tooltrim-system.css).
@@ -23213,7 +23191,7 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .ms-page .mf .mu-card.tt-usage .mu-scene { display: grid; gap: 18px; padding: 0; animation: tt-usage-in 420ms var(--tt-ease) both; }
 @keyframes tt-usage-in { from { opacity: 0; transform: translateX(16px); } }
 .ms-page .mf .mu-card.tt-usage .tt-usage-tool h3 { margin: 0; font: var(--tt-title-m-font) !important; letter-spacing: var(--tt-title-m-tracking) !important; color: var(--tt-ink) !important; }
-.ms-page .mf .mu-card.tt-usage .tt-usage-tool p, .ms-page .mf .mu-card.tt-usage .tt-usage-feedback p { margin: 0; font: var(--tt-note-font) !important; color: var(--tt-ink) !important; }
+.ms-page .mf .mu-card.tt-usage .tt-usage-tool p, .ms-page .mf .mu-card.tt-usage .tt-usage-feedback p { margin: 0; color: var(--tt-ink) !important; }
 .ms-page .mf .mu-card.tt-usage .tt-usage-feedback p { font-style: italic; }
 .ms-page .mf .mu-card.tt-usage .tt-usage-tool > :first-child { width: 48px; height: 48px; border-radius: var(--tt-logo-radius); box-shadow: var(--tt-logo-shadow); }
 .ms-page .mf .mu-card.tt-usage[data-view="question"] .mu-footer { display: none; }

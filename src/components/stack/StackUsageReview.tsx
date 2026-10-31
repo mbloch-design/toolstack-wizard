@@ -112,7 +112,7 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
       </span>
       {question && <span className="tt-usage-acts">
         <button type="button" className="tt-usage-back" disabled={index <= 0} aria-label={t("Outil précédent", "Previous tool")} onClick={() => openTool(index - 1, review)}><ChevronLeft size={16} aria-hidden /></button>
-        <button type="button" className="tt-usage-later" onClick={() => scene("summary")}>{review ? t("Résumé", "Summary") : t("Faire une pause", "Take a break")}</button>
+        <button type="button" className="tt-usage-later" onClick={() => scene("summary")}>{review ? t("Résumé", "Summary") : t("Plus tard", "Later")}</button>
       </span>}
     </header>
 
@@ -129,7 +129,7 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
       {/* Le bout de la bande : passer, ou avancer au clavier. La souris ne quitte pas la rangée. */}
       <button type="button" className="tt-usage-skip" aria-label={!selected ? t("Passer cet outil", "Skip this tool") : undefined} onClick={advance}><i aria-hidden="true" /><span>{!selected ? t("Passer", "Skip") : hasNext ? t("Suivant", "Next") : t("Terminer", "Finish")}</span></button>
       </div>
-      <div className="tt-usage-feedback"><p className="tt-note" id={captionId}>{level ? <>{hover && hover.id === current.tool.id && hover.level !== selected - 1 && <span className="mu-preview">{t("Et là… ", "Preview: ")}</span>}<span>{t(level.joke[0], level.joke[1])}</span></> : <span>{t("Du figurant au copilote : à vous de caster.", "From cameo to co-pilot. You’re casting.")}</span>}</p></div>
+      <div className="tt-usage-feedback"><p className="tt-note" id={captionId}>{level ? <>{hover && hover.id === current.tool.id && hover.level !== selected - 1 && <span className="mu-preview">{t("Et là… ", "Preview: ")}</span>}<span>{t(level.joke[0], level.joke[1])}</span></> : null}</p></div>
     </div> : view === "history" ? <div className="mu-scene mu-history" role="region" aria-label={t("Historique des choix", "Choice history")} tabIndex={0}>
       {history || <p className="mu-copy">{t("Le carnet de choix attend sa première ligne.", "Your choice notebook is waiting for its first entry.")}</p>}
     </div> : <div className="mu-scene mu-summary">

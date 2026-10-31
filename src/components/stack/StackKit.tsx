@@ -58,7 +58,9 @@ function OdoColumn({ digit, place }: { digit: number; place: number }) {
     const frame = requestAnimationFrame(() => setShown(digit));
     return () => cancelAnimationFrame(frame);
   }, [digit]);
+  // The column takes the width of its own digit (proportional figures); the strip scrolls over it.
   return <span className="mk-odo-col" aria-hidden="true">
+    <span className="mk-odo-size">{digit}</span>
     <span className="mk-odo-strip" style={{ transform: `translateY(${-shown * 10}%)`, transitionDuration: `${720 + place * 160}ms`, transitionDelay: `${place * 70}ms` }}>
       {"0123456789".split("").map((n) => <span key={n}>{n}</span>)}
     </span>
@@ -126,12 +128,12 @@ export function Footnote({ children }: { children: ReactNode }) {
 /** Acts on the stack. Primary is the expected answer, secondary the others. */
 export const Button = forwardRef<HTMLButtonElement, ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "secondary"; icon?: ReactNode }>(
   function Button({ variant = "secondary", icon, children, className, ...rest }, ref) {
-    return <button ref={ref} type="button" {...rest} className={`mk-button ${variant === "primary" ? "tt-button-primary" : "tt-button-secondary"}${className ? ` ${className}` : ""}`} data-variant={variant}>{icon}{children}</button>;
+    return <button ref={ref} type="button" {...rest} className={`mk-button tt-btn${variant === "primary" ? "" : " tt-btn--grey"}${className ? ` ${className}` : ""}`} data-variant={variant}>{icon}{children}</button>;
   });
 
 /** Goes to a secondary place, or a secondary action in a footer: underlined text. */
 export function TextLink({ to, onClick, children, className }: { to?: string; onClick?: () => void; children: ReactNode; className?: string }) {
-  const cls = `mk-link${className ? ` ${className}` : ""}`;
+  const cls = `tt-link${className ? ` ${className}` : ""}`;
   return to ? <Link className={cls} to={to} onClick={onClick}>{children}</Link> : <button type="button" className={cls} onClick={onClick}>{children}</button>;
 }
 

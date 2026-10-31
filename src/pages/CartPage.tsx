@@ -7,7 +7,7 @@ import { useAccountExperience } from "@/components/account/AccountExperienceProv
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { Plus, Search, Check, X, Minus, Pencil, Compass, LayoutGrid, List, ChevronDown, Layers3, Wallet, Copy } from "@/lib/icons";
+import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, List, ChevronDown, Layers3, Wallet, Copy } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -501,7 +501,7 @@ export default function CartPage() {
         <div className="tt-pagehead-title">
           <span className="tt-eyebrow">{t("Ma stack", "My stack")}</span>
           <h1 ref={inventoryHeadingRef} tabIndex={-1} className="tt-title-xl">{t("Mes outils", "My tools")}</h1>
-          <p className="tt-note">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""} dans votre stack`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""} in your stack`)}</p>
+          <p className="tt-note">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</p>
         </div>
       </StackPersonalWelcome>
       {state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) && <Link
@@ -509,7 +509,7 @@ export default function CartPage() {
           state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`,
             explorerStackSources: state.toolEntries.filter(entry => entry.intent === "stack").flatMap(entry => { const tool = lookup.get(entry.toolSlug); return tool ? [toolKey(tool)] : []; }) }}
           onClick={() => trackEvent("stack_explorer_click", { source: "whole_stack" })}>
-          <Compass size={16} aria-hidden />{t("Explorer autour de ma stack", "Explore around my stack")}
+          {t("Explorer autour de ma stack", "Explore around my stack")}
         </Link>}
     </header>
     {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"

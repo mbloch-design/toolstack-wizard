@@ -11,7 +11,7 @@ import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
 import toolAccents from "@/data/toolAccents.json";
 import { toolKey } from "@/lib/stackView";
-import { AppIcon, Button, Donut, Duo, Figure, Odometer, Radar, Segmented, TextLink } from "./StackKit";
+import { AppIcon, Button, Donut, Duo, Figure, Odometer, Radar, TextLink } from "./StackKit";
 
 export type FindingAction = { label: string; onClick: () => void; primary?: boolean; ariaLabel?: string };
 export type Finding = {
@@ -85,8 +85,10 @@ type SplitView = "bar" | "radar" | "ring";
 /** The three readings of the split, switched from the card's header row. */
 function SplitViews({ view, onChange, t, radar }: { view: SplitView; onChange: (view: SplitView) => void; t: (a: string, b: string) => string; radar: boolean }) {
   // A radar only says something from four axes: below that it is a triangle, so it is not offered.
-  return <Segmented className="mf-bb-views" label={t("Vue de la répartition", "Split view")} value={view} onChange={onChange}
-    options={[{ id: "bar" as SplitView, label: <><BarChart3 size={14} aria-hidden />{t("Barre", "Bar")}</> }, ...(radar ? [{ id: "radar" as SplitView, label: <><Target size={14} aria-hidden />{t("Radar", "Radar")}</> }] : []), { id: "ring" as SplitView, label: <><CircleDot size={14} aria-hidden />{t("Anneau", "Ring")}</> }]} />;
+  const views: { id: SplitView; label: string; icon: ReactNode }[] = [{ id: "bar", label: t("Barre", "Bar"), icon: <BarChart3 aria-hidden /> }, ...(radar ? [{ id: "radar" as SplitView, label: t("Radar", "Radar"), icon: <Target aria-hidden /> }] : []), { id: "ring", label: t("Anneau", "Ring"), icon: <CircleDot aria-hidden /> }];
+  return <div className="tt-iconswitch" role="group" aria-label={t("Vue de la répartition", "Split view")}>
+    {views.map((option) => <button key={option.id} type="button" aria-pressed={view === option.id} aria-label={option.label} title={option.label} onClick={() => onChange(option.id)}>{option.icon}</button>)}
+  </div>;
 }
 /** A ring whose sections answer the pointer: the one pointed at thickens, the others fade. */
 function SplitRing({ areas, active, onPoint, label }: { areas: AreaShare[]; active: string | null; onPoint: (id: string | null) => void; label: string }) {
@@ -452,7 +454,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         {/* No plan in the catalogue: the only case with an amount to type. */}
         {top.savePrice && (!top.plans || top.plans.length === 0) && <StackInvoiceEntry key={`${scope}:${scopeEpoch}:${top.key}`} currency={currency} lang={lang} onSave={top.savePrice} onPreview={previewInvoice} />}
         {/* One bar, always at the bottom: ways to look or defer on the left, the answers on the right. */}
-        <div className="mf-bar-actions">
+        <div className="mf-bar-actions tt-decision-foot">
           <div className="mf-links">
             {top.link && <TextLink to={top.link.to} onClick={top.link.onClick}>{top.link.label}</TextLink>}
             {top.cancelReview && <TextLink className="mf-review-cancel" onClick={top.cancelReview.onClick}>{top.cancelReview.label}</TextLink>}
@@ -462,8 +464,8 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           {(top.savePrice || (top.plans && top.plans.length > 0)) && top.kind === "price" && top.actions.map((action) => <TextLink className="mf-invoice-details" key={action.label} onClick={action.onClick}>{t("Devise, utilisateurs ou facture annuelle", "Currency, users or yearly billing")}</TextLink>)}
           {/* The effect on the total, on the bar's right: today's figure, then where an answer takes it. */}
           {(top.plans?.length || top.kind === "pair" || top.savePrice || (top.kind === "freemium" && top.options)) && <p className="mf-preview" aria-live="polite">
-            <span className="mf-preview-k">{items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel", "Partial budget") : t("Budget estimé", "Estimated budget")}</span>
-            <b className="mf-preview-next" data-on={preview !== null ? "" : undefined}>{preview === null && total === 0 && items.some(item => item.kind === "price" || item.kind === "freemium") ? t("À renseigner", "Not set yet") : <>{format(preview ?? total)}<small className="mf-preview-unit">{t("/mois", "/mo")}</small></>}
+            <span className="mf-preview-k tt-note">{items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel", "Partial budget") : t("Budget estimé", "Estimated budget")}</span>
+            <b className="mf-preview-next tt-amount" data-on={preview !== null ? "" : undefined}>{preview === null && total === 0 && items.some(item => item.kind === "price" || item.kind === "freemium") ? t("À renseigner", "Not set yet") : <>{format(preview ?? total)}<small className="mf-preview-unit">{t("/mois", "/mo")}</small></>}
               {/* The difference pops over the amount like a notification bubble: overlaid, it moves nothing. */}
               {preview !== null && preview !== total && <span key={preview} className="mf-preview-delta" data-dir={preview < total ? "down" : "up"}>
                 {preview < total ? <TrendingDown size={12} aria-hidden /> : <TrendingUp size={12} aria-hidden />}{preview > total ? "+" : "−"}{format(Math.abs(preview - total))}</span>}</b>

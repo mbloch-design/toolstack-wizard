@@ -109,7 +109,8 @@
     "typecheck:api": "tsc --noEmit -p tsconfig.api.json",
     "test:api": "vitest run --config vitest.api.config.ts",
     "test:accounts:db": "node scripts/test-accounts-db.mjs",
-    "test:accounts:runtime": "node --test scripts/accounts-runtime.test.mjs"
+    "test:accounts:runtime": "node --test scripts/accounts-runtime.test.mjs",
+    "audit:typo": "node scripts/audit-typo-ma-stack.mjs"
   },
   "dependencies": {
     "@orama/orama": "^3.1.18",

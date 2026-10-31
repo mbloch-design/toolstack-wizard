@@ -251,8 +251,8 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-check { display: grid; place-items: center; width: 20px; height: 20px; border-radius: var(--tt-r-round); background: var(--tt-brand); color: #fff; box-shadow: 0 0 0 2px var(--tt-bg); animation: tt-bump 420ms cubic-bezier(.34, 1.6, .64, 1); }
 .tt-check svg { width: 12px; height: 12px; }
 .tt-steps { display: inline-flex; align-items: center; gap: 8px; font: var(--tt-note-font); font-variant-numeric: tabular-nums; color: var(--tt-ink); }
-.tt-steps-track { display: inline-flex; gap: 3px; }
-.tt-steps-track i { width: 14px; height: 2px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); }
+.tt-steps-track { display: inline-flex; flex: 0 1 auto; gap: 3px; min-width: 0; }
+.tt-steps-track i { flex: 0 1 auto; width: 14px; min-width: 4px; height: 2px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); }
 .tt-steps-track i[data-on] { background: var(--tt-ink); }
 
 /* Boutons d'interface : encre (agir) et gris (passer, revenir). */
@@ -261,6 +261,17 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-btn--icon { width: 40px; padding: 0; }
 .tt-btn:active { transform: scale(.97); }
 .tt-btn svg { width: 16px; height: 16px; }
+
+/* Molécule : le lien. Au repos du texte seul ; au survol, un trait se dessine de
+   gauche à droite et repart par la droite. Une flèche peut le suivre. */
+.tt-link { position: relative; display: inline-flex; align-items: center; gap: 4px; padding: 4px 0; border: 0; background: none; color: var(--tt-ink); font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); text-decoration: none; cursor: pointer; }
+.tt-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 320ms var(--tt-ease); }
+.tt-link:hover::after { transform: scaleX(1); transform-origin: left; }
+.tt-link:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; border-radius: 2px; }
+.tt-link svg { width: 16px; height: 16px; }
+.tt-link-arrow { display: inline-grid; width: 16px; overflow: hidden; opacity: 0; transform: translateX(-6px); transition: opacity var(--tt-dur-state) ease, transform 320ms var(--tt-ease); }
+.tt-link:hover .tt-link-arrow { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .tt-link::after, .tt-link-arrow { transition: none; } }
 
 /* Molécule : la puce de filtre. Au repos un filet ; choisie, l'encre et une coche
    qui se dessine. Le nombre suit le libellé ; en doublon, il passe en orange. */
@@ -439,13 +450,28 @@ button.tt-budget-trust { cursor: pointer; }
 
 /* ── Molécule : la carte média ──────────────────────────────────────────── */
 /* La capture porte la présence ; le texte reste en dessous, calme. */
+/* La carte contient un lien (capture, outil, raison) et, posée sur la capture, une
+   action ronde : un bouton ne vit jamais dans un lien. */
 .tt-mediacards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px 16px; }
-.tt-mediacard { display: grid; gap: 10px; color: var(--tt-ink); text-decoration: none; }
-.tt-mediacard-shot { aspect-ratio: 16 / 10; overflow: hidden; border-radius: var(--tt-r-card); background: var(--tt-tile); }
+.tt-mediacard { position: relative; min-width: 0; color: var(--tt-ink); }
+.tt-mediacard-link { display: grid; gap: 10px; color: inherit; text-decoration: none; }
+.tt-mediacard-link:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; border-radius: var(--tt-r-card); }
+.tt-mediacard-shot { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-radius: var(--tt-r-card); background: var(--tt-tile); }
+.tt-mediacard-shot > * { width: 100%; height: 100%; }
 .tt-mediacard-shot img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--tt-ease); }
 .tt-mediacard:hover .tt-mediacard-shot img { transform: scale(1.03); }
 .tt-mediacard-id { display: flex; align-items: center; gap: 8px; min-width: 0; }
-.tt-mediacard-id > .tt-logo-tile { width: 24px; height: 24px; }
+.tt-mediacard-id > .tt-logo-tile { flex: none; width: 24px; height: 24px; }
+.tt-mediacard-id > .tt-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tt-mediacard-id > .tt-note { flex: none; }
+.tt-mediacard-action { position: absolute; top: 10px; right: 10px; display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: var(--tt-r-round); background: var(--tt-bg); color: var(--tt-ink); box-shadow: var(--tt-logo-shadow); cursor: pointer; transition: transform var(--tt-dur-press) ease, background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease; }
+.tt-mediacard-action:hover:not(:disabled) { background: var(--tt-ink); color: var(--tt-bg); }
+.tt-mediacard-action:active:not(:disabled) { transform: scale(.94); }
+.tt-mediacard-action:disabled { cursor: default; }
+.tt-mediacard-action:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; }
+.tt-mediacard-action svg { width: 20px; height: 20px; }
+/* Sur un téléphone, les cartes défilent à l'horizontale, la suivante dépasse. */
+@media (max-width: 560px) { .tt-mediacards { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; } .tt-mediacards > * { scroll-snap-align: start; } }
 
 /* ── Organisme : le pied de page ────────────────────────────────────────── */
 .tt-foot { display: grid; grid-template-columns: minmax(0, 1.2fr) repeat(4, minmax(0, 1fr)); gap: 32px 24px; padding-block: 64px 32px; }
@@ -460,8 +486,11 @@ button.tt-budget-trust { cursor: pointer; }
    En-tête : retour, étapes, « Plus tard ». Puis l'outil, puis l'échelle avec
    « Passer » en sixième colonne. L'outil suivant glisse à sa place. */
 .tt-usage { container-type: inline-size; display: grid; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
-.tt-usage-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; }
-.tt-usage-where { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.tt-usage-head { display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 8px 12px; }
+.tt-usage-where { display: inline-flex; flex: 1 1 auto; align-items: center; gap: 8px 12px; min-width: 0; }
+/* La piste d’étapes se resserre quand la place manque : l’en-tête tient sur une ligne. */
+.tt-usage-where .tt-steps { flex: 1 1 auto; min-width: 0; white-space: nowrap; }
+.tt-usage-where > .tt-eyebrow, .tt-usage-head > .tt-usage-acts, .tt-usage-later { flex: none; white-space: nowrap; }
 .tt-usage-acts { display: inline-flex; align-items: center; gap: 8px; margin-left: auto; }
 .tt-usage-back { display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: var(--tt-r-round); background: var(--tt-tile-2); color: var(--tt-ink); cursor: pointer; transition: opacity var(--tt-dur-state) ease; }
 .tt-usage-back:disabled { display: none; }
@@ -470,6 +499,8 @@ button.tt-budget-trust { cursor: pointer; }
 .tt-usage-tool > .tt-logo-tile { width: 48px; height: 48px; }
 .tt-usage-tool[data-leaving] { opacity: 0; transform: translateX(-16px); }
 .tt-usage-tool[data-entering] { opacity: 0; transform: translateX(16px); transition: none; }
+/* Le retour d’un niveau (survol ou choix) a sa place réservée : rien ne bouge quand il paraît. */
+.tt-usage-feedback .tt-note { min-height: 1.4em; margin: 0; }
 .tt-usage-band { display: grid; grid-template-columns: minmax(0, 5fr) minmax(56px, 1fr); align-items: end; gap: 6px; }
 .tt-usage-skip { display: grid; grid-template-rows: 72px auto; gap: 10px; justify-items: center; padding: 6px 0 0; border: 0; background: none; color: var(--tt-ink); font: var(--tt-note-font); cursor: pointer; }
 .tt-usage-skip i { align-self: end; width: 18px; height: 18px; border-radius: var(--tt-r-pill); box-shadow: inset 0 0 0 1.5px var(--tt-scale-off, color-mix(in oklch, var(--tt-ink) 18%, transparent)); }
@@ -488,11 +519,12 @@ button.tt-budget-trust { cursor: pointer; }
 /* Assemblée d'atomes : la tuile, un surtitre et ses étapes en traits fins,
    le titre en affichage, une phrase en lecture, puis des cartes de verdict
    en rangées. Le bleu ne sert qu'au choix retenu. */
-.tt-decision { display: grid; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+/* Le titre et sa question se lisent ensemble (8 px) ; les actions tiennent le pied de la carte, quelle que soit sa hauteur dans le bento. */
+.tt-decision { display: flex; flex-direction: column; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-decision-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .tt-decision-title { margin: 0; font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); text-wrap: balance; }
-.tt-decision-detail { margin: 0; font: var(--tt-text-font); }
-.tt-decision-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding-top: 4px; }
+.tt-decision-detail { margin: calc(8px - var(--tt-tile-gap)) 0 0; font: var(--tt-text-font); }
+.tt-decision-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin-top: auto; }
 
 /* ── Molécule : la carte de verdict (un choix) ──────────────────────────── */
 .tt-choices { display: grid; gap: 8px; container-type: inline-size; }
@@ -514,7 +546,7 @@ button.tt-budget-trust { cursor: pointer; }
 .tt-choice-note { font: var(--tt-note-font); }
 .tt-choice-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); letter-spacing: 0; }
 .tt-choice-amount { font: var(--tt-amount-font); letter-spacing: var(--tt-amount-tracking); white-space: nowrap; }
-.tt-choice-amount small { margin-left: 2px; font: var(--tt-unit-font); }
+.tt-choice-amount small { margin-left: 2px; font: var(--tt-unit-font); letter-spacing: 0; }
 .tt-choice-amount[data-gain] { color: var(--tt-gain-ink); }
 /* Étroit : le montant passe sous le texte, la rangée garde sa lecture. */
 @container (max-width: 460px) {

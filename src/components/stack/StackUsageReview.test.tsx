@@ -122,7 +122,7 @@ it('skips several tools, pauses, resumes the first missing answer and preserves 
   render(<Harness initial={[undefined, undefined, undefined]} />);
   fireEvent.click(screen.getByRole('button', { name: 'Passer cet outil' }));
   fireEvent.click(screen.getByRole('radio', { name: 'Régulier — Usage régulier' }));
-  fireEvent.click(screen.getByRole('button', { name: 'Faire une pause' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Plus tard' }));
   expect(screen.getByText('1 sur 3 usages renseignés. La suite quand vous voulez.')).toBeVisible();
   fireEvent.click(screen.getByRole('button', { name: 'Reprendre' }));
   expect(screen.getByRole('heading', { name: 'Motion Array' })).toHaveFocus();
@@ -207,7 +207,7 @@ it('labels the current tool position independently of recorded answers while rev
 it('allows pausing before an answer and retains a stable previous navigation slot', () => {
   render(<Harness />);
   expect(screen.getByRole('button',{name:'Outil précédent'})).toBeDisabled();
-  fireEvent.click(screen.getByRole('button',{name:'Faire une pause'}));
+  fireEvent.click(screen.getByRole('button',{name:'Plus tard'}));
   expect(screen.getByText('0 sur 2 usages renseignés. La suite quand vous voulez.')).toBeVisible();
   expect(screen.getByLabelText('Recorded values')).toHaveTextContent('[null,null]');
   fireEvent.click(screen.getByRole('button',{name:'Reprendre'}));
@@ -225,7 +225,7 @@ it('does not label a replacement tool saved answer as a preview from the removed
 
 it('offers a real per-tool summary with direct correction and missing answers', () => {
   render(<Harness initial={[1,undefined]} />);
-  fireEvent.click(screen.getByRole('button',{name:'Faire une pause'}));
+  fireEvent.click(screen.getByRole('button',{name:'Plus tard'}));
   expect(screen.getByRole('button',{name:'Modifier l’usage de Motion Array : Peu'})).toBeVisible();
   fireEvent.click(screen.getByRole('button',{name:'Renseigner l’usage de Grammarly'}));
   expect(screen.getByRole('heading',{name:'Grammarly'})).toHaveFocus();

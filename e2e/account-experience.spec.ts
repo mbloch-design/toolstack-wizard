@@ -678,7 +678,7 @@ for (const lang of ['fr','en'] as const) for (const [width,height,expected] of [
   expect(await card.getByRole('radio').locator('small').evaluateAll(labels=>labels.every(label=>{const css=getComputedStyle(label);return label.scrollWidth<=label.clientWidth&&label.getBoundingClientRect().height<=parseFloat(css.lineHeight)+parseFloat(css.paddingTop)+parseFloat(css.paddingBottom)+1;}))).toBe(true);
   expect(await card.locator('.mu-footer button:not(:disabled)').evaluateAll(buttons=>buttons.every(button=>{const r=button.getBoundingClientRect();return button.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2));}))).toBe(true);
   await card.screenshot({path:test.info().outputPath('question.png')});
-  await card.getByRole('button',{name:fr?'Faire une pause':'Take a break',exact:true}).click();await stable();
+  await card.getByRole('button',{name:fr?'Plus tard':'Later',exact:true}).click();await stable();
   await card.screenshot({path:test.info().outputPath('partial-summary.png')});
   await card.getByRole('button',{name:fr?'Renseigner l’usage de Grammarly':'Record use of Grammarly',exact:true}).click();await stable();
   await expect(card.getByRole('heading',{name:'Grammarly',exact:true})).toBeFocused();
