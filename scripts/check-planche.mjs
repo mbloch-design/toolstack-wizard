@@ -11,8 +11,9 @@
  *   npm run planche:check
  *   PLANCHE_REF=<commit ou étiquette> npm run planche:check
  *
- * Référence par défaut : l'étiquette Git `planche-validee`.
- * Déplacer la référence après une validation : git tag -f planche-validee <commit>
+ * Référence par défaut : la plus récente des étiquettes `planche-validee-AAAA-MM-JJ`.
+ * Après une validation, on en pose une nouvelle (on ne réécrit jamais une étiquette) :
+ *   git tag -a planche-validee-AAAA-MM-JJ <commit> -m "…"
  */
 import { execFileSync } from "node:child_process";
 import { mkdtempSync, readFileSync } from "node:fs";
@@ -21,7 +22,9 @@ import { join } from "node:path";
 import { chromium } from "playwright";
 import { buildPlanche } from "./build-planche.mjs";
 
-const REF = process.env.PLANCHE_REF || "planche-validee";
+// The latest validation: one dated tag per validation (planche-validee-AAAA-MM-JJ), never rewritten.
+const REF = process.env.PLANCHE_REF || execFileSync("git", ["tag", "--list", "planche-validee-*", "--sort=-refname"], { encoding: "utf8" }).split("\n")[0].trim();
+if (!REF) throw new Error("Aucune étiquette planche-validee-AAAA-MM-JJ : rien à comparer.");
 const atRef = (path) => execFileSync("git", ["show", `${REF}:${path}`], { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
 const src = atRef("design-system/planche.html");
 const dir = mkdtempSync(join(tmpdir(), "planche-check-"));
@@ -67,6 +70,6 @@ for (const [label, file] of [["système actuel", current], ["planche actuelle", 
 }
 await browser.close();
 if (failed) {
-  console.error(`\nUne modification du système change un module validé. Annulez-la, ou faites-la valider puis : git tag -f planche-validee <commit>`);
+  console.error(`\nUne modification du système change un module validé. Annulez-la, ou faites-la valider puis posez une nouvelle étiquette : git tag -a planche-validee-AAAA-MM-JJ <commit>`);
   process.exit(1);
 }

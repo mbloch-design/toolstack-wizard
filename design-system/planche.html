@@ -11,13 +11,12 @@
 </script>
 <style>/*@tooltrim-system*/
 /* ── Chapitre de la partie de cartes : mise en page propre à la planche ── */
-.pv-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: start; }
 .pv-fixes { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; counter-reset: fix; }
 .pv-fixes li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 12px; counter-increment: fix; }
 .pv-fixes li::before { content: counter(fix); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--tt-tile); font: var(--tt-tag-font); }
 .pv-fixes b { font: var(--tt-label-font); }
 #cg { max-width: 457px; } /* petit module : la taille de la carte dans le tableau de Ma stack */
-@media (max-width: 900px) { .pv-grid { grid-template-columns: minmax(0, 1fr); } }
+
 </style>
 <style>
 @font-face { font-family: "Uncut Sans"; src: url(/*@font:uncut*/) format("woff2-variations"); font-weight: 300 700; font-display: swap; }
@@ -932,20 +931,8 @@ a.tt-btn, a.tt-btn:hover { text-decoration: none; }
     <div class="chapter-head">
       <span class="eyebrow">Validé le 31 octobre</span>
       <h2>Vos usages, une partie de cartes : une question à la fois, et ça se joue.</h2>
-      <p>Repérer les abonnements qui ne valent pas leur prix, en jouant : une question à la fois, la réponse en une touche, un dénouement qui chiffre la poussière. Organisme <code>.tt-play</code>, fait des atomes du système.</p>
+      <p>Repérer les abonnements qui ne valent pas leur prix, en jouant : une question à la fois, la réponse en une touche, un dénouement qui chiffre la poussière. Organisme <code>.tt-play</code>, fait des atomes du système ; il se joue au chapitre Organismes, à côté du budget.</p>
     </div>
-    <div class="pv-grid">
-      <div>
-        <div class="tt-usage tt-play" id="cg">
-          <div class="tt-play-head"><span class="tt-eyebrow">Vos usages</span><span class="tt-note tt-play-left">Il reste 5 cartes</span><button type="button" class="tt-link tt-play-later">Plus tard</button></div>
-          <div class="tt-play-play">
-            <div class="tt-play-table"><div class="tt-play-deck" aria-live="polite"></div></div>
-                        <div class="tt-play-picks" role="group" aria-label="Votre réponse"><button type="button" class="tt-play-pick" data-pick="daily"><kbd>←</kbd> Tous les jours</button><button type="button" class="tt-play-pick" data-pick="sometimes"><kbd>↓</kbd> Parfois</button><button type="button" class="tt-play-pick tt-play-pick--cut" data-pick="cut">Prend la poussière <kbd>→</kbd></button></div>
-            <div class="tt-play-reply"><p class="tt-note tt-play-say">Du figurant au copilote : à vous de distribuer les rôles.</p><button type="button" class="tt-link tt-play-undo" hidden>Annuler</button></div>
-          </div>
-          <div class="tt-play-piles"><section class="tt-play-pile" data-pile="daily" aria-label="Au quotidien"><span class="tt-eyebrow">Au quotidien <b>0</b></span><ul></ul></section><section class="tt-play-pile" data-pile="sometimes" aria-label="De passage"><span class="tt-eyebrow">De passage <b>0</b></span><ul></ul></section><section class="tt-play-pile" data-pile="cut" aria-label="La poussière"><span class="tt-eyebrow">La poussière <b>0</b></span><ul></ul></section></div>
-        </div>
-      </div>
       <ol class="pv-fixes">
         <li><span><b>Une partie de cartes.</b> Une carte par outil payant, du plus cher au moins cher. On joue la carte du dessus : une question à la fois, toujours l’usage.</span></li>
         <li><span><b>Trois réponses franches.</b> Tous les jours, Parfois, Prend la poussière. Au clavier ← ↓ →, au doigt on fait glisser la carte. Enregistrées 5, 3 et 1 sur l’échelle d’usage.</span></li>
@@ -954,7 +941,6 @@ a.tt-btn, a.tt-btn:hover { text-decoration: none; }
         <li><span><b>Un tableau des scores.</b> Ce que coûte la poussière par mois et par an, une chute qui fait sourire, puis « Voir ce que ça change » ou « Rejouer ».</span></li>
         <li><span><b>Un petit module.</b> Il tient dans sa carte du tableau de Ma stack (environ 457 × 366 px) ; sur un téléphone, les réponses passent à pleine largeur.</span></li>
       </ol>
-    </div>
   </section>
   <section class="wrap chapter chapter--wide" id="cas">
     <div class="chapter-head">
@@ -1225,7 +1211,16 @@ a.tt-btn, a.tt-btn:hover { text-decoration: none; }
           <p class="tt-note bd-gain">Budget estimé allégé de <b class="tt-amount" data-gain>11&nbsp;€</b> par mois.</p>
         </div>
         <p class="meta">Atomes : tuile, surtitre, grand chiffre, texte, coche verte, libellé, note, logo, montant. Molécules : jauge de coupe, part d'un total.</p></div>
-          <div class="org-col"><p class="meta">« Vos usages » est désormais la partie de cartes : voir le chapitre « Vos usages, une partie de cartes ».</p></div>
+          <div class="org-col"><div class="tt-usage tt-play" id="cg">
+          <div class="tt-play-head"><span class="tt-eyebrow">Vos usages</span><span class="tt-note tt-play-left">Il reste 5 cartes</span><button type="button" class="tt-link tt-play-later">Plus tard</button></div>
+          <div class="tt-play-play">
+            <div class="tt-play-table"><div class="tt-play-deck" aria-live="polite"></div></div>
+                        <div class="tt-play-picks" role="group" aria-label="Votre réponse"><button type="button" class="tt-play-pick" data-pick="daily"><kbd>←</kbd> Tous les jours</button><button type="button" class="tt-play-pick" data-pick="sometimes"><kbd>↓</kbd> Parfois</button><button type="button" class="tt-play-pick tt-play-pick--cut" data-pick="cut">Prend la poussière <kbd>→</kbd></button></div>
+            <div class="tt-play-reply"><p class="tt-note tt-play-say">Du figurant au copilote : à vous de distribuer les rôles.</p><button type="button" class="tt-link tt-play-undo" hidden>Annuler</button></div>
+          </div>
+          <div class="tt-play-piles"><section class="tt-play-pile" data-pile="daily" aria-label="Au quotidien"><span class="tt-eyebrow">Au quotidien <b>0</b></span><ul></ul></section><section class="tt-play-pile" data-pile="sometimes" aria-label="De passage"><span class="tt-eyebrow">De passage <b>0</b></span><ul></ul></section><section class="tt-play-pile" data-pile="cut" aria-label="La poussière"><span class="tt-eyebrow">La poussière <b>0</b></span><ul></ul></section></div>
+        </div>
+          <p class="meta">La partie de cartes : une question à la fois sur l’usage, trois réponses, la carte file vers sa pile. Règles au chapitre « Vos usages ».</p></div>
         </div>
       </article>
       <article class="ix-card">
