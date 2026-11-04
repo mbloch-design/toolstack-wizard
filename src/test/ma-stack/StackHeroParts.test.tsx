@@ -116,7 +116,7 @@ describe("StackFindings", () => {
       actions: [{ label: "Non, version gratuite", onClick: free }, { label: "Oui, payant", primary: true, onClick: paid }] };
     const { container } = module([item]);
     expect(container.querySelector(".mf-vs")).toBeNull();
-    expect(container.querySelectorAll(".mf-plan")).toHaveLength(2);
+    expect(container.querySelectorAll("[data-plan]")).toHaveLength(2);
     fireEvent.click(screen.getByRole("radio", { name: /Payant/ }));
     // The answer goes through once the pick animation has played.
     await waitFor(() => expect(paid).toHaveBeenCalledOnce());

@@ -382,8 +382,8 @@ test('undoing the first free plan restores the unanswered question after reload'
  await control(request,'seed',{email:'undo-plan@example.invalid',state:state(['notion'])});
  await page.goto('/en/ma-stack');await login(page,'en','undo-plan@example.invalid');await saved(page,'en');
  await expect(page.locator('.mf-budget-onboarding')).toContainText("Let's talk budget.");
- await expect(page.locator('.mf-plan')).toHaveCount(3);
- await page.locator('.mf-plan').filter({hasText:'Free plan'}).first().click();
+ await expect(page.locator('[data-plan]')).toHaveCount(3);
+ await page.locator('[data-plan]').filter({hasText:'Free plan'}).first().click();
  await expect(page.locator('.mf-now')).toHaveCount(0);
  await page.getByRole('button',{name:'Undo',exact:true}).click();
  await expect(page.locator('.mf-now')).toContainText('Notion');

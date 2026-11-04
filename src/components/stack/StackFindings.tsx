@@ -335,23 +335,21 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
               </div>
             </div>;
           }
-          return <div className="mf-plans" role="radiogroup" aria-label={t("Votre formule", "Your plan")}>
-            {tiles.map((plan, index) => <button key={plan.key} type="button" role="radio" aria-checked={pickedTile === plan.key} className="mf-plan"
-              style={{ ["--i" as string]: index }} data-state={pickedTile === null ? undefined : pickedTile === plan.key ? "kept" : "gone"}
-              onPointerEnter={() => setPreview(total + plan.monthly)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total + plan.monthly)} onBlur={() => setPreview(null)}
-              onClick={() => { if (plan.perSeat) { setSeatPlan(plan.key); setSeats(1); setPreview(total + plan.monthly); } else pickTile(plan.key, () => plan.pick()); }}>
-              {/* "Professional (Dev seat)": the plan's name, then its qualifier on a quieter line. */}
-              {(() => { const [, main, qualifier] = /^(.*?)\s*\((.+)\)\s*$/.exec(plan.label) ?? [null, plan.label, null];
-                const max = Math.max(1, ...tiles.map((x) => x.monthly)); const Icon = plan.monthly === 0 ? Moon : plan.monthly >= max ? Rocket : Zap;
-                return <span className="mf-plan-name" title={plan.label}><Icon size={14} aria-hidden /><span>{main}{qualifier && <em>{qualifier}</em>}</span></span>; })()}
-              <b>{plan.monthly > 0 ? format(plan.monthly) : t("0 €", "Free")}<small>{plan.monthly > 0 ? t("/mois", "/mo") : ""}</small></b>
-              {/* Same lines in every tile, so prices sit on one level. */}
-              <small className="mf-plan-note">{plan.monthly === 0 ? t("Rien à payer", "Nothing to pay") : plan.note || t("par mois", "a month")}</small>
-              {/* With a day rate, a price also reads as working time. */}
-              {hourly ? <small className="mf-plan-time">{plan.monthly === 0 ? t("0 min de votre travail", "0 min of your work") : (() => { const minutes = Math.max(1, Math.round((plan.monthly / hourly) * 60)); return minutes < 60 ? t(`≈ ${minutes} min de votre travail`, `≈ ${minutes} min of your work`) : t(`≈ ${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} de votre travail`, `≈ ${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} of your work`); })()}</small> : null}
-              {/* The radio mark: the usual sign of a single choice. */}
-              <span className="mf-plan-radio" aria-hidden="true">{pickedTile === plan.key && <Check size={12} strokeWidth={3} />}</span>
-            </button>)}
+          // One plan per row, as the duel's choices (validated molecule .tt-choice): icon, name and detail, price on the right.
+          const max = Math.max(1, ...tiles.map((x) => x.monthly));
+          const workTime = (monthly: number) => { if (!hourly) return null; if (monthly === 0) return t("0 min de votre travail", "0 min of your work"); const minutes = Math.max(1, Math.round((monthly / hourly) * 60)); return minutes < 60 ? t(`≈ ${minutes} min de votre travail`, `≈ ${minutes} min of your work`) : t(`≈ ${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} de votre travail`, `≈ ${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} of your work`); };
+          return <div className="tt-choices" role="radiogroup" aria-label={t("Votre formule", "Your plan")}>
+            {tiles.map((plan) => { const [, main, qualifier] = /^(.*?)\s*\((.+)\)\s*$/.exec(plan.label) ?? [null, plan.label, null];
+              const Icon = plan.monthly === 0 ? Moon : plan.monthly >= max ? Rocket : Zap;
+              const detail = [qualifier, plan.monthly === 0 ? t("Rien à payer", "Nothing to pay") : plan.note || t("par mois", "a month"), workTime(plan.monthly)].filter(Boolean).join(" · ");
+              return <button key={plan.key} type="button" role="radio" aria-checked={pickedTile === plan.key} className="tt-choice" data-plan={plan.key}
+                data-state={pickedTile === null ? undefined : pickedTile === plan.key ? "kept" : "gone"}
+                onPointerEnter={() => setPreview(total + plan.monthly)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total + plan.monthly)} onBlur={() => setPreview(null)}
+                onClick={() => { if (plan.perSeat) { setSeatPlan(plan.key); setSeats(1); setPreview(total + plan.monthly); } else pickTile(plan.key, () => plan.pick()); }}>
+                <span className="tt-choice-logo"><span className="tt-logo-tile"><Icon size={18} aria-hidden /></span>{pickedTile === plan.key && <span className="tt-choice-check tt-check" aria-hidden="true"><Check size={12} strokeWidth={3} /></span>}</span>
+                <span className="tt-choice-text"><span className="tt-choice-name">{main}</span><span className="tt-choice-note">{detail}</span></span>
+                <span className="tt-choice-amount">{plan.monthly > 0 ? <>{format(plan.monthly)}<small>{t("/mois", "/mo")}</small></> : t("Gratuit", "Free")}</span>
+              </button>; })}
           </div>;
         })()}
         {/* No plan in the catalogue: the only case with an amount to type. */}
