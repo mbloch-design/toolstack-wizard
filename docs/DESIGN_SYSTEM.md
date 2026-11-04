@@ -6,6 +6,10 @@ Référence du système de design éditorial. Mis à jour au fil des sessions.
 
 ## La planche est la référence (30 oct. 2026)
 
+**Garde-fou (31 oct. 2026).** L'étiquette Git `planche-validee` pointe la dernière version validée. `npm run planche:check` construit la source validée de la planche avec le système validé, puis avec le système actuel, et exige le même rendu au pixel (clair et sombre). Il vérifie aussi la planche actuelle, en ignorant les blocs `[data-proposal]` (propositions à valider). Après une validation : `git tag -f planche-validee <commit>`. `scripts/compare-modules.mjs` compare, module par module, le dessin du site (styles calculés par chemin de classes `tt-*`) à celui de la planche. Règle : on ne modifie jamais une règle validée du système pour arranger le site ; un besoin nouveau est une proposition, ajoutée en fin de fichier et dans la planche.
+
+**« Vos usages » (validé le 31/10)** : organisme `.tt-play`, une partie de cartes. Une question à la fois sur l'usage, trois réponses (Tous les jours, Parfois, Prend la poussière ; ← ↓ → ; glisser), la carte file vers sa pile, un logo d'une pile rejoue la carte, « Plus tard » met en pause sans rien perdre, fin en tableau des scores. Petit module (environ 457 × 366 px). Les réponses s'enregistrent en 5, 3, 1 sur l'échelle historique.
+
 La planche « Système ToolTrim » est la source de vérité du design du site, jamais l'inverse.
 
 - **Un seul fichier partagé** : `src/styles/tooltrim-system.css`. Tokens `--tt-*` et composants `.tt-*` (le signe qui fait clic, la ligne de coupe, le fil, les trois verbes, le souffle du gain, le trim). Le site l'importe en tête de `src/index.css` ; la planche l'inline.

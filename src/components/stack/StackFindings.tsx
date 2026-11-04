@@ -1,8 +1,8 @@
 import StackInvoiceEntry from "./StackInvoiceEntry";
 import { CURRENCY_RATE_DATE, type Currency } from "@/lib/currencyRates";
-import StackUsageReview from "./StackUsageReview";
+import StackUsagePlay from "./StackUsagePlay";
 import { Fragment, useCallback, useEffect, useRef, useState, type ReactNode } from "react";
-import { Rocket, UserRound, BarChart3, Moon, Zap, Check, CircleDot, ClipboardCheck, Flame, Plus, Scale, Target, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
+import { Rocket, UserRound, Moon, Zap, Check, ClipboardCheck, Flame, Plus, Scale, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import CutGauge from "@/components/stack/CutGauge";
 import { Link } from "@/lib/routerLinks";
@@ -11,7 +11,7 @@ import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
 import toolAccents from "@/data/toolAccents.json";
 import { toolKey } from "@/lib/stackView";
-import { AppIcon, Button, Donut, Duo, Figure, Odometer, Radar, TextLink } from "./StackKit";
+import { AppIcon, Button, Duo, Figure, Odometer, TextLink } from "./StackKit";
 
 export type FindingAction = { label: string; onClick: () => void; primary?: boolean; ariaLabel?: string };
 export type Finding = {
@@ -76,104 +76,6 @@ interface Props {
 export type FitRow = { tool: ToolSummary; cost: number; usage?: number; setUsage: (value: number | null) => void; detailHref: string };
 
 type AreaShare = Props["areas"][number];
-/**
- * Where the money goes, read like iPhone storage: one bar split by area, a
- * legend under it. Pointing at an area lights its segment; opening it lists
- * its paid tools. Areas with no known cost stay in the legend, at zero.
- */
-type SplitView = "bar" | "radar" | "ring";
-/** The three readings of the split, switched from the card's header row. */
-function SplitViews({ view, onChange, t, radar }: { view: SplitView; onChange: (view: SplitView) => void; t: (a: string, b: string) => string; radar: boolean }) {
-  // A radar only says something from four axes: below that it is a triangle, so it is not offered.
-  const views: { id: SplitView; label: string; icon: ReactNode }[] = [{ id: "bar", label: t("Barre", "Bar"), icon: <BarChart3 aria-hidden /> }, ...(radar ? [{ id: "radar" as SplitView, label: t("Radar", "Radar"), icon: <Target aria-hidden /> }] : []), { id: "ring", label: t("Anneau", "Ring"), icon: <CircleDot aria-hidden /> }];
-  return <div className="tt-iconswitch" role="group" aria-label={t("Vue de la répartition", "Split view")}>
-    {views.map((option) => <button key={option.id} type="button" aria-pressed={view === option.id} aria-label={option.label} title={option.label} onClick={() => onChange(option.id)}>{option.icon}</button>)}
-  </div>;
-}
-/** A ring whose sections answer the pointer: the one pointed at thickens, the others fade. */
-function SplitRing({ areas, active, onPoint, label }: { areas: AreaShare[]; active: string | null; onPoint: (id: string | null) => void; label: string }) {
-  const sum = areas.reduce((acc, area) => acc + area.amount, 0);
-  const r = 40, c = 2 * Math.PI * r, gap = areas.length > 1 ? 2.5 : 0;
-  let offset = 0;
-  return <svg className="mf-ring" viewBox="0 0 100 100" role="img" aria-label={label} data-active={active ? "" : undefined}>
-    <circle className="mf-ring-track" cx="50" cy="50" r={r} />
-    {sum > 0 && areas.map((area, index) => {
-      const length = Math.max(0.5, (area.amount / sum) * c - gap);
-      const arc = <circle key={area.id} cx="50" cy="50" r={r} strokeDasharray={`${length} ${c - length}`} strokeDashoffset={-offset}
-        transform="rotate(-90 50 50)" data-on={active === area.id ? "" : undefined} style={{ stroke: area.color, ["--i" as string]: index }}
-        onPointerEnter={() => onPoint(area.id)} onPointerLeave={() => onPoint(null)} />;
-      offset += (area.amount / sum) * c;
-      return arc;
-    })}
-  </svg>;
-}
-
-/** The profile of the stack: one axis per area, a dot per area that answers the pointer. */
-function SplitRadar({ areas, active, onPoint, label }: { areas: AreaShare[]; active: string | null; onPoint: (id: string | null) => void; label: string }) {
-  const n = areas.length, max = Math.max(1, ...areas.map((area) => area.amount));
-  const at = (i: number, k: number) => { const a = -Math.PI / 2 + (i / n) * Math.PI * 2; return [50 + Math.cos(a) * 42 * k, 50 + Math.sin(a) * 42 * k] as const; };
-  const k = (amount: number) => (amount > 0 ? 0.12 + 0.88 * Math.sqrt(amount / max) : 0.04);
-  const ring = (level: number) => areas.map((_, i) => at(i, level).join(",")).join(" ");
-  return <svg className="mf-radar" viewBox="-26 -12 152 124" role="img" aria-label={label} data-active={active ? "" : undefined}>
-    {[0.25, 0.5, 0.75, 1].map((level) => <polygon key={level} className="mf-radar-ring" points={ring(level)} />)}
-    {/* Each axis says its area; an area with no cost is greyed, the one pointed at is bold. */}
-    {areas.map((area, i) => { const [x, y] = at(i, 1.16); return <text key={`l${area.id}`} className="mf-radar-label" x={x} y={y + 2}
-      textAnchor={Math.abs(x - 50) < 4 ? "middle" : x > 50 ? "start" : "end"} data-on={active === area.id ? "" : undefined} data-empty={area.amount > 0 ? undefined : ""}
-      onPointerEnter={() => onPoint(area.id)} onPointerLeave={() => onPoint(null)}>{area.label}</text>; })}
-    {areas.map((area, i) => { const [x, y] = at(i, 1); return <line key={area.id} className="mf-radar-axis" x1="50" y1="50" x2={x} y2={y} />; })}
-    <polygon className="mf-radar-shape" points={areas.map((area, i) => at(i, k(area.amount)).join(",")).join(" ")} />
-    {areas.map((area, i) => { const [x, y] = at(i, k(area.amount)); return <g key={area.id} onPointerEnter={() => onPoint(area.id)} onPointerLeave={() => onPoint(null)}>
-      <circle className="mf-radar-hit" cx={x} cy={y} r="8" />
-      <circle className="mf-radar-dot" cx={x} cy={y} r={active === area.id ? 3.6 : 2.4} style={{ fill: area.color }} data-on={active === area.id ? "" : undefined} />
-    </g>; })}
-  </svg>;
-}
-
-function BudgetBar({ areas, total, format, t, view }: { areas: AreaShare[]; total: number; format: (n: number) => string; t: (a: string, b: string) => string; view: SplitView }) {
-  const [active, setActive] = useState<string | null>(null);
-  const [open, setOpen] = useState<string | null>(null);
-  // Three readings of the same split: the bar for shares, the radar for the
-  // profile of the stack (where it is strong, where it is empty), the ring
-  // for the whole at a glance. The legend under them is the same.
-  const ranked = [...areas].sort((x, y) => y.amount - x.amount);
-  const paid = ranked.filter((area) => area.amount > 0);
-  const pct = (amount: number) => (total > 0 ? Math.round((amount / total) * 100) : 0);
-  const keep = view === "bar" ? 3 : 4;
-  const label = paid.map((area) => `${area.label} ${pct(area.amount)} %`).join(", ");
-  const focus = areas.find((area) => area.id === active);
-  // Organisme « répartition » du système : la barre fine (ou le radar, l'anneau), puis la légende.
-  return <div className="tt-split-body" data-active={active ? "" : undefined} data-view={view}>
-    {view === "bar" && <div key="bar" className="tt-split-bar" role="img" aria-label={label}>
-      {paid.map((area) => <i key={area.id} style={{ ["--f" as string]: area.amount, ["--c" as string]: area.color }} data-on={active === area.id ? "" : undefined}
-        onPointerEnter={() => setActive(area.id)} onPointerLeave={() => setActive(open)} />)}
-    </div>}
-    {view === "radar" && <div key="radar" className="tt-split-stage"><SplitRadar areas={areas} active={active} onPoint={(id) => setActive(id ?? open)} label={label} /></div>}
-    {view === "ring" && <div key="ring" className="tt-split-stage tt-split-ring">
-      <SplitRing areas={paid} active={active} onPoint={(id) => setActive(id ?? open)} label={label} />
-      {/* The centre answers the pointer: the total, or the area pointed at. */}
-      <span className="tt-split-ring-c" aria-hidden="true"><b className="tt-amount">{focus ? `${pct(focus.amount)} %` : format(total)}</b><small className="tt-note">{focus ? focus.label : t("par mois", "a month")}</small></span>
-    </div>}
-    {/* The legend: one row per area, its tools beside it. Pointing at a row lights its share. */}
-    <ul key={`legend-${view}`} className="tt-split-legend">{(paid.length > keep + 1 ? paid.slice(0, keep) : paid).map((area) => <li key={area.id} style={{ ["--c" as string]: area.color }}>
-      <button type="button" aria-pressed={open === area.id} data-on={active === area.id ? "" : undefined}
-        onPointerEnter={() => setActive(area.id)} onPointerLeave={() => setActive(open)} onFocus={() => setActive(area.id)} onBlur={() => setActive(open)}
-        onClick={() => { const next = open === area.id ? null : area.id; setOpen(next); setActive(next); }}>
-        <i aria-hidden="true" /><span className="tt-label">{area.label}</span>
-        {area.tools?.length ? <span className="tt-logos" aria-hidden="true">{area.tools.slice(0, 3).map((row) => <ToolLogo key={row.tool.id} tool={row.tool} size={20} className="tt-logo-tile" />)}</span> : <span />}
-        <span className="tt-amount">{format(area.amount)}</span><span className="tt-note">{pct(area.amount)} %</span>
-      </button>
-    </li>)}
-    {paid.length > keep + 1 && (() => {
-      const rest = paid.slice(keep);
-      const pointed = rest.find((area) => area.id === active);
-      return <li style={{ ["--c" as string]: pointed?.color || "var(--tt-meta)" }}><span className="tt-split-rest">
-        <i aria-hidden="true" />{pointed ? <><span className="tt-label">{pointed.label}</span><span /><span className="tt-amount">{format(pointed.amount)}</span><span className="tt-note">{pct(pointed.amount)} %</span></>
-          : <><span className="tt-label">{t(`${rest.length} autres`, `${rest.length} more`)}</span><span /><span className="tt-amount">{format(rest.reduce((sum, area) => sum + area.amount, 0))}</span><span className="tt-note">{pct(rest.reduce((sum, area) => sum + area.amount, 0))} %</span></>}
-      </span></li>;
-    })()}</ul>
-  </div>;
-}
-
 /** One alternative: mine → theirs, the monthly gap, and the way to compare. */
 function TextLinkRow({ to, row, format, t }: { to: string; row: { tool: ToolSummary; alt: ToolSummary; mine: number; theirs: number }; format: (n: number) => string; t: (a: string, b: string) => string }) {
   return <Link className="mf-cheaper-row" to={to}>
@@ -196,7 +98,6 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   const s = (n: number) => (n > 1 ? "s" : "");
   const [later, setLater] = useState<string[]>([]);
   const [priceAll, setPriceAll] = useState(false);
-  const [splitView, setSplitView] = useState<SplitView>("bar");
   // On a phone each card is a summary line; one opens at a time.
   // No accordion: in one column every card stays open, in reading order (the decision is the page’s action).
   // The face just picked: it lights up, the other swipes away, the saving
@@ -288,7 +189,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       {/* Organisme « tableau » du système (planche, gabarit Ma stack), un bento lu constat, action, détail : budget et décision, puis vos usages et la répartition. L'ordre du DOM est l'ordre de lecture, sur mobile aussi. */}
       {/* 1. Read first: what the stack costs, and the verdict under it. */}
       {/* Organisme « budget » du système (planche, chapitre 06 et gabarit Ma stack). */}
-      <article className="tt-budget" data-card="price" data-all={priceAll ? "" : undefined}>
+      <article className="tt-tile" data-card="price" data-all={priceAll ? "" : undefined}>
         <div className="tt-head"><h2 className="tt-eyebrow">{spend.length === 0 && items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Votre budget", "Your budget") : items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel renseigné", "Known budget so far") : t("Budget mensuel renseigné", "Recorded monthly budget")}</h2></div>
         {/* An unknown price is never shown as free: no figure without a known price, and a partial total says so. */}
         {(() => { const missing = items.filter((item) => item.kind === "price" || item.kind === "freemium").length;
@@ -300,9 +201,14 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 <p className="tt-note">{t("Promis, pas de tableur.", "No spreadsheet required. Promise.")}</p>
                 <button type="button" className="tt-btn tt-btn--grey" onClick={() => { const next = items.find(item => item.kind === "price" || item.kind === "freemium"); if(next){setFirst(next.key);setLater(keys=>keys.filter(key=>key!==next.key));requestAnimationFrame(()=>document.getElementById("mf-now-title")?.scrollIntoView({block:"center",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));} }}>{t("Préciser ma première formule", "Choose my first plan")}</button>
               </div>
-            : <><p className="tt-figure"><Odometer text={format(total)} /><small>{t("/mois", "/mo")}</small></p>{spend.length > 0 && total > 0 &&
-              // The figure, then the year. Who pays for what is the split's job, just below.
-              <p className="tt-text">{t(`Soit ${format(total * 12)} par an.`, `That is ${format(total * 12)} a year.`)}</p>}{toReview > 0 && total > 0 && <CutGauge total={total} toReview={Math.min(toReview, total)} format={format} t={t} />}{(() => {
+            : <><p className="tt-figure"><Odometer text={format(total)} /><small>{t("/mois", "/mo")}</small></p>{spend.length > 0 && total > 0 && (() => {
+              // As in the planche: the year in bold, then one line that reads it.
+              const lead = spend.reduce((a, b) => b.amount > a.amount ? b : a), share = Math.round((lead.amount / total) * 100);
+              const quip = spend.length === 1 ? t("Un seul abonnement, et il fait tout le travail.", "One subscription doing all the work.")
+                : share >= 50 ? t(`${lead.tool.name} en paie ${share >= 75 ? "presque tout" : "plus de la moitié"} à lui seul.`, `${lead.tool.name} pays for ${share >= 75 ? "almost all of it" : "over half of it"} on its own.`)
+                : t("Pas de tyran dans la stack.", "No tyrant in this stack.");
+              return <p className="tt-text"><b>{t(`Soit ${format(total * 12)} par an.`, `That is ${format(total * 12)} a year.`)}</b> {quip}</p>;
+            })()}{toReview > 0 && total > 0 && <CutGauge total={total} toReview={Math.min(toReview, total)} format={format} t={t} />}{(() => {
               // Can the total be trusted? A tool counts once its cost is certain.
               const unsure = items.filter((item) => item.kind === "price" || item.kind === "freemium");
               const pct = toolCount > 0 ? Math.round(((toolCount - unsure.length) / toolCount) * 100) : 100;
@@ -314,7 +220,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 ? <button type="button" className="tt-budget-trust" onClick={() => { setFirst(unsure[0].key); setLater((keys) => keys.filter((key) => key !== unsure[0].key)); setFlash(Date.now()); }}>
                     {ring}<span><span className="tt-label">{t(`${toolCount - unsure.length} outil${s(toolCount - unsure.length)} sur ${toolCount} renseigné${s(toolCount - unsure.length)}`, `${toolCount - unsure.length} of ${toolCount} tools priced`)}</span><span className="tt-note">{t(`Estimation partielle : ${left} à confirmer`, `Partial estimate: ${left} to confirm`)}</span></span>
                   </button>
-                : toolCount > 0 && <p className="tt-budget-trust"><span className="tt-check tt-check--live" aria-hidden="true">{icon(Check)}</span><span className="tt-label">{t("Budget renseigné", "Budget recorded")}</span></p>;
+                : toolCount > 0 && <div className="tt-trust"><span className="tt-check tt-check--live" aria-hidden="true">{icon(Check)}</span><span><span className="tt-label">{t("Budget renseigné", "Budget recorded")}</span><p className="tt-note">{t("Selon les prix et formules renseignés.", "From the prices and plans recorded.")}</p></span></div>;
             })()}</>; })()}
         {converted && <p className="tt-note">{t(`Conversion en ${currency} au taux de référence du ${CURRENCY_RATE_DATE}.`, `Converted to ${currency} using reference rates dated ${CURRENCY_RATE_DATE}.`)}</p>}
         {spend.length > 0 ? <>
@@ -482,22 +388,21 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         <p className="tt-text">{t("Un outil, c’est un début. Ajoutez les autres : dès deux, on repère ce qui se recoupe et ce que ça coûte.", "One tool is a start. Add the others: from two on, we spot what overlaps and what it costs.")}</p>
         <button type="button" className="tt-btn" onClick={onAddTool}><Plus aria-hidden />{t("Ajouter un autre outil", "Add another tool")}</button>
       </article>}
-      {toolCount > 1 && (fit.length > 0 || !top || history) && <StackUsageReview key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format}
-        complete={!top && fit.every(row => !!row.usage)} freeOnly={total === 0 && freeTools.length === toolCount} history={history} onReviewTools={onReviewTools} />}
+      {toolCount > 1 && (fit.length > 0 || !top || history) && <StackUsagePlay key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format}
+        freeOnly={total === 0 && freeTools.length === toolCount} history={history} onReviewTools={onReviewTools} />}
       {toolCount > 1 && total > 0 && <article className="tt-split" data-card="split">
-        <div className="tt-head"><h2 className="tt-eyebrow">{t("Répartition", "Split")}</h2><span className="tt-split-tools">{spend.length > 0 && areas.length > 0 && <SplitViews view={splitView} onChange={setSplitView} t={t} radar={areas.length >= 4} />}</span></div>
+        {/* Organisme « répartition », comme la planche : le total, la lecture, la barre, une ligne par domaine. */}
+        <div className="tt-head"><h2 className="tt-eyebrow">{t("Répartition", "Split")}</h2><span className="tt-amount">{format(total)}<small>{t("/mois", "/mo")}</small></span></div>
         {spend.length > 0 && areas.length > 0 ? (() => {
-          const lead = [...areas].sort((x, y) => y.amount - x.amount)[0];
+          const paid = [...areas].filter((area) => area.amount > 0).sort((x, y) => y.amount - x.amount);
+          const lead = paid[0];
           const share = total > 0 ? Math.round((lead.amount / total) * 100) : 0;
-          // The verdict first: is the money spread, or does one area take most of it?
-          const heavy = share >= 50;
-          const spread = areas.filter((area) => area.amount > 0).length;
-          // One line of humour under the reading, from the same shares.
-          const quip = share >= 75 ? t("Le reste du budget fait de la figuration.", "The rest of the budget is an extra.") : heavy ? t("Le reste se partage les miettes.", "The rest share the crumbs.") : t("Une stack équilibrée. C’est rare, ça se respecte.", "A balanced stack. Rare, and respected.");
+          const label = paid.map((area) => `${area.label} ${total > 0 ? Math.round((area.amount / total) * 100) : 0} %`).join(", ");
           return <>
-            <h3 className="tt-title-m">{heavy ? t(`${lead.label} prend ${share} % du budget renseigné.`, `${lead.label} takes ${share}% of recorded costs.`) : t(`${spread} domaines se partagent le budget renseigné.`, `${spread} areas share the recorded costs.`)}</h3>
-            <p className="tt-note">{quip}</p>
-            <BudgetBar areas={areas} total={total} format={format} t={t} view={splitView === "radar" && areas.length < 4 ? "bar" : splitView} /></>;
+            <h3 className="tt-title-m">{share >= 50 ? t(`${lead.label} prend ${share} % du budget.`, `${lead.label} takes ${share}% of the budget.`) : t(`${paid.length} domaines se partagent le budget.`, `${paid.length} areas share the budget.`)}</h3>
+            <div className="tt-split-bar" role="img" aria-label={label}>{paid.map((area) => <i key={area.id} style={{ ["--f" as string]: area.amount, ["--c" as string]: area.color }} />)}</div>
+            <ul className="tt-split-legend">{paid.map((area) => <li key={area.id} style={{ ["--c" as string]: area.color }}><i aria-hidden="true" /><span className="tt-label">{area.label}</span><span className="tt-amount">{format(area.amount)}</span></li>)}</ul>
+          </>;
         })() : <p className="tt-text">{areas.length < 3 ? t("La répartition apparaît dès trois domaines dans votre stack.", "The split appears from three areas in your stack.") : t("Aucun coût connu à répartir pour l’instant.", "No known cost to spread yet.")}</p>}
       </article>}
     </div>

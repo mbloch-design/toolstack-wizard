@@ -41,7 +41,7 @@ describe("StackFindings", () => {
     expect(screen.getByText("Budget partiel renseigné")).toBeTruthy();
     expect(screen.getByText("2 outils sur 4 renseignés")).toBeTruthy();
     expect(screen.queryByText(/fiable à|Total exact/)).toBeNull();
-    expect(container.querySelector(".tt-split-body")).not.toBeNull();
+    expect(container.querySelector(".tt-split .tt-split-bar")).not.toBeNull();
     expect(screen.queryByText(/dès trois domaines/)).toBeNull();
   });
   it("accounts for all four tools when only two have a paid cost", () => {
@@ -87,10 +87,11 @@ describe("StackFindings", () => {
     expect(screen.getByText('Votre stack prend forme.')).toBeTruthy();
     fireEvent.click(screen.getByRole('button',{name:'Ajouter un autre outil'}));expect(add).toHaveBeenCalledOnce();
   });
-  it("shows the budget by vertical as a radar", () => {
-    module([card("Canva")]);
+  it("shows the budget by area as in the planche: the reading, the bar, one line per area", () => {
+    const { container } = module([card("Canva")]);
     expect(screen.getByRole("img", { name: "RH 58 %, IT 17 %" })).toBeTruthy();
-    expect(screen.getByText("RH prend 58 % du budget renseigné.")).toBeTruthy();
+    expect(screen.getByText("RH prend 58 % du budget.")).toBeTruthy();
+    expect([...container.querySelectorAll(".tt-split-legend li .tt-label")].map((node) => node.textContent)).toEqual(["RH", "IT"]);
   });
   it("shows a pair as two faces, each with what it saves, and tags the cheaper one", () => {
     const { container } = module([pair]);

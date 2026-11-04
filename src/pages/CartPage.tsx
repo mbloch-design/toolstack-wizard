@@ -423,7 +423,10 @@ export default function CartPage() {
         <ToolLogo tool={tool} size={40} className="tt-logo-tile" />
         <span className="tt-amount" data-tone={info.kind} aria-hidden="true">{info.kind === "paid" ? <>{info.cost}<small>{t("/mois", "/mo")}</small></> : cost}</span>
         <span className="tt-label" aria-hidden="true">{tool.name}</span>
-        <span className="tt-toolcard-foot" aria-hidden="true"><span className={`tt-tag${status === "overlap" ? " tt-tag--overlap" : status === "ok" ? " tt-tag--live" : ""}`}>{statusLabel[status]}</span>{groupBy !== "area" && areaLabel && <span className="tt-note">{areaLabel}</span>}</span>
+        {/* As in the planche, the state tag sits in the card; the area joins it only when the list is not grouped by area. */}
+        {groupBy !== "area" && areaLabel
+          ? <span className="tt-toolcard-foot" aria-hidden="true"><span className={`tt-tag${status === "overlap" ? " tt-tag--overlap" : status === "ok" ? " tt-tag--live" : ""}`}>{statusLabel[status]}</span><span className="tt-note">{areaLabel}</span></span>
+          : <span className={`tt-tag${status === "overlap" ? " tt-tag--overlap" : status === "ok" ? " tt-tag--live" : ""}`} aria-hidden="true">{statusLabel[status]}</span>}
       </button>
       {/* Edit mode (iOS home screen): a minus badge removes the tool, with undo. */}
       {editing && <button type="button" className="ms-card-remove" onClick={() => removeTool(slug, tool.name)} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}><Minus size={14} aria-hidden /></button>}
@@ -498,7 +501,7 @@ export default function CartPage() {
     {/* Organisme « en-tête de page » du système : surtitre, grand titre, note ; l'action rare à droite. */}
     <header className="tt-pagehead">
       <StackPersonalWelcome empty={false} pending={deckItems.length + usagePending}>
-        <div className="tt-pagehead-title">
+        <div>
           <span className="tt-eyebrow">{t("Ma stack", "My stack")}</span>
           <h1 ref={inventoryHeadingRef} tabIndex={-1} className="tt-title-xl">{t("Mes outils", "My tools")}</h1>
           <p className="tt-note">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</p>
@@ -545,7 +548,7 @@ export default function CartPage() {
       <StackAccountPanel empty={false} placement="notice" />
       <div className="ms-board tt-page">
         {/* 1. The stack itself, one box to see it: by area, as cards or as a list, sorted from a menu. Add and edit live here. */}
-        <section className="ms-mod ms-mod--inventory ms-all" aria-labelledby="ms-all-title">
+        <section className="ms-mod ms-mod--inventory ms-all tt-section" aria-labelledby="ms-all-title">
           <div className="tt-sectionhead">
             <div>
               <div className="ms-inventory-heading"><h2 id="ms-all-title" tabIndex={-1} className="tt-title-section">{t("Ma stack", "My stack")}</h2><StackAccountPanel placement="inline" /></div>
