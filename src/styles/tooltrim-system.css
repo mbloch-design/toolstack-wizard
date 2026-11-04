@@ -228,6 +228,8 @@
 .tt-figure { font: var(--tt-figure-font); letter-spacing: var(--tt-figure-tracking); color: var(--tt-ink); }
 .tt-amount { font: var(--tt-amount-font); letter-spacing: var(--tt-amount-tracking); white-space: nowrap; color: var(--tt-ink); }
 :is(.tt-figure, .tt-amount) small { margin-left: 3px; font: var(--tt-unit-font); letter-spacing: 0; }
+/* Le gras d'un texte reste dans la règle : graisse forte du système (500, plus fine en sombre), jamais le 700 du navigateur. */
+:is(.tt-text, .tt-note, .tt-label, .tt-eyebrow, .tt-title-m, .tt-title-l, .tt-title-section, .tt-title-xl) :is(b, strong) { font-weight: var(--tt-w-strong); }
 :is(.tt-figure, .tt-amount)[data-gain] { color: var(--tt-gain-ink); }
 .tt-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); letter-spacing: 0; color: var(--tt-ink); white-space: nowrap; }
 .tt-tag--overlap { background: color-mix(in oklch, var(--tt-overlap) 14%, transparent); color: color-mix(in oklch, var(--tt-overlap) 78%, var(--tt-ink)); }
@@ -271,7 +273,8 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-share-bar { height: 3px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); overflow: hidden; }
 .tt-share-bar i { display: block; height: 100%; width: var(--w, 0%); border-radius: inherit; background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow 900ms var(--tt-ease) both; }
 .tt-share > .tt-note:last-child { text-align: right; font-variant-numeric: tabular-nums; }
-.tt-share-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Un nom d'outil se lit en entier : deux lignes au plus, jamais de points de suspension au milieu d'un nom. */
+.tt-share-name { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; text-wrap: balance; }
 
 /* ── Molécule : l'échelle d'usage ──────────────────────────────────────── */
 /* Une seule mesure qui monte, comme un indicateur de signal : cinq barres
@@ -399,7 +402,7 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-choice-note { font: var(--tt-note-font); }
 .tt-choice-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); letter-spacing: 0; }
 .tt-choice-amount { font: var(--tt-amount-font); letter-spacing: var(--tt-amount-tracking); white-space: nowrap; }
-.tt-choice-amount small { margin-left: 2px; font: var(--tt-unit-font); }
+.tt-choice-amount small { margin-left: 2px; font: var(--tt-unit-font); letter-spacing: 0; }
 .tt-choice-amount[data-gain] { color: var(--tt-gain-ink); }
 /* Étroit : le montant passe sous le texte, la rangée garde sa lecture. */
 @container (max-width: 460px) {
@@ -638,6 +641,7 @@ button.tt-budget-trust { cursor: pointer; }
 .tt-play-pile { display: grid; align-content: start; gap: 6px; min-height: 0; padding: 8px 10px; border-radius: var(--tt-r-card); box-shadow: inset 0 0 0 1px var(--tt-line); transition: box-shadow var(--tt-dur-state) ease; }
 .tt-play-pile[data-bump] { animation: tt-play-bump 420ms var(--tt-spring); }
 .tt-play-pile .tt-eyebrow { display: flex; justify-content: space-between; }
+.tt-play-pile .tt-eyebrow b { font-weight: inherit; }
 .tt-play-pile[data-pile="cut"] .tt-eyebrow b { color: color-mix(in oklch, var(--tt-overlap) 85%, var(--tt-ink)); }
 .tt-play-pile ul { display: flex; flex-wrap: wrap; gap: 4px; margin: 0; padding: 0; list-style: none; }
 .tt-play-pile button { display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; border-radius: var(--tt-logo-radius); background: var(--tt-bg); box-shadow: var(--tt-logo-shadow); cursor: pointer; animation: tt-play-land 380ms var(--tt-spring); }
