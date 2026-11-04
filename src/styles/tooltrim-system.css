@@ -267,8 +267,9 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 
 /* ── Molécule : la part d'un total ─────────────────────────────────────── */
 /* Logo, nom, filet de part à la couleur du domaine, montant, pourcentage. */
-.tt-shares { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
-.tt-share { display: grid; grid-template-columns: 24px minmax(0, 1fr) 72px auto 40px; align-items: center; gap: 12px; min-height: 40px; }
+.tt-shares { display: grid; grid-template-columns: 24px minmax(0, 1fr) 72px auto 40px; column-gap: 12px; row-gap: 4px; margin: 0; padding: 0; list-style: none; }
+.tt-share { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; align-items: center; min-height: 40px; }
+.tt-share > .tt-amount { text-align: right; }
 .tt-share > .tt-logo-tile { width: 24px; height: 24px; }
 .tt-share-bar { height: 3px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); overflow: hidden; }
 .tt-share-bar i { display: block; height: 100%; width: var(--w, 0%); border-radius: inherit; background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow 900ms var(--tt-ease) both; }

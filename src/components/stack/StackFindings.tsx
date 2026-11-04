@@ -95,6 +95,7 @@ const icon = (Icon: typeof Wallet, color?: string) => <Icon size={14} strokeWidt
 export default function StackFindings({ lang, currency = "EUR", converted = false, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly }: Props) {
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
+  const rateDate = new Date(`${CURRENCY_RATE_DATE}T00:00:00Z`).toLocaleDateString(fr ? "fr-FR" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).replace(/ /g, "\u00a0");
   const s = (n: number) => (n > 1 ? "s" : "");
   const [later, setLater] = useState<string[]>([]);
   const [priceAll, setPriceAll] = useState(false);
@@ -222,7 +223,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                   </button>
                 : toolCount > 0 && <div className="tt-trust"><span className="tt-check tt-check--live" aria-hidden="true">{icon(Check)}</span><span><span className="tt-label">{t("Budget renseigné", "Budget recorded")}</span><p className="tt-note">{t("Selon les prix et formules renseignés.", "From the prices and plans recorded.")}</p></span></div>;
             })()}</>; })()}
-        {converted && <p className="tt-note">{t(`Conversion en ${currency} au taux de référence du ${CURRENCY_RATE_DATE}.`, `Converted to ${currency} using reference rates dated ${CURRENCY_RATE_DATE}.`)}</p>}
+        {converted && <p className="tt-note">{t(`Conversion en ${currency} au taux de référence du ${rateDate}.`, `Converted to ${currency} at the reference rate of ${rateDate}.`)}</p>}
         {spend.length > 0 ? <>
           {/* Molécule « part d'un total » : logo, nom, filet à la couleur du domaine, montant, pourcentage. */}
           <ul className="tt-shares">{shown.map((line) => <li key={line.tool.id} className="tt-share" style={{ ["--c" as string]: areaColorOf.get(line.tool.id) || AREA_OTHER, ["--w" as string]: `${total > 0 ? (line.amount / total) * 100 : 0}%` }}>
