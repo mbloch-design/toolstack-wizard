@@ -378,6 +378,13 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           })}</div>
         </div>
         {toolCount <= 1 && history && <div className="mf-history">{history}</div>}
+      </section> : toolCount > 1 ? <section className="tt-decision" data-done="" aria-labelledby="tt-decision-done">
+        {/* Nothing left to decide: the card rests instead of vanishing. Proposal of 04/11, made of validated pieces. */}
+        <p className="tt-decision-head"><span className="tt-eyebrow">{t("Votre décision", "Your decision")}</span></p>
+        <p className="tt-decision-title" id="tt-decision-done"><span className="tt-check tt-check--live" aria-hidden="true">{icon(Check)}</span> {t("Rien à trancher.", "Nothing to decide.")}</p>
+        <p className="tt-decision-detail">{t("Chaque outil a trouvé sa place. Profitez-en, ça ne dure jamais très longtemps.", "Every tool has found its place. Enjoy it, it never lasts long.")}</p>
+        {history && <div className="tt-decision-history">{history}</div>}
+        <div className="tt-decision-foot"><button type="button" className="tt-link" onClick={onAddTool}>{t("Ajouter un outil", "Add a tool")}</button></div>
       </section> : null}
       {toolCount === 1 && !top && <article className="tt-starter">
         {/* The one tool, and two free seats waiting next to it. */}
@@ -387,7 +394,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         <button type="button" className="tt-btn" onClick={onAddTool}><Plus aria-hidden />{t("Ajouter un autre outil", "Add another tool")}</button>
       </article>}
       {toolCount > 1 && (fit.length > 0 || !top || history) && <StackUsagePlay key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format}
-        freeOnly={total === 0 && freeTools.length === toolCount} history={history} onReviewTools={onReviewTools} />}
+        freeOnly={total === 0 && freeTools.length === toolCount} history={top ? history : undefined} onReviewTools={onReviewTools} />}
       {toolCount > 1 && total > 0 && <article className="tt-split" data-card="split">
         {/* Organisme « répartition », comme la planche : le total, la lecture, la barre, une ligne par domaine. */}
         <div className="tt-head"><h2 className="tt-eyebrow">{t("Répartition", "Split")}</h2><span className="tt-amount">{format(total)}<small>{t("/mois", "/mo")}</small></span></div>

@@ -500,7 +500,7 @@ export default function CartPage() {
     {/* Hero (22/10/2026): a status line, the title, one sentence. */}
     {/* Organisme « en-tête de page » du système : surtitre, grand titre, note ; l'action rare à droite. */}
     <header className="tt-pagehead">
-      <StackPersonalWelcome empty={false} pending={deckItems.length + usagePending}>
+      <StackPersonalWelcome empty={false} pending={deckItems.length} cards={usagePending}>
         <div>
           <span className="tt-eyebrow">{t("Ma stack", "My stack")}</span>
           <h1 ref={inventoryHeadingRef} tabIndex={-1} className="tt-title-xl">{t("Mes outils", "My tools")}</h1>

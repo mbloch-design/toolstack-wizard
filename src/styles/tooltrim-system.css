@@ -668,3 +668,7 @@ button.tt-budget-trust { cursor: pointer; }
 @container (max-width: 400px) { .tt-play-deck { height: 100px; } .tt-play-card-text .tt-title-m { white-space: normal; } }
 @container (max-width: 340px) { .tt-play-picks { grid-template-columns: minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { .tt-play-card, .tt-play-pile button, .tt-play-pile[data-bump], .tt-play-end, .tt-play.is-done .tt-play-pile ul::after { transition: none; animation: none; } }
+
+/* Proposition (04/11) : la carte de décision au repos, quand il ne reste rien à trancher. */
+.tt-decision[data-done] .tt-decision-title { display: flex; align-items: center; gap: 10px; }
+.tt-decision-history { min-width: 0; }

@@ -37,14 +37,15 @@ const TRADE_LABELS: Record<Trade, [string, string]> = {
  * is worth). Only the current account's chosen name is used; never derive a
  * name from email.
  */
-export default function StackPersonalWelcome({ empty, pending = 0, children }: { empty: boolean; pending?: number; children?: ReactNode }) {
+export default function StackPersonalWelcome({ empty, pending = 0, cards = 0, children }: { empty: boolean; pending?: number; cards?: number; children?: ReactNode }) {
   const { user, syncStatus } = useStackAccount();
   const { profile } = useAccountExperience();
   const { t, lang } = useLang();
   const { currency } = useCurrency();
   const { trade, dailyRate } = useStackTrade();
-  if (!user || syncStatus === "session-expired") return <>{children}</>;
-  const full = profile?.userId === user.id ? profile.displayName : null;
+  // Everyone is greeted: by first name when signed in, simply otherwise.
+  const signedIn = !!user && syncStatus !== "session-expired";
+  const full = signedIn && profile?.userId === user!.id ? profile.displayName : null;
   const name = firstNameOf(full);
   const hour = new Date().getHours();
   const evening = hour >= 18 || hour < 5;
@@ -56,7 +57,9 @@ export default function StackPersonalWelcome({ empty, pending = 0, children }: {
       ? t(`Bienvenue chez vous. ${pending} petite${s} décision${s}, une à la fois, et c’est plié.`, `Welcome home. ${pending} small decision${s}, one at a time, and you’re done.`)
       : pending > 0
         ? t(`${pending} petite${s} décision${s} vous attend${pending > 1 ? "ent" : ""}. Promis, aucune ne mord.`, `${pending} small decision${s} waiting. None of them bite.`)
-        : t("Votre stack, à votre rythme. Vous gardez la main.", "Your stack, at your pace. You stay in control.");
+        : cards > 0
+          ? t(`${cards} carte${cards > 1 ? "s" : ""} à jouer dans Vos usages. Promis, aucune ne mord.`, `${cards} card${cards > 1 ? "s" : ""} to play in Your use. None of them bite.`)
+          : t("Votre stack, à votre rythme. Vous gardez la main.", "Your stack, at your pace. You stay in control.");
   const rate = dailyRate ? convertAmount(dailyRate.amount, dailyRate.currency, currency) : null;
   const money = (amount: number) => formatAmount(Math.round(amount), currency, lang);
   return <div className="tt-pagehead-intro">
