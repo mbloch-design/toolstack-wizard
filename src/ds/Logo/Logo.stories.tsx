@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import Logo from "./Logo";
 
-const meta: Meta<typeof Logo> = { title: "Atomes/Logo", component: Logo };
+const meta: Meta<typeof Logo> = { title: "Atomes/Logo", component: Logo, tags: ["a-valider"] };
 export default meta;
 type Story = StoryObj<typeof Logo>;
 

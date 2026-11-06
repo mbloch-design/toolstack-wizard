@@ -6,6 +6,7 @@ import { budgetStates } from "./Budget.fixtures";
 const meta: Meta<typeof Budget> = {
   title: "Ma stack/Budget",
   component: Budget,
+  tags: ["a-valider"],
   decorators: [(Story) => <div style={{ maxWidth: 520 }}><Story /></div>],
 };
 export default meta;
