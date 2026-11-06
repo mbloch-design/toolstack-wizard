@@ -58,8 +58,8 @@
   --tt-r-round: 50%;
 
   /* Contrôles : ce que chaque état dit, une fois pour toutes */
-  --tt-focus: var(--tt-brand);         /* anneau de 2px, décalé de 3px */
-  --tt-tab-ink: var(--tt-brand);       /* trait de l'onglet actif */
+  --tt-focus: var(--tt-brand-mark);         /* anneau de 2px, décalé de 3px */
+  --tt-tab-ink: var(--tt-brand-mark);       /* trait de l'onglet actif */
   --tt-switch-on: var(--tt-live);      /* interrupteur actif */
   --tt-chip-on: var(--tt-ink);         /* puce active, une coche se dessine */
 
@@ -104,7 +104,7 @@
   --tt-row-pad: 12px 18px 12px 12px;
   --tt-row-ring: 0 0 0 1px var(--tt-line);
   --tt-row-ring-hover: 0 0 0 1px color-mix(in oklch, var(--tt-ink) 35%, var(--tt-line));
-  --tt-row-ring-on: 0 0 0 2px var(--tt-brand);
+  --tt-row-ring-on: 0 0 0 2px var(--tt-brand-mark);
   --tt-row-gone: .45;
   /* Repères */
   --tt-tag-font: var(--tt-w-strong) .875rem/1 var(--tt-ui);
@@ -199,4 +199,18 @@
     --tt-area-5: oklch(0.716 0.169 357.4);
     --tt-area-6: oklch(0.529 0.216 142.5);
   }
+}
+
+/* ── Bleu de marque pour les traits (validé par Michael le 06/11/2026) ────
+   Les traits et marques bleus posés sur un fond (ciseaux, anneau de focus,
+   onglet actif, ligne choisie) lisent ce jeton. En clair, c'est le bleu de
+   marque ; en sombre, un jumeau plus clair pour passer 3:1 sur la tuile.
+   Le bleu de marque lui-même ne change pas : il reste le fond des coches. */
+:root {
+  --tt-brand-mark: var(--tt-brand);
+}
+
+.dark,
+:root[data-theme="dark"] {
+  --tt-brand-mark: color-mix(in oklch, var(--tt-brand) 65%, white);
 }

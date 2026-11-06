@@ -43,7 +43,7 @@
   left: -0.5px;
   width: 1px;
   height: 11px;
-  background: var(--tt-brand);
+  background: var(--tt-brand-mark);
   content: "";
 }
 
@@ -53,7 +53,7 @@
   left: -8px;
   width: 16px;
   height: 16px;
-  fill: var(--tt-brand);
+  fill: var(--tt-brand-mark);
   transform: rotate(90deg);
 }
 

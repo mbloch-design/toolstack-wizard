@@ -1,5 +1,6 @@
 import { useId } from "react";
 import Logo from "../Logo/Logo";
+import { displayFigure } from "../figure";
 import styles from "./Budget.module.css";
 
 export type BudgetTool = { id: string; name: string; slug?: string; logo?: string; paid: boolean | null };
@@ -88,7 +89,7 @@ export default function Budget({ lang, tools, monthly, yearly, lead, saved = nul
 
       {monthly ? (
         <div className={styles.total}>
-          <p className={styles.figure} data-nowrap="">{monthly}<small className={styles.unit}>{t("/mois", "/mo")}</small></p>
+          <p className={styles.figure} data-nowrap="">{displayFigure(monthly)}<small className={styles.unit}>{t("/mois", "/mo")}</small></p>
           <p className={styles.text}>
             <b className={styles.strong}>{t("Soit ", "That's ")}<span data-nowrap="">{yearly}</span>{t(" par an.", " a year.")}</b>
             {quip && <> {quip}</>}

@@ -109,6 +109,7 @@
 
 .ringAmount {
   color: var(--tt-ink);
+  white-space: nowrap;
   font: var(--tt-title-l-font);
   letter-spacing: var(--tt-title-l-tracking);
 }

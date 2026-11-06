@@ -1,5 +1,6 @@
 import { useId, useState, type CSSProperties } from "react";
 import Logo from "../Logo/Logo";
+import { displayFigure } from "../figure";
 import styles from "./Split.module.css";
 
 export type SplitTool = { id: string; name: string; slug?: string; logo?: string; amount: number };
@@ -62,7 +63,7 @@ export default function Split({ lang, areas, format, unpriced, rateDate, localLo
     <article className={styles.card} aria-labelledby={`${id}-title`}>
       <div className={styles.head}>
         <h2 id={`${id}-title`} className={styles.eyebrow}>{t("Répartition", "Split")}</h2>
-        <p className={styles.amount} data-nowrap="">{format(total)}<small className={styles.unit}>{t("/mois", "/mo")}</small></p>
+        <p className={styles.amount} data-nowrap="">{displayFigure(format(total))}<small className={styles.unit}>{t("/mois", "/mo")}</small></p>
       </div>
 
       <div className={styles.layout}>
@@ -94,10 +95,10 @@ export default function Split({ lang, areas, format, unpriced, rateDate, localLo
           <span className={styles.ringTotal} key={focus?.id ?? "total"}>
             {focus ? <>
               <span className={styles.note}>{focus.label}</span>
-              <span className={styles.ringAmount} data-nowrap="">{format(focus.amount)}</span>
+              <span className={styles.ringAmount} data-nowrap="">{displayFigure(format(focus.amount))}</span>
               <span className={styles.note} data-nowrap="">{percent(focus.amount)}{t(" du budget", " of the budget")}</span>
             </> : <>
-              <span className={styles.ringAmount} data-nowrap="">{format(total)}</span>
+              <span className={styles.ringAmount} data-nowrap="">{displayFigure(format(total))}</span>
               <span className={styles.note}>{t("par mois", "a month")}</span>
             </>}
           </span>
