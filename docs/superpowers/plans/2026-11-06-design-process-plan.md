@@ -550,7 +550,18 @@ Brief proposé :
    - la ligne de confiance mène à la question suivante de la décision ;
    - « Préciser ma première formule » quand rien n'est connu.
 
-- [ ] Soumettre ce brief à Michael. **Arrêt** jusqu'à sa réponse. Reporter ses corrections ici.
+- [x] Soumis à Michael le 06/11/2026. Validé, avec cette correction :
+
+> « Le budget est avant tout la vue d'ensemble. Les autres modules sont principalement des questions ou des visualisations sous d'autres angles, où l'on rentre dans le détail. Je dois voir de manière macro : stack / budget. »
+
+**Conséquence sur le brief :** la carte Budget montre la stack et son coût d'un coup d'œil :
+- le total par mois et par an ;
+- le nombre d'outils, payants et gratuits ;
+- la stack elle-même en un rang de logos ;
+- la fiabilité du chiffre ;
+- une ligne d'humour.
+
+Le détail outil par outil (la liste des parts, montants et pourcentages) sort de la carte : c'est le travail de la Répartition. Les données extrêmes restent valables pour la rangée de logos (1, 3, 12 outils) et pour les montants.
 
 ### Tâches B2 à B7 : détaillées après la validation du brief
 
