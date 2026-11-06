@@ -114,7 +114,8 @@
     "planche:check": "node scripts/check-planche.mjs",
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build -o storybook-static",
-    "test:ds": "vitest run --config vitest.ds.config.ts"
+    "test:ds": "vitest run --config vitest.ds.config.ts",
+    "lint:ds": "stylelint \"src/ds/**/*.module.css\" --allow-empty-input"
   },
   "dependencies": {
     "@orama/orama": "^3.1.18",
