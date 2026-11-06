@@ -73,3 +73,5 @@ skills-lock.json
 /storybook-static/
 /visual/__local__/
 /visual/test-results/
+/.vitest-attachments/
+/src/ds/**/__screenshots__/
