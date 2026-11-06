@@ -1,3 +1,11 @@
+## 2026-11-06 · Design system refait sur une base saine : Storybook, CSS Modules, tests visuels ; Budget et Répartition
+
+- Process refondu (spec et plan dans `docs/superpowers/`) : les composants React de `src/ds/` sont la seule source, montrés dans Storybook dans tous leurs états réels (FR/EN, données extrêmes, 390/768/1280, clair/sombre). Chaque module suit le circuit brief validé, stories d'abord, composant, revue par un agent indépendant, validation de Michael, références, intégration et retrait de l'ancien code.
+- Socle : jetons dans `src/ds/tokens.css` (valeurs calculées identiques avant/après), CSS Modules et Stylelint (jetons seulement, ni `!important` ni `:global`), invariants de mise en page et accessibilité (axe) sur chaque story, captures comparées au pixel en CI dans l'image Playwright, workflow « Visual baselines » lancé à la main après validation.
+- Carte Budget (vue d'ensemble de la stack et de son coût) et carte Répartition (domaines puis outils, part ouverte qui se détache de l'anneau sur carte large) intégrées à Ma stack ; jauge de coupe reconstruite dans le système pour la carte Décision. Jetons validés : espacements `--tt-space-*`, tuile de logo, couleurs de domaine `--tt-area-*`, bleu des traits `--tt-brand-mark` ; chiffres d'affichage lisibles (`displayFigure`).
+- Défauts trouvés en route et corrigés : `test:ds` tournait en réalité à 1 200 px pour toutes les « largeurs » (corrigé, mesuré) ; le contrôle de débordement échouait à travers `display: contents`, ce qui avait fait entrer des écrans d'erreur Storybook dans les références à 390 px (références recalculées, le test visuel refuse désormais l'écran d'erreur).
+- Vérifié : 1 022 tests unitaires, 238 Ma stack, 95 du système aux trois largeurs, e2e Ma stack ; `pricing-audit` « recorded saving » échoue comme avant (texte retiré par `5529fca2`, en to-do).
+
 ## 2026-10-30 · Ma stack sur le système, du fil d'Ariane au pied de page
 
 - Fil d'Ariane (tout le site) en molécule `.tt-crumbs` ; atome titre de section ; étiquettes `.tt-tag--overlap` / `--live`. Un pont d'atomes branche l'en-tête, les titres de section, les groupes, les cartes d'outils, « À découvrir », le budget et le pied de page sur les tokens d'atome.
