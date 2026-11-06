@@ -338,7 +338,7 @@ for (const width of [390, 1440]) test(`partial stack budget stays consistent ${w
  full.billing = {paid:['motion-array'],reviewed:['motion-array'],choices:{'motion-array':{source:'custom',amount:29,currency:'USD',period:'monthly'}}};
  await control(request,'seed',{email:'partial-budget@example.invalid',state:full});
  await page.goto('/en/ma-stack'); await login(page,'en','partial-budget@example.invalid'); await saved(page,'en');
- await expect(page.getByText('Known budget so far',{exact:true})).toBeVisible();
+ await expect(page.locator('[data-card="price"]')).toContainText('Your stack');
  const expandPrice = page.locator('[data-card="price"] .mf-expand[aria-expanded="false"]');
  if(await expandPrice.isVisible()) await expandPrice.click();
  await expect(page.getByText('2 of 4 tools priced',{exact:true})).toBeVisible();
@@ -346,7 +346,7 @@ for (const width of [390, 1440]) test(`partial stack budget stays consistent ${w
  await expect(page.locator('.ms-all-sum')).toContainText('partial');
  const expandSplit = page.locator('.mf-balance .mf-expand[aria-expanded="false"]');
  if(await expandSplit.isVisible()) await expandSplit.click();
- await expect(page.locator('.mf-balance .mf-bb')).toBeVisible();
+ await expect(page.locator('[data-card="split"]')).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
  await page.screenshot({path:`test-results/accounts/partial-budget-${width}.png`,fullPage:true});
 });
@@ -367,9 +367,9 @@ test('first unconfirmed plan has no zero budget or empty analysis cards', async 
  await page.emulateMedia({reducedMotion:'reduce'});
  await control(request,'seed',{email:'first-budget@example.invalid',state:state(['notion'])});
  await page.goto('/en/ma-stack');await login(page,'en','first-budget@example.invalid');await saved(page,'en');
- await expect(page.locator('.mf-budget-onboarding')).toContainText("Let's talk budget.");
+ await expect(page.locator('[data-card="price"]')).toContainText("Let's talk budget.");
  await expect(page.locator('[data-card="price"]')).not.toContainText('$0');
- await expect(page.locator('.mf-balance')).toHaveCount(0);
+ await expect(page.locator('[data-card="split"]')).toHaveCount(0);
  await expect(page.locator('.mf-fit')).toHaveCount(0);
  await expect(page.locator('.mf-now')).toContainText('Notion');
  await page.getByRole('button',{name:'Choose my first plan',exact:true}).click();
@@ -381,15 +381,15 @@ test('undoing the first free plan restores the unanswered question after reload'
  await page.emulateMedia({reducedMotion:'reduce'});
  await control(request,'seed',{email:'undo-plan@example.invalid',state:state(['notion'])});
  await page.goto('/en/ma-stack');await login(page,'en','undo-plan@example.invalid');await saved(page,'en');
- await expect(page.locator('.mf-budget-onboarding')).toContainText("Let's talk budget.");
+ await expect(page.locator('[data-card="price"]')).toContainText("Let's talk budget.");
  await expect(page.locator('[data-plan]')).toHaveCount(3);
  await page.locator('[data-plan]').filter({hasText:'Free plan'}).first().click();
  await expect(page.locator('.mf-now')).toHaveCount(0);
  await page.getByRole('button',{name:'Undo',exact:true}).click();
  await expect(page.locator('.mf-now')).toContainText('Notion');
- await expect(page.locator('.mf-budget-onboarding')).toContainText("Let's talk budget.");
+ await expect(page.locator('[data-card="price"]')).toContainText("Let's talk budget.");
  await saved(page,'en');await page.reload();await saved(page,'en');
- await expect(page.locator('.mf-budget-onboarding')).toContainText("Let's talk budget.");
+ await expect(page.locator('[data-card="price"]')).toContainText("Let's talk budget.");
 });
 
 for(const width of [390,1440]) test(`personal welcome recognises the signed-in owner ${width}`,async({page,request})=>{
@@ -829,7 +829,7 @@ for(const lang of ['en','fr'] as const) for(const width of [320,1440]) test(`inv
  await expect(card.getByRole('textbox')).toBeVisible();
  expect(await card.locator('.mf-now-q h3').evaluate(el=>getComputedStyle(el).paddingRight)).toBe('0px');
  expect((await snapshot(page)).billing.choices.github).toBeUndefined();
- expect(await page.locator('[data-card="price"] .mk-odo').first().getAttribute('aria-label')).toMatch(/200/);
+ await expect(page.locator('[data-card="price"]')).toContainText(/200/);
  await expect(card.getByRole('combobox',{name:en?'Invoice currency':'Devise de facture'})).toHaveValue('USD');
  await card.getByRole('textbox').fill(en?'12.50':'12,50');
  await card.getByRole('combobox').selectOption('GBP');
@@ -905,5 +905,5 @@ test('invoice draft cannot cross a personal-stack scope change',async({page,requ
 test('invoice native cents remain visible in the recorded budget',async({page,request})=>{
  const value=state(['cursor','github','vercel']);value.billing={paid:['cursor','github'],reviewed:['cursor','github','vercel'],choices:{cursor:{source:'plan',label:'Teams',amount:40,currency:'USD',period:'monthly',perSeat:true,seats:5},github:{source:'custom',amount:12.5,currency:'USD',period:'monthly'}}};
  await control(request,'seed',{email:'cents-invoice@example.invalid',state:value});await page.goto('/en/ma-stack');await login(page,'en','cents-invoice@example.invalid');await saved(page);
- await expect(page.locator('[data-card="price"] .mk-odo').first()).toHaveAttribute('aria-label','$212.50');
+ await expect(page.locator('[data-card="price"]')).toContainText('$212.50');
 });

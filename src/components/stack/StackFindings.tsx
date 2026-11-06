@@ -186,9 +186,10 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       {/* Organisme « tableau » du système (planche, gabarit Ma stack), un bento lu constat, action, détail : budget et décision, puis vos usages et la répartition. L'ordre du DOM est l'ordre de lecture, sur mobile aussi. */}
       {/* 1. Read first: what the stack costs, and the verdict under it. */}
       {/* Organisme « budget » du système (planche, chapitre 06 et gabarit Ma stack). */}
-      {/* The macro view, a design system component (src/ds/Budget, validated 06/11/2026). The slot only places it in the board. */}
+      {/* The macro view, a design system component (src/ds/Budget, validated 06/11/2026). The slot only places it in the board.
+          Invoice cents stay visible; only a converted total is rounded (no false precision after a rate). */}
       <div className="tt-slot" data-card="price">
-        <Budget lang={fr ? "fr" : "en"} tools={budgetTools} monthly={total > 0 ? format(Math.round(total)) : null} yearly={total > 0 ? format(Math.round(total * 12)) : null}
+        <Budget lang={fr ? "fr" : "en"} tools={budgetTools} monthly={total > 0 ? format(converted ? Math.round(total) : total) : null} yearly={total > 0 ? format(converted ? Math.round(total * 12) : total * 12) : null}
           saved={saved > 0 ? format(Math.round(saved)) : null}
           lead={spend.length > 0 && total > 0 ? { name: spend[0].tool.name, share: Math.round((spend[0].amount / total) * 100) } : null}
           unsure={{ prices: unsure.filter((item) => item.kind === "price").length, plans: unsure.filter((item) => item.kind === "freemium").length }}

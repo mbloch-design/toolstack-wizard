@@ -8,7 +8,7 @@ export type BudgetProps = {
   lang: "fr" | "en";
   /** The whole stack, most expensive first. paid: null while its price is not known. */
   tools: BudgetTool[];
-  /** Formatted monthly and yearly totals in whole units (a macro view has no cents); null when no price is known yet. */
+  /** Formatted monthly and yearly totals (whole units after a conversion, invoice cents otherwise); null when no price is known yet. */
   monthly: string | null;
   yearly: string | null;
   /** The biggest subscription and its share of the total (0 to 100), for the one line of humour. */
