@@ -22,5 +22,5 @@ export const NothingKnown = state("nothingKnown");
 export const Converted = state("converted");
 export const Dollars = state("dollars");
 export const BigAmounts = state("bigAmounts");
-// Added on 06/11/2026 (the saving stays on the card): awaiting Michael's validation.
-export const WithSaving: Story = { ...state("withSaving"), tags: ["a-valider"] };
+// The saving stays on the card (validated by Michael on 06/11/2026).
+export const WithSaving = state("withSaving");

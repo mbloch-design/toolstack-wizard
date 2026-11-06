@@ -153,7 +153,7 @@
   --tt-gain-3: oklch(0.55 0.1 200);
 }
 
-/* ── Espacements (proposition du 06/11/2026, à valider par Michael) ──────
+/* ── Espacements (validés par Michael le 06/11/2026) ──────────────────────
    Une échelle de 4 px, tirée des valeurs du système validé : 4, 8, 12, 16, 20,
    24, 32 et 40 px couvrent l'essentiel de ses écarts. Les composants de src/ds
    n'utilisent que ces pas. Aucune valeur existante ne change. */
@@ -168,7 +168,7 @@
   --tt-space-10: 40px;
 }
 
-/* ── Tuile de logo (proposition du 06/11/2026, à valider par Michael) ────
+/* ── Tuile de logo (validée par Michael le 06/11/2026) ────────────────────
    Les fichiers de logo sont dessinés pour un fond clair, certains avec un fond
    blanc intégré. Une tuile claire dans les deux thèmes garde le rang de logos
    régulier en sombre, comme des icônes d'application. */
