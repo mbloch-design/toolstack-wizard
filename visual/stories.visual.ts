@@ -4,10 +4,10 @@ import { expect, test } from "playwright/test";
 
 type Entry = { id: string; type: string; tags?: string[] };
 
-// Every story at 390, 768 and 1280, in French and English, light and dark. A story tagged !visual is skipped, so is the foundation's smoke story.
+// Every story at 390, 768 and 1280, in French and English, light and dark. A story tagged !visual is skipped.
 const index = JSON.parse(readFileSync(join(import.meta.dirname, "../storybook-static/index.json"), "utf8")) as { entries: Record<string, Entry> };
 // A story tagged "a-valider" has no reference yet: captured locally for review, compared in CI only once Michael validated it.
-const stories = Object.values(index.entries).filter((entry) => entry.type === "story" && !entry.tags?.includes("!visual") && !entry.id.startsWith("socle-") && !(process.env.CI && entry.tags?.includes("a-valider")));
+const stories = Object.values(index.entries).filter((entry) => entry.type === "story" && !entry.tags?.includes("!visual") && !(process.env.CI && entry.tags?.includes("a-valider")));
 
 for (const story of stories) for (const width of [390, 768, 1280]) for (const lang of ["fr", "en"]) for (const theme of ["light", "dark"]) {
   test(`${story.id} ${width} ${lang} ${theme}`, async ({ page }) => {
