@@ -115,7 +115,8 @@
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build -o storybook-static",
     "test:ds": "vitest run --config vitest.ds.config.ts",
-    "lint:ds": "stylelint \"src/ds/**/*.module.css\" --allow-empty-input"
+    "lint:ds": "stylelint \"src/ds/**/*.module.css\" --allow-empty-input",
+    "test:visual": "playwright test -c visual/playwright.visual.config.ts"
   },
   "dependencies": {
     "@orama/orama": "^3.1.18",
