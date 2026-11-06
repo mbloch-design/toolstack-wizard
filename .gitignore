@@ -68,3 +68,8 @@ supabase/.temp/
 .claude/skills/
 .claude/settings.json
 skills-lock.json
+
+# Storybook and visual tests
+/storybook-static/
+/visual/__local__/
+/visual/test-results/
