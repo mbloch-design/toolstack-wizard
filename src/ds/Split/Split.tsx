@@ -42,6 +42,7 @@ export default function Split({ lang, areas, format, unpriced, rateDate, review,
     : sorted;
   const total = shown.reduce((sum, area) => sum + area.amount, 0);
   const [open, setOpen] = useState<string | null>(shown[0]?.id ?? null);
+  const focus = shown.find((area) => area.id === open);
 
   const percent = (amount: number) => {
     const value = total > 0 ? (amount / total) * 100 : 0;
@@ -67,16 +68,49 @@ export default function Split({ lang, areas, format, unpriced, rateDate, review,
         <p className={styles.amount} data-nowrap="">{format(total)}<small className={styles.unit}>{t("/mois", "/mo")}</small></p>
       </div>
 
-      <div className={styles.reading}>
-        <h3 className={styles.titleM}>{title}</h3>
-        <p className={styles.text}>{quip}</p>
+      <div className={styles.layout}>
+      <div className={styles.overview}>
+        <div className={styles.reading}>
+          <h3 className={styles.titleM}>{title}</h3>
+          <p className={styles.text}>{quip}</p>
+        </div>
+
+        {/* Wide card: a ring with the total at its heart. Narrow card: one bar. Same segments, same open area. */}
+        <div className={styles.ring} role="img" aria-label={shown.map((area) => `${area.label} ${percent(area.amount)}`).join(", ")}>
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            {(() => {
+              const circumference = 2 * Math.PI * 50, gap = shown.length > 1 ? 3 : 0;
+              let start = 0;
+              return shown.map((area) => {
+                const length = total > 0 ? (area.amount / total) * circumference : 0;
+                // A segment opens its area, like its row in the list (the list stays the keyboard path).
+                const arc = <circle key={area.id} cx="60" cy="60" r="50" style={{ "--c": area.color } as CSSProperties} data-on={open === area.id ? "" : undefined}
+                  strokeDasharray={`${Math.max(length - gap, 1)} ${circumference}`} strokeDashoffset={-start} onClick={() => setOpen(area.id)} />;
+                start += length;
+                return arc;
+              });
+            })()}
+          </svg>
+          {/* The heart of the ring follows the open area; with none open, the total. */}
+          <span className={styles.ringTotal} key={focus?.id ?? "total"}>
+            {focus ? <>
+              <span className={styles.note}>{focus.label}</span>
+              <span className={styles.ringAmount} data-nowrap="">{format(focus.amount)}</span>
+              <span className={styles.note} data-nowrap="">{percent(focus.amount)}{t(" du budget", " of the budget")}</span>
+            </> : <>
+              <span className={styles.ringAmount} data-nowrap="">{format(total)}</span>
+              <span className={styles.note}>{t("par mois", "a month")}</span>
+            </>}
+          </span>
+        </div>
+
+        <div className={styles.bar} role="img" aria-label={shown.map((area) => `${area.label} ${percent(area.amount)}`).join(", ")}>
+          {shown.map((area) => <i key={area.id} style={{ "--f": area.amount, "--c": area.color } as CSSProperties} data-on={open === area.id ? "" : undefined} />)}
+        </div>
       </div>
 
+      <div className={styles.detail}>
       {review && review.amount > 0 && <div className={styles.gauge}><CutGauge lang={lang} kept={Math.max(0, total - review.amount)} cut={Math.min(review.amount, total)} format={format} onReview={review.onReview} /></div>}
-
-      <div className={styles.bar} role="img" aria-label={shown.map((area) => `${area.label} ${percent(area.amount)}`).join(", ")}>
-        {shown.map((area) => <i key={area.id} style={{ "--f": area.amount, "--c": area.color } as CSSProperties} data-on={open === area.id ? "" : undefined} />)}
-      </div>
 
       <ul className={styles.areas}>
         {shown.map((area) => {
@@ -87,6 +121,10 @@ export default function Split({ lang, areas, format, unpriced, rateDate, review,
               <button type="button" className={styles.areaRow} aria-expanded={expanded} aria-controls={`${id}-${area.id}`} onClick={() => setOpen(expanded ? null : area.id)}>
                 <i className={styles.dot} aria-hidden="true" />
                 <span className={styles.label}>{area.label}</span>
+                {/* Closed, on a wide card: who is inside, at a glance. */}
+                <span className={styles.peek} aria-hidden="true" data-hidden={expanded ? "" : undefined}>
+                  {tools.slice(0, 3).map((tool) => <Logo key={tool.id} tool={tool} size={24} localOnly={localLogosOnly} />)}
+                </span>
                 <span className={styles.figures}>
                   <span className={styles.areaAmount} data-nowrap="">{format(area.amount)}</span>
                   <span className={styles.share} data-nowrap="">{percent(area.amount)}</span>
@@ -98,7 +136,11 @@ export default function Split({ lang, areas, format, unpriced, rateDate, review,
                   {tools.map((tool) => (
                     <li key={tool.id} className={styles.tool} title={tool.name}>
                       <Logo tool={tool} size={24} localOnly={localLogosOnly} />
-                      <span className={styles.toolName}>{tool.name}</span>
+                      <span className={styles.toolCell}>
+                        <span className={styles.toolName}>{tool.name}</span>
+                        {/* Wide card: the tool's weight in its area, in the area's colour. */}
+                        {tools.length > 1 && <span className={styles.toolBar} aria-hidden="true"><i style={{ "--w": `${(tool.amount / Math.max(...tools.map((other) => other.amount))) * 100}%` } as CSSProperties} /></span>}
+                      </span>
                       {/* One tool in the area: its figures are the area's, said once. */}
                       {tools.length > 1 && <>
                         <span className={styles.toolAmount} data-nowrap="">{format(tool.amount)}</span>
@@ -112,6 +154,8 @@ export default function Split({ lang, areas, format, unpriced, rateDate, review,
           );
         })}
       </ul>
+      </div>
+      </div>
 
       {(unpriced.length > 0 || rateDate) && (
         <div className={styles.notes}>

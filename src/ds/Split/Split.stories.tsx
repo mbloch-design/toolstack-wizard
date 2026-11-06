@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { userEvent, within } from "storybook/test";
 import Split from "./Split";
 import { splitStates } from "./Split.fixtures";
 
@@ -23,3 +24,11 @@ export const WithReview = state("withReview");
 export const Unpriced = state("unpriced");
 export const Converted = state("converted");
 export const Dollars = state("dollars");
+/** A second area opened from the list: its tools show, its segment stands out, the ring's heart follows it. */
+export const OtherAreaOpen: Story = {
+  ...state("twelveTools"),
+  play: async ({ canvasElement }) => {
+    const rows = within(canvasElement).getAllByRole("button", { expanded: false });
+    await userEvent.click(rows[0]);
+  },
+};

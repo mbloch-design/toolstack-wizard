@@ -35,13 +35,86 @@
 }
 
 .reading {
+  order: 1;
   display: grid;
   gap: var(--tt-space-1);
+}
+
+/* Narrow card: one column, in the validated order (reading, cut line, bar, areas). */
+.layout,
+.overview,
+.detail {
+  display: contents;
+}
+
+.ring {
+  display: none;
+}
+
+.ring svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  animation: draw 900ms var(--tt-ease) both;
+}
+
+.ring circle {
+  cursor: pointer;
+  fill: none;
+  stroke: var(--c, var(--tt-ink));
+  stroke-width: 12;
+  transition: stroke-width var(--tt-dur-state) var(--tt-ease);
+}
+
+.ring:has(circle[data-on]) circle:not([data-on]) {
+  stroke-width: 5;
+}
+
+.ring circle[data-on] {
+  stroke-width: 14;
+}
+
+.ringTotal {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: var(--tt-space-1);
+  text-align: center;
+  animation: settle var(--tt-dur-move) var(--tt-ease) both;
+}
+
+/* The ring draws itself in, then each new heart settles. */
+@keyframes draw {
+  from {
+    opacity: 0;
+    transform: rotate(-150deg) scale(0.92);
+  }
+}
+
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(var(--tt-space-1));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring svg,
+  .ringTotal { animation: none; }
+}
+
+.ringAmount {
+  color: var(--tt-ink);
+  font: var(--tt-title-l-font);
+  letter-spacing: var(--tt-title-l-tracking);
 }
 
 /* One bar, one segment per area, in the area's colour. The open area's segment stands full height;
    the others thin down, keeping their true colour. */
 .bar {
+  order: 3;
   display: flex;
   align-items: center;
   gap: calc(var(--tt-space-1) * 0.75);
@@ -65,6 +138,7 @@
 
 /* The cut line is its own block: more room before the bar. */
 .gauge {
+  order: 2;
   padding-bottom: var(--tt-space-2);
 }
 
@@ -83,7 +157,7 @@
 
 .areaRow {
   display: grid;
-  grid-template-columns: 10px minmax(0, 1fr) auto 16px;
+  grid-template-columns: 10px minmax(0, 1fr) auto auto 16px;
   align-items: center;
   gap: var(--tt-space-3);
   width: 100%;
@@ -161,6 +235,16 @@
   gap: var(--tt-space-3);
 }
 
+.toolCell {
+  display: grid;
+  gap: var(--tt-space-1);
+  min-width: 0;
+}
+
+.toolBar {
+  display: none;
+}
+
 /* Two lines at most; the full name stays in the row's title and for screen readers. */
 .toolName {
   display: -webkit-box;
@@ -199,4 +283,81 @@
 
 @media (prefers-reduced-motion: reduce) {
   .bar i { animation: none; }
+}
+
+.areas {
+  order: 4;
+}
+
+/* ── Wide card, last so it wins over the one-column rules above ── */
+
+/* Wide card: the overview on the left (reading, then the ring with the total at its heart), the detail on the right. */
+@container (width >= 600px) {
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--tt-space-10);
+    align-items: start;
+  }
+
+  .overview,
+  .detail {
+    display: grid;
+    gap: var(--tt-tile-gap);
+    align-content: start;
+  }
+
+  .ring {
+    position: relative;
+    display: grid;
+    place-items: center;
+    order: 2;
+    width: min(100%, 220px);
+    aspect-ratio: 1;
+    justify-self: center;
+  }
+
+  .bar {
+    display: none;
+  }
+}
+
+/* Who is inside a closed area, on a wide card: three logos, slightly overlapping. */
+.peek {
+  display: none;
+}
+
+@container (width >= 600px) {
+  .peek {
+    display: inline-flex;
+    justify-self: end;
+  }
+
+  .peek > * + * {
+    margin-left: calc(var(--tt-space-2) * -1);
+  }
+
+  .peek[data-hidden] {
+    visibility: hidden;
+  }
+}
+
+@container (width >= 600px) {
+  .toolBar {
+    display: block;
+    height: 3px;
+    overflow: hidden;
+    border-radius: var(--tt-r-pill);
+    background: var(--tt-tile-2);
+  }
+
+  .toolBar i {
+    display: block;
+    width: var(--w, 0%);
+    height: 100%;
+    border-radius: inherit;
+    background: var(--c, var(--tt-ink));
+    transform-origin: left;
+    animation: grow 700ms var(--tt-ease) both;
+  }
 }
