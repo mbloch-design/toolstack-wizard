@@ -1,4 +1,4 @@
-import StackInvoiceEntry from "./StackInvoiceEntry";
+import StackInvoiceEntry from "@/ds/InvoiceEntry/InvoiceEntry";
 import { CURRENCY_RATE_DATE, type Currency } from "@/lib/currencyRates";
 import StackUsagePlay from "./StackUsagePlay";
 import { Fragment, useCallback, useEffect, useRef, useState, type ReactNode } from "react";

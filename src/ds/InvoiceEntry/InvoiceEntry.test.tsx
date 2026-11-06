@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { expect, it, vi } from 'vitest';
-import StackInvoiceEntry from './StackInvoiceEntry';
+import StackInvoiceEntry from './InvoiceEntry';
 import { convertAmount } from '@/lib/currencyRates';
 
 it('preserves the invoice currency and amount while changing the budget display',()=>{

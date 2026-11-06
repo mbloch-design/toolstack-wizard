@@ -4,6 +4,9 @@ import { formatAmount } from "@/lib/currencyRates";
 import Logo from "../Logo/Logo";
 import Choice, { Choices, IconTile } from "../Choice/Choice";
 import Decision, { DecisionRest } from "./Decision";
+import InvoiceEntry from "../InvoiceEntry/InvoiceEntry";
+import Seats from "../Seats/Seats";
+import { useState } from "react";
 
 const meta: Meta<typeof Decision> = { title: "Ma stack/Décision", component: Decision, tags: ["a-valider"], decorators: [(Story) => <div style={{ maxWidth: 640 }}><Story /></div>] };
 export default meta;
@@ -56,3 +59,25 @@ export const LongRunLongName: Story = {
 export const AtRest: Story = {
   render: (_args, { globals: { lang } }) => <DecisionRest lang={lang} onAddTool={() => {}} />,
 };
+
+/** No plan in the catalogue: the one case with an amount to type. */
+export const AmountToType: Story = {
+  render: (_args, { globals: { lang } }) => <Decision lang={lang} kind="price" eyebrow={t(lang, "Votre décision", "Your decision")} step={{ current: 1, total: 2 }}
+    media={<Logo tool={tool("Stripe", "stripe")} size={40} localOnly />} title={t(lang, "Combien vous coûte Stripe par mois ?", "How much does Stripe cost you a month?")}
+    detail={t(lang, "Ce prix manque : l’outil est exclu du budget renseigné.", "This price is missing: the tool is excluded from the recorded budget.")}
+    links={[later(lang), { label: t(lang, "Devise, utilisateurs ou facture annuelle", "Currency, users or yearly billing"), onClick: () => {} }]}
+    preview={{ label: t(lang, "Budget partiel", "Partial budget"), value: <>{money(lang, 100)}{per(lang)}</> }}>
+    <InvoiceEntry currency="EUR" lang={lang} onSave={() => {}} onPreview={() => {}} />
+  </Decision>,
+};
+
+/** Step 2 of a per-user plan: how many people. */
+function SeatsStep({ lang }: { lang: "fr" | "en" }) {
+  const [seats, setSeats] = useState(5);
+  return <Decision lang={lang} kind="freemium" eyebrow={t(lang, "Votre décision", "Your decision")} step={{ current: 2, total: 6 }}
+    media={<Logo tool={tool("Canva", "canva")} size={40} localOnly />} title={t(lang, "Quelle formule de Canva avez-vous ?", "Which Canva plan do you have?")}
+    links={[later(lang)]} preview={{ label: t(lang, "Budget partiel", "Partial budget"), value: <>{money(lang, 70.74 + 14.17 * seats)}{per(lang)}</>, delta: { text: `+${money(lang, 14.17 * seats)}`, down: false } }}>
+    <Seats lang={lang} plan="Canva Pro+" seats={seats} onChange={setSeats} total={money(lang, 14.17 * seats)} onConfirm={() => {}} onChangePlan={() => {}} />
+  </Decision>;
+}
+export const HowManyPeople: Story = { render: (_args, { globals: { lang } }) => <SeatsStep lang={lang} /> };
