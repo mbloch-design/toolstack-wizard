@@ -98,6 +98,7 @@
 /* A link whose line draws itself on hover. */
 .link {
   padding: 0;
+  text-decoration: none;
   border: 0;
   background: linear-gradient(currentColor, currentColor) 100% 100% / 0 1px no-repeat;
   color: var(--tt-ink);

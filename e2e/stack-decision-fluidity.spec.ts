@@ -17,15 +17,15 @@ for (const reducedMotion of ["no-preference", "reduce"] as const) for (const wid
       localStorage.setItem('tooltrim-analytics-consent', JSON.stringify({ version: 1, choice: 'refused', decidedAt: Date.now(), expiresAt: Date.now() + 3600000 }));
     });
     await page.goto('/fr/ma-stack', { waitUntil: 'domcontentloaded' });
-    const card = page.locator('.mf-now[data-kind="pair"]');
+    const card = page.locator('[data-card=decision][data-kind=pair]');
     await expect(card).toBeVisible();
     const expand = card.locator('.mf-expand');
     if (await expand.isVisible()) await expand.click();
-    const buttons = card.locator('.mf-choice-group > button');
+    const buttons = card.locator('[data-choices] > button');
     await expect(buttons).toHaveCount(3);
     const entry = await buttons.first().evaluate(button => ({ duration: getComputedStyle(button).animationDuration, delay: getComputedStyle(button).animationDelay }));
     expect(entry).toEqual({ duration: reducedMotion === 'reduce' ? '0s' : '0.16s', delay: '0s' });
-    const before = await card.locator('.mf-face-name').allTextContents();
+    const before = await card.locator('[data-choice=keep]').allTextContents();
     await card.scrollIntoViewIfNeeded();
     if (choice === 1 && reducedMotion === 'no-preference') await page.screenshot({ path: `/tmp/tooltrim-pair-fluidity-${width}.png` });
     await page.clock.install();
@@ -33,7 +33,7 @@ for (const reducedMotion of ["no-preference", "reduce"] as const) for (const wid
     if (reducedMotion === 'no-preference') for (const button of await buttons.all()) await expect(button).toBeDisabled();
     await page.clock.runFor(200);
     await expect.poll(async () => page.evaluate(() => Object.keys(JSON.parse(localStorage.getItem('tooltrim-personal-stack-v4:anonymous') || '{}').decisions || {}).length)).toBe(1);
-    await expect.poll(async () => card.locator('.mf-face-name').allTextContents()).not.toEqual(before);
+    await expect.poll(async () => card.locator('[data-choice=keep]').allTextContents()).not.toEqual(before);
     expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)).toBe(false);
   });
 }

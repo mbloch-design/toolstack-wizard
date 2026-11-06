@@ -11,7 +11,7 @@ async function answerPlan(deck: import("@playwright/test").Locator, paid: boolea
     if (paid) {
       await cards.filter({ hasNotText: lang === "fr" ? "Version gratuite" : "Free plan" }).first().click();
       // A per-user plan asks for the number of people first.
-      const confirm = deck.locator(".mf-seats").getByRole("button", { name: lang === "fr" ? "Valider" : "Confirm" });
+      const confirm = deck.locator("[data-seats]").getByRole("button", { name: lang === "fr" ? "Valider" : "Confirm" });
       if (await confirm.isVisible().catch(() => false)) await confirm.click();
     }
     else await cards.filter({ hasText: lang === "fr" ? "Version gratuite" : "Free plan" }).first().click();
@@ -63,8 +63,8 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
       ? "ChatGPT et Claude font le même travail."
       : "ChatGPT and Claude do the same job.");
     // The pair decision still offers both individual tools and keeping both.
-    await expect(deck.locator(".mf-choice--keep")).toHaveCount(2);
-    await expect(deck.locator(".mf-choice--both")).toBeVisible();
+    await expect(deck.locator("[data-choice=keep]")).toHaveCount(2);
+    await expect(deck.locator("[data-choice=both]")).toBeVisible();
     // The same stack as cards, then as a list.
     await page.locator(".tt-iconswitch").getByRole("button", { name: fr ? "Liste" : "List", exact: true }).click();
     await expect(page.locator('#ms-all-grid[data-layout="list"] .tt-toolcard')).toHaveCount(10);

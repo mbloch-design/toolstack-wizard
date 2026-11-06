@@ -16,7 +16,7 @@ export default function InvoiceEntry({ currency, lang, onSave, onPreview }: {
   const monthly = amount === null ? null : convertAmount(amount, invoiceCurrency, currency);
   const help = useId();
   useEffect(() => { onPreview(monthly); }, [monthly, onPreview]);
-  return <form className={styles.entry} onSubmit={event => { event.preventDefault(); if (amount !== null) onSave(amount, invoiceCurrency); }}>
+  return <form className={styles.entry} data-invoice="" onSubmit={event => { event.preventDefault(); if (amount !== null) onSave(amount, invoiceCurrency); }}>
     <div className={styles.field}>
       <label className={styles.amount}>
         <input inputMode="decimal" autoComplete="off" placeholder="0" value={value} onChange={event => setValue(event.target.value)}

@@ -1,7 +1,8 @@
 import { useId, type ReactNode } from "react";
 import styles from "./Decision.module.css";
 
-export type DecisionLink = { label: string; onClick: () => void; quiet?: boolean };
+/** A way to look or defer. With href it is a real link (a new tab works); onClick then handles the in-page navigation. */
+export type DecisionLink = { label: string; onClick?: () => void; href?: string; quiet?: boolean };
 export type DecisionProps = {
   lang: "fr" | "en";
   eyebrow: string;
@@ -21,16 +22,18 @@ export type DecisionProps = {
   flash?: boolean;
   /** Kind of question, for tests and the page. */
   kind?: string;
+  /** The card's name for assistive tech (« Prochaine décision »); the question otherwise. */
+  label?: string;
 };
 
 /** The decision card: one question at a time, its answers, and what they do to the budget. */
-export default function Decision({ lang, eyebrow, step, media, title, detail, children, links = [], preview, flash, kind }: DecisionProps) {
+export default function Decision({ lang, eyebrow, step, media, title, detail, children, links = [], preview, flash, kind, label }: DecisionProps) {
   const id = useId();
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
   return (
-    <section className={styles.card} aria-labelledby={`${id}-title`} data-flash={flash ? "" : undefined} data-kind={kind}>
+    <section className={styles.card} aria-label={label} aria-labelledby={label ? undefined : `${id}-title`} data-card="decision" data-open="" data-flash={flash ? "" : undefined} data-kind={kind}>
       <div className={styles.head}>
-        <p className={styles.eyebrow}>{eyebrow}</p>
+        <h2 className={styles.eyebrow}>{eyebrow}</h2>
         {step && step.total > 1 && (
           <p className={styles.steps} aria-label={t(`Étape ${step.current} sur ${step.total}`, `Step ${step.current} of ${step.total}`)}>
             {step.total <= 8 && <span className={styles.track} aria-hidden="true">{Array.from({ length: step.total }, (_, index) => <i key={index} data-on={index < step.current ? "" : undefined} />)}</span>}
@@ -49,8 +52,10 @@ export default function Decision({ lang, eyebrow, step, media, title, detail, ch
 
       {(links.length > 0 || preview) && (
         <div className={styles.foot}>
-          <div className={styles.links}>
-            {links.map((link) => <button key={link.label} type="button" className={styles.link} data-quiet={link.quiet ? "" : undefined} onClick={link.onClick}>{link.label}</button>)}
+          <div className={styles.links} data-links="">
+            {links.map((link) => link.href
+              ? <a key={link.label} href={link.href} className={styles.link} data-quiet={link.quiet ? "" : undefined} onClick={(event) => { if (link.onClick) { event.preventDefault(); link.onClick(); } }}>{link.label}</a>
+              : <button key={link.label} type="button" className={styles.link} data-quiet={link.quiet ? "" : undefined} onClick={link.onClick}>{link.label}</button>)}
           </div>
           {preview && (
             <p className={styles.preview} aria-live="polite">
@@ -73,8 +78,8 @@ export function DecisionRest({ lang, history, onAddTool }: { lang: "fr" | "en"; 
   const id = useId();
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
   return (
-    <section className={styles.card} data-done="" aria-labelledby={`${id}-title`}>
-      <div className={styles.head}><p className={styles.eyebrow}>{t("Votre décision", "Your decision")}</p></div>
+    <section className={styles.card} data-card="decision" data-done="" aria-labelledby={`${id}-title`}>
+      <div className={styles.head}><h2 className={styles.eyebrow}>{t("Votre décision", "Your decision")}</h2></div>
       <p className={styles.restTitle} id={`${id}-title`}>
         <span className={styles.restCheck} aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span>
         {t("Rien à trancher.", "Nothing to decide.")}

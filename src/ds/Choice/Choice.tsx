@@ -25,13 +25,15 @@ export type ChoiceProps = {
   /** Shows what the answer would do to the budget, before choosing. */
   onPreview?: (on: boolean) => void;
   "data-plan"?: string;
+  /** keep or both, for the page and its tests. */
+  "data-choice"?: string;
 };
 
 /** One answer as a row: media, name and what it means, the amount on the right. */
 export default function Choice({ media, pair, name, tag, note, amount, saving, state, checked, role, disabled, ariaLabel, onClick, onPreview, ...rest }: ChoiceProps) {
   return (
     <button type="button" className={styles.choice} role={role} aria-checked={role === "radio" ? state === "kept" : undefined} aria-label={ariaLabel}
-      data-state={state} disabled={disabled} onClick={onClick} data-plan={rest["data-plan"]}
+      data-state={state} disabled={disabled} onClick={onClick} data-plan={rest["data-plan"]} data-choice={rest["data-choice"]}
       onPointerEnter={() => onPreview?.(true)} onPointerLeave={() => onPreview?.(false)} onFocus={() => onPreview?.(true)} onBlur={() => onPreview?.(false)}>
       <span className={pair ? styles.logos : styles.media} aria-hidden={pair || undefined}>
         {media}
@@ -51,7 +53,7 @@ export default function Choice({ media, pair, name, tag, note, amount, saving, s
 
 /** The group the rows sit in: a narrow group puts the amount under the text. */
 export function Choices({ children, label, radio }: { children: ReactNode; label?: string; radio?: boolean }) {
-  return <div className={styles.choices} role={radio ? "radiogroup" : undefined} aria-label={label}>{children}</div>;
+  return <div className={styles.choices} data-choices="" role={radio ? "radiogroup" : undefined} aria-label={label}>{children}</div>;
 }
 
 /** A plan's icon on the logo tile, so plans and tools share one column. */

@@ -371,9 +371,9 @@ test('first unconfirmed plan has no zero budget or empty analysis cards', async 
  await expect(page.locator('[data-card="price"]')).not.toContainText('$0');
  await expect(page.locator('[data-card="split"]')).toHaveCount(0);
  await expect(page.locator('.mf-fit')).toHaveCount(0);
- await expect(page.locator('.mf-now')).toContainText('Notion');
+ await expect(page.locator('[data-card=decision]')).toContainText('Notion');
  await page.getByRole('button',{name:'Choose my first plan',exact:true}).click();
- await expect(page.locator('.mf-now')).toHaveAttribute('data-open','');
+ await expect(page.locator('[data-card=decision]')).toHaveAttribute('data-open','');
  await page.screenshot({path:'test-results/accounts/first-plan-budget.png',fullPage:true});
 });
 
@@ -384,9 +384,9 @@ test('undoing the first free plan restores the unanswered question after reload'
  await expect(page.locator('[data-card="price"]')).toContainText("Let's talk budget.");
  await expect(page.locator('[data-plan]')).toHaveCount(3);
  await page.locator('[data-plan]').filter({hasText:'Free plan'}).first().click();
- await expect(page.locator('.mf-now')).toHaveCount(0);
+ await expect(page.locator('[data-card=decision]')).toHaveCount(0);
  await page.getByRole('button',{name:'Undo',exact:true}).click();
- await expect(page.locator('.mf-now')).toContainText('Notion');
+ await expect(page.locator('[data-card=decision]')).toContainText('Notion');
  await expect(page.locator('[data-card="price"]')).toContainText("Let's talk budget.");
  await saved(page,'en');await page.reload();await saved(page,'en');
  await expect(page.locator('[data-card="price"]')).toContainText("Let's talk budget.");
@@ -551,17 +551,17 @@ test('reviewing a kept pair preserves its answer until a replacement is confirme
  await page.getByRole('button',{name:'Review my choices',exact:true}).click();
  await page.locator('.mu-history').getByRole('button',{name:/^(Review again|Review this choice)$/}).click();
  expect((await snapshot(page)).decisions).toEqual(before);
- await expect(page.locator('.mf-now')).toBeVisible();
+ await expect(page.locator('[data-card=decision]')).toBeVisible();
  for(const width of [1440,390]) {
   await page.setViewportSize({width,height:900});
-  await expect(page.locator('.mf-choice-group button')).toHaveCount(3);
-  await expect(page.locator('.mf-now').getByRole('button',{name:'Review this choice',exact:true})).toHaveCount(0);
+  await expect(page.locator('[data-choices] button')).toHaveCount(3);
+  await expect(page.locator('[data-card=decision]').getByRole('button',{name:'Review this choice',exact:true})).toHaveCount(0);
   await expect(page.getByRole('button',{name:'Cancel review',exact:true})).toBeVisible();
   expect((await page.getByRole('button',{name:'Cancel review',exact:true}).boundingBox())!.height).toBeGreaterThanOrEqual(43.99); // Chromium subpixel rounding of the 44px target.
-  expect(await page.locator('.mf-now').evaluate(el=>{const box=el.getBoundingClientRect();return Array.from(el.querySelectorAll('.mf-choice-group button')).every(b=>b.getBoundingClientRect().bottom<=box.bottom+1);})).toBe(true);
-  await expect(page.locator('.mf-choice-group').getByRole('button',{name:'Cancel review',exact:true})).toHaveCount(0);
-  if(width===390) await expect(page.locator('.mf-now .mf-expand')).toHaveAttribute('aria-expanded','true');
-  for(const face of await page.locator('.mf-choice--keep').all()) {
+  expect(await page.locator('[data-card=decision]').evaluate(el=>{const box=el.getBoundingClientRect();return Array.from(el.querySelectorAll('[data-choices] button')).every(b=>b.getBoundingClientRect().bottom<=box.bottom+1);})).toBe(true);
+  await expect(page.locator('[data-choices]').getByRole('button',{name:'Cancel review',exact:true})).toHaveCount(0);
+  if(width===390) await expect(page.locator('[data-card=decision] .mf-expand')).toHaveAttribute('aria-expanded','true');
+  for(const face of await page.locator('[data-choice=keep]').all()) {
   await face.hover();
   await expect.poll(async()=>face.evaluate(el=>{
    const logo=el.querySelector('.tt-choice-logo')!.getBoundingClientRect();
@@ -592,8 +592,8 @@ test('reviewing a saved pair takes priority over another pending question and ne
  await page.getByRole('button',{name:'History',exact:true}).click();
  await expect.poll(async()=>{const card=await page.locator('.mu-card').boundingBox();const board=await page.locator('.ms-board').boundingBox();return !!card&&!!board&&card.y+card.height<=board.y;}).toBe(true);
  await page.locator('.mu-history').getByRole('button',{name:'Review this choice',exact:true}).click();
- await expect(page.locator('.mf-now')).toHaveAttribute('data-kind','pair');
- await expect(page.locator('.mf-now')).toContainText('Your current choice is to keep both.');
+ await expect(page.locator('[data-card=decision]')).toHaveAttribute('data-kind','pair');
+ await expect(page.locator('[data-card=decision]')).toContainText('Your current choice is to keep both.');
  expect((await snapshot(page)).decisions['notion|trello'].kind).toBe('keep-both');
  const countBefore=(await page.locator('.mf-step').getAttribute('aria-label'))?.match(/\d+$/)?.[0];expect(countBefore).toBeTruthy();
  await change(page,{...(await snapshot(page)),decisions:{}});
@@ -613,7 +613,7 @@ test('removing a tool closes its saved-pair review without deleting the historic
  const current=await snapshot(page);
  await change(page,{...current,selection:{...current.selection,pinnedToolSlugs:['notion'],toolEntries:current.selection.toolEntries.filter(entry=>entry.toolSlug==='notion')}});
  await expect(page.getByRole('button',{name:'Cancel review',exact:true})).toHaveCount(0);
- await expect(page.locator('.mf-now[data-kind="pair"]')).toHaveCount(0);
+ await expect(page.locator('[data-card=decision][data-kind=pair]')).toHaveCount(0);
  expect((await snapshot(page)).decisions['notion|trello'].kind).toBe('keep-both');
 });
 
@@ -822,12 +822,12 @@ for(const lang of ['en','fr'] as const) for(const width of [320,1440]) test(`inv
  await control(request,'seed',{email:'invoice@example.invalid',state:value});
  await page.addInitScript(()=>localStorage.setItem('tooltrim:currency','USD'));
  await page.goto(`/${lang}/ma-stack`);await login(page,lang,'invoice@example.invalid');await saved(page,lang);
- const card=page.locator('.mf-now');
+ const card=page.locator('[data-card=decision]');
  const expander=card.locator('.mf-expand[aria-expanded=false]');if(await expander.isVisible())await expander.click();
  // Resolve a pair first only if the catalogue detects one; keep all tools.
  if(await card.getByRole('button',{name:en?'Keep both':'Garder les deux',exact:true}).count())await card.getByRole('button',{name:en?'Keep both':'Garder les deux',exact:true}).click();
  await expect(card.getByRole('textbox')).toBeVisible();
- expect(await card.locator('.mf-now-q h3').evaluate(el=>getComputedStyle(el).paddingRight)).toBe('0px');
+ expect(await card.locator('[data-card=decision] h3').evaluate(el=>getComputedStyle(el).paddingRight)).toBe('0px');
  expect((await snapshot(page)).billing.choices.github).toBeUndefined();
  await expect(page.locator('[data-card="price"]')).toContainText(/200/);
  await expect(card.getByRole('combobox',{name:en?'Invoice currency':'Devise de facture'})).toHaveValue('USD');
@@ -837,14 +837,14 @@ for(const lang of ['en','fr'] as const) for(const width of [320,1440]) test(`inv
   await page.getByRole('button',{name:'Choose currency, US dollar selected',exact:true}).click();
   await page.getByRole('radio',{name:/EUR/}).click();
   await expect(card.getByRole('combobox')).toHaveValue('GBP');await expect(card.getByRole('textbox')).toHaveValue('12.50');
-  await expect(card.locator('.mf-invoice-help')).toContainText('GBP → EUR');
+  await expect(card.locator('[data-invoice] p')).toContainText('GBP → EUR');
   await page.getByRole('button',{name:/Choose currency, Euro selected/}).click();await page.getByRole('radio',{name:/USD/}).click();
  }
- await expect(card.locator('.mf-invoice-help')).toContainText('GBP → USD');
- await expect(card.locator('.mf-invoice-help')).toContainText('2026-08-27');
+ await expect(card.locator('[data-invoice] p')).toContainText('GBP → USD');
+ await expect(card.locator('[data-invoice] p')).toContainText('2026-08-27');
  const save=card.getByRole('button',{name:en?'Save':'Enregistrer',exact:true});
  expect(await save.evaluate(el=>{const c=getComputedStyle(el).backgroundColor.match(/\d+/g)!.map(Number);return c[2]>c[0]+50;})).toBe(true);
- expect(await card.evaluate(el=>{const b=el.getBoundingClientRect();return Array.from(el.querySelectorAll('.mf-price-entry input,.mf-price-entry select,.mf-price-entry button')).every(x=>x.getBoundingClientRect().bottom<=b.bottom+1);})).toBe(true);
+ expect(await card.evaluate(el=>{const b=el.getBoundingClientRect();return Array.from(el.querySelectorAll('[data-invoice] input,[data-invoice] select,[data-invoice] button')).every(x=>x.getBoundingClientRect().bottom<=b.bottom+1);})).toBe(true);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await card.screenshot({path:`/tmp/tooltrim-invoice-${lang}-${width}.png`});
  await card.getByRole('button',{name:en?'Save':'Enregistrer',exact:true}).click();await saved(page,lang);

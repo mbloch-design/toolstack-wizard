@@ -23,7 +23,7 @@ export default function Seats({ lang, plan, seats, onChange, total, onConfirm, o
   const [nudge, setNudge] = useState(false);
   const set = (n: number) => onChange(Math.min(500, Math.max(1, n)));
   return (
-    <div className={styles.seats}>
+    <div className={styles.seats} data-seats="">
       <p className={styles.plan}>
         <span><b className={styles.strong}>{plan}</b> · {t("facturé par personne", "billed per person")}</span>
         <button type="button" className={styles.link} onClick={onChangePlan}>{t("Changer", "Change")}</button>
