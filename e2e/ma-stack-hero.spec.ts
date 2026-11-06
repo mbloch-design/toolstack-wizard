@@ -40,7 +40,7 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
     await expect(page.getByRole("heading", { level: 1, name: fr ? "Mes outils" : "My tools" })).toBeVisible();
     // Read first: what the stack costs, then the one decision of the moment.
-    await expect(page.locator('[data-card="price"]')).toContainText(fr ? "Budget partiel renseigné" : "Known budget so far");
+    await expect(page.locator('[data-card="price"]')).toContainText(fr ? "Votre stack" : "Your stack");
     const map = page.getByRole("group", { name: fr ? "Mes outils" : "My tools", exact: true });
     await expect(map.locator(".tt-toolcard")).toHaveCount(10);
     await expect(page.locator(".tt-toolcard")).toHaveCount(10);

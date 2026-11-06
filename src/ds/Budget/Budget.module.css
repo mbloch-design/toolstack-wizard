@@ -16,6 +16,26 @@
 .unit { composes: unit from "../atoms.module.css"; }
 .text { composes: text from "../atoms.module.css"; }
 .strong { composes: strong from "../atoms.module.css"; }
+
+/* What the decisions already saved. The words stay in ink, in reading weight (the gain green is too light for text on the tile); the arrow carries the colour. */
+.gain {
+  composes: text from "../atoms.module.css";
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-2);
+}
+
+.gainMark {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--tt-gain-ink);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .titleM { composes: titleM from "../atoms.module.css"; }
 .label { composes: label from "../atoms.module.css"; }
 .note { composes: note from "../atoms.module.css"; }

@@ -367,24 +367,7 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-btn--grey[aria-pressed="true"] { background: var(--tt-ink); color: var(--tt-bg); }
 @media (max-width: 560px) { .tt-toolbar-tools { width: 100%; } }
 @media (max-width: 560px) { .tt-toolbar-tools .tt-select { flex: 1; } }
-.tt-budget { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-figure :is(.mk-odo, .mk-odo *) { font-variant-numeric: normal; }
-.tt-budget-start { display: grid; gap: 10px; justify-items: start; }
-.tt-budget-trust { display: grid; grid-template-columns: 20px minmax(0, 1fr); align-items: start; gap: 10px; margin: 0; padding: 0; border: 0; background: none; color: var(--tt-ink); font: inherit; text-align: left; }
-button.tt-budget-trust { cursor: pointer; }
-.tt-budget-trust > span:last-child { display: grid; gap: 2px; }
-.tt-ring { width: 20px; height: 20px; transform: rotate(-90deg); }
-.tt-ring circle { fill: none; stroke: var(--tt-tile-2); stroke-width: 4; }
-.tt-ring circle + circle { stroke: var(--tt-live); stroke-linecap: round; }
-.tt-budget-free { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-.tt-logos { display: inline-flex; align-items: center; margin: 0; padding: 0; list-style: none; }
-.tt-logos > * + * { margin-left: -6px; }
-.tt-logos .tt-logo-tile, .tt-share-more .tt-logo-tile { width: 24px; height: 24px; box-shadow: 0 0 0 2px var(--tt-tile), var(--tt-logo-shadow); }
-.tt-share-more { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; width: 100%; min-height: 40px; padding: 0; border: 0; background: none; color: var(--tt-ink); font: inherit; text-align: left; cursor: pointer; }
-.tt-budget-gain { position: relative; padding-top: 12px; border-top: 1px dashed color-mix(in oklch, var(--tt-meta) 50%, transparent); }
-.tt-gain { position: relative; isolation: isolate; display: inline-block; }
-.tt-gain > span:not(.tt-bloom) { position: relative; z-index: 1; }
-.tt-gain .tt-bloom { inset: -180% -110%; filter: blur(16px); }
 .tt-pagehead-title, .tt-pagehead-intro { display: grid; gap: 10px; }
 .tt-pagehead-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
 .tt-section { display: grid; gap: 20px; }
@@ -420,7 +403,6 @@ button.tt-budget-trust { cursor: pointer; }
 .tt-split-legend li > button { cursor: pointer; transition: background-color var(--tt-dur-state) ease; }
 .tt-split-legend li > button:is(:hover, [data-on], [aria-pressed="true"]) { background: var(--tt-tile-2); }
 .tt-split-legend .tt-note:last-child { text-align: right; font-variant-numeric: tabular-nums; }
-.tt-split-legend .tt-logos .tt-logo-tile { width: 20px; height: 20px; }
 .tt-split-body { display: grid; gap: 16px; }
 .tt-split-body[data-active] .tt-split-bar i:not([data-on]) { opacity: .35; }
 .tt-split-stage { display: grid; place-items: center; min-height: 200px; }
@@ -449,9 +431,6 @@ button.tt-budget-trust { cursor: pointer; }
 .tt-link:hover::after { transform: scaleX(1); transform-origin: left; }
 .tt-link:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; border-radius: 2px; }
 
-/* ── Molécule : la confiance (déménagée de la planche le 31/10, rendu identique) ──
-   Une coche, puis ce qu'elle garantit et d'où vient le chiffre. */
-.tt-trust { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; align-items: start; }
 
 /* Proposition (31/10) : l'ajout posé sur la carte média, voisin du lien (un bouton ne vit pas dans un lien). */
 .tt-mediacard-slot { position: relative; }

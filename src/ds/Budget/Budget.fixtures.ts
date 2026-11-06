@@ -9,13 +9,14 @@ type Line = [name: string, slug: string | undefined, monthly: number | null];
 const money = (lang: Lang, currency: "EUR" | "USD", amount: number) => formatAmount(amount, currency, lang);
 
 /** A stack from real catalogue tools, most expensive first, as the page sorts them. */
-function stack(lang: Lang, lines: Line[], { currency = "EUR", unsure = { prices: 0, plans: 0 }, rateDate = null }: { currency?: "EUR" | "USD"; unsure?: BudgetProps["unsure"]; rateDate?: string | null } = {}): BudgetProps {
+function stack(lang: Lang, lines: Line[], { currency = "EUR", unsure = { prices: 0, plans: 0 }, rateDate = null, saved = 0 }: { currency?: "EUR" | "USD"; unsure?: BudgetProps["unsure"]; rateDate?: string | null; saved?: number } = {}): BudgetProps {
   const sorted = [...lines].sort((a, b) => (b[2] ?? 0) - (a[2] ?? 0));
   const tools: BudgetTool[] = sorted.map(([name, slug, monthly]) => ({ id: slug ?? name, name, slug, paid: monthly === null ? null : monthly > 0 }));
   const total = sorted.reduce((sum, [, , monthly]) => sum + (monthly ?? 0), 0);
   const [leadName, , leadAmount] = sorted[0];
   return {
     lang, tools, unsure, rateDate,
+    saved: saved > 0 ? money(lang, currency, saved) : null,
     // The macro view rounds to whole units, as the page will: no cents after a conversion.
     monthly: total > 0 ? money(lang, currency, Math.round(total)) : null,
     yearly: total > 0 ? money(lang, currency, Math.round(total * 12)) : null,
@@ -39,5 +40,6 @@ export const budgetStates = {
   nothingKnown: (lang: Lang) => stack(lang, [["Notion", "notion", null], ["Figma", "figma", null], ["Canva", "canva", null]], { unsure: { prices: 2, plans: 1 } }),
   converted: (lang: Lang) => stack(lang, [["Adobe Illustrator", "adobe-illustrator", 19.75], ["Adobe Photoshop", "adobe-photoshop", 17.17], ["Figma", "figma", 13.74]], { rateDate: lang === "fr" ? "27 août 2026" : "27 August 2026" }),
   dollars: (lang: Lang) => stack(lang, [["Vercel", "vercel", 20], ["Supabase", "supabase", 25], ["Stripe", "stripe", 0]], { currency: "USD" }),
+  withSaving: (lang: Lang) => stack(lang, [["Notion", "notion", 36], ["Figma", "figma", 15], ["Canva", "canva", 12]], { saved: 67 }),
   bigAmounts: (lang: Lang) => stack(lang, [["Microsoft Dynamics 365 Finance and Operations", undefined, 1100], ["Notion", "notion", 149]]),
 } satisfies Record<string, (lang: Lang) => BudgetProps>;

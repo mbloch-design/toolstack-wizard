@@ -356,10 +356,10 @@ test('budget includes the two free tools alongside two paid tools', async ({page
  full.billing={paid:['motion-array','grammarly'],reviewed:['motion-array','grammarly','figma','audacity'],choices:{'motion-array':{source:'custom',amount:29,currency:'USD',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'USD',period:'monthly'}}};
  await control(request,'seed',{email:'four-tools-budget@example.invalid',state:full});
  await page.goto('/en/ma-stack');await login(page,'en','four-tools-budget@example.invalid');await saved(page,'en');
- await expect(page.locator('[data-card="price"]')).toContainText('2 free tools · no added cost');
- await expect(page.locator('[data-free-tools]')).toContainText('Figma');
- await expect(page.locator('[data-free-tools]')).toContainText('Audacity');
- await expect(page.locator('[data-card="price"] .tt-share')).toHaveCount(2);
+ await expect(page.locator('[data-card="price"]')).toContainText('4 tools · 2 paid · 2 free');
+ await expect(page.locator('[data-card="price"]')).toContainText('Figma');
+ await expect(page.locator('[data-card="price"]')).toContainText('Audacity');
+ await expect(page.locator('[data-card="price"] li')).toHaveCount(4);
  await page.screenshot({path:'test-results/accounts/four-tools-budget.png',fullPage:true});
 });
 

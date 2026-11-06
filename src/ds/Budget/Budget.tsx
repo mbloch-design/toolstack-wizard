@@ -12,6 +12,8 @@ export type BudgetProps = {
   yearly: string | null;
   /** The biggest subscription and its share of the total (0 to 100), for the one line of humour. */
   lead: { name: string; share: number } | null;
+  /** What the decisions already saved each month, formatted; null when nothing yet. */
+  saved?: string | null;
   /** Prices and plans still to confirm. */
   unsure: { prices: number; plans: number };
   /** Reference date of the currency conversion, already written out, when one took place. */
@@ -30,14 +32,15 @@ const NARROW_LOGOS = 5;
 const plural = (n: number, word: string) => `${n} ${word}${n > 1 ? "s" : ""}`;
 
 /** The macro view of Ma stack: what the stack is, what it costs, and how far the figure can be trusted. */
-export default function Budget({ lang, tools, monthly, yearly, lead, unsure, rateDate, onConfirmNext, onStart, localLogosOnly = false }: BudgetProps) {
+export default function Budget({ lang, tools, monthly, yearly, lead, saved = null, unsure, rateDate, onConfirmNext, onStart, localLogosOnly = false }: BudgetProps) {
   const titleId = useId();
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
   const paid = tools.filter((tool) => tool.paid === true).length;
   const free = tools.filter((tool) => tool.paid === false).length;
   const toConfirm = unsure.prices + unsure.plans;
-  const known = tools.length - toConfirm;
+  // Questions are counted, not tools: two questions on one tool must not make the count negative.
+  const known = Math.max(0, tools.length - toConfirm);
 
   // One line of humour, read from the biggest subscription. The tool is the cost, never the payer.
   const quip = !lead ? null
@@ -90,6 +93,10 @@ export default function Budget({ lang, tools, monthly, yearly, lead, unsure, rat
             <b className={styles.strong}>{t("Soit ", "That's ")}<span data-nowrap="">{yearly}</span>{t(" par an.", " a year.")}</b>
             {quip && <> {quip}</>}
           </p>
+          {saved && <p className={styles.gain}>
+            <svg className={styles.gainMark} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" /></svg>
+            <span>{t("Vous économisez déjà ", "You're already saving ")}<span data-nowrap="">{saved}</span>{t(" par mois.", " a month.")}</span>
+          </p>}
         </div>
       ) : stack}
 
@@ -105,7 +112,7 @@ export default function Budget({ lang, tools, monthly, yearly, lead, unsure, rat
         <button type="button" className={styles.trust} onClick={onConfirmNext}>
           <svg className={styles.ring} viewBox="0 0 36 36" aria-hidden="true">
             <circle cx="18" cy="18" r="15" />
-            <circle cx="18" cy="18" r="15" style={{ strokeDasharray: `${(Math.max(known, 0) / tools.length) * 94.2} 94.2` }} />
+            <circle cx="18" cy="18" r="15" style={{ strokeDasharray: `${(known / tools.length) * 94.2} 94.2` }} />
           </svg>
           <span className={styles.trustText}>
             <span className={styles.label}>{fr ? `${plural(known, "outil")} sur ${tools.length} renseigné${known > 1 ? "s" : ""}` : `${known} of ${plural(tools.length, "tool")} priced`}</span>
