@@ -1,5 +1,6 @@
 // Synthetic browser fixture only. Production APIs are covered separately with transport mocks.
 import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 const hash = (value) =>
   createHash("sha256").update(JSON.stringify(value)).digest("hex");
 const initial = () =>
@@ -60,10 +61,17 @@ export function catalogFixture() {
     };
   };
   return {
-    reset() {
-      tools = initial();
+    reset({ representativeCatalog = false } = {}) {
+      tools = representativeCatalog
+        ? JSON.parse(readFileSync(new URL("../../src/data/tools_v4.json", import.meta.url), "utf8"))
+            .filter((tool) => ["notion", "attio", "asana", "chronokura"].includes(tool.slug))
+            .concat({ id: "empty-fixture", slug: "empty-fixture", name: "Empty fixture", category: "productivity", shortDescription: "Fixture sans offre ni note.", customUnknown: { preserve: true } })
+        : initial();
       revision = 0;
       drafts.clear();
+    },
+    snapshot() {
+      return { tools, drafts: [...drafts.values()] };
     },
     async handle({ req, url, input, user, server, send, fail, res }) {
       if (user.email !== "admin@example.invalid" || !user.email_confirmed_at)

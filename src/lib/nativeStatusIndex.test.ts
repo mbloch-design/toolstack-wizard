@@ -9,6 +9,10 @@ import {
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 import { execFileSync } from "node:child_process";
+import { mapToolFromJson } from "./toolFromJson";
+import { toolPriceFacts } from "./toolSeo";
+import { toolPriceLine } from "./toolPriceLine";
+import { hasFreePlan } from "./catalogFilters";
 it("builds light public prices from explicit intent and extended periods without legacy fallthrough", () => {
   const root = mkdtempSync(resolve(tmpdir(), "tooltrim-index-intent-"));
   try {
@@ -49,14 +53,29 @@ it("builds light public prices from explicit intent and extended periods without
           ...fixture("free", "free", 0),
           pricing: { free: "", paid: "Old paid" },
         },
+        fixture("unknown", "unknown", null),
+        fixture("usage", "usage", 12, "usage"),
+        fixture("once", "paid", 120, "one_time"),
+        {
+          ...fixture("dollars", "paid", 120, "year"),
+          pricing_v5: {
+            plans: [
+              {
+                ...fixture("x", "paid", 120, "year").pricing_v5.plans[0],
+                nativeCurrency: "USD",
+              },
+            ],
+          },
+        },
       ]),
     );
     execFileSync(process.execPath, [resolve("scripts/gen-tools-index.mjs")], {
       cwd: root,
     });
-    const [quote, paid, legacy, free] = JSON.parse(
-      readFileSync(resolve(root, "src/data/tools_index.json"), "utf8"),
-    );
+    const [quote, paid, legacy, free, unknown, usage, once, dollars] =
+      JSON.parse(
+        readFileSync(resolve(root, "src/data/tools_index.json"), "utf8"),
+      );
     expect(quote.priceUndisclosed).toBe(true);
     expect(quote.hasConfirmedFreePlan).toBe(false);
     expect(quote.nativePrices).toBeUndefined();
@@ -70,6 +89,31 @@ it("builds light public prices from explicit intent and extended periods without
     expect(free.compareMonthlyPrice).toBe(0);
     expect(legacy.compareMonthlyPrice).toBe(999);
     expect(legacy.defaultMonthlyPrice).toBe(999);
+    for (const row of [unknown, usage]) {
+      expect(row.priceUndisclosed).toBe(true);
+      expect(row.compareMonthlyPrice).toBe(0);
+      expect(row.nativePrices).toBeUndefined();
+      expect(row.defaultMonthlyPrice).toBeUndefined();
+      expect(hasFreePlan(row)).toBe(false);
+    }
+    expect(once.nativePrices).toEqual([
+      { amount: 120, currency: "EUR", period: "once" },
+    ]);
+    expect(dollars.nativePrices).toEqual([
+      { amount: 120, currency: "USD", period: "annual" },
+    ]);
+    expect(dollars.compareMonthlyPrice).toBeUndefined();
+    expect(dollars.defaultMonthlyPrice).toBeUndefined();
+    const inputs = JSON.parse(
+      readFileSync(resolve(root, "src/data/tools_v4.json"), "utf8"),
+    );
+    for (const index of [0, 4, 5]) {
+      const mapped = mapToolFromJson(inputs[index]);
+      expect(toolPriceFacts(mapped).hasPrice).toBe(false);
+      expect(toolPriceLine(mapped, "en", (_, en) => en).priceLine).not.toMatch(
+        /999|Free/,
+      );
+    }
   } finally {
     rmSync(root, { recursive: true, force: true });
   }

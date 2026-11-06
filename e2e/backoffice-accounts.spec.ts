@@ -119,7 +119,14 @@ test('back-office dirty logout supports cancel, failed signout retry and confirm
 for (const theme of ['light', 'dark'] as const) test(`account surfaces remain readable in ${theme} theme`, async ({ page, request }) => {
   await page.addInitScript(theme => localStorage.setItem('tooltrim:theme', theme), theme);
   await page.goto('/en/back-office');
-  const surface = theme === 'dark' ? 'rgb(26, 26, 26)' : 'rgb(255, 255, 255)';
+  const surface = await page.evaluate(() => {
+    const probe = document.createElement('span');
+    probe.style.backgroundColor = 'var(--color-surface)';
+    document.body.append(probe);
+    const color = getComputedStyle(probe).backgroundColor;
+    probe.remove();
+    return color;
+  });
   async function readable(selector: string, expectedSurface: string | null = surface) {
     const elements = page.locator(selector); await expect(elements.first()).toBeVisible();
     const styles = await elements.evaluateAll(nodes => nodes.map(node => {

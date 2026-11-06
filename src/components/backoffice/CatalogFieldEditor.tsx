@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { memo, useEffect, useRef, useState, type ReactNode } from "react";
 import {
   Button,
   Field,
   Input,
+  IconButton,
   Select,
   Textarea,
 } from "@/components/ui/primitives";
@@ -105,36 +106,54 @@ function PlainControl({
     />
   );
 }
+type CatalogChoice = { value: string; label: string };
+const vocabularyCache = new WeakMap<object, Map<string, CatalogChoice[]>>();
+function cachedChoices(
+  owner: object,
+  key: string,
+  create: () => CatalogChoice[],
+) {
+  let cached = vocabularyCache.get(owner);
+  if (!cached) vocabularyCache.set(owner, (cached = new Map()));
+  if (!cached.has(key)) cached.set(key, create());
+  return cached.get(key)!;
+}
+const currencyChoices = ["EUR", "USD", "GBP", "CAD", "AUD", "CHF", "JPY"].map(
+  (value) => ({ value, label: value }),
+);
 function choices(
   context: CatalogEditingValue,
   path: CatalogPath,
-): { value: string; label: string }[] | null {
+): CatalogChoice[] | null {
   const root = path[0],
     last = path.at(-1);
   if (root === "category")
-    return context.categories.map((category) => ({
-      value: category.id,
-      label: category.name,
-    }));
-  if (root === "tool_type")
-    return ["metier", "plugin", "ia", "gestion", "satellite", "bundle"].map(
-      (value) => ({
-        value,
-        label: {
-          metier: "Outil métier",
-          plugin: "Extension",
-          ia: "IA",
-          gestion: "Gestion",
-          satellite: "Spécialisé",
-          bundle: "Suite",
-        }[value]!,
-      }),
+    return cachedChoices(
+      context.categories,
+      `categories:${context.lang ?? "fr"}`,
+      () =>
+        context.categories.map((category) => ({
+          value: category.id,
+          label: category.name,
+        })),
     );
-  if (last === "nativeCurrency")
-    return ["EUR", "USD", "GBP", "CAD", "AUD", "CHF", "JPY"].map((value) => ({
-      value,
-      label: value,
-    }));
+  if (root === "tool_type")
+    return cachedChoices(verticals, `types:${context.lang ?? "fr"}`, () =>
+      ["metier", "plugin", "ia", "gestion", "satellite", "bundle"].map(
+        (value) => ({
+          value,
+          label: {
+            metier: "Outil métier",
+            plugin: "Extension",
+            ia: "IA",
+            gestion: "Gestion",
+            satellite: "Spécialisé",
+            bundle: "Suite",
+          }[value]!,
+        }),
+      ),
+    );
+  if (last === "nativeCurrency") return currencyChoices;
   if (
     [
       "host_app",
@@ -147,41 +166,80 @@ function choices(
     ].includes(String(root)) ||
     ["targetToolId", "tool"].includes(String(last))
   )
-    return context.tools.map((tool) => ({
-      value: tool.slug || tool.id,
-      label: tool.name,
-    }));
+    return cachedChoices(context.tools, "tools", () =>
+      context.tools.map((tool) => ({
+        value: tool.slug || tool.id,
+        label: tool.name,
+      })),
+    );
   if (typeof last !== "number") return null;
   if (
     ["functional_needs", "covers", "needKeys"].includes(String(root)) ||
     path.includes("needKeys")
   ) {
-    const values = new Set([
-      ...Object.values(verticals).flatMap((v) => v.functional_needs),
-      ...context.tools.flatMap((tool) => [
-        ...(tool.covers ?? []),
-        ...(tool.functional_needs ?? []),
-      ]),
-    ]);
-    return [...values].sort().map((value) => ({
-      value,
-      label: getFeatureLabel(value, context.lang ?? "fr"),
-    }));
-  }
-  if (root === "verticals")
-    return Object.entries(verticals).map(([value, item]) => ({
-      value,
-      label: item.label,
-    }));
-  if (root === "personas")
-    return [...new Set(context.tools.flatMap((tool) => tool.personas ?? []))]
-      .sort()
-      .map((value) => ({
+    return cachedChoices(context.tools, `needs:${context.lang ?? "fr"}`, () => {
+      const values = new Set([
+        ...Object.values(verticals).flatMap((v) => v.functional_needs),
+        ...context.tools.flatMap((tool) => [
+          ...(tool.covers ?? []),
+          ...(tool.functional_needs ?? []),
+        ]),
+      ]);
+      return [...values].sort().map((value) => ({
         value,
         label: getFeatureLabel(value, context.lang ?? "fr"),
       }));
+    });
+  }
+  if (root === "verticals")
+    return cachedChoices(verticals, `verticals:${context.lang ?? "fr"}`, () =>
+      Object.entries(verticals).map(([value, item]) => ({
+        value,
+        label: item.label,
+      })),
+    );
+  if (root === "personas")
+    return cachedChoices(
+      context.tools,
+      `personas:${context.lang ?? "fr"}`,
+      () =>
+        [...new Set(context.tools.flatMap((tool) => tool.personas ?? []))]
+          .sort()
+          .map((value) => ({
+            value,
+            label: getFeatureLabel(value, context.lang ?? "fr"),
+          })),
+    );
   return null;
 }
+/** Thousands of stable vocabulary nodes do not need rebuilding on every keystroke. */
+export const CatalogSelectOptions = memo(function CatalogSelectOptions({
+  options,
+  value,
+  lang,
+}: {
+  options: readonly CatalogChoice[];
+  value: string;
+  lang: "fr" | "en";
+}) {
+  return (
+    <>
+      <option value="">
+        {lang === "fr" ? "Non renseigné" : "Not specified"}
+      </option>
+      {value !== "" && !options.some((option) => option.value === value) && (
+        <option value={value}>
+          {value} · {lang === "fr" ? "valeur historique" : "historical value"}
+        </option>
+      )}
+      {options.map((option) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </>
+  );
+});
 const optionLabels: Record<string, string> = {
   paid: "Payant",
   free: "Gratuit",
@@ -778,19 +836,11 @@ export function CatalogFieldEditor({
             value={value == null ? "" : String(value)}
             onChange={(event) => change(event.target.value || null)}
           >
-            <option value="">{t("Non renseigné", "Not specified")}</option>
-            {value != null &&
-              value !== "" &&
-              !options.some((option) => option.value === String(value)) && (
-                <option value={String(value)}>
-                  {String(value)} · {t("valeur historique", "historical value")}
-                </option>
-              )}
-            {options.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
+            <CatalogSelectOptions
+              options={options}
+              value={value == null ? "" : String(value)}
+              lang={context.lang ?? "fr"}
+            />
           </Select>
         ) : (
           <PlainControl
@@ -802,9 +852,13 @@ export function CatalogFieldEditor({
         )}
       </Field>
       {remove && (
-        <Button
+        <IconButton
+          className="bo-inline-field-remove"
           variant="quiet"
           size="compact"
+          aria-label={`${t("Retirer", "Remove")} ${label}`}
+          title={`${t("Retirer", "Remove")} ${label}`}
+          icon={<CircleMinus />}
           disabled={disabled}
           onClick={() => {
             if (!disabled) {
@@ -813,9 +867,7 @@ export function CatalogFieldEditor({
                 context.onRemove(path);
             }
           }}
-        >
-          {t("Retirer", "Remove")} {label}
-        </Button>
+        />
       )}
       {removed && value === undefined && (
         <Button

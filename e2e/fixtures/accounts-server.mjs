@@ -81,7 +81,8 @@ const fixture = { name: 'playwright-account-fixture', configureServer(server) {
       const input = ['POST', 'PUT', 'DELETE'].includes(req.method) ? await body(req) : {};
       if (typeof input.email === 'string' && !normalizeEmail(input.email).endsWith('@example.invalid')) return fail(res, 400, 'FIXTURE_IDENTITIES_ONLY');
       if (path.startsWith('/__accounts-test/')) {
-        if (path.endsWith('/reset')) { catalog.reset(); users.clear(); tokens.clear(); stacks.clear(); passwords.clear(); profiles.clear(); mail.length = 0; faults.length = 0; requests.length = 0; oauthDenied = false; for (const item of input.users || []) seed(item); return send(res, 200, {}); }
+        if (path.endsWith('/reset')) { catalog.reset(input); users.clear(); tokens.clear(); stacks.clear(); passwords.clear(); profiles.clear(); mail.length = 0; faults.length = 0; requests.length = 0; oauthDenied = false; for (const item of input.users || []) seed(item); return send(res, 200, {}); }
+        if (path.endsWith('/catalog-state')) return send(res, 200, catalog.snapshot());
         if (path.endsWith('/mailbox')) {
           res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
           return res.end('<!doctype html><title>Local test mailbox</title><h1>Local test mailbox</h1>' + mail.map(item => `<p><a href="/__accounts-test/mail/${item.id}">${item.type === 'recovery' ? 'Recover' : 'Confirm'} ${item.email}</a></p>`).join(''));

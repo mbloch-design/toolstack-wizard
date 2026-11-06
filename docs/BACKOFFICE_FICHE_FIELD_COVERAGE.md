@@ -1,4 +1,16 @@
-# Couverture des données d’une fiche — état et cible de travail
+# Couverture des données d’une fiche
+
+## État implémenté — 6 novembre 2026
+
+L’édition directe utilise désormais la fiche réelle (`ToolDetailPresentation`), le JSON brut de la session privée et les droits calculés par le serveur. Le registre actif est `src/lib/catalogFieldRegistry.ts` : **391 chemins enregistrés, 372 éditables, 81 racines**, répartis entre présentation, classement/usages/publics, analyse/notation, prix, médias, liens, relations, SEO, métadonnées et informations protégées. Ce registre et `catalogPolicy.ts` remplacent les droits de l’ancien contrat décrits dans le relevé historique ci-dessous.
+
+Les tests de `CatalogEditingContext.test.tsx` parcourent les racines et feuilles éditables avec des contrôles typés ; `ToolDetailPresentation.test.tsx` vérifie leur emplacement dans la fiche partagée. `e2e/backoffice-inline-acceptance.spec.ts` compare les fiches brutes Notion, Attio, Asana et Chronokura avec leur brouillon rechargé, puis exerce les premières valeurs sur une fiche sans offres ni notation. `e2e/tool-hydration.spec.ts` compare les routes publiques générées et hydratées, leur texte, leurs métadonnées et leurs faits tarifaires, en FR/EN à 390, 768 et 1440 px.
+
+Le JSON actuel contient 1 357 fiches. Le vocabulaire réellement fourni par le hook public contient 1 248 fiches actives : les 109 slugs consolidés sont volontairement retirés des listes. La mesure de montage unitaire avec les 1 357 résumés et la recette navigateur avec les 1 248 choix actifs sont deux preuves distinctes.
+
+Limites conservées : les alternatives historiques `{name, reason}`, les articles enregistrés, la migration et le déclassement n’inventent aucun nouveau bloc public ; les contrôles expliquent leur projection actuelle. Les identifiants, valeurs calculées et données inconnues restent protégés ou préservés. La traduction de certaines options de type d’outil/métier et le message de refus d’une transaction de collection avec droits partiels restent des améliorations mineures ; aucun compte éditeur à droits partiels n’est ouvert par cette livraison. Un PUT de snapshot complet ne peut pas distinguer sémantiquement tout retrait+ajout d’un renommage d’identité accompagné d’autres modifications ; l’interface n’expose pas le renommage des clés, et le serveur protège les identités conservées et refuse le renommage isolé.
+
+## Relevé historique avant implémentation
 
 Snapshot local du 29 octobre 2026, 1356 fiches : **81 clés distinctes**. Le contrat actuel autorise 30 propriétés racines ; cela ne signifie pas que tous leurs sous-champs sont éditables. Une case « Oui » est un droit du contrat actuel, pas une preuve de visibilité ni de fidélité au rendu.
 

@@ -62,6 +62,7 @@ function Harness({
   lang = "fr",
   offers = false,
   issues = [],
+  tools = [],
 }: any) {
   const [value, setValue] = useState(initial);
   const change = (path: (string | number)[], next: unknown, remove = false) =>
@@ -89,7 +90,7 @@ function Harness({
         onChange: change,
         onRemove: (p: any) => change(p, undefined, true),
         categories: [{ id: "design", name: "Design", slug: "design" }],
-        tools: [],
+        tools,
       }}
     >
       {(editing: CatalogEditingPresentation) => (
@@ -113,6 +114,76 @@ function Harness({
     </Editor.CatalogEditorPresentation>
   );
 }
+it("builds the shared tool vocabulary once and retains historical choices across neighboring edits", async () => {
+  const Editor = await loadEditor();
+  const readName = vi.fn(() => "Known tool");
+  const tools = [
+    {
+      id: "known",
+      slug: "known",
+      get name() {
+        return readName();
+      },
+    },
+  ];
+  const value = { ...base, host_app: "historic-host", complements: ["known"] };
+  const roots = ["host_app", "complements", "shortDescription"];
+  const { rerender } = render(
+    <Harness Editor={Editor} tools={tools} value={value} roots={roots} />,
+  );
+  expect(readName).toHaveBeenCalledTimes(1);
+  expect(screen.getByLabelText("Application hôte")).toHaveValue(
+    "historic-host",
+  );
+  readName.mockClear();
+  fireEvent.change(screen.getByLabelText("Description courte · français"), {
+    target: { value: "Neighboring edit" },
+  });
+  expect(readName).not.toHaveBeenCalled();
+  expect(
+    screen.getByRole("option", { name: "historic-host · valeur historique" }),
+  ).toBeTruthy();
+  rerender(
+    <Harness
+      Editor={Editor}
+      tools={[{ id: "known", slug: "known", name: "Renamed tool" }]}
+      value={value}
+      roots={roots}
+    />,
+  );
+  expect(screen.getAllByRole("option", { name: "Renamed tool" })).toHaveLength(
+    2,
+  );
+});
+
+it("does not rebuild unchanged option nodes when a neighboring control renders", async () => {
+  const { CatalogSelectOptions } = await import("./CatalogFieldEditor");
+  const readLabel = vi.fn(() => "Known tool");
+  const options = [
+    {
+      value: "known",
+      get label() {
+        return readLabel();
+      },
+    },
+  ];
+  const { rerender } = render(
+    <select>
+      <CatalogSelectOptions options={options} value="known" lang="fr" />
+    </select>,
+  );
+  expect(readLabel).toHaveBeenCalledTimes(1);
+  readLabel.mockClear();
+  rerender(
+    <select aria-label="Changed neighbor">
+      <CatalogSelectOptions options={options} value="known" lang="fr" />
+    </select>,
+  );
+  expect(readLabel).not.toHaveBeenCalled();
+  expect(screen.getByRole("option", { name: "Known tool" })).toHaveValue(
+    "known",
+  );
+});
 it("edits every registry root through typed controls, preserving protected and unknown values on open", async () => {
   const Editor = await loadEditor();
   const changes = vi.fn();
@@ -365,6 +436,50 @@ it("adds, edits, removes and restores a new offer inside its own box without los
   );
   expect(changed.mock.lastCall?.[0].pricing_v5.plans[1].planKey).toBe(key);
 });
+for (const lang of ["fr", "en"] as const)
+  it(`keeps optional price removal compact and accessible with interleaved undo (${lang})`, async () => {
+    const Editor = await loadEditor();
+    const changed = vi.fn();
+    const root = lang === "fr" ? "pricing_v5" : "pricing_v5En";
+    const { container } = render(
+      <Harness
+        Editor={Editor}
+        offers
+        lang={lang}
+        value={{ ...base, pricing_v5En: base.pricing_v5 }}
+        onValue={changed}
+      />,
+    );
+    const card = container.querySelector(".td-plan") as HTMLElement;
+    const name = lang === "fr" ? "Retirer Nom de l’offre" : "Remove Offer name";
+    const remove = within(card).getByRole("button", { name });
+    expect(remove.querySelector("svg")).not.toBeNull();
+    expect(remove.textContent).toBe("");
+    expect(
+      within(card)
+        .getByRole("button", {
+          name: lang === "fr" ? "Retirer l’offre" : "Remove offer",
+        })
+        .querySelector("svg"),
+    ).not.toBeNull();
+    fireEvent.click(remove);
+    expect(
+      changed.mock.lastCall?.[0][root].plans[0].displayName,
+    ).toBeUndefined();
+    fireEvent.change(
+      within(card).getByLabelText(lang === "fr" ? "Montant" : "Amount"),
+      { target: { value: "19" } },
+    );
+    fireEvent.click(
+      within(card).getByRole("button", {
+        name: lang === "fr" ? "Annuler le retrait" : "Undo removal",
+      }),
+    );
+    expect(changed.mock.lastCall?.[0][root].plans[0]).toMatchObject({
+      displayName: "Pro",
+      nativeAmount: 19,
+    });
+  });
 it("requires a replacement when removing the reference and restores the original reference on undo", async () => {
   const Editor = await loadEditor();
   const changed = vi.fn();
@@ -735,6 +850,8 @@ it("explains an explicitly empty English translation fallback without writing in
   );
   expect(screen.getByText(/French short fallback/)).toBeTruthy();
   expect(screen.getByText(/French long fallback/)).toBeTruthy();
-  expect(screen.getByLabelText(/short description.*English/i)).toHaveValue("");
+  expect(
+    screen.getByRole("textbox", { name: /short description.*English/i }),
+  ).toHaveValue("");
   expect(changed).not.toHaveBeenCalled();
 });

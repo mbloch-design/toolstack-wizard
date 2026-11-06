@@ -259,7 +259,7 @@ function buildToolFaqSchema(params: {
                 : `ToolTrim has not verified ${name}'s pricing yet; check the official page for current prices.`;
             }
             // A one-time licence is not a monthly price (Logic Pro: $199.99 once).
-            if (priceDisplay && toolPriceFacts(tool).oneTime) {
+            if (priceDisplay && toolPriceFacts(tool, isFr ? "EUR" : "USD").oneTime) {
               return isFr
                 ? `${name} coûte ${fr(tool, priceDisplay)} en achat unique, sans abonnement.${verifiedFr}`
                 : `${name} costs ${usd(tool, priceDisplay)} as a one-time purchase, no subscription.${verifiedEn}`;
@@ -309,9 +309,9 @@ function toolHasFreePlan(tool: any): boolean {
  */
 // A tool with no public price and no free plan has no offer we can state:
 // its 0 comparison price means "unknown", and an Offer at 0 would claim free.
-function buildToolOffersFor(tool: any, price: number | null, url: string) {
+function buildToolOffersFor(tool: any, price: number | null, url: string, currency: "EUR" | "USD") {
   const hasFree = toolHasFreePlan(tool);
-  const native = nativePriceFromTool(tool);
+  const native = nativePriceFromTool(tool, currency);
   // An attested official price outranks the catalogue's "undisclosed" flag.
   if (!native && isPriceUndisclosed(tool) && !hasFree) return undefined;
   // Only a price the vendor actually publishes may be declared. Without one, the
@@ -1055,12 +1055,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           // free tool's price is legitimately 0, which is falsy but not
           // absent — `0 || null` and `price ? ... : null` both silently
           // turn a real "it's free" value into "price unknown".
-          const price = nativePriceFromTool(tool)?.amount ?? resolveMonthlyPrice(tool);
-          const priceDisplay = price != null ? Math.round(price) : null;
-          const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
-
           for (const lang of LANGS) {
             const isFr = lang === "fr";
+            const price = nativePriceFromTool(tool, isFr ? "EUR" : "USD")?.amount ?? resolveMonthlyPrice(tool);
+            const priceDisplay = price != null ? Math.round(price) : null;
             // Title and description come from src/lib/toolSeo.ts, the module
             // ToolDetailPage uses too: the tab keeps them after hydration.
             const title = toolSeoTitle(tool, "presentation", lang, SEO_YEAR);
@@ -1081,7 +1079,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             // offers est requis par le rich result Software App ; AggregateOffer
             // 0→prix pour les freemium (sinon le schema annonce un prix payant
             // sur une page qui affiche "Gratuit").
-            const offers = buildToolOffersFor(tool, price, productUrl);
+            const offers = buildToolOffersFor(tool, price, productUrl, isFr ? "EUR" : "USD");
             if (offers) jsonLd.offers = offers;
             // Note éditoriale ToolTrim (affichée sur la page) exposée en Review.
             // C'est l'avis du média sur un outil tiers (légitime), PAS un
@@ -1282,16 +1280,14 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           const name = tool.name || slug;
           // ?? not ||: a free tool's price is legitimately 0 (see the
           // matching fix in the main-page loop above).
-          const price = nativePriceFromTool(tool)?.amount ?? resolveMonthlyPrice(tool);
           // Rounded value for the FAQ's natural-language pricing answer,
           // so it matches the main tool page's FAQPage answer to the same
           // question instead of disagreeing on precision (64€ vs 64.39€).
           // Machine-readable fields (offers.price, meta description) below
           // keep using the exact `price`.
-          const priceDisplay: number | null = price != null ? Math.round(price) : null;
-
           for (const lang of LANGS) {
             const isFr = lang === "fr";
+            const price = nativePriceFromTool(tool, isFr ? "EUR" : "USD")?.amount ?? resolveMonthlyPrice(tool);
             for (const sub of TOOL_SUB_PAGES) {
               const localizedPath = !isFr && EN_SUB_PATH[sub.path] ? EN_SUB_PATH[sub.path] : sub.path;
               const url      = `${BASE}/${lang}/tool/${slug}/${localizedPath}`;
@@ -1331,7 +1327,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 ...(subProductUrl ? { url: subProductUrl } : {}),
                 applicationCategory: appCategoryFor(tool),
                 ...(operatingSystemFor(tool) ? { operatingSystem: operatingSystemFor(tool) } : {}),
-                ...(buildToolOffersFor(tool, price, subProductUrl) ? { offers: buildToolOffersFor(tool, price, subProductUrl) } : {}),
+                ...(buildToolOffersFor(tool, price, subProductUrl, isFr ? "EUR" : "USD") ? { offers: buildToolOffersFor(tool, price, subProductUrl, isFr ? "EUR" : "USD") } : {}),
                 ...(subScore && typeof subScore.score === "number" ? {
                   review: {
                     "@type": "Review",

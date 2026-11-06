@@ -1,4 +1,54 @@
 import { expect, test } from "@playwright/test";
+import { readFileSync } from "node:fs";
+
+for (const lang of ["fr", "en"] as const) for (const width of [390, 768, 1440]) {
+  test(`inline public parity ${lang} ${width}: representative raw records survive generated hydration`, async ({ page, context }) => {
+    test.setTimeout(90_000);
+    await page.setViewportSize({ width, height: 1000 });
+    await context.route("**/*supabase.co/**", route => route.abort());
+    await context.addInitScript(() => localStorage.setItem("tooltrim-analytics-consent", JSON.stringify({ version: 1, choice: "refused", decidedAt: Date.now(), expiresAt: Date.now() + 3600000 })));
+    const raw = JSON.parse(readFileSync("src/data/tools_v4.json", "utf8"));
+    const staticContext = await context.browser()!.newContext({ javaScriptEnabled: false, viewport: { width, height: 1000 } });
+    const staticPage = await staticContext.newPage();
+    const errors: string[] = [];
+    page.on("pageerror", error => errors.push(error.message));
+    for (const slug of ["notion", "attio", "asana", "chronokura"]) {
+      const record = raw.find((tool: { slug: string }) => tool.slug === slug);
+      const route = `/${lang}/tool/${slug}/${lang === "fr" ? "prix" : "pricing"}`;
+      await staticPage.goto(new URL(route, test.info().project.use.baseURL).href);
+      const snapshot = async (target: typeof page) => ({
+        name: await target.locator("h1").innerText(),
+        description: await target.locator(".td-hero-desc").allTextContents(),
+        plans: await target.locator(".td-plan-name, .td-plan-price").allTextContents(),
+        title: await target.title(),
+        meta: await target.locator('meta[name="description"]').getAttribute("content"),
+      });
+      const before = await snapshot(staticPage);
+      const beforeGraphs = await staticPage.locator('script[type="application/ld+json"]').allTextContents();
+      expect(before.name).toContain(record.name);
+      await page.goto(route);
+      await expect(page.locator(".td-tool-subnav")).toHaveClass(/td-reveal/);
+      expect(await snapshot(page)).toEqual(before);
+      const afterGraphs = await page.locator('script[type="application/ld+json"]').allTextContents();
+      expect(afterGraphs).toEqual(expect.arrayContaining(beforeGraphs));
+      // The existing client adds richer JSON-LD graphs alongside SSR graphs.
+      // Compare their business price facts, not their optional descriptive keys.
+      const offers = (graphs: string[]) => [...new Set(graphs.map(text => JSON.parse(text))
+        .filter(graph => graph["@type"] === "SoftwareApplication")
+        .map(graph => JSON.stringify(graph.offers ? {
+          price: graph.offers.price, lowPrice: graph.offers.lowPrice,
+          highPrice: graph.offers.highPrice, priceCurrency: graph.offers.priceCurrency,
+          offerCount: graph.offers.offerCount,
+        } : null)))];
+      expect(offers(afterGraphs)).toEqual(offers(beforeGraphs));
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+      await page.locator(".td-pricing").scrollIntoViewIfNeeded();
+      await page.screenshot({ path: test.info().outputPath(`${slug}-${lang}-${width}-public-viewport.png`), animations: "disabled" });
+    }
+    await staticContext.close();
+    expect(errors).toEqual([]);
+  });
+}
 
 // Keep synthetic hydration journeys out of production analytics.
 test.beforeEach(async ({ context }) => {

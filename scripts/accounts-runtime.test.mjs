@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, writeFile, symlink, rm } from 'node:fs/promises';
+import { copyFile, mkdir, mkdtemp, writeFile, symlink, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { resolve, join } from 'node:path';
@@ -13,7 +13,7 @@ test('account functions load as emitted Node ESM without a bundler resolver', as
   try {
     await writeFile(join(directory, 'package.json'), '{"type":"module"}');
     await symlink(join(root, 'node_modules'), join(directory, 'node_modules'), 'dir');
-    const entries = ['stack-account', 'account-profile', 'backoffice-accounts'];
+    const entries = ['stack-account', 'account-profile', 'backoffice-accounts', 'backoffice-catalog'];
     const program = ts.createProgram(entries.map(name => join(root, 'api', name + '.ts')), {
       target: ts.ScriptTarget.ES2022,
       module: ts.ModuleKind.ESNext,
@@ -29,6 +29,10 @@ test('account functions load as emitted Node ESM without a bundler resolver', as
     assert.equal(emitted.emitSkipped, false, ts.formatDiagnosticsWithColorAndContext(ts.getPreEmitDiagnostics(program), {
       getCanonicalFileName: name => name, getCurrentDirectory: () => root, getNewLine: () => '\n',
     }));
+    // The typed facade resolves through .d.mts, so tsc does not copy the shared
+    // Node implementation. Package that runtime asset as deployment bundlers do.
+    await mkdir(join(directory, 'src/lib'), { recursive: true });
+    await copyFile(join(root, 'src/lib/nativeComparePlan.mjs'), join(directory, 'src/lib/nativeComparePlan.mjs'));
     for (const name of entries) {
       const result = spawnSync(process.execPath, ['--input-type=module', '-e', `await import(${JSON.stringify(join(directory, 'api', name + '.js'))})`], { encoding: 'utf8' });
       assert.equal(result.status, 0, `${name} failed to load in native Node ESM:\n${result.stderr}`);

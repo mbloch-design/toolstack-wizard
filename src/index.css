@@ -23171,10 +23171,12 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
   .bo-inline-fields, .bo-inline-object { display: grid; gap: 12px; min-width: 0; }
   .bo-inline-object { padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md); }
   .bo-inline-object > legend { padding-inline: 6px; font-weight: 550; }
-  .bo-inline-field { display: block; min-width: 0; font: 400 14px/1.45 var(--font-ui); white-space: normal; }
+  .bo-inline-field { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px; min-width: 0; font: 400 14px/1.45 var(--font-ui); white-space: normal; }
   .bo-inline-field .ui-field { gap: 5px; }
   .bo-inline-field .ui-textarea { min-height: 42px; resize: vertical; }
   .bo-inline-field > .ui-button { margin-top: 3px; }
+  .bo-inline-field > .bo-inline-field-remove { align-self: start; margin-top: 24px; }
+  .bo-inline-field > .ui-button:not(.bo-inline-field-remove) { grid-column: 1 / -1; justify-self: start; }
   .bo-inline-array { min-width: 0; }
   .bo-inline-array-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 8px; margin-bottom: 10px; }
   .bo-inline-collection-actions, .bo-inline-plan-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
@@ -23195,6 +23197,7 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
   .td-tool-page .td-pricing .bo-inline-plan .bo-inline-field { font-size: 14px; }
   .td-tool-page[data-private-fiche] a { cursor: default; }
   @media (max-width: 640px) {
+    .bo-inline-field-remove { min-width: 44px; min-height: 44px; }
     .bo-inline-array-row { grid-template-columns: minmax(0, 1fr); }
     .bo-inline-collection-actions .ui-button, .bo-inline-plan-actions .ui-button { min-height: 44px; }
   }
@@ -23211,6 +23214,9 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
   .bo-catalog-record .bo-catalog-list-row { width: 100%; }
   .bo-catalog-legacy { font: var(--tt-note-font); padding: var(--space-xs); }
   .bo-inline { min-width: 0; }
+  /* Expanded authoring controls must stay in flow beneath the public hero. */
+  .bo-inline .td-hero-card { max-height: none; }
+  .bo-inline .td-hero-identity-grid > .bo-inline-settings { grid-column: 1 / -1; }
   .bo-inline-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md); padding: var(--space-md) 0; }
   .bo-inline-toolbar p { font: var(--tt-note-font); color: var(--tt-ink); margin: 0; }
   .bo-inline-content { border: 0; padding: 0; margin: 0; min-width: 0; }

@@ -1,4 +1,16 @@
-# Fiche en édition — audit et user stories de discussion
+# Fiche en édition — audit et recette
+
+## État local — 6 novembre 2026
+
+L’édition directe est implémentée dans l’espace Fiches : entrée principale dédiée, fiche publique partagée, contrôles typés des familles métier, sauvegarde après saisie, retour au même brouillon par lien direct, protection des conflits et des changements de compte. Une seule revue globale relit toutes les fiches avant la publication ; un commit transmis ne signifie toujours pas que le site est déployé.
+
+La recette locale porte sur le JSON brut, le brouillon rechargé et les consommateurs publics. Elle a isolé deux défauts d’intégration : la sélection de devise du JSON-LD prérendu doit suivre la langue comme le client (Attio FR : 39 EUR, EN : 44 USD), et le hero de l’éditeur doit grandir avec ses traductions sans masquer les contrôles suivants, avec les traductions sur toute la largeur de sa grille. Les retraits optionnels utilisent les pictogrammes accessibles du système et conservent leur annulation. Les régressions navigateur couvrent ces deux cas. Les contrôles d’ouverture, de saisie, de focus, de premier ajout, d’ordre et d’annulation restent dans les composants existants ; les tests ne publient aucun catalogue réel.
+
+Le prérendu conserve ses graphes JSON-LD et le client ajoute encore ses propres graphes. Les faits de prix doivent concorder ; le doublon de `WebPage` et son libellé générique côté client restent une dette existante, distincte du défaut de devise corrigé. Les contrôles complets ouverts peuvent monter plusieurs milliers d’options ; les observations de saisie sont une recette fonctionnelle locale, pas une garantie de latence.
+
+La mise en ligne, le statut Vercel READY et la sauvegarde/relecture authentifiée sur le service réel restent des étapes de release séparées. La couverture et les limites de champ actuelles sont décrites dans [BACKOFFICE_FICHE_FIELD_COVERAGE.md](BACKOFFICE_FICHE_FIELD_COVERAGE.md). Les constats et histoires ci-dessous sont conservés comme origine de l’audit du 29 octobre ; ils ne décrivent plus tous le comportement de l’éditeur actuel.
+
+## Audit initial
 
 29 octobre 2026. Exploration et maquette, pas une spécification validée ni une fonctionnalité livrée. Base locale `a00ec671a1` ; aucun catalogue de production modifié.
 

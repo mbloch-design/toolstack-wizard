@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Button, Field, Select } from "@/components/ui/primitives";
-import { ArrowUp, ArrowDown, CirclePlus } from "@/lib/icons";
+import { Button, Field, IconButton, Select } from "@/components/ui/primitives";
+import { ArrowUp, ArrowDown, CirclePlus, CircleMinus } from "@/lib/icons";
 import {
   resolveCatalogComparison,
   initializeCatalogPriceObservations,
@@ -236,16 +236,17 @@ export function PlanActions({
           </Select>
         </Field>
       )}
-      <Button
+      <IconButton
         size="compact"
         variant="quiet"
+        aria-label={t("Retirer l’offre", "Remove offer")}
+        title={t("Retirer l’offre", "Remove offer")}
+        icon={<CircleMinus />}
         disabled={!allowed || (candidates.length > 0 && !replacement)}
         onClick={() => {
           if (allowed) onRemove(root, index, replacement);
         }}
-      >
-        {t("Retirer l’offre", "Remove offer")}
-      </Button>
+      />
     </div>
   );
 }
@@ -307,8 +308,8 @@ export function PlanCollection({
       {context.capabilities.canPublishAll && (
         <p>
           {t(
-            "Les prix partagés sourcés sont liés au premier changement de prix. Les textes restent propres à chaque langue.",
-            "Sourced shared prices are linked on the first price edit. Text remains independent in each language.",
+            "Si cette offre utilise le même prix dans l’autre langue, modifier son prix met aussi cette version à jour. Les noms et descriptions restent indépendants.",
+            "If this offer uses the same price in the other language, editing its price also updates that version. Names and descriptions stay independent.",
           )}
         </p>
       )}
