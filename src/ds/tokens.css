@@ -167,3 +167,12 @@
   --tt-space-8: 32px;
   --tt-space-10: 40px;
 }
+
+/* ── Tuile de logo (proposition du 06/11/2026, à valider par Michael) ────
+   Les fichiers de logo sont dessinés pour un fond clair, certains avec un fond
+   blanc intégré. Une tuile claire dans les deux thèmes garde le rang de logos
+   régulier en sombre, comme des icônes d'application. */
+:root {
+  --tt-logo-tile: #FFFFFF;
+  --tt-logo-tile-ink: #1D1D1F;
+}

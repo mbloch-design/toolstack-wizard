@@ -81,3 +81,10 @@
   outline: 2px solid var(--tt-focus);
   outline-offset: 3px;
 }
+
+/* Act: ink, after .button so it wins. The one thing a state asks of the user. */
+.primary {
+  composes: button;
+  background: var(--tt-ink);
+  color: var(--tt-bg);
+}

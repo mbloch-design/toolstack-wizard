@@ -16,8 +16,9 @@ function stack(lang: Lang, lines: Line[], { currency = "EUR", unsure = { prices:
   const [leadName, , leadAmount] = sorted[0];
   return {
     lang, tools, unsure, rateDate,
-    monthly: total > 0 ? money(lang, currency, total) : null,
-    yearly: total > 0 ? money(lang, currency, total * 12) : null,
+    // The macro view rounds to whole units, as the page will: no cents after a conversion.
+    monthly: total > 0 ? money(lang, currency, Math.round(total)) : null,
+    yearly: total > 0 ? money(lang, currency, Math.round(total * 12)) : null,
     lead: total > 0 && leadAmount ? { name: leadName, share: Math.round((leadAmount / total) * 100) } : null,
   };
 }

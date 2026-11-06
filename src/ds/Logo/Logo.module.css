@@ -8,7 +8,7 @@
   height: 40px;
   overflow: hidden;
   border-radius: var(--tt-r-chip);
-  background: var(--tt-bg);
+  background: var(--tt-logo-tile);
   box-shadow: var(--tt-logo-shadow);
 }
 
@@ -40,7 +40,7 @@
 }
 
 .initial {
-  color: var(--tt-ink);
+  color: var(--tt-logo-tile-ink);
   font: var(--tt-label-font);
   letter-spacing: var(--tt-label-tracking);
 }
