@@ -353,6 +353,9 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-board > .tt-usage[class] { grid-area: usage; }
 .tt-board > [data-card="split"][class] { grid-area: split; }
 .tt-board > [class] { min-width: 0; height: auto; margin: 0; }
+/* Grand écran (06/11/2026) : les trois modules courts côte à côte, puis la répartition sur toute la largeur, pour qu'elle passe en version large (anneau).
+   Dès 1 400 px seulement : en dessous, Vos usages (pas encore migré) n'a pas la place. */
+@media (min-width: 1400px) { .tt-board:has(> [data-card="split"]):has(> .tt-usage):has(> :is(.tt-decision, .tt-starter)) { grid-template-columns: minmax(0, 4fr) minmax(0, 4fr) minmax(0, 5fr); grid-template-areas: "budget usage decide" "split split split"; } }
 @media (max-width: 900px) { .tt-board, .tt-board[class] { grid-template-columns: minmax(0, 1fr); grid-template-areas: none; } }
 @media (max-width: 900px) { .tt-board > [class][class] { grid-area: auto; } }
 .tt-starter { display: grid; justify-items: start; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
