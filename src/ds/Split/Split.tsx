@@ -11,8 +11,8 @@ export type SplitProps = {
   areas: SplitArea[];
   /** The site's formatter, in the display currency. */
   format: (amount: number) => string;
-  /** Tools without a price yet, left out of the figures. */
-  unpriced: number;
+  /** Names of the tools without a price yet, left out of the figures. */
+  unpriced: string[];
   /** Reference date of the currency conversion, already written out, when one took place. */
   rateDate: string | null;
   /** Amount at stake in the duplicates, and the way to the decision. */
@@ -22,6 +22,11 @@ export type SplitProps = {
 };
 
 const SHOWN_AREAS = 5;
+/** « Canva, Loom et Zapier », and « Canva, Loom et 3 autres » past three names. */
+const list = (names: string[], and: string) => {
+  const shown = names.length > 3 ? [...names.slice(0, 2), and === "et" ? `${names.length - 2} autres` : `${names.length - 2} others`] : names;
+  return shown.length > 1 ? `${shown.slice(0, -1).join(", ")} ${and} ${shown[shown.length - 1]}` : shown[0];
+};
 
 /** Where the money goes: by area, then tool by tool, with what is at stake. */
 export default function Split({ lang, areas, format, unpriced, rateDate, review, localLogosOnly = false }: SplitProps) {
@@ -40,7 +45,7 @@ export default function Split({ lang, areas, format, unpriced, rateDate, review,
 
   const percent = (amount: number) => {
     const value = total > 0 ? (amount / total) * 100 : 0;
-    if (value > 0 && value < 1) return fr ? "< 1 %" : "< 1%";
+    if (value > 0 && value < 1) return fr ? "< 1 %" : "<1%";
     return fr ? `${Math.round(value)} %` : `${Math.round(value)}%`;
   };
 
@@ -48,9 +53,9 @@ export default function Split({ lang, areas, format, unpriced, rateDate, review,
   const leadShare = lead && total > 0 ? Math.round((lead.amount / total) * 100) : 0;
   const title = !lead ? "" : shown.length === 1 ? t(`Tout passe par ${lead.label}.`, `Everything goes through ${lead.label}.`)
     : leadShare >= 50 ? t(`${lead.label} prend ${leadShare} % du budget.`, `${lead.label} takes ${leadShare}% of the budget.`)
-    : t(`${shown.length} domaines se partagent le budget.`, `${shown.length} areas share the budget.`);
+    : t(`${sorted.length} domaines se partagent le budget.`, `${sorted.length} areas share the budget.`);
   // One line of humour, read from how concentrated the money is.
-  const quip = shown.length === 1 ? t("Spécialiste, et fier de l'être.", "A specialist, and proud of it.")
+  const quip = shown.length === 1 ? t("Spécialiste, et fier de l’être.", "A specialist, and proud of it.")
     : leadShare >= 75 ? t("Le reste fait de la figuration.", "The rest are extras.")
     : leadShare >= 50 ? t("Il a le sens des priorités.", "It knows its priorities.")
     : t("Aucun ne fait la loi.", "None of them calls the shots.");
@@ -67,7 +72,7 @@ export default function Split({ lang, areas, format, unpriced, rateDate, review,
         <p className={styles.text}>{quip}</p>
       </div>
 
-      {review && review.amount > 0 && <CutGauge lang={lang} kept={Math.max(0, total - review.amount)} cut={Math.min(review.amount, total)} format={format} onReview={review.onReview} />}
+      {review && review.amount > 0 && <div className={styles.gauge}><CutGauge lang={lang} kept={Math.max(0, total - review.amount)} cut={Math.min(review.amount, total)} format={format} onReview={review.onReview} /></div>}
 
       <div className={styles.bar} role="img" aria-label={shown.map((area) => `${area.label} ${percent(area.amount)}`).join(", ")}>
         {shown.map((area) => <i key={area.id} style={{ "--f": area.amount, "--c": area.color } as CSSProperties} data-on={open === area.id ? "" : undefined} />)}
@@ -91,11 +96,14 @@ export default function Split({ lang, areas, format, unpriced, rateDate, review,
               {expanded && (
                 <ul id={`${id}-${area.id}`} className={styles.tools}>
                   {tools.map((tool) => (
-                    <li key={tool.id} className={styles.tool}>
+                    <li key={tool.id} className={styles.tool} title={tool.name}>
                       <Logo tool={tool} size={24} localOnly={localLogosOnly} />
                       <span className={styles.toolName}>{tool.name}</span>
-                      <span className={styles.toolAmount} data-nowrap="">{format(tool.amount)}</span>
-                      <span className={styles.share} data-nowrap="">{percent(tool.amount)}</span>
+                      {/* One tool in the area: its figures are the area's, said once. */}
+                      {tools.length > 1 && <>
+                        <span className={styles.toolAmount} data-nowrap="">{format(tool.amount)}</span>
+                        <span className={styles.share} data-nowrap="">{percent(tool.amount)}</span>
+                      </>}
                     </li>
                   ))}
                 </ul>
@@ -105,9 +113,11 @@ export default function Split({ lang, areas, format, unpriced, rateDate, review,
         })}
       </ul>
 
-      {(unpriced > 0 || rateDate) && (
+      {(unpriced.length > 0 || rateDate) && (
         <div className={styles.notes}>
-          {unpriced > 0 && <p className={styles.note}>{fr ? `${unpriced} outil${unpriced > 1 ? "s" : ""} sans prix ${unpriced > 1 ? "ne sont" : "n'est"} pas compté${unpriced > 1 ? "s" : ""}.` : `${unpriced} tool${unpriced > 1 ? "s" : ""} without a price ${unpriced > 1 ? "are" : "is"} not counted.`}</p>}
+          {unpriced.length > 0 && <p className={styles.note}>{fr
+            ? `${list(unpriced, "et")} ${unpriced.length > 1 ? "n’ont" : "n’a"} pas encore de prix : ${unpriced.length > 1 ? "ils ne sont pas comptés" : "il n’est pas compté"}.`
+            : `${list(unpriced, "and")} ${unpriced.length > 1 ? "have" : "has"} no price yet, so ${unpriced.length > 1 ? "they are" : "it is"} not counted.`}</p>}
           {rateDate && <p className={styles.note}>{t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`)}</p>}
         </div>
       )}

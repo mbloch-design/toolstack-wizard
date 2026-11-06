@@ -6,7 +6,7 @@ type Tool = [name: string, slug: string | undefined, monthly: number];
 type Area = [label: [fr: string, en: string], tools: Tool[]];
 
 /** Areas from real catalogue tools, coloured in the page's order. */
-function split(lang: Lang, list: Area[], { currency = "EUR", unpriced = 0, converted = false, review = 0 }: { currency?: "EUR" | "USD"; unpriced?: number; converted?: boolean; review?: number } = {}): SplitProps {
+function split(lang: Lang, list: Area[], { currency = "EUR", unpriced = [], converted = false, review = 0 }: { currency?: "EUR" | "USD"; unpriced?: string[]; converted?: boolean; review?: number } = {}): SplitProps {
   const areas: SplitArea[] = list.map(([label, tools], index) => ({
     id: label[1].toLowerCase(),
     label: lang === "fr" ? label[0] : label[1],
@@ -17,7 +17,7 @@ function split(lang: Lang, list: Area[], { currency = "EUR", unpriced = 0, conve
   return { lang, areas, unpriced, review: review > 0 ? { amount: review, onReview: () => {} } : null, format: (amount) => formatAmount(amount, currency, lang), rateDate: converted ? (lang === "fr" ? "27\u00a0août\u00a02026" : "27\u00a0August\u00a02026") : null };
 }
 
-const ORGANISE: [string, string] = ["Organiser", "Organise"];
+const ORGANISE: [string, string] = ["Organiser", "Organize"];
 const CREATE: [string, string] = ["Créer", "Create"];
 const TALK: [string, string] = ["Communiquer", "Communicate"];
 const SELL: [string, string] = ["Vendre", "Sell"];
@@ -42,7 +42,7 @@ export const splitStates = {
   ]),
   tinyArea: (lang: Lang) => split(lang, [[FINANCE, [["Microsoft Dynamics 365 Finance and Operations", undefined, 1100]]], [ORGANISE, [["Notion", "notion", 8]]]]),
   withReview: (lang: Lang) => split(lang, [[ORGANISE, [["Notion", "notion", 36], ["Airtable", "airtable", 24]]], [CREATE, [["Figma", "figma", 15], ["Canva", "canva", 12]]]], { review: 24 }),
-  unpriced: (lang: Lang) => split(lang, [[ORGANISE, [["Notion", "notion", 36]]], [CREATE, [["Figma", "figma", 15]]]], { unpriced: 3 }),
+  unpriced: (lang: Lang) => split(lang, [[ORGANISE, [["Notion", "notion", 36]]], [CREATE, [["Figma", "figma", 15]]]], { unpriced: ["Canva", "Loom", "Zapier"] }),
   converted: (lang: Lang) => split(lang, [[CREATE, [["Adobe Illustrator", "adobe-illustrator", 19.75], ["Adobe Photoshop", "adobe-photoshop", 17.17], ["Figma", "figma", 13.74]]], [ORGANISE, [["Notion", "notion", 9.5]]]], { converted: true }),
   dollars: (lang: Lang) => split(lang, [[AUTOMATE, [["Vercel", "vercel", 20], ["Supabase", "supabase", 25]]], [SELL, [["Stripe", "stripe", 0.99]]]], { currency: "USD", review: 20 }),
 } satisfies Record<string, (lang: Lang) => SplitProps>;

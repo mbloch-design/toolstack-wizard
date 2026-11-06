@@ -39,9 +39,11 @@
   gap: var(--tt-space-1);
 }
 
-/* One bar, one segment per area, in the area's colour. */
+/* One bar, one segment per area, in the area's colour. The open area's segment stands full height;
+   the others thin down, keeping their true colour. */
 .bar {
   display: flex;
+  align-items: center;
   gap: calc(var(--tt-space-1) * 0.75);
   height: 10px;
 }
@@ -52,12 +54,18 @@
   border-radius: var(--tt-r-pill);
   background: var(--c, var(--tt-ink));
   transform-origin: left;
-  transition: opacity var(--tt-dur-state) ease;
+  height: 100%;
+  transition: height var(--tt-dur-state) var(--tt-ease);
   animation: grow 900ms var(--tt-ease) both;
 }
 
 .bar:has(i[data-on]) i:not([data-on]) {
-  opacity: 0.35;
+  height: 4px;
+}
+
+/* The cut line is its own block: more room before the bar. */
+.gauge {
+  padding-bottom: var(--tt-space-2);
 }
 
 /* Areas: one row each, opening on its tools. */
@@ -108,9 +116,11 @@
   gap: var(--tt-space-3);
 }
 
+/* Inter with tabular figures in both row types: one face per column of numbers. */
 .areaAmount {
-  font: var(--tt-amount-font);
-  letter-spacing: var(--tt-amount-tracking);
+  font: var(--tt-label-font);
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Fixed width so amounts and shares of areas and tools fall on the same verticals. */
@@ -151,10 +161,26 @@
   gap: var(--tt-space-3);
 }
 
+/* Two lines at most; the full name stays in the row's title and for screen readers. */
 .toolName {
+  display: -webkit-box;
+  overflow: hidden;
   color: var(--tt-ink);
   font: var(--tt-text-font);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   text-wrap: balance;
+}
+
+/* On a phone the tool rows give the chevron's gutter back to the name. */
+@container (width < 480px) {
+  .tool {
+    grid-template-columns: 24px minmax(0, 1fr) auto auto;
+  }
+
+  .tools {
+    padding-left: 0;
+  }
 }
 
 .toolAmount {

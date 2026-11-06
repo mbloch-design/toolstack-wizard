@@ -91,7 +91,7 @@
 .review::before {
   position: absolute;
   z-index: -1;
-  inset: calc(var(--tt-space-1) * -1) calc(var(--tt-space-2) * -1);
+  inset: calc(var(--tt-space-3) * -1) calc(var(--tt-space-2) * -1);
   border-radius: var(--tt-r-chip);
   content: "";
   transition: background-color var(--tt-dur-state) ease;

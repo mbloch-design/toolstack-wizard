@@ -44,3 +44,10 @@
   font: var(--tt-label-font);
   letter-spacing: var(--tt-label-tracking);
 }
+
+/* On the smallest tile the initials drop to the small capitals of the system. */
+.tile[data-size="24"] .initial {
+  font: var(--tt-eyebrow-font);
+  letter-spacing: var(--tt-eyebrow-tracking);
+  text-transform: uppercase;
+}
