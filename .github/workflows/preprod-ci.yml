@@ -157,3 +157,46 @@ jobs:
             enabled-hydration-test-results/
           retention-days: 7
           if-no-files-found: ignore
+
+  design:
+    name: Design system
+    runs-on: ubuntu-24.04
+    # Playwright's own image: the visual references are always rendered by the same Linux, fonts and Chromium.
+    container: mcr.microsoft.com/playwright:v1.58.2-noble
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Module CSS uses tokens only
+        run: npm run lint:ds
+
+      - name: Layout invariants, a11y and story tests
+        run: npm run test:ds
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Visual comparison
+        run: npm run test:visual
+        env:
+          CI: "true"
+
+      - name: Visual differences
+        if: failure()
+        uses: actions/upload-artifact@v6
+        with:
+          name: visual-diff
+          path: visual/test-results/
+          retention-days: 7
+          if-no-files-found: ignore

@@ -22,7 +22,7 @@ const postcss = require("postcss");
 
 const ROOT = process.cwd();
 // The shared system (also read by the design-system sheet) obeys the same rules.
-const CSS_FILES = ["src/index.css", "src/styles/tooltrim-system.css"];
+const CSS_FILES = ["src/index.css", "src/styles/tooltrim-system.css", "src/ds/tokens.css"];
 const TSX_ROOTS = ["src/components", "src/pages"];
 const BASELINE = "scripts/design-tokens-baseline.json";
 

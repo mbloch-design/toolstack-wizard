@@ -1,0 +1,90 @@
+/* Text atoms of the system, written once from the tokens. Components compose them:
+   .title { composes: eyebrow from "../atoms.module.css"; } */
+
+.eyebrow {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-eyebrow-font);
+  letter-spacing: var(--tt-eyebrow-tracking);
+  text-transform: uppercase;
+  font-feature-settings: "case";
+}
+
+.titleM {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-title-m-font);
+  letter-spacing: var(--tt-title-m-tracking);
+  text-wrap: balance;
+}
+
+.label {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+}
+
+.text {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-text-font);
+  text-wrap: pretty;
+}
+
+.note {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-note-font);
+  text-wrap: pretty;
+}
+
+.figure {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-figure-font);
+  letter-spacing: var(--tt-figure-tracking);
+  white-space: nowrap;
+}
+
+.unit {
+  margin-left: var(--tt-space-1);
+  font: var(--tt-unit-font);
+  letter-spacing: 0;
+}
+
+.strong {
+  font-weight: var(--tt-w-strong);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 var(--tt-space-5);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile-2);
+  color: var(--tt-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  cursor: pointer;
+  transition: transform var(--tt-dur-press) ease;
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 3px;
+}
+
+/* Act: ink, after .button so it wins. The one thing a state asks of the user. */
+.primary {
+  composes: button;
+  background: var(--tt-ink);
+  color: var(--tt-bg);
+}

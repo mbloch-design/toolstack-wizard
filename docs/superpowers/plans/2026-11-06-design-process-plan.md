@@ -550,15 +550,122 @@ Brief proposé :
    - la ligne de confiance mène à la question suivante de la décision ;
    - « Préciser ma première formule » quand rien n'est connu.
 
-- [ ] Soumettre ce brief à Michael. **Arrêt** jusqu'à sa réponse. Reporter ses corrections ici.
+- [x] Soumis à Michael le 06/11/2026. Validé, avec cette correction :
 
-### Tâches B2 à B7 : détaillées après la validation du brief
+> « Le budget est avant tout la vue d'ensemble. Les autres modules sont principalement des questions ou des visualisations sous d'autres angles, où l'on rentre dans le détail. Je dois voir de manière macro : stack / budget. »
 
-Le contrat du composant (props, textes, états) découle du brief validé. L'écrire avant serait figer des choix que Michael n'a pas faits. Après la validation de B1, ce plan est complété, au même niveau de détail que la partie A, pour :
+**Conséquence sur le brief :** la carte Budget montre la stack et son coût d'un coup d'œil :
+- le total par mois et par an ;
+- le nombre d'outils, payants et gratuits ;
+- la stack elle-même en un rang de logos ;
+- la fiabilité du chiffre ;
+- une ligne d'humour.
 
-- **B2** : `src/ds/Budget/Budget.fixtures.ts`, avec les données réelles du brief.
-- **B3** : `Budget.stories.tsx`, une story par état et par donnée extrême, écrite d'abord. Les tests de stories échouent tant que le composant n'existe pas.
-- **B4** : `Budget.tsx` et `Budget.module.css`, jusqu'à ce que `lint:ds`, `test:ds` (invariants et a11y) et `typecheck` passent.
-- **B5** : revue indépendante. Un sous-agent design-review, qui n'a pas écrit le code, reçoit les captures `visual/__local__/budget-*` et la liste de contrôle de la spec. Je corrige ses constats ou je les discute avec Michael.
-- **B6** : validation de Michael sur l'URL Storybook, puis lancement de `visual-baselines.yml` avec sa note. Suppression de la story témoin.
-- **B7** : intégration. `StackFindings` rend `<Budget>` à la place du bloc `data-card="price"`. On retire les règles devenues inutilisées (`tt-budget-*`, `tt-trust` et `tt-ring` si plus personne ne les lit). `tt-share` et `tt-shares` restent tant que la répartition ne les a pas remplacées. Contrôles : `typecheck`, `npm test`, `test:ma-stack`, e2e Ma stack existants, capture de la page en FR et EN.
+Le détail outil par outil (la liste des parts, montants et pourcentages) sort de la carte : c'est le travail de la Répartition. Les données extrêmes restent valables pour la rangée de logos (1, 3, 12 outils) et pour les montants.
+
+### Contrat de la carte Budget (issu du brief validé)
+
+Composant de présentation : il reçoit des données déjà calculées et formatées, et porte ses propres textes FR/EN, humour compris. Aucun accès au magasin ni au catalogue.
+
+```ts
+export type BudgetTool = { id: string; name: string; slug?: string; logo?: string; paid: boolean };
+export type BudgetProps = {
+  lang: "fr" | "en";
+  tools: BudgetTool[];                 // toute la stack, la plus chère d'abord
+  monthly: string | null;              // total formaté (« 58 € »), null si aucun prix connu
+  yearly: string | null;               // « 696 € »
+  lead: { name: string; share: number } | null; // plus gros abonnement et sa part (0 à 100), pour la ligne d'humour
+  unsure: { prices: number; plans: number };     // à confirmer
+  rateDate: string | null;             // date du taux, déjà écrite (« 27 août 2026 »), si une conversion a eu lieu
+  onConfirmNext?: () => void;          // ligne de confiance : ouvre la question suivante de la décision
+  onStart?: () => void;                // rien de connu : « Préciser ma première formule »
+};
+```
+
+Contenu, dans l'ordre de lecture :
+1. Surtitre « Votre stack » / « Your stack ».
+2. Le total « 58 € /mois », puis « **Soit 696 € par an.** » et une ligne d'humour selon `lead` :
+   - 1 outil : « Un seul abonnement, et il fait tout le travail. » ;
+   - part ≥ 50 % : « X en paie plus de la moitié à lui seul. » ;
+   - part ≥ 75 % : « X en paie presque tout à lui seul. » ;
+   - sinon : « Pas de tyran dans la stack. »
+3. La stack : un rang de logos (8 au plus, puis « +N »), et « 12 outils · 9 payants · 3 gratuits ».
+4. La fiabilité : « Budget renseigné », ou bien « 9 outils sur 12 renseignés · 3 prix à confirmer » en bouton.
+5. La conversion, s'il y en a une.
+
+Quand aucun prix n'est connu, le total est remplacé par « On fait les comptes ? » et le bouton « Préciser ma première formule ». Le rang de logos reste.
+
+Hors carte : le détail outil par outil (Répartition) et la jauge Gardé / À examiner (Décision), sauf demande contraire de Michael à la revue.
+
+### Tâche B2 : données d'exemple
+
+**Fichier :** `src/ds/Budget/Budget.fixtures.ts`. Les outils réels ont un logo hébergé chez nous (`public/home-logos` : notion, figma, canva, chatgpt, airtable, calendly, loom, mailchimp, make, n8n, pipedrive, stripe). Deux noms extrêmes n'ont pas de logo local et testent le repli : « Microsoft Dynamics 365 Finance and Operations » et « CallTrackingMetrics ».
+
+États : `one` (Vercel seul, 100 %), `three`, `twelve`, `longNames`, `partial` (3 prix et 1 formule à confirmer), `nothingKnown`, `converted` (USD vers EUR), `dollars`, `bigAmounts` (1 249,00 € par mois).
+
+Storybook sert `public/home-logos` (ajout dans `staticDirs`), les stories passent `allowRemoteSources={false}` à `ToolLogo`, et le test visuel attend que toutes les images soient chargées.
+
+### Tâche B3 : stories d'abord
+
+**Fichier :** `src/ds/Budget/Budget.stories.tsx`, une story par état de B2. La langue vient de la barre d'outils (`context.globals.lang`). Elles échouent tant que `Budget.tsx` n'existe pas.
+
+### Tâche B4 : composant
+
+**Fichiers :** `src/ds/Budget/Budget.tsx`, `src/ds/Budget/Budget.module.css`. Les montants et leurs unités portent `data-nowrap`. On termine quand `lint:ds`, `test:ds`, `typecheck` et `npm test` passent, et que les captures locales des 9 états sont relues en 390, 768 et 1280, en FR et EN, en clair et en sombre.
+
+### Tâche B5 : revue indépendante
+
+Un sous-agent design-review qui n'a pas écrit le code reçoit seulement `visual/__local__/budget-*`, le brief et la liste de contrôle (coupures, vides, alignements, contrastes, langue, ton, hiérarchie). Je corrige ses constats ou je les soumets à Michael.
+
+### Tâche B6 : validation de Michael
+
+Storybook en ligne (A8) ou, d'ici là, captures envoyées. Après son accord : suppression de la story témoin, retrait de `--pass-with-no-tests`, lancement de « Visual baselines » avec sa note.
+
+### Tâche B7 : intégration et retrait
+
+`StackFindings` rend `<Budget>` à la place du bloc `data-card="price"` en calculant ses props (outils, totaux, `lead`, `unsure`, `rateDate`). La liste des parts quitte la carte. On retire les règles qui ne servent plus à personne (`tt-budget-*` ; `tt-trust` et `tt-ring` si plus personne ne les lit). `tt-share` et `tt-shares` restent jusqu'à la migration de la Répartition. Contrôles : `typecheck`, `npm test`, `test:ma-stack`, tests de StackFindings mis à jour, captures de la page en FR et EN, budget du build.
+
+---
+
+## Partie C : la Répartition
+
+### C1 : brief (validé par Michael le 06/11/2026)
+
+1. **Rôle** : montrer où va l'argent. C'est la vue détaillée qui suit la vue d'ensemble du Budget : par domaine d'abord, puis outil par outil, avec ce qui est en jeu (jauge Gardé / À examiner).
+2. **États** :
+   - un seul domaine ;
+   - 2 à 5 domaines ;
+   - 6 domaines ou plus (au-delà de 5, les plus petits regroupés en « Autres ») ;
+   - avec ou sans montant à examiner ;
+   - outils sans prix (signalés, hors calcul) ;
+   - conversion de devise.
+3. **Données extrêmes** :
+   - 1 outil à 100 % ;
+   - 12 outils sur 5 domaines ;
+   - un domaine à 1 % ;
+   - « Microsoft Dynamics 365 Finance and Operations » ;
+   - de 0,99 à 1 100, en € et en $.
+4. **Humour** : une ligne sous le titre, selon la concentration.
+5. **Actions** : chaque domaine s'ouvre sur ses outils (montant, part du total), un seul à la fois, le plus gros ouvert d'office ; la jauge mène à la décision du doublon.
+
+Choix validés : **A**, le détail par outil vit dans des domaines qui s'ouvrent ; **B**, la jauge se place en tête, sous le titre.
+
+### Contrat
+
+```ts
+export type SplitTool = { id: string; name: string; slug?: string; logo?: string; amount: number };
+export type SplitArea = { id: string; label: string; color: string; amount: number; tools: SplitTool[] };
+export type SplitProps = {
+  lang: "fr" | "en";
+  areas: SplitArea[];                  // the component sorts them and groups the 6th onwards into « Autres »
+  format: (amount: number) => string;  // the site's formatter, in the display currency
+  unpriced: number;                    // tools without a price, left out of the figures
+  rateDate: string | null;
+  review: { amount: number; onReview: () => void } | null; // amount at stake in the duplicates
+  localLogosOnly?: boolean;
+};
+```
+
+La jauge devient un composant du système (`src/ds/CutGauge`), avec le dessin validé : encre pour ce qu'on garde, pointillé orange pour ce qui est à examiner, ciseaux du signe à la frontière. Les couleurs des domaines sont des jetons `--tt-area-*` (déplacés d'`index.css`, valeurs vérifiées identiques).
+
+Étapes : fixtures, stories (`a-valider`), composants, `lint:ds`, `test:ds`, captures, revue indépendante, validation de Michael, références, intégration dans `StackFindings` et retrait de `CutGauge.tsx` ainsi que des règles `tt-split*`, `tt-cutgauge*` et `tt-share*`.

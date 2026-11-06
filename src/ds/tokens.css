@@ -1,0 +1,216 @@
+/* Jetons ToolTrim : les seules valeurs globales du système.
+   Lus par le site (via src/styles/tooltrim-system.css) et par Storybook.
+   Validés le 30/10/2026 ; une valeur ne change qu'après validation de Michael. */
+
+/* ── Tokens ─────────────────────────────────────────────────────────────── */
+:root {
+  /* Surfaces et encre */
+  --tt-bg: #FFFFFF;
+  --tt-tile: #F5F5F7;
+  --tt-tile-2: #ECECEF;
+  --tt-ink: #1D1D1F;
+  --tt-line: #E6E6E8;
+  --tt-meta: #6E6E73;
+  --tt-w-text: 400;
+  --tt-w-strong: 500;
+
+  /* Marque et sens. Le bleu signe ; les autres couleurs parlent des données. */
+  --tt-brand: #1E52F1;
+  --tt-live: #22B35E;      /* gain, actif */
+  --tt-overlap: #E8590C;   /* doublon, à couper */
+  --tt-area-violet: #6250D6;
+  --tt-area-amber: #EDA100;
+
+  /* Le logo garde ses couleurs exactes, hors P3 : c'est un fichier de marque. */
+  --tt-logo-plate: #1E52F1;
+  --tt-logo-cut: #FAFAFB;
+  --tt-logo-ink: #222222;
+
+  /* L'aura du hero, et ses familles (teintes voisines, jamais complémentaires
+     du texte posé dessus). */
+  --tt-glow-1: #4FD3E8;
+  --tt-glow-2: #3E6BEB;
+  --tt-glow-3: #8A3FD6;
+  --tt-glow-4: #E85DA6;
+  --tt-aura-brand-a: #3E6BEB;
+  --tt-aura-brand-b: #7A45E0;
+  --tt-gain-1: #BDF2DA;
+  --tt-gain-2: #DDF5B0;
+  --tt-gain-3: #BCEAF0;
+
+  /* Filet lumineux des actions (étoile filante) */
+  --tt-edge-1: #31D6F0;
+  --tt-edge-2: #4C7BFF;
+  --tt-edge-3: #A65CFF;
+  --tt-edge-4: #FF4FB0;
+  --tt-edge-head: #F4FBFF;
+
+  /* Typographie : trois rôles */
+  --tt-display: "Uncut Sans", "SF Pro Display", system-ui, sans-serif;
+  --tt-ui: "Inter Tight", "Inter", system-ui, sans-serif;
+  --tt-read: "Inter", system-ui, sans-serif;
+
+  /* Formes */
+  --tt-r-tile: 24px;
+  --tt-r-card: 16px;
+  --tt-r-chip: 10px;
+  --tt-r-pill: 999px;
+  --tt-r-round: 50%;
+
+  /* Contrôles : ce que chaque état dit, une fois pour toutes */
+  --tt-focus: var(--tt-brand-mark);         /* anneau de 2px, décalé de 3px */
+  --tt-tab-ink: var(--tt-brand-mark);       /* trait de l'onglet actif */
+  --tt-switch-on: var(--tt-live);      /* interrupteur actif */
+  --tt-chip-on: var(--tt-ink);         /* puce active, une coche se dessine */
+
+  /* Ligne de coupe : pointillé fin, tirets de 6 sur 5 */
+  --tt-dash: 6px;
+  --tt-dash-gap: 5px;
+
+  /* Mouvement : seulement transform et opacity */
+  --tt-ease: cubic-bezier(.2, .8, .2, 1);
+  --tt-ease-io: cubic-bezier(.65, 0, .35, 1);
+  --tt-spring: cubic-bezier(.34, 1.5, .64, 1);
+  --tt-dur-press: 120ms;
+  --tt-dur-state: 240ms;
+  --tt-dur-move: 420ms;--tt-dur-reveal: 600ms;--tt-overlap-strong: color-mix(in oklch, var(--tt-overlap) 85%, black);--tt-on-color: #fff;--tt-tile-gap: 20px;--tt-board-gap: 20px;--tt-page-gap: 40px;--tt-page-max: 1280px;--tt-page-pad: clamp(20px, 4vw, 48px);
+}
+/* ── Atomes : un token composite par atome ──────────────────────────────
+   Chaque atome est défini UNE fois ici. Les classes .tt-* ci-dessous, les
+   molécules, les organismes et les règles du site qui l'empruntent lisent ces
+   tokens : modifier un atome le modifie partout où il apparaît. */
+:root {
+  /* Texte */
+  /* Échelle validée (planche, chapitre 02) : 64 · 42 · 21 · 17 lecture · 16 texte · 14 détail ·
+     12 en capitales seulement. Graisses 400 et 500, un cran plus fin en sombre.
+     Interlettrage : Inter (lecture, interface) à 0 ; Uncut Sans de −0,017 em (petit)
+     à −0,022 em (64) ; capitales +0,08 em. */
+  --tt-eyebrow-font: var(--tt-w-strong) .75rem/1.4 var(--tt-ui);   --tt-eyebrow-tracking: .08em;
+  --tt-title-xl-font: var(--tt-w-strong) clamp(2.625rem, 5vw, 4rem)/1.04 var(--tt-display); --tt-title-xl-tracking: -.022em;
+  /* Titre L et titre M partagent le palier 21 de l'échelle. */
+  --tt-title-l-font: var(--tt-w-strong) 1.3125rem/1.2 var(--tt-display);  --tt-title-l-tracking: -.017em;
+  --tt-title-m-font: var(--tt-w-strong) 1.3125rem/1.2 var(--tt-display); --tt-title-m-tracking: -.017em;
+  --tt-title-section-font: var(--tt-w-strong) 2.625rem/1.08 var(--tt-display); --tt-title-section-tracking: -.021em;
+  --tt-label-font: var(--tt-w-strong) 1rem/1.3 var(--tt-ui);   --tt-label-tracking: 0;
+  --tt-text-font: var(--tt-w-text) 1rem/1.55 var(--tt-read);
+  --tt-note-font: var(--tt-w-text) .875rem/1.4 var(--tt-read);
+  /* Chiffres */
+  --tt-figure-font: var(--tt-w-strong) 2.625rem/1 var(--tt-display);   --tt-figure-tracking: -.021em;
+  --tt-amount-font: var(--tt-w-strong) 1.0625rem/1 var(--tt-display); --tt-amount-tracking: -.017em;
+  --tt-unit-font: var(--tt-w-text) .875rem/1 var(--tt-read);
+  --tt-gain-ink: color-mix(in oklch, var(--tt-live) 72%, var(--tt-ink));
+  /* Surfaces */
+  --tt-tile-pad: 28px;
+  --tt-row-pad: 12px 18px 12px 12px;
+  --tt-row-ring: 0 0 0 1px var(--tt-line);
+  --tt-row-ring-hover: 0 0 0 1px color-mix(in oklch, var(--tt-ink) 35%, var(--tt-line));
+  --tt-row-ring-on: 0 0 0 2px var(--tt-brand-mark);
+  --tt-row-gone: .45;
+  /* Repères */
+  --tt-tag-font: var(--tt-w-strong) .875rem/1 var(--tt-ui);
+  --tt-logo-plate: #FFFFFF;
+  --tt-logo-radius: 23%;
+  --tt-logo-shadow: 0 0 0 .5px rgb(0 0 0 / .08), 0 4px 10px -6px rgb(0 0 0 / .3);--tt-dur-reveal: 600ms;--tt-overlap-strong: color-mix(in oklch, var(--tt-overlap) 85%, black);--tt-on-color: #fff;--tt-tile-gap: 20px;--tt-board-gap: 20px;--tt-page-gap: 40px;--tt-page-max: 1280px;--tt-page-pad: clamp(20px, 4vw, 48px);
+}
+.dark, :root[data-theme="dark"] { --tt-gain-ink: color-mix(in oklch, var(--tt-live) 75%, white); }
+
+@media (color-gamut: p3) {
+  :root {
+    --tt-brand: oklch(0.52 0.27 264);
+    --tt-live: oklch(0.675 0.204 151.5);
+    --tt-overlap: oklch(0.644 0.23 41.7);
+    --tt-area-violet: oklch(0.52 0.24 285);
+    --tt-area-amber: oklch(0.78 0.19 75);
+    --tt-glow-1: oklch(0.86 0.17 205);
+    --tt-glow-2: oklch(0.6 0.27 262);
+    --tt-glow-3: oklch(0.56 0.3 298);
+    --tt-glow-4: oklch(0.7 0.27 345);
+    --tt-aura-brand-a: oklch(0.6 0.25 262);
+    --tt-aura-brand-b: oklch(0.56 0.26 292);
+    --tt-gain-1: oklch(0.9 0.11 165);
+    --tt-gain-2: oklch(0.93 0.1 128);
+    --tt-gain-3: oklch(0.9 0.08 200);
+    --tt-edge-1: oklch(0.87 0.21 200);
+    --tt-edge-2: oklch(0.66 0.32 262);
+    --tt-edge-3: oklch(0.66 0.34 300);
+    --tt-edge-4: oklch(0.72 0.34 352);
+    --tt-edge-head: oklch(0.99 0.05 215);
+  }
+}
+.dark, :root[data-theme="dark"] {
+  --tt-bg: #0E0E10;
+  --tt-tile: #1A1A1D;
+  --tt-tile-2: #242428;
+  --tt-ink: #F2F2EE;
+  --tt-line: #2C2C30;
+  --tt-meta: #9A9AA0;
+  --tt-w-text: 370;
+  --tt-w-strong: 470;
+  --tt-aura-brand-a: oklch(0.68 0.2 262);
+  --tt-aura-brand-b: oklch(0.66 0.22 292);
+  --tt-gain-1: oklch(0.55 0.13 165);
+  --tt-gain-2: oklch(0.6 0.12 128);
+  --tt-gain-3: oklch(0.55 0.1 200);
+}
+
+/* ── Espacements (validés par Michael le 06/11/2026) ──────────────────────
+   Une échelle de 4 px, tirée des valeurs du système validé : 4, 8, 12, 16, 20,
+   24, 32 et 40 px couvrent l'essentiel de ses écarts. Les composants de src/ds
+   n'utilisent que ces pas. Aucune valeur existante ne change. */
+:root {
+  --tt-space-1: 4px;
+  --tt-space-2: 8px;
+  --tt-space-3: 12px;
+  --tt-space-4: 16px;
+  --tt-space-5: 20px;
+  --tt-space-6: 24px;
+  --tt-space-8: 32px;
+  --tt-space-10: 40px;
+}
+
+/* ── Tuile de logo (validée par Michael le 06/11/2026) ────────────────────
+   Les fichiers de logo sont dessinés pour un fond clair, certains avec un fond
+   blanc intégré. Une tuile claire dans les deux thèmes garde le rang de logos
+   régulier en sombre, comme des icônes d'application. */
+:root {
+  --tt-logo-tile: #FFFFFF;
+  --tt-logo-tile-ink: #1D1D1F;
+}
+
+/* ── Couleurs des domaines (déplacées d'index.css le 06/11/2026, valeurs inchangées) ──
+   Une couleur par domaine de la stack, dans l'ordre des domaines ; « other » pour le reste.
+   index.css les lit par alias (--color-area-*). */
+:root {
+  --tt-area-1: #2A78D6;
+  --tt-area-2: #EDA100;
+  --tt-area-3: #6250D6;
+  --tt-area-4: #1BAF7A;
+  --tt-area-5: #E87BA4;
+  --tt-area-6: #008300;
+  --tt-area-other: #8E8E93;
+}
+
+@media (color-gamut: p3) {
+  :root {
+    --tt-area-1: oklch(0.575 0.195 255.5);
+    --tt-area-2: oklch(0.764 0.193 75.1);
+    --tt-area-3: oklch(0.527 0.236 283.4);
+    --tt-area-4: oklch(0.669 0.169 162.1);
+    --tt-area-5: oklch(0.716 0.169 357.4);
+    --tt-area-6: oklch(0.529 0.216 142.5);
+  }
+}
+
+/* ── Bleu de marque pour les traits (validé par Michael le 06/11/2026) ────
+   Les traits et marques bleus posés sur un fond (ciseaux, anneau de focus,
+   onglet actif, ligne choisie) lisent ce jeton. En clair, c'est le bleu de
+   marque ; en sombre, un jumeau plus clair pour passer 3:1 sur la tuile.
+   Le bleu de marque lui-même ne change pas : il reste le fond des coches. */
+:root {
+  --tt-brand-mark: var(--tt-brand);
+}
+
+.dark,
+:root[data-theme="dark"] {
+  --tt-brand-mark: color-mix(in oklch, var(--tt-brand) 65%, white);
+}

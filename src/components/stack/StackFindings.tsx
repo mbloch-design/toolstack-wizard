@@ -4,14 +4,14 @@ import StackUsagePlay from "./StackUsagePlay";
 import { Fragment, useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { Rocket, UserRound, Moon, Zap, Check, ClipboardCheck, Flame, Plus, Scale, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
-import CutGauge from "@/components/stack/CutGauge";
+import Budget, { type BudgetTool } from "@/ds/Budget/Budget";
+import Split from "@/ds/Split/Split";
 import { Link } from "@/lib/routerLinks";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
-import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
 import toolAccents from "@/data/toolAccents.json";
 import { toolKey } from "@/lib/stackView";
-import { AppIcon, Button, Duo, Figure, Odometer, TextLink } from "./StackKit";
+import { AppIcon, Button, Duo, Figure, TextLink } from "./StackKit";
 
 export type FindingAction = { label: string; onClick: () => void; primary?: boolean; ariaLabel?: string };
 export type Finding = {
@@ -98,7 +98,6 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   const rateDate = new Date(`${CURRENCY_RATE_DATE}T00:00:00Z`).toLocaleDateString(fr ? "fr-FR" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).replace(/ /g, "\u00a0");
   const s = (n: number) => (n > 1 ? "s" : "");
   const [later, setLater] = useState<string[]>([]);
-  const [priceAll, setPriceAll] = useState(false);
   // On a phone each card is a summary line; one opens at a time.
   // No accordion: in one column every card stays open, in reading order (the decision is the page’s action).
   // The face just picked: it lights up, the other swipes away, the saving
@@ -174,80 +173,30 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       : { kind, tools, title: t(`${n} prix à compléter`, `${n} price${s(n)} to add`), text: n > 1 ? t("Pour un budget au centime près.", "For a budget down to the cent.") : t("Le dernier, courage.", "The last one, hang in there.") }];
   }).slice(0, 2);
 
-  // Price card: the three tools that weigh most, the rest as one line.
-  // Each tool keeps the colour of its area, as in the budget split: one colour code for the whole bento.
-  const areaColorOf = new Map(areas.flatMap((area) => (area.tools || []).map((row) => [row.tool.id, area.color] as const)));
-  // A summary first: the three tools that weigh most; the rest on demand.
-  // The price card is taller when there is nothing to decide: it lists more tools then.
-  const room = order.length === 0 ? 8 : 3;
-  const shown = priceAll ? spend : spend.slice(0, spend.length <= room ? spend.length : room);
-  const otherAmount = spend.slice(shown.length).reduce((sum, line) => sum + line.amount, 0);
-  const otherCount = spend.length - shown.length;
-  const segments: { id: string; label: string; amount: number; color: string; tool?: ToolSummary }[] = [...shown.map((line, index) => ({ id: line.tool.id, label: line.tool.name, amount: line.amount, color: AREA_COLORS[index], tool: line.tool })),
-    ...(otherCount > 0 ? [{ id: "others", label: t(`${otherCount} autre${s(otherCount)}`, `${otherCount} other${s(otherCount)}`), amount: otherAmount, color: AREA_OTHER }] : [])];
+  // The Budget card: every tool once, the most expensive first, then those whose price is not known yet, then the free ones.
+  const unsure = items.filter((item) => item.kind === "price" || item.kind === "freemium");
+  const pending = [...new Map(unsure.flatMap((item) => item.tools).map((tool) => [tool.id, tool])).values()];
+  const budgetTools: BudgetTool[] = [
+    ...spend.map((line) => ({ ...line.tool, paid: true })),
+    ...pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => ({ ...tool, paid: null })),
+    ...freeTools.map((tool) => ({ ...tool, paid: false })),
+  ];
   return <section className="mf" aria-label={t("Ma stack en bref", "My stack at a glance")}>
     <div className="tt-board" data-starter={toolCount === 1 ? "" : undefined} data-sparse={top && total === 0 && fit.length === 0 ? "" : undefined} data-compact={!top && toolCount > 1 && total === 0 && fit.length === 0 ? "" : undefined} data-next={groups.length} data-done={top ? undefined : ""}>
       {/* Organisme « tableau » du système (planche, gabarit Ma stack), un bento lu constat, action, détail : budget et décision, puis vos usages et la répartition. L'ordre du DOM est l'ordre de lecture, sur mobile aussi. */}
       {/* 1. Read first: what the stack costs, and the verdict under it. */}
       {/* Organisme « budget » du système (planche, chapitre 06 et gabarit Ma stack). */}
-      <article className="tt-tile" data-card="price" data-all={priceAll ? "" : undefined}>
-        <div className="tt-head"><h2 className="tt-eyebrow">{spend.length === 0 && items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Votre budget", "Your budget") : items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel renseigné", "Known budget so far") : t("Budget mensuel renseigné", "Recorded monthly budget")}</h2></div>
-        {/* An unknown price is never shown as free: no figure without a known price, and a partial total says so. */}
-        {(() => { const missing = items.filter((item) => item.kind === "price" || item.kind === "freemium").length;
-          return spend.length === 0 && missing > 0
-            ? <div className="tt-budget-start">
-                <span className="tt-eyebrow">{t("Premier petit pas", "One small first step")}</span>
-                <h3 className="tt-title-m">{t("On fait les comptes ?", "Let's talk budget.")}</h3>
-                <p className="tt-text">{t("Dites-nous quelle formule vous utilisez. Gratuite ou payante, chaque réponse aide à y voir plus clair.", "Tell us which plan you use. Free or paid, every answer makes the picture clearer.")}</p>
-                <p className="tt-note">{t("Promis, pas de tableur.", "No spreadsheet required. Promise.")}</p>
-                <button type="button" className="tt-btn tt-btn--grey" onClick={() => { const next = items.find(item => item.kind === "price" || item.kind === "freemium"); if(next){setFirst(next.key);setLater(keys=>keys.filter(key=>key!==next.key));requestAnimationFrame(()=>document.getElementById("mf-now-title")?.scrollIntoView({block:"center",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));} }}>{t("Préciser ma première formule", "Choose my first plan")}</button>
-              </div>
-            : <><p className="tt-figure"><Odometer text={format(total)} /><small>{t("/mois", "/mo")}</small></p>{spend.length > 0 && total > 0 && (() => {
-              // As in the planche: the year in bold, then one line that reads it.
-              const lead = spend.reduce((a, b) => b.amount > a.amount ? b : a), share = Math.round((lead.amount / total) * 100);
-              const quip = spend.length === 1 ? t("Un seul abonnement, et il fait tout le travail.", "One subscription doing all the work.")
-                : share >= 50 ? t(`${lead.tool.name} en paie ${share >= 75 ? "presque tout" : "plus de la moitié"} à lui seul.`, `${lead.tool.name} pays for ${share >= 75 ? "almost all of it" : "over half of it"} on its own.`)
-                : t("Pas de tyran dans la stack.", "No tyrant in this stack.");
-              return <p className="tt-text"><b>{t(`Soit ${format(total * 12)} par an.`, `That is ${format(total * 12)} a year.`)}</b> {quip}</p>;
-            })()}{toReview > 0 && total > 0 && <CutGauge total={total} toReview={Math.min(toReview, total)} format={format} t={t} />}{(() => {
-              // Can the total be trusted? A tool counts once its cost is certain.
-              const unsure = items.filter((item) => item.kind === "price" || item.kind === "freemium");
-              const pct = toolCount > 0 ? Math.round(((toolCount - unsure.length) / toolCount) * 100) : 100;
-              const prices = unsure.filter((item) => item.kind === "price").length, plans = unsure.length - prices;
-              const left = [prices > 0 && t(`${prices} prix`, `${prices} price${s(prices)}`), plans > 0 && t(`${plans} formule${s(plans)}`, `${plans} plan${s(plans)}`)].filter(Boolean).join(t(" et ", " and "));
-              const ring = <svg className="tt-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" /><circle cx="18" cy="18" r="15" style={{ strokeDasharray: `${(pct / 100) * 94.2} 94.2` }} /></svg>;
-              // One tap brings the next open question to the decision card, which lights up.
-              return unsure.length > 0
-                ? <button type="button" className="tt-budget-trust" onClick={() => { setFirst(unsure[0].key); setLater((keys) => keys.filter((key) => key !== unsure[0].key)); setFlash(Date.now()); }}>
-                    {ring}<span><span className="tt-label">{t(`${toolCount - unsure.length} outil${s(toolCount - unsure.length)} sur ${toolCount} renseigné${s(toolCount - unsure.length)}`, `${toolCount - unsure.length} of ${toolCount} tools priced`)}</span><span className="tt-note">{t(`Estimation partielle : ${left} à confirmer`, `Partial estimate: ${left} to confirm`)}</span></span>
-                  </button>
-                : toolCount > 0 && <div className="tt-trust"><span className="tt-check tt-check--live" aria-hidden="true">{icon(Check)}</span><span><span className="tt-label">{t("Budget renseigné", "Budget recorded")}</span><p className="tt-note">{t("Selon les prix et formules renseignés.", "From the prices and plans recorded.")}</p></span></div>;
-            })()}</>; })()}
-        {converted && <p className="tt-note">{t(`Conversion en ${currency} au taux de référence du ${rateDate}.`, `Converted to ${currency} at the reference rate of ${rateDate}.`)}</p>}
-        {spend.length > 0 ? <>
-          {/* Molécule « part d'un total » : logo, nom, filet à la couleur du domaine, montant, pourcentage. */}
-          <ul className="tt-shares">{shown.map((line) => <li key={line.tool.id} className="tt-share" style={{ ["--c" as string]: areaColorOf.get(line.tool.id) || AREA_OTHER, ["--w" as string]: `${total > 0 ? (line.amount / total) * 100 : 0}%` }}>
-            <ToolLogo tool={line.tool} size={24} className="tt-logo-tile" />
-            <span className="tt-label tt-share-name">{line.tool.name}</span>
-            <span className="tt-share-bar" aria-hidden="true"><i /></span>
-            <span className="tt-amount">{format(line.amount)}</span>
-            <span className="tt-note">{total > 0 ? Math.round((line.amount / total) * 100) : 0} %</span>
-          </li>)}</ul>
-          {spend.length > shown.length && <button type="button" className="tt-share-more" onClick={() => setPriceAll(true)} aria-expanded={false}>
-            <span className="tt-logos" aria-hidden="true">{spend.slice(shown.length, shown.length + 3).map((line) => <ToolLogo key={line.tool.id} tool={line.tool} size={24} className="tt-logo-tile" />)}</span>
-            <span className="tt-label">{t(`+ ${spend.length - shown.length} autre${s(spend.length - shown.length)}`, `+ ${spend.length - shown.length} more`)}</span>
-            <span className="tt-amount">{format(otherAmount)}</span>
-          </button>}
-          {priceAll && spend.length > 4 && <TextLink onClick={() => setPriceAll(false)}>{t("Réduire", "Show less")}</TextLink>}
-        </> : !items.some(item => item.kind === "price" || item.kind === "freemium") && freeTools.length !== toolCount && <p className="tt-note">{t("Aucun abonnement payant renseigné.", "No paid plans recorded.")}</p>}
-        {freeTools.length > 0 && <div className="tt-budget-free">
-          {/* Free tools cost nothing, so they take one line: their logos side by side, the names for screen readers and on hover. */}
-          <ul className="tt-logos" data-free-tools="">{freeTools.slice(0, 6).map(tool => <li key={tool.id} title={tool.name}><ToolLogo tool={tool} size={24} className="tt-logo-tile" /><span className="sr-only">{tool.name}</span></li>)}{freeTools.length > 6 && <li className="tt-tag" title={freeTools.slice(6).map(tool => tool.name).join(", ")}>+{freeTools.length - 6}<span className="sr-only">{freeTools.slice(6).map(tool => tool.name).join(", ")}</span></li>}</ul>
-          <p className="tt-note">{t(`${freeTools.length} outil${s(freeTools.length)} gratuit${s(freeTools.length)} · sans coût ajouté`, `${freeTools.length} free tool${s(freeTools.length)} · no added cost`)}</p>
-        </div>}
-        {spend.length > 0 && items.some(item => item.kind === "price" || item.kind === "freemium") && <p className="tt-note">{t("Les outils à renseigner ne sont pas inclus dans ce montant.", "Tools awaiting a price or plan are not included in this amount.")}</p>}
-        {saved > 0 && <p className="tt-note tt-budget-gain">{t("Budget estimé allégé de ", "Estimated budget reduced by ")}<b className="tt-amount tt-gain" data-gain=""><span className="tt-bloom tt-bloom--on" aria-hidden="true" /><span>{format(saved)}</span></b>{t(" par mois.", " a month.")}</p>}
-      </article>
+      {/* The macro view, a design system component (src/ds/Budget, validated 06/11/2026). The slot only places it in the board.
+          Invoice cents stay visible; only a converted total is rounded (no false precision after a rate). */}
+      <div className="tt-slot" data-card="price">
+        <Budget lang={fr ? "fr" : "en"} tools={budgetTools} monthly={total > 0 ? format(converted ? Math.round(total) : total) : null} yearly={total > 0 ? format(converted ? Math.round(total * 12) : total * 12) : null}
+          saved={saved > 0 ? format(Math.round(saved)) : null}
+          lead={spend.length > 0 && total > 0 ? { name: spend[0].tool.name, share: Math.round((spend[0].amount / total) * 100) } : null}
+          unsure={{ prices: unsure.filter((item) => item.kind === "price").length, plans: unsure.filter((item) => item.kind === "freemium").length }}
+          rateDate={converted ? rateDate : null}
+          onConfirmNext={() => { if (!unsure[0]) return; setFirst(unsure[0].key); setLater((keys) => keys.filter((key) => key !== unsure[0].key)); setFlash(Date.now()); }}
+          onStart={() => { const next = unsure[0]; if (!next) return; setFirst(next.key); setLater((keys) => keys.filter((key) => key !== next.key)); requestAnimationFrame(() => document.getElementById("mf-now-title")?.scrollIntoView({ block: "center", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" })); }} />
+      </div>
       {/* 2. The one thing to do now, or the summary once everything is settled. */}
       {top ? <section key={`${top.key}-${flash}`} data-step={seatPlan ? "seats" : undefined} className="mf-card mf-now tt-decision" data-flash={flash ? "" : undefined} data-open="" aria-labelledby="mf-now-title" data-kind={top.kind}
         style={{ ["--a1" as string]: accentOf(top.tools[0]), ["--a2" as string]: accentOf(top.tools[1] || top.tools[0]) }}>
@@ -396,21 +345,12 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       </article>}
       {toolCount > 1 && (fit.length > 0 || !top || history) && <StackUsagePlay key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format}
         freeOnly={total === 0 && freeTools.length === toolCount} history={top ? history : undefined} onReviewTools={onReviewTools} />}
-      {toolCount > 1 && total > 0 && <article className="tt-split" data-card="split">
-        {/* Organisme « répartition », comme la planche : le total, la lecture, la barre, une ligne par domaine. */}
-        <div className="tt-head"><h2 className="tt-eyebrow">{t("Répartition", "Split")}</h2><span className="tt-amount">{format(total)}<small>{t("/mois", "/mo")}</small></span></div>
-        {spend.length > 0 && areas.length > 0 ? (() => {
-          const paid = [...areas].filter((area) => area.amount > 0).sort((x, y) => y.amount - x.amount);
-          const lead = paid[0];
-          const share = total > 0 ? Math.round((lead.amount / total) * 100) : 0;
-          const label = paid.map((area) => `${area.label} ${total > 0 ? Math.round((area.amount / total) * 100) : 0} %`).join(", ");
-          return <>
-            <h3 className="tt-title-m">{share >= 50 ? t(`${lead.label} prend ${share} % du budget.`, `${lead.label} takes ${share}% of the budget.`) : t(`${paid.length} domaines se partagent le budget.`, `${paid.length} areas share the budget.`)}</h3>
-            <div className="tt-split-bar" role="img" aria-label={label}>{paid.map((area) => <i key={area.id} style={{ ["--f" as string]: area.amount, ["--c" as string]: area.color }} />)}</div>
-            <ul className="tt-split-legend">{paid.map((area) => <li key={area.id} style={{ ["--c" as string]: area.color }}><i aria-hidden="true" /><span className="tt-label">{area.label}</span><span className="tt-amount">{format(area.amount)}</span></li>)}</ul>
-          </>;
-        })() : <p className="tt-text">{areas.length < 3 ? t("La répartition apparaît dès trois domaines dans votre stack.", "The split appears from three areas in your stack.") : t("Aucun coût connu à répartir pour l’instant.", "No known cost to spread yet.")}</p>}
-      </article>}
+      {/* Where the money goes, a design system component (src/ds/Split). The slot only places it in the board. */}
+      {toolCount > 1 && total > 0 && <div className="tt-slot" data-card="split">
+        <Split lang={fr ? "fr" : "en"} format={format} unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => tool.name)} rateDate={converted ? rateDate : null}
+          areas={areas.map((area) => ({ id: area.id, label: area.label, color: area.color, amount: area.amount, tools: (area.tools || []).map((row) => ({ ...row.tool, amount: row.amount })) }))}
+          />
+      </div>}
     </div>
   </section>;
 }

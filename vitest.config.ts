@@ -9,6 +9,8 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./src/test/setup.ts"],
     include: ["src/**/*.{test,spec}.{ts,tsx}"],
+    // Design system tests need a real browser: vitest.ds.config.ts.
+    exclude: ["src/ds/**/*.browser.test.ts", "node_modules/**"],
   },
   resolve: {
     alias: { "@/routes/detailPages": path.resolve(__dirname, "./src/routes/detailPages.client.ts"), "@": path.resolve(__dirname, "./src") },

@@ -1,0 +1,361 @@
+/* The Split card: where the money goes, area by area, then tool by tool. */
+
+.card {
+  display: grid;
+  gap: var(--tt-tile-gap);
+  align-content: start;
+  padding: var(--tt-tile-pad);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+  container-type: inline-size;
+}
+
+.eyebrow { composes: eyebrow from "../atoms.module.css"; }
+.titleM { composes: titleM from "../atoms.module.css"; }
+.text { composes: text from "../atoms.module.css"; }
+.note { composes: note from "../atoms.module.css"; }
+.label { composes: label from "../atoms.module.css"; }
+.unit { composes: unit from "../atoms.module.css"; }
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--tt-space-3);
+}
+
+.amount {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-amount-font);
+  letter-spacing: var(--tt-amount-tracking);
+  white-space: nowrap;
+}
+
+.reading {
+  order: 1;
+  display: grid;
+  gap: var(--tt-space-1);
+}
+
+/* Narrow card: one column, in reading order (reading, bar, areas). */
+.layout,
+.overview,
+.detail {
+  display: contents;
+}
+
+.ring {
+  display: none;
+}
+
+.ring svg {
+  position: absolute;
+  overflow: visible;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  animation: draw 900ms var(--tt-ease) both;
+}
+
+.ring circle {
+  cursor: pointer;
+  fill: none;
+  stroke: var(--c, var(--tt-ink));
+  stroke-width: 12;
+  transition: stroke-width var(--tt-dur-state) var(--tt-ease), transform var(--tt-dur-move) var(--tt-spring);
+}
+
+.ring:has(circle[data-on]) circle:not([data-on]) {
+  stroke-width: 5;
+}
+
+.ring circle[data-on] {
+  stroke-width: 14;
+  transform: translate(var(--dx, 0), var(--dy, 0));
+}
+
+.ringTotal {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: var(--tt-space-1);
+  text-align: center;
+  animation: settle var(--tt-dur-move) var(--tt-ease) both;
+}
+
+/* The ring draws itself in, then each new heart settles. */
+@keyframes draw {
+  from {
+    opacity: 0;
+    transform: rotate(-150deg) scale(0.92);
+  }
+}
+
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(var(--tt-space-1));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring svg,
+  .ringTotal { animation: none; }
+}
+
+.ringAmount {
+  color: var(--tt-ink);
+  white-space: nowrap;
+  font: var(--tt-title-l-font);
+  letter-spacing: var(--tt-title-l-tracking);
+}
+
+/* One bar, one segment per area, in the area's colour. The open area's segment stands full height;
+   the others thin down, keeping their true colour. */
+.bar {
+  order: 2;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--tt-space-1) * 0.75);
+  height: 10px;
+}
+
+.bar i {
+  flex: var(--f, 1);
+  min-width: 6px;
+  border-radius: var(--tt-r-pill);
+  background: var(--c, var(--tt-ink));
+  transform-origin: left;
+  height: 100%;
+  transition: height var(--tt-dur-state) var(--tt-ease);
+  animation: grow 900ms var(--tt-ease) both;
+}
+
+.bar:has(i[data-on]) i:not([data-on]) {
+  height: 4px;
+}
+
+/* Areas: one row each, opening on its tools. */
+.areas,
+.tools {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.area + .area {
+  border-top: 1px solid var(--tt-line);
+}
+
+.areaRow {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto auto 16px;
+  align-items: center;
+  gap: var(--tt-space-3);
+  width: 100%;
+  min-height: 48px;
+  padding: var(--tt-space-2) 0;
+  border: 0;
+  background: none;
+  color: var(--tt-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.areaRow:focus-visible {
+  border-radius: var(--tt-r-chip);
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 2px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--tt-r-round);
+  background: var(--c, var(--tt-ink));
+}
+
+.figures {
+  display: flex;
+  align-items: baseline;
+  gap: var(--tt-space-3);
+}
+
+/* Inter with tabular figures in both row types: one face per column of numbers. */
+.areaAmount {
+  font: var(--tt-label-font);
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Fixed width so amounts and shares of areas and tools fall on the same verticals. */
+.share {
+  display: inline-block;
+  width: 5ch;
+  font: var(--tt-note-font);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform var(--tt-dur-state) var(--tt-ease);
+}
+
+.areaRow[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+/* The tools of an open area, indented under its label. */
+.tools {
+  gap: var(--tt-space-2);
+  padding: 0 0 var(--tt-space-4) calc(10px + var(--tt-space-3));
+}
+
+/* Same right-hand columns as an area row; the last one stands in for the chevron. */
+.tool {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto auto 16px;
+  align-items: center;
+  gap: var(--tt-space-3);
+}
+
+.toolCell {
+  display: grid;
+  gap: var(--tt-space-1);
+  min-width: 0;
+}
+
+.toolBar {
+  display: none;
+}
+
+/* Two lines at most; the full name stays in the row's title and for screen readers. */
+.toolName {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--tt-ink);
+  font: var(--tt-text-font);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-wrap: balance;
+}
+
+/* On a phone the tool rows give the chevron's gutter back to the name. */
+@container (width < 480px) {
+  .tool {
+    grid-template-columns: 24px minmax(0, 1fr) auto auto;
+  }
+
+  .tools {
+    padding-left: 0;
+  }
+}
+
+.toolAmount {
+  font: var(--tt-text-font);
+  font-variant-numeric: tabular-nums;
+}
+
+.notes {
+  order: 4;
+  display: grid;
+  gap: var(--tt-space-1);
+}
+
+@keyframes grow {
+  from { transform: scaleX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar i { animation: none; }
+}
+
+.areas {
+  order: 3;
+}
+
+/* ── Wide card, last so it wins over the one-column rules above ── */
+
+/* Wide card: the overview on the left (reading, then the ring with the total at its heart), the detail on the right. */
+@container (width >= 600px) {
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--tt-space-10);
+    align-items: start;
+  }
+
+  .overview,
+  .detail {
+    display: grid;
+    gap: var(--tt-tile-gap);
+    align-content: start;
+  }
+
+  .ring {
+    position: relative;
+    display: grid;
+    place-items: center;
+    order: 2;
+    width: min(100%, 220px);
+    aspect-ratio: 1;
+    justify-self: center;
+  }
+
+  .bar {
+    display: none;
+  }
+}
+
+/* Who is inside a closed area, on a wide card: three logos, slightly overlapping. */
+.peek {
+  display: none;
+}
+
+@container (width >= 600px) {
+  .peek {
+    display: inline-flex;
+    justify-self: end;
+  }
+
+  .peek > * + * {
+    margin-left: calc(var(--tt-space-2) * -1);
+  }
+
+  .peek[data-hidden] {
+    visibility: hidden;
+  }
+}
+
+@container (width >= 600px) {
+  .toolBar {
+    display: block;
+    height: 3px;
+    overflow: hidden;
+    border-radius: var(--tt-r-pill);
+    background: var(--tt-tile-2);
+  }
+
+  .toolBar i {
+    display: block;
+    width: var(--w, 0%);
+    height: 100%;
+    border-radius: inherit;
+    background: var(--c, var(--tt-ink));
+    transform-origin: left;
+    animation: grow 700ms var(--tt-ease) both;
+  }
+}

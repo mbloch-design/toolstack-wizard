@@ -29,27 +29,28 @@ describe("StackFindings", () => {
     spend={[{ tool: tool("Workable"), amount: 257 }, { tool: tool("SysAid"), amount: 76 }]} areas={[{ id: "rh", label: "RH", amount: 257, color: "#2A78D6" }, { id: "it", label: "IT", amount: 76, color: "#EDA100" }, { id: "ia", label: "IA", amount: 0, color: "#6250D6" }]} fit={[]} items={items} saved={0} toReview={33} resolved={[]} onAddTool={vi.fn()} onReviewTools={vi.fn()} {...extra} /></MemoryRouter>);
 
   it("reads the price first, then one decision at a time", () => {
-    module([card("Canva"), card("Slack"), card("Notion")]);
-    expect(screen.getByRole("text", { name: "446 €" })).toBeTruthy();
+    module([card("Canva"), card("Slack"), card("Notion")], { toolCount: 5 });
+    expect(screen.getByText((_, el) => el?.tagName === "P" && el.textContent === "446 €/mois")).toBeTruthy();
     expect(screen.getByRole("heading", { name: "Prochaine décision" })).toBeTruthy();
     expect(screen.getByText("Payez-vous Canva ?")).toBeTruthy();
-    expect(screen.getByText("1 outil sur 4 renseigné")).toBeTruthy();
+    expect(screen.getByText("2 outils sur 5 renseignés")).toBeTruthy();
     expect(screen.getByLabelText("Étape 1 sur 3")).toBeTruthy();
   });
   it("labels incomplete costs as partial and shows a split for two areas", () => {
     const { container } = module([card("Figma"), card("Grammarly")], { total: 29, areas: [{ id: "create", label: "Créer", amount: 29, color: "blue" }, { id: "communicate", label: "Communiquer", amount: 0, color: "orange" }] });
-    expect(screen.getByText("Budget partiel renseigné")).toBeTruthy();
     expect(screen.getByText("2 outils sur 4 renseignés")).toBeTruthy();
+    expect(screen.getByText("Confirmer 2 formules")).toBeTruthy();
+    expect(screen.getByText("4 outils · 2 payants · 2 à préciser")).toBeTruthy();
     expect(screen.queryByText(/fiable à|Total exact/)).toBeNull();
-    expect(container.querySelector(".tt-split .tt-split-bar")).not.toBeNull();
+    expect(container.querySelector('[data-card="split"] [role="img"]')).not.toBeNull();
     expect(screen.queryByText(/dès trois domaines/)).toBeNull();
   });
   it("accounts for all four tools when only two have a paid cost", () => {
     const { container } = module([], { total: 41, spend: [{tool:tool("Motion Array"),amount:29},{tool:tool("Grammarly"),amount:12}], freeTools:[tool("Figma"),tool("Audacity")] });
-    expect(screen.getByText("2 outils gratuits · sans coût ajouté")).toBeTruthy();
+    expect(screen.getByText("4 outils · 2 payants · 2 gratuits")).toBeTruthy();
     expect(screen.getByText("Figma")).toBeTruthy();
     expect(screen.getByText("Audacity")).toBeTruthy();
-    expect(container.querySelectorAll("[data-free-tools] > li")).toHaveLength(2);
+    expect(container.querySelectorAll('[data-card="price"] li')).toHaveLength(4);
     expect(screen.queryByText(/autres/)).toBeNull();
   });
   it("does not invent a zero budget before the first plan is selected", () => {
@@ -87,11 +88,15 @@ describe("StackFindings", () => {
     expect(screen.getByText('Votre stack prend forme.')).toBeTruthy();
     fireEvent.click(screen.getByRole('button',{name:'Ajouter un autre outil'}));expect(add).toHaveBeenCalledOnce();
   });
-  it("shows the budget by area as in the planche: the reading, the bar, one line per area", () => {
-    const { container } = module([card("Canva")]);
-    expect(screen.getByRole("img", { name: "RH 58 %, IT 17 %" })).toBeTruthy();
-    expect(screen.getByText("RH prend 58 % du budget.")).toBeTruthy();
-    expect([...container.querySelectorAll(".tt-split-legend li .tt-label")].map((node) => node.textContent)).toEqual(["RH", "IT"]);
+  it("shows where the money goes: the reading, the bar, one row per paid area, the biggest open on its tools", () => {
+    const { container } = module([card("Canva")], { areas: [{ id: "rh", label: "RH", amount: 257, color: "#2A78D6", tools: [{ tool: tool("Workable"), amount: 257 }] }, { id: "it", label: "IT", amount: 76, color: "#EDA100", tools: [{ tool: tool("SysAid"), amount: 76 }] }, { id: "ia", label: "IA", amount: 0, color: "#6250D6" }] });
+    // The ring (wide card) and the bar (narrow card) carry the same reading; CSS shows one of them.
+    expect(screen.getAllByRole("img", { name: "RH 77\u00a0%, IT 23\u00a0%" })).toHaveLength(2);
+    expect(screen.getByRole("heading", { name: /^RH prend 77\s% du budget\.$/ })).toBeTruthy();
+    const rows = [...container.querySelectorAll('[data-card="split"] button[aria-expanded]')];
+    expect(rows.map((row) => row.textContent?.split(/\d/)[0])).toEqual(["RH", "IT"]);
+    expect(rows.map((row) => row.getAttribute("aria-expanded"))).toEqual(["true", "false"]);
+    expect(container.querySelector('[data-card="split"]')?.textContent).toContain("Workable");
   });
   it("shows a pair as two faces, each with what it saves, and tags the cheaper one", () => {
     const { container } = module([pair]);
@@ -130,7 +135,7 @@ describe("StackFindings", () => {
   it("drops the decision card once nothing is left, the saving stays on the price card", () => {
     const { container } = module([], { saved: 67, total: 379, toReview: 0 });
     expect(container.querySelector(".mf-now")).toBeNull();
-    expect(container.querySelector('[data-card="price"]')?.textContent).toMatch(/Budget estimé allégé de 67 € par mois/);
+    expect(container.querySelector('[data-card="price"]')?.textContent).toMatch(/Vous économisez déjà 67 € par mois\./);
   });
 });
 

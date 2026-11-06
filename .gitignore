@@ -71,3 +71,10 @@ skills-lock.json
 
 # Local design prototypes and execution ledgers
 .superpowers/
+# Storybook and visual tests
+/storybook-static/
+/visual/__local__/
+/visual/test-results/
+/.vitest-attachments/
+/src/ds/**/__screenshots__/
+/visual/review/

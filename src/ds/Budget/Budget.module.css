@@ -1,0 +1,205 @@
+/* The Budget card: total, the stack at a glance, how far the figure can be trusted. */
+
+.card {
+  display: grid;
+  gap: var(--tt-tile-gap);
+  align-content: start;
+  padding: var(--tt-tile-pad);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+  container-type: inline-size;
+}
+
+.eyebrow { composes: eyebrow from "../atoms.module.css"; }
+.figure { composes: figure from "../atoms.module.css"; }
+.unit { composes: unit from "../atoms.module.css"; }
+.text { composes: text from "../atoms.module.css"; }
+.strong { composes: strong from "../atoms.module.css"; }
+
+/* What the decisions already saved. The words stay in ink, in reading weight (the gain green is too light for text on the tile); the arrow carries the colour. */
+.gain {
+  composes: text from "../atoms.module.css";
+  display: flex;
+  align-items: flex-start;
+  gap: var(--tt-space-2);
+}
+
+/* On the first line of the sentence, even when it wraps: (line height 25.6 px - 18 px) / 2. */
+.gainMark {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: var(--tt-space-1);
+  fill: none;
+  stroke: var(--tt-gain-ink);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.titleM { composes: titleM from "../atoms.module.css"; }
+.label { composes: label from "../atoms.module.css"; }
+.note { composes: note from "../atoms.module.css"; }
+.primary { composes: primary from "../atoms.module.css"; }
+
+.total,
+.start {
+  display: grid;
+  gap: var(--tt-space-2);
+  justify-items: start;
+}
+
+.start {
+  gap: var(--tt-space-3);
+}
+
+/* A short last line breaks the shape of these two paragraphs: balance them. */
+.total .text,
+.start .text {
+  text-wrap: balance;
+}
+
+/* The stack: one row of logos, then what it is made of. */
+.stack {
+  display: grid;
+  gap: var(--tt-space-3);
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.more {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--tt-r-chip);
+  background: var(--tt-tile-2);
+  color: var(--tt-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+/* One row of logos: 8 and +N when the card is wide, 5 and +N on a phone. */
+.logos [data-narrow-only] {
+  display: none;
+}
+
+@container (width < 424px) {
+  .logos [data-wide-only] {
+    display: none;
+  }
+
+  .logos [data-narrow-only] {
+    display: grid;
+  }
+}
+
+/* Trust: a check when every price is known, otherwise a ring that opens the next question. */
+.trust {
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-3);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--tt-ink);
+  text-align: left;
+}
+
+button.trust {
+  margin: calc(var(--tt-space-2) * -1) calc(var(--tt-space-3) * -1);
+  padding: var(--tt-space-2) var(--tt-space-3);
+  border-radius: var(--tt-r-card);
+  cursor: pointer;
+  font: inherit;
+  transition: background-color var(--tt-dur-state) ease;
+}
+
+button.trust:hover {
+  background: var(--tt-tile-2);
+}
+
+button.trust:active {
+  transform: scale(0.99);
+}
+
+.chevron {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+button.trust:focus-visible {
+  border-radius: var(--tt-r-chip);
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 3px;
+}
+
+.trustText {
+  display: grid;
+  gap: var(--tt-space-1);
+}
+
+.ring {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  transform: rotate(-90deg);
+}
+
+.ring circle {
+  fill: none;
+  stroke: var(--tt-meta);
+  stroke-width: 4;
+}
+
+.ring circle + circle {
+  stroke: var(--tt-live);
+  stroke-linecap: round;
+}
+
+.check {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--tt-r-round);
+  background: var(--tt-live);
+  color: var(--tt-on-color);
+}
+
+.check svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

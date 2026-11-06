@@ -1,0 +1,128 @@
+/* The cut line, as validated on the planche: ink for what stays, orange dashes for what is at stake,
+   the sign's scissors at the border. --cut is the share at stake (0 to 1). */
+
+.gauge {
+  display: grid;
+  gap: var(--tt-space-2);
+}
+
+.line {
+  --cut: 0.5;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: calc((1 - var(--cut)) * 100%) 0 1fr;
+  align-items: end;
+  height: 30px;
+  padding-bottom: calc(var(--tt-space-1) * 1.5);
+}
+
+.keep {
+  height: 3px;
+  border-radius: var(--tt-r-pill) 0 0 var(--tt-r-pill);
+  background: var(--tt-ink);
+}
+
+.cut {
+  height: 3px;
+  background: repeating-linear-gradient(90deg, var(--tt-overlap) 0 var(--tt-dash), transparent var(--tt-dash) calc(var(--tt-dash) + var(--tt-dash-gap)));
+  transform-origin: left;
+  animation: grow 1.1s var(--tt-ease) both;
+}
+
+.mark {
+  position: relative;
+  z-index: 1;
+  align-self: stretch;
+  width: 0;
+}
+
+.mark::after {
+  position: absolute;
+  bottom: -4px;
+  left: -0.5px;
+  width: 1px;
+  height: 11px;
+  background: var(--tt-brand-mark);
+  content: "";
+}
+
+.mark svg {
+  position: absolute;
+  top: -2px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  fill: var(--tt-brand-mark);
+  transform: rotate(90deg);
+}
+
+.blade {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+}
+
+.legend {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--tt-space-1) var(--tt-space-3);
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-note-font);
+}
+
+.review {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-1);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--tt-ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+/* A larger target and the hover fill, around the words without moving them. */
+.review::before {
+  position: absolute;
+  z-index: -1;
+  inset: calc(var(--tt-space-3) * -1) calc(var(--tt-space-2) * -1);
+  border-radius: var(--tt-r-chip);
+  content: "";
+  transition: background-color var(--tt-dur-state) ease;
+}
+
+.review:hover::before {
+  background: var(--tt-tile-2);
+}
+
+.review:focus-visible {
+  outline: none;
+}
+
+.review:focus-visible::before {
+  outline: 2px solid var(--tt-focus);
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes grow {
+  from { transform: scaleX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cut { animation: none; }
+}

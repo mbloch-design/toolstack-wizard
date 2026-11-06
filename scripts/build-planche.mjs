@@ -25,6 +25,8 @@ export function buildPlanche({
   behaviour = readFileSync(join(ROOT, "src/styles/tooltrim-system.js"), "utf8"),
   out = join(ROOT, "design-system/dist/systeme-tooltrim.html"),
 } = {}) {
+  // The tokens live in src/ds/tokens.css since 06/11/2026: inline them, the planche is one file.
+  system = system.replace('@import "../ds/tokens.css";', () => readFileSync(join(ROOT, "src/ds/tokens.css"), "utf8"));
   const font = readFileSync(join(ROOT, "public/fonts/UncutSans-Variable.woff2")).toString("base64");
   for (const marker of ["/*@tooltrim-system*/", "/*@tooltrim-system-js*/", "/*@font:uncut*/"]) {
     if (!src.includes(marker)) throw new Error(`Marqueur absent de la planche : ${marker}`);
