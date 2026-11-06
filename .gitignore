@@ -75,3 +75,4 @@ skills-lock.json
 /visual/test-results/
 /.vitest-attachments/
 /src/ds/**/__screenshots__/
+/visual/review/
