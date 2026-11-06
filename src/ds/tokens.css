@@ -176,3 +176,27 @@
   --tt-logo-tile: #FFFFFF;
   --tt-logo-tile-ink: #1D1D1F;
 }
+
+/* ── Couleurs des domaines (déplacées d'index.css le 06/11/2026, valeurs inchangées) ──
+   Une couleur par domaine de la stack, dans l'ordre des domaines ; « other » pour le reste.
+   index.css les lit par alias (--color-area-*). */
+:root {
+  --tt-area-1: #2A78D6;
+  --tt-area-2: #EDA100;
+  --tt-area-3: #6250D6;
+  --tt-area-4: #1BAF7A;
+  --tt-area-5: #E87BA4;
+  --tt-area-6: #008300;
+  --tt-area-other: #8E8E93;
+}
+
+@media (color-gamut: p3) {
+  :root {
+    --tt-area-1: oklch(0.575 0.195 255.5);
+    --tt-area-2: oklch(0.764 0.193 75.1);
+    --tt-area-3: oklch(0.527 0.236 283.4);
+    --tt-area-4: oklch(0.669 0.169 162.1);
+    --tt-area-5: oklch(0.716 0.169 357.4);
+    --tt-area-6: oklch(0.529 0.216 142.5);
+  }
+}
