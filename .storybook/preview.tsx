@@ -1,6 +1,7 @@
 import type { Decorator, Preview } from "@storybook/react-vite";
 import "./fonts.css";
 import "../src/ds/tokens.css";
+import { assertLayout } from "../src/ds/test/invariants";
 
 const withEnvironment: Decorator = (Story, context) => {
   const root = document.documentElement;
@@ -18,6 +19,11 @@ const preview: Preview = {
   },
   initialGlobals: { lang: "fr", theme: "light" },
   decorators: [withEnvironment],
+  // Every story, every state: no broken word, no amount split from its unit, nothing sticking out.
+  async afterEach({ canvasElement }) {
+    await document.fonts.ready;
+    assertLayout(canvasElement);
+  },
   parameters: {
     layout: "padded",
     a11y: { test: "error" },

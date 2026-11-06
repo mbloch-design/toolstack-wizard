@@ -113,7 +113,8 @@
     "audit:typo": "node scripts/audit-typo-ma-stack.mjs",
     "planche:check": "node scripts/check-planche.mjs",
     "storybook": "storybook dev -p 6006 --no-open",
-    "build-storybook": "storybook build -o storybook-static"
+    "build-storybook": "storybook build -o storybook-static",
+    "test:ds": "vitest run --config vitest.ds.config.ts"
   },
   "dependencies": {
     "@orama/orama": "^3.1.18",
