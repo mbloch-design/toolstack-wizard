@@ -42,7 +42,7 @@ describe("StackFindings", () => {
     expect(screen.getByText("Confirmer 2 formules")).toBeTruthy();
     expect(screen.getByText("4 outils · 2 payants · 2 à préciser")).toBeTruthy();
     expect(screen.queryByText(/fiable à|Total exact/)).toBeNull();
-    expect(container.querySelector(".tt-split .tt-split-bar")).not.toBeNull();
+    expect(container.querySelector('[data-card="split"] [role="img"]')).not.toBeNull();
     expect(screen.queryByText(/dès trois domaines/)).toBeNull();
   });
   it("accounts for all four tools when only two have a paid cost", () => {
@@ -88,11 +88,15 @@ describe("StackFindings", () => {
     expect(screen.getByText('Votre stack prend forme.')).toBeTruthy();
     fireEvent.click(screen.getByRole('button',{name:'Ajouter un autre outil'}));expect(add).toHaveBeenCalledOnce();
   });
-  it("shows the budget by area as in the planche: the reading, the bar, one line per area", () => {
-    const { container } = module([card("Canva")]);
-    expect(screen.getByRole("img", { name: "RH 58 %, IT 17 %" })).toBeTruthy();
-    expect(screen.getByText("RH prend 58 % du budget.")).toBeTruthy();
-    expect([...container.querySelectorAll(".tt-split-legend li .tt-label")].map((node) => node.textContent)).toEqual(["RH", "IT"]);
+  it("shows where the money goes: the reading, the bar, one row per paid area, the biggest open on its tools", () => {
+    const { container } = module([card("Canva")], { areas: [{ id: "rh", label: "RH", amount: 257, color: "#2A78D6", tools: [{ tool: tool("Workable"), amount: 257 }] }, { id: "it", label: "IT", amount: 76, color: "#EDA100", tools: [{ tool: tool("SysAid"), amount: 76 }] }, { id: "ia", label: "IA", amount: 0, color: "#6250D6" }] });
+    // The ring (wide card) and the bar (narrow card) carry the same reading; CSS shows one of them.
+    expect(screen.getAllByRole("img", { name: "RH 77\u00a0%, IT 23\u00a0%" })).toHaveLength(2);
+    expect(screen.getByRole("heading", { name: /^RH prend 77\s% du budget\.$/ })).toBeTruthy();
+    const rows = [...container.querySelectorAll('[data-card="split"] button[aria-expanded]')];
+    expect(rows.map((row) => row.textContent?.split(/\d/)[0])).toEqual(["RH", "IT"]);
+    expect(rows.map((row) => row.getAttribute("aria-expanded"))).toEqual(["true", "false"]);
+    expect(container.querySelector('[data-card="split"]')?.textContent).toContain("Workable");
   });
   it("shows a pair as two faces, each with what it saves, and tags the cheaper one", () => {
     const { container } = module([pair]);

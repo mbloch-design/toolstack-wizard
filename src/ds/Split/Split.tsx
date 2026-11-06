@@ -1,5 +1,4 @@
 import { useId, useState, type CSSProperties } from "react";
-import CutGauge from "../CutGauge/CutGauge";
 import Logo from "../Logo/Logo";
 import styles from "./Split.module.css";
 
@@ -15,8 +14,6 @@ export type SplitProps = {
   unpriced: string[];
   /** Reference date of the currency conversion, already written out, when one took place. */
   rateDate: string | null;
-  /** Amount at stake in the duplicates, and the way to the decision. */
-  review: { amount: number; onReview: () => void } | null;
   /** Logos load from our own files only (Storybook, tests). */
   localLogosOnly?: boolean;
 };
@@ -28,8 +25,8 @@ const list = (names: string[], and: string) => {
   return shown.length > 1 ? `${shown.slice(0, -1).join(", ")} ${and} ${shown[shown.length - 1]}` : shown[0];
 };
 
-/** Where the money goes: by area, then tool by tool, with what is at stake. */
-export default function Split({ lang, areas, format, unpriced, rateDate, review, localLogosOnly = false }: SplitProps) {
+/** Where the money goes: by area, then tool by tool. */
+export default function Split({ lang, areas, format, unpriced, rateDate, localLogosOnly = false }: SplitProps) {
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
   const id = useId();
@@ -83,8 +80,10 @@ export default function Split({ lang, areas, format, unpriced, rateDate, review,
               let start = 0;
               return shown.map((area) => {
                 const length = total > 0 ? (area.amount / total) * circumference : 0;
+                // The open area's slice is pulled out of the ring, along the middle of its arc.
+                const middle = ((start + length / 2) / circumference) * 2 * Math.PI;
                 // A segment opens its area, like its row in the list (the list stays the keyboard path).
-                const arc = <circle key={area.id} cx="60" cy="60" r="50" style={{ "--c": area.color } as CSSProperties} data-on={open === area.id ? "" : undefined}
+                const arc = <circle key={area.id} cx="60" cy="60" r="50" style={{ "--c": area.color, "--dx": `${(Math.cos(middle) * 7).toFixed(2)}px`, "--dy": `${(Math.sin(middle) * 7).toFixed(2)}px` } as CSSProperties} data-on={open === area.id ? "" : undefined}
                   strokeDasharray={`${Math.max(length - gap, 1)} ${circumference}`} strokeDashoffset={-start} onClick={() => setOpen(area.id)} />;
                 start += length;
                 return arc;
@@ -110,7 +109,6 @@ export default function Split({ lang, areas, format, unpriced, rateDate, review,
       </div>
 
       <div className={styles.detail}>
-      {review && review.amount > 0 && <div className={styles.gauge}><CutGauge lang={lang} kept={Math.max(0, total - review.amount)} cut={Math.min(review.amount, total)} format={format} onReview={review.onReview} /></div>}
 
       <ul className={styles.areas}>
         {shown.map((area) => {

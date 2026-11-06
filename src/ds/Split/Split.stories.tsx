@@ -7,7 +7,6 @@ import { splitStates } from "./Split.fixtures";
 const meta: Meta<typeof Split> = {
   title: "Ma stack/Répartition",
   component: Split,
-  tags: ["a-valider"],
   decorators: [(Story) => <div style={{ maxWidth: 720 }}><Story /></div>],
 };
 export default meta;
@@ -20,7 +19,6 @@ export const ThreeAreas = state("threeAreas");
 export const TwelveTools = state("twelveTools");
 export const SevenAreas = state("sevenAreas");
 export const TinyArea = state("tinyArea");
-export const WithReview = state("withReview");
 export const Unpriced = state("unpriced");
 export const Converted = state("converted");
 export const Dollars = state("dollars");

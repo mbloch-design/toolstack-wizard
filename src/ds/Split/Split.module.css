@@ -40,7 +40,7 @@
   gap: var(--tt-space-1);
 }
 
-/* Narrow card: one column, in the validated order (reading, cut line, bar, areas). */
+/* Narrow card: one column, in reading order (reading, bar, areas). */
 .layout,
 .overview,
 .detail {
@@ -53,6 +53,7 @@
 
 .ring svg {
   position: absolute;
+  overflow: visible;
   inset: 0;
   width: 100%;
   height: 100%;
@@ -65,7 +66,7 @@
   fill: none;
   stroke: var(--c, var(--tt-ink));
   stroke-width: 12;
-  transition: stroke-width var(--tt-dur-state) var(--tt-ease);
+  transition: stroke-width var(--tt-dur-state) var(--tt-ease), transform var(--tt-dur-move) var(--tt-spring);
 }
 
 .ring:has(circle[data-on]) circle:not([data-on]) {
@@ -74,6 +75,7 @@
 
 .ring circle[data-on] {
   stroke-width: 14;
+  transform: translate(var(--dx, 0), var(--dy, 0));
 }
 
 .ringTotal {
@@ -114,7 +116,7 @@
 /* One bar, one segment per area, in the area's colour. The open area's segment stands full height;
    the others thin down, keeping their true colour. */
 .bar {
-  order: 3;
+  order: 2;
   display: flex;
   align-items: center;
   gap: calc(var(--tt-space-1) * 0.75);
@@ -134,12 +136,6 @@
 
 .bar:has(i[data-on]) i:not([data-on]) {
   height: 4px;
-}
-
-/* The cut line is its own block: more room before the bar. */
-.gauge {
-  order: 2;
-  padding-bottom: var(--tt-space-2);
 }
 
 /* Areas: one row each, opening on its tools. */
@@ -273,6 +269,7 @@
 }
 
 .notes {
+  order: 4;
   display: grid;
   gap: var(--tt-space-1);
 }
@@ -286,7 +283,7 @@
 }
 
 .areas {
-  order: 4;
+  order: 3;
 }
 
 /* ── Wide card, last so it wins over the one-column rules above ── */

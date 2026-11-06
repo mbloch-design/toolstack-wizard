@@ -5,6 +5,7 @@ import { Fragment, useCallback, useEffect, useRef, useState, type ReactNode } fr
 import { Rocket, UserRound, Moon, Zap, Check, ClipboardCheck, Flame, Plus, Scale, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import Budget, { type BudgetTool } from "@/ds/Budget/Budget";
+import Split from "@/ds/Split/Split";
 import { Link } from "@/lib/routerLinks";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
@@ -343,21 +344,12 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       </article>}
       {toolCount > 1 && (fit.length > 0 || !top || history) && <StackUsagePlay key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format}
         freeOnly={total === 0 && freeTools.length === toolCount} history={top ? history : undefined} onReviewTools={onReviewTools} />}
-      {toolCount > 1 && total > 0 && <article className="tt-split" data-card="split">
-        {/* Organisme « répartition », comme la planche : le total, la lecture, la barre, une ligne par domaine. */}
-        <div className="tt-head"><h2 className="tt-eyebrow">{t("Répartition", "Split")}</h2><span className="tt-amount">{format(total)}<small>{t("/mois", "/mo")}</small></span></div>
-        {spend.length > 0 && areas.length > 0 ? (() => {
-          const paid = [...areas].filter((area) => area.amount > 0).sort((x, y) => y.amount - x.amount);
-          const lead = paid[0];
-          const share = total > 0 ? Math.round((lead.amount / total) * 100) : 0;
-          const label = paid.map((area) => `${area.label} ${total > 0 ? Math.round((area.amount / total) * 100) : 0} %`).join(", ");
-          return <>
-            <h3 className="tt-title-m">{share >= 50 ? t(`${lead.label} prend ${share} % du budget.`, `${lead.label} takes ${share}% of the budget.`) : t(`${paid.length} domaines se partagent le budget.`, `${paid.length} areas share the budget.`)}</h3>
-            <div className="tt-split-bar" role="img" aria-label={label}>{paid.map((area) => <i key={area.id} style={{ ["--f" as string]: area.amount, ["--c" as string]: area.color }} />)}</div>
-            <ul className="tt-split-legend">{paid.map((area) => <li key={area.id} style={{ ["--c" as string]: area.color }}><i aria-hidden="true" /><span className="tt-label">{area.label}</span><span className="tt-amount">{format(area.amount)}</span></li>)}</ul>
-          </>;
-        })() : <p className="tt-text">{areas.length < 3 ? t("La répartition apparaît dès trois domaines dans votre stack.", "The split appears from three areas in your stack.") : t("Aucun coût connu à répartir pour l’instant.", "No known cost to spread yet.")}</p>}
-      </article>}
+      {/* Where the money goes, a design system component (src/ds/Split). The slot only places it in the board. */}
+      {toolCount > 1 && total > 0 && <div className="tt-slot" data-card="split">
+        <Split lang={fr ? "fr" : "en"} format={format} unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => tool.name)} rateDate={converted ? rateDate : null}
+          areas={areas.map((area) => ({ id: area.id, label: area.label, color: area.color, amount: area.amount, tools: (area.tools || []).map((row) => ({ ...row.tool, amount: row.amount })) }))}
+          />
+      </div>}
     </div>
   </section>;
 }
