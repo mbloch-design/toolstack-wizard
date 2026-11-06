@@ -624,3 +624,48 @@ Storybook en ligne (A8) ou, d'ici là, captures envoyées. Après son accord : s
 ### Tâche B7 : intégration et retrait
 
 `StackFindings` rend `<Budget>` à la place du bloc `data-card="price"` en calculant ses props (outils, totaux, `lead`, `unsure`, `rateDate`). La liste des parts quitte la carte. On retire les règles qui ne servent plus à personne (`tt-budget-*` ; `tt-trust` et `tt-ring` si plus personne ne les lit). `tt-share` et `tt-shares` restent jusqu'à la migration de la Répartition. Contrôles : `typecheck`, `npm test`, `test:ma-stack`, tests de StackFindings mis à jour, captures de la page en FR et EN, budget du build.
+
+---
+
+## Partie C : la Répartition
+
+### C1 : brief (validé par Michael le 06/11/2026)
+
+1. **Rôle** : montrer où va l'argent. C'est la vue détaillée qui suit la vue d'ensemble du Budget : par domaine d'abord, puis outil par outil, avec ce qui est en jeu (jauge Gardé / À examiner).
+2. **États** :
+   - un seul domaine ;
+   - 2 à 5 domaines ;
+   - 6 domaines ou plus (au-delà de 5, les plus petits regroupés en « Autres ») ;
+   - avec ou sans montant à examiner ;
+   - outils sans prix (signalés, hors calcul) ;
+   - conversion de devise.
+3. **Données extrêmes** :
+   - 1 outil à 100 % ;
+   - 12 outils sur 5 domaines ;
+   - un domaine à 1 % ;
+   - « Microsoft Dynamics 365 Finance and Operations » ;
+   - de 0,99 à 1 100, en € et en $.
+4. **Humour** : une ligne sous le titre, selon la concentration.
+5. **Actions** : chaque domaine s'ouvre sur ses outils (montant, part du total), un seul à la fois, le plus gros ouvert d'office ; la jauge mène à la décision du doublon.
+
+Choix validés : **A**, le détail par outil vit dans des domaines qui s'ouvrent ; **B**, la jauge se place en tête, sous le titre.
+
+### Contrat
+
+```ts
+export type SplitTool = { id: string; name: string; slug?: string; logo?: string; amount: number };
+export type SplitArea = { id: string; label: string; color: string; amount: number; tools: SplitTool[] };
+export type SplitProps = {
+  lang: "fr" | "en";
+  areas: SplitArea[];                  // the component sorts them and groups the 6th onwards into « Autres »
+  format: (amount: number) => string;  // the site's formatter, in the display currency
+  unpriced: number;                    // tools without a price, left out of the figures
+  rateDate: string | null;
+  review: { amount: number; onReview: () => void } | null; // amount at stake in the duplicates
+  localLogosOnly?: boolean;
+};
+```
+
+La jauge devient un composant du système (`src/ds/CutGauge`), avec le dessin validé : encre pour ce qu'on garde, pointillé orange pour ce qui est à examiner, ciseaux du signe à la frontière. Les couleurs des domaines sont des jetons `--tt-area-*` (déplacés d'`index.css`, valeurs vérifiées identiques).
+
+Étapes : fixtures, stories (`a-valider`), composants, `lint:ds`, `test:ds`, captures, revue indépendante, validation de Michael, références, intégration dans `StackFindings` et retrait de `CutGauge.tsx` ainsi que des règles `tt-split*`, `tt-cutgauge*` et `tt-share*`.

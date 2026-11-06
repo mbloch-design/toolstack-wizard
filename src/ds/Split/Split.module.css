@@ -1,0 +1,176 @@
+/* The Split card: where the money goes, area by area, then tool by tool. */
+
+.card {
+  display: grid;
+  gap: var(--tt-tile-gap);
+  align-content: start;
+  padding: var(--tt-tile-pad);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+  container-type: inline-size;
+}
+
+.eyebrow { composes: eyebrow from "../atoms.module.css"; }
+.titleM { composes: titleM from "../atoms.module.css"; }
+.text { composes: text from "../atoms.module.css"; }
+.note { composes: note from "../atoms.module.css"; }
+.label { composes: label from "../atoms.module.css"; }
+.unit { composes: unit from "../atoms.module.css"; }
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--tt-space-3);
+}
+
+.amount {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-amount-font);
+  letter-spacing: var(--tt-amount-tracking);
+  white-space: nowrap;
+}
+
+.reading {
+  display: grid;
+  gap: var(--tt-space-1);
+}
+
+/* One bar, one segment per area, in the area's colour. */
+.bar {
+  display: flex;
+  gap: calc(var(--tt-space-1) * 0.75);
+  height: 10px;
+}
+
+.bar i {
+  flex: var(--f, 1);
+  min-width: 6px;
+  border-radius: var(--tt-r-pill);
+  background: var(--c, var(--tt-ink));
+  transform-origin: left;
+  transition: opacity var(--tt-dur-state) ease;
+  animation: grow 900ms var(--tt-ease) both;
+}
+
+.bar:has(i[data-on]) i:not([data-on]) {
+  opacity: 0.35;
+}
+
+/* Areas: one row each, opening on its tools. */
+.areas,
+.tools {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.area + .area {
+  border-top: 1px solid var(--tt-line);
+}
+
+.areaRow {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto 16px;
+  align-items: center;
+  gap: var(--tt-space-3);
+  width: 100%;
+  min-height: 48px;
+  padding: var(--tt-space-2) 0;
+  border: 0;
+  background: none;
+  color: var(--tt-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.areaRow:focus-visible {
+  border-radius: var(--tt-r-chip);
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 2px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--tt-r-round);
+  background: var(--c, var(--tt-ink));
+}
+
+.figures {
+  display: flex;
+  align-items: baseline;
+  gap: var(--tt-space-3);
+}
+
+.areaAmount {
+  font: var(--tt-amount-font);
+  letter-spacing: var(--tt-amount-tracking);
+}
+
+/* Fixed width so amounts and shares of areas and tools fall on the same verticals. */
+.share {
+  display: inline-block;
+  width: 5ch;
+  font: var(--tt-note-font);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform var(--tt-dur-state) var(--tt-ease);
+}
+
+.areaRow[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+/* The tools of an open area, indented under its label. */
+.tools {
+  gap: var(--tt-space-2);
+  padding: 0 0 var(--tt-space-4) calc(10px + var(--tt-space-3));
+}
+
+/* Same right-hand columns as an area row; the last one stands in for the chevron. */
+.tool {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto auto 16px;
+  align-items: center;
+  gap: var(--tt-space-3);
+}
+
+.toolName {
+  color: var(--tt-ink);
+  font: var(--tt-text-font);
+  text-wrap: balance;
+}
+
+.toolAmount {
+  font: var(--tt-text-font);
+  font-variant-numeric: tabular-nums;
+}
+
+.notes {
+  display: grid;
+  gap: var(--tt-space-1);
+}
+
+@keyframes grow {
+  from { transform: scaleX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar i { animation: none; }
+}
