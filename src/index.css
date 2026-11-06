@@ -23278,3 +23278,19 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
   .bo-inline-provenance strong { color: var(--color-text); font-weight: 550; }
   .bo-inline-provenance p { margin: 4px 0 0; }
 }
+
+@layer components {
+  .bo-catalog-record { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--space-md); }
+  .bo-catalog-record .bo-catalog-list-row { width: 100%; }
+  .bo-catalog-legacy { font: var(--tt-note-font); padding: var(--space-xs); }
+  .bo-inline { min-width: 0; }
+  .bo-inline-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md); padding: var(--space-md) 0; }
+  .bo-inline-toolbar p { font: var(--tt-note-font); color: var(--tt-ink); margin: 0; }
+  .bo-inline-content { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .bo-inline-issues { padding: var(--tt-tile-pad); border-radius: var(--tt-r-card); background: var(--tt-tile); margin-block: var(--space-md); }
+  .bo-inline-issues summary { cursor: pointer; font: var(--tt-label-font); }
+  .bo-inline-review-change { width: 100%; padding-block: var(--space-xs); }
+  .bo-inline-review-change > div { padding: var(--space-md); background: var(--tt-bg); border-radius: var(--tt-r-card); overflow-wrap: anywhere; }
+  .bo-inline-issues li { overflow-wrap: anywhere; }
+  @media (max-width: 600px) { .bo-catalog-record { grid-template-columns: minmax(0,1fr); gap: 0; } .bo-catalog-legacy { justify-self: end; } }
+}

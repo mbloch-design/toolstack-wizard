@@ -219,6 +219,11 @@ it("places complete typed authoring at the corresponding blocks of the actual fi
   expect(
     container.querySelector('#avis [data-catalog-path="toolTrimRating"]'),
   ).toBeTruthy();
+  // Advanced controls remain discoverable in place and mount on first opening.
+  for (const details of container.querySelectorAll<HTMLDetailsElement>("details.bo-inline-settings")) {
+    details.open = true;
+    fireEvent(details, new Event("toggle"));
+  }
   expect(
     container.querySelector(
       '#alternatives [data-catalog-path="migrationGuide"]',

@@ -14,6 +14,7 @@ vi.mock("@/lib/backofficeCatalogApi", () => ({
   discardCatalogDraft: api.discard,
   publishCatalogDrafts: api.publish,
 }));
+import { catalogCapabilities } from "@/lib/catalogPolicy";
 import { CatalogEditor } from "./CatalogEditor";
 const tool = {
   id: "notion",
@@ -53,6 +54,7 @@ const summary = {
   fields: ["shortDescription"],
 };
 const workspace = {
+  capabilities: catalogCapabilities({isAdmin:true}),
   revision: 0,
   tools: [
     { slug: "notion", name: "Notion", category: "productivity", draft: null },
@@ -121,18 +123,19 @@ it("reviews all saved drafts and publishes the reviewed global revision once", a
     revision: 5,
     drafts: [summary, { ...summary, slug: "figma", name: "Figma" }],
   });
+  api.detail.mockImplementation(async slug=>({...detail,tool:{...tool,slug},published:{...tool,slug},version:1,draft:{...summary,slug}}));
   render(<CatalogEditor />);
   fireEvent.click(
     await screen.findByRole("button", {
-      name: "Publier toutes les modifications (2)",
+      name: "Mettre en ligne (2)",
     }),
   );
   expect(
     screen.getByRole("button", {
-      name: "Publier toutes les modifications (2)",
+      name: "Mettre en ligne (2)",
     }),
   ).toHaveClass("tt-button-primary");
-  const review = screen.getByRole("region", {
+  const review = await screen.findByRole("region", {
     name: "Modifications à publier",
   });
   expect(within(review).getByText("Notion")).toBeVisible();

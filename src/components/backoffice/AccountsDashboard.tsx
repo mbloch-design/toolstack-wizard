@@ -18,6 +18,7 @@ import {
   ShieldAlert,
   Users,
 } from "@/lib/icons";
+import { CatalogDraftSession } from "./catalogDraftSession";
 import { CatalogEditor } from "./CatalogEditor";
 import { AccountDetailPanel } from "./AccountDetailPanel";
 import {
@@ -31,16 +32,29 @@ type View = "overview" | "users" | "stacks" | "usage" | "sources" | "catalog";
 export function AccountsDashboard({
   initialView = "users",
   onOpenHistory,
+  catalogSession: suppliedSession,
+  onCatalogDirtyChange,
+  onCatalogReauthenticate,
 }: {
+  catalogSession?: CatalogDraftSession;
+  onCatalogReauthenticate?: () => void;
+  onCatalogDirtyChange?: (dirty: boolean) => void;
   initialView?: View;
   onOpenHistory?: () => void;
 }) {
   const { lang, t } = useLang();
   const searchId = useId();
   const detailRegion = useRef<HTMLElement>(null);
-  const [view, setView] = useState<View>(initialView);
+  const [ownSession] = useState(() => new CatalogDraftSession());
+  const catalogSession = suppliedSession ?? ownSession;
+  const [view, setView] = useState<View>(() =>
+    new URLSearchParams(window.location.search).get("view") === "catalog" ? "catalog" : initialView);
   const [catalogDirty, setCatalogDirty] = useState(false);
   const [navigationError, setNavigationError] = useState(false);
+  useEffect(() => {
+    onCatalogDirtyChange?.(catalogDirty);
+    return () => onCatalogDirtyChange?.(false);
+  }, [catalogDirty, onCatalogDirtyChange]);
   const [input, setInput] = useState("");
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -162,9 +176,18 @@ export function AccountsDashboard({
       document.getElementById(`${searchId}-${closing}`)?.focus(),
     );
   };
-  const navigate = (next: View) => {
-    if (view === "catalog" && catalogDirty) { setNavigationError(true); return; }
-    setNavigationError(false); setView(next);
+  const navigate = async (next: View) => {
+    if (view === "catalog" && catalogDirty) {
+      if (!catalogSession.dirty) { setNavigationError(true); return; }
+      try { await catalogSession.flush(); }
+      catch { setNavigationError(true); return; }
+    }
+    const url = new URL(window.location.href);
+    url.searchParams.set("view", next);
+    if (next !== "catalog") { url.searchParams.delete("tool"); url.searchParams.delete("editor"); }
+    window.history.replaceState(window.history.state, "", url);
+    setNavigationError(false);
+    setView(next);
   };
   const openUser = (id: string) => {
     setView("users");
@@ -313,7 +336,7 @@ export function AccountsDashboard({
             {t("Actualiser", "Refresh")}
           </button>}
         </header>
-        {view === "catalog" && <CatalogEditor onDirtyChange={setCatalogDirty} />}
+        {view === "catalog" && <CatalogEditor onReauthenticate={onCatalogReauthenticate} session={catalogSession} onDirtyChange={setCatalogDirty} />}
         {(view === "overview" || view === "stacks") &&
           (overviewError ? (
             failure(overviewError, () => setReload((value) => value + 1))

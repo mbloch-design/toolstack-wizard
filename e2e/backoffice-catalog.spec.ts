@@ -91,10 +91,7 @@ for (const lang of ["fr", "en"] as const)
         })
         .click();
       const publish = page.getByRole("button", {
-        name:
-          lang === "fr"
-            ? "Publier toutes les modifications (2)"
-            : "Publish all changes (2)",
+        name: lang === "fr" ? "Mettre en ligne (2)" : "Publish (2)",
         exact: true,
       });
       await expect(publish).toBeEnabled();
@@ -145,10 +142,7 @@ for (const lang of ["fr", "en"] as const)
       );
       await expect(
         page.getByRole("button", {
-          name:
-            lang === "fr"
-              ? "Publier toutes les modifications (0)"
-              : "Publish all changes (0)",
+          name: lang === "fr" ? "Mettre en ligne (0)" : "Publish (0)",
           exact: true,
         }),
       ).toBeDisabled();
@@ -181,7 +175,7 @@ test("catalogue retains text on conflict and prevents leaving through workspace 
   await page.locator(".bo-account-toolbar .bo-signout").click();
   await expect(input).toHaveValue("Mes changements");
   await page.locator('a[href="/fr/tools"]').first().click();
-  await expect(page).toHaveURL(/\/fr\/back-office$/);
+  await expect(page).toHaveURL(/\/fr\/back-office(?:\?view=catalog)?$/);
   await expect(input).toHaveValue("Mes changements");
   await control(request, "fault", {
     path: "/api/backoffice-catalog",
@@ -223,7 +217,7 @@ test("browser Back and Forward preserve unsaved edits before returning to anothe
   const input = page.getByLabel("Description courte", { exact: true });
   await input.fill("Texte à préserver");
   await page.goBack();
-  await expect(page).toHaveURL(/\/fr\/back-office$/);
+  await expect(page).toHaveURL(/\/fr\/back-office(?:\?view=catalog)?$/);
   await expect(input).toHaveValue("Texte à préserver");
   await expect(page.locator(".bo-catalog [role=alert]")).toContainText(
     "enregistrées",
@@ -233,4 +227,148 @@ test("browser Back and Forward preserve unsaved edits before returning to anothe
     .click();
   await page.goBack();
   await expect(page).toHaveURL(/\/fr\/tools$/);
+});
+
+for (const lang of ["fr", "en"] as const)
+  for (const width of [390, 1440])
+    test(`direct fiche ${lang} ${width}: autosave, deep reopen and complete global review`, async ({
+      page,
+      request,
+    }) => {
+      await page.setViewportSize({ width, height: 1000 });
+      await control(request, "reset", {
+        users: [{ email: "admin@example.invalid" }],
+      });
+      await login(page, lang);
+      const direct = (name: string) =>
+        page.getByRole("button", {
+          name: `${lang === "fr" ? "Édition directe" : "Direct editing"} · ${name}`,
+          exact: true,
+        });
+      const input = () =>
+        page.getByLabel(
+          lang === "fr"
+            ? "Description courte · français"
+            : "Short Description · English",
+          { exact: true },
+        );
+      const back = () =>
+        page.getByRole("button", {
+          name: lang === "fr" ? "Retour aux fiches" : "Back to records",
+          exact: true,
+        });
+      await direct("Notion").click();
+      await expect(page).toHaveURL(
+        new RegExp(
+          `/${lang}/back-office\\?view=catalog&tool=notion&editor=inline`,
+        ),
+      );
+      // The route controls content language; the whole fiche shares the same controlled locale.
+      await input().fill(`Draft ${lang} Notion`);
+      await page
+        .getByLabel(lang === "fr" ? "Nom" : "Name", { exact: true })
+        .fill("Notion edited");
+      await expect(page.locator(".bo-inline-toolbar [role=status]")).toHaveText(
+        lang === "fr" ? "Brouillon enregistré" : "Draft saved",
+      );
+      await page.reload();
+      await expect(input()).toHaveValue(`Draft ${lang} Notion`);
+      await expect(page.locator(".td-hero-card")).toBeVisible();
+      await page
+        .locator(".bo-inline")
+        .screenshot({
+          path: test.info().outputPath(`direct-${lang}-${width}.png`),
+        });
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth,
+        ),
+      ).toBe(true);
+      await back().click();
+      await direct("Figma").click();
+      await input().fill(`Draft ${lang} Figma`);
+      // Publishing immediately must flush this pending edit, then include the Notion draft too.
+      await page
+        .getByRole("button", {
+          name: new RegExp(lang === "fr" ? "^Mettre en ligne" : "^Publish \\("),
+        })
+        .click();
+      const review = page.getByRole("region", {
+        name: lang === "fr" ? "Modifications à publier" : "Changes to publish",
+      });
+      await expect(review).toContainText("Notion edited");
+      await expect(review).toContainText("Figma");
+      const before = (await control(request, "state")).requests;
+      expect(
+        before.filter(
+          (r: { path: string; method: string }) =>
+            r.path === "/api/backoffice-catalog" && r.method === "POST",
+        ),
+      ).toHaveLength(0);
+      await review
+        .getByRole("button", {
+          name:
+            lang === "fr"
+              ? "Confirmer la publication de 2 fiches"
+              : "Confirm publication of 2 records",
+          exact: true,
+        })
+        .click();
+      await expect(page.locator(".bo-catalog > [role=status]")).toContainText(
+        lang === "fr"
+          ? "reconstruction du site doit encore"
+          : "site rebuild must finish",
+      );
+      const calls = (await control(request, "state")).requests.filter(
+        (r: { path: string; method: string }) =>
+          r.path === "/api/backoffice-catalog" && r.method === "POST",
+      );
+      expect(calls).toHaveLength(1);
+      expect(Object.keys(calls[0].input)).toEqual(["revision"]);
+      // Raw personal/catalogue drafts never gain another browser persistence copy.
+      expect(
+        await page.evaluate(() =>
+          Object.keys(localStorage).filter((k) =>
+            /catalog.*draft|draft.*catalog/i.test(k),
+          ),
+        ),
+      ).toEqual([]);
+    });
+
+test("direct fiche preserves pending text on autosave conflict and offers explicit recovery", async ({
+  page,
+  request,
+}) => {
+  await control(request, "reset", {
+    users: [{ email: "admin@example.invalid" }],
+  });
+  await login(page, "fr");
+  await page
+    .getByRole("button", { name: "Édition directe · Notion", exact: true })
+    .click();
+  await control(request, "fault", {
+    path: "/api/backoffice-catalog",
+    method: "PUT",
+    status: 409,
+    code: "CATALOG_DRAFT_CONFLICT",
+  });
+  const input = page.getByLabel("Description courte · français", {
+    exact: true,
+  });
+  await input.fill("Pending conflict text");
+  await expect(page.locator(".bo-inline .bo-catalog-feedback[role=alert]")).toContainText(
+    "changé ailleurs",
+  );
+  await expect(input).toHaveValue("Pending conflict text");
+  await page
+    .getByRole("button", { name: "Retour aux fiches", exact: true })
+    .click();
+  await expect(input).toHaveValue("Pending conflict text");
+  await page
+    .getByRole("button", { name: "Abandonner mes saisies", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Recharger la fiche", exact: true })
+    .click();
+  await expect(input).toHaveValue("Description française de test.");
 });

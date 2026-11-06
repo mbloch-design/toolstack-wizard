@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import { useLang } from "@/hooks/useLang";
 import { useCatalogExitGuard } from "./useCatalogExitGuard";
 import { Button as StackButton } from "@/components/stack/StackKit";
@@ -20,6 +26,14 @@ import {
   publishCatalogDrafts,
 } from "@/lib/backofficeCatalogApi";
 import { CatalogField, CatalogValue, catalogFieldLabel } from "./CatalogFields";
+
+import { CatalogDraftSession } from "./catalogDraftSession";
+import { CatalogInlineFiche } from "./CatalogInlineFiche";
+import {
+  catalogValidationIssues,
+  type CatalogValidationIssue,
+} from "@/lib/catalogValidation";
+import { catalogIssueMessage } from "./catalogEditingModel";
 
 const GROUPS = [
   {
@@ -81,10 +95,37 @@ const GROUPS = [
 ];
 export function CatalogEditor({
   onDirtyChange,
+  session: suppliedSession,
+  onReauthenticate,
 }: {
+  session?: CatalogDraftSession;
+  onReauthenticate?: () => void;
   onDirtyChange?: (dirty: boolean) => void;
 }) {
   const { lang, t } = useLang();
+  const [ownSession] = useState(() => new CatalogDraftSession());
+  const session = suppliedSession ?? ownSession;
+  useSyncExternalStore(session.subscribe, session.snapshot, session.snapshot);
+  const [inlineSlug, setInlineSlug] = useState<string | null>(null);
+  const [reviewDetails, setReviewDetails] = useState<
+    Record<string, CatalogEditorDetail>
+  >({});
+  const [reviewIssues, setReviewIssues] = useState<
+    Record<string, CatalogValidationIssue[]>
+  >({});
+  const reviewSequence = useRef(0);
+  const link = (slug: string | null) => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("view", "catalog");
+    if (slug) {
+      url.searchParams.set("tool", slug);
+      url.searchParams.set("editor", "inline");
+    } else {
+      url.searchParams.delete("tool");
+      url.searchParams.delete("editor");
+    }
+    window.history.replaceState(window.history.state, "", url);
+  };
   const [workspace, setWorkspace] = useState<CatalogWorkspace | null>(null),
     [query, setQuery] = useState(""),
     [search, setSearch] = useState(""),
@@ -104,9 +145,14 @@ export function CatalogEditor({
     [receipt, setReceipt] = useState<CatalogPublication | null>(null);
   const editorRef = useRef<HTMLElement>(null),
     requestId = useRef(0);
-  const dirty = Boolean(
+  const draftCount = new Set([
+    ...(workspace?.drafts.map((d) => d.slug) ?? []),
+    ...session.savedDrafts.map((d) => d.slug),
+  ]).size;
+  const legacyDirty = Boolean(
     detail && value && JSON.stringify(detail.tool) !== JSON.stringify(value),
   );
+  const dirty = legacyDirty || session.dirty;
   useEffect(() => {
     onDirtyChange?.(dirty);
     return () => onDirtyChange?.(false);
@@ -121,7 +167,7 @@ export function CatalogEditor({
       ),
     [t],
   );
-  useCatalogExitGuard(dirty, blockedExit);
+  useCatalogExitGuard(dirty, blockedExit, Boolean(suppliedSession));
   function message(error: unknown): string {
     const e = error as { status?: number; code?: string };
     if (e.code?.includes("UNCONFIGURED") || e.code?.includes("NOT_CONFIGURED"))
@@ -175,6 +221,125 @@ export function CatalogEditor({
     },
     [],
   );
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("editor") === "inline" && params.get("tool"))
+      void openInline(params.get("tool")!);
+  }, []);
+  async function openInline(slug: string) {
+    if (legacyDirty) {
+      blockedExit();
+      return;
+    }
+    const id = ++requestId.current;
+    setBusy(true);
+    setError("");
+    setReview(null);
+    try {
+      if (!session.get(slug)) await session.flush();
+      if (id !== requestId.current) return;
+      const result = await loadCatalogDetail(slug);
+      if (id !== requestId.current) return;
+      session.adopt(result);
+      setInlineSlug(slug);
+      setDetail(null);
+      setValue(null);
+      link(slug);
+    } catch (e) {
+      if (id === requestId.current) setError(message(e));
+    } finally {
+      if (id === requestId.current) setBusy(false);
+    }
+  }
+  async function reloadInline(removeDraft: boolean) {
+    if (!inlineSlug) return;
+    const entry = session.get(inlineSlug);
+    if (!entry || entry.saving) return;
+    const id = ++requestId.current;
+    setBusy(true);
+    setError("");
+    setReview(null);
+    try {
+      if (removeDraft) {
+        if (!entry.detail.capabilities?.canDiscardDraft) throw { status: 403 };
+        await discardCatalogDraft(inlineSlug, entry.detail.version);
+      }
+      const result = await loadCatalogDetail(inlineSlug);
+      if (id !== requestId.current) return;
+      session.adopt(result, true);
+      setReload((n) => n + 1);
+    } catch (e) {
+      if (id === requestId.current) setError(message(e));
+    } finally {
+      if (id === requestId.current) setBusy(false);
+    }
+  }
+  async function backToRecords() {
+    setBusy(true);
+    try {
+      await session.flush();
+      setInlineSlug(null);
+      link(null);
+      setReload((n) => n + 1);
+    } catch (e) {
+      setError(message(e));
+    } finally {
+      setBusy(false);
+    }
+  }
+  async function prepareReview() {
+    if (legacyDirty) {
+      blockedExit();
+      return;
+    }
+    setBusy(true);
+    setError("");
+    setReview(null);
+    try {
+      await session.flush();
+      const next = await loadCatalogWorkspace();
+      if (!next.capabilities?.canPublishAll) throw { status: 403 };
+      const grouped: Record<string, CatalogValidationIssue[]> = {};
+      const records: Record<string, CatalogEditorDetail> = {};
+      const pending = [...next.drafts];
+      await Promise.all(
+        Array.from({ length: Math.min(3, pending.length) }, async () => {
+          while (pending.length) {
+            const draft = pending.shift()!;
+            const d = await loadCatalogDetail(draft.slug);
+            if (d.tool.slug !== draft.slug || d.version !== draft.version)
+              throw { status: 409 };
+            records[draft.slug] = d;
+            grouped[draft.slug] = d.conflict
+              ? [
+                  {
+                    path: "",
+                    code: "SOURCE_CONFLICT",
+                    stage: "publish",
+                    severity: "error",
+                  },
+                ]
+              : catalogValidationIssues(d.published, d.tool);
+          }
+        }),
+      );
+      const current = await loadCatalogWorkspace();
+      if (
+        current.revision !== next.revision ||
+        current.headSha !== next.headSha
+      )
+        throw { status: 409 };
+      setWorkspace(current);
+      setReviewDetails(records);
+      setReviewIssues(grouped);
+      reviewSequence.current = session.snapshot();
+      setReview(current);
+    } catch (e) {
+      setError(message(e));
+    } finally {
+      setBusy(false);
+    }
+  }
   async function open(slug: string, replaceUnsaved = false) {
     if (dirty && !replaceUnsaved) {
       setError(
@@ -192,6 +357,8 @@ export function CatalogEditor({
     try {
       const result = await loadCatalogDetail(slug);
       if (id !== requestId.current) return;
+      setInlineSlug(null);
+      link(null);
       setDetail(result);
       setValue(result.tool);
       setGroup("content");
@@ -260,11 +427,23 @@ export function CatalogEditor({
   }
   async function publish() {
     if (!review || dirty || busy) return;
+    const id = ++requestId.current;
     setBusy(true);
     setError("");
     setNotice("");
     try {
+      await session.flush();
+      if (session.snapshot() !== reviewSequence.current) throw { status: 409 };
+      const current = await loadCatalogWorkspace();
+      if (
+        current.revision !== review.revision ||
+        current.headSha !== review.headSha
+      )
+        throw { status: 409 };
+      if (!current.capabilities?.canPublishAll) throw { status: 403 };
+      if (id !== requestId.current) return;
       const result = await publishCatalogDrafts(review.revision);
+      if (id !== requestId.current) return;
       setReceipt(result);
       setNotice(
         t(
@@ -273,7 +452,17 @@ export function CatalogEditor({
         ),
       );
       setReview(null);
+      session.clear();
       setReload((n) => n + 1);
+      if (inlineSlug) {
+        try {
+          const next = await loadCatalogDetail(inlineSlug);
+          if (id !== requestId.current) return;
+          session.adopt(next);
+        } catch {
+          /* Receipt stays valid. */
+        }
+      }
       if (detail) {
         try {
           const next = await loadCatalogDetail(detail.tool.slug);
@@ -328,16 +517,16 @@ export function CatalogEditor({
           variant="primary"
           type="button"
 
-          disabled={!workspace?.drafts.length || busy || dirty || listLoading}
-          onClick={() => {
-            setReview(workspace);
-            setError("");
-          }}
+          disabled={
+            (!draftCount && !session.dirty) ||
+            busy ||
+            legacyDirty ||
+            listLoading ||
+            !workspace?.capabilities?.canPublishAll
+          }
+          onClick={() => void prepareReview()}
         >
-          {t(
-            `Publier toutes les modifications (${workspace?.drafts.length ?? 0})`,
-            `Publish all changes (${workspace?.drafts.length ?? 0})`,
-          )}
+          {t(`Mettre en ligne (${draftCount})`, `Publish (${draftCount})`)}
         </StackButton>
       </div>
       {error && (
@@ -390,8 +579,8 @@ export function CatalogEditor({
           </h2>
           <p>
             {t(
-              "Toutes les fiches ci-dessous seront envoyées dans un seul commit. Les saisies non enregistrées sont exclues.",
-              "All records below will be sent in one commit. Unsaved edits are excluded.",
+              "Toutes les saisies sont enregistrées. Toutes les fiches ci-dessous seront transmises ensemble après vérification.",
+              "All edits are saved. Every record below will be transmitted together after review.",
             )}
           </p>
           <ul>
@@ -401,13 +590,39 @@ export function CatalogEditor({
                 <span>
                   {d.fields.map((f) => catalogFieldLabel(f, lang)).join(", ")}
                 </span>
+                {reviewDetails[d.slug] &&
+                  changedCatalogFields(
+                    reviewDetails[d.slug].published,
+                    reviewDetails[d.slug].tool,
+                  ).map((field) => (
+                    <details className="bo-inline-review-change" key={field}>
+                      <summary>{catalogFieldLabel(field, lang)}</summary>
+                      <div>
+                        <p>{t("Fiche publiée", "Published record")}</p>
+                        <CatalogValue
+                          value={reviewDetails[d.slug].published[field]}
+                        />
+                        <p>{t("Brouillon", "Draft")}</p>
+                        <CatalogValue
+                          value={reviewDetails[d.slug].tool[field]}
+                        />
+                      </div>
+                    </details>
+                  ))}
+                <ul>
+                  {reviewIssues[d.slug]?.map((i, n) => (
+                    <li key={n}>
+                      {i.path} · {catalogIssueMessage(i.code, lang)}
+                    </li>
+                  ))}
+                </ul>
                 <button
                   className="mk-link"
                   type="button"
                   disabled={busy}
                   onClick={() => {
                     setReview(null);
-                    void open(d.slug);
+                    void openInline(d.slug);
                   }}
                 >
                   {t("Relire la fiche", "Review record")}
@@ -420,7 +635,13 @@ export function CatalogEditor({
               variant="primary"
 
               type="button"
-              disabled={busy || dirty}
+              disabled={
+                busy ||
+                dirty ||
+                Object.values(reviewIssues)
+                  .flat()
+                  .some((i) => i.severity === "error")
+              }
               onClick={() => void publish()}
             >
               {t(
@@ -439,120 +660,158 @@ export function CatalogEditor({
           </div>
         </section>
       )}
-      <form
-        className="bo-search"
-        onSubmit={(event) => {
-          event.preventDefault();
-          setSearch(query.trim());
-          setPage(1);
-        }}
-      >
-        <div className="bo-search-field">
-          <Search size={18} aria-hidden />
-          <input
-            type="search"
-            aria-label={t("Rechercher une fiche", "Search records")}
-            placeholder={t("Rechercher une fiche…", "Search records…")}
-            value={query}
-            maxLength={200}
-            onChange={(event) => setQuery(event.target.value)}
-          />
-        </div>
-        <button
-          className="mk-button tt-button-secondary"
-          type="submit"
-          disabled={busy}
-        >
-          {t("Rechercher", "Search")}
-        </button>
-        <label className="bo-catalog-filter">
-          <input
-            type="checkbox"
-            checked={draftsOnly}
-            onChange={(event) => {
-              setDraftsOnly(event.target.checked);
+      {!inlineSlug && (
+        <>
+          <form
+            className="bo-search"
+            onSubmit={(event) => {
+              event.preventDefault();
+              setSearch(query.trim());
               setPage(1);
             }}
-          />
-          {t("Brouillons uniquement", "Drafts only")}
-        </label>
-        <button
-          className="mk-link"
-          type="button"
-          aria-label={t("Actualiser les fiches", "Refresh records")}
-          disabled={busy || listLoading}
-          onClick={() => {
-            setError("");
-            setReload((n) => n + 1);
-          }}
-        >
-          <RefreshCw size={18} />
-        </button>
-      </form>
-      {listLoading ? (
-        <p>{t("Chargement du catalogue…", "Loading catalogue…")}</p>
-      ) : (
-        workspace && (
-          <>
-            <div
-              className="bo-catalog-list"
-              aria-label={t("Fiches du catalogue", "Catalogue records")}
+          >
+            <div className="bo-search-field">
+              <Search size={18} aria-hidden />
+              <input
+                type="search"
+                aria-label={t("Rechercher une fiche", "Search records")}
+                placeholder={t("Rechercher une fiche…", "Search records…")}
+                value={query}
+                maxLength={200}
+                onChange={(event) => setQuery(event.target.value)}
+              />
+            </div>
+            <button
+              className="mk-button tt-button-secondary"
+              type="submit"
+              disabled={busy}
             >
-              {workspace.tools.map((tool) => (
-                <button
-                  type="button"
-                  className="bo-catalog-list-row"
-                  key={tool.slug}
-                  disabled={busy}
-                  aria-label={t(`Modifier ${tool.name}`, `Edit ${tool.name}`)}
-                  aria-current={
-                    detail?.tool.slug === tool.slug ? "true" : undefined
-                  }
-                  onClick={() => void open(tool.slug)}
+              {t("Rechercher", "Search")}
+            </button>
+            <label className="bo-catalog-filter">
+              <input
+                type="checkbox"
+                checked={draftsOnly}
+                onChange={(event) => {
+                  setDraftsOnly(event.target.checked);
+                  setPage(1);
+                }}
+              />
+              {t("Brouillons uniquement", "Drafts only")}
+            </label>
+            <button
+              className="mk-link"
+              type="button"
+              aria-label={t("Actualiser les fiches", "Refresh records")}
+              disabled={busy || listLoading}
+              onClick={() => {
+                setError("");
+                setReload((n) => n + 1);
+              }}
+            >
+              <RefreshCw size={18} />
+            </button>
+          </form>
+          {listLoading ? (
+            <p>{t("Chargement du catalogue…", "Loading catalogue…")}</p>
+          ) : (
+            workspace && (
+              <>
+                <div
+                  className="bo-catalog-list"
+                  aria-label={t("Fiches du catalogue", "Catalogue records")}
                 >
-                  <ToolLogo
-                    tool={{ slug: tool.slug, name: tool.name }}
-                    size={28}
-                  />
+                  {workspace.tools.map((tool) => (
+                    <div className="bo-catalog-record" key={tool.slug}>
+                      <button
+                        type="button"
+                        className="bo-catalog-list-row"
+                        disabled={busy}
+                        aria-label={t(
+                          `Édition directe · ${tool.name}`,
+                          `Direct editing · ${tool.name}`,
+                        )}
+                        aria-current={
+                          detail?.tool.slug === tool.slug ? "true" : undefined
+                        }
+                        onClick={() => void openInline(tool.slug)}
+                      >
+                        <ToolLogo
+                          tool={{ slug: tool.slug, name: tool.name }}
+                          size={28}
+                        />
+                        <span>
+                          <strong>{tool.name}</strong>
+                          <small>{tool.category}</small>
+                        </span>
+                        <span className="bo-caption">
+                          {tool.draft
+                            ? t("Brouillon", "Draft")
+                            : t("Publié", "Published")}
+                        </span>
+                      </button>
+                      <button
+                        type="button"
+                        className="mk-link bo-catalog-legacy"
+                        disabled={busy}
+                        aria-label={t(
+                          `Modifier ${tool.name}`,
+                          `Edit ${tool.name}`,
+                        )}
+                        onClick={() => void open(tool.slug)}
+                      >
+                        {t(
+                          "Ancien formulaire (temporaire)",
+                          "Legacy form (temporary)",
+                        )}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                {workspace.tools.length === 0 && (
+                  <p>{t("Aucune fiche trouvée.", "No records found.")}</p>
+                )}
+                <div className="bo-catalog-pagination">
                   <span>
-                    <strong>{tool.name}</strong>
-                    <small>{tool.category}</small>
+                    {workspace.total} {t("fiches", "records")} ·{" "}
+                    {t("Page", "Page")} {workspace.page}
                   </span>
-                  <span className="bo-caption">
-                    {tool.draft
-                      ? t("Brouillon", "Draft")
-                      : t("Publié", "Published")}
-                  </span>
-                </button>
-              ))}
-            </div>
-            {workspace.tools.length === 0 && (
-              <p>{t("Aucune fiche trouvée.", "No records found.")}</p>
-            )}
-            <div className="bo-catalog-pagination">
-              <span>
-                {workspace.total} {t("fiches", "records")} · {t("Page", "Page")}{" "}
-                {workspace.page}
-              </span>
-              <button
-                className="mk-link"
-                type="button"
-                disabled={page <= 1 || busy}
-                onClick={() => setPage((p) => p - 1)}
-              >
-                {t("Précédente", "Previous")}
-              </button>
-              <button
-                className="mk-link"
-                type="button"
-                disabled={page * workspace.pageSize >= workspace.total || busy}
-                onClick={() => setPage((p) => p + 1)}
-              >
-                {t("Suivante", "Next")}
-              </button>
-            </div>
-          </>
-        )
+                  <button
+                    className="mk-link"
+                    type="button"
+                    disabled={page <= 1 || busy}
+                    onClick={() => setPage((p) => p - 1)}
+                  >
+                    {t("Précédente", "Previous")}
+                  </button>
+                  <button
+                    className="mk-link"
+                    type="button"
+                    disabled={
+                      page * workspace.pageSize >= workspace.total || busy
+                    }
+                    onClick={() => setPage((p) => p + 1)}
+                  >
+                    {t("Suivante", "Next")}
+                  </button>
+                </div>
+              </>
+            )
+          )}
+        </>
+      )}
+      {inlineSlug && (
+        <CatalogInlineFiche
+          session={session}
+          slug={inlineSlug}
+          lang={lang}
+          onReauthenticate={onReauthenticate}
+          locked={busy || Boolean(review)}
+          onReload={() => void reloadInline(false)}
+          onRemoveDraft={() => void reloadInline(true)}
+          onBack={() => void backToRecords()}
+          onError={(e) => setError(message(e))}
+        />
       )}
       {detail && value && (
         <section
@@ -706,7 +965,10 @@ export function CatalogEditor({
                   )}
                 </p>
               )}
-              <fieldset disabled={busy} className="bo-catalog-fields">
+              <fieldset
+                disabled={busy || Boolean(review)}
+                className="bo-catalog-fields"
+              >
                 {fields.length ? (
                   fields.map((field) => (
                     <CatalogField

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Button as StackButton } from "@/components/stack/StackKit";
+import { CatalogDraftSession } from "@/components/backoffice/catalogDraftSession";
 import { AccountsDashboard } from "@/components/backoffice/AccountsDashboard";
 import type { Session } from "@supabase/supabase-js";
 import { useStackAccount } from "@/hooks/useStackAccount";
@@ -52,6 +53,7 @@ type TabId = "accounts" | "preprod" | "pilotage" | "sessions" | "emails" | "rest
 type RestitutionLike = Pick<BackofficeRestitution, "channel" | "summary" | "details" | "score_snapshot">;
 type PreprodCheckStatus = "ok" | "warning" | "fail";
 type AdminSession = {
+  userId: string;
   accessToken: string;
   email: string | null;
   expiresAt: string | null;
@@ -419,6 +421,7 @@ function parseTagsInput(input: string) {
 function toAdminSession(session: Session | null): AdminSession | null {
   if (!session?.access_token) return null;
   return {
+    userId: session.user.id || session.user.email || "",
     accessToken: session.access_token,
     email: session.user.email || null,
     expiresAt: typeof session.expires_at === "number"
@@ -439,6 +442,14 @@ export default function BackOfficePage() {
   const [adminEmailInput, setAdminEmailInput] = useState("");
   const [adminPasswordInput, setAdminPasswordInput] = useState("");
   const [adminSession, setAdminSession] = useState<AdminSession | null>(null);
+  const [catalogSession] = useState(() => new CatalogDraftSession());
+  const [catalogDirty, setCatalogDirty] = useState(false);
+  const acceptSession = useCallback((session: Session | null) => {
+    const next = toAdminSession(session);
+    if (next) catalogSession.setOwner(next.userId);
+    else catalogSession.suspend();
+    setAdminSession(next);
+  }, [catalogSession]);
   const [authLoading, setAuthLoading] = useState(false);
 
   const [dashboard, setDashboard] = useState<BackofficeDashboardResponse | null>(null);
@@ -475,15 +486,15 @@ export default function BackOfficePage() {
     localStorage.removeItem(LEGACY_SESSION_STORAGE_KEY);
 
     void supabase.auth.getSession().then(({ data }) => {
-      setAdminSession(toAdminSession(data.session));
+      acceptSession(data.session);
     });
 
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setAdminSession(toAdminSession(session));
+      acceptSession(session);
     });
 
     return () => listener.subscription.unsubscribe();
-  }, []);
+  }, [acceptSession]);
 
   const loadDashboard = useCallback(async () => {
     if (!adminSession || activeTab === "accounts") return;
@@ -880,18 +891,19 @@ export default function BackOfficePage() {
       }
       localStorage.removeItem(LEGACY_STORAGE_KEY);
       localStorage.removeItem(LEGACY_SESSION_STORAGE_KEY);
-      setAdminSession(toAdminSession(session));
+      acceptSession(session);
       setAdminPasswordInput("");
     } catch (e) {
       setError(e instanceof Error ? e.message : t("Connexion impossible", "Unable to sign in"));
     } finally {
       setAuthLoading(false);
     }
-  }, [adminEmailInput, adminPasswordInput, account, t]);
+  }, [adminEmailInput, adminPasswordInput, account, t, acceptSession]);
 
   const disconnect = useCallback(async (discardUnsaved = false) => {
     if (authLoading) return;
     setLogoutError(false);
+    if (catalogDirty && !discardUnsaved) { setLogoutPrompt(true); return; }
     if (account.enabled && account.hasUnsavedChanges && !discardUnsaved) {
       setLogoutPrompt(true);
       await account.signOut();
@@ -909,6 +921,8 @@ export default function BackOfficePage() {
         localStorage.removeItem(LEGACY_STORAGE_KEY);
         localStorage.removeItem(LEGACY_SESSION_STORAGE_KEY);
       } catch { setLogoutCleanupWarning(true); }
+      catalogSession.clear();
+      setCatalogDirty(false);
       setLogoutPrompt(false);
       setAdminSession(null);
       setDashboard(null);
@@ -917,7 +931,7 @@ export default function BackOfficePage() {
       setDetailError(null);
     } catch { setLogoutError(true); }
     finally { setAuthLoading(false); }
-  }, [account, authLoading]);
+  }, [account, authLoading, catalogDirty, catalogSession]);
 
   const saveSessionAdmin = useCallback(async () => {
     if (!adminSession || !detail?.session?.session_id) return;
@@ -1345,7 +1359,7 @@ export default function BackOfficePage() {
         <StackButton className="bo-signout" disabled={authLoading} onClick={() => void disconnect()} icon={<LogOut size={16} aria-hidden/>}>{t("Fermer", "Sign out")}</StackButton>
       </div>
       {logoutFeedback}
-      <AccountsDashboard key={adminSession.accessToken} initialView="overview" onOpenHistory={() => setActiveTab("preprod")}/>
+      <AccountsDashboard key={adminSession.userId} catalogSession={catalogSession} onCatalogReauthenticate={()=>{catalogSession.suspend();setAdminSession(null);}} onCatalogDirtyChange={setCatalogDirty} initialView="overview" onOpenHistory={() => setActiveTab("preprod")}/>
     </div>
   );
 

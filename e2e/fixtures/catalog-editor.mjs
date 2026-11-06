@@ -34,6 +34,7 @@ const initial = () =>
     seo: { metaDescription: "Meta de test" },
   }));
 export function catalogFixture() {
+  let capabilities;
   let tools = initial(),
     revision = 0;
   const drafts = new Map();
@@ -55,6 +56,7 @@ export function catalogFixture() {
       version: d?.version ?? 0,
       draft: d ? summary(d) : null,
       conflict: !!d && d.baseHash !== hash(t),
+      capabilities,
     };
   };
   return {
@@ -66,6 +68,10 @@ export function catalogFixture() {
     async handle({ req, url, input, user, server, send, fail, res }) {
       if (user.email !== "admin@example.invalid" || !user.email_confirmed_at)
         return fail(res, 403, "BACKOFFICE_FORBIDDEN");
+      const contract = await server.ssrLoadModule(
+        "/src/lib/backofficeCatalog.ts",
+      );
+      capabilities = contract.catalogCapabilities({ isAdmin: true });
       if (req.method === "GET" && url.searchParams.get("mode") !== "detail") {
         const search = (url.searchParams.get("search") ?? "").toLowerCase(),
           page = Number(url.searchParams.get("page") ?? 1);
@@ -78,14 +84,13 @@ export function catalogFixture() {
         );
         return send(res, 200, {
           revision,
-          tools: filtered
-            .slice((page - 1) * 25, page * 25)
-            .map((t) => ({
-              slug: t.slug,
-              name: t.name,
-              category: t.category,
-              draft: drafts.has(t.slug) ? summary(drafts.get(t.slug)) : null,
-            })),
+          capabilities,
+          tools: filtered.slice((page - 1) * 25, page * 25).map((t) => ({
+            slug: t.slug,
+            name: t.name,
+            category: t.category,
+            draft: drafts.has(t.slug) ? summary(drafts.get(t.slug)) : null,
+          })),
           drafts: [...drafts.values()].map(summary),
           total: filtered.length,
           page,
@@ -97,6 +102,12 @@ export function catalogFixture() {
         if (input.revision !== revision)
           return fail(res, 409, "CATALOG_REVISION_CONFLICT");
         if (!drafts.size) return fail(res, 400, "CATALOG_NO_DRAFTS");
+        try {
+          for (const d of drafts.values())
+            contract.validateCatalogPublication(d.base, d.value);
+        } catch {
+          return fail(res, 400, "INVALID_CATALOG_TOOL");
+        }
         const published = drafts.size;
         tools = tools.map((t) => drafts.get(t.slug)?.value ?? t);
         drafts.clear();
@@ -124,12 +135,12 @@ export function catalogFixture() {
       }
       if (input.baseHash !== hash(t))
         return fail(res, 409, "CATALOG_SOURCE_CONFLICT");
-      const { validateCatalogTool } = await server.ssrLoadModule(
+      const { validateCatalogDraft } = await server.ssrLoadModule(
         "/src/lib/backofficeCatalog.ts",
       );
       let value;
       try {
-        value = validateCatalogTool(t, input.value);
+        value = validateCatalogDraft(t, input.value, capabilities);
       } catch {
         return fail(res, 400, "INVALID_CATALOG_TOOL");
       }

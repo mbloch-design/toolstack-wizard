@@ -37,6 +37,12 @@
   overflow-wrap: anywhere;
   cursor: pointer;
 }
+/* The neutral default controls share the canonical planche atoms. Named public
+   and account appearances retain their existing, explicitly scoped rules. */
+.ui-button[data-appearance="default"] { font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); border-radius: var(--tt-r-pill); border-color: var(--tt-line); color: var(--tt-ink); background: var(--tt-tile); }
+.ui-button[data-appearance="default"][data-variant="primary"] { border-color: var(--tt-ink); background: var(--tt-ink); color: var(--tt-bg); }
+.ui-button[data-appearance="default"][data-variant="quiet"] { background: transparent; border-color: transparent; }
+
 .ui-button[data-size="compact"] { --ui-control-height: 40px; }
 .ui-button[data-variant="primary"] { border-color: var(--color-text); background: var(--color-text); color: var(--color-surface); }
 .ui-button[data-variant="quiet"] { border-color: transparent; background: transparent; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 30%, transparent); text-underline-offset: 3px; }
@@ -93,6 +99,7 @@
   overflow-wrap: anywhere;
   cursor: pointer;
 }
+.ui-input[data-appearance="default"], .ui-select[data-appearance="default"], .ui-textarea[data-appearance="default"] { font: var(--tt-text-font); color: var(--tt-ink); background: var(--tt-bg); border-color: var(--tt-line); }
 .ui-text-link[data-size="compact"] { min-height: 40px; }
 .ui-text-link[data-variant="danger"] { color: var(--color-alert); }
 

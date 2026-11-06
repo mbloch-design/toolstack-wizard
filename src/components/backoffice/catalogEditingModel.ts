@@ -565,7 +565,9 @@ export function catalogIssueMessage(
   code: string,
   lang: "fr" | "en" = "fr",
 ): string {
+  if(code.startsWith("PRICE_FALLBACK_"))return lang==='en'?"The displayed price uses a fallback value; check its source.":"Le prix affiché utilise une valeur de secours ; vérifiez sa source.";
   const messages: Record<string, [string, string]> = {
+    SOURCE_CONFLICT: ["La fiche publiée a changé. Revoir les modifications avant de continuer.", "The published record changed. Review the edits before continuing."],
     SOURCE_REQUIRED: [
       "Ajouter une source officielle.",
       "Add an official source.",

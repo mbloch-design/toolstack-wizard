@@ -1,0 +1,239 @@
+import { act, fireEvent, render, screen, within } from "@testing-library/react";
+import { beforeEach, expect, it, vi } from "vitest";
+const api = vi.hoisted(() => ({
+  list: vi.fn(),
+  detail: vi.fn(),
+  save: vi.fn(),
+  publish: vi.fn(),
+}));
+vi.mock("@/lib/backofficeCatalogApi", () => ({
+  loadCatalogWorkspace: api.list,
+  loadCatalogDetail: api.detail,
+  saveCatalogDraft: api.save,
+  discardCatalogDraft: vi.fn(),
+  publishCatalogDrafts: api.publish,
+}));
+vi.mock("@/hooks/useSupabaseData", async original => ({
+  ...(await original<typeof import("@/hooks/useSupabaseData")>()),
+  useToolSummaries: () => ({ tools: [], loading: false }),
+  useCategories: () => ({ categories: [{ id: "productivity", slug: "productivity", name: "Productivité", nameEn: "Productivity", tools: [] }], loading: false }),
+}));
+import { CatalogEditor } from "./CatalogEditor";
+import { catalogCapabilities } from "@/lib/catalogPolicy";
+const tool = {
+  id: "notion",
+  slug: "notion",
+  name: "Notion",
+  category: "productivity",
+  shortDescription: "Avant",
+};
+const caps = catalogCapabilities({ isAdmin: true });
+const detail = {
+  tool,
+  published: tool,
+  version: 0,
+  baseHash: "hash",
+  draft: null,
+  conflict: false,
+  capabilities: caps,
+};
+beforeEach(() => {
+  vi.resetAllMocks();
+  window.history.replaceState({}, "", "/fr/back-office");
+  api.list.mockResolvedValue({
+    revision: 0,
+    tools: [{ ...tool, draft: null }],
+    drafts: [],
+    total: 1,
+    page: 1,
+    pageSize: 25,
+    headSha: "head",
+    capabilities: caps,
+  });
+  api.detail.mockResolvedValue(detail);
+});
+it("makes the complete direct editor the primary record entry", async () => {
+  render(<CatalogEditor />);
+  expect(
+    await screen.findByRole("button", { name: "Édition directe · Notion" }),
+  ).toBeVisible();
+});
+
+it("ignores a detail response after the account workspace unmounts", async () => {
+  window.history.replaceState({}, "", "/fr/back-office?view=catalog&tool=notion&editor=inline");
+  let resolve!: (value: typeof detail) => void;
+  api.detail.mockReturnValue(new Promise(r => { resolve = r; }));
+  const session = new CatalogDraftSession(api.save);
+  const mounted = render(<CatalogEditor session={session} />);
+  await act(async () => {});
+  mounted.unmount();
+  await act(async () => resolve(detail));
+  expect(session.get("notion")).toBeUndefined();
+});
+
+import { MemoryRouter } from "react-router-dom";
+import { CatalogDraftSession } from "./catalogDraftSession";
+import { afterEach } from "vitest";
+afterEach(() => vi.useRealTimers());
+const draft = (slug: string, name = slug) => ({
+  slug,
+  name,
+  version: 1,
+  updatedAt: "now",
+  fields: ["shortDescription"],
+});
+it("opens saved raw data from the deep URL and denies absent capabilities", async () => {
+  window.history.replaceState(
+    {},
+    "",
+    "/fr/back-office?view=catalog&tool=notion&editor=inline",
+  );
+  api.detail.mockResolvedValue({
+    ...detail,
+    tool: { ...tool, shortDescription: "Persisted draft" },
+    draft: draft("notion"),
+    capabilities: undefined,
+  });
+  render(
+    <MemoryRouter>
+      <CatalogEditor />
+    </MemoryRouter>,
+  );
+  const field = await screen.findByLabelText("Description courte · français");
+  expect(field).toHaveValue("Persisted draft");
+  expect(field).toBeDisabled();
+  expect(
+    screen
+      .getAllByRole("alert")
+      .some((e) => e.textContent?.includes("ne permet pas")),
+  ).toBe(true);
+});
+it("flushes pending edits before reviewing every global draft outside the filtered list", async () => {
+  const session = new CatalogDraftSession(api.save);
+  session.adopt(detail);
+  session.change("notion", [{ path: ["shortDescription"], value: "Latest" }]);
+  const drafts = [draft("notion", "Notion"), draft("figma", "Figma")];
+  api.save.mockImplementation(async (input) => ({
+    ...detail,
+    tool: input.value,
+    version: 1,
+    draft: drafts[0],
+  }));
+  api.list.mockImplementation(async () => ({
+    revision: 5,
+    tools: [tool],
+    drafts,
+    total: 1,
+    page: 1,
+    pageSize: 25,
+    headSha: "h",
+    capabilities: caps,
+  }));
+  api.detail.mockImplementation(async (slug) => ({
+    ...detail,
+    tool: { ...tool, slug, name: slug === "notion" ? "Notion" : "Figma" },
+    published: { ...tool, slug, name: slug === "notion" ? "Notion" : "Figma" },
+    version: 1,
+    draft: draft(slug),
+  }));
+  render(<CatalogEditor session={session} />);
+  fireEvent.click(
+    await screen.findByRole("button", { name: "Mettre en ligne (2)" }),
+  );
+  const review = await screen.findByRole("region", {
+    name: "Modifications à publier",
+  });
+  expect(within(review).getByText("Notion")).toBeVisible();
+  expect(within(review).getByText("Figma")).toBeVisible();
+  expect(api.save.mock.calls[0][0].value.shortDescription).toBe("Latest");
+  expect(api.publish).not.toHaveBeenCalled();
+  fireEvent.click(
+    within(review).getByRole("button", {
+      name: "Confirmer la publication de 2 fiches",
+    }),
+  );
+  await act(async () => {});
+  expect(api.publish).toHaveBeenCalledWith(5);
+});
+it("requires a new review when the workspace revision changes and never sends a subset", async () => {
+  let revision = 5;
+  const d = draft("notion", "Notion");
+  api.list.mockImplementation(async () => ({
+    revision,
+    tools: [tool],
+    drafts: [d],
+    total: 1,
+    page: 1,
+    pageSize: 25,
+    headSha: "h",
+    capabilities: caps,
+  }));
+  api.detail.mockResolvedValue({ ...detail, version: 1, draft: d });
+  render(<CatalogEditor />);
+  fireEvent.click(
+    await screen.findByRole("button", { name: "Mettre en ligne (1)" }),
+  );
+  const review = await screen.findByRole("region", {
+    name: "Modifications à publier",
+  });
+  revision = 6;
+  fireEvent.click(
+    within(review).getByRole("button", {
+      name: "Confirmer la publication de 1 fiches",
+    }),
+  );
+  expect(await screen.findByRole("alert")).toHaveTextContent("modifié");
+  expect(api.publish).not.toHaveBeenCalled();
+  expect(
+    screen.queryByRole("region", { name: "Modifications à publier" }),
+  ).toBeNull();
+});
+it("keeps the global publish action available after an autosave without refetching the list", async () => {
+  const session = new CatalogDraftSession(api.save);
+  session.adopt(detail);
+  render(<CatalogEditor session={session} />);
+  await screen.findByRole("button", { name: "Édition directe · Notion" });
+  const requests = api.list.mock.calls.length;
+  api.save.mockResolvedValue({
+    ...detail,
+    tool: { ...tool, name: "Saved" },
+    version: 1,
+    draft: draft("notion", "Saved"),
+  });
+  await act(async () => {
+    session.change("notion", [{ path: ["name"], value: "Saved" }]);
+    await session.flush();
+  });
+  expect(
+    screen.getByRole("button", { name: "Mettre en ligne (1)" }),
+  ).toBeEnabled();
+  expect(api.list).toHaveBeenCalledTimes(requests);
+});
+it("shows the before and after values of grouped changes in the global review", async () => {
+  const d = draft("notion", "Notion");
+  api.list.mockResolvedValue({
+    revision: 2,
+    tools: [tool],
+    drafts: [d],
+    total: 1,
+    page: 1,
+    pageSize: 25,
+    headSha: "h",
+    capabilities: caps,
+  });
+  api.detail.mockResolvedValue({
+    ...detail,
+    tool: { ...tool, shortDescription: "New editorial text" },
+    version: 1,
+    draft: d,
+  });
+  render(<CatalogEditor />);
+  fireEvent.click(
+    await screen.findByRole("button", { name: "Mettre en ligne (1)" }),
+  );
+  const review = await screen.findByRole("region", {
+    name: "Modifications à publier",
+  });
+  expect(within(review).getByText("New editorial text")).toBeInTheDocument();
+  expect(within(review).getByText("Avant")).toBeInTheDocument();
+});

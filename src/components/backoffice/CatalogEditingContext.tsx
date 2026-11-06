@@ -1,4 +1,4 @@
-import { createContext, useContext, type ReactNode } from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 import { CATALOG_FIELD_REGISTRY } from "@/lib/catalogFieldRegistry";
 import type { CatalogEditingPresentation } from "@/lib/catalogEditingPresentation";
 import { CatalogFieldEditor } from "./CatalogFieldEditor";
@@ -35,6 +35,9 @@ function CatalogBlock({
   advanced?: boolean;
   omit?: string[];
 }) {
+  // Mount costly vocabularies only when requested. Keep mounted after closing so
+  // collection undo state and in-progress controls survive subsequent edits.
+  const [visited, setVisited] = useState(false);
   const content = (
     <div className="bo-inline-fields">
       {roots.map((root) => (
@@ -48,9 +51,11 @@ function CatalogBlock({
     </div>
   );
   return advanced ? (
-    <details className="bo-inline-settings">
+    <details className="bo-inline-settings" onToggle={(event) => {
+      if (event.currentTarget.open) setVisited(true);
+    }}>
       <summary>{title}</summary>
-      {content}
+      {visited && content}
     </details>
   ) : (
     <section className="bo-inline-block" aria-label={title}>

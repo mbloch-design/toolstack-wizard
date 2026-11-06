@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 /** BrowserRouter has no data-router blocker. Capture POP before its listener,
  * restore its indexed history entry, and keep the mounted editor untouched. */
-export function useCatalogExitGuard(dirty: boolean, onBlocked: () => void) {
+export function useCatalogExitGuard(dirty: boolean, onBlocked: () => void, parentGuardsSignOut = false) {
   useEffect(() => {
     if (!dirty) return;
     const state = window.history.state as { idx?: number } | null;
@@ -26,6 +26,7 @@ export function useCatalogExitGuard(dirty: boolean, onBlocked: () => void) {
       const signOut = (event.target as Element)?.closest?.(
         ".bo-account-toolbar .bo-signout",
       );
+      if(signOut && parentGuardsSignOut)return;
       if (
         !signOut &&
         (!(link instanceof HTMLAnchorElement) ||
@@ -65,5 +66,5 @@ export function useCatalogExitGuard(dirty: boolean, onBlocked: () => void) {
       document.removeEventListener("click", linkClick, true);
       window.removeEventListener("popstate", pop, true);
     };
-  }, [dirty, onBlocked]);
+  }, [dirty, onBlocked, parentGuardsSignOut]);
 }

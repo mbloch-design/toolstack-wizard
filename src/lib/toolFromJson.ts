@@ -80,4 +80,3 @@ export function mapToolFromJson(raw: unknown): Tool {
     toolTrimRating: t.toolTrimRating || null,
   });
 }
-
