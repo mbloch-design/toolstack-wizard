@@ -117,6 +117,11 @@ it("opens the actual deep-linked fiche and keeps focused pending input on TOKEN_
   expect(field).toHaveValue("Pending text");
 });
 it("recovers only the same user in memory through expiry and clears when another user logs in", async () => {
+  mocks.save.mockImplementation(async input => ({
+    tool: input.value, published: tool, version: 1, baseHash: "hash",
+    draft: { slug: "notion", name: "Notion", version: 1, updatedAt: "now", fields: ["shortDescription"] },
+    conflict: false, capabilities: catalogCapabilities({ isAdmin: true }),
+  }));
   const field = await mount();
   fireEvent.change(field, { target: { value: "Private text" } });
   await act(async () => notify("SIGNED_OUT", null));
@@ -125,6 +130,11 @@ it("recovers only the same user in memory through expiry and clears when another
   expect(screen.getByLabelText("Description courte · français")).toHaveValue(
     "Private text",
   );
+  await act(async () => { await vi.advanceTimersByTimeAsync(1000); });
+  expect(mocks.save).toHaveBeenCalledOnce();
+  expect(mocks.save.mock.calls[0][0].value.shortDescription).toBe("Private text");
+  await act(async () => { await vi.advanceTimersByTimeAsync(5000); });
+  expect(mocks.save).toHaveBeenCalledOnce();
   await act(async () => notify("SIGNED_OUT", null));
   await act(async () => notify("SIGNED_IN", auth("two")));
   expect(screen.getByLabelText("Description courte · français")).toHaveValue(

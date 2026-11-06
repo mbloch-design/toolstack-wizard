@@ -51,9 +51,21 @@ export class CatalogDraftSession {
     );
   }
   setOwner(id: string) {
+    const resume = !this.enabled && this.owner === id;
     if (this.owner && this.owner !== id) this.clear();
     this.owner = id;
     this.enabled = true;
+    if (resume) {
+      for (const [slug, e] of this.records) {
+        if (
+          !e.error && !e.detail.conflict && !e.active &&
+          e.detail.capabilities?.canSaveDraft && !equal(e.value, e.detail.tool)
+        ) {
+          clearTimeout(e.timer);
+          e.timer = setTimeout(() => void this.persist(slug).catch(() => {}), 1000);
+        }
+      }
+    }
     this.emit();
   }
   suspend() {

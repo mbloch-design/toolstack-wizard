@@ -237,3 +237,66 @@ it("shows the before and after values of grouped changes in the global review", 
   expect(within(review).getByText("New editorial text")).toBeInTheDocument();
   expect(within(review).getByText("Avant")).toBeInTheDocument();
 });
+
+it("retains the publication receipt and a usable list/deep-link retry after detail refresh fails", async () => {
+  window.history.replaceState({}, "", "/fr/back-office?view=catalog&tool=notion&editor=inline");
+  let published = false;
+  let rejectRefresh = true;
+  const edited = { ...tool, shortDescription: "Published copy" };
+  api.list.mockImplementation(async () => ({
+    revision: published ? 3 : 2, tools: [tool], drafts: published ? [] : [draft("notion", "Notion")],
+    total: 1, page: 1, pageSize: 25, headSha: "h", capabilities: caps,
+  }));
+  api.detail.mockImplementation(async () => {
+    if (published && rejectRefresh) { rejectRefresh = false; throw { status: 503 }; }
+    return { ...detail, tool: edited, published: published ? edited : tool,
+      version: published ? 0 : 1, draft: published ? null : draft("notion", "Notion") };
+  });
+  api.publish.mockImplementation(async () => {
+    published = true;
+    return { commitSha: "abc123", commitUrl: "https://example.test/commit/abc123", published: 1, cleanupPending: false };
+  });
+  render(<MemoryRouter><CatalogEditor /></MemoryRouter>);
+  await screen.findByLabelText("Description courte · français");
+  fireEvent.click(screen.getByRole("button", { name: "Mettre en ligne (1)" }));
+  const review = await screen.findByRole("region", { name: "Modifications à publier" });
+  fireEvent.click(within(review).getByRole("button", { name: "Confirmer la publication de 1 fiches" }));
+  expect(await screen.findByRole("link", { name: /Voir le commit/ })).toHaveAttribute("href", "https://example.test/commit/abc123");
+  const retry = await screen.findByRole("button", { name: "Édition directe · Notion" });
+  expect(new URLSearchParams(window.location.search).has("tool")).toBe(false);
+  expect(screen.getByRole("alert")).toHaveTextContent("fiche");
+  fireEvent.click(retry);
+  expect(await screen.findByLabelText("Description courte · français")).toHaveValue("Published copy");
+  expect(new URLSearchParams(window.location.search).get("tool")).toBe("notion");
+  fireEvent.click(screen.getByRole("button", { name: "Retour aux fiches" }));
+  expect(await screen.findByRole("button", { name: "Édition directe · Notion" })).toBeVisible();
+});
+
+it("preserves the searched draft-only page when global review is cancelled", async () => {
+  const drafts = [draft("notion", "Notion"), draft("figma", "Figma")];
+  api.list.mockImplementation(async params => ({
+    revision: 2, drafts, total: 2, pageSize: 1, headSha: "h", capabilities: caps,
+    page: params?.page ?? 1,
+    tools: params ? [{ ...tool, name: params.page === 2 ? "Notion page two" : "Notion" }]
+      : [tool, { ...tool, slug: "figma", name: "Figma" }],
+  }));
+  api.detail.mockImplementation(async slug => ({ ...detail,
+    tool: { ...tool, slug }, published: { ...tool, slug }, version: 1, draft: draft(slug),
+  }));
+  render(<CatalogEditor />);
+  const search = await screen.findByRole("searchbox", { name: "Rechercher une fiche" });
+  fireEvent.change(search, { target: { value: "Notion" } });
+  fireEvent.click(screen.getByRole("button", { name: "Rechercher" }));
+  fireEvent.click(screen.getByRole("checkbox", { name: "Brouillons uniquement" }));
+  fireEvent.click(await screen.findByRole("button", { name: "Suivante" }));
+  await screen.findByText("2 fiches · Page 2");
+  fireEvent.click(screen.getByRole("button", { name: "Mettre en ligne (2)" }));
+  const review = await screen.findByRole("region", { name: "Modifications à publier" });
+  expect(within(review).getByText("Figma")).toBeVisible();
+  fireEvent.click(within(review).getByRole("button", { name: "Annuler" }));
+  expect(screen.getByRole("searchbox")).toHaveValue("Notion");
+  expect(screen.getByRole("checkbox", { name: "Brouillons uniquement" })).toBeChecked();
+  expect(screen.getByText("2 fiches · Page 2")).toBeVisible();
+  expect(screen.getByRole("button", { name: "Édition directe · Notion page two" })).toBeVisible();
+  expect(screen.queryByRole("button", { name: "Édition directe · Figma" })).toBeNull();
+});

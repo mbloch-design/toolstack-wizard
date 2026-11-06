@@ -329,7 +329,6 @@ export function CatalogEditor({
         current.headSha !== next.headSha
       )
         throw { status: 409 };
-      setWorkspace(current);
       setReviewDetails(records);
       setReviewIssues(grouped);
       reviewSequence.current = session.snapshot();
@@ -460,7 +459,14 @@ export function CatalogEditor({
           if (id !== requestId.current) return;
           session.adopt(next);
         } catch {
-          /* Receipt stays valid. */
+          if (id !== requestId.current) return;
+          // Publication succeeded; a failed read must not strand an empty fiche.
+          setInlineSlug(null);
+          link(null);
+          setError(t(
+            "La publication a été transmise, mais la fiche n’a pas pu être rechargée. Rouvrez-la depuis la liste pour réessayer.",
+            "Publication was transmitted, but the record could not be reloaded. Reopen it from the list to retry.",
+          ));
         }
       }
       if (detail) {

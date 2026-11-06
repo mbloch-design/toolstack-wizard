@@ -32,6 +32,49 @@ beforeEach(() => {
   }));
 });
 afterEach(() => vi.useRealTimers());
+it("restarts an interrupted debounce once after same-owner recovery", async () => {
+  session.setOwner("one");
+  session.change("notion", [{ path: ["name"], value: "Recovered" }]);
+  await vi.advanceTimersByTimeAsync(400);
+  session.suspend();
+  await vi.advanceTimersByTimeAsync(5000);
+  expect(save).not.toHaveBeenCalled();
+  session.setOwner("one");
+  session.setOwner("one"); // Additional auth events must not duplicate the save.
+  await vi.advanceTimersByTimeAsync(1000);
+  expect(save).toHaveBeenCalledOnce();
+  expect(save.mock.calls[0][0].value.name).toBe("Recovered");
+  await vi.advanceTimersByTimeAsync(5000);
+  expect(save).toHaveBeenCalledOnce();
+});
+it.each(["unsafe", "conflict"])("keeps %s input explicit through recovery", async kind => {
+  session.setOwner("one");
+  if (kind === "conflict") save.mockRejectedValueOnce({ status: 409 });
+  session.change("notion", [{
+    path: [kind === "unsafe" ? "websiteUrl" : "name"],
+    value: kind === "unsafe" ? "javascript:alert(1)" : "Conflicted",
+  }]);
+  await vi.advanceTimersByTimeAsync(1000);
+  const error = session.get("notion")?.error;
+  expect(error).toBeTruthy();
+  const calls = save.mock.calls.length;
+  session.suspend();
+  session.setOwner("one");
+  await vi.advanceTimersByTimeAsync(5000);
+  expect(save).toHaveBeenCalledTimes(calls);
+  expect(session.get("notion")?.error).toBe(error);
+  expect(session.dirty).toBe(true);
+});
+it("validates unsafe content again before sending a resumed pending debounce", async () => {
+  session.setOwner("one");
+  session.change("notion", [{ path: ["websiteUrl"], value: "javascript:alert(1)" }]);
+  session.suspend();
+  session.setOwner("one");
+  await vi.advanceTimersByTimeAsync(5000);
+  expect(save).not.toHaveBeenCalled();
+  expect(session.get("notion")?.error).toBeTruthy();
+  expect(session.get("notion")?.value.websiteUrl).toBe("javascript:alert(1)");
+});
 it("coalesces multiple fields after 1000ms idle as one snapshot preserving unknown data", async () => {
   session.change("notion", [
     { path: ["name"], value: "New name" },
