@@ -26,6 +26,14 @@ describe("layout invariants", () => {
     const el = mount(`<div style="width:100px"><span style="display:block;width:140px">x</span></div>`);
     expect(overflowing(el)).toHaveLength(1);
   });
+  it("measures against the nearest box when the parent has none (display: contents)", () => {
+    const el = mount(`<div style="width:200px"><div style="display:contents"><p style="margin:0">Inside</p></div></div>`);
+    expect(overflowing(el)).toEqual([]);
+  });
+  it("still finds what sticks out of that nearest box", () => {
+    const el = mount(`<div style="width:100px"><div style="display:contents"><span style="display:block;width:140px">x</span></div></div>`);
+    expect(overflowing(el)).toHaveLength(1);
+  });
   it("ignores decoration positioned on purpose", () => {
     const el = mount(`<div style="width:100px;position:relative"><span style="position:absolute;left:-8px;width:140px">x</span></div>`);
     expect(overflowing(el)).toEqual([]);

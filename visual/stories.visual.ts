@@ -17,6 +17,8 @@ for (const story of stories) for (const width of [390, 768, 1280]) for (const la
     await page.evaluate(() => document.fonts.ready);
     // Visible logos only: a logo hidden at this width is lazy and never loads.
     await page.waitForFunction(() => [...document.images].filter((img) => img.checkVisibility()).every((img) => img.complete && img.naturalWidth > 0 && !img.hasAttribute("data-loading")));
+    // A story that failed (a layout invariant, an a11y error) shows Storybook's error screen: never take that as a reference.
+    await expect(page.locator("body")).not.toHaveClass(/sb-show-errordisplay/);
     await expect(page.locator("#storybook-root")).toHaveScreenshot(`${story.id}--${width}-${lang}-${theme}.png`);
   });
 }

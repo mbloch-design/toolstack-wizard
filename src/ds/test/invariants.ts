@@ -34,8 +34,12 @@ export function splitUnits(root: HTMLElement): string[] {
 /** Descendants that stick out of their parent's box, sideways. Positioned decoration and aria-hidden marks are ignored. */
 export function overflowing(root: HTMLElement): HTMLElement[] {
   return [...root.querySelectorAll<HTMLElement>("*")].filter((el) => {
-    const parent = el.parentElement; if (!parent || el.closest("[aria-hidden='true']")) return false;
+    if (el.closest("[aria-hidden='true']") || getComputedStyle(el).display === "contents") return false;
     if (["absolute", "fixed"].includes(getComputedStyle(el).position)) return false;
+    // A parent in display: contents has no box: measure against the nearest ancestor that has one.
+    let parent = el.parentElement;
+    while (parent && getComputedStyle(parent).display === "contents") parent = parent.parentElement;
+    if (!parent) return false;
     const r = el.getBoundingClientRect(), box = parent.getBoundingClientRect();
     return r.width > 0 && (r.left < box.left - 1 || r.right > box.right + 1);
   });

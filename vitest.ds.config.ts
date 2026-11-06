@@ -7,8 +7,9 @@ import { playwright } from "@vitest/browser-playwright";
 // Design system tests run in a real browser: layout invariants and every story (with its a11y check).
 // One browser object per project: Vitest names its instances in place.
 const browser = () => ({ enabled: true, headless: true, provider: playwright(), instances: [{ browser: "chromium" as const }] });
-// Stories run at the three widths of the visual tests: a word breaks on a phone, not on a desktop.
-const widths = () => ({ ...browser(), instances: [390, 768, 1280].map((width) => ({ browser: "chromium" as const, name: `storybook-${width}`, viewport: { width, height: 900 } })) });
+// Stories run at the three widths of the visual tests, one project each: a word breaks on a phone, not on a desktop.
+// Storybook sizes each story from its viewport global (1200 px by default, checked): .storybook/vitest.setup.ts sets it per project.
+const widths = [390, 768, 1280];
 
 export default defineConfig({
   plugins: [react()],
@@ -16,7 +17,7 @@ export default defineConfig({
   test: {
     projects: [
       { extends: true, test: { name: "ds-unit", include: ["src/ds/**/*.browser.test.ts"], browser: browser() } },
-      { extends: true, plugins: [storybookTest({ configDir: ".storybook" })], test: { name: "storybook", browser: widths() } },
+      ...widths.map((width) => ({ extends: true, plugins: [storybookTest({ configDir: ".storybook" })], test: { name: `storybook-${width}`, provide: { width }, setupFiles: [".storybook/vitest.setup.ts"], browser: browser() } })),
     ],
   },
 });
