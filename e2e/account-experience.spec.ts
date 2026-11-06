@@ -382,8 +382,8 @@ test('undoing the first free plan restores the unanswered question after reload'
  await control(request,'seed',{email:'undo-plan@example.invalid',state:state(['notion'])});
  await page.goto('/en/ma-stack');await login(page,'en','undo-plan@example.invalid');await saved(page,'en');
  await expect(page.locator('.mf-budget-onboarding')).toContainText("Let's talk budget.");
- await expect(page.locator('.mf-plan')).toHaveCount(3);
- await page.locator('.mf-plan').filter({hasText:'Free plan'}).first().click();
+ await expect(page.locator('[data-plan]')).toHaveCount(3);
+ await page.locator('[data-plan]').filter({hasText:'Free plan'}).first().click();
  await expect(page.locator('.mf-now')).toHaveCount(0);
  await page.getByRole('button',{name:'Undo',exact:true}).click();
  await expect(page.locator('.mf-now')).toContainText('Notion');
@@ -678,7 +678,7 @@ for (const lang of ['fr','en'] as const) for (const [width,height,expected] of [
   expect(await card.getByRole('radio').locator('small').evaluateAll(labels=>labels.every(label=>{const css=getComputedStyle(label);return label.scrollWidth<=label.clientWidth&&label.getBoundingClientRect().height<=parseFloat(css.lineHeight)+parseFloat(css.paddingTop)+parseFloat(css.paddingBottom)+1;}))).toBe(true);
   expect(await card.locator('.mu-footer button:not(:disabled)').evaluateAll(buttons=>buttons.every(button=>{const r=button.getBoundingClientRect();return button.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2));}))).toBe(true);
   await card.screenshot({path:test.info().outputPath('question.png')});
-  await card.getByRole('button',{name:fr?'Faire une pause':'Take a break',exact:true}).click();await stable();
+  await card.getByRole('button',{name:fr?'Plus tard':'Later',exact:true}).click();await stable();
   await card.screenshot({path:test.info().outputPath('partial-summary.png')});
   await card.getByRole('button',{name:fr?'Renseigner l’usage de Grammarly':'Record use of Grammarly',exact:true}).click();await stable();
   await expect(card.getByRole('heading',{name:'Grammarly',exact:true})).toBeFocused();

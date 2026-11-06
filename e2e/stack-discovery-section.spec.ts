@@ -13,7 +13,7 @@ for(const lang of ['fr','en'] as const) for(const width of [320,1440]) test(`dis
  const targets=await section.locator('a,button').evaluateAll(items=>items.map(item=>({class:item.className,height:item.getBoundingClientRect().height})));
  expect(targets.every(item=>item.height>=44),JSON.stringify(targets)).toBe(true);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
- expect(await cards.locator('.tce-card').evaluateAll(items=>items.every(item=>getComputedStyle(item).borderTopWidth==='0px'&&getComputedStyle(item).backgroundColor==='rgba(0, 0, 0, 0)'))).toBe(true);
+ expect(await cards.locator('.tt-mediacard').evaluateAll(items=>items.every(item=>getComputedStyle(item).borderTopWidth==='0px'&&getComputedStyle(item).backgroundColor==='rgba(0, 0, 0, 0)'))).toBe(true);
  expect(await cards.locator('.tc-image').evaluateAll(items=>items.every(item=>Math.abs(item.getBoundingClientRect().width/item.getBoundingClientRect().height-1.6)<.01))).toBe(true);
  if(width===320) expect(await section.locator('ul').evaluate(el=>el.scrollWidth>el.clientWidth)).toBe(true);
  await section.screenshot({path:test.info().outputPath(`discovery-${lang}-${width}.png`)});
@@ -48,7 +48,7 @@ test.describe('touch discovery',()=>{
   await control(request,'seed',{email:'touch-discovery@example.invalid',state:state(['firefly','notion'])});
   await page.goto('/fr/ma-stack');await login(page,'fr','touch-discovery@example.invalid');await saved(page,'fr');
   expect(await page.evaluate(()=>matchMedia('(pointer: coarse)').matches)).toBe(true);
-  const add=page.locator('[data-section="discovery"] .tce-hover-action').first();await expect(add).toBeVisible();
+  const add=page.locator('[data-section="discovery"] .tt-mediacard-action').first();await expect(add).toBeVisible();
   const rect=await add.boundingBox();expect(rect!.width).toBeGreaterThanOrEqual(44);expect(rect!.height).toBeGreaterThanOrEqual(44);
  });
 });

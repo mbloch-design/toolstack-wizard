@@ -6,7 +6,7 @@ async function answerPlan(deck: import("@playwright/test").Locator, paid: boolea
   // On a phone the decision card is a summary: open it first.
   const expand = deck.locator(".mf-expand[aria-expanded='false']");
   if (await expand.isVisible().catch(() => false)) await expand.click();
-  const cards = deck.locator(".mf-plan");
+  const cards = deck.locator("[data-plan]");
   // Catalogue plans load after the deck: give them a moment before falling back to the yes/no buttons.
   if (await cards.first().waitFor({ timeout: 4000 }).then(() => true, () => false)) {
     if (paid) {

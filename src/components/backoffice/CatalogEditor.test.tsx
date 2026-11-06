@@ -130,11 +130,11 @@ it("reviews all saved drafts and publishes the reviewed global revision once", a
       name: "Mettre en ligne (2)",
     }),
   );
-  expect(
-    screen.getByRole("button", {
-      name: "Mettre en ligne (2)",
-    }),
-  ).toHaveClass("tt-button-primary");
+  const publish = screen.getByRole("button", {
+    name: "Mettre en ligne (2)",
+  });
+  expect(publish).toHaveClass("tt-btn");
+  expect(publish).not.toHaveClass("tt-btn--grey");
   const review = await screen.findByRole("region", {
     name: "Modifications à publier",
   });

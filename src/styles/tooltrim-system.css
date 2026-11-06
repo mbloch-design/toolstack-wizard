@@ -82,7 +82,7 @@
   --tt-spring: cubic-bezier(.34, 1.5, .64, 1);
   --tt-dur-press: 120ms;
   --tt-dur-state: 240ms;
-  --tt-dur-move: 420ms;
+  --tt-dur-move: 420ms;--tt-dur-reveal: 600ms;--tt-overlap-strong: color-mix(in oklch, var(--tt-overlap) 85%, black);--tt-on-color: #fff;--tt-tile-gap: 20px;--tt-board-gap: 20px;--tt-page-gap: 40px;--tt-page-max: 1280px;--tt-page-pad: clamp(20px, 4vw, 48px);
 }
 /* ── Atomes : un token composite par atome ──────────────────────────────
    Chaque atome est défini UNE fois ici. Les classes .tt-* ci-dessous, les
@@ -119,7 +119,7 @@
   --tt-tag-font: var(--tt-w-strong) .875rem/1 var(--tt-ui);
   --tt-logo-plate: #FFFFFF;
   --tt-logo-radius: 23%;
-  --tt-logo-shadow: 0 0 0 .5px rgb(0 0 0 / .08), 0 4px 10px -6px rgb(0 0 0 / .3);
+  --tt-logo-shadow: 0 0 0 .5px rgb(0 0 0 / .08), 0 4px 10px -6px rgb(0 0 0 / .3);--tt-dur-reveal: 600ms;--tt-overlap-strong: color-mix(in oklch, var(--tt-overlap) 85%, black);--tt-on-color: #fff;--tt-tile-gap: 20px;--tt-board-gap: 20px;--tt-page-gap: 40px;--tt-page-max: 1280px;--tt-page-pad: clamp(20px, 4vw, 48px);
 }
 .dark, :root[data-theme="dark"] { --tt-gain-ink: color-mix(in oklch, var(--tt-live) 75%, white); }
 
@@ -228,6 +228,8 @@
 .tt-figure { font: var(--tt-figure-font); letter-spacing: var(--tt-figure-tracking); color: var(--tt-ink); }
 .tt-amount { font: var(--tt-amount-font); letter-spacing: var(--tt-amount-tracking); white-space: nowrap; color: var(--tt-ink); }
 :is(.tt-figure, .tt-amount) small { margin-left: 3px; font: var(--tt-unit-font); letter-spacing: 0; }
+/* Le gras d'un texte reste dans la règle : graisse forte du système (500, plus fine en sombre), jamais le 700 du navigateur. */
+:is(.tt-text, .tt-note, .tt-label, .tt-eyebrow, .tt-title-m, .tt-title-l, .tt-title-section, .tt-title-xl) :is(b, strong) { font-weight: var(--tt-w-strong); }
 :is(.tt-figure, .tt-amount)[data-gain] { color: var(--tt-gain-ink); }
 .tt-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); letter-spacing: 0; color: var(--tt-ink); white-space: nowrap; }
 .tt-tag--overlap { background: color-mix(in oklch, var(--tt-overlap) 14%, transparent); color: color-mix(in oklch, var(--tt-overlap) 78%, var(--tt-ink)); }
@@ -259,75 +261,21 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-btn--icon { width: 40px; padding: 0; }
 .tt-btn:active { transform: scale(.97); }
 .tt-btn svg { width: 16px; height: 16px; }
-
-/* Molécule : la puce de filtre. Au repos un filet ; choisie, l'encre et une coche
-   qui se dessine. Le nombre suit le libellé ; en doublon, il passe en orange. */
-.tt-fchips { display: flex; flex-wrap: wrap; gap: 8px; }
-.tt-fchip { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 14px; border: 0; border-radius: var(--tt-r-pill); background: var(--tt-bg); color: var(--tt-ink); font: var(--tt-tag-font); letter-spacing: 0; cursor: pointer; box-shadow: 0 0 0 1px var(--tt-line); transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
-.tt-fchip::before { content: ""; width: 0; height: 10px; border: solid currentColor; border-width: 0 1.6px 1.6px 0; transform: rotate(45deg) translate(-1px, -2px); opacity: 0; transition: width var(--tt-dur-state) ease, opacity 200ms ease; }
-.tt-fchip[aria-pressed="true"] { background: var(--tt-ink); color: var(--tt-bg); box-shadow: none; }
-.tt-fchip[aria-pressed="true"]::before { width: 5px; opacity: 1; }
-.tt-fchip:active { transform: scale(.97); }
-.tt-fchip:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; }
-.tt-fchip-count { font-variant-numeric: tabular-nums; opacity: .6; }
-.tt-fchip--dup .tt-fchip-count { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: var(--tt-overlap); color: #fff; opacity: 1; }
-
-/* Molécule : le menu de tri. Une pilule grise, le libellé puis la valeur. */
-.tt-select { position: relative; display: inline-flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 34px 0 16px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); color: var(--tt-ink); font: var(--tt-note-font); cursor: pointer; }
-.tt-select select { appearance: none; border: 0; background: none; color: inherit; font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); cursor: pointer; }
-.tt-select select:focus { outline: none; }
-.tt-select:focus-within { outline: 2px solid var(--tt-focus); outline-offset: 3px; }
-.tt-select svg { position: absolute; right: 14px; width: 14px; height: 14px; pointer-events: none; }
-
-/* Molécule : la bascule d'affichage. Des icônes dans une pilule grise ; la vue
-   en cours se pose en carte claire, comme un interrupteur à plusieurs positions. */
-.tt-iconswitch { display: inline-flex; gap: 2px; padding: 3px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); }
-.tt-iconswitch button { display: inline-grid; place-items: center; width: 34px; height: 34px; border: 0; border-radius: var(--tt-r-pill); background: none; color: var(--tt-meta); cursor: pointer; transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease; }
-.tt-iconswitch button[aria-pressed="true"] { background: var(--tt-bg); color: var(--tt-ink); box-shadow: 0 1px 2px color-mix(in oklch, var(--tt-ink) 12%, transparent); }
-.tt-iconswitch button:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 2px; }
-.tt-iconswitch svg { width: 16px; height: 16px; }
-
-/* Organisme : la barre d'une liste. Les filtres à gauche, la façon de voir à droite. */
-.tt-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 24px; padding-bottom: 16px; box-shadow: inset 0 -1px 0 var(--tt-line); }
-.tt-toolbar-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-.tt-btn--grey[aria-pressed="true"] { background: var(--tt-ink); color: var(--tt-bg); }
-@media (max-width: 560px) { .tt-toolbar-tools { width: 100%; } .tt-toolbar-tools .tt-select { flex: 1; } }
 .tt-check--live { background: var(--tt-live); }
 /* Une ligne d'organisme : à gauche le titre, à droite l'état ou l'action. */
-.tt-head { display: flex; align-items: center; justify-content: space-between; gap: 8px 12px; flex-wrap: wrap; }
-
-/* ── Organisme : le budget ──────────────────────────────────────────────── */
-.tt-budget { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
-.tt-budget .tt-figure { display: flex; align-items: baseline; margin: 0; }
-/* Le compteur garde des chiffres proportionnels : la forme des chiffres d'Uncut Sans. */
-.tt-figure :is(.mk-odo, .mk-odo *) { font-variant-numeric: normal; }
-.tt-budget-start { display: grid; gap: 10px; justify-items: start; }
-.tt-budget-trust { display: grid; grid-template-columns: 20px minmax(0, 1fr); align-items: start; gap: 10px; margin: 0; padding: 0; border: 0; background: none; color: var(--tt-ink); font: inherit; text-align: left; }
-button.tt-budget-trust { cursor: pointer; }
-.tt-budget-trust > span:last-child { display: grid; gap: 2px; }
-.tt-ring { width: 20px; height: 20px; transform: rotate(-90deg); }
-.tt-ring circle { fill: none; stroke: var(--tt-tile-2); stroke-width: 4; }
-.tt-ring circle + circle { stroke: var(--tt-live); stroke-linecap: round; }
-.tt-budget-free { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-.tt-logos { display: inline-flex; align-items: center; margin: 0; padding: 0; list-style: none; }
-.tt-logos > * + * { margin-left: -6px; }
-.tt-logos .tt-logo-tile, .tt-share .tt-logo-tile, .tt-share-more .tt-logo-tile { width: 24px; height: 24px; box-shadow: 0 0 0 2px var(--tt-tile), var(--tt-logo-shadow); }
-.tt-share-more { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; width: 100%; min-height: 40px; padding: 0; border: 0; background: none; color: var(--tt-ink); font: inherit; text-align: left; cursor: pointer; }
-.tt-budget-gain { position: relative; padding-top: 12px; border-top: 1px dashed color-mix(in oklch, var(--tt-meta) 50%, transparent); }
-.tt-gain { position: relative; isolation: isolate; display: inline-block; }
-.tt-gain > span:not(.tt-bloom) { position: relative; z-index: 1; }
-.tt-gain .tt-bloom { inset: -180% -110%; filter: blur(16px); }
+.tt-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 
 /* ── Molécule : la part d'un total ─────────────────────────────────────── */
 /* Logo, nom, filet de part à la couleur du domaine, montant, pourcentage. */
-.tt-shares { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
-.tt-share { display: grid; grid-template-columns: 24px minmax(0, 1fr) auto 44px; grid-template-areas: "logo name amount pct" "logo bar bar bar"; align-items: center; gap: 4px 12px; min-height: 44px; }
-.tt-share > .tt-logo-tile { grid-area: logo; } .tt-share > .tt-share-name { grid-area: name; } .tt-share > .tt-amount { grid-area: amount; } .tt-share > .tt-note:last-child { grid-area: pct; } .tt-share > .tt-share-bar { grid-area: bar; }
+.tt-shares { display: grid; grid-template-columns: 24px minmax(0, 1fr) 72px auto 40px; column-gap: 12px; row-gap: 4px; margin: 0; padding: 0; list-style: none; }
+.tt-share { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; align-items: center; min-height: 40px; }
+.tt-share > .tt-amount { text-align: right; }
 .tt-share > .tt-logo-tile { width: 24px; height: 24px; }
 .tt-share-bar { height: 3px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); overflow: hidden; }
 .tt-share-bar i { display: block; height: 100%; width: var(--w, 0%); border-radius: inherit; background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow 900ms var(--tt-ease) both; }
 .tt-share > .tt-note:last-child { text-align: right; font-variant-numeric: tabular-nums; }
-.tt-share-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Un nom d'outil se lit en entier : deux lignes au plus, jamais de points de suspension au milieu d'un nom. */
+.tt-share-name { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; text-wrap: balance; }
 
 /* ── Molécule : l'échelle d'usage ──────────────────────────────────────── */
 /* Une seule mesure qui monte, comme un indicateur de signal : cinq barres
@@ -350,63 +298,20 @@ button.tt-budget-trust { cursor: pointer; }
 /* ── Organisme : l'en-tête de page ──────────────────────────────────────── */
 /* Surtitre, grand titre, une note de contexte ; l'action rare à droite. */
 .tt-pagehead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px; }
-.tt-pagehead > div, .tt-pagehead-title, .tt-pagehead-intro { display: grid; gap: 10px; }
-.tt-pagehead-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.tt-pagehead > div { display: grid; gap: 10px; }
 
 /* ── Organisme : l'en-tête de section ───────────────────────────────────── */
 .tt-sectionhead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; }
 .tt-sectionhead > div { display: grid; gap: 6px; max-width: 60ch; }
 
-.tt-section { display: grid; gap: 24px; }
-.tt-section-foot { display: flex; justify-content: center; }
-.tt-mediacards { margin: 0; padding: 0; list-style: none; }
-
 /* ── Organisme : la répartition ─────────────────────────────────────────── */
 /* Le chiffre, une barre empilée fine à la couleur des domaines, la légende. */
-/* Organisme : le tableau de Ma stack, lu constat, action, détail. À gauche le budget
-   (ce que coûte la stack, ce qui est à examiner), à droite la décision puis vos usages,
-   la répartition dessous en pleine largeur. L'ordre du DOM est l'ordre de lecture :
-   sur une colonne, on lit la même suite. */
-.tt-board { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 12px; align-items: start; }
-.tt-board-main, .tt-board-side { display: grid; gap: 12px; min-width: 0; }
-/* Le tableau place seul ses cartes : aucune position héritée ne passe. */
-.tt-board > .tt-board-main > [class], .tt-board > .tt-board-side > [class] { grid-area: auto; min-width: 0; height: auto; }
-.tt-board > .tt-split { grid-column: 1 / -1; min-width: 0; }
-.tt-board-main:empty { display: none; }
-.tt-board:has(> .tt-board-main:empty) { grid-template-columns: minmax(0, 1fr); }
-@media (max-width: 900px) { .tt-board { grid-template-columns: minmax(0, 1fr); } }
-
-/* Organisme : le premier outil. Une place prise, deux places libres en pointillé
-   qui se penchent au survol, puis l'appel à en ajouter d'autres. */
-.tt-starter { display: grid; justify-items: start; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
-.tt-starter .tt-title-m { margin: 0; }
-.tt-starter .tt-text { max-width: 46ch; }
-.tt-seats { display: flex; gap: 10px; }
-.tt-seat { display: grid; place-items: center; width: 52px; height: 52px; border: 1.5px dashed var(--tt-line); border-radius: var(--tt-logo-radius); color: var(--tt-meta); transition: transform var(--tt-dur-state) var(--tt-spring), color var(--tt-dur-state) ease, border-color var(--tt-dur-state) ease; }
-.tt-seat[data-on] { border: 0; background: var(--tt-bg); box-shadow: var(--tt-logo-shadow); }
-.tt-seat svg { width: 18px; height: 18px; }
-.tt-starter:hover .tt-seat:not([data-on]) { border-color: var(--tt-ink); color: var(--tt-ink); }
-.tt-starter:hover .tt-seat:nth-child(2) { transform: rotate(-6deg) translateY(-2px); }
-.tt-starter:hover .tt-seat:nth-child(3) { transform: rotate(5deg) translateY(-2px); }
-@media (prefers-reduced-motion: reduce) { .tt-seat { transition: none; } .tt-starter:hover .tt-seat { transform: none; } }
-
-.tt-split { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-split { display: grid; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
 .tt-split-bar { display: flex; gap: 3px; height: 10px; }
 .tt-split-bar i { flex: var(--f, 1); min-width: 6px; border-radius: var(--tt-r-pill); background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow 900ms var(--tt-ease) both; }
-.tt-split-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 4px 24px; margin: 0; padding: 0; list-style: none; }
-.tt-split-legend li > :is(button, span) { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto auto 44px; align-items: center; gap: 10px; width: 100%; min-height: 40px; padding: 0 8px; border: 0; border-radius: var(--tt-r-chip); background: none; color: var(--tt-ink); font: inherit; text-align: left; }
-.tt-split-legend li > button { cursor: pointer; transition: background-color var(--tt-dur-state) ease; }
-.tt-split-legend li > button:is(:hover, [data-on], [aria-pressed="true"]) { background: var(--tt-tile-2); }
-.tt-split-legend li i { width: 10px; height: 10px; border-radius: var(--tt-r-round); background: var(--c, var(--tt-ink)); }
-.tt-split-legend .tt-note:last-child { text-align: right; font-variant-numeric: tabular-nums; }
-.tt-split-legend .tt-logos .tt-logo-tile { width: 20px; height: 20px; }
-.tt-split-body { display: grid; gap: 16px; }
-.tt-split-body[data-active] .tt-split-bar i:not([data-on]) { opacity: .35; }
-.tt-split-bar i { transition: opacity var(--tt-dur-state) ease; }
-.tt-split-stage { display: grid; place-items: center; min-height: 200px; }
-.tt-split-ring { position: relative; }
-.tt-split-ring-c { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 2px; pointer-events: none; }
-.tt-split-tools { display: inline-flex; align-items: center; gap: 8px; }
+.tt-split-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px 24px; margin: 0; padding: 0; list-style: none; }
+.tt-split-legend li { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto; align-items: center; gap: 10px; min-height: 28px; }
+.tt-split-legend li > i { width: 10px; height: 10px; border-radius: var(--tt-r-round); background: var(--c, var(--tt-ink)); }
 
 /* ── Molécule : la carte d'outil ─────────────────────────────────────────── */
 /* Une tuile : le logo et ce qu'il coûte en haut, le nom, puis son état. */
@@ -418,14 +323,6 @@ button.tt-budget-trust { cursor: pointer; }
 .tt-toolcard > .tt-amount { grid-area: amount; justify-self: end; }
 .tt-toolcard > .tt-label { grid-area: name; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tt-toolcard > .tt-tag { grid-area: state; justify-self: start; }
-.tt-toolcard-wrap { position: relative; }
-.tt-toolcard.is-selected { box-shadow: var(--tt-row-ring-on); }
-.tt-toolcard > .tt-toolcard-foot { grid-area: state; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; min-width: 0; }
-/* En liste : une rangée par outil, mêmes atomes. */
-.tt-toolcards[data-layout="list"] { grid-template-columns: minmax(0, 1fr); gap: 6px; }
-.tt-toolcards[data-layout="list"] .tt-toolcard { grid-template-columns: 40px minmax(0, 1fr) auto auto; grid-template-areas: "logo name state amount"; align-items: center; padding: 10px 16px 10px 10px; border-radius: var(--tt-r-card); }
-.tt-groups { display: grid; gap: 28px; }
-.tt-group { display: grid; gap: 12px; }
 .tt-groupname { display: flex; align-items: baseline; gap: 10px; }
 .tt-groupname > i { align-self: center; width: 8px; height: 8px; border-radius: var(--tt-r-round); background: var(--c, var(--tt-ink)); }
 
@@ -506,7 +403,7 @@ button.tt-budget-trust { cursor: pointer; }
 .tt-choice-note { font: var(--tt-note-font); }
 .tt-choice-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); letter-spacing: 0; }
 .tt-choice-amount { font: var(--tt-amount-font); letter-spacing: var(--tt-amount-tracking); white-space: nowrap; }
-.tt-choice-amount small { margin-left: 2px; font: var(--tt-unit-font); }
+.tt-choice-amount small { margin-left: 2px; font: var(--tt-unit-font); letter-spacing: 0; }
 .tt-choice-amount[data-gain] { color: var(--tt-gain-ink); }
 /* Étroit : le montant passe sous le texte, la rangée garde sa lecture. */
 @container (max-width: 460px) {
@@ -538,7 +435,7 @@ button.tt-budget-trust { cursor: pointer; }
   --tt-lead-bg: linear-gradient(to bottom, color-mix(in oklch, var(--tt-ink) 92%, var(--tt-bg)), var(--tt-ink));
   --tt-lead-shadow: inset 0 .5px 0 color-mix(in srgb, var(--tt-bg) 35%, transparent), 0 1px 2px rgb(0 0 0 / .18), 0 10px 24px -14px rgb(0 0 0 / .45);
   --tt-lead-shadow-hover: inset 0 .5px 0 color-mix(in srgb, var(--tt-bg) 45%, transparent), 0 1px 2px rgb(0 0 0 / .2), 0 16px 32px -14px rgb(0 0 0 / .5);
-  --tt-lead-shadow-press: inset 0 2px 6px rgb(0 0 0 / .45), 0 1px 1px rgb(0 0 0 / .15);
+  --tt-lead-shadow-press: inset 0 2px 6px rgb(0 0 0 / .45), 0 1px 1px rgb(0 0 0 / .15);--tt-dur-reveal: 600ms;--tt-overlap-strong: color-mix(in oklch, var(--tt-overlap) 85%, black);--tt-on-color: #fff;--tt-tile-gap: 20px;--tt-board-gap: 20px;--tt-page-gap: 40px;--tt-page-max: 1280px;--tt-page-pad: clamp(20px, 4vw, 48px);
 }
 @property --tt-run { syntax: "<number>"; inherits: true; initial-value: 0; }
 .tt-spark-host { position: relative; isolation: isolate; overflow: visible; }
@@ -588,3 +485,195 @@ button.tt-budget-trust { cursor: pointer; }
   .tt-blade, .tt-thread::before, .tt-bloom, .tt-cutgauge-cut, .tt-skeleton, .tt-check, .tt-tilt-host, .tt-fall, .tt-cling, .tt-settle, .tt-bump { animation: none !important; transition: none !important; }
   .tt-fall, .tt-cling { opacity: 0; }
 }
+
+
+/* ── Ajouts depuis la planche validée du 30/10 : propositions, sans effet sur les composants validés ── */
+.tt-link svg { width: 16px; height: 16px; }
+.tt-link-arrow { display: inline-grid; width: 16px; overflow: hidden; opacity: 0; transform: translateX(-6px); transition: opacity var(--tt-dur-state) ease, transform 320ms var(--tt-ease); }
+.tt-link:hover .tt-link-arrow { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .tt-link::after, .tt-link-arrow { transition: none; } }
+.tt-fchips { display: flex; flex-wrap: wrap; gap: 8px; }
+.tt-fchip { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 14px; border: 0; border-radius: var(--tt-r-pill); background: var(--tt-bg); color: var(--tt-ink); font: var(--tt-tag-font); letter-spacing: 0; cursor: pointer; box-shadow: 0 0 0 1px var(--tt-line); transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
+.tt-fchip::before { content: ""; width: 0; height: 10px; border: solid currentColor; border-width: 0 1.6px 1.6px 0; transform: rotate(45deg) translate(-1px, -2px); opacity: 0; transition: width var(--tt-dur-state) ease, opacity 200ms ease; }
+.tt-fchip[aria-pressed="true"] { background: var(--tt-ink); color: var(--tt-bg); box-shadow: none; }
+.tt-fchip[aria-pressed="true"]::before { width: 5px; opacity: 1; }
+.tt-fchip:active { transform: scale(.97); }
+.tt-fchip:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; }
+.tt-fchip-count { font-variant-numeric: tabular-nums; opacity: .6; }
+.tt-fchip--dup .tt-fchip-count { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: var(--tt-overlap-strong); color: var(--tt-on-color); opacity: 1; }
+.tt-select { position: relative; display: inline-flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 34px 0 16px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); color: var(--tt-ink); font: var(--tt-note-font); cursor: pointer; }
+.tt-select select { appearance: none; border: 0; background: none; color: inherit; font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); cursor: pointer; }
+.tt-select select:focus { outline: none; }
+.tt-select:focus-within { outline: 2px solid var(--tt-focus); outline-offset: 3px; }
+.tt-select svg { position: absolute; right: 14px; width: 14px; height: 14px; pointer-events: none; }
+.tt-iconswitch { display: inline-flex; gap: 2px; padding: 3px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); }
+.tt-iconswitch > :is(button, a, span) { display: inline-grid; place-items: center; min-width: 34px; padding: 0 8px; font: var(--tt-tag-font); text-decoration: none; height: 34px; border: 0; border-radius: var(--tt-r-pill); background: none; color: var(--tt-meta); cursor: pointer; transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease; }
+.tt-iconswitch > :is([aria-pressed="true"], [aria-current]) { background: var(--tt-bg); color: var(--tt-ink); box-shadow: 0 1px 2px color-mix(in oklch, var(--tt-ink) 12%, transparent); }
+.tt-iconswitch > :is(button, a):focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 2px; }
+.tt-iconswitch svg { width: 16px; height: 16px; }
+.tt-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 24px; padding-bottom: 16px; box-shadow: inset 0 -1px 0 var(--tt-line); }
+.tt-toolbar-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.tt-btn--grey[aria-pressed="true"] { background: var(--tt-ink); color: var(--tt-bg); }
+@media (max-width: 560px) { .tt-toolbar-tools { width: 100%; } }
+@media (max-width: 560px) { .tt-toolbar-tools .tt-select { flex: 1; } }
+.tt-budget { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-figure :is(.mk-odo, .mk-odo *) { font-variant-numeric: normal; }
+.tt-budget-start { display: grid; gap: 10px; justify-items: start; }
+.tt-budget-trust { display: grid; grid-template-columns: 20px minmax(0, 1fr); align-items: start; gap: 10px; margin: 0; padding: 0; border: 0; background: none; color: var(--tt-ink); font: inherit; text-align: left; }
+button.tt-budget-trust { cursor: pointer; }
+.tt-budget-trust > span:last-child { display: grid; gap: 2px; }
+.tt-ring { width: 20px; height: 20px; transform: rotate(-90deg); }
+.tt-ring circle { fill: none; stroke: var(--tt-tile-2); stroke-width: 4; }
+.tt-ring circle + circle { stroke: var(--tt-live); stroke-linecap: round; }
+.tt-budget-free { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.tt-logos { display: inline-flex; align-items: center; margin: 0; padding: 0; list-style: none; }
+.tt-logos > * + * { margin-left: -6px; }
+.tt-logos .tt-logo-tile, .tt-share-more .tt-logo-tile { width: 24px; height: 24px; box-shadow: 0 0 0 2px var(--tt-tile), var(--tt-logo-shadow); }
+.tt-share-more { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; width: 100%; min-height: 40px; padding: 0; border: 0; background: none; color: var(--tt-ink); font: inherit; text-align: left; cursor: pointer; }
+.tt-budget-gain { position: relative; padding-top: 12px; border-top: 1px dashed color-mix(in oklch, var(--tt-meta) 50%, transparent); }
+.tt-gain { position: relative; isolation: isolate; display: inline-block; }
+.tt-gain > span:not(.tt-bloom) { position: relative; z-index: 1; }
+.tt-gain .tt-bloom { inset: -180% -110%; filter: blur(16px); }
+.tt-pagehead-title, .tt-pagehead-intro { display: grid; gap: 10px; }
+.tt-pagehead-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.tt-section { display: grid; gap: 20px; }
+.tt-section-foot { display: flex; justify-content: center; }
+/* Le fond typographique d’une page du système, celui de la planche : Inter, interligne 1,6, variantes cv05 et cv08. */
+.tt-page { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--tt-page-gap); color: var(--tt-ink); font: var(--tt-w-text) 1rem/1.6 var(--tt-read); letter-spacing: 0; font-optical-sizing: auto; font-feature-settings: "cv05", "cv08"; }
+.tt-page > * { margin-block: 0; }
+.tt-board { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "budget decide" "usage split"; gap: var(--tt-board-gap); align-items: stretch; }
+.tt-board:not(:has(> :is(.tt-decision, .tt-starter))) { grid-template-areas: "budget usage" "split split"; }
+.tt-board:not(:has(> .tt-usage)) { grid-template-areas: "budget decide" "split split"; }
+.tt-board:not(:has(> .tt-split)) { grid-template-areas: "budget decide" "usage usage"; }
+.tt-board:not(:has(> .tt-split)):not(:has(> .tt-usage)) { grid-template-areas: "budget decide"; }
+.tt-board:not(:has(> .tt-split)):not(:has(> :is(.tt-decision, .tt-starter))) { grid-template-areas: "budget usage"; }
+.tt-board > [data-card="price"][class] { grid-area: budget; }
+.tt-board > :is(.tt-decision, .tt-starter)[class] { grid-area: decide; }
+.tt-board > .tt-usage[class] { grid-area: usage; }
+.tt-board > .tt-split[class] { grid-area: split; }
+.tt-board > [class] { min-width: 0; height: auto; margin: 0; }
+@media (max-width: 900px) { .tt-board, .tt-board[class] { grid-template-columns: minmax(0, 1fr); grid-template-areas: none; } }
+@media (max-width: 900px) { .tt-board > [class][class] { grid-area: auto; } }
+.tt-starter { display: grid; justify-items: start; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-starter .tt-title-m { margin: 0; }
+.tt-starter .tt-text { max-width: 46ch; }
+.tt-seats { display: flex; gap: 10px; }
+.tt-seat { display: grid; place-items: center; width: 52px; height: 52px; border: 1.5px dashed var(--tt-line); border-radius: var(--tt-logo-radius); color: var(--tt-meta); transition: transform var(--tt-dur-state) var(--tt-spring), color var(--tt-dur-state) ease, border-color var(--tt-dur-state) ease; }
+.tt-seat[data-on] { border: 0; background: var(--tt-bg); box-shadow: var(--tt-logo-shadow); }
+.tt-seat svg { width: 18px; height: 18px; }
+.tt-starter:hover .tt-seat:not([data-on]) { border-color: var(--tt-ink); color: var(--tt-ink); }
+.tt-starter:hover .tt-seat:nth-child(2) { transform: rotate(-6deg) translateY(-2px); }
+.tt-starter:hover .tt-seat:nth-child(3) { transform: rotate(5deg) translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .tt-seat { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .tt-starter:hover .tt-seat { transform: none; } }
+.tt-split-legend li > button { cursor: pointer; transition: background-color var(--tt-dur-state) ease; }
+.tt-split-legend li > button:is(:hover, [data-on], [aria-pressed="true"]) { background: var(--tt-tile-2); }
+.tt-split-legend .tt-note:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.tt-split-legend .tt-logos .tt-logo-tile { width: 20px; height: 20px; }
+.tt-split-body { display: grid; gap: 16px; }
+.tt-split-body[data-active] .tt-split-bar i:not([data-on]) { opacity: .35; }
+.tt-split-stage { display: grid; place-items: center; min-height: 200px; }
+.tt-split-ring { position: relative; }
+.tt-split-ring-c { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 2px; pointer-events: none; }
+.tt-split-tools { display: inline-flex; align-items: center; gap: 8px; }
+.tt-toolcard-wrap { position: relative; }
+.tt-toolcard.is-selected { box-shadow: var(--tt-row-ring-on); }
+.tt-toolcard > .tt-toolcard-foot { grid-area: state; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; min-width: 0; }
+.tt-toolcards[data-layout="list"] { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+.tt-toolcards[data-layout="list"] .tt-toolcard { grid-template-columns: 40px minmax(0, 1fr) auto auto; grid-template-areas: "logo name state amount"; align-items: center; padding: 10px 16px 10px 10px; border-radius: var(--tt-r-card); }
+.tt-groups { display: grid; gap: 28px; }
+.tt-group { display: grid; gap: 12px; }
+.tt-mediacard-link { display: grid; gap: 10px; color: inherit; text-decoration: none; }
+.tt-mediacard-link:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; border-radius: var(--tt-r-card); }
+.tt-mediacard-action { position: absolute; top: 10px; right: 10px; display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: var(--tt-r-round); background: var(--tt-bg); color: var(--tt-ink); box-shadow: var(--tt-logo-shadow); cursor: pointer; transition: transform var(--tt-dur-press) ease, background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease; }
+.tt-mediacard-action:hover:not(:disabled) { background: var(--tt-ink); color: var(--tt-bg); }
+.tt-mediacard-action:active:not(:disabled) { transform: scale(.94); }
+.tt-mediacard-action:disabled { cursor: default; }
+.tt-mediacard-action:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; }
+.tt-mediacard-action svg { width: 20px; height: 20px; }
+.tt-usage-feedback .tt-note { min-height: 1.4em; margin: 0; }
+.tt-decision-preview { margin: 0 0 0 auto; }
+.tt-link { position: relative; display: inline-flex; align-items: center; gap: 4px; padding: 4px 0; border: 0; background: none; color: var(--tt-ink); font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); text-decoration: none; cursor: pointer; }
+.tt-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 320ms var(--tt-ease); }
+.tt-link:hover::after { transform: scaleX(1); transform-origin: left; }
+.tt-link:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; border-radius: 2px; }
+
+/* ── Molécule : la confiance (déménagée de la planche le 31/10, rendu identique) ──
+   Une coche, puis ce qu'elle garantit et d'où vient le chiffre. */
+.tt-trust { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; align-items: start; }
+
+/* Proposition (31/10) : l'ajout posé sur la carte média, voisin du lien (un bouton ne vit pas dans un lien). */
+.tt-mediacard-slot { position: relative; }
+
+
+/* ── Organisme : Vos usages, une partie de cartes (validé par Michael le 31/10/2026) ──────────────
+   Une question à la fois, toujours l'usage : la carte du dessus, trois réponses (Tous les jours,
+   Parfois, Prend la poussière ; ← ↓ → au clavier, glisser au doigt), la carte file vers sa pile,
+   un logo d'une pile se touche pour rejouer la carte. À la fin, le tableau des scores. Petit module :
+   il tient dans la carte du tableau de Ma stack (environ 457 × 366 px). */
+.tt-play-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tt-play-play { display: grid; gap: 14px; }
+.tt-play-table { position: relative; display: grid; padding: 0 0 12px; touch-action: pan-y; }
+.tt-play-deck { position: relative; height: 76px; }
+.tt-play-card { position: absolute; inset: 0; display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center; gap: 14px; padding: 12px 16px; border-radius: var(--tt-r-card); background: var(--tt-bg); box-shadow: var(--tt-row-ring), 0 14px 30px -18px color-mix(in oklch, var(--tt-ink) 40%, transparent); text-align: center; transition: transform 460ms var(--tt-spring), opacity 300ms ease; user-select: none; }
+.tt-play-card > .tt-logo-tile { width: 44px; height: 44px; }
+.tt-play-card-text { display: grid; gap: 2px; min-width: 0; text-align: left; }
+.tt-play-card-text .tt-title-m { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tt-play-card .tt-title-m, .tt-play-card .tt-note { margin: 0; }
+.tt-play-card[data-depth="1"] { transform: translateY(6px) scale(.96) rotate(-1deg); opacity: .9; }
+.tt-play-card[data-depth="2"] { transform: translateY(12px) scale(.92) rotate(1.2deg); opacity: .7; }
+.tt-play-card[data-depth="3"] { transform: translateY(22px) scale(.86); opacity: 0; }
+.tt-play-card[data-fly="daily"] { transform: translate(-130%, 40px) rotate(-14deg); opacity: 0; }
+.tt-play-card[data-fly="sometimes"] { transform: translate(0, 120%) scale(.6); opacity: 0; }
+.tt-play-card[data-fly="cut"] { transform: translate(130%, 40px) rotate(14deg); opacity: 0; }
+.tt-play-card[data-drag] { transition: none; }
+.tt-play-ask { margin: 0; text-align: center; }
+.tt-play-picks { display: grid; grid-template-columns: auto auto auto; gap: 6px; }
+/* La réponse : la forme de la puce validée, sans son état « choisie » (une réponse part avec la carte). */
+.tt-play-pick { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 10px; border: 0; border-radius: var(--tt-r-pill); background: var(--tt-bg); color: var(--tt-ink); font: var(--tt-tag-font); white-space: nowrap; box-shadow: 0 0 0 1px var(--tt-line); cursor: pointer; transition: box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
+.tt-play-pick:hover { box-shadow: 0 0 0 1px var(--tt-ink); }
+.tt-play-pick--cut:hover { box-shadow: 0 0 0 1px var(--tt-overlap); color: color-mix(in oklch, var(--tt-overlap) 85%, var(--tt-ink)); }
+.tt-play-pick:active { transform: scale(.97); }
+.tt-play-pick:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; }
+.tt-play-picks kbd { font: var(--tt-tag-font); opacity: .45; }
+.tt-play-reply { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; min-height: 1.4em; }
+.tt-play-say { margin: 0; }
+.tt-play-piles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.tt-play-pile { display: grid; align-content: start; gap: 6px; min-height: 0; padding: 8px 10px; border-radius: var(--tt-r-card); box-shadow: inset 0 0 0 1px var(--tt-line); transition: box-shadow var(--tt-dur-state) ease; }
+.tt-play-pile[data-bump] { animation: tt-play-bump 420ms var(--tt-spring); }
+.tt-play-pile .tt-eyebrow { display: flex; justify-content: space-between; }
+.tt-play-pile .tt-eyebrow b { font-weight: inherit; }
+.tt-play-pile[data-pile="cut"] .tt-eyebrow b { color: color-mix(in oklch, var(--tt-overlap) 85%, var(--tt-ink)); }
+.tt-play-pile ul { display: flex; flex-wrap: wrap; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.tt-play-pile button { display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; border-radius: var(--tt-logo-radius); background: var(--tt-bg); box-shadow: var(--tt-logo-shadow); cursor: pointer; animation: tt-play-land 380ms var(--tt-spring); }
+.tt-play-pile button svg { width: 14px; height: 14px; }
+.tt-play-pile ul { min-height: 24px; }
+.tt-play-pile button:hover { transform: translateY(-2px); }
+.tt-play-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 32px; }
+.tt-play.is-done :is(.tt-play-table, .tt-play-picks, .tt-play-reply) { display: none; }
+.tt-play.is-paused :is(.tt-play-table, .tt-play-picks) { opacity: .45; pointer-events: none; }
+.tt-play-end { display: grid; gap: 6px; justify-items: center; text-align: center; padding: 4px 0 2px; animation: tt-play-rise 520ms var(--tt-spring); }
+.tt-play-score { display: flex; align-items: baseline; gap: 4px; color: color-mix(in oklch, var(--tt-overlap) 85%, var(--tt-ink)); font-variant-numeric: normal; }
+.tt-play-end-acts { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 20px; margin-top: 8px; }
+/* Les piles prennent vie : la poussière se grise et s'incline sous un nuage, le quotidien brille un instant. */
+.tt-play.is-done .tt-play-pile[data-pile="cut"] li button { filter: grayscale(1); opacity: .7; transform: rotate(-8deg) translateY(2px); transition: filter 600ms ease, opacity 600ms ease, transform 600ms var(--tt-spring); }
+.tt-play.is-done .tt-play-pile[data-pile="cut"] li:nth-child(even) button { transform: rotate(7deg) translateY(3px); }
+.tt-play.is-done .tt-play-pile[data-pile="cut"] ul { position: relative; }
+.tt-play.is-done .tt-play-pile[data-pile="cut"] ul::after { content: ""; position: absolute; left: 0; right: 30%; top: -6px; height: 14px; border-radius: 50%; background: radial-gradient(closest-side, color-mix(in oklch, var(--tt-ink) 14%, transparent), transparent); filter: blur(2px); animation: tt-play-dust 2.4s ease-in-out 2; opacity: 0; }
+.tt-play.is-done .tt-play-pile[data-pile="daily"] li button { animation: tt-play-shine 900ms var(--tt-ease) both; }
+.tt-play.is-done .tt-play-pile[data-pile="daily"] li:nth-child(2) button { animation-delay: 120ms; } .tt-play.is-done .tt-play-pile[data-pile="daily"] li:nth-child(3) button { animation-delay: 240ms; }
+@keyframes tt-play-rise { from { opacity: 0; transform: translateY(10px) scale(.98); } }
+@keyframes tt-play-dust { 0% { opacity: 0; transform: translateY(4px); } 40% { opacity: 1; } 100% { opacity: 0; transform: translateY(-8px) scaleX(1.3); } }
+@keyframes tt-play-shine { 40% { transform: translateY(-4px) scale(1.12); box-shadow: 0 0 0 2px color-mix(in oklch, var(--tt-live) 50%, transparent), var(--tt-logo-shadow); } }
+.tt-play-end p { margin: 0; }
+.tt-play-end b { color: color-mix(in oklch, var(--tt-overlap) 85%, var(--tt-ink)); }
+@keyframes tt-play-bump { 40% { box-shadow: inset 0 0 0 2px var(--tt-ink); } }
+@keyframes tt-play-land { from { transform: translateY(-14px) scale(.6); opacity: 0; } }
+@container (max-width: 480px) { .tt-play-picks kbd { display: none; } .tt-play-pick { padding: 0 8px; } }
+@container (max-width: 400px) { .tt-play-deck { height: 100px; } .tt-play-card-text .tt-title-m { white-space: normal; } }
+@container (max-width: 340px) { .tt-play-picks { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .tt-play-card, .tt-play-pile button, .tt-play-pile[data-bump], .tt-play-end, .tt-play.is-done .tt-play-pile ul::after { transition: none; animation: none; } }
+
+/* Proposition (04/11) : la carte de décision au repos, quand il ne reste rien à trancher. */
+.tt-decision[data-done] .tt-decision-title { display: flex; align-items: center; gap: 10px; }
+.tt-decision-history { min-width: 0; }

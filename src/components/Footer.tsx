@@ -100,32 +100,32 @@ const Footer = () => {
           {/* Four links per column, so no column trails a gap. */}
           <nav aria-label={t("Décider", "Decide")} className="tt-footer-col">
             <span className="tt-footer-col-label tt-eyebrow">{t("Décider", "Decide")}</span>
-            <Link className="tt-label" to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
-            <Link className="tt-label" to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>
-            <Link className="tt-label" to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
-            <Link className="tt-label" to={`${prefix}/ma-stack`}>{t("Ma stack", "My stack")}</Link>
+            <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
+            <Link to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>
+            <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
+            <Link to={`${prefix}/ma-stack`}>{t("Ma stack", "My stack")}</Link>
           </nav>
           <nav aria-label={t("Explorer", "Explore")} className="tt-footer-col">
             <span className="tt-footer-col-label tt-eyebrow">{t("Explorer", "Explore")}</span>
-            <Link className="tt-label" to={`${prefix}/tools`}>{t("Catalogue des outils", "Tool catalog")}</Link>
-            <Link className="tt-label" to={`${prefix}/explorer`}>{t("Associer des outils", "Pair tools")}</Link>
-            <Link className="tt-label" to={`${prefix}/search`}>{t("Rechercher un outil", "Search a tool")}</Link>
-            <Link className="tt-label" to={`${prefix}/category`}>{t("Toutes les catégories", "All categories")}</Link>
+            <Link to={`${prefix}/tools`}>{t("Catalogue des outils", "Tool catalog")}</Link>
+            <Link to={`${prefix}/explorer`}>{t("Associer des outils", "Pair tools")}</Link>
+            <Link to={`${prefix}/search`}>{t("Rechercher un outil", "Search a tool")}</Link>
+            <Link to={`${prefix}/category`}>{t("Toutes les catégories", "All categories")}</Link>
           </nav>
           {/* The categories closest to a freelancer's budget, all indexable. */}
           <nav aria-label={t("Catégories", "Categories")} className="tt-footer-col">
             <span className="tt-footer-col-label tt-eyebrow">{t("Catégories", "Categories")}</span>
-            <Link className="tt-label" to={`${prefix}/category/ia-generaliste`}>{t("IA généraliste", "AI tools")}</Link>
-            <Link className="tt-label" to={`${prefix}/category/finance-facturation`}>{t("Finance et facturation", "Finance and invoicing")}</Link>
-            <Link className="tt-label" to={`${prefix}/category/gestion-projet`}>{t("Gestion de projet", "Project management")}</Link>
-            <Link className="tt-label" to={`${prefix}/category/automatisation`}>{t("Automatisation", "Automation")}</Link>
+            <Link to={`${prefix}/category/ia-generaliste`}>{t("IA généraliste", "AI tools")}</Link>
+            <Link to={`${prefix}/category/finance-facturation`}>{t("Finance et facturation", "Finance and invoicing")}</Link>
+            <Link to={`${prefix}/category/gestion-projet`}>{t("Gestion de projet", "Project management")}</Link>
+            <Link to={`${prefix}/category/automatisation`}>{t("Automatisation", "Automation")}</Link>
           </nav>
           <nav aria-label="ToolTrim" className="tt-footer-col">
             <span className="tt-footer-col-label tt-eyebrow">ToolTrim</span>
-            <Link className="tt-label" to={`${prefix}/about`}>{t("À propos", "About")}</Link>
-            <Link className="tt-label" to={`${prefix}/transparency`}>{t("Méthodologie et transparence", "Methodology and transparency")}</Link>
-            <Link className="tt-label" to={`${prefix}/contact`}>{t("Contact", "Contact")}</Link>
-            <Link className="tt-label" to={`${prefix}/submit`}>{t("Soumettre un outil", "Submit a tool")}</Link>
+            <Link to={`${prefix}/about`}>{t("À propos", "About")}</Link>
+            <Link to={`${prefix}/transparency`}>{t("Méthodologie et transparence", "Methodology and transparency")}</Link>
+            <Link to={`${prefix}/contact`}>{t("Contact", "Contact")}</Link>
+            <Link to={`${prefix}/submit`}>{t("Soumettre un outil", "Submit a tool")}</Link>
           </nav>
         </section>
         </div>
