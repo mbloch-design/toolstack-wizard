@@ -16,7 +16,8 @@ Stack : React 18 + React Router v7 (mode déclaratif) + Vite + TypeScript + Tail
 | `src/pages/GuideDetailPage.tsx` | Article guide éditorial |
 | `src/components/Navbar.tsx` | Header fixe + mega-panel Explorer |
 | `src/components/tool/StickyDecisionCard.tsx` | Sidebar sticky décision |
-| `src/index.css` | Système de design complet (@layer components) |
+| `src/ds/` | Système de design : jetons et composants (CSS Modules, stories) |
+| `src/index.css` | Héritage CSS (@layer components), retiré module par module |
 | `docs/DESIGN_SYSTEM.md` | Référence palette, typographie, composants |
 | `docs/ARCHITECTURE.md` | Structure des pages et conventions techniques |
 | `docs/CHANGELOG_AI.md` | Historique des sessions Codex |
@@ -25,11 +26,17 @@ Stack : React 18 + React Router v7 (mode déclaratif) + Vite + TypeScript + Tail
 
 ## Conventions CSS
 
-Toutes les classes de design utilisent `@layer components` dans `src/index.css`.
+**Système de design (depuis le 06/11/2026).** Un composant du système vit dans `src/ds/<Nom>/` : `<Nom>.tsx`, `<Nom>.module.css`, `<Nom>.fixtures.ts` (données réelles et extrêmes), `<Nom>.stories.tsx`. Storybook est la référence visuelle ; process et commandes dans `docs/DESIGN_SYSTEM.md`.
+- Le CSS d'un module ne lit que des jetons `--tt-*` (`src/ds/tokens.css`). `npm run lint:ds` refuse les valeurs codées en dur, `!important` et `:global`.
+- Une page n'ajoute aucun style à un composant du système.
+- `src/index.css` ne reçoit plus de nouvelle règle de design. L'héritage y est retiré module par module, à mesure que les composants du système le remplacent.
+- Avant de livrer : `npm run lint:ds`, `npm run test:ds` (invariants de mise en page et a11y sur chaque story), `npm run build-storybook && npm run test:visual`.
+
+**Héritage, en cours de retrait.** Les anciennes classes vivent dans `@layer components` de `src/index.css`.
 Préfixes : `td-*` (tool detail), `gi-*` (guides index), `ga-*` (guide article),
 `tc-*` (tool card), `tce-*` (tool card editorial), `nav-*` (navbar), `panel-*` (mega-panel).
 
-**Ne pas** utiliser Tailwind inline dans les nouveaux composants éditoriaux.
+**Ne pas** utiliser Tailwind inline dans les nouveaux composants.
 **Ne pas** mettre `position: sticky` sur un enfant d'un grid item — toujours sur le grid item lui-même.
 
 ## Variables CSS globales
@@ -67,7 +74,7 @@ git log --oneline -10  # derniers commits
 ## Workflow typique
 
 1. Lire les docs concernées avant de coder
-2. Modifier CSS dans index.css (classes préfixées)
+2. Composant du système dans `src/ds/` (stories d'abord) ; ne plus ajouter de règle dans index.css
 3. Modifier le composant / la page
 4. `npm run build` pour valider
 5. Commit avec message conventionnel

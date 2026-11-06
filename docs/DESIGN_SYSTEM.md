@@ -4,7 +4,30 @@ Référence du système de design éditorial. Mis à jour au fil des sessions.
 
 ---
 
-## La planche est la référence (30 oct. 2026)
+## Storybook est la référence (6 nov. 2026)
+
+Les vrais composants React sont la seule source. Chacun est montré, testé et validé dans tous ses états réels avant d'arriver sur le site. Spec : `docs/superpowers/specs/2026-11-06-design-process-design.md`. Plan : `docs/superpowers/plans/2026-11-06-design-process-plan.md`.
+
+**Où vit un composant.** `src/ds/<Nom>/` : `<Nom>.tsx`, `<Nom>.module.css` (CSS Modules : portée garantie, une page ne peut pas le déformer), `<Nom>.fixtures.ts` (données issues du catalogue, extrêmes comprises), `<Nom>.stories.tsx` (une story par état). Seuls les jetons `--tt-*` sont globaux : `src/ds/tokens.css`, lu par le site (via `tooltrim-system.css`) et par Storybook.
+
+**Process par module.**
+1. Brief en 5 lignes, validé par Michael : rôle, états, données extrêmes, humour, actions.
+2. Stories d'abord, à partir des pires données.
+3. Composant, jusqu'à ce que `lint:ds`, `test:ds` et `typecheck` passent.
+4. Revue indépendante : un sous-agent design-review qui n'a pas écrit le code reçoit les captures et la liste de contrôle (coupures, vides, alignements, contrastes, langue, ton).
+5. Validation de Michael dans Storybook. Les captures validées deviennent les références (workflow « Visual baselines », lancé à la main avec la note de validation).
+6. Intégration : la page importe le composant sans style ajouté, et l'ancien code est supprimé dans le même commit.
+
+**Commandes.**
+- `npm run storybook` : Storybook en local (port 6006). Barre d'outils : langue FR/EN, thème clair/sombre, largeurs 390, 768 et 1280.
+- `npm run lint:ds` : Stylelint, uniquement des jetons, ni `!important` ni `:global`.
+- `npm run test:ds` : en vrai navigateur, sur chaque story, les invariants de mise en page (aucun mot coupé, aucun montant séparé de son unité marquée `data-nowrap`, rien qui dépasse de son parent) et l'accessibilité (axe, bloquant).
+- `npm run build-storybook && npm run test:visual` : captures de chaque story en 3 largeurs, FR/EN, clair/sombre. Comparées au pixel en CI uniquement, dans l'image Playwright 1.58.2 (`visual/__screenshots__`). En local, elles sont écrites dans `visual/__local__/` pour être regardées.
+- CI : job « Design system » de `preprod-ci.yml`.
+
+**Ce qui est gelé.** La planche HTML (`design-system/planche.html`, artefact) n'est plus la référence : elle reste lisible jusqu'à la migration de Ma stack, puis elle sera archivée. On ne pose plus d'étiquette `planche-validee-*`.
+
+## La planche était la référence (30 oct. au 6 nov. 2026, gelée)
 
 **Garde-fou (31 oct. 2026).** Chaque validation est une étiquette Git datée, jamais réécrite (`planche-validee-2026-10-30`, `planche-validee-2026-11-04`…) ; le garde-fou compare à la plus récente. `npm run planche:check` construit la source validée de la planche avec le système validé, puis avec le système actuel, et exige le même rendu au pixel (clair et sombre). Il vérifie aussi la planche actuelle, en ignorant les blocs `[data-proposal]` (propositions à valider). Après une validation : `git tag -a planche-validee-AAAA-MM-JJ <commit> -m "…"`, puis `git push origin <étiquette>`. `scripts/compare-modules.mjs` compare, module par module, le dessin du site (styles calculés par chemin de classes `tt-*`) à celui de la planche. Règle : on ne modifie jamais une règle validée du système pour arranger le site ; un besoin nouveau est une proposition, ajoutée en fin de fichier et dans la planche.
 
