@@ -1,0 +1,222 @@
+/* The decision card, rebuilt as the page shows it (clean-up, 06/11/2026): head, question, answers, foot. */
+
+.card {
+  display: grid;
+  gap: var(--tt-space-4);
+  align-content: start;
+  padding: var(--tt-tile-pad);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+  container-type: inline-size;
+  transition: box-shadow var(--tt-dur-reveal) ease;
+}
+
+/* Another card sent a question here: a brief ring, then nothing. */
+.card[data-flash] {
+  animation: flash 1.2s var(--tt-ease) both;
+}
+
+.eyebrow { composes: eyebrow from "../atoms.module.css"; }
+.note { composes: note from "../atoms.module.css"; }
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-3);
+}
+
+.steps {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-2);
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-note-font);
+  font-variant-numeric: tabular-nums;
+}
+
+.track {
+  display: inline-flex;
+  gap: calc(var(--tt-space-1) * 0.75);
+}
+
+.track i {
+  width: 14px;
+  height: 2px;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile-2);
+}
+
+.track i[data-on] {
+  background: var(--tt-ink);
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-3);
+}
+
+.media {
+  display: inline-grid;
+  flex: none;
+}
+
+.title {
+  margin: 0;
+  font: var(--tt-title-l-font);
+  letter-spacing: var(--tt-title-l-tracking);
+  text-wrap: balance;
+}
+
+.detail {
+  margin: 0;
+  font: var(--tt-text-font);
+  text-wrap: pretty;
+}
+
+/* The foot: ways to look or defer on the left, the budget the answer leads to on the right. */
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-3) var(--tt-space-6);
+  padding-top: var(--tt-space-1);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-1) var(--tt-space-4);
+  min-width: 0;
+}
+
+/* A link whose line draws itself on hover. */
+.link {
+  padding: 0;
+  border: 0;
+  background: linear-gradient(currentColor, currentColor) 100% 100% / 0 1px no-repeat;
+  color: var(--tt-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  cursor: pointer;
+  transition: background-size 320ms var(--tt-ease);
+}
+
+.link:hover,
+.link:focus-visible {
+  background-position: 0 100%;
+  background-size: 100% 1px;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 3px;
+}
+
+.link[data-quiet] {
+  font: var(--tt-text-font);
+}
+
+.preview {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--tt-space-1) var(--tt-space-3);
+  margin: 0 0 0 auto;
+}
+
+.previewValue {
+  font: var(--tt-amount-font);
+  letter-spacing: var(--tt-amount-tracking);
+  white-space: nowrap;
+}
+
+.previewValue small {
+  margin-left: calc(var(--tt-space-1) / 2);
+  font: var(--tt-unit-font);
+  letter-spacing: 0;
+}
+
+/* The difference an answer makes, as a small pill: figure in ink, direction in colour. */
+.delta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-1);
+  padding: var(--tt-space-1) var(--tt-space-2);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-bg);
+  font: var(--tt-note-font);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  animation: pop 380ms var(--tt-spring) both;
+}
+
+.delta svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: var(--tt-overlap-strong);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.delta svg[data-down] {
+  stroke: var(--tt-gain-ink);
+}
+
+/* At rest: a green check before « Rien à trancher. » */
+.restTitle {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--tt-space-1) * 2.5);
+  margin: 0;
+  font: var(--tt-title-l-font);
+  letter-spacing: var(--tt-title-l-tracking);
+}
+
+.restCheck {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--tt-r-round);
+  background: var(--tt-live);
+  color: var(--tt-on-color);
+}
+
+.restCheck svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.history {
+  min-width: 0;
+}
+
+@keyframes flash {
+  20% { box-shadow: var(--tt-row-ring-on); }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(var(--tt-space-1)) scale(0.9);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card[data-flash],
+  .delta { animation: none; }
+}
