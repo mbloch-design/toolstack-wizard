@@ -14,6 +14,7 @@ for (const story of stories) for (const width of [390, 768, 1280]) for (const la
     await page.goto(`/iframe.html?id=${story.id}&viewMode=story&globals=lang:${lang};theme:${theme}`);
     await page.locator("#storybook-root > *").first().waitFor();
     await page.evaluate(() => document.fonts.ready);
+    await page.waitForFunction(() => [...document.images].every((img) => img.complete && img.naturalWidth > 0) && !document.querySelector("[data-loading]"));
     await expect(page.locator("#storybook-root")).toHaveScreenshot(`${story.id}--${width}-${lang}-${theme}.png`);
   });
 }

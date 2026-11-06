@@ -1,0 +1,46 @@
+/* A tool's logo on its tile. The file sits inside with a breathing margin; a thin mark gets less. */
+
+.tile {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: var(--tt-r-chip);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-logo-shadow);
+}
+
+.tile[data-size="32"] {
+  width: 32px;
+  height: 32px;
+}
+
+.tile[data-size="24"] {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--tt-logo-radius);
+}
+
+.image {
+  display: block;
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+}
+
+.tile[data-small] .image {
+  width: 90%;
+  height: 90%;
+}
+
+.image[data-loading] {
+  opacity: 0;
+}
+
+.initial {
+  color: var(--tt-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+}

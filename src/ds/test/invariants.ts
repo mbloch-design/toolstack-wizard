@@ -1,5 +1,12 @@
-/** Distinct line tops of a range: one value means the text sits on one line. */
-const lineTops = (range: Range) => new Set([...range.getClientRects()].filter((r) => r.width > 0).map((r) => Math.round(r.top)));
+/** Number of lines a range sits on. Boxes of different font sizes share a line when one's vertical centre falls inside the other. */
+function lineCount(range: Range): number {
+  const lines: DOMRect[] = [];
+  for (const rect of [...range.getClientRects()].filter((r) => r.width > 0)) {
+    const centre = rect.top + rect.height / 2;
+    if (!lines.some((line) => centre > line.top && centre < line.bottom)) lines.push(rect);
+  }
+  return lines.length;
+}
 
 /** Words (runs without any space, non-breaking spaces included) that the browser split over two lines. */
 export function brokenWords(root: HTMLElement): string[] {
@@ -10,7 +17,7 @@ export function brokenWords(root: HTMLElement): string[] {
     for (const match of node.data.matchAll(/\S+/g)) {
       const range = document.createRange();
       range.setStart(node, match.index); range.setEnd(node, match.index + match[0].length);
-      if (lineTops(range).size > 1) found.push(match[0]);
+      if (lineCount(range) > 1) found.push(match[0]);
     }
   }
   return found;
@@ -20,7 +27,7 @@ export function brokenWords(root: HTMLElement): string[] {
 export function splitUnits(root: HTMLElement): string[] {
   return [...root.querySelectorAll<HTMLElement>("[data-nowrap]")].filter((el) => {
     const range = document.createRange(); range.selectNodeContents(el);
-    return lineTops(range).size > 1;
+    return lineCount(range) > 1;
   }).map((el) => el.textContent ?? "");
 }
 

@@ -152,3 +152,18 @@
   --tt-gain-2: oklch(0.6 0.12 128);
   --tt-gain-3: oklch(0.55 0.1 200);
 }
+
+/* ── Espacements (proposition du 06/11/2026, à valider par Michael) ──────
+   Une échelle de 4 px, tirée des valeurs du système validé : 4, 8, 12, 16, 20,
+   24, 32 et 40 px couvrent l'essentiel de ses écarts. Les composants de src/ds
+   n'utilisent que ces pas. Aucune valeur existante ne change. */
+:root {
+  --tt-space-1: 4px;
+  --tt-space-2: 8px;
+  --tt-space-3: 12px;
+  --tt-space-4: 16px;
+  --tt-space-5: 20px;
+  --tt-space-6: 24px;
+  --tt-space-8: 32px;
+  --tt-space-10: 40px;
+}

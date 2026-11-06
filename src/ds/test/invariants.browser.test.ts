@@ -17,6 +17,11 @@ describe("layout invariants", () => {
     const el = mount(`<p style="width:30px;font:16px sans-serif"><span data-nowrap>100 %</span></p>`);
     expect(splitUnits(el)).toEqual(["100 %"]);
   });
+  it("keeps a smaller unit on the line of its figure", () => {
+    const el = mount(`<p style="font:64px/1 sans-serif;white-space:nowrap"><span data-nowrap>58 €<small style="font-size:16px">/mois</small></span></p>`);
+    expect(splitUnits(el)).toEqual([]);
+    expect(brokenWords(el)).toEqual([]);
+  });
   it("finds a child sticking out of its box", () => {
     const el = mount(`<div style="width:100px"><span style="display:block;width:140px">x</span></div>`);
     expect(overflowing(el)).toHaveLength(1);

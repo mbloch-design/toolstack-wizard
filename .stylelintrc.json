@@ -1,13 +1,66 @@
 {
-  "extends": ["stylelint-config-standard"],
-  "plugins": ["stylelint-declaration-strict-value"],
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "plugins": [
+    "stylelint-declaration-strict-value"
+  ],
   "rules": {
     "declaration-no-important": true,
-    "selector-pseudo-class-disallowed-list": ["global"],
+    "selector-pseudo-class-disallowed-list": [
+      "global"
+    ],
     "selector-class-pattern": "^[a-z][a-zA-Z0-9]*$",
     "scale-unlimited/declaration-strict-value": [
-      ["/color$/", "fill", "stroke", "font", "font-size", "font-weight", "font-family", "letter-spacing", "line-height", "/^(margin|padding)/", "gap", "row-gap", "column-gap", "border-radius", "box-shadow"],
-      { "ignoreValues": ["0", "inherit", "currentColor", "transparent", "none", "auto", "normal", "/^calc\\(.*var\\(--tt-/"], "ignoreFunctions": false, "disableFix": true }
+      [
+        "/color$/",
+        "fill",
+        "stroke",
+        "font",
+        "font-size",
+        "font-weight",
+        "font-family",
+        "letter-spacing",
+        "line-height",
+        "/^(margin|padding)/",
+        "gap",
+        "row-gap",
+        "column-gap",
+        "border-radius",
+        "box-shadow"
+      ],
+      {
+        "ignoreValues": [
+          "0",
+          "inherit",
+          "currentColor",
+          "currentcolor",
+          "transparent",
+          "none",
+          "auto",
+          "normal",
+          "/^calc\\(.*var\\(--tt-/"
+        ],
+        "ignoreFunctions": false,
+        "disableFix": true
+      }
+    ],
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "composes"
+        ]
+      }
+    ],
+    "value-keyword-case": [
+      "lower",
+      {
+        "ignoreProperties": [
+          "composes"
+        ],
+        "camelCaseSvgKeywords": true
+      }
     ]
   }
 }

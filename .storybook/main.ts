@@ -6,6 +6,7 @@ const config: StorybookConfig = {
   addons: ["@storybook/addon-docs", "@storybook/addon-a11y", "@storybook/addon-vitest"],
   staticDirs: [
     { from: "../public/fonts", to: "/fonts" },
+    { from: "../public/home-logos", to: "/home-logos" },
     { from: "../node_modules/@fontsource-variable/inter/files", to: "/fonts/inter" },
     { from: "../node_modules/@fontsource-variable/inter-tight/files", to: "/fonts/inter-tight" },
   ],
