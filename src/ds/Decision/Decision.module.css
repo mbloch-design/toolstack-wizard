@@ -64,8 +64,10 @@
   flex: none;
 }
 
+/* Focusable from the page (« Revoir ce choix » brings the question to the reader), without a ring for that programmatic focus. */
 .title {
   margin: 0;
+  outline: none;
   font: var(--tt-title-l-font);
   letter-spacing: var(--tt-title-l-tracking);
   text-wrap: balance;

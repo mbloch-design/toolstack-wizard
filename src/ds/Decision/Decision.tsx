@@ -44,7 +44,7 @@ export default function Decision({ lang, eyebrow, step, media, title, detail, ch
 
       <div className={styles.question}>
         {media && <span className={styles.media} aria-hidden="true">{media}</span>}
-        <h3 id={`${id}-title`} className={styles.title}>{title}</h3>
+        <h3 id={`${id}-title`} className={styles.title} tabIndex={-1}>{title}</h3>
       </div>
       {detail && <p className={styles.detail}>{detail}</p>}
 
