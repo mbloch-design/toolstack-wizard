@@ -284,34 +284,8 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 /* Le fond typographique d’une page du système, celui de la planche : Inter, interligne 1,6, variantes cv05 et cv08. */
 .tt-page { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--tt-page-gap); color: var(--tt-ink); font: var(--tt-w-text) 1rem/1.6 var(--tt-read); letter-spacing: 0; font-optical-sizing: auto; font-feature-settings: "cv05", "cv08"; }
 .tt-page > * { margin-block: 0; }
-.tt-board { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "budget decide" "usage split"; gap: var(--tt-board-gap); align-items: stretch; }
-.tt-board:not(:has(> :is([data-card="decision"], .tt-starter))) { grid-template-areas: "budget usage" "split split"; }
-.tt-board:not(:has(> [data-card="usage"])) { grid-template-areas: "budget decide" "split split"; }
-.tt-board:not(:has(> [data-card="split"])) { grid-template-areas: "budget decide" "usage usage"; }
-.tt-board:not(:has(> [data-card="split"])):not(:has(> [data-card="usage"])) { grid-template-areas: "budget decide"; }
-.tt-board:not(:has(> [data-card="split"])):not(:has(> :is([data-card="decision"], .tt-starter))) { grid-template-areas: "budget usage"; }
-.tt-board > [data-card="price"][class] { grid-area: budget; }
-.tt-board > :is([data-card="decision"], .tt-starter)[class] { grid-area: decide; }
-.tt-board > [data-card="usage"][class] { grid-area: usage; }
-.tt-board > [data-card="split"][class] { grid-area: split; }
-.tt-board > [class] { min-width: 0; height: auto; margin: 0; }
 /* Grand écran (06/11/2026) : les trois modules courts côte à côte, puis la répartition sur toute la largeur, pour qu'elle passe en version large (anneau).
    Dès 1 400 px : en dessous, la carte Budget n'a plus la place pour sa rangée de logos (vérifié à 1 280 px). */
-@media (min-width: 1400px) { .tt-board:has(> [data-card="split"]):has(> [data-card="usage"]):has(> :is([data-card="decision"], .tt-starter)) { grid-template-columns: minmax(0, 4fr) minmax(0, 4fr) minmax(0, 5fr); grid-template-areas: "budget usage decide" "split split split"; } }
-@media (max-width: 900px) { .tt-board, .tt-board[class] { grid-template-columns: minmax(0, 1fr); grid-template-areas: none; } }
-@media (max-width: 900px) { .tt-board > [class][class] { grid-area: auto; } }
-.tt-starter { display: grid; justify-items: start; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
-.tt-starter .tt-title-m { margin: 0; }
-.tt-starter .tt-text { max-width: 46ch; }
-.tt-seats { display: flex; gap: 10px; }
-.tt-seat { display: grid; place-items: center; width: 52px; height: 52px; border: 1.5px dashed var(--tt-line); border-radius: var(--tt-logo-radius); color: var(--tt-meta); transition: transform var(--tt-dur-state) var(--tt-spring), color var(--tt-dur-state) ease, border-color var(--tt-dur-state) ease; }
-.tt-seat[data-on] { border: 0; background: var(--tt-bg); box-shadow: var(--tt-logo-shadow); }
-.tt-seat svg { width: 18px; height: 18px; }
-.tt-starter:hover .tt-seat:not([data-on]) { border-color: var(--tt-ink); color: var(--tt-ink); }
-.tt-starter:hover .tt-seat:nth-child(2) { transform: rotate(-6deg) translateY(-2px); }
-.tt-starter:hover .tt-seat:nth-child(3) { transform: rotate(5deg) translateY(-2px); }
-@media (prefers-reduced-motion: reduce) { .tt-seat { transition: none; } }
-@media (prefers-reduced-motion: reduce) { .tt-starter:hover .tt-seat { transform: none; } }
 .tt-toolcard-wrap { position: relative; }
 .tt-toolcard.is-selected { box-shadow: var(--tt-row-ring-on); }
 .tt-toolcard > .tt-toolcard-foot { grid-area: state; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; min-width: 0; }

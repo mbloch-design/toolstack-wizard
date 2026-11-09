@@ -1,0 +1,70 @@
+/* The starter, as validated (.tt-starter): the one tool and two dashed seats waiting next to it. */
+
+.starter {
+  display: grid;
+  gap: var(--tt-tile-gap);
+  justify-items: start;
+  padding: var(--tt-tile-pad);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+}
+
+.titleM { composes: titleM from "../atoms.module.css"; }
+
+.text {
+  composes: text from "../atoms.module.css";
+  max-width: 46ch;
+}
+
+.primary {
+  composes: primary from "../atoms.module.css";
+  gap: calc(var(--tt-space-1) * 1.5);
+}
+
+.primary svg,
+.seat svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.seats {
+  display: flex;
+  gap: calc(var(--tt-space-1) * 2.5);
+}
+
+.seat {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1.5px dashed var(--tt-line);
+  border-radius: var(--tt-logo-radius);
+  color: var(--tt-ink);
+  transition: transform var(--tt-dur-state) var(--tt-spring), border-color var(--tt-dur-state) ease;
+}
+
+.seat[data-on] {
+  border: 0;
+}
+
+.starter:hover .seat:not([data-on]) {
+  border-color: var(--tt-ink);
+}
+
+.starter:hover .seat:nth-child(2) {
+  transform: rotate(-6deg) translateY(-2px);
+}
+
+.starter:hover .seat:nth-child(3) {
+  transform: rotate(5deg) translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seat { transition: none; }
+  .starter:hover .seat { transform: none; }
+}

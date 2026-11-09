@@ -1,0 +1,47 @@
+/* The Ma stack board: budget and action, then usage and split.
+   The board is the container, the grid inside follows its width (a box cannot query its own size). */
+
+.board {
+  container: board / inline-size;
+}
+
+/* One column on a narrow board, in reading order. Cards keep their content height. */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--tt-board-gap);
+  align-items: start;
+}
+
+.budget,
+.action,
+.usage,
+.split {
+  min-width: 0;
+}
+
+@container board (width >= 820px) {
+  .grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-areas: "budget action" "usage split";
+  }
+
+  .budget { grid-area: budget; }
+  .action { grid-area: action; }
+  .usage { grid-area: usage; }
+  .split { grid-area: split; }
+
+  .board:not([data-action]) .grid { grid-template-areas: "budget usage" "split split"; }
+  .board:not([data-usage]) .grid { grid-template-areas: "budget action" "split split"; }
+  .board:not([data-split]) .grid { grid-template-areas: "budget action" "usage usage"; }
+  .board:not([data-split], [data-usage]) .grid { grid-template-areas: "budget action"; }
+  .board:not([data-split], [data-action]) .grid { grid-template-areas: "budget usage"; }
+}
+
+/* A wide board with every card: the three short ones side by side, then the split across, wide enough for its ring. */
+@container board (width >= 1080px) {
+  .board[data-action][data-usage][data-split] .grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 4fr) minmax(0, 5fr);
+    grid-template-areas: "budget usage action" "split split split";
+  }
+}

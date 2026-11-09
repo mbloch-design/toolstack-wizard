@@ -18843,7 +18843,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   --ms-on-ink: var(--color-text-strong);
 }
 /* Les contrôles héritent la police de leur zone ; spécificité nulle, un atome .tt-* passe toujours devant. */
-:where(.ms-page :is(.ms-top, .mf, .ms-board, .ms-howto, .ms-mod--add)) :where(button, input, select, textarea) { font-family: inherit; }
 
 /* ── Hero: a status line, the title, one sentence. ─────────────────────── */
 
@@ -18893,7 +18892,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mk-segmented > button:focus-visible { outline: 2px solid var(--ms-ink); outline-offset: 1px; }
 
 /* ── Findings: price, the one decision, what comes next ──────────────────── */
-.ms-page .mf { margin: 0; }
 @keyframes mf-rise { from { opacity: 0; transform: translateY(12px); } }
 /* Label: words only, the type does the work. */
 
@@ -21359,70 +21357,35 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 /* Findings, compaction pass (22/10/2026): higher specificity than the earlier
    blocks so the internal layouts hold; rows stacked where columns are narrow. */
-.ms-page .mf .mf-balance .mk-radar { max-width: 180px; }
-.ms-page .mf .mf-balance .mk-radar { max-width: 160px; }
 /* Price list: clean rows (logo, name, amount), a thin share bar under the name. */
 /* Radar, fine and delicate: hairline rings, no spokes fill, a light veil, small dots. */
-.ms-page .mf .mk-radar-ring { stroke: color-mix(in srgb, var(--ms-ink) 9%, transparent); stroke-width: .6; stroke-dasharray: 1.5 2.5; fill: none; }
-.ms-page .mf .mk-radar-ring:last-of-type { stroke-dasharray: none; fill: none; }
-.ms-page .mf .mk-radar-axis { stroke: color-mix(in srgb, var(--ms-ink) 7%, transparent); stroke-width: .6; }
-.ms-page .mf .mk-radar-shape polygon { fill-opacity: .12; stroke: var(--color-chart-automation); stroke-width: 1; stroke-linejoin: round; }
-.ms-page .mf .mk-radar-shape circle { stroke: var(--ms-tile); stroke-width: 1.2; }
 /* Balance: title row on top across the card; the chart and the list share the height below. */
-.ms-page .mf .mf-balance .mk-radar { max-width: 170px; }
 /* Cheaper elsewhere: mine → theirs, what it saves a month, opens the comparison. */
 /* Balance by area, after the reference: a large legible radar with its labels,
    one colour (line and soft fill), clean rings; the values in tiles beside it. */
-.ms-page .mf .mf-balance .mk-radar { width: 100%; max-width: 330px; margin: 0 auto; }
-.ms-page .mf .mk-radar-ring { stroke: color-mix(in srgb, var(--ms-ink) 14%, transparent); stroke-width: 1; stroke-dasharray: none; fill: none; }
-.ms-page .mf .mk-radar-ring:last-of-type { fill: none; }
-.ms-page .mf .mk-radar-axis { stroke: color-mix(in srgb, var(--ms-ink) 10%, transparent); stroke-width: 1; }
-.ms-page .mf .mk-radar-shape polygon { fill: var(--color-chart-create); fill-opacity: .16; stroke: var(--color-chart-create); stroke-width: 2; }
-.ms-page .mf .mk-radar-shape circle { display: none; }
-.ms-page .mf .mk-radar-label text { fill: var(--ms-meta); font: 500 12px var(--ap-font); }
-.ms-page .mf .mk-radar-label[data-empty] text { opacity: .55; }
 /* Review pass (22/10/2026): one anatomy per card (label, headline at one size,
    content), rows sized by content, no gaps in the middle of cards. */
-.ms-page .mf .mf-balance .mk-radar { max-width: 300px; }
 /* Missing price: the amount is typed right in the card. */
 /* Plan pick: the plans as cards, one tap answers. */
 
 /* Duplicate face-off: two faces, one tap keeps one. */
-.ms-page .mf .mf-face-name { margin-top: var(--space-xs); }
 
 /* Proportion follows importance: price and decision lead, health and cheaper share a side column,
    balance is a low band underneath. */
 @media (min-width: 1181px) {
 
   /* Balance band: the sentence on the left, the radar and its figures on the right. */
-  .ms-page .mf .mf-balance { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr); grid-template-rows: auto 1fr; column-gap: var(--space-xl); align-items: start; padding-block: var(--space-lg); }
-  .ms-page .mf .mf-balance .mk-radar { max-width: 220px; }
 }
 
 /* Compact health: one line per check. */
 
 /* Tighter face-off. */
-@media (min-width: 1181px) {
-  .ms-page .mf .mf-balance .mk-radar { max-width: 190px; }
-}
-@media (max-width: 760px) {
-  .ms-page .mf .mf-balance .mk-radar { max-width: 240px; }
-}
 
 /* Decision card, calm (23/10): the same neutral surface as every box; the
    faces carry the colour through the logos, not a wash behind them. */
 
 /* Bento v3 (23/10): the decision only as tall as it needs; cheaper and health
    share the row under it; balance stands as a column on the right. */
-@media (min-width: 1181px) {
-  .ms-page .mf .mf-balance { display: flex; flex-direction: column; padding-block: var(--space-lg); }
-  .ms-page .mf .mf-balance .mk-radar { max-width: 200px; }
-}
-@media (min-width: 1181px) {
-  .ms-page .mf .mf-balance { overflow: visible; }
-  .ms-page .mf .mf-balance .mk-radar { max-width: 168px; overflow: visible; }
-  .ms-page .mf .mf-balance .mk-radar svg { overflow: visible; }
-}
 
 /* ===== Ma stack, read four ways (23/10) ===== */
 
@@ -21451,22 +21414,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Bento v4 (23/10): where the money goes, wide, beside the price; the decision
    stands as a tall column on the right, its faces stacked like a card deck. */
 @media (min-width: 1181px) {
-  .ms-page .mf .mf-balance { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); grid-template-rows: auto 1fr; column-gap: var(--space-lg); align-items: start; }
-  .ms-page .mf .mf-balance .mk-radar { max-width: 170px; }
-}
-@media (min-width: 1181px) {
-  .ms-page .mf .mf-balance { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto 1fr; }
-  .ms-page .mf .mf-balance .mk-radar { max-width: 160px; }
-}
-@media (min-width: 1181px) {
   /* The stage of logos is gone in the column layout: the text takes the full width. */
 }
 /* Bento v5: no box just to say "all good": the optimisation box takes the space. */
 /* Budget split (23/10): verdict, one line of proof, then a radar as large as its figures. */
-@media (min-width: 1181px) {
-  .ms-page .mf .mf-balance { grid-template-rows: auto auto auto 1fr; }
-  .ms-page .mf .mf-balance .mk-radar { width: 100%; max-width: 240px; justify-self: center; }
-}
 
 /* ===== Ma stack inventory (23/10): one card, two layouts, groups with subtotals ===== */
 
@@ -21487,7 +21438,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @media (min-width: 1181px) {
   /* The decision is wide again: faces side by side. */
   /* Budget split, in its own column: verdict, bar, legend. */
-  .ms-page .mf .mf-balance { display: flex; flex-direction: column; }
 }
 /* Icon top right, label quiet: the headline says what the box is about. */
 
@@ -21516,27 +21466,18 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Reliability on one line: ring, figure, what is left. */
 /* Big logos stay inside their slot. */
 /* Compact lower row (23/10). */
-.ms-page .mf .mf-balance { position: relative; }
 
 /* Bento v7 (23/10): price beside the decision on the first row; the split,
    wide, beside optimisation on the second. The wide split puts its chart on
    the left and the legend on the right. */
-@media (min-width: 1181px) {
-  .ms-page .mf .mf-balance { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); grid-template-rows: auto 1fr; column-gap: var(--space-xl); align-items: start; }
-}
 
 /* Above the fold (23/10): the title is one line, the bento fits under it. */
 
 /* ===== Above the fold (23/10): summaries, detail on demand ===== */
-.ms-page .mf .mf-expand { display: none; }
 @media (min-width: 761px) {
   /* Compact face-off: two faces side by side, logo left, the choice right. */
 }
 /* Phone: four summary cards; one opens at a time. */
-@media (max-width: 760px) {
-  .ms-page .mf .mf-expand { display: grid; place-items: center; order: 3; width: 36px; height: 36px; margin-left: 4px; border: 0; border-radius: 50%; background: var(--ms-card); color: var(--ms-ink); cursor: pointer; transition: transform 240ms var(--ms-ease); }
-  .ms-page .mf .mf-expand[aria-expanded="true"] { transform: rotate(180deg); }
-}
 /* Tablet and phone: one column for the phone, two for the tablet; the
    decision comes first on a phone so the action is in the first screen. */
 /* Short screens: tighter figures and lines, so both rows stay above the fold. */
@@ -21554,7 +21495,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
      below that, a plan question is cut (23/10/2026); a decision must never be truncated. */
   /* Lists that can grow scroll inside their box. */
   /* The chart has one size whatever the view. */
-  .ms-page .mf .mf-balance { grid-template-rows: auto minmax(0, 1fr); }
 }
 @media (min-width: 761px) {
   /* In the price list, the "others" row closes the list; no row is ever cut. */
@@ -21580,7 +21520,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    fixed square cell and the legend beside it. The cell is the same for the
    three views; the bar stands upright to fill it. */
 @media (min-width: 761px) {
-  .ms-page .mf .mf-balance { position: relative; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); grid-template-rows: 36px minmax(0, 1fr); column-gap: var(--space-lg); row-gap: var(--space-sm); }
   /* Upright bar: segments stack from the bottom. */
   @keyframes mf-bb-rise { from { transform: scaleY(0); } }
 }
@@ -21594,9 +21533,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Split charts that answer the pointer, and a legend made to be read (23/10). */
 /* Legend: larger type, ink figures. */
 /* Chips: the amount only where the legend stands beside the chart. */
-@media (min-width: 761px) {
-  .ms-page .mf .mf-balance { grid-template-columns: minmax(0, .66fr) minmax(0, 1.34fr); }
-}
 
 /* Radar labels, playful lead, and a micro-animation for every change of state (23/10). */
 /* Entering a view: the chart zooms in; the radar unfolds from the centre, its dots pop one by one; the ring turns into place. */
@@ -21605,7 +21541,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @keyframes mf-ring-in { from { transform: rotate(-70deg) scale(.9); opacity: 0; } }
 /* Left zone: a playful tag, the figure in the lead area's colour, its tools as a fanned deck. */
 @keyframes mf-deal { from { opacity: 0; transform: translateY(8px) rotate(0); } }
-.ms-page .mf .mk-odo-sym { white-space: pre; }
 @media (min-width: 761px) {
   /* Bar: centred in its zone; the chips carry the amount, the bar already shows the share. */
   /* Radar and ring: a square cell as tall as the panel. */
@@ -22045,50 +21980,27 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
      the card's full width (no narrow column floating in the middle), a meter
      in the card's own ink, a line-up of answers instead of a clipped list,
      and a line of casting humour read from the answers. */
-  .ms-page .mf .mu-card > * { min-width: 0; }
-  .ms-page .mf .mu-card .mu-scene { min-height: 0; min-width: 0; animation: mu-scene-in 220ms cubic-bezier(.2, .8, .2, 1) both; }
 
   /* Question: the tool, the meter, the reaction. Side by side when wide. */
-  .ms-page .mf .mu-card .mu-question { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(3, max-content); grid-template-areas: "tool" "gauge" "feedback"; align-content: safe center; gap: 10px; padding: 2px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
   /* Preview while pointing, then the answer itself, bars rising one by one. */
-  @container (min-width: 600px) {
-    .ms-page .mf .mu-card .mu-question { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: max-content max-content; grid-template-areas: "tool gauge" "feedback gauge"; column-gap: 28px; row-gap: 12px; align-content: safe center; }
-  }
 
   /* Summary: a verdict, then the cast as tiles; no inner scrolling. */
 
   /* Footer: leave, where you are, go on. */
-  .ms-page .mf .mu-card .mu-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; padding-top: 10px; border-top: 1px solid color-mix(in srgb, var(--mu-ink) 12%, transparent); }
-  .ms-page .mf .mu-card .mu-next { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-height: 44px; padding: 0 16px; border: 0; border-radius: var(--radius-pill); font: 600 14px/1.2 var(--font-ui); cursor: pointer; transition: background-color 160ms ease, color 160ms ease, transform 160ms cubic-bezier(.34, 1.4, .64, 1); }
-  .ms-page .mf .mu-card .mu-next:active { transform: scale(.96); }
-  .ms-page .mf .mu-card .mu-next { min-width: 112px; background: var(--mu-ink); color: var(--color-surface); }
-  .ms-page .mf .mu-card .mu-next svg { flex: none; transition: transform 180ms cubic-bezier(.34, 1.4, .64, 1); }
-  .ms-page .mf .mu-card .mu-next:hover svg { transform: translateX(3px); }
-  .ms-page .mf .mu-card .mu-history { overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding: 2px; }
-  .ms-page .mf .mu-card .mu-history:focus-visible { outline: 2px solid var(--mu-ink); outline-offset: -2px; }
-  .ms-page .mf .mu-card .mu-history .ms-decided { margin: 0; }
-  .ms-page .mf .mu-card .mu-history .mu-pair + .mu-pair { margin-top: var(--space-sm); padding-top: var(--space-sm); border-top: 1px solid var(--color-border-soft); }
 
   /* Hierarchy pass (28 Oct 2026, "tout est au premier plan"): one thing in
      front per scene (the tool, or the verdict), everything else recedes:
      no white boxes, quiet counts, the meter on the card itself, a soft glow
      for freshness. */
-  .ms-page .mf .mu-card .mu-footer { border-top: 0; padding-top: 0; }
 
   /* Meter reset (28 Oct 2026, "ton sur ton, trop écarté"): an Apple-style
      staircase. Bars touch (4px apart), neutral grey when empty, the card's
      ink when filled, no hover box; the bars themselves preview. Labels in
      readable grey, the chosen one in ink. */
-  @container (max-width: 360px) {
-    .ms-page .mf .mu-card .mu-next { min-width: 0; padding-inline: 12px; font-size: 13px; }
-  }
   @keyframes mu-scene-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
   @keyframes mu-icon-nod { 0% { transform: scale(.6) rotate(-14deg); } 60% { transform: scale(1.08) rotate(6deg); } 100% { transform: none; } }
   @keyframes mu-bar-pop { 0% { transform: scaleY(var(--h)); } 45% { transform: scaleY(calc(var(--h) * 1.12)) scaleX(1.06); } 100% { transform: scaleY(var(--h)); } }
   @keyframes mu-tile-in { from { opacity: 0; transform: translateY(8px) scale(.97); } to { opacity: 1; transform: none; } }
-  @media (prefers-reduced-motion: reduce) {
-    .ms-page .mf .mu-card *, .ms-page .mf .mu-card .mu-scene { animation: none !important; transition: none !important; }
-  }
 }
 
 @layer components {
@@ -22387,9 +22299,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   /* No-scroll contract (29/10/2026): no box of the bento scrolls or cuts its content. Rows keep
      their reference height as a floor and grow with the tallest card; names wrap instead of fading. */
   /* Usage card from 400px: two columns, the tool and its line on the left, a compact selector on the right. */
-  @container (min-width: 400px) and (max-width: 599px) {
-    .ms-page .mf .mu-card .mu-question { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); grid-template-rows: auto auto; grid-template-areas: "tool gauge" "feedback gauge"; align-items: center; column-gap: 16px; }
-  }
   /* Duplicate decision (29/10/2026): each tile reads as an answer. A ring says it can be picked,
      the line under the name says what the choice does to the budget, the tag sits inside the tile. */
   /* At 320px five 44px touch targets need the whole width: no gap between the steps. */
@@ -22655,12 +22564,6 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .tt-footer .tt-footer-col a { font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); color: var(--tt-ink); }
 .tt-footer .tt-footer-legal :is(a, span, button) { font: inherit; letter-spacing: inherit; color: inherit; }
 /* « Vos usages » : l'organisme du système (.tt-usage), planche chapitre 06. */
-.ms-page .mf .mu-card.tt-usage { align-content: start; color: var(--tt-ink); }
-.ms-page .mf .mu-card.tt-usage .mu-scene { display: grid; gap: 18px; padding: 0; animation: tt-usage-in 420ms var(--tt-ease) both; }
 @keyframes tt-usage-in { from { opacity: 0; transform: translateX(16px); } }
-.ms-page .mf .mu-card.tt-usage[data-view="question"] .mu-footer { display: none; }
-@media (prefers-reduced-motion: reduce) { .ms-page .mf .mu-card.tt-usage .mu-scene { animation: none; } }
 /* Les couches historiques plus spécifiques : fond radial (et sa version sombre !important), grille côte à côte. */
-.ms-page .mf .mu-card.tt-usage .mu-scene.mu-question { grid-template-columns: minmax(0, 1fr) !important; grid-template-areas: none !important; }
-.ms-page .mf .mu-card.tt-usage .mu-question > * { grid-area: auto !important; }
 /* L'organisme budget dans la grille de Ma stack : il remplace l'habillage historique de .mf-card. */

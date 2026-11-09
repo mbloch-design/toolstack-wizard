@@ -68,6 +68,6 @@ test("corrupt decisions do not hide valid decisions or crash my stack", async ({
   }, { key: stackKey, state: seed(["figma", "canva"]), decisionKey: decisionsKey });
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
   await expect(page.getByRole("heading", { name: "Mes outils", exact: true })).toBeVisible();
-  await expect(page.locator(".mf")).toContainText("gardée volontairement");
+  await expect(page.locator("[data-board]")).toContainText("gardée volontairement");
   await expect(page.locator(".tt-toolcard")).toHaveCount(2);
 });
