@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { forwardRef, type CSSProperties, type ReactNode } from "react";
 import Logo from "../Logo/Logo";
 import type { LogoTool } from "@/lib/useToolLogoSource";
 import { displayFigure } from "../figure";
@@ -37,10 +37,10 @@ export default function ToolCard({ lang, tool, amount, monthly, status, area, se
         onClick={(event) => { if (!editing) onOpen(event.currentTarget); }}>
         <span className={styles.logo}><Logo tool={tool} size={40} localOnly={localLogosOnly} /></span>
         <span className={styles.amount} data-amount="" aria-hidden="true">{displayFigure(amount)}{monthly && <small>{t("/mois", "/mo")}</small>}</span>
-        <span className={styles.name} aria-hidden="true">{tool.name}</span>
+        <span className={styles.name} data-name="" aria-hidden="true">{tool.name}</span>
         <span className={styles.foot} aria-hidden="true">{tag}{area && <span className={styles.note}>{area}</span>}</span>
       </button>
-      {editing && onRemove && <button type="button" className={styles.remove} onClick={onRemove} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}>
+      {editing && onRemove && <button type="button" className={styles.remove} data-remove="" onClick={onRemove} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12" /></svg>
       </button>}
     </div>
@@ -56,8 +56,20 @@ export function ToolCards({ layout, children }: { layout: "grid" | "list"; child
 export function ToolGroup({ label, color, note, children }: { label?: string; color?: string; note?: ReactNode; children: ReactNode }) {
   return (
     <section className={styles.group} aria-label={label}>
-      {label && <header className={styles.groupName} style={{ "--c": color } as React.CSSProperties}><i aria-hidden="true" /><h3 className={styles.label}>{label}</h3>{note && <span className={styles.note}>{note}</span>}</header>}
+      {label && <header className={styles.groupName} style={{ "--c": color } as CSSProperties}><i aria-hidden="true" /><h3 className={styles.label}>{label}</h3>{note && <span className={styles.note}>{note}</span>}</header>}
       {children}
     </section>
   );
 }
+
+/** All the groups of the inventory, and what to say when a filter leaves nothing. */
+export const ToolGroups = forwardRef<HTMLDivElement, { id?: string; label: string; layout: "grid" | "list"; grouped: boolean; editing: boolean; empty?: string; children: ReactNode }>(
+  function ToolGroups({ id, label, layout, grouped, editing, empty, children }, ref) {
+    return (
+      <div id={id} ref={ref} className={styles.groups} role="group" aria-label={label} data-layout={layout} data-grouped={grouped ? "" : undefined} data-editing={editing || undefined}>
+        {children}
+        {empty && <p className={styles.note}>{empty}</p>}
+      </div>
+    );
+  },
+);

@@ -15,13 +15,13 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     // Synced, the saving status is the discreet indicator beside the inventory title.
     await expect(page.locator('.ms-save-indicator')).toHaveAttribute('title', lang === 'fr' ? 'Stack enregistrée' : 'Stack saved');
-    await page.locator('.ms-inventory-heading').screenshot({ path: test.info().outputPath(`${lang}-${width}-account.png`) });
+    await page.locator('#ms-all-title').locator('..').screenshot({ path: test.info().outputPath(`${lang}-${width}-account.png`) });
     // A clean context signs in independently: no localStorage or session copied.
     const second = await browser.newContext({ baseURL: process.env.PLAYWRIGHT_BASE_URL, viewport: { width, height: 1000 } }); await isolate(second);
     const other = await second.newPage(); const otherErrors: string[] = []; other.on('pageerror', error => otherErrors.push(error.message)); await other.goto(`/${lang}/ma-stack`);
     await login(other, lang, 'roundtrip@example.invalid'); await saved(other, lang);
     expect(await snapshot(other)).toEqual(full);
-    await other.locator('.tt-toolcard').filter({ hasText: 'Notion' }).click();
+    await other.locator('[data-tool-id]').filter({ hasText: 'Notion' }).click();
     await other.getByRole('button', { name: lang === 'fr' ? 'Retirer de ma stack' : 'Remove from my stack', exact: true }).click();
     await saved(other, lang);
     await other.reload(); await saved(other, lang);

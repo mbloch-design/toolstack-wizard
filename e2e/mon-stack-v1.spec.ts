@@ -29,22 +29,22 @@ test("empty → search → add → inspect → remove → undo → persist", asy
   await expect(page.locator("#ms-all-grid")).toHaveCount(0);
   await firstTool(page, "fr", "Figma");
   await expect(page).toHaveURL(/ma-stack$/);
-  await expect(page.locator(".tt-toolcard")).toHaveCount(1);
-  await page.locator(".tt-toolcard").click();
+  await expect(page.locator("[data-tool-id]")).toHaveCount(1);
+  await page.locator("[data-tool-id]").click();
   await expect(page.locator(".ms-tool-sheet")).toBeVisible();
   await page.getByRole("button", { name: "Retirer de ma stack", exact: true }).click();
-  await expect(page.locator(".tt-toolcard")).toHaveCount(0);
+  await expect(page.locator("[data-tool-id]")).toHaveCount(0);
   await page.getByRole("listitem").filter({ hasText: "Figma retiré de ma stack." }).getByRole("button", { name: "Annuler", exact: true }).click();
-  await expect(page.locator(".tt-toolcard")).toHaveCount(1);
+  await expect(page.locator("[data-tool-id]")).toHaveCount(1);
   await page.reload({ waitUntil: "domcontentloaded" });
-  await expect(page.locator(".tt-toolcard")).toHaveCount(1);
+  await expect(page.locator("[data-tool-id]")).toHaveCount(1);
   const storage = await page.context().storageState();
   const context = await page.context().browser()!.newContext({ storageState: storage });
   const origin = new URL(String(test.info().project.use.baseURL)).origin;
   await context.route("**/*", route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
   const reopened = await context.newPage();
   await reopened.goto(`${test.info().project.use.baseURL}/fr/ma-stack`, { waitUntil: "domcontentloaded" });
-  await expect(reopened.locator(".tt-toolcard")).toHaveCount(1);
+  await expect(reopened.locator("[data-tool-id]")).toHaveCount(1);
   await context.close();
 });
 
@@ -72,22 +72,22 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await page.setViewportSize({ width, height: 1000 });
     await page.addInitScript(({ key, state }) => localStorage.setItem(key, JSON.stringify(state)), { key, state: seed() });
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
-    await expect(page.locator(".tt-toolcard")).toHaveCount(slugs.length);
+    await expect(page.locator("[data-tool-id]")).toHaveCount(slugs.length);
     // Three layouts of the same tools; the sort menu reorders them.
-    await page.locator(".tt-iconswitch").getByRole("button", { name: lang === "fr" ? "Liste" : "List", exact: true }).click();
+    await page.getByRole("group", { name: /^(Affichage|Layout)$/ }).getByRole("button", { name: lang === "fr" ? "Liste" : "List", exact: true }).click();
     await expect(page.locator('#ms-all-grid[data-layout="list"]')).toHaveCount(1);
     await page.getByRole("combobox", { name: lang === "fr" ? "Trier mes outils" : "Sort my tools" }).selectOption("name");
-    const names = await page.locator(".tt-toolcard .tt-label").allTextContents();
+    const names = await page.locator("[data-tool-id] [data-name]").allTextContents();
     expect(names).toEqual([...names].sort((a, b) => a.localeCompare(b, lang)));
-    await expect(page.locator(".tt-toolcard")).toHaveCount(slugs.length);
+    await expect(page.locator("[data-tool-id]")).toHaveCount(slugs.length);
     // Edit mode: a minus badge removes a tool, Undo restores it.
-    await page.locator(".tt-toolbar-tools").getByRole("button", { name: lang === "fr" ? "Modifier" : "Edit" }).click();
-    await page.locator(".ms-card-remove").first().dispatchEvent("click"); // cards wiggle in edit mode
-    await expect(page.locator(".tt-toolcard")).toHaveCount(slugs.length - 1);
+    await page.getByRole("button", { name: lang === "fr" ? "Modifier" : "Edit", exact: true }).click();
+    await page.locator("[data-remove]").first().dispatchEvent("click"); // cards wiggle in edit mode
+    await expect(page.locator("[data-tool-id]")).toHaveCount(slugs.length - 1);
     await page.getByRole("button", { name: lang === "fr" ? "Annuler" : "Undo", exact: true }).click();
-    await expect(page.locator(".tt-toolcard")).toHaveCount(slugs.length);
-    await page.locator(".tt-toolbar-tools").getByRole("button", { name: lang === "fr" ? "Terminé" : "Done" }).click();
-    await page.locator(".tt-toolcard").first().focus();
+    await expect(page.locator("[data-tool-id]")).toHaveCount(slugs.length);
+    await page.getByRole("button", { name: lang === "fr" ? "Terminé" : "Done", exact: true }).click();
+    await page.locator("[data-tool-id]").first().focus();
     await page.keyboard.press("Enter");
     await expect(page.locator(".ms-tool-sheet")).toBeVisible();
     // The sheet is a dialog: focus moves inside it.
@@ -106,9 +106,9 @@ test("invalid catalogue ID can be removed without losing valid tools", async ({ 
   await expect(page.locator(".ms-unavailable")).toContainText("no-such-tool");
   await page.locator(".ms-unavailable button").click();
   await expect(page.locator(".ms-unavailable")).toHaveCount(0);
-  await expect(page.locator(".tt-toolcard")).toHaveCount(1);
+  await expect(page.locator("[data-tool-id]")).toHaveCount(1);
   await expect(page.locator(".ms-page")).not.toContainText(/undefined|null/);
-  await expect(page.locator(".tt-toolcard")).toContainText("Figma");
+  await expect(page.locator("[data-tool-id]")).toContainText("Figma");
   await expect(page.locator("#ms-all-grid")).toContainText("Freemium");
 });
 
@@ -116,14 +116,14 @@ test("corrupt storage recovers without crashing", async ({ page }) => {
   await page.addInitScript((key) => localStorage.setItem(key, "{invalid"), key);
   await page.goto("/en/ma-stack", { waitUntil: "domcontentloaded" });
   await firstTool(page, "en", "Slack");
-  await expect(page.locator(".tt-toolcard")).toHaveCount(1);
+  await expect(page.locator("[data-tool-id]")).toHaveCount(1);
 });
 
 test("blocked localStorage getter keeps selection usable in memory", async ({ page }) => {
   await page.addInitScript(() => Object.defineProperty(window, "localStorage", { get() { throw new DOMException("Blocked", "SecurityError"); } }));
   await page.goto("/en/ma-stack", { waitUntil: "domcontentloaded" });
   await firstTool(page, "en", "Slack");
-  await expect(page.locator(".tt-toolcard")).toHaveCount(1);
+  await expect(page.locator("[data-tool-id]")).toHaveCount(1);
   await expect(page.locator(".ms-storage-notice")).toContainText("session");
 });
 
@@ -143,10 +143,10 @@ test("published local catalogue refresh updates the same saved selection without
     if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(state));
   }, { key, state: seed(["figma"]) });
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.locator(".tt-toolcard")).toContainText("Figma — catalogue initial");
+  await expect(page.locator("[data-tool-id]")).toContainText("Figma — catalogue initial");
   name = "Figma — catalogue actualisé";
   await page.reload({ waitUntil: "domcontentloaded" });
-  await expect(page.locator(".tt-toolcard")).toContainText("Figma — catalogue actualisé");
+  await expect(page.locator("[data-tool-id]")).toContainText("Figma — catalogue actualisé");
   const stored = await page.evaluate(() => localStorage.getItem("tooltrim-personal-stack-v4:anonymous"));
   expect(stored).not.toBeNull();
   expect(stored).not.toMatch(/pricing|logo|description|catalogue initial|catalogue actualisé/);
@@ -158,7 +158,7 @@ test("corrupt main snapshot recovers its backup", async ({ page }) => {
     localStorage.setItem(`${key}-backup`, JSON.stringify(state));
   }, { key, state: seed(["slack"]) });
   await page.goto("/en/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.locator(".tt-toolcard")).toHaveCount(1);
+  await expect(page.locator("[data-tool-id]")).toHaveCount(1);
   await expect(page.locator(".ms-storage-notice")).toContainText("recovered");
 });
 
@@ -179,7 +179,7 @@ test("a substantial stack stays readable at 320px", async ({ page }) => {
   await page.addInitScript(({ key, state }) => localStorage.setItem(key, JSON.stringify(state)), { key, state: seed(ids) });
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
   // This fixture loads dozens of catalogue shards on a cold CI runner.
-  await expect(page.locator(".tt-toolcard").first()).toBeVisible({ timeout: 30_000 });
-  expect(await page.locator(".tt-toolcard").count() + await page.locator(".ms-unavailable > div").count()).toBe(60);
+  await expect(page.locator("[data-tool-id]").first()).toBeVisible({ timeout: 30_000 });
+  expect(await page.locator("[data-tool-id]").count() + await page.locator(".ms-unavailable > div").count()).toBe(60);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });

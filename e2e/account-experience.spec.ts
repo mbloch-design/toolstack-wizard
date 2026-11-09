@@ -410,7 +410,7 @@ for(const width of [390,1440]) test(`one paid tool offers a next step instead of
  await control(request,'seed',{email:'starter@example.invalid',displayName:'Michael',state:full});
  await page.goto('/en/ma-stack');await login(page,'en','starter@example.invalid','fixture-password','Michael');await saved(page,'en');
  await expect(page.getByRole('heading',{name:'Your stack is taking shape.',exact:true})).toBeVisible();
- await expect(page.locator('.ms-inventory-heading .ms-save-indicator')).toHaveAttribute('title','Stack saved');
+ await expect(page.locator('section[aria-labelledby=ms-all-title] .ms-save-indicator')).toHaveAttribute('title','Stack saved');
  await expect(page.locator('.ms-page > .ms-empty-autosave')).toHaveCount(0);
  await expect(page.locator('.mf-balance')).toHaveCount(0);await expect(page.locator('.mf-fit')).toHaveCount(0);
  if(width>760){await expect.poll(async()=>{const price=await page.locator('[data-card="price"]').boundingBox();const next=await page.locator('.mf-starter-next').boundingBox();return Math.abs(price!.y-next!.y);}).toBeLessThan(3);}
@@ -465,9 +465,9 @@ for (const lang of ['fr', 'en'] as const) test(`${lang}: default OAuth opens the
  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
  const pendingLog=(await control(request,'state')).requests;
  expect(pendingLog.some((r:{path:string;method:string})=>r.path==='/api/account-profile'&&r.method==='GET')).toBe(true);
- await expect(page.locator('.so, .tt-toolcard, .ms-welcome')).toHaveCount(0);
+ await expect(page.locator('.so, [data-tool-id], .ms-welcome')).toHaveCount(0);
  await expect(page.locator('.ms-arrival')).toBeHidden({timeout:10000});
- await expect(page.locator('.tt-toolcard')).toHaveCount(1);
+ await expect(page.locator('[data-tool-id]')).toHaveCount(1);
  const log=(await control(request,'state')).requests;
  expect(log.filter((r:{path:string;method:string})=>r.path==='/api/stack-account'&&r.method==='GET')).toHaveLength(1);
 });
@@ -498,7 +498,7 @@ test('a slow stack route module retains the same arrival presentation', async ({
   await expect(page.locator('.ms-arrival')).toBeVisible();
   await expect(page.getByRole('heading',{name:'My stack',exact:true})).toBeVisible();
  } finally { release(); }
- await expect(page.locator('.tt-toolcard')).toHaveCount(1);
+ await expect(page.locator('[data-tool-id]')).toHaveCount(1);
 });
 
 for (const width of [390,1440]) test(`switching stack language ${width} keeps the document, account and saved state`, async ({page,request}) => {
@@ -513,7 +513,7 @@ for (const width of [390,1440]) test(`switching stack language ${width} keeps th
  }else await page.getByRole('link',{name:'Site in English. Switch to French',exact:true}).click();
  await expect(page).toHaveURL('/fr/ma-stack');
  expect(await page.evaluate(()=>(window as unknown as {languageMarker?:string}).languageMarker)).toBe('same-document');
- await expect(page.locator('.tt-toolcard')).toHaveCount(1);await saved(page,'fr');
+ await expect(page.locator('[data-tool-id]')).toHaveCount(1);await saved(page,'fr');
  expect((await control(request,'state')).requests.filter((r:{path:string})=>r.path==='/api/stack-account'||r.path==='/api/account-profile').length).toBe(before);
 });
 
