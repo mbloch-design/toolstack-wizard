@@ -182,3 +182,18 @@
   .card[data-flash],
   .delta { animation: none; }
 }
+
+.log {
+  display: grid;
+  gap: var(--tt-space-2);
+}
+
+.logEntry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-2) var(--tt-space-4);
+}
+
+.logNote { composes: note from "../atoms.module.css"; }

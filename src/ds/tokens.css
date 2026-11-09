@@ -246,6 +246,7 @@
   --tt-card-lift: var(--tt-row-ring), 0 14px 30px -18px color-mix(in oklch, var(--tt-ink) 40%, transparent);
   --tt-hairline-bottom: inset 0 -1px 0 var(--tt-line);
   --tt-hairline-top: inset 0 1px 0 var(--tt-line);
+  --tt-hairline-block: inset 0 1px 0 var(--tt-line), inset 0 -1px 0 var(--tt-line);
   --tt-chip-raise: 0 1px 2px color-mix(in oklch, var(--tt-ink) 12%, transparent);
 }
 
@@ -264,6 +265,8 @@
   /* Un panneau posé sur la page : un voile derrière, une ombre douce sur son bord. */
   --tt-veil: rgb(0 0 0 / 0.75);
   --tt-panel-shadow: 0 0 0 1px var(--tt-line), -24px 0 60px -30px rgb(0 0 0 / 0.35);
+  /* Les logos d'un toast se détachent de l'encre. */
+  --tt-toast-ring: 0 0 0 2px var(--tt-brand);
   /* Le bouton d'un interrupteur : un galet posé sur sa piste. */
   --tt-knob-shadow: 0 1px 2px rgb(0 0 0 / 0.2), 0 3px 8px -2px rgb(0 0 0 / 0.2);
   /* Icônes au trait : tailles et épaisseurs */

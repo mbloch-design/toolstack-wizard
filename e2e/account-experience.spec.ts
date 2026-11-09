@@ -327,7 +327,7 @@ test('OAuth opens the destination with a quiet arrival while reading the stack',
  await page.route('**/api/stack-account',async route=>{if(route.request().method()==='GET')await new Promise(resolve=>setTimeout(resolve,1800));await route.continue();});
  await page.goto('/en/sign-in');await dismissConsent(page);await page.getByRole('button',{name:'Continue with Google',exact:true}).click();
  await expect(page).toHaveURL(/\/en\/ma-stack$/);
- await expect(page.locator('.ms-arrival [role=status]')).toContainText('Finding your tools…');
+ await expect(page.locator('[data-page-loading] [role=status]')).toContainText('Finding your tools…');
  await expect(page.getByText('You are signed in.',{exact:true})).toHaveCount(0);
  await expect(page).toHaveURL(/\/en\/ma-stack$/);
 });
@@ -410,8 +410,8 @@ for(const width of [390,1440]) test(`one paid tool offers a next step instead of
  await control(request,'seed',{email:'starter@example.invalid',displayName:'Michael',state:full});
  await page.goto('/en/ma-stack');await login(page,'en','starter@example.invalid','fixture-password','Michael');await saved(page,'en');
  await expect(page.getByRole('heading',{name:'Your stack is taking shape.',exact:true})).toBeVisible();
- await expect(page.locator('section[aria-labelledby=ms-all-title] .ms-save-indicator')).toHaveAttribute('title','Stack saved');
- await expect(page.locator('.ms-page > .ms-empty-autosave')).toHaveCount(0);
+ await expect(page.locator('section[aria-labelledby=ms-all-title] [data-status-mark]')).toHaveAttribute('title','Stack saved');
+ await expect(page.locator('[data-page] > [data-status-line]')).toHaveCount(0);
  await expect(page.locator('.mf-balance')).toHaveCount(0);await expect(page.locator('.mf-fit')).toHaveCount(0);
  if(width>760){await expect.poll(async()=>{const price=await page.locator('[data-card="price"]').boundingBox();const next=await page.locator('.mf-starter-next').boundingBox();return Math.abs(price!.y-next!.y);}).toBeLessThan(3);}
  await page.screenshot({path:`test-results/accounts/starter-space-${width}.png`,fullPage:true,animations:'disabled'});
@@ -441,8 +441,8 @@ test('healthy autosave stays inline while a write waits, but a real failure offe
  });
  await change(page, state(['notion', 'figma']));
  try {
-   await expect(page.locator('.ms-save-indicator')).toHaveText('Saving…');
-   await expect(page.locator('.ms-account')).toHaveCount(0);
+   await expect(page.locator('[data-status-mark]')).toHaveText('Saving…');
+   await expect(page.locator('[data-notice="account"]')).toHaveCount(0);
    await expect(page.getByRole('button', { name: 'Retry saving', exact: true })).toHaveCount(0);
    await page.screenshot({path:'test-results/accounts/healthy-autosave.png'});
  } finally { release(); }
@@ -461,12 +461,12 @@ for (const lang of ['fr', 'en'] as const) test(`${lang}: default OAuth opens the
  await page.getByRole('button',{name:lang==='fr'?'Continuer avec Google':'Continue with Google',exact:true}).click();
  await expect(page).toHaveURL(`/${lang}/ma-stack`,{timeout:2500});
  await expect(page.getByRole('heading',{name:lang==='fr'?'Ma stack':'My stack',exact:true})).toBeVisible();
- await expect(page.locator('.ms-arrival')).toHaveAttribute('aria-busy','true');
+ await expect(page.locator('[data-page-loading]')).toHaveAttribute('aria-busy','true');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
  const pendingLog=(await control(request,'state')).requests;
  expect(pendingLog.some((r:{path:string;method:string})=>r.path==='/api/account-profile'&&r.method==='GET')).toBe(true);
  await expect(page.locator('.so, [data-tool-id], .ms-welcome')).toHaveCount(0);
- await expect(page.locator('.ms-arrival')).toBeHidden({timeout:10000});
+ await expect(page.locator('[data-page-loading]')).toBeHidden({timeout:10000});
  await expect(page.locator('[data-tool-id]')).toHaveCount(1);
  const log=(await control(request,'state')).requests;
  expect(log.filter((r:{path:string;method:string})=>r.path==='/api/stack-account'&&r.method==='GET')).toHaveLength(1);
@@ -478,9 +478,9 @@ test('password sign-in opens the stack before synchronization and errors keep re
  await control(request,'fault',{path:'/api/stack-account',method:'GET',delayMs:5000,status:503});
  await page.goto('/en/ma-stack');await login(page,'en','arrival@example.invalid');
  await expect(page.getByRole('dialog')).toHaveCount(0);
- await expect(page.locator('.ms-arrival')).toHaveAttribute('aria-busy','true');
+ await expect(page.locator('[data-page-loading]')).toHaveAttribute('aria-busy','true');
  await expect(page.locator('.so, .ms-welcome')).toHaveCount(0);
- await expect(page.locator('.ms-arrival')).toHaveAttribute('aria-busy','false',{timeout:10000});
+ await expect(page.locator('[data-page-loading]')).toHaveAttribute('aria-busy','false',{timeout:10000});
  await expect(page.getByRole('button',{name:'Retry saving',exact:true})).toBeVisible();
  await page.getByRole('button',{name:'Retry saving',exact:true}).click();
  await expect(page.locator('#ss-title')).toBeVisible();
@@ -495,7 +495,7 @@ test('a slow stack route module retains the same arrival presentation', async ({
   await page.getByRole('button',{name:'Continue with Google',exact:true}).click({noWaitAfter:true});
   await expect(page).toHaveURL('/en/ma-stack',{timeout:4000});
   expect(moduleHeld).toBe(true);
-  await expect(page.locator('.ms-arrival')).toBeVisible();
+  await expect(page.locator('[data-page-loading]')).toBeVisible();
   await expect(page.getByRole('heading',{name:'My stack',exact:true})).toBeVisible();
  } finally { release(); }
  await expect(page.locator('[data-tool-id]')).toHaveCount(1);

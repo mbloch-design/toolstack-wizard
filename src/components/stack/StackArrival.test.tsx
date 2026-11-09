@@ -17,7 +17,7 @@ it("stops the waiting presentation when an actionable error replaces it", () => 
  const {rerender,container}=render(<StackArrival />);
  rerender(<StackArrival pending={false}><button>Réessayer</button></StackArrival>);
  expect(screen.queryByRole('status')).not.toBeInTheDocument();
- expect(container.querySelector('.ms-arrival-outline')).toBeNull();
+ expect(container.querySelector('[data-loading-outline]')).toBeNull();
  expect(screen.getByRole('button',{name:'Réessayer'})).toBeVisible();
- expect(container.firstChild).toHaveAttribute('aria-busy','false');
+ expect(container.querySelector('[data-page-loading]')).toHaveAttribute('aria-busy','false');
 });

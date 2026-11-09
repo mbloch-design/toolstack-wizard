@@ -16,9 +16,11 @@ import { scoreOverlapPairs } from "@/lib/stackOverlap";
 import StackToolSheet from "@/components/stack/StackToolSheet";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
 import ToolCard, { ToolCards, ToolGroup, ToolGroups } from "@/ds/ToolCard/ToolCard";
-import Button, { buttonAttrs } from "@/ds/Button/Button";
+import Button, { buttonAttrs, TextButton } from "@/ds/Button/Button";
 import ToolSearch, { SearchField } from "@/ds/ToolSearch/ToolSearch";
 import Page from "@/ds/Page/Page";
+import { DecisionLog } from "@/ds/Decision/Decision";
+import { Notice, NoticeRows, NoticeText, StatusLine } from "@/ds/Notice/Notice";
 import Toolbar, { FilterChips, IconSwitch, Section, SectionHead, SortSelect, ToolbarTools } from "@/ds/Toolbar/Toolbar";
 import { comparisonPath } from "@/lib/comparisonLinks";
 import { decisionSavingInCurrency, latestRemovedStackDecisions } from "@/lib/stackDecisions";
@@ -252,16 +254,14 @@ export default function CartPage() {
   const saved = pastSavings.reduce((sum, d) => sum + (decisionSavingInCurrency(d, currency) ?? 0), 0);
   const unknownSavings = pastSavings.some((d) => d.saving > 0 && decisionSavingInCurrency(d, currency) === null);
   // Reviewing a saved decision never deletes it; replacement happens only on confirmation.
-  const history = (keptBoth.length > 0 || unknownSavings) && <div className="ms-decided">
-    {unknownSavings && <span>{t("Baisse estimée : devise inconnue.", "Estimated reduction: currency unknown.")}</span>}
-    {keptBoth.map(key => {
+  const history = (keptBoth.length > 0 || unknownSavings) && <DecisionLog
+    note={unknownSavings ? t("Baisse estimée : devise inconnue.", "Estimated reduction: currency unknown.") : undefined}
+    entries={keptBoth.flatMap(key => {
       const [a,b] = key.split("|").map(slug => lookup.get(slug));
-      if (!a || !b) return null;
-      return <div key={key} className="mu-pair"><p>{t(`${a.name} et ${b.name} : vous gardez les deux.`, `${a.name} and ${b.name}: you keep both.`)}</p>
-        <Button variant="secondary" onClick={event => { pairReviewTrigger.current = event.currentTarget; setPairReview({scope:reviewScope,epoch:reviewEpoch,key}); requestAnimationFrame(() => {document.querySelector('[data-card="decision"]')?.scrollIntoView({block:"center"});document.querySelector<HTMLElement>('[data-card="decision"] h3')?.focus({preventScroll:true});}); }}>{t("Revoir ce choix", "Review this choice")}</Button>
-      </div>;
-    })}
-  </div>;
+      if (!a || !b) return [];
+      return [{ id: key, text: t(`${a.name} et ${b.name} : vous gardez les deux.`, `${a.name} and ${b.name}: you keep both.`),
+        action: <Button variant="secondary" onClick={event => { pairReviewTrigger.current = event.currentTarget; setPairReview({scope:reviewScope,epoch:reviewEpoch,key}); requestAnimationFrame(() => {document.querySelector('[data-card="decision"]')?.scrollIntoView({block:"center"});document.querySelector<HTMLElement>('[data-card="decision"] h3')?.focus({preventScroll:true});}); }}>{t("Revoir ce choix", "Review this choice")}</Button> }];
+    })} />;
   const empty = state.pinnedToolSlugs.length === 0;
   const showSearch = empty || searchOpen;
   const existingIds = new Set(selectedTools.map((tool) => tool.id));
@@ -427,8 +427,8 @@ export default function CartPage() {
       }
     }} />
     <StackAccountPanel empty />
-    {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt" ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.") : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
-    {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupérée depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
+    {persistenceStatus.state === "degraded" && <Notice name="storage" role="status"><NoticeText>{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt" ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.") : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</NoticeText></Notice>}
+    {persistenceStatus.state === "recovered" && <Notice name="storage" role="status"><NoticeText>{t("Votre stack a été récupérée depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</NoticeText></Notice>}
   </div>;
 
   return <Page>
@@ -449,10 +449,10 @@ export default function CartPage() {
           onClick={() => trackEvent("stack_explorer_click", { source: "whole_stack" })}>
           {t("Explorer autour de ma stack", "Explore around my stack")}
         </Link> : undefined} />
-    {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
+    {persistenceStatus.state === "degraded" && <Notice name="storage" role="status"><NoticeText>{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
       ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.")
-      : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
-    {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupéré depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
+      : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</NoticeText></Notice>}
+    {persistenceStatus.state === "recovered" && <Notice name="storage" role="status"><NoticeText>{t("Votre stack a été récupéré depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</NoticeText></Notice>}
 
 
 
@@ -534,11 +534,11 @@ export default function CartPage() {
         catalog={tools} stackIds={existingIds}
         onClose={closeInspector} onReturnFocus={() => { if (lastToolButton.current?.isConnected) lastToolButton.current.focus({ preventScroll: true }); }} onSelect={selectTool}
         onRemove={() => selected && removeTool(state.pinnedToolSlugs.find((slug) => lookup.get(slug)?.id === selected.id) || toolKey(selected), selected.name)} />
-      {missing.length > 0 && <section className="ms-unavailable"><h2>{t("Outils indisponibles", "Unavailable tools")}</h2>
-        <p>{t("Ces références ne sont plus disponibles dans le catalogue actuel. Votre sélection est conservée.", "These references are unavailable in the current catalogue. Your selection is retained.")}</p>
-        {missing.map((slug) => <div key={slug}><span>{slug}</span><button onClick={() => removeTool(slug, slug)}>{t("Retirer de ma stack", "Remove from stack")}</button></div>)}
-        {loading && <p role="status">{t("Actualisation du catalogue…", "Refreshing catalogue…")}</p>}
-      </section>}
+      {missing.length > 0 && <Notice name="unavailable" title={t("Outils indisponibles", "Unavailable tools")}>
+        <NoticeText>{t("Ces références ne sont plus disponibles dans le catalogue actuel. Votre sélection est conservée.", "These references are unavailable in the current catalogue. Your selection is retained.")}</NoticeText>
+        <NoticeRows rows={missing.map((slug) => ({ id: slug, label: slug, action: <TextButton tone="danger" onClick={() => removeTool(slug, slug)}>{t("Retirer de ma stack", "Remove from stack")}</TextButton> }))} />
+        {loading && <StatusLine icon={null} live>{t("Actualisation du catalogue…", "Refreshing catalogue…")}</StatusLine>}
+      </Notice>}
     </>}
   </Page>;
 }

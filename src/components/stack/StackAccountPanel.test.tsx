@@ -227,7 +227,7 @@ it("keeps healthy save status inline and hides the standalone notice",()=>{
  expect(view.container).toBeEmptyDOMElement();
  view.rerender(<StackAccountPanel placement="inline"/>);
  expect(screen.getByRole('status')).toHaveAttribute('title','Stack enregistrée');
- expect(screen.getByText('Stack enregistrée')).toHaveClass('sr-only');
+ expect(screen.getByText('Stack enregistrée').className).toMatch(/srOnly/);
  account.syncStatus='error';view.rerender(<StackAccountPanel placement="inline"/>);
  expect(view.container).toBeEmptyDOMElement();
  view.rerender(<StackAccountPanel placement="notice"/>);
@@ -239,7 +239,7 @@ it.each(["unsaved", "syncing"] as const)("keeps healthy %s compact without retry
   account.user = user; account.syncStatus = status; account.hasUnsavedChanges = true;
   const result = render(<StackAccountPanel empty />);
   expect(screen.getByRole("status")).toHaveTextContent("Enregistrement…");
-  expect(result.container.querySelector("section.ms-account")).toBeNull();
+  expect(result.container.querySelector('[data-notice="account"]')).toBeNull();
   expect(screen.queryByRole("button", { name: "Réessayer l’enregistrement" })).not.toBeInTheDocument();
   result.rerender(<StackAccountPanel placement="notice" />);
   expect(result.container).toBeEmptyDOMElement();

@@ -17403,15 +17403,6 @@ img[data-logo-loading] {
   .ms-tool { display: flex; align-items: center; text-align: left; gap: var(--space-sm); min-width: 0; width: 100%; padding: var(--space-xs) var(--space-sm); border-radius: var(--tt-surface-radius-info); background: transparent; transition: background 160ms ease; }
 
   .ms-tool:hover { background: hsl(var(--secondary)); }
-  .ms-storage-notice { font-size: var(--tt-size-card-body); line-height: 1.5; margin-bottom: var(--space-lg); }
-
-  .ms-unavailable { margin-top: var(--space-xl); }
-
-  .ms-unavailable > p { font-size: var(--tt-size-card-body); margin-bottom: var(--space-md); }
-
-  .ms-unavailable > div { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-xs) 0; border-bottom: 1px solid hsl(var(--border)); overflow-wrap: anywhere; }
-
-  .ms-unavailable button { min-height: 44px; flex-shrink: 0; font-size: var(--tt-size-card-body); }
 
   .ms-page button:focus-visible, .ms-page a:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 3px; }
   @media (max-width: 639px) {
@@ -17522,7 +17513,6 @@ img[data-logo-loading] {
 /* Decision menu (portal, so not scoped to .ms-page). */
 
 /* Follow-up of decisions, under the overlaps lead. */
-.ms-page .ms-decided { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: -8px 0 20px; color: hsl(var(--muted-foreground)); font: 500 14px/1.4 var(--font-ui); }
 
 /* Compare page: decision for my stack, after the verdict. */
 .ms-compare-decision { display: grid; gap: 12px; margin: 32px 0 56px; padding: 20px; border-radius: var(--radius-surface); background: var(--color-surface-soft); }
@@ -18491,7 +18481,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf-vs div { display: grid; grid-template-columns: 150px minmax(0, 1fr) 84px; align-items: center; gap: var(--space-sm); }
 .ms-page .mf-vs b { color: var(--ms-on-ink); font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
 /* One action bar, always at the bottom. */
-.ms-page .ms-decided { display: grid; gap: var(--space-2xs); margin: 0; color: var(--ms-meta); font: 400 13px/1.5 var(--ap-font); }
 
 /* What comes next: a quiet strip at the foot of the decision. */
 
@@ -18499,7 +18488,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 /* ── The stack: title bar, lenses, map or list ───────────────────────────── */
 /* Le rythme vient de .tt-page (système). */
-.ms-page .ms-board > * { min-width: 0; }
 
 /* Map: one lane per area on a grey tile; the tools are white pills. */
 
@@ -19934,13 +19922,8 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 /* Personal account access stays in the existing My stack flow. */
 @layer components {
-  .ms-account { margin-block: var(--space-lg); padding: var(--space-lg); border-radius: var(--radius-xl); background: var(--color-surface-soft); color: var(--color-text); }
   .ms-account-actions { display: flex; align-items: center; gap: var(--space-sm); }
-  .ms-account h2, .ms-account h3 { margin: 0; font: 650 16px/1.4 var(--font-ui); letter-spacing: -.015em; overflow-wrap: anywhere; }
-  .ms-account p { margin: var(--space-2xs) 0 0; color: var(--color-text-secondary); font: 400 14px/1.5 var(--font-ui); overflow-wrap: anywhere; }
   .ms-account-actions { flex-wrap: wrap; }
-  .ms-account button { cursor: pointer; }
-  .ms-account button:disabled { opacity: .5; cursor: default; }
   .ms-account-outline-button { min-height: 44px; height: auto; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-pill); justify-content: center; text-align: center; font: 600 14px/1.4 var(--font-ui); white-space: normal; }
   .ms-account-text-button { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 44px; padding: var(--space-xs); color: var(--color-text); font: 500 14px/1.4 var(--font-ui); text-align: center; }
   .ms-account-text-button:hover:not(:disabled) { text-decoration: underline; text-underline-offset: 3px; }
@@ -19948,9 +19931,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-account-outline-button:hover:not(:disabled) { border-color: var(--color-text); }
   .ms-account-choice { margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid var(--color-border); }
   .ms-account-choice > .ms-account-actions { margin-top: var(--space-md); }
-  .ms-account [aria-invalid="true"] { border-color: var(--color-text); }
   @container mspage (max-width: 640px) {
-    .ms-account { padding: var(--space-md); }
     .ms-account-choice > .ms-account-actions { width: 100%; flex-direction: column; align-items: stretch; }
   }
 }
@@ -20141,8 +20122,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ac-page-header p, .ac-intro { color: var(--color-text-secondary); font-size: var(--tt-size-body); line-height: 1.5; }
   .ac-auth-card { padding: var(--space-xl); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--tt-radius-md); }
   .ac-auth, .ac-form, .ac-providers, .ac-section-content, .ac-stack-status { display: flex; flex-direction: column; gap: var(--space-md); min-width: 0; }
-  .ac-stack-heading { display: flex; align-items: center; gap: var(--space-sm); }
-  .ac-stack-heading > svg { flex: none; }
   .ac-auth p, .ac-section-content p { margin: 0; line-height: 1.5; }
   .ac-form label { font-size: var(--tt-size-card-body); font-weight: 600; }
   .ac-form input, .ac-form select { width: 100%; min-width: 0; min-height: 48px; padding: var(--space-sm) var(--space-md); color: var(--color-text); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--tt-radius-sm); font: inherit; }
@@ -20277,22 +20256,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 @layer components {
   .ac-header-loading { display: block; width: 44px; height: 44px; border-radius: var(--radius-circle); background: var(--color-surface-soft); }
-  .ms-account.ac-stack-status { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 24px; padding: 20px 24px; border-radius: var(--radius-md); }
-  .ms-account > .ac-stack-heading { grid-column: 1; font: 600 14px/1.4 var(--font-ui); }
-  .ms-account > p { grid-column: 1; max-width: 62ch; font-size: 13px; }
-  .ms-account > .ac-actions { grid-column: 2; grid-row: 1 / 3; align-self: center; }
-  .ms-account > .ac-stack-status { grid-column: 1 / -1; }
-  .ms-account--connected { background: transparent; border-top: 1px solid var(--color-border-soft); border-bottom: 1px solid var(--color-border-soft); border-radius: 0; }
-  @media (max-width: 767px) {
-    .ms-account.ac-stack-status { grid-template-columns: minmax(0, 1fr); padding: 20px 16px; gap: 10px; }
-    .ms-account > .ac-actions { grid-column: 1; grid-row: auto; justify-content: flex-start; flex-wrap: wrap; gap: 8px 16px; }
-    .ms-account .ac-button { min-height: 44px; }
-  }
 }
 
 @layer components {
   .ms-page--start { max-width: 1120px; }
-  .ms-empty-autosave { display: flex; align-items: center; gap: 8px; margin: 28px 0 0; font-size: 13px; line-height: 1.5; color: var(--color-text-meta, var(--color-text-meta)); }
   .ac-page--transition { display: grid; place-items: center; min-height: min(65vh, 600px); padding-block: 48px; }
   .ac-callback-content { width: 100%; }
   .ac-transition-title { margin: 20px 0 12px; font-size: 22px; font-weight: 600; letter-spacing: -.025em; }
@@ -21370,7 +21337,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @media (max-width: 760px) { .ms-page .so-trades { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ms-page .so-trades button { min-height: 132px; } }
 @media (prefers-reduced-motion: reduce) { .ms-page .so-hello, .ms-page .so-step, .ms-page .so-ready, .ms-page .so-trades li, .ms-page .so-cluster > span, .ms-page .so-pairs li { animation: none; } }
 .ms-page .so-facts dd .ss-tbd { font: 500 20px/1.25 var(--ap-font); }
-.ms-page--start:has(.so) .ms-empty-autosave { justify-content: center; margin-top: var(--space-xl); }
 /* No transform left after the entrance: a transformed ancestor would trap the fixed phone dock. */
 .ms-page .so-hello, .ms-page .so-step, .ms-page .so-ready { animation-fill-mode: backwards; }
 /* Onboarding v2: hello in several languages, the name, the celebration. */
@@ -21460,8 +21426,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* The legacy bento has unlayered placements; constrain the starter to one row. */
 
 @layer components {
-  .ms-save-indicator { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; color: var(--color-text-meta); border-radius: var(--radius-sm); }
-  .ms-save-indicator:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 }
 
 /* Editorial hero and onboarding override the older unlayered compact header. */
@@ -21472,33 +21436,12 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Only when a plan has a qualifier ("Dev seat") does the name keep two lines, so prices still align. */
 /* The bar's right side: the label above the figure, never glued to it. */
 /* Welcome toast: the person's logos drop in, two short lines, a little spark. */
-.ms-welcome-toast { position: relative; display: flex; align-items: center; gap: 12px; width: min(380px, calc(100vw - 32px)); padding: 12px 16px 12px 12px; border-radius: 20px; background: var(--color-accent); color: var(--color-on-primary); font-family: var(--ap-font, inherit); overflow: hidden; animation: so-in 420ms cubic-bezier(.2, .8, .2, 1) both; }
-.ms-welcome-toast-logos { display: inline-flex; flex: none; }
-.ms-welcome-toast-logos > span { display: inline-grid; margin-left: -8px; padding: 3px; border-radius: 10px; background: var(--color-on-primary); box-shadow: 0 0 0 2px var(--color-accent); animation: so-land 560ms cubic-bezier(.3, 1.5, .5, 1) both; --x: 0px; }
-.ms-welcome-toast-logos > span:first-child { margin-left: 0; }
-.ms-welcome-toast-logos > span > * { border-radius: 7px; }
-.ms-welcome-toast-text { display: grid; gap: 2px; min-width: 0; }
-.ms-welcome-toast-text b { font-size: 15px; font-weight: 600; line-height: 1.25; }
-.ms-welcome-toast-text small { opacity: .85; font-size: 13px; line-height: 1.3; }
-.ms-welcome-toast-spark { position: absolute; right: 22px; top: 50%; pointer-events: none; }
-.ms-welcome-toast-spark i { position: absolute; width: 6px; height: 6px; margin: -3px; border-radius: 50%; background: var(--color-on-primary); opacity: 0; transform: rotate(var(--a)); animation: so-burst 760ms 520ms cubic-bezier(.2, .8, .2, 1) both; }
-@media (prefers-reduced-motion: reduce) { .ms-welcome-toast, .ms-welcome-toast-logos > span { animation: none; } .ms-welcome-toast-spark { display: none; } }
 /* A long name wraps with the greeting instead of running off the screen. */
 .ms-page .so-hello-final > span { overflow-wrap: anywhere; }
 
 
 @layer components {
-  .ms-arrival-heading { margin-bottom: 32px; }
-  .ms-arrival-heading h1 { margin: 0; font: 600 clamp(28px, 4vw, 42px)/1.12 var(--font-ui); letter-spacing: -.035em; color: var(--color-text-strong); }
-  .ms-arrival-welcome { display: flex; align-items: center; gap: 16px; margin: 0 0 36px; min-height: 72px; }
-  .ms-arrival-mark { flex: none; animation: ms-arrival-breathe 2s ease-in-out infinite; }
-  .ms-arrival-welcome p { margin: 0 0 6px; font: 600 20px/1.3 var(--font-ui); color: var(--color-text-strong); }
-  .ms-arrival-welcome span { font: 400 15px/1.5 var(--font-ui); color: var(--color-muted); }
-  .ms-arrival-outline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 1000px; }
-  .ms-arrival-outline span { height: 156px; border-radius: var(--radius-lg); background: var(--color-surface-soft); }
   @keyframes ms-arrival-breathe { 0%, 100% { opacity: .55; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-3px); } }
-  @media (max-width: 640px) { .ms-arrival-outline { grid-template-columns: 1fr; } .ms-arrival-outline span { height: 88px; } }
-  @media (prefers-reduced-motion: reduce) { .ms-arrival-mark { animation: none; } }
 }
 
 
@@ -21531,9 +21474,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 @layer components {
-  .mu-pair { display: grid; gap: 10px; }
-  .mu-pair p { margin: 0; font: 400 14px/1.5 var(--font-ui); }
-  .mu-pair .mk-button { justify-self: start; }
 }
 
 /* Back-office: a page inside the shared ToolTrim shell, using the Ma Stack kit. */

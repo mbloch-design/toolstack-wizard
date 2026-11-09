@@ -92,3 +92,13 @@ export function DecisionRest({ lang, history, onAddTool }: { lang: "fr" | "en"; 
     </section>
   );
 }
+
+/** The record of past choices, under the decision: one line per choice and a way to reopen it. */
+export function DecisionLog({ note, entries }: { note?: string; entries: { id: string; text: string; action: ReactNode }[] }) {
+  return (
+    <div className={styles.log} data-decision-log="">
+      {note && <p className={styles.logNote}>{note}</p>}
+      {entries.map((entry) => <div key={entry.id} className={styles.logEntry} data-decision-entry=""><p className={styles.logNote}>{entry.text}</p>{entry.action}</div>)}
+    </div>
+  );
+}

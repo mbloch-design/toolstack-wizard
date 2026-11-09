@@ -103,9 +103,9 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
 test("invalid catalogue ID can be removed without losing valid tools", async ({ page }) => {
   await page.addInitScript(({ key, state }) => localStorage.setItem(key, JSON.stringify(state)), { key, state: seed(["no-such-tool", "figma"]) });
   await page.goto("/en/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.locator(".ms-unavailable")).toContainText("no-such-tool");
-  await page.locator(".ms-unavailable button").click();
-  await expect(page.locator(".ms-unavailable")).toHaveCount(0);
+  await expect(page.locator('[data-notice="unavailable"]')).toContainText("no-such-tool");
+  await page.locator('[data-notice="unavailable"] button').click();
+  await expect(page.locator('[data-notice="unavailable"]')).toHaveCount(0);
   await expect(page.locator("[data-tool-id]")).toHaveCount(1);
   await expect(page.locator("[data-page]")).not.toContainText(/undefined|null/);
   await expect(page.locator("[data-tool-id]")).toContainText("Figma");
@@ -124,7 +124,7 @@ test("blocked localStorage getter keeps selection usable in memory", async ({ pa
   await page.goto("/en/ma-stack", { waitUntil: "domcontentloaded" });
   await firstTool(page, "en", "Slack");
   await expect(page.locator("[data-tool-id]")).toHaveCount(1);
-  await expect(page.locator(".ms-storage-notice")).toContainText("session");
+  await expect(page.locator('[data-notice="storage"]')).toContainText("session");
 });
 
 
@@ -159,7 +159,7 @@ test("corrupt main snapshot recovers its backup", async ({ page }) => {
   }, { key, state: seed(["slack"]) });
   await page.goto("/en/ma-stack", { waitUntil: "domcontentloaded" });
   await expect(page.locator("[data-tool-id]")).toHaveCount(1);
-  await expect(page.locator(".ms-storage-notice")).toContainText("recovered");
+  await expect(page.locator('[data-notice="storage"]')).toContainText("recovered");
 });
 
 test("known alternatives stay contextual and selection stays in the workspace", async ({ page }) => {
@@ -180,6 +180,6 @@ test("a substantial stack stays readable at 320px", async ({ page }) => {
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
   // This fixture loads dozens of catalogue shards on a cold CI runner.
   await expect(page.locator("[data-tool-id]").first()).toBeVisible({ timeout: 30_000 });
-  expect(await page.locator("[data-tool-id]").count() + await page.locator(".ms-unavailable > div").count()).toBe(60);
+  expect(await page.locator("[data-tool-id]").count() + await page.locator('[data-notice="unavailable"] [data-notice-row]').count()).toBe(60);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });

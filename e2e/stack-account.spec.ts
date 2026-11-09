@@ -14,7 +14,7 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) {
     expect(await snapshot(page)).toEqual(full);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     // Synced, the saving status is the discreet indicator beside the inventory title.
-    await expect(page.locator('.ms-save-indicator')).toHaveAttribute('title', lang === 'fr' ? 'Stack enregistrée' : 'Stack saved');
+    await expect(page.locator('[data-status-mark]')).toHaveAttribute('title', lang === 'fr' ? 'Stack enregistrée' : 'Stack saved');
     await page.locator('#ms-all-title').locator('..').screenshot({ path: test.info().outputPath(`${lang}-${width}-account.png`) });
     // A clean context signs in independently: no localStorage or session copied.
     const second = await browser.newContext({ baseURL: process.env.PLAYWRIGHT_BASE_URL, viewport: { width, height: 1000 } }); await isolate(second);
@@ -46,9 +46,9 @@ for (const choice of ['saved', 'merge', 'equivalent']) test(`anonymous divergent
 test('offline dirty cache survives reload, retry and lost acknowledgement', async ({ page, request }) => {
   await draft(page, state()); await page.goto('/en/ma-stack'); await login(page, 'en', 'offline@example.invalid'); await saved(page);
   await page.route('**/api/stack-account', route => route.abort());
-  await change(page, state(['notion', 'figma'])); await expect(page.locator('.ms-account [role=status]')).toHaveText(/Unsaved changes|Saving unavailable/);
+  await change(page, state(['notion', 'figma'])); await expect(page.locator('[data-notice="account"] [role=status]')).toHaveText(/Unsaved changes|Saving unavailable/);
   await page.reload(); await expect.poll(async () => (await snapshot(page)).selection.pinnedToolSlugs).toEqual(['notion', 'figma']);
-  await expect(page.locator('.ms-account [role=status]')).toHaveText(/Unsaved changes|Saving unavailable/);
+  await expect(page.locator('[data-notice="account"] [role=status]')).toHaveText(/Unsaved changes|Saving unavailable/);
   await page.unroute('**/api/stack-account');
   // Observe the resumed write before asserting its rendered acknowledgement.
   // A timeout now identifies transport, committed state or UI separately.
