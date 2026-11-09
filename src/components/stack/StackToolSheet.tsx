@@ -18,7 +18,7 @@ import { comparisonPath } from "@/lib/comparisonLinks";
 import { toolMonthlyCost } from "@/lib/stackCost";
 import { formatNativePrice, pickNativePrice, stackCatalogPrice, toolKey } from "@/lib/stackView";
 import { stackDisplayLabel, stackPlacement, stackUsageLabels } from "@/lib/stackUsage";
-import type { ScoredPair } from "@/components/stack/StackOverlapPairs";
+import type { ScoredPair } from "@/lib/stackOverlap";
 import { trackEvent } from "@/lib/analytics";
 import { getExplorerHref } from "@/lib/toolExploration";
 import toolAccents from "@/data/toolAccents.json";

@@ -4,7 +4,7 @@ import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
 import { useCurrency } from "@/hooks/useCurrency";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
-import { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
+import { scoreOverlapPairs } from "@/lib/stackOverlap";
 import { toolMonthlyCost } from "@/lib/stackCost";
 import { convertAmount, formatAmount } from "@/lib/currencyRates";
 import { toolKey } from "@/lib/stackView";

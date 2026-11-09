@@ -164,7 +164,7 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
   --tt-lead-bg: linear-gradient(to bottom, color-mix(in oklch, var(--tt-ink) 92%, var(--tt-bg)), var(--tt-ink));
   --tt-lead-shadow: inset 0 .5px 0 color-mix(in srgb, var(--tt-bg) 35%, transparent), 0 1px 2px rgb(0 0 0 / .18), 0 10px 24px -14px rgb(0 0 0 / .45);
   --tt-lead-shadow-hover: inset 0 .5px 0 color-mix(in srgb, var(--tt-bg) 45%, transparent), 0 1px 2px rgb(0 0 0 / .2), 0 16px 32px -14px rgb(0 0 0 / .5);
-  --tt-lead-shadow-press: inset 0 2px 6px rgb(0 0 0 / .45), 0 1px 1px rgb(0 0 0 / .15);--tt-dur-reveal: 600ms;--tt-overlap-strong: color-mix(in oklch, var(--tt-overlap) 85%, black);--tt-on-color: #fff;--tt-tile-gap: 20px;--tt-board-gap: 20px;--tt-page-gap: 40px;--tt-page-max: 1280px;--tt-page-pad: clamp(20px, 4vw, 48px);
+  --tt-lead-shadow-press: inset 0 2px 6px rgb(0 0 0 / .45), 0 1px 1px rgb(0 0 0 / .15);--tt-dur-reveal: 600ms;--tt-overlap-strong: color-mix(in oklch, var(--tt-overlap) 85%, black);--tt-on-color: #fff;--tt-tile-gap: 20px;--tt-board-gap: 20px;--tt-page-gap: 40px;--tt-page-max: 1440px;--tt-page-pad: clamp(20px, 4vw, 48px);
 }
 @property --tt-run { syntax: "<number>"; inherits: true; initial-value: 0; }
 .tt-spark-host { position: relative; isolation: isolate; overflow: visible; }

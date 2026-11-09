@@ -590,7 +590,7 @@ test('reviewing a saved pair takes priority over another pending question and ne
  await page.getByRole('button',{name:'Review my use',exact:true}).click();
  await page.getByRole('button',{name:'Summary',exact:true}).click();
  await page.getByRole('button',{name:'History',exact:true}).click();
- await expect.poll(async()=>{const card=await page.locator('.mu-card').boundingBox();const board=await page.locator('.ms-board').boundingBox();return !!card&&!!board&&card.y+card.height<=board.y;}).toBe(true);
+ await expect.poll(async()=>{const card=await page.locator('.mu-card').boundingBox();const board=await page.locator('[data-page-group]').boundingBox();return !!card&&!!board&&card.y+card.height<=board.y;}).toBe(true);
  await page.locator('.mu-history').getByRole('button',{name:'Review this choice',exact:true}).click();
  await expect(page.locator('[data-card=decision]')).toHaveAttribute('data-kind','pair');
  await expect(page.locator('[data-card=decision]')).toContainText('Your current choice is to keep both.');

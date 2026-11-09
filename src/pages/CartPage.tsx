@@ -12,12 +12,13 @@ import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
-import { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
+import { scoreOverlapPairs } from "@/lib/stackOverlap";
 import StackToolSheet from "@/components/stack/StackToolSheet";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
 import ToolCard, { ToolCards, ToolGroup, ToolGroups } from "@/ds/ToolCard/ToolCard";
 import Button, { buttonAttrs } from "@/ds/Button/Button";
 import ToolSearch, { SearchField } from "@/ds/ToolSearch/ToolSearch";
+import Page from "@/ds/Page/Page";
 import Toolbar, { FilterChips, IconSwitch, Section, SectionHead, SortSelect, ToolbarTools } from "@/ds/Toolbar/Toolbar";
 import { comparisonPath } from "@/lib/comparisonLinks";
 import { decisionSavingInCurrency, latestRemovedStackDecisions } from "@/lib/stackDecisions";
@@ -430,7 +431,7 @@ export default function CartPage() {
     {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupérée depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
   </div>;
 
-  return <div className="ms-page tt-page">
+  return <Page>
     {/* Topbar breadcrumb like every other page ("Home / My stack"); a personal
         page, so no structured data. */}
     <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} includeSchema={false} />
@@ -479,7 +480,7 @@ export default function CartPage() {
       })()}
       {/* Where the stack is saved: this browser, or the account. */}
       <StackAccountPanel empty={false} placement="notice" />
-      <div className="ms-board tt-page">
+      <Page group>
         {/* 1. The stack itself, one box to see it: by area, as cards or as a list, sorted from a menu. Add and edit live here. */}
         <Section labelledBy="ms-all-title">
           <SectionHead title={t("Ma stack", "My stack")} titleId="ms-all-title" beside={<StackAccountPanel placement="inline" />}
@@ -527,7 +528,7 @@ export default function CartPage() {
           sourceIds={selectedTools.map(tool => tool.id)} selectedIds={selectedTools.map(tool => tool.id)} pendingSlug={flyingSlug}
           explorerSources={state.toolEntries.filter(entry => entry.intent === "stack").flatMap(entry => { const tool = lookup.get(entry.toolSlug); return tool ? [toolKey(tool)] : []; })}
           onAdd={(tool, origin) => addToStack(toolKey(tool), tool.name, { origin, onAdded: () => trackEvent("stack_reco_add", { tool: toolKey(tool) }) })} />
-      </div>
+      </Page>
 
       <StackToolSheet key={`${reviewScope}:${reviewEpoch}`} editCostRequest={costEditorRequest?.scope === reviewScope && costEditorRequest.epoch === reviewEpoch ? costEditorRequest : null} tool={selected || null} detail={resolved} pairs={overlapScore.pairs} categories={categories} paid={plans} currency={currency} prefix={prefix} lang={lang}
         catalog={tools} stackIds={existingIds}
@@ -539,5 +540,5 @@ export default function CartPage() {
         {loading && <p role="status">{t("Actualisation du catalogue…", "Refreshing catalogue…")}</p>}
       </section>}
     </>}
-  </div>;
+  </Page>;
 }
