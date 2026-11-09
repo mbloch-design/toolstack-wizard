@@ -1,3 +1,5 @@
+import { BackofficeNavigation } from "@/ds/BackofficeNavigation/BackofficeNavigation";
+import type { BackofficeNavigationModel } from "@/components/backoffice/backofficeNavigation";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@/lib/routerLinks";
 import { ArrowLeft, ChevronRight, CirclePlus, X } from "@/lib/icons";
@@ -26,6 +28,8 @@ type Level = "root" | "tools" | "guides";
 type NavItem = { id: string; labelFr: string; labelEn: string; to: string };
 
 interface Props {
+  isAdmin?: boolean;
+  admin?: BackofficeNavigationModel | null;
   open: boolean;
   onClose: () => void;
   prefix: string;
@@ -42,7 +46,7 @@ interface Props {
 
 const CURRENCIES: Currency[] = ["EUR", "USD", "GBP"];
 
-export default function MobileMenu({ open, onClose, prefix, lang, t, items, activeId, languageHref, currency, setCurrency, theme, toggleTheme }: Props) {
+export default function MobileMenu({ isAdmin = false, admin, open, onClose, prefix, lang, t, items, activeId, languageHref, currency, setCurrency, theme, toggleTheme }: Props) {
   const [level, setLevel] = useState<Level>("root");
   // Reste monté le temps de l'animation de fermeture : le panneau glisse et
   // s'efface au lieu de disparaître d'un coup.
@@ -125,7 +129,7 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
             <>
               {/* Accueil, Stacks et Comparatifs sont déjà dans la barre du bas :
                   le menu ne garde que ce qu'elle ne montre pas, les sous-niveaux. */}
-              <nav aria-label={L("Explorer", "Explore")}>
+              {isAdmin ? <BackofficeNavigation {...(admin ?? {})} lang={lang} homeHref={prefix} onDone={onClose} /> : <nav aria-label={L("Explorer", "Explore")}>
                 <ul className="asv2-mm-list">
                   {items.map((item) => {
                     const sub = hasLevel(item.id);
@@ -145,7 +149,7 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
                     );
                   })}
                 </ul>
-              </nav>
+              </nav>}
 
 
               <section className="asv2-mm-prefs" aria-labelledby="asv2-mm-prefs">
@@ -184,10 +188,10 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
                 </div>
               </section>
 
-              <Link to={`${prefix}/submit`} onClick={onClose} className="asv2-mm-submit">
+              {!isAdmin && <Link to={`${prefix}/submit`} onClick={onClose} className="asv2-mm-submit">
                 <CirclePlus aria-hidden />
                 {L("Soumettre un outil", "Submit a tool")}
-              </Link>
+              </Link>}
             </>
           )}
 

@@ -17,6 +17,7 @@ async function login(page: import("@playwright/test").Page, lang: "fr" | "en") {
       exact: true,
     })
     .click();
+  if ((page.viewportSize()?.width ?? 1280) <= 640) await page.getByRole("button", { name: lang === "fr" ? "Ouvrir le menu" : "Open menu" }).click();
   await page
     .getByRole("button", {
       name: lang === "fr" ? "Fiches" : "Records",
@@ -84,6 +85,7 @@ for (const lang of ["fr", "en"] as const)
         );
       }
       await page.reload();
+      if (width <= 640) await page.getByRole("button", { name: lang === "fr" ? "Ouvrir le menu" : "Open menu" }).click();
       await page
         .getByRole("button", {
           name: lang === "fr" ? "Fiches" : "Records",
@@ -174,7 +176,7 @@ test("catalogue retains text on conflict and prevents leaving through workspace 
   await expect(input).toHaveValue("Mes changements");
   await page.locator(".bo-account-toolbar .bo-signout").click();
   await expect(input).toHaveValue("Mes changements");
-  await page.locator('a[href="/fr/tools"]').first().click();
+  await page.getByRole("link", { name: "Retour au site" }).click();
   await expect(page).toHaveURL(/\/fr\/back-office(?:\?view=catalog)?$/);
   await expect(input).toHaveValue("Mes changements");
   await control(request, "fault", {

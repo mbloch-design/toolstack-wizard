@@ -28,6 +28,7 @@ async function openWorkspace(page: Page, lang: "fr" | "en") {
       exact: true,
     })
     .click();
+  if ((page.viewportSize()?.width ?? 1280) <= 640) await page.getByRole("button", { name: lang === "fr" ? "Ouvrir le menu" : "Open menu" }).click();
   await page
     .getByRole("button", {
       name: lang === "fr" ? "Fiches" : "Records",

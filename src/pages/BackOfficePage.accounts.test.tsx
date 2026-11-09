@@ -20,8 +20,8 @@ describe("back-office accounts entry",()=>{
   render(<BackOfficePage/>);await act(async()=>{});
   expect(screen.getByTestId("accounts-total")).toHaveTextContent("26");expect(mocks.legacy).not.toHaveBeenCalled();
   await act(async()=>{vi.advanceTimersByTime(31000);});expect(mocks.legacy).not.toHaveBeenCalled();
-  fireEvent.click(screen.getByRole("button",{name:"Diagnostic historique"}));await act(async()=>{});expect(mocks.legacy).toHaveBeenCalledTimes(1);
-  fireEvent.click(screen.getByRole("button",{name:"Comptes et stacks"}));await act(async()=>{});await act(async()=>{vi.advanceTimersByTime(31000);});expect(mocks.legacy).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByRole("button",{name:"Diagnostic"}));await act(async()=>{});expect(mocks.legacy).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByRole("button",{name:"Vue d’ensemble"}));await act(async()=>{});await act(async()=>{vi.advanceTimersByTime(31000);});expect(mocks.legacy).toHaveBeenCalledTimes(1);
  });
 });
 

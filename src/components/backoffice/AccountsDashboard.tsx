@@ -35,7 +35,11 @@ export function AccountsDashboard({
   catalogSession: suppliedSession,
   onCatalogDirtyChange,
   onCatalogReauthenticate,
+  section, onSectionNavigate, onAuthorization,
 }: {
+  onAuthorization?: (authorized: boolean) => void;
+  section?: View;
+  onSectionNavigate?: (section: View) => Promise<boolean>;
   catalogSession?: CatalogDraftSession;
   onCatalogReauthenticate?: () => void;
   onCatalogDirtyChange?: (dirty: boolean) => void;
@@ -47,8 +51,9 @@ export function AccountsDashboard({
   const detailRegion = useRef<HTMLElement>(null);
   const [ownSession] = useState(() => new CatalogDraftSession());
   const catalogSession = suppliedSession ?? ownSession;
-  const [view, setView] = useState<View>(() =>
+  const [localView, setView] = useState<View>(() =>
     new URLSearchParams(window.location.search).get("view") === "catalog" ? "catalog" : initialView);
+  const view = section ?? localView;
   const [catalogDirty, setCatalogDirty] = useState(false);
   const [navigationError, setNavigationError] = useState(false);
   useEffect(() => {
@@ -90,6 +95,7 @@ export function AccountsDashboard({
       .then((value) => {
         if (!cancelled) {
           setData(value);
+          onAuthorization?.(true);
           if (!search && page === 1) {
             setOverview(value);
             setOverviewError(null);
@@ -99,6 +105,7 @@ export function AccountsDashboard({
       .catch((error) => {
         if (!cancelled) {
           const kind = accessDenied(error) ? "denied" : "unavailable";
+          if (kind === "denied") onAuthorization?.(false);
           setError(kind);
           if (!search && page === 1) {
             setOverview(null);
@@ -112,7 +119,7 @@ export function AccountsDashboard({
     return () => {
       cancelled = true;
     };
-  }, [search, page, reload]);
+  }, [search, page, reload, onAuthorization]);
   // The overview is always the unfiltered first page, never the last user search.
   useEffect(() => {
     if (view !== "overview" && view !== "stacks") return;
@@ -177,6 +184,7 @@ export function AccountsDashboard({
     );
   };
   const navigate = async (next: View) => {
+    if (onSectionNavigate) { await onSectionNavigate(next); return; }
     if (view === "catalog" && catalogDirty) {
       if (!catalogSession.dirty) { setNavigationError(true); return; }
       try { await catalogSession.flush(); }
@@ -190,7 +198,7 @@ export function AccountsDashboard({
     setView(next);
   };
   const openUser = (id: string) => {
-    setView("users");
+    if (onSectionNavigate) void onSectionNavigate("users"); else setView("users");
     if (id === selected) {
       requestAnimationFrame(() => {
         detailRegion.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
@@ -288,7 +296,7 @@ export function AccountsDashboard({
       className="bo-workspace"
       aria-label={t("Comptes et stacks", "Accounts and stacks")}
     >
-      <nav
+      {!onSectionNavigate && <nav
         className="bo-navigation"
         aria-label={t("Navigation du back-office", "Back-office navigation")}
       >
@@ -316,7 +324,7 @@ export function AccountsDashboard({
             {t("Diagnostic historique", "Historical diagnostic")}
           </button>
         )}
-      </nav>
+      </nav>}
       <div className="bo-content">
         {navigationError && <p role="alert">{t("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</p>}
         <header className="bo-page-heading ac-page-header">

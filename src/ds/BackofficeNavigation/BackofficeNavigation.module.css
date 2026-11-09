@@ -1,0 +1,36 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tt-space-1);
+  padding: var(--tt-space-2);
+}
+
+.item {
+  composes: focus from "../atoms.module.css";
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-3);
+  min-height: var(--tt-space-12);
+  padding: var(--tt-space-2) var(--tt-space-3);
+  border: 0;
+  border-radius: var(--tt-space-2);
+  background: transparent;
+  color: var(--tt-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.item[aria-current="page"] { background: var(--tt-tile); }
+
+.item[data-secondary] { margin-top: var(--tt-space-4); }
+
+.collapsed {
+  position: absolute;
+  width: var(--tt-space-1);
+  height: var(--tt-space-1);
+  overflow: hidden;
+  clip-path: inset(50%);
+}

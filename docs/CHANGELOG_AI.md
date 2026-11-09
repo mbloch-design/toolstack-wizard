@@ -1,3 +1,8 @@
+## 2026-11-09 · Back-office · navigation unifiée
+
+- Les rubriques d’administration occupent le cadre partagé sur ordinateur et le menu sur mobile ; le retour au site reste disponible avant connexion et les rubriques apparaissent après vérification côté serveur.
+- Les sections suivent l’URL et l’historique, avec conservation du garde de brouillon du catalogue. Les stories restent `a-valider` ; vérification visuelle finale à effectuer.
+
 ## 2026-11-09 · Back-office · corrections de fiabilité de l’édition directe
 
 - Une offre payante sans référence est présentée comme prix non communiqué et ne reprend pas les anciens prix ; les changements tarifaires exigent une référence éligible avant publication, sans bloquer la sauvegarde du brouillon ni les données historiques inchangées.

@@ -1,5 +1,10 @@
 import { test, expect, state, control, saved, change, snapshot, dismissConsent } from './fixtures/accounts';
 
+async function selectAdminSection(page: import('@playwright/test').Page, label: string, lang: 'fr' | 'en') {
+  if ((page.viewportSize()?.width ?? 1280) <= 640) await page.getByRole('button', { name: lang === 'fr' ? 'Ouvrir le menu' : 'Open menu' }).click();
+  await page.getByRole('button', { name: label, exact: true }).click();
+}
+
 async function passwordLogin(page: import('@playwright/test').Page, lang: 'fr' | 'en', email = 'admin@example.invalid') {
   const current = await control(page.request, 'state');
   if (!current.accounts.some((user: {email: string}) => user.email === email)) await control(page.request, 'seed', { email });
@@ -9,7 +14,7 @@ async function passwordLogin(page: import('@playwright/test').Page, lang: 'fr' |
   await page.locator('.ba-login').getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
   if (email === 'admin@example.invalid') {
     await expect(page.getByRole('heading', { name: lang === 'fr' ? 'Vue d’ensemble' : 'Overview', exact: true })).toBeVisible();
-    await page.getByRole('button', { name: lang === 'fr' ? 'Utilisateurs' : 'Users', exact: true }).click();
+    await selectAdminSection(page, lang === 'fr' ? 'Utilisateurs' : 'Users', lang);
   }
 }
 for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(`back office ${lang} ${width}: direct password, global counts, paging, search and JSON details`, async ({ page, request }) => {
@@ -23,9 +28,9 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(
   await control(request, 'reset', { users: [ { email: 'admin@example.invalid' }, { email: 'detail@example.invalid', state: personal }, { email: 'legacy@example.invalid', state: legacy }, { email: 'empty@example.invalid', state: state([]) }, ...Array.from({ length: 23 }, (_, i) => ({ email: `ordinary-${i}@example.invalid` })) ] });
   await passwordLogin(page, lang); await expect(page.getByTestId('accounts-total')).toHaveText('27');
   await expect(page.getByRole('complementary', {includeHidden:true})).toHaveCount(1);
-  await page.getByRole('button', {name: lang === 'fr' ? 'Vue d’ensemble' : 'Overview',exact:true}).click();
+  await selectAdminSection(page, lang === 'fr' ? 'Vue d’ensemble' : 'Overview', lang);
   await page.locator('.asv2-root').screenshot({path:test.info().outputPath(`${lang}-${width}-overview.png`)});
-  await page.getByRole('button', {name:lang === 'fr' ? 'Utilisateurs':'Users',exact:true}).click();
+  await selectAdminSection(page, lang === 'fr' ? 'Utilisateurs' : 'Users', lang);
   await expect(page.locator('.bo-metrics strong')).toHaveText(['27', '3', '2']);
   if (width === 390) {
     await page.getByRole('button', {name:`${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} admin@example.invalid`,exact:true}).click();
@@ -154,4 +159,50 @@ for (const theme of ['light', 'dark'] as const) test(`account surfaces remain re
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
   await page.goto('/en/ma-stack'); await page.getByRole('button', { name: 'I already have an account', exact: true }).click();
   await page.getByRole('button', { name: 'Continue with email', exact: true }).click(); await readable('.ac-providers .ac-button', null); await readable('.ac-form input');
+});
+
+test('admin navigation owns the shell and supports direct sources and browser history', async ({ page, request }) => {
+  await control(request, 'seed', { email: 'admin@example.invalid' });
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await passwordLogin(page, 'en');
+  await page.goto('/en/back-office?view=sources');
+  await expect(page.getByRole('navigation', { name: 'Back-office navigation' })).toHaveCount(1);
+  await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveAttribute('aria-current', 'page');
+  await expect(page.getByRole('navigation', { name: 'Main navigation' })).toHaveCount(0);
+  await page.getByRole('button', { name: 'Users', exact: true }).click();
+  await expect(page).toHaveURL(/view=users/);
+  await page.goBack();
+  await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveAttribute('aria-current', 'page');
+});
+
+test('admin mobile menu exposes the same navigation and restores focus', async ({ page, request }) => {
+  await control(request, 'seed', { email: 'admin@example.invalid' });
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await passwordLogin(page, 'en');
+  await page.setViewportSize({ width: 390, height: 844 });
+  const trigger = page.getByRole('button', { name: 'Open menu' });
+  await trigger.click();
+  const dialog = page.getByRole('dialog', { name: 'Menu' });
+  await expect(dialog.getByRole('button', { name: 'Sources', exact: true })).toBeVisible();
+  await expect(dialog.getByRole('link', { name: 'Back to site' })).toHaveAttribute('href', '/en');
+  await expect(page.getByRole('navigation', { name: 'Navigation', exact: true })).toHaveCount(0);
+  await dialog.getByRole('button', { name: 'Sources', exact: true }).click();
+  await expect(page).toHaveURL(/view=sources/);
+  await expect(trigger).toBeFocused();
+});
+
+test('admin entry retains return to site and language preserves the selected section', async ({ page, request }) => {
+  await control(request, 'seed', { email: 'admin@example.invalid' });
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto('/en/back-office?view=sources');
+  await dismissConsent(page);
+  await expect(page.getByRole('link', { name: 'Back to site' })).toHaveAttribute('href', '/en');
+  await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveCount(0);
+  await page.getByLabel('Admin email', { exact: true }).fill('admin@example.invalid');
+  await page.getByLabel('Password', { exact: true }).fill('fixture-password');
+  await page.locator('.ba-login').getByRole('button', { name: 'Sign in', exact: true }).click();
+  await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveAttribute('aria-current', 'page');
+  await page.getByRole('link', { name: 'Site in English. Switch to French' }).click();
+  await expect(page).toHaveURL(/\/fr\/back-office\?view=sources/);
+  await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveAttribute('aria-current', 'page');
 });

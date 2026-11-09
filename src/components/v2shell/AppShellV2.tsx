@@ -1,5 +1,7 @@
+import { BackofficeNavigationContext, type BackofficeNavigationModel } from "@/components/backoffice/backofficeNavigation";
+import { BackofficeNavigation } from "@/ds/BackofficeNavigation/BackofficeNavigation";
 import AccountMenu from "@/components/account/AccountMenu";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
@@ -153,6 +155,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const { currency, setCurrency } = useCurrency();
   const { theme, toggle: toggleTheme } = useTheme();
   const location = useLocation();
+  const navigate = useNavigate();
   const [searchOpen, setSearchOpen] = useState(false);
   // The labelled navigation is the canonical desktop state. The compact rail
   // remains available as a deliberate choice and is remembered per browser.
@@ -165,7 +168,8 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const cartCount = cartState.pinnedToolSlugs.length;
   const cartLabel = t("Ma stack", "My stack");
   const otherLang = lang === "fr" ? "en" : "fr";
-  const languageHref = `${getLanguageSwitchPath(location.pathname, otherLang)}${location.search}${location.hash}`;
+  const currentSearch = typeof window !== "undefined" && /\/back-office\/?$/.test(location.pathname) ? window.location.search : location.search;
+  const languageHref = `${getLanguageSwitchPath(location.pathname, otherLang)}${currentSearch}${location.hash}`;
   const [breadcrumb, setBreadcrumb] = useState<TopbarBreadcrumbItem[] | null>(null);
   // US-NAV-01 : la barre du haut cède la place au contenu quand on descend,
   // revient dès qu'on remonte, et reprend son état complet en haut de page.
@@ -189,6 +193,8 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const relPath = location.pathname.startsWith(prefix)
     ? location.pathname.slice(prefix.length).replace(/\/$/, "")
     : location.pathname;
+  const isAdmin = relPath === "/back-office";
+  const [adminNavigation, setAdminNavigation] = useState<BackofficeNavigationModel | null>(null);
   const isHome = relPath === "";
   const isAuthCallback = relPath === "/connexion/retour" || relPath === "/sign-in/callback";
   // A handful of routes intentionally have no breadcrumb and should keep
@@ -255,14 +261,14 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   // était affiché dans la barre sans être branché.
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+      if (!isAdmin && (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
         setSearchOpen(true);
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [isAdmin]);
 
   // De 641 à 1 180 px, la barre est une colonne imposée pour laisser la place
   // au contenu. Elle peut quand même se déplier : elle pousse alors le contenu,
@@ -293,7 +299,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const railWasOpen = useRef(false);
   useEffect(() => {
     if (railIsOpen) {
-      requestAnimationFrame(() => sidebarRef.current?.querySelector<HTMLElement>(".asv2-nav-item")?.focus());
+      requestAnimationFrame(() => sidebarRef.current?.querySelector<HTMLElement>(".asv2-nav-item, nav button, nav a")?.focus());
     } else if (railWasOpen.current && !closedByNavigation.current) {
       requestAnimationFrame(() => resizerRef.current?.focus());
     }
@@ -314,6 +320,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
   return (
     <TopbarBreadcrumbContext.Provider value={breadcrumbCtx}>
+    <BackofficeNavigationContext.Provider value={setAdminNavigation}>
     <div className={`asv2-root${sidebarExpanded || railIsOpen ? " asv2-root--sidebar-expanded" : ""}${railIsOpen ? " asv2-root--rail-open" : ""}`} data-chrome={chromeHidden ? "hidden" : "shown"} suppressHydrationWarning>
       {railIsOpen && <button type="button" className="asv2-rail-backdrop" tabIndex={-1} aria-label={t("Réduire la barre latérale", "Collapse sidebar")} onClick={() => setRailOpen(false)} />}
       <aside ref={sidebarRef} className="asv2-sidebar" data-expanded={shownExpanded} suppressHydrationWarning>
@@ -342,7 +349,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </div>
         </div>
 
-        <nav className="asv2-nav" aria-label={t("Navigation principale", "Main navigation")}>
+        {isAdmin ? <BackofficeNavigation {...(adminNavigation ?? {})} lang={lang === "en" ? "en" : "fr"} homeHref={prefix} collapsed={!shownExpanded} /> : <nav className="asv2-nav" aria-label={t("Navigation principale", "Main navigation")}>
           {NAV_ITEMS.map((item) => {
             const isActive = item.id === "home"
               ? relPath === ""
@@ -363,12 +370,13 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               </Link>
             );
           })}
-        </nav>
+        </nav>}
 
         <div className="asv2-sidebar-utility">
           <div className="asv2-utility-actions">
           <Link
             to={languageHref}
+            onClick={isAdmin ? (event) => { event.preventDefault(); navigate(`${getLanguageSwitchPath(location.pathname, otherLang)}${window.location.search}${location.hash}`); } : undefined}
             className="asv2-utility-item"
             aria-label={t("Site en français. Passer en anglais", "Site in English. Switch to French")}
             title={!sidebarExpanded ? t("Passer en anglais", "Switch to French") : undefined}
@@ -409,7 +417,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </div>
         </div>
 
-        <Link
+        {!isAdmin && <Link
           to={`${prefix}/submit`}
           className="asv2-sidebar-submit"
           aria-label={t("Soumettre un outil", "Submit a tool")}
@@ -422,7 +430,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             <span className="asv2-submit-long">{t("Soumettre un outil", "Submit a tool")}</span>
             <span className="asv2-submit-short">{t("Soumettre", "Submit")}</span>
           </span>
-        </Link>
+        </Link>}
 
       </aside>
 
@@ -468,7 +476,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           <div className="asv2-topbar-right">
             {/* Recherche toujours atteignable depuis la barre du haut, même
                 quand le fil d'Ariane occupe la place du champ. */}
-            <button
+            {!isAdmin && <button
               type="button"
               className="asv2-topbar-search"
               onClick={() => setSearchOpen(true)}
@@ -477,9 +485,9 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               <Search size={16} aria-hidden />
               <span className="asv2-topbar-search-label">{t("Rechercher", "Search")}</span>
               <kbd className="asv2-kbd">{shortcut}</kbd>
-            </button>
+            </button>}
             <AccountMenu />
-            <Link
+            {!isAdmin && <Link
               to={`${prefix}/ma-stack`}
               className="asv2-topbar-cta"
               aria-label={cartCount > 0 ? `${cartLabel} · ${cartCount}` : cartLabel}
@@ -494,7 +502,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
                 )}
               </span>
               <span>{cartLabel}</span>
-            </Link>
+            </Link>}
             <button
               ref={menuButtonRef}
               type="button"
@@ -516,12 +524,12 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           <main id="main-content" tabIndex={-1} className="asv2-main">
             {children}
           </main>
-          {!isAuthCallback && <Footer />}
+          {!isAuthCallback && !isAdmin && <Footer />}
         </div>
       </div>
 
       {/* ── Mobile bottom navigation (hidden on desktop via CSS) ── */}
-      <nav className="asv2-bottomnav" aria-label={t("Navigation", "Navigation")}>
+      {!isAdmin && <nav className="asv2-bottomnav" aria-label={t("Navigation", "Navigation")}>
         <div className="asv2-bn-row">
           {NAV_ITEMS.map((item) => {
             const isActive = item.id === "home"
@@ -541,11 +549,13 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             );
           })}
         </div>
-      </nav>
+      </nav>}
 
       {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
       <MobileMenu
         open={menuOpen}
+        admin={isAdmin ? adminNavigation : undefined}
+        isAdmin={isAdmin}
         onClose={closeMenu}
         prefix={prefix}
         lang={lang === "en" ? "en" : "fr"}
@@ -559,6 +569,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         toggleTheme={toggleTheme}
       />
     </div>
+    </BackofficeNavigationContext.Provider>
     </TopbarBreadcrumbContext.Provider>
   );
 }

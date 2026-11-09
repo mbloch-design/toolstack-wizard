@@ -1,3 +1,6 @@
+import { BackofficeNavigation } from "@/ds/BackofficeNavigation/BackofficeNavigation";
+import { MemoryRouter, useInRouterContext, useLocation, useNavigate } from "react-router-dom";
+import { readBackofficeSection, useBackofficeNavigationPublisher, type BackofficeSection } from "@/components/backoffice/backofficeNavigation";
 import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Button as StackButton } from "@/components/stack/StackKit";
@@ -431,6 +434,11 @@ function toAdminSession(session: Session | null): AdminSession | null {
 }
 
 export default function BackOfficePage() {
+  const inRouter = useInRouterContext();
+  return inRouter ? <BackOfficePageContent /> : <MemoryRouter initialEntries={[`${window.location.pathname}${window.location.search}${window.location.hash}`]}><BackOfficePageContent /></MemoryRouter>;
+}
+
+function BackOfficePageContent() {
   const { lang, t } = useLang();
   const account = useStackAccount();
   const [logoutPrompt, setLogoutPrompt] = useState(false);
@@ -444,10 +452,35 @@ export default function BackOfficePage() {
   const [adminSession, setAdminSession] = useState<AdminSession | null>(null);
   const [catalogSession] = useState(() => new CatalogDraftSession());
   const [catalogDirty, setCatalogDirty] = useState(false);
+  const [verifiedUserId, setVerifiedUserId] = useState<string | null>(null);
+  const location = useLocation();
+  const routerNavigate = useNavigate();
+  const publishNavigation = useBackofficeNavigationPublisher();
+  const section = readBackofficeSection(location.search);
+  const [sectionError, setSectionError] = useState(false);
+  const setAuthorization = useCallback((authorized: boolean) => setVerifiedUserId(authorized ? adminSession?.userId ?? null : null), [adminSession?.userId]);
+  const navigateSection = useCallback(async (next: BackofficeSection): Promise<boolean> => {
+    if (section === next) return true;
+    if (section === "catalog" && catalogDirty) {
+      if (!catalogSession.dirty) { setSectionError(true); return false; }
+      try { await catalogSession.flush(); } catch { setSectionError(true); return false; }
+    }
+    const params = new URLSearchParams(window.location.search || location.search);
+    params.set("view", next);
+    if (next !== "catalog") { params.delete("tool"); params.delete("editor"); }
+    setSectionError(false);
+    routerNavigate({ pathname: location.pathname, search: `?${params}`, hash: location.hash });
+    return true;
+  }, [catalogDirty, catalogSession, location, routerNavigate, section]);
+  useEffect(() => {
+    if (!publishNavigation || !adminSession || verifiedUserId !== adminSession.userId) return;
+    publishNavigation({ section, onNavigate: navigateSection });
+    return () => publishNavigation(null);
+  }, [publishNavigation, adminSession, verifiedUserId, section, navigateSection]);
   const acceptSession = useCallback((session: Session | null) => {
     const next = toAdminSession(session);
     if (next) catalogSession.setOwner(next.userId);
-    else catalogSession.suspend();
+    else { catalogSession.suspend(); setVerifiedUserId(null); }
     setAdminSession(next);
   }, [catalogSession]);
   const [authLoading, setAuthLoading] = useState(false);
@@ -456,7 +489,7 @@ export default function BackOfficePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [activeTab, setActiveTab] = useState<TabId>("accounts");
+  const [activeTab, setActiveTab] = useState<TabId>("preprod");
   const [days, setDays] = useState(30);
   const [limit, setLimit] = useState(150);
   const [personaFilter, setPersonaFilter] = useState<string>("all");
@@ -497,7 +530,7 @@ export default function BackOfficePage() {
   }, [acceptSession]);
 
   const loadDashboard = useCallback(async () => {
-    if (!adminSession || activeTab === "accounts") return;
+    if (!adminSession || section !== "diagnostic") return;
     setLoading(true);
     setError(null);
     try {
@@ -507,6 +540,7 @@ export default function BackOfficePage() {
         persona: personaFilter === "all" ? null : personaFilter,
       });
       setDashboard(data);
+      setVerifiedUserId(adminSession.userId);
     } catch (e) {
       const message = e instanceof Error ? e.message : "Unable to load data";
       setError(message);
@@ -517,14 +551,14 @@ export default function BackOfficePage() {
     } finally {
       setLoading(false);
     }
-  }, [adminSession, activeTab, days, limit, personaFilter]);
+  }, [adminSession, activeTab, days, limit, personaFilter, section]);
 
   useEffect(() => {
     void loadDashboard();
   }, [loadDashboard]);
 
   useEffect(() => {
-    if (!adminSession || activeTab === "accounts") return;
+    if (!adminSession || section !== "diagnostic") return;
     const timer = setInterval(() => {
       void loadDashboard();
     }, 30000);
@@ -1352,20 +1386,24 @@ export default function BackOfficePage() {
     );
   }
 
-  if (activeTab === "accounts") return (
+  const standaloneNavigation = !publishNavigation ? <BackofficeNavigation section={section} onNavigate={navigateSection} lang={locale} homeHref={`/${locale}`} /> : null;
+
+  if (section !== "diagnostic") return (
     <div className="bo-shell ms-page">
+      {standaloneNavigation}
       <Breadcrumb items={[{ label: t("Back-office", "Back office") }]} includeSchema={false}/>
       <div className="bo-account-toolbar"><p>{t("Administration", "Administration")}<span aria-hidden> · </span>{adminSession.email || t("Compte connecté", "Signed-in account")}</p>
         <StackButton className="bo-signout" disabled={authLoading} onClick={() => void disconnect()} icon={<LogOut size={16} aria-hidden/>}>{t("Fermer", "Sign out")}</StackButton>
       </div>
       {logoutFeedback}
-      <AccountsDashboard key={adminSession.userId} catalogSession={catalogSession} onCatalogReauthenticate={()=>{catalogSession.suspend();setAdminSession(null);}} onCatalogDirtyChange={setCatalogDirty} initialView="overview" onOpenHistory={() => setActiveTab("preprod")}/>
+      {sectionError && <p role="alert">{t("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</p>}
+      <AccountsDashboard onAuthorization={setAuthorization} section={section} onSectionNavigate={navigateSection} key={adminSession.userId} catalogSession={catalogSession} onCatalogReauthenticate={()=>{catalogSession.suspend();setAdminSession(null);}} onCatalogDirtyChange={setCatalogDirty} initialView="overview"/>
     </div>
   );
 
   return (
     <div className="max-w-[1400px] mx-auto px-4 py-6 md:py-10 space-y-6">
-      <button className="ba-button" onClick={() => setActiveTab("accounts")}>{t("Comptes et stacks", "Accounts and stacks")}</button>
+      {standaloneNavigation}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
         <div>
           <h1 className="text-2xl font-semibold text-foreground">

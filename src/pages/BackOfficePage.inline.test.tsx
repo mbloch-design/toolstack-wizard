@@ -100,7 +100,7 @@ afterEach(() => {
 });
 async function mount() {
   render(
-    <MemoryRouter>
+    <MemoryRouter initialEntries={[`${window.location.pathname}${window.location.search}`]}>
       <StackAccountProvider enabled={false}>
         <BackOfficePage />
       </StackAccountProvider>
