@@ -23,7 +23,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button({ vari
 export default Button;
 
 /** A round button with only an icon: on a picture (« + »), or beside a field. It always has a name. */
-export function IconButton({ label, icon, tone = "raised", size = 44, ...rest }: Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children"> & { label: string; icon: ReactNode; tone?: "raised" | "grey"; size?: 32 | 40 | 44 }) {
+export function IconButton({ label, icon, tone = "raised", size = 44, ...rest }: Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children"> & { label: string; icon: ReactNode; tone?: "raised" | "grey" | "quiet" | "ink" | "done"; size?: 32 | 40 | 44 }) {
   return <button type="button" className={styles.iconButton} data-tone={tone} data-size={size} aria-label={label} title={rest.title ?? label} {...rest}><span aria-hidden="true">{icon}</span></button>;
 }
 

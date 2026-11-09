@@ -17389,27 +17389,16 @@ img[data-logo-loading] {
 
   .ms-page { max-width: 1440px; margin: 0 auto; padding: var(--space-2xl) var(--space-2xl) var(--space-3xl); }
 
-  .ms-search { max-width: 680px; margin: 0 0 var(--space-xl); }
 
-  .ms-search-input { display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-xs) var(--space-md); border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info); background: hsl(var(--card)); }
 
-  .ms-search-input input { flex: 1; min-width: 0; padding: var(--space-xs) 0; background: transparent; outline: none; font-size: var(--tt-size-body); }
 
-  .ms-search-input:focus-within { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
 
-  .ms-search-status { padding: var(--space-sm) var(--space-md) var(--space-xs); font-size: var(--tt-size-card-body); }
 
-  .ms-results { list-style: none; padding: 0; }
 
-  .ms-results li { display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-xs) var(--space-md); border-bottom: 1px solid hsl(var(--border)); }
 
-  .ms-results a { flex: 1; padding: var(--space-xs) 0; font-weight: 600; }
 
-  .ms-results button, .ms-icon-action { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: var(--tt-surface-radius-info); flex-shrink: 0; }
 
-  .ms-results button:hover:not(:disabled), .ms-icon-action:hover { background: hsl(var(--secondary)); }
 
-  .ms-results button:disabled { opacity: 0.55; }
 
   .ms-tool { display: flex; align-items: center; text-align: left; gap: var(--space-sm); min-width: 0; width: 100%; padding: var(--space-xs) var(--space-sm); border-radius: var(--tt-surface-radius-info); background: transparent; transition: background 160ms ease; }
 
@@ -18964,23 +18953,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mk-row--action:hover .mk-row-chevron { opacity: 1; transform: translateX(2px); }
 
 /* ── Search (add a tool) and the empty page ──────────────────────────────── */
-.ms-page .ms-search { max-width: none; margin: 0 0 var(--space-md); }
-.ms-page .ms-search-input { display: flex; align-items: center; gap: var(--space-sm); min-height: 52px; padding: 0 var(--space-md) 0 var(--space-lg); border: 0; border-radius: var(--radius-pill); background: var(--ms-tile); color: var(--ms-meta); transition: background-color 180ms ease, box-shadow 180ms ease; }
-.ms-page .ms-search-input:focus-within { background: var(--ms-card); box-shadow: 0 0 0 2px var(--ms-ink); outline: none; }
-.ms-page .ms-search-input input { flex: 1; min-width: 0; background: none; color: var(--ms-ink); font: 400 17px/1.3 var(--ap-font); letter-spacing: -.01em; outline: none; }
-.ms-page .ms-search-input input::placeholder { color: var(--ms-meta); }
-.ms-page .ms-search-input input::-webkit-search-cancel-button { display: none; }
-.ms-page .ms-icon-action { width: 36px; height: 36px; border-radius: var(--radius-circle); color: var(--ms-meta); }
-.ms-page .ms-icon-action:hover { background: var(--ms-hover); color: var(--ms-ink); }
-.ms-page .ms-search-status { margin: var(--space-md) 0 var(--space-xs); padding: 0 var(--space-lg); color: var(--ms-meta); font: 600 13px/1.3 var(--ap-font); }
-.ms-page .ms-results { margin: 0; padding: var(--space-xs) 0; border-radius: var(--ms-r); background: var(--ms-tile); list-style: none; }
-.ms-page .ms-results li { display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-2xs) var(--space-md) var(--space-2xs) var(--space-lg); border: 0; }
-.ms-page .ms-results li + li { box-shadow: inset 0 1px 0 var(--ms-line); }
-.ms-page .ms-results li > :first-child { border-radius: var(--radius-sm); }
-.ms-page .ms-results a { flex: 1; padding: var(--space-xs) 0; color: var(--ms-ink); font: 500 15px/1.3 var(--ap-font); text-decoration: none; }
-.ms-page .ms-results button { width: 32px; height: 32px; border-radius: var(--radius-circle); background: var(--ms-ink); color: var(--ms-card); }
-.ms-page .ms-results button:hover:not(:disabled) { background: var(--color-hover-strong); }
-.ms-page .ms-results button:disabled { background: var(--ms-good-soft); color: var(--ms-good); opacity: 1; }
 
 @media (prefers-reduced-motion: reduce) {
   .ms-page .mk-odo-strip { transition: none; }

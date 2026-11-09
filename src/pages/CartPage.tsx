@@ -4,10 +4,10 @@ import { buildStackDiscovery } from "@/lib/stackDiscovery";
 import StackArrival from "@/components/stack/StackArrival";
 import { useStackAccount } from "@/hooks/useStackAccount";
 import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { Plus, Search, Check, X, Pencil, LayoutGrid, List } from "@/lib/icons";
+import { Plus, Check, Pencil, LayoutGrid, List } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -17,6 +17,7 @@ import StackToolSheet from "@/components/stack/StackToolSheet";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
 import ToolCard, { ToolCards, ToolGroup, ToolGroups } from "@/ds/ToolCard/ToolCard";
 import Button, { buttonAttrs } from "@/ds/Button/Button";
+import ToolSearch, { SearchField } from "@/ds/ToolSearch/ToolSearch";
 import Toolbar, { FilterChips, IconSwitch, Section, SectionHead, SortSelect, ToolbarTools } from "@/ds/Toolbar/Toolbar";
 import { comparisonPath } from "@/lib/comparisonLinks";
 import { decisionSavingInCurrency, latestRemovedStackDecisions } from "@/lib/stackDecisions";
@@ -386,30 +387,19 @@ export default function CartPage() {
 
   // Add search: on top for an empty stack, in My tools otherwise (the add
   // action is a quiet button there, not a hero CTA).
-  const searchPanel = showSearch && <section className="ms-search" id="ms-search" aria-label={t("Ajouter un outil", "Add a tool")}>
-      <div className="ms-search-input"><Search size={20} aria-hidden /><input
-        ref={searchRef}
-        id={empty ? "ms-first-tool" : undefined}
-        type="search"
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        placeholder={t("Rechercher par nom…", "Search by name…")}
-        aria-label={t("Ajouter un outil à ma stack", "Add a tool to my stack")}
-        onKeyDown={(event) => { if (event.key === "Escape" && !empty) { setSearchOpen(false); addRef.current?.focus(); } }}
-      />{!empty && <button className="ms-icon-action" onClick={() => { setSearchOpen(false); addRef.current?.focus(); }} aria-label={t("Fermer la recherche", "Close search")}><X size={18} aria-hidden /></button>}</div>
-      {query.trim() && <>
-        <p className="ms-search-status" role="status">{searchResults.length === 0 ? t("Aucun outil trouvé.", "No tools found.") : t("Résultats du catalogue", "Catalogue results")}</p>
-        <ul className="ms-results">{searchResults.map((tool) => {
-          const present = existingIds.has(tool.id);
-          return <li key={tool.id}><ToolLogo tool={tool} size={28} /><Link to={`${prefix}/tool/${toolKey(tool)}`}>{tool.name}</Link><button
-            type="button"
-            disabled={present}
-            aria-label={present ? t(`${tool.name} est dans votre stack`, `${tool.name} is in your stack`) : t(`Ajouter ${tool.name}`, `Add ${tool.name}`)}
-            onClick={(event) => addToStack(toolKey(tool), tool.name, { origin: event.currentTarget.closest("li") })}
-          >{present ? <Check size={18} aria-hidden /> : <Plus size={18} aria-hidden />}</button></li>;
-        })}</ul>
-      </>}
-    </section>;
+  const closeSearch = () => { setSearchOpen(false); addRef.current?.focus(); };
+  const searchPanel = showSearch && <ToolSearch id="ms-search" label={t("Ajouter un outil", "Add a tool")}
+    field={<SearchField inputRef={searchRef} id={empty ? "ms-first-tool" : undefined} value={query} onChange={setQuery}
+      placeholder={t("Rechercher par nom…", "Search by name…")} label={t("Ajouter un outil à ma stack", "Add a tool to my stack")}
+      onClose={empty ? undefined : closeSearch} closeLabel={t("Fermer la recherche", "Close search")} />}
+    status={query.trim() ? (searchResults.length === 0 ? t("Aucun outil trouvé.", "No tools found.") : t("Résultats du catalogue", "Catalogue results")) : undefined}
+    results={query.trim() ? searchResults.map((tool) => {
+      const present = existingIds.has(tool.id);
+      return { id: tool.id, tool, present,
+        addLabel: present ? t(`${tool.name} est dans votre stack`, `${tool.name} is in your stack`) : t(`Ajouter ${tool.name}`, `Add ${tool.name}`),
+        renderLink: (className: string, content: ReactNode) => <Link className={className} to={`${prefix}/tool/${toolKey(tool)}`}>{content}</Link>,
+        onAdd: (row: HTMLElement | null) => addToStack(toolKey(tool), tool.name, { origin: row }) };
+    }) : undefined} />;
 
   const awaitingInitialStack = account.enabled && (!account.authInitialized ||
     (!!account.user && loading && !empty && selectedTools.length === 0) ||

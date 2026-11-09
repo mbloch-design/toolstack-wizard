@@ -1,0 +1,95 @@
+/* Add a tool: a pill field, then the catalogue results on a tile. */
+
+.search {
+  display: grid;
+  gap: var(--tt-space-3);
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-2);
+  min-height: 52px;
+  padding: 0 var(--tt-space-2) 0 var(--tt-space-5);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+  transition: background-color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease;
+}
+
+.field:focus-within {
+  background: var(--tt-bg);
+  box-shadow: var(--tt-hairline-ink);
+}
+
+.field input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--tt-ink);
+  font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
+  outline: none;
+}
+
+.field input::placeholder {
+  color: var(--tt-meta);
+}
+
+.field input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.loupe {
+  display: inline-grid;
+  place-items: center;
+}
+
+.loupe svg {
+  width: var(--tt-icon-xl);
+  height: var(--tt-icon-xl);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+}
+
+.status {
+  composes: note from "../atoms.module.css";
+  padding: 0 var(--tt-space-5);
+}
+
+.results {
+  margin: 0;
+  padding: var(--tt-space-1) 0;
+  border-radius: var(--tt-r-card);
+  background: var(--tt-tile);
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-3);
+  padding: var(--tt-space-2) var(--tt-space-4) var(--tt-space-2) var(--tt-space-5);
+}
+
+.row + .row {
+  box-shadow: var(--tt-hairline-top);
+}
+
+.name {
+  composes: label focus from "../atoms.module.css";
+  flex: 1;
+  min-width: 0;
+  padding: var(--tt-space-2) 0;
+  text-decoration: none;
+}
+
+.name:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

@@ -11,7 +11,7 @@ for (const lang of ["fr", "en"]) for (const family of ["diagnostic", "selector"]
     await expect(page.locator("h1")).toBeVisible();
     await page.goto(`/${lang}/${family}${suffix}`, { waitUntil: "load" });
     await expect(page).toHaveURL(new RegExp(`/${lang}/ma-stack$`));
-    await expect(page.locator(".ms-search input")).toBeVisible();
+    await expect(page.locator("[data-tool-search] input")).toBeVisible();
     await page.goBack({ waitUntil: "load" });
     await expect(page).toHaveURL(new RegExp(`/${lang}/tools$`));
     expect(errors).toEqual([]);

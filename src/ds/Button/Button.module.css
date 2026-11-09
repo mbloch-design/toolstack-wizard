@@ -112,6 +112,24 @@
   box-shadow: none;
 }
 
+/* quiet: no fill until hovered (close a field). ink: the add of a result. done: already there. */
+.iconButton[data-tone="quiet"] {
+  background: none;
+  box-shadow: none;
+}
+
+.iconButton[data-tone="ink"] {
+  background: var(--tt-ink);
+  box-shadow: none;
+  color: var(--tt-bg);
+}
+
+.iconButton[data-tone="done"] {
+  background: color-mix(in oklch, var(--tt-live) 16%, var(--tt-bg));
+  box-shadow: none;
+  color: var(--tt-ink);
+}
+
 .iconButton:focus-visible {
   outline: var(--tt-focus-ring);
   outline-offset: var(--tt-focus-offset);
@@ -124,6 +142,10 @@
 .iconButton:hover:not(:disabled) {
   background: var(--tt-ink);
   color: var(--tt-bg);
+}
+
+.iconButton[data-tone="ink"]:hover:not(:disabled) {
+  background: color-mix(in oklch, var(--tt-ink) 82%, var(--tt-bg));
 }
 
 .iconButton:active:not(:disabled) {
