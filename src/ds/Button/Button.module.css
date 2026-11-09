@@ -23,10 +23,12 @@
   padding: 0 var(--tt-space-6);
 }
 
+/* Light text on ink glows and reads bolder: one step finer. */
 .button[data-variant="primary"],
 .button[aria-pressed="true"] {
   background: var(--tt-ink);
   color: var(--tt-bg);
+  font-weight: var(--tt-w-on-ink);
 }
 
 .button[data-variant="quiet"] {
@@ -159,6 +161,7 @@
 
 .quiet {
   font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
 }
 
 .link:focus-visible {
@@ -175,4 +178,5 @@
 
 .inline {
   font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
 }

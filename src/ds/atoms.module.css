@@ -29,6 +29,7 @@
   margin: 0;
   color: var(--tt-ink);
   font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
   text-wrap: pretty;
 }
 
@@ -36,9 +37,10 @@
   margin: 0;
   color: var(--tt-ink);
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
   text-wrap: pretty;
 }
 
 .strong {
-  font-weight: var(--tt-w-strong);
+  font-weight: var(--tt-w-em);
 }

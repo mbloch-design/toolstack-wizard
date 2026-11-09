@@ -13,6 +13,19 @@
   --tt-meta: #6E6E73;
   --tt-w-text: 400;
   --tt-w-strong: 500;
+  /* Graisses par rôle (09/11/2026, « délicat ») : fines, compensées à l'œil. Plus un texte est
+     petit, plus il prend un cran, pour que tous les rôles paraissent du même poids. */
+  --tt-w-hero: 280;     /* 64 */
+  --tt-w-figure: 300;   /* 42 */
+  --tt-w-title: 400;    /* 21 */
+  --tt-w-amount: 430;   /* 17 */
+  --tt-w-label: 440;    /* 16, boutons et libellés */
+  --tt-w-on-ink: 420;   /* texte clair sur l'encre : il rayonne, un cran plus fin */
+  --tt-w-small: 460;    /* 14, puces et étiquettes */
+  --tt-w-caps: 480;     /* 12 en capitales */
+  --tt-w-read: 370;     /* texte 16 */
+  --tt-w-note: 390;     /* note 14 */
+  --tt-w-em: 470;       /* emphase dans le texte : un cran, jamais du gras */
 
   /* Marque et sens. Le bleu signe ; les autres couleurs parlent des données. */
   --tt-brand: #1E52F1;
@@ -81,23 +94,24 @@
    tokens : modifier un atome le modifie partout où il apparaît. */
 :root {
   /* Texte */
-  /* Échelle validée (planche, chapitre 02) : 64 · 42 · 21 · 17 lecture · 16 texte · 14 détail ·
-     12 en capitales seulement. Graisses 400 et 500, un cran plus fin en sombre.
-     Interlettrage : Inter (lecture, interface) à 0 ; Uncut Sans de −0,017 em (petit)
-     à −0,022 em (64) ; capitales +0,08 em. */
-  --tt-eyebrow-font: var(--tt-w-strong) .75rem/1.4 var(--tt-ui);   --tt-eyebrow-tracking: .08em;
-  --tt-title-xl-font: var(--tt-w-strong) clamp(2.625rem, 5vw, 4rem)/1.04 var(--tt-display); --tt-title-xl-tracking: -.022em;
+  /* Échelle : 64 · 42 · 21 · 17 · 16 · 14 · 12 en capitales seulement. Graisses fines par rôle
+     (--tt-w-*, 09/11/2026), un cran plus fin en sombre. Inter pour toute l'interface et la lecture
+     (Inter Tight serre trop sous 21 px), avec sa table d'interlettrage : −0,011 em à 16, −0,004 em
+     à 14. Uncut Sans de −0,012 em (17) à −0,032 em (64) ; capitales +0,08 em. Une police de rôle
+     se pose toujours avec son interlettrage (--tt-*-tracking). */
+  --tt-eyebrow-font: var(--tt-w-caps) .75rem/1.4 var(--tt-read);   --tt-eyebrow-tracking: .08em;
+  --tt-title-xl-font: var(--tt-w-hero) clamp(2.625rem, 5vw, 4rem)/1.04 var(--tt-display); --tt-title-xl-tracking: -.032em;
   /* Titre L et titre M partagent le palier 21 de l'échelle. */
-  --tt-title-l-font: var(--tt-w-strong) 1.3125rem/1.2 var(--tt-display);  --tt-title-l-tracking: -.017em;
-  --tt-title-m-font: var(--tt-w-strong) 1.3125rem/1.2 var(--tt-display); --tt-title-m-tracking: -.017em;
-  --tt-title-section-font: var(--tt-w-strong) 2.625rem/1.08 var(--tt-display); --tt-title-section-tracking: -.021em;
-  --tt-label-font: var(--tt-w-strong) 1rem/1.3 var(--tt-ui);   --tt-label-tracking: 0;
-  --tt-text-font: var(--tt-w-text) 1rem/1.55 var(--tt-read);
-  --tt-note-font: var(--tt-w-text) .875rem/1.4 var(--tt-read);
+  --tt-title-l-font: var(--tt-w-title) 1.3125rem/1.2 var(--tt-display);  --tt-title-l-tracking: -.018em;
+  --tt-title-m-font: var(--tt-w-title) 1.3125rem/1.2 var(--tt-display); --tt-title-m-tracking: -.018em;
+  --tt-title-section-font: var(--tt-w-figure) 2.625rem/1.08 var(--tt-display); --tt-title-section-tracking: -.028em;
+  --tt-label-font: var(--tt-w-label) 1rem/1.3 var(--tt-read);   --tt-label-tracking: -.011em;
+  --tt-text-font: var(--tt-w-read) 1rem/1.55 var(--tt-read);   --tt-text-tracking: -.011em;
+  --tt-note-font: var(--tt-w-note) .875rem/1.4 var(--tt-read);  --tt-note-tracking: -.004em;
   /* Chiffres */
-  --tt-figure-font: var(--tt-w-strong) 2.625rem/1 var(--tt-display);   --tt-figure-tracking: -.021em;
-  --tt-amount-font: var(--tt-w-strong) 1.0625rem/1 var(--tt-display); --tt-amount-tracking: -.017em;
-  --tt-unit-font: var(--tt-w-text) .875rem/1 var(--tt-read);
+  --tt-figure-font: var(--tt-w-figure) 2.625rem/1 var(--tt-display);   --tt-figure-tracking: -.028em;
+  --tt-amount-font: var(--tt-w-amount) 1.0625rem/1 var(--tt-display); --tt-amount-tracking: -.012em;
+  --tt-unit-font: var(--tt-w-note) .875rem/1 var(--tt-read);  --tt-unit-tracking: -.004em;
   --tt-gain-ink: color-mix(in oklch, var(--tt-live) 72%, var(--tt-ink));
   /* Surfaces */
   --tt-tile-pad: 28px;
@@ -107,7 +121,7 @@
   --tt-row-ring-on: 0 0 0 2px var(--tt-brand-mark);
   --tt-row-gone: .45;
   /* Repères */
-  --tt-tag-font: var(--tt-w-strong) .875rem/1 var(--tt-ui);
+  --tt-tag-font: var(--tt-w-small) .875rem/1 var(--tt-read);  --tt-tag-tracking: -.004em;
   --tt-logo-plate: #FFFFFF;
   --tt-logo-radius: 23%;
   --tt-logo-shadow: 0 0 0 .5px rgb(0 0 0 / .08), 0 4px 10px -6px rgb(0 0 0 / .3);--tt-dur-reveal: 600ms;--tt-overlap-strong: color-mix(in oklch, var(--tt-overlap) 85%, black);--tt-on-color: #fff;--tt-tile-gap: 20px;--tt-board-gap: 20px;--tt-page-gap: 40px;--tt-page-max: 1280px;--tt-page-pad: clamp(20px, 4vw, 48px);
@@ -146,6 +160,8 @@
   --tt-meta: #9A9AA0;
   --tt-w-text: 370;
   --tt-w-strong: 470;
+  --tt-w-hero: 260; --tt-w-figure: 280; --tt-w-title: 370; --tt-w-amount: 400; --tt-w-label: 410;
+  --tt-w-on-ink: 410; --tt-w-small: 430; --tt-w-caps: 450; --tt-w-read: 340; --tt-w-note: 360; --tt-w-em: 440;
   --tt-aura-brand-a: oklch(0.68 0.2 262);
   --tt-aura-brand-b: oklch(0.66 0.22 292);
   --tt-gain-1: oklch(0.55 0.13 165);

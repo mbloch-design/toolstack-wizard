@@ -159,6 +159,7 @@
   background: none;
   color: var(--tt-ink);
   font: inherit;
+  letter-spacing: inherit;
   text-align: left;
   cursor: pointer;
 }
@@ -185,7 +186,7 @@
 /* Inter with tabular figures in both row types: one face per column of numbers. */
 .areaAmount {
   font: var(--tt-label-font);
-  letter-spacing: 0;
+  letter-spacing: var(--tt-label-tracking);
   font-variant-numeric: tabular-nums;
 }
 
@@ -194,6 +195,7 @@
   display: inline-block;
   width: 5ch;
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
   font-variant-numeric: tabular-nums;
   text-align: right;
 }
@@ -243,6 +245,7 @@
   overflow: hidden;
   color: var(--tt-ink);
   font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   text-wrap: balance;
@@ -261,6 +264,7 @@
 
 .toolAmount {
   font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
   font-variant-numeric: tabular-nums;
 }
 

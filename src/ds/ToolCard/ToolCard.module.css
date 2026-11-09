@@ -54,6 +54,7 @@
   background: var(--tt-tile);
   color: var(--tt-ink);
   font: inherit;
+  letter-spacing: inherit;
   text-align: left;
   cursor: pointer;
   transition: background-color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;

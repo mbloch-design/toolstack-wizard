@@ -72,6 +72,7 @@
   margin: 0;
   color: var(--tt-ink);
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
 }
 
 .review {
@@ -84,6 +85,7 @@
   background: none;
   color: var(--tt-ink);
   font: inherit;
+  letter-spacing: inherit;
   cursor: pointer;
 }
 

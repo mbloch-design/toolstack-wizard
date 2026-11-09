@@ -20,6 +20,7 @@
   box-shadow: var(--tt-row-ring);
   color: var(--tt-ink);
   font: inherit;
+  letter-spacing: inherit;
   text-align: left;
   cursor: pointer;
   transition: box-shadow var(--tt-dur-state) ease, opacity var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
@@ -130,6 +131,7 @@
 
 .note {
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
 }
 
 .amount {

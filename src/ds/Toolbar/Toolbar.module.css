@@ -75,6 +75,7 @@
   background: var(--tt-tile-2);
   color: var(--tt-ink);
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
   cursor: pointer;
 }
 

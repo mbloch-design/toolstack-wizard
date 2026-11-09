@@ -7,7 +7,7 @@
   background: var(--tt-tile);
   color: var(--tt-ink);
   font: var(--tt-tag-font);
-  letter-spacing: 0;
+  letter-spacing: var(--tt-tag-tracking);
   white-space: nowrap;
 }
 

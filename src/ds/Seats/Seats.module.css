@@ -15,6 +15,7 @@
   gap: var(--tt-space-1) var(--tt-space-3);
   margin: 0;
   font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
 }
 
 .question {
@@ -47,7 +48,7 @@
   box-shadow: var(--tt-row-ring);
   color: var(--tt-ink);
   font: var(--tt-label-font);
-  letter-spacing: 0;
+  letter-spacing: var(--tt-label-tracking);
   font-variant-numeric: tabular-nums;
   cursor: pointer;
 }
@@ -79,6 +80,7 @@
   min-height: 1lh;
   margin: 0;
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
 }
 
 .crew {
@@ -115,11 +117,13 @@
 
 .people em {
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
   font-style: normal;
 }
 
 .sum {
   font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
 }
 
 @keyframes nope {

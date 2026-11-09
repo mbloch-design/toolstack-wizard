@@ -21,5 +21,5 @@
 .unit {
   margin-left: var(--tt-space-1);
   font: var(--tt-unit-font);
-  letter-spacing: 0;
+  letter-spacing: var(--tt-unit-tracking);
 }

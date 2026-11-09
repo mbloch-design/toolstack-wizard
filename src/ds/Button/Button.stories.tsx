@@ -31,7 +31,7 @@ export const Matrix: Story = {
       <TextButton>{t(lang, "Revoir ce choix", "Review this choice")}</TextButton>
       <a className={linkClass()} href="#explorer">{t(lang, "Explorer les pistes", "Explore more ideas")}</a>
       <TextButton tone="quiet">{t(lang, "Je n’utilise plus cet outil", "I no longer use this tool")}</TextButton>
-      <span style={{ font: "var(--tt-text-font)", color: "var(--tt-ink)" }}>{t(lang, "Formule Pro, 3 places. ", "Pro plan, 3 seats. ")}<TextButton tone="inline">{t(lang, "Changer", "Change")}</TextButton></span>
+      <span style={{ font: "var(--tt-text-font)", letterSpacing: "var(--tt-text-tracking)", color: "var(--tt-ink)" }}>{t(lang, "Formule Pro, 3 places. ", "Pro plan, 3 seats. ")}<TextButton tone="inline">{t(lang, "Changer", "Change")}</TextButton></span>
     </div>
     <div style={row}>
       <IconButton label={t(lang, "Ajouter Notion", "Add Notion")} icon={<Plus />} />

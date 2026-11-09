@@ -2,8 +2,9 @@
 /**
  * Typography pass over every Storybook story, against the validated rule:
  *   sizes 64 · 42 · 21 · 17 · 16 · 14, and 12 only in capitals;
- *   weights 400 / 500 (370 / 470 in dark mode); families Uncut Sans, Inter, Inter Tight;
- *   tracking: capitals +0.08 em, Uncut Sans −0.017 to −0.022 em, Inter 0; no grey text.
+ *   weights: the role weights of tokens.css (--tt-w-*, one step finer in dark mode);
+ *   families Uncut Sans and Inter (Inter Tight cramps interface sizes);
+ *   tracking: capitals +0.08 em, Uncut Sans −0.010 to −0.034 em, Inter −0.011 em at 16 and −0.004 em at 14; no grey text.
  *
  *   npm run build-storybook && node scripts/audit-typo-ds.mjs
  */
@@ -20,7 +21,7 @@ await new Promise((resolve) => setTimeout(resolve, 600));
 
 const audit = () => {
   const dark = document.documentElement.classList.contains("dark");
-  const weights = dark ? [370, 470] : [400, 500];
+  const weights = dark ? [260, 280, 340, 360, 370, 400, 410, 430, 440, 450] : [280, 300, 370, 390, 400, 420, 430, 440, 460, 470, 480];
   const out = [];
   const walker = document.createTreeWalker(document.querySelector("#storybook-root"), NodeFilter.SHOW_TEXT);
   const seen = new Set();
@@ -34,10 +35,10 @@ const audit = () => {
     const issues = [];
     if (![64, 42, 21, 17, 16, 14].includes(Math.round(size)) && !(Math.round(size) === 12 && caps)) issues.push(`taille ${size}`);
     if (!weights.includes(weight)) issues.push(`graisse ${weight}`);
-    if (!["Uncut Sans", "Inter", "Inter Tight"].includes(family)) issues.push(`famille ${family}`);
+    if (!["Uncut Sans", "Inter"].includes(family)) issues.push(`famille ${family}`);
     if (caps) { if (Math.abs(em - 0.08) > 0.005) issues.push(`capitales ${em}em`); }
-    else if (family === "Uncut Sans") { if (em > -0.016 || em < -0.023) issues.push(`Uncut ${em}em`); }
-    else if (Math.abs(em) > 0.002) issues.push(`Inter ${em}em`);
+    else if (family === "Uncut Sans") { if (em > -0.01 || em < -0.034) issues.push(`Uncut ${em}em`); }
+    else { const want = Math.round(size) >= 16 ? -0.011 : -0.004; if (Math.abs(em - want) > 0.002) issues.push(`Inter ${em}em`); }
     const [cr, cg, cb] = (s.color.match(/[\d.]+/g) || []).map(Number);
     if (Math.abs(cr - cg) < 6 && Math.abs(cg - cb) < 6 && cr > 70 && cr < 200) issues.push(`gris ${s.color}`);
     if (issues.length) out.push({ el: `${el.tagName.toLowerCase()}.${(typeof el.className === "string" ? el.className : "").split(/\s+/)[0].replace(/_[a-z0-9]{5}_\d+$/, "").replace(/^_/, "")}`, text: text.slice(0, 30), issues });
