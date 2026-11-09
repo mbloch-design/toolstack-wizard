@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { isToolCoverBlocked } from "@/lib/toolImageBlocklist";
 import { localizeGuideCategory } from "@/lib/guideCategory";
 import { useParams, useLocation } from "react-router-dom";
@@ -535,7 +536,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
   const DescriptionTag = editing ? "div" : "p";
   return (
     <article
-      className="min-h-screen td-tool-page"
+      className={cn("min-h-screen td-tool-page", privateMode && editing?.layout.privateFiche)}
       style={toolAccent ? ({ "--tool-accent": toolAccent } as React.CSSProperties) : undefined}
       data-private-fiche={privateMode || undefined}
       onClickCapture={privateMode ? (event) => { if ((event.target as Element).closest("a")) { event.preventDefault(); event.stopPropagation(); } } : undefined}
@@ -641,7 +642,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
               // first screen say the same thing three times.
               return (
                 <>
-                  <div className="td-hero-card">
+                  <div className={cn("td-hero-card", editing?.layout.heroCard)}>
                     <div className="td-hero-heading">
                       <div className="td-hero-identity-grid">
                         <span className="td-hero-logo" aria-hidden="true">
@@ -667,7 +668,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                           )}
                         </div>
 
-                        {editing?.block([lang === "en" ? "shortDescription" : "shortDescriptionEn", "description", "descriptionEn", "tagline"], t("Présentation et traductions", "Presentation and translations"), { advanced: true })}
+                        {editing?.block([lang === "en" ? "shortDescription" : "shortDescriptionEn", "description", "descriptionEn", "tagline"], t("Présentation et traductions", "Presentation and translations"), { advanced: true, inHero: true })}
                         <div className="td-hero-actions">
                         {primaryCtaUrl && <a
                           href={primaryCtaUrl}
@@ -728,9 +729,9 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
               ) : null;
             })()}
 
-            {editing && <section className="td-section bo-inline-media">
+            {editing && <section className="td-section">
               {editing.block(["logo", "ogImageUrl", "galleryImages"], t("Images de la fiche", "Listing images"), { advanced: true })}
-              <p className="bo-inline-note">{t(`Le rendu combine la couverture et la galerie du catalogue avec ${getToolMediaImages(tool.slug || tool.id).length} média(s) de la sélection éditoriale. Les corrections de logos et les images de secours publiques restent applicables. Modifier une URL n’ajoute pas de fichier ; aucun téléversement n’est proposé.`, `The display combines catalogue cover and gallery URLs with ${getToolMediaImages(tool.slug || tool.id).length} curated media item(s). Public logo corrections and fallback images still apply. Editing a URL does not upload a file; uploads are not supported.`)}</p>
+              {editing.note(t(`Le rendu combine la couverture et la galerie du catalogue avec ${getToolMediaImages(tool.slug || tool.id).length} média(s) de la sélection éditoriale. Les corrections de logos et les images de secours publiques restent applicables. Modifier une URL n’ajoute pas de fichier ; aucun téléversement n’est proposé.`, `The display combines catalogue cover and gallery URLs with ${getToolMediaImages(tool.slug || tool.id).length} curated media item(s). Public logo corrections and fallback images still apply. Editing a URL does not upload a file; uploads are not supported.`))}
             </section>}
 
             <nav className="td-tool-subnav" aria-label={t(`Explorer la fiche ${tool.name}`, `Explore the ${tool.name} review`)}>
@@ -1138,7 +1139,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                       {/* The numeric score already lives in the sticky/mobile
                           decision card. This section explains it instead of
                           printing the same large metric twice. */}
-                      {editing ? <>{editing.block(["toolTrimRating"], t("Critères, preuves et dates de notation", "Rating criteria, evidence and dates"))}<p className="bo-inline-note">{t("La note finale reste calculée à partir des cinq critères. Elle n’est pas saisissable.", "The final score remains calculated from the five criteria. It cannot be entered directly.")}</p></> : ts.source === "v2" && tool.toolTrimRating ? (
+                      {editing ? <>{editing.block(["toolTrimRating"], t("Critères, preuves et dates de notation", "Rating criteria, evidence and dates"))}{editing.note(t("La note finale reste calculée à partir des cinq critères. Elle n’est pas saisissable.", "The final score remains calculated from the five criteria. It cannot be entered directly."))}</> : ts.source === "v2" && tool.toolTrimRating ? (
                         <div className="td-review-rationale-v2">
                           <div className="td-review-verdict-header">
                             <span className="td-score-axis-heading">

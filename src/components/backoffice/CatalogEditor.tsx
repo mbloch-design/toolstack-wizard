@@ -1,3 +1,4 @@
+import styles from "@/ds/CatalogAuthoring/CatalogAuthoring.module.css";
 import {
   useCallback,
   useEffect,
@@ -601,7 +602,7 @@ export function CatalogEditor({
                     reviewDetails[d.slug].published,
                     reviewDetails[d.slug].tool,
                   ).map((field) => (
-                    <details className="bo-inline-review-change" key={field}>
+                    <details className={styles.reviewChange} key={field}>
                       <summary>{catalogFieldLabel(field, lang)}</summary>
                       <div>
                         <p>{t("Fiche publiée", "Published record")}</p>
@@ -728,10 +729,10 @@ export function CatalogEditor({
                   aria-label={t("Fiches du catalogue", "Catalogue records")}
                 >
                   {workspace.tools.map((tool) => (
-                    <div className="bo-catalog-record" key={tool.slug}>
+                    <div className={styles.catalogRecord} key={tool.slug}>
                       <button
                         type="button"
-                        className="bo-catalog-list-row"
+                        className={`bo-catalog-list-row ${styles.recordButton}`}
                         disabled={busy}
                         aria-label={t(
                           `Édition directe · ${tool.name}`,
@@ -758,7 +759,7 @@ export function CatalogEditor({
                       </button>
                       <button
                         type="button"
-                        className="mk-link bo-catalog-legacy"
+                        className={`mk-link ${styles.legacyLink}`}
                         disabled={busy}
                         aria-label={t(
                           `Modifier ${tool.name}`,

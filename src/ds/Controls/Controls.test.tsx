@@ -1,8 +1,7 @@
 import { createRef, useState } from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import { MemoryRouter } from "react-router-dom";
-import { Button, ButtonLink, Field, IconButton, Input, Segmented, Select, Textarea } from "./primitives";
+import { Button, Field, IconButton, Input, LinkAction, Select, Textarea } from "./Controls";
 
 describe("shared neutral controls", () => {
   it("defaults actions to non-submit and blocks activation while loading", () => {
@@ -53,29 +52,11 @@ describe("shared neutral controls", () => {
     expect(textarea).toHaveValue("Updated");
   });
 
-  it("removes disabled navigation destinations including auxiliary activation", () => {
-    const activate = vi.fn();
-    render(<MemoryRouter><ButtonLink to="/fr/back-office" disabled onClick={activate}>Edit</ButtonLink></MemoryRouter>);
-    const link = screen.getByRole("link", { name: "Edit" });
-    expect(link).not.toHaveAttribute("href");
-    expect(link).toHaveAttribute("aria-disabled", "true");
-    expect(link).toHaveAttribute("tabindex", "-1");
-    fireEvent.click(link);
-    fireEvent(link, new MouseEvent("auxclick", { button: 1, bubbles: true, cancelable: true }));
-    expect(activate).not.toHaveBeenCalled();
-  });
-
-  it("moves tab focus across enabled segments with arrow keys", () => {
-    function Tabs() {
-      const [value, setValue] = useState("fr");
-      return <Segmented label="Language" value={value} onChange={setValue} options={[{ id: "fr", label: "FR" }, { id: "skip", label: "Unavailable", disabled: true }, { id: "en", label: "EN" }]} />;
-    }
-    render(<Tabs />);
-    const first = screen.getByRole("tab", { name: "FR" });
-    first.focus();
-    fireEvent.keyDown(first, { key: "ArrowRight" });
-    expect(screen.getByRole("tab", { name: "EN" })).toHaveFocus();
-    expect(screen.getByRole("tab", { name: "EN" })).toHaveAttribute("aria-selected", "true");
-    expect(first).toHaveAttribute("tabindex", "-1");
+  it("keeps the published comparison destination a native link", () => {
+    render(<LinkAction href="/fr/tool/notion" target="_blank" rel="noreferrer">Compare</LinkAction>);
+    const link = screen.getByRole("link", { name: "Compare" });
+    expect(link).toHaveAttribute("href", "/fr/tool/notion");
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", "noreferrer");
   });
 });

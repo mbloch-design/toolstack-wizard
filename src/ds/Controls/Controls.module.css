@@ -1,0 +1,206 @@
+.button,
+.textLink,
+.input,
+.select,
+.textarea {
+  box-sizing: border-box;
+  max-width: 100%;
+  color: var(--tt-ink);
+}
+
+.button,
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-2);
+  min-width: 0;
+  min-height: var(--tt-control-height);
+  margin: 0;
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.button {
+  justify-content: center;
+  padding: var(--tt-space-2) var(--tt-space-4);
+  border: var(--tt-stroke) solid var(--tt-line);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile);
+  text-align: center;
+  text-decoration: none;
+}
+
+.button[data-variant="primary"] {
+  border-color: var(--tt-ink);
+  background: var(--tt-ink);
+  color: var(--tt-bg);
+}
+
+.button[data-variant="danger"] {
+  border-color: var(--tt-control-danger);
+  background: var(--tt-control-danger);
+  color: var(--tt-control-on-danger);
+}
+
+.button[data-variant="quiet"] {
+  border-color: transparent;
+  background: transparent;
+}
+
+.button[data-variant="quiet"],
+.textLink {
+  text-decoration: underline;
+  text-underline-offset: var(--tt-focus-offset);
+}
+
+.textLink {
+  gap: var(--tt-space-1);
+  padding: var(--tt-space-2) 0;
+  border-radius: var(--tt-space-1);
+  font: var(--tt-control-label-font);
+}
+
+.iconButton {
+  flex: none;
+  inline-size: var(--tt-control-height);
+  padding: var(--tt-space-2);
+  aspect-ratio: 1;
+}
+
+.controlIcon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.controlIcon > svg {
+  inline-size: var(--tt-space-5);
+  block-size: var(--tt-space-5);
+}
+
+.input,
+.select,
+.textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: var(--tt-control-height);
+  margin: 0;
+  padding: var(--tt-space-2) var(--tt-space-4);
+  border: var(--tt-stroke) solid var(--tt-line);
+  border-radius: var(--tt-space-2);
+  background: var(--tt-bg);
+  color-scheme: var(--tt-control-scheme);
+  font: var(--tt-text-font);
+  letter-spacing: var(--tt-label-tracking);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--tt-meta);
+  opacity: 1;
+}
+
+.input:is([type="checkbox"], [type="radio"]) {
+  appearance: auto;
+  display: inline-block;
+  flex: none;
+  width: var(--tt-space-5);
+  height: var(--tt-space-5);
+  min-height: var(--tt-space-5);
+  padding: 0;
+  border: initial;
+  border-radius: 0;
+  background: initial;
+  accent-color: var(--tt-ink);
+  vertical-align: middle;
+}
+
+.textarea {
+  min-height: var(--tt-control-textarea-height);
+  resize: vertical;
+}
+
+.field {
+  display: grid;
+  gap: var(--tt-space-1);
+  min-width: 0;
+  color: var(--tt-ink);
+  font: var(--tt-control-label-font);
+  letter-spacing: var(--tt-label-tracking);
+}
+
+.fieldLabel {
+  overflow-wrap: anywhere;
+}
+
+.fieldHelp,
+.fieldError {
+  margin: 0;
+  font: var(--tt-note-font);
+  overflow-wrap: anywhere;
+}
+
+.fieldHelp {
+  color: var(--tt-meta);
+}
+
+.fieldError {
+  color: var(--tt-control-danger);
+}
+
+.input[aria-invalid="true"],
+.select[aria-invalid="true"],
+.textarea[aria-invalid="true"] {
+  border-color: var(--tt-control-danger);
+}
+
+:is(.button, .textLink, .input, .select, .textarea):focus-visible {
+  outline: var(--tt-focus-width) solid var(--tt-focus);
+  outline-offset: var(--tt-focus-offset);
+}
+
+:is(.button, .textLink, .input, .select, .textarea):is(:disabled, [aria-disabled="true"]) {
+  opacity: var(--tt-control-disabled);
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: inline-block;
+  flex: none;
+  width: var(--tt-space-4);
+  height: var(--tt-space-4);
+  border: var(--tt-focus-width) solid currentColor;
+  border-inline-end-color: transparent;
+  border-radius: var(--tt-r-round);
+}
+
+@media (hover: hover) {
+  .button:not(:disabled, [aria-disabled="true"]):hover {
+    border-color: var(--tt-meta);
+  }
+}
+
+@media (width > 640px) {
+  :is(.button, .textLink, .input, .select, .textarea)[data-size="compact"] {
+    min-height: var(--tt-space-10);
+  }
+
+  .iconButton[data-size="compact"] {
+    inline-size: var(--tt-space-10);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spinner {
+    animation: spin var(--tt-control-spin) linear infinite;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(1turn); }
+}

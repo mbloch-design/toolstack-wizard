@@ -43,7 +43,7 @@ const field = (page: Page, path: string) =>
 async function expandSettings(page: Page) {
   // Opening native summaries exercises first-open mounting and the full vocabulary.
   for (const summary of await page
-    .locator(".bo-inline-settings > summary")
+    .locator("[data-catalog-settings] > summary")
     .all()) {
     if (
       !(await summary.evaluate(
@@ -106,6 +106,15 @@ for (const lang of ["fr", "en"] as const)
         await expect(field(page, "name")).toHaveValue(raw.name);
         const path = lang === "fr" ? "shortDescription" : "shortDescriptionEn";
         await expect(field(page, path)).toHaveValue(raw[path] ?? "");
+        if (slug === "notion") {
+          const planPath = lang === "fr" ? "pricing_v5.plans.0" : "pricing_v5En.plans.0";
+          const amount = field(page, `${planPath}.nativeAmount`);
+          const currency = field(page, `${planPath}.nativeCurrency`);
+          const amountBox = (await amount.boundingBox())!;
+          const currencyBox = (await currency.boundingBox())!;
+          expect(currencyBox.x).toBeCloseTo(amountBox.x, 0);
+          expect(currencyBox.y).toBeGreaterThanOrEqual(amountBox.y + amountBox.height);
+        }
         // Merely opening the actual record must not populate translations, observations or drafts.
         expect(
           (await control(request, "catalog-state")).drafts.some(
@@ -157,10 +166,10 @@ for (const lang of ["fr", "en"] as const)
           lang,
           typingWallMs,
           eventToPaintMs,
-          options: await page.locator(".bo-inline option").count(),
+          options: await page.locator("[data-catalog-editor] option").count(),
         });
         await expect(
-          page.locator(".bo-inline-toolbar [role=status]"),
+          page.locator("[data-catalog-toolbar] [role=status]"),
         ).toHaveText(lang === "fr" ? "Brouillon enregistré" : "Draft saved");
         const saved = (await control(request, "catalog-state")).drafts.find(
           (d: { slug: string }) => d.slug === slug,
@@ -188,7 +197,7 @@ for (const lang of ["fr", "en"] as const)
             });
           }
           await page
-            .locator(".bo-inline-settings > summary")
+            .locator("[data-catalog-settings] > summary")
             .filter({
               hasText:
                 lang === "fr"
@@ -342,7 +351,7 @@ test("missing families: first additions, collection order/focus, interleaved und
   // A composition must not write an incomplete text snapshot.
   await description.dispatchEvent("compositionend", { data: "日本語の説明" });
   await expect(description).toHaveValue("日本語の説明");
-  await expect(page.locator(".bo-inline-toolbar [role=status]")).toHaveText(
+  await expect(page.locator("[data-catalog-toolbar] [role=status]")).toHaveText(
     "Brouillon enregistré",
   );
   const snapshot = (await control(request, "catalog-state")).drafts[0].value;

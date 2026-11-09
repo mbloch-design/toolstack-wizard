@@ -214,3 +214,25 @@
 :root[data-theme="dark"] {
   --tt-brand-mark: color-mix(in oklch, var(--tt-brand) 65%, white);
 }
+
+/* Contrôles neutres d’édition du catalogue. Les mesures reprennent l’éditeur
+   existant, avec une cible tactile de 44 px pour les actions sur mobile. */
+:root {
+  --tt-control-height: 44px;
+  --tt-control-textarea-height: 42px;
+  --tt-control-label-font: var(--tt-w-strong) .875rem/1.4 var(--tt-ui);
+  --tt-control-disabled: .55;
+  --tt-control-spin: 700ms;
+  --tt-control-danger: #BE490A;
+  --tt-control-on-danger: var(--tt-bg);
+  --tt-control-scheme: light;
+  --tt-stroke: 1px;
+  --tt-focus-width: 2px;
+  --tt-focus-offset: 3px;
+}
+
+.dark,
+:root[data-theme="dark"] {
+  --tt-control-danger: #F0874A;
+  --tt-control-scheme: dark;
+}

@@ -4,7 +4,6 @@
 /* Système ToolTrim : tokens et composants partagés avec la planche design
    system (design-system/planche.html), qui est la référence. */
 @import "./styles/tooltrim-system.css";
-@import "./styles/ui.css";
 @config "../tailwind.config.ts";
 @source "./";
 @source not "./components/dashboard";
@@ -61,15 +60,6 @@
 ───────────────────────────────────────────── */
 @layer base {
   :root {
-    /* Shared neutral controls (canonical prepared control scale). */
-    --tt-size-control-small: 13px;
-    --radius-control-lifecycle: 10px;
-    --tt-size-stack-invoice: 26px;
-    --tt-size-control-search: 17px;
-    --tt-size-control-name: 18px;
-    --tt-size-control-segmented: 13.5px;
-    --color-action-hover: #3A3A38;
-    --color-action-danger: #ad302b;
     /* ────────────────────────────────────────────
        DESIGN TOKENS — Awwwards editorial palette
        ToolTrim blue is the ONLY accent colour.
@@ -256,7 +246,6 @@
     --color-on-primary:     #FFFFFF;  /* text on the ToolTrim blue */
     /* Alerte « payé en double » : orange brûlé, 5:1 sur blanc. */
     --color-alert:          #BE490A;
-    --color-on-alert:       var(--color-on-primary);
 
     --color-border:        #E6E6E6;
     --color-border-soft:   #E7E7E0;
@@ -434,8 +423,6 @@
     --color-con-soft:       #2E2015;
     --color-on-primary:     #FFFFFF;
     --color-alert:          #F0874A;
-    --color-on-alert:       var(--color-bg);
-    --color-action-danger: #ff9d95;
     --color-border:        #2E2E2E;
     --color-border-soft:   #262626;
     --color-border-strong: #DEDED6;
@@ -22682,68 +22669,3 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .ms-page .mf .mu-card.tt-usage .mu-scene.mu-question { grid-template-columns: minmax(0, 1fr) !important; grid-template-areas: none !important; }
 .ms-page .mf .mu-card.tt-usage .mu-question > * { grid-area: auto !important; }
 /* L'organisme budget dans la grille de Ma stack : il remplace l'habillage historique de .mf-card. */
-@layer components {
-  /* Controlled catalogue authoring stays inside the actual fiche blocks. */
-  .bo-inline-block, .bo-inline-settings { margin-block: 16px; min-width: 0; font: 400 14px/1.5 var(--font-ui); color: var(--color-text); }
-  .bo-inline-block > h3, .bo-inline-array > h4 { margin: 0 0 10px; font: 550 15px/1.4 var(--font-ui); }
-  .bo-inline-settings > summary { cursor: pointer; padding-block: 10px; font-weight: 550; }
-  .bo-inline-settings[open] > summary { margin-bottom: 10px; border-bottom: 1px solid var(--color-border); }
-  .bo-inline-fields, .bo-inline-object { display: grid; gap: 12px; min-width: 0; }
-  .bo-inline-object { padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-md); }
-  .bo-inline-object > legend { padding-inline: 6px; font-weight: 550; }
-  .bo-inline-field { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px; min-width: 0; font: 400 14px/1.45 var(--font-ui); white-space: normal; }
-  .bo-inline-field .ui-field { gap: 5px; }
-  .bo-inline-field .ui-textarea { min-height: 42px; resize: vertical; }
-  .bo-inline-field > .ui-button { margin-top: 3px; }
-  .bo-inline-field > .bo-inline-field-remove { align-self: start; margin-top: 24px; }
-  .bo-inline-field > .ui-button:not(.bo-inline-field-remove) { grid-column: 1 / -1; justify-self: start; }
-  .bo-inline-array { min-width: 0; }
-  .bo-inline-array-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 8px; margin-bottom: 10px; }
-  .bo-inline-collection-actions, .bo-inline-plan-actions { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-  .bo-inline-collection-actions > p, .bo-inline-note, .bo-inline-protected { font: 400 13px/1.5 var(--font-ui); color: var(--color-text-meta); white-space: normal; overflow-wrap: anywhere; }
-  .bo-inline-protected { padding: 10px; background: var(--color-surface-soft); border-radius: var(--radius-md); }
-  .bo-inline-protected p { margin: 4px 0; }
-  .bo-inline-protected dl { padding-left: 12px; }
-  .bo-inline-protected dt { font-weight: 550; }
-  .bo-inline-protected dd { margin: 0 0 6px; }
-  .bo-inline-union > p { font: 400 13px/1.5 var(--font-ui); }
-  .td-tool-page .td-pricing .bo-inline-plan > .td-plan-head { grid-row: 1; }
-  .td-tool-page .td-pricing .bo-inline-plan > .td-plan-price { grid-row: 2; }
-  .td-tool-page .td-pricing .bo-inline-plan > .td-plan-condition, .td-tool-page .td-pricing .bo-inline-plan > .td-plan-slot { grid-row: 3; }
-  .td-tool-page .td-pricing .bo-inline-plan > .bo-inline-plan-settings { grid-row: 4; }
-  .td-tool-page .td-pricing .bo-inline-price { display: grid; align-items: start; gap: 8px; white-space: normal; }
-  .td-tool-page .td-pricing .bo-inline-plan .td-plan-name { width: 100%; }
-  .td-tool-page .td-pricing .bo-inline-plan .bo-inline-settings { margin-block: 0; }
-  .td-tool-page .td-pricing .bo-inline-plan .bo-inline-field { font-size: 14px; }
-  .td-tool-page[data-private-fiche] a { cursor: default; }
-  @media (max-width: 640px) {
-    .bo-inline-field-remove { min-width: 44px; min-height: 44px; }
-    .bo-inline-array-row { grid-template-columns: minmax(0, 1fr); }
-    .bo-inline-collection-actions .ui-button, .bo-inline-plan-actions .ui-button { min-height: 44px; }
-  }
-}
-
-@layer components {
-  .bo-inline-provenance { margin-block: 14px; padding-block: 12px; border-block: 1px solid var(--color-border); font: 400 13px/1.5 var(--font-ui); color: var(--color-text-meta); overflow-wrap: anywhere; }
-  .bo-inline-provenance strong { color: var(--color-text); font-weight: 550; }
-  .bo-inline-provenance p { margin: 4px 0 0; }
-}
-
-@layer components {
-  .bo-catalog-record { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--space-md); }
-  .bo-catalog-record .bo-catalog-list-row { width: 100%; }
-  .bo-catalog-legacy { font: var(--tt-note-font); padding: var(--space-xs); }
-  .bo-inline { min-width: 0; }
-  /* Expanded authoring controls must stay in flow beneath the public hero. */
-  .bo-inline .td-hero-card { max-height: none; }
-  .bo-inline .td-hero-identity-grid > .bo-inline-settings { grid-column: 1 / -1; }
-  .bo-inline-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md); padding: var(--space-md) 0; }
-  .bo-inline-toolbar p { font: var(--tt-note-font); color: var(--tt-ink); margin: 0; }
-  .bo-inline-content { border: 0; padding: 0; margin: 0; min-width: 0; }
-  .bo-inline-issues { padding: var(--tt-tile-pad); border-radius: var(--tt-r-card); background: var(--tt-tile); margin-block: var(--space-md); }
-  .bo-inline-issues summary { cursor: pointer; font: var(--tt-label-font); }
-  .bo-inline-review-change { width: 100%; padding-block: var(--space-xs); }
-  .bo-inline-review-change > div { padding: var(--space-md); background: var(--tt-bg); border-radius: var(--tt-r-card); overflow-wrap: anywhere; }
-  .bo-inline-issues li { overflow-wrap: anywhere; }
-  @media (max-width: 600px) { .bo-catalog-record { grid-template-columns: minmax(0,1fr); gap: 0; } .bo-catalog-legacy { justify-self: end; } }
-}

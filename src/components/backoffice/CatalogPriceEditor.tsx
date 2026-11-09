@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Button, Field, IconButton, Select } from "@/components/ui/primitives";
+import { Button, Field, IconButton, Select } from "@/ds/Controls/Controls";
+import { CatalogNote, CatalogSettings } from "@/ds/CatalogAuthoring/CatalogAuthoring";
+import styles from "@/ds/CatalogAuthoring/CatalogAuthoring.module.css";
 import { ArrowUp, ArrowDown, CirclePlus, CircleMinus } from "@/lib/icons";
 import {
   resolveCatalogComparison,
@@ -193,7 +195,7 @@ export function PlanActions({
     context.onChange([root, "plans"], next);
   }
   return (
-    <div className="bo-inline-plan-actions">
+    <div className={styles.collectionActions}>
       <Button
         size="compact"
         disabled={!allowed || index === 0}
@@ -266,7 +268,7 @@ export function PlanCollection({
     plans = Array.isArray(plansValue) ? plansValue : [];
   const allowed = canEdit(context, [root, "plans"]);
   return (
-    <div className="bo-inline-collection-actions">
+    <div className={styles.collectionActions}>
       <Button
         disabled={!allowed}
         size="compact"
@@ -327,10 +329,10 @@ export function PlanDetails({
   index: number;
 }) {
   return (
-    <details className="bo-inline-settings">
-      <summary>
-        {catalogText(context, "Détails de l’offre", "Offer details")}
-      </summary>
+    <CatalogSettings
+      flush
+      summary={catalogText(context, "Détails de l’offre", "Offer details")}
+    >
       {Object.entries(catalogPlanSchema.children!)
         .filter(
           ([key]) =>
@@ -349,7 +351,7 @@ export function PlanDetails({
             schema={schema}
           />
         ))}
-    </details>
+    </CatalogSettings>
   );
 }
 
@@ -364,7 +366,7 @@ export function ComparisonPriceSummary({
   const comparison = resolveCatalogComparison(context.value, currency);
   if (!comparison.plan)
     return (
-      <p className="bo-inline-note">
+      <CatalogNote>
         {hasExplicitNonNumericPricing(context.value)
           ? t(
               "Le prix actuel est sur devis, non communiqué ou dépend de l’usage. Aucun montant historique de repli n’est affiché.",
@@ -374,7 +376,7 @@ export function ComparisonPriceSummary({
               "Aucune offre de comparaison native retenue. Le prix historique reste un repli à vérifier dans les paramètres tarifaires.",
               "No native comparison offer selected. Historical pricing remains a fallback to verify in the pricing settings.",
             )}
-      </p>
+      </CatalogNote>
     );
   const plan = comparison.plan,
     amount = Number(plan.nativeAmount),
@@ -386,7 +388,7 @@ export function ComparisonPriceSummary({
     " " +
     String(plan.nativeCurrency);
   return (
-    <div className="bo-inline-provenance" role="note">
+    <div className={styles.provenance} role="note">
       <strong>
         {t("Prix de référence effectif :", "Effective comparison price:")}{" "}
         {String(plan.displayName)} · {money(amount)}

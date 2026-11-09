@@ -6,7 +6,9 @@ import { catalogCapabilities } from "@/lib/catalogPolicy";
 import { CatalogEditorPresentation } from "./CatalogEditingContext";
 import { catalogIssueMessage } from "./catalogEditingModel";
 import type { CatalogDraftSession } from "./catalogDraftSession";
-import { Button } from "@/components/ui/primitives";
+import { Button, LinkAction } from "@/ds/Controls/Controls";
+import { CatalogIssues, CatalogToolbar } from "@/ds/CatalogAuthoring/CatalogAuthoring";
+import styles from "@/ds/CatalogAuthoring/CatalogAuthoring.module.css";
 
 export function CatalogInlineFiche({
   session,
@@ -42,10 +44,11 @@ export function CatalogInlineFiche({
   const error = entry.error as { status?: number } | undefined;
   return (
     <section
-      className="bo-inline"
+      className={styles.editor}
+      data-catalog-editor=""
       aria-label={t("Édition directe de la fiche", "Direct record editing")}
     >
-      <div className="bo-inline-toolbar">
+      <CatalogToolbar>
         <Button onClick={onBack}>
           {t("Retour aux fiches", "Back to records")}
         </Button>
@@ -69,7 +72,7 @@ export function CatalogInlineFiche({
             "Your draft saves automatically after you finish typing.",
           )}
         </p>
-      </div>
+      </CatalogToolbar>
       {!caps.canSaveDraft && (
         <p role="alert">
           {t(
@@ -110,11 +113,7 @@ export function CatalogInlineFiche({
         </div>
       )}
       {issues.length > 0 && (
-        <details className="bo-inline-issues">
-          <summary>
-            {t("À vérifier avant mise en ligne", "Check before publishing")} (
-            {issues.length})
-          </summary>
+        <CatalogIssues summary={`${t("À vérifier avant mise en ligne", "Check before publishing")} (${issues.length})`}>
           <ul>
             {issues.map((i, n) => (
               <li key={n}>
@@ -125,9 +124,9 @@ export function CatalogInlineFiche({
               </li>
             ))}
           </ul>
-        </details>
+        </CatalogIssues>
       )}
-      <fieldset disabled={locked} className="bo-inline-content">
+      <fieldset disabled={locked} className={styles.content}>
         <CatalogEditorPresentation
           key={slug}
           context={{
@@ -158,7 +157,7 @@ export function CatalogInlineFiche({
           )}
         </CatalogEditorPresentation>
       </fieldset>
-      <div className="bo-inline-toolbar">
+      <CatalogToolbar>
         <Button
           disabled={locked || entry.saving || !dirty}
           onClick={() => session.discardLocal(slug)}
@@ -176,15 +175,14 @@ export function CatalogInlineFiche({
             {t("Supprimer ce brouillon", "Remove this draft")}
           </Button>
         )}
-        <a
-          className="ui-text-link"
+        <LinkAction
           href={`/${lang}/tool/${slug}`}
           target="_blank"
           rel="noreferrer"
         >
           {t("Comparer à la fiche publiée", "Compare with published record")}
-        </a>
-      </div>
+        </LinkAction>
+      </CatalogToolbar>
     </section>
   );
 }

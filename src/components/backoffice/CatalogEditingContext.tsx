@@ -1,3 +1,6 @@
+import { CatalogNote, CatalogSettings } from "@/ds/CatalogAuthoring/CatalogAuthoring";
+import styles from "@/ds/CatalogAuthoring/CatalogAuthoring.module.css";
+import ficheLayout from "@/ds/CatalogAuthoring/CatalogFicheLayout.module.css";
 import { createContext, useContext, useState, type ReactNode } from "react";
 import { CATALOG_FIELD_REGISTRY } from "@/lib/catalogFieldRegistry";
 import type { CatalogEditingPresentation } from "@/lib/catalogEditingPresentation";
@@ -17,6 +20,17 @@ export type {
 } from "./catalogEditingModel";
 export { catalogValueAt, catalogFieldLabel } from "./catalogEditingModel";
 
+const layout: CatalogEditingPresentation["layout"] = {
+  privateFiche: ficheLayout.privateFiche,
+  heroCard: ficheLayout.heroCard,
+  planHead: ficheLayout.planHead,
+  planName: ficheLayout.planName,
+  planPrice: ficheLayout.planPrice,
+  priceEditor: ficheLayout.priceEditor,
+  planCondition: ficheLayout.planCondition,
+  planSettings: ficheLayout.planSettings,
+};
+
 export const CatalogEditingContext = createContext<CatalogEditingValue | null>(
   null,
 );
@@ -27,19 +41,21 @@ function CatalogBlock({
   roots,
   title,
   advanced = false,
+  inHero = false,
   omit = [],
 }: {
   context: CatalogEditingValue;
   roots: string[];
   title: string;
   advanced?: boolean;
+  inHero?: boolean;
   omit?: string[];
 }) {
   // Mount costly vocabularies only when requested. Keep mounted after closing so
   // collection undo state and in-progress controls survive subsequent edits.
   const [visited, setVisited] = useState(false);
   const content = (
-    <div className="bo-inline-fields">
+    <div className={styles.fields}>
       {roots.map((root) => (
         <CatalogFieldEditor
           key={root}
@@ -51,14 +67,17 @@ function CatalogBlock({
     </div>
   );
   return advanced ? (
-    <details className="bo-inline-settings" onToggle={(event) => {
-      if (event.currentTarget.open) setVisited(true);
-    }}>
-      <summary>{title}</summary>
+    <CatalogSettings
+      className={inHero ? ficheLayout.heroSettings : undefined}
+      summary={title}
+      onToggle={(event) => {
+        if (event.currentTarget.open) setVisited(true);
+      }}
+    >
       {visited && content}
-    </details>
+    </CatalogSettings>
   ) : (
-    <section className="bo-inline-block" aria-label={title}>
+    <section className={styles.block} aria-label={title}>
       <h3>{title}</h3>
       {content}
     </section>
@@ -73,6 +92,8 @@ export function CatalogEditorPresentation({
 }) {
   const offers = useOfferOperations(context);
   const presentation: CatalogEditingPresentation = {
+    layout,
+    note: (content) => <CatalogNote>{content}</CatalogNote>,
     field: (path, inherited) => (
       <CatalogFieldEditor
         key={path

@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import type { CatalogEditingPresentation } from "@/lib/catalogEditingPresentation";
 import type { Currency } from "@/lib/currencyRates";
 import type { Tool } from "@/data/types";
@@ -233,27 +234,27 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
             <article
               key={column.key}
               role="listitem"
-              className={`td-plan${editing ? " bo-inline-plan" : ""}${column.reference ? " td-plan--reference" : ""}${column.soon ? " td-plan--soon" : ""}`}
+              className={`td-plan${column.reference ? " td-plan--reference" : ""}${column.soon ? " td-plan--soon" : ""}`}
             >
-              <header className="td-plan-head">
-                {editing && column.index != null ? <div className="td-plan-name">{editing.field([pricingRoot, "plans", column.index, "displayName"])}</div> : <h3 className="td-plan-name">{column.name}</h3>}
+              <header className={cn("td-plan-head", editing?.layout.planHead)}>
+                {editing && column.index != null ? <div className={cn("td-plan-name", editing.layout.planName)}>{editing.field([pricingRoot, "plans", column.index, "displayName"])}</div> : <h3 className="td-plan-name">{column.name}</h3>}
                 {column.reference && <span className="td-plan-badge">{t("Prix retenu par ToolTrim", "ToolTrim reference price")}</span>}
                 {column.soon && <span className="td-plan-badge">{t("Bientôt", "Coming soon")}</span>}
               </header>
               {/* Every card keeps the same four rows (head, price, condition, features),
                   even when one is empty, so rows line up across cards. */}
-              {editing && column.index != null ? <div className="td-plan-price bo-inline-price">
+              {editing && column.index != null ? <div className={cn(editing.layout.planPrice, editing.layout.priceEditor)}>
                 {editing.field([pricingRoot, "plans", column.index, "nativeAmount"])}
                 {editing.field([pricingRoot, "plans", column.index, "nativeCurrency"])}
                 {editing.field([pricingRoot, "plans", column.index, "priceStatus"])}
               </div> : column.price ? (
-                <p className="td-plan-price">
+                <p className={cn("td-plan-price", editing?.layout.planPrice)}>
                   <strong>{column.price}</strong>
                   {column.unit && <span>{column.unit}</span>}
                 </p>
-              ) : <span className="td-plan-slot" aria-hidden="true" />}
-              {column.condition ? <p className="td-plan-condition">{column.condition}</p> : <span className="td-plan-slot" aria-hidden="true" />}
-              {editing && column.index != null ? <div className="td-plan-features bo-inline-plan-settings">{editing.planDetails(pricingRoot, column.index)}{editing.planActions(pricingRoot, column.index)}</div> : column.features.length > 0 ? (
+              ) : <span className={cn("td-plan-slot", editing?.layout.planPrice)} aria-hidden="true" />}
+              {column.condition ? <p className={cn("td-plan-condition", editing?.layout.planCondition)}>{column.condition}</p> : <span className={cn("td-plan-slot", editing?.layout.planCondition)} aria-hidden="true" />}
+              {editing && column.index != null ? <div className={cn("td-plan-features", editing.layout.planSettings)}>{editing.planDetails(pricingRoot, column.index)}{editing.planActions(pricingRoot, column.index)}</div> : column.features.length > 0 ? (
                 <ul className="td-plan-features">
                   {column.features.flatMap(splitPlanFeature).map((line) => <li key={line}>{line}</li>)}
                 </ul>

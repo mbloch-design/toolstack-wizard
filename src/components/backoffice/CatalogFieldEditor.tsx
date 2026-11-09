@@ -6,7 +6,9 @@ import {
   IconButton,
   Select,
   Textarea,
-} from "@/components/ui/primitives";
+} from "@/ds/Controls/Controls";
+import { CatalogNote } from "@/ds/CatalogAuthoring/CatalogAuthoring";
+import styles from "@/ds/CatalogAuthoring/CatalogAuthoring.module.css";
 import {
   ArrowUp,
   ArrowDown,
@@ -285,7 +287,7 @@ function UnionField({
   const label = catalogFieldLabel(path, context.lang),
     disabled = !canEdit(context, path);
   return (
-    <div className="bo-inline-union" data-catalog-path={path.join(".")}>
+    <div className={styles.union} data-catalog-path={path.join(".")}>
       <Field label={`${label} · ${t("format", "format")}`}>
         <Select
           disabled={disabled}
@@ -387,13 +389,13 @@ function ArrayField({
   return (
     <div
       ref={rootRef}
-      className="bo-inline-array"
+      className={styles.array}
       data-catalog-path={path.join(".")}
     >
       <h4>{label}</h4>
       {values.map((value, index) => (
         <div
-          className="bo-inline-array-row"
+          className={styles.arrayRow}
           data-catalog-row={identities.current[index]}
           key={identities.current[index]}
         >
@@ -402,7 +404,7 @@ function ArrayField({
             path={[...path, index]}
             schema={schema.item!}
           />
-          <div className="bo-inline-collection-actions">
+          <div className={styles.collectionActions}>
             <Button
               size="compact"
               disabled={!allowed || index === 0}
@@ -434,7 +436,7 @@ function ArrayField({
           </div>
         </div>
       ))}
-      <div className="bo-inline-collection-actions">
+      <div className={styles.collectionActions}>
         {schema.optional && current !== undefined && (
           <Button
             size="compact"
@@ -595,7 +597,7 @@ export function CatalogFieldEditor({
     );
   if (!registration?.editable)
     return (
-      <div className="bo-inline-protected" data-catalog-path={path.join(".")}>
+      <div className={styles.protected} data-catalog-path={path.join(".")}>
         <strong>{label}</strong>
         <ProtectedValue value={value} />
         <small>
@@ -619,7 +621,7 @@ export function CatalogFieldEditor({
     ? effectiveSourceExplanation(context, path)
     : null;
   const sourceNote = sourceExplanation ? (
-    <p className="bo-inline-note">{sourceExplanation}</p>
+    <CatalogNote>{sourceExplanation}</CatalogNote>
   ) : null;
   const inheritedPreview =
     inherited != null && inherited !== ""
@@ -627,13 +629,13 @@ export function CatalogFieldEditor({
       : catalogInheritedText(context.value, path);
   const inheritanceNote =
     showRootNotes && (value == null || value === "") && inheritedPreview ? (
-      <p className="bo-inline-note">
+      <CatalogNote>
         {t("Contenu hérité :", "Inherited content:")} {inheritedPreview}.{" "}
         {t(
           "Ajouter une traduction ici ne recopie pas le repli.",
           "Adding a translation here does not copy the fallback.",
         )}
-      </p>
+      </CatalogNote>
     ) : null;
   if (schema.kind === "union")
     return (
@@ -695,7 +697,7 @@ export function CatalogFieldEditor({
     ) : undefined;
   if (schema.kind === "object")
     return (
-      <fieldset className="bo-inline-object" data-catalog-path={path.join(".")}>
+      <fieldset className={styles.object} data-catalog-path={path.join(".")}>
         <legend>{label}</legend>
         {sourceNote}
         {inheritanceNote}
@@ -764,7 +766,7 @@ export function CatalogFieldEditor({
   });
   if (legacyAmount && hasCanonical)
     return (
-      <div className="bo-inline-protected" data-catalog-path={path.join(".")}>
+      <div className={styles.protected} data-catalog-path={path.join(".")}>
         <strong>{label}</strong>
         <ProtectedValue value={value} />
         <p>
@@ -801,7 +803,7 @@ export function CatalogFieldEditor({
         }))
       : null);
   return (
-    <span className="bo-inline-field" data-catalog-path={path.join(".")}>
+    <span className={styles.field} data-catalog-path={path.join(".")}>
       <Field
         label={label}
         error={error || undefined}
@@ -853,7 +855,7 @@ export function CatalogFieldEditor({
       </Field>
       {remove && (
         <IconButton
-          className="bo-inline-field-remove"
+          className={styles.fieldRemove}
           variant="quiet"
           size="compact"
           aria-label={`${t("Retirer", "Remove")} ${label}`}
@@ -871,6 +873,7 @@ export function CatalogFieldEditor({
       )}
       {removed && value === undefined && (
         <Button
+          className={styles.fieldUndo}
           size="compact"
           disabled={disabled}
           onClick={() => {

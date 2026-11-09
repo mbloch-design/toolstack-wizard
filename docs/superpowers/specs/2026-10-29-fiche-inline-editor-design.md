@@ -181,7 +181,7 @@ La monétisation ne constitue ni une permission implicite sur l’analyse ni une
 
 ## Architecture et limites existantes
 
-Rester dans React/TypeScript et le système commun de `src/components/ui/primitives.tsx`. Les nouveaux contrôles d’édition sont des primitives explicites ; aucune ancienne famille de boutons, aucune dépendance au kit Ma Stack ni surcharge d’apparence par ancêtre métier.
+Rester dans React/TypeScript et le système commun de `src/ds/Controls/Controls.tsx`. Les nouveaux contrôles d’édition sont des primitives explicites ; aucune ancienne famille de boutons, aucune dépendance au kit Ma Stack ni surcharge d’apparence par ancêtre métier.
 
 Réutiliser le transport et le stockage des brouillons existants : JSON versionné, Redis privé, validation des chemins, empreintes et version monotone. Conserver les limites actuelles de taille, profondeur, nombre de brouillons et types, ou signaler précisément un cas empêchant la nouvelle ergonomie avant de modifier une limite. Pas de nouvel éditeur riche ou de nouvelle bibliothèque d’état imposés.
 

@@ -268,14 +268,14 @@ for (const lang of ["fr", "en"] as const)
       await page
         .getByLabel(lang === "fr" ? "Nom" : "Name", { exact: true })
         .fill("Notion edited");
-      await expect(page.locator(".bo-inline-toolbar [role=status]")).toHaveText(
+      await expect(page.locator("[data-catalog-toolbar] [role=status]")).toHaveText(
         lang === "fr" ? "Brouillon enregistré" : "Draft saved",
       );
       await page.reload();
       await expect(input()).toHaveValue(`Draft ${lang} Notion`);
       await expect(page.locator(".td-hero-card")).toBeVisible();
       await page
-        .locator(".bo-inline")
+        .locator("[data-catalog-editor]")
         .screenshot({
           path: test.info().outputPath(`direct-${lang}-${width}.png`),
         });
@@ -356,7 +356,7 @@ test("direct fiche preserves pending text on autosave conflict and offers explic
     exact: true,
   });
   await input.fill("Pending conflict text");
-  await expect(page.locator(".bo-inline .bo-catalog-feedback[role=alert]")).toContainText(
+  await expect(page.locator("[data-catalog-editor] .bo-catalog-feedback[role=alert]")).toContainText(
     "changé ailleurs",
   );
   await expect(input).toHaveValue("Pending conflict text");

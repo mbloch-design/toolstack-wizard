@@ -1,0 +1,40 @@
+/* Private edit slots on the existing public fiche. They are applied to the
+   slot itself through the editor's render adapter. */
+.privateFiche a {
+  cursor: default;
+}
+
+.heroCard {
+  max-height: none;
+}
+
+.heroSettings {
+  grid-column: 1 / -1;
+}
+
+.planHead {
+  grid-row: 1;
+}
+
+.planPrice {
+  grid-row: 2;
+}
+
+.priceEditor {
+  display: grid;
+  align-items: start;
+  gap: var(--tt-space-2);
+  white-space: normal;
+}
+
+.planName {
+  width: 100%;
+}
+
+.planCondition {
+  grid-row: 3;
+}
+
+.planSettings {
+  grid-row: 4;
+}

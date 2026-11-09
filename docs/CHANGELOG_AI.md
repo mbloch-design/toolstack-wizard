@@ -1,3 +1,8 @@
+## 2026-11-09 · Back-office · édition de fiche dans le système de design
+
+- Les contrôles et la mise en page de l’éditeur utilisent des CSS Modules et les jetons de `src/ds`. Les champs de prix s’empilent dans la carte en édition. Les gabarits publics conservent leur balisage hors édition.
+- Storybook couvre les contrôles et l’édition à partir d’une fiche Notion et d’un brouillon incomplet, en français et en anglais. Les stories restent marquées `a-valider` en attente de la revue visuelle.
+
 ## 2026-11-06 · Back-office : recette de l’édition directe des fiches
 
 - Recette locale sur les données réelles de Notion, Attio, Asana et Chronokura, plus une fiche sans offres ni notation : ouverture sans modification, champs typés, premier ajout, ordre, annulation après modification voisine, IME et brouillon relu à l’identique. Parcours FR/EN à 390, 768 et 1 440 px ; aucun catalogue réel publié par les tests.
