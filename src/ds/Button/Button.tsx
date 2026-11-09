@@ -36,3 +36,8 @@ export function linkClass(tone: LinkTone = "label") {
 export function TextButton({ tone, children, type = "button", ...rest }: Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className"> & { tone?: LinkTone; children: ReactNode }) {
   return <button type={type} className={linkClass(tone)} {...rest}>{children}</button>;
 }
+
+/** A link that looks like a button (router links): spread on the link. */
+export function buttonAttrs(variant: "primary" | "secondary" = "secondary", size: "md" | "lg" = "md") {
+  return { className: styles.button, "data-variant": variant, "data-size": size } as const;
+}

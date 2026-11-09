@@ -16,7 +16,7 @@ import { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
 import StackToolSheet from "@/components/stack/StackToolSheet";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
 import ToolCard, { ToolCards, ToolGroup, ToolGroups } from "@/ds/ToolCard/ToolCard";
-import Button from "@/ds/Button/Button";
+import Button, { buttonAttrs } from "@/ds/Button/Button";
 import Toolbar, { FilterChips, IconSwitch, Section, SectionHead, SortSelect, ToolbarTools } from "@/ds/Toolbar/Toolbar";
 import { comparisonPath } from "@/lib/comparisonLinks";
 import { decisionSavingInCurrency, latestRemovedStackDecisions } from "@/lib/stackDecisions";
@@ -447,24 +447,17 @@ export default function CartPage() {
     {/* Ma Stack (Oct 2026): a title with the verdict and how much of the stack
         is checked, then the stack itself at the centre, read through lenses,
         and the next decision beside it. On a phone the deck comes first. */}
-    {/* Hero (22/10/2026): a status line, the title, one sentence. */}
-    {/* Organisme « en-tête de page » du système : surtitre, grand titre, note ; l'action rare à droite. */}
-    <header className="tt-pagehead">
-      <StackPersonalWelcome empty={false} pending={deckItems.length} cards={usagePending}>
-        <div>
-          <span className="tt-eyebrow">{t("Ma stack", "My stack")}</span>
-          <h1 ref={inventoryHeadingRef} tabIndex={-1} className="tt-title-xl">{t("Mes outils", "My tools")}</h1>
-          <p className="tt-note">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</p>
-        </div>
-      </StackPersonalWelcome>
-      {state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) && <Link
-          className="tt-btn tt-btn--grey" to={getExplorerHref(prefix, { type: "stack" })}
+    {/* En-tête de page du système (src/ds/PageHead) : salut, surtitre, grand titre, chiffres, une phrase, les faits ; l'action rare à droite. */}
+    <StackPersonalWelcome empty={false} pending={deckItems.length} cards={usagePending}
+      eyebrow={t("Ma stack", "My stack")} title={t("Mes outils", "My tools")} titleRef={inventoryHeadingRef}
+      meta={<>{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</>}
+      action={state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? <Link
+          {...buttonAttrs()} to={getExplorerHref(prefix, { type: "stack" })}
           state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`,
             explorerStackSources: state.toolEntries.filter(entry => entry.intent === "stack").flatMap(entry => { const tool = lookup.get(entry.toolSlug); return tool ? [toolKey(tool)] : []; }) }}
           onClick={() => trackEvent("stack_explorer_click", { source: "whole_stack" })}>
           {t("Explorer autour de ma stack", "Explore around my stack")}
-        </Link>}
-    </header>
+        </Link> : undefined} />
     {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
       ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.")
       : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}

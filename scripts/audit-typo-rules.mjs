@@ -26,7 +26,7 @@ const STATES = {
 
 const audit = (SIZES) => {
   const out = [];
-  const moduleOf = (el) => { const m = el.closest("[data-card], .tt-pagehead, section, footer, header"); if (!m) return "page"; return m.dataset.card || [...m.classList].find((c) => c.startsWith("tt-")) || m.tagName.toLowerCase(); };
+  const moduleOf = (el) => { const m = el.closest("[data-card], [data-pagehead], section, footer, header"); if (!m) return "page"; return m.dataset.card || [...m.classList].find((c) => c.startsWith("tt-")) || m.tagName.toLowerCase(); };
   const seen = new Set();
   const walker = document.createTreeWalker(document.querySelector("main") || document.body, NodeFilter.SHOW_TEXT);
   while (walker.nextNode()) {

@@ -59,7 +59,7 @@ for (const viewport of VIEWPORTS) {
 
       await seedStack(page);
       await page.goto("/fr/ma-stack", { waitUntil: "networkidle" });
-      await expect(page.locator(".tt-pagehead h1")).toBeVisible();
+      await expect(page.locator("[data-pagehead] h1")).toBeVisible();
       await expect(page.locator("[data-tool-id]").first()).toBeVisible();
       await expectNoPageOverflow(page);
     });

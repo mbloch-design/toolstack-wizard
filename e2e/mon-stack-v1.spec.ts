@@ -95,7 +95,7 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await page.keyboard.press("Escape");
     await expect(page.locator(".ms-tool-sheet")).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-    await page.locator(".tt-pagehead h1").click();
+    await page.locator("[data-pagehead] h1").click();
     await page.screenshot({ path: test.info().outputPath(`${lang}-${width}-dashboard.png`), fullPage: true });
   });
 }

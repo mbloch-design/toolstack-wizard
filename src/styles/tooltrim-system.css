@@ -122,8 +122,6 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 
 /* ── Organisme : l'en-tête de page ──────────────────────────────────────── */
 /* Surtitre, grand titre, une note de contexte ; l'action rare à droite. */
-.tt-pagehead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px; }
-.tt-pagehead > div { display: grid; gap: 10px; }
 
 /* ── Organisme : le pied de page ────────────────────────────────────────── */
 .tt-foot { display: grid; grid-template-columns: minmax(0, 1.2fr) repeat(4, minmax(0, 1fr)); gap: 32px 24px; padding-block: 64px 32px; }
@@ -225,8 +223,6 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 @media (prefers-reduced-motion: reduce) { .tt-link::after, .tt-link-arrow { transition: none; } }
 .tt-btn--grey[aria-pressed="true"] { background: var(--tt-ink); color: var(--tt-bg); }
 .tt-figure :is(.mk-odo, .mk-odo *) { font-variant-numeric: normal; }
-.tt-pagehead-title, .tt-pagehead-intro { display: grid; gap: 10px; }
-.tt-pagehead-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
 /* Le fond typographique d’une page du système, celui de la planche : Inter, interligne 1,6, variantes cv05 et cv08. */
 .tt-page { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--tt-page-gap); color: var(--tt-ink); font: var(--tt-w-text) 1rem/1.6 var(--tt-read); letter-spacing: 0; font-optical-sizing: auto; font-feature-settings: "cv05", "cv08"; }
 .tt-page > * { margin-block: 0; }

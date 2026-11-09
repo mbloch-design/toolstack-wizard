@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import PageHead, { type PageHeadFact, type PageHeadProps } from "@/ds/PageHead/PageHead";
 import { useStackAccount } from "@/hooks/useStackAccount";
 import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
 import { useLang } from "@/hooks/useLang";
@@ -37,7 +37,7 @@ const TRADE_LABELS: Record<Trade, [string, string]> = {
  * is worth). Only the current account's chosen name is used; never derive a
  * name from email.
  */
-export default function StackPersonalWelcome({ empty, pending = 0, cards = 0, children }: { empty: boolean; pending?: number; cards?: number; children?: ReactNode }) {
+export default function StackPersonalWelcome({ empty, pending = 0, cards = 0, ...head }: { empty: boolean; pending?: number; cards?: number } & Omit<PageHeadProps, "greeting" | "message" | "facts">) {
   const { user, syncStatus } = useStackAccount();
   const { profile } = useAccountExperience();
   const { t, lang } = useLang();
@@ -62,13 +62,9 @@ export default function StackPersonalWelcome({ empty, pending = 0, cards = 0, ch
           : t("Votre stack, à votre rythme. Vous gardez la main.", "Your stack, at your pace. You stay in control.");
   const rate = dailyRate ? convertAmount(dailyRate.amount, dailyRate.currency, currency) : null;
   const money = (amount: number) => formatAmount(Math.round(amount), currency, lang);
-  return <div className="tt-pagehead-intro">
-    <p className="tt-text" data-greeting>{hello} <span aria-hidden="true">👋</span></p>
-    {children}
-    <p className="tt-text" data-welcome-message>{message}</p>
-    {(trade || rate) && <p className="tt-pagehead-facts">
-      {trade && <span className="tt-tag">{t(...TRADE_LABELS[trade])}</span>}
-      {rate && <span className="tt-tag" title={t("Sur une journée de 7 heures", "On a 7-hour day")}>{t(`${money(rate)}/jour · votre heure ≈ ${money(rate / 7)}`, `${money(rate)}/day · your hour ≈ ${money(rate / 7)}`)}</span>}
-    </p>}
-  </div>;
+  const facts: PageHeadFact[] = [
+    ...(trade ? [{ label: t(...TRADE_LABELS[trade]) }] : []),
+    ...(rate ? [{ label: t(`${money(rate)}/jour · votre heure ≈ ${money(rate / 7)}`, `${money(rate)}/day · your hour ≈ ${money(rate / 7)}`), title: t("Sur une journée de 7 heures", "On a 7-hour day") }] : []),
+  ];
+  return <PageHead {...head} greeting={<>{hello} <span aria-hidden="true">👋</span></>} message={message} facts={facts} />;
 }
