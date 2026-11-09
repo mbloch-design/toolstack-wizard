@@ -34,6 +34,10 @@ describe("layout invariants", () => {
     const el = mount(`<div style="width:100px"><div style="display:contents"><span style="display:block;width:140px">x</span></div></div>`);
     expect(overflowing(el)).toHaveLength(1);
   });
+  it("ignores what a transform moves on purpose (a tilted logo), not what the layout pushes out", () => {
+    const el = mount(`<div style="width:24px"><span style="display:block;width:24px;height:24px;transform:rotate(8deg)">x</span></div>`);
+    expect(overflowing(el)).toEqual([]);
+  });
   it("ignores decoration positioned on purpose", () => {
     const el = mount(`<div style="width:100px;position:relative"><span style="position:absolute;left:-8px;width:140px">x</span></div>`);
     expect(overflowing(el)).toEqual([]);

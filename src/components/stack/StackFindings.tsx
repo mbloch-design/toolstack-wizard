@@ -1,6 +1,6 @@
 import StackInvoiceEntry from "@/ds/InvoiceEntry/InvoiceEntry";
 import { CURRENCY_RATE_DATE, type Currency } from "@/lib/currencyRates";
-import StackUsagePlay from "./StackUsagePlay";
+import StackUsagePlay from "@/ds/UsagePlay/UsagePlay";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { Rocket, Moon, Zap, Plus } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";

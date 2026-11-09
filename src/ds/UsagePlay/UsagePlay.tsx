@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState, type KeyboardEvent, type PointerEvent, type ReactNode } from "react";
-import ToolLogo from "@/components/ToolLogo";
-import type { FitRow } from "./StackFindings";
+import Logo from "../Logo/Logo";
+import type { LogoTool } from "@/lib/useToolLogoSource";
+import styles from "./UsagePlay.module.css";
+
+/** One paid tool of the stack: what it costs, the answer so far (5, 3 or 1), and how to record one. */
+export type UsageRow = { tool: LogoTool & { id: string }; cost: number; usage?: number; setUsage: (value: number | null) => void };
 
 /**
- * « Vos usages », une partie de cartes (organisme .tt-play du système, validé le 31/10/2026).
+ * « Vos usages », une partie de cartes (validée le 31/10/2026, reconstruite dans src/ds le 09/11/2026).
  * Une question à la fois, toujours l'usage : la carte du dessus, trois réponses, la carte file
  * vers sa pile ; un logo d'une pile se touche pour rejouer la carte. À la fin, le tableau des
  * scores. Les réponses s'enregistrent sur l'échelle historique à cinq niveaux (5, 3, 1) ; les
@@ -18,8 +22,10 @@ const PICKS: { id: Pick; level: number; label: [string, string]; key: string; pi
 const pickOf = (usage?: number): Pick | null => !usage ? null : usage >= 4 ? "daily" : usage >= 2 ? "sometimes" : "cut";
 const KEYS: Record<string, Pick> = { ArrowLeft: "daily", ArrowDown: "sometimes", ArrowRight: "cut" };
 
-export default function StackUsagePlay({ rows, lang, format, freeOnly = false, history, onReviewTools }: {
-  rows: FitRow[]; lang: "fr" | "en"; format: (n: number) => string; freeOnly?: boolean; history?: ReactNode; onReviewTools: () => void;
+export default function UsagePlay({ rows, lang, format, freeOnly = false, history, onReviewTools, localLogosOnly = false }: {
+  rows: UsageRow[]; lang: "fr" | "en"; format: (n: number) => string; freeOnly?: boolean; history?: ReactNode; onReviewTools: () => void;
+  /** Logos load from our own files only (Storybook, tests). */
+  localLogosOnly?: boolean;
 }) {
   const t = (fr: string, en: string) => lang === "fr" ? fr : en;
   const tr = (pair: [string, string]) => lang === "fr" ? pair[0] : pair[1];
@@ -63,7 +69,7 @@ export default function StackUsagePlay({ rows, lang, format, freeOnly = false, h
     setFlying(pick);
     timer.current = window.setTimeout(commit, 300);
   };
-  const replay = (row: FitRow) => {
+  const replay = (row: UsageRow) => {
     row.setUsage(null);
     setUndo((list) => list.filter((id) => id !== row.tool.id));
     setSay(t(`On rejoue ${row.tool.name}.`, `Replaying ${row.tool.name}.`));
@@ -79,11 +85,11 @@ export default function StackUsagePlay({ rows, lang, format, freeOnly = false, h
     if (dx < -70) answer("daily"); else if (dx > 70) answer("cut"); else if (dy > 70) answer("sometimes");
   };
 
-  if (rows.length === 0) return <article className="tt-usage tt-play" aria-label={t("Vos usages", "Your use")}>
-    <div className="tt-play-head"><h2 className="tt-eyebrow">{t("Vos usages", "Your use")}</h2></div>
-    <p className="tt-title-m">{freeOnly ? t("Votre stack, sans abonnement payant.", "Your stack has no paid plans.") : t("Personne à faire auditionner.", "No auditions today.")}</p>
-    <p className="tt-text">{t("Pas d’outil payant à évaluer.", "No paid tools to review.")}</p>
-    {history && <div className="tt-play-history">{history}</div>}
+  if (rows.length === 0) return <article className={styles.play} data-card="usage" aria-label={t("Vos usages", "Your use")}>
+    <div className={styles.head}><h2 className={styles.eyebrow}>{t("Vos usages", "Your use")}</h2></div>
+    <p className={styles.titleM}>{freeOnly ? t("Votre stack, sans abonnement payant.", "Your stack has no paid plans.") : t("Personne à faire auditionner.", "No auditions today.")}</p>
+    <p className={styles.text}>{t("Pas d’outil payant à évaluer.", "No paid tools to review.")}</p>
+    {history && <div className={styles.history}>{history}</div>}
   </article>;
 
   const left = queue.length;
@@ -91,56 +97,56 @@ export default function StackUsagePlay({ rows, lang, format, freeOnly = false, h
     : dust.length === 2 ? t("Deux figurants payés à ne rien faire.", "Two extras paid to do nothing.")
     : t(`${dust.length} figurants payés à ne rien faire. Le tournage coûte cher.`, `${dust.length} extras paid to do nothing. Expensive shoot.`);
 
-  return <article className={`tt-usage tt-play${done ? " is-done" : ""}${paused ? " is-paused" : ""}`} aria-label={t("Vos usages", "Your use")} onKeyDown={onKey}>
-    <div className="tt-play-head">
-      <h2 className="tt-eyebrow">{t("Vos usages", "Your use")}</h2>
-      <span className="tt-note tt-play-left">{done ? t("Partie terminée", "Game over") : t(`Il reste ${left} carte${left > 1 ? "s" : ""}`, `${left} card${left > 1 ? "s" : ""} left`)}</span>
-      {!done && <button type="button" className="tt-link tt-play-later" onClick={() => { setPaused((value) => !value); setSay(paused ? t("On reprend la partie.", "Back to the game.") : t("Partie en pause, vos cartes sont gardées. Reprenez quand vous voulez.", "Game paused, your cards are kept. Pick it up whenever you like.")); }}>{paused ? t("Reprendre", "Resume") : t("Plus tard", "Later")}</button>}
+  return <article className={styles.play} data-card="usage" data-done={done ? "" : undefined} data-paused={paused ? "" : undefined} aria-label={t("Vos usages", "Your use")} onKeyDown={onKey}>
+    <div className={styles.head}>
+      <h2 className={styles.eyebrow}>{t("Vos usages", "Your use")}</h2>
+      <span className={styles.note}>{done ? t("Partie terminée", "Game over") : t(`Il reste ${left} carte${left > 1 ? "s" : ""}`, `${left} card${left > 1 ? "s" : ""} left`)}</span>
+      {!done && <button type="button" className={styles.link} onClick={() => { setPaused((value) => !value); setSay(paused ? t("On reprend la partie.", "Back to the game.") : t("Partie en pause, vos cartes sont gardées. Reprenez quand vous voulez.", "Game paused, your cards are kept. Pick it up whenever you like.")); }}>{paused ? t("Reprendre", "Resume") : t("Plus tard", "Later")}</button>}
     </div>
 
-    {showHistory && history ? <div className="tt-play-history">{history}<button type="button" className="tt-link" onClick={() => setShowHistory(false)}>{t("Retour à la partie", "Back to the game")}</button></div> : <div className="tt-play-play">
+    {showHistory && history ? <div className={styles.history}>{history}<button type="button" className={styles.link} onClick={() => setShowHistory(false)}>{t("Retour à la partie", "Back to the game")}</button></div> : <div className={styles.stage}>
       {!done && <>
-        <div className="tt-play-table">
-          <div className="tt-play-deck" aria-live="polite">
+        <div className={styles.table}>
+          <div className={styles.deck} aria-live="polite">
             {queue.slice(0, 3).map((row, depth) => ({ row, depth })).reverse().map(({ row, depth }) =>
-              <div key={row.tool.id} className="tt-play-card" data-depth={depth} data-fly={depth === 0 && flying ? flying : undefined}
+              <div key={row.tool.id} className={styles.card} data-depth={depth} data-fly={depth === 0 && flying ? flying : undefined}
                 {...(depth === 0 ? { onPointerDown, onPointerMove, onPointerUp, onPointerCancel: onPointerUp } : {})}>
-                <ToolLogo tool={row.tool} size={44} className="tt-logo-tile" />
-                <span className="tt-play-card-text"><span className="tt-title-m">{t(`${row.tool.name}, vous vous en servez…`, `${row.tool.name}, how often do you use it…`)}</span><span className="tt-note">{t(`${format(row.cost)} par mois`, `${format(row.cost)} a month`)}</span></span>
+                <Logo tool={row.tool} size={40} localOnly={localLogosOnly} />
+                <span className={styles.cardText}><span className={styles.titleM}>{t(`${row.tool.name}, vous vous en servez…`, `${row.tool.name}, how often do you use it…`)}</span><span className={styles.note}>{t(`${format(row.cost)} par mois`, `${format(row.cost)} a month`)}</span></span>
               </div>)}
           </div>
         </div>
-        <div className="tt-play-picks" role="group" aria-label={t("Votre réponse", "Your answer")}>
-          {PICKS.map((pick) => <button key={pick.id} type="button" className={`tt-play-pick${pick.id === "cut" ? " tt-play-pick--cut" : ""}`} data-pick={pick.id} disabled={paused} onClick={() => answer(pick.id)}>
+        <div className={styles.picks} role="group" aria-label={t("Votre réponse", "Your answer")}>
+          {PICKS.map((pick) => <button key={pick.id} type="button" className={styles.pick} data-pick={pick.id} disabled={paused} onClick={() => answer(pick.id)}>
             {pick.id !== "cut" && <kbd aria-hidden="true">{pick.key}</kbd>}{tr(pick.label)}{pick.id === "cut" && <kbd aria-hidden="true">{pick.key}</kbd>}
           </button>)}
         </div>
-        <div className="tt-play-reply"><p className="tt-note tt-play-say" aria-live="polite">{say ?? t("Du figurant au copilote : à vous de distribuer les rôles.", "From cameo to co-pilot: you’re casting.")}</p>
-          {undo.length > 0 && <button type="button" className="tt-link tt-play-undo" onClick={() => { const row = deck.find((r) => r.tool.id === undo[undo.length - 1]); if (row) replay(row); }}>{t("Annuler", "Undo")}</button>}</div>
+        <div className={styles.reply}><p className={styles.note} aria-live="polite">{say ?? t("Du figurant au copilote : à vous de distribuer les rôles.", "From cameo to co-pilot: you’re casting.")}</p>
+          {undo.length > 0 && <button type="button" className={styles.link} onClick={() => { const row = deck.find((r) => r.tool.id === undo[undo.length - 1]); if (row) replay(row); }}>{t("Annuler", "Undo")}</button>}</div>
       </>}
-      {done && <div className="tt-play-end">
-        <span className="tt-eyebrow">{t("Casting au complet", "Full cast")}</span>
+      {done && <div className={styles.end}>
+        <span className={styles.eyebrow}>{t("Casting au complet", "Full cast")}</span>
         {dust.length > 0 ? <>
-          <p className="tt-figure tt-play-score"><span>{format(Math.round(score))}</span><small>{t("/mois", "/mo")}</small></p>
-          <p className="tt-text">{t("prennent la poussière chez ", "gathering dust with ")}{dust.map((row, i) => <span key={row.tool.id}>{i > 0 && (i === dust.length - 1 ? t(" et ", " and ") : ", ")}<b>{row.tool.name}</b></span>)}{t(`, soit ${format(dustTotal * 12)} par an.`, `, that is ${format(dustTotal * 12)} a year.`)}</p>
-          <p className="tt-note">{quip}</p>
+          <p className={styles.score}><span>{format(Math.round(score))}</span><small>{t("/mois", "/mo")}</small></p>
+          <p className={styles.text}>{t("prennent la poussière chez ", "gathering dust with ")}{dust.map((row, i) => <span key={row.tool.id}>{i > 0 && (i === dust.length - 1 ? t(" et ", " and ") : ", ")}<b className={styles.strong}>{row.tool.name}</b></span>)}{t(`, soit ${format(dustTotal * 12)} par an.`, `, that is ${format(dustTotal * 12)} a year.`)}</p>
+          <p className={styles.note}>{quip}</p>
         </> : <>
-          <p className="tt-title-m">{t("Toute la troupe joue.", "The whole cast is working.")}</p>
-          <p className="tt-text">{t("Rien ne prend la poussière : chaque abonnement mérite son cachet.", "Nothing gathers dust: every subscription earns its fee.")}</p>
+          <p className={styles.titleM}>{t("Toute la troupe joue.", "The whole cast is working.")}</p>
+          <p className={styles.text}>{t("Rien ne prend la poussière : chaque abonnement mérite son cachet.", "Nothing gathers dust: every subscription earns its fee.")}</p>
         </>}
-        <div className="tt-play-end-acts">
-          <button type="button" className="tt-btn" onClick={onReviewTools}>{t("Voir ce que ça change", "See what it changes")}</button>
-          <button type="button" className="tt-link tt-play-again" onClick={replayAll}>{t("Rejouer", "Play again")}</button>
-          {history && <button type="button" className="tt-link" onClick={() => setShowHistory(true)}>{t("Mes choix", "My choices")}</button>}
+        <div className={styles.endActs}>
+          <button type="button" className={styles.primary} onClick={onReviewTools}>{t("Voir ce que ça change", "See what it changes")}</button>
+          <button type="button" className={styles.link} onClick={replayAll}>{t("Rejouer", "Play again")}</button>
+          {history && <button type="button" className={styles.link} onClick={() => setShowHistory(true)}>{t("Mes choix", "My choices")}</button>}
         </div>
       </div>}
     </div>}
 
-    <div className="tt-play-piles">
+    <div className={styles.piles}>
       {PICKS.map((pick) => { const pile = deck.filter((row) => pickOf(row.usage) === pick.id);
-        return <section key={pick.id} className="tt-play-pile" data-pile={pick.id} data-bump={bump === pick.id ? "" : undefined} aria-label={tr(pick.pile)}>
-          <span className="tt-eyebrow">{tr(pick.pile)} <b>{pile.length}</b></span>
-          <ul>{pile.map((row) => <li key={row.tool.id}><button type="button" aria-label={t(`Rejouer la carte ${row.tool.name}`, `Replay the ${row.tool.name} card`)} title={row.tool.name} onClick={() => replay(row)}><ToolLogo tool={row.tool} size={20} /></button></li>)}</ul>
+        return <section key={pick.id} className={styles.pile} data-pile={pick.id} data-bump={bump === pick.id ? "" : undefined} aria-label={tr(pick.pile)}>
+          <span className={styles.pileHead}><span>{tr(pick.pile)}</span><b>{pile.length}</b></span>
+          <ul>{pile.map((row) => <li key={row.tool.id}><button type="button" aria-label={t(`Rejouer la carte ${row.tool.name}`, `Replay the ${row.tool.name} card`)} title={row.tool.name} onClick={() => replay(row)}><Logo tool={row.tool} size={24} localOnly={localLogosOnly} /></button></li>)}</ul>
         </section>; })}
     </div>
   </article>;
