@@ -160,7 +160,7 @@
 }
 
 :is(.button, .textLink, .input, .select, .textarea):focus-visible {
-  outline: var(--tt-focus-width) solid var(--tt-focus);
+  outline: var(--tt-focus-ring);
   outline-offset: var(--tt-focus-offset);
 }
 
