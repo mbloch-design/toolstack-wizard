@@ -2,7 +2,7 @@ import { act, renderHook } from "@testing-library/react";
 import { expect, it } from "vitest";
 import { useOfferOperations } from "./CatalogPriceEditor";
 import { catalogCapabilities } from "@/lib/catalogPolicy";
-import { validateCatalogDraft } from "@/lib/backofficeCatalog";
+import { validateCatalogDraft, validateCatalogPublication } from "@/lib/backofficeCatalog";
 const row = { planKey: "pro", displayName: "Français", priceObservationId: "obs", nativeAmount: 10, nativeCurrency: "EUR", billingPeriod: "monthly", priceStatus: "paid", isFree: false, isComparePlan: false, detailsSourceUrl: "https://example.com", observedOn: "2026-10-30", taxInclusion: "included" };
 const initial: any = { id: "a", slug: "a", name: "A", pricing_v5: { plans: [row] }, pricing_v5En: { plans: [{ ...row, displayName: "English" }] } };
 function setup() {
@@ -21,4 +21,26 @@ it("does not restore an old reference after the linked peer changes currency", (
  act(() => h.hook.result.current.undo(h.hook.result.current.removed[0]));
  expect(h.value.pricing_v5.plans[0]).toMatchObject({ nativeCurrency: "USD", isComparePlan: false });
  expect(h.value.pricing_v5En.plans[0].isComparePlan).toBe(true);
+});
+
+it("restores a linked quote without reselecting it as a numeric reference", () => {
+  const h = setup();
+  h.value.pricing_v5.plans[0].isComparePlan = true;
+  h.refresh();
+  h.remove();
+  Object.assign(h.value.pricing_v5En.plans[0], {
+    priceStatus: "quote",
+    nativeAmount: null,
+  });
+  h.refresh();
+
+  act(() => h.hook.result.current.undo(h.hook.result.current.removed[0]));
+
+  expect(h.value.pricing_v5.plans[0]).toMatchObject({
+    displayName: "Français",
+    priceStatus: "quote",
+    nativeAmount: null,
+    isComparePlan: false,
+  });
+  expect(() => validateCatalogPublication(initial, h.value)).not.toThrow();
 });

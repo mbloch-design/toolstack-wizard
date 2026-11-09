@@ -13,6 +13,7 @@ import {
 import {
   hasExplicitNonNumericPricing,
   nativeMonthlyAmount,
+  selectNativeComparePlan,
 } from "@/lib/nativeComparePlan";
 import { catalogPlanSchema } from "@/lib/catalogFieldRegistry";
 import { CatalogFieldEditor } from "./CatalogFieldEditor";
@@ -145,10 +146,13 @@ export function useOfferOperations(context: CatalogEditingValue) {
       if (Object.prototype.hasOwnProperty.call(peer, key)) restored[key] = peer[key];
       else delete restored[key];
     }
-    const sameCurrency = restored.nativeCurrency === item.plan.nativeCurrency;
-    if (item.wasReference && (!restoreReferences || !sameCurrency)) restored.isComparePlan = false;
+    const restoreReference =
+      restoreReferences &&
+      restored.nativeCurrency === item.plan.nativeCurrency &&
+      !!selectNativeComparePlan([{ ...restored, isComparePlan: true }]);
+    if (item.wasReference && !restoreReference) restored.isComparePlan = false;
     plans.splice(item.index, 0, restored);
-    if (restoreReferences && sameCurrency)
+    if (restoreReference)
       for (const pricingRoot of Object.keys(item.references)) {
         const rows = catalogValueAt(next, [pricingRoot, "plans"]);
         if (Array.isArray(rows))
