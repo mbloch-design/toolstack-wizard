@@ -16,7 +16,6 @@
 .text { composes: text from "../atoms.module.css"; }
 .note { composes: note from "../atoms.module.css"; }
 .label { composes: label from "../atoms.module.css"; }
-.unit { composes: unit from "../atoms.module.css"; }
 
 .head {
   display: flex;
@@ -28,10 +27,6 @@
 
 .amount {
   margin: 0;
-  color: var(--tt-ink);
-  font: var(--tt-amount-font);
-  letter-spacing: var(--tt-amount-tracking);
-  white-space: nowrap;
 }
 
 .reading {

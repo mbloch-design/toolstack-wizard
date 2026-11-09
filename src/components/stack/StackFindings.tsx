@@ -189,7 +189,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         const chosen = tiles?.find((plan) => plan.key === seatPlan);
         const max = Math.max(1, ...(tiles ?? []).map((x) => x.monthly));
         const workTime = (monthly: number) => { if (!hourly) return null; if (monthly === 0) return t("0 min de votre travail", "0 min of your work"); const minutes = Math.max(1, Math.round((monthly / hourly) * 60)); return minutes < 60 ? t(`≈ ${minutes} min de votre travail`, `≈ ${minutes} min of your work`) : t(`≈ ${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} de votre travail`, `≈ ${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} of your work`); };
-        const per = <small>{t("/mois", "/mo")}</small>;
+        const per = t("/mois", "/mo");
         return <Decision key={`${top.key}-${flash}`} lang={fr ? "fr" : "en"} kind={top.kind} label={t("Prochaine décision", "Next decision")} flash={!!flash}
           eyebrow={guide && (top.kind === "price" || top.kind === "freemium") ? t("Étape suivante", "Next step") : t("Votre décision", "Your decision")}
           step={peak > 1 ? { current: step, total: peak } : undefined}
@@ -199,7 +199,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           links={links}
           preview={showPreview ? {
             label: partial ? t("Budget partiel", "Partial budget") : t("Budget estimé", "Estimated budget"),
-            value: preview === null && total === 0 && partial ? t("À renseigner", "Not set yet") : <>{format(preview ?? total)}{per}</>,
+            ...(preview === null && total === 0 && partial ? { value: t("À renseigner", "Not set yet") } : { value: format(preview ?? total), unit: per }),
             delta: preview !== null && preview !== total ? { text: `${preview > total ? "+" : "−"}${format(Math.abs(preview - total))}`, down: preview < total } : null,
           } : undefined}>
           {/* A duplicate: keep one, keep the other, or keep both; each says what it does to the budget. */}
@@ -214,7 +214,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 const gone = top.tools[1 - index];
                 return <Choice key={tool.id} data-choice="keep" media={<Logo tool={tool} />} name={<>{t("Garder", "Keep")} {tool.name}</>} tag={own < other ? t("Le moins cher", "Cheaper") : undefined}
                   note={`${gone ? t(`${gone.name} quitte la stack`, `${gone.name} leaves the stack`) : ""} · ${own > 0 ? t(`seul, ${format(own)}/mois`, `alone, ${format(own)}/mo`) : t("seul, gratuit", "alone, free")}`}
-                  amount={other > 0 ? <>−{format(other)}{per}</> : t("Aucune économie", "No saving")} saving={other > 0}
+                  amount={other > 0 ? `−${format(other)}` : t("Aucune économie", "No saving")} unit={other > 0 ? per : undefined} saving={other > 0}
                   state={state(index)} checked={picked === index} disabled={picked !== null} ariaLabel={keep?.ariaLabel || keep?.label}
                   onClick={() => pick(index, keep?.onClick)} onPreview={(on) => setPreview(on ? total - other : null)} />;
               })}
@@ -234,7 +234,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
               const PlanIcon = plan.monthly === 0 ? Moon : plan.monthly >= max ? Rocket : Zap;
               const detail = [qualifier, plan.monthly === 0 ? t("Rien à payer", "Nothing to pay") : plan.note || t("par mois", "a month"), workTime(plan.monthly)].filter(Boolean).join(" · ");
               return <Choice key={plan.key} role="radio" data-plan={plan.key} media={<IconTile><PlanIcon /></IconTile>} name={main} note={detail}
-                amount={plan.monthly > 0 ? <>{format(plan.monthly)}{per}</> : t("Gratuit", "Free")}
+                amount={plan.monthly > 0 ? format(plan.monthly) : t("Gratuit", "Free")} unit={plan.monthly > 0 ? per : undefined}
                 state={pickedTile === null ? undefined : pickedTile === plan.key ? "kept" : "gone"} checked={pickedTile === plan.key}
                 onPreview={(on) => setPreview(on ? total + plan.monthly : null)}
                 onClick={() => { if (plan.perSeat) { setSeatPlan(plan.key); setSeats(1); setPreview(total + plan.monthly); } else pickTile(plan.key, () => plan.pick()); }} />;

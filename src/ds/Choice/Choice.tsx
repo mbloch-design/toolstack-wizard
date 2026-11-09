@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import Amount from "../Amount/Amount";
+import Tag from "../Tag/Tag";
 import styles from "./Choice.module.css";
 
 export type ChoiceProps = {
@@ -10,8 +12,10 @@ export type ChoiceProps = {
   /** A short tag after the name (« Le moins cher »). */
   tag?: string;
   note?: ReactNode;
-  /** The amount on the right, already formatted; a saving reads with a green arrow. */
-  amount: ReactNode;
+  /** The amount on the right, already formatted (or « Gratuit »); a saving reads with a green arrow. */
+  amount: string;
+  /** « /mois » after the amount. */
+  unit?: string;
   saving?: boolean;
   /** After an answer: the chosen row rings, the others step back. */
   state?: "kept" | "gone";
@@ -30,7 +34,7 @@ export type ChoiceProps = {
 };
 
 /** One answer as a row: media, name and what it means, the amount on the right. */
-export default function Choice({ media, pair, name, tag, note, amount, saving, state, checked, role, disabled, ariaLabel, onClick, onPreview, ...rest }: ChoiceProps) {
+export default function Choice({ media, pair, name, tag, note, amount, unit, saving, state, checked, role, disabled, ariaLabel, onClick, onPreview, ...rest }: ChoiceProps) {
   return (
     <button type="button" className={styles.choice} role={role} aria-checked={role === "radio" ? state === "kept" : undefined} aria-label={ariaLabel}
       data-state={state} disabled={disabled} onClick={onClick} data-plan={rest["data-plan"]} data-choice={rest["data-choice"]}
@@ -40,12 +44,12 @@ export default function Choice({ media, pair, name, tag, note, amount, saving, s
         {checked && <span className={styles.check} aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span>}
       </span>
       <span className={styles.text}>
-        <span className={styles.name}><span>{name}</span>{tag && <span className={styles.tag}>{tag}</span>}</span>
+        <span className={styles.name}><span>{name}</span>{tag && <Tag>{tag}</Tag>}</span>
         {note && <span className={styles.note}>{note}</span>}
       </span>
-      <span className={styles.amount} data-nowrap="">
+      <span className={styles.amount}>
         {saving && <svg className={styles.savingMark} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" /></svg>}
-        <span>{amount}</span>
+        <Amount value={amount} unit={unit} />
       </span>
     </button>
   );

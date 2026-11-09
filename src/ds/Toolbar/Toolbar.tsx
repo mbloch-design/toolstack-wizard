@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Chip, { Chips } from "../Chip/Chip";
 import styles from "./Toolbar.module.css";
 
 /** The head of a page section: title (with what sits beside it), a summary line, and the section's one action. */
@@ -27,13 +28,9 @@ export type Filter<T extends string> = { id: T; label: string; count: number; al
 /** Filter chips: the pressed one turns ink with a check that draws itself. */
 export function FilterChips<T extends string>({ label, filters, value, onChange }: { label: string; filters: Filter<T>[]; value: T; onChange: (id: T) => void }) {
   return (
-    <div className={styles.chips} role="group" aria-label={label}>
-      {filters.map((filter) => (
-        <button key={filter.id} type="button" className={styles.chip} data-alert={filter.alert ? "" : undefined} aria-pressed={value === filter.id} onClick={() => onChange(filter.id)}>
-          {filter.label}<span className={styles.count}>{filter.count}</span>
-        </button>
-      ))}
-    </div>
+    <Chips label={label}>
+      {filters.map((filter) => <Chip key={filter.id} check pressed={value === filter.id} count={filter.count} alert={filter.alert} onClick={() => onChange(filter.id)}>{filter.label}</Chip>)}
+    </Chips>
   );
 }
 
@@ -58,10 +55,6 @@ export function IconSwitch<T extends string>({ label, value, options, onChange }
   );
 }
 
-/** A grey button that toggles a mode (« Modifier » / « Terminé »). */
-export function ToggleButton({ pressed, onClick, children }: { pressed: boolean; onClick: () => void; children: ReactNode }) {
-  return <button type="button" className={styles.toggle} aria-pressed={pressed} onClick={onClick}>{children}</button>;
-}
 
 /** A page section: its head, its controls and its content, spaced as one block. */
 export function Section({ labelledBy, id, name, children }: { labelledBy: string; id?: string; name?: string; children: ReactNode }) {

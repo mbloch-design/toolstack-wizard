@@ -1,6 +1,7 @@
 import { useId, useState, type CSSProperties } from "react";
 import Logo from "../Logo/Logo";
 import { displayFigure } from "../figure";
+import Amount from "../Amount/Amount";
 import styles from "./Split.module.css";
 
 export type SplitTool = { id: string; name: string; slug?: string; logo?: string; amount: number };
@@ -63,7 +64,7 @@ export default function Split({ lang, areas, format, unpriced, rateDate, localLo
     <article className={styles.card} aria-labelledby={`${id}-title`}>
       <div className={styles.head}>
         <h2 id={`${id}-title`} className={styles.eyebrow}>{t("Répartition", "Split")}</h2>
-        <p className={styles.amount} data-nowrap="">{displayFigure(format(total))}<small className={styles.unit}>{t("/mois", "/mo")}</small></p>
+        <p className={styles.amount}><Amount value={format(total)} unit={t("/mois", "/mo")} /></p>
       </div>
 
       <div className={styles.layout}>

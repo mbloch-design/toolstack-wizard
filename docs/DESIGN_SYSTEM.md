@@ -18,9 +18,15 @@ Les vrais composants React sont la seule source. Chacun est montré, testé et v
 5. Validation de Michael dans Storybook. Les captures validées deviennent les références (workflow « Visual baselines », lancé à la main avec la note de validation).
 6. Intégration : la page importe le composant sans style ajouté, et l'ancien code est supprimé dans le même commit.
 
+**Trois étages (9 nov. 2026).**
+- Atomes de texte : `src/ds/atoms.module.css` (`eyebrow`, `titleM`, `label`, `text`, `note`, `strong`), composés par `composes`. Ils ne portent que la typographie.
+- Molécules : `Button` (primary encre, secondary gris, quiet ; `pressed` pour une bascule ; `icon`), `IconButton` (rond 32, 40 ou 44, toujours nommé), `TextButton` et `linkClass()` (lien au trait qui se dessine ; `quiet` en police de lecture ; `inline` toujours souligné dans une phrase), `Amount` (montant et unité insécables, `figure` ou `amount`, ton `overlap`), `Tag` (fait court, encre sur teinte ; `on="tile"` sur un fond gris), `Chip` et `Chips` (pastille au contour : filtre avec coche et compteur, taille d'équipe, réponse de Vos usages).
+- Modules : Budget, Répartition, Décision, Choix, Vos usages, Tableau, Inventaire, À découvrir. Un module n'écrit plus de bouton, de lien, de montant, d'étiquette ni de puce : il importe la molécule.
+
 **Commandes.**
 - `npm run storybook` : Storybook en local (port 6006). Barre d'outils : langue FR/EN, thème clair/sombre, largeurs 390, 768 et 1280.
 - `npm run lint:ds` : Stylelint, uniquement des jetons, ni `!important` ni `:global`.
+- `npm run build-storybook && npm run audit:typo-ds` : sur chaque story (390 clair, 1280 clair et sombre), tout texte visible suit la règle typographique : tailles 64/42/21/17/16/14 (12 en capitales seulement), graisses 400/500 (370/470 en sombre), familles, interlettrage, aucun texte gris. `TYPO_PROBE=1` injecte un faux texte pour prouver que l'audit voit les écarts.
 - `npm run test:ds` : en vrai navigateur, sur chaque story, les invariants de mise en page (aucun mot coupé, aucun montant séparé de son unité marquée `data-nowrap`, rien qui dépasse de son parent) et l'accessibilité (axe, bloquant).
 - `npm run build-storybook && npm run test:visual` : captures de chaque story en 3 largeurs, FR/EN, clair/sombre. Comparées au pixel en CI uniquement, dans l'image Playwright 1.58.2 (`visual/__screenshots__`). En local, elles sont écrites dans `visual/__local__/` pour être regardées.
 - CI : job « Design system » de `preprod-ci.yml`.

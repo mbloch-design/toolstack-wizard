@@ -12,8 +12,7 @@
 }
 
 .eyebrow { composes: eyebrow from "../atoms.module.css"; }
-.figure { composes: figure from "../atoms.module.css"; }
-.unit { composes: unit from "../atoms.module.css"; }
+.figure { margin: 0; }
 .text { composes: text from "../atoms.module.css"; }
 .strong { composes: strong from "../atoms.module.css"; }
 
@@ -41,7 +40,6 @@
 .titleM { composes: titleM from "../atoms.module.css"; }
 .label { composes: label from "../atoms.module.css"; }
 .note { composes: note from "../atoms.module.css"; }
-.primary { composes: primary from "../atoms.module.css"; }
 
 .total,
 .start {

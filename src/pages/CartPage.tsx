@@ -15,9 +15,9 @@ import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
 import { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
 import StackToolSheet from "@/components/stack/StackToolSheet";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
-import { Button } from "@/components/stack/StackKit";
 import ToolCard, { ToolCards, ToolGroup, ToolGroups } from "@/ds/ToolCard/ToolCard";
-import Toolbar, { FilterChips, IconSwitch, Section, SectionHead, SortSelect, ToggleButton, ToolbarTools } from "@/ds/Toolbar/Toolbar";
+import Button from "@/ds/Button/Button";
+import Toolbar, { FilterChips, IconSwitch, Section, SectionHead, SortSelect, ToolbarTools } from "@/ds/Toolbar/Toolbar";
 import { comparisonPath } from "@/lib/comparisonLinks";
 import { decisionSavingInCurrency, latestRemovedStackDecisions } from "@/lib/stackDecisions";
 import { useLang } from "@/hooks/useLang";
@@ -501,7 +501,7 @@ export default function CartPage() {
         <Section labelledBy="ms-all-title">
           <SectionHead title={t("Ma stack", "My stack")} titleId="ms-all-title" beside={<StackAccountPanel placement="inline" />}
             note={<>{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</>}
-            action={<Button ref={addRef} variant="primary" icon={<Plus size={16} aria-hidden />} onClick={() => { setEditing(false); setSearchOpen((open) => !open); }} aria-expanded={searchOpen} aria-controls="ms-search">{t("Ajouter un outil", "Add a tool")}</Button>} />
+            action={<Button ref={addRef} variant="primary" icon={<Plus />} onClick={() => { setEditing(false); setSearchOpen((open) => !open); }} aria-expanded={searchOpen} aria-controls="ms-search">{t("Ajouter un outil", "Add a tool")}</Button>} />
           {searchPanel}
           {(() => {
             const counts = { all: listTools.length, review: listTools.filter((tool) => statusOf(tool) === "review").length, overlap: listTools.filter((tool) => statusOf(tool) === "overlap").length };
@@ -526,7 +526,7 @@ export default function CartPage() {
                   <IconSwitch label={t("Affichage", "Layout")} value={layout} onChange={setLayout} options={[
                     { value: "grid", label: t("Grille", "Grid"), icon: <LayoutGrid aria-hidden /> }, { value: "list", label: t("Liste", "List"), icon: <List aria-hidden /> }]} />
                   {/* Edit acts on the grid right below, so it lives with the other view controls. */}
-                  <ToggleButton pressed={editing} onClick={() => { setSearchOpen(false); setEditing((value) => !value); }}>{editing ? <Check aria-hidden /> : <Pencil aria-hidden />}{editing ? t("Terminé", "Done") : t("Modifier", "Edit")}</ToggleButton>
+                  <Button pressed={editing} icon={editing ? <Check /> : <Pencil />} onClick={() => { setSearchOpen(false); setEditing((value) => !value); }}>{editing ? t("Terminé", "Done") : t("Modifier", "Edit")}</Button>
                 </ToolbarTools>
               </Toolbar>
               <ToolGroups id="ms-all-grid" ref={gridRef} label={t("Mes outils", "My tools")} layout={layout} grouped={groupBy === "area"} editing={editing}

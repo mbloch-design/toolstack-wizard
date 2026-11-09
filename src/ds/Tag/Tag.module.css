@@ -1,0 +1,24 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 calc(var(--tt-space-1) * 2.5);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+  font: var(--tt-tag-font);
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.tag[data-on="tile"] {
+  background: var(--tt-bg);
+}
+
+.tag[data-tone="ok"] {
+  background: color-mix(in oklch, var(--tt-live) 16%, var(--tt-bg));
+}
+
+.tag[data-tone="overlap"] {
+  background: color-mix(in oklch, var(--tt-overlap) 16%, var(--tt-bg));
+}

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import MediaCard, { MediaCards } from "./MediaCard";
 import { SectionHead, Section } from "../Toolbar/Toolbar";
-import { atoms } from "../atoms";
+import Button, { linkClass } from "../Button/Button";
 import Logo from "../Logo/Logo";
 
 const meta: Meta = { title: "Ma stack/À découvrir", tags: ["a-valider"], parameters: { layout: "fullscreen" }, decorators: [(Story) => <div style={{ padding: 16, maxWidth: 1180 }}><Story /></div>] };
@@ -21,13 +21,13 @@ const IDEAS = [
 export const Discover: Story = {
   render: (_args, { globals: { lang } }) => <Section labelledBy="recos">
     <SectionHead title={t(lang, "À découvrir", "Discover something new")} titleId="recos" note={t(lang, "D’autres approches autour de vos outils. La prochaine bonne pioche est peut-être ici.", "Fresh approaches around your tools. Your next good find could be here.")}
-      action={<a className={atoms.link} href="#explorer">{t(lang, "Explorer les pistes", "Explore more ideas")}</a>} />
+      action={<a className={linkClass()} href="#explorer">{t(lang, "Explorer les pistes", "Explore more ideas")}</a>} />
     <MediaCards label={t(lang, "Idées à découvrir", "Ideas to discover")}>
       {IDEAS.map((idea) => <MediaCard key={idea.slug} lang={lang} tool={{ name: idea.name, slug: idea.slug }} image={picture(idea.slug, idea.name)}
         category={lang === "fr" ? idea.category[0] : idea.category[1]} reason={lang === "fr" ? idea.reason[0] : idea.reason[1]}
         renderLink={(className, content) => <a className={className} href={`#${idea.slug}`} aria-label={t(lang, `Voir la fiche de ${idea.name}`, `View ${idea.name}`)}>{content}</a>}
         add={{ state: idea.state, onAdd: () => {} }} localLogosOnly />)}
     </MediaCards>
-    <div style={{ display: "flex", justifyContent: "center" }}><button type="button" className={atoms.button}>{t(lang, "D’autres pistes", "More ideas")}</button></div>
+    <div style={{ display: "flex", justifyContent: "center" }}><Button>{t(lang, "D’autres pistes", "More ideas")}</Button></div>
   </Section>,
 };

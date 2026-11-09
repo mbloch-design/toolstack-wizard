@@ -6,7 +6,6 @@
 }
 
 .strong { composes: strong from "../atoms.module.css"; }
-.primary { composes: primary from "../atoms.module.css"; }
 
 .plan {
   display: flex;
@@ -16,15 +15,6 @@
   gap: var(--tt-space-1) var(--tt-space-3);
   margin: 0;
   font: var(--tt-text-font);
-}
-
-.link {
-  padding: 0;
-  border: 0;
-  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
-  color: var(--tt-ink);
-  font: var(--tt-text-font);
-  cursor: pointer;
 }
 
 .question {
@@ -45,7 +35,6 @@
   gap: var(--tt-space-1);
 }
 
-.presets button,
 .stepper button {
   display: grid;
   place-items: center;
@@ -61,10 +50,6 @@
   letter-spacing: 0;
   font-variant-numeric: tabular-nums;
   cursor: pointer;
-}
-
-.presets button[aria-pressed="true"] {
-  box-shadow: var(--tt-row-ring-on);
 }
 
 .stepper {

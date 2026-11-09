@@ -1,7 +1,8 @@
 import { forwardRef, type CSSProperties, type ReactNode } from "react";
 import Logo from "../Logo/Logo";
 import type { LogoTool } from "@/lib/useToolLogoSource";
-import { displayFigure } from "../figure";
+import Amount from "../Amount/Amount";
+import Tag from "../Tag/Tag";
 import styles from "./ToolCard.module.css";
 
 export type ToolStatus = "ok" | "review" | "overlap";
@@ -29,14 +30,14 @@ const STATUS: Record<ToolStatus, [string, string]> = { ok: ["Prix renseigné", "
 export default function ToolCard({ lang, tool, amount, monthly, status, area, selected, editing, onOpen, onRemove, localLogosOnly = false }: ToolCardProps) {
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
   const label = t(...STATUS[status]);
-  const tag: ReactNode = <span className={styles.tag} data-status-tag={status}>{label}</span>;
+  const tag: ReactNode = <Tag tone={status === "ok" ? "ok" : status === "overlap" ? "overlap" : "neutral"} on="tile" data-status-tag={status}>{label}</Tag>;
   return (
     <div className={styles.wrap} data-flip-id={tool.id}>
       <button type="button" className={styles.card} data-tool-id={tool.id} data-tool-name={tool.name} data-status={status} data-selected={selected ? "" : undefined}
         aria-haspopup="dialog" aria-label={`${tool.name}, ${amount}${monthly ? t("/mois", "/mo") : ""}, ${label}`} tabIndex={editing ? -1 : undefined}
         onClick={(event) => { if (!editing) onOpen(event.currentTarget); }}>
         <span className={styles.logo}><Logo tool={tool} size={40} localOnly={localLogosOnly} /></span>
-        <span className={styles.amount} data-amount="" aria-hidden="true">{displayFigure(amount)}{monthly && <small>{t("/mois", "/mo")}</small>}</span>
+        <span className={styles.amount} data-amount="" aria-hidden="true"><Amount value={amount} unit={monthly ? t("/mois", "/mo") : undefined} /></span>
         <span className={styles.name} data-name="" aria-hidden="true">{tool.name}</span>
         <span className={styles.foot} aria-hidden="true">{tag}{area && <span className={styles.note}>{area}</span>}</span>
       </button>

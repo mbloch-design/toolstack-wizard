@@ -24,11 +24,11 @@ const usageRows = (lang: Lang) => [["Notion", "notion", 36], ["Figma", "figma", 
 const decision = (lang: Lang) => <Decision lang={lang} kind="freemium" label={t(lang, "Prochaine décision", "Next decision")} eyebrow={t(lang, "Votre décision", "Your decision")} step={{ current: 1, total: 4 }}
   media={<Logo tool={{ name: "Canva", slug: "canva" }} size={40} localOnly />} title={t(lang, "Quelle formule de Canva avez-vous ?", "Which Canva plan do you have?")}
   detail={t(lang, "Gratuite ou payante, on ne juge pas. Ça complète juste votre budget.", "Free or paid, no judgement. It just completes your budget.")}
-  links={[{ label: t(lang, "Plus tard", "Later"), onClick: () => {}, quiet: true }]} preview={{ label: t(lang, "Budget partiel", "Partial budget"), value: <>{money(lang, 51)}<small>{t(lang, "/mois", "/mo")}</small></> }}>
+  links={[{ label: t(lang, "Plus tard", "Later"), onClick: () => {}, quiet: true }]} preview={{ label: t(lang, "Budget partiel", "Partial budget"), value: money(lang, 51), unit: t(lang, "/mois", "/mo") }}>
   <Choices radio label={t(lang, "Votre formule", "Your plan")}>
     <Choice role="radio" media={<IconTile><Moon /></IconTile>} name={t(lang, "Version gratuite", "Free plan")} note={t(lang, "Rien à payer", "Nothing to pay")} amount={t(lang, "Gratuit", "Free")} onClick={() => {}} />
-    <Choice role="radio" media={<IconTile><Zap /></IconTile>} name="Canva Pro" note={t(lang, "par mois", "a month")} amount={<>{money(lang, 9.17)}<small>{t(lang, "/mois", "/mo")}</small></>} onClick={() => {}} />
-    <Choice role="radio" media={<IconTile><Rocket /></IconTile>} name="Canva Pro+" note={t(lang, "par utilisateur", "per user")} amount={<>{money(lang, 14.17)}<small>{t(lang, "/mois", "/mo")}</small></>} onClick={() => {}} />
+    <Choice role="radio" media={<IconTile><Zap /></IconTile>} name="Canva Pro" note={t(lang, "par mois", "a month")} amount={money(lang, 9.17)} unit={t(lang, "/mois", "/mo")} onClick={() => {}} />
+    <Choice role="radio" media={<IconTile><Rocket /></IconTile>} name="Canva Pro+" note={t(lang, "par utilisateur", "per user")} amount={money(lang, 14.17)} unit={t(lang, "/mois", "/mo")} onClick={() => {}} />
   </Choices>
 </Decision>;
 

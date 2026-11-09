@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState, type KeyboardEvent, type PointerEvent, type ReactNode } from "react";
 import Logo from "../Logo/Logo";
 import type { LogoTool } from "@/lib/useToolLogoSource";
+import Button, { TextButton } from "../Button/Button";
+import Amount from "../Amount/Amount";
+import Chip from "../Chip/Chip";
 import styles from "./UsagePlay.module.css";
 
 /** One paid tool of the stack: what it costs, the answer so far (5, 3 or 1), and how to record one. */
@@ -101,10 +104,10 @@ export default function UsagePlay({ rows, lang, format, freeOnly = false, histor
     <div className={styles.head}>
       <h2 className={styles.eyebrow}>{t("Vos usages", "Your use")}</h2>
       <span className={styles.note}>{done ? t("Partie terminée", "Game over") : t(`Il reste ${left} carte${left > 1 ? "s" : ""}`, `${left} card${left > 1 ? "s" : ""} left`)}</span>
-      {!done && <button type="button" className={styles.link} onClick={() => { setPaused((value) => !value); setSay(paused ? t("On reprend la partie.", "Back to the game.") : t("Partie en pause, vos cartes sont gardées. Reprenez quand vous voulez.", "Game paused, your cards are kept. Pick it up whenever you like.")); }}>{paused ? t("Reprendre", "Resume") : t("Plus tard", "Later")}</button>}
+      {!done && <TextButton onClick={() => { setPaused((value) => !value); setSay(paused ? t("On reprend la partie.", "Back to the game.") : t("Partie en pause, vos cartes sont gardées. Reprenez quand vous voulez.", "Game paused, your cards are kept. Pick it up whenever you like.")); }}>{paused ? t("Reprendre", "Resume") : t("Plus tard", "Later")}</TextButton>}
     </div>
 
-    {showHistory && history ? <div className={styles.history}>{history}<button type="button" className={styles.link} onClick={() => setShowHistory(false)}>{t("Retour à la partie", "Back to the game")}</button></div> : <div className={styles.stage}>
+    {showHistory && history ? <div className={styles.history}>{history}<TextButton onClick={() => setShowHistory(false)}>{t("Retour à la partie", "Back to the game")}</TextButton></div> : <div className={styles.stage}>
       {!done && <>
         <div className={styles.table}>
           <div className={styles.deck} aria-live="polite">
@@ -117,17 +120,17 @@ export default function UsagePlay({ rows, lang, format, freeOnly = false, histor
           </div>
         </div>
         <div className={styles.picks} role="group" aria-label={t("Votre réponse", "Your answer")}>
-          {PICKS.map((pick) => <button key={pick.id} type="button" className={styles.pick} data-pick={pick.id} disabled={paused} onClick={() => answer(pick.id)}>
+          {PICKS.map((pick) => <Chip key={pick.id} size="md" tone={pick.id === "cut" ? "cut" : "ink"} data-pick={pick.id} disabled={paused} onClick={() => answer(pick.id)}>
             {pick.id !== "cut" && <kbd aria-hidden="true">{pick.key}</kbd>}{tr(pick.label)}{pick.id === "cut" && <kbd aria-hidden="true">{pick.key}</kbd>}
-          </button>)}
+          </Chip>)}
         </div>
         <div className={styles.reply}><p className={styles.note} aria-live="polite">{say ?? t("Du figurant au copilote : à vous de distribuer les rôles.", "From cameo to co-pilot: you’re casting.")}</p>
-          {undo.length > 0 && <button type="button" className={styles.link} onClick={() => { const row = deck.find((r) => r.tool.id === undo[undo.length - 1]); if (row) replay(row); }}>{t("Annuler", "Undo")}</button>}</div>
+          {undo.length > 0 && <TextButton onClick={() => { const row = deck.find((r) => r.tool.id === undo[undo.length - 1]); if (row) replay(row); }}>{t("Annuler", "Undo")}</TextButton>}</div>
       </>}
       {done && <div className={styles.end}>
         <span className={styles.eyebrow}>{t("Casting au complet", "Full cast")}</span>
         {dust.length > 0 ? <>
-          <p className={styles.score}><span>{format(Math.round(score))}</span><small>{t("/mois", "/mo")}</small></p>
+          <p className={styles.score}><Amount size="figure" tone="overlap" value={format(Math.round(score))} unit={t("/mois", "/mo")} /></p>
           <p className={styles.text}>{t("prennent la poussière chez ", "gathering dust with ")}{dust.map((row, i) => <span key={row.tool.id}>{i > 0 && (i === dust.length - 1 ? t(" et ", " and ") : ", ")}<b className={styles.strong}>{row.tool.name}</b></span>)}{t(`, soit ${format(dustTotal * 12)} par an.`, `, that is ${format(dustTotal * 12)} a year.`)}</p>
           <p className={styles.note}>{quip}</p>
         </> : <>
@@ -135,9 +138,9 @@ export default function UsagePlay({ rows, lang, format, freeOnly = false, histor
           <p className={styles.text}>{t("Rien ne prend la poussière : chaque abonnement mérite son cachet.", "Nothing gathers dust: every subscription earns its fee.")}</p>
         </>}
         <div className={styles.endActs}>
-          <button type="button" className={styles.primary} onClick={onReviewTools}>{t("Voir ce que ça change", "See what it changes")}</button>
-          <button type="button" className={styles.link} onClick={replayAll}>{t("Rejouer", "Play again")}</button>
-          {history && <button type="button" className={styles.link} onClick={() => setShowHistory(true)}>{t("Mes choix", "My choices")}</button>}
+          <Button variant="primary" onClick={onReviewTools}>{t("Voir ce que ça change", "See what it changes")}</Button>
+          <TextButton onClick={replayAll}>{t("Rejouer", "Play again")}</TextButton>
+          {history && <TextButton onClick={() => setShowHistory(true)}>{t("Mes choix", "My choices")}</TextButton>}
         </div>
       </div>}
     </div>}

@@ -64,76 +64,6 @@
   gap: var(--tt-space-2);
 }
 
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--tt-space-2);
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: calc(var(--tt-space-1) * 1.5);
-  min-height: 36px;
-  padding: 0 calc(var(--tt-space-1) * 3.5);
-  border: 0;
-  border-radius: var(--tt-r-pill);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-hairline);
-  color: var(--tt-ink);
-  font: var(--tt-tag-font);
-  letter-spacing: 0;
-  cursor: pointer;
-  transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
-}
-
-/* The check that draws itself on the pressed chip. */
-.chip::before {
-  width: 0;
-  height: 10px;
-  border: solid currentColor;
-  border-width: 0 1.6px 1.6px 0;
-  opacity: 0;
-  content: "";
-  transform: rotate(45deg) translate(-1px, -2px);
-  transition: width var(--tt-dur-state) ease, opacity 200ms ease;
-}
-
-.chip:focus-visible {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
-}
-
-.chip[aria-pressed="true"] {
-  background: var(--tt-ink);
-  box-shadow: none;
-  color: var(--tt-bg);
-}
-
-.chip[aria-pressed="true"]::before {
-  width: 5px;
-  opacity: 1;
-}
-
-.chip:active {
-  transform: scale(0.97);
-}
-
-.count {
-  font-variant-numeric: tabular-nums;
-}
-
-.chip[data-alert] .count {
-  display: inline-grid;
-  place-items: center;
-  min-width: 20px;
-  height: 20px;
-  padding: 0 calc(var(--tt-space-1) * 1.25);
-  border-radius: var(--tt-r-pill);
-  background: var(--tt-overlap-strong);
-  color: var(--tt-on-color);
-}
-
 .select {
   position: relative;
   display: inline-flex;
@@ -213,21 +143,6 @@
 .iconSwitch svg {
   width: 16px;
   height: 16px;
-}
-
-.toggle {
-  composes: button from "../atoms.module.css";
-  gap: calc(var(--tt-space-1) * 1.5);
-}
-
-.toggle svg {
-  width: 16px;
-  height: 16px;
-}
-
-.toggle[aria-pressed="true"] {
-  background: var(--tt-ink);
-  color: var(--tt-bg);
 }
 
 @container (width <= 560px) {

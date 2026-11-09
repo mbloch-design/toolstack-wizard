@@ -1,4 +1,6 @@
 import { useId, type ReactNode } from "react";
+import { TextButton, linkClass } from "../Button/Button";
+import Amount from "../Amount/Amount";
 import styles from "./Decision.module.css";
 
 /** A way to look or defer. With href it is a real link (a new tab works); onClick then handles the in-page navigation. */
@@ -17,7 +19,7 @@ export type DecisionProps = {
   /** Ways to look or defer, at the foot on the left. */
   links?: DecisionLink[];
   /** The budget the answer leads to, at the foot on the right. */
-  preview?: { label: string; value: ReactNode; delta?: { text: string; down: boolean } | null };
+  preview?: { label: string; value: string; unit?: string; delta?: { text: string; down: boolean } | null };
   /** Lights up when another card sends a question here. */
   flash?: boolean;
   /** Kind of question, for tests and the page. */
@@ -54,13 +56,13 @@ export default function Decision({ lang, eyebrow, step, media, title, detail, ch
         <div className={styles.foot}>
           <div className={styles.links} data-links="">
             {links.map((link) => link.href
-              ? <a key={link.label} href={link.href} className={styles.link} data-quiet={link.quiet ? "" : undefined} onClick={(event) => { if (link.onClick) { event.preventDefault(); link.onClick(); } }}>{link.label}</a>
-              : <button key={link.label} type="button" className={styles.link} data-quiet={link.quiet ? "" : undefined} onClick={link.onClick}>{link.label}</button>)}
+              ? <a key={link.label} href={link.href} className={linkClass(link.quiet ? "quiet" : "label")} onClick={(event) => { if (link.onClick) { event.preventDefault(); link.onClick(); } }}>{link.label}</a>
+              : <button key={link.label} type="button" className={linkClass(link.quiet ? "quiet" : "label")} onClick={link.onClick}>{link.label}</button>)}
           </div>
           {preview && (
             <p className={styles.preview} aria-live="polite">
               <span className={styles.note}>{preview.label}</span>
-              <span className={styles.previewValue} data-nowrap="">{preview.value}</span>
+              <Amount value={preview.value} unit={preview.unit} />
               {preview.delta && <span key={preview.delta.text} className={styles.delta}>
                 <svg viewBox="0 0 24 24" aria-hidden="true" data-down={preview.delta.down ? "" : undefined}><path d={preview.delta.down ? "M12 5v14M6 13l6 6 6-6" : "M12 19V5M6 11l6-6 6 6"} /></svg>
                 {preview.delta.text}
@@ -86,7 +88,7 @@ export function DecisionRest({ lang, history, onAddTool }: { lang: "fr" | "en"; 
       </p>
       <p className={styles.detail}>{t("Chaque outil a trouvé sa place. Profitez-en, ça ne dure jamais très longtemps.", "Every tool has found its place. Enjoy it, it never lasts long.")}</p>
       {history && <div className={styles.history}>{history}</div>}
-      <div className={styles.foot}><div className={styles.links}><button type="button" className={styles.link} onClick={onAddTool}>{t("Ajouter un outil", "Add a tool")}</button></div></div>
+      <div className={styles.foot}><div className={styles.links}><TextButton onClick={onAddTool}>{t("Ajouter un outil", "Add a tool")}</TextButton></div></div>
     </section>
   );
 }

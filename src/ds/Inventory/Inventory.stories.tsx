@@ -3,7 +3,8 @@ import { useState } from "react";
 import { formatAmount } from "@/lib/currencyRates";
 import { LayoutGrid, List, Pencil, Check } from "@/lib/icons";
 import ToolCard, { ToolCards, ToolGroup, type ToolStatus } from "../ToolCard/ToolCard";
-import Toolbar, { FilterChips, IconSwitch, SectionHead, SortSelect, ToggleButton, ToolbarTools } from "../Toolbar/Toolbar";
+import Button from "../Button/Button";
+import Toolbar, { FilterChips, IconSwitch, SectionHead, SortSelect, ToolbarTools } from "../Toolbar/Toolbar";
 
 const meta: Meta = { title: "Ma stack/Inventaire", tags: ["a-valider"], parameters: { layout: "fullscreen" }, decorators: [(Story) => <div style={{ padding: 16, maxWidth: 1180 }}><Story /></div>] };
 export default meta;
@@ -43,7 +44,7 @@ function Inventory({ lang, layout: initialLayout = "grid", editing: initialEditi
           { value: "area", label: t(lang, "Domaine", "Area") }, { value: "cost", label: t(lang, "Coût", "Cost") }, { value: "name", label: t(lang, "Nom", "Name") }]} />
         <IconSwitch label={t(lang, "Affichage", "Layout")} value={layout} onChange={setLayout} options={[
           { value: "grid", label: t(lang, "Grille", "Grid"), icon: <LayoutGrid aria-hidden /> }, { value: "list", label: t(lang, "Liste", "List"), icon: <List aria-hidden /> }]} />
-        <ToggleButton pressed={editing} onClick={() => setEditing((value) => !value)}>{editing ? <Check aria-hidden /> : <Pencil aria-hidden />}{editing ? t(lang, "Terminé", "Done") : t(lang, "Modifier", "Edit")}</ToggleButton>
+        <Button pressed={editing} icon={editing ? <Check /> : <Pencil />} onClick={() => setEditing((value) => !value)}>{editing ? t(lang, "Terminé", "Done") : t(lang, "Modifier", "Edit")}</Button>
       </ToolbarTools>
     </Toolbar>
     {grouped

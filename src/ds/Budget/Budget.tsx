@@ -1,6 +1,7 @@
 import { useId } from "react";
 import Logo from "../Logo/Logo";
-import { displayFigure } from "../figure";
+import Button from "../Button/Button";
+import Amount from "../Amount/Amount";
 import styles from "./Budget.module.css";
 
 export type BudgetTool = { id: string; name: string; slug?: string; logo?: string; paid: boolean | null };
@@ -91,7 +92,7 @@ export default function Budget({ lang, tools, monthly, yearly, lead, saved = nul
 
       {monthly ? (
         <div className={styles.total}>
-          <p className={styles.figure} data-nowrap="">{displayFigure(monthly)}<small className={styles.unit}>{t("/mois", "/mo")}</small></p>
+          <p className={styles.figure}><Amount size="figure" value={monthly} unit={t("/mois", "/mo")} /></p>
           <p className={styles.text}>
             <b className={styles.strong}>{t("Soit ", "That's ")}<span data-nowrap="">{yearly}</span>{t(" par an.", " a year.")}</b>
             {quip && <> {quip}</>}
@@ -107,7 +108,7 @@ export default function Budget({ lang, tools, monthly, yearly, lead, saved = nul
         <div className={styles.start}>
           <h3 className={styles.titleM}>{t("On fait les comptes ?", "Let's talk budget.")}</h3>
           <p className={styles.text}>{t("Dites-nous quelle formule vous utilisez. Promis, pas de tableur.", "Tell us which plan you use. No spreadsheet required, promise.")}</p>
-          <button type="button" className={styles.primary} onClick={onStart}>{t("Préciser ma première formule", "Choose my first plan")}</button>
+          <Button variant="primary" onClick={onStart}>{t("Préciser ma première formule", "Choose my first plan")}</Button>
         </div>
       )}
 

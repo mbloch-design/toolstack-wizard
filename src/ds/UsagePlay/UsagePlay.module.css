@@ -17,7 +17,6 @@
 .text { composes: text from "../atoms.module.css"; }
 .note { composes: note from "../atoms.module.css"; }
 .strong { composes: strong from "../atoms.module.css"; }
-.primary { composes: primary from "../atoms.module.css"; }
 
 .head {
   display: flex;
@@ -28,27 +27,6 @@
 }
 
 /* A link whose line draws itself on hover. */
-.link {
-  padding: 0;
-  border: 0;
-  background: linear-gradient(currentColor, currentColor) 100% 100% / 0 1px no-repeat;
-  color: var(--tt-ink);
-  font: var(--tt-label-font);
-  letter-spacing: var(--tt-label-tracking);
-  cursor: pointer;
-  transition: background-size 320ms var(--tt-ease);
-}
-
-.link:hover,
-.link:focus-visible {
-  background-position: 0 100%;
-  background-size: 100% 1px;
-}
-
-.link:focus-visible {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
-}
 
 .stage {
   display: grid;
@@ -131,52 +109,11 @@
   transition: none;
 }
 
-/* The answers: the validated chip shape, without a chosen state (an answer leaves with the card). */
+/* The answers: chips without a pressed state (an answer leaves with the card). */
 .picks {
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: calc(var(--tt-space-1) * 1.5);
-}
-
-.pick {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--tt-space-2);
-  min-height: 44px;
-  padding: 0 calc(var(--tt-space-1) * 2.5);
-  border: 0;
-  border-radius: var(--tt-r-pill);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-hairline);
-  color: var(--tt-ink);
-  font: var(--tt-tag-font);
-  white-space: nowrap;
-  cursor: pointer;
-  transition: box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
-}
-
-.pick:focus-visible {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
-}
-
-.pick:hover {
-  box-shadow: var(--tt-hairline-ink);
-}
-
-.pick[data-pick="cut"]:hover {
-  box-shadow: var(--tt-hairline-overlap);
-  color: var(--tt-overlap-strong);
-}
-
-.pick:active {
-  transform: scale(0.97);
-}
-
-.pick kbd {
-  font: var(--tt-tag-font);
-  opacity: 0.45;
 }
 
 .play[data-paused] :is(.table, .picks) {
@@ -275,16 +212,7 @@
 }
 
 .score {
-  composes: figure from "../atoms.module.css";
-  display: flex;
-  align-items: baseline;
-  gap: var(--tt-space-1);
-  color: var(--tt-overlap-strong);
-}
-
-.score small {
-  font: var(--tt-unit-font);
-  letter-spacing: 0;
+  margin: 0;
 }
 
 .endActs {
@@ -335,7 +263,7 @@
 }
 
 @container (width <= 480px) {
-  .pick kbd {
+  .picks kbd {
     display: none;
   }
 }

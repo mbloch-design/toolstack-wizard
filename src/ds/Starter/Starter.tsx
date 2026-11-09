@@ -1,5 +1,6 @@
 import Logo from "../Logo/Logo";
 import type { LogoTool } from "@/lib/useToolLogoSource";
+import Button from "../Button/Button";
 import styles from "./Starter.module.css";
 
 /** One tool in the stack: the tool, two free seats beside it, and the way to add the next one. */
@@ -15,7 +16,7 @@ export default function Starter({ lang, tool, onAddTool, localLogosOnly = false 
       </span>
       <h2 className={styles.titleM}>{t("Votre stack prend forme.", "Your stack is taking shape.")}</h2>
       <p className={styles.text}>{t("Un outil, c’est un début. Ajoutez les autres : dès deux, on repère ce qui se recoupe et ce que ça coûte.", "One tool is a start. Add the others: from two on, we spot what overlaps and what it costs.")}</p>
-      <button type="button" className={styles.primary} onClick={onAddTool}>{plus}{t("Ajouter un autre outil", "Add another tool")}</button>
+      <Button variant="primary" icon={plus} onClick={onAddTool}>{t("Ajouter un autre outil", "Add another tool")}</Button>
     </article>
   );
 }

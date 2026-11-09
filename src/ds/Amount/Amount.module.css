@@ -1,0 +1,25 @@
+/* A sum and its unit. One gap after the figure, whatever the size. */
+
+.amount {
+  color: var(--tt-ink);
+  font: var(--tt-amount-font);
+  letter-spacing: var(--tt-amount-tracking);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.amount[data-size="figure"] {
+  font: var(--tt-figure-font);
+  letter-spacing: var(--tt-figure-tracking);
+  font-variant-numeric: normal;
+}
+
+.amount[data-tone="overlap"] {
+  color: var(--tt-overlap-strong);
+}
+
+.unit {
+  margin-left: var(--tt-space-1);
+  font: var(--tt-unit-font);
+  letter-spacing: 0;
+}
