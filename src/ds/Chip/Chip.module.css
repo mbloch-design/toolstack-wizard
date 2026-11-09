@@ -1,0 +1,100 @@
+/* Outlined pills: filters, team sizes, answers. Tag font, hairline, pressed in ink. */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-2);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--tt-space-1) * 1.5);
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0 calc(var(--tt-space-1) * 3.5);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-hairline);
+  color: var(--tt-ink);
+  font: var(--tt-tag-font);
+  letter-spacing: var(--tt-tag-tracking);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
+}
+
+.chip[data-size="md"] {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 calc(var(--tt-space-1) * 2.5);
+}
+
+.chip[data-check]::before {
+  width: 0;
+  height: 10px;
+  border: solid currentColor;
+  border-width: 0 1.6px 1.6px 0;
+  opacity: 0;
+  content: "";
+  transform: rotate(45deg) translate(-1px, -2px);
+  transition: width var(--tt-dur-state) ease, opacity 200ms ease;
+}
+
+.chip:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.chip:disabled {
+  opacity: var(--tt-disabled);
+  cursor: default;
+}
+
+.chip:hover:not(:disabled, [aria-pressed="true"]) {
+  box-shadow: var(--tt-hairline-ink);
+}
+
+.chip[data-tone="cut"]:hover:not(:disabled) {
+  box-shadow: var(--tt-hairline-overlap);
+  color: var(--tt-overlap-strong);
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--tt-ink);
+  box-shadow: none;
+  color: var(--tt-bg);  font-weight: var(--tt-w-on-ink);
+}
+
+.chip[data-check][aria-pressed="true"]::before {
+  width: 5px;
+  opacity: 1;
+}
+
+.chip:active:not(:disabled) {
+  transform: var(--tt-press);
+}
+
+.chip kbd {
+  font: var(--tt-tag-font);
+  letter-spacing: var(--tt-tag-tracking);
+  opacity: 0.45;
+}
+
+.count {
+  font-variant-numeric: tabular-nums;
+}
+
+.chip[data-alert] .count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 calc(var(--tt-space-1) * 1.25);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-overlap-strong);
+  color: var(--tt-on-color);
+}

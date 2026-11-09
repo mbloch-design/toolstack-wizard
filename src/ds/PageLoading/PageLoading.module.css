@@ -1,0 +1,85 @@
+.loading {
+  display: grid;
+  gap: var(--tt-space-8);
+  container-type: inline-size;
+}
+
+.title {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-title-xl-font);
+  letter-spacing: var(--tt-title-xl-tracking);
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-4);
+  min-height: 72px;
+}
+
+.mark {
+  display: inline-grid;
+  flex: none;
+}
+
+.mark img {
+  width: 40px;
+  height: 40px;
+}
+
+.words {
+  display: grid;
+  gap: var(--tt-space-1);
+}
+
+.message {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-title-m-font);
+  letter-spacing: var(--tt-title-m-tracking);
+}
+
+.note { composes: text from "../atoms.module.css"; }
+
+.outline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--tt-space-4);
+  max-width: 1000px;
+}
+
+.outline span {
+  height: 156px;
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
+}
+
+@container (width <= 640px) {
+  .outline {
+    grid-template-columns: 1fr;
+  }
+
+  .outline span {
+    height: 88px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mark {
+    animation: breathe 2s var(--tt-ease-io) infinite;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}

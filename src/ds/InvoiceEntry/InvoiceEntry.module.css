@@ -13,12 +13,6 @@
 }
 
 .note { composes: note from "../atoms.module.css"; }
-.primary { composes: primary from "../atoms.module.css"; }
-
-.primary:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
 
 .amount,
 .currency {
@@ -70,12 +64,13 @@
 
 .amount span {
   font: var(--tt-unit-font);
-  letter-spacing: 0;
+  letter-spacing: var(--tt-unit-tracking);
   white-space: nowrap;
 }
 
 .caption {
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
 }
 
 .currency select {

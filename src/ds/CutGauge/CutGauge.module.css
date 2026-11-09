@@ -51,8 +51,8 @@
   position: absolute;
   top: -2px;
   left: -8px;
-  width: 16px;
-  height: 16px;
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
   fill: var(--tt-brand-mark);
   transform: rotate(90deg);
 }
@@ -72,6 +72,7 @@
   margin: 0;
   color: var(--tt-ink);
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
 }
 
 .review {
@@ -84,6 +85,7 @@
   background: none;
   color: var(--tt-ink);
   font: inherit;
+  letter-spacing: inherit;
   cursor: pointer;
 }
 
@@ -106,7 +108,7 @@
 }
 
 .review:focus-visible::before {
-  outline: 2px solid var(--tt-focus);
+  outline: var(--tt-focus-ring);
 }
 
 .chevron {

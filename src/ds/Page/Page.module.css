@@ -1,0 +1,27 @@
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--tt-page-gap);
+  color: var(--tt-ink);
+  font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
+  container-type: inline-size;
+}
+
+/* The page itself: centred, with its margins. A group sits inside it without margins. */
+.page[data-page] {
+  max-width: var(--tt-page-max);
+  margin-inline: auto;
+  padding: var(--tt-space-12) var(--tt-space-12) var(--tt-space-16);
+}
+
+@media (width <= 639px) {
+  .page[data-page] {
+    padding: var(--tt-space-6) var(--tt-space-4) var(--tt-space-12);
+  }
+}
+
+.page > * {
+  min-width: 0;
+  margin-block: 0;
+}

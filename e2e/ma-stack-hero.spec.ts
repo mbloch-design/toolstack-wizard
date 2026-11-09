@@ -42,16 +42,16 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
     // Read first: what the stack costs, then the one decision of the moment.
     await expect(page.locator('[data-card="price"]')).toContainText(fr ? "Votre stack" : "Your stack");
     const map = page.getByRole("group", { name: fr ? "Mes outils" : "My tools", exact: true });
-    await expect(map.locator(".tt-toolcard")).toHaveCount(10);
-    await expect(page.locator(".tt-toolcard")).toHaveCount(10);
+    await expect(map.locator("[data-tool-id]")).toHaveCount(10);
+    await expect(page.locator("[data-tool-id]")).toHaveCount(10);
     // Every card says what the tool costs and its status.
-    await expect(map.locator(".tt-toolcard .tt-amount")).toHaveCount(10);
-    await expect(map.locator(".tt-toolcard .tt-tag")).toHaveCount(10);
+    await expect(map.locator("[data-tool-id] [data-amount]")).toHaveCount(10);
+    await expect(map.locator("[data-tool-id] [data-status-tag]")).toHaveCount(10);
     // The map opens the tool sheet.
     await map.getByRole("button").first().click();
-    await expect(page.locator(".ms-tool-sheet")).toBeVisible();
+    await expect(page.locator("[data-drawer]")).toBeVisible();
     await page.keyboard.press("Escape");
-    await expect(page.locator(".ms-tool-sheet")).toHaveCount(0);
+    await expect(page.locator("[data-drawer]")).toHaveCount(0);
     // One decision at a time: answering moves the deck and the ring.
     const deck = page.getByRole("region", { name: fr ? "Prochaine décision" : "Next decision" });
     await expect(deck.getByRole("heading", { level: 3 })).toHaveCount(1);
@@ -66,10 +66,10 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
     await expect(deck.locator("[data-choice=keep]")).toHaveCount(2);
     await expect(deck.locator("[data-choice=both]")).toBeVisible();
     // The same stack as cards, then as a list.
-    await page.locator(".tt-iconswitch").getByRole("button", { name: fr ? "Liste" : "List", exact: true }).click();
-    await expect(page.locator('#ms-all-grid[data-layout="list"] .tt-toolcard')).toHaveCount(10);
-    await page.locator(".tt-iconswitch").getByRole("button", { name: fr ? "Grille" : "Grid", exact: true }).click();
-    await expect(page.locator('#ms-all-grid[data-layout="grid"] .tt-toolcard')).toHaveCount(10);
+    await page.getByRole("group", { name: /^(Affichage|Layout)$/ }).getByRole("button", { name: fr ? "Liste" : "List", exact: true }).click();
+    await expect(page.locator('#ms-all-grid[data-layout=list] [data-tool-id]')).toHaveCount(10);
+    await page.getByRole("group", { name: /^(Affichage|Layout)$/ }).getByRole("button", { name: fr ? "Grille" : "Grid", exact: true }).click();
+    await expect(page.locator('#ms-all-grid[data-layout=grid] [data-tool-id]')).toHaveCount(10);
     expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBe(0);
   });
 }

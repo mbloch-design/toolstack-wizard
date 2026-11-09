@@ -1,5 +1,6 @@
-/* Text atoms of the system, written once from the tokens. Components compose them:
-   .title { composes: eyebrow from "../atoms.module.css"; } */
+/* Atoms of the system, written once from the tokens. Components compose them:
+   .title { composes: eyebrow from "../atoms.module.css"; }
+   Text (eyebrow, titleM, label, text, note, strong), surfaces (tile, raised), focus. */
 
 .eyebrow {
   margin: 0;
@@ -29,6 +30,7 @@
   margin: 0;
   color: var(--tt-ink);
   font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
   text-wrap: pretty;
 }
 
@@ -36,55 +38,35 @@
   margin: 0;
   color: var(--tt-ink);
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
   text-wrap: pretty;
 }
 
-.figure {
-  margin: 0;
-  color: var(--tt-ink);
-  font: var(--tt-figure-font);
-  letter-spacing: var(--tt-figure-tracking);
-  white-space: nowrap;
-}
-
-.unit {
-  margin-left: var(--tt-space-1);
-  font: var(--tt-unit-font);
-  letter-spacing: 0;
-}
-
 .strong {
-  font-weight: var(--tt-w-strong);
+  font-weight: var(--tt-w-em);
 }
 
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40px;
-  padding: 0 var(--tt-space-5);
-  border: 0;
-  border-radius: var(--tt-r-pill);
-  background: var(--tt-tile-2);
+/* A card of the board: grey tile, large radius, its own container for its layout. */
+.tile {
+  display: grid;
+  gap: var(--tt-tile-gap);
+  align-content: start;
+  padding: var(--tt-tile-pad);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
   color: var(--tt-ink);
-  font: var(--tt-label-font);
-  letter-spacing: var(--tt-label-tracking);
-  cursor: pointer;
-  transition: transform var(--tt-dur-press) ease;
+  container-type: inline-size;
 }
 
-.button:active {
-  transform: scale(0.97);
+/* A white card lifted off a tile (the top card of Vos usages). */
+.raised {
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-card-lift);
 }
 
-.button:focus-visible {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
-}
-
-/* Act: ink, after .button so it wins. The one thing a state asks of the user. */
-.primary {
-  composes: button;
-  background: var(--tt-ink);
-  color: var(--tt-bg);
+/* Keyboard focus, for anything that can take it. */
+.focus:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }

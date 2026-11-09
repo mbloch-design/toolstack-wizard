@@ -27,7 +27,9 @@
         "row-gap",
         "column-gap",
         "border-radius",
-        "box-shadow"
+        "box-shadow",
+        "outline",
+        "outline-offset"
       ],
       {
         "ignoreValues": [

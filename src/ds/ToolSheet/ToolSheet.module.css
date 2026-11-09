@@ -1,0 +1,171 @@
+/* The parts of a tool's sheet. One large figure (the cost); everything else reads at 16 and 14. */
+
+.eyebrow { composes: eyebrow from "../atoms.module.css"; }
+.label { composes: label from "../atoms.module.css"; }
+.note { composes: note from "../atoms.module.css"; }
+.text { composes: text from "../atoms.module.css"; }
+
+.headBlock {
+  display: grid;
+  gap: var(--tt-space-4);
+  justify-items: start;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-4);
+  padding-right: var(--tt-space-10);
+}
+
+.logo {
+  flex: none;
+}
+
+.titles {
+  display: grid;
+  gap: var(--tt-space-1);
+  min-width: 0;
+}
+
+.costCard {
+  display: grid;
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-hairline);
+}
+
+.costCard > * + * {
+  box-shadow: var(--tt-hairline-top);
+}
+
+.costFigure {
+  display: grid;
+  gap: var(--tt-space-1);
+  justify-items: start;
+  padding: var(--tt-space-5);
+}
+
+.figure {
+  margin-top: var(--tt-space-1);
+  color: var(--tt-ink);
+  font: var(--tt-figure-font);
+  letter-spacing: var(--tt-figure-tracking);
+  white-space: nowrap;
+}
+
+.row,
+.disclosure {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-4);
+  padding: var(--tt-space-3) var(--tt-space-5);
+}
+
+.disclosure {
+  composes: focus from "../atoms.module.css";
+  width: 100%;
+  border: 0;
+  background: none;
+  color: var(--tt-ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.rowText {
+  display: grid;
+  gap: calc(var(--tt-space-1) / 2);
+  min-width: 0;
+}
+
+.chevron {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--tt-r-round);
+  background: var(--tt-tile-2);
+  transition: transform var(--tt-dur-move) var(--tt-spring);
+}
+
+.disclosure[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.chevron svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.panel {
+  padding: 0 var(--tt-space-5) var(--tt-space-5);
+}
+
+.section {
+  display: grid;
+  gap: var(--tt-space-3);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toolRows {
+  display: grid;
+  gap: var(--tt-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toolRow {
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-3);
+  padding: var(--tt-space-3) var(--tt-space-4) var(--tt-space-3) var(--tt-space-3);
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-hairline);
+}
+
+.toolMain {
+  composes: focus from "../atoms.module.css";
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--tt-space-3);
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--tt-r-chip);
+  background: none;
+  color: var(--tt-ink);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.foot {
+  display: grid;
+  gap: var(--tt-space-4);
+  justify-items: center;
+}
+
+.footActions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: var(--tt-space-2);
+  width: 100%;
+}

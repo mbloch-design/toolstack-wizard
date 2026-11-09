@@ -6,7 +6,6 @@
 }
 
 .strong { composes: strong from "../atoms.module.css"; }
-.primary { composes: primary from "../atoms.module.css"; }
 
 .plan {
   display: flex;
@@ -16,15 +15,7 @@
   gap: var(--tt-space-1) var(--tt-space-3);
   margin: 0;
   font: var(--tt-text-font);
-}
-
-.link {
-  padding: 0;
-  border: 0;
-  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
-  color: var(--tt-ink);
-  font: var(--tt-text-font);
-  cursor: pointer;
+  letter-spacing: var(--tt-text-tracking);
 }
 
 .question {
@@ -45,55 +36,12 @@
   gap: var(--tt-space-1);
 }
 
-.presets button,
-.stepper button {
-  display: grid;
-  place-items: center;
-  min-width: 40px;
-  height: 40px;
-  padding: 0 var(--tt-space-2);
-  border: 0;
-  border-radius: var(--tt-r-pill);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-row-ring);
-  color: var(--tt-ink);
-  font: var(--tt-label-font);
-  letter-spacing: 0;
-  font-variant-numeric: tabular-nums;
-  cursor: pointer;
-}
-
-.presets button[aria-pressed="true"] {
-  box-shadow: var(--tt-row-ring-on);
-}
-
-.stepper {
-  display: flex;
-  align-items: center;
-  gap: var(--tt-space-2);
-}
-
-.stepper output {
-  min-width: 3ch;
-  font: var(--tt-amount-font);
-  letter-spacing: var(--tt-amount-tracking);
-  text-align: center;
-  font-variant-numeric: tabular-nums;
-}
-
-.stepper button[aria-disabled="true"] {
-  opacity: 0.4;
-}
-
-/* « Il faut bien quelqu'un pour payer. »: the stepper shakes once. */
-.stepper[data-nope] {
-  animation: nope 360ms var(--tt-ease);
-}
-
+/* « Il faut bien quelqu'un pour payer. » under the stepper when « − » refuses. */
 .nudge {
   min-height: 1lh;
   margin: 0;
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
 }
 
 .crew {
@@ -120,8 +68,8 @@
 }
 
 .people svg {
-  width: 18px;
-  height: 18px;
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
   fill: none;
   stroke: var(--tt-ink);
   stroke-width: 1.8;
@@ -130,16 +78,13 @@
 
 .people em {
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
   font-style: normal;
 }
 
 .sum {
   font: var(--tt-text-font);
-}
-
-@keyframes nope {
-  25% { transform: translateX(-4px); }
-  75% { transform: translateX(4px); }
+  letter-spacing: var(--tt-text-tracking);
 }
 
 @keyframes pop {
@@ -150,6 +95,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .stepper[data-nope],
   .people i { animation: none; }
 }

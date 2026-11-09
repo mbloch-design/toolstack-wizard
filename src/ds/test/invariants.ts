@@ -8,13 +8,14 @@ function lineCount(range: Range): number {
   return lines.length;
 }
 
-/** Words (runs without any space, non-breaking spaces included) that the browser split over two lines. */
+/** Words (runs without spaces or hyphens, non-breaking spaces included) that the browser split over two lines. */
 export function brokenWords(root: HTMLElement): string[] {
   const found: string[] = [];
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
   while (walker.nextNode()) {
     const node = walker.currentNode as Text;
-    for (const match of node.data.matchAll(/\S+/g)) {
+    // A word is a run between spaces and hyphens: a line may break after a hyphen (« Profitez-|en »), never inside a part.
+    for (const match of node.data.matchAll(/[^\s\-\u2010\u2011]+/g)) {
       const range = document.createRange();
       range.setStart(node, match.index); range.setEnd(node, match.index + match[0].length);
       if (lineCount(range) > 1) found.push(match[0]);

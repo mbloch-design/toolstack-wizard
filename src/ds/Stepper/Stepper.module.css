@@ -1,0 +1,78 @@
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-1);
+}
+
+.button {
+  composes: focus from "../atoms.module.css";
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--tt-r-round);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-hairline);
+  color: var(--tt-ink);
+  cursor: pointer;
+  transition: box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
+}
+
+.button:hover:not([aria-disabled="true"]) {
+  box-shadow: var(--tt-hairline-ink);
+}
+
+.button:active:not([aria-disabled="true"]) {
+  transform: var(--tt-press-round);
+}
+
+.button[aria-disabled="true"] {
+  opacity: var(--tt-disabled);
+  cursor: default;
+}
+
+.button svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+}
+
+.value {
+  position: relative;
+  overflow: hidden;
+  min-width: 36px;
+  color: var(--tt-ink);
+  font: var(--tt-amount-font);
+  letter-spacing: var(--tt-amount-tracking);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .stepper[data-refused="a"] {
+    animation: shake-a 380ms var(--tt-ease-io);
+  }
+
+  .stepper[data-refused="b"] {
+    animation: shake-b 380ms var(--tt-ease-io);
+  }
+}
+
+@keyframes shake-a {
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(2px); }
+}
+
+@keyframes shake-b {
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(2px); }
+}

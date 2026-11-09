@@ -2,14 +2,15 @@ import StackInvoiceEntry from "@/ds/InvoiceEntry/InvoiceEntry";
 import { CURRENCY_RATE_DATE, type Currency } from "@/lib/currencyRates";
 import StackUsagePlay from "@/ds/UsagePlay/UsagePlay";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
-import { Rocket, Moon, Zap, Plus } from "@/lib/icons";
-import ToolLogo from "@/components/ToolLogo";
+import { Rocket, Moon, Zap } from "@/lib/icons";
 import Budget, { type BudgetTool } from "@/ds/Budget/Budget";
 import Split from "@/ds/Split/Split";
 import Decision, { DecisionRest, type DecisionLink } from "@/ds/Decision/Decision";
 import Choice, { Choices, IconTile } from "@/ds/Choice/Choice";
 import Seats from "@/ds/Seats/Seats";
 import Logo from "@/ds/Logo/Logo";
+import Board from "@/ds/Board/Board";
+import Starter from "@/ds/Starter/Starter";
 import { useNavigate } from "react-router-dom";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
@@ -87,7 +88,6 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   const t = (a: string, b: string) => (fr ? a : b);
   const navigate = useNavigate();
   const rateDate = new Date(`${CURRENCY_RATE_DATE}T00:00:00Z`).toLocaleDateString(fr ? "fr-FR" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).replace(/ /g, "\u00a0");
-  const s = (n: number) => (n > 1 ? "s" : "");
   const [later, setLater] = useState<string[]>([]);
   // On a phone each card is a summary line; one opens at a time.
   // No accordion: in one column every card stays open, in reading order (the decision is the page’s action).
@@ -148,19 +148,8 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
     if (answerTimer.current !== null) { clearTimeout(answerTimer.current); answerTimer.current = null; }
     setPickedTile(null); setPicked(null); setPreview(null); setSeatPlan(null); setSeats(1);
   }, [top?.key, scope, scopeEpoch]);
-  const rest = order.slice(1);
   const step = Math.max(1, peak - items.length + 1);
 
-  // What comes next, grouped by kind; two groups at most.
-  const groups = (["pair", "freemium", "price"] as const).flatMap((kind) => {
-    const list = rest.filter((item) => item.kind === kind);
-    if (!list.length) return [];
-    const n = list.length, stake = list.reduce((sum, item) => sum + (item.stake || 0), 0);
-    const tools = [...new Map(list.flatMap((item) => item.tools).map((tool) => [tool.id, tool])).values()].slice(0, 2);
-    return [kind === "pair" ? { kind, tools, title: t(`${n} autre${s(n)} doublon${s(n)}`, `${n} more duplicate${s(n)}`), text: stake > 0 ? t(`${format(stake)} par mois en jeu.`, `${format(stake)} a month at stake.`) : t("À trancher ensuite.", "To settle next.") }
-      : kind === "freemium" ? { kind, tools, title: t(`${n} abonnement${s(n)} à confirmer`, `${n} plan${s(n)} to confirm`), text: t("Payant ou gratuit ? Une question chacun.", "Paid or free? One question each.") }
-      : { kind, tools, title: t(`${n} prix à compléter`, `${n} price${s(n)} to add`), text: n > 1 ? t("Pour un budget au centime près.", "For a budget down to the cent.") : t("Le dernier, courage.", "The last one, hang in there.") }];
-  }).slice(0, 2);
 
   // The Budget card: every tool once, the most expensive first, then those whose price is not known yet, then the free ones.
   const unsure = items.filter((item) => item.kind === "price" || item.kind === "freemium");
@@ -170,14 +159,9 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
     ...pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => ({ ...tool, paid: null })),
     ...freeTools.map((tool) => ({ ...tool, paid: false })),
   ];
-  return <section className="mf" aria-label={t("Ma stack en bref", "My stack at a glance")}>
-    <div className="tt-board" data-starter={toolCount === 1 ? "" : undefined} data-sparse={top && total === 0 && fit.length === 0 ? "" : undefined} data-compact={!top && toolCount > 1 && total === 0 && fit.length === 0 ? "" : undefined} data-next={groups.length} data-done={top ? undefined : ""}>
-      {/* Organisme « tableau » du système (planche, gabarit Ma stack), un bento lu constat, action, détail : budget et décision, puis vos usages et la répartition. L'ordre du DOM est l'ordre de lecture, sur mobile aussi. */}
-      {/* 1. Read first: what the stack costs, and the verdict under it. */}
-      {/* Organisme « budget » du système (planche, chapitre 06 et gabarit Ma stack). */}
-      {/* The macro view, a design system component (src/ds/Budget, validated 06/11/2026). The slot only places it in the board.
-          Invoice cents stay visible; only a converted total is rounded (no false precision after a rate). */}
-      <div className="tt-slot" data-card="price">
+  // The board (src/ds/Board) places the cards; each one is a design system component. The data-card wrappers carry no style.
+  return <Board label={t("Ma stack en bref", "My stack at a glance")}
+    budget={<div data-card="price">
         <Budget lang={fr ? "fr" : "en"} tools={budgetTools} monthly={total > 0 ? format(converted ? Math.round(total) : total) : null} yearly={total > 0 ? format(converted ? Math.round(total * 12) : total * 12) : null}
           saved={saved > 0 ? format(Math.round(saved)) : null}
           lead={spend.length > 0 && total > 0 ? { name: spend[0].tool.name, share: Math.round((spend[0].amount / total) * 100) } : null}
@@ -185,9 +169,8 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           rateDate={converted ? rateDate : null}
           onConfirmNext={() => { if (!unsure[0]) return; setFirst(unsure[0].key); setLater((keys) => keys.filter((key) => key !== unsure[0].key)); setFlash(Date.now()); }}
           onStart={() => { const next = unsure[0]; if (!next) return; setFirst(next.key); setLater((keys) => keys.filter((key) => key !== next.key)); requestAnimationFrame(() => document.querySelector('[data-card="decision"]')?.scrollIntoView({ block: "center", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" })); }} />
-      </div>
-      {/* 2. The one thing to do now (src/ds/Decision), or the card at rest once everything is settled. Logic stays here; the card only shows it. */}
-      {top ? (() => {
+      </div>}
+    action={top ? (() => {
         const partial = items.some((item) => item.kind === "price" || item.kind === "freemium");
         const showPreview = !!(top.plans?.length || top.kind === "pair" || top.savePrice || (top.kind === "freemium" && top.options));
         const links: DecisionLink[] = [
@@ -206,7 +189,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         const chosen = tiles?.find((plan) => plan.key === seatPlan);
         const max = Math.max(1, ...(tiles ?? []).map((x) => x.monthly));
         const workTime = (monthly: number) => { if (!hourly) return null; if (monthly === 0) return t("0 min de votre travail", "0 min of your work"); const minutes = Math.max(1, Math.round((monthly / hourly) * 60)); return minutes < 60 ? t(`≈ ${minutes} min de votre travail`, `≈ ${minutes} min of your work`) : t(`≈ ${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} de votre travail`, `≈ ${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} of your work`); };
-        const per = <small>{t("/mois", "/mo")}</small>;
+        const per = t("/mois", "/mo");
         return <Decision key={`${top.key}-${flash}`} lang={fr ? "fr" : "en"} kind={top.kind} label={t("Prochaine décision", "Next decision")} flash={!!flash}
           eyebrow={guide && (top.kind === "price" || top.kind === "freemium") ? t("Étape suivante", "Next step") : t("Votre décision", "Your decision")}
           step={peak > 1 ? { current: step, total: peak } : undefined}
@@ -216,7 +199,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           links={links}
           preview={showPreview ? {
             label: partial ? t("Budget partiel", "Partial budget") : t("Budget estimé", "Estimated budget"),
-            value: preview === null && total === 0 && partial ? t("À renseigner", "Not set yet") : <>{format(preview ?? total)}{per}</>,
+            ...(preview === null && total === 0 && partial ? { value: t("À renseigner", "Not set yet") } : { value: format(preview ?? total), unit: per }),
             delta: preview !== null && preview !== total ? { text: `${preview > total ? "+" : "−"}${format(Math.abs(preview - total))}`, down: preview < total } : null,
           } : undefined}>
           {/* A duplicate: keep one, keep the other, or keep both; each says what it does to the budget. */}
@@ -231,7 +214,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 const gone = top.tools[1 - index];
                 return <Choice key={tool.id} data-choice="keep" media={<Logo tool={tool} />} name={<>{t("Garder", "Keep")} {tool.name}</>} tag={own < other ? t("Le moins cher", "Cheaper") : undefined}
                   note={`${gone ? t(`${gone.name} quitte la stack`, `${gone.name} leaves the stack`) : ""} · ${own > 0 ? t(`seul, ${format(own)}/mois`, `alone, ${format(own)}/mo`) : t("seul, gratuit", "alone, free")}`}
-                  amount={other > 0 ? <>−{format(other)}{per}</> : t("Aucune économie", "No saving")} saving={other > 0}
+                  amount={other > 0 ? `−${format(other)}` : t("Aucune économie", "No saving")} unit={other > 0 ? per : undefined} saving={other > 0}
                   state={state(index)} checked={picked === index} disabled={picked !== null} ariaLabel={keep?.ariaLabel || keep?.label}
                   onClick={() => pick(index, keep?.onClick)} onPreview={(on) => setPreview(on ? total - other : null)} />;
               })}
@@ -251,7 +234,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
               const PlanIcon = plan.monthly === 0 ? Moon : plan.monthly >= max ? Rocket : Zap;
               const detail = [qualifier, plan.monthly === 0 ? t("Rien à payer", "Nothing to pay") : plan.note || t("par mois", "a month"), workTime(plan.monthly)].filter(Boolean).join(" · ");
               return <Choice key={plan.key} role="radio" data-plan={plan.key} media={<IconTile><PlanIcon /></IconTile>} name={main} note={detail}
-                amount={plan.monthly > 0 ? <>{format(plan.monthly)}{per}</> : t("Gratuit", "Free")}
+                amount={plan.monthly > 0 ? format(plan.monthly) : t("Gratuit", "Free")} unit={plan.monthly > 0 ? per : undefined}
                 state={pickedTile === null ? undefined : pickedTile === plan.key ? "kept" : "gone"} checked={pickedTile === plan.key}
                 onPreview={(on) => setPreview(on ? total + plan.monthly : null)}
                 onClick={() => { if (plan.perSeat) { setSeatPlan(plan.key); setSeats(1); setPreview(total + plan.monthly); } else pickTile(plan.key, () => plan.pick()); }} />;
@@ -265,22 +248,12 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           </Choices>}
           {toolCount <= 1 && history}
         </Decision>;
-      })() : toolCount > 1 ? <DecisionRest lang={fr ? "fr" : "en"} history={history} onAddTool={onAddTool} /> : null}
-      {toolCount === 1 && !top && <article className="tt-starter">
-        {/* The one tool, and two free seats waiting next to it. */}
-        <span className="tt-seats" aria-hidden="true">{(spend[0]?.tool || freeTools[0]) ? <span className="tt-seat" data-on=""><ToolLogo tool={(spend[0]?.tool || freeTools[0])!} size={30} /></span> : null}<span className="tt-seat"><Plus /></span><span className="tt-seat"><Plus /></span></span>
-        <h2 className="tt-title-m">{t("Votre stack prend forme.", "Your stack is taking shape.")}</h2>
-        <p className="tt-text">{t("Un outil, c’est un début. Ajoutez les autres : dès deux, on repère ce qui se recoupe et ce que ça coûte.", "One tool is a start. Add the others: from two on, we spot what overlaps and what it costs.")}</p>
-        <button type="button" className="tt-btn" onClick={onAddTool}><Plus aria-hidden />{t("Ajouter un autre outil", "Add another tool")}</button>
-      </article>}
-      {toolCount > 1 && (fit.length > 0 || !top || history) && <StackUsagePlay key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format}
-        freeOnly={total === 0 && freeTools.length === toolCount} history={top ? history : undefined} onReviewTools={onReviewTools} />}
-      {/* Where the money goes, a design system component (src/ds/Split). The slot only places it in the board. */}
-      {toolCount > 1 && total > 0 && <div className="tt-slot" data-card="split">
+      })() : toolCount > 1 ? <DecisionRest lang={fr ? "fr" : "en"} history={history} onAddTool={onAddTool} /> : toolCount === 1 ? <Starter lang={fr ? "fr" : "en"} tool={spend[0]?.tool || freeTools[0]} onAddTool={onAddTool} /> : undefined}
+    usage={(toolCount > 1 && (fit.length > 0 || !top || history) && <StackUsagePlay key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format}
+        freeOnly={total === 0 && freeTools.length === toolCount} history={top ? history : undefined} onReviewTools={onReviewTools} />) || undefined}
+    split={(toolCount > 1 && total > 0 && <div data-card="split">
         <Split lang={fr ? "fr" : "en"} format={format} unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => tool.name)} rateDate={converted ? rateDate : null}
           areas={areas.map((area) => ({ id: area.id, label: area.label, color: area.color, amount: area.amount, tools: (area.tools || []).map((row) => ({ ...row.tool, amount: row.amount })) }))}
           />
-      </div>}
-    </div>
-  </section>;
+      </div>) || undefined} />;
 }

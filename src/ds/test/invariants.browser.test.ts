@@ -9,6 +9,14 @@ describe("layout invariants", () => {
     const el = mount(`<p style="width:40px;overflow-wrap:anywhere;font:16px sans-serif">Vercel</p>`);
     expect(brokenWords(el)).toEqual(["Vercel"]);
   });
+  it("accepts a line break after a hyphen (« Profitez-en »)", () => {
+    const el = mount(`<p style="width:70px;font:16px sans-serif">Profitez-en</p>`);
+    expect(brokenWords(el)).toEqual([]);
+  });
+  it("still finds a break inside one part of a hyphenated word", () => {
+    const el = mount(`<p style="width:30px;overflow-wrap:anywhere;font:16px sans-serif">Profitez-en</p>`);
+    expect(brokenWords(el)).toContain("Profitez");
+  });
   it("accepts a name that wraps between words", () => {
     const el = mount(`<p style="width:90px;font:16px sans-serif">Adobe Illustrator</p>`);
     expect(brokenWords(el)).toEqual([]);

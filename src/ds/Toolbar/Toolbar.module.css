@@ -1,0 +1,157 @@
+/* Section head and the inventory toolbar, as validated (.tt-sectionhead, .tt-toolbar, .tt-fchip, .tt-select, .tt-iconswitch). */
+
+.note { composes: note from "../atoms.module.css"; }
+
+.titleSection {
+  margin: 0;
+  outline: none;
+  font: var(--tt-title-section-font);
+  letter-spacing: var(--tt-title-section-tracking);
+  text-wrap: balance;
+}
+
+.section {
+  display: grid;
+  gap: var(--tt-space-5);
+}
+
+.sectionFoot {
+  display: flex;
+  justify-content: center;
+}
+
+.sectionHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--tt-space-3) var(--tt-space-6);
+}
+
+.sectionText {
+  display: grid;
+  gap: calc(var(--tt-space-1) * 1.5);
+  max-width: 60ch;
+}
+
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-2) var(--tt-space-3);
+}
+
+.sectionAction {
+  display: flex;
+  gap: var(--tt-space-2);
+}
+
+.toolbar {
+  container-type: inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-3);
+  padding-bottom: var(--tt-space-4);
+  box-shadow: var(--tt-hairline-bottom);
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-2);
+}
+
+.select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-1);
+  min-height: 40px;
+  padding: 0 calc(var(--tt-space-1) * 8.5) 0 var(--tt-space-4);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile-2);
+  color: var(--tt-ink);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+  cursor: pointer;
+}
+
+.select:focus-within {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+/* The whole pill opens the menu: the select covers it, its text stays in place. */
+.select select {
+  appearance: none;
+  border: 0;
+  outline: none;
+  background: none;
+  color: inherit;
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  cursor: pointer;
+}
+
+.select svg {
+  position: absolute;
+  right: calc(var(--tt-space-1) * 3.5);
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.iconSwitch {
+  display: inline-flex;
+  gap: calc(var(--tt-space-1) / 2);
+  padding: calc(var(--tt-space-1) * 0.75);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile-2);
+}
+
+.iconSwitch > button {
+  display: inline-grid;
+  place-items: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 var(--tt-space-2);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: none;
+  color: var(--tt-ink);
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease;
+}
+
+.iconSwitch > button:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.iconSwitch > button[aria-pressed="true"] {
+  background: var(--tt-bg);
+  box-shadow: var(--tt-chip-raise);
+}
+
+.iconSwitch svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+@container (width <= 560px) {
+  .tools {
+    width: 100%;
+  }
+
+  .tools .select {
+    flex: 1;
+  }
+}

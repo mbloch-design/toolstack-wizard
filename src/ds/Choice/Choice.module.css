@@ -20,6 +20,7 @@
   box-shadow: var(--tt-row-ring);
   color: var(--tt-ink);
   font: inherit;
+  letter-spacing: inherit;
   text-align: left;
   cursor: pointer;
   transition: box-shadow var(--tt-dur-state) ease, opacity var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
@@ -31,8 +32,8 @@
 }
 
 .choice:focus-visible {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
 
 .choice:hover:not(:disabled) {
@@ -85,8 +86,8 @@
 }
 
 .iconTile svg {
-  width: 18px;
-  height: 18px;
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
 }
 
 .check {
@@ -99,13 +100,13 @@
   height: 20px;
   border-radius: var(--tt-r-round);
   background: var(--tt-brand);
-  outline: 2px solid var(--tt-bg);
+  box-shadow: var(--tt-badge-cut);
   color: var(--tt-on-color);
 }
 
 .check svg {
-  width: 12px;
-  height: 12px;
+  width: var(--tt-icon-xs);
+  height: var(--tt-icon-xs);
   fill: none;
   stroke: currentColor;
   stroke-width: 3;
@@ -130,32 +131,13 @@
 
 .note {
   font: var(--tt-note-font);
-}
-
-.tag {
-  display: inline-flex;
-  align-items: center;
-  min-height: 26px;
-  padding: 0 calc(var(--tt-space-1) * 2.5);
-  border-radius: var(--tt-r-pill);
-  background: var(--tt-tile);
-  font: var(--tt-tag-font);
-  letter-spacing: 0;
+  letter-spacing: var(--tt-note-tracking);
 }
 
 .amount {
   display: inline-flex;
   align-items: center;
   gap: var(--tt-space-1);
-  font: var(--tt-amount-font);
-  letter-spacing: var(--tt-amount-tracking);
-  white-space: nowrap;
-}
-
-.amount small {
-  margin-left: calc(var(--tt-space-1) / 2);
-  font: var(--tt-unit-font);
-  letter-spacing: 0;
 }
 
 /* A saving: the figure in ink (the gain green fails contrast as text), the arrow in the gain colour. */

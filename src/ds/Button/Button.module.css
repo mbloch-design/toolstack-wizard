@@ -1,0 +1,220 @@
+/* The system's buttons and text links. One font (label), one pill, the same states everywhere. */
+
+.button {
+  display: inline-flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tt-space-2);
+  min-height: 40px;
+  padding: 0 var(--tt-space-5);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile-2);
+  color: var(--tt-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease, opacity var(--tt-dur-state) ease;
+}
+
+.button[data-size="lg"] {
+  min-height: 48px;
+  padding: 0 var(--tt-space-6);
+}
+
+/* Light text on ink glows and reads bolder: one step finer. */
+.button[data-variant="primary"],
+.button[aria-pressed="true"] {
+  background: var(--tt-ink);
+  color: var(--tt-bg);
+  font-weight: var(--tt-w-on-ink);
+}
+
+.button[data-variant="quiet"] {
+  min-height: 0;
+  padding: 0;
+  background: linear-gradient(currentColor, currentColor) 100% 100% / 0 1px no-repeat;
+  transition: background-size 320ms var(--tt-ease);
+}
+
+.button:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.button:disabled {
+  opacity: var(--tt-disabled);
+  cursor: default;
+}
+
+.button[data-variant="secondary"]:hover:not(:disabled, [aria-pressed="true"]) {
+  background: color-mix(in oklch, var(--tt-tile-2) 70%, var(--tt-ink) 8%);
+}
+
+.button[data-variant="primary"]:hover:not(:disabled) {
+  background: color-mix(in oklch, var(--tt-ink) 88%, var(--tt-bg));
+}
+
+.button[data-variant="quiet"]:focus-visible,
+.button[data-variant="quiet"]:hover:not(:disabled) {
+  background-position: 0 100%;
+  background-size: 100% 1px;
+}
+
+.button:active:not(:disabled) {
+  transform: var(--tt-press);
+}
+
+.icon {
+  display: inline-grid;
+  place-items: center;
+}
+
+.icon svg {
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* An icon inside a link styled as a button (buttonAttrs). */
+.button > svg {
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Round icon button: raised on a picture, grey beside a field. */
+.iconButton {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--tt-r-round);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-logo-shadow);
+  color: var(--tt-ink);
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
+}
+
+.iconButton[data-size="40"] {
+  width: 40px;
+  height: 40px;
+}
+
+.iconButton[data-size="32"] {
+  width: 32px;
+  height: 32px;
+}
+
+.iconButton[data-tone="grey"] {
+  background: var(--tt-tile-2);
+  box-shadow: none;
+}
+
+/* quiet: no fill until hovered (close a field). ink: the add of a result. done: already there. */
+.iconButton[data-tone="quiet"] {
+  background: none;
+  box-shadow: none;
+}
+
+.iconButton[data-tone="ink"] {
+  background: var(--tt-ink);
+  box-shadow: none;
+  color: var(--tt-bg);
+}
+
+.iconButton[data-tone="done"] {
+  background: color-mix(in oklch, var(--tt-live) 16%, var(--tt-bg));
+  box-shadow: none;
+  color: var(--tt-ink);
+}
+
+.iconButton:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.iconButton:disabled {
+  cursor: default;
+}
+
+.iconButton:hover:not(:disabled) {
+  background: var(--tt-ink);
+  color: var(--tt-bg);
+}
+
+.iconButton[data-tone="ink"]:hover:not(:disabled) {
+  background: color-mix(in oklch, var(--tt-ink) 82%, var(--tt-bg));
+}
+
+.iconButton:active:not(:disabled) {
+  transform: var(--tt-press-round);
+}
+
+.iconButton svg {
+  width: var(--tt-icon-xl);
+  height: var(--tt-icon-xl);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.iconButton[data-size="32"] svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+/* Text link: label font, a line that draws itself on hover or focus.
+   quiet: reading font, for « Plus tard ». inline: inside a sentence, the line is always there. */
+.link {
+  padding: 0;
+  border: 0;
+  background: linear-gradient(currentColor, currentColor) 100% 100% / 0 1px no-repeat;
+  color: var(--tt-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-size 320ms var(--tt-ease);
+}
+
+.quiet {
+  font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
+}
+
+.link:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.link:hover,
+.link:focus-visible,
+.inline {
+  background-position: 0 100%;
+  background-size: 100% 1px;
+}
+
+.inline {
+  font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
+}
+
+.danger {
+  color: var(--tt-overlap-strong);
+}

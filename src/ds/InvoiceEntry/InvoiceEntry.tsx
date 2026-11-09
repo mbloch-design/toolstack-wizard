@@ -1,6 +1,7 @@
 import { useEffect, useId, useState } from "react";
 import { CURRENCY_RATE_DATE, convertAmount, formatAmount, type Currency } from "@/lib/currencyRates";
 import { parseInvoiceAmount } from "@/lib/invoiceAmount";
+import Button from "../Button/Button";
 import styles from "./InvoiceEntry.module.css";
 
 /** A monthly invoice total, kept in its original currency until explicitly saved. */
@@ -29,7 +30,7 @@ export default function InvoiceEntry({ currency, lang, onSave, onPreview }: {
           {(["EUR", "USD", "GBP"] as const).map(code => <option key={code} value={code}>{code}</option>)}
         </select>
       </label>
-      <button type="submit" className={styles.primary} disabled={amount === null}>{en ? "Save" : "Enregistrer"}</button>
+      <Button type="submit" variant="primary" disabled={amount === null}>{en ? "Save" : "Enregistrer"}</Button>
     </div>
     <p className={styles.note} id={help}>{value.trim() !== "" && amount === null
       ? (en ? "Enter a valid amount with at most two decimals." : "Saisissez un montant valide avec deux décimales maximum.")

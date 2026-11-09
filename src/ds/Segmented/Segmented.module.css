@@ -1,0 +1,37 @@
+.segmented {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  padding: calc(var(--tt-space-1) * 0.75);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile-2);
+  isolation: isolate;
+}
+
+.thumb {
+  position: absolute;
+  z-index: -1;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc((100% - 6px) / var(--n));
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-chip-raise);
+  transform: translateX(calc(var(--i) * 100%));
+  transition: transform var(--tt-dur-move) var(--tt-spring);
+}
+
+.option {
+  composes: focus from "../atoms.module.css";
+  min-height: 34px;
+  padding: 0 var(--tt-space-4);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: none;
+  color: var(--tt-ink);
+  font: var(--tt-tag-font);
+  letter-spacing: var(--tt-tag-tracking);
+  white-space: nowrap;
+  cursor: pointer;
+}

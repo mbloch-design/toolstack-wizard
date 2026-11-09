@@ -1,0 +1,44 @@
+.eyebrow { composes: eyebrow from "../atoms.module.css"; }
+.note { composes: note from "../atoms.module.css"; }
+
+.editor {
+  display: grid;
+  gap: var(--tt-space-5);
+  padding-top: var(--tt-space-2);
+}
+
+.block {
+  display: grid;
+  gap: var(--tt-space-2);
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-3) var(--tt-space-4);
+  padding-top: var(--tt-space-4);
+  box-shadow: var(--tt-hairline-top);
+}
+
+.preview {
+  display: grid;
+  gap: calc(var(--tt-space-1) / 2);
+  min-width: 0;
+  margin: 0;
+}
+
+.amount {
+  color: var(--tt-ink);
+  font: var(--tt-title-l-font);
+  letter-spacing: var(--tt-title-l-tracking);
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-2);
+  margin-left: auto;
+}

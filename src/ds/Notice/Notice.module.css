@@ -1,0 +1,103 @@
+.notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-3) var(--tt-space-6);
+  padding: var(--tt-space-5) var(--tt-space-6);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+}
+
+.notice[data-tone="line"] {
+  padding-inline: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: var(--tt-hairline-block);
+}
+
+.body {
+  display: grid;
+  flex: 1 1 320px;
+  gap: var(--tt-space-1);
+  min-width: 0;
+}
+
+.title {
+  composes: label from "../atoms.module.css";
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-2);
+}
+
+.text {
+  composes: note from "../atoms.module.css";
+  max-width: 62ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-2) var(--tt-space-4);
+}
+
+.icon {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+}
+
+.icon svg,
+.mark svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+.line {
+  composes: note from "../atoms.module.css";
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-2);
+}
+
+.mark {
+  composes: focus from "../atoms.module.css";
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--tt-r-chip);
+  color: var(--tt-ink);
+}
+
+.srOnly {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.rows {
+  display: grid;
+  margin: var(--tt-space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  composes: label from "../atoms.module.css";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-4);
+  min-height: 44px;
+  overflow-wrap: anywhere;
+}
+
+.row + .row {
+  box-shadow: var(--tt-hairline-top);
+}

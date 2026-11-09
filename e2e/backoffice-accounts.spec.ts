@@ -103,7 +103,7 @@ test('back-office dirty logout supports cancel, failed signout retry and confirm
   personal.billing.choices.figma.amount = 99; await change(page, personal);
   // A failed write followed by the older remote snapshot requires resolution;
   // the debounce's transient unsaved state is intentionally no longer a notice.
-  await expect(page.locator('.ms-account [role=status]')).toHaveText('Two versions to resolve');
+  await expect(page.locator('[data-notice="account"] [role=status]')).toHaveText('Two versions to resolve');
   await openBackOffice(page); await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
   const confirm = page.getByRole('button', { name: 'Sign out without saving', exact: true }); await expect(confirm).toBeVisible();
   await page.getByRole('button', { name: 'Keep editing', exact: true }).click(); await expect(confirm).toHaveCount(0);

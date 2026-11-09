@@ -4,18 +4,24 @@ import { buildStackDiscovery } from "@/lib/stackDiscovery";
 import StackArrival from "@/components/stack/StackArrival";
 import { useStackAccount } from "@/hooks/useStackAccount";
 import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, List, ChevronDown, Layers3, Wallet, Copy } from "@/lib/icons";
+import { Plus, Check, Pencil, LayoutGrid, List } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
-import { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
+import { scoreOverlapPairs } from "@/lib/stackOverlap";
 import StackToolSheet from "@/components/stack/StackToolSheet";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
-import { ActionRow, AppIcon, Button } from "@/components/stack/StackKit";
+import ToolCard, { ToolCards, ToolGroup, ToolGroups } from "@/ds/ToolCard/ToolCard";
+import Button, { buttonAttrs, TextButton } from "@/ds/Button/Button";
+import ToolSearch, { SearchField } from "@/ds/ToolSearch/ToolSearch";
+import Page from "@/ds/Page/Page";
+import { DecisionLog } from "@/ds/Decision/Decision";
+import { Notice, NoticeRows, NoticeText, StatusLine } from "@/ds/Notice/Notice";
+import Toolbar, { FilterChips, IconSwitch, Section, SectionHead, SortSelect, ToolbarTools } from "@/ds/Toolbar/Toolbar";
 import { comparisonPath } from "@/lib/comparisonLinks";
 import { decisionSavingInCurrency, latestRemovedStackDecisions } from "@/lib/stackDecisions";
 import { useLang } from "@/hooks/useLang";
@@ -32,10 +38,9 @@ import StackAccountPanel from "@/components/stack/StackAccountPanel";
 import { useAddToStack } from "@/hooks/useAddToStack";
 import { useCategories, useToolSummaries, useToolBySlug, type ToolSummary } from "@/hooks/useSupabaseData";
 import { stackCatalogPrice, toolKey } from "@/lib/stackView";
-import { stackDisplayLabel, stackPlacement, stackMapTerritories, stackRelations } from "@/lib/stackUsage";
-import toolAccents from "@/data/toolAccents.json";
+import { stackDisplayLabel, stackPlacement, stackMapTerritories } from "@/lib/stackUsage";
 import { useCurrency } from "@/hooks/useCurrency";
-import { getPlanChoice, useStackPaidPlans, type PlanChoice } from "@/hooks/useStackPaidPlans";
+import { useStackPaidPlans, type PlanChoice } from "@/hooks/useStackPaidPlans";
 import { usablePlans } from "@/components/stack/StackCostEditor";
 import { stackMonthlyCost, toolMonthlyCost } from "@/lib/stackCost";
 import { convertAmount, formatAmount } from "@/lib/currencyRates";
@@ -108,11 +113,6 @@ export default function CartPage() {
   const requestedReviewKey = pairReview?.scope === reviewScope && pairReview.epoch === reviewEpoch ? pairReview.key : null;
   const reviewKey = requestedReviewKey && decisions[requestedReviewKey]?.kind === "keep-both" && requestedReviewKey.split("|").every(slug => selectedTools.some(tool => toolKey(tool) === slug)) ? requestedReviewKey : null;
   const closePairReview = () => { setPairReview(null); requestAnimationFrame(() => { const target = pairReviewTrigger.current?.isConnected ? pairReviewTrigger.current : document.getElementById("ms-all-title"); target?.focus({ preventScroll: true }); }); };
-  const overlapsById = useMemo(() => new Map(selectedTools.map((tool) => [tool.id,
-    stackRelations(tool, selectedTools, categories, lang)
-      .filter((relation) => (relation.explicit || relation.commonUses.length > 0) && decisions[pairKey(toolKey(tool), toolKey(relation.tool))]?.kind !== "keep-both")
-      .map((relation) => relation.tool),
-  ])), [selectedTools, categories, lang, decisions]);
   // Monthly cost with the same rules as By use: freemium at 0 unless declared
   // paid, total converted at the site's dated rate (Michael, 7 Oct 2026).
   const plans = useStackPaidPlans();
@@ -137,7 +137,6 @@ export default function CartPage() {
     return a && b ? { a, b, shared: [], explicit: false, double: Math.min(monthlyOf(a),monthlyOf(b)) } : undefined;
   })() : undefined;
   const decisionPairs = reviewingPair && !overlapScore.pairs.some(({a,b}) => pairKey(toolKey(a),toolKey(b)) === reviewKey) ? [...overlapScore.pairs, reviewingPair] : overlapScore.pairs;
-  const overlapPairs = overlapScore.pairs.length;
   // The map marks only tools still in an unsettled pair (pairs kept on purpose
   // and decided pairs no longer come out of scoreOverlapPairs).
   const pairedById = useMemo(() => {
@@ -166,7 +165,6 @@ export default function CartPage() {
   const groupBy = sortBy === "area" ? "area" : "none";
   const [statusFilter, setStatusFilter] = useState<"all" | "review" | "overlap">("all");
   const addedAt = new Map(state.toolEntries.map((entry) => [entry.toolSlug, entry.addedAt || ""]));
-  const areaIndex = new Map(mapTerritories.flatMap((territory, index) => territory.tools.map((tool) => [tool.id, index] as const)));
   const listTools = selectedTools.filter((tool) => visibleIds.has(tool.id)).sort((a, b) => {
     const byName = a.name.localeCompare(b.name, lang);
     if (sortBy === "cost" || sortBy === "area") return monthlyOf(b) - monthlyOf(a) || byName;
@@ -174,7 +172,6 @@ export default function CartPage() {
     return byName;
   });
   const pendingIds = new Set([...unreviewed, ...unknownTools].map((tool) => tool.id).concat([...pairedById.keys()]));
-  const checked = selectedTools.filter((tool) => !pendingIds.has(tool.id)).length;
   const maxMonthly = Math.max(0, ...selectedTools.map(monthlyOf));
   const infoOf = (tool: ToolSummary): MapToolInfo => {
     const cost = toolMonthlyCost(tool, plans.isPaid, lang);
@@ -183,8 +180,6 @@ export default function CartPage() {
     if (cost.kind === "unknown") return { cost: t("Prix ?", "Price?"), share: 0, kind: "unknown", pending };
     return { cost: cost.kind === "freemium-free" && !plans.isReviewed(toolKey(tool)) ? "Freemium" : t("Gratuit", "Free"), share: 0, kind: "free", pending };
   };
-  const plural = (n: number, fr: string, en: string) => t(`${n} ${fr}${n > 1 ? "s" : ""}`, `${n} ${en}${n > 1 ? "s" : ""}`);
-  const costFigure = stackCost.paid > 0 ? money(stackCost.total) : stackCost.unknown > 0 ? t("Non renseigné", "Unknown") : t("Rien de payant", "Nothing paid");
   // The deck: freemium plans first (they set the cost and the overlaps), then
   // the pairs, then the prices nobody has entered.
   const why = (shared: string[], explicit: boolean) => shared.length > 0
@@ -259,16 +254,14 @@ export default function CartPage() {
   const saved = pastSavings.reduce((sum, d) => sum + (decisionSavingInCurrency(d, currency) ?? 0), 0);
   const unknownSavings = pastSavings.some((d) => d.saving > 0 && decisionSavingInCurrency(d, currency) === null);
   // Reviewing a saved decision never deletes it; replacement happens only on confirmation.
-  const history = (keptBoth.length > 0 || unknownSavings) && <div className="ms-decided">
-    {unknownSavings && <span>{t("Baisse estimée : devise inconnue.", "Estimated reduction: currency unknown.")}</span>}
-    {keptBoth.map(key => {
+  const history = (keptBoth.length > 0 || unknownSavings) && <DecisionLog
+    note={unknownSavings ? t("Baisse estimée : devise inconnue.", "Estimated reduction: currency unknown.") : undefined}
+    entries={keptBoth.flatMap(key => {
       const [a,b] = key.split("|").map(slug => lookup.get(slug));
-      if (!a || !b) return null;
-      return <div key={key} className="mu-pair"><p>{t(`${a.name} et ${b.name} : vous gardez les deux.`, `${a.name} and ${b.name}: you keep both.`)}</p>
-        <Button variant="secondary" onClick={event => { pairReviewTrigger.current = event.currentTarget; setPairReview({scope:reviewScope,epoch:reviewEpoch,key}); requestAnimationFrame(() => {document.querySelector('[data-card="decision"]')?.scrollIntoView({block:"center"});document.querySelector<HTMLElement>('[data-card="decision"] h3')?.focus({preventScroll:true});}); }}>{t("Revoir ce choix", "Review this choice")}</Button>
-      </div>;
-    })}
-  </div>;
+      if (!a || !b) return [];
+      return [{ id: key, text: t(`${a.name} et ${b.name} : vous gardez les deux.`, `${a.name} and ${b.name}: you keep both.`),
+        action: <Button variant="secondary" onClick={event => { pairReviewTrigger.current = event.currentTarget; setPairReview({scope:reviewScope,epoch:reviewEpoch,key}); requestAnimationFrame(() => {document.querySelector('[data-card="decision"]')?.scrollIntoView({block:"center"});document.querySelector<HTMLElement>('[data-card="decision"] h3')?.focus({preventScroll:true});}); }}>{t("Revoir ce choix", "Review this choice")}</Button> }];
+    })} />;
   const empty = state.pinnedToolSlugs.length === 0;
   const showSearch = empty || searchOpen;
   const existingIds = new Set(selectedTools.map((tool) => tool.id));
@@ -347,27 +340,9 @@ export default function CartPage() {
   // Motion explains the change instead of a jump. Off for reduced motion.
   const gridRef = useRef<HTMLDivElement>(null);
   const flipFrom = useRef<Map<string, DOMRect> | null>(null);
-  const filterToken = useRef(0);
   const reducedMotion = () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function cardsById() {
     return new Map([...(gridRef.current?.querySelectorAll<HTMLElement>("[data-flip-id]") || [])].map((el) => [el.dataset.flipId as string, el]));
-  }
-  function filterTo(id: string) {
-    // Clicking the active area again goes back to all tools.
-    const target = id !== "all" && id === activeFilter ? "all" : id;
-    if (target === activeFilter) return;
-    const token = ++filterToken.current;
-    const nextIds = new Set((target === "all" ? selectedTools : mapTerritories.find((territory) => territory.id === target)?.tools || []).map((tool) => tool.id));
-    if (reducedMotion()) { chooseDomain(target); return; }
-    const cards = cardsById();
-    const leaving = [...cards].filter(([cardId]) => !nextIds.has(cardId)).map(([, el]) => el);
-    const exits = leaving.map((el) => el.animate([{ opacity: 1, transform: "scale(1)" }, { opacity: 0, transform: "scale(.96)" }], { duration: 140, easing: "ease-in", fill: "forwards" }));
-    Promise.all(exits.map((animation) => animation.finished.catch(() => undefined))).then(() => {
-      if (token !== filterToken.current) return;
-      flipFrom.current = new Map([...cardsById()].map(([cardId, el]) => [cardId, el.getBoundingClientRect()]));
-      exits.forEach((animation) => animation.cancel());
-      chooseDomain(target);
-    });
   }
   function sortTo(next: "area" | "cost" | "name" | "recent") {
     if (next === sortBy) return;
@@ -392,74 +367,40 @@ export default function CartPage() {
     });
   }, [activeFilter, sortBy, groupBy, layout, statusFilter]);
 
-  function chooseDomain(id: string) {
-    setDomainFilter(id);
-    const members = mapTerritories.find((territory) => territory.id === id)?.tools;
-    if (selected && id !== "all" && !members?.some((tool) => tool.id === selected.id)) {
-      const next = new URLSearchParams(params);
-      next.delete("outil");
-      setParams(next, { replace: true, state: { skipScrollReset: true }, preventScrollReset: true });
-      lastToolButton.current = null;
-    }
-  }
   // One card per tool, the same in every view: logo, name, area, what the
   // person pays and one status. The views only change the arrangement.
   const statusOf = (tool: ToolSummary): "ok" | "review" | "overlap" => pairedById.has(tool.id) ? "overlap"
     : unreviewed.some((item) => item.id === tool.id) || unknownTools.some((item) => item.id === tool.id) ? "review" : "ok";
-  const statusLabel = { ok: t("Prix renseigné", "Price recorded"), review: t("À vérifier", "To check"), overlap: t("Doublon", "Overlap") };
   function renderTool(tool: ToolSummary) {
     const active = selected?.id === tool.id;
     const area = mapTerritories.find((territory) => territory.tools.some((member) => member.id === tool.id));
     const slug = state.pinnedToolSlugs.find((pinned) => lookup.get(pinned)?.id === tool.id) || toolKey(tool);
     const info = infoOf(tool);
-    const status = statusOf(tool);
-    const cost = info.kind === "paid" ? `${info.cost}${t("/mois", "/mo")}` : info.kind === "unknown" ? t("Prix ?", "Price?") : info.cost;
     const areaLabel = area ? (area.id === "assist" ? t("IA", "AI") : area.label) : "";
-    return <div key={tool.id} className="tt-toolcard-wrap" data-flip-id={tool.id}>
-      <button type="button" data-tool-id={tool.id} data-tool-name={tool.name} data-status={status} className={`tt-toolcard${active ? " is-selected" : ""}`} aria-haspopup="dialog"
-        aria-label={`${tool.name}, ${cost}, ${statusLabel[status]}`} tabIndex={editing ? -1 : undefined}
-        onClick={(event) => { if (editing) return; lastToolButton.current = event.currentTarget; if (active) closeInspector(); else selectTool(toolKey(tool)); }}>
-        {/* Molécule « carte d'outil » du système : logo, montant, nom, état. */}
-        <ToolLogo tool={tool} size={40} className="tt-logo-tile" />
-        <span className="tt-amount" data-tone={info.kind} aria-hidden="true">{info.kind === "paid" ? <>{info.cost}<small>{t("/mois", "/mo")}</small></> : cost}</span>
-        <span className="tt-label" aria-hidden="true">{tool.name}</span>
-        {/* As in the planche, the state tag sits in the card; the area joins it only when the list is not grouped by area. */}
-        {groupBy !== "area" && areaLabel
-          ? <span className="tt-toolcard-foot" aria-hidden="true"><span className={`tt-tag${status === "overlap" ? " tt-tag--overlap" : status === "ok" ? " tt-tag--live" : ""}`}>{statusLabel[status]}</span><span className="tt-note">{areaLabel}</span></span>
-          : <span className={`tt-tag${status === "overlap" ? " tt-tag--overlap" : status === "ok" ? " tt-tag--live" : ""}`} aria-hidden="true">{statusLabel[status]}</span>}
-      </button>
-      {/* Edit mode (iOS home screen): a minus badge removes the tool, with undo. */}
-      {editing && <button type="button" className="ms-card-remove" onClick={() => removeTool(slug, tool.name)} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}><Minus size={14} aria-hidden /></button>}
-    </div>;
+    // One card per tool (src/ds/ToolCard), the same in every view; the area joins the status only when the list is not grouped by area.
+    return <ToolCard key={tool.id} lang={lang} tool={tool} amount={info.kind === "unknown" ? t("Prix ?", "Price?") : info.cost} monthly={info.kind === "paid"}
+      status={statusOf(tool)} area={groupBy !== "area" ? areaLabel || undefined : undefined} selected={active} editing={editing}
+      onOpen={(button) => { lastToolButton.current = button; if (active) closeInspector(); else selectTool(toolKey(tool)); }}
+      onRemove={() => removeTool(slug, tool.name)} />;
   }
+
 
 
   // Add search: on top for an empty stack, in My tools otherwise (the add
   // action is a quiet button there, not a hero CTA).
-  const searchPanel = showSearch && <section className="ms-search" id="ms-search" aria-label={t("Ajouter un outil", "Add a tool")}>
-      <div className="ms-search-input"><Search size={20} aria-hidden /><input
-        ref={searchRef}
-        id={empty ? "ms-first-tool" : undefined}
-        type="search"
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        placeholder={t("Rechercher par nom…", "Search by name…")}
-        aria-label={t("Ajouter un outil à ma stack", "Add a tool to my stack")}
-        onKeyDown={(event) => { if (event.key === "Escape" && !empty) { setSearchOpen(false); addRef.current?.focus(); } }}
-      />{!empty && <button className="ms-icon-action" onClick={() => { setSearchOpen(false); addRef.current?.focus(); }} aria-label={t("Fermer la recherche", "Close search")}><X size={18} aria-hidden /></button>}</div>
-      {query.trim() && <>
-        <p className="ms-search-status" role="status">{searchResults.length === 0 ? t("Aucun outil trouvé.", "No tools found.") : t("Résultats du catalogue", "Catalogue results")}</p>
-        <ul className="ms-results">{searchResults.map((tool) => {
-          const present = existingIds.has(tool.id);
-          return <li key={tool.id}><ToolLogo tool={tool} size={28} /><Link to={`${prefix}/tool/${toolKey(tool)}`}>{tool.name}</Link><button
-            type="button"
-            disabled={present}
-            aria-label={present ? t(`${tool.name} est dans votre stack`, `${tool.name} is in your stack`) : t(`Ajouter ${tool.name}`, `Add ${tool.name}`)}
-            onClick={(event) => addToStack(toolKey(tool), tool.name, { origin: event.currentTarget.closest("li") })}
-          >{present ? <Check size={18} aria-hidden /> : <Plus size={18} aria-hidden />}</button></li>;
-        })}</ul>
-      </>}
-    </section>;
+  const closeSearch = () => { setSearchOpen(false); addRef.current?.focus(); };
+  const searchPanel = showSearch && <ToolSearch id="ms-search" label={t("Ajouter un outil", "Add a tool")}
+    field={<SearchField inputRef={searchRef} id={empty ? "ms-first-tool" : undefined} value={query} onChange={setQuery}
+      placeholder={t("Rechercher par nom…", "Search by name…")} label={t("Ajouter un outil à ma stack", "Add a tool to my stack")}
+      onClose={empty ? undefined : closeSearch} closeLabel={t("Fermer la recherche", "Close search")} />}
+    status={query.trim() ? (searchResults.length === 0 ? t("Aucun outil trouvé.", "No tools found.") : t("Résultats du catalogue", "Catalogue results")) : undefined}
+    results={query.trim() ? searchResults.map((tool) => {
+      const present = existingIds.has(tool.id);
+      return { id: tool.id, tool, present,
+        addLabel: present ? t(`${tool.name} est dans votre stack`, `${tool.name} is in your stack`) : t(`Ajouter ${tool.name}`, `Add ${tool.name}`),
+        renderLink: (className: string, content: ReactNode) => <Link className={className} to={`${prefix}/tool/${toolKey(tool)}`}>{content}</Link>,
+        onAdd: (row: HTMLElement | null) => addToStack(toolKey(tool), tool.name, { origin: row }) };
+    }) : undefined} />;
 
   const awaitingInitialStack = account.enabled && (!account.authInitialized ||
     (!!account.user && loading && !empty && selectedTools.length === 0) ||
@@ -486,39 +427,32 @@ export default function CartPage() {
       }
     }} />
     <StackAccountPanel empty />
-    {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt" ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.") : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
-    {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupérée depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
+    {persistenceStatus.state === "degraded" && <Notice name="storage" role="status"><NoticeText>{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt" ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.") : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</NoticeText></Notice>}
+    {persistenceStatus.state === "recovered" && <Notice name="storage" role="status"><NoticeText>{t("Votre stack a été récupérée depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</NoticeText></Notice>}
   </div>;
 
-  return <div className="ms-page tt-page">
+  return <Page>
     {/* Topbar breadcrumb like every other page ("Home / My stack"); a personal
         page, so no structured data. */}
     <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} includeSchema={false} />
     {/* Ma Stack (Oct 2026): a title with the verdict and how much of the stack
         is checked, then the stack itself at the centre, read through lenses,
         and the next decision beside it. On a phone the deck comes first. */}
-    {/* Hero (22/10/2026): a status line, the title, one sentence. */}
-    {/* Organisme « en-tête de page » du système : surtitre, grand titre, note ; l'action rare à droite. */}
-    <header className="tt-pagehead">
-      <StackPersonalWelcome empty={false} pending={deckItems.length} cards={usagePending}>
-        <div>
-          <span className="tt-eyebrow">{t("Ma stack", "My stack")}</span>
-          <h1 ref={inventoryHeadingRef} tabIndex={-1} className="tt-title-xl">{t("Mes outils", "My tools")}</h1>
-          <p className="tt-note">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</p>
-        </div>
-      </StackPersonalWelcome>
-      {state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) && <Link
-          className="tt-btn tt-btn--grey" to={getExplorerHref(prefix, { type: "stack" })}
+    {/* En-tête de page du système (src/ds/PageHead) : salut, surtitre, grand titre, chiffres, une phrase, les faits ; l'action rare à droite. */}
+    <StackPersonalWelcome empty={false} pending={deckItems.length} cards={usagePending}
+      eyebrow={t("Ma stack", "My stack")} title={t("Mes outils", "My tools")} titleRef={inventoryHeadingRef}
+      meta={<>{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</>}
+      action={state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? <Link
+          {...buttonAttrs()} to={getExplorerHref(prefix, { type: "stack" })}
           state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`,
             explorerStackSources: state.toolEntries.filter(entry => entry.intent === "stack").flatMap(entry => { const tool = lookup.get(entry.toolSlug); return tool ? [toolKey(tool)] : []; }) }}
           onClick={() => trackEvent("stack_explorer_click", { source: "whole_stack" })}>
           {t("Explorer autour de ma stack", "Explore around my stack")}
-        </Link>}
-    </header>
-    {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
+        </Link> : undefined} />
+    {persistenceStatus.state === "degraded" && <Notice name="storage" role="status"><NoticeText>{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
       ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.")
-      : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
-    {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupéré depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
+      : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</NoticeText></Notice>}
+    {persistenceStatus.state === "recovered" && <Notice name="storage" role="status"><NoticeText>{t("Votre stack a été récupéré depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</NoticeText></Notice>}
 
 
 
@@ -546,19 +480,12 @@ export default function CartPage() {
       })()}
       {/* Where the stack is saved: this browser, or the account. */}
       <StackAccountPanel empty={false} placement="notice" />
-      <div className="ms-board tt-page">
+      <Page group>
         {/* 1. The stack itself, one box to see it: by area, as cards or as a list, sorted from a menu. Add and edit live here. */}
-        <section className="ms-mod ms-mod--inventory ms-all tt-section" aria-labelledby="ms-all-title">
-          <div className="tt-sectionhead">
-            <div>
-              <div className="ms-inventory-heading"><h2 id="ms-all-title" tabIndex={-1} className="tt-title-section">{t("Ma stack", "My stack")}</h2><StackAccountPanel placement="inline" /></div>
-              <p className="tt-note">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</p>
-            </div>
-            <div className="ms-tools-actions">
-              {/* The one primary action of the section. */}
-              <Button ref={addRef} variant="primary" icon={<Plus size={16} aria-hidden />} onClick={() => { setEditing(false); setSearchOpen((open) => !open); }} aria-expanded={searchOpen} aria-controls="ms-search">{t("Ajouter un outil", "Add a tool")}</Button>
-            </div>
-          </div>
+        <Section labelledBy="ms-all-title">
+          <SectionHead title={t("Ma stack", "My stack")} titleId="ms-all-title" beside={<StackAccountPanel placement="inline" />}
+            note={<>{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</>}
+            action={<Button ref={addRef} variant="primary" icon={<Plus />} onClick={() => { setEditing(false); setSearchOpen((open) => !open); }} aria-expanded={searchOpen} aria-controls="ms-search">{t("Ajouter un outil", "Add a tool")}</Button>} />
           {searchPanel}
           {(() => {
             const counts = { all: listTools.length, review: listTools.filter((tool) => statusOf(tool) === "review").length, overlap: listTools.filter((tool) => statusOf(tool) === "overlap").length };
@@ -570,55 +497,48 @@ export default function CartPage() {
                 .sort((x, y) => y.subtotal - x.subtotal)
               : [{ id: "all", label: "", tools: shown, subtotal: 0 }];
             return <>
-              {/* Three controls, three affordances: filter chips for what needs me, menus to group and sort, icons for the layout. */}
-              <div className="tt-toolbar">
-                <div className="tt-fchips" role="group" aria-label={t("Filtrer par statut", "Filter by status")}>
-                  {[{ id: "all" as const, label: t("Tous", "All"), count: counts.all }, ...(counts.review ? [{ id: "review" as const, label: t("À vérifier", "To check"), count: counts.review }] : []), ...(counts.overlap ? [{ id: "overlap" as const, label: t("Doublons", "Overlaps"), count: counts.overlap }] : [])].map((option) =>
-                    <button key={option.id} type="button" className={`tt-fchip${option.id === "overlap" ? " tt-fchip--dup" : ""}`} aria-pressed={statusFilter === option.id} onClick={() => setStatusFilter(option.id)}>{option.label}<span className="tt-fchip-count">{option.count}</span></button>)}
-                </div>
-                <div className="tt-toolbar-tools">
-                  <label className="tt-select"><span>{t("Trier :", "Sort:")}</span>
-                    <select value={sortBy} onChange={(event) => sortTo(event.target.value as typeof sortBy)} aria-label={t("Trier mes outils", "Sort my tools")}>
-                      <option value="area">{t("Domaine", "Area")}</option>
-                      <option value="cost">{t("Coût", "Cost")}</option>
-                      <option value="name">{t("Nom", "Name")}</option>
-                      <option value="recent">{t("Ajout récent", "Recently added")}</option>
-                    </select><ChevronDown aria-hidden /></label>
-                  <div className="tt-iconswitch" role="group" aria-label={t("Affichage", "Layout")}>
-                    <button type="button" aria-pressed={layout === "grid"} aria-label={t("Grille", "Grid")} title={t("Grille", "Grid")} onClick={() => setLayout("grid")}><LayoutGrid aria-hidden /></button>
-                    <button type="button" aria-pressed={layout === "list"} aria-label={t("Liste", "List")} title={t("Liste", "List")} onClick={() => setLayout("list")}><List aria-hidden /></button>
-                  </div>
+              {/* Three controls, three affordances (src/ds/Toolbar): filter chips for what needs me, a menu to sort, icons for the layout. */}
+              <Toolbar>
+                <FilterChips label={t("Filtrer par statut", "Filter by status")} value={statusFilter} onChange={setStatusFilter} filters={[
+                  { id: "all" as const, label: t("Tous", "All"), count: counts.all },
+                  ...(counts.review ? [{ id: "review" as const, label: t("À vérifier", "To check"), count: counts.review }] : []),
+                  ...(counts.overlap ? [{ id: "overlap" as const, label: t("Doublons", "Overlaps"), count: counts.overlap, alert: true }] : []),
+                ]} />
+                <ToolbarTools>
+                  <SortSelect label={t("Trier mes outils", "Sort my tools")} caption={t("Trier :", "Sort:")} value={sortBy} onChange={sortTo} options={[
+                    { value: "area", label: t("Domaine", "Area") }, { value: "cost", label: t("Coût", "Cost") }, { value: "name", label: t("Nom", "Name") }, { value: "recent", label: t("Ajout récent", "Recently added") }]} />
+                  <IconSwitch label={t("Affichage", "Layout")} value={layout} onChange={setLayout} options={[
+                    { value: "grid", label: t("Grille", "Grid"), icon: <LayoutGrid aria-hidden /> }, { value: "list", label: t("Liste", "List"), icon: <List aria-hidden /> }]} />
                   {/* Edit acts on the grid right below, so it lives with the other view controls. */}
-                  <button type="button" className="tt-btn tt-btn--grey" aria-pressed={editing} onClick={() => { setSearchOpen(false); setEditing((value) => !value); }}>{editing ? <Check aria-hidden /> : <Pencil aria-hidden />}{editing ? t("Terminé", "Done") : t("Modifier", "Edit")}</button>
-                </div>
-              </div>
-              <div id="ms-all-grid" className="tt-groups" data-layout={layout} data-grouped={groupBy === "area" ? "" : undefined} data-editing={editing || undefined} ref={gridRef} role="group" aria-label={t("Mes outils", "My tools")}>
-                {groups.map((group) => <section key={group.id} className="tt-group" aria-label={group.label || undefined}>
-                  {group.label && <header className="tt-groupname" style={{ ["--c" as string]: colorOf(group.id) }}><i aria-hidden="true" /><h3 className="tt-label">{group.label}</h3>
-                    <span className="tt-note">{t(`${group.tools.length} outil${group.tools.length > 1 ? "s" : ""}`, `${group.tools.length} tool${group.tools.length > 1 ? "s" : ""}`)}{group.subtotal > 0 && <> · {money(group.subtotal)}{group.tools.some(tool => unreviewed.some(item => item.id === tool.id) || unknownTools.some(item => item.id === tool.id)) && t(" · partiel", " · partial")}</>}</span></header>}
-                  <div className="tt-toolcards" data-layout={layout}>{group.tools.map(renderTool)}</div>
-                </section>)}
-                {shown.length === 0 && <p className="tt-note">{t("Rien ici. Tout est à jour.", "Nothing here. All up to date.")}</p>}
-              </div>
+                  <Button pressed={editing} icon={editing ? <Check /> : <Pencil />} onClick={() => { setSearchOpen(false); setEditing((value) => !value); }}>{editing ? t("Terminé", "Done") : t("Modifier", "Edit")}</Button>
+                </ToolbarTools>
+              </Toolbar>
+              <ToolGroups id="ms-all-grid" ref={gridRef} label={t("Mes outils", "My tools")} layout={layout} grouped={groupBy === "area"} editing={editing}
+                empty={shown.length === 0 ? t("Rien ici. Tout est à jour.", "Nothing here. All up to date.") : undefined}>
+                {groups.map((group) => <ToolGroup key={group.id} label={group.label || undefined} color={colorOf(group.id)}
+                  note={group.label ? <>{t(`${group.tools.length} outil${group.tools.length > 1 ? "s" : ""}`, `${group.tools.length} tool${group.tools.length > 1 ? "s" : ""}`)}{group.subtotal > 0 && <> · {money(group.subtotal)}{group.tools.some(tool => unreviewed.some(item => item.id === tool.id) || unknownTools.some(item => item.id === tool.id)) && t(" · partiel", " · partial")}</>}</> : undefined}>
+                  <ToolCards layout={layout}>{group.tools.map(renderTool)}</ToolCards>
+                </ToolGroup>)}
+                              </ToolGroups>
             </>;
           })()}
-        </section>
+        </Section>
 
         <StackDiscovery key={`${reviewScope}:${reviewEpoch}`} candidates={recos} lang={lang} prefix={prefix}
           sourceIds={selectedTools.map(tool => tool.id)} selectedIds={selectedTools.map(tool => tool.id)} pendingSlug={flyingSlug}
           explorerSources={state.toolEntries.filter(entry => entry.intent === "stack").flatMap(entry => { const tool = lookup.get(entry.toolSlug); return tool ? [toolKey(tool)] : []; })}
           onAdd={(tool, origin) => addToStack(toolKey(tool), tool.name, { origin, onAdded: () => trackEvent("stack_reco_add", { tool: toolKey(tool) }) })} />
-      </div>
+      </Page>
 
       <StackToolSheet key={`${reviewScope}:${reviewEpoch}`} editCostRequest={costEditorRequest?.scope === reviewScope && costEditorRequest.epoch === reviewEpoch ? costEditorRequest : null} tool={selected || null} detail={resolved} pairs={overlapScore.pairs} categories={categories} paid={plans} currency={currency} prefix={prefix} lang={lang}
         catalog={tools} stackIds={existingIds}
         onClose={closeInspector} onReturnFocus={() => { if (lastToolButton.current?.isConnected) lastToolButton.current.focus({ preventScroll: true }); }} onSelect={selectTool}
         onRemove={() => selected && removeTool(state.pinnedToolSlugs.find((slug) => lookup.get(slug)?.id === selected.id) || toolKey(selected), selected.name)} />
-      {missing.length > 0 && <section className="ms-unavailable"><h2>{t("Outils indisponibles", "Unavailable tools")}</h2>
-        <p>{t("Ces références ne sont plus disponibles dans le catalogue actuel. Votre sélection est conservée.", "These references are unavailable in the current catalogue. Your selection is retained.")}</p>
-        {missing.map((slug) => <div key={slug}><span>{slug}</span><button onClick={() => removeTool(slug, slug)}>{t("Retirer de ma stack", "Remove from stack")}</button></div>)}
-        {loading && <p role="status">{t("Actualisation du catalogue…", "Refreshing catalogue…")}</p>}
-      </section>}
+      {missing.length > 0 && <Notice name="unavailable" title={t("Outils indisponibles", "Unavailable tools")}>
+        <NoticeText>{t("Ces références ne sont plus disponibles dans le catalogue actuel. Votre sélection est conservée.", "These references are unavailable in the current catalogue. Your selection is retained.")}</NoticeText>
+        <NoticeRows rows={missing.map((slug) => ({ id: slug, label: slug, action: <TextButton tone="danger" onClick={() => removeTool(slug, slug)}>{t("Retirer de ma stack", "Remove from stack")}</TextButton> }))} />
+        {loading && <StatusLine icon={null} live>{t("Actualisation du catalogue…", "Refreshing catalogue…")}</StatusLine>}
+      </Notice>}
     </>}
-  </div>;
+  </Page>;
 }

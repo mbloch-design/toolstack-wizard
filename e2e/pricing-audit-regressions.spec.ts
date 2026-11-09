@@ -49,10 +49,10 @@ for (const lang of ["fr", "en"]) {
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
     await expect(page.locator('[data-card="price"]')).toContainText(lang === "fr" ? "On fait les comptes ?" : "Let's talk budget.");
     await expect(page.locator('[data-card="price"]')).not.toContainText(/Gratuit|Free|rien de payant|nothing paid/i);
-    await page.locator(".ms-tools-actions").getByRole("button", { name: lang === "fr" ? "Ajouter un outil" : "Add a tool", exact: true }).click();
+    await page.locator("section[aria-labelledby=ms-all-title]").getByRole("button", { name: lang === "fr" ? "Ajouter un outil" : "Add a tool", exact: true }).click();
     await page.getByRole("searchbox").fill("chatgpt");
     await page.getByRole("button", { name: lang === "fr" ? "Ajouter ChatGPT" : "Add ChatGPT", exact: true }).click();
-    await expect(page.locator(".tt-toolcard")).toHaveCount(2);
+    await expect(page.locator("[data-tool-id]")).toHaveCount(2);
     await page.evaluate(() => {
       const key = "tooltrim-personal-stack-v4:anonymous";
       const state = JSON.parse(localStorage.getItem(key) || "{}");
@@ -61,7 +61,7 @@ for (const lang of ["fr", "en"]) {
     });
     await page.reload({ waitUntil: "domcontentloaded" });
     await expect(page.locator('[data-card="price"]')).toContainText(lang === "fr" ? "Confirmer 1 prix et 1 formule" : "Confirm 1 price and 1 plan");
-    await expect(page.locator(".tt-toolcard")).toHaveCount(2);
+    await expect(page.locator("[data-tool-id]")).toHaveCount(2);
   });
 }
 
@@ -84,12 +84,12 @@ test("a recorded saving retains its currency across changes and reloads", async 
   }
   await deck.getByRole("button", { name: /^Garder Figma/ }).click();
   // The saving is said once, in the budget card.
-  await expect(page.locator(".mf")).toContainText(/économisez déjà 9\s€ par mois/);
+  await expect(page.locator("[data-board]")).toContainText(/économisez déjà 9\s€ par mois/);
   const stored = await page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-personal-stack-v4:anonymous") || "{}").decisions);
   expect(stored["canva|figma"].savingCurrency).toBe("EUR");
   await page.evaluate(() => localStorage.setItem("tooltrim:currency", "USD"));
   await page.reload({ waitUntil: "domcontentloaded" });
-  await expect(page.locator(".mf")).toContainText(/économisez déjà 11\s\$(US)? par mois/);
+  await expect(page.locator("[data-board]")).toContainText(/économisez déjà 11\s\$(US)? par mois/);
   await page.goto("/fr/comparatif/figma-vs-canva", { waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-cd-status")).toContainText("11");
 });
@@ -100,8 +100,8 @@ test("old savings without a currency keep the decision without inventing an amou
     localStorage.setItem("tooltrim-ma-stack-decisions-v1", JSON.stringify({ "canva|figma": { kind: "keep-one", kept: "figma", removed: "canva", saving: 9.17, at: "2026-10-07T00:00:00.000Z" } }));
   }, { key: stackKey, state: seed(["figma"]) });
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.locator(".mf")).toContainText("devise inconnue");
-  await expect(page.locator(".mf")).not.toContainText("économisez");
+  await expect(page.locator("[data-board]")).toContainText("devise inconnue");
+  await expect(page.locator("[data-board]")).not.toContainText("économisez");
   await page.goto("/fr/comparatif/figma-vs-canva", { waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-cd-status")).toContainText("vous gardez Figma");
   await expect(page.locator(".ms-cd-status")).not.toContainText(/9|€/);

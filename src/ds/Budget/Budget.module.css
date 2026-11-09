@@ -1,19 +1,11 @@
 /* The Budget card: total, the stack at a glance, how far the figure can be trusted. */
 
 .card {
-  display: grid;
-  gap: var(--tt-tile-gap);
-  align-content: start;
-  padding: var(--tt-tile-pad);
-  border-radius: var(--tt-r-tile);
-  background: var(--tt-tile);
-  color: var(--tt-ink);
-  container-type: inline-size;
+  composes: tile from "../atoms.module.css";
 }
 
 .eyebrow { composes: eyebrow from "../atoms.module.css"; }
-.figure { composes: figure from "../atoms.module.css"; }
-.unit { composes: unit from "../atoms.module.css"; }
+.figure { margin: 0; }
 .text { composes: text from "../atoms.module.css"; }
 .strong { composes: strong from "../atoms.module.css"; }
 
@@ -41,7 +33,6 @@
 .titleM { composes: titleM from "../atoms.module.css"; }
 .label { composes: label from "../atoms.module.css"; }
 .note { composes: note from "../atoms.module.css"; }
-.primary { composes: primary from "../atoms.module.css"; }
 
 .total,
 .start {
@@ -143,6 +134,7 @@ button.trust {
   border-radius: var(--tt-r-card);
   cursor: pointer;
   font: inherit;
+  letter-spacing: inherit;
   transition: background-color var(--tt-dur-state) ease;
 }
 
@@ -168,8 +160,8 @@ button.trust:active {
 
 button.trust:focus-visible {
   border-radius: var(--tt-r-chip);
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
 
 .trustText {
@@ -207,11 +199,11 @@ button.trust:focus-visible {
 }
 
 .check svg {
-  width: 14px;
-  height: 14px;
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
   fill: none;
   stroke: currentColor;
-  stroke-width: 2.5;
+  stroke-width: var(--tt-icon-stroke-bold);
   stroke-linecap: round;
   stroke-linejoin: round;
 }
