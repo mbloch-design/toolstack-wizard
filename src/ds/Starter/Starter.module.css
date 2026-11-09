@@ -1,13 +1,8 @@
 /* The starter, as validated (.tt-starter): the one tool and two dashed seats waiting next to it. */
 
 .starter {
-  display: grid;
-  gap: var(--tt-tile-gap);
+  composes: tile from "../atoms.module.css";
   justify-items: start;
-  padding: var(--tt-tile-pad);
-  border-radius: var(--tt-r-tile);
-  background: var(--tt-tile);
-  color: var(--tt-ink);
 }
 
 .titleM { composes: titleM from "../atoms.module.css"; }
@@ -18,11 +13,11 @@
 }
 
 .seat svg {
-  width: 18px;
-  height: 18px;
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: var(--tt-icon-stroke);
   stroke-linecap: round;
 }
 

@@ -45,12 +45,12 @@
 }
 
 .chip:focus-visible {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
 
 .chip:disabled {
-  opacity: 0.4;
+  opacity: var(--tt-disabled);
   cursor: default;
 }
 
@@ -75,7 +75,7 @@
 }
 
 .chip:active:not(:disabled) {
-  transform: scale(0.97);
+  transform: var(--tt-press);
 }
 
 .chip kbd {

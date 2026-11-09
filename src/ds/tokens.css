@@ -244,3 +244,25 @@
   --tt-hairline-bottom: inset 0 -1px 0 var(--tt-line);
   --tt-chip-raise: 0 1px 2px color-mix(in oklch, var(--tt-ink) 12%, transparent);
 }
+
+/* ── Fondations d'interaction, d'icône et de surface (09/11/2026, nettoyage) ──
+   Valeurs reprises telles quelles des modules, écrites une fois. */
+:root {
+  /* Focus clavier : un anneau, partout le même. */
+  --tt-focus-ring: 2px solid var(--tt-focus);
+  --tt-focus-offset: 3px;
+  /* Appui et indisponible */
+  --tt-press: scale(0.97);
+  --tt-press-round: scale(0.94);
+  --tt-disabled: 0.4;
+  /* Une pastille posée sur un coin découpe le fond autour d'elle. */
+  --tt-badge-cut: 0 0 0 2px var(--tt-bg);
+  /* Icônes au trait : tailles et épaisseurs */
+  --tt-icon-xs: 12px;
+  --tt-icon-s: 14px;
+  --tt-icon-m: 16px;
+  --tt-icon-l: 18px;
+  --tt-icon-xl: 20px;
+  --tt-icon-stroke: 2;
+  --tt-icon-stroke-bold: 2.5;
+}

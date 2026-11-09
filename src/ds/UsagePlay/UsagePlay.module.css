@@ -2,14 +2,8 @@
    Changes of the clean-up: answers stack on a narrow card, the pile count keeps its space. */
 
 .play {
-  display: grid;
+  composes: tile from "../atoms.module.css";
   gap: calc(var(--tt-space-1) * 4.5);
-  align-content: start;
-  padding: var(--tt-tile-pad);
-  border-radius: var(--tt-r-tile);
-  background: var(--tt-tile);
-  color: var(--tt-ink);
-  container-type: inline-size;
 }
 
 .eyebrow { composes: eyebrow from "../atoms.module.css"; }
@@ -53,6 +47,7 @@
 }
 
 .card {
+  composes: raised from "../atoms.module.css";
   position: absolute;
   inset: 0;
   display: grid;
@@ -60,9 +55,6 @@
   align-items: center;
   gap: calc(var(--tt-space-1) * 3.5);
   padding: var(--tt-space-3) var(--tt-space-4);
-  border-radius: var(--tt-r-card);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-card-lift);
   user-select: none;
   transition: transform 460ms var(--tt-spring), opacity 300ms ease;
 }

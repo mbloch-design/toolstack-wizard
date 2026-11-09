@@ -1,14 +1,8 @@
 /* The decision card, rebuilt as the page shows it (clean-up, 06/11/2026): head, question, answers, foot. */
 
 .card {
-  display: grid;
+  composes: tile from "../atoms.module.css";
   gap: var(--tt-space-4);
-  align-content: start;
-  padding: var(--tt-tile-pad);
-  border-radius: var(--tt-r-tile);
-  background: var(--tt-tile);
-  color: var(--tt-ink);
-  container-type: inline-size;
   transition: box-shadow var(--tt-dur-reveal) ease;
 }
 
@@ -125,11 +119,11 @@
 }
 
 .delta svg {
-  width: 12px;
-  height: 12px;
+  width: var(--tt-icon-xs);
+  height: var(--tt-icon-xs);
   fill: none;
   stroke: var(--tt-overlap-strong);
-  stroke-width: 2.5;
+  stroke-width: var(--tt-icon-stroke-bold);
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -160,11 +154,11 @@
 }
 
 .restCheck svg {
-  width: 14px;
-  height: 14px;
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
   fill: none;
   stroke: currentColor;
-  stroke-width: 2.5;
+  stroke-width: var(--tt-icon-stroke-bold);
   stroke-linecap: round;
   stroke-linejoin: round;
 }

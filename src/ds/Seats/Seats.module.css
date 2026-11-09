@@ -68,7 +68,7 @@
 }
 
 .stepper button[aria-disabled="true"] {
-  opacity: 0.4;
+  opacity: var(--tt-disabled);
 }
 
 /* « Il faut bien quelqu'un pour payer. »: the stepper shakes once. */
@@ -107,8 +107,8 @@
 }
 
 .people svg {
-  width: 18px;
-  height: 18px;
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
   fill: none;
   stroke: var(--tt-ink);
   stroke-width: 1.8;

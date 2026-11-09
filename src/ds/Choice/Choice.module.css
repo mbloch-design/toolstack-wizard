@@ -32,8 +32,8 @@
 }
 
 .choice:focus-visible {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
 
 .choice:hover:not(:disabled) {
@@ -86,8 +86,8 @@
 }
 
 .iconTile svg {
-  width: 18px;
-  height: 18px;
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
 }
 
 .check {
@@ -100,13 +100,13 @@
   height: 20px;
   border-radius: var(--tt-r-round);
   background: var(--tt-brand);
-  outline: 2px solid var(--tt-bg);
+  box-shadow: var(--tt-badge-cut);
   color: var(--tt-on-color);
 }
 
 .check svg {
-  width: 12px;
-  height: 12px;
+  width: var(--tt-icon-xs);
+  height: var(--tt-icon-xs);
   fill: none;
   stroke: currentColor;
   stroke-width: 3;

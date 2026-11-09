@@ -26,8 +26,8 @@
 
 .card:focus-visible {
   border-radius: var(--tt-r-card);
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
 
 .shot {
@@ -82,8 +82,8 @@
 }
 
 .action:focus-visible {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
 
 .action:hover:not(:disabled) {
@@ -92,15 +92,15 @@
 }
 
 .action:active:not(:disabled) {
-  transform: scale(0.94);
+  transform: var(--tt-press-round);
 }
 
 .action svg {
-  width: 20px;
-  height: 20px;
+  width: var(--tt-icon-xl);
+  height: var(--tt-icon-xl);
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: var(--tt-icon-stroke);
   stroke-linecap: round;
   stroke-linejoin: round;
 }

@@ -1,14 +1,7 @@
 /* The Split card: where the money goes, area by area, then tool by tool. */
 
 .card {
-  display: grid;
-  gap: var(--tt-tile-gap);
-  align-content: start;
-  padding: var(--tt-tile-pad);
-  border-radius: var(--tt-r-tile);
-  background: var(--tt-tile);
-  color: var(--tt-ink);
-  container-type: inline-size;
+  composes: tile from "../atoms.module.css";
 }
 
 .eyebrow { composes: eyebrow from "../atoms.module.css"; }
@@ -166,8 +159,8 @@
 
 .areaRow:focus-visible {
   border-radius: var(--tt-r-chip);
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 2px;
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
 
 .dot {

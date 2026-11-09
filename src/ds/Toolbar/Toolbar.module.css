@@ -80,8 +80,8 @@
 }
 
 .select:focus-within {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
 
 /* The whole pill opens the menu: the select covers it, its text stays in place. */
@@ -99,11 +99,11 @@
 .select svg {
   position: absolute;
   right: calc(var(--tt-space-1) * 3.5);
-  width: 14px;
-  height: 14px;
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: var(--tt-icon-stroke);
   stroke-linecap: round;
   stroke-linejoin: round;
   pointer-events: none;
@@ -132,8 +132,8 @@
 }
 
 .iconSwitch > button:focus-visible {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 2px;
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
 
 .iconSwitch > button[aria-pressed="true"] {
@@ -142,8 +142,8 @@
 }
 
 .iconSwitch svg {
-  width: 16px;
-  height: 16px;
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
 }
 
 @container (width <= 560px) {

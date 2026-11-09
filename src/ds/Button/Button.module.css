@@ -39,12 +39,12 @@
 }
 
 .button:focus-visible {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
 
 .button:disabled {
-  opacity: 0.4;
+  opacity: var(--tt-disabled);
   cursor: default;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .button:active:not(:disabled) {
-  transform: scale(0.97);
+  transform: var(--tt-press);
 }
 
 .icon {
@@ -72,11 +72,11 @@
 }
 
 .icon svg {
-  width: 18px;
-  height: 18px;
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: var(--tt-icon-stroke);
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -113,8 +113,8 @@
 }
 
 .iconButton:focus-visible {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
 
 .iconButton:disabled {
@@ -127,22 +127,22 @@
 }
 
 .iconButton:active:not(:disabled) {
-  transform: scale(0.94);
+  transform: var(--tt-press-round);
 }
 
 .iconButton svg {
-  width: 20px;
-  height: 20px;
+  width: var(--tt-icon-xl);
+  height: var(--tt-icon-xl);
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: var(--tt-icon-stroke);
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .iconButton[data-size="32"] svg {
-  width: 16px;
-  height: 16px;
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
 }
 
 /* Text link: label font, a line that draws itself on hover or focus.
@@ -165,8 +165,8 @@
 }
 
 .link:focus-visible {
-  outline: 2px solid var(--tt-focus);
-  outline-offset: 3px;
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
 
 .link:hover,

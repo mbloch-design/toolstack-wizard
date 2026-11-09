@@ -1,5 +1,6 @@
-/* Text atoms of the system, written once from the tokens. Components compose them:
-   .title { composes: eyebrow from "../atoms.module.css"; } */
+/* Atoms of the system, written once from the tokens. Components compose them:
+   .title { composes: eyebrow from "../atoms.module.css"; }
+   Text (eyebrow, titleM, label, text, note, strong), surfaces (tile, raised), focus. */
 
 .eyebrow {
   margin: 0;
@@ -43,4 +44,29 @@
 
 .strong {
   font-weight: var(--tt-w-em);
+}
+
+/* A card of the board: grey tile, large radius, its own container for its layout. */
+.tile {
+  display: grid;
+  gap: var(--tt-tile-gap);
+  align-content: start;
+  padding: var(--tt-tile-pad);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+  container-type: inline-size;
+}
+
+/* A white card lifted off a tile (the top card of Vos usages). */
+.raised {
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-card-lift);
+}
+
+/* Keyboard focus, for anything that can take it. */
+.focus:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }
