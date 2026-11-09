@@ -31,11 +31,13 @@ export function splitUnits(root: HTMLElement): string[] {
   }).map((el) => el.textContent ?? "");
 }
 
-/** Descendants that stick out of their parent's box, sideways. Positioned decoration and aria-hidden marks are ignored. */
+/** Descendants that stick out of their parent's box, sideways. Positioned decoration, transformed boxes and aria-hidden marks are ignored. */
 export function overflowing(root: HTMLElement): HTMLElement[] {
   return [...root.querySelectorAll<HTMLElement>("*")].filter((el) => {
     if (el.closest("[aria-hidden='true']") || getComputedStyle(el).display === "contents") return false;
     if (["absolute", "fixed"].includes(getComputedStyle(el).position)) return false;
+    // A transform (a tilted logo) moves the box on purpose; only a layout overflow is a defect.
+    if (getComputedStyle(el).transform !== "none") return false;
     // A parent in display: contents has no box: measure against the nearest ancestor that has one.
     let parent = el.parentElement;
     while (parent && getComputedStyle(parent).display === "contents") parent = parent.parentElement;

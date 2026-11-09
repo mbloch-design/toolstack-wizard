@@ -1,0 +1,382 @@
+/* « Vos usages », a card game (validated 31/10/2026), rebuilt from the system rules (.tt-play) with tokens.
+   Changes of the clean-up: answers stack on a narrow card, the pile count keeps its space. */
+
+.play {
+  display: grid;
+  gap: calc(var(--tt-space-1) * 4.5);
+  align-content: start;
+  padding: var(--tt-tile-pad);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+  container-type: inline-size;
+}
+
+.eyebrow { composes: eyebrow from "../atoms.module.css"; }
+.titleM { composes: titleM from "../atoms.module.css"; }
+.text { composes: text from "../atoms.module.css"; }
+.note { composes: note from "../atoms.module.css"; }
+.strong { composes: strong from "../atoms.module.css"; }
+.primary { composes: primary from "../atoms.module.css"; }
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-1) var(--tt-space-3);
+}
+
+/* A link whose line draws itself on hover. */
+.link {
+  padding: 0;
+  border: 0;
+  background: linear-gradient(currentColor, currentColor) 100% 100% / 0 1px no-repeat;
+  color: var(--tt-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  cursor: pointer;
+  transition: background-size 320ms var(--tt-ease);
+}
+
+.link:hover,
+.link:focus-visible {
+  background-position: 0 100%;
+  background-size: 100% 1px;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 3px;
+}
+
+.stage {
+  display: grid;
+  gap: calc(var(--tt-space-1) * 3.5);
+}
+
+.history {
+  display: grid;
+  gap: var(--tt-space-3);
+  justify-items: start;
+}
+
+/* The deck: the top card, two more behind it. */
+.table {
+  position: relative;
+  display: grid;
+  padding: 0 0 var(--tt-space-3);
+  touch-action: pan-y;
+}
+
+.deck {
+  position: relative;
+  height: 76px;
+}
+
+.card {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  align-items: center;
+  gap: calc(var(--tt-space-1) * 3.5);
+  padding: var(--tt-space-3) var(--tt-space-4);
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-card-lift);
+  user-select: none;
+  transition: transform 460ms var(--tt-spring), opacity 300ms ease;
+}
+
+.cardText {
+  display: grid;
+  gap: calc(var(--tt-space-1) / 2);
+  min-width: 0;
+  text-align: left;
+}
+
+.cardText > :first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card[data-depth="1"] {
+  opacity: 0.9;
+  transform: translateY(6px) scale(0.96) rotate(-1deg);
+}
+
+.card[data-depth="2"] {
+  opacity: 0.7;
+  transform: translateY(12px) scale(0.92) rotate(1.2deg);
+}
+
+.card[data-fly="daily"] {
+  opacity: 0;
+  transform: translate(-130%, 40px) rotate(-14deg);
+}
+
+.card[data-fly="sometimes"] {
+  opacity: 0;
+  transform: translate(0, 120%) scale(0.6);
+}
+
+.card[data-fly="cut"] {
+  opacity: 0;
+  transform: translate(130%, 40px) rotate(14deg);
+}
+
+.card[data-drag] {
+  transition: none;
+}
+
+/* The answers: the validated chip shape, without a chosen state (an answer leaves with the card). */
+.picks {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: calc(var(--tt-space-1) * 1.5);
+}
+
+.pick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tt-space-2);
+  min-height: 44px;
+  padding: 0 calc(var(--tt-space-1) * 2.5);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-hairline);
+  color: var(--tt-ink);
+  font: var(--tt-tag-font);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
+}
+
+.pick:focus-visible {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 3px;
+}
+
+.pick:hover {
+  box-shadow: var(--tt-hairline-ink);
+}
+
+.pick[data-pick="cut"]:hover {
+  box-shadow: var(--tt-hairline-overlap);
+  color: var(--tt-overlap-strong);
+}
+
+.pick:active {
+  transform: scale(0.97);
+}
+
+.pick kbd {
+  font: var(--tt-tag-font);
+  opacity: 0.45;
+}
+
+.play[data-paused] :is(.table, .picks) {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.reply {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--tt-space-3);
+  min-height: 1.4em;
+}
+
+.end b {
+  color: var(--tt-overlap-strong);
+}
+
+/* The piles: one per answer, a logo replays its card. */
+.piles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(var(--tt-space-1) * 1.5);
+}
+
+.pile {
+  display: grid;
+  align-content: start;
+  gap: calc(var(--tt-space-1) * 1.5);
+  padding: var(--tt-space-2) calc(var(--tt-space-1) * 2.5);
+  border-radius: var(--tt-r-card);
+  box-shadow: var(--tt-hairline-inset);
+  transition: box-shadow var(--tt-dur-state) ease;
+}
+
+.pile[data-bump] {
+  animation: bump 420ms var(--tt-spring);
+}
+
+/* The pile's name and its count, always apart (« De passage 0 », never « De passage0 »). */
+.pileHead {
+  composes: eyebrow from "../atoms.module.css";
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--tt-space-2);
+}
+
+.pileHead b {
+  font-weight: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+.pile[data-pile="cut"] .pileHead b {
+  color: var(--tt-overlap-strong);
+}
+
+.pile ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-1);
+  min-height: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pile button {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: var(--tt-logo-radius);
+  background: none;
+  cursor: pointer;
+  animation: land 380ms var(--tt-spring);
+}
+
+.pile button:hover {
+  transform: translateY(-2px);
+}
+
+/* The score. */
+.end {
+  display: grid;
+  gap: calc(var(--tt-space-1) * 1.5);
+  justify-items: center;
+  padding: var(--tt-space-1) 0 calc(var(--tt-space-1) / 2);
+  text-align: center;
+  animation: rise 520ms var(--tt-spring);
+}
+
+.end p {
+  margin: 0;
+}
+
+.score {
+  composes: figure from "../atoms.module.css";
+  display: flex;
+  align-items: baseline;
+  gap: var(--tt-space-1);
+  color: var(--tt-overlap-strong);
+}
+
+.score small {
+  font: var(--tt-unit-font);
+  letter-spacing: 0;
+}
+
+.endActs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tt-space-2) var(--tt-space-5);
+  margin-top: var(--tt-space-2);
+}
+
+/* The piles come alive at the end: dust greys and tilts, daily shines for a moment. */
+.play[data-done] .pile[data-pile="daily"] li button {
+  animation: shine 900ms var(--tt-ease) both;
+}
+
+.play[data-done] .pile[data-pile="cut"] li button {
+  opacity: 0.7;
+  filter: grayscale(1);
+  transform: rotate(-8deg) translateY(2px);
+  transition: filter 600ms ease, opacity 600ms ease, transform 600ms var(--tt-spring);
+}
+
+.play[data-done] .pile[data-pile="cut"] li:nth-child(even) button {
+  transform: rotate(7deg) translateY(3px);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+}
+
+@keyframes shine {
+  40% { transform: translateY(-4px) scale(1.12); }
+}
+
+@keyframes bump {
+  40% { box-shadow: var(--tt-bump-ring); }
+}
+
+@keyframes land {
+  from {
+    opacity: 0;
+    transform: translateY(-14px) scale(0.6);
+  }
+}
+
+@container (width <= 480px) {
+  .pick kbd {
+    display: none;
+  }
+}
+
+/* A narrow card: the question wraps, the answers stack, the piles stay three. */
+@container (width <= 400px) {
+  .deck {
+    height: 100px;
+  }
+
+  /* Two lines at most, so the price stays on the card whatever the name. */
+  .cardText > :first-child {
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .picks {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Very narrow: three columns cannot hold « LA POUSSIÈRE »; the piles become rows, name and count then logos. */
+@container (width <= 340px) {
+  .piles {
+    grid-template-columns: 1fr;
+  }
+
+  .pile {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .pile button,
+  .end,
+  .play[data-done] .pile[data-pile="daily"] li button {
+    transition: none;
+    animation: none;
+  }
+}

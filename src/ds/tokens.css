@@ -214,3 +214,15 @@
 :root[data-theme="dark"] {
   --tt-brand-mark: color-mix(in oklch, var(--tt-brand) 65%, white);
 }
+
+/* ── Contours et ombres d'élément (09/11/2026, nettoyage) ─────────────────
+   Valeurs déjà validées dans le système (.tt-play), nommées pour que les
+   modules les lisent au lieu de les réécrire. */
+:root {
+  --tt-hairline: 0 0 0 1px var(--tt-line);
+  --tt-hairline-ink: 0 0 0 1px var(--tt-ink);
+  --tt-hairline-overlap: 0 0 0 1px var(--tt-overlap);
+  --tt-hairline-inset: inset 0 0 0 1px var(--tt-line);
+  --tt-bump-ring: inset 0 0 0 2px var(--tt-ink);
+  --tt-card-lift: var(--tt-row-ring), 0 14px 30px -18px color-mix(in oklch, var(--tt-ink) 40%, transparent);
+}

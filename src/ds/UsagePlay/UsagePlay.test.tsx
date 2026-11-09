@@ -2,8 +2,7 @@
 import { useState } from "react";
 import { act, cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import StackUsagePlay from "./StackUsagePlay";
-import type { FitRow } from "./StackFindings";
+import StackUsagePlay, { type UsageRow } from "./UsagePlay";
 
 beforeEach(() => { vi.useFakeTimers(); });
 afterEach(() => { cleanup(); vi.useRealTimers(); });
@@ -16,14 +15,14 @@ function Harness({ initial = [undefined, undefined, undefined], onReviewTools = 
     tool: { id: String(index), slug: String(index), name: TOOLS[index][0] },
     cost: TOOLS[index][1], usage, detailHref: "/",
     setUsage: (next: number | null) => setValues((current) => current.map((old, i) => i === index ? next ?? undefined : old)),
-  } as FitRow));
+  } as UsageRow));
   return <>
     <StackUsagePlay rows={rows} lang="fr" format={(n) => `${n} €`} onReviewTools={onReviewTools} />
     <output aria-label="Recorded values">{JSON.stringify(values)}</output>
   </>;
 }
 const recorded = () => JSON.parse(screen.getByLabelText("Recorded values").textContent || "[]");
-const topCard = () => document.querySelector('.tt-play-card[data-depth="0"]')!.textContent;
+const topCard = () => document.querySelector('[data-depth="0"]')!.textContent;
 const pick = (name: string) => { fireEvent.click(screen.getByRole("button", { name: new RegExp(name) })); act(() => { vi.advanceTimersByTime(400); }); };
 
 describe("usage card game", () => {
