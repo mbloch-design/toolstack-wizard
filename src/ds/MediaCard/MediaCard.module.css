@@ -1,0 +1,106 @@
+/* The media card, as validated (.tt-mediacard): picture, tool, reason; the add button on the picture. */
+
+.label { composes: label from "../atoms.module.css"; }
+.note { composes: note from "../atoms.module.css"; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--tt-space-6) var(--tt-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slot {
+  position: relative;
+  min-width: 0;
+}
+
+.card {
+  display: grid;
+  gap: calc(var(--tt-space-1) * 2.5);
+  color: var(--tt-ink);
+  text-decoration: none;
+}
+
+.card:focus-visible {
+  border-radius: var(--tt-r-card);
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 3px;
+}
+
+.shot {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--tt-r-card);
+  background: var(--tt-tile);
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms var(--tt-ease);
+}
+
+.card:hover .shot img {
+  transform: scale(1.03);
+}
+
+.id {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-1) var(--tt-space-2);
+  min-width: 0;
+}
+
+/* Above the picture: a screenshot may set its own stacking. */
+.action {
+  position: absolute;
+  z-index: 2;
+  top: calc(var(--tt-space-1) * 2.5);
+  right: calc(var(--tt-space-1) * 2.5);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--tt-r-round);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-logo-shadow);
+  color: var(--tt-ink);
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
+}
+
+.action:disabled {
+  cursor: default;
+}
+
+.action:focus-visible {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 3px;
+}
+
+.action:hover:not(:disabled) {
+  background: var(--tt-ink);
+  color: var(--tt-bg);
+}
+
+.action:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.action svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

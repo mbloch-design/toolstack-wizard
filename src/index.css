@@ -21397,8 +21397,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 /* Ma Stack discovery reuses the catalogue media card and stack section controls. */
 @layer components {
-  .tce-media-context { margin: var(--space-xs) 0 0; color: var(--color-text-secondary); font: 400 var(--tt-size-card-body)/1.45 var(--font-ui); }
-  .ms-page .ms-reco { min-width: 0; } /* Legacy unlayered kit sets 40px. */
+  .tce-media-context { margin: var(--space-xs) 0 0; color: var(--color-text-secondary); font: 400 var(--tt-size-card-body)/1.45 var(--font-ui); } /* Legacy unlayered kit sets 40px. */
 }
 /* The lens view reuses the .ms-map hooks; its own pictures win over the old chip map. */
 /* Grid card: domain on its line, the possible duplicate as its own tag below. */

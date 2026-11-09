@@ -15,6 +15,11 @@
   gap: var(--tt-space-5);
 }
 
+.sectionFoot {
+  display: flex;
+  justify-content: center;
+}
+
 .sectionHead {
   display: flex;
   flex-wrap: wrap;

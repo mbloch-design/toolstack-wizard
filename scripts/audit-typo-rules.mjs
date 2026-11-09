@@ -33,7 +33,7 @@ const audit = (SIZES) => {
     const el = walker.currentNode.parentElement; const text = walker.currentNode.textContent.trim();
     if (!el || !text || seen.has(el)) continue; seen.add(el);
     const r = el.getBoundingClientRect(); if (r.width <= 1 || r.height <= 1) continue;
-    const s = getComputedStyle(el); if (s.visibility === "hidden" || el.closest("[aria-hidden='true']:not(.tt-amount):not(.tt-label)") && !el.closest(".tt-toolcard")) { /* decorative */ }
+    const s = getComputedStyle(el);
     if (s.visibility === "hidden") continue;
     const size = parseFloat(s.fontSize), weight = Number(s.fontWeight), family = s.fontFamily.split(",")[0].replace(/"/g, "").trim();
     const caps = s.textTransform === "uppercase", ls = parseFloat(s.letterSpacing) || 0, em = +(ls / size).toFixed(3);
@@ -63,7 +63,7 @@ for (const [state, data] of Object.entries(STATES)) for (const lang of ["fr", "e
   for (const f of await page.evaluate(audit, SIZES)) all.push({ ...f, where: `${state} · ${lang} · ${width}` });
   // The inventory as a list too.
   if (width === 1280 && lang === "fr" && state === "duel et partie") {
-    await page.locator(".tt-iconswitch button").nth(1).click().catch(() => {}); await page.waitForTimeout(400);
+    await page.getByRole("group", { name: /^(Affichage|Layout)$/ }).getByRole("button").nth(1).click().catch(() => {}); await page.waitForTimeout(400);
     for (const f of await page.evaluate(audit, SIZES)) all.push({ ...f, where: "inventaire en liste · fr · 1280" });
   }
   await page.close();

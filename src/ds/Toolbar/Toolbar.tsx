@@ -64,6 +64,11 @@ export function ToggleButton({ pressed, onClick, children }: { pressed: boolean;
 }
 
 /** A page section: its head, its controls and its content, spaced as one block. */
-export function Section({ labelledBy, id, children }: { labelledBy: string; id?: string; children: ReactNode }) {
-  return <section className={styles.section} id={id} aria-labelledby={labelledBy}>{children}</section>;
+export function Section({ labelledBy, id, name, children }: { labelledBy: string; id?: string; name?: string; children: ReactNode }) {
+  return <section className={styles.section} id={id} data-section={name} aria-labelledby={labelledBy}>{children}</section>;
+}
+
+/** The end of a section: one centred action (« D'autres pistes »). */
+export function SectionFoot({ children }: { children: ReactNode }) {
+  return <div className={styles.sectionFoot}>{children}</div>;
 }

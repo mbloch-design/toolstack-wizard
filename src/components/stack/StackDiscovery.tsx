@@ -1,9 +1,9 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from '@/lib/routerLinks';
 import ToolCardImage from '@/components/tool/ToolCardImage';
-import ToolLogo from '@/components/ToolLogo';
-import { Button } from './StackKit';
-import { Check, Plus, RefreshCw } from '@/lib/icons';
+import MediaCard, { MediaCards } from '@/ds/MediaCard/MediaCard';
+import { Section, SectionFoot, SectionHead } from '@/ds/Toolbar/Toolbar';
+import { atoms } from '@/ds/atoms';
 import { getExplorerHref, type ExplorationCandidate } from '@/lib/toolExploration';
 import type { ToolSummary } from '@/hooks/useSupabaseData';
 import { trackEvent } from '@/lib/analytics';
@@ -20,7 +20,7 @@ export default function StackDiscovery({ candidates, lang, prefix, sourceIds, se
   useLayoutEffect(() => {
     if (!focusNewRound.current) return;
     focusNewRound.current = false;
-    if (list.current) { list.current.scrollLeft = 0; list.current.querySelector<HTMLAnchorElement>('.tt-mediacard')?.focus({ preventScroll: true }); }
+    if (list.current) { list.current.scrollLeft = 0; list.current.querySelector<HTMLAnchorElement>('[data-media-link]')?.focus({ preventScroll: true }); }
   }, [round.cards]);
   const sourceKey = [...sourceIds].sort().join('|');
   useEffect(() => {
@@ -38,32 +38,20 @@ export default function StackDiscovery({ candidates, lang, prefix, sourceIds, se
     });
     trackEvent('stack_explorer_click', { source: 'recos_refresh' });
   };
-  return <section className="tt-section" data-section="discovery" aria-labelledby="ms-recos-title">
-    <header className="tt-sectionhead">
-      <div><h2 id="ms-recos-title" className="tt-title-section">{t('À découvrir', 'Discover something new')}</h2>
-        <p className="tt-text">{t('D’autres approches autour de vos outils. La prochaine bonne pioche est peut-être ici.', 'Fresh approaches around your tools. Your next good find could be here.')}</p>
-      </div>
-      <Link className="tt-link" to={getExplorerHref(prefix, { type: 'stack' })} state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`, ...(explorerSources?.length ? { explorerStackSources: explorerSources } : {}) }} onClick={() => trackEvent('stack_explorer_click', { source: 'recos' })}>{t('Explorer les pistes', 'Explore more ideas')}</Link>
-    </header>
-    {round.cards.length > 0 ? <ul ref={list} className="tt-mediacards" aria-label={t("Idées à découvrir", "Ideas to discover")}>{round.cards.map(candidate => {
+  // The section and its cards are design system components (src/ds); the page only passes its router links and screenshots.
+  return <Section labelledBy="ms-recos-title" name="discovery">
+    <SectionHead title={t('À découvrir', 'Discover something new')} titleId="ms-recos-title" note={t('D’autres approches autour de vos outils. La prochaine bonne pioche est peut-être ici.', 'Fresh approaches around your tools. Your next good find could be here.')}
+      action={<Link className={atoms.link} to={getExplorerHref(prefix, { type: 'stack' })} state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`, ...(explorerSources?.length ? { explorerStackSources: explorerSources } : {}) }} onClick={() => trackEvent('stack_explorer_click', { source: 'recos' })}>{t('Explorer les pistes', 'Explore more ideas')}</Link>} />
+    {round.cards.length > 0 ? <MediaCards listRef={list} label={t("Idées à découvrir", "Ideas to discover")}>{round.cards.map(candidate => {
       const { tool } = candidate;
       const added = selectedIds.includes(tool.id);
       const pending = pendingSlug === (tool.slug || tool.id);
-      return <li key={tool.id} className="ms-reco tt-mediacard-slot" data-discovery-tool={tool.slug || tool.id}>
-        {/* Organisme « carte média » de la planche : la carte est le lien (image, outil, raison). L'ajout, propre au site, se pose sur l'image. */}
-        <Link className="tt-mediacard" to={`${prefix}/tool/${tool.slug ?? tool.id}`} aria-label={t(`Voir la fiche de ${tool.name}`, `View ${tool.name}`)} onClick={() => trackEvent('stack_reco_click', { tool: tool.slug || tool.id })}>
-            <span className="tt-mediacard-shot"><ToolCardImage tool={tool} logoSize={44} overlayMode="static" /></span>
-            <span className="tt-mediacard-id"><ToolLogo tool={tool} size={24} className="tt-logo-tile" /><span className="tt-label">{tool.name}</span>{candidate.categoryLabel && <span className="tt-note">· {candidate.categoryLabel}</span>}</span>
-            {(lang === 'fr' ? candidate.reasonFr : candidate.reasonEn) && <span className="tt-note">{lang === 'fr' ? candidate.reasonFr : candidate.reasonEn}</span>}
-        </Link>
-        <button type="button" className="tt-mediacard-action" disabled={added || !!pendingSlug} aria-busy={pending || undefined}
-            aria-label={pending ? t(`Ajout de ${tool.name} en cours`, `Adding ${tool.name}`) : added ? t(`${tool.name} ajouté à ma stack`, `${tool.name} added to my stack`) : t(`Ajouter ${tool.name} à ma stack`, `Add ${tool.name} to my stack`)}
-            title={pending ? t('Ajout en cours', 'Adding') : added ? t('Dans ma stack', 'In my stack') : t('Ajouter à ma stack', 'Add to my stack')}
-            onClick={event => { event.preventDefault(); event.stopPropagation(); onAdd(tool, event.currentTarget.closest('li')!); }}>
-            {pending ? <RefreshCw aria-hidden /> : added ? <Check aria-hidden /> : <Plus aria-hidden />}
-        </button>
-      </li>;
-    })}</ul> : <p className="tt-text">{t('La curiosité ne s’arrête pas aux liens du catalogue. Ouvrez l’Explorer pour choisir votre piste.', 'Curiosity goes beyond catalogue connections. Open the Explorer to choose your direction.')}</p>}
-    {more && <div className="tt-section-foot"><Button variant="secondary" onClick={renew}>{t('D’autres pistes', 'More ideas')}</Button></div>}
-  </section>;
+      return <MediaCard key={tool.id} lang={lang} tool={tool} dataTool={tool.slug || tool.id} category={candidate.categoryLabel}
+        image={<ToolCardImage tool={tool} logoSize={44} overlayMode="static" />}
+        reason={(lang === 'fr' ? candidate.reasonFr : candidate.reasonEn) || undefined}
+        renderLink={(className, content) => <Link className={className} data-media-link="" to={`${prefix}/tool/${tool.slug ?? tool.id}`} aria-label={t(`Voir la fiche de ${tool.name}`, `View ${tool.name}`)} onClick={() => trackEvent('stack_reco_click', { tool: tool.slug || tool.id })}>{content}</Link>}
+        add={{ state: pending ? 'pending' : added ? 'added' : 'idle', disabled: !!pendingSlug, onAdd: (origin) => onAdd(tool, origin) }} />;
+    })}</MediaCards> : <p className={atoms.text}>{t('La curiosité ne s’arrête pas aux liens du catalogue. Ouvrez l’Explorer pour choisir votre piste.', 'Curiosity goes beyond catalogue connections. Open the Explorer to choose your direction.')}</p>}
+    {more && <SectionFoot><button type="button" className={atoms.button} onClick={renew}>{t('D’autres pistes', 'More ideas')}</button></SectionFoot>}
+  </Section>;
 }

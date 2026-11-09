@@ -125,32 +125,6 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-pagehead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px; }
 .tt-pagehead > div { display: grid; gap: 10px; }
 
-/* ── Organisme : l'en-tête de section ───────────────────────────────────── */
-.tt-sectionhead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; }
-.tt-sectionhead > div { display: grid; gap: 6px; max-width: 60ch; }
-
-/* ── Molécule : la carte d'outil ─────────────────────────────────────────── */
-/* Une tuile : le logo et ce qu'il coûte en haut, le nom, puis son état. */
-.tt-toolcard { position: relative; display: grid; grid-template-columns: 40px minmax(0, 1fr); grid-template-areas: "logo amount" "name name" "state state"; align-items: start; gap: 12px 10px; width: 100%; padding: 16px; border: 0; border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); text-align: left; font: inherit; cursor: pointer; transition: background-color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
-.tt-toolcard:hover { background: var(--tt-tile-2); }
-.tt-toolcard:active { transform: scale(.985); }
-.tt-toolcard > .tt-logo-tile { grid-area: logo; width: 40px; height: 40px; }
-.tt-toolcard > .tt-amount { grid-area: amount; justify-self: end; }
-.tt-toolcard > .tt-label { grid-area: name; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.tt-toolcard > .tt-tag { grid-area: state; justify-self: start; }
-.tt-groupname { display: flex; align-items: baseline; gap: 10px; }
-.tt-groupname > i { align-self: center; width: 8px; height: 8px; border-radius: var(--tt-r-round); background: var(--c, var(--tt-ink)); }
-
-/* ── Molécule : la carte média ──────────────────────────────────────────── */
-/* La capture porte la présence ; le texte reste en dessous, calme. */
-.tt-mediacards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px 16px; }
-.tt-mediacard { display: grid; gap: 10px; color: var(--tt-ink); text-decoration: none; }
-.tt-mediacard-shot { aspect-ratio: 16 / 10; overflow: hidden; border-radius: var(--tt-r-card); background: var(--tt-tile); }
-.tt-mediacard-shot img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--tt-ease); }
-.tt-mediacard:hover .tt-mediacard-shot img { transform: scale(1.03); }
-.tt-mediacard-id { display: flex; align-items: center; gap: 8px; min-width: 0; }
-.tt-mediacard-id > .tt-logo-tile { width: 24px; height: 24px; }
-
 /* ── Organisme : le pied de page ────────────────────────────────────────── */
 .tt-foot { display: grid; grid-template-columns: minmax(0, 1.2fr) repeat(4, minmax(0, 1fr)); gap: 32px 24px; padding-block: 64px 32px; }
 .tt-foot-col { display: grid; align-content: start; gap: 12px; }
@@ -249,31 +223,15 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-link-arrow { display: inline-grid; width: 16px; overflow: hidden; opacity: 0; transform: translateX(-6px); transition: opacity var(--tt-dur-state) ease, transform 320ms var(--tt-ease); }
 .tt-link:hover .tt-link-arrow { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .tt-link::after, .tt-link-arrow { transition: none; } }
-.tt-iconswitch { display: inline-flex; gap: 2px; padding: 3px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); }
-.tt-iconswitch > :is(button, a, span) { display: inline-grid; place-items: center; min-width: 34px; padding: 0 8px; font: var(--tt-tag-font); text-decoration: none; height: 34px; border: 0; border-radius: var(--tt-r-pill); background: none; color: var(--tt-meta); cursor: pointer; transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease; }
-.tt-iconswitch > :is([aria-pressed="true"], [aria-current]) { background: var(--tt-bg); color: var(--tt-ink); box-shadow: 0 1px 2px color-mix(in oklch, var(--tt-ink) 12%, transparent); }
-.tt-iconswitch > :is(button, a):focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 2px; }
-.tt-iconswitch svg { width: 16px; height: 16px; }
 .tt-btn--grey[aria-pressed="true"] { background: var(--tt-ink); color: var(--tt-bg); }
 .tt-figure :is(.mk-odo, .mk-odo *) { font-variant-numeric: normal; }
 .tt-pagehead-title, .tt-pagehead-intro { display: grid; gap: 10px; }
 .tt-pagehead-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
-.tt-section { display: grid; gap: 20px; }
-.tt-section-foot { display: flex; justify-content: center; }
 /* Le fond typographique d’une page du système, celui de la planche : Inter, interligne 1,6, variantes cv05 et cv08. */
 .tt-page { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--tt-page-gap); color: var(--tt-ink); font: var(--tt-w-text) 1rem/1.6 var(--tt-read); letter-spacing: 0; font-optical-sizing: auto; font-feature-settings: "cv05", "cv08"; }
 .tt-page > * { margin-block: 0; }
 /* Grand écran (06/11/2026) : les trois modules courts côte à côte, puis la répartition sur toute la largeur, pour qu'elle passe en version large (anneau).
    Dès 1 400 px : en dessous, la carte Budget n'a plus la place pour sa rangée de logos (vérifié à 1 280 px). */
-.tt-toolcard.is-selected { box-shadow: var(--tt-row-ring-on); }
-.tt-mediacard-link { display: grid; gap: 10px; color: inherit; text-decoration: none; }
-.tt-mediacard-link:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; border-radius: var(--tt-r-card); }
-.tt-mediacard-action { position: absolute; top: 10px; right: 10px; display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: var(--tt-r-round); background: var(--tt-bg); color: var(--tt-ink); box-shadow: var(--tt-logo-shadow); cursor: pointer; transition: transform var(--tt-dur-press) ease, background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease; }
-.tt-mediacard-action:hover:not(:disabled) { background: var(--tt-ink); color: var(--tt-bg); }
-.tt-mediacard-action:active:not(:disabled) { transform: scale(.94); }
-.tt-mediacard-action:disabled { cursor: default; }
-.tt-mediacard-action:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; }
-.tt-mediacard-action svg { width: 20px; height: 20px; }
 .tt-link { position: relative; display: inline-flex; align-items: center; gap: 4px; padding: 4px 0; border: 0; background: none; color: var(--tt-ink); font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); text-decoration: none; cursor: pointer; }
 .tt-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 320ms var(--tt-ease); }
 .tt-link:hover::after { transform: scaleX(1); transform-origin: left; }
@@ -281,6 +239,5 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 
 
 /* Proposition (31/10) : l'ajout posé sur la carte média, voisin du lien (un bouton ne vit pas dans un lien). */
-.tt-mediacard-slot { position: relative; }
 
 
