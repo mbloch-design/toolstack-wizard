@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button, { TextButton } from "../Button/Button";
 import Chip from "../Chip/Chip";
+import Stepper from "../Stepper/Stepper";
 import styles from "./Seats.module.css";
 
 export type SeatsProps = {
@@ -35,12 +36,8 @@ export default function Seats({ lang, plan, seats, onChange, total, onConfirm, o
         <div className={styles.presets} role="group" aria-label={t("Tailles d’équipe", "Team sizes")}>
           {PRESETS.map((n) => <Chip key={n} size="md" pressed={seats === n} onClick={() => set(n)}>{n}</Chip>)}
         </div>
-        <div className={styles.stepper} data-nope={nudge ? "" : undefined} role="group" aria-label={t("Nombre de personnes", "Number of people")} onAnimationEnd={() => setNudge(false)}>
-          <button type="button" aria-disabled={seats <= 1} aria-label={t("Une personne de moins", "One fewer")}
-            onClick={() => { if (seats <= 1) { setNudge(false); requestAnimationFrame(() => setNudge(true)); return; } setNudge(false); set(seats - 1); }}>−</button>
-          <output aria-live="polite">{seats}</output>
-          <button type="button" aria-label={t("Une personne de plus", "One more")} onClick={() => set(seats + 1)}>+</button>
-        </div>
+        <Stepper value={seats} min={1} max={500} label={t("Nombre de personnes", "Number of people")} lessLabel={t("Une personne de moins", "One fewer")} moreLabel={t("Une personne de plus", "One more")}
+          onChange={(n) => { setNudge(false); set(n); }} onRefuse={() => setNudge(seats <= 1)} />
         <Button variant="primary" onClick={onConfirm}>{t("Valider", "Confirm")}</Button>
       </div>
       <p className={styles.nudge} aria-live="polite">{nudge ? t("Il faut bien quelqu’un pour payer.", "Someone has to pay.") : ""}</p>

@@ -36,46 +36,7 @@
   gap: var(--tt-space-1);
 }
 
-.stepper button {
-  display: grid;
-  place-items: center;
-  min-width: 40px;
-  height: 40px;
-  padding: 0 var(--tt-space-2);
-  border: 0;
-  border-radius: var(--tt-r-pill);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-row-ring);
-  color: var(--tt-ink);
-  font: var(--tt-label-font);
-  letter-spacing: var(--tt-label-tracking);
-  font-variant-numeric: tabular-nums;
-  cursor: pointer;
-}
-
-.stepper {
-  display: flex;
-  align-items: center;
-  gap: var(--tt-space-2);
-}
-
-.stepper output {
-  min-width: 3ch;
-  font: var(--tt-amount-font);
-  letter-spacing: var(--tt-amount-tracking);
-  text-align: center;
-  font-variant-numeric: tabular-nums;
-}
-
-.stepper button[aria-disabled="true"] {
-  opacity: var(--tt-disabled);
-}
-
-/* « Il faut bien quelqu'un pour payer. »: the stepper shakes once. */
-.stepper[data-nope] {
-  animation: nope 360ms var(--tt-ease);
-}
-
+/* « Il faut bien quelqu'un pour payer. » under the stepper when « − » refuses. */
 .nudge {
   min-height: 1lh;
   margin: 0;
@@ -126,11 +87,6 @@
   letter-spacing: var(--tt-text-tracking);
 }
 
-@keyframes nope {
-  25% { transform: translateX(-4px); }
-  75% { transform: translateX(4px); }
-}
-
 @keyframes pop {
   from {
     opacity: 0;
@@ -139,6 +95,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .stepper[data-nope],
   .people i { animation: none; }
 }
