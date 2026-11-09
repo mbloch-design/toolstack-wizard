@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 1,
+  "slug": "micro-man",
+  "status": "draft",
+  "mode": "MANUAL_READ",
+  "researchedOn": "2026-11-09",
+  "researcher": "Buffy (Freebuff) — lecture directe des pages officielles, sans exécution du collector",
+  "identity": {
+    "officialName": "Micro Man",
+    "websiteUrl": "https://micro-man.fr/",
+    "pricingUrl": "https://micro-man.fr/pricing/",
+    "legalUrl": "https://micro-man.fr/mentions-legales/",
+    "termsUrl": "https://micro-man.fr/cgu-tarifs/",
+    "sourceTier": 1,
+    "publisher": "Dorian Arnaud (micro-entreprise), France",
+    "submissionEvidence": "Aucun badge de soumission observé sur le site ; entrée ajoutée à la demande de l'utilisateur"
+  },
+  "collector": {
+    "mode": "MANUAL_READ",
+    "version": 1,
+    "locale_requested": "fr-FR",
+    "market_requested": "reference_fr",
+    "last_checked_at": "2026-11-09",
+    "notes": "Aucune capture collector. Faits relevés sur l'accueil, la page de tarifs, les mentions légales et les CGU le 2026-11-09. Les chemins français /tarifs et /fonctionnalites renvoient 404 : les adresses réelles sont /pricing/ et /features/. Une re-capture est nécessaire avant publication attestée.",
+    "sources": [
+      { "source_id": "src:manual:micro-man:home", "url": "https://micro-man.fr/", "domain": "micro-man.fr", "source_type": "vendor_home", "purpose": "positioning", "is_official": true, "source_tier": 1, "is_accessible": true, "last_checked_at": "2026-11-09", "robots": { "allowed": true, "checked_at": "2026-11-09", "reason": null }, "captures": [] },
+      { "source_id": "src:manual:micro-man:pricing", "url": "https://micro-man.fr/pricing/", "domain": "micro-man.fr", "source_type": "pricing", "purpose": "billing_commitment", "is_official": true, "source_tier": 1, "is_accessible": true, "last_checked_at": "2026-11-09", "robots": { "allowed": true, "checked_at": "2026-11-09", "reason": null }, "captures": [] },
+      { "source_id": "src:manual:micro-man:legal", "url": "https://micro-man.fr/mentions-legales/", "domain": "micro-man.fr", "source_type": "legal", "purpose": "identity_and_hosting", "is_official": true, "source_tier": 1, "is_accessible": true, "last_checked_at": "2026-11-09", "robots": { "allowed": true, "checked_at": "2026-11-09", "reason": null }, "captures": [] },
+      { "source_id": "src:manual:micro-man:terms", "url": "https://micro-man.fr/cgu-tarifs/", "domain": "micro-man.fr", "source_type": "terms", "purpose": "contractual_terms", "is_official": true, "source_tier": 1, "is_accessible": true, "last_checked_at": "2026-11-09", "robots": { "allowed": true, "checked_at": "2026-11-09", "reason": null }, "captures": [] }
+    ],
+    "observations": [
+      {
+        "observation_id": "obs:manual:micro-man:solo",
+        "tool": "Micro Man",
+        "status": "observed",
+        "confidence": "high",
+        "observed_on": "2026-11-09",
+        "plan_key": "solo",
+        "plan_name_localized": "Plan Solo",
+        "plan_summary": "Offre gratuite durable, sans carte bancaire, limitée à un client.",
+        "native_amount": 0,
+        "native_currency": "EUR",
+        "billing_period": "monthly",
+        "billing_commitment": "none",
+        "pricing_unit": "account_month",
+        "seat_type": null,
+        "tax_inclusion": null,
+        "feature_highlights": ["1 contact unique", "devis, acomptes et avoirs", "journal de recettes", "accès mobile"],
+        "evidence_excerpt": "Plan Solo — 0 € Gratuit. 1 contact unique. Factures électroniques conformes (0,01 € / facture) en illimités. SANS ENGAGEMENT.",
+        "evidence_selector": "pricing-card:solo",
+        "source_url": "https://micro-man.fr/pricing/",
+        "market_evidence": { "grid_currency": "EUR", "html_lang_attr": "fr", "french_content_markers": ["€"] },
+        "value_fingerprint": "0|EUR|monthly|account_month|solo"
+      },
+      {
+        "observation_id": "obs:manual:micro-man:mensuel",
+        "tool": "Micro Man",
+        "status": "observed",
+        "confidence": "high",
+        "observed_on": "2026-11-09",
+        "plan_key": "mensuel",
+        "plan_name_localized": "Plan Mensuel",
+        "plan_summary": "Abonnement sans engagement, contacts illimités.",
+        "native_amount": 4.99,
+        "native_currency": "EUR",
+        "billing_period": "monthly",
+        "billing_commitment": "monthly",
+        "pricing_unit": "account_month",
+        "tax_inclusion": null,
+        "feature_highlights": ["contacts illimités", "résiliable à tout moment", "paiement via Stripe"],
+        "evidence_excerpt": "Plan Mensuel — 4,99 € / mois. Illimité, résiliable à tout moment. Contacts illimités.",
+        "evidence_selector": "pricing-card:mensuel",
+        "source_url": "https://micro-man.fr/pricing/",
+        "value_fingerprint": "4.99|EUR|monthly|account_month|mensuel"
+      },
+      {
+        "observation_id": "obs:manual:micro-man:annuel",
+        "tool": "Micro Man",
+        "status": "observed",
+        "confidence": "high",
+        "observed_on": "2026-11-09",
+        "plan_key": "annuel",
+        "plan_name_localized": "Plan Annuel",
+        "plan_summary": "Abonnement annuel avec support prioritaire.",
+        "native_amount": 49.99,
+        "native_currency": "EUR",
+        "billing_period": "yearly",
+        "billing_commitment": "annual_prepaid",
+        "pricing_unit": "account_year",
+        "tax_inclusion": null,
+        "feature_highlights": ["contacts illimités", "support prioritaire", "équivalent mensuel affiché"],
+        "evidence_excerpt": "Plan Annuel — 49,99 € / an, soit 4,17 € / mois — économisez 10 €. Support prioritaire.",
+        "evidence_selector": "pricing-card:annuel",
+        "source_url": "https://micro-man.fr/pricing/",
+        "value_fingerprint": "49.99|EUR|yearly|account_year|annuel"
+      },
+      {
+        "observation_id": "obs:manual:micro-man:per_invoice",
+        "tool": "Micro Man",
+        "status": "observed",
+        "confidence": "high",
+        "observed_on": "2026-11-09",
+        "plan_key": "invoice_fee",
+        "plan_name_localized": "Frais par facture électronique",
+        "plan_summary": "Coût unitaire de la facture électronique, dû sur toutes les offres, offre gratuite comprise.",
+        "native_amount": 0.01,
+        "native_currency": "EUR",
+        "billing_period": "per_invoice",
+        "pricing_unit": "per_electronic_invoice",
+        "feature_highlights": ["transport via une plateforme de dématérialisation partenaire", "présenté comme le prix le plus bas du marché"],
+        "evidence_excerpt": "0,01 € par facture électronique — la moins chère du marché. Factures électroniques conformes (0,01 € / facture) en illimités, y compris dans le plan Solo.",
+        "evidence_selector": "pricing-note:per-invoice",
+        "source_url": "https://micro-man.fr/pricing/",
+        "value_fingerprint": "0.01|EUR|per_invoice|per_electronic_invoice|invoice"
+      },
+      {
+        "observation_id": "obs:manual:micro-man:annual_monthly_equivalent",
+        "tool": "Micro Man",
+        "status": "derived",
+        "confidence": "high",
+        "observed_on": "2026-11-09",
+        "plan_key": "annuel",
+        "plan_name_localized": "Plan Annuel (équivalent mensuel)",
+        "native_amount": 4.17,
+        "native_currency": "EUR",
+        "billing_period": "monthly",
+        "pricing_unit": "account_month",
+        "derived": true,
+        "derivation": "49,99 € / 12 = 4,1658 €, arrondi à 4,17 € par l'éditeur lui-même.",
+        "evidence_excerpt": "soit 4,17 € / mois — économisez 10 €",
+        "source_url": "https://micro-man.fr/pricing/",
+        "value_fingerprint": "4.17|EUR|monthly|account_month|annuel-derived"
+      }
+    ],
+    "claims": [
+      { "claim_key": "capability.invoicing", "value": "Devis transformables en factures, factures d'acompte et avoirs, suivi des paiements et relances, export PDF avec branding.", "source_url": "https://micro-man.fr/", "confidence": "high" },
+      { "claim_key": "capability.e_invoicing", "value": "Facture électronique présentée comme conforme à la réforme et transmise via une plateforme de dématérialisation partenaire immatriculée (Super PDP).", "source_url": "https://micro-man.fr/", "confidence": "medium" },
+      { "claim_key": "capability.urssaf", "value": "Calcul automatique des cotisations, journal de recettes exportable, alerte sur les seuils de chiffre d'affaires, déclaration et paiement depuis l'application ; certification tiers déclarant revendiquée.", "source_url": "https://micro-man.fr/", "confidence": "medium" },
+      { "claim_key": "capability.dashboard", "value": "Tableau de bord avec chiffre d'affaires brut, dépenses et bénéfice net, mis à jour en temps réel.", "source_url": "https://micro-man.fr/", "confidence": "high" },
+      { "claim_key": "capability.crm_catalog", "value": "Gestion des contacts et catalogue de produits et services réutilisables dans les documents.", "source_url": "https://micro-man.fr/", "confidence": "high" },
+      { "claim_key": "terms.availability", "value": "Disponibilité visée de 99,9 % dans les CGU, sans engagement de service détaillé.", "source_url": "https://micro-man.fr/cgu-tarifs/", "confidence": "medium" },
+      { "claim_key": "terms.cancellation", "value": "Résiliation possible à tout moment ; accès maintenu jusqu'à la fin de la période facturée ; droit de rétractation écarté une fois le service commencé.", "source_url": "https://micro-man.fr/cgu-tarifs/", "confidence": "high" },
+      { "claim_key": "terms.vat_franchise", "value": "CGU : TVA non applicable, article 293 B du CGI. Mentions légales : numéro de TVA intracommunautaire indiqué.", "source_url": "https://micro-man.fr/cgu-tarifs/", "confidence": "high" },
+      { "claim_key": "hosting.provider", "value": "Hébergement assuré par Hostinger International Ltd ; la localisation des serveurs n'est pas précisée sur les mentions légales.", "source_url": "https://micro-man.fr/mentions-legales/", "confidence": "high" },
+      { "claim_key": "identity.publisher", "value": "Éditeur : Dorian Arnaud, micro-entreprise, SIRET 95305167900017, responsable de publication Dorian Arnaud.", "source_url": "https://micro-man.fr/mentions-legales/", "confidence": "high" },
+      { "claim_key": "marketing.made_in_france", "value": "Le pied de page revendique « Made in France » et des données chiffrées conformes au RGPD.", "source_url": "https://micro-man.fr/", "confidence": "medium" }
+    ],
+    "conflicts": [
+      {
+        "conflict_id": "c1_free_plan_is_not_costless",
+        "severity": "medium",
+        "summary": "L'offre d'entrée est présentée comme gratuite alors qu'un coût par facture électronique s'applique aussi sur cette offre.",
+        "evidence_a": "Accueil : « Gratuit pour votre 1er client », « 0 € Gratuit ».",
+        "evidence_b": "Grille : « Factures électroniques conformes (0,01 € / facture) en illimités » dans le plan Solo.",
+        "resolution": "L'offre est bien durable et sans abonnement, mais elle n'est pas sans coût : la rédaction ne la présente jamais comme gratuite au sens strict.",
+        "needs_human_review": false
+      },
+      {
+        "conflict_id": "c2_vat_status_ambiguous",
+        "severity": "low",
+        "summary": "Les mentions légales affichent un numéro de TVA, tandis que les CGU indiquent que la TVA ne s'applique pas au titre de la franchise en base.",
+        "evidence_a": "Mentions légales : « TVA : FR24953051679 ».",
+        "evidence_b": "CGU : « n'étant pas assujettie à la TVA (Article 293 B du CGI), la TVA ne s'applique pas sur nos tarifs ».",
+        "resolution": "Les deux peuvent coexister (numéro intracommunautaire et franchise en base), mais un acheteur peut croire que la TVA s'ajoute. À clarifier avant d'afficher un prix.",
+        "needs_human_review": true
+      },
+      {
+        "conflict_id": "c3_made_in_france_vs_hosting",
+        "severity": "medium",
+        "summary": "Le site revendique une fabrication française alors que l'hébergement est confié à un prestataire international sans région annoncée.",
+        "evidence_a": "Pied de page : « Made in France ».",
+        "evidence_b": "Mentions légales : hébergement par Hostinger International Ltd, aucune localisation de serveur indiquée.",
+        "resolution": "Aucune affirmation de souveraineté n'est reprise dans la rédaction ; le fait d'hébergement est mentionné tel quel.",
+        "needs_human_review": true
+      },
+      {
+        "conflict_id": "c4_annual_bonus_badge_placement",
+        "severity": "low",
+        "summary": "La mention « 2 mois offerts » est posée sur la carte de l'offre mensuelle alors que l'avantage décrit concerne l'offre annuelle.",
+        "evidence_a": "Carte Mensuel : badge « 2 MOIS OFFERTS ».",
+        "evidence_b": "FAQ de la page tarifs : « pour profiter des 2 mois offerts sur l'offre annuelle ».",
+        "resolution": "L'avantage est rattaché à l'offre annuelle dans la rédaction ; le badge est traité comme un défaut d'affichage.",
+        "needs_human_review": true
+      }
+    ],
+    "extraction_unknowns": [
+      "Localisation réelle des serveurs et du stockage des données de facturation.",
+      "Identité de la plateforme de dématérialisation partenaire et conditions de son recours.",
+      "TVA applicable aux frais par facture, malgré la franchise en base annoncée.",
+      "Plafond éventuel du nombre de factures sur l'offre gratuite au-delà du client unique.",
+      "Nature de l'accès mobile : application native ou interface web adaptée.",
+      "Modalités concrètes de remboursement en cas de résiliation en cours de période annuelle."
+    ]
+  },
+  "conflicts_summary": {
+    "count": 4,
+    "highest_severity": "medium",
+    "blocking": false,
+    "note": "Aucun conflit n'empêche la rédaction : les points litigieux ont été écartés du texte et conservés en observations. Le statut de TVA reste à trancher avant d'afficher un prix."
+  },
+  "unknowns": [
+    "Aucune capture collector : facts_basis vide, publication attestée impossible en l'état.",
+    "Les identifiants de taxonomie (covers, functional_needs, personas, verticals) sont proposés et restent à mapper au registre du catalogue.",
+    "Le vocabulaire autorisé de ai_angle.stance n'est pas confirmé ; « aucun » est proposé car le produit n'est pas un outil d'IA.",
+    "La certification URSSAF et la conformité à la réforme de facturation sont des affirmations de l'éditeur, non vérifiées auprès des organismes."
+  ],
+  "editorial_drafts": {
+    "author": "Buffy (Freebuff)",
+    "content_version": 1,
+    "status": "draft",
+    "generated_on": "2026-11-09",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations. pricing_guidance ne porte que de la présentation (modèle, déploiement, cautions), sans fait tarifaire faisant autorité.",
+    "facts_basis": [],
+    "fr": {
+      "short_description": "Logiciel de gestion pour auto-entrepreneurs qui réunit devis, factures électroniques, suivi des recettes et déclaration URSSAF dans une seule application.",
+      "long_description": "Micro Man prend le parti inverse des suites comptables généralistes : il ne cherche pas à servir toutes les entreprises, mais un statut précis, celui de la micro-entreprise. Devis, factures, acomptes et avoirs y sont liés aux contacts et au catalogue de prestations ; les encaissements alimentent un journal de recettes exportable et un tableau de bord qui affiche chiffre d'affaires, dépenses et bénéfice net. Le calcul des cotisations se fait à partir des recettes réelles, avec une alerte à l'approche des seuils du régime, et la déclaration comme le paiement peuvent être faits depuis l'application sans repasser par le portail officiel. La facture électronique est transmise via une plateforme de dématérialisation partenaire, facturée à l'unité plutôt qu'incluse dans un forfait. L'entrée de gamme est une offre gratuite durable, plafonnée à un client, sans carte bancaire : de quoi facturer un premier client pour de vrai avant de décider.",
+      "verdict": {
+        "keepIf": [
+          "Vous êtes auto-entrepreneur ou micro-entrepreneur et votre gestion tient aujourd'hui dans un tableur.",
+          "Vous voulez que les cotisations et le journal de recettes soient calculés à partir des encaissements réels, sans recalcul manuel.",
+          "Vous préférez commencer sans carte bancaire, sur un vrai client, plutôt que sur une démonstration.",
+          "La facture électronique vous inquiète et vous voulez qu'elle soit prise en charge sans changer d'outil."
+        ],
+        "avoidIf": [
+          "Vous n'êtes pas au régime micro : le produit est taillé pour ce statut et ne suivra pas une société.",
+          "Vous facturez beaucoup : le coût à la facture s'ajoute à l'abonnement et devient un poste à surveiller.",
+          "Vous voulez un accompagnement comptable humain : l'éditeur précise lui-même que l'outil n'est pas un cabinet d'expertise comptable.",
+          "Vous avez besoin de garanties fortes sur la localisation des données de facturation : celle-ci n'est pas annoncée."
+        ],
+        "threshold": "Micro Man devient le bon choix quand la complexité vient du statut, pas du volume : cotisations, seuils, journal de recettes, facture électronique. Si votre problème est de gérer plusieurs sociétés ou une équipe, ce n'est pas le bon outil."
+      },
+      "pros": [
+        "Le statut est le cœur du produit : cotisations, seuils et journal de recettes sont traités comme des objets de premier ordre, pas comme un module greffé.",
+        "La facture électronique est déjà branchée sur une plateforme de dématérialisation partenaire, avec un coût à l'unité plutôt qu'un forfait.",
+        "L'offre gratuite est durable et sans carte : elle permet de tester sur un client réel au lieu d'une démonstration.",
+        "Déclaration et paiement des cotisations depuis l'application, sans repasser par le portail officiel.",
+        "Le périmètre reste proportionné : devis, factures, contacts, catalogue et indicateurs, sans modules entreprise inutiles."
+      ],
+      "cons": [
+        "L'offre gratuite est bridée à un seul client : elle sert à essayer, pas à exercer.",
+        "Le coût par facture électronique s'ajoute à l'abonnement, y compris sur l'offre gratuite : le prix affiché n'est pas le prix complet.",
+        "Éditeur individuel et hébergement chez un prestataire international sans région annoncée : deux points à vérifier avant de confier des données de facturation.",
+        "Produit mono-pays et mono-statut : inutile hors du régime micro, ce qui est assumé mais limitant.",
+        "La conformité à la réforme repose sur un partenaire externe : la dépendance est réelle, même présentée comme un avantage."
+      ],
+      "use_cases": [
+        "Émettre ses premiers devis et ses premières factures sans tableur ni modèle de traitement de texte.",
+        "Suivre les encaissements et le chiffre d'affaires mois par mois, avec un journal exportable.",
+        "Préparer sa déclaration URSSAF à partir des recettes réelles, sans recalcul manuel.",
+        "Surveiller l'approche des seuils de chiffre d'affaires du régime micro.",
+        "Centraliser clients et prestations pour retrouver chaque document en un clic."
+      ],
+      "covers": ["invoicing", "micro-business-management", "accounting"],
+      "relevant_for": ["freelance", "solo-business", "accounting"],
+      "personas": ["auto-entrepreneur", "micro-entrepreneur", "freelance-designer"],
+      "functional_needs": ["e-invoicing", "urssaf-declaration", "client-management"],
+      "verticals": ["services", "freelance", "consulting"],
+      "solo_relevance": "high",
+      "team_relevance": "low",
+      "ai_angle": {
+        "stance": "aucun",
+        "aiTools": [],
+        "augmentFr": "L'IA n'est pas l'argument du produit : ce qui est vendu, c'est un calcul juste et un cadre administratif respecté. Le bénéfice vient de l'automatisation déterministe des cotisations et de la facture électronique, pas d'un modèle de langage.",
+        "replaceFr": "Rien à remplacer ici : un assistant généraliste ne tiendra pas un journal de recettes ni ne transmettra une facture électronique conforme.",
+        "idealForFr": "Auto-entrepreneurs qui veulent que l'administratif se calcule tout seul, sans apprendre la comptabilité."
+      },
+      "seo": {
+        "metaDescription": "Micro Man : fiche ToolTrim. Devis, factures électroniques, journal de recettes et déclaration URSSAF pour auto-entrepreneurs — abonnement léger, coût à la facture.",
+        "aiAngle": { "stance": "aucun" }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Abonnement à deux rythmes, avec une offre gratuite durable limitée à un client, et un coût par facture électronique qui s'ajoute dans tous les cas. Résiliation possible à tout moment, sans engagement de durée.",
+        "deployment_note": "Application en ligne, accessible depuis un navigateur et depuis un mobile. Aucune carte bancaire n'est demandée à l'inscription ; le paiement se fait ensuite dans l'application.",
+        "free_plan_card": "Offre gratuite durable et sans carte, limitée à un client — le coût par facture électronique reste dû",
+        "price_reliability": "official_published_unverified",
+        "usage_sensitive": true,
+        "location_sensitive": false,
+        "cautions": [
+          "L'offre gratuite n'est pas sans coût : le coût par facture électronique s'y applique aussi.",
+          "Le prix à la facture est distinct de l'abonnement et doit être ajouté pour connaître le coût réel.",
+          "L'avantage affiché vaut pour le paiement d'avance, pas pour le paiement au fil de l'eau, malgré l'emplacement du badge sur le site.",
+          "Le statut de TVA est ambigu entre mentions légales et CGU : à clarifier avant d'afficher un prix TTC.",
+          "Après le début du service, le droit de rétractation n'est plus applicable ; l'accès court jusqu'à la fin de la période payée."
+        ],
+        "plan_details": {
+          "solo": {
+            "deployment": "Application en ligne",
+            "summary": "Offre d'entrée sans abonnement, plafonnée à un client, avec les fonctions principales.",
+            "quota": "Un seul client, factures électroniques facturées à l'unité"
+          },
+          "mensuel": {
+            "deployment": "Application en ligne",
+            "summary": "Abonnement sans engagement, contacts illimités.",
+            "quota": "Contacts illimités, factures électroniques facturées à l'unité"
+          },
+          "annuel": {
+            "deployment": "Application en ligne",
+            "summary": "Même périmètre que l'offre payée au fil de l'eau, réglée d'avance, avec support prioritaire.",
+            "quota": "Contacts illimités, factures électroniques facturées à l'unité"
+          }
+        }
+      }
+    },
+    "en": {
+      "short_description": "A management app for French micro-entrepreneurs that keeps quotes, e-invoices, income tracking and the URSSAF declaration in one place.",
+      "long_description": "Micro Man takes the opposite route to general-purpose accounting suites: it does not try to serve every company, but one specific status, the French micro-entreprise. Quotes, invoices, deposits and credit notes are tied to contacts and to a reusable service catalogue; payments received feed an exportable income ledger and a dashboard showing turnover, expenses and net profit. Social contributions are calculated from actual receipts, with a warning as turnover approaches the regime's thresholds, and both the declaration and the payment can be made inside the app rather than on the official portal. Electronic invoicing is routed through a partner dematerialisation platform and charged per invoice instead of being bundled into a plan. The entry tier is a durable free offer capped at a single client, with no card required: enough to invoice a first real client before deciding.",
+      "verdict": {
+        "keepIf": [
+          "You run a French micro-entreprise and your bookkeeping currently lives in a spreadsheet.",
+          "You want contributions and the income ledger computed from actual receipts, with no manual recalculation.",
+          "You would rather start without a bank card, on a real client, than on a demo.",
+          "Electronic invoicing worries you and you want it handled without switching tools."
+        ],
+        "avoidIf": [
+          "You are not on the micro regime: the product is built for that status and will not follow a company.",
+          "You invoice heavily: the per-invoice cost sits on top of the subscription and becomes a line to watch.",
+          "You want human accounting support: the publisher states the tool is not an accounting practice.",
+          "You need strong guarantees on where invoicing data is stored: that location is not published."
+        ],
+        "threshold": "Micro Man earns its place when the difficulty comes from the status rather than the volume: contributions, thresholds, income ledger, e-invoicing. If your problem is running several companies or a team, it is the wrong tool."
+      },
+      "pros": [
+        "The status is the core of the product: contributions, thresholds and the income ledger are first-class objects, not a bolted-on module.",
+        "E-invoicing is already wired to a partner dematerialisation platform, billed per invoice rather than as a flat add-on.",
+        "The free tier is durable and card-free: it lets you test on a real client instead of a demo.",
+        "Contributions can be declared and paid from inside the app, without going back to the official portal.",
+        "Scope stays proportionate: quotes, invoices, contacts, catalogue and indicators, with no pointless enterprise modules."
+      ],
+      "cons": [
+        "The free tier is capped at a single client: it is for trying, not for running a business.",
+        "The per-invoice cost is added to the subscription, free tier included: the displayed price is not the full price.",
+        "Sole-proprietor publisher and hosting with an international provider whose region is unstated: two things to check before entrusting invoicing data.",
+        "Single-country, single-status product: useless outside the micro regime, which is deliberate but limiting.",
+        "Compliance with the invoicing reform relies on an external partner: a real dependency, even when framed as an advantage."
+      ],
+      "use_cases": [
+        "Issue first quotes and first invoices without a spreadsheet or a word-processor template.",
+        "Track payments and turnover month by month, with an exportable ledger.",
+        "Prepare the URSSAF declaration from actual receipts, with no manual recalculation.",
+        "Watch turnover as it approaches the micro regime's thresholds.",
+        "Keep clients and services in one place so every document is one click away."
+      ],
+      "covers": ["invoicing", "micro-business-management", "accounting"],
+      "relevant_for": ["freelance", "solo-business", "accounting"],
+      "personas": ["auto-entrepreneur", "micro-entrepreneur", "freelance-designer"],
+      "functional_needs": ["e-invoicing", "urssaf-declaration", "client-management"],
+      "verticals": ["services", "freelance", "consulting"],
+      "solo_relevance": "high",
+      "team_relevance": "low",
+      "ai_angle": {
+        "stance": "aucun",
+        "aiTools": [],
+        "augmentEn": "AI is not the pitch: what is sold is a correct calculation and a respected administrative frame. The benefit comes from deterministic automation of contributions and e-invoicing, not from a language model.",
+        "replaceEn": "Nothing to replace here: a general-purpose assistant will not keep an income ledger or send a compliant electronic invoice.",
+        "idealForEn": "Micro-entrepreneurs who want the paperwork to compute itself without learning accounting."
+      },
+      "seo": {
+        "metaDescription": "Micro Man: ToolTrim review. Quotes, e-invoices, income ledger and URSSAF declaration for French micro-entrepreneurs — light subscription, per-invoice cost.",
+        "aiAngle": { "stance": "aucun" }
+      },
+      "pricing_guidance": {
+        "pricing_model": "A two-speed subscription, with a durable free tier capped at one client, plus a per-electronic-invoice cost that applies on top. Cancellation at any time, with no minimum term.",
+        "deployment_note": "An online app, usable from a browser and a phone. No card is requested at sign-up; payment happens later inside the app.",
+        "free_plan_card": "Durable card-free free tier, capped at one client — the per-invoice cost still applies",
+        "price_reliability": "official_published_unverified",
+        "usage_sensitive": true,
+        "location_sensitive": false,
+        "cautions": [
+          "The free tier is not costless: the per-invoice fee applies there too.",
+          "The per-invoice price is separate from the subscription and must be added to know the real cost.",
+          "The advertised advantage applies to the upfront payment, not to pay-as-you-go billing, despite where the badge sits on the site.",
+          "VAT status is ambiguous between legal notice and terms: clarify before displaying a price including tax.",
+          "Once the service has started, the withdrawal right no longer applies; access runs to the end of the paid period."
+        ],
+        "plan_details": {
+          "solo": {
+            "deployment": "Online app",
+            "summary": "Card-free entry tier capped at one client, with the main features.",
+            "quota": "A single client, electronic invoices billed per unit"
+          },
+          "mensuel": {
+            "deployment": "Online app",
+            "summary": "No-commitment subscription with unlimited contacts.",
+            "quota": "Unlimited contacts, electronic invoices billed per unit"
+          },
+          "annuel": {
+            "deployment": "Online app",
+            "summary": "Same scope as the pay-as-you-go plan, paid upfront, with priority support.",
+            "quota": "Unlimited contacts, electronic invoices billed per unit"
+          }
+        }
+      }
+    }
+  },
+  "review_attestations": []
+}
