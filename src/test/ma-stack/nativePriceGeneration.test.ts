@@ -35,3 +35,19 @@ it("keeps dated prices with the vendor's own period and preserves whether the co
     rmSync(root, { recursive: true, force: true });
   }
 });
+it("marks an unreferenced paid offer undisclosed in the generated index without reviving historical prices", () => {
+ const root = mkdtempSync(path.join(tmpdir(), "tooltrim-index-"));
+ try {
+  mkdirSync(path.join(root, "src/data"), { recursive: true });
+  const offer = { planKey: "p", displayName: "Paid", nativeAmount: 25, nativeCurrency: "EUR", billingPeriod: "monthly", priceStatus: "paid", isFree: false, isComparePlan: false };
+  writeFileSync(path.join(root, "src/data/tools_v4.json"), JSON.stringify([{ id: "x", slug: "x", name: "X", defaultMonthlyPrice: 20, pricing_v5: { compare_price_monthly_eur: 20, plans: [offer] } }, { id: "y", slug: "y", name: "Y", pricing_v5: { plans: [{ ...offer, priceStatus: "free", nativeAmount: 0, isFree: true }] } }]));
+  const result = spawnSync(process.execPath, [path.resolve("scripts/gen-tools-index.mjs")], { cwd: root, encoding: "utf8" });
+  expect(result.status, result.stderr).toBe(0);
+  const [paid, free] = JSON.parse(readFileSync(path.join(root, "src/data/tools_index.json"), "utf8"));
+  expect(paid).toMatchObject({ priceUndisclosed: true, hasConfirmedFreePlan: false });
+  expect(paid).not.toHaveProperty("defaultMonthlyPrice");
+  expect(paid).not.toHaveProperty("nativePrices");
+  expect(free).toMatchObject({ hasConfirmedFreePlan: true });
+  expect(free).not.toHaveProperty("priceUndisclosed");
+ } finally { rmSync(root, { recursive: true, force: true }); }
+});

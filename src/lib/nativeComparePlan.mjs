@@ -46,9 +46,10 @@ export function explicitNonNumericStatus(tool) {
   const nonnumeric = plans.find((p) =>
     ["quote", "unknown", "usage"].includes(String(p.priceStatus)),
   );
-  return nonnumeric && !selectNativeComparePlan(plans)
-    ? nonnumeric.priceStatus
-    : null;
+  if (selectNativeComparePlan(plans)) return null;
+  if (nonnumeric) return nonnumeric.priceStatus;
+  // A paid offer without a chosen reference has no publishable amount.
+  return plans.some((p) => p.priceStatus === "paid") ? "unknown" : null;
 }
 export function hasExplicitNonNumericPricing(tool) {
   return explicitNonNumericStatus(tool) !== null;

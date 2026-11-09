@@ -225,3 +225,7 @@
     justify-self: end;
   }
 }
+
+.provenance [data-nowrap] {
+  white-space: nowrap;
+}

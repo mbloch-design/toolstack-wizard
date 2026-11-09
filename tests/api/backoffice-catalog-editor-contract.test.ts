@@ -53,10 +53,11 @@ it("rejects renaming an otherwise retained offer and keeps genuine add remove an
     displayName: "New",
     isComparePlan: false,
   };
-  for (const plans of [[other, plan], [other], [], [plan, other, added]])
+  for (const plans of [[other, plan], [], [plan, other, added]])
     expect(contract.validateCatalogPublication(old, {
       ...old, pricing_v5: { plans },
     })).toMatchObject({ pricing_v5: { plans } });
+  expect(() => contract.validateCatalogPublication(old, { ...old, pricing_v5: { plans: [other] } })).toThrow();
   expect(contract.validateCatalogDraft(old, {
     ...old, pricing_v5: {},
   })).toMatchObject({ pricing_v5: {} });
@@ -368,14 +369,14 @@ it("edits structured profile recommendations and protects unused aliases", () =>
     contract.validateCatalogDraft(base, { ...base, bestFor: ["invented"] }),
   ).toThrow();
 });
-it("reports a fallback when compare flags identify only a free or unknown amount plan", () => {
+it("does not report a fallback when explicit pricing blocks it", () => {
   const value = {
     ...base,
     pricing_v5: { plans: [{ ...plan, isFree: true, nativeAmount: 0 }] },
   };
   expect(contract.resolveCatalogComparison(value, "EUR")).toMatchObject({
     plan: null,
-    fallback: "legacy",
+    fallback: null,
   });
 });
 it("does not discard unknown nested data through nullable or deleted parents", () => {
@@ -512,4 +513,11 @@ it("requires existing comparison evidence when its source is deleted", () => {
   };
   expect(contract.validateCatalogDraft(old, value)).toEqual(value);
   expect(() => contract.validateCatalogPublication(old, value)).toThrow();
+});
+it("requires a reference for newly changed paid pricing but permits draft and unchanged history", () => {
+  const legacy = { ...base, defaultMonthlyPrice: 20, pricing_v5: { compare_price_monthly_eur: 20 } };
+  const value = { ...legacy, pricing_v5: { ...legacy.pricing_v5, plans: [{ ...plan, isComparePlan: false }] } };
+  expect(contract.validateCatalogDraft(legacy, value)).toEqual(value);
+  expect(() => contract.validateCatalogPublication(legacy, value)).toThrow();
+  expect(contract.validateCatalogPublication(value, { ...value, name: "Changed" })).toBeTruthy();
 });

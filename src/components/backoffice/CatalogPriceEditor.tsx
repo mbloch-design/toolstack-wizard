@@ -4,6 +4,8 @@ import { CatalogNote, CatalogSettings } from "@/ds/CatalogAuthoring/CatalogAutho
 import styles from "@/ds/CatalogAuthoring/CatalogAuthoring.module.css";
 import { ArrowUp, ArrowDown, CirclePlus, CircleMinus } from "@/lib/icons";
 import {
+  catalogPlanRows,
+  PRICE_FACT_FIELDS,
   resolveCatalogComparison,
   initializeCatalogPriceObservations,
   updateCatalogPriceObservation,
@@ -114,6 +116,7 @@ export function useOfferOperations(context: CatalogEditingValue) {
       return;
     const next = structuredClone(context.value),
       parent = next[item.root] as Record<string, unknown>;
+    if (!parent || !Array.isArray(parent.plans)) return;
     const plans = parent.plans as Record<string, unknown>[];
     if (plans.some((plan) => plan.planKey === item.plan.planKey)) return;
     // Invert only the reference decision made by this removal, while its post-state is still current.
@@ -137,9 +140,15 @@ export function useOfferOperations(context: CatalogEditingValue) {
         );
       });
     const restored = structuredClone(item.plan);
-    if (item.wasReference && !restoreReferences) restored.isComparePlan = false;
+    const peer = restored.priceObservationId ? catalogPlanRows(next).find((row) => row.plan.priceObservationId === restored.priceObservationId)?.plan : undefined;
+    if (peer) for (const key of PRICE_FACT_FIELDS) {
+      if (Object.prototype.hasOwnProperty.call(peer, key)) restored[key] = peer[key];
+      else delete restored[key];
+    }
+    const sameCurrency = restored.nativeCurrency === item.plan.nativeCurrency;
+    if (item.wasReference && (!restoreReferences || !sameCurrency)) restored.isComparePlan = false;
     plans.splice(item.index, 0, restored);
-    if (restoreReferences)
+    if (restoreReferences && sameCurrency)
       for (const pricingRoot of Object.keys(item.references)) {
         const rows = catalogValueAt(next, [pricingRoot, "plans"]);
         if (Array.isArray(rows))
@@ -299,7 +308,7 @@ export function PlanCollection({
         .map((item) => (
           <Button
             key={String(item.plan.planKey)}
-            disabled={!allowed}
+            disabled={!allowed || !Array.isArray(plansValue)}
             size="compact"
             onClick={() => onUndo(item)}
           >
@@ -307,6 +316,9 @@ export function PlanCollection({
             {String(item.plan.displayName)}
           </Button>
         ))}
+      {!Array.isArray(plansValue) && removed.some(item => item.root === root) && (
+        <CatalogNote>{t("Restaurez d’abord le groupe tarifaire pour annuler le retrait de l’offre.", "Restore the pricing group first to undo the offer removal.")}</CatalogNote>
+      )}
       {context.capabilities.canPublishAll && (
         <p>
           {t(
@@ -364,10 +376,16 @@ export function ComparisonPriceSummary({
 }) {
   const t = (fr: string, en: string) => catalogText(context, fr, en);
   const comparison = resolveCatalogComparison(context.value, currency);
-  if (!comparison.plan)
+  if (!comparison.plan) {
+    const plans = catalogPlanRows(context.value).map(row => row.plan);
+    const paidWithoutReference = plans.some(plan => plan.priceStatus === "paid");
+    const freeOnly = plans.length > 0 && plans.every(plan => plan.priceStatus === "free" || (plan.priceStatus == null && plan.isFree === true));
     return (
       <CatalogNote>
-        {hasExplicitNonNumericPricing(context.value)
+        {paidWithoutReference
+          ? t("Choisissez une offre payante éligible comme prix de référence avant publication. Aucun prix historique n’est utilisé.", "Choose an eligible paid offer as the price reference before publishing. No historical price is used.")
+          : freeOnly ? t("Les offres renseignées sont gratuites ; aucun prix historique n’est utilisé.", "The recorded offers are free; no historical price is used.")
+          : hasExplicitNonNumericPricing(context.value)
           ? t(
               "Le prix actuel est sur devis, non communiqué ou dépend de l’usage. Aucun montant historique de repli n’est affiché.",
               "The current price is quoted, undisclosed or usage based. No historical fallback amount is displayed.",
@@ -378,6 +396,7 @@ export function ComparisonPriceSummary({
             )}
       </CatalogNote>
     );
+  }
   const plan = comparison.plan,
     amount = Number(plan.nativeAmount),
     once = ["one_time", "one-time"].includes(String(plan.billingPeriod));
@@ -391,7 +410,7 @@ export function ComparisonPriceSummary({
     <div className={styles.provenance} role="note">
       <strong>
         {t("Prix de référence effectif :", "Effective comparison price:")}{" "}
-        {String(plan.displayName)} · {money(amount)}
+        {String(plan.displayName)} · <span data-nowrap>{money(amount)}</span>
       </strong>
       <p>
         {once
@@ -423,7 +442,9 @@ export function ComparisonPriceSummary({
       <p>
         {t("Source :", "Source:")}{" "}
         {String(plan.detailsSourceUrl || t("à renseigner", "not provided"))} ·{" "}
-        {String(plan.observedOn || t("date à renseigner", "date not provided"))}
+        {typeof plan.observedOn === "string" && /^\d{4}-\d{2}-\d{2}$/.test(plan.observedOn)
+          ? <time data-nowrap dateTime={plan.observedOn}>{plan.observedOn}</time>
+          : String(plan.observedOn || t("date à renseigner", "date not provided"))}
       </p>
     </div>
   );

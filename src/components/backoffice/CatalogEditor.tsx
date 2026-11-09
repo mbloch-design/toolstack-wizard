@@ -252,7 +252,7 @@ export function CatalogEditor({
       if (id === requestId.current) setBusy(false);
     }
   }
-  async function reloadInline(removeDraft: boolean) {
+  async function reloadInline(removeDraft: boolean, reviewedVersion?: number) {
     if (!inlineSlug) return;
     const entry = session.get(inlineSlug);
     if (!entry || entry.saving) return;
@@ -263,7 +263,8 @@ export function CatalogEditor({
     try {
       if (removeDraft) {
         if (!entry.detail.capabilities?.canDiscardDraft) throw { status: 403 };
-        await discardCatalogDraft(inlineSlug, entry.detail.version);
+        if (reviewedVersion !== entry.detail.version) throw { status: 409 };
+        await discardCatalogDraft(inlineSlug, reviewedVersion);
       }
       const result = await loadCatalogDetail(inlineSlug);
       if (id !== requestId.current) return;
@@ -815,7 +816,7 @@ export function CatalogEditor({
           onReauthenticate={onReauthenticate}
           locked={busy || Boolean(review)}
           onReload={() => void reloadInline(false)}
-          onRemoveDraft={() => void reloadInline(true)}
+          onRemoveDraft={(version) => void reloadInline(true, version)}
           onBack={() => void backToRecords()}
           onError={(e) => setError(message(e))}
         />

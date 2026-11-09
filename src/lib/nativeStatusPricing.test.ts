@@ -141,3 +141,8 @@ it("prefers an explicit recurring offer over retained legacy one-time metadata",
   expect(toolPriceFacts(tool).oneTime).toBe(false);
   expect(toolPriceLine(tool, "fr", (fr) => fr).priceLine).toContain("/mois");
 });
+it("does not describe an explicit unreferenced paid draft as free or use stale prices", () => {
+  const tool = mapToolFromJson({ id: "review", slug: "review", name: "Review", defaultMonthlyPrice: 20, pricing_v5: { compare_price_monthly_eur: 20, plans: [{ planKey: "p", displayName: "Paid", nativeAmount: 25, nativeCurrency: "EUR", billingPeriod: "monthly", priceStatus: "paid", isFree: false, isComparePlan: false }] } });
+  expect(formatPriceLabel(tool, resolveMonthlyPrice(tool), fr => fr)).not.toBe("Gratuit");
+  expect(toolPriceFacts(tool).hasPrice).toBe(false);
+});

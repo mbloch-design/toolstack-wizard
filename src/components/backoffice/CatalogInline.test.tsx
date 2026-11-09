@@ -5,12 +5,13 @@ const api = vi.hoisted(() => ({
   detail: vi.fn(),
   save: vi.fn(),
   publish: vi.fn(),
+  discard: vi.fn(),
 }));
 vi.mock("@/lib/backofficeCatalogApi", () => ({
   loadCatalogWorkspace: api.list,
   loadCatalogDetail: api.detail,
   saveCatalogDraft: api.save,
-  discardCatalogDraft: vi.fn(),
+  discardCatalogDraft: api.discard,
   publishCatalogDrafts: api.publish,
 }));
 vi.mock("@/hooks/useSupabaseData", async original => ({
@@ -299,4 +300,33 @@ it("preserves the searched draft-only page when global review is cancelled", asy
   expect(screen.getByText("2 fiches · Page 2")).toBeVisible();
   expect(screen.getByRole("button", { name: "Édition directe · Notion page two" })).toBeVisible();
   expect(screen.queryByRole("button", { name: "Édition directe · Figma" })).toBeNull();
+});
+
+it("confirms deletion of the reviewed saved draft and allows cancellation", async () => {
+  window.history.replaceState({}, "", "/fr/back-office?view=catalog&tool=notion&editor=inline");
+  api.detail.mockResolvedValue({ ...detail, version: 4, draft: draft("notion", "Notion") });
+  api.discard.mockResolvedValue(undefined);
+  render(<MemoryRouter><CatalogEditor /></MemoryRouter>);
+  fireEvent.click(await screen.findByRole("button", { name: "Supprimer ce brouillon" }));
+  expect(api.discard).not.toHaveBeenCalled();
+  const dialog = screen.getByRole("dialog");
+  expect(within(dialog).getByText(/Notion/)).toBeVisible();
+  fireEvent.click(within(dialog).getByRole("button", { name: "Annuler" }));
+  expect(api.discard).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole("button", { name: "Supprimer ce brouillon" }));
+  fireEvent.click(within(screen.getByRole("dialog")).getByRole("button", { name: "Confirmer la suppression" }));
+  expect(api.discard).toHaveBeenCalledTimes(1);
+  expect(api.discard).toHaveBeenCalledWith("notion", 4);
+});
+it.each([{ status: 409 }, new Error("network")])("retains the visible saved draft when deletion fails: %s", async (failure) => {
+  window.history.replaceState({}, "", "/fr/back-office?view=catalog&tool=notion&editor=inline");
+  api.detail.mockResolvedValue({ ...detail, tool: { ...tool, shortDescription: "Saved text" }, version: 4, draft: draft("notion") });
+  api.discard.mockRejectedValue(failure);
+  render(<MemoryRouter><CatalogEditor /></MemoryRouter>);
+  fireEvent.click(await screen.findByRole("button", { name: "Supprimer ce brouillon" }));
+  fireEvent.click(within(screen.getByRole("dialog")).getByRole("button", { name: "Confirmer la suppression" }));
+  expect(await screen.findByRole("alert")).toBeVisible();
+  expect(screen.getAllByText("Saved text").some(element => element.isConnected)).toBe(true);
+  expect(api.discard).toHaveBeenCalledTimes(1);
+  expect(api.detail).toHaveBeenCalledTimes(1);
 });

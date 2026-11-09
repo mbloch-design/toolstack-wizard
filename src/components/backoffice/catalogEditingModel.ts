@@ -565,6 +565,7 @@ export function catalogIssueMessage(
   code: string,
   lang: "fr" | "en" = "fr",
 ): string {
+  if(code === "PAID_REFERENCE_REQUIRED") return lang === "en" ? "Choose an eligible paid offer as the price reference before publishing." : "Choisissez une offre payante éligible comme prix de référence avant publication.";
   if(code.startsWith("PRICE_FALLBACK_"))return lang==='en'?"The displayed price uses a fallback value; check its source.":"Le prix affiché utilise une valeur de secours ; vérifiez sa source.";
   const messages: Record<string, [string, string]> = {
     SOURCE_CONFLICT: ["La fiche publiée a changé. Revoir les modifications avant de continuer.", "The published record changed. Review the edits before continuing."],

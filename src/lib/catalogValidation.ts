@@ -1,3 +1,4 @@
+import { selectNativeComparePlan } from "./nativeComparePlan.js";
 import type { CatalogTool } from "./backofficeCatalog.js";
 import { catalogSchema, type CatalogField } from "./catalogFieldRegistry.js";
 import {
@@ -542,6 +543,14 @@ function publishIssues(
         add(`${row.path}.pricingUnit`, "USAGE_UNIT_REQUIRED");
     }
   }
+  // Gate changed price facts, including removal of the last reference, without
+  // requiring unrelated edits to repair historical records.
+  const priceSignature = (record: CatalogTool) => catalogPlanRows(record).map(({root, plan}) =>
+    JSON.stringify([root, plan.planKey, ...PRICE_FACT_FIELDS.map(key => [key, Object.prototype.hasOwnProperty.call(plan, key), plan[key]]), plan.isComparePlan])).sort();
+  const currentRows = catalogPlanRows(tool);
+  const paid = currentRows.find(row => row.plan.priceStatus === "paid");
+  if (paid && !selectNativeComparePlan(currentRows.map(row => row.plan)) && !equal(priceSignature(base), priceSignature(tool)))
+    add(`${paid.path}.isComparePlan`, "PAID_REFERENCE_REQUIRED");
   // The public selector pools both localized records. Only proven shared facts
   // are one observation; independent references in the same currency conflict.
   const references = (value: CatalogTool) =>

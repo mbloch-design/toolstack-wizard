@@ -1,4 +1,4 @@
-import { selectNativeComparePlan } from "./nativeComparePlan.js";
+import { blocksLegacyPriceFallback, selectNativeComparePlan } from "./nativeComparePlan.js";
 import type { CatalogTool } from "./backofficeCatalog.js";
 export const PRICE_FACT_FIELDS = [
   "nativeAmount",
@@ -95,7 +95,7 @@ export function resolveCatalogComparison(tool: CatalogTool, currency: string) {
   );
   const candidate = rows.find((r) => r.plan === selected);
   if (!candidate)
-    return { plan: null, path: null, fallback: "legacy" as const };
+    return { plan: null, path: null, fallback: blocksLegacyPriceFallback(tool) ? null : "legacy" as const };
   return {
     plan: candidate.plan,
     path: candidate.path,

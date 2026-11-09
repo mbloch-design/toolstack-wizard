@@ -1,3 +1,9 @@
+## 2026-11-09 · Back-office · corrections de fiabilité de l’édition directe
+
+- Une offre payante sans référence est présentée comme prix non communiqué et ne reprend pas les anciens prix ; les changements tarifaires exigent une référence éligible avant publication, sans bloquer la sauvegarde du brouillon ni les données historiques inchangées.
+- L’annulation d’une offre respecte les faits liés actuels et les choix de référence ; la suppression du brouillon enregistré demande confirmation. La provenance conserve sa date et son montant sur une seule ligne à 390 px.
+- Tests ciblés applicatifs et API, typecheck et story mobile vérifiés localement. Les étiquettes EN, les refus silencieux sous droits partiels et le test IME intermédiaire restent différés selon la revue finale.
+
 ## 2026-11-09 · Back-office · édition de fiche dans le système de design
 
 - Les contrôles et la mise en page de l’éditeur utilisent des CSS Modules et les jetons de `src/ds`. Les champs de prix s’empilent dans la carte en édition. Les gabarits publics conservent leur balisage hors édition.

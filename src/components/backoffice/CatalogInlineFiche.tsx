@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useCategories, useToolSummaries } from "@/hooks/useSupabaseData";
 import { useCurrency } from "@/hooks/useCurrency";
 import { ToolDetailPresentation } from "@/pages/ToolDetailPage";
@@ -24,13 +26,14 @@ export function CatalogInlineFiche({
   onReauthenticate?: () => void;
   locked: boolean;
   onReload: () => void;
-  onRemoveDraft: () => void;
+  onRemoveDraft: (version: number) => void;
   session: CatalogDraftSession;
   slug: string;
   lang: "fr" | "en";
   onBack: () => void;
   onError: (e: unknown) => void;
 }) {
+  const [confirmVersion, setConfirmVersion] = useState<number | null>(null);
   const { tools } = useToolSummaries({ refreshRemote: false });
   const { categories } = useCategories();
   const { currency } = useCurrency();
@@ -170,7 +173,7 @@ export function CatalogInlineFiche({
         {detail.draft && caps.canDiscardDraft && (
           <Button
             disabled={locked || entry.saving || dirty}
-            onClick={onRemoveDraft}
+            onClick={() => setConfirmVersion(detail.version)}
           >
             {t("Supprimer ce brouillon", "Remove this draft")}
           </Button>
@@ -183,6 +186,18 @@ export function CatalogInlineFiche({
           {t("Comparer à la fiche publiée", "Compare with published record")}
         </LinkAction>
       </CatalogToolbar>
+      <Dialog open={confirmVersion !== null} onOpenChange={(open) => { if (!open) setConfirmVersion(null); }}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t("Supprimer le brouillon", "Remove draft")}</DialogTitle>
+            <DialogDescription>{t(`Supprimer le brouillon de ${value.name} effacera définitivement ses modifications enregistrées. La fiche publiée restera inchangée.`, `Removing the draft for ${value.name} permanently discards its saved changes. The published record remains unchanged.`)}</DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button onClick={() => setConfirmVersion(null)}>{t("Annuler", "Cancel")}</Button>
+            <Button disabled={locked || entry.saving || dirty || confirmVersion !== detail.version} onClick={() => { if (confirmVersion !== null) onRemoveDraft(confirmVersion); setConfirmVersion(null); }}>{t("Confirmer la suppression", "Confirm removal")}</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
