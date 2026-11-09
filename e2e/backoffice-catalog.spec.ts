@@ -174,7 +174,8 @@ test("catalogue retains text on conflict and prevents leaving through workspace 
   await page.getByRole("button", { name: "Utilisateurs", exact: true }).click();
   await expect(page.getByRole("alert")).toContainText("avant de quitter");
   await expect(input).toHaveValue("Mes changements");
-  await page.locator(".bo-account-toolbar .bo-signout").click();
+  await page.locator(".asv2-content").evaluate(el => { el.scrollTop = 0; });
+  await page.getByRole("button", { name: "Me déconnecter", exact: true }).click();
   await expect(input).toHaveValue("Mes changements");
   await page.getByRole("link", { name: "Retour au site" }).click();
   await expect(page).toHaveURL(/\/fr\/back-office(?:\?view=catalog)?$/);
@@ -373,4 +374,75 @@ test("direct fiche preserves pending text on autosave conflict and offers explic
     .getByRole("button", { name: "Recharger la fiche", exact: true })
     .click();
   await expect(input).toHaveValue("Description française de test.");
+});
+
+test('admin toolbar sign out and modified language click preserve pending catalogue text', async ({ page, request }) => {
+  await control(request, 'reset', { users: [{ email: 'admin@example.invalid' }] });
+  await login(page, 'fr');
+  await page.getByRole('button', { name: 'Modifier Notion', exact: true }).click();
+  const input = page.getByLabel('Description courte', { exact: true });
+  await input.fill('Saisie à conserver');
+  const language = page.getByRole('link', { name: 'Site en français. Passer en anglais' });
+  const prevented = await language.evaluate(el => {
+    const event = new MouseEvent('click', { bubbles: true, cancelable: true, ctrlKey: true });
+    let preventedByApp = false;
+    document.addEventListener('click', click => { preventedByApp = click.defaultPrevented; click.preventDefault(); }, { once: true });
+    el.dispatchEvent(event);
+    return preventedByApp;
+  });
+  expect(prevented).toBe(false);
+  const modifier = await page.evaluate(() => /Mac/.test(navigator.platform) ? 'Meta' : 'Control');
+  const popupPromise = page.context().waitForEvent('page');
+  await language.click({ modifiers: [modifier] });
+  const popup = await popupPromise;
+  await popup.close();
+  await expect(input).toHaveValue('Saisie à conserver');
+  await expect(page).toHaveURL(/\/fr\/back-office/);
+  await page.locator('.asv2-content').evaluate(el => { el.scrollTop = 0; });
+  await page.getByRole('button', { name: 'Me déconnecter', exact: true }).click();
+  await expect(page.getByText(/Certaines modifications ne sont pas enregistrées/)).toBeVisible();
+  await expect(input).toHaveValue('Saisie à conserver');
+  await page.getByRole('button', { name: 'Continuer mes modifications' }).click();
+  await page.getByRole('button', { name: 'Abandonner mes saisies' }).click();
+  await language.click();
+  await expect(page).toHaveURL(/\/en\/back-office\?view=catalog/);
+});
+
+test('mobile admin drawer traps initial reverse tab and explains a blocked section', async ({ page, request }) => {
+  await control(request, 'reset', { users: [{ email: 'admin@example.invalid' }] });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await login(page, 'fr');
+  await page.getByRole('button', { name: 'Modifier Notion', exact: true }).click();
+  await page.getByLabel('Description courte', { exact: true }).fill('Saisie mobile');
+  await page.getByRole('button', { name: 'Ouvrir le menu' }).click();
+  const dialog = page.getByRole('dialog', { name: 'Menu' });
+  await page.keyboard.press('Shift+Tab');
+  expect(await dialog.evaluate(el => el.contains(document.activeElement))).toBe(true);
+  await dialog.getByRole('button', { name: 'Utilisateurs', exact: true }).click();
+  await expect(dialog.getByRole('alert')).toContainText('avant de quitter');
+  await expect(dialog).toBeVisible();
+});
+
+test('admin topbar exposes one guarded sign out for pending catalogue input', async ({ page, request }) => {
+  await control(request, 'reset', { users: [{ email: 'admin@example.invalid' }] });
+  await login(page, 'fr');
+  await page.getByRole('button', { name: 'Modifier Notion', exact: true }).click();
+  const input = page.getByLabel('Description courte', { exact: true });
+  await input.fill('Conserver avant déconnexion');
+  await page.locator('.asv2-content').evaluate(el => { el.scrollTop = 0; });
+  await page.getByRole('button', { name: 'Me déconnecter', exact: true }).click();
+  await expect(page.getByText(/Certaines modifications ne sont pas enregistrées/)).toBeVisible();
+  await expect(input).toHaveValue('Conserver avant déconnexion');
+});
+
+test('mobile admin drawer announces blocked navigation within the dialog', async ({ page, request }) => {
+  await control(request, 'reset', { users: [{ email: 'admin@example.invalid' }] });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await login(page, 'fr');
+  await page.getByRole('button', { name: 'Modifier Notion', exact: true }).click();
+  await page.getByLabel('Description courte', { exact: true }).fill('Saisie à conserver');
+  await page.getByRole('button', { name: 'Ouvrir le menu' }).click();
+  const dialog = page.getByRole('dialog', { name: 'Menu' });
+  await dialog.getByRole('button', { name: 'Utilisateurs', exact: true }).click();
+  await expect(dialog.getByRole('alert')).toContainText('avant de quitter', { timeout: 3000 });
 });

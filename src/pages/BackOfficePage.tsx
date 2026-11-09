@@ -1,6 +1,6 @@
 import { BackofficeNavigation } from "@/ds/BackofficeNavigation/BackofficeNavigation";
 import { MemoryRouter, useInRouterContext, useLocation, useNavigate } from "react-router-dom";
-import { readBackofficeSection, useBackofficeNavigationPublisher, type BackofficeSection } from "@/components/backoffice/backofficeNavigation";
+import { readBackofficeSection, useBackofficeNavigationPublisher, useBackofficeSignOutPublisher, type BackofficeSection } from "@/components/backoffice/backofficeNavigation";
 import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Button as StackButton } from "@/components/stack/StackKit";
@@ -456,6 +456,7 @@ function BackOfficePageContent() {
   const location = useLocation();
   const routerNavigate = useNavigate();
   const publishNavigation = useBackofficeNavigationPublisher();
+  const publishSignOut = useBackofficeSignOutPublisher();
   const section = readBackofficeSection(location.search);
   const [sectionError, setSectionError] = useState(false);
   const setAuthorization = useCallback((authorized: boolean) => setVerifiedUserId(authorized ? adminSession?.userId ?? null : null), [adminSession?.userId]);
@@ -472,11 +473,6 @@ function BackOfficePageContent() {
     routerNavigate({ pathname: location.pathname, search: `?${params}`, hash: location.hash });
     return true;
   }, [catalogDirty, catalogSession, location, routerNavigate, section]);
-  useEffect(() => {
-    if (!publishNavigation || !adminSession || verifiedUserId !== adminSession.userId) return;
-    publishNavigation({ section, onNavigate: navigateSection });
-    return () => publishNavigation(null);
-  }, [publishNavigation, adminSession, verifiedUserId, section, navigateSection]);
   const acceptSession = useCallback((session: Session | null) => {
     const next = toAdminSession(session);
     if (next) catalogSession.setOwner(next.userId);
@@ -967,6 +963,18 @@ function BackOfficePageContent() {
     finally { setAuthLoading(false); }
   }, [account, authLoading, catalogDirty, catalogSession]);
 
+  useEffect(() => {
+    if (!publishNavigation || !adminSession || verifiedUserId !== adminSession.userId) return;
+    publishNavigation({ section, onNavigate: navigateSection });
+    return () => publishNavigation(null);
+  }, [publishNavigation, adminSession, verifiedUserId, section, navigateSection]);
+
+  useEffect(() => {
+    if (!publishSignOut || !adminSession) return;
+    publishSignOut({ onSignOut: () => void disconnect(), busy: authLoading });
+    return () => publishSignOut(null);
+  }, [publishSignOut, adminSession, disconnect, authLoading]);
+
   const saveSessionAdmin = useCallback(async () => {
     if (!adminSession || !detail?.session?.session_id) return;
     setSessionAdminSaving(true);
@@ -1393,7 +1401,7 @@ function BackOfficePageContent() {
       {standaloneNavigation}
       <Breadcrumb items={[{ label: t("Back-office", "Back office") }]} includeSchema={false}/>
       <div className="bo-account-toolbar"><p>{t("Administration", "Administration")}<span aria-hidden> · </span>{adminSession.email || t("Compte connecté", "Signed-in account")}</p>
-        <StackButton className="bo-signout" disabled={authLoading} onClick={() => void disconnect()} icon={<LogOut size={16} aria-hidden/>}>{t("Fermer", "Sign out")}</StackButton>
+        {!publishNavigation && <StackButton className="bo-signout" disabled={authLoading} onClick={() => void disconnect()} icon={<LogOut size={16} aria-hidden/>}>{t("Fermer", "Sign out")}</StackButton>}
       </div>
       {logoutFeedback}
       {sectionError && <p role="alert">{t("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</p>}
@@ -1445,13 +1453,13 @@ function BackOfficePageContent() {
             <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
             {t("Rafraîchir", "Refresh")}
           </button>
-          <button
+          {!publishNavigation && <button
             disabled={authLoading} onClick={() => void disconnect()}
             className="h-9 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
           >
             <LogOut className="w-4 h-4" />
             {t("Fermer", "Sign out")}
-          </button>
+          </button>}
         </div>
       </div>
 

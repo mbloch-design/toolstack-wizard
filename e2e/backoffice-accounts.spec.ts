@@ -75,6 +75,8 @@ for (const forged of [false, true]) test(`ordinary account denied despite forged
   await control(request, 'seed', { email: 'ordinary@example.invalid', metadata: forged ? { role: 'admin', is_admin: true } : {} });
   await passwordLogin(page, 'en', 'ordinary@example.invalid');
   await expect(page.locator('.bo-workspace [role=alert]')).toContainText('Access is restricted'); await expect(page.getByTestId('accounts-total')).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Sign out', exact: true })).toBeVisible();
   const result = await page.evaluate(async () => {
     const modulePath = '/src/integrations/supabase/client.ts'; const { supabase } = await import(/* @vite-ignore */ modulePath);
     const { data } = await supabase.auth.getSession(); return (await fetch('/api/backoffice-accounts', { headers: { Authorization: `Bearer ${data.session.access_token}` } })).status;
@@ -96,7 +98,7 @@ async function seededAdmin(page: import('@playwright/test').Page, request: impor
 }
 test('back-office clean logout purges private primary, backup, plans and decisions', async ({ page, request }) => {
   await seededAdmin(page, request); await openBackOffice(page);
-  await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
   await page.goto('/en/ma-stack'); await expect(page.getByRole('button', { name: 'I already have an account', exact: true })).toBeVisible();
   expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
@@ -109,11 +111,11 @@ test('back-office dirty logout supports cancel, failed signout retry and confirm
   // A failed write followed by the older remote snapshot requires resolution;
   // the debounce's transient unsaved state is intentionally no longer a notice.
   await expect(page.locator('[data-notice="account"] [role=status]')).toHaveText('Two versions to resolve');
-  await openBackOffice(page); await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
+  await openBackOffice(page); await page.getByRole('button', { name: 'Sign out', exact: true }).click();
   const confirm = page.getByRole('button', { name: 'Sign out without saving', exact: true }); await expect(confirm).toBeVisible();
   await page.getByRole('button', { name: 'Keep editing', exact: true }).click(); await expect(confirm).toHaveCount(0);
   expect((await snapshot(page)).billing.choices.figma.amount).toBe(99);
-  await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
   await control(request, 'fault', { path: '/auth/v1/logout', method: 'POST', status: 400 });
   await confirm.click(); await expect(page.getByRole('alert')).toContainText('Sign-out failed');
   await expect(page.getByTestId('accounts-total')).toBeVisible(); expect((await snapshot(page)).billing.choices.figma.amount).toBe(99);
@@ -155,7 +157,7 @@ for (const theme of ['light', 'dark'] as const) test(`account surfaces remain re
   // Measure the settled panel, not a node detached during evaluateAll.
   await expect(page.locator('.bo-detail').getByRole('heading', { level: 2 })).toHaveText('admin@example.invalid');
   await readable('.bo-detail', null);
-  await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
   await page.goto('/en/ma-stack'); await page.getByRole('button', { name: 'I already have an account', exact: true }).click();
   await page.getByRole('button', { name: 'Continue with email', exact: true }).click(); await readable('.ac-providers .ac-button', null); await readable('.ac-form input');
@@ -205,4 +207,33 @@ test('admin entry retains return to site and language preserves the selected sec
   await page.getByRole('link', { name: 'Site in English. Switch to French' }).click();
   await expect(page).toHaveURL(/\/fr\/back-office\?view=sources/);
   await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveAttribute('aria-current', 'page');
+});
+
+test('direct diagnostic uses the isolated configured Supabase and keeps admin signed in', async ({ page, request }) => {
+  await control(request, 'seed', { email: 'admin@example.invalid' });
+  const external: string[] = [];
+  await page.route('**/*', route => {
+    const url = new URL(route.request().url());
+    if (url.hostname !== '127.0.0.1' && url.hostname !== 'localhost') { external.push(url.origin); return route.abort(); }
+    return route.continue();
+  });
+  await page.goto('/fr/back-office?view=diagnostic');
+  await dismissConsent(page);
+  await page.getByLabel('E-mail administrateur', { exact: true }).fill('admin@example.invalid');
+  await page.getByLabel('Mot de passe', { exact: true }).fill('fixture-password');
+  await page.locator('.ba-login').getByRole('button', { name: 'Se connecter', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Back-office diagnostic' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Diagnostic', exact: true })).toHaveAttribute('aria-current', 'page');
+  await page.getByRole('button', { name: 'Vue d’ensemble', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Vue d’ensemble', exact: true })).toBeVisible();
+  expect(external.filter(origin => origin.includes('supabase'))).toEqual([]);
+  expect((await control(request, 'state')).requests.some((r: {path: string; email: string}) => r.path === '/functions/v1/backoffice-diagnostic' && r.email === 'admin@example.invalid')).toBe(true);
+});
+
+test('case-insensitive admin route keeps the admin shell before sign-in', async ({ page }) => {
+  await page.goto('/en/Back-Office');
+  await dismissConsent(page);
+  await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Back-office navigation' })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Main navigation' })).toHaveCount(0);
 });

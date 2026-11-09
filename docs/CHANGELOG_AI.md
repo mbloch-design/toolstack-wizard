@@ -1,5 +1,7 @@
 ## 2026-11-09 · Back-office · navigation unifiée
 
+- La déconnexion admin utilise le garde du brouillon, le menu mobile annonce les sorties bloquées, et les clics modifiés de changement de langue préservent la saisie. Le diagnostic utilise la même URL Supabase configurée que l’authentification.
+
 - Les rubriques d’administration occupent le cadre partagé sur ordinateur et le menu sur mobile ; le retour au site reste disponible avant connexion et les rubriques apparaissent après vérification côté serveur.
 - Les sections suivent l’URL et l’historique, avec conservation du garde de brouillon du catalogue. Les stories restent `a-valider` ; vérification visuelle finale à effectuer.
 

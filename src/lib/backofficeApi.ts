@@ -4,7 +4,8 @@ const DEFAULT_SUPABASE_ANON_KEY =
 
 function getFunctionUrl() {
   const projectId = import.meta.env.VITE_SUPABASE_PROJECT_ID || DEFAULT_SUPABASE_PROJECT_ID;
-  return `https://${projectId}.supabase.co/functions/v1/backoffice-diagnostic`;
+  const baseUrl = import.meta.env.VITE_SUPABASE_URL || `https://${projectId}.supabase.co`;
+  return `${baseUrl.replace(/\/$/, "")}/functions/v1/backoffice-diagnostic`;
 }
 
 function getAnonKey() {

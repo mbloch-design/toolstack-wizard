@@ -1,7 +1,7 @@
-import { BackofficeNavigationContext, type BackofficeNavigationModel } from "@/components/backoffice/backofficeNavigation";
+import { BackofficeNavigationContext, BackofficeSignOutContext, type BackofficeNavigationModel, type BackofficeSignOutModel } from "@/components/backoffice/backofficeNavigation";
 import { BackofficeNavigation } from "@/ds/BackofficeNavigation/BackofficeNavigation";
 import AccountMenu from "@/components/account/AccountMenu";
-import { useLocation, useNavigate } from "react-router-dom";
+import { matchPath, useLocation, useNavigate } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
@@ -155,6 +155,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const { currency, setCurrency } = useCurrency();
   const { theme, toggle: toggleTheme } = useTheme();
   const location = useLocation();
+  const isAdmin = !!matchPath("/:lang/back-office", location.pathname);
   const navigate = useNavigate();
   const [searchOpen, setSearchOpen] = useState(false);
   // The labelled navigation is the canonical desktop state. The compact rail
@@ -168,7 +169,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const cartCount = cartState.pinnedToolSlugs.length;
   const cartLabel = t("Ma stack", "My stack");
   const otherLang = lang === "fr" ? "en" : "fr";
-  const currentSearch = typeof window !== "undefined" && /\/back-office\/?$/.test(location.pathname) ? window.location.search : location.search;
+  const currentSearch = typeof window !== "undefined" && isAdmin ? window.location.search : location.search;
   const languageHref = `${getLanguageSwitchPath(location.pathname, otherLang)}${currentSearch}${location.hash}`;
   const [breadcrumb, setBreadcrumb] = useState<TopbarBreadcrumbItem[] | null>(null);
   // US-NAV-01 : la barre du haut cède la place au contenu quand on descend,
@@ -193,8 +194,8 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const relPath = location.pathname.startsWith(prefix)
     ? location.pathname.slice(prefix.length).replace(/\/$/, "")
     : location.pathname;
-  const isAdmin = relPath === "/back-office";
   const [adminNavigation, setAdminNavigation] = useState<BackofficeNavigationModel | null>(null);
+  const [adminSignOut, setAdminSignOut] = useState<BackofficeSignOutModel | null>(null);
   const isHome = relPath === "";
   const isAuthCallback = relPath === "/connexion/retour" || relPath === "/sign-in/callback";
   // A handful of routes intentionally have no breadcrumb and should keep
@@ -321,6 +322,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   return (
     <TopbarBreadcrumbContext.Provider value={breadcrumbCtx}>
     <BackofficeNavigationContext.Provider value={setAdminNavigation}>
+    <BackofficeSignOutContext.Provider value={setAdminSignOut}>
     <div className={`asv2-root${sidebarExpanded || railIsOpen ? " asv2-root--sidebar-expanded" : ""}${railIsOpen ? " asv2-root--rail-open" : ""}`} data-chrome={chromeHidden ? "hidden" : "shown"} suppressHydrationWarning>
       {railIsOpen && <button type="button" className="asv2-rail-backdrop" tabIndex={-1} aria-label={t("Réduire la barre latérale", "Collapse sidebar")} onClick={() => setRailOpen(false)} />}
       <aside ref={sidebarRef} className="asv2-sidebar" data-expanded={shownExpanded} suppressHydrationWarning>
@@ -376,7 +378,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           <div className="asv2-utility-actions">
           <Link
             to={languageHref}
-            onClick={isAdmin ? (event) => { event.preventDefault(); navigate(`${getLanguageSwitchPath(location.pathname, otherLang)}${window.location.search}${location.hash}`); } : undefined}
+            onClick={isAdmin ? (event) => { if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return; event.preventDefault(); navigate(`${getLanguageSwitchPath(location.pathname, otherLang)}${window.location.search}${location.hash}`); } : undefined}
             className="asv2-utility-item"
             aria-label={t("Site en français. Passer en anglais", "Site in English. Switch to French")}
             title={!sidebarExpanded ? t("Passer en anglais", "Switch to French") : undefined}
@@ -486,7 +488,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               <span className="asv2-topbar-search-label">{t("Rechercher", "Search")}</span>
               <kbd className="asv2-kbd">{shortcut}</kbd>
             </button>}
-            <AccountMenu />
+            {isAdmin ? adminSignOut && <button type="button" className="ac-header-trigger" disabled={adminSignOut.busy} onClick={adminSignOut.onSignOut}>{t("Me déconnecter", "Sign out")}</button> : <AccountMenu />}
             {!isAdmin && <Link
               to={`${prefix}/ma-stack`}
               className="asv2-topbar-cta"
@@ -569,6 +571,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         toggleTheme={toggleTheme}
       />
     </div>
+    </BackofficeSignOutContext.Provider>
     </BackofficeNavigationContext.Provider>
     </TopbarBreadcrumbContext.Provider>
   );
