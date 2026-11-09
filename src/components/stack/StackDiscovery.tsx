@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from '@/lib/routerLinks';
-import ToolCardImage from '@/components/tool/ToolCardImage';
+import ToolCover from '@/components/tool/ToolCover';
 import MediaCard, { MediaCards } from '@/ds/MediaCard/MediaCard';
 import { Section, SectionFoot, SectionHead } from '@/ds/Toolbar/Toolbar';
 import { atoms } from '@/ds/atoms';
@@ -48,7 +48,7 @@ export default function StackDiscovery({ candidates, lang, prefix, sourceIds, se
       const added = selectedIds.includes(tool.id);
       const pending = pendingSlug === (tool.slug || tool.id);
       return <MediaCard key={tool.id} lang={lang} tool={tool} dataTool={tool.slug || tool.id} category={candidate.categoryLabel}
-        image={<ToolCardImage tool={tool} logoSize={44} overlayMode="static" />}
+        image={<ToolCover tool={tool} alt={t(`Aperçu de ${tool.name}`, `${tool.name} preview`)} />}
         reason={(lang === 'fr' ? candidate.reasonFr : candidate.reasonEn) || undefined}
         renderLink={(className, content) => <Link className={className} data-media-link="" to={`${prefix}/tool/${tool.slug ?? tool.id}`} aria-label={t(`Voir la fiche de ${tool.name}`, `View ${tool.name}`)} onClick={() => trackEvent('stack_reco_click', { tool: tool.slug || tool.id })}>{content}</Link>}
         add={{ state: pending ? 'pending' : added ? 'added' : 'idle', disabled: !!pendingSlug, onAdd: (origin) => onAdd(tool, origin) }} />;
