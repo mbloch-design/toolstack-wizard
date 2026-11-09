@@ -98,7 +98,7 @@ try {
         action = 'open-saved-tool-inspector';
         await expect(page.locator('.ms-tool')).toHaveCount(4);
         await page.locator('.ms-tool').filter({ has: page.locator('.ms-card-id strong', { hasText: 'Figma' }) }).click();
-        await expect(page.locator('.ms-tool-sheet')).toBeVisible();
+        await expect(page.locator('[data-drawer]')).toBeVisible();
       }
       const actionDoneMs = performance.now() - navigationStarted;
       const documentRequests = [...requests.values()].filter(r => r.type === 'Document');

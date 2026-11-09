@@ -1,0 +1,63 @@
+/* Blocks that come and go open in height; a changed figure fades up once, or rolls like a counter. */
+
+.collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows var(--tt-dur-move) var(--tt-ease-io), opacity var(--tt-dur-state) ease;
+}
+
+.collapse[data-open] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.value {
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .value[data-changed="fade"] {
+    animation: fade-up 260ms var(--tt-ease);
+  }
+
+  .value[data-changed="up"] {
+    animation: roll-up 340ms var(--tt-ease);
+  }
+
+  .value[data-changed="down"] {
+    animation: roll-down 340ms var(--tt-ease);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collapse {
+    transition: none;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes roll-up {
+  from {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+}
+
+@keyframes roll-down {
+  from {
+    opacity: 0;
+    transform: translateY(-80%);
+  }
+}

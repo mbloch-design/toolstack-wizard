@@ -1,0 +1,53 @@
+.field {
+  display: grid;
+  gap: var(--tt-space-2);
+}
+
+.label {
+  composes: eyebrow from "../atoms.module.css";
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-2);
+}
+
+.input {
+  flex: 1 1 120px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 var(--tt-space-4);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-hairline);
+  color: var(--tt-ink);
+  font: var(--tt-amount-font);
+  letter-spacing: var(--tt-amount-tracking);
+  transition: box-shadow var(--tt-dur-state) ease;
+}
+
+.input::placeholder {
+  color: var(--tt-meta);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: var(--tt-hairline-ink);
+}
+
+.input:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.input[aria-invalid="true"] {
+  box-shadow: var(--tt-hairline-overlap);
+}
+
+.error {
+  composes: note from "../atoms.module.css";
+  color: var(--tt-overlap-strong);
+}

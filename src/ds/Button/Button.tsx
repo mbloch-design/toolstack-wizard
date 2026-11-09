@@ -23,13 +23,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button({ vari
 export default Button;
 
 /** A round button with only an icon: on a picture (« + »), or beside a field. It always has a name. */
-export function IconButton({ label, icon, tone = "raised", size = 44, ...rest }: Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children"> & { label: string; icon: ReactNode; tone?: "raised" | "grey" | "quiet" | "ink" | "done"; size?: 32 | 40 | 44 }) {
-  return <button type="button" className={styles.iconButton} data-tone={tone} data-size={size} aria-label={label} title={rest.title ?? label} {...rest}><span aria-hidden="true">{icon}</span></button>;
-}
+export const IconButton = forwardRef<HTMLButtonElement, Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children"> & { label: string; icon: ReactNode; tone?: "raised" | "grey" | "quiet" | "ink" | "done"; size?: 32 | 40 | 44 }>(
+  function IconButton({ label, icon, tone = "raised", size = 44, ...rest }, ref) {
+    return <button ref={ref} type="button" className={styles.iconButton} data-tone={tone} data-size={size} aria-label={label} title={rest.title ?? label} {...rest}><span aria-hidden="true">{icon}</span></button>;
+  });
 
-export type LinkTone = "label" | "quiet" | "inline";
+export type LinkTone = "label" | "quiet" | "inline" | "danger";
 /** A text link, as a link or a button. label: an action beside a title. quiet: reads as text (« Plus tard »).
-    inline: inside a sentence, always underlined so it never relies on colour. Router links take the class. */
+    inline: inside a sentence, always underlined so it never relies on colour. danger: let something go (« Retirer de ma stack »).
+    Router links take the class. */
 export function linkClass(tone: LinkTone = "label") {
   return tone === "label" ? styles.link : `${styles.link} ${styles[tone]}`;
 }

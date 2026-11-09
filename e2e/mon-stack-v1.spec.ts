@@ -31,7 +31,7 @@ test("empty → search → add → inspect → remove → undo → persist", asy
   await expect(page).toHaveURL(/ma-stack$/);
   await expect(page.locator("[data-tool-id]")).toHaveCount(1);
   await page.locator("[data-tool-id]").click();
-  await expect(page.locator(".ms-tool-sheet")).toBeVisible();
+  await expect(page.locator("[data-drawer]")).toBeVisible();
   await page.getByRole("button", { name: "Retirer de ma stack", exact: true }).click();
   await expect(page.locator("[data-tool-id]")).toHaveCount(0);
   await page.getByRole("listitem").filter({ hasText: "Figma retiré de ma stack." }).getByRole("button", { name: "Annuler", exact: true }).click();
@@ -62,8 +62,8 @@ test("tool profile adds with one click and its confirmation opens stack context"
   await page.locator(".stack-confirm-keep").click();
   await page.locator(".stack-toast-open").click();
   await expect(page).toHaveURL(/ma-stack\?outil=figma/);
-  await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Figma");
-  await page.locator(".ms-tool-sheet").getByRole("link", { name: "Fiche complète", exact: true }).click();
+  await expect(page.locator("[data-drawer] h2")).toHaveText("Figma");
+  await page.locator("[data-drawer]").getByRole("link", { name: "Fiche complète", exact: true }).click();
   await expect(page).toHaveURL(/\/fr\/tool\/figma$/);
 });
 
@@ -89,11 +89,11 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await page.getByRole("button", { name: lang === "fr" ? "Terminé" : "Done", exact: true }).click();
     await page.locator("[data-tool-id]").first().focus();
     await page.keyboard.press("Enter");
-    await expect(page.locator(".ms-tool-sheet")).toBeVisible();
+    await expect(page.locator("[data-drawer]")).toBeVisible();
     // The sheet is a dialog: focus moves inside it.
-    expect(await page.evaluate(() => !!document.activeElement?.closest(".ms-tool-sheet"))).toBe(true);
+    expect(await page.evaluate(() => !!document.activeElement?.closest("[data-drawer]"))).toBe(true);
     await page.keyboard.press("Escape");
-    await expect(page.locator(".ms-tool-sheet")).toHaveCount(0);
+    await expect(page.locator("[data-drawer]")).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     await page.locator("[data-pagehead] h1").click();
     await page.screenshot({ path: test.info().outputPath(`${lang}-${width}-dashboard.png`), fullPage: true });
@@ -165,10 +165,10 @@ test("corrupt main snapshot recovers its backup", async ({ page }) => {
 test("known alternatives stay contextual and selection stays in the workspace", async ({ page }) => {
   await page.addInitScript(({ key, state }) => localStorage.setItem(key, JSON.stringify(state)), { key, state: seed(["chatgpt", "claude", "figma"]) });
   await page.goto("/fr/ma-stack?outil=chatgpt", { waitUntil: "domcontentloaded" });
-  await expect(page.locator(".ms-tool-sheet")).toContainText("Claude");
-  await expect(page.locator(".ms-tool-sheet")).not.toContainText("Figma");
-  await page.locator(".ms-ts-other").filter({ hasText: "Claude" }).first().click();
-  await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Claude");
+  await expect(page.locator("[data-drawer]")).toContainText("Claude");
+  await expect(page.locator("[data-drawer]")).not.toContainText("Figma");
+  await page.locator("[data-drawer] li").filter({ hasText: "Claude" }).getByRole("button").first().click();
+  await expect(page.locator("[data-drawer] h2")).toHaveText("Claude");
   await expect(page).toHaveURL(/ma-stack\?outil=claude/);
   await page.screenshot({ path: test.info().outputPath("fr-1440-context.png"), fullPage: true });
 });

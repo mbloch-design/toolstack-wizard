@@ -258,6 +258,11 @@
   --tt-disabled: 0.4;
   /* Une pastille posée sur un coin découpe le fond autour d'elle. */
   --tt-badge-cut: 0 0 0 2px var(--tt-bg);
+  /* Un panneau posé sur la page : un voile derrière, une ombre douce sur son bord. */
+  --tt-veil: rgb(0 0 0 / 0.75);
+  --tt-panel-shadow: 0 0 0 1px var(--tt-line), -24px 0 60px -30px rgb(0 0 0 / 0.35);
+  /* Le bouton d'un interrupteur : un galet posé sur sa piste. */
+  --tt-knob-shadow: 0 1px 2px rgb(0 0 0 / 0.2), 0 3px 8px -2px rgb(0 0 0 / 0.2);
   /* Icônes au trait : tailles et épaisseurs */
   --tt-icon-xs: 12px;
   --tt-icon-s: 14px;

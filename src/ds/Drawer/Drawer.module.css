@@ -1,0 +1,119 @@
+/* A panel on the right (computer) or from the bottom (phone); the page stays in place behind a veil. */
+
+.overlay {
+  position: fixed;
+  z-index: 1200;
+  inset: 0;
+  background: var(--tt-veil);
+}
+
+.panel {
+  position: fixed;
+  z-index: 1201;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  gap: var(--tt-space-6);
+  align-content: start;
+  width: min(520px, 100vw);
+  padding: var(--tt-space-8) var(--tt-space-8) var(--tt-space-6);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--tt-bg);
+  box-shadow: var(--tt-panel-shadow);
+  color: var(--tt-ink);
+  container-type: inline-size;
+}
+
+.panel[data-inline] {
+  position: relative;
+  z-index: auto;
+  width: min(520px, 100%);
+  max-height: none;
+  overflow: visible;
+}
+
+.panel:focus {
+  outline: none;
+}
+
+.close {
+  position: absolute;
+  top: var(--tt-space-5);
+  right: var(--tt-space-5);
+}
+
+.title {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-title-l-font);
+  letter-spacing: var(--tt-title-l-tracking);
+}
+
+.description {
+  composes: text from "../atoms.module.css";
+}
+
+@media (width <= 640px) {
+  .panel {
+    top: auto;
+    left: 0;
+    width: auto;
+    max-height: 92dvh;
+    padding: var(--tt-space-8) var(--tt-space-4) var(--tt-space-5);
+    border-radius: var(--tt-r-tile) var(--tt-r-tile) 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .overlay[data-state="open"] {
+    animation: veil-in var(--tt-dur-state) ease;
+  }
+
+  .overlay[data-state="closed"] {
+    animation: veil-out var(--tt-dur-state) ease;
+  }
+
+  .panel[data-state="open"] {
+    animation: slide-in-right var(--tt-dur-reveal) var(--tt-ease);
+  }
+
+  .panel[data-state="closed"] {
+    animation: slide-out-right var(--tt-dur-state) var(--tt-ease-io);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (width <= 640px) {
+  .panel[data-state="open"] {
+    animation-name: slide-in-bottom;
+  }
+
+  .panel[data-state="closed"] {
+    animation-name: slide-out-bottom;
+  }
+}
+
+@keyframes veil-in {
+  from { opacity: 0; }
+}
+
+@keyframes veil-out {
+  to { opacity: 0; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); }
+}
+
+@keyframes slide-out-right {
+  to { transform: translateX(100%); }
+}
+
+@keyframes slide-in-bottom {
+  from { transform: translateY(100%); }
+}
+
+@keyframes slide-out-bottom {
+  to { transform: translateY(100%); }
+}

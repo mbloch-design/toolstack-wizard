@@ -62,7 +62,7 @@ for (const lang of ["fr", "en"]) for (const width of [390, 1440]) {
     const unknown = map.locator("[data-tool-id]", { has: page.locator("[data-amount]", { hasText: /^(Prix \?|Price\?)$/ }) }).first();
     await expect(unknown).toBeVisible();
     await unknown.click();
-    await expect(page.locator(".ms-tool-sheet")).toBeVisible();
+    await expect(page.locator("[data-drawer]")).toBeVisible();
     await page.keyboard.press("Escape");
     await page.reload({ waitUntil: "domcontentloaded" });
     for (const name of ["Claude", "Perplexity"]) await expect(map.getByRole("button", { name: new RegExp(`^${name}, `) }).locator("[data-amount]")).toHaveText(lang === "fr" ? "17 €/mois" : "$20/mo");

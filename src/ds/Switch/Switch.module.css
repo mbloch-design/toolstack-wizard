@@ -1,0 +1,53 @@
+.switch {
+  composes: focus from "../atoms.module.css";
+  display: inline-grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: none;
+  cursor: pointer;
+}
+
+.switch:disabled {
+  opacity: var(--tt-disabled);
+  cursor: default;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  width: 46px;
+  height: 28px;
+  padding: calc(var(--tt-space-1) * 0.75);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile-2);
+  transition: background-color var(--tt-dur-state) ease;
+}
+
+.knob {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-logo-tile);
+  box-shadow: var(--tt-knob-shadow);
+  transition: transform var(--tt-dur-move) var(--tt-spring), width var(--tt-dur-state) ease;
+}
+
+.switch[aria-checked="true"] .track {
+  background: var(--tt-switch-on);
+}
+
+.switch[aria-checked="true"] .knob {
+  transform: translateX(18px);
+}
+
+.switch:active:not(:disabled) .knob {
+  width: 26px;
+}
+
+.switch[aria-checked="true"]:active:not(:disabled) .knob {
+  transform: translateX(14px);
+}

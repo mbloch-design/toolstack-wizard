@@ -862,16 +862,16 @@ for(const lang of ['en','fr'] as const) for(const width of [320,1440]) test(`inv
  await input.fill(en?'120.12':'120,12');
  await sheet.getByRole('group',{name:en?'Invoice currency':'Devise de facture'}).getByRole('button',{name:'EUR',exact:true}).click();
  await sheet.getByRole('button',{name:en?'Yearly':'Annuel',exact:true}).click();
- await sheet.locator('.ms-ce-actions').getByRole('button',{name:en?'Cancel':'Annuler',exact:true}).click();
+ await sheet.locator('[data-cost-editor]').getByRole('button',{name:en?'Cancel':'Annuler',exact:true}).click();
  await expect(sheet.getByRole('button',{name:en?'Edit my subscription':'Modifier mon abonnement'})).toBeFocused();
  expect((await snapshot(page)).billing.choices.github).toBeUndefined();
  await sheet.getByRole('button',{name:en?'Edit my subscription':'Modifier mon abonnement'}).click();
  await input.fill(en?'120.12':'120,12');
  await sheet.getByRole('group',{name:en?'Invoice currency':'Devise de facture'}).getByRole('button',{name:'EUR',exact:true}).click();
  await sheet.getByRole('button',{name:en?'Yearly':'Annuel',exact:true}).click();
- await input.fill('-1');await expect(sheet.locator('.ms-ce-save')).toBeDisabled();await input.press('Enter');
+ await input.fill('-1');await expect(sheet.getByRole('button',{name:en?'Save':'Enregistrer',exact:true})).toBeDisabled();await input.press('Enter');
  expect((await snapshot(page)).billing.choices.github).toBeUndefined();
- await input.fill(en?'120.12':'120,12');await sheet.locator('.ms-ce-save').click();await saved(page,lang);
+ await input.fill(en?'120.12':'120,12');await sheet.getByRole('button',{name:en?'Save':'Enregistrer',exact:true}).click();await saved(page,lang);
  expect((await snapshot(page)).billing.choices.github).toEqual({source:'custom',amount:120.12,currency:'EUR',period:'annual'});
  await sheet.getByRole('button',{name:en?'Close':'Fermer',exact:true}).click();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
@@ -884,7 +884,7 @@ test('invoice zero can become paid again and editor cancellation restores a visi
  const paid=sheet.getByRole('switch',{name:'Paid subscription for Notion',exact:true});await expect(paid).toHaveAttribute('aria-checked','false');await paid.click();
  await expect(paid).toHaveAttribute('aria-checked','true');expect((await snapshot(page)).billing.choices.notion).toBeUndefined();
  const adjust=sheet.getByRole('button',{name:'Edit my subscription'});await adjust.click();
- await sheet.getByLabel('Or the billed amount',{exact:true}).fill('0');await sheet.locator('.ms-ce-save').click();
+ await sheet.getByLabel('Or the billed amount',{exact:true}).fill('0');await sheet.getByRole('button',{name:en?'Save':'Enregistrer',exact:true}).click();
  await expect(adjust).toBeFocused();await expect(paid).toHaveAttribute('aria-checked','false');
  await adjust.click();await sheet.getByLabel('Or the billed amount',{exact:true}).fill('99');await sheet.getByRole('button',{name:'Cancel',exact:true}).click();
  await expect(adjust).toBeFocused();expect((await snapshot(page)).billing.choices.notion?.amount).toBe(0);

@@ -49,9 +49,9 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
     await expect(map.locator("[data-tool-id] [data-status-tag]")).toHaveCount(10);
     // The map opens the tool sheet.
     await map.getByRole("button").first().click();
-    await expect(page.locator(".ms-tool-sheet")).toBeVisible();
+    await expect(page.locator("[data-drawer]")).toBeVisible();
     await page.keyboard.press("Escape");
-    await expect(page.locator(".ms-tool-sheet")).toHaveCount(0);
+    await expect(page.locator("[data-drawer]")).toHaveCount(0);
     // One decision at a time: answering moves the deck and the ring.
     const deck = page.getByRole("region", { name: fr ? "Prochaine décision" : "Next decision" });
     await expect(deck.getByRole("heading", { level: 3 })).toHaveCount(1);

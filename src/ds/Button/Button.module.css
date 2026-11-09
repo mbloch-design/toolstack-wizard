@@ -2,6 +2,7 @@
 
 .button {
   display: inline-flex;
+  text-decoration: none;
   align-items: center;
   justify-content: center;
   gap: var(--tt-space-2);
@@ -72,6 +73,17 @@
 }
 
 .icon svg {
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* An icon inside a link styled as a button (buttonAttrs). */
+.button > svg {
   width: var(--tt-icon-l);
   height: var(--tt-icon-l);
   fill: none;
@@ -201,4 +213,8 @@
 .inline {
   font: var(--tt-text-font);
   letter-spacing: var(--tt-text-tracking);
+}
+
+.danger {
+  color: var(--tt-overlap-strong);
 }

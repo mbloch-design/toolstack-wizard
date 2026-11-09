@@ -8,4 +8,6 @@ export default defineConfig({
   // Storybook serves only what main.ts lists in staticDirs, never the site's whole public folder.
   publicDir: false,
   resolve: { alias: { "@": path.resolve(__dirname, "../src") } },
+  // Pre-bundled up front: discovered mid-run, they make Vite reload the test page (a second React, « useState of null »).
+  optimizeDeps: { include: ["@radix-ui/react-dialog"] },
 });

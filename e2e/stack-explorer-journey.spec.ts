@@ -11,7 +11,7 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   },{key});
   const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
   await page.goto(`/${lang}/ma-stack?outil=figma`,{waitUntil:'domcontentloaded'});
-  const sheet=page.locator('.ms-tool-sheet');await expect(sheet).toBeVisible();
+  const sheet=page.locator('[data-drawer]');await expect(sheet).toBeVisible();
   const explore=sheet.getByRole('link',{name:lang==='fr'?'Explorer autour de Figma':'Explore around Figma',exact:true});
   await expect(explore).toBeVisible();
   // The sheet slides in: check its settled viewport position without scrolling.
@@ -27,11 +27,11 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   await expect(page.locator(`[data-tool-slug="${added}"]`).getByRole('button')).toBeDisabled();
   await page.getByRole('button',{name:lang==='fr'?'Retour à Ma stack':'Back to My stack',exact:true}).click();
   await expect.poll(()=>new URL(page.url()).pathname).toBe(`/${lang}/ma-stack`);expect(new URL(page.url()).searchParams.get('outil')).toBe('figma');
-  await expect(page.locator('.ms-tool-sheet .ms-ts-title')).toHaveText('Figma');
-  await page.locator('.ms-tool-sheet').getByRole('link',{name:lang==='fr'?'Explorer autour de Figma':'Explore around Figma',exact:true}).scrollIntoViewIfNeeded();
+  await expect(page.locator('[data-drawer] h2')).toHaveText('Figma');
+  await page.locator('[data-drawer]').getByRole('link',{name:lang==='fr'?'Explorer autour de Figma':'Explore around Figma',exact:true}).scrollIntoViewIfNeeded();
   await page.screenshot({path:test.info().outputPath(`stack-explorer-inspector-${lang}-${width}.png`)});
   await page.keyboard.press('Escape');
-  await expect(page.locator('.ms-tool-sheet')).toHaveCount(0);
+  await expect(page.locator('[data-drawer]')).toHaveCount(0);
   await expect(page.locator('[data-tool-id][data-tool-id="figma"]')).toBeFocused();
   await expect(page.locator('[data-tool-id]')).toHaveCount(2);
   await page.reload({waitUntil:'domcontentloaded'});
