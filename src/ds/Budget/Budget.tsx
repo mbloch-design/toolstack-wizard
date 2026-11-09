@@ -27,9 +27,10 @@ export type BudgetProps = {
   localLogosOnly?: boolean;
 };
 
-// Logos on one row: 8 when the card is wide, 5 on a phone; the rest is a +N tile.
-const WIDE_LOGOS = 8;
-const NARROW_LOGOS = 5;
+// Logos on one row, at every width: the row holds 9 tiles on a wide card, 6 on a phone, 5 on a very narrow card;
+// past that, the last tile becomes « +N ».
+const SLOTS = { wide: 9, mid: 6, small: 5 } as const;
+const shownAt = (count: number, slots: number) => (count <= slots ? count : slots - 1);
 const plural = (n: number, word: string) => `${n} ${word}${n > 1 ? "s" : ""}`;
 
 /** The macro view of Ma stack: what the stack is, what it costs, and how far the figure can be trusted. */
@@ -70,14 +71,15 @@ export default function Budget({ lang, tools, monthly, yearly, lead, saved = nul
   const stack = (
     <div className={styles.stack}>
       <ul className={styles.logos} aria-label={t("Les outils de la stack", "The tools in the stack")}>
-        {tools.slice(0, WIDE_LOGOS).map((tool, index) => (
-          <li key={tool.id} title={tool.name} data-wide-only={index >= NARROW_LOGOS && tools.length > NARROW_LOGOS + 1 ? "" : undefined}>
+        {tools.slice(0, shownAt(tools.length, SLOTS.wide)).map((tool, index) => (
+          <li key={tool.id} title={tool.name} data-out-mid={index >= shownAt(tools.length, SLOTS.mid) ? "" : undefined} data-out-small={index >= shownAt(tools.length, SLOTS.small) ? "" : undefined}>
             <Logo tool={tool} localOnly={localLogosOnly} />
             <span className={styles.srOnly}>{tool.name}</span>
           </li>
         ))}
-        {tools.length > NARROW_LOGOS + 1 && <li className={styles.more} data-narrow-only="" aria-hidden="true">+{tools.length - NARROW_LOGOS}</li>}
-        {tools.length > WIDE_LOGOS && <li className={styles.more} data-wide-only="" aria-hidden="true">+{tools.length - WIDE_LOGOS}</li>}
+        {(Object.keys(SLOTS) as (keyof typeof SLOTS)[]).map((tier) => tools.length > SLOTS[tier] && (
+          <li key={tier} className={styles.more} data-tier={tier} aria-hidden="true">+{tools.length - (SLOTS[tier] - 1)}</li>
+        ))}
       </ul>
       <p className={styles.note}>{composition}</p>
     </div>

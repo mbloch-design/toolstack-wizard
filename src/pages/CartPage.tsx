@@ -265,7 +265,7 @@ export default function CartPage() {
       const [a,b] = key.split("|").map(slug => lookup.get(slug));
       if (!a || !b) return null;
       return <div key={key} className="mu-pair"><p>{t(`${a.name} et ${b.name} : vous gardez les deux.`, `${a.name} and ${b.name}: you keep both.`)}</p>
-        <Button variant="secondary" onClick={event => { pairReviewTrigger.current = event.currentTarget; setPairReview({scope:reviewScope,epoch:reviewEpoch,key}); requestAnimationFrame(() => {document.querySelector(".mf-now")?.scrollIntoView({block:"center"});document.getElementById("mf-now-title")?.focus({preventScroll:true});}); }}>{t("Revoir ce choix", "Review this choice")}</Button>
+        <Button variant="secondary" onClick={event => { pairReviewTrigger.current = event.currentTarget; setPairReview({scope:reviewScope,epoch:reviewEpoch,key}); requestAnimationFrame(() => {document.querySelector('[data-card="decision"]')?.scrollIntoView({block:"center"});document.querySelector<HTMLElement>('[data-card="decision"] h3')?.focus({preventScroll:true});}); }}>{t("Revoir ce choix", "Review this choice")}</Button>
       </div>;
     })}
   </div>;

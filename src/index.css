@@ -18907,14 +18907,8 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 /* ── Findings: price, the one decision, what comes next ──────────────────── */
 .ms-page .mf { margin: 0; }
-.ms-page .mf-card { position: relative; min-width: 0; animation: mf-rise 560ms var(--ms-ease) both; }
 @keyframes mf-rise { from { opacity: 0; transform: translateY(12px); } }
-.ms-page .mf-now { grid-column: span 2; }
 /* Label: words only, the type does the work. */
-.ms-page .mf-k.tt-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs); margin: 0 0 var(--space-sm); }
-.ms-page .mf-k.tt-kicker > svg { display: none; }
-.ms-page .mf-card h3 { margin: 0; }
-.ms-page .mf-t { margin: var(--space-xs) 0 0; }
 
 /* Price: the figure, the split by tool in data colours, a quiet verdict. */
 @keyframes mk-grow { from { transform: scaleX(0); } }
@@ -18923,21 +18917,11 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    brand colours, Apple "pop"; ink type on top. The card's own tokens are
    swapped locally, so every rule below that reads --ms-on-ink / --ms-ink-tile
    follows: text in ink, the primary answer in ink with light type. */
-.ms-page .mf-now { --ms-on-ink: var(--ms-ink); --ms-ink-tile: var(--ms-card); overflow: hidden; color: var(--ms-ink); }
-.ms-page .mf-now .mf-stage .mk-app { background: var(--color-logo-plate, var(--color-surface)); box-shadow: 0 8px 20px -10px rgb(0 0 0 / .32); animation: mf-pop 560ms cubic-bezier(.3, 1.5, .5, 1) both; }
-.ms-page .mf-now .mf-stage .mk-duo > .mk-app:last-child { animation-delay: 90ms; }
 @keyframes mf-pop { from { opacity: 0; transform: scale(.6) rotate(-8deg); } }
-.ms-page .mf-now .mk-duo b { background: var(--ms-card); box-shadow: 0 2px 6px rgb(0 0 0 / .14); color: var(--ms-alert); }
-.ms-page .mf-now .mk-button.tt-button-primary { background: var(--ms-ink); color: var(--ms-card); }
-.ms-page .mf-now .mk-button.tt-button-primary:hover { background: var(--color-hover-strong); }
-.ms-page .mf-now .mk-button.tt-button-secondary { background: color-mix(in srgb, var(--ms-card) 70%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); color: var(--ms-ink); }
-.ms-page .mf-now .mk-button.tt-button-secondary:hover { background: var(--ms-card); }
 /* Bento (22/10/2026): four columns, blocks of different sizes, ~480px tall.
    Price (tall, narrow) | decision (wide) | coming up
    Price               | balance (wide)  | what if */
-.ms-page .mf-now { grid-column: 2 / span 2; grid-row: 1; }
 .ms-page .mf-balance { grid-column: 2 / span 2; grid-row: 2; }
-.ms-page .mf-now .mf-vs { padding-top: var(--space-md); gap: 6px; font-size: 13px; }
 /* Balance: a small radar beside the ranked areas. */
 /* Height budget: the bottom row is as tall as its content, the list shows 4. */
 /* Price rows: the row fills with the tool's share (a storage bar you read as a list). */
@@ -18947,12 +18931,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Health: a status, then three checks with what is left. */
 /* Price rows: logo, name, amount and share, then the share as a bar in the row's colour. */
 /* Block icons: a small tinted chip per block, the one twist of colour on each label. */
-.ms-page .mf-k.tt-kicker > svg { display: grid; box-sizing: content-box; width: 14px; height: 14px; padding: 6px; border-radius: var(--radius); background: color-mix(in srgb, var(--k, var(--ms-ink)) 12%, transparent); color: var(--k, var(--ms-ink)); }
-.ms-page .mf-now .mf-k { --k: var(--a1); }
-.ms-page .mf-balance .mf-k { --k: var(--color-chart-automation); }
-.ms-page .mf-card:hover .mf-k > svg { animation: mf-wiggle 500ms ease; }
 @keyframes mf-wiggle { 30% { transform: rotate(-10deg); } 60% { transform: rotate(6deg); } }
-@media (prefers-reduced-motion: reduce) { .ms-page .mf-card:hover .mf-k > svg { animation: none; } }
 /* Facts: three tiles, typography only. Same anatomy in each: icon and label,
    the figure, one quiet line. */
 .ms-page .mf-balance .mk-radar { max-width: 170px; }
@@ -18971,31 +18950,14 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mk-radar-label text { fill: var(--ms-ink); font: 500 10.5px var(--ap-font); }
 .ms-page .mk-radar-label .mk-radar-value { fill: var(--ms-meta); font-weight: 600; font-variant-numeric: tabular-nums; }
 .ms-page .mk-radar-label[data-empty] text { fill: var(--ms-meta); opacity: .6; }
-@media (prefers-reduced-motion: reduce) { .ms-page .mk-radar-shape, .ms-page .mf-now .mf-stage .mk-app { animation: none; } }
-.ms-page .mf-now h3 { color: var(--ms-on-ink); }
-.ms-page .mf-now .mf-t { max-width: 52ch; }
-.ms-page .mf-stage { position: absolute; top: var(--space-xl); right: var(--space-xl); display: flex; }
-.ms-page .mf-now .mf-k, .ms-page .mf-now h3, .ms-page .mf-now .mf-t { margin-right: 150px; }
+@media (prefers-reduced-motion: reduce) { .ms-page .mk-radar-shape { animation: none; } }
 .ms-page .mf-step { display: inline-flex; align-items: center; gap: var(--space-xs); margin-left: var(--space-xs); }
-.ms-page .mf-now .mk-duo b { background: var(--ms-ink-tile); box-shadow: 0 0 0 2px var(--ms-ink-tile); color: var(--ms-on-ink); }
 /* A pair: each tool's monthly cost as a bar. */
 .ms-page .mf-vs { display: grid; gap: var(--space-xs); margin: var(--space-md) 0 0; font: 400 14px/1.3 var(--ap-font); }
 .ms-page .mf-vs div { display: grid; grid-template-columns: 150px minmax(0, 1fr) 84px; align-items: center; gap: var(--space-sm); }
 .ms-page .mf-vs b { color: var(--ms-on-ink); font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
 /* One action bar, always at the bottom. */
-.ms-page .mf-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2xs) var(--space-md); min-width: 0; }
-.ms-page .mf-answers { display: flex; flex: none; gap: var(--space-xs); }
-.ms-page .mf-now .mk-link { color: var(--ms-on-ink); }
-.ms-page .mf-now .mk-link--quiet { color: color-mix(in srgb, var(--ms-on-ink) 60%, transparent); }
-.ms-page .mf-now .mk-button.tt-button-primary { background: var(--ms-on-ink); color: var(--ms-ink-tile); }
-.ms-page .mf-now .mk-button.tt-button-primary:hover { background: color-mix(in srgb, var(--ms-on-ink) 88%, transparent); }
-.ms-page .mf-now .mk-button.tt-button-secondary { background: color-mix(in srgb, var(--ms-on-ink) 14%, transparent); color: var(--ms-on-ink); }
-.ms-page .mf-now .mk-button.tt-button-secondary:hover { background: color-mix(in srgb, var(--ms-on-ink) 24%, transparent); }
-.ms-page .mf-now .mk-button:focus-visible { outline-color: var(--ms-on-ink); }
-.ms-page .mf-now .mf-answers .mk-button > :first-child:not(:only-child) { padding: 1px; background: var(--color-logo-plate, var(--color-surface)); }
-.ms-page .mf-history { margin-top: var(--space-xs); }
 .ms-page .ms-decided { display: grid; gap: var(--space-2xs); margin: 0; color: var(--ms-meta); font: 400 13px/1.5 var(--ap-font); }
-.ms-page .mf-now .ms-decided { color: color-mix(in srgb, var(--ms-on-ink) 60%, transparent); }
 .ms-page .ms-decided-saved { color: var(--ms-good); font-weight: 600; }
 .ms-page .ms-inline-link { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
 
@@ -19044,13 +19006,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mk-odo-strip { transition: none; }
 }
 @media (max-width: 860px) {
-  .ms-page .mf-now { grid-row: auto; grid-column: auto; }
-  .ms-page .mf-now { min-height: 260px; }
-  .ms-page .mf-stage { position: static; margin-bottom: var(--space-md); }
-  .ms-page .mf-now .mf-k, .ms-page .mf-now h3, .ms-page .mf-now .mf-t { margin-right: 0; }
-
-  .ms-page .mf-answers { flex-wrap: wrap; }
-  .ms-page .mf-answers .mk-button { flex: 1 1 auto; }
   .ms-page .mf-vs div { grid-template-columns: 110px minmax(0, 1fr) 72px; }
 }
 
@@ -21429,13 +21384,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Balance: title row on top across the card; the chart and the list share the height below. */
 .ms-page .mf .mf-balance .mk-radar { max-width: 170px; }
 /* Cheaper elsewhere: mine → theirs, what it saves a month, opens the comparison. */
-.ms-page .mf .mf-cheaper-row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); min-height: 48px; padding: 6px var(--space-sm); border-radius: var(--radius-lg); background: var(--ms-card); color: var(--ms-ink); text-decoration: none; transition: transform 140ms ease, background-color 160ms ease; }
-.ms-page .mf .mf-cheaper-row:hover { background: var(--ms-hover); transform: translateX(2px); }
-.ms-page .mf .mf-cheaper-row:focus-visible { outline: 2px solid var(--ms-ink); outline-offset: 1px; }
-.ms-page .mf .mf-cheaper-text { display: grid; gap: 2px; min-width: 0; }
-.ms-page .mf .mf-cheaper-text span { overflow: hidden; font: 600 14px/1.2 var(--ap-font); text-overflow: ellipsis; white-space: nowrap; }
-.ms-page .mf .mf-cheaper-text small { overflow: hidden; color: var(--ms-meta); font: 400 12px/1.2 var(--ap-font); text-overflow: ellipsis; white-space: nowrap; }
-.ms-page .mf .mf-cheaper-row em { padding: 3px 8px; border-radius: var(--radius-pill); background: var(--ms-good-soft); color: var(--ms-good); font: 600 12.5px/1 var(--ap-font); font-style: normal; font-variant-numeric: tabular-nums; white-space: nowrap; }
 /* Balance by area, after the reference: a large legible radar with its labels,
    one colour (line and soft fill), clean rings; the values in tiles beside it. */
 .ms-page .mf .mf-balance .mk-radar { width: 100%; max-width: 330px; margin: 0 auto; }
@@ -21448,44 +21396,12 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mk-radar-label[data-empty] text { opacity: .55; }
 /* Review pass (22/10/2026): one anatomy per card (label, headline at one size,
    content), rows sized by content, no gaps in the middle of cards. */
-.ms-page .mf .mf-k.tt-kicker { margin-bottom: var(--space-sm); }
-.ms-page .mf .mf-card.mf-now h3 { margin: 0 0 var(--space-md); padding-right: 0; }
-.ms-page .mf .mf-card.mf-now h3 { margin-bottom: 4px; padding-right: 150px; }
-.ms-page .mf .mf-now .mf-t { margin-bottom: var(--space-md); }
-.ms-page .mf .mf-cheaper-row { grid-template-columns: minmax(0, 1fr) auto; padding: var(--space-xs) var(--space-md); }
-.ms-page .mf .mf-cheaper-text span { font-size: 14.5px; }
 .ms-page .mf .mf-balance .mk-radar { max-width: 300px; }
-.ms-page .mf .mf-cheaper-row { grid-template-columns: minmax(0, 1fr); }
-.ms-page .mf .mf-cheaper-text small em { padding: 0; background: none; color: var(--ms-good); font-weight: 600; }
 /* Missing price: the amount is typed right in the card. */
-.ms-page .mf .mf-price-field { display: flex; align-items: center; gap: var(--space-xs); max-width: 420px; margin: var(--space-sm) 0 0; }
-.ms-page .mf .mf-price-field label { display: flex; flex: 1; align-items: center; gap: var(--space-xs); min-height: 52px; padding: 0 var(--space-md); border-radius: var(--radius-lg); background: var(--ms-card); box-shadow: inset 0 0 0 1px var(--ms-line); transition: box-shadow 160ms ease; }
-.ms-page .mf .mf-price-field label:focus-within { box-shadow: inset 0 0 0 2px var(--ms-ink); }
-.ms-page .mf .mf-price-field input { width: 100%; min-width: 0; border: 0; background: none; color: var(--ms-ink); font: 600 26px/1 var(--ap-display); letter-spacing: -.02em; outline: none; font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-price-field input::placeholder { color: color-mix(in srgb, var(--ms-meta) 50%, transparent); }
-.ms-page .mf .mf-price-field label > span { flex: none; color: var(--ms-meta); font: 500 14px/1 var(--ap-font); }
-.ms-page .mf .mf-price-field .mk-button { min-height: 52px; padding: 0 var(--space-lg); }
-.ms-page .mf .mf-price-field .mk-button:disabled { opacity: .35; cursor: default; }
-.ms-page .mf .mf-now .mf-history { margin-top: var(--space-xs); }
 /* Plan pick: the plans as cards, one tap answers. */
-.ms-page .mf .mf-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--space-xs); margin: var(--space-sm) 0 0; }
-.ms-page .mf .mf-plan { display: grid; align-content: start; gap: 4px; min-height: 76px; padding: var(--space-sm) var(--space-md); border: 0; border-radius: var(--radius-lg); background: color-mix(in srgb, var(--ms-card) 82%, transparent); box-shadow: inset 0 0 0 1px var(--ms-line); color: var(--ms-ink); text-align: left; cursor: pointer; transition: transform 140ms ease, box-shadow 160ms ease, background-color 160ms ease; }
-.ms-page .mf .mf-plan:hover { background: var(--ms-card); box-shadow: inset 0 0 0 1.5px var(--ms-ink); transform: translateY(-2px); }
-.ms-page .mf .mf-plan:active { transform: scale(.98); }
-.ms-page .mf .mf-plan:focus-visible { outline: 2px solid var(--ms-ink); outline-offset: 2px; }
-.ms-page .mf .mf-plan-name { overflow: hidden; color: var(--ms-meta); font: 500 13px/1.2 var(--ap-font); text-overflow: ellipsis; white-space: nowrap; }
-.ms-page .mf .mf-plan b { font: 600 20px/1 var(--ap-display); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-plan b small { margin-left: 2px; color: var(--ms-meta); font: 500 12px/1 var(--ap-font); }
-.ms-page .mf .mf-plan-note { color: var(--ms-meta); font: 400 11.5px/1.2 var(--ap-font); }
 
 /* Duplicate face-off: two faces, one tap keeps one. */
-.ms-page .mf .mf-duel { display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch; gap: var(--space-sm); margin-top: var(--space-lg); }
 .ms-page .mf .mf-face-name { margin-top: var(--space-xs); }
-.ms-page .mf .mf-now[data-kind="pair"] .mf-links { gap: var(--space-2xs) var(--space-lg); justify-content: center; }
-.ms-page .mf .mf-now .mf-review-cancel { display: inline-flex; align-items: center; min-height: 44px; }
-@media (max-width: 560px) {
-  .ms-page .mf .mf-duel { gap: var(--space-xs); }
-}
 
 /* Proportion follows importance: price and decision lead, health and cheaper share a side column,
    balance is a low band underneath. */
@@ -21493,14 +21409,12 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
   /* Balance band: the sentence on the left, the radar and its figures on the right. */
   .ms-page .mf .mf-balance { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr); grid-template-rows: auto 1fr; column-gap: var(--space-xl); align-items: start; padding-block: var(--space-lg); }
-  .ms-page .mf .mf-balance > .mf-k { grid-column: 1; }
   .ms-page .mf .mf-balance .mk-radar { max-width: 220px; }
 }
 
 /* Compact health: one line per check. */
 
 /* Tighter face-off. */
-.ms-page .mf .mf-now[data-kind="pair"] .mf-duel { margin-top: var(--space-md); }
 @media (min-width: 1181px) {
   .ms-page .mf .mf-balance .mk-radar { max-width: 190px; }
 }
@@ -21510,10 +21424,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 /* Decision card, calm (23/10): the same neutral surface as every box; the
    faces carry the colour through the logos, not a wash behind them. */
-.ms-page .mf .mf-now .mf-k { --k: var(--ms-alert); }
-.ms-page .mf .mf-now[data-kind="pair"] .mf-t { margin-bottom: 0; }
-.ms-page .mf .mf-now[data-kind="pair"] .mf-duel { margin-top: var(--space-md); gap: var(--space-xs); }
-.ms-page .mf .mf-now[data-kind="pair"] .mf-face-name { margin-top: var(--space-2xs); }
 
 /* Bento v3 (23/10): the decision only as tall as it needs; cheaper and health
    share the row under it; balance stands as a column on the right. */
@@ -21555,35 +21465,19 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    stands as a tall column on the right, its faces stacked like a card deck. */
 @media (min-width: 1181px) {
   .ms-page .mf .mf-balance { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); grid-template-rows: auto 1fr; column-gap: var(--space-lg); align-items: start; }
-  .ms-page .mf .mf-balance > .mf-k { grid-column: 1; }
   .ms-page .mf .mf-balance .mk-radar { max-width: 170px; }
-  .ms-page .mf .mf-now .mf-stage { display: none; }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-duel { grid-template-columns: minmax(0, 1fr); }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-name { grid-column: 2; margin: 0; }
-  .ms-page .mf .mf-now .mf-plans { grid-template-columns: minmax(0, 1fr); }
-  .ms-page .mf .mf-now .mf-plan { grid-template-columns: minmax(0, 1fr) auto; align-items: center; min-height: 0; }
-  .ms-page .mf .mf-now .mf-plan > b { grid-column: 2; grid-row: 1 / span 2; }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-links { justify-content: flex-start; gap: var(--space-2xs) var(--space-md); }
 }
 @media (min-width: 1181px) {
-  .ms-page .mf .mf-card.mf-now h3 { padding-right: 0; }
-  .ms-page .mf .mf-now .mf-t { max-width: none; }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .ms-page .mf .mf-balance { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto 1fr; }
   .ms-page .mf .mf-balance .mk-radar { max-width: 160px; }
 }
 @media (min-width: 1181px) {
   /* The stage of logos is gone in the column layout: the text takes the full width. */
-  .ms-page .mf .mf-now .mf-k, .ms-page .mf .mf-now h3, .ms-page .mf .mf-now .mf-t { margin-right: 0; }
-}
-@media (min-width: 1181px) {
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-duel { margin-block: auto; }
 }
 /* Bento v5: no box just to say "all good": the optimisation box takes the space. */
 /* Budget split (23/10): verdict, one line of proof, then a radar as large as its figures. */
 @media (min-width: 1181px) {
   .ms-page .mf .mf-balance { grid-template-rows: auto auto auto 1fr; }
-  .ms-page .mf .mf-balance > .mf-t { grid-column: 1; margin: 0; }
   .ms-page .mf .mf-balance .mk-radar { width: 100%; max-width: 240px; justify-self: center; }
 }
 
@@ -21597,11 +21491,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 /* The decision block reads as the one place to act (23/10): the only raised
    white card of the bento, a fine ring in the rare ToolTrim blue, a filled label. */
-.ms-page .mf .mf-now .mf-plan { background: var(--ms-tile); box-shadow: none; }
-.ms-page .mf .mf-now .mf-plan:hover { box-shadow: inset 0 0 0 1.5px var(--color-accent); }
-@media (min-width: 1181px) {
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-duel { margin-block: var(--space-lg) 0; }
-}
 
 /* ===== Bento v6 (23/10): the structure of a system report =====
    A tall card on the left (what it costs), a wide card on top (the decision),
@@ -21610,69 +21499,43 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    actions bottom right. */
 @media (min-width: 1181px) {
   /* The decision is wide again: faces side by side. */
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-duel { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); margin-block: var(--space-md) 0; }
-  .ms-page .mf .mf-now .mf-plans { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
   /* Budget split, in its own column: verdict, bar, legend. */
   .ms-page .mf .mf-balance { display: flex; flex-direction: column; }
 }
 /* Icon top right, label quiet: the headline says what the box is about. */
-.ms-page .mf .mf-card > .mf-k { position: relative; padding-right: 48px; }
-.ms-page .mf .mf-card > .mf-k > svg { position: absolute; top: -4px; right: 0; width: 40px; height: 40px; padding: 10px; border-radius: 12px; background: color-mix(in srgb, var(--k, var(--ms-ink)) 12%, var(--ms-card)); }
-.ms-page .mf .mf-balance > .mf-k { --k: var(--color-chart-automation); }
-.ms-page .mf .mf-fit > .mf-k { --k: var(--ms-good); }
 
 /* Budget bar, like iPhone storage. */
 @keyframes mf-bb-grow { from { transform: scaleX(0); } }
 
 /* Right size. */
 /* Icon in the label row, at the right: never over the headline. */
-.ms-page .mf .mf-card > .mf-k { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); min-height: 36px; padding-right: 0; }
-.ms-page .mf .mf-card > .mf-k > svg { position: static; order: 2; flex: none; width: 36px; height: 36px; padding: 9px; }
-.ms-page .mf .mf-now > .mf-k { justify-content: flex-start; }
 /* Tighter rows: the bento stays as short as its content. */
 /* Three views of the split. */
-.ms-page .mf .mf-bb-views { margin-bottom: var(--space-md); }
-.ms-page .mf .mf-bb-views button { min-height: 30px; padding: 0 12px; font-size: 13px; }
 
 /* Face-off, playful (23/10): big logos, a lift on hover, and a choice that
    feels good: the kept face lights up with a check, the other swipes away,
    the saving rises. */
-@media (min-width: 1181px) {
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-name { margin-top: var(--space-xs); }
-}
 @keyframes mf-or-breathe { 50% { transform: scale(1.08); } }
 @keyframes mf-kept { 0% { transform: scale(1); } 45% { transform: scale(1.05); } 100% { transform: scale(1.02); } }
 @keyframes mf-gone { to { transform: translateX(calc(var(--dir, 1) * 120%)) rotate(calc(var(--dir, 1) * 14deg)); opacity: 0; } }
 @keyframes mf-gain { 0% { transform: translate(-50%, 10px) scale(.8); opacity: 0; } 30% { transform: translate(-50%, -6px) scale(1.06); opacity: 1; } 100% { transform: translate(-50%, -26px) scale(1); opacity: 0; } }
 /* Total reliability, as a meter: a ring, one dot per tool, the next question on tap. */
-.ms-page .mf .mf-now[data-flash] { animation: mf-flash 900ms ease-out; }
 @keyframes mf-flash { 0% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-accent) 40%, transparent), 0 18px 40px -22px rgb(0 0 0 / .4); } 100% { } }
 
 /* Text architecture shared by the cards (23/10): label + icon, figure, sentence, detail. */
-.ms-page .mf .mf-card > .mf-k { width: 100%; }
 /* The view switch sits at the top right of the chart, out of the reading path. */
-.ms-page .mf .mf-bb-views { display: flex; justify-content: flex-end; margin: 0 0 var(--space-sm) auto; width: max-content; }
 
 /* Compact price card (23/10): one line per tool, a bar chart read as a table. */
 /* Reliability on one line: ring, figure, what is left. */
 /* Big logos stay inside their slot. */
 /* Compact lower row (23/10). */
-.ms-page .mf .mf-balance > .mf-k > svg { display: none; }
 .ms-page .mf .mf-balance { position: relative; }
-.ms-page .mf .mf-balance .mf-bb-views { position: absolute; top: var(--space-xl); right: var(--space-xl); margin: 0; }
-.ms-page .mf .mf-bb-views button { min-height: 28px; padding: 0 10px; font-size: 12.5px; }
-.ms-page .mf .mf-balance > .mf-k { padding-right: 200px; }
-.ms-page .mf .mf-balance .mf-bb-views { top: calc(var(--space-xl) - 2px); }
 
 /* Bento v7 (23/10): price beside the decision on the first row; the split,
    wide, beside optimisation on the second. The wide split puts its chart on
    the left and the legend on the right. */
 @media (min-width: 1181px) {
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-duel { margin-top: var(--space-lg); }
-}
-@media (min-width: 1181px) {
   .ms-page .mf .mf-balance { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); grid-template-rows: auto 1fr; column-gap: var(--space-xl); align-items: start; }
-  .ms-page .mf .mf-balance > .mf-k { grid-column: 1 / -1; }
 }
 
 /* Above the fold (23/10): the title is one line, the bento fits under it. */
@@ -21681,56 +21544,23 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-expand { display: none; }
 @media (min-width: 761px) {
   /* Compact face-off: two faces side by side, logo left, the choice right. */
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-name { grid-column: 2; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-duel { margin-top: var(--space-md); }
 }
 /* Phone: four summary cards; one opens at a time. */
 @media (max-width: 760px) {
   .ms-page .mf .mf-expand { display: grid; place-items: center; order: 3; width: 36px; height: 36px; margin-left: 4px; border: 0; border-radius: 50%; background: var(--ms-card); color: var(--ms-ink); cursor: pointer; transition: transform 240ms var(--ms-ease); }
   .ms-page .mf .mf-expand[aria-expanded="true"] { transform: rotate(180deg); }
-  .ms-page .mf .mf-card > .mf-k > svg { display: none; }
-  .ms-page .mf .mf-card:not([data-open]) > :not(.mf-k):not(.mf-lead):not(h3):not(.mk-figure):not(.mf-now-q) { display: none; }
-  .ms-page .mf .mf-card:not([data-open]).mf-now h3 { margin-bottom: 0; }
 }
 /* Tablet and phone: one column for the phone, two for the tablet; the
    decision comes first on a phone so the action is in the first screen. */
-@media (max-width: 760px) {
-  .ms-page .mf .mf-card:not([data-open]) { min-height: 0; }
-}
 /* Short screens: tighter figures and lines, so both rows stay above the fold. */
-@media (min-width: 761px) and (max-height: 860px) {
-  .ms-page .mf .mf-card > .mf-k { min-height: 30px; }
-  .ms-page .mf .mf-card > .mf-k > svg { width: 30px; height: 30px; padding: 7px; }
-}
-@media (max-width: 760px) {
-  .ms-page .mf .mf-balance > .mf-k { padding-right: 0; }
-  .ms-page .mf .mf-balance .mf-bb-views { position: static; margin: 0 0 var(--space-sm); }
-}
 
 /* ===== Fixed boxes (23/10) =====
    The boxes keep their size; the content is designed to fit. Long content
    (lists, legend) scrolls inside its box. No drop shadow and no outline, as
    in the design system: contrast comes from fills. */
-.ms-page .mf .mf-now .mf-plan { background: var(--ms-card); transition: background-color 160ms ease, transform 200ms var(--ms-ease); }
-.ms-page .mf .mf-now .mf-plan:hover, .ms-page .mf .mf-now .mf-plan:focus-visible { background: color-mix(in srgb, var(--color-accent) 10%, var(--ms-card)); }
-.ms-page .mf .mf-now[data-flash] { animation: mf-flash-fill 900ms ease-out; }
 @keyframes mf-flash-fill { 0% { background: color-mix(in srgb, var(--color-accent) 22%, var(--ms-card)); } }
 
 /* Live effect on the total, and the seat stepper. */
-.ms-page .mf .mf-preview { margin: var(--space-md) 0 0; }
-.ms-page .mf .mf-preview span[data-dir] { margin-left: 4px; padding: 2px 8px; border-radius: 99px; }
-.ms-page .mf .mf-preview span[data-dir="down"] { background: var(--ms-good-soft); }
-.ms-page .mf .mf-preview span[data-dir="up"] { background: color-mix(in srgb, var(--ms-alert) 10%, var(--ms-card)); }
-.ms-page .mf .mf-seats { display: grid; gap: var(--space-sm); margin-top: var(--space-md); padding: var(--space-md); border-radius: var(--radius-lg); background: var(--ms-card); }
-.ms-page .mf .mf-seats-q { margin: 0; color: var(--ms-ink); font: 500 15px/1.35 var(--ap-font); }
-.ms-page .mf .mf-seats-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md); }
-.ms-page .mf .mf-stepper { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border-radius: 99px; background: var(--color-accent-soft); }
-.ms-page .mf .mf-stepper button { width: 36px; height: 36px; border: 0; border-radius: 50%; background: var(--ms-card); color: var(--ms-ink); font: 600 18px/1 var(--ap-font); cursor: pointer; }
-.ms-page .mf .mf-stepper button:disabled { opacity: .35; cursor: default; }
-.ms-page .mf .mf-stepper output { min-width: 40px; text-align: center; font: 600 18px/1 var(--ap-display); font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-seats-sum { color: var(--ms-meta); font: 400 14px/1 var(--ap-font); font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-seats-sum b { color: var(--ms-ink); }
-.ms-page .mf .mf-seats .mk-button { margin-left: auto; }
 
 @media (min-width: 761px) {
   /* Fixed heights from the space left under the title line. The first row never drops under 360px:
@@ -21740,64 +21570,22 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-balance { grid-template-rows: auto minmax(0, 1fr); }
 }
 @media (min-width: 761px) {
-  .ms-page .mf .mf-balance .mf-bb-views { grid-row: 1; }
   /* In the price list, the "others" row closes the list; no row is ever cut. */
 }
-.ms-page .mf .mf-now[data-step="seats"] > .mf-t { display: none; }
-.ms-page .mf .mf-seats { gap: var(--space-xs); padding: var(--space-sm) var(--space-md); }
-.ms-page .mf .mf-seats-row { gap: var(--space-sm); }
-.ms-page .mf .mf-seats-sum { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ms-page .mf .mf-seats .mk-button { margin-left: 0; }
-.ms-page .mf .mf-stepper button { width: 32px; height: 32px; }
 /* Plan tiles: one row of at most four, name in full, price under it. */
-@media (min-width: 761px) {
-  .ms-page .mf .mf-now .mf-plans { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); grid-auto-flow: column; }
-}
-.ms-page .mf .mf-now .mf-plan { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto; align-content: start; gap: 4px; padding: var(--space-sm) var(--space-md); }
-.ms-page .mf .mf-now .mf-plan > b { grid-column: 1; grid-row: 2; justify-self: start; font-size: 22px; }
-.ms-page .mf .mf-now .mf-plan-name { grid-row: 1; overflow: hidden; color: var(--ms-ink); font: 600 14px/1.25 var(--ap-font); text-overflow: ellipsis; white-space: nowrap; }
-.ms-page .mf .mf-now .mf-plan-note { grid-row: 3; color: var(--ms-meta); font-size: 12px; }
 /* Choice tiles on the blue decision card: white stays white; hover lifts it and blues the price. */
-.ms-page .mf .mf-now .mf-plan:hover, .ms-page .mf .mf-now .mf-plan:focus-visible { background: var(--ms-card); transform: translateY(-2px); }
-.ms-page .mf .mf-now .mf-plan:hover > b, .ms-page .mf .mf-now .mf-plan:focus-visible > b { color: var(--color-accent); }
 /* The total, on the action bar's right. */
-.ms-page .mf .mf-preview { display: inline-flex; align-items: baseline; gap: 6px; margin: 0 0 0 auto; white-space: nowrap; }
-.ms-page .mf .mf-preview b { transition: color 160ms ease; }
-.ms-page .mf .mf-preview-delta { align-self: center; padding: 3px 9px; border-radius: 99px; background: var(--ms-card); color: var(--ms-ink); font: 600 12px/1 var(--ap-font); font-variant-numeric: tabular-nums; }
-.ms-page .mf .mf-preview-delta[data-dir="down"] { color: var(--ms-good); }
-.ms-page .mf .mf-preview span.mf-preview-delta[data-dir] { margin-left: 2px; background: var(--ms-card); color: var(--ms-ink); }
-.ms-page .mf .mf-preview span.mf-preview-delta[data-dir="down"] { color: var(--ms-good); }
 /* A still line: fixed columns, tabular digits, slots hidden rather than added. */
-.ms-page .mf .mf-preview { display: inline-grid; grid-template-columns: auto 5.2em 1.2em 5.2em auto 5.6em; align-items: baseline; column-gap: 6px; }
-.ms-page .mf .mf-preview b { text-align: right; }
-.ms-page .mf .mf-preview span.mf-preview-delta { justify-self: start; }
-.ms-page .mf .mf-preview [data-off] { visibility: hidden; }
 
 /* ===== Decision, playful (23/10): micro-animations that never move the layout ===== */
-.ms-page .mf .mf-preview { grid-template-columns: auto 4.4em 1em 4.4em auto 5em; }
-.ms-page .mf .mf-preview-next .mk-odo { justify-content: flex-end; }
 /* A new question arrives from the right, its tiles one after another. */
-.ms-page .mf .mf-now > h3, .ms-page .mf .mf-now > .mf-t { animation: mf-in 420ms cubic-bezier(.2, .8, .2, 1) both; }
-.ms-page .mf .mf-now > .mf-t { animation-delay: 60ms; }
-.ms-page .mf .mf-now .mf-plan { animation: mf-in 480ms cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(120ms + var(--i, 0) * 70ms); }
 @keyframes mf-in { from { opacity: 0; transform: translateX(18px); } }
 /* Hover: the tile lifts, its price pulses once; press: it squashes. */
-.ms-page .mf .mf-now .mf-plan:hover > b { animation: mf-pulse 420ms cubic-bezier(.3, 1.6, .5, 1); }
 @keyframes mf-pulse { 40% { transform: scale(1.08); } }
-.ms-page .mf .mf-now .mf-plan:active { transform: scale(.96); transition-duration: 80ms; }
-.ms-page .mf .mf-now .mf-plan > b { transform-origin: left center; }
 /* Pick: the chosen tile lights up with a check, the others step back. */
-.ms-page .mf .mf-now .mf-plan { position: relative; }
-.ms-page .mf .mf-now .mf-plan[data-state="kept"] { background: var(--ms-good-soft); animation: mf-kept 520ms cubic-bezier(.3, 1.5, .5, 1) both; }
-.ms-page .mf .mf-now .mf-plan[data-state="kept"] > b { color: var(--ms-good); }
-.ms-page .mf .mf-now .mf-plan[data-state="gone"] { animation: mf-step-back 380ms ease-in forwards; pointer-events: none; }
 @keyframes mf-step-back { to { opacity: .25; transform: scale(.94); } }
 /* The difference pill bounces in; the step bar fills with a spring. */
-.ms-page .mf .mf-preview span.mf-preview-delta:not([data-off]) { animation: mf-pill 380ms cubic-bezier(.3, 1.8, .5, 1) both; }
 @keyframes mf-pill { from { transform: scale(.6); opacity: 0; } }
-@media (prefers-reduced-motion: reduce) {
-  .ms-page .mf .mf-now > h3, .ms-page .mf .mf-now > .mf-t, .ms-page .mf .mf-now .mf-plan, .ms-page .mf .mf-now .mf-plan:hover > b, .ms-page .mf .mf-now .mf-plan[data-state], .ms-page .mf .mf-preview span.mf-preview-delta { animation: none; }
-}
 
 /* ===== Budget split, zoned (23/10) =====
    Header row: label left, view switch right, on one line. Body: the text on
@@ -21806,15 +21594,9 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    three views; the bar stands upright to fill it. */
 @media (min-width: 761px) {
   .ms-page .mf .mf-balance { position: relative; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); grid-template-rows: 36px minmax(0, 1fr); column-gap: var(--space-lg); row-gap: var(--space-sm); }
-  .ms-page .mf .mf-balance > .mf-k { grid-column: 1 / -1; grid-row: 1; padding-right: 0; }
-  .ms-page .mf .mf-balance .mf-bb-views { position: absolute; top: var(--space-lg); right: var(--space-lg); margin: 0; }
   /* Upright bar: segments stack from the bottom. */
   @keyframes mf-bb-rise { from { transform: scaleY(0); } }
 }
-@media (min-width: 761px) {
-  .ms-page .mf .mf-balance > .mf-k .mf-bb-views { position: static; margin: 0; }
-}
-@media (max-width: 760px) { .ms-page .mf .mf-balance > .mf-k .mf-bb-views { display: none; } .ms-page .mf .mf-balance[data-open] > .mf-k .mf-bb-views { display: flex; } }
 
 /* Split chart, legend as chips (23/10): the chart owns the panel. */
 @media (min-width: 761px) {
@@ -21823,66 +21605,35 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 /* Split charts that answer the pointer, and a legend made to be read (23/10). */
-.ms-page .mf .mf-ring { width: 100%; height: 100%; overflow: visible; }
-.ms-page .mf .mf-ring circle { fill: none; stroke-width: 13; transition: stroke-width 220ms var(--ms-ease), opacity 200ms ease; cursor: pointer; }
-.ms-page .mf .mf-ring .mf-ring-track { stroke: var(--ms-track); cursor: default; }
-.ms-page .mf .mf-ring circle[data-on] { stroke-width: 17; }
-.ms-page .mf .mf-ring[data-active] circle:not([data-on]):not(.mf-ring-track) { opacity: .3; }
-.ms-page .mf .mf-radar { width: 100%; height: 100%; overflow: visible; }
-.ms-page .mf .mf-radar-ring { fill: none; stroke: var(--ms-track); stroke-width: .6; }
-.ms-page .mf .mf-radar-axis { stroke: var(--ms-track); stroke-width: .6; }
-.ms-page .mf .mf-radar-shape { fill: color-mix(in srgb, var(--color-accent) 14%, transparent); stroke: var(--color-accent); stroke-width: 1.4; stroke-linejoin: round; }
-.ms-page .mf .mf-radar-hit { fill: transparent; cursor: pointer; }
-.ms-page .mf .mf-radar-dot { stroke: var(--ms-card); stroke-width: 1.2; transition: r 200ms var(--ms-ease), opacity 200ms ease; pointer-events: none; }
-.ms-page .mf .mf-radar[data-active] .mf-radar-dot:not([data-on]) { opacity: .35; }
 /* Legend: larger type, ink figures. */
-@media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-ring circle, .ms-page .mf .mf-radar-dot { transition: none; } }
 /* Chips: the amount only where the legend stands beside the chart. */
 @media (min-width: 761px) {
   .ms-page .mf .mf-balance { grid-template-columns: minmax(0, .66fr) minmax(0, 1.34fr); }
 }
 
 /* Radar labels, playful lead, and a micro-animation for every change of state (23/10). */
-.ms-page .mf .mf-radar-label { fill: var(--ms-text2, var(--ms-meta)); font: 500 7px/1 var(--ap-font); cursor: default; transition: fill 160ms ease; }
-.ms-page .mf .mf-radar-label[data-empty] { fill: var(--ms-meta); opacity: .55; }
-.ms-page .mf .mf-radar-label[data-on] { fill: var(--ms-ink); font-weight: 700; }
-.ms-page .mf .mf-radar[data-active] .mf-radar-label:not([data-on]) { opacity: .45; }
 /* Entering a view: the chart zooms in; the radar unfolds from the centre, its dots pop one by one; the ring turns into place. */
 @keyframes mf-view-in { from { opacity: 0; transform: scale(.94); } }
-.ms-page .mf .mf-radar-shape { transform-box: view-box; transform-origin: 50px 50px; animation: mf-radar-in 620ms cubic-bezier(.3, 1.4, .5, 1) both; }
 @keyframes mf-radar-in { from { transform: scale(.1); opacity: 0; } }
-.ms-page .mf .mf-radar g { animation: mf-pill 380ms cubic-bezier(.3, 1.8, .5, 1) both; animation-delay: 300ms; transform-box: fill-box; transform-origin: center; }
-.ms-page .mf .mf-radar g:nth-of-type(2) { animation-delay: 360ms; } .ms-page .mf .mf-radar g:nth-of-type(3) { animation-delay: 420ms; }
-.ms-page .mf .mf-radar g:nth-of-type(4) { animation-delay: 480ms; } .ms-page .mf .mf-radar g:nth-of-type(n+5) { animation-delay: 540ms; }
-.ms-page .mf .mf-ring { animation: mf-ring-in 700ms cubic-bezier(.2, .8, .2, 1) both; }
 @keyframes mf-ring-in { from { transform: rotate(-70deg) scale(.9); opacity: 0; } }
 /* Left zone: a playful tag, the figure in the lead area's colour, its tools as a fanned deck. */
 @keyframes mf-deal { from { opacity: 0; transform: translateY(8px) rotate(0); } }
-@media (prefers-reduced-motion: reduce) {
-  .ms-page .mf .mf-radar-shape, .ms-page .mf .mf-radar g, .ms-page .mf .mf-ring { animation: none; }
-}
-.ms-page .mf .mf-radar-label { font-size: 9px; }
 .ms-page .mf .mk-odo-sym { white-space: pre; }
-@media (max-width: 760px) { .ms-page .mf .mf-card:not([data-open]) :is(.mf-lead-deck, .mf-lead-tag) { display: none; } }
 @media (min-width: 761px) {
   /* Bar: centred in its zone; the chips carry the amount, the bar already shows the share. */
   /* Radar and ring: a square cell as tall as the panel. */
 }
 /* No stray movement: the detail line keeps its height when empty; chips do not shift. */
 /* View switch with icons; tag with its icon instead of a dot; the detail line is never cut. */
-.ms-page .mf .mf-bb-views button { display: inline-flex; align-items: center; gap: 6px; }
 
 /* Pills carry the tools; optimisation reads like a little personality test (23/10). */
 /* Fit question card: one column, nothing overlaps; the step is dots in the label row. */
 /* Three steps of use, side by side. */
-.ms-page .mf .mf-preview { grid-template-columns: auto auto 1em 6.4em 5em; }
-.ms-page .mf .mf-preview b { display: inline-flex; align-items: baseline; justify-content: flex-start; gap: 1px; text-align: left; }
 
 /* Five-level usage gauge (23/10): rising bars, read against the power gauge above. */
 
 /* One surface per box (23/10): no box inside a box. Structure comes from
    space and type; only choices (tiles, pills) keep a fill, because they are buttons. */
-.ms-page .mf .mf-seats { padding: 0; border-radius: 0; background: none; }
 
 /* Budget split, structured (23/10): two columns on one top line and one bottom line. */
 /* Pills are choices: a white fill on the grey card, the only fill left in the zone. */
@@ -21892,120 +21643,41 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 /* Lighter cards (23/10): smaller icon tiles everywhere, a lighter price card, a tighter optimisation card. */
-.ms-page .mf .mf-card > .mf-k > svg { width: 30px; height: 30px; padding: 7px; border-radius: 9px; background: color-mix(in srgb, var(--k, var(--ms-ink)) 9%, transparent); }
-.ms-page .mf .mf-card > .mf-k { min-height: 30px; }
 /* Price: lighter figure, a thin reliability ring, no rule above the saving. */
 /* Optimisation: smaller lead, the question sits at the bottom, the gauge on one line with its label. */
-.ms-page .mf .mf-card > .mf-k > svg { box-sizing: border-box; }
 /* Optimisation: the tool and its gauge follow the lead; the gauge grows to use the box. */
 /* One block, top-aligned, even gaps: title, bar, pills read as one unit (23/10). */
 
 /* Decision, livelier (23/10): the tool on stage, tier icons, price gauges that fill. */
-.ms-page .mf .mf-now h3.mf-now-q { display: flex; align-items: center; gap: var(--space-sm); }
-.ms-page .mf .mf-now-logo { display: inline-grid; flex: none; animation: mf-bounce 620ms cubic-bezier(.3, 1.8, .5, 1) both; }
-.ms-page .mf .mf-now-logo > * { width: 36px !important; height: 36px !important; border-radius: 10px; }
-.ms-page .mf .mf-now:hover .mf-now-logo { animation: mf-wiggle 600ms ease; }
 @keyframes mf-bounce { 0% { transform: scale(.3) rotate(-20deg); opacity: 0; } 60% { transform: scale(1.12) rotate(6deg); opacity: 1; } 100% { transform: none; } }
-.ms-page .mf .mf-now .mf-plan-name { display: inline-flex; align-items: center; gap: 6px; }
-.ms-page .mf .mf-now .mf-plan-name svg { flex: none; color: var(--color-accent); }
-.ms-page .mf .mf-now .mf-plan:hover .mf-plan-name svg { animation: mf-wiggle 500ms ease; }
 /* Optimisation: the power insight closes the card, so the box is used to the bottom. */
-@media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-now-logo { animation: none; } }
 /* Total line: anchored right, fixed slots, the amount changes in place. */
-.ms-page .mf .mf-preview { display: inline-grid; grid-template-columns: 5.5em 7.5em 6.4em; align-items: baseline; column-gap: 8px; margin-left: auto; }
-.ms-page .mf .mf-preview .mf-preview-delta { justify-self: end; }
-.ms-page .mf .mf-preview-k { justify-self: end; white-space: nowrap; transition: color 160ms ease; }
-.ms-page .mf .mf-preview b.mf-preview-next { justify-self: end; justify-content: flex-end; transition: color 160ms ease; }
-.ms-page .mf .mf-preview b.mf-preview-next .mk-odo { justify-content: flex-end; }
-.ms-page .mf .mf-preview { grid-template-columns: 7em 7.5em 6.4em; }
-.ms-page .mf .mf-preview span.mf-preview-delta { justify-self: end; margin: 0; animation-name: mf-fade; }
 @keyframes mf-fade { from { opacity: 0; } }
 /* Price head, airier (23/10): the figure breathes; reliability is a quiet line under it. */
-.ms-page .mf .mf-now .mf-plan-name { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; white-space: normal; line-height: 1.25; min-height: 2.5em; }
-.ms-page .mf .mf-now .mf-plan-name svg { display: inline; margin-right: 5px; vertical-align: -2px; }
 /* Delta bubble over the new total. */
-.ms-page .mf .mf-preview { grid-template-columns: 7.5em 6.4em; }
-.ms-page .mf .mf-preview b.mf-preview-next { position: relative; }
-.ms-page .mf .mf-preview span.mf-preview-delta { position: absolute; right: -6px; bottom: calc(100% + 6px); display: inline-flex; align-items: center; gap: 3px; padding: 4px 9px; border-radius: 99px; background: var(--color-accent); color: #fff; font: 700 12px/1 var(--ap-font); white-space: nowrap; pointer-events: none; transform-origin: bottom right; animation: mf-bubble 460ms cubic-bezier(.3, 1.8, .5, 1) both; }
-.ms-page .mf .mf-preview span.mf-preview-delta[data-dir="down"] { background: var(--ms-good); color: #fff; }
-.ms-page .mf .mf-preview span.mf-preview-delta::after { content: ""; position: absolute; right: 14px; top: 100%; border: 5px solid transparent; border-top-color: inherit; border-top-color: var(--color-accent); }
-.ms-page .mf .mf-preview span.mf-preview-delta[data-dir="down"]::after { border-top-color: var(--ms-good); }
-.ms-page .mf .mf-preview span.mf-preview-delta svg { flex: none; }
 @keyframes mf-bubble { 0% { opacity: 0; transform: translateY(8px) scale(.4) rotate(-8deg); } 60% { opacity: 1; transform: translateY(-2px) scale(1.08) rotate(3deg); } 100% { transform: none; } }
-@media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-preview span.mf-preview-delta { animation: none; } }
-.ms-page .mf .mf-preview b span.mf-preview-delta[data-dir="up"] { background: var(--color-accent); color: #fff; }
-.ms-page .mf .mf-preview b span.mf-preview-delta[data-dir="down"] { background: var(--ms-good); color: #fff; }
 /* Same type at rest and on hover: only the figure and its colour change. */
-.ms-page .mf .mf-preview { grid-template-columns: auto 6.4em; }
 
 /* ===== Responsive bento (23/10) ===== */
 /* The tool's logo now sits in the question: the old stage never shows. */
-.ms-page .mf .mf-now .mf-stage { display: none !important; }
-.ms-page .mf .mf-now .mf-k, .ms-page .mf .mf-now h3, .ms-page .mf .mf-now .mf-t { margin-right: 0; }
 /* Tablet: the decision first, full width; price and optimisation side by side;
    the split full width. Heights follow content (masonry), no fixed rows. */
 /* Narrow tablet: one column, the same order. */
 /* One sort menu, as wide as its text; a quiet focus ring for the keyboard only. */
 /* Decision action bar on tablet: links left, total right, one line. */
-@media (max-width: 1180px) {
-  .ms-page .mf .mf-now .mf-links { flex: 1 1 auto; justify-content: flex-start; }
-}
 
 /* Collection header and toolbar (23/10): one block; one primary action; view controls together. */
 
 /* Plan tiles as choices (23/10): a radio mark, one structure, prices on one level. */
-.ms-page .mf .mf-now .mf-plan { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: 2.5em auto 1.3em; align-content: start; row-gap: 6px; padding: var(--space-md) var(--space-md) var(--space-sm); padding-right: 44px; }
-.ms-page .mf .mf-now .mf-plan-name { grid-row: 1; align-self: start; }
-.ms-page .mf .mf-now .mf-plan > b { grid-row: 2; font-size: 24px; }
-.ms-page .mf .mf-now .mf-plan-note { grid-row: 3; color: var(--ms-meta); font-size: 12.5px; }
-.ms-page .mf .mf-plan-radio { position: absolute; top: var(--space-md); right: var(--space-md); display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--ms-ink) 25%, transparent); color: #fff; transition: box-shadow 160ms ease, background-color 160ms ease, transform 200ms cubic-bezier(.3, 1.6, .5, 1); }
-.ms-page .mf .mf-now .mf-plan:hover .mf-plan-radio, .ms-page .mf .mf-now .mf-plan:focus-visible .mf-plan-radio { box-shadow: inset 0 0 0 6px var(--color-accent); transform: scale(1.05); }
-.ms-page .mf .mf-now .mf-plan[data-state="kept"] .mf-plan-radio { background: var(--ms-good); box-shadow: none; animation: mf-pop 380ms cubic-bezier(.3, 1.8, .5, 1) both; }
-.ms-page .mf .mf-now .mf-plan:hover { cursor: pointer; }
-@media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-plan-radio { transition: none; animation: none; } }
 
 /* Seats step (23/10): the plan recalled, one-tap team sizes, the team drawn, the sum in large. */
-.ms-page .mf .mf-seats { display: grid; gap: var(--space-sm); margin-top: var(--space-sm); }
-.ms-page .mf .mf-seats-plan { display: inline-flex; align-items: center; justify-self: start; gap: var(--space-sm); margin: 0; padding: 6px 8px 6px 14px; border-radius: 99px; background: var(--ms-card); color: var(--ms-text2, var(--ms-meta)); font: 400 13.5px/1 var(--ap-font); }
-.ms-page .mf .mf-seats-plan b { color: var(--ms-ink); font-weight: 600; }
-.ms-page .mf .mf-seats-q { margin: var(--space-xs) 0 0; color: var(--ms-ink); font: 600 16px/1.3 var(--ap-font); }
-.ms-page .mf .mf-seats-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); }
-.ms-page .mf .mf-seats-presets { display: inline-flex; gap: 4px; padding: 3px; border-radius: 99px; background: var(--ms-card); }
-.ms-page .mf .mf-seats-presets button { min-width: 40px; height: 34px; padding: 0 10px; border: 0; border-radius: 99px; background: none; color: var(--ms-ink); font: 600 14px/1 var(--ap-font); font-variant-numeric: tabular-nums; cursor: pointer; transition: background-color 160ms ease, color 160ms ease, transform 160ms ease; }
-.ms-page .mf .mf-seats-presets button:hover { background: var(--color-accent-soft); }
-.ms-page .mf .mf-seats-presets button[aria-pressed="true"] { background: var(--color-accent); color: #fff; }
-.ms-page .mf .mf-seats-presets button:active { transform: scale(.94); }
-.ms-page .mf .mf-stepper { background: var(--ms-card); }
-.ms-page .mf .mf-stepper button { background: var(--color-accent-soft); color: var(--color-accent); }
-.ms-page .mf .mf-stepper output { font-family: var(--ap-font); }
-.ms-page .mf .mf-seats-crew { display: flex; align-items: center; gap: var(--space-md); min-height: 40px; }
-.ms-page .mf .mf-seats-people { display: inline-flex; align-items: center; flex: 1 1 auto; min-width: 0; }
-.ms-page .mf .mf-seats-people i { display: grid; place-items: center; width: 26px; height: 26px; margin-left: -6px; border-radius: 50%; background: var(--ms-card); color: var(--color-accent); box-shadow: 0 0 0 2px var(--color-accent-soft); animation: mf-pop 360ms cubic-bezier(.3, 1.8, .5, 1) both; }
-.ms-page .mf .mf-seats-people i:first-child { margin-left: 0; }
-.ms-page .mf .mf-seats-people em { margin-left: 8px; color: var(--color-accent); font: 700 13px/1 var(--ap-font); font-style: normal; }
-.ms-page .mf .mf-seats-sum { flex: none; color: var(--ms-meta); font: 400 14px/1 var(--ap-font); white-space: nowrap; }
-.ms-page .mf .mf-seats-sum b { color: var(--ms-ink); font: 700 20px/1 var(--ap-font); font-variant-numeric: tabular-nums; }
-@media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-seats-people i { animation: none; } }
-.ms-page .mf .mf-seats-ok { margin-left: auto; }
-.ms-page .mf .mf-seats-crew { gap: var(--space-sm); }
-.ms-page .mf .mf-seats-people { flex: 0 1 auto; }
-.ms-page .mf .mf-seats-sum b { font-size: 16px; }
 /* Transitions between the steps of the decision. */
-.ms-page .mf .mf-seats { animation: mf-step-in 380ms cubic-bezier(.2, .8, .2, 1) both; }
-.ms-page .mf .mf-plans { animation: mf-step-in 380ms cubic-bezier(.2, .8, .2, 1) both; }
 @keyframes mf-step-in { from { opacity: 0; transform: translateY(10px); } }
-.ms-page .mf .mf-seats-plan { animation: mf-pill 380ms cubic-bezier(.3, 1.6, .5, 1) both; }
-@media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-seats, .ms-page .mf .mf-plans, .ms-page .mf .mf-seats-plan { animation: none; } }
 /* Price question: links left, total right, like every other step. */
-.ms-page .mf .mf-now[data-kind="price"] .mf-bar-actions > .mk-link { order: 0; margin-right: auto; }
-.ms-page .mf .mf-now[data-kind="price"] .mf-price-field { margin-top: var(--space-md); }
 /* Face-off: logo in its own column, never over the name. */
 /* Nothing left to decide: no decision card; price stands tall, split and optimisation take the width. */
 /* All decided (23/10): masonry. Rows follow content; the right column stacks split and
    optimisation at their natural height; the price card, with more tools, stands beside them. */
-.ms-page .mf .mf-now .mf-now-q { display: flex; align-items: center; gap: var(--space-sm); }
-.ms-page .mf .mf-now .mf-now-q h3 { margin: 0; }
-@media (max-width: 760px) { .ms-page .mf .mf-card.mf-now:not([data-open]) > .mf-now-q { display: flex; } .ms-page .mf .mf-card.mf-now:not([data-open]) .mf-now-q h3 { margin: 0; } }
 
 /* ===== Stack starter (23/10): signed out and empty stack ===== */
 .ms-page .ss { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr); gap: var(--space-xl); align-items: start; margin-top: var(--space-md); font-family: var(--ap-font); }
@@ -22334,7 +22006,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @media (prefers-reduced-motion: reduce) { .ms-page .so-rate-value { animation: none; } }
 .ms-page .so-rate-chips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: min(440px, 100%); }
 
-@layer components { .ms-page .mf .mf-preview { grid-template-columns: max-content max-content; column-gap: var(--space-md); } }
 
 /* The legacy bento has unlayered placements; constrain the starter to one row. */
 
@@ -22346,21 +22017,11 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 /* Editorial hero and onboarding override the older unlayered compact header. */
 @layer components {
-  .ms-page .mf .mf-preview { grid-template-columns: max-content max-content !important; column-gap: var(--space-md) !important; }
 }
 /* Presence at the top of the space (23/10/2026): a real hello, a line with a smile, what we know. */
 /* Plan tiles: the name on one line, its qualifier under it; a fixed rhythm so prices align. */
-.ms-page .mf .mf-now .mf-plan-name { display: flex; align-items: flex-start; gap: 6px; white-space: normal; }
-.ms-page .mf .mf-now .mf-plan-name > svg { flex: none; margin-top: 2px; }
-.ms-page .mf .mf-now .mf-plan-name > span { display: grid; min-width: 0; }
-.ms-page .mf .mf-now .mf-plan-name > span, .ms-page .mf .mf-now .mf-plan-name em { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ms-page .mf .mf-now .mf-plan-name em { color: var(--ms-meta); font: 500 12px/1.3 var(--ap-font); font-style: normal; }
-.ms-page .mf .mf-now .mf-plan { grid-template-rows: none; padding-right: 36px; }
 /* Only when a plan has a qualifier ("Dev seat") does the name keep two lines, so prices still align. */
-.ms-page .mf .mf-now .mf-plans:has(.mf-plan-name em) .mf-plan-name { min-height: 34px; }
-.ms-page .mf .mf-plan-time { color: var(--color-accent); font: 500 12px/1.25 var(--ap-font); }
 /* The bar's right side: the label above the figure, never glued to it. */
-.ms-page .mf .mf-preview { display: inline-grid; justify-items: end; gap: 3px; }
 /* Welcome toast: the person's logos drop in, two short lines, a little spark. */
 .ms-welcome-toast { position: relative; display: flex; align-items: center; gap: 12px; width: min(380px, calc(100vw - 32px)); padding: 12px 16px 12px 12px; border-radius: 20px; background: var(--color-accent); color: var(--color-on-primary); font-family: var(--ap-font, inherit); overflow: hidden; animation: so-in 420ms cubic-bezier(.2, .8, .2, 1) both; }
 .ms-welcome-toast-logos { display: inline-flex; flex: none; }
@@ -22403,47 +22064,19 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   /* Question: the tool, the meter, the reaction. Side by side when wide. */
   .ms-page .mf .mu-card .mu-question { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(3, max-content); grid-template-areas: "tool" "gauge" "feedback"; align-content: safe center; gap: 10px; padding: 2px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
   /* Preview while pointing, then the answer itself, bars rising one by one. */
-  .ms-page .mf .mu-card .mu-preview { font-weight: 600; color: var(--mu-ink); }
   @container (min-width: 600px) {
     .ms-page .mf .mu-card .mu-question { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: max-content max-content; grid-template-areas: "tool gauge" "feedback gauge"; column-gap: 28px; row-gap: 12px; align-content: safe center; }
   }
 
   /* Summary: a verdict, then the cast as tiles; no inner scrolling. */
-  .ms-page .mf .mu-card .mu-summary { display: flex; flex-direction: column; justify-content: safe center; gap: 6px; overflow: hidden; padding: 2px; }
-  .ms-page .mf .mu-card .mu-summary-heading { display: flex; align-items: center; gap: 8px; }
-  .ms-page .mf .mu-card .mu-summary-heading > svg { flex: none; color: var(--mu-ink); animation: mu-icon-nod 420ms cubic-bezier(.34, 1.5, .64, 1) 120ms both; }
-  .ms-page .mf .mu-card .mu-summary h3 { margin: 0; font: 600 18px/1.2 var(--font-ui); letter-spacing: -.015em; color: var(--color-text-strong); }
-  .ms-page .mf .mu-card .mu-copy { margin: 0; font: 400 14px/1.4 var(--font-ui); color: var(--color-text-secondary); }
-  .ms-page .mf .mu-card .mu-answer-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); grid-auto-rows: 56px; gap: 8px; width: 100%; max-height: 120px; margin: 6px 0 0; padding: 0; overflow: hidden; }
-  .ms-page .mf .mu-card .mu-answer-list li { animation: mu-tile-in 320ms cubic-bezier(.2, .8, .2, 1) calc(var(--i, 0) * 40ms) both; }
-  .ms-page .mf .mu-card .mu-answer-list button { display: flex; align-items: center; gap: 10px; width: 100%; height: 100%; padding: 0 12px; border: 0; border-radius: 14px; background: var(--color-surface); color: var(--color-text-strong); text-align: left; cursor: pointer; box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text-strong) 6%, transparent); transition: transform 180ms cubic-bezier(.34, 1.4, .64, 1), box-shadow 180ms ease; }
-  .ms-page .mf .mu-card .mu-answer-list button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px color-mix(in srgb, var(--color-text-strong) 10%, transparent); }
-  .ms-page .mf .mu-card .mu-answer-list button:active { transform: scale(.98); }
-  .ms-page .mf .mu-card .mu-answer-list button[data-pending] { background: transparent; box-shadow: inset 0 0 0 1.5px var(--mu-hint); }
-  .ms-page .mf .mu-card .mu-answer-list button > :first-child { flex: none; }
-  .ms-page .mf .mu-card .mu-answer-text { display: grid; gap: 3px; min-width: 0; }
-  .ms-page .mf .mu-card .mu-answer-name { font: 600 13px/1.2 var(--font-ui); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .ms-page .mf .mu-card .mu-answer-value { display: inline-flex; align-items: center; gap: 6px; font: 500 12px/1.2 var(--font-ui); color: var(--mu-ink); }
-  .ms-page .mf .mu-card button[data-pending] .mu-answer-value { color: var(--color-text-secondary); }
-  .ms-page .mf .mu-card .mu-mini { display: inline-flex; align-items: flex-end; gap: 2px; height: 10px; }
-  .ms-page .mf .mu-card .mu-mini i { width: 3px; border-radius: 1px; background: var(--mu-track); }
-  .ms-page .mf .mu-card .mu-mini i:nth-child(1) { height: 3px; } .ms-page .mf .mu-card .mu-mini i:nth-child(2) { height: 5px; } .ms-page .mf .mu-card .mu-mini i:nth-child(3) { height: 7px; } .ms-page .mf .mu-card .mu-mini i:nth-child(4) { height: 8.5px; } .ms-page .mf .mu-card .mu-mini i:nth-child(5) { height: 10px; }
-  .ms-page .mf .mu-card .mu-mini i[data-on] { background: var(--mu-ink); }
-  .ms-page .mf .mu-card .mu-answer-more { justify-content: center; font: 600 15px/1 var(--font-ui) !important; color: var(--mu-ink) !important; }
-  .ms-page .mf .mu-card .mu-answer-list button:focus-visible { outline: 2px solid var(--mu-ink); outline-offset: 2px; }
 
   /* Footer: leave, where you are, go on. */
   .ms-page .mf .mu-card .mu-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; padding-top: 10px; border-top: 1px solid color-mix(in srgb, var(--mu-ink) 12%, transparent); }
-  .ms-page .mf .mu-card .mu-secondary-actions { display: flex; align-items: center; gap: 6px; min-width: 0; }
-  .ms-page .mf .mu-card .mu-quiet, .ms-page .mf .mu-card .mu-next { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-height: 44px; padding: 0 16px; border: 0; border-radius: var(--radius-pill); font: 600 14px/1.2 var(--font-ui); cursor: pointer; transition: background-color 160ms ease, color 160ms ease, transform 160ms cubic-bezier(.34, 1.4, .64, 1); }
+  .ms-page .mf .mu-card .mu-next { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-height: 44px; padding: 0 16px; border: 0; border-radius: var(--radius-pill); font: 600 14px/1.2 var(--font-ui); cursor: pointer; transition: background-color 160ms ease, color 160ms ease, transform 160ms cubic-bezier(.34, 1.4, .64, 1); }
   .ms-page .mf .mu-card .mu-next:active { transform: scale(.96); }
-  .ms-page .mf .mu-card .mu-quiet { min-width: 0; padding: 0 10px; background: none; color: var(--color-text-secondary); font-weight: 500; }
-  .ms-page .mf .mu-card .mu-quiet:hover { color: var(--mu-ink); background: color-mix(in srgb, var(--mu-ink) 7%, transparent); }
   .ms-page .mf .mu-card .mu-next { min-width: 112px; background: var(--mu-ink); color: var(--color-surface); }
   .ms-page .mf .mu-card .mu-next svg { flex: none; transition: transform 180ms cubic-bezier(.34, 1.4, .64, 1); }
   .ms-page .mf .mu-card .mu-next:hover svg { transform: translateX(3px); }
-  .ms-page .mf .mu-card .mu-next.mu-skip { background: var(--color-surface); color: var(--mu-ink); }
-  .ms-page .mf .mu-card :is(.mu-summary h3, .mu-gauge button, .mu-nav, .mu-quiet, .mu-next, .mu-header h2, .mu-tool h3):focus-visible { outline: 2px solid var(--mu-ink); outline-offset: 2px; }
   .ms-page .mf .mu-card .mu-history { overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding: 2px; }
   .ms-page .mf .mu-card .mu-history:focus-visible { outline: 2px solid var(--mu-ink); outline-offset: -2px; }
   .ms-page .mf .mu-card .mu-history .ms-decided { margin: 0; }
@@ -22453,27 +22086,14 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
      front per scene (the tool, or the verdict), everything else recedes:
      no white boxes, quiet counts, the meter on the card itself, a soft glow
      for freshness. */
-  .ms-page .mf .mu-card .mu-preview { font-style: normal; }
   .ms-page .mf .mu-card .mu-footer { border-top: 0; padding-top: 0; }
-  .ms-page .mf .mu-card .mu-next.mu-skip { background: none; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--mu-ink) 28%, transparent); }
-  .ms-page .mf .mu-card .mu-summary h3 { font-size: 22px; letter-spacing: -.025em; }
-  .ms-page .mf .mu-card .mu-summary-heading > svg { width: 20px; height: 20px; }
-  .ms-page .mf .mu-card .mu-answer-list { grid-auto-rows: 48px; gap: 2px 12px; margin-top: 10px; }
-  .ms-page .mf .mu-card .mu-answer-list button { padding: 0 8px; border-radius: 12px; background: none; box-shadow: none; }
-  .ms-page .mf .mu-card .mu-answer-list button:hover { transform: none; box-shadow: none; background: color-mix(in srgb, var(--mu-ink) 7%, transparent); }
-  .ms-page .mf .mu-card .mu-answer-list button[data-pending] { box-shadow: none; opacity: .7; }
-  .ms-page .mf .mu-card .mu-answer-name { font-weight: 500; }
-  .ms-page .mf .mu-card .mu-answer-value { font-size: 12px; color: var(--color-text-secondary); }
-  .ms-page .mf .mu-card .mu-mini i[data-on] { background: var(--mu-ink); }
 
   /* Meter reset (28 Oct 2026, "ton sur ton, trop écarté"): an Apple-style
      staircase. Bars touch (4px apart), neutral grey when empty, the card's
      ink when filled, no hover box; the bars themselves preview. Labels in
      readable grey, the chosen one in ink. */
   @container (max-width: 360px) {
-    .ms-page .mf .mu-card .mu-quiet { padding-inline: 6px; font-size: 13px; }
     .ms-page .mf .mu-card .mu-next { min-width: 0; padding-inline: 12px; font-size: 13px; }
-    .ms-page .mf .mu-card .mu-answer-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @keyframes mu-scene-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
   @keyframes mu-icon-nod { 0% { transform: scale(.6) rotate(-14deg); } 60% { transform: scale(1.08) rotate(6deg); } 100% { transform: none; } }
@@ -22722,29 +22342,11 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 /* Three complete decisions, readable together even on a phone. */
 @layer components {
-  .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) { --mf-choice-peach: #FFE1CC; --mf-choice-line: #F5A66C; --mf-choice-detail: #A34E22; }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-duel.mf-choice-group { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: var(--space-xs); margin: var(--space-lg) 0 0; }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-name { grid-column: 1; grid-row: 2; margin: 0; width: 100%; overflow: visible; text-overflow: clip; white-space: normal; overflow-wrap: anywhere; }
 }
 
 /* Pair choices acknowledge together; no stagger blocks the next question. */
 @layer components {
-  .ms-page .mf .mf-now[data-kind="pair"] > .mf-t,
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button {
-    animation: mf-pair-enter 160ms ease-out both !important;
-  }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button[data-state="kept"] {
-    animation: none !important; box-shadow: inset 0 0 0 2px var(--ms-good);
-  }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button[data-state="gone"] {
-    animation: none !important; opacity: .55;
-  }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button:disabled { cursor: default; }
   @keyframes mf-pair-enter { from { opacity: .6; transform: translateX(4px); } to { opacity: 1; transform: none; } }
-  @media (prefers-reduced-motion: reduce) {
-    .ms-page .mf .mf-now[data-kind="pair"] > .mf-t,
-    .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button { animation: none !important; }
-  }
 }
 
 
@@ -22754,31 +22356,12 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 @layer components {
-  .ms-page .mf .mf-price-entry { max-width: 520px; min-width: 0; }
-  .ms-page .mf .mf-price-entry .mf-price-field { max-width: none; }
-  .ms-page .mf .mf-price-field > label { min-width: 0; }
-  .ms-page .mf .mf-price-field .mf-invoice-currency { flex: 0 0 104px; flex-direction: column; justify-content: center; gap: 3px; padding: 4px var(--space-xs); }
-  .ms-page .mf .mf-price-field .mf-invoice-currency > span { font: 500 11px/1.2 var(--font-ui); }
-  .ms-page .mf .mf-invoice-currency select { width: 100%; min-height: 28px; border: 0; background: transparent; color: var(--color-text-strong); font: 600 14px/1.2 var(--font-ui); cursor: pointer; }
-  .ms-page .mf .mf-invoice-help { margin: var(--space-xs) 0 0; color: var(--color-text-meta); font: 400 12px/1.4 var(--font-ui); overflow-wrap: anywhere; }
-  .ms-page .mf .mf-price-entry .mk-button { background: var(--color-stack-tools-ink); color: var(--color-surface); }
-  .ms-page .mf .mf-price-field label:focus-within { box-shadow: inset 0 0 0 2px var(--color-stack-tools-ink); }
-  .ms-page .mf .mf-invoice-currency select:focus-visible { outline: 2px solid var(--color-stack-tools-ink); outline-offset: 2px; }
-  @media (max-width: 420px) {
-    .ms-page .mf .mf-price-field { flex-wrap: wrap; }
-    .ms-page .mf .mf-price-field > label:first-child { flex-basis: calc(100% - 112px); }
-    .ms-page .mf .mf-price-field > .mk-button { margin-left: auto; min-height: 44px; }
-  }
 }
 @layer components {
   /* The illustration no longer occupies a second column beside the question. */
-  .ms-page .mf .mf-card.mf-now .mf-now-q h3 { flex: 1; min-width: 0; padding-right: 0; }
-  .ms-page .mf .mf-card.mf-now .mf-price-entry .mk-button.tt-button-primary,
-  .ms-page .mf .mf-card.mf-now .mf-price-entry .mk-button.tt-button-primary:hover { background: var(--color-stack-tools-ink); color: var(--color-surface); }
 }
 
 @layer components {
-  .ms-page .mf .mf-now .mf-invoice-details { display: inline-flex; align-items: center; min-height: 44px; }
 }
 
 @layer components {
@@ -22797,21 +22380,12 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    the step and the budget preview recede. No answer looks chosen before the
    person picks one: every face starts neutral, and the hovered one lifts. */
 @layer components {
-  .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan) { border: 0 !important; box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text-strong) 6%, transparent) !important; transition: transform 200ms cubic-bezier(.34, 1.4, .64, 1), box-shadow 200ms ease !important; }
-  .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan):hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 0 0 2px var(--color-stack-tools-ink, var(--color-primary)), 0 12px 28px color-mix(in srgb, var(--color-text-strong) 10%, transparent) !important; }
-  .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan):active:not(:disabled) { transform: scale(.98); }
-  .ms-page .mf .mf-now .mf-plan-name { padding-right: 30px !important; min-width: 0; }
-  .ms-page .mf .mf-now .mf-plan-name > span { white-space: normal !important; overflow: visible !important; text-wrap: balance; line-height: 1.2; }
-  .ms-page .mf .mf-now .mf-plan-radio { border-width: 1.5px !important; }
-  .ms-page .mf .mf-now .mf-seats-ok { background: var(--color-stack-tools-ink, var(--color-primary)) !important; border-color: transparent !important; }
-  @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan) { transition: none !important; transform: none !important; } }
 }
 
 /* Budget split, redesign of 29 Oct 2026: one sentence leads (the share in
    its area's colour, inline), a line of humour under it, the bar and a quiet
    legend. No tag, no floating logo, no pill per area. */
 @layer components {
-  .ms-page .mf .mf-balance :is(.mf-lead-fig, .mf-lead-say) { font-size: 22px !important; line-height: 1.25 !important; font-weight: 600 !important; letter-spacing: -.02em !important; }
 }
 
 /* One-tool card and the all-settled grid (29 Oct 2026): the starter shows its
@@ -22825,25 +22399,12 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   /* Dark theme: the usage card had no dark surface, so its light tint swallowed the text. */
   /* No-scroll contract (29/10/2026): no box of the bento scrolls or cuts its content. Rows keep
      their reference height as a floor and grow with the tallest card; names wrap instead of fading. */
-  .ms-page .mf :is(.mf-shares, .mf-bb-legend, .mf-bb-chips, .mf-fit-list), .ms-page .mf .mu-card :is(.mu-question, .mu-summary, .mu-history, .mu-answer-list) { overflow: visible !important; max-height: none !important; }
-  .ms-page .mf :is(.mf-plan-name, .mf-plan-name > span, .mf-plan-name em, .mf-shares-name, .mf-face-name, .mf-bb-name, .mf-cheaper-text span, .mf-cheaper-text small, .mf-area-tiles span, .mf-trust-text small, .mf-seats-sum, .mf-bb-caption small, .mf-lead-sub, .mf-bb-chips button span),
-  .ms-page .mf .mu-card :is(.mu-tool h3, .mu-gauge button small, .mu-answer-name) { overflow: visible !important; text-overflow: clip !important; white-space: normal !important; -webkit-line-clamp: unset !important; overflow-wrap: anywhere; }
-  .ms-page .mf .mf-now .mf-plan-name { display: block !important; min-height: 0 !important; }
-  .ms-page .mf .mu-card .mu-answer-list { grid-auto-rows: auto !important; }
   /* Usage card from 400px: two columns, the tool and its line on the left, a compact selector on the right. */
   @container (min-width: 400px) and (max-width: 599px) {
     .ms-page .mf .mu-card .mu-question { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); grid-template-rows: auto auto; grid-template-areas: "tool gauge" "feedback gauge"; align-items: center; column-gap: 16px; }
   }
   /* Duplicate decision (29/10/2026): each tile reads as an answer. A ring says it can be picked,
      the line under the name says what the choice does to the budget, the tag sits inside the tile. */
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both) { position: relative; grid-template-rows: 40px auto auto auto !important; gap: 6px !important; padding: 22px 14px 16px !important; cursor: pointer; }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both)::after { content: ""; position: absolute; top: 12px; right: 12px; width: 18px; height: 18px; box-sizing: border-box; border: 1.5px solid color-mix(in srgb, var(--color-text-strong) 22%, transparent); border-radius: var(--radius-circle); transition: border-color 160ms ease, border-width 160ms ease; }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both):hover:not(:disabled)::after { border: 5px solid var(--color-stack-tools-ink, var(--color-primary)); }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both)[data-state="kept"]::after { border: 5px solid var(--color-good, var(--ms-good)); }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face-name, .mf-choice-both-label) { grid-row: 2 !important; }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-now-q h3 { text-wrap: balance; }
-  @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both)::after { transition: none; } }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both) { padding-top: 38px !important; }
   /* At 320px five 44px touch targets need the whole width: no gap between the steps. */
   /* Bento hierarchy (29/10/2026): the decision is what to do now, so it leads, wide and at its own
      height. The budget is what those decisions produce, so it runs down the right like an order
@@ -22855,7 +22416,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   /* Down the sidebar: total and lines at the top, free tools and the scope note settle at the bottom. */
   /* Duplicate decision, visual pass: the dropped tool shows crossed out at the kept logo's foot,
      the saving is a filled pill, the cheaper answer carries a green outline. */
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both) { row-gap: 10px !important; }
   /* Dark theme: the decision kept its light tint and lost its text. */
 }
 
@@ -23051,10 +22611,6 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 .ms-page .so-primary:active { transform: scale(.98); box-shadow: var(--tt-lead-shadow-press); }
 /* Lot 3 (30 oct. 2026) : l'ADN dans les pages. Le souffle du gain derrière
    l'économie ; la limite d'un champ répond avec un sourire. */
-.ms-page .mf .mf-stepper [aria-disabled="true"] { opacity: .4; }
-.ms-page .mf .mf-stepper--nope { animation: tt-nope 360ms cubic-bezier(.36, .07, .19, .97); }
-.ms-page .mf .mf-seats-nudge { min-height: 1.3em; margin: 6px 0 0; color: var(--tt-ink); font: 400 .875rem/1.3 var(--tt-read); }
-@media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-stepper--nope { animation: none; } }
 /* Les verbes dans la recherche : une étiquette sûre, à droite du résultat. */
 .gs-result .gs-result-verdict { flex: none; margin-left: auto; }
 .gs-result:has(.gs-result-verdict) .gs-result-arrow { margin-left: 8px; }
@@ -23065,16 +22621,13 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 @keyframes tt-label-in { from { opacity: 0; transform: translateY(6px); } }
 /* Les gris qui restaient dans Ma stack passent à l'encre (règle de la planche). */
 .ms-page { --ms-meta: var(--tt-ink); --ms-text2: var(--tt-ink); }
-.ms-page .mf .mu-card .mu-quiet, .ms-page .mk-link--quiet { color: var(--tt-ink); }
-.ms-page .mf-now .mk-link--quiet { color: var(--ms-on-ink); }
+.ms-page .mk-link--quiet { color: var(--tt-ink); }
 /* Champs : fond clair, filet fin, et au focus un filet bleu avec un halo doux. */
 .ms-page .so-name input { background: var(--tt-bg); box-shadow: 0 0 0 1px var(--tt-line); border-radius: var(--tt-r-card); transition: box-shadow var(--tt-dur-state) ease; }
 .ms-page .so-name input:focus { background: var(--tt-bg); box-shadow: 0 0 0 1px var(--tt-brand), 0 0 0 5px color-mix(in oklch, var(--tt-brand) 16%, transparent); }
 /* Cas réglés depuis la planche (30 oct. 2026, chapitre « À passer en design »). */
 /* Budget : la jauge de coupe sous le total, quand un montant est à examiner. */
 /* Vos usages : « Passer » est un bouton d'interface gris, pas un contour bleu. */
-.ms-page .mf .mu-card .mu-next.mu-skip { background: var(--tt-tile); color: var(--tt-ink); box-shadow: none; }
-.ms-page .mf .mu-card .mu-next.mu-skip:hover { background: var(--tt-tile-2); }
 /* Champs du site sur l'atome « champ » de la planche : filet fin au repos,
    filet bleu et halo doux au focus ; le texte indicatif en gris, seul gris
    admis puisqu'il n'est pas du contenu. */
@@ -23096,36 +22649,9 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
    rangées. Remplace le fond teinté, la pastille bleue, les faces centrées et
    inclinées. La structure vient du système (.tt-decision, .tt-choice) ; ces
    règles neutralisent les couches historiques de .mf-now. */
-.ms-page .mf .mf-now, .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) { color: var(--tt-ink); }
-.ms-page .mf .mf-now .mf-k.tt-decision-head { display: flex; align-items: center; gap: 12px; margin: 0; color: var(--tt-ink); }
-.ms-page .mf .mf-now .mf-k.tt-decision-head .mf-step { margin-left: auto; color: var(--tt-ink); }
-.ms-page .mf .mf-now .mf-now-q { margin: 0; }
-.ms-page .mf .mf-now .mf-now-q h3.tt-decision-title { margin: 0; }
-.ms-page .mf .mf-now p.mf-t.tt-decision-detail { margin: calc(8px - var(--tt-tile-gap)) 0 0; }
-.ms-page .mf .mf-now[data-kind="pair"] .mf-duel.tt-choices { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin: 0; }
-.ms-page .mf .mf-now[data-kind="pair"] .tt-choice { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; flex-direction: row; align-items: center; justify-items: stretch; gap: 14px; min-height: 64px; padding: var(--tt-row-pad); border: 0; border-radius: var(--tt-r-card); background: var(--tt-bg); color: var(--tt-ink); text-align: left; box-shadow: var(--tt-row-ring); transform: none; rotate: none; }
-.ms-page .mf .mf-now[data-kind="pair"] .tt-choice:hover:not(:disabled) { background: var(--tt-bg); box-shadow: var(--tt-row-ring-hover); transform: none; }
-.ms-page .mf .mf-now[data-kind="pair"] .tt-choice:active:not(:disabled) { transform: scale(.985); }
-.ms-page .mf .mf-now[data-kind="pair"] .tt-choice[data-state="kept"] { background: var(--tt-bg); box-shadow: var(--tt-row-ring-on); }
-.ms-page .mf .mf-now[data-kind="pair"] .tt-choice[data-state="gone"] { opacity: var(--tt-row-gone); transform: none; }
-.ms-page .mf .mf-now[data-kind="pair"] .tt-choice .tool-logo, .ms-page .mf .mf-now[data-kind="pair"] .tt-choice img { width: 40px; height: 40px; }
-.ms-page .mf .mf-now[data-kind="pair"] .tt-choice .tt-choice-logos :is(.tool-logo, img) { width: 28px; height: 28px; }
-@container (max-width: 460px) {
-  .ms-page .mf .mf-now[data-kind="pair"] .tt-choice { grid-template-columns: 40px minmax(0, 1fr); grid-template-areas: "logo text" "logo amount"; row-gap: 6px; align-items: start; padding: 14px 16px 14px 12px; }
-  .ms-page .mf .mf-now[data-kind="pair"] .tt-choice > :first-child { grid-area: logo; }
-  .ms-page .mf .mf-now[data-kind="pair"] .tt-choice .tt-choice-text { grid-area: text; }
-  .ms-page .mf .mf-now[data-kind="pair"] .tt-choice .tt-choice-amount { grid-area: amount; }
-}
-.ms-page .mf .mf-now[data-kind="pair"] .mf-links { justify-content: flex-start; }
 /* Questions de formule : les tuiles prennent l'atome « carte de verdict ». */
-.ms-page .mf .mf-now .mf-plan { border-radius: var(--tt-r-card); background: var(--tt-bg); box-shadow: var(--tt-row-ring); color: var(--tt-ink); transition: box-shadow var(--tt-dur-state) ease, opacity var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
-.ms-page .mf .mf-now .mf-plan:hover, .ms-page .mf .mf-now .mf-plan:focus-visible { background: var(--tt-bg); box-shadow: var(--tt-row-ring-hover); }
-.ms-page .mf .mf-now .mf-plan[data-state="kept"] { box-shadow: var(--tt-row-ring-on); }
-.ms-page .mf .mf-now .mf-plan[data-state="gone"] { opacity: var(--tt-row-gone); }
 /* Couches historiques plus spécifiques (mode sombre teinté, titre en Inter gras, nom en gras). */
 /* Le titre d'une décision et l'anneau du choix retenu (les anciennes règles portaient !important et un sélecteur d'élément). */
-.ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button.tt-choice[data-state="kept"] { box-shadow: var(--tt-row-ring-on); }
-.ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group > button.tt-choice[data-state="gone"] { opacity: var(--tt-row-gone); }
 
 /* ── Pont des atomes : Ma stack, du fil d'Ariane au pied de page (30 oct. 2026)
    Chaque élément de la page lit le token de son atome (src/styles/tooltrim-system.css).

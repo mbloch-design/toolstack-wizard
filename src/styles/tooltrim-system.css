@@ -196,40 +196,11 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
    le titre en affichage, une phrase en lecture, puis des cartes de verdict
    en rangées. Le bleu ne sert qu'au choix retenu. */
 .tt-decision { display: grid; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
-.tt-decision-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.tt-decision-title { margin: 0; font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); text-wrap: balance; }
-.tt-decision-detail { margin: 0; font: var(--tt-text-font); }
-.tt-decision-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding-top: 4px; }
 
 /* ── Molécule : la carte de verdict (un choix) ──────────────────────────── */
-.tt-choices { display: grid; gap: 8px; container-type: inline-size; }
-.tt-choice { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 14px; width: 100%; min-height: 64px; padding: var(--tt-row-pad); border: 0; border-radius: var(--tt-r-card); background: var(--tt-bg); color: var(--tt-ink); text-align: left; font: inherit; cursor: pointer;
-  box-shadow: var(--tt-row-ring); transition: box-shadow var(--tt-dur-state) ease, opacity var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
-.tt-choice:hover:not(:disabled) { box-shadow: var(--tt-row-ring-hover); }
-.tt-choice:active:not(:disabled) { transform: scale(.985); }
-.tt-choice:disabled { cursor: default; }
-.tt-choice[data-state="kept"], .tt-choice[data-state="kept"]:hover { box-shadow: var(--tt-row-ring-on); }
-.tt-choice[data-state="gone"] { opacity: var(--tt-row-gone); }
 .tt-choice-logo { position: relative; display: grid; place-items: center; width: 44px; height: 44px; }
 .tt-choice-logo > :is(img, .tool-logo) { width: 40px; height: 40px; }
-.tt-choice-logos { position: relative; display: flex; align-items: center; width: 44px; }
-.tt-choice-logos > * { width: 28px; height: 28px; flex: none; border-radius: var(--tt-logo-radius); box-shadow: 0 0 0 2px var(--tt-bg); }
-.tt-choice-logos > * + * { margin-left: -10px; margin-top: 12px; }
-.tt-choice-check { position: absolute; top: -4px; right: -4px; }
-.tt-choice-text { display: grid; gap: 2px; min-width: 0; }
-.tt-choice-name { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); }
-.tt-choice-note { font: var(--tt-note-font); }
-.tt-choice-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); letter-spacing: 0; }
-.tt-choice-amount { font: var(--tt-amount-font); letter-spacing: var(--tt-amount-tracking); white-space: nowrap; }
-.tt-choice-amount small { margin-left: 2px; font: var(--tt-unit-font); letter-spacing: 0; }
-.tt-choice-amount[data-gain] { color: var(--tt-gain-ink); }
 /* Étroit : le montant passe sous le texte, la rangée garde sa lecture. */
-@container (max-width: 460px) {
-  .tt-choice { grid-template-columns: 40px minmax(0, 1fr); grid-template-areas: "logo text" "logo amount"; row-gap: 6px; align-items: start; padding: 14px 16px 14px 12px; }
-  .tt-choice > :first-child { grid-area: logo; }
-  .tt-choice-text { grid-area: text; }
-  .tt-choice-amount { grid-area: amount; }
-}
 
 /* ── Le trim : ce qui part tombe, ce qui reste se resserre ──────────────── */
 .tt-fall { animation: tt-fall 600ms cubic-bezier(.4, 0, .2, 1) forwards; }
@@ -343,16 +314,19 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-page { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--tt-page-gap); color: var(--tt-ink); font: var(--tt-w-text) 1rem/1.6 var(--tt-read); letter-spacing: 0; font-optical-sizing: auto; font-feature-settings: "cv05", "cv08"; }
 .tt-page > * { margin-block: 0; }
 .tt-board { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "budget decide" "usage split"; gap: var(--tt-board-gap); align-items: stretch; }
-.tt-board:not(:has(> :is(.tt-decision, .tt-starter))) { grid-template-areas: "budget usage" "split split"; }
+.tt-board:not(:has(> :is([data-card="decision"], .tt-starter))) { grid-template-areas: "budget usage" "split split"; }
 .tt-board:not(:has(> .tt-usage)) { grid-template-areas: "budget decide" "split split"; }
 .tt-board:not(:has(> [data-card="split"])) { grid-template-areas: "budget decide" "usage usage"; }
 .tt-board:not(:has(> [data-card="split"])):not(:has(> .tt-usage)) { grid-template-areas: "budget decide"; }
-.tt-board:not(:has(> [data-card="split"])):not(:has(> :is(.tt-decision, .tt-starter))) { grid-template-areas: "budget usage"; }
+.tt-board:not(:has(> [data-card="split"])):not(:has(> :is([data-card="decision"], .tt-starter))) { grid-template-areas: "budget usage"; }
 .tt-board > [data-card="price"][class] { grid-area: budget; }
-.tt-board > :is(.tt-decision, .tt-starter)[class] { grid-area: decide; }
+.tt-board > :is([data-card="decision"], .tt-starter)[class] { grid-area: decide; }
 .tt-board > .tt-usage[class] { grid-area: usage; }
 .tt-board > [data-card="split"][class] { grid-area: split; }
 .tt-board > [class] { min-width: 0; height: auto; margin: 0; }
+/* Grand écran (06/11/2026) : les trois modules courts côte à côte, puis la répartition sur toute la largeur, pour qu'elle passe en version large (anneau).
+   Dès 1 400 px seulement : en dessous, Vos usages (pas encore migré) n'a pas la place. */
+@media (min-width: 1400px) { .tt-board:has(> [data-card="split"]):has(> .tt-usage):has(> :is([data-card="decision"], .tt-starter)) { grid-template-columns: minmax(0, 4fr) minmax(0, 4fr) minmax(0, 5fr); grid-template-areas: "budget usage decide" "split split split"; } }
 @media (max-width: 900px) { .tt-board, .tt-board[class] { grid-template-columns: minmax(0, 1fr); grid-template-areas: none; } }
 @media (max-width: 900px) { .tt-board > [class][class] { grid-area: auto; } }
 .tt-starter { display: grid; justify-items: start; gap: var(--tt-tile-gap); padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
@@ -383,7 +357,6 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-mediacard-action:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 3px; }
 .tt-mediacard-action svg { width: 20px; height: 20px; }
 .tt-usage-feedback .tt-note { min-height: 1.4em; margin: 0; }
-.tt-decision-preview { margin: 0 0 0 auto; }
 .tt-link { position: relative; display: inline-flex; align-items: center; gap: 4px; padding: 4px 0; border: 0; background: none; color: var(--tt-ink); font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); text-decoration: none; cursor: pointer; }
 .tt-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 320ms var(--tt-ease); }
 .tt-link:hover::after { transform: scaleX(1); transform-origin: left; }
@@ -463,5 +436,3 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 @media (prefers-reduced-motion: reduce) { .tt-play-card, .tt-play-pile button, .tt-play-pile[data-bump], .tt-play-end, .tt-play.is-done .tt-play-pile ul::after { transition: none; animation: none; } }
 
 /* Proposition (04/11) : la carte de décision au repos, quand il ne reste rien à trancher. */
-.tt-decision[data-done] .tt-decision-title { display: flex; align-items: center; gap: 10px; }
-.tt-decision-history { min-width: 0; }

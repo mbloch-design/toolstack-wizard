@@ -17,9 +17,9 @@ describe("StackFindings", () => {
       { label: "Garder les deux", onClick: keepBoth },
     ] }]);
     const both = screen.getByRole("button", { name: "Garder les deux" });
-    expect(container.querySelector(".mf-duel")?.contains(both)).toBe(true);
-    expect([...container.querySelectorAll(".mf-duel > button")].map(button => button.getAttribute("aria-label"))).toEqual(["Garder Asana", "Garder Linear", "Garder les deux"]);
-    expect(container.querySelector(".mf-links")?.contains(both)).toBe(false);
+    expect(container.querySelector("[data-choices]")?.contains(both)).toBe(true);
+    expect([...container.querySelectorAll("[data-choices] > button")].map(button => button.getAttribute("aria-label"))).toEqual(["Garder Asana", "Garder Linear", "Garder les deux"]);
+    expect(container.querySelector("[data-links]")?.contains(both)).toBe(false);
     fireEvent.click(both);
     await waitFor(() => expect(keepBoth).toHaveBeenCalledOnce());
   });
@@ -31,7 +31,7 @@ describe("StackFindings", () => {
   it("reads the price first, then one decision at a time", () => {
     module([card("Canva"), card("Slack"), card("Notion")], { toolCount: 5 });
     expect(screen.getByText((_, el) => el?.tagName === "P" && el.textContent === "446 €/mois")).toBeTruthy();
-    expect(screen.getByRole("heading", { name: "Prochaine décision" })).toBeTruthy();
+    expect(screen.getByRole("region", { name: "Prochaine décision" })).toBeTruthy();
     expect(screen.getByText("Payez-vous Canva ?")).toBeTruthy();
     expect(screen.getByText("2 outils sur 5 renseignés")).toBeTruthy();
     expect(screen.getByLabelText("Étape 1 sur 3")).toBeTruthy();
@@ -100,7 +100,7 @@ describe("StackFindings", () => {
   });
   it("shows a pair as two faces, each with what it saves, and tags the cheaper one", () => {
     const { container } = module([pair]);
-    expect([...container.querySelectorAll(".mf-choice--keep")].map((node) => node.textContent)).toEqual(["Garder AsanaLe moins cherLinear quitte la stack · seul, 33 €/mois−40 €/mois", "Garder LinearAsana quitte la stack · seul, 40 €/mois−33 €/mois"]);
+    expect([...container.querySelectorAll('[data-choice="keep"]')].map((node) => node.textContent)).toEqual(["Garder AsanaLe moins cherLinear quitte la stack · seul, 33 €/mois−40 €/mois", "Garder LinearAsana quitte la stack · seul, 40 €/mois−33 €/mois"]);
   });
   it("answers the decision on top", () => {
     const onClick = vi.fn();
@@ -134,7 +134,7 @@ describe("StackFindings", () => {
   });
   it("drops the decision card once nothing is left, the saving stays on the price card", () => {
     const { container } = module([], { saved: 67, total: 379, toReview: 0 });
-    expect(container.querySelector(".mf-now")).toBeNull();
+    expect(container.querySelector('[data-card="decision"]:not([data-done])')).toBeNull();
     expect(container.querySelector('[data-card="price"]')?.textContent).toMatch(/Vous économisez déjà 67 € par mois\./);
   });
 });

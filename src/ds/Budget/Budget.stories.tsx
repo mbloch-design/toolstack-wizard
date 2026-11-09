@@ -24,3 +24,6 @@ export const Dollars = state("dollars");
 export const BigAmounts = state("bigAmounts");
 // The saving stays on the card (validated by Michael on 06/11/2026).
 export const WithSaving = state("withSaving");
+/** A very narrow card (the three-column board on a large screen): one row of logos still. */
+export const NarrowCard: Story = { ...state("twelve"), decorators: [(Story) => <div style={{ maxWidth: 300 }}><Story /></div>], tags: ["a-valider"] };
+export const NarrowCardSix: Story = { ...state("six"), decorators: [(Story) => <div style={{ maxWidth: 300 }}><Story /></div>], tags: ["a-valider"] };

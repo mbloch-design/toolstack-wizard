@@ -12,7 +12,7 @@ async function answerPlan(deck: import("@playwright/test").Locator, paid: boolea
     if (paid) {
       await cards.filter({ hasNotText: lang === "fr" ? "Version gratuite" : "Free plan" }).first().click();
       // A per-user plan asks for the number of people first.
-      const confirm = deck.locator(".mf-seats").getByRole("button", { name: lang === "fr" ? "Valider" : "Confirm" });
+      const confirm = deck.locator("[data-seats]").getByRole("button", { name: lang === "fr" ? "Valider" : "Confirm" });
       if (await confirm.isVisible().catch(() => false)) await confirm.click();
     }
     else await cards.filter({ hasText: lang === "fr" ? "Version gratuite" : "Free plan" }).first().click();
@@ -44,7 +44,7 @@ for (const lang of ["fr", "en"]) for (const width of [390, 1440]) {
     // The same attested fallback as the tool page powers the free-tier
     // question and the monthly budget after declaring a payment.
     for (const name of ["Claude", "Perplexity"]) await expect(map.getByRole("button", { name: new RegExp(`^${name}, `) })).toContainText("Freemium");
-    const deck = page.locator(".mf-now");
+    const deck = page.locator("[data-card=decision]");
     const top = deck.locator("h3");
     await expect(top).toBeVisible();
     for (let i = 0; i < 8; i++) {

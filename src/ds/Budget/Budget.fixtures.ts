@@ -40,6 +40,7 @@ export const budgetStates = {
   nothingKnown: (lang: Lang) => stack(lang, [["Notion", "notion", null], ["Figma", "figma", null], ["Canva", "canva", null]], { unsure: { prices: 2, plans: 1 } }),
   converted: (lang: Lang) => stack(lang, [["Adobe Illustrator", "adobe-illustrator", 19.75], ["Adobe Photoshop", "adobe-photoshop", 17.17], ["Figma", "figma", 13.74]], { rateDate: lang === "fr" ? "27 août 2026" : "27 August 2026" }),
   dollars: (lang: Lang) => stack(lang, [["Vercel", "vercel", 20], ["Supabase", "supabase", 25], ["Stripe", "stripe", 0]], { currency: "USD" }),
+  six: (lang: Lang) => stack(lang, TWELVE.slice(0, 6)),
   withSaving: (lang: Lang) => stack(lang, [["Notion", "notion", 36], ["Figma", "figma", 15], ["Canva", "canva", 12]], { saved: 67 }),
   bigAmounts: (lang: Lang) => stack(lang, [["Microsoft Dynamics 365 Finance and Operations", undefined, 1100], ["Notion", "notion", 149]]),
 } satisfies Record<string, (lang: Lang) => BudgetProps>;

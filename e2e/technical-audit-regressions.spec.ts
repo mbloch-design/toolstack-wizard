@@ -11,7 +11,7 @@ async function answerPlan(deck: import("@playwright/test").Locator, paid: boolea
     if (paid) {
       await cards.filter({ hasNotText: lang === "fr" ? "Version gratuite" : "Free plan" }).first().click();
       // A per-user plan asks for the number of people first.
-      const confirm = deck.locator(".mf-seats").getByRole("button", { name: lang === "fr" ? "Valider" : "Confirm" });
+      const confirm = deck.locator("[data-seats]").getByRole("button", { name: lang === "fr" ? "Valider" : "Confirm" });
       if (await confirm.isVisible().catch(() => false)) await confirm.click();
     }
     else await cards.filter({ hasText: lang === "fr" ? "Version gratuite" : "Free plan" }).first().click();
@@ -53,10 +53,10 @@ test("paid choices propagate between browser tabs without losing earlier choices
   const other = await context.newPage();
   await other.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
   // Answering the deck in one tab moves the deck in the other.
-  await answerPlan(page.locator(".mf-now"), true);
-  await expect(other.locator(".mf-now h3")).toHaveText("Quelle formule de Canva avez-vous\u00a0?");
-  await answerPlan(other.locator(".mf-now"), true);
-  await expect(page.locator(".mf-now h3")).not.toHaveText(/Quelle formule/);
+  await answerPlan(page.locator("[data-card=decision]"), true);
+  await expect(other.locator("[data-card=decision] h3")).toHaveText("Quelle formule de Canva avez-vous\u00a0?");
+  await answerPlan(other.locator("[data-card=decision]"), true);
+  await expect(page.locator("[data-card=decision] h3")).not.toHaveText(/Quelle formule/);
   expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key) || "[]"), paidKey)).toEqual(expect.arrayContaining(["figma", "canva"]));
   await other.close();
 });

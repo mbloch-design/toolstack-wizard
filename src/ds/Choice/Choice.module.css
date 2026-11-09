@@ -1,0 +1,206 @@
+/* The answer row, as validated on the planche (.tt-choice): media, name and note, amount on the right. */
+
+.choices {
+  display: grid;
+  gap: var(--tt-space-2);
+  container-type: inline-size;
+}
+
+.choice {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: calc(var(--tt-space-1) * 3.5);
+  width: 100%;
+  min-height: 64px;
+  padding: var(--tt-row-pad);
+  border: 0;
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-ring);
+  color: var(--tt-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: box-shadow var(--tt-dur-state) ease, opacity var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
+  animation: enter 160ms var(--tt-ease) both;
+}
+
+.choice:disabled {
+  cursor: default;
+}
+
+.choice:focus-visible {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 3px;
+}
+
+.choice:hover:not(:disabled) {
+  box-shadow: var(--tt-row-ring-hover);
+}
+
+.choice:active:not(:disabled) {
+  transform: scale(0.985);
+}
+
+.choice[data-state="kept"],
+.choice[data-state="kept"]:hover {
+  box-shadow: var(--tt-row-ring-on);
+}
+
+.choice[data-state="gone"] {
+  opacity: var(--tt-row-gone);
+}
+
+.media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+}
+
+/* « Keep both »: two logos, the second lower, overlapping. */
+.logos {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 44px;
+}
+
+.logos > * + * {
+  margin-top: var(--tt-space-3);
+  margin-left: calc(var(--tt-space-2) * -1.25);
+}
+
+.iconTile {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--tt-logo-radius);
+  background: var(--tt-logo-tile);
+  box-shadow: var(--tt-logo-shadow);
+  color: var(--tt-logo-tile-ink);
+}
+
+.iconTile svg {
+  width: 18px;
+  height: 18px;
+}
+
+.check {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--tt-r-round);
+  background: var(--tt-brand);
+  outline: 2px solid var(--tt-bg);
+  color: var(--tt-on-color);
+}
+
+.check svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.text {
+  display: grid;
+  gap: calc(var(--tt-space-1) / 2);
+  min-width: 0;
+}
+
+.name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-1) var(--tt-space-2);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+}
+
+.note {
+  font: var(--tt-note-font);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 calc(var(--tt-space-1) * 2.5);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile);
+  font: var(--tt-tag-font);
+  letter-spacing: 0;
+}
+
+.amount {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-1);
+  font: var(--tt-amount-font);
+  letter-spacing: var(--tt-amount-tracking);
+  white-space: nowrap;
+}
+
+.amount small {
+  margin-left: calc(var(--tt-space-1) / 2);
+  font: var(--tt-unit-font);
+  letter-spacing: 0;
+}
+
+/* A saving: the figure in ink (the gain green fails contrast as text), the arrow in the gain colour. */
+.savingMark {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--tt-gain-ink);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Narrow: the amount goes under the text, the row keeps its reading. */
+@container (width <= 460px) {
+  .choice {
+    grid-template-columns: 40px minmax(0, 1fr);
+    grid-template-areas: "media text" "media amount";
+    align-items: start;
+    row-gap: calc(var(--tt-space-1) * 1.5);
+    padding: calc(var(--tt-space-1) * 3.5) var(--tt-space-4) calc(var(--tt-space-1) * 3.5) var(--tt-space-3);
+  }
+
+  .media,
+  .logos {
+    grid-area: media;
+  }
+
+  .text {
+    grid-area: text;
+  }
+
+  .amount {
+    grid-area: amount;
+  }
+}
+
+/* A new question's answers arrive quickly (validated fluidity: 160 ms, no delay). */
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--tt-space-1));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .choice { animation: none; }
+}

@@ -669,3 +669,15 @@ export type SplitProps = {
 La jauge devient un composant du système (`src/ds/CutGauge`), avec le dessin validé : encre pour ce qu'on garde, pointillé orange pour ce qui est à examiner, ciseaux du signe à la frontière. Les couleurs des domaines sont des jetons `--tt-area-*` (déplacés d'`index.css`, valeurs vérifiées identiques).
 
 Étapes : fixtures, stories (`a-valider`), composants, `lint:ds`, `test:ds`, captures, revue indépendante, validation de Michael, références, intégration dans `StackFindings` et retrait de `CutGauge.tsx` ainsi que des règles `tt-split*`, `tt-cutgauge*` et `tt-share*`.
+
+---
+
+## Partie D : la carte Décision (nettoyage à l'identique)
+
+Consigne de Michael (06/11/2026) : « continue dans le nettoyage, on fera une vraie repasse ensuite pour gagner de la singularité et de l'identité ». Les modules restants sont reconstruits à l'identique dans `src/ds` (même rôle, mêmes états, même dessin), puis l'héritage est retiré. Le brief se résume à cela ; la repasse d'identité viendra sur cette base propre.
+
+Découpage : la logique (état, minuteries, réponses) reste dans `StackFindings` ; `src/ds` reçoit les pièces de présentation.
+- **D1 `Choice`** : la rangée de choix validée (`.tt-choice`) : média (logo, deux logos, icône), nom, étiquette, note, montant, états `kept` et `gone`, coche. Écart unique et motivé : une économie s'écrit à l'encre avec une flèche verte, car l'encre de gain échoue au contraste en texte (comme la ligne d'économie du Budget, validée le 06/11).
+- **D2 `Decision`** : le cadre (surtitre, étapes, logo et question, détail, corps, pied avec liens et aperçu du budget) et l'état au repos (« Rien à trancher »).
+- **D3 `Seats`** : le compteur de personnes d'une formule par utilisateur.
+- **D4** : intégration dans `StackFindings`, retrait des règles `mf-*` de la carte (306 occurrences dans `index.css`) et de `.tt-decision*` / `.tt-choice*`, puis des tests visés.
