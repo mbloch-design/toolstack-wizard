@@ -1,0 +1,236 @@
+/* Section head and the inventory toolbar, as validated (.tt-sectionhead, .tt-toolbar, .tt-fchip, .tt-select, .tt-iconswitch). */
+
+.note { composes: note from "../atoms.module.css"; }
+
+.titleSection {
+  margin: 0;
+  outline: none;
+  font: var(--tt-title-section-font);
+  letter-spacing: var(--tt-title-section-tracking);
+  text-wrap: balance;
+}
+
+.section {
+  display: grid;
+  gap: var(--tt-space-5);
+}
+
+.sectionHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--tt-space-3) var(--tt-space-6);
+}
+
+.sectionText {
+  display: grid;
+  gap: calc(var(--tt-space-1) * 1.5);
+  max-width: 60ch;
+}
+
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-2) var(--tt-space-3);
+}
+
+.sectionAction {
+  display: flex;
+  gap: var(--tt-space-2);
+}
+
+.toolbar {
+  container-type: inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-3);
+  padding-bottom: var(--tt-space-4);
+  box-shadow: var(--tt-hairline-bottom);
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-2);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-2);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--tt-space-1) * 1.5);
+  min-height: 36px;
+  padding: 0 calc(var(--tt-space-1) * 3.5);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-hairline);
+  color: var(--tt-ink);
+  font: var(--tt-tag-font);
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
+}
+
+/* The check that draws itself on the pressed chip. */
+.chip::before {
+  width: 0;
+  height: 10px;
+  border: solid currentColor;
+  border-width: 0 1.6px 1.6px 0;
+  opacity: 0;
+  content: "";
+  transform: rotate(45deg) translate(-1px, -2px);
+  transition: width var(--tt-dur-state) ease, opacity 200ms ease;
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 3px;
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--tt-ink);
+  box-shadow: none;
+  color: var(--tt-bg);
+}
+
+.chip[aria-pressed="true"]::before {
+  width: 5px;
+  opacity: 1;
+}
+
+.chip:active {
+  transform: scale(0.97);
+}
+
+.count {
+  font-variant-numeric: tabular-nums;
+}
+
+.chip[data-alert] .count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 calc(var(--tt-space-1) * 1.25);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-overlap-strong);
+  color: var(--tt-on-color);
+}
+
+.select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-1);
+  min-height: 40px;
+  padding: 0 calc(var(--tt-space-1) * 8.5) 0 var(--tt-space-4);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile-2);
+  color: var(--tt-ink);
+  font: var(--tt-note-font);
+  cursor: pointer;
+}
+
+.select:focus-within {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 3px;
+}
+
+/* The whole pill opens the menu: the select covers it, its text stays in place. */
+.select select {
+  appearance: none;
+  border: 0;
+  outline: none;
+  background: none;
+  color: inherit;
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  cursor: pointer;
+}
+
+.select svg {
+  position: absolute;
+  right: calc(var(--tt-space-1) * 3.5);
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.iconSwitch {
+  display: inline-flex;
+  gap: calc(var(--tt-space-1) / 2);
+  padding: calc(var(--tt-space-1) * 0.75);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile-2);
+}
+
+.iconSwitch > button {
+  display: inline-grid;
+  place-items: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 var(--tt-space-2);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: none;
+  color: var(--tt-ink);
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease;
+}
+
+.iconSwitch > button:focus-visible {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 2px;
+}
+
+.iconSwitch > button[aria-pressed="true"] {
+  background: var(--tt-bg);
+  box-shadow: var(--tt-chip-raise);
+}
+
+.iconSwitch svg {
+  width: 16px;
+  height: 16px;
+}
+
+.toggle {
+  composes: button from "../atoms.module.css";
+  gap: calc(var(--tt-space-1) * 1.5);
+}
+
+.toggle svg {
+  width: 16px;
+  height: 16px;
+}
+
+.toggle[aria-pressed="true"] {
+  background: var(--tt-ink);
+  color: var(--tt-bg);
+}
+
+@container (width <= 560px) {
+  .tools {
+    width: 100%;
+  }
+
+  .tools .select {
+    flex: 1;
+  }
+}

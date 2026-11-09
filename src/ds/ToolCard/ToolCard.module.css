@@ -1,0 +1,188 @@
+/* The tool card, as validated (.tt-toolcard): logo and amount, name, status; grid or list. */
+
+.label { composes: label from "../atoms.module.css"; }
+.note { composes: note from "../atoms.module.css"; }
+
+.group {
+  display: grid;
+  gap: var(--tt-space-3);
+}
+
+.groupName {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--tt-space-1) calc(var(--tt-space-1) * 2.5);
+}
+
+.groupName > i {
+  align-self: center;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--tt-r-round);
+  background: var(--c, var(--tt-ink));
+}
+
+.cards {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--tt-space-3);
+}
+
+.wrap {
+  position: relative;
+  min-width: 0;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  grid-template-areas: "logo amount" "name name" "foot foot";
+  align-items: start;
+  gap: var(--tt-space-3) calc(var(--tt-space-1) * 2.5);
+  width: 100%;
+  padding: var(--tt-space-4);
+  border: 0;
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 3px;
+}
+
+.card:hover {
+  background: var(--tt-tile-2);
+}
+
+.card:active {
+  transform: scale(0.985);
+}
+
+.card[data-selected] {
+  box-shadow: var(--tt-row-ring-on);
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.amount {
+  grid-area: amount;
+  justify-self: end;
+  font: var(--tt-amount-font);
+  letter-spacing: var(--tt-amount-tracking);
+  white-space: nowrap;
+}
+
+.amount small {
+  margin-left: calc(var(--tt-space-1) / 2);
+  font: var(--tt-unit-font);
+  letter-spacing: 0;
+}
+
+.name {
+  composes: label from "../atoms.module.css";
+  grid-area: name;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.foot {
+  grid-area: foot;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(var(--tt-space-1) * 1.5) calc(var(--tt-space-1) * 2.5);
+  min-width: 0;
+}
+
+/* One status tag: recorded (green tint), to check (neutral), overlap (orange tint). The words stay in ink. */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 calc(var(--tt-space-1) * 2.5);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-bg);
+  color: var(--tt-ink);
+  font: var(--tt-tag-font);
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.tag[data-status-tag="ok"] {
+  background: color-mix(in oklch, var(--tt-live) 16%, var(--tt-bg));
+}
+
+.tag[data-status-tag="overlap"] {
+  background: color-mix(in oklch, var(--tt-overlap) 16%, var(--tt-bg));
+}
+
+/* List view: one row per tool. */
+.cards[data-layout="list"] {
+  grid-template-columns: minmax(0, 1fr);
+  gap: calc(var(--tt-space-1) * 1.5);
+}
+
+.cards[data-layout="list"] .card {
+  grid-template-columns: 40px minmax(0, 1fr) auto auto;
+  grid-template-areas: "logo name foot amount";
+  align-items: center;
+  padding: calc(var(--tt-space-1) * 2.5) var(--tt-space-4) calc(var(--tt-space-1) * 2.5) calc(var(--tt-space-1) * 2.5);
+  border-radius: var(--tt-r-card);
+}
+
+/* A narrow list: name and amount on top, status and area below, so the name is never squeezed out. */
+@container (width < 560px) {
+  .cards[data-layout="list"] .card {
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    grid-template-areas: "logo name amount" "logo foot foot";
+    row-gap: var(--tt-space-1);
+  }
+}
+
+/* Edit mode (as on a phone's home screen): a minus badge at the corner removes the tool. */
+.remove {
+  position: absolute;
+  top: calc(var(--tt-space-2) * -1);
+  left: calc(var(--tt-space-2) * -1);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--tt-r-round);
+  background: var(--tt-ink);
+  color: var(--tt-bg);
+  cursor: pointer;
+}
+
+.remove:hover {
+  background: var(--tt-overlap-strong);
+}
+
+.remove:focus-visible {
+  outline: 2px solid var(--tt-focus);
+  outline-offset: 2px;
+}
+
+.remove svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
