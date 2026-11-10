@@ -35,6 +35,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { trackEvent } from "@/lib/analytics";
 import { getLanguageSwitchPath } from "@/lib/seo";
 import { TopbarBreadcrumbContext, type TopbarBreadcrumbItem } from "@/contexts/TopbarBreadcrumbContext";
+import adminStyles from "@/ds/BackofficeNavigation/BackofficeNavigation.module.css";
 
 type NavItem = {
   id: string;
@@ -447,22 +448,23 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               place du logo, dans la même hauteur (pas de saut de page, le fil
               d'Ariane n'existant qu'après chargement). L'accueil reste dans la
               barre d'onglets du bas. */}
-          {mobileParent && (
+          {!isAdmin && mobileParent && (
             <Link to={mobileParent.href!} className="asv2-mobile-back" aria-label={t(`Retour à ${mobileParent.label}`, `Back to ${mobileParent.label}`)}>
               <ChevronLeft aria-hidden />
               <span>{mobileParent.label}</span>
             </Link>
           )}
-          <Link to={prefix} className="asv2-mobile-logo" aria-label="ToolTrim">
+          {!isAdmin && <Link to={prefix} className="asv2-mobile-logo" aria-label="ToolTrim">
             <img className="asv2-mobile-logo-full" src={logoToolTrim} alt="" width={127} height={28} />
             {/* Sous 360 px, le logo complet ne laisse plus de place aux actions. */}
             <img className="asv2-mobile-logo-mark" src={pictoToolTrim} alt="" width={28} height={28} />
-          </Link>
+          </Link>}
+          {isAdmin && <span className={adminStyles.workspaceTitle}>{t("Back-office", "Back office")}</span>}
 
           {/* Desktop/tablet: the breadcrumb (or nothing on the homepage)
               sits on the left; search lives at the right, in one place.
               The same search control remains available on mobile. */}
-          {breadcrumb && (
+          {!isAdmin && breadcrumb && (
             <nav className="asv2-topbar-breadcrumb tt-crumbs" aria-label={t("Fil d’Ariane", "Breadcrumb")}>
               {breadcrumb.flatMap((item, i) => {
                 const isLast = i === breadcrumb.length - 1;

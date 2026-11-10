@@ -23,7 +23,14 @@
   cursor: pointer;
 }
 
-.item[aria-current="page"] { background: var(--tt-tile); }
+.item[aria-current="page"] {
+  background: var(--tt-tile-2);
+  box-shadow: var(--tt-hairline-ink);
+}
+
+.workspaceTitle {
+  composes: label from "../atoms.module.css";
+}
 
 .item[data-secondary] { margin-top: var(--tt-space-4); }
 
