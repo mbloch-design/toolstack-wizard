@@ -1,3 +1,4 @@
+import listStyles from "@/ds/BackofficePageHeading/BackofficeList.module.css";
 import Field from "@/ds/Field/Field";
 import Button from "@/ds/Button/Button";
 import { Notice, NoticeText } from "@/ds/Notice/Notice";
@@ -645,7 +646,7 @@ export function CatalogEditor({
       {!inlineSlug && (
         <>
           <form
-            className="bo-search"
+            className={listStyles.search}
             onSubmit={(event) => {
               event.preventDefault();
               setSearch(query.trim());

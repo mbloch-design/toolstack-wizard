@@ -1,3 +1,4 @@
+import listStyles from "@/ds/BackofficePageHeading/BackofficeList.module.css";
 import { useEffect, useId, useRef, useState } from "react";
 import { useLang } from "@/hooks/useLang";
 import BackofficePageHeading from "@/ds/BackofficePageHeading/BackofficePageHeading";
@@ -355,7 +356,7 @@ export function AccountsDashboard({
           ))}
         <div hidden={view !== "users"}>
           <form
-            className="bo-search"
+            className={listStyles.search}
             onSubmit={(event) => {
               event.preventDefault();
               setPage(1);

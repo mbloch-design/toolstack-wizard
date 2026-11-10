@@ -17,7 +17,7 @@ async function passwordLogin(page: import('@playwright/test').Page, lang: 'fr' |
     await selectAdminSection(page, lang === 'fr' ? 'Utilisateurs' : 'Users', lang);
   }
 }
-for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(`back office ${lang} ${width}: direct password, global counts, paging, search and JSON details`, async ({ page, request }) => {
+for (const lang of ['fr', 'en'] as const) for (const width of [390, 768, 1280]) test(`back office ${lang} ${width}: direct password, global counts, paging, search and JSON details`, async ({ page, request }) => {
   await page.setViewportSize({ width, height: 1000 });
   const personal = state(['figma', 'missing-json-fixture']); personal.selection.toolEntries[1].intent = 'wishlist';
   personal.trade = 'designer'; personal.dailyRate = { amount: 450, currency: 'EUR' }; personal.usage = { figma: 4 };
@@ -33,10 +33,10 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(
   await selectAdminSection(page, lang === 'fr' ? 'Utilisateurs' : 'Users', lang);
   await expect(page.locator('.bo-metrics strong')).toHaveText(['27', '3', '2']);
   if (width === 390) {
-    await page.getByRole('button', {name:`${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} admin@example.invalid`,exact:true}).click();
+    await page.getByRole('link', {name:`${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} admin@example.invalid`,exact:true}).click();
     const profile = page.getByRole('region', {name:lang === 'fr' ? 'Détail du compte':'Account detail'});
     await expect(profile).toBeInViewport();
-    await page.getByRole('button', {name:`${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} admin@example.invalid`,exact:true}).click();
+    await page.getByRole('link', {name:`${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} admin@example.invalid`,exact:true}).click();
     await expect(profile).toBeInViewport();
     await expect(profile).toContainText(lang === 'fr' ? 'Aucune stack enregistrée.' : 'No saved stack.');
     await profile.getByRole('button', {name:lang === 'fr' ? 'Fermer le détail':'Close detail',exact:true}).click();
@@ -44,8 +44,8 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(
   await page.getByRole('button', { name: lang === 'fr' ? 'Page suivante' : 'Next page', exact: true }).click(); await expect(page.locator('.bo-user-table tbody tr')).toHaveCount(2);
   await expect(page.getByTestId('accounts-total')).toHaveText('27');
   const search = page.getByLabel(lang === 'fr' ? 'Chercher un compte' : 'Search accounts', { exact: true });
-  await search.fill('detail@'); await page.locator('.bo-search').getByRole('button').click(); await expect(page.locator('.bo-user-table tbody tr')).toHaveCount(1);
-  await expect(page.getByTestId('accounts-total')).toHaveText('27'); await page.getByRole('button', { name: `${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} detail@example.invalid`, exact: true }).click();
+  await search.fill('detail@'); await page.getByRole('button', { name: lang === 'fr' ? 'Rechercher' : 'Search', exact: true }).click(); await expect(page.locator('.bo-user-table tbody tr')).toHaveCount(1);
+  await expect(page.getByTestId('accounts-total')).toHaveText('27'); await page.getByRole('link', { name: `${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} detail@example.invalid`, exact: true }).click();
   await expect(page.locator('.bo-detail')).toContainText('450 EUR');
   await page.getByRole('tab', {name:lang === 'fr' ? 'Usage déclaré':'Declared usage',exact:true}).click();
   await expect(page.getByRole('tabpanel')).toContainText('4 / 5');
@@ -62,11 +62,17 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(
   await page.locator('.bo-record summary').click(); await expect(page.locator('.bo-record pre')).toContainText('"version": 4');
   await page.locator('.bo-workspace').screenshot({ path: test.info().outputPath(`${lang}-${width}-backoffice.png`) });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await search.fill('legacy@'); await page.locator('.bo-search').getByRole('button').click(); await page.getByRole('button', { name: `${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} legacy@example.invalid`, exact: true }).click();
+  await expect(page).toHaveURL(/view=users&account=/);
+  await page.getByRole('button', { name: lang === 'fr' ? 'Revenir à la liste' : 'Back to users', exact: true }).click();
+  await expect(search).toHaveValue('detail@');
+  await expect(page.locator('.bo-user-table tbody tr')).toHaveCount(1);
+  await search.fill('legacy@'); await page.getByRole('button', { name: lang === 'fr' ? 'Rechercher' : 'Search', exact: true }).click(); await page.getByRole('link', { name: `${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} legacy@example.invalid`, exact: true }).click();
   await expect(page.locator('.bo-detail')).toContainText('Notion');
   await control(request, 'fault', { path: '/api/backoffice-accounts', method: 'GET', status: 503 }); await page.getByRole('button', { name: lang === 'fr' ? 'Actualiser' : 'Refresh', exact: true }).click();
   await expect(page.locator('.bo-workspace [role=alert]')).toContainText(lang === 'fr' ? 'Données indisponibles' : 'Data unavailable'); await expect(page.getByTestId('accounts-total')).toHaveCount(0);
   await page.getByRole('button', { name: lang === 'fr' ? 'Réessayer' : 'Retry', exact: true }).click(); await expect(page.getByTestId('accounts-total')).toHaveText('27');
+  await search.fill('no-such-account@'); await page.getByRole('button', { name: lang === 'fr' ? 'Rechercher' : 'Search', exact: true }).click();
+  await expect(page.getByText(lang === 'fr' ? 'Aucun compte trouvé.' : 'No accounts found.')).toBeVisible();
   const requests = (await control(request, 'state')).requests;
   expect(requests.filter((r: { path: string }) => r.path.includes('backoffice') && r.path !== '/api/backoffice-accounts')).toEqual([]);
 });
@@ -152,7 +158,7 @@ for (const theme of ['light', 'dark'] as const) test(`account surfaces remain re
   await readable('.ba-login, .ba-login-field input');
   await seededAdmin(page, request); await openBackOffice(page);
   await readable('.bo-button, .bo-search-field, .bo-metrics', null);
-  await page.getByRole('button', { name: 'View stack for admin@example.invalid', exact: true }).click();
+  await page.getByRole('link', { name: 'View stack for admin@example.invalid', exact: true }).click();
   // The loading shell has the same class and is replaced by the profile.
   // Measure the settled panel, not a node detached during evaluateAll.
   await expect(page.locator('.bo-detail').getByRole('heading', { level: 2 })).toHaveText('admin@example.invalid');
