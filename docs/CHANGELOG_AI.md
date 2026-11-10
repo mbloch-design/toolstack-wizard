@@ -1,3 +1,17 @@
+## 2026-11-10 · Catalogue · rattachement des 28 fiches orphelines
+
+- Treize identifiants de catégorie hérités (`assets`, `illustration`, `design`, `publishing`, `video`, `marketing`, `3d`, `photo`, `ai-code`, `website-builders`, `developer-tools`, `motion-design`, `audio`) ne correspondaient à aucune des 24 catégories : 28 fiches restaient invisibles depuis les pages catégorie.
+- Rattachement : 17 fiches en `creation`, 3 en `communication`, 2 en `analytics`, 2 en `prototyping`, 1 en `storage`, 1 en `email-productivity`, 1 en `nocode-web`, 1 en `design-tools`. `georankers` portait un `categoryId` explicite (`marketing`) qui primait sur `category` : aligné sur `analytics`. Les tableaux `tools` de `categories_index.json` sont mis à jour (27 ajouts, `pterocos` y figurait déjà).
+- Vérifié sur le build : 0 fiche orpheline, `photopea`, `krita`, `adobe-stock` et `reaper` présents dans `creation-design`, `klaviyo` dans `email-marketing`, `georankers` dans `analytics`. Sitemap inchangé (10 726 URLs), build production PASS.
+- Les catégories restent `noindex` : aucun effet d'indexation attendu avant la réouverture des hubs.
+
+## 2026-11-10 · SEO · audit des redirections
+
+- Nouvel audit reproductible `scripts/audit-seo-redirects.mjs` : analyse statique des 283 règles de `vercel.json` (doublons, chaînes, destinations absentes du build, `canonical` divergente, cibles `noindex`) puis rejeu en direct avec `redirect: "manual"` pour compter les sauts réels.
+- Résultat : 154 règles à source exacte et 129 à motif, 0 doublon, 0 chaîne, 0 cible morte, 0 cible non canonique, 0 lien `www` dans `dist/`. 279 sources rejouées en production : toutes en un seul saut, statut final 200, destination conforme.
+- 16 règles pointent vers une page `noindex` (14 anciens slugs de catégorie, 2 vers `/ma-stack`) : sans effet sur les chaînes, mais à arbitrer avec la réindexation des hubs.
+- Les 5 571 « pages avec redirection » de Search Console comptent des URLs, pas des règles. Validation : script `node --check` + exécution complète PASS. Aucun commit, aucun déploiement.
+
 ## 2026-11-10 · SEO · `lastmod` adossé à la donnée et `og:image` des guides
 
 - Le sitemap n'écrit plus la date du build sur toutes les entrées. Chaque URL reçoit la dernière date réellement connue : `pricing_v5.verified_on`, `lastActivityVerifiedOn` ou `researchedOn` pour une fiche et ses sous-pages, la fiche la plus récente pour une catégorie, les deux fiches comparées pour un comparatif, les outils de la stack pour une stack, `post.date` pour un guide. Sans date source (accueil, listings, pages fixes, best-of), la balise `lastmod` est omise plutôt que fabriquée.

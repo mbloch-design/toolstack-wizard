@@ -112,7 +112,7 @@
       "notedOn": "2026-09-27",
       "lastActivityVerifiedOn": null
     },
-    "categoryId": "assets",
+    "categoryId": "storage",
     "shortDescription": "Bibliothèque de médias partagée, recherche IA et revue pour équipes créatives.",
     "shortDescriptionEn": "Shared media library, AI search and review for creative teams.",
     "pricing": {
@@ -1281,7 +1281,7 @@
       "notedOn": "2026-09-25",
       "lastActivityVerifiedOn": null
     },
-    "categoryId": "illustration",
+    "categoryId": "creation",
     "shortDescription": "Une app de peinture gratuite pour iPad et Windows, avec des pinceaux aux médiums réalistes, l'animation image par image et la synchronisation multi-appareils.",
     "shortDescriptionEn": "A free iPad and Windows painting app with natural-media brushes, frame-by-frame animation and cross-device syncing.",
     "pricing": {
@@ -1715,7 +1715,7 @@
     "id": "adobe-stock",
     "slug": "adobe-stock",
     "name": "Adobe Stock",
-    "categoryId": "assets",
+    "categoryId": "creation",
     "shortDescription": "Banque d'assets sous licence (photos, vidéos, vecteurs, modèles) intégrée aux applications Creative Cloud.",
     "shortDescriptionEn": "Licensed asset library (photos, videos, vectors, templates) integrated into Adobe Creative Cloud applications.",
     "pricing": {
@@ -2006,7 +2006,7 @@
     "id": "affinity-designer",
     "slug": "affinity-designer",
     "name": "Affinity Designer",
-    "categoryId": "design",
+    "categoryId": "creation",
     "shortDescription": "Alternative vectorielle pour logos, identités, illustrations et visuels de marque.",
     "shortDescriptionEn": "Vector design alternative for logos, identities, illustrations and brand visuals.",
     "pricing": {
@@ -2101,7 +2101,7 @@
     "id": "affinity-publisher",
     "slug": "affinity-publisher",
     "name": "Affinity Publisher",
-    "categoryId": "publishing",
+    "categoryId": "creation",
     "shortDescription": "Outil de mise en page pour brochures, éditions, dossiers imprimés et supports PDF.",
     "shortDescriptionEn": "Layout tool for brochures, publications, print documents and PDFs.",
     "pricing": {
@@ -5548,7 +5548,7 @@
     "id": "fusion",
     "slug": "fusion",
     "name": "Blackmagic Fusion",
-    "categoryId": "video",
+    "categoryId": "creation",
     "shortDescription": "Logiciel de compositing 2D/3D node-based professionnel, utilisé en VFX, motion graphics et post-production cinéma pour assembler et traiter des éléments visuels complexes.",
     "shortDescriptionEn": "Professional node-based 2D/3D compositing software used in VFX, motion graphics, and post-production to composite and process complex visual elements.",
     "pricing": {
@@ -8730,7 +8730,7 @@
     "id": "cision",
     "slug": "cision",
     "name": "Cision",
-    "categoryId": "marketing",
+    "categoryId": "communication",
     "shortDescription": "Base de données journalistes et veille média entreprise, prix sur devis annuel uniquement.",
     "shortDescriptionEn": "Enterprise journalist database and media monitoring, annual custom-quote pricing only.",
     "pricing": {
@@ -9152,7 +9152,7 @@
       "notedOn": "2026-09-25",
       "lastActivityVerifiedOn": null
     },
-    "categoryId": "illustration",
+    "categoryId": "creation",
     "shortDescription": "Clip Studio Paint est un outil de dessin, BD/manga et animation avec un moteur de pinceaux sensible à la pression, en abonnement ou licence perpétuelle.",
     "shortDescriptionEn": "Clip Studio Paint is a drawing, comic/manga and animation tool with a pressure-sensitive brush engine, sold as a subscription or a one-time perpetual license.",
     "pricing": {
@@ -10103,7 +10103,7 @@
     "id": "coreldraw",
     "slug": "coreldraw",
     "name": "CorelDRAW",
-    "categoryId": "design",
+    "categoryId": "creation",
     "shortDescription": "Suite de dessin vectoriel et de mise en production graphique, fréquente en print, signalétique et illustration.",
     "shortDescriptionEn": "Vector illustration and production suite often used for print, signage and illustration workflows.",
     "pricing": {
@@ -10908,7 +10908,7 @@
     "id": "cycles",
     "slug": "cycles",
     "name": "Cycles",
-    "categoryId": "3d",
+    "categoryId": "creation",
     "shortDescription": "Moteur de rendu intégré à Blender pour rendus 3D physiquement réalistes.",
     "shortDescriptionEn": "Blender-integrated render engine for physically based 3D rendering.",
     "pricing": {
@@ -11104,7 +11104,7 @@
       "notedOn": "2026-09-25",
       "lastActivityVerifiedOn": null
     },
-    "categoryId": "photo",
+    "categoryId": "creation",
     "shortDescription": "darktable est une application libre et gratuite pour développer des RAW de façon non destructive, gérer ses photos et shooter en tethering, sous licence GPL.",
     "shortDescriptionEn": "darktable is a free, open-source application for non-destructive RAW photo development, image management and tethered shooting, licensed under the GPL.",
     "pricing": {
@@ -13028,7 +13028,7 @@
       "notedOn": "2026-09-25",
       "lastActivityVerifiedOn": null
     },
-    "categoryId": "photo",
+    "categoryId": "creation",
     "shortDescription": "Éditeur de photos RAW avec corrections optiques automatiques et débruitage IA, vendu sous forme de licence perpétuelle à achat unique.",
     "shortDescriptionEn": "RAW photo editor with optics-based automatic corrections and AI denoising, sold as a one-time perpetual license.",
     "pricing": {
@@ -14851,7 +14851,7 @@
     "id": "figma-make",
     "slug": "figma-make",
     "name": "Figma Make",
-    "categoryId": "ai-code",
+    "categoryId": "prototyping",
     "shortDescription": "Outil Figma piloté par prompt pour transformer une idée ou un design existant en prototype fonctionnel, interface interactive ou application web. Il combine génération, édition du code, publication et contexte de design system.",
     "shortDescriptionEn": "Prompt-driven Figma tool that turns an idea or an existing design into a functional prototype, interactive interface, or web app. It combines generation, code editing, publishing, and design-system context.",
     "pricing": {
@@ -14893,7 +14893,7 @@
     "id": "figma-sites",
     "slug": "figma-sites",
     "name": "Figma Sites",
-    "categoryId": "website-builders",
+    "categoryId": "nocode-web",
     "shortDescription": "Constructeur de sites responsive en bêta ouverte intégré à Figma. Il transforme des frames Figma Design en pages publiées avec composants, interactions, CMS, code et assistance par IA.",
     "shortDescriptionEn": "Open-beta responsive website builder built into Figma. It turns Figma Design frames into published pages with components, interactions, CMS, code, and AI assistance.",
     "pricing": {
@@ -14977,7 +14977,7 @@
     "id": "figma-dev-mode",
     "slug": "figma-dev-mode",
     "name": "Figma Dev Mode",
-    "categoryId": "developer-tools",
+    "categoryId": "design-tools",
     "shortDescription": "Espace développeur intégré aux fichiers Figma Design pour inspecter les interfaces, relier design et code et organiser le passage en développement. Il nécessite Figma et une licence Dev ou Full sur un forfait payant.",
     "shortDescriptionEn": "Developer workspace inside Figma Design files for inspecting interfaces, connecting design and code, and managing handoff. It requires Figma and a Dev or Full seat on a paid plan.",
     "pricing": {
@@ -15059,7 +15059,7 @@
     "id": "figma-motion",
     "slug": "figma-motion",
     "name": "Figma Motion",
-    "categoryId": "motion-design",
+    "categoryId": "creation",
     "shortDescription": "Mode d'animation en bêta ouverte intégré au canvas Figma. Il ajoute une timeline, des keyframes, des systèmes de mouvement et des exports pour le design et le passage en développement.",
     "shortDescriptionEn": "Open-beta animation mode built into the Figma canvas. It adds a timeline, keyframes, motion systems, and exports for design and development handoff.",
     "pricing": {
@@ -22751,7 +22751,7 @@
       "notedOn": "2026-09-25",
       "lastActivityVerifiedOn": null
     },
-    "categoryId": "marketing",
+    "categoryId": "email-productivity",
     "shortDescription": "Klaviyo est une plateforme d'email et SMS marketing pensée pour l'e-commerce, avec un plan gratuit jusqu'à 250 contacts et des plans payants dès 60 $/mois selon la taille de la liste.",
     "shortDescriptionEn": "Klaviyo is an email and SMS marketing platform built for ecommerce, with a free plan up to 250 contacts and paid plans starting at $60/month as the contact list grows.",
     "pricing": {
@@ -23165,7 +23165,7 @@
     "id": "krita",
     "slug": "krita",
     "name": "Krita",
-    "categoryId": "illustration",
+    "categoryId": "creation",
     "shortDescription": "Application open source pour peinture numérique, illustration et concept art.",
     "shortDescriptionEn": "Open-source application for digital painting, illustration and concept art.",
     "pricing": {
@@ -27400,7 +27400,7 @@
     "id": "meltwater",
     "slug": "meltwater",
     "name": "Meltwater",
-    "categoryId": "marketing",
+    "categoryId": "communication",
     "shortDescription": "Veille média et social listening à l'échelle entreprise, prix entièrement sur devis.",
     "shortDescriptionEn": "Enterprise-scale media monitoring and social listening, fully custom-quoted pricing.",
     "pricing": {
@@ -33097,7 +33097,7 @@
       "notedOn": "2026-09-25",
       "lastActivityVerifiedOn": null
     },
-    "categoryId": "photo",
+    "categoryId": "creation",
     "shortDescription": "Photopea est un éditeur gratuit et financé par la publicité, dans le navigateur, qui ouvre les PSD natifs et 40+ autres formats, sans installation.",
     "shortDescriptionEn": "Photopea is a free, ad-supported browser editor that opens native PSD and 40+ other design file formats, no install required.",
     "pricing": {
@@ -33627,7 +33627,7 @@
     "id": "pixelmator-pro",
     "slug": "pixelmator-pro",
     "name": "Pixelmator Pro",
-    "categoryId": "photo",
+    "categoryId": "creation",
     "shortDescription": "Éditeur photo et composition pour Mac, utile pour retouche, détourage et visuels rapides.",
     "shortDescriptionEn": "Apple-native photo editing and composition app for Mac and iPad.",
     "pricing": {
@@ -35671,7 +35671,7 @@
     "id": "prowly",
     "slug": "prowly",
     "name": "Prowly",
-    "categoryId": "marketing",
+    "categoryId": "communication",
     "shortDescription": "Logiciel RP (communiqués, base journalistes, monitoring) — en cours d'absorption par Semrush.",
     "shortDescriptionEn": "PR software (press releases, journalist database, monitoring) — being absorbed into Semrush.",
     "pricing": {
@@ -35749,7 +35749,7 @@
     "id": "pterocos",
     "slug": "pterocos",
     "name": "Pterocos",
-    "categoryId": "developer-tools",
+    "categoryId": "prototyping",
     "shortDescription": "Éditeur de code gratuit dans le navigateur avec exécution locale et aperçu instantané.",
     "shortDescriptionEn": "Free browser-based code editor with local execution and instant preview.",
     "pricing": {
@@ -36155,7 +36155,7 @@
       "notedOn": "2026-09-25",
       "lastActivityVerifiedOn": null
     },
-    "categoryId": "publishing",
+    "categoryId": "creation",
     "shortDescription": "QuarkXPress est un logiciel de PAO professionnel pour brochures, magazines et livres, vendu en abonnement annuel ou en licence perpétuelle à l'achat unique.",
     "shortDescriptionEn": "QuarkXPress is professional desktop publishing software for brochures, magazines and books, sold either as an annual subscription or a one-time perpetual license.",
     "pricing": {
@@ -37064,7 +37064,7 @@
       "notedOn": "2026-09-25",
       "lastActivityVerifiedOn": null
     },
-    "categoryId": "audio",
+    "categoryId": "creation",
     "shortDescription": "Station de travail audio complète avec pistes illimitées et scripting poussé, vendue sous licence unique plutôt qu'en abonnement.",
     "shortDescriptionEn": "Full digital audio workstation with unlimited tracks and deep scripting, sold as a one-time license instead of a subscription.",
     "pricing": {
@@ -46563,7 +46563,7 @@
       "notedOn": "2026-09-25",
       "lastActivityVerifiedOn": null
     },
-    "categoryId": "photo",
+    "categoryId": "creation",
     "shortDescription": "Une app de bureau pour l'agrandissement, le débruitage, l'affinage et la correction de lumière par IA, avec des fonctions cloud limitées par des crédits mensuels.",
     "shortDescriptionEn": "A desktop app for AI photo upscaling, denoising, sharpening and lighting correction, with cloud features capped by monthly credits.",
     "pricing": {
@@ -52777,7 +52777,7 @@
       "notedOn": "2026-09-25",
       "lastActivityVerifiedOn": "2026-09-25"
     },
-    "categoryId": "marketing",
+    "categoryId": "analytics",
     "shortDescription": "Remplace un formulaire de contact par un chatbot qui structure et priorise les demandes entrantes.",
     "shortDescriptionEn": "Replaces a contact form with a chatbot that structures and prioritizes inbound requests.",
     "pricing": {
@@ -60084,7 +60084,7 @@
       "notedOn": "2026-09-28",
       "lastActivityVerifiedOn": null
     },
-    "categoryId": "marketing",
+    "categoryId": "analytics",
     "shortDescription": "Suit la présence d'une marque B2B dans des réponses IA et la compare à ses concurrents.",
     "shortDescriptionEn": "Tracks a B2B brand's presence in AI answers and compares it with competitors.",
     "pricing": {
