@@ -1,4 +1,9 @@
 import { test, expect, control, dismissConsent } from "./fixtures/accounts";
+async function openLegacy(page: import("@playwright/test").Page, name: string, lang: "fr" | "en") {
+  const row = page.getByRole("listitem").filter({ has: page.getByRole("button", { name: `${lang === "fr" ? "Édition directe" : "Direct editing"} · ${name}`, exact: true }) });
+  await row.getByText(lang === "fr" ? "Autres actions" : "More actions", { exact: true }).click();
+  await row.getByRole("button", { name: `${lang === "fr" ? "Modifier" : "Edit"} ${name}`, exact: true }).click();
+}
 async function login(page: import("@playwright/test").Page, lang: "fr" | "en") {
   await page.goto(`/${lang}/back-office`);
   await dismissConsent(page);
@@ -26,7 +31,7 @@ async function login(page: import("@playwright/test").Page, lang: "fr" | "en") {
     .click();
   await expect(
     page.getByRole("heading", {
-      name: lang === "fr" ? "Fiches du catalogue" : "Catalogue records",
+      name: lang === "fr" ? "Fiches" : "Records",
       exact: true,
     }),
   ).toBeVisible();
@@ -42,13 +47,8 @@ for (const lang of ["fr", "en"] as const)
         users: [{ email: "admin@example.invalid" }],
       });
       await login(page, lang);
-      const edit = (name: string) =>
-        page.getByRole("button", {
-          name: `${lang === "fr" ? "Modifier" : "Edit"} ${name}`,
-          exact: true,
-        });
       for (const name of ["Notion", "Figma"]) {
-        await edit(name).click();
+        await openLegacy(page, name, lang);
         const editor = page.getByRole("region", {
           name: lang === "fr" ? "Modifier la fiche" : "Edit record",
           exact: true,
@@ -98,11 +98,11 @@ for (const lang of ["fr", "en"] as const)
       });
       await expect(publish).toBeEnabled();
       await expect(publish).toHaveAttribute("data-variant", "primary");
-      await page.locator(".bo-catalog-publishbar").scrollIntoViewIfNeeded();
+      await publish.scrollIntoViewIfNeeded();
       await page.locator(".asv2-root").screenshot({
         path: test.info().outputPath(`${lang}-${width}-publish.png`),
       });
-      await edit("Notion").click();
+      await openLegacy(page, "Notion", lang);
       await expect(
         page.getByLabel(
           lang === "fr" ? "Description courte" : "Short description",
@@ -166,9 +166,7 @@ test("catalogue retains text on conflict and prevents leaving through workspace 
     users: [{ email: "admin@example.invalid" }],
   });
   await login(page, "fr");
-  await page
-    .getByRole("button", { name: "Modifier Notion", exact: true })
-    .click();
+  await openLegacy(page, "Notion", "fr");
   const input = page.getByLabel("Description courte", { exact: true });
   await input.fill("Mes changements");
   await page.getByRole("button", { name: "Utilisateurs", exact: true }).click();
@@ -214,9 +212,7 @@ test("browser Back and Forward preserve unsaved edits before returning to anothe
     history.replaceState({ ...history.state, idx: 0 }, "", "/fr/tools");
     history.pushState({ ...history.state, idx: 1 }, "", "/fr/back-office");
   });
-  await page
-    .getByRole("button", { name: "Modifier Notion", exact: true })
-    .click();
+  await openLegacy(page, "Notion", "fr");
   const input = page.getByLabel("Description courte", { exact: true });
   await input.fill("Texte à préserver");
   await page.goBack();
@@ -379,7 +375,7 @@ test("direct fiche preserves pending text on autosave conflict and offers explic
 test('admin toolbar sign out and modified language click preserve pending catalogue text', async ({ page, request }) => {
   await control(request, 'reset', { users: [{ email: 'admin@example.invalid' }] });
   await login(page, 'fr');
-  await page.getByRole('button', { name: 'Modifier Notion', exact: true }).click();
+  await openLegacy(page, "Notion", "fr");
   const input = page.getByLabel('Description courte', { exact: true });
   await input.fill('Saisie à conserver');
   const language = page.getByRole('link', { name: 'Site en français. Passer en anglais' });
@@ -412,7 +408,7 @@ test('mobile admin drawer traps initial reverse tab and explains a blocked secti
   await control(request, 'reset', { users: [{ email: 'admin@example.invalid' }] });
   await page.setViewportSize({ width: 390, height: 844 });
   await login(page, 'fr');
-  await page.getByRole('button', { name: 'Modifier Notion', exact: true }).click();
+  await openLegacy(page, "Notion", "fr");
   await page.getByLabel('Description courte', { exact: true }).fill('Saisie mobile');
   await page.getByRole('button', { name: 'Ouvrir le menu' }).click();
   const dialog = page.getByRole('dialog', { name: 'Menu' });
@@ -426,7 +422,7 @@ test('mobile admin drawer traps initial reverse tab and explains a blocked secti
 test('admin topbar exposes one guarded sign out for pending catalogue input', async ({ page, request }) => {
   await control(request, 'reset', { users: [{ email: 'admin@example.invalid' }] });
   await login(page, 'fr');
-  await page.getByRole('button', { name: 'Modifier Notion', exact: true }).click();
+  await openLegacy(page, "Notion", "fr");
   const input = page.getByLabel('Description courte', { exact: true });
   await input.fill('Conserver avant déconnexion');
   await page.locator('.asv2-content').evaluate(el => { el.scrollTop = 0; });
@@ -439,7 +435,7 @@ test('mobile admin drawer announces blocked navigation within the dialog', async
   await control(request, 'reset', { users: [{ email: 'admin@example.invalid' }] });
   await page.setViewportSize({ width: 390, height: 844 });
   await login(page, 'fr');
-  await page.getByRole('button', { name: 'Modifier Notion', exact: true }).click();
+  await openLegacy(page, "Notion", "fr");
   await page.getByLabel('Description courte', { exact: true }).fill('Saisie à conserver');
   await page.getByRole('button', { name: 'Ouvrir le menu' }).click();
   const dialog = page.getByRole('dialog', { name: 'Menu' });
@@ -451,7 +447,7 @@ test('mobile admin drawer explains blocked site and language links while keeping
   await control(request, 'reset', { users: [{ email: 'admin@example.invalid' }] });
   await page.setViewportSize({ width: 390, height: 844 });
   await login(page, 'fr');
-  await page.getByRole('button', { name: 'Modifier Notion', exact: true }).click();
+  await openLegacy(page, "Notion", "fr");
   const input = page.getByLabel('Description courte', { exact: true });
   await input.fill('Brouillon à conserver');
   for (const name of ['Retour au site', 'English']) {

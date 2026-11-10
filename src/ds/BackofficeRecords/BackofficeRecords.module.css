@@ -1,0 +1,51 @@
+.list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-2);
+  box-shadow: var(--tt-hairline-bottom);
+}
+
+.edit {
+  composes: text from "../atoms.module.css";
+  composes: focus from "../atoms.module.css";
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: var(--tt-space-4);
+  min-width: 0;
+  padding: var(--tt-space-4);
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.edit strong, .edit small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.edit strong { font-weight: var(--tt-w-em); }
+
+.edit small {
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+}
+
+.more {
+  composes: note from "../atoms.module.css";
+  padding: var(--tt-space-2);
+}
+
+.identity {
+  flex: 1;
+  min-width: 0;
+}

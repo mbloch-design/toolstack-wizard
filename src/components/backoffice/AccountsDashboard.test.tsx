@@ -85,3 +85,40 @@ it("uses the controlled account route and returns to the preserved list", async 
   rerender(<AccountsDashboard section="users" accountId={null} onAccountNavigate={navigate} />);
   expect(screen.getByText("Personne")).toBeVisible();
 });
+
+it("focuses a direct detail after its list arrives, even when detail resolves first", async () => {
+  let resolveList!: (value: typeof dashboard) => void;
+  mocks.list.mockReturnValue(new Promise(resolve => { resolveList = resolve; }));
+  mocks.detail.mockResolvedValue({ ...row, stack: null });
+  render(<AccountsDashboard section="users" accountId={row.userId} onAccountNavigate={vi.fn()} />);
+  await waitFor(() => expect(mocks.detail).toHaveBeenCalledWith(row.userId));
+  await act(async () => { resolveList(dashboard); });
+  const region = await screen.findByRole("region", { name: "Détail du compte" });
+  await waitFor(() => expect(region).toHaveFocus());
+});
+
+it("does not fetch an account outside the users section", async () => {
+  render(<AccountsDashboard section="overview" accountId={row.userId} onAccountNavigate={vi.fn()} />);
+  await screen.findByRole("button", { name: /Personne/ });
+  expect(mocks.detail).not.toHaveBeenCalled();
+});
+
+it("opens an overview account through one account navigation", async () => {
+  const accountNavigate = vi.fn();
+  const sectionNavigate = vi.fn().mockResolvedValue(true);
+  render(<AccountsDashboard section="overview" onSectionNavigate={sectionNavigate} onAccountNavigate={accountNavigate} />);
+  fireEvent.click(await screen.findByRole("button", { name: /Personne/ }));
+  expect(accountNavigate).toHaveBeenCalledWith(row.userId);
+  expect(sectionNavigate).not.toHaveBeenCalled();
+});
+
+it("returns focus to search when a linked account is absent from the page", async () => {
+  mocks.list.mockResolvedValue({ ...dashboard, accounts: [], total: 0 });
+  mocks.detail.mockResolvedValue({ ...row, stack: null });
+  const navigate = vi.fn();
+  render(<AccountsDashboard section="users" accountId={row.userId} onAccountNavigate={navigate} />);
+  const detail = await screen.findByRole("region", { name: "Détail du compte" });
+  fireEvent.click(await within(detail).findByRole("button", { name: "Revenir à la liste" }));
+  expect(navigate).toHaveBeenCalledWith(null);
+  await waitFor(() => expect(screen.getByRole("searchbox", { name: "Chercher un compte" })).toHaveFocus());
+});

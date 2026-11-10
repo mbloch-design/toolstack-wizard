@@ -243,3 +243,14 @@ test('case-insensitive admin route keeps the admin shell before sign-in', async 
   await expect(page.getByRole('navigation', { name: 'Back-office navigation' })).toBeVisible();
   await expect(page.getByRole('navigation', { name: 'Main navigation' })).toHaveCount(0);
 });
+
+test('overview account opens in one history entry and returns to overview', async ({ page, request }) => {
+  await control(request, 'reset', { users: [{ email: 'admin@example.invalid' }, { email: 'history@example.invalid' }] });
+  await passwordLogin(page, 'fr');
+  await selectAdminSection(page, 'Vue d’ensemble', 'fr');
+  await page.getByRole('button', { name: /history@example\.invalid/ }).click();
+  await expect(page).toHaveURL(/view=users&account=/);
+  await expect(page.getByRole('region', { name: 'Détail du compte' })).toBeFocused();
+  await page.goBack();
+  await expect(page.getByRole('heading', { name: 'Vue d’ensemble', exact: true })).toBeVisible();
+});

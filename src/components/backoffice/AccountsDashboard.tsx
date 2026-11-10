@@ -19,7 +19,6 @@ import {
   FileText,
   Layers3,
   RefreshCw,
-  Search,
   ShieldAlert,
   Users,
 } from "@/lib/icons";
@@ -40,8 +39,9 @@ export function AccountsDashboard({
   catalogSession: suppliedSession,
   onCatalogDirtyChange,
   onCatalogReauthenticate,
-  section, onSectionNavigate, onAuthorization, accountId, onAccountNavigate,
+  section, onSectionNavigate, onAuthorization, accountId, onAccountNavigate, accountHref,
 }: {
+  accountHref?: (id: string) => string;
   accountId?: string | null;
   onAccountNavigate?: (id: string | null) => void;
   onAuthorization?: (authorized: boolean) => void;
@@ -80,7 +80,7 @@ export function AccountsDashboard({
   const [error, setError] = useState<"denied" | "unavailable" | null>(null);
   const [loading, setLoading] = useState(true);
   const [localSelected, setSelected] = useState<string | null>(null);
-  const selected = onAccountNavigate ? accountId ?? null : localSelected;
+  const selected = onAccountNavigate ? (view === "users" ? accountId ?? null : null) : localSelected;
   const [detail, setDetail] = useState<AccountDetail | null>(null);
   const [detailLoading, setDetailLoading] = useState(false);
   const [detailError, setDetailError] = useState<
@@ -90,7 +90,6 @@ export function AccountsDashboard({
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    setData(null);
     setError(null);
     void loadAccountsDashboard({
       search,
@@ -111,7 +110,8 @@ export function AccountsDashboard({
       .catch((error) => {
         if (!cancelled) {
           const kind = accessDenied(error) ? "denied" : "unavailable";
-          if (kind === "denied") onAuthorization?.(false);
+          if (kind === "denied") { onAuthorization?.(false); setOverview(null); setOverviewError("denied"); }
+          setData(null);
           setError(kind);
           if (!search && page === 1) {
             setOverview(null);
@@ -181,12 +181,12 @@ export function AccountsDashboard({
       behavior: "instant",
     });
     detailRegion.current?.focus({ preventScroll: true });
-  }, [selected, detailLoading, view]);
+  }, [selected, detailLoading, view, data]);
   const closeDetail = () => {
     const closing = selected;
     if (onAccountNavigate) onAccountNavigate(null); else setSelected(null);
     requestAnimationFrame(() =>
-      document.getElementById(`${searchId}-${closing}`)?.focus(),
+      (document.getElementById(`${searchId}-${closing}`) ?? document.getElementById(searchId))?.focus(),
     );
   };
   const navigate = async (next: View) => {
@@ -204,7 +204,7 @@ export function AccountsDashboard({
     setView(next);
   };
   const openUser = (id: string) => {
-    if (onSectionNavigate) void onSectionNavigate("users"); else setView("users");
+    if (!onAccountNavigate) { if (onSectionNavigate) void onSectionNavigate("users"); else setView("users"); }
     if (id === selected) {
       requestAnimationFrame(() => {
         detailRegion.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
@@ -333,7 +333,7 @@ export function AccountsDashboard({
       </nav>}
       <div className="bo-content">
         {navigationError && <p role="alert">{t("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</p>}
-        {view !== "catalog" && <BackofficePageHeading title={title} description={description} action={<Button icon={<RefreshCw size={16} />} onClick={() => { setOverview(null); setReload((value) => value + 1); }} disabled={loading}>{t("Actualiser", "Refresh")}</Button>} />}
+        {view !== "catalog" && <BackofficePageHeading title={title} description={description} action={view === "usage" || view === "sources" ? undefined : <Button icon={<RefreshCw size={16} />} onClick={() => { setOverview(null); setReload((value) => value + 1); }} disabled={loading}>{t("Actualiser", "Refresh")}</Button>} />}
         {view === "catalog" && <CatalogEditor onReauthenticate={onCatalogReauthenticate} session={catalogSession} onDirtyChange={setCatalogDirty} />}
         {(view === "overview" || view === "stacks") &&
           (overviewError ? (
@@ -408,18 +408,6 @@ export function AccountsDashboard({
                       <thead>
                         <tr>
                           <th>{t("Compte", "Account")}</th>
-                          <th className="bo-optional">
-                            {t("Métier", "Trade")}
-                          </th>
-                          <th className="bo-optional">
-                            {t("Sélection", "Selection")}
-                          </th>
-                          <th className="bo-optional">
-                            {t("Inscription", "Registered")}
-                          </th>
-                          <th className="bo-optional">
-                            {t("Dernière sauvegarde", "Last saved")}
-                          </th>
                           <th>
                             <span className="bo-sr">
                               {t("Consultation", "View")}
@@ -446,44 +434,20 @@ export function AccountsDashboard({
                               {account.displayName && (
                                 <small>{account.email || account.userId}</small>
                               )}
-                              <small className="bo-compact-detail">
+                              <small>
                                 {account.insights
                                   ? `${account.insights.usedTools} ${t("utilisés", "using")} · ${account.insights.wishlistTools} ${t("à étudier", "considering")}`
                                   : account.hasStack
                                     ? t("Stack sauvegardée", "Saved stack")
                                     : t("Aucune sauvegarde", "No saved stack")}
                               </small>
-                            </td>
-                            <td className="bo-optional">
-                              {tradeLabel(account.insights?.trade, lang)}
-                            </td>
-                            <td className="bo-optional">
-                              {account.insights ? (
-                                <span className="bo-count-pair">
-                                  {account.insights.usedTools}{" "}
-                                  {t("utilisés", "using")}
-                                  <small>
-                                    {account.insights.wishlistTools}{" "}
-                                    {t("à étudier", "considering")}
-                                  </small>
-                                </span>
-                              ) : account.hasStack ? (
-                                t("Sauvegardée", "Saved")
-                              ) : (
-                                "—"
-                              )}
-                            </td>
-                            <td className="bo-optional">
-                              {date(account.createdAt, lang)}
-                            </td>
-                            <td className="bo-optional">
-                              {date(account.stackUpdatedAt, lang)}
+                              <small><span>{tradeLabel(account.insights?.trade, lang)}</span> · {t("Inscription", "Registered")}: {date(account.createdAt, lang)} · {t("Dernière sauvegarde", "Last saved")}: {date(account.stackUpdatedAt, lang)}</small>
                             </td>
                             <td>
                               {onAccountNavigate ? <a
                                 className="mk-button tt-button-secondary bo-button bo-open-user"
                                 id={`${searchId}-${account.userId}`}
-                                href={`?${new URLSearchParams({ ...Object.fromEntries(new URLSearchParams(window.location.search)), view: "users", account: account.userId })}`}
+                                href={accountHref?.(account.userId) ?? "#"}
                                 onClick={(event) => { if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return; event.preventDefault(); openUser(account.userId); }}
                                 aria-label={`${t("Voir la stack de", "View stack for")} ${account.email || account.userId}`}
                               ><span>{t("Ouvrir", "Open")}</span><ArrowRight size={16} aria-hidden /></a> :                               <button

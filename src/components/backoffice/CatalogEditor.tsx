@@ -1,7 +1,7 @@
+import BackofficeRecords from "@/ds/BackofficeRecords/BackofficeRecords";
 import listStyles from "@/ds/BackofficePageHeading/BackofficeList.module.css";
 import Field from "@/ds/Field/Field";
 import Button from "@/ds/Button/Button";
-import { Notice, NoticeText } from "@/ds/Notice/Notice";
 import BackofficePageHeading from "@/ds/BackofficePageHeading/BackofficePageHeading";
 import styles from "@/ds/CatalogAuthoring/CatalogAuthoring.module.css";
 import {
@@ -14,8 +14,7 @@ import {
 import { useLang } from "@/hooks/useLang";
 import { useCatalogExitGuard } from "./useCatalogExitGuard";
 import { Button as StackButton } from "@/components/stack/StackKit";
-import ToolLogo from "@/components/ToolLogo";
-import { Search, RefreshCw, ArrowUpRight } from "@/lib/icons";
+import { RefreshCw, ArrowUpRight } from "@/lib/icons";
 import {
   EDITABLE_CATALOG_FIELDS,
   changedCatalogFields,
@@ -684,60 +683,7 @@ export function CatalogEditor({
           ) : (
             workspace && (
               <>
-                <div
-                  className="bo-catalog-list"
-                  aria-label={t("Fiches du catalogue", "Catalogue records")}
-                >
-                  {workspace.tools.map((tool) => (
-                    <div className={styles.catalogRecord} key={tool.slug}>
-                      <button
-                        type="button"
-                        className={`bo-catalog-list-row ${styles.recordButton}`}
-                        disabled={busy}
-                        aria-label={t(
-                          `Édition directe · ${tool.name}`,
-                          `Direct editing · ${tool.name}`,
-                        )}
-                        aria-current={
-                          detail?.tool.slug === tool.slug ? "true" : undefined
-                        }
-                        onClick={() => void openInline(tool.slug)}
-                      >
-                        <ToolLogo
-                          tool={{ slug: tool.slug, name: tool.name }}
-                          size={28}
-                        />
-                        <span>
-                          <strong>{tool.name}</strong>
-                          <small>{tool.category}</small>
-                        </span>
-                        <span className="bo-caption">
-                          {tool.draft
-                            ? t("Brouillon", "Draft")
-                            : t("Publié", "Published")}
-                        </span>
-                      </button>
-                      <button
-                        type="button"
-                        className={`mk-link ${styles.legacyLink}`}
-                        disabled={busy}
-                        aria-label={t(
-                          `Modifier ${tool.name}`,
-                          `Edit ${tool.name}`,
-                        )}
-                        onClick={() => void open(tool.slug)}
-                      >
-                        {t(
-                          "Ancien formulaire (temporaire)",
-                          "Legacy form (temporary)",
-                        )}
-                      </button>
-                    </div>
-                  ))}
-                </div>
-                {workspace.tools.length === 0 && (
-                  <Notice name="records-empty"><NoticeText>{t("Aucune fiche trouvée.", "No records found.")}</NoticeText></Notice>
-                )}
+                <BackofficeRecords records={workspace.tools} lang={lang} busy={busy} onEdit={(slug) => void openInline(slug)} onLegacy={(slug) => void open(slug)} />
                 <div className="bo-catalog-pagination">
                   <span>
                     {workspace.total} {t("fiches", "records")} ·{" "}
