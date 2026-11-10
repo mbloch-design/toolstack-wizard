@@ -29,6 +29,26 @@ La liste affiche les entrées de la langue choisie dans le même ordre que la fi
 
 Après validation locale, **Terminer** ferme le bloc et l’en-tête indique **Enregistrement…** puis **Brouillon enregistré** lorsque le serveur confirme. Si le serveur refuse, les valeurs restent dans le brouillon de travail et l’en-tête propose de réessayer ou de revenir au bloc concerné. L’aperçu peut montrer ce brouillon de travail en indiquant qu’il reste à enregistrer. Une validation locale bloquante garde le bloc ouvert.
 
+## Affordances du formulaire
+
+Le contrôle dépend de ce que la personne peut faire avec la donnée. Les valeurs se lisent dans leur contexte et l’intitulé du bouton annonce le geste. Le texte d’aide explique une conséquence concrète, notamment l’effet d’une modification sur les deux langues.
+
+| Type de donnée | Geste visible et règle |
+|---|---|
+| Texte court ou long | **Modifier la description** ouvre une zone adaptée à la longueur. Le libellé reste visible en écrivant. Une traduction manquante affiche **Ajouter la version anglaise**, sans remplacer le texte français. |
+| Tags du vocabulaire | Les tags de la fiche apparaissent comme des pastilles. **Ajouter un usage** ouvre une recherche des libellés existants. Le résultat propose **Ajouter [libellé]**, et les valeurs déjà choisies sont exclues. Aucun doublon ni création de tag en validant la recherche. |
+| Retrait d’un tag | La croix dans chaque pastille s’appelle **Retirer [libellé]** pour le clavier et les lecteurs d’écran. Le geste détache le tag de cette fiche. **Annuler le retrait** le remet à sa place. **Annuler** à l’échelle du bloc rejette toutes les modifications de ce bloc. |
+| Usages décrits, points forts et limites | Une liste de lignes, avec **Ajouter un exemple d’usage** ou **Ajouter un point fort**. Une ligne comporte du texte éditorial, avec l’ordre et le retrait lorsqu’ils ont un effet sur la fiche. Ce texte libre ne crée aucun tag dans le vocabulaire. |
+| Catégorie et type | Un seul choix par champ. La valeur actuelle est lisible dans le bloc. Le sélecteur décrit le changement et conserve l’ancienne valeur tant que la modification n’est pas terminée. |
+| Personnes, usages et secteurs | Un groupe distinct par nature. Une sélection dans « Publics » ne modifie pas « Usages » ni « Secteurs ». Un tag historique sans entrée de vocabulaire reste visible et retirable, sans être proposé aux nouvelles sélections. |
+| Offre | **Ajouter une offre** ouvre une ligne provisoire. La carte résume nom, type, montant affiché, unité et rythme de paiement applicables. Les champs apparaissent au fur et à mesure selon le type choisi. Le retrait et le déplacement restent accessibles depuis la liste. |
+| Image ou lien | Une image existante affiche sa miniature et son texte alternatif. **Remplacer**, **Ajouter** et **Retirer** ont chacun une cible explicite. Une URL invalide ou une image introuvable a un message près du champ. |
+| Note ou verdict | La valeur est visible à côté de son échelle ou de son libellé. Les accès réservés à ToolTrim sont expliqués sur le bloc. Les personnes en lecture seule ne voient pas de bouton d’édition indisponible. |
+
+Pour les tags, la recherche accepte un libellé avec ou sans accent et l’identifiant connu. Les suggestions montrent un nombre limité de résultats et invitent à affiner la recherche. Si aucune valeur ne correspond, afficher **Aucun usage correspondant**. Si la liste de la fiche est vide, afficher **Aucun usage renseigné** et garder **Ajouter un usage** visible. Une recherche seule ne modifie jamais le brouillon. Le clavier peut ouvrir le sélecteur, parcourir ses suggestions, en ajouter une explicitement et fermer la recherche. Après ajout, le focus retourne au champ de recherche pour permettre plusieurs ajouts. Après fermeture du bloc, il revient à l’action de départ.
+
+Scénario de recette : ouvrir la fiche, ajouter « Automatisation » en le recherchant, vérifier qu’il disparaît des suggestions, retirer « Notes », annuler le retrait, puis annuler le bloc. Les tags initiaux doivent être de retour. Refaire l’ajout et terminer, puis rouvrir la fiche et retrouver « Automatisation » avec son identifiant canonique. La création d’un terme de vocabulaire est un autre geste de gestion du catalogue et reste hors de cet écran.
+
 ## Contrats et réalisation
 
 L’espace auteur est une composition dédiée. Les contrôles typés, les opérations sur les collections, les permissions et le service de brouillons existants restent les sources de vérité. Le rendu public reste celui de l’aperçu. La publication groupée reste dans la liste des fiches et continue de vérifier versions, droits et sources. Cette refonte ne crée ni nouveau rôle, ni téléversement, ni migration, ni mise à jour du catalogue publié.
