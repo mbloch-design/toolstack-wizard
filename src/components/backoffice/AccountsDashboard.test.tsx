@@ -67,3 +67,21 @@ it('shows initial profile provider and informational locale on the detail only',
  fireEvent.click(screen.getByRole('button',{name:'Voir la stack de person@example.test'}));const detail=await screen.findByRole('region',{name:'Détail du compte'});
  await waitFor(()=>expect(within(detail).getByText(/Fournisseur du profil initial : GitHub/)).toBeVisible());expect(within(detail).getByText(/Langue du fournisseur : en-US/)).toBeVisible();expect(detail.querySelector('img')).toHaveAttribute('referrerpolicy','no-referrer');
 });
+
+it("uses the controlled account route and returns to the preserved list", async () => {
+  mocks.detail.mockResolvedValue({ ...row, stack: null });
+  const navigate = vi.fn();
+  const { rerender } = render(<AccountsDashboard section="users" accountId={null} onAccountNavigate={navigate} />);
+  await screen.findByText("Personne");
+  fireEvent.click(screen.getByRole("link", { name: "Voir la stack de person@example.test" }));
+  expect(navigate).toHaveBeenCalledWith(row.userId);
+  rerender(<AccountsDashboard section="users" accountId={row.userId} onAccountNavigate={navigate} />);
+  const detail = await screen.findByRole("region", { name: "Détail du compte" });
+  await within(detail).findByText("Aucune stack enregistrée.");
+  fireEvent.click(screen.getByRole("button", { name: "Actualiser" }));
+  expect(await screen.findByText("Aucune stack enregistrée.")).toBeVisible();
+  fireEvent.click(within(screen.getByRole("region", { name: "Détail du compte" })).getByRole("button", { name: "Revenir à la liste" }));
+  expect(navigate).toHaveBeenLastCalledWith(null);
+  rerender(<AccountsDashboard section="users" accountId={null} onAccountNavigate={navigate} />);
+  expect(screen.getByText("Personne")).toBeVisible();
+});

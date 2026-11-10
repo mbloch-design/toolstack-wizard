@@ -1,3 +1,8 @@
+## 2026-11-10 · Back-office · en-têtes et lien de détail
+
+- Ajout d’un en-tête de page du système, stories à valider, action de publication portée par le catalogue et détail utilisateur associé à l’URL. Le rechargement de la liste conserve le détail ouvert.
+- Les listes et le diagnostic conservent encore leur présentation héritée ; leur refonte et la recette visuelle des parcours restent à terminer.
+
 ## 2026-11-09 · Back-office · navigation unifiée
 
 - La déconnexion admin utilise le garde du brouillon, le menu mobile annonce les sorties bloquées, et les clics modifiés de changement de langue préservent la saisie. Le diagnostic utilise la même URL Supabase configurée que l’authentification.

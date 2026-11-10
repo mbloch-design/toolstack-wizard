@@ -1,5 +1,9 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { useLang } from "@/hooks/useLang";
+import BackofficePageHeading from "@/ds/BackofficePageHeading/BackofficePageHeading";
+import Button from "@/ds/Button/Button";
+import Field from "@/ds/Field/Field";
+import { Notice, NoticeText } from "@/ds/Notice/Notice";
 import {
   loadAccountDetail,
   loadAccountsDashboard,
@@ -35,8 +39,10 @@ export function AccountsDashboard({
   catalogSession: suppliedSession,
   onCatalogDirtyChange,
   onCatalogReauthenticate,
-  section, onSectionNavigate, onAuthorization,
+  section, onSectionNavigate, onAuthorization, accountId, onAccountNavigate,
 }: {
+  accountId?: string | null;
+  onAccountNavigate?: (id: string | null) => void;
   onAuthorization?: (authorized: boolean) => void;
   section?: View;
   onSectionNavigate?: (section: View) => Promise<boolean>;
@@ -72,7 +78,8 @@ export function AccountsDashboard({
   >(null);
   const [error, setError] = useState<"denied" | "unavailable" | null>(null);
   const [loading, setLoading] = useState(true);
-  const [selected, setSelected] = useState<string | null>(null);
+  const [localSelected, setSelected] = useState<string | null>(null);
+  const selected = onAccountNavigate ? accountId ?? null : localSelected;
   const [detail, setDetail] = useState<AccountDetail | null>(null);
   const [detailLoading, setDetailLoading] = useState(false);
   const [detailError, setDetailError] = useState<
@@ -84,8 +91,6 @@ export function AccountsDashboard({
     setLoading(true);
     setData(null);
     setError(null);
-    setSelected(null);
-    setDetail(null);
     void loadAccountsDashboard({
       search,
       page,
@@ -178,7 +183,7 @@ export function AccountsDashboard({
   }, [selected, detailLoading, view]);
   const closeDetail = () => {
     const closing = selected;
-    setSelected(null);
+    if (onAccountNavigate) onAccountNavigate(null); else setSelected(null);
     requestAnimationFrame(() =>
       document.getElementById(`${searchId}-${closing}`)?.focus(),
     );
@@ -209,7 +214,7 @@ export function AccountsDashboard({
     setDetail(null);
     setDetailError(null);
     setDetailLoading(true);
-    setSelected(id);
+    if (onAccountNavigate) onAccountNavigate(id); else setSelected(id);
   };
   const pages = data ? Math.max(1, Math.ceil(data.total / data.pageSize)) : 1;
   const navigation = [
@@ -327,23 +332,7 @@ export function AccountsDashboard({
       </nav>}
       <div className="bo-content">
         {navigationError && <p role="alert">{t("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</p>}
-        <header className="bo-page-heading ac-page-header">
-          <div>
-            <h1>{title}</h1>
-            <p>{description}</p>
-          </div>
-          {view !== "catalog" && <button
-            className="mk-button tt-button-secondary bo-button"
-            onClick={() => {
-              setOverview(null);
-              setReload((value) => value + 1);
-            }}
-            disabled={loading}
-          >
-            <RefreshCw size={16} aria-hidden />
-            {t("Actualiser", "Refresh")}
-          </button>}
-        </header>
+        {view !== "catalog" && <BackofficePageHeading title={title} description={description} action={<Button icon={<RefreshCw size={16} />} onClick={() => { setOverview(null); setReload((value) => value + 1); }} disabled={loading}>{t("Actualiser", "Refresh")}</Button>} />}
         {view === "catalog" && <CatalogEditor onReauthenticate={onCatalogReauthenticate} session={catalogSession} onDirtyChange={setCatalogDirty} />}
         {(view === "overview" || view === "stacks") &&
           (overviewError ? (
@@ -373,28 +362,8 @@ export function AccountsDashboard({
               setSearch(input.trim());
             }}
           >
-            <label className="bo-sr" htmlFor={searchId}>
-              {t("Chercher un compte", "Search accounts")}
-            </label>
-            <div className="bo-search-field">
-              <Search size={18} aria-hidden />
-              <input
-                id={searchId}
-                type="search"
-                value={input}
-                onChange={(event) => setInput(event.target.value)}
-                placeholder={t(
-                  "Rechercher par nom ou e-mail…",
-                  "Search name or email…",
-                )}
-              />
-            </div>
-            <button
-              className="mk-button tt-button-primary bo-button bo-button-primary"
-              type="submit"
-            >
-              {t("Rechercher", "Search")}
-            </button>
+            <Field id={searchId} type="search" label={t("Chercher un compte", "Search accounts")} value={input} onChange={(event) => setInput(event.target.value)} placeholder={t("Rechercher par nom ou e-mail…", "Search name or email…")} />
+            <Button type="submit" variant="primary">{t("Rechercher", "Search")}</Button>
           </form>
           {loading && (
             <p className="bo-loading" role="status">
@@ -510,7 +479,13 @@ export function AccountsDashboard({
                               {date(account.stackUpdatedAt, lang)}
                             </td>
                             <td>
-                              <button
+                              {onAccountNavigate ? <a
+                                className="mk-button tt-button-secondary bo-button bo-open-user"
+                                id={`${searchId}-${account.userId}`}
+                                href={`?${new URLSearchParams({ ...Object.fromEntries(new URLSearchParams(window.location.search)), view: "users", account: account.userId })}`}
+                                onClick={(event) => { if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return; event.preventDefault(); openUser(account.userId); }}
+                                aria-label={`${t("Voir la stack de", "View stack for")} ${account.email || account.userId}`}
+                              ><span>{t("Ouvrir", "Open")}</span><ArrowRight size={16} aria-hidden /></a> :                               <button
                                 className="mk-button tt-button-secondary bo-button bo-open-user"
                                 id={`${searchId}-${account.userId}`}
                                 onClick={() => openUser(account.userId)}
@@ -518,7 +493,7 @@ export function AccountsDashboard({
                               >
                                 <span>{t("Ouvrir", "Open")}</span>
                                 <ArrowRight size={16} aria-hidden />
-                              </button>
+                              </button>}
                             </td>
                           </tr>
                         ))}
@@ -526,9 +501,7 @@ export function AccountsDashboard({
                     </table>
                   </div>
                   {data.accounts.length === 0 && (
-                    <p className="bo-empty">
-                      {t("Aucun compte trouvé.", "No accounts found.")}
-                    </p>
+                    <Notice name="accounts-empty"><NoticeText>{t("Aucun compte trouvé.", "No accounts found.")}</NoticeText></Notice>
                   )}
                   <nav
                     className="bo-pagination"

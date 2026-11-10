@@ -1,3 +1,7 @@
+import Field from "@/ds/Field/Field";
+import Button from "@/ds/Button/Button";
+import { Notice, NoticeText } from "@/ds/Notice/Notice";
+import BackofficePageHeading from "@/ds/BackofficePageHeading/BackofficePageHeading";
 import styles from "@/ds/CatalogAuthoring/CatalogAuthoring.module.css";
 import {
   useCallback,
@@ -506,37 +510,7 @@ export function CatalogEditor({
       className="bo-catalog"
       aria-label={t("Édition du catalogue", "Catalogue editor")}
     >
-      <div className="bo-catalog-publishbar">
-        <div>
-          <strong>
-            {t(
-              "Vos fiches, une seule publication",
-              "Your records, one publication",
-            )}
-          </strong>
-          <p>
-            {t(
-              "Enregistrez vos brouillons, puis publiez tout le lot ensemble.",
-              "Save drafts, then publish the whole batch together.",
-            )}
-          </p>
-        </div>
-        <StackButton
-          variant="primary"
-          type="button"
-
-          disabled={
-            (!draftCount && !session.dirty) ||
-            busy ||
-            legacyDirty ||
-            listLoading ||
-            !workspace?.capabilities?.canPublishAll
-          }
-          onClick={() => void prepareReview()}
-        >
-          {t(`Mettre en ligne (${draftCount})`, `Publish (${draftCount})`)}
-        </StackButton>
-      </div>
+      <BackofficePageHeading title={t("Fiches", "Records")} description={t("Enregistrez vos brouillons, puis publiez tout le lot ensemble.", "Save drafts, then publish the whole batch together.")} action={<StackButton variant="primary" type="button" disabled={(!draftCount && !session.dirty) || busy || legacyDirty || listLoading || !workspace?.capabilities?.canPublishAll} onClick={() => void prepareReview()}>{t(`Mettre en ligne (${draftCount})`, `Publish (${draftCount})`)}</StackButton>} />
       {error && (
         <div className="bo-catalog-feedback" role="alert">
           <p>{error}</p>
@@ -678,24 +652,8 @@ export function CatalogEditor({
               setPage(1);
             }}
           >
-            <div className="bo-search-field">
-              <Search size={18} aria-hidden />
-              <input
-                type="search"
-                aria-label={t("Rechercher une fiche", "Search records")}
-                placeholder={t("Rechercher une fiche…", "Search records…")}
-                value={query}
-                maxLength={200}
-                onChange={(event) => setQuery(event.target.value)}
-              />
-            </div>
-            <button
-              className="mk-button tt-button-secondary"
-              type="submit"
-              disabled={busy}
-            >
-              {t("Rechercher", "Search")}
-            </button>
+            <Field type="search" label={t("Rechercher une fiche", "Search records")} placeholder={t("Rechercher une fiche…", "Search records…")} value={query} maxLength={200} onChange={(event) => setQuery(event.target.value)} />
+            <Button type="submit" disabled={busy}>{t("Rechercher", "Search")}</Button>
             <label className="bo-catalog-filter">
               <input
                 type="checkbox"
@@ -777,7 +735,7 @@ export function CatalogEditor({
                   ))}
                 </div>
                 {workspace.tools.length === 0 && (
-                  <p>{t("Aucune fiche trouvée.", "No records found.")}</p>
+                  <Notice name="records-empty"><NoticeText>{t("Aucune fiche trouvée.", "No records found.")}</NoticeText></Notice>
                 )}
                 <div className="bo-catalog-pagination">
                   <span>

@@ -1,3 +1,4 @@
+import BackofficePageHeading from "@/ds/BackofficePageHeading/BackofficePageHeading";
 import { BackofficeNavigation } from "@/ds/BackofficeNavigation/BackofficeNavigation";
 import { MemoryRouter, useInRouterContext, useLocation, useNavigate } from "react-router-dom";
 import { readBackofficeSection, useBackofficeNavigationPublisher, useBackofficeSignOutPublisher, type BackofficeSection } from "@/components/backoffice/backofficeNavigation";
@@ -469,10 +470,17 @@ function BackOfficePageContent() {
     const params = new URLSearchParams(window.location.search || location.search);
     params.set("view", next);
     if (next !== "catalog") { params.delete("tool"); params.delete("editor"); }
+    if (next !== "users") params.delete("account");
     setSectionError(false);
     routerNavigate({ pathname: location.pathname, search: `?${params}`, hash: location.hash });
     return true;
   }, [catalogDirty, catalogSession, location, routerNavigate, section]);
+  const navigateAccount = useCallback((id: string | null) => {
+    const params = new URLSearchParams(location.search);
+    params.set("view", "users");
+    if (id) params.set("account", id); else params.delete("account");
+    routerNavigate({ pathname: location.pathname, search: `?${params}`, hash: location.hash });
+  }, [location, routerNavigate]);
   const acceptSession = useCallback((session: Session | null) => {
     const next = toAdminSession(session);
     if (next) catalogSession.setOwner(next.userId);
@@ -1405,26 +1413,17 @@ function BackOfficePageContent() {
       </div>
       {logoutFeedback}
       {sectionError && <p role="alert">{t("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</p>}
-      <AccountsDashboard onAuthorization={setAuthorization} section={section} onSectionNavigate={navigateSection} key={adminSession.userId} catalogSession={catalogSession} onCatalogReauthenticate={()=>{catalogSession.suspend();setAdminSession(null);}} onCatalogDirtyChange={setCatalogDirty} initialView="overview"/>
+      <AccountsDashboard accountId={new URLSearchParams(location.search).get("account")} onAccountNavigate={navigateAccount} onAuthorization={setAuthorization} section={section} onSectionNavigate={navigateSection} key={adminSession.userId} catalogSession={catalogSession} onCatalogReauthenticate={()=>{catalogSession.suspend();setAdminSession(null);}} onCatalogDirtyChange={setCatalogDirty} initialView="overview"/>
     </div>
   );
 
   return (
     <div className="max-w-[1400px] mx-auto px-4 py-6 md:py-10 space-y-6">
       {standaloneNavigation}
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-semibold text-foreground">
-            {t("Back-office diagnostic", "Diagnostic back office")}
-          </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            {t(
-              "Pilotage onboarding, scoring, persistance et cycle email.",
-              "Operational view for onboarding, scoring, persistence, and email lifecycle."
-            )}
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
+      <BackofficePageHeading
+        title={t("Back-office diagnostic", "Diagnostic back office")}
+        description={t("Pilotage onboarding, scoring, persistance et cycle email.", "Operational view for onboarding, scoring, persistence, and email lifecycle.")}
+        action={        <div className="flex flex-wrap items-center gap-2">
           <span className="h-9 px-3 rounded-md border border-border text-xs inline-flex items-center text-muted-foreground">
             {adminSession.email || t("Admin connecté", "Signed-in admin")}
             {adminSession.expiresAt ? ` · ${formatDateTime(adminSession.expiresAt, locale)}` : ""}
@@ -1460,8 +1459,7 @@ function BackOfficePageContent() {
             <LogOut className="w-4 h-4" />
             {t("Fermer", "Sign out")}
           </button>}
-        </div>
-      </div>
+        </div> } />
 
       {logoutFeedback}
       {error && (
