@@ -1,3 +1,7 @@
+import { CATALOG_EXIT_BLOCKED_EVENT } from "@/components/backoffice/useCatalogExitGuard";
+import { Notice, NoticeText } from "@/ds/Notice/Notice";
+import { BackofficeNavigation } from "@/ds/BackofficeNavigation/BackofficeNavigation";
+import type { BackofficeNavigationModel } from "@/components/backoffice/backofficeNavigation";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@/lib/routerLinks";
 import { ArrowLeft, ChevronRight, CirclePlus, X } from "@/lib/icons";
@@ -26,6 +30,8 @@ type Level = "root" | "tools" | "guides";
 type NavItem = { id: string; labelFr: string; labelEn: string; to: string };
 
 interface Props {
+  isAdmin?: boolean;
+  admin?: BackofficeNavigationModel | null;
   open: boolean;
   onClose: () => void;
   prefix: string;
@@ -42,7 +48,8 @@ interface Props {
 
 const CURRENCIES: Currency[] = ["EUR", "USD", "GBP"];
 
-export default function MobileMenu({ open, onClose, prefix, lang, t, items, activeId, languageHref, currency, setCurrency, theme, toggleTheme }: Props) {
+export default function MobileMenu({ isAdmin = false, admin, open, onClose, prefix, lang, t, items, activeId, languageHref, currency, setCurrency, theme, toggleTheme }: Props) {
+  const [blocked, setBlocked] = useState(false);
   const [level, setLevel] = useState<Level>("root");
   // Reste monté le temps de l'animation de fermeture : le panneau glisse et
   // s'efface au lieu de disparaître d'un coup.
@@ -61,9 +68,19 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
   const panelRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
 
+  // The catalogue guard intercepts links during capture, before their handlers.
+  // Its bubbled notification lets the open dialog explain the blocked exit.
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (!isAdmin || !open || !panel) return;
+    const onBlockedLink = () => setBlocked(true);
+    panel.addEventListener(CATALOG_EXIT_BLOCKED_EVENT, onBlockedLink);
+    return () => panel.removeEventListener(CATALOG_EXIT_BLOCKED_EVENT, onBlockedLink);
+  }, [isAdmin, open, mounted]);
+
   // Chaque ouverture repart du niveau principal.
   useEffect(() => {
-    if (open) setLevel("root");
+    if (open) { setLevel("root"); setBlocked(false); }
   }, [open]);
 
   // Focus sur le titre du niveau affiché, pour que le lecteur d'écran annonce le changement.
@@ -88,7 +105,7 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
       if (!focusable.length) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      if (event.shiftKey && (document.activeElement === first || document.activeElement === headingRef.current)) { event.preventDefault(); last.focus(); }
       else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     };
     document.addEventListener("keydown", onKey);
@@ -125,7 +142,7 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
             <>
               {/* Accueil, Stacks et Comparatifs sont déjà dans la barre du bas :
                   le menu ne garde que ce qu'elle ne montre pas, les sous-niveaux. */}
-              <nav aria-label={L("Explorer", "Explore")}>
+              {isAdmin ? <BackofficeNavigation {...(admin ?? {})} lang={lang} homeHref={prefix} onDone={onClose} onBlocked={() => setBlocked(true)} /> : <nav aria-label={L("Explorer", "Explore")}>
                 <ul className="asv2-mm-list">
                   {items.map((item) => {
                     const sub = hasLevel(item.id);
@@ -145,9 +162,10 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
                     );
                   })}
                 </ul>
-              </nav>
+              </nav>}
 
 
+              {isAdmin && blocked && <Notice role="alert"><NoticeText>{L("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</NoticeText></Notice>}
               <section className="asv2-mm-prefs" aria-labelledby="asv2-mm-prefs">
                 <h3 id="asv2-mm-prefs" className="asv2-mm-subtitle">{L("Préférences", "Preferences")}</h3>
                 {/* Deux choix visibles, l'actif marqué : plus explicite qu'un
@@ -184,10 +202,10 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
                 </div>
               </section>
 
-              <Link to={`${prefix}/submit`} onClick={onClose} className="asv2-mm-submit">
+              {!isAdmin && <Link to={`${prefix}/submit`} onClick={onClose} className="asv2-mm-submit">
                 <CirclePlus aria-hidden />
                 {L("Soumettre un outil", "Submit a tool")}
-              </Link>
+              </Link>}
             </>
           )}
 

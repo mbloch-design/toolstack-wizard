@@ -38,3 +38,7 @@
 .planSettings {
   grid-row: 4;
 }
+
+.authorGrid {
+  grid-template-columns: minmax(0, 1fr);
+}

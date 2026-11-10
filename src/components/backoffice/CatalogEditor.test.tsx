@@ -16,6 +16,11 @@ vi.mock("@/lib/backofficeCatalogApi", () => ({
 }));
 import { catalogCapabilities } from "@/lib/catalogPolicy";
 import { CatalogEditor } from "./CatalogEditor";
+async function legacyButton() {
+  const row = (await screen.findByRole("button", { name: "Édition directe · Notion" })).closest("li")!;
+  fireEvent.click(within(row).getByText("Autres actions"));
+  return screen.findByRole("button", { name: "Modifier Notion" });
+}
 const tool = {
   id: "notion",
   slug: "notion",
@@ -95,7 +100,7 @@ beforeEach(() => {
 it("edits through a form, preserves unknown data, saves without publishing and previews local changes", async () => {
   render(<CatalogEditor />);
   fireEvent.click(
-    await screen.findByRole("button", { name: "Modifier Notion" }),
+    await legacyButton(),
   );
   const field = await screen.findByLabelText("Description courte");
   fireEvent.change(field, { target: { value: "Après" } });
@@ -154,7 +159,7 @@ it("keeps form text on save conflict and offers reload without silently overwrit
   api.save.mockRejectedValue({ status: 409, code: "CATALOG_DRAFT_CONFLICT" });
   render(<CatalogEditor />);
   fireEvent.click(
-    await screen.findByRole("button", { name: "Modifier Notion" }),
+    await legacyButton(),
   );
   fireEvent.change(await screen.findByLabelText("Description courte"), {
     target: { value: "Mon texte" },
@@ -177,11 +182,12 @@ it("blocks switching tools until unsaved edits are resolved and does not label f
   });
   render(<CatalogEditor />);
   fireEvent.click(
-    await screen.findByRole("button", { name: "Modifier Notion" }),
+    await legacyButton(),
   );
   fireEvent.change(await screen.findByLabelText("Description courte"), {
     target: { value: "Non enregistré" },
   });
+  fireEvent.click(within(screen.getByRole("button", { name: "Édition directe · Figma" }).closest("li")!).getByText("Autres actions"));
   fireEvent.click(screen.getByRole("button", { name: "Modifier Figma" }));
   expect(screen.getByRole("alert")).toHaveTextContent("enregistrées");
   expect(api.detail).toHaveBeenCalledTimes(1);
@@ -198,7 +204,7 @@ it("shows explicit provider activation failure", async () => {
 it("renders nested price fields without JSON and retains zero amounts", async () => {
   render(<CatalogEditor />);
   fireEvent.click(
-    await screen.findByRole("button", { name: "Modifier Notion" }),
+    await legacyButton(),
   );
   await screen.findByLabelText("Description courte");
   fireEvent.click(screen.getByRole("button", { name: "Prix" }));
@@ -223,7 +229,7 @@ it("freezes editable fields while a save is pending so newer input cannot be ove
   );
   render(<CatalogEditor />);
   fireEvent.click(
-    await screen.findByRole("button", { name: "Modifier Notion" }),
+    await legacyButton(),
   );
   fireEvent.change(await screen.findByLabelText("Description courte"), {
     target: { value: "Envoyé" },
@@ -248,7 +254,7 @@ it("preserves unsupported nested fields visibly read-only instead of offering ed
   });
   render(<CatalogEditor />);
   fireEvent.click(
-    await screen.findByRole("button", { name: "Modifier Notion" }),
+    await legacyButton(),
   );
   await screen.findByLabelText("Description courte");
   fireEvent.click(screen.getByRole("button", { name: "SEO" }));

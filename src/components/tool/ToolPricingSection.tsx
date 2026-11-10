@@ -208,7 +208,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
 
   return (
     <section className="td-pricing">
-      {bundleParent && canonicalPlans.length === 0 && (
+      {!editing && bundleParent && canonicalPlans.length === 0 && (
         <a className="td-pricing-bundle-note" href={`/${parentLang}/tool/${bundleParent}`}>
           <Package aria-hidden />
           <span>
@@ -268,7 +268,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
       {(officialUrl || verifiedOn) && (
         <p className="td-plans-foot">
           {verifiedOn && <span>{t(`Vérifiés le ${formatDay(verifiedOn)}`, `Checked on ${formatDay(verifiedOn)}`)}</span>}
-          {officialUrl && (
+          {!editing && officialUrl && (
             <a href={officialUrl} target="_blank" rel={relPourLienOutil(officialUrl, affiliateUrl, tool.websiteUrl)} onClick={onOfficialClick}>
               {t("Tarifs officiels", "Official pricing")}
               <ExternalLink aria-hidden />

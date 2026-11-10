@@ -91,6 +91,8 @@ export type ToolDetailPresentationProps = {
   /** Controlled entry is private by default. Only the route loader opts into public effects. */
   privateMode?: boolean;
   editing?: CatalogEditingPresentation;
+  authorMode?: boolean;
+  previewMode?: boolean;
 };
 
 const ToolDetailPage = () => {
@@ -113,7 +115,7 @@ export function ToolDetailPresentation(props: ToolDetailPresentationProps) {
   </LangContext.Provider>;
 }
 function ToolDetailPresentationContent({ tool, tools, categories, lang, currency,
-  subPage: controlledSubPage, loading = false, privateMode = true, editing,
+  subPage: controlledSubPage, loading = false, privateMode = true, editing, authorMode = false, previewMode = false,
 }: ToolDetailPresentationProps) {
   const t = (fr: string, en: string) => lang === "en" ? en : fr;
   const prefix = `/${lang}`;
@@ -534,6 +536,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
     : null;
 
   const DescriptionTag = editing ? "div" : "p";
+  const HeroTitle = authorMode ? "div" : "h1";
   return (
     <article
       className={cn("min-h-screen td-tool-page", privateMode && editing?.layout.privateFiche)}
@@ -567,7 +570,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
           overview) on the left; page links, "Add to my stack" as a link and
           one small button on the right. The current page is marked in ToolTrim
           blue to help find your way. */}
-      {primaryCtaUrl && (
+      {!authorMode && !previewMode && primaryCtaUrl && (
         <>
           <div className="td-localnav-anchor">
           <nav
@@ -614,7 +617,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
       )}
 
       <div className="td-container">
-        <div className="td-page-breadcrumb">
+        {!authorMode && !previewMode && <div className="td-page-breadcrumb">
           <Breadcrumb items={[
             { label: t("Outils", "Tools"), href: `${prefix}/tools` },
             ...(category ? [{
@@ -625,9 +628,9 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
               ? [{ label: tool.name, href: baseToolPath }, { label: subpageBreadcrumbLabel }]
               : [{ label: tool.name }]),
           ]} includeSchema={false} />
-        </div>
+        </div>}
 
-        <div className="td-body-grid td-page-grid">
+        <div className={cn("td-body-grid td-page-grid", authorMode && editing?.layout.authorGrid)}>
 
           {/* ── MAIN COLUMN (left): hero identity + sections ── */}
           <article className="td-main">
@@ -651,12 +654,12 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
 
                         <div className="td-hero-name-block">
                           <div className="td-hero-title-row">
-                            <h1 className="td-hero-h1">
+                            <HeroTitle className="td-hero-h1">
                               {editing ? editing.field(["name"], tool.name) : tool.name}
                               {/* Sub-pages say what they are about: "NordPass pricing". */}
                               {headingSuffix ? <span className="td-hero-h1-page">{headingSuffix}</span> : null}
-                            </h1>
-                            {tool.promoCode && <span className="td-hero-promo" aria-label={t(`Code de réduction ${tool.promoCode}, ${tool.promoDescriptionFr || ""}`, `Discount code ${tool.promoCode}, ${tool.promoDescriptionEn || ""}`)}>
+                            </HeroTitle>
+                            {!authorMode && tool.promoCode && <span className="td-hero-promo" aria-label={t(`Code de réduction ${tool.promoCode}, ${tool.promoDescriptionFr || ""}`, `Discount code ${tool.promoCode}, ${tool.promoDescriptionEn || ""}`)}>
                               <span className="td-hero-promo-label">{t(tool.promoDescriptionFr || "", tool.promoDescriptionEn || "")}</span>
                               <strong className="td-hero-promo-code">{tool.promoCode}</strong>
                             </span>}
@@ -670,7 +673,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
 
                         {editing?.block([lang === "en" ? "shortDescription" : "shortDescriptionEn", "description", "descriptionEn", "tagline"], t("Présentation et traductions", "Presentation and translations"), { advanced: true, inHero: true })}
                         <div className="td-hero-actions">
-                        {primaryCtaUrl && <a
+                        {!authorMode && primaryCtaUrl && <a
                           href={primaryCtaUrl}
                           target="_blank"
                           rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
@@ -695,9 +698,9 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
 
                     </div>
                   </div>
-                  <div className="td-sidebar-mobile td-opening-verdict">
+                  {!authorMode && <div className="td-sidebar-mobile td-opening-verdict">
                     <StickyDecisionCard {...cardProps} section="verdict" />
-                  </div>
+                  </div>}
 
 
                 </>
@@ -709,7 +712,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
 
             <div ref={scrollBodyRef} className="td-scroll-body">
 
-            {showAnalysis && (() => {
+            {!authorMode && showAnalysis && (() => {
               const curatedMedia = getToolMediaImages(tool.slug || tool.id);
               const cover = tool.ogImageUrl ?? (tool as any).og_image_url;
               const blockedCover = isToolCoverBlocked({ ...tool, ogImageUrl: cover }) ? cover : null;
@@ -724,7 +727,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
               });
               return images.length > 0 || tutorials.length > 0 ? (
                 <div className="td-hero-media">
-                  <ToolGallery images={images} imageAlts={imageAlts} videos={tutorials} toolName={tool.name} lang={lang} variant="hero" />
+                  <ToolGallery images={images} imageAlts={imageAlts} videos={tutorials} toolName={tool.name} lang={lang} variant="hero" disableVideoPlayback={previewMode} />
                 </div>
               ) : null;
             })()}
@@ -734,13 +737,13 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
               {editing.note(t(`Le rendu combine la couverture et la galerie du catalogue avec ${getToolMediaImages(tool.slug || tool.id).length} média(s) de la sélection éditoriale. Les corrections de logos et les images de secours publiques restent applicables. Modifier une URL n’ajoute pas de fichier ; aucun téléversement n’est proposé.`, `The display combines catalogue cover and gallery URLs with ${getToolMediaImages(tool.slug || tool.id).length} curated media item(s). Public logo corrections and fallback images still apply. Editing a URL does not upload a file; uploads are not supported.`))}
             </section>}
 
-            <nav className="td-tool-subnav" aria-label={t(`Explorer la fiche ${tool.name}`, `Explore the ${tool.name} review`)}>
+            {!authorMode && !previewMode && <nav className="td-tool-subnav" aria-label={t(`Explorer la fiche ${tool.name}`, `Explore the ${tool.name} review`)}>
               {subpageLinks.map((item) => (
                 <Link key={item.key} to={item.to} aria-current={activeTab === item.key ? (isPresentation && item.key !== "presentation" ? "location" : "page") : undefined}>
                   {item.label}
                 </Link>
               ))}
-            </nav>
+            </nav>}
 
             {/* Editorial overview: the reference layout is reproduced inside
                 the content itself — analysis on the left, factual rail on the
@@ -820,9 +823,9 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                       <div>
                         <dt>{t("Catégorie", "Category")}</dt>
                         <dd>
-                          <Link className="td-editorial-fact-link" to={`${prefix}/category/${category.slug}`}>
+                          {authorMode ? t(catName, catNameEn) : <Link className="td-editorial-fact-link" to={`${prefix}/category/${category.slug}`}>
                             {t(catName, catNameEn)}
-                          </Link>
+                          </Link>}
                         </dd>
                       </div>
                     )}
@@ -840,7 +843,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                     )}
                   </dl>
 
-                  {primaryCtaUrl && (
+                  {!authorMode && primaryCtaUrl && (
                     <section className="td-editorial-fact-group">
                       <h3>{t("Lien", "Link")}</h3>
                       <a className="td-editorial-official-link" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => !privateMode && trackEvent("outbound_tool_click", {
@@ -899,7 +902,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
             {/* Then when it makes sense, price, alternatives, our verdict,
                 and the background. */}
             {showAnalysis && (
-              <div id="analyse" className="td-subpage-content">
+              <div id={authorMode ? undefined : "analyse"} className="td-subpage-content">
                 <section className="td-decision-flow">
                   {editing?.block([lang === "en" ? "prosEn" : "pros", lang === "en" ? "consEn" : "cons"], t("Points forts et limites", "Strengths and limitations"))}
                   {editing?.block([lang === "en" ? "verdictEn" : "verdict"], t("Verdict et conditions de décision", "Verdict and decision criteria"))}
@@ -949,7 +952,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 them. Site-wide change, all 1109 tool pages.
             ════════════════════════════════ */}
             {showPricing && (
-              <div id="prix" className="td-subpage-content">
+              <div id={authorMode ? undefined : "prix"} className="td-subpage-content">
                 <div className="td-section">
                   <h2 className="td-title">
                     {t("Tarifs.", "Pricing.")} <span className="tt-title-muted">{t(`Quel budget pour ${tool.name}\u00a0?`, `What does ${tool.name} cost\u00a0?`)}</span>
@@ -963,7 +966,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                   {editing?.block(["pricing", "pricingEn", "defaultMonthlyPrice", "pricing_v5", "pricing_v5En"], t("Sources, textes et paramètres tarifaires", "Pricing sources, descriptions and settings"), { advanced: true, omit: ["plans"] })}
                   {pricingDetail && <ToolPricingExtras detail={pricingDetail} toolName={tool.name} t={t} />}
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
-                  <ToolBundleSection controlled={privateMode} tool={tool} tools={tools} lang={lang} t={t} />
+                  {!authorMode && <ToolBundleSection controlled={privateMode} tool={tool} tools={tools} lang={lang} t={t} />}
                   {subPage === "prix" && renderSubpageLinks("prix")}
                 </div>
               </div>
@@ -974,13 +977,14 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 above.
             ════════════════════════════════ */}
             {showAlternatives && (hasAlternativesContent || !!editing) && (
-              <div id="alternatives" className="td-subpage-content">
+              <div id={authorMode ? undefined : "alternatives"} className="td-subpage-content">
                 <div className="td-section">
                   <h2 className="td-title">
                     {t("Alternatives.", "Alternatives.")} <span className="tt-title-muted">{t(`Que choisir à la place de ${tool.name} ?`, `What could replace ${tool.name}?`)}</span>
                   </h2>
 
                   {editing?.block(["alternatives", "betterAlternative", "freeAlternative", "downgradePlan", "migrationGuide", "relations"], t("Alternatives et migration", "Alternatives and migration"), { advanced: true })}
+                  {!authorMode && <>
                   {alternatives.length > 0 && (
                     <ToolComparisonTable
                       tool={tool} alternatives={alternatives}
@@ -1095,6 +1099,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                       </div>
                     );
                   })()}
+                  </>}
                 </div>
               </div>
             )}
@@ -1103,9 +1108,9 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 SECTION: Avis
             ════════════════════════════════ */}
             {showReview && (
-              <div id="avis" className="td-subpage-content">
+              <div id={authorMode ? undefined : "avis"} className="td-subpage-content">
                 {(() => {
-                  if (tool.slug === "tapstitch") return <div className="td-section"><TapstitchDecision t={t} /></div>;
+                  if (!authorMode && tool.slug === "tapstitch") return <div className="td-section"><TapstitchDecision t={t} /></div>;
                   const ts = computeToolTrimScore(tool);
                   const ratingSources = collectRatingSources(
                     Object.entries(tool.toolTrimRating?.evidence ?? {}).map(([key, value]) =>
@@ -1209,7 +1214,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                         </div>
                       )}
 
-                      {primaryCtaUrl && <div className="td-decision-cta">
+                      {!authorMode && primaryCtaUrl && <div className="td-decision-cta">
                         <a className="td-decision-cta-main" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackOutbound("tool_review", "decided_visit")}>
                           {t(`Ta décision est prise ? Visiter ${tool.name}`, `Decided? Visit ${tool.name}`)}<ExternalLink aria-hidden />
                         </a>
@@ -1230,26 +1235,26 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 Background context now that price/alternatives are answered.
             ════════════════════════════════ */}
             {showDeepDive && (
-              <div id="approfondir" className="td-subpage-content">
+              <div id={authorMode ? undefined : "approfondir"} className="td-subpage-content">
                 {/* 9 · Intégrations / Plugins — the block owns its own
                      td-section wrapper and returns null when there's
                      nothing to show, so no empty divider renders. */}
                 {editing?.block(["host_app", "bundle_parent", "integrates_with", "complements", "articles"], t("Écosystème et contenus associés", "Ecosystem and related content"), { advanced: true })}
-                <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
+                {!authorMode && <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />}
 
                 {/* 10 · L'angle IA : augmenter ou remplacer ? — same. */}
                 {editing?.block(["seo"], t("Référencement par langue et sous-page, angle IA", "Search metadata by language and page, AI angle"), { advanced: true })}
                 {editing?.block(["lifecycle", "decision_policy_v3", "force_silence", "pivot_integration_source", "prescription_block_reasons", "prescription_context_questions"], t("Cycle de vie et recommandations", "Lifecycle and recommendations"), { advanced: true })}
                 {editing?.block(["id", "slug", "research", "prescription_output", "prescription_quality", "bestFor", "tags", "nameEn", "categoryId", "gallery_images", "link", "website", "lifecycleStatus", "pricingTiers", "verdictFr"], t("Informations protégées et compatibilité", "Protected information and compatibility"), { advanced: true })}
-                <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
+                {!authorMode && <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />}
 
                 {/* Quiet structured recap for search and extraction. Keeping
                     it at the end of the deep dive avoids interrupting the
                     human decision path near the top of the page. */}
-                <ToolSummaryBlock
+                {!authorMode && <ToolSummaryBlock
                   tool={tool} category={category} alternatives={alternatives}
                   displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
-                />
+                />}
 
               </div>
             )}
@@ -1258,7 +1263,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 SECTION: FAQ
             ════════════════════════════════ */}
             {showFaq && (
-              <div id="faq" className="td-subpage-content">
+              <div id={authorMode ? undefined : "faq"} className="td-subpage-content">
                 <div className="td-section">
                   <ToolFAQSection
                     tool={tool} displayPrice={displayPrice}
@@ -1275,7 +1280,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 catalogue ne renvoie que vers lui-même. Réservé à la page de
                 présentation, les sous-pages restant des extraits de celle-ci.
             ════════════════════════════════ */}
-            {isPresentation && relatedGuides.length > 0 && (
+            {!authorMode && isPresentation && relatedGuides.length > 0 && (
               <div className="td-subpage-content">
                 <div className="td-section">
                   <section className="td-guides">
@@ -1307,7 +1312,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
 
             {/* Stacks qui utilisent l'outil : seul chemin d'une fiche vers les
                 stacks, qui ne recevaient sinon de liens que de leur hub. */}
-            {isPresentation && relatedStacks.length > 0 && (
+            {!authorMode && isPresentation && relatedStacks.length > 0 && (
               <div className="td-subpage-content">
                 <div className="td-section">
                   <section className="td-guides">
@@ -1341,7 +1346,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
 
             </div>
 
-            {primaryCtaUrl && (
+            {!authorMode && primaryCtaUrl && (
               <div className={`td-mobile-actionbar${actionBarArmed ? " is-armed" : ""}`} {...(actionBarArmed ? {} : { inert: "" } as Record<string, string>)}>
                 <ToolLogo tool={tool} size={32} className="td-mobile-actionbar-logo" />
                 <div className="td-mobile-actionbar-id">
@@ -1371,7 +1376,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
               </div>
             )}
 
-            <div className="td-sidebar-mobile td-reading-actions">
+            {!authorMode && <div className="td-sidebar-mobile td-reading-actions">
               <h2 className="td-title">{t("Ta prochaine étape.", "Your next step.")}</h2>
               {primaryCtaUrl && <a className="td-next-primary" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackOutbound("tool_next_step", primaryCtaLabel)}>
                 {primaryCtaLabel}<ExternalLink aria-hidden />
@@ -1382,14 +1387,14 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 <ArrowRight aria-hidden />
               </Link>}
               {!privateMode && <StickyDecisionCard {...cardProps} section="share" />}
-            </div>
+            </div>}
           </article>
           {/* end main content */}
 
           {/* ── RIGHT SIDEBAR — StickyDecisionCard ── */}
           {/* Sidebar: the rating card first, then exploration (rebound to
               other fields). Choosing before buying lives in the content. */}
-          <aside className="td-sidebar-desktop">
+          {!authorMode && <aside className="td-sidebar-desktop">
               <StickyDecisionCard {...cardProps} section="verdict" />
               <ToolExplorePanel
                 slug={tool.slug || tool.id}
@@ -1399,7 +1404,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 tools={tools as any}
               />
               {!privateMode && <StickyDecisionCard {...cardProps} section="share" />}
-          </aside>
+          </aside>}
 
         </div>
       </div>

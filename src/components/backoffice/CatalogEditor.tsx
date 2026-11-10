@@ -1,3 +1,8 @@
+import BackofficeRecords from "@/ds/BackofficeRecords/BackofficeRecords";
+import listStyles from "@/ds/BackofficePageHeading/BackofficeList.module.css";
+import Field from "@/ds/Field/Field";
+import Button from "@/ds/Button/Button";
+import BackofficePageHeading from "@/ds/BackofficePageHeading/BackofficePageHeading";
 import styles from "@/ds/CatalogAuthoring/CatalogAuthoring.module.css";
 import {
   useCallback,
@@ -9,8 +14,7 @@ import {
 import { useLang } from "@/hooks/useLang";
 import { useCatalogExitGuard } from "./useCatalogExitGuard";
 import { Button as StackButton } from "@/components/stack/StackKit";
-import ToolLogo from "@/components/ToolLogo";
-import { Search, RefreshCw, ArrowUpRight } from "@/lib/icons";
+import { RefreshCw, ArrowUpRight } from "@/lib/icons";
 import {
   EDITABLE_CATALOG_FIELDS,
   changedCatalogFields,
@@ -144,6 +148,19 @@ export function CatalogEditor({
     [notice, setNotice] = useState(""),
     [review, setReview] = useState<CatalogWorkspace | null>(null),
     [receipt, setReceipt] = useState<CatalogPublication | null>(null);
+  const reviewHeadingRef = useRef<HTMLHeadingElement>(null);
+  const publishTriggerRef = useRef<HTMLButtonElement>(null);
+  const workspaceRef = useRef<HTMLElement>(null);
+  const reviewWasOpen = useRef(false);
+  useEffect(() => {
+    if (review) reviewHeadingRef.current?.focus();
+    else if (reviewWasOpen.current && !inlineSlug) {
+      const trigger = publishTriggerRef.current;
+      if (trigger && !trigger.disabled) trigger.focus();
+      else workspaceRef.current?.focus();
+    }
+    reviewWasOpen.current = Boolean(review);
+  }, [review, inlineSlug]);
   const editorRef = useRef<HTMLElement>(null),
     requestId = useRef(0);
   const draftCount = new Set([
@@ -504,39 +521,11 @@ export function CatalogEditor({
   return (
     <section
       className="bo-catalog"
+      ref={workspaceRef}
+      tabIndex={-1}
       aria-label={t("Édition du catalogue", "Catalogue editor")}
     >
-      <div className="bo-catalog-publishbar">
-        <div>
-          <strong>
-            {t(
-              "Vos fiches, une seule publication",
-              "Your records, one publication",
-            )}
-          </strong>
-          <p>
-            {t(
-              "Enregistrez vos brouillons, puis publiez tout le lot ensemble.",
-              "Save drafts, then publish the whole batch together.",
-            )}
-          </p>
-        </div>
-        <StackButton
-          variant="primary"
-          type="button"
-
-          disabled={
-            (!draftCount && !session.dirty) ||
-            busy ||
-            legacyDirty ||
-            listLoading ||
-            !workspace?.capabilities?.canPublishAll
-          }
-          onClick={() => void prepareReview()}
-        >
-          {t(`Mettre en ligne (${draftCount})`, `Publish (${draftCount})`)}
-        </StackButton>
-      </div>
+      {!review && !inlineSlug && <BackofficePageHeading title={t("Fiches", "Records")} description={t("Enregistrez vos brouillons, puis publiez tout le lot ensemble.", "Save drafts, then publish the whole batch together.")} action={<StackButton ref={publishTriggerRef} variant="primary" type="button" disabled={(!draftCount && !session.dirty) || busy || legacyDirty || listLoading || !workspace?.capabilities?.canPublishAll} onClick={() => void prepareReview()}>{t(`Mettre en ligne (${draftCount})`, `Publish (${draftCount})`)}</StackButton>} />}
       {error && (
         <div className="bo-catalog-feedback" role="alert">
           <p>{error}</p>
@@ -579,12 +568,13 @@ export function CatalogEditor({
           className="bo-catalog-review"
           aria-label={t("Modifications à publier", "Changes to publish")}
         >
-          <h2>
+          <Button disabled={busy} onClick={() => setReview(null)}>{t("Retour aux fiches", "Back to records")}</Button>
+          <h1 ref={reviewHeadingRef} tabIndex={-1}>
             {t(
               "Relire le lot avant publication",
               "Review the batch before publishing",
             )}
-          </h2>
+          </h1>
           <p>
             {t(
               "Toutes les saisies sont enregistrées. Toutes les fiches ci-dessous seront transmises ensemble après vérification.",
@@ -668,34 +658,18 @@ export function CatalogEditor({
           </div>
         </section>
       )}
-      {!inlineSlug && (
+      {!review && !inlineSlug && (
         <>
           <form
-            className="bo-search"
+            className={listStyles.search}
             onSubmit={(event) => {
               event.preventDefault();
               setSearch(query.trim());
               setPage(1);
             }}
           >
-            <div className="bo-search-field">
-              <Search size={18} aria-hidden />
-              <input
-                type="search"
-                aria-label={t("Rechercher une fiche", "Search records")}
-                placeholder={t("Rechercher une fiche…", "Search records…")}
-                value={query}
-                maxLength={200}
-                onChange={(event) => setQuery(event.target.value)}
-              />
-            </div>
-            <button
-              className="mk-button tt-button-secondary"
-              type="submit"
-              disabled={busy}
-            >
-              {t("Rechercher", "Search")}
-            </button>
+            <Field type="search" label={t("Rechercher une fiche", "Search records")} placeholder={t("Rechercher une fiche…", "Search records…")} value={query} maxLength={200} onChange={(event) => setQuery(event.target.value)} />
+            <Button type="submit" disabled={busy}>{t("Rechercher", "Search")}</Button>
             <label className="bo-catalog-filter">
               <input
                 type="checkbox"
@@ -725,60 +699,7 @@ export function CatalogEditor({
           ) : (
             workspace && (
               <>
-                <div
-                  className="bo-catalog-list"
-                  aria-label={t("Fiches du catalogue", "Catalogue records")}
-                >
-                  {workspace.tools.map((tool) => (
-                    <div className={styles.catalogRecord} key={tool.slug}>
-                      <button
-                        type="button"
-                        className={`bo-catalog-list-row ${styles.recordButton}`}
-                        disabled={busy}
-                        aria-label={t(
-                          `Édition directe · ${tool.name}`,
-                          `Direct editing · ${tool.name}`,
-                        )}
-                        aria-current={
-                          detail?.tool.slug === tool.slug ? "true" : undefined
-                        }
-                        onClick={() => void openInline(tool.slug)}
-                      >
-                        <ToolLogo
-                          tool={{ slug: tool.slug, name: tool.name }}
-                          size={28}
-                        />
-                        <span>
-                          <strong>{tool.name}</strong>
-                          <small>{tool.category}</small>
-                        </span>
-                        <span className="bo-caption">
-                          {tool.draft
-                            ? t("Brouillon", "Draft")
-                            : t("Publié", "Published")}
-                        </span>
-                      </button>
-                      <button
-                        type="button"
-                        className={`mk-link ${styles.legacyLink}`}
-                        disabled={busy}
-                        aria-label={t(
-                          `Modifier ${tool.name}`,
-                          `Edit ${tool.name}`,
-                        )}
-                        onClick={() => void open(tool.slug)}
-                      >
-                        {t(
-                          "Ancien formulaire (temporaire)",
-                          "Legacy form (temporary)",
-                        )}
-                      </button>
-                    </div>
-                  ))}
-                </div>
-                {workspace.tools.length === 0 && (
-                  <p>{t("Aucune fiche trouvée.", "No records found.")}</p>
-                )}
+                <BackofficeRecords records={workspace.tools} lang={lang} busy={busy} onEdit={(slug) => void openInline(slug)} onLegacy={(slug) => void open(slug)} />
                 <div className="bo-catalog-pagination">
                   <span>
                     {workspace.total} {t("fiches", "records")} ·{" "}
@@ -808,7 +729,7 @@ export function CatalogEditor({
           )}
         </>
       )}
-      {inlineSlug && (
+      {!review && inlineSlug && (
         <CatalogInlineFiche
           session={session}
           slug={inlineSlug}
@@ -821,7 +742,7 @@ export function CatalogEditor({
           onError={(e) => setError(message(e))}
         />
       )}
-      {detail && value && (
+      {!review && detail && value && (
         <section
           className="bo-catalog-editor"
           ref={editorRef}

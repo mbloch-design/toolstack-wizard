@@ -22,6 +22,7 @@ export { catalogValueAt, catalogFieldLabel } from "./catalogEditingModel";
 
 const layout: CatalogEditingPresentation["layout"] = {
   privateFiche: ficheLayout.privateFiche,
+  authorGrid: ficheLayout.authorGrid,
   heroCard: ficheLayout.heroCard,
   planHead: ficheLayout.planHead,
   planName: ficheLayout.planName,

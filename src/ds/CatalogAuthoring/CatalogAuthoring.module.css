@@ -13,22 +13,26 @@
   margin-block: var(--tt-space-4);
   color: var(--tt-ink);
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
 }
 
 .block > h3,
 .array > h4 {
   margin: 0 0 var(--tt-space-2);
   font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
 }
 
 .settings > summary {
   padding-block: var(--tt-space-2);
-  font: var(--tt-control-label-font);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
   cursor: pointer;
 }
 
 .issues > summary {
   font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
   cursor: pointer;
 }
 
@@ -55,7 +59,8 @@
 
 .object > legend {
   padding-inline: var(--tt-space-2);
-  font: var(--tt-control-label-font);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
 }
 
 .field {
@@ -64,6 +69,7 @@
   gap: var(--tt-space-2);
   color: var(--tt-ink);
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
   white-space: normal;
 }
 
@@ -101,8 +107,9 @@
 .collectionActions > p,
 .note,
 .protected {
-  color: var(--tt-meta);
+  color: var(--tt-ink);
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
   white-space: normal;
   overflow-wrap: anywhere;
 }
@@ -122,7 +129,8 @@
 }
 
 .protected dt {
-  font: var(--tt-control-label-font);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
 }
 
 .protected dd {
@@ -131,20 +139,23 @@
 
 .union > p {
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
 }
 
 .provenance {
   margin-block: var(--tt-space-3);
   padding-block: var(--tt-space-3);
   border-block: var(--tt-stroke) solid var(--tt-line);
-  color: var(--tt-meta);
+  color: var(--tt-ink);
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
   overflow-wrap: anywhere;
 }
 
 .provenance strong {
   color: var(--tt-ink);
-  font: var(--tt-control-label-font);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
 }
 
 .provenance p {
@@ -160,6 +171,7 @@
   margin: 0;
   color: var(--tt-ink);
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
 }
 
 .content {
@@ -175,6 +187,8 @@
   border-radius: var(--tt-r-card);
   background: var(--tt-tile);
   color: var(--tt-ink);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
 }
 
 .issues li {
@@ -207,6 +221,7 @@
 .legacyLink {
   padding: var(--tt-space-2);
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
 }
 
 @media (width <= 640px) {
@@ -228,4 +243,19 @@
 
 .provenance [data-nowrap] {
   white-space: nowrap;
+}
+
+
+.protected small {
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+}
+
+.protected strong {
+  font-weight: var(--tt-w-em);
+}
+
+.editorTitle {
+  composes: titleM from "../atoms.module.css";
+  overflow-wrap: anywhere;
 }

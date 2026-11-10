@@ -6,6 +6,7 @@ import { catalogCapabilities } from "@/lib/catalogPolicy";
 import { Button, LinkAction } from "../Controls/Controls";
 import { controlCopy } from "../Controls/Controls.fixtures";
 import { CatalogIssues, CatalogToolbar } from "./CatalogAuthoring";
+import styles from "./CatalogAuthoring.module.css";
 import { changeStoryRecord, emptyRecord, notionRecord } from "./CatalogAuthoring.fixtures";
 
 const meta: Meta = { title: "Catalogue/Édition de fiche", tags: ["a-valider"] };
@@ -32,7 +33,9 @@ function RecordFields({ lang, empty = false }: { lang: "fr" | "en"; empty?: bool
   return <CatalogEditorPresentation context={context}>
     {(editing) => <>
       <CatalogToolbar>
+        <h1 className={styles.editorTitle}>{value.name || t("Nouvelle fiche", "New record")}</h1>
         <Button>{t("Retour aux fiches", "Back to records")}</Button>
+        <Button>{t("Aperçu", "Preview")}</Button>
         <p role="status">{t("Modifications locales", "Local changes")}</p>
         <p>{t("Le brouillon est enregistré automatiquement après votre saisie.", "Your draft saves automatically after you finish typing.")}</p>
       </CatalogToolbar>
@@ -66,4 +69,17 @@ export const Notion: Story = {
 
 export const MissingFields: Story = {
   render: (_args, { globals: { lang } }) => <RecordFields lang={lang === "en" ? "en" : "fr"} empty />,
+};
+
+export const PreviewNavigation: Story = {
+  render: (_args, { globals: { lang } }) => {
+    const en = lang === "en";
+    return <CatalogToolbar>
+      <Button>{en ? "Back to editing" : "Revenir à l’édition"}</Button>
+      <Button aria-pressed>{en ? "Overview" : "Présentation"}</Button>
+      <Button>{en ? "Pricing" : "Prix"}</Button>
+      <Button>{en ? "Reviews" : "Avis"}</Button>
+      <Button>Alternatives</Button>
+    </CatalogToolbar>;
+  },
 };

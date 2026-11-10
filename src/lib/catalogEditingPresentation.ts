@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 export type CatalogEditingPresentation = {
   layout: {
     privateFiche: string;
+    authorGrid: string;
     heroCard: string;
     planHead: string;
     planName: string;

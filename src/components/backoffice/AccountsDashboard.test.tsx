@@ -67,3 +67,107 @@ it('shows initial profile provider and informational locale on the detail only',
  fireEvent.click(screen.getByRole('button',{name:'Voir la stack de person@example.test'}));const detail=await screen.findByRole('region',{name:'Détail du compte'});
  await waitFor(()=>expect(within(detail).getByText(/Fournisseur du profil initial : GitHub/)).toBeVisible());expect(within(detail).getByText(/Langue du fournisseur : en-US/)).toBeVisible();expect(detail.querySelector('img')).toHaveAttribute('referrerpolicy','no-referrer');
 });
+
+it("uses the controlled account route and returns to the preserved list", async () => {
+  mocks.detail.mockResolvedValue({ ...row, stack: null });
+  const navigate = vi.fn();
+  const { rerender } = render(<AccountsDashboard section="users" accountId={null} onAccountNavigate={navigate} />);
+  await screen.findByText("Personne");
+  fireEvent.click(screen.getByRole("link", { name: "Voir la stack de person@example.test" }));
+  expect(navigate).toHaveBeenCalledWith(row.userId);
+  rerender(<AccountsDashboard section="users" accountId={row.userId} onAccountNavigate={navigate} />);
+  const detail = await screen.findByRole("region", { name: "Détail du compte" });
+  await within(detail).findByText("Aucune stack enregistrée.");
+  fireEvent.click(screen.getByRole("button", { name: "Actualiser" }));
+  expect(await screen.findByText("Aucune stack enregistrée.")).toBeVisible();
+  fireEvent.click(within(screen.getByRole("region", { name: "Détail du compte" })).getByRole("button", { name: "Revenir à la liste" }));
+  expect(navigate).toHaveBeenLastCalledWith(null);
+  rerender(<AccountsDashboard section="users" accountId={null} onAccountNavigate={navigate} />);
+  expect(screen.getByText("Personne")).toBeVisible();
+});
+
+it("focuses a direct detail after its list arrives, even when detail resolves first", async () => {
+  let resolveList!: (value: typeof dashboard) => void;
+  mocks.list.mockReturnValue(new Promise(resolve => { resolveList = resolve; }));
+  mocks.detail.mockResolvedValue({ ...row, stack: null });
+  render(<AccountsDashboard section="users" accountId={row.userId} onAccountNavigate={vi.fn()} />);
+  await waitFor(() => expect(mocks.detail).toHaveBeenCalledWith(row.userId));
+  await act(async () => { resolveList(dashboard); });
+  const region = await screen.findByRole("region", { name: "Détail du compte" });
+  await waitFor(() => expect(region).toHaveFocus());
+});
+
+it("does not fetch an account outside the users section", async () => {
+  render(<AccountsDashboard section="overview" accountId={row.userId} onAccountNavigate={vi.fn()} />);
+  await screen.findByRole("button", { name: /Personne/ });
+  expect(mocks.detail).not.toHaveBeenCalled();
+});
+
+it("opens an overview account through one account navigation", async () => {
+  const accountNavigate = vi.fn();
+  const sectionNavigate = vi.fn().mockResolvedValue(true);
+  render(<AccountsDashboard section="overview" onSectionNavigate={sectionNavigate} onAccountNavigate={accountNavigate} />);
+  fireEvent.click(await screen.findByRole("button", { name: /Personne/ }));
+  expect(accountNavigate).toHaveBeenCalledWith(row.userId);
+  expect(sectionNavigate).not.toHaveBeenCalled();
+});
+
+it("returns focus to search when a linked account is absent from the page", async () => {
+  mocks.list.mockResolvedValue({ ...dashboard, accounts: [], total: 0 });
+  mocks.detail.mockResolvedValue({ ...row, stack: null });
+  const navigate = vi.fn();
+  render(<AccountsDashboard section="users" accountId={row.userId} onAccountNavigate={navigate} />);
+  const detail = await screen.findByRole("region", { name: "Détail du compte" });
+  fireEvent.click(await within(detail).findByRole("button", { name: "Revenir à la liste" }));
+  expect(navigate).toHaveBeenCalledWith(null);
+  await waitFor(() => expect(screen.getByRole("searchbox", { name: "Chercher un compte" })).toHaveFocus());
+});
+
+it("keeps focus in search when refreshing a selected detail", async () => {
+  mocks.detail.mockResolvedValue({ ...row, stack: null });
+  render(<AccountsDashboard section="users" accountId={row.userId} onAccountNavigate={vi.fn()} />);
+  await screen.findByText("Aucune stack enregistrée.");
+  const search = screen.getByRole("searchbox", { name: "Chercher un compte" });
+  search.focus();
+  fireEvent.click(screen.getByRole("button", { name: "Actualiser" }));
+  await waitFor(() => expect(mocks.list).toHaveBeenCalledTimes(2));
+  await act(async () => {});
+  expect(search).toHaveFocus();
+});
+
+it("hides previous results while a different search or page is loading", async () => {
+  render(<AccountsDashboard />);
+  await screen.findByText("Personne");
+  mocks.list.mockReturnValue(new Promise(() => {}));
+  fireEvent.change(screen.getByRole("searchbox", { name: "Chercher un compte" }), { target: { value: "autre" } });
+  fireEvent.click(screen.getByRole("button", { name: "Rechercher" }));
+  await waitFor(() => expect(screen.queryByText("Personne")).not.toBeInTheDocument());
+  expect(screen.getByRole("status")).toHaveTextContent("Chargement des comptes");
+});
+
+it("hides the previous page while the next page is loading", async () => {
+  render(<AccountsDashboard />);
+  await screen.findByText("Personne");
+  mocks.list.mockReturnValue(new Promise(() => {}));
+  fireEvent.click(screen.getByRole("button", { name: "Page suivante" }));
+  await waitFor(() => expect(screen.queryByText("Personne")).not.toBeInTheDocument());
+  expect(screen.getByRole("status")).toHaveTextContent("Chargement des comptes");
+});
+
+it("keeps the selected detail tab and pagination mounted during a new page", async () => {
+  render(<AccountsDashboard section="users" accountId={row.userId} onAccountNavigate={vi.fn()} />);
+  const detail = await screen.findByRole("region", { name: "Détail du compte" });
+  const tab = await within(detail).findByRole("tab", { name: "Données" });
+  fireEvent.click(tab);
+  expect(tab).toHaveAttribute("aria-selected", "true");
+  mocks.list.mockReturnValue(new Promise(() => {}));
+  const next = screen.getByRole("button", { name: "Page suivante" });
+  next.focus();
+  fireEvent.click(next);
+  await waitFor(() => expect(next).toHaveAttribute("aria-disabled", "true"));
+  expect(screen.getByRole("button", { name: "Page suivante" })).toBe(next);
+  expect(next).toHaveFocus();
+  expect(within(detail).getByRole("tab", { name: "Données" })).toBe(tab);
+  expect(tab).toHaveAttribute("aria-selected", "true");
+  expect(screen.queryByRole("link", { name: /Voir la stack de/ })).not.toBeInTheDocument();
+});

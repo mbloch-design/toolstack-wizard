@@ -1,5 +1,10 @@
 import { test, expect, state, control, saved, change, snapshot, dismissConsent } from './fixtures/accounts';
 
+async function selectAdminSection(page: import('@playwright/test').Page, label: string, lang: 'fr' | 'en') {
+  if ((page.viewportSize()?.width ?? 1280) <= 640) await page.getByRole('button', { name: lang === 'fr' ? 'Ouvrir le menu' : 'Open menu' }).click();
+  await page.getByRole('button', { name: label, exact: true }).click();
+}
+
 async function passwordLogin(page: import('@playwright/test').Page, lang: 'fr' | 'en', email = 'admin@example.invalid') {
   const current = await control(page.request, 'state');
   if (!current.accounts.some((user: {email: string}) => user.email === email)) await control(page.request, 'seed', { email });
@@ -9,10 +14,10 @@ async function passwordLogin(page: import('@playwright/test').Page, lang: 'fr' |
   await page.locator('.ba-login').getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
   if (email === 'admin@example.invalid') {
     await expect(page.getByRole('heading', { name: lang === 'fr' ? 'Vue d’ensemble' : 'Overview', exact: true })).toBeVisible();
-    await page.getByRole('button', { name: lang === 'fr' ? 'Utilisateurs' : 'Users', exact: true }).click();
+    await selectAdminSection(page, lang === 'fr' ? 'Utilisateurs' : 'Users', lang);
   }
 }
-for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(`back office ${lang} ${width}: direct password, global counts, paging, search and JSON details`, async ({ page, request }) => {
+for (const lang of ['fr', 'en'] as const) for (const width of [390, 768, 1280]) test(`back office ${lang} ${width}: direct password, global counts, paging, search and JSON details`, async ({ page, request }) => {
   await page.setViewportSize({ width, height: 1000 });
   const personal = state(['figma', 'missing-json-fixture']); personal.selection.toolEntries[1].intent = 'wishlist';
   personal.trade = 'designer'; personal.dailyRate = { amount: 450, currency: 'EUR' }; personal.usage = { figma: 4 };
@@ -23,15 +28,15 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(
   await control(request, 'reset', { users: [ { email: 'admin@example.invalid' }, { email: 'detail@example.invalid', state: personal }, { email: 'legacy@example.invalid', state: legacy }, { email: 'empty@example.invalid', state: state([]) }, ...Array.from({ length: 23 }, (_, i) => ({ email: `ordinary-${i}@example.invalid` })) ] });
   await passwordLogin(page, lang); await expect(page.getByTestId('accounts-total')).toHaveText('27');
   await expect(page.getByRole('complementary', {includeHidden:true})).toHaveCount(1);
-  await page.getByRole('button', {name: lang === 'fr' ? 'Vue d’ensemble' : 'Overview',exact:true}).click();
+  await selectAdminSection(page, lang === 'fr' ? 'Vue d’ensemble' : 'Overview', lang);
   await page.locator('.asv2-root').screenshot({path:test.info().outputPath(`${lang}-${width}-overview.png`)});
-  await page.getByRole('button', {name:lang === 'fr' ? 'Utilisateurs':'Users',exact:true}).click();
+  await selectAdminSection(page, lang === 'fr' ? 'Utilisateurs' : 'Users', lang);
   await expect(page.locator('.bo-metrics strong')).toHaveText(['27', '3', '2']);
   if (width === 390) {
-    await page.getByRole('button', {name:`${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} admin@example.invalid`,exact:true}).click();
+    await page.getByRole('link', {name:`${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} admin@example.invalid`,exact:true}).click();
     const profile = page.getByRole('region', {name:lang === 'fr' ? 'Détail du compte':'Account detail'});
     await expect(profile).toBeInViewport();
-    await page.getByRole('button', {name:`${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} admin@example.invalid`,exact:true}).click();
+    await page.getByRole('link', {name:`${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} admin@example.invalid`,exact:true}).click();
     await expect(profile).toBeInViewport();
     await expect(profile).toContainText(lang === 'fr' ? 'Aucune stack enregistrée.' : 'No saved stack.');
     await profile.getByRole('button', {name:lang === 'fr' ? 'Fermer le détail':'Close detail',exact:true}).click();
@@ -39,8 +44,8 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(
   await page.getByRole('button', { name: lang === 'fr' ? 'Page suivante' : 'Next page', exact: true }).click(); await expect(page.locator('.bo-user-table tbody tr')).toHaveCount(2);
   await expect(page.getByTestId('accounts-total')).toHaveText('27');
   const search = page.getByLabel(lang === 'fr' ? 'Chercher un compte' : 'Search accounts', { exact: true });
-  await search.fill('detail@'); await page.locator('.bo-search').getByRole('button').click(); await expect(page.locator('.bo-user-table tbody tr')).toHaveCount(1);
-  await expect(page.getByTestId('accounts-total')).toHaveText('27'); await page.getByRole('button', { name: `${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} detail@example.invalid`, exact: true }).click();
+  await search.fill('detail@'); await page.getByRole('button', { name: lang === 'fr' ? 'Rechercher' : 'Search', exact: true }).click(); await expect(page.locator('.bo-user-table tbody tr')).toHaveCount(1);
+  await expect(page.getByTestId('accounts-total')).toHaveText('27'); await page.getByRole('link', { name: `${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} detail@example.invalid`, exact: true }).click();
   await expect(page.locator('.bo-detail')).toContainText('450 EUR');
   await page.getByRole('tab', {name:lang === 'fr' ? 'Usage déclaré':'Declared usage',exact:true}).click();
   await expect(page.getByRole('tabpanel')).toContainText('4 / 5');
@@ -57,11 +62,17 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(
   await page.locator('.bo-record summary').click(); await expect(page.locator('.bo-record pre')).toContainText('"version": 4');
   await page.locator('.bo-workspace').screenshot({ path: test.info().outputPath(`${lang}-${width}-backoffice.png`) });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await search.fill('legacy@'); await page.locator('.bo-search').getByRole('button').click(); await page.getByRole('button', { name: `${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} legacy@example.invalid`, exact: true }).click();
+  await expect(page).toHaveURL(/view=users&account=/);
+  await page.getByRole('button', { name: lang === 'fr' ? 'Revenir à la liste' : 'Back to users', exact: true }).click();
+  await expect(search).toHaveValue('detail@');
+  await expect(page.locator('.bo-user-table tbody tr')).toHaveCount(1);
+  await search.fill('legacy@'); await page.getByRole('button', { name: lang === 'fr' ? 'Rechercher' : 'Search', exact: true }).click(); await page.getByRole('link', { name: `${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} legacy@example.invalid`, exact: true }).click();
   await expect(page.locator('.bo-detail')).toContainText('Notion');
   await control(request, 'fault', { path: '/api/backoffice-accounts', method: 'GET', status: 503 }); await page.getByRole('button', { name: lang === 'fr' ? 'Actualiser' : 'Refresh', exact: true }).click();
   await expect(page.locator('.bo-workspace [role=alert]')).toContainText(lang === 'fr' ? 'Données indisponibles' : 'Data unavailable'); await expect(page.getByTestId('accounts-total')).toHaveCount(0);
   await page.getByRole('button', { name: lang === 'fr' ? 'Réessayer' : 'Retry', exact: true }).click(); await expect(page.getByTestId('accounts-total')).toHaveText('27');
+  await search.fill('no-such-account@'); await page.getByRole('button', { name: lang === 'fr' ? 'Rechercher' : 'Search', exact: true }).click();
+  await expect(page.getByText(lang === 'fr' ? 'Aucun compte trouvé.' : 'No accounts found.')).toBeVisible();
   const requests = (await control(request, 'state')).requests;
   expect(requests.filter((r: { path: string }) => r.path.includes('backoffice') && r.path !== '/api/backoffice-accounts')).toEqual([]);
 });
@@ -70,6 +81,8 @@ for (const forged of [false, true]) test(`ordinary account denied despite forged
   await control(request, 'seed', { email: 'ordinary@example.invalid', metadata: forged ? { role: 'admin', is_admin: true } : {} });
   await passwordLogin(page, 'en', 'ordinary@example.invalid');
   await expect(page.locator('.bo-workspace [role=alert]')).toContainText('Access is restricted'); await expect(page.getByTestId('accounts-total')).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Sign out', exact: true })).toBeVisible();
   const result = await page.evaluate(async () => {
     const modulePath = '/src/integrations/supabase/client.ts'; const { supabase } = await import(/* @vite-ignore */ modulePath);
     const { data } = await supabase.auth.getSession(); return (await fetch('/api/backoffice-accounts', { headers: { Authorization: `Bearer ${data.session.access_token}` } })).status;
@@ -91,7 +104,7 @@ async function seededAdmin(page: import('@playwright/test').Page, request: impor
 }
 test('back-office clean logout purges private primary, backup, plans and decisions', async ({ page, request }) => {
   await seededAdmin(page, request); await openBackOffice(page);
-  await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
   await page.goto('/en/ma-stack'); await expect(page.getByRole('button', { name: 'I already have an account', exact: true })).toBeVisible();
   expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
@@ -104,11 +117,11 @@ test('back-office dirty logout supports cancel, failed signout retry and confirm
   // A failed write followed by the older remote snapshot requires resolution;
   // the debounce's transient unsaved state is intentionally no longer a notice.
   await expect(page.locator('[data-notice="account"] [role=status]')).toHaveText('Two versions to resolve');
-  await openBackOffice(page); await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
+  await openBackOffice(page); await page.getByRole('button', { name: 'Sign out', exact: true }).click();
   const confirm = page.getByRole('button', { name: 'Sign out without saving', exact: true }); await expect(confirm).toBeVisible();
   await page.getByRole('button', { name: 'Keep editing', exact: true }).click(); await expect(confirm).toHaveCount(0);
   expect((await snapshot(page)).billing.choices.figma.amount).toBe(99);
-  await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
   await control(request, 'fault', { path: '/auth/v1/logout', method: 'POST', status: 400 });
   await confirm.click(); await expect(page.getByRole('alert')).toContainText('Sign-out failed');
   await expect(page.getByTestId('accounts-total')).toBeVisible(); expect((await snapshot(page)).billing.choices.figma.amount).toBe(99);
@@ -145,13 +158,99 @@ for (const theme of ['light', 'dark'] as const) test(`account surfaces remain re
   await readable('.ba-login, .ba-login-field input');
   await seededAdmin(page, request); await openBackOffice(page);
   await readable('.bo-button, .bo-search-field, .bo-metrics', null);
-  await page.getByRole('button', { name: 'View stack for admin@example.invalid', exact: true }).click();
+  await page.getByRole('link', { name: 'View stack for admin@example.invalid', exact: true }).click();
   // The loading shell has the same class and is replaced by the profile.
   // Measure the settled panel, not a node detached during evaluateAll.
   await expect(page.locator('.bo-detail').getByRole('heading', { level: 2 })).toHaveText('admin@example.invalid');
   await readable('.bo-detail', null);
-  await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
   await page.goto('/en/ma-stack'); await page.getByRole('button', { name: 'I already have an account', exact: true }).click();
   await page.getByRole('button', { name: 'Continue with email', exact: true }).click(); await readable('.ac-providers .ac-button', null); await readable('.ac-form input');
+});
+
+test('admin navigation owns the shell and supports direct sources and browser history', async ({ page, request }) => {
+  await control(request, 'seed', { email: 'admin@example.invalid' });
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await passwordLogin(page, 'en');
+  await page.goto('/en/back-office?view=sources');
+  await expect(page.getByRole('navigation', { name: 'Back-office navigation' })).toHaveCount(1);
+  await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveAttribute('aria-current', 'page');
+  await expect(page.getByRole('navigation', { name: 'Main navigation' })).toHaveCount(0);
+  await page.getByRole('button', { name: 'Users', exact: true }).click();
+  await expect(page).toHaveURL(/view=users/);
+  await page.goBack();
+  await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveAttribute('aria-current', 'page');
+});
+
+test('admin mobile menu exposes the same navigation and restores focus', async ({ page, request }) => {
+  await control(request, 'seed', { email: 'admin@example.invalid' });
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await passwordLogin(page, 'en');
+  await page.setViewportSize({ width: 390, height: 844 });
+  const trigger = page.getByRole('button', { name: 'Open menu' });
+  await trigger.click();
+  const dialog = page.getByRole('dialog', { name: 'Menu' });
+  await expect(dialog.getByRole('button', { name: 'Sources', exact: true })).toBeVisible();
+  await expect(dialog.getByRole('link', { name: 'Back to site' })).toHaveAttribute('href', '/en');
+  await expect(page.getByRole('navigation', { name: 'Navigation', exact: true })).toHaveCount(0);
+  await dialog.getByRole('button', { name: 'Sources', exact: true }).click();
+  await expect(page).toHaveURL(/view=sources/);
+  await expect(trigger).toBeFocused();
+});
+
+test('admin entry retains return to site and language preserves the selected section', async ({ page, request }) => {
+  await control(request, 'seed', { email: 'admin@example.invalid' });
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto('/en/back-office?view=sources');
+  await dismissConsent(page);
+  await expect(page.getByRole('link', { name: 'Back to site' })).toHaveAttribute('href', '/en');
+  await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveCount(0);
+  await page.getByLabel('Admin email', { exact: true }).fill('admin@example.invalid');
+  await page.getByLabel('Password', { exact: true }).fill('fixture-password');
+  await page.locator('.ba-login').getByRole('button', { name: 'Sign in', exact: true }).click();
+  await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveAttribute('aria-current', 'page');
+  await page.getByRole('link', { name: 'Site in English. Switch to French' }).click();
+  await expect(page).toHaveURL(/\/fr\/back-office\?view=sources/);
+  await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveAttribute('aria-current', 'page');
+});
+
+test('direct diagnostic uses the isolated configured Supabase and keeps admin signed in', async ({ page, request }) => {
+  await control(request, 'seed', { email: 'admin@example.invalid' });
+  const external: string[] = [];
+  await page.route('**/*', route => {
+    const url = new URL(route.request().url());
+    if (url.hostname !== '127.0.0.1' && url.hostname !== 'localhost') { external.push(url.origin); return route.abort(); }
+    return route.continue();
+  });
+  await page.goto('/fr/back-office?view=diagnostic');
+  await dismissConsent(page);
+  await page.getByLabel('E-mail administrateur', { exact: true }).fill('admin@example.invalid');
+  await page.getByLabel('Mot de passe', { exact: true }).fill('fixture-password');
+  await page.locator('.ba-login').getByRole('button', { name: 'Se connecter', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Back-office diagnostic' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Diagnostic', exact: true })).toHaveAttribute('aria-current', 'page');
+  await page.getByRole('button', { name: 'Vue d’ensemble', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Vue d’ensemble', exact: true })).toBeVisible();
+  expect(external.filter(origin => origin.includes('supabase'))).toEqual([]);
+  expect((await control(request, 'state')).requests.some((r: {path: string; email: string}) => r.path === '/functions/v1/backoffice-diagnostic' && r.email === 'admin@example.invalid')).toBe(true);
+});
+
+test('case-insensitive admin route keeps the admin shell before sign-in', async ({ page }) => {
+  await page.goto('/en/Back-Office');
+  await dismissConsent(page);
+  await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Back-office navigation' })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Main navigation' })).toHaveCount(0);
+});
+
+test('overview account opens in one history entry and returns to overview', async ({ page, request }) => {
+  await control(request, 'reset', { users: [{ email: 'admin@example.invalid' }, { email: 'history@example.invalid' }] });
+  await passwordLogin(page, 'fr');
+  await selectAdminSection(page, 'Vue d’ensemble', 'fr');
+  await page.getByRole('button', { name: /history@example\.invalid/ }).click();
+  await expect(page).toHaveURL(/view=users&account=/);
+  await expect(page.getByRole('region', { name: 'Détail du compte' })).toBeFocused();
+  await page.goBack();
+  await expect(page.getByRole('heading', { name: 'Vue d’ensemble', exact: true })).toBeVisible();
 });

@@ -20,8 +20,8 @@ describe("back-office accounts entry",()=>{
   render(<BackOfficePage/>);await act(async()=>{});
   expect(screen.getByTestId("accounts-total")).toHaveTextContent("26");expect(mocks.legacy).not.toHaveBeenCalled();
   await act(async()=>{vi.advanceTimersByTime(31000);});expect(mocks.legacy).not.toHaveBeenCalled();
-  fireEvent.click(screen.getByRole("button",{name:"Diagnostic historique"}));await act(async()=>{});expect(mocks.legacy).toHaveBeenCalledTimes(1);
-  fireEvent.click(screen.getByRole("button",{name:"Comptes et stacks"}));await act(async()=>{});await act(async()=>{vi.advanceTimersByTime(31000);});expect(mocks.legacy).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByRole("button",{name:"Diagnostic"}));await act(async()=>{});expect(mocks.legacy).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByRole("button",{name:"Vue d’ensemble"}));await act(async()=>{});await act(async()=>{vi.advanceTimersByTime(31000);});expect(mocks.legacy).toHaveBeenCalledTimes(1);
  });
 });
 
@@ -75,4 +75,20 @@ it("reports blocked local cleanup after successful admin signout without claimin
  expect(screen.getByRole("form", { name: "Connexion administrateur" })).toBeInTheDocument();
  expect(screen.getByRole("alert")).toHaveTextContent("le navigateur a bloqué une partie du nettoyage");
  expect(screen.queryByText("La déconnexion a échoué. Réessayez.")).not.toBeInTheDocument();
+});
+
+it("opens an account from its admin URL and keeps it visible after refresh", async () => {
+ const id = "11111111-1111-4111-8111-111111111111";
+ window.history.replaceState({}, "", `/fr/back-office?view=users&account=${id}`);
+ vi.stubGlobal("localStorage", window.sessionStorage);
+ mocks.getSession.mockResolvedValue({data:{session:{access_token:"admin-session",user:{id:"admin",email:"admin@example.test"}}}});
+ mocks.onAuthStateChange.mockReturnValue({data:{subscription:{unsubscribe:vi.fn()}}});
+ mocks.list.mockResolvedValue({totals:{accounts:1,accountsWithStack:0,nonemptyStacks:0},topTools:[],accounts:[],page:1,pageSize:25,total:1,updatedAt:"2026-10-20T12:00:00Z"});
+ mocks.detail.mockResolvedValue({userId:id,email:"direct@example.test",displayName:"Direct",stack:null});
+ render(<BackOfficePage />);
+ expect(await screen.findByText("Aucune stack enregistrée.")).toBeVisible();
+ expect(mocks.detail).toHaveBeenCalledWith(id);
+ fireEvent.click(screen.getByRole("button", {name:"Actualiser"}));
+ expect(await screen.findByText("Aucune stack enregistrée.")).toBeVisible();
+ window.history.replaceState({}, "", "/");
 });

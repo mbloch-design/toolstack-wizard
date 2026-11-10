@@ -157,6 +157,12 @@ const fixture = { name: 'playwright-account-fixture', configureServer(server) {
       }
       if (path === '/auth/v1/logout') { if (url.searchParams.get('scope') !== 'others') tokens.delete(token); return send(res, 204); }
       if (path.startsWith('/rest/v1/')) return send(res, 200, []);
+      if (path === '/functions/v1/backoffice-diagnostic') {
+        if (!user || !tokens.has(token)) return send(res, 401, { error: 'Unauthorized' });
+        if (user.email !== 'admin@example.invalid') return send(res, 403, { error: 'Forbidden' });
+        if (req.method !== 'POST' || input.mode !== 'dashboard') return send(res, 400, { error: 'Unsupported fixture operation' });
+        return send(res, 200, { mode: 'dashboard', meta: { days: input.days, limit: input.limit, persona: input.persona, fetchedAt: now() }, sessions: [], emailHealth: [], recentEmailJobs: [], recentRestitutions: [] });
+      }
       if (!path.startsWith('/api/stack-account') && !path.startsWith('/api/backoffice-accounts') && !path.startsWith('/api/backoffice-catalog') && path !== '/api/account-profile') return fail(res, 503, 'LEGACY_ENDPOINT_DISABLED_IN_RECIPE');
       if (!user || !users.has(user.email) || !tokens.has(token)) return fail(res, 401, 'ACCOUNT_SESSION_INVALID');
       if (path === '/api/backoffice-catalog') return catalog.handle({ req, url, input, user, server, send, fail, res });

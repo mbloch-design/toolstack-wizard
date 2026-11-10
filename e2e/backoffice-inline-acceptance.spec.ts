@@ -28,6 +28,7 @@ async function openWorkspace(page: Page, lang: "fr" | "en") {
       exact: true,
     })
     .click();
+  if ((page.viewportSize()?.width ?? 1280) <= 640) await page.getByRole("button", { name: lang === "fr" ? "Ouvrir le menu" : "Open menu" }).click();
   await page
     .getByRole("button", {
       name: lang === "fr" ? "Fiches" : "Records",
@@ -384,4 +385,26 @@ test("missing families: first additions, collection order/focus, interleaved und
     path: test.info().outputPath("missing-families-dark-390-viewport.png"),
     animations: "disabled",
   });
+});
+
+test("draft preview shows the current price and returns to the same editor", async ({ page, request }) => {
+  await control(request, "reset", { representativeCatalog: true, users: [{ email: "admin@example.invalid" }] });
+  await openWorkspace(page, "fr");
+  await page.getByRole("button", { name: "Édition directe · Notion", exact: true }).click();
+  const editor = page.locator("[data-catalog-editor]");
+  await expect(editor.getByRole("heading", { level: 1, name: "Notion" })).toBeVisible();
+  await expect(editor.getByRole("link", { name: /Tarifs officiels|Visiter Notion|Comparer les alternatives/ })).toHaveCount(0);
+  const amount = field(page, "pricing_v5.plans.1.nativeAmount");
+  await amount.fill("123");
+  await page.getByRole("button", { name: "Aperçu", exact: true }).click();
+  const preview = page.getByTestId("catalog-live-preview");
+  await expect(preview.getByRole("button", { name: "Revenir à l’édition" })).toBeFocused();
+  const video = preview.locator(".tg-video-poster").first();
+  await expect(video).toBeDisabled();
+  await expect(preview.locator("iframe, video")).toHaveCount(0);
+  await preview.getByRole("button", { name: "Prix", exact: true }).click();
+  await expect(preview).toContainText("123");
+  await preview.getByRole("button", { name: "Revenir à l’édition" }).click();
+  await expect(amount).toHaveValue("123");
+  await expect(page.getByRole("button", { name: "Aperçu", exact: true })).toBeFocused();
 });

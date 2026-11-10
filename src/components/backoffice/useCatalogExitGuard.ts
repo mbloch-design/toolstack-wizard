@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+export const CATALOG_EXIT_BLOCKED_EVENT = "tooltrim:catalog-exit-blocked";
+
 /** BrowserRouter has no data-router blocker. Capture POP before its listener,
  * restore its indexed history entry, and keep the mounted editor untouched. */
 export function useCatalogExitGuard(dirty: boolean, onBlocked: () => void, parentGuardsSignOut = false) {
@@ -37,6 +39,7 @@ export function useCatalogExitGuard(dirty: boolean, onBlocked: () => void, paren
       event.preventDefault();
       event.stopPropagation();
       onBlocked();
+      link?.dispatchEvent(new Event(CATALOG_EXIT_BLOCKED_EVENT, { bubbles: true }));
     };
     const pop = (event: PopStateEvent) => {
       event.stopImmediatePropagation();

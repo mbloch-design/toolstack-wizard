@@ -1,3 +1,7 @@
+import BackofficePageHeading from "@/ds/BackofficePageHeading/BackofficePageHeading";
+import { BackofficeNavigation } from "@/ds/BackofficeNavigation/BackofficeNavigation";
+import { MemoryRouter, useInRouterContext, useLocation, useNavigate } from "react-router-dom";
+import { readBackofficeSection, useBackofficeNavigationPublisher, useBackofficeSignOutPublisher, type BackofficeSection } from "@/components/backoffice/backofficeNavigation";
 import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Button as StackButton } from "@/components/stack/StackKit";
@@ -431,6 +435,11 @@ function toAdminSession(session: Session | null): AdminSession | null {
 }
 
 export default function BackOfficePage() {
+  const inRouter = useInRouterContext();
+  return inRouter ? <BackOfficePageContent /> : <MemoryRouter initialEntries={[`${window.location.pathname}${window.location.search}${window.location.hash}`]}><BackOfficePageContent /></MemoryRouter>;
+}
+
+function BackOfficePageContent() {
   const { lang, t } = useLang();
   const account = useStackAccount();
   const [logoutPrompt, setLogoutPrompt] = useState(false);
@@ -444,10 +453,41 @@ export default function BackOfficePage() {
   const [adminSession, setAdminSession] = useState<AdminSession | null>(null);
   const [catalogSession] = useState(() => new CatalogDraftSession());
   const [catalogDirty, setCatalogDirty] = useState(false);
+  const [verifiedUserId, setVerifiedUserId] = useState<string | null>(null);
+  const location = useLocation();
+  const routerNavigate = useNavigate();
+  const publishNavigation = useBackofficeNavigationPublisher();
+  const publishSignOut = useBackofficeSignOutPublisher();
+  const section = readBackofficeSection(location.search);
+  const [sectionError, setSectionError] = useState(false);
+  const setAuthorization = useCallback((authorized: boolean) => setVerifiedUserId(authorized ? adminSession?.userId ?? null : null), [adminSession?.userId]);
+  const navigateSection = useCallback(async (next: BackofficeSection): Promise<boolean> => {
+    if (section === next) return true;
+    if (section === "catalog" && catalogDirty) {
+      if (!catalogSession.dirty) { setSectionError(true); return false; }
+      try { await catalogSession.flush(); } catch { setSectionError(true); return false; }
+    }
+    const params = new URLSearchParams(window.location.search || location.search);
+    params.set("view", next);
+    if (next !== "catalog") { params.delete("tool"); params.delete("editor"); }
+    if (next !== "users") params.delete("account");
+    setSectionError(false);
+    routerNavigate({ pathname: location.pathname, search: `?${params}`, hash: location.hash });
+    return true;
+  }, [catalogDirty, catalogSession, location, routerNavigate, section]);
+  const accountLocation = useCallback((id: string | null) => {
+    const params = new URLSearchParams(location.search);
+    params.set("view", "users");
+    params.delete("tool"); params.delete("editor");
+    if (id) params.set("account", id); else params.delete("account");
+    return { pathname: location.pathname, search: `?${params}`, hash: location.hash };
+  }, [location]);
+  const navigateAccount = useCallback((id: string | null) => routerNavigate(accountLocation(id)), [accountLocation, routerNavigate]);
+  const accountHref = useCallback((id: string) => { const target = accountLocation(id); return `${target.pathname}${target.search}${target.hash}`; }, [accountLocation]);
   const acceptSession = useCallback((session: Session | null) => {
     const next = toAdminSession(session);
     if (next) catalogSession.setOwner(next.userId);
-    else catalogSession.suspend();
+    else { catalogSession.suspend(); setVerifiedUserId(null); }
     setAdminSession(next);
   }, [catalogSession]);
   const [authLoading, setAuthLoading] = useState(false);
@@ -456,7 +496,7 @@ export default function BackOfficePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [activeTab, setActiveTab] = useState<TabId>("accounts");
+  const [activeTab, setActiveTab] = useState<TabId>("preprod");
   const [days, setDays] = useState(30);
   const [limit, setLimit] = useState(150);
   const [personaFilter, setPersonaFilter] = useState<string>("all");
@@ -497,7 +537,7 @@ export default function BackOfficePage() {
   }, [acceptSession]);
 
   const loadDashboard = useCallback(async () => {
-    if (!adminSession || activeTab === "accounts") return;
+    if (!adminSession || section !== "diagnostic") return;
     setLoading(true);
     setError(null);
     try {
@@ -507,6 +547,7 @@ export default function BackOfficePage() {
         persona: personaFilter === "all" ? null : personaFilter,
       });
       setDashboard(data);
+      setVerifiedUserId(adminSession.userId);
     } catch (e) {
       const message = e instanceof Error ? e.message : "Unable to load data";
       setError(message);
@@ -517,14 +558,14 @@ export default function BackOfficePage() {
     } finally {
       setLoading(false);
     }
-  }, [adminSession, activeTab, days, limit, personaFilter]);
+  }, [adminSession, activeTab, days, limit, personaFilter, section]);
 
   useEffect(() => {
     void loadDashboard();
   }, [loadDashboard]);
 
   useEffect(() => {
-    if (!adminSession || activeTab === "accounts") return;
+    if (!adminSession || section !== "diagnostic") return;
     const timer = setInterval(() => {
       void loadDashboard();
     }, 30000);
@@ -932,6 +973,18 @@ export default function BackOfficePage() {
     } catch { setLogoutError(true); }
     finally { setAuthLoading(false); }
   }, [account, authLoading, catalogDirty, catalogSession]);
+
+  useEffect(() => {
+    if (!publishNavigation || !adminSession || verifiedUserId !== adminSession.userId) return;
+    publishNavigation({ section, onNavigate: navigateSection });
+    return () => publishNavigation(null);
+  }, [publishNavigation, adminSession, verifiedUserId, section, navigateSection]);
+
+  useEffect(() => {
+    if (!publishSignOut || !adminSession) return;
+    publishSignOut({ onSignOut: () => void disconnect(), busy: authLoading });
+    return () => publishSignOut(null);
+  }, [publishSignOut, adminSession, disconnect, authLoading]);
 
   const saveSessionAdmin = useCallback(async () => {
     if (!adminSession || !detail?.session?.session_id) return;
@@ -1352,69 +1405,37 @@ export default function BackOfficePage() {
     );
   }
 
-  if (activeTab === "accounts") return (
+  const standaloneNavigation = !publishNavigation ? <BackofficeNavigation section={section} onNavigate={navigateSection} lang={locale} homeHref={`/${locale}`} /> : null;
+
+  if (section !== "diagnostic") return (
     <div className="bo-shell ms-page">
+      {standaloneNavigation}
       <Breadcrumb items={[{ label: t("Back-office", "Back office") }]} includeSchema={false}/>
       <div className="bo-account-toolbar"><p>{t("Administration", "Administration")}<span aria-hidden> · </span>{adminSession.email || t("Compte connecté", "Signed-in account")}</p>
-        <StackButton className="bo-signout" disabled={authLoading} onClick={() => void disconnect()} icon={<LogOut size={16} aria-hidden/>}>{t("Fermer", "Sign out")}</StackButton>
+        {!publishNavigation && <StackButton className="bo-signout" disabled={authLoading} onClick={() => void disconnect()} icon={<LogOut size={16} aria-hidden/>}>{t("Fermer", "Sign out")}</StackButton>}
       </div>
       {logoutFeedback}
-      <AccountsDashboard key={adminSession.userId} catalogSession={catalogSession} onCatalogReauthenticate={()=>{catalogSession.suspend();setAdminSession(null);}} onCatalogDirtyChange={setCatalogDirty} initialView="overview" onOpenHistory={() => setActiveTab("preprod")}/>
+      {sectionError && <p role="alert">{t("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</p>}
+      <AccountsDashboard accountHref={accountHref} accountId={section === "users" ? new URLSearchParams(location.search).get("account") : null} onAccountNavigate={navigateAccount} onAuthorization={setAuthorization} section={section} onSectionNavigate={navigateSection} key={adminSession.userId} catalogSession={catalogSession} onCatalogReauthenticate={()=>{catalogSession.suspend();setAdminSession(null);}} onCatalogDirtyChange={setCatalogDirty} initialView="overview"/>
     </div>
   );
 
   return (
     <div className="max-w-[1400px] mx-auto px-4 py-6 md:py-10 space-y-6">
-      <button className="ba-button" onClick={() => setActiveTab("accounts")}>{t("Comptes et stacks", "Accounts and stacks")}</button>
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-semibold text-foreground">
-            {t("Back-office diagnostic", "Diagnostic back office")}
-          </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            {t(
-              "Pilotage onboarding, scoring, persistance et cycle email.",
-              "Operational view for onboarding, scoring, persistence, and email lifecycle."
-            )}
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="h-9 px-3 rounded-md border border-border text-xs inline-flex items-center text-muted-foreground">
-            {adminSession.email || t("Admin connecté", "Signed-in admin")}
-            {adminSession.expiresAt ? ` · ${formatDateTime(adminSession.expiresAt, locale)}` : ""}
-          </span>
-          <button
-            onClick={
-              activeTab === "pilotage"
-                ? exportPilotageCsv
-                : activeTab === "sessions"
-                ? exportSessionsCsv
-                : activeTab === "emails"
-                  ? exportEmailCsv
-                  : activeTab === "restitutions"
-                    ? exportRestitutionsCsv
-                    : exportQualityCsv
-            }
-            className="h-9 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
-          >
-            <Download className="w-4 h-4" />
-            {t("Exporter CSV", "Export CSV")}
-          </button>
-          <button
-            onClick={() => void loadDashboard()}
-            className="h-9 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
-          >
-            <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
-            {t("Rafraîchir", "Refresh")}
-          </button>
-          <button
+      {standaloneNavigation}
+      <BackofficePageHeading
+        title={t("Back-office diagnostic", "Diagnostic back office")}
+        description={t("Pilotage onboarding, scoring, persistance et cycle email.", "Operational view for onboarding, scoring, persistence, and email lifecycle.")}
+        action={<StackButton onClick={() => void loadDashboard()} disabled={loading} icon={<RefreshCw size={16} />}>{t("Rafraîchir", "Refresh")}</StackButton>} />
+      <div className="flex flex-wrap items-center gap-2">
+
+          {!publishNavigation && <button
             disabled={authLoading} onClick={() => void disconnect()}
             className="h-9 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
           >
             <LogOut className="w-4 h-4" />
             {t("Fermer", "Sign out")}
-          </button>
-        </div>
+          </button>}
       </div>
 
       {logoutFeedback}
@@ -1575,6 +1596,26 @@ export default function BackOfficePage() {
           <ShieldAlert className="w-4 h-4" />
           {t("Qualité", "Quality")}
         </button>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2">
+          <button
+            onClick={
+              activeTab === "pilotage"
+                ? exportPilotageCsv
+                : activeTab === "sessions"
+                ? exportSessionsCsv
+                : activeTab === "emails"
+                  ? exportEmailCsv
+                  : activeTab === "restitutions"
+                    ? exportRestitutionsCsv
+                    : exportQualityCsv
+            }
+            className="h-9 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
+          >
+            <Download className="w-4 h-4" />
+            {t("Exporter CSV", "Export CSV")}
+          </button>
       </div>
 
       {activeTab === "preprod" && (

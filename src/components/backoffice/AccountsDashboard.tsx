@@ -1,5 +1,10 @@
+import listStyles from "@/ds/BackofficePageHeading/BackofficeList.module.css";
 import { useEffect, useId, useRef, useState } from "react";
 import { useLang } from "@/hooks/useLang";
+import BackofficePageHeading from "@/ds/BackofficePageHeading/BackofficePageHeading";
+import Button from "@/ds/Button/Button";
+import Field from "@/ds/Field/Field";
+import { Notice, NoticeText } from "@/ds/Notice/Notice";
 import {
   loadAccountDetail,
   loadAccountsDashboard,
@@ -14,7 +19,6 @@ import {
   FileText,
   Layers3,
   RefreshCw,
-  Search,
   ShieldAlert,
   Users,
 } from "@/lib/icons";
@@ -35,7 +39,14 @@ export function AccountsDashboard({
   catalogSession: suppliedSession,
   onCatalogDirtyChange,
   onCatalogReauthenticate,
+  section, onSectionNavigate, onAuthorization, accountId, onAccountNavigate, accountHref,
 }: {
+  accountHref?: (id: string) => string;
+  accountId?: string | null;
+  onAccountNavigate?: (id: string | null) => void;
+  onAuthorization?: (authorized: boolean) => void;
+  section?: View;
+  onSectionNavigate?: (section: View) => Promise<boolean>;
   catalogSession?: CatalogDraftSession;
   onCatalogReauthenticate?: () => void;
   onCatalogDirtyChange?: (dirty: boolean) => void;
@@ -47,8 +58,9 @@ export function AccountsDashboard({
   const detailRegion = useRef<HTMLElement>(null);
   const [ownSession] = useState(() => new CatalogDraftSession());
   const catalogSession = suppliedSession ?? ownSession;
-  const [view, setView] = useState<View>(() =>
+  const [localView, setView] = useState<View>(() =>
     new URLSearchParams(window.location.search).get("view") === "catalog" ? "catalog" : initialView);
+  const view = section ?? localView;
   const [catalogDirty, setCatalogDirty] = useState(false);
   const [navigationError, setNavigationError] = useState(false);
   useEffect(() => {
@@ -67,20 +79,20 @@ export function AccountsDashboard({
   >(null);
   const [error, setError] = useState<"denied" | "unavailable" | null>(null);
   const [loading, setLoading] = useState(true);
-  const [selected, setSelected] = useState<string | null>(null);
+  const [localSelected, setSelected] = useState<string | null>(null);
+  const selected = onAccountNavigate ? (view === "users" ? accountId ?? null : null) : localSelected;
   const [detail, setDetail] = useState<AccountDetail | null>(null);
   const [detailLoading, setDetailLoading] = useState(false);
   const [detailError, setDetailError] = useState<
     "denied" | "unavailable" | null
   >(null);
   const [detailReload, setDetailReload] = useState(0);
+  const loadedQuery = useRef({ search, page });
+  const pendingDetailFocus = useRef(false);
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    setData(null);
     setError(null);
-    setSelected(null);
-    setDetail(null);
     void loadAccountsDashboard({
       search,
       page,
@@ -89,7 +101,9 @@ export function AccountsDashboard({
     })
       .then((value) => {
         if (!cancelled) {
+          loadedQuery.current = { search, page };
           setData(value);
+          onAuthorization?.(true);
           if (!search && page === 1) {
             setOverview(value);
             setOverviewError(null);
@@ -99,6 +113,8 @@ export function AccountsDashboard({
       .catch((error) => {
         if (!cancelled) {
           const kind = accessDenied(error) ? "denied" : "unavailable";
+          if (kind === "denied") { onAuthorization?.(false); setOverview(null); setOverviewError("denied"); }
+          if (kind === "denied") setData(null);
           setError(kind);
           if (!search && page === 1) {
             setOverview(null);
@@ -112,7 +128,7 @@ export function AccountsDashboard({
     return () => {
       cancelled = true;
     };
-  }, [search, page, reload]);
+  }, [search, page, reload, onAuthorization]);
   // The overview is always the unfiltered first page, never the last user search.
   useEffect(() => {
     if (view !== "overview" && view !== "stacks") return;
@@ -161,22 +177,25 @@ export function AccountsDashboard({
       cancelled = true;
     };
   }, [selected, detailReload]);
+  useEffect(() => { pendingDetailFocus.current = Boolean(selected); }, [selected]);
   useEffect(() => {
-    if (!selected || detailLoading || view !== "users") return;
-    detailRegion.current?.scrollIntoView?.({
+    if (!selected || detailLoading || view !== "users" || !pendingDetailFocus.current || !detailRegion.current) return;
+    pendingDetailFocus.current = false;
+    detailRegion.current.scrollIntoView?.({
       block: "start",
       behavior: "instant",
     });
-    detailRegion.current?.focus({ preventScroll: true });
-  }, [selected, detailLoading, view]);
+    detailRegion.current.focus({ preventScroll: true });
+  }, [selected, detailLoading, view, data]);
   const closeDetail = () => {
     const closing = selected;
-    setSelected(null);
+    if (onAccountNavigate) onAccountNavigate(null); else setSelected(null);
     requestAnimationFrame(() =>
-      document.getElementById(`${searchId}-${closing}`)?.focus(),
+      (document.getElementById(`${searchId}-${closing}`) ?? document.getElementById(searchId))?.focus(),
     );
   };
   const navigate = async (next: View) => {
+    if (onSectionNavigate) { await onSectionNavigate(next); return; }
     if (view === "catalog" && catalogDirty) {
       if (!catalogSession.dirty) { setNavigationError(true); return; }
       try { await catalogSession.flush(); }
@@ -190,7 +209,7 @@ export function AccountsDashboard({
     setView(next);
   };
   const openUser = (id: string) => {
-    setView("users");
+    if (!onAccountNavigate) { if (onSectionNavigate) void onSectionNavigate("users"); else setView("users"); }
     if (id === selected) {
       requestAnimationFrame(() => {
         detailRegion.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
@@ -201,9 +220,12 @@ export function AccountsDashboard({
     setDetail(null);
     setDetailError(null);
     setDetailLoading(true);
-    setSelected(id);
+    if (onAccountNavigate) onAccountNavigate(id); else setSelected(id);
   };
   const pages = data ? Math.max(1, Math.ceil(data.total / data.pageSize)) : 1;
+  const listCurrent = loadedQuery.current.search === search && loadedQuery.current.page === page && !error;
+  const previousUnavailable = loading || !listCurrent || page <= 1;
+  const nextUnavailable = loading || !listCurrent || page >= pages;
   const navigation = [
     {
       id: "overview" as const,
@@ -288,7 +310,7 @@ export function AccountsDashboard({
       className="bo-workspace"
       aria-label={t("Comptes et stacks", "Accounts and stacks")}
     >
-      <nav
+      {!onSectionNavigate && <nav
         className="bo-navigation"
         aria-label={t("Navigation du back-office", "Back-office navigation")}
       >
@@ -316,26 +338,10 @@ export function AccountsDashboard({
             {t("Diagnostic historique", "Historical diagnostic")}
           </button>
         )}
-      </nav>
+      </nav>}
       <div className="bo-content">
         {navigationError && <p role="alert">{t("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</p>}
-        <header className="bo-page-heading ac-page-header">
-          <div>
-            <h1>{title}</h1>
-            <p>{description}</p>
-          </div>
-          {view !== "catalog" && <button
-            className="mk-button tt-button-secondary bo-button"
-            onClick={() => {
-              setOverview(null);
-              setReload((value) => value + 1);
-            }}
-            disabled={loading}
-          >
-            <RefreshCw size={16} aria-hidden />
-            {t("Actualiser", "Refresh")}
-          </button>}
-        </header>
+        {view !== "catalog" && <BackofficePageHeading title={title} description={description} action={view === "usage" || view === "sources" ? undefined : <Button icon={<RefreshCw size={16} />} onClick={() => { setOverview(null); setReload((value) => value + 1); }} disabled={loading}>{t("Actualiser", "Refresh")}</Button>} />}
         {view === "catalog" && <CatalogEditor onReauthenticate={onCatalogReauthenticate} session={catalogSession} onDirtyChange={setCatalogDirty} />}
         {(view === "overview" || view === "stacks") &&
           (overviewError ? (
@@ -358,35 +364,15 @@ export function AccountsDashboard({
           ))}
         <div hidden={view !== "users"}>
           <form
-            className="bo-search"
+            className={listStyles.search}
             onSubmit={(event) => {
               event.preventDefault();
               setPage(1);
               setSearch(input.trim());
             }}
           >
-            <label className="bo-sr" htmlFor={searchId}>
-              {t("Chercher un compte", "Search accounts")}
-            </label>
-            <div className="bo-search-field">
-              <Search size={18} aria-hidden />
-              <input
-                id={searchId}
-                type="search"
-                value={input}
-                onChange={(event) => setInput(event.target.value)}
-                placeholder={t(
-                  "Rechercher par nom ou e-mail…",
-                  "Search name or email…",
-                )}
-              />
-            </div>
-            <button
-              className="mk-button tt-button-primary bo-button bo-button-primary"
-              type="submit"
-            >
-              {t("Rechercher", "Search")}
-            </button>
+            <Field id={searchId} type="search" label={t("Chercher un compte", "Search accounts")} value={input} onChange={(event) => setInput(event.target.value)} placeholder={t("Rechercher par nom ou e-mail…", "Search name or email…")} />
+            <Button type="submit" variant="primary">{t("Rechercher", "Search")}</Button>
           </form>
           {loading && (
             <p className="bo-loading" role="status">
@@ -398,13 +384,13 @@ export function AccountsDashboard({
             failure(error, () => setReload((value) => value + 1))}
           {data && (
             <>
-              {view === "users" && (
+              {view === "users" && listCurrent && (
                 <OverviewMetrics
                   data={data}
                   onUsers={() => navigate("users")}
                 />
               )}
-              <div className="bo-users-heading">
+              {listCurrent && <div className="bo-users-heading">
                 <p>
                   <strong>{data.total}</strong> {t("comptes", "accounts")}
                   {search && (
@@ -417,7 +403,7 @@ export function AccountsDashboard({
                 <span className="bo-tag">
                   {t("Comptes confirmés actifs", "Active confirmed accounts")}
                 </span>
-              </div>
+              </div>}
               <div
                 className={`bo-users-layout${selected ? " bo-has-detail" : ""}`}
               >
@@ -430,18 +416,6 @@ export function AccountsDashboard({
                       <thead>
                         <tr>
                           <th>{t("Compte", "Account")}</th>
-                          <th className="bo-optional">
-                            {t("Métier", "Trade")}
-                          </th>
-                          <th className="bo-optional">
-                            {t("Sélection", "Selection")}
-                          </th>
-                          <th className="bo-optional">
-                            {t("Inscription", "Registered")}
-                          </th>
-                          <th className="bo-optional">
-                            {t("Dernière sauvegarde", "Last saved")}
-                          </th>
                           <th>
                             <span className="bo-sr">
                               {t("Consultation", "View")}
@@ -450,7 +424,7 @@ export function AccountsDashboard({
                         </tr>
                       </thead>
                       <tbody>
-                        {data.accounts.map((account) => (
+                        {(listCurrent ? data.accounts : []).map((account) => (
                           <tr
                             key={account.userId}
                             className={
@@ -468,41 +442,23 @@ export function AccountsDashboard({
                               {account.displayName && (
                                 <small>{account.email || account.userId}</small>
                               )}
-                              <small className="bo-compact-detail">
+                              <small>
                                 {account.insights
                                   ? `${account.insights.usedTools} ${t("utilisés", "using")} · ${account.insights.wishlistTools} ${t("à étudier", "considering")}`
                                   : account.hasStack
                                     ? t("Stack sauvegardée", "Saved stack")
                                     : t("Aucune sauvegarde", "No saved stack")}
                               </small>
-                            </td>
-                            <td className="bo-optional">
-                              {tradeLabel(account.insights?.trade, lang)}
-                            </td>
-                            <td className="bo-optional">
-                              {account.insights ? (
-                                <span className="bo-count-pair">
-                                  {account.insights.usedTools}{" "}
-                                  {t("utilisés", "using")}
-                                  <small>
-                                    {account.insights.wishlistTools}{" "}
-                                    {t("à étudier", "considering")}
-                                  </small>
-                                </span>
-                              ) : account.hasStack ? (
-                                t("Sauvegardée", "Saved")
-                              ) : (
-                                "—"
-                              )}
-                            </td>
-                            <td className="bo-optional">
-                              {date(account.createdAt, lang)}
-                            </td>
-                            <td className="bo-optional">
-                              {date(account.stackUpdatedAt, lang)}
+                              <small><span>{tradeLabel(account.insights?.trade, lang)}</span> · {t("Inscription", "Registered")}: {date(account.createdAt, lang)} · {t("Dernière sauvegarde", "Last saved")}: {date(account.stackUpdatedAt, lang)}</small>
                             </td>
                             <td>
-                              <button
+                              {onAccountNavigate ? <a
+                                className="mk-button tt-button-secondary bo-button bo-open-user"
+                                id={`${searchId}-${account.userId}`}
+                                href={accountHref?.(account.userId) ?? "#"}
+                                onClick={(event) => { if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return; event.preventDefault(); openUser(account.userId); }}
+                                aria-label={`${t("Voir la stack de", "View stack for")} ${account.email || account.userId}`}
+                              ><span>{t("Ouvrir", "Open")}</span><ArrowRight size={16} aria-hidden /></a> :                               <button
                                 className="mk-button tt-button-secondary bo-button bo-open-user"
                                 id={`${searchId}-${account.userId}`}
                                 onClick={() => openUser(account.userId)}
@@ -510,17 +466,15 @@ export function AccountsDashboard({
                               >
                                 <span>{t("Ouvrir", "Open")}</span>
                                 <ArrowRight size={16} aria-hidden />
-                              </button>
+                              </button>}
                             </td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
                   </div>
-                  {data.accounts.length === 0 && (
-                    <p className="bo-empty">
-                      {t("Aucun compte trouvé.", "No accounts found.")}
-                    </p>
+                  {listCurrent && data.accounts.length === 0 && (
+                    <Notice name="accounts-empty"><NoticeText>{t("Aucun compte trouvé.", "No accounts found.")}</NoticeText></Notice>
                   )}
                   <nav
                     className="bo-pagination"
@@ -529,24 +483,21 @@ export function AccountsDashboard({
                       "Account pagination",
                     )}
                   >
-                    <p>
-                      {data.total} {t("comptes", "accounts")} ·{" "}
-                      {t("Page", "Page")} {data.page}/{pages}
-                    </p>
+                    <p>{listCurrent && <>{data.total} {t("comptes", "accounts")} · {t("Page", "Page")} {data.page}/{pages}</>}</p>
                     <div>
                       <button
-                        className="mk-button tt-button-secondary bo-button"
+                        className={`mk-button tt-button-secondary bo-button ${listStyles.paginationButton}`}
                         aria-label={t("Page précédente", "Previous page")}
-                        disabled={loading || page <= 1}
-                        onClick={() => setPage((value) => value - 1)}
+                        aria-disabled={previousUnavailable}
+                        onClick={() => { if (!previousUnavailable) setPage(page - 1); }}
                       >
                         {t("Précédente", "Previous")}
                       </button>
                       <button
-                        className="mk-button tt-button-secondary bo-button"
+                        className={`mk-button tt-button-secondary bo-button ${listStyles.paginationButton}`}
                         aria-label={t("Page suivante", "Next page")}
-                        disabled={loading || page >= pages}
-                        onClick={() => setPage((value) => value + 1)}
+                        aria-disabled={nextUnavailable}
+                        onClick={() => { if (!nextUnavailable) setPage(page + 1); }}
                       >
                         {t("Suivante", "Next")}
                       </button>
@@ -627,14 +578,14 @@ export function AccountsDashboard({
                   </section>
                 )}
               </div>
-              <p className="bo-meta bo-source-note">
+              {listCurrent && <p className="bo-meta bo-source-note">
                 {t("Données actualisées", "Data updated")}:{" "}
                 {date(data.updatedAt, lang)}.{" "}
                 {t(
                   "Les totaux globaux et le classement des outils ne dépendent pas de la recherche ni de la pagination.",
                   "Global totals and tool ranking are independent of search and pagination.",
                 )}
-              </p>
+              </p>}
             </>
           )}
         </div>
