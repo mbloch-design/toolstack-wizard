@@ -153,3 +153,20 @@ it("hides the previous page while the next page is loading", async () => {
   await waitFor(() => expect(screen.queryByText("Personne")).not.toBeInTheDocument());
   expect(screen.getByRole("status")).toHaveTextContent("Chargement des comptes");
 });
+
+it("keeps the selected detail tab and pagination mounted during a new page", async () => {
+  render(<AccountsDashboard section="users" accountId={row.userId} onAccountNavigate={vi.fn()} />);
+  const detail = await screen.findByRole("region", { name: "Détail du compte" });
+  const tab = await within(detail).findByRole("tab", { name: "Données" });
+  fireEvent.click(tab);
+  expect(tab).toHaveAttribute("aria-selected", "true");
+  mocks.list.mockReturnValue(new Promise(() => {}));
+  const next = screen.getByRole("button", { name: "Page suivante" });
+  next.focus();
+  fireEvent.click(next);
+  await waitFor(() => expect(next).toBeDisabled());
+  expect(screen.getByRole("button", { name: "Page suivante" })).toBe(next);
+  expect(within(detail).getByRole("tab", { name: "Données" })).toBe(tab);
+  expect(tab).toHaveAttribute("aria-selected", "true");
+  expect(screen.queryByRole("link", { name: /Voir la stack de/ })).not.toBeInTheDocument();
+});

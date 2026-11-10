@@ -92,10 +92,6 @@ export function AccountsDashboard({
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    if (loadedQuery.current.search !== search || loadedQuery.current.page !== page) {
-      setData(null);
-      loadedQuery.current = { search, page };
-    }
     setError(null);
     void loadAccountsDashboard({
       search,
@@ -105,6 +101,7 @@ export function AccountsDashboard({
     })
       .then((value) => {
         if (!cancelled) {
+          loadedQuery.current = { search, page };
           setData(value);
           onAuthorization?.(true);
           if (!search && page === 1) {
@@ -117,7 +114,7 @@ export function AccountsDashboard({
         if (!cancelled) {
           const kind = accessDenied(error) ? "denied" : "unavailable";
           if (kind === "denied") { onAuthorization?.(false); setOverview(null); setOverviewError("denied"); }
-          setData(null);
+          if (kind === "denied") setData(null);
           setError(kind);
           if (!search && page === 1) {
             setOverview(null);
@@ -226,6 +223,7 @@ export function AccountsDashboard({
     if (onAccountNavigate) onAccountNavigate(id); else setSelected(id);
   };
   const pages = data ? Math.max(1, Math.ceil(data.total / data.pageSize)) : 1;
+  const listCurrent = loadedQuery.current.search === search && loadedQuery.current.page === page && !error;
   const navigation = [
     {
       id: "overview" as const,
@@ -384,13 +382,13 @@ export function AccountsDashboard({
             failure(error, () => setReload((value) => value + 1))}
           {data && (
             <>
-              {view === "users" && (
+              {view === "users" && listCurrent && (
                 <OverviewMetrics
                   data={data}
                   onUsers={() => navigate("users")}
                 />
               )}
-              <div className="bo-users-heading">
+              {listCurrent && <div className="bo-users-heading">
                 <p>
                   <strong>{data.total}</strong> {t("comptes", "accounts")}
                   {search && (
@@ -403,7 +401,7 @@ export function AccountsDashboard({
                 <span className="bo-tag">
                   {t("Comptes confirmés actifs", "Active confirmed accounts")}
                 </span>
-              </div>
+              </div>}
               <div
                 className={`bo-users-layout${selected ? " bo-has-detail" : ""}`}
               >
@@ -424,7 +422,7 @@ export function AccountsDashboard({
                         </tr>
                       </thead>
                       <tbody>
-                        {data.accounts.map((account) => (
+                        {(listCurrent ? data.accounts : []).map((account) => (
                           <tr
                             key={account.userId}
                             className={
@@ -473,7 +471,7 @@ export function AccountsDashboard({
                       </tbody>
                     </table>
                   </div>
-                  {data.accounts.length === 0 && (
+                  {listCurrent && data.accounts.length === 0 && (
                     <Notice name="accounts-empty"><NoticeText>{t("Aucun compte trouvé.", "No accounts found.")}</NoticeText></Notice>
                   )}
                   <nav
@@ -483,15 +481,12 @@ export function AccountsDashboard({
                       "Account pagination",
                     )}
                   >
-                    <p>
-                      {data.total} {t("comptes", "accounts")} ·{" "}
-                      {t("Page", "Page")} {data.page}/{pages}
-                    </p>
+                    <p>{listCurrent && <>{data.total} {t("comptes", "accounts")} · {t("Page", "Page")} {data.page}/{pages}</>}</p>
                     <div>
                       <button
                         className="mk-button tt-button-secondary bo-button"
                         aria-label={t("Page précédente", "Previous page")}
-                        disabled={loading || page <= 1}
+                        disabled={loading || !listCurrent || page <= 1}
                         onClick={() => setPage((value) => value - 1)}
                       >
                         {t("Précédente", "Previous")}
@@ -499,7 +494,7 @@ export function AccountsDashboard({
                       <button
                         className="mk-button tt-button-secondary bo-button"
                         aria-label={t("Page suivante", "Next page")}
-                        disabled={loading || page >= pages}
+                        disabled={loading || !listCurrent || page >= pages}
                         onClick={() => setPage((value) => value + 1)}
                       >
                         {t("Suivante", "Next")}
@@ -581,14 +576,14 @@ export function AccountsDashboard({
                   </section>
                 )}
               </div>
-              <p className="bo-meta bo-source-note">
+              {listCurrent && <p className="bo-meta bo-source-note">
                 {t("Données actualisées", "Data updated")}:{" "}
                 {date(data.updatedAt, lang)}.{" "}
                 {t(
                   "Les totaux globaux et le classement des outils ne dépendent pas de la recherche ni de la pagination.",
                   "Global totals and tool ranking are independent of search and pagination.",
                 )}
-              </p>
+              </p>}
             </>
           )}
         </div>
