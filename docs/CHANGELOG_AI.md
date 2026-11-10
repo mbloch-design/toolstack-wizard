@@ -2,13 +2,13 @@
 
 - La fiche auteur conserve ses champs et ses offres dans une composition allégée. Un aperçu privé du brouillon permet de parcourir les sous-pages et de revenir à la même session d’édition.
 - La revue de publication groupée occupe une vue distincte ; les contrôles de version et la confirmation restent en place. Les stories restent à valider.
+- Après revue, le titre d’administration reste visible au défilement, la rubrique active se distingue en sombre et la pagination conserve le focus. La revue de publication annonce son titre au clavier et l’aperçu ne lance pas de lecteur vidéo tiers.
 
 ## 2026-11-10 · Back-office · en-têtes et lien de détail
 
 - Après revue : navigation de compte atomique et focus robuste au chargement asynchrone ; liste de fiches du système avec actions secondaires, lignes utilisateurs simplifiées et export associé aux onglets du diagnostic.
 
 - Ajout d’un en-tête de page du système, stories à valider, action de publication portée par le catalogue et détail utilisateur associé à l’URL. Le rechargement de la liste conserve le détail ouvert.
-- Les listes et le diagnostic conservent encore leur présentation héritée ; leur refonte et la recette visuelle des parcours restent à terminer.
 
 ## 2026-11-09 · Back-office · navigation unifiée
 
