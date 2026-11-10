@@ -87,9 +87,15 @@ export function AccountsDashboard({
     "denied" | "unavailable" | null
   >(null);
   const [detailReload, setDetailReload] = useState(0);
+  const loadedQuery = useRef({ search, page });
+  const pendingDetailFocus = useRef(false);
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
+    if (loadedQuery.current.search !== search || loadedQuery.current.page !== page) {
+      setData(null);
+      loadedQuery.current = { search, page };
+    }
     setError(null);
     void loadAccountsDashboard({
       search,
@@ -174,13 +180,15 @@ export function AccountsDashboard({
       cancelled = true;
     };
   }, [selected, detailReload]);
+  useEffect(() => { pendingDetailFocus.current = Boolean(selected); }, [selected]);
   useEffect(() => {
-    if (!selected || detailLoading || view !== "users") return;
-    detailRegion.current?.scrollIntoView?.({
+    if (!selected || detailLoading || view !== "users" || !pendingDetailFocus.current || !detailRegion.current) return;
+    pendingDetailFocus.current = false;
+    detailRegion.current.scrollIntoView?.({
       block: "start",
       behavior: "instant",
     });
-    detailRegion.current?.focus({ preventScroll: true });
+    detailRegion.current.focus({ preventScroll: true });
   }, [selected, detailLoading, view, data]);
   const closeDetail = () => {
     const closing = selected;

@@ -122,3 +122,34 @@ it("returns focus to search when a linked account is absent from the page", asyn
   expect(navigate).toHaveBeenCalledWith(null);
   await waitFor(() => expect(screen.getByRole("searchbox", { name: "Chercher un compte" })).toHaveFocus());
 });
+
+it("keeps focus in search when refreshing a selected detail", async () => {
+  mocks.detail.mockResolvedValue({ ...row, stack: null });
+  render(<AccountsDashboard section="users" accountId={row.userId} onAccountNavigate={vi.fn()} />);
+  await screen.findByText("Aucune stack enregistrée.");
+  const search = screen.getByRole("searchbox", { name: "Chercher un compte" });
+  search.focus();
+  fireEvent.click(screen.getByRole("button", { name: "Actualiser" }));
+  await waitFor(() => expect(mocks.list).toHaveBeenCalledTimes(2));
+  await act(async () => {});
+  expect(search).toHaveFocus();
+});
+
+it("hides previous results while a different search or page is loading", async () => {
+  render(<AccountsDashboard />);
+  await screen.findByText("Personne");
+  mocks.list.mockReturnValue(new Promise(() => {}));
+  fireEvent.change(screen.getByRole("searchbox", { name: "Chercher un compte" }), { target: { value: "autre" } });
+  fireEvent.click(screen.getByRole("button", { name: "Rechercher" }));
+  await waitFor(() => expect(screen.queryByText("Personne")).not.toBeInTheDocument());
+  expect(screen.getByRole("status")).toHaveTextContent("Chargement des comptes");
+});
+
+it("hides the previous page while the next page is loading", async () => {
+  render(<AccountsDashboard />);
+  await screen.findByText("Personne");
+  mocks.list.mockReturnValue(new Promise(() => {}));
+  fireEvent.click(screen.getByRole("button", { name: "Page suivante" }));
+  await waitFor(() => expect(screen.queryByText("Personne")).not.toBeInTheDocument());
+  expect(screen.getByRole("status")).toHaveTextContent("Chargement des comptes");
+});
