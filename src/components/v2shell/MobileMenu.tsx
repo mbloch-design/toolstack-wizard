@@ -1,3 +1,4 @@
+import { CATALOG_EXIT_BLOCKED_EVENT } from "@/components/backoffice/useCatalogExitGuard";
 import { Notice, NoticeText } from "@/ds/Notice/Notice";
 import { BackofficeNavigation } from "@/ds/BackofficeNavigation/BackofficeNavigation";
 import type { BackofficeNavigationModel } from "@/components/backoffice/backofficeNavigation";
@@ -66,6 +67,16 @@ export default function MobileMenu({ isAdmin = false, admin, open, onClose, pref
   }, [open]);
   const panelRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
+
+  // The catalogue guard intercepts links during capture, before their handlers.
+  // Its bubbled notification lets the open dialog explain the blocked exit.
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (!isAdmin || !open || !panel) return;
+    const onBlockedLink = () => setBlocked(true);
+    panel.addEventListener(CATALOG_EXIT_BLOCKED_EVENT, onBlockedLink);
+    return () => panel.removeEventListener(CATALOG_EXIT_BLOCKED_EVENT, onBlockedLink);
+  }, [isAdmin, open, mounted]);
 
   // Chaque ouverture repart du niveau principal.
   useEffect(() => {

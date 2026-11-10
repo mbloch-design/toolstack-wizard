@@ -446,3 +446,31 @@ test('mobile admin drawer announces blocked navigation within the dialog', async
   await dialog.getByRole('button', { name: 'Utilisateurs', exact: true }).click();
   await expect(dialog.getByRole('alert')).toContainText('avant de quitter', { timeout: 3000 });
 });
+
+test('mobile admin drawer explains blocked site and language links while keeping edits', async ({ page, request }) => {
+  await control(request, 'reset', { users: [{ email: 'admin@example.invalid' }] });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await login(page, 'fr');
+  await page.getByRole('button', { name: 'Modifier Notion', exact: true }).click();
+  const input = page.getByLabel('Description courte', { exact: true });
+  await input.fill('Brouillon à conserver');
+  for (const name of ['Retour au site', 'English']) {
+    await page.getByRole('button', { name: 'Ouvrir le menu' }).click();
+    const dialog = page.getByRole('dialog', { name: 'Menu' });
+    await dialog.getByRole('link', { name, exact: true }).click();
+    await expect(dialog.getByRole('alert')).toContainText('avant de quitter', { timeout: 3000 });
+    await expect(dialog).toBeVisible();
+    await expect(page).toHaveURL(/\/fr\/back-office\?view=catalog/);
+    await dialog.getByRole('button', { name: 'Fermer le menu' }).click();
+    await expect(input).toHaveValue('Brouillon à conserver');
+  }
+  await page.getByRole('button', { name: 'Ouvrir le menu' }).click();
+  const dialog = page.getByRole('dialog', { name: 'Menu' });
+  const modifier = await page.evaluate(() => /Mac/.test(navigator.platform) ? 'Meta' : 'Control');
+  const popupPromise = page.context().waitForEvent('page');
+  await dialog.getByRole('link', { name: 'English', exact: true }).click({ modifiers: [modifier] });
+  const popup = await popupPromise;
+  await popup.close();
+  await expect(input).toHaveValue('Brouillon à conserver');
+  await expect(page).toHaveURL(/\/fr\/back-office\?view=catalog/);
+});
