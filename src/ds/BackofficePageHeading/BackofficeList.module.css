@@ -5,3 +5,8 @@
   gap: var(--tt-space-4);
   margin-bottom: var(--tt-space-6);
 }
+
+.paginationButton[aria-disabled="true"] {
+  opacity: var(--tt-disabled);
+  cursor: default;
+}

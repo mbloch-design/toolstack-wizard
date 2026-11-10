@@ -224,6 +224,8 @@ export function AccountsDashboard({
   };
   const pages = data ? Math.max(1, Math.ceil(data.total / data.pageSize)) : 1;
   const listCurrent = loadedQuery.current.search === search && loadedQuery.current.page === page && !error;
+  const previousUnavailable = loading || !listCurrent || page <= 1;
+  const nextUnavailable = loading || !listCurrent || page >= pages;
   const navigation = [
     {
       id: "overview" as const,
@@ -484,18 +486,18 @@ export function AccountsDashboard({
                     <p>{listCurrent && <>{data.total} {t("comptes", "accounts")} · {t("Page", "Page")} {data.page}/{pages}</>}</p>
                     <div>
                       <button
-                        className="mk-button tt-button-secondary bo-button"
+                        className={`mk-button tt-button-secondary bo-button ${listStyles.paginationButton}`}
                         aria-label={t("Page précédente", "Previous page")}
-                        disabled={loading || !listCurrent || page <= 1}
-                        onClick={() => setPage((value) => value - 1)}
+                        aria-disabled={previousUnavailable}
+                        onClick={() => { if (!previousUnavailable) setPage(page - 1); }}
                       >
                         {t("Précédente", "Previous")}
                       </button>
                       <button
-                        className="mk-button tt-button-secondary bo-button"
+                        className={`mk-button tt-button-secondary bo-button ${listStyles.paginationButton}`}
                         aria-label={t("Page suivante", "Next page")}
-                        disabled={loading || !listCurrent || page >= pages}
-                        onClick={() => setPage((value) => value + 1)}
+                        aria-disabled={nextUnavailable}
+                        onClick={() => { if (!nextUnavailable) setPage(page + 1); }}
                       >
                         {t("Suivante", "Next")}
                       </button>

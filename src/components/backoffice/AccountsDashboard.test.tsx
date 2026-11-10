@@ -164,8 +164,9 @@ it("keeps the selected detail tab and pagination mounted during a new page", asy
   const next = screen.getByRole("button", { name: "Page suivante" });
   next.focus();
   fireEvent.click(next);
-  await waitFor(() => expect(next).toBeDisabled());
+  await waitFor(() => expect(next).toHaveAttribute("aria-disabled", "true"));
   expect(screen.getByRole("button", { name: "Page suivante" })).toBe(next);
+  expect(next).toHaveFocus();
   expect(within(detail).getByRole("tab", { name: "Données" })).toBe(tab);
   expect(tab).toHaveAttribute("aria-selected", "true");
   expect(screen.queryByRole("link", { name: /Voir la stack de/ })).not.toBeInTheDocument();

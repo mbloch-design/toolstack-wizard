@@ -18,7 +18,8 @@ it.each(["fr", "en"])("uses the active product shell for the %s back-office rout
   </Routes></MemoryRouter>);
   expect(container.querySelector(".asv2-root .asv2-sidebar")).not.toBeNull();
   expect(container.querySelector(".asv2-workspace .asv2-content .asv2-main")).toContainElement(screen.getByRole("heading", { name: "Accounts route" }));
-  expect(screen.getByRole("navigation", { name: lang === "fr" ? "Navigation principale" : "Main navigation" })).toBeInTheDocument();
+  const navigation = screen.getByRole("navigation", { name: lang === "fr" ? "Navigation du back-office" : "Back-office navigation" });
+  expect(navigation).toContainElement(screen.getByRole("link", { name: lang === "fr" ? "Retour au site" : "Back to site" }));
   expect(screen.getByRole("main")).toHaveAttribute("id", "main-content");
-  expect(screen.getByRole("contentinfo").closest(".asv2-content")).not.toBeNull();
+  expect(screen.queryByRole("contentinfo")).not.toBeInTheDocument();
 });
