@@ -217,6 +217,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   // mobile (voir index.css, max-width: 640px) : on écoute le bon conteneur.
   useEffect(() => {
     setChromeHidden(false);
+    if (isAdmin) return;
     const mobile = window.matchMedia("(max-width: 640px)");
     let lastY = 0;
     let frame = 0;
@@ -245,7 +246,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
       window.removeEventListener("scroll", onScroll);
       if (frame) cancelAnimationFrame(frame);
     };
-  }, [location.pathname]);
+  }, [isAdmin, location.pathname]);
 
   useEffect(() => {
     if (searchOpen || menuOpen) setChromeHidden(false);
