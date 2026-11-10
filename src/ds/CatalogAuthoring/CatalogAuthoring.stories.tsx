@@ -6,6 +6,7 @@ import { catalogCapabilities } from "@/lib/catalogPolicy";
 import { Button, LinkAction } from "../Controls/Controls";
 import { controlCopy } from "../Controls/Controls.fixtures";
 import { CatalogIssues, CatalogToolbar } from "./CatalogAuthoring";
+import styles from "./CatalogAuthoring.module.css";
 import { changeStoryRecord, emptyRecord, notionRecord } from "./CatalogAuthoring.fixtures";
 
 const meta: Meta = { title: "Catalogue/Édition de fiche", tags: ["a-valider"] };
@@ -32,6 +33,7 @@ function RecordFields({ lang, empty = false }: { lang: "fr" | "en"; empty?: bool
   return <CatalogEditorPresentation context={context}>
     {(editing) => <>
       <CatalogToolbar>
+        <h1 className={styles.editorTitle}>{value.name || t("Nouvelle fiche", "New record")}</h1>
         <Button>{t("Retour aux fiches", "Back to records")}</Button>
         <Button>{t("Aperçu", "Preview")}</Button>
         <p role="status">{t("Modifications locales", "Local changes")}</p>

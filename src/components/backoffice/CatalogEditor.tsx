@@ -148,6 +148,19 @@ export function CatalogEditor({
     [notice, setNotice] = useState(""),
     [review, setReview] = useState<CatalogWorkspace | null>(null),
     [receipt, setReceipt] = useState<CatalogPublication | null>(null);
+  const reviewHeadingRef = useRef<HTMLHeadingElement>(null);
+  const publishTriggerRef = useRef<HTMLButtonElement>(null);
+  const workspaceRef = useRef<HTMLElement>(null);
+  const reviewWasOpen = useRef(false);
+  useEffect(() => {
+    if (review) reviewHeadingRef.current?.focus();
+    else if (reviewWasOpen.current && !inlineSlug) {
+      const trigger = publishTriggerRef.current;
+      if (trigger && !trigger.disabled) trigger.focus();
+      else workspaceRef.current?.focus();
+    }
+    reviewWasOpen.current = Boolean(review);
+  }, [review, inlineSlug]);
   const editorRef = useRef<HTMLElement>(null),
     requestId = useRef(0);
   const draftCount = new Set([
@@ -508,9 +521,11 @@ export function CatalogEditor({
   return (
     <section
       className="bo-catalog"
+      ref={workspaceRef}
+      tabIndex={-1}
       aria-label={t("Édition du catalogue", "Catalogue editor")}
     >
-      {!review && !inlineSlug && <BackofficePageHeading title={t("Fiches", "Records")} description={t("Enregistrez vos brouillons, puis publiez tout le lot ensemble.", "Save drafts, then publish the whole batch together.")} action={<StackButton variant="primary" type="button" disabled={(!draftCount && !session.dirty) || busy || legacyDirty || listLoading || !workspace?.capabilities?.canPublishAll} onClick={() => void prepareReview()}>{t(`Mettre en ligne (${draftCount})`, `Publish (${draftCount})`)}</StackButton>} />}
+      {!review && !inlineSlug && <BackofficePageHeading title={t("Fiches", "Records")} description={t("Enregistrez vos brouillons, puis publiez tout le lot ensemble.", "Save drafts, then publish the whole batch together.")} action={<StackButton ref={publishTriggerRef} variant="primary" type="button" disabled={(!draftCount && !session.dirty) || busy || legacyDirty || listLoading || !workspace?.capabilities?.canPublishAll} onClick={() => void prepareReview()}>{t(`Mettre en ligne (${draftCount})`, `Publish (${draftCount})`)}</StackButton>} />}
       {error && (
         <div className="bo-catalog-feedback" role="alert">
           <p>{error}</p>
@@ -554,7 +569,7 @@ export function CatalogEditor({
           aria-label={t("Modifications à publier", "Changes to publish")}
         >
           <Button disabled={busy} onClick={() => setReview(null)}>{t("Retour aux fiches", "Back to records")}</Button>
-          <h1>
+          <h1 ref={reviewHeadingRef} tabIndex={-1}>
             {t(
               "Relire le lot avant publication",
               "Review the batch before publishing",

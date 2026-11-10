@@ -9,13 +9,14 @@ interface Props {
   toolName: string;
   lang?: "fr" | "en";
   variant?: "default" | "hero";
+  disableVideoPlayback?: boolean;
 }
 
 type GalleryItem =
   | { type: "image"; key: string; src: string }
   | { type: "video"; key: string; video: ToolTutorial };
 
-export default function ToolGallery({ images, imageAlts = [], videos = [], toolName, lang = "fr", variant = "default" }: Props) {
+export default function ToolGallery({ images, imageAlts = [], videos = [], toolName, lang = "fr", variant = "default", disableVideoPlayback = false }: Props) {
   const [active, setActive] = useState(0);
   const [failed, setFailed] = useState<Set<string>>(new Set());
   const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
@@ -86,6 +87,7 @@ export default function ToolGallery({ images, imageAlts = [], videos = [], toolN
       key={media.key}
       type="button"
       className="tg-video-poster"
+      disabled={disableVideoPlayback}
       onClick={() => setPlayingVideoId(media.video.videoId)}
       aria-label={lang === "en" ? `Play video: ${media.video.titleEn}` : `Lire la vidéo : ${media.video.titleFr}`}
     >

@@ -63,7 +63,7 @@ export function CatalogInlineFiche({
     >
       <div hidden={previewOpen}>
       <CatalogToolbar>
-        <h1>{value.name}</h1>
+        <h1 className={styles.editorTitle}>{value.name}</h1>
         <Button onClick={onBack}>
           {t("Retour aux fiches", "Back to records")}
         </Button>

@@ -254,3 +254,8 @@
 .protected strong {
   font-weight: var(--tt-w-em);
 }
+
+.editorTitle {
+  composes: titleM from "../atoms.module.css";
+  overflow-wrap: anywhere;
+}

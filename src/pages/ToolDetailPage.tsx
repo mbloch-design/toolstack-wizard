@@ -727,7 +727,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
               });
               return images.length > 0 || tutorials.length > 0 ? (
                 <div className="td-hero-media">
-                  <ToolGallery images={images} imageAlts={imageAlts} videos={tutorials} toolName={tool.name} lang={lang} variant="hero" />
+                  <ToolGallery images={images} imageAlts={imageAlts} videos={tutorials} toolName={tool.name} lang={lang} variant="hero" disableVideoPlayback={previewMode} />
                 </div>
               ) : null;
             })()}
@@ -823,9 +823,9 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                       <div>
                         <dt>{t("Catégorie", "Category")}</dt>
                         <dd>
-                          <Link className="td-editorial-fact-link" to={`${prefix}/category/${category.slug}`}>
+                          {authorMode ? t(catName, catNameEn) : <Link className="td-editorial-fact-link" to={`${prefix}/category/${category.slug}`}>
                             {t(catName, catNameEn)}
-                          </Link>
+                          </Link>}
                         </dd>
                       </div>
                     )}
@@ -966,7 +966,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                   {editing?.block(["pricing", "pricingEn", "defaultMonthlyPrice", "pricing_v5", "pricing_v5En"], t("Sources, textes et paramètres tarifaires", "Pricing sources, descriptions and settings"), { advanced: true, omit: ["plans"] })}
                   {pricingDetail && <ToolPricingExtras detail={pricingDetail} toolName={tool.name} t={t} />}
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
-                  <ToolBundleSection controlled={privateMode} tool={tool} tools={tools} lang={lang} t={t} />
+                  {!authorMode && <ToolBundleSection controlled={privateMode} tool={tool} tools={tools} lang={lang} t={t} />}
                   {subPage === "prix" && renderSubpageLinks("prix")}
                 </div>
               </div>
@@ -984,6 +984,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                   </h2>
 
                   {editing?.block(["alternatives", "betterAlternative", "freeAlternative", "downgradePlan", "migrationGuide", "relations"], t("Alternatives et migration", "Alternatives and migration"), { advanced: true })}
+                  {!authorMode && <>
                   {alternatives.length > 0 && (
                     <ToolComparisonTable
                       tool={tool} alternatives={alternatives}
@@ -1098,6 +1099,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                       </div>
                     );
                   })()}
+                  </>}
                 </div>
               </div>
             )}
@@ -1108,7 +1110,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
             {showReview && (
               <div id={authorMode ? undefined : "avis"} className="td-subpage-content">
                 {(() => {
-                  if (tool.slug === "tapstitch") return <div className="td-section"><TapstitchDecision t={t} /></div>;
+                  if (!authorMode && tool.slug === "tapstitch") return <div className="td-section"><TapstitchDecision t={t} /></div>;
                   const ts = computeToolTrimScore(tool);
                   const ratingSources = collectRatingSources(
                     Object.entries(tool.toolTrimRating?.evidence ?? {}).map(([key, value]) =>
@@ -1238,21 +1240,21 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                      td-section wrapper and returns null when there's
                      nothing to show, so no empty divider renders. */}
                 {editing?.block(["host_app", "bundle_parent", "integrates_with", "complements", "articles"], t("Écosystème et contenus associés", "Ecosystem and related content"), { advanced: true })}
-                <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
+                {!authorMode && <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />}
 
                 {/* 10 · L'angle IA : augmenter ou remplacer ? — same. */}
                 {editing?.block(["seo"], t("Référencement par langue et sous-page, angle IA", "Search metadata by language and page, AI angle"), { advanced: true })}
                 {editing?.block(["lifecycle", "decision_policy_v3", "force_silence", "pivot_integration_source", "prescription_block_reasons", "prescription_context_questions"], t("Cycle de vie et recommandations", "Lifecycle and recommendations"), { advanced: true })}
                 {editing?.block(["id", "slug", "research", "prescription_output", "prescription_quality", "bestFor", "tags", "nameEn", "categoryId", "gallery_images", "link", "website", "lifecycleStatus", "pricingTiers", "verdictFr"], t("Informations protégées et compatibilité", "Protected information and compatibility"), { advanced: true })}
-                <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
+                {!authorMode && <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />}
 
                 {/* Quiet structured recap for search and extraction. Keeping
                     it at the end of the deep dive avoids interrupting the
                     human decision path near the top of the page. */}
-                <ToolSummaryBlock
+                {!authorMode && <ToolSummaryBlock
                   tool={tool} category={category} alternatives={alternatives}
                   displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
-                />
+                />}
 
               </div>
             )}

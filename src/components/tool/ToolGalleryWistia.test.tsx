@@ -12,3 +12,11 @@ it('loads the official Kit Wistia player only after a click, never a YouTube URL
   expect(container.querySelector('iframe')?.getAttribute('src')).toBe('https://fast.wistia.net/embed/iframe/z0e60vz71d?autoPlay=true');
   expect(container.querySelector('iframe')?.getAttribute('title')).toBe('Official Kit introduction');
 });
+
+it('keeps private preview video posters visible without starting playback', () => {
+  const { container } = render(<ToolGallery images={[]} videos={getToolTutorials('kit')} toolName="Kit" lang="en" variant="hero" disableVideoPlayback />);
+  const play = screen.getByRole('button', { name: 'Play video: Official Kit introduction' });
+  expect(play).toBeDisabled();
+  fireEvent.click(play);
+  expect(container.querySelector('iframe, video')).toBeNull();
+});

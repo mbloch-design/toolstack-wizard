@@ -391,11 +391,17 @@ test("draft preview shows the current price and returns to the same editor", asy
   await control(request, "reset", { representativeCatalog: true, users: [{ email: "admin@example.invalid" }] });
   await openWorkspace(page, "fr");
   await page.getByRole("button", { name: "Édition directe · Notion", exact: true }).click();
+  const editor = page.locator("[data-catalog-editor]");
+  await expect(editor.getByRole("heading", { level: 1, name: "Notion" })).toBeVisible();
+  await expect(editor.getByRole("link", { name: /Tarifs officiels|Visiter Notion|Comparer les alternatives/ })).toHaveCount(0);
   const amount = field(page, "pricing_v5.plans.1.nativeAmount");
   await amount.fill("123");
   await page.getByRole("button", { name: "Aperçu", exact: true }).click();
   const preview = page.getByTestId("catalog-live-preview");
   await expect(preview.getByRole("button", { name: "Revenir à l’édition" })).toBeFocused();
+  const video = preview.locator(".tg-video-poster").first();
+  await expect(video).toBeDisabled();
+  await expect(preview.locator("iframe, video")).toHaveCount(0);
   await preview.getByRole("button", { name: "Prix", exact: true }).click();
   await expect(preview).toContainText("123");
   await preview.getByRole("button", { name: "Revenir à l’édition" }).click();

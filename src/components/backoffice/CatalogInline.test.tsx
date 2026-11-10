@@ -297,7 +297,9 @@ it("preserves the searched draft-only page when global review is cancelled", asy
   fireEvent.click(screen.getByRole("button", { name: "Mettre en ligne (2)" }));
   const review = await screen.findByRole("region", { name: "Modifications à publier" });
   expect(within(review).getByText("Figma")).toBeVisible();
+  expect(within(review).getByRole("heading", { name: "Relire le lot avant publication" })).toHaveFocus();
   fireEvent.click(within(review).getByRole("button", { name: "Annuler" }));
+  expect(screen.getByRole("button", { name: "Mettre en ligne (2)" })).toHaveFocus();
   expect(screen.getByRole("searchbox")).toHaveValue("Notion");
   expect(screen.getByRole("checkbox", { name: "Brouillons uniquement" })).toBeChecked();
   expect(screen.getByText("2 fiches · Page 2")).toBeVisible();
