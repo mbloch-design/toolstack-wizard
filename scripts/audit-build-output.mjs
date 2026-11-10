@@ -40,7 +40,10 @@ const budgets = {
   // 2026-10-20: four best-of pages (FR/EN) and critical CSS variants of the
   // pricing pilot. Measured 15,116 files after both; narrow margin kept.
   // 2026-10-20: Proton Pass and Keeper fiches. Measured 15,167 files.
-  files: 15_200,
+  // 2026-11-10: three bilingual fiches and their sourced media. The local
+  // audit measured 15,231 files before the three final OG assets were added.
+  // Keep a small margin for shared CSS variants; byte ceilings still apply.
+  files: 15_245,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
   // 2026-10-02 (US-NAV-01): search and menu buttons in the shared topbar add
   // about 2 KB of markup and critical CSS to each of the ~13,100 pages, plus
