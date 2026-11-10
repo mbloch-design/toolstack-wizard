@@ -177,10 +177,14 @@ export function PlanActions({
   root,
   index,
   onRemove,
+  labelled = false,
+  disabled = false,
 }: {
   context: CatalogEditingValue;
   root: string;
   index: number;
+  labelled?: boolean;
+  disabled?: boolean;
   onRemove: (root: string, index: number, replacement: string) => void;
 }) {
   const t = (fr: string, en: string) => catalogText(context, fr, en);
@@ -191,7 +195,7 @@ export function PlanActions({
   const [replacement, setReplacement] = useState("");
   if (!plans) return null;
   const plan = plans[index],
-    allowed = canEdit(context, [root, "plans"]);
+    allowed = !disabled && canEdit(context, [root, "plans"]);
   const candidates = plan.isComparePlan
     ? plans.filter(
         (candidate) =>
@@ -207,6 +211,7 @@ export function PlanActions({
     [next[index], next[index + offset]] = [next[index + offset], next[index]];
     context.onChange([root, "plans"], next);
   }
+  const RemoveButton = labelled ? Button : IconButton;
   return (
     <div className={styles.collectionActions}>
       <Button
@@ -216,7 +221,7 @@ export function PlanActions({
         onMouseDown={(event) => event.preventDefault()}
         onClick={() => reorder(-1)}
         icon={<ArrowUp />}
-      />
+      >{labelled && t("Monter", "Move up")}</Button>
       <Button
         size="compact"
         disabled={!allowed || index === plans.length - 1}
@@ -224,7 +229,7 @@ export function PlanActions({
         onMouseDown={(event) => event.preventDefault()}
         onClick={() => reorder(1)}
         icon={<ArrowDown />}
-      />
+      >{labelled && t("Descendre", "Move down")}</Button>
       {candidates.length > 0 && (
         <Field
           label={t(
@@ -251,7 +256,7 @@ export function PlanActions({
           </Select>
         </Field>
       )}
-      <IconButton
+      <RemoveButton
         size="compact"
         variant="quiet"
         aria-label={t("Retirer l’offre", "Remove offer")}
@@ -261,7 +266,7 @@ export function PlanActions({
         onClick={() => {
           if (allowed) onRemove(root, index, replacement);
         }}
-      />
+      >{labelled && t("Retirer", "Remove")}</RemoveButton>
     </div>
   );
 }

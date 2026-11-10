@@ -259,3 +259,7 @@
   composes: titleM from "../atoms.module.css";
   overflow-wrap: anywhere;
 }
+
+.previewStatus {
+  composes: note from "../atoms.module.css";
+}

@@ -194,7 +194,7 @@ test("catalogue retains text on conflict and prevents leaving through workspace 
   await page
     .getByRole("button", { name: "Abandonner mes saisies", exact: true })
     .click();
-  await expect(input).toHaveValue("Description française de test.");
+  await expect(page.getByText("Description française de test.", { exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Utilisateurs", exact: true }).click();
   await expect(
     page.getByRole("heading", { name: "Utilisateurs", exact: true }),
@@ -262,31 +262,27 @@ for (const lang of ["fr", "en"] as const)
           `/${lang}/back-office\\?view=catalog&tool=notion&editor=inline`,
         ),
       );
-      // The route controls content language; the whole fiche shares the same controlled locale.
+      const editDescription = () => page.getByRole("button", { name: lang === "fr" ? "Modifier la description" : "Edit description", exact: true });
+      const done = () => page.getByRole("button", { name: lang === "fr" ? "Terminer" : "Done", exact: true });
+      await editDescription().click();
       await input().fill(`Draft ${lang} Notion`);
-      await page
-        .getByLabel(lang === "fr" ? "Nom" : "Name", { exact: true })
-        .fill("Notion edited");
+      await done().click();
+      await page.getByRole("button", { name: lang === "fr" ? "Modifier l’identité" : "Edit identity", exact: true }).click();
+      await page.getByLabel(lang === "fr" ? "Nom" : "Name", { exact: true }).fill("Notion edited");
+      await done().click();
       await expect(page.locator("[data-catalog-toolbar] [role=status]")).toHaveText(
         lang === "fr" ? "Brouillon enregistré" : "Draft saved",
       );
       await page.reload();
-      await expect(input()).toHaveValue(`Draft ${lang} Notion`);
-      await expect(page.locator(".td-hero-card")).toBeVisible();
-      await page
-        .locator("[data-catalog-editor]")
-        .screenshot({
-          path: test.info().outputPath(`direct-${lang}-${width}.png`),
-        });
-      expect(
-        await page.evaluate(
-          () => document.documentElement.scrollWidth <= innerWidth,
-        ),
-      ).toBe(true);
+      await expect(page.getByText(`Draft ${lang} Notion`, { exact: true })).toBeVisible();
+      await expect(page.getByRole("navigation", { name: lang === "fr" ? "Sections de la fiche" : "Record sections" })).toBeVisible();
+      await page.screenshot({ path: test.info().outputPath(`direct-${lang}-${width}.png`) });
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
       await back().click();
       await direct("Figma").click();
+      await editDescription().click();
       await input().fill(`Draft ${lang} Figma`);
-      // Returning to the list flushes the pending edit before the global review.
+      await done().click();
       await back().click();
       await page
         .getByRole("button", {
@@ -355,22 +351,24 @@ test("direct fiche preserves pending text on autosave conflict and offers explic
   const input = page.getByLabel("Description courte · français", {
     exact: true,
   });
+  await page.getByRole("button", { name: "Modifier la description", exact: true }).click();
   await input.fill("Pending conflict text");
+  await page.getByRole("button", { name: "Terminer", exact: true }).click();
   await expect(page.locator("[data-catalog-editor] .bo-catalog-feedback[role=alert]")).toContainText(
     "changé ailleurs",
   );
-  await expect(input).toHaveValue("Pending conflict text");
+  await expect(page.getByText("Pending conflict text", { exact: true })).toBeVisible();
   await page
     .getByRole("button", { name: "Retour aux fiches", exact: true })
     .click();
-  await expect(input).toHaveValue("Pending conflict text");
+  await expect(page.getByText("Pending conflict text", { exact: true })).toBeVisible();
   await page
     .getByRole("button", { name: "Abandonner mes saisies", exact: true })
     .click();
   await page
     .getByRole("button", { name: "Recharger la fiche", exact: true })
     .click();
-  await expect(input).toHaveValue("Description française de test.");
+  await expect(page.getByText("Description française de test.", { exact: true })).toBeVisible();
 });
 
 test('admin toolbar sign out and modified language click preserve pending catalogue text', async ({ page, request }) => {

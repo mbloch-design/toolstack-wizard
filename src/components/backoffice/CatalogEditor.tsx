@@ -170,7 +170,7 @@ export function CatalogEditor({
   const legacyDirty = Boolean(
     detail && value && JSON.stringify(detail.tool) !== JSON.stringify(value),
   );
-  const dirty = legacyDirty || session.dirty;
+  const dirty = legacyDirty || session.dirty || session.stagedEditing;
   useEffect(() => {
     onDirtyChange?.(dirty);
     return () => onDirtyChange?.(false);
@@ -294,9 +294,11 @@ export function CatalogEditor({
     }
   }
   async function backToRecords() {
+    if (session.stagedEditing) { blockedExit(); return; }
     setBusy(true);
     try {
       await session.flush();
+      if (inlineSlug) session.setStagedBlock(inlineSlug, null);
       setInlineSlug(null);
       link(null);
       setReload((n) => n + 1);
@@ -731,6 +733,7 @@ export function CatalogEditor({
       )}
       {!review && inlineSlug && (
         <CatalogInlineFiche
+          key={inlineSlug}
           session={session}
           slug={inlineSlug}
           lang={lang}

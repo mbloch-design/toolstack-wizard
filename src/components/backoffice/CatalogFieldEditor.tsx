@@ -123,7 +123,7 @@ function cachedChoices(
 const currencyChoices = ["EUR", "USD", "GBP", "CAD", "AUD", "CHF", "JPY"].map(
   (value) => ({ value, label: value }),
 );
-function choices(
+export function catalogChoices(
   context: CatalogEditingValue,
   path: CatalogPath,
 ): CatalogChoice[] | null {
@@ -676,6 +676,7 @@ export function CatalogFieldEditor({
     return true;
   };
   const remove =
+    omit.length === 0 &&
     schema.optional &&
     value !== undefined &&
     registration.deletion === "remove";
@@ -778,7 +779,7 @@ export function CatalogFieldEditor({
       </div>
     );
   const options =
-    choices(context, path) ??
+    catalogChoices(context, path) ??
     (schema.kind === "enum"
       ? schema.options!.map((value) => ({
           value,

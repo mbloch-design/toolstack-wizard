@@ -464,7 +464,7 @@ function BackOfficePageContent() {
   const navigateSection = useCallback(async (next: BackofficeSection): Promise<boolean> => {
     if (section === next) return true;
     if (section === "catalog" && catalogDirty) {
-      if (!catalogSession.dirty) { setSectionError(true); return false; }
+      if (catalogSession.stagedEditing || !catalogSession.dirty) { setSectionError(true); return false; }
       try { await catalogSession.flush(); } catch { setSectionError(true); return false; }
     }
     const params = new URLSearchParams(window.location.search || location.search);

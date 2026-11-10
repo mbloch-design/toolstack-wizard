@@ -1,3 +1,9 @@
+## 2026-11-10 · Back-office · édition de la fiche sur une page
+
+- La fiche présente ses valeurs par section et ouvre les champs dans le bloc ou l’offre à modifier. Terminer applique les changements au brouillon et Annuler écarte uniquement les saisies du bloc.
+- Les usages se choisissent dans le vocabulaire ToolTrim. Les offres présentent leur montant, leur unité et leur période, avec ajout provisoire, édition, déplacement et retrait réversible.
+- La recette utilise des comptes et des données de test pour la sauvegarde, l’aperçu et la publication groupée.
+
 ## 2026-11-10 · Back-office · édition et aperçu des fiches
 
 - La fiche auteur conserve ses champs et ses offres dans une composition allégée. Un aperçu privé du brouillon permet de parcourir les sous-pages et de revenir à la même session d’édition.

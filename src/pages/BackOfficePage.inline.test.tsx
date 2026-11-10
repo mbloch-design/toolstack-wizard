@@ -107,6 +107,7 @@ async function mount() {
     </MemoryRouter>,
   );
   await act(async () => {});
+  fireEvent.click(screen.getByRole("button", { name: "Modifier la description" }));
   return screen.getByLabelText("Description courte · français");
 }
 it("opens the actual deep-linked fiche and keeps focused pending input on TOKEN_REFRESHED", async () => {
@@ -130,6 +131,7 @@ it("recovers only the same user in memory through expiry and clears when another
   expect(screen.getByLabelText("Description courte · français")).toHaveValue(
     "Private text",
   );
+  fireEvent.click(screen.getByRole("button", { name: "Terminer" }));
   await act(async () => { await vi.advanceTimersByTimeAsync(1000); });
   expect(mocks.save).toHaveBeenCalledOnce();
   expect(mocks.save.mock.calls[0][0].value.shortDescription).toBe("Private text");
@@ -137,9 +139,8 @@ it("recovers only the same user in memory through expiry and clears when another
   expect(mocks.save).toHaveBeenCalledOnce();
   await act(async () => notify("SIGNED_OUT", null));
   await act(async () => notify("SIGNED_IN", auth("two")));
-  expect(screen.getByLabelText("Description courte · français")).toHaveValue(
-    "Before",
-  );
+  expect(screen.getByText("Before")).toBeVisible();
+  expect(screen.queryByLabelText("Description courte · français")).not.toBeInTheDocument();
 });
 it("guards explicit signout and deletes recovery after confirmed discard", async () => {
   const field = await mount();
@@ -151,14 +152,14 @@ it("guards explicit signout and deletes recovery after confirmed discard", async
   );
   await act(async () => {});
   await act(async () => notify("SIGNED_IN", auth()));
-  expect(screen.getByLabelText("Description courte · français")).toHaveValue(
-    "Before",
-  );
+  expect(screen.getByText("Before")).toBeVisible();
+  expect(screen.queryByLabelText("Description courte · français")).not.toBeInTheDocument();
 });
 it("offers same-account reauthentication after API expiry without losing unsaved input", async () => {
   mocks.save.mockRejectedValue({ status: 401 });
   const field = await mount();
   fireEvent.change(field, { target: { value: "Recover me" } });
+  fireEvent.click(screen.getByRole("button", { name: "Terminer" }));
   fireEvent.click(screen.getByRole("button", { name: "Retour aux fiches" }));
   await act(async () => {});
   expect(screen.queryByText("Me reconnecter")).toBeInTheDocument();
@@ -167,7 +168,5 @@ it("offers same-account reauthentication after API expiry without losing unsaved
     screen.getByRole("form", { name: "Connexion administrateur" }),
   ).toBeInTheDocument();
   await act(async () => notify("SIGNED_IN", auth()));
-  expect(screen.getByLabelText("Description courte · français")).toHaveValue(
-    "Recover me",
-  );
+  expect(screen.getByText("Recover me")).toBeVisible();
 });
