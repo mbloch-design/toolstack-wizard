@@ -1,3 +1,8 @@
+## 2026-11-10 · Catalogue · Influnity, Micro Man et Noryzia
+
+- Ajout des fiches FR/EN, des logos et des visuels officiels. Les badges ToolTrim ont été vérifiés sur les sites des éditeurs, dont la page Presse de Micro Man.
+- Les tarifs distinguent les frais à la transaction d’Influnity, la facturation électronique à l’unité de Micro Man et les forfaits Association et Essentiel de Noryzia selon sa page Tarifs.
+
 ## 2026-11-09 · Back-office · corrections de fiabilité de l’édition directe
 
 - Une offre payante sans référence est présentée comme prix non communiqué et ne reprend pas les anciens prix ; les changements tarifaires exigent une référence éligible avant publication, sans bloquer la sauvegarde du brouillon ni les données historiques inchangées.

@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "slug": "influnity",
+  "status": "draft",
+  "mode": "MANUAL_READ",
+  "researchedOn": "2026-11-09",
+  "researcher": "Buffy (Freebuff) — lecture directe des pages officielles, sans exécution du collector",
+  "identity": {
+    "officialName": "Influnity",
+    "websiteUrl": "https://www.influnity.fr/",
+    "pricingUrl": "https://www.influnity.fr/tarifs/",
+    "legalUrl": "https://www.influnity.fr/mentions-legales/",
+    "sourceTier": 1,
+    "publisher": "Axel Jacquet (entrepreneur individuel), Seyssuel, Isère, France",
+    "submissionEvidence": "Badge ToolTrim vérifié le 2026-11-10 sur https://www.influnity.fr/. Lien public HTTP 200 : https://tooltrim.com/?utm_source=influnity&utm_medium=badge&utm_campaign=tool_submission"
+  },
+  "collector": {
+    "mode": "MANUAL_READ",
+    "version": 1,
+    "locale_requested": "fr-FR",
+    "market_requested": "reference_fr",
+    "last_checked_at": "2026-11-10",
+    "notes": "Aucune capture collector. Faits relevés sur l'accueil, les tarifs, le fonctionnement, la page confiance et les mentions légales le 2026-11-09. Une re-capture est nécessaire avant publication attestée.",
+    "sources": [
+      {
+        "source_id": "src:68e9f3b50dfef9127da02b869fbf9f91a3e7e3ce11c2a2700125309800a1cb3e",
+        "url": "https://www.influnity.fr/",
+        "domain": "www.influnity.fr",
+        "source_type": "vendor_home",
+        "purpose": "positioning",
+        "is_official": true,
+        "source_tier": 1,
+        "is_accessible": true,
+        "last_checked_at": "2026-11-10",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-11-09",
+          "reason": null
+        },
+        "captures": [
+          {
+            "capture_id": "cap:8f91985e5fe534812ff3c73f9aaf800183fc9e431021e360b7d2fcf728fc08f3",
+            "version": 1,
+            "http_status": 200,
+            "accessed_at": "2026-11-10T14:09:14.791963+00:00",
+            "content_hash": "c8fad83a876d248993c8d9300b0a99bed1bd4fa8a75308ac9c4094dc615a9741",
+            "content_hash_scope": "raw_html",
+            "rendered_by": "http"
+          }
+        ]
+      },
+      {
+        "source_id": "src:705540b27a17ef8903b69eeaf9d86c1028229f8275f642685ad8b0925b60a2bb",
+        "url": "https://www.influnity.fr/tarifs/",
+        "domain": "www.influnity.fr",
+        "source_type": "pricing",
+        "purpose": "billing_commitment",
+        "is_official": true,
+        "source_tier": 1,
+        "is_accessible": true,
+        "last_checked_at": "2026-11-10",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-11-09",
+          "reason": null
+        },
+        "captures": [
+          {
+            "capture_id": "cap:417885912959741270a93bfa338625d87f407476d0df051b9d869c40b15e5c3f",
+            "version": 1,
+            "http_status": 200,
+            "accessed_at": "2026-11-10T14:09:14.791963+00:00",
+            "content_hash": "0f22f1dd4284dfe58290fe4e3a0bb0e449135a732e9dd51196ca1388d8a67e9d",
+            "content_hash_scope": "raw_html",
+            "rendered_by": "http"
+          }
+        ]
+      },
+      {
+        "source_id": "src:37341b2a1325d12122d726351e1aa632672b5b7d7fe3ccca7000896659cdc486",
+        "url": "https://www.influnity.fr/fonctionnement/",
+        "domain": "www.influnity.fr",
+        "source_type": "product_doc",
+        "purpose": "workflow",
+        "is_official": true,
+        "source_tier": 1,
+        "is_accessible": true,
+        "last_checked_at": "2026-11-09",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-11-09",
+          "reason": null
+        },
+        "captures": []
+      },
+      {
+        "source_id": "src:509bd499d05ad0e490ae10316e2a4691df0927176d716cb390adb14dd517da12",
+        "url": "https://www.influnity.fr/confiance/",
+        "domain": "www.influnity.fr",
+        "source_type": "product_doc",
+        "purpose": "security_and_payment",
+        "is_official": true,
+        "source_tier": 1,
+        "is_accessible": true,
+        "last_checked_at": "2026-11-09",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-11-09",
+          "reason": null
+        },
+        "captures": []
+      },
+      {
+        "source_id": "src:7ca2b2fbafe535283da2ca76660720e2ec9ec53d5632720c2ba065ae37401cdf",
+        "url": "https://www.influnity.fr/mentions-legales/",
+        "domain": "www.influnity.fr",
+        "source_type": "legal",
+        "purpose": "identity_and_hosting",
+        "is_official": true,
+        "source_tier": 1,
+        "is_accessible": true,
+        "last_checked_at": "2026-11-09",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-11-09",
+          "reason": null
+        },
+        "captures": []
+      }
+    ],
+    "observations": [
+      {
+        "observation_id": "obs:manual:influnity:ugc_fee",
+        "tool": "Influnity",
+        "status": "observed",
+        "confidence": "high",
+        "observed_on": "2026-11-09",
+        "plan_key": "ugc_service_fee",
+        "plan_name_localized": "Commande de vidéo UGC",
+        "plan_summary": "Frais de service ajoutés au prix affiché par le créateur, à la charge de la marque.",
+        "native_amount": 10,
+        "native_currency": "PERCENT",
+        "billing_period": "per_transaction",
+        "pricing_unit": "percent_of_creator_price",
+        "feature_highlights": [
+          "prix du créateur affiché",
+          "créateur rémunéré à la totalité de son tarif",
+          "frais ajoutés côté marque"
+        ],
+        "evidence_excerpt": "Commande de vidéo UGC — + 10 % de frais de service, ajoutés au prix affiché par le créateur. Exemple : une vidéo affichée à 90 € coûte 90 € + 9 €, soit 99 €. Le créateur reçoit 90 €.",
+        "evidence_selector": "pricing-card:ugc",
+        "source_url": "https://www.influnity.fr/tarifs/",
+        "value_fingerprint": "10|PERCENT|per_transaction|percent_of_creator_price|ugc"
+      },
+      {
+        "observation_id": "obs:manual:influnity:influencer_fee",
+        "tool": "Influnity",
+        "status": "observed",
+        "confidence": "high",
+        "observed_on": "2026-11-09",
+        "plan_key": "influencer_commission",
+        "plan_name_localized": "Collaboration rémunérée",
+        "plan_summary": "Commission prélevée sur la rémunération de l'influenceur ; gratuit pour la marque.",
+        "native_amount": 10,
+        "native_currency": "PERCENT",
+        "billing_period": "per_transaction",
+        "pricing_unit": "percent_of_influencer_fee",
+        "feature_highlights": [
+          "gratuit pour l'entreprise",
+          "contrat signé en ligne",
+          "facture générée automatiquement"
+        ],
+        "evidence_excerpt": "Collaboration rémunérée — 10 % de commission, prélevés sur la rémunération de l'influenceur. Gratuit pour l'entreprise.",
+        "evidence_selector": "pricing-card:influencer",
+        "source_url": "https://www.influnity.fr/tarifs/",
+        "value_fingerprint": "10|PERCENT|per_transaction|percent_of_influencer_fee|influencer"
+      },
+      {
+        "observation_id": "obs:manual:influnity:in_kind",
+        "tool": "Influnity",
+        "status": "observed",
+        "confidence": "high",
+        "observed_on": "2026-11-09",
+        "plan_key": "influencer_in_kind",
+        "plan_name_localized": "Collaboration en nature",
+        "plan_summary": "Forfait par collaboration lorsque la marque rémunère en produits.",
+        "native_amount": 10,
+        "native_currency": "EUR",
+        "billing_period": "per_transaction",
+        "pricing_unit": "flat_per_collaboration",
+        "feature_highlights": [
+          "produits offerts à l'influenceur",
+          "sans commission sur les produits",
+          "suivi de l'envoi et de la publication"
+        ],
+        "evidence_excerpt": "Collaboration en nature — 10 € de forfait par collaboration, à la charge de l'entreprise. Sans commission sur les produits.",
+        "evidence_selector": "pricing-card:in-kind",
+        "source_url": "https://www.influnity.fr/tarifs/",
+        "value_fingerprint": "10|EUR|per_transaction|flat_per_collaboration|in_kind"
+      },
+      {
+        "observation_id": "obs:manual:influnity:referral",
+        "tool": "Influnity",
+        "status": "observed",
+        "confidence": "medium",
+        "observed_on": "2026-11-09",
+        "plan_key": "referral",
+        "plan_name_localized": "Parrainage",
+        "plan_summary": "Part des revenus de la plateforme versée au parrain, avec paliers liés au nombre de filleuls actifs.",
+        "native_amount": 20,
+        "native_currency": "PERCENT",
+        "billing_period": "per_transaction",
+        "pricing_unit": "revenue_share",
+        "tiers": [
+          {
+            "active_referrals": 1,
+            "share_percent": 20
+          },
+          {
+            "active_referrals": 5,
+            "share_percent": 25
+          },
+          {
+            "active_referrals": 20,
+            "share_percent": 30
+          }
+        ],
+        "duration_months": 12,
+        "feature_highlights": [
+          "ouvert à tous",
+          "gratuit",
+          "sur les revenus générés par le filleul"
+        ],
+        "evidence_excerpt": "Vous touchez une part de ce qu'Influnity gagne sur son activité pendant 12 mois : 20 %, puis 25 % dès 5 personnes actives et 30 % dès 20.",
+        "evidence_selector": "section:referral",
+        "source_url": "https://www.influnity.fr/",
+        "value_fingerprint": "20|PERCENT|per_transaction|revenue_share|referral"
+      },
+      {
+        "observation_id": "obs:manual:influnity:referral_first_order",
+        "tool": "Influnity",
+        "status": "observed",
+        "confidence": "high",
+        "observed_on": "2026-11-09",
+        "plan_key": "referred_first_order",
+        "plan_name_localized": "Première commande parrainée",
+        "plan_summary": "Réduction des frais sur la première commande d'un invité.",
+        "native_amount": 5,
+        "native_currency": "PERCENT",
+        "billing_period": "per_transaction",
+        "pricing_unit": "percent_of_creator_price",
+        "feature_highlights": [
+          "réservé aux invités par un parrain",
+          "première commande ou collaboration uniquement"
+        ],
+        "evidence_excerpt": "Invité par un parrain ? Votre première commande ou collaboration n'a que 5 % de frais au lieu de 10 %.",
+        "evidence_selector": "pricing-note:referral",
+        "source_url": "https://www.influnity.fr/tarifs/",
+        "value_fingerprint": "5|PERCENT|per_transaction|percent_of_creator_price|referred"
+      }
+    ],
+    "claims": [
+      {
+        "claim_key": "model.ugc_order",
+        "value": "La marque choisit un créateur à prix affiché, rédige un brief, choisit les droits d'utilisation, paie, puis valide la vidéo pour libérer le paiement.",
+        "source_url": "https://www.influnity.fr/",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "model.influencer_collab",
+        "value": "L'influenceur publie devant sa communauté ; le contrat et le paiement passent par la plateforme.",
+        "source_url": "https://www.influnity.fr/",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "trust.escrow",
+        "value": "Les fonds sont bloqués jusqu'à validation des livrables, via Stripe Connect ; les coordonnées bancaires ne transitent pas par la plateforme.",
+        "source_url": "https://www.influnity.fr/confiance/",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "trust.contract",
+        "value": "Un contrat est généré pour chaque collaboration et signé électroniquement via DocuSign, conformément au règlement eIDAS.",
+        "source_url": "https://www.influnity.fr/confiance/",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "trust.legal_frame",
+        "value": "La plateforme revendique la conformité au cadre français des collaborations d'influence commerciale.",
+        "source_url": "https://www.influnity.fr/",
+        "confidence": "medium"
+      },
+      {
+        "claim_key": "feature.invoices",
+        "value": "Chaque paiement produit ses justificatifs sans saisie manuelle.",
+        "source_url": "https://www.influnity.fr/",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "feature.creator_outreach",
+        "value": "Un créateur peut générer une page de proposition au nom d'une marque, l'envoyer, suivre les ouvertures et les réponses, et être relancé.",
+        "source_url": "https://www.influnity.fr/",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "feature.brand_announcements",
+        "value": "Une marque peut publier une annonce gratuitement sans créer de compte ; les créateurs postulent et restent libres de refuser.",
+        "source_url": "https://www.influnity.fr/pricing",
+        "confidence": "medium"
+      },
+      {
+        "claim_key": "hosting.eu",
+        "value": "Hébergement AWS eu-west-3 (Paris), données personnelles traitées selon le RGPD.",
+        "source_url": "https://www.influnity.fr/mentions-legales/",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "identity.sole_trader",
+        "value": "Éditeur : Axel Jacquet, entrepreneur individuel, SIRET 991 184 862 00019, TVA non applicable.",
+        "source_url": "https://www.influnity.fr/mentions-legales/",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "studio.separate_product",
+        "value": "Un produit distinct, Influnity Studio, propose calculateur de tarifs et kit média aux créateurs.",
+        "source_url": "https://www.influnity.fr/studio/",
+        "confidence": "high"
+      }
+    ],
+    "conflicts": [
+      {
+        "conflict_id": "c1_homepage_variants",
+        "severity": "medium",
+        "summary": "Une variante de la page d'accueil servie sur un autre chemin affiche un prix plancher de vidéo et un parcours créateur différents de la page d'accueil principale.",
+        "evidence_a": "Accueil principal : pas de prix plancher affiché, et bloc « Une marque vous plaît ? Allez la chercher » (prospection).",
+        "evidence_b": "Variante : « Vidéos UGC Pour vos pubs, vos réseaux, votre site. Dès 25 €. » et « Influenceurs et créateurs : postulez aux annonces des marques ».",
+        "resolution": "Aucun prix plancher n'est repris dans la rédaction ; les deux parcours coexistent peut-être (annonces et prospection), à confirmer par l'éditeur.",
+        "needs_human_review": true
+      },
+      {
+        "conflict_id": "c2_two_referral_mechanics",
+        "severity": "low",
+        "summary": "Deux mécanismes de parrainage distincts coexistent : une remise sur la première commande de l'invité, et une part des revenus versée au parrain.",
+        "evidence_a": "Tarifs : « Votre première commande ou collaboration n'a que 5 % de frais au lieu de 10 %. »",
+        "evidence_b": "Accueil : part des revenus de la plateforme versée au parrain pendant 12 mois, avec paliers.",
+        "resolution": "Les deux sont enregistrés comme observations séparées ; la rédaction ne promet aucune remise.",
+        "needs_human_review": true
+      }
+    ],
+    "extraction_unknowns": [
+      "Délai exact de libération des fonds après validation.",
+      "Nombre de retouches incluses et procédure de litige au-delà des affirmations marketing.",
+      "Répartition des frais Stripe entre marque, créateur et plateforme.",
+      "Traitement de la TVA sur les frais de service.",
+      "Taille et couverture réelles de la base de créateurs par thématique.",
+      "Contenu des CGV : annulation, remboursement, résiliation."
+    ]
+  },
+  "conflicts_summary": {
+    "count": 2,
+    "highest_severity": "medium",
+    "blocking": false,
+    "note": "Aucun conflit ne bloque la rédaction : les faits litigieux ont été écartés du texte et conservés en observations."
+  },
+  "unknowns": [
+    "Le prix plancher affiché par les créateurs varie et n'est pas une donnée de la plateforme.",
+    "La qualité et le volume de l'offre créateurs ne sont pas mesurables depuis les pages publiques."
+  ],
+  "editorial_drafts": {
+    "author": "Buffy (Freebuff)",
+    "content_version": 1,
+    "status": "draft",
+    "generated_on": "2026-11-09",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations. pricing_guidance ne porte que de la présentation (modèle, déploiement, cautions), sans fait tarifaire faisant autorité.",
+    "facts_basis": [
+      "cap:8f91985e5fe534812ff3c73f9aaf800183fc9e431021e360b7d2fcf728fc08f3",
+      "cap:417885912959741270a93bfa338625d87f407476d0df051b9d869c40b15e5c3f"
+    ],
+    "fr": {
+      "short_description": "Commandez une vidéo UGC ou organisez une publication avec un influenceur, avec contrat et paiement sur la plateforme.",
+      "long_description": "Influnity propose deux parcours. Pour une vidéo UGC, la marque choisit une prestation et les droits d’utilisation, transmet son brief puis publie elle-même le contenu livré selon le contrat. Pour une collaboration d’influence, le créateur publie sur ses propres canaux. Influnity indique que les fonds des prestations rémunérées restent bloqués jusqu’à validation. Les marques peuvent aussi publier une annonce et les créateurs envoyer une proposition.",
+      "verdict": {
+        "keepIf": [
+          "Vous voulez encadrer le brief, les droits et le paiement au même endroit."
+        ],
+        "avoidIf": [
+          "Vous cherchez à gérer vos campagnes publicitaires ou à mesurer leur rentabilité."
+        ],
+        "threshold": "Choisissez d’abord entre une vidéo à publier vous-même et une publication par le créateur. Les frais et les droits en dépendent."
+      },
+      "pros": [
+        "Les droits d’utilisation sont précisés dans le contrat.",
+        "Le tarif de la prestation UGC est affiché par le créateur.",
+        "L’inscription se fait sans abonnement."
+      ],
+      "cons": [
+        "Les droits et le coût varient selon la prestation.",
+        "Le choix dépend des profils disponibles dans votre niche.",
+        "La validation du contenu et la mesure de la campagne restent à votre charge."
+      ],
+      "use_cases": [
+        "Commander une vidéo pour une fiche produit.",
+        "Organiser une publication devant l’audience d’un créateur.",
+        "Envoyer une proposition à une marque."
+      ],
+      "covers": [
+        "creator-workflow"
+      ],
+      "relevant_for": [
+        "marketing",
+        "brand",
+        "growth",
+        "ecommerce"
+      ],
+      "personas": [
+        "lina"
+      ],
+      "functional_needs": [
+        "creator-workflow"
+      ],
+      "verticals": [
+        "ecommerce",
+        "marketing"
+      ],
+      "solo_relevance": "high",
+      "team_relevance": "medium",
+      "ai_angle": {
+        "stance": "aucun",
+        "aiTools": [],
+        "augmentFr": "L'IA n'est pas le sujet du produit : la valeur vient de créateurs réels qui tournent ou publient. Elle peut aider en amont, à écrire un brief ou des variantes de script, mais elle ne remplace ni la prestation ni le contrat.",
+        "replaceFr": "Rien à remplacer ici : le service vendu est humain. Un générateur de vidéos ne fournit ni audience, ni droits négociés, ni contrat signé.",
+        "idealForFr": "Marques qui veulent du contenu tourné par des personnes, et créateurs qui veulent vendre leur prestation sans négocier au message privé."
+      },
+      "seo": {
+        "metaDescription": "Influnity : fiche ToolTrim. Marketplace UGC et influence en France — contrat signé, paiement bloqué, frais à la transaction et prix fixés par les créateurs.",
+        "aiAngle": {
+          "stance": "aucun"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Pas d'abonnement : la plateforme prélève un pourcentage sur la commande de vidéo côté marque, et une commission sur la rémunération de l'influenceur côté collaboration. Une collaboration en nature est facturée au forfait par opération.",
+        "deployment_note": "Service en ligne, sans installation. Le compte marque et le compte créateur sont gratuits ; seules les transactions génèrent des frais.",
+        "free_plan_card": "Inscription sans abonnement — la plateforme ne se rémunère qu'à la transaction, jamais à l'inscription",
+        "price_reliability": "official_published_unverified",
+        "usage_sensitive": true,
+        "location_sensitive": false,
+        "cautions": [
+          "Le prix d'une vidéo est fixé par le créateur : il n'existe pas de tarif catalogue côté plateforme.",
+          "Les frais de service s'ajoutent au prix affiché ; ils ne sont pas inclus dans le montant montré par le créateur.",
+          "Une collaboration en nature n'est pas gratuite pour la marque : un forfait par opération s'applique.",
+          "Les remises de parrainage ne valent que pour la première opération d'un invité et ne constituent pas un tarif durable.",
+          "Le traitement de la TVA sur les frais n'est pas documenté publiquement : à vérifier avant tout engagement."
+        ],
+        "plan_details": {
+          "ugc_order": {
+            "deployment": "Service en ligne",
+            "summary": "Achat d'une vidéo à un créateur, droits d'utilisation choisis à la commande.",
+            "quota": "Frais proportionnels à la commande, ajoutés au prix du créateur"
+          },
+          "influencer_paid": {
+            "deployment": "Service en ligne",
+            "summary": "Publication rémunérée devant la communauté de l'influenceur ; sans frais pour la marque.",
+            "quota": "Commission prélevée sur la rémunération de l'influenceur"
+          },
+          "influencer_in_kind": {
+            "deployment": "Service en ligne",
+            "summary": "Collaboration rémunérée en produits, avec contrat et suivi.",
+            "quota": "Forfait par collaboration, sans commission sur les produits"
+          },
+          "referral": {
+            "deployment": "Service en ligne",
+            "summary": "Programme de recommandation ouvert à tous, avec paliers selon le nombre de filleuls actifs.",
+            "quota": "Part des revenus générés par le filleul, sur une durée limitée"
+          }
+        }
+      }
+    },
+    "en": {
+      "short_description": "Order a UGC video or arrange an influencer post, with contracts and payment handled on the platform.",
+      "long_description": "Influnity offers two workflows. For a UGC video, brands select a creator’s offer and usage rights, submit a brief, and publish the finished content under the contract terms. For an influencer collaboration, the creator posts to their own channels. Influnity says it holds funds for paid work until the deliverable is approved. Brands can also post opportunities and creators can pitch collaborations.",
+      "verdict": {
+        "keepIf": [
+          "You want to manage the brief, usage rights and payment in one place."
+        ],
+        "avoidIf": [
+          "You need to run paid campaigns or measure their return."
+        ],
+        "threshold": "Choose between a video to publish yourself and a post published by the creator. That choice determines the fees and rights."
+      },
+      "pros": [
+        "Usage rights are set out in the contract.",
+        "Creators list the price of their UGC offers.",
+        "You can sign up without a subscription."
+      ],
+      "cons": [
+        "Rights and costs vary by offer.",
+        "The choice depends on the creators available in your niche.",
+        "You are responsible for approving the content and measuring the campaign."
+      ],
+      "use_cases": [
+        "Order a video for a product page.",
+        "Arrange a post for a creator’s audience.",
+        "Pitch a collaboration to a brand."
+      ],
+      "covers": [
+        "creator-workflow"
+      ],
+      "relevant_for": [
+        "marketing",
+        "brand",
+        "growth",
+        "ecommerce"
+      ],
+      "personas": [
+        "lina"
+      ],
+      "functional_needs": [
+        "creator-workflow"
+      ],
+      "verticals": [
+        "ecommerce",
+        "marketing"
+      ],
+      "solo_relevance": "high",
+      "team_relevance": "medium",
+      "ai_angle": {
+        "stance": "aucun",
+        "aiTools": [],
+        "augmentEn": "AI is not the point of the product: the value comes from real creators who shoot or post. It can help upstream, drafting a brief or script variants, but it replaces neither the service nor the contract.",
+        "replaceEn": "Nothing to replace here: what is sold is human work. A video generator supplies no audience, no negotiated rights and no signed contract.",
+        "idealForEn": "Brands that want content shot by people, and creators who want to sell their work without negotiating in private messages."
+      },
+      "seo": {
+        "metaDescription": "Influnity: ToolTrim review. A UGC and influencer marketplace in France — signed contract, held payment, transaction fees and creator-set prices.",
+        "aiAngle": {
+          "stance": "aucun"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "No subscription: the platform takes a percentage on the video order from the brand, and a commission on the influencer's fee on the collaboration side. An in-kind collaboration is charged a flat amount per operation.",
+        "deployment_note": "An online service with nothing to install. Brand and creator accounts are free; only transactions generate fees.",
+        "free_plan_card": "Sign-up without subscription — the platform earns on transactions only, never on registration",
+        "price_reliability": "official_published_unverified",
+        "usage_sensitive": true,
+        "location_sensitive": false,
+        "cautions": [
+          "A video's price is set by the creator: there is no platform-side rate card.",
+          "Service fees are added to the displayed price; they are not included in the amount the creator shows.",
+          "An in-kind collaboration is not free for the brand: a flat fee per operation applies.",
+          "Referral discounts apply only to a guest's first operation and are not a durable rate.",
+          "How VAT applies to the fees is not publicly documented: check before committing."
+        ],
+        "plan_details": {
+          "ugc_order": {
+            "deployment": "Online service",
+            "summary": "Buying a video from a creator, with usage rights chosen at order time.",
+            "quota": "Fees proportional to the order, added to the creator's price"
+          },
+          "influencer_paid": {
+            "deployment": "Online service",
+            "summary": "Paid post in front of the influencer's community, at no fee for the brand.",
+            "quota": "Commission taken from the influencer's fee"
+          },
+          "influencer_in_kind": {
+            "deployment": "Online service",
+            "summary": "Collaboration paid in products, with contract and tracking.",
+            "quota": "Flat amount per collaboration, no commission on the products"
+          },
+          "referral": {
+            "deployment": "Online service",
+            "summary": "Referral programme open to everyone, with tiers based on active referrals.",
+            "quota": "Share of the revenue generated by the referral, for a limited period"
+          }
+        }
+      }
+    }
+  },
+  "review_attestations": []
+}

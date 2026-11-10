@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1248
+# Records: 1251
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
@@ -53949,6 +53949,135 @@
       "weaknesses": [
         "On Linux, DDC/CI access requires system configuration (i2c group or udev rule), and Wayland can block low-level access",
         "The Mac version only runs on Apple Silicon; no support for Intel Macs"
+      ]
+    }
+  },
+  {
+    "name": "Influnity",
+    "slug": "influnity",
+    "url_fr": "https://tooltrim.com/fr/tool/influnity",
+    "url_en": "https://tooltrim.com/en/tool/influnity",
+    "website": "https://www.influnity.fr/",
+    "category": "creation",
+    "pricing": {
+      "free": "Inscription sans abonnement, sans carte bancaire.",
+      "paid": "Vidéo UGC : tarif du créateur + 10 % pour la marque. Influence rémunérée : 10 % prélevés sur la rémunération de l’influenceur. Collaboration en nature : 10 € par opération pour la marque."
+    },
+    "description_fr": "Commandez une vidéo UGC ou organisez une publication avec un influenceur, avec contrat et paiement sur la plateforme.",
+    "description_en": "Order a UGC video or arrange an influencer post, with contracts and payment handled on the platform.",
+    "price_verified_on": "2026-11-10",
+    "verdict_fr": {
+      "keep_if": "Vous voulez encadrer le brief, les droits et le paiement au même endroit",
+      "avoid_if": "Vous cherchez à gérer vos campagnes publicitaires ou à mesurer leur rentabilité",
+      "strengths": [
+        "Les droits d’utilisation sont précisés dans le contrat",
+        "Le tarif de la prestation UGC est affiché par le créateur",
+        "L’inscription se fait sans abonnement"
+      ],
+      "weaknesses": [
+        "Les droits et le coût varient selon la prestation",
+        "Le choix dépend des profils disponibles dans votre niche",
+        "La validation du contenu et la mesure de la campagne restent à votre charge"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want to manage the brief, usage rights and payment in one place",
+      "avoid_if": "You need to run paid campaigns or measure their return",
+      "strengths": [
+        "Usage rights are set out in the contract",
+        "Creators list the price of their UGC offers",
+        "You can sign up without a subscription"
+      ],
+      "weaknesses": [
+        "Rights and costs vary by offer",
+        "The choice depends on the creators available in your niche",
+        "You are responsible for approving the content and measuring the campaign"
+      ]
+    }
+  },
+  {
+    "name": "Micro Man",
+    "slug": "micro-man",
+    "url_fr": "https://tooltrim.com/fr/tool/micro-man",
+    "url_en": "https://tooltrim.com/en/tool/micro-man",
+    "website": "https://micro-man.fr/",
+    "category": "finance",
+    "pricing": {
+      "free": "Solo : sans abonnement, pour un contact. Chaque facture électronique coûte 0,01 €.",
+      "paid": "Mensuel : 4,99 €/mois. Annuel : 49,99 €/an. Les deux formules incluent les contacts illimités et facturent 0,01 € par facture électronique."
+    },
+    "description_fr": "Gérez devis, factures et cotisations URSSAF depuis un outil pensé pour les micro-entrepreneurs en France.",
+    "description_en": "Manage quotes, invoices and URSSAF contributions in an app for French micro-entrepreneurs.",
+    "price_verified_on": "2026-11-10",
+    "verdict_fr": {
+      "keep_if": "Vous exercez en micro-entreprise et gérez vous-même la facturation",
+      "avoid_if": "Vous devez tenir la comptabilité de plusieurs sociétés",
+      "strengths": [
+        "Devis, factures et encaissements sont liés aux contacts",
+        "Le journal de recettes peut être exporté",
+        "L’éditeur propose un parcours de déclaration et de paiement URSSAF"
+      ],
+      "weaknesses": [
+        "L’offre Solo est limitée à un contact",
+        "Chaque facture électronique est facturée à l’unité",
+        "Le périmètre est centré sur le régime micro français"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You operate as a French micro-entrepreneur and handle your own invoicing",
+      "avoid_if": "You need accounting for multiple companies",
+      "strengths": [
+        "Quotes, invoices and payments are linked to contacts",
+        "The receipts ledger can be exported",
+        "The vendor offers an in-app URSSAF filing and payment workflow"
+      ],
+      "weaknesses": [
+        "Solo is limited to one contact",
+        "Each electronic invoice is charged individually",
+        "The product is focused on the French micro-enterprise regime"
+      ]
+    }
+  },
+  {
+    "name": "Noryzia",
+    "slug": "noryzia",
+    "url_fr": "https://tooltrim.com/fr/tool/noryzia",
+    "url_en": "https://tooltrim.com/en/tool/noryzia",
+    "website": "https://noryzia.com/",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Démonstration sur demande.",
+      "paid": "Association : dès 39 €/mois pour les structures éligibles. Essentiel : dès 135 €/mois, trois utilisateurs inclus. Besoins avancés sur devis."
+    },
+    "description_fr": "Recherchez dans vos documents et e-mails professionnels avec un assistant IA qui cite ses sources.",
+    "description_en": "Search company documents and email with an AI assistant that cites its sources.",
+    "price_verified_on": "2026-11-10",
+    "verdict_fr": {
+      "keep_if": "Vos équipes cherchent régulièrement dans plusieurs espaces documentaires",
+      "avoid_if": "Vos besoins se limitent à quelques dossiers bien classés",
+      "strengths": [
+        "Les réponses renvoient aux documents utilisés",
+        "La recherche peut couvrir plusieurs outils déjà en place",
+        "L’éditeur indique un hébergement en France"
+      ],
+      "weaknesses": [
+        "Les droits et les sources à connecter demandent un cadrage initial",
+        "Les besoins avancés sont chiffrés sur devis",
+        "Les réponses sur des dossiers sensibles demandent une relecture"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your teams regularly search across multiple document stores",
+      "avoid_if": "Your needs are limited to a few well-organised folders",
+      "strengths": [
+        "Answers link to the documents used",
+        "Search can cover multiple existing tools",
+        "The vendor states that data is hosted in France"
+      ],
+      "weaknesses": [
+        "Access controls and source selection require initial setup",
+        "Advanced requirements are priced on request",
+        "Answers about sensitive records require review"
       ]
     }
   }

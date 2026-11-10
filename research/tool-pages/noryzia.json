@@ -1,0 +1,481 @@
+{
+  "schemaVersion": 1,
+  "slug": "noryzia",
+  "status": "draft",
+  "mode": "MANUAL_READ",
+  "researchedOn": "2026-11-09",
+  "researcher": "Buffy (Freebuff) — lecture directe des pages officielles, sans exécution du collector",
+  "identity": {
+    "officialName": "Noryzia",
+    "websiteUrl": "https://noryzia.com/",
+    "pricingUrl": "https://noryzia.com/tarifs",
+    "legalUrl": "https://noryzia.com/legal",
+    "sourceTier": 1,
+    "publisher": "Mehdi Bennis (entrepreneur individuel), Saint-Laurent-du-Pont, Isère, France",
+    "submissionEvidence": "Badge ToolTrim vérifié le 2026-11-10 sur https://noryzia.com/. Lien public HTTP 200 : https://tooltrim.com/?utm_source=noryzia&utm_medium=badge&utm_campaign=tool_submission"
+  },
+  "collector": {
+    "mode": "MANUAL_READ",
+    "version": 1,
+    "locale_requested": "fr-FR",
+    "market_requested": "reference_fr",
+    "last_checked_at": "2026-11-10",
+    "notes": "Aucune capture collector (pas de capture_id, pas de hash de contenu). Les faits viennent de la lecture des pages officielles le 2026-11-09. Une re-capture par research-collector est nécessaire avant toute publication attestée.",
+    "sources": [
+      {
+        "source_id": "src:0cf192568c883dafd5c1afe88a5ef703665bc2fd4d31516b5712e54a76d91f91",
+        "url": "https://noryzia.com/",
+        "domain": "noryzia.com",
+        "source_type": "vendor_home",
+        "purpose": "positioning",
+        "is_official": true,
+        "source_tier": 1,
+        "is_accessible": true,
+        "last_checked_at": "2026-11-10",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-11-09",
+          "reason": null
+        },
+        "captures": [
+          {
+            "capture_id": "cap:452538ff8ed1c45c229e888e1e2a538c54cdd69e5e21f99af9cb192a1493c95c",
+            "version": 1,
+            "http_status": 200,
+            "accessed_at": "2026-11-10T14:09:14.791963+00:00",
+            "content_hash": "86cecac88e8afce27358ee7cbf4bf090cfb79221cbee5c0ab0d2e337eb0e57d9",
+            "content_hash_scope": "raw_html",
+            "rendered_by": "http"
+          }
+        ]
+      },
+      {
+        "source_id": "src:db43855222668311df7a571d647bf6a5113e5ef463c53cc7380c80a2c1ab1080",
+        "url": "https://noryzia.com/tarifs",
+        "domain": "noryzia.com",
+        "source_type": "pricing",
+        "purpose": "billing_commitment",
+        "is_official": true,
+        "source_tier": 1,
+        "is_accessible": true,
+        "last_checked_at": "2026-11-10",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-11-09",
+          "reason": null
+        },
+        "captures": [
+          {
+            "capture_id": "cap:93a03a036020f0a6ec0365bff02a2d74ffdf993fb5928fa804c056726f73ba74",
+            "version": 1,
+            "http_status": 200,
+            "accessed_at": "2026-11-10T14:09:14.791963+00:00",
+            "content_hash": "cad86d5d9b5789c349a15d71fe6faf3b8fda47b1f6c17e51a74a97705a7a4c87",
+            "content_hash_scope": "raw_html",
+            "rendered_by": "http"
+          }
+        ]
+      },
+      {
+        "source_id": "src:aeefc7b9a12fab218e76e5f96b8e06ddbe49ba66d3e4d0418f5b9ca1f30c7396",
+        "url": "https://noryzia.com/legal",
+        "domain": "noryzia.com",
+        "source_type": "legal",
+        "purpose": "identity_and_hosting",
+        "is_official": true,
+        "source_tier": 1,
+        "is_accessible": true,
+        "last_checked_at": "2026-11-09",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-11-09",
+          "reason": null
+        },
+        "captures": []
+      }
+    ],
+    "observations": [
+      {
+        "observation_id": "obs:manual:noryzia:association",
+        "tool": "Noryzia",
+        "status": "observed",
+        "confidence": "medium",
+        "observed_on": "2026-11-09",
+        "first_observed_on": "2026-11-09",
+        "last_confirmed_on": "2026-11-09",
+        "plan_key": "association",
+        "observed_plan_key": "association",
+        "plan_name_localized": "Association",
+        "plan_summary": "Offre d'entrée réservée aux structures associatives éligibles.",
+        "native_amount": 39,
+        "native_currency": "EUR",
+        "billing_period": "monthly",
+        "billing_commitment": "unknown",
+        "pricing_unit": "structure_month",
+        "seat_type": null,
+        "tax_inclusion": null,
+        "feature_highlights": [
+          "structures associatives éligibles",
+          "dimensionnement jusqu'à 4 utilisateurs (grille)",
+          "connecteurs et générateurs au choix",
+          "RGPD et hébergement France inclus"
+        ],
+        "evidence_excerpt": "Association : 39€/mois pour les structures éligibles / Association 39€ /mois Structures associatives éligibles",
+        "evidence_selector": "pricing-grid:Association",
+        "source_url": "https://noryzia.com/tarifs",
+        "market_evidence": {
+          "grid_currency": "EUR",
+          "html_lang_attr": "fr",
+          "french_content_markers": [
+            "€/mois"
+          ]
+        },
+        "value_fingerprint": "39|EUR|monthly|structure_month|association"
+      },
+      {
+        "observation_id": "obs:manual:noryzia:essentiel",
+        "tool": "Noryzia",
+        "status": "observed",
+        "confidence": "medium",
+        "observed_on": "2026-11-09",
+        "first_observed_on": "2026-11-09",
+        "last_confirmed_on": "2026-11-09",
+        "plan_key": "essentiel",
+        "observed_plan_key": "essentiel",
+        "plan_name_localized": "Essentiel",
+        "plan_summary": "Offre entreprise avec utilisateurs inclus ; le tarif est dégressif selon la taille de l'équipe.",
+        "native_amount": 135,
+        "native_currency": "EUR",
+        "billing_period": "monthly",
+        "billing_commitment": "unknown",
+        "pricing_unit": "account_month",
+        "seat_type": "included_seats",
+        "seats_included": 3,
+        "tax_inclusion": null,
+        "feature_highlights": [
+          "3 utilisateurs inclus",
+          "connecteur et générateur au choix",
+          "SSO et RBAC absents de cette offre (grille)",
+          "support email sous 48 h (grille)"
+        ],
+        "evidence_excerpt": "Essentiel : 135€/mois pour 3 utilisateurs inclus / PME & cabinets ESSENTIEL 135€ /mois 3 utilisateurs inclus",
+        "evidence_selector": "pricing-grid:Essentiel",
+        "source_url": "https://noryzia.com/tarifs",
+        "market_evidence": {
+          "grid_currency": "EUR",
+          "html_lang_attr": "fr",
+          "french_content_markers": [
+            "€/mois"
+          ]
+        },
+        "value_fingerprint": "135|EUR|monthly|account_month|essentiel"
+      },
+      {
+        "observation_id": "obs:manual:noryzia:business",
+        "tool": "Noryzia",
+        "status": "quote_only",
+        "confidence": "medium",
+        "observed_on": "2026-11-09",
+        "plan_key": "business",
+        "plan_name_localized": "Business",
+        "native_amount": null,
+        "native_currency": "EUR",
+        "billing_period": "unknown",
+        "pricing_unit": "unknown",
+        "feature_highlights": [
+          "à partir de 5 utilisateurs (grille)",
+          "connecteurs et générateurs au choix",
+          "SSO et RBAC inclus (grille)",
+          "support prioritaire (grille)"
+        ],
+        "evidence_excerpt": "Equipe structurée BUSINESS Sur devis Pour industrialiser les usages / Dès 5 utilisateurs",
+        "evidence_selector": "pricing-grid:Business",
+        "source_url": "https://noryzia.com/tarifs",
+        "value_fingerprint": "null|EUR|unknown|unknown|business"
+      },
+      {
+        "observation_id": "obs:manual:noryzia:citadelle",
+        "tool": "Noryzia",
+        "status": "quote_only",
+        "confidence": "medium",
+        "observed_on": "2026-11-09",
+        "plan_key": "citadelle",
+        "plan_name_localized": "Citadelle",
+        "plan_summary": "Déploiement dans l'infrastructure du client, étudié au cas par cas.",
+        "native_amount": null,
+        "native_currency": "EUR",
+        "billing_period": "unknown",
+        "pricing_unit": "unknown",
+        "feature_highlights": [
+          "cloud privé ou on-premise",
+          "connecteurs et générateurs illimités (grille)",
+          "support prioritaire étendu (grille)",
+          "faisabilité et calendrier après étude"
+        ],
+        "evidence_excerpt": "Cloud privé / on-premise CITADELLE Sur devis Pour les environnements sensibles / Offre Citadelle : déploiement dans votre propre infrastructure, étudié au cas par cas (projet dédié, sur devis).",
+        "evidence_selector": "pricing-grid:Citadelle",
+        "source_url": "https://noryzia.com/tarifs",
+        "value_fingerprint": "null|EUR|unknown|unknown|citadelle"
+      }
+    ],
+    "claims": [
+      {
+        "claim_key": "capability.document_qa_sourced",
+        "value": "Réponse en langage naturel à partir des documents de l'entreprise, avec renvoi au document d'origine.",
+        "source_url": "https://noryzia.com/",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "capability.generators",
+        "value": "Génération de livrables : emails et courriers, contrats, devis, traduction.",
+        "source_url": "https://noryzia.com/tarifs",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "capability.connectors",
+        "value": "Connecteurs vers drives, boîtes mail, wikis, CRM, outils de suivi et de ticketing ; le nombre activable dépend de l'offre.",
+        "source_url": "https://noryzia.com/tarifs",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "security.sso_rbac",
+        "value": "Authentification par fournisseur d'identité (OIDC, SAML 2.0, SCIM) et permissions par document et par équipe.",
+        "source_url": "https://noryzia.com/",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "security.pii",
+        "value": "Détection et anonymisation des données personnelles avant traitement par l'IA.",
+        "source_url": "https://noryzia.com/",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "security.audit",
+        "value": "Journal d'audit et contrôle humain revendiqués, avec alignement annoncé sur l'AI Act.",
+        "source_url": "https://noryzia.com/",
+        "confidence": "medium"
+      },
+      {
+        "claim_key": "hosting.france",
+        "value": "Hébergement en France métropolitaine chez Scaleway ; aucune donnée client ne transite hors UE par défaut, hors deux fonctionnalités optionnelles désactivées par défaut.",
+        "source_url": "https://noryzia.com/legal",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "deployment.onpremise",
+        "value": "Une offre de déploiement dans l'infrastructure du client existe, sur étude.",
+        "source_url": "https://noryzia.com/",
+        "confidence": "high"
+      },
+      {
+        "claim_key": "pricing.no_free_plan",
+        "value": "Aucun plan gratuit durable ni essai autonome publié ; l'évaluation passe par une démonstration cadrée.",
+        "source_url": "https://noryzia.com/tarifs",
+        "confidence": "medium"
+      }
+    ],
+    "conflicts": [
+      {
+        "conflict_id": "c1_price_unit_wording",
+        "severity": "high",
+        "summary": "La page d'accueil annonce un prix d'entrée « par utilisateur », la grille tarifaire annonce un forfait mensuel par structure éligible et un forfait avec utilisateurs inclus.",
+        "evidence_a": "Accueil : « Des offres à partir de 39 €/utilisateur »",
+        "evidence_b": "Tarifs : « Association : 39€/mois pour les structures éligibles » et « Essentiel : 135€/mois pour 3 utilisateurs inclus »",
+        "resolution": "Grille tarifaire retenue comme autorité ; le libellé de la page d'accueil ne doit pas être repris tel quel.",
+        "needs_human_review": true
+      },
+      {
+        "conflict_id": "c2_generator_count",
+        "severity": "low",
+        "summary": "Le nombre de générateurs annoncé diffère entre la page d'accueil et la page tarifs.",
+        "evidence_a": "Accueil : « 16 connecteurs · 7 générateurs »",
+        "evidence_b": "Tarifs : « Afficher les 8 générateurs »",
+        "resolution": "Aucune des deux valeurs n'est reprise dans la rédaction ; à confirmer par l'éditeur.",
+        "needs_human_review": true
+      }
+    ],
+    "extraction_unknowns": [
+      "Identité exacte des deux fonctionnalités optionnelles qui font sortir les données de l'UE.",
+      "Engagement de facturation (mensuel ou annuel) pour chaque offre.",
+      "Traitement de la TVA sur les prix affichés.",
+      "Prix des packs et services, annoncés sur devis.",
+      "Liste complète des connecteurs et des générateurs par offre."
+    ]
+  },
+  "conflicts_summary": {
+    "count": 2,
+    "highest_severity": "high",
+    "blocking": false,
+    "note": "La page Tarifs est la référence du catalogue. L’unité par utilisateur affichée sur l’accueil reste exclue de la fiche."
+  },
+  "unknowns": [
+    "Absence de plan gratuit et d'essai autonome non confirmée par l'éditeur.",
+    "Offres Business et Citadelle non chiffrées publiquement."
+  ],
+  "editorial_drafts": {
+    "author": "Buffy (Freebuff)",
+    "content_version": 1,
+    "status": "draft",
+    "generated_on": "2026-11-09",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations. pricing_guidance ne porte que de la présentation (modèle, déploiement, cautions), sans fait tarifaire faisant autorité.",
+    "facts_basis": [
+      "cap:452538ff8ed1c45c229e888e1e2a538c54cdd69e5e21f99af9cb192a1493c95c",
+      "cap:93a03a036020f0a6ec0365bff02a2d74ffdf993fb5928fa804c056726f73ba74"
+    ],
+    "fr": {
+      "short_description": "Recherchez dans vos documents et e-mails professionnels avec un assistant IA qui cite ses sources.",
+      "long_description": "Noryzia indexe les documents et e-mails que l’organisation choisit de connecter, par exemple dans Google Drive, Gmail, OneDrive ou Notion. Les équipes posent leurs questions en langage naturel et peuvent ouvrir les sources citées pour contrôler une réponse. L’assistant aide aussi à préparer des synthèses et des brouillons. L’éditeur indique que les données sont hébergées en France et ne servent pas à entraîner des modèles. La démonstration permet de vérifier les connecteurs, les droits d’accès et le périmètre inclus dans l’offre envisagée.",
+      "verdict": {
+        "keepIf": [
+          "Vos équipes cherchent régulièrement dans plusieurs espaces documentaires."
+        ],
+        "avoidIf": [
+          "Vos besoins se limitent à quelques dossiers bien classés."
+        ],
+        "threshold": "La démo doit montrer que l’outil retrouve les bons documents avec les droits d’accès de chaque équipe."
+      },
+      "pros": [
+        "Les réponses renvoient aux documents utilisés.",
+        "La recherche peut couvrir plusieurs outils déjà en place.",
+        "L’éditeur indique un hébergement en France."
+      ],
+      "cons": [
+        "Les droits et les sources à connecter demandent un cadrage initial.",
+        "Les besoins avancés sont chiffrés sur devis.",
+        "Les réponses sur des dossiers sensibles demandent une relecture."
+      ],
+      "use_cases": [
+        "Retrouver une procédure interne.",
+        "Vérifier une clause en ouvrant la source citée.",
+        "Préparer une synthèse de plusieurs documents."
+      ],
+      "covers": [
+        "documentation",
+        "synthese"
+      ],
+      "relevant_for": [
+        "operations",
+        "legal",
+        "finance",
+        "hr"
+      ],
+      "personas": [
+        "marc",
+        "theo"
+      ],
+      "functional_needs": [
+        "documentation",
+        "synthese"
+      ],
+      "verticals": [
+        "business-ops",
+        "consultant-b2b"
+      ],
+      "solo_relevance": "low",
+      "team_relevance": "high",
+      "ai_angle": {
+        "stance": "est",
+        "aiTools": [],
+        "augmentFr": "Noryzia est lui-même un outil d'IA, mais son intérêt n'est pas la génération : c'est la contrainte posée autour d'elle. La réponse doit venir d'un document identifié, les données personnelles sont masquées avant traitement, et la sortie est journalisée. C'est l'inverse d'un assistant qui répond de mémoire.",
+        "replaceFr": "Ce n'est pas un remplacement d'assistant généraliste : c'est le remplacement de la recherche manuelle dans les documents internes. La différence se joue sur la source citée, pas sur la qualité de rédaction.",
+        "idealForFr": "Organisations dont la connaissance est documentaire, dispersée, et dont les erreurs de réponse ont un coût réel."
+      },
+      "seo": {
+        "metaDescription": "Noryzia : fiche ToolTrim. Assistant documentaire souverain pour PME et cabinets — réponses sourcées, connecteurs, hébergement France et coût réel d'une offre sur devis.",
+        "aiAngle": {
+          "stance": "est"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Forfait mensuel par structure éligible ou pour une équipe avec utilisateurs inclus. Besoins avancés sur devis.",
+        "deployment_note": "Deux modes distincts : cloud souverain hébergé en France, ou déploiement dans l'infrastructure du client sur étude. Le second n'est pas un simple réglage, c'est un projet.",
+        "free_plan_card": null,
+        "price_reliability": "official_published_unverified",
+        "usage_sensitive": true,
+        "location_sensitive": false,
+        "cautions": [
+          "Le forfait Association est réservé aux structures éligibles. Le forfait Essentiel inclut trois utilisateurs."
+        ],
+        "plan_details": {}
+      }
+    },
+    "en": {
+      "short_description": "Search company documents and email with an AI assistant that cites its sources.",
+      "long_description": "Noryzia indexes the documents and email an organisation chooses to connect, for example in Google Drive, Gmail, OneDrive or Notion. Teams can ask questions in natural language and open the cited sources to check the answers. The assistant also helps prepare summaries and drafts. The vendor says data is hosted in France and is excluded from model training. Use the demo to check the connectors, access controls and scope included in the proposed plan.",
+      "verdict": {
+        "keepIf": [
+          "Your teams regularly search across multiple document stores."
+        ],
+        "avoidIf": [
+          "Your needs are limited to a few well-organised folders."
+        ],
+        "threshold": "The demo should show that the tool finds the right documents within each team’s access permissions."
+      },
+      "pros": [
+        "Answers link to the documents used.",
+        "Search can cover multiple existing tools.",
+        "The vendor states that data is hosted in France."
+      ],
+      "cons": [
+        "Access controls and source selection require initial setup.",
+        "Advanced requirements are priced on request.",
+        "Answers about sensitive records require review."
+      ],
+      "use_cases": [
+        "Find an internal procedure.",
+        "Check a clause against its cited source.",
+        "Prepare a summary of several documents."
+      ],
+      "covers": [
+        "documentation",
+        "synthese"
+      ],
+      "relevant_for": [
+        "operations",
+        "legal",
+        "finance",
+        "hr"
+      ],
+      "personas": [
+        "marc",
+        "theo"
+      ],
+      "functional_needs": [
+        "documentation",
+        "synthese"
+      ],
+      "verticals": [
+        "business-ops",
+        "consultant-b2b"
+      ],
+      "solo_relevance": "low",
+      "team_relevance": "high",
+      "ai_angle": {
+        "stance": "est",
+        "aiTools": [],
+        "augmentEn": "Noryzia is itself an AI product, but its point is not generation: it is the constraints placed around generation. The answer must come from an identified document, personal data is masked before processing, and output is logged. That is the opposite of an assistant answering from memory.",
+        "replaceEn": "It does not replace a general-purpose assistant; it replaces manual searching through internal documents. The difference is the cited source, not the prose quality.",
+        "idealForEn": "Organisations whose knowledge lives in documents, is scattered, and where a wrong answer carries a real cost."
+      },
+      "seo": {
+        "metaDescription": "Noryzia: ToolTrim review. A sovereign document assistant for SMEs and practices — sourced answers, connectors, French hosting, and the real cost of a quoted offer.",
+        "aiAngle": {
+          "stance": "est"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Monthly package for eligible organisations or for a team with users included. Advanced requirements are quoted.",
+        "deployment_note": "Two distinct modes: sovereign cloud hosted in France, or deployment inside the customer's infrastructure after a feasibility study. The second is a project, not a setting.",
+        "free_plan_card": null,
+        "price_reliability": "official_published_unverified",
+        "usage_sensitive": true,
+        "location_sensitive": false,
+        "cautions": [
+          "Association is restricted to eligible organisations. Essentiel includes three users."
+        ],
+        "plan_details": {}
+      }
+    }
+  },
+  "review_attestations": []
+}

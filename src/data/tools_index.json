@@ -60737,5 +60737,148 @@
     "personas": [
       "DAVID"
     ]
+  },
+  {
+    "id": "influnity",
+    "slug": "influnity",
+    "name": "Influnity",
+    "categoryId": "creation",
+    "shortDescription": "Commandez une vidéo UGC ou organisez une publication avec un influenceur, avec contrat et paiement sur la plateforme.",
+    "shortDescriptionEn": "Order a UGC video or arrange an influencer post, with contracts and payment handled on the platform.",
+    "pricing": {
+      "free": "Inscription sans abonnement, sans carte bancaire.",
+      "paid": "Vidéo UGC : tarif du créateur + 10 % pour la marque. Influence rémunérée : 10 % prélevés sur la rémunération de l’influenceur. Collaboration en nature : 10 € par opération pour la marque."
+    },
+    "pricingEn": {
+      "free": "Sign up without a subscription or payment card.",
+      "paid": "UGC video: creator price plus 10% for the brand. Paid influencer collaboration: 10% deducted from the creator’s fee. In-kind collaboration: €10 per operation for the brand."
+    },
+    "hasConfirmedFreePlan": false,
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
+    "websiteUrl": "https://www.influnity.fr/",
+    "ogImageUrl": "/og-images/influnity.jpg",
+    "logo": "/tool-media/logos/influnity.png",
+    "tool_type": "metier",
+    "functional_needs": [
+      "creator-workflow"
+    ],
+    "verticals": [
+      "ecommerce",
+      "marketing"
+    ],
+    "relevantFor": [
+      "marketing",
+      "brand",
+      "growth",
+      "ecommerce"
+    ],
+    "personas": [
+      "lina"
+    ],
+    "alternatives": [
+      "billo",
+      "insense"
+    ]
+  },
+  {
+    "id": "micro-man",
+    "slug": "micro-man",
+    "name": "Micro Man",
+    "categoryId": "finance",
+    "shortDescription": "Gérez devis, factures et cotisations URSSAF depuis un outil pensé pour les micro-entrepreneurs en France.",
+    "shortDescriptionEn": "Manage quotes, invoices and URSSAF contributions in an app for French micro-entrepreneurs.",
+    "pricing": {
+      "free": "Solo : sans abonnement, pour un contact. Chaque facture électronique coûte 0,01 €.",
+      "paid": "Mensuel : 4,99 €/mois. Annuel : 49,99 €/an. Les deux formules incluent les contacts illimités et facturent 0,01 € par facture électronique."
+    },
+    "pricingEn": {
+      "free": "Solo: no subscription, one contact. Each electronic invoice costs €0.01.",
+      "paid": "Monthly: €4.99/month. Annual: €49.99/year. Both include unlimited contacts and charge €0.01 per electronic invoice."
+    },
+    "hasConfirmedFreePlan": true,
+    "compareMonthlyPrice": 4.99,
+    "nativePrices": [
+      {
+        "amount": 4.99,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://micro-man.fr/",
+    "ogImageUrl": "/og-images/micro-man.png",
+    "logo": "/tool-media/logos/micro-man.png",
+    "tool_type": "gestion",
+    "functional_needs": [
+      "facturation",
+      "comptabilite"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "graphiste-da"
+    ],
+    "relevantFor": [
+      "freelance",
+      "solo-business",
+      "accounting"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "alternatives": [
+      "indy",
+      "tiime"
+    ]
+  },
+  {
+    "id": "noryzia",
+    "slug": "noryzia",
+    "name": "Noryzia",
+    "categoryId": "ai-general",
+    "shortDescription": "Recherchez dans vos documents et e-mails professionnels avec un assistant IA qui cite ses sources.",
+    "shortDescriptionEn": "Search company documents and email with an AI assistant that cites its sources.",
+    "pricing": {
+      "free": "Démonstration sur demande.",
+      "paid": "Association : dès 39 €/mois pour les structures éligibles. Essentiel : dès 135 €/mois, trois utilisateurs inclus. Besoins avancés sur devis."
+    },
+    "pricingEn": {
+      "free": "Demo on request.",
+      "paid": "Association: from €39/month for eligible organisations. Essentiel: from €135/month including three users. Advanced requirements are quoted."
+    },
+    "hasConfirmedFreePlan": false,
+    "compareMonthlyPrice": 135,
+    "nativePrices": [
+      {
+        "amount": 135,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://noryzia.com/",
+    "ogImageUrl": "/og-images/noryzia.webp",
+    "logo": "/tool-media/logos/noryzia.png",
+    "tool_type": "ia",
+    "functional_needs": [
+      "documentation",
+      "synthese"
+    ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
+    "relevantFor": [
+      "operations",
+      "legal",
+      "finance",
+      "hr"
+    ],
+    "personas": [
+      "marc",
+      "theo"
+    ],
+    "alternatives": [
+      "notion-ai",
+      "notebook-lm"
+    ]
   }
 ]

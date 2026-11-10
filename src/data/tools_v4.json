@@ -298097,5 +298097,689 @@
       "researchedOn": "2026-10-29",
       "sources": 1
     }
+  },
+  {
+    "id": "influnity",
+    "slug": "influnity",
+    "name": "Influnity",
+    "category": "creation",
+    "categoryId": "creation",
+    "websiteUrl": "https://www.influnity.fr/",
+    "shortDescription": "Commandez une vidéo UGC ou organisez une publication avec un influenceur, avec contrat et paiement sur la plateforme.",
+    "shortDescriptionEn": "Order a UGC video or arrange an influencer post, with contracts and payment handled on the platform.",
+    "description": "Commandez une vidéo UGC ou organisez une publication avec un influenceur, avec contrat et paiement sur la plateforme.",
+    "longDescription": "Influnity propose deux parcours. Pour une vidéo UGC, la marque choisit une prestation et les droits d’utilisation, transmet son brief puis publie elle-même le contenu livré selon le contrat. Pour une collaboration d’influence, le créateur publie sur ses propres canaux. Influnity indique que les fonds des prestations rémunérées restent bloqués jusqu’à validation. Les marques peuvent aussi publier une annonce et les créateurs envoyer une proposition.",
+    "longDescriptionEn": "Influnity offers two workflows. For a UGC video, brands select a creator’s offer and usage rights, submit a brief, and publish the finished content under the contract terms. For an influencer collaboration, the creator posts to their own channels. Influnity says it holds funds for paid work until the deliverable is approved. Brands can also post opportunities and creators can pitch collaborations.",
+    "verdict": {
+      "keepIf": [
+        "Vous voulez encadrer le brief, les droits et le paiement au même endroit."
+      ],
+      "avoidIf": [
+        "Vous cherchez à gérer vos campagnes publicitaires ou à mesurer leur rentabilité."
+      ],
+      "threshold": "Choisissez d’abord entre une vidéo à publier vous-même et une publication par le créateur. Les frais et les droits en dépendent."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want to manage the brief, usage rights and payment in one place."
+      ],
+      "avoidIf": [
+        "You need to run paid campaigns or measure their return."
+      ],
+      "threshold": "Choose between a video to publish yourself and a post published by the creator. That choice determines the fees and rights."
+    },
+    "pros": [
+      "Les droits d’utilisation sont précisés dans le contrat.",
+      "Le tarif de la prestation UGC est affiché par le créateur.",
+      "L’inscription se fait sans abonnement."
+    ],
+    "prosEn": [
+      "Usage rights are set out in the contract.",
+      "Creators list the price of their UGC offers.",
+      "You can sign up without a subscription."
+    ],
+    "cons": [
+      "Les droits et le coût varient selon la prestation.",
+      "Le choix dépend des profils disponibles dans votre niche.",
+      "La validation du contenu et la mesure de la campagne restent à votre charge."
+    ],
+    "consEn": [
+      "Rights and costs vary by offer.",
+      "The choice depends on the creators available in your niche.",
+      "You are responsible for approving the content and measuring the campaign."
+    ],
+    "useCases": [
+      "Commander une vidéo pour une fiche produit.",
+      "Organiser une publication devant l’audience d’un créateur.",
+      "Envoyer une proposition à une marque."
+    ],
+    "useCasesEn": [
+      "Order a video for a product page.",
+      "Arrange a post for a creator’s audience.",
+      "Pitch a collaboration to a brand."
+    ],
+    "relevantFor": [
+      "marketing",
+      "brand",
+      "growth",
+      "ecommerce"
+    ],
+    "covers": [
+      "creator-workflow"
+    ],
+    "functional_needs": [
+      "creator-workflow"
+    ],
+    "verticals": [
+      "ecommerce",
+      "marketing"
+    ],
+    "personas": [
+      "lina"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "metier",
+    "alternatives": [
+      "billo",
+      "insense"
+    ],
+    "pricing": {
+      "free": "Inscription sans abonnement, sans carte bancaire.",
+      "paid": "Vidéo UGC : tarif du créateur + 10 % pour la marque. Influence rémunérée : 10 % prélevés sur la rémunération de l’influenceur. Collaboration en nature : 10 € par opération pour la marque."
+    },
+    "pricingEn": {
+      "free": "Sign up without a subscription or payment card.",
+      "paid": "UGC video: creator price plus 10% for the brand. Paid influencer collaboration: 10% deducted from the creator’s fee. In-kind collaboration: €10 per operation for the brand."
+    },
+    "pricing_v5": {
+      "plans": [
+        {
+          "planKey": "transactions",
+          "displayName": "Frais à la transaction",
+          "nativeAmount": null,
+          "nativeCurrency": null,
+          "billingPeriod": null,
+          "pricingUnit": null,
+          "summary": "Vidéo UGC : tarif du créateur + 10 % pour la marque. Influence rémunérée : 10 % prélevés sur la rémunération de l’influenceur. Collaboration en nature : 10 € par opération pour la marque.",
+          "isComparePlan": true,
+          "isFree": false,
+          "priceStatus": "usage",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.influnity.fr/tarifs/",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        }
+      ],
+      "cautions": [
+        "Le prix de la vidéo et les droits choisis déterminent le coût de la commande."
+      ],
+      "verified_on": "2026-11-10",
+      "official_source_url": "https://www.influnity.fr/tarifs/",
+      "source_domain": "www.influnity.fr",
+      "verification_status": "official_explicit",
+      "price_reliability": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "compare_plan_kind": "usage_based",
+      "compare_plan_name": "Frais à la transaction",
+      "usage_sensitive": true,
+      "showCostTable": false,
+      "cautionsEn": [
+        "The creator’s price and the selected usage rights determine the cost of the order."
+      ]
+    },
+    "pricing_v5En": {
+      "plans": [
+        {
+          "planKey": "transactions",
+          "displayName": "Transaction fees",
+          "nativeAmount": null,
+          "nativeCurrency": null,
+          "billingPeriod": null,
+          "pricingUnit": null,
+          "summary": "UGC video: creator price plus 10% for the brand. Paid influencer collaboration: 10% deducted from the creator’s fee. In-kind collaboration: €10 per operation for the brand.",
+          "isComparePlan": true,
+          "isFree": false,
+          "priceStatus": "usage",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.influnity.fr/tarifs/",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        }
+      ],
+      "cautions": [
+        "The creator’s price and the selected usage rights determine the cost of the order."
+      ],
+      "verified_on": "2026-11-10",
+      "official_source_url": "https://www.influnity.fr/tarifs/",
+      "source_domain": "www.influnity.fr",
+      "verification_status": "official_explicit",
+      "price_reliability": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "compare_plan_kind": "usage_based",
+      "compare_plan_name": "Transaction fees",
+      "usage_sensitive": true,
+      "showCostTable": false
+    },
+    "defaultMonthlyPrice": 0,
+    "showCostTable": false,
+    "seo": {
+      "metaDescription": "Commandez une vidéo UGC ou organisez une publication avec un influenceur, avec contrat et paiement sur la plateforme.",
+      "metaDescriptionEn": "Order a UGC video or arrange an influencer post, with contracts and payment handled on the platform.",
+      "presentationMetaDescriptionFr": "Commandez une vidéo UGC ou organisez une publication avec un influenceur, avec contrat et paiement sur la plateforme.",
+      "presentationMetaDescriptionEn": "Order a UGC video or arrange an influencer post, with contracts and payment handled on the platform."
+    },
+    "logo": "/tool-media/logos/influnity.png",
+    "ogImageUrl": "/og-images/influnity.jpg"
+  },
+  {
+    "id": "micro-man",
+    "slug": "micro-man",
+    "name": "Micro Man",
+    "category": "finance",
+    "categoryId": "finance",
+    "websiteUrl": "https://micro-man.fr/",
+    "shortDescription": "Gérez devis, factures et cotisations URSSAF depuis un outil pensé pour les micro-entrepreneurs en France.",
+    "shortDescriptionEn": "Manage quotes, invoices and URSSAF contributions in an app for French micro-entrepreneurs.",
+    "description": "Gérez devis, factures et cotisations URSSAF depuis un outil pensé pour les micro-entrepreneurs en France.",
+    "longDescription": "Micro Man réunit devis, factures, acomptes, avoirs et suivi des encaissements pour les micro-entrepreneurs. Le journal de recettes est exportable et l’éditeur propose le calcul, la déclaration et le paiement des cotisations URSSAF depuis l’application. L’offre Solo permet de gérer un contact sans abonnement. La facturation électronique est facturée à l’unité sur toutes les offres.",
+    "longDescriptionEn": "Micro Man brings together quotes, invoices, deposits, credit notes and payment tracking for French micro-entrepreneurs. You can export the receipts ledger, and the vendor offers in-app calculation, filing and payment of URSSAF contributions. Solo covers one contact without a subscription. Electronic invoices are charged individually on every plan.",
+    "verdict": {
+      "keepIf": [
+        "Vous exercez en micro-entreprise et gérez vous-même la facturation."
+      ],
+      "avoidIf": [
+        "Vous devez tenir la comptabilité de plusieurs sociétés."
+      ],
+      "threshold": "Solo convient si vous facturez un seul contact. Pour plusieurs clients, ajoutez les frais de facture électronique au prix de l’abonnement."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You operate as a French micro-entrepreneur and handle your own invoicing."
+      ],
+      "avoidIf": [
+        "You need accounting for multiple companies."
+      ],
+      "threshold": "Solo fits if you invoice one contact. For multiple clients, add electronic invoice fees to the subscription price."
+    },
+    "pros": [
+      "Devis, factures et encaissements sont liés aux contacts.",
+      "Le journal de recettes peut être exporté.",
+      "L’éditeur propose un parcours de déclaration et de paiement URSSAF."
+    ],
+    "prosEn": [
+      "Quotes, invoices and payments are linked to contacts.",
+      "The receipts ledger can be exported.",
+      "The vendor offers an in-app URSSAF filing and payment workflow."
+    ],
+    "cons": [
+      "L’offre Solo est limitée à un contact.",
+      "Chaque facture électronique est facturée à l’unité.",
+      "Le périmètre est centré sur le régime micro français."
+    ],
+    "consEn": [
+      "Solo is limited to one contact.",
+      "Each electronic invoice is charged individually.",
+      "The product is focused on the French micro-enterprise regime."
+    ],
+    "useCases": [
+      "Transformer un devis accepté en facture.",
+      "Suivre les encaissements et exporter son journal de recettes.",
+      "Préparer sa déclaration de chiffre d’affaires."
+    ],
+    "useCasesEn": [
+      "Turn an accepted quote into an invoice.",
+      "Track payments and export a receipts ledger.",
+      "Prepare a turnover declaration."
+    ],
+    "relevantFor": [
+      "freelance",
+      "solo-business",
+      "accounting"
+    ],
+    "covers": [
+      "facturation",
+      "comptabilite"
+    ],
+    "functional_needs": [
+      "facturation",
+      "comptabilite"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "graphiste-da"
+    ],
+    "personas": [
+      "marc"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "tool_type": "gestion",
+    "alternatives": [
+      "indy",
+      "tiime"
+    ],
+    "pricing": {
+      "free": "Solo : sans abonnement, pour un contact. Chaque facture électronique coûte 0,01 €.",
+      "paid": "Mensuel : 4,99 €/mois. Annuel : 49,99 €/an. Les deux formules incluent les contacts illimités et facturent 0,01 € par facture électronique."
+    },
+    "pricingEn": {
+      "free": "Solo: no subscription, one contact. Each electronic invoice costs €0.01.",
+      "paid": "Monthly: €4.99/month. Annual: €49.99/year. Both include unlimited contacts and charge €0.01 per electronic invoice."
+    },
+    "pricing_v5": {
+      "free_plan_card": "Solo : sans abonnement, pour un contact. Chaque facture électronique coûte 0,01 €.",
+      "plans": [
+        {
+          "planKey": "solo",
+          "displayName": "Solo",
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": null,
+          "pricingUnit": "account",
+          "summary": "Solo : sans abonnement, pour un contact. Chaque facture électronique coûte 0,01 €.",
+          "isComparePlan": false,
+          "isFree": true,
+          "priceStatus": "free",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://micro-man.fr/pricing/",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        },
+        {
+          "planKey": "monthly",
+          "displayName": "Mensuel",
+          "nativeAmount": 4.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "pricingUnit": "account",
+          "summary": "Contacts illimités",
+          "isComparePlan": true,
+          "isFree": false,
+          "priceStatus": "paid",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://micro-man.fr/pricing/",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        },
+        {
+          "planKey": "annual",
+          "displayName": "Annuel",
+          "nativeAmount": 49.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "annual",
+          "pricingUnit": "account",
+          "summary": "Contacts illimités et support prioritaire",
+          "isComparePlan": false,
+          "isFree": false,
+          "priceStatus": "paid",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://micro-man.fr/pricing/",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        }
+      ],
+      "cautions": [
+        "Les frais par facture électronique s’appliquent à toutes les offres, y compris Solo."
+      ],
+      "verified_on": "2026-11-10",
+      "official_source_url": "https://micro-man.fr/pricing/",
+      "source_domain": "micro-man.fr",
+      "verification_status": "official_explicit",
+      "price_reliability": "official_explicit",
+      "compare_price_monthly_eur": 4.99,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Mensuel",
+      "usage_sensitive": true,
+      "showCostTable": false,
+      "cautionsEn": [
+        "The electronic invoice fee applies to every plan, including Solo."
+      ]
+    },
+    "pricing_v5En": {
+      "free_plan_card": "Solo: no subscription, one contact. Each electronic invoice costs €0.01.",
+      "plans": [
+        {
+          "planKey": "solo",
+          "displayName": "Solo",
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": null,
+          "pricingUnit": "account",
+          "summary": "Solo: no subscription, one contact. Each electronic invoice costs €0.01.",
+          "isComparePlan": false,
+          "isFree": true,
+          "priceStatus": "free",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://micro-man.fr/pricing/",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        },
+        {
+          "planKey": "monthly",
+          "displayName": "Monthly",
+          "nativeAmount": 4.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "pricingUnit": "account",
+          "summary": "Unlimited contacts",
+          "isComparePlan": true,
+          "isFree": false,
+          "priceStatus": "paid",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://micro-man.fr/pricing/",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        },
+        {
+          "planKey": "annual",
+          "displayName": "Annual",
+          "nativeAmount": 49.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "annual",
+          "pricingUnit": "account",
+          "summary": "Unlimited contacts and priority support",
+          "isComparePlan": false,
+          "isFree": false,
+          "priceStatus": "paid",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://micro-man.fr/pricing/",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        }
+      ],
+      "cautions": [
+        "The electronic invoice fee applies to every plan, including Solo."
+      ],
+      "verified_on": "2026-11-10",
+      "official_source_url": "https://micro-man.fr/pricing/",
+      "source_domain": "micro-man.fr",
+      "verification_status": "official_explicit",
+      "price_reliability": "official_explicit",
+      "compare_price_monthly_eur": 4.99,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Monthly",
+      "usage_sensitive": true,
+      "showCostTable": false
+    },
+    "defaultMonthlyPrice": 4.99,
+    "showCostTable": false,
+    "seo": {
+      "metaDescription": "Gérez devis, factures et cotisations URSSAF depuis un outil pensé pour les micro-entrepreneurs en France.",
+      "metaDescriptionEn": "Manage quotes, invoices and URSSAF contributions in an app for French micro-entrepreneurs.",
+      "presentationMetaDescriptionFr": "Gérez devis, factures et cotisations URSSAF depuis un outil pensé pour les micro-entrepreneurs en France.",
+      "presentationMetaDescriptionEn": "Manage quotes, invoices and URSSAF contributions in an app for French micro-entrepreneurs."
+    },
+    "logo": "/tool-media/logos/micro-man.png",
+    "ogImageUrl": "/og-images/micro-man.png"
+  },
+  {
+    "id": "noryzia",
+    "slug": "noryzia",
+    "name": "Noryzia",
+    "category": "ai-general",
+    "categoryId": "ai-general",
+    "websiteUrl": "https://noryzia.com/",
+    "shortDescription": "Recherchez dans vos documents et e-mails professionnels avec un assistant IA qui cite ses sources.",
+    "shortDescriptionEn": "Search company documents and email with an AI assistant that cites its sources.",
+    "description": "Recherchez dans vos documents et e-mails professionnels avec un assistant IA qui cite ses sources.",
+    "longDescription": "Noryzia indexe les documents et e-mails que l’organisation choisit de connecter, par exemple dans Google Drive, Gmail, OneDrive ou Notion. Les équipes posent leurs questions en langage naturel et peuvent ouvrir les sources citées pour contrôler une réponse. L’assistant aide aussi à préparer des synthèses et des brouillons. L’éditeur indique que les données sont hébergées en France et ne servent pas à entraîner des modèles. La démonstration permet de vérifier les connecteurs, les droits d’accès et le périmètre inclus dans l’offre envisagée.",
+    "longDescriptionEn": "Noryzia indexes the documents and email an organisation chooses to connect, for example in Google Drive, Gmail, OneDrive or Notion. Teams can ask questions in natural language and open the cited sources to check the answers. The assistant also helps prepare summaries and drafts. The vendor says data is hosted in France and is excluded from model training. Use the demo to check the connectors, access controls and scope included in the proposed plan.",
+    "verdict": {
+      "keepIf": [
+        "Vos équipes cherchent régulièrement dans plusieurs espaces documentaires."
+      ],
+      "avoidIf": [
+        "Vos besoins se limitent à quelques dossiers bien classés."
+      ],
+      "threshold": "La démo doit montrer que l’outil retrouve les bons documents avec les droits d’accès de chaque équipe."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Your teams regularly search across multiple document stores."
+      ],
+      "avoidIf": [
+        "Your needs are limited to a few well-organised folders."
+      ],
+      "threshold": "The demo should show that the tool finds the right documents within each team’s access permissions."
+    },
+    "pros": [
+      "Les réponses renvoient aux documents utilisés.",
+      "La recherche peut couvrir plusieurs outils déjà en place.",
+      "L’éditeur indique un hébergement en France."
+    ],
+    "prosEn": [
+      "Answers link to the documents used.",
+      "Search can cover multiple existing tools.",
+      "The vendor states that data is hosted in France."
+    ],
+    "cons": [
+      "Les droits et les sources à connecter demandent un cadrage initial.",
+      "Les besoins avancés sont chiffrés sur devis.",
+      "Les réponses sur des dossiers sensibles demandent une relecture."
+    ],
+    "consEn": [
+      "Access controls and source selection require initial setup.",
+      "Advanced requirements are priced on request.",
+      "Answers about sensitive records require review."
+    ],
+    "useCases": [
+      "Retrouver une procédure interne.",
+      "Vérifier une clause en ouvrant la source citée.",
+      "Préparer une synthèse de plusieurs documents."
+    ],
+    "useCasesEn": [
+      "Find an internal procedure.",
+      "Check a clause against its cited source.",
+      "Prepare a summary of several documents."
+    ],
+    "relevantFor": [
+      "operations",
+      "legal",
+      "finance",
+      "hr"
+    ],
+    "covers": [
+      "documentation",
+      "synthese"
+    ],
+    "functional_needs": [
+      "documentation",
+      "synthese"
+    ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
+    "personas": [
+      "marc",
+      "theo"
+    ],
+    "soloRelevance": "low",
+    "teamRelevance": "high",
+    "tool_type": "ia",
+    "alternatives": [
+      "notion-ai",
+      "notebook-lm"
+    ],
+    "pricing": {
+      "free": "Démonstration sur demande.",
+      "paid": "Association : dès 39 €/mois pour les structures éligibles. Essentiel : dès 135 €/mois, trois utilisateurs inclus. Besoins avancés sur devis."
+    },
+    "pricingEn": {
+      "free": "Demo on request.",
+      "paid": "Association: from €39/month for eligible organisations. Essentiel: from €135/month including three users. Advanced requirements are quoted."
+    },
+    "pricing_v5": {
+      "plans": [
+        {
+          "planKey": "association",
+          "displayName": "Association",
+          "nativeAmount": 39,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "pricingUnit": "account",
+          "summary": "Réservé aux structures éligibles",
+          "isComparePlan": false,
+          "isFree": false,
+          "priceStatus": "paid",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://noryzia.com/tarifs",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        },
+        {
+          "planKey": "essentiel",
+          "displayName": "Essentiel",
+          "nativeAmount": 135,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "pricingUnit": "account",
+          "summary": "Trois utilisateurs inclus",
+          "isComparePlan": true,
+          "isFree": false,
+          "priceStatus": "paid",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://noryzia.com/tarifs",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        },
+        {
+          "planKey": "custom",
+          "displayName": "Offre sur mesure",
+          "nativeAmount": null,
+          "nativeCurrency": null,
+          "billingPeriod": null,
+          "pricingUnit": null,
+          "summary": "Périmètre défini avec l’éditeur",
+          "isComparePlan": false,
+          "isFree": false,
+          "priceStatus": "quote",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://noryzia.com/tarifs",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        }
+      ],
+      "cautions": [
+        "Le forfait Association est réservé aux structures éligibles. Le forfait Essentiel inclut trois utilisateurs."
+      ],
+      "verified_on": "2026-11-10",
+      "official_source_url": "https://noryzia.com/tarifs",
+      "source_domain": "noryzia.com",
+      "verification_status": "official_explicit",
+      "price_reliability": "official_explicit",
+      "compare_price_monthly_eur": 135,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Essentiel",
+      "usage_sensitive": false,
+      "showCostTable": false,
+      "cautionsEn": [
+        "Association is restricted to eligible organisations. Essentiel includes three users."
+      ]
+    },
+    "pricing_v5En": {
+      "plans": [
+        {
+          "planKey": "association",
+          "displayName": "Association",
+          "nativeAmount": 39,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "pricingUnit": "account",
+          "summary": "For eligible organisations",
+          "isComparePlan": false,
+          "isFree": false,
+          "priceStatus": "paid",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://noryzia.com/tarifs",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        },
+        {
+          "planKey": "essentiel",
+          "displayName": "Essentiel",
+          "nativeAmount": 135,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "pricingUnit": "account",
+          "summary": "Three users included",
+          "isComparePlan": true,
+          "isFree": false,
+          "priceStatus": "paid",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://noryzia.com/tarifs",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        },
+        {
+          "planKey": "custom",
+          "displayName": "Custom offer",
+          "nativeAmount": null,
+          "nativeCurrency": null,
+          "billingPeriod": null,
+          "pricingUnit": null,
+          "summary": "Scope agreed with the vendor",
+          "isComparePlan": false,
+          "isFree": false,
+          "priceStatus": "quote",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://noryzia.com/tarifs",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-11-10",
+          "lastConfirmedOn": "2026-11-10"
+        }
+      ],
+      "cautions": [
+        "Association is restricted to eligible organisations. Essentiel includes three users."
+      ],
+      "verified_on": "2026-11-10",
+      "official_source_url": "https://noryzia.com/tarifs",
+      "source_domain": "noryzia.com",
+      "verification_status": "official_explicit",
+      "price_reliability": "official_explicit",
+      "compare_price_monthly_eur": 135,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Essentiel",
+      "usage_sensitive": false,
+      "showCostTable": false
+    },
+    "defaultMonthlyPrice": 135,
+    "showCostTable": false,
+    "seo": {
+      "metaDescription": "Recherchez dans vos documents et e-mails professionnels avec un assistant IA qui cite ses sources.",
+      "metaDescriptionEn": "Search company documents and email with an AI assistant that cites its sources.",
+      "presentationMetaDescriptionFr": "Recherchez dans vos documents et e-mails professionnels avec un assistant IA qui cite ses sources.",
+      "presentationMetaDescriptionEn": "Search company documents and email with an AI assistant that cites its sources."
+    },
+    "logo": "/tool-media/logos/noryzia.png",
+    "ogImageUrl": "/og-images/noryzia.webp"
   }
 ]
