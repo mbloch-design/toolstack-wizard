@@ -28,6 +28,11 @@ import { buildPricingDetail, isPricingDetailPilot } from "./src/lib/toolPricingD
 const SEO_YEAR = new Date().getFullYear();
 
 const BASE = "https://tooltrim.com";
+
+/** Post covers are either site-relative (/tool-media/...) or already absolute
+ * (CDN-hosted editorial images such as georankers.ai). Only relative paths may
+ * be prefixed with the origin, otherwise the tag becomes https://tooltrim.comhttps://... */
+const absoluteAssetUrl = (url: string) => (/^https?:\/\//i.test(url) ? url : `${BASE}${url}`);
 const LANGS = ["fr", "en"];
 const STATIC_PAGES = ["", "tools", "category", "guides", "stacks", "about", "methodology", "transparency", "contact", "submit", "explorer"];
 const EXCLUDE_SITEMAP_PATTERNS = ["/methodology"];
@@ -719,19 +724,40 @@ function sitemapPlugin(): Plugin {
         const tools = await getMergedTools(JSON.parse(toolsRaw));
         const categories = JSON.parse(categoriesRaw);
         const urls: string[] = [];
+        const toolBySlug = new Map<string, any>((tools || []).map((tool: any) => [tool.slug || tool.id, tool]));
 
-        const buildDate = new Date().toISOString().split("T")[0];
+        // Dernière date de modification réellement connue pour une page. Un lastmod
+        // identique à la date du build sur 10 000 URLs est un signal que Google finit
+        // par ignorer : on ne publie que les dates issues de la donnée (vérification
+        // tarifaire, note, recherche) et on omet la balise quand il n'y en a pas.
+        const isIsoDate = (value: unknown): value is string =>
+          typeof value === "string" && /^\d{4}-\d{2}-\d{2}/.test(value) && !Number.isNaN(Date.parse(value));
+
+        const latestDate = (...candidates: unknown[]): string | undefined => {
+          const dates = candidates.filter(isIsoDate).map((candidate) => candidate.slice(0, 10)).sort();
+          return dates[dates.length - 1];
+        };
+
+        /** Date de dernière modification de la donnée d'une fiche. */
+        const toolDataDate = (tool: any): string | undefined =>
+          latestDate(
+            tool?.pricing_v5?.verified_on,
+            tool?.toolTrimRating?.lastActivityVerifiedOn,
+            tool?.research?.researchedOn
+          );
+
+        const lastmodTag = (lastmod?: string) => (lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : "");
 
         /** Single URL entry — no hreflang (lang-specific or unpaired content) */
-        const addSingle = (loc: string, freq: string, prio: string, lastmod = buildDate) => {
-          urls.push(`  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>\n  </url>`);
+        const addSingle = (loc: string, freq: string, prio: string, lastmod?: string) => {
+          urls.push(`  <url>\n    <loc>${loc}</loc>${lastmodTag(lastmod)}\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>\n  </url>`);
         };
 
         /** FR+EN pair. Both entries share the same hreflang block with EN as x-default. */
-        const addPair = (frLoc: string, enLoc: string, freq: string, prio: string, lastmod = buildDate) => {
+        const addPair = (frLoc: string, enLoc: string, freq: string, prio: string, lastmod?: string) => {
           const hl = `\n    <xhtml:link rel="alternate" hreflang="fr" href="${frLoc}" />\n    <xhtml:link rel="alternate" hreflang="en" href="${enLoc}" />\n    <xhtml:link rel="alternate" hreflang="x-default" href="${enLoc}" />`;
-          urls.push(`  <url>\n    <loc>${frLoc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>${hl}\n  </url>`);
-          urls.push(`  <url>\n    <loc>${enLoc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>${hl}\n  </url>`);
+          urls.push(`  <url>\n    <loc>${frLoc}</loc>${lastmodTag(lastmod)}\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>${hl}\n  </url>`);
+          urls.push(`  <url>\n    <loc>${enLoc}</loc>${lastmodTag(lastmod)}\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>${hl}\n  </url>`);
         };
 
         // Helper: check if a path matches any exclusion pattern
@@ -752,10 +778,11 @@ function sitemapPlugin(): Plugin {
         for (const t of tools || []) {
           const slug = t.slug || t.id;
           if (DEPRECATED_TOOL_SLUGS.has(slug)) continue;
-          addPair(`${BASE}/fr/tool/${slug}`,              `${BASE}/en/tool/${slug}`,              "weekly",  "0.8");
-          addPair(`${BASE}/fr/tool/${slug}/prix`,         `${BASE}/en/tool/${slug}/pricing`,      "monthly", "0.7");
-          addPair(`${BASE}/fr/tool/${slug}/alternatives`, `${BASE}/en/tool/${slug}/alternatives`, "monthly", "0.7");
-          addPair(`${BASE}/fr/tool/${slug}/avis`,         `${BASE}/en/tool/${slug}/reviews`,      "monthly", "0.6");
+          const toolLastmod = toolDataDate(t);
+          addPair(`${BASE}/fr/tool/${slug}`,              `${BASE}/en/tool/${slug}`,              "weekly",  "0.8", toolLastmod);
+          addPair(`${BASE}/fr/tool/${slug}/prix`,         `${BASE}/en/tool/${slug}/pricing`,      "monthly", "0.7", toolLastmod);
+          addPair(`${BASE}/fr/tool/${slug}/alternatives`, `${BASE}/en/tool/${slug}/alternatives`, "monthly", "0.7", toolLastmod);
+          addPair(`${BASE}/fr/tool/${slug}/avis`,         `${BASE}/en/tool/${slug}/reviews`,      "monthly", "0.6", toolLastmod);
           // `/faq` is deliberately absent: it canonicalises to the fiche (see
           // the prerenderer and DynamicCanonical), and a sitemap must not
           // advertise a URL whose own canonical points elsewhere.
@@ -766,9 +793,10 @@ function sitemapPlugin(): Plugin {
         // ── Category pages ────────────────────────────────────────────────────
         // Thin categories are noindex (src/lib/categorySeo.ts): keep them out.
         for (const c of categories || []) {
-          const count = (tools || []).filter((t: any) => (t.categoryId || t.category) === c.id).length;
-          if (!isCategoryIndexable(count)) continue;
-          addPair(`${BASE}/fr/category/${c.slug}`, `${BASE}/en/category/${c.slug}`, "weekly", "0.7");
+          const members = (tools || []).filter((t: any) => (t.categoryId || t.category) === c.id);
+          if (!isCategoryIndexable(members.length)) continue;
+          const categoryLastmod = latestDate(...members.map(toolDataDate));
+          addPair(`${BASE}/fr/category/${c.slug}`, `${BASE}/en/category/${c.slug}`, "weekly", "0.7", categoryLastmod);
         }
 
         // ── Posts from posts-fr.json / posts-en.json ──────────────────────────
@@ -786,8 +814,7 @@ function sitemapPlugin(): Plugin {
         const guideSlugs = new Set([...postsFr, ...postsEn].map((p: any) => p.slug));
         for (const a of (data.articles || []).filter((a: any) => !guideSlugs.has(a.slug))) {
           const lang = a.lang || "fr";
-          const articleDate = a.date || buildDate;
-          addSingle(`${BASE}/${lang}/guide/${a.slug}`, "monthly", "0.6", articleDate);
+          addSingle(`${BASE}/${lang}/guide/${a.slug}`, "monthly", "0.6", latestDate(a.date));
         }
 
         const contentArticleSlugs = new Set((data.articles || []).filter((a: any) => !guideSlugs.has(a.slug)).map((a: any) => a.slug));
@@ -803,11 +830,11 @@ function sitemapPlugin(): Plugin {
             addPair(
               `${BASE}/fr/guide/${post.slug}`,
               `${BASE}/en/guide/${enSlug}`,
-              "monthly", "0.7", post.date || buildDate
+              "monthly", "0.7", latestDate(post.date)
             );
             pairedEnSlugs.add(enSlug);
           } else {
-            addSingle(`${BASE}/fr/guide/${post.slug}`, "monthly", "0.7", post.date || buildDate);
+            addSingle(`${BASE}/fr/guide/${post.slug}`, "monthly", "0.7", latestDate(post.date));
           }
         }
         for (const post of postsEn) {
@@ -820,7 +847,7 @@ function sitemapPlugin(): Plugin {
             GUIDE_FR_ONLY_SLUGS.has(post.slug) ||
             GUIDE_NOINDEX_SLUGS.has(post.slug)
           ) continue;
-          addSingle(`${BASE}/en/guide/${post.slug}`, "monthly", "0.7", post.date || buildDate);
+          addSingle(`${BASE}/en/guide/${post.slug}`, "monthly", "0.7", latestDate(post.date));
         }
 
         // ── Comparisons index + detail pages ──────────────────────────────────
@@ -831,12 +858,19 @@ function sitemapPlugin(): Plugin {
         // fully-rendered comparison pages were being built but left out of the
         // sitemap entirely.
         for (const comp of FEATURED_COMPARISONS) {
-          addPair(`${BASE}/fr/comparatif/${comp.slugPair}`, `${BASE}/en/comparatif/${comp.slugPair}`, "monthly", "0.7");
+          const comparisonLastmod = latestDate(
+            toolDataDate(toolBySlug.get(comp.toolA)),
+            toolDataDate(toolBySlug.get(comp.toolB))
+          );
+          addPair(`${BASE}/fr/comparatif/${comp.slugPair}`, `${BASE}/en/comparatif/${comp.slugPair}`, "monthly", "0.7", comparisonLastmod);
         }
 
         // ── Stack hub + stack detail pages ────────────────────────────────────
         for (const stack of STACKS) {
-          addPair(`${BASE}/fr/stacks/${stack.slug}`, `${BASE}/en/stacks/${stack.slug}`, "monthly", "0.7");
+          const stackLastmod = latestDate(
+            ...(stack.tools || []).map((slot: any) => toolDataDate(toolBySlug.get(slot.slug)))
+          );
+          addPair(`${BASE}/fr/stacks/${stack.slug}`, `${BASE}/en/stacks/${stack.slug}`, "monthly", "0.7", stackLastmod);
         }
 
         // ── Standalone FR article: facturation freelance 2026 ─────────────────
@@ -880,6 +914,42 @@ function sitemapPlugin(): Plugin {
       } catch (e) {
         throw new Error("Sitemap generation failed:", { cause: e });
       }
+    },
+  };
+}
+
+/**
+ * Les métadonnées GEO de index.html (fraîcheur des prix, taille du catalogue)
+ * sont lues par les moteurs et par les agents : elles ne peuvent pas dépendre
+ * d'une mise à jour manuelle. Elles sont calculées depuis le catalogue à chaque
+ * build et injectées dans le template, que le prérendu recopie ensuite partout.
+ */
+function catalogFreshnessPlugin(): Plugin {
+  let values: { verifiedDate: string; toolCount: string } | null = null;
+
+  const readCatalog = () => {
+    if (values) return values;
+    const raw = JSON.parse(fs.readFileSync(path.resolve(__dirname, "src/data/tools_v4.json"), "utf-8"));
+    const tools: any[] = Array.isArray(raw) ? raw : raw.tools || [];
+    const isDate = (value: unknown): value is string =>
+      typeof value === "string" && /^\d{4}-\d{2}-\d{2}/.test(value) && !Number.isNaN(Date.parse(value));
+    const verifiedDates = tools.map((tool) => tool?.pricing_v5?.verified_on).filter(isDate).sort();
+    values = {
+      verifiedDate: verifiedDates.length
+        ? verifiedDates[verifiedDates.length - 1].slice(0, 10)
+        : new Date().toISOString().split("T")[0],
+      toolCount: tools.length.toLocaleString("en-US"),
+    };
+    return values;
+  };
+
+  return {
+    name: "inject-catalog-freshness",
+    transformIndexHtml(html: string) {
+      const { verifiedDate, toolCount } = readCatalog();
+      return html
+        .replaceAll("%CATALOG_VERIFIED_DATE%", verifiedDate)
+        .replaceAll("%CATALOG_TOOL_COUNT%", toolCount);
     },
   };
 }
@@ -2277,7 +2347,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             description: description,
             // image is required for Article rich-result eligibility; fall back
             // to the site OG image until per-guide images exist.
-            image: [post.thumbnail ? `${BASE}${post.thumbnail}` : `${BASE}/og-image.png`],
+            image: [post.thumbnail ? absoluteAssetUrl(post.thumbnail) : `${BASE}/og-image.png`],
             // Omit the date keys entirely rather than emit an invalid empty
             // ISO string when a post has no date.
             ...(post.date ? { datePublished: post.date, dateModified: post.date } : {}),
@@ -2324,8 +2394,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             // A guide with its own cover shares it; social crawlers never run
             // the client code that used to set it. Others keep the defaults.
             ...(post.thumbnail ? [
-              `<meta property="og:image" content="${BASE}${post.thumbnail}" />`,
-              `<meta name="twitter:image" content="${BASE}${post.thumbnail}" />`,
+              `<meta property="og:image" content="${absoluteAssetUrl(post.thumbnail)}" />`,
+              `<meta name="twitter:image" content="${absoluteAssetUrl(post.thumbnail)}" />`,
             ] : []),
             ...(post.seo?.keywords ? [`<meta name="keywords" content="${post.seo.keywords.replace(/"/g, "&quot;")}" />`] : []),
             `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>`,
@@ -2675,6 +2745,7 @@ export default defineConfig(({ mode, isSsrBuild }) => {
     },
   },
   plugins: [
+    catalogFreshnessPlugin(),
     browserToolIndexProjection(),
     react(),
     // These three only make sense for the client build — they write into

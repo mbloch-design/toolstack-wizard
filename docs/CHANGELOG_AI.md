@@ -1,3 +1,11 @@
+## 2026-11-10 · SEO · `lastmod` adossé à la donnée et `og:image` des guides
+
+- Le sitemap n'écrit plus la date du build sur toutes les entrées. Chaque URL reçoit la dernière date réellement connue : `pricing_v5.verified_on`, `lastActivityVerifiedOn` ou `researchedOn` pour une fiche et ses sous-pages, la fiche la plus récente pour une catégorie, les deux fiches comparées pour un comparatif, les outils de la stack pour une stack, `post.date` pour un guide. Sans date source (accueil, listings, pages fixes, best-of), la balise `lastmod` est omise plutôt que fabriquée.
+- Mesure sur le build : 10 726 URLs, 66 valeurs de `lastmod` distinctes (2026-01-27 → 2026-11-10) au lieu d'une seule, 2 010 URLs sans `lastmod`. Les 166 comparatifs et 424 stacks indexables restent datés.
+- `og:image` et `twitter:image` des guides ne préfixent plus une couverture déjà absolue : `absoluteAssetUrl()` ne touche qu'aux chemins relatifs. Vérifié sur le HTML généré, aucune occurrence de `tooltrim.comhttps` dans `dist/`.
+- `index.html` ne contient plus ni date ni compteur figés : les jetons `%CATALOG_VERIFIED_DATE%` et `%CATALOG_TOOL_COUNT%` sont remplacés au build depuis `src/data/tools_v4.json` (dernière vérification tarifaire, taille du catalogue). Le prérendu recopiant `dist/index.html`, les 13 291 pages générées portent `2026-11-10` et « 1,360 tools » ; zéro jeton résiduel dans `dist/`.
+- Validation : `npm run typecheck:node` PASS, build production complet PASS (budgets inclus). Aucun commit, aucun déploiement.
+
 ## 2026-11-10 · Back-office · édition et aperçu des fiches
 
 - La fiche auteur conserve ses champs et ses offres dans une composition allégée. Un aperçu privé du brouillon permet de parcourir les sous-pages et de revenir à la même session d’édition.
