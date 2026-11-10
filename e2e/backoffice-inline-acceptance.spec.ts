@@ -386,3 +386,19 @@ test("missing families: first additions, collection order/focus, interleaved und
     animations: "disabled",
   });
 });
+
+test("draft preview shows the current price and returns to the same editor", async ({ page, request }) => {
+  await control(request, "reset", { representativeCatalog: true, users: [{ email: "admin@example.invalid" }] });
+  await openWorkspace(page, "fr");
+  await page.getByRole("button", { name: "Édition directe · Notion", exact: true }).click();
+  const amount = field(page, "pricing_v5.plans.1.nativeAmount");
+  await amount.fill("123");
+  await page.getByRole("button", { name: "Aperçu", exact: true }).click();
+  const preview = page.getByTestId("catalog-live-preview");
+  await expect(preview.getByRole("button", { name: "Revenir à l’édition" })).toBeFocused();
+  await preview.getByRole("button", { name: "Prix", exact: true }).click();
+  await expect(preview).toContainText("123");
+  await preview.getByRole("button", { name: "Revenir à l’édition" }).click();
+  await expect(amount).toHaveValue("123");
+  await expect(page.getByRole("button", { name: "Aperçu", exact: true })).toBeFocused();
+});

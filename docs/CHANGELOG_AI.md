@@ -1,3 +1,8 @@
+## 2026-11-10 · Back-office · édition et aperçu des fiches
+
+- La fiche auteur conserve ses champs et ses offres dans une composition allégée. Un aperçu privé du brouillon permet de parcourir les sous-pages et de revenir à la même session d’édition.
+- La revue de publication groupée occupe une vue distincte ; les contrôles de version et la confirmation restent en place. Les stories restent à valider.
+
 ## 2026-11-10 · Back-office · en-têtes et lien de détail
 
 - Après revue : navigation de compte atomique et focus robuste au chargement asynchrone ; liste de fiches du système avec actions secondaires, lignes utilisateurs simplifiées et export associé aux onglets du diagnostic.

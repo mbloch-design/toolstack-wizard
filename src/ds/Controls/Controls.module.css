@@ -60,7 +60,7 @@
   gap: var(--tt-space-1);
   padding: var(--tt-space-2) 0;
   border-radius: var(--tt-space-1);
-  font: var(--tt-control-label-font);
+  font: var(--tt-label-font);
 }
 
 .iconButton {
@@ -130,7 +130,7 @@
   gap: var(--tt-space-1);
   min-width: 0;
   color: var(--tt-ink);
-  font: var(--tt-control-label-font);
+  font: var(--tt-label-font);
   letter-spacing: var(--tt-label-tracking);
 }
 
@@ -142,11 +142,12 @@
 .fieldError {
   margin: 0;
   font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
   overflow-wrap: anywhere;
 }
 
 .fieldHelp {
-  color: var(--tt-meta);
+  color: var(--tt-ink);
 }
 
 .fieldError {

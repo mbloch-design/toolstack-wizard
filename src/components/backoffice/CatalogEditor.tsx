@@ -510,7 +510,7 @@ export function CatalogEditor({
       className="bo-catalog"
       aria-label={t("Édition du catalogue", "Catalogue editor")}
     >
-      <BackofficePageHeading title={t("Fiches", "Records")} description={t("Enregistrez vos brouillons, puis publiez tout le lot ensemble.", "Save drafts, then publish the whole batch together.")} action={<StackButton variant="primary" type="button" disabled={(!draftCount && !session.dirty) || busy || legacyDirty || listLoading || !workspace?.capabilities?.canPublishAll} onClick={() => void prepareReview()}>{t(`Mettre en ligne (${draftCount})`, `Publish (${draftCount})`)}</StackButton>} />
+      {!review && !inlineSlug && <BackofficePageHeading title={t("Fiches", "Records")} description={t("Enregistrez vos brouillons, puis publiez tout le lot ensemble.", "Save drafts, then publish the whole batch together.")} action={<StackButton variant="primary" type="button" disabled={(!draftCount && !session.dirty) || busy || legacyDirty || listLoading || !workspace?.capabilities?.canPublishAll} onClick={() => void prepareReview()}>{t(`Mettre en ligne (${draftCount})`, `Publish (${draftCount})`)}</StackButton>} />}
       {error && (
         <div className="bo-catalog-feedback" role="alert">
           <p>{error}</p>
@@ -553,12 +553,13 @@ export function CatalogEditor({
           className="bo-catalog-review"
           aria-label={t("Modifications à publier", "Changes to publish")}
         >
-          <h2>
+          <Button disabled={busy} onClick={() => setReview(null)}>{t("Retour aux fiches", "Back to records")}</Button>
+          <h1>
             {t(
               "Relire le lot avant publication",
               "Review the batch before publishing",
             )}
-          </h2>
+          </h1>
           <p>
             {t(
               "Toutes les saisies sont enregistrées. Toutes les fiches ci-dessous seront transmises ensemble après vérification.",
@@ -642,7 +643,7 @@ export function CatalogEditor({
           </div>
         </section>
       )}
-      {!inlineSlug && (
+      {!review && !inlineSlug && (
         <>
           <form
             className={listStyles.search}
@@ -713,7 +714,7 @@ export function CatalogEditor({
           )}
         </>
       )}
-      {inlineSlug && (
+      {!review && inlineSlug && (
         <CatalogInlineFiche
           session={session}
           slug={inlineSlug}
@@ -726,7 +727,7 @@ export function CatalogEditor({
           onError={(e) => setError(message(e))}
         />
       )}
-      {detail && value && (
+      {!review && detail && value && (
         <section
           className="bo-catalog-editor"
           ref={editorRef}

@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useCategories, useToolSummaries } from "@/hooks/useSupabaseData";
 import { useCurrency } from "@/hooks/useCurrency";
-import { ToolDetailPresentation } from "@/pages/ToolDetailPage";
+import { ToolDetailPresentation, type ToolDetailSubPage } from "@/pages/ToolDetailPage";
 import { mapToolFromJson } from "@/lib/toolFromJson";
 import { catalogCapabilities } from "@/lib/catalogPolicy";
 import { CatalogEditorPresentation } from "./CatalogEditingContext";
@@ -33,7 +33,17 @@ export function CatalogInlineFiche({
   onBack: () => void;
   onError: (e: unknown) => void;
 }) {
+  const previewTrigger = useRef<HTMLButtonElement>(null);
+  const previewBack = useRef<HTMLButtonElement>(null);
+  const wasPreviewOpen = useRef(false);
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [previewPage, setPreviewPage] = useState<ToolDetailSubPage>("presentation");
   const [confirmVersion, setConfirmVersion] = useState<number | null>(null);
+  useEffect(() => {
+    if (previewOpen) previewBack.current?.focus();
+    else if (wasPreviewOpen.current) previewTrigger.current?.focus();
+    wasPreviewOpen.current = previewOpen;
+  }, [previewOpen]);
   const { tools } = useToolSummaries({ refreshRemote: false });
   const { categories } = useCategories();
   const { currency } = useCurrency();
@@ -51,10 +61,13 @@ export function CatalogInlineFiche({
       data-catalog-editor=""
       aria-label={t("Édition directe de la fiche", "Direct record editing")}
     >
+      <div hidden={previewOpen}>
       <CatalogToolbar>
+        <h1>{value.name}</h1>
         <Button onClick={onBack}>
           {t("Retour aux fiches", "Back to records")}
         </Button>
+        <Button ref={previewTrigger} onClick={() => setPreviewOpen(true)}>{t("Aperçu", "Preview")}</Button>
         <p role="status">
           {entry.saving
             ? t("Enregistrement…", "Saving…")
@@ -155,6 +168,7 @@ export function CatalogInlineFiche({
               lang={lang}
               currency={currency}
               privateMode
+              authorMode
               editing={editing}
             />
           )}
@@ -186,6 +200,16 @@ export function CatalogInlineFiche({
           {t("Comparer à la fiche publiée", "Compare with published record")}
         </LinkAction>
       </CatalogToolbar>
+      </div>
+      {previewOpen && <section aria-label={t("Aperçu du brouillon", "Draft preview")} data-testid="catalog-live-preview">
+        <nav aria-label={t("Navigation de l’aperçu", "Preview navigation")}>
+        <CatalogToolbar>
+          <Button ref={previewBack} onClick={() => setPreviewOpen(false)}>{t("Revenir à l’édition", "Back to editing")}</Button>
+          {([ ["presentation", "Présentation", "Overview"], ["prix", "Prix", "Pricing"], ["avis", "Avis", "Reviews"], ["alternatives", "Alternatives", "Alternatives"] ] as const).map(([page, fr, en]) => <Button key={page} aria-pressed={previewPage === page} onClick={() => setPreviewPage(page)}>{t(fr, en)}</Button>)}
+        </CatalogToolbar>
+        </nav>
+        <ToolDetailPresentation tool={mapToolFromJson(value)} tools={tools} categories={categories} lang={lang} currency={currency} privateMode previewMode subPage={previewPage} />
+      </section>}
       <Dialog open={confirmVersion !== null} onOpenChange={(open) => { if (!open) setConfirmVersion(null); }}>
         <DialogContent>
           <DialogHeader>

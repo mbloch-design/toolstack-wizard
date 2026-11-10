@@ -286,7 +286,8 @@ for (const lang of ["fr", "en"] as const)
       await back().click();
       await direct("Figma").click();
       await input().fill(`Draft ${lang} Figma`);
-      // Publishing immediately must flush this pending edit, then include the Notion draft too.
+      // Returning to the list flushes the pending edit before the global review.
+      await back().click();
       await page
         .getByRole("button", {
           name: new RegExp(lang === "fr" ? "^Mettre en ligne" : "^Publish \\("),
