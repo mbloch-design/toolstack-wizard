@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 /**
  * Typography pass over every Storybook story, against the validated rule:
- *   sizes 64 · 42 · 21 · 17 · 16 · 14, and 12 only in capitals;
+ *   sizes 64 · 42 · 21 · 17 · 16 · 14, and 12 only in capitals; actions in Inter Tight also take 15 (small
+ *   actions) and 12 (tab labels, counts);
  *   weights: the role weights of tokens.css (--tt-w-*, one step finer in dark mode);
- *   families Uncut Sans and Inter (Inter Tight cramps interface sizes);
- *   tracking: capitals +0.08 em, Uncut Sans −0.010 to −0.034 em, Inter −0.011 em at 16 and −0.004 em at 14; no grey text.
+ *   families Uncut Sans, Inter, and Inter Tight for actions only (buttons, action links, segmented controls,
+ *   the shell's navigation; arbitration of 11/11/2026, option 2);
+ *   tracking: capitals +0.08 em, Uncut Sans −0.010 to −0.034 em, Inter −0.011 em at 16 and −0.004 em at 14,
+ *   Inter Tight 0; no grey text.
  *
  *   npm run build-storybook && node scripts/audit-typo-ds.mjs
  */
@@ -33,11 +36,13 @@ const audit = () => {
     const size = Math.round(parseFloat(s.fontSize) * 10) / 10, weight = Number(s.fontWeight), family = s.fontFamily.split(",")[0].replace(/"/g, "").trim();
     const caps = s.textTransform === "uppercase", em = +((parseFloat(s.letterSpacing) || 0) / parseFloat(s.fontSize)).toFixed(3);
     const issues = [];
-    if (![64, 42, 21, 17, 16, 14].includes(Math.round(size)) && !(Math.round(size) === 12 && caps)) issues.push(`taille ${size}`);
+    if (![64, 42, 21, 17, 16, 14].includes(Math.round(size)) && !(Math.round(size) === 12 && caps)
+      && !(family === "Inter Tight" && [15, 12].includes(Math.round(size)))) issues.push(`taille ${size}`);
     if (!weights.includes(weight)) issues.push(`graisse ${weight}`);
-    if (!["Uncut Sans", "Inter"].includes(family)) issues.push(`famille ${family}`);
+    if (!["Uncut Sans", "Inter", "Inter Tight"].includes(family)) issues.push(`famille ${family}`);
     if (caps) { if (Math.abs(em - 0.08) > 0.005) issues.push(`capitales ${em}em`); }
     else if (family === "Uncut Sans") { if (em > -0.01 || em < -0.034) issues.push(`Uncut ${em}em`); }
+    else if (family === "Inter Tight") { if (Math.abs(em) > 0.002) issues.push(`Inter Tight ${em}em`); }
     else { const want = Math.round(size) >= 16 ? -0.011 : -0.004; if (Math.abs(em - want) > 0.002) issues.push(`Inter ${em}em`); }
     const [cr, cg, cb] = (s.color.match(/[\d.]+/g) || []).map(Number);
     if (Math.abs(cr - cg) < 6 && Math.abs(cg - cb) < 6 && cr > 70 && cr < 200) issues.push(`gris ${s.color}`);

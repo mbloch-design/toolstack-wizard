@@ -40,10 +40,10 @@ function Frame({ lang, signedIn, count: start, folded = false }: { lang: Lang; s
           start={<Crumbs homeIcon={<Home />} label={t(lang, "Fil d’Ariane", "Breadcrumb")} items={[{ label: t(lang, "Accueil", "Home"), to: "#" }, { label: t(lang, "Outils", "Tools"), to: "#" }, { label: t(lang, "Organisation", "Organisation"), to: "#" }, { label: "Notion" }]} />}
           end={<>
             <SearchTrigger label={t(lang, "Rechercher", "Search")} shortcut="⌘K" onClick={() => undefined} />
-            <ShellMenu label={signedIn ? t(lang, "Compte et réglages", "Account and settings") : t(lang, "Réglages", "Settings")} trigger={signedIn ? <span style={{ font: "var(--tt-label-font)" }}>CM</span> : <UserRound />}>
+            <ShellMenu label={signedIn ? t(lang, "Compte et réglages", "Account and settings") : t(lang, "Réglages", "Settings")} trigger={signedIn ? <span style={{ font: "var(--tt-label-font)", letterSpacing: "var(--tt-label-tracking)" }}>CM</span> : <UserRound />}>
               <MenuGroup>
                 {signedIn
-                  ? <div><p style={{ margin: 0, font: "var(--tt-label-font)" }}>Camille Martin</p><p style={{ margin: 0, font: "var(--tt-note-font)" }}>camille@exemple.fr</p></div>
+                  ? <div><p style={{ margin: 0, font: "var(--tt-label-font)", letterSpacing: "var(--tt-label-tracking)" }}>Camille Martin</p><p style={{ margin: 0, font: "var(--tt-note-font)", letterSpacing: "var(--tt-note-tracking)" }}>camille@exemple.fr</p></div>
                   : <Button variant="primary">{t(lang, "Se connecter", "Sign in")}</Button>}
               </MenuGroup>
               <MenuGroup label={t(lang, "Réglages", "Settings")}>
@@ -66,7 +66,7 @@ function Frame({ lang, signedIn, count: start, folded = false }: { lang: Lang; s
           </>} />
         <main style={{ minWidth: 0, padding: "48px var(--tt-page-pad)", display: "grid", gap: 16, justifyItems: "start" }}>
           <h1 style={{ margin: 0, font: "var(--tt-title-xl-font)", letterSpacing: "var(--tt-title-xl-tracking)", overflowWrap: "anywhere" }}>Notion</h1>
-          <p style={{ margin: 0, font: "var(--tt-note-font)" }}>{t(lang, "Le compteur rebondit quand il change :", "The count bumps when it changes:")}</p>
+          <p style={{ margin: 0, font: "var(--tt-note-font)", letterSpacing: "var(--tt-note-tracking)" }}>{t(lang, "Le compteur rebondit quand il change :", "The count bumps when it changes:")}</p>
           <Button onClick={() => setCount((n) => n + 1)}>{t(lang, "Ajouter", "Add")}</Button>
         </main>
       </div>
@@ -86,7 +86,7 @@ function Settings({ lang, signedIn, places }: { lang: Lang; signedIn: boolean; p
   return <>
     <MenuGroup>
       {signedIn
-        ? <div><p style={{ margin: 0, font: "var(--tt-label-font)" }}>Camille Martin</p><p style={{ margin: 0, font: "var(--tt-note-font)" }}>camille@exemple.fr</p></div>
+        ? <div><p style={{ margin: 0, font: "var(--tt-label-font)", letterSpacing: "var(--tt-label-tracking)" }}>Camille Martin</p><p style={{ margin: 0, font: "var(--tt-note-font)", letterSpacing: "var(--tt-note-tracking)" }}>camille@exemple.fr</p></div>
         : <Button variant="primary">{t(lang, "Se connecter", "Sign in")}</Button>}
     </MenuGroup>
     {places && <MenuGroup label={t(lang, "Explorer", "Explore")}>

@@ -189,7 +189,8 @@
   border-radius: var(--tt-r-pill);
   background: var(--tt-brand);
   color: var(--tt-on-color);
-  font: var(--tt-tag-font);
+  font: var(--tt-tab-font);
+  letter-spacing: var(--tt-action-tracking);
   font-variant-numeric: tabular-nums;
 }
 
@@ -206,7 +207,6 @@
   height: 16px;
   padding: 0 var(--tt-space-1);
   box-shadow: var(--tt-badge-cut);
-  font-size: var(--tt-count-small);
 }
 
 @keyframes bump {
@@ -367,7 +367,7 @@
   border: 0;
   border-radius: var(--tt-r-pill);
   background: var(--tt-bg);
-  color: var(--tt-meta);
+  color: var(--tt-ink);
   font: var(--tt-action-small-font);
   letter-spacing: var(--tt-action-tracking);
   cursor: pointer;
@@ -387,8 +387,9 @@
   padding: calc(var(--tt-space-1) / 2) var(--tt-space-2);
   border-radius: var(--tt-r-chip);
   background: var(--tt-tile);
-  color: var(--tt-meta);
+  color: var(--tt-ink);
   font: var(--tt-tag-font);
+  letter-spacing: var(--tt-tag-tracking);
 }
 
 /* Ma stack: the ink pill of the bar, the lead's matter; its count closes the pill (planche, « confirmer »). */
@@ -640,16 +641,18 @@ button.menuLink:disabled {
   padding: 0;
   border: 0;
   background: none;
-  color: var(--tt-meta);
+  color: var(--tt-ink);
+  opacity: var(--tt-quiet);
   font: var(--tt-tab-font);
   letter-spacing: var(--tt-action-tracking);
   text-decoration: none;
   cursor: pointer;
-  transition: color var(--tt-dur-state) ease;
+  transition: opacity var(--tt-dur-state) ease;
 }
 
-.tab[aria-current="page"] {
-  color: var(--tt-ink);
+.tab[aria-current="page"],
+.tab:hover {
+  opacity: 1;
 }
 
 .tab[aria-current="page"]::before {
@@ -686,7 +689,6 @@ button.menuLink:disabled {
   height: 16px;
   padding: 0 var(--tt-space-1);
   box-shadow: var(--tt-badge-cut);
-  font-size: var(--tt-count-small);
 }
 
 .tabLabel {

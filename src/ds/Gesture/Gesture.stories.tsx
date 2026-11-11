@@ -17,7 +17,7 @@ function Stage({ lang, title, caption, children }: { lang: Lang; title: string; 
   return (
     <figure style={{ display: "grid", gap: 12, margin: 0 }}>
       <div style={{ display: "grid", placeItems: "center", height: 140, borderRadius: 16, background: "var(--tt-tile)" }}>{children(round)}</div>
-      <figcaption style={{ font: "var(--tt-note-font)" }}><strong style={{ font: "var(--tt-label-font)" }}>{title}</strong> {caption}</figcaption>
+      <figcaption style={{ font: "var(--tt-note-font)", letterSpacing: "var(--tt-note-tracking)" }}><strong style={{ font: "var(--tt-label-font)", letterSpacing: "var(--tt-label-tracking)" }}>{title}</strong> {caption}</figcaption>
       <div><Button onClick={() => setRound((n) => n + 1)}>{t(lang, "Rejouer", "Play again")}</Button></div>
     </figure>
   );
@@ -46,7 +46,7 @@ export const Gestures: Story = {
       {(round) => <Played round={round}>{(play) => <span style={{ font: "var(--tt-figure-font)", letterSpacing: "var(--tt-figure-tracking)" }}><Odometer value={play ? "24\u00a0€" : "36\u00a0€"} /></span>}</Played>}
     </Stage>
     <Stage lang={lang} title={t(lang, "Survoler", "Hover")} caption={t(lang, "la carte s'incline vers vous, un reflet suit le doigt.", "the card leans toward you, a sheen follows the finger.")}>
-      {() => <Tilt><span style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 18px 12px 12px", background: "var(--tt-bg)" }}><Logo tool={tool("Canva", "canva")} size={40} localOnly /><span style={{ font: "var(--tt-label-font)" }}>Canva</span></span></Tilt>}
+      {() => <Tilt><span style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 18px 12px 12px", background: "var(--tt-bg)" }}><Logo tool={tool("Canva", "canva")} size={40} localOnly /><span style={{ font: "var(--tt-label-font)", letterSpacing: "var(--tt-label-tracking)" }}>Canva</span></span></Tilt>}
     </Stage>
     <Stage lang={lang} title={t(lang, "Le trim", "The trim")} caption={t(lang, "ce qui part tombe ; un outil s'accroche un instant.", "what goes falls; one tool clings a moment.")}>
       {(round) => <Played round={round}>{(play) => <span style={{ display: "inline-flex", gap: 12 }}>
