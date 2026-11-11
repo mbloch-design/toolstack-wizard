@@ -1,4 +1,4 @@
-import { convertAmount, formatAmount, type Currency } from "@/lib/currencyRates";
+import { convertAmount, formatAmount, type Currency } from "./currencyRates";
 
 export function convertCurrencyAmount(
   amount: number,

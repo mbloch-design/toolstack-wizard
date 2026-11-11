@@ -1,6 +1,6 @@
 import { blocksLegacyPriceFallback, hasExplicitNonNumericPricing, nativeMonthlyAmount, selectNativeComparePlan } from "./nativeComparePlan";
 import { convertAmount, isCurrency } from "./currencyRates";
-import type { ToolPricingPlan } from "@/data/types";
+import type { ToolPricingPlan } from "../data/types";
 /**
  * Whether a tool's `pricing.free` text describes a genuine free tier
  * (usable indefinitely, no card required) rather than a time-limited trial.

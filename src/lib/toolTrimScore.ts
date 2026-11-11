@@ -1,5 +1,5 @@
 import { hasGenuineFreeTier } from "./pricing";
-import type { ToolTrimRating } from "@/data/types";
+import type { ToolTrimRating } from "../data/types";
 
 export interface ToolTrimScoreResult {
   score: number;

@@ -13,6 +13,7 @@ import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
 import { BATTLE_COMPARISON_DATA, type BattleComparisonSlug } from "@/data/comparisonBattles";
 import { trackEvent } from "@/lib/analytics";
 import { comparisonPriceDisplay, comparisonPriceText } from "@/lib/comparisonPricing";
+import { comparisonJsonLd } from "@/lib/comparisonSchema";
 import { fitBrandedTitle } from "@/lib/seoTitle";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
@@ -2010,6 +2011,8 @@ const ComparePage = () => {
 
   useEffect(() => {
     if (!toolA || !toolB) return;
+    // Normalise une fois : le slug vient de l'URL, il sert aussi au balisage.
+    const pairSlug = slugPair ?? "";
     const year = new Date().getFullYear();
     // Same rule as the prerendered title (vite.config.ts), which the client
     // used to overwrite on hydration with an em-dash variant.
@@ -2033,11 +2036,11 @@ const ComparePage = () => {
       ? `${toolA.name} vs ${toolB.name} : ${decisionLine} Prix réels, verdict ToolTrim et critères de décision.`
       : `${toolA.name} vs ${toolB.name}: ${decisionLine} Real pricing, ToolTrim verdict and decision criteria.`;
 
-    const url = `${SEO_BASE}/${lang}/comparatif/${slugPair}`;
+    const url = `${SEO_BASE}/${lang}/comparatif/${pairSlug}`;
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
     if (isFeaturedPair) removeNoindex();
     else setNoindex();
-    setHreflang(`/${lang}/comparatif/${slugPair}`);
+    setHreflang(`/${lang}/comparatif/${pairSlug}`);
 
     // Per-page AI summary for GEO/generative engines.
     const aiSummary = `${toolA.name} vs ${toolB.name}: ${decisionLine}`;
@@ -2049,48 +2052,19 @@ const ComparePage = () => {
       : "");
     if (verifiedDate) setMeta("data-verified-date", verifiedDate);
 
-    // Rich schema: Article (editorial content) + SoftwareApplication (the two tools).
-    const datePublished = guide?.checkedAt || battleDataForSeo?.checkedAt || year.toString();
-    const dateModified = guide?.checkedAt || battleDataForSeo?.lastUpdatedAt || battleDataForSeo?.checkedAt || year.toString();
-    const comparatifsLabel = lang === "fr" ? "Comparatifs" : "Comparisons";
-    const comparatifsPath = `${SEO_BASE}/${lang}/comparatifs`;
-    setJsonLd("compare-jsonld", {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Article",
-          "@id": `${url}#article`,
-          "headline": title,
-          "description": desc,
-          "url": url,
-          "datePublished": datePublished,
-          "dateModified": dateModified,
-          "inLanguage": lang,
-          "author": { "@type": "Organization", "name": "ToolTrim", "url": SEO_BASE },
-          "publisher": { "@type": "Organization", "name": "ToolTrim", "url": SEO_BASE },
-          "about": [
-            {
-              "@type": "SoftwareApplication",
-              "name": toolA.name,
-              ...(toolA.websiteUrl ? { "url": toolA.websiteUrl } : {}),
-            },
-            {
-              "@type": "SoftwareApplication",
-              "name": toolB.name,
-              ...(toolB.websiteUrl ? { "url": toolB.websiteUrl } : {}),
-            },
-          ],
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "ToolTrim", "item": `${SEO_BASE}/${lang}` },
-            { "@type": "ListItem", "position": 2, "name": comparatifsLabel, "item": comparatifsPath },
-            { "@type": "ListItem", "position": 3, "name": `${toolA.name} vs ${toolB.name}`, "item": url },
-          ],
-        },
-      ],
-    });
+    // Balisage construit par src/lib/comparisonSchema.ts, partage avec le
+    // prerendu : le client annoncait un Article que le prerendu n'emettait
+    // pas, donc Googlebot ne le voyait pas.
+    setJsonLd("compare-jsonld", comparisonJsonLd({
+      base: SEO_BASE,
+      lang,
+      slugPair: pairSlug,
+      title,
+      description: desc,
+      toolA,
+      toolB,
+    }));
+
     return () => {
       removeNoindex();
       cleanupSeo(["compare-jsonld", "compare-faq-jsonld"]);

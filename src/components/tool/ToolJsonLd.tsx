@@ -1,17 +1,12 @@
 import { useEffect } from "react";
-import type { Tool, Category } from "@/data/types";
+import type { Tool } from "@/data/types";
 import { setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { buildToolFaqs } from "@/lib/toolFaq";
-import { computeToolTrimScore } from "@/lib/toolTrimScore";
-import { hasConfirmedFreeTier } from "@/lib/pricing";
 import { getToolTutorials } from "@/data/toolTutorials";
-import { safeExternalUrl } from "@/lib/externalLink";
-import { nativePlanIntent } from "@/lib/nativeComparePlan";
-import { nativePriceFromTool } from "@/lib/currencyRates";
+import { toolFaqPageSchema, toolSoftwareApplicationSchema, toolWebPageSchema } from "@/lib/toolSchema";
 
 interface Props {
   tool: Tool;
-  category: Category | undefined;
+  category: unknown;
   displayPrice: number;
   /** null quand aucune verification tarifaire n'a eu lieu. */
   verifiedOn: string | null;
@@ -22,133 +17,37 @@ interface Props {
 }
 
 /**
- * Manages all JSON-LD schemas for the tool detail page:
- * - WebPage
- * - SoftwareApplication + Offer
- * - FAQPage when the dedicated FAQ page is rendered
+ * Balisage de la fiche outil : `WebPage`, `SoftwareApplication` + `Review`,
+ * `FAQPage` et `VideoObject`.
+ *
+ * Les trois premiers viennent de `src/lib/toolSchema.ts`, appelé aussi par le
+ * prérendu (`vite.config.ts`) : `setJsonLd` écrit dans le bloc prérendu par id,
+ * donc deux constructeurs différents se remplaçaient l'un l'autre à
+ * l'hydratation (FAQ de 4 questions au prérendu contre 5-6 visibles, puis
+ * `Review.name` et `offers.url` effacés côté client). Un seul constructeur.
+ *
+ * `BreadcrumbList` n'est volontairement pas émis ici : le prérendu en pose un
+ * pour chaque page, et l'ancien doublon se disputait la même URL.
  */
-/** positiveNotes / negativeNotes from the visible pros and cons (max 3 each). */
-function reviewNotes(pros: unknown, cons: unknown) {
-  const notes = (values: unknown) => (Array.isArray(values) ? values : [])
-    .map((value) => (typeof value === "string" ? value.trim() : ""))
-    .filter(Boolean).slice(0, 3)
-    .map((name, index) => ({ "@type": "ListItem", position: index + 1, name }));
-  const positive = notes(pros);
-  const negative = notes(cons);
-  return {
-    ...(positive.length ? { positiveNotes: { "@type": "ItemList", itemListElement: positive } } : {}),
-    ...(negative.length ? { negativeNotes: { "@type": "ItemList", itemListElement: negative } } : {}),
-  };
-}
-
-export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq = false, canonicalUrl: pageCanonicalUrl }: Props) {
+export default function ToolJsonLd({
+  tool,
+  displayPrice,
+  verifiedOn,
+  alternatives,
+  lang,
+  includeFaq = false,
+  canonicalUrl: pageCanonicalUrl,
+}: Props) {
   useEffect(() => {
-    const intent = nativePlanIntent(tool, lang === "en" ? "USD" : "EUR");
-    const nativePrice = nativePriceFromTool(tool, lang === "en" ? "USD" : "EUR");
-    const maxonAnnual = !intent.explicit && tool.pricing_v5?.source_domain === "maxon.net"
-      ? tool.pricing_v5.plans?.find((plan) => plan.isComparePlan && plan.billingPeriod === "annual" && plan.nativeAmount != null)
-      : null;
-    const offerPrice = maxonAnnual?.nativeAmount ?? nativePrice?.amount ?? displayPrice;
-    const offerCurrency = maxonAnnual?.nativeCurrency ?? nativePrice?.currency ?? "EUR";
-    // Without a price the vendor publishes, only an honest free offer can be declared.
-    const unattested = !maxonAnnual && !nativePrice && !(displayPrice > 0);
-    const noVerifiedOffer = (!intent.explicit && ["included", "beta", "discontinued", "unknown"].includes(tool.pricing_v5?.compare_plan_kind || ""))
-      || (unattested && !hasConfirmedFreeTier(tool));
-    const host = String((tool as { host_app?: string }).host_app || "").toLowerCase();
-    const operatingSystem = host === "macos" ? "macOS" : host ? undefined : "Web";
     const canonicalUrl = pageCanonicalUrl || `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
-    const pageIntent = canonicalUrl.endsWith("/prix") || canonicalUrl.endsWith("/pricing")
-      ? (lang === "fr" ? "Prix et tarifs" : "Pricing and plans")
-      : canonicalUrl.endsWith("/alternatives")
-      ? (lang === "fr" ? "Alternatives" : "Alternatives")
-      : canonicalUrl.endsWith("/avis") || canonicalUrl.endsWith("/reviews")
-      ? (lang === "fr" ? "Avis et verdict" : "Review and verdict")
-      : canonicalUrl.endsWith("/faq")
-      ? "FAQ"
-      : (lang === "fr" ? "Avis, prix et alternatives" : "Review, pricing and alternatives");
 
-    // 1. WebPage
-    setJsonLd("tool-webpage-jsonld", {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: `${tool.name} : ${pageIntent} | ToolTrim`,
-      description: lang === "en" ? (tool.shortDescriptionEn || tool.shortDescription) : tool.shortDescription,
-      url: canonicalUrl,
-      // Pas de dateModified sans verification reelle : annoncer une date de
-      // mise a jour qu'on n'a pas faite trompe le moteur autant que le lecteur.
-      ...(verifiedOn ? { dateModified: verifiedOn } : {}),
-      publisher: {
-        "@type": "Organization",
-        name: "ToolTrim",
-        url: SEO_BASE,
-      },
-    });
+    setJsonLd("tool-webpage-jsonld", toolWebPageSchema({ tool, lang, url: canonicalUrl, verifiedOn }));
+    // L'URL produit est résolue par le module partagé : le client ne peut plus
+    // déclarer une autre URL que le prérendu sur la même fiche.
+    setJsonLd("tool-software-jsonld", toolSoftwareApplicationSchema({ tool, lang, canonicalUrl }));
 
-    // 2. SoftwareApplication + editorial Review. Deliberately no
-    // AggregateRating: ToolTrim publishes one editorial score, not a pool of
-    // user ratings, so inventing ratingCount/reviewCount would be misleading.
-    const score = computeToolTrimScore(tool);
-    const ratingValue = score.score.toFixed(1);
-    const reviewBody =
-      (lang === "en" ? tool.verdictEn?.threshold : tool.verdict?.threshold) ||
-      (lang === "en" ? tool.longDescriptionEn : tool.longDescription) ||
-      (lang === "en" ? tool.shortDescriptionEn : tool.shortDescription) ||
-      `${tool.name} review by ToolTrim.`;
-
-    setJsonLd("tool-software-jsonld", {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      name: tool.name,
-      description: lang === "en" ? (tool.shortDescriptionEn || tool.shortDescription) : tool.shortDescription,
-      url: safeExternalUrl(tool.websiteUrl) || canonicalUrl,
-      applicationCategory: "BusinessApplication",
-      ...(operatingSystem ? { operatingSystem } : {}),
-      ...(noVerifiedOffer ? {} : { offers: unattested
-        ? { "@type": "Offer", price: "0", priceCurrency: "EUR" }
-        : maxonAnnual
-        ? {
-            "@type": "Offer",
-            price: String(offerPrice),
-            priceCurrency: offerCurrency,
-            priceSpecification: { "@type": "UnitPriceSpecification", price: String(offerPrice), priceCurrency: offerCurrency, billingDuration: "P1Y" },
-          }
-        : hasConfirmedFreeTier(tool) && offerPrice > 0
-        ? {
-            "@type": "AggregateOffer",
-            lowPrice: "0",
-            highPrice: String(offerPrice),
-            priceCurrency: offerCurrency,
-            offerCount: "2",
-          }
-        : {
-            "@type": "Offer",
-            price: String(offerPrice || 0),
-            priceCurrency: offerCurrency,
-          } }),
-      review: {
-        "@type": "Review",
-        author: {
-          "@type": "Organization",
-          name: "ToolTrim",
-          url: SEO_BASE,
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue,
-          bestRating: "5",
-          worstRating: "1",
-        },
-        reviewBody,
-        // Datation réelle, comme le prérendu : la date de vérification est la
-        // seule preuve de fraîcheur disponible pour cette fiche.
-        ...(verifiedOn ? { datePublished: verifiedOn, dateModified: verifiedOn } : {}),
-        // Same pros and cons as the prerender (vite.config.ts reviewNotes).
-        ...reviewNotes(lang === "en" ? tool.prosEn : tool.pros, lang === "en" ? tool.consEn : tool.cons),
-      },
-    });
-
-    // VideoObject is emitted only when the curated video is visible on the
-    // overview page. The UI and structured data share the same metadata.
+    // VideoObject : uniquement quand la vidéo curatée est visible sur la page
+    // d'ensemble. L'interface et le balisage partagent les mêmes métadonnées.
     const tutorials = getToolTutorials(tool.slug || tool.id);
     const isOverview = canonicalUrl === `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
     if (isOverview && tutorials.length > 0) {
@@ -160,10 +59,10 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
           ? `Official ${tool.name} tutorial published by ${tutorial.author}.`
           : `Tutoriel officiel ${tool.name} publié par ${tutorial.author}.`,
         thumbnailUrl: tutorial.posterUrl || `https://i.ytimg.com/vi/${tutorial.videoId}/hqdefault.jpg`,
-        embedUrl: tutorial.provider === 'wistia'
+        embedUrl: tutorial.provider === "wistia"
           ? `https://fast.wistia.net/embed/iframe/${tutorial.videoId}`
-          : tutorial.provider === 'native' ? undefined : `https://www.youtube-nocookie.com/embed/${tutorial.videoId}`,
-        contentUrl: tutorial.provider === 'native' ? tutorial.videoUrl : undefined,
+          : tutorial.provider === "native" ? undefined : `https://www.youtube-nocookie.com/embed/${tutorial.videoId}`,
+        contentUrl: tutorial.provider === "native" ? tutorial.videoUrl : undefined,
         uploadDate: tutorial.publishedOn,
       }));
       setJsonLd("tool-video-jsonld", videos.length === 1 ? videos[0] : {
@@ -172,32 +71,13 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       });
     }
 
-    // 3. FAQPage — mirrors the on-page FAQ (ToolFAQSection) exactly: both
-    // pull from buildToolFaqs, the single source of these questions/answers,
-    // so they can never drift out of sync (required by Google's FAQPage policy).
+    // FAQPage — mêmes questions que la FAQ affichée, via buildToolFaqs.
     if (includeFaq) {
-      const faqEntries = buildToolFaqs(tool, lang, displayPrice, verifiedOn, alternatives).map((faq) => ({
-        "@type": "Question",
-        name: faq.q,
-        acceptedAnswer: { "@type": "Answer", text: faq.a },
-      }));
-
-      setJsonLd("tool-faq-jsonld", {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqEntries,
-      });
+      setJsonLd("tool-faq-jsonld", toolFaqPageSchema({ tool, lang, displayPrice, verifiedOn, alternatives }));
     }
 
-    // BreadcrumbList is intentionally NOT emitted here: the static prerender
-    // (vite.config.ts, static-prerender-tools) already bakes one into the
-    // initial HTML for every tool page and sub-page. This effect ran on top
-    // of that at hydration without removing it, so Google was seeing two
-    // divergent BreadcrumbList blocks on the same URL (GSC: "certains
-    // éléments ne sont pas valides"). One canonical source only.
-
     return () => cleanupSeo(["tool-webpage-jsonld", "tool-software-jsonld", "tool-video-jsonld", "tool-faq-jsonld"]);
-  }, [tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq, pageCanonicalUrl]);
+  }, [tool, displayPrice, verifiedOn, alternatives, lang, includeFaq, pageCanonicalUrl]);
 
   return null;
 }

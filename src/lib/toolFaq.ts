@@ -1,9 +1,9 @@
-import type { Tool } from "@/data/types";
-import { formatToolPrice } from "@/lib/currencyRates";
-import { formatCurrencyAmount } from "@/lib/currency";
-import { localizePlanName } from "@/lib/planNames";
-import { hasConfirmedFreeTier, isPriceUndisclosed } from "@/lib/pricing";
-import { toolPriceFacts } from "@/lib/toolSeo";
+import type { Tool } from "../data/types";
+import { formatToolPrice } from "./currencyRates";
+import { formatCurrencyAmount } from "./currency";
+import { localizePlanName } from "./planNames";
+import { hasConfirmedFreeTier, isPriceUndisclosed } from "./pricing";
+import { toolPriceFacts } from "./toolSeo";
 
 export interface ToolFaqEntry {
   q: string;

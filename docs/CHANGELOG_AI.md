@@ -1,3 +1,30 @@
+## 2026-11-11 · SEO · revue senior 2 : unification résiduelle client/prérendu
+
+- Seconde passe de revue senior sur les lots « fiches outils » et « comparatifs ». Deux divergences résiduelles corrigées :
+  - `src/pages/ToolDetailPage.tsx` calculait `displayPrice` avec `nativePriceFromTool(tool)` (sans devise), là où le prérendu utilise `toolDisplayPrice(tool, lang)` qui choisit le plan selon la devise de la page. La FAQ client et la FAQ prérendue pouvaient donc citer un prix de référence différent. Le client utilise désormais l'aide partagée.
+  - `src/pages/ToolDetailPage.tsx` résolvait les alternatives à la main, alors que le prérendu passe par `resolveToolAlternatives`. Les deux listes pouvaient diverger selon le catalogue chargé. Le client utilise désormais la même fonction.
+- Vérification : `typecheck:app` et `typecheck:node` PASS, build production PASS, `validate-generated-seo` PASS (10 726 URLs), tests `toolSchema` (6) et `comparisonSchema` (7) PASS.
+- Aucun changement sur les sous-pages `/prix` et `/avis` (conservées telles quelles, par décision).
+
+## 2026-11-11 · SEO · fiches outils : un seul constructeur de balisage
+
+- `src/lib/toolSchema.ts` : `SoftwareApplication` + `Review`, `WebPage` et `FAQPage` sont construits une seule fois, pour le prérendu (`vite.config.ts`) et pour le client (`ToolJsonLd`). `setJsonLd` écrivant dans le bloc existant par id, deux constructeurs se remplaçaient l'un l'autre à l'hydratation.
+- Défaut principal : le prérendu posait une `FAQPage` de **4 questions** quand la FAQ visible en compte **5 ou 6**, et répondait « Prix vérifié par ToolTrim. » là où la page affiche une date. Le HTML lu par Google décrivait donc une FAQ qui n'était pas celle de la page. Le client effaçait par ailleurs `Review.name` et `offers.url`.
+- Mesure après build complet (PASS) : `FAQPage` à 5 questions sur 1 132 fiches, 6 sur 119 ; `Review.name` 1 251/1 251 ; `offers.url` 790/793 ; `WebPage.name` égal au `<title>` 1 251/1 251 ; 0 JSON invalide. Avant : 4 questions partout, `Review.name` et `offers.url` absents après hydratation.
+- Règle d'offre unifiée et conservatrice : aucune offre annoncée pour une fiche incluse dans une suite, en bêta, arrêtée ou d'accessibilité inconnue (794 → 793 offres).
+- `src/lib/toolSeo.ts`, `toolFaq.ts`, `toolTrimScore.ts`, `pricing.ts`, `currency.ts` : imports `@/` convertis en chemins relatifs, seuls résolubles quand `vite.config.ts` charge le module (l'alias n'y existe pas).
+- 4 tests dans `src/lib/toolSchema.test.ts` : la `FAQPage` doit reprendre mot pour mot les questions et réponses de `buildToolFaqs`.
+- Revue technique avant commit : l'URL produit est résolue par `toolProductUrl` (site officiel, sinon lien affilié) — le client ne pouvait plus publier une autre URL que le prérendu sur la même fiche ; `WebPage` porte `@id` = URL et `SoftwareApplication` un `@id` + `mainEntityOfPage` (les renvois entre nœuds pointaient dans le vide) ; la `Review` est omise quand la note n'est pas calculable, une fiche incomplète ne peut plus faire échouer le build ; l'`Article` des comparatifs reçoit `image`, propriété requise par les consignes Article.
+- Contrôle structurel des 13 289 pages du build : 0 JSON invalide, 0 `Article` sans image/auteur/date, 0 `WebPage` sans `@id`, 0 `FAQPage` vide ou à questions dupliquées, 0 fil d'Ariane mal numéroté, 0 doublon de bloc.
+
+## 2026-11-11 · SEO · comparatifs : Article, Person et about au prérendu
+
+- `src/lib/comparisonSchema.ts` : construction unique du JSON-LD des comparatifs, appelée par le prérendu (`vite.config.ts`) et par le client (`ComparePage`). Le client annonçait un `Article` que le prérendu n'émettait pas — il ne posait qu'un `BreadcrumbList`. Googlebot, qui lit le HTML prérendu, ne voyait donc ni `Article`, ni auteur, ni `about` sur les 166 pages comparatives, les plus transactionnelles du site.
+- L'auteur passe d'`Organization` à `Person` (Michael Bloch, directeur créatif, lien vers `/about` dans la langue de la page), avec `datePublished`, `dateModified` et `about` = les deux `SoftwareApplication` du duel.
+- Dates par priorité et non par maximum : guide éditorial, puis duel, puis donnée des fiches. Une date de donnée plus récente écrasait la date de relecture affichée sur la page (vu sur `chatgpt-vs-claude`, balisage au 25/09 pour un guide daté du 20/09).
+- Mesure sur le build : 166 pages (83 FR + 83 EN) avec `Article`, auteur `Person`, `about` à deux entrées, dates ISO, URL égale au canonical ; 0 JSON invalide ; 7 tests dans `src/lib/comparisonSchema.test.ts`.
+- Limite assumée : le contenu reste mince (médiane 619 mots en FR, 541 en EN, 82 des 83 comparatifs sous 1 200 mots). C'est le second volet de l'action 9, non traité ici.
+
 ## 2026-11-11 · SEO · recette post-déploiement : contrôle des shards llms-full
 
 - `verify:postdeploy` passe de 19 à 20 contrôles. Il lit les familles annoncées dans `/llms.txt`, récupère chaque `/llms-full/{famille}.txt` sur la base vérifiée (donc `--base` fonctionne en préprod), et exige : HTTP 200, contenu texte, JSON valide, compte de fiches conforme à l'index, et partition exacte — la réunion des shards doit égaler le catalogue de `/llms-full.txt`, sans doublon. Un libellé de famille différent de son URL échoue aussi.

@@ -19,7 +19,7 @@ import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { getToolDomain, getDomainFromUrl, formatPriceLabel, isOneTimePrice, resolveVerdict, resolveToolOverview } from "@/lib/toolUtils";
 import { stripLeadingEmoji } from "@/lib/text";
 import { hasGenuineFreeTier, isPriceUndisclosed, resolveMonthlyPrice } from "@/lib/pricing";
-import { nativePriceFromTool } from "@/lib/currencyRates";
+
 
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
 import ToolPricingSection from "@/components/tool/ToolPricingSection";
@@ -54,6 +54,7 @@ import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
 import { splitRatingEvidence, collectRatingSources } from "@/lib/ratingEvidence";
 import { hasEditorialSubstance } from "@/lib/editorialSubstance";
 import { toolPageHeadingSuffix, toolSeoDescription, toolSeoTitle, type ToolSeoPage } from "@/lib/toolSeo";
+import { toolDisplayPrice, resolveToolAlternatives } from "@/lib/toolSchema";
 import { getExplorerHref } from "@/lib/toolExploration";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -271,40 +272,9 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
   /* ── Derived values ── */
   const category   = categories.find((c: any) => c.id === tool.categoryId);
   const tutorials = getToolTutorials(tool.slug || tool.id);
-  const sameCategoryAlts = tools
-    .filter((tt: any) => tt.categoryId === tool.categoryId && tt.id !== tool.id);
-  const toolCovers = new Set((tool as any).covers || []);
-  const coverOverlapAlts = toolCovers.size
-    ? sameCategoryAlts
-        .filter((tt: any) => (tt.covers || []).some((c: string) => toolCovers.has(c)))
-        .sort((a: any, b: any) =>
-          (b.covers || []).filter((c: string) => toolCovers.has(c)).length -
-          (a.covers || []).filter((c: string) => toolCovers.has(c)).length
-        )
-    : [];
-  const curatedAlts = ((tool as any).alternatives || [])
-    .map((slug: string) => tools.find((tt: any) => tt.id === slug || tt.slug === slug))
-    .filter(Boolean);
-  // curatedAlts always wins its slots unconditionally; seenAltIds dedupes
-  // the lower-priority tier (cover-overlap) against it. Deliberately NOT
-  // falling back to sameCategoryAlts (every tool sharing the same broad
-  // categoryId, unfiltered) when curated/cover-overlap are empty — that
-  // tier has no relevance signal at all (categories like "organization"
-  // hold 100+ unrelated tools, e.g. Allstate/Auvik next to Asana) and
-  // produced the same generic 6-tool list for any tool lacking real data.
-  // An empty alternatives list is the honest result in that case.
-  const seenAltIds = new Set<string>();
-  const alternatives = [curatedAlts, coverOverlapAlts].reduce(
-    (acc: any[], list: any[]) => {
-      for (const tt of list) {
-        if (acc.length >= 6 || seenAltIds.has(tt.id)) continue;
-        seenAltIds.add(tt.id);
-        acc.push(tt);
-      }
-      return acc;
-    },
-    [] as any[]
-  );
+  // Même résolution que le prérendu (src/lib/toolSchema.ts) : la FAQ et le
+  // balisage doivent citer les mêmes alternatives.
+  const alternatives = resolveToolAlternatives(tool, tools);
   // Whether the "Alternatives" section/pill has anything to show at all —
   // curated/cover-overlap alternatives above, OR a same-cluster substitute
   // that clears the similarity gate, OR a featured head-to-head comparison.
@@ -430,7 +400,9 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
       </div>
     );
   };
-  const displayPrice  = resolveMonthlyPrice(tool) || nativePriceFromTool(tool)?.amount || 0;
+  // Même résolution que le prérendu (src/lib/toolSchema.ts) : évite que la FAQ
+  // client et la FAQ prérendue n'affichent pas le même prix de référence.
+  const displayPrice  = toolDisplayPrice(tool, lang);
   // Pas de date de repli. Elle valait « 2026-03-29 » et s'affichait comme
   // « Dernière vérification » sur les 325 fiches sans `pricing_v5`, soit 644
   // pages, en plus d'alimenter le `dateModified` des données structurées et la

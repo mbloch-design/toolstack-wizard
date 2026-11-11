@@ -15,6 +15,17 @@ import { hasConfirmedFreeTier, hasGenuineFreeTier, isPriceUndisclosed, resolveMo
 import { formatToolPrice, nativePriceFromTool, usdFromEur } from "./src/lib/currencyRates";
 import { hasEditorialSubstance } from "./src/lib/editorialSubstance";
 import { fitBrandedTitle } from "./src/lib/seoTitle";
+import { comparisonJsonLdScript } from "./src/lib/comparisonSchema";
+import {
+  appCategoryFor,
+  buildToolOffersFor,
+  operatingSystemFor,
+  resolveToolAlternatives,
+  toolDisplayPrice,
+  toolFaqPageSchema,
+  toolSoftwareApplicationSchema,
+  toolWebPageSchema,
+} from "./src/lib/toolSchema";
 import { stackSeoDescription, stackSeoTitle } from "./src/lib/stackSeo";
 import { localizePlanName } from "./src/lib/planNames";
 import { TOOLS_TABLE_SELECT } from "./src/lib/toolsTableColumns";
@@ -205,177 +216,7 @@ function fr(tool: any, eur: number, round = false): string {
   return formatToolPrice(tool, eur, "EUR", "fr", { round }).text;
 }
 
-/** Four-question FAQPage schema embedded on the canonical tool page. */
-function buildToolFaqSchema(params: {
-  name: string;
-  isFr: boolean;
-  tool: any;
-  priceDisplay: number | null;
-  slugToName: Record<string, string>;
-}) {
-  const { name, isFr, tool, priceDisplay, slugToName } = params;
-  const verdictThreshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
-  const altNames = (tool.alternatives || []).slice(0, 3)
-    .map((id: string) => slugToName[id] || id).filter(Boolean);
-  const altAnswer = altNames.length > 0
-    ? (isFr ? `Les principales alternatives à ${name} sont : ${altNames.join(", ")}.` : `The main alternatives to ${name} are: ${altNames.join(", ")}.`)
-    : (isFr ? `ToolTrim référence les meilleures alternatives à ${name} avec comparaison des prix et fonctionnalités.` : `ToolTrim lists the best alternatives to ${name} with price and feature comparisons.`);
 
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: isFr ? `À quoi sert ${name} ?` : `What is ${name} used for?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: (isFr ? tool.shortDescription : tool.shortDescriptionEn || tool.shortDescription) || `${name} is a SaaS tool.`,
-        },
-      },
-      {
-        "@type": "Question",
-        name: isFr ? `Combien coûte ${name} ?` : `How much does ${name} cost?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: (() => {
-            const hasFree = toolHasFreePlan(tool);
-            // « Prix vérifié » only when a verification date exists: it was
-            // stated on every tool, researched or not.
-            const verifiedFr = tool.pricing_v5?.verified_on ? " Prix vérifié par ToolTrim." : "";
-            const verifiedEn = tool.pricing_v5?.verified_on ? " Price verified by ToolTrim." : "";
-            // Must match the visible FAQ answer (src/lib/toolFaq.ts).
-            if (isPriceUndisclosed(tool)) {
-              const verifiedOn = tool.pricing_v5?.verified_on;
-              // Written date, same as the visible FAQ (src/lib/toolFaq.ts).
-              const parsed = verifiedOn ? new Date(`${String(verifiedOn).slice(0, 10)}T00:00:00Z`) : null;
-              const written = !verifiedOn ? "" : parsed && !Number.isNaN(parsed.getTime())
-                ? new Intl.DateTimeFormat(isFr ? "fr-FR" : "en-US", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(parsed)
-                : String(verifiedOn);
-              return isFr
-                ? `${name} ne publie pas de grille tarifaire : le prix se vérifie sur la page officielle.${verifiedOn ? ` Prix vérifié le ${written}.` : ""}`
-                : `${name} doesn't publish a price list; check the official page for current pricing.${verifiedOn ? ` Price verified on ${written}.` : ""}`;
-            }
-            // A zero price is only « free » when a free tier is confirmed (same
-            // rule as src/lib/toolFaq.ts): a placeholder made Logic Pro free.
-            if (priceDisplay === 0 && !hasFree) {
-              return isFr
-                ? `ToolTrim n'a pas encore vérifié la grille tarifaire de ${name} : le prix se consulte sur la page officielle.`
-                : `ToolTrim has not verified ${name}'s pricing yet; check the official page for current prices.`;
-            }
-            // A one-time licence is not a monthly price (Logic Pro: $199.99 once).
-            if (priceDisplay && toolPriceFacts(tool, isFr ? "EUR" : "USD").oneTime) {
-              return isFr
-                ? `${name} coûte ${fr(tool, priceDisplay)} en achat unique, sans abonnement.${verifiedFr}`
-                : `${name} costs ${usd(tool, priceDisplay)} as a one-time purchase, no subscription.${verifiedEn}`;
-            }
-            if (isFr) {
-              if (priceDisplay === 0) return `${name} est gratuit.${verifiedFr}`;
-              if (priceDisplay) return `${name} propose ${hasFree ? "un plan gratuit, puis des offres payantes à partir de" : "des offres à partir de"} ${fr(tool, priceDisplay)}/mois.${verifiedFr}`;
-              return `${name} a un tarif variable selon le plan${hasFree ? ", avec une offre gratuite" : ""}.${verifiedFr}`;
-            }
-            if (priceDisplay === 0) return `${name} is free.${verifiedEn}`;
-            if (priceDisplay) return `${name} offers ${hasFree ? "a free plan, then paid tiers from" : "paid plans from"} ${usd(tool, priceDisplay)}/month.${verifiedEn}`;
-            return `${name} has variable pricing by plan${hasFree ? ", including a free tier" : ""}.${verifiedEn}`;
-          })(),
-        },
-      },
-      {
-        "@type": "Question",
-        name: isFr ? `${name} vaut-il son prix ?` : `Is ${name} worth the price?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: verdictThreshold || (isFr
-            ? `Cela dépend de votre usage. Consultez notre verdict complet sur la page de ${name}.`
-            : `It depends on your usage. See our full verdict on ${name}'s page.`),
-        },
-      },
-      {
-        "@type": "Question",
-        name: isFr ? `Quelles sont les meilleures alternatives à ${name} ?` : `What are the best alternatives to ${name}?`,
-        acceptedAnswer: { "@type": "Answer", text: altAnswer },
-      },
-    ],
-  };
-}
-
-/** True when a tool has a free plan ToolTrim can confirm (never a bulk placeholder). */
-function toolHasFreePlan(tool: any): boolean {
-  const p = tool.pricing;
-  return !!(p && typeof p === "object" && hasConfirmedFreeTier(tool));
-}
-
-/**
- * schema.org Offer/AggregateOffer for a tool.
- *  - freemium (free plan + a paid tier): AggregateOffer 0 → paid, so the
- *    schema doesn't claim a paid-only price on a page that shows "Gratuit".
- *  - paid only: single Offer at that price.
- *  - free only / unknown: single Offer at 0.
- */
-// A tool with no public price and no free plan has no offer we can state:
-// its 0 comparison price means "unknown", and an Offer at 0 would claim free.
-function buildToolOffersFor(tool: any, price: number | null, url: string, currency: "EUR" | "USD") {
-  const hasFree = toolHasFreePlan(tool);
-  const native = nativePriceFromTool(tool, currency);
-  // An attested official price outranks the catalogue's "undisclosed" flag.
-  if (!native && isPriceUndisclosed(tool) && !hasFree) return undefined;
-  // Only a price the vendor actually publishes may be declared. Without one, the
-  // catalogue fallback is a normalised (often converted or zero) figure: stating
-  // it would claim the wrong price or "free" on a paid tool.
-  if (native) return buildToolOffers(native.amount, hasFree, native.currency, url);
-  // No vendor-published price: keep the catalogue figure only when it is a real
-  // amount; a 0 on a paid tool would claim "free".
-  if (price != null && price > 0) return buildToolOffers(price, hasFree, "EUR", url);
-  return hasFree ? buildToolOffers(0, true, "EUR", url) : undefined;
-}
-
-/** positiveNotes / negativeNotes for an editorial Review, from the visible pros and cons (max 3 each). */
-function reviewNotes(pros: unknown, cons: unknown) {
-  const notes = (values: unknown) => (Array.isArray(values) ? values : [])
-    .map((value) => (typeof value === "string" ? value.trim() : ""))
-    .filter(Boolean).slice(0, 3)
-    .map((name, index) => ({ "@type": "ListItem", position: index + 1, name }));
-  const positive = notes(pros);
-  const negative = notes(cons);
-  return {
-    ...(positive.length ? { positiveNotes: { "@type": "ItemList", itemListElement: positive } } : {}),
-    ...(negative.length ? { negativeNotes: { "@type": "ItemList", itemListElement: negative } } : {}),
-  };
-}
-
-function operatingSystemFor(tool: any): string | undefined {
-  const host = String(tool?.host_app || "").toLowerCase();
-  if (host === "macos") return "macOS";
-  if (host) return undefined;
-  return "Web";
-}
-
-function buildToolOffers(price: number | null, hasFree: boolean, currency: string, url: string) {
-  const urlPart = url ? { url } : {};
-  const paid = price != null && price > 0 ? price : 0;
-  if (hasFree && paid > 0) {
-    return { "@type": "AggregateOffer", lowPrice: "0", highPrice: String(paid), priceCurrency: currency, offerCount: "2", ...urlPart };
-  }
-  return { "@type": "Offer", price: String(paid), priceCurrency: currency, ...urlPart };
-}
-
-/** Map a ToolTrim category to the closest schema.org applicationCategory. */
-const APP_CATEGORY_BY_TOOL_CATEGORY: Record<string, string> = {
-  "design-tools": "DesignApplication", design: "DesignApplication", illustration: "DesignApplication",
-  prototyping: "DesignApplication", "ui-components": "DeveloperApplication",
-  photo: "MultimediaApplication", video: "MultimediaApplication", "3d": "MultimediaApplication",
-  creation: "MultimediaApplication", publishing: "MultimediaApplication",
-  "nocode-web": "DeveloperApplication", automation: "DeveloperApplication",
-  security: "SecurityApplication", "vendor-risk-data": "SecurityApplication",
-  finance: "FinanceApplication", "budgeting-fpa": "FinanceApplication", erp: "FinanceApplication",
-  communication: "CommunicationApplication", "communication-team": "CommunicationApplication",
-  "email-productivity": "CommunicationApplication",
-  "formation-education": "EducationalApplication",
-  storage: "UtilitiesApplication",
-};
-function appCategoryFor(tool: any): string {
-  return APP_CATEGORY_BY_TOOL_CATEGORY[tool.category] || "BusinessApplication";
-}
 
 // --- Source de données du build SEO (sitemap + prerender) : Supabase est la
 // source de vérité au runtime. On la fusionne PAR-DESSUS le JSON groupé
@@ -1137,45 +978,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
 
 
             const productUrl = tool.websiteUrl || tool.affiliateLink || tool.website_url || tool.affiliate_link || "";
-            const jsonLd: Record<string, any> = {
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              name,
-              ...(productUrl ? { url: productUrl } : {}),
-              description: description || title,
-              applicationCategory: appCategoryFor(tool),
-              ...(operatingSystemFor(tool) ? { operatingSystem: operatingSystemFor(tool) } : {}),
-            };
-            // offers est requis par le rich result Software App ; AggregateOffer
-            // 0→prix pour les freemium (sinon le schema annonce un prix payant
-            // sur une page qui affiche "Gratuit").
-            const offers = buildToolOffersFor(tool, price, productUrl, isFr ? "EUR" : "USD");
-            if (offers) jsonLd.offers = offers;
-            // Note éditoriale ToolTrim (affichée sur la page) exposée en Review.
-            // C'est l'avis du média sur un outil tiers (légitime), PAS un
-            // aggregateRating à faux compteur d'avis utilisateurs.
-            const ts = computeToolTrimScore(tool);
-            if (ts && typeof ts.score === "number") {
-              jsonLd.review = {
-                "@type": "Review",
-                // Avis d'un media sur un outil tiers : cas autorise par Google (la
-                // restriction "self-serving" vise les avis sur sa propre entite).
-                author: { "@type": "Organization", name: "ToolTrim", url: BASE },
-                reviewRating: {
-                  "@type": "Rating",
-                  ratingValue: ts.score.toFixed(1),
-                  bestRating: "5",
-                  worstRating: "1",
-                },
-                ...(isFr ? { name: `Avis ToolTrim : ${ts.labelFr}` } : { name: `ToolTrim review: ${ts.labelEn}` }),
-                ...(tool.pricing_v5?.verified_on
-                  ? { datePublished: tool.pricing_v5.verified_on, dateModified: tool.pricing_v5.verified_on }
-                  : {}),
-                ...((isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold) ? { reviewBody: String(isFr ? tool.verdict.threshold : tool.verdictEn.threshold) } : {}),
-                // Pros and cons shown in the For. / Against. sheet (Google's pros & cons markup).
-                ...reviewNotes(isFr ? tool.pros : tool.prosEn, isFr ? tool.cons : tool.consEn),
-              };
-            }
+            // Balisage construit par src/lib/toolSchema.ts, partage avec le
+            // client (ToolJsonLd) : un seul constructeur, donc plus de
+            // reecriture divergente a l'hydratation.
+            const jsonLd = toolSoftwareApplicationSchema({ tool, lang, canonicalUrl: url });
 
             const frToolUrl = `${BASE}/fr/tool/${slug}`;
             const enToolUrl = `${BASE}/en/tool/${slug}`;
@@ -1199,16 +1005,19 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             // the FAQ rich-result opportunity was missing exactly where it
             // matters. Shared with the /faq sub-page via buildToolFaqSchema —
             // real content already shown on the page, not invented for schema.
-            const mainFaqSchema = buildToolFaqSchema({ name, isFr, tool, priceDisplay, slugToName });
-            const webPageSchema = {
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              name: title,
-              description,
+            const mainFaqSchema = toolFaqPageSchema({
+              tool,
+              lang,
+              displayPrice: toolDisplayPrice(tool, lang),
+              verifiedOn: tool.pricing_v5?.verified_on || null,
+              alternatives: resolveToolAlternatives(tool, ficheTools),
+            });
+            const webPageSchema = toolWebPageSchema({
+              tool,
+              lang,
               url,
-              ...(tool.pricing_v5?.verified_on ? { dateModified: tool.pricing_v5.verified_on } : {}),
-              publisher: { "@type": "Organization", name: "ToolTrim", url: BASE },
-            };
+              verifiedOn: tool.pricing_v5?.verified_on || null,
+            });
 
             const metaTags = [
               `<link rel="canonical" href="${url}" />`,
@@ -2246,15 +2055,18 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             const frUrl = `${BASE}/fr/comparatif/${comp.slugPair}`;
             const enUrl = `${BASE}/en/comparatif/${comp.slugPair}`;
 
-            const compBreadcrumb = {
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${lang}` },
-                { "@type": "ListItem", position: 2, name: isFr ? "Comparatifs" : "Comparisons", item: `${BASE}/${lang}/comparatifs` },
-                { "@type": "ListItem", position: 3, name: label, item: url },
-              ],
-            };
+            // Meme source de verite que le client (src/lib/comparisonSchema.ts).
+            // Le prerendu n'emettait que le fil d'Ariane : le HTML lu par
+            // Googlebot ne contenait ni Article, ni auteur, ni about.
+            const compJsonLd = comparisonJsonLdScript({
+              base: BASE,
+              lang,
+              slugPair: comp.slugPair,
+              title,
+              description,
+              toolA,
+              toolB,
+            });
 
             const metaTags = [
               `<link rel="canonical" href="${url}" />`,
@@ -2266,7 +2078,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:description" content="${description.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
-              `<script type="application/ld+json">${JSON.stringify(compBreadcrumb)}</script>`,
+              `<script type="application/ld+json">${compJsonLd}</script>`,
             ].join("\n    ");
 
             let html = baseHtml;
