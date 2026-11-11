@@ -9,6 +9,7 @@ import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { Plus, Check, Pencil, LayoutGrid, List, Compass } from "@/lib/icons";
 import { toast } from "sonner";
+import { UndoToast } from "@/ds/Toast/Toast";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
@@ -335,11 +336,11 @@ export default function CartPage() {
     trackEvent("stack_remove", { tool_slug: slug, source: editing ? "edit" : "sheet" });
     closeInspector();
     requestAnimationFrame(() => addRef.current?.focus({ preventScroll: true }));
-    toast(t(`${name} retiré de ma stack.`, `${name} removed from your stack.`), {
-      duration: 6000,
+    // Planche « Retrait avec annulation »: the undo window is a cut line the scissors run back.
+    const undoMs = 6000;
+    toast.custom((id) => <UndoToast message={t(`${name} retiré de ma stack.`, `${name} removed from your stack.`)} undoLabel={t("Annuler", "Undo")} duration={undoMs}
       // Système ToolTrim, le sourire : poli, une fois par geste.
-      action: { label: t("Annuler", "Undo"), onClick: () => { restoreTool(entry, index); toast(t(`${name} est de retour. On ne juge pas.`, `${name} is back. No judgement.`), { duration: 2500 }); } },
-    });
+      onUndo={() => { toast.dismiss(id); restoreTool(entry, index); toast(t(`${name} est de retour. On ne juge pas.`, `${name} is back. No judgement.`), { duration: 2500 }); }} />, { duration: undoMs });
   }
   // Filter motion (FLIP): cards leaving the filter fade out first, the ones
   // that stay glide to their new place, the ones arriving fade in, staggered.
