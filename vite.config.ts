@@ -1158,15 +1158,20 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             if (ts && typeof ts.score === "number") {
               jsonLd.review = {
                 "@type": "Review",
-                author: { "@type": "Organization", name: "ToolTrim" },
+                // Avis d'un media sur un outil tiers : cas autorise par Google (la
+                // restriction "self-serving" vise les avis sur sa propre entite).
+                author: { "@type": "Organization", name: "ToolTrim", url: BASE },
                 reviewRating: {
                   "@type": "Rating",
-                  ratingValue: ts.score,
+                  ratingValue: ts.score.toFixed(1),
                   bestRating: "5",
                   worstRating: "1",
                 },
                 ...(isFr ? { name: `Avis ToolTrim : ${ts.labelFr}` } : { name: `ToolTrim review: ${ts.labelEn}` }),
-                ...((isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold) ? { reviewBody: String(isFr ? tool.verdict.threshold : tool.verdictEn.threshold).substring(0, 280) } : {}),
+                ...(tool.pricing_v5?.verified_on
+                  ? { datePublished: tool.pricing_v5.verified_on, dateModified: tool.pricing_v5.verified_on }
+                  : {}),
+                ...((isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold) ? { reviewBody: String(isFr ? tool.verdict.threshold : tool.verdictEn.threshold) } : {}),
                 // Pros and cons shown in the For. / Against. sheet (Google's pros & cons markup).
                 ...reviewNotes(isFr ? tool.pros : tool.prosEn, isFr ? tool.cons : tool.consEn),
               };
@@ -1401,10 +1406,13 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 ...(subScore && typeof subScore.score === "number" ? {
                   review: {
                     "@type": "Review",
-                    author: { "@type": "Organization", name: "ToolTrim" },
-                    reviewRating: { "@type": "Rating", ratingValue: subScore.score, bestRating: "5", worstRating: "1" },
+                    author: { "@type": "Organization", name: "ToolTrim", url: BASE },
+                    reviewRating: { "@type": "Rating", ratingValue: subScore.score.toFixed(1), bestRating: "5", worstRating: "1" },
                     ...(isFr ? { name: `Avis ToolTrim : ${subScore.labelFr}` } : { name: `ToolTrim review: ${subScore.labelEn}` }),
-                    ...(subVerdictThreshold ? { reviewBody: String(subVerdictThreshold).substring(0, 280) } : {}),
+                    ...(tool.pricing_v5?.verified_on
+                      ? { datePublished: tool.pricing_v5.verified_on, dateModified: tool.pricing_v5.verified_on }
+                      : {}),
+                    ...(subVerdictThreshold ? { reviewBody: String(subVerdictThreshold) } : {}),
                   },
                 } : {}),
               } : null;

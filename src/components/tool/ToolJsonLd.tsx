@@ -139,6 +139,9 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
           worstRating: "1",
         },
         reviewBody,
+        // Datation réelle, comme le prérendu : la date de vérification est la
+        // seule preuve de fraîcheur disponible pour cette fiche.
+        ...(verifiedOn ? { datePublished: verifiedOn, dateModified: verifiedOn } : {}),
         // Same pros and cons as the prerender (vite.config.ts reviewNotes).
         ...reviewNotes(lang === "en" ? tool.prosEn : tool.pros, lang === "en" ? tool.consEn : tool.cons),
       },

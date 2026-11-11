@@ -1,3 +1,10 @@
+## 2026-11-11 · SEO · Review des fiches : cadrage corrigé et balisage daté
+
+- La recommandation de l'étude (« supprimer le `Review`/`Rating` auto-déclaré, non conforme ») reposait sur une lecture erronée de la règle Google. La restriction « self-serving » vise les avis portant sur sa propre entité (`LocalBusiness`, `Organization`) ; un média qui note un outil tiers est le cas autorisé, et `SoftwareApplication` reste dans les types éligibles aux review snippets. Supprimer le balisage aurait fait perdre un rich result.
+- Le balisage est conservé et renforcé : `datePublished` / `dateModified` sur le `Review` depuis `pricing_v5.verified_on`, auteur `Organization` avec `url`, note sérialisée au même format (chaîne `toFixed(1)`) des deux côtés, et `reviewBody` non tronqué — le prérendu coupait à 280 caractères alors que le client servait le texte entier, donc deux versions divergentes pour la même URL.
+- Fichiers : `vite.config.ts` (fiche et sous-pages `/prix`, `/avis`), `src/components/tool/ToolJsonLd.tsx`. L'absence d'`aggregateRating` reste volontaire : une note éditoriale unique n'est pas un agrégat d'avis.
+- Étude mise à jour : §5.5 (cadrage corrigé, sources à l'appui), §6 action 10, §9.1 et §9.2. Vérifié par `typecheck:node`, `typecheck:app` et un build complet (7 506 blocs `Review` analysés dans le HTML prérendu).
+
 ## 2026-11-11 · SEO · priorisation des réécritures par manque à gagner
 
 - Nouveau `scripts/analyze-gsc-performance.mjs` (alias `npm run analyze:gsc-performance`) : à partir des exports Performances (Pages et Requêtes), il chiffre pour chaque page `impressions × (CTR attendu à la position − CTR réel)` et range chaque ligne dans une action — réécrire (prioritaire sous 1 % de CTR, sinon normale), approfondir au-delà de la position 20, protéger si la page dépasse la courbe, sous le seuil si elle manque d'impressions.
