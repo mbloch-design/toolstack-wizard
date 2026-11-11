@@ -1,3 +1,16 @@
+## 2026-11-11 · SEO · script d'échantillonnage du rapport Couverture
+
+- Nouveau `scripts/audit-seo-coverage.mjs` (alias `npm run audit:seo-coverage`) : il ingère l'export CSV Couverture / Indexation des pages de Search Console dès qu'il est fourni, filtre le motif « explorée, actuellement non indexée », tire un échantillon stratifié déterministe par famille, enrichit chaque URL en direct avec `--live` (statut, canonical, robots, title, mots, JSON-LD) et classe doublon / thin / hors intention / à qualifier avec la preuve de chaque verdict.
+- Formats couverts : exports FR et EN, séparateur `,` ou `;`, BOM, guillemets échappés, colonnes `Reason`/`Status` et ancienne `Validité`; `--col-url` et `--col-reason` permettent de forcer une colonne.
+- Limites assumées dans le rapport : les doublons sont mesurés dans l'échantillon (plancher, pas recensement) et « hors intention » reste une suspicion argumentée, faute de données de requête.
+- Tests exécutés : `node --check`, quatre exports de contrôle (EN virgule + BOM, FR point-virgule + en-têtes accentués, colonne `Validité`, motif absent → sortie 1 avec liste des motifs présents), déterminisme vérifié sur deux tirages identiques, puis `--live` sur quatre URLs de production (4 × 200, sitemap de 10 726 URLs lu, classement cohérent). Aucun commit, aucun déploiement.
+
+## 2026-11-11 · SEO · état d'avancement de l'étude
+
+- `docs/SEO_ETUDE_2026-11-10.md` reçoit une section 9 « État d'avancement au 11/11/2026 » : livré et vérifié (actions P0-1 à P0-4, P1-8 et l'arbitrage des sous-pages), reste à faire avec dépendances et blocages, arbitrages à trancher, mesures encore manquantes, et entrées nécessaires pour lancer l'action 5.
+- Deux incohérences consignées : la cible « ≤ 3 500 URLs indexables » est incompatible avec le maintien de `/prix` et `/avis` (10 008 URLs outils) et doit être rebasée par famille ; les 16 redirections vers des cibles `noindex` restent à trancher avec la refonte des hubs.
+- Aucun changement de code, de donnée ni de build. Rien n'est commité.
+
 ## 2026-11-10 · Catalogue · rattachement des 28 fiches orphelines
 
 - Treize identifiants de catégorie hérités (`assets`, `illustration`, `design`, `publishing`, `video`, `marketing`, `3d`, `photo`, `ai-code`, `website-builders`, `developer-tools`, `motion-design`, `audio`) ne correspondaient à aucune des 24 catégories : 28 fiches restaient invisibles depuis les pages catégorie.

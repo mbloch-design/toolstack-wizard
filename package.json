@@ -54,6 +54,7 @@
     "audit:guide-locales": "node scripts/audit-guide-locale-parity.mjs",
     "audit:explorer-r5": "node scripts/verify-explorer-r5.mjs",
     "audit:seo-explorer": "node scripts/audit-explorer-seo.mjs",
+    "audit:seo-coverage": "node scripts/audit-seo-coverage.mjs",
     "validate:seo-generated": "node scripts/validate-generated-seo.mjs",
     "validate:seo-redirects": "node scripts/validate-production-redirects.mjs",
     "catalog:review:sync": "node scripts/catalog-review-ledger.mjs sync",
