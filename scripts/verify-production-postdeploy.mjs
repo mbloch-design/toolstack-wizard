@@ -8,7 +8,7 @@
 // Le script ne vérifie que des invariants structurels : statuts, redirection
 // racine, canonical autoréférente, hreflang réciproque, og:image absolu,
 // métadonnées de fraîcheur cohérentes, `lastmod` réellement varié, catégories
-// noindex, 404 réels. Aucun chiffre du catalogue n'est codé en dur : les
+// noindex, 404 réels, shards llms-full servis et partition complète. Aucun chiffre du catalogue n'est codé en dur : les
 // valeurs exactes (nombre d'URLs au sitemap) restent optionnelles, pour
 // épingler une release précise.
 //
@@ -308,6 +308,78 @@ async function checkLlmsFiles() {
   }
 }
 
+async function checkLlmsShards() {
+  const index = await get(`${args.base}/llms.txt`);
+  if (index.status !== 200) {
+    return record("llms-shards", "shards llms-full", "FAIL", `llms.txt HTTP ${index.status}`, "200");
+  }
+  // L'index publie « - famille — N tools: .../llms-full/famille.txt ». On lit les
+  // familles annoncées puis on interroge la base vérifiée, jamais l'origine
+  // écrite dans le fichier : le contrôle doit suivre --base (préprod incluse).
+  const announced = new Map();
+  const mislabeled = [];
+  for (const match of index.text.matchAll(/^- ([a-z0-9-]+) \u2014 (\d+) tools: \S*\/llms-full\/([a-z0-9-]+)\.txt\s*$/gm)) {
+    if (match[1] !== match[3]) mislabeled.push(`${match[1]} -> ${match[3]}`);
+    announced.set(match[3], Number(match[2]));
+  }
+  const families = [...new Set([...index.text.matchAll(/\/llms-full\/([a-z0-9-]+)\.txt/g)].map((m) => m[1]))];
+  if (!families.length) {
+    return record("llms-shards", "shards llms-full", "FAIL", "aucun shard indexé dans llms.txt", "un shard par famille");
+  }
+
+  const problems = [];
+  if (mislabeled.length) problems.push(`libellé ≠ URL : ${mislabeled.slice(0, 3).join(", ")}`);
+  const slugs = new Set();
+  let total = 0;
+  let duplicates = 0;
+  for (const family of families) {
+    const url = `${args.base}/llms-full/${family}.txt`;
+    try {
+      const { status, headers, text } = await get(url);
+      if (status !== 200) { problems.push(`${family} HTTP ${status}`); continue; }
+      const type = headers.get("content-type") || "";
+      if (!/text\/plain/i.test(type)) problems.push(`${family} content-type ${type || "absent"}`);
+      if (text.indexOf("[") < 0) { problems.push(`${family} sans tableau JSON`); continue; }
+      let records;
+      try { records = JSON.parse(text.slice(text.indexOf("["))); } catch { problems.push(`${family} JSON invalide`); continue; }
+      if (!Array.isArray(records) || !records.length) { problems.push(`${family} sans enregistrement`); continue; }
+      const expected = announced.get(family);
+      if (Number.isFinite(expected) && records.length !== expected) {
+        problems.push(`${family} ${records.length} fiches ≠ ${expected} annoncées`);
+      }
+      total += records.length;
+      for (const entry of records) {
+        if (typeof entry?.slug !== "string" || !entry.slug) { problems.push(`${family} enregistrement sans slug`); break; }
+        if (slugs.has(entry.slug)) duplicates += 1;
+        slugs.add(entry.slug);
+      }
+    } catch (error) {
+      problems.push(`${family} requête impossible (${error?.message || error})`);
+    }
+  }
+
+  // Partition complète : la réunion des shards doit égaler le catalogue complet.
+  const full = await get(`${args.base}/llms-full.txt`);
+  if (full.status !== 200) problems.push(`llms-full.txt HTTP ${full.status}`);
+  else {
+    let catalogue = [];
+    try { catalogue = JSON.parse(full.text.slice(full.text.indexOf("["))); } catch { problems.push("llms-full.txt JSON invalide"); }
+    if (Array.isArray(catalogue) && catalogue.length) {
+      if (catalogue.length !== slugs.size) {
+        problems.push(`${slugs.size} fiches dans les shards ≠ ${catalogue.length} au catalogue`);
+      }
+      const missing = catalogue.filter((entry) => !slugs.has(entry?.slug)).slice(0, 3).map((entry) => entry?.slug);
+      if (missing.length) problems.push(`absentes des shards : ${missing.join(", ")}`);
+    }
+  }
+  if (duplicates) problems.push(`${duplicates} fiche(s) présente(s) dans plusieurs shards`);
+
+  if (problems.length) {
+    return record("llms-shards", "shards llms-full", "FAIL", problems.slice(0, 4).join(" ; "), "tous les shards en 200, JSON valide, partition exacte");
+  }
+  return record("llms-shards", "shards llms-full", "PASS", `${families.length} shards · ${total} fiches · partition exacte`);
+}
+
 // ── Exécution ──────────────────────────────────────────────────────────────
 const steps = [
   ["redirection racine", checkRootRedirect],
@@ -318,6 +390,7 @@ const steps = [
   ["catégories", checkCategoryNoindex],
   ["404", checkNotFound],
   ["fichiers LLM", checkLlmsFiles],
+  ["shards LLM", checkLlmsShards],
 ];
 
 let toolCount = NaN;
