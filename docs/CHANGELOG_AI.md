@@ -4,6 +4,7 @@
 - Le découpage est strictement additif : `llms-full.txt` reste publié avec le même contenu, parce que `api/tool-md.ts` le lit à chaque requête (cache 1 h) et que `verify:postdeploy` vérifie son HTTP 200. Aucun consommateur existant n'est modifié.
 - `llms.txt` gagne une section « Catalogue Shards » listant chaque famille avec son nombre exact de fiches et son URL. Le générateur refuse de publier si les shards se recouvrent ou ne couvrent pas exactement le catalogue du sitemap.
 - `src/lib/llmsFiles.test.ts` : deux tests ajoutés (partition sans recouvrement ni perte, index exact dans `llms.txt`). Le plus gros shard reste `creation` (351 fiches, 706 Ko) : une subdivision plus fine serait à décider si un usage réel le réclame.
+- `scripts/audit-build-output.mjs` : les 24 shards portent l'artefact mesuré à 15 260 fichiers et 852,7 MiB, au-delà des plafonds de 15 245 fichiers et 852 MiB — l'audit échouait, donc le build Vercel se serait arrêté sur « Budget et doublons de l'artefact ». Plafonds relevés à 15 265 fichiers et 854 MiB, mesure datée en commentaire. Le HTML reste à 735,0 MiB : l'ajout ne coûte rien par page.
 
 ## 2026-11-11 · SEO · Review des fiches : cadrage corrigé et balisage daté
 
