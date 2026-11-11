@@ -14,6 +14,12 @@
   font-variant-numeric: normal;
 }
 
+.amount[data-size="hero"] {
+  font: var(--tt-title-xl-font);
+  letter-spacing: var(--tt-title-xl-tracking);
+  font-variant-numeric: normal;
+}
+
 .amount[data-tone="overlap"] {
   color: var(--tt-overlap-strong);
 }

@@ -163,3 +163,36 @@
   stroke-width: var(--tt-icon-stroke-bold);
   stroke-linecap: round;
 }
+
+/* Grouped grid: the areas flow in one grid instead of each opening a half-empty row. The area's name
+   is the first cell of its group (no box: its words, at the top of the cell); its tools follow. */
+.groups[data-grouped][data-layout="grid"] {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--tt-space-3);
+}
+
+.groups[data-grouped][data-layout="grid"] .group,
+.groups[data-grouped][data-layout="grid"] .cards {
+  display: contents;
+}
+
+.groups[data-grouped][data-layout="grid"] .groupName {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--tt-space-4) var(--tt-space-2);
+}
+
+.groups[data-grouped][data-layout="grid"] .groupName > i {
+  align-self: flex-start;
+  margin-bottom: var(--tt-space-1);
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: var(--tt-space-2);
+  border-radius: var(--tt-r-round);
+  background: var(--c);
+  vertical-align: 0.1em;
+}

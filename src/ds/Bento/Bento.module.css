@@ -1,0 +1,177 @@
+/* The living bento. One fact per tile; the grid closes up when a question tile leaves. */
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-flow: row dense;
+  gap: var(--tt-board-gap);
+  container-type: inline-size;
+}
+
+.tile {
+  composes: tile from "../atoms.module.css";
+  grid-column: span var(--span);
+  grid-template-rows: auto 1fr auto;
+  gap: var(--tt-gap-group);
+  min-height: 0;
+  transition: opacity var(--tt-dur-state) ease, transform var(--tt-dur-move) var(--tt-ease);
+}
+
+.tile[data-tone="question"] {
+  background: var(--tt-bg);
+  box-shadow: var(--tt-card-lift);
+}
+
+.tile[data-leaving] {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+@container (width < 760px) {
+  .tile {
+    grid-column: 1 / -1;
+  }
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--tt-gap-group);
+  min-height: 24px;
+}
+
+.label { composes: eyebrow from "../atoms.module.css"; }
+
+.art {
+  display: inline-flex;
+  flex: none;
+  margin: calc(var(--tt-space-2) * -1) calc(var(--tt-space-2) * -1) 0 0;
+}
+
+.body {
+  display: grid;
+  align-content: start;
+  gap: var(--tt-gap-group);
+  min-width: 0;
+}
+
+.foot {
+  display: grid;
+  gap: var(--tt-gap-item);
+  align-self: end;
+}
+
+.statement {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-title-section-font);
+  letter-spacing: var(--tt-title-section-tracking);
+  text-wrap: balance;
+}
+
+.status {
+  composes: text from "../atoms.module.css";
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-2);
+}
+
+.check {
+  flex: none;
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+  padding: calc(var(--tt-space-1) * 0.75);
+  border-radius: var(--tt-r-round);
+  background: var(--tt-live);
+  fill: none;
+  stroke: var(--tt-on-color);
+  stroke-width: var(--tt-icon-stroke-bold);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* A hand of cards: the logos overlap and lean; hovering the tile opens the hand. */
+.fan {
+  display: inline-flex;
+  padding: var(--tt-space-2);
+}
+
+.fan > span {
+  display: inline-grid;
+  margin-left: calc(var(--tt-space-3) * -1);
+  border-radius: var(--tt-r-chip);
+  box-shadow: var(--tt-logo-shadow);
+  transform: rotate(calc(var(--i) * 6deg)) translateY(calc(var(--i) * var(--i) * 2px));
+  transition: transform var(--tt-dur-move) var(--tt-spring), margin var(--tt-dur-move) var(--tt-spring);
+}
+
+.fan > span:first-child {
+  margin-left: 0;
+}
+
+.tile:hover .fan > span {
+  margin-left: calc(var(--tt-space-1) * -1);
+  transform: rotate(calc(var(--i) * 10deg)) translateY(calc(var(--i) * var(--i) * 3px));
+}
+
+.ring {
+  width: 64px;
+  height: 64px;
+  transform: rotate(-90deg);
+}
+
+.ring circle {
+  fill: none;
+  stroke-width: 7;
+  stroke-linecap: round;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-3);
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-title-m-font);
+  letter-spacing: var(--tt-title-m-tracking);
+  text-wrap: balance;
+}
+
+.questionMedia {
+  display: inline-grid;
+  flex: none;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--tt-space-2);
+}
+
+.answer {
+  composes: focus from "../atoms.module.css";
+  display: grid;
+  align-content: start;
+  gap: var(--tt-space-1);
+  min-height: 64px;
+  padding: var(--tt-space-3) var(--tt-space-4);
+  border: 0;
+  border-radius: var(--tt-r-card);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
+}
+
+.answer:hover {
+  background: var(--tt-tile-2);
+}
+
+.answer:active {
+  transform: var(--tt-press);
+}
+
+.answerName { composes: label from "../atoms.module.css"; }
+.answerAmount { composes: note from "../atoms.module.css"; }

@@ -299,3 +299,21 @@
   --tt-icon-stroke: 2;
   --tt-icon-stroke-bold: 2.5;
 }
+
+/* ── Rythme de page (proposition du 09/11/2026, à valider) ─────────────────
+   Quatre distances, pas une : la proximité fait le travail des filets.
+   item : à l'intérieur d'un groupe ; group : entre les groupes d'un bloc ;
+   head : entre un titre de chapitre et son contenu ; chapter : entre deux chapitres. */
+:root {
+  --tt-gap-item: 8px;
+  --tt-gap-group: 24px;
+  --tt-gap-head: 48px;
+  --tt-gap-chapter: 96px;
+}
+
+@media (width <= 639px) {
+  :root {
+    --tt-gap-head: 32px;
+    --tt-gap-chapter: 64px;
+  }
+}

@@ -7,8 +7,8 @@ export type AmountProps = Omit<HTMLAttributes<HTMLSpanElement>, "className" | "c
   value: string;
   /** « /mois », « /mo », « par an »: smaller, in the reading face, never on its own line. */
   unit?: string;
-  /** figure: the total of a card. amount: a line of a list. */
-  size?: "figure" | "amount";
+  /** hero: the one figure of a page. figure: the total of a card. amount: a line of a list. */
+  size?: "hero" | "figure" | "amount";
   /** overlap: money that gathers dust (Vos usages). */
   tone?: "ink" | "overlap";
 };

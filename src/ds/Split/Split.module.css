@@ -351,3 +351,41 @@
     animation: grow 700ms var(--tt-ease) both;
   }
 }
+
+/* Bare: a chapter of the page, without its tile. The sentence becomes the title of the chapter. */
+.card[data-bare] {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.card[data-bare] .titleM {
+  font: var(--tt-title-section-font);
+  letter-spacing: var(--tt-title-section-tracking);
+}
+
+/* Bare and wide: the sentence across the whole width, then the ring and the detail side by side, both from the top. */
+@container (width >= 600px) {
+  .card[data-bare] .layout {
+    row-gap: var(--tt-gap-head);
+  }
+
+  .card[data-bare] .overview {
+    display: contents;
+  }
+
+  .card[data-bare] .reading {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .card[data-bare] .ring {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .card[data-bare] .detail {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}

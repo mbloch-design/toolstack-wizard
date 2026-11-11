@@ -16,6 +16,8 @@ export type ToolCardProps = {
   status: ToolStatus;
   /** The tool's area, shown when the list is not grouped by area. */
   area?: string;
+  /** The colour of its area: a dot before the name, so a group cut by the end of a row still reads. */
+  areaColor?: string;
   selected?: boolean;
   /** Edit mode: the card stops opening, a minus badge removes the tool. */
   editing?: boolean;
@@ -27,7 +29,7 @@ export type ToolCardProps = {
 const STATUS: Record<ToolStatus, [string, string]> = { ok: ["Prix renseigné", "Price recorded"], review: ["À vérifier", "To check"], overlap: ["Doublon", "Overlap"] };
 
 /** One tool of the stack: logo, what it costs, name, one status. The same card in every view; views only arrange it. */
-export default function ToolCard({ lang, tool, amount, monthly, status, area, selected, editing, onOpen, onRemove, localLogosOnly = false }: ToolCardProps) {
+export default function ToolCard({ lang, tool, amount, monthly, status, area, areaColor, selected, editing, onOpen, onRemove, localLogosOnly = false }: ToolCardProps) {
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
   const label = t(...STATUS[status]);
   const tag: ReactNode = <Tag tone={status === "ok" ? "ok" : status === "overlap" ? "overlap" : "neutral"} on="tile" data-status-tag={status}>{label}</Tag>;
@@ -38,7 +40,7 @@ export default function ToolCard({ lang, tool, amount, monthly, status, area, se
         onClick={(event) => { if (!editing) onOpen(event.currentTarget); }}>
         <span className={styles.logo}><Logo tool={tool} size={40} localOnly={localLogosOnly} /></span>
         <span className={styles.amount} data-amount="" aria-hidden="true"><Amount value={amount} unit={monthly ? t("/mois", "/mo") : undefined} /></span>
-        <span className={styles.name} data-name="" aria-hidden="true">{tool.name}</span>
+        <span className={styles.name} data-name="" aria-hidden="true">{areaColor && <i className={styles.dot} style={{ "--c": areaColor } as CSSProperties} />}{tool.name}</span>
         <span className={styles.foot} aria-hidden="true">{tag}{area && <span className={styles.note}>{area}</span>}</span>
       </button>
       {editing && onRemove && <button type="button" className={styles.remove} data-remove="" onClick={onRemove} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}>

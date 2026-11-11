@@ -129,17 +129,11 @@
 }
 
 button.trust {
-  margin: calc(var(--tt-space-2) * -1) calc(var(--tt-space-3) * -1);
-  padding: var(--tt-space-2) var(--tt-space-3);
   border-radius: var(--tt-r-card);
   cursor: pointer;
   font: inherit;
   letter-spacing: inherit;
   transition: background-color var(--tt-dur-state) ease;
-}
-
-button.trust:hover {
-  background: var(--tt-tile-2);
 }
 
 button.trust:active {
@@ -156,12 +150,28 @@ button.trust:active {
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transition: transform var(--tt-dur-state) var(--tt-ease);
 }
 
 button.trust:focus-visible {
   border-radius: var(--tt-r-chip);
   outline: var(--tt-focus-ring);
   outline-offset: var(--tt-focus-offset);
+}
+
+/* In the card, the hover fill reaches past the text without moving it. */
+.card button.trust {
+  margin: calc(var(--tt-space-2) * -1) calc(var(--tt-space-3) * -1);
+  padding: var(--tt-space-2) var(--tt-space-3);
+}
+
+.card button.trust:hover {
+  background: var(--tt-tile-2);
+}
+
+/* The chevron moves on hover. */
+button.trust:hover .chevron {
+  transform: translateX(3px);
 }
 
 .trustText {
@@ -206,4 +216,46 @@ button.trust:focus-visible {
   stroke-width: var(--tt-icon-stroke-bold);
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* The card keeps its single grid: the lead block is transparent to it. */
+.card .lead {
+  display: contents;
+}
+
+/* Hero: the opening of the page, without a box. The figure leads; the stack under it is its identity;
+   the rare action sits at the end of the stack's row. */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: var(--tt-gap-group) var(--tt-gap-head);
+  color: var(--tt-ink);
+}
+
+.hero .lead {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: var(--tt-gap-item);
+  justify-items: start;
+}
+
+.greeting {
+  composes: text from "../atoms.module.css";
+  margin-bottom: var(--tt-gap-item);
+}
+
+.side {
+  display: grid;
+  justify-items: end;
+}
+
+@container (width < 720px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .side {
+    justify-items: start;
+  }
 }

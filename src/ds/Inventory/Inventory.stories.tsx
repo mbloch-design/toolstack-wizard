@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { formatAmount } from "@/lib/currencyRates";
 import { LayoutGrid, List, Pencil, Check } from "@/lib/icons";
-import ToolCard, { ToolCards, ToolGroup, type ToolStatus } from "../ToolCard/ToolCard";
+import ToolCard, { ToolCards, ToolGroup, ToolGroups, type ToolStatus } from "../ToolCard/ToolCard";
 import Button from "../Button/Button";
 import Toolbar, { FilterChips, IconSwitch, SectionHead, SortSelect, ToolbarTools } from "../Toolbar/Toolbar";
 
@@ -30,9 +30,9 @@ function Inventory({ lang, layout: initialLayout = "grid", editing: initialEditi
   const shown = filter === "all" ? ITEMS : ITEMS.filter((item) => item.status === filter);
   const card = (item: Item) => <ToolCard key={item.name} lang={lang} tool={{ id: item.slug ?? item.name, name: item.name, slug: item.slug }}
     amount={item.cost === null ? t(lang, "Prix ?", "Price?") : item.cost === 0 ? t(lang, "Gratuit", "Free") : formatAmount(item.cost, "EUR", lang)} monthly={!!item.cost}
-    status={item.status} area={grouped ? undefined : t(lang, AREAS[item.area].fr, AREAS[item.area].en)} editing={editing} onOpen={() => {}} onRemove={() => {}} localLogosOnly />;
+    status={item.status} area={grouped ? undefined : t(lang, AREAS[item.area].fr, AREAS[item.area].en)} areaColor={AREAS[item.area].color} editing={editing} onOpen={() => {}} onRemove={() => {}} localLogosOnly />;
   return <section style={{ display: "grid", gap: 20 }}>
-    <SectionHead title={t(lang, "Ma stack", "My stack")} note={t(lang, `${ITEMS.length} outils · 1 175 € · partiel`, `${ITEMS.length} tools · €1,175 · partial`)} />
+    <SectionHead title={t(lang, "Mes outils", "My tools")} note={t(lang, `${ITEMS.length} outils · 1 175 € · partiel`, `${ITEMS.length} tools · €1,175 · partial`)} />
     <Toolbar>
       <FilterChips label={t(lang, "Filtrer par statut", "Filter by status")} value={filter} onChange={setFilter} filters={[
         { id: "all", label: t(lang, "Tous", "All"), count: ITEMS.length },
@@ -47,9 +47,11 @@ function Inventory({ lang, layout: initialLayout = "grid", editing: initialEditi
         <Button pressed={editing} icon={editing ? <Check /> : <Pencil />} onClick={() => setEditing((value) => !value)}>{editing ? t(lang, "Terminé", "Done") : t(lang, "Modifier", "Edit")}</Button>
       </ToolbarTools>
     </Toolbar>
-    {grouped
+    <ToolGroups label={t(lang, "Mes outils", "My tools")} layout={layout} grouped={grouped} editing={editing}>
+      {grouped
       ? Object.entries(AREAS).map(([id, area]) => { const tools = shown.filter((item) => item.area === id); return tools.length > 0 && <ToolGroup key={id} label={t(lang, area.fr, area.en)} color={area.color} note={t(lang, `${tools.length} outil${tools.length > 1 ? "s" : ""}`, `${tools.length} tool${tools.length > 1 ? "s" : ""}`)}><ToolCards layout={layout}>{tools.map(card)}</ToolCards></ToolGroup>; })
       : <ToolGroup><ToolCards layout={layout}>{shown.map(card)}</ToolCards></ToolGroup>}
+    </ToolGroups>
   </section>;
 }
 

@@ -18,6 +18,8 @@ export type SplitProps = {
   rateDate: string | null;
   /** Logos load from our own files only (Storybook, tests). */
   localLogosOnly?: boolean;
+  /** On the page itself, without its tile: a chapter of its own, its sentence as the title. */
+  bare?: boolean;
 };
 
 const SHOWN_AREAS = 5;
@@ -28,7 +30,7 @@ const list = (names: string[], and: string) => {
 };
 
 /** Where the money goes: by area, then tool by tool. */
-export default function Split({ lang, areas, format, unpriced, rateDate, localLogosOnly = false }: SplitProps) {
+export default function Split({ lang, areas, format, unpriced, rateDate, localLogosOnly = false, bare = false }: SplitProps) {
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
   const id = useId();
@@ -61,7 +63,7 @@ export default function Split({ lang, areas, format, unpriced, rateDate, localLo
     : t("Aucun ne fait la loi.", "None of them calls the shots.");
 
   return (
-    <article className={styles.card} aria-labelledby={`${id}-title`}>
+    <article className={styles.card} aria-labelledby={`${id}-title`} data-bare={bare || undefined}>
       <div className={styles.head}>
         <h2 id={`${id}-title`} className={styles.eyebrow}>{t("Répartition", "Split")}</h2>
         <p className={styles.amount}><Amount value={format(total)} unit={t("/mois", "/mo")} /></p>

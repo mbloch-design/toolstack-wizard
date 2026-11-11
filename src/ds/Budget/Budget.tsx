@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, type ReactNode } from "react";
 import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
 import Amount from "../Amount/Amount";
@@ -26,6 +26,11 @@ export type BudgetProps = {
   onStart?: () => void;
   /** Logos load from our own files only (Storybook, tests). */
   localLogosOnly?: boolean;
+  /** card: a tile of the board. hero: the opening of the page, without a box: the figure leads, the stack sits beside it. */
+  variant?: "card" | "hero";
+  /** Hero only: the greeting above the title, and the rare action beside the stack. */
+  greeting?: ReactNode;
+  aside?: ReactNode;
 };
 
 // Logos on one row, at every width: the row holds 9 tiles on a wide card, 6 on a phone, 5 on a very narrow card;
@@ -35,7 +40,8 @@ const shownAt = (count: number, slots: number) => (count <= slots ? count : slot
 const plural = (n: number, word: string) => `${n} ${word}${n > 1 ? "s" : ""}`;
 
 /** The macro view of Ma stack: what the stack is, what it costs, and how far the figure can be trusted. */
-export default function Budget({ lang, tools, monthly, yearly, lead, saved = null, unsure, rateDate, onConfirmNext, onStart, localLogosOnly = false }: BudgetProps) {
+export default function Budget({ lang, tools, monthly, yearly, lead, saved = null, unsure, rateDate, onConfirmNext, onStart, localLogosOnly = false, variant = "card", greeting, aside }: BudgetProps) {
+  const hero = variant === "hero";
   const titleId = useId();
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
@@ -70,7 +76,7 @@ export default function Budget({ lang, tools, monthly, yearly, lead, saved = nul
 
   // The stack first, in every state: it is the one thing the page always knows.
   const stack = (
-    <div className={styles.stack}>
+    <div className={styles.stack} data-stack="">
       <ul className={styles.logos} aria-label={t("Les outils de la stack", "The tools in the stack")}>
         {tools.slice(0, shownAt(tools.length, SLOTS.wide)).map((tool, index) => (
           <li key={tool.id} title={tool.name} data-out-mid={index >= shownAt(tools.length, SLOTS.mid) ? "" : undefined} data-out-small={index >= shownAt(tools.length, SLOTS.small) ? "" : undefined}>
@@ -86,13 +92,16 @@ export default function Budget({ lang, tools, monthly, yearly, lead, saved = nul
     </div>
   );
 
+  const Heading = hero ? "h1" : "h2";
   return (
-    <article className={styles.card} aria-labelledby={titleId}>
-      <h2 id={titleId} className={styles.eyebrow}>{t("Votre stack", "Your stack")}</h2>
+    <article className={hero ? styles.hero : styles.card} aria-labelledby={titleId} data-variant={variant}>
+      <div className={styles.lead}>
+      {hero && greeting && <p className={styles.greeting}>{greeting}</p>}
+      <Heading id={titleId} className={styles.eyebrow}>{hero ? t("Ma stack", "My stack") : t("Votre stack", "Your stack")}</Heading>
 
       {monthly ? (
         <div className={styles.total}>
-          <p className={styles.figure}><Amount size="figure" value={monthly} unit={t("/mois", "/mo")} /></p>
+          <p className={styles.figure}><Amount size={hero ? "hero" : "figure"} value={monthly} unit={t("/mois", "/mo")} /></p>
           <p className={styles.text}>
             <b className={styles.strong}>{t("Soit ", "That's ")}<span data-nowrap="">{yearly}</span>{t(" par an.", " a year.")}</b>
             {quip && <> {quip}</>}
@@ -104,36 +113,54 @@ export default function Budget({ lang, tools, monthly, yearly, lead, saved = nul
         </div>
       ) : stack}
 
-      {monthly ? stack : (
+      {!hero && (monthly ? stack : (
         <div className={styles.start}>
           <h3 className={styles.titleM}>{t("On fait les comptes ?", "Let's talk budget.")}</h3>
           <p className={styles.text}>{t("Dites-nous quelle formule vous utilisez. Promis, pas de tableur.", "Tell us which plan you use. No spreadsheet required, promise.")}</p>
           <Button variant="primary" onClick={onStart}>{t("Préciser ma première formule", "Choose my first plan")}</Button>
         </div>
-      )}
-
-      {tools.length > 0 && monthly && (toConfirm > 0 ? (
-        <button type="button" className={styles.trust} onClick={onConfirmNext}>
-          <svg className={styles.ring} viewBox="0 0 36 36" aria-hidden="true">
-            <circle cx="18" cy="18" r="15" />
-            <circle cx="18" cy="18" r="15" style={{ strokeDasharray: `${(known / tools.length) * 94.2} 94.2` }} />
-          </svg>
-          <span className={styles.trustText}>
-            <span className={styles.label}>{fr ? `${plural(known, "outil")} sur ${tools.length} renseigné${known > 1 ? "s" : ""}` : `${known} of ${plural(tools.length, "tool")} priced`}</span>
-            <span className={styles.note}>{t(`Confirmer ${left}`, `Confirm ${left}`)}</span>
-          </span>
-          <svg className={styles.chevron} viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
-        </button>
-      ) : (
-        <p className={styles.trust}>
-          <span className={styles.check} aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
-          </span>
-          <span className={styles.note}>{t("Budget renseigné", "Budget recorded")}</span>
-        </p>
       ))}
 
+      {!hero && tools.length > 0 && monthly && <BudgetTrust lang={lang} known={known} total={tools.length} left={toConfirm > 0 ? left : null} onConfirmNext={onConfirmNext} />}
+
       {rateDate && <p className={styles.note}>{t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`)}</p>}
+      </div>
+      {hero && (monthly ? stack : (
+        <div className={styles.start}>
+          <h2 className={styles.titleM}>{t("On fait les comptes ?", "Let's talk budget.")}</h2>
+          <p className={styles.text}>{t("Dites-nous quelle formule vous utilisez. Promis, pas de tableur.", "Tell us which plan you use. No spreadsheet required, promise.")}</p>
+          <Button variant="primary" onClick={onStart}>{t("Préciser ma première formule", "Choose my first plan")}</Button>
+        </div>
+      ))}
+      {hero && aside && <div className={styles.side}>{aside}</div>}
     </article>
+  );
+}
+
+/**
+ * How far the figure can be trusted: a ring that fills as prices are known and opens the next
+ * question, or a check once everything is known. In the card, or heading the page's action chapter.
+ */
+export function BudgetTrust({ lang, known, total, left, onConfirmNext }: { lang: "fr" | "en"; known: number; total: number; left: string | null; onConfirmNext?: () => void }) {
+  const fr = lang === "fr";
+  const t = (a: string, b: string) => (fr ? a : b);
+  if (!left) return (
+    <p className={styles.trust}>
+      <span className={styles.check} aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span>
+      <span className={styles.note}>{t("Budget renseigné", "Budget recorded")}</span>
+    </p>
+  );
+  return (
+    <button type="button" className={styles.trust} onClick={onConfirmNext}>
+      <svg className={styles.ring} viewBox="0 0 36 36" aria-hidden="true">
+        <circle cx="18" cy="18" r="15" />
+        <circle cx="18" cy="18" r="15" style={{ strokeDasharray: `${(known / total) * 94.2} 94.2` }} />
+      </svg>
+      <span className={styles.trustText}>
+        <span className={styles.label}>{fr ? `${plural(known, "outil")} sur ${total} renseigné${known > 1 ? "s" : ""}` : `${known} of ${plural(total, "tool")} priced`}</span>
+        <span className={styles.note}>{t(`Confirmer ${left}`, `Confirm ${left}`)}</span>
+      </span>
+      <svg className={styles.chevron} viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+    </button>
   );
 }
