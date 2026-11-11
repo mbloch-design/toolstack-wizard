@@ -19,6 +19,7 @@
   --tt-w-figure: 300;   /* 42 */
   --tt-w-title: 400;    /* 21 */
   --tt-w-amount: 430;   /* 17 */
+  --tt-w-action: 460;  /* boutons, liens d'action, sélecteurs (Inter Tight) */
   --tt-w-label: 440;    /* 16, boutons et libellés */
   --tt-w-on-ink: 420;   /* texte clair sur l'encre : il rayonne, un cran plus fin */
   --tt-w-small: 460;    /* 14, puces et étiquettes */
@@ -105,6 +106,10 @@
   --tt-title-l-font: var(--tt-w-title) 1.3125rem/1.2 var(--tt-display);  --tt-title-l-tracking: -.018em;
   --tt-title-m-font: var(--tt-w-title) 1.3125rem/1.2 var(--tt-display); --tt-title-m-tracking: -.018em;
   --tt-title-section-font: var(--tt-w-figure) 2.625rem/1.08 var(--tt-display); --tt-title-section-tracking: -.028em;
+  /* Actions (arbitrage du 11/11/2026, option 2) : Inter Tight de la planche, ses tailles, un cran plus fin qu'elle ; interlettrage 0. */
+  --tt-action-font: var(--tt-w-action) 1rem/1 var(--tt-ui); --tt-action-tracking: 0;
+  --tt-action-link-font: var(--tt-w-action) 1rem/1.3 var(--tt-ui);
+  --tt-action-small-font: var(--tt-w-action) .9375rem/1 var(--tt-ui);
   --tt-label-font: var(--tt-w-label) 1rem/1.3 var(--tt-read);   --tt-label-tracking: -.011em;
   --tt-text-font: var(--tt-w-read) 1rem/1.55 var(--tt-read);   --tt-text-tracking: -.011em;
   --tt-note-font: var(--tt-w-note) .875rem/1.4 var(--tt-read);  --tt-note-tracking: -.004em;
@@ -126,7 +131,8 @@
   --tt-logo-radius: 23%;
   --tt-logo-shadow: 0 0 0 .5px rgb(0 0 0 / .08), 0 4px 10px -6px rgb(0 0 0 / .3);--tt-dur-reveal: 600ms;--tt-overlap-strong: color-mix(in oklch, var(--tt-overlap) 85%, black);--tt-on-color: #fff;--tt-tile-gap: 20px;--tt-board-gap: 20px;--tt-page-gap: 40px;--tt-page-max: 1440px;--tt-page-pad: clamp(20px, 4vw, 48px);
 }
-.dark, :root[data-theme="dark"] { --tt-gain-ink: color-mix(in oklch, var(--tt-live) 75%, white); }
+:root { --tt-chrome: var(--tt-tile); --tt-tap: 44px; --tt-tab-h: 52px; --tt-tab-font: var(--tt-w-action) .6875rem/1 var(--tt-ui); --tt-count-on-ink: color-mix(in srgb, var(--tt-bg) 18%, transparent); --tt-menu-shadow: 0 0 0 1px var(--tt-line), 0 24px 48px -24px rgb(0 0 0 / 30%); --tt-side-w: 248px; --tt-side-w-folded: 72px; --tt-topbar-h: 64px; --tt-search-w: 280px; --tt-menu-w: 320px; --tt-mark-w: 3px; --tt-count-small: .6875rem; --tt-cutline: 1px dashed var(--tt-meta); --tt-cut-dash: repeating-linear-gradient(90deg, var(--tt-brand) 0 var(--tt-dash), transparent var(--tt-dash) calc(var(--tt-dash) + var(--tt-dash-gap))); --tt-lh-tight: 1; --tt-stamp-border: 1.5px solid var(--tt-gain-ink); --tt-stamp-bg: color-mix(in srgb, var(--tt-bg) 70%, transparent); --tt-tilt-sheen: radial-gradient(120px 80px at var(--sx, 50%) var(--sy, 50%), rgb(255 255 255 / 55%), transparent 70%); --tt-dur-decide: 180ms; --tt-spring-strong: cubic-bezier(.34, 1.6, .64, 1); --tt-skeleton: linear-gradient(90deg, var(--tt-tile) 0 40%, color-mix(in srgb, var(--tt-bg) 70%, var(--tt-tile-2)) 50%, var(--tt-tile) 60% 100%) 0 0 / 300% 100%; --tt-swap-ink: var(--tt-brand); --tt-swap-bg: color-mix(in oklch, var(--tt-brand) 14%, var(--tt-bg)); } /* verbe « Remplacer » */
+.dark, :root[data-theme="dark"] { --tt-chrome: #070708; --tt-gain-ink: color-mix(in oklch, var(--tt-live) 75%, white); --tt-swap-ink: color-mix(in oklch, var(--tt-brand) 55%, white); --tt-swap-bg: color-mix(in oklch, var(--tt-brand) 26%, var(--tt-bg)); }
 
 @media (color-gamut: p3) {
   :root {
@@ -160,7 +166,7 @@
   --tt-meta: #9A9AA0;
   --tt-w-text: 370;
   --tt-w-strong: 470;
-  --tt-w-hero: 260; --tt-w-figure: 280; --tt-w-title: 370; --tt-w-amount: 400; --tt-w-label: 410;
+  --tt-w-hero: 260; --tt-w-figure: 280; --tt-w-title: 370; --tt-w-amount: 400; --tt-w-label: 410; --tt-w-action: 430;
   --tt-w-on-ink: 410; --tt-w-small: 430; --tt-w-caps: 450; --tt-w-read: 340; --tt-w-note: 360; --tt-w-em: 440;
   --tt-aura-brand-a: oklch(0.68 0.2 262);
   --tt-aura-brand-b: oklch(0.66 0.22 292);
@@ -279,6 +285,17 @@
   --tt-focus-offset: 3px;
   /* Appui et indisponible */
   --tt-press: scale(0.97);
+  /* L'appel qui mène (planche, « Les actions ») : une pilule d'encre à peine dégradée, une arête de lumière en haut, une ombre posée ; elle se soulève au survol, s'enfonce à l'appui. */
+  --tt-lead-bg: linear-gradient(to bottom, color-mix(in oklch, var(--tt-ink) 92%, var(--tt-bg)), var(--tt-ink));
+  --tt-lead-shadow: inset 0 0.5px 0 color-mix(in srgb, var(--tt-bg) 35%, transparent), 0 1px 2px rgb(0 0 0 / 0.18), 0 10px 24px -14px rgb(0 0 0 / 0.45);
+  --tt-lead-shadow-hover: inset 0 0.5px 0 color-mix(in srgb, var(--tt-bg) 45%, transparent), 0 1px 2px rgb(0 0 0 / 0.2), 0 16px 32px -14px rgb(0 0 0 / 0.5);
+  --tt-lead-shadow-press: inset 0 2px 6px rgb(0 0 0 / 0.45), 0 1px 1px rgb(0 0 0 / 0.15);
+  --tt-lead-lift: translateY(-1px);
+  --tt-button-h: 40px; --tt-button-pad: 18px;
+  --tt-button-h-lg: 52px; --tt-button-pad-lg: 28px;
+  --tt-lead-edge-width: 1px;
+  --tt-lead-glow: radial-gradient(160px circle at var(--tt-mx, 50%) var(--tt-my, 50%), color-mix(in srgb, var(--tt-bg) 9%, transparent), transparent 70%);
+  --tt-lead-edge: linear-gradient(90deg in oklch, var(--tt-edge-1), var(--tt-edge-2), var(--tt-edge-3), var(--tt-edge-4), var(--tt-edge-3), var(--tt-edge-2), var(--tt-edge-1)) 0 0 / 200% 100%;
   --tt-press-round: scale(0.94);
   --tt-disabled: 0.4;
   /* Une pastille posée sur un coin découpe le fond autour d'elle. */

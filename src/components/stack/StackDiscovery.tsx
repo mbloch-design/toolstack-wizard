@@ -4,7 +4,7 @@ import ToolCover from '@/components/tool/ToolCover';
 import MediaCard, { MediaCards } from '@/ds/MediaCard/MediaCard';
 import { Section, SectionFoot, SectionHead } from '@/ds/Toolbar/Toolbar';
 import { atoms } from '@/ds/atoms';
-import Button, { linkClass } from '@/ds/Button/Button';
+import Button, { linkClass, LinkArrow } from '@/ds/Button/Button';
 import { getExplorerHref, type ExplorationCandidate } from '@/lib/toolExploration';
 import type { ToolSummary } from '@/hooks/useSupabaseData';
 import { trackEvent } from '@/lib/analytics';
@@ -42,7 +42,7 @@ export default function StackDiscovery({ candidates, lang, prefix, sourceIds, se
   // The section and its cards are design system components (src/ds); the page only passes its router links and screenshots.
   return <Section labelledBy="ms-recos-title" name="discovery">
     <SectionHead title={t('Et pour la suite ?', 'And next?')} titleId="ms-recos-title" note={t('D’autres approches autour de vos outils. La prochaine bonne pioche est peut-être ici.', 'Fresh approaches around your tools. Your next good find could be here.')}
-      action={<Link className={linkClass()} to={getExplorerHref(prefix, { type: 'stack' })} state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`, ...(explorerSources?.length ? { explorerStackSources: explorerSources } : {}) }} onClick={() => trackEvent('stack_explorer_click', { source: 'recos' })}>{t('Explorer les pistes', 'Explore more ideas')}</Link>} />
+      action={<Link className={linkClass()} to={getExplorerHref(prefix, { type: 'stack' })} state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`, ...(explorerSources?.length ? { explorerStackSources: explorerSources } : {}) }} onClick={() => trackEvent('stack_explorer_click', { source: 'recos' })}>{t('Explorer les pistes', 'Explore more ideas')}<LinkArrow /></Link>} />
     {round.cards.length > 0 ? <MediaCards listRef={list} label={t("Idées à découvrir", "Ideas to discover")}>{round.cards.map(candidate => {
       const { tool } = candidate;
       const added = selectedIds.includes(tool.id);

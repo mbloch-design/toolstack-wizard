@@ -2554,6 +2554,9 @@ export default defineConfig(({ mode, isSsrBuild }) => {
   // The SSR bundle is an intermediate renderer. Static files are copied once
   // by the client build into dist/ and are never read from dist-ssr/.
   publicDir: isSsrBuild ? false : undefined,
+  // CSS Modules: short class names in production. They repeat in every page's critical CSS (artefact
+  // budget, 11/11/2026); the name only depends on the file and the class, so the SSR and client builds agree.
+  css: mode === "production" ? { modules: { generateScopedName: "t[hash:base64:6]" } } : undefined,
   server: {
     host: "::",
     port: process.env.PORT ? Number(process.env.PORT) : undefined,

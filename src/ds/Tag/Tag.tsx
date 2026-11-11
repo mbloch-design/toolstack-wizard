@@ -3,7 +3,8 @@ import styles from "./Tag.module.css";
 
 export type TagProps = Omit<HTMLAttributes<HTMLSpanElement>, "className"> & {
   /** neutral: a fact (« Le moins cher »). ok: in use. overlap: does the same job as another tool. */
-  tone?: "neutral" | "ok" | "overlap";
+  /** neutral, ok (gain), overlap (duplicate); the three verbs of a verdict: keep (ink), swap (blue), add (green). */
+  tone?: "neutral" | "ok" | "overlap" | "keep" | "swap" | "add";
   /** The surface under it: a tag on a grey tile turns white to stay visible. */
   on?: "card" | "tile";
   children: ReactNode;

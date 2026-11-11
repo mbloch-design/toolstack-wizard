@@ -63,14 +63,16 @@ export function useStackWelcome({ empty, pending = 0, cards = 0 }: { empty: bool
         ? [t(`${pending} petite${s} décision${s} vous attend${pending > 1 ? "ent" : ""}.`, `${pending} small decision${s} waiting.`), t("Promis, aucune ne mord.", "None of them bite.")]
         : cards > 0
           ? [t(`${cards} carte${cards > 1 ? "s" : ""} à jouer dans Vos usages.`, `${cards} card${cards > 1 ? "s" : ""} to play in Your use.`), t("Promis, aucune ne mord.", "None of them bite.")]
-          : [t("Votre stack est à jour.", "Your stack is up to date."), t("À votre rythme, vous gardez la main.", "At your pace, you stay in control.")];
+          : [t("Votre stack est à jour.", "Your stack is up to date."), t("Rien à trancher. Profitez-en, ça ne dure jamais très longtemps.", "Nothing to decide. Enjoy it, it never lasts very long.")];
   const rate = dailyRate ? convertAmount(dailyRate.amount, dailyRate.currency, currency) : null;
   const money = (amount: number) => formatAmount(Math.round(amount), currency, lang);
   const facts = [
     ...(trade ? [{ label: t(...TRADE_LABELS[trade]) }] : []),
     ...(rate ? [{ label: t(`${money(rate)}/jour · votre heure ≈ ${money(rate / 7)}`, `${money(rate)}/day · your hour ≈ ${money(rate / 7)}`), title: t("Sur une journée de 7 heures", "On a 7-hour day") }] : []),
   ];
-  return { greeting: <>{hello} <span aria-hidden="true">👋</span></>, eyebrow: t("Ma stack", "My stack"), verdict: title, lead, facts };
+  return { greeting: <>{hello} <span aria-hidden="true">👋</span></>, eyebrow: t("Ma stack", "My stack"), verdict: title, lead, facts,
+    // The humour the stack's hero keeps under its cost (registre 11/11/2026): the whole verdict, or the rest line once nothing waits.
+    quip: empty ? null : pending > 0 || cards > 0 ? `${title} ${lead}` : lead };
 }
 
 export type StackWelcome = ReturnType<typeof useStackWelcome>;

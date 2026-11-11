@@ -12,6 +12,9 @@ const tags = (lang: Lang, on: "card" | "tile") => <div style={{ display: "flex",
   <Tag on={on} tone="ok">{t(lang, "Prix renseigné", "Price recorded")}</Tag>
   <Tag on={on} tone="overlap">{t(lang, "Doublon", "Overlap")}</Tag>
   <Tag on={on}>{t(lang, "À vérifier", "To check")}</Tag>
+  <Tag on={on} tone="keep">{t(lang, "Garder", "Keep")}</Tag>
+  <Tag on={on} tone="swap">{t(lang, "Remplacer", "Swap")}</Tag>
+  <Tag on={on} tone="add">{t(lang, "Ajouter", "Add")}</Tag>
 </div>;
 
 /** On a card and on a grey tile: the neutral tag swaps its tint to stay visible. */

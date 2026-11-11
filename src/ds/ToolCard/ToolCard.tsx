@@ -3,6 +3,7 @@ import Logo from "../Logo/Logo";
 import type { LogoTool } from "@/lib/useToolLogoSource";
 import Amount from "../Amount/Amount";
 import Tag from "../Tag/Tag";
+import { Fall, Tilt } from "../Gesture/Gesture";
 import styles from "./ToolCard.module.css";
 
 export type ToolStatus = "ok" | "review" | "overlap";
@@ -23,18 +24,22 @@ export type ToolCardProps = {
   editing?: boolean;
   onOpen: (button: HTMLButtonElement) => void;
   onRemove?: () => void;
+  /** The trim: the card falls before it leaves the stack. */
+  leaving?: boolean;
   localLogosOnly?: boolean;
 };
 
 const STATUS: Record<ToolStatus, [string, string]> = { ok: ["Prix renseigné", "Price recorded"], review: ["À vérifier", "To check"], overlap: ["Doublon", "Overlap"] };
 
 /** One tool of the stack: logo, what it costs, name, one status. The same card in every view; views only arrange it. */
-export default function ToolCard({ lang, tool, amount, monthly, status, area, areaColor, selected, editing, onOpen, onRemove, localLogosOnly = false }: ToolCardProps) {
+export default function ToolCard({ lang, tool, amount, monthly, status, area, areaColor, selected, editing, onOpen, onRemove, leaving = false, localLogosOnly = false }: ToolCardProps) {
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
   const label = t(...STATUS[status]);
   const tag: ReactNode = <Tag tone={status === "ok" ? "ok" : status === "overlap" ? "overlap" : "neutral"} on="tile" data-status-tag={status}>{label}</Tag>;
   return (
     <div className={styles.wrap} data-flip-id={tool.id}>
+      <Fall leaving={leaving}>
+      <Tilt>
       <button type="button" className={styles.card} data-tool-id={tool.id} data-tool-name={tool.name} data-status={status} data-selected={selected ? "" : undefined}
         aria-haspopup="dialog" aria-label={`${tool.name}, ${amount}${monthly ? t("/mois", "/mo") : ""}, ${label}`} tabIndex={editing ? -1 : undefined}
         onClick={(event) => { if (!editing) onOpen(event.currentTarget); }}>
@@ -43,9 +48,11 @@ export default function ToolCard({ lang, tool, amount, monthly, status, area, ar
         <span className={styles.name} data-name="" aria-hidden="true">{areaColor && <i className={styles.dot} style={{ "--c": areaColor } as CSSProperties} />}{tool.name}</span>
         <span className={styles.foot} aria-hidden="true">{tag}{area && <span className={styles.note}>{area}</span>}</span>
       </button>
+      </Tilt>
       {editing && onRemove && <button type="button" className={styles.remove} data-remove="" onClick={onRemove} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12" /></svg>
       </button>}
+      </Fall>
     </div>
   );
 }

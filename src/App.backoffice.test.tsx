@@ -16,7 +16,7 @@ it.each(["fr", "en"])("uses the active product shell for the %s back-office rout
   const { container } = render(<MemoryRouter initialEntries={[`/${lang}/back-office`]}><Routes>
     <Route path="/:lang" element={<LangLayout />}><Route path="back-office" element={<h1>Accounts route</h1>} /></Route>
   </Routes></MemoryRouter>);
-  expect(container.querySelector(".asv2-root .asv2-sidebar")).not.toBeNull();
+  expect(container.querySelector(".asv2-root [data-shell-sidebar]")).not.toBeNull();
   expect(container.querySelector(".asv2-workspace .asv2-content .asv2-main")).toContainElement(screen.getByRole("heading", { name: "Accounts route" }));
   const navigation = screen.getByRole("navigation", { name: lang === "fr" ? "Navigation du back-office" : "Back-office navigation" });
   expect(navigation).toContainElement(screen.getByRole("link", { name: lang === "fr" ? "Retour au site" : "Back to site" }));

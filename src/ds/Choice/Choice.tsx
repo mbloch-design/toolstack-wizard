@@ -12,7 +12,7 @@ export type ChoiceProps = {
   /** A short tag after the name (« Le moins cher »). */
   tag?: string;
   note?: ReactNode;
-  /** The amount on the right, already formatted (or « Gratuit »); a saving reads with a green arrow. */
+  /** The amount on the right, already formatted (or « Gratuit »); a saving reads in green. */
   amount: string;
   /** « /mois » after the amount. */
   unit?: string;
@@ -48,8 +48,7 @@ export default function Choice({ media, pair, name, tag, note, amount, unit, sav
         {note && <span className={styles.note}>{note}</span>}
       </span>
       <span className={styles.amount}>
-        {saving && <svg className={styles.savingMark} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" /></svg>}
-        <Amount value={amount} unit={unit} />
+        <Amount value={amount} unit={unit} tone={saving ? "gain" : "ink"} />
       </span>
     </button>
   );

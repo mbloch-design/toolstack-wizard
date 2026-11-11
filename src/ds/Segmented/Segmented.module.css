@@ -24,14 +24,14 @@
 
 .option {
   composes: focus from "../atoms.module.css";
-  min-height: 34px;
-  padding: 0 var(--tt-space-4);
+  min-height: 36px;
+  padding: 0 var(--tt-button-pad);
   border: 0;
   border-radius: var(--tt-r-pill);
   background: none;
   color: var(--tt-ink);
-  font: var(--tt-tag-font);
-  letter-spacing: var(--tt-tag-tracking);
+  font: var(--tt-action-small-font);
+  letter-spacing: var(--tt-action-tracking);
   white-space: nowrap;
   cursor: pointer;
 }

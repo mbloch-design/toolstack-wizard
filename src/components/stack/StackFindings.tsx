@@ -14,6 +14,7 @@ import Decision, { type DecisionLink } from "@/ds/Decision/Decision";
 import Choice, { Choices, IconTile } from "@/ds/Choice/Choice";
 import Seats from "@/ds/Seats/Seats";
 import Logo from "@/ds/Logo/Logo";
+import { Meet, Stamp } from "@/ds/Gesture/Gesture";
 import Bento, { Answer, Answers, BentoRow, MiniRing, Question, Tile } from "@/ds/Bento/Bento";
 import Amount from "@/ds/Amount/Amount";
 import Starter from "@/ds/Starter/Starter";
@@ -208,7 +209,8 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         return <Decision dense key={`${top.key}-${flash}`} lang={fr ? "fr" : "en"} kind={top.kind} label={t("Prochaine décision", "Next decision")} flash={!!flash}
           eyebrow={guide && (top.kind === "price" || top.kind === "freemium") ? t("Étape suivante", "Next step") : t("Votre décision", "Your decision")}
           step={peak > 1 ? { current: step, total: peak } : undefined}
-          media={top.kind !== "pair" ? <Logo tool={top.tools[0]} size={40} /> : undefined}
+          media={top.kind !== "pair" ? <Logo tool={top.tools[0]} size={40} />
+            : top.tools.length > 1 ? <Meet play={picked === 0 || picked === 1} kept={picked === 1 ? "right" : "left"} badge={t("Doublon", "Duplicate")} left={<Logo tool={top.tools[0]} size={32} />} right={<Logo tool={top.tools[1]} size={32} />} /> : undefined}
           title={top.kind === "price" && !(top.plans && top.plans.length) ? t(`Combien vous coûte ${top.tools[0].name} par mois\u00a0?`, `How much does ${top.tools[0].name} cost you a month?`) : top.title}
           detail={guide && (top.kind === "price" || top.kind === "freemium") ? t("Pour un budget juste, dites-nous laquelle vous payez. Gratuite, ça compte aussi.", "For an honest budget, tell us which one you pay. Free counts too.") : top.detail}
           links={links}
@@ -227,7 +229,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 const keep = top.actions.find((action) => action.label.endsWith(tool.name));
                 const own = top.costs?.[index] ?? 0, other = top.costs?.[1 - index] ?? 0;
                 const gone = top.tools[1 - index];
-                return <Choice key={tool.id} data-choice="keep" media={<Logo tool={tool} />} name={<>{t("Garder", "Keep")} {tool.name}</>} tag={own < other ? t("Le moins cher", "Cheaper") : undefined}
+                return <Choice key={tool.id} data-choice="keep" media={<Stamp play={picked === index} label={t("Gardé", "Kept")}><Logo tool={tool} /></Stamp>} name={<>{t("Garder", "Keep")} {tool.name}</>} tag={own < other ? t("Le moins cher", "Cheaper") : undefined}
                   note={`${gone ? t(`${gone.name} quitte la stack`, `${gone.name} leaves the stack`) : ""} · ${own > 0 ? t(`seul, ${format(own)}/mois`, `alone, ${format(own)}/mo`) : t("seul, gratuit", "alone, free")}`}
                   amount={other > 0 ? `−${format(other)}` : t("Aucune économie", "No saving")} unit={other > 0 ? per : undefined} saving={other > 0}
                   state={state(index)} checked={picked === index} disabled={picked !== null} ariaLabel={keep?.ariaLabel || keep?.label}
@@ -300,7 +302,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
     </Answers>}
   </Tile> });
   if (saved > 0 || (!top && history)) tiles.push({ id: "result", node: () => <Tile key="result" span={7} label={t("Résultat", "Result")}
-    statement={saved > 0 ? <Ending figure={<Amount size="figure" value={`−${format(Math.round(saved))}`} unit={t("/mois", "/mo")} />} /> : undefined}
+    statement={saved > 0 ? <Ending figure={<Amount size="figure" roll value={`−${format(Math.round(saved))}`} unit={t("/mois", "/mo")} />} /> : undefined}
     status={saved > 0 ? { text: <>{t("Vous économisez déjà ", "You're already saving ")}{format(Math.round(saved))}{t(" par mois.", " a month.")}</>, done: true } : undefined}
     footer={history || undefined} /> });
   const rows = [tiles.slice(0, 2), tiles.slice(2, 4)].filter((row) => row.length > 0);
@@ -321,7 +323,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           ? <>{t(`${toolCount} outil${toolCount > 1 ? "s" : ""}, `, `${toolCount} tool${toolCount > 1 ? "s" : ""}, `)}<Key>{monthly}</Key>{t(" par mois.", " a month.")}</>
           : t("On fait les comptes ?", "Let's talk budget.")}
         lead={monthly
-          ? <>{composition && <>{composition} </>}{t("Soit ", "That's ")}{yearly}{t(" par an", " a year")}{unsure.length > 0 ? t(`, d’après ${known} prix sur ${budgetTools.length}. On affine en chemin.`, `, from ${known} of ${budgetTools.length} prices. We refine as we go.`) : t(". Tous les prix sont renseignés.", ". Every price is known.")}{converted && <> {t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`)}</>}</>
+          ? <>{composition && <>{composition} </>}{t("Soit ", "That's ")}{yearly}{t(" par an", " a year")}{unsure.length > 0 ? t(`, d’après ${known} prix sur ${budgetTools.length}. On affine en chemin.`, `, from ${known} of ${budgetTools.length} prices. We refine as we go.`) : t(". Tous les prix sont renseignés.", ". Every price is known.")}{converted && <> {t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`)}</>}{welcome?.quip && <> <span data-welcome-message="">{welcome.quip}</span></>}</>
           : t("Dites-nous quelle formule vous utilisez. Promis, pas de tableur.", "Tell us which plan you use. No spreadsheet required, promise.")}
         aside={<>
           {(welcome?.facts ?? []).map((fact) => <Tag key={fact.label} title={fact.title}>{fact.label}</Tag>)}

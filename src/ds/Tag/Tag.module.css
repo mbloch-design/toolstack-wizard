@@ -22,3 +22,20 @@
 .tag[data-tone="overlap"] {
   background: color-mix(in oklch, var(--tt-overlap) 16%, var(--tt-bg));
 }
+
+/* The three verbs (planche, « Les trois verbes »): keep in ink, swap in blue, add in green. */
+.tag[data-tone="keep"] {
+  background: var(--tt-ink);
+  color: var(--tt-bg);
+}
+
+.tag[data-tone="swap"] {
+  background: var(--tt-swap-bg);
+  color: var(--tt-swap-ink);
+}
+
+.tag[data-tone="add"] {
+  background: color-mix(in oklch, var(--tt-live) 16%, var(--tt-bg));
+  color: var(--tt-gain-ink);
+}
+

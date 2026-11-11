@@ -337,3 +337,7 @@ Mesures Playwright à 1440, 1024 et 390 px. Tout appliqué le 9 oct. (« go sur 
 - Ajoutés le 16/10 : Granola (14 $/utilisateur/mois), ShotDeck (12,95 $/mois), Pixelmator Pro (49,99 $ achat unique), vcita (35 $/mois facturé annuellement, 420 $/an).
 - vcita : la fiche catalogue dit « Gratuit : toutes les fonctionnalités », la page officielle ne propose qu'un essai de 14 jours. À corriger.
 - Restent sans prix attesté : Adobe Stock (seulement des prix en euros géolocalisés, 29,99 €/mois avec engagement annuel) et Squarespace (euros géolocalisés + promotion -50 %). Relever le prix en dollars depuis une page US avant d'ajouter.
+
+## Coquille : nettoyage après la nouvelle navigation (11/11/2026)
+- `src/components/account/AccountMenu.tsx` n'est plus rendu (remplacé par `ShellMenuBody`) : migrer son test (`AccountExperience.test.tsx`) puis le supprimer.
+- Réécrire les tests e2e qui visent encore les anciennes classes `.asv2-*` (`sidebar-preference.spec.ts` est fait ; les autres fichiers de `e2e/` restent).

@@ -16,6 +16,7 @@ import { scoreOverlapPairs } from "@/lib/stackOverlap";
 import StackToolSheet from "@/components/stack/StackToolSheet";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
 import ToolCard, { ToolCards, ToolGroup, ToolGroups } from "@/ds/ToolCard/ToolCard";
+import { fallDuration } from "@/ds/Gesture/Gesture";
 import Button, { buttonAttrs, linkClass, TextButton } from "@/ds/Button/Button";
 import ToolSearch, { SearchField } from "@/ds/ToolSearch/ToolSearch";
 import Page from "@/ds/Page/Page";
@@ -82,6 +83,7 @@ export default function CartPage() {
   const addRef = useRef<HTMLButtonElement>(null);
   const lastToolButton = useRef<HTMLButtonElement | null>(null);
   const [editing, setEditing] = useState(false);
+  const [leaving, setLeaving] = useState<string[]>([]);
   const [costEditorRequest, setCostEditorRequest] = useState<{slug:string;sequence:number;scope:string;epoch:number}|null>(null);
   const selectedSlug = params.get("outil");
   const lookup = useMemo(() => new Map(tools.flatMap((tool) => [[tool.id, tool], [toolKey(tool), tool]] as [string, ToolSummary][])), [tools]);
@@ -325,7 +327,11 @@ export default function CartPage() {
     const index = state.toolEntries.findIndex((entry) => entry.toolSlug === slug);
     const entry = state.toolEntries[index];
     if (!entry) return;
-    unpinTool(slug);
+    // The trim (planche, « Huit gestes »): the card falls, then the tool leaves the stack.
+    const id = lookup.get(slug)?.id;
+    const still = typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (id && !still) { setLeaving((ids) => [...ids, id]); window.setTimeout(() => { unpinTool(slug); setLeaving((ids) => ids.filter((other) => other !== id)); }, fallDuration); }
+    else unpinTool(slug);
     trackEvent("stack_remove", { tool_slug: slug, source: editing ? "edit" : "sheet" });
     closeInspector();
     requestAnimationFrame(() => addRef.current?.focus({ preventScroll: true }));
@@ -381,7 +387,7 @@ export default function CartPage() {
     return <ToolCard key={tool.id} lang={lang} tool={tool} amount={info.kind === "unknown" ? t("Prix ?", "Price?") : info.cost} monthly={info.kind === "paid"}
       status={statusOf(tool)} area={groupBy !== "area" ? areaLabel || undefined : undefined} areaColor={area ? colorOf(area.id) : undefined} selected={active} editing={editing}
       onOpen={(button) => { lastToolButton.current = button; if (active) closeInspector(); else selectTool(toolKey(tool)); }}
-      onRemove={() => removeTool(slug, tool.name)} />;
+      onRemove={() => removeTool(slug, tool.name)} leaving={leaving.includes(tool.id)} />;
   }
 
 

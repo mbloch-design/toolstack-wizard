@@ -49,8 +49,10 @@
   box-shadow: var(--tt-row-ring-on);
 }
 
+/* The decision passes in 180 ms: the other answers step back. */
 .choice[data-state="gone"] {
   opacity: var(--tt-row-gone);
+  transition-duration: var(--tt-dur-decide);
 }
 
 .media {
@@ -102,6 +104,34 @@
   background: var(--tt-brand);
   box-shadow: var(--tt-badge-cut);
   color: var(--tt-on-color);
+  animation: bump 420ms var(--tt-spring-strong) both;
+}
+
+/* The chosen row's check bounces in and draws itself (planche, carte de décision). */
+.check path {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: draw 360ms var(--tt-ease) 80ms forwards;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1.35);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .check svg {
@@ -140,17 +170,6 @@
   gap: var(--tt-space-1);
 }
 
-/* A saving: the figure in ink (the gain green fails contrast as text), the arrow in the gain colour. */
-.savingMark {
-  width: 16px;
-  height: 16px;
-  fill: none;
-  stroke: var(--tt-gain-ink);
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 /* Narrow: the amount goes under the text, the row keeps its reading. */
 @container (width <= 460px) {
   .choice {
@@ -185,4 +204,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .choice { animation: none; }
+
+  .check,
+  .check path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
 }

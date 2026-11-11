@@ -1,41 +1,29 @@
 import { BackofficeNavigationContext, BackofficeSignOutContext, type BackofficeNavigationModel, type BackofficeSignOutModel } from "@/components/backoffice/backofficeNavigation";
 import { BackofficeNavigation } from "@/ds/BackofficeNavigation/BackofficeNavigation";
-import AccountMenu from "@/components/account/AccountMenu";
+import adminStyles from "@/ds/BackofficeNavigation/BackofficeNavigation.module.css";
+import { CATALOG_EXIT_BLOCKED_EVENT } from "@/components/backoffice/useCatalogExitGuard";
+import { Notice, NoticeText } from "@/ds/Notice/Notice";
+import { IconButton } from "@/ds/Button/Button";
+import Button from "@/ds/Button/Button";
+import { MenuGroup, MenuLink } from "@/ds/Shell/Shell";
 import { matchPath, useLocation, useNavigate } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import {
-  Home,
-  Lightbulb,
-  ChevronLeft,
-  Search,
-  Bookmark,
-  Moon,
-  PanelLeftClose,
-  PanelLeftOpen,
-  Sun,
-  Check,
-  Menu,
-  LayoutGrid,
-  Boxes,
-  Columns2,
-  CirclePlus,
-} from "@/lib/icons";
+import { Home, Lightbulb, ChevronLeft, Bookmark, LayoutGrid, Boxes, Columns2, CirclePlus, UserRound, Menu, Languages } from "@/lib/icons";
 import type { IconComponent } from "@/lib/icons";
-import MobileMenu from "@/components/v2shell/MobileMenu";
+import AccountAvatar from "@/components/account/AccountAvatar";
+import ShellMenuBody, { RouterLink, useShellAccount } from "@/components/v2shell/ShellMenuBody";
+import { BackLink, Crumbs, SearchTrigger, ShellMenu, SideFootLink, Sidebar, StackLink, TabBar, Topbar } from "@/ds/Shell/Shell";
+import Drawer, { DrawerTitle } from "@/ds/Drawer/Drawer";
+import HomeGreeting from "@/components/v2shell/HomeGreeting";
 import { useLang } from "@/hooks/useLang";
-import { useCurrency, type Currency } from "@/hooks/useCurrency";
-import { useTheme } from "@/hooks/useTheme";
 import { useStackPins } from "@/hooks/useStackPins";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
 import pictoToolTrim from "@/assets/picto-logo.svg";
 import { SearchModal } from "@/components/SearchModal";
 import Footer from "@/components/Footer";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { trackEvent } from "@/lib/analytics";
 import { getLanguageSwitchPath } from "@/lib/seo";
 import { TopbarBreadcrumbContext, type TopbarBreadcrumbItem } from "@/contexts/TopbarBreadcrumbContext";
-import adminStyles from "@/ds/BackofficeNavigation/BackofficeNavigation.module.css";
 
 type NavItem = {
   id: string;
@@ -61,88 +49,6 @@ const NAV_ITEMS: NavItem[] = [
   { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: Lightbulb, to: "/guides",      match: ["/guides", "/guide/"] },
 ];
 
-const CURRENCIES: Array<{ code: Currency; symbol: string; labelFr: string; labelEn: string }> = [
-  { code: "EUR", symbol: "€", labelFr: "Euro", labelEn: "Euro" },
-  { code: "USD", symbol: "$", labelFr: "Dollar américain", labelEn: "US dollar" },
-  { code: "GBP", symbol: "£", labelFr: "Livre sterling", labelEn: "Pound sterling" },
-];
-
-function CurrencyPicker({
-  currency,
-  setCurrency,
-  t,
-  compact = false,
-  sidebarExpanded = true,
-}: {
-  currency: Currency;
-  setCurrency: (currency: Currency) => void;
-  t: (fr: string, en: string) => string;
-  compact?: boolean;
-  sidebarExpanded?: boolean;
-}) {
-  const [open, setOpen] = useState(false);
-  const selected = CURRENCIES.find((item) => item.code === currency) || CURRENCIES[0];
-
-  return (
-    <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild>
-        <button
-          type="button"
-          className={compact ? "asv2-topbar-currency" : "asv2-utility-item asv2-currency-toggle"}
-          aria-label={t(`Choisir la devise, ${selected.labelFr} sélectionné`, `Choose currency, ${selected.labelEn} selected`)}
-          title={!compact && !sidebarExpanded ? t("Changer de devise", "Change currency") : undefined}
-          data-tooltip={!compact ? t("Changer de devise", "Change currency") : undefined}
-        >
-          {compact ? (
-            <>
-              <span aria-hidden>{selected.symbol}</span>
-              <span>{selected.code}</span>
-            </>
-          ) : (
-            <>
-              {/* Le symbole de la devise choisie, pas un « $ » fixe. */}
-              <span className="asv2-currency-glyph" aria-hidden>{selected.symbol}</span>
-              <span className="asv2-utility-text">{t("Devise", "Currency")}</span>
-              <span className="asv2-utility-value">{selected.code}</span>
-            </>
-          )}
-        </button>
-      </PopoverTrigger>
-      <PopoverContent
-        className="asv2-currency-popover"
-        side={compact ? "bottom" : "right"}
-        align={compact ? "end" : "start"}
-        sideOffset={10}
-      >
-        <p className="asv2-currency-popover-title">{t("Choisir une devise", "Choose a currency")}</p>
-        <div className="asv2-currency-options" role="radiogroup" aria-label={t("Devise", "Currency")}>
-          {CURRENCIES.map((item) => (
-            <button
-              key={item.code}
-              type="button"
-              role="radio"
-              aria-checked={currency === item.code}
-              className={`asv2-currency-option${currency === item.code ? " is-selected" : ""}`}
-              onClick={() => {
-                if (item.code !== currency) trackEvent("currency_switch", { from: currency, to: item.code });
-                setCurrency(item.code);
-                setOpen(false);
-              }}
-            >
-              <span className="asv2-currency-symbol" aria-hidden>{item.symbol}</span>
-              <span className="asv2-currency-name">
-                <strong>{item.code}</strong>
-                <small>{t(item.labelFr, item.labelEn)}</small>
-              </span>
-              {currency === item.code && <Check aria-hidden />}
-            </button>
-          ))}
-        </div>
-      </PopoverContent>
-    </Popover>
-  );
-}
-
 /** Expanded unless the visitor collapsed it. Prerendered HTML ships expanded;
     the inline script in index.html collapses it before first paint, so on
     hydrated pages the DOM already matches this value. */
@@ -153,11 +59,14 @@ function readSidebarPreference(): boolean {
 
 export default function AppShellV2({ children }: { children: ReactNode }) {
   const { t, prefix, lang } = useLang();
-  const { currency, setCurrency } = useCurrency();
-  const { theme, toggle: toggleTheme } = useTheme();
   const location = useLocation();
+  // Back office (another workstream, 11/11/2026): its own sections in the sidebar, no search, no Ma stack, a sign-out.
   const isAdmin = !!matchPath("/:lang/back-office", location.pathname);
   const navigate = useNavigate();
+  const [adminNavigation, setAdminNavigation] = useState<BackofficeNavigationModel | null>(null);
+  const [adminSignOut, setAdminSignOut] = useState<BackofficeSignOutModel | null>(null);
+  const [adminBlocked, setAdminBlocked] = useState(false);
+  const adminMenuRef = useRef<HTMLButtonElement>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   // The labelled navigation is the canonical desktop state. The compact rail
   // remains available as a deliberate choice and is remembered per browser.
@@ -178,11 +87,9 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const [chromeHidden, setChromeHidden] = useState(false);
   const topbarRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeMenu = useCallback(() => {
     setMenuOpen(false);
-    // La fermeture rend la main exactement là où on l'avait prise.
-    requestAnimationFrame(() => menuButtonRef.current?.focus());
+    // Radix rend la main au bouton qui a ouvert le menu.
   }, []);
   const breadcrumbCtx = useMemo(() => ({ setBreadcrumb }), []);
   // Niveau supérieur de la page courante : avant-dernier maillon du fil
@@ -195,8 +102,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const relPath = location.pathname.startsWith(prefix)
     ? location.pathname.slice(prefix.length).replace(/\/$/, "")
     : location.pathname;
-  const [adminNavigation, setAdminNavigation] = useState<BackofficeNavigationModel | null>(null);
-  const [adminSignOut, setAdminSignOut] = useState<BackofficeSignOutModel | null>(null);
   const isHome = relPath === "";
   const isAuthCallback = relPath === "/connexion/retour" || relPath === "/sign-in/callback";
   // A handful of routes intentionally have no breadcrumb and should keep
@@ -297,14 +202,13 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const railIsOpen = forcedRail && railOpen;
   // Focus : il entre dans la barre dépliée sur sa première entrée et revient
   // sur le bouton « déplier » quand elle se referme (Échap, clic à côté).
-  const sidebarRef = useRef<HTMLElement>(null);
-  const resizerRef = useRef<HTMLButtonElement>(null);
+  const sidebarRef = useRef<HTMLElement | HTMLDivElement>(null);
   const railWasOpen = useRef(false);
   useEffect(() => {
     if (railIsOpen) {
-      requestAnimationFrame(() => sidebarRef.current?.querySelector<HTMLElement>(".asv2-nav-item, nav button, nav a")?.focus());
+      requestAnimationFrame(() => sidebarRef.current?.querySelector<HTMLElement>("nav a, nav button")?.focus());
     } else if (railWasOpen.current && !closedByNavigation.current) {
-      requestAnimationFrame(() => resizerRef.current?.focus());
+      requestAnimationFrame(() => sidebarRef.current?.querySelector<HTMLElement>("button[aria-expanded]")?.focus());
     }
     closedByNavigation.current = false;
     railWasOpen.current = railIsOpen;
@@ -321,206 +225,84 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     });
   };
 
+  // Phone (≤ 640 px): the tab bar at the foot carries Ma stack and the menu; the top bar keeps search only.
+  const [phone, setPhone] = useState(false);
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 640px)");
+    const sync = () => setPhone(query.matches);
+    sync();
+    query.addEventListener("change", sync);
+    return () => query.removeEventListener("change", sync);
+  }, []);
+  const [accountMenuOpen, setAccountMenuOpen] = useState(false);
+  // The catalogue guard blocks a link during capture and announces it: the open admin menu explains why.
+  useEffect(() => {
+    if (!isAdmin || !menuOpen) return;
+    setAdminBlocked(false);
+    const onBlocked = () => setAdminBlocked(true);
+    document.addEventListener(CATALOG_EXIT_BLOCKED_EVENT, onBlocked);
+    return () => document.removeEventListener(CATALOG_EXIT_BLOCKED_EVENT, onBlocked);
+  }, [isAdmin, menuOpen]);
+  const who = useShellAccount();
+  const isCurrent = (item: NavItem) => item.id === "home" ? relPath === "" : item.match.some((m) => relPath === m || relPath.startsWith(m));
+  const stackHref = `${prefix}/ma-stack`;
+  const onStack = location.pathname === stackHref;
+  const sideItems = [
+    ...NAV_ITEMS.map((item) => ({ id: item.id, label: t(item.labelFr, item.labelEn), to: `${prefix}${item.to}`, icon: <item.Icon />, current: isCurrent(item) })),
+    { id: "stack", label: cartLabel, to: stackHref, icon: <Bookmark />, current: onStack, count: cartCount },
+  ];
+  const tabIds = ["home", "tools", "compare"];
+  const tabItems = [
+    ...sideItems.filter((item) => tabIds.includes(item.id)),
+    sideItems[sideItems.length - 1],
+    { id: "menu", label: t("Menu", "Menu"), to: "#", icon: <UserRound />, onClick: () => setMenuOpen(true) },
+  ];
+  const menuTrigger = who.kind === "user"
+    ? <AccountAvatar ownerId={who.id} label={who.name} avatarUrl={who.avatarUrl} />
+    : <UserRound />;
+
   return (
     <TopbarBreadcrumbContext.Provider value={breadcrumbCtx}>
     <BackofficeNavigationContext.Provider value={setAdminNavigation}>
     <BackofficeSignOutContext.Provider value={setAdminSignOut}>
     <div className={`asv2-root${sidebarExpanded || railIsOpen ? " asv2-root--sidebar-expanded" : ""}${railIsOpen ? " asv2-root--rail-open" : ""}`} data-chrome={chromeHidden ? "hidden" : "shown"} suppressHydrationWarning>
       {railIsOpen && <button type="button" className="asv2-rail-backdrop" tabIndex={-1} aria-label={t("Réduire la barre latérale", "Collapse sidebar")} onClick={() => setRailOpen(false)} />}
-      <aside ref={sidebarRef} className="asv2-sidebar" data-expanded={shownExpanded} suppressHydrationWarning>
-        <div className="asv2-sidebar-top">
-          <Link to={prefix} className="asv2-logo" aria-label="ToolTrim">
-            <img className="asv2-logo-mark" src={pictoToolTrim} alt="" width={24} height={24} aria-hidden />
-            <img className="asv2-logo-full" src={logoToolTrim} alt="" width={96} height={21} aria-hidden />
-          </Link>
-
-          <div className="asv2-sidebar-top-actions">
-            <button
-              type="button"
-              className="asv2-sidebar-resizer"
-              ref={resizerRef}
-              onClick={onSidebarToggle}
-              aria-expanded={shownExpanded}
-              aria-label={shownExpanded
-                ? t("Réduire la barre latérale", "Collapse sidebar")
-                : t("Déployer la barre latérale", "Expand sidebar")}
-            >
-              <span aria-hidden>
-                {shownExpanded ? <PanelLeftClose size={16} /> : <PanelLeftOpen size={16} />}
-              </span>
-              <b aria-hidden>{shownExpanded ? t("Réduire la barre", "Close sidebar") : t("Ouvrir la barre", "Open sidebar")}</b>
-            </button>
-          </div>
-        </div>
-
-        {isAdmin ? <BackofficeNavigation {...(adminNavigation ?? {})} lang={lang === "en" ? "en" : "fr"} homeHref={prefix} collapsed={!shownExpanded} /> : <nav className="asv2-nav" aria-label={t("Navigation principale", "Main navigation")}>
-          {NAV_ITEMS.map((item) => {
-            const isActive = item.id === "home"
-              ? relPath === ""
-              : item.match.some((m) => relPath === m || relPath.startsWith(m));
-            return (
-              <Link
-                key={item.id}
-                to={`${prefix}${item.to}`}
-                className={`asv2-nav-item${isActive ? " asv2-nav-item--active" : ""}`}
-                aria-current={isActive ? "page" : undefined}
-                aria-label={t(item.labelFr, item.labelEn)}
-                data-tooltip={t(item.labelFr, item.labelEn)}
-              >
-                <span className="asv2-nav-icon">
-                  <item.Icon size={18} />
-                </span>
-                <span className="asv2-nav-label">{t(item.labelFr, item.labelEn)}</span>
-              </Link>
-            );
-          })}
-        </nav>}
-
-        <div className="asv2-sidebar-utility">
-          <div className="asv2-utility-actions">
-          <Link
-            to={languageHref}
-            onClick={isAdmin ? (event) => { if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return; event.preventDefault(); navigate(`${getLanguageSwitchPath(location.pathname, otherLang)}${window.location.search}${location.hash}`); } : undefined}
-            className="asv2-utility-item"
-            aria-label={t("Site en français. Passer en anglais", "Site in English. Switch to French")}
-            title={!sidebarExpanded ? t("Passer en anglais", "Switch to French") : undefined}
-            data-tooltip={t("Passer en anglais", "Switch to French")}
-          >
-            {/* Les réglages montrent leur état actuel (comme le « € ») ;
-                l'infobulle décrit l'action. Le code de langue est plus
-                explicite que le picto de traduction. */}
-            <span className="asv2-lang-glyph" aria-hidden>{lang.toUpperCase()}</span>
-            <span className="asv2-utility-text">{t("Français", "English")}</span>
-          </Link>
-
-          <CurrencyPicker
-            currency={currency}
-            setCurrency={setCurrency}
-            t={t}
-            sidebarExpanded={sidebarExpanded}
-          />
-
-          <button
-            type="button"
-            className="asv2-utility-item asv2-theme-toggle"
-            onClick={toggleTheme}
-            aria-pressed={theme === "dark"}
-            aria-label={theme === "dark"
-              ? t("Passer en mode clair", "Switch to light mode")
-              : t("Passer en mode sombre", "Switch to dark mode")}
-            title={!sidebarExpanded ? t("Changer de thème", "Change theme") : undefined}
-            data-tooltip={theme === "dark" ? t("Passer en clair", "Switch to light") : t("Passer en sombre", "Switch to dark")}
-          >
-            {/* État actuel, comme la langue et la devise : soleil en clair, lune en sombre. */}
-            {theme === "dark" ? <Moon /> : <Sun />}
-            <span className="asv2-utility-text">
-              {theme === "dark" ? t("Mode sombre", "Dark mode") : t("Mode clair", "Light mode")}
-            </span>
-            <span className="asv2-utility-value">{theme === "dark" ? t("Clair", "Light") : t("Sombre", "Dark")}</span>
-          </button>
-          </div>
-        </div>
-
-        {!isAdmin && <Link
-          to={`${prefix}/submit`}
-          className="asv2-sidebar-submit"
-          aria-label={t("Soumettre un outil", "Submit a tool")}
-          data-tooltip={t("Soumettre un outil", "Submit a tool")}
-        >
-          <span className="asv2-nav-icon">
-            <CirclePlus size={18} />
-          </span>
-          <span className="asv2-nav-label">
-            <span className="asv2-submit-long">{t("Soumettre un outil", "Submit a tool")}</span>
-            <span className="asv2-submit-short">{t("Soumettre", "Submit")}</span>
-          </span>
-        </Link>}
-
-      </aside>
+      {/* The system's shell (src/ds/Shell, validated 11/11/2026). The wrappers only place it in the page. */}
+      <div ref={sidebarRef as React.RefObject<HTMLDivElement>} className="shell-side" suppressHydrationWarning>
+        <Sidebar link={RouterLink} lang={lang === "en" ? "en" : "fr"} home={prefix || "/"} expanded={shownExpanded} onToggle={onSidebarToggle}
+          logo={<img className="shell-logo-full" src={logoToolTrim} alt="" width={96} height={21} />} mark={<img src={pictoToolTrim} alt="" width={24} height={24} />}
+          label={t("Navigation principale", "Main navigation")} items={sideItems}
+          nav={isAdmin ? <BackofficeNavigation {...(adminNavigation ?? {})} lang={lang === "en" ? "en" : "fr"} homeHref={prefix} collapsed={!shownExpanded} /> : undefined}
+          foot={isAdmin
+            // Back office: the language stays a real link in reach (its section survives the switch).
+            ? <SideFootLink link={RouterLink} to={languageHref} icon={<Languages />} label={lang === "fr" ? "English" : "Français"} expanded={shownExpanded}
+                ariaLabel={t("Site en français. Passer en anglais", "Site in English. Switch to French")}
+                onClick={(event) => { if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return; event.preventDefault(); navigate(`${getLanguageSwitchPath(location.pathname, otherLang)}${window.location.search}${location.hash}`); }} />
+            : <SideFootLink link={RouterLink} to={`${prefix}/submit`} icon={<CirclePlus />} label={t("Soumettre un outil", "Submit a tool")} expanded={shownExpanded} />} />
+      </div>
 
       <div className="asv2-workspace">
-        <header
-          ref={topbarRef}
-          className="asv2-topbar"
-          data-topbar-mode={isHome ? "home" : showsSearchByDefault ? "search" : breadcrumb ? "breadcrumb" : "pending"}
-          data-has-parent={mobileParent ? "true" : undefined}
-        >
-          {/* Mobile, page profonde : le lien vers le niveau supérieur prend la
-              place du logo, dans la même hauteur (pas de saut de page, le fil
-              d'Ariane n'existant qu'après chargement). L'accueil reste dans la
-              barre d'onglets du bas. */}
-          {!isAdmin && mobileParent && (
-            <Link to={mobileParent.href!} className="asv2-mobile-back" aria-label={t(`Retour à ${mobileParent.label}`, `Back to ${mobileParent.label}`)}>
-              <ChevronLeft aria-hidden />
-              <span>{mobileParent.label}</span>
-            </Link>
-          )}
-          {!isAdmin && <Link to={prefix} className="asv2-mobile-logo" aria-label="ToolTrim">
-            <img className="asv2-mobile-logo-full" src={logoToolTrim} alt="" width={127} height={28} />
-            {/* Sous 360 px, le logo complet ne laisse plus de place aux actions. */}
-            <img className="asv2-mobile-logo-mark" src={pictoToolTrim} alt="" width={28} height={28} />
-          </Link>}
-          {isAdmin && <span className={adminStyles.workspaceTitle}>{t("Back-office", "Back office")}</span>}
-
-          {/* Desktop/tablet: the breadcrumb (or nothing on the homepage)
-              sits on the left; search lives at the right, in one place.
-              The same search control remains available on mobile. */}
-          {!isAdmin && breadcrumb && (
-            <nav className="asv2-topbar-breadcrumb tt-crumbs" aria-label={t("Fil d’Ariane", "Breadcrumb")}>
-              {breadcrumb.flatMap((item, i) => {
-                const isLast = i === breadcrumb.length - 1;
-                const sep = i > 0 ? [<span key={`sep-${i}`} className="tt-crumbs-sep" aria-hidden="true">/</span>] : [];
-                const node = item.href && !isLast
-                  ? <Link key={`l-${i}`} to={item.href}>{item.label}</Link>
-                  : <span key={`s-${i}`} aria-current={isLast ? "page" : undefined}>{item.label}</span>;
-                return [...sep, node];
-              })}
-            </nav>
-          )}
-
-          <div className="asv2-topbar-right">
-            {/* Recherche toujours atteignable depuis la barre du haut, même
-                quand le fil d'Ariane occupe la place du champ. */}
-            {!isAdmin && <button
-              type="button"
-              className="asv2-topbar-search"
-              onClick={() => setSearchOpen(true)}
-              aria-label={t(`Rechercher (${shortcut})`, `Search (${shortcut})`)}
-            >
-              <Search size={16} aria-hidden />
-              <span className="asv2-topbar-search-label">{t("Rechercher", "Search")}</span>
-              <kbd className="asv2-kbd">{shortcut}</kbd>
-            </button>}
-            {isAdmin ? adminSignOut && <button type="button" className="ac-header-trigger" disabled={adminSignOut.busy} onClick={adminSignOut.onSignOut}>{t("Me déconnecter", "Sign out")}</button> : <AccountMenu />}
-            {!isAdmin && <Link
-              to={`${prefix}/ma-stack`}
-              className="asv2-topbar-cta"
-              aria-label={cartCount > 0 ? `${cartLabel} · ${cartCount}` : cartLabel}
-              aria-current={location.pathname === `${prefix}/ma-stack` ? "page" : undefined}
-            >
-              <span className="asv2-topbar-cta-icon">
-                <Bookmark size={16} aria-hidden />
-                {cartCount > 0 && (
-                  <span key={cartCount} className="asv2-topbar-cta-badge" aria-hidden>
-                    {cartCount > 99 ? "99+" : cartCount}
-                  </span>
-                )}
-              </span>
-              <span>{cartLabel}</span>
-            </Link>}
-            <button
-              ref={menuButtonRef}
-              type="button"
-              className="asv2-topbar-menu"
-              onClick={() => setMenuOpen(true)}
-              aria-haspopup="dialog"
-              aria-expanded={menuOpen}
-              aria-label={t("Ouvrir le menu", "Open menu")}
-            >
-              <Menu size={20} aria-hidden />
-            </button>
-          </div>
-        </header>
+        <div ref={topbarRef as React.RefObject<HTMLDivElement>} className="shell-top" data-has-parent={mobileParent ? "true" : undefined}>
+          {isAdmin ? <Topbar
+            start={<span className={adminStyles.workspaceTitle}>{t("Back-office", "Back office")}</span>}
+            end={<>
+              {adminSignOut && <Button variant="secondary" disabled={adminSignOut.busy} onClick={adminSignOut.onSignOut}>{t("Me déconnecter", "Sign out")}</Button>}
+              {phone && <IconButton ref={adminMenuRef} label={t("Ouvrir le menu", "Open menu")} icon={<Menu />} tone="grey" size={40} onClick={() => setMenuOpen(true)} aria-haspopup="dialog" aria-expanded={menuOpen} />}
+            </>} />
+          : <Topbar
+            start={phone
+              ? (mobileParent ? <BackLink link={RouterLink} to={mobileParent.href!} label={mobileParent.label} icon={<ChevronLeft />} />
+                : <Link to={prefix || "/"} aria-label="ToolTrim" className="shell-phone-logo"><img className="shell-logo-full" src={logoToolTrim} alt="" width={110} height={24} /></Link>)
+              : isHome ? <HomeGreeting /> : breadcrumb ? <Crumbs link={RouterLink} homeIcon={<Home />} label={t("Fil d’Ariane", "Breadcrumb")} items={breadcrumb.map((item) => ({ label: item.label, to: item.href }))} /> : null}
+            end={<>
+              <SearchTrigger label={t("Rechercher", "Search")} shortcut={shortcut} onClick={() => setSearchOpen(true)} />
+              {!phone && who.kind !== "loading" && <ShellMenu label={who.kind === "user" ? t(`Compte et réglages : ${who.name}`, `Account and settings: ${who.name}`) : t("Réglages", "Settings")}
+                open={accountMenuOpen} onOpenChange={setAccountMenuOpen} trigger={menuTrigger}>
+                <ShellMenuBody languageHref={languageHref} onDone={() => setAccountMenuOpen(false)} />
+              </ShellMenu>}
+              {!phone && <StackLink link={RouterLink} to={stackHref} label={cartLabel} icon={<Bookmark />} count={cartCount} current={onStack} />}
+            </>} />}
+        </div>
 
         {/* The scroll container holds the page's <main> and the footer as
             siblings, so the footer is a real contentinfo landmark and not
@@ -533,46 +315,27 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         </div>
       </div>
 
-      {/* ── Mobile bottom navigation (hidden on desktop via CSS) ── */}
-      {!isAdmin && <nav className="asv2-bottomnav" aria-label={t("Navigation", "Navigation")}>
-        <div className="asv2-bn-row">
-          {NAV_ITEMS.map((item) => {
-            const isActive = item.id === "home"
-              ? relPath === ""
-              : item.match.some((m) => relPath === m || relPath.startsWith(m));
-            return (
-              <Link
-                key={item.id}
-                to={`${prefix}${item.to}`}
-                className={`asv2-bn-item${isActive ? " asv2-bn-item--active" : ""}`}
-                aria-current={isActive ? "page" : undefined}
-              >
-                <span className="asv2-bn-indicator" aria-hidden />
-                <item.Icon size={20} aria-hidden />
-                <span className="asv2-bn-label">{t(item.labelFr, item.labelEn)}</span>
-              </Link>
-            );
-          })}
-        </div>
-      </nav>}
+      {/* Phone: the tab bar at the foot. Drawn once mounted on a phone only: fixed to the screen's foot, it shifts
+          nothing when it appears, and it stays out of every page's critical CSS (artefact budget, 11/11/2026). */}
+      {phone && !isAdmin && <div className="shell-tabs">
+        <TabBar link={RouterLink} label={t("Navigation", "Navigation")} items={tabItems} />
+      </div>}
 
       {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
-      <MobileMenu
-        open={menuOpen}
-        admin={isAdmin ? adminNavigation : undefined}
-        isAdmin={isAdmin}
-        onClose={closeMenu}
-        prefix={prefix}
-        lang={lang === "en" ? "en" : "fr"}
-        t={t}
-        items={NAV_ITEMS}
-        activeId={NAV_ITEMS.find((item) => (item.id === "home" ? relPath === "" : item.match.some((m) => relPath === m || relPath.startsWith(m))))?.id ?? null}
-        languageHref={languageHref}
-        currency={currency}
-        setCurrency={setCurrency}
-        theme={theme}
-        toggleTheme={toggleTheme}
-      />
+      <Drawer open={menuOpen} onClose={closeMenu} closeLabel={t("Fermer le menu", "Close menu")}
+        onCloseAutoFocus={isAdmin ? (event) => { event.preventDefault(); adminMenuRef.current?.focus(); } : undefined}>
+        <DrawerTitle>{t("Menu", "Menu")}</DrawerTitle>
+        {isAdmin
+          ? <div className="shell-drawer-menu">
+              <BackofficeNavigation {...(adminNavigation ?? {})} lang={lang === "en" ? "en" : "fr"} homeHref={prefix} onDone={closeMenu} onBlocked={() => setAdminBlocked(true)} />
+              {adminBlocked && <Notice role="alert"><NoticeText>{t("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</NoticeText></Notice>}
+              <MenuGroup label={t("Réglages", "Settings")}>
+                {/* A real link, so the catalogue guard can hold it while a record has unsaved edits. */}
+                <MenuLink link={RouterLink} to={languageHref} icon={<Languages />}>{lang === "fr" ? "English" : "Français"}</MenuLink>
+              </MenuGroup>
+            </div>
+          : <div className="shell-drawer-menu"><ShellMenuBody languageHref={languageHref} places onDone={closeMenu} /></div>}
+      </Drawer>
     </div>
     </BackofficeSignOutContext.Provider>
     </BackofficeNavigationContext.Provider>

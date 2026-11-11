@@ -1,4 +1,5 @@
-import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
+import { forwardRef, type ButtonHTMLAttributes, type PointerEvent, type ReactNode } from "react";
+import { ArrowRight } from "@/lib/icons";
 import styles from "./Button.module.css";
 
 export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className"> & {
@@ -8,15 +9,31 @@ export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "classNa
   icon?: ReactNode;
   /** A toggle (« Modifier » / « Terminé »): pressed turns ink. */
   pressed?: boolean;
+  /** The planche's lead: an arrow after the label, replaced by its twin on hover (it goes somewhere). */
+  arrow?: boolean;
   children: ReactNode;
 };
 
 /** Every button of the system: one font (label), one radius (pill), one set of states. */
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button({ variant = "secondary", size = "md", icon, pressed, children, type = "button", ...rest }, ref) {
+/** Two arrows in a window: on hover the first leaves right, the second comes in from the left. */
+function Arrow() {
+  return <span className={styles.arrow} aria-hidden="true"><span className={styles.arrowOut}><ArrowRight /></span><span className={styles.arrowIn}><ArrowRight /></span></span>;
+}
+
+/** The lead's light follows the pointer. */
+function followPointer(event: PointerEvent<HTMLElement>) {
+  const box = event.currentTarget.getBoundingClientRect();
+  event.currentTarget.style.setProperty("--tt-mx", `${event.clientX - box.left}px`);
+  event.currentTarget.style.setProperty("--tt-my", `${event.clientY - box.top}px`);
+}
+
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button({ variant = "secondary", size = "md", icon, pressed, arrow, children, type = "button", onPointerMove, ...rest }, ref) {
   return (
-    <button ref={ref} type={type} className={styles.button} data-variant={variant} data-size={size} aria-pressed={pressed} {...rest}>
+    <button ref={ref} type={type} className={styles.button} data-variant={variant} data-size={size} aria-pressed={pressed}
+      onPointerMove={variant === "primary" ? (event) => { followPointer(event); onPointerMove?.(event); } : onPointerMove} {...rest}>
       {icon && <span className={styles.icon} aria-hidden="true">{icon}</span>}
       <span>{children}</span>
+      {arrow && <Arrow />}
     </button>
   );
 });
@@ -35,8 +52,13 @@ export type LinkTone = "label" | "quiet" | "inline" | "danger";
 export function linkClass(tone: LinkTone = "label") {
   return tone === "label" ? styles.link : `${styles.link} ${styles[tone]}`;
 }
-export function TextButton({ tone, children, type = "button", ...rest }: Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className"> & { tone?: LinkTone; children: ReactNode }) {
-  return <button type={type} className={linkClass(tone)} {...rest}>{children}</button>;
+/** arrow: a link that leads somewhere shows its arrow on hover (planche, « link »). */
+export function TextButton({ tone, arrow, children, type = "button", ...rest }: Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className"> & { tone?: LinkTone; arrow?: boolean; children: ReactNode }) {
+  return <button type={type} className={linkClass(tone)} {...rest}>{children}{arrow && <LinkArrow />}</button>;
+}
+/** The arrow of a link that leads somewhere, for router links too. */
+export function LinkArrow() {
+  return <span className={styles.linkArrow} aria-hidden="true"><ArrowRight /></span>;
 }
 
 /** A link that looks like a button (router links): spread on the link. */

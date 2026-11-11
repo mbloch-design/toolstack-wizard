@@ -6,30 +6,29 @@
   align-items: center;
   justify-content: center;
   gap: var(--tt-space-2);
-  min-height: 40px;
-  padding: 0 var(--tt-space-5);
+  min-height: var(--tt-button-h);
+  padding: 0 var(--tt-button-pad);
   border: 0;
   border-radius: var(--tt-r-pill);
   background: var(--tt-tile-2);
   color: var(--tt-ink);
-  font: var(--tt-label-font);
-  letter-spacing: var(--tt-label-tracking);
+  font: var(--tt-action-font);
+  letter-spacing: var(--tt-action-tracking);
   white-space: nowrap;
   cursor: pointer;
   transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease, opacity var(--tt-dur-state) ease;
 }
 
 .button[data-size="lg"] {
-  min-height: 48px;
-  padding: 0 var(--tt-space-6);
+  min-height: var(--tt-button-h-lg);
+  padding: 0 var(--tt-button-pad-lg);
 }
 
-/* Light text on ink glows and reads bolder: one step finer. */
+/* Ink: the same action weight (Inter Tight reads light enough on ink, arbitrage 11/11/2026). */
 .button[data-variant="primary"],
 .button[aria-pressed="true"] {
   background: var(--tt-ink);
   color: var(--tt-bg);
-  font-weight: var(--tt-w-on-ink);
 }
 
 /* Raised: a secondary that keeps its contrast near colour or light. */
@@ -59,8 +58,72 @@
   background: color-mix(in oklch, var(--tt-tile-2) 70%, var(--tt-ink) 8%);
 }
 
+/* The lead: the planche's ink pill. A light edge on top, a shadow under it; on hover it lifts,
+   a soft light follows the pointer and the aura's colours run along its edge. */
+.button[data-variant="primary"] {
+  position: relative;
+  isolation: isolate;
+  background: var(--tt-lead-bg);
+  box-shadow: var(--tt-lead-shadow);
+  transition: box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease, opacity var(--tt-dur-state) ease;
+}
+
+.button[data-variant="primary"]::before,
+.button[data-variant="primary"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.button[data-variant="primary"]::before {
+  z-index: -1;
+  background: var(--tt-lead-glow);
+  transition: opacity 400ms ease;
+}
+
+.button[data-variant="primary"]::after {
+  padding: var(--tt-lead-edge-width);
+  background: var(--tt-lead-edge);
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  transition: opacity 700ms var(--tt-ease);
+}
+
 .button[data-variant="primary"]:hover:not(:disabled) {
-  background: color-mix(in oklch, var(--tt-ink) 88%, var(--tt-bg));
+  box-shadow: var(--tt-lead-shadow-hover);
+  transform: var(--tt-lead-lift);
+}
+
+.button[data-variant="primary"]:hover:not(:disabled)::before {
+  opacity: 1;
+}
+
+.button[data-variant="primary"]:hover:not(:disabled)::after {
+  opacity: 0.45;
+  animation: lead-flow 10s linear infinite;
+}
+
+.button[data-variant="primary"]:active:not(:disabled) {
+  box-shadow: var(--tt-lead-shadow-press);
+  transform: var(--tt-press);
+}
+
+@keyframes lead-flow {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button[data-variant="primary"]::after {
+    display: none;
+  }
+
+  .button[data-variant="primary"]:hover:not(:disabled) {
+    transform: none;
+  }
 }
 
 .button[data-variant="quiet"]:focus-visible,
@@ -111,6 +174,79 @@
   stroke-width: var(--tt-icon-stroke);
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* The lead's arrow: two arrows in a window, the first leaves right as the second comes in. */
+.arrow {
+  display: inline-grid;
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+  overflow: hidden;
+}
+
+.arrowOut,
+.arrowIn {
+  display: grid;
+  grid-area: 1 / 1;
+  transition: transform var(--tt-dur-move) var(--tt-ease);
+}
+
+.arrowIn {
+  transform: translateX(-140%);
+}
+
+.button:hover .arrowOut {
+  transform: translateX(140%);
+}
+
+.button:hover .arrowIn {
+  transform: none;
+}
+
+.arrow svg {
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* A link's arrow: hidden, it slides in on hover. */
+.linkArrow {
+  display: inline-grid;
+  width: var(--tt-icon-m);
+  margin-left: var(--tt-space-1);
+  overflow: hidden;
+  vertical-align: -0.15em;
+  opacity: 0;
+  transform: translateX(calc(var(--tt-space-1) * -1.5));
+  transition: opacity var(--tt-dur-state) ease, transform 320ms var(--tt-ease);
+}
+
+.linkArrow svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.link:hover .linkArrow,
+.link:focus-visible .linkArrow {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrowOut,
+  .arrowIn,
+  .linkArrow {
+    transition: none;
+  }
 }
 
 /* Round icon button: raised on a picture, grey beside a field. */
@@ -206,8 +342,8 @@
   border: 0;
   background: linear-gradient(currentColor, currentColor) 100% 100% / 0 1px no-repeat;
   color: var(--tt-ink);
-  font: var(--tt-label-font);
-  letter-spacing: var(--tt-label-tracking);
+  font: var(--tt-action-link-font);
+  letter-spacing: var(--tt-action-tracking);
   text-decoration: none;
   cursor: pointer;
   transition: background-size 320ms var(--tt-ease);

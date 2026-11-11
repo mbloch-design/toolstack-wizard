@@ -4,7 +4,7 @@ import { ValueChange, Collapse } from "@/ds/Motion/Motion";
 import Drawer from "@/ds/Drawer/Drawer";
 import Switch from "@/ds/Switch/Switch";
 import Tag from "@/ds/Tag/Tag";
-import { buttonAttrs, linkClass, TextButton } from "@/ds/Button/Button";
+import { buttonAttrs, linkClass, LinkArrow, TextButton } from "@/ds/Button/Button";
 import { CardPanel, CostCard, CostFigure, DisclosureRow, SettingRow, SheetFoot, SheetHead, SheetNote, SheetSection, TagList, ToolRow, ToolRows } from "@/ds/ToolSheet/ToolSheet";
 import type { PlanChoice } from "@/hooks/useStackPaidPlans";
 import { Link } from "@/lib/routerLinks";
@@ -104,7 +104,7 @@ export default function StackToolSheet({ editCostRequest, tool, detail, pairs, c
                   {/* The figure of the sheet: what this tool costs me, large,
                       with where the number comes from. */}
                   <CostFigure label={en ? "Estimated monthly cost" : "Coût mensuel estimé"} source={source || undefined}
-                    link={<Link className={linkClass()} to={`${prefix}/tool/${slug}/${en ? "pricing" : "prix"}`} onClick={() => trackEvent("stack_pricing_click", { tool_slug: slug })}>{en ? "Official pricing" : "Tarifs officiels"} →</Link>}
+                    link={<Link className={linkClass()} to={`${prefix}/tool/${slug}/${en ? "pricing" : "prix"}`} onClick={() => trackEvent("stack_pricing_click", { tool_slug: slug })}>{en ? "Official pricing" : "Tarifs officiels"}<LinkArrow /></Link>}
                     value={<ValueChange value={cost.kind === "paid" ? `${cost.currency}${Math.round(cost.monthly * 100)}` : cost.kind}>{cost.kind === "paid" ? (cost.source === "custom" && cost.currency === currency && choice?.period === "monthly"
                         // What the person typed, in the shown currency: exact, no "≈".
                         ? `${new Intl.NumberFormat(en ? "en-US" : "fr-FR", { style: "currency", currency, maximumFractionDigits: 2 }).format(cost.monthly)}${en ? "/mo" : "/mois"}`

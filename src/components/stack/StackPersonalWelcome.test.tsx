@@ -19,3 +19,4 @@ it('never greets with a provider handle or an address',async()=>{const {firstNam
  expect(firstNameOf('blochmic-ops')).toBeNull();expect(firstNameOf('jdoe42')).toBeNull();expect(firstNameOf('a.b@example.invalid')).toBeNull();
  expect(firstNameOf('Michael Bloch')).toBe('Michael');expect(firstNameOf('camille')).toBe('Camille');expect(firstNameOf('Jean-Pierre Martin')).toBe('Jean-Pierre');expect(firstNameOf('  ')).toBeNull();
  data.profile={userId:'A',displayName:'blochmic-ops'};render(<StackPersonalWelcome empty={false}/>);expect(screen.queryByText(/blochmic/)).toBeNull()});
+it('says the rest line once nothing waits (registre 11/11/2026)',()=>{render(<StackPersonalWelcome empty={false}/>);expect(screen.getByText('Rien à trancher. Profitez-en, ça ne dure jamais très longtemps.')).toBeVisible()});

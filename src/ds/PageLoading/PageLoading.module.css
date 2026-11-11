@@ -69,6 +69,22 @@
   .mark {
     animation: breathe 2s var(--tt-ease-io) infinite;
   }
+
+  /* The planche's reflet: a light crosses the shape of what comes. Never a spinner. */
+  .outline span {
+    background: var(--tt-skeleton);
+    animation: shimmer 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
 }
 
 @keyframes breathe {

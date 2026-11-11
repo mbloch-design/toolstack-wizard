@@ -59,6 +59,15 @@ describe("StackFindings", () => {
       const { container } = module([], { saved: 24 });
       expect(container.textContent).toMatch(/Vous économisez déjà 24 € par mois\./);
     });
+    it("the hero keeps its welcome humour under the cost", () => {
+      const quip = "9 petites décisions vous attendent. Promis, aucune ne mord.";
+      const { container } = module([card("Canva")], { welcome: { greeting: <>Bonjour</>, eyebrow: "Ma stack", verdict: "", lead: "", facts: [], quip } });
+      expect(container.querySelector('[data-card="price"]')?.textContent).toContain(quip);
+    });
+    it("the first visit names the question « Étape suivante »", () => {
+      module([card("Canva")], { guide: true });
+      expect(screen.getByText("Étape suivante")).toBeTruthy();
+    });
   });
 
   it("reads the price first, then one decision at a time", () => {

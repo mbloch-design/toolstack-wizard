@@ -33,8 +33,8 @@
           var root = document.querySelector(".asv2-root");
           if (!root) return false;
           root.classList.remove("asv2-root--sidebar-expanded");
-          var aside = root.querySelector(".asv2-sidebar");
-          if (aside) aside.setAttribute("data-expanded", "false");
+          var aside = root.querySelector("[data-shell-sidebar]");
+          if (aside) aside.removeAttribute("data-expanded");
           return !!aside;
         };
         var observer = new MutationObserver(function () { if (apply()) observer.disconnect(); });

@@ -26,7 +26,6 @@
   font-display: optional;
 }
 
-
 /* ─────────────────────────────────────────────
    HERO GRADIENT — light / dark variants
 ───────────────────────────────────────────── */
@@ -2158,18 +2157,6 @@
       white-space: normal;
     }
   }
-}
-
-/* ─────────────────────────────────────────────
-   UTILITIES
-───────────────────────────────────────────── */
-@layer components {
-  /* ── Section eyebrow tag ──────────────────────────────────────────────
-     Dark filled pill. Use ONCE per section, directly before the h2.
-     Auto-inverts in dark mode (foreground = near-white bg, bg = near-black text).
-     Always left-aligned (parent alignment controls centering).
-  ──────────────────────────────────────────────────────────────────── */
-  /* Navigation-weight pill — 13px, weight 600, UI font */
 }
 
 @layer utilities {
@@ -5463,7 +5450,6 @@
     .gi-filter-pills::-webkit-scrollbar { display: none; }
   }
 
-
   /* ── Tool logo pill stack (stacked avatars) ── */
   .tool-logo-stack {
     display: flex;
@@ -6561,21 +6547,6 @@
   }
 }
 
-/* ─────────────────────────────────────────────
-   STACK DETAIL (sd-*)
-   /fr/stacks/:slug editorial detail page.
-───────────────────────────────────────────── */
-@layer components {
-
-  /* ── Body container ──────────────────────── */
-
-  /* ── Section ─────────────────────────────── */
-
-  /* ── CTA band ────────────────────────────── */
-
-  /* ── Related stacks ──────────────────────── */
-}
-
 /* ═══════════════════════════════════════════════════════════════════════════
    sd-* extensions — Sprint Stack Detail 2026-05-15
    Hero 2-col · Snapshot · Overview · Priority · Budget · Risks · Alt · FAQ
@@ -6778,7 +6749,6 @@
 
   /* Methodology footnote — sits below the CTA band, no hairline (CTA padding carries the gap) */
 
-
   /* Profile accordion — replaces grid of identical cards */
 
 /* ─────────────────────────────────────────────
@@ -6862,7 +6832,6 @@
     margin: 0;
   }
 
-
   /* ── Decision grid ───────────────────────────────────── */
   @media (max-width: 1100px) {
     .cix-toolbar {
@@ -6927,124 +6896,6 @@
 }
 
 /* ─────────────────────────────────────────────
-   HOME PAGE REPOSITIONNEMENT (hp-*)
-   Sprint Home — sections spécifiques à la home
-   repositionnée autour de l'audit de stack.
-───────────────────────────────────────────── */
-@layer components {
-
-  /* ── What we cut — "Ce que ToolTrim coupe" ── */
-
-}
-
-/* ─────────────────────────────────────────────
-   HOME PAGE IDENTITÉ (hp-* Sprint 4)
-   Hero 2-col, Audit Preview, Decisions,
-   Cut Rows, Avant/Après, Méthode
-───────────────────────────────────────────── */
-@layer components {
-
-  /* ── Hero 2-col layout ─────────────────────────────────────────── */
-
-  /* ── Stack Audit Preview ──────────────────────────────────────── */
-
-  /* Hover "Pourquoi?" reveal — pure CSS */
-
-  /* hp-entry-example now defined in hp-entries block (Sprint 4c) */
-
-  /* ── Cut rows — decision-style list ────────────────────────────── */
-
-  /* ── Méthode section ────────────────────────────────────────────── */
-
-}
-
-/* ─────────────────────────────────────────────
-   HOME ACTION CARDS (hac-*) Sprint 4d
-   3 cards contour noir · header tableau
-   logos outils · scénario · capsule verdict
-───────────────────────────────────────────── */
-@layer components {
-
-  /* ── Card ────────────────────────────────── */
-
-  /* ── Header — style tableau ──────────────── */
-
-  /* ── Body ────────────────────────────────── */
-
-  /* ── Scénario block ──────────────────────── */
-
-  /* Logo pills row */
-
-  /* Verdict capsule */
-
-  /* ── CTA ─────────────────────────────────── */
-
-}
-
-/* ─────────────────────────────────────────────
-   HOME ACTIONS SECTION (Sprint 5)
-   Remplace hac-section : titre éditorial +
-   espacement design-system
-───────────────────────────────────────────── */
-@layer components {
-
-  /* ── Section wrapper ─────────────────────── */
-
-  /* ── Section header ──────────────────────── */
-
-  /* ── Cards grid ──────────────────────────── */
-
-}
-
-/* ─────────────────────────────────────────────
-   SPRINT 7 — Grille globale homepage
-   Alignement horizontal · H1 responsive · Spacing
-   Règle : toutes les sections partagent le même axe visuel.
-───────────────────────────────────────────── */
-@layer components {
-
-  /* ── 1. Container : aligner es-container sur eh-container ── */
-  /* es-container était 1440px, eh-container est 1280px → même axe */
-
-  /* ── 2. Hero 2-col : grille contrôlée et padding clamp ── */
-
-  /* Collapse tablet — reprend le 1100px du bloc Sprint 4 */
-
-  /* ── 3. Preview card droite ── */
-
-  /* Single-col : réaligner à gauche */
-
-  /* ── 4. H1 hero home — override scoped ── */
-
-  /* Cap sur très grands écrans ≥ 1600px → 108px max */
-
-  /* ── 5. H2 section "Commence par la bonne question" ── */
-
-  /* ── 6. Section actions : padding tokens corrects ── */
-
-  /* ── 7. Cards : hauteur cohérente ── */
-
-}
-
-/* ─────────────────────────────────────────────
-   SPRINT 7b — Correction H1 hero et padding
-   Override Sprint 7 : font-size trop grand.
-   5 <br /> forcés → la taille contrôle tout.
-───────────────────────────────────────────── */
-@layer components {
-
-  /* H1 hero : 44px → 68px (spectaculaire mais contenu) */
-
-  /* Reset du cap 1600px — le clamp gère déjà */
-
-  /* Mobile */
-
-  /* Hero padding : moins agressif */
-
-}
-
-
-/* ─────────────────────────────────────────────
    Sprint 8 — Homepage decision ticker with logos
 ───────────────────────────────────────────── */
 
@@ -7057,8 +6908,6 @@
     transform: translate3d(-50%, -50%, 0) translate3d(5px, 8px, 0) rotate(-0.6deg);
   }
 }
-
-
 
 /* Sprint 8b — decision ticker animation + lighter separators */
 
@@ -7076,7 +6925,6 @@
     transform: translate3d(-50%, -50%, 0) translate3d(5px, 8px, 0) rotate(-0.6deg);
   }
 }
-
 
 /* Sprint 12 — homepage editorial noise section refinement */
 
@@ -7734,7 +7582,6 @@ section[id]:not(.cp-guide-section) {
 /* Removed À surveiller badge, replaced technical summary, added count indicator + expand button */
 
 /* Wrapper: stack the count indicator above the tool grid */
-
 
 /* Expand / collapse button: discreet secondary link-style */
 
@@ -9251,8 +9098,7 @@ section[id]:not(.cp-guide-section) {
 }
 @media (prefers-reduced-motion: reduce) {
   .tt-catalog-page .tt-sticky-toolbar--stuck::before,
-  .tt-catalog-page .tt-sticky-toolbar--stuck > *,
-  .asv2-workspace:has(.tt-sticky-toolbar--stuck) > .asv2-topbar .asv2-topbar-right {
+.tt-catalog-page .tt-sticky-toolbar--stuck > * {
     animation: none;
   }
 }
@@ -11504,7 +11350,6 @@ section[id]:not(.cp-guide-section) {
   flex: 0 0 auto;
 }
 
-
 /* Category grid */
 
 /* Tool grid */
@@ -12094,7 +11939,6 @@ section[id]:not(.cp-guide-section) {
   margin: 4px 0 0;
 }
 
-
 /* Store-style list rather than a wall of cards: a hairline above each
    stack, the whole row as the link, and one Apple cue doing the visual work,
    each stack drawn as an iOS folder holding its apps. */
@@ -12244,735 +12088,6 @@ section[id]:not(.cp-guide-section) {
   background: var(--color-bg);
 }
 
-/* Top row: logo, search shortcut and the collapse toggle sit together in
-   one tight strip instead of the logo alone up top and a large 40px
-   toggle floating over the content below it — closer to the compact
-   sidebar header pattern of e.g. ChatGPT's own web app. */
-.asv2-sidebar-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-  height: 56px;
-  margin-bottom: 10px;
-  padding-inline: 7px;
-}
-/* Collapsed rail: the logo alone shares the topbar's 56px baseline. Search
-   moves to its own row right below instead of stacking inside that same
-   row — stacking pushed the logo's vertical center off the topbar's. */
-.asv2-logo {
-  display: flex;
-  align-items: center;
-  min-width: 0;
-  color: var(--color-text);
-  text-decoration: none;
-}
-.asv2-logo img {
-  display: block;
-  flex-shrink: 0;
-}
-.asv2-logo-mark {
-  width: 24px;
-  height: 24px;
-  filter: grayscale(1) contrast(1.6);
-}
-.asv2-logo-full {
-  display: none !important;
-}
-.asv2-root--sidebar-expanded .asv2-logo-mark {
-  display: none;
-}
-.asv2-root--sidebar-expanded .asv2-logo-full {
-  display: block !important;
-  width: 96px;
-  height: 21px;
-}
-.asv2-sidebar-top-actions {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  flex-shrink: 0;
-}
-
-.asv2-topbar {
-  position: relative;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  height: 56px;
-  flex-shrink: 0;
-  padding: 0 20px;
-  background: var(--color-surface);
-  border-bottom: 1px solid color-mix(in srgb, var(--color-border-soft) 72%, transparent);
-}
-
-/* Le catalogue porte la même topbar que le reste du site : la recherche
-   globale y reste accessible et le fil d'Ariane prend le relais du repérage.
-   La barre de filtres n'a donc plus à réserver de place pour un CTA flottant. */
-
-.asv2-mobile-logo {
-  display: none;
-  align-items: center;
-  flex-shrink: 0;
-}
-.asv2-mobile-logo img {
-  display: block;
-  height: 28px;
-  width: 127px;
-}
-/* Trailing action circle — the pill's actual "submit search" affordance. */
-
-.asv2-kbd {
-  font-family: var(--font-ui);
-  font-size: 11px;
-  color: var(--color-muted);
-  border: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
-  border-radius: var(--radius-sm);
-  padding: 3px 7px;
-}
-
-/* The per-page breadcrumb takes over the search bar's slot from the tablet
-   breakpoint up; the homepage leaves it empty. Mobile always keeps the plain
-   search bar (see max-width: 640px below). data-topbar-mode on .asv2-topbar
-   (set in AppShellV2) picks what shows at desktop widths. */
-.asv2-topbar-breadcrumb {
-  display: none;
-}
-@media (min-width: 641px) {
-  /* "pending": route hasn't registered a breadcrumb yet (still hydrating,
-     or briefly between two routes). Show nothing rather than guessing —
-     a blank slot for a moment beats flashing the search bar then swapping
-     it out once the real breadcrumb commits. */
-  .asv2-topbar[data-topbar-mode="breadcrumb"] .asv2-topbar-breadcrumb {
-    display: flex;
-  }
-}
-
-/* Non-home pages: the search bar's slot is taken over by the page's
-   breadcrumb once it registers itself (src/contexts/TopbarBreadcrumbContext).
-   Full-text search stays one click away via the topbar search button. */
-.asv2-topbar-breadcrumb {
-  align-items: center;
-  flex: 1 1 auto;
-  gap: 8px;
-  min-width: 0;
-  overflow: hidden;
-}
-.asv2-topbar-breadcrumb > a {
-  flex: 0 0 auto;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.asv2-topbar-breadcrumb > span {
-  flex: 0 1 auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.asv2-topbar-breadcrumb > span:last-child {
-  flex-shrink: 1;
-}
-
-.asv2-topbar-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-left: auto;
-}
-
-
-.asv2-currency-popover {
-  width: 248px;
-  padding: 10px;
-  border-color: var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
-  color: var(--color-text);
-  box-shadow: 0 18px 48px color-mix(in srgb, var(--color-text) 18%, transparent);
-}
-
-.asv2-currency-popover-title {
-  margin: 2px 4px 8px;
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 650;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-}
-
-.asv2-currency-options {
-  display: grid;
-  gap: 3px;
-}
-
-.asv2-currency-option {
-  display: grid;
-  grid-template-columns: 34px minmax(0, 1fr) 18px;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  min-height: 48px;
-  padding: 6px 9px;
-  border: 0;
-  border-radius: var(--radius-md);
-  background: transparent;
-  color: var(--color-text);
-  text-align: left;
-  cursor: pointer;
-}
-
-.asv2-currency-option:hover,
-.asv2-currency-option:focus-visible,
-.asv2-currency-option.is-selected {
-  background: var(--color-surface-soft);
-}
-
-.asv2-currency-option:focus-visible {
-  outline: 2px solid var(--color-text);
-  outline-offset: -2px;
-}
-
-.asv2-currency-symbol {
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-circle);
-  font-size: 13px;
-  font-weight: 650;
-}
-
-.asv2-currency-name {
-  display: grid;
-  gap: 1px;
-  min-width: 0;
-  font-family: var(--font-ui);
-}
-
-.asv2-currency-name strong {
-  font-size: 13px;
-  font-weight: 650;
-}
-
-.asv2-currency-name small {
-  overflow: hidden;
-  font-size: 11px;
-  color: var(--color-muted);
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.asv2-currency-option > svg {
-  width: 16px;
-  height: 16px;
-  justify-self: end;
-}
-
-/* « Ma stack » est une destination de navigation, pas le CTA de la page : un
-   seul style partout, au niveau des utilitaires. Le bouton plein reste à
-   l'action principale de chaque page (revue navigation, 9 oct. 2026). */
-.asv2-topbar-cta {
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
-  height: 34px;
-  gap: 8px;
-  padding: 0 16px;
-  border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-pill);
-  background: var(--color-surface);
-  color: var(--color-text);
-  font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: border-color 140ms ease-out, background-color 140ms ease-out;
-  white-space: nowrap;
-}
-.asv2-topbar-cta:hover {
-  border-color: var(--color-muted);
-  background: var(--color-surface-soft);
-}
-.asv2-topbar-cta-icon {
-  position: relative;
-  display: inline-flex;
-}
-.asv2-topbar-cta-badge {
-  position: absolute;
-  top: -7px;
-  right: -9px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 15px;
-  height: 15px;
-  padding: 0 3px;
-  border-radius: var(--radius-pill);
-  border: 1.5px solid var(--color-surface);
-  background: var(--color-accent);
-  color: #fff;
-  font-family: var(--font-ui);
-  font-size: 10px;
-  font-weight: 700;
-  line-height: 1;
-}
-.asv2-sidebar {
-  position: relative;
-  /* Au-dessus de l'espace de travail : les infobulles de la colonne réduite
-     débordent sur le contenu, et passaient sous ses cartes positionnées (il
-     n'en restait qu'un liseré au bord de la colonne). */
-  z-index: 30;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 76px;
-  flex-shrink: 0;
-  overflow: visible;
-  padding: 0 12px 14px;
-  background: var(--color-surface);
-  border-right: 1px solid color-mix(in srgb, var(--color-border-soft) 78%, transparent);
-  transition: width 220ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.asv2-root--sidebar-expanded .asv2-sidebar {
-  width: 228px;
-}
-
-.asv2-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 2px;
-  padding: 6px 0;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav {
-  padding-top: 0;
-}
-
-.asv2-nav-item {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  min-height: 44px;
-  padding: 2px 5px;
-  border-radius: var(--radius-md);
-  color: color-mix(in srgb, var(--color-text) 78%, var(--color-muted));
-  text-decoration: none;
-  transition: background 140ms ease-out, color 140ms ease-out, transform 140ms ease-out;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item {
-  justify-content: center;
-  gap: 0;
-  padding-inline: 0;
-}
-
-.asv2-nav-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  flex: 0 0 32px;
-  border-radius: var(--radius-md);
-  color: var(--color-muted);
-  transition: background 120ms ease-out, color 120ms ease-out;
-}
-.asv2-nav-item:hover .asv2-nav-icon {
-  background: color-mix(in srgb, var(--color-surface-soft) 72%, var(--color-surface));
-  color: var(--color-text);
-}
-.asv2-nav-item--active .asv2-nav-icon {
-  background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
-  color: var(--color-text-strong);
-}
-.asv2-nav-item--active:hover .asv2-nav-icon {
-  background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
-}
-
-.asv2-nav-label {
-  width: 0;
-  min-width: 0;
-  overflow: hidden;
-  opacity: 0;
-  white-space: nowrap;
-  font-family: var(--font-ui);
-  font-size: 15px;
-  font-weight: 520;
-  color: color-mix(in srgb, var(--color-text) 82%, var(--color-muted));
-  line-height: 1.2;
-  text-align: left;
-  transition: width 180ms ease-out, opacity 120ms ease-out;
-}
-.asv2-nav-item--active .asv2-nav-label {
-  font-weight: 650;
-  color: var(--color-text-strong);
-}
-
-.asv2-root--sidebar-expanded .asv2-nav-item:hover,
-.asv2-root--sidebar-expanded .asv2-nav-item--active {
-  background: color-mix(in srgb, var(--color-surface-soft) 88%, var(--color-surface));
-}
-.asv2-root--sidebar-expanded .asv2-nav-item:not(.asv2-nav-item--active):hover {
-  background: color-mix(in srgb, var(--color-surface-soft) 56%, var(--color-surface));
-  transform: translateX(2px);
-}
-.asv2-root--sidebar-expanded .asv2-nav-item .asv2-nav-icon {
-  background: transparent;
-}
-.asv2-root--sidebar-expanded .asv2-nav-label {
-  width: auto;
-  opacity: 1;
-}
-
-/* In the compact rail the whole link is the hover/active pill, not only its
-   glyph. The floating label keeps every destination identifiable. */
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:hover .asv2-nav-icon,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:focus-visible .asv2-nav-icon,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item--active .asv2-nav-icon {
-  background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item--active::before {
-  position: absolute;
-  top: 9px;
-  bottom: 9px;
-  left: -7px;
-  width: 3px;
-  border-radius: var(--radius-pill);
-  background: var(--color-text-strong);
-  content: "";
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item::after {
-  position: absolute;
-  left: calc(100% + 10px);
-  top: 50%;
-  z-index: 80;
-  padding: 7px 11px;
-  border-radius: var(--radius-pill);
-  background: var(--color-text-strong);
-  color: var(--color-bg);
-  content: attr(data-tooltip);
-  font-family: var(--font-ui);
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-4px, -50%);
-  transition: opacity 120ms ease-out, transform 120ms ease-out;
-  white-space: nowrap;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:hover::after,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:focus-visible::after {
-  opacity: 1;
-  transform: translate(0, -50%);
-}
-
-.asv2-sidebar-submit {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  min-height: 36px;
-  margin-top: 2px;
-  padding: 2px 5px;
-  border: 1px solid color-mix(in srgb, var(--color-border-soft) 78%, transparent);
-  border-radius: var(--radius-md);
-  color: var(--color-text-strong);
-  text-decoration: none;
-  transition: background 140ms ease-out, border-color 140ms ease-out;
-}
-.asv2-sidebar-submit .asv2-nav-icon {
-  color: var(--color-text-strong);
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit {
-  padding-inline: 0;
-  border-color: transparent;
-}
-.asv2-sidebar-submit:hover {
-  background: var(--color-surface-soft);
-  border-color: color-mix(in srgb, var(--color-border-soft) 40%, var(--color-text));
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:hover {
-  border-color: transparent;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:hover .asv2-nav-icon,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:focus-visible .asv2-nav-icon {
-  background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit::after {
-  position: absolute;
-  left: calc(100% + 10px);
-  top: 50%;
-  z-index: 80;
-  padding: 7px 11px;
-  border-radius: var(--radius-pill);
-  background: var(--color-text-strong);
-  color: var(--color-bg);
-  content: attr(data-tooltip);
-  font-family: var(--font-ui);
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-4px, -50%);
-  transition: opacity 120ms ease-out, transform 120ms ease-out;
-  white-space: nowrap;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:hover::after,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:focus-visible::after {
-  opacity: 1;
-  transform: translate(0, -50%);
-}
-
-.asv2-sidebar-utility {
-  margin-top: auto;
-  padding: 10px 0 2px;
-  border-top: 0;
-}
-.asv2-utility-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.asv2-utility-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: 32px minmax(0, 1fr) auto;
-  align-items: center;
-  width: 100%;
-  min-height: 36px;
-  padding: 1px 5px;
-  border: 0;
-  border-radius: var(--radius-md);
-  background: transparent;
-  color: color-mix(in srgb, var(--color-text) 80%, var(--color-muted));
-  font-family: var(--font-ui);
-  font-size: 13px;
-  text-align: left;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 140ms ease-out;
-}
-.asv2-utility-item:hover {
-  background: color-mix(in srgb, var(--color-surface-soft) 72%, var(--color-surface));
-  color: var(--color-text);
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item {
-  grid-template-columns: 32px 0 0;
-  justify-content: center;
-  padding-inline: 0;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item:hover,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item:focus-visible {
-  background: transparent;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item:hover > svg,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item:focus-visible > svg {
-  background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
-  color: var(--color-text-strong);
-}
-.asv2-utility-item::after {
-  position: absolute;
-  left: calc(100% + 10px);
-  top: 50%;
-  z-index: 80;
-  padding: 6px 10px;
-  border-radius: var(--radius-pill);
-  background: var(--color-text-strong);
-  color: var(--color-bg);
-  content: attr(data-tooltip);
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-4px, -50%);
-  transition: opacity 120ms ease-out, transform 120ms ease-out;
-  white-space: nowrap;
-}
-.asv2-utility-item:hover::after,
-.asv2-utility-item:focus-visible::after {
-  opacity: 1;
-  transform: translate(0, -50%);
-}
-.asv2-utility-item:focus-visible {
-  outline: 2px solid var(--color-text);
-  outline-offset: 2px;
-}
-.asv2-utility-item > svg {
-  width: 16px;
-  height: 16px;
-  justify-self: center;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item > svg {
-  border-radius: var(--radius-md);
-  transition: background 120ms ease-out, color 120ms ease-out;
-}
-.asv2-utility-text,
-.asv2-utility-value {
-  width: 0;
-  overflow: hidden;
-  opacity: 0;
-  white-space: nowrap;
-}
-.asv2-utility-text {
-  font-weight: 520;
-}
-.asv2-utility-value {
-  color: var(--color-muted);
-  font-size: 11px;
-  font-weight: 650;
-}
-.asv2-theme-toggle {
-  grid-template-columns: 32px minmax(0, 1fr);
-}
-.asv2-theme-toggle .asv2-utility-value {
-  display: none;
-}
-.asv2-root--sidebar-expanded .asv2-utility-text,
-.asv2-root--sidebar-expanded .asv2-utility-value {
-  width: auto;
-  opacity: 1;
-}
-.asv2-root--sidebar-expanded .asv2-utility-item {
-  padding-right: 10px;
-}
-/* Base = expanded state: sits inline in .asv2-sidebar-top next to the logo
-   and search shortcut, not floating over the nav below it. Collapsed mode
-   (below) switches it back to an absolute, full-height edge strip — hover
-   anywhere on the sidebar's right edge to reveal the expand affordance. */
-.asv2-sidebar-resizer {
-  position: relative;
-  z-index: 60;
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  border: 0;
-  border-radius: var(--radius-md);
-  background: transparent;
-  color: var(--color-muted);
-  cursor: pointer;
-  transition: background 140ms ease-out, color 140ms ease-out;
-}
-.asv2-sidebar-resizer > span {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  height: 100%;
-}
-.asv2-sidebar-resizer svg {
-  flex: 0 0 auto;
-  width: 16px;
-  height: 16px;
-}
-.asv2-sidebar-resizer > b {
-  position: absolute;
-  top: 50%;
-  left: calc(100% + 12px);
-  width: max-content;
-  padding: 12px 14px;
-  border-radius: var(--radius-md);
-  background: var(--color-surface-soft);
-  box-shadow: 0 10px 26px color-mix(in srgb, var(--color-text) 14%, transparent);
-  color: var(--color-text);
-  font-family: var(--font-ui);
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-5px, -50%);
-  transition: opacity 140ms ease-out, transform 140ms ease-out;
-  white-space: nowrap;
-}
-.asv2-sidebar-resizer:hover,
-.asv2-sidebar-resizer:focus-visible {
-  background: var(--color-surface-soft);
-  color: var(--color-text);
-}
-.asv2-sidebar-resizer:hover > b,
-.asv2-sidebar-resizer:focus-visible > b {
-  opacity: 1;
-  transform: translate(0, -50%);
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer {
-  box-shadow: none;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > span {
-  top: 50%;
-  left: 50%;
-  border-radius: var(--radius-md);
-  transition: opacity 140ms ease-out, transform 140ms ease-out;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > b {
-  top: 50%;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:hover > span,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible > span {
-  opacity: 1;
-}
-
-@media (min-width: 901px) {
-  .asv2-root--sidebar-expanded .asv2-utility-actions {
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 2px;
-  }
-  .asv2-root--sidebar-expanded .asv2-utility-item {
-    display: grid;
-    flex: 0 0 auto;
-    grid-template-columns: 1fr;
-    min-width: 0;
-    width: 36px;
-    min-height: 36px;
-    padding: 3px;
-    border-radius: var(--radius-pill);
-  }
-  .asv2-root--sidebar-expanded .asv2-utility-item > svg {
-    justify-self: center;
-  }
-  .asv2-root--sidebar-expanded .asv2-utility-text,
-  .asv2-root--sidebar-expanded .asv2-utility-value {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    opacity: 0;
-  }
-  .asv2-root--sidebar-expanded .asv2-utility-item::after {
-    left: 50%;
-    top: auto;
-    bottom: calc(100% + 9px);
-    transform: translate(-50%, 4px);
-  }
-  .asv2-root--sidebar-expanded .asv2-utility-item:hover::after,
-  .asv2-root--sidebar-expanded .asv2-utility-item:focus-visible::after {
-    transform: translate(-50%, 0);
-  }
-}
-
-.dark .asv2-logo img {
-  filter: invert(1);
-}
-.dark .asv2-logo .asv2-logo-mark {
-  filter: grayscale(1) contrast(1.6) invert(1);
-}
-.dark .asv2-mobile-logo img {
-  filter: invert(1);
-}
 .asv2-content {
   flex: 1;
   min-width: 0;
@@ -12986,52 +12101,6 @@ section[id]:not(.cp-guide-section) {
   scrollbar-gutter: stable;
   -webkit-overflow-scrolling: touch;
   background: var(--color-bg);
-}
-
-/* Preserve content width on compact laptop layouts. The control still keeps
-   the user's preference, which becomes visible again at the next breakpoint. */
-@media (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar { width: 76px; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-logo-mark { display: block; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-logo-full { display: none !important; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-label,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-text,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-value { display: none; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-item { padding-right: 5px; }
-  /* This range is a forced compact rail: expose the same destination pills,
-     and hide the resize affordance because changing the stored desktop
-     preference would have no visible effect here. */
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:hover,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:focus-visible,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item--active {
-    background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
-  }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item .asv2-nav-icon { background: transparent; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item::after {
-    position: absolute;
-    left: calc(100% + 10px);
-    top: 50%;
-    z-index: 80;
-    padding: 7px 11px;
-    border-radius: var(--radius-pill);
-    background: var(--color-text-strong);
-    color: var(--color-bg);
-    content: attr(data-tooltip);
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1;
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(-4px, -50%);
-    transition: opacity 120ms ease-out, transform 120ms ease-out;
-    white-space: nowrap;
-  }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:hover::after,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:focus-visible::after {
-    opacity: 1;
-    transform: translate(0, -50%);
-  }
 }
 
 @media (max-width: 640px) {
@@ -13063,98 +12132,12 @@ section[id]:not(.cp-guide-section) {
      toolbars) stick to the real page scroll like on desktop. */
   .asv2-content { height: auto; overflow-x: clip; overflow-y: visible; scrollbar-gutter: auto; }
 
-  .asv2-topbar { position: sticky; top: 0; padding: 0 16px; height: 56px; gap: 12px; }
-  .asv2-mobile-logo { display: flex; padding-right: 4px; }
-  .asv2-kbd { display: none; }
-  .asv2-topbar-cta { padding: 8px 14px; font-size: 12px; }
-
-  .asv2-sidebar {
-    display: none;
-  }
 }
-
-/* ══════════════════════════════════════════════════════════════════════
-   Mobile bottom navigation (asv2-bottomnav) — minimal
-   A flat, full-width bar flush at the bottom: a subtle "Ma stack" pill
-   floating above a thin divider, then a row of 5 tabs with a small top
-   indicator on the active one. Desktop keeps the left sidebar.
-   ══════════════════════════════════════════════════════════════════════ */
-.asv2-bottomnav { display: none; }
 
 @media (max-width: 640px) {
-  /* Desktop sidebar is replaced by the mobile bottom bar */
-  .asv2-topbar-cta { display: inline-flex; }
+  
   .asv2-content { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
 
-  .asv2-bottomnav {
-    display: flex;
-    align-items: stretch;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 200;
-    padding: 0 0 calc(6px + env(safe-area-inset-bottom));
-    background: var(--color-surface);
-    box-shadow: 0 -1px 0 var(--color-border-soft), 0 -4px 16px rgba(0, 0, 0, 0.04);
-  }
-
-  /* Subtle "Ma stack" pill, centered above the divider (like the ref chip) */
-
-  .asv2-bn-row {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    align-items: stretch;
-  }
-
-  .asv2-bn-item {
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    min-height: 60px;
-    padding: 9px 0 4px;
-    text-decoration: none;
-    color: var(--color-muted);
-    transition: color 140ms ease-out;
-  }
-  .asv2-bn-item--active { color: var(--color-text-strong); }
-  .asv2-bn-item:active { opacity: 0.55; }
-
-  /* Small top indicator bar on the active tab (sits on the divider) */
-  .asv2-bn-indicator {
-    position: absolute;
-    top: 0;
-    width: 26px;
-    height: 3px;
-    border-radius: var(--radius-pill);
-    background: var(--color-text-strong);
-    opacity: 0;
-    transition: opacity 140ms ease-out;
-  }
-  .asv2-bn-item--active .asv2-bn-indicator { opacity: 1; }
-
-  .asv2-bn-label {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.01em;
-  }
-  .asv2-bn-item--active .asv2-bn-label { font-weight: 650; }
-}
-
-@media (max-width: 440px) {
-  .asv2-topbar-cta {
-    width: 42px;
-    height: 42px;
-    padding: 0;
-    justify-content: center;
-  }
-  .asv2-topbar-cta > span:not(.asv2-topbar-cta-icon) { display: none; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -14304,7 +13287,6 @@ section[id]:not(.cp-guide-section) {
    telle quelle pour que cette consolidation ne change aucun rendu. A trancher
    separement. */
 
-
 @layer components {
   /* Comparison reading hierarchy: overview, facts, then optional detail. */
   .cp-guide { max-width: calc(var(--layout-content, 1280px) + 2 * var(--layout-gutter, 48px)); margin: 0 auto; padding: 44px var(--layout-gutter, 48px) 96px; color: var(--color-text); font-family: var(--font-ui); }
@@ -14402,7 +13384,6 @@ section[id]:not(.cp-guide-section) {
   @keyframes cp-media-in { from { opacity: .3; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
   @media (prefers-reduced-motion: reduce) { .cp-guide *, .cp-guide *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 }
-
 
 @layer components {
   /* Comparison is the primary reading surface; advice stays next to evidence. */
@@ -15967,7 +14948,6 @@ a.sg-app:hover .sg-app-chevron { transform: translateX(2px); color: var(--color-
 .tt-shelf-list > li .tt-shelf-row::after { display: none !important; }
 .tt-shelf-row { padding: 12px 0; }
 
-
 /* ── Catalogue: featured band + sponsored label ──────────────────────── */
 .tt-spotlight { margin-top: 12px; }
 .tt-section-title { margin: 0 0 16px; font: 600 clamp(22px, 2.2vw, 28px)/1.2 var(--font-brand); letter-spacing: -0.025em; color: var(--color-text-strong); }
@@ -16471,7 +15451,6 @@ img[data-logo-loading] {
   @media (min-width: 1181px) { .gi-card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 }
 
-
 /* ══ US-NAV-01 : barre du haut qui réagit au scroll ═══════════════════════
    AppShellV2 pose data-chrome="hidden" quand on descend, "shown" quand on
    remonte ou en haut de page. Ordinateur : la barre se replie dans le sens
@@ -16482,242 +15461,12 @@ img[data-logo-loading] {
 .asv2-root { --asv2-chrome-h: 56px; }
 .asv2-root[data-chrome="hidden"] { --asv2-chrome-h: 0px; }
 
-@media (min-width: 641px) {
-  .asv2-topbar { transition: margin-top 220ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 160ms ease-out; }
-  .asv2-root[data-chrome="hidden"] .asv2-topbar { margin-top: -56px; opacity: 0; }
-}
-@media (max-width: 640px) {
-  .asv2-topbar { transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .asv2-root[data-chrome="hidden"] .asv2-topbar { transform: translateY(-100%); }
-}
-
-/* Global search belongs to the desktop navigation; mobile keeps its shortcut. */
-.asv2-topbar-search { display: none; }
-@media (min-width: 641px) {
-  .asv2-topbar-search { display: flex; align-items: center; gap: 12px; width: clamp(200px, 28vw, 400px); height: 44px; padding: 0 16px; border: 1px solid var(--color-border-soft); border-radius: var(--radius-pill); background: var(--color-surface-soft); color: var(--color-text-secondary); font: 400 14px/1 var(--font-ui); cursor: pointer; }
-  .asv2-topbar-search-label { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-  .asv2-topbar-search:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 3px; }
-  .asv2-topbar-search:hover { border-color: var(--color-text-meta); }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .asv2-topbar,
   .tt-catalog-page .tt-sticky-toolbar,
-  .tt-catalog-page .tt-sticky-toolbar--stuck { transition: none !important; }
+.tt-catalog-page .tt-sticky-toolbar--stuck { transition: none !important; }
 }
 
-/* ══ US-NAV-01 : menu mobile (MobileMenu.tsx) ══════════════════════════════
-   Bouton visible sous 641 px seulement. Panneau plein écran à droite, un
-   niveau à la fois, animation courte, désactivée si l'utilisateur réduit
-   les animations. */
-.asv2-topbar-menu { display: none; }
-@media (max-width: 640px) {
-  .asv2-topbar-menu {
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    flex: none;
-    padding: 0;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-pill);
-    background: var(--color-surface);
-    color: var(--color-text-strong);
-    cursor: pointer;
-  }
-  .asv2-topbar-menu:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
-}
-
-.asv2-mm { position: fixed; inset: 0; }
-.asv2-mm-backdrop {
-  position: absolute; inset: 0; border: 0; padding: 0;
-  background: color-mix(in srgb, #0F0F0F 32%, transparent);
-  animation: asv2-mm-fade 160ms ease-out both;
-}
-.asv2-mm-panel {
-  position: absolute; top: 0; right: 0; bottom: 0;
-  display: flex; flex-direction: column;
-  width: min(100%, 420px);
-  background: var(--color-surface);
-  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
-  animation: asv2-mm-slide 200ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
-.asv2-mm-head {
-  display: grid; grid-template-columns: 44px 1fr 44px; align-items: center;
-  height: 60px; padding: 0 8px; border-bottom: 1px solid var(--color-border-soft);
-}
-.asv2-mm-title { margin: 0; text-align: center; font-family: var(--font-ui); font-size: 17px; font-weight: 600; color: var(--color-text-strong); outline: none; }
-.asv2-mm-icon-btn, .asv2-mm-icon-spacer { width: 44px; height: 44px; }
-.asv2-mm-icon-btn {
-  display: grid; place-items: center; padding: 0; border: 0; border-radius: var(--radius-pill);
-  background: transparent; color: var(--color-text-strong); cursor: pointer;
-}
-.asv2-mm-icon-btn svg { width: 20px; height: 20px; }
-.asv2-mm-icon-btn:focus-visible, .asv2-mm-link:focus-visible, .asv2-mm-pref:focus-visible, .asv2-mm-submit:focus-visible, .asv2-mm-segment button:focus-visible {
-  outline: 2px solid var(--color-text-strong); outline-offset: -2px;
-}
-.asv2-mm-body {
-  flex: 1; overflow-y: auto; overscroll-behavior: contain;
-  padding: 8px 16px calc(24px + env(safe-area-inset-bottom));
-  animation: asv2-mm-level 160ms ease-out both;
-}
-.asv2-mm-list { margin: 0; padding: 0; list-style: none; }
-.asv2-mm-row { display: flex; align-items: stretch; border-bottom: 1px solid var(--color-border-soft); }
-.asv2-mm-link {
-  flex: 1; display: flex; align-items: center; min-height: 52px;
-  font-family: var(--font-ui); font-size: 17px; font-weight: 500;
-  color: var(--color-text-strong); text-decoration: none;
-}
-.asv2-mm-link.is-active { font-weight: 700; }
-.asv2-mm-link.is-active::before { content: ""; width: 4px; height: 20px; margin-right: 10px; border-radius: var(--radius-2xs); background: var(--color-text-strong); }
-.asv2-mm-subtitle { margin: 24px 0 4px; color: var(--color-muted); font-family: var(--font-ui); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .05em; }
-.asv2-mm-prefs { margin-top: 8px; }
-.asv2-mm-pref {
-  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 52px; padding: 0;
-  border: 0; border-bottom: 1px solid var(--color-border-soft); background: transparent;
-  color: var(--color-text); font-family: var(--font-ui); font-size: 16px; text-align: left; text-decoration: none; cursor: pointer;
-}
-.asv2-mm-pref svg { width: 18px; height: 18px; color: var(--color-muted); }
-.asv2-mm-pref > span { flex: 1; }
-.asv2-mm-pref strong { font-weight: 500; color: var(--color-muted); }
-.asv2-mm-pref--static { cursor: default; }
-.asv2-mm-pref-label { flex: 1; }
-.asv2-mm-segment { display: inline-flex; padding: 3px; border-radius: var(--radius-pill); background: var(--color-surface-soft); }
-.asv2-mm-segment button {
-  min-width: 52px; height: 34px; padding: 0 10px; border: 0; border-radius: var(--radius-pill);
-  background: transparent; color: var(--color-muted); font-family: var(--font-ui); font-size: 14px; font-weight: 500; cursor: pointer;
-}
-.asv2-mm-segment button.is-selected { background: var(--color-surface); color: var(--color-text-strong); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
-.asv2-mm-submit {
-  display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; margin-top: 24px;
-  border: 1px solid var(--color-border); border-radius: var(--radius-pill);
-  color: var(--color-text-strong); font-family: var(--font-ui); font-size: 15px; font-weight: 500; text-decoration: none;
-}
-.asv2-mm-submit svg { width: 18px; height: 18px; }
-@keyframes asv2-mm-fade { from { opacity: 0; } to { opacity: 1; } }
-@keyframes asv2-mm-slide { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
-@keyframes asv2-mm-level { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) {
-  .asv2-mm-backdrop, .asv2-mm-panel, .asv2-mm-body { animation: none; }
-}
-
-/* Devise : le symbole choisi tient la place du picto, à la taille d'une icône. */
-.asv2-currency-glyph {
-  display: grid; place-items: center; flex: none;
-  width: 18px; height: 18px; border: 1.5px solid currentColor; border-radius: var(--radius-circle);
-  font-family: var(--font-ui); line-height: 1;
-}
-
-/* ══ US-NAV-01 : colonne réduite lisible sans survol ═══════════════════════
-   La colonne d'icônes (réduite à la main, ou imposée de 641 à 1 180 px)
-   n'était compréhensible qu'au survol, par infobulle. Chaque entrée porte
-   maintenant son libellé sous l'icône, comme la barre d'onglets mobile ;
-   l'infobulle des entrées principales devient inutile. */
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav .asv2-nav-item {
-  flex-direction: column;
-  justify-content: center;
-  gap: 3px;
-  min-height: 54px;
-  padding: 6px 2px;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav .asv2-nav-item .asv2-nav-label {
-  display: block;
-  max-width: 100%;
-  overflow: hidden;
-  font-family: var(--font-ui);
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav .asv2-nav-item::after { display: none; }
 @media (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav .asv2-nav-item {
-    flex-direction: column;
-    justify-content: center;
-    gap: 3px;
-    min-height: 54px;
-    padding: 6px 2px;
-  }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav .asv2-nav-item .asv2-nav-label {
-    display: block;
-    max-width: 100%;
-    overflow: hidden;
-    font-family: var(--font-ui);
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    text-align: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav .asv2-nav-item::after { display: none; }
-}
-
-/* Recherche mobile : le texte d'appel ne passe jamais sur deux lignes. */
-/* 64 px par entrée dans la colonne : « Comparatifs » tient sans être tronqué. */
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar { padding-inline: 6px; }
-@media (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar { padding-inline: 6px; }
-}
-/* De 901 à 1 180 px, la barre « dépliée » est forcée en colonne étroite :
-   les trois réglages alignés en ligne débordaient (le thème sortait de la
-   colonne). On les empile comme dans la colonne réduite. */
-@media (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-actions { flex-direction: column; align-items: center; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-item { width: 36px; grid-template-columns: 1fr; justify-items: center; }
-}
-/* Texte d'appel de la recherche : court quand la place manque, jamais coupé
-   au milieu d'un mot ni sur deux lignes. */
-.asv2-mobile-logo .asv2-mobile-logo-mark { display: none; width: 28px; height: 28px; filter: grayscale(1) contrast(1.6); }
-@media (max-width: 359px) {
-  .asv2-mobile-logo .asv2-mobile-logo-full { display: none; }
-  .asv2-mobile-logo .asv2-mobile-logo-mark { display: block; }
-}
-
-
-/* ══ US-NAV-01 : colonne réduite, structure unique ═════════════════════════
-   Même rendu que la colonne soit réduite à la main ou imposée (641 à
-   1 180 px) : logo centré sur l'axe des icônes, bouton « déplier » visible
-   sous le logo (il n'apparaissait qu'au survol d'une bande invisible, ou
-   pas du tout dans la plage imposée), réglages en 18 px comme la
-   navigation, « Soumettre » traité comme une entrée de navigation sous un
-   filet au lieu d'une boîte bordée décentrée. */
-.asv2-submit-short { display: none; }
-.asv2-currency-glyph { font-size: 10px; font-weight: 600; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top { position: relative; justify-content: center; height: 56px; margin-bottom: 44px; padding-inline: 0; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions { position: absolute; top: 56px; left: 50%; transform: translateX(-50%); }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer { position: relative; top: auto; right: auto; width: 36px; height: 32px; border-radius: var(--radius-md); background: transparent; color: var(--color-muted); cursor: pointer; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > span { opacity: 1; box-shadow: none; background: transparent; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:hover, .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible { background: var(--color-surface-soft); color: var(--color-text); }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item svg { width: 18px; height: 18px; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit { flex-direction: column; justify-content: center; gap: 3px; width: 100%; min-height: 54px; margin-top: 14px; padding: 6px 2px; border: 0; border-radius: var(--radius-md); background: transparent; box-shadow: none; color: color-mix(in srgb, var(--color-text) 78%, var(--color-muted)); }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit::before { content: ""; position: absolute; top: -8px; left: 10px; right: 10px; height: 1px; background: var(--color-border-soft); }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit::after { display: none; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:hover, .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:focus-visible { background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface)); }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit .asv2-nav-icon { width: auto; height: auto; border: 0; background: transparent; box-shadow: none; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit .asv2-nav-label { display: block; font-family: var(--font-ui); font-weight: 500; line-height: 1.1; text-align: center; white-space: nowrap; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-submit-long { display: none; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-submit-short { display: inline; }
-@media (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top { position: relative; justify-content: center; height: 56px; margin-bottom: 44px; padding-inline: 0; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions { position: absolute; top: 56px; left: 50%; transform: translateX(-50%); }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer { position: relative; top: auto; right: auto; width: 36px; height: 32px; border-radius: var(--radius-md); background: transparent; color: var(--color-muted); cursor: pointer; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer > span { position: static; width: auto; height: auto; opacity: 1; transform: none; box-shadow: none; background: transparent; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer:hover, .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer:focus-visible { background: var(--color-surface-soft); color: var(--color-text); }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-item svg { width: 18px; height: 18px; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit { flex-direction: column; justify-content: center; gap: 3px; width: 100%; min-height: 54px; margin-top: 14px; padding: 6px 2px; border: 0; border-radius: var(--radius-md); background: transparent; box-shadow: none; color: color-mix(in srgb, var(--color-text) 78%, var(--color-muted)); }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit::before { content: ""; position: absolute; top: -8px; left: 10px; right: 10px; height: 1px; background: var(--color-border-soft); }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit::after { display: none; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit:hover, .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit:focus-visible { background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface)); }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit .asv2-nav-icon { width: auto; height: auto; border: 0; background: transparent; box-shadow: none; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit .asv2-nav-label { display: block; font-family: var(--font-ui); font-weight: 500; line-height: 1.1; text-align: center; white-space: nowrap; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-submit-long { display: none; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-submit-short { display: inline; }
 
   /* Dépliée par-dessus le contenu, qui garde sa place (pas de saut). */
   .asv2-root--rail-open { padding-left: 76px; }
@@ -16728,65 +15477,6 @@ img[data-logo-loading] {
 }
 .asv2-rail-backdrop { display: none; }
 @keyframes asv2-rail-in { from { transform: translateX(-12px); opacity: 0.7; } to { transform: none; opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .asv2-root--rail-open .asv2-sidebar { animation: none; } }
-/* Barre dépliée : le symbole de devise prend la taille et l'axe des icônes voisines. */
-.asv2-root--sidebar-expanded .asv2-utility-item .asv2-currency-glyph { width: 16px; height: 16px; justify-self: center; font-size: 9px; }
-
-
-/* ══ US-NAV-01 : « déplier » au survol seulement (demande de Michael) ══════
-   Colonne réduite : le bouton prend la place du logo au survol de la
-   colonne, ou quand il reçoit le focus clavier. Sur un écran tactile, sans
-   survol, il reste visible sous le logo : sinon la barre ne pourrait plus
-   se déplier sur tablette. */
-@media (hover: hover) {
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top { margin-bottom: 10px; }
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions { z-index: 2; }
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-logo { transition: opacity 120ms ease-out; }
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer { background: var(--color-surface); opacity: 0; transition: opacity 120ms ease-out; }
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:hover .asv2-sidebar-resizer,
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible { opacity: 1; }
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:hover .asv2-logo,
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:has(.asv2-sidebar-resizer:focus-visible) .asv2-logo { opacity: 0; }
-}
-@media (hover: hover) and (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top { margin-bottom: 10px; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions { z-index: 2; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-logo { transition: opacity 120ms ease-out; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer { background: var(--color-surface); opacity: 0; transition: opacity 120ms ease-out; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:hover .asv2-sidebar-resizer,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer:focus-visible { opacity: 1; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:hover .asv2-logo,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:has(.asv2-sidebar-resizer:focus-visible) .asv2-logo { opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .asv2-logo, .asv2-sidebar-resizer { transition: none !important; }
-}
-/* « Ma stack » passe en icône seule dès 560 px : avec le bouton Menu, son
-   libellé ne laissait que « Recherc… » au champ de recherche vers 450 px. */
-@media (max-width: 560px) {
-  .asv2-topbar-cta { width: 42px; height: 42px; padding: 0; justify-content: center; }
-  .asv2-topbar-cta > span:not(.asv2-topbar-cta-icon) { display: none; }
-}
-
-/* ══ US-NAV-01 : repère mobile ═════════════════════════════════════════════
-   Sur une page profonde, « ‹ Parent » remplace le logo dans la barre du haut
-   mobile : où suis-je, comment remonter, sans ligne supplémentaire. */
-.asv2-mobile-back { display: none; }
-@media (max-width: 640px) {
-  .asv2-topbar[data-has-parent] .asv2-mobile-logo { display: none; }
-  .asv2-topbar[data-has-parent] .asv2-mobile-back {
-    display: inline-flex; align-items: center; gap: 2px; flex: 0 1 auto;
-    min-width: 0; max-width: 150px; height: 42px; margin-left: -6px; padding: 0 8px 0 2px;
-    border-radius: var(--radius-pill); color: var(--color-text-strong);
-    font-family: var(--font-ui); font-size: 15px; font-weight: 600; text-decoration: none;
-  }
-  .asv2-mobile-back svg { width: 20px; height: 20px; flex: none; }
-  .asv2-mobile-back span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .asv2-mobile-back:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
-}
-@media (max-width: 359px) {
-  .asv2-topbar[data-has-parent] .asv2-mobile-back { max-width: 110px; }
-}
 
 /* ══ US-NAV-01 : navigation locale de la fiche, mobile ═════════════════════
    Les onglets de la fiche (vue d'ensemble, prix, alternatives, avis, FAQ)
@@ -16807,188 +15497,6 @@ img[data-logo-loading] {
 @media (max-width: 640px) and (prefers-reduced-motion: reduce) {
   .td-tool-page .td-tool-subnav { transition: none; }
 }
-
-/* ══ US-NAV-01 : barre du haut mobile, équilibrée ══════════════════════════
-   Deux zones seulement. À gauche le repère (logo, ou « ‹ Parent » sur une
-   page profonde). À droite trois actions identiques et dans le même ordre à
-   toutes les largeurs : Rechercher, Ma stack, Menu. Même taille, même style
-   discret, mêmes écarts : la recherche n'est plus une pilule ou un rond noir
-   selon la largeur, elle ouvre de toute façon la recherche plein écran. */
-@media (max-width: 640px) {
-  .asv2-root .asv2-workspace .asv2-topbar { justify-content: space-between; gap: 8px; padding: 0 10px 0 16px; }
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-right { display: flex; align-items: center; gap: 2px; margin-left: auto; }
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-search,
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-cta,
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-menu {
-    position: relative;
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    padding: 0;
-    border: 0;
-    border-radius: var(--radius-pill);
-    background: transparent;
-    box-shadow: none;
-    color: var(--color-text-strong);
-    opacity: 1;
-    transition: background 120ms ease-out;
-  }
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-search:active,
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-cta:active,
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-menu:active { background: var(--color-surface-soft); }
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-search:focus-visible,
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-cta:focus-visible,
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-menu:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 0; }
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-search-label,
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-search .asv2-kbd,
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-cta > span:not(.asv2-topbar-cta-icon) { display: none; }
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-cta-icon { display: grid; place-items: center; }
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-search svg,
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-cta svg,
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-menu svg { width: 20px !important; height: 20px !important; }
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-topbar-cta-badge { top: -6px; right: -8px; }
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-mobile-back { margin-left: -4px; max-width: 180px; }
-}
-@media (max-width: 359px) {
-  .asv2-root .asv2-workspace .asv2-topbar .asv2-mobile-back { max-width: 120px; }
-}
-
-
-/* Barre réduite au-delà de 1 180 px (réduction manuelle) : mêmes libellés,
-   pas d'ancien trait d'entrée active collé au bord, réglages à 18 px et
-   symbole de devise centré, comme dans la plage imposée. */
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav .asv2-nav-item .asv2-nav-label { width: auto; opacity: 1; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item--active::before { display: none; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item > svg { box-sizing: content-box; width: 18px; height: 18px; padding: 7px; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item .asv2-currency-glyph { justify-self: center; margin: 7px; }
-@media (min-width: 641px) and (max-width: 1180px) {
-.asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav .asv2-nav-item .asv2-nav-label { width: auto; opacity: 1; }
-.asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item--active::before { display: none; }
-.asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-item > svg { box-sizing: content-box; width: 18px; height: 18px; padding: 7px; }
-.asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-item .asv2-currency-glyph { justify-self: center; margin: 7px; }
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit .asv2-nav-label { width: auto; opacity: 1; }
-@media (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit .asv2-nav-label { width: auto; opacity: 1; }
-}
-/* Fermeture du menu mobile : même mouvement qu'à l'ouverture, en sens inverse. */
-.asv2-mm.is-closing .asv2-mm-backdrop { animation: asv2-mm-fade 160ms ease-in reverse both; }
-.asv2-mm.is-closing .asv2-mm-panel { animation: asv2-mm-slide-out 160ms ease-in both; pointer-events: none; }
-
-/* ══ Navigation, revue design du 9 oct. 2026 ═══════════════════════════════
-   Mesures Playwright à 1440, 1024 et 390 px. */
-
-/* Le haut de page suit le conteneur des pages (--layout-content et
-   --layout-gutter) : fil d'Ariane et contenu partent du même bord. */
-@media (min-width: 641px) {
-  .asv2-topbar {
-    padding-inline: max(var(--layout-gutter), calc((100% - var(--layout-content)) / 2 + var(--layout-gutter)));
-  }
-}
-
-/* Colonne réduite : la page active se distingue du survol. Avant, les deux
-   avaient la même pastille et le libellé actif restait en 500. */
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:not(.asv2-nav-item--active):hover .asv2-nav-icon,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:not(.asv2-nav-item--active):focus-visible .asv2-nav-icon {
-  background: color-mix(in srgb, var(--color-surface-soft) 56%, var(--color-surface));
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item--active .asv2-nav-icon {
-  background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface));
-  color: var(--color-text-strong);
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav .asv2-nav-item--active .asv2-nav-label {
-  color: var(--color-text-strong);
-  font-weight: 650;
-}
-@media (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:not(.asv2-nav-item--active):hover .asv2-nav-icon,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:not(.asv2-nav-item--active):focus-visible .asv2-nav-icon {
-    background: color-mix(in srgb, var(--color-surface-soft) 56%, var(--color-surface));
-  }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item--active .asv2-nav-icon {
-    background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface));
-    color: var(--color-text-strong);
-  }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav .asv2-nav-item--active .asv2-nav-label {
-    color: var(--color-text-strong);
-    font-weight: 650;
-  }
-}
-
-/* Colonne imposée (641 à 1 180 px) avec la préférence « déployée » : le fond
-   de l'entrée entière, propre à la barre large, doublait la pastille de
-   l'icône. Une seule pastille, comme dans la colonne réduite. */
-@media (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:hover,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item--active {
-    background: transparent;
-    transform: none;
-  }
-}
-
-/* Libellés sous icône : 11 px partout (colonne réduite et barre du bas). */
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav .asv2-nav-item .asv2-nav-label,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit .asv2-nav-label { font-size: 11px; }
-@media (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav .asv2-nav-item .asv2-nav-label,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit .asv2-nav-label { font-size: 11px; }
-}
-
-/* Menu mobile : il ne garde que les sous-niveaux, la ligne entière ouvre. */
-.asv2-mm-link--drill {
-  justify-content: space-between;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  text-align: left;
-  cursor: pointer;
-}
-.asv2-mm-link--drill svg { width: 20px; height: 20px; color: var(--color-muted); }
-.asv2-mm-link--drill > span { flex: 1; }
-
-/* Accueil : le champ de recherche occupe la place du fil d'Ariane, au bord du
-   contenu. Version de barre : hauteur et contour des boutons voisins, loupe
-   en tête, raccourci en bout ; plus de pastille de 48 px ni de rond noir. */
-
-/* Dialogues (menu mobile, recherche) au-dessus du bandeau cookies. */
-.asv2-mm { z-index: 1100; }
-@keyframes asv2-mm-slide-out { from { transform: none; opacity: 1; } to { transform: translateX(24px); opacity: 0; } }
-
-/* US-NAV-01 : au scroll vers le bas, la barre d'onglets du bas cède aussi la
-   place au contenu, et revient avec la barre du haut dès qu'on remonte. */
-@media (max-width: 640px) {
-  .asv2-bottomnav { transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .asv2-root[data-chrome="hidden"] .asv2-bottomnav { transform: translateY(calc(100% + 8px)); }
-  .asv2-root[data-chrome="hidden"] .asv2-bottomnav:focus-within { transform: none; }
-}
-@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
-  .asv2-bottomnav { transition: none; }
-}
-
-/* Langue : le code de la langue affichée, dans un cadre, comme le « € » de la devise. */
-.asv2-lang-glyph {
-  display: grid; place-items: center; flex: none; justify-self: center;
-  min-width: 22px; height: 18px; padding: 0 3px;
-  border: 1.5px solid currentColor; border-radius: 5px;
-  font-family: var(--font-ui); font-size: 9.5px; font-weight: 600; line-height: 1; letter-spacing: 0.02em;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item .asv2-lang-glyph { margin: 7px 5px; }
-@media (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-item .asv2-lang-glyph { margin: 7px 5px; }
-}
-.asv2-root--sidebar-expanded .asv2-utility-item .asv2-lang-glyph { min-width: 20px; height: 16px; font-size: 8.5px; }
-/* Sélecteur de langue du menu mobile : mêmes pastilles que la devise. */
-.asv2-mm-segment > span, .asv2-mm-segment > a {
-  display: inline-grid; place-items: center; min-width: 52px; height: 34px; padding: 0 12px;
-  border-radius: var(--radius-pill); color: var(--color-muted);
-  font-family: var(--font-ui); font-size: 14px; font-weight: 500; text-decoration: none;
-}
-.asv2-mm-segment > .is-selected { background: var(--color-surface); color: var(--color-text-strong); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
-.asv2-mm-segment > a:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: -2px; }
 
 /* ══ Page Outils : blocs éditoriaux (« À la une », « Les plus recherchés ») ══
    Règle unique, qui remplace les couches précédentes (2 colonnes sous 1 100 px
@@ -17389,17 +15897,6 @@ img[data-logo-loading] {
 
   .ms-page { max-width: 1440px; margin: 0 auto; padding: var(--space-2xl) var(--space-2xl) var(--space-3xl); }
 
-
-
-
-
-
-
-
-
-
-
-
   .ms-tool { display: flex; align-items: center; text-align: left; gap: var(--space-sm); min-width: 0; width: 100%; padding: var(--space-xs) var(--space-sm); border-radius: var(--tt-surface-radius-info); background: transparent; transition: background 160ms ease; }
 
   .ms-tool:hover { background: hsl(var(--secondary)); }
@@ -17606,60 +16103,17 @@ img[data-logo-loading] {
    page instead of covering it, like the wide sidebar. No veil, no content
    cut under the menu; the width eases from 76 to 228px. */
 @media (min-width: 641px) and (max-width: 1180px) {
-  .asv2-sidebar { transition: width 240ms cubic-bezier(.2, .8, .2, 1); }
-  .asv2-root--rail-open .asv2-sidebar { position: relative; top: auto; bottom: auto; left: auto; z-index: 30; width: 228px; box-shadow: none; animation: none; }
+
   .asv2-rail-backdrop { display: none; }
 }
-@media (prefers-reduced-motion: reduce) { .asv2-sidebar { transition: none; } }
+
 /* The hero follows the room it actually has (container query), not the
    window: with the rail pushing the page, a 920px window leaves ~616px, so
    the phone hero (cluster first, widget tiles) applies there too. */
 .ms-page { container: mspage / inline-size; }
-@container mspage (max-width: 760px) {
-  /* Valeur en mots (« Coût non renseigné », « Rien ») : plus petite et sur deux lignes au besoin, sinon elle sortait de sa carte (9 oct. 2026). */
-}
+
 @media (min-width: 641px) and (max-width: 1180px) { .asv2-root.asv2-root--rail-open { padding-left: 0; } }
-/* Sidebar toggle (8 Oct 2026): no visual tooltip (it could only land on the
-   top bar's breadcrumb; the icon speaks, the label stays for screen
-   readers), the icon centred in every state, and the button sized to the
-   logo it replaces so it never pokes above the window. */
-.asv2-sidebar-resizer > b { display: none !important; }
-.asv2-root .asv2-sidebar-resizer { display: grid; place-items: center; }
-.asv2-root .asv2-sidebar-resizer > span { display: grid; place-items: center; width: 100%; height: 100%; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions .asv2-sidebar-resizer,
-.asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions .asv2-sidebar-resizer { height: 28px; }
-/* The old hover rule translated the icon by -50%/-50% for an absolute
-   layout that no longer exists: it threw the icon into the corner. */
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > span,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:hover > span,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible > span { position: static; width: 100%; height: 100%; transform: none; }
-/* Au survol, le picto « déplier » prend exactement la place du logo : même
-   centre (milieu de la bande de 56 px), et un fondu croisé avec une légère
-   mise à l'échelle (le logo se retire, le picto arrive). Avant, il se collait
-   en haut de la colonne, 16 px au-dessus du logo (9 oct. 2026). */
-@media (hover: hover) {
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions { top: 50%; transform: translate(-50%, -50%); }
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-logo,
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer { transition: opacity 160ms ease-out, transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer { transform: scale(0.82); }
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:hover .asv2-sidebar-resizer,
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible { transform: none; }
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:hover .asv2-logo,
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:has(.asv2-sidebar-resizer:focus-visible) .asv2-logo { transform: scale(0.82); }
-}
-@media (hover: hover) and (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions { top: 50%; transform: translate(-50%, -50%); }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-logo,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer { transition: opacity 160ms ease-out, transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer { transform: scale(0.82); }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:hover .asv2-sidebar-resizer,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer:focus-visible { transform: none; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:hover .asv2-logo,
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:has(.asv2-sidebar-resizer:focus-visible) .asv2-logo { transform: scale(0.82); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .asv2-root .asv2-logo, .asv2-root .asv2-sidebar-resizer { transition: none !important; transform: none !important; }
-}
+
 /* ── Footer, clinical pass (24 Oct 2026) ───────────────────────────────────
    Michael: "plus clinique, les codes des sites tech du moment, la typo est
    trop petite". One 12-column grid: the brand column (promise, then the
@@ -17788,10 +16242,6 @@ img[data-logo-loading] {
 /* Card titles share one line whether or not a category follows. */
 /* "See all" links and the footer legal links: at least 24px to tap. */
 .home-v2 .v2-section-link, .tt-footer .tt-footer-legal a, .tt-footer .tt-footer-linkbutton { display: inline-flex; align-items: center; min-height: 24px; }
-@media (max-width: 640px) {
-  /* Three picks everywhere (reference, ToolTrim pick, discovery: Michael,
-     29 Oct); the needs scroll as a carousel on phones, so length is fine. */
-}
 
 /* ── Home, chapter 1 (8 Oct 2026): the stacks become four large white cards
    right after the hero, on the page's white (no grey band: Michael). The iOS folder
@@ -18233,11 +16683,6 @@ img[data-logo-loading] {
 }
 @media (prefers-reduced-motion: reduce) { .home-v2 .hc-mark, .home-v2 .hc-card::after, .home-v2 .hc-card { transition: none; } .home-v2 .hc-card:hover { transform: none; } }
 
-/* The search block now sits right under the hero, on its own. */
-
-/* ── Accessibility and motion fixes (design review, 8 Oct 2026) ── */
-/* Focus rings where the audit found none or a faint one. */
-.asv2-sidebar-resizer:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
 .pin-tool-button:focus-visible { box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-text); }
 /* Stack folder: the apps drift apart with transform, not by animating gap. */
 .home-v2 .sgs-folder { transition: background 200ms ease-out; }
@@ -18281,7 +16726,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .hc-card:focus-visible { outline: 2px solid var(--color-text); outline-offset: 4px; }
 .hc-title { margin-top: 14px; font: 600 18px/1.25 var(--font-ui); letter-spacing: -.015em; color: var(--color-text); }
 .hc-summary { display: -webkit-box; margin-top: 6px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; font: 400 15px/1.45 var(--font-ui); color: var(--color-text-secondary); text-wrap: pretty; }
-
 
 /* ══ Mode sombre, revue design du 10 oct. 2026 ════════════════════════════
    Audit axe + captures sur 16 pages à 1440 et 390 px. Une seule cause :
@@ -18336,9 +16780,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .dark img[data-tool]:not([data-logo-loading]) {
   background-color: var(--color-logo-plate) !important;
   filter: brightness(0.94);
-}
-
-@layer components {
 }
 
 /* ── Ma stack, tableau de bord (22 oct. 2026) ─────────────────────────────
@@ -19655,9 +18096,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .td-tool-page .td-decision-verdict .td-decision-compare:hover { background: color-mix(in srgb, var(--color-text) 4%, var(--color-surface)); }
   .td-tool-page .td-decision-verdict .td-verdict-pill--neutral { background: var(--color-surface); }
 }
-@layer components {
-  /* On the tinted box the icon chips go white; colour stays in the glyph. */
-}
 
 @layer components {
   /* Dynamic verdict box (2026-10-16): clickable ring, five rising criteria,
@@ -19919,7 +18357,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   }
 }
 
-
 /* Personal account access stays in the existing My stack flow. */
 @layer components {
   .ms-account-actions { display: flex; align-items: center; gap: var(--space-sm); }
@@ -19953,7 +18390,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     .ba-heading { align-items: flex-start; }
   }
 }
-
 
 /* The back-office is content inside the active product shell. */
 @layer components {
@@ -20031,27 +18467,14 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ac-settings .ac-danger-zone { padding: 20px; border: 1px solid color-mix(in srgb, #c74c46 25%, var(--color-border)); border-radius: var(--radius-md); background: color-mix(in srgb, #c74c46 4%, var(--color-surface)); }
   .ac-settings .ac-danger-zone .ac-danger { color: light-dark(#ad302b, #ff9d95); }
   .ac-header-guest { display: flex; align-items: center; gap: 8px; flex: none; }
-  .asv2-topbar .asv2-topbar-right { gap: 12px; }
-  .asv2-topbar-right .ac-header-trigger, .asv2-topbar-right .ac-header-signup { height: 44px; min-height: 44px; font-size: 14px; padding: 0 14px; border-radius: 999px; }
-  .asv2-topbar-right .ac-header-trigger { gap: 8px; }
-  .asv2-topbar-right .ac-header-trigger--account { border: 1px solid transparent; padding: 4px 9px 4px 5px; min-width: 56px; }
-  .asv2-topbar-right .ac-avatar { width: 32px; height: 32px; font-size: 13px; }
+
   .ac-account-chevron { color: var(--color-text-meta); }
   .ac-header-trigger--account[data-state="open"] { background: var(--color-surface-soft); border-color: var(--color-text-meta); }
-  .asv2-topbar-right .ac-header-guest { gap: 8px; margin-left: 8px; }
-  .asv2-topbar-right .ac-header-guest .ac-header-trigger { font-weight: 500; color: var(--color-text-secondary); }
-  .asv2-topbar-right .ac-header-guest .ac-header-trigger > svg { display: none; }
-  .asv2-topbar-right .ac-header-signup { padding-inline: 20px; }
-  .asv2-topbar .asv2-topbar-right .asv2-topbar-cta { height: 44px; padding-inline: 12px 16px; font-size: 14px; font-weight: 600; border-color: transparent; border-radius: 999px; background: var(--color-text); color: var(--color-bg); box-shadow: none; }
-  .asv2-topbar .asv2-topbar-right .asv2-topbar-cta:hover { background: color-mix(in srgb, var(--color-text) 85%, var(--color-bg)); }
+
   @media (max-width: 767px) {
-    .asv2-topbar .asv2-topbar-right { gap: 8px; }
-    .asv2-topbar-right .ac-header-trigger--account { min-width: 44px; width: 44px; padding: 0; border: 0; }
+
     .ac-account-chevron { display: none; }
-    .asv2-topbar-right .ac-header-guest .ac-header-trigger > svg { display: block; }
-    .asv2-topbar-right .ac-header-guest { border: 0; padding: 0; margin: 0; }
-    .asv2-topbar-right .ac-header-guest .ac-header-trigger { width: 44px; padding: 0; }
-    .asv2-topbar .asv2-topbar-right .asv2-topbar-cta { padding-inline: 0; }
+
     .ac-form-footer > .ac-button { width: 100%; }
     .ac-form-footer > p { width: 100%; }
   }
@@ -20593,11 +19016,11 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ex-filter-stack:hover { background: var(--color-surface-soft); }
 .ex-filter-stack:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
 .ex-filter-stack-icon { display: inline-flex; position: relative; }
-.ex-filter-stack-count, .asv2-topbar-cta-badge { animation: ex-count-roll 520ms cubic-bezier(.34,1.56,.64,1) both; }
+.ex-filter-stack-count { animation: ex-count-roll 520ms cubic-bezier(.34,1.56,.64,1) both; }
 .ex-filter-stack-count { align-items: center; background: var(--color-text); border-radius: var(--radius-pill); color: var(--color-bg); display: inline-flex; font: 700 10px/1 var(--font-ui); height: 16px; justify-content: center; min-width: 16px; padding: 0 4px; position: absolute; right: -9px; top: -7px; }
 @keyframes ex-count-roll { 0% { opacity: 0; transform: translateY(70%) scale(.6); } 60% { opacity: 1; transform: translateY(-12%) scale(1.15); } 100% { transform: none; } }
 @media (max-width: 760px) { .ex-filter-stack-label { display: none; } }
-@media (prefers-reduced-motion: reduce) { .ex-filter-stack-count, .asv2-topbar-cta-badge { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .ex-filter-stack-count { animation: none; } }
 /* Softer contours: the toast logo sits flush (no white tile), the pinned
    context logo loses its ring. */
 .stack-toast-logo { background: transparent; border-radius: var(--radius-md); padding: 0; }
@@ -20852,28 +19275,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .gi-empty button:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
 .gi-load-more-row { display: flex; justify-content: center; padding-top: 40px; }
 
-/* Findings, compaction pass (22/10/2026): higher specificity than the earlier
-   blocks so the internal layouts hold; rows stacked where columns are narrow. */
-/* Price list: clean rows (logo, name, amount), a thin share bar under the name. */
-/* Radar, fine and delicate: hairline rings, no spokes fill, a light veil, small dots. */
-/* Balance: title row on top across the card; the chart and the list share the height below. */
-/* Cheaper elsewhere: mine → theirs, what it saves a month, opens the comparison. */
-/* Balance by area, after the reference: a large legible radar with its labels,
-   one colour (line and soft fill), clean rings; the values in tiles beside it. */
-/* Review pass (22/10/2026): one anatomy per card (label, headline at one size,
-   content), rows sized by content, no gaps in the middle of cards. */
-/* Missing price: the amount is typed right in the card. */
-/* Plan pick: the plans as cards, one tap answers. */
-
-/* Duplicate face-off: two faces, one tap keeps one. */
-
-/* Proportion follows importance: price and decision lead, health and cheaper share a side column,
-   balance is a low band underneath. */
-@media (min-width: 1181px) {
-
-  /* Balance band: the sentence on the left, the radar and its figures on the right. */
-}
-
 /* Compact health: one line per check. */
 
 /* Tighter face-off. */
@@ -20901,39 +19302,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @layer components {
   .tce-media-context { margin: var(--space-xs) 0 0; color: var(--color-text-secondary); font: 400 var(--tt-size-card-body)/1.45 var(--font-ui); } /* Legacy unlayered kit sets 40px. */
 }
-/* The lens view reuses the .ms-map hooks; its own pictures win over the old chip map. */
-/* Grid card: domain on its line, the possible duplicate as its own tag below. */
 
-/* Total reliability (23/10): a gauge, then what weighs on the total, each row bringing its question to the deck. */
-
-/* Bento v4 (23/10): where the money goes, wide, beside the price; the decision
-   stands as a tall column on the right, its faces stacked like a card deck. */
-@media (min-width: 1181px) {
-  /* The stage of logos is gone in the column layout: the text takes the full width. */
-}
-/* Bento v5: no box just to say "all good": the optimisation box takes the space. */
-/* Budget split (23/10): verdict, one line of proof, then a radar as large as its figures. */
-
-/* ===== Ma stack inventory (23/10): one card, two layouts, groups with subtotals ===== */
-
-/* The card: same five pieces in both layouts. */
-
-/* Grid: cards. */
-
-/* List: rows in columns, Outil · Domaine · Coût · Statut. */
-
-/* The decision block reads as the one place to act (23/10): the only raised
-   white card of the bento, a fine ring in the rare ToolTrim blue, a filled label. */
-
-/* ===== Bento v6 (23/10): the structure of a system report =====
-   A tall card on the left (what it costs), a wide card on top (the decision),
-   two cards under it (where the money goes, right size). One anatomy for all:
-   the finding as the headline, one line of why, the icon top right, the
-   actions bottom right. */
-@media (min-width: 1181px) {
-  /* The decision is wide again: faces side by side. */
-  /* Budget split, in its own column: verdict, bar, legend. */
-}
 /* Icon top right, label quiet: the headline says what the box is about. */
 
 /* Budget bar, like iPhone storage. */
@@ -20954,24 +19323,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Total reliability, as a meter: a ring, one dot per tool, the next question on tap. */
 @keyframes mf-flash { 0% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-accent) 40%, transparent), 0 18px 40px -22px rgb(0 0 0 / .4); } 100% { } }
 
-/* Text architecture shared by the cards (23/10): label + icon, figure, sentence, detail. */
-/* The view switch sits at the top right of the chart, out of the reading path. */
-
-/* Compact price card (23/10): one line per tool, a bar chart read as a table. */
-/* Reliability on one line: ring, figure, what is left. */
-/* Big logos stay inside their slot. */
-/* Compact lower row (23/10). */
-
-/* Bento v7 (23/10): price beside the decision on the first row; the split,
-   wide, beside optimisation on the second. The wide split puts its chart on
-   the left and the legend on the right. */
-
-/* Above the fold (23/10): the title is one line, the bento fits under it. */
-
-/* ===== Above the fold (23/10): summaries, detail on demand ===== */
-@media (min-width: 761px) {
-  /* Compact face-off: two faces side by side, logo left, the choice right. */
-}
 /* Phone: four summary cards; one opens at a time. */
 /* Tablet and phone: one column for the phone, two for the tablet; the
    decision comes first on a phone so the action is in the first screen. */
@@ -20983,17 +19334,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    in the design system: contrast comes from fills. */
 @keyframes mf-flash-fill { 0% { background: color-mix(in srgb, var(--color-accent) 22%, var(--ms-card)); } }
 
-/* Live effect on the total, and the seat stepper. */
-
-@media (min-width: 761px) {
-  /* Fixed heights from the space left under the title line. The first row never drops under 360px:
-     below that, a plan question is cut (23/10/2026); a decision must never be truncated. */
-  /* Lists that can grow scroll inside their box. */
-  /* The chart has one size whatever the view. */
-}
-@media (min-width: 761px) {
-  /* In the price list, the "others" row closes the list; no row is ever cut. */
-}
 /* Plan tiles: one row of at most four, name in full, price under it. */
 /* Choice tiles on the blue decision card: white stays white; hover lifts it and blues the price. */
 /* The total, on the action bar's right. */
@@ -21019,12 +19359,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   @keyframes mf-bb-rise { from { transform: scaleY(0); } }
 }
 
-/* Split chart, legend as chips (23/10): the chart owns the panel. */
-@media (min-width: 761px) {
-  /* Radar and ring: square cell on the left, chips stacked on the right, detail under them. */
-  /* Bar: the bar across, the detail, the chips in rows. */
-}
-
 /* Split charts that answer the pointer, and a legend made to be read (23/10). */
 /* Legend: larger type, ink figures. */
 /* Chips: the amount only where the legend stands beside the chart. */
@@ -21036,28 +19370,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @keyframes mf-ring-in { from { transform: rotate(-70deg) scale(.9); opacity: 0; } }
 /* Left zone: a playful tag, the figure in the lead area's colour, its tools as a fanned deck. */
 @keyframes mf-deal { from { opacity: 0; transform: translateY(8px) rotate(0); } }
-@media (min-width: 761px) {
-  /* Bar: centred in its zone; the chips carry the amount, the bar already shows the share. */
-  /* Radar and ring: a square cell as tall as the panel. */
-}
-/* No stray movement: the detail line keeps its height when empty; chips do not shift. */
-/* View switch with icons; tag with its icon instead of a dot; the detail line is never cut. */
-
-/* Pills carry the tools; optimisation reads like a little personality test (23/10). */
-/* Fit question card: one column, nothing overlaps; the step is dots in the label row. */
-/* Three steps of use, side by side. */
-
-/* Five-level usage gauge (23/10): rising bars, read against the power gauge above. */
-
-/* One surface per box (23/10): no box inside a box. Structure comes from
-   space and type; only choices (tiles, pills) keep a fill, because they are buttons. */
-
-/* Budget split, structured (23/10): two columns on one top line and one bottom line. */
-/* Pills are choices: a white fill on the grey card, the only fill left in the zone. */
-/* The pill for the small areas: same shape as the others, never wraps. */
-@media (min-width: 761px) {
-  /* In the side list the rest is a row like the others. */
-}
 
 /* Lighter cards (23/10): smaller icon tiles everywhere, a lighter price card, a tighter optimisation card. */
 /* Price: lighter figure, a thin reliability ring, no rule above the saving. */
@@ -21422,15 +19734,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @media (prefers-reduced-motion: reduce) { .ms-page .so-rate-value { animation: none; } }
 .ms-page .so-rate-chips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: min(440px, 100%); }
 
-
-/* The legacy bento has unlayered placements; constrain the starter to one row. */
-
-@layer components {
-}
-
-/* Editorial hero and onboarding override the older unlayered compact header. */
-@layer components {
-}
 /* Presence at the top of the space (23/10/2026): a real hello, a line with a smile, what we know. */
 /* Plan tiles: the name on one line, its qualifier under it; a fixed rhythm so prices align. */
 /* Only when a plan has a qualifier ("Dev seat") does the name keep two lines, so prices still align. */
@@ -21439,11 +19742,9 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* A long name wraps with the greeting instead of running off the screen. */
 .ms-page .so-hello-final > span { overflow-wrap: anywhere; }
 
-
 @layer components {
   @keyframes ms-arrival-breathe { 0%, 100% { opacity: .55; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-3px); } }
 }
-
 
 @layer components {
   /* Usage card, redesign of 28 Oct 2026. One fixed scene height, content on
@@ -21471,9 +19772,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   @keyframes mu-icon-nod { 0% { transform: scale(.6) rotate(-14deg); } 60% { transform: scale(1.08) rotate(6deg); } 100% { transform: none; } }
   @keyframes mu-bar-pop { 0% { transform: scaleY(var(--h)); } 45% { transform: scaleY(calc(var(--h) * 1.12)) scaleX(1.06); } 100% { transform: scaleY(var(--h)); } }
   @keyframes mu-tile-in { from { opacity: 0; transform: translateY(8px) scale(.97); } to { opacity: 1; transform: none; } }
-}
-
-@layer components {
 }
 
 /* Back-office: a page inside the shared ToolTrim shell, using the Ma Stack kit. */
@@ -21693,7 +19991,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   }
 }
 
-
 @layer components {
   .ac-dialog.ac-lifecycle--farewell { text-align: center; }
   .ac-lifecycle--farewell .ac-lifecycle-heading { flex-direction: column; gap: var(--space-lg); }
@@ -21706,31 +20003,9 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   @media (prefers-reduced-motion: reduce) { .ac-farewell-mark img, .ac-farewell-mark > span { animation: none; } }
 }
 
-/* Three complete decisions, readable together even on a phone. */
-@layer components {
-}
-
 /* Pair choices acknowledge together; no stagger blocks the next question. */
 @layer components {
   @keyframes mf-pair-enter { from { opacity: .6; transform: translateX(4px); } to { opacity: 1; transform: none; } }
-}
-
-
-@layer components {
-  /* Shared row height follows the tallest card; preserve multi-row bento spans. */
-  /* Override the legacy unlayered bento areas only when these are the two remaining cards. */
-}
-
-@layer components {
-}
-@layer components {
-  /* The illustration no longer occupies a second column beside the question. */
-}
-
-@layer components {
-}
-
-@layer components {
 }
 
 /* Budget card, redesign of 28 Oct 2026: one figure in front, a line that
@@ -21738,48 +20013,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    sits at the bottom of the card, so the card's height is shared between the
    figure and the list instead of a blank at the end. */
 @keyframes mf-quip-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
-/* An exact budget needs no footnote: the check says it. */
-
-/* Decision card, redesign of 28 Oct 2026: the question in front; the label,
-   the step and the budget preview recede. No answer looks chosen before the
-   person picks one: every face starts neutral, and the hovered one lifts. */
-@layer components {
-}
-
-/* Budget split, redesign of 29 Oct 2026: one sentence leads (the share in
-   its area's colour, inline), a line of humour under it, the bar and a quiet
-   legend. No tag, no floating logo, no pill per area. */
-@layer components {
-}
-
-/* One-tool card and the all-settled grid (29 Oct 2026): the starter shows its
-   tool beside two free seats that wiggle on hover; the primary action uses
-   the stack ink. In the tall budget card, the list follows the figure. */
-@layer components {
-  /* Side by side when wide: the words and the button on the left, the seats
-     on the right, larger, slightly fanned. The button's plus sits in its own
-     disc and turns a quarter on hover, like a seat being added. */
-  /* Ring and radar: the legend keeps room for full area names, the chart takes what is left. */
-  /* Dark theme: the usage card had no dark surface, so its light tint swallowed the text. */
-  /* No-scroll contract (29/10/2026): no box of the bento scrolls or cuts its content. Rows keep
-     their reference height as a floor and grow with the tallest card; names wrap instead of fading. */
-  /* Usage card from 400px: two columns, the tool and its line on the left, a compact selector on the right. */
-  /* Duplicate decision (29/10/2026): each tile reads as an answer. A ring says it can be picked,
-     the line under the name says what the choice does to the budget, the tag sits inside the tile. */
-  /* At 320px five 44px touch targets need the whole width: no gap between the steps. */
-  /* Bento hierarchy (29/10/2026): the decision is what to do now, so it leads, wide and at its own
-     height. The budget is what those decisions produce, so it runs down the right like an order
-     summary. Usage and split fill the space under the decision; any extra height goes to them. */
-  /* Free tools: one line of logos, then the sentence. */
-  /* The budget reads top-down: total, status, then its lines, with no hole in the middle. */
-  /* Row 2 under the decision: the usage review on two columns. The split is an insight more than
-     a task, so it closes the bento on the full width, sentence left and chart right. */
-  /* Down the sidebar: total and lines at the top, free tools and the scope note settle at the bottom. */
-  /* Duplicate decision, visual pass: the dropped tool shows crossed out at the kept logo's foot,
-     the saving is a filled pill, the cheaper answer carries a green outline. */
-  /* Dark theme: the decision kept its light tint and lost its text. */
-}
-
 
 /* ── Section titles, site-wide (29 Oct 2026 rule, DESIGN_SYSTEM.md
    « Règle typographique »). Every page's own H2 class speaks the home's
@@ -21864,7 +20097,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
    upgrade. Sticky dock: interface pill. Calls that defer: links. */
 :is(.tt-page-hero-cta > .tt-button-primary, .ss-cta, .sl-final-cta, .sp-payment-cta, .sp-upgrade-cta) { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px 0 30px; border: 0; border-radius: var(--radius-pill); background: var(--color-text-strong); color: var(--color-bg); font: 500 15px/1.2 var(--font-ui); letter-spacing: -.01em; text-decoration: none; box-shadow: none; cursor: pointer; }
 :is(.tt-page-hero-cta > .tt-button-primary, .ss-cta, .sl-final-cta, .sp-payment-cta, .sp-upgrade-cta):hover { background: var(--color-hover-strong); color: var(--color-bg); }
-:is(.ss-dock-cta, .asv2-topbar-cta) { border-radius: var(--radius-pill); font-weight: 500; letter-spacing: -.005em; }
+
 .ss-dock-cta { min-height: 40px; padding: 0 18px; border: 0; background: var(--color-text-strong); color: var(--color-bg); box-shadow: none; }
 :is(.sp-hero-cta-secondary, .sp-shot-cta, .ms-account-text-button) { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; color: var(--color-text-strong); font: 500 15px/1.2 var(--font-ui); letter-spacing: -.01em; text-decoration: none; cursor: pointer; }
 :is(.sp-hero-cta-secondary, .sp-shot-cta, .ms-account-text-button):hover { background: none; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
@@ -22024,3 +20257,34 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 @keyframes tt-usage-in { from { opacity: 0; transform: translateX(16px); } }
 /* Les couches historiques plus spécifiques : fond radial (et sa version sombre !important), grille côte à côte. */
 /* L'organisme budget dans la grille de Ma stack : il remplace l'habillage historique de .mf-card. */
+
+/* ── Coquille du système (src/ds/Shell, validée le 11/11/2026) ───────────────
+   Ces enveloppes ne font que placer la coquille dans la page : le dessin vit
+   dans le système. L'ancienne coquille (.asv2-sidebar, .asv2-topbar,
+   .asv2-bottomnav, menu mobile) a été retirée le 11/11/2026. */
+.shell-side { position: relative; z-index: 30; flex: none; height: 100%; }
+.shell-top { position: relative; z-index: 20; flex: none; }
+.shell-tabs { display: none; }
+.shell-drawer-menu { display: grid; gap: var(--tt-gap-group); }
+.shell-phone-logo { display: inline-flex; align-items: center; }
+/* The full logo is drawn in ink: it turns light in the dark theme (the mark keeps its blue plate). */
+.dark .shell-logo-full { filter: invert(1); }
+/* Structure without a rule (11/11/2026): the navigation sits on the grey chrome, the content is a white sheet laid on it. */
+@media (min-width: 641px) {
+  .asv2-root:has(.shell-side), .asv2-root:has(.shell-side) .asv2-workspace { background: var(--tt-chrome); }
+  /* The bar lines up on the sheet's edges: the breadcrumb on its left edge, Ma stack on its right edge. */
+  .asv2-root:has(.shell-side) .shell-top { --tt-topbar-pad-start: 0px; --tt-topbar-pad-end: var(--tt-space-2); }
+  .asv2-root:has(.shell-side) .asv2-content { margin: 0 var(--tt-space-2) 0 0; border-radius: var(--tt-r-tile) var(--tt-r-tile) 0 0; background: var(--tt-bg); }
+}
+@media (max-width: 640px) {
+  .shell-side { display: none; }
+  .shell-top { position: sticky; top: 0; --tt-topbar-h: 56px; transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .asv2-root[data-chrome="hidden"] .shell-top { transform: translateY(-100%); }
+  .asv2-root[data-chrome="hidden"] .shell-top:focus-within { transform: none; }
+  .shell-tabs { position: fixed; inset: auto 0 0; z-index: 200; display: block; transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .asv2-root[data-chrome="hidden"] .shell-tabs { transform: translateY(calc(100% + 8px)); }
+  .asv2-root[data-chrome="hidden"] .shell-tabs:focus-within { transform: none; }
+}
+@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+  .shell-top, .shell-tabs { transition: none; }
+}

@@ -17,7 +17,7 @@ export const Matrix: Story = {
     <div style={row}>
       <Button variant="primary">{t(lang, "Ajouter à ma stack", "Add to my stack")}</Button>
       <Button variant="primary" icon={<Plus />}>{t(lang, "Ajouter", "Add")}</Button>
-      <Button variant="primary" size="lg">{t(lang, "Voir mes économies", "See my savings")}</Button>
+      <Button variant="primary" size="lg" arrow>{t(lang, "Voir mes économies", "See my savings")}</Button>
       <Button variant="primary" disabled>{t(lang, "Enregistré", "Saved")}</Button>
     </div>
     <div style={row}>
@@ -28,6 +28,7 @@ export const Matrix: Story = {
     </div>
     <div style={row}>
       <Button variant="quiet">{t(lang, "Plus tard", "Later")}</Button>
+      <TextButton arrow>{t(lang, "Explorer les pistes", "Explore more ideas")}</TextButton>
       <TextButton>{t(lang, "Revoir ce choix", "Review this choice")}</TextButton>
       <a className={linkClass()} href="#explorer">{t(lang, "Explorer les pistes", "Explore more ideas")}</a>
       <TextButton tone="quiet">{t(lang, "Je n’utilise plus cet outil", "I no longer use this tool")}</TextButton>
@@ -58,3 +59,4 @@ export const Focus: Story = {
   </div>,
   play: async ({ canvasElement }) => { (canvasElement.querySelector("[data-focus]") as HTMLElement | null)?.focus({ focusVisible: true } as FocusOptions); },
 };
+

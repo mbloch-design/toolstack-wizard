@@ -10,7 +10,10 @@ import { toast } from "sonner";
 
 const TARGET_SELECTORS = [
   ".ex-tag-filter.is-pinned .ex-filter-stack-icon",
-  ".asv2-topbar-cta-icon",
+  // The shell's Ma stack (src/ds/Shell): the bar's pill, else the tab bar or the sidebar entry, whichever shows.
+  "[data-shell-topbar] [data-stack-target]",
+  "[data-shell-tabbar] [data-stack-target]",
+  "[data-shell-sidebar] [data-stack-target]",
   ".nav-audit-btn",
 ];
 

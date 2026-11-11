@@ -20,6 +20,11 @@
   font-variant-numeric: normal;
 }
 
+/* A saving reads in green, the colour of the gain (no arrow, registre 11/11/2026). */
+.amount[data-tone="gain"] {
+  color: var(--tt-gain-ink);
+}
+
 .amount[data-tone="overlap"] {
   color: var(--tt-overlap-strong);
 }

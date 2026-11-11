@@ -1,0 +1,712 @@
+/* The site's frame (planche, « Naviguer »). The structure is quiet: no rule, no box; space and weight group it. */
+
+/* ── Sidebar ─────────────────────────────────────────────────────────── */
+.sidebar {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--tt-space-4);
+  width: var(--tt-side-w-folded);
+  height: 100%;
+  padding: var(--tt-space-3);
+  background: var(--tt-chrome);
+  transition: width var(--tt-dur-move) var(--tt-ease);
+}
+
+.sidebar[data-expanded] {
+  width: var(--tt-side-w);
+}
+
+.sideHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-2);
+  min-height: var(--tt-button-h);
+  padding-left: var(--tt-space-3);
+}
+
+.logo {
+  composes: focus from "../atoms.module.css";
+  display: inline-flex;
+  align-items: center;
+  color: var(--tt-ink);
+  transition: opacity var(--tt-dur-state) ease;
+}
+
+.fold {
+  composes: focus from "../atoms.module.css";
+  display: grid;
+  place-items: center;
+  width: var(--tt-button-h);
+  height: var(--tt-button-h);
+  border: 0;
+  border-radius: var(--tt-r-chip);
+  background: none;
+  color: var(--tt-meta);
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, opacity var(--tt-dur-state) ease;
+}
+
+.fold:hover {
+  background: var(--tt-tile-2);
+  color: var(--tt-ink);
+}
+
+/* Folded: the sign and the fold button share one place; the button shows on hover or keyboard focus. */
+.sidebar:not([data-expanded]) .sideHead {
+  display: grid;
+  justify-content: center;
+  place-items: center;
+  padding-left: 0;
+}
+
+.sidebar:not([data-expanded]) .sideHead > * {
+  grid-area: 1 / 1;
+}
+
+/* The button sits above the sign so a click on the shared place always unfolds. */
+.sidebar:not([data-expanded]) .fold {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+}
+
+.sidebar:not([data-expanded]) .fold:focus-visible {
+  opacity: 1;
+}
+
+.sidebar:not([data-expanded]) .sideHead:hover .fold {
+  opacity: 1;
+}
+
+.sidebar:not([data-expanded]) .sideHead:hover .logo,
+.sidebar:not([data-expanded]) .sideHead:has(.fold:focus-visible) .logo {
+  opacity: 0;
+}
+
+.fold svg,
+.crumbHome svg,
+.sideIcon svg,
+.search svg,
+.stackIcon svg,
+.menuLink svg {
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.crumbHome svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+.nav {
+  display: grid;
+  align-content: start;
+  gap: calc(var(--tt-space-1) / 2);
+}
+
+/* A place of the site: icon, name; the current one sits on grey with the blue mark on its left. */
+.sideLink {
+  composes: focus from "../atoms.module.css";
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-3);
+  min-height: var(--tt-button-h);
+  padding: 0 var(--tt-space-3);
+  border-radius: var(--tt-r-chip);
+  color: var(--tt-ink);
+  font: var(--tt-action-small-font);
+  letter-spacing: var(--tt-action-tracking);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--tt-dur-state) ease;
+}
+
+/* On the grey chrome: hover darkens a step, the current place lifts onto the page's white. */
+.sideLink:hover {
+  background: var(--tt-tile-2);
+}
+
+.sideLink[aria-current="page"] {
+  background: var(--tt-bg);
+  box-shadow: var(--tt-chip-raise);
+}
+
+.sideLink[aria-current="page"]::before {
+  content: "";
+  position: absolute;
+  top: var(--tt-space-3);
+  bottom: var(--tt-space-3);
+  left: calc(var(--tt-space-3) * -1);
+  width: var(--tt-mark-w);
+  border-radius: var(--tt-mark-w);
+  background: var(--tt-brand);
+}
+
+.sideIcon {
+  position: relative;
+  display: grid;
+  flex: none;
+  place-items: center;
+}
+
+.sideLabel {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar:not([data-expanded]) .sideLink {
+  justify-content: center;
+  padding: 0;
+}
+
+.sidebar:not([data-expanded]) .sideLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.sideFoot {
+  display: grid;
+  gap: calc(var(--tt-space-1) / 2);
+}
+
+/* A count: a blue disc beside the name, on the icon's corner when folded. It bumps when it changes. */
+.count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 calc(var(--tt-space-1) * 1.25);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-brand);
+  color: var(--tt-on-color);
+  font: var(--tt-tag-font);
+  font-variant-numeric: tabular-nums;
+}
+
+.count[data-bump] {
+  animation: bump 420ms var(--tt-spring-strong);
+}
+
+/* Folded, the count sits off the icon's corner, never on its drawing. */
+.sideIcon .count {
+  position: absolute;
+  top: calc(var(--tt-space-2) * -1.25);
+  left: calc(100% - var(--tt-space-1));
+  min-width: 16px;
+  height: 16px;
+  padding: 0 var(--tt-space-1);
+  box-shadow: var(--tt-badge-cut);
+  font-size: var(--tt-count-small);
+}
+
+@keyframes bump {
+  40% {
+    transform: scale(1.35);
+  }
+}
+
+/* ── Top bar ─────────────────────────────────────────────────────────── */
+.topbar {
+  container: topbar / inline-size;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-6);
+  min-height: var(--tt-topbar-h);
+  padding: 0 var(--tt-topbar-pad-end, var(--tt-page-pad)) 0 var(--tt-topbar-pad-start, var(--tt-page-pad));
+  background: var(--tt-chrome);
+}
+
+.topStart {
+  flex: 1;
+  min-width: 0;
+}
+
+.topEnd {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--tt-space-2);
+}
+
+/* The breadcrumb: a white pill that opens on the home, facing the search pill. Note size, the current page leaning on its weight, « / » in watermark. */
+.crumbs {
+  display: inline-flex;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  min-height: var(--tt-button-h);
+  padding: 0 var(--tt-space-4) 0 var(--tt-space-1);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-bg);
+}
+
+.crumbs ol {
+  display: flex;
+  flex-wrap: nowrap;
+  min-width: 0;
+  align-items: center;
+  gap: var(--tt-space-1) calc(var(--tt-space-1) * 1.5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--tt-ink);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+}
+
+/* Always one line. Steps keep their width while there is room; when space runs out they shorten with an ellipsis, the current page last. */
+.crumbs li {
+  display: inline-flex;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: calc(var(--tt-space-1) * 1.5);
+  min-width: 0;
+}
+
+.crumbs li:last-child {
+  flex-shrink: 0.2;
+}
+
+.crumbs li::before {
+  flex: none;
+}
+
+.crumbs li > :is(a, span) {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.crumbs li + li::before {
+  content: "/";
+  color: var(--tt-meta);
+}
+
+.crumbs a {
+  color: inherit;
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) 100% 100% / 0 1px no-repeat;
+  transition: background-size 320ms var(--tt-ease);
+}
+
+.crumbs a:hover {
+  background-position: 0 100%;
+  background-size: 100% 1px;
+}
+
+/* The home: an icon in a round, the first step of the way. */
+.crumbHome {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--tt-r-round);
+  background: none;
+  color: var(--tt-ink);
+  transition: background-color var(--tt-dur-state) ease;
+}
+
+.crumbHome:hover {
+  background: var(--tt-tile);
+}
+
+
+.crumbs [aria-current="page"] {
+  font-weight: var(--tt-w-em);
+}
+
+/* The note in the breadcrumb's place: the same pill, one line, the greeting leaning on its weight. */
+.note {
+  composes: focus from "../atoms.module.css";
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--tt-space-1) * 1.5);
+  max-width: 100%;
+  min-height: var(--tt-button-h);
+  padding: 0 var(--tt-space-4);
+  overflow: hidden;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-bg);
+  color: var(--tt-ink);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: box-shadow var(--tt-dur-state) ease;
+}
+
+.note:hover {
+  box-shadow: var(--tt-chip-raise);
+}
+
+.note strong {
+  font-weight: var(--tt-w-em);
+}
+
+/* Search: a field in look, a button in fact. */
+.search {
+  composes: focus from "../atoms.module.css";
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-2);
+  width: var(--tt-search-w);
+  min-height: var(--tt-button-h);
+  padding: 0 var(--tt-space-2) 0 var(--tt-space-4);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-bg);
+  color: var(--tt-meta);
+  font: var(--tt-action-small-font);
+  letter-spacing: var(--tt-action-tracking);
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease;
+}
+
+.search:hover {
+  box-shadow: var(--tt-chip-raise);
+}
+
+.searchLabel {
+  flex: 1;
+  text-align: left;
+}
+
+.kbd {
+  padding: calc(var(--tt-space-1) / 2) var(--tt-space-2);
+  border-radius: var(--tt-r-chip);
+  background: var(--tt-tile);
+  color: var(--tt-meta);
+  font: var(--tt-tag-font);
+}
+
+/* Ma stack: the ink pill of the bar, the lead's matter; its count closes the pill (planche, « confirmer »). */
+.stack {
+  composes: focus from "../atoms.module.css";
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-2);
+  min-height: var(--tt-button-h);
+  padding: 0 var(--tt-space-2) 0 var(--tt-space-4);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-lead-bg);
+  box-shadow: var(--tt-lead-shadow);
+  color: var(--tt-bg);
+  font: var(--tt-action-small-font);
+  letter-spacing: var(--tt-action-tracking);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
+}
+
+.stack:hover {
+  box-shadow: var(--tt-lead-shadow-hover);
+  transform: var(--tt-lead-lift);
+}
+
+.stack:active {
+  box-shadow: var(--tt-lead-shadow-press);
+  transform: var(--tt-press);
+}
+
+/* Without a count, the pill keeps even sides. */
+.stack:not(:has(.count)) {
+  padding-right: var(--tt-button-pad);
+}
+
+.stack .count {
+  min-width: 24px;
+  height: 24px;
+  background: var(--tt-count-on-ink);
+  color: var(--tt-bg);
+}
+
+.stackIcon {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+/* The menu: one round trigger (the avatar, or a person), a panel of who you are and the site's settings. */
+.menuTrigger {
+  composes: focus from "../atoms.module.css";
+  display: grid;
+  place-items: center;
+  width: var(--tt-button-h);
+  height: var(--tt-button-h);
+  padding: 0;
+  border: 0;
+  border-radius: var(--tt-r-round);
+  background: var(--tt-bg);
+  color: var(--tt-ink);
+  cursor: pointer;
+  transition: box-shadow var(--tt-dur-state) ease;
+}
+
+.menuTrigger:hover,
+.menuTrigger[data-state="open"] {
+  box-shadow: var(--tt-chip-raise);
+}
+
+.menuTrigger svg {
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.menu {
+  z-index: 50;
+  display: grid;
+  gap: var(--tt-gap-group);
+  width: var(--tt-menu-w);
+  padding: var(--tt-space-5);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-menu-shadow);
+  color: var(--tt-ink);
+  transform-origin: var(--radix-popover-content-transform-origin);
+  animation: menu-in 200ms var(--tt-ease);
+}
+
+@keyframes menu-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(-4px);
+  }
+}
+
+.menuGroup {
+  display: grid;
+  gap: var(--tt-space-3);
+}
+
+.menuLabel {
+  margin: 0;
+  font: var(--tt-eyebrow-font);
+  letter-spacing: var(--tt-eyebrow-tracking);
+  text-transform: uppercase;
+}
+
+.menuSetting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-4);
+}
+
+.menuName {
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+}
+
+.menuLink {
+  composes: focus from "../atoms.module.css";
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-3);
+  min-height: var(--tt-button-h);
+  margin: 0 calc(var(--tt-space-3) * -1);
+  padding: 0 var(--tt-space-3);
+  border-radius: var(--tt-r-chip);
+  color: var(--tt-ink);
+  font: var(--tt-action-small-font);
+  letter-spacing: var(--tt-action-tracking);
+  text-decoration: none;
+}
+
+.menuLink:hover:not(:disabled) {
+  background: var(--tt-tile);
+}
+
+button.menuLink {
+  width: calc(100% + var(--tt-space-6));
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+button.menuLink:disabled {
+  opacity: var(--tt-disabled);
+  cursor: default;
+}
+
+.menuIdentity {
+  display: grid;
+  gap: calc(var(--tt-space-1) / 2);
+  min-width: 0;
+}
+
+.menuIdentity p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menuDetail {
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+}
+
+/* A narrower bar: the breadcrumb keeps the parent and the page, search shrinks to its icon, Ma stack to its icon and count. */
+@container topbar (width < 760px) {
+  .crumbs li:not(:nth-last-child(-n + 2)) {
+    display: none;
+  }
+
+  /* The first step shown never opens on a separator. */
+  .crumbs li:nth-last-child(2)::before {
+    display: none;
+  }
+
+  .search {
+    width: auto;
+    padding: 0 var(--tt-space-3);
+  }
+
+  .searchLabel,
+  .kbd {
+    display: none;
+  }
+}
+
+@container topbar (width < 480px) {
+  .stackLabel {
+    display: none;
+  }
+
+  /* Too narrow for a way: the page title says where you are (a phone shows its back link instead). */
+  .crumbs {
+    display: none;
+  }
+}
+
+/* ── Phone ───────────────────────────────────────────────────────────── */
+.back {
+  composes: focus from "../atoms.module.css";
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-1);
+  min-height: var(--tt-tap);
+  color: var(--tt-ink);
+  font: var(--tt-action-small-font);
+  letter-spacing: var(--tt-action-tracking);
+  text-decoration: none;
+}
+
+.back svg {
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The tab bar: five places at the thumb, the safe area under them. */
+.tabbar {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  padding: var(--tt-space-1) var(--tt-space-2) calc(var(--tt-space-1) + env(safe-area-inset-bottom, 0px));
+  background: var(--tt-chrome);
+}
+
+.tab {
+  composes: focus from "../atoms.module.css";
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: var(--tt-space-1);
+  min-height: var(--tt-tab-h);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--tt-meta);
+  font: var(--tt-tab-font);
+  letter-spacing: var(--tt-action-tracking);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--tt-dur-state) ease;
+}
+
+.tab[aria-current="page"] {
+  color: var(--tt-ink);
+}
+
+.tab[aria-current="page"]::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--tt-space-1) * -1);
+  width: var(--tt-space-6);
+  height: var(--tt-mark-w);
+  border-radius: var(--tt-mark-w);
+  background: var(--tt-brand);
+}
+
+.tabIcon {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.tabIcon svg {
+  width: var(--tt-icon-xl);
+  height: var(--tt-icon-xl);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tabIcon .count {
+  position: absolute;
+  top: calc(var(--tt-space-1) * -1.5);
+  right: calc(var(--tt-space-2) * -1.5);
+  min-width: 16px;
+  height: 16px;
+  padding: 0 var(--tt-space-1);
+  box-shadow: var(--tt-badge-cut);
+  font-size: var(--tt-count-small);
+}
+
+.tabLabel {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Keyboard focus in the breadcrumb (the other controls compose the system's focus). */
+.crumbs a:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .menu,
+  .count[data-bump] {
+    transition: none;
+    animation: none;
+  }
+}

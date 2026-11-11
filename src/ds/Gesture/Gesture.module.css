@@ -1,0 +1,556 @@
+/* The planche's gestures. Only transform and opacity; each plays once, then calm returns. */
+
+/* Keep: the stamp lands, the tile takes the hit. */
+.stamp {
+  position: relative;
+  display: inline-grid;
+}
+
+.stampHit {
+  display: inline-grid;
+}
+
+.stampMark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: var(--tt-space-1) calc(var(--tt-space-1) * 2.5);
+  border: var(--tt-stamp-border);
+  border-radius: var(--tt-r-chip);
+  background: var(--tt-stamp-bg);
+  color: var(--tt-gain-ink);
+  font: var(--tt-eyebrow-font);
+  letter-spacing: var(--tt-eyebrow-tracking);
+  text-transform: uppercase;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -20%) rotate(-10deg) scale(1.6);
+}
+
+.stamp[data-play] .stampMark {
+  animation: stamp 520ms cubic-bezier(0.2, 0.9, 0.3, 1.2) 120ms forwards;
+}
+
+.stamp[data-play] .stampHit {
+  animation: hit 420ms var(--tt-spring) 380ms;
+}
+
+@keyframes stamp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -20%) rotate(-10deg) scale(1.6);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -20%) rotate(-10deg) scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -20%) rotate(-10deg) scale(1);
+  }
+}
+
+@keyframes hit {
+  30% {
+    transform: scale(0.92, 1.04);
+  }
+}
+
+/* A duplicate: the two come together, the badge says « Doublon », one leaves, the other settles. */
+.meet {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-4);
+  padding-top: var(--tt-space-8);
+}
+
+.meetLeft,
+.meetRight {
+  display: inline-grid;
+  transition: transform 600ms var(--tt-ease-io), opacity 400ms ease;
+}
+
+.meetBadge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: var(--tt-space-1) var(--tt-space-2);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-overlap-strong);
+  color: var(--tt-on-color);
+  font: var(--tt-tag-font);
+  opacity: 0;
+  transform: translateX(-50%) scale(0.6);
+}
+
+.meet[data-play] .meetLeft {
+  transform: translateX(22px) rotate(-4deg);
+}
+
+.meet[data-play] .meetRight {
+  transform: translateX(-22px) rotate(4deg);
+}
+
+.meet[data-play][data-kept="left"] .meetRight,
+.meet[data-play][data-kept="right"] .meetLeft {
+  animation: leave 600ms cubic-bezier(0.4, 0, 0.2, 1) 1300ms forwards;
+}
+
+.meet[data-play][data-kept="left"] .meetLeft {
+  animation: stay-left 500ms var(--tt-spring) 1700ms forwards;
+}
+
+.meet[data-play][data-kept="right"] .meetRight {
+  animation: stay-right 500ms var(--tt-spring) 1700ms forwards;
+}
+
+.meet[data-play] .meetBadge {
+  animation: badge 1100ms var(--tt-spring-strong) 550ms forwards;
+}
+
+@keyframes leave {
+  100% {
+    opacity: 0;
+    transform: translate(-6px, 60px) rotate(18deg) scale(0.8);
+  }
+}
+
+@keyframes stay-left {
+  0% {
+    transform: translateX(22px) rotate(-4deg);
+  }
+
+  100% {
+    transform: translateX(33px);
+  }
+}
+
+@keyframes stay-right {
+  0% {
+    transform: translateX(-22px) rotate(4deg);
+  }
+
+  100% {
+    transform: translateX(-33px);
+  }
+}
+
+@keyframes badge {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.6);
+  }
+
+  25%,
+  75% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.9);
+  }
+}
+
+/* Save: each digit is a reel that rolls to its value. */
+.odometer {
+  display: inline-flex;
+  font-variant-numeric: tabular-nums;
+}
+
+.digit {
+  display: inline-flex;
+  height: 1em;
+  overflow: hidden;
+  line-height: var(--tt-lh-tight);
+}
+
+.reel {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(calc(var(--d) * -1em));
+  transition: transform 900ms cubic-bezier(0.65, 0, 0.25, 1);
+}
+
+.reel i {
+  height: 1em;
+  font-style: normal;
+}
+
+/* Hover: the card leans toward the pointer, a sheen follows it.
+   No overflow clip: the focus ring of what it holds stays whole; the sheen takes the radius itself. */
+.tilt {
+  position: relative;
+  display: grid;
+  border-radius: var(--tt-r-tile);
+  transform: perspective(600px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 500ms var(--tt-ease);
+}
+
+.tilt:hover {
+  transition-duration: 120ms;
+}
+
+.sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--tt-tilt-sheen);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.tilt:hover .sheen {
+  opacity: 1;
+}
+
+/* The trim: what goes falls; the one that clings shakes a moment first. */
+.fall {
+  display: grid;
+}
+
+.fall[data-leaving="fall"] {
+  animation: fall 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.fall[data-leaving="cling"] {
+  animation: cling 1150ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fall {
+  100% {
+    opacity: 0;
+    transform: translateY(36px) rotate(14deg) scale(0.8);
+  }
+}
+
+@keyframes cling {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+
+  12% {
+    transform: rotate(-7deg);
+  }
+
+  24% {
+    transform: rotate(6deg);
+  }
+
+  36% {
+    transform: rotate(-5deg) translateY(2px);
+  }
+
+  48% {
+    transform: rotate(3deg) translateY(3px);
+  }
+
+  62% {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(44px) rotate(22deg) scale(0.8);
+  }
+}
+
+/* The trim: the stack on its line, the saving under it. The box never changes height. */
+.trim {
+  display: grid;
+  justify-items: center;
+  gap: var(--tt-gap-group);
+}
+
+.trimStage {
+  display: grid;
+  justify-items: center;
+  gap: var(--tt-space-3);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.trimRow {
+  display: flex;
+  justify-content: center;
+  gap: var(--tt-space-4);
+  padding-top: var(--tt-space-8);
+}
+
+.trimTool {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  transition: width 380ms var(--tt-ease-io), margin 380ms var(--tt-ease-io);
+}
+
+.trimTool > :last-child {
+  transition: transform 420ms var(--tt-ease), opacity 300ms ease;
+}
+
+/* Snipped: the tool drops and turns, its place closes behind it. */
+.trimTool[data-gone] {
+  width: 0;
+  margin: 0 calc(var(--tt-space-4) / -2);
+}
+
+.trimTool[data-gone="fall"] > :last-child {
+  opacity: 0;
+  transform: translateY(40px) rotate(16deg) scale(0.85);
+}
+
+.trimTool[data-gone="cling"] {
+  transition-delay: 520ms;
+}
+
+.trimTool[data-gone="cling"] > :last-child {
+  animation: cling 760ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.trim[data-phase="settled"] .trimTool:not([data-cut]) {
+  animation: settle 420ms var(--tt-spring-strong) both;
+}
+
+.clingSay {
+  position: absolute;
+  bottom: calc(100% + var(--tt-space-2));
+  left: 50%;
+  padding: calc(var(--tt-space-1) * 1.25) calc(var(--tt-space-1) * 2.25);
+  border-radius: var(--tt-r-chip) var(--tt-r-chip) var(--tt-r-chip) var(--tt-space-1);
+  background: var(--tt-ink);
+  color: var(--tt-bg);
+  font: var(--tt-tag-font);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) scale(0.8);
+}
+
+.trimTool[data-gone="cling"] .clingSay {
+  animation: say 700ms ease forwards;
+}
+
+@keyframes settle {
+  40% {
+    transform: scale(1.06, 0.95);
+  }
+}
+
+@keyframes say {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+
+  20%,
+  70% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.9);
+  }
+}
+
+/* The cut line runs under the stack only. Behind the scissors it turns blue: what has been cut. */
+.cutline {
+  position: relative;
+  width: 100%;
+  min-width: 240px;
+  height: 32px;
+}
+
+.cutline::before {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto;
+  border-top: var(--tt-cutline);
+  opacity: 0.5;
+}
+
+.cutDone {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: var(--x);
+  height: 1px;
+  background: var(--tt-cut-dash);
+  transition: width 300ms var(--tt-ease-io);
+}
+
+/* The scissors: they glide to each stop, blades open; at the stop the blades close once. */
+.scissors {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 32px;
+  color: var(--tt-brand);
+  opacity: 0;
+  transform: translateX(calc(var(--x) - 24px));
+  transition: transform 300ms var(--tt-ease-io), opacity 160ms ease;
+}
+
+.trim[data-phase="cutting"] .scissors {
+  opacity: 1;
+}
+
+.scissors svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pivot {
+  fill: currentColor;
+  stroke: var(--tt-tile);
+  stroke-width: 1.2;
+}
+
+/* Open while travelling; one quick close at each stop. */
+.halfA,
+.halfB {
+  transform-origin: 24px 16px;
+  transition: transform 140ms var(--tt-ease);
+}
+
+.halfA {
+  transform: rotate(13deg);
+}
+
+.halfB {
+  transform: rotate(-13deg);
+}
+
+/* Two names for one snip, so each stop replays it without remounting the scissors. */
+.scissors[data-snip="odd"] .halfA {
+  animation: snip-a 150ms var(--tt-ease-io);
+}
+
+.scissors[data-snip="odd"] .halfB {
+  animation: snip-b 150ms var(--tt-ease-io);
+}
+
+.scissors[data-snip="even"] .halfA {
+  animation: snip-a-again 150ms var(--tt-ease-io);
+}
+
+.scissors[data-snip="even"] .halfB {
+  animation: snip-b-again 150ms var(--tt-ease-io);
+}
+
+@keyframes snip-a {
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes snip-b {
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes snip-a-again {
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes snip-b-again {
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+/* Before and after in one place (no jump): the cost steps back while cutting, the saving rises in. */
+.trimResult {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.trimBefore,
+.trimAfter {
+  display: grid;
+  grid-area: 1 / 1;
+  justify-items: center;
+  align-content: center;
+  gap: var(--tt-space-2);
+  transition: opacity 320ms ease, transform 420ms var(--tt-ease);
+}
+
+.trimAfter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.trim[data-phase="cutting"] .trimBefore {
+  opacity: 0.35;
+}
+
+.trim[data-phase="settled"] .trimBefore {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.trim[data-phase="settled"] .trimAfter {
+  opacity: 1;
+  transform: none;
+}
+
+.trimSentence {
+  max-width: 36ch;
+  margin: 0;
+  font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel,
+  .meet .meetLeft,
+  .meet .meetRight,
+  .tilt {
+    transition: none;
+  }
+
+  .stamp[data-play] .stampMark,
+  .stamp[data-play] .stampHit,
+  .meet[data-play] .meetLeft,
+  .meet[data-play] .meetRight,
+  .meet[data-play] .meetBadge,
+  .fall[data-leaving],
+  .trim[data-phase="settled"] .trimTool,
+  .trimTool[data-gone] > :last-child,
+  .trimTool[data-gone] .clingSay {
+    animation: none;
+  }
+
+  .stamp[data-play] .stampMark {
+    opacity: 1;
+    transform: translate(-50%, -20%) rotate(-10deg);
+  }
+
+  .meet[data-play][data-kept="left"] .meetRight,
+  .meet[data-play][data-kept="right"] .meetLeft,
+  .fall[data-leaving] {
+    opacity: 0;
+  }
+}
