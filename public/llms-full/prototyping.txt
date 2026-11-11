@@ -1,0 +1,269 @@
+# ToolTrim tool catalogue — prototyping
+# Generated from src/data/tools_index.json
+# Family: prototyping (6 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Balsamiq",
+    "slug": "balsamiq",
+    "url_fr": "https://tooltrim.com/fr/tool/balsamiq",
+    "url_en": "https://tooltrim.com/en/tool/balsamiq",
+    "website": "https://balsamiq.com",
+    "category": "prototyping",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 16 $/mois, plan Starter."
+    },
+    "description_fr": "Un outil de wireframing rapide et volontairement basse fidélité pour esquisser des parcours d'applications ou de sites avant le design haute fidélité.",
+    "description_en": "A fast, intentionally low-fidelity wireframing tool for sketching app and website flows before full-fidelity design.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu veux des wireframes rapides et basse fidélité pour aligner une équipe sur la structure avant tout travail visuel",
+      "avoid_if": "Tu as besoin de prototypes interactifs haute fidélité ou d'une licence à achat unique durable, car Desktop est en voie de retrait",
+      "strengths": [
+        "Chaque plan Cloud, même Starter, inclut des relecteurs illimités sans coût supplémentaire",
+        "Le style visuel volontairement brouillon garde les discussions de design précoce centrées sur la structure, pas les détails de pixels"
+      ],
+      "weaknesses": [
+        "Le nombre de projets est strictement plafonné par plan (10/100/400), contrairement aux outils qui facturent uniquement au siège",
+        "Balsamiq for Desktop, l'option à achat unique, cessera d'être vendu fin 2026"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You want fast, low-fidelity wireframes to align a team on structure before any visual design work",
+      "avoid_if": "You need interactive, high-fidelity prototypes or a long-term one-time license, since Desktop is being discontinued",
+      "strengths": [
+        "Every Cloud plan, even Starter, includes unlimited reviewer seats at no extra cost",
+        "The deliberately rough visual style keeps early design discussions about structure, not pixel detail"
+      ],
+      "weaknesses": [
+        "Project counts are hard-capped by plan (10/100/400), unlike tools that charge only per seat",
+        "Balsamiq for Desktop, the one-time-purchase option, stops being sold at the end of 2026"
+      ]
+    }
+  },
+  {
+    "name": "Figma Make",
+    "slug": "figma-make",
+    "url_fr": "https://tooltrim.com/fr/tool/figma-make",
+    "url_en": "https://tooltrim.com/en/tool/figma-make",
+    "website": "https://www.figma.com/make/",
+    "category": "prototyping",
+    "pricing": {
+      "free": "Starter permet d'explorer Make, sans bibliothèques d'équipe et avec publication publique liée à Figma Community.",
+      "paid": "Starter: Gratuit, accès limité et 500 crédits d'IA/mois au maximum ; Professional Full seat: 16 $/mois, 3 000 crédits d'IA/mois ; Organization Full seat: 55 $/mois, facturé annuellement, 3 500 crédits d'IA/mois ; Enterprise Full seat: 90 $/mois, facturé annuellement, 4 250 crédits d'IA/mois"
+    },
+    "description_fr": "Outil Figma piloté par prompt pour transformer une idée ou un design existant en prototype fonctionnel, interface interactive ou application web. Il combine génération, édition du code, publication et contexte de design system.",
+    "description_en": "Prompt-driven Figma tool that turns an idea or an existing design into a functional prototype, interactive interface, or web app. It combines generation, code editing, publishing, and design-system context.",
+    "price_verified_on": "2026-08-30",
+    "verdict_fr": {
+      "keep_if": "Vous devez tester rapidement une idée à partir de designs Figma existants",
+      "avoid_if": "Vous attendez une application de production sans revue du code ni de l'architecture",
+      "strengths": [
+        "Démarre depuis les designs et composants existants",
+        "Combine génération, édition, données et publication",
+        "Permet aux profils non techniques de tester des interactions"
+      ],
+      "weaknesses": [
+        "La qualité et la maintenabilité du code généré nécessitent une revue",
+        "Les limites varient selon la licence, le forfait et les crédits",
+        "L'accès gratuit impose des restrictions de bibliothèque et de publication"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need to test an idea quickly from existing Figma designs",
+      "avoid_if": "You expect production software without code or architecture review",
+      "strengths": [
+        "Starts from existing designs and components",
+        "Combines generation, editing, data, and publishing",
+        "Lets non-technical roles test interactions"
+      ],
+      "weaknesses": [
+        "Generated code quality and maintainability require review",
+        "Limits vary by seat, plan, and credits",
+        "Free access restricts libraries and publishing"
+      ]
+    }
+  },
+  {
+    "name": "Material (Swift)",
+    "slug": "material-swift",
+    "url_fr": "https://tooltrim.com/fr/tool/material-swift",
+    "url_en": "https://tooltrim.com/en/tool/material-swift",
+    "website": "https://github.com/material-components/material-components-ios",
+    "category": "prototyping",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Framework graphique Material Design pour les apps iOS en Swift.",
+    "description_en": "Material Design graphics framework for iOS apps in Swift.",
+    "verdict_fr": {
+      "keep_if": "Tu développes une app iOS qui doit être cohérente avec une app Android Material",
+      "avoid_if": "Tu veux respecter les Human Interface Guidelines Apple",
+      "strengths": [
+        "Composants Material Design officiels pour iOS",
+        "Cohérence visuelle iOS/Android",
+        "Open source et maintenu par Google"
+      ],
+      "weaknesses": [
+        "Esthétique Material peu native sur iOS (vs Human Interface Guidelines)",
+        "Moins populaire que SwiftUI natif",
+        "Peut sembler hors contexte sur iOS"
+      ]
+    },
+    "verdict_en": {
+      "strengths": [
+        "Official Material Design components for iOS",
+        "Visual consistency iOS/Android",
+        "Open source and maintained by Google"
+      ],
+      "weaknesses": [
+        "Material aesthetic feels non-native on iOS (vs Human Interface Guidelines)",
+        "Less popular than native SwiftUI",
+        "Can feel out of place on iOS"
+      ]
+    }
+  },
+  {
+    "name": "Origami",
+    "slug": "origami",
+    "url_fr": "https://tooltrim.com/fr/tool/origami",
+    "url_en": "https://tooltrim.com/en/tool/origami",
+    "website": "https://origami.design",
+    "category": "prototyping",
+    "pricing": {
+      "free": "Gratuit",
+      "paid": null
+    },
+    "description_fr": "Toolkit de prototypage interactif gratuit pour Mac, créé par Meta.",
+    "description_en": "Free interactive prototyping toolkit for Mac, created by Meta.",
+    "alternatives": [
+      "framer"
+    ],
+    "verdict_fr": {
+      "keep_if": "Vous prototypez apps mobiles avec interactions complexes",
+      "avoid_if": "Vous cherchez primarily outil de wireframing simple",
+      "strengths": [
+        "Entièrement gratuit et puissant (par Meta)",
+        "Interactions avancées via Patch Editor",
+        "Accès native aux APIs hardware (GPS, accéléro, haptic)"
+      ],
+      "weaknesses": [
+        "Collaboration temps-réel moins fluide qu'outils cloud modernes",
+        "Courbe apprentissage notable (Patch Editor complexe)",
+        "Communauté et ressources moins grande que Figma"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You prototype mobile apps with complex interactions",
+      "avoid_if": "You're primarily looking for simple wireframing",
+      "strengths": [
+        "Completely free and powerful (by Meta)",
+        "Advanced interactions via Patch Editor",
+        "Native hardware API access (GPS, accelerometer, haptic)"
+      ],
+      "weaknesses": [
+        "Real-time collaboration less smooth than modern cloud tools",
+        "Notable learning curve (Patch Editor is complex)",
+        "Smaller community and resources than Figma"
+      ]
+    }
+  },
+  {
+    "name": "Pterocos",
+    "slug": "pterocos",
+    "url_fr": "https://tooltrim.com/fr/tool/pterocos",
+    "url_en": "https://tooltrim.com/en/tool/pterocos",
+    "website": "https://pterocos.eu.org/",
+    "category": "prototyping",
+    "pricing": {
+      "free": "Gratuit et open source",
+      "paid": null
+    },
+    "description_fr": "Éditeur de code gratuit dans le navigateur avec exécution locale et aperçu instantané.",
+    "description_en": "Free browser-based code editor with local execution and instant preview.",
+    "alternatives": [
+      "balsamiq",
+      "framer"
+    ],
+    "price_verified_on": "2026-08-28",
+    "verdict_fr": {
+      "keep_if": "Vous voulez tester ou enseigner du code sans installation",
+      "avoid_if": "Vous construisez un projet durable avec de nombreuses dépendances",
+      "strengths": [
+        "Gratuit",
+        "Exécution de plusieurs langages dans le navigateur"
+      ],
+      "weaknesses": [
+        "Stockage local facile à perdre sans sauvegarde",
+        "Écosystème plus jeune que les IDE établis",
+        "Moins adapté aux projets complexes avec dépendances"
+      ]
+    },
+    "verdict_en": {
+      "strengths": [
+        "Free",
+        "Runs multiple languages in the browser"
+      ],
+      "weaknesses": [
+        "Local storage can be lost without a backup",
+        "Younger ecosystem than established IDEs",
+        "Less suitable for complex projects with dependencies"
+      ]
+    }
+  },
+  {
+    "name": "Visily",
+    "slug": "visily",
+    "url_fr": "https://tooltrim.com/fr/tool/visily",
+    "url_en": "https://tooltrim.com/en/tool/visily",
+    "website": "https://www.visily.ai",
+    "category": "prototyping",
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "À partir de 12$/mois/utilisateur"
+    },
+    "description_fr": "Outil de wireframing IA pour équipes agiles, simple et collaboratif.",
+    "description_en": "AI-powered wireframing tool for agile teams, simple and collaborative.",
+    "alternatives": [
+      "balsamiq"
+    ],
+    "verdict_fr": {
+      "keep_if": "Vous prototypez rapidement sans expertise design UX approfondie",
+      "avoid_if": "Vous avez besoin d'outils design très avancés et précis",
+      "strengths": [
+        "IA génère UI et wireframes très rapidement",
+        "Positionné moins cher que Figma Pro (montants sur la page officielle)",
+        "3x plus de crédits IA que Figma à même prix (promo 6x)"
+      ],
+      "weaknesses": [
+        "IA peut être incohérente ou nécessiter refinement",
+        "Moins de tools avancés pour design haute-fidélité",
+        "Meilleur pour wireframes/MVP que design polish final"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You prototype quickly without deep UX design expertise",
+      "avoid_if": "You need very advanced, precise design tools",
+      "strengths": [
+        "AI generates UI and wireframes very rapidly",
+        "Priced below Figma Pro (amounts on the official page)",
+        "3x more AI credits than Figma at same price (promo 6x)"
+      ],
+      "weaknesses": [
+        "AI can be inconsistent and needs refinement",
+        "Fewer advanced tools for high-fidelity design",
+        "Better for wireframes/MVPs than polished final design"
+      ]
+    }
+  }
+]

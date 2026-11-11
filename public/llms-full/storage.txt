@@ -1,0 +1,409 @@
+# ToolTrim tool catalogue — storage
+# Generated from src/data/tools_index.json
+# Family: storage (9 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Shade",
+    "slug": "shade",
+    "url_fr": "https://tooltrim.com/fr/tool/shade",
+    "url_en": "https://tooltrim.com/en/tool/shade",
+    "website": "https://shade.inc/",
+    "category": "storage",
+    "pricing": {
+      "free": "Essai annoncé ; durée et conditions à confirmer.",
+      "paid": "Growth : 29,75 USD/siège/mois équivalent en facturation annuelle, 35 USD affichés comme référence. 500 Go de stockage actif par siège, jusqu’à 15 sièges. Enterprise sur devis. Stockage supplémentaire et taxes à confirmer."
+    },
+    "description_fr": "Bibliothèque de médias partagée, recherche IA et revue pour équipes créatives.",
+    "description_en": "Shared media library, AI search and review for creative teams.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Votre équipe partage et recherche de nombreux médias de production",
+      "avoid_if": "Un dossier partagé simple couvre votre besoin",
+      "strengths": [
+        "Recherche et revue dans la médiathèque",
+        "Lecteurs montés et exports de commentaires"
+      ],
+      "weaknesses": [
+        "Coût par siège et stockage",
+        "Performance à tester sur vos fichiers"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "Your team shares and searches many production assets",
+      "avoid_if": "A simple shared folder meets your need",
+      "strengths": [
+        "Search and review within the media library",
+        "Mounted drives and comment exports"
+      ],
+      "weaknesses": [
+        "Seat and storage costs",
+        "Test performance with your files"
+      ]
+    }
+  },
+  {
+    "name": "Bynder",
+    "slug": "bynder",
+    "url_fr": "https://tooltrim.com/fr/tool/bynder",
+    "url_en": "https://tooltrim.com/en/tool/bynder",
+    "website": "https://www.bynder.com",
+    "category": "storage",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 300€/mois environ"
+    },
+    "description_fr": "DAM professionnel pour assets de marque, campagnes et équipes créatives.",
+    "description_en": "Professional DAM for brand assets, campaigns, and creative teams.",
+    "verdict_fr": {
+      "keep_if": "Vous gérez millions d'assets marketing/création",
+      "avoid_if": "Vous êtes startup ou petite équipe",
+      "strengths": [
+        "Leader reconnu Gartner Magic Quadrant DAM",
+        "Recherche IA puissante (face recognition, OCR)",
+        "Omnichannel delivery centralisé"
+      ],
+      "weaknesses": [
+        "Tarification personnalisée entreprise (opaque)",
+        "Coûteux pour PME/startup",
+        "Pas de plan gratuit visible"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage millions of marketing/creative assets",
+      "avoid_if": "You're startup or small team",
+      "strengths": [
+        "Recognized leader Gartner Magic Quadrant DAM",
+        "Powerful AI search (face recognition, OCR)",
+        "Centralized omnichannel delivery"
+      ],
+      "weaknesses": [
+        "Custom enterprise pricing (opaque)",
+        "Expensive for SMBs/startups",
+        "No visible free plan"
+      ]
+    }
+  },
+  {
+    "name": "Cloudinary",
+    "slug": "cloudinary",
+    "url_fr": "https://tooltrim.com/fr/tool/cloudinary",
+    "url_en": "https://tooltrim.com/en/tool/cloudinary",
+    "website": "https://cloudinary.com",
+    "category": "storage",
+    "pricing": {
+      "free": "Plan gratuit : 25 crédits mensuels, 3 utilisateurs, 1 compte.",
+      "paid": "Dès 89 $/mois, plan Plus."
+    },
+    "description_fr": "API développeur pour uploader, transformer et diffuser images et vidéos via un CDN mondial avec optimisation automatique.",
+    "description_en": "Developer API for uploading, transforming and delivering images and video through a global CDN with automatic optimization.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "À garder si la transformation média et la diffusion CDN doivent être gérées via une seule API plutôt qu'assemblées à partir d'outils séparés",
+      "avoid_if": "À éviter si le besoin est juste du stockage de fichiers basique sans transformation, ou si un usage riche en vidéo consommerait vite les crédits des plans d'entrée",
+      "strengths": [
+        "Transformation, optimisation et diffusion CDN vivent dans une seule API au lieu d'outils séparés",
+        "L'essai de 30 jours permet de tester un vrai projet avant de s'engager sur un plan payant"
+      ],
+      "weaknesses": [
+        "Le saut des 25 crédits du plan gratuit aux 225 crédits de Plus est important, sans palier intermédiaire",
+        "La bande passante vidéo consomme les crédits deux fois plus vite que l'image, un vrai facteur de coût pour les sites riches en vidéo"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Keep it if media transformation and CDN delivery need to be handled through one API rather than assembled from separate tools",
+      "avoid_if": "Avoid it if the need is just basic file storage without transformation, or if video-heavy usage would burn through credits fast on the entry plans",
+      "strengths": [
+        "Transformation, optimization and CDN delivery all live in one API instead of separate tools",
+        "30-day trial lets a real project be tested before committing to a paid plan"
+      ],
+      "weaknesses": [
+        "The jump from the free plan's 25 credits to Plus's 225 credits is steep, with no middle tier",
+        "Video bandwidth burns through credits twice as fast as images, a real cost factor for video-heavy sites"
+      ]
+    }
+  },
+  {
+    "name": "Google Drive",
+    "slug": "google-drive",
+    "url_fr": "https://tooltrim.com/fr/tool/google-drive",
+    "url_en": "https://tooltrim.com/en/tool/google-drive",
+    "website": "https://google.com/drive",
+    "category": "storage",
+    "pricing": {
+      "free": "Plan gratuit : 15 Go partagés entre Drive, Gmail et Google Photos",
+      "paid": "Dès 1,67 $/mois, plan Google One Basic (100GB)."
+    },
+    "description_fr": "Le standard du stockage cloud.",
+    "description_en": "The standard for cloud storage.",
+    "alternatives": [
+      "google-drive"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu es déjà sur Gmail/Docs et tu as juste besoin d'un stockage bon marché, fiable et synchronisé",
+      "avoid_if": "Tu as besoin de permissions d'équipe fines, de drives partagés ou de signature électronique sans payer Workspace Business",
+      "strengths": [
+        "Stockage payant d'entrée le moins cher de la catégorie",
+        "Aucune courbe d'apprentissage si tu utilises déjà Gmail ou Docs",
+        "Collaboration en temps réel intégrée sur les documents"
+      ],
+      "weaknesses": [
+        "Le quota de stockage est partagé avec Gmail et Photos, pas dédié aux fichiers",
+        "Les permissions d'équipe avancées et la signature électronique nécessitent de passer à Workspace Business"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You already run on Gmail/Docs and just need cheap, reliable, synced storage",
+      "avoid_if": "You need granular team permissions, shared drives, or e-signature without paying for Workspace Business",
+      "strengths": [
+        "Cheapest entry-level paid storage in the category",
+        "Zero learning curve if you already use Gmail or Docs",
+        "Solid real-time collaboration on documents built in"
+      ],
+      "weaknesses": [
+        "Storage quota is shared with Gmail and Photos, not dedicated to files",
+        "Advanced team permissions and e-signature require upgrading to Workspace Business"
+      ]
+    }
+  },
+  {
+    "name": "Namecheap",
+    "slug": "namecheap",
+    "url_fr": "https://tooltrim.com/fr/tool/namecheap",
+    "url_en": "https://tooltrim.com/en/tool/namecheap",
+    "website": "https://www.namecheap.com",
+    "category": "storage",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 14,98 $ (licence à vie), plan .com domain (first year)."
+    },
+    "description_fr": "Namecheap est un registrar de domaines avec des options d'hébergement, SSL et email, connu pour des prix bas la première année qui augmentent au renouvellement.",
+    "description_en": "Namecheap is a domain registrar with bundled hosting, SSL and email options, known for low first-year domain prices that rise at renewal.",
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu veux un prix d'entrée bas pour enregistrer un domaine maintenant et tu es prêt à voir le prix de renouvellement augmenter l'année suivante",
+      "avoid_if": "Tu veux le même prix prévisible chaque année ; un registrar au prix proche du coût, sans majoration au renouvellement, te conviendra mieux",
+      "strengths": [
+        "Prix d'appel bas la première année sur les domaines, avec la protection WHOIS gratuite incluse sur la plupart des extensions",
+        "Domaine, hébergement, SSL et email sont regroupés chez un seul prestataire, utile pour une petite activité qui veut un seul compte"
+      ],
+      "weaknesses": [
+        "Le renouvellement (18,48 $/an) est déjà environ 23 % plus cher que le tarif normal de première année (14,98 $), et bien plus que les prix promotionnels mis en avant pour les nouveaux clients, donc le prix bas annoncé ne s'applique qu'une fois",
+        "Le support passe surtout par la base de connaissances et les tickets, sans option téléphonique prioritaire"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You want a low entry price to register a domain now and you're prepared for the renewal price to rise the following year",
+      "avoid_if": "You want the same predictable price every year; a near-cost registrar with no renewal markup will suit you better",
+      "strengths": [
+        "Low first-year introductory price on domains, with free WHOIS privacy included on most TLDs",
+        "Domain, hosting, SSL and email are bundled with one provider, useful for a small business that wants a single account"
+      ],
+      "weaknesses": [
+        "Renewal ($18.48/year) is already about 23% above the regular first-year rate ($14.98), and far above the heavily promoted new-customer prices, so the advertised low price only applies once",
+        "Support is mostly self-service via knowledge base and tickets, without a phone-first option"
+      ]
+    }
+  },
+  {
+    "name": "OneDrive",
+    "slug": "onedrive",
+    "url_fr": "https://tooltrim.com/fr/tool/onedrive",
+    "url_en": "https://tooltrim.com/en/tool/onedrive",
+    "website": "https://onedrive.com",
+    "category": "storage",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Stockage cloud Microsoft",
+    "description_en": "Microsoft cloud storage.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez écosystème Microsoft (Office, Teams)",
+      "avoid_if": "Vous préférez service non-Microsoft (Google Drive, Dropbox)",
+      "strengths": [
+        "Plan gratuit 5 GB (+ 15 GB email) utile",
+        "Intégration profonde Microsoft 365 Office",
+        "Personal Vault sécurisé inclus"
+      ],
+      "weaknesses": [
+        "5 GB gratuit limité pour usage intensif",
+        "Plans payants plus chers que Dropbox/Google",
+        "Moins d'intégrations tiers que alternatives"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You use Microsoft ecosystem (Office, Teams)",
+      "avoid_if": "You prefer non-Microsoft service (Google Drive, Dropbox)",
+      "strengths": [
+        "Free plan 5 GB (+ 15 GB email) useful",
+        "Deep Microsoft 365 Office integration",
+        "Secure Personal Vault included"
+      ],
+      "weaknesses": [
+        "Free 5 GB limited for heavy use",
+        "Paid plans pricier than Dropbox/Google",
+        "Fewer third-party integrations than alternatives"
+      ]
+    }
+  },
+  {
+    "name": "Pics.io",
+    "slug": "pics-io",
+    "url_fr": "https://tooltrim.com/fr/tool/pics-io",
+    "url_en": "https://tooltrim.com/en/tool/pics-io",
+    "website": "https://pics.io",
+    "category": "storage",
+    "pricing": {
+      "free": "Essai 7 jours",
+      "paid": "Startup 100$/mois"
+    },
+    "description_fr": "Gestionnaire d'assets digitaux (DAM) sur Google Drive ou S3.",
+    "description_en": "Digital asset management (DAM) on top of Google Drive or S3.",
+    "alternatives": [
+      "Google Drive"
+    ],
+    "price_verified_on": "2026-05-08",
+    "verdict_fr": {
+      "keep_if": "Vous avez Google Drive ou S3 avec assets volume",
+      "avoid_if": "Vous cherchez solution DAM standalone native",
+      "strengths": [
+        "Essai gratuit 7 jours sans CB",
+        "Couche DAM sur infrastructure existante (pas migration)",
+        "Recherche IA puissante (face, OCR, speech)"
+      ],
+      "weaknesses": [
+        "Dépend Google Drive/S3 (pas standalone)",
+        "Pricing transparent non affichée en détail ici",
+        "moins de features que Bynder enterprise"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have Google Drive or S3 with asset volume",
+      "avoid_if": "You want standalone native DAM solution",
+      "strengths": [
+        "Free 7-day trial without credit card",
+        "DAM layer over existing infrastructure (no migration)",
+        "Powerful AI search (face, OCR, speech)"
+      ],
+      "weaknesses": [
+        "Depends on Google Drive/S3 (not standalone)",
+        "Transparent pricing not detailed here",
+        "Fewer features than Bynder enterprise"
+      ]
+    }
+  },
+  {
+    "name": "SharePoint",
+    "slug": "sharepoint",
+    "url_fr": "https://tooltrim.com/fr/tool/sharepoint",
+    "url_en": "https://tooltrim.com/en/tool/sharepoint",
+    "website": "https://www.microsoft.com/microsoft-365/sharepoint/collaboration",
+    "category": "storage",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "SharePoint sert à stocker, partager ou synchroniser des fichiers dans l’organisation.",
+    "description_en": "SharePoint is used to store, share, or sync files across an organization.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez écosystème Microsoft (Teams, Office)",
+      "avoid_if": "Vous préférez services non-Microsoft",
+      "strengths": [
+        "Intégration profonde Microsoft 365 Teams/Office",
+        "Copilot IA pour design/search pages",
+        "Gouvernance enterprise robuste incluse"
+      ],
+      "weaknesses": [
+        "Tarification par utilisateur (peut coûter equipe)",
+        "Pas de plan gratuit",
+        "Interface complexe pour petites équipes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You use Microsoft ecosystem (Teams, Office)",
+      "avoid_if": "You prefer non-Microsoft services",
+      "strengths": [
+        "Deep Microsoft 365 Teams/Office integration",
+        "Copilot AI for page design/search",
+        "Robust enterprise governance included"
+      ],
+      "weaknesses": [
+        "Per-user pricing (can cost for teams)",
+        "No free plan",
+        "Complex interface for small teams"
+      ]
+    }
+  },
+  {
+    "name": "WeTransfer",
+    "slug": "wetransfer",
+    "url_fr": "https://tooltrim.com/fr/tool/wetransfer",
+    "url_en": "https://tooltrim.com/en/tool/wetransfer",
+    "website": "https://wetransfer.com",
+    "category": "storage",
+    "pricing": {
+      "free": "Plan gratuit : 3 Go par transfert, plafonné à 10 transferts sur une période glissante de 30 jours, liens valables 3 jours, usage individuel non commercial uniquement, publicités affichées",
+      "paid": "Dès 7 €/mois, plan Starter."
+    },
+    "description_fr": "Envoi de fichiers volumineux par lien, sans compte. Offre gratuite plafonnée depuis 2024.",
+    "description_en": "Send large files by link, no account needed. Free tier capped since 2024.",
+    "alternatives": [
+      "Google Drive"
+    ],
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu as juste besoin d'envoyer un gros fichier de temps en temps et tu ne veux pas gérer des droits d'accès cloud pour ça",
+      "avoid_if": "Tu envoies de gros fichiers régulièrement, tu as besoin de stockage persistant, ou tu paies déjà pour Google Drive/OneDrive qui fait le même travail",
+      "strengths": [
+        "Aucun compte requis pour envoyer ou recevoir sur l'offre gratuite",
+        "Courbe d'apprentissage quasi nulle, fonctionne en quelques secondes pour un envoi ponctuel"
+      ],
+      "weaknesses": [
+        "Les plafonds de l'offre gratuite se sont resserrés depuis 2024, et le prix de Starter est passé à 8 euros/mois fin 2026",
+        "Payer ne fait pas disparaître le plafond d'envois ni les publicités avant l'offre Ultimate, plus chère",
+        "En 2025, les conditions d'utilisation ont brièvement accordé à WeTransfer des droits larges sur les contenus envoyés pour des usages de machine learning, avant marche arrière ; ça vaut le coup de vérifier rapidement les conditions actuelles avant d'y envoyer des fichiers sensibles"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You only need to send a large file occasionally and don't want to manage cloud storage permissions for it",
+      "avoid_if": "You send large files regularly, need persistent storage, or are already paying for Google Drive/OneDrive that can do the same job",
+      "strengths": [
+        "No account required to send or receive on the free tier",
+        "Extremely low learning curve, works in seconds for a one-off send"
+      ],
+      "weaknesses": [
+        "Free tier caps have tightened since 2024, and the Starter price rose to 8 EUR/month by late 2026",
+        "Paying doesn't remove the transfer-count cap or ads until the pricier Ultimate tier",
+        "2025 terms-of-service episode briefly granted WeTransfer broad rights over uploaded content for machine-learning uses, later reversed; worth a quick check of current terms before trusting sensitive files"
+      ]
+    }
+  }
+]

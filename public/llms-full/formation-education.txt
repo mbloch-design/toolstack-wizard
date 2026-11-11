@@ -1,0 +1,479 @@
+# ToolTrim tool catalogue — formation-education
+# Generated from src/data/tools_index.json
+# Family: formation-education (11 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Articulate 360",
+    "slug": "articulate",
+    "url_fr": "https://tooltrim.com/fr/tool/articulate",
+    "url_en": "https://tooltrim.com/en/tool/articulate",
+    "website": "https://www.articulate.com/360/",
+    "category": "formation-education",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 99€/mois environ"
+    },
+    "description_fr": "Suite e-learning pour modules interactifs, quiz et formation professionnelle.",
+    "description_en": "E-learning suite for interactive modules, quizzes, and professional training.",
+    "verdict_fr": {
+      "keep_if": "Vous créez formations professionnelles à grande échelle",
+      "avoid_if": "Vous êtes solo ou startup budget très serré",
+      "strengths": [
+        "Outil auteur Storyline leader industrie",
+        "IA intégrée pour création et assessments rapides",
+        "Librairie assets massive (13M+ ressources)"
+      ],
+      "weaknesses": [
+        "Tarifs annuels par utilisateur élevés",
+        "Pas de plan gratuit, essai 30 jours seulement",
+        "Courbe d'apprentissage Storyline importante"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You create professional training at scale",
+      "avoid_if": "You're solo or tight-budget startup",
+      "strengths": [
+        "Industry-leading Storyline authoring tool",
+        "Built-in AI for rapid creation and assessments",
+        "Massive asset library (13M+ resources)"
+      ],
+      "weaknesses": [
+        "High annual per-user pricing",
+        "No free plan, 30-day trial only",
+        "Steep learning curve for Storyline"
+      ]
+    }
+  },
+  {
+    "name": "Circle",
+    "slug": "circle",
+    "url_fr": "https://tooltrim.com/fr/tool/circle",
+    "url_en": "https://tooltrim.com/en/tool/circle",
+    "website": "https://circle.so",
+    "category": "formation-education",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 89 $/mois, plan Professional."
+    },
+    "description_fr": "Circle combine espaces de discussion, cours, événements et gestion des membres dans une plateforme communautaire avec crédits IA intégrés.",
+    "description_en": "Circle combines discussion spaces, courses, events and member management in one community platform with built-in AI credits.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu veux discussion, cours et événements sur une seule plateforme plutôt que de gérer un outil séparé pour chacun",
+      "avoid_if": "Tu gères une petite communauté gratuite ou à petit budget : 89 $/mois sans palier gratuit est un coût d'entrée élevé pour ce cas",
+      "strengths": [
+        "Combine discussion, cours, événements et gestion des membres dans une seule plateforme plutôt que plusieurs outils",
+        "Crédits IA inclus sur chaque plan payant, de Professional à Scale"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit : le coût d'entrée est de 89 $/mois avant toute personnalisation",
+        "Le nombre d'administrateurs, de modérateurs et d'espaces est plafonné même sur le plan d'entrée Professional"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You want discussion, courses and events on one platform instead of managing separate tools for each",
+      "avoid_if": "You run a small, free or low-budget community: $89/month with no free tier is a high entry cost for that",
+      "strengths": [
+        "Combines discussion, courses, events and member management in one platform instead of several tools",
+        "AI credits included on every paid plan, from Professional up to Scale"
+      ],
+      "weaknesses": [
+        "No free plan: entry cost is $89/month before any customization",
+        "Admin, moderator and space counts are capped even on the entry Professional plan"
+      ]
+    }
+  },
+  {
+    "name": "Genially",
+    "slug": "genially",
+    "url_fr": "https://tooltrim.com/fr/tool/genially",
+    "url_en": "https://tooltrim.com/en/tool/genially",
+    "website": "https://genially.com",
+    "category": "formation-education",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 8€/mois environ"
+    },
+    "description_fr": "Contenus interactifs, présentations, modules pédagogiques et infographies.",
+    "description_en": "Interactive content, presentations, learning modules, and infographics.",
+    "verdict_fr": {
+      "keep_if": "Vous créez présentations, quizzes, formations interactives",
+      "avoid_if": "Vous avez besoins très complexes customization",
+      "strengths": [
+        "Plan gratuit fonctionnel (juste watermark)",
+        "IA intégrée pour génération rapide",
+        "Éditeur intuitif drag-drop très accessible"
+      ],
+      "weaknesses": [
+        "Watermark Free plan peut être gênant",
+        "Export SCORM et offline seulement plans payants",
+        "Brand customization avancée sur tier élevé"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You create interactive presentations, quizzes, training",
+      "avoid_if": "You have very complex customization needs",
+      "strengths": [
+        "Functional free plan (watermark only)",
+        "Built-in AI for rapid generation",
+        "Intuitive drag-drop editor, very accessible"
+      ],
+      "weaknesses": [
+        "Free plan watermark may be annoying",
+        "SCORM export and offline only paid plans",
+        "Advanced brand customization on high tier"
+      ]
+    }
+  },
+  {
+    "name": "Kajabi",
+    "slug": "kajabi",
+    "url_fr": "https://tooltrim.com/fr/tool/kajabi",
+    "url_en": "https://tooltrim.com/en/tool/kajabi",
+    "website": "https://kajabi.com",
+    "category": "formation-education",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 143 $/mois, plan Basic."
+    },
+    "description_fr": "Plateforme tout-en-un pour héberger formations, communautés et pages de vente avec paiements intégrés, à partir de 179 dollars par mois.",
+    "description_en": "All-in-one platform for hosting courses, communities, and sales pages with built-in payments, starting at $179 a month.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux héberger formations, communauté et pages de vente ensemble dans un seul abonnement, sans connecter d'outils séparés",
+      "avoid_if": "Tu as juste besoin d'héberger une formation simple et tu ne veux pas payer 179 $ par mois en plus des frais par transaction",
+      "strengths": [
+        "Formation, communauté, e-mail et paiements sont réunis sur chaque plan sans outils supplémentaires",
+        "Les crédits IA pour la génération de contenu sont inclus et augmentent avec le plan"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit ; le palier d'entrée Basic coûte 179 $ par mois avant les frais de traitement des paiements",
+        "Produits, contacts et utilisateurs administrateurs sont tous limités selon le plan, Basic étant plafonné à 5 produits et 2 administrateurs"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You want to host courses, a community, and sales pages together in one subscription without connecting separate tools",
+      "avoid_if": "You only need a simple course host and don't want to pay $179 a month plus per-transaction fees",
+      "strengths": [
+        "Course hosting, community, email, and payments are bundled on every plan without extra tools",
+        "AI credits for content generation are included and scale with the plan"
+      ],
+      "weaknesses": [
+        "No free plan; the entry Basic tier costs $179 a month before payment processing fees",
+        "Products, contacts, and admin users are all capped by plan, with Basic limited to 5 products and 2 admins"
+      ]
+    }
+  },
+  {
+    "name": "LearnWorlds",
+    "slug": "learnworlds",
+    "url_fr": "https://tooltrim.com/fr/tool/learnworlds",
+    "url_en": "https://tooltrim.com/en/tool/learnworlds",
+    "website": "https://get.learnworlds.com/7gzw9pjf9sz6",
+    "category": "formation-education",
+    "pricing": {
+      "free": "Essai de 30 jours sans carte bancaire.",
+      "paid": "Starter 29 USD/mois, plus 5 USD par inscription payante. Pro Trainer 99 USD/mois, Learning Center 299 USD/mois, hors TVA. Facturation mensuelle, hors promotions. Corporate sur devis."
+    },
+    "description_fr": "Créer, vendre et administrer une école de formation en ligne.",
+    "description_en": "Build, sell and manage an online learning school.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Vous vendez des formations avec suivi pédagogique",
+      "avoid_if": "Vous avez seulement un fichier à vendre",
+      "strengths": [
+        "Cours, vente et suivi réunis",
+        "Abonnements et certificats dès Pro Trainer"
+      ],
+      "weaknesses": [
+        "Frais par inscription sur Starter",
+        "Migration des cours non automatique"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You sell training with learner tracking",
+      "avoid_if": "You only need to sell a file",
+      "strengths": [
+        "Courses, sales and tracking together",
+        "Subscriptions and certificates from Pro Trainer"
+      ],
+      "weaknesses": [
+        "Per-enrollment fees on Starter",
+        "Course migration is not automatic"
+      ]
+    }
+  },
+  {
+    "name": "Moodle",
+    "slug": "moodle",
+    "url_fr": "https://tooltrim.com/fr/tool/moodle",
+    "url_en": "https://tooltrim.com/en/tool/moodle",
+    "website": "https://moodle.org",
+    "category": "formation-education",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "description_fr": "LMS open source pour formations, parcours et suivi apprenants.",
+    "description_en": "Open-source LMS for training, courses, and learner tracking.",
+    "verdict_fr": {
+      "keep_if": "Vous avez expertise infrastructure hosting",
+      "avoid_if": "Vous n'avez pas expertise technique deployment",
+      "strengths": [
+        "Entièrement gratuit et open-source",
+        "Scalable pour milliers d'étudiants",
+        "Ecosystem plugins riche pour customization"
+      ],
+      "weaknesses": [
+        "Self-hosting requiert expertise technique",
+        "Interface peut sembler datée vs solutions modernes",
+        "Support communautaire uniquement (sans SLA)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have infrastructure hosting expertise",
+      "avoid_if": "You lack technical deployment expertise",
+      "strengths": [
+        "Entirely free and open-source",
+        "Scalable for thousands of students",
+        "Rich plugin ecosystem for customization"
+      ],
+      "weaknesses": [
+        "Self-hosting requires technical expertise",
+        "Interface may feel dated vs modern solutions",
+        "Community support only (no SLA)"
+      ]
+    }
+  },
+  {
+    "name": "Podia",
+    "slug": "podia",
+    "url_fr": "https://tooltrim.com/fr/tool/podia",
+    "url_en": "https://tooltrim.com/en/tool/podia",
+    "website": "https://podia.com",
+    "category": "formation-education",
+    "pricing": {
+      "paid": "33$/mois (Mover)"
+    },
+    "description_fr": "Vente de cours, webinaires et téléchargements numériques. 0% commission.",
+    "description_en": "Sell courses, webinars, and digital downloads. 0% commission.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous êtes créateur vendant courses, produits, coaching",
+      "avoid_if": "Vous cherchez solution entièrement gratuite",
+      "strengths": [
+        "Essai gratuit 30 jours sans CB",
+        "Aucun frais de transaction sur les plans supérieurs",
+        "Plateforme bien intégrée tout-en-un"
+      ],
+      "weaknesses": [
+        "Le plan d'entrée applique des frais de transaction",
+        "Tarifs mensuels plus chers qu'Articulate/Circle",
+        "Pas plan gratuit permanent"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're creator selling courses, products, coaching",
+      "avoid_if": "You're looking for entirely free solution",
+      "strengths": [
+        "Free 30-day trial without credit card",
+        "Zero transaction fees Shaker/Earthquaker",
+        "Well-integrated all-in-one platform"
+      ],
+      "weaknesses": [
+        "The entry plan charges transaction fees",
+        "Monthly pricing steeper than Articulate/Circle",
+        "No permanent free plan"
+      ]
+    }
+  },
+  {
+    "name": "Thinkific",
+    "slug": "thinkific",
+    "url_fr": "https://tooltrim.com/fr/tool/thinkific",
+    "url_en": "https://tooltrim.com/en/tool/thinkific",
+    "website": "https://thinkific.com",
+    "category": "formation-education",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 40 $/mois, plan Basic."
+    },
+    "description_fr": "Thinkific héberge et vend des cours en ligne avec ecommerce et communauté intégrés, à partir de 54 $/mois après un essai de 30 jours.",
+    "description_en": "Thinkific hosts and sells online courses with built-in ecommerce and community features, starting at $54/month after a 30-day trial.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu vends des cours en ligne et tu veux hébergement, paiement et communauté dans un seul outil",
+      "avoid_if": "Tu as besoin d'un plan gratuit permanent, ou d'un accès API dès le départ sans payer le plan Grow",
+      "strengths": [
+        "Hébergement de cours, ecommerce et communauté sont réunis dans un seul produit plutôt que dans plusieurs outils séparés",
+        "Plusieurs processeurs de paiement (Thinkific Payments, Stripe, PayPal, Apple/Google Pay) sont pris en charge nativement"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit ; chaque plan est un abonnement payant après l'essai de 30 jours",
+        "L'accès API et les webhooks sont réservés au plan Grow à 219 $/mois (164 $/mois en annuel)"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You sell online courses and want hosting, checkout and community in a single tool",
+      "avoid_if": "You need a permanent free plan, or API access from day one without paying for the Grow plan",
+      "strengths": [
+        "Course hosting, ecommerce and community are bundled in one product instead of several separate tools",
+        "Multiple payment processors (Thinkific Payments, Stripe, PayPal, Apple/Google Pay) are supported out of the box"
+      ],
+      "weaknesses": [
+        "No free plan; every plan is a paid subscription after the 30-day trial",
+        "API access and webhooks are gated behind the Grow plan at $219/month ($164/month annual)"
+      ]
+    }
+  },
+  {
+    "name": "Trainual",
+    "slug": "trainual",
+    "url_fr": "https://tooltrim.com/fr/tool/trainual",
+    "url_en": "https://tooltrim.com/en/tool/trainual",
+    "website": "https://trainual.com",
+    "category": "formation-education",
+    "pricing": {
+      "free": "Tarif non communiqué ; démonstration sur rendez-vous.",
+      "paid": "Core, Pro, Premium et Enterprise sur devis. Mise en place obligatoire : 1 000 USD en une fois selon la FAQ officielle. Montant récurrent, taxes et options à chiffrer séparément."
+    },
+    "description_fr": "Procédures internes, onboarding et suivi de formation des équipes.",
+    "description_en": "Internal procedures, onboarding and employee training tracking.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Vous formalisez des procédures et formations pour une équipe",
+      "avoid_if": "Quelques pages de wiki couvrent déjà vos procédures",
+      "strengths": [
+        "Formation et procédures structurées",
+        "Suivi des responsabilités et des acquis"
+      ],
+      "weaknesses": [
+        "Devis et frais de mise en place",
+        "Maintenance éditoriale indispensable"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You formalize procedures and training for a team",
+      "avoid_if": "A few wiki pages already cover your procedures",
+      "strengths": [
+        "Structured training and procedures",
+        "Responsibility and learning tracking"
+      ],
+      "weaknesses": [
+        "Quote and implementation fee",
+        "Ongoing content maintenance is essential"
+      ]
+    }
+  },
+  {
+    "name": "Zotero",
+    "slug": "zotero",
+    "url_fr": "https://tooltrim.com/fr/tool/zotero",
+    "url_en": "https://tooltrim.com/en/tool/zotero",
+    "website": "https://zotero.com",
+    "category": "formation-education",
+    "pricing": {
+      "free": "Plan gratuit : 300 Mo de stockage de fichiers pour PDF, images, captures et pieces jointes ; les metadonnees de bibliotheque, notes, tags et collections se synchronisent gratuitement et sans limite quel que soit le palier de stockage de fichiers.",
+      "paid": "Dès 1,67 $/mois, plan 2 GB."
+    },
+    "description_fr": "Gestionnaire de references gratuit et open source avec 300 Mo de stockage ; les paliers payants commencent a 20 $/an pour 2 Go.",
+    "description_en": "Free, open-source reference manager with 300 MB of storage; paid storage tiers start at $20/year for 2 GB.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu as besoin d'un moyen gratuit et open source de collecter et citer tes sources avec un connecteur navigateur en un clic",
+      "avoid_if": "Tu joins beaucoup de gros PDF en texte integral et tu ne veux pas payer le stockage d'avance chaque annee",
+      "strengths": [
+        "Collecte de references, citation et synchronisation des metadonnees restent gratuites et illimitees quel que soit le palier de stockage",
+        "Connecteur navigateur en un clic pour sauvegarder citations et pieces jointes en naviguant"
+      ],
+      "weaknesses": [
+        "300 Mo de stockage gratuit, c'est juste pour un chercheur qui joint beaucoup de PDF en texte integral",
+        "Le stockage payant est facture uniquement a l'annee, sans option mensuelle"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You need a free, open-source way to collect and cite sources with a one-click browser connector",
+      "avoid_if": "You attach many large full-text PDFs and don't want to pay for storage upfront each year",
+      "strengths": [
+        "Reference collection, citing and metadata sync stay free and unlimited regardless of storage tier",
+        "One-click browser connector for saving citations and attachments while browsing"
+      ],
+      "weaknesses": [
+        "300 MB of free file storage is tight for researchers attaching many full-text PDFs",
+        "Paid storage is billed annually only, with no monthly option"
+      ]
+    }
+  },
+  {
+    "name": "Elephorm",
+    "slug": "elephorm",
+    "url_fr": "https://tooltrim.com/fr/tool/elephorm",
+    "url_en": "https://tooltrim.com/en/tool/elephorm",
+    "website": "https://www.elephorm.com",
+    "category": "formation-education",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent.",
+      "paid": "Dès 19,90 €/mois (puis 39,90 €/mois), abonnement mensuel sans engagement."
+    },
+    "description_fr": "Plateforme française de formations vidéo en ligne (plus de 1700 formations) en bureautique, développement, design, vidéo et IA, en abonnement illimité ou à l'unité.",
+    "description_en": "French video training platform (1,700+ courses) covering office software, development, design, video and AI, available as an unlimited subscription or per course.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux apprendre un logiciel ou une compétence précise à ton rythme, avec un large catalogue de formations françaises plutôt qu'un cursus unique",
+      "avoid_if": "Tu n'as besoin que d'une seule formation ponctuelle : l'achat à l'unité avec accès à vie revient souvent moins cher qu'un abonnement",
+      "strengths": [
+        "Catalogue large et en français (plus de 1700 formations) couvrant bureautique, dev, design, vidéo, musique et IA dans un seul abonnement",
+        "Sans engagement et résiliable à tout moment, avec un accès à vie possible via l'achat à l'unité pour une seule formation"
+      ],
+      "weaknesses": [
+        "Le prix affiché par défaut est une promotion de première période ; le tarif plein (39,90 €/mois ou 399 €/an) reprend ensuite automatiquement",
+        "Pas de plan gratuit permanent pour tester le catalogue avant de payer"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You want to learn a specific piece of software or skill at your own pace, with a broad catalog of French-language courses rather than a single curriculum",
+      "avoid_if": "You only need one specific course: buying it individually with lifetime access is often cheaper than subscribing",
+      "strengths": [
+        "Broad French-language catalog (1,700+ courses) covering office software, development, design, video, music production and AI in one subscription",
+        "No commitment, cancellable any time, with lifetime access available via single-course purchase for a one-off need"
+      ],
+      "weaknesses": [
+        "The default displayed price is a first-period promotion; the regular rate (€39.90/month or €399/year) resumes automatically afterward",
+        "No permanent free plan to try the catalog before paying"
+      ]
+    }
+  }
+]

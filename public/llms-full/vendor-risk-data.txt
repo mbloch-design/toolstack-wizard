@@ -1,0 +1,225 @@
+# ToolTrim tool catalogue — vendor-risk-data
+# Generated from src/data/tools_index.json
+# Family: vendor-risk-data (5 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Creditsafe",
+    "slug": "creditsafe",
+    "url_fr": "https://tooltrim.com/fr/tool/creditsafe",
+    "url_en": "https://tooltrim.com/en/tool/creditsafe",
+    "website": "https://www.creditsafe.com",
+    "category": "vendor-risk-data",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Creditsafe fournit des rapports de crédit et scores de risque sur plus de 430 millions d'entreprises, avec surveillance en temps réel, vendu sur devis.",
+    "description_en": "Creditsafe provides business credit reports and risk scores on 430+ million companies worldwide, with real-time monitoring, sold on a custom quote.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu dois vérifier régulièrement le risque de crédit d'entreprises sur de nombreuses contreparties et tu peux passer par un devis commercial",
+      "avoid_if": "Tu n'as besoin que d'une vérification de crédit occasionnelle et tu veux un prix en libre-service visible sans échanger avec quelqu'un",
+      "strengths": [
+        "Couvre plus de 430 millions d'entreprises dans le monde, une base large pour vérifier presque n'importe quelle contrepartie",
+        "La surveillance en temps réel signale un changement de statut de crédit sans avoir à ressortir un rapport manuellement"
+      ],
+      "weaknesses": [
+        "Aucun prix n'est publié nulle part, il faut donc passer par un échange commercial avant de pouvoir comparer quoi que ce soit",
+        "Les intégrations API ou CRM précises ne sont pas détaillées publiquement, la compatibilité avec un outil existant doit donc être vérifiée directement avec l'équipe commerciale"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You need to regularly check business credit risk across many counterparties and can go through a sales quote process",
+      "avoid_if": "You only need an occasional credit check and want a self-serve price you can see before talking to anyone",
+      "strengths": [
+        "Covers over 430 million companies worldwide, a broad base for checking almost any counterparty",
+        "Real-time monitoring flags a credit status change without needing to re-pull a report manually"
+      ],
+      "weaknesses": [
+        "No price is published anywhere, so budgeting for it requires a sales conversation before any comparison is possible",
+        "Named API or CRM integrations aren't detailed publicly, so compatibility with an existing stack needs checking directly with sales"
+      ]
+    }
+  },
+  {
+    "name": "Dun & Bradstreet",
+    "slug": "dun-bradstreet",
+    "url_fr": "https://tooltrim.com/fr/tool/dun-bradstreet",
+    "url_en": "https://tooltrim.com/en/tool/dun-bradstreet",
+    "website": "https://www.dnb.com",
+    "category": "vendor-risk-data",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Dun & Bradstreet fournit des données de risque ou de conformité sur les fournisseurs.",
+    "description_en": "Global business data provider offering credit reports, D-U-N-S numbers, supplier monitoring, and company intelligence for compliance and commercial decision-making.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'un D-U-N-S pour partenariats internationaux",
+      "avoid_if": "Vous êtes freelance/micro-entreprise sans partenaires B2B",
+      "strengths": [
+        "Leader historique mondialement reconnu",
+        "D-U-N-S (standard mondial d'identité entreprise)",
+        "Larges données commerciales (millions d'entreprises)"
+      ],
+      "weaknesses": [
+        "Écart tarifaire très large entre offres PME et entreprise",
+        "Interface et navigation complexes",
+        "Données peuvent être obsolètes pour petites entreprises"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need a D-U-N-S for international partnerships",
+      "avoid_if": "You are freelancer/micro-business without B2B partners",
+      "strengths": [
+        "Historically recognized global leader",
+        "D-U-N-S (worldwide standard for business identity)",
+        "Extensive business data (millions of companies)"
+      ],
+      "weaknesses": [
+        "Very wide pricing gap between SMB and enterprise offers",
+        "Interface and navigation complex",
+        "Data may be stale for small businesses"
+      ]
+    }
+  },
+  {
+    "name": "EcoVadis",
+    "slug": "ecovadis",
+    "url_fr": "https://tooltrim.com/fr/tool/ecovadis",
+    "url_en": "https://tooltrim.com/en/tool/ecovadis",
+    "website": "https://ecovadis.com",
+    "category": "vendor-risk-data",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "EcoVadis fournit des données de risque ou de conformité sur les fournisseurs.",
+    "description_en": "ESG sustainability ratings platform for global supply chains, providing standardized supplier assessments aligned with UN Global Compact and GRI standards for buyers and suppliers.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous devez évaluer durabilité ESG de fournisseurs",
+      "avoid_if": "Vous êtes micro-entreprise sans fournisseurs complexes",
+      "strengths": [
+        "Standard commun pour 175 000+ entreprises mondialement",
+        "Couverture 180+ pays avec données localisées",
+        "Évaluations comparables et benchmarkées par industrie"
+      ],
+      "weaknesses": [
+        "Tarification élevée pour petits volumes (<50 fournisseurs)",
+        "Coûts escaladent avec nombre d'évaluations",
+        "Processus d'évaluation peut être lourd pour fournisseurs"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You must assess supplier ESG sustainability performance",
+      "avoid_if": "You are micro-business without complex suppliers",
+      "strengths": [
+        "Common standard across 175,000+ global companies",
+        "Coverage of 180+ countries with localized data",
+        "Comparable, benchmarked assessments by industry"
+      ],
+      "weaknesses": [
+        "High pricing for small assessment volumes (<50 suppliers)",
+        "Costs scale with assessment count",
+        "Assessment process can be burdensome for suppliers"
+      ]
+    }
+  },
+  {
+    "name": "SecurityScorecard",
+    "slug": "securityscorecard",
+    "url_fr": "https://tooltrim.com/fr/tool/securityscorecard",
+    "url_en": "https://tooltrim.com/en/tool/securityscorecard",
+    "website": "https://securityscorecard.com",
+    "category": "vendor-risk-data",
+    "pricing": {
+      "free": "Plan gratuit : Un compte gratuit donne accès à une fiche de notation pour son propre domaine, aux réponses de questionnaires et à des tableaux de bord de base.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Plateforme de risque tiers : notes de sécurité de A à F pour les fournisseurs, compte gratuit pour son domaine, formules payantes sur devis.",
+    "description_en": "Third-party risk platform giving A-F security ratings for vendors, with a free own-domain account and quote-only paid tiers.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères une diligence raisonnable fournisseur à une échelle qui justifie un contrat de surveillance du risque en entreprise mené par les ventes",
+      "avoid_if": "Tu as seulement besoin d'un contrôle rapide de la posture de sécurité de ton propre domaine : le compte gratuit couvre déjà ce besoin",
+      "strengths": [
+        "Le compte gratuit donne une note A à F immédiate pour son propre domaine, sans processus commercial",
+        "La découverte automatique de fournisseurs tiers et quaternaires cachés va au-delà d'une simple liste de fournisseurs"
+      ],
+      "weaknesses": [
+        "Aucun prix public pour les formules payantes : chaque mise à niveau nécessite une conversation commerciale",
+        "Conçu pour des programmes de risque fournisseur en entreprise, pas pour évaluer l'exposition d'une petite équipe"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run vendor due diligence at a scale that justifies a sales-led enterprise risk-monitoring contract",
+      "avoid_if": "You only need a quick check of your own domain's security posture; the free account already covers that",
+      "strengths": [
+        "Free account gives an immediate A-F rating for your own domain with no sales process",
+        "Automatic discovery of hidden third- and fourth-party vendors goes beyond a simple vendor list"
+      ],
+      "weaknesses": [
+        "No public pricing for any paid tier; every upgrade requires a sales conversation",
+        "Built for enterprise vendor-risk programs, not for assessing a small team's own exposure"
+      ]
+    }
+  },
+  {
+    "name": "ThorData",
+    "slug": "thordata",
+    "url_fr": "https://tooltrim.com/fr/tool/thordata",
+    "url_en": "https://tooltrim.com/en/tool/thordata",
+    "website": "https://www.thordata.com",
+    "category": "vendor-risk-data",
+    "pricing": {
+      "free": "Conditions d’essai à confirmer auprès de l’éditeur.",
+      "paid": "Facturation à l’usage selon produit : Go de trafic ou adresses IP. Le tarif résidentiel promotionnel de 0,65 USD/Go suppose 5 000 Go, soit 3 250 USD. Ce n’est pas un abonnement mensuel à 0,65 USD. Prix et taxes à reconfirmer avant achat."
+    },
+    "description_fr": "Proxies et API de collecte de données web pour équipes techniques.",
+    "description_en": "Proxies and web-data collection APIs for technical teams.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Vous avez un besoin technique et autorisé de collecte web",
+      "avoid_if": "Vous cherchez un outil sans configuration ni suivi des volumes",
+      "strengths": [
+        "Plusieurs familles de proxies",
+        "Intégration dans des workflows techniques"
+      ],
+      "weaknesses": [
+        "Tarifs dépendants du volume",
+        "Configuration et conformité à votre charge"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "You have a technical, authorized web-data collection need",
+      "avoid_if": "You want a tool without configuration or usage monitoring",
+      "strengths": [
+        "Several proxy families",
+        "Integration into technical workflows"
+      ],
+      "weaknesses": [
+        "Volume-dependent pricing",
+        "Configuration and compliance remain your responsibility"
+      ]
+    }
+  }
+]

@@ -29,11 +29,13 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 - Comparison: `https://tooltrim.com/{lang}/comparatif/{tool-a}-vs-{tool-b}`
 - Tool alternatives: `https://tooltrim.com/{lang}/tool/{slug}/alternatives`
 - Tool ecosystem: `https://tooltrim.com/{lang}/explorer/around/{slug}`
+- Catalogue shard: `https://tooltrim.com/llms-full/{family}.txt`
 
 ## Catalogue
 
 - 1251 canonical tool records are included in the generated catalogue.
-- [Machine-readable catalogue](https://tooltrim.com/llms-full.txt)
+- [Machine-readable catalogue](https://tooltrim.com/llms-full.txt) — every record in a single file.
+- The same records are also published split by category family: one shard per family, same schema (see Catalogue Shards below).
 - [Editorial index: guide and comparison summaries](https://tooltrim.com/llms-editorial.txt)
 - 106 localized guide pages and 166 localized comparison pages are included in the editorial index, generated from the same build as the sitemap.
 - Editorial records provide localized titles, summaries and canonical URLs, not full articles. Read the linked page for the complete analysis.
@@ -42,6 +44,35 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 - Check the cited vendor website and the relevant ToolTrim page before quoting a current price.
 - `verdict_fr` / `verdict_en` reproduce the verdict published on each tool page: ToolTrim score (average of five evidence-graded axes: added value, simplicity, fit for purpose, power, reversibility; never influenced by payment), who should keep the tool, who should look elsewhere, and its main strengths and weaknesses. Tools without a complete five-axis rating carry no score.
 - `price_verified_on` is the date ToolTrim last checked the vendor's pricing page.
+
+## Catalogue Shards
+
+The 1251 records of llms-full.txt are also published split by category family, so an agent can fetch one family instead of the whole catalogue. Every shard is a JSON array with the same record schema and the same editorial rules.
+
+- ai-general — 66 tools: https://tooltrim.com/llms-full/ai-general.txt
+- analytics — 81 tools: https://tooltrim.com/llms-full/analytics.txt
+- automation — 27 tools: https://tooltrim.com/llms-full/automation.txt
+- budgeting-fpa — 2 tools: https://tooltrim.com/llms-full/budgeting-fpa.txt
+- communication — 60 tools: https://tooltrim.com/llms-full/communication.txt
+- communication-team — 3 tools: https://tooltrim.com/llms-full/communication-team.txt
+- creation — 351 tools: https://tooltrim.com/llms-full/creation.txt
+- crm — 17 tools: https://tooltrim.com/llms-full/crm.txt
+- design-tools — 129 tools: https://tooltrim.com/llms-full/design-tools.txt
+- email-productivity — 50 tools: https://tooltrim.com/llms-full/email-productivity.txt
+- erp — 14 tools: https://tooltrim.com/llms-full/erp.txt
+- finance — 62 tools: https://tooltrim.com/llms-full/finance.txt
+- formation-education — 11 tools: https://tooltrim.com/llms-full/formation-education.txt
+- hris-payroll — 27 tools: https://tooltrim.com/llms-full/hris-payroll.txt
+- legal-contracts — 24 tools: https://tooltrim.com/llms-full/legal-contracts.txt
+- nocode-web — 133 tools: https://tooltrim.com/llms-full/nocode-web.txt
+- organization — 64 tools: https://tooltrim.com/llms-full/organization.txt
+- productivity-tracking — 13 tools: https://tooltrim.com/llms-full/productivity-tracking.txt
+- project-management — 27 tools: https://tooltrim.com/llms-full/project-management.txt
+- prototyping — 6 tools: https://tooltrim.com/llms-full/prototyping.txt
+- security — 35 tools: https://tooltrim.com/llms-full/security.txt
+- storage — 9 tools: https://tooltrim.com/llms-full/storage.txt
+- ui-components — 35 tools: https://tooltrim.com/llms-full/ui-components.txt
+- vendor-risk-data — 5 tools: https://tooltrim.com/llms-full/vendor-risk-data.txt
 
 ## Citation
 

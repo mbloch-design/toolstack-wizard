@@ -1,0 +1,142 @@
+# ToolTrim tool catalogue — communication-team
+# Generated from src/data/tools_index.json
+# Family: communication-team (3 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Google Chat",
+    "slug": "google-chat",
+    "url_fr": "https://tooltrim.com/fr/tool/google-chat",
+    "url_en": "https://tooltrim.com/en/tool/google-chat",
+    "website": "https://chat.google.com",
+    "category": "communication-team",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Google Chat permet aux équipes de recevoir et traiter des notifications dans leur outil de communication.",
+    "description_en": "Team communication platform included with Google Workspace for real-time chat, collaboration spaces supporting up to 500,000 members, and third-party integrations (Asana, Jira, Slack, Salesforce). Powered by Gemini for summaries, translation, and message composition.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Votre équipe utilise intensément Gmail, Calendar et Google Drive et souhaite unifier communication",
+      "avoid_if": "Vous prioritisez visioconférence haute-fidélité ou screen-sharing avancé (préférez Zoom ou Teams)",
+      "strengths": [
+        "Intégration native complète Gmail, Calendar, Drive, Meet (workflow unifié)",
+        "Espaces collaboration jusqu'à 500 000 membres avec threads et reactions",
+        "Gemini AI pour résumés conversations async, traduction, brouillons messages"
+      ],
+      "weaknesses": [
+        "Pas disponible gratuitement ; requiert abonnement Workspace minimal",
+        "Moins de features avancées que Slack/Microsoft Teams (huddles plus basiques)",
+        "Coût par utilisateur s'accumule rapidement pour équipes très larges"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your team heavily uses Gmail, Calendar, and Google Drive and wants unified communication",
+      "avoid_if": "You prioritize high-fidelity video conferencing or advanced screen-sharing (prefer Zoom or Teams)",
+      "strengths": [
+        "Deep native integration with Gmail, Calendar, Drive, Meet (unified workflow)",
+        "Collaboration spaces up to 500,000 members with threads and reactions",
+        "Gemini AI for conversation summaries, real-time translation, message drafting"
+      ],
+      "weaknesses": [
+        "No free standalone tier; requires minimal Workspace subscription",
+        "Fewer advanced features than Slack/Microsoft Teams (more basic huddles)",
+        "Per-user cost accumulates quickly for very large teams"
+      ]
+    }
+  },
+  {
+    "name": "Microsoft Teams",
+    "slug": "microsoft-teams",
+    "url_fr": "https://tooltrim.com/fr/tool/microsoft-teams",
+    "url_en": "https://tooltrim.com/en/tool/microsoft-teams",
+    "website": "https://www.microsoft.com/teams",
+    "category": "communication-team",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Microsoft Teams permet aux équipes de recevoir et traiter des notifications dans leur outil de communication.",
+    "description_en": "Microsoft communication and collaboration platform.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Votre organisation utilise déjà Microsoft 365 (Office, Outlook)",
+      "avoid_if": "Vous voulez éviter les écosystèmes propriétaires fermés",
+      "strengths": [
+        "Intégration native complète Microsoft 365 (Office, Outlook, OneDrive)",
+        "Transcription automatique et sous-titres en 30+ langues",
+        "Support jusqu'à 300 participants par réunion"
+      ],
+      "weaknesses": [
+        "Plan gratuit limité (90 jours historique, pas d'appels de groupe)",
+        "Abonnement Microsoft 365 coûteux pour PME",
+        "Moins flexible que solutions open-source ou agiles"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your organization already uses Microsoft 365 (Office, Outlook)",
+      "avoid_if": "You want to avoid closed proprietary ecosystems",
+      "strengths": [
+        "Complete native Microsoft 365 integration (Office, Outlook, OneDrive)",
+        "Automatic transcription and captions in 30+ languages",
+        "Support for up to 300 participants per meeting"
+      ],
+      "weaknesses": [
+        "Free plan limited (90-day message history, no group calls)",
+        "Microsoft 365 subscription expensive for SMBs",
+        "Less flexible than open-source or agile alternatives"
+      ]
+    }
+  },
+  {
+    "name": "Slack",
+    "slug": "slack",
+    "url_fr": "https://tooltrim.com/fr/tool/slack",
+    "url_en": "https://tooltrim.com/en/tool/slack",
+    "website": "https://slack.com",
+    "category": "communication-team",
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "8,75$/mois (Pro)"
+    },
+    "description_fr": "La messagerie pro pour échanger avec clients et partenaires.",
+    "description_en": "Professional messaging for communicating with clients and partners.",
+    "alternatives": [
+      "discord"
+    ],
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Votre équipe privilégie communication asynchrone et searchable",
+      "avoid_if": "Vous voulez priorité visioconférence haute-fidélité (considérez Teams/Zoom)",
+      "strengths": [
+        "Historique messages searchable illimité (tous plans payants)",
+        "1000+ intégrations natives ou via Zapier/webhooks",
+        "Workflows et automatisations sans code"
+      ],
+      "weaknesses": [
+        "Plan gratuit limité (90 jours seulement, 10 intégrations)",
+        "Coût par utilisateur actif rapidement important pour grandes équipes",
+        "Pas d'IA sur plans gratuit/Pro (Business+ minimum)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your team prioritizes asynchronous communication and searchable history",
+      "avoid_if": "You prioritize high-fidelity video conferencing (consider Teams/Zoom)",
+      "strengths": [
+        "Unlimited searchable message history (all paid plans)",
+        "1000+ native integrations or via Zapier/webhooks",
+        "No-code workflows and automations"
+      ],
+      "weaknesses": [
+        "Free plan limited (90-day history, 10 integrations max)",
+        "Per-active-user cost becomes substantial for large teams",
+        "No AI on Free/Pro plans (Business+ minimum required)"
+      ]
+    }
+  }
+]

@@ -1,0 +1,2619 @@
+# ToolTrim tool catalogue — communication
+# Generated from src/data/tools_index.json
+# Family: communication (60 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Aircall",
+    "slug": "aircall",
+    "url_fr": "https://tooltrim.com/fr/tool/aircall",
+    "url_en": "https://tooltrim.com/en/tool/aircall",
+    "website": "https://aircall.io",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 22,50 $/mois, plan Essentials."
+    },
+    "description_fr": "Téléphonie cloud avec routage d'appels, SVI et intégrations CRM pour les équipes vente et support, vendue par poste avec un minimum de 3 postes.",
+    "description_en": "Cloud business phone system with call routing, IVR and CRM integrations for sales and support teams, sold per seat with a 3-seat minimum.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu mets en place une ligne téléphonique partagée pour au moins 3 personnes en vente ou support avec des intégrations CRM",
+      "avoid_if": "Tu es seul ou en équipe de 1 à 2 personnes, car aucune offre Aircall ne peut s'acheter en dessous de 3 postes",
+      "strengths": [
+        "Intégrations CRM et support poussées disponibles dès l'offre d'entrée Essentials",
+        "Enterprise inclut les appels internationaux illimités au lieu de facturer les minutes internationales à part"
+      ],
+      "weaknesses": [
+        "Aucune offre ne peut s'acheter pour un seul utilisateur ; chaque offre impose un minimum de postes",
+        "L'analyse de conversation et l'accès API complet exigent l'offre Professional, pas Essentials"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You are setting up a shared phone line for at least 3 people in sales or support with CRM integrations",
+      "avoid_if": "You are a solo user or a 1-2 person team, since no Aircall plan can be bought below 3 seats",
+      "strengths": [
+        "Deep CRM and helpdesk integrations available from the entry Essentials tier",
+        "Enterprise includes unlimited global calls instead of billing international minutes separately"
+      ],
+      "weaknesses": [
+        "No plan can be bought for a single user; every tier has a seat minimum",
+        "Conversation intelligence and full API access require the Professional tier, not Essentials"
+      ]
+    }
+  },
+  {
+    "name": "Aloware",
+    "slug": "aloware",
+    "url_fr": "https://tooltrim.com/fr/tool/aloware",
+    "url_en": "https://tooltrim.com/en/tool/aloware",
+    "website": "https://aloware.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 30 $/mois, plan iPro + AI."
+    },
+    "description_fr": "Aloware est un centre d'appels cloud avec analyse d'appels par IA et intégrations CRM, facturé par siège avec un minimum de 5 à 10 utilisateurs.",
+    "description_en": "Aloware is a cloud call center with AI call analytics and CRM integrations, priced per seat with a minimum of 5 to 10 users.",
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu diriges une équipe de vente ou de support de 5 personnes ou plus et veux une analyse d'appels par IA intégrée à un composeur cloud par siège",
+      "avoid_if": "Tu es un utilisateur solo ou une équipe de moins de 5 personnes, où le minimum de sièges te force à payer une capacité dont tu n'as pas besoin",
+      "strengths": [
+        "Transcription, résumés et analyse de sentiment par IA sont intégrés au composeur plutôt que dans un outil séparé",
+        "Les intégrations natives avec HubSpot, Pipedrive, Zoho et Salesforce gardent les données d'appel dans le CRM existant"
+      ],
+      "weaknesses": [
+        "Chaque plan impose un minimum de 5 ou 10 sièges, ce qui l'exclut pour les utilisateurs solo ou les très petites équipes",
+        "L'intégration Salesforce et les minutes AloAi illimitées sont réservées au plan xPro + AI, le plus cher"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You lead a sales or support team of 5 or more and want AI call analytics built into a per-seat cloud dialer",
+      "avoid_if": "You are a solo user or a team under 5, where the seat minimum forces you to pay for capacity you don't need",
+      "strengths": [
+        "AI call transcription, summaries and sentiment analysis are built into the dialer rather than a separate tool",
+        "Native integrations with HubSpot, Pipedrive, Zoho and Salesforce keep call data inside the existing CRM"
+      ],
+      "weaknesses": [
+        "Every plan enforces a 5 or 10-seat minimum, ruling it out for solo users or very small teams",
+        "Salesforce integration and unlimited AloAi minutes are reserved for the most expensive xPro + AI plan"
+      ]
+    }
+  },
+  {
+    "name": "Apollo.io",
+    "slug": "apollo-io",
+    "url_fr": "https://tooltrim.com/fr/tool/apollo-io",
+    "url_en": "https://tooltrim.com/en/tool/apollo-io",
+    "website": "https://www.apollo.io",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Free plan for 1 user with access to the 240M contact / 30M company database; email sending limited to Gmail only; capped credits.",
+      "paid": "Dès 49 $/mois, plan Basic."
+    },
+    "description_fr": "Apollo.io associe une base de 240 millions de contacts B2B à des séquences d'e-mails, un enregistrement d'appels et un pipeline commercial pour l'outbound.",
+    "description_en": "Apollo.io combines a 240-million-contact B2B database with email sequencing, call recording and a sales pipeline for prospecting and outbound sales.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu as besoin d'un seul outil pour sourcer des contacts B2B et lancer des séquences d'e-mails outbound sans abonnements séparés pour la base et le séquençage",
+      "avoid_if": "Ton équipe compte déjà 3 commerciaux ou plus, puisque le plan Organization impose un minimum de 3 sièges à 119 $ par siège et par mois en engagement annuel",
+      "strengths": [
+        "Le plan gratuit permet à un utilisateur seul de tester la base de 240 millions de contacts avant de payer quoi que ce soit",
+        "Combine base de données, séquençage de prospection et enregistrement d'appels dans un seul abonnement au lieu de trois outils séparés"
+      ],
+      "weaknesses": [
+        "Les plans Free et les paliers inférieurs n'envoient que via Gmail ; Microsoft 365 et les autres fournisseurs nécessitent un plan payant",
+        "Exporter des données de contact hors d'Apollo consomme des crédits séparés en plus de l'abonnement",
+        "La sélection de leads en masse est plafonnée, ce qui limite la constitution de grandes listes en une seule action"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You need one tool to source B2B contacts and run outbound email sequences without separate database and sequencing subscriptions",
+      "avoid_if": "Your team already has 3 or more sellers, since the Organization plan requires a minimum of 3 seats at $119 per seat per month billed annually",
+      "strengths": [
+        "Free plan lets a solo user test the 240M-contact database before paying anything",
+        "Combines database, outreach sequencing and call recording in one subscription instead of three separate tools"
+      ],
+      "weaknesses": [
+        "Free and lower-tier plans only send through Gmail; Microsoft 365 and other providers require a paid plan",
+        "Exporting contact data outside Apollo consumes separate credits on top of the subscription",
+        "Bulk lead selection is capped, limiting large list-building in one action"
+      ]
+    }
+  },
+  {
+    "name": "BoomPop",
+    "slug": "boompop",
+    "url_fr": "https://tooltrim.com/fr/tool/boompop",
+    "url_en": "https://tooltrim.com/en/tool/boompop",
+    "website": "https://boompop.com",
+    "category": "communication",
+    "pricing": {
+      "free": null,
+      "paid": "BoomPop a rejoint Navan ; aucun tarif publié."
+    },
+    "description_fr": "Service d’organisation d’événements d’entreprise et networking.",
+    "description_en": "Corporate event planning and networking service.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous organisez des événements complexes fréquemment",
+      "avoid_if": "Vous organisez des événements très simples ponctuels",
+      "strengths": [
+        "Automatisation complète de la logistique d'événement",
+        "IA pour messagerie et coordination en temps réel",
+        "Clients prestigieux (Salesforce, Shopify, Google, Amazon)"
+      ],
+      "weaknesses": [
+        "Tarification non transparente sur le site",
+        "Tarification consultable à titre démonstratif",
+        "Apprentissage de la plateforme requis"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You organize complex events frequently",
+      "avoid_if": "You organize simple one-off events",
+      "strengths": [
+        "Complete automation of event logistics",
+        "AI for real-time messaging and coordination",
+        "Prestigious clients (Salesforce, Shopify, Google, Amazon)"
+      ],
+      "weaknesses": [
+        "Opaque pricing on the website",
+        "Pricing requires demo consultation",
+        "Platform learning curve"
+      ]
+    }
+  },
+  {
+    "name": "Cal.com",
+    "slug": "cal-com",
+    "url_fr": "https://tooltrim.com/fr/tool/cal-com",
+    "url_en": "https://tooltrim.com/en/tool/cal-com",
+    "website": "https://cal.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : 1 utilisateur, types d'événements et calendriers illimités, plus de 100 intégrations, gratuit à vie.",
+      "paid": "Dès 12 $/mois, plan Teams."
+    },
+    "description_fr": "Cal.com est un outil de planification open source : un plan gratuit pour les individus, des plans payants ajoutant routage d'équipe et conformité.",
+    "description_en": "Cal.com is an open-source scheduling tool: a free plan for individuals, paid plans adding team routing and compliance.",
+    "alternatives": [
+      "cal-com"
+    ],
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu es consultant(e) ou freelance solo et as besoin d'un lien de réservation fiable avec synchro d'agenda et encaissement, gratuitement",
+      "avoid_if": "Tu as besoin de conformité entreprise (SSO, SOC 2, HIPAA) dès le départ : cela ne démarre qu'à 37 $/utilisateur/mois",
+      "strengths": [
+        "Le plan gratuit inclut déjà l'encaissement de paiements et la synchronisation CRM bidirectionnelle, des fonctions que certains concurrents réservent aux plans payants",
+        "Le code open source et l'import Calendly en un clic réduisent le coût de changement dans les deux sens"
+      ],
+      "weaknesses": [
+        "La planification d'équipe (tourniquet, disponibilité partagée) reste réservée au plan Teams à 16 $/mois, indisponible en solo",
+        "Les certifications de conformité (SOC 2, HIPAA, ISO 27001) n'apparaissent qu'au palier Organizations, à 37 $/utilisateur/mois"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You're a solo consultant or freelancer who needs a reliable booking link with calendar sync and payment collection, for free",
+      "avoid_if": "You need enterprise compliance (SSO, SOC 2, HIPAA) from day one: that only starts at $37/user/month",
+      "strengths": [
+        "The free plan already includes payment collection and CRM two-way sync, features some competitors reserve for paid tiers",
+        "Open-source codebase and a one-click Calendly importer lower the switching cost in both directions"
+      ],
+      "weaknesses": [
+        "Team scheduling (round-robin, shared team availability) is locked behind the $16/month Teams plan, not available solo",
+        "Compliance certifications (SOC 2, HIPAA, ISO 27001) only appear at the Organizations tier, $37/user/month"
+      ]
+    }
+  },
+  {
+    "name": "Calendly",
+    "slug": "calendly",
+    "url_fr": "https://tooltrim.com/fr/tool/calendly",
+    "url_en": "https://tooltrim.com/en/tool/calendly",
+    "website": "https://calendly.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan Free permanent avec un type d'événement et un calendrier connecté. Essai payant de 14 jours.",
+      "paid": "Free: 0 USD ; Standard: 10 USD par utilisateur et par mois avec facturation annuelle ; Teams: 16 USD par utilisateur et par mois avec facturation annuelle ; Enterprise: À partir de 15 000 USD par an"
+    },
+    "description_fr": "Calendly automatise la prise de rendez-vous à partir des disponibilités connectées aux calendriers et distribue les réunions individuelles ou d'équipe.",
+    "description_en": "Calendly automates meeting booking from connected calendar availability and routes individual or team meetings.",
+    "alternatives": [
+      "Cal.com"
+    ],
+    "price_verified_on": "2026-08-30",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez régulièrement le workflow central de Calendly",
+      "avoid_if": "Votre besoin est ponctuel et un outil gratuit plus simple suffit",
+      "strengths": [
+        "Workflow produit bien défini",
+        "Documentation officielle et développement actif",
+        "S'intègre aux processus professionnels"
+      ],
+      "weaknesses": [
+        "Le coût peut augmenter avec l'usage ou les sièges",
+        "Les fonctions avancées exigent une offre payante",
+        "La qualité du paramétrage influence le résultat"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need Calendly's core workflow regularly",
+      "avoid_if": "Your need is occasional and a simpler free tool is enough",
+      "strengths": [
+        "Focused product workflow",
+        "Official documentation and active development",
+        "Integrates into professional processes"
+      ],
+      "weaknesses": [
+        "Costs can grow with usage or seats",
+        "Advanced capabilities require a paid tier",
+        "Setup quality affects the result"
+      ]
+    }
+  },
+  {
+    "name": "CallHippo",
+    "slug": "callhippo",
+    "url_fr": "https://tooltrim.com/fr/tool/callhippo",
+    "url_en": "https://tooltrim.com/en/tool/callhippo",
+    "website": "https://callhippo.com",
+    "category": "communication",
+    "pricing": "Bronze 40$/utilisateur/mois (32$ annuel) ; Silver 50$ (40$ annuel) ; Platinum 60$ (48$ annuel). Add-ons séparés : transcription +15$, dashboard +15$, IA +10$.",
+    "description_fr": "Téléphonie cloud avec numéros internationaux dans plus de 50 pays.",
+    "description_en": "Cloud telephony with international numbers in over 50 countries.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous gérez des appels clients en volume",
+      "avoid_if": "Vous avez un budget très restreint",
+      "strengths": [
+        "Agents vocaux IA multilingues performants",
+        "Boîte de réception omnicanal vraiment unifiée",
+        "Numéros virtuels dans 150+ pays"
+      ],
+      "weaknesses": [
+        "Pricing détaillé consultable seulement sur le site",
+        "Mieux pour équipes établies que startups",
+        "Interface nécessite apprentissage"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You handle customer calls at volume",
+      "avoid_if": "You have a tight budget",
+      "strengths": [
+        "Strong multilingual AI voice agents",
+        "Truly unified omnichannel inbox",
+        "Virtual numbers in 150+ countries"
+      ],
+      "weaknesses": [
+        "Detailed pricing requires site consultation",
+        "Better for established teams than startups",
+        "Interface requires learning"
+      ]
+    }
+  },
+  {
+    "name": "CallTrackingMetrics",
+    "slug": "calltrackingmetrics",
+    "url_fr": "https://tooltrim.com/fr/tool/calltrackingmetrics",
+    "url_en": "https://tooltrim.com/en/tool/calltrackingmetrics",
+    "website": "https://www.ctm.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 65 $/mois, plan Marketing Lite."
+    },
+    "description_fr": "CTM suit les appels, SMS, formulaires et chats sur les canaux marketing, et attribue chaque lead à sa campagne source pour les équipes ventes.",
+    "description_en": "CTM tracks calls, SMS, forms and chat across marketing channels and attributes each lead to its source campaign for sales and marketing teams.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Tu gères une petite équipe ventes ou marketing et tu dois attribuer appels, SMS et leads de formulaires à des campagnes précises",
+      "avoid_if": "Tu es seul et tu as juste besoin d'un suivi d'appels basique, sans coût de transcription à la minute",
+      "strengths": [
+        "Suit appels, SMS, formulaires et chat en un seul endroit plutôt que des outils séparés",
+        "Utilisateurs et sous-comptes illimités sur tous les plans payants"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit ; le plan payant le moins cher facture quand même chaque minute de transcription séparément",
+        "Les minutes de transcription incluses n'arrivent qu'à partir du deuxième plan payant"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "You run a small sales or marketing team and need to attribute calls, SMS and form leads to specific campaigns",
+      "avoid_if": "You're a solo user who just needs basic call tracking without per-minute transcription costs",
+      "strengths": [
+        "Tracks calls, SMS, forms and chat in one place instead of separate point tools",
+        "Unlimited users and sub-accounts on every paid plan"
+      ],
+      "weaknesses": [
+        "No free plan; the cheapest paid tier still bills every transcription minute separately",
+        "Transcription minutes only come included from the second-tier plan upward"
+      ]
+    }
+  },
+  {
+    "name": "Chatbase",
+    "slug": "chatbase",
+    "url_fr": "https://tooltrim.com/fr/tool/chatbase",
+    "url_en": "https://tooltrim.com/en/tool/chatbase",
+    "website": "https://www.chatbase.co",
+    "category": "communication",
+    "pricing": {
+      "free": "Gratuit avec 1 chatbot basique",
+      "paid": "Hobby ~27€/mois"
+    },
+    "description_fr": "Crée un chatbot IA entraîné sur tes données — site, docs, PDF — en quelques minutes.",
+    "description_en": "Build an AI chatbot trained on your data — website, docs, PDF — in minutes.",
+    "price_verified_on": "2026-05-08",
+    "verdict_fr": {
+      "keep_if": "Vous recherchez une solution de support client entièrement automatisée",
+      "avoid_if": "Votre support client demande une expertise humaine très élevée",
+      "strengths": [
+        "Agents IA avancés avec modèles GPT dernière génération",
+        "Plan gratuit à titre permanent",
+        "Intégrations nombreuses avec CRM et plateformes de communication"
+      ],
+      "weaknesses": [
+        "Le plan gratuit est très limité (50 crédits/mois)",
+        "Les coûts augmentent rapidement avec le volume de messages",
+        "Dépendance à des modèles IA tiers (OpenAI, etc.)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need fully automated customer support",
+      "avoid_if": "Your support requires deep human expertise",
+      "strengths": [
+        "Advanced AI agents with latest GPT models",
+        "Free plan available permanently",
+        "Numerous integrations with CRM and communication platforms"
+      ],
+      "weaknesses": [
+        "Free plan is very limited (50 credits/month)",
+        "Costs escalate quickly with message volume",
+        "Dependence on third-party AI models (OpenAI, etc.)"
+      ]
+    }
+  },
+  {
+    "name": "Cision",
+    "slug": "cision",
+    "url_fr": "https://tooltrim.com/fr/tool/cision",
+    "url_en": "https://tooltrim.com/en/tool/cision",
+    "website": "https://cision.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Aucun plan gratuit",
+      "paid": "Sur devis annuel, à partir d'environ 525.6€/mois"
+    },
+    "description_fr": "Base de données journalistes et veille média entreprise, prix sur devis annuel uniquement.",
+    "description_en": "Enterprise journalist database and media monitoring, annual custom-quote pricing only.",
+    "price_verified_on": "2026-06-25",
+    "verdict_fr": {
+      "keep_if": "Vous gérez les relations médias à l'échelle pour une entreprise ou agence",
+      "avoid_if": "Vous êtes une PME ou startup avec budget communication limité",
+      "strengths": [
+        "Base de données de journalistes la plus complète de l'industrie",
+        "Monitoring de couverture intégré et précis",
+        "Suite complète de outils PR en une plateforme"
+      ],
+      "weaknesses": [
+        "Tarification élevée et contrats minimums obligatoires",
+        "Courbe d'apprentissage importante pour l'interface",
+        "Pas adapté aux PME ou startups"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage media relations at enterprise scale",
+      "avoid_if": "You're an SME or startup with limited communication budget",
+      "strengths": [
+        "Most comprehensive journalist database in the industry",
+        "Integrated and accurate media coverage monitoring",
+        "Complete PR toolset in one platform"
+      ],
+      "weaknesses": [
+        "High pricing and mandatory minimum contracts",
+        "Steep learning curve for interface",
+        "Not suited for SMEs or startups"
+      ]
+    }
+  },
+  {
+    "name": "CloudTask Marketplace",
+    "slug": "cloudtask-marketplace",
+    "url_fr": "https://tooltrim.com/fr/tool/cloudtask-marketplace",
+    "url_en": "https://tooltrim.com/en/tool/cloudtask-marketplace",
+    "website": "https://cloudtask.com/",
+    "category": "communication",
+    "pricing": {
+      "free": null,
+      "paid": "Service de recrutement : 299 $ de frais de mise en relation par recrutement, staffing géré sur devis."
+    },
+    "description_fr": "Marketplace de talents B2B RevOps en freelance.",
+    "description_en": "B2B marketplace for freelance RevOps talent.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin de prospecteurs ou d'agences de vente supplémentaires rapidement",
+      "avoid_if": "Vous demandez une solution interne et autonome pour la prospection",
+      "strengths": [
+        "Pas de frais de courtage ou d'abonnement sur de nombreux engagements",
+        "Transparence complète dans l'attribution de la rémunération",
+        "Modèles de paiement flexibles (résultats ou forfaitaire)"
+      ],
+      "weaknesses": [
+        "Dépendance à la qualité et la disponibilité des prestataires du marché",
+        "Nécessite un processus d'intégration avec chaque nouveau prestataire",
+        "Moins d'automatisation qu'une plateforme logicielle interne"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need extra prospectors or sales agencies fast",
+      "avoid_if": "You want an internal, autonomous prospecting solution",
+      "strengths": [
+        "No brokerage fees or subscriptions on many engagements",
+        "Complete transparency in payment attribution",
+        "Flexible payment models (results or fixed fee)"
+      ],
+      "weaknesses": [
+        "Dependent on marketplace provider quality and availability",
+        "Requires onboarding with each new provider",
+        "Less automation than an internal software platform"
+      ]
+    }
+  },
+  {
+    "name": "Cognism",
+    "slug": "cognism",
+    "url_fr": "https://tooltrim.com/fr/tool/cognism",
+    "url_en": "https://tooltrim.com/en/tool/cognism",
+    "website": "https://cognism.com",
+    "category": "communication",
+    "pricing": "Sur devis uniquement. Grow (5 utilisateurs) ≈ 22500$/an ; Elevate ≈ 37500$/an+. Onboarding 500-1500$, +10-15% à chaque renouvellement. Négocie : des remises de 28-52% sont courantes.",
+    "description_fr": "Base de données B2B avec numéros mobiles vérifiés, orientée conformité RGPD pour l'Europe.",
+    "description_en": "B2B database with verified mobile numbers, GDPR-compliance-oriented for Europe.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous ciblez principalement les entreprises européennes",
+      "avoid_if": "Vous cherchez une plateforme mondial couvrant aussi l'Asie et l'Amérique",
+      "strengths": [
+        "Données européennes hautement vérifiées et complètes",
+        "Numéros mobiles vérifiés améliorant les taux de connection",
+        "Signaux d'intention d'achat pour prioriser"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit ou de trial illimité",
+        "Couverture principalement en Europe (moins pour autre régions)",
+        "Tarification finale demande un devis (pas transparence totale)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You primarily target European companies",
+      "avoid_if": "You need global coverage across Asia and Americas",
+      "strengths": [
+        "Highly verified and complete European data",
+        "Verified mobile numbers boost answer rates",
+        "Buying intent signals for prioritization"
+      ],
+      "weaknesses": [
+        "No free plan or unlimited trial",
+        "Coverage primarily in Europe (less for other regions)",
+        "Final pricing requires a quote (not fully transparent)"
+      ]
+    }
+  },
+  {
+    "name": "Cossistant",
+    "slug": "cossistant",
+    "url_fr": "https://tooltrim.com/fr/tool/cossistant",
+    "url_en": "https://tooltrim.com/en/tool/cossistant",
+    "website": "https://cossistant.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit limité",
+      "paid": "Starter 19$/mois"
+    },
+    "description_fr": "Assistant IA pour automatiser le service client et les tickets support.",
+    "description_en": "AI assistant to automate customer service and support tickets.",
+    "alternatives": [
+      "Freshdesk",
+      "intercom"
+    ],
+    "price_verified_on": "2026-05-08",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez un support client open source à intégrer dans votre React app",
+      "avoid_if": "Vous préférez une solution entièrement hébergée et SaaS prête à l'emploi",
+      "strengths": [
+        "Open source : contrôle total du code et des données",
+        "Plan gratuit permanent avec fonctionnalités réelles",
+        "Combinaison IA + humain réduisant les coûts d'opération"
+      ],
+      "weaknesses": [
+        "Requiert une équipe technique pour l'intégration en React",
+        "Moins de templates pré-construits qu'un Intercom traditionnel",
+        "Support limité comparé à des SaaS établis"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want an open-source customer support framework for your React app",
+      "avoid_if": "You prefer a fully hosted, out-of-the-box SaaS",
+      "strengths": [
+        "Open source: full control over code and data",
+        "Free plan permanently available with real features",
+        "AI + human combo reducing operation costs"
+      ],
+      "weaknesses": [
+        "Requires technical team for React integration",
+        "Fewer pre-built templates than traditional Intercom",
+        "Limited support vs. established SaaS"
+      ]
+    }
+  },
+  {
+    "name": "Crisp",
+    "slug": "crisp",
+    "url_fr": "https://tooltrim.com/fr/tool/crisp",
+    "url_en": "https://tooltrim.com/en/tool/crisp",
+    "website": "https://crisp.chat",
+    "category": "communication",
+    "pricing": {
+      "free": "2 agents, 100 profils clients, widget de chat live.",
+      "paid": "Mini 45€/mois (4 agents, 5000 profils) ; Essentials 95€/mois (10 sièges, IA, workflows) ; Plus 295€/mois (sièges supplémentaires à 10€/agent)."
+    },
+    "description_fr": "Chat client avec tarification au workspace (pas par siège) : gratuit puis dès 45€/mois.",
+    "description_en": "Customer chat priced per workspace (not per seat): free, then from €45/month.",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'un live chat + email + CRM unifié",
+      "avoid_if": "Vous avez des besoins très complexes (ticketing, SLA stricts pour grandes équipes)",
+      "strengths": [
+        "Plan gratuit permanent et très utilisable",
+        "Tarification forfaitaire prévisible (pas de surprise avec le volume)",
+        "Omnicanal complet (WhatsApp, Instagram, SMS, Messenger) inclus"
+      ],
+      "weaknesses": [
+        "Pour les très grandes équipes, un plan custom peut être plus cher",
+        "Moins de personnalisation poussée qu'Intercom",
+        "Les agents additionnels aux plans mini/essentials sont limités"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need unified live chat + email + CRM",
+      "avoid_if": "You have complex needs (ticketing, strict SLAs for big teams)",
+      "strengths": [
+        "Free plan permanent and highly usable",
+        "Predictable flat pricing (no volume surprises)",
+        "Complete omnichannel (WhatsApp, Instagram, SMS, Messenger)"
+      ],
+      "weaknesses": [
+        "For very large teams, custom plan can be pricier",
+        "Less deep customization than Intercom",
+        "Additional agents on mini/essentials plans are limited"
+      ]
+    }
+  },
+  {
+    "name": "Discord",
+    "slug": "discord",
+    "url_fr": "https://tooltrim.com/fr/tool/discord",
+    "url_en": "https://tooltrim.com/en/tool/discord",
+    "website": "https://discord.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Messagerie, voix/vidéo et fonctionnalités de serveur de base gratuites, sans limite de membres ou de serveurs ; Nitro est une amélioration payante optionnelle, pas requise pour l'usage de base.",
+      "paid": "Dès 2,99 $/mois, plan Nitro Basic."
+    },
+    "description_fr": "Discord est une plateforme gratuite de chat vocal, vidéo et texte organisée en serveurs communautaires, avec Nitro en amélioration payante optionnelle.",
+    "description_en": "Discord is a free voice, video and text chat platform organized into community servers, with Nitro as an optional paid upgrade.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux un espace de chat communautaire ou d'équipe gratuit avec voix et vidéo, et tu n'as besoin des extras Nitro qu'occasionnellement",
+      "avoid_if": "Tu as besoin de fonctionnalités d'administration d'entreprise comme le SSO ou le reporting de conformité que fournit un outil de chat professionnel dédié",
+      "strengths": [
+        "Les fonctionnalités communautaires de base (membres illimités, serveurs illimités, voix et vidéo) restent gratuites sans mise à niveau forcée",
+        "Le prix de Nitro est assez bas (2,99 à 9,99 $/mois) pour qu'un créateur puisse monter en gamme progressivement selon les besoins de la communauté"
+      ],
+      "weaknesses": [
+        "Pas conçu pour des besoins d'administration d'entreprise formels comme le SSO ou le reporting structuré que fournissent les outils de chat professionnels",
+        "L'usage d'emojis personnalisés sur d'autres serveurs et le streaming vidéo HD nécessitent tous deux un abonnement Nitro payant, non disponibles gratuitement"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You want a free community or team chat space with voice and video, and only need Nitro's extras occasionally",
+      "avoid_if": "You need enterprise admin features like SSO or compliance reporting that a dedicated business chat tool provides",
+      "strengths": [
+        "Core community features (unlimited members, unlimited servers, voice and video) stay free with no forced upgrade",
+        "Nitro's price is low enough ($2.99 to $9.99/month) that a creator can upgrade gradually as the community's needs grow"
+      ],
+      "weaknesses": [
+        "Not built for formal business admin needs like SSO or structured reporting that enterprise chat tools provide",
+        "Custom emoji use on other servers and HD video streaming both require a paid Nitro subscription, not available free"
+      ]
+    }
+  },
+  {
+    "name": "Eventbrite",
+    "slug": "eventbrite",
+    "url_fr": "https://tooltrim.com/fr/tool/eventbrite",
+    "url_en": "https://tooltrim.com/en/tool/eventbrite",
+    "website": "https://www.eventbrite.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Événements gratuits illimités sans frais ; les frais ne s'appliquent qu'aux billets payants",
+      "paid": "Dès 0 $/mois, plan Free events."
+    },
+    "description_fr": "Une plateforme de billetterie : gratuite pour les événements gratuits, avec des frais par billet sur les billets payants.",
+    "description_en": "An event ticketing platform: free for free events, with a per-ticket fee on paid tickets.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Garde-le pour des événements gratuits, ou payants quand l'acheteur peut absorber les frais",
+      "avoid_if": "Passe ton tour si tu vends beaucoup de billets payants et veux un coût fixe par événement",
+      "strengths": [
+        "Gratuit pour les événements gratuits, sans abonnement",
+        "Les frais peuvent être reportés sur l'acheteur",
+        "Application de contrôle des entrées et versements avant l'événement"
+      ],
+      "weaknesses": [
+        "Des frais sur chaque billet payant, sans formule forfaitaire",
+        "Outils marketing limités à quelques pays"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Keep it for free events, or paid events where buyers can absorb the fees",
+      "avoid_if": "Skip it if you sell many paid tickets and want a fixed cost per event",
+      "strengths": [
+        "Free for free events, no subscription",
+        "Fees can be passed on to buyers",
+        "Check-in app and payouts before the event"
+      ],
+      "weaknesses": [
+        "Fees on every paid ticket, with no flat-fee option",
+        "Marketing tools limited to a few countries"
+      ]
+    }
+  },
+  {
+    "name": "Frame.io",
+    "slug": "frame-io",
+    "url_fr": "https://tooltrim.com/fr/tool/frame-io",
+    "url_en": "https://tooltrim.com/en/tool/frame-io",
+    "website": "https://frame.io",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 2 membres, 2 projets, 2 Go de stockage standard + 2 Go de stockage monté",
+      "paid": "Dès 15 $/mois, plan Pro."
+    },
+    "description_fr": "Frame.io permet aux équipes vidéo et à leurs clients de commenter les montages image par image et de partager les rushs directement depuis la caméra.",
+    "description_en": "Frame.io lets video teams and their clients comment frame-by-frame on cuts, stack versions and share footage straight from the camera.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Garde-le si tu envoies régulièrement des montages vidéo à des clients ou collaborateurs et as besoin de retours précis à l'image plutôt que des fils d'e-mails",
+      "avoid_if": "Évite-le si ton volume de review est assez faible pour qu'un dossier cloud partagé avec commentaires suffise déjà, ou si tu ne tournes jamais avec du matériel compatible Camera to Cloud",
+      "strengths": [
+        "Camera to Cloud supprime l'étape manuelle de transfert et d'upload des rushs après un tournage",
+        "Chaque plan payant, y compris le plan Pro d'entrée, inclut déjà la conformité SOC 2 Type 2"
+      ],
+      "weaknesses": [
+        "Le stockage de 2 Go et la limite de 2 projets du plan gratuit le rendent inutilisable au-delà d'un test rapide",
+        "Les commentaires internes séparés des commentaires client et les projets illimités demandent de passer du plan Pro au plan Team, plus cher"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "Keep it if you regularly send video cuts to clients or collaborators and need frame-accurate, timecoded feedback instead of email threads",
+      "avoid_if": "Avoid it if your review volume is low enough that a shared cloud folder with comments already works, or if you never shoot with Camera to Cloud compatible gear",
+      "strengths": [
+        "Camera to Cloud removes the manual step of transferring and uploading footage after a shoot",
+        "Every paid plan, including the entry Pro tier, already includes SOC 2 Type 2 compliance"
+      ],
+      "weaknesses": [
+        "The free plan's 2GB storage and 2-project cap make it unusable for anything beyond a quick test",
+        "Separated internal/client comments and unlimited projects require jumping from Pro to the pricier Team plan"
+      ]
+    }
+  },
+  {
+    "name": "Freshservice",
+    "slug": "freshservice",
+    "url_fr": "https://tooltrim.com/fr/tool/freshservice",
+    "url_en": "https://tooltrim.com/en/tool/freshservice",
+    "website": "https://freshworks.com/freshservice",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 15 €/mois, plan Starter."
+    },
+    "description_fr": "Plateforme de gestion de service et d'actifs IT avec une grille de prix par agent, du ticketing basique à l'ITSM d'entreprise.",
+    "description_en": "IT service and asset management platform with a per-agent pricing ladder from basic ticketing to enterprise ITSM.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères le support IT et les actifs d'une équipe qui a besoin de gestion des SLA et des changements, pas juste une file de tickets",
+      "avoid_if": "Tu es indépendant ou en équipe de 2 personnes sans processus IT formel à gérer",
+      "strengths": [
+        "Périmètre ITSM/ITAM/ITOM large sous une seule plateforme et une seule grille de prix",
+        "L'essai de 14 jours donne un accès complet et sans restriction pour évaluer avant d'acheter",
+        "La découverte automatisée des actifs et la CMDB remplacent les tableurs d'inventaire manuels"
+      ],
+      "weaknesses": [
+        "Les fonctionnalités ITSM clés (gestion des SLA, des changements) demandent de dépasser Starter",
+        "Freddy AI Copilot est facturé comme un add-on séparé par agent, en plus du prix du plan"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You manage IT support and assets for a team that needs SLA and change management, not just a ticket queue",
+      "avoid_if": "You are a solo freelancer or a 2-person team with no formal IT process to manage",
+      "strengths": [
+        "Broad ITSM/ITAM/ITOM feature set under one platform and one price ladder",
+        "14-day trial gives full, unrestricted access to evaluate before buying",
+        "Automated asset discovery and CMDB replace manual inventory spreadsheets"
+      ],
+      "weaknesses": [
+        "Core ITSM features (SLA management, change management) require upgrading past Starter",
+        "Freddy AI Copilot is billed as a separate per-agent add-on on top of the plan price"
+      ]
+    }
+  },
+  {
+    "name": "Gmail",
+    "slug": "gmail",
+    "url_fr": "https://tooltrim.com/fr/tool/gmail",
+    "url_en": "https://tooltrim.com/en/tool/gmail",
+    "website": "https://gmail.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Compte personnel @gmail.com gratuit avec 15 Go de stockage partagés entre Gmail, Drive et Photos.",
+      "paid": "Dès 6,80 €/mois, plan Google Workspace Business Starter."
+    },
+    "description_fr": "Un service de messagerie personnelle gratuit qui évolue vers une suite professionnelle Google Workspace avec stockage partagé, Gmail, Drive et l'IA Gemini.",
+    "description_en": "A free personal email service that scales into a paid Google Workspace business suite with shared storage, Gmail, Drive and Gemini AI.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Ton équipe travaille déjà avec Docs, Sheets et Meet et tu veux une messagerie d'entreprise partagée sans infrastructure supplémentaire",
+      "avoid_if": "Tu as besoin d'archivage ou de conformité email avancée, ou d'une suite collaborative hors de l'écosystème Google",
+      "strengths": [
+        "Offre gratuite généreuse (15 Go), suffisante pour la plupart des usages personnels avant toute mise à niveau",
+        "Les offres Business montent en puissance sans rupture, d'un fondateur seul jusqu'aux grandes équipes Enterprise sans limite"
+      ],
+      "weaknesses": [
+        "Les fonctions IA Gemini sont absentes de l'offre Business Starter, la moins chère",
+        "Les offres Business Starter, Standard et Plus plafonnent à 300 utilisateurs, ce qui oblige les grandes équipes à passer sur l'offre Enterprise sur devis"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "Your team already lives in Google Docs, Sheets and Meet and you want one shared company email without extra infrastructure",
+      "avoid_if": "You need advanced email compliance or archiving, or a collaboration suite outside Google's ecosystem",
+      "strengths": [
+        "Generous free tier (15GB) good enough for most personal use before any upgrade is needed",
+        "Business plans scale smoothly from a single founder to large uncapped Enterprise teams"
+      ],
+      "weaknesses": [
+        "Gemini AI features are withheld from the cheapest Business Starter plan",
+        "Business Starter, Standard and Plus plans cap out at 300 users, pushing larger teams to a quoted Enterprise plan"
+      ]
+    }
+  },
+  {
+    "name": "Google Meet",
+    "slug": "google-meet",
+    "url_fr": "https://tooltrim.com/fr/tool/google-meet",
+    "url_en": "https://tooltrim.com/en/tool/google-meet",
+    "website": "https://googlemeet.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Gratuit, réunions jusqu'à 60 min et 100 participants.",
+      "paid": "Via Google Workspace : à partir de 6,90€/mois/utilisateur pour des réunions plus longues et l'enregistrement."
+    },
+    "description_fr": "La visioconférence de Google, intégrée à Calendar et Gmail.",
+    "description_en": "Google's video conferencing, integrated with Calendar and Gmail.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous voulez des visioconférences intégrées à Agenda et Gmail",
+      "avoid_if": "Vous avez besoin de webinaires avancés et de nombreuses intégrations",
+      "strengths": [
+        "Lancement d'une réunion en un clic depuis Agenda ou Gmail",
+        "Aucune installation requise côté navigateur",
+        "Enregistrement, sous-titres et arrière-plans selon l'édition Workspace"
+      ],
+      "weaknesses": [
+        "Fonctions de webinaire et d'engagement en retrait",
+        "Écosystème d'intégrations tierces limité",
+        "Fonctions avancées réservées à Workspace"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want video meetings integrated with Calendar and Gmail",
+      "avoid_if": "You need advanced webinars and many integrations",
+      "strengths": [
+        "Start a meeting in one click from Calendar or Gmail",
+        "No install needed in the browser",
+        "Recording, captions and backgrounds depending on Workspace edition"
+      ],
+      "weaknesses": [
+        "Webinar and engagement features trail",
+        "Limited third-party integration ecosystem",
+        "Advanced features reserved for Workspace"
+      ]
+    }
+  },
+  {
+    "name": "Help Scout",
+    "slug": "helpscout",
+    "url_fr": "https://tooltrim.com/fr/tool/helpscout",
+    "url_en": "https://tooltrim.com/en/tool/helpscout",
+    "website": "https://helpscout.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 5 utilisateurs, 1 boîte de réception, 1 site Docs (base de connaissances), 100 contacts par mois",
+      "paid": "Dès 25 $/mois, plan Standard."
+    },
+    "description_fr": "Help Scout est une plateforme de support client par email avec boîte de réception partagée, base de connaissance et widget Beacon intégrable, dès 25 $/utilisateur/mois après un plan gratuit à 5 utilisateurs.",
+    "description_en": "Help Scout is an email-based customer support platform with a shared inbox, a help center and the embeddable Beacon widget, starting at $25 per user/month after a 5-user free plan.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères une petite équipe support par email, avec chat en direct en option, et tu veux des réponses assistées par IA et une boîte partagée sans un gros helpdesk IT facturé par siège",
+      "avoid_if": "Tu as besoin de la conformité HIPAA ou de permissions avancées avec moins de 10 sièges, car ce palier exige un minimum de 10 sièges",
+      "strengths": [
+        "Une seule boîte de réception partagée couvre l'email et le chat en direct via Beacon, au lieu d'outils séparés pour chaque canal",
+        "La rédaction assistée par IA, le récapitulatif et la traduction sont intégrés à la boîte de réception plutôt que vendus à part"
+      ],
+      "weaknesses": [
+        "Le palier Pro, le seul avec permissions avancées et conformité HIPAA, exige un minimum de 10 sièges même pour une petite équipe",
+        "Les boîtes de réception supplémentaires au-delà du quota du plan ajoutent 10 $/mois chacune, en plus du prix par utilisateur"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run a small support team on email, optionally with live chat, and want AI-assisted replies and a shared inbox without a large per-seat IT helpdesk",
+      "avoid_if": "You need HIPAA compliance or advanced permissions with fewer than 10 seats, since that tier has a 10-seat minimum",
+      "strengths": [
+        "One shared inbox covers email plus live chat via Beacon, instead of separate tools for each channel",
+        "AI-assisted drafting, recapping and translation are built into the inbox rather than sold as a separate add-on"
+      ],
+      "weaknesses": [
+        "The Pro tier, the only one with advanced permissions and HIPAA compliance, requires a 10-seat minimum even for a smaller team",
+        "Extra inboxes beyond a plan's included count add $10/month each, on top of the per-user price"
+      ]
+    }
+  },
+  {
+    "name": "Instagram",
+    "slug": "instagram",
+    "url_fr": "https://tooltrim.com/fr/tool/instagram",
+    "url_en": "https://tooltrim.com/en/tool/instagram",
+    "website": "https://www.instagram.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Gratuit, sans limite de publications ni de followers.",
+      "paid": "Aucun abonnement Instagram natif. Le coût vient de la pub (Meta Ads, budget libre) ou d'outils tiers de gestion/planification (Buffer, Later...)."
+    },
+    "description_fr": "Réseau social visuel gratuit ; les coûts réels viennent de la pub et des outils tiers, pas de la plateforme.",
+    "description_en": "Free visual social network; the real costs come from ads and third-party tools, not the platform itself.",
+    "verdict_fr": {
+      "keep_if": "Vous êtes un créateur cherchant une plateforme pour générer des revenus via monétisation",
+      "avoid_if": "Vous cherchez une plateforme de business-to-business B2B",
+      "strengths": [
+        "Plateforme gratuite avec une audience massive (2 milliards d'utilisateurs)",
+        "Options de monétisation natives (abonnements, Reels Bonus) sans appel tiers",
+        "Outils d'analytics détaillés pour les comptes pro"
+      ],
+      "weaknesses": [
+        "Plateforme très concurrentielle (viralité imprévisible)",
+        "Instagram prélève une part importante des revenus de monétisation",
+        "Modération de contenu et shadowbanning peuvent impacter reach"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a creator seeking a platform to earn money via monetization",
+      "avoid_if": "You're looking for a B2B platform",
+      "strengths": [
+        "Free platform with massive audience (2 billion users)",
+        "Native monetization (subscriptions, Reels Bonus) without third parties",
+        "Detailed analytics for pro accounts"
+      ],
+      "weaknesses": [
+        "Highly competitive platform (virality unpredictable)",
+        "Instagram takes a significant share of monetization revenue",
+        "Content moderation and shadowbanning can impact reach"
+      ]
+    }
+  },
+  {
+    "name": "Intercom",
+    "slug": "intercom",
+    "url_fr": "https://tooltrim.com/fr/tool/intercom",
+    "url_en": "https://tooltrim.com/en/tool/intercom",
+    "website": "https://intercom.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 29 $/mois, plan Essential."
+    },
+    "description_fr": "Plateforme de support client assistee par IA combinant boite de reception partagee, centre d'aide et Fin AI Agent, a partir de 29 $/siege/mois.",
+    "description_en": "AI-powered customer support platform combining a shared inbox, help center and Fin AI Agent, from $29/seat/month.",
+    "alternatives": [
+      "Crisp"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu as assez de volume de support pour justifier un agent IA qui resout les conversations avant qu'un humain ne les voie",
+      "avoid_if": "Ton volume de conversations est faible ; les couts par siege et par resolution ne seront pas encore rentables",
+      "strengths": [
+        "Fin AI Agent resout en moyenne environ 76 % des conversations rapportees avant d'atteindre un humain",
+        "Combine boite de reception, ticketing, centre d'aide et agent IA dans une seule plateforme"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit ; chaque siege est payant des le depart",
+        "Les resolutions Fin AI sont facturees separement par resultat en plus du prix du siege, et s'accumulent a fort volume"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You have enough support volume to justify an AI agent resolving conversations before a human sees them",
+      "avoid_if": "Your conversation volume is low; the per-seat and per-resolution costs won't be worth it yet",
+      "strengths": [
+        "Fin AI Agent resolves a reported ~76% of conversations on average before reaching a human",
+        "Combines inbox, ticketing, help center and AI agent in one platform"
+      ],
+      "weaknesses": [
+        "No free plan; every seat is paid from day one",
+        "Fin AI resolutions bill separately per outcome on top of the seat price, and add up at volume"
+      ]
+    }
+  },
+  {
+    "name": "Kavkom",
+    "slug": "kavkom",
+    "url_fr": "https://tooltrim.com/fr/tool/kavkom",
+    "url_en": "https://tooltrim.com/en/tool/kavkom",
+    "website": "https://kavkom.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Pack Basic à 8 € HT par utilisateur et par mois avec engagement de 12 mois (10 € sans engagement)."
+    },
+    "description_fr": "Solution de téléphonie IP pour communications d’entreprise.",
+    "description_en": "IP telephony solution for business communications.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'une solution de téléphonie cloud avec appels illimités",
+      "avoid_if": "Votre budget est très limité",
+      "strengths": [
+        "Appels illimités sans engagement sur les principaux pays",
+        "Facturation au prorata (payer seulement ce qu'on utilise)",
+        "Tarification transparente en euros"
+      ],
+      "weaknesses": [
+        "Ticket d'entrée par utilisateur",
+        "Couverture mondiale limitée (focus France/USA/Canada)",
+        "Interface moins moderne qu'un Ringover ou RingCentral"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need cloud VoIP with unlimited calls",
+      "avoid_if": "Your budget is very tight",
+      "strengths": [
+        "Unlimited calls without commitment on main countries",
+        "Pro-rata billing (pay only for what you use)",
+        "Transparent pricing in euros"
+      ],
+      "weaknesses": [
+        "Per-user entry ticket",
+        "Global coverage limited (France/USA/Canada focus)",
+        "Interface less modern than Ringover or RingCentral"
+      ]
+    }
+  },
+  {
+    "name": "Kixie",
+    "slug": "kixie",
+    "url_fr": "https://tooltrim.com/fr/tool/kixie",
+    "url_en": "https://tooltrim.com/en/tool/kixie",
+    "website": "https://kixie.com",
+    "category": "communication",
+    "pricing": {
+      "free": null,
+      "paid": "Plans présentés sans prix sur la page tarifs ; tarif sur devis."
+    },
+    "description_fr": "Plateforme d’engagement commercial avec appels et SMS intégrés.",
+    "description_en": "Sales engagement platform with integrated calling and SMS.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous avez une équipe de prospection téléphonique importante",
+      "avoid_if": "Votre budget est limité (Kixie est premium)",
+      "strengths": [
+        "Power dialer automation pour prospection en masse",
+        "Local Presence Dialing avec 50 000+ numéros",
+        "Voicemail drop illimité avec messages personnalisés"
+      ],
+      "weaknesses": [
+        "Tarification sur devis uniquement (pas de transparence)",
+        "Solution premium, coûts probablement élevés",
+        "Appels internationaux facturés en sus (USA/Canada illimités)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have a large prospecting phone team",
+      "avoid_if": "Your budget is limited (Kixie is premium)",
+      "strengths": [
+        "Power dialer automation for bulk prospecting",
+        "Local Presence Dialing with 50,000+ numbers",
+        "Unlimited voicemail drop with custom messages"
+      ],
+      "weaknesses": [
+        "Quote-based pricing only (no transparency)",
+        "Premium solution, costs likely high",
+        "International calls billed extra (USA/Canada unlimited)"
+      ]
+    }
+  },
+  {
+    "name": "KrispCall",
+    "slug": "krispcall",
+    "url_fr": "https://tooltrim.com/fr/tool/krispcall",
+    "url_en": "https://tooltrim.com/en/tool/krispcall",
+    "website": "https://krispcall.com/",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas de forfait gratuit identifié. Remboursement de l’abonnement sous 14 jours selon conditions, à ne pas confondre avec un essai gratuit.",
+      "paid": "USD par utilisateur : Starter 15 $/mois, Advance 40 $, Max 60 $ en mensuel ; 12 $, 32 $, 48 $/mois facturés annuellement. Enterprise sur devis. Dépassements, numéros et options en sus ; taxes à confirmer."
+    },
+    "description_fr": "Téléphonie cloud et boîte partagée pour appels, SMS et suivi des échanges clients.",
+    "description_en": "Cloud phone system and shared inbox for calls, texts and customer conversations.",
+    "price_verified_on": "2026-09-26",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Vous partagez des numéros et devez retrouver les conversations clients en équipe",
+      "avoid_if": "Vous attendez des appels illimités partout au seul prix de l’abonnement",
+      "strengths": [
+        "Appels, SMS, messages vocaux et notes dans une boîte partagée",
+        "Routage IVR et intégrations CRM disponibles",
+        "Enregistrement et Power Dialer à partir d’Advance"
+      ],
+      "weaknesses": [
+        "Quotas et destinations éligibles à vérifier avant achat",
+        "Power Dialer exclu des communications incluses de Max",
+        "Transcription et résumé proposés en supplément"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Your team shares business numbers and needs conversation history",
+      "avoid_if": "You expect unlimited worldwide calls for the subscription price alone",
+      "strengths": [
+        "Shared inbox for calls, texts, voicemail and notes",
+        "IVR routing and CRM integrations",
+        "Recording and Power Dialer from Advance"
+      ],
+      "weaknesses": [
+        "Check allowances and eligible routes before purchase",
+        "Power Dialer is excluded from Max included calling",
+        "Transcription and summaries cost extra"
+      ]
+    }
+  },
+  {
+    "name": "LeadSquared",
+    "slug": "leadsquared",
+    "url_fr": "https://tooltrim.com/fr/tool/leadsquared",
+    "url_en": "https://tooltrim.com/en/tool/leadsquared",
+    "website": "https://leadsquared.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "CRM Sales Pro à 40 $ par utilisateur et par mois, facturé à l'année."
+    },
+    "description_fr": "Plateforme d’exécution commerciale et d’automatisation marketing.",
+    "description_en": "Sales execution and marketing automation platform.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous gérez une équipe commerciale avec besoins multi-canal (appels, SMS, WhatsApp)",
+      "avoid_if": "Vous cherchez un CRM très simple pour PME léger",
+      "strengths": [
+        "Communication multi-canal nativement intégrée (Email, Chat, WhatsApp, SMS, Phone)",
+        "Mobile CRM optimisé pour équipes terrain",
+        "Solutions verticales pré-configurées par industrie"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit",
+        "Marketing automation moins riche qu'un HubSpot",
+        "Interface peut être complexe pour débutants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage a sales team with multi-channel needs (calls, SMS, WhatsApp)",
+      "avoid_if": "You want a simple CRM for light SMB use",
+      "strengths": [
+        "Multi-channel communication natively integrated (Email, Chat, WhatsApp, SMS, Phone)",
+        "Mobile CRM optimized for field teams",
+        "Vertical-specific solutions pre-configured by industry"
+      ],
+      "weaknesses": [
+        "No free plan",
+        "Marketing automation less rich than HubSpot",
+        "Interface can be complex for beginners"
+      ]
+    }
+  },
+  {
+    "name": "Liinks",
+    "slug": "liinks",
+    "url_fr": "https://tooltrim.com/fr/tool/liinks",
+    "url_en": "https://tooltrim.com/en/tool/liinks",
+    "website": "https://liinks.co",
+    "category": "communication",
+    "pricing": {
+      "free": "Création et test de la page gratuits avant de s'engager.",
+      "paid": "Starter 5$/mois : l'essentiel pour une page de liens. Pro 12$/mois : domaine personnalisé et gestion de plusieurs profils."
+    },
+    "description_fr": "Page de liens bio personnalisable pour créateurs, dès 5$/mois.",
+    "description_en": "Customizable link-in-bio page for creators, from $5/month.",
+    "alternatives": [
+      "Linktree"
+    ],
+    "price_verified_on": "2026-05-08",
+    "verdict_fr": {
+      "keep_if": "Vous êtes créateur et avez une présence multiplateforme (Instagram, TikTok, etc.)",
+      "avoid_if": "Vous ne crées pas de contenu ou n'avez qu'une plateforme unique",
+      "strengths": [
+        "Plan gratuit complet et très utilisable",
+        "Tarification très accessible",
+        "Intégrations Mailchimp et Instagram"
+      ],
+      "weaknesses": [
+        "Fonctionnalités de base seulement sur plan gratuit",
+        "Le plan Pro impose un pack de plusieurs profils",
+        "Moins de features marketing qu'un Beacons ou Later"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a creator with multi-platform presence (Instagram, TikTok, etc.)",
+      "avoid_if": "You don't create content or have only one platform",
+      "strengths": [
+        "Complete and highly usable free plan",
+        "Very affordable pricing",
+        "Mailchimp and Instagram integrations"
+      ],
+      "weaknesses": [
+        "Basic features only on free plan",
+        "The Pro plan requires a multi-profile pack",
+        "Fewer marketing features than Beacons or Later"
+      ]
+    }
+  },
+  {
+    "name": "LinkedIn",
+    "slug": "linkedin",
+    "url_fr": "https://tooltrim.com/fr/tool/linkedin",
+    "url_en": "https://tooltrim.com/en/tool/linkedin",
+    "website": "https://linkedin.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Gratuit : profil, posts, messages, recherche de base.",
+      "paid": "Premium Business 59,99$/mois ; Premium All-in-One 99$/mois. Sales Navigator Core 119,99$/mois (~90$ en annuel) ; Advanced 159,99$/mois ; Advanced Plus sur devis (~1600$/an)."
+    },
+    "description_fr": "Réseau pro gratuit ; Premium Business à 60$/mois, Sales Navigator dès 120$/mois.",
+    "description_en": "Free professional network; Premium Business at $60/month, Sales Navigator from $120/month.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez à développer un réseau professionnel B2B",
+      "avoid_if": "Vous ne travaillez qu'en B2C ou marketing consumer",
+      "strengths": [
+        "Plateforme gratuite avec beaucoup de valeur",
+        "Réseau professionnel le plus grand et pertinent au monde",
+        "Plans Premium plus accessibles avec l'engagement annuel"
+      ],
+      "weaknesses": [
+        "Les plans Premium peuvent revenir cher par licence",
+        "Algorithme d'engagement peut être imprévisible",
+        "Fonctionnalités CRM-like moins développées qu'un Salesforce"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want to build a B2B professional network",
+      "avoid_if": "You only work in B2C or consumer marketing",
+      "strengths": [
+        "Free platform with significant value",
+        "Largest and most relevant professional network worldwide",
+        "Premium plans are more affordable on annual billing"
+      ],
+      "weaknesses": [
+        "Premium plans can get pricey per licence",
+        "Engagement algorithm can be unpredictable",
+        "CRM-like features less developed than Salesforce"
+      ]
+    }
+  },
+  {
+    "name": "Loom",
+    "slug": "loom",
+    "url_fr": "https://tooltrim.com/fr/tool/loom",
+    "url_en": "https://tooltrim.com/en/tool/loom",
+    "website": "https://loom.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 50 membres d'espace de travail, 25 vidéos par personne, enregistrements d'écran limités à 5 minutes.",
+      "paid": "Dès 15 $/mois, plan Business."
+    },
+    "description_fr": "Loom enregistre l'écran, la caméra et la voix, puis partage un lien vidéo immédiatement lisible avec transcription et commentaires.",
+    "description_en": "Loom records screen, camera and voice, then shares an instantly playable video link with transcription and comments.",
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu expliques régulièrement quelque chose de visuel (un bug, un design, un process) et veux remplacer un appel ou un message long par une vidéo de 2 minutes",
+      "avoid_if": "Tu as besoin de vidéos marketing ou de démo bien montées : le montage de Loom reste basique même sur les plans payants",
+      "strengths": [
+        "Du lancement de l'enregistrement au lien partageable, il ne faut que quelques secondes, sans montage nécessaire pour un résultat utilisable",
+        "La transcription automatique dans plus de 50 langues rend les enregistrements consultables et accessibles sans outil supplémentaire"
+      ],
+      "weaknesses": [
+        "Les fonctions IA de montage et de récap restent réservées au plan Business + AI, plus cher, et absentes du plan Business de base",
+        "La limite de 5 minutes par enregistrement du plan gratuit Starter le rend impraticable au-delà de courts clips"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You regularly explain something visual (a bug, a design, a process) and want to replace a live call or a long message with a 2-minute video",
+      "avoid_if": "You need polished, edited marketing or demo videos: Loom's editing stays basic even on paid plans",
+      "strengths": [
+        "Recording to shareable link takes seconds, with no editing required for a usable result",
+        "Automatic transcription in 50+ languages makes recordings searchable and accessible without extra tools"
+      ],
+      "weaknesses": [
+        "Core AI editing and recap features sit behind the pricier Business + AI plan, not the base Business plan",
+        "The free Starter plan's 5-minute recording cap makes it unsuitable for anything beyond quick clips"
+      ]
+    }
+  },
+  {
+    "name": "Meltwater",
+    "slug": "meltwater",
+    "url_fr": "https://tooltrim.com/fr/tool/meltwater",
+    "url_en": "https://tooltrim.com/en/tool/meltwater",
+    "website": "https://meltwater.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Aucun plan gratuit",
+      "paid": "Sur devis, à partir d'environ 438€/mois (Starter) jusqu'à 10950€+/mois (Enterprise)"
+    },
+    "description_fr": "Veille média et social listening à l'échelle entreprise, prix entièrement sur devis.",
+    "description_en": "Enterprise-scale media monitoring and social listening, fully custom-quoted pricing.",
+    "price_verified_on": "2026-06-25",
+    "verdict_fr": {
+      "keep_if": "Vous gère la communication/RP pour une marque ou agence",
+      "avoid_if": "Vous cherchez une solution gratuite ou très bon marché",
+      "strengths": [
+        "Couverture mondiale : 150M+ sources médias et réseaux",
+        "Analyse sentiment précise et détection de crises",
+        "Base contacts médias/influencers très riche"
+      ],
+      "weaknesses": [
+        "Tarification opaque et sur devis, positionnée haut de marché",
+        "Courbe apprentissage notable pour maximaliser l'outil",
+        "Meilleur ROI pour équipes avec volume fort"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage comms/PR for a brand or agency",
+      "avoid_if": "You're looking for a free or very cheap solution",
+      "strengths": [
+        "Global coverage: 150M+ media and social sources",
+        "Accurate sentiment analysis and crisis detection",
+        "Rich media/influencer contact database"
+      ],
+      "weaknesses": [
+        "Opaque, quote-only pricing positioned at the high end",
+        "Notable learning curve to maximize the tool",
+        "Best ROI for teams with high mention volume"
+      ]
+    }
+  },
+  {
+    "name": "OpenPhone",
+    "slug": "openphone",
+    "url_fr": "https://tooltrim.com/fr/tool/openphone",
+    "url_en": "https://tooltrim.com/en/tool/openphone",
+    "website": "https://www.quo.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 15 $/mois, plan Starter."
+    },
+    "description_fr": "Numéros de téléphone professionnels facturés par utilisateur, avec appels, SMS et IA pour petites équipes ; sans plan gratuit, essai de 7 jours seulement.",
+    "description_en": "Per-seat business phone numbers with calling, texting and AI call features for small teams, with no free plan and only a 7-day trial.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu diriges une petite équipe de vente, de support ou d'ops qui a besoin de numéros partagés, de routage d'appels et de notes d'appels par IA, sans système téléphonique classique",
+      "avoid_if": "Tu n'as besoin que d'un seul numéro pour toi-même et tu ne veux pas t'engager sur un forfait payant après un court essai",
+      "strengths": [
+        "Facturation mensuelle sans engagement disponible dès le forfait Starter, pas besoin de s'engager sur un an pour démarrer",
+        "Les résumés, transcriptions et tags d'appels par IA réduisent la prise de notes manuelle sur les forfaits Business et Scale"
+      ],
+      "weaknesses": [
+        "L'enregistrement automatique des appels, le SVI et les intégrations CRM sont réservés au forfait Business, indisponibles sur Starter",
+        "Aucun plan gratuit : seulement un essai de 7 jours avant la facturation, et les tarifs par siège les plus bas exigent un engagement annuel"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You run a small sales, support or ops team that needs shared numbers, call routing and AI call notes without a legacy phone system",
+      "avoid_if": "You only need one phone number for yourself and don't want to commit to a paid plan after a short trial",
+      "strengths": [
+        "Month-to-month billing available on the entry Starter plan, no annual lock-in required to get started",
+        "AI call summaries, transcripts and tags reduce manual note-taking on the Business and Scale tiers"
+      ],
+      "weaknesses": [
+        "Automatic call recording, IVR and CRM integrations are locked behind the Business tier, not available on Starter",
+        "No free plan: only a 7-day trial before billing starts, and the lowest per-seat rates require an annual commitment"
+      ]
+    }
+  },
+  {
+    "name": "PipelinePRO",
+    "slug": "pipelinepro",
+    "url_fr": "https://tooltrim.com/fr/tool/pipelinepro",
+    "url_en": "https://tooltrim.com/en/tool/pipelinepro",
+    "website": "https://pipelinepro.io",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Cloud à 25 € par utilisateur et par mois (2 To de stockage)."
+    },
+    "description_fr": "Plateforme de gestion de pipeline de ventes et d’automatisation marketing.",
+    "description_en": "Sales pipeline management and marketing automation platform.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous dirigez un studio d'animation ou VFX avec équipe distribuée",
+      "avoid_if": "Vous êtes freelancer solo",
+      "strengths": [
+        "Automatisation native des workflows de production créatif",
+        "Intégrations API complètes pour une extensibilité maximale",
+        "Gestion centralisée des actifs et des versions"
+      ],
+      "weaknesses": [
+        "Tarification opaque (sur demande)",
+        "Complexité initiale pour la mise en place",
+        "Nécessite une équipe pour maximiser le ROI"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You run an animation or VFX studio with a distributed team",
+      "avoid_if": "You're a solo freelancer",
+      "strengths": [
+        "Native automation of creative production workflows",
+        "Complete API integrations for maximum extensibility",
+        "Centralized asset and version management"
+      ],
+      "weaknesses": [
+        "Opaque pricing (quote-based)",
+        "Initial setup complexity",
+        "Requires a team to maximize ROI"
+      ]
+    }
+  },
+  {
+    "name": "Product Hunt",
+    "slug": "product-hunt",
+    "url_fr": "https://tooltrim.com/fr/tool/product-hunt",
+    "url_en": "https://tooltrim.com/en/tool/product-hunt",
+    "website": "https://producthunt.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Gratuit pour parcourir, voter, commenter et lancer un produit sur le classement du jour.",
+      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
+    },
+    "description_fr": "Une plateforme communautaire où de nouveaux produits tech sont lancés, votés et commentés chaque jour par les utilisateurs et les créateurs.",
+    "description_en": "A community-driven platform where new tech products are launched, voted on and discussed by users and makers every day.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu lances un produit et tu veux un pic de visibilité gratuit, le temps d'une journée, auprès des early adopters",
+      "avoid_if": "Tu attends de Product Hunt seul une acquisition client durable, sans aucune autre action de promotion",
+      "strengths": [
+        "Gratuit pour parcourir, voter et lancer des produits",
+        "Large audience d'early adopters et de créateurs curieux de nouvelles technologies"
+      ],
+      "weaknesses": [
+        "Aucun prix transparent pour la promotion ou le sponsoring payant ; il faut contacter l'équipe",
+        "Le mécanisme de classement et les protections anti-triche ne sont pas documentés publiquement"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You are launching a product and want a one-day spike of free visibility among early adopters",
+      "avoid_if": "You expect Product Hunt alone to produce lasting customer acquisition without any other promotion",
+      "strengths": [
+        "Free to use for browsing, voting and launching products",
+        "Wide reach among tech-curious early adopters and makers"
+      ],
+      "weaknesses": [
+        "No transparent pricing for paid promotion or sponsorship; details require contacting the team",
+        "Ranking and anti-gaming mechanics are not documented publicly"
+      ]
+    }
+  },
+  {
+    "name": "Prowly",
+    "slug": "prowly",
+    "url_fr": "https://tooltrim.com/fr/tool/prowly",
+    "url_en": "https://tooltrim.com/en/tool/prowly",
+    "website": "https://prowly.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Essai gratuit de 7 jours avec accès complet",
+      "paid": "Basic dès 323.24€/mois (sans relances auto ni rapports détaillés)"
+    },
+    "description_fr": "Logiciel RP (communiqués, base journalistes, monitoring) — en cours d'absorption par Semrush.",
+    "description_en": "PR software (press releases, journalist database, monitoring) — being absorbed into Semrush.",
+    "price_verified_on": "2026-06-25",
+    "verdict_fr": {
+      "keep_if": "Vous gérez RP/communications pour PME ou agence",
+      "avoid_if": "Vous publiez très rarement des communiqués de presse",
+      "strengths": [
+        "Distribution et tracking press releases en une plateforme",
+        "IA pour optimiser et rédiger communiqués automatiquement",
+        "Base contacts médias riche et à jour"
+      ],
+      "weaknesses": [
+        "Tarification élevée dès l'entrée de gamme",
+        "Meilleur ROI pour équipes avec volume RP régulier",
+        "Interface peut sembler complexe au démarrage"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage PR/communications for SME or agency",
+      "avoid_if": "You send very few press releases (< 1/month)",
+      "strengths": [
+        "Press release distribution and tracking in one platform",
+        "AI to automatically optimize and write releases",
+        "Rich, up-to-date media contact database"
+      ],
+      "weaknesses": [
+        "Pricing is high even at entry level",
+        "Best ROI for teams with regular PR volume",
+        "Interface may feel complex at first"
+      ]
+    }
+  },
+  {
+    "name": "ResponseTap",
+    "slug": "responsetap",
+    "url_fr": "https://tooltrim.com/fr/tool/responsetap",
+    "url_en": "https://tooltrim.com/en/tool/responsetap",
+    "website": "https://responsetap.com",
+    "category": "communication",
+    "pricing": {
+      "free": null,
+      "paid": "ResponseTap fait désormais partie d'Infinity ; tarifs sur devis."
+    },
+    "description_fr": "Logiciel de suivi des appels pour les marketers.",
+    "description_en": "Call tracking software for marketers.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous avez des campagnes marketing numériques générant des appels entrants",
+      "avoid_if": "Vous avez peu d'appels entrants",
+      "strengths": [
+        "Traçabilité précise des appels vers les sources marketing",
+        "Smart Match pour faciliter l'upload des données de vente",
+        "Enregistrement des appels pour la formation et la conformité"
+      ],
+      "weaknesses": [
+        "Tarification opaque ; devis requis pour la plupart des cas",
+        "Frais de mise en œuvre facturés en supplément, variables selon le périmètre",
+        "Pas d'essai gratuit (démo sur demande)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have digital marketing campaigns generating inbound calls",
+      "avoid_if": "You have few inbound calls",
+      "strengths": [
+        "Precise call-to-marketing-source attribution",
+        "Smart Match simplifies sales data uploads",
+        "Call recording for training and compliance"
+      ],
+      "weaknesses": [
+        "Opaque pricing; quote required for most cases",
+        "Implementation fees apply on top of the subscription",
+        "No free trial (demo on request)"
+      ]
+    }
+  },
+  {
+    "name": "Riverside",
+    "slug": "riverside",
+    "url_fr": "https://tooltrim.com/fr/tool/riverside",
+    "url_en": "https://tooltrim.com/en/tool/riverside",
+    "website": "https://riverside.fm",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : 2 heures d'enregistrement multipiste au total, export vidéo jusqu'à 720p avec filigrane, enregistrement/montage monopiste illimité.",
+      "paid": "Dès 24 $/mois, plan Pro."
+    },
+    "description_fr": "Riverside enregistre des pistes audio/vidéo locales séparées par participant à distance jusqu'en 4K, avec 2h gratuites puis dès 29 $ par mois.",
+    "description_en": "Riverside records separate local audio/video tracks per remote participant in up to 4K, with a free 2-hour plan and paid tiers from $29 per month.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu enregistres des invités podcast ou vidéo à distance et as besoin de pistes séparées qualité broadcast qui survivent à une mauvaise connexion",
+      "avoid_if": "Tu n'as besoin que d'un enregistrement monopiste, car l'avantage principal des plans payants (4K, sans filigrane) reste limité par des heures de téléchargement de pistes plafonnées",
+      "strengths": [
+        "Les pistes locales séparées par participant protègent la qualité même si la connexion d'un invité flanche",
+        "Montage par le texte et transcription illimités sur tous les plans payants, sans restriction par palier"
+      ],
+      "weaknesses": [
+        "Le quota de 2 heures multipiste du plan gratuit est un total à vie, pas une allocation mensuelle",
+        "Les heures de téléchargement de pistes séparées restent plafonnées (15 à 25h/mois) même sur les plans payants"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You record remote podcast or video guests and need broadcast-quality separate tracks that survive a bad connection",
+      "avoid_if": "You only need single-track recording, since the paid tiers' core advantage (4K, no watermark) comes with capped track-download hours either way",
+      "strengths": [
+        "Separate local tracks per participant protect quality even if a guest's connection drops",
+        "Unlimited text-based editing and transcription on every paid plan, not gated by tier"
+      ],
+      "weaknesses": [
+        "The free plan's 2-hour multi-track quota is a lifetime total, not a monthly allowance",
+        "Separate-track download hours stay capped (15 to 25h/month) even on paid plans"
+      ]
+    }
+  },
+  {
+    "name": "Ruby",
+    "slug": "ruby",
+    "url_fr": "https://tooltrim.com/fr/tool/ruby",
+    "url_en": "https://tooltrim.com/en/tool/ruby",
+    "website": "https://ruby.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Réceptionniste virtuel Starter à 250 $ par mois pour 50 minutes, facturé mensuellement."
+    },
+    "description_fr": "Standard téléphonique virtuel et chat en direct pour entreprises.",
+    "description_en": "Virtual phone system and live chat for businesses.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous recevez beaucoup d'appels entrants que vous ne pouvez pas tous répondre",
+      "avoid_if": "Vous avez très peu d'appels entrants",
+      "strengths": [
+        "Réceptionnistes réels (humains), pas juste bots",
+        "Prise de rendez-vous intégrée et professionnelle",
+        "Intégrations CRM directes pour un flux de données unifié"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite",
+        "Coût peut être élevé pour beaucoup d'appels",
+        "Dépendance à la disponibilité des réceptionnistes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You receive many inbound calls you can't answer yourself",
+      "avoid_if": "You have very few inbound calls",
+      "strengths": [
+        "Real receptionists (humans), not just bots",
+        "Integrated appointment scheduling and professional",
+        "Direct CRM integrations for unified data flow"
+      ],
+      "weaknesses": [
+        "No free version",
+        "Cost can be high for many calls",
+        "Dependency on receptionist availability"
+      ]
+    }
+  },
+  {
+    "name": "Slido",
+    "slug": "slido",
+    "url_fr": "https://tooltrim.com/fr/tool/slido",
+    "url_en": "https://tooltrim.com/en/tool/slido",
+    "website": "https://www.slido.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Jusqu'à 100 participants, sondages, Q&A, nuages de mots, quiz.",
+      "paid": "Plans payants selon le nombre de participants et les besoins de marque/analytics ; les tarifs varient fortement selon la taille d'événement, à vérifier sur devis pour un usage au-delà de 100 participants."
+    },
+    "description_fr": "Sondages et Q&A en direct pour réunions et événements, gratuit jusqu'à 100 participants.",
+    "description_en": "Live polls and Q&A for meetings and events, free up to 100 participants.",
+    "verdict_fr": {
+      "keep_if": "Vous animez des événements, conférences ou formations régulièrement",
+      "avoid_if": "Vous n'animez que des événements ponctuels ou fermés",
+      "strengths": [
+        "Plan gratuit très généreux (100 participants, core features)",
+        "Intégration directe PowerPoint et Google Slides",
+        "Interface intuitive et rapide à mettre en place"
+      ],
+      "weaknesses": [
+        "Les plans payants ne facturent qu'en annuel (pas de mensuel flexible)",
+        "Limité à 100 participants sur le plan gratuit",
+        "Pas de personnalisation avancée sur les éditions inférieures"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You regularly host events, conferences, or training sessions",
+      "avoid_if": "You only host occasional or closed events",
+      "strengths": [
+        "Very generous free plan (100 participants, core features)",
+        "Direct PowerPoint and Google Slides integration",
+        "Intuitive interface and quick setup"
+      ],
+      "weaknesses": [
+        "Paid plans are annual only (no flexible monthly)",
+        "Capped at 100 participants on free plan",
+        "No advanced customization on lower editions"
+      ]
+    }
+  },
+  {
+    "name": "Snov.io",
+    "slug": "snov-io",
+    "url_fr": "https://tooltrim.com/fr/tool/snov-io",
+    "url_en": "https://tooltrim.com/en/tool/snov-io",
+    "website": "https://snov.io/",
+    "category": "communication",
+    "pricing": {
+      "free": "Offre Trial gratuite renouvelée chaque mois : 50 crédits, 100 destinataires et 25 jetons d'enrichissement.",
+      "paid": "Starter à 39 $ par mois (1 000 crédits, 5 000 destinataires), utilisateurs illimités."
+    },
+    "description_fr": "Plateforme d’automatisation des ventes (recherche d’emails",
+    "description_en": "Sales automation platform (email search)",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous prospectez par email et avez besoin de trouver des adresses ciblées",
+      "avoid_if": "Vous n'avez que des listes complètes et vous n'avez pas besoin de chercher des emails",
+      "strengths": [
+        "Plan gratuit suffisant pour débuter sans risque",
+        "Système de crédits flexible et transparent (réduction progressif par crédit)",
+        "Warmup de mailbox automatique pour améliorer la délivrabilité"
+      ],
+      "weaknesses": [
+        "Les prix montent rapidement pour une équipe avec usage élevé",
+        "Risque de spam si la warmup ou les messages ne sont pas optimisés",
+        "Support basé sur l'anglais principalement"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You prospect via email and need to find targeted addresses",
+      "avoid_if": "You only have complete lists and don't need to find emails",
+      "strengths": [
+        "Free plan sufficient to get started without risk",
+        "Flexible credit system and transparent pricing (per-credit cost decreases)",
+        "Automatic mailbox warmup to improve deliverability"
+      ],
+      "weaknesses": [
+        "Prices scale quickly for high-volume teams",
+        "Risk of spam if warmup or messages aren't optimized",
+        "Support primarily in English"
+      ]
+    }
+  },
+  {
+    "name": "StreamElements",
+    "slug": "streamelements",
+    "url_fr": "https://tooltrim.com/fr/tool/streamelements",
+    "url_en": "https://tooltrim.com/en/tool/streamelements",
+    "website": "https://streamelements.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Gratuit : alertes, overlays, widgets et chatbot pour le live, présentés comme gratuits à vie.",
+      "paid": "Aucune offre payante publiée ; partenariats et sponsorings sur demande."
+    },
+    "description_fr": "Overlays, alertes et boutique merch pour streamers, sans abonnement obligatoire.",
+    "description_en": "Overlays, alerts and a merch store for streamers, no subscription required.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous streamez sur Twitch, YouTube ou Facebook et vous voulez des overlays professionnels",
+      "avoid_if": "Vous avez besoin d'une suite plus large (enregistrement, édition, multistream)",
+      "strengths": [
+        "Complètement gratuit, aucune limitation ni abonnement",
+        "Large gamme de thèmes prédéfinis (Super Themes)",
+        "Interface drag-and-drop intuitive"
+      ],
+      "weaknesses": [
+        "Pas de support direct premium",
+        "Dépend du bon fonctionnement de la plateforme (à la merci des changements API)",
+        "Certaines fonctionnalités avancées demandent du temps de setup"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You stream on Twitch, YouTube, or Facebook and want professional overlays",
+      "avoid_if": "You need a broader suite (recording, editing, multistream)",
+      "strengths": [
+        "Completely free with no limits or subscriptions",
+        "Large range of preset themes (Super Themes)",
+        "Intuitive drag-and-drop interface"
+      ],
+      "weaknesses": [
+        "No premium direct support",
+        "Dependent on platform reliability (subject to API changes)",
+        "Some advanced features require setup time"
+      ]
+    }
+  },
+  {
+    "name": "Streamlabs",
+    "slug": "streamlabs",
+    "url_fr": "https://tooltrim.com/fr/tool/streamlabs",
+    "url_en": "https://tooltrim.com/en/tool/streamlabs",
+    "website": "https://streamlabs.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Gratuit : capture, overlays de base, alertes, chat intégré.",
+      "paid": "Prime 19$/mois (149$/an, ~12,42$/mois) : thèmes premium, sans marque Streamlabs, sons d'alerte illimités. Ultra 27$/mois pour les outils d'équipe et de monétisation avancés."
+    },
+    "description_fr": "Logiciel de streaming gratuit avec alertes et overlays ; Prime à 19$/mois pour le sans-marque.",
+    "description_en": "Free streaming software with alerts and overlays; Prime at $19/month removes branding.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous streamez sur une seule plateforme et vous voulez une solution gratuite et simple",
+      "avoid_if": "Vous avez déjà un workflow complexe et vous n'avez pas envie de migrer",
+      "strengths": [
+        "Desktop software gratuit et complet",
+        "Ultra offre multistreaming cloud (avantage décisif sur concurrent)",
+        "Talk Studio intégré pour interviews et podcasts"
+      ],
+      "weaknesses": [
+        "Desktop gratuit limité dans les thèmes et fonctionnalités",
+        "Ultra n'est pas indispensable si vous streamez sur une plateforme unique",
+        "Concurrence avec OBS (gratuit et entièrement open source)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You stream on one platform and want a free, simple solution",
+      "avoid_if": "You already have a complex workflow and don't want to migrate",
+      "strengths": [
+        "Free, complete Desktop software",
+        "Ultra offers cloud multistreaming (decisive advantage)",
+        "Integrated Talk Studio for interviews and podcasts"
+      ],
+      "weaknesses": [
+        "Free Desktop limited in themes and features",
+        "Ultra is unnecessary if you stream on a single platform",
+        "Competition from OBS (free and fully open source)"
+      ]
+    }
+  },
+  {
+    "name": "Superhuman",
+    "slug": "superhuman",
+    "url_fr": "https://tooltrim.com/fr/tool/superhuman",
+    "url_en": "https://tooltrim.com/en/tool/superhuman",
+    "website": "https://superhuman.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 25 $/mois, plan Starter."
+    },
+    "description_fr": "Superhuman est un client e-mail assisté par IA qui ajoute brouillons automatiques, tri et intégrations CRM par-dessus une boîte mail connectée.",
+    "description_en": "Superhuman is an AI-assisted email client that adds auto drafts, triage and CRM integrations on top of a connected inbox.",
+    "alternatives": [
+      "superhuman"
+    ],
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu traites un volume élevé d'e-mails et tu veux une rédaction et un tri assistés par IA intégrés à ta boîte mail",
+      "avoid_if": "Tu as un faible volume d'e-mails et un client gratuit comme Gmail couvre déjà tes besoins",
+      "strengths": [
+        "Business inclut un serveur MCP Superhuman Mail, qui permet aux agents IA d'agir directement sur les e-mails, chose rare parmi les clients e-mail grand public",
+        "L'administration et la facturation unifiées sont incluses dès le plan d'entrée Starter, et non réservées à un palier supérieur"
+      ],
+      "weaknesses": [
+        "Aucune durée d'essai gratuit n'est indiquée sur la page tarifaire, contrairement à de nombreux concurrents SaaS",
+        "Le tarif annoncé de 33 $/mois pour Business est lié à une équipe de 5 comptes ou plus, le tarif pour une personne seule ou une petite équipe restant flou"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You process a high volume of email and want AI-assisted drafting and triage integrated into your inbox",
+      "avoid_if": "You have light email volume where a free client like Gmail already covers your needs",
+      "strengths": [
+        "Business includes a Superhuman Mail MCP server, letting AI agents act directly on email, unusual among mainstream email clients",
+        "Unified admin and billing is included even on the entry Starter plan, not reserved for a higher tier"
+      ],
+      "weaknesses": [
+        "No free trial length is stated on the pricing page, unlike many SaaS competitors",
+        "Business's advertised $33/month rate is tied to a 5+ account team size, with the solo or small-team rate left unclear"
+      ]
+    }
+  },
+  {
+    "name": "SurveyMonkey",
+    "slug": "surveymonkey",
+    "url_fr": "https://tooltrim.com/fr/tool/surveymonkey",
+    "url_en": "https://tooltrim.com/en/tool/surveymonkey",
+    "website": "https://www.surveymonkey.com/",
+    "category": "communication",
+    "pricing": {
+      "free": "Basic gratuit avec limites de questions et réponses consultables à vérifier.",
+      "paid": "Offres équipes observées en EUR : Team Advantage 30 €/utilisateur/mois équivalent, Team Premier 75 €, facturés annuellement, minimum 3 utilisateurs. Quotas 50 000/100 000 réponses par an ; 0,10 € par réponse supplémentaire. Audience vendu séparément, taxes à confirmer."
+    },
+    "description_fr": "Questionnaires, collecte de réponses et analyse des retours.",
+    "description_en": "Surveys, response collection and feedback analysis.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Vous avez besoin de logique et d’analyses de questionnaires",
+      "avoid_if": "Un formulaire simple couvre votre collecte ponctuelle",
+      "strengths": [
+        "Logique et analyse des questionnaires",
+        "Rôles et ressources partagés en équipe"
+      ],
+      "weaknesses": [
+        "Minimum 3 sièges sur les offres équipes",
+        "Réponses supplémentaires et Audience payants"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You need survey logic and analysis",
+      "avoid_if": "A simple form covers your one-off collection",
+      "strengths": [
+        "Survey logic and analysis",
+        "Shared team assets and roles"
+      ],
+      "weaknesses": [
+        "Three-seat minimum on team plans",
+        "Extra responses and Audience cost more"
+      ]
+    }
+  },
+  {
+    "name": "Tally",
+    "slug": "tally",
+    "url_fr": "https://tooltrim.com/fr/tool/tally",
+    "url_en": "https://tooltrim.com/en/tool/tally",
+    "website": "https://tally.so",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Formulaires et soumissions illimités dans le cadre d'un usage raisonnable ; paiements, signatures électroniques, envoi de fichiers (10 Mo/fichier), logique conditionnelle, plus de 45 langues.",
+      "paid": "Dès 24 $/mois, plan Pro."
+    },
+    "description_fr": "Tally est un créateur de formulaires gratuit en priorité, avec logique conditionnelle, paiements, signatures électroniques et intégrations natives Notion, Sheets et Zapier.",
+    "description_en": "Tally is a free-first, block-based form builder with conditional logic, payments and e-signatures, plus native Notion, Sheets and Zapier integrations.",
+    "alternatives": [
+      "tally"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu as besoin de formulaires avec paiements ou signatures électroniques, sans avoir encore besoin d'un domaine personnalisé ou de sièges d'équipe",
+      "avoid_if": "Tu as besoin de retirer la marque Tally ou d'utiliser un domaine personnalisé : cela demande de passer à Pro à 24 $/mois",
+      "strengths": [
+        "Le plan gratuit inclut déjà paiements, signatures électroniques et soumissions illimitées, pas seulement des formulaires basiques",
+        "Les intégrations natives avec Google Sheets, Notion, Airtable et Zapier fonctionnent sans intermédiaire supplémentaire"
+      ],
+      "weaknesses": [
+        "Les envois de fichiers sont plafonnés à 10 Mo par fichier tant que tu n'es pas passé à Pro",
+        "Le domaine personnalisé et le retrait de la marque demandent l'offre Pro à 24 $/mois"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You need forms with payments or e-signatures and don't yet need a custom domain or team seats",
+      "avoid_if": "You need to remove Tally branding or use a custom domain: that requires upgrading to Pro at $24/month",
+      "strengths": [
+        "The free plan already includes payments, e-signatures and unlimited submissions, not just basic forms",
+        "Native integrations with Google Sheets, Notion, Airtable and Zapier work without extra middleware"
+      ],
+      "weaknesses": [
+        "File uploads are capped at 10MB per file until you upgrade to Pro",
+        "Custom domain and branding removal require the $24/month Pro plan"
+      ]
+    }
+  },
+  {
+    "name": "Tidio",
+    "slug": "tidio",
+    "url_fr": "https://tooltrim.com/fr/tool/tidio",
+    "url_en": "https://tooltrim.com/en/tool/tidio",
+    "website": "https://tidio.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Free limité ; essai de 7 jours sans carte, puis retour au gratuit.",
+      "paid": "Tarifs EUR localisés : Starter 29 €/mois pour 100 conversations facturables ; Growth dès 59 € pour 250. Quotas Lyro AI et Flows distincts. Les 50 conversations Lyro offertes sont uniques, pas mensuelles. Taxes à confirmer."
+    },
+    "description_fr": "Chat client, tickets et agent IA Lyro pour le support.",
+    "description_en": "Customer chat, tickets and the Lyro AI support agent.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Vous traitez régulièrement des demandes client répétitives",
+      "avoid_if": "Vous n’avez pas de contenu fiable pour encadrer les réponses IA",
+      "strengths": [
+        "Chat et tickets réunis",
+        "Automatisations et transfert humain"
+      ],
+      "weaknesses": [
+        "Trois compteurs d’usage distincts",
+        "Réponses IA à contrôler"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You regularly handle repetitive customer requests",
+      "avoid_if": "You lack reliable content to guide AI answers",
+      "strengths": [
+        "Chat and tickets together",
+        "Automation and human handoff"
+      ],
+      "weaknesses": [
+        "Three separate usage counters",
+        "AI answers need checking"
+      ]
+    }
+  },
+  {
+    "name": "TikTok",
+    "slug": "tiktok",
+    "url_fr": "https://tooltrim.com/fr/tool/tiktok",
+    "url_en": "https://tooltrim.com/en/tool/tiktok",
+    "website": "https://tiktok.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Application gratuite pour les utilisateurs et créateurs",
+      "paid": "Monétisation via le Creator Rewards Program (rémunération aux vues qualifiées, ~0,40-1$/1000 vues) ; budget publicitaire libre via TikTok Ads"
+    },
+    "description_fr": "Plateforme de vidéos courtes portée par un algorithme de découverte : création, montage in-app (sons, effets, sous-titres) et diffusion, avec un fort potentiel de portée organique. Volet pro via TikTok for Business / TikTok Ads.",
+    "description_en": "Short-form video platform driven by a discovery algorithm: create, edit in-app (sounds, effects, captions) and publish, with strong organic-reach potential. Business side via TikTok for Business / TikTok Ads.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous visez de la portée organique sur de la vidéo courte",
+      "avoid_if": "Votre cible n'est pas présente sur la plateforme",
+      "strengths": [
+        "Portée organique potentielle très élevée",
+        "Outils de création et de montage intégrés",
+        "Gratuit pour créer et publier"
+      ],
+      "weaknesses": [
+        "Demande une production vidéo régulière",
+        "Portée dépendante d'un algorithme changeant",
+        "Peu adapté à certaines cibles B2B de niche"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You target organic reach on short-form video",
+      "avoid_if": "Your audience isn't on the platform",
+      "strengths": [
+        "Very high potential organic reach",
+        "Built-in creation and editing tools",
+        "Free to create and publish"
+      ],
+      "weaknesses": [
+        "Requires regular video production",
+        "Reach depends on a changing algorithm",
+        "Poor fit for some niche B2B audiences"
+      ]
+    }
+  },
+  {
+    "name": "TikTok Studio",
+    "slug": "tiktok-studio",
+    "url_fr": "https://tooltrim.com/fr/tool/tiktok-studio",
+    "url_en": "https://tooltrim.com/en/tool/tiktok-studio",
+    "website": "https://tiktok.com/tiktok-studio",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Gestion complète de la chaîne, analytics, gestion des commentaires et planification incluses sans coût",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "TikTok Studio est l'outil bureau gratuit de TikTok pour les analytics de chaîne, la gestion des commentaires et la planification sur comptes pro ou créateur.",
+    "description_en": "TikTok Studio is TikTok's free desktop tool for channel analytics, comment management and post scheduling on business or creator accounts.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères ta propre chaîne TikTok et tu veux la planification et les analytics gratuitement, sans outil tiers",
+      "avoid_if": "Tu dois planifier sur TikTok et d'autres plateformes depuis un seul tableau de bord, ou modifier une publication planifiée sans tout refaire",
+      "strengths": [
+        "La gestion de chaîne, les analytics et la planification sont gratuits, sans forfait payant à débloquer",
+        "Fonctionne comme une extension directe du compte TikTok, sans connexion ni synchronisation de données séparée à gérer"
+      ],
+      "weaknesses": [
+        "Une publication planifiée ne peut pas être modifiée ; il faut la supprimer et la reposter pour changer quoi que ce soit",
+        "La planification ne fonctionne que sur les comptes professionnels ou créateurs, pas sur les comptes personnels"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You manage your own TikTok channel and want free scheduling and analytics without a third-party tool",
+      "avoid_if": "You need to schedule across TikTok and other platforms from one dashboard, or need to edit a scheduled post without redoing it",
+      "strengths": [
+        "Full channel management, analytics and scheduling are free, with no paid tier to unlock any of it",
+        "Runs as a direct extension of the TikTok account, so there's no separate login or data sync to manage"
+      ],
+      "weaknesses": [
+        "A scheduled post can't be edited; it has to be deleted and re-uploaded to change anything",
+        "Scheduling only works on business or creator accounts, not personal ones"
+      ]
+    }
+  },
+  {
+    "name": "Twitch",
+    "slug": "twitch",
+    "url_fr": "https://tooltrim.com/fr/tool/twitch",
+    "url_en": "https://tooltrim.com/en/tool/twitch",
+    "website": "https://twitch.tv",
+    "category": "communication",
+    "pricing": {
+      "free": "Gratuit pour streamer et regarder, sans limite.",
+      "paid": "Pas d'abonnement Twitch pour streamer. La monétisation se débloque par statut : Affiliate (automatique dès les seuils atteints) puis Partner (sur validation manuelle), avec un partage de revenus sur les abonnements et les bits."
+    },
+    "description_fr": "Streaming live gratuit ; Affiliate dès 25 followers, Partner par révision manuelle.",
+    "description_en": "Free live streaming; Affiliate from 25 followers, Partner by manual review.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous jouez en live ou vous faites de l'IRL et vous voulez une audience large",
+      "avoid_if": "Vous ne faites que de la production vidéo pré-enregistrée (YouTube plutôt)",
+      "strengths": [
+        "Plateforme numéro 1 pour le gaming et le streaming live",
+        "Communauté massive et culture de streameurs établie",
+        "Outils de monétisation clairs (Bits, abonnements, publicités)"
+      ],
+      "weaknesses": [
+        "Algorithme et algorithme de découverte opaque",
+        "Concurrence intense pour les nouveaux streameurs",
+        "Politiques de monétisation strictes (partenariat requis)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You play live or do IRL and want a large audience",
+      "avoid_if": "You only produce pre-recorded video content (YouTube instead)",
+      "strengths": [
+        "Number 1 platform for gaming and live streaming",
+        "Massive community and established streamer culture",
+        "Clear monetization tools (Bits, subscriptions, ads)"
+      ],
+      "weaknesses": [
+        "Algorithm and discovery algorithm opaque",
+        "Intense competition for new streamers",
+        "Strict monetization policies (partnership required)"
+      ]
+    }
+  },
+  {
+    "name": "uncovr",
+    "slug": "uncovr",
+    "url_fr": "https://tooltrim.com/fr/tool/uncovr",
+    "url_en": "https://tooltrim.com/en/tool/uncovr",
+    "website": "https://uncovr.com",
+    "category": "communication",
+    "description_fr": "Service de sources originales pour les médias et les journalistes fournissant un accès en continu aux actualités en temps réel, des analyses et des outils de salles de presse. Couvre l'Autriche, l'Allemagne et les domaines internationaux.",
+    "description_en": "Original source service for media and journalists providing real-time news stream access, analytics, and newsroom tools. Covers Austria, Germany, international domains.",
+    "verdict_fr": {
+      "keep_if": "Vous êtes journaliste ou média couvrant l'Autriche, l'Allemagne ou les domaines internationaux",
+      "avoid_if": "Vous cherchez un outil gratuit ou une version d'essai publique ; uncovr est réservé aux membres",
+      "strengths": [
+        "L'accès en continu aux textes originaux en temps réel limite la rediffusion secondaire",
+        "Les outils de salle de presse (PResstige) centralisent la gestion du contenu éditorial",
+        "Le filtrage régional granulaire réduit le bruit de la couverture hors-zone"
+      ],
+      "weaknesses": [
+        "Accès réservé aux membres : pas d'essai gratuit ni de tier public",
+        "Couverture géographique limitée (Autriche, Allemagne, domaines internationaux)",
+        "Tarification peu lisible sur le site : il faut prendre contact directement pour un devis"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are journalist or media covering Austria, Germany, international domains",
+      "avoid_if": "You seek free tool or public trial; uncovr member-only",
+      "strengths": [
+        "Real-time originaltext stream access limits secondary rediffusion",
+        "Newsroom tools (PResstige) centralize editorial content management",
+        "Granular regional filtering reduces noise outside-zone coverage"
+      ],
+      "weaknesses": [
+        "Member-only access; no free trial or public tier",
+        "Geographic coverage limited (Austria, Germany, International)",
+        "Opaque pricing on site; requires direct contact for quote"
+      ]
+    }
+  },
+  {
+    "name": "Upwork",
+    "slug": "upwork",
+    "url_fr": "https://tooltrim.com/fr/tool/upwork",
+    "url_en": "https://tooltrim.com/en/tool/upwork",
+    "website": "https://upwork.com",
+    "category": "communication",
+    "pricing": "Gratuit pour s'inscrire ; frais de service variable de 0 à 15% par contrat selon le type de mission (le taux exact est affiché avant d'accepter le contrat).",
+    "description_fr": "La plus grande place de marché freelance au monde, pour trouver des missions ou des prestataires.",
+    "description_en": "The world's largest freelance marketplace, to find projects or service providers.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez des freelancers ponctuels pour des projets courts",
+      "avoid_if": "Vous cherchez une collaboration long terme ou une embauche CDI",
+      "strengths": [
+        "Énorme bassein de freelancers qualifiés de toutes disciplines",
+        "Processus rapide et sécurisé (escrow, reviews)",
+        "Flexibilité sur la durée et le format (horaire, forfaitaire, retainer)"
+      ],
+      "weaknesses": [
+        "Frais de service importants, variables selon le plan",
+        "Surcharge de spécialistes juniors et faible qualité",
+        "Modèle de concurrence par enchère qui tire les prix vers le bas"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need one-off freelancers for short projects",
+      "avoid_if": "You're looking for long-term collaboration or full-time hiring",
+      "strengths": [
+        "Huge pool of qualified freelancers across all disciplines",
+        "Fast, secure process (escrow, reviews)",
+        "Flexibility on duration and format (hourly, fixed-price, retainer)"
+      ],
+      "weaknesses": [
+        "Significant platform fees, varying by plan",
+        "Oversupply of junior specialists and variable quality",
+        "Bidding competition model that drives prices down"
+      ]
+    }
+  },
+  {
+    "name": "vcita",
+    "slug": "vcita",
+    "url_fr": "https://tooltrim.com/fr/tool/vcita",
+    "url_en": "https://tooltrim.com/en/tool/vcita",
+    "website": "https://www.vcita.com/",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Kickstart à 29 €/mois facturé à l'année (35 € en mensuel). Essai gratuit."
+    },
+    "description_fr": "Plateforme de gestion clients pour PME (rendez-vous",
+    "description_en": "Client management platform for SMEs (appointments, CRM, billing).",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous offrez des services (coaching, consulting, legal, etc.) et vous facturez par consultation",
+      "avoid_if": "Vous vendez des produits ou du SaaS (pas un service de consultation)",
+      "strengths": [
+        "Solution complète : calendrier + paiement + CRM + SMS",
+        "Intégrations paiements directes (Stripe, etc.)",
+        "Formulaires et pages de réservation personnalisables"
+      ],
+      "weaknesses": [
+        "Coût par utilisateur élevé pour un indépendant",
+        "Interface can feel dated comparée aux concurrents modernes",
+        "Support limité (email + FAQ)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You offer services (coaching, consulting, legal, etc.) and charge per consultation",
+      "avoid_if": "You sell products or SaaS (not consulting services)",
+      "strengths": [
+        "Complete solution: calendar + payments + CRM + SMS",
+        "Direct payment integrations (Stripe, etc.)",
+        "Customizable booking forms and pages"
+      ],
+      "weaknesses": [
+        "Per-user cost is high for a solo operator",
+        "Interface can feel dated compared to modern competitors",
+        "Limited support (email + FAQ)"
+      ]
+    }
+  },
+  {
+    "name": "YouTube Studio",
+    "slug": "youtube-studio",
+    "url_fr": "https://tooltrim.com/fr/tool/youtube-studio",
+    "url_en": "https://tooltrim.com/en/tool/youtube-studio",
+    "website": "https://studio.youtube.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Fully free channel management, analytics, upload and editing interface; no paid tier of YouTube Studio itself.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "YouTube Studio est le tableau de bord gratuit de Google pour publier, modifier et analyser ses vidéos. La monétisation dépend du Partner Program.",
+    "description_en": "YouTube Studio is Google's free dashboard for uploading, editing and analyzing videos. Monetization depends on meeting Partner Program eligibility thresholds.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu développes une chaîne YouTube et tu veux des outils gratuits de publication, de montage et d'analyse réunis au même endroit",
+      "avoid_if": "Tu as besoin d'une monétisation immédiate : les seuils prennent du temps à atteindre et l'outil ne les garantit pas",
+      "strengths": [
+        "Entièrement gratuit, avec tous les outils de publication, de montage et d'analyse",
+        "Critères d'éligibilité à la monétisation publiés clairement, avec un parcours élargi pour les petites chaînes"
+      ],
+      "weaknesses": [
+        "La monétisation n'est pas automatique : il faut d'abord franchir les seuils d'abonnés et d'heures de visionnage",
+        "Un seul avertissement aux règles de la communauté peut bloquer ou retirer l'accès au Partner Program"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You are building a YouTube channel and want free upload, editing and analytics tools in one place",
+      "avoid_if": "You need monetization immediately: thresholds take time to reach and are not guaranteed by using the tool",
+      "strengths": [
+        "Completely free with full upload, editing and analytics tools",
+        "Clear, published eligibility criteria for monetization, including an expanded path for smaller channels"
+      ],
+      "weaknesses": [
+        "Monetization is not automatic: it requires clearing subscriber and watch-hour thresholds first",
+        "A single Community Guidelines strike can block or remove Partner Program access"
+      ]
+    }
+  },
+  {
+    "name": "zcal",
+    "slug": "zcal",
+    "url_fr": "https://tooltrim.com/fr/tool/zcal",
+    "url_en": "https://tooltrim.com/en/tool/zcal",
+    "website": "https://zcal.co",
+    "category": "communication",
+    "pricing": {
+      "free": "Gratuit pour les fonctionnalités essentielles",
+      "paid": "Plan Pro sur zcal.co"
+    },
+    "description_fr": "Alternative gratuite à Calendly — prise de rendez-vous avec pages élégantes.",
+    "description_en": "Free Calendly alternative — appointment booking with elegant pages.",
+    "alternatives": [
+      "zcal"
+    ],
+    "price_verified_on": "2026-05-08",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez un outil simple et gratuit pour coordonner des réunions",
+      "avoid_if": "Vous avez besoin de gestion complexe de calendrier ou de ressources partagées",
+      "strengths": [
+        "Plan gratuit vraiment complet et illimité",
+        "Sondages de dates ultra simples",
+        "Intégrations vidéo directes (Zoom, Google Meet, Teams)"
+      ],
+      "weaknesses": [
+        "Moins de features que Calendly (pas de team scheduling avancé)",
+        "Pas de CRM ou suivi de leads intégré",
+        "Moins de templates ou de personnalisation que les concurrents payants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a simple, free tool to coordinate meetings",
+      "avoid_if": "You need complex calendar management or shared resource management",
+      "strengths": [
+        "Truly complete and unlimited free plan",
+        "Ultra-simple date polls",
+        "Direct video integrations (Zoom, Google Meet, Teams)"
+      ],
+      "weaknesses": [
+        "Fewer features than Calendly (no advanced team scheduling)",
+        "No built-in CRM or lead tracking",
+        "Fewer templates or customization than paid competitors"
+      ]
+    }
+  },
+  {
+    "name": "Zendesk",
+    "slug": "zendesk",
+    "url_fr": "https://tooltrim.com/fr/tool/zendesk",
+    "url_en": "https://tooltrim.com/en/tool/zendesk",
+    "website": "https://zendesk.com",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 19 $/mois, plan Support Team."
+    },
+    "description_fr": "Plateforme de support client omnicanal (e-mail, chat, réseaux sociaux, téléphone) avec triage assisté par IA, à partir du ticketing e-mail seul.",
+    "description_en": "Omnichannel customer support platform (email, chat, social, phone) with AI-assisted triage, starting from email-only ticketing.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu es une équipe support en croissance qui a besoin d'une vraie couverture omnicanal (chat, réseaux sociaux, téléphone) et d'un triage assisté par IA",
+      "avoid_if": "Tu n'as besoin que d'un ticketing e-mail basique, ou tu es seul et le tarif par agent des plans Suite ne se justifie pas",
+      "strengths": [
+        "Large gamme de fonctionnalités : e-mail, chat, réseaux sociaux, téléphone, triage IA et base de connaissances sous une seule plateforme",
+        "Les agents IA et Admin Copilot automatisent le triage et l'assistance aux agents sur les paliers supérieurs"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit permanent, seulement un essai de 14 jours",
+        "Le plan le moins cher ne couvre que l'e-mail ; le vrai support omnicanal demande un palier Suite plus cher"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You're a growing support team that needs real omnichannel coverage (chat, social, phone) and AI-assisted triage",
+      "avoid_if": "You only need basic email ticketing, or you're a solo operator where per-agent Suite pricing doesn't pay off",
+      "strengths": [
+        "Wide feature range: email, chat, social, phone, AI triage and knowledge base under one platform",
+        "AI agents and Admin Copilot automate triage and agent assistance on higher tiers"
+      ],
+      "weaknesses": [
+        "No permanent free plan, only a 14-day trial",
+        "The cheapest plan covers email only; real omnichannel support requires a pricier Suite tier"
+      ]
+    }
+  },
+  {
+    "name": "Zoom",
+    "slug": "zoom",
+    "url_fr": "https://tooltrim.com/fr/tool/zoom",
+    "url_en": "https://tooltrim.com/en/tool/zoom",
+    "website": "https://zoom.us",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Limite de 40 minutes par réunion, jusqu'à 100 participants, pas de stockage cloud, fonctions IA limitées (3 résumés/mois, 20 requêtes IA/mois)",
+      "paid": "Dès 14,16 $/mois, plan Pro."
+    },
+    "description_fr": "Plateforme de visioconférence avec enregistrement cloud, tableaux blancs et résumés de réunion par IA, gratuite jusqu'à 40 minutes par réunion de groupe.",
+    "description_en": "Video conferencing platform with cloud recording, whiteboards, and AI meeting summaries, free up to 40 minutes per group meeting.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu organises régulièrement des réunions de plus de 40 minutes et tu veux l'enregistrement et les résumés IA intégrés",
+      "avoid_if": "Tu n'as besoin que d'appels courts occasionnels de moins de 40 minutes, où le plan gratuit couvre déjà le besoin",
+      "strengths": [
+        "Le plan gratuit gère déjà jusqu'à 100 participants sans souscrire un plan payant",
+        "Les résumés de réunion par IA et l'enregistrement cloud sont inclus dès le plan Pro, sans outil séparé"
+      ],
+      "weaknesses": [
+        "Les réunions de groupe gratuites sont plafonnées à 40 minutes, ce qui oblige à passer au payant au-delà",
+        "Les réunions plus grandes et le stockage illimité nécessitent de passer à Business ou Enterprise"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You hold meetings regularly that run past 40 minutes and want recording and AI summaries built in",
+      "avoid_if": "You only need occasional short calls under 40 minutes, where the free plan already covers the need",
+      "strengths": [
+        "Free plan already supports up to 100 participants without signing up for a paid tier",
+        "AI meeting summaries and cloud recording are included from the Pro plan, no separate tool needed"
+      ],
+      "weaknesses": [
+        "Free group meetings are capped at 40 minutes, forcing an upgrade for anything longer",
+        "Larger meeting sizes and unlimited storage require moving up to Business or Enterprise"
+      ]
+    }
+  },
+  {
+    "name": "Zoom Pro",
+    "slug": "zoom-pro",
+    "url_fr": "https://tooltrim.com/fr/tool/zoom-pro",
+    "url_en": "https://tooltrim.com/en/tool/zoom-pro",
+    "website": "https://zoom.us/pricing",
+    "category": "communication",
+    "pricing": {
+      "free": "Plan gratuit : Réunions limitées à 40 minutes, 100 participants, 3 résumés de réunion IA par mois, 20 requêtes IA par mois, 3 tableaux blancs",
+      "paid": "Dès 14,16 $/mois, plan Pro."
+    },
+    "description_fr": "Plan payant de Zoom qui supprime la limite de 40 minutes, avec enregistrement cloud, résumés IA et clips illimités.",
+    "description_en": "Paid Zoom plan removing the 40-minute meeting cap, with cloud recording, AI summaries and unlimited clips.",
+    "alternatives": [
+      "Google Meet"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu gères régulièrement des appels clients ou d'équipe de plus de 40 minutes et veux enregistrement et résumés IA inclus",
+      "avoid_if": "Tes appels sont occasionnels et restent sous les 40 minutes, où le plan gratuit Basic couvre déjà le besoin",
+      "strengths": [
+        "Supprime la limite de 40 minutes du plan gratuit et ajoute des résumés IA illimités",
+        "Chat, appels VoIP et tableaux blancs sont regroupés dans le même espace que les réunions vidéo"
+      ],
+      "weaknesses": [
+        "Le SSO et les domaines gérés demandent de passer au plan Business, non disponibles sur Pro",
+        "Les requêtes AI Companion restent plafonnées même sur le plan gratuit, à seulement 20 par mois"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You regularly run client or team calls longer than 40 minutes and want recording and AI summaries included",
+      "avoid_if": "Your calls are occasional and stay under 40 minutes, where the free Basic plan already covers the need",
+      "strengths": [
+        "Removes the free plan's 40-minute meeting cap and adds unlimited AI summaries",
+        "Chat, VoIP calling and whiteboards are bundled in the same workspace as video meetings"
+      ],
+      "weaknesses": [
+        "SSO and managed domains require jumping to the Business tier, not available on Pro",
+        "AI Companion queries stay capped even on the free plan, at only 20 per month"
+      ]
+    }
+  },
+  {
+    "name": "FranklyMail",
+    "slug": "franklymail",
+    "url_fr": "https://tooltrim.com/fr/tool/franklymail",
+    "url_en": "https://tooltrim.com/en/tool/franklymail",
+    "website": "https://franklymail.com/",
+    "category": "communication",
+    "pricing": {
+      "free": "Pas de plan gratuit",
+      "paid": "9 $/an, puis 0,40 $/Go/an au-delà de 10 Go partagés"
+    },
+    "description_fr": "Hébergement e-mail à prix fixe pour domaines personnalisés, sans facturation par boîte.",
+    "description_en": "Flat-price email hosting for custom domains with no per-mailbox fee.",
+    "price_verified_on": "2026-09-02",
+    "verdict_fr": {
+      "keep_if": "Vous possédez votre domaine et cherchez uniquement un hébergement e-mail",
+      "avoid_if": "Vous avez besoin d'un calendrier, d'un drive ou d'une suite collaborative",
+      "strengths": [
+        "Prix fixe de 9 $ par an",
+        "Boîtes, domaines et alias illimités",
+        "Protocoles standards et migration IMAP"
+      ],
+      "weaknesses": [
+        "10 Go seulement à partager avant supplément",
+        "Pas de calendrier, drive ou documents",
+        "Pas d'envoi marketing ou de newsletters"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You own your domain and only need email hosting",
+      "avoid_if": "You need calendar, drive or a collaborative office suite",
+      "strengths": [
+        "A flat $9 yearly price",
+        "Unlimited mailboxes, domains and aliases",
+        "Standard protocols and server-side IMAP migration"
+      ],
+      "weaknesses": [
+        "Only 10 GB shared before storage charges",
+        "No calendar, drive or documents",
+        "No marketing or newsletter sending"
+      ]
+    }
+  },
+  {
+    "name": "FaceReady",
+    "slug": "faceready",
+    "url_fr": "https://tooltrim.com/fr/tool/faceready",
+    "url_en": "https://tooltrim.com/en/tool/faceready",
+    "website": "https://faceready.ai/",
+    "category": "communication",
+    "pricing": {
+      "free": "Essai de 7 jours sans carte, avec filigrane. Pas de forfait gratuit permanent annoncé.",
+      "paid": "19,99 USD/mois ou 119,88 USD/an payés d’avance (équivalent 9,99 USD/mois). Taxes en sus si applicables."
+    },
+    "description_fr": "Retouche du visage en direct via une caméra virtuelle pour les appels vidéo sur Mac et Windows.",
+    "description_en": "Live facial touch-ups through a virtual camera for video calls on Mac and Windows.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Vous voulez conserver les mêmes retouches d’un outil de visioconférence à l’autre",
+      "avoid_if": "Les réglages intégrés de votre application de réunion vous suffisent",
+      "strengths": [
+        "Mêmes réglages via une caméra virtuelle dans plusieurs applications",
+        "Traitement vidéo local annoncé par l’éditeur",
+        "Essai sans carte pour vérifier le rendu avant abonnement"
+      ],
+      "weaknesses": [
+        "Abonnement supplémentaire pour un besoin esthétique ciblé",
+        "Mac Apple Silicon ou Windows 11 annoncés ; compatibilité à vérifier",
+        "Rendu et fluidité non testés par ToolTrim"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You want consistent touch-ups across video-call apps",
+      "avoid_if": "Your meeting app’s built-in adjustments are enough",
+      "strengths": [
+        "Consistent adjustments through a virtual camera across apps",
+        "Developer-reported local video processing",
+        "No-card trial to check results before subscribing"
+      ],
+      "weaknesses": [
+        "An additional subscription for a focused appearance use case",
+        "Apple Silicon Mac or Windows 11 advertised; check compatibility",
+        "Results and performance not tested by ToolTrim"
+      ]
+    }
+  },
+  {
+    "name": "Nick Launches",
+    "slug": "nick-launches",
+    "url_fr": "https://tooltrim.com/fr/tool/nick-launches",
+    "url_en": "https://tooltrim.com/en/tool/nick-launches",
+    "website": "https://nicklaunches.com/",
+    "category": "communication",
+    "pricing": {
+      "free": "Référencement gratuit avec badge.",
+      "paid": "Aucune offre payante publique relevée pour le référencement de base."
+    },
+    "description_fr": "Une plateforme de lancement et un annuaire pour faire découvrir des produits indépendants.",
+    "description_en": "A launch platform and directory for discovering indie products.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu lances un produit indépendant et tu veux ajouter un canal de découverte gratuit",
+      "avoid_if": "Tu cherches un canal d’acquisition prévisible ou des conversions garanties",
+      "strengths": [
+        "Référencement gratuit pour un produit indépendant",
+        "Fiche permanente au-delà du jour de lancement",
+        "Nouveaux produits mis en avant régulièrement"
+      ],
+      "weaknesses": [
+        "Le badge fait partie du parcours de référencement gratuit",
+        "La visibilité dépend du rythme des lancements et ne garantit pas de trafic",
+        "Aucune donnée publique ne permet de mesurer les conversions obtenues"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You are launching an indie product and want another free discovery channel",
+      "avoid_if": "You need predictable acquisition or guaranteed conversions",
+      "strengths": [
+        "Free listing for an indie product",
+        "Permanent product page beyond launch day",
+        "New products featured regularly"
+      ],
+      "weaknesses": [
+        "A badge is part of the free listing flow",
+        "Visibility depends on launch activity and does not guarantee traffic",
+        "No public data measures the conversions generated"
+      ]
+    }
+  }
+]

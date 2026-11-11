@@ -1,0 +1,2845 @@
+# ToolTrim tool catalogue — ai-general
+# Generated from src/data/tools_index.json
+# Family: ai-general (66 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Adobe Enhance Speech",
+    "slug": "adobe-enhance-speech",
+    "url_fr": "https://tooltrim.com/fr/tool/adobe-enhance-speech",
+    "url_en": "https://tooltrim.com/en/tool/adobe-enhance-speech",
+    "website": "https://podcast.adobe.com/enhance",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Outil web avec un niveau gratuit ; lié à l'écosystème Adobe Podcast (voir la fiche de la suite).",
+      "paid": "Outil web avec un niveau gratuit ; lié à l'écosystème Adobe Podcast (voir la fiche de la suite)."
+    },
+    "description_fr": "Outil d'IA d'Adobe (Adobe Podcast) qui nettoie et améliore des enregistrements vocaux : réduction de bruit et de réverbération pour un rendu net.",
+    "description_en": "Adobe AI tool (Adobe Podcast) that cleans and enhances voice recordings (removes noise, improves clarity).",
+    "price_verified_on": "2026-08-30",
+    "verdict_fr": {
+      "keep_if": "Vous nettoyez rapidement des voix bruitées par IA",
+      "avoid_if": "Vous disposez déjà d'un traitement audio professionnel",
+      "strengths": [
+        "Nettoyage vocal par IA très simple",
+        "Rendu proche d'un enregistrement studio",
+        "Rapide, dans le navigateur"
+      ],
+      "weaknesses": [
+        "Ciblé sur la voix, pas un outil de mixage complet",
+        "Moins de contrôle qu'un DAW pro",
+        "Rattaché à l'écosystème Adobe"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You quickly clean noisy voices with AI",
+      "avoid_if": "You already have professional audio processing",
+      "strengths": [
+        "Very simple AI voice cleanup",
+        "Result close to a studio recording",
+        "Fast, in the browser"
+      ],
+      "weaknesses": [
+        "Voice-focused, not a full mixing tool",
+        "Less control than a pro DAW",
+        "Tied to the Adobe ecosystem"
+      ]
+    }
+  },
+  {
+    "name": "Adobe Firefly",
+    "slug": "firefly",
+    "url_fr": "https://tooltrim.com/fr/tool/firefly",
+    "url_en": "https://tooltrim.com/en/tool/firefly",
+    "website": "https://firefly.adobe.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : Générations gratuites quotidiennes en image, vidéo et son hors de toute offre payante ; les limites se réinitialisent chaque jour. Le quota quotidien exact n'est pas donné sous forme de chiffre fixe sur la page des offres.",
+      "paid": "Dès 9,99 $/mois, plan Firefly Standard."
+    },
+    "description_fr": "Adobe Firefly est une application web d'IA générative pour l'image, la vidéo et le son, aussi intégrée à Photoshop, Premiere Pro et InDesign.",
+    "description_en": "Adobe Firefly is a generative AI web app for images, video and audio, also powering features inside Photoshop, Premiere Pro and InDesign.",
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu travailles déjà dans Photoshop, Premiere Pro ou InDesign et tu veux des outils génératifs d'image, de vidéo ou de son intégrés aux mêmes applications",
+      "avoid_if": "Tu as besoin d'un usage illimité ou prévisible chaque mois ; Firefly fonctionne avec une allocation de crédits génératifs par offre, et l'offre payante la moins chère (Standard, 9,99 $/mois) ne donne que 2 000 crédits",
+      "strengths": [
+        "Les mêmes modèles génératifs fonctionnent aussi bien en application web autonome qu'intégrés directement dans Photoshop, Premiere Pro et InDesign",
+        "Une offre gratuite avec des limites quotidiennes permet de tester la génération d'image, de vidéo et de son avant de payer, sans engagement de compte"
+      ],
+      "weaknesses": [
+        "Les prix montent fortement de Standard à Premium (9,99 $ à 199,99 $/mois au tarif normal), et les tarifs réduits de Pro Plus/Premium sont des promotions valables seulement la première année, qui reviendront ensuite au tarif normal plus élevé",
+        "Les crédits et les prix peuvent changer selon la région et dans le temps, comme c'est l'usage général d'Adobe, ce qui rend le coût mensuel moins prévisible qu'un abonnement fixe"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You already work inside Photoshop, Premiere Pro or InDesign and want generative image, video or audio tools built into the same apps",
+      "avoid_if": "You need unlimited or predictable usage every month; Firefly runs on a generative-credit allowance per tier, and the cheapest real paid plan (Standard, $9.99/month) only gives 2,000 credits",
+      "strengths": [
+        "The same generative models work both as a standalone web app and embedded directly inside Photoshop, Premiere Pro and InDesign",
+        "A free tier with daily generation limits lets you try image, video and audio generation before paying, no account commitment required"
+      ],
+      "weaknesses": [
+        "Prices scale steeply from Standard to Premium ($9.99 to $199.99/month regular price), and the discounted Pro Plus/Premium rates are first-year-only promotions that will revert to the higher regular price",
+        "Credits and prices can change by region and over time, per Adobe's own general practice, making the monthly cost less predictable than a flat subscription"
+      ]
+    }
+  },
+  {
+    "name": "Adobe Podcast AI",
+    "slug": "adobe-podcast-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/adobe-podcast-ai",
+    "url_en": "https://tooltrim.com/en/tool/adobe-podcast-ai",
+    "website": "https://podcast.adobe.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : Amélioration audio uniquement (pas de vidéo), traitement d'un seul fichier à la fois, fichiers limités à 30 minutes ou 500 Mo, 1 heure d'amélioration par jour, téléchargements Studio limités à des projets de 30 minutes deux fois par jour, pas de téléchargement de l'enregistrement original, audiogrammes marqués de la marque du service.",
+      "paid": "Dès 19,99 $/mois, plan Adobe Firefly Pro plan (includes Adobe Podcast Premium features)."
+    },
+    "description_fr": "Suite d'outils audio par IA d'Adobe pour enregistrer, éditer et améliorer la voix (podcasts, voix-off).",
+    "description_en": "Adobe's suite of AI-powered audio tools for recording, editing, and enhancing voice and sound quality.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu as régulièrement besoin de nettoyer des enregistrements vocaux et veux une solution gratuite, instantanée, sans compétence requise",
+      "avoid_if": "Tu produis des podcasts quotidiennement et as besoin de traitement en masse, d'une API ou de contrôles de mixage avancés",
+      "strengths": [
+        "Fonction principale réellement gratuite, sans carte bancaire pour commencer",
+        "Résultat en un clic, sans compétence en ingénierie audio",
+        "Le palier payant (Adobe Firefly Pro) inclut les outils de design Adobe Express Premium et des crédits génératifs Firefly en plus des fonctions Podcast Premium"
+      ],
+      "weaknesses": [
+        "Les limites du plan gratuit (30 min/jour, audio uniquement) sont contraignantes pour un podcasteur régulier",
+        "Pas d'API ni de mixage avancé, donc ça ne remplace pas un vrai DAW ou un éditeur de podcast pour des projets complexes"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You occasionally need to clean up voice recordings and want a free, instant, no-skill fix",
+      "avoid_if": "You produce podcasts daily and need bulk processing, an API, or advanced mixing controls",
+      "strengths": [
+        "Genuinely free core feature with no credit card required to start",
+        "One-click result with no audio engineering skill needed",
+        "Paid tier (Adobe Firefly Pro) bundles Adobe Express Premium design tools and Firefly generative credits alongside Podcast Premium features"
+      ],
+      "weaknesses": [
+        "Free tier limits (30 min/day, audio only) are restrictive for regular podcasters",
+        "No API and no advanced mixing, so it does not replace a real DAW or podcast editor for complex projects"
+      ]
+    }
+  },
+  {
+    "name": "Autodesk Flow Studio",
+    "slug": "autodesk-flow-studio",
+    "url_fr": "https://tooltrim.com/fr/tool/autodesk-flow-studio",
+    "url_en": "https://tooltrim.com/en/tool/autodesk-flow-studio",
+    "website": "https://wonderdynamics.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Tier gratuit inclus : accès aux outils core comme AI Mocap et Live Action.",
+      "paid": "Free: 0 $ (outils core) ; Lite: 10 $/mois (réduit de 20 $ avant août 2026) ; Standard: 45 $/mois ou 360 $/an (6 000 crédits/mois) ; Pro & Enterprise: montants sur la page officielle"
+    },
+    "description_fr": "Suite VFX et animation par IA d'Autodesk (anciennement Wonder Studio) : capture de mouvement sans matériel, animation de personnages CG, édition 3D avec contrôle créatif, et intégration vidéo temps réel.",
+    "description_en": "Autodesk's AI-powered VFX and animation suite (formerly Wonder Studio): hardware-free motion capture, CG character animation, 3D editing with creative control, and real-time video integration.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous produisez des vidéos ou films VFX intensifs",
+      "avoid_if": "Vous n'avez besoin que d'outils traditionnels",
+      "strengths": [
+        "Automatise tâches VFX complexes et longues",
+        "Pas besoin de studio motion capture onéreux",
+        "Intégration fluide au pipeline 3D"
+      ],
+      "weaknesses": [
+        "Passage payant nécessaire au-delà du palier d'essai",
+        "Courbe d'apprentissage pour workflow VFX",
+        "Nécessite compétences en compositing/3D"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You produce video or film content with VFX",
+      "avoid_if": "You only use traditional editing tools",
+      "strengths": [
+        "Automates complex, time-consuming VFX tasks",
+        "No need for expensive motion capture studio",
+        "Seamless 3D pipeline integration"
+      ],
+      "weaknesses": [
+        "A paid plan is needed beyond the entry tier",
+        "Learning curve for VFX workflows",
+        "Requires 3D and compositing skills"
+      ]
+    }
+  },
+  {
+    "name": "Bolt.new",
+    "slug": "bolt-new",
+    "url_fr": "https://tooltrim.com/fr/tool/bolt-new",
+    "url_en": "https://tooltrim.com/en/tool/bolt-new",
+    "website": "https://bolt.new",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : 300 000 jetons/jour, 1 M de jetons/mois, projets publics/privés, uploads de fichiers de 10 Mo, hébergement de site avec la marque Bolt.",
+      "paid": "Dès 25 $/mois, plan Pro."
+    },
+    "description_fr": "Bolt.new est un outil IA qui génère des applications web full-stack déployables à partir de prompts en langage naturel, entièrement dans le navigateur.",
+    "description_en": "Bolt.new is an AI tool that generates deployable full-stack web apps from natural-language prompts, running entirely in the browser.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu veux transformer une idée d'application en langage naturel en prototype déployable sans configurer d'environnement de développement local",
+      "avoid_if": "Tu as besoin d'un contrôle fin sur une base de code large et complexe, où la génération mesurée en jetons devient difficile à prévoir côté coût",
+      "strengths": [
+        "Génère une application full-stack déployable avec hébergement et base de données en une étape, sans environnement local à configurer",
+        "Les jetons non utilisés se reportent un mois supplémentaire sur Pro, ce qui atténue les pics d'usage d'un mois à l'autre"
+      ],
+      "weaknesses": [
+        "La consommation de jetons évolue avec la taille des fichiers du projet, pas seulement l'usage des fonctionnalités, ce qui rend le coût plus difficile à prévoir pour de gros projets",
+        "Le plan gratuit affiche la marque Bolt sur les sites publiés et plafonne les uploads de fichiers à 10 Mo"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You want to turn a natural-language app idea into a deployable prototype without setting up a local dev environment",
+      "avoid_if": "You need fine-grained control over a large, complex codebase, where token-metered generation becomes costly to predict",
+      "strengths": [
+        "Generates a deployable full-stack app with hosting and a database in one step, with no local environment to configure",
+        "Unused tokens roll over one additional month on Pro, softening month-to-month usage spikes"
+      ],
+      "weaknesses": [
+        "Token consumption scales with project file size, not just feature use, making cost harder to predict for larger projects",
+        "The free plan displays Bolt branding on published sites and caps file uploads at 10MB"
+      ]
+    }
+  },
+  {
+    "name": "Canva AI",
+    "slug": "canva-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/canva-ai",
+    "url_en": "https://tooltrim.com/en/tool/canva-ai",
+    "website": "https://www.canva.com/ai/",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : 50 utilisations Magic Studio (IA) par mois, Text to Image et Magic Write limités ; Background Remover, Magic Eraser et Magic Expand sont réservés aux plans payants.",
+      "paid": "Dès 15 $/mois, plan Canva Pro."
+    },
+    "description_fr": "Canva AI (Magic Studio) ajoute génération d'image par IA, suppression d'arrière-plan et écriture IA dans Canva, avec des plafonds d'usage mensuels selon le plan.",
+    "description_en": "Canva AI (Magic Studio) adds AI image generation, background removal and AI writing inside Canva, with monthly usage caps by plan.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu conçois déjà dans Canva et tu veux la génération d'image par IA, la suppression d'arrière-plan et l'écriture IA sans changer d'outil",
+      "avoid_if": "Tu as besoin d'une génération d'image IA sans plafond mensuel, ou des outils de suppression sans passer au plan payant",
+      "strengths": [
+        "Les fonctions IA sont intégrées au même éditeur que le design, sans app séparée à apprendre",
+        "Le plan gratuit inclut 50 utilisations IA par mois pour essayer Text to Image et Magic Write avant de payer"
+      ],
+      "weaknesses": [
+        "Des plafonds d'usage IA mensuels s'appliquent même sur le plan payant Pro (500 utilisations/mois), pas un usage illimité",
+        "Background Remover, Magic Eraser et Magic Expand sont totalement indisponibles sur le plan gratuit"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You already design in Canva and want AI image generation, background removal and AI writing without switching tools",
+      "avoid_if": "You need AI image generation without a monthly usage cap, or the removal tools without upgrading off the free plan",
+      "strengths": [
+        "AI features live inside the same editor used for design, with no separate app to learn",
+        "Free plan includes 50 AI uses per month to try Text to Image and Magic Write before paying"
+      ],
+      "weaknesses": [
+        "Monthly AI usage caps apply even on the paid Pro plan (500 uses/month), not unlimited use",
+        "Background Remover, Magic Eraser and Magic Expand are completely unavailable on the free plan"
+      ]
+    }
+  },
+  {
+    "name": "ChatGPT",
+    "slug": "chatgpt",
+    "url_fr": "https://tooltrim.com/fr/tool/chatgpt",
+    "url_en": "https://tooltrim.com/en/tool/chatgpt",
+    "website": "https://chat.openai.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : Accès gratuit à un modèle de base avec un usage limité ; les modèles phares sont réservés aux paliers payants",
+      "paid": "Dès 20 $/mois, plan Plus."
+    },
+    "description_fr": "Assistant IA conversationnel pour la rédaction, le code et l'analyse, gratuit sur un modèle de base ou débloqué sur les paliers payants jusqu'à une API.",
+    "description_en": "Conversational AI assistant for writing, coding, and analysis, free on a base model or unlocked further on paid tiers up to a developer API.",
+    "alternatives": [
+      "chatgpt"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "4.2/5",
+      "label": "Excellent",
+      "keep_if": "Tu utilises régulièrement une assistance IA conversationnelle pour la rédaction, le code ou l'analyse, et tu as besoin de plus que ce que permet le modèle de base gratuit",
+      "avoid_if": "Tu n'as besoin que d'une aide occasionnelle pour des questions simples, où le modèle de base gratuit couvre déjà le besoin",
+      "strengths": [
+        "Le palier gratuit permet à n'importe qui de commencer à l'utiliser immédiatement, sans coût d'inscription",
+        "Plus à 20 $/mois ajoute les GPT personnalisés, les projets et la recherche approfondie sans devoir passer au palier Pro à 200 $/mois"
+      ],
+      "weaknesses": [
+        "Les quotas de messages et de recherche approfondie restent plafonnés sur Plus, pas illimités",
+        "Les modèles phares sont réservés à un plan payant ; le palier gratuit ne donne accès qu'à un modèle de base"
+      ]
+    },
+    "verdict_en": {
+      "score": "4.2/5",
+      "label": "Excellent",
+      "keep_if": "You use conversational AI assistance regularly for writing, coding, or analysis and need more than the free base model's usage allows",
+      "avoid_if": "You only need occasional help with simple questions, where the free base model already covers the need",
+      "strengths": [
+        "Free tier lets anyone start using it immediately with no signup cost",
+        "Plus at $20/month adds custom GPTs, projects, and deep research without jumping to the $200/month Pro tier"
+      ],
+      "weaknesses": [
+        "Message and deep-research quotas are still capped on Plus, not unlimited",
+        "Flagship models are locked behind a paid plan; the free tier only gives a base model"
+      ]
+    }
+  },
+  {
+    "name": "Claude",
+    "slug": "claude",
+    "url_fr": "https://tooltrim.com/fr/tool/claude",
+    "url_en": "https://tooltrim.com/en/tool/claude",
+    "website": "https://claude.com/",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Pas d'offre gratuite ; accès via API avec facturation au token.",
+      "paid": "Claude Haiku 4.5: 1 $/M input, 5 $/M output ; Claude Sonnet 5: 2 $/M input, 10 $/M output ; Claude Opus 5: 5 $/M input, 25 $/M output ; Claude Fable 5: 10 $/M input, 50 $/M output"
+    },
+    "description_fr": "Plateforme API pour accéder aux modèles Claude (Opus, Sonnet, Haiku, Fable), avec options de prompt caching, batch processing et web search pour intégration en production.",
+    "description_en": "API platform for accessing Claude models (Opus, Sonnet, Haiku, Fable) with prompt caching, batch processing, and web search capabilities for production integration.",
+    "alternatives": [
+      "chatgpt"
+    ],
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous développez des agents ou applications IA autonomes",
+      "avoid_if": "Vous cherchez une UI conversationnelle simple (préférez claude.com/chat)",
+      "strengths": [
+        "Modèles très performants et précis",
+        "Support d'un très long contexte (1M tokens)",
+        "Traitement par lots pour réduire fortement les coûts"
+      ],
+      "weaknesses": [
+        "Pas d'offre gratuite pour les développeurs",
+        "Coûts élevés sur gros volumes",
+        "Courbe d'apprentissage API (vs interface web)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're building autonomous AI agents or production apps",
+      "avoid_if": "You just want to chat with an AI (use claude.com/chat)",
+      "strengths": [
+        "Best-in-class model quality and reasoning",
+        "Up to 1M token context window",
+        "Batch processing sharply cuts costs"
+      ],
+      "weaknesses": [
+        "No free tier for developers",
+        "High costs at scale",
+        "API integration required (not web-based)"
+      ]
+    }
+  },
+  {
+    "name": "Cudekai",
+    "slug": "cudekai",
+    "url_fr": "https://tooltrim.com/fr/tool/cudekai",
+    "url_en": "https://tooltrim.com/en/tool/cudekai",
+    "website": "https://cudekai.com",
+    "category": "ai-general",
+    "description_fr": "Suite d'outils IA pour la rédaction et l'humanisation du contenu généré par IA. Inclut un humaniseur de contenu IA, un détecteur IA, un vérificateur de plagiat, un outil de paraphrase et un générateur d'essai IA. Supporte plus de 100 langues.",
+    "description_en": "Suite of AI writing and humanization tools for AI-generated content. Includes AI humanizer, AI detector, plagiarism checker, paraphrasing tool, AI essay writer. Supports 100+ languages.",
+    "verdict_fr": {
+      "keep_if": "Vous générez des essais ou du contenu IA et avez besoin de les humaniser pour une soumission académique",
+      "avoid_if": "Votre institution interdit explicitement le contournement des détecteurs IA",
+      "strengths": [
+        "Suite complète incluant humaniseur, détecteur et vérificateur de plagiat consolidant plusieurs outils",
+        "Support pour plus de 100 langues avec préservation du contexte natif",
+        "Technologie de contournement multi-détecteur (Turnitin, GPTZero, Copyleak, ZeroGPT)"
+      ],
+      "weaknesses": [
+        "Risque académique ou professionnel si l'institution découvre l'utilisation",
+        "L'efficacité du contournement des détecteurs décline avec l'évolution des modèles de détection",
+        "Plan gratuit très limité : la majorité de la valeur requiert un abonnement"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You generate AI essays/content and need to humanize for academic submission",
+      "avoid_if": "Your institution explicitly forbids AI detector bypass",
+      "strengths": [
+        "Complete suite humanizer, detector, plagiarism consolidates multiple tools",
+        "100+ language support with native context preservation",
+        "Multi-detector bypass technology (Turnitin, GPTZero, Copyleak, ZeroGPT)"
+      ],
+      "weaknesses": [
+        "Academic/professional risk if institution discovers usage",
+        "Bypass effectiveness declines as detection models evolve",
+        "Free plan highly limited; majority value requires subscription"
+      ]
+    }
+  },
+  {
+    "name": "Cursor",
+    "slug": "cursor",
+    "url_fr": "https://tooltrim.com/fr/tool/cursor",
+    "url_en": "https://tooltrim.com/en/tool/cursor",
+    "website": "https://cursor.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : Plan Hobby : requêtes Agent limitées, accès à Composer, sans carte bancaire requise.",
+      "paid": "Dès 20 $/mois, plan Pro."
+    },
+    "description_fr": "Éditeur de code natif IA (fork de VS Code) avec éditions multi-fichiers Composer, mode Agent autonome et accès à plusieurs modèles de pointe.",
+    "description_en": "AI-native code editor (VS Code fork) with multi-file Composer edits, an autonomous Agent mode and access to several frontier models.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu es développeur et tu veux un assistant IA avec un contexte complet sur la base de code et un mode agentique, pas seulement de l'autocomplétion ligne par ligne",
+      "avoid_if": "Tu veux un coût fixe totalement prévisible, car un usage intensif des modèles de pointe déclenche une facturation au-delà du montant inclus dans le plan",
+      "strengths": [
+        "L'indexation de toute la base de code donne à l'IA un vrai contexte projet, pas seulement le fichier ouvert",
+        "Accès à plusieurs modèles de pointe depuis une seule interface, avec support natif MCP pour les outils externes"
+      ],
+      "weaknesses": [
+        "Les limites de requêtes Agent du plan gratuit Hobby le rendent inadapté à un usage intensif quotidien",
+        "La facturation à l'usage au-delà du montant inclus dans le plan peut ajouter un coût imprévisible"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You're a developer who wants an AI assistant with full codebase context and an agentic mode, not just line-by-line autocomplete",
+      "avoid_if": "You want a fully predictable flat cost, since heavy frontier-model usage triggers billing beyond the plan's included amount",
+      "strengths": [
+        "Codebase-wide indexing gives the AI real project context, not just the open file",
+        "Access to several frontier models from one interface, with native MCP support for external tools"
+      ],
+      "weaknesses": [
+        "The free Hobby plan's Agent request limits make it unsuitable for daily heavy use",
+        "Usage-based billing beyond the plan's included amount can add unpredictable cost"
+      ]
+    }
+  },
+  {
+    "name": "DeepSeek",
+    "slug": "deepseek",
+    "url_fr": "https://tooltrim.com/fr/tool/deepseek",
+    "url_en": "https://tooltrim.com/en/tool/deepseek",
+    "website": "https://www.deepseek.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "5M tokens gratuits au signup sans CB ; valables sur tous les modèles.",
+      "paid": "V4 Flash (off-peak): 0,14 $/M input, 0,28 $/M output ; V4 Pro (off-peak): 0,435 $/M input, 0,87 $/M output ; Cache-hit (Flash): 0,003 $/M (réduction 95 %)"
+    },
+    "description_fr": "Fournisseur d'API IA chinois : modèles V4 Flash et V4 Pro avec tarification ultra-compétitive, pricing-cache, et 5M tokens gratuits au signup (pas de CB requise).",
+    "description_en": "Chinese AI API provider: V4 Flash and V4 Pro models with ultra-competitive pricing, prompt caching, and 5M free tokens at signup (no credit card required).",
+    "alternatives": [
+      "deepseek"
+    ],
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez le meilleur rapport prix/perfo",
+      "avoid_if": "Vous ne voulez pas de fournisseur chinois",
+      "strengths": [
+        "Tarification extrêmement compétitive",
+        "Mise en cache des prompts très avantageuse",
+        "5M tokens gratuits, pas de CB"
+      ],
+      "weaknesses": [
+        "Fournisseur chinois (données sensibles)",
+        "Support communautaire vs. professionnel",
+        "Plus jeune que OpenAI/Anthropic"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want best-in-class price-to-performance",
+      "avoid_if": "You don't want a Chinese provider",
+      "strengths": [
+        "Extremely competitive pricing",
+        "Highly advantageous prompt caching",
+        "5M free tokens, no credit card"
+      ],
+      "weaknesses": [
+        "Chinese provider (data sensitivity)",
+        "Community support vs. enterprise",
+        "Younger than OpenAI/Anthropic"
+      ]
+    }
+  },
+  {
+    "name": "ElevenLabs",
+    "slug": "elevenlabs",
+    "url_fr": "https://tooltrim.com/fr/tool/elevenlabs",
+    "url_en": "https://tooltrim.com/en/tool/elevenlabs",
+    "website": "https://elevenlabs.io",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : 10 000 crédits/mois, accès à la synthèse vocale, la transcription, les effets sonores, la conception de voix, la musique, Productions, Image, jusqu'à 3 projets.",
+      "paid": "Dès 5 $/mois, plan Starter."
+    },
+    "description_fr": "ElevenLabs génère des voix IA pour synthèse vocale, clonage de voix, doublage, transcription, effets sonores et musique, avec une tarification par crédits mensuels.",
+    "description_en": "ElevenLabs generates AI voices for text-to-speech, voice cloning, dubbing, speech-to-text, sound effects and music, priced by a monthly credit allowance.",
+    "alternatives": [
+      "elevenlabs"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu as besoin de génération de voix IA avec une licence commerciale, et un départ à 6 $/mois avec une allocation de crédits te convient",
+      "avoid_if": "Tu as besoin de clonage de voix professionnel dès le départ : cela demande l'offre Creator à 22 $/mois, pas Starter",
+      "strengths": [
+        "La licence commerciale et le clonage de voix instantané sont accessibles dès l'offre payante la moins chère, à 6 $/mois",
+        "Une seule plateforme couvre synthèse vocale, clonage, doublage, transcription, effets sonores et musique, au lieu d'outils séparés"
+      ],
+      "weaknesses": [
+        "Les 10 000 crédits mensuels du plan gratuit s'épuisent vite avec des générations audio longues",
+        "Le clonage de voix professionnel (plus fidèle) est réservé à l'offre Creator à 22 $/mois ou plus"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You need AI voice generation with a commercial license and are fine starting at $6/month with a credit allowance",
+      "avoid_if": "You need professional voice cloning from day one: that requires the $22/month Creator plan, not Starter",
+      "strengths": [
+        "Commercial license and instant voice cloning are available from the cheapest paid tier, at $6/month",
+        "One platform covers text-to-speech, cloning, dubbing, speech-to-text, sound effects and music, instead of separate tools"
+      ],
+      "weaknesses": [
+        "The free plan's 10,000 monthly credits run out quickly with longer audio generations",
+        "Professional (higher-fidelity) voice cloning is gated behind the Creator plan at $22/month or above"
+      ]
+    }
+  },
+  {
+    "name": "EssayTone",
+    "slug": "essaytone",
+    "url_fr": "https://tooltrim.com/fr/tool/essaytone",
+    "url_en": "https://tooltrim.com/en/tool/essaytone",
+    "website": "https://www.essaytone.com/en",
+    "category": "ai-general",
+    "description_fr": "Outil d'IA de réécriture textuelle qui transforme le contenu généré par IA en prose naturelle et académique. Optimise la fluidité, la personnalité et la crédibilité tout en contournant les détecteurs de contenu IA.",
+    "description_en": "AI text rewriting tool transforming AI-generated content into natural and academic prose. Optimizes flow, personality, and credibility while bypassing AI content detectors.",
+    "verdict_fr": {
+      "keep_if": "Vous générez du contenu IA et devez le rendre académiquement acceptable",
+      "avoid_if": "Votre institution interdit activement l'utilisation d'outils de contournement de détecteur",
+      "strengths": [
+        "Transformation efficace du contenu IA en prose naturelle et lisible",
+        "L'édition sur appareil garantit la confidentialité des données textuelles",
+        "Les styles personnalisables (formel/persuasif/analytique) adaptent le ton au contexte"
+      ],
+      "weaknesses": [
+        "L'efficacité du contournement des détecteurs décline à mesure que les modèles de détection progressent",
+        "Risque académique ou professionnel significatif si l'utilisation est détectée ou interdite par l'institution",
+        "Plan gratuit très limité : la plupart des fonctionnalités requièrent un abonnement"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You generate AI content and need to make it academically acceptable",
+      "avoid_if": "Your institution actively forbids AI detector bypass tools",
+      "strengths": [
+        "Effective transformation of AI content into natural and readable prose",
+        "On-device editing ensures text data privacy",
+        "Customizable styles (formal/persuasive/analytical) adapting tone to context"
+      ],
+      "weaknesses": [
+        "Bypass effectiveness declines as detection models evolve",
+        "Significant academic/professional risk if usage detected or forbidden by institution",
+        "Free plan highly limited; most features require subscription"
+      ]
+    }
+  },
+  {
+    "name": "Fathom",
+    "slug": "fathom",
+    "url_fr": "https://tooltrim.com/fr/tool/fathom",
+    "url_en": "https://tooltrim.com/en/tool/fathom",
+    "website": "https://www.fathom.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : Enregistrements et transcriptions illimités avec résumés IA instantanés, extraits et playlists, sur un seul compte.",
+      "paid": "Dès 16 $/mois, plan Premium."
+    },
+    "description_fr": "Fathom enregistre et transcrit les appels Zoom, Meet et Teams, en produisant des résumés IA, des actions à suivre et un historique consultable.",
+    "description_en": "Fathom records and transcribes Zoom, Meet and Teams calls, producing AI summaries, action items and searchable meeting history.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu enchaînes de nombreux appels en solo et veux des transcriptions et résumés automatiques sans besoin de collaboration d'équipe",
+      "avoid_if": "Tu as besoin des playlists d'équipe ou de la synchronisation CRM pour une ou deux personnes seulement, car ces forfaits démarrent à un minimum de 2 postes",
+      "strengths": [
+        "Le forfait gratuit couvre l'enregistrement, la transcription et les résumés IA illimités sans poste requis",
+        "Fonctionne directement dans Zoom, Google Meet et Microsoft Teams sans application séparée à gérer"
+      ],
+      "weaknesses": [
+        "Les forfaits Team et Business exigent chacun au moins 2 postes, ce qui ferme leur tarif par poste à une acheteuse seule",
+        "Désormais propriété de Superhuman, ce qui ajoute une incertitude sur le prix et la feuille de route à long terme pendant l'intégration des deux produits"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You attend many calls solo and want automatic transcripts and summaries without a team collaboration need",
+      "avoid_if": "You need team playlists or CRM sync for exactly one or two people, since those tiers start at a 2-seat minimum",
+      "strengths": [
+        "The free plan covers unlimited recording, transcription and AI summaries with no seat required",
+        "Works directly inside Zoom, Google Meet and Microsoft Teams without a separate app to manage"
+      ],
+      "weaknesses": [
+        "Team and Business plans both need at least 2 seats, closing off their per-seat rate to a single buyer",
+        "Now owned by Superhuman, which adds uncertainty about long-term pricing and roadmap as the two products integrate"
+      ]
+    }
+  },
+  {
+    "name": "Fellow",
+    "slug": "fellow",
+    "url_fr": "https://tooltrim.com/fr/tool/fellow",
+    "url_en": "https://tooltrim.com/en/tool/fellow",
+    "website": "https://fellow.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : 5 notes IA à vie, 5 enregistrements IA à vie, jusqu'à 5 sièges.",
+      "paid": "Dès 7 $/mois, plan Team."
+    },
+    "description_fr": "Fellow est un assistant de réunion IA avec agendas collaboratifs, notes automatisées et suivi des actions, gratuit pour un plafond à vie de 5 notes.",
+    "description_en": "Fellow is an AI meeting assistant with collaborative agendas, automated notes and action-item tracking, free for a lifetime cap of 5 notes.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Ton équipe mène des réunions récurrentes et veut des agendas partagés avec notes et actions automatisées",
+      "avoid_if": "Tu ne prends que des notes de réunion occasionnelles, où le plafond à vie de 5 notes du plan gratuit ne suffira pas",
+      "strengths": [
+        "Se connecte directement aux principales plateformes de réunion (Meet, Zoom, Teams) sans configuration manuelle au-delà de l'accès au calendrier",
+        "Les agendas collaboratifs et le suivi des actions vont au-delà de la simple transcription, en phase avec la façon dont se déroulent les réunions récurrentes"
+      ],
+      "weaknesses": [
+        "Les quotas du plan gratuit sont des totaux à vie, pas mensuels, donc ils s'épuisent en quelques jours d'usage régulier",
+        "La synchronisation CRM avancée (Salesforce) et l'accès API nécessitent le plan Business, non disponibles sur Team"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "Your team runs recurring meetings and wants shared agendas plus automated notes and action items",
+      "avoid_if": "You only take the occasional meeting note, where the free plan's 5-note lifetime cap won't last",
+      "strengths": [
+        "Connects directly to the main meeting platforms (Meet, Zoom, Teams) with no manual setup beyond calendar access",
+        "Collaborative agendas and action-item tracking go beyond pure transcription, matching how recurring meetings are run"
+      ],
+      "weaknesses": [
+        "Free plan quotas are lifetime totals, not monthly, so they run out within days of regular use",
+        "Advanced CRM sync (Salesforce) and API access require the Business plan, not available on Team"
+      ]
+    }
+  },
+  {
+    "name": "Gemini",
+    "slug": "gemini",
+    "url_fr": "https://tooltrim.com/fr/tool/gemini",
+    "url_en": "https://tooltrim.com/en/tool/gemini",
+    "website": "https://gemini.google.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : Accès gratuit à l'app Gemini et aux fonctionnalités IA de Google Search avec des limites d'usage de base, sans offre de stockage cloud Google One associée.",
+      "paid": "Dès 4,99 $/mois, plan Google AI Plus."
+    },
+    "description_fr": "Gemini est l'assistant IA de Google, associé au stockage cloud Google One ; les offres payantes vont de 4,99 $ à plus de 99,99 $/mois.",
+    "description_en": "Gemini is Google's AI assistant, bundled with Google One cloud storage; paid plans range from $4.99 to $99.99+/month for expanded usage limits.",
+    "alternatives": [
+      "gemini"
+    ],
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu utilises déjà Gmail, Docs et Drive et veux un accès Gemini étendu associé à plus de stockage Google One",
+      "avoid_if": "Tu veux un accès IA sans payer de stockage cloud supplémentaire, ou tu es hors des États-Unis et as besoin des fonctionnalités réservées aux États-Unis",
+      "strengths": [
+        "Un seul abonnement associe un accès Gemini étendu au stockage cloud Google One (Gmail, Drive, Photos)",
+        "Les limites côté développeur (AI Studio, Android Studio, Antigravity, Jules) augmentent sur les mêmes offres payantes que l'assistant grand public"
+      ],
+      "weaknesses": [
+        "Plusieurs fonctionnalités phares de Pro/Ultra (Gemini Agent, AI Overview dans Gmail, générations Remix supplémentaires) sont réservées aux États-Unis",
+        "Le prix d'Ultra est affiché « à partir de 99,99 $/mois », donc l'offre avec le stockage maximal peut coûter plus cher que le prix de départ annoncé"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You already use Gmail, Docs and Drive and want expanded Gemini access bundled with more Google One storage",
+      "avoid_if": "You want AI access without paying for extra cloud storage, or you're outside the US and need the US-only features",
+      "strengths": [
+        "One subscription bundles expanded Gemini access with Google One cloud storage (Gmail, Drive, Photos)",
+        "Developer-facing limits (AI Studio, Android Studio, Antigravity, Jules) scale up on the same paid tiers as the consumer assistant"
+      ],
+      "weaknesses": [
+        "Several headline Pro/Ultra features (Gemini Agent, Gmail AI Overview, extra Photos Remix generations) are US-only",
+        "Ultra's price is listed as 'From $99.99/mo', so the full-storage tier may cost more than the advertised starting price"
+      ]
+    }
+  },
+  {
+    "name": "Gemini Notebook",
+    "slug": "notebook-lm",
+    "url_fr": "https://tooltrim.com/fr/tool/notebook-lm",
+    "url_en": "https://tooltrim.com/en/tool/notebook-lm",
+    "website": "https://notebook.google/",
+    "category": "ai-general",
+    "description_fr": "Outil de recherche et partenaire IA Google (anciennement NotebookLM, renommé Gemini Notebook en juillet 2026). Upload jusqu'à 600 sources par notebook pour générer des résumés, des matériels d'étude et des analyses de données. La signature : Audio Overviews convertissant les documents en discussions de podcast IA.",
+    "description_en": "Google AI research tool and thinking partner (formerly NotebookLM, rebranded Gemini Notebook July 2026). Upload up to 600 sources/notebook to generate summaries, study materials, data analysis. Signature: Audio Overviews converting documents into AI podcast discussions.",
+    "verdict_fr": {
+      "keep_if": "Vous compilez plusieurs sources (articles, PDF, vidéos) pour un résumé IA hyper-focalisé",
+      "avoid_if": "Vous avez plus de 600 sources : Notebook est limité par notebook",
+      "strengths": [
+        "Les Audio Overviews signature convertissent les documents en podcasts IA : l'apprentissage est transformé",
+        "L'ancrage RAG refuse les hallucinations : l'IA reste liée aux documents uploadés",
+        "Plan gratuit permissif avec 100 notebooks, 50 sources et 50 questions par jour"
+      ],
+      "weaknesses": [
+        "La limite de 600 sources par notebook est restrictive pour la recherche très large",
+        "Pas d'éditeur pour les matériels d'étude : Notebook génère seulement, pas refactor",
+        "Le plan Pro payant est requis pour lever les limites des notebooks"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You compile multiple sources (articles, PDFs, videos) for hyper-focused AI summary",
+      "avoid_if": "You have 600+ sources; Notebook limited per notebook",
+      "strengths": [
+        "Signature Audio Overviews convert documents into AI podcasts — learning transformed",
+        "RAG grounding refuses hallucinations; AI stays bound to uploaded documents",
+        "Generous free plan 100 notebooks, 50 sources, 50 questions/day"
+      ],
+      "weaknesses": [
+        "600 sources/notebook limit restrictive for very broad research",
+        "No study material editor; Notebook generates only, not refactor",
+        "The paid Pro plan is required to lift notebook limits"
+      ]
+    }
+  },
+  {
+    "name": "GitHub Copilot",
+    "slug": "github-copilot",
+    "url_fr": "https://tooltrim.com/fr/tool/github-copilot",
+    "url_en": "https://tooltrim.com/en/tool/github-copilot",
+    "website": "https://github.com/features/copilot",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit : 5 messages/jour (allotment crédit gratuit), suggestions inline gratuites (pas crédit).",
+      "paid": "Free: 0 $ (5 crédits/jour) ; Pro: 10 $/mois (15 $ crédit inclus) ; Pro+: 39 $/mois (70 $ crédit inclus) ; Max: 100 $/mois (200 $ crédit inclus) ; Business: 19 $/seat/mois"
+    },
+    "description_fr": "Assistant IA pour développeurs GitHub : auto-complétion inline, chat code, review, agent mode, et CLI. Juin 2026 : passage à facturation usage-based (crédits) ; suggestions inline gratuites sur tous les plans.",
+    "description_en": "AI development assistant for GitHub: inline autocomplete, code chat, review, agent mode, and CLI. June 2026: moved to usage-based billing (credits); inline suggestions free on all plans.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous codez avec GitHub workflow",
+      "avoid_if": "Vous préférez Cursor ou autres éditeurs",
+      "strengths": [
+        "Autocomplétion inline totalement gratuite",
+        "Intégration GitHub seamless (PRs, issues)",
+        "Pricing transparent (crédits clairs)"
+      ],
+      "weaknesses": [
+        "Chat/review consomment crédits rapidement",
+        "Moins de choix modèles qu'autres outils",
+        "Free tier vraiment limité (5 messages)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You work with GitHub workflow",
+      "avoid_if": "You prefer Cursor or other editors",
+      "strengths": [
+        "Inline autocomplete is completely free",
+        "Seamless GitHub integration (PRs, issues)",
+        "Transparent pricing (clear credits)"
+      ],
+      "weaknesses": [
+        "Chat/review burn credits quickly",
+        "Fewer model choices than alternatives",
+        "Free tier is very limited (5 messages)"
+      ]
+    }
+  },
+  {
+    "name": "Google AI Studio",
+    "slug": "google-ai-studio",
+    "url_fr": "https://tooltrim.com/fr/tool/google-ai-studio",
+    "url_en": "https://tooltrim.com/en/tool/google-ai-studio",
+    "website": "https://aistudio.google.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : Accès gratuit à l'interface Google AI Studio et à un palier gratuit de l'API Gemini avec accès limité à certains modèles ; le contenu peut être utilisé pour améliorer les produits Google.",
+      "paid": "Dès 0 $/mois, plan Gemini API pay-as-you-go (paid tier)."
+    },
+    "description_fr": "Google AI Studio est un bac à sable web gratuit et une console API pour construire avec les modèles Gemini de Google, facturé au token dès 0,30 $ par million de tokens en entrée sur le modèle d'entrée.",
+    "description_en": "Google AI Studio is a free web playground plus API console for building with Google's Gemini models, billed per token from $0.30 per million input tokens on the entry model.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu veux prototyper ou livrer une petite fonctionnalité sur les modèles Gemini et payer seulement les tokens utilisés, sans abonnement de base",
+      "avoid_if": "Tu construis une application en production ou à l'échelle entreprise, car Google oriente ce cas d'usage vers Vertex AI plutôt que vers AI Studio",
+      "strengths": [
+        "Aucun forfait de base sur le palier API payant : le coût est purement au token, donc un petit projet peut démarrer très peu cher",
+        "Le code généré pour de petites applications peut être exporté ou poussé directement vers GitHub ou Google Colab"
+      ],
+      "weaknesses": [
+        "Les prompts et données du palier gratuit peuvent être utilisés par Google pour améliorer ses produits, contrairement au palier payant",
+        "Les prix des tokens de l'API Gemini doivent augmenter le 1er janvier 2027, donc une estimation de coût faite aujourd'hui pourrait ne plus tenir l'an prochain"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You want to prototype or ship a small feature on Gemini models and pay only for the tokens you use, without a base subscription",
+      "avoid_if": "You are building a production or enterprise-scale application, since Google directs that use case to Vertex AI instead of AI Studio",
+      "strengths": [
+        "No base fee on the paid API tier: cost is purely per token, so a small project can start very cheap",
+        "Generated code for small apps can be exported or pushed directly to GitHub or Google Colab"
+      ],
+      "weaknesses": [
+        "Free-tier prompts and data may be used by Google to improve its products, unlike the paid tier",
+        "Gemini API token prices are scheduled to rise on January 1, 2027, so a cost estimate made today may not hold next year"
+      ]
+    }
+  },
+  {
+    "name": "Granola",
+    "slug": "granola",
+    "url_fr": "https://tooltrim.com/fr/tool/granola",
+    "url_en": "https://tooltrim.com/en/tool/granola",
+    "website": "https://www.granola.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit avec historique 30 jours",
+      "paid": "Business 14$/utilisateur/mois · Enterprise 35$/utilisateur"
+    },
+    "description_fr": "Bloc-notes IA pour tes réunions — prend des notes pendant que tu écoutes.",
+    "description_en": "AI notepad for your meetings — takes notes while you listen.",
+    "price_verified_on": "2026-05-08",
+    "verdict_fr": {
+      "keep_if": "Vous voulez une solution IA notes gratuite",
+      "avoid_if": "Vous avez besoin d'historique illimité gratuitement",
+      "strengths": [
+        "Gratuit généreux et sans limite réunions",
+        "Audio device (pas données vers le cloud)",
+        "Pricing transparent et juste"
+      ],
+      "weaknesses": [
+        "Historique limité à 30j gratuit",
+        "Pas d'intégration CRM native (HubSpot ok)",
+        "Support moins mature que Fathom"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want free AI meeting notes",
+      "avoid_if": "You need unlimited history for free",
+      "strengths": [
+        "Generous free tier, unlimited meetings",
+        "Device audio (no cloud data privacy)",
+        "Transparent, fair pricing"
+      ],
+      "weaknesses": [
+        "Free history capped at 30 days",
+        "No native CRM integration (HubSpot ok)",
+        "Less mature support than Fathom"
+      ]
+    }
+  },
+  {
+    "name": "Grok",
+    "slug": "grok",
+    "url_fr": "https://tooltrim.com/fr/tool/grok",
+    "url_en": "https://tooltrim.com/en/tool/grok",
+    "website": "https://grok.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : Utilisable gratuitement sur le web, iOS et Android avec des limites d'usage réduites ; les plafonds exacts de requêtes ne sont pas publiés sur la page tarifs officielle.",
+      "paid": "Dès 25 $/mois, plan SuperGrok."
+    },
+    "description_fr": "Grok est l'assistant IA d'xAI avec recherche web et X en temps réel, raisonnement multi-agents et génération d'images et de vidéos intégrée.",
+    "description_en": "Grok is xAI's AI assistant with real-time web and X search, multi-agent reasoning, and built-in image and video generation.",
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux un assistant IA avec une connaissance en direct des tendances X/web et une génération d'images ou de vidéos intégrée au même chat",
+      "avoid_if": "Tu as surtout besoin de raisonnement sur de longs documents ou d'aide au code sans l'angle social temps réel : un assistant moins cher et plus spécialisé peut mieux convenir",
+      "strengths": [
+        "La recherche X et web en temps réel avec citations est un vrai différenciateur face aux assistants limités à leurs données d'entraînement",
+        "La génération d'images et de vidéos est intégrée au même fil de discussion, sans basculer vers un outil séparé"
+      ],
+      "weaknesses": [
+        "Les limites d'usage du palier gratuit ne sont pas publiées, ce qui rend difficile de savoir à l'avance quand une mise à niveau devient nécessaire",
+        "Les paliers supérieurs (Plus à 100 $/mois, Heavy à 300 $/mois) coûtent bien plus cher qu'un abonnement IA grand public classique"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You want an AI assistant with live awareness of X/web trends and built-in image or video generation in the same chat",
+      "avoid_if": "You mainly need long-document reasoning or coding assistance without the real-time social angle: a cheaper, more specialized assistant may fit better",
+      "strengths": [
+        "Real-time X and web search with citations is a genuine differentiator versus assistants limited to their training data",
+        "Image and video generation is built into the same chat thread, without switching to a separate tool"
+      ],
+      "weaknesses": [
+        "The free tier's usage limits aren't published, making it hard to know in advance when an upgrade becomes necessary",
+        "The top tiers (Plus at $100/month, Heavy at $300/month) cost far more than a typical AI chatbot subscription"
+      ]
+    }
+  },
+  {
+    "name": "Grokipedia",
+    "slug": "grokipedia",
+    "url_fr": "https://tooltrim.com/fr/tool/grokipedia",
+    "url_en": "https://tooltrim.com/en/tool/grokipedia",
+    "website": "https://grokipedia.com",
+    "category": "ai-general",
+    "description_fr": "Encyclopédie générative utilisant le modèle Grok IA de xAI pour créer des articles encyclopédiques. Le corpus, entièrement généré, s'étend rapidement depuis son lancement avec des fonctionnalités d'édition communautaire, des résumés vidéo, des panneaux de connaissances et des images générées.",
+    "description_en": "Generative encyclopedia using xAI's Grok AI model to create encyclopedic articles. The fully generated corpus has been expanding rapidly since launch with community edit proposals, video summaries, knowledge panels, generated images.",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez des références encyclopédiques rapides générées par l'IA",
+      "avoid_if": "Vous exigez des sources vérifiables et une édition experte comme Wikipedia",
+      "strengths": [
+        "Couverture rapide de sujets larges via la génération Grok IA de xAI",
+        "L'édition communautaire corrige progressivement les erreurs du contenu généré",
+        "Les résumés vidéo cinématographiques enrichissent l'apprentissage visuel"
+      ],
+      "weaknesses": [
+        "Contenu entièrement généré par l'IA : pas de sources expertes ni vérifiables",
+        "Qualité du contenu inégale : les inexactitudes potentielles de l'IA ne sont pas corrigées",
+        "Pas de statut de source académique : inadéquat pour les publications universitaires"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You seek quick encyclopedic references generated by AI",
+      "avoid_if": "You require verifiable sources and expert editing like Wikipedia",
+      "strengths": [
+        "Broad topic coverage via xAI Grok AI generation",
+        "Community editing gradually corrects generated content errors",
+        "Cinematic video summaries enrich visual learning"
+      ],
+      "weaknesses": [
+        "Content entirely AI-generated — no expert sources or verifiable references",
+        "Content quality uneven; potential AI inaccuracies uncorrected",
+        "No academic source status; unfit for university publications"
+      ]
+    }
+  },
+  {
+    "name": "Guideless",
+    "slug": "guideless",
+    "url_fr": "https://tooltrim.com/fr/tool/guideless",
+    "url_en": "https://tooltrim.com/en/tool/guideless",
+    "website": "https://guideless.app",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit : jusqu'à 3 guides, partage, narration IA, voix IA (avec watermark).",
+      "paid": "Free: 0 $ (max 3 guides) ; Pro: 29 $/mois/user (annuel) ou mensuel (montants sur page)"
+    },
+    "description_fr": "Générateur de guide vidéo automatisé : enregistrez un workflow dans le navigateur, Guideless génère script, captions, smart zooms, highlights UI, et narration IA vocale. Export MP4, pas de watermark sur Pro.",
+    "description_en": "Automated video guide generator: record a browser workflow, Guideless generates script, captions, smart zooms, UI highlights, and AI voice narration. MP4 export, no watermark on Pro.",
+    "alternatives": [
+      "Todoist",
+      "motion"
+    ],
+    "price_verified_on": "2026-08-30",
+    "verdict_fr": {
+      "keep_if": "Vous créez de la documentation software rapidement",
+      "avoid_if": "Vous produisez des videos haute qualité polies",
+      "strengths": [
+        "Gratuit avec 3 guides généreux",
+        "Génération script IA impressionnante",
+        "Narration vocale multilingue"
+      ],
+      "weaknesses": [
+        "Limité aux workflows navigateur",
+        "Free tier : watermark et 3 guides seulement",
+        "Montage fin pas possible dans l'outil"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You create software docs quickly",
+      "avoid_if": "You produce polished, high-quality videos",
+      "strengths": [
+        "Free with 3 generous guides",
+        "Impressive AI script generation",
+        "Multilingual voice narration"
+      ],
+      "weaknesses": [
+        "Limited to browser workflows",
+        "Free tier: watermark and 3 guides only",
+        "Fine editing not possible in tool"
+      ]
+    }
+  },
+  {
+    "name": "Helicone",
+    "slug": "helicone",
+    "url_fr": "https://tooltrim.com/fr/tool/helicone",
+    "url_en": "https://tooltrim.com/en/tool/helicone",
+    "website": "https://www.helicone.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit cloud : 50K observations/mois ; self-hosted open-source gratuit.",
+      "paid": "Hobby (Free): 0 $ (50K observations) ; Core / Pro: 79 $/mois (1M observations) ou custom ; Self-hosted (OSS): Gratuit (MIT license) ; Frais platform: 5,5 % sur pass-through pricing"
+    },
+    "description_fr": "Plateforme d'observabilité LLM : logging, coûts, latence, prompt/completion analysis, evaluations, caching. Gateway proxy ou intégration native. Open-source et cloud gérée. Depuis mars 2026 : maintenance-mode (racheté par Mintlify).",
+    "description_en": "LLM observability platform: logging, costs, latency, prompt/completion analysis, evaluations, caching. Proxy gateway or native integration. Open-source and managed cloud. Since March 2026: maintenance mode (acquired by Mintlify).",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous déployez des apps LLM en production",
+      "avoid_if": "Vous n'avez pas d'app LLM deployée",
+      "strengths": [
+        "Open-source (MIT) pour self-hosted",
+        "Gateway pass-through (300+ modèles)",
+        "Cost tracking détaillé"
+      ],
+      "weaknesses": [
+        "Projet en maintenance-mode depuis mars 2026",
+        "Équipe réduite post-acquisition",
+        "Alternatives plus actives émergentes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You deploy LLM apps to production",
+      "avoid_if": "You don't have an LLM app deployed",
+      "strengths": [
+        "Open-source (MIT) for self-hosting",
+        "Gateway pass-through (300+ models)",
+        "Detailed cost tracking"
+      ],
+      "weaknesses": [
+        "Project in maintenance mode since March 2026",
+        "Reduced team post-acquisition",
+        "More active alternatives emerging"
+      ]
+    }
+  },
+  {
+    "name": "HeyGen",
+    "slug": "heygen",
+    "url_fr": "https://tooltrim.com/fr/tool/heygen",
+    "url_en": "https://tooltrim.com/en/tool/heygen",
+    "website": "https://heygen.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit : 3 vidéos/mois avec watermark HeyGen.",
+      "paid": "Free: 0 $ (3 vids/mois) ; Creator: 29 $/mois (illimité sans watermark) ; Pro: 99 $/mois (4K, avatars custom) ; Business: 149 $/mois+ (features avancées) ; API: 0,05 $/sec vidéo (3 $/min)"
+    },
+    "description_fr": "Générateur vidéo IA avec avatars humains : texte-vers-vidéo avec avatars réalistes, lip-sync, traduction multilingue, génération texte-vers-vidéo, Asset generation, et API pour developers.",
+    "description_en": "AI video generator with human avatars: text-to-video with realistic avatars, lip-sync, multilingual translation, asset generation, and developer API.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous produisez du contenu vidéo marketing",
+      "avoid_if": "Vous besoin de contrôle cinématique fin",
+      "strengths": [
+        "Avatars ultra-réalistes et lip-sync fluide",
+        "Traduction multilingue preservée",
+        "Free tier permet d'essayer sans payer"
+      ],
+      "weaknesses": [
+        "Free tier limité à 3 vidéos/mois",
+        "Le palier Creator est le minimum réaliste à l'usage",
+        "Pas de contrôle cinématique fin"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You produce marketing video content",
+      "avoid_if": "You need fine cinematic control",
+      "strengths": [
+        "Ultra-realistic avatars with smooth lip-sync",
+        "Multilingual translation preserved",
+        "Free tier lets you try without paying"
+      ],
+      "weaknesses": [
+        "Free tier limited to 3 videos/month",
+        "The Creator tier is the realistic minimum in practice",
+        "No fine cinematic control"
+      ]
+    }
+  },
+  {
+    "name": "Hume AI",
+    "slug": "hume-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/hume-ai",
+    "url_en": "https://tooltrim.com/en/tool/hume-ai",
+    "website": "https://www.hume.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit : 5 EVI minutes, 10K TTS characters (0,15 $/1K overage).",
+      "paid": "Free: 0 $ (5 min EVI, 10K chars) ; Creator: 14 $/mois (140K chars TTS, unlimited voice clone) ; Implementation: 1-5K $ (onboarding, setup) ; Data storage: 100-1K $/mois (audio/video processing) ; Advanced features: 500-3,5K $/an"
+    },
+    "description_fr": "Plateforme IA empathique vocale : EVI (Empathic Voice Interface) et Octave (TTS empathique). Détecte émotions vocales, répond naturellement. APIs pour expression measurement, EVI, et produits connectés.",
+    "description_en": "Empathic voice AI platform: EVI (Empathic Voice Interface) and Octave (empathic TTS). Detects vocal emotions, responds naturally. APIs for expression measurement, EVI, and connected products.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous développez une app IA conversationnelle empathique",
+      "avoid_if": "Vous besoin de TTS simple (utilisez autre)",
+      "strengths": [
+        "Unique détection émotion vocale",
+        "Réponses vocales naturelles et empathiques",
+        "Free tier incluant Creator accessible"
+      ],
+      "weaknesses": [
+        "Coûts service additionnel importants",
+        "Free tier vraiment limité (5 min)",
+        "Courbe apprentissage API"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're building an empathic conversational AI app",
+      "avoid_if": "You just need simple TTS",
+      "strengths": [
+        "Unique vocal emotion detection",
+        "Natural, empathic voice responses",
+        "Free tier including Creator accessible"
+      ],
+      "weaknesses": [
+        "Additional service costs substantial",
+        "Free tier really limited (5 minutes)",
+        "API learning curve"
+      ]
+    }
+  },
+  {
+    "name": "Ideogram",
+    "slug": "ideogram",
+    "url_fr": "https://tooltrim.com/fr/tool/ideogram",
+    "url_en": "https://tooltrim.com/en/tool/ideogram",
+    "website": "https://ideogram.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit : 10 prompts/jour à vitesse standard (≈ 40 images/jour, 4 variations par prompt).",
+      "paid": "Free: 0 $ (10 prompts/jour) ; Plus: 15 $/mois (annuel) ; Pro: 20 $/mois (annuel) ; Team: 42 $/mois (annuel, min. 3) ; API: 0,025-0,10 $/image selon modèle"
+    },
+    "description_fr": "Générateur d'images IA avec texte intégré : render texte dans images avec 90 % précision (vs 30 % Midjourney), variantes, remixing, et API pour developers. Fast generation et quality modes.",
+    "description_en": "AI image generator with integrated text rendering: render text in images with 90% accuracy (vs 30% Midjourney), variations, remixing, and developer API. Fast and quality modes.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous créez des designs avec du texte graphique",
+      "avoid_if": "Vous faites surtout du portrait/photo réaliste",
+      "strengths": [
+        "Rendu du texte dans les images particulièrement fidèle",
+        "Free tier généreux (10 prompts/jour)",
+        "Remixing fluide et variations"
+      ],
+      "weaknesses": [
+        "Plus cher que Midjourney au volume",
+        "Moins optimisé pour portraiture",
+        "API pricing plus cher que FLUX"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You create designs with graphic text",
+      "avoid_if": "You mostly do realistic portraiture",
+      "strengths": [
+        "Notably accurate text rendering in images",
+        "Generous free tier (10 prompts/day)",
+        "Smooth remixing and variations"
+      ],
+      "weaknesses": [
+        "More expensive than Midjourney at volume",
+        "Less optimized for portraiture",
+        "API pricing higher than FLUX"
+      ]
+    }
+  },
+  {
+    "name": "Jasper",
+    "slug": "jasper",
+    "url_fr": "https://tooltrim.com/fr/tool/jasper",
+    "url_en": "https://tooltrim.com/en/tool/jasper",
+    "website": "https://jasper.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Essai gratuit de 7 jours ; abonnement requis ensuite.",
+      "paid": "Creator: 39 $/mois (annuel), 49 $ en mensuel — 1 siège ; Pro: paliers supérieurs (multi-sièges, fonctions équipe) ; Business: sur devis"
+    },
+    "description_fr": "Plateforme d'écriture assistée par IA pour le marketing : génération de contenus (articles, posts, campagnes), templates, chat et extension navigateur, avec voix de marque.",
+    "description_en": "AI writing platform for marketing: content generation (articles, posts, campaigns), templates, chat and browser extension, with brand voice.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous produisez du contenu marketing à volume",
+      "avoid_if": "Un assistant IA généraliste (ChatGPT) vous suffit",
+      "strengths": [
+        "Pensé pour le contenu marketing",
+        "Voix de marque et templates",
+        "Chat et extension navigateur"
+      ],
+      "weaknesses": [
+        "Pas de palier gratuit",
+        "Plus cher qu'un assistant IA généraliste",
+        "Fonctionnement à crédits de mots"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You produce marketing content at volume",
+      "avoid_if": "A general AI assistant (ChatGPT) is enough for you",
+      "strengths": [
+        "Built for marketing content",
+        "Brand voice and templates",
+        "Chat and browser extension"
+      ],
+      "weaknesses": [
+        "No free tier",
+        "Pricier than a general AI assistant",
+        "Word-credit based"
+      ]
+    }
+  },
+  {
+    "name": "Krea AI",
+    "slug": "krea-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/krea-ai",
+    "url_en": "https://tooltrim.com/en/tool/krea-ai",
+    "website": "https://krea.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : 100 unités de calcul par jour.",
+      "paid": "Dès 5 $/mois, plan Basic."
+    },
+    "description_fr": "Interface unifiée agrégeant plus de 60 modèles de génération d'image et vidéo par IA avec un système de crédits en unités de calcul partagé.",
+    "description_en": "Unified interface aggregating 60+ AI image and video generation models with a shared compute-unit credit system.",
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "À garder si essayer de nombreux modèles de génération IA depuis une seule interface avec un système de crédits partagé convient au workflow",
+      "avoid_if": "À éviter si le tarif dédié et le support d'un modèle spécifique unique comptent plus que la diversité de choix",
+      "strengths": [
+        "Une seule interface et un seul système de crédits pour accéder à des dizaines de modèles de génération IA",
+        "Génération en temps réel en plus des workflows asynchrones standards, dans le même outil"
+      ],
+      "weaknesses": [
+        "Les modèles plus lourds ou plus coûteux consomment le quota de calcul partagé plus vite que les autres, sans détail clair par modèle sur la page consultée",
+        "La facturation annuelle est nécessaire pour obtenir le prix mensuel le plus bas ; la facturation au mois coûte 40 % de plus sur chaque forfait payant"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Keep it if trying many AI generation models from one interface with a shared credit system fits the workflow",
+      "avoid_if": "Avoid it if a single specific model's dedicated pricing and support matter more than breadth of choice",
+      "strengths": [
+        "One interface and one credit system to access dozens of AI generation models",
+        "Real-time generation alongside standard asynchronous workflows in the same tool"
+      ],
+      "weaknesses": [
+        "Heavier or more expensive models consume the shared compute-unit allowance faster than others, without a clear per-model breakdown on the page checked",
+        "Annual billing is required to reach the lower per-month price; monthly billing costs 40% more on every paid plan"
+      ]
+    }
+  },
+  {
+    "name": "LangChain",
+    "slug": "langchain",
+    "url_fr": "https://tooltrim.com/fr/tool/langchain",
+    "url_en": "https://tooltrim.com/en/tool/langchain",
+    "website": "https://www.langchain.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "LangChain OSS gratuit; LangSmith Developer free (5K traces/mois).",
+      "paid": "LangChain (OSS): Gratuit (MIT license) ; LangSmith Developer: 0 $ (5K traces/mois) ; LangSmith Plus: 39 $/seat/mois (100K traces) ; LangGraph Platform: 35 $/mois+ (deployment)"
+    },
+    "description_fr": "Framework open-source MIT pour construire apps LLM : abstractions Python/JavaScript, intégrations 100+ LLMs/outils, RAG, agents autonomes, et LangGraph pour orchestration agents.",
+    "description_en": "MIT open-source framework for building LLM apps: Python/JavaScript abstractions, 100+ LLM/tool integrations, RAG, autonomous agents, and LangGraph for agent orchestration.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous construisez une app LLM en Python/JS",
+      "avoid_if": "Vous ne codez pas (utilisez UI builder)",
+      "strengths": [
+        "Framework open-source, stable et mature",
+        "Large écosystème + intégrations",
+        "RAG et agents « out of box »"
+      ],
+      "weaknesses": [
+        "Courbe apprentissage pour débutants",
+        "Ecosystem vaste → choix paralysant",
+        "LangSmith coûts peuvent escalader vite"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're building an LLM app in Python/JS",
+      "avoid_if": "You don't code (use UI builder)",
+      "strengths": [
+        "Open-source, stable, mature framework",
+        "Large ecosystem + integrations",
+        "RAG and agents \"out of box\""
+      ],
+      "weaknesses": [
+        "Learning curve for beginners",
+        "Vast ecosystem → choice paralysis",
+        "LangSmith costs can escalate fast"
+      ]
+    }
+  },
+  {
+    "name": "LangSmith",
+    "slug": "langsmith",
+    "url_fr": "https://tooltrim.com/fr/tool/langsmith",
+    "url_en": "https://tooltrim.com/en/tool/langsmith",
+    "website": "https://www.langchain.com/langsmith",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Developer : 5K traces/mois, 1 user, 14-day retention. Suffisant local dev.",
+      "paid": "Developer: 0 $ (5K traces/mois) ; Plus: 39 $/seat/mois (100K traces, 400-day retention) ; Enterprise: Custom (self-hosting, SLA) ; Overage: 2,50-5 $/1K traces (retention dépend)"
+    },
+    "description_fr": "Plateforme observabilité et evaluation pour apps LLM : logging traces, versioning prompts, datasets d'évaluation, monitoring performance, et debugging agents. Complément LangChain.",
+    "description_en": "Observability and evaluation platform for LLM apps: trace logging, prompt versioning, evaluation datasets, performance monitoring, and agent debugging. LangChain complement.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous deployez une app LLM production",
+      "avoid_if": "Vous prototypez en local (Developer suffisant)",
+      "strengths": [
+        "Observabilité complète pour LLM apps",
+        "Debugging agents est très efficace",
+        "Datasets d'évaluation bâtis automatiquement"
+      ],
+      "weaknesses": [
+        "Le palier Plus revient vite cher en équipe",
+        "Overage pricing peut surprendre",
+        "Courbe apprentissage UI"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're deploying an LLM app to production",
+      "avoid_if": "You prototype locally (free Developer ok)",
+      "strengths": [
+        "Complete observability for LLM apps",
+        "Agent debugging very efficient",
+        "Evaluation datasets built automatically"
+      ],
+      "weaknesses": [
+        "The Plus tier adds up fast across a team",
+        "Overage pricing can surprise",
+        "UI learning curve"
+      ]
+    }
+  },
+  {
+    "name": "Leonardo AI",
+    "slug": "leonardo-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/leonardo-ai",
+    "url_en": "https://tooltrim.com/en/tool/leonardo-ai",
+    "website": "https://leonardo.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : 150 fast tokens/day, generations carry a watermark, non-commercial use only.",
+      "paid": "Dès 9,60 $/mois, plan Essential."
+    },
+    "description_fr": "Leonardo AI génère et édite des images avec des modèles IA propres et tiers, via un système de jetons/crédits sur des plans gratuits et payants.",
+    "description_en": "Leonardo AI generates and edits images with proprietary and third-party AI models, using a token-based credit system across free and paid tiers.",
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Une génération d'images occasionnelle ou non commerciale suffit, et l'allocation quotidienne de jetons gratuits couvre le besoin",
+      "avoid_if": "Une génération d'images commerciale à fort volume est nécessaire, au-delà de l'allocation mensuelle de jetons du plan Essential",
+      "strengths": [
+        "Le plan gratuit permet une génération quotidienne sans paiement, utile pour tester l'outil avant de s'engager",
+        "Accès aux modèles propres de Leonardo et à des modèles tiers comme Flux dans la même interface"
+      ],
+      "weaknesses": [
+        "La sortie du plan gratuit est filigranée et limitée à un usage non commercial",
+        "Un produit API distinct, facturé à l'usage, existe pour les développeurs ; il ne remplace pas les paliers d'abonnement de l'application grand public ci-dessus"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "Occasional or non-commercial image generation is enough, where the free daily token allowance covers the need",
+      "avoid_if": "Commercial, high-volume image generation is needed beyond what the Essential plan's monthly token allowance covers",
+      "strengths": [
+        "Free tier allows daily generation without payment, useful to test the tool before committing",
+        "Access to both Leonardo's own models and third-party models like Flux in the same interface"
+      ],
+      "weaknesses": [
+        "Free tier output is watermarked and restricted to non-commercial use",
+        "A separate Pay-As-You-Go API product exists for developers; it is not a substitute for the consumer app's subscription tiers above"
+      ]
+    }
+  },
+  {
+    "name": "LlamaIndex",
+    "slug": "llamaindex",
+    "url_fr": "https://tooltrim.com/fr/tool/llamaindex",
+    "url_en": "https://tooltrim.com/en/tool/llamaindex",
+    "website": "https://www.llamaindex.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Framework orienté données pour RAG, indexation et apps LLM.",
+    "description_en": "Data-oriented framework for RAG, indexing, and LLM apps.",
+    "verdict_fr": {
+      "keep_if": "Vous construisez un RAG app",
+      "avoid_if": "Vous voulez une solution sans dev",
+      "strengths": [
+        "Framework OSS mature et stable",
+        "100+ connecteurs data intégrés",
+        "Abstractions RAG claires"
+      ],
+      "weaknesses": [
+        "Courbe apprentissage Python/Node",
+        "Coûts LlamaCloud pour production",
+        "Ecosystem vaste → choix paralysant"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're building a RAG app",
+      "avoid_if": "You want a no-dev solution",
+      "strengths": [
+        "Mature, stable OSS framework",
+        "100+ data connectors built-in",
+        "Clear RAG abstractions"
+      ],
+      "weaknesses": [
+        "Learning curve Python/Node",
+        "LlamaCloud costs for production",
+        "Vast ecosystem → choice paralysis"
+      ]
+    }
+  },
+  {
+    "name": "Lovable",
+    "slug": "lovable",
+    "url_fr": "https://tooltrim.com/fr/tool/lovable",
+    "url_en": "https://tooltrim.com/en/tool/lovable",
+    "website": "https://lovable.dev",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : 5 crédits de build par jour (jusqu'à 30/mois), 20 crédits Cloud par mois, 4 crédits de fonctionnalités IA",
+      "paid": "Dès 25 $/mois, plan Pro."
+    },
+    "description_fr": "Lovable construit une application web à partir d'un prompt, hébergement Cloud inclus, facturé par un système de crédits dès 25 $/mois.",
+    "description_en": "Lovable builds a working web app from a chat prompt, with Cloud hosting included, billed through a credit system starting at $25/month.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux passer d'un prompt à une application déployée et fonctionnelle sans configurer un hébergement séparé",
+      "avoid_if": "Tu as besoin d'un coût mensuel fixe et prévisible plutôt que d'un solde de crédits qui varie selon la complexité des tâches",
+      "strengths": [
+        "L'hébergement Cloud est inclus dans le prix des crédits, ce qui supprime une facture d'hébergement séparée",
+        "Les connexions GitHub et Supabase permettent à une application générée de se brancher sur un vrai code et une vraie base de données, plutôt que de rester un prototype fermé"
+      ],
+      "weaknesses": [
+        "Le coût en crédits par tâche varie selon la complexité, le nombre réel de requêtes utilisables par mois est donc difficile à prévoir à l'avance",
+        "Les crédits mensuels inutilisés expirent après 2 mois et ne sont pas remboursés, ils ne se reportent donc pas indéfiniment"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You want to go from a chat prompt to a deployed, working app without setting up separate hosting",
+      "avoid_if": "You need a fixed, predictable monthly cost rather than a credit balance that varies with task complexity",
+      "strengths": [
+        "Cloud hosting is included in the credit price, removing a separate hosting bill",
+        "GitHub and Supabase connections let a generated app plug into a real codebase and database rather than staying a closed prototype"
+      ],
+      "weaknesses": [
+        "Credit cost per task varies with complexity, so the real number of usable prompts per month is hard to predict in advance",
+        "Unused monthly credits expire after 2 months and aren't refunded, so they don't roll over indefinitely"
+      ]
+    }
+  },
+  {
+    "name": "Manifest AI",
+    "slug": "manifest-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/manifest-ai",
+    "url_en": "https://tooltrim.com/en/tool/manifest-ai",
+    "website": "https://manifestai.io",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : Un document PDF complet jusqu'à 5 pages, une fois par espace de travail, sans carte bancaire ; utilise des outils PDF/OCR locaux sans services IA externes.",
+      "paid": "Dès 149 $/mois, plan Professional."
+    },
+    "description_fr": "Manifest AI extrait les factures commerciales et listes de colisage fret vers des lignes Excel ou CSV à relire, facturé au crédit de page mensuel.",
+    "description_en": "Manifest AI extracts freight commercial invoices and packing lists into reviewable Excel or CSV rows, priced by monthly page credits.",
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Ton équipe traite des factures ou listes de colisage fret récurrentes à la main et veut une mise en page d'extraction répétable par fournisseur",
+      "avoid_if": "Tu as besoin d'une intégration API ou ERP dès le départ avec un petit budget ; cela nécessite l'offre Scale à 299 $/mois, pas Professional à 149 $/mois",
+      "strengths": [
+        "Signale les valeurs incertaines par rapport à la page source plutôt que de renvoyer des erreurs d'extraction silencieuses",
+        "Les profils de mise en page enregistrés font qu'un format fournisseur récurrent n'a besoin d'être mappé qu'une seule fois"
+      ],
+      "weaknesses": [
+        "L'accès API et les webhooks nécessitent l'offre Scale (299 $/mois) ; Professional reste limité au portail",
+        "Le volume supplémentaire est facturé séparément en recharges de crédits page (19 à 149 $ le pack) en plus de l'abonnement mensuel"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "Your team processes recurring freight invoices or packing lists by hand and wants a repeatable per-supplier extraction layout",
+      "avoid_if": "You need API or ERP integration from day one on a small budget; that requires the $299/month Scale plan, not the $149/month Professional plan",
+      "strengths": [
+        "Flags uncertain values against the source page instead of returning silent extraction errors",
+        "Saved layout profiles mean a recurring supplier format only needs to be mapped once"
+      ],
+      "weaknesses": [
+        "API access and webhooks require the Scale plan ($299/month); Professional is portal-only",
+        "Extra volume is billed separately as page-credit top-ups ($19-149 per pack) on top of the monthly subscription"
+      ]
+    }
+  },
+  {
+    "name": "Mem AI",
+    "slug": "mem-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/mem-ai",
+    "url_en": "https://tooltrim.com/en/tool/mem-ai",
+    "website": "https://mem.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Version gratuite avec 25 notes par mois",
+      "paid": "Mem Free: Gratuit (25 notes/mois) ; Mem Pro: 12 $/mois (notes illimitées)"
+    },
+    "description_fr": "Application de gestion des connaissances personnelles basée sur l'IA, qui organise automatiquement les notes via un assistant conversationnel et propose une recherche intelligente parmi vos contenus.",
+    "description_en": "AI-powered personal knowledge management app that automatically organizes notes via conversational assistant and offers intelligent search across your content.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous gérez un volume élevé d'informations quotidiennes",
+      "avoid_if": "Vous avez besoin d'une organisation stricte par dossiers",
+      "strengths": [
+        "Organisation automatique sans effort manuel",
+        "Recherche conversationnelle intuitive",
+        "Capture vocale et synchronisation multi-appareils"
+      ],
+      "weaknesses": [
+        "Limite stricte sur la version gratuite",
+        "Moins de contrôle sur l'architecture des données",
+        "Prix récurrent pour la version complète"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage high information volumes daily",
+      "avoid_if": "You need strict folder-based organization",
+      "strengths": [
+        "Automatic organization without manual effort",
+        "Intuitive conversational search",
+        "Voice capture and cross-device sync"
+      ],
+      "weaknesses": [
+        "Strict free tier limits",
+        "Less control over data architecture",
+        "Recurring subscription for full features"
+      ]
+    }
+  },
+  {
+    "name": "Meshy",
+    "slug": "meshy",
+    "url_fr": "https://tooltrim.com/fr/tool/meshy",
+    "url_en": "https://tooltrim.com/en/tool/meshy",
+    "website": "https://www.meshy.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "100 crédits par mois, sans carte bancaire ; créations sous licence CC BY 4.0",
+      "paid": "Free: 0 $ avec 100 crédits par mois ; Pro: 20 $/mois avec 1 000 crédits ; Premium: 40 $/mois ; Ultra: 100 $/mois ; Studio: 70 $/mois pour un membre, puis 10 $/mois par membre supplémentaire ; Enterprise: Sur devis"
+    },
+    "description_fr": "Générateur de modèles 3D basé sur l'IA qui transforme des descriptions textuelles ou des images en modèles 3D prêts à l'emploi pour les jeux vidéo et l'impression 3D.",
+    "description_en": "AI-powered 3D model generator that converts text descriptions or images into ready-to-use 3D models for games and 3D printing.",
+    "price_verified_on": "2026-08-31",
+    "verdict_fr": {
+      "keep_if": "Vous créez des contenus 3D pour des jeux vidéo",
+      "avoid_if": "Vous nécessitez un contrôle total sur la géométrie",
+      "strengths": [
+        "Génération rapide (moins d'une minute)",
+        "Aucun abonnement obligatoire pour démarrer",
+        "Optimisation automatique pour l'impression 3D"
+      ],
+      "weaknesses": [
+        "Qualité variable selon la complexité du modèle",
+        "Contrôle limité sur les détails fins",
+        "Performance dépendante du prompt texte"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You create 3D content for games",
+      "avoid_if": "You require complete control over geometry",
+      "strengths": [
+        "Fast generation (under a minute)",
+        "No mandatory subscription to start",
+        "Automatic optimization for 3D printing"
+      ],
+      "weaknesses": [
+        "Quality varies with model complexity",
+        "Limited control over fine details",
+        "Performance depends on text prompt quality"
+      ]
+    }
+  },
+  {
+    "name": "Microsoft 365 Copilot",
+    "slug": "microsoft-365-copilot",
+    "url_fr": "https://tooltrim.com/fr/tool/microsoft-365-copilot",
+    "url_en": "https://tooltrim.com/en/tool/microsoft-365-copilot",
+    "website": "https://www.microsoft.com/microsoft-365/copilot",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Essai gratuit disponible ; fonctionnalités intégrées à Microsoft 365 existant",
+      "paid": "Copilot Pro: Montants sur la page officielle (abonnement annuel ou mensuel)"
+    },
+    "description_fr": "Assistant IA intégré aux applications Microsoft 365 (Word, Excel, Outlook, Teams, PowerPoint) qui génère du contenu, résume des documents, crée des présentations et facilite la collaboration.",
+    "description_en": "AI assistant built into Microsoft 365 apps (Word, Excel, Outlook, Teams, PowerPoint) that generates content, summarizes documents, creates presentations, and enables workplace collaboration.",
+    "alternatives": [
+      "ChatGPT"
+    ],
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez déjà Microsoft 365 quotidiennement",
+      "avoid_if": "Vous n'êtes pas utilisateur Microsoft 365",
+      "strengths": [
+        "Intégration profonde aux outils Microsoft 365",
+        "Collaboration facilitée au sein des équipes",
+        "Agents IA personnalisables pour workflows spécifiques"
+      ],
+      "weaknesses": [
+        "Coût additionnel par utilisateur",
+        "Dépendance à l'écosystème Microsoft",
+        "Configuration initiale complexe pour les agents"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You use Microsoft 365 daily",
+      "avoid_if": "You're not a Microsoft 365 user",
+      "strengths": [
+        "Deep integration with Microsoft 365 tools",
+        "Simplified team collaboration",
+        "Customizable AI agents for specific workflows"
+      ],
+      "weaknesses": [
+        "Additional cost per user",
+        "Dependency on Microsoft ecosystem",
+        "Complex agent setup for advanced use"
+      ]
+    }
+  },
+  {
+    "name": "Move AI",
+    "slug": "move-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/move-ai",
+    "url_en": "https://tooltrim.com/en/tool/move-ai",
+    "website": "https://www.move.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Capture de mouvement sans marqueurs pour les studios VFX et jeu vidéo, vendue uniquement via une démonstration commerciale, sans tarif public.",
+    "description_en": "Markerless motion capture for VFX and gaming studios, sold through a sales demo only, with no public pricing.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Tu diriges un studio VFX, d'animation ou de jeu vidéo qui a besoin de mocap sans marqueurs à l'échelle de la production et tu peux passer par un parcours commercial de type entreprise",
+      "avoid_if": "Tu es indépendant ou en petite équipe, sans budget pour une négociation commerciale de type entreprise",
+      "strengths": [
+        "Aucun marqueur physique nécessaire, installation plus rapide qu'un dispositif de mocap optique classique",
+        "Export direct vers Unreal Engine pour les pipelines de production"
+      ],
+      "weaknesses": [
+        "Aucun tarif public ; accès uniquement via une démonstration commerciale",
+        "Positionné pour les studios, pas pour un indépendant au budget limité"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "You run a VFX, animation or game studio that needs markerless mocap at production scale and can go through an enterprise sales process",
+      "avoid_if": "You are a solo freelancer or small team without the budget for an enterprise sales negotiation",
+      "strengths": [
+        "No physical markers needed, faster to set up than a traditional optical mocap rig",
+        "Direct export to Unreal Engine for production pipelines"
+      ],
+      "weaknesses": [
+        "No public pricing; access only through a sales demo",
+        "Positioned for studios, not for a budget-conscious freelancer"
+      ]
+    }
+  },
+  {
+    "name": "Notion AI",
+    "slug": "notion-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/notion-ai",
+    "url_en": "https://tooltrim.com/en/tool/notion-ai",
+    "website": "https://notion.so/product/ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Essai gratuit avec accès limité aux fonctionnalités IA",
+      "paid": "Business Plan: Inclut Notion AI ; crédits agents 10 $/1000 à partir du 4 mai 2026"
+    },
+    "description_fr": "Suite de fonctionnalités IA intégrées à Notion, incluant génération de texte, agents personnalisés pour automatiser les tâches, recherche d'entreprise, et résumés de réunions.",
+    "description_en": "Suite of AI features built into Notion, including text generation, custom agents for task automation, enterprise search, and meeting summaries.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez déjà Notion pour votre gestion de projet",
+      "avoid_if": "Vous n'utilisez pas Notion actuellement",
+      "strengths": [
+        "Intégration seamless à Notion",
+        "Agents personnalisés pour workflows uniques",
+        "Recherche intelligente inter-applications"
+      ],
+      "weaknesses": [
+        "Coût des crédits agents après période gratuite",
+        "Nécessite déjà un abonnement Notion",
+        "Configuration des agents peut être complexe"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You already use Notion for project management",
+      "avoid_if": "You don't currently use Notion",
+      "strengths": [
+        "Seamless Notion integration",
+        "Custom agents for unique workflows",
+        "Smart cross-app search"
+      ],
+      "weaknesses": [
+        "Credit costs after free period",
+        "Requires existing Notion subscription",
+        "Agent setup can be complex"
+      ]
+    }
+  },
+  {
+    "name": "OpenAI API",
+    "slug": "openai-api",
+    "url_fr": "https://tooltrim.com/fr/tool/openai-api",
+    "url_en": "https://tooltrim.com/en/tool/openai-api",
+    "website": "https://platform.openai.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Aucun forfait gratuit permanent garanti",
+      "paid": "Paiement à l'usage selon le modèle et les tokens consommés"
+    },
+    "description_fr": "API de modèles IA pour chat, génération, agents, embeddings et outils.",
+    "description_en": "AI model API for chat, generation, agents, embeddings, and tools.",
+    "price_verified_on": "2026-08-28",
+    "verdict_fr": {
+      "keep_if": "Vous intégrez l'IA dans une application ou service",
+      "avoid_if": "Vous cherchez une interface conviviale sans code",
+      "strengths": [
+        "Modèles les plus avancés du marché",
+        "API bien documentée et largement adoptée",
+        "Multiples options d'optimisation (Batch, caching, fine-tuning)"
+      ],
+      "weaknesses": [
+        "Facturation à l'usage potentiellement imprévisible",
+        "Nécessite des compétences de développement",
+        "Coûts peuvent s'accumuler rapidement avec fort volume"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're integrating AI into an app or service",
+      "avoid_if": "You're looking for a no-code user interface",
+      "strengths": [
+        "Most advanced models on the market",
+        "Well-documented and widely adopted API",
+        "Multiple optimization options (Batch, caching, fine-tuning)"
+      ],
+      "weaknesses": [
+        "Usage-based pricing can be unpredictable",
+        "Requires software development skills",
+        "Costs can accumulate quickly with high volume"
+      ]
+    }
+  },
+  {
+    "name": "Otter.ai",
+    "slug": "otter-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/otter-ai",
+    "url_en": "https://tooltrim.com/en/tool/otter-ai",
+    "website": "https://otter.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Basic gratuit : 300 minutes/mois de transcription, intégrations de base",
+      "paid": "Basic: Gratuit (300 min/mois) ; Business: 19,99 $/utilisateur/mois (1200 min/mois) ; Enterprise: Montants sur la page officielle (tarif personnalisé)"
+    },
+    "description_fr": "Plateforme IA de transcription et résumés de réunions qui enregistre, transcrit et résume automatiquement les discussions, avec intégration à Zoom, Google Meet, Slack et autres outils collaboratifs.",
+    "description_en": "AI meeting transcription platform that records, transcribes, and summarizes conversations automatically with integration to Zoom, Google Meet, Slack, and other collaboration tools.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous participez à de nombreuses réunions à transcrire",
+      "avoid_if": "Vous n'avez que quelques réunions par mois",
+      "strengths": [
+        "Transcription très précise et multi-langue",
+        "Résumés et points d'action générés automatiquement",
+        "Intégration profonde aux outils collaboratifs populaires"
+      ],
+      "weaknesses": [
+        "Limite stricte sur la version gratuite (300 min/mois)",
+        "Prix par utilisateur peut s'accumuler en équipe",
+        "Qualité variable en environnements bruyants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You attend many meetings to transcribe",
+      "avoid_if": "You only have a few meetings per month",
+      "strengths": [
+        "Highly accurate transcription and multi-language support",
+        "Automatic summaries and action items",
+        "Deep integration with popular collaboration tools"
+      ],
+      "weaknesses": [
+        "Strict free tier limits (300 min/month)",
+        "Per-user pricing can accumulate in teams",
+        "Variable quality in noisy environments"
+      ]
+    }
+  },
+  {
+    "name": "Perplexity",
+    "slug": "perplexity",
+    "url_fr": "https://tooltrim.com/fr/tool/perplexity",
+    "url_en": "https://tooltrim.com/en/tool/perplexity",
+    "website": "https://perplexity.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit avec recherches illimitées, 6 modes Focus, Collections, Spaces avec limite de fichiers",
+      "paid": "Free: Gratuit (recherches illimitées) ; Pro: 20 $/mois ou 200 $/an (200 $/an = 16,67 $/mois) ; Education Pro: 10 $/mois pour étudiants/professeurs vérifiés ; Max: 200 $/mois (pas de limites, Model Council) ; Enterprise Pro: 40 $/utilisateur/mois (400 $/an)"
+    },
+    "description_fr": "Moteur de recherche IA avec réponses récentes, citations numérotées et fonctionnalités avancées comme Spaces personnalisés, recherche académique, et accès à plusieurs modèles frontier.",
+    "description_en": "AI search engine with real-time answers, numbered citations, and advanced features like custom Spaces, academic search, and access to multiple frontier models.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous faites de la recherche régulière sur des sujets d'actualité",
+      "avoid_if": "Vous avez besoin surtout d'un chatbot de productivité",
+      "strengths": [
+        "Recherche en temps réel avec sources fiables",
+        "Multiples modes Focus pour ciblage du contexte",
+        "Accès à plusieurs modèles frontier (Max)"
+      ],
+      "weaknesses": [
+        "Moins axé sur la productivité que le chat classique",
+        "Max tier très coûteux pour usage occasionnel",
+        "Apprentissage des modes Focus peut être nécessaire"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You do regular research on current topics",
+      "avoid_if": "You primarily need an office productivity chatbot",
+      "strengths": [
+        "Real-time search with reliable sources",
+        "Multiple Focus modes for context targeting",
+        "Access to multiple frontier models (Max)"
+      ],
+      "weaknesses": [
+        "Less focused on productivity than standard chat",
+        "Max tier expensive for occasional use",
+        "Learning Focus modes may be needed"
+      ]
+    }
+  },
+  {
+    "name": "pgvector",
+    "slug": "pgvector",
+    "url_fr": "https://tooltrim.com/fr/tool/pgvector",
+    "url_en": "https://tooltrim.com/en/tool/pgvector",
+    "website": "https://github.com/pgvector/pgvector",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Extension PostgreSQL pour stocker et chercher des embeddings.",
+    "description_en": "PostgreSQL extension for storing and searching embeddings.",
+    "verdict_fr": {
+      "keep_if": "Vous construisez une application IA nécessitant recherche sémantique ou similarité vectorielle",
+      "avoid_if": "Vous avez besoin d'une base de données vectorielle spécialisée avec support commercial",
+      "strengths": [
+        "Entièrement gratuit et open-source, aucun coût de licence",
+        "Intégration native dans PostgreSQL (JOINs, transactions ACID, point-in-time recovery)",
+        "Support de multiples types de vecteurs et distance metrics"
+      ],
+      "weaknesses": [
+        "Nécessite expertise PostgreSQL pour maintenance et optimisation",
+        "Pas de support commercial natif (communauté assurant la maintenance)",
+        "Performances limitées à l'infrastructure PostgreSQL (pas de scaling distribué natif)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are building an AI application requiring semantic search or vector similarity",
+      "avoid_if": "You need a specialized vector database with commercial support",
+      "strengths": [
+        "Completely free and open-source with no licensing costs",
+        "Native PostgreSQL integration (JOINs, ACID transactions, point-in-time recovery)",
+        "Support for multiple vector types and distance metrics"
+      ],
+      "weaknesses": [
+        "Requires PostgreSQL expertise for maintenance and tuning",
+        "No native commercial support (community-maintained)",
+        "Performance limited to single PostgreSQL instance (no native distributed scaling)"
+      ]
+    }
+  },
+  {
+    "name": "Pika Labs",
+    "slug": "pika-labs",
+    "url_fr": "https://tooltrim.com/fr/tool/pika-labs",
+    "url_en": "https://tooltrim.com/en/tool/pika-labs",
+    "website": "https://pika.art",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : 0 crédit par mois (achat de packs uniquement), 2 générations vidéo en parallèle et 2 générations image+audio en parallèle, tous les modèles, sans filigrane.",
+      "paid": "Dès 8 $/mois, plan Starter."
+    },
+    "description_fr": "Une plateforme IA à crédits pour générer et éditer vidéo, images, musique et voix à partir de texte, en agrégeant plusieurs modèles tiers.",
+    "description_en": "A credit-based AI platform for generating and editing video, images, music and voice from text prompts, aggregating several third-party models.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu produis du contenu vidéo, image ou audio à but commercial et tu veux plusieurs modèles IA dans un seul outil à crédits",
+      "avoid_if": "Tu veux juste tester l'outil de temps en temps sans t'engager sur une offre payante à crédits",
+      "strengths": [
+        "Agrège plusieurs modèles IA tiers (vidéo, image, musique, voix) derrière une seule interface et une API",
+        "Gère la vidéo multi-plans jusqu'à 30 secondes, plus l'extension de vidéo et le transfert de mouvement"
+      ],
+      "weaknesses": [
+        "L'offre gratuite n'a aucun crédit récurrent, seulement des achats ponctuels de recharge",
+        "L'usage commercial des sorties est réservé à l'offre Creator et aux offres supérieures"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You produce video, image or audio content commercially and want several AI models in one credit-based tool",
+      "avoid_if": "You only want to test the tool occasionally without committing to a paid credit plan",
+      "strengths": [
+        "Aggregates several third-party AI models (video, image, music, voice) behind one interface and API",
+        "Supports multi-shot video up to 30 seconds, plus video extension and motion transfer"
+      ],
+      "weaknesses": [
+        "The free plan has no recurring credits, only one-off top-up purchases",
+        "Commercial use of outputs is restricted to the Creator plan and above"
+      ]
+    }
+  },
+  {
+    "name": "Pinecone",
+    "slug": "pinecone",
+    "url_fr": "https://tooltrim.com/fr/tool/pinecone",
+    "url_en": "https://tooltrim.com/en/tool/pinecone",
+    "website": "https://www.pinecone.io",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Base vectorielle managée pour recherche sémantique et RAG.",
+    "description_en": "Managed vector database for semantic search and RAG.",
+    "verdict_fr": {
+      "keep_if": "Vous intégrez la recherche sémantique dans une application",
+      "avoid_if": "Vous n'avez pas besoin de recherche vectorielle",
+      "strengths": [
+        "Performance très haute en production",
+        "Scalabilité à millions de vecteurs",
+        "Séparation flexible du stockage et compute"
+      ],
+      "weaknesses": [
+        "Pas de tier gratuit permanent (essai uniquement)",
+        "Tarification peut devenir coûteuse à forte échelle",
+        "Lié au provider cloud (pas d'auto-hébergement)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're integrating semantic search into an app",
+      "avoid_if": "You don't need vector search",
+      "strengths": [
+        "Very high production performance",
+        "Scalability to millions of vectors",
+        "Flexible storage/compute separation"
+      ],
+      "weaknesses": [
+        "No permanent free tier (trial only)",
+        "Pricing can become expensive at scale",
+        "Cloud-tied (no self-hosting option)"
+      ]
+    }
+  },
+  {
+    "name": "Qdrant",
+    "slug": "qdrant",
+    "url_fr": "https://tooltrim.com/fr/tool/qdrant",
+    "url_en": "https://tooltrim.com/en/tool/qdrant",
+    "website": "https://qdrant.tech",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Base vectorielle open source pour recherche sémantique et recommandations.",
+    "description_en": "Open-source vector database for semantic search and recommendations.",
+    "verdict_fr": {
+      "keep_if": "Vous construisez une application IA avec recherche vectorielle",
+      "avoid_if": "Vous n'avez besoin que d'une recherche textuelle classique",
+      "strengths": [
+        "Open-source et auto-hébergeable gratuitement",
+        "Recherche hybride très performante",
+        "Support multi-déploiement (cloud, k8s, edge)"
+      ],
+      "weaknesses": [
+        "Courbe d'apprentissage pour déploiement on-premise",
+        "Moins d'interface graphique que concurrents cloud-first",
+        "Support commercial optionnel (pas d'inclusion par défaut)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're building an AI app with vector search",
+      "avoid_if": "You only need classic text search",
+      "strengths": [
+        "Open-source and self-hostable for free",
+        "High-performance hybrid search",
+        "Multi-deployment support (cloud, k8s, edge)"
+      ],
+      "weaknesses": [
+        "Learning curve for on-premise deployment",
+        "Fewer GUI features than cloud-first competitors",
+        "Commercial support optional (not included by default)"
+      ]
+    }
+  },
+  {
+    "name": "QuillBot",
+    "slug": "quillbot",
+    "url_fr": "https://tooltrim.com/fr/tool/quillbot",
+    "url_en": "https://tooltrim.com/en/tool/quillbot",
+    "website": "https://quillbot.com",
+    "category": "ai-general",
+    "description_fr": "Outil de paraphrase, de grammaire, de résumé et de traduction IA pour les étudiants et les écrivains. Modes de réécriture multiples, vérificateur de plagiat, détecteur IA et générateur de citations. Freemium avec plans Premium, Student et Teams.",
+    "description_en": "AI paraphrasing, grammar, summarizer, and translation tool for students and writers. Multiple rewriting modes, plagiarism checker, AI detector, citation generator. Freemium with Premium, Student, Teams plans.",
+    "verdict_fr": {
+      "keep_if": "Vous reparaphrasez le texte fréquemment avec des modes de réécriture variés",
+      "avoid_if": "Vous cherchez une rédaction originale complète plutôt que de la réécriture",
+      "strengths": [
+        "6+ modes de réécriture (Standard, Fluency, Creative, Shorten, Expand, Formal) offrent de la flexibilité",
+        "Suite complète regroupant grammaire, résumé, paraphrase et plagiat dans un outil unique",
+        "Le plan Student avec vérification .edu rend le premium accessible aux étudiants"
+      ],
+      "weaknesses": [
+        "Plan gratuit limité (125 mots par passage maximum)",
+        "La paraphrase mécanique ne remplace pas la rédaction créative originale",
+        "Le détecteur de plagiat est limité : un vérificateur externe est meilleur pour le contrôle"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You paraphrase text frequently with varied rewriting modes",
+      "avoid_if": "You seek complete original writing rather than rewriting",
+      "strengths": [
+        "6+ rewriting modes (Standard, Fluency, Creative, Shorten, Expand, Formal) offer flexibility",
+        "Complete suite grammar + summarizer + paraphrase + plagiarism in single tool",
+        "Student plan discount with .edu verification makes premium accessible students"
+      ],
+      "weaknesses": [
+        "Free plan limited (125 words/run max only)",
+        "Mechanical paraphrase does not replace original creative writing",
+        "Plagiarism detector limited; external checker better for control"
+      ]
+    }
+  },
+  {
+    "name": "Replit",
+    "slug": "replit",
+    "url_fr": "https://tooltrim.com/fr/tool/replit",
+    "url_en": "https://tooltrim.com/en/tool/replit",
+    "website": "https://replit.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Starter gratuit avec crédits quotidiens et 1 projet",
+      "paid": "Starter: Gratuit (crédits quotidiens, 1 projet) ; Core: 20 $/mois (25 $ crédits/mois, 5 collaborateurs) ; Pro: 95 $/mois facturation annuelle (100 $ crédits, 15 collaborateurs, 10 agents parallèles) ; Enterprise: Montants sur la page officielle (pricing personnalisé)"
+    },
+    "description_fr": "Plateforme d'application IA permettant aux utilisateurs de créer des apps, sites, jeux et données-vizes en décrivant leurs idées en langage naturel, sans codage requis.",
+    "description_en": "AI app platform enabling users to create apps, websites, games, and data visualizations by describing ideas in natural language, no coding required.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous avez une idée d'app mais pas de compétence dev",
+      "avoid_if": "Vous avez besoin de contrôle architectural très fin",
+      "strengths": [
+        "Création d'apps sans codage (prompt texte)",
+        "Infrastructure incluse (db, auth, hosting)",
+        "De l'idée au MVP en heures plutôt que semaines"
+      ],
+      "weaknesses": [
+        "Moins de contrôle fin que développement manuel",
+        "Limité aux templates et capacités de l'Agent",
+        "Coûts en crédits peuvent s'accumuler"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have an app idea but no dev skills",
+      "avoid_if": "You need fine architectural control",
+      "strengths": [
+        "Create apps without coding (text prompt)",
+        "Included infrastructure (db, auth, hosting)",
+        "Idea to MVP in hours not weeks"
+      ],
+      "weaknesses": [
+        "Less fine control than manual development",
+        "Limited to templates and Agent capabilities",
+        "Credit costs can accumulate"
+      ]
+    }
+  },
+  {
+    "name": "Runway",
+    "slug": "runway",
+    "url_fr": "https://tooltrim.com/fr/tool/runway",
+    "url_en": "https://tooltrim.com/en/tool/runway",
+    "website": "https://runway.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : 125 crédits ponctuels, 5 Go de stockage, usage exploratoire uniquement",
+      "paid": "Dès 12 $/mois, plan Standard."
+    },
+    "description_fr": "Plateforme de génération et d'édition vidéo, image et audio par IA avec plusieurs modèles maison, upscaling 4K, et des crédits gratuits accordés une seule fois.",
+    "description_en": "AI video, image and audio generation and editing platform with multiple in-house models, 4K upscaling, and a one-time free credit grant.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu produis de la vidéo IA régulièrement et tu veux génération, édition et une API développeur dans un seul espace de travail",
+      "avoid_if": "Tu veux juste tester la génération vidéo IA quelques fois ; les crédits du plan gratuit s'épuisent après un usage ponctuel",
+      "strengths": [
+        "Combine génération vidéo, image et audio avec une API développeur dans une seule plateforme",
+        "Plusieurs modèles maison et upscaling 4K à partir du palier Standard"
+      ],
+      "weaknesses": [
+        "Les 125 crédits du plan gratuit sont accordés une seule fois, pas chaque mois",
+        "Le rendu sans filigrane et l'upscaling 4K demandent au moins le plan payant Standard"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You produce AI video regularly and want generation, editing and a developer API in one workspace",
+      "avoid_if": "You just want to try AI video generation a few times; the free plan's credits run out after one-time use",
+      "strengths": [
+        "Combines video, image and audio generation with a developer API in one platform",
+        "Multiple in-house models and 4K upscaling from the Standard tier up"
+      ],
+      "weaknesses": [
+        "Free plan's 125 credits are a one-time grant, not a recurring monthly allowance",
+        "Watermark-free output and 4K upscaling require at least the Standard paid plan"
+      ]
+    }
+  },
+  {
+    "name": "Stable Diffusion",
+    "slug": "stable-diffusion",
+    "url_fr": "https://tooltrim.com/fr/tool/stable-diffusion",
+    "url_en": "https://tooltrim.com/en/tool/stable-diffusion",
+    "website": "https://stability.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "API cloud payante ; modèle open-source auto-hébergeable gratuitement",
+      "paid": "Platform API: Montants sur la page officielle (pay-per-use) ; Brand Studio: Montants sur la page officielle (plans tiérés) ; Self-Hosted License: Gratuit (modèle open-source)"
+    },
+    "description_fr": "Modèle de génération d'images IA open-source et libre d'utilisation, accessible via API cloud (Stability.ai) ou en auto-hébergement, permettant créer des images à partir de descriptions texte.",
+    "description_en": "Open-source image generation AI model freely available via cloud API (Stability.ai) or self-hosted, creating images from text descriptions.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous générez des images régulièrement pour contenu",
+      "avoid_if": "Vous n'avez besoin que d'une image occasionnelle",
+      "strengths": [
+        "Open-source et auto-hébergeable sans coûts",
+        "Modèles entraînés sur données licenciées légalement",
+        "Déploiements flexibles (cloud, on-premise, partners)"
+      ],
+      "weaknesses": [
+        "API cloud payante par usage (coûts variables)",
+        "Nécessite compétences techniques pour auto-hébergement",
+        "Qualité d'image variable selon prompts"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You generate images regularly for content",
+      "avoid_if": "You only need occasional images",
+      "strengths": [
+        "Open-source and self-hostable at no cost",
+        "Models trained on legally licensed data",
+        "Flexible deployments (cloud, on-premise, partners)"
+      ],
+      "weaknesses": [
+        "Cloud API payable by usage (variable costs)",
+        "Requires technical skills for self-hosting",
+        "Image quality variable based on prompts"
+      ]
+    }
+  },
+  {
+    "name": "Suno",
+    "slug": "suno",
+    "url_fr": "https://tooltrim.com/fr/tool/suno",
+    "url_en": "https://tooltrim.com/en/tool/suno",
+    "website": "https://suno.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : 50 crédits par jour, aucun téléchargement de chanson, aucun droit commercial, file de création partagée, modèle v6-mini uniquement.",
+      "paid": "Dès 6,40 $/mois, plan Pro."
+    },
+    "description_fr": "Outil IA qui génère des chansons complètes à partir d'un texte, gratuit à l'essai, avec des forfaits payants ajoutant téléchargements et droits commerciaux.",
+    "description_en": "AI tool that generates full songs from text prompts, free to try with paid tiers adding downloads, commercial rights and more credits.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux générer des chansons utilisables avec des droits commerciaux pour du contenu ou des projets personnels, et tu peux utiliser tes crédits mensuels régulièrement",
+      "avoid_if": "Tu veux seulement expérimenter sans télécharger ni jamais utiliser les chansons commercialement ; le forfait gratuit couvre déjà ce besoin",
+      "strengths": [
+        "Génère une chanson complète, paroles et voix incluses, à partir d'un court prompt textuel en moins d'une minute",
+        "La séparation des pistes et les outils MIDI/effets de Suno Studio permettent une édition plus poussée au-delà d'une simple génération"
+      ],
+      "weaknesses": [
+        "Le forfait Free n'a ni droits commerciaux ni téléchargement, donc les chansons générées ne peuvent pas être utilisées ni exportées sans passer au payant",
+        "Les crédits mensuels expirent non utilisés à chaque cycle, donc un usage irrégulier gaspille une partie du quota payant"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You want to generate usable songs with commercial rights for content or personal projects and can use your monthly credits regularly",
+      "avoid_if": "You only want to experiment without downloading or ever using the songs commercially; the free plan covers that already",
+      "strengths": [
+        "Generates a complete song, including lyrics and vocals, from a short text prompt in under a minute",
+        "Stem separation and Suno Studio's MIDI/effects tools allow deeper editing beyond a one-shot generation"
+      ],
+      "weaknesses": [
+        "Free plan has no commercial rights and no downloads, so generated songs can't be used or exported without upgrading",
+        "Monthly credits expire unused each cycle, so irregular usage wastes part of the paid quota"
+      ]
+    }
+  },
+  {
+    "name": "Tabnine",
+    "slug": "tabnine",
+    "url_fr": "https://tooltrim.com/fr/tool/tabnine",
+    "url_en": "https://tooltrim.com/en/tool/tabnine",
+    "website": "https://tabnine.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Version gratuite avec auto-complétion de base",
+      "paid": "Free: Gratuit (auto-complétion simple) ; Pro: Montants sur la page officielle ; Enterprise: Montants sur la page officielle"
+    },
+    "description_fr": "Assistant IA pour la programmation offrant auto-complétion intelligente de code, chat IA pour workflows dev, et agents pour exécution de tâches, adapté à l'architecture et standards d'une organisation.",
+    "description_en": "AI coding assistant offering intelligent code completion, AI chat for dev workflows, and agents for task execution, adapted to organization's architecture and standards.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous programmez quotidiennement (Python, JavaScript, etc)",
+      "avoid_if": "Vous programmez très occasionnellement",
+      "strengths": [
+        "Auto-complétion très rapide et contextuelle",
+        "Multi-LLM pour flexibilité",
+        "Enterprise Context Engine pour standardisation"
+      ],
+      "weaknesses": [
+        "Tarification détails non publiés (sur demande)",
+        "Courbe d'apprentissage pour features avancées",
+        "Nécessite configuration d'équipe pour full value"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You code daily (Python, JavaScript, etc)",
+      "avoid_if": "You code very occasionally",
+      "strengths": [
+        "Fast and contextual code completion",
+        "Multi-LLM for flexibility",
+        "Enterprise Context Engine for standardization"
+      ],
+      "weaknesses": [
+        "Pricing details not published (on request)",
+        "Learning curve for advanced features",
+        "Requires team setup for full value"
+      ]
+    }
+  },
+  {
+    "name": "Topaz Video AI",
+    "slug": "topaz-video-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/topaz-video-ai",
+    "url_en": "https://tooltrim.com/en/tool/topaz-video-ai",
+    "website": "https://www.topazlabs.com/topaz-video-ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 25 $/mois, plan Personal."
+    },
+    "description_fr": "Logiciel de bureau (Mac/Windows) d'amélioration vidéo par IA : upscaling, débruitage, interpolation et stabilisation.",
+    "description_en": "Desktop software (Mac/Windows) for AI video enhancement: upscaling, denoising, interpolation, and stabilization.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu dois régulièrement sauver, upscaler ou nettoyer des rushs comme étape distincte de ton flux de travail, et un abonnement récurrent à un logiciel de bureau se justifie pour ça",
+      "avoid_if": "Tu n'as besoin d'upscaling qu'occasionnellement et ne veux pas d'abonnement récurrent, ou ton GPU (surtout sur Mac/AMD) ne peut pas faire tourner les modèles haut de gamme en local",
+      "strengths": [
+        "Résultats solides et spécialisés pour l'upscaling et la restauration de rushs de mauvaise qualité ou anciens, meilleurs que ce que propose la plupart des suites de montage généralistes",
+        "Le traitement local sur ton propre GPU évite d'avoir à envoyer tes rushs vers un service cloud pour le rendu de base",
+        "S'intègre directement dans Premiere Pro et DaVinci Resolve, ce qui s'insère dans un pipeline de montage existant"
+      ],
+      "weaknesses": [
+        "Plus de licence perpétuelle ; uniquement de l'abonnement, avec des crédits cloud qui expirent chaque mois",
+        "Les droits d'usage commercial du plan Personal sont plafonnés selon le chiffre d'affaires de la structure, ce qui peut forcer un freelance qui grandit à passer au plan Pro, plus cher",
+        "Certains modèles haut de gamme ne sont pas disponibles en local sur Mac et GPU AMD, ce qui pousse ces utilisateurs vers des crédits cloud payants pour obtenir la même qualité"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You regularly need to rescue, upscale or clean up footage as a discrete step in your workflow and can justify a recurring desktop-software subscription for it",
+      "avoid_if": "You need occasional, one-off upscaling and don't want an ongoing subscription, or your GPU (especially on Mac/AMD) can't run the top-tier models locally",
+      "strengths": [
+        "Strong, specialized results for upscaling and restoring low-quality or old footage, better than what most general editing suites offer out of the box",
+        "Local processing on your own GPU means no mandatory upload of footage to a cloud service for the core rendering",
+        "Plugs directly into Premiere Pro and DaVinci Resolve, fitting into an existing editing pipeline"
+      ],
+      "weaknesses": [
+        "No perpetual license anymore; subscription-only pricing with monthly-expiring cloud credits",
+        "Personal tier's commercial-use rights are capped by organization revenue, which can force freelancers scaling up onto the pricier Pro plan",
+        "Some top-tier models are unavailable locally on Mac and AMD GPUs, pushing those users toward paid cloud credits for the same quality"
+      ]
+    }
+  },
+  {
+    "name": "Tripo",
+    "slug": "tripo",
+    "url_fr": "https://tooltrim.com/fr/tool/tripo",
+    "url_en": "https://tooltrim.com/en/tool/tripo",
+    "website": "https://www.tripo3d.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Tripo Studio gratuit (studio.tripo3d.ai) avec accès de base",
+      "paid": "Tripo Studio Free: Gratuit ; Premium Plans: Montants sur la page officielle"
+    },
+    "description_fr": "Générateur de modèles 3D basé sur l'IA transformant des descriptions texte ou images en modèles 3D haute qualité ou optimisés pour jeux, avec texturage et rigging automatiques.",
+    "description_en": "AI 3D model generator converting text descriptions or images into high-quality or game-optimized 3D models with automatic texturing and rigging.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous créez du contenu 3D pour jeux ou VR",
+      "avoid_if": "Vous créez des sculptures 3D ultra-complexes",
+      "strengths": [
+        "Génération instantanée depuis texte ou image",
+        "Deux modes de sortie (haute détail vs optimisé gaming)",
+        "Texturage et rigging automatiques"
+      ],
+      "weaknesses": [
+        "Qualité variable selon complexité de la description",
+        "Moins de contrôle fin que sculpture traditionnelle",
+        "Tarifs premium non publiés (sur demande)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You create 3D content for games or VR",
+      "avoid_if": "You create ultra-complex 3D sculptures",
+      "strengths": [
+        "Instant generation from text or image",
+        "Two output modes (high-detail vs game-optimized)",
+        "Automatic texturing and rigging"
+      ],
+      "weaknesses": [
+        "Quality variable based on description complexity",
+        "Less fine control than traditional sculpting",
+        "Premium pricing not published (on request)"
+      ]
+    }
+  },
+  {
+    "name": "TypoTab",
+    "slug": "typotab",
+    "url_fr": "https://tooltrim.com/fr/tool/typotab",
+    "url_en": "https://tooltrim.com/en/tool/typotab",
+    "website": "https://typotab.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit avec fonctionnalités de base",
+      "paid": "6£/mois ou 4£/mois facturé annuellement"
+    },
+    "description_fr": "Extension Chrome : assistant IA de rédaction dans chaque onglet.",
+    "description_en": "Chrome extension: AI writing assistant in every tab.",
+    "price_verified_on": "2026-05-08",
+    "verdict_fr": {
+      "keep_if": "Vous écrivez beaucoup et utilisez macOS",
+      "avoid_if": "Vous utilisez principalement Windows",
+      "strengths": [
+        "Intégration seamless à toutes les apps macOS",
+        "Tarif très accessible",
+        "Interface menu bar discrète et rapide"
+      ],
+      "weaknesses": [
+        "macOS uniquement (pas Windows/Linux)",
+        "Pas de version gratuite",
+        "Limité à assistance écriture (pas multi-domaines)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You write extensively and use macOS",
+      "avoid_if": "You primarily use Windows",
+      "strengths": [
+        "Seamless integration with all macOS apps",
+        "Very affordable pricing",
+        "Discreet and fast menu bar interface"
+      ],
+      "weaknesses": [
+        "macOS only (no Windows/Linux)",
+        "No free version",
+        "Limited to writing assistance (not multi-domain)"
+      ]
+    }
+  },
+  {
+    "name": "Udio",
+    "slug": "udio",
+    "url_fr": "https://tooltrim.com/fr/tool/udio",
+    "url_en": "https://tooltrim.com/en/tool/udio",
+    "website": "https://udio.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : 100 crédits par mois, environ 1 à 3 morceaux par jour.",
+      "paid": "Dès 8 $/mois, plan Standard."
+    },
+    "description_fr": "Udio génère des morceaux complets par IA avec voix à partir de prompts textuels, avec un plan gratuit limité en crédits et des plans dès 10 $/mois.",
+    "description_en": "Udio generates complete AI songs with vocals from text prompts, with a credit-limited free tier and paid plans from $10/month.",
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Tu veux générer rapidement une musique à partir d'un prompt texte sans embaucher de compositeur",
+      "avoid_if": "Tu as besoin d'importer ton propre audio ou d'utiliser une référence de style au plan gratuit, ou le plan gratuit ne couvre pas ton volume de production",
+      "strengths": [
+        "Génère un morceau complet avec voix à partir d'un simple prompt textuel, sans composer ni enregistrer",
+        "Les outils de remix, copie de style et extension permettent de réutiliser un morceau existant pour d'autres sections"
+      ],
+      "weaknesses": [
+        "Les environ 100 crédits mensuels du plan gratuit ne couvrent que 1 à 3 morceaux par jour, insuffisant pour une production régulière",
+        "L'import de tes propres fichiers audio, l'usage d'un morceau existant comme référence de style, et la pochette personnalisée sont réservés aux plans payants"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "You want to generate music quickly from a text prompt without hiring a composer",
+      "avoid_if": "You need to upload your own audio or use a style reference at the free tier, or the free plan's credit limit doesn't cover your volume",
+      "strengths": [
+        "Generates a complete song with vocals from a single text prompt, without composing or recording",
+        "Remix, style-copy and extend tools let an existing track be reused for different sections"
+      ],
+      "weaknesses": [
+        "The free plan's roughly 100 credits a month cover only 1-3 songs a day, too little for regular production",
+        "Uploading your own audio files, using an existing song as a style reference, and custom cover art are reserved for paid plans"
+      ]
+    }
+  },
+  {
+    "name": "Vercel AI SDK",
+    "slug": "vercel-ai-sdk",
+    "url_fr": "https://tooltrim.com/fr/tool/vercel-ai-sdk",
+    "url_en": "https://tooltrim.com/en/tool/vercel-ai-sdk",
+    "website": "https://sdk.vercel.ai",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "SDK TypeScript pour interfaces IA, streaming et appels modèles.",
+    "description_en": "TypeScript SDK for AI interfaces, streaming, and model calls.",
+    "verdict_fr": {
+      "keep_if": "Vous développez une application web/Node.js en TypeScript avec IA",
+      "avoid_if": "Vous développez en langage autre que TypeScript/JavaScript",
+      "strengths": [
+        "Entièrement gratuit et open-source, aucun coût SDK",
+        "Support multi-fournisseur natif (basculer entre OpenAI, Anthropic, Google, etc.)",
+        "Streaming temps réel intégré sans parsing personnalisé"
+      ],
+      "weaknesses": [
+        "Limité à TypeScript/JavaScript (pas de support Python natif à jour)",
+        "Pas de support commercial ; dépend de communauté GitHub",
+        "Coûts d'API fournisseur non inclus (ajoutent frais additionnels)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are building a TypeScript/JavaScript web or Node.js application with AI features",
+      "avoid_if": "You develop in languages other than TypeScript/JavaScript",
+      "strengths": [
+        "Completely free and open-source with no SDK costs",
+        "Native multi-provider support (switch between OpenAI, Anthropic, Google, etc.)",
+        "Built-in real-time streaming without custom parsing"
+      ],
+      "weaknesses": [
+        "Limited to TypeScript/JavaScript (no current native Python support)",
+        "No commercial support; relies on GitHub community",
+        "Provider API costs not included (add additional expenses)"
+      ]
+    }
+  },
+  {
+    "name": "VoiceTypr",
+    "slug": "voicetypr",
+    "url_fr": "https://tooltrim.com/fr/tool/voicetypr",
+    "url_en": "https://tooltrim.com/en/tool/voicetypr",
+    "website": "https://voicetypr.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Essai gratuit 3 jours, pas de carte bancaire requise",
+      "paid": "Pro: 39 $ (1 appareil, licence perpétuelle) ; Plus: 69 $ (2 appareils, licence perpétuelle) ; Max: 99 $ (4 appareils, licence perpétuelle)"
+    },
+    "description_fr": "Application de dictée vocale offline-first pour Mac et Windows permettant écrire par la voix dans n'importe quelle app (Cursor, ChatGPT, Claude, Slack, Gmail, docs) en utilisant des modèles IA locaux.",
+    "description_en": "Offline-first voice-to-text app for Mac and Windows enabling voice dictation in any app (Cursor, ChatGPT, Claude, Slack, Gmail, docs) using local AI models.",
+    "alternatives": [
+      "Whisper"
+    ],
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous tapez beaucoup et préférez la dictée",
+      "avoid_if": "Vous utilisez Linux ou autre OS",
+      "strengths": [
+        "Offline par défaut (confidentialité garantie)",
+        "Support 99 langues avec détection auto",
+        "Achat unique sans abonnement perpétuel"
+      ],
+      "weaknesses": [
+        "macOS/Windows uniquement",
+        "Pas gratuit permanent (essai 3 jours)",
+        "Nettoyage IA optionnel coûte crédits API"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You type extensively and prefer dictation",
+      "avoid_if": "You use Linux or other OS",
+      "strengths": [
+        "Offline by default (guaranteed privacy)",
+        "99-language support with auto-detection",
+        "One-time purchase without perpetual subscription"
+      ],
+      "weaknesses": [
+        "macOS/Windows only",
+        "Not permanently free (3-day trial)",
+        "Optional AI cleanup costs API credits"
+      ]
+    }
+  },
+  {
+    "name": "Whisper (OpenAI)",
+    "slug": "whisper",
+    "url_fr": "https://tooltrim.com/fr/tool/whisper",
+    "url_en": "https://tooltrim.com/en/tool/whisper",
+    "website": "https://openai.com/research/whisper",
+    "category": "ai-general",
+    "pricing": {
+      "free": "API payante uniquement ; modèle open-source disponible",
+      "paid": "Whisper 1: 0,006 $/minute audio (standard) ; GPT-4o Mini Transcribe: 0,003 $/minute (économique) ; GPT-4o Transcribe: 0,006 $/minute ; GPT-realtime Whisper: 0,017 $/minute (temps réel)"
+    },
+    "description_fr": "Modèle de transcription audio IA d'OpenAI offrant conversion speech-to-text précise multilingue via API payante, avec plusieurs tiers de performance et coût.",
+    "description_en": "OpenAI's AI audio transcription model providing accurate multilingual speech-to-text conversion via paid API with multiple performance and cost tiers.",
+    "price_verified_on": "2026-07-24",
+    "verdict_fr": {
+      "keep_if": "Vous transcrivez régulièrement de l'audio pour contenu",
+      "avoid_if": "Vous transcrivez très occasionnellement",
+      "strengths": [
+        "Modèle open-source gratuit disponible (auto-hébergement)",
+        "Transcription multilingue très précise",
+        "Plusieurs tiers de coûts adaptés au besoin"
+      ],
+      "weaknesses": [
+        "API payante (pas gratuit commercial)",
+        "Pas de réduction de volume",
+        "Auto-hébergement nécessite compétences techniques"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You regularly transcribe audio for content",
+      "avoid_if": "You transcribe very occasionally",
+      "strengths": [
+        "Open-source model freely available (self-host)",
+        "Highly accurate multilingual transcription",
+        "Multiple cost tiers suited to need"
+      ],
+      "weaknesses": [
+        "Paid API (not free for commercial use)",
+        "No volume discounts",
+        "Self-hosting requires technical skills"
+      ]
+    }
+  },
+  {
+    "name": "Windsurf",
+    "slug": "windsurf",
+    "url_fr": "https://tooltrim.com/fr/tool/windsurf",
+    "url_en": "https://tooltrim.com/en/tool/windsurf",
+    "website": "https://windsurf.com",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Gratuit avec 25 crédits/mois et accès Cascade",
+      "paid": "Pro 15$/mois · Teams 30$/utilisateur/mois · Enterprise 60$/utilisateur"
+    },
+    "description_fr": "Éditeur de code IA agentique — l'alternative à Cursor avec Cascade AI.",
+    "description_en": "Agentic AI code editor — the Cursor alternative with Cascade AI.",
+    "price_verified_on": "2026-05-08",
+    "verdict_fr": {
+      "keep_if": "Vous programmez quotidiennement",
+      "avoid_if": "Vous programmez très ocasionnellement",
+      "strengths": [
+        "Tab (auto-complétion) illimité même en gratuit",
+        "Agents autonomes très puissants (Cascade)",
+        "Multiples modèles IA (Claude, GPT, SWE-1.5)"
+      ],
+      "weaknesses": [
+        "Cascade (agent) consomme quotas rapidement",
+        "Max tier très cher pour usage occasionnel",
+        "Tarification complexe post-mars 2026"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You code daily",
+      "avoid_if": "You code very occasionally",
+      "strengths": [
+        "Tab (autocomplete) unlimited even on free",
+        "Powerful autonomous agents (Cascade)",
+        "Multiple AI models (Claude, GPT, SWE-1.5)"
+      ],
+      "weaknesses": [
+        "Cascade (agent) consumes quotas quickly",
+        "Max tier pricey for occasional use",
+        "Complex pricing post-March 2026"
+      ]
+    }
+  },
+  {
+    "name": "Wispr Flow",
+    "slug": "wispr-flow",
+    "url_fr": "https://tooltrim.com/fr/tool/wispr-flow",
+    "url_en": "https://tooltrim.com/en/tool/wispr-flow",
+    "website": "https://wisprflow.ai",
+    "category": "ai-general",
+    "description_fr": "Outil de dictée voix-à-texte IA convertissant la parole en contenu écrit poli partout où l'on peut taper. Pas de plugins requis. Support pour plus de 100 langues avec détection automatique. Apprentissage du vocabulaire de l'utilisateur et adaptation du style au contexte applicatif.",
+    "description_en": "Voice-to-text AI dictation tool converting speech into polished written content anywhere you can type. No plugins required. 100+ languages auto-detection. Learns user vocabulary and adapts style to app context.",
+    "verdict_fr": {
+      "keep_if": "Vous tapez beaucoup et cherchez la productivité de la dictée mains-libres",
+      "avoid_if": "Vous cherchez une transcription de réunions (Wispr Flow = texte temps réel individuel)",
+      "strengths": [
+        "Dictée nettement plus rapide que la frappe, avec prise en compte du contexte applicatif",
+        "Support pour plus de 100 langues avec détection automatique éliminant le changement manuel de langue",
+        "L'apprentissage du vocabulaire personnalisé améliore la reconnaissance de la terminologie métier"
+      ],
+      "weaknesses": [
+        "Plan gratuit limité (2000 mots par semaine seulement, soit environ 280 mots par jour)",
+        "La performance souffre modérément dans un environnement bruyant",
+        "Pas d'adaptation du contexte pour les réunions ou discussions de groupe : c'est un outil individuel"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You type frequently and seek hands-free dictation productivity",
+      "avoid_if": "You seek meeting transcription (Wispr Flow = individual real-time text)",
+      "strengths": [
+        "Dictation markedly faster than typing, with built-in app context",
+        "100+ languages auto-detection eliminates manual language switching",
+        "Custom vocabulary learning improves domain terminology recognition"
+      ],
+      "weaknesses": [
+        "Free plan limited (2000 words/week only = ~280 words/day)",
+        "Performance suffers moderately noisy environment",
+        "No meeting/group discussion context adaptation — personal tool"
+      ]
+    }
+  },
+  {
+    "name": "Zed",
+    "slug": "zed",
+    "url_fr": "https://tooltrim.com/fr/tool/zed",
+    "url_en": "https://tooltrim.com/en/tool/zed",
+    "website": "https://zed.dev/",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Plan gratuit : 2 000 prédictions d'édition acceptées incluses ; usage illimité de l'IA possible avec ses propres clés d'API externes",
+      "paid": "Dès 10 $/mois, plan Pro."
+    },
+    "description_fr": "Éditeur de code rapide écrit en Rust, avec collaboration en temps réel et prédictions d'édition IA intégrées, gratuit avec une offre Pro payante en option.",
+    "description_en": "Fast, Rust-built code editor with built-in real-time collaboration and AI edit predictions, free with an optional paid Pro plan.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu veux un éditeur natif rapide avec une assistance IA et la liberté d'utiliser tes propres clés de fournisseur de modèle",
+      "avoid_if": "Tu as un usage IA quotidien intensif qui dépasse le quota gratuit ou Pro inclus et tu veux un forfait prévisible plutôt qu'une facturation à l'usage",
+      "strengths": [
+        "Éditeur rapide et à faible latence, avec collaboration en temps réel native",
+        "L'offre gratuite inclut un vrai quota de prédictions d'édition IA, pas seulement un essai",
+        "La prise en charge de ses propres clés chez de nombreux fournisseurs de LLM évite l'enfermement sur la facturation IA"
+      ],
+      "weaknesses": [
+        "Le budget de jetons IA inclus dans l'offre Pro est plafonné à 5 $ par mois avant le passage à la facturation à l'usage",
+        "L'offre Business n'a aucun quota IA fixe, elle repose entièrement sur la facturation à l'usage ou sur des clés externes"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You want a fast native editor with AI assistance and the flexibility to bring your own model provider keys",
+      "avoid_if": "You need heavy daily AI usage beyond the included free or Pro quota and want a predictable flat fee instead of usage-based charges",
+      "strengths": [
+        "Fast, low-latency editor with native real-time collaboration",
+        "Free plan includes a real AI edit-prediction quota, not just a trial",
+        "Bring-your-own-key support across many LLM providers avoids vendor lock-in on AI billing"
+      ],
+      "weaknesses": [
+        "Pro plan's included AI token budget is capped at 5 USD a month before usage-based charges kick in",
+        "Business plan has no fixed AI allowance at all, relying entirely on usage-based billing or external keys"
+      ]
+    }
+  },
+  {
+    "name": "Zoom AI Companion",
+    "slug": "zoom-ai-companion",
+    "url_fr": "https://tooltrim.com/fr/tool/zoom-ai-companion",
+    "url_en": "https://tooltrim.com/en/tool/zoom-ai-companion",
+    "website": "https://www.zoom.com/en/products/ai-assistant/",
+    "category": "ai-general",
+    "description_fr": "Assistant IA agentic pour Zoom Meetings rebaptisé ZoomMate (juin 2026) qui capture le contexte des réunions, génère des résumés, extraits des actions, et exécute des suivis automatisés dans les systèmes connectés (Salesforce, Jira, Slack, etc.).",
+    "description_en": "AI assistant built into Zoom: meeting summaries, action items, smart compose.",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez déjà Zoom pour réunions et collaborations",
+      "avoid_if": "Vous utilisez un autre outil de réunion (Teams, Google Meet)",
+      "strengths": [
+        "Natif Zoom : pas d'intégration à configurer pour bases",
+        "Résumés et transcriptions fiables dans 30+ langues",
+        "Multi-workflows : génère emails, met à jour Salesforce, etc"
+      ],
+      "weaknesses": [
+        "Dépendant de Zoom (verrouillage écosystème)",
+        "L'add-on facturé séparément revient cher pris isolément",
+        "Disponibilité limitée régionnale/industrie"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You already use Zoom for meetings and collaboration",
+      "avoid_if": "You use a different meeting platform (Teams, Google Meet)",
+      "strengths": [
+        "Native to Zoom: no integration setup needed for basics",
+        "Reliable summaries and transcription in 30+ languages",
+        "Multi-workflow: generates emails, updates Salesforce, etc"
+      ],
+      "weaknesses": [
+        "Zoom-dependent (ecosystem lock-in)",
+        "The standalone add-on is pricey on its own",
+        "Limited regional/industry availability"
+      ]
+    }
+  },
+  {
+    "name": "Viso AI",
+    "slug": "viso-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/viso-ai",
+    "url_en": "https://tooltrim.com/en/tool/viso-ai",
+    "website": "https://viso.ai/",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Forfait gratuit permanent, sans carte bancaire, avec 5 crédits par jour dans la limite de 30 crédits par mois.",
+      "paid": "Viso Now Pro : 25 $US/mois. Business : 50 $US/mois. TVA incluse, crédits partagés entre utilisateurs. Viso Suite Enterprise : tarif sur devis selon la taille de l'entreprise et le déploiement."
+    },
+    "description_fr": "Créez des applications de vision par ordinateur à partir d'une consigne, d'une vidéo ou de flux caméra.",
+    "description_en": "Build computer vision applications from a prompt, video, or camera feed.",
+    "price_verified_on": "2026-09-30",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Vous devez transformer des flux caméra ou vidéo en détections et alertes exploitables",
+      "avoid_if": "Vous cherchez un chatbot ou un générateur d'images plutôt qu'une application de vision",
+      "strengths": [
+        "Un forfait gratuit donne accès à la création et à l'exécution d'agents sans carte bancaire",
+        "Consignes en langage naturel et modèles de départ pour réduire le travail initial annoncé par l'éditeur",
+        "Entrées vidéo et caméra, alertes et API réunies dans un même parcours"
+      ],
+      "weaknesses": [
+        "Les crédits limitent le volume et leur consommation varie selon les traitements vidéo",
+        "Pro et Business sont affichés en dollars ; la périodicité doit être confirmée au paiement",
+        "Viso Suite n'a pas de tarif public et suppose un échange commercial pour cadrer le déploiement"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You need to turn camera or video feeds into actionable detections and alerts",
+      "avoid_if": "You need a chatbot or image generator rather than a vision application",
+      "strengths": [
+        "A free plan includes agent creation and execution without a credit card",
+        "Natural-language prompts and starter templates reduce the setup work described by the publisher",
+        "Video and camera inputs, alerts, and APIs are covered in the same workflow"
+      ],
+      "weaknesses": [
+        "Credits limit throughput and usage varies with video processing",
+        "Pro and Business are listed in US dollars; confirm the billing cadence at checkout",
+        "Viso Suite has no public price and requires a sales discussion to scope deployment"
+      ]
+    }
+  },
+  {
+    "name": "Noryzia",
+    "slug": "noryzia",
+    "url_fr": "https://tooltrim.com/fr/tool/noryzia",
+    "url_en": "https://tooltrim.com/en/tool/noryzia",
+    "website": "https://noryzia.com/",
+    "category": "ai-general",
+    "pricing": {
+      "free": "Démonstration sur demande.",
+      "paid": "Association : dès 39 €/mois pour les structures éligibles. Essentiel : dès 135 €/mois, trois utilisateurs inclus. Besoins avancés sur devis."
+    },
+    "description_fr": "Recherchez dans vos documents et e-mails professionnels avec un assistant IA qui cite ses sources.",
+    "description_en": "Search company documents and email with an AI assistant that cites its sources.",
+    "price_verified_on": "2026-11-10",
+    "verdict_fr": {
+      "keep_if": "Vos équipes cherchent régulièrement dans plusieurs espaces documentaires",
+      "avoid_if": "Vos besoins se limitent à quelques dossiers bien classés",
+      "strengths": [
+        "Les réponses renvoient aux documents utilisés",
+        "La recherche peut couvrir plusieurs outils déjà en place",
+        "L’éditeur indique un hébergement en France"
+      ],
+      "weaknesses": [
+        "Les droits et les sources à connecter demandent un cadrage initial",
+        "Les besoins avancés sont chiffrés sur devis",
+        "Les réponses sur des dossiers sensibles demandent une relecture"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your teams regularly search across multiple document stores",
+      "avoid_if": "Your needs are limited to a few well-organised folders",
+      "strengths": [
+        "Answers link to the documents used",
+        "Search can cover multiple existing tools",
+        "The vendor states that data is hosted in France"
+      ],
+      "weaknesses": [
+        "Access controls and source selection require initial setup",
+        "Advanced requirements are priced on request",
+        "Answers about sensitive records require review"
+      ]
+    }
+  }
+]

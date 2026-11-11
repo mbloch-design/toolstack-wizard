@@ -1,0 +1,1056 @@
+# ToolTrim tool catalogue — legal-contracts
+# Generated from src/data/tools_index.json
+# Family: legal-contracts (24 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Adobe Acrobat Pro",
+    "slug": "adobe-acrobat",
+    "url_fr": "https://tooltrim.com/fr/tool/adobe-acrobat",
+    "url_en": "https://tooltrim.com/en/tool/adobe-acrobat",
+    "website": "https://www.adobe.com/acrobat.html",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 19,99 $/mois, plan Acrobat Pro."
+    },
+    "description_fr": "Une suite par abonnement pour créer, modifier, signer et convertir des PDF, avec des outils avancés comme la rédaction et l'OCR sur les offres supérieures.",
+    "description_en": "A subscription suite for creating, editing, signing and converting PDFs, with advanced tools like redaction and OCR on higher-tier plans.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu modifies, signes ou convertis des PDF régulièrement et tu as besoin d'outils avancés comme la rédaction ou l'OCR, pas juste de la lecture",
+      "avoid_if": "Tu as seulement besoin de voir et d'imprimer des PDF, ce qu'Acrobat Reader fait déjà gratuitement",
+      "strengths": [
+        "Couvre tout le flux PDF : création, édition, signature électronique, rédaction et OCR dans un seul abonnement",
+        "Disponible sur ordinateur, web et mobile"
+      ],
+      "weaknesses": [
+        "L'usage gratuit se limite à la lecture/impression dans Acrobat Reader ; toute édition demande une offre payante",
+        "Le prix mensuel affiché suppose un engagement d'un an ; la facturation au mois sans engagement coûte de 50 % à 67 % plus cher"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You regularly edit, sign or convert PDFs and need advanced tools like redaction or OCR, not just viewing",
+      "avoid_if": "You only need to view and print PDFs, which Acrobat Reader already does for free",
+      "strengths": [
+        "Covers the full PDF workflow: creation, editing, e-signature, redaction and OCR in one subscription",
+        "Available across desktop, web and mobile platforms"
+      ],
+      "weaknesses": [
+        "Free usage is limited to view/print only in Acrobat Reader; any editing requires a paid plan",
+        "The advertised monthly price requires a 1-year commitment; month-to-month billing with no commitment costs 50% to 67% more"
+      ]
+    }
+  },
+  {
+    "name": "Adobe Acrobat Sign",
+    "slug": "adobe-acrobat-sign",
+    "url_fr": "https://tooltrim.com/fr/tool/adobe-acrobat-sign",
+    "url_en": "https://tooltrim.com/en/tool/adobe-acrobat-sign",
+    "website": "https://www.adobe.com/sign.html",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Offres dédiées Acrobat Sign / Document Cloud (voir la fiche de la suite).",
+      "paid": "Offres dédiées Acrobat Sign / Document Cloud (voir la fiche de la suite)."
+    },
+    "description_fr": "Solution de signature électronique d'Adobe, intégrée à l'écosystème Acrobat/Document Cloud.",
+    "description_en": "Adobe's electronic signature solution, integrated into the Acrobat/Documents ecosystem.",
+    "price_verified_on": "2026-08-30",
+    "verdict_fr": {
+      "keep_if": "Vous faites signer des documents électroniquement de façon récurrente",
+      "avoid_if": "Vos besoins de signature sont rares",
+      "strengths": [
+        "Signature électronique conforme et sécurisée",
+        "Envoi, suivi et rappels de documents à signer",
+        "Formulaires et flux d'approbation"
+      ],
+      "weaknesses": [
+        "Offre payante dédiée, pertinente pour un usage récurrent",
+        "Rattaché à l'écosystème Adobe",
+        "Surdimensionné pour une signature très occasionnelle"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You collect e-signatures on a recurring basis",
+      "avoid_if": "Your signing needs are rare",
+      "strengths": [
+        "Compliant, secure electronic signature",
+        "Send, track and remind on documents to sign",
+        "Forms and approval workflows"
+      ],
+      "weaknesses": [
+        "Dedicated paid offering, relevant for recurring use",
+        "Tied to the Adobe ecosystem",
+        "Overkill for very occasional signing"
+      ]
+    }
+  },
+  {
+    "name": "Axeptio",
+    "slug": "axeptio",
+    "url_fr": "https://tooltrim.com/fr/tool/axeptio",
+    "url_en": "https://tooltrim.com/en/tool/axeptio",
+    "website": "https://axeptio.eu",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Aucune formule gratuite permanente de la plateforme relevée ; une démonstration ne constitue pas un plan gratuit.",
+      "paid": "Extra Small : 90 €/an. Small : 29 €/mois ; Medium : 69 €/mois ; Large : 129 €/mois. Les affichages Extra Small de 7 €/mois facturés annuellement et certains quotas sont contradictoires : confirmer le total au panier."
+    },
+    "description_fr": "Bandeau de consentement personnalisable, registre de consentements et intégration des traceurs d'un site.",
+    "description_en": "Customizable consent notices, consent records and website tracker integration.",
+    "price_verified_on": "2026-10-17",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Ton site utilise des traceurs nécessitant un consentement et tu veux un bandeau configurable",
+      "avoid_if": "Tu cherches un registre RGPD, une cartographie des risques ou des preuves d'audit SOC 2",
+      "strengths": [
+        "Bandeau personnalisable à l'identité du site",
+        "Tarifs publics par palier",
+        "Consent Mode v2 et scan de cookies selon l'offre"
+      ],
+      "weaknesses": [
+        "Trafic et fonctionnalités déterminent le palier",
+        "Affichages Extra Small contradictoires sur le prix équivalent et les quotas",
+        "L'intégration des traceurs ne se résume pas à afficher le bandeau"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "Your website uses consent-requiring trackers and needs configurable notices",
+      "avoid_if": "You need a privacy register, risk mapping or SOC 2 audit evidence",
+      "strengths": [
+        "Notices customizable to website branding",
+        "Published tier prices",
+        "Consent Mode v2 and plan-dependent cookie scanning"
+      ],
+      "weaknesses": [
+        "Traffic and features determine the tier",
+        "Extra Small has inconsistent equivalent-price and quota displays",
+        "Tracker integration requires more than showing a banner"
+      ]
+    }
+  },
+  {
+    "name": "Captain Contrat",
+    "slug": "captain-contrat",
+    "url_fr": "https://tooltrim.com/fr/tool/captain-contrat",
+    "url_en": "https://tooltrim.com/en/tool/captain-contrat",
+    "website": "https://captaincontrat.com",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "description_fr": "Legaltech française d'accompagnement juridique : création d'entreprise, rédaction de contrats et assistance juridique, sur un modèle hybride (technologie + avocats/juristes).",
+    "description_en": "French legaltech for legal guidance: company formation, contract drafting and legal support, on a hybrid tech + lawyers model.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous créez votre entreprise et voulez être accompagné",
+      "avoid_if": "Vous êtes à l'aise pour faire vos démarches seul",
+      "strengths": [
+        "Accompagnement humain (avocats/juristes)",
+        "Couvre le cycle de vie de l'entreprise",
+        "Modèle hybride rassurant"
+      ],
+      "weaknesses": [
+        "Plus cher qu'une legaltech entièrement automatisée",
+        "Frais administratifs en plus des tarifs affichés",
+        "Pertinent surtout sur le marché français"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're starting your company and want guidance",
+      "avoid_if": "You're comfortable handling procedures yourself",
+      "strengths": [
+        "Human guidance (lawyers/jurists)",
+        "Covers the company life cycle",
+        "Reassuring hybrid model"
+      ],
+      "weaknesses": [
+        "Pricier than a fully automated legaltech",
+        "Administrative fees on top of listed prices",
+        "Mostly relevant to the French market"
+      ]
+    }
+  },
+  {
+    "name": "Conga",
+    "slug": "conga",
+    "url_fr": "https://tooltrim.com/fr/tool/conga",
+    "url_en": "https://tooltrim.com/en/tool/conga",
+    "website": "https://conga.com",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Conga aide à gérer signatures, contrats ou documents juridiques.",
+    "description_en": "Unified commerce platform combining document automation, contract lifecycle management, revenue and commerce capabilities, pricing optimization, and AI-driven intelligence to align sales and legal teams.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une entreprise moyenne à grande cherchant à unifier commerce et contrats",
+      "avoid_if": "Vous êtes une start-up ou PME sans budget CLM",
+      "strengths": [
+        "Intégration native Salesforce et commerce",
+        "Plateforme unifiée couvrant documents, contrats et tarification",
+        "Intelligence IA pour accélérer les cycles commerciaux"
+      ],
+      "weaknesses": [
+        "Tarification élevée et exigeant contact commercial",
+        "Complexité de mise en œuvre pour petites équipes",
+        "Courbe d'apprentissage importante"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a mid-market to enterprise seeking unified commerce and contract management",
+      "avoid_if": "You are a startup or SME without CLM budget",
+      "strengths": [
+        "Native Salesforce integration and commerce capabilities",
+        "Unified platform spanning documents, contracts, and pricing",
+        "AI-driven intelligence accelerating sales cycles"
+      ],
+      "weaknesses": [
+        "High pricing requiring sales engagement",
+        "Implementation complexity for small teams",
+        "Steep learning curve"
+      ]
+    }
+  },
+  {
+    "name": "Connective",
+    "slug": "connective",
+    "url_fr": "https://tooltrim.com/fr/tool/connective",
+    "url_en": "https://tooltrim.com/en/tool/connective",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Aucun plan gratuit",
+      "paid": "À partir de 15€/mois"
+    },
+    "description_fr": "Signatures électroniques et identité numérique.",
+    "description_en": "Electronic signatures and digital identity.",
+    "verdict_fr": {
+      "keep_if": "Vos clients sont en France ou Belgique et utilisent FranceConnect",
+      "avoid_if": "Votre clientèle est exclusivement hors d'Europe",
+      "strengths": [
+        "Seule solution avec intégration FranceConnect pour signature",
+        "Conforme eIDAS et certifié ANSSI (tiers de confiance)",
+        "Hébergement en France, avantage de souveraineté data"
+      ],
+      "weaknesses": [
+        "Tarification peu compétitive face à DocuSign/Pandadoc",
+        "Audience géographique limitée (France/Belgique surtout)",
+        "Moins de templates ou intégrations que concurrents"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your clients are in France or Belgium and use FranceConnect",
+      "avoid_if": "Your clientele is exclusively outside Europe",
+      "strengths": [
+        "Only solution with FranceConnect integration for signing",
+        "eIDAS-compliant and ANSSI-certified (trusted third party)",
+        "France-hosted infrastructure, data sovereignty advantage"
+      ],
+      "weaknesses": [
+        "Pricing less competitive than DocuSign/Pandadoc",
+        "Geographic reach limited (mainly France/Belgium)",
+        "Fewer templates or integrations than competitors"
+      ]
+    }
+  },
+  {
+    "name": "Didomi",
+    "slug": "didomi",
+    "url_fr": "https://tooltrim.com/fr/tool/didomi",
+    "url_en": "https://tooltrim.com/en/tool/didomi",
+    "website": "https://didomi.io",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Aucune formule gratuite permanente de la plateforme relevée ; une démonstration ne constitue pas un plan gratuit.",
+      "paid": "CMP Essential, Advanced et Premium sur devis, selon le volume et le périmètre. Les tarifs des modules server-side ou préférences ne constituent pas le prix de la CMP."
+    },
+    "description_fr": "Gestion du consentement et des préférences sur plusieurs sites et canaux.",
+    "description_en": "Consent and preference management across websites and channels.",
+    "price_verified_on": "2026-10-17",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu dois coordonner le consentement sur plusieurs sites, canaux ou systèmes marketing",
+      "avoid_if": "Tu cherches un registre des traitements, un plan d'action RGPD global ou une préparation SOC 2",
+      "strengths": [
+        "Consentement et préférences coordonnés entre propriétés",
+        "Personnalisation des parcours de collecte",
+        "Exports par lots décrits dans la documentation"
+      ],
+      "weaknesses": [
+        "Prix de la CMP sur devis",
+        "Canaux et modules à préciser dans le périmètre",
+        "Exports par défaut limités aux utilisateurs identifiés"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You need coordinated consent across sites, channels or marketing systems",
+      "avoid_if": "You need a processing register, an overall privacy action plan or SOC 2 preparation",
+      "strengths": [
+        "Coordinated consent and preferences across properties",
+        "Customizable collection experiences",
+        "Documented batch exports"
+      ],
+      "weaknesses": [
+        "CMP pricing requires a quote",
+        "Channels and modules need scoping",
+        "Default exports are limited to identified users"
+      ]
+    }
+  },
+  {
+    "name": "DocuSign",
+    "slug": "docusign",
+    "url_fr": "https://tooltrim.com/fr/tool/docusign",
+    "url_en": "https://tooltrim.com/en/tool/docusign",
+    "website": "https://www.docusign.com",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Essai gratuit ; pas de version gratuite permanente. Accès free trial 30 jours.",
+      "paid": "Personal: À partir de 10€/mois annualisé (15€ mensuel) - 5 enveloppes/mois ; Standard: 25€/user/mois annualisé (45€ mensuel) - 100 enveloppes/an ; Business Pro: 40€/user/mois annualisé (65€ mensuel) - 100 enveloppes/an + bulk send ; Enterprise: Prix personnalisé - tous les features avancés"
+    },
+    "description_fr": "Plateforme leader de signature électronique et gestion des contrats offrant eSignature, Intelligent Agreement Management (IAM), et Contract Lifecycle Management (CLM). Support workflows, API, intégrations Salesforce/Workday.",
+    "description_en": "Leading platform for electronic signatures and contract management offering eSignature, Intelligent Agreement Management (IAM), and Contract Lifecycle Management (CLM). Supports workflows, APIs, and Salesforce/Workday integrations.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'une solution de signature électronique mature et éprouvée",
+      "avoid_if": "Vous cherchez une solution très bon marché avec peu de documents",
+      "strengths": [
+        "Leader du marché, le plus matures et reconnu",
+        "Nombreuses intégrations (Salesforce, Workday, APIs)",
+        "Support des workflows complexes et CLM end-to-end"
+      ],
+      "weaknesses": [
+        "Tarification élevée en comparaison concurrents",
+        "Restrictions d'enveloppes par plan (100/an sur Standard)",
+        "Frais supplémentaires pour fonctions avancées (notarisation)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need a mature, proven electronic signature solution",
+      "avoid_if": "You're looking for a budget solution with minimal documents",
+      "strengths": [
+        "Market leader, most mature and recognized",
+        "Extensive integrations (Salesforce, Workday, APIs)",
+        "Complex workflows and end-to-end CLM support"
+      ],
+      "weaknesses": [
+        "Higher pricing compared to competitors",
+        "Envelope restrictions per plan (100/year on Standard)",
+        "Additional fees for advanced features (notarization)"
+      ]
+    }
+  },
+  {
+    "name": "Google Docs",
+    "slug": "google-docs",
+    "url_fr": "https://tooltrim.com/fr/tool/google-docs",
+    "url_en": "https://tooltrim.com/en/tool/google-docs",
+    "website": "https://www.google.com/docs/about",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Plan gratuit.",
+      "paid": "Dès 0 $/mois, plan Free (personal Google account)."
+    },
+    "description_fr": "Traitement de texte collaboratif gratuit en temps réel, utilisable hors ligne et compatible avec les fichiers Microsoft Word.",
+    "description_en": "Free real-time collaborative word processor that works offline and imports/exports Microsoft Word files.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu as besoin d'un traitement de texte collaboratif gratuit en temps réel, compatible avec les fichiers Word, sans besoin de mise en page avancée pour l'impression",
+      "avoid_if": "Tu as besoin de mises en page avancées de type PAO ou tu stockes déjà assez dans Gmail/Drive/Photos pour que le quota gratuit mutualisé de 15 Go pose problème",
+      "strengths": [
+        "Entièrement utilisable gratuitement avec n'importe quel compte Google, sans mise à niveau forcée pour le traitement de texte de base",
+        "Importe et exporte les fichiers Microsoft Word sans étape de conversion séparée"
+      ],
+      "weaknesses": [
+        "Le stockage gratuit est mutualisé avec Gmail et Photos, donc un usage intensif de documents entame le même quota de 15 Go",
+        "Fonctions avancées de mise en page et de PAO plus faibles que dans les traitements de texte dédiés"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You need free, real-time collaborative word processing with Word-file compatibility and don't require advanced print-layout design",
+      "avoid_if": "You need advanced desktop-publishing layouts or already store enough in Gmail/Drive/Photos that the pooled 15 GB free quota is a problem",
+      "strengths": [
+        "Fully usable for free with any Google account, no forced upgrade for core word processing",
+        "Imports and exports Microsoft Word files without a separate conversion step"
+      ],
+      "weaknesses": [
+        "Free storage is pooled with Gmail and Photos, so heavy document use eats into the same 15 GB quota",
+        "Weaker advanced layout and desktop-publishing features than dedicated word processors"
+      ]
+    }
+  },
+  {
+    "name": "Ironclad",
+    "slug": "ironclad",
+    "url_fr": "https://tooltrim.com/fr/tool/ironclad",
+    "url_en": "https://tooltrim.com/en/tool/ironclad",
+    "website": "https://ironcladapp.com",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Ironclad aide à gérer signatures, contrats ou documents juridiques.",
+    "description_en": "Ironclad helps manage signatures, contracts, or legal documents.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous signiez 100+ contrats par an et voulez centraliser le lifecycle",
+      "avoid_if": "Vous n'avez que quelques contrats par an à signer",
+      "strengths": [
+        "Jurist AI automatise examen clauses contractuelles complexes",
+        "Centralise pipeline complet : création à exécution",
+        "Intégrations Salesforce et Slack pour workflows natifs"
+      ],
+      "weaknesses": [
+        "Tarification très élevée, inaccessible pour PME",
+        "Contact commercial obligatoire, sans tarif public",
+        "Courbe d'apprentissage importante pour équipe"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You sign 100+ contracts yearly and want to centralize lifecycle",
+      "avoid_if": "You only handle a few contracts yearly",
+      "strengths": [
+        "Jurist AI automates complex contract clause review",
+        "Centralizes entire pipeline from creation to execution",
+        "Salesforce and Slack integrations for native workflows"
+      ],
+      "weaknesses": [
+        "Very high pricing, inaccessible for SMBs",
+        "Sales contact required, no public pricing",
+        "Significant learning curve for teams"
+      ]
+    }
+  },
+  {
+    "name": "Juro",
+    "slug": "juro",
+    "url_fr": "https://tooltrim.com/fr/tool/juro",
+    "url_en": "https://tooltrim.com/en/tool/juro",
+    "website": "https://juro.com",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Juro aide à gérer signatures, contrats ou documents juridiques.",
+    "description_en": "AI-powered contract lifecycle management (CLM) platform automating contract creation, review, negotiation, and approval with native CRM integration and AI assistant (Operator).",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une équipe juridique ou commerciale cherchant à accélérer l'agrément",
+      "avoid_if": "Vous gérez peu de contrats ou avez un budget très limité",
+      "strengths": [
+        "IA native pour génération, révision et analyse de contrats",
+        "Assistant Operator pour requêtes en langage naturel",
+        "Signature électronique incluse dans tous les plans"
+      ],
+      "weaknesses": [
+        "Tarification non publique — contact commercial requis",
+        "E-signature premium à coût supplémentaire",
+        "Personnalisations avancées onéreuses"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a legal or sales team seeking to accelerate contract approval",
+      "avoid_if": "You manage few contracts or have tight budget constraints",
+      "strengths": [
+        "Native AI for contract generation, review, and analysis",
+        "Operator AI assistant for natural-language contract queries",
+        "E-signature included in all plans"
+      ],
+      "weaknesses": [
+        "Pricing not public — sales engagement required",
+        "Premium e-signature carries additional cost",
+        "Advanced customizations are expensive"
+      ]
+    }
+  },
+  {
+    "name": "LegalPlace",
+    "slug": "legalplace",
+    "url_fr": "https://tooltrim.com/fr/tool/legalplace",
+    "url_en": "https://tooltrim.com/en/tool/legalplace",
+    "website": "https://legalplace.fr",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 0 € (licence à vie), plan Création d'entreprise."
+    },
+    "description_fr": "Legaltech française pour la création d'entreprise en ligne et l'administratif juridique courant, frais de service à 0 EUR, plus frais de greffe obligatoires.",
+    "description_en": "French legaltech for online company formation and ongoing legal and accounting admin, with a 0 EUR formation service fee plus mandatory registry costs.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "À garder si tu crées une entreprise française et veux gérer la création, les changements juridiques et l'administratif comptable au même endroit sans engager un avocat à chaque étape",
+      "avoid_if": "À éviter si ton entreprise n'est pas sous droit français, ou si tu as besoin d'un prix fixe et public avant de t'engager, car la plupart des services complémentaires sont sur devis",
+      "strengths": [
+        "Frais de service à 0 EUR pour la création d'entreprise, seuls les frais de greffe obligatoires s'appliquent",
+        "Couvre la création, les changements juridiques courants et l'accompagnement comptable sur une seule plateforme plutôt que chez plusieurs prestataires"
+      ],
+      "weaknesses": [
+        "La plupart des services, au-delà du logiciel de facturation, sont tarifés sur devis, ce qui rend le coût total réel difficile à estimer à l'avance",
+        "Ne couvre que le droit des sociétés français, inutilisable pour une entreprise constituée hors de France"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "Keep if you're forming a French company and want formation, legal changes and accounting admin in one place without hiring a lawyer for each step",
+      "avoid_if": "Avoid if your company isn't under French law, or if you need a fixed, fully public price before committing, since most add-on services are quote-based",
+      "strengths": [
+        "0 EUR service fee for company formation, only the mandatory registry fees apply",
+        "Covers formation, ongoing legal changes and accounting support in one platform instead of separate providers"
+      ],
+      "weaknesses": [
+        "Most services beyond the invoicing software are priced on request, making the real total cost hard to estimate in advance",
+        "Only covers French company law, unusable for a business formed outside France"
+      ]
+    }
+  },
+  {
+    "name": "Legalstart",
+    "slug": "legalstart",
+    "url_fr": "https://tooltrim.com/fr/tool/legalstart",
+    "url_en": "https://tooltrim.com/en/tool/legalstart",
+    "website": "https://www.legalstart.fr",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Estimation gratuite",
+      "paid": "À partir de 15€/mois ou actes à l'unité"
+    },
+    "description_fr": "Création et gestion juridique d'entreprise en ligne.",
+    "description_en": "Online company creation and legal management.",
+    "verdict_fr": {
+      "keep_if": "Vous créez une entreprise en France (SASU, SAS, SARL, etc)",
+      "avoid_if": "Vous créez l'entreprise en dehors France",
+      "strengths": [
+        "Seule plateforme avec formule entièrement gratuite en France",
+        "Processus entièrement en ligne, sans déplacement",
+        "Juristes formalistes français vérifient dossier avant Greffe"
+      ],
+      "weaknesses": [
+        "Frais légaux obligatoires non inclus dans le tarif affiché",
+        "Tarif Standard/Premium reste supérieur à pure plateforme DIY",
+        "Pas de conseil juridique stratégique, juste formalités"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're creating a business in France (SASU, SAS, SARL, etc)",
+      "avoid_if": "You're creating outside France",
+      "strengths": [
+        "Only platform with fully free tier in France",
+        "Completely online process, no commute",
+        "French legal specialists verify filing before registry"
+      ],
+      "weaknesses": [
+        "Mandatory legal fees are not included in the listed price",
+        "Standard/Premium pricing still above DIY platforms",
+        "No strategic legal advice, just filings"
+      ]
+    }
+  },
+  {
+    "name": "MyCase",
+    "slug": "mycase",
+    "url_fr": "https://tooltrim.com/fr/tool/mycase",
+    "url_en": "https://tooltrim.com/en/tool/mycase",
+    "website": "https://mycase.com",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "MyCase Basic à 50 $ par utilisateur et par mois facturé à l'année (60 $ en mensuel)."
+    },
+    "description_fr": "Solution de gestion de dossiers juridiques pour cabinets B2C.",
+    "description_en": "Legal case management solution for B2C law firms.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous avez un cabinet d'avocats avec gestion temps/facturation critique",
+      "avoid_if": "Vous êtes freelance/consultant et n'avez pas de clients confidentiels",
+      "strengths": [
+        "Plateforme tout-en-un : dossiers, temps, facturation, client portal",
+        "AI Assistant automatise résumés, extraction faits, chronologies",
+        "Portail client réduit emails/calls support"
+      ],
+      "weaknesses": [
+        "Tarification par utilisateur peut devenir coûteux sur cabinet multi-avocats",
+        "Courbe d'apprentissage pour nouvelles équipes",
+        "Moins puissant que solutions CLM pour contrats complexes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You run a law firm with critical time/billing management",
+      "avoid_if": "You're a freelancer/consultant without confidential clients",
+      "strengths": [
+        "All-in-one platform: cases, time, billing, client portal",
+        "AI Assistant automates summaries, fact extraction, timelines",
+        "Client portal reduces support emails/calls"
+      ],
+      "weaknesses": [
+        "Per-user pricing can be expensive for large firms",
+        "Learning curve for new teams",
+        "Less powerful than CLM solutions for complex contracts"
+      ]
+    }
+  },
+  {
+    "name": "PandaDoc",
+    "slug": "pandadoc",
+    "url_fr": "https://tooltrim.com/fr/tool/pandadoc",
+    "url_en": "https://tooltrim.com/en/tool/pandadoc",
+    "website": "https://pandadoc.com",
+    "category": "legal-contracts",
+    "pricing": "À partir de ~19€/mois par utilisateur (plan Essentials avec signature électronique).",
+    "description_fr": "Création, envoi et signature électronique de devis, propositions et contrats.",
+    "description_en": "Create, send, and electronically sign quotes, proposals, and contracts.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous envoyez régulièrement des propositions commerciales",
+      "avoid_if": "Vous avez seulement besoin de faire signer, sans création de documents",
+      "strengths": [
+        "Création de propositions et devis soignés",
+        "Signature électronique intégrée",
+        "Intégrations CRM natives"
+      ],
+      "weaknesses": [
+        "Facturation par siège qui pèse en équipe",
+        "Palier gratuit limité au nombre de documents",
+        "Surdimensionné pour de la signature simple"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You regularly send sales proposals",
+      "avoid_if": "You only need signing, without document creation",
+      "strengths": [
+        "Polished proposals and quotes",
+        "Built-in e-signature",
+        "Native CRM integrations"
+      ],
+      "weaknesses": [
+        "Per-seat billing weighs on a team",
+        "Free tier capped by document count",
+        "Oversized for simple signing"
+      ]
+    }
+  },
+  {
+    "name": "Rocket Lawyer",
+    "slug": "rocket-lawyer",
+    "url_fr": "https://tooltrim.com/fr/tool/rocket-lawyer",
+    "url_en": "https://tooltrim.com/en/tool/rocket-lawyer",
+    "website": "https://www.rocketlawyer.com",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 12,41 $/mois, plan Standard."
+    },
+    "description_fr": "Service par abonnement qui génère des modèles de documents juridiques, avec questions-réponses IA et relecture de contrats illimitées, signature électronique et avocats selon quota.",
+    "description_en": "Subscription service generating legal document templates with unlimited AI Q&A, contract review and e-signature, plus quota-based attorney access.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "À garder si tu as besoin d'un accès récurrent à des modèles de documents juridiques et de temps en temps à un avocat, et que tu prévois un volume de documents suffisant pour justifier un abonnement plutôt que des services ponctuels",
+      "avoid_if": "À éviter si tu as besoin de consultations d'avocat illimitées sans payer Pro, ou si la création d'entreprise et le dépôt de marque sont ton besoin principal, car ce sont des modules payants séparés",
+      "strengths": [
+        "Questions-réponses IA, relecture de contrats et signature électronique illimitées incluses sur chaque plan, sans compteur",
+        "Des centaines de modèles de documents derrière un seul questionnaire guidé, au lieu d'outils séparés"
+      ],
+      "weaknesses": [
+        "La création d'entreprise, l'agent enregistré et le dépôt de marque coûtent en plus de l'abonnement",
+        "Les consultations d'avocat sont plafonnées sur les deux plans inférieurs ; l'accès illimité demande le plan le plus cher"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Keep if you need recurring access to legal document templates and occasional attorney input, and expect to use enough document volume to justify a subscription over one-off services",
+      "avoid_if": "Avoid if you need unlimited attorney consultations without paying for Pro, or if business formation and trademark filing are your main need, since those are separate paid add-ons",
+      "strengths": [
+        "Unlimited AI Q&A, contract review and e-signature included on every tier, not metered",
+        "Hundreds of document templates behind a single guided questionnaire instead of separate tools"
+      ],
+      "weaknesses": [
+        "Business formation, registered agent and trademark filing cost extra on top of the membership",
+        "Attorney consultations are capped on the two lower tiers; unlimited access requires the most expensive plan"
+      ]
+    }
+  },
+  {
+    "name": "SignRequest",
+    "slug": "signrequest",
+    "url_fr": "https://tooltrim.com/fr/tool/signrequest",
+    "url_en": "https://tooltrim.com/en/tool/signrequest",
+    "website": "https://signrequest.com",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Plan gratuit : 10 documents signés par utilisateur et par mois, fonctions de signature de base",
+      "paid": "Dès 9 €/mois, plan Professional."
+    },
+    "description_fr": "SignRequest est un outil de signature électronique, gratuit jusqu'à 10 documents par mois, avec des forfaits payants pour les équipes, la marque et les intégrations.",
+    "description_en": "SignRequest is e-signature software with a free 10-documents-a-month plan and paid tiers that add teams, branding and integrations.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Garde SignRequest si ton équipe signe un volume modéré de documents et veut Slack, Zapier ou Salesforce intégrés",
+      "avoid_if": "Évite SignRequest si tu as besoin de l'accès API ou de l'envoi en masse inclus dans le prix : les deux sont facturés en plus sur chaque forfait",
+      "strengths": [
+        "Le forfait gratuit couvre un usage occasionnel réel : 10 documents par utilisateur et par mois, avec piste d'audit à valeur légale",
+        "Professional et Business ajoutent marque personnalisée, SSO et intégrations CRM sans forte hausse de prix"
+      ],
+      "weaknesses": [
+        "L'accès API et l'envoi en masse restent payants en plus, même sur le forfait Business le plus haut",
+        "La facturation annuelle impose un engagement d'un an, contrairement aux forfaits mensuels"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Keep it if your team signs a moderate volume of documents and wants Slack, Zapier or Salesforce built in",
+      "avoid_if": "Avoid it if you need API access or bulk sending included in the price: both cost extra on every plan",
+      "strengths": [
+        "The free plan covers real occasional use: 10 documents per user a month with legal-proof audit trails",
+        "Professional and Business add custom branding, SSO and CRM integrations without a steep price jump"
+      ],
+      "weaknesses": [
+        "API access and bulk sending cost extra even on the top Business plan",
+        "Yearly billing locks in a one-year commitment, unlike the monthly plans"
+      ]
+    }
+  },
+  {
+    "name": "Skribble",
+    "slug": "skribble",
+    "url_fr": "https://tooltrim.com/fr/tool/skribble",
+    "url_en": "https://tooltrim.com/en/tool/skribble",
+    "website": "https://skribble.com",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Essai de 14 jours, 20 signatures gratuites, utilisateurs illimités, sans carte bancaire.",
+      "paid": "À partir de 9 CHF/mois (forfait Fair) + facturation séparée par signature (1,80 CHF/QES, 1,00 CHF/AES)."
+    },
+    "description_fr": "Signature électronique qualifiée européenne.",
+    "description_en": "Qualified European electronic signature.",
+    "price_verified_on": "2026-06-27",
+    "verdict_fr": {
+      "keep_if": "Vous signez des documents en UE/Suisse/Allemagne",
+      "avoid_if": "Vous êtes hors DACH/EU (autre régulation)",
+      "strengths": [
+        "QES : légalement équivalent signature manuscrite (EU)",
+        "Support DACH : allemand, suisse (local expertise)",
+        "ISO 9001, ISO 27001 certifiés"
+      ],
+      "weaknesses": [
+        "Tarification personnalisée (contact ventes)",
+        "Spécialisée DACH (moins utile hors région)",
+        "Pas de version gratuite permanente"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You sign documents in EU/Switzerland/Germany",
+      "avoid_if": "You are outside DACH/EU (different regulation)",
+      "strengths": [
+        "QES: legally equivalent to handwritten signature (EU)",
+        "DACH support: German, Swiss (local expertise)",
+        "ISO 9001, ISO 27001 certified"
+      ],
+      "weaknesses": [
+        "Personalized pricing (contact sales)",
+        "DACH-specialized (less useful outside region)",
+        "No permanent free version"
+      ]
+    }
+  },
+  {
+    "name": "Tomorro",
+    "slug": "tomorro",
+    "url_fr": "https://tooltrim.com/fr/tool/tomorro",
+    "url_en": "https://tooltrim.com/en/tool/tomorro",
+    "website": "https://www.tomorro.com",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Tomorro aide à gérer signatures, contrats ou documents juridiques.",
+    "description_en": "AI-powered contract lifecycle management (CLM) platform automating contract creation, negotiation, signature, and storage with Oro AI assistant for document review and data extraction.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une équipe légale ou commerciale cherchant CLM avec IA",
+      "avoid_if": "Vous gérez très peu de contrats (<50/an)",
+      "strengths": [
+        "Assistant Oro IA pour l'extraction de clauses",
+        "Réduction des temps de négociation rapportée par l'éditeur",
+        "Signature électronique native incluse"
+      ],
+      "weaknesses": [
+        "Coût par utilisateur « core » élevé à l'échelle",
+        "Limitation du nombre de contrats par plan",
+        "Interface peut être complexe pour débuts"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a legal or sales team seeking CLM with AI capabilities",
+      "avoid_if": "You manage very few contracts (<50/year)",
+      "strengths": [
+        "Oro AI assistant for clause extraction",
+        "Vendor-reported reduction in negotiation time",
+        "Native e-signature included"
+      ],
+      "weaknesses": [
+        "Per-core-user cost scales quickly",
+        "Contract volume limits vary by plan",
+        "Interface may be complex for beginners"
+      ]
+    }
+  },
+  {
+    "name": "Wolters Kluwer",
+    "slug": "wolters-kluwer",
+    "url_fr": "https://tooltrim.com/fr/tool/wolters-kluwer",
+    "url_en": "https://tooltrim.com/en/tool/wolters-kluwer",
+    "website": "https://www.wolterskluwer.com",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Wolters Kluwer vend un portefeuille de produits juridiques et de conformité distincts, dont une veille réglementaire assistée par IA, uniquement sur devis.",
+    "description_en": "Wolters Kluwer sells a portfolio of separate legal and compliance products, including AI-powered regulatory monitoring, on a quote-only basis.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Tu as besoin d'une veille réglementaire assistée par IA ou d'un autre produit nommé Wolters Kluwer et tu peux passer par un devis grands comptes",
+      "avoid_if": "Tu veux un seul produit avec un prix publié et un essai en libre-service avant de parler au commercial",
+      "strengths": [
+        "Compliance Intelligence résume par IA les changements réglementaires et les mesures coercitives avec un suivi des modifications",
+        "Un large portefeuille couvre la veille réglementaire, la recherche juridique et la gestion des contrats chez un seul fournisseur"
+      ],
+      "weaknesses": [
+        "Pas de tarif public ni d'essai en libre-service pour aucun produit du portefeuille",
+        "L'entrée catalogue « Wolters Kluwer » regroupe plusieurs produits distincts ; l'acheteur doit d'abord identifier le bon"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "You need AI-powered regulatory monitoring or another named Wolters Kluwer product and can go through an enterprise sales quote",
+      "avoid_if": "You want a single product with a published price and a self-serve trial before talking to sales",
+      "strengths": [
+        "Compliance Intelligence's AI summarizes regulatory changes and enforcement actions with red-lined updates",
+        "A broad portfolio covers regulatory monitoring, legal research and contract management under one vendor"
+      ],
+      "weaknesses": [
+        "No public pricing or self-serve trial for any product in the portfolio",
+        "The 'Wolters Kluwer' catalogue entry conflates several separate products, so buyers must first identify the right one"
+      ]
+    }
+  },
+  {
+    "name": "Yousign",
+    "slug": "yousign",
+    "url_fr": "https://tooltrim.com/fr/tool/yousign",
+    "url_en": "https://tooltrim.com/en/tool/yousign",
+    "website": "https://youtrust.com/",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Plan gratuit : 2 demandes de signature par mois, 1 utilisateur",
+      "paid": "Dès 9 €/mois, plan One."
+    },
+    "description_fr": "Signature électronique pour devis, contrats et lettres de mission, avec vérification d'identité pour les documents à plus forte confiance.",
+    "description_en": "Electronic signature for quotes, contracts and engagement letters, with identity verification for higher-trust documents.",
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu signes un faible volume de devis, contrats ou lettres de mission par mois, et tu as surtout besoin d'une signature simple ou avancée",
+      "avoid_if": "Tu as besoin fréquemment de la signature électronique qualifiée, dont les frais par signature s'accumulent vite",
+      "strengths": [
+        "L'offre d'entrée est peu chère pour un faible volume mensuel de signatures",
+        "La vérification d'identité est disponible pour les signatures avancées à plus forte confiance"
+      ],
+      "weaknesses": [
+        "L'offre gratuite plafonne à 2 signatures par mois, et l'offre payante d'entrée à 10 signatures par mois",
+        "Les frais de l'option signature qualifiée peuvent devenir un coût récurrent important en volume"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You sign a low volume of quotes, contracts or engagement letters a month and mostly need Simple or Advanced signature",
+      "avoid_if": "You need frequent Qualified Electronic Signature, where per-signature add-on fees add up quickly",
+      "strengths": [
+        "Entry plan is cheap for low monthly signature volume",
+        "Identity verification is available for higher-trust Advanced signatures"
+      ],
+      "weaknesses": [
+        "Free plan caps out at 2 signatures a month, and the entry paid plan at 10 signatures a month",
+        "Qualified Electronic Signature add-on fees can become a significant recurring cost at volume"
+      ]
+    }
+  },
+  {
+    "name": "Aoria RH",
+    "slug": "aoriarh",
+    "url_fr": "https://tooltrim.com/fr/tool/aoriarh",
+    "url_en": "https://tooltrim.com/en/tool/aoriarh",
+    "website": "https://aoriarh.fr/",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Essai 14 jours, accès complet au plan Solo, sans carte bancaire",
+      "paid": "Solo 79 €HT/mois, Équipe 149 €HT/mois, Groupe 279 €HT/mois ; 2 mois offerts en annuel"
+    },
+    "description_fr": "Assistant IA de droit social français qui croise Code du travail, convention collective, jurisprudence et documents internes, avec sources vérifiables.",
+    "description_en": "French employment-law AI assistant that cross-references the Labor Code, collective agreements, case law and internal documents, with verifiable sources.",
+    "price_verified_on": "2026-09-11",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Vous devez régulièrement identifier la règle de droit social applicable à une situation précise",
+      "avoid_if": "Votre besoin est un avis juridique personnalisé, qu'un avocat doit trancher, pas un outil de recherche documentaire",
+      "strengths": [
+        "Sources numérotées et consultables pour chaque réponse, pas une affirmation seule",
+        "Croise Code du travail, convention collective, jurisprudence et documents internes",
+        "Fiches pratiques PDF prêtes à l'emploi à partir d'une réponse"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit permanent, seulement un essai de 14 jours",
+        "Aucun avis public indépendant trouvé au-delà de la démonstration du site",
+        "Add-ons séparés dès qu'un quota (utilisateur, document, question) est dépassé"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You regularly need to identify the applicable employment-law rule for a specific situation",
+      "avoid_if": "Your need is personalized legal advice that only a lawyer should give, not a document-research tool",
+      "strengths": [
+        "Numbered, checkable sources for every answer, not a bare claim",
+        "Cross-references the Labor Code, collective agreement, case law and internal documents",
+        "Ready-to-use PDF practice sheets generated from an answer"
+      ],
+      "weaknesses": [
+        "No permanent free plan, only a 14-day trial",
+        "No independent public review found beyond the site's own demonstration",
+        "Separate add-ons as soon as a quota (user, document, question) is exceeded"
+      ]
+    }
+  },
+  {
+    "name": "eSign",
+    "slug": "esign",
+    "url_fr": "https://tooltrim.com/fr/tool/esign",
+    "url_en": "https://tooltrim.com/en/tool/esign",
+    "website": "https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Téléchargement gratuit ; publicités lors des exports.",
+      "paid": "App Store US : Premium mensuel 10,99 USD ; hebdomadaire 4,99 USD ; annuel 58,99 USD/an. Prix locaux à vérifier dans l’application."
+    },
+    "description_fr": "Ajouter sa signature aux PDF, DOCX et scans sur iPhone ou iPad, puis exporter en PDF.",
+    "description_en": "Add your signature to PDFs, DOCX files and scans on iPhone or iPad, then export to PDF.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Vous devez apposer votre signature et renvoyer un PDF depuis un iPhone ou iPad",
+      "avoid_if": "Vous cherchez un circuit de signatures avec preuves et contrôle des signataires",
+      "strengths": [
+        "Import PDF, DOCX et images",
+        "Sans création de compte, documents traités localement selon l’éditeur",
+        "Export PDF indépendant de l’application"
+      ],
+      "weaknesses": [
+        "Publicités à l’export gratuit ; hors ligne complet réservé à Premium",
+        "Gros documents dépendants des ressources de l’appareil",
+        "Pas de preuve d’un workflow de signature certifiée ou multi-parties"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You need to add your signature and return a PDF from an iPhone or iPad",
+      "avoid_if": "You need a signing workflow with evidence and signer verification",
+      "strengths": [
+        "PDF, DOCX and image import",
+        "No account creation; local document processing according to the developer",
+        "PDF export usable outside the app"
+      ],
+      "weaknesses": [
+        "Free exports include ads; full offline export requires Premium",
+        "Large files depend on device resources",
+        "No established certified or multi-party signing workflow"
+      ]
+    }
+  },
+  {
+    "name": "PDF Agile",
+    "slug": "pdf-agile",
+    "url_fr": "https://tooltrim.com/fr/tool/pdf-agile",
+    "url_en": "https://tooltrim.com/en/tool/pdf-agile",
+    "website": "https://www.pdfagile.com/",
+    "category": "legal-contracts",
+    "pricing": {
+      "free": "Téléchargement gratuit ; conversions limitées selon la grille.",
+      "paid": "Licence à vie : 119 USD, paiement unique promotionnel. Annual : 59 USD ; Semi-Annual : 39 USD. Aucun prélèvement récurrent annoncé."
+    },
+    "description_fr": "Éditer, convertir et organiser des PDF, avec OCR et une offre de licence à vie.",
+    "description_en": "Edit, convert and organize PDFs, with OCR and a lifetime licence option.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Vous modifiez régulièrement des PDF et préférez une licence sans prélèvement récurrent",
+      "avoid_if": "Votre besoin se limite à lire des PDF ou exige un circuit de signature certifié",
+      "strengths": [
+        "Édition, conversion et OCR réunis",
+        "Licence à vie proposée sans paiement mensuel",
+        "Activation sur deux ordinateurs annoncée"
+      ],
+      "weaknesses": [
+        "Conversion gratuite limitée",
+        "Prix à vie promotionnel susceptible de changer",
+        "Qualité OCR et mise en page à tester sur ses documents"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You regularly edit PDFs and prefer a licence without recurring charges",
+      "avoid_if": "You only read PDFs or require a certified signing workflow",
+      "strengths": [
+        "Editing, conversion and OCR together",
+        "Lifetime option without monthly payments",
+        "Advertised activation on two computers"
+      ],
+      "weaknesses": [
+        "Limited free conversion",
+        "Promotional lifetime price may change",
+        "Test OCR and layout on your own documents"
+      ]
+    }
+  }
+]

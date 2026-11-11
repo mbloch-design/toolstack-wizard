@@ -1,3 +1,10 @@
+## 2026-11-11 · GEO · llms-full.txt découpé par famille
+
+- `llms-full.txt` pèse 2,61 Mo : aucun agent ne l'ingère utilement en une requête. Le catalogue est désormais aussi publié en 24 shards par `categoryId` (`public/llms-full/{family}.txt`, miroir dans `dist/llms-full/`), avec le même schéma d'enregistrement que le fichier complet.
+- Le découpage est strictement additif : `llms-full.txt` reste publié avec le même contenu, parce que `api/tool-md.ts` le lit à chaque requête (cache 1 h) et que `verify:postdeploy` vérifie son HTTP 200. Aucun consommateur existant n'est modifié.
+- `llms.txt` gagne une section « Catalogue Shards » listant chaque famille avec son nombre exact de fiches et son URL. Le générateur refuse de publier si les shards se recouvrent ou ne couvrent pas exactement le catalogue du sitemap.
+- `src/lib/llmsFiles.test.ts` : deux tests ajoutés (partition sans recouvrement ni perte, index exact dans `llms.txt`). Le plus gros shard reste `creation` (351 fiches, 706 Ko) : une subdivision plus fine serait à décider si un usage réel le réclame.
+
 ## 2026-11-11 · SEO · Review des fiches : cadrage corrigé et balisage daté
 
 - La recommandation de l'étude (« supprimer le `Review`/`Rating` auto-déclaré, non conforme ») reposait sur une lecture erronée de la règle Google. La restriction « self-serving » vise les avis portant sur sa propre entité (`LocalBusiness`, `Organization`) ; un média qui note un outil tiers est le cas autorisé, et `SoftwareApplication` reste dans les types éligibles aux review snippets. Supprimer le balisage aurait fait perdre un rich result.

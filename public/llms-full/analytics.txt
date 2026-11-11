@@ -1,0 +1,3472 @@
+# ToolTrim tool catalogue — analytics
+# Generated from src/data/tools_index.json
+# Family: analytics (81 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Ahrefs",
+    "slug": "ahrefs",
+    "url_fr": "https://tooltrim.com/fr/tool/ahrefs",
+    "url_en": "https://tooltrim.com/en/tool/ahrefs",
+    "website": "https://ahrefs.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : Ahrefs Free donne un accès de base aux données du site (fonctions limitées de Site Explorer / Webmaster Tools pour les propriétaires de site vérifiés).",
+      "paid": "Dès 108 $/mois, plan Lite."
+    },
+    "description_fr": "Ahrefs est une plateforme SEO combinant backlinks, mots-clés, suivi de classement et audits de site, dès 29 $/mois pour un niveau limité.",
+    "description_en": "Ahrefs is an SEO platform for backlinks, keywords, rank tracking and site audits, with plans starting at $29/month for a limited lookup tier.",
+    "alternatives": [
+      "Ahrefs Webmaster Tools"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères le SEO de plusieurs sites ou clients et tu as besoin des backlinks, du suivi de mots-clés et des audits de site réunis dans un seul outil",
+      "avoid_if": "Tu n'as besoin que de recherches ponctuelles de mots-clés ; Starter ou un outil gratuit comme Google Search Console suffira sans payer pour la suite complète",
+      "strengths": [
+        "Les outils de backlinks, mots-clés, suivi de classement et audit de site sont réunis dans une seule suite plutôt que dans plusieurs outils séparés",
+        "Les paliers supérieurs augmentent le nombre de projets, de mots-clés suivis et de crédits d'exploration à mesure qu'une agence ou une équipe grandit"
+      ],
+      "weaknesses": [
+        "Le moins cher des plans avec la suite complète de projets (Lite) coûte 129 $/mois ; Starter à 29 $/mois n'est qu'un outil de recherche ponctuelle",
+        "Les crédits d'exploration, les mots-clés suivis et le nombre de projets sont plafonnés par plan, donc un usage intensif oblige à monter de gamme"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You manage SEO for several sites or clients and need backlinks, keyword tracking and site audits together in one tool",
+      "avoid_if": "You only need occasional keyword lookups; Starter or a free tool like Google Search Console will cover that without paying for the full suite",
+      "strengths": [
+        "Backlink, keyword, rank-tracking and site-audit tools are combined in one suite instead of several separate tools",
+        "Higher tiers scale with more projects, tracked keywords and crawl credits as an agency or team grows"
+      ],
+      "weaknesses": [
+        "The cheapest plan with a full project suite (Lite) is $129/month; Starter at $29/month is only a lookup tool",
+        "Crawl credits, tracked keywords and project counts are capped per plan, so heavy usage forces an upgrade"
+      ]
+    }
+  },
+  {
+    "name": "Airbyte",
+    "slug": "airbyte",
+    "url_fr": "https://tooltrim.com/fr/tool/airbyte",
+    "url_en": "https://tooltrim.com/en/tool/airbyte",
+    "website": "https://airbyte.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Connecteurs ELT open source pour synchroniser sources de données.",
+    "description_en": "Open-source ELT connectors for syncing data sources.",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'intégrer plusieurs sources de données",
+      "avoid_if": "Vous n'avez qu'une ou deux intégrations simples",
+      "strengths": [
+        "Plateforme gratuite et open-source",
+        "Large écosystème de connecteurs",
+        "Flexible : déploiement self-hosted ou cloud"
+      ],
+      "weaknesses": [
+        "Courbe d'apprentissage pour self-hosted",
+        "Maintenance et scaling de l'infrastructure requis",
+        "Support communautaire limité en gratuit"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need to integrate multiple data sources",
+      "avoid_if": "You only have one or two simple integrations",
+      "strengths": [
+        "Free and open-source platform",
+        "Extensive connector ecosystem",
+        "Flexible deployment: self-hosted or cloud"
+      ],
+      "weaknesses": [
+        "Learning curve for self-hosted deployment",
+        "Infrastructure maintenance and scaling required",
+        "Limited community support on free tier"
+      ]
+    }
+  },
+  {
+    "name": "Algolia",
+    "slug": "algolia",
+    "url_fr": "https://tooltrim.com/fr/tool/algolia",
+    "url_en": "https://tooltrim.com/en/tool/algolia",
+    "website": "https://www.algolia.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Recherche hébergée rapide pour catalogues, contenus et apps.",
+    "description_en": "Fast hosted search for catalogs, content, and apps.",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez une recherche AI performante pour votre site",
+      "avoid_if": "Vous cherchez une solution exclusivement gratuite",
+      "strengths": [
+        "Recherche IA intelligente et rapide",
+        "Plan gratuit généreux pour tester",
+        "Excellente pour e-commerce et découverte produits"
+      ],
+      "weaknesses": [
+        "Prix monte rapidement avec la croissance du trafic",
+        "Pricing usage-based peut être imprévisible",
+        "Alternatives open-source moins chères pour cas simples"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need powerful AI search for your site",
+      "avoid_if": "You're looking for an exclusively free solution",
+      "strengths": [
+        "Intelligent and fast AI search",
+        "Generous free tier for testing",
+        "Excellent for e-commerce and product discovery"
+      ],
+      "weaknesses": [
+        "Costs scale quickly with traffic growth",
+        "Usage-based pricing can be unpredictable",
+        "Open-source alternatives cheaper for simple cases"
+      ]
+    }
+  },
+  {
+    "name": "Amplitude",
+    "slug": "amplitude",
+    "url_fr": "https://tooltrim.com/fr/tool/amplitude",
+    "url_en": "https://tooltrim.com/en/tool/amplitude",
+    "website": "https://amplitude.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Jusqu'à 50k events/mois",
+      "paid": "Sur devis"
+    },
+    "description_fr": "La plateforme d'analytics produit pour comprendre le comportement utilisateur.",
+    "description_en": "The product analytics platform to understand user behaviour.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous optimisez activement un produit digital",
+      "avoid_if": "Vous cherchez juste de l'analytics basique",
+      "strengths": [
+        "Free tier très généreux avec 2M événements illimités",
+        "Analytics produit puissante et intuitive",
+        "Agents IA pour automation des décisions"
+      ],
+      "weaknesses": [
+        "Prix monte vite avec croissance événements",
+        "Courbe d'apprentissage pour features avancées",
+        "Alternatives plus simples et moins chères pour MVPs"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You actively optimize a digital product",
+      "avoid_if": "You only need basic analytics",
+      "strengths": [
+        "Very generous free tier with unlimited 2M events",
+        "Powerful and intuitive product analytics",
+        "AI agents for decision automation"
+      ],
+      "weaknesses": [
+        "Pricing scales quickly with event growth",
+        "Learning curve for advanced features",
+        "Simpler, cheaper alternatives for MVPs"
+      ]
+    }
+  },
+  {
+    "name": "ArcGIS",
+    "slug": "arcgis",
+    "url_fr": "https://tooltrim.com/fr/tool/arcgis",
+    "url_en": "https://tooltrim.com/en/tool/arcgis",
+    "website": "https://www.arcgis.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 100€/mois environ"
+    },
+    "description_fr": "Suite SIG professionnelle pour cartographie et analyse géospatiale.",
+    "description_en": "Professional GIS suite for mapping and geospatial analysis.",
+    "verdict_fr": {
+      "keep_if": "Vous travaillez avec des données géographiques et des cartographies",
+      "avoid_if": "Vous cherchez un outil de cartographie gratuit",
+      "strengths": [
+        "Leader du marché SIG depuis 30+ ans",
+        "Infrastructure cloud entièrement gérée",
+        "Écosystème produits très complet"
+      ],
+      "weaknesses": [
+        "Modèle tarifaire complexe avec six types d'utilisateurs",
+        "Courbe d'apprentissage pour la communauté SIG",
+        "Pas de version gratuite permanente"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You work with geographic data and mapping projects",
+      "avoid_if": "You want free mapping tools",
+      "strengths": [
+        "Market leader in GIS for 30+ years",
+        "Fully managed cloud infrastructure",
+        "Complete product ecosystem"
+      ],
+      "weaknesses": [
+        "Complex pricing model with six user types",
+        "Steep learning curve for GIS professionals",
+        "No permanent free version"
+      ]
+    }
+  },
+  {
+    "name": "Auvik",
+    "slug": "auvik",
+    "url_fr": "https://tooltrim.com/fr/tool/auvik",
+    "url_en": "https://tooltrim.com/en/tool/auvik",
+    "website": "https://auvik.com",
+    "category": "analytics",
+    "pricing": "Tarification par appareil facturable (firewalls, switches, routeurs) ; utilisateurs et sites illimités inclus. Essai gratuit 14 jours sans carte bancaire.",
+    "description_fr": "Monitoring réseau automatisé avec cartographie en temps réel, pour équipes IT.",
+    "description_en": "Automated network monitoring with real-time mapping, for IT teams.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous gérez une infrastructure réseau complexe",
+      "avoid_if": "Vous avez un petit réseau avec peu de dispositifs",
+      "strengths": [
+        "Découverte automatique des équipements réseau",
+        "Alertes intelligentes et reconnaissance des problèmes",
+        "Dashboards ergonomiques et rapports détaillés"
+      ],
+      "weaknesses": [
+        "Modèle tarifaire complexe, demande devis personnalisé",
+        "Prix peut être élevé pour nombreux dispositifs",
+        "Pas de version gratuite"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage complex network infrastructure",
+      "avoid_if": "You have a small network with few devices",
+      "strengths": [
+        "Automatic device discovery and mapping",
+        "Intelligent alerts and problem recognition",
+        "Ergonomic dashboards and detailed reporting"
+      ],
+      "weaknesses": [
+        "Complex pricing model requiring custom quotes",
+        "Can be expensive with many devices",
+        "No free version"
+      ]
+    }
+  },
+  {
+    "name": "Beehiiv Analytics",
+    "slug": "beehiiv-analytics",
+    "url_fr": "https://tooltrim.com/fr/tool/beehiiv-analytics",
+    "url_en": "https://tooltrim.com/en/tool/beehiiv-analytics",
+    "website": "https://www.beehiiv.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Inclus avec Beehiiv gratuit",
+      "paid": "Métriques avancées dans les plans payants"
+    },
+    "description_fr": "Métriques avancées pour newsletters Beehiiv.",
+    "description_en": "Advanced metrics for Beehiiv newsletters.",
+    "verdict_fr": {
+      "keep_if": "Vous gérez une newsletter ou publication récurrente",
+      "avoid_if": "Vous ne publiez pas régulièrement par email",
+      "strengths": [
+        "Analytics intégrés directement dans la plateforme",
+        "Dashboards temps réel et intuitifs",
+        "Suivi du revenu publicitaire natif"
+      ],
+      "weaknesses": [
+        "Analytics limités au canal email",
+        "Moins complet que des plateformes analytics dédiées",
+        "Dépendance à l'écosystème beehiiv"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage a regular newsletter or publication",
+      "avoid_if": "You don't publish regularly via email",
+      "strengths": [
+        "Analytics built directly into the platform",
+        "Real-time and intuitive dashboards",
+        "Native ad revenue tracking"
+      ],
+      "weaknesses": [
+        "Analytics limited to email channel",
+        "Less complete than dedicated analytics platforms",
+        "Dependency on beehiiv ecosystem"
+      ]
+    }
+  },
+  {
+    "name": "Better Stack",
+    "slug": "better-stack",
+    "url_fr": "https://tooltrim.com/fr/tool/better-stack",
+    "url_en": "https://tooltrim.com/en/tool/better-stack",
+    "website": "https://betterstack.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Monitoring uptime, logs et alerting moderne pour apps web.",
+    "description_en": "Modern uptime, logs, and alerting for web apps.",
+    "verdict_fr": {
+      "keep_if": "Vous gérez la disponibilité d'applications critiques",
+      "avoid_if": "Vous cherchez juste une simple surveillance de domaine",
+      "strengths": [
+        "Tier gratuit très généreux et utile",
+        "Modèle modulaire payant à l'utilisation",
+        "Excellente UI et onboarding rapide"
+      ],
+      "weaknesses": [
+        "Coût peut monter si plusieurs produits utilisés",
+        "Moins spécialisé que des outils dédiés (e.g., DataDog)",
+        "Tier gratuit limité en fonctionnalités avancées"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage availability of critical applications",
+      "avoid_if": "You just need simple domain monitoring",
+      "strengths": [
+        "Very generous free tier and useful",
+        "Modular pay-as-you-go pricing model",
+        "Excellent UI and quick onboarding"
+      ],
+      "weaknesses": [
+        "Cost can escalate with multiple products",
+        "Less specialized than dedicated tools",
+        "Free tier limited in advanced features"
+      ]
+    }
+  },
+  {
+    "name": "BigQuery",
+    "slug": "bigquery",
+    "url_fr": "https://tooltrim.com/fr/tool/bigquery",
+    "url_en": "https://tooltrim.com/en/tool/bigquery",
+    "website": "https://cloud.google.com/bigquery",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : 1 To de traitement de requêtes par mois et 10 Go de stockage actif par mois sans frais (palier gratuit de Google Cloud).",
+      "paid": "Plan On-demand (Standard Edition, pay-per-use) sur devis."
+    },
+    "description_fr": "Entrepôt de données cloud serverless pour l'analyse SQL à grande échelle, facturé selon les données interrogées et le stockage utilisé.",
+    "description_en": "Serverless Google Cloud data warehouse for SQL analytics at scale, billed by data scanned and storage used.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Garde-le si tu dois faire tourner des analyses SQL sur un volume de données important ou croissant et que payer à la requête interrogée ne te dérange pas",
+      "avoid_if": "Évite-le si tu as besoin d'une facture mensuelle fixe et prévisible, ou si tu n'as pas les compétences SQL pour optimiser tes requêtes",
+      "strengths": [
+        "Une facturation à l'usage sans engagement minimum, qui permet à un petit projet de tourner gratuitement dans les quotas mensuels",
+        "Monte en charge automatiquement sur de très gros volumes de données sans aucune infrastructure à provisionner ou maintenir"
+      ],
+      "weaknesses": [
+        "Le coût des requêtes est difficile à anticiper et dépend de la qualité du partitionnement et du clustering des tables",
+        "Nécessite de bonnes compétences en SQL et en modélisation de données ; inutilisable sans profil technique"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Keep it if you need to run SQL analytics on a large or growing dataset and are comfortable paying per query scanned",
+      "avoid_if": "Avoid it if you need a fixed, predictable monthly bill or lack the SQL skills to optimize queries",
+      "strengths": [
+        "Pay-per-use pricing with no minimum commitment, so a small project can run for free within the monthly quotas",
+        "Scales automatically to very large datasets without any infrastructure to provision or maintain"
+      ],
+      "weaknesses": [
+        "Query cost is hard to predict in advance and depends on how well tables are partitioned and clustered",
+        "Requires solid SQL and data-modeling skills; it is not usable without a technical background"
+      ]
+    }
+  },
+  {
+    "name": "Brand24",
+    "slug": "brand24",
+    "url_fr": "https://tooltrim.com/fr/tool/brand24",
+    "url_en": "https://tooltrim.com/en/tool/brand24",
+    "website": "https://brand24.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 199 $/mois, plan Individual."
+    },
+    "description_fr": "Veille de marque et de mots-clés en temps réel sur les réseaux sociaux, la presse et les forums, avec analyse de sentiment.",
+    "description_en": "Real-time brand and keyword monitoring across social media, news and forums, with sentiment analysis.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu dois suivre de près un petit nombre de mots-clés de marque sur de nombreux types de sources dans un seul tableau de bord",
+      "avoid_if": "Tu dois suivre plus de 3 mots-clés ou veux des mises à jour en temps réel sans payer le palier Pro",
+      "strengths": [
+        "Couvre un large éventail de sources en un seul endroit : réseaux sociaux, presse, blogs, forums et avis",
+        "Les rapports automatisés quotidiens et hebdomadaires évitent de compiler les mentions à la main"
+      ],
+      "weaknesses": [
+        "Le plan d'entrée ne suit que 3 mots-clés, une limite dure pour qui surveille plus d'un nom de marque ou de produit",
+        "Les mises à jour en temps réel et les fonctions IA demandent le palier Pro à 399$/mois en facturation annuelle, non disponibles sur les plans moins chers"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You need to closely track a small number of brand keywords across many source types in one dashboard",
+      "avoid_if": "You need to track more than 3 keywords or want real-time updates without paying for the Pro tier",
+      "strengths": [
+        "Covers a wide range of sources in one place: social media, news, blogs, forums and reviews",
+        "Automated daily and weekly reports remove the need to compile mentions manually"
+      ],
+      "weaknesses": [
+        "Entry plan tracks only 3 keywords, a hard limit for anyone monitoring more than one brand or product name",
+        "Real-time updates and AI features require the Pro tier at $399/month billed annually, not available on cheaper plans"
+      ]
+    }
+  },
+  {
+    "name": "CallRail",
+    "slug": "callrail",
+    "url_fr": "https://tooltrim.com/fr/tool/callrail",
+    "url_en": "https://tooltrim.com/en/tool/callrail",
+    "website": "https://www.callrail.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 50 $/mois, plan Lead Tracking."
+    },
+    "description_fr": "Outil de suivi d'appels et d'attribution qui relie les appels entrants aux sources marketing, avec analyse IA et suivi de formulaires sur les forfaits supérieurs.",
+    "description_en": "Call tracking and attribution tool linking inbound calls to marketing sources, with AI analysis and form tracking on higher tiers.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères des campagnes marketing et as besoin de prouver quel canal (pub, page, campagne) génère un appel précis",
+      "avoid_if": "Tu as seulement besoin d'une ligne téléphonique professionnelle sans attribution par appel ; un simple système téléphonique coûtera moins cher",
+      "strengths": [
+        "L'insertion dynamique de numéros attribue les appels à la source marketing exacte, sans suivi manuel",
+        "API publique avec un palier gratuit jusqu'à 1 500 appels par mois pour des intégrations légères"
+      ],
+      "weaknesses": [
+        "Le forfait d'entrée exclut le suivi de formulaires et les fonctions d'intelligence conversationnelle, qui nécessitent de passer à un forfait plus cher",
+        "L'usage inclus (minutes, numéros, SMS) est modeste, et des frais de dépassement s'appliquent rapidement au-delà du forfait de base"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run marketing campaigns and need to prove which channel (ad, page, campaign) drives a specific phone call",
+      "avoid_if": "You just need a business phone line without per-call attribution; a plain phone system will cost less",
+      "strengths": [
+        "Dynamic number insertion attributes calls to the exact marketing source without manual tracking",
+        "Public API with a free tier up to 1,500 calls/month for lightweight integrations"
+      ],
+      "weaknesses": [
+        "Entry plan excludes form tracking and conversation-intelligence features, which require upgrading to a pricier tier",
+        "Included usage (minutes, numbers, SMS) is modest, and overage fees apply quickly beyond the base allotment"
+      ]
+    }
+  },
+  {
+    "name": "Causal",
+    "slug": "causal",
+    "url_fr": "https://tooltrim.com/fr/tool/causal",
+    "url_en": "https://tooltrim.com/en/tool/causal",
+    "website": "https://causal.app",
+    "category": "analytics",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "description_fr": "Plateforme de FP&A et modélisation financière : construit des modèles, se connecte aux données (compta, CRM…) et partage tableaux de bord et rapports interactifs, en alternative structurée au tableur.",
+    "description_en": "FP&A and financial modelling platform: build models, connect live data and share interactive dashboards, a structured alternative to spreadsheets.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous construisez des modèles financiers et des prévisions",
+      "avoid_if": "Un simple tableur couvre vos besoins",
+      "strengths": [
+        "Modélisation plus lisible qu'un tableur",
+        "Intégrations de données en direct",
+        "Dashboards et rapports interactifs"
+      ],
+      "weaknesses": [
+        "Pas de palier gratuit permanent",
+        "Courbe d'apprentissage vs tableur classique",
+        "Surdimensionné pour des calculs ponctuels"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You build financial models and forecasts",
+      "avoid_if": "A simple spreadsheet covers your needs",
+      "strengths": [
+        "More readable modelling than a spreadsheet",
+        "Live data integrations",
+        "Interactive dashboards and reports"
+      ],
+      "weaknesses": [
+        "No permanent free tier",
+        "Learning curve vs a classic spreadsheet",
+        "Oversized for one-off calculations"
+      ]
+    }
+  },
+  {
+    "name": "ChartMogul",
+    "slug": "chartmogul",
+    "url_fr": "https://tooltrim.com/fr/tool/chartmogul",
+    "url_en": "https://tooltrim.com/en/tool/chartmogul",
+    "website": "https://chartmogul.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 10 000 $ de MRR suivi, 1 source de facturation, sources personnalisées/tierces illimitées, 2 destinations standard.",
+      "paid": "Dès 57 $/mois, plan Starter."
+    },
+    "description_fr": "ChartMogul suit MRR, churn et segmentation client depuis les données de facturation, gratuit sous 10 000 $ de MRR puis indexé sur l'ARR.",
+    "description_en": "ChartMogul tracks MRR, churn and customer segmentation from billing data, free up to $10K MRR and ARR-scaled above that.",
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères une activité SaaS au-delà de 10 000 $ de MRR et tu veux des métriques de MRR, churn et segmentation sans les construire à partir d'exports de facturation",
+      "avoid_if": "Tu es sous les 10 000 $ de MRR et le plan gratuit couvre déjà ton besoin, ou tu as besoin de workflows BI que seul Enterprise propose",
+      "strengths": [
+        "Le plan gratuit délivre déjà de vraies métriques SaaS jusqu'à 10 000 $ de MRR, pas une démo bridée",
+        "La tarification évolue avec l'ARR suivi plutôt qu'avec les sièges, ce qui n'pénalise pas une petite équipe pour son effectif"
+      ],
+      "weaknesses": [
+        "La facture augmente automatiquement quand l'ARR suivi dépasse le seuil de chaque palier, ce qui peut surprendre une équipe en forte croissance",
+        "Les workflows BI/analytics avancés et le support dédié sont réservés à Enterprise, à partir de 19 900 $/an"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run a SaaS business past $10K MRR and want MRR, churn and segmentation metrics without building them from billing exports",
+      "avoid_if": "You're under $10K MRR and the free plan already covers your need, or you need BI workflows only Enterprise offers",
+      "strengths": [
+        "The free plan already delivers real SaaS metrics up to $10K MRR, not a crippled demo",
+        "Pricing scales with tracked ARR rather than seats, so a lean team isn't penalized for headcount"
+      ],
+      "weaknesses": [
+        "The bill rises automatically as tracked ARR grows past each tier's threshold, which can surprise a fast-growing team",
+        "Advanced BI/analytics workflows and dedicated support are reserved for Enterprise, starting at $19,900/year"
+      ]
+    }
+  },
+  {
+    "name": "ConvertKit Analytics",
+    "slug": "convertkit-analytics",
+    "url_fr": "https://tooltrim.com/fr/tool/convertkit-analytics",
+    "url_en": "https://tooltrim.com/en/tool/convertkit-analytics",
+    "website": "https://kit.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Inclus avec ConvertKit",
+      "paid": "N/A"
+    },
+    "description_fr": "Suivi de performance intégré ConvertKit.",
+    "description_en": "Integrated ConvertKit performance tracking.",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez ConvertKit pour vos emails",
+      "avoid_if": "Vous ne cherchez que email marketing simple",
+      "strengths": [
+        "Intégré nativement dans ConvertKit",
+        "Dashboards intuitifs segmentés par funnel",
+        "Prédictions IA pour optimisation contenu"
+      ],
+      "weaknesses": [
+        "Disponible uniquement si utilisateur ConvertKit",
+        "Analytics avancés dans plan Creator Pro uniquement",
+        "Moins complet que des outils analytics dédiés"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You use ConvertKit for email",
+      "avoid_if": "You only want simple email marketing",
+      "strengths": [
+        "Natively integrated in ConvertKit",
+        "Intuitive dashboards segmented by funnel",
+        "AI predictions for content optimization"
+      ],
+      "weaknesses": [
+        "Only available if you're a ConvertKit user",
+        "Advanced analytics in Creator Pro plan only",
+        "Less complete than dedicated analytics tools"
+      ]
+    }
+  },
+  {
+    "name": "Coupler.io",
+    "slug": "coupler-io",
+    "url_fr": "https://tooltrim.com/fr/tool/coupler-io",
+    "url_en": "https://tooltrim.com/en/tool/coupler-io",
+    "website": "https://coupler.io",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : 1 compte, 1 destination, rafraîchissement manuel, 100 lignes par exécution, 1 utilisateur",
+      "paid": "Dès 24 $/mois, plan Starter."
+    },
+    "description_fr": "Un connecteur sans code qui envoie les données de plus de 400 applications vers des tableurs, des outils de BI et des entrepôts, selon un calendrier.",
+    "description_en": "A no-code connector that moves data from 400+ apps into spreadsheets, BI tools and data warehouses on a schedule.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Garde-le si tu reconstruis les mêmes rapports clients chaque semaine à partir de plusieurs sources",
+      "avoid_if": "Passe ton tour si un export natif ou un connecteur unique couvre déjà ton rapport",
+      "strengths": [
+        "Plus de 400 sources vers tableurs, outils de BI et entrepôts",
+        "Les données restent dans tes propres destinations",
+        "Des modèles de tableaux de bord pour un premier rapport rapide"
+      ],
+      "weaknesses": [
+        "Transformations seulement à partir du plan Active à 99 $/mois",
+        "Plan gratuit limité au rafraîchissement manuel et à 100 lignes"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "Keep it if you rebuild the same client reports every week from several data sources",
+      "avoid_if": "Skip it if one native export or connector already covers your report",
+      "strengths": [
+        "400+ sources to spreadsheets, BI tools and warehouses",
+        "Data stays in your own destinations",
+        "Dashboard templates for a fast first report"
+      ],
+      "weaknesses": [
+        "Transformations only from the $99/mo Active plan",
+        "Free plan limited to manual refresh and 100 rows"
+      ]
+    }
+  },
+  {
+    "name": "Datadog",
+    "slug": "datadog",
+    "url_fr": "https://tooltrim.com/fr/tool/datadog",
+    "url_en": "https://tooltrim.com/en/tool/datadog",
+    "website": "https://datadoghq.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 5 hôtes, rétention des métriques sur 1 jour (offre Infrastructure gratuite)",
+      "paid": "Dès 15 $/mois, plan Infrastructure Pro."
+    },
+    "description_fr": "Datadog est une plateforme d'observabilité complète (infrastructure, APM, logs, sécurité) facturée par host et à l'usage, avec un palier gratuit jusqu'à 5 hosts et Infrastructure Pro dès 15 $/host/mois facturé annuellement.",
+    "description_en": "Datadog is a full observability platform (infrastructure, APM, logs, security) priced per host and by usage, with a free tier for up to 5 hosts and Infrastructure Pro from $15/host/month billed annually.",
+    "alternatives": [
+      "Sentry"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères une infrastructure en production et tu veux le monitoring infra, APM, logs et sécurité dans une seule plateforme, et tu peux suivre une facturation à l'usage répartie sur plusieurs modules",
+      "avoid_if": "Tu veux un prix fixe et prévisible, car le coût total de Datadog dépend du nombre de hosts et du volume de télémétrie sur plusieurs modules facturés séparément",
+      "strengths": [
+        "Une seule plateforme couvre infra, APM, logs, RUM et sécurité au lieu d'assembler des outils de monitoring séparés",
+        "Le dépannage assisté par IA (Bits Investigation, Bits Chat) est intégré à la réponse aux incidents plutôt que vendu comme un produit séparé"
+      ],
+      "weaknesses": [
+        "Le coût est réparti sur de nombreux modules facturés séparément (infra, APM, logs, feature flags, crédits IA), ce qui rend la dépense totale difficile à prévoir sans historique d'usage",
+        "La rétention des métriques d'1 jour du plan gratuit le limite à des tests de courte durée plutôt qu'à un monitoring continu"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run production infrastructure and want infra, APM, logs and security monitoring in one platform, and can track usage-based billing across modules",
+      "avoid_if": "You want one predictable flat price, since Datadog's total cost depends on host count and telemetry volume across several separately billed modules",
+      "strengths": [
+        "One platform covers infra, APM, logs, RUM and security instead of stitching together separate monitoring tools",
+        "AI-assisted troubleshooting (Bits Investigation, Bits Chat) is built into incident response rather than sold as a separate product"
+      ],
+      "weaknesses": [
+        "Cost is split across many separately billed modules (infra, APM, logs, feature flags, AI credits), making total spend hard to predict without usage history",
+        "The free plan's 1-day metric retention limits it to short-term testing rather than ongoing monitoring"
+      ]
+    }
+  },
+  {
+    "name": "Datawrapper",
+    "slug": "datawrapper",
+    "url_fr": "https://tooltrim.com/fr/tool/datawrapper",
+    "url_en": "https://tooltrim.com/en/tool/datawrapper",
+    "website": "https://www.datawrapper.de",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "description_fr": "Création rapide de graphiques, cartes et tables éditoriales.",
+    "description_en": "Fast creation of editorial charts, maps, and tables.",
+    "verdict_fr": {
+      "keep_if": "Vous créez régulièrement des visualisations pour articles ou rapports",
+      "avoid_if": "Vous avez besoin de dashboards temps réel complexes",
+      "strengths": [
+        "Interface intuitive, pas de code requis",
+        "Design épuré et accessible par défaut",
+        "Export PNG gratuit sur le plan Free"
+      ],
+      "weaknesses": [
+        "Fonctionnalités de dashboard temps réel limitées",
+        "Les features avancées sont onéreuses (thèmes custom)",
+        "API nouvelle (facturation à compter sept. 2026)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You regularly create visualizations for articles or reports",
+      "avoid_if": "You need complex, real-time dashboards",
+      "strengths": [
+        "Intuitive, no-code interface",
+        "Clean, accessible design by default",
+        "Free PNG export on the Free plan"
+      ],
+      "weaknesses": [
+        "Real-time dashboard features are limited",
+        "Advanced features are costly (custom themes)",
+        "API new (billing starts Sept 2026)"
+      ]
+    }
+  },
+  {
+    "name": "dbt",
+    "slug": "dbt",
+    "url_fr": "https://tooltrim.com/fr/tool/dbt",
+    "url_en": "https://tooltrim.com/en/tool/dbt",
+    "website": "https://www.getdbt.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : 1 siège, 3 000 modèles/mois, 1 projet (offre dbt Core/Developer).",
+      "paid": "Dès 100 $/mois, plan Starter."
+    },
+    "description_fr": "dbt transforme le SQL en modèles de données versionnés et testables, avec une offre solo gratuite et un IDE dans le navigateur.",
+    "description_en": "dbt turns SQL into version-controlled, testable data models with a free solo plan and a browser-based IDE.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu écris des transformations SQL et tu veux des modèles versionnés et testables, en commençant gratuitement pour un projet solo",
+      "avoid_if": "Tes pipelines tournent assez souvent pour dépasser les 3 000 exécutions/mois de l'offre gratuite, et tu n'es pas prêt à payer 100 $/mois pour Starter",
+      "strengths": [
+        "L'offre Developer gratuite couvre un projet solo complet (1 siège, 3 000 exécutions/mois) sans coût",
+        "Le contrôle de version, les tests et l'intégration CI font partie du flux de travail de base, pas ajoutés après coup"
+      ],
+      "weaknesses": [
+        "Les plafonds d'usage sur les modèles et métriques par mois peuvent forcer une mise à niveau même pour une petite équipe aux pipelines fréquents",
+        "Le SSO, le contrôle d'accès par rôle et le lignage au niveau des colonnes sont réservés aux offres Enterprise sur devis"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You write SQL transformations and want version-controlled, testable models, starting free for a solo project",
+      "avoid_if": "Your pipelines run often enough to blow past the free tier's 3,000 model runs/month, and you're not ready to pay $100/month for Starter",
+      "strengths": [
+        "Free Developer plan covers a full solo project (1 seat, 3,000 model runs/month) at no cost",
+        "Version control, testing and CI integration are built into the core workflow, not bolted on"
+      ],
+      "weaknesses": [
+        "Usage caps on models and metrics per month can force an upgrade even for a small team running frequent pipelines",
+        "SSO, role-based access control and column-level lineage are locked behind the quote-based Enterprise tiers"
+      ]
+    }
+  },
+  {
+    "name": "Dovetail",
+    "slug": "dovetail",
+    "url_fr": "https://tooltrim.com/fr/tool/dovetail",
+    "url_en": "https://tooltrim.com/en/tool/dovetail",
+    "website": "https://dovetail.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : 1 canal, 1 projet, 1 tableau de bord, documents limités, requêtes de chat basiques, aucun agent IA",
+      "paid": "Dès 0 $/mois, plan Free."
+    },
+    "description_fr": "Dovetail centralise entretiens utilisateurs, documents et enquêtes dans un repository consultable, avec résumés IA et regroupement sémantique.",
+    "description_en": "Dovetail centralizes user interviews, documents and surveys into a searchable repository with AI summaries and semantic clustering.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu mènes des entretiens utilisateurs régulièrement et as besoin d'un repository partagé et consultable plutôt que de documents éparpillés",
+      "avoid_if": "Tu as besoin d'un prix mensuel fixe et prévisible : au-delà de Free, Dovetail ne propose qu'un devis Enterprise sur mesure",
+      "strengths": [
+        "Un seul espace consultable pour appels, documents et enquêtes au lieu de fichiers éparpillés",
+        "Résumés IA et regroupement sémantique réduisent la relecture manuelle des transcriptions"
+      ],
+      "weaknesses": [
+        "Aucun plan payant public entre Free et Enterprise, donc le prix passe par un commercial",
+        "La limite à un canal, un projet et un tableau de bord du plan Free exclut un usage d'équipe continu"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You run user interviews regularly and need a shared, searchable repository rather than scattered docs and recordings",
+      "avoid_if": "You need a fixed, predictable monthly price: Dovetail's only path beyond Free is a custom Enterprise quote",
+      "strengths": [
+        "Single searchable place for calls, documents and surveys instead of scattered files",
+        "AI summaries and semantic clustering reduce manual transcript review"
+      ],
+      "weaknesses": [
+        "No public paid plan between Free and Enterprise, so pricing requires a sales conversation",
+        "Free plan's single channel, project and dashboard cap rules out ongoing team use"
+      ]
+    }
+  },
+  {
+    "name": "Fathom Analytics",
+    "slug": "fathom-analytics",
+    "url_fr": "https://tooltrim.com/fr/tool/fathom-analytics",
+    "url_en": "https://tooltrim.com/en/tool/fathom-analytics",
+    "website": "https://usefathom.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 15 $/mois, plan Starter."
+    },
+    "description_fr": "Fathom Analytics suit le trafic et les conversions d'un site sans cookies, évitant le bandeau de consentement RGPD, à partir de 15 $/mois.",
+    "description_en": "Fathom Analytics tracks website traffic and conversions without cookies, avoiding the GDPR consent banner, starting at $15/month.",
+    "alternatives": [
+      "Google Analytics"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Un propriétaire de site veut des chiffres de trafic et de conversion sans bandeau cookies ni la complexité de Google Analytics, sur un petit nombre de sites",
+      "avoid_if": "Le volume de pages vues se compte déjà en millions : le prix grimpe vite et un outil gratuit devient plus attractif",
+      "strengths": [
+        "Aucun cookie, donc aucun bandeau de consentement RGPD n'est nécessaire sur le site suivi",
+        "Jusqu'à 50 sites inclus même sur le plan Starter d'entrée"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit : le palier le moins cher est à 15 $/mois, avec carte bancaire exigée pour l'essai",
+        "Le prix évolue avec le volume de pages vues et peut devenir coûteux sur des sites à fort trafic"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "A site owner wants traffic and conversion numbers without a cookie banner or Google Analytics' complexity, on a small number of sites",
+      "avoid_if": "Pageview volume is already well into the millions, where pricing climbs quickly and a flat free tool becomes more attractive",
+      "strengths": [
+        "No cookies, so no GDPR consent banner is needed on the tracked site",
+        "Up to 50 sites included even on the entry Starter plan"
+      ],
+      "weaknesses": [
+        "No free plan: the cheapest tier is $15/month with a credit card required for the trial",
+        "Price scales with pageview volume and can become costly on high-traffic sites"
+      ]
+    }
+  },
+  {
+    "name": "Flourish",
+    "slug": "flourish",
+    "url_fr": "https://tooltrim.com/fr/tool/flourish",
+    "url_en": "https://tooltrim.com/en/tool/flourish",
+    "website": "https://flourish.studio",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "description_fr": "Dataviz éditoriale interactive, graphiques, cartes et stories data.",
+    "description_en": "Interactive editorial dataviz, charts, maps, and data stories.",
+    "verdict_fr": {
+      "keep_if": "Vous créez des visualisations de données interactives",
+      "avoid_if": "Vous avez besoin de dashboards BI complexes (→ Tableau)",
+      "strengths": [
+        "Plan gratuit très généreux et complet",
+        "Pas de code requis, très accessible",
+        "Visualisations élégantes et interactives"
+      ],
+      "weaknesses": [
+        "Moins de contrôle que code personnalisé",
+        "Limité pour BI très avancée",
+        "White-label seulement sur plans payants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You create interactive data visualizations",
+      "avoid_if": "You need complex BI dashboards (→ Tableau)",
+      "strengths": [
+        "Very generous and complete free plan",
+        "No code required, very accessible",
+        "Elegant and interactive visualizations"
+      ],
+      "weaknesses": [
+        "Less control than custom code",
+        "Limited for very advanced BI",
+        "White-label only on paid plans"
+      ]
+    }
+  },
+  {
+    "name": "Frase",
+    "slug": "frase",
+    "url_fr": "https://tooltrim.com/fr/tool/frase",
+    "url_en": "https://tooltrim.com/en/tool/frase",
+    "website": "https://www.frase.io",
+    "category": "analytics",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 15€/mois environ"
+    },
+    "description_fr": "Briefs SEO, recherche SERP et optimisation de contenu.",
+    "description_en": "SEO briefs, SERP research, and content optimization.",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'une approche intégrée (recherche, rédaction, optimisation, publication) pour vos contenus",
+      "avoid_if": "Vous n'avez besoin que d'audits SEO ponctuels",
+      "strengths": [
+        "Cycle de vie complet du contenu automatisé (recherche, rédaction, optimisation, publication)",
+        "Optimisation pour les moteurs IA, au-delà de la simple optimisation Google SEO",
+        "Intégrations directes avec les CMS populaires (WordPress, Webflow, etc.)"
+      ],
+      "weaknesses": [
+        "Tarification mensuelle devient significative sur l'année",
+        "Agent IA autonome limité aux plans Professional et Scale",
+        "Requiert une courbe d'apprentissage pour tirer pleinement parti de la plateforme"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need an integrated content workflow (research, writing, optimization, publishing)",
+      "avoid_if": "You only need occasional SEO audits",
+      "strengths": [
+        "Complete content lifecycle automation (research, writing, optimization, publishing)",
+        "Optimization for AI search engines, beyond traditional SEO",
+        "Direct integrations with popular CMS platforms (WordPress, Webflow, etc.)"
+      ],
+      "weaknesses": [
+        "Monthly subscription costs add up annually",
+        "Autonomous AI agent limited to Professional and Scale tiers",
+        "Learning curve required to maximize platform benefits"
+      ]
+    }
+  },
+  {
+    "name": "Google Analytics",
+    "slug": "google-analytics",
+    "url_fr": "https://tooltrim.com/fr/tool/google-analytics",
+    "url_en": "https://tooltrim.com/en/tool/google-analytics",
+    "website": "https://analytics.google.com",
+    "category": "analytics",
+    "description_fr": "Analytics web gratuit par Google",
+    "description_en": "Free web analytics by Google.",
+    "verdict_fr": {
+      "keep_if": "Vous voulez mesurer l'audience de votre site/app gratuitement",
+      "avoid_if": "Vous voulez un analytics sans cookies, orienté vie privée (RGPD strict)",
+      "strengths": [
+        "Gratuit pour la plupart des sites",
+        "Standard de fait, très intégré à Google",
+        "Explorations et audiences puissantes"
+      ],
+      "weaknesses": [
+        "Courbe d'apprentissage de GA4",
+        "Questions de confidentialité et de conformité selon les usages",
+        "Version entreprise (360) très coûteuse"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want to measure your site/app audience for free",
+      "avoid_if": "You want cookieless, privacy-first analytics (strict GDPR)",
+      "strengths": [
+        "Free for most sites",
+        "De-facto standard, deeply integrated with Google",
+        "Powerful explorations and audiences"
+      ],
+      "weaknesses": [
+        "GA4 learning curve",
+        "Privacy and compliance questions depending on usage",
+        "Enterprise version (360) is very expensive"
+      ]
+    }
+  },
+  {
+    "name": "Google Search Console",
+    "slug": "google-search-console",
+    "url_fr": "https://tooltrim.com/fr/tool/google-search-console",
+    "url_en": "https://tooltrim.com/en/tool/google-search-console",
+    "website": "https://search.google.com/search-console/about",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "Outil Google gratuit pour suivre les statistiques de recherche, l'état d'indexation et les problèmes d'exploration d'un site.",
+    "description_en": "Free Google tool for tracking a site's search analytics, indexing status, and crawl issues.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu as besoin d'une visibilité gratuite et directe sur la façon dont Google explore, indexe et classe ton propre site",
+      "avoid_if": "Tu as besoin de recherche de mots-clés, de suivi de la concurrence ou d'analyse de backlinks, hors du périmètre de l'outil",
+      "strengths": [
+        "Entièrement gratuit, avec des données directes de Google et aucun palier payant",
+        "L'outil d'inspection d'URL montre précisément comment Google explore et affiche une page donnée"
+      ],
+      "weaknesses": [
+        "Pas de recherche de mots-clés ni de données sur la concurrence ou les backlinks, contrairement aux suites SEO dédiées",
+        "L'historique de performance est limité à environ 16 mois dans l'interface standard"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You need free, direct visibility into how Google crawls, indexes, and ranks your own site",
+      "avoid_if": "You need keyword research, competitor tracking, or backlink analysis, which are outside its scope",
+      "strengths": [
+        "Fully free, direct data from Google with no paid tier",
+        "URL Inspection tool shows exactly how Google crawls and renders a specific page"
+      ],
+      "weaknesses": [
+        "No keyword research or competitor/backlink data, unlike dedicated SEO suites",
+        "Historical performance data is limited to roughly 16 months in the standard UI"
+      ]
+    }
+  },
+  {
+    "name": "Google Tag Manager",
+    "slug": "google-tag-manager",
+    "url_fr": "https://tooltrim.com/fr/tool/google-tag-manager",
+    "url_en": "https://tooltrim.com/en/tool/google-tag-manager",
+    "website": "https://tagmanager.google.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Gestion de tags, pixels et tracking sans redéployer le site.",
+    "description_en": "Manage tags, pixels, and tracking without redeploying the site.",
+    "verdict_fr": {
+      "keep_if": "Vous déployez régulièrement de nouveaux tags de tracking (Google Ads, pixels, conversions)",
+      "avoid_if": "Vous n'avez qu'un ou deux tags simples (code direct suffira)",
+      "strengths": [
+        "Entièrement gratuit et puissant",
+        "Pas besoin de coder pour ajouter/modifier des tags",
+        "Preview mode et version control intégrés"
+      ],
+      "weaknesses": [
+        "Interface complexe pour les débutants (courbe d'apprentissage raide)",
+        "Support gratuit limité (communauté principalement)",
+        "Tag manager limité aux cas d'usage classiques (GTM 360 pour les cas complexes)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You regularly deploy new tracking tags (Google Ads, pixels, conversions)",
+      "avoid_if": "You only have one or two simple tags (direct code will do)",
+      "strengths": [
+        "Completely free and powerful",
+        "No coding needed to add/modify tags",
+        "Preview mode and version control built-in"
+      ],
+      "weaknesses": [
+        "Complex interface for beginners (steep learning curve)",
+        "Limited free support (community mainly)",
+        "Tag manager limited to standard use cases (GTM 360 for complex needs)"
+      ]
+    }
+  },
+  {
+    "name": "Grafana",
+    "slug": "grafana",
+    "url_fr": "https://tooltrim.com/fr/tool/grafana",
+    "url_en": "https://tooltrim.com/en/tool/grafana",
+    "website": "https://grafana.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Tableaux de bord logs, métriques et alerting pour stacks techniques.",
+    "description_en": "Dashboards, logs, metrics, and alerting for technical stacks.",
+    "verdict_fr": {
+      "keep_if": "Vous avez une infra complexe (Kubernetes, microservices, multi-cloud)",
+      "avoid_if": "Vous avez un monitoring simple (quelques serveurs classiques)",
+      "strengths": [
+        "Plateforme unifiée pour tous les types de télémétrie",
+        "Plan gratuit robuste (pas une simple démo)",
+        "Open source (auto-hébergé possible)"
+      ],
+      "weaknesses": [
+        "Interface de configuration complexe pour les débutants",
+        "Coûts d'usage importants sans Adaptive Telemetry activé",
+        "Support gratuit limité (communauté)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have complex infrastructure (Kubernetes, microservices, multi-cloud)",
+      "avoid_if": "You have simple monitoring needs (few classic servers)",
+      "strengths": [
+        "Unified platform for all telemetry types",
+        "Robust free plan (not just a demo)",
+        "Open source (self-hosted possible)"
+      ],
+      "weaknesses": [
+        "Complex configuration interface for beginners",
+        "Significant usage costs without Adaptive Telemetry enabled",
+        "Limited free support (community)"
+      ]
+    }
+  },
+  {
+    "name": "Hex",
+    "slug": "hex",
+    "url_fr": "https://tooltrim.com/fr/tool/hex",
+    "url_en": "https://tooltrim.com/en/tool/hex",
+    "website": "https://hex.tech",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : Essai de l'agent Hex, compute réduit, connexion à toute source de données, tous les types de cellules, pour des projets personnels.",
+      "paid": "Dès 36 $/mois, plan Professional."
+    },
+    "description_fr": "Hex est un outil de notebooks collaboratifs pour l'analyse SQL et Python, qui publie directement en apps et dashboards interactifs.",
+    "description_en": "Hex is a collaborative notebook tool for SQL and Python analysis that publishes directly into interactive apps and dashboards.",
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu es data analyst ou data scientist et veux transformer une analyse SQL/Python en app interactive partageable sans outil BI séparé",
+      "avoid_if": "Ton équipe n'est pas technique et a juste besoin d'un dashboard simple : un outil BI pointer-cliquer aura une courbe d'apprentissage plus douce",
+      "strengths": [
+        "Les notebooks se publient directement en apps interactives sans changer d'outil ni reconstruire l'analyse pour les parties prenantes",
+        "Évolue d'un plan solo gratuit vers l'automatisation d'équipe (exécutions planifiées, composants partagés) sans migrer vers un autre produit"
+      ],
+      "weaknesses": [
+        "Demande une maîtrise de SQL, Python ou des cellules no-code ; pas pensé pour un profil totalement non technique",
+        "Les exécutions planifiées, alertes et apps publiées illimitées ne se débloquent qu'au plan Team, plus de deux fois le prix de Professional"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You're a data analyst or scientist who wants to turn SQL/Python analysis into a shareable interactive app without a separate BI tool",
+      "avoid_if": "Your team is non-technical and just needs a simple dashboard: a point-and-click BI tool will have a gentler learning curve",
+      "strengths": [
+        "Notebooks publish directly into interactive apps without switching tools or rebuilding the analysis for stakeholders",
+        "Scales from a free solo plan to team automation (scheduled runs, shared components) without migrating to a different product"
+      ],
+      "weaknesses": [
+        "Requires SQL, Python or no-code cell literacy; not aimed at a fully non-technical user",
+        "Scheduled runs, alerts and unlimited published apps only unlock at the Team plan, more than double the Professional price"
+      ]
+    }
+  },
+  {
+    "name": "Hotjar",
+    "slug": "hotjar",
+    "url_fr": "https://tooltrim.com/fr/tool/hotjar",
+    "url_en": "https://tooltrim.com/en/tool/hotjar",
+    "website": "https://contentsquare.com/hotjar/",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : Experience Analytics (heatmaps + relecture de sessions) : 200 000 sessions par mois, 1 projet. Inclut 100 réponses d'enquête par mois et 5 entretiens utilisateurs par mois (offre gratuite Voice of Customer).",
+      "paid": "Dès 39 $/mois, plan Growth."
+    },
+    "description_fr": "Heatmaps, replays de sessions et sondages pour comprendre le comportement utilisateur.",
+    "description_en": "Heatmaps, session replays, and surveys to understand user behaviour.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu as surtout besoin de heatmaps et de replays occasionnels sur un site, et tu peux rester dans le palier gratuit ou un plan Growth a faible volume",
+      "avoid_if": "Tu as besoin de heatmaps, de sondages et d'analytics produit ensemble, a volume reel ; la facture cumulee des trois lignes de produits peut vite devenir chere",
+      "strengths": [
+        "Mise en place rapide, aucun travail d'ingenierie necessaire pour un premier resultat utile",
+        "Palier gratuit genereux (200 000 sessions/mois), suffisant pour de nombreux petits sites pour faire un vrai audit",
+        "Les resumes generes par IA des heatmaps et enregistrements accelerent l'analyse sur les sites a fort trafic"
+      ],
+      "weaknesses": [
+        "Heatmaps/replay, sondages et analytics produit sont desormais trois produits factures separement au lieu d'un seul forfait",
+        "Le prix du palier payant grimpe fortement avec le volume de sessions et peut surprendre une equipe qui depasse le palier d'entree",
+        "Aucun export de donnees en masse en libre-service n'a ete trouve clairement, ce qui pese sur la portabilite en cas de changement d'outil plus tard"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You mainly need occasional heatmaps and session replays on one site and can live inside the free tier or a low-volume Growth plan",
+      "avoid_if": "You need heatmaps, surveys, and product analytics together at real volume; the combined bill across three product lines can get expensive fast",
+      "strengths": [
+        "Fast to set up, no engineering work needed for a first useful result",
+        "Generous free tier (200K sessions/month) is enough for many small sites to run a real audit",
+        "AI-generated summaries of heatmaps and recordings speed up analysis on busier sites"
+      ],
+      "weaknesses": [
+        "Heatmaps/replay, surveys, and product analytics are now three separately billed products instead of one plan",
+        "Paid tier pricing scales steeply with session volume and can surprise teams that grow past the entry tier",
+        "No clear self-serve bulk data export was found, which weighs on portability if the team switches tools later"
+      ]
+    }
+  },
+  {
+    "name": "Jupyter",
+    "slug": "jupyter",
+    "url_fr": "https://tooltrim.com/fr/tool/jupyter",
+    "url_en": "https://tooltrim.com/en/tool/jupyter",
+    "website": "https://jupyter.org",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Notebooks pour exploration data, analyses, prototypage et documentation vivante.",
+    "description_en": "Notebooks for data exploration, analysis, prototyping, and living documentation.",
+    "verdict_fr": {
+      "keep_if": "Vous faites de la science des données, du machine learning ou de la recherche scientifique",
+      "avoid_if": "Vous cherchez surtout un outil de documentation / blogging (d'autres outils sont plus simples)",
+      "strengths": [
+        "Entièrement gratuit et open source",
+        "Écosystème immense (intégrations, extensions, community)",
+        "Mélange code exécutable + documentation + visualisations"
+      ],
+      "weaknesses": [
+        "Pas idéal pour le code production (plutôt du prototypage/exploration)",
+        "Performance limitée sur très gros volumes de données",
+        "Pas de workflow orchestration native (utiliser Airflow, etc.)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You do data science, machine learning, or scientific research",
+      "avoid_if": "You're mainly looking for a documentation/blogging tool (simpler alternatives exist)",
+      "strengths": [
+        "Completely free and open source",
+        "Massive ecosystem (integrations, extensions, community)",
+        "Blend executable code + documentation + visualizations"
+      ],
+      "weaknesses": [
+        "Not ideal for production code (more for prototyping/exploration)",
+        "Performance limited on very large data volumes",
+        "No native workflow orchestration (use Airflow, etc.)"
+      ]
+    }
+  },
+  {
+    "name": "KeepTruckin",
+    "slug": "keeptruckin",
+    "url_fr": "https://tooltrim.com/fr/tool/keeptruckin",
+    "url_en": "https://tooltrim.com/en/tool/keeptruckin",
+    "website": "https://keeptruckin.com",
+    "category": "analytics",
+    "pricing": {
+      "free": null,
+      "paid": "KeepTruckin est devenu Motive ; tarifs sur devis selon le secteur et la taille de flotte."
+    },
+    "description_fr": "Logiciel de gestion de flottes pour entreprises de transport.",
+    "description_en": "Fleet management software for transport companies.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous gérez une flotte de véhicules commerciaux (transporteurs, logistique)",
+      "avoid_if": "Vous avez une flotte petite (< 5 véhicules) et besoin de tracking simple",
+      "strengths": [
+        "Plateforme complète et intégrée (pas besoin de plusieurs outils)",
+        "Dashcams et video 360° pour sécurité et incidents",
+        "ELD FMCSA-certified pour compliance DOT"
+      ],
+      "weaknesses": [
+        "Pas de tarification transparente (devis requis)",
+        "Prix premium (solution non accessible pour petites flottes)",
+        "Plateforme très complexe (beaucoup de features)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage a commercial vehicle fleet (trucking, logistics)",
+      "avoid_if": "You have a small fleet (< 5 vehicles) needing basic tracking",
+      "strengths": [
+        "Complete and integrated platform (no need for multiple tools)",
+        "Dashcams and 360° video for safety and incidents",
+        "ELD FMCSA-certified for DOT compliance"
+      ],
+      "weaknesses": [
+        "No transparent pricing (custom quotes required)",
+        "Premium price (not accessible for small fleets)",
+        "Very complex platform (many features)"
+      ]
+    }
+  },
+  {
+    "name": "Lighthouse",
+    "slug": "lighthouse",
+    "url_fr": "https://tooltrim.com/fr/tool/lighthouse",
+    "url_en": "https://tooltrim.com/en/tool/lighthouse",
+    "website": "https://developer.chrome.com/docs/lighthouse",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Audit performance, accessibilité, SEO et bonnes pratiques depuis Chrome.",
+    "description_en": "Performance, accessibility, SEO, and best-practice audit from Chrome.",
+    "verdict_fr": {
+      "keep_if": "Vous optimisez les performances et l'accessibilité d'un site web",
+      "avoid_if": "Vous faites du monitoring continu de performances (Lighthouse = point-in-time; utiliser Sentry, DataDog pour continu)",
+      "strengths": [
+        "Entièrement gratuit et officiel (Google Chrome)",
+        "Pas d'installation requise (Chrome DevTools ou PageSpeed Insights)",
+        "Audits complets (performance, accessibilité, SEO, bonnes pratiques)"
+      ],
+      "weaknesses": [
+        "Point-in-time (pas de monitoring continu)",
+        "Audits de page seulement (pas de flows utilisateur complexes)",
+        "Parfois des faux positifs (ex. sur les images externalisées)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You optimize web site performance and accessibility",
+      "avoid_if": "You do continuous performance monitoring (Lighthouse is point-in-time; use Sentry, DataDog for continuous)",
+      "strengths": [
+        "Completely free and official (Google Chrome)",
+        "No installation required (Chrome DevTools or PageSpeed Insights)",
+        "Complete audits (performance, accessibility, SEO, best practices)"
+      ],
+      "weaknesses": [
+        "Point-in-time only (no continuous monitoring)",
+        "Page audits only (no complex user workflows)",
+        "Occasional false positives (e.g., on externalized images)"
+      ]
+    }
+  },
+  {
+    "name": "Logtail",
+    "slug": "logtail",
+    "url_fr": "https://tooltrim.com/fr/tool/logtail",
+    "url_en": "https://tooltrim.com/en/tool/logtail",
+    "website": "https://betterstack.com/logtail",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Logs structurés et recherche via Better Stack.",
+    "description_en": "Structured logs and search through Better Stack.",
+    "verdict_fr": {
+      "keep_if": "Vous collectez et analysez des logs d'applications ou infra",
+      "avoid_if": "Vous cherchez surtout une observabilité complète (Grafana, Datadog meilleur fit)",
+      "strengths": [
+        "Nettement moins cher que Datadog à volume équivalent",
+        "Stockage logs dans votre S3 (propriété des données)",
+        "Recherche SQL pour requêtes complexes et ad-hoc"
+      ],
+      "weaknesses": [
+        "Interface moins moderne que Datadog/NewRelic",
+        "Écosystème plus petit (moins d'intégrations prêtes à l'emploi)",
+        "Support gratuit limité (communauté)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You collect and analyze application or infrastructure logs",
+      "avoid_if": "You're mainly looking for complete observability (Grafana, Datadog better fit)",
+      "strengths": [
+        "Markedly cheaper than Datadog at equivalent volume",
+        "Store logs in your S3 (data ownership)",
+        "SQL search for complex ad-hoc queries"
+      ],
+      "weaknesses": [
+        "Interface less modern than Datadog/NewRelic",
+        "Smaller ecosystem (fewer out-of-the-box integrations)",
+        "Limited free support (community)"
+      ]
+    }
+  },
+  {
+    "name": "Lookback",
+    "slug": "lookback",
+    "url_fr": "https://tooltrim.com/fr/tool/lookback",
+    "url_en": "https://tooltrim.com/en/tool/lookback",
+    "website": "https://www.lookback.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 25€/mois environ"
+    },
+    "description_fr": "Tests utilisateurs et interviews vidéo pour observer les parcours en direct ou asynchrone.",
+    "description_en": "User testing and video interviews to observe journeys live or asynchronously.",
+    "verdict_fr": {
+      "keep_if": "Vous menez des études utilisateur qualitatives régulières et à l'échelle",
+      "avoid_if": "Vous testez ponctuellement sans études récurrentes",
+      "strengths": [
+        "Capture et transcription automatisées avec IA",
+        "Modérés et non-modérés : flexibilité du design d'étude",
+        "Intégrations et custom models (IA personnalisé)"
+      ],
+      "weaknesses": [
+        "Engagement annuel obligatoire",
+        "Sessions supplémentaires payantes au-delà du palier",
+        "Tarif Insights Hub élevé pour les petites équipes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You conduct regular qualitative user studies at scale",
+      "avoid_if": "You run occasional one-off tests",
+      "strengths": [
+        "Automated transcription and AI summaries",
+        "Moderated and unmoderated research modes",
+        "Real-time stakeholder viewing and collaboration"
+      ],
+      "weaknesses": [
+        "Annual commitment required",
+        "Additional sessions sold separately",
+        "Pricing tier jump for mid-market teams"
+      ]
+    }
+  },
+  {
+    "name": "Looker Studio",
+    "slug": "looker-studio",
+    "url_fr": "https://tooltrim.com/fr/tool/looker-studio",
+    "url_en": "https://tooltrim.com/en/tool/looker-studio",
+    "website": "https://lookerstudio.google.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : Rapports et partage illimités ; le plan gratuit est complet pour un reporting individuel",
+      "paid": "Dès 9 $/mois, plan Looker Studio Pro."
+    },
+    "description_fr": "Un créateur de dashboards et de rapports gratuit et sans code, connecté à Google Analytics, Sheets et BigQuery, avec un palier payant pour les équipes.",
+    "description_en": "A free, no-code dashboard and reporting builder connected to Google Analytics, Sheets and BigQuery, with a paid team tier.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu as besoin de dashboards gratuits connectés à Google Analytics, Sheets ou BigQuery, sans acheter d'outil BI dédié",
+      "avoid_if": "Tu as besoin d'une fiabilité de connecteurs garantie et d'un support éditeur au-delà de ce qu'offrent les connecteurs communautaires",
+      "strengths": [
+        "Le plan gratuit est complet pour un reporting individuel, pas un essai bridé",
+        "Les connecteurs directs vers GA4, Sheets et BigQuery évitent les exports de données manuels"
+      ],
+      "weaknesses": [
+        "La gestion avancée d'équipe, l'organisation des ressources et le support nécessitent le palier Pro payant",
+        "La fraîcheur des données et la fiabilité des connecteurs dépendent de connecteurs communautaires tiers, hors du support direct de Google"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You need free dashboards connected to Google Analytics, Sheets or BigQuery without buying a dedicated BI tool",
+      "avoid_if": "You need guaranteed connector reliability and vendor support beyond what community connectors offer",
+      "strengths": [
+        "The free tier is fully featured for individual reporting, not a crippled trial",
+        "Direct connectors to GA4, Sheets and BigQuery avoid manual data exports"
+      ],
+      "weaknesses": [
+        "Advanced team management, asset organization and support require the paid Pro tier",
+        "Data freshness and connector reliability depend on third-party community connectors outside Google's direct support"
+      ]
+    }
+  },
+  {
+    "name": "Lucidchart",
+    "slug": "lucidchart",
+    "url_fr": "https://tooltrim.com/fr/tool/lucidchart",
+    "url_en": "https://tooltrim.com/en/tool/lucidchart",
+    "website": "https://lucidchart.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "3 documents éditables, formes limitées",
+      "paid": "Individual 7.88€/mois ; Team 8.76€/mois/utilisateur (min. 3) ; Enterprise dès 14.53€/mois/utilisateur (annuel)"
+    },
+    "description_fr": "Diagrammes en ligne (organigrammes, wireframes, UML) avec génération IA depuis du texte.",
+    "description_en": "Online diagramming (flowcharts, wireframes, UML) with AI generation from text.",
+    "price_verified_on": "2026-06-25",
+    "verdict_fr": {
+      "keep_if": "Votre équipe crée des diagrammes techniques, processus ou architectures",
+      "avoid_if": "Vous cherchez un outil gratuit permanent et sans limite",
+      "strengths": [
+        "Édition gratuite entièrement fonctionnelle pour débuter",
+        "Collaboration temps réel et commentaires",
+        "IA pour auto-générer des diagrammes"
+      ],
+      "weaknesses": [
+        "Tier gratuit limité à 3 documents",
+        "Tarif élevé pour les équipes nombreuses",
+        "Courbe d'apprentissage sur les templates avancés"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your team creates technical, process, or architecture diagrams",
+      "avoid_if": "You need a permanently free tool without limits",
+      "strengths": [
+        "Free tier is fully functional for getting started",
+        "Real-time collaboration and commenting",
+        "AI to auto-generate diagrams"
+      ],
+      "weaknesses": [
+        "Free tier limited to 3 documents",
+        "Cost scales with team size",
+        "Learning curve for advanced templates"
+      ]
+    }
+  },
+  {
+    "name": "Mapbox",
+    "slug": "mapbox",
+    "url_fr": "https://tooltrim.com/fr/tool/mapbox",
+    "url_en": "https://tooltrim.com/en/tool/mapbox",
+    "website": "https://www.mapbox.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : Les quotas gratuits mensuels varient selon l'API, par exemple jusqu'à 50 000 chargements de carte Mapbox GL JS, 25 000 utilisateurs actifs mensuels sur les SDK Maps, 100 000 requêtes de géocodage.",
+      "paid": "Dès 0 $/mois, plan Free tier (per-API allowances)."
+    },
+    "description_fr": "Plateforme cartographique à l'usage avec rendu de carte personnalisable, géocodage et API d'itinéraires pour applications web et mobile.",
+    "description_en": "Usage-based mapping platform with customizable map rendering, geocoding, and directions APIs for web and mobile apps.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu as besoin de cartes personnalisables, de géocodage ou d'itinéraires dans une application, avec un usage proche des quotas gratuits mensuels",
+      "avoid_if": "Tu as besoin d'un coût mensuel fixe et prévisible, car Mapbox facture à l'usage par API plutôt qu'un prix de plan unique",
+      "strengths": [
+        "Quotas gratuits mensuels généreux par API avant tout coût",
+        "Couvre rendu de carte, géocodage et itinéraires dans une seule plateforme avec des SDK web et mobile"
+      ],
+      "weaknesses": [
+        "Pas d'abonnement fixe, donc le coût peut devenir imprévisible à grande échelle sans suivi de l'usage",
+        "Les jeux de données à forte valeur comme le trafic et le mouvement ne sont pas en libre-service et nécessitent un échange commercial"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You need customizable map rendering, geocoding, or directions in an app and expect usage within or near the free monthly allowances",
+      "avoid_if": "You need a predictable flat monthly cost, since Mapbox bills per API usage rather than a single plan price",
+      "strengths": [
+        "Generous free monthly allowances per API before any cost starts",
+        "Covers map rendering, geocoding, and directions in one platform with web and mobile SDKs"
+      ],
+      "weaknesses": [
+        "No flat subscription, so cost can become unpredictable at scale without usage monitoring",
+        "High-value datasets like traffic and movement data are not self-serve and require a sales conversation"
+      ]
+    }
+  },
+  {
+    "name": "Meta Ads",
+    "slug": "meta-ads",
+    "url_fr": "https://tooltrim.com/fr/tool/meta-ads",
+    "url_en": "https://tooltrim.com/en/tool/meta-ads",
+    "website": "https://facebook.com/business/ads",
+    "category": "analytics",
+    "pricing": "Budget de campagne libre, dès quelques euros par jour ; coût par clic variable selon la niche et la concurrence.",
+    "description_fr": "Plateforme publicitaire de Facebook et Instagram pour cibler une audience par centres d'intérêt et comportements.",
+    "description_en": "Facebook and Instagram's advertising platform to target audiences by interests and behaviors.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin de publicité Facebook/Instagram natives",
+      "avoid_if": "Vous exigez une gestion complète multi-canaux (Google, TikTok, etc.)",
+      "strengths": [
+        "Plate-forme native Meta entièrement gratuite",
+        "IA Meta Advantage+ pour optimisation de campagne",
+        "Ciblage granulaire et audiences personnalisées"
+      ],
+      "weaknesses": [
+        "Outils tiers de gestion coûtent supplémentaire",
+        "Interface peut être dense pour les débutants",
+        "Limité à l'écosystème Meta (pas Google, TikTok)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need Facebook/Instagram advertising",
+      "avoid_if": "You need omnichannel management (Google, TikTok, etc.)",
+      "strengths": [
+        "Meta's native platform is completely free",
+        "Meta Advantage+ AI for automated campaign optimization",
+        "Granular targeting and custom audiences"
+      ],
+      "weaknesses": [
+        "Third-party management tools cost extra",
+        "Interface can be dense for beginners",
+        "Limited to Meta ecosystem (no Google, TikTok)"
+      ]
+    }
+  },
+  {
+    "name": "Metabase",
+    "slug": "metabase",
+    "url_fr": "https://tooltrim.com/fr/tool/metabase",
+    "url_en": "https://tooltrim.com/en/tool/metabase",
+    "website": "https://metabase.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : Open source, auto-heberge, utilisateurs et tableaux de bord illimites.",
+      "paid": "Dès 90 $/mois, plan Starter."
+    },
+    "description_fr": "Tableaux de bord de business intelligence et analytique SQL, gratuits et illimites en auto-heberge, ou a partir de 100 $/mois pour 5 sieges cloud.",
+    "description_en": "Business intelligence dashboards and SQL analytics, free and unlimited self-hosted, or from $100/month for 5 cloud seats.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux des tableaux de bord BI partages et tu peux soit t'auto-heberger gratuitement, soit payer au siege sur le plan cloud",
+      "avoid_if": "Tu as besoin d'une application de bureau ou mobile native, ce que Metabase ne propose pas",
+      "strengths": [
+        "L'edition open source auto-hebergee est entierement gratuite, sans limite d'utilisateurs ni de tableaux de bord",
+        "Couvre a la fois un constructeur visuel pour les non-SQL et un editeur SQL natif pour les avances"
+      ],
+      "weaknesses": [
+        "Uniquement web, pas d'application de bureau ni mobile",
+        "Les extensions a l'usage pour l'IA, les transformations et le stockage s'ajoutent au prix par siege"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You want shared BI dashboards and can either self-host for free or pay per seat on the cloud plan",
+      "avoid_if": "You need a native desktop or mobile app, which Metabase does not offer",
+      "strengths": [
+        "Self-hosted open-source edition is fully free with no user or dashboard limit",
+        "Covers both a visual query builder for non-SQL users and a native SQL editor for advanced ones"
+      ],
+      "weaknesses": [
+        "Web-based only, no desktop or mobile app",
+        "Cloud usage add-ons for AI, transforms and storage stack on top of the seat price"
+      ]
+    }
+  },
+  {
+    "name": "Metricool",
+    "slug": "metricool",
+    "url_fr": "https://tooltrim.com/fr/tool/metricool",
+    "url_en": "https://tooltrim.com/en/tool/metricool",
+    "website": "https://metricool.com",
+    "category": "analytics",
+    "description_fr": "Analytics et planification réseaux sociaux",
+    "description_en": "Social media analytics and scheduling.",
+    "verdict_fr": {
+      "keep_if": "Vous gérez plusieurs réseaux et voulez analytics + planification réunis",
+      "avoid_if": "Vous ne gérez qu'un seul réseau simplement",
+      "strengths": [
+        "Analytics et planification réunis",
+        "Veille concurrentielle et rapports",
+        "Tarification par marque"
+      ],
+      "weaknesses": [
+        "X/Twitter en add-on payant",
+        "Gratuit limité (20 posts, sans LinkedIn/X)",
+        "Coût qui monte avec le nombre de marques"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage several networks and want analytics + scheduling combined",
+      "avoid_if": "You only manage a single network simply",
+      "strengths": [
+        "Analytics and scheduling combined",
+        "Competitor tracking and reports",
+        "Per-brand pricing"
+      ],
+      "weaknesses": [
+        "X/Twitter is a paid add-on",
+        "Free tier limited (20 posts, no LinkedIn/X)",
+        "Cost rises with the number of brands"
+      ]
+    }
+  },
+  {
+    "name": "Microsoft Clarity",
+    "slug": "microsoft-clarity",
+    "url_fr": "https://tooltrim.com/fr/tool/microsoft-clarity",
+    "url_en": "https://tooltrim.com/en/tool/microsoft-clarity",
+    "website": "https://clarity.microsoft.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit à vie, sans limite de trafic ni de sessions",
+      "paid": ""
+    },
+    "description_fr": "Heatmaps et enregistrements de session gratuits et illimités, par Microsoft.",
+    "description_en": "Free, unlimited heatmaps and session recordings by Microsoft.",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Vous voulez une analytics web gratuite sans limite de trafic",
+      "avoid_if": "Vous avez besoin d'événements traçables personnalisés (limité en Clarity)",
+      "strengths": [
+        "Entièrement gratuit sans limite de trafic",
+        "Session recordings et heatmaps de qualité",
+        "Copilot IA pour insights immédiats"
+      ],
+      "weaknesses": [
+        "Tracking événementiel limité comparé à Mixpanel",
+        "Segmentation et cohorts moins avancés",
+        "Microsoft collecte des données anonymisées"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want free web analytics with no traffic limits",
+      "avoid_if": "You need custom event tracking (Clarity is limited)",
+      "strengths": [
+        "Completely free with no traffic limits",
+        "Quality session recordings and heatmaps",
+        "Copilot AI for instant insights"
+      ],
+      "weaknesses": [
+        "Limited event tracking vs. Mixpanel",
+        "Less advanced segmentation and cohorts",
+        "Microsoft collects anonymized data"
+      ]
+    }
+  },
+  {
+    "name": "Microsoft Excel",
+    "slug": "excel",
+    "url_fr": "https://tooltrim.com/fr/tool/excel",
+    "url_en": "https://tooltrim.com/en/tool/excel",
+    "website": "https://www.microsoft.com/microsoft-365/excel",
+    "category": "analytics",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 7€/mois environ"
+    },
+    "description_fr": "Tableur de référence pour données, budgets, modèles et analyses.",
+    "description_en": "Reference spreadsheet for data, budgets, models, and analysis.",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'un tableur bureautique standard",
+      "avoid_if": "Vous ne voulez que l'outil gratuit basique",
+      "strengths": [
+        "Standard universel pour les données tabulaires",
+        "Version web gratuite très complète",
+        "Collaboration temps réel en Microsoft 365"
+      ],
+      "weaknesses": [
+        "Coûts Microsoft 365 si desktop complet voulu",
+        "Moins performant que BI pour gros volumes",
+        "Courbe apprentissage formules avancées"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need standard spreadsheet software",
+      "avoid_if": "You only want the basic free tool",
+      "strengths": [
+        "Universal standard for tabular data",
+        "Very complete free web version",
+        "Real-time collaboration in Microsoft 365"
+      ],
+      "weaknesses": [
+        "Microsoft 365 costs if you want full desktop",
+        "Less efficient than BI for large volumes",
+        "Learning curve for advanced formulas"
+      ]
+    }
+  },
+  {
+    "name": "Mixpanel",
+    "slug": "mixpanel",
+    "url_fr": "https://tooltrim.com/fr/tool/mixpanel",
+    "url_en": "https://tooltrim.com/en/tool/mixpanel",
+    "website": "https://mixpanel.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 1 M d'événements suivis par mois, 10 000 replays de session par mois, jusqu'à 1 000 MEU d'expérimentation par mois, jusqu'à 10 feature flags actifs, sièges illimités.",
+      "paid": "Dès 0 $/mois, plan Growth."
+    },
+    "description_fr": "Mixpanel suit l'usage produit avec funnels, rétention et replay de session, facturé au volume d'événements mensuels plutôt qu'à un tarif fixe par siège.",
+    "description_en": "Mixpanel tracks product usage with funnels, retention and session replay, billed on monthly events rather than a flat seat price.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Ton produit envoie déjà des événements personnalisés, ou tu peux les instrumenter, et tu as besoin de funnels, de rétention ou de replay de session au-delà des chiffres de trafic web basiques",
+      "avoid_if": "Tu as juste besoin de chiffres de trafic web basiques, ou tu ne peux pas consacrer de temps de développement à l'instrumentation des événements",
+      "strengths": [
+        "Le palier gratuit couvre jusqu'à 1 M d'événements par mois avec des sièges illimités, assez pour faire de l'analytics produit réel avant de payer quoi que ce soit",
+        "Le replay de session, les feature flags et l'expérimentation vivent dans le même tableau de bord que les funnels, sans outil séparé à acheter"
+      ],
+      "weaknesses": [
+        "La tarification payante au-delà de 20 M d'événements n'est pas un tarif fixe publié, donc la facture mensuelle réelle dépend du volume et reste difficile à prévoir",
+        "Des funnels utiles demandent d'abord d'instrumenter des événements dans le produit, ce qui prend du temps de développement avant toute analyse"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "Your product already sends, or you can instrument, custom events and you need funnels, retention or session replay beyond basic website traffic numbers",
+      "avoid_if": "You just need basic website traffic numbers, or you cannot commit developer time to event instrumentation",
+      "strengths": [
+        "Free tier covers up to 1M events a month and unlimited seats, enough to run real product analytics before paying anything",
+        "Session replay, feature flags and experimentation live in the same dashboard as the funnels, with no separate tool to buy"
+      ],
+      "weaknesses": [
+        "Paid pricing beyond 20M events is not a flat published rate, so the real monthly bill depends on volume and is hard to predict in advance",
+        "Useful funnels require instrumenting events in the product first, which takes developer time before any analysis is possible"
+      ]
+    }
+  },
+  {
+    "name": "Notionlytics",
+    "slug": "notionlytics",
+    "url_fr": "https://tooltrim.com/fr/tool/notionlytics",
+    "url_en": "https://tooltrim.com/en/tool/notionlytics",
+    "website": "https://notionlytics.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 10 $/mois, plan Pro."
+    },
+    "description_fr": "Notionlytics ajoute des analytics de vues de page et des widgets de feedback aux pages Notion partagées ou publiques, wikis et bases de connaissances.",
+    "description_en": "Notionlytics adds page-view analytics and feedback widgets to shared or public Notion pages, wikis and knowledge bases.",
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu gères un wiki ou une base de connaissances Notion et tu veux savoir quelles pages sont lues et récolter un feedback rapide",
+      "avoid_if": "Tu as besoin d'analytics au-delà de Notion, ou d'un palier gratuit permanent pour tester l'outil d'abord",
+      "strengths": [
+        "La mise en place est décrite comme sans code et rapide, en s'intégrant directement aux pages Notion existantes",
+        "Les widgets de feedback donnent un retour direct et anonyme des lecteurs, en plus des simples compteurs de vues de page"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit n'a été trouvé, seulement des paliers payants à partir de 10 $/mois",
+        "Le plafond de pages (100 sur Pro) et le plafond de membres d'équipe (5 sur Team) poussent un wiki qui grandit vers le palier Business à 90 $/mois"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You run a Notion wiki or knowledge base and want to know which pages are read and collect quick reader feedback",
+      "avoid_if": "You need analytics across tools beyond Notion, or a permanently free tier to test the product first",
+      "strengths": [
+        "Setup is described as codeless and takes seconds, embedding directly into existing Notion pages",
+        "Feedback widgets give direct, anonymous reader input on top of plain page-view counts"
+      ],
+      "weaknesses": [
+        "No free plan was found, only paid tiers starting at $10/month",
+        "The page cap (100 on Pro) and team-member cap (5 on Team) push a growing wiki toward the $90/month Business tier"
+      ]
+    }
+  },
+  {
+    "name": "Optimizely",
+    "slug": "optimizely",
+    "url_fr": "https://tooltrim.com/fr/tool/optimizely",
+    "url_en": "https://tooltrim.com/en/tool/optimizely",
+    "website": "https://optimizely.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "",
+      "paid": "Sur devis uniquement, à partir de ~25 000$/an"
+    },
+    "description_fr": "Plateforme enterprise de contenu, e-commerce et expérimentation digitale.",
+    "description_en": "Enterprise platform for content, commerce and digital experimentation.",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Vous avez un site marchand ou contenu à grande échelle",
+      "avoid_if": "Vous cherchez une solution gratuite ou petit budget",
+      "strengths": [
+        "Suite complète : CMS + experimentation + agents IA",
+        "Automation native avec agents IA",
+        "Support enterprise et SLA custom"
+      ],
+      "weaknesses": [
+        "Très cher, tarification custom non transparente",
+        "Forte courbe d'apprentissage",
+        "Moins flexible pour cas d'usage nichés"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have a large-scale commerce or content site",
+      "avoid_if": "You need a free or tight-budget solution",
+      "strengths": [
+        "Complete suite: CMS + experimentation + AI agents",
+        "Native automation with AI agents",
+        "Enterprise support and custom SLA"
+      ],
+      "weaknesses": [
+        "Very expensive, custom pricing not transparent",
+        "Steep learning curve",
+        "Less flexible for niche use cases"
+      ]
+    }
+  },
+  {
+    "name": "Outrank",
+    "slug": "outrank",
+    "url_fr": "https://tooltrim.com/fr/tool/outrank",
+    "url_en": "https://tooltrim.com/en/tool/outrank",
+    "website": "https://outrank.so",
+    "category": "analytics",
+    "description_fr": "Plateforme IA générant et publiant automatiquement les articles SEO-optimisés. Inclut la recherche IA de mots-clés, l'optimisation SEO, la génération d'images adaptées à la marque et la création de backlinks via un réseau. Supporte plus de 150 langues, avec des intégrations WordPress, Webflow, Shopify, Framer, Wix, Notion et Ghost.",
+    "description_en": "AI platform automatically generating and publishing SEO-optimized articles. Includes AI keyword research, SEO optimization, on-brand image generation, backlink building via network. Supports 150+ languages, integrations WordPress, Webflow, Shopify, Framer, Wix, Notion, Ghost.",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez une croissance du trafic organique automatisée via du contenu SEO",
+      "avoid_if": "Vous exigez un contenu original créatif et personnalisé par un expert humain",
+      "strengths": [
+        "L'automatisation de la génération et de la publication de 30 articles par mois réduit la charge de travail éditoriale",
+        "La recherche IA de mots-clés identifie automatiquement les mots-clés à fort trafic et faible concurrence",
+        "Les images adaptées à la marque générées par l'IA plus la création de backlinks incluse réduisent les frais externes"
+      ],
+      "weaknesses": [
+        "Contenu généré par l'IA : qualité variable comparée à une rédaction humaine experte",
+        "Abonnement mensuel important pour une startup ou un petit site",
+        "Customisation limitée du contenu verticalisé : risque de contenu générique"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You seek automated organic traffic growth via SEO content",
+      "avoid_if": "You require original creative personalized content by human expert",
+      "strengths": [
+        "Automation generating + publishing 30 articles/month reduces editorial workload",
+        "AI keyword research identifies high-traffic, low-competition keywords auto",
+        "On-brand images generated + backlink building included reduce external fees"
+      ],
+      "weaknesses": [
+        "AI-generated content; quality variable versus human expert writing",
+        "Monthly subscription is steep for a startup or small site",
+        "Limited customization for vertical niches; risk generic content"
+      ]
+    }
+  },
+  {
+    "name": "PagerDuty",
+    "slug": "pagerduty",
+    "url_fr": "https://tooltrim.com/fr/tool/pagerduty",
+    "url_en": "https://tooltrim.com/en/tool/pagerduty",
+    "website": "https://pagerduty.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : Palier gratuit historique de l'Incident Management : jusqu'à 5 utilisateurs, 1 planning, 1 politique d'escalade, 100 notifications SMS/téléphone par mois.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Gestion des incidents et astreintes avec politiques d'escalade, un palier gratuit jusqu'à 5 utilisateurs, et une nouvelle offre Reliability Platform plafonnée à l'usage.",
+    "description_en": "On-call incident management with escalation policies, a free tier for up to 5 users, and a newer usage-capped Reliability Platform.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu diriges une équipe technique qui a besoin de planning d'astreinte, d'escalade automatique et de triage assisté par IA",
+      "avoid_if": "Tu es un développeur solo ou une équipe de 5 personnes ou moins qui tient entièrement dans les limites du palier gratuit",
+      "strengths": [
+        "Le palier gratuit couvre les besoins d'astreinte de base d'une petite équipe (5 utilisateurs, 1 planning, 1 politique d'escalade) sans frais",
+        "SRE Agent peut trier et diagnostiquer les incidents automatiquement avant d'escalader vers un humain"
+      ],
+      "weaknesses": [
+        "Le palier gratuit plafonne à 5 utilisateurs, 1 planning et 1 politique d'escalade, trop restreint pour la plupart des équipes en croissance",
+        "La nouvelle Reliability Platform mélange des frais de plateforme annuels avec des plafonds d'usage, une logique tarifaire différente des forfaits historiques par siège, facile à confondre"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run an engineering team that needs on-call scheduling, automatic escalation and AI-assisted triage",
+      "avoid_if": "You're a solo developer or a team of 5 or fewer that fits entirely within the free tier's limits",
+      "strengths": [
+        "Free tier covers a small team's basic on-call needs (5 users, 1 schedule, 1 escalation policy) at no cost",
+        "SRE Agent can triage and diagnose incidents automatically before escalating to a human"
+      ],
+      "weaknesses": [
+        "Free tier caps out at 5 users, 1 schedule and 1 escalation policy, too small for most growing teams",
+        "The newer Reliability Platform mixes an annual platform fee with usage caps, a different pricing logic from the legacy per-seat plans that's easy to conflate"
+      ]
+    }
+  },
+  {
+    "name": "PageSpeed Insights",
+    "slug": "pagespeed-insights",
+    "url_fr": "https://tooltrim.com/fr/tool/pagespeed-insights",
+    "url_en": "https://tooltrim.com/en/tool/pagespeed-insights",
+    "website": "https://pagespeed.web.dev",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "Outil gratuit de Google qui note les Core Web Vitals d'une page avec des données réelles et de laboratoire, et propose des corrections concrètes.",
+    "description_en": "Free Google tool that scores a page's Core Web Vitals using real-user and lab data, with concrete improvement suggestions.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu as besoin d'un rapport Core Web Vitals rapide, gratuit et crédible pour une page précise",
+      "avoid_if": "Tu as besoin d'un monitoring continu sur beaucoup de pages ou de régions, au-delà de ce que couvre un rapport ponctuel sur une seule page",
+      "strengths": [
+        "Entièrement gratuit, sans compte ni palier payant nécessaire",
+        "Combine des données réelles de terrain avec des données de laboratoire, pour une vision plus complète qu'une simple simulation"
+      ],
+      "weaknesses": [
+        "Les données de terrain manquent pour les pages sans assez de trafic réel dans CrUX",
+        "Les emplacements de test sont limités à quelques régions, ce qui peut ne pas correspondre à toutes les audiences"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You need a quick, free, credible Core Web Vitals report for a specific page",
+      "avoid_if": "You need continuous monitoring across many pages or regions beyond what a single-page, single-run report covers",
+      "strengths": [
+        "Completely free with no account or paid tier needed",
+        "Combines real-user field data with lab data for a fuller picture than a simulation alone"
+      ],
+      "weaknesses": [
+        "Field data is missing for pages without enough real-user traffic in CrUX",
+        "Test locations are limited to a few regions, which may not match every audience"
+      ]
+    }
+  },
+  {
+    "name": "Pandas",
+    "slug": "pandas",
+    "url_fr": "https://tooltrim.com/fr/tool/pandas",
+    "url_en": "https://tooltrim.com/en/tool/pandas",
+    "website": "https://pandas.pydata.org",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Librairie Python pour manipulation, nettoyage et analyse de données.",
+    "description_en": "Python library for data manipulation, cleaning, and analysis.",
+    "verdict_fr": {
+      "keep_if": "Vous travaillez avec Python et avez besoin de manipuler des données tabulaires",
+      "avoid_if": "Vous cherchez une interface graphique sans code",
+      "strengths": [
+        "Écosystème Python complet et très documenté",
+        "Gratuit et sans limite d'utilisation",
+        "Structures de données puissantes et flexibles"
+      ],
+      "weaknesses": [
+        "Charge les données en mémoire (limite sur données très volumineuses)",
+        "Courbe d'apprentissage pour débuter",
+        "Pas d'interface graphique (code uniquement)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You work with Python and need to manipulate tabular data",
+      "avoid_if": "You're looking for a no-code interface",
+      "strengths": [
+        "Complete Python ecosystem with excellent documentation",
+        "Free and unlimited use",
+        "Powerful and flexible data structures"
+      ],
+      "weaknesses": [
+        "Loads data into memory (bottleneck for very large datasets)",
+        "Learning curve for beginners",
+        "No graphical interface (code-only)"
+      ]
+    }
+  },
+  {
+    "name": "Partytown",
+    "slug": "partytown",
+    "url_fr": "https://tooltrim.com/fr/tool/partytown",
+    "url_en": "https://tooltrim.com/en/tool/partytown",
+    "website": "https://partytown.builder.io",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Déporte les scripts tiers dans un worker pour améliorer la performance front.",
+    "description_en": "Moves third-party scripts into a worker to improve frontend performance.",
+    "verdict_fr": {
+      "keep_if": "Vous chargez plusieurs scripts tiers (analytics, publicités, widgets) qui ralentissent la page",
+      "avoid_if": "Vous n'avez pas de scripts tiers ou juste un (l'impact sera minimal)",
+      "strengths": [
+        "Gratuit et très simple à installer (une ligne)",
+        "Amélioration notable des Core Web Vitals mesurables",
+        "Compatible avec la plupart des scripts tiers courants"
+      ],
+      "weaknesses": [
+        "En Beta, API peut évoluer",
+        "Support communautaire uniquement (pas d'SLA)",
+        "Nécessite JavaScript activé et support Web Worker (compatible moderne)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You load multiple third-party scripts (analytics, ads, widgets) that slow down your page",
+      "avoid_if": "You have no third-party scripts or just one (impact will be minimal)",
+      "strengths": [
+        "Free and very simple to install (one line)",
+        "Measurable improvement in Core Web Vitals",
+        "Compatible with most common third-party scripts"
+      ],
+      "weaknesses": [
+        "In Beta, API can evolve",
+        "Community support only (no SLA)",
+        "Requires JavaScript enabled and Web Worker support (modern browsers)"
+      ]
+    }
+  },
+  {
+    "name": "Plausible Analytics",
+    "slug": "plausible",
+    "url_fr": "https://tooltrim.com/fr/tool/plausible",
+    "url_en": "https://tooltrim.com/en/tool/plausible",
+    "website": "https://plausible.io",
+    "category": "analytics",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 9 $/mois, plan Starter."
+    },
+    "description_fr": "Plausible est un outil d'analytics sans cookies et conforme RGPD, facturé selon le trafic mensuel, sans forfait gratuit permanent au-delà d'un essai de 30 jours.",
+    "description_en": "Plausible is cookieless, GDPR-friendly web analytics billed by monthly pageviews, with no permanent free plan beyond a 30-day trial.",
+    "alternatives": [
+      "google-analytics"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Garde Plausible si tu veux des analytics respectueux de la vie privée sans bannière de cookies et que ton trafic reste dans le palier de pages vues du forfait",
+      "avoid_if": "Évite Plausible si tu cherches un forfait gratuit permanent ou si tu as besoin de la Stats API sans passer au forfait Business",
+      "strengths": [
+        "Le suivi sans cookies et conforme RGPD évite d'avoir besoin d'une bannière de consentement",
+        "L'import depuis Google Analytics et un modèle GTM simplifient la migration depuis GA"
+      ],
+      "weaknesses": [
+        "Pas de forfait gratuit permanent : seulement un essai de 30 jours avant la facturation",
+        "Des fonctions avancées comme la Stats API et le reporting personnalisé sont réservées au forfait Business"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Keep it if you want privacy-friendly analytics without a cookie banner and your traffic stays within the plan's pageview tier",
+      "avoid_if": "Avoid it if you want a permanent free tier or need the Stats API without upgrading to Business",
+      "strengths": [
+        "Cookieless, GDPR-friendly tracking avoids the need for a cookie consent banner",
+        "Google Analytics import and a GTM template make switching from GA straightforward"
+      ],
+      "weaknesses": [
+        "No permanent free plan: only a 30-day trial before billing starts",
+        "Advanced features like the Stats API and custom reporting are reserved for the Business tier"
+      ]
+    }
+  },
+  {
+    "name": "PostHog",
+    "slug": "posthog",
+    "url_fr": "https://tooltrim.com/fr/tool/posthog",
+    "url_en": "https://tooltrim.com/en/tool/posthog",
+    "website": "https://posthog.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : 1 M d'événements analytics, 5 000 enregistrements de session, 1 M de requêtes de feature flags, 100 000 événements d'erreur, 1 500 réponses de sondage, 1 M de lignes d'entrepôt de données plus historique gratuit, 10 000 événements + 1 M de lignes pour les data pipelines, 100 000 événements d'AI observability, 10 Go de logs ingérés, tout remis à zéro chaque mois.",
+      "paid": "Dès 0 $/mois, plan Free."
+    },
+    "description_fr": "Suite regroupant analytics produit, session replay, feature flags, error tracking et plus, chacun avec son propre quota mensuel gratuit.",
+    "description_en": "Bundled product analytics, session replay, feature flags, error tracking and more, each with its own free monthly allowance.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "À garder si plusieurs outils produit (analytics, session replay, feature flags, error tracking) sont nécessaires ensemble et que les quotas gratuits généreux couvrent le volume actuel",
+      "avoid_if": "À éviter si une seule capacité, comme l'analytics, est nécessaire et qu'un tarif fixe prévisible compte plus qu'une suite regroupée",
+      "strengths": [
+        "Quota mensuel gratuit généreux sur chaque produit regroupé, aucun moyen de paiement requis pour démarrer",
+        "Plusieurs outils produit (analytics, replay, flags, error tracking) vivent dans une seule plateforme au lieu d'abonnements séparés"
+      ],
+      "weaknesses": [
+        "Le coût total est plus difficile à prévoir car chaque produit regroupé a son propre quota et son propre tarif de dépassement",
+        "Les tarifs exacts de dépassement à l'usage par unité ne sont pas détaillés sur la page de prix"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "Keep it if several product tools (analytics, session replay, feature flags, error tracking) are needed together and the generous free allowances cover current volume",
+      "avoid_if": "Avoid it if only one capability, like analytics, is needed and predictable flat-rate pricing matters more than a bundled suite",
+      "strengths": [
+        "Generous free monthly allowance across every bundled product, no payment method required to start",
+        "Several product tools (analytics, replay, flags, error tracking) live in one platform instead of separate subscriptions"
+      ],
+      "weaknesses": [
+        "Total cost is harder to predict since each bundled product has its own allowance and overage rate",
+        "Exact pay-as-you-go per-unit rates are not itemized on the pricing page"
+      ]
+    }
+  },
+  {
+    "name": "Power BI",
+    "slug": "power-bi",
+    "url_fr": "https://tooltrim.com/fr/tool/power-bi",
+    "url_en": "https://tooltrim.com/en/tool/power-bi",
+    "website": "https://powerbi.microsoft.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 10€/mois environ"
+    },
+    "description_fr": "Solution Microsoft BI pour dashboards, rapports et analyses business.",
+    "description_en": "Microsoft BI solution for dashboards, reports, and business analysis.",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez Microsoft 365 ou écosystème Microsoft",
+      "avoid_if": "Vous refusez le vendor lock-in Microsoft",
+      "strengths": [
+        "Desktop gratuit sans limitations de creation",
+        "Intégration Excel et Microsoft 365 très serrée",
+        "Performance et visualisations rapides"
+      ],
+      "weaknesses": [
+        "Coûts Pro/PPU/Fabric montent vite à l'échelle",
+        "Moins flexible hors écosystème Microsoft",
+        "Courbe d'apprentissage pour capacités avancées"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You use Microsoft 365 or Microsoft ecosystem",
+      "avoid_if": "You reject Microsoft vendor lock-in",
+      "strengths": [
+        "Free Desktop with unlimited creation",
+        "Tight Excel and Microsoft 365 integration",
+        "Fast performance and rich visualizations"
+      ],
+      "weaknesses": [
+        "Pro/PPU/Fabric costs scale quickly",
+        "Less flexible outside Microsoft ecosystem",
+        "Learning curve for advanced capabilities"
+      ]
+    }
+  },
+  {
+    "name": "ProfitWell",
+    "slug": "profitwell",
+    "url_fr": "https://tooltrim.com/fr/tool/profitwell",
+    "url_en": "https://tooltrim.com/en/tool/profitwell",
+    "website": "https://profitwell.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit et illimité",
+      "paid": ""
+    },
+    "description_fr": "Analytics de revenus SaaS (MRR, churn, rétention) gratuit, par Paddle.",
+    "description_en": "Free SaaS revenue analytics (MRR, churn, retention) by Paddle.",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Vous avez un modèle de revenu d'abonnement ou SaaS",
+      "avoid_if": "Vous avez un modèle de revenue à transaction unique",
+      "strengths": [
+        "Gratuit sans limite pour métriques subscription core",
+        "Setup rapide via intégration Stripe ou Zapier",
+        "Métriques SaaS fondamentales (MRR, LTV, churn) complètes"
+      ],
+      "weaknesses": [
+        "Limité aux modèles subscription (pas e-commerce classique)",
+        "Add-ons Retain et Price Intelligently payants et chers",
+        "Moins d'analytics comportemental que Mixpanel/Amplitude"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have a subscription or SaaS revenue model",
+      "avoid_if": "You have one-time transaction revenue",
+      "strengths": [
+        "Free and unlimited for core subscription metrics",
+        "Quick setup via Stripe or Zapier integration",
+        "Core SaaS metrics (MRR, LTV, churn) comprehensive"
+      ],
+      "weaknesses": [
+        "Limited to subscription models (not classical e-commerce)",
+        "Retain and Price Intelligently add-ons paid and expensive",
+        "Less behavioral analytics than Mixpanel/Amplitude"
+      ]
+    }
+  },
+  {
+    "name": "Prometheus",
+    "slug": "prometheus",
+    "url_fr": "https://tooltrim.com/fr/tool/prometheus",
+    "url_en": "https://tooltrim.com/en/tool/prometheus",
+    "website": "https://prometheus.io",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : Entièrement gratuit et open source sous licence Apache 2.0 ; aucune offre payante de la part du projet lui-même.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "Outil gratuit et open source de collecte de métriques en séries temporelles et d'alerting avec PromQL, auto-hébergé, sans offre managée.",
+    "description_en": "Free, open-source time-series metrics collection and alerting tool with PromQL, self-hosted, no managed offering.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "À garder si auto-héberger la collecte de métriques et l'alerting sans coût de licence correspond à la capacité opérationnelle de l'équipe",
+      "avoid_if": "À éviter si l'équipe n'a pas la capacité d'opérer elle-même stockage, mise à l'échelle et haute disponibilité, ou veut un tableau de bord intégré sans outil séparé",
+      "strengths": [
+        "Complètement gratuit et open source, aucune dépendance à un éditeur ni offre payante",
+        "Des centaines d'exporters facilitent l'extraction de métriques depuis la plupart des systèmes existants"
+      ],
+      "weaknesses": [
+        "Aucune version managée officielle : auto-hébergement, mise à l'échelle et haute disponibilité sont entièrement à la charge de l'équipe",
+        "Aucune interface de tableau de bord intégrée, généralement associée à un outil séparé comme Grafana"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Keep it if self-hosting metrics collection and alerting at no license cost fits the team's operational capacity",
+      "avoid_if": "Avoid it if the team has no capacity to operate storage, scaling and high availability itself, or wants a built-in dashboard without a separate tool",
+      "strengths": [
+        "Completely free and open source, no vendor lock-in or paid tier",
+        "Hundreds of exporters make it easy to pull metrics from most existing systems"
+      ],
+      "weaknesses": [
+        "No official managed version: self-hosting, scaling and high availability are entirely the team's responsibility",
+        "No built-in dashboarding UI, typically paired with a separate tool like Grafana"
+      ]
+    }
+  },
+  {
+    "name": "Publer",
+    "slug": "publer",
+    "url_fr": "https://tooltrim.com/fr/tool/publer",
+    "url_en": "https://tooltrim.com/en/tool/publer",
+    "website": "https://publer.io",
+    "category": "analytics",
+    "description_fr": "Planification et analytics réseaux sociaux",
+    "description_en": "Social media scheduling and analytics.",
+    "verdict_fr": {
+      "keep_if": "Vous programmez du contenu sur plusieurs réseaux à volume",
+      "avoid_if": "Vous ne publiez que quelques posts (le gratuit suffit)",
+      "strengths": [
+        "Programmation en masse et recyclage",
+        "Légendes IA et génération d'images",
+        "Abordable vs les gros acteurs"
+      ],
+      "weaknesses": [
+        "X/Twitter indisponible en gratuit",
+        "Facturation par compte social",
+        "Moins d'écoute/CRM que les suites complètes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You schedule content across several networks at volume",
+      "avoid_if": "You only publish a few posts (the free tier suffices)",
+      "strengths": [
+        "Bulk scheduling and recycling",
+        "AI captions and image generation",
+        "Affordable vs big players"
+      ],
+      "weaknesses": [
+        "X/Twitter unavailable on free",
+        "Billed per social account",
+        "Less listening/CRM than full suites"
+      ]
+    }
+  },
+  {
+    "name": "QGIS",
+    "slug": "qgis",
+    "url_fr": "https://tooltrim.com/fr/tool/qgis",
+    "url_en": "https://tooltrim.com/en/tool/qgis",
+    "website": "https://qgis.org",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "description_fr": "SIG open source pour cartographie, analyse spatiale et données géographiques.",
+    "description_en": "Open-source GIS for mapping, spatial analysis, and geographic data.",
+    "verdict_fr": {
+      "keep_if": "Vous travaillez avec des données géospatiales ou cartographie",
+      "avoid_if": "Vous cherchez une solution SaaS cloud entièrement managée",
+      "strengths": [
+        "Entièrement gratuit et open source",
+        "Professionnel de grade, utilisé par orga gouvernementales",
+        "Support étendu de formats standards SIG"
+      ],
+      "weaknesses": [
+        "Demande expertise technique pour utilisation avancée",
+        "Pas de support commercial/SLA (communauté voluntary)",
+        "Interface desktop seulement (pas SaaS cloud native)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You work with geospatial data or mapping",
+      "avoid_if": "You seek a fully managed cloud SaaS solution",
+      "strengths": [
+        "Completely free and open source",
+        "Professional-grade, used by government orgs",
+        "Wide support for GIS standards"
+      ],
+      "weaknesses": [
+        "Requires technical expertise for advanced use",
+        "No commercial support/SLA (voluntary community)",
+        "Desktop interface only (not cloud-native SaaS)"
+      ]
+    }
+  },
+  {
+    "name": "Rank Math",
+    "slug": "rank-math",
+    "url_fr": "https://tooltrim.com/fr/tool/rank-math",
+    "url_en": "https://tooltrim.com/en/tool/rank-math",
+    "website": "https://rankmath.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Plugin SEO WordPress pour métas, schema, sitemaps et optimisation contenu.",
+    "description_en": "WordPress SEO plugin for metadata, schema, sitemaps, and content optimization.",
+    "verdict_fr": {
+      "keep_if": "Vous maintenez un blog ou un site WordPress multi-pages",
+      "avoid_if": "Vous n'utilisez pas WordPress ou un site statique uniquement",
+      "strengths": [
+        "Suite complète d'outils SEO intégrés dans WordPress",
+        "Suivi de classements selon le plan choisi",
+        "Générateur de schémas automatisé et fiable"
+      ],
+      "weaknesses": [
+        "Abonnement annuel uniquement",
+        "Les plans supérieurs coûtent rapidement cher pour les petits sites",
+        "Nécessite WordPress ; incompatible avec d'autres plateformes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You maintain a multi-page WordPress site or blog",
+      "avoid_if": "You don't use WordPress or have a static site",
+      "strengths": [
+        "Complete integrated SEO toolkit within WordPress",
+        "Rank tracking depending on your plan",
+        "Automated and reliable schema markup generation"
+      ],
+      "weaknesses": [
+        "Annual billing only",
+        "Higher tiers become expensive quickly for small sites",
+        "WordPress-only; incompatible with other platforms"
+      ]
+    }
+  },
+  {
+    "name": "Redirect Path",
+    "slug": "redirect-path",
+    "url_fr": "https://tooltrim.com/fr/tool/redirect-path",
+    "url_en": "https://tooltrim.com/en/tool/redirect-path",
+    "website": "https://www.ayima.com/redirect-path",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Extension navigateur pour voir redirections et headers HTTP.",
+    "description_en": "Browser extension for seeing redirects and HTTP headers.",
+    "verdict_fr": {
+      "keep_if": "Vous faites des audits SEO et des migrations de sites",
+      "avoid_if": "Vous cherchez un outil complet d'audit SEO (Redirect Path fait une seule chose)",
+      "strengths": [
+        "Entièrement gratuit, aucune limite",
+        "Installation instantanée, interface épurée",
+        "Détecte les chaînes de redirection complexes"
+      ],
+      "weaknesses": [
+        "Une seule fonction (redirects seulement)",
+        "Chrome/Edge seulement, pas de Firefox support natif",
+        "Utilité limitée si vous n'auditez pas régulièrement des redirections"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You run SEO audits and site migrations",
+      "avoid_if": "You're looking for a comprehensive SEO audit tool (Redirect Path does one thing)",
+      "strengths": [
+        "Completely free, unlimited use",
+        "Instant installation, clean interface",
+        "Detects complex redirect chains"
+      ],
+      "weaknesses": [
+        "Single function (redirects only)",
+        "Chrome/Edge only, no native Firefox support",
+        "Limited value if you don't regularly audit redirects"
+      ]
+    }
+  },
+  {
+    "name": "Screaming Frog",
+    "slug": "screaming-frog",
+    "url_fr": "https://tooltrim.com/fr/tool/screaming-frog",
+    "url_en": "https://tooltrim.com/en/tool/screaming-frog",
+    "website": "https://www.screamingfrog.co.uk/seo-spider/",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Crawler SEO technique pour audits, migrations et refontes.",
+    "description_en": "Technical SEO crawler for audits, migrations, and redesigns.",
+    "verdict_fr": {
+      "keep_if": "Vous auditez régulièrement la santé technique de sites",
+      "avoid_if": "Vous voulez une solution entièrement gratuite sans limites",
+      "strengths": [
+        "Outil le plus complet pour l'audit technique SEO",
+        "Version gratuite robuste (500 URLs)",
+        "Crawl JavaScript / sites modernes (React, Vue, Angular)"
+      ],
+      "weaknesses": [
+        "Interface dense, courbe d'apprentissage",
+        "La version payante reste limitée : crawl seul (pas d'analytics, ranking, backlinks)",
+        "Ressource CPU intensive pour gros sites"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You regularly audit site technical health",
+      "avoid_if": "You want a completely free, unlimited solution",
+      "strengths": [
+        "Most comprehensive tool for technical SEO audits",
+        "Robust free version (500 URLs)",
+        "Crawls JavaScript and modern frameworks (React, Vue, Angular)"
+      ],
+      "weaknesses": [
+        "Dense interface, learning curve",
+        "Paid version still limited: crawling only (no analytics, rankings, backlinks)",
+        "CPU-intensive for large sites"
+      ]
+    }
+  },
+  {
+    "name": "Segment",
+    "slug": "segment",
+    "url_fr": "https://tooltrim.com/fr/tool/segment",
+    "url_en": "https://tooltrim.com/en/tool/segment",
+    "website": "https://segment.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "CDP pour collecter, router et gouverner les données clients.",
+    "description_en": "CDP for collecting, routing, and governing customer data.",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin de centraliser les données clients de multiples sources",
+      "avoid_if": "Vous cherchez une simple analytics (Google Analytics suffit)",
+      "strengths": [
+        "Plus grande couverture d'intégrations du marché",
+        "Infrastructure fiable et scalable",
+        "Essai gratuit accessible"
+      ],
+      "weaknesses": [
+        "Pricing complexe et opaque (sur devis)",
+        "Configuration initiale dense et longue",
+        "Coûts peuvent vite monter avec la volumétrie"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need to centralize customer data from multiple sources",
+      "avoid_if": "You want simple analytics (Google Analytics is enough)",
+      "strengths": [
+        "Largest integration coverage in the market",
+        "Reliable, scalable infrastructure",
+        "Accessible free trial"
+      ],
+      "weaknesses": [
+        "Complex, opaque pricing (quote-based)",
+        "Lengthy initial setup and configuration",
+        "Costs can escalate quickly with volume"
+      ]
+    }
+  },
+  {
+    "name": "Sentry",
+    "slug": "sentry",
+    "url_fr": "https://tooltrim.com/fr/tool/sentry",
+    "url_en": "https://tooltrim.com/en/tool/sentry",
+    "website": "https://sentry.io",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : 1 utilisateur ; 5 000 erreurs/mois ; 5 millions de spans ; 50 relectures de session ; 10 tableaux de bord personnalisés",
+      "paid": "Dès 26 $/mois, plan Team."
+    },
+    "description_fr": "Sentry est une plateforme de suivi des erreurs et de la performance pour applications, avec un plan gratuit à un utilisateur et un plan Team à 26 $/mois pour des utilisateurs illimités et un quota de base de 50 000 erreurs.",
+    "description_en": "Sentry is an error and performance monitoring platform for applications, with a single-user free plan and a Team plan at $26/month for unlimited users plus a 50,000-error base quota.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux le suivi des erreurs, le traçage et la relecture de session pour une équipe de toute taille sous un seul prix de base, sans facturation par siège",
+      "avoid_if": "Tu es un développeur solo dont le trafic reste largement sous les 5 000 erreurs/mois du plan gratuit, car le plan Developer couvre déjà ça sans coût",
+      "strengths": [
+        "Le plan Team permet des utilisateurs illimités pour une base fixe de 26 $/mois, contrairement à un prix par siège qui augmente avec l'effectif",
+        "Un serveur MCP et une API REST donnent un accès programmatique ou par agent IA aux problèmes, pas seulement un tableau de bord web"
+      ],
+      "weaknesses": [
+        "Le plan gratuit Developer est limité à un seul utilisateur, donc un deuxième membre d'équipe demande de passer à un plan payant",
+        "Les dépassements facturés à l'usage sur les erreurs, spans, logs et heures de profiling peuvent rendre la facture mensuelle imprévisible au-delà du quota de base"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You want error tracking, tracing and session replay for a team of any size under one base price, not billed per seat",
+      "avoid_if": "You are a solo developer whose traffic stays comfortably under the free plan's 5,000 errors/month, since the Developer plan already covers that at no cost",
+      "strengths": [
+        "The Team plan allows unlimited users for a flat $26/month base, unlike a per-seat price that grows with headcount",
+        "An MCP server and REST API give programmatic or AI-agent access to issues, not just a web dashboard"
+      ],
+      "weaknesses": [
+        "The free Developer plan is capped at a single user, so a second team member requires moving to a paid plan",
+        "Usage-based overages across errors, spans, logs and profiling hours can make the monthly bill unpredictable beyond the base quota"
+      ]
+    }
+  },
+  {
+    "name": "SEO Meta in 1 Click",
+    "slug": "seo-meta-in-1-click",
+    "url_fr": "https://tooltrim.com/fr/tool/seo-meta-in-1-click",
+    "url_en": "https://tooltrim.com/en/tool/seo-meta-in-1-click",
+    "website": "https://www.seo-extension.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Extension pour vérifier titres, métas, headings et données SEO d’une page.",
+    "description_en": "Extension for checking titles, metadata, headings, and SEO page data.",
+    "verdict_fr": {
+      "keep_if": "Vous faites de l'audit SEO on-page léger et rapide",
+      "avoid_if": "Vous avez besoin d'un audit complet avec suivi de classements, backlinks, etc",
+      "strengths": [
+        "Gratuit et sans inscription",
+        "Installation instantanée, interface épurée",
+        "Affiche les données en moins de 2 secondes"
+      ],
+      "weaknesses": [
+        "Une seule fonction : metadata on-page",
+        "Pas d'historique, pas d'export natif (sauf copier-coller)",
+        "Pas de comparaison entre versions"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You do quick, lightweight on-page SEO audits",
+      "avoid_if": "You need a comprehensive audit with rankings, backlinks, etc",
+      "strengths": [
+        "Free and no signup",
+        "Instant installation, clean interface",
+        "Shows data in under 2 seconds"
+      ],
+      "weaknesses": [
+        "Single function: on-page metadata only",
+        "No history, no native export (except copy-paste)",
+        "No version comparison"
+      ]
+    }
+  },
+  {
+    "name": "Simple Analytics",
+    "slug": "simple-analytics",
+    "url_fr": "https://tooltrim.com/fr/tool/simple-analytics",
+    "url_en": "https://tooltrim.com/en/tool/simple-analytics",
+    "website": "https://simpleanalytics.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Essai 14 jours",
+      "paid": "Starter 15€/mois"
+    },
+    "description_fr": "Analytics web minimaliste sans cookies, fondé en Europe, conforme RGPD.",
+    "description_en": "Minimalist cookieless web analytics, European-founded, GDPR compliant.",
+    "alternatives": [
+      "Google Analytics"
+    ],
+    "price_verified_on": "2026-05-08",
+    "verdict_fr": {
+      "keep_if": "Vous velez respecter la GDPR et la vie privée des visitants",
+      "avoid_if": "Vous avez besoin de remarketing ou tracking multi-device",
+      "strengths": [
+        "Privacy-first, sans cookies, conforme au RGPD",
+        "Data en Europe, transparence garantie",
+        "Interface épurée, simple à comprendre"
+      ],
+      "weaknesses": [
+        "Moins de fonctionnalités que Google Analytics",
+        "Pas de remarketing ou audiences avancées",
+        "Pas de heat maps ou session recordings"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want to respect GDPR and visitor privacy",
+      "avoid_if": "You need remarketing or cross-device tracking",
+      "strengths": [
+        "Privacy-first, cookieless, GDPR-compliant",
+        "Data in Europe, full transparency",
+        "Clean, simple interface"
+      ],
+      "weaknesses": [
+        "Fewer features than Google Analytics",
+        "No remarketing or advanced audiences",
+        "No heat maps or session recordings"
+      ]
+    }
+  },
+  {
+    "name": "Snowflake",
+    "slug": "snowflake",
+    "url_fr": "https://tooltrim.com/fr/tool/snowflake",
+    "url_en": "https://tooltrim.com/en/tool/snowflake",
+    "website": "https://www.snowflake.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Data cloud / warehouse pour données, partage et workloads analytiques.",
+    "description_en": "Data cloud / warehouse for data, sharing, and analytics workloads.",
+    "verdict_fr": {
+      "keep_if": "Vous gérez des volumes data importants (plusieurs TB)",
+      "avoid_if": "Vous débutez en data et préférez une solution simple / low-code",
+      "strengths": [
+        "Scalabilité théorique illimitée en compute et storage",
+        "Cross-cloud et multi-region native",
+        "Collaboration et data sharing sécurisé"
+      ],
+      "weaknesses": [
+        "Pricing complexe, coûts en escalade rapide avec volume",
+        "Caching et optimization prise en main délicate",
+        "Setup initial requires data engineering skills"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage significant data volumes (multiple TBs)",
+      "avoid_if": "You're new to data and prefer simple, low-code solutions",
+      "strengths": [
+        "Theoretically unlimited compute and storage scalability",
+        "Native cross-cloud and multi-region",
+        "Secure collaboration and data sharing"
+      ],
+      "weaknesses": [
+        "Complex pricing, rapid cost escalation with volume",
+        "Caching and optimization optimization steep learning curve",
+        "Initial setup requires data engineering skills"
+      ]
+    }
+  },
+  {
+    "name": "Supermetrics",
+    "slug": "supermetrics",
+    "url_fr": "https://tooltrim.com/fr/tool/supermetrics",
+    "url_en": "https://tooltrim.com/en/tool/supermetrics",
+    "website": "https://supermetrics.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "description_fr": "Plateforme d'intégration de données marketing : extrait et transfère automatiquement les données de 150+ canaux (Google Ads, Meta, Shopify…) vers Google Sheets, Excel, Looker Studio ou un entrepôt de données.",
+    "description_en": "Marketing data integration platform that automatically extracts and moves data from 150+ channels (Google Ads, Meta, Shopify) into Sheets, Excel, Looker Studio or a warehouse.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous consolidez des données marketing de plusieurs canaux",
+      "avoid_if": "Vous n'avez qu'une ou deux sources simples à suivre",
+      "strengths": [
+        "Très large choix de connecteurs",
+        "Rapports rafraîchis automatiquement",
+        "S'intègre à Sheets, Looker Studio et entrepôts"
+      ],
+      "weaknesses": [
+        "Coût qui grimpe vite avec sources, sièges et destinations",
+        "Pas de palier gratuit permanent",
+        "Multi-destinations facturé en supplément"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You consolidate marketing data from several channels",
+      "avoid_if": "You only have one or two simple sources to track",
+      "strengths": [
+        "Very wide range of connectors",
+        "Reports refreshed automatically",
+        "Integrates with Sheets, Looker Studio and warehouses"
+      ],
+      "weaknesses": [
+        "Cost rises fast with sources, seats and destinations",
+        "No permanent free tier",
+        "Multi-destination billed as an add-on"
+      ]
+    }
+  },
+  {
+    "name": "Surfer SEO",
+    "slug": "surferseo",
+    "url_fr": "https://tooltrim.com/fr/tool/surferseo",
+    "url_en": "https://tooltrim.com/en/tool/surferseo",
+    "website": "https://surferseo.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 89€/mois environ"
+    },
+    "description_fr": "Optimisation SEO de contenus, briefs et scoring sémantique.",
+    "description_en": "SEO content optimization, briefs, and semantic scoring.",
+    "verdict_fr": {
+      "keep_if": "Vous gérez un site avec stratégie SEO active",
+      "avoid_if": "Votre site est très petit ou peu visité",
+      "strengths": [
+        "Suivi avancé de la visibilité IA (AI Tracker)",
+        "Optimisation de contenu en temps réel",
+        "Interface conviviale pour rédacteurs et SEO"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite",
+        "Plans Enterprise nécessitent contact commercial",
+        "Tarif entry-level peut être élevé pour petites équipes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage a site with active SEO strategy",
+      "avoid_if": "Your site is very small or receives minimal traffic",
+      "strengths": [
+        "Advanced AI visibility tracking (AI Tracker)",
+        "Real-time content optimization guidance",
+        "User-friendly interface for writers and SEO pros"
+      ],
+      "weaknesses": [
+        "No free version",
+        "Enterprise plans require sales contact",
+        "Entry-level pricing may be high for small teams"
+      ]
+    }
+  },
+  {
+    "name": "switch.monster",
+    "slug": "switch-monster",
+    "url_fr": "https://tooltrim.com/fr/tool/switch-monster",
+    "url_en": "https://tooltrim.com/en/tool/switch-monster",
+    "website": "https://switch.monster/",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit sur le coeur du produit (tracking, numéros dynamiques).",
+      "paid": ""
+    },
+    "description_fr": "Call tracking gratuit : connecte les appels entrants aux campagnes PPC et Google Ads.",
+    "description_en": "Free call tracking: connects inbound calls to PPC and Google Ads campaigns.",
+    "price_verified_on": "2026-06-20",
+    "verdict_fr": {
+      "keep_if": "Vous avez un compte Twilio établi",
+      "avoid_if": "Vous ne recevez que peu d'appels entrants",
+      "strengths": [
+        "Entièrement gratuit",
+        "Intégration native avec Twilio",
+        "Routage et IVR flexibles"
+      ],
+      "weaknesses": [
+        "Nécessite un compte Twilio actif",
+        "Pas d'interface hébergée — configuration technique requise",
+        "Support limité ; documentation communautaire"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have an established Twilio account",
+      "avoid_if": "You receive very few inbound calls",
+      "strengths": [
+        "Completely free",
+        "Native Twilio integration",
+        "Flexible routing and IVR menus"
+      ],
+      "weaknesses": [
+        "Requires active Twilio account",
+        "No managed interface — technical setup needed",
+        "Limited support; community documentation"
+      ]
+    }
+  },
+  {
+    "name": "Tableau",
+    "slug": "tableau",
+    "url_fr": "https://tooltrim.com/fr/tool/tableau",
+    "url_en": "https://tooltrim.com/en/tool/tableau",
+    "website": "https://www.tableau.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 75€/mois environ"
+    },
+    "description_fr": "Plateforme BI et dataviz pour dashboards et analyses avancées.",
+    "description_en": "BI and dataviz platform for dashboards and advanced analysis.",
+    "verdict_fr": {
+      "keep_if": "Vous avez des données complexes à explorer et visualiser",
+      "avoid_if": "Vous cherchez un outil gratuit ou très bon marché",
+      "strengths": [
+        "Visualisations interactives très puissantes",
+        "Connexion à presque toutes les sources de données",
+        "Collaboration en temps réel"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite",
+        "Tarif par utilisateur peut être élevé pour grandes équipes",
+        "Contrats multi-ans avec escalades tarifaires typiques"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have complex data to explore and visualize",
+      "avoid_if": "You're looking for a free or very cheap tool",
+      "strengths": [
+        "Very powerful interactive visualizations",
+        "Connection to almost any data source",
+        "Real-time collaboration"
+      ],
+      "weaknesses": [
+        "No free version",
+        "Per-user pricing can add up for large teams",
+        "Multi-year contracts with typical price escalations"
+      ]
+    }
+  },
+  {
+    "name": "TikTok Ads",
+    "slug": "tiktok-ads",
+    "url_fr": "https://tooltrim.com/fr/tool/tiktok-ads",
+    "url_en": "https://tooltrim.com/en/tool/tiktok-ads",
+    "website": "https://ads.tiktok.com",
+    "category": "analytics",
+    "pricing": "Budget minimum de campagne autour de 20$/jour ; coût par clic variable selon la niche.",
+    "description_fr": "Plateforme publicitaire de TikTok pour cibler une audience jeune avec des formats vidéo natifs.",
+    "description_en": "TikTok's advertising platform to target a younger audience with native video formats.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Votre audience cible est active sur TikTok",
+      "avoid_if": "TikTok n'est pas pertinent pour votre cible",
+      "strengths": [
+        "Accès direct à la plateforme officielle TikTok",
+        "Ciblage démographique et comportemental très fin",
+        "Tarifs compétitifs par rapport à Facebook/Instagram"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite (bien que démarrage à faible budget possible)",
+        "Besoin d'expertise en création de contenu TikTok",
+        "Changements fréquents dans l'algorithme et les politiques"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your target audience is active on TikTok",
+      "avoid_if": "TikTok isn't relevant for your demographic",
+      "strengths": [
+        "Direct access to TikTok's official platform",
+        "Granular demographic and behavioral targeting",
+        "Competitive pricing vs. Facebook/Instagram"
+      ],
+      "weaknesses": [
+        "No free version (though low-budget starts are possible)",
+        "Need expertise in TikTok-native video content",
+        "Frequent algorithm and policy changes"
+      ]
+    }
+  },
+  {
+    "name": "Triple Whale",
+    "slug": "triple-whale",
+    "url_fr": "https://tooltrim.com/fr/tool/triple-whale",
+    "url_en": "https://tooltrim.com/en/tool/triple-whale",
+    "website": "https://triplewhale.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Founders Dashboard gratuit (fonctionnalités limitées)",
+      "paid": "À partir de ~179$/mois selon le GMV"
+    },
+    "description_fr": "Plateforme d'analytics et d'attribution e-commerce pour marques Shopify.",
+    "description_en": "E-commerce analytics and attribution platform for Shopify brands.",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Vous gérez une boutique e-commerce avec GMV significatif",
+      "avoid_if": "Votre boutique est très petite ou en test",
+      "strengths": [
+        "Attribution multi-touchs très détaillée",
+        "Moby AI pour recommandations d'optimisation",
+        "Dashboards puissants et SQL editor avancé"
+      ],
+      "weaknesses": [
+        "Tarification liée au GMV croît rapidement avec la croissance",
+        "Les plans payants peuvent être élevés pour PME",
+        "Certification complexe pour certaines intégrations"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage an e-commerce store with meaningful GMV",
+      "avoid_if": "Your store is very small or in testing phase",
+      "strengths": [
+        "Detailed multi-touch attribution",
+        "Moby AI for optimization recommendations",
+        "Powerful dashboards and advanced SQL editor"
+      ],
+      "weaknesses": [
+        "Pricing tied to GMV grows quickly with revenue",
+        "Paid plans can be high for SMBs",
+        "Complex certification for some integrations"
+      ]
+    }
+  },
+  {
+    "name": "TubeBuddy",
+    "slug": "tubebuddy",
+    "url_fr": "https://tooltrim.com/fr/tool/tubebuddy",
+    "url_en": "https://tooltrim.com/en/tool/tubebuddy",
+    "website": "https://tubebuddy.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit : Outils de base pour vidéos et miniatures, avec un accès limité à des fonctions comme Next Video Ideas.",
+      "paid": "Dès 3,99 $/mois, plan Pro."
+    },
+    "description_fr": "Une boîte à outils YouTube qui aide les créateurs à optimiser titres, tags et miniatures, suivre les statistiques de chaîne et planifier le contenu.",
+    "description_en": "A YouTube toolkit that helps creators optimize titles, tags and thumbnails, track channel analytics and plan content to grow views and subscribers.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères une seule chaîne YouTube en solo et tu veux des outils dédiés pour optimiser tags, titres et miniatures",
+      "avoid_if": "Tu gères plusieurs chaînes ou une équipe : l'accès multi-sièges ne commence qu'à partir de l'offre Legend",
+      "strengths": [
+        "Des outils SEO YouTube dédiés (tags, titres, miniatures) au-delà de ce que propose nativement YouTube Studio",
+        "Remboursement possible sous 30 jours et facturation mensuelle, sans engagement long terme"
+      ],
+      "weaknesses": [
+        "La facturation annuelle est nécessaire pour obtenir le tarif mensuel le plus bas ; la facturation au mois coûte plus cher",
+        "Les licences Free et Pro sont limitées à une seule chaîne et un seul utilisateur"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run one YouTube channel solo and want dedicated tag, title and thumbnail optimization tools",
+      "avoid_if": "You manage multiple channels or a team, since multi-seat access only starts at the Legend tier",
+      "strengths": [
+        "Dedicated YouTube SEO tools (tags, titles, thumbnails) beyond what YouTube Studio offers natively",
+        "30-day refund policy and month-to-month billing, no long-term contract"
+      ],
+      "weaknesses": [
+        "Annual billing is required to get the lower per-month rate; month-to-month billing costs more",
+        "Free and Pro licenses are locked to a single channel and a single user"
+      ]
+    }
+  },
+  {
+    "name": "UptimeRobot",
+    "slug": "uptimerobot",
+    "url_fr": "https://tooltrim.com/fr/tool/uptimerobot",
+    "url_en": "https://tooltrim.com/en/tool/uptimerobot",
+    "website": "https://uptimerobot.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Monitoring disponibilité simple avec alertes HTTP, ping et ports.",
+    "description_en": "Simple uptime monitoring with HTTP, ping, and port alerts.",
+    "verdict_fr": {
+      "keep_if": "Votre site/application est critique pour votre business",
+      "avoid_if": "Votre site est très personnel ou faible trafic",
+      "strengths": [
+        "Plan gratuit généreux (50 moniteurs)",
+        "Alertes rapides et fiables (< 1 min)",
+        "Intégrations larges (Slack, Teams, PagerDuty, etc.)"
+      ],
+      "weaknesses": [
+        "Plan gratuit limité à usage personnel",
+        "Tarif Team peut être élevé pour petites équipes",
+        "Ajouter des sièges (Team/Enterprise) augmente le coût"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your site/app is business-critical",
+      "avoid_if": "Your site is personal or low-traffic",
+      "strengths": [
+        "Generous free plan (50 monitors)",
+        "Fast and reliable alerts (< 1 min)",
+        "Broad integrations (Slack, Teams, PagerDuty, etc.)"
+      ],
+      "weaknesses": [
+        "Free plan limited to personal use",
+        "Team plan pricing can be high for small teams",
+        "Adding seats (Team/Enterprise) increases cost"
+      ]
+    }
+  },
+  {
+    "name": "UserTesting",
+    "slug": "usertesting",
+    "url_fr": "https://tooltrim.com/fr/tool/usertesting",
+    "url_en": "https://tooltrim.com/en/tool/usertesting",
+    "website": "https://usertesting.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "",
+      "paid": "Sur devis, contrats annuels de 12 000$ à 100 000$+ selon volume"
+    },
+    "description_fr": "Tests utilisateurs modérés et non-modérés à grande échelle, sur devis.",
+    "description_en": "Moderated and unmoderated user testing at scale, quote-based.",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Vous validez régulièrement des designs avec utilisateurs réels",
+      "avoid_if": "Votre budget est limité ou vous commencez tout juste",
+      "strengths": [
+        "Panel de testeurs large et diversifié",
+        "Tests modérés et enregistrés dans la même plateforme",
+        "Intégrations profondes (Figma, Jira, Slack)"
+      ],
+      "weaknesses": [
+        "Tarification très élevée sans option entry-level",
+        "Pas de plan gratuit ou freemium",
+        "Contrats annuels obligatoires avec minimums"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You regularly validate designs with real users",
+      "avoid_if": "Your budget is limited or you're just starting",
+      "strengths": [
+        "Large and diverse tester panel",
+        "Moderated and unmoderated tests in one platform",
+        "Deep integrations (Figma, Jira, Slack)"
+      ],
+      "weaknesses": [
+        "Very high pricing with no entry-level option",
+        "No free or freemium plan",
+        "Annual contracts required with minimums"
+      ]
+    }
+  },
+  {
+    "name": "Vercel Analytics",
+    "slug": "vercel-analytics",
+    "url_fr": "https://tooltrim.com/fr/tool/vercel-analytics",
+    "url_en": "https://tooltrim.com/en/tool/vercel-analytics",
+    "website": "https://vercel.com/analytics",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Analytics web et vitesse intégrés à Vercel.",
+    "description_en": "Web analytics and speed insights integrated with Vercel.",
+    "verdict_fr": {
+      "keep_if": "Votre app est hébergée sur Vercel",
+      "avoid_if": "Votre app n'est pas sur Vercel",
+      "strengths": [
+        "Entièrement gratuit et intégré à Vercel",
+        "Données anonymisées (respect de la vie privée)",
+        "Setup zéro — fonctionne out-of-the-box"
+      ],
+      "weaknesses": [
+        "Limité aux apps sur Vercel",
+        "Moins de features que Google Analytics ou Amplitude",
+        "Pas de segmentation avancée ou custom events"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your app is hosted on Vercel",
+      "avoid_if": "Your app is not on Vercel",
+      "strengths": [
+        "Completely free and integrated with Vercel",
+        "Anonymized data (privacy-friendly)",
+        "Zero setup — works out of the box"
+      ],
+      "weaknesses": [
+        "Limited to apps on Vercel",
+        "Fewer features than Google Analytics or Amplitude",
+        "No advanced segmentation or custom events"
+      ]
+    }
+  },
+  {
+    "name": "VWO",
+    "slug": "vwo",
+    "url_fr": "https://tooltrim.com/fr/tool/vwo",
+    "url_en": "https://tooltrim.com/en/tool/vwo",
+    "website": "https://vwo.com",
+    "category": "analytics",
+    "pricing": {
+      "free": "Essai gratuit 30 jours uniquement (plan gratuit permanent supprimé en 2026)",
+      "paid": "À partir de ~314$/mois (Growth)"
+    },
+    "description_fr": "Plateforme d'A/B testing et d'expérimentation web, en fin de plan gratuit en 2026.",
+    "description_en": "A/B testing and experimentation platform, phasing out its free plan in 2026.",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Vous testez régulièrement des variations pour optimiser les conversions",
+      "avoid_if": "Votre trafic est très faible",
+      "strengths": [
+        "Plan gratuit utile pour débuter",
+        "Suite complète (Testing, Heatmaps, Personalization)",
+        "Tarification par MTU (scalable avec la croissance)"
+      ],
+      "weaknesses": [
+        "Plan gratuit très limité pour CRO sérieuse",
+        "Prix par MTU peut croître rapidement avec le trafic",
+        "Contrats avec engagements multi-ans"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You regularly test variations to optimize conversions",
+      "avoid_if": "Your traffic is very low",
+      "strengths": [
+        "Useful free plan to start",
+        "Complete suite (Testing, Heatmaps, Personalization)",
+        "MTU-based pricing (scales with growth)"
+      ],
+      "weaknesses": [
+        "Free plan very limited for serious CRO",
+        "Per-MTU pricing can grow quickly with traffic",
+        "Multi-year contracts with commitments"
+      ]
+    }
+  },
+  {
+    "name": "WebPageTest",
+    "slug": "webpagetest",
+    "url_fr": "https://tooltrim.com/fr/tool/webpagetest",
+    "url_en": "https://tooltrim.com/en/tool/webpagetest",
+    "website": "https://www.webpagetest.org",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Tests de performance détaillés par localisation, réseau et navigateur.",
+    "description_en": "Detailed performance tests by location, network, and browser.",
+    "verdict_fr": {
+      "keep_if": "Vous optimisez la performance d'une application web",
+      "avoid_if": "Vous cherchez un dashboard temps réel permanent",
+      "strengths": [
+        "Entièrement gratuit et open-source",
+        "Analyses très détaillées et très fiables",
+        "Aucune limite d'utilisation"
+      ],
+      "weaknesses": [
+        "Interface un peu datée",
+        "Pas de monitoring continu (tests ponctuels)",
+        "Pas de support commercial"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're optimizing web application performance",
+      "avoid_if": "You need a persistent real-time dashboard",
+      "strengths": [
+        "Completely free and open-source",
+        "Very detailed and reliable analysis",
+        "No usage limits"
+      ],
+      "weaknesses": [
+        "UI feels a bit dated",
+        "No continuous monitoring (one-off tests)",
+        "No commercial support"
+      ]
+    }
+  },
+  {
+    "name": "WP Rocket",
+    "slug": "wp-rocket",
+    "url_fr": "https://tooltrim.com/fr/tool/wp-rocket",
+    "url_en": "https://tooltrim.com/en/tool/wp-rocket",
+    "website": "https://wp-rocket.me",
+    "category": "analytics",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "description_fr": "Plugin cache WordPress pour améliorer vitesse, Core Web Vitals et expérience.",
+    "description_en": "WordPress cache plugin for speed, Core Web Vitals, and experience.",
+    "verdict_fr": {
+      "keep_if": "Vous avez un ou plusieurs sites WordPress",
+      "avoid_if": "Vous n'avez pas WordPress (vous utilisez un autre CMS)",
+      "strengths": [
+        "Installation et configuration très simples",
+        "Performance améliorée out-of-the-box",
+        "Support WordPress réputé et actif"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite",
+        "Limité à WordPress uniquement",
+        "Renouvellement annuel obligatoire (bien qu'avec réduction)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have one or more WordPress sites",
+      "avoid_if": "You don't use WordPress (different CMS)",
+      "strengths": [
+        "Very simple install and setup",
+        "Performance improvement out-of-the-box",
+        "Trusted active WordPress support"
+      ],
+      "weaknesses": [
+        "No free version",
+        "WordPress-only",
+        "Annual renewal required (though discounted)"
+      ]
+    }
+  },
+  {
+    "name": "Happia",
+    "slug": "happia",
+    "url_fr": "https://tooltrim.com/fr/tool/happia",
+    "url_en": "https://tooltrim.com/en/tool/happia",
+    "website": "https://happia.fr/",
+    "category": "analytics",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent (essai Pro de 14 jours sans carte bancaire)",
+      "paid": "79 à 159 €HT/mois selon le plan (Essentiel, Pro, Premium), + 49 €HT/mois/site en add-on multi-établissements (Premium)"
+    },
+    "description_fr": "Audit et pilotage de la visibilité des TPE et PME dans les réponses de ChatGPT, Gemini, Perplexity et Claude.",
+    "description_en": "Audits and manages how small businesses appear in ChatGPT, Gemini, Perplexity and Claude answers.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu diriges une TPE ou PME qui veut mesurer sa visibilité dans les réponses des IA, avec ou sans point de vente",
+      "avoid_if": "Tu cherches un outil de SEO web classique (mots-clés, backlinks) plutôt qu'un audit de citation IA",
+      "strengths": [
+        "Score de préparation et score de citation réelle mesurés séparément, sans note bricolée",
+        "Audit automatique sur 88 critères, sans connecter de source pour lancer l'analyse",
+        "Essai Pro de 14 jours sans carte bancaire, en plus du pré-audit gratuit"
+      ],
+      "weaknesses": [
+        "Absence de plan gratuit permanent après l'essai de 14 jours",
+        "Publication directe des avis limitée à Google via API ; les autres plateformes passent en copier-coller",
+        "Coach personnalisé et surveillance automatique des avis réservés au plan Premium à 159 €HT/mois"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You run a small business that wants to measure its visibility in AI answers, with or without a physical location",
+      "avoid_if": "You're after classic web SEO (keywords, backlinks) rather than an AI-citation audit",
+      "strengths": [
+        "Preparation score and real-citation score measured separately, no blended number",
+        "Automatic audit across 88 criteria with no source connection required to start",
+        "14-day Pro trial with no credit card required, in addition to the free pre-audit"
+      ],
+      "weaknesses": [
+        "No permanent free plan after the 14-day trial",
+        "Review publishing limited to Google via API; other platforms are copy-paste only",
+        "Personal coaching and automatic review monitoring, Premium-only at €159 excl. VAT/month"
+      ]
+    }
+  },
+  {
+    "name": "ConvoScore",
+    "slug": "convoscore",
+    "url_fr": "https://tooltrim.com/fr/tool/convoscore",
+    "url_en": "https://tooltrim.com/en/tool/convoscore",
+    "website": "https://www.convoscore.com/",
+    "category": "analytics",
+    "pricing": {
+      "free": "Gratuit : 1 site, 1 chatbot et badge ConvoScore",
+      "paid": "Starter 49 $/mois ou 490 $/an ; Growth 129 $/mois ou 1 290 $/an ; Enterprise sur devis"
+    },
+    "description_fr": "Remplace un formulaire de contact par un chatbot qui structure et priorise les demandes entrantes.",
+    "description_en": "Replaces a contact form with a chatbot that structures and prioritizes inbound requests.",
+    "alternatives": [
+      "tally"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Votre équipe perd du temps à lire et classer des demandes entrantes hétérogènes",
+      "avoid_if": "Votre formulaire actuel reçoit peu de demandes ou collecte déjà les bons champs",
+      "strengths": [
+        "Plan gratuit exploitable sur un site avec accès au tableau de bord",
+        "Règles de priorité annoncées comme consultables, avec raison du score",
+        "Transcription complète et champs structurés conservés pour chaque demande"
+      ],
+      "weaknesses": [
+        "Aucune preuve indépendante publiée sur l'effet du widget sur la conversion ou la qualité des leads",
+        "Les extractions et scores assistés par IA peuvent être incomplets ou erronés",
+        "Les conversations sont traitées par Gemini, principalement aux États-Unis"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Your team spends meaningful time reading and sorting uneven inbound requests",
+      "avoid_if": "Your current form receives few requests or already captures the right fields",
+      "strengths": [
+        "Usable free plan for one site with dashboard access",
+        "Priority rules advertised as auditable, with score rationale",
+        "Full transcript and structured fields retained for each request"
+      ],
+      "weaknesses": [
+        "No published independent evidence of the widget's effect on conversion or lead quality",
+        "AI-assisted extraction and scoring can be incomplete or wrong",
+        "Conversations are processed by Gemini, primarily in the United States"
+      ]
+    }
+  },
+  {
+    "name": "GeoRankers",
+    "slug": "georankers",
+    "url_fr": "https://tooltrim.com/fr/tool/georankers",
+    "url_en": "https://tooltrim.com/en/tool/georankers",
+    "website": "https://georankers.ai/",
+    "category": "analytics",
+    "pricing": {
+      "free": "Essai de 7 jours sans carte bancaire ; aucun forfait gratuit permanent annoncé.",
+      "paid": "Launch : 49 USD/mois ou équivalent 41 USD/mois facturé 123 USD/trimestre. Grow : 159 USD/mois ou équivalent 129 USD/mois facturé 387 USD/trimestre. Enterprise sur devis."
+    },
+    "description_fr": "Suit la présence d'une marque B2B dans des réponses IA et la compare à ses concurrents.",
+    "description_en": "Tracks a B2B brand's presence in AI answers and compares it with competitors.",
+    "price_verified_on": "2026-09-28",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Tu peux définir un panel stable de prompts B2B et vérifier les réponses brutes",
+      "avoid_if": "Tu attends une mesure exhaustive de toutes les conversations IA",
+      "strengths": [
+        "Analyse des mentions, citations et concurrents par plateforme IA",
+        "Réponses brutes et prompts personnalisés annoncés dans les plans",
+        "Essai de sept jours sans carte bancaire"
+      ],
+      "weaknesses": [
+        "Mesures dépendantes des prompts choisis et du moment de capture",
+        "Tarif trimestriel affiché en équivalent mensuel, à ne pas confondre avec la facturation mensuelle",
+        "Plusieurs intégrations annoncées sont encore en feuille de route"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "You can define a stable B2B prompt panel and inspect raw answers",
+      "avoid_if": "You expect a complete census of all AI conversations",
+      "strengths": [
+        "Brand, citation and competitor analysis by AI platform",
+        "Raw answers and custom prompts listed across plans",
+        "Seven-day trial without a credit card"
+      ],
+      "weaknesses": [
+        "Measurements depend on prompt selection and capture time",
+        "Quarterly prices shown as monthly equivalents must not be confused with monthly billing",
+        "Several listed integrations remain roadmap items"
+      ]
+    }
+  },
+  {
+    "name": "Uniqode",
+    "slug": "uniqode",
+    "url_fr": "https://tooltrim.com/fr/tool/uniqode",
+    "url_en": "https://tooltrim.com/en/tool/uniqode",
+    "website": "https://www.uniqode.com/",
+    "category": "analytics",
+    "pricing": {
+      "free": "QR codes statiques gratuits, sans modification de destination ni suivi des scans. Essai des fonctions payantes : 14 jours sans carte bancaire.",
+      "paid": "QR dynamiques, facturation annuelle en USD : Essential 9 $US/mois ; Core 49 $US/mois ; Plus 99 $US/mois ; Business+ 399 $US/mois. Enterprise sur devis. Cartes de visite numériques : offre distincte."
+    },
+    "description_fr": "Créez des QR codes dynamiques, modifiez leur destination après impression et suivez les scans de vos campagnes.",
+    "description_en": "Create dynamic QR codes, update destinations after printing, and track scans across your campaigns.",
+    "price_verified_on": "2026-10-24",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu mets régulièrement à jour les destinations de QR codes déjà imprimés",
+      "avoid_if": "Un QR statique vers une adresse durable suffit à ton besoin",
+      "strengths": [
+        "La destination d’un code dynamique peut évoluer sans réimprimer le support",
+        "Les paliers distinguent volume de codes, historique statistique et collaboration",
+        "Linkpages et formulaires prolongent le parcours après le scan"
+      ],
+      "weaknesses": [
+        "Les QR codes dynamiques reposent sur un abonnement actif",
+        "Le tarif public est présenté au mois mais facturé annuellement",
+        "L’export CSV et les analyses détaillées nécessitent Core ou un palier supérieur"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You regularly update destinations behind QR codes already in print",
+      "avoid_if": "A static QR code pointing to a stable address is enough",
+      "strengths": [
+        "Dynamic-code destinations can change without reprinting materials",
+        "Plans distinguish code volume, reporting history, and collaboration",
+        "Linkpages and forms extend the journey after a scan"
+      ],
+      "weaknesses": [
+        "Dynamic QR codes depend on an active subscription",
+        "Public rates are displayed monthly but billed annually",
+        "CSV export and detailed analytics require Core or a higher plan"
+      ]
+    }
+  }
+]

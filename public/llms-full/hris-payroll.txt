@@ -1,0 +1,1172 @@
+# ToolTrim tool catalogue — hris-payroll
+# Generated from src/data/tools_index.json
+# Family: hris-payroll (27 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "ADP Workforce",
+    "slug": "adp-workforce",
+    "url_fr": "https://tooltrim.com/fr/tool/adp-workforce",
+    "url_en": "https://tooltrim.com/en/tool/adp-workforce",
+    "website": "https://www.adp.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "ADP Workforce structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "ADP Workforce structures employee, HR, or payroll data in a company stack.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une mid-market organization (50-1000+)",
+      "avoid_if": "Vous êtes une startup (trop cher)",
+      "strengths": [
+        "Solution paie + HR de confiance (leader marché)",
+        "Large gamme de modules complémentaires",
+        "Support d'experts ADP dedié"
+      ],
+      "weaknesses": [
+        "Pas de tier gratuit",
+        "Tarification potentiellement élevée",
+        "Interface/UX moins moderne que concurrents"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a mid-market organization (50-1,000+)",
+      "avoid_if": "You are a startup (too expensive)",
+      "strengths": [
+        "Trusted payroll + HR solution (market leader)",
+        "Broad range of add-on modules",
+        "Dedicated ADP expert support"
+      ],
+      "weaknesses": [
+        "No free tier",
+        "Potentially high pricing",
+        "Less modern interface/UX than competitors"
+      ]
+    }
+  },
+  {
+    "name": "Allstate",
+    "slug": "allstate",
+    "url_fr": "https://tooltrim.com/fr/tool/allstate",
+    "url_en": "https://tooltrim.com/en/tool/allstate",
+    "website": "https://allstate.com",
+    "category": "hris-payroll",
+    "pricing": "Tarification sur devis selon la taille de l'entreprise et le niveau de couverture choisi.",
+    "description_fr": "Plans de santé collectifs pour petites et moyennes entreprises américaines, via Allstate Benefits.",
+    "description_en": "Group health plans for small and mid-sized American businesses, via Allstate Benefits.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Tu es une entreprise américaine de 2 à 500 employés cherchant à réduire le coût de la couverture santé",
+      "avoid_if": "Ton entreprise n'est pas basée aux États-Unis",
+      "strengths": [
+        "Programme autofinancé souvent plus économique qu'une assurance entièrement assurée",
+        "Possibilité de remboursement les années à faible sinistralité (~60% des groupes en bénéficient)",
+        "Administration quotidienne externalisée à un tiers, moins de charge pour l'entreprise"
+      ],
+      "weaknesses": [
+        "Tarification non publique, nécessite un devis personnalisé",
+        "Programme autofinancé qui implique un risque résiduel malgré l'assurance stop-loss",
+        "Pertinent uniquement pour les entreprises basées aux États-Unis"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a US business of 2 to 500 employees looking to reduce health coverage costs",
+      "avoid_if": "Your business isn't US-based",
+      "strengths": [
+        "Self-funded program often more affordable than fully-insured coverage",
+        "Possible refund in low-claims years (~60% of groups benefit)",
+        "Day-to-day administration outsourced to a third party, less burden on the business"
+      ],
+      "weaknesses": [
+        "Pricing not public, requires a custom quote",
+        "Self-funded program carries residual risk despite stop-loss insurance",
+        "Only relevant for US-based businesses"
+      ]
+    }
+  },
+  {
+    "name": "Ashby",
+    "slug": "ashby",
+    "url_fr": "https://tooltrim.com/fr/tool/ashby",
+    "url_en": "https://tooltrim.com/en/tool/ashby",
+    "website": "https://ashbyhq.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 360 $/mois, plan All-In-One Foundations."
+    },
+    "description_fr": "Ashby est un système de suivi des candidatures complet avec sourcing, planification et recrutement assisté par IA, à prix fixe jusqu'à 100 salariés.",
+    "description_en": "Ashby is a full applicant tracking system with sourcing, scheduling and AI-assisted hiring, flat-priced for companies up to 100 employees.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu recrutes pour une entreprise de jusqu'à 100 salariés et tu veux un ATS complet en une offre à prix fixe",
+      "avoid_if": "Tu es un recruteur solo qui embauche occasionnellement, où un prix fixe de 400 $/mois ne se rentabilise pas",
+      "strengths": [
+        "Un prix fixe couvre l'ATS complet jusqu'à 100 salariés, sans facturation par siège à suivre",
+        "Sourcing assisté par IA, interprétation d'entretiens et analyses de diversité sont intégrés au reporting"
+      ],
+      "weaknesses": [
+        "Pas d'offre gratuite ni d'essai publié ; le point d'entrée est un abonnement fixe à 400 $/mois",
+        "AI Notetaker et l'automatisation avancée de planification coûtent en plus de l'offre fixe"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You're hiring for a company of up to 100 employees and want a full ATS in one flat-priced plan",
+      "avoid_if": "You're a solo recruiter hiring occasionally, where a $400/month flat price doesn't pay for itself",
+      "strengths": [
+        "One flat price covers the full ATS for up to 100 employees, no per-seat billing to track",
+        "AI-assisted sourcing, interview interpretation and diversity analytics come built into reporting"
+      ],
+      "weaknesses": [
+        "No free plan or published trial; the entry point is a $400/month flat subscription",
+        "AI Notetaker and advanced scheduling automation cost extra on top of the flat plan"
+      ]
+    }
+  },
+  {
+    "name": "BambooHR",
+    "slug": "bamboohr",
+    "url_fr": "https://tooltrim.com/fr/tool/bamboohr",
+    "url_en": "https://tooltrim.com/en/tool/bamboohr",
+    "website": "https://bamboohr.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Aucun plan gratuit permanent annoncé.",
+      "paid": "Core: À partir de 10 $/employé/mois ; Pro: À partir de 17 $/employé/mois ; Elite: À partir de 25 $/employé/mois ; 25 employés ou moins: Forfait à partir de 250 $/mois"
+    },
+    "description_fr": "Logiciel de gestion des ressources humaines (HCM) conçu pour les PME et petites équipes. Offre des modules pour la gestion des employés, les congés, la paie simplifiée et les rapports RH.",
+    "description_en": "Human Capital Management (HCM) software designed for SMBs and small teams. Offers employee management, time-off tracking, simplified payroll, and HR reporting.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous avez une petite équipe (5-100 employés)",
+      "avoid_if": "Vous avez une équipe de plus de 500 employés",
+      "strengths": [
+        "Interface très intuitive pour non-HR",
+        "Gestion des congés et rapports flexibles",
+        "Intégration Payroll (Gusto, ADP)"
+      ],
+      "weaknesses": [
+        "Paie non intégrée (intégration seulement)",
+        "Moins de fonctionnalités que solutions complètes",
+        "Tarifé par employé (peut devenir cher)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have a small team (5-100 employees)",
+      "avoid_if": "You have a team over 500 employees",
+      "strengths": [
+        "Very intuitive interface for non-HR users",
+        "Flexible time-off and reporting",
+        "Payroll integration (Gusto, ADP)"
+      ],
+      "weaknesses": [
+        "Payroll not built-in (integration only)",
+        "Fewer features than complete solutions",
+        "Per-employee pricing (can get expensive)"
+      ]
+    }
+  },
+  {
+    "name": "Dayforce",
+    "slug": "dayforce",
+    "url_fr": "https://tooltrim.com/fr/tool/dayforce",
+    "url_en": "https://tooltrim.com/en/tool/dayforce",
+    "website": "https://www.dayforce.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Dayforce structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "Integrated HCM platform unifying payroll, HR, talent management, workforce planning, and scheduling with real-time analytics and AI automation.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous avez une paie complexe ou multi-pays",
+      "avoid_if": "Vous êtes une micro-entreprise ou startup",
+      "strengths": [
+        "Suite HCM complète et hautement intégrée",
+        "Paie continue et time calculation robustes",
+        "Global payroll 200+ pays"
+      ],
+      "weaknesses": [
+        "Tarif sur devis uniquement",
+        "Implémentation complexe et coûteuse",
+        "Destiné aux moyennes/grandes entreprises"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have complex or multi-country payroll",
+      "avoid_if": "You're a microenterprise or startup",
+      "strengths": [
+        "Complete and highly integrated HCM suite",
+        "Robust continuous payroll and time calculation",
+        "Global payroll across 200+ countries"
+      ],
+      "weaknesses": [
+        "Pricing on quote only",
+        "Complex and costly implementation",
+        "Designed for mid-market/enterprise"
+      ]
+    }
+  },
+  {
+    "name": "Deel",
+    "slug": "deel",
+    "url_fr": "https://tooltrim.com/fr/tool/deel",
+    "url_en": "https://tooltrim.com/en/tool/deel",
+    "website": "https://www.deel.com/",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 49 $/mois, plan Contractor Management."
+    },
+    "description_fr": "Deel gère les paiements de prestataires, le PEO américain et l'embauche en portage salarial mondial, facturé par travailleur de 49 à 599 dollars par mois.",
+    "description_en": "Deel handles contractor payments, US PEO and global Employer-of-Record hiring, priced per worker from 49 to 599 dollars a month.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Garde Deel si tu dois payer ou employer légalement des personnes dans des pays où tu n'as pas d'entité locale",
+      "avoid_if": "Évite le plan EOR si tu as déjà une entité locale dans le pays, car une paie directe coûte en général moins cher que 599 dollars par salarié et par mois",
+      "strengths": [
+        "Couvre les paiements de prestataires, le PEO et l'EOR sur une seule plateforme plutôt que de jongler avec des prestataires séparés par pays",
+        "Aucun engagement long terme requis ; la facturation est mensuelle sans engagement, par travailleur"
+      ],
+      "weaknesses": [
+        "L'EOR mondial à 599 dollars par salarié et par mois est coûteux face à une paie locale directe là où l'entreprise est déjà présente",
+        "Le coût augmente directement avec l'effectif dans chaque catégorie d'embauche utilisée, ce qui grimpe vite pour une équipe en croissance"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Keep Deel if you need to legally pay or employ people in countries where you have no local entity",
+      "avoid_if": "Avoid the EOR plan if you already have a local entity in the country, since direct payroll is typically cheaper than 599 dollars per employee per month",
+      "strengths": [
+        "Covers contractor payments, PEO and EOR in one platform instead of juggling separate vendors per country",
+        "No long-term contract required; billing is month-to-month per worker"
+      ],
+      "weaknesses": [
+        "Global EOR at 599 dollars per employee per month is expensive compared to direct local payroll where the company already has a presence",
+        "Cost scales directly with headcount across every hiring category used, which adds up fast for a growing team"
+      ]
+    }
+  },
+  {
+    "name": "Factorial",
+    "slug": "factorial",
+    "url_fr": "https://tooltrim.com/fr/tool/factorial",
+    "url_en": "https://tooltrim.com/en/tool/factorial",
+    "website": "https://factorialhr.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Factorial structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "Factorial structures employee, HR, or payroll data in a company stack.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'une solution tout-en-un (HR + paie + IT)",
+      "avoid_if": "Vous cherchez une solution simple ou gratuite",
+      "strengths": [
+        "Suite intégrée HR + paie + temps + finance + IT",
+        "Agent IA 'One' pour automation et insights",
+        "Tarification modulaire (start small, scale)"
+      ],
+      "weaknesses": [
+        "Pas de tier gratuit",
+        "Tarification personnalisée (pas transparente)",
+        "Moins flexible que best-of-breed pour cas pointus"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need an all-in-one solution (HR + payroll + IT)",
+      "avoid_if": "You seek a simple or free solution",
+      "strengths": [
+        "Integrated suite: HR + payroll + time + finance + IT",
+        "AI agent 'One' for automation and insights",
+        "Modular pricing (start small, scale)"
+      ],
+      "weaknesses": [
+        "No free tier",
+        "Custom pricing (not transparent)",
+        "Less flexible than best-of-breed for niche needs"
+      ]
+    }
+  },
+  {
+    "name": "Google Workspace",
+    "slug": "google-workspace",
+    "url_fr": "https://tooltrim.com/fr/tool/google-workspace",
+    "url_en": "https://tooltrim.com/en/tool/google-workspace",
+    "website": "https://workspace.google.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Pas de forfait Business gratuit permanent. Un essai est proposé depuis la page officielle.",
+      "paid": "Business Starter: 7 USD par utilisateur et par mois avec engagement annuel ; Business Standard: 14 USD par utilisateur et par mois avec engagement annuel ; Business Plus: 22 USD par utilisateur et par mois avec engagement annuel ; Enterprise: Sur devis"
+    },
+    "description_fr": "Google Workspace regroupe Gmail professionnel, Drive, Docs, Sheets, Meet, Calendar et Gemini dans une suite collaborative administrée.",
+    "description_en": "Google Workspace combines business Gmail, Drive, Docs, Sheets, Meet, Calendar, and Gemini in an administered collaboration suite.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez régulièrement le workflow central de Google Workspace",
+      "avoid_if": "Votre besoin est ponctuel et un outil gratuit plus simple suffit",
+      "strengths": [
+        "Workflow produit bien défini",
+        "Documentation officielle et développement actif",
+        "S'intègre aux processus professionnels"
+      ],
+      "weaknesses": [
+        "Le coût peut augmenter avec l'usage ou les sièges",
+        "Les fonctions avancées exigent une offre payante",
+        "La qualité du paramétrage influence le résultat"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need Google Workspace's core workflow regularly",
+      "avoid_if": "Your need is occasional and a simpler free tool is enough",
+      "strengths": [
+        "Focused product workflow",
+        "Official documentation and active development",
+        "Integrates into professional processes"
+      ],
+      "weaknesses": [
+        "Costs can grow with usage or seats",
+        "Advanced capabilities require a paid tier",
+        "Setup quality affects the result"
+      ]
+    }
+  },
+  {
+    "name": "Greenhouse",
+    "slug": "greenhouse",
+    "url_fr": "https://tooltrim.com/fr/tool/greenhouse",
+    "url_en": "https://tooltrim.com/en/tool/greenhouse",
+    "website": "https://greenhouse.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "",
+      "paid": "Sur devis, ~540€/mois minimum (facturé à l'effectif total, pas au nombre de recruteurs)"
+    },
+    "description_fr": "Logiciel de recrutement (ATS) pour structurer et scaler le processus d'embauche en entreprise.",
+    "description_en": "Applicant tracking system (ATS) to structure and scale a company's hiring process.",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Vous avez une équipe de recrutement structurée",
+      "avoid_if": "Vous êtes en early-stage avec budget minimal",
+      "strengths": [
+        "Plateforme ATS la plus mature du marché",
+        "Voice AI pour entretiens (améliore inclusivité)",
+        "Real Talent pour vérification fraude"
+      ],
+      "weaknesses": [
+        "Pas de tier gratuit (consultation vente requise)",
+        "Tarifation potentiellement élevée pour petites organisations",
+        "Complexité implémentation (nécessite consulting)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have a structured recruiting team",
+      "avoid_if": "You are early-stage with minimal budget",
+      "strengths": [
+        "Most mature ATS platform on market",
+        "Voice AI for interviews (improves inclusivity)",
+        "Real Talent for fraud verification"
+      ],
+      "weaknesses": [
+        "No free tier (sales consultation required)",
+        "Potential high pricing for small organizations",
+        "Implementation complexity (requires consulting)"
+      ]
+    }
+  },
+  {
+    "name": "Gusto",
+    "slug": "gusto",
+    "url_fr": "https://tooltrim.com/fr/tool/gusto",
+    "url_en": "https://tooltrim.com/en/tool/gusto",
+    "website": "https://gusto.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 55 $/mois, plan Simple."
+    },
+    "description_fr": "Plateforme de paie américaine qui gère la déclaration fiscale, les avantages sociaux et les paiements de freelances pour les petites entreprises.",
+    "description_en": "US payroll platform handling tax filing, employee benefits and contractor payments for small businesses.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères une paie américaine et veux la déclaration fiscale automatisée et la gestion des avantages sociaux au même endroit",
+      "avoid_if": "Tu ne paies que des freelances à l'international sans besoin de paie américaine ; les paiements de freelances internationaux de Gusto sont facturés par paiement (5 $ chacun) plutôt que via un plan dédié à bas coût",
+      "strengths": [
+        "La déclaration fiscale est gérée automatiquement dans tous les États américains, supprimant une tâche de conformité récurrente",
+        "Les paiements de freelances domestiques sont inclus sur chaque plan d'équipe, sans qu'un plan dédié aux freelances soit nécessaire"
+      ],
+      "weaknesses": [
+        "Pas d'offre gratuite, et le tarif en forfait de base plus montant par employé fait monter le coût à chaque embauche",
+        "La paie multi-états et le support RH certifié sont réservés aux plans Plus et Premium"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run US payroll and want automated tax filing and benefits administration in one place",
+      "avoid_if": "You only pay international contractors with no US payroll need; Gusto's global contractor payments are billed per payment ($5 each) rather than through a dedicated low-cost contractor plan",
+      "strengths": [
+        "Tax filing is handled automatically in every US state, removing a recurring compliance task",
+        "Domestic contractor payments are included on every team plan, with no separate contractor-only tier required"
+      ],
+      "weaknesses": [
+        "No free tier, and the base-fee-plus-per-employee pricing means cost rises with every hire",
+        "Multi-state payroll and certified HR support are locked behind the Plus and Premium plans"
+      ]
+    }
+  },
+  {
+    "name": "HiBob",
+    "slug": "hibob",
+    "url_fr": "https://tooltrim.com/fr/tool/hibob",
+    "url_en": "https://tooltrim.com/en/tool/hibob",
+    "website": "https://www.hibob.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "HiBob structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "Modular HRIS & HCM platform for SMBs to mid-market, covering employee management, time-off, onboarding, payroll (optional), and HR analytics with workflow automation.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME-ETI (50-1000 salariés)",
+      "avoid_if": "Vous êtes une microentreprise",
+      "strengths": [
+        "Plateforme modulable — payez seulement ce dont vous avez besoin",
+        "Interface moderne et user-friendly",
+        "Excellentes automations workflows"
+      ],
+      "weaknesses": [
+        "Tarif sur devis (pas de prix public)",
+        "Paie en option seulement (pas complète comparé concurrents)",
+        "Peut être cher pour microentreprise"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're an SMB to mid-market (50-1000 employees)",
+      "avoid_if": "You're a microenterprise",
+      "strengths": [
+        "Modular platform — pay only for what you need",
+        "Modern and user-friendly interface",
+        "Excellent workflow automation"
+      ],
+      "weaknesses": [
+        "Pricing on quote only (no public pricing)",
+        "Payroll only as add-on (not core like competitors)",
+        "Can be expensive for microenterprises"
+      ]
+    }
+  },
+  {
+    "name": "Humaans",
+    "slug": "humaans",
+    "url_fr": "https://tooltrim.com/fr/tool/humaans",
+    "url_en": "https://tooltrim.com/en/tool/humaans",
+    "website": "https://humaans.io",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Humaans structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "Modern HR platform for SMBs to mid-market, offering employee management, absences, onboarding, timesheets, DE&I analytics, and Athena (agentic AI for HR automation).",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes PME-ETI moderne cherchant solution HR complète",
+      "avoid_if": "Vous êtes microentreprise ou startup pré-réche",
+      "strengths": [
+        "Interface moderne et intuitive",
+        "Excellent analytics DE&I (rare sur marché)",
+        "IA Athena pour automations avancées"
+      ],
+      "weaknesses": [
+        "Tarif sur devis uniquement",
+        "Pas de paie native — intégration requise",
+        "Peut être cher pour effectifs <50"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a modern SMB to mid-market seeking complete HR solution",
+      "avoid_if": "You're a microenterprise or pre-revenue startup",
+      "strengths": [
+        "Modern and intuitive interface",
+        "Excellent DE&I analytics (rare on market)",
+        "Athena AI for advanced automations"
+      ],
+      "weaknesses": [
+        "Pricing on quote only",
+        "No native payroll — integration required",
+        "Can be expensive for <50 employees"
+      ]
+    }
+  },
+  {
+    "name": "Justworks",
+    "slug": "justworks",
+    "url_fr": "https://tooltrim.com/fr/tool/justworks",
+    "url_en": "https://tooltrim.com/en/tool/justworks",
+    "website": "https://www.justworks.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Justworks structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "Justworks structures employee, HR, or payroll data in a company stack.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME US cherchant PEO/paie",
+      "avoid_if": "Vous n'opérez qu'en France ou en Europe",
+      "strengths": [
+        "Solution PEO complète (paie + avantages + RH)",
+        "Très simple à mettre en place",
+        "Support HR dédié disponible en add-on"
+      ],
+      "weaknesses": [
+        "Pas de tier gratuit",
+        "Coûts potentiels élevés pour grandes équipes",
+        "Focus US uniquement (contractors internationaux très chers)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a US SMB seeking PEO/payroll",
+      "avoid_if": "You only operate in France or Europe",
+      "strengths": [
+        "Complete PEO solution (payroll + benefits + HR)",
+        "Very simple to set up",
+        "Dedicated HR support available as add-on"
+      ],
+      "weaknesses": [
+        "No free tier",
+        "Potential high costs for large teams",
+        "US-only focus (international contractors very expensive)"
+      ]
+    }
+  },
+  {
+    "name": "Lano",
+    "slug": "lano",
+    "url_fr": "https://tooltrim.com/fr/tool/lano",
+    "url_en": "https://tooltrim.com/en/tool/lano",
+    "website": "https://lano.io",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": null,
+      "paid": "Prix d'appel à partir de 3 € par employé et par mois (consolidation de paie) et 19 € par freelance et par mois ; tarif final sur proposition."
+    },
+    "description_fr": "Solution globale d’employeur de référence et gestion de paie.",
+    "description_en": "Global Employer of Record and payroll management solution.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous opérez dans 5+ pays et avez besoin de consolidation paie",
+      "avoid_if": "Vous n'opérez qu'en un seul pays",
+      "strengths": [
+        "Consolidation paie multi-fournisseurs en un seul système",
+        "Paiements gratuits en 28 devises locales",
+        "Services EOR pour embauches globales"
+      ],
+      "weaknesses": [
+        "Pas de tier gratuit",
+        "Pas d'HR complète (paie uniquement)",
+        "Tarification non transparente publiquement"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You operate in 5+ countries and need payroll consolidation",
+      "avoid_if": "You operate in only one country",
+      "strengths": [
+        "Consolidate multi-vendor payroll in one system",
+        "Free payments in 28 local currencies",
+        "EOR services for global hiring"
+      ],
+      "weaknesses": [
+        "No free tier",
+        "No complete HR (payroll only)",
+        "Pricing not transparent publicly"
+      ]
+    }
+  },
+  {
+    "name": "LinkedIn Recruiter",
+    "slug": "linkedin-recruiter",
+    "url_fr": "https://tooltrim.com/fr/tool/linkedin-recruiter",
+    "url_en": "https://tooltrim.com/en/tool/linkedin-recruiter",
+    "website": "https://business.linkedin.com/talent-solutions/recruiter",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "LinkedIn Recruiter permet de chercher des candidats dans le réseau LinkedIn et de les contacter via InMail, avec un tarif disponible uniquement sur devis.",
+    "description_en": "LinkedIn Recruiter searches LinkedIn's network for candidates and lets recruiters contact them via InMail, with pricing available only on quote.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Une petite équipe a besoin de chercher activement des candidats sur LinkedIn au-delà des candidatures spontanées reçues",
+      "avoid_if": "Le volume de recrutement est faible ou occasionnel : une simple offre d'emploi ou un ATS moins cher couvre le besoin sans négociation commerciale",
+      "strengths": [
+        "Accès direct aux données du réseau professionnel LinkedIn pour le sourcing",
+        "Recherche et rédaction de messages d'approche assistées par IA en plus des filtres"
+      ],
+      "weaknesses": [
+        "Aucun prix public : chaque plan nécessite un échange commercial avant toute estimation de coût",
+        "Recruiter Lite limite la visibilité aux relations de 3e degré avec beaucoup moins de filtres que le plan complet"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "A small team needs to actively source candidates on LinkedIn beyond what inbound applications bring in",
+      "avoid_if": "Hiring volume is low or occasional, where a one-off job post or a cheaper ATS-only tool covers the need without a sales negotiation",
+      "strengths": [
+        "Direct access to LinkedIn's own professional network data for sourcing",
+        "AI-assisted search and outreach message drafting on top of the search filters"
+      ],
+      "weaknesses": [
+        "No public pricing: every plan requires a sales conversation before any cost estimate",
+        "Recruiter Lite restricts visibility to 3rd-degree connections with far fewer filters than the full plan"
+      ]
+    }
+  },
+  {
+    "name": "Lucca",
+    "slug": "lucca",
+    "url_fr": "https://tooltrim.com/fr/tool/lucca",
+    "url_en": "https://tooltrim.com/en/tool/lucca",
+    "website": "https://www.lucca.fr",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Lucca structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "Modular French HR suite (SIRH), covering employee file, absences, talent, compensation/payroll, and expenses, with 15 interconnected solutions and AI 'Ask Lucca'.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes PME-ETI française avec paie et RH classiques",
+      "avoid_if": "Vous êtes microentreprise (<10 salariés)",
+      "strengths": [
+        "Suite modulable et à prix avantageux pour PME",
+        "Solution entièrement française — support local de qualité",
+        "IA Ask Lucca pour assistance paie/RH"
+      ],
+      "weaknesses": [
+        "Interface moins moderne que SaaS cloud purs",
+        "Paie moins simple que solutions all-in-one intégrées",
+        "Besoin de ressources RH/Paie en interne pour complet"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a French SMB to mid-market with standard HR/payroll",
+      "avoid_if": "You're a microenterprise (<10 employees)",
+      "strengths": [
+        "Modular suite at attractive price for SMBs",
+        "Fully French solution — strong local support",
+        "Ask Lucca AI for payroll/HR assistance"
+      ],
+      "weaknesses": [
+        "Interface less modern than pure cloud SaaS",
+        "Payroll less simple than integrated all-in-one solutions",
+        "Requires in-house HR/Payroll resources for full value"
+      ]
+    }
+  },
+  {
+    "name": "Namely",
+    "slug": "namely",
+    "url_fr": "https://tooltrim.com/fr/tool/namely",
+    "url_en": "https://tooltrim.com/en/tool/namely",
+    "website": "https://www.namely.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Namely structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "Modular HCM platform for SMBs (50-1,000 employees) unifying HR, payroll, talent, onboarding, benefits, and analytics with social employee portal.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes PME US-based ou international (50-1000 salariés)",
+      "avoid_if": "Vous êtes entreprise française avec paie locale complexe",
+      "strengths": [
+        "Suite HCM complète avec payroll intégrée",
+        "Employee portal social-style moderne",
+        "Managed services optionnels (outsourcing)"
+      ],
+      "weaknesses": [
+        "Tarif sur devis uniquement",
+        "Orientation US/international (moins pour France)",
+        "Implémentation lourde"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a US-based or international SMB (50-1,000 employees)",
+      "avoid_if": "You're a French company with complex local payroll",
+      "strengths": [
+        "Complete HCM suite with integrated payroll",
+        "Modern social-style employee portal",
+        "Optional managed services (outsourcing)"
+      ],
+      "weaknesses": [
+        "Pricing on quote only",
+        "US/international focus (less suited for France)",
+        "Heavy implementation"
+      ]
+    }
+  },
+  {
+    "name": "Netchex",
+    "slug": "netchex",
+    "url_fr": "https://tooltrim.com/fr/tool/netchex",
+    "url_en": "https://tooltrim.com/en/tool/netchex",
+    "website": "https://netchex.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": null,
+      "paid": "Trois formules (Core, All-In, Flex), toutes sur devis."
+    },
+    "description_fr": "Solution de gestion RH et paie.",
+    "description_en": "HR and payroll management solution.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous avez une workforce horaire ou sur le terrain",
+      "avoid_if": "Vous avez surtout du personnel de bureau",
+      "strengths": [
+        "Suite HCM complète optimisée pour horaires/terrain",
+        "Mobile-first avec geofencing pour clock-in",
+        "Mesh : AI HR specialists intégrés"
+      ],
+      "weaknesses": [
+        "Pas de tier gratuit",
+        "Tarification non transparente (consultation requise)",
+        "Focus US (moins adapté international)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have an hourly or field-based workforce",
+      "avoid_if": "You are mostly office-based",
+      "strengths": [
+        "Complete HCM suite optimized for hourly/field",
+        "Mobile-first with geofencing for clock-in",
+        "Mesh: integrated AI HR specialists"
+      ],
+      "weaknesses": [
+        "No free tier",
+        "Pricing not transparent (consultation required)",
+        "US-focused (less suitable internationally)"
+      ]
+    }
+  },
+  {
+    "name": "Oyster",
+    "slug": "oyster",
+    "url_fr": "https://tooltrim.com/fr/tool/oyster",
+    "url_en": "https://tooltrim.com/en/tool/oyster",
+    "website": "https://oysterhr.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Global Contractors : gratuit 30 jours puis 29 USD par prestataire et par mois ; Employer of Record à 699 USD par salarié et par mois."
+    },
+    "description_fr": "Plateforme RH pour entreprises distribuées mondialement.",
+    "description_en": "Global HR platform for distributed teams.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous embauchez des employés dans 5+ pays sans entité locale",
+      "avoid_if": "Vous n'opérez qu'en un seul pays",
+      "strengths": [
+        "EOR rapide (onboarding 48h)",
+        "Support dans 180+ pays",
+        "HR expert dédié par client (relation personnalisée)"
+      ],
+      "weaknesses": [
+        "Pas de tier gratuit",
+        "Coût mensuel élevé par salarié en portage",
+        "Tarif attractif par prestataire, mais les modèles mixtes reviennent cher"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You hire employees in 5+ countries without local entities",
+      "avoid_if": "You operate in only one country",
+      "strengths": [
+        "Fast EOR (48h onboarding)",
+        "Support in 180+ countries",
+        "Dedicated HR expert per client (personalized relationship)"
+      ],
+      "weaknesses": [
+        "No free tier",
+        "High monthly cost per EOR employee",
+        "Attractive per-contractor pricing, but mixed setups get costly"
+      ]
+    }
+  },
+  {
+    "name": "PayFit",
+    "slug": "payfit",
+    "url_fr": "https://tooltrim.com/fr/tool/payfit",
+    "url_en": "https://tooltrim.com/en/tool/payfit",
+    "website": "https://payfit.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Payfit structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "Payfit structures employee, HR, or payroll data in a company stack.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME UK cherchant automation paie",
+      "avoid_if": "Vous opérez hors UK",
+      "strengths": [
+        "Automatisation de la très grande majorité des tâches de paie",
+        "Conformité HMRC automatisée (RTI, SSP, etc)",
+        "Assistant IA PayFit (24/7 payroll/HR)"
+      ],
+      "weaknesses": [
+        "Pas de tier gratuit",
+        "Tarification non transparente publiquement",
+        "Limité à UK (pas d'international)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a UK SMB seeking payroll automation",
+      "avoid_if": "You operate outside UK",
+      "strengths": [
+        "Automates the vast majority of payroll tasks",
+        "Automated HMRC compliance (RTI, SSP, etc)",
+        "PayFit AI assistant (24/7 payroll/HR)"
+      ],
+      "weaknesses": [
+        "No free tier",
+        "Pricing not transparent publicly",
+        "Limited to UK (no international)"
+      ]
+    }
+  },
+  {
+    "name": "Personio",
+    "slug": "personio",
+    "url_fr": "https://tooltrim.com/fr/tool/personio",
+    "url_en": "https://tooltrim.com/en/tool/personio",
+    "website": "https://personio.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Plateforme RH cloud couvrant les dossiers salariés, l'onboarding et la paie, avec des tarifs sur devis non publiés publiquement.",
+    "description_en": "Cloud HR platform covering employee records, onboarding and payroll, priced through a custom quote not publicly listed.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu as besoin des RH de base, de l'onboarding et de la paie dans un seul système pour une équipe en croissance, et tu peux obtenir un devis directement auprès de Personio",
+      "avoid_if": "Tu veux comparer les prix directement sans passer par un processus de devis commercial",
+      "strengths": [
+        "Les flux d'onboarding assignent automatiquement les tâches aux nouvelles recrues, sans checklist manuelle",
+        "La paie se synchronise directement avec les dossiers salariés et le suivi du temps, sans export manuel séparé"
+      ],
+      "weaknesses": [
+        "Aucun tarif public : la page de tarifs officielle a renvoyé une erreur pendant la recherche, donc le coût réel reste inconnu tant qu'on n'a pas demandé de devis",
+        "Recruiting et la paie sont des modules payants séparés, non inclus dans le socle RH de base"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You need core HR, onboarding and payroll in one system for a growing team and can get a quote from Personio directly",
+      "avoid_if": "You want to compare prices upfront without going through a sales quote process",
+      "strengths": [
+        "Onboarding workflows automatically assign tasks to new hires instead of relying on manual checklists",
+        "Payroll syncs directly with employee records and time tracking instead of a separate manual export"
+      ],
+      "weaknesses": [
+        "No public pricing: the official pricing page returned an error during research, so the real cost is unknown until you request a quote",
+        "Recruiting and payroll are separate paid modules, not included in the base HR package"
+      ]
+    }
+  },
+  {
+    "name": "Rippling",
+    "slug": "rippling",
+    "url_fr": "https://tooltrim.com/fr/tool/rippling",
+    "url_en": "https://tooltrim.com/en/tool/rippling",
+    "website": "https://rippling.com",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "RH, paie et gestion IT unifiée",
+    "description_en": "Unified HR, payroll, and IT management.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une startup venture-backed (6 mois gratuits!)",
+      "avoid_if": "Vous n'êtes pas venture-backed (pas de free offer)",
+      "strengths": [
+        "Suite intégrée complète (HR + IT + Finance + Payroll)",
+        "6 mois gratuits pour startups venture-backed",
+        "AI-driven automation sur données unifiées"
+      ],
+      "weaknesses": [
+        "Offre gratuite limitée aux startups venture-backed",
+        "Tarification potentiellement élevée pour non-VB",
+        "Complexité implémentation élevée"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a venture-backed startup (6 months free!)",
+      "avoid_if": "You are not venture-backed (no free offer)",
+      "strengths": [
+        "Complete integrated suite (HR + IT + Finance + Payroll)",
+        "6 months free for venture-backed startups",
+        "AI-driven automation on unified data"
+      ],
+      "weaknesses": [
+        "Free offer limited to venture-backed startups",
+        "Potential high pricing for non-VB",
+        "High implementation complexity"
+      ]
+    }
+  },
+  {
+    "name": "SAP SuccessFactors",
+    "slug": "sap-successfactors",
+    "url_fr": "https://tooltrim.com/fr/tool/sap-successfactors",
+    "url_en": "https://tooltrim.com/en/tool/sap-successfactors",
+    "website": "https://www.sap.com/products/hcm.html",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "SAP SuccessFactors structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "SAP's enterprise cloud HCM suite covering HR, global payroll, talent management, and employee experience with advanced AI and analytics.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes grand groupe / multinationale",
+      "avoid_if": "Vous êtes PME ou startup",
+      "strengths": [
+        "Suite très complète de SAP",
+        "Talent management et learning avancés",
+        "Global payroll multi-pays robuste"
+      ],
+      "weaknesses": [
+        "Tarif et implémentation très élevés",
+        "Destiné aux très grandes entreprises seulement",
+        "Courbe apprentissage et complexité"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a large group / multinational",
+      "avoid_if": "You're an SMB or startup",
+      "strengths": [
+        "Very comprehensive SAP suite",
+        "Advanced talent management and learning",
+        "Robust multi-country global payroll"
+      ],
+      "weaknesses": [
+        "Very high cost and implementation",
+        "Designed for very large enterprises only",
+        "Steep learning curve and complexity"
+      ]
+    }
+  },
+  {
+    "name": "UKG Pro",
+    "slug": "ukg-pro",
+    "url_fr": "https://tooltrim.com/fr/tool/ukg-pro",
+    "url_en": "https://tooltrim.com/en/tool/ukg-pro",
+    "website": "https://www.ukg.com/solutions/ukg-pro",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "UKG Pro structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "UKG's cloud HCM suite (formerly Kronos & Dayforce, now under UKG) unifying payroll, HR, time, talent, and scheduling with AI and workforce insights.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes mid-market / grande entreprise (1000-10000 salariés)",
+      "avoid_if": "Vous êtes PME < 1000 salariés",
+      "strengths": [
+        "Suite complète intégrée (paie, HR, temps, talents)",
+        "Scheduling intelligent avec IA",
+        "Leadership en time & attendance"
+      ],
+      "weaknesses": [
+        "Tarif et implémentation élevés",
+        "Aucune transparence tarifaire (sales-led)",
+        "Utilisateurs rapportent augmentations annuelles élevées"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're mid-market / large enterprise (1,000-10,000 employees)",
+      "avoid_if": "You're an SMB <1,000 employees",
+      "strengths": [
+        "Complete integrated suite (payroll, HR, time, talent)",
+        "Intelligent scheduling with AI",
+        "Leadership in time & attendance"
+      ],
+      "weaknesses": [
+        "High cost and implementation",
+        "No pricing transparency (sales-led)",
+        "Users report high annual increases"
+      ]
+    }
+  },
+  {
+    "name": "Workday HR",
+    "slug": "workday-hr",
+    "url_fr": "https://tooltrim.com/fr/tool/workday-hr",
+    "url_en": "https://tooltrim.com/en/tool/workday-hr",
+    "website": "https://www.workday.com/en-us/products/human-capital-management/overview.html",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Workday HR structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "Complete Workday cloud HCM suite (Enterprise) covering HR, global payroll, talent, scheduling, learning, and analytics with AI and unified data platform.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes grand groupe / multinational",
+      "avoid_if": "Vous êtes PME ou startup",
+      "strengths": [
+        "Suite HCM très complète de leader",
+        "Intégration native avec Workday Finance",
+        "IA agents avancés pour insights workforce"
+      ],
+      "weaknesses": [
+        "Tarif très élevé et opacité pricing",
+        "Implémentation lourde et longue",
+        "Présentéisme critiqué par utilisateurs"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a large group / multinational",
+      "avoid_if": "You're an SMB or startup",
+      "strengths": [
+        "Very complete HCM suite from leader",
+        "Native integration with Workday Finance",
+        "Advanced IA agents for workforce insights"
+      ],
+      "weaknesses": [
+        "Very high cost and pricing opacity",
+        "Heavy and long implementation",
+        "User criticism of presenteeism"
+      ]
+    }
+  },
+  {
+    "name": "Zelt",
+    "slug": "zelt",
+    "url_fr": "https://tooltrim.com/fr/tool/zelt",
+    "url_en": "https://tooltrim.com/en/tool/zelt",
+    "website": "https://zelt.app",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Zelt structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
+    "description_en": "All-in-one HR platform for SMEs, centralizing employee management, payroll, benefits, time tracking, and IT in a single system.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME (11 à 1 000 salariés) en France ou en Europe",
+      "avoid_if": "Vous avez moins de 20 salariés (minimum de sièges)",
+      "strengths": [
+        "Centralise RH, paie, IT et avantages dans un seul système",
+        "Onboarding et offboarding automatisés",
+        "Conformité réglementaire HMRC intégrée"
+      ],
+      "weaknesses": [
+        "Minimum de 20 sièges (coût initial pour petites équipes)",
+        "Tarification opaque pour le tier Pro",
+        "Axé principalement sur le marché britannique/européen"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are an SME (11–1,000 employees) in France or Europe",
+      "avoid_if": "You have fewer than 20 employees (seat minimum)",
+      "strengths": [
+        "Consolidates HR, payroll, IT, and benefits in one platform",
+        "Automated onboarding and offboarding workflows",
+        "Built-in regulatory compliance (HMRC)"
+      ],
+      "weaknesses": [
+        "Minimum 20-seat commitment (high setup for small teams)",
+        "Opaque pricing for Pro tier",
+        "Primarily optimized for UK/European markets"
+      ]
+    }
+  },
+  {
+    "name": "Planeezy",
+    "slug": "planeezy",
+    "url_fr": "https://tooltrim.com/fr/tool/planeezy",
+    "url_en": "https://tooltrim.com/en/tool/planeezy",
+    "website": "https://www.planeezy.com/",
+    "category": "hris-payroll",
+    "pricing": {
+      "free": "Essai 30 jours, toutes les fonctionnalités, sans carte bancaire",
+      "paid": "Planning 3,60 €HT/collaborateur/mois ; Planning + Badgeuse 5,90 €HT/collaborateur/mois"
+    },
+    "description_fr": "Planning d'équipe et badgeuse mobile géolocalisée pour les TPE à horaires variables, avec préparation automatique de la paie.",
+    "description_en": "Team scheduling and geolocated mobile time-clocking for small businesses with variable hours, with automatic payroll prep.",
+    "price_verified_on": "2026-09-15",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Vous gérez une équipe à horaires variables (restauration, commerce, pharmacie, services) et faites vos plannings vous-même",
+      "avoid_if": "Vous avez déjà un SIRH complet qui couvre planning, pointage et paie",
+      "strengths": [
+        "Alertes visuelles en temps réel pendant la construction du planning, pas après publication",
+        "Publication du planning en quelques clics, avec application collaborateur mobile",
+        "Badgeuse mobile géolocalisée sans boîtier ni badge physique"
+      ],
+      "weaknesses": [
+        "Aucune raison sociale précisée dans les mentions légales, seulement un directeur de publication",
+        "Centre d'aide public annoncé mais pas encore en ligne à la vérification",
+        "Politique de confidentialité peu détaillée sur les droits RGPD comparée à d'autres éditeurs du secteur"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You manage a team with variable hours (restaurants, retail, pharmacy, services) and build schedules yourself",
+      "avoid_if": "You already have a full HRIS covering scheduling, time-tracking and payroll",
+      "strengths": [
+        "Real-time visual alerts while building the schedule, not after publishing",
+        "Schedule publishing in a few clicks, with a mobile collaborator app",
+        "Geolocated mobile time clock with no physical terminal or badge"
+      ],
+      "weaknesses": [
+        "No legal entity disclosed in the legal notice, only a publication director",
+        "Public help center announced but not live yet at verification",
+        "Privacy policy is thin on GDPR rights compared to other publishers in the space"
+      ]
+    }
+  }
+]

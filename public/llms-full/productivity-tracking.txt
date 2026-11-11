@@ -1,0 +1,577 @@
+# ToolTrim tool catalogue — productivity-tracking
+# Generated from src/data/tools_index.json
+# Family: productivity-tracking (13 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Chronokura",
+    "slug": "chronokura",
+    "url_fr": "https://tooltrim.com/fr/tool/chronokura",
+    "url_en": "https://tooltrim.com/en/tool/chronokura",
+    "website": "https://chronokura.com/",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Essai gratuit limité en nombre de clients, projets, saisies et factures. Les plafonds affichés diffèrent entre le site, la documentation et les notes de version.",
+      "paid": "Chronokura Pro : 19,99 € en achat unique, licence à vie sans abonnement selon le site officiel. Tarif final selon la boutique App Store ; mises à jour gratuites annoncées."
+    },
+    "description_fr": "Suivi du temps, clients et factures sur Mac, en achat unique avec un mode local.",
+    "description_en": "Time tracking, clients and invoicing on Mac, with a one-time purchase and local mode.",
+    "price_verified_on": "2026-10-16",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu travailles seul sur un Mac compatible et veux relier suivi du temps et facturation sans abonnement",
+      "avoid_if": "Tu dois suivre les heures d’une équipe, travailler sur Windows ou disposer d’un accès web partagé",
+      "strengths": [
+        "Les heures suivies alimentent les factures dans la même application",
+        "Achat unique plutôt qu’un abonnement pour une activité individuelle",
+        "Mode local, sauvegardes et assistant Ollama optionnel"
+      ],
+      "weaknesses": [
+        "macOS 26 et Apple Silicon sont requis selon l’éditeur",
+        "Pas de suivi collaboratif d’une équipe ou d’accès web multiplateforme",
+        "L’usage sans cloud dépend des options de synchronisation et d’IA choisies"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You work solo on a compatible Mac and want time tracking and invoicing without a subscription",
+      "avoid_if": "You need shared team time tracking, Windows support or a browser-based workspace",
+      "strengths": [
+        "Tracked hours feed invoices in the same app",
+        "A one-time purchase rather than another solo-business subscription",
+        "Local mode, backups and an optional Ollama assistant"
+      ],
+      "weaknesses": [
+        "The publisher requires macOS 26 and Apple Silicon",
+        "No collaborative team tracking or cross-platform web access",
+        "Cloud-free use depends on sync and AI settings"
+      ]
+    }
+  },
+  {
+    "name": "Antidote",
+    "slug": "antidote",
+    "url_fr": "https://tooltrim.com/fr/tool/antidote",
+    "url_en": "https://tooltrim.com/en/tool/antidote",
+    "website": "https://www.antidote.info",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 5€/mois environ"
+    },
+    "description_fr": "Suite avancée de correction et dictionnaires pour rédaction française.",
+    "description_en": "Advanced correction and dictionaries suite for French writing.",
+    "verdict_fr": {
+      "keep_if": "Vous écrivez régulièrement en français et en anglais",
+      "avoid_if": "Vous voulez une solution gratuite",
+      "strengths": [
+        "Corrections contextuelles très précises",
+        "Accès à des dictionnaires et guides linguistiques détaillés",
+        "Support bilingue français-anglais intégré"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite",
+        "Abonnement requis pour accès complet",
+        "Licence perpétuelle coûteuse en premier achat"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You write regularly in French and English",
+      "avoid_if": "You want a free solution",
+      "strengths": [
+        "Highly contextual and accurate corrections",
+        "Access to detailed dictionaries and language guides",
+        "Built-in French-English bilingual support"
+      ],
+      "weaknesses": [
+        "No free version",
+        "Subscription required for full access",
+        "Perpetual licenses are costly upfront"
+      ]
+    }
+  },
+  {
+    "name": "Arc Browser",
+    "slug": "arc-browser",
+    "url_fr": "https://tooltrim.com/fr/tool/arc-browser",
+    "url_en": "https://tooltrim.com/en/tool/arc-browser",
+    "website": "https://arc.net",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Entièrement gratuit",
+      "paid": "N/A"
+    },
+    "description_fr": "Navigateur repensé pour la productivité.",
+    "description_en": "Redesigned browser for productivity.",
+    "verdict_fr": {
+      "keep_if": "Vous naviguez entre plusieurs contextes de travail",
+      "avoid_if": "Vous avez besoin d'une solution sans dépendance envers une jeune startup",
+      "strengths": [
+        "Totalement gratuit, aucune limite",
+        "Interface novante avec Spaces et Profiles",
+        "Mises à jour de sécurité fréquentes"
+      ],
+      "weaknesses": [
+        "Équipe jeune, avenir incertain",
+        "Moins d'extensions que Chrome",
+        "Écosystème moins mature que Firefox ou Chrome"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You navigate between multiple work contexts",
+      "avoid_if": "You need stability from an established company",
+      "strengths": [
+        "Completely free, no limitations",
+        "Innovative interface with Spaces and Profiles",
+        "Frequent security updates"
+      ],
+      "weaknesses": [
+        "Young team, uncertain future",
+        "Fewer extensions than Chrome",
+        "Less mature ecosystem than Firefox or Chrome"
+      ]
+    }
+  },
+  {
+    "name": "Buddy Punch",
+    "slug": "buddy-punch",
+    "url_fr": "https://tooltrim.com/fr/tool/buddy-punch",
+    "url_en": "https://tooltrim.com/en/tool/buddy-punch",
+    "website": "https://buddypunch.com",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Essai de 14 jours sans carte bancaire ; pas de forfait gratuit permanent.",
+      "paid": "Paiement mensuel : Starter 5,99 $US, Pro 7,99 $US, Advanced 13,99 $US par utilisateur/mois, plus 19 $US/mois par compte. En annuel : 4,99 / 6,99 / 12,99 $US par utilisateur/mois, plus la base. Exemple Starter pour 10 utilisateurs en mensuel : 78,90 $US/mois, hors options."
+    },
+    "description_fr": "Pointage, feuilles de temps et planning pour équipes à horaires variables.",
+    "description_en": "Time clocks, timesheets and scheduling for shift-based teams.",
+    "price_verified_on": "2026-09-26",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Votre équipe saisit encore ses heures manuellement",
+      "avoid_if": "Vous cherchez un simple chronomètre personnel gratuit",
+      "strengths": [
+        "Pointage et feuilles de temps centralisés",
+        "Exports CSV, PDF et Excel selon le rapport",
+        "Planning inclus avec Pro et Advanced"
+      ],
+      "weaknesses": [
+        "19 $US de frais fixes en plus des utilisateurs",
+        "Planning en option sur Starter",
+        "GPS continu en supplément sur Starter et Pro"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "Your team still records working hours manually",
+      "avoid_if": "You need a simple free personal timer",
+      "strengths": [
+        "Centralized time clocks and timesheets",
+        "CSV, PDF and Excel exports depending on report",
+        "Scheduling included with Pro and Advanced"
+      ],
+      "weaknesses": [
+        "$19 base fee on top of user charges",
+        "Scheduling is an add-on on Starter",
+        "Continuous GPS costs extra on Starter and Pro"
+      ]
+    }
+  },
+  {
+    "name": "Harvest",
+    "slug": "harvest",
+    "url_fr": "https://tooltrim.com/fr/tool/harvest",
+    "url_en": "https://tooltrim.com/en/tool/harvest",
+    "website": "https://www.getharvest.com",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 12€/mois environ"
+    },
+    "description_fr": "Suivi du temps, budgets projets et facturation pour équipes et studios.",
+    "description_en": "Time tracking, project budgets, and invoicing for teams and studios.",
+    "verdict_fr": {
+      "keep_if": "Vous facturez des clients à l'heure",
+      "avoid_if": "Vous cherchez une solution gratuite",
+      "strengths": [
+        "Facturation automatisée depuis le temps suivi",
+        "Rapports de rentabilité détaillés par projet",
+        "Suivi des dépenses intégré"
+      ],
+      "weaknesses": [
+        "Abonnement requis, pas de version gratuite",
+        "Tarification complexe selon la taille d'équipe",
+        "Peut être surutilisé pour petit consultant solo"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You bill clients hourly",
+      "avoid_if": "You're looking for a free solution",
+      "strengths": [
+        "Automated invoicing from tracked time",
+        "Detailed project profitability reports",
+        "Integrated expense tracking"
+      ],
+      "weaknesses": [
+        "Subscription required, no free version",
+        "Complex pricing based on team size",
+        "May be overkill for solo consultants"
+      ]
+    }
+  },
+  {
+    "name": "LanguageTool",
+    "slug": "languagetool",
+    "url_fr": "https://tooltrim.com/fr/tool/languagetool",
+    "url_en": "https://tooltrim.com/en/tool/languagetool",
+    "website": "https://languagetool.org",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 5€/mois environ"
+    },
+    "description_fr": "Correction grammaticale, style et orthographe multilingue.",
+    "description_en": "Multilingual grammar, style, and spelling correction.",
+    "verdict_fr": {
+      "keep_if": "Vous écrivez en plusieurs langues",
+      "avoid_if": "Vous avez besoin d'une correction très nuancée en français seulement",
+      "strengths": [
+        "Version gratuite généreuse",
+        "Support de 30+ langues",
+        "Suggestions de reformulation créative"
+      ],
+      "weaknesses": [
+        "Moins précis qu'Antidote pour français professionnel",
+        "Premium nécessaire pour détection complète",
+        "Correction contextuelle moins sophistiquée"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You write in multiple languages",
+      "avoid_if": "You need nuanced French correction only",
+      "strengths": [
+        "Generous free version",
+        "Support for 30+ languages",
+        "Creative rephrasing suggestions"
+      ],
+      "weaknesses": [
+        "Less precise than Antidote for professional French",
+        "Premium needed for full detection",
+        "Contextual correction less sophisticated"
+      ]
+    }
+  },
+  {
+    "name": "Microsoft 365",
+    "slug": "microsoft-365",
+    "url_fr": "https://tooltrim.com/fr/tool/microsoft-365",
+    "url_en": "https://tooltrim.com/en/tool/microsoft-365",
+    "website": "https://www.microsoft.com/microsoft-365",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Aucune offre gratuite complète (Office en ligne limité)",
+      "paid": "Personal à 6,99$/mois (69,99$/an) ; Family (jusqu'à 6 personnes) à 129,99$/an"
+    },
+    "description_fr": "Microsoft 365 aide à gérer signatures, contrats ou documents juridiques.",
+    "description_en": "Microsoft productivity suite: Word, Excel, PowerPoint, Outlook, Teams and more.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez déjà l'écosystème Microsoft (Outlook, Excel)",
+      "avoid_if": "Vous cherchez une suite gratuite complète",
+      "strengths": [
+        "Suite complète et professionnelle",
+        "Collaboration en temps réel fiable",
+        "Copilot IA disponible sur plans payants"
+      ],
+      "weaknesses": [
+        "Coûteux pour petits utilisateurs",
+        "Dépendance envers écosystème Microsoft",
+        "Copilot limité à plans premium"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You already use the Microsoft ecosystem (Outlook, Excel)",
+      "avoid_if": "You want a complete free suite",
+      "strengths": [
+        "Complete, professional suite",
+        "Reliable real-time collaboration",
+        "AI Copilot available on paid plans"
+      ],
+      "weaknesses": [
+        "Expensive for light users",
+        "Lock-in to Microsoft ecosystem",
+        "Copilot limited to premium plans"
+      ]
+    }
+  },
+  {
+    "name": "Perforce",
+    "slug": "perforce",
+    "url_fr": "https://tooltrim.com/fr/tool/perforce",
+    "url_en": "https://tooltrim.com/en/tool/perforce",
+    "website": "https://www.perforce.com",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "description_fr": "Versioning robuste pour gros fichiers, jeux vidéo et pipelines créatifs.",
+    "description_en": "Robust versioning for large files, games, and creative pipelines.",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une grande entreprise avec projets complexes",
+      "avoid_if": "Vous êtes une startup ou PME",
+      "strengths": [
+        "Contrôle de version aux capacités industrielles",
+        "Suite DevOps complète (tests, infra, données)",
+        "Support de 9/10 constructeurs automobiles"
+      ],
+      "weaknesses": [
+        "Très cher, réservé aux entreprises",
+        "Courbe d'apprentissage élevée",
+        "Pas adapté aux startups ou solo developers"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're an enterprise managing complex projects",
+      "avoid_if": "You're a startup or SMB",
+      "strengths": [
+        "Industrial-scale version control",
+        "Complete DevOps suite (testing, infra, data)",
+        "Trusted by 9/10 automotive OEMs"
+      ],
+      "weaknesses": [
+        "Very expensive, reserved for enterprises",
+        "High learning curve",
+        "Not suitable for startups or solo developers"
+      ]
+    }
+  },
+  {
+    "name": "Raycast",
+    "slug": "raycast",
+    "url_fr": "https://tooltrim.com/fr/tool/raycast",
+    "url_en": "https://tooltrim.com/en/tool/raycast",
+    "website": "https://raycast.com",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "10$/mois (Pro)"
+    },
+    "description_fr": "Le lanceur d'applications qui remplace 10 outils.",
+    "description_en": "The application launcher that replaces 10 tools.",
+    "alternatives": [
+      "raycast"
+    ],
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez Mac ou Windows et aimez la productivité au clavier",
+      "avoid_if": "Vous utilisez exclusivement Linux",
+      "strengths": [
+        "Ultra-rapide et performant (architecture native)",
+        "Gratuit complet, sans limitation",
+        "1000+ extensions officielles"
+      ],
+      "weaknesses": [
+        "Limité à Mac et Windows",
+        "Courbe d'apprentissage (clavier d'abord)",
+        "Pro nécessaire pour certaines fonctionnalités avancées"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You use Mac or Windows and love keyboard-driven productivity",
+      "avoid_if": "You use Linux exclusively",
+      "strengths": [
+        "Ultra-fast, native architecture",
+        "Fully free, no limits",
+        "1000+ official extensions"
+      ],
+      "weaknesses": [
+        "Limited to Mac and Windows",
+        "Learning curve (keyboard-first)",
+        "Pro needed for advanced features"
+      ]
+    }
+  },
+  {
+    "name": "Reclaim.ai",
+    "slug": "reclaim",
+    "url_fr": "https://tooltrim.com/fr/tool/reclaim",
+    "url_en": "https://tooltrim.com/en/tool/reclaim",
+    "website": "https://reclaim.ai",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Lite gratuit pour un utilisateur, horizon de planification d’une semaine.",
+      "paid": "Starter 12 USD/siège/mois, Business 18 USD en mensuel. Équivalents annuels affichés : 10 et 15 USD ; Enterprise 22 USD/siège/mois en annuel. Taxes à confirmer, hors promotions."
+    },
+    "description_fr": "Planification automatique des tâches et plages de concentration.",
+    "description_en": "Automatic scheduling for tasks and focus time.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Vous réservez régulièrement du temps pour des tâches prioritaires",
+      "avoid_if": "Votre calendrier est simple et peu sollicité",
+      "strengths": [
+        "Google Calendar et Outlook",
+        "Tâches et temps de concentration réunis"
+      ],
+      "weaknesses": [
+        "Priorités à configurer",
+        "Règles d’automatisation peu portables"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You regularly reserve time for priority tasks",
+      "avoid_if": "Your calendar is simple and lightly used",
+      "strengths": [
+        "Google Calendar and Outlook",
+        "Tasks and focus time together"
+      ],
+      "weaknesses": [
+        "Priorities require setup",
+        "Automation rules are not readily portable"
+      ]
+    }
+  },
+  {
+    "name": "Superwhisper",
+    "slug": "superwhisper",
+    "url_fr": "https://tooltrim.com/fr/tool/superwhisper",
+    "url_en": "https://tooltrim.com/en/tool/superwhisper",
+    "website": "https://superwhisper.com",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Plan gratuit : Dictée vocale dans n'importe quelle app, enregistrement/transcription de réunions, plus de 100 langues, usage illimité des modèles Whisper, contrôle de prompt personnalisé et support email, pour toujours.",
+      "paid": "Dès 7,08 $/mois, plan Pro (yearly)."
+    },
+    "description_fr": "Superwhisper est une dictée vocale IA qui fonctionne hors ligne dans n'importe quelle application, sur Mac, Windows, iOS et Android.",
+    "description_en": "Superwhisper is AI voice dictation that works offline in any app on Mac, Windows, iOS and Android.",
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Tu veux une dictée vocale qui fonctionne dans toutes les apps, y compris les agents de code IA, avec une option hors ligne sur Apple Silicon",
+      "avoid_if": "Tu es sur un Mac Intel et as besoin d'une transcription hors ligne fiable ; les modèles cloud sont recommandés à la place",
+      "strengths": [
+        "Fonctionne hors ligne, et l'offre Free inclut un usage illimité des modèles de transcription Whisper pour toujours",
+        "Une licence à vie à l'achat unique (249,99 $) est proposée comme alternative à un abonnement récurrent"
+      ],
+      "weaknesses": [
+        "La transcription de fichiers audio/vidéo et les modèles IA cloud/locaux illimités nécessitent l'offre payante Pro",
+        "Les modèles hors ligne ne sont décrits comme fonctionnant bien que sur les Mac Apple Silicon, pas sur les Mac Intel"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "You want voice dictation that works across every app, including AI coding agents, with an offline option on Apple Silicon",
+      "avoid_if": "You're on an Intel Mac and need reliable offline transcription; cloud models are recommended instead",
+      "strengths": [
+        "Works offline, and the Free tier includes unlimited use of the Whisper transcription models forever",
+        "A one-time lifetime license ($249.99) is offered as an alternative to a recurring subscription"
+      ],
+      "weaknesses": [
+        "Audio/video file transcription and unlimited cloud/local AI models require the paid Pro tier",
+        "Offline models are described as only running well on Apple Silicon Macs, not Intel Macs"
+      ]
+    }
+  },
+  {
+    "name": "Toggl Track",
+    "slug": "toggl",
+    "url_fr": "https://tooltrim.com/fr/tool/toggl",
+    "url_en": "https://tooltrim.com/en/tool/toggl",
+    "website": "https://toggl.com",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Plan gratuit : Gratuit à vie pour un nombre limité d'utilisateurs, avec chronomètres manuels/temps réel, intégrations calendrier et indicateurs personnels.",
+      "paid": "Dès 6 $/mois, plan Starter."
+    },
+    "description_fr": "Un outil de suivi du temps freemium : chronomètres manuels et temps réel, reporting équipe, taux facturables, dès 6 $/mois.",
+    "description_en": "A freemium time tracking tool with manual and real-time timers, team reporting, and billable rates, free for a limited team size, paid from $6/month.",
+    "alternatives": [
+      "toggl"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu factures du temps à des clients ou as besoin de rapports de temps au niveau équipe, au-delà du suivi de base",
+      "avoid_if": "Tu es seul et n'as besoin que d'un chronomètre personnel simple, sans rapport d'équipe",
+      "strengths": [
+        "Le forfait gratuit à vie couvre le suivi manuel et temps réel sans paiement pour démarrer",
+        "Le forfait Starter en engagement annuel descend à 6 $/mois, peu cher pour les taux facturables et le reporting d'équipe"
+      ],
+      "weaknesses": [
+        "Le forfait gratuit limite le nombre d'utilisateurs, inadapté au-delà d'une toute petite équipe",
+        "Les intégrations Jira, Asana et le SSO demandent le forfait Premium, plus cher"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You bill time to clients or need team-level time reports beyond basic tracking",
+      "avoid_if": "You're a solo user who only needs a simple personal timer with no team reports",
+      "strengths": [
+        "Free forever tier covers manual and real-time tracking with no payment required to start",
+        "Starter plan billed annually drops to $6/month, cheap for billable-rate and team reporting features"
+      ],
+      "weaknesses": [
+        "The free plan caps the number of users, unsuitable beyond a very small team",
+        "Jira and Asana integrations and SSO require the pricier Premium tier"
+      ]
+    }
+  },
+  {
+    "name": "Warp",
+    "slug": "warp",
+    "url_fr": "https://tooltrim.com/fr/tool/warp",
+    "url_en": "https://tooltrim.com/en/tool/warp",
+    "website": "https://www.warp.dev",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Gratuit pour un usage individuel",
+      "paid": "Plan Team à partir de 15$/mois"
+    },
+    "description_fr": "Terminal moderne avec IA intégrée pour développeurs.",
+    "description_en": "Modern terminal with built-in AI for developers.",
+    "verdict_fr": {
+      "keep_if": "Vous êtes développeur cherchant terminal moderne",
+      "avoid_if": "Vous ne touchez jamais à ligne de commande",
+      "strengths": [
+        "Entièrement gratuit et open-source",
+        "Ultra-moderne et rapide (Rust)",
+        "IA intégrée pour auto-complétion"
+      ],
+      "weaknesses": [
+        "Jeune produit (2026)",
+        "Écosystème de shell moins mature que bash seul",
+        "Peut avoir bugs non trouvés"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a developer seeking a modern terminal",
+      "avoid_if": "You never touch the command line",
+      "strengths": [
+        "Completely free and open-source",
+        "Ultra-modern and fast (Rust)",
+        "Built-in AI for autocomplete"
+      ],
+      "weaknesses": [
+        "Young product (2026)",
+        "Shell ecosystem less mature than bash alone",
+        "May have undiscovered bugs"
+      ]
+    }
+  }
+]

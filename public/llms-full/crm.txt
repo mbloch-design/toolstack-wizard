@@ -1,0 +1,747 @@
+# ToolTrim tool catalogue — crm
+# Generated from src/data/tools_index.json
+# Family: crm (17 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "ActiveCampaign",
+    "slug": "activecampaign",
+    "url_fr": "https://tooltrim.com/fr/tool/activecampaign",
+    "url_en": "https://tooltrim.com/en/tool/activecampaign",
+    "website": "https://www.activecampaign.com",
+    "category": "crm",
+    "pricing": {
+      "free": "Essai de 14 jours sans carte bancaire, limité à 100 contacts et 100 emails envoyés. Aucun forfait gratuit permanent.",
+      "paid": "Pour 1 000 contacts, les tarifs affichés commencent à 15 $US/mois pour Starter, 49 $US/mois pour Plus et 79 $US/mois pour Pro, avec facturation annuelle. Le prix évolue selon le nombre de contacts, le forfait, le pays et les options."
+    },
+    "description_fr": "Email marketing et automatisation des parcours clients, avec segmentation et options CRM.",
+    "description_en": "Email marketing and customer journey automation, with segmentation and optional CRM capabilities.",
+    "price_verified_on": "2026-09-26",
+    "verdict_fr": {
+      "keep_if": "Vous envoyez des campagnes régulières et avez besoin de parcours conditionnels selon les comportements ou attributs des contacts",
+      "avoid_if": "Vous voulez un forfait gratuit durable ou votre liste dépasse les limites de l’essai sans budget établi",
+      "strengths": [
+        "Automatisations conditionnelles pour adapter les parcours aux actions des contacts",
+        "Segmentation et campagnes email réunies dans le même environnement",
+        "Plus de 1 000 intégrations annoncées par l’éditeur"
+      ],
+      "weaknesses": [
+        "Aucun forfait gratuit permanent ; l’essai est limité à 100 contacts et 100 emails envoyés",
+        "Le prix augmente avec le volume de contacts et les options retenues",
+        "Le forfait Starter limite la segmentation et à cinq actions par automatisation"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You send campaigns regularly and need conditional journeys based on contact behavior or attributes",
+      "avoid_if": "You need a lasting free plan, or the trial limits do not fit and you have no paid-tool budget",
+      "strengths": [
+        "Conditional automations adapt customer journeys to contact behavior",
+        "Email campaigns and segmentation in one platform",
+        "More than 1,000 integrations, according to the vendor"
+      ],
+      "weaknesses": [
+        "No permanent free plan; the trial is limited to 100 contacts and 100 emails sent",
+        "Pricing increases with contact volume and selected add-ons",
+        "Starter limits segmentation and allows five actions per automation"
+      ]
+    }
+  },
+  {
+    "name": "Attio",
+    "slug": "attio",
+    "url_fr": "https://tooltrim.com/fr/tool/attio",
+    "url_en": "https://tooltrim.com/en/tool/attio",
+    "website": "https://attio.com",
+    "category": "crm",
+    "pricing": {
+      "free": "Gratuit jusqu'à 3 sièges, avec automatisations et types d'objets limités.",
+      "paid": "Free: 0 $/utilisateur/mois ; Plus: 44 $ mensuel ou 35 $/utilisateur/mois annuel ; Pro: 99 $ mensuel ou 79 $/utilisateur/mois annuel ; Enterprise: Sur devis, facturation annuelle"
+    },
+    "description_fr": "CRM moderne, orienté données : modèle de données flexible, synchronisation d'emails/agenda et automatisations, pensé pour les équipes go-to-market.",
+    "description_en": "Modern, data-focused CRM: flexible data model, email/calendar sync and automation, designed for go-to-market teams.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous voulez un CRM flexible qui s'adapte à votre modèle de données",
+      "avoid_if": "Vous cherchez un CRM gratuit pour une grande équipe",
+      "strengths": [
+        "Modèle de données très flexible",
+        "Interface moderne et rapide à prendre en main",
+        "Automatisations et synchronisation email/agenda"
+      ],
+      "weaknesses": [
+        "Coût réel variable selon l'usage (crédits, enrichissement, IA)",
+        "Écosystème d'intégrations plus jeune que les CRM historiques",
+        "Gratuit limité à quelques sièges"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a flexible CRM that adapts to your data model",
+      "avoid_if": "You need a free CRM for a large team",
+      "strengths": [
+        "Very flexible data model",
+        "Modern, fast interface",
+        "Automations and email/calendar sync"
+      ],
+      "weaknesses": [
+        "Real cost varies with usage (credits, enrichment, AI)",
+        "Younger integration ecosystem than legacy CRMs",
+        "Free tier limited to a few seats"
+      ]
+    }
+  },
+  {
+    "name": "Bloom",
+    "slug": "bloom-crm",
+    "url_fr": "https://tooltrim.com/fr/tool/bloom-crm",
+    "url_en": "https://tooltrim.com/en/tool/bloom-crm",
+    "website": "https://bloom.io",
+    "category": "crm",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 14 $/mois, plan Starter (Side Jobs)."
+    },
+    "description_fr": "CRM et portail client pour freelances créatifs, qui réunit prospects, contrats, facturation, planification et galeries clients dans un seul flux de travail.",
+    "description_en": "CRM and client portal for creative freelancers, combining leads, contracts, invoicing, scheduling and client galleries in one workflow.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "À garder si tu es une freelance créative solo qui veut gérer prospects, contrats, facturation et livraison dans un seul portail plutôt que d'assembler des outils séparés",
+      "avoid_if": "À éviter si tu as besoin de plus de 3 projets actifs ou de plus d'1 workflow avec un petit budget, car les plafonds de Starter poussent vite vers Standard",
+      "strengths": [
+        "Réunit prospects, contrats, facturation et galeries clients dans un seul portail, au lieu de plusieurs outils séparés",
+        "Le plan Standard retire les frais de traitement des paiements que Starter facture sur les transactions par carte ou ACH"
+      ],
+      "weaknesses": [
+        "Les plafonds du plan Starter (3 projets, 1 workflow, 1 automatisation) sont assez serrés pour ne convenir qu'à une activité très légère à côté",
+        "Pas de plan gratuit permanent, seulement un essai de 7 jours avant le début de la facturation"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "Keep if you're a solo creative freelancer who wants leads, contracts, invoicing and delivery in one portal instead of stitching together separate tools",
+      "avoid_if": "Avoid if you need more than 3 active projects or more than 1 workflow on a budget, since Starter's caps push you to Standard quickly",
+      "strengths": [
+        "Combines leads, contracts, invoicing and client galleries in one portal instead of several separate tools",
+        "Standard tier removes the payment processing fee that Starter charges on card/ACH transactions"
+      ],
+      "weaknesses": [
+        "Starter tier's caps (3 projects, 1 workflow, 1 automation) are tight enough to only suit very light side-job use",
+        "No permanent free plan, only a 7-day trial before billing starts"
+      ]
+    }
+  },
+  {
+    "name": "Capsule",
+    "slug": "capsule",
+    "url_fr": "https://tooltrim.com/fr/tool/capsule",
+    "url_en": "https://tooltrim.com/en/tool/capsule",
+    "website": "https://capsulecrm.com",
+    "category": "crm",
+    "pricing": "Gratuit jusqu'à 250 contacts (2 utilisateurs) ; Starter à 18$/utilisateur/mois ; Growth et Ultimate (jusqu'à 72$/mois) au-delà.",
+    "description_fr": "CRM simple pour petites entreprises, avec plan gratuit jusqu'à 250 contacts.",
+    "description_en": "Simple CRM for small businesses, with a free plan up to 250 contacts.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous gérez une petite équipe ou une freelance avec une structure de vente simple",
+      "avoid_if": "Vous avez besoin d'une solution multilingue ou d'une localisation poussée",
+      "strengths": [
+        "Interface conviviale et facile à mettre en place",
+        "Plan gratuit utilisable à titre permanent",
+        "Email intégré nativement dans le CRM"
+      ],
+      "weaknesses": [
+        "Les plans Ultimate demandent de contacter le support pour les tarifs",
+        "Limites strictes sur le plan gratuit (2 utilisateurs seulement)",
+        "Moins de fonctionnalités haut de gamme qu'un Salesforce"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage a small team or are a solo freelancer with straightforward sales",
+      "avoid_if": "You need advanced multi-language or localization features",
+      "strengths": [
+        "User-friendly interface with quick setup",
+        "Free plan available permanently",
+        "Email built directly into the CRM"
+      ],
+      "weaknesses": [
+        "Ultimate plans require contacting sales for pricing",
+        "Free plan has strict limits (2 users only)",
+        "Fewer advanced features compared to Salesforce"
+      ]
+    }
+  },
+  {
+    "name": "Close",
+    "slug": "close",
+    "url_fr": "https://tooltrim.com/fr/tool/close",
+    "url_en": "https://tooltrim.com/en/tool/close",
+    "website": "https://close.com",
+    "category": "crm",
+    "pricing": "Solo à 9$/mois ; Essentials à 35$/mois (appels, SMS et email illimités) ; Growth à 99$/mois (automatisation, Power Dialer, IA). Budgéter 150-250$/utilisateur avec les add-ons d'appel.",
+    "description_fr": "CRM commercial avec appels, SMS et email intégrés — sans outils externes.",
+    "description_en": "Sales CRM with built-in calling, SMS, and email — no external tools.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous gérez une équipe commerciale ayant besoin d'appels intégrés au CRM",
+      "avoid_if": "Votre budget n'autorise que des micro-forfaits",
+      "strengths": [
+        "Communications (appels, SMS, email) intégrées nativement",
+        "Assistant IA pour la prospection et la gestion des ventes",
+        "Workflows d'automation puissants"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit",
+        "Coûts d'utilisation supplémentaires pour les appels internationaux et les numéros de téléphone",
+        "Apprentissage de l'interface peut être lent pour les débutants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage a sales team needing built-in calling in the CRM",
+      "avoid_if": "Your budget allows only micro-plans",
+      "strengths": [
+        "Communications (calls, SMS, email) natively integrated",
+        "AI assistant for prospecting and sales management",
+        "Powerful workflow automation"
+      ],
+      "weaknesses": [
+        "No free plan",
+        "Additional usage costs for international calls and phone numbers",
+        "Interface can have a steep learning curve"
+      ]
+    }
+  },
+  {
+    "name": "Dubsado",
+    "slug": "dubsado",
+    "url_fr": "https://tooltrim.com/fr/tool/dubsado",
+    "url_en": "https://tooltrim.com/en/tool/dubsado",
+    "website": "https://www.dubsado.com",
+    "category": "crm",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 21 jours.",
+      "paid": "Dès 43,75 $/mois, plan Premier."
+    },
+    "description_fr": "Dubsado est un CRM pour freelances qui automatise l'administratif client, la facturation et les propositions grâce à des workflows conditionnels sur son plan Premier.",
+    "description_en": "Dubsado is a CRM for freelancers that automates client admin, invoicing and proposals with conditional workflows on its Premier plan.",
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu veux des workflows conditionnels pour automatiser contrats, factures et relances pour tes clients en freelance",
+      "avoid_if": "Tu as seulement besoin de capture de prospects et de facturation basiques, car Starter exclut l'automatisation de workflows qui justifie le prix de Premier",
+      "strengths": [
+        "Les deux plans incluent des projets et clients illimités, sans plafond par nombre de projets contrairement à certains concurrents",
+        "L'essai de 21 jours donne un accès complet à Premier, ce qui permet de tester les workflows automatisés avant de payer pour eux"
+      ],
+      "weaknesses": [
+        "Starter, le plan le moins cher, retire les workflows automatisés qui sont le principal argument de vente de Dubsado",
+        "Aucune option de facturation mensuelle n'existe ; les deux plans sont des engagements annuels uniquement"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You want conditional workflows to automate contracts, invoices and follow-ups for freelance clients",
+      "avoid_if": "You only need basic lead capture and invoicing, since Starter excludes the workflow automation that justifies Premier's price",
+      "strengths": [
+        "Both plans include unlimited projects and clients, not capped by project count like some competitors",
+        "The 21-day trial grants full Premier access, so a buyer can test the automated workflows before paying for them"
+      ],
+      "weaknesses": [
+        "Starter, the cheaper plan, strips out the automated workflows that are Dubsado's main selling point",
+        "No monthly billing option exists; both plans are annual-only commitments"
+      ]
+    }
+  },
+  {
+    "name": "folk",
+    "slug": "folk",
+    "url_fr": "https://tooltrim.com/fr/tool/folk",
+    "url_en": "https://tooltrim.com/en/tool/folk",
+    "website": "https://folk.app",
+    "category": "crm",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai de 14 jours avec fonctionnalités Premium.",
+      "paid": "Standard 30$/utilisateur/mois (24$ en annuel) ; Premium 60$ (48$ annuel) ; Custom à partir de 100$ (80$ annuel)."
+    },
+    "description_fr": "CRM léger et collaboratif pour relations (recrutement, ventes, partenariats), avec enrichissement de contacts intégré.",
+    "description_en": "Lightweight, collaborative CRM for relationships (recruiting, sales, partnerships), with built-in contact enrichment.",
+    "price_verified_on": "2026-06-27",
+    "verdict_fr": {
+      "keep_if": "Vous prospectiez beaucoup sur LinkedIn",
+      "avoid_if": "Vous ne faites pas de vente complexe B2B",
+      "strengths": [
+        "Intégration LinkedIn exceptionnelle pour prospection",
+        "IA performante pour suivis automatisés et enrichissement",
+        "Capture multi-canaux (email, LinkedIn, WhatsApp)"
+      ],
+      "weaknesses": [
+        "Setup initial complexe pour configurar tous les canaux",
+        "Interface peut être dense pour débutants",
+        "Fonctionnalités avancées nécessitent plans payants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You do heavy LinkedIn prospecting",
+      "avoid_if": "You don't do complex B2B selling",
+      "strengths": [
+        "Exceptional LinkedIn integration for prospecting",
+        "Powerful AI for automated follow-ups and enrichment",
+        "Multi-channel capture (email, LinkedIn, WhatsApp)"
+      ],
+      "weaknesses": [
+        "Complex initial setup to configure all channels",
+        "Interface can be dense for beginners",
+        "Advanced features require paid plans"
+      ]
+    }
+  },
+  {
+    "name": "HoneyBook",
+    "slug": "honeybook",
+    "url_fr": "https://tooltrim.com/fr/tool/honeybook",
+    "url_en": "https://tooltrim.com/en/tool/honeybook",
+    "website": "https://www.honeybook.com",
+    "category": "crm",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 29 $/mois, plan Starter."
+    },
+    "description_fr": "Plateforme de flux client qui combine propositions, contrats, facturation et paiements en ligne, avec un essai de 30 jours.",
+    "description_en": "Client workflow platform combining proposals, contracts, invoicing, and online payments, with a 30-day trial.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu es consultant indépendant ou freelance et tu veux propositions, contrats, facturation et paiements dans un seul flux",
+      "avoid_if": "Tu as besoin de plus d'un utilisateur sans passer au plan supérieur, ou tu veux éviter des frais de traitement de paiement séparés",
+      "strengths": [
+        "Combine propositions, contrats, facturation et paiements dans un seul flux au lieu d'outils séparés",
+        "Assistant IA intégré dès le plan d'entrée Starter"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit ; seulement un essai de 30 jours avant le début de la facturation",
+        "Le plan Starter est mono-utilisateur, donc un second membre d'équipe force le passage à Essentials"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You're a solo consultant or freelancer who wants proposals, contracts, invoicing, and payments in one workflow",
+      "avoid_if": "You need more than one user without upgrading past the entry plan, or want to avoid separate payment processing fees",
+      "strengths": [
+        "Combines proposals, contracts, invoicing, and payments in one workflow instead of separate tools",
+        "Built-in AI assistant included from the entry Starter plan"
+      ],
+      "weaknesses": [
+        "No free plan; only a 30-day trial before billing starts",
+        "Starter plan is single-user, so a second team member forces an upgrade to Essentials"
+      ]
+    }
+  },
+  {
+    "name": "HubSpot",
+    "slug": "hubspot",
+    "url_fr": "https://tooltrim.com/fr/tool/hubspot",
+    "url_en": "https://tooltrim.com/en/tool/hubspot",
+    "website": "https://hubspot.com",
+    "category": "crm",
+    "pricing": {
+      "free": "CRM de base gratuit",
+      "paid": "Starter à partir de 20$/siège/mois (promos fréquentes à 9-15$ la 1ère année) ; Professional et Enterprise sur devis selon les hubs"
+    },
+    "description_fr": "CRM tout-en-un avec marketing, vente et service client, plan gratuit généreux pour démarrer.",
+    "description_en": "All-in-one CRM with marketing, sales, and customer service, generous free plan to start.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez plateforme CRM complète pour croissance",
+      "avoid_if": "Vous voulez juste CRM avec rien d'autre",
+      "strengths": [
+        "Vraiment tout-en-un : CRM, marketing, vente, support",
+        "Free tier très généreux pour démarrer",
+        "IA intégrée pour automations et insights"
+      ],
+      "weaknesses": [
+        "Coûts augmentent rapidement avec scale",
+        "Peut être complexe pour très petite équipe",
+        "Certaines features avancées nécessitent plans payants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're looking for a complete CRM platform for growth",
+      "avoid_if": "You just want CRM with nothing else",
+      "strengths": [
+        "Truly all-in-one: CRM, marketing, sales, support",
+        "Very generous free tier to start",
+        "Built-in AI for automations and insights"
+      ],
+      "weaknesses": [
+        "Costs increase quickly with scale",
+        "Can be complex for very small teams",
+        "Some advanced features require paid plans"
+      ]
+    }
+  },
+  {
+    "name": "Insightly",
+    "slug": "insightly",
+    "url_fr": "https://tooltrim.com/fr/tool/insightly",
+    "url_en": "https://tooltrim.com/en/tool/insightly",
+    "website": "https://insightly.com",
+    "category": "crm",
+    "pricing": "Plus à 29$/utilisateur/mois (facturation annuelle obligatoire) ; Professional à 49$ ; Enterprise à 99$. Coût réel souvent 2-3x plus élevé avec les fonctionnalités additionnelles.",
+    "description_fr": "CRM avec gestion de projet native intégrée — les opportunités gagnées deviennent des projets.",
+    "description_en": "CRM with native project management built in — won opportunities turn into projects.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous gérez simultanément ventes, projets et support client",
+      "avoid_if": "Vous cherchez un plan gratuit ou très bon marché",
+      "strengths": [
+        "Plateforme unifiée : ventes, projets, support, marketing en un seul lieu",
+        "AI Copilot pour automatiser les tâches répétitives",
+        "AppConnect permet de créer des workflows sans code"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit (Essai limité à 14 jours)",
+        "Tarification peut monter vite avec de nombreux utilisateurs",
+        "Moins de maturité qu'un Salesforce pour personnalisations extrêmes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage sales, projects, and customer support simultaneously",
+      "avoid_if": "You want a free or very cheap plan",
+      "strengths": [
+        "Unified platform: sales, projects, support, marketing in one place",
+        "AI Copilot automates repetitive tasks",
+        "AppConnect lets you create workflows without code"
+      ],
+      "weaknesses": [
+        "No free plan (trial limited to 14 days)",
+        "Pricing can escalate with many users",
+        "Less mature than Salesforce for extreme customization"
+      ]
+    }
+  },
+  {
+    "name": "Pipedrive",
+    "slug": "pipedrive",
+    "url_fr": "https://tooltrim.com/fr/tool/pipedrive",
+    "url_en": "https://tooltrim.com/en/tool/pipedrive",
+    "website": "https://pipedrive.com",
+    "category": "crm",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Lite à 14 € HT par utilisateur et par mois, facturé à l'année (168 € par utilisateur et par an) ; Growth 39 €, Premium 59 €, Ultimate 79 €. Essai de 14 jours."
+    },
+    "description_fr": "CRM simple d’utilisation pour les ventes.",
+    "description_en": "Easy-to-use CRM for sales.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous gérez une équipe de vente avec un processus d'entonnoir classique",
+      "avoid_if": "Vous cherchez un CRM gratuit",
+      "strengths": [
+        "Pipeline visuel très intuitif et efficace",
+        "Automatisations natives pour le suivi du cycle de vente",
+        "Intégrations email et calendrier transparentes"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite permanente",
+        "Tarifs plus élevés aux niveaux supérieurs",
+        "Courbe d'apprentissage pour customiser le pipeline"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage a sales team with a classic funnel process",
+      "avoid_if": "You're looking for a free CRM",
+      "strengths": [
+        "Very intuitive and effective visual pipeline",
+        "Native automations for sales cycle tracking",
+        "Seamless email and calendar integrations"
+      ],
+      "weaknesses": [
+        "No permanent free version",
+        "Higher pricing at upper tiers",
+        "Learning curve for pipeline customization"
+      ]
+    }
+  },
+  {
+    "name": "Salesflare",
+    "slug": "salesflare",
+    "url_fr": "https://tooltrim.com/fr/tool/salesflare",
+    "url_en": "https://tooltrim.com/en/tool/salesflare",
+    "website": "https://salesflare.com",
+    "category": "crm",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Growth à 29 $ ou 29 € par utilisateur et par mois en annuel (39 $ ou 39 € en mensuel)."
+    },
+    "description_fr": "CRM pour PME vendant en B2B.",
+    "description_en": "CRM for SMEs selling in B2B.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Votre équipe passe trop de temps à saisir manuellement des données CRM",
+      "avoid_if": "Vous cherchez un CRM très bon marché ou gratuit",
+      "strengths": [
+        "Automatisation aggressive de la collecte de données client",
+        "Intégration directe dans le sidebar Google Workspace/Office 365",
+        "Sidebar intégré pour un workflow naturel"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite permanente",
+        "Prix plus élevé que certains concurrents",
+        "Moins flexible pour les workflows très personnalisés"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your team spends too much time manually entering CRM data",
+      "avoid_if": "You're looking for a very budget or free CRM",
+      "strengths": [
+        "Aggressive automation of customer data collection",
+        "Direct integration into Google Workspace/Office 365 sidebar",
+        "Integrated sidebar for natural workflow"
+      ],
+      "weaknesses": [
+        "No permanent free version",
+        "Higher price than some competitors",
+        "Less flexible for highly customized workflows"
+      ]
+    }
+  },
+  {
+    "name": "Salesforce",
+    "slug": "salesforce",
+    "url_fr": "https://tooltrim.com/fr/tool/salesforce",
+    "url_en": "https://tooltrim.com/en/tool/salesforce",
+    "website": "https://salesforce.com",
+    "category": "crm",
+    "pricing": {
+      "free": "Salesforce Free Suite : CRM gratuit pour 2 utilisateurs maximum, sans carte bancaire.",
+      "paid": "Starter Suite à 25 $ ou 25 € par utilisateur et par mois, facturé mensuellement ou annuellement."
+    },
+    "description_fr": "Logiciel de gestion de la relation client et solutions cloud.",
+    "description_en": "Customer relationship management software and cloud solutions.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une équipe de ventes structurée et vous avez besoin d'une source unique pour les leads et contrats",
+      "avoid_if": "Vous êtes un freelance ou une petite équipe avec un budget limité",
+      "strengths": [
+        "Ecosystème très vaste et mature avec des décennies de mise à jour",
+        "Flexibilité maximale grâce aux modules et extensions",
+        "Support professionnel et accès à des consultants certifiés"
+      ],
+      "weaknesses": [
+        "Coûts élevés, surtout pour les petites équipes",
+        "Courbe d'apprentissage importante ; besoin de formation",
+        "Interface parfois lourde et non intuitive"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage structured sales teams and need a single source of truth for leads and contracts",
+      "avoid_if": "You're a freelancer or small team with tight budgets",
+      "strengths": [
+        "Vast, mature ecosystem with decades of updates",
+        "Maximum flexibility through modules and extensions",
+        "Professional support and certified consultant access"
+      ],
+      "weaknesses": [
+        "High costs, especially for small teams",
+        "Steep learning curve; training required",
+        "Interface can be heavy and non-intuitive"
+      ]
+    }
+  },
+  {
+    "name": "Sellsy",
+    "slug": "sellsy",
+    "url_fr": "https://tooltrim.com/fr/tool/sellsy",
+    "url_en": "https://tooltrim.com/en/tool/sellsy",
+    "website": "https://go.sellsy.com",
+    "category": "crm",
+    "pricing": {
+      "free": "Essai 15 jours (pas de version gratuite)",
+      "paid": "29€ HT/utilisateur/mois (minimum 2 utilisateurs = 58€/mois)"
+    },
+    "description_fr": "La suite CRM + Facturation française tout-en-un.",
+    "description_en": "The French all-in-one CRM + Invoicing suite.",
+    "alternatives": [
+      "indy"
+    ],
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous êtes agence/prestataire de services avec équipe",
+      "avoid_if": "Vous avez besoin d'un CRM très avancé (meilleur Salesforce/HubSpot)",
+      "strengths": [
+        "Suite française entièrement intégrée (CRM + facturation + projets)",
+        "Automatisations puissantes (workflows)",
+        "Tarification à la carte par module"
+      ],
+      "weaknesses": [
+        "Tarification par utilisateur élevée pour petites équipes",
+        "CRM moins puissant que Salesforce/HubSpot",
+        "Interface parfois complexe pour débutants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're an agency or service provider with a team",
+      "avoid_if": "You need very advanced CRM (better: Salesforce/HubSpot)",
+      "strengths": [
+        "Fully integrated French suite (CRM + invoicing + projects)",
+        "Powerful automation (workflows)",
+        "À la carte pricing per module"
+      ],
+      "weaknesses": [
+        "Per-user pricing high for small teams",
+        "CRM less powerful than Salesforce/HubSpot",
+        "Interface sometimes complex for beginners"
+      ]
+    }
+  },
+  {
+    "name": "Loyzia",
+    "slug": "loyzia",
+    "url_fr": "https://tooltrim.com/fr/tool/loyzia",
+    "url_en": "https://tooltrim.com/en/tool/loyzia",
+    "website": "https://loyzia.com/",
+    "category": "crm",
+    "pricing": {
+      "free": "Essai Pro de 14 jours sans carte bancaire",
+      "paid": "Starter 29 €/mois, Pro 59 €/mois, Business 129 €/mois"
+    },
+    "description_fr": "Fidélité Wallet, CRM et avis Google pour les commerces de proximité.",
+    "description_en": "Wallet loyalty, CRM and Google reviews for local businesses.",
+    "price_verified_on": "2026-09-10",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Vous exploitez un commerce physique avec des visites récurrentes",
+      "avoid_if": "Votre activité est uniquement en ligne ou repose sur des achats très peu fréquents",
+      "strengths": [
+        "Aucune application à installer côté client",
+        "Fidélité, CRM et avis Google réunis",
+        "Configuration guidée des cartes et QR codes"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit permanent",
+        "Les campagnes push et exports commencent au plan Pro",
+        "Les mini-jeux et le multi-site avancé exigent Business"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run a physical business with recurring customer visits",
+      "avoid_if": "Your business is online-only or purchases are very infrequent",
+      "strengths": [
+        "No customer app to install",
+        "Loyalty, CRM and Google reviews in one product",
+        "Guided card and QR-code setup"
+      ],
+      "weaknesses": [
+        "No permanent free plan",
+        "Push campaigns and exports start with Pro",
+        "Mini-games and advanced multi-site features require Business"
+      ]
+    }
+  },
+  {
+    "name": "Charik",
+    "slug": "charik",
+    "url_fr": "https://tooltrim.com/fr/tool/charik",
+    "url_en": "https://tooltrim.com/en/tool/charik",
+    "website": "https://www.charik.app/",
+    "category": "crm",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent ; essai 7 jours sans carte, limité à 10 utilisateurs et 100 contacts/sociétés/deals",
+      "paid": "Charik 17 à 25 €HT/utilisateur/mois, Charik Pro 58 €HT/utilisateur/mois (engagement annuel), Charik Entreprise à partir de 460 €HT/mois (10+ utilisateurs, sur devis)"
+    },
+    "description_fr": "CRM français avec enrichissement de prospects et recherche ICP, tarif fixe sans crédits.",
+    "description_en": "French CRM with prospect enrichment and ICP search, flat pricing with no credit system.",
+    "price_verified_on": "2026-09-03",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu es une startup, TPE ou PME française qui veut un CRM et la prospection dans le même outil",
+      "avoid_if": "Tu veux tester le plan Pro sans engagement annuel : seul le plan Charik de base a une option mensuelle",
+      "strengths": [
+        "Tarif fixe sans système de crédits, enrichissement illimité sur le plan Pro",
+        "Base de plus de 5 millions d'entreprises françaises pour la recherche ICP",
+        "Export de données en CSV/JSON explicitement documenté, au-delà du droit RGPD générique"
+      ],
+      "weaknesses": [
+        "Plan Pro disponible en engagement annuel uniquement, pas de flexibilité mensuelle",
+        "Pas de plan gratuit permanent, seulement un essai de 7 jours",
+        "Écosystème d'intégrations plus étroit que des CRM généralistes globaux comme HubSpot"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You're a French startup, small business or mid-sized company that wants CRM and prospecting in one tool",
+      "avoid_if": "You want to try the Pro plan without an annual commitment: only the base Charik plan has a monthly option",
+      "strengths": [
+        "Flat pricing with no credit system, unlimited enrichment on the Pro plan",
+        "Database of over 5 million French companies for ICP search",
+        "CSV/JSON data export explicitly documented, beyond the generic GDPR right"
+      ],
+      "weaknesses": [
+        "Pro plan available with annual commitment only, no monthly flexibility",
+        "No permanent free plan, only a 7-day trial",
+        "Narrower integration ecosystem than global generalist CRMs like HubSpot"
+      ]
+    }
+  },
+  {
+    "name": "EngageBay",
+    "slug": "engagebay",
+    "url_fr": "https://tooltrim.com/fr/tool/engagebay",
+    "url_en": "https://tooltrim.com/en/tool/engagebay",
+    "website": "https://www.engagebay.com/",
+    "category": "crm",
+    "pricing": {
+      "free": "All-in-One Free : 250 contacts.",
+      "paid": "All-in-One, engagement annuel : Basic 13,79, Growth 59,79 et Pro 110,39 USD/utilisateur/mois équivalent. Taxes à confirmer."
+    },
+    "description_fr": "CRM, email marketing et support client réunis pour les petites équipes.",
+    "description_en": "CRM, email marketing and customer support in one platform for small teams.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Vous souhaitez regrouper contacts, relances et support dans une petite équipe",
+      "avoid_if": "Un CRM existant répond déjà au besoin ou vos automatisations sont très spécifiques",
+      "strengths": [
+        "CRM, marketing et support dans une même suite",
+        "Offre gratuite pour démarrer avec une petite base",
+        "Import et export CSV des contacts documentés"
+      ],
+      "weaknesses": [
+        "Prix par utilisateur et quotas de contacts à anticiper",
+        "Automatisations avancées réservées aux offres supérieures",
+        "Migration des historiques et automatisations à vérifier séparément"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "Your small team wants to consolidate contacts, follow-ups and support",
+      "avoid_if": "An existing CRM already fits or your automations are highly specialized",
+      "strengths": [
+        "CRM, marketing and support in one suite",
+        "Free plan for a small initial database",
+        "Documented CSV contact import and export"
+      ],
+      "weaknesses": [
+        "Account for per-user prices and contact caps",
+        "Advanced automation requires higher tiers",
+        "Verify history and automation migration separately"
+      ]
+    }
+  }
+]

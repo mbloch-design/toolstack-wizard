@@ -1,0 +1,1145 @@
+# ToolTrim tool catalogue — automation
+# Generated from src/data/tools_index.json
+# Family: automation (27 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Activepieces",
+    "slug": "activepieces",
+    "url_fr": "https://tooltrim.com/fr/tool/activepieces",
+    "url_en": "https://tooltrim.com/en/tool/activepieces",
+    "website": "https://activepieces.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Gratuit (open-source, self-hosted)",
+      "paid": "Cloud à partir de 0$/mois (plan gratuit)"
+    },
+    "description_fr": "Automatisation open-source alternative à Zapier.",
+    "description_en": "Open-source automation alternative to Zapier.",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez une plateforme open-source que vous pouvez auto-héberger",
+      "avoid_if": "Vous préférez un SaaS entièrement managé sans responsabilité technique",
+      "strengths": [
+        "Entièrement open-source et auto-hébergeable",
+        "Modèle pay-per-execution : transparence et scalabilité",
+        "700+ intégrations et agents d'IA natifs"
+      ],
+      "weaknesses": [
+        "Tier gratuit cloud moins complet que les concurrents",
+        "Nécessite expertise technique pour auto-hébergement",
+        "Communauté plus petite que Zapier ou Make"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want an open-source automation platform you can self-host",
+      "avoid_if": "You prefer fully managed SaaS with no DevOps overhead",
+      "strengths": [
+        "Fully open-source and self-hostable",
+        "Pay-per-execution model ensures cost predictability",
+        "700+ integrations and native AI agents"
+      ],
+      "weaknesses": [
+        "Cloud free tier has fewer features than competitors",
+        "Self-hosting requires technical expertise",
+        "Smaller community compared to Zapier/Make"
+      ]
+    }
+  },
+  {
+    "name": "Albato",
+    "slug": "albato",
+    "url_fr": "https://tooltrim.com/fr/tool/albato",
+    "url_en": "https://tooltrim.com/en/tool/albato",
+    "website": "https://albato.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Free : 5 automatisations actives, 2 étapes par automatisation, 100 transactions et connexions illimitées.",
+      "paid": "Free: 0 $ : 100 transactions ; Pro: 22 $/mois ou 15 $/mois avec facturation annuelle pour 1 000 transactions ; Teams: 93 $/mois ou 65 $/mois avec facturation annuelle, 5 sièges et 5 000 transactions, annoncé prochainement ; Custom: Sur devis"
+    },
+    "description_fr": "Plateforme d'automatisation no-code qui relie plus de 1 000 applications, construit des scénarios multi-étapes et propose un copilote ainsi que des agents IA.",
+    "description_en": "No-code automation platform connecting more than 1,000 apps, building multi-step workflows and offering an AI copilot and agents.",
+    "price_verified_on": "2026-09-02",
+    "verdict_fr": {
+      "keep_if": "Vous voulez automatiser directement vos outils sans coder",
+      "avoid_if": "Vos scénarios dépassent souvent leur forfait de transactions",
+      "strengths": [
+        "Plan gratuit sans limite de durée",
+        "Plus de 1 000 intégrations",
+        "Scénarios et étapes illimités sur Pro"
+      ],
+      "weaknesses": [
+        "Le nouveau modèle tarifaire sépare plan et volume de transactions",
+        "Les transactions supplémentaires coûtent plus cher",
+        "Teams est encore annoncé comme prochainement disponible"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want to automate your tools directly without writing code",
+      "avoid_if": "Your workflows regularly exceed their transaction allowance",
+      "strengths": [
+        "A free plan with no time limit",
+        "More than 1,000 integrations",
+        "Unlimited workflows and steps on Pro"
+      ],
+      "weaknesses": [
+        "The new pricing model separates plan and transaction volume",
+        "Extra transactions cost more",
+        "Teams is still listed as coming soon"
+      ]
+    }
+  },
+  {
+    "name": "Base44",
+    "slug": "base44",
+    "url_fr": "https://tooltrim.com/fr/tool/base44",
+    "url_en": "https://tooltrim.com/en/tool/base44",
+    "website": "https://base44.pxf.io/c/6936943/2049275/25619?trafcat=base",
+    "category": "automation",
+    "pricing": {
+      "free": "Plan gratuit : 25 crédits de messages IA et 100 crédits d'intégration par mois, jusqu'à 5 apps, avec authentification et base de données incluses.",
+      "paid": "Dès 12,80 $/mois, plan Starter."
+    },
+    "description_fr": "Un outil IA qui construit des applications complètes, connexion et base de données incluses, à partir d'un prompt, sans écrire de code.",
+    "description_en": "An AI tool that builds complete apps, including login and a database, from a prompt, without writing code.",
+    "alternatives": [
+      "make"
+    ],
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu veux une app fonctionnelle avec connexion et base de données à partir d'un prompt, sans embaucher de développeur",
+      "avoid_if": "Tu as besoin de plus de 25 messages IA par mois sans payer, ou tu veux éviter une plateforme détenue par Wix",
+      "strengths": [
+        "L'authentification et la base de données sont incluses par défaut, pas vendues comme options séparées",
+        "L'édition de code dans l'app et la connexion GitHub sur les plans payants permettent de récupérer le code généré ailleurs"
+      ],
+      "weaknesses": [
+        "Les 25 messages IA mensuels du plan gratuit s'épuisent vite dès qu'on itère sur une app",
+        "Désormais détenu par Wix, ce qui change qui contrôle la feuille de route et les prix du produit à long terme"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You want a working app with login and a database from a prompt, without hiring a developer",
+      "avoid_if": "You need more than 25 AI messages a month without paying, or you want to avoid a Wix-owned platform",
+      "strengths": [
+        "Authentication and a database are included by default, not sold as separate add-ons",
+        "In-app code editing and a GitHub connection on paid plans let you take the generated code elsewhere"
+      ],
+      "weaknesses": [
+        "The free plan's 25 monthly AI messages run out quickly once you iterate on an app",
+        "Now owned by Wix, which changes who controls the product's roadmap and pricing long-term"
+      ]
+    }
+  },
+  {
+    "name": "Draftbit",
+    "slug": "draftbit",
+    "url_fr": "https://tooltrim.com/fr/tool/draftbit",
+    "url_en": "https://tooltrim.com/en/tool/draftbit",
+    "website": "https://draftbit.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Plan Free gratuit sans limite de durée : 1 sandbox, assistance IA, 3 000 crédits uniques, publication web sur draftbit.dev.",
+      "paid": "Plan Standard à 9,60 $/mois facturé à l'année (12 $ en mensuel)."
+    },
+    "description_fr": "Générateur d’applications natives (avec code) pour mobiles.",
+    "description_en": "Native (with code) mobile app builder.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez un équilibre entre visuel et code pour développer rapidement",
+      "avoid_if": "Vous préférez un full no-code sans accès au code",
+      "strengths": [
+        "Interface visuelle puissante combinée avec accès au code complet",
+        "Support des agents IA natifs (Claude, OpenAI)",
+        "Déploiement cross-platform (web, iOS, Android)"
+      ],
+      "weaknesses": [
+        "Courbe d'apprentissage plus raide que les platforms purement no-code",
+        "Pricing des plans payants non affiché publiquement",
+        "Moins de templates pré-construits que les concurrents"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a balance between visual builder and code access",
+      "avoid_if": "You prefer pure no-code without code access",
+      "strengths": [
+        "Powerful visual interface combined with full code access",
+        "Native AI agent support (Claude, OpenAI)",
+        "Cross-platform deployment (web, iOS, Android)"
+      ],
+      "weaknesses": [
+        "Steeper learning curve than pure no-code platforms",
+        "Paid plans pricing not publicly displayed",
+        "Fewer pre-built templates than competitors"
+      ]
+    }
+  },
+  {
+    "name": "EasyDMARC",
+    "slug": "easydmarc",
+    "url_fr": "https://tooltrim.com/fr/tool/easydmarc",
+    "url_en": "https://tooltrim.com/en/tool/easydmarc",
+    "website": "https://easydmarc.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan DMARC Plus à 35,99 € ou 35,99 $ par mois facturé à l'année (44,99 en mensuel), 2 domaines."
+    },
+    "description_fr": "SaaS pour résoudre les problèmes de sécurité et délivrabilité email.",
+    "description_en": "SaaS to solve email security and deliverability issues.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous gérez des domaines email et avez des problèmes de délivrabilité",
+      "avoid_if": "Vous faites de la configuration minimale et cherchez des outils gratuits uniquement",
+      "strengths": [
+        "Outils gratuits (DMARC, SPF, DKIM checkers) sans inscription",
+        "Gestion DMARC complète automatisée",
+        "Support 24/7 et experts dedédiés"
+      ],
+      "weaknesses": [
+        "Tier gratuit très limité (outils seulement, pas de gestion)",
+        "Modèle tarifé non transparent publiquement",
+        "Davantage orienté entreprises que petites organisations"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage email domains and have deliverability issues",
+      "avoid_if": "You prefer free tools only and minimal configuration",
+      "strengths": [
+        "Free tools (DMARC, SPF, DKIM checkers) without sign-up",
+        "Fully automated DMARC management",
+        "24/7 support and dedicated experts"
+      ],
+      "weaknesses": [
+        "Free tier is very limited (tools only, no management)",
+        "Pricing model not transparent publicly",
+        "Geared more toward enterprises than small organizations"
+      ]
+    }
+  },
+  {
+    "name": "Firecrawl",
+    "slug": "firecrawl",
+    "url_fr": "https://tooltrim.com/fr/tool/firecrawl",
+    "url_en": "https://tooltrim.com/en/tool/firecrawl",
+    "website": "https://firecrawl.dev",
+    "category": "automation",
+    "pricing": {
+      "free": "Plan gratuit : 1 000 crédits/mois, ~500 recherches ou 1 000 pages scrapées, 2 requêtes simultanées, support communautaire",
+      "paid": "Dès 16 $/mois, plan Hobby."
+    },
+    "description_fr": "Firecrawl est une API de scraping et de crawling qui transforme les sites en Markdown/JSON propre, avec un palier gratuit et des plans dès 19 $/mois.",
+    "description_en": "Firecrawl is a web scraping and crawling API that turns sites into clean Markdown/JSON, with a free tier and paid plans from $19/month.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu as besoin d'une API de scraping/crawling avec un vrai palier gratuit pour démarrer et une tarification en crédits transparente par opération à mesure que l'usage grandit",
+      "avoid_if": "Ton usage est surtout basé sur la recherche ou les actions interact, car ces opérations consomment les crédits plus vite qu'un simple scraping de page",
+      "strengths": [
+        "Le palier gratuit donne un vrai quota de 1 000 crédits par mois, suffisant pour tester le scraping, le crawling et la recherche avant de payer",
+        "Le coût en crédits de chaque opération (scrape, recherche, interact, monitoring) est publié, au lieu d'un prix à l'usage flou"
+      ],
+      "weaknesses": [
+        "La recherche et les actions navigateur 'interact' consomment les crédits plus vite qu'un simple scraping, donc le mode d'usage compte plus que le nombre de crédits affiché du plan",
+        "La simultanéité est plafonnée par plan, de 2 requêtes en Free jusqu'à 100 en Scale, ce qui limite la vitesse de crawling en gros lot sur les paliers inférieurs"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You need a scraping/crawling API with a real free tier to start and transparent per-operation credit pricing as usage grows",
+      "avoid_if": "Your workload is mostly search or interact-heavy, since those operations burn through credits faster than plain page scraping",
+      "strengths": [
+        "The free tier gives a real 1,000 credits a month, enough to test scraping, crawling and search before paying",
+        "Credit costs per operation (scrape, search, interact, monitor) are published, instead of a vague usage-based price"
+      ],
+      "weaknesses": [
+        "Search and browser 'interact' actions consume credits faster than plain scraping, so usage pattern matters more than the plan's headline credit count",
+        "Concurrency is capped per plan, from 2 requests on Free up to 100 on Scale, which limits large-batch crawling speed on lower tiers"
+      ]
+    }
+  },
+  {
+    "name": "Glide",
+    "slug": "glide",
+    "url_fr": "https://tooltrim.com/fr/tool/glide",
+    "url_en": "https://tooltrim.com/en/tool/glide",
+    "website": "https://glideapps.com",
+    "category": "automation",
+    "pricing": "Plan gratuit pour usage personnel ; Explorer avec workflows et IA ; Maker pour MVP (utilisateurs personnels illimités) ; Business à tarification par utilisateur.",
+    "description_fr": "Transforme un Google Sheets ou Airtable en application mobile sans coder.",
+    "description_en": "Turns a Google Sheets or Airtable into a mobile app with no coding.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous avez déjà un Airtable/Google Sheets avec vos données",
+      "avoid_if": "Vous avez besoin d'une architecture backend custom complexe",
+      "strengths": [
+        "Conversion automatique tableur → app très rapide",
+        "Synchronisation temps-réel avec données sources",
+        "Assistant IA intégré pour les requêtes"
+      ],
+      "weaknesses": [
+        "Limité aux données dans des outils Glide-connectés",
+        "Moins flexible pour architectures très custom",
+        "Pricing des plans payants non transparent"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You already have data in Airtable/Google Sheets/Excel",
+      "avoid_if": "You need complex custom backend architecture",
+      "strengths": [
+        "Automatic spreadsheet-to-app conversion",
+        "Real-time sync with data sources",
+        "Integrated AI assistant for queries"
+      ],
+      "weaknesses": [
+        "Limited to data in Glide-connected tools",
+        "Less flexible for custom architectures",
+        "Paid plan pricing not transparent"
+      ]
+    }
+  },
+  {
+    "name": "Gumloop",
+    "slug": "gumloop",
+    "url_fr": "https://tooltrim.com/fr/tool/gumloop",
+    "url_en": "https://tooltrim.com/en/tool/gumloop",
+    "website": "https://www.gumloop.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Gratuit pour tester",
+      "paid": "Pro ~31€/mois"
+    },
+    "description_fr": "Automatisation no-code IA — construit des workflows intelligents par glisser-déposer.",
+    "description_en": "AI no-code automation — build intelligent workflows with drag and drop.",
+    "price_verified_on": "2026-05-08",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez à automatiser des processus complexes multi-outils avec IA",
+      "avoid_if": "Vous cherchez une solution entièrement gratuite ou low-cost",
+      "strengths": [
+        "300+ connecteurs pré-construits aux outils métier clés",
+        "Company Brain centralisé pour contexte unifié",
+        "Agents auto-améliorants via évaluation autonome"
+      ],
+      "weaknesses": [
+        "Pas de tier gratuit",
+        "Tarification à l'usage peut être imprévisible à grande échelle",
+        "Requiert expertise technique pour configuration initiale"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want to automate complex multi-tool workflows with AI",
+      "avoid_if": "You seek a free or low-cost solution",
+      "strengths": [
+        "300+ pre-built connectors to key business tools",
+        "Centralized Company Brain for unified context",
+        "Self-improving agents via autonomous evaluation"
+      ],
+      "weaknesses": [
+        "No free tier",
+        "Usage-based pricing can be unpredictable at scale",
+        "Requires technical expertise for initial setup"
+      ]
+    }
+  },
+  {
+    "name": "Hyperbrowser",
+    "slug": "hyperbrowser",
+    "url_fr": "https://tooltrim.com/fr/tool/hyperbrowser",
+    "url_en": "https://tooltrim.com/en/tool/hyperbrowser",
+    "website": "https://www.hyperbrowser.ai",
+    "category": "automation",
+    "pricing": {
+      "free": "Plan gratuit : 1 000 crédits, 1 navigateur simultané, aucune carte bancaire requise.",
+      "paid": "Dès 30 $/mois, plan Startup."
+    },
+    "description_fr": "Infrastructure de navigateur cloud facturée à l'usage pour agents IA, avec CAPTCHA et proxies résidentiels sur les formules payantes.",
+    "description_en": "Usage-priced cloud browser infrastructure for AI agents and large-scale scraping, with CAPTCHA solving and residential proxies on paid plans.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu construis un agent IA ou un scraper qui a besoin d'une infrastructure de navigateur gérée et résistante à l'anti-bot, sans la gérer toi-même",
+      "avoid_if": "Ton volume de scraping est imprévisible et tu as besoin d'un coût mensuel fixe plutôt que de crédits mesurés à l'usage",
+      "strengths": [
+        "Résolution de CAPTCHA, furtivité anti-bot et proxies résidentiels sont inclus dans les formules payantes, pas vendus en option séparée",
+        "La concurrence évolue de 25 à 100 navigateurs simultanés entre les deux formules payantes"
+      ],
+      "weaknesses": [
+        "Les crédits mesurés à l'usage font varier le coût selon le volume de scraping plutôt que de rester fixe chaque mois",
+        "La dotation unique de 1 000 crédits et le navigateur unique du plan gratuit suffisent seulement à tester le produit"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You're building an AI agent or scraper that needs managed, anti-bot-resistant browser infrastructure without running your own",
+      "avoid_if": "Your scraping volume is unpredictable and you need a flat monthly cost rather than metered credits",
+      "strengths": [
+        "CAPTCHA solving, stealth evasion and residential proxies are included on paid plans, not sold as separate add-ons",
+        "Concurrency scales from 25 to 100 simultaneous browsers between the two paid plans"
+      ],
+      "weaknesses": [
+        "Usage-metered credits mean cost varies with scraping volume rather than staying flat each month",
+        "The free plan's one-time 1,000-credit allotment and single browser are only enough to test the product"
+      ]
+    }
+  },
+  {
+    "name": "Integrately",
+    "slug": "integrately",
+    "url_fr": "https://tooltrim.com/fr/tool/integrately",
+    "url_en": "https://tooltrim.com/en/tool/integrately",
+    "website": "https://integrately.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Plan gratuit limité",
+      "paid": "À partir de 20$/mois"
+    },
+    "description_fr": "Automatisations en 1 clic entre 1000+ apps.",
+    "description_en": "1-click automations between 1000+ apps.",
+    "verdict_fr": {
+      "keep_if": "Vous n'avez pas d'expertise technique et voulez une interface simple",
+      "avoid_if": "Vous avez besoin d'automations complexes multi-étapes",
+      "strengths": [
+        "20 millions d'automatisations pré-construites prêtes à l'emploi",
+        "Interface très simple pour non-techniciens",
+        "Tarifé 3-10x moins cher que Zapier"
+      ],
+      "weaknesses": [
+        "Tier gratuit très limité (automatisations peu nombreuses)",
+        "Moins d'options avancées pour cas d'usage complexes",
+        "Communauté plus petite que Zapier/Make"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You lack technical skills and want a simple interface",
+      "avoid_if": "You need complex multi-step automations",
+      "strengths": [
+        "20 million pre-built automations ready to use",
+        "Very simple interface for non-technical users",
+        "Priced 3-10x cheaper than Zapier"
+      ],
+      "weaknesses": [
+        "Very limited free tier (few automations)",
+        "Fewer advanced options for complex workflows",
+        "Smaller community than Zapier/Make"
+      ]
+    }
+  },
+  {
+    "name": "La Growth Machine",
+    "slug": "la-growth-machine",
+    "url_fr": "https://tooltrim.com/fr/tool/la-growth-machine",
+    "url_en": "https://tooltrim.com/en/tool/la-growth-machine",
+    "website": "https://www.lagrowthmachine.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 60 €/mois, plan Basic."
+    },
+    "description_fr": "La Growth Machine automatise des séquences de prospection LinkedIn, email et appels, avec enrichissement de leads intégré pour la vente B2B.",
+    "description_en": "La Growth Machine automates LinkedIn, email, and call outreach sequences with built-in lead enrichment for B2B sales prospecting.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu fais de la prospection B2B outbound via LinkedIn et email et tu veux combiner les canaux avec un enrichissement intégré dans un seul outil",
+      "avoid_if": "Tu as seulement besoin d'une automatisation LinkedIn basique ou tu veux une offre gratuite pour tester avant de payer",
+      "strengths": [
+        "Combine LinkedIn, email et, sur les offres supérieures, appels et X dans une seule séquence au lieu de jongler entre plusieurs outils",
+        "L'enrichissement de leads et la synchronisation CRM (HubSpot, Pipedrive) sont intégrés sur le plan Ultimate, ce qui réduit la construction manuelle de listes"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit : seulement un essai de 14 jours avant le début de la facturation à 60 €/mois par identité",
+        "Pro et Ultimate coûtent le même prix, 120 €/mois par identité ; la synchronisation CRM ne se débloque que sur Ultimate, ce qui peut prêter à confusion au moment de choisir un plan"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run B2B outbound sales via LinkedIn and email and want to combine channels with built-in enrichment in one tool",
+      "avoid_if": "You only need basic LinkedIn automation or want a free tier to test before paying anything",
+      "strengths": [
+        "Combines LinkedIn, email, and (on higher tiers) calls and X in one sequence instead of juggling separate tools",
+        "Lead enrichment and CRM sync (HubSpot, Pipedrive) are built in on the Ultimate tier, cutting manual list-building"
+      ],
+      "weaknesses": [
+        "No free plan: only a 14-day trial before the €60/month per-identity billing starts",
+        "Pro and Ultimate cost the same €120/month per identity; CRM sync only unlocks on Ultimate, which can be confusing when choosing a plan"
+      ]
+    }
+  },
+  {
+    "name": "Lindy",
+    "slug": "lindy",
+    "url_fr": "https://tooltrim.com/fr/tool/lindy",
+    "url_en": "https://tooltrim.com/en/tool/lindy",
+    "website": "https://lindy.ai",
+    "category": "automation",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "description_fr": "Plateforme no-code d'agents IA : automatise email, réunions et workflows via 100+ intégrations (tri d'emails, prise de notes en réunion, mise à jour CRM, workflows multi-étapes).",
+    "description_en": "No-code AI agent platform that automates email, meetings and workflows across 100+ integrations (email triage, meeting notes, CRM updates, multi-step workflows).",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous voulez automatiser email, réunions et tâches répétitives",
+      "avoid_if": "Vous voulez une facture parfaitement stable et prévisible",
+      "strengths": [
+        "Agents IA no-code puissants",
+        "Automatise email, réunions et CRM",
+        "100+ intégrations"
+      ],
+      "weaknesses": [
+        "Modèle à crédits : facture variable selon l'usage",
+        "Tâches IA intensives coûteuses en crédits",
+        "Pas de palier gratuit permanent"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want to automate email, meetings and repetitive tasks",
+      "avoid_if": "You want a perfectly predictable bill",
+      "strengths": [
+        "Powerful no-code AI agents",
+        "Automates email, meetings and CRM",
+        "100+ integrations"
+      ],
+      "weaknesses": [
+        "Credit model: bill varies with usage",
+        "AI-intensive tasks cost more credits",
+        "No permanent free tier"
+      ]
+    }
+  },
+  {
+    "name": "Make",
+    "slug": "make",
+    "url_fr": "https://tooltrim.com/fr/tool/make",
+    "url_en": "https://tooltrim.com/en/tool/make",
+    "website": "https://make.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "9$/mois (Core)"
+    },
+    "description_fr": "L'automatisation visuelle sans limite.",
+    "description_en": "Limitless visual automation.",
+    "alternatives": [
+      "make"
+    ],
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez un équilibre entre visuel, code et prompts naturels",
+      "avoid_if": "Vous cherchez une solution ultra-simple pour non-techniciens",
+      "strengths": [
+        "3000+ intégrations pré-construites",
+        "Interface visuelle puissante + code + prompts naturels",
+        "Agents IA transparents et orchestrés"
+      ],
+      "weaknesses": [
+        "Tarification par tasks peut devenir chère à l'échelle",
+        "Courbe d'apprentissage pour maîtriser tous les formats",
+        "Interface visuelle dense pour débutants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a balance between visual, code, and natural language",
+      "avoid_if": "You seek an ultra-simple solution for non-technical users",
+      "strengths": [
+        "3,000+ pre-built integrations",
+        "Powerful visual interface + code + natural language prompts",
+        "Transparent and orchestrated AI agents"
+      ],
+      "weaknesses": [
+        "Per-task pricing can get expensive at scale",
+        "Learning curve to master all formats",
+        "Dense visual interface for beginners"
+      ]
+    }
+  },
+  {
+    "name": "n8n",
+    "slug": "n8n",
+    "url_fr": "https://tooltrim.com/fr/tool/n8n",
+    "url_en": "https://tooltrim.com/en/tool/n8n",
+    "website": "https://n8n.io",
+    "category": "automation",
+    "description_fr": "Automatisation de workflows open source",
+    "description_en": "Open-source workflow automation."
+  },
+  {
+    "name": "Pabbly Connect",
+    "slug": "pabbly-connect",
+    "url_fr": "https://tooltrim.com/fr/tool/pabbly-connect",
+    "url_en": "https://tooltrim.com/en/tool/pabbly-connect",
+    "website": "https://www.pabbly.com/connect",
+    "category": "automation",
+    "pricing": {
+      "free": "Aucun plan gratuit",
+      "paid": "À partir de 16$/mois (illimité)"
+    },
+    "description_fr": "Automatisation sans code à prix fixe illimité.",
+    "description_en": "No-code automation at unlimited flat price.",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez une alternative à Zapier moins chère",
+      "avoid_if": "Vous avez besoin de 3000+ intégrations (Pabbly en a moins)",
+      "strengths": [
+        "Positionné moins cher que Zapier",
+        "Option lifetime deals (paiement unique)",
+        "Tier gratuit permanent (pas d'expiration)"
+      ],
+      "weaknesses": [
+        "Moins d'intégrations que Zapier/Make (mais toutes les principales)",
+        "Communauté plus petite",
+        "Moins d'options avancées pour automation complexe"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a cheaper alternative to Zapier",
+      "avoid_if": "You need 3,000+ integrations (Pabbly has fewer)",
+      "strengths": [
+        "Priced below Zapier",
+        "Lifetime deal option (one-time payment)",
+        "Permanent free tier (no expiration)"
+      ],
+      "weaknesses": [
+        "Fewer integrations than Zapier/Make (but all key ones)",
+        "Smaller community",
+        "Fewer advanced options for complex automation"
+      ]
+    }
+  },
+  {
+    "name": "Pagecloud",
+    "slug": "pagecloud",
+    "url_fr": "https://tooltrim.com/fr/tool/pagecloud",
+    "url_en": "https://tooltrim.com/en/tool/pagecloud",
+    "website": "https://pagecloud.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Launch à 22 $ US par mois en annuel (26 $ US en mensuel)."
+    },
+    "description_fr": "Constructeur de site web et boutique en ligne.",
+    "description_en": "Website and online store builder.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'un site web simple à beau rapidement",
+      "avoid_if": "Vous avez besoin d'une architecture très custom ou d'un blog complexe",
+      "strengths": [
+        "Éditeur drag-and-drop très intuitif",
+        "E-commerce natif avec inventory management",
+        "Popups et bandeaux intégrés pour conversion"
+      ],
+      "weaknesses": [
+        "Tier gratuit ne permet pas de publier",
+        "Tarification des plans payants non transparente",
+        "Moins flexible que WordPress pour sites complexes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need a simple, beautiful website fast",
+      "avoid_if": "You need very custom architecture or complex blog",
+      "strengths": [
+        "Very intuitive drag-and-drop editor",
+        "Native e-commerce with inventory management",
+        "Built-in popups and banners for conversion"
+      ],
+      "weaknesses": [
+        "Free tier doesn't allow publishing",
+        "Paid plan pricing not transparent",
+        "Less flexible than WordPress for complex sites"
+      ]
+    }
+  },
+  {
+    "name": "PhantomBuster",
+    "slug": "phantombuster",
+    "url_fr": "https://tooltrim.com/fr/tool/phantombuster",
+    "url_en": "https://tooltrim.com/en/tool/phantombuster",
+    "website": "https://phantombuster.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "À partir de 56$/mois"
+    },
+    "description_fr": "Extraction de données et automatisation LinkedIn.",
+    "description_en": "Data extraction and LinkedIn automation.",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'extraire des leads de LinkedIn, Instagram ou Twitter",
+      "avoid_if": "Vous cherchez une solution gratuite permanente",
+      "strengths": [
+        "100+ Phantoms pré-construites et prêtes à l'emploi",
+        "Extraction de données de sources multiples (LinkedIn, Instagram, Twitter)",
+        "Workflows (Flows) pour automations complexes multi-étapes"
+      ],
+      "weaknesses": [
+        "Pas de tier gratuit permanent (14 jours seulement)",
+        "Les plans payants démarrent à un tarif mensuel notable",
+        "Moins adapté pour automations générales non-sales"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need to extract leads from LinkedIn, Instagram, or Twitter",
+      "avoid_if": "You seek a free permanent solution",
+      "strengths": [
+        "100+ pre-built and ready-to-use Phantoms",
+        "Data extraction from multiple sources (LinkedIn, Instagram, Twitter)",
+        "Workflows (Flows) for complex multi-step automations"
+      ],
+      "weaknesses": [
+        "No permanent free tier (14 days only)",
+        "Paid plans start at a notable monthly rate",
+        "Less suited for non-sales general automations"
+      ]
+    }
+  },
+  {
+    "name": "Quick Base",
+    "slug": "quick-base",
+    "url_fr": "https://tooltrim.com/fr/tool/quick-base",
+    "url_en": "https://tooltrim.com/en/tool/quick-base",
+    "website": "https://quickbase.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Team à partir de 35 $ par utilisateur et par mois, facturé annuellement, hors minimum de plateforme."
+    },
+    "description_fr": "Plateforme de développement d’applications sans code.",
+    "description_en": "No-code application development platform.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous gérez des projets complexes ou du terrain et avez besoin d'une app custom",
+      "avoid_if": "Vous avez un très petit budget ou cherchez une solution startup",
+      "strengths": [
+        "Plateforme low-code mature avec intégrations robustes",
+        "Apps mobiles natives (iOS et Android)",
+        "Intelligence Pack (AI insights)"
+      ],
+      "weaknesses": [
+        "Pricing non transparent publiquement",
+        "Plus complexe que solutions purement no-code",
+        "Courbe d'apprentissage pour débutants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage complex projects or field ops and need custom app",
+      "avoid_if": "You have a very tight budget or seek a startup solution",
+      "strengths": [
+        "Mature low-code platform with robust integrations",
+        "Native mobile apps (iOS and Android)",
+        "Intelligence Pack (AI insights)"
+      ],
+      "weaknesses": [
+        "Pricing not transparent publicly",
+        "More complex than pure no-code solutions",
+        "Learning curve for beginners"
+      ]
+    }
+  },
+  {
+    "name": "Relevance AI",
+    "slug": "relevance-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/relevance-ai",
+    "url_en": "https://tooltrim.com/en/tool/relevance-ai",
+    "website": "https://relevanceai.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "description_fr": "Plateforme no-code pour construire et orchestrer des équipes d'agents IA (« AI Workforce ») : automatise recherche, outbound, enrichissement de données et tâches back-office, pour les équipes go-to-market et ops.",
+    "description_en": "No-code platform to build and orchestrate teams of AI agents ('AI Workforce'): automates research, outbound, data enrichment and back-office tasks for GTM and ops teams.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous voulez automatiser recherche, outbound ou back-office par IA",
+      "avoid_if": "Vous cherchez une simple automatisation par règles",
+      "strengths": [
+        "Agents IA no-code et illimités",
+        "Orchestration d'équipes d'agents",
+        "Palier gratuit pour tester"
+      ],
+      "weaknesses": [
+        "Double compteur (Actions + crédits) à comprendre",
+        "Gratuit insuffisant pour la production",
+        "Facture variable selon l'usage IA"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want to automate research, outbound or back-office with AI",
+      "avoid_if": "You want simple rules-based automation",
+      "strengths": [
+        "No-code, unlimited AI agents",
+        "Agent-team orchestration",
+        "Free tier to test"
+      ],
+      "weaknesses": [
+        "Dual meter (Actions + credits) to grasp",
+        "Free tier insufficient for production",
+        "Bill varies with AI usage"
+      ]
+    }
+  },
+  {
+    "name": "Simvoly",
+    "slug": "simvoly",
+    "url_fr": "https://tooltrim.com/fr/tool/simvoly",
+    "url_en": "https://tooltrim.com/en/tool/simvoly",
+    "website": "https://simvoly.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 12 $/mois, plan Starter."
+    },
+    "description_fr": "Simvoly regroupe créateur de site, funnels de vente, email marketing et communauté payante dans un seul abonnement, dès 18 $ par mois.",
+    "description_en": "Simvoly bundles a website builder, sales funnels, email marketing and a membership community into one subscription, starting at $18 a month.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu veux un site, un funnel de vente, l'email marketing et une communauté payante ensemble dans un seul abonnement plutôt que des outils séparés",
+      "avoid_if": "Tu as besoin d'un vrai e-commerce (tests A/B, upsells) dès le départ, car cela ne fonctionne qu'à partir du plan Premium à 49 $/mois",
+      "strengths": [
+        "Intègre une fonctionnalité de communauté payante dans chaque plan, ce qui évite un abonnement séparé pour le contenu réservé",
+        "Couvre site, funnel, email et vidéo dans un seul abonnement, ce qui réduit le nombre d'outils qu'une petite entreprise doit payer séparément"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit, et le plan d'entrée Starter plafonne la bande passante à 20 Go et les emails à 1 200 par mois, ce qui est serré pour une audience en croissance",
+        "Les vraies fonctionnalités e-commerce (tests A/B, upsells/downsells) demandent de passer à Premium à 49 $/mois, indisponibles sur les plans moins chers"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You want a site, a sales funnel, email marketing and a paid community together in one subscription instead of separate tools",
+      "avoid_if": "You need real e-commerce (A/B testing, upsells) from day one, since that only works on the $49/month Premium plan and above",
+      "strengths": [
+        "Bundles a membership community feature into every plan, avoiding a separate subscription for gated content",
+        "Covers site, funnel, email and video in one subscription, reducing the number of tools a small business needs to pay for"
+      ],
+      "weaknesses": [
+        "No free plan, and the entry Starter plan caps bandwidth at 20GB and emails at 1,200 a month, tight for a growing audience",
+        "Real e-commerce features (A/B testing, upsells/downsells) require upgrading to Premium at $49/month, not available on the cheaper plans"
+      ]
+    }
+  },
+  {
+    "name": "Softr",
+    "slug": "softr",
+    "url_fr": "https://tooltrim.com/fr/tool/softr",
+    "url_en": "https://tooltrim.com/en/tool/softr",
+    "website": "https://softr.io",
+    "category": "automation",
+    "pricing": {
+      "free": "Plan gratuit : Up to 3 builders and 5 combined app users; no custom domain included.",
+      "paid": "Dès 19 $/mois, plan Basic."
+    },
+    "description_fr": "Softr est une plateforme no-code pour créer des outils internes, des portails client et des applications web au-dessus d'Airtable, Google Sheets ou de tables natives.",
+    "description_en": "Softr is a no-code platform for building internal tools, client portals and web apps on top of Airtable, Google Sheets or native tables.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tes données sont déjà dans Airtable ou Google Sheets et tu veux une application visible par tes clients sans coder",
+      "avoid_if": "Ton équipe a besoin de plus de 2 ou 3 créateurs : les sièges supplémentaires chiffrent vite sur Pro et Business",
+      "strengths": [
+        "Groupes d'utilisateurs équipe et client séparés avec permissions intégrées, sans plugin supplémentaire",
+        "Fonctionne directement au-dessus d'Airtable ou Google Sheets, donc aucune nouvelle base de données à maintenir"
+      ],
+      "weaknesses": [
+        "Les sièges créateur supplémentaires au-delà du quota du forfait coûtent de 10 $ à 24 $ par mois chacun",
+        "Le plan gratuit n'a pas de domaine personnalisé, ce qui le limite à des tests internes"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You already keep your data in Airtable or Google Sheets and want a client-facing app on top of it without code",
+      "avoid_if": "Your team needs more than 2 or 3 builders: extra seats add up quickly on Pro and Business",
+      "strengths": [
+        "Separate team and client user groups with permissions built in, no extra plugin needed",
+        "Works directly on top of Airtable or Google Sheets, so there is no new database to maintain"
+      ],
+      "weaknesses": [
+        "Extra builder seats beyond the plan's included count cost $10 to $24 a month each",
+        "The free plan has no custom domain, limiting it to internal testing"
+      ]
+    }
+  },
+  {
+    "name": "Turbotic",
+    "slug": "turbotic",
+    "url_fr": "https://tooltrim.com/fr/tool/turbotic",
+    "url_en": "https://tooltrim.com/en/tool/turbotic",
+    "website": "https://turbotic.com/automation-ai",
+    "category": "automation",
+    "pricing": {
+      "free": "Offre gratuite : jusqu'à 3 automatisations, 100 exécutions et 100 chats",
+      "paid": "Basic : 14,99 $/mois avec facturation annuelle ; Pro : 79,99 $/mois avec facturation annuelle ; Enterprise : sur devis"
+    },
+    "description_fr": "Créez, testez et suivez des workflows automatisés à partir d'instructions en langage naturel.",
+    "description_en": "Create, test, and monitor automated workflows from natural-language instructions.",
+    "alternatives": [
+      "make"
+    ],
+    "price_verified_on": "2026-09-26",
+    "verdict_fr": {
+      "keep_if": "Vous voulez créer des automatisations en décrivant le résultat attendu en langage naturel",
+      "avoid_if": "Vous avez seulement quelques automatisations simples et préférez payer uniquement à l'usage",
+      "strengths": [
+        "Création de workflows à partir d'instructions en langage naturel",
+        "Possibilité de tester puis planifier les automatisations",
+        "Offre gratuite pour découvrir le produit avec des quotas annoncés"
+      ],
+      "weaknesses": [
+        "Les forfaits payants affichés sont facturés annuellement",
+        "Les quotas du plan gratuit peuvent être vite atteints selon le volume",
+        "Vérifiez la disponibilité des intégrations et les résultats générés avant un déploiement en production"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want to create automations by describing the desired outcome in natural language",
+      "avoid_if": "You only need a few simple automations and prefer usage-based pricing",
+      "strengths": [
+        "Create workflows from natural-language instructions",
+        "Option to test and schedule automations",
+        "Free plan with published usage limits"
+      ],
+      "weaknesses": [
+        "Published paid-plan prices are billed annually",
+        "The free-plan quotas may be reached quickly depending on usage",
+        "Check integration availability and generated results before production use"
+      ]
+    }
+  },
+  {
+    "name": "Waalaxy",
+    "slug": "waalaxy",
+    "url_fr": "https://tooltrim.com/fr/tool/waalaxy",
+    "url_en": "https://tooltrim.com/en/tool/waalaxy",
+    "website": "https://www.waalaxy.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Plan gratuit (quotas limités)",
+      "paid": "À partir de 40€/mois"
+    },
+    "description_fr": "Prospection LinkedIn automatisée.",
+    "description_en": "Automated LinkedIn prospecting.",
+    "verdict_fr": {
+      "keep_if": "Vous faites de la prospection LinkedIn et voulez l'automatiser simplement",
+      "avoid_if": "Vous avez besoin de beaucoup plus que LinkedIn (utilisez Make/Zapier)",
+      "strengths": [
+        "Plan gratuit avec 80 invitations (pas de carte requise)",
+        "Interface intuitive pour non-techniciens",
+        "Intégration email et 2000+ apps natives"
+      ],
+      "weaknesses": [
+        "Limité à LinkedIn (pas de Twitter, Instagram)",
+        "Plans payants plus chers que concurrents pour baseline similaire",
+        "Moins d'options avancées que Phantombuster"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You do LinkedIn prospecting and want to automate it simply",
+      "avoid_if": "You need much more than LinkedIn (use Make/Zapier)",
+      "strengths": [
+        "Free plan with 80 invitations (no card required)",
+        "Intuitive interface for non-technical users",
+        "Email and 2,000+ app integrations"
+      ],
+      "weaknesses": [
+        "Limited to LinkedIn (no Twitter, Instagram)",
+        "Paid plans pricier than competitors for similar baseline",
+        "Fewer advanced options than PhantomBuster"
+      ]
+    }
+  },
+  {
+    "name": "Whalesync",
+    "slug": "whalesync",
+    "url_fr": "https://tooltrim.com/fr/tool/whalesync",
+    "url_en": "https://tooltrim.com/en/tool/whalesync",
+    "website": "https://www.whalesync.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 39€/mois environ"
+    },
+    "description_fr": "Synchronisation no-code entre Webflow, Airtable, Notion et bases de données.",
+    "description_en": "No-code sync between Webflow, Airtable, Notion, and databases.",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin de synchronisation temps-réel bidirectionnelle entre apps",
+      "avoid_if": "Vous avez besoin d'automations simples unidirectionnelles (utilisez Zapier)",
+      "strengths": [
+        "Synchronisation bidirectionnelle profonde (champs liés, images, texte)",
+        "Temps-réel et monitoring avec AI-error-summary",
+        "Connecteurs 10+ apps (Airtable, Notion, Salesforce, Webflow, WordPress)"
+      ],
+      "weaknesses": [
+        "Plus cher que Zapier pour automations simples",
+        "Pricing non transparent publiquement",
+        "Communauté plus petite que Zapier"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need real-time bidirectional sync across multiple apps",
+      "avoid_if": "You need simple one-way automations (use Zapier)",
+      "strengths": [
+        "Deep bidirectional sync (linked fields, images, rich text)",
+        "Real-time monitoring with AI-error-summary",
+        "10+ app connectors (Airtable, Notion, Salesforce, Webflow, WordPress)"
+      ],
+      "weaknesses": [
+        "Pricier than Zapier for simple automations",
+        "Pricing not transparent publicly",
+        "Smaller community than Zapier"
+      ]
+    }
+  },
+  {
+    "name": "WordPress.com",
+    "slug": "wordpress-com",
+    "url_fr": "https://tooltrim.com/fr/tool/wordpress-com",
+    "url_en": "https://tooltrim.com/en/tool/wordpress-com",
+    "website": "https://wordpress.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Plan gratuit : 1 Go de stockage, sous-domaine WordPress.com uniquement, pages et articles illimités, statistiques basiques sur 7 jours, aucun plugin ni domaine personnalisé, publicités affichées aux visiteurs.",
+      "paid": "Dès 4 $/mois, plan Personal."
+    },
+    "description_fr": "Plateforme hébergée de blog et de site basée sur WordPress, avec un plan gratuit et des plans payants pour domaine, plugins et e-commerce.",
+    "description_en": "Hosted blogging and website platform built on WordPress, with a free tier and paid plans adding a custom domain, plugins and e-commerce.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "À garder si tu veux un site WordPress hébergé sans serveur à gérer et acceptes de payer pour le domaine personnalisé et les plugins au fur et à mesure que le site grandit",
+      "avoid_if": "À éviter si tu as besoin de plugins tiers ou d'un contrôle total de l'hébergement dès le départ ; un WordPress auto-hébergé ou WooCommerce correspond mieux",
+      "strengths": [
+        "Aucun hébergement ni serveur à configurer, contrairement à un WordPress auto-hébergé",
+        "Assistant IA intégré et boutique WooCommerce inclus sur les plans supérieurs, sans configuration supplémentaire"
+      ],
+      "weaknesses": [
+        "Le plan gratuit bloque le domaine personnalisé et tous les plugins, ce qui pousse vite la plupart des sites réels vers un plan payant",
+        "La prise en charge des plugins tiers, une fonction centrale de WordPress, ne commence qu'au plan Business"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Keep if you want a hosted WordPress site with no server to manage and are fine paying for a custom domain and plugins as the site grows",
+      "avoid_if": "Avoid if you need third-party plugins or full hosting control from day one; a self-hosted WordPress site or WooCommerce fits that better",
+      "strengths": [
+        "No hosting or server setup to manage, unlike a self-hosted WordPress site",
+        "Built-in AI assistant and WooCommerce store included on higher plans without extra setup"
+      ],
+      "weaknesses": [
+        "Free plan blocks a custom domain and all plugins, pushing most real sites to a paid plan quickly",
+        "Third-party plugin support, a core WordPress feature, only starts at the Business plan"
+      ]
+    }
+  },
+  {
+    "name": "Zapier",
+    "slug": "zapier",
+    "url_fr": "https://tooltrim.com/fr/tool/zapier",
+    "url_en": "https://tooltrim.com/en/tool/zapier",
+    "website": "https://zapier.com",
+    "category": "automation",
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "19,99$/mois (Professional)"
+    },
+    "description_fr": "Outil d’automatisation pour connecter des applications et workflows.",
+    "description_en": "Automation tool for connecting applications and workflows.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin de 9000+ intégrations sans limites",
+      "avoid_if": "Vous cherchez la solution la moins chère (Pabbly/Integrately moins cher)",
+      "strengths": [
+        "9000+ intégrations (plus complète du marché)",
+        "Tier gratuit permanent (100 tâches/mois)",
+        "Agents IA autonomes pour automations avancées"
+      ],
+      "weaknesses": [
+        "Tarification par tâches peut coûter très cher à l'échelle",
+        "Tier gratuit très limité (100 tâches, max 2-step)",
+        "Plus cher que alternatives (Pabbly, Integrately)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need 9,000+ integrations without limits",
+      "avoid_if": "You seek the cheapest solution (Pabbly/Integrately cheaper)",
+      "strengths": [
+        "9,000+ integrations (most comprehensive on market)",
+        "Permanent free tier (100 tasks/month)",
+        "Autonomous AI agents for advanced automations"
+      ],
+      "weaknesses": [
+        "Per-task pricing can get very expensive at scale",
+        "Free tier very limited (100 tasks, max 2-step)",
+        "More expensive than alternatives (Pabbly, Integrately)"
+      ]
+    }
+  },
+  {
+    "name": "Sistava",
+    "slug": "sistava",
+    "url_fr": "https://tooltrim.com/fr/tool/sistava",
+    "url_en": "https://tooltrim.com/en/tool/sistava",
+    "website": "https://sistava.com/",
+    "category": "automation",
+    "pricing": {
+      "free": "Pas de plan gratuit ni d'essai annoncé",
+      "paid": "Starter 25 $/mois, Builder 50 $/mois, Founder 100 $/mois, Leader 200 $/mois, Custom sur devis"
+    },
+    "description_fr": "Déploie des employés IA sur 10 fonctions métier pour déléguer des workflows définis.",
+    "description_en": "Deploy AI employees across 10 business functions to delegate defined workflows.",
+    "alternatives": [
+      "Lindy"
+    ],
+    "price_verified_on": "2026-09-03",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu as un workflow métier défini et répétable (qualification de leads, support de premier niveau...) que tu veux déléguer sans embaucher",
+      "avoid_if": "Tu veux tester gratuitement avant de payer : aucun plan gratuit ni essai n'est annoncé",
+      "strengths": [
+        "Dix fonctions métier couvertes (vente, marketing, support, ops, data, finance, produit, design, RH, juridique)",
+        "Système de crédits transparent, packs de recharge à la demande",
+        "Documentation légale et sécurité étoffée (DPA, sous-traitants, divulgation responsable) pour la taille de l'entreprise"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit ni essai gratuit annoncé",
+        "Aucune capture d'écran réelle du produit disponible publiquement",
+        "Un témoignage client cité par l'éditeur signale lui-même une interface 'un peu confuse'"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You have a defined, repeatable business workflow (lead qualification, first-line support...) you want to delegate without hiring",
+      "avoid_if": "You want to test for free before paying: no free plan or trial is advertised",
+      "strengths": [
+        "Ten business functions covered (sales, marketing, support, ops, data, finance, product, design, people, legal)",
+        "Transparent credit system, on-demand top-up packs",
+        "Developed legal and security documentation (DPA, subprocessors, responsible disclosure) for the company's size"
+      ],
+      "weaknesses": [
+        "No free plan or free trial advertised",
+        "No real product screenshot publicly available",
+        "A customer testimonial cited by the publisher itself flags a 'bit confusing' interface"
+      ]
+    }
+  }
+]

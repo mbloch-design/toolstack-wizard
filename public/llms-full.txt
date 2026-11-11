@@ -4,6 +4,7 @@
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+# Split by category family: https://tooltrim.com/llms.txt (Catalogue Shards)
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
 
 [
@@ -103,7 +104,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/shade",
     "url_en": "https://tooltrim.com/en/tool/shade",
     "website": "https://shade.inc/",
-    "category": "assets",
+    "category": "storage",
     "pricing": {
       "free": "Essai annoncé ; durée et conditions à confirmer.",
       "paid": "Growth : 29,75 USD/siège/mois équivalent en facturation annuelle, 35 USD affichés comme référence. 500 Go de stockage actif par siège, jusqu’à 15 sièges. Enterprise sur devis. Stockage supplémentaire et taxes à confirmer."
@@ -978,7 +979,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/adobe-fresco",
     "url_en": "https://tooltrim.com/en/tool/adobe-fresco",
     "website": "https://www.adobe.com/products/fresco.html",
-    "category": "illustration",
+    "category": "creation",
     "pricing": {
       "free": "Plan gratuit : Calques illimités, des milliers de pinceaux vectoriels/raster/live, préréglages d'animation, gratuit sans limite de durée",
       "paid": "Pas d'offre payante obligatoire."
@@ -1301,7 +1302,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/adobe-stock",
     "url_en": "https://tooltrim.com/en/tool/adobe-stock",
     "website": "https://stock.adobe.com/",
-    "category": "assets",
+    "category": "creation",
     "pricing": {
       "free": "Vendu par abonnement ou à crédits ; offre « Toutes les apps + Adobe Stock » ou accès autonome (voir la fiche de la suite).",
       "paid": "Vendu par abonnement ou à crédits ; offre « Toutes les apps + Adobe Stock » ou accès autonome (voir la fiche de la suite)."
@@ -1515,7 +1516,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/affinity-designer",
     "url_en": "https://tooltrim.com/en/tool/affinity-designer",
     "website": "https://affinity.serif.com/designer/",
-    "category": "design",
+    "category": "creation",
     "pricing": {
       "free": "",
       "paid": "Gratuit. Les fonctions IA (Generative Fill, etc.) nécessitent un compte Canva premium (~120$/an)."
@@ -1601,7 +1602,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/affinity-publisher",
     "url_en": "https://tooltrim.com/en/tool/affinity-publisher",
     "website": "https://affinity.serif.com/publisher/",
-    "category": "publishing",
+    "category": "creation",
     "pricing": {
       "free": "",
       "paid": "Gratuit (réuni dans l'app Affinity de Canva). Fonctions IA via compte Canva premium (~120$/an)."
@@ -4650,7 +4651,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/fusion",
     "url_en": "https://tooltrim.com/en/tool/fusion",
     "website": "https://www.blackmagicdesign.com/products/fusion",
-    "category": "video",
+    "category": "creation",
     "pricing": {
       "free": "Fusion est inclus gratuitement dans DaVinci Resolve gratuit avec les outils de compositing essentiels ; Fusion Studio ajoute des capacités avancées (centaines d'outils, particules 3D, rotoscoping, tracking).",
       "paid": "Fusion (dans DaVinci Resolve Free): Gratuit ; Fusion Studio: 295 $ (licence perpétuelle, unique code activation pour Resolve + Fusion)"
@@ -7244,7 +7245,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/cision",
     "url_en": "https://tooltrim.com/en/tool/cision",
     "website": "https://cision.com",
-    "category": "marketing",
+    "category": "communication",
     "pricing": {
       "free": "Aucun plan gratuit",
       "paid": "Sur devis annuel, à partir d'environ 525.6€/mois"
@@ -7592,7 +7593,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/clip-studio-paint",
     "url_en": "https://tooltrim.com/en/tool/clip-studio-paint",
     "website": "https://www.clipstudio.net/",
-    "category": "illustration",
+    "category": "creation",
     "pricing": {
       "free": "Pas de plan gratuit.",
       "paid": "Dès 63 $ (licence à vie), plan PRO (perpetual license, Ver. 5.0)."
@@ -8486,7 +8487,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/coreldraw",
     "url_en": "https://tooltrim.com/en/tool/coreldraw",
     "website": "https://www.coreldraw.com/",
-    "category": "design",
+    "category": "creation",
     "pricing": {
       "free": "",
       "paid": "Abonnement 269$/an (~22€/mois) ou licence perpétuelle ~549$. Prix vérifié le 2026-07-08."
@@ -9294,7 +9295,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/cycles",
     "url_en": "https://tooltrim.com/en/tool/cycles",
     "website": "https://www.blender.org/features/rendering/",
-    "category": "3d",
+    "category": "creation",
     "pricing": {
       "free": "Inclus avec Blender.",
       "paid": ""
@@ -9470,7 +9471,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/darktable",
     "url_en": "https://tooltrim.com/en/tool/darktable",
     "website": "https://www.darktable.org/",
-    "category": "photo",
+    "category": "creation",
     "pricing": {
       "free": "Plan gratuit : Entirely free and open source, no limitations or paid tier; licensed under GNU GPL v3 or later.",
       "paid": "Pas d'offre payante obligatoire."
@@ -11119,7 +11120,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/dxo-photolab",
     "url_en": "https://tooltrim.com/en/tool/dxo-photolab",
     "website": "https://www.dxo.com/dxo-photolab/",
-    "category": "photo",
+    "category": "creation",
     "pricing": {
       "free": "Pas de plan gratuit.",
       "paid": "Dès 159,99 $ (licence à vie), plan Essential."
@@ -12621,7 +12622,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/figma-make",
     "url_en": "https://tooltrim.com/en/tool/figma-make",
     "website": "https://www.figma.com/make/",
-    "category": "ai-code",
+    "category": "prototyping",
     "pricing": {
       "free": "Starter permet d'explorer Make, sans bibliothèques d'équipe et avec publication publique liée à Figma Community.",
       "paid": "Starter: Gratuit, accès limité et 500 crédits d'IA/mois au maximum ; Professional Full seat: 16 $/mois, 3 000 crédits d'IA/mois ; Organization Full seat: 55 $/mois, facturé annuellement, 3 500 crédits d'IA/mois ; Enterprise Full seat: 90 $/mois, facturé annuellement, 4 250 crédits d'IA/mois"
@@ -12664,7 +12665,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/figma-sites",
     "url_en": "https://tooltrim.com/en/tool/figma-sites",
     "website": "https://www.figma.com/sites/",
-    "category": "website-builders",
+    "category": "nocode-web",
     "pricing": {
       "free": "Starter permet d'explorer le produit mais nécessite une mise à niveau pour publier un site.",
       "paid": "Starter: Gratuit, création limitée sans publication ; Professional Full seat: 16 $/mois, Sites inclus ; Organization Full seat: 55 $/mois, facturé annuellement ; Enterprise Full seat: 90 $/mois, facturé annuellement"
@@ -12750,7 +12751,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/figma-dev-mode",
     "url_en": "https://tooltrim.com/en/tool/figma-dev-mode",
     "website": "https://www.figma.com/dev-mode/",
-    "category": "developer-tools",
+    "category": "design-tools",
     "pricing": {
       "free": "Les viewers gratuits disposent d'une inspection de base, mais pas de l'espace Dev Mode complet.",
       "paid": "Professional Dev seat: 12 $/mois ; Professional Full seat: 16 $/mois ; Organization Dev seat: 25 $/mois, facturé annuellement ; Enterprise Dev seat: 35 $/mois, facturé annuellement"
@@ -12836,7 +12837,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/figma-motion",
     "url_en": "https://tooltrim.com/en/tool/figma-motion",
     "website": "https://www.figma.com/motion/",
-    "category": "motion-design",
+    "category": "creation",
     "pricing": {
       "free": "Starter permet d'essayer Motion avec des exports limités.",
       "paid": "Starter: Gratuit, accès et exports limités ; Professional Full seat: 16 $/mois ; Organization Full seat: 55 $/mois, facturé annuellement ; Enterprise Full seat: 90 $/mois, facturé annuellement"
@@ -19860,7 +19861,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/klaviyo",
     "url_en": "https://tooltrim.com/en/tool/klaviyo",
     "website": "https://www.klaviyo.com/",
-    "category": "marketing",
+    "category": "email-productivity",
     "pricing": {
       "free": "Plan gratuit : Jusqu'à 250 profils actifs, 500 envois d'e-mails par mois, 5 $ de crédit SMS par mois, support par e-mail limité aux 60 premiers jours",
       "paid": "Dès 60 $/mois, plan Marketing."
@@ -20120,7 +20121,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/krita",
     "url_en": "https://tooltrim.com/en/tool/krita",
     "website": "https://krita.org/",
-    "category": "illustration",
+    "category": "creation",
     "pricing": {
       "free": "Open source.",
       "paid": "Gratuit et open source. Version payante sur les stores (Steam/MS Store) pour soutenir le projet."
@@ -23689,7 +23690,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/meltwater",
     "url_en": "https://tooltrim.com/en/tool/meltwater",
     "website": "https://meltwater.com",
-    "category": "marketing",
+    "category": "communication",
     "pricing": {
       "free": "Aucun plan gratuit",
       "paid": "Sur devis, à partir d'environ 438€/mois (Starter) jusqu'à 10950€+/mois (Enterprise)"
@@ -28695,7 +28696,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/photopea",
     "url_en": "https://tooltrim.com/en/tool/photopea",
     "website": "https://www.photopea.com/",
-    "category": "photo",
+    "category": "creation",
     "pricing": {
       "free": "Plan gratuit : Toutes les fonctionnalités d'édition débloquées, financé par la publicité, 0,5 Go de stockage cloud PeaDrive, historique d'édition plus court, crédits IA de base.",
       "paid": "Dès 8 € (licence à vie), plan Premium, Single user, 30 days."
@@ -29221,7 +29222,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/pixelmator-pro",
     "url_en": "https://tooltrim.com/en/tool/pixelmator-pro",
     "website": "https://www.apple.com/pixelmator-pro/",
-    "category": "photo",
+    "category": "creation",
     "pricing": {
       "free": "Essai gratuit de 30 jours avec Apple Creator Studio",
       "paid": "59,99 € en achat unique sur Mac, ou 12,99 €/mois avec Apple Creator Studio"
@@ -31016,7 +31017,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/prowly",
     "url_en": "https://tooltrim.com/en/tool/prowly",
     "website": "https://prowly.com",
-    "category": "marketing",
+    "category": "communication",
     "pricing": {
       "free": "Essai gratuit de 7 jours avec accès complet",
       "paid": "Basic dès 323.24€/mois (sans relances auto ni rapports détaillés)"
@@ -31102,7 +31103,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/pterocos",
     "url_en": "https://tooltrim.com/en/tool/pterocos",
     "website": "https://pterocos.eu.org/",
-    "category": "developer-tools",
+    "category": "prototyping",
     "pricing": {
       "free": "Gratuit et open source",
       "paid": null
@@ -31525,7 +31526,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/quarkxpress",
     "url_en": "https://tooltrim.com/en/tool/quarkxpress",
     "website": "https://www.quark.com/products/quarkxpress",
-    "category": "publishing",
+    "category": "creation",
     "pricing": {
       "free": "Pas de plan gratuit.",
       "paid": "Dès 23,25 $/mois, plan Prepaid Annual Subscription."
@@ -32372,7 +32373,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/reaper",
     "url_en": "https://tooltrim.com/en/tool/reaper",
     "website": "https://www.reaper.fm/",
-    "category": "audio",
+    "category": "creation",
     "pricing": {
       "free": "Pas de plan gratuit permanent, essai de 60 jours.",
       "paid": "Dès 60 $ (licence à vie), plan Discounted / Personal License."
@@ -40683,7 +40684,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/topaz-photo-ai",
     "url_en": "https://tooltrim.com/en/tool/topaz-photo-ai",
     "website": "https://www.topazlabs.com/topaz-photo-ai",
-    "category": "photo",
+    "category": "creation",
     "pricing": {
       "free": "Pas de plan gratuit.",
       "paid": "Dès 16,58 $/mois, plan Photo (annual)."
@@ -46108,7 +46109,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/convoscore",
     "url_en": "https://tooltrim.com/en/tool/convoscore",
     "website": "https://www.convoscore.com/",
-    "category": "marketing",
+    "category": "analytics",
     "pricing": {
       "free": "Gratuit : 1 site, 1 chatbot et badge ConvoScore",
       "paid": "Starter 49 $/mois ou 490 $/an ; Growth 129 $/mois ou 1 290 $/an ; Enterprise sur devis"
@@ -53371,7 +53372,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/georankers",
     "url_en": "https://tooltrim.com/en/tool/georankers",
     "website": "https://georankers.ai/",
-    "category": "marketing",
+    "category": "analytics",
     "pricing": {
       "free": "Essai de 7 jours sans carte bancaire ; aucun forfait gratuit permanent annoncé.",
       "paid": "Launch : 49 USD/mois ou équivalent 41 USD/mois facturé 123 USD/trimestre. Grow : 159 USD/mois ou équivalent 129 USD/mois facturé 387 USD/trimestre. Enterprise sur devis."
@@ -53924,7 +53925,7 @@
     "description_en": "Desktop application (Linux/macOS/Windows) that switches a DDC/CI-compatible monitor's video input with a single click, and transfers text and files between computers with no network or firewall configuration needed.",
     "price_verified_on": "2026-10-29",
     "verdict_fr": {
-      "score": "3/5",
+      "score": "3.2/5",
       "label": "Bon",
       "keep_if": "Ton moniteur supporte DDC/CI et tu bascules régulièrement entre plusieurs ordinateurs dont au moins un n'a pas de logiciel de switch fourni par le fabricant",
       "avoid_if": "Ton moniteur ne supporte pas DDC/CI, ou tu n'utilises qu'un seul ordinateur sur ce poste : l'outil n'a alors aucune utilité",
@@ -53933,12 +53934,12 @@
         "Le transfert de texte et de fichiers entre systèmes d'exploitation différents évite les clés USB ou les partages réseau à configurer"
       ],
       "weaknesses": [
-        "Sur Linux, l'accès DDC/CI demande une configuration système (groupe i2c ou règle udev), et Wayland peut bloquer l'accès bas niveau",
-        "La version Mac ne fonctionne que sur Apple Silicon ; aucun support pour les Mac Intel"
+        "La version Mac ne fonctionne que sur Apple Silicon ; aucun support pour les Mac Intel",
+        "Essai gratuit d'un mois, mais carte bancaire requise dès l'inscription"
       ]
     },
     "verdict_en": {
-      "score": "3/5",
+      "score": "3.2/5",
       "label": "Good",
       "keep_if": "Your monitor supports DDC/CI and you regularly switch between several computers, at least one of which has no manufacturer-provided switching software",
       "avoid_if": "Your monitor doesn't support DDC/CI, or you only use one computer at that desk: the tool then serves no purpose",
@@ -53947,8 +53948,8 @@
         "Text and file transfer across different operating systems avoids USB sticks or network shares to configure"
       ],
       "weaknesses": [
-        "On Linux, DDC/CI access requires system configuration (i2c group or udev rule), and Wayland can block low-level access",
-        "The Mac version only runs on Apple Silicon; no support for Intel Macs"
+        "The Mac version only runs on Apple Silicon; no support for Intel Macs",
+        "One-month free trial, but a credit card is required at signup"
       ]
     }
   },

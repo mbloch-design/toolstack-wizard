@@ -1,0 +1,96 @@
+# ToolTrim tool catalogue — budgeting-fpa
+# Generated from src/data/tools_index.json
+# Family: budgeting-fpa (2 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Anaplan",
+    "slug": "anaplan",
+    "url_fr": "https://tooltrim.com/fr/tool/anaplan",
+    "url_en": "https://tooltrim.com/en/tool/anaplan",
+    "website": "https://www.anaplan.com",
+    "category": "budgeting-fpa",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Anaplan est une plateforme cloud de planification et de modélisation pour les équipes finance, ventes et supply chain, au tarif uniquement sur devis.",
+    "description_en": "Anaplan is a cloud planning and modeling platform for finance, sales and supply chain teams, priced only on a sales quote.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "2.8/5",
+      "label": "Correct",
+      "keep_if": "Une grande organisation a besoin d'une plateforme dédiée de planification multi-dimensionnelle en finance, ventes ou supply chain, et a le budget pour un processus commercial d'entreprise",
+      "avoid_if": "L'équipe est un indépendant ou une très petite équipe : l'absence de tarif public, de palier gratuit ou d'essai rend Anaplan difficile à évaluer sans un budget d'entreprise",
+      "strengths": [
+        "Combine modélisation multi-dimensionnelle et agents IA par rôle pour l'analyse de scénarios dans une seule plateforme",
+        "Couvre la planification sur plusieurs fonctions (finance, ventes, supply chain, RH, retail) plutôt qu'un seul service"
+      ],
+      "weaknesses": [
+        "Aucun tarif ni essai publié : chaque projet commence par un échange commercial",
+        "Positionné pour les grandes entreprises, ce qui suppose une mise en place complexe, peu adaptée aux indépendants ou très petites équipes"
+      ]
+    },
+    "verdict_en": {
+      "score": "2.8/5",
+      "label": "Fair",
+      "keep_if": "A large organization needs a dedicated multi-dimensional planning platform across finance, sales or supply chain and has the budget for an enterprise sales process",
+      "avoid_if": "The team is a freelancer or a very small team: the lack of published pricing, free tier or trial makes Anaplan a poor fit to evaluate without an enterprise budget",
+      "strengths": [
+        "Combines multi-dimensional modeling with role-based AI agents for scenario analysis in one platform",
+        "Covers planning across multiple functions (finance, sales, supply chain, HR, retail) rather than one department alone"
+      ],
+      "weaknesses": [
+        "No published pricing or trial: every engagement starts with a sales conversation",
+        "Positioned for large enterprises, implying a setup complexity not aimed at solo users or very small teams"
+      ]
+    }
+  },
+  {
+    "name": "Pigment",
+    "slug": "pigment",
+    "url_fr": "https://tooltrim.com/fr/tool/pigment",
+    "url_en": "https://tooltrim.com/en/tool/pigment",
+    "website": "https://www.gopigment.com",
+    "category": "budgeting-fpa",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Pigment aide les équipes finance à piloter budget, prévisionnel et reporting.",
+    "description_en": "AI-native integrated business planning (IBP) platform with integrated architecture, 30+ native connectors, and multi-dimensional modeling for budgeting, forecasting, sales planning, and collaborative scenario building.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME/ETI tech-forward avec budgets de planification",
+      "avoid_if": "Vous avez très petit budget (< 10k€/an)",
+      "strengths": [
+        "UX moderne et intuitive, facile apprentissage vs Anaplan",
+        "30+ connecteurs natifs : intégrations automtisées sans ETL custom",
+        "IA agentic pour automations planification avancée"
+      ],
+      "weaknesses": [
+        "Tarification non publique (démo et négociation requises), positionnée au-dessus de certains concurrents",
+        "Moins de cas clients historiques vs Anaplan établie",
+        "Encore en croissance : support/training peut être moins mature"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a tech-forward SMB/mid-market with planning budgets",
+      "avoid_if": "You have a very tight budget",
+      "strengths": [
+        "Modern, intuitive UX; easier to learn than Anaplan",
+        "30+ native connectors: automated integrations without custom ETL",
+        "Agentic AI for advanced planning automation"
+      ],
+      "weaknesses": [
+        "Non-public pricing (demo and negotiation required), positioned above some competitors",
+        "Fewer historical customers vs. established Anaplan",
+        "Still growing: support/training may be less mature"
+      ]
+    }
+  }
+]

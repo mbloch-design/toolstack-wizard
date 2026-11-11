@@ -1,0 +1,1522 @@
+# ToolTrim tool catalogue — ui-components
+# Generated from src/data/tools_index.json
+# Family: ui-components (35 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Alpine.js",
+    "slug": "alpinejs",
+    "url_fr": "https://tooltrim.com/fr/tool/alpinejs",
+    "url_en": "https://tooltrim.com/en/tool/alpinejs",
+    "website": "https://alpinejs.dev",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Framework JavaScript léger pour ajouter de l'interactivité au HTML existant.",
+    "description_en": "Lightweight JavaScript framework for adding interactivity to existing HTML.",
+    "verdict_fr": {
+      "keep_if": "Vous voulez ajouter de l'interactivité sans infrastructure de build",
+      "avoid_if": "Vous construisez une application web complexe et grande",
+      "strengths": [
+        "Très léger — ne charge que 6 kB en minifié",
+        "Aucun build step ou configuration webpack requise",
+        "Syntaxe declarative proche du balisage HTML"
+      ],
+      "weaknesses": [
+        "Écosystème moins mature que Vue ou React",
+        "Moins de ressources communautaires disponibles",
+        "Non adapté aux très grandes applications web"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want to add interactivity without build infrastructure",
+      "avoid_if": "You're building a large, complex web application",
+      "strengths": [
+        "Very lightweight — only 6 kB minified",
+        "No build step or webpack config required",
+        "Declarative syntax close to HTML markup"
+      ],
+      "weaknesses": [
+        "Less mature ecosystem than Vue or React",
+        "Fewer community resources available",
+        "Not suitable for very large web applications"
+      ]
+    }
+  },
+  {
+    "name": "Angular Material",
+    "slug": "angular-material",
+    "url_fr": "https://tooltrim.com/fr/tool/angular-material",
+    "url_en": "https://tooltrim.com/en/tool/angular-material",
+    "website": "https://material.angular.dev/",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "Bibliothèque officielle de composants Material Design pour Angular, maintenue par l'équipe Angular de Google, avec l'Angular CDK pour du comportement sur mesure.",
+    "description_en": "Official Material Design component library for Angular, maintained by Google's Angular team, with the Angular CDK for custom behavior.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu construis une application Angular et tu veux un ensemble de composants cohérent et officiellement maintenu, plutôt que de l'assembler toi-même",
+      "avoid_if": "Tu n'utilises pas Angular, ou tu as besoin d'un style visuel très éloigné de Material Design sans lourdes surcharges CSS",
+      "strengths": [
+        "Entièrement gratuit et open source, avec une maintenance officielle par l'équipe Google/Angular",
+        "Livré avec l'Angular CDK pour construire des composants entièrement sur mesure sur des briques de comportement solides"
+      ],
+      "weaknesses": [
+        "Réservé à Angular, inutilisable dans une base de code React ou Vue",
+        "S'éloigner de l'apparence Material Design par défaut demande un travail de surcharge CSS/SCSS"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You're building an Angular app and want an officially maintained, coherent component set instead of assembling one yourself",
+      "avoid_if": "You're not using Angular, or you need a visual style far from Material Design without heavy CSS overrides",
+      "strengths": [
+        "Completely free and open source, with official Google/Angular team maintenance",
+        "Ships with the Angular CDK for building fully custom components on solid behavior primitives"
+      ],
+      "weaknesses": [
+        "Locked to Angular, unusable in a React or Vue codebase",
+        "Moving away from the default Material Design look requires CSS/SCSS override work"
+      ]
+    }
+  },
+  {
+    "name": "Angular Universal",
+    "slug": "angular-universal",
+    "url_fr": "https://tooltrim.com/fr/tool/angular-universal",
+    "url_en": "https://tooltrim.com/en/tool/angular-universal",
+    "website": "https://angular.io/guide/universal",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Server-Side Rendering (SSR) pour les applications Angular.",
+    "description_en": "Server-Side Rendering (SSR) for Angular applications.",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez Angular et vous avez besoin d'améliorer votre SEO",
+      "avoid_if": "Vous utilisez une autre framework que Angular",
+      "strengths": [
+        "Intégré natif dans Angular — pas de dépendance externe",
+        "Améliorations SEO immédiates et mesurables",
+        "Meilleure vitesse d'affichage initial pour les utilisateurs"
+      ],
+      "weaknesses": [
+        "Ajoute complexité au déploiement et à la maintenance",
+        "Nécessite une infrastructure côté serveur",
+        "Limite à l'écosystème Angular"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You use Angular and need to improve your SEO",
+      "avoid_if": "You use a framework other than Angular",
+      "strengths": [
+        "Natively integrated into Angular — no external dependencies",
+        "Immediate and measurable SEO improvements",
+        "Better initial display speed for users"
+      ],
+      "weaknesses": [
+        "Adds complexity to deployment and maintenance",
+        "Requires server-side infrastructure",
+        "Limited to the Angular ecosystem"
+      ]
+    }
+  },
+  {
+    "name": "ApexCharts",
+    "slug": "apexcharts",
+    "url_fr": "https://tooltrim.com/fr/tool/apexcharts",
+    "url_en": "https://tooltrim.com/en/tool/apexcharts",
+    "website": "https://apexcharts.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Plan gratuit : La bibliothèque ApexCharts de base est gratuite et open source (sous licence MIT)",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "Bibliothèque JavaScript de graphiques gratuite et open source, avec plus de 20 types de graphiques SVG pour React, Vue, Angular et JavaScript natif.",
+    "description_en": "Free, open-source JavaScript charting library with 20+ SVG chart types for React, Vue, Angular and vanilla JS, built for fast rendering.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "À garder si tu intègres des graphiques dans une application web en React, Vue, Angular ou JavaScript natif et préfères une bibliothèque gratuite à un produit de graphiques hébergé",
+      "avoid_if": "À éviter si tu as besoin d'un produit de graphiques hébergé sans maintenance plutôt que d'une bibliothèque à intégrer et à maintenir toi-même",
+      "strengths": [
+        "Gratuite et open source sous licence MIT, sans limite d'usage sur la bibliothèque de base",
+        "Couvre plus de 20 types de graphiques sur les trois principaux frameworks, plus le JavaScript natif, dans une seule bibliothèque"
+      ],
+      "weaknesses": [
+        "Pas d'option hébergée : une équipe doit l'intégrer et la maintenir à jour dans sa propre application",
+        "Les produits complémentaires (grille de données, Gantt, organigrammes) sont des produits séparés, au tarif non vérifié, non inclus dans la bibliothèque de base gratuite"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "Keep if you're embedding charts in a web app built with React, Vue, Angular or vanilla JS and want a free library instead of a hosted charting product",
+      "avoid_if": "Avoid if you need a hosted, maintenance-free charting product rather than a library to integrate and maintain yourself",
+      "strengths": [
+        "Free and open source under MIT, with no usage cap on the core library",
+        "Covers 20+ chart types across the three major frameworks plus vanilla JS in one library"
+      ],
+      "weaknesses": [
+        "No hosted option: a team has to integrate and keep it updated inside their own app",
+        "Companion products (data grid, Gantt, org charts) are separate, unverified-pricing products, not included in the free core library"
+      ]
+    }
+  },
+  {
+    "name": "Chart.js",
+    "slug": "chartjs",
+    "url_fr": "https://tooltrim.com/fr/tool/chartjs",
+    "url_en": "https://tooltrim.com/en/tool/chartjs",
+    "website": "https://www.chartjs.org",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "Chart.js est une bibliothèque JavaScript gratuite et open source qui génère 8 types de graphiques sur Canvas HTML5, avec animations et redimensionnement réactif.",
+    "description_en": "Chart.js is a free, open-source JavaScript library that renders 8 chart types on HTML5 Canvas with animations and responsive resizing.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Un développeur a besoin de graphiques standards et performants dans une application web, gratuitement, sans licence de visualisation payante",
+      "avoid_if": "Le projet est entièrement construit en React ou Vue et a besoin de composants de graphique officiels plutôt que d'un wrapper communautaire",
+      "strengths": [
+        "Gratuite et open source, sans coût de licence à aucune échelle",
+        "Tree-shaking et plugin de décimation permettent de garder une taille de bundle et une performance maîtrisées sur de gros jeux de données"
+      ],
+      "weaknesses": [
+        "Pas de composants React ou Vue officiels ; l'intégration aux frameworks repose sur des paquets communautaires",
+        "Le rendu Canvas limite le style fin au niveau du DOM sur chaque élément du graphique, par rapport aux bibliothèques SVG"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "A developer needs standard, performant charts in a web app for free, without a commercial visualization license",
+      "avoid_if": "The project is built entirely in React or Vue and needs official first-party chart components rather than a community wrapper",
+      "strengths": [
+        "Free and open source, with no license cost at any scale",
+        "Tree-shaking and a decimation plugin keep bundle size and performance manageable on large datasets"
+      ],
+      "weaknesses": [
+        "No official React or Vue components; framework integration relies on community packages",
+        "Canvas-based rendering limits fine-grained DOM styling of individual chart elements compared to SVG libraries"
+      ]
+    }
+  },
+  {
+    "name": "Chromatic",
+    "slug": "chromatic",
+    "url_fr": "https://tooltrim.com/fr/tool/chromatic",
+    "url_en": "https://tooltrim.com/en/tool/chromatic",
+    "website": "https://www.chromatic.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "",
+      "paid": "Tarif à vérifier selon plan et usage"
+    },
+    "description_fr": "Tests visuels et publication Storybook pour design systems et composants.",
+    "description_en": "Visual testing and Storybook publishing for design systems and components.",
+    "verdict_fr": {
+      "keep_if": "Vous maintenez un design system documenté avec Storybook",
+      "avoid_if": "Vous ne utilisez pas Storybook",
+      "strengths": [
+        "Intégration transparente avec Storybook",
+        "Détection automatique de régressions visuelles",
+        "Collaboration en temps réel sur les composants"
+      ],
+      "weaknesses": [
+        "Requiert Storybook — pas utilisable seul",
+        "Coûts escalade rapide avec le nombre de snapshots",
+        "Dépendance envers une plateforme externe"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You maintain a Storybook-documented design system",
+      "avoid_if": "You don't use Storybook",
+      "strengths": [
+        "Seamless Storybook integration",
+        "Automatic visual regression detection",
+        "Real-time collaboration on components"
+      ],
+      "weaknesses": [
+        "Requires Storybook — not usable standalone",
+        "Costs escalate quickly with snapshot count",
+        "Dependency on external platform"
+      ]
+    }
+  },
+  {
+    "name": "Create React App",
+    "slug": "create-react-app",
+    "url_fr": "https://tooltrim.com/fr/tool/create-react-app",
+    "url_en": "https://tooltrim.com/en/tool/create-react-app",
+    "website": "https://create-react-app.dev",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Outil de scaffolding React officiel — aujourd'hui en fin de vie.",
+    "description_en": "Official React scaffolding tool — now end-of-life.",
+    "alternatives": [
+      "react"
+    ],
+    "verdict_fr": {
+      "keep_if": "Vous commencez votre apprentissage de React",
+      "avoid_if": "Vous avez besoin d'une configuration très spécifique ou avancée",
+      "strengths": [
+        "Zéro configuration pour commencer",
+        "Structure de projet bien pensée et cohérente",
+        "Outils de test et linting intégrés"
+      ],
+      "weaknesses": [
+        "Configuration webpack cachée — difficile à customiser",
+        "Temps de build et hot reload plus lents que Vite",
+        "Capacités d'eject complexes si customisation nécessaire"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're learning React",
+      "avoid_if": "You need very specific or advanced configuration",
+      "strengths": [
+        "Zero configuration to start",
+        "Well-thought and cohesive project structure",
+        "Built-in testing and linting tools"
+      ],
+      "weaknesses": [
+        "Hidden webpack config — difficult to customize",
+        "Build and hot reload slower than Vite",
+        "Complex eject capabilities if customization needed"
+      ]
+    }
+  },
+  {
+    "name": "D3.js",
+    "slug": "d3js",
+    "url_fr": "https://tooltrim.com/fr/tool/d3js",
+    "url_en": "https://tooltrim.com/en/tool/d3js",
+    "website": "https://d3js.org",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Bibliothèque JavaScript pour créer des visualisations de données sur mesure en SVG.",
+    "description_en": "JavaScript library for creating custom data visualizations in SVG.",
+    "alternatives": [
+      "chartjs"
+    ],
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin de visualisations hautement personnalisées",
+      "avoid_if": "Vous voulez des graphiques simples rapidement",
+      "strengths": [
+        "Flexibilité extrême dans la création de visualisations",
+        "Contrôle total sur le comportement et l'apparence",
+        "Communauté grande et ressources abondantes"
+      ],
+      "weaknesses": [
+        "Courbe d'apprentissage très raide",
+        "Code verbeux et fastidieux pour les cas simples",
+        "Performance requiert une optimisation manuelle"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need highly customized visualizations",
+      "avoid_if": "You want simple charts quickly",
+      "strengths": [
+        "Extreme flexibility in visualization creation",
+        "Complete control over behavior and appearance",
+        "Large community and abundant resources"
+      ],
+      "weaknesses": [
+        "Very steep learning curve",
+        "Verbose and tedious code for simple cases",
+        "Performance requires manual optimization"
+      ]
+    }
+  },
+  {
+    "name": "Emotion",
+    "slug": "emotion",
+    "url_fr": "https://tooltrim.com/fr/tool/emotion",
+    "url_en": "https://tooltrim.com/en/tool/emotion",
+    "website": "https://emotion.sh",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Bibliothèque CSS-in-JS performante pour React et autres frameworks.",
+    "description_en": "Performant CSS-in-JS library for React and other frameworks.",
+    "alternatives": [
+      "tailwind-css"
+    ],
+    "verdict_fr": {
+      "keep_if": "Vous construisez des applications React avec styles dynamiques",
+      "avoid_if": "Vous utilisez déjà une autre solution CSS-in-JS établie",
+      "strengths": [
+        "Très léger avec performance optimisée",
+        "Composition CSS prévisible sans problème de spécificité",
+        "Support framework-agnostic (React, Vue, etc.)"
+      ],
+      "weaknesses": [
+        "Courbe d'apprentissage pour CSS-in-JS",
+        "Nécessite un bundler (webpack, vite, etc.)",
+        "Moins de ressources communautaires que Styled Components"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You build React apps with dynamic styles",
+      "avoid_if": "You already use another established CSS-in-JS solution",
+      "strengths": [
+        "Very lightweight with optimized performance",
+        "Predictable CSS composition without specificity issues",
+        "Framework-agnostic support (React, Vue, etc.)"
+      ],
+      "weaknesses": [
+        "Learning curve for CSS-in-JS",
+        "Requires a bundler (webpack, vite, etc.)",
+        "Fewer community resources than Styled Components"
+      ]
+    }
+  },
+  {
+    "name": "Formik",
+    "slug": "formik",
+    "url_fr": "https://tooltrim.com/fr/tool/formik",
+    "url_en": "https://tooltrim.com/en/tool/formik",
+    "website": "https://formik.org",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Bibliothèque pour construire et valider des formulaires React.",
+    "description_en": "Library for building and validating React forms.",
+    "alternatives": [
+      "react-hook-form"
+    ],
+    "verdict_fr": {
+      "keep_if": "Vous construisez des formulaires React complexes avec validation",
+      "avoid_if": "Vous avez besoin d'une gestion d'état ultra-minimale",
+      "strengths": [
+        "Gestion d'état de formulaire très simplifie",
+        "Validation puissante avec Yup ou Zod",
+        "Excellente documentation et exemples"
+      ],
+      "weaknesses": [
+        "Package plus lourd que React Hook Form",
+        "Peut être overkill pour les formulaires très simples",
+        "Syntaxe moins intuitive pour certains développeurs"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You build complex React forms with validation",
+      "avoid_if": "You need ultra-minimal form state handling",
+      "strengths": [
+        "Greatly simplified form state management",
+        "Powerful validation with Yup or Zod",
+        "Excellent documentation and examples"
+      ],
+      "weaknesses": [
+        "Package heavier than React Hook Form",
+        "Can be overkill for very simple forms",
+        "Less intuitive syntax for some developers"
+      ]
+    }
+  },
+  {
+    "name": "Framer Motion",
+    "slug": "framer-motion",
+    "url_fr": "https://tooltrim.com/fr/tool/framer-motion",
+    "url_en": "https://tooltrim.com/en/tool/framer-motion",
+    "website": "https://www.framer.com/motion/",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Librairie d’animation React pour transitions, micro-interactions et motion produit.",
+    "description_en": "React animation library for transitions, micro-interactions, and product motion.",
+    "verdict_fr": {
+      "keep_if": "Vous créez des interfaces React avec animations fluides",
+      "avoid_if": "Vous avez besoin d'animations très complexes et scientifiques",
+      "strengths": [
+        "Syntaxe simple et déclarative",
+        "Animations layout automatiques et intelligentes",
+        "Gestes et interactions fluides"
+      ],
+      "weaknesses": [
+        "Limité à l'écosystème React",
+        "Nécessite une compréhension de React hooks",
+        "Moins flexible que GSAP pour les animations très customisées"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You create React interfaces with smooth animations",
+      "avoid_if": "You need very complex, scientific animations",
+      "strengths": [
+        "Simple, declarative syntax",
+        "Automatic and intelligent layout animations",
+        "Fluid gestures and interactions"
+      ],
+      "weaknesses": [
+        "Limited to React ecosystem",
+        "Requires understanding of React hooks",
+        "Less flexible than GSAP for highly custom animations"
+      ]
+    }
+  },
+  {
+    "name": "GreenSock (GSAP)",
+    "slug": "greensock",
+    "url_fr": "https://tooltrim.com/fr/tool/greensock",
+    "url_en": "https://tooltrim.com/en/tool/greensock",
+    "website": "https://gsap.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Gratuit pour usage personnel/open source",
+      "paid": "Club GSAP à partir de 99$/an pour plugins avancés"
+    },
+    "description_fr": "Bibliothèque JavaScript d'animation professionnelle pour le web.",
+    "description_en": "Professional JavaScript animation library for the web.",
+    "verdict_fr": {
+      "keep_if": "Vous créez des animations web haute-performance",
+      "avoid_if": "Vous avez seulement besoin de transitions CSS simples",
+      "strengths": [
+        "Performance exceptionnelle (recommandé par Google)",
+        "Contrôle timeline et sequencing avancé",
+        "Plugins riches (ScrollTrigger, Draggable, etc.)"
+      ],
+      "weaknesses": [
+        "Courbe d'apprentissage modérée",
+        "API plus verbeux que Motion pour les cas simples",
+        "Moins populaire que Motion dans l'écosystème React"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You create high-performance web animations",
+      "avoid_if": "You only need simple CSS transitions",
+      "strengths": [
+        "Exceptional performance (recommended by Google)",
+        "Advanced timeline and sequencing control",
+        "Rich plugins (ScrollTrigger, Draggable, etc.)"
+      ],
+      "weaknesses": [
+        "Moderate learning curve",
+        "More verbose API than Motion for simple cases",
+        "Less popular than Motion in React ecosystem"
+      ]
+    }
+  },
+  {
+    "name": "Headless UI",
+    "slug": "headless-ui",
+    "url_fr": "https://tooltrim.com/fr/tool/headless-ui",
+    "url_en": "https://tooltrim.com/en/tool/headless-ui",
+    "website": "https://headlessui.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Composants UI non stylisés et accessibles par l'équipe Tailwind CSS.",
+    "description_en": "Completely unstyled, fully accessible UI components by the Tailwind team.",
+    "alternatives": [
+      "shadcn-ui"
+    ],
+    "verdict_fr": {
+      "keep_if": "Vous construisez un design system personnalisé sans constraints styling",
+      "avoid_if": "Vous recherchez des composants avec styling prédéfini",
+      "strengths": [
+        "Logique d'accessibilité complète et testée",
+        "Zéro styling imposé — totale liberté de design",
+        "Intégration transparente avec Tailwind CSS"
+      ],
+      "weaknesses": [
+        "Requiert une maîtrise de CSS/Tailwind",
+        "Composants limités comparés aux librairies full-featured",
+        "Responsabilité de styler chaque composant"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You build custom design systems without styling constraints",
+      "avoid_if": "You seek pre-styled components",
+      "strengths": [
+        "Complete, tested accessibility logic",
+        "Zero imposed styling — total design freedom",
+        "Seamless Tailwind CSS integration"
+      ],
+      "weaknesses": [
+        "Requires CSS/Tailwind mastery",
+        "Limited components vs full-featured libraries",
+        "Responsibility to style each component"
+      ]
+    }
+  },
+  {
+    "name": "Highcharts",
+    "slug": "highcharts",
+    "url_fr": "https://tooltrim.com/fr/tool/highcharts",
+    "url_en": "https://tooltrim.com/en/tool/highcharts",
+    "website": "https://www.highcharts.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Plan gratuit : Free for non-commercial use only: personal projects, school websites, charitable and non-profit organizations. No trial license required.",
+      "paid": "Dès 30,50 $/mois, plan Highcharts Core."
+    },
+    "description_fr": "Highcharts est une bibliothèque JS de graphiques, cartes et plannings Gantt, gratuite en usage non commercial et dès 366 $/siège développeur par an en usage commercial.",
+    "description_en": "Highcharts is a JavaScript charting library for interactive charts, maps and Gantt timelines, free for non-commercial use and from $366 per developer seat per year commercially.",
+    "alternatives": [
+      "chartjs"
+    ],
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu as besoin d'une bibliothèque de graphiques large et configurable (standard, financier, cartes, Gantt) dans un produit commercial et peux budgétiser une licence par développeur",
+      "avoid_if": "Tu construis un projet gratuit, open source ou non commercial, car le palier gratuit ne couvre pas l'usage commercial",
+      "strengths": [
+        "Couvre les graphiques standard, financiers, cartes et Gantt dans une seule bibliothèque cohérente plutôt que de combiner plusieurs outils",
+        "Utilisation gratuite pour les projets personnels, scolaires, caritatifs et associatifs non commerciaux"
+      ],
+      "weaknesses": [
+        "Tout usage commercial nécessite une licence payante ; il n'existe pas de palier gratuit commercial",
+        "La licence par développeur fait grossir le coût équipe directement avec l'effectif"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You need a broad, configurable charting library (standard, financial, maps, Gantt) in one commercial product and can budget per-developer licensing",
+      "avoid_if": "You're building a free, open-source or non-commercial project, since the free tier doesn't cover commercial use",
+      "strengths": [
+        "Covers standard, financial, map and Gantt charts in one consistent library instead of combining several tools",
+        "Free to use for personal, school, charitable and non-profit non-commercial projects"
+      ],
+      "weaknesses": [
+        "Any commercial use requires a paid license; there's no commercial free tier",
+        "Per-developer licensing means team costs grow directly with headcount"
+      ]
+    }
+  },
+  {
+    "name": "jQuery",
+    "slug": "jquery",
+    "url_fr": "https://tooltrim.com/fr/tool/jquery",
+    "url_en": "https://tooltrim.com/en/tool/jquery",
+    "website": "https://jquery.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Bibliothèque JavaScript légendaire pour la manipulation du DOM.",
+    "description_en": "The legendary JavaScript library for DOM manipulation.",
+    "alternatives": [
+      "react"
+    ],
+    "verdict_fr": {
+      "keep_if": "Vous maintenez du code legacy utilisant jQuery",
+      "avoid_if": "Vous démarrez un nouveau projet web moderne",
+      "strengths": [
+        "Syntaxe simple et intuitive pour la manipulation DOM",
+        "Énorme base installée et ressources disponibles",
+        "Petit et léger pour les petits projets"
+      ],
+      "weaknesses": [
+        "Mode maintenance — pas de nouvelles fonctionnalités",
+        "Pas adapté aux applications complexes",
+        "Approche déclarative du DOM moins moderne"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You maintain legacy code using jQuery",
+      "avoid_if": "You're starting a new modern web project",
+      "strengths": [
+        "Simple, intuitive syntax for DOM manipulation",
+        "Huge installed base and available resources",
+        "Small and lightweight for small projects"
+      ],
+      "weaknesses": [
+        "Maintenance mode — no new features",
+        "Not suited for complex applications",
+        "Declarative DOM approach less modern"
+      ]
+    }
+  },
+  {
+    "name": "Knockout",
+    "slug": "knockout",
+    "url_fr": "https://tooltrim.com/fr/tool/knockout",
+    "url_en": "https://tooltrim.com/en/tool/knockout",
+    "website": "https://knockoutjs.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Plan gratuit : Bibliothèque entièrement gratuite sous licence MIT",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "Bibliothèque JavaScript gratuite et open source qui lie les éléments du DOM à un modèle de vue, avec rafraîchissement automatique et suivi des dépendances.",
+    "description_en": "Free, open source JavaScript library binding DOM elements to a view model, with automatic UI refresh and dependency tracking.",
+    "alternatives": [
+      "react"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu maintiens une base de code Knockout.js existante ou tu as besoin d'une bibliothèque de liaison de données minimale et sans dépendance",
+      "avoid_if": "Tu démarres une nouvelle grande application, car le développement a ralenti et la plupart des écosystèmes ont migré vers React ou Vue",
+      "strengths": [
+        "Entièrement gratuite et open source, sans décision de prix à prendre",
+        "Empreinte très réduite (66 ko minifiée), facile à ajouter à une page existante"
+      ],
+      "weaknesses": [
+        "Le développement a nettement ralenti, la dernière version stable restant bloquée à la 3.5.3",
+        "Périmètre plus étroit que les frameworks modernes complets comme React ou Vue"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You maintain an existing Knockout.js codebase or need a minimal, dependency-free data-binding library",
+      "avoid_if": "You're starting a new large application, since development has slowed and most ecosystems have moved to React or Vue",
+      "strengths": [
+        "Completely free and open source, with no pricing decision to make",
+        "Very small footprint (66kb minified), easy to drop into an existing page"
+      ],
+      "weaknesses": [
+        "Development has slowed considerably, with the latest stable release stuck at 3.5.3",
+        "Narrower scope than full modern frameworks like React or Vue"
+      ]
+    }
+  },
+  {
+    "name": "Mantine",
+    "slug": "mantine",
+    "url_fr": "https://tooltrim.com/fr/tool/mantine",
+    "url_en": "https://tooltrim.com/en/tool/mantine",
+    "website": "https://mantine.dev",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Bibliothèque React complète avec 100+ composants et dark mode natif.",
+    "description_en": "Full-featured React component library with 100+ components and native dark mode.",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'une grande bibliothèque de composants pré-stylisés",
+      "avoid_if": "Vous préférez des composants unstyled (Radix Primitives)",
+      "strengths": [
+        "120+ composants pré-construits et stylisés couvrant presque tous les besoins",
+        "70+ hooks utiles pour les patterns React courants",
+        "Système de thèmes très sophistiqué et customizable"
+      ],
+      "weaknesses": [
+        "Bundle size plus grand que certaines alternatives (Radix)",
+        "Courbe d'apprentissage pour maîtriser tous les composants",
+        "Moins de déploiements en entreprise grandes que Material-UI"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need a large library of pre-styled components",
+      "avoid_if": "You prefer unstyled components (Radix Primitives)",
+      "strengths": [
+        "120+ pre-built and styled components covering almost all needs",
+        "70+ useful hooks for common React patterns",
+        "Highly sophisticated and customizable theme system"
+      ],
+      "weaknesses": [
+        "Larger bundle size than some alternatives (Radix)",
+        "Learning curve to master all components",
+        "Less adoption in large enterprises than Material-UI"
+      ]
+    }
+  },
+  {
+    "name": "Percy",
+    "slug": "percy",
+    "url_fr": "https://tooltrim.com/fr/tool/percy",
+    "url_en": "https://tooltrim.com/en/tool/percy",
+    "website": "https://percy.io",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Tests visuels automatisés pour détecter régressions UI.",
+    "description_en": "Automated visual testing to catch UI regressions.",
+    "verdict_fr": {
+      "keep_if": "Vous développez web ou app avec changements UI réguliers",
+      "avoid_if": "Vous faites uniquement test manuel et peu d'itérations UI",
+      "strengths": [
+        "Gratuit jusqu'à 5 000 screenshots/mois (très accessible)",
+        "Automatise entièrement détection visual regressions",
+        "Support multidevice et responsive testing"
+      ],
+      "weaknesses": [
+        "Pixel-by-pixel comparison prone aux faux positifs sur contenu dynamique",
+        "Meilleur pour UI statique que dynamique/animée",
+        "Tarification peut monter avec gros volumes screenshots"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You build web/app with regular UI changes",
+      "avoid_if": "You do only manual testing with infrequent UI changes",
+      "strengths": [
+        "Free up to 5000 screenshots/month (very accessible)",
+        "Fully automates visual regression detection",
+        "Multi-device and responsive testing support"
+      ],
+      "weaknesses": [
+        "Pixel-by-pixel comparison prone to false positives on dynamic content",
+        "Better for static UI than dynamic/animated",
+        "Pricing can climb with large screenshot volumes"
+      ]
+    }
+  },
+  {
+    "name": "Preact",
+    "slug": "preact",
+    "url_fr": "https://tooltrim.com/fr/tool/preact",
+    "url_en": "https://tooltrim.com/en/tool/preact",
+    "website": "https://preactjs.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Alternative légère à React (3kb) avec la même API ES6.",
+    "description_en": "Fast 3kb alternative to React with the same ES6 API.",
+    "verdict_fr": {
+      "keep_if": "Vous construisez une Progressive Web App (PWA) ou une application embarquée",
+      "avoid_if": "Vous avez besoin de beaucoup de bibliothèques React-specific",
+      "strengths": [
+        "Extrêmement léger : 3 kB seulement (vs 45 kB pour React)",
+        "API quasi-identique à React, facile pour les devs React",
+        "Excellente performance même sur réseaux lents"
+      ],
+      "weaknesses": [
+        "Écosystème plus petit que React",
+        "Moins de bibliothèques et d'outils spécifiques à Preact",
+        "La communauté est moins grande, moins de réponses aux questions"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're building a Progressive Web App (PWA) or embedded application",
+      "avoid_if": "You need many React-specific libraries",
+      "strengths": [
+        "Extremely lightweight: 3 kB only (vs 45 kB for React)",
+        "Nearly identical API to React, easy for React developers",
+        "Excellent performance even on slow networks"
+      ],
+      "weaknesses": [
+        "Smaller ecosystem than React",
+        "Fewer Preact-specific libraries and tools",
+        "Smaller community, fewer answers to questions"
+      ]
+    }
+  },
+  {
+    "name": "Radix Primitives",
+    "slug": "radix-primitives",
+    "url_fr": "https://tooltrim.com/fr/tool/radix-primitives",
+    "url_en": "https://tooltrim.com/en/tool/radix-primitives",
+    "website": "https://www.radix-ui.com/primitives",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Composants UI non stylisés et accessibles pour construire des design systems React.",
+    "description_en": "Unstyled, accessible UI components for building React design systems.",
+    "alternatives": [
+      "shadcn-ui"
+    ],
+    "verdict_fr": {
+      "keep_if": "Vous construisez un design system personnalisé",
+      "avoid_if": "Vous voulez des composants immédiatement utilisables et stylisés",
+      "strengths": [
+        "Contrôle total sur le styling et l'apparence",
+        "Entièrement accessible et WAI-ARIA compliant",
+        "Adoption modulaire — utilisez seulement ce dont vous avez besoin"
+      ],
+      "weaknesses": [
+        "Require building your own styling et composants composites",
+        "Aucun design par défaut — plus de travail initial",
+        "Courbe d'apprentissage pour comprendre la composition des primitives"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're building a custom design system",
+      "avoid_if": "You want immediately usable and styled components",
+      "strengths": [
+        "Total control over styling and appearance",
+        "Fully accessible and WAI-ARIA compliant",
+        "Modular adoption — use only what you need"
+      ],
+      "weaknesses": [
+        "Requires building your own styling and composite components",
+        "No default design — more initial work",
+        "Learning curve to master component composition"
+      ]
+    }
+  },
+  {
+    "name": "Radix UI",
+    "slug": "radix-ui",
+    "url_fr": "https://tooltrim.com/fr/tool/radix-ui",
+    "url_en": "https://tooltrim.com/en/tool/radix-ui",
+    "website": "https://www.radix-ui.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Composants React headless pour construire des interfaces accessibles et personnalisables.",
+    "description_en": "Headless React components for accessible, customizable interfaces.",
+    "verdict_fr": {
+      "keep_if": "Vous voulez des composants UI pré-stylisés et prêts à l'emploi",
+      "avoid_if": "Vous avez besoin de composants très spécialisés (data grids, charts)",
+      "strengths": [
+        "Composants pré-stylisés avec très bon design par défaut",
+        "Entièrement accessible et WAI-ARIA compliant",
+        "Zéro dépendances externes, bundle size léger"
+      ],
+      "weaknesses": [
+        "Customization personnalisée peut nécessiter plus d'effort que Chakra",
+        "Moins de composants spécialisés que Material-UI",
+        "Courbe d'apprentissage pour utiliser les thèmes efficacement"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want pre-styled, ready-to-use UI components",
+      "avoid_if": "You need highly specialized components (data grids, charts)",
+      "strengths": [
+        "Pre-styled components with excellent default design",
+        "Fully accessible and WAI-ARIA compliant",
+        "Zero external dependencies, lightweight bundle size"
+      ],
+      "weaknesses": [
+        "Custom customization may require more effort than Chakra",
+        "Fewer specialized components than Material-UI",
+        "Learning curve for using themes effectively"
+      ]
+    }
+  },
+  {
+    "name": "React",
+    "slug": "react",
+    "url_fr": "https://tooltrim.com/fr/tool/react",
+    "url_en": "https://tooltrim.com/en/tool/react",
+    "website": "https://react.dev",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "React est une bibliothèque JavaScript gratuite et open source pour construire des interfaces à base de composants, désormais gouvernée par la React Foundation indépendante.",
+    "description_en": "React is a free, open-source JavaScript library for building component-based user interfaces, now governed by the independent React Foundation.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux une bibliothèque de composants gratuite et largement adoptée, avec un écosystème profond et un bon vivier de recrutement, pour une interface web ou mobile",
+      "avoid_if": "Tu veux un framework tout-en-un prêt à l'emploi sans choisir séparément un routeur et un méta-framework",
+      "strengths": [
+        "Gratuite et open source sans coût de licence, désormais sous une gouvernance de fondation indépendante plutôt que celle d'une seule entreprise",
+        "Grand vivier de recrutement et écosystème de méta-frameworks et bibliothèques couvrant le routage, la récupération de données et le mobile"
+      ],
+      "weaknesses": [
+        "Pas un framework complet à elle seule : routage, gestion d'état et récupération de données demandent des choix tiers séparés",
+        "Les applications en production ont généralement besoin d'une couche méta-framework comme Next.js pour le build, ajoutant une seconde dépendance à suivre"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You want a widely adopted, free component library with deep ecosystem and hiring support for a web or mobile UI",
+      "avoid_if": "You want a batteries-included framework out of the box without choosing a router and meta-framework separately",
+      "strengths": [
+        "Free and open source with no licensing cost, now under independent Foundation governance rather than a single company",
+        "Large hiring pool and ecosystem of meta-frameworks and libraries covering routing, data fetching and mobile"
+      ],
+      "weaknesses": [
+        "Not a full framework on its own: routing, state management and data fetching require separate third-party choices",
+        "Production apps typically need a meta-framework layer like Next.js for build tooling, adding a second dependency to track"
+      ]
+    }
+  },
+  {
+    "name": "React Hook Form",
+    "slug": "react-hook-form",
+    "url_fr": "https://tooltrim.com/fr/tool/react-hook-form",
+    "url_en": "https://tooltrim.com/en/tool/react-hook-form",
+    "website": "https://react-hook-form.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Gestion de formulaires React performante avec validation intégrée.",
+    "description_en": "Performant React form management with built-in validation.",
+    "verdict_fr": {
+      "keep_if": "Vous voulez une gestion de formulaires minimaliste sans dépendances externes",
+      "avoid_if": "Vous avez besoin d'une UI formulaires pré-construite (préférez Formik + Material-UI)",
+      "strengths": [
+        "Très léger (~3 kB) et sans dépendance externe",
+        "Excelente performance même avec des formulaires complexes",
+        "Support TypeScript et validation par schémas (Yup, Zod)"
+      ],
+      "weaknesses": [
+        "Nécessite de construire l'UI du formulaire soi-même (pas de composants pré-stylisés)",
+        "Courbe d'apprentissage pour débuter avec les concepts de hooks et registre",
+        "Moins de documentation que Formik pour les cas avancés"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want lightweight form management without external dependencies",
+      "avoid_if": "You need pre-built form UI components (prefer Formik + Material-UI)",
+      "strengths": [
+        "Very lightweight (~3 kB) with zero external dependencies",
+        "Excellent performance even with complex forms",
+        "TypeScript support and schema-based validation (Yup, Zod)"
+      ],
+      "weaknesses": [
+        "Requires building form UI yourself (no pre-styled components)",
+        "Learning curve for hooks and register concepts",
+        "Less documentation than Formik for advanced use cases"
+      ]
+    }
+  },
+  {
+    "name": "React Query",
+    "slug": "react-query",
+    "url_fr": "https://tooltrim.com/fr/tool/react-query",
+    "url_en": "https://tooltrim.com/en/tool/react-query",
+    "website": "https://tanstack.com/query",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Récupération, mise en cache et synchronisation des données serveur pour React.",
+    "description_en": "Data fetching, caching and synchronization for React applications.",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin de gérer beaucoup de requêtes asynchrones et du cache côté client",
+      "avoid_if": "Vous gérez principalement du state client (useContext suffit)",
+      "strengths": [
+        "Élimine le besoin de gérer manuellement le cache et le loading state",
+        "Deduplication automatique des requêtes identiques",
+        "Refetch automatique au focus ou au reconnect"
+      ],
+      "weaknesses": [
+        "Courbe d'apprentissage pour comprendre les concepts de cache et stale time",
+        "Peut être overkill pour des applications très simples",
+        "Nécessite de combiner avec Redux ou Zustand pour le state client"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need to manage many asynchronous requests and client-side cache",
+      "avoid_if": "You're mainly managing client-side state (useContext is enough)",
+      "strengths": [
+        "Eliminates manual cache and loading-state management",
+        "Automatic deduplication of identical requests",
+        "Automatic refetching on window focus or reconnect"
+      ],
+      "weaknesses": [
+        "Learning curve to understand cache and stale-time concepts",
+        "Can be overkill for very simple applications",
+        "Requires combining with Redux or Zustand for client-side state"
+      ]
+    }
+  },
+  {
+    "name": "React Router",
+    "slug": "react-router",
+    "url_fr": "https://tooltrim.com/fr/tool/react-router",
+    "url_en": "https://tooltrim.com/en/tool/react-router",
+    "website": "https://reactrouter.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Plan gratuit : Bibliothèque entièrement open source, gratuite à l'usage et sans offre payante.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "Bibliothèque de routing open source pour React, utilisable comme simple routeur côté client ou en mode framework complet, gratuite et sans offre payante.",
+    "description_en": "Open source routing library for React apps, usable as a lightweight client-side router or a full-stack framework mode, free with no paid tier.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu construis une app React et tu veux un routing qui évolue d'un simple SPA vers un framework full-stack sans changer de bibliothèque",
+      "avoid_if": "Ton projet ne peut pas encore passer à Node 22+ et une chaîne d'outils ESM uniquement",
+      "strengths": [
+        "Gratuit et open source, sans dépendance à un éditeur sur le prix",
+        "Mise à jour non cassante des API de la v7 vers la v8"
+      ],
+      "weaknesses": [
+        "Exige une chaîne d'outils récente (Node 22+, ESM uniquement), ce qui peut forcer une mise à jour sur d'anciens projets",
+        "Aucun support éditeur ni SLA ; l'aide vient uniquement de la communauté"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You're building a React app and want routing that grows from a simple SPA into a full-stack framework without changing libraries",
+      "avoid_if": "Your codebase can't yet move to Node 22+ and an ESM-only toolchain",
+      "strengths": [
+        "Free and open source, with no vendor lock-in on pricing",
+        "Non-breaking upgrade path from v7 to v8 APIs"
+      ],
+      "weaknesses": [
+        "Requires a modern toolchain (Node 22+, ESM-only), which can force upgrades in older projects",
+        "No vendor support tier or SLA; help is community-driven only"
+      ]
+    }
+  },
+  {
+    "name": "Relay",
+    "slug": "relay",
+    "url_fr": "https://tooltrim.com/fr/tool/relay",
+    "url_en": "https://tooltrim.com/en/tool/relay",
+    "website": "https://relay.dev",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Framework GraphQL pour React permettant la colocation des données et composants.",
+    "description_en": "GraphQL framework for React enabling data and component colocation.",
+    "verdict_fr": {
+      "keep_if": "Vous construisez une application React avec une API GraphQL comme backend",
+      "avoid_if": "Vous utilisez une API REST (préférez React Query / TanStack Query)",
+      "strengths": [
+        "Framework GraphQL complètement optimisé pour React et les fragments déclaratifs",
+        "Compilation pré-runtime pour une meilleure performance",
+        "Cache automatique et très efficace avec synchronisation de données"
+      ],
+      "weaknesses": [
+        "Courbe d'apprentissage abrupte, concepts complexes à maîtriser",
+        "Require une étape de compilation (relay-compiler)",
+        "Moins de ressources éducatives que Apollo Client"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're building a React application with GraphQL as the backend",
+      "avoid_if": "You use a REST API (prefer React Query / TanStack Query)",
+      "strengths": [
+        "GraphQL framework fully optimized for React and declarative fragments",
+        "Compile-time pre-compilation for better performance",
+        "Automatic and very efficient cache with data synchronization"
+      ],
+      "weaknesses": [
+        "Steep learning curve, complex concepts to master",
+        "Requires a compilation step (relay-compiler)",
+        "Fewer educational resources than Apollo Client"
+      ]
+    }
+  },
+  {
+    "name": "Solid.js",
+    "slug": "solid-js",
+    "url_fr": "https://tooltrim.com/fr/tool/solid-js",
+    "url_en": "https://tooltrim.com/en/tool/solid-js",
+    "website": "https://www.solidjs.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Framework UI déclaratif ultra-performant sans virtual DOM.",
+    "description_en": "Declarative, ultra-performant UI framework without virtual DOM.",
+    "verdict_fr": {
+      "keep_if": "Vous voulez un framework réactif avec performance optimale et petit bundle",
+      "avoid_if": "Vous dépendez fortement de l'écosystème React",
+      "strengths": [
+        "Réactivité fine — met à jour seulement le DOM strictement nécessaire",
+        "Aucun Virtual DOM, seulement des opérations DOM directes",
+        "Performance exceptionnelle et bundle très léger"
+      ],
+      "weaknesses": [
+        "Écosystème bien plus petit que React",
+        "Communauté moins grande, moins de ressources éducatives",
+        "Concepts de réactivité différents de React, courbe d'apprentissage différente"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a reactive framework with optimal performance and small bundle",
+      "avoid_if": "You heavily depend on the React ecosystem",
+      "strengths": [
+        "Fine-grained reactivity — updates only strictly necessary DOM",
+        "No Virtual DOM, only direct DOM operations",
+        "Exceptional performance and very lightweight bundle"
+      ],
+      "weaknesses": [
+        "Ecosystem much smaller than React",
+        "Smaller community, fewer educational resources",
+        "Reactivity concepts differ from React, different learning curve"
+      ]
+    }
+  },
+  {
+    "name": "styled-components",
+    "slug": "styled-components",
+    "url_fr": "https://tooltrim.com/fr/tool/styled-components",
+    "url_en": "https://tooltrim.com/en/tool/styled-components",
+    "website": "https://styled-components.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "CSS-in-JS pour styler des composants React avec du CSS dynamique.",
+    "description_en": "CSS-in-JS library for styling React components with dynamic CSS.",
+    "alternatives": [
+      "tailwind-css"
+    ],
+    "verdict_fr": {
+      "keep_if": "Vous préférez écrire CSS couplé aux composants React",
+      "avoid_if": "Vous préférez CSS files séparées et approche traditionnelle",
+      "strengths": [
+        "CSS écrit directement en JS, couplé aux composants",
+        "Styling dynamique facile via interpolation de props React",
+        "Styles encapsulés, évite les conflits de class names"
+      ],
+      "weaknesses": [
+        "Ajoute du runtime overhead — plus lent que CSS pur",
+        "Bundle size plus grand que CSS files séparées",
+        "Moins performant que Tailwind pour du rendering statique"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You prefer writing CSS coupled to React components",
+      "avoid_if": "You prefer separate CSS files and traditional approach",
+      "strengths": [
+        "CSS written directly in JS, coupled to components",
+        "Dynamic styling easy via React props interpolation",
+        "Encapsulated styles, avoids class name conflicts"
+      ],
+      "weaknesses": [
+        "Adds runtime overhead — slower than pure CSS",
+        "Larger bundle size than separate CSS files",
+        "Less performant than Tailwind for static rendering"
+      ]
+    }
+  },
+  {
+    "name": "Svelte",
+    "slug": "svelte",
+    "url_fr": "https://tooltrim.com/fr/tool/svelte",
+    "url_en": "https://tooltrim.com/en/tool/svelte",
+    "website": "https://svelte.dev",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Framework UI qui compile en JavaScript vanille sans virtual DOM.",
+    "description_en": "UI framework that compiles to vanilla JavaScript with no virtual DOM.",
+    "verdict_fr": {
+      "keep_if": "Vous voulez un framework compilé pour performance optimale",
+      "avoid_if": "Votre équipe dépend fortement de l'écosystème React",
+      "strengths": [
+        "Approche compilée — aucun runtime Virtual DOM, performances exceptionnelles",
+        "Syntaxe naturelle et intuitive (HTML, CSS, JS ensemble)",
+        "Réactivité simple via le signe d'égalité $"
+      ],
+      "weaknesses": [
+        "Écosystème plus petit que React",
+        "Communauté moins grande, moins de ressources éducatives",
+        "Moins de bibliothèques tierces disponibles"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a compiled framework for optimal performance",
+      "avoid_if": "Your team heavily depends on the React ecosystem",
+      "strengths": [
+        "Compiled approach — no runtime Virtual DOM, exceptional performance",
+        "Natural and intuitive syntax (HTML, CSS, JS together)",
+        "Simple reactivity via the $ sign"
+      ],
+      "weaknesses": [
+        "Smaller ecosystem than React",
+        "Smaller community, fewer educational resources",
+        "Fewer third-party libraries available"
+      ]
+    }
+  },
+  {
+    "name": "Tailwind CSS",
+    "slug": "tailwind-css",
+    "url_fr": "https://tooltrim.com/fr/tool/tailwind-css",
+    "url_en": "https://tooltrim.com/en/tool/tailwind-css",
+    "website": "https://tailwindcss.com",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Framework CSS utilitaire pour construire vite des interfaces propres et cohérentes.",
+    "description_en": "Utility-first CSS framework for quickly building clean, consistent interfaces.",
+    "verdict_fr": {
+      "keep_if": "Vous voulez construire des designs rapidement directement dans le HTML",
+      "avoid_if": "Vous préférez écrire du CSS traditionnel et componente CSS séparés",
+      "strengths": [
+        "Développement très rapide — construisez des designs directement dans le HTML",
+        "Consistent design via système de tokens pré-défini",
+        "Responsive design facile avec breakpoints built-in"
+      ],
+      "weaknesses": [
+        "HTML peut devenir très verbose avec beaucoup de classes",
+        "Courbe d'apprentissage pour mémoriser les classe names",
+        "Moins flexible que CSS custom pour designs très spécifiques"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want to build designs quickly directly in HTML",
+      "avoid_if": "You prefer traditional CSS and separate component CSS files",
+      "strengths": [
+        "Very fast development — build designs directly in HTML",
+        "Consistent design via pre-defined token system",
+        "Easy responsive design with built-in breakpoints"
+      ],
+      "weaknesses": [
+        "HTML can become very verbose with many classes",
+        "Learning curve to memorize class names",
+        "Less flexible than custom CSS for very specific designs"
+      ]
+    }
+  },
+  {
+    "name": "TanStack Router",
+    "slug": "tanstack-router",
+    "url_fr": "https://tooltrim.com/fr/tool/tanstack-router",
+    "url_en": "https://tooltrim.com/en/tool/tanstack-router",
+    "website": "https://tanstack.com/router",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Routing React moderne, type-safe et scalable par les créateurs de TanStack Query.",
+    "description_en": "Modern, type-safe and scalable routing for React by the TanStack team.",
+    "verdict_fr": {
+      "keep_if": "Vous voulez un routeur type-safe avec inférence de type complète",
+      "avoid_if": "Vous avez une base de code importante avec React Router déjà en place",
+      "strengths": [
+        "Type-safe routing avec end-to-end type inference",
+        "Search parameters validés et type-safe",
+        "File-based routing pour approche simple"
+      ],
+      "weaknesses": [
+        "Plus nouveau que React Router, moins de ressources éducatives",
+        "Écosystème plus petit avec moins de middlewares et intégrations",
+        "Migration depuis React Router nécessite du refactoring"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a type-safe router with full type inference",
+      "avoid_if": "You have a large codebase with React Router already in place",
+      "strengths": [
+        "Type-safe routing with end-to-end type inference",
+        "Validated and type-safe search parameters",
+        "File-based routing for simple approach"
+      ],
+      "weaknesses": [
+        "Newer than React Router, fewer educational resources",
+        "Smaller ecosystem with fewer middlewares and integrations",
+        "Migration from React Router requires refactoring"
+      ]
+    }
+  },
+  {
+    "name": "Tremor",
+    "slug": "tremor",
+    "url_fr": "https://tooltrim.com/fr/tool/tremor",
+    "url_en": "https://tooltrim.com/en/tool/tremor",
+    "website": "https://www.tremor.so",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Composants React pour dashboards, métriques et dataviz produit.",
+    "description_en": "React components for dashboards, metrics, and product dataviz.",
+    "verdict_fr": {
+      "keep_if": "Vous construisez des dashboards et applications data-heavy",
+      "avoid_if": "Vous avez besoin de très grande flexibilité pour des charts custom avancés",
+      "strengths": [
+        "35+ composants pré-construits et prêts à l'emploi",
+        "Développement très rapide de dashboards",
+        "Accessible et responsive sans travail supplémentaire"
+      ],
+      "weaknesses": [
+        "Moins flexible que Recharts brut pour des besoins très custom",
+        "Composants plus basiques, ne couvre pas tous les types de charts",
+        "Performance peut être compromise avec beaucoup de données (100k+)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're building dashboards and data-heavy applications",
+      "avoid_if": "You need very high flexibility for advanced custom charts",
+      "strengths": [
+        "35+ pre-built and ready-to-use components",
+        "Very fast dashboard development",
+        "Accessible and responsive without extra work"
+      ],
+      "weaknesses": [
+        "Less flexible than raw Recharts for very custom needs",
+        "More basic components, doesn't cover all chart types",
+        "Performance may be compromised with lots of data (100k+)"
+      ]
+    }
+  },
+  {
+    "name": "Vue CLI",
+    "slug": "vue-cli",
+    "url_fr": "https://tooltrim.com/fr/tool/vue-cli",
+    "url_en": "https://tooltrim.com/en/tool/vue-cli",
+    "website": "https://cli.vuejs.org",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Outil de scaffolding officiel pour créer et configurer des projets Vue.js.",
+    "description_en": "Official scaffolding tool for creating and configuring Vue.js projects.",
+    "verdict_fr": {
+      "keep_if": "Vous maintenez une base de code Vue 2 ou Vue 3 existante",
+      "avoid_if": "Vous démarrez un nouveau projet Vue (préférez create-vue avec Vite)",
+      "strengths": [
+        "Outil officiel et fiable pour projects Vue existants",
+        "Support de plugins variés (TypeScript, Router, Vuex, ESLint)",
+        "Interface interactive pour configuration"
+      ],
+      "weaknesses": [
+        "En maintenance mode — pas de nouveau développement",
+        "Webpack peut être plus lent que Vite pour le dev server",
+        "Pour nouveaux projets, create-vue + Vite est recommandé"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You maintain an existing Vue 2 or Vue 3 codebase",
+      "avoid_if": "You're starting a new Vue project (prefer create-vue with Vite)",
+      "strengths": [
+        "Official and reliable tool for existing Vue projects",
+        "Support for various plugins (TypeScript, Router, Vuex, ESLint)",
+        "Interactive interface for configuration"
+      ],
+      "weaknesses": [
+        "In maintenance mode — no new development",
+        "Webpack can be slower than Vite for dev server",
+        "For new projects, create-vue + Vite is recommended"
+      ]
+    }
+  },
+  {
+    "name": "Vue Router",
+    "slug": "vue-router",
+    "url_fr": "https://tooltrim.com/fr/tool/vue-router",
+    "url_en": "https://tooltrim.com/en/tool/vue-router",
+    "website": "https://router.vuejs.org",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Open source / Gratuit",
+      "paid": null
+    },
+    "description_fr": "Le router officiel pour les applications Vue.js.",
+    "description_en": "The official router for Vue.js applications.",
+    "verdict_fr": {
+      "keep_if": "Vous construisez une Single Page Application (SPA) Vue.js",
+      "avoid_if": "Vous utilisez Nuxt.js (Nuxt gère le routage)",
+      "strengths": [
+        "Routeur officiel avec support complet de l'équipe Vue",
+        "Excellente documentation et examples",
+        "Routes imbriquées et lazy loading natifs"
+      ],
+      "weaknesses": [
+        "Limité aux applications Vue (pas framework-agnostic)",
+        "Moins type-safe que des routeurs modernes comme TanStack Router",
+        "Configuration peut être verbeux pour des routes très complexes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're building a Single Page Application (SPA) with Vue.js",
+      "avoid_if": "You use Nuxt.js (Nuxt handles routing)",
+      "strengths": [
+        "Official router with full Vue team support",
+        "Excellent documentation and examples",
+        "Nested routes and lazy loading native"
+      ],
+      "weaknesses": [
+        "Limited to Vue applications (not framework-agnostic)",
+        "Less type-safe than modern routers like TanStack Router",
+        "Configuration can be verbose for very complex routes"
+      ]
+    }
+  },
+  {
+    "name": "Traceo",
+    "slug": "traceo",
+    "url_fr": "https://tooltrim.com/fr/tool/traceo",
+    "url_en": "https://tooltrim.com/en/tool/traceo",
+    "website": "https://www.traceo.dev/",
+    "category": "ui-components",
+    "pricing": {
+      "free": "Plan Free permanent : 50 captures/annotations et 30 enregistrements par mois, sans compte requis",
+      "paid": "Pro : 7 $/mois, ou 70 $/an (17 % de remise)"
+    },
+    "description_fr": "Extension Chrome pour inspecter le CSS visuellement et enregistrer des bugs d'interface en captures ou vidéo, sans DevTools.",
+    "description_en": "Chrome extension to inspect CSS visually and record UI bugs as screenshots or video, without DevTools.",
+    "price_verified_on": "2026-09-11",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Vous voulez vérifier des espacements, couleurs et polices sans ouvrir DevTools",
+      "avoid_if": "Vous travaillez déjà à l'aise dans l'inspecteur DevTools natif de Chrome",
+      "strengths": [
+        "Plan gratuit permanent réellement utilisable, sans compte requis pour l'usage local",
+        "Inspection CSS complète (espacements, couleurs, typographie) directement au clic",
+        "Capture et enregistrement de bugs avec annotation et contexte technique inclus"
+      ],
+      "weaknesses": [
+        "Aucune structure légale ou adresse d'éditeur communiquée sur le site",
+        "Le tarif réduit du plan Pro exige un engagement annuel",
+        "Reste un outil individuel, sans fonction d'équipe ou de siège"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You want to check spacing, colors and fonts without opening DevTools",
+      "avoid_if": "You're already comfortable in Chrome's native DevTools inspector",
+      "strengths": [
+        "Genuinely usable permanent free plan, no account required for local use",
+        "Full CSS inspection (spacing, colors, typography) directly on click",
+        "Bug capture and recording with annotation and technical context included"
+      ],
+      "weaknesses": [
+        "No legal entity or publisher address disclosed on the site",
+        "The Pro plan's lower rate requires an annual commitment",
+        "Stays an individual tool, with no team or seat feature"
+      ]
+    }
+  }
+]

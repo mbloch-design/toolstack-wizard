@@ -1,0 +1,612 @@
+# ToolTrim tool catalogue — erp
+# Generated from src/data/tools_index.json
+# Family: erp (14 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "DATEV",
+    "slug": "datev",
+    "url_fr": "https://tooltrim.com/fr/tool/datev",
+    "url_en": "https://tooltrim.com/en/tool/datev",
+    "website": "https://www.datev.com",
+    "category": "erp",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Datev est un système ERP ou finance à connecter prudemment au reste de la stack.",
+    "description_en": "German software suite for accounting, payroll, and personnel management, with ISO 27001 certified cloud solutions (DATEV Unternehmen online) for SMBs and German tax/accounting professionals.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes PME/expert-comptable allemand(e)",
+      "avoid_if": "Vous cherchez solution low-cost ou freemium",
+      "strengths": [
+        "Standard de facto pour comptabilité PME en Allemagne",
+        "Déclarations fiscales/VAT entièrement conformes et intégrées",
+        "Onboarding/formation incluse (réduction courbe apprentissage)"
+      ],
+      "weaknesses": [
+        "Pricing très élevé et opaque (sans devis, impossible estimer)",
+        "Onboarding/formation sur plusieurs jours ajoute coût",
+        "Interface datée, peu intuitive vs. solutions modernes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a German SMB or tax/accounting professional",
+      "avoid_if": "You want a low-cost or freemium solution",
+      "strengths": [
+        "De facto standard for German SMB accounting",
+        "Tax/VAT declarations fully compliant and integrated",
+        "Onboarding/training included (shortens learning curve)"
+      ],
+      "weaknesses": [
+        "Very high and opaque pricing (no public quotes)",
+        "Onboarding/training adds days/cost",
+        "Dated interface, less intuitive vs. modern solutions"
+      ]
+    }
+  },
+  {
+    "name": "Microsoft Dynamics 365 Finance and Operations",
+    "slug": "microsoft-dynamics-365-finance-operations",
+    "url_fr": "https://tooltrim.com/fr/tool/microsoft-dynamics-365-finance-operations",
+    "url_en": "https://tooltrim.com/en/tool/microsoft-dynamics-365-finance-operations",
+    "website": "https://dynamics.microsoft.com/finance",
+    "category": "erp",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 210 $/mois, plan Finance (single app)."
+    },
+    "description_fr": "Module ERP cloud pour la comptabilité, la trésorerie et la conformité des grandes entreprises, à partir de 210 dollars par utilisateur et par mois.",
+    "description_en": "Cloud ERP module for enterprise accounting, cash management, and compliance, priced per user from $210 a month.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Ton organisation utilise déjà l'écosystème Microsoft et dispose d'une équipe finance dédiée pour gérer une licence ERP multi-module",
+      "avoid_if": "Tu es indépendant ou en petite équipe et tu cherches un simple logiciel de comptabilité",
+      "strengths": [
+        "Couvre comptabilité, trésorerie et conformité dans un seul module sous licence",
+        "Le palier Premium intègre directement des crédits d'IA Copilot dans le flux de travail finance"
+      ],
+      "weaknesses": [
+        "Les licences utilisateur complètes démarrent à 210 $ par mois, avant tout module supplémentaire",
+        "L'application stricte des licences depuis janvier 2026 peut couper l'accès en cas de mauvaise affectation"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "Your organization already runs on Microsoft's stack and has a dedicated finance team to manage multi-module ERP licensing",
+      "avoid_if": "You are a freelancer or a small team looking for simple accounting software",
+      "strengths": [
+        "Covers accounting, cash management, and compliance in one licensed module",
+        "The Premium tier bundles AI (Copilot) credits directly into the finance workflow"
+      ],
+      "weaknesses": [
+        "Full user licenses start at $210 a month, before adding any second app",
+        "Strict license enforcement since January 2026 can cut access for misassigned seats"
+      ]
+    }
+  },
+  {
+    "name": "Microsoft Dynamics Business Central",
+    "slug": "microsoft-dynamics-business-central",
+    "url_fr": "https://tooltrim.com/fr/tool/microsoft-dynamics-business-central",
+    "url_en": "https://tooltrim.com/en/tool/microsoft-dynamics-business-central",
+    "website": "https://dynamics.microsoft.com/business-central",
+    "category": "erp",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Microsoft Dynamics Business Central est un système ERP ou finance à connecter prudemment au reste de la stack.",
+    "description_en": "Cloud ERP for SMEs and mid-market companies, integrating accounting, sales, purchasing, and manufacturing in a single platform with AI and automation.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME/ETI en croissance (10–500 collaborateurs)",
+      "avoid_if": "Vous êtes une très petite structure (pas de comptable)",
+      "strengths": [
+        "Intégration native avec Microsoft 365 et Power BI",
+        "Implémentation rapide (3–6 mois vs. 12–24 pour un ERP classique)",
+        "Coûts de licence raisonnables pour une PME"
+      ],
+      "weaknesses": [
+        "Moins puissant que Dynamics 365 Finance pour les groupes complexes",
+        "Intégration de données tierces peut être coûteuse",
+        "Support et formation importants dans les premiers mois"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a growing SME/mid-market (10–500 employees)",
+      "avoid_if": "You are a very small structure with no accountant",
+      "strengths": [
+        "Native integration with Microsoft 365 and Power BI",
+        "Fast implementation (3–6 months vs. 12–24 for classic ERP)",
+        "Reasonable licensing costs for an SME"
+      ],
+      "weaknesses": [
+        "Less powerful than Dynamics 365 Finance for complex groups",
+        "Third-party data integration can be costly",
+        "Significant support and training in early months"
+      ]
+    }
+  },
+  {
+    "name": "NetSuite",
+    "slug": "netsuite",
+    "url_fr": "https://tooltrim.com/fr/tool/netsuite",
+    "url_en": "https://tooltrim.com/en/tool/netsuite",
+    "website": "https://www.netsuite.com",
+    "category": "erp",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "NetSuite est une suite ERP cloud couvrant finance, stocks, achats et gestion des commandes, facturée par utilisateur nommé sur un contrat négocié et sur devis.",
+    "description_en": "NetSuite is a cloud ERP suite covering finance, inventory, procurement and order management, priced per named user on a negotiated, quote-only contract.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Ton entreprise a dépassé les tableurs et les outils séparés, et a besoin d'un ERP unique pour la finance, les stocks et les commandes",
+      "avoid_if": "Tu es un opérateur solo ou une très petite équipe qui n'a pas besoin d'un ERP multi-modules et préfère éviter une négociation commerciale",
+      "strengths": [
+        "Consolide finance, stocks, achats et gestion des commandes dans un système intégré unique au lieu de plusieurs outils déconnectés",
+        "Des éditions modulaires et des modules complémentaires permettent au système de grandir avec l'entreprise sans nécessiter un changement complet de plateforme"
+      ],
+      "weaknesses": [
+        "Aucune tarification publique ni inscription en libre-service : chaque déploiement commence par une négociation commerciale",
+        "La licence par utilisateur nommé fait que le coût évolue avec l'effectif, y compris les utilisateurs occasionnels ou en libre-service"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "Your company has outgrown spreadsheets and separate tools and needs one ERP for finance, inventory and orders",
+      "avoid_if": "You are a solo operator or very small team that doesn't need multi-module ERP and would rather avoid a sales negotiation",
+      "strengths": [
+        "Consolidates finance, inventory, procurement and order management in one integrated system instead of several disconnected tools",
+        "Modular editions and add-on modules let the system grow with the company rather than requiring a full re-platform"
+      ],
+      "weaknesses": [
+        "No public pricing or self-serve sign-up: every deployment starts with a sales negotiation",
+        "Per-named-user licensing means cost scales with headcount, including occasional or self-service users"
+      ]
+    }
+  },
+  {
+    "name": "Oracle Fusion Cloud",
+    "slug": "oracle-fusion-cloud",
+    "url_fr": "https://tooltrim.com/fr/tool/oracle-fusion-cloud",
+    "url_en": "https://tooltrim.com/en/tool/oracle-fusion-cloud",
+    "website": "https://www.oracle.com/cloud",
+    "category": "erp",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Oracle Fusion Cloud est une suite ERP d'entreprise modulaire couvrant finance, supply chain, RH et production, vendue sur devis avec un minimum de 25 utilisateurs.",
+    "description_en": "Oracle Fusion Cloud is a modular enterprise ERP suite covering finance, supply chain, HR and manufacturing, sold on quote with a 25-user minimum.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Tu es une grande organisation qui a besoin de finance, supply chain, RH et production sur une seule suite ERP, et tu peux engager au moins 25 utilisateurs",
+      "avoid_if": "Tu es indépendant ou en petite équipe ; il n'existe aucune offre sous 25 utilisateurs ni de prix public pour planifier un budget",
+      "strengths": [
+        "Couvre finance, supply chain, RH et production dans une seule suite modulaire plutôt que plusieurs outils séparés",
+        "IA et machine learning sont intégrés nativement dans les modules plutôt qu'ajoutés en option"
+      ],
+      "weaknesses": [
+        "Aucun prix public nulle part ; chaque devis nécessite un contact commercial",
+        "Minimum de 25 utilisateurs pour démarrer, ce qui exclut les indépendants et les très petites équipes"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "You're a large organization that needs Finance, Supply Chain, HCM and Manufacturing on one ERP suite and can commit at least 25 users",
+      "avoid_if": "You're a solo freelancer or a small team; there's no path below 25 users and no public pricing to plan around",
+      "strengths": [
+        "Covers Finance, Supply Chain, HCM and Manufacturing in one modular suite instead of several separate tools",
+        "AI and machine learning are embedded natively across modules rather than bolted on"
+      ],
+      "weaknesses": [
+        "No public pricing anywhere; every quote requires a sales engagement",
+        "Minimum of 25 users to start, ruling out solo users and very small teams"
+      ]
+    }
+  },
+  {
+    "name": "Priority",
+    "slug": "priority",
+    "url_fr": "https://tooltrim.com/fr/tool/priority",
+    "url_en": "https://tooltrim.com/en/tool/priority",
+    "website": "https://www.priority-software.com",
+    "category": "erp",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Priority est un système ERP ou finance à connecter prudemment au reste de la stack.",
+    "description_en": "Modular cloud ERP for SMEs and mid-market with Finance, Supply Chain, Manufacturing, and HCM, enriched with generative AI and 150+ pre-integrated connectors.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME en croissance cherchant un ERP complet avec IA",
+      "avoid_if": "Vous êtes une micro-entreprise (< 5 personnes)",
+      "strengths": [
+        "150+ connecteurs préintégrés pour réduire l'intégration custom",
+        "IA générative et automations natives",
+        "Tarification modulaire sans contrat long (flexibilité)"
+      ],
+      "weaknesses": [
+        "Moins connu que SAP/Oracle en France",
+        "Support français peut être limité",
+        "Tarification cachée jusqu'au devis"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a growing SME seeking a complete ERP with AI",
+      "avoid_if": "You are a micro-business (< 5 people)",
+      "strengths": [
+        "150+ pre-integrated connectors reduce custom integration",
+        "Native generative AI and automations",
+        "Modular pricing with no long-term contracts (flexibility)"
+      ],
+      "weaknesses": [
+        "Less known than SAP/Oracle globally",
+        "Local language support may be limited",
+        "Pricing hidden until quote request"
+      ]
+    }
+  },
+  {
+    "name": "Sage",
+    "slug": "sage",
+    "url_fr": "https://tooltrim.com/fr/tool/sage",
+    "url_en": "https://tooltrim.com/en/tool/sage",
+    "website": "https://www.sage.com",
+    "category": "erp",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Sage est un système ERP ou finance à connecter prudemment au reste de la stack.",
+    "description_en": "Sage portfolio of ERP solutions for SMEs and mid-market (Sage 100, Sage X3, Sage Intacct) covering accounting, supply chain, manufacturing, and financials.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME/ETI avec structure comptable classique",
+      "avoid_if": "Vous êtes un micro-freelanceur sans complexité",
+      "strengths": [
+        "Solutions progressives de Sage 100 à X3 à Intacct (croissance possible)",
+        "Bon support local et couverture en France",
+        "Tarification progressive selon la taille"
+      ],
+      "weaknesses": [
+        "Interfaces moins modernes que les challengers cloud",
+        "Tarification fragmentée entre produits (confus à comparer)",
+        "Intacct relativement cher pour une PME pure"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are an SME/mid-market with classic accounting structure",
+      "avoid_if": "You are a micro-freelancer with no complexity",
+      "strengths": [
+        "Progressive solutions from Sage 100 to X3 to Intacct (growth possible)",
+        "Good local support and European footprint",
+        "Progressive pricing by size"
+      ],
+      "weaknesses": [
+        "Interfaces less modern than cloud challengers",
+        "Fragmented pricing across products (confusing to compare)",
+        "Intacct relatively pricey for pure SME"
+      ]
+    }
+  },
+  {
+    "name": "Sage Intacct",
+    "slug": "sage-intacct",
+    "url_fr": "https://tooltrim.com/fr/tool/sage-intacct",
+    "url_en": "https://tooltrim.com/en/tool/sage-intacct",
+    "website": "https://www.sage.com/en-us/products/sage-intacct",
+    "category": "erp",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Sage Intacct est un système ERP ou finance à connecter prudemment au reste de la stack.",
+    "description_en": "Cloud financial management suite for mid-to-large organizations, specialized in multi-entity consolidation, accounting automation, and revenue recognition.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous avez une structure multi-entités complexe",
+      "avoid_if": "Vous êtes une PME pure avec structure simple et unique",
+      "strengths": [
+        "Consolidation multi-entités et multi-currency très sophistiquée",
+        "Accounting automation native (réduction des erreurs)",
+        "Cloud-native, pas de maintenance infrastructure"
+      ],
+      "weaknesses": [
+        "Très cher pour une PME classique",
+        "Ne couvre que la Finance (pas supply chain, manufacturing, HCM)",
+        "Pas de tarification publique (devis obligatoire)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have a complex multi-entity structure",
+      "avoid_if": "You are a pure SME with simple, single entity structure",
+      "strengths": [
+        "Sophisticated multi-entity and multi-currency consolidation",
+        "Native accounting automation (reduces errors)",
+        "Cloud-native, no infrastructure maintenance"
+      ],
+      "weaknesses": [
+        "Very expensive for typical SMEs",
+        "Covers only Finance (no supply chain, manufacturing, HCM)",
+        "No public pricing (quote required)"
+      ]
+    }
+  },
+  {
+    "name": "SAP Business ByDesign",
+    "slug": "sap-business-bydesign",
+    "url_fr": "https://tooltrim.com/fr/tool/sap-business-bydesign",
+    "url_en": "https://tooltrim.com/en/tool/sap-business-bydesign",
+    "website": "https://www.sap.com/products/erp/business-bydesign.html",
+    "category": "erp",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "SAP Business ByDesign est un système ERP ou finance à connecter prudemment au reste de la stack.",
+    "description_en": "Cloud ERP for SMEs/mid-market (100–500 employees) covering Finance, Supply Chain, HCM, and Manufacturing in all-in-one SaaS model.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME/ETI en croissance (100–500 personnes)",
+      "avoid_if": "Vous êtes une micro-structure sans besoins opérationnels complexes",
+      "strengths": [
+        "ERP complet en mode cloud all-in-one",
+        "Implémentation plus rapide que SAP classique (6–12 mois)",
+        "Scalabilité progressive vers S/4HANA Cloud"
+      ],
+      "weaknesses": [
+        "Contrats pluriannuels peu flexibles avec escalade tarifaire annuelle",
+        "SAP annonce le sunset en faveur de S/4HANA Cloud",
+        "La négociation permet de réduire sensiblement le tarif affiché"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a growing SME/mid-market (100–500 employees)",
+      "avoid_if": "You are a micro-structure without complex operational needs",
+      "strengths": [
+        "Complete ERP in all-in-one cloud mode",
+        "Faster implementation than classic SAP (6–12 months)",
+        "Progressive scalability toward S/4HANA Cloud"
+      ],
+      "weaknesses": [
+        "Inflexible multi-year contracts with annual price escalation",
+        "SAP announces sunset in favor of S/4HANA Cloud",
+        "Negotiation can meaningfully reduce the listed price"
+      ]
+    }
+  },
+  {
+    "name": "SAP Business One",
+    "slug": "sap-business-one",
+    "url_fr": "https://tooltrim.com/fr/tool/sap-business-one",
+    "url_en": "https://tooltrim.com/en/tool/sap-business-one",
+    "website": "https://www.sap.com/products/erp/business-one.html",
+    "category": "erp",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "SAP Business One est un système ERP ou finance à connecter prudemment au reste de la stack.",
+    "description_en": "Affordable ERP for SMEs (10–500 employees) integrating accounting, sales, purchasing, inventory, CRM, and analytics in a single system.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME de 20–200 personnes avec structure simple",
+      "avoid_if": "Vous êtes une micro-structure (< 10 personnes)",
+      "strengths": [
+        "Coût de licence raisonnable (on-premise ou cloud)",
+        "Implémentation rapide (3–6 mois)",
+        "Interface simple et intuitive"
+      ],
+      "weaknesses": [
+        "Moins moderne que les challengers cloud (Odoo, Zoho)",
+        "IA et automations limités comparé à D365 Business Central",
+        "Migration depuis/vers Business One coûteuse"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are an SME of 20–200 people with simple structure",
+      "avoid_if": "You are a micro-business (< 10 people)",
+      "strengths": [
+        "Reasonable license cost (on-premise or cloud)",
+        "Fast implementation (3–6 months)",
+        "Simple and intuitive interface"
+      ],
+      "weaknesses": [
+        "Less modern than cloud challengers (Odoo, Zoho)",
+        "Limited AI and automations vs. D365 Business Central",
+        "Migration from/to Business One is costly"
+      ]
+    }
+  },
+  {
+    "name": "SAP S/4HANA",
+    "slug": "sap-s4hana",
+    "url_fr": "https://tooltrim.com/fr/tool/sap-s4hana",
+    "url_en": "https://tooltrim.com/en/tool/sap-s4hana",
+    "website": "https://www.sap.com/products/erp/s4hana.html",
+    "category": "erp",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Suite ERP d'entreprise pour finance, supply chain et production, sans prix public et avec un projet d'implémentation mené par les ventes.",
+    "description_en": "Enterprise ERP suite for finance, supply chain and manufacturing, with no public pricing and a sales-led implementation project.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "2.8/5",
+      "label": "Correct",
+      "keep_if": "Tu es une grande organisation qui remplace un ERP historique et tu peux t'engager dans un projet d'implémentation mené par les ventes",
+      "avoid_if": "Tu es freelance ou une petite équipe qui doit commencer à travailler avec un outil cette semaine, sans processus commercial",
+      "strengths": [
+        "Couvre finance, supply chain, production et achats dans une seule suite plutôt que dans des systèmes séparés",
+        "La base de données en mémoire permet une analytique en temps réel sur les données opérationnelles en direct"
+      ],
+      "weaknesses": [
+        "Aucune tarification ni inscription en libre-service : chaque déploiement nécessite un engagement commercial et un projet d'implémentation",
+        "Pas conçu pour des freelances solos ou de très petites équipes"
+      ]
+    },
+    "verdict_en": {
+      "score": "2.8/5",
+      "label": "Fair",
+      "keep_if": "You're a large organization replacing a legacy ERP and can commit to a sales-led implementation project",
+      "avoid_if": "You're a freelancer or small team that needs to start working with a tool this week without a sales process",
+      "strengths": [
+        "Covers finance, supply chain, manufacturing and procurement in one suite rather than separate systems",
+        "In-memory database enables real-time analytics on live operational data"
+      ],
+      "weaknesses": [
+        "No self-serve pricing or sign-up; every deployment requires a sales engagement and implementation project",
+        "Not designed for solo freelancers or very small teams"
+      ]
+    }
+  },
+  {
+    "name": "Unit4",
+    "slug": "unit4",
+    "url_fr": "https://tooltrim.com/fr/tool/unit4",
+    "url_en": "https://tooltrim.com/en/tool/unit4",
+    "website": "https://www.unit4.com",
+    "category": "erp",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Unit4 est un système ERP ou finance à connecter prudemment au reste de la stack.",
+    "description_en": "Modular cloud ERP for SMEs/mid-market and service organizations (100–500+ employees), specialized in Financial, HCM, FP&A, and Procurement with generative AI in 2026.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME/ETI moderne cherchant HCM + FP&A intégrés",
+      "avoid_if": "Vous êtes une micro-entreprise (< 10 personnes) ou freelanceur",
+      "strengths": [
+        "Excellente suite Financial + HCM + FP&A intégrée",
+        "IA générative pour automations en 2026",
+        "Tarification flexible et modulaire (on ne paie que ce qu'on utilise)"
+      ],
+      "weaknesses": [
+        "Tarification opaque et cachée (devis obligatoire)",
+        "Ne couvre pas supply chain, manufacturing (limité en ERP full)",
+        "Moins connu que SAP/Oracle globalement"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a modern SME/mid-market seeking integrated HCM + FP&A",
+      "avoid_if": "You are a micro-business (< 10 people) or freelancer",
+      "strengths": [
+        "Excellent integrated Financial + HCM + FP&A suite",
+        "Generative AI for automations in 2026",
+        "Flexible, modular pricing (pay only for what you use)"
+      ],
+      "weaknesses": [
+        "Opaque and hidden pricing (quote required)",
+        "Limited supply chain and manufacturing coverage (not full ERP)",
+        "Less known than SAP/Oracle globally"
+      ]
+    }
+  },
+  {
+    "name": "Workday Financial Management",
+    "slug": "workday-financial-management",
+    "url_fr": "https://tooltrim.com/fr/tool/workday-financial-management",
+    "url_en": "https://tooltrim.com/en/tool/workday-financial-management",
+    "website": "https://www.workday.com/en-us/products/financial-management/overview.html",
+    "category": "erp",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "Workday Financial Management est un système ERP ou finance à connecter prudemment au reste de la stack.",
+    "description_en": "Cloud-based enterprise financial management platform, integrated within the Workday suite, automating accounting, close & consolidate, revenue management, and expenses with AI (Sana AI) and real-time analytics.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous pilotez la finance d'une grande entreprise avec besoins complexes",
+      "avoid_if": "Vous êtes une PME cherchant une solution simple et abordable",
+      "strengths": [
+        "Suite complète et intégrée (HR + Finance)",
+        "IA et automation très avancées",
+        "Conformité et audit globaux inclus"
+      ],
+      "weaknesses": [
+        "Pas de tarif public — négociation nécessaire",
+        "Implémentation lourde et coûteuse",
+        "Destiné aux grandes entreprises seulement"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You drive finance for a large enterprise with complex needs",
+      "avoid_if": "You're an SMB seeking a simple, affordable solution",
+      "strengths": [
+        "Complete and integrated suite (HR + Finance)",
+        "Advanced AI and automation",
+        "Global compliance and audit included"
+      ],
+      "weaknesses": [
+        "No public pricing — negotiation required",
+        "Heavy implementation and cost",
+        "Designed for large enterprises only"
+      ]
+    }
+  },
+  {
+    "name": "Zoho",
+    "slug": "zoho",
+    "url_fr": "https://tooltrim.com/fr/tool/zoho",
+    "url_en": "https://tooltrim.com/en/tool/zoho",
+    "website": "https://zoho.com",
+    "category": "erp",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 90 $/mois, plan Flexible Users."
+    },
+    "description_fr": "Suite de plus de 50 applications Zoho réunies sous un seul abonnement, facturée par employé ou par utilisateur flexible, sans plan gratuit.",
+    "description_en": "Bundle of 50+ Zoho business apps under one subscription, priced per employee or per flexible user, with no free plan.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu veux standardiser la plupart des fonctions de l'entreprise (CRM, RH, finance, collaboration) sur un seul fournisseur pour toute l'équipe",
+      "avoid_if": "Tu n'as besoin que d'une ou deux applications précises et préfères les acheter séparément plutôt que licencier tout le monde",
+      "strengths": [
+        "Un seul abonnement et une seule facture couvrent plus de 50 applications professionnelles, au lieu de jongler avec des contrats fournisseurs séparés",
+        "Une console d'administration centralisée gère les utilisateurs et les appareils mobiles sur toutes les applications intégrées"
+      ],
+      "weaknesses": [
+        "Aucun prix par utilisateur publié pour l'offre « All Employee Pricing » : il faut demander un devis pour connaître le coût réel",
+        "Le changement de niveau Essentials/Standard s'applique à toute l'organisation en une fois, sans mixité possible par utilisateur"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You want to standardize most business functions (CRM, HR, finance, collaboration) on one vendor for the whole team",
+      "avoid_if": "You only need one or two specific apps and would rather buy them individually than license everyone",
+      "strengths": [
+        "Single subscription and invoice cover 50+ business apps instead of juggling separate vendor contracts",
+        "Centralized admin console manages users and mobile devices across every bundled app"
+      ],
+      "weaknesses": [
+        "No public per-user price for 'All Employee Pricing'; you must request a quote to know the real cost",
+        "Essentials/Standard tier changes apply to the whole organization at once, with no per-user mix"
+      ]
+    }
+  }
+]

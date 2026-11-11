@@ -1,0 +1,2151 @@
+# ToolTrim tool catalogue — email-productivity
+# Generated from src/data/tools_index.json
+# Family: email-productivity (50 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "Beefree",
+    "slug": "beefree",
+    "url_fr": "https://tooltrim.com/fr/tool/beefree",
+    "url_en": "https://tooltrim.com/en/tool/beefree",
+    "website": "https://beefree.io/",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Starter : 10 designs et 6 exports par mois. Essai Business de 15 jours.",
+      "paid": "Professional 30 USD/mois, Business 160 USD/mois en mensuel. Équivalents annuels affichés : 25 et 134 USD/mois. Enterprise sur devis. Plateforme d’envoi non incluse, taxes à confirmer."
+    },
+    "description_fr": "Conception collaborative d’emails HTML, sans remplacer votre plateforme d’envoi.",
+    "description_en": "Collaborative HTML email design without replacing your sending platform.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Votre production email nécessite des validations et modèles réutilisables",
+      "avoid_if": "L’éditeur de votre plateforme d’envoi suffit",
+      "strengths": [
+        "Exports HTML et ZIP",
+        "Création et validations séparées de l’envoi"
+      ],
+      "weaknesses": [
+        "Nécessite une plateforme d’envoi distincte",
+        "Personnalisation dynamique à tester dans l’ESP"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Your email production needs approvals and reusable templates",
+      "avoid_if": "Your sending platform’s editor is enough",
+      "strengths": [
+        "HTML and ZIP exports",
+        "Design and approvals separate from sending"
+      ],
+      "weaknesses": [
+        "Requires a separate sending platform",
+        "Test dynamic personalization in the ESP"
+      ]
+    }
+  },
+  {
+    "name": "Amplemarket",
+    "slug": "amplemarket",
+    "url_fr": "https://tooltrim.com/fr/tool/amplemarket",
+    "url_en": "https://tooltrim.com/en/tool/amplemarket",
+    "website": "https://www.amplemarket.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Essai gratuit annoncé sur tous les forfaits ; durée et conditions à confirmer.",
+      "paid": "Startup : 600 $US/mois avec engagement annuel, 2 utilisateurs inclus. Growth et Elite : sur devis, respectivement 4 et 10 utilisateurs inclus. Utilisateurs supplémentaires payants."
+    },
+    "description_fr": "Prospection B2B : contacts, séquences multicanal et assistant IA dans une même plateforme.",
+    "description_en": "B2B prospecting with contact data, multichannel sequences and an AI assistant in one platform.",
+    "price_verified_on": "2026-09-26",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Votre équipe utilise déjà plusieurs outils de prospection",
+      "avoid_if": "Vous prospectez ponctuellement ou seul avec un petit budget",
+      "strengths": [
+        "Données B2B et séquences multicanal réunies",
+        "Duo Copilot et signaux pour prioriser la prospection",
+        "Intégrations CRM et exports de données documentés"
+      ],
+      "weaknesses": [
+        "600 $US/mois pour l’offre Startup, avec engagement annuel",
+        "Qualité des contacts à vérifier sur votre marché",
+        "Paramétrage du ciblage, des boîtes mail et du CRM nécessaire"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Your team already uses several prospecting tools",
+      "avoid_if": "You prospect occasionally or alone on a small budget",
+      "strengths": [
+        "B2B data and multichannel sequences in one platform",
+        "Duo Copilot and signals for prospect prioritization",
+        "Documented CRM integrations and data exports"
+      ],
+      "weaknesses": [
+        "Startup costs $600/month with an annual term",
+        "Contact quality must be checked in your target market",
+        "Targeting, mailbox and CRM setup are required"
+      ]
+    }
+  },
+  {
+    "name": "AroundDeal",
+    "slug": "arounddeal",
+    "url_fr": "https://tooltrim.com/fr/tool/arounddeal",
+    "url_en": "https://tooltrim.com/en/tool/arounddeal",
+    "website": "https://arounddeal.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Plan Free gratuit : 3 crédits contact par mois, filtres de recherche basiques.",
+      "paid": "Plan VIP à 49 $/mois en facturation mensuelle (100 crédits contact par mois)."
+    },
+    "description_fr": "Plateforme d’intelligence B2B pour contacts et informations d’entreprises.",
+    "description_en": "B2B intelligence platform for contacts and company insights.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez une base de données B2B abordable à l'entrée",
+      "avoid_if": "Vous cherchez un outil de prospection tout-en-un avec automation avancée",
+      "strengths": [
+        "Entrée gratuite généreuse (250 emails/jour)",
+        "Base APAC forte et données vérifiées",
+        "Modèle de crédits flexible selon la prospection"
+      ],
+      "weaknesses": [
+        "Pas de vrai plan gratuit à grande échelle",
+        "Sequencing léger, pas une plateforme d'automation complète",
+        "Interface moins intuitive qu'autres alternatives"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want an affordable entry-level B2B contact database",
+      "avoid_if": "You need an all-in-one prospecting platform with advanced automation",
+      "strengths": [
+        "Generous free tier (250 emails/day)",
+        "Strong APAC database with verified contacts",
+        "Flexible credit-based pricing by search volume"
+      ],
+      "weaknesses": [
+        "Limited free tier at scale",
+        "Light sequencing, not a full automation platform",
+        "Less intuitive interface than some alternatives"
+      ]
+    }
+  },
+  {
+    "name": "Autonix",
+    "slug": "autonix",
+    "url_fr": "https://tooltrim.com/fr/tool/autonix",
+    "url_en": "https://tooltrim.com/en/tool/autonix",
+    "website": "https://autonix.io",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Plan Free gratuit à vie : tableau de bord, 3 trackers, logo Autonix sur les QR codes.",
+      "paid": "Plan Professional à 99 $/mois ou 999 $/an pour 1 utilisateur."
+    },
+    "description_fr": "Outil de suivi de QR codes et d’analytique pour agences et marketers.",
+    "description_en": "QR code tracking and analytics tool for agencies and marketers.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous gérez plusieurs lieux physiques et suivi de présence",
+      "avoid_if": "Vous cherchez un outil email ou marketing direct",
+      "strengths": [
+        "Codes QR dynamiques très flexibles",
+        "Formulaires avancés avec conditionnels et signatures",
+        "Analytics portfolio-wide avec drill-down régional"
+      ],
+      "weaknesses": [
+        "Pas un outil email ou automation marketing",
+        "Valeur surtout pour multi-locations avec présence physique",
+        "Pas de cas d'usage pour digital-only"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage multiple physical locations and visitor tracking",
+      "avoid_if": "You're looking for an email or direct marketing tool",
+      "strengths": [
+        "Highly flexible dynamic QR codes",
+        "Advanced forms with conditionals and signatures",
+        "Portfolio-wide analytics with location drill-down"
+      ],
+      "weaknesses": [
+        "Not an email or marketing automation tool",
+        "Value mainly for multi-location businesses with physical presence",
+        "No use case for digital-only operations"
+      ]
+    }
+  },
+  {
+    "name": "AWeber",
+    "slug": "aweber",
+    "url_fr": "https://tooltrim.com/fr/tool/aweber",
+    "url_en": "https://tooltrim.com/en/tool/aweber",
+    "website": "https://aweber.com",
+    "category": "email-productivity",
+    "pricing": "Gratuit jusqu'à 500 contacts (3000 emails/mois) ; Lite à 15$/mois (12,50$ annuel) ; Plus à 30$/mois (20$ annuel).",
+    "description_fr": "Email marketing avec générateur de pages de destination, pensé pour les débutants.",
+    "description_en": "Email marketing with a landing page builder, designed for beginners.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous débutez en email marketing et cherchez un plan gratuit durable",
+      "avoid_if": "Vous avez besoin d'automation avancée et multi-canal",
+      "strengths": [
+        "Plan gratuit durable et généreux",
+        "Interface simple et intuitive",
+        "Bon rapport qualité-prix aux petites échelles"
+      ],
+      "weaknesses": [
+        "Fonctionnalités limitées sur free tier",
+        "Pas de multi-canal (email uniquement)",
+        "Analytics moins avancées que concurrents"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're starting with email marketing and want a permanent free plan",
+      "avoid_if": "You need advanced automation and multi-channel features",
+      "strengths": [
+        "Permanent, generous free plan",
+        "Simple and intuitive interface",
+        "Great value at small scales"
+      ],
+      "weaknesses": [
+        "Limited features on free tier",
+        "No multi-channel (email only)",
+        "Less advanced analytics than competitors"
+      ]
+    }
+  },
+  {
+    "name": "beehiiv",
+    "slug": "beehiiv",
+    "url_fr": "https://tooltrim.com/fr/tool/beehiiv",
+    "url_en": "https://tooltrim.com/en/tool/beehiiv",
+    "website": "https://beehiiv.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Gratuit jusqu’à 2 500 abonnés, envois email illimités.",
+      "paid": "Tarif selon palier dans le sélecteur officiel ; aucun ancien prix converti conservé."
+    },
+    "description_fr": "Développer une publication avec newsletter, site et outils de monétisation.",
+    "description_en": "Grow a publication with newsletters, a website and monetization tools.",
+    "price_verified_on": "2026-10-19",
+    "verdict_fr": {
+      "keep_if": "Vous êtes un creator monétisant une newsletter et cherchez alternative à Substack",
+      "avoid_if": "Vous cherchez une simple plateforme email marketing B2B",
+      "strengths": [
+        "Free jusqu’à 2 500 abonnés",
+        "Envois email illimités sur les forfaits annoncés",
+        "Publication, site et monétisation réunis"
+      ],
+      "weaknesses": [
+        "Les capacités avancées et limites des produits dépendent du forfait",
+        "Le modèle publication ne répond pas à tous les besoins CRM ou multicanaux"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're monetizing a newsletter and want a Substack alternative",
+      "avoid_if": "You're looking for a straightforward B2B email marketing platform",
+      "strengths": [
+        "Free for up to 2,500 subscribers",
+        "Unlimited email sends on the listed plans",
+        "Publishing, website and monetization together"
+      ],
+      "weaknesses": [
+        "Advanced capabilities and product limits depend on the plan",
+        "A publication-led model does not cover every CRM or multichannel need"
+      ]
+    }
+  },
+  {
+    "name": "Brevo",
+    "slug": "brevo",
+    "url_fr": "https://tooltrim.com/fr/tool/brevo",
+    "url_en": "https://tooltrim.com/en/tool/brevo",
+    "website": "https://www.brevo.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Gratuit sans carte bancaire : 300 emails/jour, jusqu’à 100 000 contacts. Quota quotidien non reportable.",
+      "paid": "Tarifs publics en EUR : Starter dès 7 €/mois, Standard dès 17 €/mois, Pro dès 499 €/mois. Volume, contacts et options déterminent le coût final."
+    },
+    "description_fr": "Campagnes email, transactionnel et automatisations pour une petite équipe multicanale.",
+    "description_en": "Email campaigns, transactional messaging and automation for a multichannel small team.",
+    "price_verified_on": "2026-09-26",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Vous envoyez régulièrement des campagnes et souhaitez automatiser les suivis",
+      "avoid_if": "Vous cherchez seulement un éditeur de newsletter sans gestion marketing",
+      "strengths": [
+        "Forfait gratuit permanent sans carte bancaire",
+        "Emails marketing et transactionnels dans la même plateforme",
+        "Automatisations, tests A/B et rapports avancés avec Standard"
+      ],
+      "weaknesses": [
+        "Gratuit limité à 300 emails par jour, sans report",
+        "Le palier email détermine aussi la limite de contacts",
+        "Retrait du logo en option sur Starter"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You send recurring campaigns and want automated follow-ups",
+      "avoid_if": "You only need a newsletter editor without marketing operations",
+      "strengths": [
+        "Permanent free plan without a credit card",
+        "Marketing and transactional email in one platform",
+        "Automation, A/B testing and advanced reports on Standard"
+      ],
+      "weaknesses": [
+        "Free plan capped at 300 emails daily with no rollover",
+        "Email tiers also determine contact storage limits",
+        "Logo removal is an add-on on Starter"
+      ]
+    }
+  },
+  {
+    "name": "Campaigner",
+    "slug": "campaigner",
+    "url_fr": "https://tooltrim.com/fr/tool/campaigner",
+    "url_en": "https://tooltrim.com/en/tool/campaigner",
+    "website": "https://campaigner.com",
+    "category": "email-productivity",
+    "pricing": "Automatisations disponibles dès le plan Advanced à 35$/mois ; coût croissant avec la taille de la liste. Essai gratuit 30 jours.",
+    "description_fr": "Email et SMS marketing avec logique conditionnelle dans les emails et IA générative.",
+    "description_en": "Email and SMS marketing with conditional logic in emails and generative AI.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'automation avancée et multi-variate testing",
+      "avoid_if": "Vous cherchez un plan gratuit ou très bon marché",
+      "strengths": [
+        "Automation avancée avec AI et guided flows",
+        "Multi-variate testing et segmentation",
+        "Email + SMS intégré à même prix"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit",
+        "Interface datée (interface critique récurrente)",
+        "Deliverability add-on payant"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need advanced automation and multi-variate testing",
+      "avoid_if": "You want a free or very cheap plan",
+      "strengths": [
+        "Advanced automation with AI and guided flows",
+        "Multi-variate testing and segmentation",
+        "Email + SMS integrated at same price"
+      ],
+      "weaknesses": [
+        "No free plan",
+        "Dated interface (recurring criticism)",
+        "Deliverability add-on cost"
+      ]
+    }
+  },
+  {
+    "name": "Clay",
+    "slug": "clay",
+    "url_fr": "https://tooltrim.com/fr/tool/clay",
+    "url_en": "https://tooltrim.com/en/tool/clay",
+    "website": "https://clay.com",
+    "category": "email-productivity",
+    "pricing": "À partir de ~149$/mois selon le volume de crédits d'enrichissement.",
+    "description_fr": "Plateforme d'enrichissement de données et de prospection IA, agrège des dizaines de sources.",
+    "description_en": "Data enrichment and AI prospecting platform, aggregating dozens of sources.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous avez une grande liste de leads à enrichir multi-sources",
+      "avoid_if": "Vous cherchez un outil plug-and-play simple",
+      "strengths": [
+        "150+ providers d'enrichissement en un endroit",
+        "Waterfall approach = meilleure accuracy emails",
+        "Workflows flexibles via table interface"
+      ],
+      "weaknesses": [
+        "Courbe d'apprentissage très élevée",
+        "Pas un outil d'envoi (orchestration seulement)",
+        "Coûteux (API calls pricing escalade)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have large lead lists needing multi-source enrichment",
+      "avoid_if": "You want a simple plug-and-play tool",
+      "strengths": [
+        "150+ enrichment providers in one place",
+        "Waterfall approach for better email accuracy",
+        "Flexible workflows via table interface"
+      ],
+      "weaknesses": [
+        "Very steep learning curve",
+        "Not a sending tool (orchestration only)",
+        "Expensive (API call pricing escalates)"
+      ]
+    }
+  },
+  {
+    "name": "Crowdfire",
+    "slug": "crowdfire-inc",
+    "url_fr": "https://tooltrim.com/fr/tool/crowdfire-inc",
+    "url_en": "https://tooltrim.com/en/tool/crowdfire-inc",
+    "website": "https://crowdfireapp.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": null,
+      "paid": "Plus aucune offre vendue : le site annonce sa transformation en média."
+    },
+    "description_fr": "Ancien outil de planification et de suivi des réseaux sociaux, arrêté en 2026 : Crowdfire devient un média. Voir les alternatives.",
+    "description_en": "Former social media scheduling and monitoring tool, retired in 2026 as Crowdfire turns into a media outlet. See the alternatives.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Tu as encore des contenus planifiés dans Crowdfire : exporte-les et bascule vers un outil actif",
+      "avoid_if": "Tu cherches un outil de planification aujourd’hui : Crowdfire n’en vend plus",
+      "strengths": [
+        "Outil historique de planification multi-réseaux, utilisé une quinzaine d’années par les créateurs"
+      ],
+      "weaknesses": [
+        "Outil arrêté : plus d’offre ni d’inscription"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You still have posts scheduled in Crowdfire: export them and move to an active tool",
+      "avoid_if": "You are looking for a scheduling tool today: Crowdfire no longer sells one",
+      "strengths": [
+        "Long-standing multi-network scheduling tool, used by creators for about fifteen years"
+      ],
+      "weaknesses": [
+        "Retired: no plan or sign-up any more"
+      ]
+    }
+  },
+  {
+    "name": "Elfsight",
+    "slug": "elfsight",
+    "url_fr": "https://tooltrim.com/fr/tool/elfsight",
+    "url_en": "https://tooltrim.com/en/tool/elfsight",
+    "website": "https://elfsight.com/",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Plan gratuit : 200 vues de widget par mois, un seul widget, sites web illimités, marque Elfsight conservée",
+      "paid": "Dès 5 $/mois, plan Basic (single app)."
+    },
+    "description_fr": "Elfsight est une bibliothèque de plus de 90 widgets sans code (avis, flux sociaux, popups) qui s'installent sur la plupart des sites, facturés par application.",
+    "description_en": "Elfsight is a library of 90+ no-code widgets (reviews, social feeds, popups) that install on most website platforms, priced per widget app.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu as besoin d'un ou deux widgets sans code précis (avis, flux social, popup) ajoutés rapidement à un site",
+      "avoid_if": "Tu as besoin de nombreux types de widgets différents et tu veux un prix unique prévisible plutôt qu'un par application",
+      "strengths": [
+        "S'installe sur plus de 112 plateformes sans écrire de code, un widget peut donc être en ligne en quelques minutes",
+        "Un bundle de 96 applications à 15 $/mois couvre de nombreux types de widgets à la fois, au lieu de payer par application"
+      ],
+      "weaknesses": [
+        "La tarification se fait par application widget ; utiliser plusieurs types différents hors du forfait bundle signifie payer chacun séparément",
+        "Le forfait gratuit conserve la marque Elfsight et plafonne les vues mensuelles à 200, le widget se désactivant au-delà"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You need one or two specific no-code widgets (reviews, social feed, popup) added to a site fast",
+      "avoid_if": "You need many different widget types and want a single predictable price rather than one per app",
+      "strengths": [
+        "Installs on 112+ website platforms without writing code, so a single widget can be live in minutes",
+        "A 96-app bundle at $15/month covers many widget types at once instead of paying per app"
+      ],
+      "weaknesses": [
+        "Pricing is per widget app, so using several different widget types outside the bundle plan means paying for each one separately",
+        "The free plan keeps Elfsight branding and caps monthly views at 200, with the widget deactivating past that"
+      ]
+    }
+  },
+  {
+    "name": "GetResponse",
+    "slug": "getresponse",
+    "url_fr": "https://tooltrim.com/fr/tool/getresponse",
+    "url_en": "https://tooltrim.com/en/tool/getresponse",
+    "website": "https://www.getresponse.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Jusqu’à 500 contacts et 2 500 messages/mois. Essai premium de 14 jours sans carte bancaire.",
+      "paid": "Pour 1 000 abonnés : Starter 19 $US/mois, Marketer 59 $, Creator 69 $ en mensuel, hors taxes. Équivalents mensuels en annuel : 15,58 $, 48,38 $ et 56,58 $. Enterprise sur devis."
+    },
+    "description_fr": "Newsletters, automatisations et parcours e-commerce, avec webinaires et cours selon le forfait.",
+    "description_en": "Email campaigns, automation and e-commerce journeys, with webinars and courses on selected plans.",
+    "alternatives": [
+      "brevo"
+    ],
+    "price_verified_on": "2026-09-26",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Vous voulez relier formulaires, newsletters et séquences automatisées",
+      "avoid_if": "Vous cherchez uniquement un outil d’envoi ponctuel sans automatisation",
+      "strengths": [
+        "Formulaires, pages de destination et emails réunis",
+        "Automatisations illimitées à partir de Marketer",
+        "Webinaires et cours intégrés avec Creator"
+      ],
+      "weaknesses": [
+        "Prix croissant avec la taille de la liste",
+        "Starter limité à un workflow personnalisé",
+        "Fonctions premium absentes du gratuit après l’essai"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You want connected forms, newsletters and automated sequences",
+      "avoid_if": "You only need occasional broadcasts without automation",
+      "strengths": [
+        "Forms, landing pages and email in one platform",
+        "Unlimited workflows from Marketer",
+        "Integrated webinars and courses with Creator"
+      ],
+      "weaknesses": [
+        "Pricing increases with list size",
+        "Starter allows one custom workflow",
+        "Premium features do not remain in Free after the trial"
+      ]
+    }
+  },
+  {
+    "name": "Hootsuite",
+    "slug": "hootsuite",
+    "url_fr": "https://tooltrim.com/fr/tool/hootsuite",
+    "url_en": "https://tooltrim.com/en/tool/hootsuite",
+    "website": "https://hootsuite.com",
+    "category": "email-productivity",
+    "pricing": "Professional ~99$/mois (1 utilisateur, 10 comptes) ; Team ~249$/mois (3 utilisateurs, 20 comptes) ; Business et Enterprise sur devis. Pas de plan gratuit.",
+    "description_fr": "Plateforme de gestion de réseaux sociaux établie, avec veille concurrentielle et reporting agence.",
+    "description_en": "Established social media management platform, with competitive monitoring and agency reporting.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une agence/enterprise gérant plusieurs clients sociaux",
+      "avoid_if": "Vous êtes freelance/petite team (overkill et prix élevé)",
+      "strengths": [
+        "Social listening robuste et monitoring mentions",
+        "Team management et collaboration avancée",
+        "Inbox centralisé pour tous réseaux"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit (overkill pour solopreneurs)",
+        "Prix élevé pour petites équipes",
+        "Interface dense et courbe apprentissage"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're an agency/enterprise managing multiple social clients",
+      "avoid_if": "You're a freelancer/small team (overkill and expensive)",
+      "strengths": [
+        "Robust social listening and mention monitoring",
+        "Advanced team management and collaboration",
+        "Centralized inbox for all networks"
+      ],
+      "weaknesses": [
+        "No free plan (overkill for solopreneurs)",
+        "Expensive for small teams",
+        "Dense interface and steep learning curve"
+      ]
+    }
+  },
+  {
+    "name": "iContact",
+    "slug": "icontact",
+    "url_fr": "https://tooltrim.com/fr/tool/icontact",
+    "url_en": "https://tooltrim.com/en/tool/icontact",
+    "website": "https://icontact.com",
+    "category": "email-productivity",
+    "pricing": "Plan gratuit très réduit (250 contacts, 500 emails/mois) ; Essentials à 13$/mois ; Standard à 20$/mois (automatisation multi-étapes).",
+    "description_fr": "Email marketing avec envoi optimisé par IA selon le comportement de chaque abonné.",
+    "description_en": "Email marketing with AI-optimized send times based on each subscriber's behavior.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous êtes SMB cherchant deliverability robuste",
+      "avoid_if": "Vous cherchez automation très avancée",
+      "strengths": [
+        "Support dédié et réactif",
+        "Deliverability réputée solide",
+        "Automation simple mais fonctionnelle"
+      ],
+      "weaknesses": [
+        "Interface datée et moins moderne",
+        "Automation moins flexible que concurrents",
+        "Pas de multi-canal (email seulement)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're an SMB seeking robust deliverability",
+      "avoid_if": "You need very advanced automation",
+      "strengths": [
+        "Dedicated and responsive support",
+        "Solid deliverability reputation",
+        "Simple but functional automation"
+      ],
+      "weaknesses": [
+        "Dated and less modern interface",
+        "Less flexible automation than competitors",
+        "No multi-channel (email only)"
+      ]
+    }
+  },
+  {
+    "name": "InboxAlly",
+    "slug": "inboxally",
+    "url_fr": "https://tooltrim.com/fr/tool/inboxally",
+    "url_en": "https://tooltrim.com/en/tool/inboxally",
+    "website": "https://inboxally.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Starter à 149 $/mois en facturation mensuelle, 100 seed emails par jour."
+    },
+    "description_fr": "Plateforme pour améliorer la délivrabilité et taux d’ouverture des emails.",
+    "description_en": "Platform to improve email deliverability and open rates.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous envoyez du cold email et avez besoin warm-up domaine",
+      "avoid_if": "Vous utilisez déjà un ESL avec warm-up built-in (Lemlist, Amplemarket)",
+      "strengths": [
+        "Warm-up spécialisé avec seed accounts authentiques",
+        "Monitoring proactif délivrabilité et health",
+        "AI predictions pour éviter problèmes"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit",
+        "Pas un outil complet (warm-up seulement)",
+        "Coûteux si plusieurs domaines"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You send cold email and need domain warm-up",
+      "avoid_if": "You already use an ESL with built-in warm-up (Lemlist, Amplemarket)",
+      "strengths": [
+        "Specialized warm-up with authentic seed accounts",
+        "Proactive deliverability monitoring",
+        "AI predictions to avoid issues"
+      ],
+      "weaknesses": [
+        "No free plan",
+        "Not a complete tool (warm-up only)",
+        "Expensive with multiple domains"
+      ]
+    }
+  },
+  {
+    "name": "Instantly",
+    "slug": "instantly",
+    "url_fr": "https://tooltrim.com/fr/tool/instantly",
+    "url_en": "https://tooltrim.com/en/tool/instantly",
+    "website": "https://instantly.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas de palier gratuit permanent ; abonnement selon volume d'emails et de contacts.",
+      "paid": "Growth: 47 $/mois (37,60 $ en annuel), 5 000 emails/mois, 1 000 contacts ; Hypergrowth: 97 $/mois (77,60 $ en annuel), 100 000 emails/mois, 25 000 contacts, comptes illimités"
+    },
+    "description_fr": "Logiciel de cold email B2B : envoi à froid à volume avec comptes multiples, warmup (chauffe des boîtes), campagnes et suivi de délivrabilité.",
+    "description_en": "B2B cold email software: high-volume sending with multiple accounts, account warm-up, campaign management, and deliverability tracking.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous faites de la prospection à froid par email à volume",
+      "avoid_if": "Vous ne faites pas de cold email",
+      "strengths": [
+        "Comptes d'envoi souvent illimités à tarif fixe",
+        "Warmup automatique des boîtes",
+        "Pensé pour scaler l'outbound"
+      ],
+      "weaknesses": [
+        "Pas de palier gratuit permanent",
+        "Sans objet hors prospection à froid",
+        "Facturation qui monte avec le volume"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You run cold email prospecting at volume",
+      "avoid_if": "You don't do cold email",
+      "strengths": [
+        "Often unlimited sending accounts at a flat rate",
+        "Automatic inbox warmup",
+        "Built to scale outbound"
+      ],
+      "weaknesses": [
+        "No permanent free tier",
+        "Pointless outside cold prospecting",
+        "Billing rises with volume"
+      ]
+    }
+  },
+  {
+    "name": "Instapage",
+    "slug": "instapage",
+    "url_fr": "https://tooltrim.com/fr/tool/instapage",
+    "url_en": "https://tooltrim.com/en/tool/instapage",
+    "website": "https://instapage.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Create à 99 $/mois en facturation mensuelle (15 000 visiteurs uniques par mois), jusqu'à 20 % de remise en annuel."
+    },
+    "description_fr": "Générateur de landing pages et plateforme d’optimisation.",
+    "description_en": "Landing page generator and optimization platform.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous gérez campagnes payantes (Google Ads, FB Ads) et optimisez ROI",
+      "avoid_if": "Vous cherchez outil landing page simple et gratuit",
+      "strengths": [
+        "Landing pages haute-conversion et personalization",
+        "A/B testing avancé et analytics détaillées",
+        "120+ intégrations (CRM, ecommerce, analytics)"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit ; ticket d'entrée élevé",
+        "Pricing escalade vite pour Enterprise",
+        "Interface dense pour débutants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage paid campaigns (Google Ads, FB Ads) and optimize ROI",
+      "avoid_if": "You want a simple, free landing page tool",
+      "strengths": [
+        "High-conversion landing pages with personalization",
+        "Advanced A/B testing and detailed analytics",
+        "120+ integrations (CRM, ecommerce, analytics)"
+      ],
+      "weaknesses": [
+        "No free plan; high entry ticket",
+        "Pricing escalates quickly for Enterprise",
+        "Dense interface for beginners"
+      ]
+    }
+  },
+  {
+    "name": "Kissmetrics",
+    "slug": "kissmetrics",
+    "url_fr": "https://tooltrim.com/fr/tool/kissmetrics",
+    "url_en": "https://tooltrim.com/en/tool/kissmetrics",
+    "website": "https://kissmetrics.io",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Plan Free gratuit sans carte : 100 000 événements par mois, tableaux de bord et rapports de base.",
+      "paid": "Plan Growth à partir de 99 $/mois (500 000 événements et plus), 20 % de remise en annuel."
+    },
+    "description_fr": "Outil d’analytics comportemental pour augmenter conversions & engagement.",
+    "description_en": "Behavioral analytics tool to increase conversions & engagement.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous êtes e-commerce ou SaaS trackant email-to-revenue attribution",
+      "avoid_if": "Vous n'avez pas besoin tracking revenue (content only)",
+      "strengths": [
+        "Revenue attribution email-to-purchase (unique focus)",
+        "Multi-device tracking et journey mapping",
+        "Event-based automation delicat"
+      ],
+      "weaknesses": [
+        "Pas un outil email (analytics seulement)",
+        "Interface moins moderne",
+        "Setup peut être complexe pour debut"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're e-commerce or SaaS tracking email-to-revenue attribution",
+      "avoid_if": "You don't need revenue tracking (content only)",
+      "strengths": [
+        "Revenue attribution from email to purchase (unique focus)",
+        "Multi-device tracking and journey mapping",
+        "Event-based automation triggers"
+      ],
+      "weaknesses": [
+        "Not an email tool (analytics only)",
+        "Less modern interface",
+        "Setup can be complex for beginners"
+      ]
+    }
+  },
+  {
+    "name": "Kit",
+    "slug": "kit",
+    "url_fr": "https://tooltrim.com/fr/tool/kit",
+    "url_en": "https://tooltrim.com/en/tool/kit",
+    "website": "https://kit.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Gratuit jusqu’à 10 000 abonnés, sans séquences ni automatisations visuelles.",
+      "paid": "Pour 1 000 abonnés : Creator 390 $US/an ; Pro 790 $US/an au tarif standard. Essai de 14 jours sans carte. Promotion Pro affichée à 593 $US la première année uniquement, soumise aux conditions en vigueur."
+    },
+    "description_fr": "Transforme tes lecteurs en abonnés, puis accompagne-les jusqu’à ton prochain lancement.",
+    "description_en": "Turn readers into subscribers, then guide them toward your next launch.",
+    "alternatives": [
+      "brevo"
+    ],
+    "price_verified_on": "2026-10-19",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu veux transformer ta newsletter en canal régulier pour tes contenus et tes offres",
+      "avoid_if": "Tu cherches avant tout un CRM commercial ou des campagnes multicanales",
+      "strengths": [
+        "Plan Free pour démarrer et conserver jusqu’à 10 000 abonnés",
+        "Creator relie formulaires, tags et séquences dans un parcours automatisé",
+        "Vente de produits numériques et d’abonnements dans le même environnement"
+      ],
+      "weaknesses": [
+        "Les séquences email et automatisations visuelles nécessitent un forfait payant",
+        "Le prix payant dépend de la taille de la liste ; une promotion de première année ne fixe pas le renouvellement",
+        "Changer de plateforme implique de reconstruire et tester les parcours, au-delà de l’export des contacts"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Your newsletter is a recurring channel for your content and offers",
+      "avoid_if": "Your main need is a sales CRM or multichannel campaigns",
+      "strengths": [
+        "Free supports a growing list of up to 10,000 subscribers",
+        "Creator connects forms, tags and sequences into automated journeys",
+        "Digital products and subscriptions in the same environment"
+      ],
+      "weaknesses": [
+        "Sequences and visual automations require a paid plan",
+        "Paid pricing scales with list size; a first-year offer is not the renewal rate",
+        "Switching platforms requires rebuilding and testing journeys, beyond exporting contacts"
+      ]
+    }
+  },
+  {
+    "name": "Klaviyo",
+    "slug": "klaviyo",
+    "url_fr": "https://tooltrim.com/fr/tool/klaviyo",
+    "url_en": "https://tooltrim.com/en/tool/klaviyo",
+    "website": "https://www.klaviyo.com/",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 250 profils actifs, 500 envois d'e-mails par mois, 5 $ de crédit SMS par mois, support par e-mail limité aux 60 premiers jours",
+      "paid": "Dès 60 $/mois, plan Marketing."
+    },
+    "description_fr": "Klaviyo est une plateforme d'email et SMS marketing pensée pour l'e-commerce, avec un plan gratuit jusqu'à 250 contacts et des plans payants dès 60 $/mois selon la taille de la liste.",
+    "description_en": "Klaviyo is an email and SMS marketing platform built for ecommerce, with a free plan up to 250 contacts and paid plans starting at $60/month as the contact list grows.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères une boutique en ligne et tu veux l'email, le SMS et la donnée client dans une seule plateforme connectée plutôt que des outils séparés",
+      "avoid_if": "Ta liste de contacts est grande par rapport à ton budget, car le coût de Klaviyo augmente avec le nombre de profils actifs plutôt qu'un tarif fixe",
+      "strengths": [
+        "Les profils client unifiés avec données prédictives de valeur vie client et de churn vont au-delà d'un simple outil d'emailing",
+        "Les connecteurs natifs pour les principales plateformes e-commerce (Shopify, WooCommerce, BigCommerce, Magento) évitent la synchronisation manuelle des données"
+      ],
+      "weaknesses": [
+        "Le prix augmente automatiquement avec la croissance de la liste de contacts, indépendamment des fonctionnalités réellement utilisées",
+        "Le support du plan gratuit s'arrête après 60 jours, contrairement à une politique de support gratuit permanente"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run an ecommerce store and want email, SMS and customer data in one connected platform instead of separate tools",
+      "avoid_if": "Your contact list is large relative to your budget, since Klaviyo's cost scales with active profiles rather than a flat fee",
+      "strengths": [
+        "Unified customer profiles with predictive lifetime-value and churn data go beyond what a basic email tool offers",
+        "Native connectors for the main ecommerce platforms (Shopify, WooCommerce, BigCommerce, Magento) remove manual data syncing"
+      ],
+      "weaknesses": [
+        "Price rises automatically as the contact list grows, independent of how many features are actually used",
+        "Free plan support drops off after 60 days, unlike an ongoing free-tier support policy"
+      ]
+    }
+  },
+  {
+    "name": "Landbot",
+    "slug": "landbot",
+    "url_fr": "https://tooltrim.com/fr/tool/landbot",
+    "url_en": "https://tooltrim.com/en/tool/landbot",
+    "website": "https://landbot.io",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Plan Free gratuit à vie : 100 chats par mois, 1 siège, sans chats IA.",
+      "paid": "Plan Starter à 25,60 €/mois facturé à l'année (32 € en mensuel), 500 chats par mois."
+    },
+    "description_fr": "Générateur de chatbot pour automatiser la capture de leads et interactions client.",
+    "description_en": "Chatbot builder to automate lead capture and customer interactions.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez lead capture sans coding sur site/WhatsApp",
+      "avoid_if": "Vous besoin NLP très avancé (off-script handling)",
+      "strengths": [
+        "Visual builder très accessible (no-code)",
+        "Lead capture simplifié sur site et WhatsApp",
+        "Hybrid structured + AI flexible"
+      ],
+      "weaknesses": [
+        "NLP limité (conversations off-script difficiles)",
+        "Pas main email marketing tool",
+        "Interface moins moderne que concurrents"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want lead capture without coding on site/WhatsApp",
+      "avoid_if": "You need very advanced NLP (off-script handling)",
+      "strengths": [
+        "Very accessible visual builder (no-code)",
+        "Simplified lead capture on site and WhatsApp",
+        "Hybrid structured + AI flexible"
+      ],
+      "weaknesses": [
+        "Limited NLP (off-script conversations difficult)",
+        "Not main email marketing tool",
+        "Less modern interface than competitors"
+      ]
+    }
+  },
+  {
+    "name": "Later",
+    "slug": "later",
+    "url_fr": "https://tooltrim.com/fr/tool/later",
+    "url_en": "https://tooltrim.com/en/tool/later",
+    "website": "https://later.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 18,75 $/mois, plan Starter."
+    },
+    "description_fr": "Outil de planification social media et de link in bio avec calendrier visuel, à partir de 25 dollars par mois pour un ensemble de profils.",
+    "description_en": "Social media scheduling and link-in-bio tool with a visual calendar, starting at $25 a month for one profile set.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères plusieurs profils sociaux et tu veux un calendrier visuel et une page link in bio dans un seul outil",
+      "avoid_if": "Tu publies occasionnellement sur une seule plateforme et tu n'as pas besoin d'un outil de planification payant",
+      "strengths": [
+        "Le calendrier de contenu visuel et les suggestions de meilleur moment pour publier permettent de démarrer vite",
+        "La page Link in Bio est intégrée, sans avoir besoin d'un outil de page d'atterrissage séparé"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit, et Starter limite les publications à 30 par profil et par mois",
+        "L'analytique personnalisée et le benchmark publicitaire ne se débloquent qu'au plan Scale à 110 $ par mois"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You manage several social profiles and want one visual calendar plus a link-in-bio page in a single tool",
+      "avoid_if": "You post on a single platform occasionally and don't need a paid scheduling tool",
+      "strengths": [
+        "Visual content calendar and best-time-to-post suggestions get a first schedule running quickly",
+        "Link in Bio page is built in, without a separate landing-page tool"
+      ],
+      "weaknesses": [
+        "No free plan, and Starter caps posts at 30 per profile per month",
+        "Custom analytics and ad benchmarking only unlock on the $110/month Scale plan"
+      ]
+    }
+  },
+  {
+    "name": "Leadflow",
+    "slug": "leadflow",
+    "url_fr": "https://tooltrim.com/fr/tool/leadflow",
+    "url_en": "https://tooltrim.com/en/tool/leadflow",
+    "website": "https://leadflow.com",
+    "category": "email-productivity",
+    "description_fr": "Générateur de leads immobilier alimenté par l’IA.",
+    "description_en": "AI-powered real estate lead generator.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous prospectez des biens immobiliers de façon systématique",
+      "avoid_if": "Vous n'exercez pas dans l'immobilier",
+      "strengths": [
+        "Score prédictif pour prioriser la prospection",
+        "Bases de données propriétaires étendues",
+        "Campagnes marketing intégrées à l'outil"
+      ],
+      "weaknesses": [
+        "Données centrées sur le marché américain",
+        "Sans objet hors secteur immobilier",
+        "Abonnement difficile à amortir sur peu de dossiers"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You prospect real estate systematically",
+      "avoid_if": "You're not in real estate",
+      "strengths": [
+        "Predictive score to prioritise prospecting",
+        "Extensive owner datasets",
+        "Marketing campaigns built into the tool"
+      ],
+      "weaknesses": [
+        "Data centred on the US market",
+        "Not relevant outside real estate",
+        "Subscription hard to justify on few deals"
+      ]
+    }
+  },
+  {
+    "name": "Lemlist",
+    "slug": "lemlist",
+    "url_fr": "https://tooltrim.com/fr/tool/lemlist",
+    "url_en": "https://tooltrim.com/en/tool/lemlist",
+    "website": "https://www.lemlist.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 55 $/mois, plan Email."
+    },
+    "description_fr": "Plateforme de prospection email et multicanale avec base de leads intégrée, préchauffage des expéditeurs et personnalisation par IA, sans plan gratuit.",
+    "description_en": "Cold email and multichannel outreach platform with a built-in lead database, sender warm-up and AI personalization, no free plan.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Ton équipe fait du cold email en volume et tu veux une base de leads et un préchauffage inclus, sans facturation par siège pour l'email",
+      "avoid_if": "Tu as besoin de LinkedIn ou de SMS dès le départ mais tu veux rester sur le plan Email moins cher",
+      "strengths": [
+        "La base de leads intégrée et le préchauffage évitent d'avoir des outils séparés pour construire des listes et protéger la délivrabilité",
+        "Les utilisateurs illimités sur le plan Email limitent le coût par siège pour une équipe qui grandit"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit ; seulement un essai de 14 jours avant de payer",
+        "Les fonctions multicanales (LinkedIn, SMS, WhatsApp, dialer) demandent le plan Multichannel, plus cher et facturé par utilisateur"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Your team runs cold email at volume and wants a lead database and warm-up bundled in, without per-seat email pricing",
+      "avoid_if": "You need LinkedIn or SMS touches from day one but want to stay on the cheaper Email plan",
+      "strengths": [
+        "Built-in lead database and sender warm-up remove the need for separate list-building and deliverability tools",
+        "Unlimited users on the Email plan keeps per-seat costs down for a growing team"
+      ],
+      "weaknesses": [
+        "No free plan; only a 14-day trial before paying",
+        "Multichannel features (LinkedIn, SMS, WhatsApp, dialer) require the pricier per-user Multichannel plan"
+      ]
+    }
+  },
+  {
+    "name": "Loops",
+    "slug": "loops",
+    "url_fr": "https://tooltrim.com/fr/tool/loops",
+    "url_en": "https://tooltrim.com/en/tool/loops",
+    "website": "https://loops.so",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Email produit pour onboarding, lifecycle et annonces SaaS.",
+    "description_en": "Product email for onboarding, lifecycle, and SaaS announcements.",
+    "verdict_fr": {
+      "keep_if": "Vous êtes SaaS envoyant marketing + lifecycle + transactional",
+      "avoid_if": "Vous faites email marketing basique (Mailchimp mieux)",
+      "strengths": [
+        "All-in-one : marketing + lifecycle + transactional",
+        "API developer-friendly avec multiples SDKs",
+        "Visual automation workflows simples"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit",
+        "Pas multi-canal (email seulement)",
+        "Orienté SaaS/developers (overkill pour basique)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a SaaS sending marketing + lifecycle + transactional",
+      "avoid_if": "You do basic email marketing (Mailchimp better)",
+      "strengths": [
+        "All-in-one: marketing + lifecycle + transactional",
+        "Developer-friendly API with multiple SDKs",
+        "Simple visual automation workflows"
+      ],
+      "weaknesses": [
+        "No free plan",
+        "No multi-channel (email only)",
+        "SaaS/developer-focused (overkill for basics)"
+      ]
+    }
+  },
+  {
+    "name": "Lusha",
+    "slug": "lusha",
+    "url_fr": "https://tooltrim.com/fr/tool/lusha",
+    "url_en": "https://tooltrim.com/en/tool/lusha",
+    "website": "https://www.lusha.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Free : 40 crédits par mois, un siège.",
+      "paid": "Équivalents mensuels payés annuellement : Starter 37,45 USD, Pro 52,45 USD, Premium 299,95 USD. Volumes affichés : 4 800, 7 200 et 40 800 crédits/an. Scale sur devis. Taxes à confirmer."
+    },
+    "description_fr": "Données de contacts B2B, enrichissement CRM et prospection.",
+    "description_en": "B2B contact data, CRM enrichment and prospecting.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Vous enrichissez régulièrement votre CRM",
+      "avoid_if": "Votre outil actuel couvre déjà les mêmes contacts",
+      "strengths": [
+        "Enrichissement et exports CRM/CSV",
+        "Échantillon gratuit pour tester la couverture"
+      ],
+      "weaknesses": [
+        "Coût dépendant des crédits",
+        "Qualité à vérifier sur votre cible"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You regularly enrich your CRM",
+      "avoid_if": "Your existing tool covers the same contacts",
+      "strengths": [
+        "Enrichment and CRM/CSV exports",
+        "Free sample for coverage checks"
+      ],
+      "weaknesses": [
+        "Credit-dependent cost",
+        "Quality needs checking in your market"
+      ]
+    }
+  },
+  {
+    "name": "Mailchimp",
+    "slug": "mailchimp",
+    "url_fr": "https://tooltrim.com/fr/tool/mailchimp",
+    "url_en": "https://tooltrim.com/en/tool/mailchimp",
+    "website": "https://mailchimp.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 250 contacts, 500 emails/mois (max 250/jour), 1 audience, 1 siège, modèles limités, pas de planification.",
+      "paid": "Dès 13 $/mois, plan Essentials."
+    },
+    "description_fr": "Une plateforme d'email marketing freemium : campagnes, automatisation, segmentation, gratuite jusqu'à 250 contacts, payante dès 13 $/mois selon la taille de liste.",
+    "description_en": "A freemium email marketing platform: campaigns, automation, and segmentation, free up to 250 contacts, paid from $13/month, scaling with list size.",
+    "alternatives": [
+      "Brevo"
+    ],
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu envoies des campagnes email régulières à une liste petite à moyenne et veux modèles, automatisation et reporting réunis",
+      "avoid_if": "Ta liste de contacts est grande et grandit vite ; le prix par contact va augmenter rapidement",
+      "strengths": [
+        "Le forfait gratuit couvre 250 contacts et 500 emails par mois sans paiement",
+        "Les campagnes, formulaires et pages d'atterrissage basés sur des modèles ne demandent aucune compétence en design ou en code pour démarrer"
+      ],
+      "weaknesses": [
+        "Le prix évolue avec la taille de la liste de contacts, donc le coût peut augmenter sensiblement à mesure que la liste grandit",
+        "Les prix affichés incluent une remise promotionnelle de première année, donc le prix de renouvellement est probablement plus élevé"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You send regular email campaigns to a small-to-medium list and want templates, automation, and reporting together",
+      "avoid_if": "Your contact list is large and growing fast; the per-contact pricing will scale up quickly",
+      "strengths": [
+        "Free plan covers 250 contacts and 500 emails a month with no payment required",
+        "Template-based campaigns, forms, and landing pages need no design or coding skill to start"
+      ],
+      "weaknesses": [
+        "Pricing scales with contact list size, so cost can rise significantly as a list grows",
+        "Displayed prices include a first-year promotional discount, so the renewal price is likely higher"
+      ]
+    }
+  },
+  {
+    "name": "MailerLite",
+    "slug": "mailerlite",
+    "url_fr": "https://tooltrim.com/fr/tool/mailerlite",
+    "url_en": "https://tooltrim.com/en/tool/mailerlite",
+    "website": "https://mailerlite.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Gratuit : 250 abonnés et 2 500 emails par mois.",
+      "paid": "Tarif selon palier dans le sélecteur officiel ; aucun ancien prix converti conservé."
+    },
+    "description_fr": "Créer des campagnes, formulaires et automatisations email pour une petite liste.",
+    "description_en": "Build campaigns, signup forms and email automations for a small list.",
+    "price_verified_on": "2026-10-19",
+    "verdict_fr": {
+      "keep_if": "Vous débutez email + landing pages et cherchez plan gratuit bon marché",
+      "avoid_if": "Vous avez besoin automation très avancée",
+      "strengths": [
+        "Automatisations disponibles sur Free",
+        "Formulaires et landing page pour commencer",
+        "Deux accès utilisateurs sur Free"
+      ],
+      "weaknesses": [
+        "Free est limité à 250 abonnés et 2 500 emails mensuels",
+        "Le coût et les plafonds payants varient selon le palier sélectionné"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're starting email + landing pages and want a free, cheap option",
+      "avoid_if": "You need very advanced automation",
+      "strengths": [
+        "Automations available on Free",
+        "Signup forms and a landing page to get started",
+        "Two user seats on Free"
+      ],
+      "weaknesses": [
+        "Free is capped at 250 subscribers and 2,500 monthly sends",
+        "Paid cost and allowances depend on the selected tier"
+      ]
+    }
+  },
+  {
+    "name": "Mailgun",
+    "slug": "mailgun",
+    "url_fr": "https://tooltrim.com/fr/tool/mailgun",
+    "url_en": "https://tooltrim.com/en/tool/mailgun",
+    "website": "https://mailgun.com",
+    "category": "email-productivity",
+    "pricing": "Basic à 15$/mois (10000 emails) ; Foundation 35$ (50000 emails) ; Scale 90$ (100000 emails). Essai gratuit 5000 emails/mois pendant 3 mois.",
+    "description_fr": "API d'envoi d'emails transactionnels pour développeurs, avec validation et tracking intégrés.",
+    "description_en": "Transactional email API for developers, with built-in validation and tracking.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous développez une application web et avez besoin d'envoyer des emails transactionnels",
+      "avoid_if": "Vous cherchez une plateforme all-in-one sans expertise technique",
+      "strengths": [
+        "API flexible et bien documentée",
+        "Excellent rapport qualité-prix jusqu'à 100 000 emails/mois",
+        "Webhooks puissants et features de tracking"
+      ],
+      "weaknesses": [
+        "Nécessite des connaissances techniques pour l'intégration",
+        "IP partagé inclus ; IP dédié coûteux",
+        "Pas de templates drag-and-drop"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a developer building an email feature into an app",
+      "avoid_if": "You need a visual campaign builder",
+      "strengths": [
+        "Powerful, well-documented REST API",
+        "Strong deliverability and reputation management",
+        "Excellent value at scale"
+      ],
+      "weaknesses": [
+        "Requires development work to integrate",
+        "Limited marketing features compared to all-in-one platforms",
+        "Shared IP on base plans"
+      ]
+    }
+  },
+  {
+    "name": "Moosend",
+    "slug": "moosend",
+    "url_fr": "https://tooltrim.com/fr/tool/moosend",
+    "url_en": "https://tooltrim.com/en/tool/moosend",
+    "website": "https://moosend.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Pro à 7 $/mois en facturation annuelle pour 500 contacts (9 $ en mensuel), envois illimités."
+    },
+    "description_fr": "Outil d’email marketing et d’automatisation.",
+    "description_en": "Email marketing and automation tool.",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez une solution email marketing simple et abordable",
+      "avoid_if": "Vous avez des besoins SMS ou multichannel avancés",
+      "strengths": [
+        "Tarif très compétitif dès le départ",
+        "Automatisation email puissante incluse",
+        "Landing pages et formulaires intégrés"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit permanent",
+        "Moins de templates préconstruits que les concurrents",
+        "Support client limité aux heures de bureau selon certains avis"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want affordable email marketing with strong automation",
+      "avoid_if": "You need multi-channel (SMS, push) in one platform",
+      "strengths": [
+        "Excellent value proposition from day one",
+        "Unlimited email sends included",
+        "Integrated landing pages and forms"
+      ],
+      "weaknesses": [
+        "No permanent free tier",
+        "Smaller template library compared to competitors",
+        "Limited advanced segmentation options in base plans"
+      ]
+    }
+  },
+  {
+    "name": "NearSt",
+    "slug": "nearst",
+    "url_fr": "https://tooltrim.com/fr/tool/nearst",
+    "url_en": "https://tooltrim.com/en/tool/nearst",
+    "website": "https://near.st",
+    "category": "email-productivity",
+    "pricing": {
+      "free": null,
+      "paid": "Aucun tarif publié : le prix se demande à NearSt."
+    },
+    "description_fr": "Convertit les visiteurs en ligne en clients en magasin en montrant les stocks locaux.",
+    "description_en": "Converts online visitors into in-store customers by displaying local inventory.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous êtes un retailer avec une présence physique importante",
+      "avoid_if": "Vous êtes purement e-commerce (sans boutiques physiques)",
+      "strengths": [
+        "Résout un problème majeur pour les retailers : diriger le trafic en ligne vers les boutiques",
+        "Intégrations simples avec la plupart des systèmes POS",
+        "Vue en temps réel de l'inventaire en magasin"
+      ],
+      "weaknesses": [
+        "Pas de tarification publique ; processus commercial long",
+        "Dépend de la synchronisation POS (peut être complexe)",
+        "Pertinent surtout pour les chaînes multi-locales"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You operate multiple physical retail locations",
+      "avoid_if": "You're purely e-commerce with no physical stores",
+      "strengths": [
+        "Directly addresses the retail challenge of online-to-offline conversion",
+        "Seamless integration with major search platforms",
+        "Real-time inventory visibility to shoppers"
+      ],
+      "weaknesses": [
+        "No public pricing; custom sales process required",
+        "Success depends on POS system quality and sync",
+        "Primarily suited for established retail chains"
+      ]
+    }
+  },
+  {
+    "name": "Omniconvert Explore",
+    "slug": "omniconvert-explore",
+    "url_fr": "https://tooltrim.com/fr/tool/omniconvert-explore",
+    "url_en": "https://tooltrim.com/en/tool/omniconvert-explore",
+    "website": "https://omniconvert.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Offre gratuite permanente pour l'A/B testing jusqu'à 50 000 utilisateurs testés par mois, sans carte bancaire.",
+      "paid": null
+    },
+    "description_fr": "Outil d’optimisation des conversions (CRO) pour améliorer l’expérience utilisateur.",
+    "description_en": "Conversion optimization (CRO) tool designed to improve the user experience.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous gérez un site e-commerce et voulez augmenter les conversions",
+      "avoid_if": "Vous n'avez pas assez de trafic pour obtenir des résultats statistiques (moins de 10 000 visiteurs/mois)",
+      "strengths": [
+        "Plan gratuit généreux pour débuter",
+        "Interface intuitive pour créer des tests sans développeur",
+        "Nombreuses options de ciblage et de segmentation"
+      ],
+      "weaknesses": [
+        "Les plans payants restent chers pour les petits sites",
+        "Courbe d'apprentissage modérée pour maximiser les résultats",
+        "Moins d'intégrations que les plateformes génériques"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You run an e-commerce site and want to improve conversion rates",
+      "avoid_if": "You have very low traffic (under 10k monthly visitors)",
+      "strengths": [
+        "Powerful free plan to get started",
+        "No coding required to launch A/B tests",
+        "Comprehensive targeting and personalization options"
+      ],
+      "weaknesses": [
+        "Paid tiers scale quickly in price",
+        "Requires consistent traffic to show meaningful results",
+        "Limited integration ecosystem compared to general tools"
+      ]
+    }
+  },
+  {
+    "name": "PushOwl Web Push Notifications",
+    "slug": "pushowl-web-push-notifications",
+    "url_fr": "https://tooltrim.com/fr/tool/pushowl-web-push-notifications",
+    "url_en": "https://tooltrim.com/en/tool/pushowl-web-push-notifications",
+    "website": "https://pushowl.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Offre gratuite permanente : 500 notifications web push et 500 e-mails par mois, contacts illimités.",
+      "paid": "Plus à 19 $ par mois (10 000 web push par mois)."
+    },
+    "description_fr": "Application de notifications push web pour Shopify.",
+    "description_en": "Web push notifications app for Shopify.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous gérez un site Shopify et voulez des notifs push",
+      "avoid_if": "Vous ne ciblez pas les clients Shopify",
+      "strengths": [
+        "Plan gratuit très généreux (500 abonnés, messages illimités)",
+        "Interface simple et setup rapide",
+        "Possibilité de récupérer les paniers abandonnés"
+      ],
+      "weaknesses": [
+        "Limité à Shopify (pas d'autre plateforme e-commerce support)",
+        "Les notifs push web ont des taux d'engagement plus bas que l'email",
+        "Peu de fonctionnalités avancées d'automatisation"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You run a Shopify store and want push notifications",
+      "avoid_if": "Your store isn't on Shopify",
+      "strengths": [
+        "Extremely generous free plan with unlimited messages",
+        "Quick setup and intuitive dashboard",
+        "Proven to recover abandoned carts"
+      ],
+      "weaknesses": [
+        "Shopify-only; doesn't work with WooCommerce or other platforms",
+        "Push notifications have lower engagement than email",
+        "Limited automation depth compared to full platforms"
+      ]
+    }
+  },
+  {
+    "name": "Quartile",
+    "slug": "quartile",
+    "url_fr": "https://tooltrim.com/fr/tool/quartile",
+    "url_en": "https://tooltrim.com/en/tool/quartile",
+    "website": "https://quartile.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": null,
+      "paid": "Aucun tarif publié : démo et devis uniquement."
+    },
+    "description_fr": "Plateforme publicitaire multicanal pour optimiser la performance e-commerce.",
+    "description_en": "Multi-channel advertising platform to optimize e-commerce performance.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous avez un budget publicitaire e-commerce important",
+      "avoid_if": "Vous êtes nouveau vendeur sur Amazon avec petit budget",
+      "strengths": [
+        "Gestion multi-canal en un seul endroit",
+        "Optimisation par IA au niveau des produits (ASIN)",
+        "Account management dédié inclus"
+      ],
+      "weaknesses": [
+        "Pas de pricing public ; processus de vente long",
+        "Coût d'entrée potentiellement élevé",
+        "Moins transparent que les outils self-service"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage substantial e-commerce ad spend (6+ figures annually)",
+      "avoid_if": "You're a new Amazon seller with a modest budget",
+      "strengths": [
+        "Unified management across all major e-commerce platforms",
+        "Patented AI optimization at the product level (ASIN)",
+        "Dedicated account managers included"
+      ],
+      "weaknesses": [
+        "Pricing not transparent; requires sales conversation",
+        "High barrier to entry",
+        "Requires significant ad spend to justify ROI"
+      ]
+    }
+  },
+  {
+    "name": "Reply.io",
+    "slug": "replyio",
+    "url_fr": "https://tooltrim.com/fr/tool/replyio",
+    "url_en": "https://tooltrim.com/en/tool/replyio",
+    "website": "https://reply.io/",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Essai de 14 jours.",
+      "paid": "À partir de 49 USD/mois pour Email Volume et 89 USD/utilisateur/mois pour Multichannel, paiement annuel. Jason AI SDR à partir de 500 USD/mois. Options et volumes supplémentaires payants, taxes à confirmer."
+    },
+    "description_fr": "Séquences de prospection email et multicanales pour équipes commerciales.",
+    "description_en": "Email and multichannel outreach sequences for sales teams.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Vous gérez des séquences commerciales récurrentes",
+      "avoid_if": "Vous attendez des rendez-vous garantis sans travail de ciblage",
+      "strengths": [
+        "Séquences et CRM connectés",
+        "Canaux regroupés dans Multichannel"
+      ],
+      "weaknesses": [
+        "Options et quotas complexifient le coût",
+        "Délivrabilité non garantie"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You run recurring sales sequences",
+      "avoid_if": "You expect guaranteed meetings without targeting work",
+      "strengths": [
+        "Connected sequences and CRM",
+        "Combined channels in Multichannel"
+      ],
+      "weaknesses": [
+        "Add-ons and quotas complicate costs",
+        "Deliverability is not guaranteed"
+      ]
+    }
+  },
+  {
+    "name": "Resend",
+    "slug": "resend",
+    "url_fr": "https://tooltrim.com/fr/tool/resend",
+    "url_en": "https://tooltrim.com/en/tool/resend",
+    "website": "https://resend.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Plan gratuit : 3,000 emails/month, capped at 100 emails/day, 3 domains, 30-day data retention",
+      "paid": "Dès 20 $/mois, plan Pro."
+    },
+    "description_fr": "Resend est une API email pour développeurs, pour l'envoi transactionnel et marketing, avec des SDK officiels et un forfait gratuit de 3000 emails par mois.",
+    "description_en": "Resend is a developer email API for transactional and marketing email, with official SDKs and a free tier covering 3,000 emails per month.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu es développeur et tu veux brancher rapidement l'envoi transactionnel dans ton app, avec de la marge pour monter en volume",
+      "avoid_if": "Tu as besoin de remises annuelles ou d'un seul forfait qui couvre aussi l'automatisation marketing complète",
+      "strengths": [
+        "Forfait gratuit généreux : 3000 emails par mois avant de payer",
+        "SDK officiels pour neuf langages/frameworks, plus React Email pour des templates en code",
+        "Outils de délivrabilité intégrés (SPF, DKIM, DMARC) et webhooks inclus dès le départ"
+      ],
+      "weaknesses": [
+        "Forfait gratuit plafonné à 100 emails par jour, ce qui limite les envois en rafale malgré le quota mensuel de 3000",
+        "Aucune remise annuelle sur les forfaits en libre-service",
+        "L'envoi marketing (contacts, automatisations) est facturé sur un forfait distinct de l'envoi transactionnel"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You're a developer who needs transactional email wired into an app quickly, with room to grow into higher volumes",
+      "avoid_if": "You need annual billing discounts or a single plan that also covers full marketing automation",
+      "strengths": [
+        "Generous free tier: 3,000 emails/month before any payment",
+        "Official SDKs across nine languages/frameworks, plus React Email for template-as-code",
+        "Built-in deliverability tooling (SPF, DKIM, DMARC) and webhooks included from the start"
+      ],
+      "weaknesses": [
+        "Free plan capped at 100 emails/day, limiting burst sends despite the 3,000/month quota",
+        "No annual billing discount on self-serve plans",
+        "Marketing email (contacts, automations) is billed on a separate plan from transactional sending"
+      ]
+    }
+  },
+  {
+    "name": "respond.io",
+    "slug": "respond-io",
+    "url_fr": "https://tooltrim.com/fr/tool/respond-io",
+    "url_en": "https://tooltrim.com/en/tool/respond-io",
+    "website": "https://respond.io",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Starter à 79 $ par mois (948 $ par an en annuel), 5 utilisateurs inclus."
+    },
+    "description_fr": "Logiciel de messagerie alimenté par l’IA pour entreprises B2C.",
+    "description_en": "AI-powered messaging software for B2C businesses.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous gérez une équipe support/ventes avec clients sur plusieurs canaux",
+      "avoid_if": "Vous n'utilisez qu'un ou deux canaux (email + chat suffisent)",
+      "strengths": [
+        "Vrai omnicanal : WhatsApp, Instagram, Messenger, Telegram, email, live chat",
+        "AI Agents automatisant l'accueil et la qualification",
+        "Profiles client unifiés à travers tous les canaux"
+      ],
+      "weaknesses": [
+        "Tarification non publique ; nécessite un appel commercial",
+        "Courbe d'apprentissage pour exploiter tous les canaux",
+        "Moins connu que Intercom ou Zendesk"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You support customers across WhatsApp, Instagram, Messenger, and more",
+      "avoid_if": "You only use email and basic live chat",
+      "strengths": [
+        "True omnichannel: WhatsApp, Instagram, Messenger, Telegram, email, live chat",
+        "AI agents handle first-line inquiries 24/7",
+        "Unified customer profiles across all channels"
+      ],
+      "weaknesses": [
+        "Pricing not public; requires sales contact",
+        "Complex interface when using all channels",
+        "Less market awareness than Intercom"
+      ]
+    }
+  },
+  {
+    "name": "RocketLink",
+    "slug": "rocketlink",
+    "url_fr": "https://tooltrim.com/fr/tool/rocketlink",
+    "url_en": "https://tooltrim.com/en/tool/rocketlink",
+    "website": "https://rocketlink.io",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 10 jours.",
+      "paid": "Dès 19 $/mois, plan Liftoff."
+    },
+    "description_fr": "Raccourcisseur d'URL par abonnement avec pixels de reciblage publicitaire, domaines personnalisés et analytique des clics, le volume mensuel de liens étant plafonné selon le plan.",
+    "description_en": "Subscription URL shortener with ad retargeting pixels, custom domains, and click analytics, with monthly link volume capped by plan.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu mènes des campagnes de reciblage payant et tu veux un suivi par pixel intégré à tes liens raccourcis",
+      "avoid_if": "Tu as besoin d'une création de liens illimitée ou d'un plan gratuit, car ici chaque plan plafonne les liens mensuels",
+      "strengths": [
+        "Essai de 10 jours pour tester le suivi par pixel avant de payer",
+        "Domaines personnalisés avec SSL gratuit inclus dès le plan d'entrée"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit, contrairement à beaucoup de raccourcisseurs d'URL",
+        "La création de liens mensuelle est plafonnée sur tous les plans, de 20 à 1 000"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run paid retargeting campaigns and want pixel tracking built into your shortened links",
+      "avoid_if": "You need unlimited link creation or a free tier, since every plan here caps monthly links",
+      "strengths": [
+        "10-day trial to test the pixel tracking before paying",
+        "Custom domains with free SSL included from the entry plan"
+      ],
+      "weaknesses": [
+        "No free plan, unlike many URL shorteners",
+        "Monthly link creation is capped on every tier, from 20 to 1,000"
+      ]
+    }
+  },
+  {
+    "name": "SaneBox",
+    "slug": "sanebox",
+    "url_fr": "https://tooltrim.com/fr/tool/sanebox",
+    "url_en": "https://tooltrim.com/en/tool/sanebox",
+    "website": "https://www.sanebox.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Essai de 7 jours.",
+      "paid": "Paiement mensuel : Snack 9,49 USD, Lunch 15,99 USD, Dinner 42,99 USD. Respectivement 1, 2 et 4 comptes email ; 2, 6 ou toutes les fonctions au choix. Remises annuelles/bisannuelles distinctes, taxes à confirmer."
+    },
+    "description_fr": "Tri des emails, récapitulatifs et rappels dans votre messagerie.",
+    "description_en": "Email sorting, digests and reminders in your existing mailbox.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Le tri manuel interrompt régulièrement votre travail",
+      "avoid_if": "Les filtres natifs de votre messagerie suffisent",
+      "strengths": [
+        "Conserve votre messagerie",
+        "Rappels et tri personnalisables"
+      ],
+      "weaknesses": [
+        "Accès à la messagerie nécessaire",
+        "Classements à contrôler"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Manual sorting regularly interrupts your work",
+      "avoid_if": "Your mailbox’s built-in filters are enough",
+      "strengths": [
+        "Keeps your existing mailbox",
+        "Configurable reminders and sorting"
+      ],
+      "weaknesses": [
+        "Mailbox access required",
+        "Classification needs checking"
+      ]
+    }
+  },
+  {
+    "name": "Seamless.AI",
+    "slug": "seamless-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/seamless-ai",
+    "url_en": "https://tooltrim.com/en/tool/seamless-ai",
+    "website": "https://seamless.ai",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Free : un utilisateur et 50 crédits ; renouvellement non annoncé.",
+      "paid": "Pro et Enterprise sur devis. Pro commence à 10 000 crédits annuels d’après la FAQ. Aucun ancien tarif Basic repris. Options d’enrichissement et d’intention à chiffrer avec le commercial."
+    },
+    "description_fr": "Recherche de contacts B2B et enrichissement pour la prospection.",
+    "description_en": "B2B contact research and enrichment for prospecting.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Votre prospection exige de nouvelles coordonnées B2B",
+      "avoid_if": "Vous ne pouvez pas valider la couverture avant engagement",
+      "strengths": [
+        "Recherche et enrichissement regroupés",
+        "Exports disponibles"
+      ],
+      "weaknesses": [
+        "Tarifs payants sur devis",
+        "Qualité variable à tester sur votre marché"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "Your prospecting requires new B2B contact details",
+      "avoid_if": "You cannot validate coverage before committing",
+      "strengths": [
+        "Combined research and enrichment",
+        "Exports available"
+      ],
+      "weaknesses": [
+        "Paid pricing requires a quote",
+        "Test data quality in your market"
+      ]
+    }
+  },
+  {
+    "name": "SEMrush",
+    "slug": "semrush",
+    "url_fr": "https://tooltrim.com/fr/tool/semrush",
+    "url_en": "https://tooltrim.com/en/tool/semrush",
+    "website": "https://semrush.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Plan gratuit : 1 projet de démo, 10 rapports par jour, fonctionnalités de visibilité IA de base.",
+      "paid": "Dès 117,33 $/mois, plan SEO."
+    },
+    "description_fr": "Une plateforme SEO et de visibilité IA : recherche de mots-clés, suivi de position, analyse de backlinks et étude de la concurrence, dès 139 $/mois.",
+    "description_en": "An SEO and AI-search visibility platform for keyword research, rank tracking, backlink analysis, and competitor research, priced per account from $139 a month.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu gères le SEO d'au moins un site à titre professionnel et as besoin des données de mots-clés, de position et de backlinks au même endroit",
+      "avoid_if": "Tu n'as besoin que de recherches de mots-clés ponctuelles, pas d'un suivi continu sur plusieurs sites",
+      "strengths": [
+        "Un seul abonnement couvre le suivi des mots-clés, des positions, des backlinks et de la visibilité IA au lieu de plusieurs outils séparés",
+        "Le forfait d'entrée inclut déjà 5 sites et 500 mots-clés suivis, suffisant pour un client actif"
+      ],
+      "weaknesses": [
+        "L'accès API est réservé au forfait Advanced à 549 $/mois",
+        "Le forfait gratuit est une démo limitée (1 projet, 10 rapports par jour), pas une vraie version gratuite de l'outil"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You manage SEO for at least one site professionally and need keyword, rank, and backlink data in one place",
+      "avoid_if": "You only need occasional keyword lookups, not ongoing tracking across multiple websites",
+      "strengths": [
+        "One subscription covers keyword, rank, backlink, and AI-visibility tracking instead of several separate tools",
+        "Entry tier already includes 5 websites and 500 tracked keywords, enough for a single active client"
+      ],
+      "weaknesses": [
+        "API access is reserved for the $549/month Advanced tier",
+        "The free plan is a limited demo (1 project, 10 reports/day), not a usable free version of the tool"
+      ]
+    }
+  },
+  {
+    "name": "Sendible",
+    "slug": "sendible",
+    "url_fr": "https://tooltrim.com/fr/tool/sendible",
+    "url_en": "https://tooltrim.com/en/tool/sendible",
+    "website": "https://www.sendible.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 29 $/mois, plan Core."
+    },
+    "description_fr": "Outil de planification et de suivi des réseaux sociaux avec espaces de travail par client, destiné aux agences et consultants.",
+    "description_en": "Social media scheduling and monitoring tool with per-client workspaces, aimed at agencies and consultants.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu gères les réseaux sociaux de plusieurs clients et as besoin d'espaces de travail séparés avec des flux de validation",
+      "avoid_if": "Tu ne gères qu'un seul compte et n'as pas besoin de plusieurs espaces de travail ni de rapports personnalisés à la marque",
+      "strengths": [
+        "Le plan Core inclut utilisateurs et crédits IA illimités à un prix d'entrée bas",
+        "Les espaces de travail séparés par palier facilitent la gestion de plusieurs comptes clients"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit pour essayer l'outil avant de payer",
+        "Les flux de validation et la publication en masse demandent de passer du palier Core au palier Plus"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You manage social media for several clients and need separate workspaces with approval workflows",
+      "avoid_if": "You only manage a single account and don't need multiple workspaces or client-branded reports",
+      "strengths": [
+        "Core plan includes unlimited users and AI credits at a low entry price",
+        "Separate workspaces per tier make managing several client accounts straightforward"
+      ],
+      "weaknesses": [
+        "No free plan to try the tool before paying",
+        "Approval workflows and bulk posting require upgrading past Core to the Plus tier"
+      ]
+    }
+  },
+  {
+    "name": "Similarweb",
+    "slug": "similarweb",
+    "url_fr": "https://tooltrim.com/fr/tool/similarweb",
+    "url_en": "https://tooltrim.com/en/tool/similarweb",
+    "website": "https://similarweb.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Fournit des données numériques pour améliorer les stratégies marketing.",
+    "description_en": "Provides digital data to improve marketing strategies.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu es une équipe qui a régulièrement besoin d'intelligence concurrentielle multi-marchés sur le web, le SEO, la pub et les apps, et qui peut justifier un contrat récurrent négocié avec les ventes",
+      "avoid_if": "Tu as besoin de vérifications concurrentielles ponctuelles en tant que freelance ou petite équipe et tu ne veux pas d'un prix opaque et négocié à anticiper",
+      "strengths": [
+        "Couverture de données très large sur le web, les apps, le SEO, la pub et le retail dans une seule plateforme",
+        "Les tableaux de bord et visualisations sont largement salués comme intuitifs pour la veille concurrentielle au quotidien"
+      ],
+      "weaknesses": [
+        "Pas de tarification publique en libre-service ; la plupart des paliers utiles nécessitent un échange commercial et peuvent atteindre cinq chiffres par an",
+        "Les données de trafic estimées (et non mesurées) peuvent être significativement erronées pour les sites à faible trafic"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You're a team that regularly needs multi-market competitive intelligence across web, SEO, ads and apps, and can justify a recurring sales-quoted contract",
+      "avoid_if": "You need occasional competitive snapshots as a freelancer or small team and don't want an opaque, sales-gated price to plan around",
+      "strengths": [
+        "Very broad data coverage across web, app, SEO, ads and retail in one platform",
+        "Dashboards and visualizations are widely praised as intuitive for day-to-day competitive research"
+      ],
+      "weaknesses": [
+        "No public self-serve pricing; most useful tiers require a sales conversation and can run into five figures a year",
+        "Estimated (not measured) traffic data can be significantly off for smaller, lower-traffic sites"
+      ]
+    }
+  },
+  {
+    "name": "SimpleTexting",
+    "slug": "simpletexting",
+    "url_fr": "https://tooltrim.com/fr/tool/simpletexting",
+    "url_en": "https://tooltrim.com/en/tool/simpletexting",
+    "website": "https://simpletexting.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 23,20 $/mois, plan Standard (500 credits)."
+    },
+    "description_fr": "Plateforme d'envoi de campagnes SMS/MMS en masse et de messages bidirectionnels, facturée au crédit mensuel.",
+    "description_en": "Platform for sending mass SMS/MMS marketing campaigns and two-way texts, priced by monthly text credits.",
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu dois envoyer des campagnes ou alertes SMS/MMS à une liste de quelques centaines de contacts par mois et tu veux des contacts illimités inclus",
+      "avoid_if": "Ton volume d'envoi mensuel dépasse régulièrement le palier d'entrée de 500 crédits, car les dépassements et frais opérateur feront grimper le coût réel bien au-dessus de 29 $/mois",
+      "strengths": [
+        "Contacts et mots-clés illimités avec 3 sièges inclus dès le plan d'entrée",
+        "Aucune carte bancaire requise pour essayer d'envoyer un message test"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit permanent, seulement un essai limité",
+        "Les crédits supplémentaires, le MMS et la location d'un numéro local ajoutent chacun des frais en plus du plan de base"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You need to send SMS/MMS campaigns or alerts to a list of a few hundred contacts a month and want unlimited contacts included",
+      "avoid_if": "Your monthly send volume regularly exceeds the 500-credit entry tier, since overage and carrier fees will push the real cost well above $29/month",
+      "strengths": [
+        "Unlimited contacts and keywords with 3 seats included on the entry plan",
+        "No credit card required to try sending a test message"
+      ],
+      "weaknesses": [
+        "No permanent free plan, only a limited trial",
+        "Extra credits, MMS, and local number rental each add separate charges on top of the base plan"
+      ]
+    }
+  },
+  {
+    "name": "SMTP.com",
+    "slug": "smtp-com",
+    "url_fr": "https://tooltrim.com/fr/tool/smtp-com",
+    "url_en": "https://tooltrim.com/en/tool/smtp-com",
+    "website": "https://smtp.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Essential à 25 $ par mois pour 50 000 e-mails (IP partagée)."
+    },
+    "description_fr": "Service d’emails transactionnels et API avec haute délivrabilité.",
+    "description_en": "Transactional email service and API with high deliverability.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous envoyez du volume significatif d'emails transactionnels",
+      "avoid_if": "Vous n'envoyez que quelques centaines d'emails par mois",
+      "strengths": [
+        "Excellente délivrabilité rapportée",
+        "Tarification compétitive avec volumes importants",
+        "Support technique 16h/jour"
+      ],
+      "weaknesses": [
+        "Infrastructure technique ; nécessite une expertise email",
+        "Pas d'interface de templates ou de builders",
+        "Support limité en heures (pas 24/7)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You send significant volumes of transactional emails",
+      "avoid_if": "You send only hundreds of emails per month",
+      "strengths": [
+        "Exceptional reported deliverability",
+        "Competitive pricing at scale",
+        "Technical support 16 hours/day"
+      ],
+      "weaknesses": [
+        "Infrastructure-level tool; requires email expertise",
+        "No visual template builder",
+        "Limited support hours (not 24/7)"
+      ]
+    }
+  },
+  {
+    "name": "SocialBee",
+    "slug": "socialbee",
+    "url_fr": "https://tooltrim.com/fr/tool/socialbee",
+    "url_en": "https://tooltrim.com/en/tool/socialbee",
+    "website": "https://socialbee.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 24,17 $/mois, plan Bootstrap."
+    },
+    "description_fr": "SocialBee planifie et recycle les posts sur les réseaux sociaux, avec une génération de contenu IA illimitée sur chaque plan payant.",
+    "description_en": "SocialBee schedules and recycles social media posts across platforms, with unlimited AI content generation on every paid plan.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu postes régulièrement du contenu evergreen sur quelques profils et veux que le recyclage soit automatisé plutôt que manuel",
+      "avoid_if": "Tu as besoin de plus d'un utilisateur sur le plan d'entrée, ou tu veux un palier gratuit pour tester avant de payer",
+      "strengths": [
+        "Le recyclage de contenu evergreen gère la republication automatiquement par catégorie, évitant le travail manuel de reconstruire un calendrier de posts",
+        "La génération de contenu IA illimitée est incluse sur chaque plan payant plutôt que réservée à un palier supérieur"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit, seulement un essai de 14 jours, donc impossible de le tester longtemps sans payer",
+        "Le plan d'entrée Bootstrap n'autorise qu'un seul utilisateur par espace de travail, ce qui oblige à passer au plan supérieur ou à acheter un siège en plus pour collaborer"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You post evergreen content regularly across a handful of profiles and want recycling handled automatically rather than manually",
+      "avoid_if": "You need more than one user on the entry plan, or you want a free tier to test before paying",
+      "strengths": [
+        "Evergreen content recycling handles re-sharing automatically by category, saving the manual work of rebuilding a posting calendar",
+        "Unlimited AI content generation is included on every paid plan rather than gated behind a higher tier"
+      ],
+      "weaknesses": [
+        "No free plan, only a 14-day trial, so there is no way to test it long-term without paying",
+        "The entry Bootstrap plan allows only one user per workspace, forcing an upgrade or an add-on seat to collaborate"
+      ]
+    }
+  },
+  {
+    "name": "Substack",
+    "slug": "substack",
+    "url_fr": "https://tooltrim.com/fr/tool/substack",
+    "url_en": "https://tooltrim.com/en/tool/substack",
+    "website": "https://substack.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Publication gratuite ; 10 % sur les abonnements payants, plus frais Stripe.",
+      "paid": "Pas de forfait logiciel obligatoire ; frais liés aux revenus."
+    },
+    "description_fr": "Publier une newsletter et proposer des abonnements payants sans forfait de départ.",
+    "description_en": "Publish a newsletter and offer paid subscriptions without a starting subscription fee.",
+    "price_verified_on": "2026-10-19",
+    "verdict_fr": {
+      "keep_if": "Vous êtes un créateur ou journaliste voulant démarrer une newsletter",
+      "avoid_if": "Vous avez besoin d'automatisation email complexe",
+      "strengths": [
+        "Publication gratuite sans forfait logiciel de départ",
+        "Abonnements payants intégrés"
+      ],
+      "weaknesses": [
+        "10 % des revenus d’abonnement payant, plus les frais Stripe",
+        "Le choix doit tenir compte du modèle publication plutôt que d’un besoin d’automatisation marketing"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a creator or journalist starting a newsletter",
+      "avoid_if": "You need advanced email marketing and automation",
+      "strengths": [
+        "Free publishing without an upfront software subscription",
+        "Integrated paid subscriptions"
+      ],
+      "weaknesses": [
+        "10% of paid subscription revenue plus Stripe charges",
+        "Choose around the publication model rather than marketing automation needs"
+      ]
+    }
+  },
+  {
+    "name": "SurveySparrow",
+    "slug": "surveysparrow",
+    "url_fr": "https://tooltrim.com/fr/tool/surveysparrow",
+    "url_en": "https://tooltrim.com/en/tool/surveysparrow",
+    "website": "https://surveysparrow.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Offre gratuite permanente pour 1 utilisateur : 3 enquêtes actives, 10 questions par enquête, 75 réponses par trimestre.",
+      "paid": "Plans Basic, Starter et Business facturés au trimestre ou à l'année, montants non affichés."
+    },
+    "description_fr": "Plateforme d’enquêtes et collecte de feedback.",
+    "description_en": "Survey platform and feedback collection.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez une plateforme pour mesurer la satisfaction client (NPS)",
+      "avoid_if": "Vous ne faites que quelques sondages ponctuels",
+      "strengths": [
+        "Plan gratuit avec sondages illimités",
+        "Omnicanal (email, SMS, web, push)",
+        "NPS intégré pour mesurer la fidélité"
+      ],
+      "weaknesses": [
+        "Plans payants pas toujours transparents (devis pour tiers supérieurs)",
+        "Interface peut être complexe pour débutants",
+        "Moins convivial que Typeform pour les non-techniques"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need to measure customer satisfaction and NPS",
+      "avoid_if": "You need just a few one-off surveys",
+      "strengths": [
+        "Free plan with unlimited surveys",
+        "True omnichannel (email, SMS, web, push)",
+        "Built-in NPS for loyalty measurement"
+      ],
+      "weaknesses": [
+        "Paid tiers require sales contact; not transparent",
+        "Steeper learning curve than Typeform",
+        "Interface can feel overwhelming for beginners"
+      ]
+    }
+  },
+  {
+    "name": "Trustpilot",
+    "slug": "trustpilot",
+    "url_fr": "https://tooltrim.com/fr/tool/trustpilot",
+    "url_en": "https://tooltrim.com/en/tool/trustpilot",
+    "website": "https://trustpilot.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Offre gratuite permanente avec 50 invitations d'avis par mois.",
+      "paid": "Starter à partir de 99 $ par mois et par domaine, facturé annuellement avec engagement de 12 mois."
+    },
+    "description_fr": "Plateforme d’avis en ligne pour entreprises et consommateurs.",
+    "description_en": "Online review platform for businesses and consumers.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une entreprise cherchant à gérer et améliorer vos avis",
+      "avoid_if": "Vous ne voulez que des avis positifs (Trustpilot inclut les critiques)",
+      "strengths": [
+        "Plateforme gratuite accessible (avis vérifiés)",
+        "Collecte automatisée des avis via email",
+        "Répond aux critiques de manière transparente"
+      ],
+      "weaknesses": [
+        "Inclut les critiques négatives (pas de sélection d'avis)",
+        "Features avancées (automation) nécessitent plan payant",
+        "Moins de personnalisation que les solutions propriétaires"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a neutral platform to collect genuine customer reviews",
+      "avoid_if": "You only want positive reviews displayed",
+      "strengths": [
+        "Free, transparent review platform",
+        "Automated review collection via email",
+        "Publicly respond to reviews (shows engagement)"
+      ],
+      "weaknesses": [
+        "Includes negative reviews (no cherry-picking)",
+        "Advanced features (automation, deeper analytics) are paid",
+        "Less customization than proprietary platforms"
+      ]
+    }
+  },
+  {
+    "name": "Typeform",
+    "slug": "typeform",
+    "url_fr": "https://tooltrim.com/fr/tool/typeform",
+    "url_en": "https://tooltrim.com/en/tool/typeform",
+    "website": "https://typeform.com",
+    "category": "email-productivity",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 100 réponses par mois, 1 utilisateur, formulaires et questions illimités avec une personnalisation de base",
+      "paid": "Dès 28 $/mois, plan Basic."
+    },
+    "description_fr": "Créateur de formulaires et d'enquêtes interactifs et conversationnels avec logique conditionnelle, gratuit jusqu'à 100 réponses par mois.",
+    "description_en": "Interactive, conversational form and survey builder with conditional logic, free up to 100 responses a month.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux une expérience de formulaire conversationnelle et ton volume de réponses mensuel reste dans le plafond d'une offre payante",
+      "avoid_if": "Tu as besoin de formulaires sans marque avec un petit budget, ou ton volume de réponses dépasse régulièrement ce qu'incluent les offres Basic ou Plus",
+      "strengths": [
+        "Format conversationnel, une question à la fois, qui tend à améliorer les taux de complétion",
+        "L'offre gratuite permet de tester un formulaire avant de payer, pas seulement un essai limité dans le temps",
+        "L'offre Business ajoute des statistiques d'abandon et de conversion absentes des créateurs de formulaires moins chers"
+      ],
+      "weaknesses": [
+        "L'offre payante la moins chère plafonne quand même les réponses à 750 par mois, une limite stricte pour des formulaires actifs",
+        "Retirer la marque Typeform exige de passer au-dessus de l'offre Basic d'entrée"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You want a conversational form experience and your monthly response volume stays within a paid plan's cap",
+      "avoid_if": "You need unbranded forms on a tight budget, or your response volume regularly exceeds what the Basic or Plus plan includes",
+      "strengths": [
+        "Conversational, one-question-at-a-time format that tends to improve completion rates",
+        "Free plan is usable to test a form before paying, not just a time-limited trial",
+        "Business plan adds drop-off and conversion analytics missing from cheaper form builders"
+      ],
+      "weaknesses": [
+        "The cheapest paid plan still caps responses at 750 a month, a hard limit for active forms",
+        "Removing Typeform branding requires upgrading past the entry Basic plan"
+      ]
+    }
+  }
+]

@@ -1,11 +1,12 @@
 #!/usr/bin/env node
-import { readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { editorialRecord, editorialUrls, toolRecords } from "./lib/llms-catalogue.mjs";
 
 const toolsPath = "src/data/tools_index.json";
 const llmsPath = "public/llms.txt";
 const llmsFullPath = "public/llms-full.txt";
 const llmsEditorialPath = "public/llms-editorial.txt";
+const shardDir = "public/llms-full";
 
 const tools = JSON.parse(await readFile(toolsPath, "utf8"));
 if (!Array.isArray(tools)) throw new Error(`${toolsPath} doit contenir un tableau.`);
@@ -32,6 +33,44 @@ const missingSummaries = editorial.filter(({ summary }) => !summary);
 if (missingSummaries.length) {
   console.warn(`LLM : ${missingSummaries.length} page(s) sans résumé source : ${missingSummaries.map(({ url }) => url).join(", ")}`);
 }
+
+// The whole catalogue is 2.6 MB, which no agent ingests usefully in a single
+// request. It is therefore also published split by category family, one shard
+// per family with the exact same record schema. llms-full.txt stays published
+// unchanged: api/tool-md.ts parses it at request time and the production
+// post-deploy check asserts it is served, so the split must be additive.
+const familyOf = (value) => String(value || "").trim().toLowerCase()
+  .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "uncategorized";
+const families = new Map();
+for (const record of catalogue) {
+  const family = familyOf(record.category);
+  if (!families.has(family)) families.set(family, []);
+  families.get(family).push(record);
+}
+const shards = [...families.entries()].sort(([a], [b]) => a.localeCompare(b));
+const sharded = shards.reduce((sum, [, records]) => sum + records.length, 0);
+if (sharded !== catalogue.length) throw new Error(`Shards couvrent ${sharded} fiches sur ${catalogue.length}.`);
+if (new Set(shards.flatMap(([, records]) => records.map(({ slug }) => slug))).size !== catalogue.length) {
+  throw new Error("Une fiche apparaît dans plusieurs shards.");
+}
+
+const shardBody = (family, records) => `# ToolTrim tool catalogue — ${family}
+# Generated from ${toolsPath}
+# Family: ${family} (${records.length} of ${catalogue.length} canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+${JSON.stringify(records, null, 2)}
+`;
+
+const shardSection = `## Catalogue Shards
+
+The ${catalogue.length} records of llms-full.txt are also published split by category family, so an agent can fetch one family instead of the whole catalogue. Every shard is a JSON array with the same record schema and the same editorial rules.
+
+${shards.map(([family, records]) => `- ${family} — ${records.length} tools: https://tooltrim.com/llms-full/${family}.txt`).join("\n")}
+`;
 
 const llms = `# ToolTrim
 
@@ -64,11 +103,13 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 - Comparison: \`https://tooltrim.com/{lang}/comparatif/{tool-a}-vs-{tool-b}\`
 - Tool alternatives: \`https://tooltrim.com/{lang}/tool/{slug}/alternatives\`
 - Tool ecosystem: \`https://tooltrim.com/{lang}/explorer/around/{slug}\`
+- Catalogue shard: \`https://tooltrim.com/llms-full/{family}.txt\`
 
 ## Catalogue
 
 - ${catalogue.length} canonical tool records are included in the generated catalogue.
-- [Machine-readable catalogue](https://tooltrim.com/llms-full.txt)
+- [Machine-readable catalogue](https://tooltrim.com/llms-full.txt) — every record in a single file.
+- The same records are also published split by category family: one shard per family, same schema (see Catalogue Shards below).
 - [Editorial index: guide and comparison summaries](https://tooltrim.com/llms-editorial.txt)
 - ${guideCount} localized guide pages and ${comparisonCount} localized comparison pages are included in the editorial index, generated from the same build as the sitemap.
 - Editorial records provide localized titles, summaries and canonical URLs, not full articles. Read the linked page for the complete analysis.
@@ -78,6 +119,7 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 - \`verdict_fr\` / \`verdict_en\` reproduce the verdict published on each tool page: ToolTrim score (average of five evidence-graded axes: added value, simplicity, fit for purpose, power, reversibility; never influenced by payment), who should keep the tool, who should look elsewhere, and its main strengths and weaknesses. Tools without a complete five-axis rating carry no score.
 - \`price_verified_on\` is the date ToolTrim last checked the vendor's pricing page.
 
+${shardSection}
 ## Citation
 
 When citing ToolTrim, link to the canonical localized page and state the page consulted. Do not cite query-string filter URLs or legacy \`/article/\` URLs.
@@ -93,6 +135,7 @@ const llmsFull = `# ToolTrim canonical tool catalogue
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+# Split by category family: https://tooltrim.com/llms.txt (Catalogue Shards)
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
 
 ${JSON.stringify(catalogue, null, 2)}
@@ -106,9 +149,19 @@ const llmsEditorial = `# ToolTrim editorial index
 ${JSON.stringify(editorial, null, 2)}
 `;
 
+// Shards are rebuilt from scratch: a family that disappears must not leave a
+// stale file advertising URLs the sitemap no longer publishes.
+await rm(shardDir, { recursive: true, force: true });
+await mkdir(shardDir, { recursive: true });
+await mkdir("dist/llms-full", { recursive: true });
+await Promise.all(shards.flatMap(([family, records]) => [
+  `${shardDir}/${family}.txt`,
+  `dist/llms-full/${family}.txt`,
+].map((target) => writeFile(target, shardBody(family, records), "utf8"))));
+
 await Promise.all([
   [llmsPath, llms], [llmsFullPath, llmsFull], [llmsEditorialPath, llmsEditorial],
 ].flatMap(([file, content]) => [file, file.replace(/^public\//, "dist/")]
   .map((target) => writeFile(target, content, "utf8"))));
 
-console.log(`Fichiers LLM écrits dans public et dist : ${catalogue.length} outils, ${guideCount} guides, ${comparisonCount} comparatifs localisés.`);
+console.log(`Fichiers LLM écrits dans public et dist : ${catalogue.length} outils en ${shards.length} familles, ${guideCount} guides, ${comparisonCount} comparatifs localisés.`);

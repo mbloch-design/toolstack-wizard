@@ -1,0 +1,2774 @@
+# ToolTrim tool catalogue — organization
+# Generated from src/data/tools_index.json
+# Family: organization (64 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "17hats",
+    "slug": "17hats",
+    "url_fr": "https://tooltrim.com/fr/tool/17hats",
+    "url_en": "https://tooltrim.com/en/tool/17hats",
+    "website": "https://17hats.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : Contacts et projets illimités, 4 factures par trimestre, rapport de taxe de vente, modèles d'e-mails.",
+      "paid": "Dès 50 $/mois, plan 17hats."
+    },
+    "description_fr": "Un CRM tout-en-un pour freelances créatifs, qui réunit contacts, facturation, contrats et planification dans un seul plan à tarif fixe.",
+    "description_en": "An all-in-one CRM for creative freelancers, bundling contacts, invoicing, contracts and scheduling into one flat-rate plan.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Tu gères une activité créative solo et veux contacts, facturation et planification dans un seul plan à tarif fixe",
+      "avoid_if": "Tu as besoin de plus de 4 factures par trimestre sans payer, ou d'une API documentée pour connecter d'autres outils",
+      "strengths": [
+        "Un seul abonnement remplace plusieurs outils séparés (facturation, planification, contrats) pour une activité créative solo",
+        "Le plan CRM gratuit est permanent, pas un essai, donc contacts et projets restent utilisables sans payer"
+      ],
+      "weaknesses": [
+        "Des besoins courants comme la synchro bancaire, le suivi du temps et une 3e marque sont chacun une option payante séparée",
+        "Aucun export de données ni API n'est annoncé, donc quitter l'outil implique probablement de ressaisir les données clients ailleurs"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "You run a solo creative-service business and want contacts, invoicing and scheduling in one flat-rate plan",
+      "avoid_if": "You need more than 4 invoices a quarter without paying, or a documented API to connect other tools",
+      "strengths": [
+        "One subscription replaces several point tools (invoicing, scheduling, contracts) for a solo creative business",
+        "The free CRM plan is permanent, not a trial, so contacts and projects stay usable at no cost"
+      ],
+      "weaknesses": [
+        "Common needs like bank sync, time tracking and a 3rd brand are each a separate paid add-on",
+        "No data export or API is advertised, so leaving the tool likely means re-entering client data elsewhere"
+      ]
+    }
+  },
+  {
+    "name": "airSlate",
+    "slug": "airslate",
+    "url_fr": "https://tooltrim.com/fr/tool/airslate",
+    "url_en": "https://tooltrim.com/en/tool/airslate",
+    "website": "https://airslate.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai disponible.",
+      "paid": "À partir de 19$/mois ; plans Pro et Business+ pour les PME en croissance, Enterprise pour du marque blanche sur devis."
+    },
+    "description_fr": "Automatisation de workflows documentaires no-code avec signature électronique intégrée.",
+    "description_en": "No-code document workflow automation with built-in e-signature.",
+    "price_verified_on": "2026-06-27",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin d'automatiser les processus documentaires complexes",
+      "avoid_if": "Vous cherchez un outil simple pour un seul besoin (ex. signature seulement)",
+      "strengths": [
+        "Suite complète d'outils documentaires intégrés",
+        "Automatisation avancée des flux de travail",
+        "Signatures électroniques sécurisées et conformes"
+      ],
+      "weaknesses": [
+        "Tarification fragmentée (un prix par produit)",
+        "Courbe d'apprentissage importante pour exploiter toutes les fonctionnalités",
+        "Interface moins intuitive que certains concurrents"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need to automate complex document workflows",
+      "avoid_if": "You're looking for a simple single-purpose tool",
+      "strengths": [
+        "Complete integrated document tools suite",
+        "Advanced workflow automation",
+        "Secure, compliant digital signatures"
+      ],
+      "weaknesses": [
+        "Fragmented pricing (one price per product)",
+        "Steep learning curve to leverage all features",
+        "Less intuitive interface than some competitors"
+      ]
+    }
+  },
+  {
+    "name": "Asana",
+    "slug": "asana",
+    "url_fr": "https://tooltrim.com/fr/tool/asana",
+    "url_en": "https://tooltrim.com/en/tool/asana",
+    "website": "https://asana.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : Gestion de base des tâches et des projets pour les particuliers et petites équipes jusqu'à 10 membres.",
+      "paid": "Dès 9,63 $/mois, plan Starter."
+    },
+    "description_fr": "Asana est un outil de gestion de projets et de tâches avec tableaux, frise, calendrier, automatisation des flux et reporting multi-projets pour les équipes.",
+    "description_en": "Asana is a project and task management tool with boards, timelines, calendars, workflow automation and cross-project reporting for teams.",
+    "price_verified_on": "2026-06-24",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu gères une équipe de 2 personnes ou plus et as besoin de frises partagées, d'automatisation et de reporting au-delà d'une simple liste de tâches",
+      "avoid_if": "Tu travailles seul et n'as besoin que d'un suivi de tâches basique : le plan gratuit suffit déjà, sans passer à l'offre payante",
+      "strengths": [
+        "Le plan gratuit est pleinement utilisable pour les petites équipes jusqu'à 10 membres, pas juste un essai limité",
+        "L'automatisation et le reporting sont accessibles dès la première offre payante, pas réservés à une offre entreprise"
+      ],
+      "weaknesses": [
+        "L'offre Advanced, qui débloque portefeuilles et objectifs, impose un minimum de 2 sièges : impossible d'y accéder seul",
+        "Le tarif Enterprise est sur devis, donc budgétiser au-delà d'Advanced demande de contacter les ventes"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You manage a team of 2 or more and need shared timelines, automation and reporting beyond a simple task list",
+      "avoid_if": "You work alone and only need basic task tracking: the Free plan already covers that without upgrading",
+      "strengths": [
+        "The Free plan is fully usable for small teams up to 10 members, not just a limited trial",
+        "Workflow automation and reporting are available from the entry paid tier, not locked to an enterprise plan"
+      ],
+      "weaknesses": [
+        "The Advanced tier, which unlocks portfolios and goals, has a 2-seat purchase minimum, so a true solo user cannot access it alone",
+        "Enterprise pricing is quote-only, so budgeting beyond Advanced requires contacting sales"
+      ]
+    }
+  },
+  {
+    "name": "Audionotes",
+    "slug": "audionotes",
+    "url_fr": "https://tooltrim.com/fr/tool/audionotes",
+    "url_en": "https://tooltrim.com/en/tool/audionotes",
+    "website": "https://www.audionotes.app/",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit durable avec limites de capture.",
+      "paid": "Pro annuel ; Enterprise sur devis."
+    },
+    "description_fr": "Transforme notes vocales, fichiers et vidéos en notes structurées et interrogeables.",
+    "description_en": "Turns voice notes, files and videos into structured, searchable notes.",
+    "verdict_fr": {
+      "keep_if": "Tu captures souvent tes idées à l’oral",
+      "avoid_if": "Tu cherches surtout des comptes rendus de réunions d’équipe",
+      "strengths": [
+        "Capture vocale rapide sur plusieurs plateformes",
+        "Transcription, résumé et recherche réunis",
+        "Import de plusieurs formats de contenu"
+      ],
+      "weaknesses": [
+        "Le plan gratuit limite fortement la durée des enregistrements",
+        "Moins orienté gouvernance d’équipe qu’un outil de réunion",
+        "La qualité dépend du son et du contexte de parole"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You often capture ideas by voice",
+      "avoid_if": "Your main need is team meeting minutes",
+      "strengths": [
+        "Fast voice capture across several platforms",
+        "Transcription, summaries and search in one place",
+        "Imports several content formats"
+      ],
+      "weaknesses": [
+        "The free plan tightly limits recording length",
+        "Less team-governance focused than a meeting tool",
+        "Quality depends on audio and speech conditions"
+      ]
+    }
+  },
+  {
+    "name": "Basecamp",
+    "slug": "basecamp",
+    "url_fr": "https://tooltrim.com/fr/tool/basecamp",
+    "url_en": "https://tooltrim.com/en/tool/basecamp",
+    "website": "https://basecamp.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : 1 projet actif, jusqu'à 20 personnes, 1 Go de stockage, sans limite de durée",
+      "paid": "Dès 15 $/mois, plan Basecamp Plus."
+    },
+    "description_fr": "Gestion de projet et collaboration d'équipe, avec un forfait illimité à prix fixe.",
+    "description_en": "Project management and team collaboration software.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu diriges une petite équipe ou une activité freelance orientée client et tu veux un seul outil simple, sans fioritures, pour les tâches, fichiers et discussions",
+      "avoid_if": "Tu as besoin de diagrammes de Gantt, de suivi du temps natif, de planification de ressources ou de reporting poussé pour des portefeuilles de projets complexes",
+      "strengths": [
+        "Interface volontairement simple, exploitable de manière productive en moins d'une heure sans formation",
+        "Le plan Pro Unlimited à tarif fixe supprime l'angoisse du coût par utilisateur une fois l'équipe assez grande",
+        "Applis natives web, iOS, Android, Mac et Windows pour un usage quotidien cohérent"
+      ],
+      "weaknesses": [
+        "Pas de diagrammes de Gantt, de suivi du temps natif ni de reporting avancé comparé à ClickUp ou Asana",
+        "La limite d'un seul projet sur le plan gratuit en fait davantage un essai qu'un vrai forfait gratuit utilisable durablement",
+        "Le prix phare de 299 $/mois pour Pro Unlimited suppose une facturation annuelle ; en mensuel, c'est 349 $/mois"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run a small team or client-facing freelance business and want one simple, no-frills tool for tasks, files, and discussion",
+      "avoid_if": "You need Gantt charts, native time tracking, resource planning, or deep reporting for complex project portfolios",
+      "strengths": [
+        "Deliberately simple interface, usable productively within an hour with no training",
+        "Flat-rate Pro Unlimited plan removes per-seat cost anxiety once a team is large enough",
+        "Native apps on web, iOS, Android, Mac and Windows for consistent daily use"
+      ],
+      "weaknesses": [
+        "No Gantt charts, native time tracking, or advanced reporting compared to ClickUp or Asana",
+        "Free plan's single-project cap makes it a trial more than a usable long-term free tier",
+        "Pro Unlimited's headline $299/mo price requires annual billing; month-to-month costs $349/mo"
+      ]
+    }
+  },
+  {
+    "name": "Bear",
+    "slug": "bear",
+    "url_fr": "https://tooltrim.com/fr/tool/bear",
+    "url_en": "https://tooltrim.com/en/tool/bear",
+    "website": "https://bear.app",
+    "category": "organization",
+    "description_fr": "Application de prise de notes Markdown pour les appareils Apple (Mac, iPhone, iPad) mettant l'accent sur la simplicité et le design élégant. Supporte l'édition Markdown, l'organisation flexible des tags, le scan de documents et les exports multiples (TXT, PDF, HTML, DOCX, etc.).",
+    "description_en": "Markdown note-taking app for Apple devices (Mac, iPhone, iPad) emphasizing simplicity and elegant design. Markdown editing, flexible tag organization, document scanning, multiple exports (TXT, PDF, HTML, DOCX, etc.).",
+    "verdict_fr": {
+      "keep_if": "Vous prenez des notes Markdown sur les appareils Apple et cherchez un design élégant",
+      "avoid_if": "Vous exigez Android ou un client Windows ; Bear est exclusif à Apple",
+      "strengths": [
+        "Design élégant et interface intuitive qui réduisent la friction à la prise de notes",
+        "La synchronisation iCloud cross-device gratuite avec Pro simplifie l'utilisation multi-device",
+        "Les exports multiples en différents formats offrent de la flexibilité pour la portabilité des notes"
+      ],
+      "weaknesses": [
+        "Exclusif à Apple : pas de client natif Windows ou Android",
+        "Pas de collaboration : chaque utilisateur a ses notes personnelles Bear",
+        "Pas d'interface web : dépendance complète aux clients desktop et mobile d'Apple"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You take Markdown notes on Apple devices and seek elegant design",
+      "avoid_if": "You require Android or Windows client; Bear Apple-exclusive",
+      "strengths": [
+        "Elegant design and intuitive interface reduce note-taking friction",
+        "Free iCloud sync across devices for Pro simplifies multi-device usage",
+        "Multiple format exports offer flexibility for note portability"
+      ],
+      "weaknesses": [
+        "Apple-exclusive; no native Windows or Android client",
+        "No collaboration; each user personal Bear notes",
+        "No web interface; complete dependence on Apple desktop/mobile clients"
+      ]
+    }
+  },
+  {
+    "name": "Better Proposals",
+    "slug": "better-proposals",
+    "url_fr": "https://tooltrim.com/fr/tool/better-proposals",
+    "url_en": "https://tooltrim.com/en/tool/better-proposals",
+    "website": "https://betterproposals.io",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 13 $/mois, plan Starter."
+    },
+    "description_fr": "Better Proposals crée, suit et fait signer et payer des propositions commerciales, devis et contrats dans un seul document.",
+    "description_en": "Better Proposals creates, tracks and gets e-signatures and payment on sales proposals, quotes and contracts in a single document.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Garde Better Proposals si tu envoies régulièrement des propositions commerciales ou des contrats et veux signature électronique et paiement intégrés au même document",
+      "avoid_if": "Évite Better Proposals si tu as besoin des intégrations CRM ou de l'accès API avec un budget mono-utilisateur, car elles nécessitent le plan Premium à 5 postes",
+      "strengths": [
+        "Combine création de document, signature électronique, suivi et encaissement dans un seul outil",
+        "Le suivi d'ouverture et de lecture montre exactement quand un prospect a consulté une proposition"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit permanent, seulement un essai de 14 jours",
+        "Les intégrations CRM, le domaine personnalisé et l'accès API/Zapier nécessitent le plan Premium et un minimum de 5 postes"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You regularly send sales proposals or contracts and want built-in e-signature and payment collection in the same document",
+      "avoid_if": "You need CRM integrations or API access on a single-user budget, since those require the 5-seat Premium plan",
+      "strengths": [
+        "Combines document creation, e-signature, tracking and payment collection in a single tool",
+        "Document open/read tracking shows exactly when a prospect viewed a proposal"
+      ],
+      "weaknesses": [
+        "No permanent free plan, only a 14-day trial",
+        "CRM integrations, a custom domain and API/Zapier access require the Premium plan and 5 seats minimum"
+      ]
+    }
+  },
+  {
+    "name": "Blueink eSignatures",
+    "slug": "blueink-esignatures",
+    "url_fr": "https://tooltrim.com/fr/tool/blueink-esignatures",
+    "url_en": "https://tooltrim.com/en/tool/blueink-esignatures",
+    "website": "https://blueink.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 15 $/mois, plan Standard."
+    },
+    "description_fr": "Blueink envoie des demandes de signature par SMS et email, avec envoi en masse, modèles et API, facturé par utilisateur avec un plafond d'enveloppes mensuel.",
+    "description_en": "Blueink sends e-signature requests by SMS and email, with bulk send, templates and an API, priced per user with a monthly envelope cap.",
+    "price_verified_on": "2026-10-02",
+    "verdict_fr": {
+      "score": "3/5",
+      "label": "Bon",
+      "keep_if": "Tu envoies un volume modéré et prévisible de contrats par utilisateur et tu veux le SMS sans le tarif par poste d'un DocuSign",
+      "avoid_if": "Tu as besoin d'un forfait gratuit permanent ou d'un envoi d'enveloppes à fort volume imprévisible sans anticiper le palier",
+      "strengths": [
+        "Envoi par SMS en plus de l'email, utile pour les signataires plus faciles à joindre par téléphone",
+        "Essai de 14 jours sans information de paiement demandée au départ",
+        "Aucune pénalité de dépassement quand le plafond d'enveloppes est dépassé ; une capacité supplémentaire peut être achetée à la place"
+      ],
+      "weaknesses": [
+        "Aucun forfait gratuit, et chaque palier payant sous Enterprise plafonne les enveloppes par utilisateur",
+        "Le tarif par enveloppe d'Enterprise n'est pas public ; il faut passer par le service commercial"
+      ]
+    },
+    "verdict_en": {
+      "score": "3/5",
+      "label": "Good",
+      "keep_if": "You send a moderate, predictable volume of contracts per user and want SMS delivery without DocuSign-level per-seat pricing",
+      "avoid_if": "You need a permanently free plan or unpredictable, high-volume envelope sending without planning the tier in advance",
+      "strengths": [
+        "SMS delivery alongside email, useful for signers who are easier to reach by phone",
+        "14-day trial with no payment information required upfront",
+        "No overage penalty when an envelope cap is exceeded; extra capacity can be purchased instead"
+      ],
+      "weaknesses": [
+        "No free plan, and every paid tier below Enterprise caps envelopes per user",
+        "Enterprise's per-envelope rate is not public; it requires a sales conversation"
+      ]
+    }
+  },
+  {
+    "name": "Box",
+    "slug": "box",
+    "url_fr": "https://tooltrim.com/fr/tool/box",
+    "url_en": "https://tooltrim.com/en/tool/box",
+    "website": "https://box.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : 10 Go de stockage, fichiers limités à 250 Mo, 1 version de fichier, 5 demandes Box Sign par mois, un seul utilisateur.",
+      "paid": "Dès 7 $/mois, plan Business Starter."
+    },
+    "description_fr": "Stockage cloud et partage de fichiers avec permissions, signature et Box AI, gratuit en solo, par poste avec un minimum de 3 postes en équipe.",
+    "description_en": "Cloud storage and file sharing with permission controls, e-signature and Box AI, free for a single user and per-seat with a 3-seat minimum for teams.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Vous êtes au moins 3 personnes ayant besoin de stockage cloud partagé avec des permissions fines et de la signature électronique",
+      "avoid_if": "Tu travailles seul et as juste besoin de plus que les 10 Go de l'offre gratuite, car les offres business exigent un minimum de 3 postes",
+      "strengths": [
+        "L'offre gratuite Individual inclut déjà des demandes de signature électronique et un partage fin",
+        "Le stockage illimité démarre dès l'offre Business plutôt que seulement sur l'offre la plus haute"
+      ],
+      "weaknesses": [
+        "Aucune offre business ne peut s'acheter en dessous de 3 postes, même pour une équipe de 1 à 2 personnes",
+        "La limite de 250 Mo par fichier de l'offre gratuite est trop petite pour de gros fichiers multimédias"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You are at least 3 people who need shared cloud storage with fine-grained permissions and e-signature",
+      "avoid_if": "You work alone and only need more than the free plan's 10 GB, since business pricing requires 3 seats minimum",
+      "strengths": [
+        "Free Individual plan already includes e-signature requests and granular sharing",
+        "Unlimited storage starts at the Business tier rather than only on the top plan"
+      ],
+      "weaknesses": [
+        "No business tier can be bought below 3 seats, even for a 1-2 person team",
+        "Free plan's 250 MB file upload limit is too small for large media files"
+      ]
+    }
+  },
+  {
+    "name": "Breezy HR",
+    "slug": "breezy-hr",
+    "url_fr": "https://tooltrim.com/fr/tool/breezy-hr",
+    "url_en": "https://tooltrim.com/en/tool/breezy-hr",
+    "website": "https://breezy.hr",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan Bootstrap gratuit : 1 poste actif, candidats et utilisateurs illimités",
+      "paid": "Startup à 157$/mois (annuel) ; Growth à 273$/mois ; Business à 439$/mois. Utilisateurs et postes illimités sur tous les plans payants — facturation mensuelle environ 20% plus chère."
+    },
+    "description_fr": "Logiciel de recrutement (ATS) avec pipelines personnalisables et diffusion multi-jobboards.",
+    "description_en": "Recruiting software (ATS) with customizable pipelines and multi-job-board distribution.",
+    "price_verified_on": "2026-06-26",
+    "verdict_fr": {
+      "keep_if": "Vous recruitez régulièrement et voulez automatiser le processus",
+      "avoid_if": "Vous ne recrulez qu'occasionnellement",
+      "strengths": [
+        "Publication simultanée sur 50+ job boards",
+        "Automatisation complète du workflow de recrutement",
+        "Module de gestion des performances intégré"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite",
+        "Peut être un peu lent pour très gros volume",
+        "Reporting peut être amélioré"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You recruit regularly and want to automate the process",
+      "avoid_if": "You only recruit occasionally",
+      "strengths": [
+        "Post simultaneously to 50+ job boards",
+        "Complete recruitment workflow automation",
+        "Integrated performance management module"
+      ],
+      "weaknesses": [
+        "No free version",
+        "Can be slow for very large volumes",
+        "Reporting could be improved"
+      ]
+    }
+  },
+  {
+    "name": "BugHerd",
+    "slug": "bugherd",
+    "url_fr": "https://tooltrim.com/fr/tool/bugherd",
+    "url_en": "https://tooltrim.com/en/tool/bugherd",
+    "website": "https://bugherd.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai disponible.",
+      "paid": "Standard 50$/mois (42$ annuel, 5 membres) ; Studio 80$/mois (10 membres) ; Premium 150$/mois (25 membres) ; Enterprise sur devis."
+    },
+    "description_fr": "Outil de feedback visuel pour sites web : les clients épinglent des commentaires directement sur la page.",
+    "description_en": "Visual feedback tool for websites: clients pin comments directly on the page.",
+    "price_verified_on": "2026-06-27",
+    "verdict_fr": {
+      "keep_if": "Vous avez souvent besoin de feedback clients sur votre site/app",
+      "avoid_if": "Vous ne testez que ponctuellement avec peu de retours",
+      "strengths": [
+        "Feedback in-context sur live site, très intuitif pour clients",
+        "Capture automatique du contexte technique et screenshot",
+        "Conversion automatique en tâches traçables"
+      ],
+      "weaknesses": [
+        "Pas d'app mobile native pour feedback (web only)",
+        "Peut être overkill pour très petit volume",
+        "Tarification basée sur nombre de projets peut augmenter avec scale"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You frequently need client feedback on your site/app",
+      "avoid_if": "You only test occasionally with little feedback",
+      "strengths": [
+        "In-context feedback on live site, very intuitive for clients",
+        "Automatic technical context and screenshot capture",
+        "Automatic conversion to trackable tasks"
+      ],
+      "weaknesses": [
+        "No native mobile app for feedback (web only)",
+        "May be overkill for very small feedback volume",
+        "Pricing based on number of projects can increase with scale"
+      ]
+    }
+  },
+  {
+    "name": "Clockify",
+    "slug": "clockify",
+    "url_fr": "https://tooltrim.com/fr/tool/clockify",
+    "url_en": "https://tooltrim.com/en/tool/clockify",
+    "website": "https://clockify.me",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : Utilisateurs et projets illimités ; suivi du temps, feuille de temps, calendrier ; rapports limités à une plage d'un mois ; export au format PDF uniquement.",
+      "paid": "Dès 3,99 $/mois, plan Basic."
+    },
+    "description_fr": "Outil de suivi du temps avec utilisateurs gratuits illimités et plans payants ajoutant facturation, planification et contrôles d'administration.",
+    "description_en": "Time-tracking tool with unlimited free users and paid tiers adding invoicing, scheduling, and admin controls.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu as besoin d'un suivi du temps gratuit sans limite d'utilisateurs, avec la possibilité d'ajouter facturation ou planification plus tard sans changer d'outil",
+      "avoid_if": "Tu as besoin de plus d'un mois d'historique de rapports ou d'exports autres que PDF sans passer à un siège payant",
+      "strengths": [
+        "Utilisateurs et projets illimités sur le plan gratuit, pas seulement un essai limité",
+        "Chemin d'évolution clair du suivi de base vers la facturation, la planification et les contrôles d'administration selon les besoins"
+      ],
+      "weaknesses": [
+        "Les rapports du plan gratuit sont plafonnés à un mois et n'exportent qu'au format PDF",
+        "Le SSO, le SCIM et les journaux d'audit nécessitent le plan Enterprise le plus élevé"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You need unlimited-user time tracking for free, with the option to add invoicing or scheduling later without switching tools",
+      "avoid_if": "You need more than a 1-month report range or non-PDF exports without upgrading to a paid seat",
+      "strengths": [
+        "Unlimited users and projects on the free plan, not just a limited trial",
+        "Clear upgrade path from basic tracking to invoicing, scheduling, and admin controls as needs grow"
+      ],
+      "weaknesses": [
+        "Free plan reports are capped at a 1-month range and export only to PDF",
+        "SSO, SCIM, and audit logs require the top Enterprise tier"
+      ]
+    }
+  },
+  {
+    "name": "ClockShark",
+    "slug": "clockshark",
+    "url_fr": "https://tooltrim.com/fr/tool/clockshark",
+    "url_en": "https://tooltrim.com/en/tool/clockshark",
+    "website": "https://clockshark.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai de 14 jours avec toutes les fonctionnalités du plan Pro.",
+      "paid": "Standard : 40$/mois + 9$/utilisateur/mois. Pro : 60$/mois + 11$/utilisateur/mois."
+    },
+    "description_fr": "Feuilles de temps GPS pour équipes de terrain (BTP, paysagisme), avec géolocalisation et facturation au forfait base + par utilisateur.",
+    "description_en": "GPS timesheets for field crews (construction, landscaping), with location tracking and base-plus-per-user billing.",
+    "price_verified_on": "2026-06-27",
+    "verdict_fr": {
+      "keep_if": "Vous gérez des équipes de terrain (construction, services)",
+      "avoid_if": "Votre équipe travaille entièrement en bureau",
+      "strengths": [
+        "Géolocalisation fiable et géofencing précis",
+        "Facile à mettre en place et utiliser pour équipes de terrain",
+        "Tarification transparente et abordable"
+      ],
+      "weaknesses": [
+        "Certains utilisateurs signalent imprécisions GPS",
+        "Glitches occasionnels sur app mobile",
+        "Moins de fonctionnalités que Clockify pour reporting avancé"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage field teams (construction, services)",
+      "avoid_if": "Your team works entirely from office",
+      "strengths": [
+        "Reliable GPS geolocation and precise geofencing",
+        "Easy to set up and use for field teams",
+        "Transparent, affordable pricing"
+      ],
+      "weaknesses": [
+        "Some users report GPS inaccuracies",
+        "Occasional mobile app glitches",
+        "Fewer features than Clockify for advanced reporting"
+      ]
+    }
+  },
+  {
+    "name": "Condeco",
+    "slug": "condeco",
+    "url_fr": "https://tooltrim.com/fr/tool/condeco",
+    "url_en": "https://tooltrim.com/en/tool/condeco",
+    "website": "https://www.condecosoftware.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Aucun plan gratuit ni essai public. L'accès passe obligatoirement par un contact commercial Eptura/Condeco.",
+      "paid": "Tarification sur devis. Les estimations du marché situent le prix entre 3 et 8 $/bureau/mois selon le volume et les modules (réservation seule vs analytique d'occupation + gestion visiteurs). Engagement annuel minimum généralement requis."
+    },
+    "description_fr": "Plateforme de réservation de bureaux et salles de réunion pour le travail hybride — intégrée à Microsoft 365 et Teams, tarification sur devis. Rachetée par Eptura en 2023.",
+    "description_en": "Desk and meeting room booking platform for hybrid work — integrates with Microsoft 365 and Teams, quote-based pricing. Acquired by Eptura in 2023.",
+    "verdict_fr": {
+      "keep_if": "Vous êtes grande organisation (500+ employés) avec espaces multiples",
+      "avoid_if": "Vous êtes PME/startup avec budget limité",
+      "strengths": [
+        "Intégration complète Outlook et Microsoft 365 (aucune sync manuelle)",
+        "Coordination d'équipe synchronisée pour in-office schedules",
+        "Insights détaillés sur utilisation espaces et patterns de travail"
+      ],
+      "weaknesses": [
+        "Aucun tarif public ; devis custom long à obtenir",
+        "Coût total potentiellement très élevé pour petites organisations",
+        "Pas de version freemium ou light pour test"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a large organization (500+ employees) with multiple locations",
+      "avoid_if": "You are an SMB or startup with limited budget",
+      "strengths": [
+        "Complete Outlook and Microsoft 365 integration (no manual sync)",
+        "Team coordination synchronized for in-office schedules",
+        "Detailed insights on space utilization and work patterns"
+      ],
+      "weaknesses": [
+        "No public pricing; custom quote process lengthy",
+        "Total cost potentially very high for smaller organizations",
+        "No freemium or trial version available"
+      ]
+    }
+  },
+  {
+    "name": "Confluence",
+    "slug": "confluence",
+    "url_fr": "https://tooltrim.com/fr/tool/confluence",
+    "url_en": "https://tooltrim.com/en/tool/confluence",
+    "website": "https://atlassian.com/software/confluence",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 10 utilisateurs",
+      "paid": "Dès 5,42 $/mois, plan Standard."
+    },
+    "description_fr": "Wiki d'équipe Atlassian pour la documentation technique, avec permissions de page, modèles et lien vers Jira.",
+    "description_en": "Atlassian's team wiki for technical documentation, with page permissions, templates and Jira linking.",
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Ton équipe utilise déjà Jira et a besoin d'une documentation directement liée aux tickets et aux tâches",
+      "avoid_if": "Tu veux un espace de prise de notes plus léger et libre, sans configurer espaces et permissions au préalable",
+      "strengths": [
+        "Intégration étroite avec Jira qui garde la documentation directement attachée aux tâches",
+        "Le plan Standard inclut déjà pages illimitées et 250 Go de stockage"
+      ],
+      "weaknesses": [
+        "Le plan gratuit est plafonné à 10 utilisateurs, un mur dur pour toute équipe au-delà",
+        "Obtenir une organisation utile demande de configurer espaces, modèles et permissions plutôt que d'écrire des pages librement dès le départ"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "Your team already uses Jira and needs documentation directly linked to tickets and work items",
+      "avoid_if": "You want a lighter, freeform note-taking space without setting up spaces and permissions first",
+      "strengths": [
+        "Tight integration with Jira keeps documentation directly attached to work items",
+        "Standard plan already includes unlimited pages and 250GB of storage"
+      ],
+      "weaknesses": [
+        "Free plan is capped at 10 users, a hard wall for any team past that size",
+        "Getting useful organization requires setting up spaces, templates and permissions rather than writing pages freely from the start"
+      ]
+    }
+  },
+  {
+    "name": "Connecteam",
+    "slug": "connecteam",
+    "url_fr": "https://tooltrim.com/fr/tool/connecteam",
+    "url_en": "https://tooltrim.com/en/tool/connecteam",
+    "website": "https://connecteam.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan Small Business gratuit jusqu'à 10 utilisateurs",
+      "paid": "Basic à 29$/mois par hub (jusqu'à 30 utilisateurs inclus, puis 0,6 à 1$/utilisateur/mois en plus) ; Advanced à 49$/mois ; Expert à 99$/mois."
+    },
+    "description_fr": "App tout-en-un pour gérer des équipes terrain : planning, communication et RH.",
+    "description_en": "All-in-one app to manage field teams: scheduling, communication, and HR.",
+    "price_verified_on": "2026-06-26",
+    "verdict_fr": {
+      "keep_if": "Vous avez une équipe horaire (retail, restauration, santé)",
+      "avoid_if": "Vous êtes une équipe de bureau entièrement sédentaire",
+      "strengths": [
+        "Vraiment gratuit jusqu'à 10 employés sans limites",
+        "Solution complète : planification, paie, communication",
+        "Très facile à mettre en place, aucun IT requis"
+      ],
+      "weaknesses": [
+        "Analytics et reporting moins avancés que Workday",
+        "Peut être limité pour organisations matricielles complexes",
+        "Intégrations payroll limitées à certains pays"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have an hourly team (retail, hospitality, healthcare)",
+      "avoid_if": "You're an entirely desk-based office team",
+      "strengths": [
+        "Truly free up to 10 employees with no limits",
+        "Complete solution: scheduling, payroll, communication",
+        "Very easy to set up, no IT required"
+      ],
+      "weaknesses": [
+        "Analytics and reporting less advanced than Workday",
+        "May be limited for complex matrix organizations",
+        "Payroll integrations limited to certain countries"
+      ]
+    }
+  },
+  {
+    "name": "Craft",
+    "slug": "craft",
+    "url_fr": "https://tooltrim.com/fr/tool/craft",
+    "url_en": "https://tooltrim.com/en/tool/craft",
+    "website": "https://craft.do",
+    "category": "organization",
+    "description_fr": "Plateforme documents et collaboration multifonctionnelle incluant l'écriture, les tâches intégrées, le calendrier, les tableaux blancs, les notes quotidiennes et l'intégration de l'IA (Claude, ChatGPT). Synchronisation cross-device sur iPhone, iPad, Mac et web.",
+    "description_en": "Multifunctional document and collaboration platform including writing, embedded tasks, calendar, whiteboards, daily notes, and AI integration (Claude, ChatGPT). Cross-device sync iPhone, iPad, Mac, web.",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez des documents, des tâches et de l'IA intégrés dans une plateforme",
+      "avoid_if": "Vous exigez des informations de tarification claires avant de vous inscrire (le site ne les spécifie pas)",
+      "strengths": [
+        "La consolidation des documents, des tâches, du calendrier et des tableaux blancs élimine le changement d'outil",
+        "Les intégrations IA natives (Claude, ChatGPT) facilitent la rédaction assistée directe",
+        "La synchronisation cross-device sur iPhone/iPad/Mac/web fluidifie le flux de travail Apple"
+      ],
+      "weaknesses": [
+        "Tarification peu lisible sur la page d'accueil : il faut ouvrir la page dédiée",
+        "Les détails de l'offre gratuite ne sont pas spécifiés sur le site principal",
+        "Pas d'indication des limites de stockage ou des fonctionnalités premium par rapport à la version gratuite"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You seek documents + tasks + AI integrated in one platform",
+      "avoid_if": "You require clear pricing information before signup (site unspecified)",
+      "strengths": [
+        "Consolidation documents, tasks, calendar, whiteboards eliminates tool-switching",
+        "Native AI integrations (Claude, ChatGPT) facilitate direct assisted writing",
+        "Cross-device sync iPhone/iPad/Mac/web streamlines Apple workflow"
+      ],
+      "weaknesses": [
+        "Pricing opaque on landing page; requires pricing page visit for clarity",
+        "Free tier details unspecified on main site",
+        "No indication storage limits or premium vs free features"
+      ]
+    }
+  },
+  {
+    "name": "Deputy",
+    "slug": "deputy",
+    "url_fr": "https://tooltrim.com/fr/tool/deputy",
+    "url_en": "https://tooltrim.com/en/tool/deputy",
+    "website": "https://deputy.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 5 $/mois, plan Lite."
+    },
+    "description_fr": "Deputy planifie les shifts, suit le temps et vérifie la conformité des équipes horaires, dès 5 $/utilisateur avec 30 $ minimum par compte.",
+    "description_en": "Deputy schedules shifts, tracks time and checks labor law compliance for hourly teams, with plans from $5 per user plus a $30 monthly account minimum.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères une équipe horaire ou en shifts de six personnes ou plus et as besoin de planification et de pointage conforme dans un seul outil",
+      "avoid_if": "Tu as une équipe d'une ou deux personnes, car le minimum mensuel de 30 $ par compte rend le prix par siège peu compétitif en dessous de ce seuil",
+      "strengths": [
+        "Les vérifications de conformité légale sont intégrées au pointage, pas un module à part",
+        "Les fonctions IA sont incluses sur tous les plans, même le plan Lite le moins cher"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit, seulement un essai de 30 jours",
+        "Un minimum de 30 $ par mois s'applique par compte, quel que soit le nombre d'utilisateurs"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run an hourly or shift-based team of six or more and need scheduling plus compliant time tracking in one tool",
+      "avoid_if": "You have a team of one or two, since the $30 monthly account minimum makes the per-seat price less competitive below that size",
+      "strengths": [
+        "Labor law compliance checks are built into time clocking, not a separate add-on",
+        "AI features are included on every plan, even the cheapest Lite tier"
+      ],
+      "weaknesses": [
+        "No free plan, only a 30-day trial",
+        "A $30 monthly minimum applies per account no matter how few users are on it"
+      ]
+    }
+  },
+  {
+    "name": "Deskpro",
+    "slug": "deskpro",
+    "url_fr": "https://tooltrim.com/fr/tool/deskpro",
+    "url_en": "https://tooltrim.com/en/tool/deskpro",
+    "website": "https://deskpro.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai disponible.",
+      "paid": "Team 39$/agent/mois (minimum 5 agents) ; Professional 59$/agent/mois (minimum 10) ; Enterprise 99$/agent/mois (minimum 25). Déploiement on-premise disponible en alternative au cloud."
+    },
+    "description_fr": "Helpdesk omnicanal avec déploiement cloud ou on-premise au choix.",
+    "description_en": "Omnichannel helpdesk with cloud or on-premise deployment of your choice.",
+    "price_verified_on": "2026-09-09",
+    "verdict_fr": {
+      "keep_if": "Vous gérez du support multi-canaux complexe",
+      "avoid_if": "Vous n'avez besoin que d'email support",
+      "strengths": [
+        "Omnicanal vrai avec tous les canaux supportés",
+        "Extrême customization et options de déploiement",
+        "Conformité strikte pour santé et gouvernement"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite",
+        "Setup complexe pour utilisateurs non-techniques",
+        "Coûts élevés pour organisations petites"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage complex multi-channel support",
+      "avoid_if": "You only need email support",
+      "strengths": [
+        "True omnichannel with all channels supported",
+        "Extreme customization and deployment options",
+        "Strict compliance for healthcare and government"
+      ],
+      "weaknesses": [
+        "No free version",
+        "Complex setup for non-technical users",
+        "High costs for small organizations"
+      ]
+    }
+  },
+  {
+    "name": "Dropbox",
+    "slug": "dropbox",
+    "url_fr": "https://tooltrim.com/fr/tool/dropbox",
+    "url_en": "https://tooltrim.com/en/tool/dropbox",
+    "website": "https://dropbox.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : Offre Basic : 2 Go de stockage, pour stocker et partager des fichiers.",
+      "paid": "Dès 9,99 $/mois, plan Plus."
+    },
+    "description_fr": "Dropbox est un service de stockage cloud et de synchronisation de fichiers avec sync automatique, partage et historique de versions, d'un plan gratuit à 2 Go jusqu'à un plan Advanced à 24 $/siège/mois.",
+    "description_en": "Dropbox is a cloud storage and file-sync service with automatic sync, sharing and version history, from a 2 GB free plan up to a $24/seat/month Advanced plan.",
+    "alternatives": [
+      "Google Drive"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu as besoin d'une synchronisation et d'un partage de fichiers fiables entre appareils, pour toi ou une petite équipe, avec édition PDF et recherche IA intégrées",
+      "avoid_if": "Tu veux rester sur le plan gratuit pour un vrai besoin de stockage, car 2 Go est trop faible pour un usage régulier",
+      "strengths": [
+        "L'historique et la récupération de fichiers s'étendent avec le plan, de 30 jours sur Plus jusqu'à 1 an sur Advanced, utile au-delà d'une simple sauvegarde",
+        "Les intégrations natives Slack et Zoom permettent de partager et prévisualiser des fichiers sans quitter ces applications"
+      ],
+      "weaknesses": [
+        "Le plafond de 2 Go du plan gratuit Basic est faible comparé aux paliers gratuits habituels ailleurs",
+        "Advanced exige un minimum de 3 sièges, ce qui augmente le coût d'entrée pour une très petite équipe"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You need reliable cross-device file sync and sharing for yourself or a small team, with built-in PDF editing and AI search",
+      "avoid_if": "You want to stay on the free plan for a real storage need, since 2 GB is too small for regular use",
+      "strengths": [
+        "Version history and file recovery scale up with the plan, from 30 days on Plus to 1 year on Advanced, useful beyond simple backup",
+        "Native Slack and Zoom integrations let files be shared and previewed without leaving those apps"
+      ],
+      "weaknesses": [
+        "The free Basic plan's 2 GB cap is small next to typical free storage tiers elsewhere",
+        "Advanced requires a minimum of 3 seats, which raises the entry cost for a very small team"
+      ]
+    }
+  },
+  {
+    "name": "Front",
+    "slug": "front",
+    "url_fr": "https://tooltrim.com/fr/tool/front",
+    "url_en": "https://tooltrim.com/en/tool/front",
+    "website": "https://front.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai de 14 jours",
+      "paid": "Starter à 25$/siège/mois (1 canal, max 10 sièges, minimum 2 sièges) ; Professional 65$/siège (omnicanal, jusqu'à 50 sièges) ; Enterprise 105$/siège. Fonctionnalités IA en option payante (+20-50$/siège)."
+    },
+    "description_fr": "Boîte de réception partagée multicanal (email, SMS, chat) pour équipes support et commerciales.",
+    "description_en": "Multi-channel shared inbox (email, SMS, chat) for support and sales teams.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous gérez support client sur plusieurs canaux",
+      "avoid_if": "Vous avez besoin que d'email support simple",
+      "strengths": [
+        "Vraiment omnicanal avec contexte partagé",
+        "IA performante pour routing et automations",
+        "Coordination multi-équipes (support, ventes, success)"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite",
+        "Coûteux pour très petite équipe",
+        "Setup peut nécessiter personnalisation"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage customer support across multiple channels",
+      "avoid_if": "You only need simple email support",
+      "strengths": [
+        "Truly omnichannel with shared context",
+        "Powerful AI for routing and automations",
+        "Multi-team coordination (support, sales, success)"
+      ],
+      "weaknesses": [
+        "No free version",
+        "Expensive for very small teams",
+        "Setup may require customization"
+      ]
+    }
+  },
+  {
+    "name": "Google Sheets",
+    "slug": "google-sheets",
+    "url_fr": "https://tooltrim.com/fr/tool/google-sheets",
+    "url_en": "https://tooltrim.com/en/tool/google-sheets",
+    "website": "https://www.google.com/sheets/about",
+    "category": "organization",
+    "pricing": {
+      "free": "Gratuit avec un compte Google, stockage partagé avec Drive (15 Go).",
+      "paid": "Via Google Workspace : à partir de 6,90€/mois/utilisateur."
+    },
+    "description_fr": "Le tableur collaboratif de Google, gratuit et accessible partout.",
+    "description_en": "Google's collaborative spreadsheet, free and accessible anywhere.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous voulez un tableur collaboratif en temps réel",
+      "avoid_if": "Vous manipulez de très gros volumes ou des modèles financiers lourds",
+      "strengths": [
+        "Collaboration temps réel avec historique des versions",
+        "Formules, graphiques et compatibilité .xlsx/.csv",
+        "Connexion facile à d'autres services Google"
+      ],
+      "weaknesses": [
+        "Performances limitées sur de très gros volumes",
+        "Fonctions avancées en retrait par rapport à Excel",
+        "Mode hors ligne perfectible"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a real-time collaborative spreadsheet",
+      "avoid_if": "You handle very large volumes or heavy financial models",
+      "strengths": [
+        "Real-time collaboration with version history",
+        "Formulas, charts and .xlsx/.csv compatibility",
+        "Easy connection to other Google services"
+      ],
+      "weaknesses": [
+        "Limited performance on very large volumes",
+        "Advanced features trail Excel",
+        "Offline mode is imperfect"
+      ]
+    }
+  },
+  {
+    "name": "Hejour",
+    "slug": "hejour",
+    "url_fr": "https://tooltrim.com/fr/tool/hejour",
+    "url_en": "https://tooltrim.com/en/tool/hejour",
+    "website": "https://hejour.com",
+    "category": "organization",
+    "description_fr": "Application de prise de notes quotidienne pour Mac et iPhone où chaque jour est une page. Intègre un calendrier, une gestion de tâches et une synchronisation iCloud avec un design centré sur la confidentialité. Stocke les notes sous forme de fichiers Markdown locaux.",
+    "description_en": "Daily note-taking app for Mac and iPhone where each day is a page. Integrates calendar, task management, and iCloud sync with privacy-focused design. Stores notes as local Markdown files.",
+    "verdict_fr": {
+      "keep_if": "Vous journalisez quotidiennement avec tâches et notes entrelacées",
+      "avoid_if": "Vous exigez Android ou client Windows natif",
+      "strengths": [
+        "Structure jour-par-jour intuitive pour la journalisation quotidienne et la rétrospective",
+        "La synchronisation iCloud sans serveur tiers garantit la confidentialité totale et la propriété des données",
+        "Achat unique sans abonnement récurrent ; les mises à jour à vie sont incluses"
+      ],
+      "weaknesses": [
+        "Exclusif à Mac/iPhone : pas de client natif Windows ou Android",
+        "Pas de collaboration ou de partage de notes en équipe : chaque utilisateur a une application personnelle",
+        "Pas d'interface web : dépendance complète aux clients desktop et mobile d'Apple"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You journal daily with intertwined tasks and notes",
+      "avoid_if": "You require Android or native Windows client",
+      "strengths": [
+        "Intuitive day-by-day structure for daily journaling and retrospection",
+        "iCloud sync without third-party server ensures complete privacy and data ownership",
+        "One-time purchase eliminates recurring subscription; lifetime updates included"
+      ],
+      "weaknesses": [
+        "Mac/iPhone exclusive; no native Windows or Android client",
+        "No collaboration or team note sharing; each user has personal app",
+        "No web interface; complete dependence on Apple desktop/mobile clients"
+      ]
+    }
+  },
+  {
+    "name": "Heptabase",
+    "slug": "heptabase",
+    "url_fr": "https://tooltrim.com/fr/tool/heptabase",
+    "url_en": "https://tooltrim.com/en/tool/heptabase",
+    "website": "https://heptabase.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 8,99 $/mois, plan Pro."
+    },
+    "description_fr": "Heptabase est un outil de prise de notes visuelles à canevas infini avec IA intégrée, vendu en abonnement après un essai de 7 jours.",
+    "description_en": "Heptabase is visual note-taking software with infinite-canvas whiteboards and a built-in AI agent, sold only as a paid subscription after a 7-day trial.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Garde Heptabase si tu construis une base de connaissances visuelle sur la durée et que tu es prêt à payer dès le départ",
+      "avoid_if": "Évite Heptabase si tu cherches un outil de prise de notes gratuit ou un usage IA intensif à petit prix : les crédits du forfait d'entrée s'épuisent vite",
+      "strengths": [
+        "Les tableaux blancs à canevas infini facilitent la connexion visuelle des notes plutôt qu'une structure linéaire",
+        "Notes, tableaux blancs et tags illimités sont inclus dès le forfait Pro d'entrée"
+      ],
+      "weaknesses": [
+        "Pas de forfait gratuit permanent : seulement un essai de 7 jours avant de devoir payer",
+        "L'usage de l'IA est plafonné par un système de crédits qui varie fortement selon le forfait, de 100 à 8 100 crédits par mois"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "Keep it if you build a long-term, visual knowledge base and are willing to pay from day one",
+      "avoid_if": "Avoid it if you want a free note-taking tool or heavy AI usage on a budget: credits run out fast on the entry plan",
+      "strengths": [
+        "Infinite-canvas whiteboards make it easy to visually connect notes instead of relying on a linear structure",
+        "Unlimited notes, whiteboards and tags are included even on the entry Pro plan"
+      ],
+      "weaknesses": [
+        "No permanent free plan: only a 7-day trial before a paid subscription is required",
+        "AI usage is capped by a credit system that varies sharply between plans, from 100 to 8,100 credits a month"
+      ]
+    }
+  },
+  {
+    "name": "Hive",
+    "slug": "hive",
+    "url_fr": "https://tooltrim.com/fr/tool/hive",
+    "url_en": "https://tooltrim.com/en/tool/hive",
+    "website": "https://hive.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit jusqu'à 10 membres, 200 Mo de stockage",
+      "paid": "Starter à 5$/mois/utilisateur (annuel, 7$ mensuel) ; Teams à 12$/utilisateur (18$ mensuel) ; Enterprise sur devis."
+    },
+    "description_fr": "Gestion de projet avec vues multiples (Gantt, Kanban) et assistant IA Buzz intégré.",
+    "description_en": "Project management with multiple views (Gantt, Kanban) and built-in AI assistant Buzz.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous gérez projets multiples en parallèle",
+      "avoid_if": "Vous cherchez outil hyper-simple et léger",
+      "strengths": [
+        "Multiples vues flexibles pour différents workflows",
+        "IA performante pour suivi et automations",
+        "Free tier généreux sans limite fonctionnalités"
+      ],
+      "weaknesses": [
+        "Peut être complexe pour débutants",
+        "Beaucoup de features = beaucoup d'options",
+        "Setup initial peut prendre temps"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage multiple projects in parallel",
+      "avoid_if": "You're looking for a hyper-simple, lightweight tool",
+      "strengths": [
+        "Multiple flexible views for different workflows",
+        "Powerful AI for tracking and automations",
+        "Generous free tier without feature limits"
+      ],
+      "weaknesses": [
+        "Can be complex for beginners",
+        "Many features = many options",
+        "Initial setup can take time"
+      ]
+    }
+  },
+  {
+    "name": "Jobber",
+    "slug": "jobber",
+    "url_fr": "https://tooltrim.com/fr/tool/jobber",
+    "url_en": "https://tooltrim.com/en/tool/jobber",
+    "website": "https://getjobber.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 21 $/mois, plan Core."
+    },
+    "description_fr": "Outil de gestion de service terrain pour devis, planification, facturation et paiements, sans plan gratuit et avec un tarif par utilisateur supplémentaire.",
+    "description_en": "Field service management tool for quoting, scheduling, invoicing and payments, with no free plan and a per-extra-user fee.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu gères une entreprise de service terrain et tu as besoin de devis, planification et facturation dans un seul outil pour une petite équipe",
+      "avoid_if": "Ton équipe a besoin de la synchro QuickBooks dès le départ : cela nécessite le plan Connect, pas Core qui est moins cher",
+      "strengths": [
+        "Devis, planification, facturation et paiements en ligne sont inclus dès la formule d'entrée",
+        "Jobber AI aide à la tarification et à l'estimation du temps de chantier sur l'ensemble du produit"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit permanent : seulement un essai de 14 jours avant le paiement obligatoire",
+        "La synchro QuickBooks et les rappels automatisés manquent sur la formule la moins chère, Core"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You run a field-service business and need quoting, scheduling and invoicing in one tool for a small crew",
+      "avoid_if": "Your team needs QuickBooks sync from day one; that requires the Connect plan, not the cheaper Core",
+      "strengths": [
+        "Quoting, scheduling, invoicing and online payments are included from the entry plan",
+        "Jobber AI assists with pricing and job time estimation across the product"
+      ],
+      "weaknesses": [
+        "No permanent free plan; only a 14-day trial before payment is required",
+        "QuickBooks sync and automated reminders are missing from the cheapest plan, Core"
+      ]
+    }
+  },
+  {
+    "name": "Lever",
+    "slug": "lever",
+    "url_fr": "https://tooltrim.com/fr/tool/lever",
+    "url_en": "https://tooltrim.com/en/tool/lever",
+    "website": "https://lever.co",
+    "category": "organization",
+    "pricing": {
+      "free": "Aucun plan gratuit, aucun essai",
+      "paid": "Sur devis uniquement, basé sur l'effectif total de l'entreprise (pas sur le nombre de recruteurs) ; environ 6-8$/employé/mois, soit ~6 000-12 000$/an pour une petite équipe jusqu'à 63 000-144 000$+/an pour une grande entreprise."
+    },
+    "description_fr": "ATS (Applicant Tracking System) moderne pour équipes de recrutement.",
+    "description_en": "Modern ATS (Applicant Tracking System) for recruitment teams.",
+    "price_verified_on": "2026-06-26",
+    "verdict_fr": {
+      "keep_if": "Vous recruitez activement et régulièrement",
+      "avoid_if": "Vous recruitez très occasionnellement",
+      "strengths": [
+        "Interface moderne et intuitive",
+        "IA pour sourcing et qualification de top candidats",
+        "Automatisation complète du workflow recrutement"
+      ],
+      "weaknesses": [
+        "Tarification personnalisée (pas de prix transparent)",
+        "Pas de version gratuite",
+        "Setup initial peut être complexe"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You recruit actively and regularly",
+      "avoid_if": "You recruit very occasionally",
+      "strengths": [
+        "Modern, intuitive interface",
+        "AI for sourcing and screening top candidates",
+        "Complete recruitment workflow automation"
+      ],
+      "weaknesses": [
+        "Custom pricing (no transparent pricing)",
+        "No free version",
+        "Initial setup can be complex"
+      ]
+    }
+  },
+  {
+    "name": "Linear",
+    "slug": "linear",
+    "url_fr": "https://tooltrim.com/fr/tool/linear",
+    "url_en": "https://tooltrim.com/en/tool/linear",
+    "website": "https://linear.app",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : Membres illimités, 2 équipes, 250 tickets, fichiers de 10 Mo maximum",
+      "paid": "Dès 10 $/mois, plan Basic."
+    },
+    "description_fr": "Suivi de tickets et planification de projets pour équipes produit et ingénierie, avec cycles, flux IA et un plan gratuit limité à 250 tickets.",
+    "description_en": "Issue tracking and project planning for product and engineering teams, with cycles, AI workflows and a free plan capped at 250 issues.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Ton équipe a dépassé le plafond de 250 tickets du plan Free et veut cycles, planification et triage assisté par IA dans un seul outil",
+      "avoid_if": "Tu as besoin d'une facturation mensuelle flexible ; les deux paliers payants n'affichent que des tarifs annuels",
+      "strengths": [
+        "Le plan Basic supprime le plafond de 250 tickets du plan Free pour un modeste 10 $/siège/mois (annuel)",
+        "Le palier Business ajoute un triage assisté par IA, de l'intelligence de code et des analyses au-delà du suivi de tickets de base"
+      ],
+      "weaknesses": [
+        "Le plan Free est plafonné à 250 tickets au total et 2 équipes, serré pour une équipe active",
+        "Le tarif réduit par siège n'est disponible qu'en facturation annuelle ; aucun tarif mensuel n'est publié"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "Your team has outgrown the Free plan's 250-issue cap and wants cycles, planning and AI-assisted triage in one tool",
+      "avoid_if": "You need monthly billing flexibility; both paid tiers publish annual-only rates",
+      "strengths": [
+        "Basic plan removes the Free plan's 250-issue cap for a modest $10/seat/month (annual)",
+        "Business tier adds AI-assisted triage, code intelligence and analytics beyond core issue tracking"
+      ],
+      "weaknesses": [
+        "Free plan is capped at 250 total issues and 2 teams, tight for an active team",
+        "Discounted per-seat pricing is only available with annual billing; no monthly rate is published"
+      ]
+    }
+  },
+  {
+    "name": "Logseq",
+    "slug": "logseq",
+    "url_fr": "https://tooltrim.com/fr/tool/logseq",
+    "url_en": "https://tooltrim.com/en/tool/logseq",
+    "website": "https://logseq.com/",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : L'application locale principale est gratuite et open source ; Sync (synchronisation/sauvegarde cloud) n'est accessible que via une contribution récurrente Open Collective pendant sa phase bêta.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "Logseq est une application de graphe de connaissances gratuite, open source et locale, avec un outliner et une synchronisation cloud optionnelle.",
+    "description_en": "Logseq is a free, open-source local-first knowledge graph app with an outliner and optional cloud sync.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux un graphe de connaissances gratuit et local, entièrement à toi, avec une synchronisation payante optionnelle pour le multi-appareils",
+      "avoid_if": "Tu as besoin dès aujourd'hui d'une synchronisation cloud stable et commerciale plutôt que d'un modèle de contribution en bêta",
+      "strengths": [
+        "L'application principale est entièrement gratuite, open source et locale, sans dépendance imposée",
+        "Notes stockées en fichiers markdown simples, ce qui simplifie l'export et la sauvegarde",
+        "Disponible sur ordinateur, iOS et Android pour le même graphe de connaissances"
+      ],
+      "weaknesses": [
+        "Sync reste en bêta et est facturé comme une contribution Open Collective, pas un plan commercial stable",
+        "Les Whiteboards sont réservés au palier Sponsor supérieur, et Smart Merge pour l'édition multi-appareils reste expérimental"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You want a free, local-first knowledge graph you fully own, with optional paid sync for multi-device access",
+      "avoid_if": "You need a stable, fully commercial cloud sync today rather than a beta contribution model",
+      "strengths": [
+        "Core app is completely free, open source and local-first, with no lock-in",
+        "Notes stored as plain markdown files, making export and backup straightforward",
+        "Available across desktop, iOS and Android for the same knowledge graph"
+      ],
+      "weaknesses": [
+        "Sync is still in beta and priced as an Open Collective contribution, not a stable commercial plan",
+        "Whiteboards are locked behind the higher Sponsor tier, and Smart Merge for multi-device editing is experimental"
+      ]
+    }
+  },
+  {
+    "name": "Loopio",
+    "slug": "loopio",
+    "url_fr": "https://tooltrim.com/fr/tool/loopio",
+    "url_en": "https://tooltrim.com/en/tool/loopio",
+    "website": "https://loopio.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Loopio centralise les réponses aux appels d'offres, RFI et questionnaires de sécurité dans une bibliothèque avec rédaction assistée par IA, vendu uniquement sur devis.",
+    "description_en": "Loopio centralizes RFP, RFI and security-questionnaire answers in one library with AI-assisted drafting, sold only on quote.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Garde Loopio si ton équipe répond assez souvent à des appels d'offres ou questionnaires de sécurité pour qu'une bibliothèque partagée et la rédaction IA évitent de réelles reprises",
+      "avoid_if": "Évite-le si tu ne traites des appels d'offres qu'occasionnellement, car le palier Foundations exige au moins 10 sièges et le coût n'est révélé qu'après un appel commercial",
+      "strengths": [
+        "La bibliothèque de réponses centralisée réduit le travail de rédaction répété d'un appel d'offres à l'autre",
+        "Rédaction assistée par IA et flux de relecture structuré pour plusieurs contributeurs"
+      ],
+      "weaknesses": [
+        "Aucun tarif publié, donc établir un budget nécessite un échange commercial avant de pouvoir comparer avec autre chose",
+        "Pas d'essai en libre-service ; évaluer le produit passe d'abord par la réservation d'une démonstration"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "Keep Loopio if your team answers RFPs or security questionnaires often enough that a shared content library and AI drafting save real rework",
+      "avoid_if": "Avoid it if you handle RFPs only occasionally, since the Foundations tier requires at least 10 seats and the cost is only disclosed after a sales call",
+      "strengths": [
+        "Centralized answer library cuts repeated drafting work across RFPs",
+        "AI-assisted drafting plus a structured review workflow for multiple contributors"
+      ],
+      "weaknesses": [
+        "No published pricing at all, so budgeting requires a sales conversation before you can compare it to anything",
+        "No self-serve trial; evaluating the product means booking a demo first"
+      ]
+    }
+  },
+  {
+    "name": "Lunatask",
+    "slug": "lunatask",
+    "url_fr": "https://tooltrim.com/fr/tool/lunatask",
+    "url_en": "https://tooltrim.com/en/tool/lunatask",
+    "website": "https://lunatask.app",
+    "category": "organization",
+    "description_fr": "Application chiffrée tout-en-un regroupant la gestion des tâches (Kanban, Eisenhower Matrix), le suivi des habitudes, la journalisation, le suivi de la vie (humeurs, énergie, stress), la gestion des relations (CRM personnel) et les notes. Intégrations avec l'email, une extension navigateur, Zapier et une API publique.",
+    "description_en": "All-in-one encrypted app combining task management (Kanban, Eisenhower Matrix), habit tracking, journaling, life tracking (moods, energy, stress), relationship management (personal CRM), and notes. Email, browser extension, Zapier, public API integrations.",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez un outil unique consolidant les tâches, les habitudes, la journalisation et le suivi de la vie",
+      "avoid_if": "Vous cherchez un outil de tâches seul sans habitudes ni journalisation",
+      "strengths": [
+        "La consolidation des tâches, des habitudes, de la journalisation et du suivi de la vie élimine le changement d'application",
+        "La priorisation Must/Should/Want accessible plus la matrice Eisenhower avancée",
+        "Plan gratuit généreux (2 domaines, 7 habitudes, 30 relations, priorisation et minuteurs)"
+      ],
+      "weaknesses": [
+        "Pas de collaboration : Lunatask est personnel, pas pour les équipes",
+        "De nombreuses fonctionnalités requièrent Premium (domaines illimités, habitudes hebdomadaires, suivi de l'énergie et du stress)",
+        "L'intégration Zapier requiert une configuration manuelle : moins d'intégration native"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You seek single tool consolidating tasks, habits, journaling, life tracking",
+      "avoid_if": "You seek task-only tool without habits/journaling",
+      "strengths": [
+        "Consolidation tasks, habits, journaling, life tracking eliminates app-switching",
+        "Must/Should/Want prioritization accessible plus advanced Eisenhower Matrix",
+        "Generous free plan (2 areas, 7 habits, 30 relationships, prioritization, timers)"
+      ],
+      "weaknesses": [
+        "No collaboration; Lunatask personal, not team",
+        "Many features require Premium (unlimited areas, weekly habits, energy/stress tracking)",
+        "Zapier integration requires manual setup; less native integration"
+      ]
+    }
+  },
+  {
+    "name": "Notion",
+    "slug": "notion",
+    "url_fr": "https://tooltrim.com/fr/tool/notion",
+    "url_en": "https://tooltrim.com/en/tool/notion",
+    "website": "https://notion.so",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : Pages/blocs illimités pour un usage individuel (limité à partir de 2 membres), fichiers de 5 Mo maximum, historique des pages sur 7 jours, 10 invités",
+      "paid": "Dès 9,50 €/mois, plan Plus."
+    },
+    "description_fr": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+    "description_en": "All-in-one workspace for notes, docs, wikis and databases, with a generous free plan and per-seat paid tiers.",
+    "alternatives": [
+      "Obsidian"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu es seul, ou en petite équipe et as besoin de documents partagés, de bases de données et d'automatisation légère au même endroit",
+      "avoid_if": "Tu as besoin d'un outil dédié de gestion de projet ou de BI lourd à grande échelle",
+      "strengths": [
+        "Le plan gratuit est vraiment utilisable durablement pour une personne seule, pas un essai limité",
+        "Export complet de l'espace de travail vers des formats ouverts (HTML, Markdown, CSV) sur tous les plans",
+        "Un seul outil remplace les apps de notes, wiki, base de données légère et formulaires pour une petite équipe"
+      ],
+      "weaknesses": [
+        "Les limites de pages du plan gratuit s'appliquent dès qu'un espace de travail compte plus d'un membre",
+        "L'usage des agents IA se facture séparément en crédits, ajoutant un coût variable en plus du prix du siège"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You are a solo user, or a small team that needs shared docs, databases and light automation in one place",
+      "avoid_if": "You need a dedicated heavy-duty project-management or BI tool at real scale",
+      "strengths": [
+        "Free plan is genuinely usable long-term for a solo individual, not a crippled trial",
+        "Full workspace export to open formats (HTML, Markdown, CSV) on every plan",
+        "One tool replaces notes, wiki, light database and forms apps for a small team"
+      ],
+      "weaknesses": [
+        "Page limits on Free kick in as soon as a workspace has more than one member",
+        "AI agent usage bills separately as credits, adding a variable cost on top of the seat price"
+      ]
+    }
+  },
+  {
+    "name": "Nusii",
+    "slug": "nusii",
+    "url_fr": "https://tooltrim.com/fr/tool/nusii",
+    "url_en": "https://tooltrim.com/en/tool/nusii",
+    "website": "https://nusii.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai de 14 jours sans engagement.",
+      "paid": "Freelancer 29$/mois (1 utilisateur, 5 propositions actives) ; Professional 49$/mois (20 propositions actives) ; Business 129$/mois (50 propositions actives)."
+    },
+    "description_fr": "Logiciel de propositions commerciales pour agences.",
+    "description_en": "Commercial proposal software for agencies.",
+    "price_verified_on": "2026-06-27",
+    "verdict_fr": {
+      "keep_if": "Vous créez beaucoup de propositions commerciales",
+      "avoid_if": "Vous avez très peu de propositions par an",
+      "strengths": [
+        "Spécialisé propositions : sigles, suivis et analytics intégrés",
+        "Taux d'acceptation des propositions supérieur à la moyenne du secteur",
+        "Multilingue 35 langues (idéal équipes globales)"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite",
+        "Tarification de base peut être élevée pour micro-équipe",
+        "Pas de mention d'AI intégrée (vs concurrents modernes)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You create many sales proposals regularly",
+      "avoid_if": "You send very few proposals annually",
+      "strengths": [
+        "Proposal-focused: signatures, tracking and analytics integrated",
+        "Proposal acceptance rate above the industry average",
+        "Multilingual 35 languages (ideal for global teams)"
+      ],
+      "weaknesses": [
+        "No free version",
+        "Base pricing can be steep for micro-teams",
+        "No mention of integrated AI (vs modern competitors)"
+      ]
+    }
+  },
+  {
+    "name": "Obsidian",
+    "slug": "obsidian",
+    "url_fr": "https://tooltrim.com/fr/tool/obsidian",
+    "url_en": "https://tooltrim.com/en/tool/obsidian",
+    "website": "https://obsidian.md",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : L'application principale (bureau/mobile) est gratuite sans restriction de fonctionnalités ; l'usage commercial est autorisé sans paiement",
+      "paid": "Dès 4 $/mois, plan Sync."
+    },
+    "description_fr": "Obsidian est une application gratuite de prise de notes en Markdown, locale par défaut, avec liens bidirectionnels et un écosystème de plugins.",
+    "description_en": "Obsidian is a free, local-first Markdown note-taking app with bidirectional linking, a plugin ecosystem, and optional paid sync and publish services.",
+    "alternatives": [
+      "obsidian"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu veux des notes en fichiers Markdown simples et portables, avec des liens et un écosystème de plugins, et tu es à l'aise pour organiser ta propre synchronisation si tu évites l'option payante",
+      "avoid_if": "Ton équipe a besoin de coédition en temps réel intégrée ; Obsidian n'a aucune fonction de collaboration en direct, quel que soit le prix",
+      "strengths": [
+        "L'application principale est gratuite même en usage commercial, sans limite de fonctionnalités ni inscription requise",
+        "Les notes restent des fichiers Markdown locaux, donc elles demeurent lisibles et portables même sans Obsidian"
+      ],
+      "weaknesses": [
+        "Aucune collaboration en temps réel intégrée ; les coffres partagés et coédités dépendent du service payant Sync",
+        "La synchronisation entre appareils ne fait pas partie de l'application gratuite et nécessite l'option payante Sync ou une solution tierce manuelle"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You want your notes as plain, portable Markdown files with linking and a plugin ecosystem, and you're comfortable setting up your own sync if you skip the paid option",
+      "avoid_if": "Your team needs built-in real-time co-editing; Obsidian has no live collaboration feature at any price",
+      "strengths": [
+        "Core app is free even for commercial use, with no feature limits and no sign-up required",
+        "Notes stay as local Markdown files, so they remain readable and portable even without Obsidian"
+      ],
+      "weaknesses": [
+        "No built-in real-time collaboration; shared, co-edited vaults depend on the paid Sync service",
+        "Cross-device syncing is not part of the free app and requires either the paid Sync add-on or a manual/third-party setup"
+      ]
+    }
+  },
+  {
+    "name": "Octarine",
+    "slug": "octarine",
+    "url_fr": "https://tooltrim.com/fr/tool/octarine",
+    "url_en": "https://tooltrim.com/en/tool/octarine",
+    "website": "https://octarine.app",
+    "category": "organization",
+    "description_fr": "Application de prise de notes Markdown privée, locale-d'abord, pour la rédaction focalisée et la gestion des connaissances personnelles. Les notes sont stockées sous forme de fichiers Markdown locaux de l'utilisateur. Intégration IA optionnelle permettant à l'utilisateur de configurer un fournisseur personnel.",
+    "description_en": "Private, local-first Markdown note-taking app for focused writing and personal knowledge management. Notes stored as local Markdown files. Optional AI integration configuring personal provider.",
+    "verdict_fr": {
+      "keep_if": "Vous privilégiez la confidentialité totale et la propriété des fichiers locaux",
+      "avoid_if": "Vous exigez une synchronisation cloud automatique entre les appareils",
+      "strengths": [
+        "Offline-first garantit le fonctionnement sans connexion internet continue",
+        "Les fichiers Markdown locaux assurent la propriété complète et la portabilité des données",
+        "Intégration IA optionnelle : l'utilisateur choisit le fournisseur ou les modèles locaux"
+      ],
+      "weaknesses": [
+        "Synchronisation cloud absente : la synchronisation entre les appareils requiert une configuration manuelle",
+        "Pas de collaboration native : chaque utilisateur a ses notes personnelles",
+        "iOS en version bêta TestFlight seulement : pas de sortie App Store publique actuellement"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You prioritize complete privacy and local file ownership",
+      "avoid_if": "You require automatic cloud sync across devices",
+      "strengths": [
+        "Offline-first ensures function without continuous internet connection",
+        "Local Markdown files ensure complete data ownership and portability",
+        "Optional AI integration — user chooses provider or local models"
+      ],
+      "weaknesses": [
+        "Cloud sync absent; multi-device synchronization requires manual setup",
+        "No native collaboration — each user personal notes",
+        "iOS TestFlight beta only; no public App Store currently"
+      ]
+    }
+  },
+  {
+    "name": "Plutio",
+    "slug": "plutio",
+    "url_fr": "https://tooltrim.com/fr/tool/plutio",
+    "url_en": "https://tooltrim.com/en/tool/plutio",
+    "website": "https://www.plutio.com/",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 15 $/mois, plan Core."
+    },
+    "description_fr": "Plutio est une plateforme tout-en-un pour indépendants et petites agences, combinant projets, facturation, propositions et portail client.",
+    "description_en": "Plutio is an all-in-one platform for freelancers and small agencies, combining projects, invoicing, proposals and a client portal.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Garde Plutio si tu gères une activité d'indépendant ou une petite agence et veux projets, facturation, propositions et portail client dans un seul abonnement",
+      "avoid_if": "Évite Plutio si tu as besoin d'ajouter des collaborateurs d'équipe dès le départ, car le plan d'entrée Core n'en inclut aucun",
+      "strengths": [
+        "Combine projets, facturation, propositions et portail client dans un seul abonnement plutôt que plusieurs outils",
+        "L'assistant IA aide à rédiger propositions, contrats et plans de projet directement dans la plateforme"
+      ],
+      "weaknesses": [
+        "Le plan d'entrée Core n'a aucun collaborateur d'équipe, il ne fonctionne donc que pour un indépendant seul",
+        "Les clients actifs sont plafonnés à 9 sur Core, ce qui force une montée vers Pro quand la base de clients grandit"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run a freelance practice or small agency and want projects, invoicing, proposals and a client portal in one subscription",
+      "avoid_if": "You need to add team contributors from day one, since the entry Core plan does not include any",
+      "strengths": [
+        "Combines projects, invoicing, proposals and a client portal in one subscription instead of several tools",
+        "AI assistant helps draft proposals, contracts and project plans directly inside the platform"
+      ],
+      "weaknesses": [
+        "The entry Core plan has no team contributors, so it only works for a solo freelancer",
+        "Active clients are capped at 9 on Core, forcing an upgrade to Pro as a client base grows"
+      ]
+    }
+  },
+  {
+    "name": "Process Street",
+    "slug": "process-street",
+    "url_fr": "https://tooltrim.com/fr/tool/process-street",
+    "url_en": "https://tooltrim.com/en/tool/process-street",
+    "website": "https://process.st",
+    "category": "organization",
+    "pricing": {
+      "free": "Essai gratuit complet, sans carte bancaire",
+      "paid": "À partir de 100$/mois (forfait Startup, réservé aux organisations de moins de 15 employés et moins de 2M$ de revenu) jusqu'à 1 500$/mois selon le palier, facturation annuelle"
+    },
+    "description_fr": "Plateforme de gestion de processus pour équipes.",
+    "description_en": "Process management platform for teams.",
+    "price_verified_on": "2026-06-25",
+    "verdict_fr": {
+      "keep_if": "Vous gérez équipes et devez faire preuve de conformité régulière",
+      "avoid_if": "Budget très serré (plateforme enterprise)",
+      "strengths": [
+        "Spécialisée conformité : couvre ISO, SOC 2, SOX, FDA",
+        "Agent IA Cora : surveille réglementations et crée alertes 24/7",
+        "Workflows IA : réduit travail manuel pour tâches répétitives"
+      ],
+      "weaknesses": [
+        "Tarification d'entreprise (pas accessible petites structures)",
+        "Onboarding complexe (beaucoup de configurations)",
+        "Nécessite buy-in équipe pour succès"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage teams and must demonstrate regular compliance",
+      "avoid_if": "Budget is very tight (enterprise platform)",
+      "strengths": [
+        "Compliance-specialized: covers ISO, SOC 2, SOX, FDA",
+        "AI agent Cora: monitors regulations and creates alerts 24/7",
+        "AI workflows: reduce manual work for repetitive tasks"
+      ],
+      "weaknesses": [
+        "Enterprise-tier pricing (not accessible to small orgs)",
+        "Complex onboarding (many configurations)",
+        "Requires team buy-in for success"
+      ]
+    }
+  },
+  {
+    "name": "Proposify",
+    "slug": "proposify",
+    "url_fr": "https://tooltrim.com/fr/tool/proposify",
+    "url_en": "https://tooltrim.com/en/tool/proposify",
+    "website": "https://proposify.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 19 $/mois, plan Basic."
+    },
+    "description_fr": "Proposify crée, envoie et suit des propositions commerciales avec signature électronique et modèles de marque, facturé par utilisateur.",
+    "description_en": "Proposify builds, sends and tracks sales proposals with e-signature and branded templates, billed per seat.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu envoies des propositions commerciales assez souvent pour avoir besoin de signature électronique et de suivi intégrés, pas juste d'un PDF en pièce jointe",
+      "avoid_if": "Tu envoies très peu de propositions par mois : 10 envois sur Basic sans intégrations ne valent peut-être pas 19-29 $/mois face à un simple PDF plus signature électronique",
+      "strengths": [
+        "Créateur de propositions dédié avec modèles de marque, signature électronique et suivi des ouvertures dans un seul outil",
+        "Le plan Team ajoute champs personnalisés et intégrations pour une hausse de prix modérée par rapport à Basic"
+      ],
+      "weaknesses": [
+        "Le plan d'entrée Basic plafonne les envois à 10/mois et n'autorise qu'1 collaborateur, sans aucune intégration",
+        "Des frais de dépassement par proposition envoyée s'appliquent sur chaque plan une fois le plafond mensuel atteint"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You send sales proposals often enough to need e-signature and tracking built in, not just a PDF attachment",
+      "avoid_if": "You send very few proposals per month: 10 sends on Basic with no integrations may not be worth $19-29/month over a simple PDF/e-signature combo",
+      "strengths": [
+        "Dedicated proposal builder with branded templates, e-signature and open/view tracking in one tool",
+        "Team plan adds custom fields and integrations at a moderate price increase over Basic"
+      ],
+      "weaknesses": [
+        "Entry Basic plan caps sends at 10/month and allows only 1 collaborator, with integrations entirely missing",
+        "Overage fees per proposal send apply on every plan once the monthly cap is reached"
+      ]
+    }
+  },
+  {
+    "name": "Reflect",
+    "slug": "reflect-notes",
+    "url_fr": "https://tooltrim.com/fr/tool/reflect-notes",
+    "url_en": "https://tooltrim.com/en/tool/reflect-notes",
+    "website": "https://reflect.app",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 10 $/mois, plan Pro."
+    },
+    "description_fr": "Reflect est une appli de notes en réseau avec liens retour, IA d'écriture et transcription vocale, à 12 $ par mois sans plan gratuit.",
+    "description_en": "Reflect is a networked note-taking app with backlinks, AI writing help and voice transcription, priced at one $12 monthly plan with no free tier.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu veux une seule appli de notes assistée par IA avec liens retour sur tous tes appareils, et tu acceptes de payer un tarif fixe dès le 15e jour",
+      "avoid_if": "Tu veux un palier gratuit pour tester sur la durée avant de payer, ou un palier moins cher pour un usage occasionnel",
+      "strengths": [
+        "Un seul prix fixe couvre l'écriture par IA, la transcription vocale et les notes de réunion liées au calendrier, sans frais d'option supplémentaires",
+        "Se connecte à Zapier, Google Calendar, Outlook et Readwise plutôt que de rester isolé des autres outils"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit : la facturation démarre dès la fin de l'essai de 14 jours",
+        "Un seul plan à un seul prix, donc un usage léger paie autant qu'un usage intensif"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You want one AI-assisted, backlink-based notes app across devices and are fine paying a flat monthly fee from day 15",
+      "avoid_if": "You want a free tier to test long-term before paying, or need a lower-cost tier for occasional, light use",
+      "strengths": [
+        "One flat price covers AI writing, voice transcription and calendar-linked meeting notes without separate add-on fees",
+        "Connects to Zapier, Google Calendar, Outlook and Readwise instead of staying siloed from other tools"
+      ],
+      "weaknesses": [
+        "No free plan: billing starts right after the 14-day trial ends",
+        "Only one plan and one price, so a lighter user pays the same as a heavy one"
+      ]
+    }
+  },
+  {
+    "name": "Rezi",
+    "slug": "rezi",
+    "url_fr": "https://tooltrim.com/fr/tool/rezi",
+    "url_en": "https://tooltrim.com/en/tool/rezi",
+    "website": "https://rezi.ai",
+    "category": "organization",
+    "description_fr": "Plateforme de création et d'optimisation de CV basée sur l'IA, conçue pour les candidats optimisant la compatibilité ATS (Applicant Tracking System) et l'alignement avec le poste. Inclut un générateur de bullet points IA, un vérificateur ATS et un scanner de mots-clés.",
+    "description_en": "AI-powered resume building and optimization platform designed for job seekers optimizing ATS (Applicant Tracking System) compatibility and job fit. Includes AI bullet point generator, ATS checker, keyword scanner.",
+    "verdict_fr": {
+      "keep_if": "Vous optimisez votre candidature pour les systèmes ATS et les pools de talents automatisés",
+      "avoid_if": "Votre industrie valorise les relations personnelles plutôt que le screening automatisé",
+      "strengths": [
+        "Rezi Score et analyse ATS validant la compatibilité avec les systèmes de suivi avant envoi",
+        "Le générateur de bullet points IA personnalisé accélère la création de contenu pertinent",
+        "Plus de 20 modèles conformes ATS réduisant le risque de rejet automatique du formatage"
+      ],
+      "weaknesses": [
+        "Plan gratuit très limité (1 CV, 3 PDF seulement)",
+        "Pro est coûteux pour un candidat individuel ; Lifetime nécessite un engagement financier important",
+        "Pas d'entretien IA sur le plan gratuit ; la valeur maximale requiert une version payante"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You optimize applications for automated ATS systems and talent pools",
+      "avoid_if": "Your industry values personal relationships over automated screening",
+      "strengths": [
+        "Rezi Score and ATS analysis validate compatibility with tracking systems before sending",
+        "AI bullet point generator personalized accelerates relevant content creation",
+        "20+ ATS-compliant templates reduce risk of automatic format rejection"
+      ],
+      "weaknesses": [
+        "Free plan highly limited (1 resume, 3 PDFs only)",
+        "Pro costly for individual job seeker; Lifetime requires significant financial commitment",
+        "No AI interview on free plan; maximum value requires paid tier"
+      ]
+    }
+  },
+  {
+    "name": "Roam Research",
+    "slug": "roam-research",
+    "url_fr": "https://tooltrim.com/fr/tool/roam-research",
+    "url_en": "https://tooltrim.com/en/tool/roam-research",
+    "website": "https://roamresearch.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 31 jours.",
+      "paid": "Dès 13,75 $/mois, plan Pro."
+    },
+    "description_fr": "Roam Research est une application de prise de notes en réseau basée sur les liens bidirectionnels, les notes quotidiennes et les références de blocs.",
+    "description_en": "Roam Research is a networked note-taking app built on bidirectional links, daily notes and block references.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu penses en notes en réseau et veux des références de blocs et une personnalisation roam/js pour tes propres workflows",
+      "avoid_if": "Tu veux un outil de notes en réseau gratuit ou moins cher : Logseq propose le même modèle en blocs sans frais",
+      "strengths": [
+        "Liens bidirectionnels et références de blocs rendent la connexion d'idées entre notes rapide et native à l'outil",
+        "Le plan Believer à paiement unique réduit le coût long terme par rapport à un abonnement mensuel indéfini"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit : seulement un essai de 31 jours avant un engagement payant",
+        "Le prix n'a pas changé depuis 2020, désormais plus élevé que des outils de notes en réseau plus récents et comparables"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You think in networked notes and want block references and roam/js customization for your own workflows",
+      "avoid_if": "You want a free or cheaper networked-notes tool: Logseq offers the same block-based model at no cost",
+      "strengths": [
+        "Bidirectional links and block references make connecting ideas across notes fast and native to the tool",
+        "One-time Believer plan lowers long-term cost compared to paying monthly indefinitely"
+      ],
+      "weaknesses": [
+        "No free plan: only a 31-day trial before a paid commitment is required",
+        "Price has not changed since 2020, now higher than comparable newer networked note-taking tools"
+      ]
+    }
+  },
+  {
+    "name": "SafetyCulture",
+    "slug": "safetyculture",
+    "url_fr": "https://tooltrim.com/fr/tool/safetyculture",
+    "url_en": "https://tooltrim.com/en/tool/safetyculture",
+    "website": "https://mitti.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 10 utilisateurs, 5 modèles d'inspection actifs, analytique/formation/tâches de base, jusqu'à 300 crédits IA par poste et par mois.",
+      "paid": "Dès 24 $/mois, plan Premium."
+    },
+    "description_fr": "Application mobile pour des listes de contrôle d'inspection, des audits de sécurité et de la formation pour les équipes de terrain, anciennement SafetyCulture/iAuditor.",
+    "description_en": "Mobile app for digital inspection checklists, safety audits and training for frontline teams, formerly known as SafetyCulture/iAuditor.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu fais des inspections ou audits de sécurité récurrents pour une équipe de terrain et as besoin de plus de 5 modèles ou du SSO",
+      "avoid_if": "Tu es seul ou ton équipe reste sous les 10 personnes et 5 modèles, cas où l'offre gratuite couvre déjà le besoin",
+      "strengths": [
+        "L'offre gratuite fait déjà tourner de vraies inspections et des rapports pour jusqu'à 10 utilisateurs",
+        "Une tarification par site existe pour les opérations multi-sites au lieu de compter chaque utilisateur"
+      ],
+      "weaknesses": [
+        "L'offre gratuite est limitée à seulement 5 modèles d'inspection actifs",
+        "Le SSO et le SCIM, souvent nécessaires aux équipes réglementées, exigent Premium ou Enterprise"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You run recurring safety inspections or audits for a field team and need more than 5 templates or single sign-on",
+      "avoid_if": "You are a solo user or your team stays under 10 people and 5 templates, where the free plan already covers the need",
+      "strengths": [
+        "Free plan already runs real inspections and reporting for up to 10 users",
+        "Location-based pricing exists for multi-site operations instead of counting every user"
+      ],
+      "weaknesses": [
+        "Free plan is capped at only 5 active inspection templates",
+        "SSO and SCIM, common needs for regulated teams, require Premium or Enterprise"
+      ]
+    }
+  },
+  {
+    "name": "Scribe",
+    "slug": "scribe",
+    "url_fr": "https://tooltrim.com/fr/tool/scribe",
+    "url_en": "https://tooltrim.com/en/tool/scribe",
+    "website": "https://scribe.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : Basic : documentation d'applications web, liens partageables, pas de capture bureau.",
+      "paid": "Dès 25 $/mois, plan Pro Personal."
+    },
+    "description_fr": "Transforme des workflows enregistres en guides pas a pas automatiques, gratuit pour le web ou a partir de 25 $/mois pour le bureau.",
+    "description_en": "Turns recorded on-screen workflows into step-by-step guides automatically, free for web apps or from $25/month for desktop capture.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu rediges souvent le meme guide pratique pour tes collegues, clients ou l'onboarding",
+      "avoid_if": "Tu ne documentes que des applications web et le plan gratuit Basic couvre deja ton besoin",
+      "strengths": [
+        "Genere un guide pas a pas automatiquement a partir d'un workflow enregistre, sans redaction manuelle",
+        "Exporte en PDF, HTML et Markdown, avec integration API/MCP pour alimenter des agents IA"
+      ],
+      "weaknesses": [
+        "Le plan gratuit ne documente que les applications web ; la capture bureau demande un palier payant",
+        "Pro Team demande un minimum de 5 sieges, ce qui releve le cout d'entree pour une tres petite equipe"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You repeatedly write the same how-to guide for teammates, clients or onboarding",
+      "avoid_if": "You only ever document web apps and the free Basic plan already covers your need",
+      "strengths": [
+        "Generates a step-by-step guide automatically from a recorded workflow, no manual writing",
+        "Exports to PDF, HTML and Markdown, plus API/MCP integration to feed AI agents"
+      ],
+      "weaknesses": [
+        "Free plan only documents web apps; desktop capture needs a paid tier",
+        "Pro Team requires a 5-seat minimum, raising the entry cost for a very small team"
+      ]
+    }
+  },
+  {
+    "name": "Smartsheet",
+    "slug": "smartsheet",
+    "url_fr": "https://tooltrim.com/fr/tool/smartsheet",
+    "url_en": "https://tooltrim.com/en/tool/smartsheet",
+    "website": "https://smartsheet.com",
+    "category": "organization",
+    "pricing": {
+      "free": "1 utilisateur, 2 feuilles, fonctions de base",
+      "paid": "Pro 7.88€/mois/utilisateur ; Business 28.03€/mois/utilisateur"
+    },
+    "description_fr": "Tableur collaboratif orienté gestion de projet, avec automatisations et vues Gantt/Kanban.",
+    "description_en": "Collaborative spreadsheet built for project management, with automation and Gantt/Kanban views.",
+    "price_verified_on": "2026-06-25",
+    "verdict_fr": {
+      "keep_if": "Vous gérez plusieurs projets complexes et portefeuille",
+      "avoid_if": "Vous gérez un seul projet simple",
+      "strengths": [
+        "IA intégrée pour insights et analysis",
+        "Gestion de portefeuille complète (ressources, planning)",
+        "Intégrations massives (100+ outils)"
+      ],
+      "weaknesses": [
+        "Tarification enterprise (pas petit budget)",
+        "Complexité de mise en place et onboarding",
+        "Courbe apprentissage raide (beaucoup de features)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage multiple complex projects and portfolio",
+      "avoid_if": "You manage a single simple project",
+      "strengths": [
+        "Integrated AI for insights and analysis",
+        "Complete portfolio management (resources, planning)",
+        "Massive integrations (100+ tools)"
+      ],
+      "weaknesses": [
+        "Enterprise pricing (not small budget friendly)",
+        "Implementation and onboarding complexity",
+        "Steep learning curve (many features)"
+      ]
+    }
+  },
+  {
+    "name": "SmartSuite",
+    "slug": "smartsuite",
+    "url_fr": "https://tooltrim.com/fr/tool/smartsuite",
+    "url_en": "https://tooltrim.com/en/tool/smartsuite",
+    "website": "https://smartsuite.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 15 $/mois, plan Team."
+    },
+    "description_fr": "SmartSuite est une plateforme de gestion du travail collaborative avec plusieurs vues (grille, kanban, calendrier, Gantt) et de l'automatisation intégrée pour les équipes.",
+    "description_en": "SmartSuite is a collaborative work management platform with grid, kanban, calendar and Gantt views plus built-in automation for teams.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Une équipe de 3 personnes ou plus veut un seul outil pour remplacer un mélange dispersé de documents, de suivis et de tableurs, en s'appuyant sur les modèles du plan Team pour démarrer vite",
+      "avoid_if": "Tu travailles seul : le plan le moins cher impose quand même de payer 3 sièges facturables même si tu n'en utilises qu'un",
+      "strengths": [
+        "Une seule plateforme remplace plusieurs outils séparés (suivi de projets, CRM léger, documentation de process) avec un seul abonnement",
+        "Plus de 200 modèles prêts à l'emploi réduisent le temps de mise en place par rapport à la construction de vues depuis zéro"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit permanent : seulement un essai de 14 jours avant de payer",
+        "Les plans Team et Professional imposent un minimum de 3 et 5 sièges facturables, ce qui fait grimper le coût d'entrée réel au-dessus du prix affiché"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "A team of 3 or more people wants one tool to replace a scattered mix of docs, trackers and spreadsheets, using the Team plan's templates to start fast",
+      "avoid_if": "You work alone: the cheapest plan still requires paying for 3 billable seats even if you use only one",
+      "strengths": [
+        "Single platform replaces several point tools (project tracking, light CRM, process docs) with one subscription",
+        "200+ ready-made templates reduce setup time compared to building views from scratch"
+      ],
+      "weaknesses": [
+        "No permanent free plan: only a 14-day trial before paying",
+        "Team and Professional plans require 3 and 5 billable seats minimum, raising the real entry cost above the sticker price"
+      ]
+    }
+  },
+  {
+    "name": "Snipe-IT",
+    "slug": "snipe-it",
+    "url_fr": "https://tooltrim.com/fr/tool/snipe-it",
+    "url_en": "https://tooltrim.com/en/tool/snipe-it",
+    "website": "https://snipeitapp.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Version auto-hébergée gratuite et open source, utilisateurs et actifs illimités.",
+      "paid": "Cloud géré : Basic Hosting 39,99$/mois ou 399,99$/an ; Small Business 99,99$/mois ou 999,99$/an ; Dedicated 249,99$/mois ou 2499,99$/an. Utilisateurs et actifs illimités sur tous les plans."
+    },
+    "description_fr": "Gestion d'actifs IT open source : suivi du matériel, licences et consommables, auto-hébergeable gratuitement ou en cloud payant.",
+    "description_en": "Open-source IT asset management: hardware, license and consumable tracking, free self-hosted or paid cloud.",
+    "price_verified_on": "2026-09-09",
+    "verdict_fr": {
+      "keep_if": "Vous trackez matériel et équipements IT",
+      "avoid_if": "Vous n'avez quasi aucun matériel à tracker",
+      "strengths": [
+        "Entièrement gratuit en auto-hébergement (open-source)",
+        "Transparence code (pas de vendor lock-in)",
+        "REST API complète pour automation"
+      ],
+      "weaknesses": [
+        "Auto-hébergement demande compétences IT",
+        "Intégrations limitées comparé solutions cloud",
+        "Pas de fancy UI moderne (fonctionnel mais classique)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You track hardware and IT equipment",
+      "avoid_if": "You have virtually no equipment to track",
+      "strengths": [
+        "Completely free self-hosted (open-source)",
+        "Code transparency (no vendor lock-in)",
+        "Complete REST API for automation"
+      ],
+      "weaknesses": [
+        "Self-hosting requires IT skills",
+        "Limited integrations vs. cloud solutions",
+        "No fancy modern UI (functional but classic)"
+      ]
+    }
+  },
+  {
+    "name": "SpaceIQ",
+    "slug": "spaceiq",
+    "url_fr": "https://tooltrim.com/fr/tool/spaceiq",
+    "url_en": "https://tooltrim.com/en/tool/spaceiq",
+    "website": "https://spaceiq.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit : démo sur demande.",
+      "paid": "Sur devis, généralement 3 à 10$/utilisateur/mois selon les sources. Pour une PME de 10 utilisateurs, attendre 500 à 1500$/mois selon les fonctionnalités."
+    },
+    "description_fr": "Plateforme IWMS de gestion des espaces de travail (réservation de bureaux, plans d'étage, actifs immobiliers) pour entreprises, sur devis.",
+    "description_en": "IWMS workplace management platform (desk booking, floor plans, real estate assets) for enterprises, quote-based.",
+    "price_verified_on": "2026-06-27",
+    "verdict_fr": {
+      "keep_if": "Vous gérez plusieurs sites ou bureaux",
+      "avoid_if": "Vous n'avez qu'un seul petit bureau",
+      "strengths": [
+        "Spécialisée gestion espace hybride et multi-sites",
+        "Prédiction headcount et planning futur",
+        "Intégrations calendrier pour meeting rooms"
+      ],
+      "weaknesses": [
+        "Tarification personnalisée (contact ventes)",
+        "Complexité mise en place et intégration",
+        "Dépendance à données qualité (headcount, mouvements)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage multiple sites or offices",
+      "avoid_if": "You have only a single small office",
+      "strengths": [
+        "Specialized in hybrid and multi-site space management",
+        "Headcount prediction and future planning",
+        "Calendar integrations for meeting room booking"
+      ],
+      "weaknesses": [
+        "Personalized pricing (contact sales)",
+        "Complex implementation and integration",
+        "Dependence on quality data (headcount, movements)"
+      ]
+    }
+  },
+  {
+    "name": "SuiteDash",
+    "slug": "suitedash",
+    "url_fr": "https://tooltrim.com/fr/tool/suitedash",
+    "url_en": "https://tooltrim.com/en/tool/suitedash",
+    "website": "https://suitedash.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 15 $/mois, plan Start."
+    },
+    "description_fr": "SuiteDash regroupe un portail client en marque blanche, un CRM, la facturation et les propositions pour agences et freelances dans un seul abonnement.",
+    "description_en": "SuiteDash bundles a white-labeled client portal, CRM, invoicing and proposals for agencies and freelancers in one subscription.",
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu veux un portail unique en marque blanche pour remplacer des outils séparés de CRM, facturation et propositions pour tes clients",
+      "avoid_if": "Tu as seulement besoin d'un portail client simple et tu ne veux pas payer pour une automatisation ou un LMS que tu n'utiliseras pas",
+      "strengths": [
+        "Staff, contacts CRM et portails clients illimités sont inclus même sur le plan le moins cher, contrairement aux outils qui facturent par siège",
+        "Une licence « Century » à achat unique existe pour les équipes qui préfèrent payer une fois plutôt qu'un abonnement récurrent"
+      ],
+      "weaknesses": [
+        "L'automatisation, le LMS et les tickets de support exigent le plan Pinnacle, le plus haut, non disponibles sur Start ou Thrive",
+        "Une suite combinant CRM, portail et marque blanche demande probablement un vrai temps de configuration avant un premier portail prêt pour un client"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You want one white-labeled portal to replace separate CRM, invoicing and proposal tools for your clients",
+      "avoid_if": "You only need a simple client portal and don't want to pay for automation or an LMS you won't use",
+      "strengths": [
+        "Unlimited staff, CRM contacts and client portals are included even on the cheapest plan, unlike tools that charge per seat",
+        "A one-time 'Century' license exists for teams that prefer paying once over a recurring subscription"
+      ],
+      "weaknesses": [
+        "Automation, the LMS and support tickets require the top Pinnacle tier, not available on Start or Thrive",
+        "A combined CRM, portal and white-labeling suite likely takes real setup time before a first client-ready portal"
+      ]
+    }
+  },
+  {
+    "name": "Superlist",
+    "slug": "superlist",
+    "url_fr": "https://tooltrim.com/fr/tool/superlist",
+    "url_en": "https://tooltrim.com/en/tool/superlist",
+    "website": "https://www.superlist.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : Up to 5 private/shared lists, up to 5 people per shared list, unlimited tasks and notes, 25MB uploads and 500MB storage.",
+      "paid": "Dès 4,92 $/mois, plan Basic."
+    },
+    "description_fr": "Superlist est une application de gestion de tâches avec listes partagées et fonctions IA, gratuite jusqu'à 5 listes puis dès 5 $ par mois.",
+    "description_en": "Superlist is a task management app with shared lists and AI features, free for up to 5 lists then from $5 per month.",
+    "alternatives": [
+      "Superlist"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu as besoin d'une liste de tâches partagée simple pour une petite équipe ou toi-même et veux des notes de réunion ou une capture vocale IA sans payer pour un chat IA illimité",
+      "avoid_if": "Tu dépasses déjà 5 membres sur une liste partagée et as besoin de plus qu'un stockage modeste, car les plafonds du plan gratuit font de Basic le vrai point de départ",
+      "strengths": [
+        "Membres et listes illimités une fois sur un plan payant, sans restriction supplémentaire par siège",
+        "Des applications natives macOS, iOS, Android et web gardent les tâches synchronisées partout"
+      ],
+      "weaknesses": [
+        "Le plan gratuit est plafonné à 5 listes et 5 personnes par liste partagée, ce qui devient juste pour une équipe qui grandit",
+        "Les limites de stockage et d'upload restent modestes même sur Basic (uploads 100 Mo, stockage 25 Go)"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You need a straightforward shared task list for a small team or yourself and want AI meeting notes or voice capture without paying for unlimited AI chat",
+      "avoid_if": "You're already past 5 shared-list members and need more than modest storage, since the free plan's caps make Basic the real starting point",
+      "strengths": [
+        "Unlimited team members and lists once on a paid plan, not gated further by seats",
+        "Native apps across macOS, iOS, Android and web keep tasks in sync everywhere"
+      ],
+      "weaknesses": [
+        "The free plan caps out at 5 lists and 5 people per shared list, tight for a growing team",
+        "Storage and upload limits stay modest even on Basic (100MB uploads, 25GB storage)"
+      ]
+    }
+  },
+  {
+    "name": "SysAid",
+    "slug": "sysaid",
+    "url_fr": "https://tooltrim.com/fr/tool/sysaid",
+    "url_en": "https://tooltrim.com/en/tool/sysaid",
+    "website": "https://sysaid.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 89 $/mois, plan Professional."
+    },
+    "description_fr": "SysAid est une plateforme ITSM pour la gestion des incidents, changements, actifs et SLA, avec un AI Copilot intégré, facturée par agent dès 89 $/mois.",
+    "description_en": "SysAid is an ITSM platform for incident, change, asset and SLA management, with a built-in AI Copilot, priced per agent from $89/month.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères un support IT ou ops qui a besoin de la gestion des incidents, actifs et SLA alignée ITIL dans un seul outil",
+      "avoid_if": "Tu es seul ou dans une toute petite équipe sans besoin formel de ticketing et de suivi des actifs",
+      "strengths": [
+        "AI Copilot est inclus dans Professional sans plafond d'usage séparé ni frais d'option",
+        "Couvre la gestion des incidents, changements, problèmes, demandes, actifs et SLA dans une seule plateforme plutôt qu'avec plusieurs outils séparés"
+      ],
+      "weaknesses": [
+        "Le prix par agent ne reflète pas la facture complète, le coût dépendant aussi du nombre d'actifs gérés",
+        "Enterprise n'a pas de prix public et impose un minimum de 20 agents avant même d'obtenir un devis"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run an IT or ops support desk that needs ITIL-aligned incident, asset and SLA management in one tool",
+      "avoid_if": "You're a solo operator or very small team without a formal ticketing and asset-tracking need",
+      "strengths": [
+        "AI Copilot is included on Professional with no separate usage cap or add-on fee",
+        "Covers incident, change, problem, request, asset and SLA management in one platform rather than several point tools"
+      ],
+      "weaknesses": [
+        "The per-agent price doesn't reflect the full bill, since cost also scales with the number of managed assets",
+        "Enterprise has no public price and requires a minimum of 20 agents before you can even get a quote"
+      ]
+    }
+  },
+  {
+    "name": "Táve",
+    "slug": "tave",
+    "url_fr": "https://tooltrim.com/fr/tool/tave",
+    "url_en": "https://tooltrim.com/en/tool/tave",
+    "website": "https://www.vsco.co/workspace",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai de 30 jours.",
+      "paid": "Solo 24,99$/mois (2 utilisateurs, 1 marque) ; Boutique 34,99$/mois (6 utilisateurs, 4 marques) ; Studio 49,99$/mois (10 utilisateurs, marques illimitées)."
+    },
+    "description_fr": "Studio manager pour photographes et vidéastes, racheté par VSCO en 2025 et renommé VSCO Workspace.",
+    "description_en": "Studio manager for photographers and videographers, acquired by VSCO in 2025 and rebranded VSCO Workspace.",
+    "price_verified_on": "2026-06-27",
+    "verdict_fr": {
+      "keep_if": "Vous êtes photographe professionnel et gérez des clients au long cours",
+      "avoid_if": "Vous cherchez toujours « Táve » comme produit indépendant : la marque n'existe plus",
+      "strengths": [
+        "CRM pensé pour les studios photo",
+        "Devis, contrats et facturation intégrés",
+        "Automatisations de workflow éprouvées"
+      ],
+      "weaknesses": [
+        "La marque Táve a disparu au profit de VSCO Workspace",
+        "Transition rapportée comme inégale par certains utilisateurs",
+        "Surdimensionné hors activité photo professionnelle"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a professional photographer managing long-running clients",
+      "avoid_if": "You're still looking for 'Táve' as a standalone product: the brand no longer exists",
+      "strengths": [
+        "CRM built for photo studios",
+        "Integrated quotes, contracts and invoicing",
+        "Proven workflow automations"
+      ],
+      "weaknesses": [
+        "The Táve brand is gone, replaced by VSCO Workspace",
+        "Transition reported as uneven by some users",
+        "Oversized outside professional photography"
+      ]
+    }
+  },
+  {
+    "name": "Teamwork",
+    "slug": "teamwork",
+    "url_fr": "https://tooltrim.com/fr/tool/teamwork",
+    "url_en": "https://tooltrim.com/en/tool/teamwork",
+    "website": "https://teamwork.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan Free Forever limité à 5 utilisateurs, 5 projets et 100 automatisations par mois",
+      "paid": "Deliver à 10,99$/mois/utilisateur (minimum 3 utilisateurs) ; Grow à 19,99$/mois/utilisateur (minimum 5 utilisateurs)"
+    },
+    "description_fr": "Logiciel de gestion de projet orienté agences et équipes de service client : suivi du temps, facturation, rentabilité par projet et vues multiples (listes, tableaux, Gantt).",
+    "description_en": "Project management software for agencies and client-service teams: time tracking, invoicing, per-project profitability and multiple views (lists, boards, Gantt).",
+    "price_verified_on": "2026-06-25",
+    "verdict_fr": {
+      "keep_if": "Vous gérez des projets clients facturables (agence, prestataire)",
+      "avoid_if": "Vous voulez juste une to-do simple",
+      "strengths": [
+        "Pensé pour le travail client facturable",
+        "Suivi du temps et rentabilité intégrés",
+        "Palier gratuit généreux pour une petite équipe"
+      ],
+      "weaknesses": [
+        "Gratuit plafonné à 5 utilisateurs et 5 projets",
+        "Fonctions avancées (ressources, rentabilité) sur les paliers élevés",
+        "Surdimensionné pour une simple to-do"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You run billable client projects (agency, service provider)",
+      "avoid_if": "You just want a simple to-do",
+      "strengths": [
+        "Built for billable client work",
+        "Integrated time tracking and profitability",
+        "Generous free tier for a small team"
+      ],
+      "weaknesses": [
+        "Free tier capped at 5 users and 5 projects",
+        "Advanced features (resourcing, profitability) on higher tiers",
+        "Overkill for a simple to-do"
+      ]
+    }
+  },
+  {
+    "name": "Time Doctor",
+    "slug": "time-doctor",
+    "url_fr": "https://tooltrim.com/fr/tool/time-doctor",
+    "url_en": "https://tooltrim.com/en/tool/time-doctor",
+    "website": "https://timedoctor.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent : essai de 14 jours avec toutes les fonctions Premium",
+      "paid": "Basic à 6,70$/mois/utilisateur (annuel) ; Standard à 11,70$ ; Premium à 16,70$ (enregistrement vidéo, IA, SSO, rétention des données 2 ans contre 6 mois)."
+    },
+    "description_fr": "Suivi du temps et de la productivité avec captures d'écran, pour équipes distribuées.",
+    "description_en": "Time and productivity tracking with screenshots, for distributed teams.",
+    "price_verified_on": "2026-06-26",
+    "verdict_fr": {
+      "keep_if": "Vous avez une équipe distante et voulez visibilité sur le temps travaillé",
+      "avoid_if": "Vous travaillez en bureau sans télétravail",
+      "strengths": [
+        "Suivi automatique sans intervention utilisateur",
+        "Screenshots et rapports détaillés d'activité",
+        "Intégrations payroll et gestion d'assiduité"
+      ],
+      "weaknesses": [
+        "Surveillance de screenshots : enjeu de vie privée/culture",
+        "Pas de plan gratuit à long terme",
+        "Premium pricing pour accès à toutes fonctionnalités"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage a remote team and need time/activity visibility",
+      "avoid_if": "You work in a traditional office",
+      "strengths": [
+        "Automatic time capture with screenshots",
+        "Detailed activity and productivity reports",
+        "Payroll and attendance features"
+      ],
+      "weaknesses": [
+        "Screenshots raise privacy and culture concerns",
+        "No permanent free plan",
+        "Premium features cost extra"
+      ]
+    }
+  },
+  {
+    "name": "TimeCamp",
+    "slug": "timecamp",
+    "url_fr": "https://tooltrim.com/fr/tool/timecamp",
+    "url_en": "https://tooltrim.com/en/tool/timecamp",
+    "website": "https://timecamp.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit : Utilisateurs et projets illimités, feuilles de temps, apps web/bureau/mobile et authentification à deux facteurs, gratuit pour toujours ; l'AI Time Tracker est facturé séparément à l'usage de tokens.",
+      "paid": "Dès 3,99 $/mois, plan Starter."
+    },
+    "description_fr": "TimeCamp est un logiciel de suivi du temps gratuit et illimité en utilisateurs et projets, avec des offres payantes dès 3,99 $/utilisateur/mois.",
+    "description_en": "TimeCamp is time-tracking software with a free plan for unlimited users and projects, and paid plans from $3.99/user/month for billing and attendance.",
+    "price_verified_on": "2026-10-07",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu veux des utilisateurs et projets gratuits illimités, avec assiduité et facturation disponibles sur une offre payante peu chère",
+      "avoid_if": "Tu as besoin de SSO, de captures d'écran ou d'intégrations illimitées dès le départ ; cela nécessite l'offre la plus haute, Ultimate",
+      "strengths": [
+        "L'offre gratuite n'a pas de limite d'utilisateurs ou de projets, contrairement à de nombreux outils de suivi du temps qui plafonnent les sièges gratuits",
+        "La facturation avec export QuickBooks et Xero est disponible dès l'offre payante la moins chère (Starter)"
+      ],
+      "weaknesses": [
+        "Les intégrations illimitées et le SSO nécessitent l'offre la plus haute, Ultimate (9,99 à 13,99 $/utilisateur/mois)",
+        "Le tarif par token de l'AI Time Tracker n'est affiché sur la page tarifs pour aucune offre"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You want unlimited free users and projects, with attendance and invoicing available on a low-cost paid tier",
+      "avoid_if": "You need SSO, screenshots or unlimited integrations from day one; that requires the top Ultimate plan",
+      "strengths": [
+        "The free plan has no user or project cap, unlike many time trackers that limit free seats",
+        "Invoicing with QuickBooks and Xero export is available from the cheapest paid plan (Starter)"
+      ],
+      "weaknesses": [
+        "Unlimited integrations and SSO require the top Ultimate plan ($9.99-13.99/user/month)",
+        "The AI Time Tracker's per-token price isn't shown on the pricing page for any plan"
+      ]
+    }
+  },
+  {
+    "name": "Todoist",
+    "slug": "todoist",
+    "url_fr": "https://tooltrim.com/fr/tool/todoist",
+    "url_en": "https://tooltrim.com/en/tool/todoist",
+    "website": "https://todoist.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "Pro : 7 $/mois ou 60 $/an. Business : 10 $/utilisateur/mois ou 96 $/utilisateur/an"
+    },
+    "description_fr": "Le gestionnaire de tâches rapide pour organiser priorités, routines et échéances.",
+    "description_en": "The fast task manager for priorities, routines and deadlines.",
+    "alternatives": [
+      "todoist"
+    ],
+    "price_verified_on": "2026-09-02",
+    "verdict_fr": {
+      "keep_if": "Vous voulez capturer et planifier vos tâches sans administrer un outil de projet lourd",
+      "avoid_if": "Vous avez besoin de dépendances, de Gantt, de gestion de charge ou de validations avancées",
+      "strengths": [
+        "Saisie très rapide en langage naturel",
+        "Récurrences et rappels solides pour les routines",
+        "Interface cohérente sur web, mobile et desktop"
+      ],
+      "weaknesses": [
+        "Les fonctions les plus utiles de planification sont réservées au plan Pro",
+        "Pas de Gantt ni de gestion avancée des ressources",
+        "Le plan Business est facturé par utilisateur"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want to capture and schedule tasks without administering a heavyweight project tool",
+      "avoid_if": "You need dependencies, Gantt charts, workload management or advanced approvals",
+      "strengths": [
+        "Very fast natural-language capture",
+        "Strong recurring tasks and reminders for routines",
+        "Consistent interface across web, mobile and desktop"
+      ],
+      "weaknesses": [
+        "The most useful planning features require Pro",
+        "No Gantt chart or advanced resource management",
+        "Business is priced per user"
+      ]
+    }
+  },
+  {
+    "name": "VisualCV",
+    "slug": "visualcv",
+    "url_fr": "https://tooltrim.com/fr/tool/visualcv",
+    "url_en": "https://tooltrim.com/en/tool/visualcv",
+    "website": "https://www.visualcv.com/",
+    "category": "organization",
+    "pricing": {
+      "free": "Compte gratuit durable.",
+      "paid": "Abonnement Pro mensuel ou trimestriel."
+    },
+    "description_fr": "Crée, adapte et partage des CV avec modèles, exports PDF et suivi des consultations.",
+    "description_en": "Creates, adapts and shares resumes with templates, PDF exports and view analytics.",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin de tracker qui ouvre votre CV et reste combien de temps",
+      "avoid_if": "Vous travaillez en équipe et cherchez collaboration/partage interne",
+      "strengths": [
+        "Plan Free durable avec 30+ templates, exports illimités et site professionnel",
+        "Analytics uniques : voir qui ouvre, durée de lecture, timestamp (absent chez concurrents)",
+        "Portfolio + CV intégrés pour creatives (designers, writers, photographers)"
+      ],
+      "weaknesses": [
+        "Plan Free limité à 1 seul CV (obligation d'upgrade pour créer variantes)",
+        "Pas de plan annuel affiché (que mensuel ou trimestriel)",
+        "Analytics moins détaillées que outils analytics dédiés"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need to track who opens your resume and how long they spend reading it",
+      "avoid_if": "You work in a team and need internal collaboration/sharing features",
+      "strengths": [
+        "Durable Free plan with 30+ templates, unlimited exports, and professional site",
+        "Unique analytics: see who opens, read duration, timestamps (absent in competitors)",
+        "Integrated portfolio + resume for creatives (designers, writers, photographers)"
+      ],
+      "weaknesses": [
+        "Free plan limited to 1 resume (must upgrade to create variants)",
+        "No annual plan displayed (only monthly or quarterly)",
+        "Analytics less detailed than dedicated analytics tools"
+      ]
+    }
+  },
+  {
+    "name": "Workable",
+    "slug": "workable",
+    "url_fr": "https://tooltrim.com/fr/tool/workable",
+    "url_en": "https://tooltrim.com/en/tool/workable",
+    "website": "https://workable.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 15 jours.",
+      "paid": "Dès 299 $/mois, plan Standard."
+    },
+    "description_fr": "Workable est un logiciel de recrutement et RH qui combine sourcing, suivi des candidatures, onboarding et gestion des congés pour les petites entreprises.",
+    "description_en": "Workable combines an applicant tracking system with HR tools: AI sourcing, hiring pipelines, onboarding and time-off management for small companies.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Une petite entreprise (jusqu'à environ 20 salariés) veut ATS, SIRH et intégration dans un seul compte, sans avoir besoin des entretiens vidéo ou des SMS inclus dès le départ",
+      "avoid_if": "L'équipe a besoin des entretiens vidéo, évaluations ou SMS inclus sans surcoût, ou a largement dépassé les 20 salariés",
+      "strengths": [
+        "Un tarif mensuel forfaitaire par entreprise plutôt qu'une facturation par utilisateur, donc ajouter des recruteurs n'augmente pas la facture",
+        "ATS et RH/intégration vivent dans le même compte, sans transfert vers un autre outil après l'embauche"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit : seul un essai de 15 jours précède le minimum de 299 $/mois",
+        "Entretiens vidéo, évaluations et SMS sont facturés en plus sur le plan Standard d'entrée au lieu d'être inclus"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "A small company (up to about 20 people) wants ATS, HRIS and onboarding in one account and doesn't need video interviews or texting included from day one",
+      "avoid_if": "The team needs video interviews, assessments or texting included without extra cost, or has grown well past 20 employees",
+      "strengths": [
+        "One flat monthly price per company rather than per-seat billing, so adding hiring managers doesn't raise the bill",
+        "ATS and HR/onboarding live in the same account, avoiding a separate handoff to another system after hiring"
+      ],
+      "weaknesses": [
+        "No free plan: only a 15-day trial before the $299/month minimum applies",
+        "Video interviews, assessments and texting cost extra on the entry Standard plan instead of being included"
+      ]
+    }
+  },
+  {
+    "name": "Wrike",
+    "slug": "wrike",
+    "url_fr": "https://tooltrim.com/fr/tool/wrike",
+    "url_en": "https://tooltrim.com/en/tool/wrike",
+    "website": "https://wrike.com",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan gratuit avec utilisateurs illimités, mais limité à 200 tâches actives et 2 Go de stockage",
+      "paid": "Team à 10$/mois/utilisateur ; Business à 25$/mois/utilisateur (minimum 5 sièges, facturation annuelle)"
+    },
+    "description_fr": "Logiciel de gestion de projet et de travail collaboratif pour équipes et entreprises : tâches, vues multiples (Kanban, Gantt, tableaux), automatisations et reporting.",
+    "description_en": "Project management and collaborative work software for teams and enterprises: tasks, multiple views (Kanban, Gantt, tables), automations and reporting.",
+    "price_verified_on": "2026-06-25",
+    "verdict_fr": {
+      "keep_if": "Vous coordonnez des projets d'équipe avec plusieurs vues",
+      "avoid_if": "Vous cherchez une simple liste de tâches",
+      "strengths": [
+        "Vues multiples et flexibles (Kanban, Gantt)",
+        "Automatisations et reporting solides",
+        "Palier gratuit pour démarrer"
+      ],
+      "weaknesses": [
+        "Paliers hauts (Pinnacle/Apex) sur devis",
+        "Business avec minimum de sièges facturés",
+        "Courbe d'apprentissage sur les fonctions avancées"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You coordinate team projects with multiple views",
+      "avoid_if": "You want a simple task list",
+      "strengths": [
+        "Multiple flexible views (Kanban, Gantt)",
+        "Solid automations and reporting",
+        "Free tier to start"
+      ],
+      "weaknesses": [
+        "Top tiers (Pinnacle/Apex) are quote-based",
+        "Business has a billed seat minimum",
+        "Learning curve on advanced features"
+      ]
+    }
+  },
+  {
+    "name": "Orlo",
+    "slug": "orlo",
+    "url_fr": "https://tooltrim.com/fr/tool/orlo",
+    "url_en": "https://tooltrim.com/en/tool/orlo",
+    "website": "https://www.getorlo.app/",
+    "category": "organization",
+    "pricing": {
+      "free": "Plan Free permanent : 0 £/mois, 5 documents/mois, sans carte bancaire",
+      "paid": "Basic 2,99 £/mois (50 documents), Pro 7,99 £/mois (250 documents), essai 14 jours sur les deux"
+    },
+    "description_fr": "Extrait les échéances de tes factures et contrats par IA et te rappelle avant qu'ils n'expirent.",
+    "description_en": "Extracts deadlines from your bills and contracts with AI and reminds you before they expire.",
+    "price_verified_on": "2026-09-03",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu es indépendant ou propriétaire bailleur et veux suivre tes renouvellements (assurance, contrats, fiscalité) sans tableur",
+      "avoid_if": "Tu n'es pas au Royaume-Uni : plusieurs catégories (MOT, fiscalité UK) ne s'appliquent pas ailleurs",
+      "strengths": [
+        "Plan Free permanent (pas un essai) à 5 documents par mois, sans carte bancaire",
+        "Extraction IA en moins de 2 secondes, avec relecture et validation avant sauvegarde",
+        "Rappels configurables à 4 échéances (6 sem., 4 sem., 2 sem., 3 jours) par email, push ou récap hebdomadaire"
+      ],
+      "weaknesses": [
+        "Pensé pour le Royaume-Uni : plusieurs catégories de documents ne s'appliquent pas hors UK",
+        "Produit indépendant très récent, sans structure juridique identifiée ni preuve d'usage à grande échelle",
+        "Aucune capture d'écran réelle du produit disponible publiquement"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You're self-employed or a landlord and want to track renewals (insurance, contracts, tax) without a spreadsheet",
+      "avoid_if": "You're not in the UK: several categories (MOT, UK tax) don't apply elsewhere",
+      "strengths": [
+        "Permanent Free plan (not a trial) at 5 documents a month, no card required",
+        "AI extraction in under 2 seconds, with review and confirmation before saving",
+        "Configurable reminders at 4 intervals (6 wks, 4 wks, 2 wks, 3 days) by email, push or weekly digest"
+      ],
+      "weaknesses": [
+        "Built for the UK: several document categories don't apply outside the UK",
+        "Very young indie product, no identified legal structure or evidence of use at scale",
+        "No real product screenshot publicly available"
+      ]
+    }
+  },
+  {
+    "name": "CommuteBar",
+    "slug": "commutebar",
+    "url_fr": "https://tooltrim.com/fr/tool/commutebar",
+    "url_en": "https://tooltrim.com/en/tool/commutebar",
+    "website": "https://commute.bar/",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent",
+      "paid": "Licence à vie 6,99 $ en promotion au lieu de 9,99 $, sans abonnement"
+    },
+    "description_fr": "Affiche le temps de trajet Apple Maps dans la barre des menus du Mac.",
+    "description_en": "Shows Apple Maps commute times in the Mac menu bar.",
+    "price_verified_on": "2026-09-07",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu travailles sur Mac avant un trajet régulier et vérifies souvent le trafic",
+      "avoid_if": "Tu n'utilises pas macOS 14 ou une version ultérieure",
+      "strengths": [
+        "ETA visible sans ouvrir une application de cartographie",
+        "Destinations et fenêtres de trajet programmables",
+        "Alertes de départ et hausse importante du trafic"
+      ],
+      "weaknesses": [
+        "Disponible uniquement sur macOS 14 ou version ultérieure",
+        "Dépend de la précision et de la disponibilité d'Apple Maps",
+        "Ne fournit pas de navigation détaillée"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You work on a Mac before a regular commute and repeatedly check traffic",
+      "avoid_if": "You do not use macOS 14 or later",
+      "strengths": [
+        "ETA visible without opening a maps app",
+        "Scheduled destinations and commute windows",
+        "Departure and major traffic-delay alerts"
+      ],
+      "weaknesses": [
+        "Only available on macOS 14 or later",
+        "Depends on Apple Maps accuracy and availability",
+        "Does not provide turn-by-turn navigation"
+      ]
+    }
+  },
+  {
+    "name": "BetterDay AI",
+    "slug": "betterday-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/betterday-ai",
+    "url_en": "https://tooltrim.com/en/tool/betterday-ai",
+    "website": "https://www.mybetterdayai.com/",
+    "category": "organization",
+    "pricing": {
+      "free": "2 décisions IA par mois, plans enregistrés localement, sans carte bancaire.",
+      "paid": "Basic 4,99 USD/mois ; Personal et Education 9,99 USD/mois chacun ; Executive 29,99 USD/mois. Forfaits mensuels, taxes à confirmer."
+    },
+    "description_fr": "Transformer une décision ou un objectif en plan d’action et calendrier avec l’IA.",
+    "description_en": "Turn a decision or goal into an action plan and timeline with AI.",
+    "price_verified_on": "2026-09-27",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Vous cherchez un parcours guidé pour transformer un objectif en actions",
+      "avoid_if": "Vous avez besoin d’un CRM d’équipe ou d’une collaboration avancée déjà éprouvés",
+      "strengths": [
+        "Parcours guidé de l’objectif au calendrier",
+        "Plan gratuit pour tester avant de payer",
+        "Export du calendrier au format ICS"
+      ],
+      "weaknesses": [
+        "Éditions distinctes : vérifier les modules inclus",
+        "Usage IA illimité soumis à une politique d’usage raisonnable",
+        "Interface publique partiellement traduite ; résultats IA non testés par ToolTrim"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You want a guided workflow to turn a goal into actions",
+      "avoid_if": "You need an established team CRM or advanced collaboration",
+      "strengths": [
+        "Guided workflow from goal to schedule",
+        "Free plan to try before paying",
+        "Calendar export in ICS format"
+      ],
+      "weaknesses": [
+        "Separate editions: check which modules are included",
+        "Unlimited AI use is subject to fair-use restrictions",
+        "Public interface is partly localized; ToolTrim has not tested AI output"
+      ]
+    }
+  },
+  {
+    "name": "My Best Resume",
+    "slug": "mybestresume-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/mybestresume-ai",
+    "url_en": "https://tooltrim.com/en/tool/mybestresume-ai",
+    "website": "https://mybestresume.ai/",
+    "category": "organization",
+    "pricing": {
+      "free": "Rapport des points forts gratuit ; CV complet et exports payants.",
+      "paid": "Premier CV ciblé : 1,99 USD en achat unique ; CV supplémentaire : 4,99 USD. Career Momentum : 8,88 USD/mois, facultatif."
+    },
+    "description_fr": "Analyse un CV ou les informations fournies, relève les manques et aide à préparer un brouillon pour un poste ciblé.",
+    "description_en": "Analyzes a resume or user-provided details, highlights gaps, and helps tailor a draft to a target role.",
+    "price_verified_on": "2026-09-28",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu veux cibler un poste précis en gardant la main sur les affirmations du CV",
+      "avoid_if": "Tu attends une garantie d'entretien ou un score ATS valable pour tous les recruteurs",
+      "strengths": [
+        "Aperçu des points forts avant achat",
+        "CV exportable en PDF, DOCX modifiable et texte",
+        "Premier CV accessible sans abonnement obligatoire"
+      ],
+      "weaknesses": [
+        "Aucun résultat de recrutement ni score ATS universel garanti",
+        "Sept jours seulement pour modifier et re-télécharger chaque CV acheté",
+        "Prix et parcours affichés pour le marché anglophone ; pas de parcours français explicite"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You need a resume for a specific role and want to review every claim",
+      "avoid_if": "You expect a guaranteed interview or a universal ATS score",
+      "strengths": [
+        "Strengths preview before purchase",
+        "Resume exports in PDF, editable DOCX and plain text",
+        "First resume available without a required subscription"
+      ],
+      "weaknesses": [
+        "No hiring outcome or universal ATS score is guaranteed",
+        "Only seven days to edit and re-download each purchased resume",
+        "Pricing and workflow shown for the English-language market; no dedicated French flow is listed"
+      ]
+    }
+  },
+  {
+    "name": "Drone Ops Mission",
+    "slug": "drone-ops-mission",
+    "url_fr": "https://tooltrim.com/fr/tool/drone-ops-mission",
+    "url_en": "https://tooltrim.com/en/tool/drone-ops-mission",
+    "website": "https://drone-ops-mission.fr/",
+    "category": "organization",
+    "pricing": {
+      "free": "Découverte gratuite après création d'un compte",
+      "paid": "Pro : 8,99 €/mois ou 69 €/an, soit 5,75 €/mois facturés annuellement"
+    },
+    "description_fr": "Prépare un vol de drone avec carte aéronautique, météo et briefing GO/NOGO.",
+    "description_en": "Plan drone flights with an aeronautical map, weather and a GO/NO-GO briefing.",
+    "price_verified_on": "2026-09-30",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu prépares régulièrement des vols de drone en France et consultes plusieurs cartes et sources météo",
+      "avoid_if": "Tu cherches une autorisation automatique de vol ou une garantie de conformité",
+      "strengths": [
+        "Carte, météo et contraintes aéronautiques réunies dans une préparation de mission",
+        "Briefing météo Pro adapté aux limites du drone sélectionné",
+        "Archivage et export des missions annoncés dans Pro"
+      ],
+      "weaknesses": [
+        "Une recommandation GO/NOGO ne vaut ni autorisation ni vérification réglementaire définitive",
+        "Les données météo et aéronautiques peuvent être incomplètes ou changer avant le vol",
+        "Les fonctions de briefing avancé et d'export nécessitent Pro"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You regularly plan drone flights in France and consult several maps and weather sources",
+      "avoid_if": "You expect automatic flight permission or a guarantee of compliance",
+      "strengths": [
+        "Map, weather and airspace constraints combined in one mission workflow",
+        "Pro weather briefing tailored to the selected drone's limits",
+        "Mission history and exports advertised on Pro"
+      ],
+      "weaknesses": [
+        "A GO/NO-GO recommendation is neither flight permission nor a final regulatory check",
+        "Weather and airspace data can be incomplete or change before takeoff",
+        "Advanced briefing and exports require Pro"
+      ]
+    }
+  },
+  {
+    "name": "DisplaySwitcher",
+    "slug": "displayswitcher",
+    "url_fr": "https://tooltrim.com/fr/tool/displayswitcher",
+    "url_en": "https://tooltrim.com/en/tool/displayswitcher",
+    "website": "https://nebulasoftware.com/product/displayswitcher/",
+    "category": "organization",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent. Essai d'un mois, carte bancaire requise, résiliable depuis le compte.",
+      "paid": "5,95 $/mois, formule unique."
+    },
+    "description_fr": "Application de bureau (Linux/macOS/Windows) qui bascule l'entrée vidéo d'un moniteur compatible DDC/CI par simple clic, et transfère texte et fichiers entre plusieurs ordinateurs sans configuration réseau ni pare-feu.",
+    "description_en": "Desktop application (Linux/macOS/Windows) that switches a DDC/CI-compatible monitor's video input with a single click, and transfers text and files between computers with no network or firewall configuration needed.",
+    "price_verified_on": "2026-10-29",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Ton moniteur supporte DDC/CI et tu bascules régulièrement entre plusieurs ordinateurs dont au moins un n'a pas de logiciel de switch fourni par le fabricant",
+      "avoid_if": "Ton moniteur ne supporte pas DDC/CI, ou tu n'utilises qu'un seul ordinateur sur ce poste : l'outil n'a alors aucune utilité",
+      "strengths": [
+        "Fonctionne depuis n'importe quel ordinateur connecté, y compris pour faire basculer un moniteur depuis un poste qui ne le supporterait pas nativement",
+        "Le transfert de texte et de fichiers entre systèmes d'exploitation différents évite les clés USB ou les partages réseau à configurer"
+      ],
+      "weaknesses": [
+        "La version Mac ne fonctionne que sur Apple Silicon ; aucun support pour les Mac Intel",
+        "Essai gratuit d'un mois, mais carte bancaire requise dès l'inscription"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "Your monitor supports DDC/CI and you regularly switch between several computers, at least one of which has no manufacturer-provided switching software",
+      "avoid_if": "Your monitor doesn't support DDC/CI, or you only use one computer at that desk: the tool then serves no purpose",
+      "strengths": [
+        "Works from any connected computer, including triggering a switch from a machine that couldn't do it natively on its own",
+        "Text and file transfer across different operating systems avoids USB sticks or network shares to configure"
+      ],
+      "weaknesses": [
+        "The Mac version only runs on Apple Silicon; no support for Intel Macs",
+        "One-month free trial, but a credit card is required at signup"
+      ]
+    }
+  }
+]

@@ -1,0 +1,2668 @@
+# ToolTrim tool catalogue — finance
+# Generated from src/data/tools_index.json
+# Family: finance (62 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "8fig",
+    "slug": "8fig",
+    "url_fr": "https://tooltrim.com/fr/tool/8fig",
+    "url_en": "https://tooltrim.com/en/tool/8fig",
+    "website": "https://8fig.com",
+    "category": "finance",
+    "pricing": {
+      "free": null,
+      "paid": "Financement non dilutif pour e-commerçants, coûts fixés au cas par cas dans l'offre, aucun tarif publié."
+    },
+    "description_fr": "Plateforme de financement de croissance pour les fondateurs e-commerce.",
+    "description_en": "Growth funding platform for e-commerce founders.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous vendez sur Amazon ou Shopify et avez besoin de capital d'inventaire",
+      "avoid_if": "Vous avez moins de 6 mois d'antériorité ou moins de 12 k$ de chiffre d'affaires mensuel",
+      "strengths": [
+        "Financement rapide (offre en ~24h)",
+        "Pas d'équité ni de collatéral requis",
+        "Pas de vérification de crédit personnel"
+      ],
+      "weaknesses": [
+        "Critères d'éligibilité stricts (6 mois minimum, 12 k$ chiffre d'affaires)",
+        "Limité à Amazon et Shopify principalement",
+        "Taux basé sur le chiffre d'affaires peut être élevé"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You sell on Amazon or Shopify and need inventory capital",
+      "avoid_if": "You're a young business below the minimum revenue threshold",
+      "strengths": [
+        "Fast funding (offer in ~24h)",
+        "No equity or collateral required",
+        "No personal credit check"
+      ],
+      "weaknesses": [
+        "Strict eligibility criteria on trading history and revenue",
+        "Limited to Amazon and Shopify mainly",
+        "Revenue-based rates can add up quickly"
+      ]
+    }
+  },
+  {
+    "name": "Agicap",
+    "slug": "agicap",
+    "url_fr": "https://tooltrim.com/fr/tool/agicap",
+    "url_en": "https://tooltrim.com/en/tool/agicap",
+    "website": "https://agicap.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Essai gratuit complet de 30 jours, moyen de paiement requis",
+      "paid": "Sur devis, généralement plusieurs centaines d'euros par mois selon comptes connectés et CA"
+    },
+    "description_fr": "Pilotage de trésorerie et prévisions de cash-flow pour PME et entreprises.",
+    "description_en": "Cash-flow forecasting and treasury management for SMEs and companies.",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Vous gérez une PME ou ETI avec flux de trésorerie complexes",
+      "avoid_if": "Vous cherchez un outil gratuit ou très bon marché",
+      "strengths": [
+        "Agrégation temps réel de tous les flux bancaires",
+        "Prévisions sophistiquées basées sur les données historiques",
+        "Support multi-devise et intégrations ERP/comptabilité"
+      ],
+      "weaknesses": [
+        "Pas de version gratuite ; devis obligatoire",
+        "Peut être surdimensionné pour les petits indépendants",
+        "Implémentation et onboarding potentiellement longs"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage a mid-sized business with complex cash flow",
+      "avoid_if": "You're looking for a free or very cheap tool",
+      "strengths": [
+        "Real-time aggregation of all bank flows",
+        "Sophisticated forecasting based on historical data",
+        "Multi-currency support and ERP/accounting integrations"
+      ],
+      "weaknesses": [
+        "No free tier; quote-based pricing only",
+        "May be oversized for solo freelancers",
+        "Implementation and onboarding can be lengthy"
+      ]
+    }
+  },
+  {
+    "name": "Axonaut",
+    "slug": "axonaut",
+    "url_fr": "https://tooltrim.com/fr/tool/axonaut",
+    "url_en": "https://tooltrim.com/en/tool/axonaut",
+    "website": "https://axonaut.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Essai gratuit de 15 jours ; abonnement requis ensuite.",
+      "paid": "Abonnement (tout inclus): à partir de ~34,99 € HT/mois (annuel), jusqu'à ~69,99 € HT/mois sans engagement - par entreprise, options en plus"
+    },
+    "description_fr": "ERP français tout-en-un pour TPE/PME : CRM, facturation (conforme facturation électronique), comptabilité, trésorerie, gestion de projet, notes de frais et stock dans une seule plateforme.",
+    "description_en": "All-in-one French ERP for small and medium businesses: CRM, invoicing (compliant with e-invoicing), accounting, cash flow, project management, expense tracking, and inventory in one platform.",
+    "price_verified_on": "2026-08-30",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une TPE/PME française et voulez tout centraliser",
+      "avoid_if": "Vous n'avez besoin que d'un CRM ou que d'une facturation",
+      "strengths": [
+        "Tout-en-un CRM + facturation + compta",
+        "Conforme à la facturation électronique",
+        "Tarif par entreprise, pas par utilisateur"
+      ],
+      "weaknesses": [
+        "Surtout pertinent sur le marché français",
+        "Pas de palier gratuit permanent",
+        "Tout-en-un moins profond qu'un spécialiste sur chaque brique"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a French small business and want to centralise everything",
+      "avoid_if": "You only need a CRM or only invoicing",
+      "strengths": [
+        "All-in-one CRM + invoicing + accounting",
+        "Compliant with French e-invoicing",
+        "Per-company pricing, not per-user"
+      ],
+      "weaknesses": [
+        "Mostly relevant to the French market",
+        "No permanent free tier",
+        "All-in-one is shallower than a specialist per module"
+      ]
+    }
+  },
+  {
+    "name": "Boast",
+    "slug": "boast",
+    "url_fr": "https://tooltrim.com/fr/tool/boast",
+    "url_en": "https://tooltrim.com/en/tool/boast",
+    "website": "https://boast.ai",
+    "category": "finance",
+    "pricing": {
+      "free": null,
+      "paid": "Accompagnement crédits d'impôt R&D sur devis après un appel, aucun tarif publié."
+    },
+    "description_fr": "Plateforme d’automatisation des déclarations de crédit R&D.",
+    "description_en": "R&D tax credit claim automation platform.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Votre entreprise investit en R&D et n'a jamais réclamé les crédits R&D fédéraux/étatiques",
+      "avoid_if": "Votre entreprise n'a aucune R&D ou innovation technologique",
+      "strengths": [
+        "Modèle contingence : zéro frais si pas de succès",
+        "Automation puissante réduit préparation de 60h+ à ~5h",
+        "Taux d'acceptation des dossiers très élevé"
+      ],
+      "weaknesses": [
+        "Commission prélevée sur le crédit obtenu, ce qui peut être significatif",
+        "Pas d'essai gratuit ou prévisualisation",
+        "Nécessite données financières/engineering précises"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your company invests in R&D and has never claimed federal/state R&D credits",
+      "avoid_if": "Your company has no R&D or tech innovation",
+      "strengths": [
+        "Contingency model: zero fees if no success",
+        "Powerful automation cuts prep from 60h+ to ~5h",
+        "Very high IRS acceptance rate"
+      ],
+      "weaknesses": [
+        "A commission is taken on credits claimed, which can be substantial",
+        "No free trial or preview",
+        "Requires accurate financial and engineering data"
+      ]
+    }
+  },
+  {
+    "name": "Bolt Business",
+    "slug": "bolt-business",
+    "url_fr": "https://tooltrim.com/fr/tool/bolt-business",
+    "url_en": "https://tooltrim.com/en/tool/bolt-business",
+    "website": "https://bolt.eu/business",
+    "category": "finance",
+    "pricing": {
+      "free": "Plan gratuit : Aucun abonnement, aucun frais par siège, aucun coût d'activation, aucune dépense minimale ; on paie uniquement les trajets effectués, aux tarifs standards Bolt grand public.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "Bolt Business centralise les dépenses de trajets, trottinettes et location de voiture des employés sur une facture, avec des plafonds de dépense, sans coût d'abonnement.",
+    "description_en": "Bolt Business centralizes employee ride, scooter and car rental expenses on one invoice with spending controls, at no subscription cost.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Ton équipe a besoin de trajets professionnels occasionnels avec des plafonds de dépense et une facture unique consolidée, et Bolt opère dans tes villes",
+      "avoid_if": "Tu as besoin de coûts de transport mensuels fixes et prévisibles pour ton budget, car les tarifs ici fluctuent selon la ville et la demande",
+      "strengths": [
+        "Aucun abonnement ni frais par siège ; une petite équipe peut le mettre en place et ne payer que les trajets réellement pris",
+        "Une facture mensuelle unique consolidée remplace les reçus de trajets individuels, ce qui simplifie les notes de frais pour l'admin"
+      ],
+      "weaknesses": [
+        "Les coûts sont totalement imprévisibles d'un mois à l'autre, car les tarifs dépendent de la ville et de la demande en temps réel plutôt que d'un tarif fixe",
+        "La disponibilité du service et la compétitivité des tarifs dépendent de la ville, sans garantie que Bolt couvre chaque lieu où une équipe se déplace"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Your team needs occasional business rides with spending controls and one consolidated invoice, and Bolt operates in your cities",
+      "avoid_if": "You need predictable, fixed monthly transport costs for budgeting, since fares here fluctuate with city and demand",
+      "strengths": [
+        "No subscription or per-seat fee at all; a small team can set it up and only pay for rides actually taken",
+        "One consolidated monthly invoice replaces individual ride receipts, simplifying expense reporting for the admin"
+      ],
+      "weaknesses": [
+        "Costs are entirely unpredictable month to month since fares depend on city and real-time demand rather than a fixed rate",
+        "Service availability and fare competitiveness depend on the city, with no guarantee Bolt covers every location a team travels to"
+      ]
+    }
+  },
+  {
+    "name": "Coast",
+    "slug": "coast",
+    "url_fr": "https://tooltrim.com/fr/tool/coast",
+    "url_en": "https://tooltrim.com/en/tool/coast",
+    "website": "https://coastpay.com",
+    "category": "finance",
+    "pricing": "4$/utilisateur/mois. Cashback de 1% sur les dépenses (carburant, maintenance, logiciels).",
+    "description_fr": "Carte carburant et carte d'entreprise avec contrôle des dépenses pour flottes de véhicules.",
+    "description_en": "Fuel card and corporate card with spend control for vehicle fleets.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous gérez une flotte de véhicules ou des opérations terrain avec dépenses importantes",
+      "avoid_if": "Votre équipe est peu nombreuse et les dépenses sont minimes",
+      "strengths": [
+        "Modèle de tarification très transparent et prévisible",
+        "Cartes spécialisées par type de dépense",
+        "Intégrations comptables robustes"
+      ],
+      "weaknesses": [
+        "Orienté flotte/terrain : peut être surdimensionné pour bureaux classiques",
+        "Prix par utilisateur actif peut monter rapidement pour grandes équipes",
+        "Pas de version gratuite ou d'essai sans engagement"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You manage a vehicle fleet or field operations with significant expenses",
+      "avoid_if": "Your team is small and expenses are minimal",
+      "strengths": [
+        "Very transparent and predictable pricing",
+        "Specialized cards for different expense types",
+        "Strong accounting integrations"
+      ],
+      "weaknesses": [
+        "Fleet/field-focused; may be oversized for typical offices",
+        "Per-active-user pricing can add up for large teams",
+        "No free tier or trial without commitment"
+      ]
+    }
+  },
+  {
+    "name": "Coupa",
+    "slug": "coupa",
+    "url_fr": "https://tooltrim.com/fr/tool/coupa",
+    "url_en": "https://tooltrim.com/en/tool/coupa",
+    "website": "https://coupa.com",
+    "category": "finance",
+    "pricing": {
+      "free": "",
+      "paid": "Sur devis uniquement, à partir de ~15 000$/an même pour un petit déploiement"
+    },
+    "description_fr": "Plateforme enterprise de gestion des dépenses et achats (procurement), à partir de 15 000$/an.",
+    "description_en": "Enterprise spend management and procurement platform, from $15,000/year.",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME ou entreprise moyenne avec procurement complexe",
+      "avoid_if": "Vous êtes une micro-entreprise ou freelance sans procurement complexe",
+      "strengths": [
+        "Plateforme complète couvrant tout le procurement",
+        "Automation IA pour achats on-contract",
+        "Visibilité globale et contrôle des dépenses"
+      ],
+      "weaknesses": [
+        "Pas de tarification transparente ; devis obligatoire",
+        "Peut être surdimensionné pour petites équipes",
+        "Implémentation et onboarding potentiellement longs"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a mid-market or enterprise company with complex procurement",
+      "avoid_if": "You're a solo freelancer or small team with simple buying",
+      "strengths": [
+        "Complete platform spanning entire procurement",
+        "AI automation for on-contract purchases",
+        "Global visibility and spend control"
+      ],
+      "weaknesses": [
+        "No transparent pricing; custom quote required",
+        "May be oversized for small teams",
+        "Implementation and onboarding can be lengthy"
+      ]
+    }
+  },
+  {
+    "name": "Dext",
+    "slug": "dext",
+    "url_fr": "https://tooltrim.com/fr/tool/dext",
+    "url_en": "https://tooltrim.com/en/tool/dext",
+    "website": "https://dext.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 25,21 $/mois, plan Base plan."
+    },
+    "description_fr": "Dext capture justificatifs et factures par OCR et les transmet à ton logiciel de comptabilité, avec des options d'extraction vendues séparément.",
+    "description_en": "Dext captures receipts and invoices with OCR and pushes them into your accounting software, with extraction add-ons sold separately.",
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu veux que la capture de justificatifs et factures aille directement dans ton logiciel de comptabilité et que 250 documents/mois couvrent ton volume",
+      "avoid_if": "Tu as régulièrement besoin d'extraction de lignes, de relevés fournisseurs ou de relevés bancaires, ce qui fait grimper le coût mensuel réel bien au-delà du prix de base",
+      "strengths": [
+        "La capture OCR transmet directement justificatifs et factures au logiciel de comptabilité connecté",
+        "Essai de 14 jours disponible avant que l'abonnement de base ne devienne obligatoire"
+      ],
+      "weaknesses": [
+        "Pas d'offre gratuite ; l'abonnement de base n'inclut que 250 documents/mois pour 5 utilisateurs",
+        "L'extraction des lignes, des relevés fournisseurs et des relevés bancaires est vendue en options séparées"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You want receipt and invoice capture pushed straight into your accounting software and 250 documents/month covers your volume",
+      "avoid_if": "You regularly need line-item, supplier-statement or bank-statement extraction, which pushes the real monthly cost well past the base price",
+      "strengths": [
+        "OCR capture pushes receipts and invoices directly into connected accounting software",
+        "14-day trial available before the base subscription is required"
+      ],
+      "weaknesses": [
+        "No free plan; the base subscription includes only 250 documents/month for 5 users",
+        "Line item, supplier statement and bank statement extraction are unbundled, separately priced add-ons"
+      ]
+    }
+  },
+  {
+    "name": "Docyt",
+    "slug": "docyt",
+    "url_fr": "https://tooltrim.com/fr/tool/docyt",
+    "url_en": "https://tooltrim.com/en/tool/docyt",
+    "website": "https://docyt.com",
+    "category": "finance",
+    "pricing": "Impact à 299$/mois minimum ; paliers supérieurs à 499$, 799$ et 999$+ selon le volume de transactions.",
+    "description_fr": "Comptabilité automatisée par IA pour entreprises multi-sites avec rapprochement de revenus.",
+    "description_en": "AI-automated accounting for multi-location businesses with revenue reconciliation.",
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous êtes un petit business ou cabaret comptable cherchant automation de la clôture mensuelle",
+      "avoid_if": "Vous êtes une micro-entreprise avec très peu de transactions",
+      "strengths": [
+        "Automation IA très puissante de la comptabilité",
+        "Intégrations extensives (15k+ banques)",
+        "Intelligence reporting avancée basée sur 128B+ données"
+      ],
+      "weaknesses": [
+        "Pas de tarification publique transparente",
+        "Peut nécessiter onboarding et configuration",
+        "Essai gratuit limité à 7 jours"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're an accounting firm or mid-sized business seeking month-end automation",
+      "avoid_if": "You're a solo freelancer with minimal transactions",
+      "strengths": [
+        "Powerful AI automation of accounting tasks",
+        "Extensive integrations (15K+ banks)",
+        "Advanced reporting intelligence from 128B+ data points"
+      ],
+      "weaknesses": [
+        "No transparent public pricing",
+        "May require onboarding and setup",
+        "Free trial limited to 7 days"
+      ]
+    }
+  },
+  {
+    "name": "doola",
+    "slug": "doola",
+    "url_fr": "https://tooltrim.com/fr/tool/doola",
+    "url_en": "https://tooltrim.com/en/tool/doola",
+    "website": "https://doola.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 19,75 $/mois, plan Starter."
+    },
+    "description_fr": "Crée une LLC ou une C Corp américaine pour les fondateurs non-résidents ou solo, avec des offres payantes séparées pour la conformité et la comptabilité.",
+    "description_en": "Forms a US LLC or C Corp for non-resident and solo founders, with separate paid plans for compliance and bookkeeping.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu es un fondateur non-résident ou solo qui veut la création et la conformité continue d'une société américaine sans embaucher directement un avocat",
+      "avoid_if": "Tu veux la création, la comptabilité et la conformité fiscale réunies dans une seule offre plutôt que de payer chaque niveau séparément",
+      "strengths": [
+        "Regroupe création, EIN et agent enregistré dans une seule offre guidée sans avocat",
+        "Un essai de 30 jours est proposé avant de s'engager sur une offre payante"
+      ],
+      "weaknesses": [
+        "Les frais de dépôt d'état obligatoires s'ajoutent toujours en plus du prix de l'abonnement",
+        "La comptabilité et la conformité fiscale sont des offres payantes séparées, non incluses avec la création"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You are a non-resident or solo founder who wants US company formation and ongoing compliance handled without hiring a lawyer directly",
+      "avoid_if": "You want formation, bookkeeping and tax compliance bundled into a single plan rather than paying for each layer separately",
+      "strengths": [
+        "Bundles formation, EIN and registered agent into one guided plan without a lawyer",
+        "A 30-day trial is offered before committing to a paid plan"
+      ],
+      "weaknesses": [
+        "Mandatory state filing fees are always added on top of the subscription price",
+        "Bookkeeping and tax compliance are separate paid plans, not included with formation"
+      ]
+    }
+  },
+  {
+    "name": "FreshBooks",
+    "slug": "freshbooks",
+    "url_fr": "https://tooltrim.com/fr/tool/freshbooks",
+    "url_en": "https://tooltrim.com/en/tool/freshbooks",
+    "website": "https://freshbooks.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 23 $/mois, plan Lite."
+    },
+    "description_fr": "Logiciel de facturation et comptabilité pour freelances et petites entreprises, sans plan gratuit et avec un plafond de clients sur la formule d'entrée.",
+    "description_en": "Invoicing and accounting software for freelancers and small businesses, with no free plan and a client-count cap on the entry tier.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu es freelance ou une petite entreprise qui veut facturation, dépenses et suivi du temps dans un seul outil dès le départ",
+      "avoid_if": "Tu as déjà plus de 5 clients facturables et tu veux éviter une mise à niveau juste après ton inscription",
+      "strengths": [
+        "Le suivi du temps illimité et les imports bancaires automatisés sont inclus sur chaque formule, pas seulement la plus haute",
+        "L'application mobile et les rapports fiscaux sont disponibles dès la formule d'entrée"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit permanent : seulement un essai de 30 jours avant le paiement obligatoire",
+        "La formule d'entrée plafonne les clients facturables à 5, ce qui force une mise à niveau rapide pour un freelance en croissance"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You're a freelancer or small business that wants invoicing, expenses and time tracking in one tool from day one",
+      "avoid_if": "You already have more than 5 billable clients and want to avoid an upgrade right after onboarding",
+      "strengths": [
+        "Unlimited time tracking and automated bank imports are included on every plan, not just the top tier",
+        "Mobile app and tax reports are available from the entry plan"
+      ],
+      "weaknesses": [
+        "No permanent free plan; only a 30-day trial before payment is required",
+        "Entry plan caps billable clients at 5, forcing an early upgrade for a growing freelance business"
+      ]
+    }
+  },
+  {
+    "name": "Glyphe",
+    "slug": "glyphe",
+    "url_fr": "https://tooltrim.com/fr/tool/glyphe",
+    "url_en": "https://tooltrim.com/en/tool/glyphe",
+    "website": "https://glyphe.eu/",
+    "category": "finance",
+    "pricing": {
+      "free": "Premier client offert sans carte bancaire ni limite de durée. L'abonnement démarre au deuxième client.",
+      "paid": "Tout inclus: 79 EUR HT par utilisateur et par mois"
+    },
+    "description_fr": "Glyphe automatise la collecte KYC, la génération documentaire réglementaire et la signature pour les conseillers en gestion de patrimoine français.",
+    "description_en": "Glyphe automates KYC collection, regulatory document generation, and signatures for French wealth management advisers.",
+    "price_verified_on": "2026-08-30",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez régulièrement le workflow central de Glyphe",
+      "avoid_if": "Votre besoin est ponctuel et un outil gratuit plus simple suffit",
+      "strengths": [
+        "Workflow produit bien défini",
+        "Documentation officielle et développement actif",
+        "S'intègre aux processus professionnels"
+      ],
+      "weaknesses": [
+        "Le coût peut augmenter avec l'usage ou les sièges",
+        "Les fonctions avancées exigent une offre payante",
+        "La qualité du paramétrage influence le résultat"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need Glyphe's core workflow regularly",
+      "avoid_if": "Your need is occasional and a simpler free tool is enough",
+      "strengths": [
+        "Focused product workflow",
+        "Official documentation and active development",
+        "Integrates into professional processes"
+      ],
+      "weaknesses": [
+        "Costs can grow with usage or seats",
+        "Advanced capabilities require a paid tier",
+        "Setup quality affects the result"
+      ]
+    }
+  },
+  {
+    "name": "GoCardless",
+    "slug": "gocardless",
+    "url_fr": "https://tooltrim.com/fr/tool/gocardless",
+    "url_en": "https://tooltrim.com/en/tool/gocardless",
+    "website": "https://gocardless.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "description_fr": "Plateforme de paiements récurrents par prélèvement bancaire (Direct Debit, SEPA, ACH…), pensée pour la facturation par abonnement — alternative bancaire aux paiements par carte.",
+    "description_en": "Recurring bank-debit payments platform (Direct Debit, SEPA, ACH) built for subscription billing — a bank-based alternative to card payments.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous encaissez des paiements récurrents (abonnements, factures)",
+      "avoid_if": "Vous avez besoin d'un encaissement instantané",
+      "strengths": [
+        "Frais souvent plus bas que la carte sur le récurrent",
+        "Sans frais mensuels ni engagement",
+        "Bon taux de réussite sur les prélèvements"
+      ],
+      "weaknesses": [
+        "Délai de règlement (2 à 5 jours ouvrés)",
+        "Peu adapté aux paiements instantanés",
+        "Moins pertinent pour du one-shot au checkout"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You collect recurring payments (subscriptions, invoices)",
+      "avoid_if": "You need instant settlement",
+      "strengths": [
+        "Often lower fees than cards on recurring",
+        "No monthly fees or commitment",
+        "Good success rate on debits"
+      ],
+      "weaknesses": [
+        "Settlement delay (2 to 5 business days)",
+        "Poorly suited to instant payments",
+        "Less relevant for one-shot checkout"
+      ]
+    }
+  },
+  {
+    "name": "Greenly",
+    "slug": "greenly",
+    "url_fr": "https://tooltrim.com/fr/tool/greenly",
+    "url_en": "https://tooltrim.com/en/tool/greenly",
+    "website": "https://greenly.earth",
+    "category": "finance",
+    "pricing": {
+      "free": "",
+      "paid": "Sur devis, variable selon taille d'entreprise et périmètre"
+    },
+    "description_fr": "Plateforme de bilan carbone et reporting ESG pour PME et ETI, sur devis.",
+    "description_en": "Carbon footprint and ESG reporting platform for SMEs and mid-market companies, quote-based.",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Votre entreprise doit se conformer à CSRD ou autres réglementations ESG",
+      "avoid_if": "Vous êtes une micro-entreprise sans obligations ESG",
+      "strengths": [
+        "Conforme réglementations ESG (CSRD, SBTi)",
+        "Réduction importante du temps passé au reporting",
+        "AI-powered EcoPilot pour efficiency"
+      ],
+      "weaknesses": [
+        "Pas de tarification transparente ; devis obligatoire",
+        "Orienté compliance et durabilité, pas finance classique",
+        "Peut être complexe pour petites entreprises sans obligations"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your company must comply with CSRD or other ESG regulations",
+      "avoid_if": "You're a small business without ESG obligations",
+      "strengths": [
+        "Compliant with ESG regulations (CSRD, SBTi)",
+        "Substantially reduces reporting time",
+        "AI-powered EcoPilot for efficiency"
+      ],
+      "weaknesses": [
+        "No transparent pricing; custom quote required",
+        "Focused on compliance and sustainability, not classic finance",
+        "Complex for small businesses without obligations"
+      ]
+    }
+  },
+  {
+    "name": "Gumroad",
+    "slug": "gumroad",
+    "url_fr": "https://tooltrim.com/fr/tool/gumroad",
+    "url_en": "https://tooltrim.com/en/tool/gumroad",
+    "website": "https://gumroad.com",
+    "category": "finance",
+    "pricing": "Gratuit à l'inscription ; commission de 10% par vente (dégressive avec le volume).",
+    "description_fr": "Vente de produits numériques",
+    "description_en": "Digital product sales.",
+    "verdict_fr": {
+      "keep_if": "Vous êtes créateur/artisan (vidéo, art digital, musique) et voulez vendre du contenu digital",
+      "avoid_if": "Vous avez un commerce physique ou services complexes",
+      "strengths": [
+        "Plateforme très simple : upload, price, vendre",
+        "Freemium : gratuitement avec commission flexible",
+        "Support multi-devise et paiements globaux"
+      ],
+      "weaknesses": [
+        "Commission appliquée sur chaque vente (pourcentage exact à vérifier)",
+        "Pas adapté aux produits physiques ou services complexes",
+        "Analytics basiques comparés à Shopify"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a creator/artist selling digital content and want simplicity",
+      "avoid_if": "You have a physical commerce or complex services",
+      "strengths": [
+        "Very simple platform: upload, price, sell",
+        "Freemium with flexible commission",
+        "Multi-currency and global payments"
+      ],
+      "weaknesses": [
+        "Commission applied on each sale (exact % varies)",
+        "Not suited for physical products or complex services",
+        "Basic analytics vs. Shopify"
+      ]
+    }
+  },
+  {
+    "name": "Ignition",
+    "slug": "ignition",
+    "url_fr": "https://tooltrim.com/fr/tool/ignition",
+    "url_en": "https://tooltrim.com/en/tool/ignition",
+    "website": "https://www.ignitionapp.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Relie propositions, lettres de mission, signature électronique et facturation automatisée pour les cabinets comptables et de conseil.",
+    "description_en": "Connects proposals, engagement letters, e-signature and automated billing for accounting and consulting firms.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu diriges un cabinet de comptabilité, de tenue de livres ou de conseil et tu veux des propositions, une signature et une facturation dans un seul outil connecté",
+      "avoid_if": "Tu as besoin d'un outil de proposition généraliste hors services professionnels, ou tu veux voir chaque prix d'offre avant de parler à un commercial",
+      "strengths": [
+        "Réunit proposition, contrat, signature et facturation dans un seul flux connecté",
+        "Intégrations natives avec Xero et QuickBooks pour les cabinets comptables"
+      ],
+      "weaknesses": [
+        "Les prix exacts des offres ne sont pas publiés en contenu statique et nécessitent de contacter l'équipe commerciale ou de consulter une page rendue",
+        "Conçu pour les cabinets de comptabilité, de tenue de livres et de conseil, pas comme un outil de proposition généraliste"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run an accounting, bookkeeping or consulting practice and want proposals, signature and billing in one connected tool",
+      "avoid_if": "You need a general-purpose proposal tool outside professional services, or you want to see every plan price before talking to sales",
+      "strengths": [
+        "Combines proposal, contract, signature and billing in one connected flow",
+        "Native integrations with Xero and QuickBooks for accounting firms"
+      ],
+      "weaknesses": [
+        "Exact plan prices are not published as static content and require contacting sales or a rendered page to see",
+        "Built for accounting, bookkeeping and consulting firms, not a general-purpose proposal tool"
+      ]
+    }
+  },
+  {
+    "name": "Impact",
+    "slug": "impact",
+    "url_fr": "https://tooltrim.com/fr/tool/impact",
+    "url_en": "https://tooltrim.com/en/tool/impact",
+    "website": "https://impact.com",
+    "category": "finance",
+    "pricing": "Tarification sur devis, généralement réservée aux moyennes et grandes entreprises.",
+    "description_fr": "Réseau d'affiliation et de partenariat à l'échelle des grandes marques, alternative premium à Rewardful.",
+    "description_en": "Affiliate and partnership network at the scale of major brands, a premium alternative to Rewardful.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous avez une stratégie affiliate/partner marketing active",
+      "avoid_if": "Vous n'avez pas de partenaires ou de stratégie affiliate",
+      "strengths": [
+        "Support multiples types de partenaires",
+        "Tracking et attribution cross-device précis",
+        "Automation de commissions et payouts"
+      ],
+      "weaknesses": [
+        "Pas de tarification transparente ; devis obligatoire",
+        "Peut être complexe pour stratégie simple",
+        "Implémentation requiert infrastructure partenaires"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have an active affiliate/partner marketing strategy",
+      "avoid_if": "You don't have partners or affiliate strategy",
+      "strengths": [
+        "Support for multiple partner types",
+        "Precise cross-device tracking and attribution",
+        "Commission and payout automation"
+      ],
+      "weaknesses": [
+        "No transparent pricing; custom quote required",
+        "Can be complex for simple strategy",
+        "Implementation requires partner infrastructure"
+      ]
+    }
+  },
+  {
+    "name": "Indy",
+    "slug": "indy",
+    "url_fr": "https://tooltrim.com/fr/tool/indy",
+    "url_en": "https://tooltrim.com/en/tool/indy",
+    "website": "https://indy.fr",
+    "category": "finance",
+    "pricing": {
+      "free": "Plan gratuit : Facturation électronique illimitée (plateforme agréée DGFiP), devis et factures illimités, comptabilité automatisée ; les déclarations fiscales obligatoires sont exclues",
+      "paid": "Dès 9 €/mois, plan Plus."
+    },
+    "description_fr": "Indy gère la facturation, les devis et la comptabilité des freelances français, avec les déclarations fiscales obligatoires incluses sur le forfait Premium.",
+    "description_en": "Indy handles invoicing, quotes and bookkeeping for French freelancers, with mandatory tax declarations added on the Premium plan.",
+    "alternatives": [
+      "indy"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu es freelance ou auto-entrepreneur en France et tu veux la facturation, la comptabilité et les déclarations fiscales gérées dans un seul compte",
+      "avoid_if": "Tu es en société, où Premium coûte jusqu'à 49 € par mois, ou tu as besoin d'une comptabilité multi-utilisateurs pour une équipe",
+      "strengths": [
+        "Les déclarations fiscales obligatoires sont incluses dans un seul prix mensuel sur Premium, au lieu d'une facture séparée d'expert-comptable",
+        "Le forfait gratuit supprime déjà le coût des besoins de base en facturation et comptabilité"
+      ],
+      "weaknesses": [
+        "Le prix du forfait Premium dépend de la structure juridique, il faut donc vérifier le coût mensuel réel pour son propre statut",
+        "Les déclarations fiscales obligatoires sont réservées à Premium ; les offres gratuite et Plus ne les gèrent pas"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You're a French freelancer or auto-entrepreneur who wants invoicing, bookkeeping and tax filing handled in one account",
+      "avoid_if": "You run a company structure, where Premium costs up to 49 EUR/month, or you need multi-user team accounting",
+      "strengths": [
+        "Mandatory tax filing is included in a single monthly price on Premium, instead of a separate accountant invoice",
+        "The free plan already removes the cost of basic invoicing and bookkeeping needs"
+      ],
+      "weaknesses": [
+        "Premium plan price depends on legal structure, so the real monthly cost needs checking against your own status",
+        "Mandatory tax declarations are locked behind Premium; the free and Plus tiers can't handle them"
+      ]
+    }
+  },
+  {
+    "name": "Invoicely",
+    "slug": "invoicely",
+    "url_fr": "https://tooltrim.com/fr/tool/invoicely",
+    "url_en": "https://tooltrim.com/en/tool/invoicely",
+    "website": "https://invoicely.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Gratuit pour la facturation de base",
+      "paid": "Plans payants disponibles"
+    },
+    "description_fr": "Outil de facturation simple et gratuit pour freelances et petites entreprises.",
+    "description_en": "Simple and free invoicing tool for freelancers and small businesses.",
+    "alternatives": [
+      "Invoicely"
+    ],
+    "price_verified_on": "2026-05-08",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une petite entreprise/freelance et voulez facturer gratuitement",
+      "avoid_if": "Vous êtes une entreprise complexe avec besoins comptables avancés",
+      "strengths": [
+        "Facturation illimitée et entièrement gratuite",
+        "Interface simple et intuitive",
+        "Suivi temps et dépenses inclus"
+      ],
+      "weaknesses": [
+        "Pas d'automation comptable IA",
+        "Features avancées requièrent plan payant",
+        "Moins de features que FreshBooks ou autres"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a freelancer or small business wanting to invoice for free",
+      "avoid_if": "You're a complex SMB with advanced accounting needs",
+      "strengths": [
+        "Unlimited invoicing and completely free",
+        "Simple and intuitive interface",
+        "Time and expense tracking included"
+      ],
+      "weaknesses": [
+        "No AI accounting automation",
+        "Advanced features require paid plans",
+        "Fewer features than FreshBooks or others"
+      ]
+    }
+  },
+  {
+    "name": "Kelio",
+    "slug": "kelio",
+    "url_fr": "https://tooltrim.com/fr/tool/kelio",
+    "url_en": "https://tooltrim.com/en/tool/kelio",
+    "website": "https://www.kelio.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Kelio suit le temps, la présence et les congés des salariés, avec un contrôle d'accès aux bâtiments par badge possible, sur devis.",
+    "description_en": "Kelio tracks employee time, attendance and leave, and can add badge-based building access control on quote-based pricing.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu as besoin de suivre temps, présences et congés avec le contrôle d'accès physique aux bâtiments chez un seul fournisseur",
+      "avoid_if": "Tu veux un prix publié à comparer avant de parler au commercial, ou tu n'as pas besoin du module de contrôle d'accès physique",
+      "strengths": [
+        "Combine suivi du temps, portail RH et contrôle d'accès physique dans une seule suite plutôt que trois outils séparés",
+        "La supervision du travail à distance est intégrée au module de suivi des temps et présences"
+      ],
+      "weaknesses": [
+        "Pas de tarif public ; chaque devis nécessite un échange commercial avant achat",
+        "La pleine valeur dépend de matériel propriétaire (terminaux de pointage, badges, lecteurs d'accès)"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You need time, attendance and leave tracking together with physical building access control in one vendor",
+      "avoid_if": "You want a published price to compare before talking to sales, or don't need the physical access control module",
+      "strengths": [
+        "Combines time tracking, HR portal and physical access control in one suite instead of three separate tools",
+        "Remote-work supervision is built into the time and attendance module"
+      ],
+      "weaknesses": [
+        "No public pricing; every quote requires a sales conversation before purchase",
+        "Full value depends on proprietary hardware (clocking terminals, badges, access readers)"
+      ]
+    }
+  },
+  {
+    "name": "Lemon Squeezy",
+    "slug": "lemon-squeezy",
+    "url_fr": "https://tooltrim.com/fr/tool/lemon-squeezy",
+    "url_en": "https://tooltrim.com/en/tool/lemon-squeezy",
+    "website": "https://www.lemonsqueezy.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Paiement, taxe et merchant of record pour produits numériques.",
+    "description_en": "Payments, tax, and merchant of record for digital products.",
+    "verdict_fr": {
+      "keep_if": "Vous vendez du contenu numériques/SaaS à l'international",
+      "avoid_if": "Vous avez très haut volume avec marges faibles (commission peut être trop élevée)",
+      "strengths": [
+        "Merchant of Record : gestion TVA/tax automatique",
+        "Commission simple et transparente, annoncée sans surprise",
+        "Support complet paiements internationaux"
+      ],
+      "weaknesses": [
+        "Commission qui pèse sur les gros volumes",
+        "Frais additionnels pour PayPal, subscriptions, etc",
+        "Pas adapté aux produits physiques"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You sell digital content/SaaS internationally",
+      "avoid_if": "You have high volume with thin margins (commission too high)",
+      "strengths": [
+        "Merchant of Record: automatic VAT/tax handling",
+        "Simple, transparent commission with no surprises",
+        "Full international payment support"
+      ],
+      "weaknesses": [
+        "The commission weighs on high volumes",
+        "Extra fees for PayPal, subscriptions, etc",
+        "Not suitable for physical products"
+      ]
+    }
+  },
+  {
+    "name": "Lendio",
+    "slug": "lendio",
+    "url_fr": "https://tooltrim.com/fr/tool/lendio",
+    "url_en": "https://tooltrim.com/en/tool/lendio",
+    "website": "https://lendio.com",
+    "category": "finance",
+    "pricing": {
+      "free": null,
+      "paid": "Place de marché de financement : coût du crédit fixé par chaque prêteur, pas d'abonnement publié."
+    },
+    "description_fr": "Service de prêts professionnels avec multiples options de financement.",
+    "description_en": "Business loan service with multiple financing options.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin de capital pour démarrer ou développer une petite entreprise",
+      "avoid_if": "Vous n'avez pas besoin de financement externe",
+      "strengths": [
+        "Accès 75+ lenders en une candidature",
+        "Process ultra-simple : ~15 min vs. 25h traditionnel",
+        "Entièrement gratuit jusqu'à funding"
+      ],
+      "weaknesses": [
+        "Pas d'equity financing ; prêts uniquement",
+        "Acceptation dépend lenders individuels (non garantie)",
+        "Critères crédit peuvent être stricts pour risqués"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need capital to start or grow a small business",
+      "avoid_if": "You don't need external funding",
+      "strengths": [
+        "Access 75+ lenders in one application",
+        "Ultra-simple process: ~15 min vs. 25 hours traditional",
+        "Completely free until funded"
+      ],
+      "weaknesses": [
+        "No equity financing; loans only",
+        "Acceptance depends on individual lenders (not guaranteed)",
+        "Credit criteria can be strict for risky profiles"
+      ]
+    }
+  },
+  {
+    "name": "Mega HR",
+    "slug": "megahr",
+    "url_fr": "https://tooltrim.com/fr/tool/megahr",
+    "url_en": "https://tooltrim.com/en/tool/megahr",
+    "website": "https://try.megahr.com/j41a7b17mmfs",
+    "category": "finance",
+    "pricing": {
+      "free": "Essai gratuit 15 jours",
+      "paid": "À partir de 4€/salarié/mois"
+    },
+    "description_fr": "Solution RH et paie pour gérer salariés et congés.",
+    "description_en": "HR and payroll solution to manage employees and leave.",
+    "alternatives": [
+      "indy"
+    ],
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous recrutez beaucoup et avez des équipes RH réduites",
+      "avoid_if": "Vous faites des recrutements très ponctuels (< 5/an)",
+      "strengths": [
+        "Automatisation complète du pipeline : CV → entretien → décision",
+        "Entretiens IA 24/7 sans limites d'horaires",
+        "Détection de biais et insights de qualité d'entretien"
+      ],
+      "weaknesses": [
+        "Tarification opaque (devis sur demande)",
+        "Dépend de la qualité du réseau ATS intégré",
+        "Peut être overkill pour petit volume de recrutement"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You recruit frequently with lean HR teams",
+      "avoid_if": "You hire very infrequently (< 5/year)",
+      "strengths": [
+        "End-to-end pipeline automation: CV → interview → decision",
+        "24/7 AI interviews with unlimited availability",
+        "Bias detection and interview quality insights"
+      ],
+      "weaknesses": [
+        "Pricing is opaque (custom quotes only)",
+        "Depends on ATS integration network quality",
+        "May be overkill for small hiring volume"
+      ]
+    }
+  },
+  {
+    "name": "Moss",
+    "slug": "moss",
+    "url_fr": "https://tooltrim.com/fr/tool/moss",
+    "url_en": "https://tooltrim.com/en/tool/moss",
+    "website": "https://www.getmoss.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Aucun plan gratuit",
+      "paid": "À partir de 9€/mois par utilisateur"
+    },
+    "description_fr": "Gestion des dépenses et cartes d'entreprise.",
+    "description_en": "Business expense management and corporate cards.",
+    "verdict_fr": {
+      "keep_if": "Vous avez des équipes avec nombreuses petites dépenses (trajets, repas, fournitures)",
+      "avoid_if": "Vous n'avez que quelques transactions mensuelles",
+      "strengths": [
+        "Cartes virtuelles illimitées pour chaque employé et budget",
+        "Automatisation complète : capture reçus → codif → sync paie",
+        "Traitement 4x plus rapide des dépenses et clôtures"
+      ],
+      "weaknesses": [
+        "Tarification opaque (sur demande)",
+        "Meilleur ROI pour équipes avec dépenses fréquentes",
+        "Pas de version gratuite pour tester l'outil"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your team has frequent small expenses (travel, meals, supplies)",
+      "avoid_if": "You only have a few transactions per month",
+      "strengths": [
+        "Unlimited virtual cards for each employee and budget",
+        "Complete automation: receipt capture → coding → payroll sync",
+        "4x faster expense processing and month-end close"
+      ],
+      "weaknesses": [
+        "Pricing is opaque (requires quote)",
+        "Best ROI for teams with frequent expenses",
+        "No free version to test the tool"
+      ]
+    }
+  },
+  {
+    "name": "Navan",
+    "slug": "navan",
+    "url_fr": "https://tooltrim.com/fr/tool/navan",
+    "url_en": "https://tooltrim.com/en/tool/navan",
+    "website": "https://navan.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Navan Business est gratuit pour les entreprises jusqu'à 300 salariés : voyages illimités et notes de frais gratuites pour les 5 premiers utilisateurs.",
+      "paid": "Au-delà de 5 utilisateurs, le module Expense coûte 15 $ par utilisateur et par mois ; Enterprise sur devis."
+    },
+    "description_fr": "Solution tout-en-un de gestion des voyages et notes de frais.",
+    "description_en": "All-in-one travel and expense management solution.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous avez une équipe avec voyages d'affaires fréquents",
+      "avoid_if": "Vous avez peu ou pas de voyages d'affaires",
+      "strengths": [
+        "Plateforme complète : booking + dépenses + cartes",
+        "AI assistant pour booking (Navan Edge)",
+        "Conformité policies intégrée"
+      ],
+      "weaknesses": [
+        "Pas de tarification transparente ; devis obligatoire",
+        "Peut être surdimensionné pour petites équipes",
+        "Implémentation et setup potentiellement longs"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your team has frequent business travel",
+      "avoid_if": "You have little or no business travel",
+      "strengths": [
+        "Complete platform: booking + expenses + cards",
+        "AI assistant for booking (Navan Edge)",
+        "Policy compliance built-in"
+      ],
+      "weaknesses": [
+        "No transparent pricing; custom quote required",
+        "May be oversized for small teams",
+        "Implementation and setup potentially lengthy"
+      ]
+    }
+  },
+  {
+    "name": "Onramp Funds",
+    "slug": "onramp-funds",
+    "url_fr": "https://tooltrim.com/fr/tool/onramp-funds",
+    "url_en": "https://tooltrim.com/en/tool/onramp-funds",
+    "website": "https://onrampfunds.com",
+    "category": "finance",
+    "pricing": {
+      "free": null,
+      "paid": "Financement e-commerce avec un frais unique communiqué dans une offre personnalisée après inscription ; aucun barème publié."
+    },
+    "description_fr": "Fournit des financements aux marchands pour soutenir leur croissance.",
+    "description_en": "Provides funding to merchants to support their growth.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous vendez sur Amazon, Shopify ou autre plateforme eCommerce",
+      "avoid_if": "Vous avez moins de 6 mois d'antériorité ou revenu < 10k$/mois",
+      "strengths": [
+        "Financement ultra-rapide (< 24h)",
+        "Pas de vérification crédit personnel",
+        "Remboursement flexible synchronisé aux ventes"
+      ],
+      "weaknesses": [
+        "Critères d'éligibilité stricts (6 mois, 10k$/mois)",
+        "Limité aux plateforme supportées",
+        "Frais peuvent être élevés selon termes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You sell on Amazon, Shopify, or other eCommerce platform",
+      "avoid_if": "You're a young business below the revenue threshold",
+      "strengths": [
+        "Ultra-fast funding (< 24h)",
+        "No personal credit check",
+        "Flexible repayment synced to sales"
+      ],
+      "weaknesses": [
+        "Strict eligibility on trading history and revenue",
+        "Limited to supported platforms",
+        "Fees can be high depending on terms"
+      ]
+    }
+  },
+  {
+    "name": "Ownr",
+    "slug": "ownr",
+    "url_fr": "https://tooltrim.com/fr/tool/ownr",
+    "url_en": "https://tooltrim.com/en/tool/ownr",
+    "website": "https://ownr.co",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Online Minute Book Plan à 199 $ CA la première année avec un compte RBC (frais gouvernementaux inclus), renouvelé à 199 $ CA par an."
+    },
+    "description_fr": "Plateforme d’enregistrement et de création d’entreprises (Canada).",
+    "description_en": "Business registration and incorporation platform (Canada).",
+    "verdict_fr": {
+      "keep_if": "Vous êtes entrepreneur canadien et vous voulez incorporer rapidement",
+      "avoid_if": "Vous êtes un indépendant sans intention d'incorporation",
+      "strengths": [
+        "Spécialisé pour Canada : conformité réglementaire",
+        "Services complets : incorporation + gestion ongoing",
+        "Guidance professionnelle incluse"
+      ],
+      "weaknesses": [
+        "Pas de tarification transparente ; devis obligatoire",
+        "Peut être plus cher que solutions DIY",
+        "Limité à Canada"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a Canadian entrepreneur wanting fast incorporation",
+      "avoid_if": "You're a freelancer with no incorporation plans",
+      "strengths": [
+        "Canadian-specialized: regulatory compliance",
+        "Complete services: incorporation + ongoing management",
+        "Professional guidance included"
+      ],
+      "weaknesses": [
+        "No transparent pricing; custom quote required",
+        "May be pricier than DIY solutions",
+        "Limited to Canada"
+      ]
+    }
+  },
+  {
+    "name": "Paddle",
+    "slug": "paddle",
+    "url_fr": "https://tooltrim.com/fr/tool/paddle",
+    "url_en": "https://tooltrim.com/en/tool/paddle",
+    "website": "https://www.paddle.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de frais mensuel — commission 5% + 0,50$/transaction",
+      "paid": "Paddle Plus pour volumes élevés"
+    },
+    "description_fr": "Infrastructure de paiement SaaS avec gestion fiscale mondiale intégrée — modèle à commission.",
+    "description_en": "SaaS payment infrastructure with built-in global tax management — commission model.",
+    "price_verified_on": "2026-05-08",
+    "verdict_fr": {
+      "keep_if": "Vous êtes éditeur SaaS ou app devs vendant mondialement",
+      "avoid_if": "Vous vendez produits physiques",
+      "strengths": [
+        "Merchant of Record : zéro tracas tax/compliance",
+        "Support complet 300+ marchés",
+        "Analytics puissantes via ProfitWell"
+      ],
+      "weaknesses": [
+        "Pas de tarification transparente ; devis obligatoire",
+        "Commission peut être élevée pour low-margin",
+        "Pas adapté au physique"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a SaaS founder or app dev selling globally",
+      "avoid_if": "You sell physical products",
+      "strengths": [
+        "Merchant of Record: zero tax/compliance headaches",
+        "Full support across 300+ markets",
+        "Powerful analytics via ProfitWell"
+      ],
+      "weaknesses": [
+        "No transparent pricing; custom quote required",
+        "Commission can be high for low-margin",
+        "Not suitable for physical goods"
+      ]
+    }
+  },
+  {
+    "name": "PartnerStack",
+    "slug": "partnerstack",
+    "url_fr": "https://tooltrim.com/fr/tool/partnerstack",
+    "url_en": "https://tooltrim.com/en/tool/partnerstack",
+    "website": "https://partnerstack.com",
+    "category": "finance",
+    "pricing": "Tarification sur devis, généralement plusieurs centaines de dollars par mois.",
+    "description_fr": "Plateforme de gestion de partenariats et d'affiliation pour SaaS B2B, plus complète que Rewardful.",
+    "description_en": "Partnership and affiliate management platform for B2B SaaS, more complete than Rewardful.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous êtes B2B SaaS cherchant à scaler via partenaires/affiliates",
+      "avoid_if": "Vous n'avez pas de stratégie partner/affiliate",
+      "strengths": [
+        "IA-native : prédiction et optimisation smart",
+        "Support multiples types partenaires",
+        "Commission auto et payouts simplifiés"
+      ],
+      "weaknesses": [
+        "Pas de tarification transparente ; devis obligatoire",
+        "Peut être surdimensionné pour partner strategy simple",
+        "Implémentation requiert structure partenaires"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a B2B SaaS company looking to scale via partners/affiliates",
+      "avoid_if": "You don't have a partner/affiliate strategy",
+      "strengths": [
+        "AI-native: smart prediction and optimization",
+        "Support for multiple partner types",
+        "Auto commission and simplified payouts"
+      ],
+      "weaknesses": [
+        "No transparent pricing; custom quote required",
+        "May be oversized for simple partner strategy",
+        "Implementation requires partner infrastructure"
+      ]
+    }
+  },
+  {
+    "name": "Patreon",
+    "slug": "patreon",
+    "url_fr": "https://tooltrim.com/fr/tool/patreon",
+    "url_en": "https://tooltrim.com/en/tool/patreon",
+    "website": "https://patreon.com",
+    "category": "finance",
+    "pricing": "Gratuit pour démarrer ; commission de 8 à 12% sur les revenus selon le plan.",
+    "description_fr": "Plateforme d'abonnement pour créateurs, qui finance directement leur travail via une audience fidèle.",
+    "description_en": "Subscription platform for creators, directly funding their work via a loyal audience.",
+    "price_verified_on": "2026-05-11",
+    "verdict_fr": {
+      "keep_if": "Vous êtes créateur et voulez monétiser une audience via des abonnements récurrents",
+      "avoid_if": "Votre modèle repose sur des ventes ponctuelles plutôt que sur l'abonnement récurrent",
+      "strengths": [
+        "Solution clé en main : abonnements, paiements récurrents et gestion des membres intégrés",
+        "Paliers et avantages personnalisables pour structurer son offre",
+        "Page de création gratuite : on ne paie que sur les revenus perçus"
+      ],
+      "weaknesses": [
+        "Des frais de plateforme et de traitement des paiements sont prélevés sur chaque revenu",
+        "L'audience est liée à Patreon plutôt qu'à un canal que vous contrôlez",
+        "Moins de contrôle et de personnalisation qu'une solution auto-hébergée"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You are a creator and want to monetise an audience through recurring memberships",
+      "avoid_if": "Your model relies on one-off sales rather than recurring subscriptions",
+      "strengths": [
+        "Turnkey solution: memberships, recurring payments and member management built in",
+        "Customisable tiers and perks to structure your offer",
+        "Free creator page: you only pay on the revenue you earn"
+      ],
+      "weaknesses": [
+        "Platform and payment-processing fees are taken from every payout",
+        "Your audience is tied to Patreon rather than a channel you control",
+        "Less control and customisation than a self-hosted solution"
+      ]
+    }
+  },
+  {
+    "name": "Payhawk",
+    "slug": "payhawk",
+    "url_fr": "https://tooltrim.com/fr/tool/payhawk",
+    "url_en": "https://tooltrim.com/en/tool/payhawk",
+    "website": "https://payhawk.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 149 £/mois, plan Growth Program."
+    },
+    "description_fr": "Cartes d'entreprise, dépenses, paiement de factures et remboursements réunis, avec extraction de données par IA, pour une entreprise à entité unique.",
+    "description_en": "All-in-one corporate cards, expenses, bill pay and reimbursements, with AI-based data extraction for a single-entity company.",
+    "price_verified_on": "2026-10-01",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu diriges une entreprise à entité unique qui veut cartes, dépenses, paiement de factures et remboursements dans une seule plateforme à prix mensuel fixe",
+      "avoid_if": "Tu as besoin du Procure-to-Pay ou de la gestion multi-entités dès maintenant, ce qui t'oriente directement vers un devis Enterprise sur mesure",
+      "strengths": [
+        "Réunit cartes, dépenses, paiement de factures et remboursements dans une seule offre à prix mensuel fixe",
+        "L'extraction de données par IA réduit la saisie manuelle pour les dépenses et les factures"
+      ],
+      "weaknesses": [
+        "Growth Program est plafonné à une seule entité juridique et 10 postes, sans prix publié au-delà",
+        "Le Procure-to-Pay et la gestion multi-entités exigent un devis Enterprise sur mesure"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You run a single-entity company that wants cards, expenses, bill pay and reimbursements in one platform at a fixed monthly price",
+      "avoid_if": "You need Procure-to-Pay or multi-entity management now, which pushes you straight to a custom Enterprise quote",
+      "strengths": [
+        "Bundles cards, expenses, bill pay and reimbursements into one plan at a fixed monthly price",
+        "AI-based data extraction reduces manual entry for expenses and invoices"
+      ],
+      "weaknesses": [
+        "Growth Program is capped at a single legal entity and 10 seats, with no published price beyond it",
+        "Procure-to-Pay and multi-entity management require a custom Enterprise quote"
+      ]
+    }
+  },
+  {
+    "name": "Payoneer",
+    "slug": "payoneer",
+    "url_fr": "https://tooltrim.com/fr/tool/payoneer",
+    "url_en": "https://tooltrim.com/en/tool/payoneer",
+    "website": "https://payoneer.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Plan Standard account sur devis."
+    },
+    "description_fr": "Plateforme de paiement transfrontalier pour recevoir, envoyer et détenir des fonds dans plus de 70 devises, avec cartes multidevises.",
+    "description_en": "Cross-border payment platform to receive, send and hold funds in 70+ currencies, with multi-currency cards.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu factures régulièrement des clients à l'étranger et veux recevoir tes paiements localement plutôt que payer des frais de virement international à chaque fois",
+      "avoid_if": "Tu reçois moins de 6 000$ par an sur le compte, où les frais annuels de 29,95$ s'appliquent sans activité en contrepartie",
+      "strengths": [
+        "Les comptes de réception locaux dans de nombreux pays évitent les frais de virement international sur les paiements reçus",
+        "Les paiements par lot jusqu'à 1 000 destinataires permettent de payer plusieurs freelances en une fois"
+      ],
+      "weaknesses": [
+        "Pas de forfait fixe : les frais de conversion, de carte et de réception s'accumulent et sont difficiles à prévoir pour un volume irrégulier",
+        "Un compte recevant moins de 6 000$ sur 12 mois est facturé 29,95$ par an même sans utiliser de fonctions payantes"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You regularly bill clients abroad and want to receive payments locally instead of paying international wire fees each time",
+      "avoid_if": "You receive under $6,000 a year through the account, where the $29.95 annual fee applies with no offsetting activity",
+      "strengths": [
+        "Local receiving accounts in many countries avoid international wire fees on incoming payments",
+        "Batch payments to up to 1,000 recipients cover paying multiple contractors at once"
+      ],
+      "weaknesses": [
+        "No flat plan: currency conversion, card and receiving fees stack up and are hard to predict for irregular volume",
+        "An account receiving under $6,000 in 12 months is charged a $29.95 annual fee even without using paid features"
+      ]
+    }
+  },
+  {
+    "name": "PayPal",
+    "slug": "paypal",
+    "url_fr": "https://tooltrim.com/fr/tool/paypal",
+    "url_en": "https://tooltrim.com/en/tool/paypal",
+    "website": "https://paypal.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Compte personnel gratuit",
+      "paid": "Encaissement pro : 2,99% + 0,49$ par transaction domestique (+ 1,5% pour les paiements internationaux)"
+    },
+    "description_fr": "Paiements en ligne et transferts",
+    "description_en": "Online payments and transfers.",
+    "verdict_fr": {
+      "keep_if": "Vous vendez en ligne ou en personne et cherchez une solution de paiement établie",
+      "avoid_if": "Les frais de transaction vous semblent élevés (comparer avec Stripe, Razorpay)",
+      "strengths": [
+        "Reconnu mondialement, accepté par les clients partout",
+        "Protection intégrée vendeur/acheteur",
+        "Multi-devises et transactions internationales facilitées"
+      ],
+      "weaknesses": [
+        "Frais de transaction parmi les plus élevés du marché",
+        "Frais de litige et de contrepassation élevés",
+        "Interface parfois complexe pour les débutants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You sell online or in-person and need an established payment solution",
+      "avoid_if": "Transaction fees feel too high (compare with Stripe, Razorpay)",
+      "strengths": [
+        "Globally recognized and accepted everywhere",
+        "Built-in buyer and seller protection",
+        "Multi-currency and international transactions simplified"
+      ],
+      "weaknesses": [
+        "Transaction fees among the highest on the market",
+        "High dispute and chargeback fees",
+        "Interface sometimes complex for beginners"
+      ]
+    }
+  },
+  {
+    "name": "Pennylane",
+    "slug": "pennylane",
+    "url_fr": "https://tooltrim.com/fr/tool/pennylane",
+    "url_en": "https://tooltrim.com/en/tool/pennylane",
+    "website": "https://pennylane.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 15 jours.",
+      "paid": "Dès 7 €/mois, plan Starter."
+    },
+    "description_fr": "Pennylane est un logiciel de facturation et comptabilité pour un seul utilisateur, pensé pour les indépendants français, avec facturation électronique incluse partout.",
+    "description_en": "Pennylane is single-user accounting and invoicing software for French independents, with electronic invoicing compliance included on every plan.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Garde Pennylane si tu es indépendant en France et que tu veux une facturation et une comptabilité partagées en direct avec ton comptable",
+      "avoid_if": "Évite Pennylane si tu as besoin de plusieurs utilisateurs ou de plus de 1 200 factures par an : aucun forfait ne le couvre",
+      "strengths": [
+        "La conformité à la facturation électronique est incluse sur tous les forfaits, sans coût additionnel",
+        "L'accès partagé en temps réel permet au comptable de travailler sur les mêmes données que le dirigeant"
+      ],
+      "weaknesses": [
+        "Chaque forfait est limité à un seul utilisateur, ce qui ne convient pas à une équipe qui grandit",
+        "Le forfait Starter demande d'activer un compte Pennylane Pro séparé avant utilisation"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Keep it if you are a solo independent in France who wants invoicing and accounting shared live with your accountant",
+      "avoid_if": "Avoid it if you need more than one user or more than 1,200 invoices a year: no plan covers that",
+      "strengths": [
+        "Electronic invoicing compliance is included on every plan at no extra cost",
+        "Real-time shared access lets the accountant work from the same data as the business owner"
+      ],
+      "weaknesses": [
+        "Every plan is limited to a single user, so it does not fit a growing team",
+        "The Starter plan requires activating a separate Pennylane Pro account before use"
+      ]
+    }
+  },
+  {
+    "name": "Qonto",
+    "slug": "qonto",
+    "url_fr": "https://tooltrim.com/fr/tool/qonto",
+    "url_en": "https://tooltrim.com/en/tool/qonto",
+    "website": "https://qonto.com/fr",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 9 €/mois, plan Solo Basic."
+    },
+    "description_fr": "Qonto est un compte bancaire pro français avec IBAN, cartes, facturation et synchronisation comptable pour freelances et petites équipes.",
+    "description_en": "Qonto is a French business bank account with IBAN, cards, invoicing and accounting sync for freelancers and small teams.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu as besoin d'un compte pro français avec cartes et facturation ouvert rapidement, et ton volume de virements rentre dans le plafond d'un plan",
+      "avoid_if": "Tu as besoin d'un compte gratuit, ou ton volume mensuel de virements dépasse régulièrement les plafonds des plans",
+      "strengths": [
+        "Ouverture de compte rapide comparée à une banque traditionnelle, avec cartes et facturation disponibles rapidement",
+        "Les comptes secondaires avec IBAN dédié simplifient la séparation des budgets à partir de Solo Smart",
+        "Essai de 30 jours pour tester le compte avant de s'engager sur un plan payant"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit ; la facturation démarre à la fin de l'essai",
+        "Les plafonds mensuels de virements sur chaque plan obligent les entreprises à fort volume à monter en gamme"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You need a French business account with cards and invoicing open quickly, and your transfer volume fits a plan's cap",
+      "avoid_if": "You need a free account, or your monthly transfer volume regularly exceeds the plan caps",
+      "strengths": [
+        "Fast account opening compared to a traditional bank, with cards and invoicing ready quickly",
+        "Sub-accounts with dedicated IBANs make budget separation straightforward from Solo Smart upward",
+        "30-day trial to test the account before committing to a paid plan"
+      ],
+      "weaknesses": [
+        "No free plan; billing starts once the trial ends",
+        "Monthly transfer caps on every plan mean high-volume businesses need to upgrade tiers"
+      ]
+    }
+  },
+  {
+    "name": "Quadient",
+    "slug": "quadient",
+    "url_fr": "https://tooltrim.com/fr/tool/quadient",
+    "url_en": "https://tooltrim.com/en/tool/quadient",
+    "website": "https://quadient.com",
+    "category": "finance",
+    "pricing": {
+      "free": null,
+      "paid": "Aucun tarif publié : démo et devis uniquement."
+    },
+    "description_fr": "Solutions d’automatisation des comptes clients et fournisseurs.",
+    "description_en": "Accounts payable and accounts receivable automation solutions.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous traitez un volume élevé de factures fournisseurs (100+/mois)",
+      "avoid_if": "Votre volume de factures est faible",
+      "strengths": [
+        "Automatisation complète courrier physique + digital + AP",
+        "Intégrations robustes avec les plus grands ERP",
+        "Solution mature, utilisée par les grandes entreprises"
+      ],
+      "weaknesses": [
+        "Coûts initiaux et d'implémentation élevés",
+        "Nécessite une expertise interne pour configurer",
+        "Non adapté aux très petits volumes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You process a high volume of supplier invoices (100+/month)",
+      "avoid_if": "Your invoice volume is low (<50/month)",
+      "strengths": [
+        "Complete automation of physical mail + digital mail + AP",
+        "Robust integrations with major ERPs",
+        "Mature solution trusted by large enterprises"
+      ],
+      "weaknesses": [
+        "High initial and implementation costs",
+        "Requires internal expertise to configure",
+        "Not suited for very low volumes"
+      ]
+    }
+  },
+  {
+    "name": "QuickBooks",
+    "slug": "quickbooks",
+    "url_fr": "https://tooltrim.com/fr/tool/quickbooks",
+    "url_en": "https://tooltrim.com/en/tool/quickbooks",
+    "website": "https://quickbooks.intuit.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Plan gratuit : 1 user, 2 invoices/month, 1 bank connection, income/expense tracking and basic profit/loss reporting",
+      "paid": "Dès 38 $/mois, plan Simple Start."
+    },
+    "description_fr": "QuickBooks Online est le logiciel de comptabilité d'Intuit pour la facturation, le suivi des dépenses et le compte de résultat, avec des forfaits payants additionnels.",
+    "description_en": "QuickBooks Online is Intuit's cloud accounting software for invoicing, expense tracking and profit-and-loss reporting, with paid plans adding users, inventory and automation.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu factures régulièrement et tu veux comptabilité, facturation et rapprochement bancaire au même endroit",
+      "avoid_if": "Tu comptes rester sur le plan gratuit : 2 factures par mois ne suffisent pas pour une facturation active",
+      "strengths": [
+        "Facturation, rapprochement bancaire et compte de résultat réunis dans un seul abonnement",
+        "Évolue du Simple Start solo jusqu'à l'Advanced à 25 utilisateurs sans changer de logiciel"
+      ],
+      "weaknesses": [
+        "La limite de 2 factures par mois et l'absence d'accès mobile rendent le plan gratuit inutilisable pour une facturation freelance active",
+        "Plusieurs fonctions assistées par IA restent marquées bêta, avec une capacité limitée"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You invoice regularly and want bookkeeping, invoicing and bank reconciliation in one place",
+      "avoid_if": "You expect to stay on the free plan: 2 invoices a month is not enough for active billing",
+      "strengths": [
+        "Covers invoicing, bank reconciliation and profit-and-loss reporting in one subscription",
+        "Scales from solo Simple Start up to 25-user Advanced without switching software"
+      ],
+      "weaknesses": [
+        "The free plan's 2-invoice-a-month cap and missing mobile access make it unusable for active freelance billing",
+        "Several AI-assisted features are still marked beta, with limited capacity"
+      ]
+    }
+  },
+  {
+    "name": "Razorpay",
+    "slug": "razorpay",
+    "url_fr": "https://tooltrim.com/fr/tool/razorpay",
+    "url_en": "https://tooltrim.com/en/tool/razorpay",
+    "website": "https://razorpay.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "2 % par transaction réussie (plus 18 % de GST sur ces frais), sans frais d'installation ni de maintenance annuelle."
+    },
+    "description_fr": "Passerelle de paiement et services financiers pour entreprises en Inde.",
+    "description_en": "Payment gateway and financial services for businesses in India.",
+    "verdict_fr": {
+      "keep_if": "Vous opérez en Inde ou acceptez des paiements indiens",
+      "avoid_if": "Vous êtes basé en Europe (disponibilité limitée)",
+      "strengths": [
+        "Frais de transaction parmi les plus bas du marché",
+        "Zéro frais d'inscription ni frais annuels",
+        "Support riche de moyens de paiement (100+)"
+      ],
+      "weaknesses": [
+        "Disponibilité limitée hors Inde et marchés spécifiques",
+        "Support client limité en dehors de l'anglais/hindi",
+        "Documentati technique moins riche que Stripe"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You operate in India or accept Indian payments",
+      "avoid_if": "You are based in Europe (limited availability)",
+      "strengths": [
+        "Among the lowest transaction fees on the market",
+        "Zero signup or annual fees",
+        "Rich payment method support (100+)"
+      ],
+      "weaknesses": [
+        "Limited availability outside India",
+        "Customer support limited outside English/Hindi",
+        "Technical documentation less rich than Stripe"
+      ]
+    }
+  },
+  {
+    "name": "RevenueCat",
+    "slug": "revenuecat",
+    "url_fr": "https://tooltrim.com/fr/tool/revenuecat",
+    "url_en": "https://tooltrim.com/en/tool/revenuecat",
+    "website": "https://www.revenuecat.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Plan gratuit : Gratuit jusqu'à 2 500 $ de revenu mensuel suivi (MTR).",
+      "paid": "Dès 0 $/mois, plan Free (under $2,500 MTR)."
+    },
+    "description_fr": "Unifie la gestion des achats intégrés et des abonnements sur iOS, Android et web avec un backend, un éditeur de paywall et des tests A/B.",
+    "description_en": "Unifies in-app purchase and subscription management across iOS, Android and web with one backend, a paywall editor and A/B testing.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu construis une application mobile avec des achats intégrés et tu veux une gestion d'abonnement unifiée entre plateformes sans la construire toi-même",
+      "avoid_if": "Tu as besoin d'un coût fixe totalement prévisible, car le 1 % de revenu suivi du plan Pro évolue avec le succès de l'application",
+      "strengths": [
+        "Gratuit jusqu'à 2 500 $ de revenu mensuel suivi, avec toutes les fonctionnalités incluses à ce stade",
+        "Un seul backend et une seule API remplacent un travail d'intégration des achats intégrés séparé sur chaque plateforme"
+      ],
+      "weaknesses": [
+        "Le coût est un pourcentage du revenu plutôt qu'un tarif fixe, donc il augmente automatiquement à mesure que l'application réussit",
+        "Aucun plan fixe par siège ou par application n'existe pour les équipes qui veulent un coût fixe prévisible"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You're building a mobile app with in-app purchases and want unified subscription management across platforms without building it yourself",
+      "avoid_if": "You need a fully predictable flat cost, since the Pro plan's 1% of tracked revenue scales with the app's success",
+      "strengths": [
+        "Free until $2,500 monthly tracked revenue, with all features included at that stage",
+        "Single backend and API replace separate IAP integration work on each platform"
+      ],
+      "weaknesses": [
+        "Cost is a percentage of revenue rather than a flat fee, so it grows automatically as the app succeeds",
+        "No flat per-seat or per-app plan exists for teams wanting a predictable fixed cost"
+      ]
+    }
+  },
+  {
+    "name": "Rewardful",
+    "slug": "rewardful",
+    "url_fr": "https://tooltrim.com/fr/tool/rewardful",
+    "url_en": "https://tooltrim.com/en/tool/rewardful",
+    "website": "https://rewardful.com",
+    "category": "finance",
+    "pricing": "À partir de ~49$/mois selon le volume de revenus suivis.",
+    "description_fr": "Logiciel de gestion d'affiliation pour SaaS, intégré à Stripe.",
+    "description_en": "Affiliate management software for SaaS, integrated with Stripe.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous lancez un programme d'affiliation pour votre SaaS/produit",
+      "avoid_if": "Vous avez peu ou pas d'affiliés (< 5)",
+      "strengths": [
+        "Automatisation complète du calcul et versement des commissions",
+        "Portail affilié auto-service (pas de support manuel)",
+        "Ajustement auto des commissions (refund, downgrade, cancellation)"
+      ],
+      "weaknesses": [
+        "Prix dépend du revenu généré : facture peut monter rapidement",
+        "Nécessite volume d'affiliés pour être rentable",
+        "Moins de flexibilité qu'une solution custom"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're launching an affiliate program for your SaaS/product",
+      "avoid_if": "You have few or no affiliates (< 5)",
+      "strengths": [
+        "Complete automation of commission calculation and payouts",
+        "Self-service affiliate portal (no manual support)",
+        "Automatic adjustment for refunds, downgrades, cancellations"
+      ],
+      "weaknesses": [
+        "Pricing depends on revenue generated: bill can climb fast",
+        "Requires affiliate volume to be worthwhile",
+        "Less flexibility than a custom solution"
+      ]
+    }
+  },
+  {
+    "name": "Rydoo",
+    "slug": "rydoo",
+    "url_fr": "https://tooltrim.com/fr/tool/rydoo",
+    "url_en": "https://tooltrim.com/en/tool/rydoo",
+    "website": "https://www.rydoo.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 8 €/mois, plan Essentials."
+    },
+    "description_fr": "Rydoo numérise les reçus et automatise l'approbation des notes de frais pour des équipes dans plusieurs pays, vendu par blocs de 5 postes minimum.",
+    "description_en": "Rydoo scans receipts and automates expense approval for teams across multiple countries, with plans sold in blocks of at least 5 seats.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Garde Rydoo si tu gères les notes de frais d'une équipe d'au moins 5 personnes dans plusieurs pays",
+      "avoid_if": "Évite Rydoo si tu es indépendant seul : aucun forfait n'est pensé pour un seul poste",
+      "strengths": [
+        "L'OCR des reçus et le suivi kilométrique suppriment la saisie manuelle des notes de frais",
+        "Les règles de conformité s'adaptent par pays, utile pour des équipes présentes dans plusieurs marchés"
+      ],
+      "weaknesses": [
+        "Les forfaits Essentials et Pro ne peuvent pas être achetés pour moins de 5 utilisateurs",
+        "L'accès API et l'export SFTP demandent le forfait Business, sur devis"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "Keep it if you manage expense reports for a team of 5 people or more across different countries",
+      "avoid_if": "Avoid it if you are a solo freelancer: no plan fits a single seat",
+      "strengths": [
+        "Receipt OCR and mileage tracking remove manual data entry from expense reports",
+        "Compliance rules adapt per country, useful for teams operating in several markets"
+      ],
+      "weaknesses": [
+        "Essentials and Pro plans cannot be bought for fewer than 5 users",
+        "API access and SFTP export require the quote-based Business plan"
+      ]
+    }
+  },
+  {
+    "name": "Sage Paie",
+    "slug": "sage-paie",
+    "url_fr": "https://tooltrim.com/fr/tool/sage-paie",
+    "url_en": "https://tooltrim.com/en/tool/sage-paie",
+    "category": "finance",
+    "pricing": {
+      "free": "Aucun plan gratuit",
+      "paid": "À partir de 40€/mois"
+    },
+    "description_fr": "Solution de paie complète pour PME.",
+    "description_en": "Complete payroll solution for SMEs.",
+    "verdict_fr": {
+      "keep_if": "Vous avez une équipe en France (1+ salariés)",
+      "avoid_if": "Vous avez zéro salariés (travailleur indépendant seul)",
+      "strengths": [
+        "Solution entièrement conforme à la réglementation française (DSN, URSSAF, retraite)",
+        "Automatisation complète des salaires et cotisations",
+        "Intégrations natives avec Sage Comptabilité"
+      ],
+      "weaknesses": [
+        "Ticket d'entrée minimum, sensible pour de très petites équipes",
+        "Moins flexible que PAIE unique ou Silae pour besoins custom",
+        "Interface moins moderne que solutions nativement cloud"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have employees in France (1+)",
+      "avoid_if": "You have no salaried employees (freelancer only)",
+      "strengths": [
+        "Fully compliant with French regulations (DSN, URSSAF)",
+        "Complete payroll and contribution automation",
+        "Native integration with Sage Accounting"
+      ],
+      "weaknesses": [
+        "Minimum entry cost, noticeable for very small teams",
+        "Less flexible than PAIE unique or Silae for custom needs",
+        "Interface less modern than natively cloud solutions"
+      ]
+    }
+  },
+  {
+    "name": "SamCart",
+    "slug": "samcart",
+    "url_fr": "https://tooltrim.com/fr/tool/samcart",
+    "url_en": "https://tooltrim.com/en/tool/samcart",
+    "website": "https://www.samcart.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 71,25 $/mois, plan Core."
+    },
+    "description_fr": "SamCart propose des pages de paiement hébergées, optimisées pour la conversion, pour produits numériques, formations et abonnements, avec IA intégrée et essai de 7 jours.",
+    "description_en": "SamCart provides hosted, conversion-focused checkout pages for digital products, courses and subscriptions, with built-in AI optimization tools and a 7-day trial.",
+    "alternatives": [
+      "Gumroad"
+    ],
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Vous vendez des formations, ebooks, ou produits numériques",
+      "avoid_if": "Vous vendez des produits physiques (meilleur avec Shopify)",
+      "strengths": [
+        "Checkout ultra-optimisé pour conversion (1-page, upsells, bumps)",
+        "SamPay sans frais plateforme (contrairement à 2025)",
+        "Courses App pour héberger formations intégrées"
+      ],
+      "weaknesses": [
+        "Tarification Pro nécessaire pour upsells/A-B testing",
+        "Moins de contrôle sur branding que Shopify",
+        "Écosystème plus petit que Shopify/Gumroad"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You sell courses, ebooks, or digital products",
+      "avoid_if": "You sell physical products (better with Shopify)",
+      "strengths": [
+        "Ultra-optimized checkout for conversion (1-page, upsells, bumps)",
+        "SamPay with zero platform fees (unlike 2025)",
+        "Courses App to host integrated training"
+      ],
+      "weaknesses": [
+        "Pro plan needed for upsells/A-B testing",
+        "Less branding control than Shopify",
+        "Smaller ecosystem than Shopify/Gumroad"
+      ]
+    }
+  },
+  {
+    "name": "Sami",
+    "slug": "sami",
+    "url_fr": "https://tooltrim.com/fr/tool/sami",
+    "url_en": "https://tooltrim.com/en/tool/sami",
+    "website": "https://sami.eco",
+    "category": "finance",
+    "pricing": {
+      "free": "",
+      "paid": "Sur devis, ~900€/an minimum jusqu'à 10 000€/an selon taille et secteur"
+    },
+    "description_fr": "Plateforme française de décarbonation et reporting ESG, sur devis (~75-800€/mois selon taille).",
+    "description_en": "French decarbonization and ESG reporting platform, quote-based (~€75-800/month depending on size).",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Vous êtes une PME/ETI avec obligation CSRD (200-750 emp.)",
+      "avoid_if": "Vous êtes très petite entreprise (<50 emp.) sans obligation CSRD",
+      "strengths": [
+        "Solution française, réputée (#1 en France)",
+        "Conformité CSRD/ISSB automatisée",
+        "Collecte collaborative de données simple"
+      ],
+      "weaknesses": [
+        "Tarification opaque : nécessite demande commercial",
+        "Peut être surdimensionné pour très petites entreprises",
+        "Support français peut être limité par intégration SGS"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a SME/mid-market with CSRD obligations (200–750 emp)",
+      "avoid_if": "You're very small (<50 emp) with no CSRD requirement",
+      "strengths": [
+        "French solution, #1 in France",
+        "CSRD/ISSB compliance automated",
+        "Simple collaborative data collection"
+      ],
+      "weaknesses": [
+        "Pricing opaque: requires sales inquiry",
+        "May be oversized for very small enterprises",
+        "French support may be limited by SGS integration"
+      ]
+    }
+  },
+  {
+    "name": "SellersFi",
+    "slug": "sellersfi",
+    "url_fr": "https://tooltrim.com/fr/tool/sellersfi",
+    "url_en": "https://tooltrim.com/en/tool/sellersfi",
+    "website": "https://sellersfi.com",
+    "category": "finance",
+    "pricing": {
+      "free": null,
+      "paid": "Financement pour vendeurs e-commerce, taux communiqués après demande ; aucun barème publié."
+    },
+    "description_fr": "Fintech pour commerçants e-commerce (financement).",
+    "description_en": "Fintech for e-commerce merchants (funding).",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous vendez sur Amazon ou Shopify et besoin capital de travail",
+      "avoid_if": "Vous n'avez pas d'historique de ventes (< 3 mois)",
+      "strengths": [
+        "Financement sans collateral ni garantie personnelle",
+        "Remboursement flexible (scalé sur revenu)",
+        "Approbation très rapide (24-48h)"
+      ],
+      "weaknesses": [
+        "Remboursement en % du revenu peut coûter cher si ventes explosent",
+        "Nécessite 6+ mois d'historique de ventes",
+        "Taux de remboursement non transparent à l'avance"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You sell on Amazon or Shopify and need working capital",
+      "avoid_if": "You have no sales history (< 3 months)",
+      "strengths": [
+        "Collateral-free and guarantee-free financing",
+        "Flexible repayment (scaled to revenue)",
+        "Very fast approval (24–48h)"
+      ],
+      "weaknesses": [
+        "Repayment % of revenue can become expensive if sales explode",
+        "Requires 6+ months sales history",
+        "Repayment rate not transparent upfront"
+      ]
+    }
+  },
+  {
+    "name": "Shine",
+    "slug": "shine",
+    "url_fr": "https://tooltrim.com/fr/tool/shine",
+    "url_en": "https://tooltrim.com/en/tool/shine",
+    "website": "https://www.shine.fr",
+    "category": "finance",
+    "pricing": {
+      "free": "Plan gratuit : 1 compte IBAN, 5 virements SEPA gratuits/mois (puis 0,40 € chacun), 1 Mastercard basique, cartes virtuelles optionnelles à 2 €/mois chacune",
+      "paid": "Dès 9 €/mois, plan Start."
+    },
+    "description_fr": "Shine est un compte bancaire professionnel français pour indépendants avec facturation gratuite, du plan gratuit à 60 €/mois pour une équipe complète.",
+    "description_en": "Shine is a French business bank account for freelancers with free invoicing, from a free plan to €60/month for a full team plan.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu es indépendant en France et tu veux un IBAN professionnel avec facturation et suivi des dépenses intégrés, à partir du plan gratuit ou d'un plan payant abordable",
+      "avoid_if": "Tu as besoin d'un prix annuel confirmé et cohérent avant de t'engager, car les montants annuels du dossier n'ont pas pu être vérifiés face au tarif mensuel",
+      "strengths": [
+        "Le plan gratuit est un vrai compte IBAN avec facturation, pas seulement un essai d'un compte payant",
+        "Les sous-comptes et le tableau de bord de suivi des paiements sont inclus dès le premier plan payant plutôt que vendus séparément"
+      ],
+      "weaknesses": [
+        "Les virements SEPA du plan gratuit sont limités à 5 par mois avant l'application de frais par virement",
+        "Les cartes premium et plusieurs sous-comptes nécessitent de passer au plan Plus ou Business"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You are a freelancer in France who wants a business IBAN with built-in invoicing and expense tracking, from a free or low-cost paid plan",
+      "avoid_if": "You need a confirmed, reconciled annual price before committing, since the dossier's annual figures could not be verified against the monthly rate",
+      "strengths": [
+        "The free plan is a real IBAN account with invoicing, not just a trial of a paid account",
+        "Sub-accounts and a payment-tracking dashboard are included from the entry paid plan rather than sold separately"
+      ],
+      "weaknesses": [
+        "Free-plan SEPA transfers are capped at 5 a month before a per-transfer fee kicks in",
+        "Premium cards and multiple sub-accounts require moving up to the Plus or Business plan"
+      ]
+    }
+  },
+  {
+    "name": "Shopify Payments",
+    "slug": "shopify-payments",
+    "url_fr": "https://tooltrim.com/fr/tool/shopify-payments",
+    "url_en": "https://tooltrim.com/en/tool/shopify-payments",
+    "website": "https://www.shopify.com/payments",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Plan Basic (online card rate) sur devis."
+    },
+    "description_fr": "Shopify Payments traite les cartes et portefeuilles directement dans une boutique Shopify, à un taux fixé par le forfait d'abonnement de la boutique.",
+    "description_en": "Shopify Payments processes cards and wallets directly inside a Shopify store, at a rate set by the store's subscription plan.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu exploites déjà une boutique Shopify et tu veux encaisser les paiements sans gérer de compte de passerelle séparé",
+      "avoid_if": "Tu vends hors de Shopify, ou tu as besoin d'un prestataire de paiement utilisable indépendamment de toute plateforme e-commerce",
+      "strengths": [
+        "Supprime les frais de passerelle tiers qui s'ajouteraient sinon au taux de traitement des cartes",
+        "S'active directement dans le paiement Shopify existant, sans compte de passerelle séparé à créer"
+      ],
+      "weaknesses": [
+        "Ne fonctionne que pour les marchands qui exploitent déjà une boutique Shopify ; inutilisable comme prestataire autonome",
+        "Le taux de transaction est fixé par le forfait Shopify, non négociable indépendamment sur les forfaits d'entrée"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You already run a Shopify store and want card payments without managing a separate gateway account",
+      "avoid_if": "You sell outside Shopify, or you need a payment processor you can use independently of any one e-commerce platform",
+      "strengths": [
+        "Removes the separate third-party gateway fee that would otherwise stack on top of the card processing rate",
+        "Activates inside the existing Shopify checkout, with no separate gateway account to set up"
+      ],
+      "weaknesses": [
+        "Only works for merchants already running a Shopify store; it cannot be used as a standalone processor",
+        "The transaction rate is set by the Shopify plan tier, not independently negotiable at the entry plans"
+      ]
+    }
+  },
+  {
+    "name": "Silae",
+    "slug": "silae",
+    "url_fr": "https://tooltrim.com/fr/tool/silae",
+    "url_en": "https://tooltrim.com/en/tool/silae",
+    "website": "https://www.silae.fr",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Logiciel de paie et RH français couvrant les déclarations DSN et plus de 900 conventions collectives, vendu uniquement via des partenaires.",
+    "description_en": "French payroll and HR software covering DSN declarations and 900+ collective agreements, sold through partners only.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Tu gères la paie via un cabinet comptable ou un intégrateur qui propose déjà Silae et as besoin d'une large couverture des conventions collectives françaises",
+      "avoid_if": "Tu veux t'inscrire et voir les tarifs directement en tant que freelance ou petite équipe, sans passer par un partenaire",
+      "strengths": [
+        "Couvre plus de 900 conventions collectives, une base de conformité large pour la paie française",
+        "Les modules RH/SIRH regroupent suivi du temps, congés et télétravail aux côtés de la paie"
+      ],
+      "weaknesses": [
+        "Pas de tarification publique ni d'inscription directe ; l'accès passe par un cabinet comptable ou un intégrateur partenaire",
+        "Pas utilisable par un freelance seul sans passer d'abord par un partenaire"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "You run payroll through an accounting firm or integrator that already offers Silae and need broad French collective-agreement coverage",
+      "avoid_if": "You want to sign up and see pricing directly as an individual freelancer or small team, without going through a partner",
+      "strengths": [
+        "Covers 900+ collective agreements, a broad compliance base for French payroll",
+        "HR/SIRH modules bundle time tracking, leave and telework management alongside payroll"
+      ],
+      "weaknesses": [
+        "No public pricing and no direct signup; access goes through an accounting firm or integrator partner",
+        "Not usable by a solo freelancer without going through a partner first"
+      ]
+    }
+  },
+  {
+    "name": "Soldo",
+    "slug": "soldo",
+    "url_fr": "https://tooltrim.com/fr/tool/soldo",
+    "url_en": "https://tooltrim.com/en/tool/soldo",
+    "website": "https://www.soldo.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 27 £/mois, plan Standard."
+    },
+    "description_fr": "Soldo distribue des cartes prépayées pro avec plafonds par carte, budgets multi-portefeuilles et capture de justificatifs pour gérer les dépenses d'une petite équipe.",
+    "description_en": "Soldo issues prepaid company cards with per-card spending limits, multi-wallet budgets, and receipt capture for small business expense management.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Garde Soldo si tu dois distribuer des cartes pro à quelques personnes avec des plafonds par carte et une capture automatique des justificatifs",
+      "avoid_if": "Évite-le si ton équipe dépasse 3 porteurs de carte avec un budget serré, car le plan Plus ou l'Unlimited sur devis font vite grimper la facture",
+      "strengths": [
+        "Les plafonds par carte et les règles de catégorie limitent les abus sans note de frais manuelle",
+        "La capture des justificatifs et les budgets par portefeuille donnent une vue en temps réel des dépenses de l'équipe"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit permanent, seulement un essai de 30 jours avant la facturation",
+        "Le plan Standard d'entrée plafonne assez bas les virements et les utilisateurs (3 utilisateurs, 20 virements par mois)"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "Keep Soldo if you need to hand out company cards to a few people with per-card limits and automatic receipt capture",
+      "avoid_if": "Avoid it if your team is past 3 cardholders on a tight budget, since Plus or the on-quote Unlimited plan quickly add to the base price",
+      "strengths": [
+        "Per-card spending limits and category rules reduce misuse without manual expense reports",
+        "Receipt capture and wallet budgets give a live view of team spend"
+      ],
+      "weaknesses": [
+        "No permanent free plan, only a 30-day trial before billing starts",
+        "The entry Standard plan caps transfers and users at a low ceiling (3 users, 20 transfers a month)"
+      ]
+    }
+  },
+  {
+    "name": "Spendesk",
+    "slug": "spendesk",
+    "url_fr": "https://tooltrim.com/fr/tool/spendesk",
+    "url_en": "https://tooltrim.com/en/tool/spendesk",
+    "website": "https://www.spendesk.com/pricing/",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
+    },
+    "description_fr": "Plateforme d'émission de cartes d'entreprise et de gestion des dépenses avec capture OCR des reçus, tarifée sur devis.",
+    "description_en": "Corporate card issuance and expense management platform with OCR receipt capture, priced on a custom quote.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu gères les dépenses d'une entreprise ou de plusieurs entités et tu as besoin de cartes d'entreprise avec contrôle des dépenses intégré et intégrations comptables",
+      "avoid_if": "Tu as besoin d'un prix fixe et comparable avant d'échanger avec un commercial, car Spendesk ne publie aucun montant",
+      "strengths": [
+        "Cartes et utilisateurs illimités inclus dans l'offre de base Foundations",
+        "La capture OCR des reçus et la gestion multi-entités sont intégrées, pas des options séparées"
+      ],
+      "weaknesses": [
+        "Aucun tarif public ; chaque devis nécessite un échange commercial avant de pouvoir comparer le coût",
+        "Les modules avancés comme les Achats et la détection de fraude par IA sont des options payantes en plus de l'offre de base"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You manage spend across a company or multiple entities and need corporate cards with built-in expense control and accounting integrations",
+      "avoid_if": "You need a fixed, comparable price before talking to sales, since Spendesk publishes no plan amounts",
+      "strengths": [
+        "Unlimited cards and users included in the base Foundations package",
+        "OCR receipt capture and multi-entity management are built in, not separate add-ons"
+      ],
+      "weaknesses": [
+        "No public pricing; every quote requires a sales conversation before comparing cost",
+        "Advanced modules like Procurement and AI fraud detection are paid add-ons on top of the base package"
+      ]
+    }
+  },
+  {
+    "name": "Stan Store",
+    "slug": "stan-store",
+    "url_fr": "https://tooltrim.com/fr/tool/stan-store",
+    "url_en": "https://tooltrim.com/en/tool/stan-store",
+    "website": "https://stan.store",
+    "category": "finance",
+    "pricing": "À partir de ~29$/mois (pas de plan gratuit permanent, essai disponible).",
+    "description_fr": "Boutique \"link in bio\" pour vendre des produits digitaux, coaching ou formations directement depuis les réseaux sociaux.",
+    "description_en": "\"Link in bio\" store to sell digital products, coaching, or courses directly from social media.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous vendez formations, ebooks ou produits numériques",
+      "avoid_if": "Vous vendez produits physiques",
+      "strengths": [
+        "Aucun frais de plateforme : seuls les frais Stripe s'appliquent",
+        "Link-in-bio natif pour créateurs (TikTok/Instagram)",
+        "Course builder intégré sans coût extra"
+      ],
+      "weaknesses": [
+        "Moins de contrôle branding vs Shopify",
+        "Stan badge sur store (Creator plan seulement)",
+        "Écosystème plus petit que Shopify"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You sell courses, ebooks, or digital products",
+      "avoid_if": "You sell physical products",
+      "strengths": [
+        "No platform fees: only Stripe's fees apply",
+        "Native link-in-bio for creators (TikTok/Instagram)",
+        "Built-in course builder no extra cost"
+      ],
+      "weaknesses": [
+        "Less branding control vs Shopify",
+        "Stan badge on store (Creator plan only)",
+        "Smaller ecosystem than Shopify"
+      ]
+    }
+  },
+  {
+    "name": "Stripe",
+    "slug": "stripe",
+    "url_fr": "https://tooltrim.com/fr/tool/stripe",
+    "url_en": "https://tooltrim.com/en/tool/stripe",
+    "website": "https://stripe.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas d'abonnement",
+      "paid": "Commission par transaction (1.5% + 0.25€ en UE)"
+    },
+    "description_fr": "L'infrastructure de paiement d'internet.",
+    "description_en": "The payment infrastructure for the internet.",
+    "alternatives": [
+      "stripe"
+    ],
+    "price_verified_on": "2026-03-13",
+    "verdict_fr": {
+      "keep_if": "Vous avez une app/site web et besoin paiement intégré",
+      "avoid_if": "Vous voulez les frais absolument les plus bas (Razorpay moins cher)",
+      "strengths": [
+        "API la plus flexible et robuste du marché",
+        "Support 135+ pays et 135+ devises",
+        "Documentation et support développeur excellents"
+      ],
+      "weaknesses": [
+        "Frais légèrement plus hauts que alternatives (Razorpay, Adyen)",
+        "Cartes internationales : frais supplémentaires",
+        "Pas de solution \"clé-en-main\" (besoin intégration)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have a web/mobile app needing payment integration",
+      "avoid_if": "You want absolutely lowest fees (Razorpay cheaper)",
+      "strengths": [
+        "Most flexible and robust API on market",
+        "Support 135+ countries and 135+ currencies",
+        "Excellent developer documentation and support"
+      ],
+      "weaknesses": [
+        "Fees slightly higher than alternatives (Razorpay, Adyen)",
+        "International cards: additional fees",
+        "No 'turnkey' solution (requires integration)"
+      ]
+    }
+  },
+  {
+    "name": "Sweep",
+    "slug": "sweep",
+    "url_fr": "https://tooltrim.com/fr/tool/sweep",
+    "url_en": "https://tooltrim.com/en/tool/sweep",
+    "website": "https://sweep.net",
+    "category": "finance",
+    "pricing": {
+      "free": "",
+      "paid": "À partir de ~250$/mois (fonctionnalités limitées), niveaux supérieurs sur devis"
+    },
+    "description_fr": "Plateforme de gestion carbone et ESG orientée mid-market, à partir de ~250$/mois.",
+    "description_en": "Carbon and ESG management platform for the mid-market, from ~$250/month.",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez automatisation complète paiements + dépenses",
+      "avoid_if": "Vous avez structure très simple (< 5 pers)",
+      "strengths": [
+        "Suite paiements + dépenses intégrée",
+        "Automatisation complète workflow trésorerie",
+        "Dashboard temps réel (cash visibility)"
+      ],
+      "weaknesses": [
+        "Tarif de base élevé pour de petites structures",
+        "Moins flexible que solution à la carte",
+        "Documentation utilisateur limitée"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need complete payment + expense automation",
+      "avoid_if": "You have very simple structure (< 5 people)",
+      "strengths": [
+        "Integrated payments + expense suite",
+        "Complete cash workflow automation",
+        "Real-time dashboard (cash visibility)"
+      ],
+      "weaknesses": [
+        "High base cost for small organisations",
+        "Less flexible than à la carte solutions",
+        "Limited user documentation"
+      ]
+    }
+  },
+  {
+    "name": "Tiime",
+    "slug": "tiime",
+    "url_fr": "https://tooltrim.com/fr/tool/tiime",
+    "url_en": "https://tooltrim.com/en/tool/tiime",
+    "website": "https://tiime.fr",
+    "category": "finance",
+    "description_fr": "Comptabilité automatisée pour indépendants",
+    "description_en": "Automated accounting for independents.",
+    "verdict_fr": {
+      "keep_if": "Vous êtes indépendant ou micro-entrepreneur en France",
+      "avoid_if": "Vous n'exercez pas en France (contexte réglementaire spécifique)",
+      "strengths": [
+        "Offre gratuite réellement utilisable",
+        "Facturation électronique incluse sans surcoût",
+        "Compte professionnel intégré"
+      ],
+      "weaknesses": [
+        "Pertinent surtout en France",
+        "Comptabilité avancée limitée pour les structures complexes",
+        "Fonctions étendues réservées aux offres payantes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a freelancer or micro-entrepreneur in France",
+      "avoid_if": "You don't operate in France (specific regulatory context)",
+      "strengths": [
+        "Genuinely usable free tier",
+        "E-invoicing included at no extra cost",
+        "Built-in business account"
+      ],
+      "weaknesses": [
+        "Mostly relevant in France",
+        "Limited advanced accounting for complex structures",
+        "Extended features reserved for paid plans"
+      ]
+    }
+  },
+  {
+    "name": "Wave",
+    "slug": "wave",
+    "url_fr": "https://tooltrim.com/fr/tool/wave",
+    "url_en": "https://tooltrim.com/en/tool/wave",
+    "website": "https://waveapps.com",
+    "category": "finance",
+    "pricing": "Starter : 0 $. Pro : 19 $ US/mois ou 190 $ US/an par entreprise. Au Canada : 25 $ CA/mois ou 250 $ CA/an. Paiements et modules complémentaires facturés séparément.",
+    "description_fr": "Comptabilité, facturation et paiements pour petites entreprises aux États-Unis et au Canada.",
+    "description_en": "Accounting, invoicing, and payments for small businesses in the US and Canada.",
+    "price_verified_on": "2026-08-28",
+    "verdict_fr": {
+      "keep_if": "Votre entreprise est située aux États-Unis ou au Canada",
+      "avoid_if": "Votre entreprise est basée en France ou ailleurs en Europe",
+      "strengths": [
+        "Plan Starter gratuit pour la comptabilité et la facturation de base",
+        "Factures, estimations et écritures comptables illimitées",
+        "Simple et intuitif pour débutants"
+      ],
+      "weaknesses": [
+        "Nouvelles inscriptions limitées aux États-Unis et au Canada",
+        "Connexions bancaires automatiques réservées au plan Pro",
+        "Frais additionnels pour les paiements, la paie et certains modules"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your business is located in the United States or Canada",
+      "avoid_if": "Your business is based outside the United States or Canada",
+      "strengths": [
+        "Free Starter plan for core accounting and invoicing",
+        "Unlimited invoices, estimates, and bookkeeping records",
+        "Simple and intuitive for beginners"
+      ],
+      "weaknesses": [
+        "New accounts are limited to the United States and Canada",
+        "Automatic bank connections require Pro",
+        "Payments, payroll, and some add-ons carry extra fees"
+      ]
+    }
+  },
+  {
+    "name": "Workday",
+    "slug": "workday",
+    "url_fr": "https://tooltrim.com/fr/tool/workday",
+    "url_en": "https://tooltrim.com/en/tool/workday",
+    "website": "https://www.workday.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Aucun plan gratuit",
+      "paid": "Sur devis (à partir de 99$/utilisateur/mois)"
+    },
+    "description_fr": "HCM et finance cloud pour grandes entreprises.",
+    "description_en": "Cloud HCM and finance for large enterprises.",
+    "verdict_fr": {
+      "keep_if": "Vous êtes grande entreprise (1000+ employés)",
+      "avoid_if": "Vous êtes PME/ETI (oversize et trop cher)",
+      "strengths": [
+        "Suite HCM/ERP unifiée cloud (rare)",
+        "Conforme réglementations mondiales (GDPR, etc.)",
+        "Analytics et insights IA intégrés"
+      ],
+      "weaknesses": [
+        "Tarification opaque et très élevée",
+        "Coûts implémentation énormes (= frais logiciel/an)",
+        "Temps déploiement très long (6-12 mois+)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a large enterprise (1000+ employees)",
+      "avoid_if": "You're a SME/mid-market (oversized, too expensive)",
+      "strengths": [
+        "Unified cloud HCM/ERP suite (rare)",
+        "Compliant with global regulations (GDPR, etc.)",
+        "Integrated AI analytics and insights"
+      ],
+      "weaknesses": [
+        "Opaque and very high pricing",
+        "Huge implementation costs (= annual software fees)",
+        "Very long deployment (6–12 months+)"
+      ]
+    }
+  },
+  {
+    "name": "Xero",
+    "slug": "xero",
+    "url_fr": "https://tooltrim.com/fr/tool/xero",
+    "url_en": "https://tooltrim.com/en/tool/xero",
+    "website": "https://xero.com",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 25 $/mois, plan Early."
+    },
+    "description_fr": "Logiciel de comptabilité en ligne pour la facturation, le rapprochement bancaire et la tenue de livres, avec un essai de 30 jours, sans plan gratuit.",
+    "description_en": "Cloud accounting software for invoicing, bank reconciliation and bookkeeping, with a 30-day trial and no free plan.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "2.8/5",
+      "label": "Correct",
+      "keep_if": "Tu veux un seul outil cloud pour la facturation, le rapprochement et la tenue de livres, et tu peux démarrer sur le forfait Early à 25 $/mois",
+      "avoid_if": "Tu as besoin de connaître les limites exactes de factures ou d'utilisateurs par forfait avant de t'engager ; elles ne sont pas publiées",
+      "strengths": [
+        "L'essai gratuit de 30 jours permet de tester la facturation et le rapprochement avant de payer",
+        "Une seule plateforme couvre la facturation, le rapprochement bancaire et la tenue de livres, sans outils séparés"
+      ],
+      "weaknesses": [
+        "Les limites de fonctionnalités par forfait (factures, utilisateurs, comptes bancaires) ne sont pas publiées, ce qui rend difficile de savoir ce que chaque forfait plafonne réellement",
+        "La facturation aux États-Unis est mensuelle uniquement, sans réduction annuelle actuellement proposée, et les prix doivent augmenter le 1er octobre 2026"
+      ]
+    },
+    "verdict_en": {
+      "score": "2.8/5",
+      "label": "Fair",
+      "keep_if": "You want a single cloud tool for invoicing, reconciliation and bookkeeping and can start on the $25/month Early plan",
+      "avoid_if": "You need to know exact per-plan invoice or user limits before committing; they aren't published",
+      "strengths": [
+        "30-day free trial lets you test invoicing and reconciliation before paying",
+        "Single platform covers invoicing, bank reconciliation and bookkeeping without separate tools"
+      ],
+      "weaknesses": [
+        "Per-plan feature limits (invoices, users, bank accounts) aren't published, so it's hard to know what each tier actually caps",
+        "US billing is monthly only, with no annual discount currently offered there, and prices are set to rise on October 1, 2026"
+      ]
+    }
+  },
+  {
+    "name": "Klark",
+    "slug": "klark",
+    "url_fr": "https://tooltrim.com/fr/tool/klark",
+    "url_en": "https://tooltrim.com/en/tool/klark",
+    "website": "https://klark.app/",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent (freemium annoncé, non livré) ; essai 7 jours sans carte",
+      "paid": "Facturation : 9,99 €HT/mois (offre de lancement, 100 premiers clients, puis 24,99 €HT/mois) ; Premium : 49,99 €/mois ou 41,58 €HT/mois en annuel (499 €/an)"
+    },
+    "description_fr": "Compte pro, facturation, CRM et e-commerce réunis dans un seul tableau de bord pour indépendants et TPE.",
+    "description_en": "Business account, invoicing, CRM and e-commerce in one dashboard for freelancers and small businesses.",
+    "price_verified_on": "2026-09-03",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu es freelance, artisan ou e-commerçant et veux un seul tableau de bord pour ta banque, tes ventes et tes clients",
+      "avoid_if": "Tu as besoin d'un compte pro et d'une facturation stables dès aujourd'hui, sans risque de changement de prix",
+      "strengths": [
+        "Tableau de bord unique pour banque, ventes, clients et facturation",
+        "Facturation électronique conforme à la réforme 2026 incluse dès l'offre d'entrée",
+        "Pilotage en langage naturel via Claude, ChatGPT, Mistral, Grok ou Perplexity (MCP)"
+      ],
+      "weaknesses": [
+        "Produit en accès anticipé : plan freemium annoncé mais pas encore livré",
+        "Prix d'entrée temporaire (9,99 €/mois) qui doublera à 24,99 €/mois une fois les 100 premières places prises",
+        "Fonctionnalités d'export (comptabilité, CRM) annoncées mais non testées en compte réel par ToolTrim"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You're a freelancer, tradesperson or e-commerce seller who wants one dashboard for your bank, sales and customers",
+      "avoid_if": "You need a stable business account and invoicing today, without price-change risk",
+      "strengths": [
+        "Single dashboard for banking, sales, customers and invoicing",
+        "E-invoicing compliant with the 2026 reform included from the entry plan",
+        "Natural-language control via Claude, ChatGPT, Mistral, Grok or Perplexity (MCP)"
+      ],
+      "weaknesses": [
+        "Early-access product: a freemium plan is announced but not yet shipped",
+        "Temporary entry price (€9.99/month) that will double to €24.99/month once the first 100 slots are taken",
+        "Export features (accounting, CRM) advertised but not tested in a live account by ToolTrim"
+      ]
+    }
+  },
+  {
+    "name": "Vulko",
+    "slug": "vulko",
+    "url_fr": "https://tooltrim.com/fr/tool/vulko",
+    "url_en": "https://tooltrim.com/en/tool/vulko",
+    "website": "https://vulko.fr/",
+    "category": "finance",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent ; essai 14 jours sans carte bancaire, annulable en 1 clic",
+      "paid": "Starter 19 €HT/mois, Solo 49 €HT/mois, Duo 79 €HT/mois, PME 119 €HT/mois, Équipe 299 €HT/mois (tarifs annuels avec ~2 mois offerts)"
+    },
+    "description_fr": "Devis et factures BTP générés par IA, conformes Factur-X, avec signature électronique et mode hors-ligne.",
+    "description_en": "AI-generated construction quotes and Factur-X compliant invoices, with e-signature and offline mode.",
+    "price_verified_on": "2026-09-03",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu es artisan ou petite équipe BTP et veux générer des devis chiffrés en dictant ou photographiant un chantier",
+      "avoid_if": "Tu veux un historique de fiabilité vérifié par des témoignages clients ou une base d'utilisateurs établie",
+      "strengths": [
+        "Génération de devis par IA à la voix, en photo ou en texte libre, spécialisée pour 26 métiers du BTP",
+        "Facturation conforme Factur-X avant l'obligation de septembre 2026",
+        "Export comptable FEC et synchronisation Pennylane dès le plan Solo"
+      ],
+      "weaknesses": [
+        "Aucun témoignage client ni étude de cas publié pour vérifier les gains de temps annoncés",
+        "Éditeur très jeune et de très petite taille (SASU à 100 € de capital, fondateur unique)",
+        "Intégrations Sage, EBP et Cegid annoncées mais pas encore livrées"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You're a tradesperson or small construction team who wants to generate priced quotes by voice or photo",
+      "avoid_if": "You want a verified track record through customer testimonials or an established user base",
+      "strengths": [
+        "AI quote generation by voice, photo or free text, specialized for 26 construction trades",
+        "Factur-X compliant invoicing ahead of the September 2026 requirement",
+        "FEC accounting export and Pennylane sync from the Solo plan up"
+      ],
+      "weaknesses": [
+        "No customer testimonial or case study published to verify the claimed time savings",
+        "Very young, very small publisher (SASU with €100 capital, single founder)",
+        "Sage, EBP and Cegid integrations announced but not yet shipped"
+      ]
+    }
+  },
+  {
+    "name": "Novadesko",
+    "slug": "novadesko",
+    "url_fr": "https://tooltrim.com/fr/tool/novadesko",
+    "url_en": "https://tooltrim.com/en/tool/novadesko",
+    "website": "https://novadesko.com/",
+    "category": "finance",
+    "pricing": {
+      "free": "Essai gratuit de 14 jours sans carte bancaire",
+      "paid": "À partir de 19 € HT/mois, selon les modules activés"
+    },
+    "description_fr": "Centralise facturation Peppol, banque, TVA et collaboration comptable pour les entreprises belges.",
+    "description_en": "Brings Peppol invoicing, banking, VAT and accountant collaboration together for Belgian businesses.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Vous êtes indépendant ou dirigez une petite entreprise en Belgique",
+      "avoid_if": "Votre activité n'a pas besoin des spécificités fiscales et bancaires belges",
+      "strengths": [
+        "Facturation électronique Peppol intégrée à l'environnement de gestion",
+        "Import CODA, connexion bancaire et rapprochement des justificatifs",
+        "Portail dédié pour partager documents et exports avec le comptable"
+      ],
+      "weaknesses": [
+        "Le prix exact n'est pas public pour chaque combinaison de modules",
+        "La valeur du produit est surtout concentrée sur les entreprises belges",
+        "Les affirmations de gain de temps et les avis disponibles proviennent principalement de l'éditeur"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You are self-employed or run a small business in Belgium",
+      "avoid_if": "Your business does not need Belgian tax and banking specifics",
+      "strengths": [
+        "Peppol e-invoicing integrated into the management environment",
+        "CODA import, bank connection and supporting-document matching",
+        "Dedicated portal for sharing documents and exports with an accountant"
+      ],
+      "weaknesses": [
+        "Exact pricing is not public for every module combination",
+        "Most of the product's value is specific to Belgian businesses",
+        "Available time-saving claims and reviews mainly come from the vendor"
+      ]
+    }
+  },
+  {
+    "name": "Newbi",
+    "slug": "newbi",
+    "url_fr": "https://tooltrim.com/fr/tool/newbi",
+    "url_en": "https://tooltrim.com/en/tool/newbi",
+    "website": "https://www.newbi.fr",
+    "category": "finance",
+    "pricing": {
+      "free": "Essai de 30 jours, toutes les fonctionnalités Freelance, sans carte bancaire.",
+      "paid": "Dès 17,99 € TTC/mois (16,19 € en engagement annuel), formule Freelance."
+    },
+    "description_fr": "Facturation, devis, CRM client, connexion bancaire et trésorerie réunis sur une seule plateforme pour freelances et TPE françaises, avec un accès comptable gratuit inclus.",
+    "description_en": "Invoicing, quotes, client CRM, bank connection and cash flow in one platform for French freelancers and small businesses, with free accountant access included.",
+    "price_verified_on": "2026-10-09",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu factures en indépendant ou en petite structure et tu veux centraliser devis, factures, banque et trésorerie dans un seul outil plutôt que jongler entre Excel et plusieurs abonnements",
+      "avoid_if": "Tu as déjà un expert-comptable équipé de son propre outil de bout en bout et aucun besoin de centraliser facturation et banque de ton côté",
+      "strengths": [
+        "L'accès comptable gratuit inclus dans toutes les formules évite les échanges de mails et la ressaisie de documents avec le cabinet comptable",
+        "Devis, factures, banque, trésorerie et gestion de projet réunis sur une seule plateforme, là où plusieurs abonnements séparés seraient sinon nécessaires"
+      ],
+      "weaknesses": [
+        "La connexion bancaire et les accès comptables supplémentaires restent limités en nombre sur la formule Freelance (1 compte bancaire, 1 accès comptable)",
+        "Le tarif affiché par défaut suppose un engagement annuel ; sans engagement, le coût mensuel est environ 10 % plus élevé"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You invoice as a freelancer or small business and want to centralize quotes, invoices, banking and cash flow in one tool instead of juggling Excel and several subscriptions",
+      "avoid_if": "You already have an accountant running their own end-to-end tool and no need to centralize invoicing and banking on your side",
+      "strengths": [
+        "Free accountant access included in every plan removes email back-and-forth and document re-entry with the accounting firm",
+        "Quotes, invoices, banking, cash flow and project management combined in one platform, where several separate subscriptions would otherwise be needed"
+      ],
+      "weaknesses": [
+        "Bank connections and extra accountant seats stay limited in number on the Freelance plan (1 bank account, 1 accountant access)",
+        "The default displayed price assumes an annual commitment; without it, the monthly cost runs about 10% higher"
+      ]
+    }
+  },
+  {
+    "name": "Micro Man",
+    "slug": "micro-man",
+    "url_fr": "https://tooltrim.com/fr/tool/micro-man",
+    "url_en": "https://tooltrim.com/en/tool/micro-man",
+    "website": "https://micro-man.fr/",
+    "category": "finance",
+    "pricing": {
+      "free": "Solo : sans abonnement, pour un contact. Chaque facture électronique coûte 0,01 €.",
+      "paid": "Mensuel : 4,99 €/mois. Annuel : 49,99 €/an. Les deux formules incluent les contacts illimités et facturent 0,01 € par facture électronique."
+    },
+    "description_fr": "Gérez devis, factures et cotisations URSSAF depuis un outil pensé pour les micro-entrepreneurs en France.",
+    "description_en": "Manage quotes, invoices and URSSAF contributions in an app for French micro-entrepreneurs.",
+    "price_verified_on": "2026-11-10",
+    "verdict_fr": {
+      "keep_if": "Vous exercez en micro-entreprise et gérez vous-même la facturation",
+      "avoid_if": "Vous devez tenir la comptabilité de plusieurs sociétés",
+      "strengths": [
+        "Devis, factures et encaissements sont liés aux contacts",
+        "Le journal de recettes peut être exporté",
+        "L’éditeur propose un parcours de déclaration et de paiement URSSAF"
+      ],
+      "weaknesses": [
+        "L’offre Solo est limitée à un contact",
+        "Chaque facture électronique est facturée à l’unité",
+        "Le périmètre est centré sur le régime micro français"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You operate as a French micro-entrepreneur and handle your own invoicing",
+      "avoid_if": "You need accounting for multiple companies",
+      "strengths": [
+        "Quotes, invoices and payments are linked to contacts",
+        "The receipts ledger can be exported",
+        "The vendor offers an in-app URSSAF filing and payment workflow"
+      ],
+      "weaknesses": [
+        "Solo is limited to one contact",
+        "Each electronic invoice is charged individually",
+        "The product is focused on the French micro-enterprise regime"
+      ]
+    }
+  }
+]

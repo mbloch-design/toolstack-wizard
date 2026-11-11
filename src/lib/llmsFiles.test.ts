@@ -105,6 +105,45 @@ describe("generated llms files", () => {
   });
 });
 
+describe("llms-full shards", () => {
+  const slugOf = (value: unknown) => String(value ?? "").trim().toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "uncategorized";
+  const recordsOf = (text: string) => JSON.parse(text.slice(text.indexOf("["))) as Array<{
+    slug: string;
+    category?: string;
+  }>;
+  const catalogue = recordsOf(read("public/llms-full.txt"));
+  const dir = path.resolve(process.cwd(), "public/llms-full");
+  const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter((name) => name.endsWith(".txt")).sort() : [];
+  const llmsIndex = read("public/llms.txt");
+
+  it("partitions the catalogue into one shard per family, without overlap or loss", () => {
+    expect(files.length).toBeGreaterThan(1);
+    const seen = new Set<string>();
+    for (const file of files) {
+      const family = file.replace(/\.txt$/, "");
+      const records = recordsOf(read(`public/llms-full/${file}`));
+      expect(records.length).toBeGreaterThan(0);
+      for (const record of records) {
+        expect(slugOf(record.category)).toBe(family);
+        expect(seen.has(record.slug)).toBe(false);
+        seen.add(record.slug);
+      }
+    }
+    expect([...seen].sort()).toEqual(catalogue.map(({ slug }) => slug).sort());
+  });
+
+  it("indexes every shard in llms.txt with its exact tool count", () => {
+    for (const file of files) {
+      const family = file.replace(/\.txt$/, "");
+      const count = recordsOf(read(`public/llms-full/${file}`)).length;
+      expect(llmsIndex).toContain(`https://tooltrim.com/llms-full/${family}.txt`);
+      expect(llmsIndex).toContain(`- ${family} — ${count} tools:`);
+    }
+    expect(llmsIndex).toContain(`${catalogue.length} canonical tool records`);
+  });
+});
+
 describe("LLM export safeguards", () => {
   it("does not turn absent, zero or legacy numeric prices into a monthly offer", () => {
     for (const price of [undefined, null, 0, 99, NaN, "10"]) {

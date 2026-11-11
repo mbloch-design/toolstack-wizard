@@ -1,0 +1,1527 @@
+# ToolTrim tool catalogue — security
+# Generated from src/data/tools_index.json
+# Family: security (35 of 1251 canonical tools)
+# Complete catalogue: https://tooltrim.com/llms-full.txt
+# Record schema and citation rules: https://tooltrim.com/llms.txt
+# Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
+
+[
+  {
+    "name": "1Password",
+    "slug": "1password",
+    "url_fr": "https://tooltrim.com/fr/tool/1password",
+    "url_en": "https://tooltrim.com/en/tool/1password",
+    "website": "https://1password.com",
+    "category": "security",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente, essai de 14 jours.",
+      "paid": "Individual à 2,74 €/mois facturé à l'année la première année (prix normal 3,65 €/mois)."
+    },
+    "description_fr": "1Password génère, stocke et remplit automatiquement les mots de passe sur tous les appareils, avec alertes de fuite et partage sécurisé intégrés.",
+    "description_en": "1Password generates, stores and autofills passwords across devices, with breach alerts and secure sharing built in.",
+    "alternatives": [
+      "bitwarden"
+    ],
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu as besoin d'un stockage de mots de passe partagé et sécurisé sur plusieurs appareils ou une petite équipe et tu apprécies les alertes de fuite Watchtower",
+      "avoid_if": "Tu veux un gestionnaire de mots de passe gratuit en permanence ou plus d'1 Go de stockage de documents joints par utilisateur",
+      "strengths": [
+        "Remplissage automatique, partage et alertes de fuite Watchtower fonctionnent directement sur tous les appareils",
+        "Protection à deux niveaux (mot de passe et Secret Key) en plus des clés d'accès et de la double authentification",
+        "Essai de 14 jours disponible avant de s'engager sur un plan payant"
+      ],
+      "weaknesses": [
+        "Pas de palier gratuit ; chaque plan devient payant après l'essai",
+        "Le plafond de stockage à 1 Go par utilisateur sur les plans grand public limite les gros documents joints"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You need shared, secure password storage across devices or a small team and value Watchtower's breach alerts",
+      "avoid_if": "You want a permanently free password manager or need more than 1 GB of attached document storage per user",
+      "strengths": [
+        "Autofill, sharing and Watchtower breach alerts work across devices out of the box",
+        "Dual-layer protection (password plus Secret Key) alongside passkey and 2FA support",
+        "14-day trial available before committing to a paid plan"
+      ],
+      "weaknesses": [
+        "No free tier; every plan becomes paid after the trial",
+        "1 GB storage cap per user on consumer plans limits large attached documents"
+      ]
+    }
+  },
+  {
+    "name": "Auth.js",
+    "slug": "auth-js",
+    "url_fr": "https://tooltrim.com/fr/tool/auth-js",
+    "url_en": "https://tooltrim.com/en/tool/auth-js",
+    "website": "https://authjs.dev",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Librairie open source pour ajouter une authentification flexible aux apps JavaScript.",
+    "description_en": "Open-source library for adding flexible authentication to JavaScript apps.",
+    "verdict_fr": {
+      "keep_if": "Vous développez une application web moderne avec framework populaire",
+      "avoid_if": "Vous avez besoin de support commercial et SLA garantis",
+      "strengths": [
+        "Entièrement gratuit, aucun coût caché",
+        "Très flexible et framework-agnostique",
+        "Large écosystème de fournisseurs OAuth intégrés"
+      ],
+      "weaknesses": [
+        "Configuration initiale requiert des connaissances en développement",
+        "Pas de support commercial officiel inclus",
+        "Pas de dashboard UI pour l'administration simplifiée"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're building a modern web app with popular frameworks",
+      "avoid_if": "You need commercial support and guaranteed SLAs",
+      "strengths": [
+        "Entirely free, no hidden costs",
+        "Highly flexible and framework-agnostic",
+        "Large ecosystem of integrated OAuth providers"
+      ],
+      "weaknesses": [
+        "Initial configuration requires development knowledge",
+        "No official commercial support included",
+        "No admin UI dashboard for simplified administration"
+      ]
+    }
+  },
+  {
+    "name": "Axe DevTools",
+    "slug": "axe-devtools",
+    "url_fr": "https://tooltrim.com/fr/tool/axe-devtools",
+    "url_en": "https://tooltrim.com/en/tool/axe-devtools",
+    "website": "https://www.deque.com/axe/devtools/",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Audit accessibilité dans le navigateur pour repérer erreurs WCAG fréquentes.",
+    "description_en": "Browser accessibility audit for spotting common WCAG issues.",
+    "verdict_fr": {
+      "keep_if": "L'accessibilité WCAG est une exigence légale pour votre produit",
+      "avoid_if": "Vous cherchez une solution entièrement manuelle et gratuite",
+      "strengths": [
+        "Tests automatisés WCAG complets et fiables (zéro faux positifs)",
+        "IA intelligente pour détecter des problèmes subtils",
+        "axe-core open-source et gratuit à vie"
+      ],
+      "weaknesses": [
+        "Tarification pour plateforme premium non transparente",
+        "Courbe d'apprentissage pour configuration optimale",
+        "Essai gratuit limité à 14 jours pour extension browser"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "WCAG accessibility is a legal requirement for your product",
+      "avoid_if": "You're looking for entirely manual, free auditing",
+      "strengths": [
+        "Comprehensive, reliable WCAG automated tests (zero false positives)",
+        "Intelligent AI detects subtle issues",
+        "axe-core open-source and free forever"
+      ],
+      "weaknesses": [
+        "Premium platform pricing not transparent",
+        "Learning curve for optimal configuration",
+        "Free browser extension trial limited to 14 days"
+      ]
+    }
+  },
+  {
+    "name": "Bitwarden",
+    "slug": "bitwarden",
+    "url_fr": "https://tooltrim.com/fr/tool/bitwarden",
+    "url_en": "https://tooltrim.com/en/tool/bitwarden",
+    "website": "https://bitwarden.com",
+    "category": "security",
+    "pricing": {
+      "free": "Offre gratuite permanente : appareils et mots de passe illimités, partage avec un autre utilisateur.",
+      "paid": "Premium à 1,65 $/mois, facturé 19,80 $ par an."
+    },
+    "description_fr": "Gestionnaire de mots de passe open source, gratuit et multiplateforme.",
+    "description_en": "Open-source, free, cross-platform password manager.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez un gestionnaire de mots de passe open-source et de confiance",
+      "avoid_if": "Vous avez besoin du support commercial premium inclus",
+      "strengths": [
+        "Entièrement open-source et transparent sur le chiffrement",
+        "Plan gratuit complet et illimité pour particuliers",
+        "Options d'auto-hébergement complètes"
+      ],
+      "weaknesses": [
+        "Configuration de l'auto-hébergement requiert expertise technique",
+        "Support commercial moins développé que 1Password",
+        "Interface peut sembler complexe pour débutants"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want an open-source, trustworthy password manager",
+      "avoid_if": "You need premium commercial support included",
+      "strengths": [
+        "Fully open-source and transparent about encryption",
+        "Complete, unlimited free plan for individuals",
+        "Full self-hosting options"
+      ],
+      "weaknesses": [
+        "Self-hosting setup requires technical expertise",
+        "Commercial support less developed than 1Password",
+        "Interface may seem complex for beginners"
+      ]
+    }
+  },
+  {
+    "name": "Burp Suite",
+    "slug": "burp-suite",
+    "url_fr": "https://tooltrim.com/fr/tool/burp-suite",
+    "url_en": "https://tooltrim.com/en/tool/burp-suite",
+    "website": "https://portswigger.net/burp",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Suite de pentest web pour proxy, scanning et tests manuels.",
+    "description_en": "Web pentest suite for proxying, scanning, and manual testing.",
+    "verdict_fr": {
+      "keep_if": "Vous faites du test de pénétration web ou de la sécurité applicative",
+      "avoid_if": "Vous êtes débutant complet en sécurité applicative",
+      "strengths": [
+        "Édition Community gratuite et puissante pour débuter",
+        "Outil n°1 reconnu pour test de pénétration web",
+        "Scanner automatisé et outils manuels complémentaires"
+      ],
+      "weaknesses": [
+        "Community Edition a des limites (pas de scanner auto complet)",
+        "Professional et éditions entreprise sont payantes",
+        "Courbe d'apprentissage importante pour maîtriser tous les outils"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You do web penetration testing or application security",
+      "avoid_if": "You're a complete security beginner",
+      "strengths": [
+        "Powerful free Community Edition to start",
+        "Number 1 recognized tool for web penetration testing",
+        "Automated scanner and complementary manual tools"
+      ],
+      "weaknesses": [
+        "Community Edition has limitations (no full auto scanner)",
+        "Professional and enterprise editions are paid",
+        "Steep learning curve to master all tools"
+      ]
+    }
+  },
+  {
+    "name": "Clerk",
+    "slug": "clerk",
+    "url_fr": "https://tooltrim.com/fr/tool/clerk",
+    "url_en": "https://tooltrim.com/en/tool/clerk",
+    "website": "https://clerk.com",
+    "category": "security",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 50 000 utilisateurs actifs mensuels retenus par application, jusqu'à 3 sièges de tableau de bord, durée de session fixe de 7 jours, sans carte bancaire requise",
+      "paid": "Dès 20 $/mois, plan Pro."
+    },
+    "description_fr": "Plateforme d'authentification et de gestion utilisateur avec interface préconstruite, gratuite jusqu'à 50 000 utilisateurs actifs mensuels par app.",
+    "description_en": "Authentication and user management platform with prebuilt UI, free up to 50,000 monthly retained users per app.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu construis une app web et veux une authentification fonctionnelle en moins d'une heure, gratuite jusqu'à une vraie échelle",
+      "avoid_if": "Tu as besoin de conformité SOC2 ou de support prioritaire immédiatement, ce qui veut dire sauter directement au palier Business à 250-300 $/mois",
+      "strengths": [
+        "Le plan gratuit couvre jusqu'à 50 000 utilisateurs actifs mensuels, généreux pour la plupart des apps solo ou petite équipe",
+        "Les composants d'interface préconstruits réduisent vraiment le temps d'intégration comparé à construire l'authentification à partir de zéro",
+        "Les organisations et rôles B2B sont inclus gratuitement, pas un module payant séparé pour un usage basique"
+      ],
+      "weaknesses": [
+        "Le plan Business saute à 250-300 $/mois, un grand pas depuis Pro rien que pour les fonctionnalités de conformité",
+        "L'usage au-delà des utilisateurs actifs mensuels inclus est mesuré et peut s'additionner de façon imprévisible à l'échelle"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You are building a web app and want authentication working in under an hour, free until real scale",
+      "avoid_if": "You need SOC2 compliance or priority support immediately, since that means jumping straight to the $250-300/month Business tier",
+      "strengths": [
+        "Free tier covers up to 50,000 monthly retained users, generous for most solo or small-team apps",
+        "Prebuilt UI components cut real integration time versus building authentication from scratch",
+        "B2B organizations and roles are included free, not a separate paid module for basic use"
+      ],
+      "weaknesses": [
+        "Business plan jumps to $250-300/month, a steep step up from Pro for compliance features alone",
+        "Usage beyond the included monthly retained users is metered and can add up unpredictably at scale"
+      ]
+    }
+  },
+  {
+    "name": "Cloudflare",
+    "slug": "cloudflare",
+    "url_fr": "https://tooltrim.com/fr/tool/cloudflare",
+    "url_en": "https://tooltrim.com/en/tool/cloudflare",
+    "website": "https://www.cloudflare.com",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "CDN, DNS, sécurité, cache et protection edge pour sites et apps.",
+    "description_en": "CDN, DNS, security, cache, and edge protection for sites and apps.",
+    "verdict_fr": {
+      "keep_if": "Vous développez des applications web modernes avec code JavaScript/TypeScript",
+      "avoid_if": "Vous avez un workload traditionnel nécessitant containers",
+      "strengths": [
+        "Zéro cold start — code exécuté immédiatement globalement",
+        "Facturation juste (temps CPU uniquement, pas durée mur-à-mur)",
+        "Déploiement facile avec CLI Wrangler"
+      ],
+      "weaknesses": [
+        "Écosystème moins riche qu'AWS Lambda",
+        "Limites de plan gratuit importants",
+        "Moins de documentation communautaire que AWS"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're building modern web apps with JavaScript/TypeScript",
+      "avoid_if": "You have traditional workloads needing containers",
+      "strengths": [
+        "Zero cold start — code executes immediately globally",
+        "Fair billing (CPU time only, not wall-clock duration)",
+        "Easy deployment with Wrangler CLI"
+      ],
+      "weaknesses": [
+        "Ecosystem less rich than AWS Lambda",
+        "Free plan has significant limitations",
+        "Less community documentation than AWS"
+      ]
+    }
+  },
+  {
+    "name": "CrowdStrike",
+    "slug": "crowdstrike",
+    "url_fr": "https://tooltrim.com/fr/tool/crowdstrike",
+    "url_en": "https://tooltrim.com/en/tool/crowdstrike",
+    "website": "https://crowdstrike.com",
+    "category": "security",
+    "pricing": {
+      "free": "",
+      "paid": "Falcon Go dès ~5€/poste/mois (facturation annuelle, max 100 postes) ; niveaux supérieurs jusqu'à 60$/poste/mois"
+    },
+    "description_fr": "Sécurité endpoint enterprise (EDR/XDR) ; Falcon Go pour petites structures dès ~5€/poste/mois.",
+    "description_en": "Enterprise endpoint security (EDR/XDR); Falcon Go for small businesses from ~€5/device/month.",
+    "price_verified_on": "2026-07-07",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin de protection endpoint d'entreprise",
+      "avoid_if": "Vous avez un budget très limité pour sécurité",
+      "strengths": [
+        "Plateforme IA-native pour détection avancée",
+        "Tarification transparente par appareil",
+        "Essai gratuit 15 jours sans CB"
+      ],
+      "weaknesses": [
+        "Coût peut augmenter rapidement avec nombre d'appareils",
+        "Falcon Go limité à 100 appareils maximum",
+        "MDR requiert contact commercial (tarif élevé probable)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need enterprise endpoint protection",
+      "avoid_if": "You have a very tight security budget",
+      "strengths": [
+        "AI-native platform for advanced detection",
+        "Transparent per-device pricing",
+        "Free 15-day trial without credit card"
+      ],
+      "weaknesses": [
+        "Cost can grow quickly with device count",
+        "Falcon Go limited to 100 devices max",
+        "MDR requires sales contact (likely high price)"
+      ]
+    }
+  },
+  {
+    "name": "Dashlane",
+    "slug": "dashlane",
+    "url_fr": "https://tooltrim.com/fr/tool/dashlane",
+    "url_en": "https://tooltrim.com/en/tool/dashlane",
+    "website": "https://dashlane.com",
+    "category": "security",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente, essai de 14 jours.",
+      "paid": "Premium à 4,00 € HT/mois facturé à l'année."
+    },
+    "description_fr": "Un gestionnaire de mots de passe pour particuliers, familles et entreprises, avec remplissage automatique, partage sécurisé et contrôles d'administration pour les équipes.",
+    "description_en": "A password manager and credential vault for individuals, families and businesses, with autofill, secure sharing and admin controls for teams.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux un coffre-fort mono-compte à 4 EUR/mois, un coffre-fort familial partagé à prix fixe, ou tu diriges une entreprise qui a besoin de SSO/SCIM et es prêt à demander un devis",
+      "avoid_if": "Tu veux voir le prix entreprise exact avant de parler à quelqu'un, ou tu as besoin d'une offre gratuite permanente",
+      "strengths": [
+        "Le plan Family couvre jusqu'à 10 comptes pour un tarif mensuel fixe unique",
+        "L'offre entreprise ajoute une détection du phishing par IA et une intégration SIEM/SOAR au-delà du simple stockage de mots de passe"
+      ],
+      "weaknesses": [
+        "Pas d'offre gratuite permanente : les particuliers n'ont qu'un essai de 14 jours avant de payer",
+        "Les tarifs Business et Enterprise ne sont pas publiés : il faut contacter le service commercial pour connaître le coût réel"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You want a single-account vault at EUR 4/month, a shared family vault at a fixed price, or you run a business that needs SSO/SCIM and is ready to get a quote",
+      "avoid_if": "You want to see the exact business price before talking to anyone, or you need a permanent free plan",
+      "strengths": [
+        "The Family plan covers up to 10 accounts under a single, fixed monthly price",
+        "The Business tier adds AI phishing detection and SIEM/SOAR integration beyond basic password storage"
+      ],
+      "weaknesses": [
+        "No permanent free plan: individuals only get a 14-day trial before paying",
+        "Business and Enterprise prices are not published; you need to talk to sales to know the real cost"
+      ]
+    }
+  },
+  {
+    "name": "Dependabot",
+    "slug": "dependabot",
+    "url_fr": "https://tooltrim.com/fr/tool/dependabot",
+    "url_en": "https://tooltrim.com/en/tool/dependabot",
+    "website": "https://github.com/dependabot",
+    "category": "security",
+    "pricing": {
+      "free": "Plan gratuit : Entièrement gratuit sur toutes les offres GitHub, pour les dépôts publics comme privés, sans limite d'utilisation",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "Le bot gratuit et intégré de GitHub qui ouvre des pull requests pour corriger les dépendances vulnérables ou obsolètes.",
+    "description_en": "GitHub's free, built-in bot that opens pull requests to patch vulnerable or outdated dependencies.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "4.2/5",
+      "label": "Excellent",
+      "keep_if": "Ton code vit sur GitHub ; il n'y a aucune raison de ne pas l'activer, puisqu'il est gratuit",
+      "avoid_if": "Tu as besoin de scan de code ou de secrets, ce que Dependabot ne fait pas seul",
+      "strengths": [
+        "Complètement gratuit sur tous les plans, aucun coût par siège ou par usage",
+        "Fonctionne dès le départ sur tout dépôt GitHub avec une configuration minimale",
+        "Les mises à jour groupées réduisent le bruit des pull requests pour les grands arbres de dépendances"
+      ],
+      "weaknesses": [
+        "Ne peut pas corriger les dépendances transitives dans la plupart des écosystèmes quand la dépendance parente doit aussi être mise à jour",
+        "Ne couvre que les dépendances et les Actions ; le scan de code et de secrets nécessite les add-ons payants séparés GitHub Advanced Security"
+      ]
+    },
+    "verdict_en": {
+      "score": "4.2/5",
+      "label": "Excellent",
+      "keep_if": "Your code lives on GitHub; there is no reason not to enable it, since it is free",
+      "avoid_if": "You need code or secret scanning, which Dependabot does not do on its own",
+      "strengths": [
+        "Completely free on every plan, no seat or usage cost",
+        "Works out of the box on any GitHub repo with minimal configuration",
+        "Grouped updates reduce pull request noise for large dependency trees"
+      ],
+      "weaknesses": [
+        "Cannot patch transitive dependencies in most ecosystems when the parent also needs updating",
+        "Only covers dependencies and Actions; code and secret scanning require separate paid GitHub Advanced Security add-ons"
+      ]
+    }
+  },
+  {
+    "name": "DesktopReady",
+    "slug": "desktopready",
+    "url_fr": "https://tooltrim.com/fr/tool/desktopready",
+    "url_en": "https://tooltrim.com/en/tool/desktopready",
+    "website": "https://desktopready.com",
+    "category": "security",
+    "pricing": {
+      "free": "Aucun palier gratuit public. Démonstration et devis auprès d'Anunta.",
+      "paid": "DesktopReady: Sur devis"
+    },
+    "description_fr": "Service de postes de travail virtuels gérés par Anunta, conçu pour déployer et administrer des environnements Windows dans le cloud.",
+    "description_en": "Managed cloud desktop service from Anunta for deploying and administering Windows work environments.",
+    "price_verified_on": "2026-08-30",
+    "verdict_fr": {
+      "keep_if": "Vous devez fournir des postes Windows distants à une équipe",
+      "avoid_if": "Vous cherchez un simple accès distant individuel",
+      "strengths": [
+        "Service géré de bout en bout",
+        "Administration centralisée",
+        "Adapté aux équipes distribuées"
+      ],
+      "weaknesses": [
+        "Tarification non publique",
+        "Déploiement orienté entreprise",
+        "Dépendance à un prestataire"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need to provide remote Windows desktops to a team",
+      "avoid_if": "You only need individual remote access",
+      "strengths": [
+        "End-to-end managed service",
+        "Centralised administration",
+        "Suitable for distributed teams"
+      ],
+      "weaknesses": [
+        "No public pricing",
+        "Enterprise-oriented deployment",
+        "Provider dependency"
+      ]
+    }
+  },
+  {
+    "name": "Doppler",
+    "slug": "doppler",
+    "url_fr": "https://tooltrim.com/fr/tool/doppler",
+    "url_en": "https://tooltrim.com/en/tool/doppler",
+    "website": "https://doppler.com",
+    "category": "security",
+    "pricing": {
+      "free": "Plan gratuit (5 projets)",
+      "paid": "À partir de 18$/mois par utilisateur"
+    },
+    "description_fr": "Gestion centralisée des secrets et variables d'environnement.",
+    "description_en": "Centralised secret and environment variable management.",
+    "verdict_fr": {
+      "keep_if": "Vous développez avec plusieurs équipiers ou en équipe DevOps",
+      "avoid_if": "Vous êtes solo avec peu de secrets à gérer",
+      "strengths": [
+        "Plan gratuit généreux (3 users illimité)",
+        "Agents IA inclus gratuitement dans tous les plans",
+        "Interface CLI simple et intuitive"
+      ],
+      "weaknesses": [
+        "Plan Team peut devenir cher avec nombreux utilisateurs",
+        "Documentation moins riche que HashiCorp",
+        "Nécessite une API moderne, moins compatible legacy"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're developing with multiple teammates or DevOps teams",
+      "avoid_if": "You're solo with few secrets to manage",
+      "strengths": [
+        "Generous free plan (3 users unlimited)",
+        "AI agents included free in all plans",
+        "Simple and intuitive CLI interface"
+      ],
+      "weaknesses": [
+        "Team plan can get expensive with many users",
+        "Documentation less rich than HashiCorp",
+        "Requires modern API, less legacy-compatible"
+      ]
+    }
+  },
+  {
+    "name": "Dotenv Vault",
+    "slug": "dotenv-vault",
+    "url_fr": "https://tooltrim.com/fr/tool/dotenv-vault",
+    "url_en": "https://tooltrim.com/en/tool/dotenv-vault",
+    "website": "https://www.dotenv.org",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit",
+      "paid": "Plans team disponibles"
+    },
+    "description_fr": "Sync et chiffrement de fichiers .env entre environnements.",
+    "description_en": "Sync and encrypt .env files across environments.",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez dotenv et avez aimé l'expérience",
+      "avoid_if": "Vous cherchez une solution gratuite",
+      "strengths": [
+        "Créé par l'auteur de dotenv, expérience native",
+        "Interface extrêmement simple et intuitive",
+        "Tarification affichée transparente"
+      ],
+      "weaknesses": [
+        "Aucun plan gratuit permanent",
+        "Moins de fonctionnalités que Doppler",
+        "Pas de support commercial (équipe lean)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You use dotenv and loved the experience",
+      "avoid_if": "You're looking for free solutions",
+      "strengths": [
+        "Created by dotenv author, native experience",
+        "Extremely simple and intuitive interface",
+        "Transparent displayed pricing"
+      ],
+      "weaknesses": [
+        "No permanent free plan",
+        "Fewer features than Doppler",
+        "No commercial support (lean team)"
+      ]
+    }
+  },
+  {
+    "name": "Drata",
+    "slug": "drata",
+    "url_fr": "https://tooltrim.com/fr/tool/drata",
+    "url_en": "https://tooltrim.com/en/tool/drata",
+    "website": "https://drata.com",
+    "category": "security",
+    "pricing": {
+      "free": "Aucune formule gratuite permanente de la plateforme relevée ; une démonstration ne constitue pas un plan gratuit.",
+      "paid": "Foundation, Advanced et Enterprise sur devis. Foundation : jusqu'à 50 ETP et un référentiel inclus ; référentiels supplémentaires en option. Faire préciser audit, accompagnement et gammes Assurance/risque tiers dans le devis."
+    },
+    "description_fr": "Préparation aux audits, collecte de preuves et suivi des contrôles pour équipes B2B.",
+    "description_en": "Audit preparation, evidence collection and control monitoring for B2B teams.",
+    "price_verified_on": "2026-10-17",
+    "verdict_fr": {
+      "score": "4.2/5",
+      "label": "Excellent",
+      "keep_if": "Une exigence client ou un audit justifie de relier intégrations, contrôles et preuves",
+      "avoid_if": "Tu cherches uniquement un registre RGPD simple ou une CMP de site web",
+      "strengths": [
+        "Intégrations et bibliothèque de preuves pour les contrôles",
+        "API incluse dans Foundation selon la grille publiée",
+        "Dossier de preuves exportable avec manifeste et correspondances"
+      ],
+      "weaknesses": [
+        "Périmètre et options à comparer dans un devis",
+        "Le suivi des contrôles demande toujours des responsables internes",
+        "Les fonctions Assurance et risque tiers ne doivent pas être supposées incluses partout"
+      ]
+    },
+    "verdict_en": {
+      "score": "4.2/5",
+      "label": "Excellent",
+      "keep_if": "Customer requirements or an audit justify linking integrations, controls and evidence",
+      "avoid_if": "You only need a simple processing register or website CMP",
+      "strengths": [
+        "Integrations and evidence library support controls",
+        "Published Foundation scope includes API access",
+        "Evidence package exports include a manifest and mappings"
+      ],
+      "weaknesses": [
+        "Scope and options require a quote comparison",
+        "Controls still need internal owners",
+        "Do not assume every Assurance or third-party risk feature is included"
+      ]
+    }
+  },
+  {
+    "name": "GitHub Advanced Security",
+    "slug": "github-advanced-security",
+    "url_fr": "https://tooltrim.com/fr/tool/github-advanced-security",
+    "url_en": "https://tooltrim.com/en/tool/github-advanced-security",
+    "website": "https://github.com/security/advanced-security",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Code scanning, secret scanning et sécurité avancée dans GitHub.",
+    "description_en": "Code scanning, secret scanning, and advanced security inside GitHub.",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez GitHub pour tous vos repos",
+      "avoid_if": "Vous utilisez GitLab ou Gitea",
+      "strengths": [
+        "Intégration native GitHub, zéro friction developer",
+        "Secret scanning automatique avant que secrets arrivent prod",
+        "IA Copilot Autofix pour corrections rapides"
+      ],
+      "weaknesses": [
+        "Coûteux avec nombreux committers actifs",
+        "Seulement pour repos GitHub (pas GitLab, Gitea, Gitness)",
+        "Plus adapté dev velocity que pentesting avancé"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You use GitHub for all your repos",
+      "avoid_if": "You use GitLab or Gitea",
+      "strengths": [
+        "Native GitHub integration, zero developer friction",
+        "Automatic secret scanning before production",
+        "AI Copilot Autofix for quick remediation"
+      ],
+      "weaknesses": [
+        "Expensive with many active committers",
+        "GitHub repos only (not GitLab, Gitea, Gitness)",
+        "Better for dev velocity than advanced pentesting"
+      ]
+    }
+  },
+  {
+    "name": "HashiCorp Vault",
+    "slug": "vault",
+    "url_fr": "https://tooltrim.com/fr/tool/vault",
+    "url_en": "https://tooltrim.com/en/tool/vault",
+    "website": "https://hashicorp.com",
+    "category": "security",
+    "pricing": {
+      "free": "Plan gratuit : L'édition Vault Community est gratuite et open source, à auto-héberger, avec la gestion de secrets, le chiffrement et les secrets dynamiques de base.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "HashiCorp Vault stocke, distribue et fait tourner de façon centralisée les secrets et certificats pour humains, machines et applications.",
+    "description_en": "HashiCorp Vault centrally stores, distributes and rotates secrets and certificates for humans, machines and applications.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu dois centraliser secrets et certificats entre services et tu as la capacité d'auto-héberger ou de gérer un cluster cloud",
+      "avoid_if": "Tu veux un outil de secrets entièrement géré avec une interface simple, sans responsabilité d'auto-hébergement",
+      "strengths": [
+        "L'édition Community gratuite et complète couvre secrets, chiffrement et certificats sans passer par un palier payant",
+        "Fonctionnalités de niveau entreprise (réplication, policy-as-code, support HSM) disponibles pour les équipes qui doivent grandir",
+        "L'authentification basée sur l'identité fonctionne pour les humains, machines et services dans un seul système"
+      ],
+      "weaknesses": [
+        "Auto-héberger l'édition Community demande une vraie installation et une prise en charge opérationnelle, sans SLA de support",
+        "Pas de tarif public pour Vault Enterprise ni de frais confirmés pour les paliers de production HCP, donc budgéter suppose de contacter le commercial"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You need to centralize secrets and certificates across services and have the capacity to self-host or manage a cloud cluster",
+      "avoid_if": "You want a fully managed secrets tool with a simple UI and no self-hosting responsibility",
+      "strengths": [
+        "Free, feature-complete Community edition covers secrets, encryption and certificates without a paid tier",
+        "Enterprise-grade features (replication, policy-as-code, HSM support) available for teams that need to scale",
+        "Identity-based authentication works across humans, machines and services in one system"
+      ],
+      "weaknesses": [
+        "Self-hosting the Community edition takes real setup and operational ownership, with no support SLA",
+        "No public pricing for Vault Enterprise or confirmed HCP production tier fees, so budgeting requires a sales conversation"
+      ]
+    }
+  },
+  {
+    "name": "Infisical",
+    "slug": "infisical",
+    "url_fr": "https://tooltrim.com/fr/tool/infisical",
+    "url_en": "https://tooltrim.com/en/tool/infisical",
+    "website": "https://infisical.com",
+    "category": "security",
+    "pricing": {
+      "free": "Plan gratuit : Secrets Management free tier: 5 identities, 3 environments, 10 secret syncs. Certificate Management free tier: up to 2 internal CAs, 10 SANs, ACME integration. MIT-licensed open-source core can also be self-hosted for free.",
+      "paid": "Dès 20 $/mois, plan Pro (Secrets Management)."
+    },
+    "description_fr": "Plateforme open source de gestion de secrets, d'accès et de certificats pour développeurs, avec un cœur gratuit auto-hébergeable.",
+    "description_en": "Open-source secrets, access and certificate management platform for developers, with a free self-hostable core.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu veux centraliser la gestion de secrets avec la possibilité de t'auto-héberger, et 5 identités suffisent avant de passer au payant",
+      "avoid_if": "Tu as besoin de secrets dynamiques ou de gateways dès le départ, ce qui nécessite le plan Advanced à 40 $/identité/mois plutôt que l'entrée Pro à 20 $",
+      "strengths": [
+        "Le cœur open source sous licence MIT peut être auto-hébergé gratuitement, évitant une dépendance totale à l'offre Cloud hébergée",
+        "Le SSO couvre un large éventail de fournisseurs d'identité nommés (Okta, Entra ID, Google, Keycloak, Auth0) plutôt qu'une simple promesse SAML générique"
+      ],
+      "weaknesses": [
+        "Le coût total est difficile à anticiper, car Secrets Management, Privileged Access et Certificate Management sont trois produits facturés séparément",
+        "Le plafond de 5 identités du plan Free est vite atteint dès qu'on compte à la fois les identités humaines et machine (jobs CI, services)"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You want centralized secrets management with the option to self-host, and you can live within 5 identities before paying",
+      "avoid_if": "You need dynamic secrets or gateways immediately, which require the $40/identity/month Advanced plan rather than the $20 Pro entry point",
+      "strengths": [
+        "MIT-licensed open-source core can be self-hosted for free, avoiding vendor lock-in on the hosted Cloud offering",
+        "SSO covers a wide range of named identity providers (Okta, Entra ID, Google, Keycloak, Auth0) rather than a generic SAML-only claim"
+      ],
+      "weaknesses": [
+        "Total cost is hard to predict upfront since Secrets Management, Privileged Access and Certificate Management are three separately priced products",
+        "The Free plan's 5-identity cap is reached quickly once both human and machine identities (CI jobs, services) are counted"
+      ]
+    }
+  },
+  {
+    "name": "LastPass",
+    "slug": "lastpass",
+    "url_fr": "https://tooltrim.com/fr/tool/lastpass",
+    "url_en": "https://tooltrim.com/en/tool/lastpass",
+    "website": "https://lastpass.com",
+    "category": "security",
+    "pricing": {
+      "free": "Offre gratuite limitée à un type d'appareil : stockage illimité, remplissage automatique, surveillance du dark web.",
+      "paid": "Premium à 2,90 €/mois facturé à l'année, taxes en sus."
+    },
+    "description_fr": "Gestionnaire de mots de passe grand public, avec une version gratuite limitée.",
+    "description_en": "Mainstream password manager, with a limited free version.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin gestionnaire passwords cloud simple",
+      "avoid_if": "Vous cherchez solution open-source self-hosted",
+      "strengths": [
+        "Plan Free très généreux (passwords illimité, monitoring dark web)",
+        "Zero-knowledge encryption transparent",
+        "Autofill excellent sur tous navigateurs"
+      ],
+      "weaknesses": [
+        "Free plan : sync limité à 1 type device (pas mobile ET desktop)",
+        "Prix plans payants non affichés en avant (promotion en cours)",
+        "Historique sécurité past (breaches 2015, 2022)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need simple cloud password manager",
+      "avoid_if": "You want open-source self-hosted solution",
+      "strengths": [
+        "Generous free plan (unlimited passwords, dark web monitoring)",
+        "Transparent zero-knowledge encryption",
+        "Excellent autofill across all browsers"
+      ],
+      "weaknesses": [
+        "Free plan: sync limited to 1 device type (not mobile AND desktop)",
+        "Paid plans prices not displayed upfront (promotion ongoing)",
+        "Security history (2015, 2022 breaches)"
+      ]
+    }
+  },
+  {
+    "name": "Maced AI",
+    "slug": "maced-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/maced-ai",
+    "url_en": "https://tooltrim.com/en/tool/maced-ai",
+    "website": "https://maced.ai",
+    "category": "security",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 249 $/mois, plan Starter."
+    },
+    "description_fr": "Test d'intrusion autonome par IA pour applications web, API, code, infrastructure et cloud, avec rapports prêts pour l'audit et pull requests de correction générées automatiquement.",
+    "description_en": "Autonomous AI pentesting for web apps, APIs, code, infrastructure and cloud, with audit-ready reports and auto-generated fix pull requests.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "À garder si ton équipe livre assez souvent pour avoir besoin de tests d'intrusion automatisés récurrents et veut des corrections générées automatiquement plutôt qu'une simple liste de constats",
+      "avoid_if": "À éviter si tu as besoin de plus de 1 (Starter) ou 5 (Professional) tests d'intrusion par mois sans payer de dépassement à l'unité, ou si un audit ponctuel te suffit",
+      "strengths": [
+        "Génère automatiquement des pull requests de correction prêtes à fusionner et reteste automatiquement, pas seulement une liste de vulnérabilités",
+        "Couvre les applications web, les API, le code, l'infrastructure et le cloud dans un seul abonnement, au lieu d'un outil séparé par surface"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit permanent ; la seule option gratuite est un scan de démo ponctuel de 5 minutes",
+        "Le volume mensuel de tests d'intrusion est plafonné sur les deux plans, donc des tests fréquents peuvent déclencher des frais de dépassement payants"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "Keep if your team ships often enough to need recurring automated pentests and wants auto-generated fixes instead of a findings list alone",
+      "avoid_if": "Avoid if you need more than 1 (Starter) or 5 (Professional) pentests a month without paying per-test overage, or if a one-off audit is all you need",
+      "strengths": [
+        "Auto-generates merge-ready fix pull requests and retests automatically, not just a vulnerability list",
+        "Covers web apps, APIs, code, infrastructure and cloud in one subscription instead of separate tools per surface"
+      ],
+      "weaknesses": [
+        "No permanent free tier; the only free option is a one-off 5-minute demo scan",
+        "Monthly pentest volume is capped on both plans, so frequent testing can trigger paid overage charges"
+      ]
+    }
+  },
+  {
+    "name": "Microsoft Defender",
+    "slug": "microsoft-defender",
+    "url_fr": "https://tooltrim.com/fr/tool/microsoft-defender",
+    "url_en": "https://tooltrim.com/en/tool/microsoft-defender",
+    "website": "https://microsoft.com/security/business/microsoft-defender",
+    "category": "security",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 3 $/mois, plan Defender for Business (standalone)."
+    },
+    "description_fr": "Microsoft Defender for Business protège les postes contre malwares et ransomwares grâce à l'IA, pour des organisations jusqu'à 300 utilisateurs.",
+    "description_en": "Microsoft Defender for Business is AI-powered endpoint protection against malware and ransomware for organizations with up to 300 users.",
+    "price_verified_on": "2026-09-25",
+    "verdict_fr": {
+      "score": "3.2/5",
+      "label": "Bon",
+      "keep_if": "Garde Defender for Business si tu diriges une organisation petite ou moyenne (jusqu'à 300 utilisateurs) qui a besoin d'une protection des postes sans équipe sécurité dédiée",
+      "avoid_if": "Évite-le si tu dois protéger des serveurs par défaut ou si tu as plus de 300 utilisateurs : les deux demandent une extension ou un forfait entreprise",
+      "strengths": [
+        "Bloque les malwares et interrompt automatiquement les attaques de ransomware en cours",
+        "Peut être intégré à Microsoft 365 Business Premium pour les équipes déjà sur cette suite"
+      ],
+      "weaknesses": [
+        "Plafonné à 300 utilisateurs et 5 appareils par utilisateur, donc ne convient pas aux grandes organisations",
+        "La protection des serveurs est une extension payante séparée, non incluse dans le prix de base"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.2/5",
+      "label": "Good",
+      "keep_if": "Keep it if you run a small or medium organization (up to 300 users) that needs endpoint protection without a dedicated security team",
+      "avoid_if": "Avoid it if you need to protect servers by default or have more than 300 users: both require extra add-ons or an enterprise plan",
+      "strengths": [
+        "Blocks malware and automatically disrupts human-operated ransomware attacks in progress",
+        "Can be bundled into Microsoft 365 Business Premium for teams already on that suite"
+      ],
+      "weaknesses": [
+        "Capped at 300 users and 5 devices per user, so it does not scale to larger organizations",
+        "Server protection is a separate paid add-on, not included in the base price"
+      ]
+    }
+  },
+  {
+    "name": "Microsoft Entra ID",
+    "slug": "microsoft-entra-id",
+    "url_fr": "https://tooltrim.com/fr/tool/microsoft-entra-id",
+    "url_en": "https://tooltrim.com/en/tool/microsoft-entra-id",
+    "website": "https://www.microsoft.com/security/business/identity-access/microsoft-entra-id",
+    "category": "security",
+    "pricing": {
+      "free": "Entra ID Free, Inclus avec Microsoft Cloud (Azure, Microsoft 365). Authentification multifacteur, SSO illimité, rapports basiques, changement autogéré de mot de passe.",
+      "paid": "Microsoft Entra ID Free: Gratuit (inclus Microsoft Cloud) ; Microsoft Entra ID P1: $6–7/utilisateur/mois (engagement annuel) ; Microsoft Entra ID P2: $9–10/utilisateur/mois (engagement annuel) ; Microsoft Entra Suite: $12/utilisateur/mois (engagement annuel, nécessite P1) ; Internet Access / Private Access (standalone): $5/utilisateur/mois chacun ; ID Governance (standalone): $7/utilisateur/mois ; Workload ID (standalone): $3/workload/mois"
+    },
+    "description_fr": "Service de gestion des identités et accès (IAM) basé sur le cloud offrant authentification multi-facteur, single sign-on (SSO), accès conditionnel et gouvernance des identités pour entreprises et identités externes.",
+    "description_en": "Cloud-based identity and access management (IAM) service providing multifactor authentication, single sign-on (SSO), conditional access, and identity governance for enterprises and external identities.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez Microsoft 365 ou Azure",
+      "avoid_if": "Vous êtes micro-entreprise sans besoins SSO",
+      "strengths": [
+        "Gratuit avec Microsoft Cloud (Free tier très complet)",
+        "Tarification modeste pour P1 et P2",
+        "Accès conditionnel basé sur les risques IA"
+      ],
+      "weaknesses": [
+        "Meilleur choix si vous êtes dans écosystème Microsoft",
+        "Courbe d'apprentissage pour IAM complexes",
+        "Moins de flexibilité hors Microsoft"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You use Microsoft 365 or Azure",
+      "avoid_if": "You are micro-business without SSO needs",
+      "strengths": [
+        "Free with Microsoft Cloud (Free tier is comprehensive)",
+        "Modest pricing for P1 and P2",
+        "Risk-based conditional access with AI"
+      ],
+      "weaknesses": [
+        "Best choice only if you are in Microsoft ecosystem",
+        "Learning curve for complex IAM scenarios",
+        "Less flexibility outside Microsoft"
+      ]
+    }
+  },
+  {
+    "name": "NordPass",
+    "slug": "nordpass",
+    "url_fr": "https://tooltrim.com/fr/tool/nordpass",
+    "url_en": "https://tooltrim.com/en/tool/nordpass",
+    "website": "https://nordpass.com",
+    "category": "security",
+    "pricing": {
+      "free": "Offre gratuite : sauvegarde et remplissage automatique, stockage sécurisé, sans accès multi-appareils ni analyse des fuites.",
+      "paid": "Premium à 1,39 €/mois en tarif promotionnel sur 2 ans (37,53 € pour les 27 premiers mois, HT) ; 1,99 €/mois sur 1 an. Renouvellement non affiché."
+    },
+    "description_fr": "Gestionnaire de mots de passe chiffré de Nord Security, avec un plan gratuit et des offres entreprise par siège.",
+    "description_en": "Encrypted password manager from Nord Security, with a free tier and per-seat business plans.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu es seul ou en équipe de 5 personnes ou plus et tu veux un coffre-fort partagé simple et pas cher",
+      "avoid_if": "Tu es en équipe de 2 à 4 personnes, car le palier entreprise le moins cher facture quand même 5 à 10 sièges",
+      "strengths": [
+        "Prix d'entrée bas pour un utilisateur seul, moins de 2 euros par mois pour Premium",
+        "Interface propre et rapide sur ordinateur, mobile et extensions navigateur",
+        "L'export en CSV laisse la porte ouverte pour changer de gestionnaire plus tard"
+      ],
+      "weaknesses": [
+        "Les offres entreprise imposent un minimum de 5 ou 10 utilisateurs, mal adapté à une équipe de 1 à 3 personnes",
+        "Les prix annoncés sont promotionnels ; les tarifs de renouvellement sont plus élevés et non publiés à l'avance"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You are a solo user or a team of 5+ that wants a cheap, simple shared vault",
+      "avoid_if": "You are a team of 2 to 4 people, since the cheapest business tier still bills for 5 to 10 seats",
+      "strengths": [
+        "Cheap entry price for a solo user, under 2 euros a month for Premium",
+        "Clean, fast interface across desktop, mobile and browser extensions",
+        "Export to CSV keeps the door open to switch managers later"
+      ],
+      "weaknesses": [
+        "Business tiers force a 5 or 10 user minimum, poor fit for a 1 to 3 person team",
+        "Advertised prices are promotional; renewal rates are higher and not published upfront"
+      ]
+    }
+  },
+  {
+    "name": "NVDA",
+    "slug": "nvda",
+    "url_fr": "https://tooltrim.com/fr/tool/nvda",
+    "url_en": "https://tooltrim.com/en/tool/nvda",
+    "website": "https://www.nvaccess.org",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Lecteur d’écran Windows gratuit pour tests accessibilité.",
+    "description_en": "Free Windows screen reader for accessibility testing.",
+    "verdict_fr": {
+      "keep_if": "Vous êtes utilisateur malvoyant ou aveugle",
+      "avoid_if": "Vous n'avez pas de besoin d'accessibilité",
+      "strengths": [
+        "Entièrement gratuit, aucun coût accès",
+        "Open-source et transparent",
+        "Supporté majeurs tech (Google, Microsoft, Adobe)"
+      ],
+      "weaknesses": [
+        "Courbe d'apprentissage importante (nécessite formation)",
+        "Formations optionnelles payantes",
+        "Support principalement communautaire (pas professionnel)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're blind or visually impaired user",
+      "avoid_if": "You have no accessibility needs",
+      "strengths": [
+        "Entirely free, no access cost",
+        "Open-source and transparent",
+        "Backed by major tech (Google, Microsoft, Adobe)"
+      ],
+      "weaknesses": [
+        "Steep learning curve (requires training)",
+        "Optional trainings are paid",
+        "Support mainly community-driven (not professional)"
+      ]
+    }
+  },
+  {
+    "name": "Okta",
+    "slug": "okta",
+    "url_fr": "https://tooltrim.com/fr/tool/okta",
+    "url_en": "https://tooltrim.com/en/tool/okta",
+    "website": "https://www.okta.com",
+    "category": "security",
+    "pricing": {
+      "free": "Aucun plan gratuit.",
+      "paid": "Workforce Identity à partir d'environ 2$/utilisateur/mois (SSO basique), 6-15$/utilisateur/mois pour les plans avec authentification multi-facteur avancée et gestion du cycle de vie."
+    },
+    "description_fr": "La référence en gestion d'identité et SSO pour entreprises.",
+    "description_en": "The reference identity and SSO management tool for businesses.",
+    "price_verified_on": "2026-09-24",
+    "verdict_fr": {
+      "keep_if": "Vous avez besoin IAM d'entreprise pour nombreux utilisateurs",
+      "avoid_if": "Vous êtes startup solo ou PME très serrée budget",
+      "strengths": [
+        "Plateforme IAM leader, reconnaissance industrie",
+        "Adaptative MFA et sécurité d'entreprise robuste",
+        "Conformité et gouvernance intégrées"
+      ],
+      "weaknesses": [
+        "Tarification opaque (négocia variable)",
+        "Un engagement contractuel minimum est exigé",
+        "Courbe d'apprentissage importante pour déploiement"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need enterprise IAM for many users",
+      "avoid_if": "You're solo startup or tight-budget SMB",
+      "strengths": [
+        "Leading IAM platform, industry recognition",
+        "Adaptive MFA and robust enterprise security",
+        "Compliance and governance built-in"
+      ],
+      "weaknesses": [
+        "Opaque pricing (negotiable per contract)",
+        "A minimum contractual commitment is required",
+        "Steep learning curve for deployment"
+      ]
+    }
+  },
+  {
+    "name": "OneLogin",
+    "slug": "onelogin",
+    "url_fr": "https://tooltrim.com/fr/tool/onelogin",
+    "url_en": "https://tooltrim.com/en/tool/onelogin",
+    "website": "https://www.onelogin.com",
+    "category": "security",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / prix non public"
+    },
+    "description_fr": "OneLogin aide à gérer accès, conformité ou sécurité dans une stack d’entreprise.",
+    "description_en": "OneLogin helps manage access, compliance, or security in a company stack.",
+    "price_verified_on": "2026-05-02",
+    "verdict_fr": {
+      "keep_if": "Vous avez équipe 5-100+ utilisateurs avec SSO requis",
+      "avoid_if": "Vous êtes startup solo ou 2-3 personnes",
+      "strengths": [
+        "Tarification transparente et prévisible par user",
+        "Smart Hooks pour automations sans code",
+        "Support 5 apps même plan Basic"
+      ],
+      "weaknesses": [
+        "Coûts augmentent rapidement avec nombre users",
+        "Le plan Business est nettement plus cher",
+        "Moins riche feature-set qu'Okta"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have team of 5-100+ users needing SSO",
+      "avoid_if": "You're solo startup or 2-3 person team",
+      "strengths": [
+        "Transparent, predictable per-user pricing",
+        "Smart Hooks for no-code automations",
+        "Supports 5+ apps even on Basic plan"
+      ],
+      "weaknesses": [
+        "Costs grow quickly with user count",
+        "The Business plan is markedly more expensive",
+        "Less feature-rich than Okta"
+      ]
+    }
+  },
+  {
+    "name": "OneTrust",
+    "slug": "onetrust",
+    "url_fr": "https://tooltrim.com/fr/tool/onetrust",
+    "url_en": "https://tooltrim.com/en/tool/onetrust",
+    "website": "https://www.onetrust.com",
+    "category": "security",
+    "pricing": {
+      "free": "Aucune formule gratuite permanente de la plateforme relevée ; une démonstration ne constitue pas un plan gratuit.",
+      "paid": "Sur devis par module et périmètre. CMP : visiteurs quotidiens moyens agrégés ; Privacy Automation : utilisateurs et inventaire d'actifs. Aucun montant de départ public relevé."
+    },
+    "description_fr": "Modules de confidentialité, consentement, gouvernance IA et gestion des risques pour organisations structurées.",
+    "description_en": "Privacy, consent, AI governance and risk modules for structured organizations.",
+    "price_verified_on": "2026-10-17",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Plusieurs équipes doivent partager un programme de confidentialité ou de gestion des risques",
+      "avoid_if": "Tu veux seulement un bandeau cookies pour un site, sans programme de gouvernance plus large",
+      "strengths": [
+        "Modules de confidentialité et de risques coordonnés",
+        "Évaluations et circuits de validation partagés",
+        "API d'export des évaluations documentée"
+      ],
+      "weaknesses": [
+        "Modules et unités de facturation à cadrer dans le devis",
+        "Le déploiement implique plusieurs responsables métier",
+        "Une CMP seule ne couvre pas les opérations internes de conformité"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Several teams need a shared privacy or risk management program",
+      "avoid_if": "You only need a website cookie banner, without a wider governance program",
+      "strengths": [
+        "Coordinated privacy and risk modules",
+        "Shared assessments and approval workflows",
+        "Documented assessment export API"
+      ],
+      "weaknesses": [
+        "Define modules and billing units in the quote",
+        "Deployment involves several business owners",
+        "CMP alone does not cover internal compliance operations"
+      ]
+    }
+  },
+  {
+    "name": "OWASP ZAP",
+    "slug": "owasp-zap",
+    "url_fr": "https://tooltrim.com/fr/tool/owasp-zap",
+    "url_en": "https://tooltrim.com/en/tool/owasp-zap",
+    "website": "https://www.zaproxy.org",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Proxy et scanner open source pour tests sécurité web.",
+    "description_en": "Open-source proxy and scanner for web security testing.",
+    "verdict_fr": {
+      "keep_if": "Vous développez applications web et testez sécurité",
+      "avoid_if": "Vous avez besoin support commercial SLA",
+      "strengths": [
+        "Entièrement gratuit, open-source transparent",
+        "Outil de scanning #1 mondial reconnu",
+        "Marketplace extensions communautaires riches"
+      ],
+      "weaknesses": [
+        "Pas de support commercial, communautaire uniquement",
+        "Interface peut sembler complexe débutants",
+        "Seulement DAST (pas SAST, analyse statique)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You develop web applications and test security",
+      "avoid_if": "You need commercial SLA support",
+      "strengths": [
+        "Entirely free, transparent open-source",
+        "World #1 scanning tool recognized",
+        "Rich community add-ons marketplace"
+      ],
+      "weaknesses": [
+        "No commercial support, community-only",
+        "Interface may seem complex for beginners",
+        "DAST only (no SAST, static analysis)"
+      ]
+    }
+  },
+  {
+    "name": "Semgrep",
+    "slug": "semgrep",
+    "url_fr": "https://tooltrim.com/fr/tool/semgrep",
+    "url_en": "https://tooltrim.com/en/tool/semgrep",
+    "website": "https://semgrep.dev",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Analyse statique rapide pour règles sécurité, qualité et conformité.",
+    "description_en": "Fast static analysis for security, quality, and compliance rules.",
+    "verdict_fr": {
+      "keep_if": "Vous cherchez SAST + SCA + secrets dans une plateforme",
+      "avoid_if": "Vous avez budget très serré pour outils sécurité",
+      "strengths": [
+        "Community Edition gratuit puissant (3 000+ règles)",
+        "Team gratuit pour ≤10 contributors (excellent value)",
+        "Le tri assisté par IA réduit fortement les faux positifs"
+      ],
+      "weaknesses": [
+        "Community : single-file analysis uniquement (pas cross-file dataflow)",
+        "Le plan Team devient coûteux au-delà d'une dizaine de contributeurs",
+        "Documentation moins complète que solutions payantes"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want SAST + SCA + secrets in one platform",
+      "avoid_if": "You have tight security tools budget",
+      "strengths": [
+        "Powerful free Community Edition (3,000+ rules)",
+        "Free Team for ≤10 contributors (excellent value)",
+        "AI-assisted triage sharply reduces false positives"
+      ],
+      "weaknesses": [
+        "Community: single-file analysis only (no cross-file dataflow)",
+        "The Team plan gets expensive past a dozen contributors",
+        "Documentation less complete than paid solutions"
+      ]
+    }
+  },
+  {
+    "name": "Snyk",
+    "slug": "snyk",
+    "url_fr": "https://tooltrim.com/fr/tool/snyk",
+    "url_en": "https://tooltrim.com/en/tool/snyk",
+    "website": "https://snyk.io",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Scan dépendances, containers et code pour vulnérabilités.",
+    "description_en": "Dependency, container, and code scanning for vulnerabilities.",
+    "verdict_fr": {
+      "keep_if": "Vous utilisez code généré par IA (Claude, Cursor, etc.)",
+      "avoid_if": "Vous êtes solo ou 2-3 personnes uniquement",
+      "strengths": [
+        "Plan Free puissant sans expiration",
+        "Validation code IA intégrée (cas d'usage moderne)",
+        "Analyse rapide comparée aux alternatives du marché"
+      ],
+      "weaknesses": [
+        "Le plan Team devient coûteux sur une grande équipe",
+        "Tarification entreprise opaque et positionnée haut",
+        "Free tier limité (moins d'infos Enterprise)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You use AI-generated code (Claude, Cursor, etc.)",
+      "avoid_if": "You're solo or 2-3 person only",
+      "strengths": [
+        "Powerful free plan with no expiration",
+        "AI code validation built-in (modern use case)",
+        "Fast scanning compared with market alternatives"
+      ],
+      "weaknesses": [
+        "The Team plan gets expensive on a large team",
+        "Opaque, high-end enterprise pricing",
+        "Free tier limited (less Enterprise info)"
+      ]
+    }
+  },
+  {
+    "name": "Vanta",
+    "slug": "vanta",
+    "url_fr": "https://tooltrim.com/fr/tool/vanta",
+    "url_en": "https://tooltrim.com/en/tool/vanta",
+    "website": "https://www.vanta.com",
+    "category": "security",
+    "pricing": {
+      "free": "Aucune formule gratuite permanente de la plateforme relevée ; une démonstration ne constitue pas un plan gratuit.",
+      "paid": "Essentials, Plus, Professional et Enterprise sur devis. Essentials comprend un référentiel ; options et périmètre sont à préciser dans le contrat. Aucun prix de départ public relevé."
+    },
+    "description_fr": "Centralise les preuves, les contrôles de sécurité et la préparation aux audits de conformité.",
+    "description_en": "Centralizes evidence, security controls and compliance audit preparation.",
+    "price_verified_on": "2026-10-17",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Une échéance d'audit ou des demandes clients justifient un programme de conformité suivi",
+      "avoid_if": "Ton besoin se limite à un bandeau cookies ou à une démarche ponctuelle sans suivi des contrôles",
+      "strengths": [
+        "Collecte de preuves et contrôles reliés aux intégrations",
+        "Trust Center et questionnaires pour les demandes clients",
+        "Exports documentés par rubrique"
+      ],
+      "weaknesses": [
+        "Le devis doit préciser les référentiels et options inclus",
+        "Paramétrer le périmètre et les responsabilités reste nécessaire",
+        "Pas d'export unique de toutes les données et historiques"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "An audit deadline or customer requests justify an ongoing compliance program",
+      "avoid_if": "You only need a cookie banner or a one-off task without ongoing control tracking",
+      "strengths": [
+        "Evidence and controls connected to integrations",
+        "Trust Center and questionnaires for customer requests",
+        "Documented section-specific exports"
+      ],
+      "weaknesses": [
+        "The quote must define included frameworks and options",
+        "Scope and ownership still require configuration",
+        "No single export of all data and history"
+      ]
+    }
+  },
+  {
+    "name": "VoiceOver",
+    "slug": "voiceover",
+    "url_fr": "https://tooltrim.com/fr/tool/voiceover",
+    "url_en": "https://tooltrim.com/en/tool/voiceover",
+    "website": "https://support.apple.com/guide/voiceover/welcome/mac",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Lecteur d’écran Apple intégré à macOS et iOS.",
+    "description_en": "Apple screen reader built into macOS and iOS.",
+    "verdict_fr": {
+      "keep_if": "Vous êtes utilisateur Mac malvoyant/aveugle",
+      "avoid_if": "Vous avez écran non-Apple (Windows, Linux)",
+      "strengths": [
+        "Entièrement gratuit, inclus dans macOS",
+        "Profondément intégré système, performant",
+        "Support braille complet et Braille Access"
+      ],
+      "weaknesses": [
+        "Macintosh uniquement (pas Windows/Linux)",
+        "Courbe d'apprentissage importante",
+        "Support principalement par Apple (moins communauté que NVDA)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You're a blind/visually impaired Mac user",
+      "avoid_if": "You use non-Apple screen (Windows, Linux)",
+      "strengths": [
+        "Entirely free, included in macOS",
+        "Deeply integrated, performant system",
+        "Full braille support and Braille Access"
+      ],
+      "weaknesses": [
+        "Macintosh only (no Windows/Linux)",
+        "Steep learning curve",
+        "Support mainly by Apple (less community than NVDA)"
+      ]
+    }
+  },
+  {
+    "name": "Wordfence",
+    "slug": "wordfence",
+    "url_fr": "https://tooltrim.com/fr/tool/wordfence",
+    "url_en": "https://tooltrim.com/en/tool/wordfence",
+    "website": "https://www.wordfence.com",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "description_fr": "Sécurité WordPress : firewall, scans, alertes et protection brute force.",
+    "description_en": "WordPress security: firewall, scans, alerts, and brute-force protection.",
+    "verdict_fr": {
+      "keep_if": "Vous avez un site WordPress",
+      "avoid_if": "Vous n'utilisez pas WordPress",
+      "strengths": [
+        "Version Free très fonctionnelle (firewall, scanner, 2FA)",
+        "Plugin WordPress natif, facile installation",
+        "Offre Premium au tarif raisonnable par site"
+      ],
+      "weaknesses": [
+        "Seulement WordPress (pas autres CMS)",
+        "Premium mises à jour temps réel surcoûtent",
+        "Peut ralentir sites WordPress surchargés"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You have a WordPress site",
+      "avoid_if": "You don't use WordPress",
+      "strengths": [
+        "Very functional Free version (firewall, scanner, 2FA)",
+        "Native WordPress plugin, easy install",
+        "Reasonably priced Premium tier, per site"
+      ],
+      "weaknesses": [
+        "WordPress only (no other CMS)",
+        "Premium real-time updates add cost",
+        "May slow heavily loaded WordPress sites"
+      ]
+    }
+  },
+  {
+    "name": "Sovkern",
+    "slug": "sovkern",
+    "url_fr": "https://tooltrim.com/fr/tool/sovkern",
+    "url_en": "https://tooltrim.com/en/tool/sovkern",
+    "website": "https://www.sovkern.com/",
+    "category": "security",
+    "pricing": {
+      "free": "Diagnostic en ligne gratuit, distinct de la plateforme. Aucune formule logicielle gratuite permanente affichée.",
+      "paid": "Offre RGPD : 265 €/mois ; Core : 553 €/mois ; Unlimited sur devis. Les tarifs sont annoncés avec engagement annuel et prix bloqué 3 ans ; TVA et modalités exactes de paiement à confirmer. Contrôle technique cyber ponctuel distinct : 2 200 € HT pour moins de 10 collaborateurs, 4 400 € HT de 10 à 50."
+    },
+    "description_fr": "Plateforme française pour structurer la conformité RGPD et suivre plusieurs référentiels dans un plan d’action partagé.",
+    "description_en": "French platform for managing GDPR compliance and multiple frameworks through a shared action plan.",
+    "price_verified_on": "2026-10-15",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu dois suivre des obligations RGPD ou plusieurs référentiels dans la durée et veux centraliser les preuves et les actions",
+      "avoid_if": "Tu es freelance solo ou au démarrage sans exigence de conformité récurrente : l’engagement annuel à partir de 265 €/mois est probablement disproportionné",
+      "strengths": [
+        "Un plan d’action et un tableau de bord donnent une vue des priorités annoncées par l’éditeur",
+        "La réutilisation des preuves entre référentiels peut éviter les saisies documentaires en double",
+        "L’offre RGPD commence avec un périmètre limité avant d’évoluer vers Core"
+      ],
+      "weaknesses": [
+        "Le ticket d’entrée de 265 €/mois avec engagement annuel est élevé pour un freelance ou une très petite structure sans obligation récurrente",
+        "La page tarifaire consultée ne précise ni la TVA ni les modalités de paiement",
+        "La plateforme structure la conformité mais ne certifie pas l’entreprise et ne remplace pas un avis juridique"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You need to track GDPR obligations or several frameworks over time and want one place for evidence and actions",
+      "avoid_if": "You are a solo freelancer or just starting without recurring compliance requirements; the annual commitment from €265/month is likely disproportionate",
+      "strengths": [
+        "A dashboard and action plan surface priorities described by the publisher",
+        "Reusing evidence across frameworks can reduce duplicate documentation",
+        "The GDPR plan starts with a narrower scope before moving to Core"
+      ],
+      "weaknesses": [
+        "The €265/month entry plan with an annual commitment is expensive for a freelancer or very small business without recurring requirements",
+        "The reviewed pricing page does not specify VAT treatment or payment terms",
+        "The platform organizes compliance but does not certify a business or replace legal advice"
+      ]
+    }
+  },
+  {
+    "name": "Proton Pass",
+    "slug": "proton-pass",
+    "url_fr": "https://tooltrim.com/fr/tool/proton-pass",
+    "url_en": "https://tooltrim.com/en/tool/proton-pass",
+    "website": "https://proton.me/pass",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit : identifiants et appareils illimités, 10 alias e-mail.",
+      "paid": "Pass Plus 2,99 €/mois facturés 35,88 € par an (4,99 € en mensuel) ; Pass Family 4,99 €/mois en annuel pour 6 utilisateurs."
+    },
+    "description_fr": "Gestionnaire de mots de passe chiffré de bout en bout de Proton, avec une offre gratuite sans limite d'identifiants et des alias e-mail.",
+    "description_en": "Proton's end-to-end encrypted password manager, with a free plan that has no login limit and built-in email aliases.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Tu veux un gestionnaire de mots de passe gratuit sans limite d'identifiants ni d'appareils, ou tu utilises déjà Proton Mail",
+      "avoid_if": "Tu as besoin d'une gestion d'équipe avancée : les offres entreprise sont à part et non couvertes ici",
+      "strengths": [
+        "Offre gratuite sans limite d'identifiants ni d'appareils",
+        "Alias e-mail masqués intégrés, illimités en Pass Plus",
+        "Chiffrement de bout en bout et apps sur tous les systèmes, Linux compris"
+      ],
+      "weaknesses": [
+        "Authentificateur 2FA, partage d'éléments et pièces jointes réservés aux offres payantes",
+        "Le prix bas suppose un engagement d'un an"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a free password manager with no login or device limit, or you already use Proton Mail",
+      "avoid_if": "You need advanced team management: business plans are separate and not covered here",
+      "strengths": [
+        "Free plan with no login or device limit",
+        "Built-in hide-my-email aliases, unlimited on Pass Plus",
+        "End-to-end encryption and apps on every platform, Linux included"
+      ],
+      "weaknesses": [
+        "2FA authenticator, item sharing and attachments are paid-only",
+        "The low price requires a one-year commitment"
+      ]
+    }
+  },
+  {
+    "name": "Keeper",
+    "slug": "keeper",
+    "url_fr": "https://tooltrim.com/fr/tool/keeper",
+    "url_en": "https://tooltrim.com/en/tool/keeper",
+    "website": "https://www.keepersecurity.com",
+    "category": "security",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Personnel 4,30 €/mois (51,59 € facturés à l'année) ; Famille 9,20 €/mois (110,39 €/an, 5 utilisateurs)."
+    },
+    "description_fr": "Gestionnaire de mots de passe chiffré pour particuliers et familles, facturé à l'année, avec des options payantes de surveillance et de stockage.",
+    "description_en": "Encrypted password manager for individuals and families, billed yearly, with paid add-ons for monitoring and file storage.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Tu veux un coffre-fort simple pour toi ou ta famille et tu acceptes de payer à l'année",
+      "avoid_if": "Tu veux une offre gratuite ou payer au mois : la grille publiée n'en propose pas",
+      "strengths": [
+        "Mots de passe, appareils et partage sécurisé illimités dès l'offre Personnel",
+        "Offre Famille à 5 utilisateurs avec des coffres séparés",
+        "Assistance client 24h/24 et 7j/7"
+      ],
+      "weaknesses": [
+        "Pas d'offre gratuite permanente ni de facturation mensuelle dans la grille publiée",
+        "Surveillance du dark web et stockage de fichiers vendus en options"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a simple vault for yourself or your family and are fine paying yearly",
+      "avoid_if": "You want a free plan or monthly billing: the published grid has neither",
+      "strengths": [
+        "Unlimited passwords, devices and secure sharing from the Personal plan",
+        "Family plan for 5 users with separate vaults",
+        "24/7 customer support"
+      ],
+      "weaknesses": [
+        "No permanent free plan and no monthly billing in the published grid",
+        "Dark web alerts and file storage sold as add-ons"
+      ]
+    }
+  }
+]
