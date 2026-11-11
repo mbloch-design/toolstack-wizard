@@ -100,13 +100,13 @@
   overflow: visible;
   pointer-events: none;
   opacity: 0;
-  filter: drop-shadow(0 0 1.5px var(--tt-spark-halo));
+  filter: drop-shadow(0 0 1px var(--tt-spark-halo));
   transition: opacity 700ms var(--tt-ease);
 }
 
 /* The flare: a blurred copy under the streak, violet at its ends. */
 .button > .spark[data-glow] {
-  filter: blur(2.5px);
+  filter: blur(1.5px);
 }
 
 .spark rect {
@@ -141,13 +141,14 @@
   transition: opacity 700ms var(--tt-ease);
 }
 
+/* Lighter than the planche's first pass (Michael, 11/11): the star whispers, the rim barely shows. */
 .button[data-variant="primary"]:hover:not(:disabled) .spark {
-  opacity: 1;
+  opacity: var(--tt-spark-strength);
   animation: spark-run 4.2s linear infinite;
 }
 
 .button[data-variant="primary"]:hover:not(:disabled) .edge {
-  opacity: 0.45;
+  opacity: var(--tt-spark-rim);
   animation: lead-flow 10s linear infinite;
 }
 
