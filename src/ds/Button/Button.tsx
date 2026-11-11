@@ -23,14 +23,30 @@ function Arrow() {
 /** The lead's light follows the pointer. */
 function followPointer(event: PointerEvent<HTMLElement>) {
   const box = event.currentTarget.getBoundingClientRect();
-  event.currentTarget.style.setProperty("--tt-mx", `${event.clientX - box.left}px`);
-  event.currentTarget.style.setProperty("--tt-my", `${event.clientY - box.top}px`);
+  const x = event.clientX - box.left, y = event.clientY - box.top;
+  event.currentTarget.style.setProperty("--tt-mx", `${x}px`);
+  event.currentTarget.style.setProperty("--tt-my", `${y}px`);
+  // Attraction (planche): 3 px toward the pointer, never more.
+  event.currentTarget.style.setProperty("--tt-pull-x", `${((x / box.width) - 0.5) * 6}px`);
+  event.currentTarget.style.setProperty("--tt-pull-y", `${((y / box.height) - 0.5) * 6}px`);
+}
+function releasePointer(event: PointerEvent<HTMLElement>) {
+  event.currentTarget.style.setProperty("--tt-pull-x", "0px");
+  event.currentTarget.style.setProperty("--tt-pull-y", "0px");
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button({ variant = "secondary", size = "md", icon, pressed, arrow, children, type = "button", onPointerMove, ...rest }, ref) {
+/** The shooting star (planche): a point of light running round the lead's edge at a steady pace, on hover only. */
+function Spark() {
+  return <svg className={styles.spark} aria-hidden="true"><rect pathLength="100" /><rect className={styles.sparkGlow} pathLength="100" /></svg>;
+}
+
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button({ variant = "secondary", size = "md", icon, pressed, arrow, children, type = "button", onPointerMove, onPointerLeave, ...rest }, ref) {
+  const lead = variant === "primary";
   return (
     <button ref={ref} type={type} className={styles.button} data-variant={variant} data-size={size} aria-pressed={pressed}
-      onPointerMove={variant === "primary" ? (event) => { followPointer(event); onPointerMove?.(event); } : onPointerMove} {...rest}>
+      onPointerMove={lead ? (event) => { followPointer(event); onPointerMove?.(event); } : onPointerMove}
+      onPointerLeave={lead ? (event) => { releasePointer(event); onPointerLeave?.(event); } : onPointerLeave} {...rest}>
+      {lead && <Spark />}
       {icon && <span className={styles.icon} aria-hidden="true">{icon}</span>}
       <span>{children}</span>
       {arrow && <Arrow />}
