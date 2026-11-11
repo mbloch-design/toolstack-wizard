@@ -1,3 +1,10 @@
+## 2026-11-11 · SEO · recette post-déploiement automatisée
+
+- Nouveau `scripts/verify-production-postdeploy.mjs` (alias `npm run verify:postdeploy`) : la checklist de recette devient une porte exécutable, code de sortie 1 dès qu'un contrôle échoue, 0 si tout passe (un SKIP ne fait pas échouer).
+- Contrôles invariants : redirection racine vers `/en`, statut 200 + canonical autoréférente + hreflang fr/en/x-default sur dix pages clés, `og:image` du guide sans origine concaténée, métadonnées de fraîcheur (`data-verified-date`, `data-freshness`, `ai-summary`) cohérentes et datées de moins de 180 jours, `lastmod` réellement varié sans date future, catégories toujours `noindex, follow`, 404 réels, `llms.txt` / `llms-full.txt` servis non vides.
+- Aucun chiffre de catalogue n'est codé en dur : les valeurs exactes restent optionnelles (`--expect-sitemap-urls`) pour épingler une release. `--base` permet de viser la préprod, `--allow-indexed-categories` d'anticiper la refonte des hubs.
+- Tests exécutés : production réelle 19/19 PASS (dont 66 valeurs de `lastmod` et 10 726 URLs), échec simulé par valeur épinglée → code 1 avec le contrôle fautif nommé, base injoignable → code 1 sans plantage et 19 FAIL explicites. Aucun commit.
+
 ## 2026-11-11 · SEO · script d'échantillonnage du rapport Couverture
 
 - Nouveau `scripts/audit-seo-coverage.mjs` (alias `npm run audit:seo-coverage`) : il ingère l'export CSV Couverture / Indexation des pages de Search Console dès qu'il est fourni, filtre le motif « explorée, actuellement non indexée », tire un échantillon stratifié déterministe par famille, enrichit chaque URL en direct avec `--live` (statut, canonical, robots, title, mots, JSON-LD) et classe doublon / thin / hors intention / à qualifier avec la preuve de chaque verdict.

@@ -57,6 +57,7 @@
     "audit:seo-coverage": "node scripts/audit-seo-coverage.mjs",
     "validate:seo-generated": "node scripts/validate-generated-seo.mjs",
     "validate:seo-redirects": "node scripts/validate-production-redirects.mjs",
+    "verify:postdeploy": "node scripts/verify-production-postdeploy.mjs",
     "catalog:review:sync": "node scripts/catalog-review-ledger.mjs sync",
     "catalog:review:check": "node scripts/catalog-review-ledger.mjs check",
     "catalog:review:report": "node scripts/catalog-review-ledger.mjs report",
