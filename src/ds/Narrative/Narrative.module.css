@@ -60,62 +60,6 @@
   gap: var(--tt-space-2) var(--tt-gap-group);
 }
 
-/* The thread: the cut line takes the blue and violet of the aura, which drift slowly. */
-.thread {
-  position: relative;
-  display: block;
-  width: 96px;
-  height: 1px;
-  overflow: hidden;
-  mask: repeating-linear-gradient(90deg, #000 0 var(--tt-dash), transparent var(--tt-dash) calc(var(--tt-dash) + var(--tt-dash-gap)));
-}
-
-.thread::before {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 200%;
-  background: linear-gradient(90deg in oklch, var(--tt-aura-brand-a), var(--tt-aura-brand-b), var(--tt-aura-brand-a)) 0 0 / 50% 100% repeat-x;
-  content: "";
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .thread::before {
-    animation: drift 14s linear infinite;
-  }
-}
-
-@keyframes drift {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.hero > .thread {
-  margin-top: var(--tt-gap-group);
-}
-
-.chapter {
-  display: grid;
-  gap: var(--tt-gap-group);
-  container-type: inline-size;
-}
-
-.head {
-  display: grid;
-  gap: var(--tt-gap-item);
-  max-width: 60ch;
-}
-
-.sentence {
-  margin: 0;
-  color: var(--tt-ink);
-  font: var(--tt-title-section-font);
-  letter-spacing: var(--tt-title-section-tracking);
-  text-wrap: balance;
-}
-
-.lead { composes: text from "../atoms.module.css"; }
-
 .key[data-tone="brand"] {
   color: var(--tt-brand-mark);
 }

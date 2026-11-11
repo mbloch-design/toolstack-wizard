@@ -1,29 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import Budget from "./Budget";
-import { budgetStates } from "./Budget.fixtures";
+import { BudgetTrust } from "./Budget";
 
-// The card as the page shows it: one tile, the width of a board column on desktop, full width on a phone.
-const meta: Meta<typeof Budget> = {
-  title: "Ma stack/Budget",
-  component: Budget,
-  decorators: [(Story) => <div style={{ maxWidth: 520 }}><Story /></div>],
-};
+const meta: Meta = { title: "Molécules/Fiabilité du budget", tags: ["a-valider"] };
 export default meta;
+type Story = StoryObj;
+type Lang = "fr" | "en";
+const t = (lang: Lang, fr: string, en: string) => (lang === "fr" ? fr : en);
 
-type Story = StoryObj<typeof Budget>;
-const state = (name: keyof typeof budgetStates): Story => ({ render: (_args, context) => <Budget {...budgetStates[name](context.globals.lang)} onConfirmNext={() => {}} onStart={() => {}} localLogosOnly /> });
-
-export const OneTool = state("one");
-export const ThreeTools = state("three");
-export const TwelveTools = state("twelve");
-export const LongNames = state("longNames");
-export const Partial = state("partial");
-export const NothingKnown = state("nothingKnown");
-export const Converted = state("converted");
-export const Dollars = state("dollars");
-export const BigAmounts = state("bigAmounts");
-// The saving stays on the card (validated by Michael on 06/11/2026).
-export const WithSaving = state("withSaving");
-/** A very narrow card (the three-column board on a large screen): one row of logos still. */
-export const NarrowCard: Story = { ...state("twelve"), decorators: [(Story) => <div style={{ maxWidth: 300 }}><Story /></div>], tags: ["a-valider"] };
-export const NarrowCardSix: Story = { ...state("six"), decorators: [(Story) => <div style={{ maxWidth: 300 }}><Story /></div>], tags: ["a-valider"] };
+/** Prices still to confirm: the ring fills with what is known and opens the next question. Then, every price known. */
+export const States: Story = {
+  render: (_a, { globals: { lang } }) => <div style={{ display: "grid", gap: 24, justifyItems: "start" }}>
+    <BudgetTrust lang={lang} known={3} total={8} left={t(lang, "2 prix et 3 formules", "2 prices and 3 plans")} onConfirmNext={() => {}} />
+    <BudgetTrust lang={lang} known={7} total={8} left={t(lang, "1 formule", "1 plan")} onConfirmNext={() => {}} />
+    <BudgetTrust lang={lang} known={8} total={8} left={null} />
+  </div>,
+};

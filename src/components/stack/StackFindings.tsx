@@ -6,7 +6,9 @@ import { Ending, Key, StoryHero } from "@/ds/Narrative/Narrative";
 import Tag from "@/ds/Tag/Tag";
 import type { StackWelcome } from "@/components/stack/StackPersonalWelcome";
 import { Rocket, Moon, Zap } from "@/lib/icons";
-import Budget, { BudgetTrust, type BudgetTool } from "@/ds/Budget/Budget";
+import { BudgetTrust } from "@/ds/Budget/Budget";
+
+type BudgetTool = { id: string; name: string; slug?: string; logo?: string; paid: boolean | null };
 import Split from "@/ds/Split/Split";
 import Decision, { type DecisionLink } from "@/ds/Decision/Decision";
 import Choice, { Choices, IconTile } from "@/ds/Choice/Choice";

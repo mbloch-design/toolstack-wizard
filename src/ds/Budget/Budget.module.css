@@ -1,121 +1,9 @@
-/* The Budget card: total, the stack at a glance, how far the figure can be trusted. */
+/* How far the stack's figure can be trusted: a ring that fills as prices are known and opens the next
+   question, or a check once every price is known. */
 
-.card {
-  composes: tile from "../atoms.module.css";
-}
-
-.eyebrow { composes: eyebrow from "../atoms.module.css"; }
-.figure { margin: 0; }
-.text { composes: text from "../atoms.module.css"; }
-.strong { composes: strong from "../atoms.module.css"; }
-
-/* What the decisions already saved. The words stay in ink, in reading weight (the gain green is too light for text on the tile); the arrow carries the colour. */
-.gain {
-  composes: text from "../atoms.module.css";
-  display: flex;
-  align-items: flex-start;
-  gap: var(--tt-space-2);
-}
-
-/* On the first line of the sentence, even when it wraps: (line height 25.6 px - 18 px) / 2. */
-.gainMark {
-  flex: none;
-  width: 18px;
-  height: 18px;
-  margin-top: var(--tt-space-1);
-  fill: none;
-  stroke: var(--tt-gain-ink);
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.titleM { composes: titleM from "../atoms.module.css"; }
 .label { composes: label from "../atoms.module.css"; }
 .note { composes: note from "../atoms.module.css"; }
 
-.total,
-.start {
-  display: grid;
-  gap: var(--tt-space-2);
-  justify-items: start;
-}
-
-.start {
-  gap: var(--tt-space-3);
-}
-
-/* A short last line breaks the shape of these two paragraphs: balance them. */
-.total .text,
-.start .text {
-  text-wrap: balance;
-}
-
-/* The stack: one row of logos, then what it is made of. */
-.stack {
-  display: grid;
-  gap: var(--tt-space-3);
-}
-
-.logos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--tt-space-2);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.srOnly {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
-.more {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--tt-r-chip);
-  background: var(--tt-tile-2);
-  color: var(--tt-ink);
-  font: var(--tt-label-font);
-  letter-spacing: var(--tt-label-tracking);
-  font-variant-numeric: tabular-nums;
-}
-
-/* One row of logos at every width: each tier has its own « +N » tile. */
-.more:not([data-tier="wide"]) {
-  display: none;
-}
-
-@container (width < 424px) {
-  .logos [data-out-mid],
-  .more[data-tier="wide"] {
-    display: none;
-  }
-
-  .more[data-tier="mid"] {
-    display: grid;
-  }
-}
-
-@container (width < 288px) {
-  .logos [data-out-small],
-  .more[data-tier="mid"] {
-    display: none;
-  }
-
-  .more[data-tier="small"] {
-    display: grid;
-  }
-}
-
-/* Trust: a check when every price is known, otherwise a ring that opens the next question. */
 .trust {
   display: flex;
   align-items: center;
@@ -159,15 +47,6 @@ button.trust:focus-visible {
   outline-offset: var(--tt-focus-offset);
 }
 
-/* In the card, the hover fill reaches past the text without moving it. */
-.card button.trust {
-  margin: calc(var(--tt-space-2) * -1) calc(var(--tt-space-3) * -1);
-  padding: var(--tt-space-2) var(--tt-space-3);
-}
-
-.card button.trust:hover {
-  background: var(--tt-tile-2);
-}
 
 /* The chevron moves on hover. */
 button.trust:hover .chevron {
@@ -216,77 +95,4 @@ button.trust:hover .chevron {
   stroke-width: var(--tt-icon-stroke-bold);
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-/* The card keeps its single grid: the lead block is transparent to it. */
-.card .lead {
-  display: contents;
-}
-
-/* Hero: the opening of the page, without a box. The figure leads; the stack under it is its identity;
-   the rare action sits at the end of the stack's row. */
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: var(--tt-gap-group) var(--tt-gap-head);
-  color: var(--tt-ink);
-}
-
-.hero .lead {
-  display: grid;
-  grid-column: 1 / -1;
-  gap: var(--tt-gap-item);
-  justify-items: start;
-}
-
-.greeting {
-  composes: text from "../atoms.module.css";
-  margin-bottom: var(--tt-gap-item);
-}
-
-.side {
-  display: grid;
-  justify-items: end;
-}
-
-@container (width < 720px) {
-  .hero {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .side {
-    justify-items: start;
-  }
-}
-
-/* Dense: inside an opened bento tile, which already shows the title and the figure. */
-
-/* The figure stays on the left, the whole stack and how far it is known on the right. */
-.card[data-dense] {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: start;
-  column-gap: var(--tt-gap-head);
-}
-
-.card[data-dense] .eyebrow {
-  display: none;
-}
-
-.card[data-dense] .lead {
-  display: contents;
-}
-
-.card[data-dense] .total {
-  grid-column: 1;
-  grid-row: 1 / span 3;
-}
-
-.card[data-dense] button.trust {
-  margin: 0;
-  padding: 0;
-}
-
-.card[data-dense] button.trust:hover {
-  background: none;
 }

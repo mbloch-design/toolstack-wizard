@@ -2,15 +2,9 @@ import { useLayoutEffect, useRef, type ReactNode, type Ref } from "react";
 import styles from "./Narrative.module.css";
 
 /*
- * Ma stack told as one story: the hero states the premise, each chapter opens with a sentence that
- * takes up a figure of the previous one, and the thread (the cut line of the planche, blue to violet)
- * comes back before each of them: « le hero et chaque coupe sont le même fil ».
+ * Ma stack told as one story: the hero states the premise, the bento's tiles are its chapters, each
+ * section carries one title and the story's sentence under it.
  */
-
-/** The cut line in the aura's colours, drifting slowly. Its only use: to say « the story goes on ». */
-export function Thread({ width }: { width?: string }) {
-  return <span className={styles.thread} style={width ? { width } : undefined} aria-hidden="true" />;
-}
 
 /**
  * The premise, without a box, in three levels: a marker line (greeting and the page's name in small
@@ -48,19 +42,6 @@ export function StoryHero({ greeting, eyebrow, titleRef, title, lead, aside }: {
       {lead && <p className={styles.after}>{lead}</p>}
       {aside && <div className={styles.afterRow}>{aside}</div>}
     </header>
-  );
-}
-
-/** A section of the story: one title (42), the sentence that takes the story on under it (16), then its content. Never two titles. */
-export function StoryChapter({ sentence, lead, children, label }: { sentence: ReactNode; lead?: ReactNode; children?: ReactNode; label?: string }) {
-  return (
-    <section className={styles.chapter} aria-label={label} data-chapter="">
-      <div className={styles.head}>
-        <h2 className={styles.sentence}>{sentence}</h2>
-        {lead && <p className={styles.lead}>{lead}</p>}
-      </div>
-      {children}
-    </section>
   );
 }
 

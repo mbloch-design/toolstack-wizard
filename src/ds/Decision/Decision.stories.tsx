@@ -3,7 +3,7 @@ import { Moon, Rocket, Zap } from "@/lib/icons";
 import { formatAmount } from "@/lib/currencyRates";
 import Logo from "../Logo/Logo";
 import Choice, { Choices, IconTile } from "../Choice/Choice";
-import Decision, { DecisionRest } from "./Decision";
+import Decision from "./Decision";
 import InvoiceEntry from "../InvoiceEntry/InvoiceEntry";
 import Seats from "../Seats/Seats";
 import { useState } from "react";
@@ -52,11 +52,6 @@ export const LongRunLongName: Story = {
     title={t(lang, "Combien vous coûte Microsoft Dynamics 365 Finance and Operations par mois ?", "How much does Microsoft Dynamics 365 Finance and Operations cost you a month?")}
     detail={t(lang, "Pour un budget juste, dites-nous laquelle vous payez. Gratuite, ça compte aussi.", "For an honest budget, tell us which one you pay. Free counts too.")}
     links={[later(lang)]} preview={{ label: t(lang, "Budget partiel", "Partial budget"), value: t(lang, "À renseigner", "Not set yet") }} />,
-};
-
-/** Nothing left to decide. */
-export const AtRest: Story = {
-  render: (_args, { globals: { lang } }) => <DecisionRest lang={lang} onAddTool={() => {}} />,
 };
 
 /** No plan in the catalogue: the one case with an amount to type. */

@@ -99,30 +99,6 @@
   stroke-linejoin: round;
 }
 
-/* A hand of cards: the logos overlap and lean; hovering the tile opens the hand. */
-.fan {
-  display: inline-flex;
-  padding: var(--tt-space-2);
-}
-
-.fan > span {
-  display: inline-grid;
-  margin-left: calc(var(--tt-space-3) * -1);
-  border-radius: var(--tt-r-chip);
-  box-shadow: var(--tt-logo-shadow);
-  transform: rotate(calc(var(--i) * 6deg)) translateY(calc(var(--i) * var(--i) * 2px));
-  transition: transform var(--tt-dur-move) var(--tt-spring), margin var(--tt-dur-move) var(--tt-spring);
-}
-
-.fan > span:first-child {
-  margin-left: 0;
-}
-
-.tile:hover .fan > span {
-  margin-left: calc(var(--tt-space-1) * -1);
-  transform: rotate(calc(var(--i) * 10deg)) translateY(calc(var(--i) * var(--i) * 3px));
-}
-
 .ring {
   width: 64px;
   height: 64px;

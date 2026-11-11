@@ -74,12 +74,6 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
   );
 }
 
-/** The stack as a fan of logos: the tiles lean like a hand of cards, and open when the tile is hovered. */
-export function LogoFan({ tools, localOnly = false }: { tools: LogoTool[]; localOnly?: boolean }) {
-  const shown = tools.slice(0, 5);
-  return <span className={styles.fan}>{shown.map((tool, at) => <span key={tool.name} style={{ "--i": at - (shown.length - 1) / 2 } as CSSProperties}><Logo tool={tool} size={40} localOnly={localOnly} /></span>)}</span>;
-}
-
 /** A small ring of the areas, the picture of the split tile. */
 export function MiniRing({ parts }: { parts: { color: string; share: number }[] }) {
   let start = 0;

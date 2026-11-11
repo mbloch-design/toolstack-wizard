@@ -75,23 +75,6 @@ export default function Decision({ lang, eyebrow, step, media, title, detail, ch
   );
 }
 
-/** Nothing left to decide: the card rests instead of vanishing. */
-export function DecisionRest({ lang, history, onAddTool }: { lang: "fr" | "en"; history?: ReactNode; onAddTool: () => void }) {
-  const id = useId();
-  const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
-  return (
-    <section className={styles.card} data-card="decision" data-done="" aria-labelledby={`${id}-title`}>
-      <div className={styles.head}><h2 className={styles.eyebrow}>{t("Votre décision", "Your decision")}</h2></div>
-      <p className={styles.restTitle} id={`${id}-title`}>
-        <span className={styles.restCheck} aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg></span>
-        {t("Rien à trancher.", "Nothing to decide.")}
-      </p>
-      <p className={styles.detail}>{t("Chaque outil a trouvé sa place. Profitez-en, ça ne dure jamais très longtemps.", "Every tool has found its place. Enjoy it, it never lasts long.")}</p>
-      {history && <div className={styles.history}>{history}</div>}
-      <div className={styles.foot}><div className={styles.links}><TextButton onClick={onAddTool}>{t("Ajouter un outil", "Add a tool")}</TextButton></div></div>
-    </section>
-  );
-}
 
 /** The record of past choices, under the decision: one line per choice and a way to reopen it. */
 export function DecisionLog({ note, entries }: { note?: string; entries: { id: string; text: string; action: ReactNode }[] }) {

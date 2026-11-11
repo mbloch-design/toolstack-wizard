@@ -36,44 +36,5 @@
   gap: var(--tt-gap-chapter);
 }
 
-.chapter {
-  display: grid;
-  gap: var(--tt-gap-group);
-  container-type: inline-size;
-}
-
-/* The chapter's words on the left, what it measures on the right, on one line when there is room. */
-.chapterTop {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: end;
-  justify-content: space-between;
-  gap: var(--tt-gap-group) var(--tt-gap-head);
-}
-
-.chapterHead {
-  display: grid;
-  gap: var(--tt-gap-item);
-}
-
-.chapterTitle { composes: titleM from "../atoms.module.css"; }
 .chapterLead { composes: text from "../atoms.module.css"; }
 
-.pair {
-  display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  align-items: start;
-  gap: var(--tt-gap-group);
-}
-
-.pairMain,
-.pairSide {
-  display: grid;
-  min-width: 0;
-}
-
-@container (width < 880px) {
-  .pair {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}

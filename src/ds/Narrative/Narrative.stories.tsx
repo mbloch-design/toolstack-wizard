@@ -12,11 +12,12 @@ import Logo from "../Logo/Logo";
 import UsagePlay from "../UsagePlay/UsagePlay";
 import MediaCard, { MediaCards } from "../MediaCard/MediaCard";
 import * as Inventory from "../Inventory/Inventory.stories";
-import { Ending, Key, StoryChapter, StoryHero, Thread } from "./Narrative";
+import { Ending, Key, StoryHero } from "./Narrative";
+import { Section, SectionHead } from "../Toolbar/Toolbar";
 import Bento, { Answer, Answers, BentoRow, MiniRing, Question, Tile } from "../Bento/Bento";
 import { useState } from "react";
 
-const meta: Meta = { title: "Ma stack/Récit (proposition)", tags: ["a-valider", "!visual"], parameters: { layout: "fullscreen" } };
+const meta: Meta = { title: "Ma stack/Page", tags: ["a-valider", "!visual"], parameters: { layout: "fullscreen" } };
 export default meta;
 type Story = StoryObj;
 type Lang = "fr" | "en";
@@ -48,15 +49,15 @@ function Told({ lang, state }: { lang: Lang; state: State }) {
 
       {Inventory.ByArea.render?.({ note: t(lang, "Les voici, rangés par domaine : 8 outils, 78 €/mois, 5 prix encore à préciser.", "Here they are, by area: 8 tools, €78/mo, 5 prices still to confirm.") } as never, ctx)}
 
-      <StoryChapter label={t(lang, "À découvrir", "Discover")} sentence={t(lang, "Et pour la suite ?", "And next?")}
-        lead={t(lang, "D’autres approches autour de vos outils. La prochaine bonne pioche est peut-être ici.", "Fresh approaches around your tools. Your next good find could be here.")}>
+      <Section labelledBy="story-next">
+        <SectionHead title={t(lang, "Et pour la suite ?", "And next?")} titleId="story-next" note={t(lang, "D’autres approches autour de vos outils. La prochaine bonne pioche est peut-être ici.", "Fresh approaches around your tools. Your next good find could be here.")} />
         <MediaCards label={t(lang, "Idées à découvrir", "Ideas to discover")}>
           {[["Loom", "loom", ["Vidéo", "Video"], ["Montrer plutôt qu’écrire.", "Show instead of write."]], ["Make", "make", ["Automatisation", "Automation"], ["Pour relier vos outils sans code.", "To connect your tools without code."]], ["Airtable", "airtable", ["Bases de données", "Databases"], ["Pour structurer ce que Notion range en pages.", "To structure what Notion keeps as pages."]]].map(([name, slug, cat, why]) =>
             <MediaCard key={slug as string} lang={lang} tool={{ name: name as string, slug: slug as string }} image={<span style={{ display: "grid", placeItems: "center", width: "100%", height: "100%" }}><Logo tool={{ name: name as string, slug: slug as string }} size={40} localOnly /></span>}
               category={lang === "fr" ? (cat as string[])[0] : (cat as string[])[1]} reason={lang === "fr" ? (why as string[])[0] : (why as string[])[1]}
               renderLink={(className, content) => <a className={className} href={`#${slug}`}>{content}</a>} add={{ state: "idle", onAdd: () => {} }} localLogosOnly />)}
         </MediaCards>
-      </StoryChapter>
+      </Section>
     </Page>
   );
 }
