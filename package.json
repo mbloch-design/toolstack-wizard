@@ -116,6 +116,7 @@
     "test:accounts:runtime": "node --test scripts/accounts-runtime.test.mjs",
     "audit:typo": "node scripts/audit-typo-ma-stack.mjs",
     "audit:typo-ds": "node scripts/audit-typo-ds.mjs",
+    "audit:ds-usage": "node scripts/audit-ds-usage.mjs",
     "planche:check": "node scripts/check-planche.mjs",
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build -o storybook-static",

@@ -390,10 +390,10 @@
   }
 }
 
-/* Dense: inside an opened bento tile. The tile already says the sentence and the total. */
+/* Dense: inside an opened bento tile. The tile already says the sentence and the total; the notes
+   (unpriced tools, conversion) stay: they say what the figures leave out. */
 .card[data-dense] .head,
-.card[data-dense] .reading,
-.card[data-dense] .notes {
+.card[data-dense] .reading {
   display: none;
 }
 

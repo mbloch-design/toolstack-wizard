@@ -181,6 +181,9 @@ jobs:
       - name: Module CSS uses tokens only
         run: npm run lint:ds
 
+      - name: Storybook keeps only what lives
+        run: npm run audit:ds-usage
+
       - name: Layout invariants, a11y and story tests
         run: npm run test:ds
 

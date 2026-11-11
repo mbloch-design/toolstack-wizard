@@ -321,7 +321,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           ? <>{t(`${toolCount} outil${toolCount > 1 ? "s" : ""}, `, `${toolCount} tool${toolCount > 1 ? "s" : ""}, `)}<Key>{monthly}</Key>{t(" par mois.", " a month.")}</>
           : t("On fait les comptes ?", "Let's talk budget.")}
         lead={monthly
-          ? <>{composition && <>{composition} </>}{t("Soit ", "That's ")}{yearly}{t(" par an", " a year")}{unsure.length > 0 ? t(`, d’après ${known} prix sur ${budgetTools.length}. On affine en chemin.`, `, from ${known} of ${budgetTools.length} prices. We refine as we go.`) : t(". Tous les prix sont renseignés.", ". Every price is known.")}</>
+          ? <>{composition && <>{composition} </>}{t("Soit ", "That's ")}{yearly}{t(" par an", " a year")}{unsure.length > 0 ? t(`, d’après ${known} prix sur ${budgetTools.length}. On affine en chemin.`, `, from ${known} of ${budgetTools.length} prices. We refine as we go.`) : t(". Tous les prix sont renseignés.", ". Every price is known.")}{converted && <> {t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`)}</>}</>
           : t("Dites-nous quelle formule vous utilisez. Promis, pas de tableur.", "Tell us which plan you use. No spreadsheet required, promise.")}
         aside={<>
           {(welcome?.facts ?? []).map((fact) => <Tag key={fact.label} title={fact.title}>{fact.label}</Tag>)}

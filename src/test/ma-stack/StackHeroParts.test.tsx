@@ -35,6 +35,32 @@ describe("StackFindings", () => {
   const module = (items: Finding[], extra: Partial<Parameters<typeof StackFindings>[0]> = {}) => render(<MemoryRouter><StackFindings lang="fr" total={446} format={(n) => `${Math.round(n)} €`} toolCount={4}
     spend={[{ tool: tool("Workable"), amount: 257 }, { tool: tool("SysAid"), amount: 76 }]} areas={[{ id: "rh", label: "RH", amount: 257, color: "#2A78D6" }, { id: "it", label: "IT", amount: 76, color: "#EDA100" }, { id: "ia", label: "IA", amount: 0, color: "#6250D6" }]} fit={[]} items={items} saved={0} toReview={33} resolved={[]} onAddTool={vi.fn()} onReviewTools={vi.fn()} {...extra} /></MemoryRouter>);
 
+  // Content contract of Ma stack (docs/DESIGN_DECISIONS.md): what the page must always say, whatever its design.
+  // A redesign that drops one of these fails here instead of losing it silently.
+  describe("content contract", () => {
+    it("the hero says the cost, the year, what the stack is made of and how far prices are known", () => {
+      const { container } = module([card("Canva")], { toolCount: 4, freeTools: [tool("Figma")] });
+      const hero = container.querySelector('[data-card="price"]')?.textContent ?? "";
+      expect(screen.getByRole("heading", { level: 1 }).textContent).toMatch(/446\s€ par mois/);
+      expect(hero).toMatch(/par an/);
+      expect(hero).toMatch(/^.*Dont .+\./);
+      expect(hero).toMatch(/renseign/);
+    });
+    it("a converted figure says its reference rate", () => {
+      const { container } = module([], { converted: true });
+      expect(container.querySelector('[data-card="price"]')?.textContent).toMatch(/taux de référence du/);
+    });
+    it("the split says which tools are left out of its figures", () => {
+      const { container } = module([card("Canva")]);
+      openTile(container, "split");
+      expect(container.querySelector('[data-card="split"]')?.textContent).toMatch(/pas encore de prix/);
+    });
+    it("a saving is said in words, never only in colour", () => {
+      const { container } = module([], { saved: 24 });
+      expect(container.textContent).toMatch(/Vous économisez déjà 24 € par mois\./);
+    });
+  });
+
   it("reads the price first, then one decision at a time", () => {
     module([card("Canva"), card("Slack"), card("Notion")], { toolCount: 5 });
     expect(screen.getByRole("heading", { level: 1 }).textContent).toMatch(/446\s€ par mois\./);

@@ -27,6 +27,8 @@ Stack : React 18 + React Router v7 (mode déclaratif) + Vite + TypeScript + Tail
 ## Conventions CSS
 
 **Système de design (depuis le 06/11/2026).** Un composant du système vit dans `src/ds/<Nom>/` : `<Nom>.tsx`, `<Nom>.module.css`, `<Nom>.fixtures.ts` (données réelles et extrêmes), `<Nom>.stories.tsx`. Storybook est la référence visuelle ; process et commandes dans `docs/DESIGN_SYSTEM.md`.
+
+**Ne rien perdre (depuis le 11/11/2026).** Avant de modifier un module, relire `docs/DESIGN_DECISIONS.md` : chaque décision de Michael y est datée, avec sa règle. Une nouvelle validation, un refus ou une demande y entre au moment où elle est prise. Ce qu'un module doit toujours dire est un test de contrat (bloc « content contract » de `src/test/ma-stack/StackHeroParts.test.tsx`). En fin d'étape, le bilan gardé / perdu / à décider va dans la section « À arbitrer » avant le commit. Storybook ne garde que le vivant : une proposition est supprimée ou promue à la décision, et `npm run audit:ds-usage` (CI) refuse un composant sans usage.
 - Le CSS d'un module ne lit que des jetons `--tt-*` (`src/ds/tokens.css`). `npm run lint:ds` refuse les valeurs codées en dur, `!important` et `:global`.
 - Une page n'ajoute aucun style à un composant du système.
 - `src/index.css` ne reçoit plus de nouvelle règle de design. L'héritage y est retiré module par module, à mesure que les composants du système le remplacent.
