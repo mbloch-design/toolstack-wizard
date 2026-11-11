@@ -7,7 +7,7 @@ import { useAccountExperience } from "@/components/account/AccountExperienceProv
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { Plus, Check, Pencil, LayoutGrid, List } from "@/lib/icons";
+import { Plus, Check, Pencil, LayoutGrid, List, Compass } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -16,7 +16,7 @@ import { scoreOverlapPairs } from "@/lib/stackOverlap";
 import StackToolSheet from "@/components/stack/StackToolSheet";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
 import ToolCard, { ToolCards, ToolGroup, ToolGroups } from "@/ds/ToolCard/ToolCard";
-import Button, { buttonAttrs, TextButton } from "@/ds/Button/Button";
+import Button, { buttonAttrs, linkClass, TextButton } from "@/ds/Button/Button";
 import ToolSearch, { SearchField } from "@/ds/ToolSearch/ToolSearch";
 import Page from "@/ds/Page/Page";
 import { DecisionLog } from "@/ds/Decision/Decision";
@@ -26,7 +26,7 @@ import { comparisonPath } from "@/lib/comparisonLinks";
 import { decisionSavingInCurrency, latestRemovedStackDecisions } from "@/lib/stackDecisions";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
-import StackPersonalWelcome, { isFreshFromOnboarding, markOnboarded } from "@/components/stack/StackPersonalWelcome";
+import { isFreshFromOnboarding, markOnboarded, useStackWelcome } from "@/components/stack/StackPersonalWelcome";
 import StackWelcomeToast from "@/components/stack/StackWelcomeToast";
 import StackWelcome from "@/components/stack/StackWelcome";
 import StackOnboarding from "@/components/stack/StackOnboarding";
@@ -388,6 +388,7 @@ export default function CartPage() {
 
   // Add search: on top for an empty stack, in My tools otherwise (the add
   // action is a quiet button there, not a hero CTA).
+  const welcome = useStackWelcome({ empty: false, pending: deckItems.length, cards: usagePending });
   const closeSearch = () => { setSearchOpen(false); addRef.current?.focus(); };
   const searchPanel = showSearch && <ToolSearch id="ms-search" label={t("Ajouter un outil", "Add a tool")}
     field={<SearchField inputRef={searchRef} id={empty ? "ms-first-tool" : undefined} value={query} onChange={setQuery}
@@ -439,16 +440,6 @@ export default function CartPage() {
         is checked, then the stack itself at the centre, read through lenses,
         and the next decision beside it. On a phone the deck comes first. */}
     {/* En-tête de page du système (src/ds/PageHead) : salut, surtitre, grand titre, chiffres, une phrase, les faits ; l'action rare à droite. */}
-    <StackPersonalWelcome empty={false} pending={deckItems.length} cards={usagePending}
-      eyebrow={t("Ma stack", "My stack")} title={t("Mes outils", "My tools")} titleRef={inventoryHeadingRef}
-      meta={<>{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</>}
-      action={state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? <Link
-          {...buttonAttrs()} to={getExplorerHref(prefix, { type: "stack" })}
-          state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`,
-            explorerStackSources: state.toolEntries.filter(entry => entry.intent === "stack").flatMap(entry => { const tool = lookup.get(entry.toolSlug); return tool ? [toolKey(tool)] : []; }) }}
-          onClick={() => trackEvent("stack_explorer_click", { source: "whole_stack" })}>
-          {t("Explorer autour de ma stack", "Explore around my stack")}
-        </Link> : undefined} />
     {persistenceStatus.state === "degraded" && <Notice name="storage" role="status"><NoticeText>{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
       ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.")
       : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</NoticeText></Notice>}
@@ -467,7 +458,17 @@ export default function CartPage() {
           if (decision.kind === "keep-both" && !(pinnedKeys.has(toolKey(x)) && pinnedKeys.has(toolKey(y)))) return [];
           return [{ key, a: x, b: y, kind: decision.kind === "keep-both" ? "keep-both" as const : "keep-one" as const, kept: lookup.get(decision.kept)?.name, removed: decision.removed ? lookup.get(decision.removed)?.name : undefined, at: decision.at }];
         }).sort((x, y) => String(y.at).localeCompare(String(x.at)));
-        return <StackFindings currency={currency} converted={selectedTools.some(tool => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" && cost.currency !== currency; })} guide={isFreshFromOnboarding()} hourly={hourly} freeTools={selectedTools.filter(tool => monthlyOf(tool) === 0 && !unreviewed.some(item => item.id === tool.id) && !unknownTools.some(item => item.id === tool.id))} lang={lang} total={stackCost.total} format={fmt} toolCount={selectedTools.length}
+        return <StackFindings welcome={{ ...welcome, titleRef: inventoryHeadingRef, action: deckItems.length > 0 || usagePending > 0 ? <Button variant="primary" size="lg" onClick={() => {
+          const target = document.querySelector<HTMLElement>(deckItems.length > 0 ? '[data-card="decision"]' : '[data-card="usage-tile"]');
+          target?.scrollIntoView({ block: "center", behavior: reducedMotion() ? "auto" : "smooth" });
+          target?.querySelector<HTMLElement>("h3, button")?.focus({ preventScroll: true });
+        }}>{deckItems.length > 0 ? t("Répondre à la première", "Answer the first one") : t("Jouer la première carte", "Play the first card")}</Button> : undefined, secondary: state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? <Link
+          {...buttonAttrs("raised")} to={getExplorerHref(prefix, { type: "stack" })}
+          state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`,
+            explorerStackSources: state.toolEntries.filter(entry => entry.intent === "stack").flatMap(entry => { const tool = lookup.get(entry.toolSlug); return tool ? [toolKey(tool)] : []; }) }}
+          onClick={() => trackEvent("stack_explorer_click", { source: "whole_stack" })}>
+          <Compass aria-hidden />{t("Explorer autour de ma stack", "Explore around my stack")}
+        </Link> : undefined }} currency={currency} converted={selectedTools.some(tool => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" && cost.currency !== currency; })} guide={isFreshFromOnboarding()} hourly={hourly} freeTools={selectedTools.filter(tool => monthlyOf(tool) === 0 && !unreviewed.some(item => item.id === tool.id) && !unknownTools.some(item => item.id === tool.id))} lang={lang} total={stackCost.total} format={fmt} toolCount={selectedTools.length}
           fit={selectedTools.filter((tool) => monthlyOf(tool) > 0).sort((x, y) => monthlyOf(y) - monthlyOf(x)).map((tool) => ({
             tool, cost: monthlyOf(tool), usage: usage[toolKey(tool)], setUsage: (value: number | null) => setUsage(toolKey(tool), value), detailHref: `${prefix}/tool/${toolKey(tool)}`,
           }))}
@@ -483,8 +484,8 @@ export default function CartPage() {
       <Page group>
         {/* 1. The stack itself, one box to see it: by area, as cards or as a list, sorted from a menu. Add and edit live here. */}
         <Section labelledBy="ms-all-title">
-          <SectionHead title={t("Ma stack", "My stack")} titleId="ms-all-title" beside={<StackAccountPanel placement="inline" />}
-            note={<>{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</>}
+          <SectionHead title={t("Mes outils", "My tools")} titleId="ms-all-title" beside={<StackAccountPanel placement="inline" />}
+            note={<>{t("Les voici, rangés par domaine : ", "Here they are, by area: ")}{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</>}
             action={<Button ref={addRef} variant="primary" icon={<Plus />} onClick={() => { setEditing(false); setSearchOpen((open) => !open); }} aria-expanded={searchOpen} aria-controls="ms-search">{t("Ajouter un outil", "Add a tool")}</Button>} />
           {searchPanel}
           {(() => {

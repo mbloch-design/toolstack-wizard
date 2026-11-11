@@ -151,37 +151,6 @@
   flex: none;
 }
 
-.answers {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
-  gap: var(--tt-space-2);
-}
-
-.answer {
-  composes: focus from "../atoms.module.css";
-  display: grid;
-  align-content: start;
-  gap: var(--tt-space-1);
-  min-height: 64px;
-  padding: var(--tt-space-3) var(--tt-space-4);
-  border: 0;
-  border-radius: var(--tt-r-card);
-  background: var(--tt-tile);
-  color: var(--tt-ink);
-  text-align: left;
-  cursor: pointer;
-  transition: background-color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
-}
-
-.answer:hover {
-  background: var(--tt-tile-2);
-}
-
-.answer:active {
-  transform: var(--tt-press);
-}
-
-.answerName { composes: label from "../atoms.module.css"; }
 .answerAmount { composes: note from "../atoms.module.css"; }
 
 /* Open: the module fills the tile, inside the row's height. */
@@ -212,30 +181,9 @@
 }
 
 .toggle {
-  composes: label focus from "../atoms.module.css";
-  margin-top: var(--tt-gap-item);
-  display: inline-flex;
-  align-items: center;
+  display: block;
   justify-self: start;
-  gap: var(--tt-space-1);
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-}
-
-.toggle svg {
-  width: var(--tt-icon-m);
-  height: var(--tt-icon-m);
-  fill: none;
-  stroke: currentColor;
-  stroke-width: var(--tt-icon-stroke);
-  stroke-linecap: round;
-  transition: transform var(--tt-dur-state) var(--tt-ease);
-}
-
-.toggle:hover svg {
-  transform: translateY(2px);
+  margin-top: var(--tt-gap-item);
 }
 
 /* Open: most of the row. Condensed: the label and the statement only, smaller. */

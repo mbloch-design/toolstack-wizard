@@ -35,3 +35,9 @@
   white-space: nowrap;
   cursor: pointer;
 }
+
+.option svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+  vertical-align: middle;
+}

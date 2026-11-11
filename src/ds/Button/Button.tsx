@@ -2,8 +2,8 @@ import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
 import styles from "./Button.module.css";
 
 export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className"> & {
-  /** primary: the one action of a block (ink). secondary: any other (grey). quiet: a text action with a drawn line. */
-  variant?: "primary" | "secondary" | "quiet";
+  /** primary: the one action of a block (ink). secondary: any other (grey). raised: a secondary on colour or light (page white, hairline). quiet: a text action with a drawn line. */
+  variant?: "primary" | "secondary" | "raised" | "quiet";
   size?: "md" | "lg";
   icon?: ReactNode;
   /** A toggle (« Modifier » / « Terminé »): pressed turns ink. */
@@ -40,6 +40,6 @@ export function TextButton({ tone, children, type = "button", ...rest }: Omit<Bu
 }
 
 /** A link that looks like a button (router links): spread on the link. */
-export function buttonAttrs(variant: "primary" | "secondary" = "secondary", size: "md" | "lg" = "md") {
+export function buttonAttrs(variant: "primary" | "secondary" | "raised" = "secondary", size: "md" | "lg" = "md") {
   return { className: styles.button, "data-variant": variant, "data-size": size } as const;
 }

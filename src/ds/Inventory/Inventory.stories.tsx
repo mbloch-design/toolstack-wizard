@@ -22,7 +22,7 @@ const ITEMS: Item[] = [
   { name: "Microsoft Dynamics 365 Finance and Operations", cost: 1100, status: "ok", area: "organise" }, { name: "Slack", slug: "slack", cost: 0, status: "ok", area: "talk" },
 ];
 
-function Inventory({ lang, layout: initialLayout = "grid", editing: initialEditing = false, grouped = true }: { lang: Lang; layout?: "grid" | "list"; editing?: boolean; grouped?: boolean }) {
+function Inventory({ lang, layout: initialLayout = "grid", editing: initialEditing = false, grouped = true, note }: { lang: Lang; layout?: "grid" | "list"; editing?: boolean; grouped?: boolean; note?: string }) {
   const [layout, setLayout] = useState(initialLayout);
   const [editing, setEditing] = useState(initialEditing);
   const [filter, setFilter] = useState<"all" | "review" | "overlap">("all");
@@ -32,7 +32,7 @@ function Inventory({ lang, layout: initialLayout = "grid", editing: initialEditi
     amount={item.cost === null ? t(lang, "Prix ?", "Price?") : item.cost === 0 ? t(lang, "Gratuit", "Free") : formatAmount(item.cost, "EUR", lang)} monthly={!!item.cost}
     status={item.status} area={grouped ? undefined : t(lang, AREAS[item.area].fr, AREAS[item.area].en)} areaColor={AREAS[item.area].color} editing={editing} onOpen={() => {}} onRemove={() => {}} localLogosOnly />;
   return <section style={{ display: "grid", gap: 20 }}>
-    <SectionHead title={t(lang, "Mes outils", "My tools")} note={t(lang, `${ITEMS.length} outils · 1 175 € · partiel`, `${ITEMS.length} tools · €1,175 · partial`)} />
+    <SectionHead title={t(lang, "Mes outils", "My tools")} note={note ?? t(lang, `${ITEMS.length} outils · 1 175 € · partiel`, `${ITEMS.length} tools · €1,175 · partial`)} />
     <Toolbar>
       <FilterChips label={t(lang, "Filtrer par statut", "Filter by status")} value={filter} onChange={setFilter} filters={[
         { id: "all", label: t(lang, "Tous", "All"), count: ITEMS.length },
@@ -55,6 +55,6 @@ function Inventory({ lang, layout: initialLayout = "grid", editing: initialEditi
   </section>;
 }
 
-export const ByArea: Story = { render: (_args, { globals: { lang } }) => <Inventory lang={lang} /> };
+export const ByArea: Story = { render: (args, { globals: { lang } }) => <Inventory lang={lang} note={(args as { note?: string }).note} /> };
 export const List_: Story = { name: "List", render: (_args, { globals: { lang } }) => <Inventory lang={lang} layout="list" grouped={false} /> };
 export const Editing: Story = { render: (_args, { globals: { lang } }) => <Inventory lang={lang} editing /> };

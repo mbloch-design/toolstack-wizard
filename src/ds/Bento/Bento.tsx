@@ -1,5 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import Logo from "../Logo/Logo";
+import { TextButton } from "../Button/Button";
+import Chip, { Chips } from "../Chip/Chip";
 import type { LogoTool } from "@/lib/useToolLogoSource";
 import styles from "./Bento.module.css";
 
@@ -47,7 +49,7 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
   /** Under the state line: what to do next about this fact (« Confirmer 2 prix »). */
   footer?: ReactNode;
 }) {
-  const toggleMore = detail && onToggle && <button type="button" className={styles.toggle} aria-expanded={open} onClick={onToggle}>{open ? lessLabel : moreLabel}<svg viewBox="0 0 24 24" aria-hidden="true"><path d={open ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"} /></svg></button>;
+  const toggleMore = detail && onToggle && <span className={styles.toggle}><TextButton aria-expanded={open} onClick={onToggle}>{open ? lessLabel : moreLabel}<svg viewBox="0 0 24 24" aria-hidden="true"><path d={open ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"} /></svg></TextButton></span>;
   if (open && detail) return (
     <article className={styles.tile} data-open="" data-tone={tone} data-card={card} style={{ "--span": span } as CSSProperties}>
       <span className={styles.srOnly}>{label}</span>
@@ -93,13 +95,13 @@ export function MiniRing({ parts }: { parts: { color: string; share: number }[] 
   );
 }
 
-/** The answers of a question tile, side by side: a name and what it costs. One tap answers. */
+/** The answers of a question tile: the system's chips, the size of a fingertip. One tap answers. */
 export function Answers({ label, children }: { label: string; children: ReactNode }) {
-  return <div className={styles.answers} role="group" aria-label={label}>{children}</div>;
+  return <Chips label={label}>{children}</Chips>;
 }
 
-export function Answer({ name, amount, onClick }: { name: string; amount?: ReactNode; onClick: () => void }) {
-  return <button type="button" className={styles.answer} onClick={onClick}><span className={styles.answerName}>{name}</span>{amount && <span className={styles.answerAmount}>{amount}</span>}</button>;
+export function Answer({ name, onClick, tone = "ink" }: { name: string; onClick: () => void; tone?: "ink" | "cut" }) {
+  return <Chip size="md" tone={tone} onClick={onClick}>{name}</Chip>;
 }
 
 /** The question of a tile, with the thing it is about. */

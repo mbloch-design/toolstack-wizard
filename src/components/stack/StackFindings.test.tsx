@@ -14,13 +14,13 @@ function view({pending=false,count=2,other=false,history=false}={}){
 // The bento (11/11/2026): a question tile leaves once nothing is left to ask; nothing gathering dust, nothing to show.
 it('lets the usage tile go once the whole cast plays, without a verdict it cannot back',()=>{
  view({count:4});
- expect(screen.queryByText(/^Vos usages/)).not.toBeInTheDocument();
+ expect(screen.queryByText(/^Ce qui sert vraiment/)).not.toBeInTheDocument();
  expect(screen.queryByText(/à la bonne taille|marathonien|Puissance non évaluée/)).not.toBeInTheDocument();
 });
 it('never declares the game over while a card remains',()=>{
  view({pending:true});
  expect(screen.queryByText('Partie terminée')).not.toBeInTheDocument();
- expect(screen.getByText('Vos usages · 1 carte')).toBeVisible();
+ expect(screen.getByText('Ce qui sert vraiment · 1 carte')).toBeVisible();
 });
 it('asks about usage with named answers and no catalogue power comparison',()=>{
  view({pending:true});

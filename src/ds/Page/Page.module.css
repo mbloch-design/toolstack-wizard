@@ -9,6 +9,7 @@
 }
 
 /* The page itself: centred, with its margins. A group sits inside it without margins. */
+
 .page[data-page] {
   max-width: var(--tt-page-max);
   margin-inline: auto;
@@ -24,6 +25,11 @@
 .page > * {
   min-width: 0;
   margin-block: 0;
+}
+
+/* A group: a title and its content (the hero and its bento), the head distance. */
+.page[data-page-group] {
+  gap: var(--tt-gap-head);
 }
 
 .page[data-rhythm="chapters"] {

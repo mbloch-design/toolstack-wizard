@@ -32,6 +32,12 @@
   font-weight: var(--tt-w-on-ink);
 }
 
+/* Raised: a secondary that keeps its contrast near colour or light. */
+.button[data-variant="raised"] {
+  background: var(--tt-bg);
+  box-shadow: var(--tt-hairline);
+}
+
 .button[data-variant="quiet"] {
   min-height: 0;
   padding: 0;
@@ -86,6 +92,20 @@
 .button > svg {
   width: var(--tt-icon-l);
   height: var(--tt-icon-l);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* An icon in a text link (a chevron): the size of the text, after it. */
+.link > svg {
+  display: inline-block;
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+  margin-left: var(--tt-space-1);
+  vertical-align: -0.15em;
   fill: none;
   stroke: currentColor;
   stroke-width: var(--tt-icon-stroke);

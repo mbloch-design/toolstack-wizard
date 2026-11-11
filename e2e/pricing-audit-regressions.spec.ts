@@ -84,12 +84,12 @@ test("a recorded saving retains its currency across changes and reloads", async 
   }
   await deck.getByRole("button", { name: /^Garder Figma/ }).click();
   // The saving is said once, in the budget card.
-  await expect(page.locator("[data-board]")).toContainText(/économisez déjà 9\s€ par mois/);
+  await expect(page.locator("[data-page]")).toContainText(/économisez déjà 9\s€ par mois/);
   const stored = await page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-personal-stack-v4:anonymous") || "{}").decisions);
   expect(stored["canva|figma"].savingCurrency).toBe("EUR");
   await page.evaluate(() => localStorage.setItem("tooltrim:currency", "USD"));
   await page.reload({ waitUntil: "domcontentloaded" });
-  await expect(page.locator("[data-board]")).toContainText(/économisez déjà 11\s\$(US)? par mois/);
+  await expect(page.locator("[data-page]")).toContainText(/économisez déjà 11\s\$(US)? par mois/);
   await page.goto("/fr/comparatif/figma-vs-canva", { waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-cd-status")).toContainText("11");
 });
@@ -100,8 +100,8 @@ test("old savings without a currency keep the decision without inventing an amou
     localStorage.setItem("tooltrim-ma-stack-decisions-v1", JSON.stringify({ "canva|figma": { kind: "keep-one", kept: "figma", removed: "canva", saving: 9.17, at: "2026-10-07T00:00:00.000Z" } }));
   }, { key: stackKey, state: seed(["figma"]) });
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.locator("[data-board]")).toContainText("devise inconnue");
-  await expect(page.locator("[data-board]")).not.toContainText("économisez");
+  await expect(page.locator("[data-page]")).toContainText("devise inconnue");
+  await expect(page.locator("[data-page]")).not.toContainText("économisez");
   await page.goto("/fr/comparatif/figma-vs-canva", { waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-cd-status")).toContainText("vous gardez Figma");
   await expect(page.locator(".ms-cd-status")).not.toContainText(/9|€/);

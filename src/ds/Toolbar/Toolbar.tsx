@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Chip, { Chips } from "../Chip/Chip";
+import Segmented from "../Segmented/Segmented";
 import styles from "./Toolbar.module.css";
 
 /** The head of a page section: title (with what sits beside it), a summary line, and the section's one action. */
@@ -8,7 +9,7 @@ export function SectionHead({ title, titleId, beside, note, action }: { title: s
     <div className={styles.sectionHead}>
       <div className={styles.sectionText}>
         <div className={styles.titleRow}><h2 id={titleId} tabIndex={-1} className={styles.titleSection}>{title}</h2>{beside}</div>
-        {note && <p className={styles.note}>{note}</p>}
+        {note && <p className={styles.lead}>{note}</p>}
       </div>
       {action && <div className={styles.sectionAction}>{action}</div>}
     </div>
@@ -48,11 +49,8 @@ export function SortSelect<T extends string>({ label, caption, value, options, o
 
 /** Two or three icon buttons for the layout; the pressed one rises on a white pill. */
 export function IconSwitch<T extends string>({ label, value, options, onChange }: { label: string; value: T; options: { value: T; label: string; icon: ReactNode }[]; onChange: (value: T) => void }) {
-  return (
-    <div className={styles.iconSwitch} role="group" aria-label={label}>
-      {options.map((option) => <button key={option.value} type="button" aria-pressed={value === option.value} aria-label={option.label} title={option.label} onClick={() => onChange(option.value)}>{option.icon}</button>)}
-    </div>
-  );
+  // The system's segmented picker, with icons for labels and their names for screen readers.
+  return <Segmented label={label} value={value} onChange={onChange} options={options.map((option) => ({ value: option.value, label: option.icon, ariaLabel: option.label }))} />;
 }
 
 

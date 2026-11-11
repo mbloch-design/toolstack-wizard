@@ -1,4 +1,6 @@
-import PageHead, { type PageHeadFact, type PageHeadProps } from "@/ds/PageHead/PageHead";
+import type { ReactNode, Ref } from "react";
+import { StoryHero } from "@/ds/Narrative/Narrative";
+import Tag from "@/ds/Tag/Tag";
 import { useStackAccount } from "@/hooks/useStackAccount";
 import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
 import { useLang } from "@/hooks/useLang";
@@ -37,7 +39,8 @@ const TRADE_LABELS: Record<Trade, [string, string]> = {
  * is worth). Only the current account's chosen name is used; never derive a
  * name from email.
  */
-export default function StackPersonalWelcome({ empty, pending = 0, cards = 0, ...head }: { empty: boolean; pending?: number; cards?: number } & Omit<PageHeadProps, "greeting" | "message" | "facts">) {
+/** What the hero says: the greeting, the verdict (what is waiting), its humour, the person's facts. */
+export function useStackWelcome({ empty, pending = 0, cards = 0 }: { empty: boolean; pending?: number; cards?: number }) {
   const { user, syncStatus } = useStackAccount();
   const { profile } = useAccountExperience();
   const { t, lang } = useLang();
@@ -51,20 +54,33 @@ export default function StackPersonalWelcome({ empty, pending = 0, cards = 0, ..
   const evening = hour >= 18 || hour < 5;
   const hello = name ? t(`${evening ? "Bonsoir" : "Bonjour"}, ${name}`, `${evening ? "Good evening" : "Hi"}, ${name}`) : t(evening ? "Bonsoir" : "Bonjour", evening ? "Good evening" : "Hello");
   const s = pending > 1 ? "s" : "";
-  const message = empty
-    ? t("Bienvenue chez vous. Commençons par un outil que vous aimez utiliser.", "Make yourself at home. Start with a tool you enjoy using.")
+  // The verdict is the title, the humour its lead.
+  const [title, lead] = empty
+    ? [t("Bienvenue chez vous.", "Make yourself at home."), t("Commençons par un outil que vous aimez utiliser.", "Start with a tool you enjoy using.")]
     : pending > 0 && isFreshFromOnboarding()
-      ? t(`Bienvenue chez vous. ${pending} petite${s} décision${s}, une à la fois, et c’est plié.`, `Welcome home. ${pending} small decision${s}, one at a time, and you’re done.`)
+      ? [t("Bienvenue chez vous.", "Welcome home."), t(`${pending} petite${s} décision${s}, une à la fois, et c’est plié.`, `${pending} small decision${s}, one at a time, and you’re done.`)]
       : pending > 0
-        ? t(`${pending} petite${s} décision${s} vous attend${pending > 1 ? "ent" : ""}. Promis, aucune ne mord.`, `${pending} small decision${s} waiting. None of them bite.`)
+        ? [t(`${pending} petite${s} décision${s} vous attend${pending > 1 ? "ent" : ""}.`, `${pending} small decision${s} waiting.`), t("Promis, aucune ne mord.", "None of them bite.")]
         : cards > 0
-          ? t(`${cards} carte${cards > 1 ? "s" : ""} à jouer dans Vos usages. Promis, aucune ne mord.`, `${cards} card${cards > 1 ? "s" : ""} to play in Your use. None of them bite.`)
-          : t("Votre stack, à votre rythme. Vous gardez la main.", "Your stack, at your pace. You stay in control.");
+          ? [t(`${cards} carte${cards > 1 ? "s" : ""} à jouer dans Vos usages.`, `${cards} card${cards > 1 ? "s" : ""} to play in Your use.`), t("Promis, aucune ne mord.", "None of them bite.")]
+          : [t("Votre stack est à jour.", "Your stack is up to date."), t("À votre rythme, vous gardez la main.", "At your pace, you stay in control.")];
   const rate = dailyRate ? convertAmount(dailyRate.amount, dailyRate.currency, currency) : null;
   const money = (amount: number) => formatAmount(Math.round(amount), currency, lang);
-  const facts: PageHeadFact[] = [
+  const facts = [
     ...(trade ? [{ label: t(...TRADE_LABELS[trade]) }] : []),
     ...(rate ? [{ label: t(`${money(rate)}/jour · votre heure ≈ ${money(rate / 7)}`, `${money(rate)}/day · your hour ≈ ${money(rate / 7)}`), title: t("Sur une journée de 7 heures", "On a 7-hour day") }] : []),
   ];
-  return <PageHead {...head} greeting={<>{hello} <span aria-hidden="true">👋</span></>} message={message} facts={facts} />;
+  return { greeting: <>{hello} <span aria-hidden="true">👋</span></>, eyebrow: t("Ma stack", "My stack"), verdict: title, lead, facts };
+}
+
+export type StackWelcome = ReturnType<typeof useStackWelcome>;
+
+/** The hero without the stack's figure (no stack yet): the greeting, the verdict, its humour, the person's facts. */
+export default function StackPersonalWelcome({ empty, pending = 0, cards = 0, titleRef, secondary }: {
+  empty: boolean; pending?: number; cards?: number; titleRef?: Ref<HTMLHeadingElement>; action?: ReactNode; secondary?: ReactNode; tools?: unknown;
+}) {
+  const welcome = useStackWelcome({ empty, pending, cards });
+  return <StoryHero greeting={welcome.greeting} eyebrow={welcome.eyebrow} titleRef={titleRef} title={<span data-verdict="">{welcome.verdict}</span>}
+    lead={<span data-welcome-message="">{welcome.lead}</span>}
+    aside={<>{welcome.facts.map((fact) => <Tag key={fact.label} title={fact.title}>{fact.label}</Tag>)}{secondary}</>} />;
 }

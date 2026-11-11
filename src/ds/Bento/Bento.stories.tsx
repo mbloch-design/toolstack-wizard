@@ -79,7 +79,7 @@ function LivingBento({ lang, decisions: d0 = 2, cards: c0 = 2, initialOpen = nul
       </Decision>}>
       <Question media={<Logo tool={decision.tool} size={40} localOnly />}>{t(lang, ...decision.question)}</Question>
       <Answers label={t(lang, "Votre réponse", "Your answer")}>
-        {decision.answers.map((a) => <Answer key={a.name[0]} name={t(lang, ...a.name)} amount={a.amount === undefined ? undefined : a.amount === 0 ? t(lang, "Rien à payer", "Nothing to pay") : `${money(lang, a.amount)}${t(lang, "/mois", "/mo")}`} onClick={() => answer("decision")} />)}
+        {decision.answers.map((a) => <Answer key={a.name[0]} name={a.amount ? `${t(lang, ...a.name)} · ${money(lang, a.amount)}` : t(lang, ...a.name)} onClick={() => answer("decision")} />)}
       </Answers>
     </Tile>}
     {card && <Tile span={5} tone="question" leaving={leaving === "usage"} label={t(lang, `Vos usages · ${CARDS.length - played} carte${CARDS.length - played > 1 ? "s" : ""}`, `Your use · ${CARDS.length - played} card${CARDS.length - played > 1 ? "s" : ""}`)} {...toggle("usage", bottom)}

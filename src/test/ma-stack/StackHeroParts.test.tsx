@@ -37,7 +37,7 @@ describe("StackFindings", () => {
 
   it("reads the price first, then one decision at a time", () => {
     module([card("Canva"), card("Slack"), card("Notion")], { toolCount: 5 });
-    expect(screen.getByText((_, el) => el?.tagName === "P" && el.textContent === "446 €/mois")).toBeTruthy();
+    expect(screen.getByRole("heading", { level: 1 }).textContent).toMatch(/446\s€ par mois\./);
     expect(screen.getByRole("region", { name: "Prochaine décision" })).toBeTruthy();
     expect(screen.getByText("Payez-vous Canva ?")).toBeTruthy();
     expect(screen.getByText("2 outils sur 5 renseignés")).toBeTruthy();
@@ -48,7 +48,7 @@ describe("StackFindings", () => {
     expect(screen.getByText("2 outils sur 4 renseignés")).toBeTruthy();
     expect(screen.getByText("Confirmer 2 formules")).toBeTruthy();
     openTile(container, "price");
-    expect(screen.getByText("4 outils · 2 payants · 2 à préciser")).toBeTruthy();
+    expect(container.querySelector('[data-card="price"]')?.textContent).toMatch(/Dont 2 payants et 2 à préciser\./);
     expect(screen.queryByText(/fiable à|Total exact/)).toBeNull();
     openTile(container, "split");
     expect(container.querySelector('[data-card="split"] [role="img"]')).not.toBeNull();
@@ -57,10 +57,9 @@ describe("StackFindings", () => {
   it("accounts for all four tools when only two have a paid cost", () => {
     const { container } = module([], { total: 41, spend: [{tool:tool("Motion Array"),amount:29},{tool:tool("Grammarly"),amount:12}], freeTools:[tool("Figma"),tool("Audacity")] });
     openTile(container, "price");
-    expect(screen.getByText("4 outils · 2 payants · 2 gratuits")).toBeTruthy();
-    expect(screen.getByText("Figma")).toBeTruthy();
-    expect(screen.getByText("Audacity")).toBeTruthy();
-    expect(container.querySelectorAll('[data-card="price"] li')).toHaveLength(4);
+    // The hero counts every tool; their names are in the inventory (Mes outils), outside this component.
+    expect(screen.getByRole("heading", { level: 1 }).textContent).toMatch(/^4 outils, /);
+    expect(container.querySelector('[data-card="price"]')?.textContent).toMatch(/Dont 2 payants et 2 gratuits\./);
     expect(screen.queryByText(/autres/)).toBeNull();
   });
   it("does not invent a zero budget before the first plan is selected", () => {
@@ -146,7 +145,7 @@ describe("StackFindings", () => {
   it("drops the decision card once nothing is left, the saving stays on the price card", () => {
     const { container } = module([], { saved: 67, total: 379, toReview: 0 });
     expect(container.querySelector('[data-card="decision"]:not([data-done])')).toBeNull();
-    expect(container.querySelector('[data-card="price"]')?.textContent).toMatch(/Vous économisez déjà 67 € par mois\./);
+    expect(container.textContent).toMatch(/Vous économisez déjà 67 € par mois\./);
   });
 });
 
