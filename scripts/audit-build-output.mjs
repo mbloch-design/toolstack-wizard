@@ -67,8 +67,12 @@ const budgets = {
   // the templates, repeated in og/twitter/JSON-LD: 717.1 MiB HTML after 265
   // fiches; 717.9 MiB HTML / 830.0 MiB total measured after 315 (about
   // +0.8 MiB per 50 fiches). Sized for all 1,247 fiches of the rewrite.
-  // 2026-11-11: the 24 llms shards add 2.5 MiB; measured 852.7 MiB total.
-  totalBytes: 854 * MiB,
+  // 2026-11-11: the 24 llms shards add 2.5 MiB. Measured 852.7 MiB in the
+  // local dist but 853.9 MiB on Vercel for the same tree (HTML 735.9 vs
+  // 735.0): the deployment counts slightly more than the local build. Ceiling
+  // sized on the Vercel figure with ~2 MiB of headroom, not on the local one,
+  // so a 0.1 MiB margin cannot fail the next build.
+  totalBytes: 856 * MiB,
   // Three bilingual comparison pages: measured HTML 752.2 MiB (six new routes).
   htmlBytes: 738 * MiB,
   javascriptBytes: 15 * MiB,

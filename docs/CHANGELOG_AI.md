@@ -1,10 +1,16 @@
+## 2026-11-11 · SEO · recette post-déploiement : contrôle des shards llms-full
+
+- `verify:postdeploy` passe de 19 à 20 contrôles. Il lit les familles annoncées dans `/llms.txt`, récupère chaque `/llms-full/{famille}.txt` sur la base vérifiée (donc `--base` fonctionne en préprod), et exige : HTTP 200, contenu texte, JSON valide, compte de fiches conforme à l'index, et partition exacte — la réunion des shards doit égaler le catalogue de `/llms-full.txt`, sans doublon. Un libellé de famille différent de son URL échoue aussi.
+- Double preuve : contre un `dist` local, « 24 shards · 1251 fiches · partition exacte » en PASS ; contre la production actuelle, FAIL « aucun shard indexé dans llms.txt », ce qui est exact tant que le lot n'est pas déployé.
+- Fichiers : `scripts/verify-production-postdeploy.mjs`, étude §13. Aucun commit.
+
 ## 2026-11-11 · GEO · llms-full.txt découpé par famille
 
 - `llms-full.txt` pèse 2,61 Mo : aucun agent ne l'ingère utilement en une requête. Le catalogue est désormais aussi publié en 24 shards par `categoryId` (`public/llms-full/{family}.txt`, miroir dans `dist/llms-full/`), avec le même schéma d'enregistrement que le fichier complet.
 - Le découpage est strictement additif : `llms-full.txt` reste publié avec le même contenu, parce que `api/tool-md.ts` le lit à chaque requête (cache 1 h) et que `verify:postdeploy` vérifie son HTTP 200. Aucun consommateur existant n'est modifié.
 - `llms.txt` gagne une section « Catalogue Shards » listant chaque famille avec son nombre exact de fiches et son URL. Le générateur refuse de publier si les shards se recouvrent ou ne couvrent pas exactement le catalogue du sitemap.
 - `src/lib/llmsFiles.test.ts` : deux tests ajoutés (partition sans recouvrement ni perte, index exact dans `llms.txt`). Le plus gros shard reste `creation` (351 fiches, 706 Ko) : une subdivision plus fine serait à décider si un usage réel le réclame.
-- `scripts/audit-build-output.mjs` : les 24 shards portent l'artefact mesuré à 15 260 fichiers et 852,7 MiB, au-delà des plafonds de 15 245 fichiers et 852 MiB — l'audit échouait, donc le build Vercel se serait arrêté sur « Budget et doublons de l'artefact ». Plafonds relevés à 15 265 fichiers et 854 MiB, mesure datée en commentaire. Le HTML reste à 735,0 MiB : l'ajout ne coûte rien par page.
+- `scripts/audit-build-output.mjs` : les 24 shards portent l'artefact mesuré à 15 260 fichiers et 852,7 MiB, au-delà des plafonds de 15 245 fichiers et 852 MiB — l'audit échouait, donc le build Vercel s'est arrêté sur « Budget et doublons de l'artefact » (15260 > 15245, 853,9 > 852,0 MiB). Plafonds relevés à 15 265 fichiers et 856 MiB, dimensionnés sur la mesure Vercel (853,9 MiB, soit 1,2 MiB de plus que les 852,7 MiB locaux pour le même arbre) et non sur la mesure locale, qui n'aurait laissé que 0,1 MiB de marge. Le HTML reste à 735,9 MiB sur Vercel : l'ajout ne coûte rien par page.
 
 ## 2026-11-11 · SEO · Review des fiches : cadrage corrigé et balisage daté
 
