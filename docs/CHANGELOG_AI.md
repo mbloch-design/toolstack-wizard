@@ -1,3 +1,18 @@
+## 2026-11-11 · SEO · priorisation des réécritures par manque à gagner
+
+- Nouveau `scripts/analyze-gsc-performance.mjs` (alias `npm run analyze:gsc-performance`) : à partir des exports Performances (Pages et Requêtes), il chiffre pour chaque page `impressions × (CTR attendu à la position − CTR réel)` et range chaque ligne dans une action — réécrire (prioritaire sous 1 % de CTR, sinon normale), approfondir au-delà de la position 20, protéger si la page dépasse la courbe, sous le seuil si elle manque d'impressions.
+- La courbe de CTR n'est pas cachée : trois profils explicites (`composite` par défaut, `awr2026` desktop US juillet 2026, `prudent`), plus `--curve-file`. Le rapport imprime toujours celle qui a servi, parce que les études publiées vont de 7,1 % à 39,8 % en position 1.
+- La cannibalisation n'est calculée que si un export requête × page est fourni : les exports « Pages » et « Requêtes » ne permettent pas d'attribuer une requête à une URL, et le script le dit au lieu d'inventer.
+- Deux défauts trouvés en test et corrigés : le signe `%` était retiré sans être appliqué (« 1,0 % » valait 100 %, ce qui faisait tomber les pages à fort manque à gagner dans « rien »), et les zones d'action laissaient un trou entre « réécrire » et « approfondir ».
+- Vérifié : les opportunités de chaque ligne sont recalculées indépendamment en Python depuis la même courbe et concordent, cannibalisation détectée sur un cas à deux pages, profil `awr2026` divisant le manque à gagner total (339 → 10 sur le jeu de test), exécution déterministe, code de sortie 1 avec message clair si une colonne manque. Aucun commit.
+
+## 2026-11-11 · SEO · sondage InspectUrl pour retrouver les pages non indexées
+
+- Nouveau `scripts/gsc-inspect-plan.mjs` (alias `npm run audit:gsc-probe`). Le rapport « Indexation des pages » n'ayant pas d'équivalent dans l'API Search Console, le seul accès programmatique à un état d'indexation est `InspectUrl`, une URL à la fois. Le script prépare un sondage stratifié déterministe sur le sitemap (10 726 URLs, 20 familles), avec plan de quota par lots de 8 et rendement attendu.
+- Second mode `--classify` : convertit les réponses `InspectUrl` (formes API `inspectionResult.indexStatusResult` ou objet nu) en `export-synthetique.csv` au format Search Console, directement consommable par `audit-seo-coverage.mjs --all --live`. Il détecte aussi les divergences `googleCanonical` / `userCanonical`.
+- Mesuré : 300 URLs tirées (38 lots de 8, 15 % du quota journalier), ~47 URLs « explorée, non indexée » attendues à 15,7 % de base, tirage reproductible (deux exécutions identiques, 0 doublon). Conversion testée sur sept états réels (`Crawled - currently not indexed`, `Duplicate, Google chose different canonical than user`, `Excluded by 'noindex' tag`, `Page with redirect`, `Submitted and indexed`, `URL is unknown to Google`, réponse vide) et chaînage vers le classifieur validé.
+- Limites écrites dans le plan généré : sondage et non recensement, état `InspectUrl` mis en cache par Google, et URLs hors sitemap inaccessibles à cette méthode. Aucun commit.
+
 ## 2026-11-11 · SEO · recette post-déploiement automatisée
 
 - Nouveau `scripts/verify-production-postdeploy.mjs` (alias `npm run verify:postdeploy`) : la checklist de recette devient une porte exécutable, code de sortie 1 dès qu'un contrôle échoue, 0 si tout passe (un SKIP ne fait pas échouer).
