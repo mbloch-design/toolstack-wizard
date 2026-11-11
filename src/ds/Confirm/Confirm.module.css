@@ -1,0 +1,39 @@
+/* A confirmation bubble: liquid glass, it floats over the page. */
+.confirm {
+  z-index: 60;
+  display: grid;
+  gap: var(--tt-space-3);
+  max-width: var(--tt-menu-w);
+  padding: var(--tt-space-4);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-glass-bg);
+  box-shadow: var(--tt-glass-shadow);
+  color: var(--tt-ink);
+  backdrop-filter: var(--tt-glass-filter);
+  transform-origin: var(--radix-popover-content-transform-origin);
+  animation: confirm-in 200ms var(--tt-ease);
+}
+
+.question {
+  margin: 0;
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+}
+
+.actions {
+  display: flex;
+  gap: var(--tt-space-2);
+}
+
+@keyframes confirm-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confirm {
+    animation: none;
+  }
+}

@@ -17,7 +17,7 @@ for (const lang of ['fr', 'en']) {
           const title = document.querySelector('.hv2-title');
           if (title) {
             const style = getComputedStyle(title);
-            const chrome = ['.asv2-topbar', '.asv2-nav-label'].map(selector => {
+            const chrome = ['[data-shell-topbar]', '[data-shell-sidebar] nav a'].map(selector => {
               const element = document.querySelector(selector);
               if (!element) return '';
               const css = getComputedStyle(element);

@@ -477,8 +477,9 @@
   width: var(--tt-menu-w);
   padding: var(--tt-space-5);
   border-radius: var(--tt-r-tile);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-menu-shadow);
+  background: var(--tt-glass-bg);
+  box-shadow: var(--tt-glass-shadow);
+  backdrop-filter: var(--tt-glass-filter);
   color: var(--tt-ink);
   transform-origin: var(--radix-popover-content-transform-origin);
   animation: menu-in 200ms var(--tt-ease);
@@ -627,7 +628,11 @@ button.menuLink:disabled {
   grid-auto-columns: minmax(0, 1fr);
   grid-auto-flow: column;
   padding: var(--tt-space-1) var(--tt-space-2) calc(var(--tt-space-1) + env(safe-area-inset-bottom, 0px));
-  background: var(--tt-chrome);
+
+  /* Floats over the page: liquid glass. */
+  background: var(--tt-glass-bg);
+  box-shadow: var(--tt-glass-edge);
+  backdrop-filter: var(--tt-glass-filter);
 }
 
 .tab {

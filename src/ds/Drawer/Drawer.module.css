@@ -1,27 +1,30 @@
-/* A panel on the right (computer) or from the bottom (phone); the page stays in place behind a veil. */
+/* The side sheet (planche « Menu, fiche latérale »): a floating card 16 px from the window's edges, 28 px corners,
+   over a soft blurred veil; it slides 32 px in as it fades. From the bottom on a phone. The page stays in place. */
 
 .overlay {
   position: fixed;
   z-index: 1200;
   inset: 0;
-  background: var(--tt-veil);
+  background: var(--tt-sheet-veil);
+  backdrop-filter: blur(6px);
 }
 
 .panel {
   position: fixed;
   z-index: 1201;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  top: max(var(--tt-space-4), env(safe-area-inset-top, 0px));
+  right: max(var(--tt-space-4), env(safe-area-inset-right, 0px));
+  bottom: max(var(--tt-space-4), env(safe-area-inset-bottom, 0px));
   display: grid;
   gap: var(--tt-space-6);
   align-content: start;
-  width: min(520px, 100vw);
-  padding: var(--tt-space-8) var(--tt-space-8) var(--tt-space-6);
+  width: min(var(--tt-sheet-w), calc(100vw - var(--tt-space-8)));
+  padding: var(--tt-space-8) var(--tt-space-7) var(--tt-space-6);
   overflow-y: auto;
   overscroll-behavior: contain;
+  border-radius: var(--tt-r-sheet);
   background: var(--tt-bg);
-  box-shadow: var(--tt-panel-shadow);
+  box-shadow: var(--tt-sheet-shadow);
   color: var(--tt-ink);
   container-type: inline-size;
 }
@@ -57,12 +60,11 @@
 
 @media (width <= 640px) {
   .panel {
-    top: auto;
-    left: 0;
+    inset: auto 0 0;
     width: auto;
     max-height: 92dvh;
-    padding: var(--tt-space-8) var(--tt-space-4) var(--tt-space-5);
-    border-radius: var(--tt-r-tile) var(--tt-r-tile) 0 0;
+    padding: var(--tt-space-8) var(--tt-space-4) calc(var(--tt-space-5) + env(safe-area-inset-bottom, 0px));
+    border-radius: var(--tt-r-sheet) var(--tt-r-sheet) 0 0;
   }
 }
 
@@ -76,7 +78,7 @@
   }
 
   .panel[data-state="open"] {
-    animation: slide-in-right var(--tt-dur-reveal) var(--tt-ease);
+    animation: slide-in-right 480ms var(--tt-ease);
   }
 
   .panel[data-state="closed"] {
@@ -103,11 +105,17 @@
 }
 
 @keyframes slide-in-right {
-  from { transform: translateX(100%); }
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
 }
 
 @keyframes slide-out-right {
-  to { transform: translateX(100%); }
+  to {
+    opacity: 0;
+    transform: translateX(32px);
+  }
 }
 
 @keyframes slide-in-bottom {

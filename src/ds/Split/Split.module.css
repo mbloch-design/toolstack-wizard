@@ -120,7 +120,9 @@
   transform-origin: left;
   height: 100%;
   transition: height var(--tt-dur-state) var(--tt-ease);
-  animation: grow 900ms var(--tt-ease) both;
+
+  /* Planche « Arrivée »: the segments fill once, in cascade. */
+  animation: grow 900ms var(--tt-ease) calc(var(--i, 0) * var(--tt-cascade)) both;
 }
 
 .bar:has(i[data-on]) i:not([data-on]) {
@@ -348,7 +350,7 @@
     border-radius: inherit;
     background: var(--c, var(--tt-ink));
     transform-origin: left;
-    animation: grow 700ms var(--tt-ease) both;
+    animation: grow 700ms var(--tt-ease) calc(var(--i, 0) * var(--tt-cascade)) both;
   }
 }
 

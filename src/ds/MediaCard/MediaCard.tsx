@@ -23,7 +23,7 @@ export type MediaCardProps = {
 export default function MediaCard({ lang, tool, image, category, reason, renderLink, add, localLogosOnly = false, dataTool }: MediaCardProps) {
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
   const content = <>
-    <span className={styles.shot}>{image}</span>
+    <span className={styles.shot} data-tt-tilt="">{image}</span>
     <span className={styles.id}><Logo tool={tool} size={24} localOnly={localLogosOnly} /><span className={styles.label}>{tool.name}</span>{category && <span className={styles.note}>· {category}</span>}</span>
     {reason && <span className={styles.note}>{reason}</span>}
   </>;

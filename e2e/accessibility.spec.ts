@@ -59,12 +59,12 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
 test(`editorial card direct save is keyboard accessible and persists ${lang}/${width}`, async ({ page }) => {
   await page.setViewportSize({ width, height: 1000 });
   await page.goto(`/${lang}/tools`);
-  const firstCard = page.locator(".tce-card--media").filter({ has: page.locator(".pin-tool-button") }).first();
+  const firstCard = page.locator(".tce-card--media").filter({ has: page.locator("[data-pin-tool]") }).first();
   const href = await firstCard.locator(".tce-primary-link").getAttribute("href");
   expect(href).toBeTruthy();
   const slug = href!.split("/").pop()!;
   const card = page.locator(".tce-card--media").filter({ has: page.locator(`.tce-primary-link[href="${href}"]`) });
-  const save = card.locator(".pin-tool-button");
+  const save = card.locator("[data-pin-tool]");
   await expect(save).toBeEnabled();
   await card.locator(".tce-primary-link").focus();
   // Follow the card's actual tab order, including any exploration action.
@@ -75,11 +75,11 @@ test(`editorial card direct save is keyboard accessible and persists ${lang}/${w
   await expect(save).toBeFocused();
   await expect(card.locator(".tce-hover-actions")).toHaveCSS("opacity", "1");
   await page.keyboard.press("Enter");
-  await expect(save).toHaveClass(/pin-tool-button--active/);
+  await expect(save).toHaveAttribute("aria-pressed", "true");
   await expect.poll(() => new URL(page.url()).pathname).toBe(`/${lang}/tools`);
   await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-personal-stack-v4:anonymous") || "{}").selection?.pinnedToolSlugs)).toEqual([slug]);
   await page.reload();
-  await expect(save).toHaveClass(/pin-tool-button--active/);
+  await expect(save).toHaveAttribute("aria-pressed", "true");
 });
 
 }
@@ -135,13 +135,14 @@ test("mobile search has an explicit close action", async ({ page }) => {
 test("mobile menu restores focus after Escape", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/fr/tools");
-  const trigger = page.getByRole("button", { name: "Ouvrir le menu", exact: true });
+  // The shell's phone menu (11/11/2026): the last tab of the tab bar opens it from the bottom.
+  const trigger = page.locator("[data-shell-tabbar]").getByRole("button", { name: "Menu", exact: true });
   await trigger.focus();
   await page.keyboard.press("Enter");
   const dialog = page.getByRole("dialog", { name: "Menu", exact: true });
   await expect(dialog).toBeVisible();
-  await expect(dialog.getByRole("heading", { name: "Menu", exact: true })).toBeFocused();
-  await expectNoHighImpactViolations(page, ".asv2-mm-panel");
+  expect(await dialog.evaluate((el) => el.contains(document.activeElement))).toBe(true);
+  await expectNoHighImpactViolations(page, "[data-drawer]");
   await page.keyboard.press("Escape");
   await expect(dialog).toHaveCount(0);
   await expect(trigger).toBeFocused();
@@ -157,23 +158,26 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) for (
     const trigger = page.getByRole("button", { name: triggerName, exact: true });
     await trigger.focus();
     await page.keyboard.press("Enter");
-    await expect(trigger).toHaveAttribute("aria-expanded", "true");
+    // A modal sheet (tools) hides the page from assistive tech while open: read the trigger by its stable hook.
+    await expect(catalog === "tools" ? page.locator("[data-filters-trigger]") : trigger).toHaveAttribute("aria-expanded", "true");
     const dialog = page.getByRole("dialog", { name: en ? "Filters" : "Filtres", exact: true });
     await expect(dialog).toBeVisible();
     await expect.poll(() => dialog.evaluate((el) => el.contains(document.activeElement))).toBe(true);
-    await expectNoHighImpactViolations(page, ".tt-filter-panel");
+    await expectNoHighImpactViolations(page, catalog === "tools" ? "[data-drawer]" : ".tt-filter-panel");
     const choice = catalog === "tools"
-      ? dialog.getByRole("radio", { name: en ? "Free plan" : "Plan gratuit", exact: true })
+      ? dialog.getByRole("button", { name: en ? "Free plan" : "Plan gratuit", exact: true })
       : dialog.getByRole("radiogroup", { name: en ? "Sort by" : "Trier par", exact: true }).getByRole("radio", { name: "Budget", exact: true });
+    // The catalogue's sheet uses the system's segmented choices (pressed buttons); the category page keeps radios.
+    const chosen = catalog === "tools" ? "aria-pressed" : "aria-checked";
     await choice.focus();
     await page.keyboard.press("Space");
-    await expect(choice).toHaveAttribute("aria-checked", "true");
+    await expect(choice).toHaveAttribute(chosen, "true");
     await page.keyboard.press("Escape");
     await expect(dialog).toHaveCount(0);
     await expect(trigger).toBeFocused();
     await expect(trigger).toHaveAttribute("aria-expanded", "false");
     await page.keyboard.press("Enter");
-    await expect(choice).toHaveAttribute("aria-checked", "true");
+    await expect(choice).toHaveAttribute(chosen, "true");
     if (width === 390) {
       const close = dialog.getByRole("button", { name: en ? "Close" : "Fermer", exact: true });
       await expect(close).toBeVisible();

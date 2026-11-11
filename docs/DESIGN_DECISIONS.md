@@ -28,6 +28,13 @@ Ce que Michael a validé, refusé ou demandé, pour que rien ne se perde d'une r
 | 11/11/2026 | « On quitte le design system avec les couleurs que tu proposes » | Couleurs de la planche seulement : neutres partout, une seule dose de lumière par page (l'aura), bleu sur les chiffres clés, orange pour le doublon, vert pour le gain | Fondations / Couleurs |
 | 11/11/2026 | Aura : « bien plus diffuse et mêlée », « doit partir vraiment de la droite », « pas de cercles entiers », « hors de la page jusqu'au bord de la fenêtre » | Lavis d'aura coupé par le bord droit de la fenêtre, jamais sous le texte | `src/ds/Narrative` |
 | 11/11/2026 | Boutons : « je préfère la base de la planche », « sois très rigoureux » ; trois versions côte à côte, « go sur le 2 » | Actions (boutons, liens d'action, sélecteur segmenté) en Inter Tight comme la planche, 460 (430 en sombre), interlettrage 0, interligne 1 ; 16, sélecteur 15 ; hauteurs 40 / 52 / 36 ; même graisse sur l'encre. Le reste de l'interface garde Inter fin | `--tt-action-*`, `Button`, `Segmented` |
+| 11/11/2026 | « N'hésite pas à utiliser la logique liquid glass quand c'est nécessaire » | Verre liquide (`--tt-glass-*`) seulement pour ce qui flotte au-dessus du contenu : barre d'onglets, menus, infobulle, barre d'outils collée. Jamais sur une surface posée dans la page | `src/ds/tokens.css` |
+| 11/11/2026 | « Le point lumineux, plus fin et délicat » | Étoile filante de la planche à 55 % de son épaisseur, demi-intensité, filet à 14 % | `Button` |
+| 11/11/2026 | « Fiche latérale, formulaires : on fait un vrai design system » ; « tout ce que je n'ai pas précisé, tu dois connaître ton taf » | Toute la planche passe dans `src/ds`, page par page ; fiche latérale flottante (16 px des bords, 28 px d'arrondi, voile flouté) ; formulaires de la planche (`Field`, `TextAreaField`, `SelectField`, `Checkbox`, `FormGrid`) | `Drawer`, `Field` |
+| 11/11/2026 | « Côté catalogue, un gros travail de mise à plat : tout le design n'a rien à voir avec le reste » | Les sept pages du catalogue passent sur le système, en commençant par Outils : titre de page, puces de besoin, filtres dans la fiche latérale, « À la une » en cartes média, étagères en rangées d'outils | `src/ds/Catalog`, `ToolsPage` |
+| 11/11/2026 | « Pourquoi tu ne différencies pas le bouton filtre des autres boutons ? » | « Filtres » est une action, pas un besoin : pilule posée à part du rail, icône, nombre de filtres actifs en pastille d'encre | `FiltersButton` |
+| 11/11/2026 | « La barre est mal réfléchie, les boutons sont cassés, on ne voit pas qu'on peut les déplacer » ; « attention aux espaces, entre le titre et la barre » | Barre à 24 px sous le titre ; rail qui s'estompe du côté où il reste des besoins, flèches rondes sur ordinateur ; contours et anneau de focus jamais coupés ; collée sous la barre du haut, en verre | `FilterBar` |
+| 11/11/2026 | « Payant uniquement » débordait du sélecteur | Chaque option du sélecteur segmenté prend la largeur de son libellé ; la pastille se cale sur l'option réelle | `Segmented` |
 | 11/11/2026 | « Attention au contraste du bouton » | Près de la couleur, le bouton secondaire passe en variante posée (fond page, filet) | `Button` variant `raised` |
 
 ## Ma stack : structure
@@ -110,7 +117,7 @@ Abandonné : le clic des ciseaux du logo (Michael, 11/11).
 - [x] Carte de décision : anneau bleu du choix retenu (existait), coche qui rebondit et se dessine, autres choix qui s'effacent en 180 ms, économie en vert sans flèche (contraste 4,51:1) ; pied « Comparer en détail » et budget estimé (existaient).
 - [x] Question de formule : temps de travail par formule et « Gratuite ou payante, on ne juge pas » (existaient).
 - [ ] Rangée d'outil avec son verbe (Garder, Ajouter).
-- [ ] Infobulle : monte de 4 px en fondu, au survol et au focus.
+- [x] Infobulle : petite pilule d'encre translucide, sans flèche (« pourquoi une flèche ? », 11/11), qui monte de 4 px en fondu ; sur la barre latérale repliée (`Tooltip`).
 - [x] Retrait avec annulation : pastille d'encre avec « Annuler » (`UndoToast`) ; la ligne de coupe remontée par les ciseaux est refusée (« too much », 11/11).
 - [x] Chargement : une phrase fixe qui patiente ; la rotation des phrases est refusée (« too much », 11/11).
 - [ ] Case à cocher (« Prévenir quand le prix change »).

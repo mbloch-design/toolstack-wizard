@@ -11,9 +11,8 @@ import { Link } from "@/lib/routerLinks";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Home, Lightbulb, ChevronLeft, Bookmark, LayoutGrid, Boxes, Columns2, CirclePlus, UserRound, Menu, Languages } from "@/lib/icons";
 import type { IconComponent } from "@/lib/icons";
-import AccountAvatar from "@/components/account/AccountAvatar";
-import ShellMenuBody, { RouterLink, useShellAccount } from "@/components/v2shell/ShellMenuBody";
-import { BackLink, Crumbs, SearchTrigger, ShellMenu, SideFootLink, Sidebar, StackLink, TabBar, Topbar } from "@/ds/Shell/Shell";
+import ShellMenuBody, { RouterLink, ShellAccountMenu } from "@/components/v2shell/ShellMenuBody";
+import { BackLink, Crumbs, SearchTrigger, SideFootLink, Sidebar, StackLink, TabBar, Topbar } from "@/ds/Shell/Shell";
 import Drawer, { DrawerTitle } from "@/ds/Drawer/Drawer";
 import HomeGreeting from "@/components/v2shell/HomeGreeting";
 import { useLang } from "@/hooks/useLang";
@@ -67,6 +66,9 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const [adminSignOut, setAdminSignOut] = useState<BackofficeSignOutModel | null>(null);
   const [adminBlocked, setAdminBlocked] = useState(false);
   const adminMenuRef = useRef<HTMLButtonElement>(null);
+  // The control that opened the phone menu gets the focus back when it closes (Escape, a choice, the close button).
+  const menuOpener = useRef<HTMLElement | null>(null);
+  const openMenu = () => { menuOpener.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; setMenuOpen(true); };
   const [searchOpen, setSearchOpen] = useState(false);
   // The labelled navigation is the canonical desktop state. The compact rail
   // remains available as a deliberate choice and is remembered per browser.
@@ -234,7 +236,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     query.addEventListener("change", sync);
     return () => query.removeEventListener("change", sync);
   }, []);
-  const [accountMenuOpen, setAccountMenuOpen] = useState(false);
   // The catalogue guard blocks a link during capture and announces it: the open admin menu explains why.
   useEffect(() => {
     if (!isAdmin || !menuOpen) return;
@@ -243,7 +244,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     document.addEventListener(CATALOG_EXIT_BLOCKED_EVENT, onBlocked);
     return () => document.removeEventListener(CATALOG_EXIT_BLOCKED_EVENT, onBlocked);
   }, [isAdmin, menuOpen]);
-  const who = useShellAccount();
   const isCurrent = (item: NavItem) => item.id === "home" ? relPath === "" : item.match.some((m) => relPath === m || relPath.startsWith(m));
   const stackHref = `${prefix}/ma-stack`;
   const onStack = location.pathname === stackHref;
@@ -255,11 +255,8 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const tabItems = [
     ...sideItems.filter((item) => tabIds.includes(item.id)),
     sideItems[sideItems.length - 1],
-    { id: "menu", label: t("Menu", "Menu"), to: "#", icon: <UserRound />, onClick: () => setMenuOpen(true) },
+    { id: "menu", label: t("Menu", "Menu"), to: "#", icon: <UserRound />, onClick: openMenu },
   ];
-  const menuTrigger = who.kind === "user"
-    ? <AccountAvatar ownerId={who.id} label={who.name} avatarUrl={who.avatarUrl} />
-    : <UserRound />;
 
   return (
     <TopbarBreadcrumbContext.Provider value={breadcrumbCtx}>
@@ -287,7 +284,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             start={<span className={adminStyles.workspaceTitle}>{t("Back-office", "Back office")}</span>}
             end={<>
               {adminSignOut && <Button variant="secondary" disabled={adminSignOut.busy} onClick={adminSignOut.onSignOut}>{t("Me déconnecter", "Sign out")}</Button>}
-              {phone && <IconButton ref={adminMenuRef} label={t("Ouvrir le menu", "Open menu")} icon={<Menu />} tone="grey" size={40} onClick={() => setMenuOpen(true)} aria-haspopup="dialog" aria-expanded={menuOpen} />}
+              {phone && <IconButton ref={adminMenuRef} label={t("Ouvrir le menu", "Open menu")} icon={<Menu />} tone="grey" size={40} onClick={openMenu} aria-haspopup="dialog" aria-expanded={menuOpen} />}
             </>} />
           : <Topbar
             start={phone
@@ -296,10 +293,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               : isHome ? <HomeGreeting /> : breadcrumb ? <Crumbs link={RouterLink} homeIcon={<Home />} label={t("Fil d’Ariane", "Breadcrumb")} items={breadcrumb.map((item) => ({ label: item.label, to: item.href }))} /> : null}
             end={<>
               <SearchTrigger label={t("Rechercher", "Search")} shortcut={shortcut} onClick={() => setSearchOpen(true)} />
-              {!phone && who.kind !== "loading" && <ShellMenu label={who.kind === "user" ? t(`Compte et réglages : ${who.name}`, `Account and settings: ${who.name}`) : t("Réglages", "Settings")}
-                open={accountMenuOpen} onOpenChange={setAccountMenuOpen} trigger={menuTrigger}>
-                <ShellMenuBody languageHref={languageHref} onDone={() => setAccountMenuOpen(false)} />
-              </ShellMenu>}
+              {!phone && <ShellAccountMenu languageHref={languageHref} />}
               {!phone && <StackLink link={RouterLink} to={stackHref} label={cartLabel} icon={<Bookmark />} count={cartCount} current={onStack} />}
             </>} />}
         </div>
@@ -323,7 +317,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
       {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
       <Drawer open={menuOpen} onClose={closeMenu} closeLabel={t("Fermer le menu", "Close menu")}
-        onCloseAutoFocus={isAdmin ? (event) => { event.preventDefault(); adminMenuRef.current?.focus(); } : undefined}>
+        onCloseAutoFocus={(event) => { event.preventDefault(); (menuOpener.current?.isConnected ? menuOpener.current : adminMenuRef.current)?.focus(); }}>
         <DrawerTitle>{t("Menu", "Menu")}</DrawerTitle>
         {isAdmin
           ? <div className="shell-drawer-menu">

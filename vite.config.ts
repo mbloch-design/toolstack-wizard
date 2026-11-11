@@ -5,6 +5,7 @@ import bestOfGuidesConfig from "./src/data/bestOfGuides.json";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
+import crypto from "crypto";
 import postcss from "postcss";
 import { assertSsrRenderers, projectToolBootstrap } from "./scripts/lib/ssr-contract.mjs";
 import { transformSync } from "esbuild";
@@ -942,8 +943,9 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           throw new Error("dist-ssr/entry-server.js not found — run `vite build --ssr` first.");
         }
 
-        const cssHrefMatch = baseHtml.match(/<link rel="stylesheet" crossorigin href="([^"]+\.css)"/);
-        const compiledCssPath = cssHrefMatch ? path.resolve(distDir, cssHrefMatch[1].replace(/^\//, "")) : "";
+        // Every compiled stylesheet of the entry (the site's and the design system's chunk), joined by « | »:
+        // reading only the first one lost the pages' own rules once src/ds got its own chunk (11/11/2026).
+        const compiledCssPath = [...new Set([...baseHtml.matchAll(/<link rel="stylesheet" crossorigin href="([^"]+\.css)"/g)].map((m) => path.resolve(distDir, m[1].replace(/^\//, ""))))].join("|");
 
         // Build a slug→name lookup for enriching alternative names (used by
         // both the main-page FAQ schema below and the sub-page loop further
@@ -2480,9 +2482,10 @@ let classRuleIndex: Map<string, IndexedRule[]> | null = null;
 let compiledCssExists = false;
 function extractUsedUtilityCss(markup: string, compiledCssPath: string): string {
   if (classRuleIndex === null) {
-    compiledCssExists = fs.existsSync(compiledCssPath);
+    const files = compiledCssPath.split("|").filter(Boolean);
+    compiledCssExists = files.length > 0 && files.every((file) => fs.existsSync(file));
     classRuleIndex = compiledCssExists
-      ? buildClassRuleIndex(fs.readFileSync(compiledCssPath, "utf-8"))
+      ? buildClassRuleIndex(files.map((file) => fs.readFileSync(file, "utf-8")).join("\n"))
       : new Map();
   }
   if (!compiledCssExists) return "";
@@ -2498,8 +2501,19 @@ function extractUsedUtilityCss(markup: string, compiledCssPath: string): string 
 
   const seen = new Set<string>();
   const rules: string[] = [];
+  // The shell's rules come first, all of them and in one fixed order on every page: a prefix the critical CSS
+  // externaliser shares once instead of repeating it per page (artefact budget, 11/11/2026).
+  if (shellCriticalCss === null) {
+    const shell: string[] = [];
+    const taken = new Set<string>();
+    for (const list of classRuleIndex.values()) for (const candidate of list) {
+      if (!taken.has(candidate.text) && candidate.required.every((c) => SHELL_CLASS.test(c))) { taken.add(candidate.text); shell.push(candidate.text); }
+    }
+    shellCriticalCss = shell.sort().join("");
+  }
   for (const group of classGroups) {
     for (const cls of group) {
+      if (SHELL_CLASS.test(cls)) continue;
       for (const candidate of classRuleIndex.get(cls) ?? []) {
         if (seen.has(candidate.text)) continue;
         if (candidate.required.every((c) => group.has(c))) {
@@ -2509,8 +2523,10 @@ function extractUsedUtilityCss(markup: string, compiledCssPath: string): string 
       }
     }
   }
-  return minifyCss(rules.join(""));
+  return minifyCss(shellCriticalCss + rules.join(""));
 }
+const SHELL_CLASS = /^S[A-Za-z0-9_-]{6}$/;
+let shellCriticalCss: string | null = null;
 
 function criticalCssPlugin(): Plugin {
   let criticalCss = "";
@@ -2556,7 +2572,10 @@ export default defineConfig(({ mode, isSsrBuild }) => {
   publicDir: isSsrBuild ? false : undefined,
   // CSS Modules: short class names in production. They repeat in every page's critical CSS (artefact
   // budget, 11/11/2026); the name only depends on the file and the class, so the SSR and client builds agree.
-  css: mode === "production" ? { modules: { generateScopedName: "t[hash:base64:6]" } } : undefined,
+  // The shell's classes (src/ds/Shell) start with « S »: they are on every page, so their critical rules are moved
+  // into one block shared by all pages instead of being copied into each page's critical file.
+  css: mode === "production" ? { modules: { generateScopedName: (name: string, filename: string) =>
+    `${filename.includes("/ds/Shell/") ? "S" : "t"}${crypto.createHash("sha256").update(`${filename}:${name}`).digest("base64url").slice(0, 6)}` } } : undefined,
   server: {
     host: "::",
     port: process.env.PORT ? Number(process.env.PORT) : undefined,
@@ -2612,6 +2631,8 @@ export default defineConfig(({ mode, isSsrBuild }) => {
           // Catalogue helpers shared by /tools and the category pages: one
           // chunk instead of one per module (the artefact has a file budget).
           if (/\/src\/(data\/(catalogPlacements|catalogNeeds|toolTaglines)\.ts|data\/tool_demand\.json|lib\/(catalogFilters|categorySeo)\.ts)/.test(id)) return "catalog-shared";
+          // The design system (src/ds): one chunk, not one JS + CSS pair per component shared by two pages (file budget, 11/11/2026).
+          if (id.includes("/src/ds/") && !/\.(stories|test)\./.test(id)) return "ds";
           return undefined;
         },
       },

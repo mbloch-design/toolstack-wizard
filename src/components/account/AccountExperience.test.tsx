@@ -125,7 +125,8 @@ import AccountExperienceProvider, {
 } from "./AccountExperienceProvider";
 import { useLocation } from "react-router-dom";
 import { normalizePersonalStack } from "@/lib/personalStack";
-import AccountMenu from "./AccountMenu";
+import { ShellAccountMenu } from "@/components/v2shell/ShellMenuBody";
+import { CurrencyProvider } from "@/hooks/useCurrency";
 vi.mock("@/hooks/useAccountProfile", () => ({
   useAccountProfile: () => ({
     profile: null,
@@ -140,7 +141,7 @@ function Harness() {
   const location = useLocation();
   return (
     <>
-      <AccountMenu />
+      <CurrencyProvider><ShellAccountMenu languageHref="/en/tool/notion" /></CurrencyProvider>
       <button
         onClick={() =>
           experience.openAuth("signin", "/fr/tool/notion?plan=free#pricing")
@@ -368,7 +369,7 @@ it("contains keyboard focus in the account menu and restores it after Escape", a
   const trigger = screen.getByRole("button", { name: "Compte : a@example.test" });
   trigger.focus();
   fireEvent.click(trigger);
-  const first = screen.getByRole("link", { name: "Paramètres" });
+  const first = screen.getByRole("button", { name: "Français" });
   const last = screen.getByRole("button", { name: "Me déconnecter" });
   await waitFor(() => expect(screen.getByRole("dialog")).toContainElement(document.activeElement as HTMLElement));
   last.focus();
@@ -376,7 +377,7 @@ it("contains keyboard focus in the account menu and restores it after Escape", a
   expect(first).toHaveFocus();
   fireEvent.keyDown(first, { key: "Tab", shiftKey: true });
   expect(last).toHaveFocus();
-  act(() => document.querySelector<HTMLButtonElement>("button:not(.ac-header-trigger)")?.focus());
+  act(() => screen.getByRole("button", { name: "Open auth", hidden: true }).focus());
   expect(last).toHaveFocus();
   expect(document.body.style.pointerEvents).toBe("none");
   fireEvent.keyDown(last, { key: "Escape" });

@@ -80,7 +80,7 @@ test('late A response cannot hydrate or save as B after sign out', async ({ page
   await control(request, 'seed', { email: 'b@example.invalid', state: state(['figma']) });
   await page.goto('/en/ma-stack'); await login(page, 'en', 'a@example.invalid'); await saved(page);
   await control(request, 'fault', { path: '/api/stack-account', method: 'GET', delayMs: 1500 });
-  await page.reload(); await expect(page.locator('.ac-header-trigger')).toBeVisible(); await signOut(page);
+  await page.reload(); await expect(page.locator('[data-account-trigger]')).toBeVisible(); await signOut(page);
   await login(page, 'en', 'b@example.invalid'); await saved(page);
   // Wait on the delayed transport completion, then check scoped state again.
   await expect.poll(async () => (await control(request, 'state')).requests.filter((r: { method: string; path: string }) => r.path === '/api/stack-account' && r.method === 'GET').length).toBeGreaterThanOrEqual(3);
@@ -95,7 +95,7 @@ test('Google success returns safely and adopts the SDK session without losing dr
     return ['https://outside.example.invalid/path', '//outside.example.invalid/path', '/en/not-a-route', '/\\outside.example.invalid'].map(returnTo => getStackAccountReturnUrl({ lang: 'en', returnTo }));
   }); expect(safeReturns).toEqual(Array(4).fill(`${process.env.PLAYWRIGHT_BASE_URL}/en/ma-stack`));
   await dismissConsent(page); await page.getByRole('button', { name: 'See the full diagnosis', exact: true }).click(); await page.getByRole('button', { name: 'Continue with Google', exact: true }).click();
-  await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Account: Google Fixture'); await saved(page);
+  await expect(page.locator('[data-account-trigger]')).toHaveAttribute('aria-label', 'Account: Google Fixture'); await saved(page);
   await expect(page).toHaveURL(/\/en\/ma-stack\?recette=google#?$/); expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual(['figma']);
   expect((await control(request, 'state')).accounts[0].stack.state.selection.pinnedToolSlugs).toEqual(['figma']);
 });

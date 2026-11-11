@@ -1,10 +1,29 @@
+/* Forms (planche « Formulaire complet »): label above, 48 px box, blue halo on focus, help or error under. */
+
 .field {
   display: grid;
+  align-content: start;
+  gap: var(--tt-space-2);
+  min-width: 0;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
   gap: var(--tt-space-2);
 }
 
 .label {
-  composes: eyebrow from "../atoms.module.css";
+  color: var(--tt-ink);
+  font: var(--tt-field-label-font);
+  letter-spacing: var(--tt-action-tracking);
+}
+
+.count {
+  color: var(--tt-ink);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+  font-variant-numeric: tabular-nums;
 }
 
 .row {
@@ -14,40 +33,225 @@
   gap: var(--tt-space-2);
 }
 
-.input {
-  flex: 1 1 120px;
+.box {
+  position: relative;
+  display: flex;
+  flex: 1 1 160px;
+  align-items: center;
+  gap: var(--tt-space-2);
   min-width: 0;
-  min-height: 44px;
+  min-height: var(--tt-field-h);
   padding: 0 var(--tt-space-4);
-  border: 0;
-  border-radius: var(--tt-r-pill);
+  border-radius: var(--tt-r-field);
   background: var(--tt-bg);
   box-shadow: var(--tt-hairline);
-  color: var(--tt-ink);
-  font: var(--tt-amount-font);
-  letter-spacing: var(--tt-amount-tracking);
   transition: box-shadow var(--tt-dur-state) ease;
 }
 
-.input::placeholder {
-  color: var(--tt-meta);
+.box:focus-within {
+  box-shadow: var(--tt-field-focus);
 }
 
-.input:focus {
+.box[data-error] {
+  box-shadow: var(--tt-field-error);
+  animation: nope 320ms cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.box[data-disabled] {
+  background: transparent;
+}
+
+.control {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
   outline: none;
-  box-shadow: var(--tt-hairline-ink);
+  background: none;
+  color: var(--tt-ink);
+  font: var(--tt-field-font);
+  letter-spacing: var(--tt-label-tracking);
+  appearance: none;
 }
 
-.input:focus-visible {
+.control::placeholder {
+  color: var(--tt-field-placeholder);
+}
+
+.control:disabled {
+  color: var(--tt-field-placeholder);
+}
+
+.control[data-area] {
+  min-height: var(--tt-field-area-h);
+  padding-block: var(--tt-space-3);
+  resize: vertical;
+}
+
+.box:has(.control[data-area]) {
+  align-items: stretch;
+}
+
+.control[data-select] {
+  padding-right: var(--tt-space-6);
+  cursor: pointer;
+}
+
+.chevron,
+.ok {
+  flex: none;
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.chevron {
+  position: absolute;
+  right: var(--tt-space-4);
+}
+
+.ok {
+  color: var(--tt-gain-ink);
+}
+
+.help {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+}
+
+/* Never red alone: a round mark and a sentence that says how to fix it. */
+.help[data-error] {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--tt-space-1) * 1.5);
+  color: var(--tt-overlap-strong);
+}
+
+.help[data-error]::before {
+  content: "!";
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+  margin-top: var(--tt-hairline-w);
+  border-radius: var(--tt-r-round);
+  background: var(--tt-overlap-strong);
+  color: var(--tt-on-color);
+  font: var(--tt-tab-font);
+}
+
+@keyframes nope {
+  20%,
+  60% {
+    transform: translateX(-3px);
+  }
+
+  40%,
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+/* The check box: the box fills in ink, a check draws itself. */
+.check {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--tt-space-3);
+  color: var(--tt-ink);
+  cursor: pointer;
+}
+
+.checkInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.checkBox {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--tt-check-size);
+  height: var(--tt-check-size);
+  margin-top: var(--tt-hairline-w);
+  border-radius: var(--tt-r-check);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-hairline-ink);
+  transition: background-color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease;
+}
+
+.checkBox svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+  fill: none;
+  stroke: var(--tt-bg);
+  stroke-width: var(--tt-icon-stroke-bold);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16;
+  stroke-dashoffset: 16;
+  transition: stroke-dashoffset 320ms var(--tt-ease) 60ms;
+}
+
+.checkInput:checked + .checkBox {
+  background: var(--tt-ink);
+  box-shadow: none;
+}
+
+.checkInput:checked + .checkBox svg {
+  stroke-dashoffset: 0;
+}
+
+.checkInput:focus-visible + .checkBox {
   outline: var(--tt-focus-ring);
   outline-offset: var(--tt-focus-offset);
 }
 
-.input[aria-invalid="true"] {
-  box-shadow: var(--tt-hairline-overlap);
+.checkInput:disabled + .checkBox {
+  opacity: var(--tt-disabled);
 }
 
-.error {
-  composes: note from "../atoms.module.css";
-  color: var(--tt-overlap-strong);
+.checkText {
+  display: grid;
+  gap: calc(var(--tt-space-1) / 2);
+}
+
+.checkLabel {
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+}
+
+.checkNote {
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+}
+
+/* Two columns while each keeps 240 px, one on a narrow form. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tt-form-col)), 1fr));
+  gap: var(--tt-gap-group) var(--tt-space-6);
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .box[data-error] {
+    animation: none;
+  }
+
+  .checkBox svg {
+    transition: none;
+  }
 }

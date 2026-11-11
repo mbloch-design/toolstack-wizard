@@ -38,18 +38,27 @@ export async function dismissConsent(page: Page) {
   if (await reject.isVisible()) await reject.click();
   await expect(reject).toBeHidden();
 }
+/** The shell's sign-in (11/11/2026): in the settings menu on a computer, in the tab bar's menu on a phone. */
+export async function openShellSignIn(page: Page, lang: 'fr' | 'en') {
+  const phone = (page.viewportSize()?.width ?? 1280) <= 640;
+  if (phone) await page.locator('[data-shell-tabbar]').getByRole('button', { name: 'Menu', exact: true }).click();
+  else await page.locator('[data-shell-topbar]').getByRole('button', { name: lang === 'fr' ? 'Réglages' : 'Settings', exact: true }).click();
+  await page.getByRole('dialog').getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
+}
 export async function login(page: Page, lang: 'fr' | 'en', email: string, password = 'fixture-password', expectedVisibleName = email) {
   const accounts = await control(page.request, 'state');
   if (!accounts.accounts.some((user: { email: string }) => user.email === email)) await control(page.request, 'seed', { email });
   await dismissConsent(page);
   const welcomeSignIn = page.getByRole('button', { name: lang === 'fr' ? 'J’ai déjà un compte' : 'I already have an account', exact: true });
   if (await welcomeSignIn.isVisible()) await welcomeSignIn.click();
-  else await page.locator('.asv2-topbar').getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
+  else await openShellSignIn(page, lang);
   await page.getByRole('button', { name: lang === 'fr' ? 'Continuer avec l’e-mail' : 'Continue with email', exact: true }).click();
   await page.getByLabel(lang === 'fr' ? 'Adresse e-mail' : 'Email address', { exact: true }).fill(email);
   await page.getByLabel(lang === 'fr' ? 'Mot de passe' : 'Password', { exact: true }).fill(password);
   await page.getByRole('dialog').getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
-  await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', `${lang === 'fr' ? 'Compte : ' : 'Account: '}${expectedVisibleName}`);
+  // On a phone the account lives in the tab bar's menu: the signed-in trigger exists on a computer only.
+  if ((page.viewportSize()?.width ?? 1280) > 640) await expect(page.locator('[data-account-trigger]')).toHaveAttribute('aria-label', `${lang === 'fr' ? 'Compte : ' : 'Account: '}${expectedVisibleName}`);
+  else await expect(page.getByRole('dialog')).toHaveCount(0);
 }
 export async function saved(page: Page, lang: 'fr' | 'en' = 'en') {
   // An empty account has synchronized, but must not claim a saved stack.
@@ -59,11 +68,12 @@ export async function saved(page: Page, lang: 'fr' | 'en' = 'en') {
 }
 export async function signOut(page: Page, lang: 'fr' | 'en' = 'en') {
   await page.evaluate(() => { window.scrollTo(0, 0); document.querySelector('.asv2-content')?.scrollTo(0, 0); });
-  await page.locator('.ac-header-trigger').click();
-  await page.getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
+  if ((page.viewportSize()?.width ?? 1280) <= 640) await page.locator('[data-shell-tabbar]').getByRole('button', { name: 'Menu', exact: true }).click();
+  else await page.locator('[data-account-trigger]').click();
+  await page.getByRole('dialog').getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
   const dialog = page.getByRole('dialog', {name: lang === 'fr' ? 'Vous déconnecter ?' : 'Sign out?', exact: true});
   await dialog.getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
-  await expect(page.locator('.ac-header-trigger--account')).toHaveCount(0);
+  await expect(page.locator('[data-account-trigger][data-signed-in]')).toHaveCount(0);
   await expect(dialog).toHaveCount(0);
 }
 export async function snapshot(page: Page) {

@@ -331,7 +331,9 @@ export default function CartPage() {
     // The trim (planche, « Huit gestes »): the card falls, then the tool leaves the stack.
     const id = lookup.get(slug)?.id;
     const still = typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-    if (id && !still) { setLeaving((ids) => [...ids, id]); window.setTimeout(() => { unpinTool(slug); setLeaving((ids) => ids.filter((other) => other !== id)); }, fallDuration); }
+    // The card falls only where it is seen (edit mode); from the sheet, which covers it, the tool leaves at once so
+    // nothing is lost to a reload during the fall.
+    if (id && !still && editing) { setLeaving((ids) => [...ids, id]); window.setTimeout(() => { unpinTool(slug); setLeaving((ids) => ids.filter((other) => other !== id)); }, fallDuration); }
     else unpinTool(slug);
     trackEvent("stack_remove", { tool_slug: slug, source: editing ? "edit" : "sheet" });
     closeInspector();

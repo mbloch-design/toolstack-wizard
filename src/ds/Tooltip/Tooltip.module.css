@@ -1,0 +1,41 @@
+/* The tooltip: a small ink pill, slightly translucent, no arrow (Michael, 11/11/2026); it rises 4 px as it fades in
+   and grows a hair (planche « Infobulle »). */
+.tip {
+  z-index: 60;
+  max-width: var(--tt-tip-w);
+  padding: calc(var(--tt-space-1) * 1.5) var(--tt-space-3);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tip-bg);
+  box-shadow: var(--tt-tip-shadow);
+  color: var(--tt-bg);
+  font: var(--tt-note-font);
+  font-weight: var(--tt-w-on-ink);
+  letter-spacing: var(--tt-note-tracking);
+  backdrop-filter: var(--tt-glass-filter);
+  transform-origin: var(--radix-tooltip-content-transform-origin);
+  animation: tip-in 220ms var(--tt-ease);
+}
+
+.tip[data-side="right"] {
+  animation-name: tip-in-right;
+}
+
+@keyframes tip-in {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.96);
+  }
+}
+
+@keyframes tip-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-4px) scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tip {
+    animation: none;
+  }
+}

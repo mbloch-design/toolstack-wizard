@@ -67,7 +67,7 @@ export default function AccountExperienceProvider({
   };
   const restoreFocus = () => {
     if (trigger.current?.isConnected) trigger.current.focus();
-    else document.querySelector<HTMLElement>(".ac-header-trigger")?.focus();
+    else document.querySelector<HTMLElement>("[data-account-trigger], [data-shell-tabbar] button[aria-haspopup]")?.focus();
   };
   const openAuth = useCallback((mode: AuthMode, returnTo?: string) => {
     trigger.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;

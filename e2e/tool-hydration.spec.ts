@@ -122,10 +122,10 @@ for (const slug of ["notion", "1001bit-tools", "17hats", "8fig", "adobe-acrobat-
           }
           expect(navigations).toEqual([]);
           if (savedStack) {
-            await expect(page.locator(".td-hero-actions .pin-tool-button--active")).toBeVisible();
+            await expect(page.locator(".td-hero-actions [data-pin-tool][aria-pressed="true"]")).toBeVisible();
             expect(await page.evaluate(() => localStorage.getItem("tooltrim-ma-stack-mvp-v3"))).toBe(savedState);
             await page.reload({ waitUntil: "load" });
-            await expect(page.locator(".td-hero-actions .pin-tool-button--active")).toBeVisible();
+            await expect(page.locator(".td-hero-actions [data-pin-tool][aria-pressed="true"]")).toBeVisible();
             expect(await page.evaluate(() => localStorage.getItem("tooltrim-ma-stack-mvp-v3"))).toBe(savedState);
           }
           expect(hydrationErrors).toEqual([]);
@@ -149,7 +149,7 @@ test("prerendered stack add waits for scripts, then saves on the first click", a
   })));
   try {
     await page.goto("/fr/tool/figma", { waitUntil: "commit" });
-    const cta = page.locator(".td-hero-actions .pin-tool-button--full");
+    const cta = page.locator(".td-hero-actions [data-pin-tool]");
     await expect(cta).toBeVisible();
     await expect(cta).toBeDisabled();
     releaseScripts();
@@ -158,9 +158,9 @@ test("prerendered stack add waits for scripts, then saves on the first click", a
     await expect(cta).toContainText("Dans ma stack");
     await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-personal-stack-v4:anonymous") || "{}").selection?.pinnedToolSlugs)).toContain("figma");
     await cta.click();
-    await expect(page.locator(".stack-confirm")).toBeVisible();
-    await page.locator(".stack-confirm-keep").click();
-    await expect(page.locator(".stack-confirm")).toHaveCount(0);
+    await expect(page.locator("[data-confirm]")).toBeVisible();
+    await page.locator("[data-confirm]").getByRole("button", { name: "Garder" }).click();
+    await expect(page.locator("[data-confirm]")).toHaveCount(0);
     await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-personal-stack-v4:anonymous") || "{}").selection?.pinnedToolSlugs)).toContain("figma");
   } finally {
     releaseScripts();
@@ -183,6 +183,6 @@ test("saved stack hydrates while the detail route chunk is slow", async ({ page,
     localStorage.setItem("tooltrim-ma-stack-mvp-v3", JSON.stringify({ version: 3, needs: [], pinnedToolSlugs: ["viso-ai"], toolEntries: [{ toolSlug: "viso-ai", needIds: [], intent: "stack", assignmentMode: "pending", addedAt: "2026-10-05T00:00:00.000Z" }] }));
   });
   await page.goto("/en/tool/viso-ai", {waitUntil:"domcontentloaded"});
-  await expect(page.locator(".td-hero-actions .pin-tool-button--full")).toBeEnabled();
+  await expect(page.locator(".td-hero-actions [data-pin-tool]")).toBeEnabled();
   expect(errors).toEqual([]);
 });

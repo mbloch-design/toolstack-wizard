@@ -110,7 +110,8 @@
   gap: var(--tt-space-1);
   padding: var(--tt-space-1) var(--tt-space-2);
   border-radius: var(--tt-r-pill);
-  background: var(--tt-bg);
+  background: var(--tt-delta-cost-bg);
+  color: var(--tt-overlap-strong);
   font: var(--tt-note-font);
   letter-spacing: var(--tt-note-tracking);
   font-variant-numeric: tabular-nums;
@@ -118,18 +119,9 @@
   animation: pop 380ms var(--tt-spring) both;
 }
 
-.delta svg {
-  width: var(--tt-icon-xs);
-  height: var(--tt-icon-xs);
-  fill: none;
-  stroke: var(--tt-overlap-strong);
-  stroke-width: var(--tt-icon-stroke-bold);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.delta svg[data-down] {
-  stroke: var(--tt-gain-ink);
+.delta[data-down] {
+  background: var(--tt-delta-gain-bg);
+  color: var(--tt-gain-ink);
 }
 
 /* At rest: a green check before « Rien à trancher. » */

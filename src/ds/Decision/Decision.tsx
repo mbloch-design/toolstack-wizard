@@ -63,10 +63,8 @@ export default function Decision({ lang, eyebrow, step, media, title, detail, ch
             <p className={styles.preview} aria-live="polite">
               <span className={styles.note}>{preview.label}</span>
               <Amount value={preview.value} unit={preview.unit} />
-              {preview.delta && <span key={preview.delta.text} className={styles.delta}>
-                <svg viewBox="0 0 24 24" aria-hidden="true" data-down={preview.delta.down ? "" : undefined}><path d={preview.delta.down ? "M12 5v14M6 13l6 6 6-6" : "M12 19V5M6 11l6-6 6 6"} /></svg>
-                {preview.delta.text}
-              </span>}
+              {/* Variation (planche): green for a saving, orange for an extra cost; the sign says it too, no arrow. */}
+              {preview.delta && <span key={preview.delta.text} className={styles.delta} data-down={preview.delta.down || undefined}>{preview.delta.text}</span>}
             </p>
           )}
         </div>

@@ -110,7 +110,7 @@ export default function Split({ lang, areas, format, unpriced, rateDate, localLo
         </div>
 
         <div className={styles.bar} role="img" aria-label={shown.map((area) => `${area.label} ${percent(area.amount)}`).join(", ")}>
-          {shown.map((area) => <i key={area.id} style={{ "--f": area.amount, "--c": area.color } as CSSProperties} data-on={open === area.id ? "" : undefined} />)}
+          {shown.map((area, at) => <i key={area.id} style={{ "--f": area.amount, "--c": area.color, "--i": at } as CSSProperties} data-on={open === area.id ? "" : undefined} />)}
         </div>
       </div>
 
@@ -137,13 +137,13 @@ export default function Split({ lang, areas, format, unpriced, rateDate, localLo
               </button>
               {expanded && (
                 <ul id={`${id}-${area.id}`} className={styles.tools}>
-                  {tools.map((tool) => (
+                  {tools.map((tool, at) => (
                     <li key={tool.id} className={styles.tool} title={tool.name}>
                       <Logo tool={tool} size={24} localOnly={localLogosOnly} />
                       <span className={styles.toolCell}>
                         <span className={styles.toolName}>{tool.name}</span>
                         {/* Wide card: the tool's weight in its area, in the area's colour. */}
-                        {tools.length > 1 && <span className={styles.toolBar} aria-hidden="true"><i style={{ "--w": `${(tool.amount / Math.max(...tools.map((other) => other.amount))) * 100}%` } as CSSProperties} /></span>}
+                        {tools.length > 1 && <span className={styles.toolBar} aria-hidden="true"><i style={{ "--w": `${(tool.amount / Math.max(...tools.map((other) => other.amount))) * 100}%`, "--i": at } as CSSProperties} /></span>}
                       </span>
                       {/* One tool in the area: its figures are the area's, said once. */}
                       {tools.length > 1 && <>

@@ -339,5 +339,10 @@ Mesures Playwright à 1440, 1024 et 390 px. Tout appliqué le 9 oct. (« go sur 
 - Restent sans prix attesté : Adobe Stock (seulement des prix en euros géolocalisés, 29,99 €/mois avec engagement annuel) et Squarespace (euros géolocalisés + promotion -50 %). Relever le prix en dollars depuis une page US avant d'ajouter.
 
 ## Coquille : nettoyage après la nouvelle navigation (11/11/2026)
-- `src/components/account/AccountMenu.tsx` n'est plus rendu (remplacé par `ShellMenuBody`) : migrer son test (`AccountExperience.test.tsx`) puis le supprimer.
 - Réécrire les tests e2e qui visent encore les anciennes classes `.asv2-*` (`sidebar-preference.spec.ts` est fait ; les autres fichiers de `e2e/` restent).
+
+## Catalogue sur le système (11/11/2026)
+- Fait : Outils (`ToolsPage`). À faire : Catégorie, Index des catégories, Explorer, Stacks, Comparatifs, Guides (aucune n'utilise encore `src/ds`).
+- `ToolCardEditorial` (grille du catalogue complet) reste à reprendre en carte du système.
+- Composants en attente de leur page (marqueur `@ds-pending`, 30 jours) : `TextAreaField`, `SelectField`, `Checkbox`, `FormGrid`, `FormFull` (page « Soumettre un outil »).
+- `e2e/editorial-carousel.spec.ts` vise des commandes de carrousel que l'accueil n'affiche plus (depuis « luxury direction ») : à réécrire ou retirer.

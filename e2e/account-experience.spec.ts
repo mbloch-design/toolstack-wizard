@@ -1,4 +1,4 @@
-import { test, expect, control, draft, state, snapshot, saved, isolate, login, signOut, dismissConsent, change } from './fixtures/accounts';
+import { test, expect, control, draft, state, snapshot, saved, isolate, login, signOut, dismissConsent, change, openShellSignIn } from './fixtures/accounts';
 
 test('signup requires confirmation delivered only through local mailbox', async ({ page, request, browser }) => {
   const full = state(['notion', 'figma']); full.billing = { paid: ['notion'], reviewed: ['figma'], choices: { notion: { source: 'custom', amount: 49, currency: 'EUR', period: 'annual', seats: 2 } } }; full.decisions = { 'figma|notion': { kind: 'keep-both', kept: 'notion', saving: 4, at: '2026-10-19T12:00:00Z' } };
@@ -104,7 +104,7 @@ for (const provider of ['Google', 'GitHub']) for (const denied of [false, true])
  await draft(page, state(['figma'])); await control(request, 'oauth', { denied }); await page.goto('/en/tool/notion?source=account-test'); await dismissConsent(page);
  await page.goto('/en/sign-in?returnTo='+encodeURIComponent('/en/tool/notion?source=account-test')); await page.getByRole('button', { name: `Continue with ${provider}`, exact: true }).click();
  if (denied) { await expect(page.getByRole('alert')).toContainText('cancelled or denied'); await page.getByRole('link', { name: 'Back to sign in', exact: true }).click(); await expect(page).toHaveURL(/returnTo=%2Fen%2Ftool%2Fnotion/); }
- else { await expect(page).toHaveURL('/en/tool/notion?source=account-test'); await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', `Account: ${provider === 'Google' ? 'Google' : 'GitHub'} Fixture`); await page.goto('/en/account/settings'); await page.getByRole('navigation', { name: 'Settings sections' }).getByRole('link', { name: 'Sign-in and security', exact: true }).click(); await expect(page.locator('.ac-identities')).toHaveText(`${provider}Connected`); }
+ else { await expect(page).toHaveURL('/en/tool/notion?source=account-test'); await expect(page.locator('[data-account-trigger]')).toHaveAttribute('aria-label', `Account: ${provider === 'Google' ? 'Google' : 'GitHub'} Fixture`); await page.goto('/en/account/settings'); await page.getByRole('navigation', { name: 'Settings sections' }).getByRole('link', { name: 'Sign-in and security', exact: true }).click(); await expect(page.locator('.ac-identities')).toHaveText(`${provider}Connected`); }
  expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual(['figma']);
 });
 
@@ -112,7 +112,10 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) for (
  await page.setViewportSize({ width, height: 1000 }); await page.addInitScript(theme => localStorage.setItem('tooltrim:theme', theme), theme);
  await page.goto(`/${lang}/ma-stack`); await dismissConsent(page);
  const entry = page.getByRole('button',{name:lang==='fr'?'J’ai déjà un compte':'I already have an account',exact:true});
- const header = page.locator('.ac-header-trigger'); await entry.focus(); await page.keyboard.press('Enter');
+ // The shell (11/11/2026): the account menu is the round trigger on a computer, the tab bar's Menu on a phone.
+ const header = width > 640 ? page.locator('[data-account-trigger]') : page.locator('[data-shell-tabbar]').getByRole('button', { name: 'Menu', exact: true });
+ const menuPanel = page.locator(width > 640 ? '[data-shell-menu]' : '[data-drawer]');
+ await entry.focus(); await page.keyboard.press('Enter');
  const dialog = page.getByRole('dialog'); await expect(dialog).toBeVisible(); await expect(dialog.getByRole('button', { name: /Google/ })).toBeFocused();
  expect(await page.locator('main').evaluate(node => !!node.closest('[aria-hidden=true]'))).toBe(true);
  for (let i = 0; i < 8; i++) { await page.keyboard.press('Tab'); expect(await dialog.evaluate(node => node.contains(document.activeElement))).toBe(true); }
@@ -120,12 +123,12 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) for (
  await page.screenshot({ path: `${directory}/modal-${lang}-${width}-${theme}.png` });
  await page.keyboard.press('Escape'); await expect(dialog).toHaveCount(0); await expect(entry).toBeFocused();
  await page.goto(`/${lang}/ma-stack`); await login(page, lang, 'render@example.invalid'); await saved(page, lang); await expect(page.getByRole('dialog')).toHaveCount(0); await expect(header).toBeFocused();
- await header.focus(); await page.keyboard.press('Enter'); await expect(page.locator('.ac-menu')).toBeVisible();
- expect(await page.locator('.ac-menu').evaluate(node => node.contains(document.activeElement))).toBe(true);
- for (let i = 0; i < 5; i++) { await page.keyboard.press('Tab'); expect(await page.locator('.ac-menu').evaluate(node => node.contains(document.activeElement))).toBe(true); }
+ await header.focus(); await page.keyboard.press('Enter'); await expect(menuPanel).toBeVisible();
+ expect(await menuPanel.evaluate(node => node.contains(document.activeElement))).toBe(true);
+ for (let i = 0; i < 5; i++) { await page.keyboard.press('Tab'); expect(await menuPanel.evaluate(node => node.contains(document.activeElement))).toBe(true); }
  await page.screenshot({ path: `${directory}/menu-${lang}-${width}-${theme}.png` });
- await page.keyboard.press('Escape'); await expect(page.locator('.ac-menu')).toHaveCount(0); await expect(header).toBeFocused();
- await header.click(); await page.getByRole('link', { name: lang === 'fr' ? 'Paramètres' : 'Settings', exact: true }).click();
+ await page.keyboard.press('Escape'); await expect(menuPanel).toHaveCount(0); await expect(header).toBeFocused();
+ await header.click(); await page.getByRole('link', { name: lang === 'fr' ? 'Paramètres du compte' : 'Account settings', exact: true }).click();
  await expect(page.getByLabel(lang === 'fr' ? 'Nom d’affichage (facultatif)' : 'Display name (optional)', { exact: true })).toBeVisible();
  await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1); await expect(page.locator('meta[name=robots]')).toHaveAttribute('content', /noindex/);
  await expect(page.locator('html')).toHaveAttribute('lang', lang);
@@ -140,8 +143,8 @@ test('profile save is confirmed and reread; shared theme, language, currency, ex
  await control(request, 'fault', { path: '/api/account-profile', method: 'PUT', status: 503 });
  await name.fill('My display name'); await page.getByRole('button', { name: 'Save name', exact: true }).click(); await expect(page.getByRole('alert', { name: 'Profile' })).toContainText('not saved');
  await page.getByRole('button', { name: 'Save name', exact: true }).click(); await expect(page.getByRole('status', { name: 'Profile' })).toHaveText('Name saved.');
- await page.reload(); await expect(name).toHaveValue('My display name'); await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Account: My display name');
- await page.locator('.ac-header-trigger').click(); await expect(page.getByRole('link', { name: 'Back office', exact: true })).toBeVisible(); await page.keyboard.press('Escape');
+ await page.reload(); await expect(name).toHaveValue('My display name'); await expect(page.locator('[data-account-trigger]')).toHaveAttribute('aria-label', 'Account: My display name');
+ await page.locator('[data-account-trigger]').click(); await expect(page.getByRole('link', { name: 'Back office', exact: true })).toBeVisible(); await page.keyboard.press('Escape');
  await expect(page.locator('.ac-identities')).toHaveText('EmailConnected');
  await page.getByRole('navigation', { name: 'Settings sections' }).getByRole('link', { name: 'Preferences', exact: true }).click();
  await page.getByRole('radio', { name: 'Dark', exact: true }).check(); await expect(page.locator('html')).toHaveClass(/dark/);
@@ -160,7 +163,7 @@ test('profile save is confirmed and reread; shared theme, language, currency, ex
  await control(request, 'fault', { path: '/auth/v1/logout', method: 'POST', status: 400 });
  await page.getByRole('button', { name: 'Me déconnecter sans enregistrer', exact: true }).click(); await expect(page.getByRole('dialog').getByRole('alert')).toBeVisible();
  await page.getByRole('button', { name: 'Me déconnecter sans enregistrer', exact: true }).click(); await expect(page.getByRole('dialog')).toHaveCount(0);
- await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Se connecter');
+ await expect(page.locator('[data-account-trigger]')).toHaveAttribute('aria-label', 'Réglages');
  expect(await page.evaluate(() => JSON.stringify({ ...localStorage, ...sessionStorage }))).not.toContain('My display name');
  expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
 });
@@ -171,9 +174,9 @@ test('late profile A response cannot appear in B menu or settings', async ({ pag
  await control(request, 'fault', { path: '/api/account-profile', method: 'GET', delayMs: 1800 });
  await page.goto('/en/ma-stack'); await login(page, 'en', 'profile-a@example.invalid'); await saved(page); await signOut(page);
  await login(page, 'en', 'profile-b@example.invalid', 'fixture-password', 'Private Bob'); await saved(page);
- await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Account: Private Bob');
+ await expect(page.locator('[data-account-trigger]')).toHaveAttribute('aria-label', 'Account: Private Bob');
  await page.goto('/en/account/settings'); await expect(page.getByLabel('Display name (optional)', { exact: true })).toHaveValue('Private Bob');
- await page.waitForTimeout(2000); await expect(page.locator('body')).not.toContainText('Private Alice'); await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Account: Private Bob');
+ await page.waitForTimeout(2000); await expect(page.locator('body')).not.toContainText('Private Alice'); await expect(page.locator('[data-account-trigger]')).toHaveAttribute('aria-label', 'Account: Private Bob');
 });
 
 test('closing a pending password request restores focus and keeps its return journey', async ({ page, request }) => {
@@ -181,8 +184,8 @@ test('closing a pending password request restores focus and keeps its return jou
  await page.getByRole('button',{name:'I already have an account',exact:true}).click(); await emailForm(page, 'pending@example.invalid', 'fixture-password');
  await control(request, 'fault', { path: '/auth/v1/token', method: 'POST', delayMs: 800 });
  await page.getByRole('dialog').getByRole('button', { name: 'Sign in', exact: true }).click(); await page.keyboard.press('Escape');
- await expect(page.getByRole('dialog')).toHaveCount(0); await expect(page.locator('.ac-header-trigger')).toBeFocused();
- await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Account: pending@example.invalid');
+ await expect(page.getByRole('dialog')).toHaveCount(0); await expect(page.locator('[data-account-trigger]')).toBeFocused();
+ await expect(page.locator('[data-account-trigger]')).toHaveAttribute('aria-label', 'Account: pending@example.invalid');
  await expect(page.getByRole('dialog')).toHaveCount(0); await expect(page).toHaveURL('/en/ma-stack');
 });
 
@@ -193,7 +196,7 @@ for (const provider of ['google','github'] as const) test(`OAuth useful profile 
  const avatar='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#315edd"/><circle cx="32" cy="25" r="11" fill="#fff"/><path d="M13 58c2-13 10-19 19-19s17 6 19 19" fill="#fff"/></svg>';
  await page.route(/https:\/\/(lh3\.googleusercontent\.com|avatars\.githubusercontent\.com)\//,route=>route.fulfill({contentType:'image/svg+xml',body:avatar}));
  const connect=async()=>{await page.goto('/en/sign-in');await dismissConsent(page);await page.getByRole('button',{name:`Continue with ${provider==='google'?'Google':'GitHub'}`,exact:true}).click();await expect(page).toHaveURL(/\/en\/ma-stack$/);await saved(page);};
- await connect();await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label',`Account: ${displayName}`);
+ await connect();await expect(page.locator('[data-account-trigger]')).toHaveAttribute('aria-label',`Account: ${displayName}`);
  await page.goto('/en/account/settings');const name=page.getByLabel('Display name (optional)',{exact:true});await expect(name).toHaveValue(displayName);
  await expect(page.locator('.ac-profile-summary img')).toHaveAttribute('src',photo);await expect(page.locator('.ac-profile-summary img')).toHaveAttribute('referrerpolicy','no-referrer');
  await page.getByText('Account information',{exact:true}).click();await expect(page.getByText('Provider language',{exact:true})).toBeVisible();await expect(page.getByText('en-US',{exact:true})).toBeVisible();await page.reload();await expect(name).toHaveValue(displayName);
@@ -203,7 +206,7 @@ for (const provider of ['google','github'] as const) test(`OAuth useful profile 
  await page.screenshot({path:test.info().outputPath(`oauth-${provider}-profile.png`)});
  await name.fill('');await page.getByRole('button',{name:'Save name',exact:true}).click();await expect(page.getByRole('status',{name:'Profile'})).toHaveText('Name saved.');
  await signOut(page);await connect();await page.goto('/en/account/settings');await expect(name).toHaveValue('');await page.reload();await expect(name).toHaveValue('');
- await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label',`Account: ${provider}@example.invalid`);
+ await expect(page.locator('[data-account-trigger]')).toHaveAttribute('aria-label',`Account: ${provider}@example.invalid`);
  expect((await snapshot(page)).version).toBe(4);
 });
 
@@ -251,17 +254,19 @@ test('a guest builds a stack before the account, and finds it waiting after sign
 for (const width of [390, 1440]) test(`navigation roles ${width}: cart access stays top right, contextual add and account menu stay distinct`, async ({page}) => {
  await page.setViewportSize({width,height:900});
  await draft(page,state([])); await page.goto('/en/ma-stack'); await dismissConsent(page);
- const cart=page.locator('.asv2-topbar').getByRole('link',{name:'My stack',exact:true});
+ // The shell (11/11/2026): Ma stack is the bar's pill on a computer (and an entry of the sidebar), a tab on a phone.
+ const cart=page.locator(width<=640?'[data-shell-tabbar]':'[data-shell-topbar]').getByRole('link',{name:'My stack',exact:true});
  await expect(cart).toHaveAttribute('aria-current','page');
  await expect(cart).toBeVisible();
  await expect(cart).toHaveAttribute('href','/en/ma-stack');
- await expect(page.locator('.asv2-sidebar').getByRole('link',{name:'My stack',exact:true})).toHaveCount(0);
  await expect(page.getByRole('heading',{name:'Which tools do you use?',exact:true})).toBeVisible();
  await expect(page.getByRole('searchbox',{name:'Add a tool to my stack',exact:true})).toHaveCount(0);
  await login(page,'en',`navigation-${width}@example.invalid`); await saved(page);
- await page.locator('.ac-header-trigger--account').click();
- await expect(page.locator('.ac-menu').getByRole('link',{name:'My stack',exact:true})).toHaveCount(0);
- await expect(page.locator('.ac-menu').getByRole('link',{name:'Settings',exact:true})).toBeVisible();
+ if(width<=640) await page.locator('[data-shell-tabbar]').getByRole('button',{name:'Menu',exact:true}).click();
+ else await page.locator('[data-shell-topbar]').getByRole('button',{name:/^Account: /}).click();
+ const menu=page.getByRole('dialog');
+ await expect(menu.getByRole('link',{name:'My stack',exact:true})).toHaveCount(0);
+ await expect(menu.getByRole('link',{name:'Account settings',exact:true})).toBeVisible();
 });
 
 test('signing out from settings returns home and anonymous settings cannot reopen', async ({page}) => {
@@ -272,12 +277,12 @@ test('signing out from settings returns home and anonymous settings cannot reope
  await expect(page.getByRole('heading',{name:'Account settings',exact:true})).toHaveCount(0);
  await page.goto('/en/account/settings'); await expect(page).toHaveURL('/en');
  await expect(page.locator('.ac-profile-summary')).toHaveCount(0);
- await expect(page.locator('.asv2-topbar').getByRole('button',{name:'Sign in',exact:true})).toBeVisible();
+ await expect(page.locator('[data-shell-topbar]').getByRole('button',{name:'Settings',exact:true})).toBeVisible();
 });
 
 test('catalogue add requires authentication and never claims an anonymous save', async ({page,request}) => {
  await draft(page,state([])); await page.goto('/en/tool/notion'); await dismissConsent(page);
- await page.locator('.pin-tool-button:visible').first().click();
+ await page.locator('[data-pin-tool]:visible').first().click();
  await expect(page.getByRole('dialog').getByRole('heading',{name:'Create your ToolTrim account',exact:true})).toBeVisible();
  expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
  await expect(page.locator('[data-sonner-toast]').filter({hasText:'added to your stack'})).toHaveCount(0);
@@ -422,7 +427,7 @@ for(const width of [390,1440]) test(`one paid tool offers a next step instead of
 test('general header sign-in opens the personal stack',async({page,request})=>{
  await control(request,'seed',{email:'header-return@example.invalid',displayName:'Michael',state:state(['notion'])});
  await page.goto('/en');await dismissConsent(page);
- await page.getByRole('button',{name:'Sign in',exact:true}).click();
+ await openShellSignIn(page,'en');
  await emailForm(page,'header-return@example.invalid','fixture-password');
  await page.locator('.ac-form').getByRole('button',{name:'Sign in',exact:true}).click();
  await expect(page).toHaveURL(/\/en\/ma-stack$/);
@@ -508,9 +513,12 @@ for (const width of [390,1440]) test(`switching stack language ${width} keeps th
  await page.evaluate(()=>{(window as unknown as {languageMarker:string}).languageMarker='same-document';});
  const before=(await control(request,'state')).requests.filter((r:{path:string})=>r.path==='/api/stack-account'||r.path==='/api/account-profile').length;
  if(width===390){
-  await page.getByRole('button',{name:'Open menu',exact:true}).click();
-  await page.locator('.asv2-mm-panel').getByRole('link',{name:'Français',exact:true}).click();
- }else await page.getByRole('link',{name:'Site in English. Switch to French',exact:true}).click();
+  await page.locator('[data-shell-tabbar]').getByRole('button',{name:'Menu',exact:true}).click();
+  await page.getByRole('dialog').getByRole('button',{name:'Français',exact:true}).click();
+ }else{
+  await page.locator('[data-shell-topbar]').getByRole('button',{name:/^Account: /}).click();
+  await page.getByRole('dialog').getByRole('button',{name:'Français',exact:true}).click();
+ }
  await expect(page).toHaveURL('/fr/ma-stack');
  expect(await page.evaluate(()=>(window as unknown as {languageMarker?:string}).languageMarker)).toBe('same-document');
  await expect(page.locator('[data-tool-id]')).toHaveCount(1);await saved(page,'fr');
@@ -621,7 +629,8 @@ for(const lang of ['fr','en'] as const) test(`friendly logout ${lang}: real pend
  const fr=lang==='fr';await page.setViewportSize({width:fr?390:1440,height:900});
  await page.goto(`/${lang}/ma-stack`);await login(page,lang,`farewell-${lang}@example.invalid`);await saved(page,lang);
  await control(request,'fault',{path:'/auth/v1/logout',method:'POST',delayMs:2200});
- await page.locator('.ac-header-trigger').click();await page.getByRole('button',{name:fr?'Me déconnecter':'Sign out',exact:true}).click();
+ if(fr) await page.locator('[data-shell-tabbar]').getByRole('button',{name:'Menu',exact:true}).click(); else await page.locator('[data-account-trigger]').click();
+ await page.getByRole('dialog').getByRole('button',{name:fr?'Me déconnecter':'Sign out',exact:true}).click();
  const dialog=page.getByRole('dialog');await dialog.getByRole('button',{name:fr?'Me déconnecter':'Sign out',exact:true}).click();
  await expect(dialog.getByRole('heading',{name:fr?'On ferme la porte…':'Closing the door…',exact:true})).toBeVisible();
  await expect(dialog.getByRole('status')).toHaveText(fr?'Déconnexion en cours…':'Signing you out…');
@@ -629,7 +638,9 @@ for(const lang of ['fr','en'] as const) test(`friendly logout ${lang}: real pend
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.screenshot({path:test.info().outputPath(`logout-${lang}.png`)});
  await expect(page).toHaveURL(`/${lang}`);await expect(dialog).toHaveCount(0);
- await expect(page.locator('.asv2-topbar').getByRole('button',{name:fr?'Se connecter':'Sign in',exact:true})).toBeVisible();
+ // Signed out: the settings trigger on a computer, the tab bar's Menu on a phone.
+ if(fr) await expect(page.locator('[data-shell-tabbar]').getByRole('button',{name:'Menu',exact:true})).toBeVisible();
+ else await expect(page.locator('[data-shell-topbar]').getByRole('button',{name:'Settings',exact:true})).toBeVisible();
 });
 
 for(const lang of ['fr','en'] as const) test(`all-free stack ${lang}: compact budget and honest completion`,async({page,request})=>{

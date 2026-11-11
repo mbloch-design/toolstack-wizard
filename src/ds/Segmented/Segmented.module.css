@@ -1,7 +1,7 @@
 .segmented {
   position: relative;
-  display: inline-grid;
-  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  display: inline-flex;
+  max-width: 100%;
   padding: calc(var(--tt-space-1) * 0.75);
   border-radius: var(--tt-r-pill);
   background: var(--tt-tile-2);
@@ -22,6 +22,14 @@
   transition: transform var(--tt-dur-move) var(--tt-spring);
 }
 
+/* Measured: the thumb sits on the chosen option's real box and slides to the next one. */
+.thumb[data-measured] {
+  left: 0;
+  width: var(--thumb-w);
+  transform: translateX(var(--thumb-x));
+  transition: transform var(--tt-dur-move) var(--tt-spring), width var(--tt-dur-move) var(--tt-spring);
+}
+
 .option {
   composes: focus from "../atoms.module.css";
   min-height: 36px;
@@ -33,6 +41,7 @@
   font: var(--tt-action-small-font);
   letter-spacing: var(--tt-action-tracking);
   white-space: nowrap;
+  flex: none;
   cursor: pointer;
 }
 

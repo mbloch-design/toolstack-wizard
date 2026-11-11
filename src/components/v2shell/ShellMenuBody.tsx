@@ -3,7 +3,10 @@ import { Link } from "@/lib/routerLinks";
 import { Boxes, CirclePlus, Lightbulb, LogOut, Settings2, ShieldCheck } from "@/lib/icons";
 import Button from "@/ds/Button/Button";
 import Segmented from "@/ds/Segmented/Segmented";
-import { MenuButton, MenuGroup, MenuIdentity, MenuLink, MenuSetting, type ShellLink } from "@/ds/Shell/Shell";
+import { forwardRef, useState } from "react";
+import { MenuButton, MenuGroup, MenuIdentity, MenuLink, MenuSetting, ShellMenu, type ShellLink, type ShellLinkProps } from "@/ds/Shell/Shell";
+import { UserRound } from "@/lib/icons";
+import AccountAvatar from "@/components/account/AccountAvatar";
 import { useLang } from "@/hooks/useLang";
 import { useCurrency, type Currency } from "@/hooks/useCurrency";
 import { useTheme } from "@/hooks/useTheme";
@@ -13,7 +16,7 @@ import { accountPath } from "@/lib/accountPaths";
 import { trackEvent } from "@/lib/analytics";
 
 /** The router's link, for the system's shell (src/ds/Shell is router-free). */
-export const RouterLink: ShellLink = ({ to, children, ...rest }) => <Link to={to} {...rest}>{children}</Link>;
+export const RouterLink: ShellLink = forwardRef<HTMLAnchorElement, ShellLinkProps>(function RouterLink({ to, children, ...rest }, ref) { return <Link ref={ref} to={to} {...rest}>{children}</Link>; });
 
 /** Who is there: nobody to ask (no accounts), still loading, a visitor, or a signed-in person. */
 export function useShellAccount() {
@@ -69,4 +72,19 @@ export default function ShellMenuBody({ languageHref, places = false, onDone }: 
       <MenuButton icon={<LogOut />} disabled={who.busy} onClick={() => { onDone(); experience.requestSignOut(); }}>{t("Me déconnecter", "Sign out")}</MenuButton>
     </MenuGroup>}
   </>;
+}
+
+/** The round menu at the top right on a computer: the avatar (or a person), then the menu's body. */
+export function ShellAccountMenu({ languageHref }: { languageHref: string }) {
+  const { t } = useLang();
+  const who = useShellAccount();
+  const [open, setOpen] = useState(false);
+  if (who.kind === "loading") return null;
+  return (
+    <ShellMenu label={who.kind === "user" ? t(`Compte : ${who.name}`, `Account: ${who.name}`) : t("Réglages", "Settings")}
+      open={open} onOpenChange={setOpen} signedIn={who.kind === "user"}
+      trigger={who.kind === "user" ? <AccountAvatar ownerId={who.id} label={who.name} avatarUrl={who.avatarUrl} /> : <UserRound />}>
+      <ShellMenuBody languageHref={languageHref} onDone={() => setOpen(false)} />
+    </ShellMenu>
+  );
 }

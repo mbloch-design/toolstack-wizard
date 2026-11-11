@@ -1,6 +1,7 @@
-import { useEffect, useRef, type ComponentType, type MouseEvent, type ReactNode } from "react";
+import { forwardRef, useEffect, useRef, type ComponentType, type MouseEvent, type ReactElement, type ReactNode, type RefAttributes } from "react";
 import * as Popover from "@radix-ui/react-popover";
 import { PanelLeftClose, PanelLeftOpen, Search } from "@/lib/icons";
+import Tooltip from "../Tooltip/Tooltip";
 import styles from "./Shell.module.css";
 
 /**
@@ -9,8 +10,14 @@ import styles from "./Shell.module.css";
  * and Storybook a plain anchor.
  */
 export type ShellLinkProps = { to: string; className?: string; children: ReactNode; "aria-current"?: "page"; "aria-label"?: string; title?: string; onClick?: (event: MouseEvent<HTMLAnchorElement>) => void };
-export type ShellLink = ComponentType<ShellLinkProps>;
-const PlainLink: ShellLink = ({ to, children, ...rest }) => <a href={to} {...rest}>{children}</a>;
+/** Forwards its ref and any other prop: the tooltip of the folded sidebar anchors on the link itself. */
+export type ShellLink = ComponentType<ShellLinkProps & RefAttributes<HTMLAnchorElement>>;
+const PlainLink: ShellLink = forwardRef<HTMLAnchorElement, ShellLinkProps>(function PlainLink({ to, children, ...rest }, ref) { return <a ref={ref} href={to} {...rest}>{children}</a>; });
+
+/** Folded sidebar: the place's name shows in the system's tooltip, on the right, on hover or keyboard focus. */
+function Folded({ on, label, children }: { on: boolean; label: string; children: ReactElement }) {
+  return on ? <Tooltip label={label} side="right">{children}</Tooltip> : children;
+}
 
 /** A count that bumps when it changes (planche: « le compteur rebondit »). */
 function Count({ value, max = 99 }: { value: number; max?: number }) {
@@ -44,12 +51,12 @@ export function Sidebar({ link: Link = PlainLink, logo, mark, home, expanded, on
       </div>
       {nav ?? <nav className={styles.nav} aria-label={label}>
         {items.map((item) => (
-          <Link key={item.id} to={item.to} className={styles.sideLink} aria-current={item.current ? "page" : undefined} title={expanded ? undefined : item.label}
+          <Folded key={item.id} on={!expanded} label={item.label}><Link to={item.to} className={styles.sideLink} aria-current={item.current ? "page" : undefined}
             aria-label={item.count ? `${item.label} · ${item.count}` : undefined}>
             <span className={styles.sideIcon} aria-hidden="true" data-stack-target={item.id === "stack" ? "" : undefined}>{item.icon}{!expanded && <Count value={item.count ?? 0} />}</span>
             <span className={styles.sideLabel}>{item.label}</span>
             {expanded && <Count value={item.count ?? 0} />}
-          </Link>
+          </Link></Folded>
         ))}
       </nav>}
       {foot && <div className={styles.sideFoot}>{foot}</div>}
@@ -61,7 +68,7 @@ export function Sidebar({ link: Link = PlainLink, logo, mark, home, expanded, on
 export function SideFootLink({ link: Link = PlainLink, to, icon, label, expanded, ariaLabel, onClick }: { link?: ShellLink; to: string; icon: ReactNode; label: string; expanded: boolean;
   /** A fuller name when the label alone is not enough (« Site en français. Passer en anglais »). */
   ariaLabel?: string; onClick?: (event: MouseEvent<HTMLAnchorElement>) => void }) {
-  return <Link to={to} className={styles.sideLink} title={expanded ? undefined : label} aria-label={ariaLabel} onClick={onClick}><span className={styles.sideIcon} aria-hidden="true">{icon}</span><span className={styles.sideLabel}>{label}</span></Link>;
+  return <Folded on={!expanded} label={label}><Link to={to} className={styles.sideLink} aria-label={ariaLabel} onClick={onClick}><span className={styles.sideIcon} aria-hidden="true">{icon}</span><span className={styles.sideLabel}>{label}</span></Link></Folded>;
 }
 
 /** The top bar: where you are on the left, what you can do on the right. */
@@ -107,12 +114,15 @@ export function StackLink({ link: Link = PlainLink, to, label, icon, count, curr
 }
 
 /** The menu on the right: who you are (or how to sign in), then the site's settings with their state written out. */
-export function ShellMenu({ trigger, label, open, onOpenChange, children }: { trigger: ReactNode; label: string; open?: boolean; onOpenChange?: (open: boolean) => void; children: ReactNode }) {
+export function ShellMenu({ trigger, label, open, onOpenChange, children, signedIn }: { trigger: ReactNode; label: string; open?: boolean; onOpenChange?: (open: boolean) => void; children: ReactNode;
+  /** Marks the trigger of a signed-in person (pages and tests tell the account from the settings). */
+  signedIn?: boolean }) {
   return (
-    <Popover.Root open={open} onOpenChange={onOpenChange}>
-      <Popover.Trigger asChild><button type="button" className={styles.menuTrigger} aria-label={label}>{trigger}</button></Popover.Trigger>
+    // Modal: keyboard focus stays in the menu while it is open and returns to its trigger on Escape.
+    <Popover.Root modal open={open} onOpenChange={onOpenChange}>
+      <Popover.Trigger asChild><button type="button" className={styles.menuTrigger} aria-label={label} data-account-trigger="" data-signed-in={signedIn || undefined}>{trigger}</button></Popover.Trigger>
       <Popover.Portal>
-        <Popover.Content className={styles.menu} align="end" sideOffset={8} aria-label={label}>{children}</Popover.Content>
+        <Popover.Content className={styles.menu} align="end" sideOffset={8} aria-label={label} data-shell-menu="">{children}</Popover.Content>
       </Popover.Portal>
     </Popover.Root>
   );

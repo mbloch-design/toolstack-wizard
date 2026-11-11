@@ -13,6 +13,12 @@
   min-height: var(--tt-bento-row);
 }
 
+/* Anything set in a row (a tile, the starter card) shares its width; tiles then weigh by their span. */
+.row > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
 @container (width < 760px) {
   .row {
     flex-direction: column;

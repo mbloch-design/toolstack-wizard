@@ -50,7 +50,7 @@ test("empty → search → add → inspect → remove → undo → persist", asy
 
 test("tool profile adds with one click and its confirmation opens stack context", async ({ page }) => {
   await page.goto("/fr/tool/figma", { waitUntil: "domcontentloaded" });
-  const cta = page.locator(".td-hero-actions .pin-tool-button--full");
+  const cta = page.locator(".td-hero-actions [data-pin-tool]");
   await cta.click();
   await expect(page).toHaveURL(/\/fr\/tool\/figma$/);
   await expect(cta).toContainText("Dans ma stack");
@@ -58,8 +58,8 @@ test("tool profile adds with one click and its confirmation opens stack context"
   // opens from the confirmation's "Voir". Wait for the add to land first.
   await expect(page.locator(".stack-toast")).toBeVisible();
   await cta.click();
-  await expect(page.locator(".stack-confirm")).toBeVisible();
-  await page.locator(".stack-confirm-keep").click();
+  await expect(page.locator("[data-confirm]")).toBeVisible();
+  await page.locator("[data-confirm]").getByRole("button", { name: "Garder" }).click();
   await page.locator(".stack-toast-open").click();
   await expect(page).toHaveURL(/ma-stack\?outil=figma/);
   await expect(page.locator("[data-drawer] h2")).toHaveText("Figma");

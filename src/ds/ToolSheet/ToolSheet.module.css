@@ -122,8 +122,10 @@
   list-style: none;
 }
 
+/* As many columns as fit: one in the side sheet, two or three across a page (catalogue shelves). */
 .toolRows {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--tt-row-min)), 1fr));
   gap: var(--tt-space-2);
   margin: 0;
   padding: 0;
