@@ -309,6 +309,8 @@
   --tt-gap-group: 24px;
   --tt-gap-head: 48px;
   --tt-gap-chapter: 96px;
+  /* Une rangée du bento : sa hauteur ne change jamais, une tuile ouverte gagne en largeur. */
+  --tt-bento-row: 340px;
 }
 
 @media (width <= 639px) {

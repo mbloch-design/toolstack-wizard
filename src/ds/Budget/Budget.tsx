@@ -31,6 +31,8 @@ export type BudgetProps = {
   /** Hero only: the greeting above the title, and the rare action beside the stack. */
   greeting?: ReactNode;
   aside?: ReactNode;
+  /** Inside an opened bento tile: no title nor figure (the tile shows them), the whole stack and how far it is known. */
+  dense?: boolean;
 };
 
 // Logos on one row, at every width: the row holds 9 tiles on a wide card, 6 on a phone, 5 on a very narrow card;
@@ -40,7 +42,7 @@ const shownAt = (count: number, slots: number) => (count <= slots ? count : slot
 const plural = (n: number, word: string) => `${n} ${word}${n > 1 ? "s" : ""}`;
 
 /** The macro view of Ma stack: what the stack is, what it costs, and how far the figure can be trusted. */
-export default function Budget({ lang, tools, monthly, yearly, lead, saved = null, unsure, rateDate, onConfirmNext, onStart, localLogosOnly = false, variant = "card", greeting, aside }: BudgetProps) {
+export default function Budget({ lang, tools, monthly, yearly, lead, saved = null, unsure, rateDate, onConfirmNext, onStart, localLogosOnly = false, variant = "card", greeting, aside, dense = false }: BudgetProps) {
   const hero = variant === "hero";
   const titleId = useId();
   const fr = lang === "fr";
@@ -94,7 +96,7 @@ export default function Budget({ lang, tools, monthly, yearly, lead, saved = nul
 
   const Heading = hero ? "h1" : "h2";
   return (
-    <article className={hero ? styles.hero : styles.card} aria-labelledby={titleId} data-variant={variant}>
+    <article className={hero ? styles.hero : styles.card} aria-labelledby={titleId} data-variant={variant} data-dense={dense || undefined}>
       <div className={styles.lead}>
       {hero && greeting && <p className={styles.greeting}>{greeting}</p>}
       <Heading id={titleId} className={styles.eyebrow}>{hero ? t("Ma stack", "My stack") : t("Votre stack", "Your stack")}</Heading>

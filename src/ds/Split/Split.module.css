@@ -389,3 +389,14 @@
     grid-row: 2;
   }
 }
+
+/* Dense: inside an opened bento tile. The tile already says the sentence and the total. */
+.card[data-dense] .head,
+.card[data-dense] .reading,
+.card[data-dense] .notes {
+  display: none;
+}
+
+.card[data-dense] .ring {
+  width: min(100%, 200px);
+}

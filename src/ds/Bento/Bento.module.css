@@ -2,19 +2,33 @@
 
 .bento {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-auto-flow: row dense;
   gap: var(--tt-board-gap);
   container-type: inline-size;
 }
 
+/* A row keeps one height whatever opens; its tiles share the width. */
+.row {
+  display: flex;
+  gap: var(--tt-board-gap);
+  height: var(--tt-bento-row);
+}
+
+@container (width < 760px) {
+  .row {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
 .tile {
   composes: tile from "../atoms.module.css";
-  grid-column: span var(--span);
+  flex: var(--span) 1 0;
   grid-template-rows: auto 1fr auto;
   gap: var(--tt-gap-group);
+  min-width: 0;
   min-height: 0;
-  transition: opacity var(--tt-dur-state) ease, transform var(--tt-dur-move) var(--tt-ease);
+  overflow: hidden;
+  transition: flex-grow var(--tt-dur-reveal) var(--tt-ease), opacity var(--tt-dur-state) ease, transform var(--tt-dur-move) var(--tt-ease);
 }
 
 .tile[data-tone="question"] {
@@ -25,12 +39,6 @@
 .tile[data-leaving] {
   opacity: 0;
   transform: scale(0.96);
-}
-
-@container (width < 760px) {
-  .tile {
-    grid-column: 1 / -1;
-  }
 }
 
 .top {
@@ -176,11 +184,16 @@
 .answerName { composes: label from "../atoms.module.css"; }
 .answerAmount { composes: note from "../atoms.module.css"; }
 
-/* Open: the tile takes the whole row and shows its module; the module's own tile melts into it. */
+/* Open: the module fills the tile, inside the row's height. */
 .tile[data-open] {
-  grid-template-rows: auto auto;
+  flex-grow: calc(var(--span) * 3);
+  grid-template-rows: 1fr auto;
   gap: var(--tt-gap-item);
-  animation: open-in var(--tt-dur-move) var(--tt-ease);
+}
+
+.detail {
+  min-height: 0;
+  overflow: auto;
 }
 
 .tile .detail > * {
@@ -225,9 +238,27 @@
   transform: translateY(2px);
 }
 
-@keyframes open-in {
-  from {
-    opacity: 0.6;
-    transform: scale(0.98);
+/* Open: most of the row. Condensed: the label and the statement only, smaller. */
+@container (width < 760px) {
+  .tile[data-open] {
+    flex: none;
+  }
+}
+
+.tile[data-condensed] .art,
+.tile[data-condensed] .body > :not(:first-child),
+.tile[data-condensed] .status,
+.tile[data-condensed] .toggle {
+  display: none;
+}
+
+.tile[data-condensed] .statement {
+  font: var(--tt-title-m-font);
+  letter-spacing: var(--tt-title-m-tracking);
+}
+
+@container (width < 760px) {
+  .tile {
+    flex: none;
   }
 }

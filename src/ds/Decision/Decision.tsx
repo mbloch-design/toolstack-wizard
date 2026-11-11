@@ -29,11 +29,11 @@ export type DecisionProps = {
 };
 
 /** The decision card: one question at a time, its answers, and what they do to the budget. */
-export default function Decision({ lang, eyebrow, step, media, title, detail, children, links = [], preview, flash, kind, label }: DecisionProps) {
+export default function Decision({ lang, eyebrow, step, media, title, detail, children, links = [], preview, flash, kind, label, dense = false }: DecisionProps & { /** Inside an opened bento tile: no eyebrow row, answers side by side. */ dense?: boolean }) {
   const id = useId();
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
   return (
-    <section className={styles.card} aria-label={label} aria-labelledby={label ? undefined : `${id}-title`} data-card="decision" data-open="" data-flash={flash ? "" : undefined} data-kind={kind}>
+    <section className={styles.card} aria-label={label} aria-labelledby={label ? undefined : `${id}-title`} data-card="decision" data-open="" data-flash={flash ? "" : undefined} data-kind={kind} data-dense={dense || undefined}>
       <div className={styles.head}>
         <h2 className={styles.eyebrow}>{eyebrow}</h2>
         {step && step.total > 1 && (

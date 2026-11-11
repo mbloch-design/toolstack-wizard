@@ -259,3 +259,18 @@ button.trust:hover .chevron {
     justify-items: start;
   }
 }
+
+/* Dense: inside an opened bento tile, which already shows the title and the figure. */
+.card[data-dense] .eyebrow,
+.card[data-dense] .total {
+  display: none;
+}
+
+.card[data-dense] button.trust {
+  margin: 0;
+  padding: 0;
+}
+
+.card[data-dense] button.trust:hover {
+  background: none;
+}

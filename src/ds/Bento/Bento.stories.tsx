@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { formatAmount } from "@/lib/currencyRates";
-import Bento, { Answer, Answers, LogoFan, MiniRing, Question, Tile } from "./Bento";
+import Bento, { Answer, Answers, BentoRow, LogoFan, MiniRing, Question, Tile } from "./Bento";
 import Logo from "../Logo/Logo";
 import Amount from "../Amount/Amount";
 import { TextButton } from "../Button/Button";
@@ -35,7 +35,8 @@ const CARDS = [{ name: "Notion", slug: "notion", cost: 36 }, { name: "Loom", slu
 function LivingBento({ lang, decisions: d0 = 2, cards: c0 = 2, initialOpen = null }: { lang: Lang; decisions?: number; cards?: number; initialOpen?: string | null }) {
   const [openTile, setOpenTile] = useState<string | null>(initialOpen);
   const more = { moreLabel: t(lang, "Voir le détail", "See the detail"), lessLabel: t(lang, "Réduire", "Collapse") };
-  const toggle = (id: string) => ({ open: openTile === id, onToggle: () => setOpenTile((v) => (v === id ? null : id)), ...more });
+  const toggle = (id: string, row: string[]) => ({ open: openTile === id, condensed: !!openTile && openTile !== id && row.includes(openTile), onToggle: () => setOpenTile((v) => (v === id ? null : id)), ...more });
+  const top = ["stack", "split"], bottom = ["decision", "usage"];
   const [decided, setDecided] = useState(DECISIONS.length - d0);
   const [played, setPlayed] = useState(CARDS.length - c0);
   const [leaving, setLeaving] = useState<string | null>(null);
@@ -53,17 +54,20 @@ function LivingBento({ lang, decisions: d0 = 2, cards: c0 = 2, initialOpen = nul
   const done = !decision && !card;
 
   return <Bento label={t(lang, "Ma stack en bref", "My stack at a glance")}>
-    <Tile span={done ? 7 : 7} label={t(lang, "Ma stack", "My stack")} art={<LogoFan tools={TOOLS} localOnly />}
+    <BentoRow>
+    <Tile span={7} label={t(lang, "Ma stack", "My stack")} art={<LogoFan tools={TOOLS} localOnly />}
       statement={<Amount size="hero" value={money(lang, 78)} unit={t(lang, "/mois", "/mo")} />}
       status={known >= 4 ? { text: t(lang, "Budget renseigné, 939 € par an.", "Budget recorded, €939 a year."), done: true } : { text: t(lang, `${known} outils sur 6 renseignés · 939 € par an`, `${known} of 6 tools priced · €939 a year`) }}
-      detail={<Budget {...budgetStates.partial(lang)} localLogosOnly />} {...toggle("stack")} />
+      detail={<Budget {...budgetStates.partial(lang)} dense localLogosOnly />} {...toggle("stack", top)} />
     <Tile span={5} label={t(lang, "Répartition", "Split")} art={<MiniRing parts={AREAS} />}
       statement={t(lang, "Organiser, 51 %", "Organise, 51%")} status={{ text: t(lang, "Notion pèse plus de la moitié de la note.", "Notion is over half the bill.") }}
-      detail={<Split {...splitStates.threeAreas(lang)} bare localLogosOnly />} {...toggle("split")} />
+      detail={<Split {...splitStates.threeAreas(lang)} dense localLogosOnly />} {...toggle("split", top)} />
+    </BentoRow>
+    {(decision || card) && <BentoRow>
 
-    {decision && <Tile span={card ? 7 : 12} tone="question" leaving={leaving === "decision"} label={t(lang, `Une question · ${decided + 1} sur ${DECISIONS.length}`, `One question · ${decided + 1} of ${DECISIONS.length}`)}
-      art={<TextButton tone="quiet" onClick={() => answer("decision")}>{t(lang, "Plus tard", "Later")}</TextButton>} {...toggle("decision")}
-      detail={<Decision lang={lang} kind="freemium" label={t(lang, "Prochaine décision", "Next decision")} eyebrow={t(lang, "Votre décision", "Your decision")} step={{ current: decided + 1, total: DECISIONS.length }}
+    {decision && <Tile span={7} tone="question" leaving={leaving === "decision"} label={t(lang, `Une question · ${decided + 1} sur ${DECISIONS.length}`, `One question · ${decided + 1} of ${DECISIONS.length}`)}
+      art={<TextButton tone="quiet" onClick={() => answer("decision")}>{t(lang, "Plus tard", "Later")}</TextButton>} {...toggle("decision", bottom)}
+      detail={<Decision dense lang={lang} kind="freemium" label={t(lang, "Prochaine décision", "Next decision")} eyebrow={t(lang, "Votre décision", "Your decision")} step={{ current: decided + 1, total: DECISIONS.length }}
         media={<Logo tool={decision?.tool ?? DECISIONS[0].tool} size={40} localOnly />} title={t(lang, ...(decision ?? DECISIONS[0]).question)}
         detail={t(lang, "Gratuite ou payante, on ne juge pas. Ça complète juste votre budget.", "Free or paid, no judgement. It just completes your budget.")}
         links={[{ label: t(lang, "Plus tard", "Later"), onClick: () => answer("decision"), quiet: true }]} preview={{ label: t(lang, "Budget partiel", "Partial budget"), value: money(lang, 78), unit: t(lang, "/mois", "/mo") }}>
@@ -78,13 +82,14 @@ function LivingBento({ lang, decisions: d0 = 2, cards: c0 = 2, initialOpen = nul
         {decision.answers.map((a) => <Answer key={a.name[0]} name={t(lang, ...a.name)} amount={a.amount === undefined ? undefined : a.amount === 0 ? t(lang, "Rien à payer", "Nothing to pay") : `${money(lang, a.amount)}${t(lang, "/mois", "/mo")}`} onClick={() => answer("decision")} />)}
       </Answers>
     </Tile>}
-    {card && <Tile span={decision ? 5 : 12} tone="question" leaving={leaving === "usage"} label={t(lang, `Vos usages · ${CARDS.length - played} carte${CARDS.length - played > 1 ? "s" : ""}`, `Your use · ${CARDS.length - played} card${CARDS.length - played > 1 ? "s" : ""}`)} {...toggle("usage")}
-      detail={<UsagePlay rows={CARDS.map((c) => ({ tool: { id: c.slug, name: c.name, slug: c.slug }, cost: c.cost, setUsage: () => {} }))} lang={lang} format={(n) => money(lang, n)} onReviewTools={() => {}} localLogosOnly />}>
+    {card && <Tile span={5} tone="question" leaving={leaving === "usage"} label={t(lang, `Vos usages · ${CARDS.length - played} carte${CARDS.length - played > 1 ? "s" : ""}`, `Your use · ${CARDS.length - played} card${CARDS.length - played > 1 ? "s" : ""}`)} {...toggle("usage", bottom)}
+      detail={<UsagePlay rows={CARDS.map((c) => ({ tool: { id: c.slug, name: c.name, slug: c.slug }, cost: c.cost, setUsage: () => {} }))} lang={lang} format={(n) => money(lang, n)} onReviewTools={() => {}} dense localLogosOnly />}>
       <Question media={<Logo tool={card} size={40} localOnly />}>{t(lang, `${card.name}, vous vous en servez…`, `${card.name}, how often…`)}</Question>
       <Answers label={t(lang, "Votre réponse", "Your answer")}>
         {[["Tous les jours", "Every day"], ["Parfois", "Now and then"], ["Plus du tout", "Not anymore"]].map(([fr, en]) => <Answer key={fr} name={t(lang, fr, en)} onClick={() => answer("usage")} />)}
       </Answers>
     </Tile>}
+    </BentoRow>}
   </Bento>;
 }
 
@@ -101,7 +106,11 @@ export const WithQuestions = page(2, 2);
 export const LastQuestion = page(1, 0);
 /** Nothing left to ask: two tiles, the inventory comes right after. */
 export const AllSettled = page(0, 0);
-/** « Voir le détail » on the split: the tile takes the row and shows the whole module, ring and tools. */
+/** « Voir le détail » on the split: it widens in its row, Ma stack narrows to its figure; the bento keeps its height. */
 export const SplitOpen = page(2, 2, "split");
-/** The decision opened: its context, the plans as rows, the partial budget. */
+/** The decision opened: it widens, Vos usages narrows; same height. */
 export const DecisionOpen = page(2, 2, "decision");
+/** The card game opened: the game and its piles side by side. */
+export const UsageOpen = page(2, 2, "usage");
+/** The stack opened: every logo, what it is made of, how far it is known. */
+export const StackOpen = page(2, 2, "stack");

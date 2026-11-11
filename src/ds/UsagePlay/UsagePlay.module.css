@@ -300,3 +300,18 @@
     animation: none;
   }
 }
+
+/* Dense: inside an opened bento tile. The game on the left, where the cards landed on the right. */
+.play[data-dense] {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-content: start;
+}
+
+.play[data-dense] .head {
+  display: none;
+}
+
+.play[data-dense] .piles {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+}

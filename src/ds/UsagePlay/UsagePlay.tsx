@@ -25,7 +25,9 @@ const PICKS: { id: Pick; level: number; label: [string, string]; key: string; pi
 const pickOf = (usage?: number): Pick | null => !usage ? null : usage >= 4 ? "daily" : usage >= 2 ? "sometimes" : "cut";
 const KEYS: Record<string, Pick> = { ArrowLeft: "daily", ArrowDown: "sometimes", ArrowRight: "cut" };
 
-export default function UsagePlay({ rows, lang, format, freeOnly = false, history, onReviewTools, localLogosOnly = false }: {
+export default function UsagePlay({ rows, lang, format, freeOnly = false, history, onReviewTools, localLogosOnly = false, dense = false }: {
+  /** Inside an opened bento tile: the game on the left, the piles on the right. */
+  dense?: boolean;
   rows: UsageRow[]; lang: "fr" | "en"; format: (n: number) => string; freeOnly?: boolean; history?: ReactNode; onReviewTools: () => void;
   /** Logos load from our own files only (Storybook, tests). */
   localLogosOnly?: boolean;
@@ -100,7 +102,7 @@ export default function UsagePlay({ rows, lang, format, freeOnly = false, histor
     : dust.length === 2 ? t("Deux figurants payés à ne rien faire.", "Two extras paid to do nothing.")
     : t(`${dust.length} figurants payés à ne rien faire. Le tournage coûte cher.`, `${dust.length} extras paid to do nothing. Expensive shoot.`);
 
-  return <article className={styles.play} data-card="usage" data-done={done ? "" : undefined} data-paused={paused ? "" : undefined} aria-label={t("Vos usages", "Your use")} onKeyDown={onKey}>
+  return <article className={styles.play} data-card="usage" data-done={done ? "" : undefined} data-paused={paused ? "" : undefined} data-dense={dense || undefined} aria-label={t("Vos usages", "Your use")} onKeyDown={onKey}>
     <div className={styles.head}>
       <h2 className={styles.eyebrow}>{t("Vos usages", "Your use")}</h2>
       <span className={styles.note}>{done ? t("Partie terminée", "Game over") : t(`Il reste ${left} carte${left > 1 ? "s" : ""}`, `${left} card${left > 1 ? "s" : ""} left`)}</span>
