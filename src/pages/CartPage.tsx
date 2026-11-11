@@ -336,9 +336,9 @@ export default function CartPage() {
     trackEvent("stack_remove", { tool_slug: slug, source: editing ? "edit" : "sheet" });
     closeInspector();
     requestAnimationFrame(() => addRef.current?.focus({ preventScroll: true }));
-    // Planche « Retrait avec annulation »: the undo window is a cut line the scissors run back.
+    // Planche « Retrait avec annulation »: an ink pill with « Annuler », no countdown drawn.
     const undoMs = 6000;
-    toast.custom((id) => <UndoToast message={t(`${name} retiré de ma stack.`, `${name} removed from your stack.`)} undoLabel={t("Annuler", "Undo")} duration={undoMs}
+    toast.custom((id) => <UndoToast message={t(`${name} retiré de ma stack.`, `${name} removed from your stack.`)} undoLabel={t("Annuler", "Undo")}
       // Système ToolTrim, le sourire : poli, une fois par geste.
       onUndo={() => { toast.dismiss(id); restoreTool(entry, index); toast(t(`${name} est de retour. On ne juge pas.`, `${name} is back. No judgement.`), { duration: 2500 }); }} />, { duration: undoMs });
   }

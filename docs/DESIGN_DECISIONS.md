@@ -111,8 +111,8 @@ Abandonné : le clic des ciseaux du logo (Michael, 11/11).
 - [x] Question de formule : temps de travail par formule et « Gratuite ou payante, on ne juge pas » (existaient).
 - [ ] Rangée d'outil avec son verbe (Garder, Ajouter).
 - [ ] Infobulle : monte de 4 px en fondu, au survol et au focus.
-- [ ] Retrait avec annulation : le délai est une ligne de coupe que les ciseaux remontent.
-- [ ] Chargement : une phrase qui patiente (« On aiguise les ciseaux… »).
+- [x] Retrait avec annulation : pastille d'encre avec « Annuler » (`UndoToast`) ; la ligne de coupe remontée par les ciseaux est refusée (« too much », 11/11).
+- [x] Chargement : une phrase fixe qui patiente ; la rotation des phrases est refusée (« too much », 11/11).
 - [ ] Case à cocher (« Prévenir quand le prix change »).
 - [ ] Menu de compte.
 - [ ] État vide : « Votre stack est vide. Ajoutez un premier outil : ToolTrim le range par domaine. »

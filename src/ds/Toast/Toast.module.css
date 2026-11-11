@@ -89,14 +89,14 @@
   }
 }
 
-/* Undo: an ink pill; its undo window is a cut line the scissors run back, right to left. */
+/* Undo: an ink pill, the message and « Annuler ». */
 .undo {
   position: relative;
   display: flex;
   align-items: center;
   gap: var(--tt-space-4);
   width: min(380px, calc(100vw - 32px));
-  padding: var(--tt-space-3) var(--tt-space-3) var(--tt-space-5) var(--tt-space-4);
+  padding: var(--tt-space-3) var(--tt-space-3) var(--tt-space-3) var(--tt-space-4);
   border-radius: var(--tt-r-card);
   background: var(--tt-ink);
   box-shadow: var(--tt-undo-shadow);
@@ -133,36 +133,6 @@
   cursor: pointer;
 }
 
-.life {
-  position: absolute;
-  right: var(--tt-space-4);
-  bottom: calc(var(--tt-space-2) - 1px);
-  left: var(--tt-space-4);
-  border-top: var(--tt-undo-cut);
-  animation: life-cut var(--life) linear forwards;
-}
-
-.lifeScissors {
-  position: absolute;
-  bottom: 0;
-  left: calc(100% - var(--tt-space-5));
-  display: grid;
-  width: var(--tt-icon-m);
-  height: var(--tt-icon-m);
-  animation: life-scissors var(--life) linear forwards;
-}
-
-.lifeScissors svg {
-  width: var(--tt-icon-m);
-  height: var(--tt-icon-m);
-  fill: none;
-  stroke: currentColor;
-  stroke-width: var(--tt-icon-stroke);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transform: rotate(180deg);
-}
-
 @keyframes undo-in {
   0% {
     opacity: 0;
@@ -170,29 +140,8 @@
   }
 }
 
-@keyframes life-cut {
-  0% {
-    clip-path: inset(0);
-  }
-
-  100% {
-    clip-path: inset(0 100% 0 0);
-  }
-}
-
-@keyframes life-scissors {
-  0% {
-    left: calc(100% - var(--tt-space-5));
-  }
-
-  100% {
-    left: var(--tt-space-2);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .undo,
-  .lifeScissors {
+  .undo {
     animation: none;
   }
 }

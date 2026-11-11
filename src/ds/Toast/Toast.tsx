@@ -1,5 +1,4 @@
-import type { CSSProperties, ReactNode } from "react";
-import { Scissors } from "@/lib/icons";
+import type { ReactNode } from "react";
 import styles from "./Toast.module.css";
 
 /** A welcome that lands: the person's logos drop into place, two short lines, a small burst. */
@@ -14,16 +13,14 @@ export default function WelcomeToast({ logos, title, detail }: { logos: ReactNod
 }
 
 /**
- * A removal you can take back (planche, « Retrait avec annulation »): an ink pill, the message, « Annuler ». The undo
- * window is a cut line along its foot: the scissors run it back from right to left, then the pill leaves.
+ * A removal you can take back (planche, « Retrait avec annulation »): an ink pill, the message, « Annuler ».
+ * No countdown drawn (Michael, 11/11: « too much »); the pill simply leaves after its delay.
  */
-export function UndoToast({ message, saving, undoLabel, onUndo, duration }: { message: string; saving?: string; undoLabel: string; onUndo: () => void; duration: number }) {
+export function UndoToast({ message, saving, undoLabel, onUndo }: { message: string; saving?: string; undoLabel: string; onUndo: () => void }) {
   return (
-    <div className={styles.undo} role="status" style={{ "--life": `${duration}ms` } as CSSProperties}>
+    <div className={styles.undo} role="status">
       <span className={styles.undoText}>{message}{saving && <b className={styles.undoSaving}>{saving}</b>}</span>
       <button type="button" className={styles.undoButton} onClick={onUndo}>{undoLabel}</button>
-      <span className={styles.life} aria-hidden="true" />
-      <span className={styles.lifeScissors} aria-hidden="true"><Scissors /></span>
     </div>
   );
 }
