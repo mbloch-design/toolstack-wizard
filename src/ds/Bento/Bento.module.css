@@ -175,3 +175,59 @@
 
 .answerName { composes: label from "../atoms.module.css"; }
 .answerAmount { composes: note from "../atoms.module.css"; }
+
+/* Open: the tile takes the whole row and shows its module; the module's own tile melts into it. */
+.tile[data-open] {
+  grid-template-rows: auto auto;
+  gap: var(--tt-gap-item);
+  animation: open-in var(--tt-dur-move) var(--tt-ease);
+}
+
+.tile .detail > * {
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.srOnly {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.toggle {
+  composes: label focus from "../atoms.module.css";
+  margin-top: var(--tt-gap-item);
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: var(--tt-space-1);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.toggle svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--tt-icon-stroke);
+  stroke-linecap: round;
+  transition: transform var(--tt-dur-state) var(--tt-ease);
+}
+
+.toggle:hover svg {
+  transform: translateY(2px);
+}
+
+@keyframes open-in {
+  from {
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+}

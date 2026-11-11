@@ -16,7 +16,7 @@ export default function Bento({ label, children }: { label: string; children: Re
  * One fact: a small label top left, a picture top right, the statement in large at the bottom,
  * its state under it. A question tile puts its question between the two.
  */
-export function Tile({ span, label, art, statement, status, children, tone = "tile", leaving }: {
+export function Tile({ span, label, art, statement, status, children, tone = "tile", leaving, detail, open = false, onToggle, moreLabel, lessLabel }: {
   /** Columns out of 12 on a wide bento; every tile takes the full width on a phone. */
   span: 4 | 5 | 6 | 7 | 8 | 12;
   label: ReactNode; art?: ReactNode; statement?: ReactNode;
@@ -26,17 +26,32 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
   tone?: "tile" | "question";
   /** The tile is on its way out (its last question was answered). */
   leaving?: boolean;
+  /** The whole module behind the fact: open, the tile takes the full width and shows it in place. */
+  detail?: ReactNode;
+  open?: boolean;
+  onToggle?: () => void;
+  moreLabel?: string;
+  lessLabel?: string;
 }) {
+  if (open && detail) return (
+    <article className={styles.tile} data-span={12} data-open="" style={{ "--span": 12 } as CSSProperties}>
+      <span className={styles.srOnly}>{label}</span>
+      <div className={styles.detail}>{detail}</div>
+      <button type="button" className={styles.toggle} aria-expanded onClick={onToggle}>{lessLabel}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6" /></svg></button>
+    </article>
+  );
+  const toggleMore = detail && onToggle && <button type="button" className={styles.toggle} aria-expanded={false} onClick={onToggle}>{moreLabel}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg></button>;
   return (
     <article className={styles.tile} data-span={span} data-tone={tone} data-leaving={leaving || undefined} style={{ "--span": span } as CSSProperties}>
       <div className={styles.top}><span className={styles.label}>{label}</span>{art && <span className={styles.art} aria-hidden="true">{art}</span>}</div>
-      {children && <div className={styles.body}>{children}</div>}
+      {children && <div className={styles.body}>{children}{!statement && !status && toggleMore}</div>}
       {(statement || status) && <div className={styles.foot}>
         {statement && <p className={styles.statement}>{statement}</p>}
         {status && <p className={styles.status} data-done={status.done || undefined}>
           {status.done && <svg className={styles.check} viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>}
           {status.text}
         </p>}
+        {toggleMore}
       </div>}
     </article>
   );
