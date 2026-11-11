@@ -261,9 +261,25 @@ button.trust:hover .chevron {
 }
 
 /* Dense: inside an opened bento tile, which already shows the title and the figure. */
-.card[data-dense] .eyebrow,
-.card[data-dense] .total {
+
+/* The figure stays on the left, the whole stack and how far it is known on the right. */
+.card[data-dense] {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  column-gap: var(--tt-gap-head);
+}
+
+.card[data-dense] .eyebrow {
   display: none;
+}
+
+.card[data-dense] .lead {
+  display: contents;
+}
+
+.card[data-dense] .total {
+  grid-column: 1;
+  grid-row: 1 / span 3;
 }
 
 .card[data-dense] button.trust {

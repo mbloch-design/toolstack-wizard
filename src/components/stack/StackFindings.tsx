@@ -3,13 +3,14 @@ import { CURRENCY_RATE_DATE, type Currency } from "@/lib/currencyRates";
 import StackUsagePlay from "@/ds/UsagePlay/UsagePlay";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { Rocket, Moon, Zap } from "@/lib/icons";
-import Budget, { type BudgetTool } from "@/ds/Budget/Budget";
+import Budget, { BudgetTrust, type BudgetTool } from "@/ds/Budget/Budget";
 import Split from "@/ds/Split/Split";
-import Decision, { DecisionRest, type DecisionLink } from "@/ds/Decision/Decision";
+import Decision, { type DecisionLink } from "@/ds/Decision/Decision";
 import Choice, { Choices, IconTile } from "@/ds/Choice/Choice";
 import Seats from "@/ds/Seats/Seats";
 import Logo from "@/ds/Logo/Logo";
-import Board from "@/ds/Board/Board";
+import Bento, { Answer, Answers, BentoRow, LogoFan, MiniRing, Question, Tile } from "@/ds/Bento/Bento";
+import Amount from "@/ds/Amount/Amount";
 import Starter from "@/ds/Starter/Starter";
 import { useNavigate } from "react-router-dom";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
@@ -103,6 +104,8 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   const [seats, setSeats] = useState(1);
   // A tapped plan lights up, the others step back, then the answer goes through.
   const [pickedTile, setPickedTile] = useState<string | null>(null);
+  // The bento tile opened in its row, if any.
+  const [openTile, setOpenTile] = useState<string | null>(null);
   const answerTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const scope = getPersonalStackScope();
   const scopeEpoch = getPersonalStackScopeEpoch(scope);
@@ -159,18 +162,23 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
     ...pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => ({ ...tool, paid: null })),
     ...freeTools.map((tool) => ({ ...tool, paid: false })),
   ];
-  // The board (src/ds/Board) places the cards; each one is a design system component. The data-card wrappers carry no style.
-  return <Board label={t("Ma stack en bref", "My stack at a glance")}
-    budget={<div data-card="price">
-        <Budget lang={fr ? "fr" : "en"} tools={budgetTools} monthly={total > 0 ? format(converted ? Math.round(total) : total) : null} yearly={total > 0 ? format(converted ? Math.round(total * 12) : total * 12) : null}
-          saved={saved > 0 ? format(Math.round(saved)) : null}
-          lead={spend.length > 0 && total > 0 ? { name: spend[0].tool.name, share: Math.round((spend[0].amount / total) * 100) } : null}
-          unsure={{ prices: unsure.filter((item) => item.kind === "price").length, plans: unsure.filter((item) => item.kind === "freemium").length }}
-          rateDate={converted ? rateDate : null}
-          onConfirmNext={() => { if (!unsure[0]) return; setFirst(unsure[0].key); setLater((keys) => keys.filter((key) => key !== unsure[0].key)); setFlash(Date.now()); }}
-          onStart={() => { const next = unsure[0]; if (!next) return; setFirst(next.key); setLater((keys) => keys.filter((key) => key !== next.key)); requestAnimationFrame(() => document.querySelector('[data-card="decision"]')?.scrollIntoView({ block: "center", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" })); }} />
-      </div>}
-    action={top ? (() => {
+  // The living bento (src/ds/Bento): two facts that always stay (the stack, its split) and the questions
+  // while there is something to refine. A tile opens in its row (it widens, the others narrow); the bento
+  // keeps its height. The decision tile holds the decision itself, answers side by side.
+  const unsureTools = budgetTools.filter((tool) => tool.paid === null).length;
+  const known = Math.max(0, budgetTools.length - unsure.length);
+  const left = [
+    unsure.filter((item) => item.kind === "price").length > 0 && (fr ? `${unsure.filter((item) => item.kind === "price").length} prix` : `${unsure.filter((item) => item.kind === "price").length} price${unsure.filter((item) => item.kind === "price").length > 1 ? "s" : ""}`),
+    unsure.filter((item) => item.kind === "freemium").length > 0 && (fr ? `${unsure.filter((item) => item.kind === "freemium").length} formule${unsure.filter((item) => item.kind === "freemium").length > 1 ? "s" : ""}` : `${unsure.filter((item) => item.kind === "freemium").length} plan${unsure.filter((item) => item.kind === "freemium").length > 1 ? "s" : ""}`),
+  ].filter(Boolean).join(t(" et ", " and "));
+  const confirmNext = () => { if (!unsure[0]) return; setFirst(unsure[0].key); setLater((keys) => keys.filter((key) => key !== unsure[0].key)); setFlash(Date.now()); };
+  const monthly = total > 0 ? format(converted ? Math.round(total) : total) : null;
+  const yearly = total > 0 ? format(converted ? Math.round(total * 12) : total * 12) : null;
+  const shares = [...areas].filter((area) => area.amount > 0).sort((x, y) => y.amount - x.amount);
+  const lead = shares[0];
+  const leadShare = lead && total > 0 ? Math.round((lead.amount / total) * 100) : 0;
+  const next = fit.find((row) => !row.usage);
+  const decision = top ? (() => {
         const partial = items.some((item) => item.kind === "price" || item.kind === "freemium");
         const showPreview = !!(top.plans?.length || top.kind === "pair" || top.savePrice || (top.kind === "freemium" && top.options));
         const links: DecisionLink[] = [
@@ -190,7 +198,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         const max = Math.max(1, ...(tiles ?? []).map((x) => x.monthly));
         const workTime = (monthly: number) => { if (!hourly) return null; if (monthly === 0) return t("0 min de votre travail", "0 min of your work"); const minutes = Math.max(1, Math.round((monthly / hourly) * 60)); return minutes < 60 ? t(`≈ ${minutes} min de votre travail`, `≈ ${minutes} min of your work`) : t(`≈ ${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} de votre travail`, `≈ ${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} of your work`); };
         const per = t("/mois", "/mo");
-        return <Decision key={`${top.key}-${flash}`} lang={fr ? "fr" : "en"} kind={top.kind} label={t("Prochaine décision", "Next decision")} flash={!!flash}
+        return <Decision dense key={`${top.key}-${flash}`} lang={fr ? "fr" : "en"} kind={top.kind} label={t("Prochaine décision", "Next decision")} flash={!!flash}
           eyebrow={guide && (top.kind === "price" || top.kind === "freemium") ? t("Étape suivante", "Next step") : t("Votre décision", "Your decision")}
           step={peak > 1 ? { current: step, total: peak } : undefined}
           media={top.kind !== "pair" ? <Logo tool={top.tools[0]} size={40} /> : undefined}
@@ -248,12 +256,56 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           </Choices>}
           {toolCount <= 1 && history}
         </Decision>;
-      })() : toolCount > 1 ? <DecisionRest lang={fr ? "fr" : "en"} history={history} onAddTool={onAddTool} /> : toolCount === 1 ? <Starter lang={fr ? "fr" : "en"} tool={spend[0]?.tool || freeTools[0]} onAddTool={onAddTool} /> : undefined}
-    usage={(toolCount > 1 && (fit.length > 0 || !top || history) && <StackUsagePlay key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format}
-        freeOnly={total === 0 && freeTools.length === toolCount} history={top ? history : undefined} onReviewTools={onReviewTools} />) || undefined}
-    split={(toolCount > 1 && total > 0 && <div data-card="split">
-        <Split lang={fr ? "fr" : "en"} format={format} unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => tool.name)} rateDate={converted ? rateDate : null}
-          areas={areas.map((area) => ({ id: area.id, label: area.label, color: area.color, amount: area.amount, tools: (area.tools || []).map((row) => ({ ...row.tool, amount: row.amount })) }))}
-          />
-      </div>) || undefined} />;
+      })() : null;
+  const toggle = (id: string, row: string[]) => ({ open: openTile === id, condensed: !!openTile && openTile !== id && row.includes(openTile),
+    onToggle: () => setOpenTile((value) => (value === id ? null : id)), moreLabel: t("Voir le détail", "See the detail"), lessLabel: t("Réduire", "Collapse") });
+  const facts = ["price", "split"], questions = ["decision", "usage"];
+  const showSplit = toolCount > 1 && total > 0 && shares.length > 0;
+  // A question tile leaves once nothing is left to ask, unless the game revealed something: then it stays as a fact.
+  const dust = fit.filter((row) => row.usage !== undefined && row.usage !== null && row.usage < 2);
+  const dustTotal = dust.reduce((sum, row) => sum + row.cost, 0);
+  const showUsage = toolCount > 1 && fit.length > 0 && (!!next || dustTotal > 0);
+
+  return <Bento label={t("Ma stack en bref", "My stack at a glance")}>
+    <BentoRow>
+      <Tile span={7} card="price" label={t("Votre stack", "Your stack")} art={<LogoFan tools={budgetTools} />}
+        statement={monthly ? <Amount size="hero" value={monthly} unit={t("/mois", "/mo")} /> : t("On fait les comptes ?", "Let's talk budget.")}
+        status={monthly ? { text: <>{t("Soit ", "That's ")}{yearly}{t(" par an.", " a year.")}{saved > 0 && <> {t("Vous économisez déjà ", "You're already saving ")}{format(Math.round(saved))}{t(" par mois.", " a month.")}</>}</>, done: unsure.length === 0 } : undefined}
+        detail={<>
+          <Budget lang={fr ? "fr" : "en"} tools={budgetTools} monthly={monthly} yearly={yearly} dense
+            saved={saved > 0 ? format(Math.round(saved)) : null}
+            lead={spend.length > 0 && total > 0 ? { name: spend[0].tool.name, share: Math.round((spend[0].amount / total) * 100) } : null}
+            unsure={{ prices: unsure.filter((item) => item.kind === "price").length, plans: unsure.filter((item) => item.kind === "freemium").length }}
+            rateDate={converted ? rateDate : null} onConfirmNext={confirmNext}
+            onStart={() => { const first = unsure[0]; if (!first) return; setFirst(first.key); setLater((keys) => keys.filter((key) => key !== first.key)); }} />
+        </>} {...toggle("price", facts)}
+        footer={<>
+          {budgetTools.length > 0 && monthly && <BudgetTrust lang={fr ? "fr" : "en"} known={known} total={budgetTools.length} left={unsure.length > 0 ? left : null} onConfirmNext={confirmNext} />}
+          {!top && history}
+        </>} />
+      {showSplit && <Tile span={5} card="split" label={t("Répartition", "Split")} art={<MiniRing parts={shares.map((area) => ({ color: area.color, share: area.amount / total }))} />}
+        statement={`${lead.label}, ${leadShare}\u00a0%`}
+        status={{ text: shares.length === 1 ? t("Un seul domaine porte tout le budget.", "One area carries the whole budget.") : t(`${shares.length} domaines se partagent le budget.`, `${shares.length} areas share the budget.`) }}
+        detail={<Split lang={fr ? "fr" : "en"} format={format} dense unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => tool.name)} rateDate={converted ? rateDate : null}
+          areas={areas.map((area) => ({ id: area.id, label: area.label, color: area.color, amount: area.amount, tools: (area.tools || []).map((row) => ({ ...row.tool, amount: row.amount })) }))} />}
+        {...toggle("split", facts)} />}
+    </BentoRow>
+    {toolCount === 1 && !decision && <BentoRow><Starter lang={fr ? "fr" : "en"} tool={spend[0]?.tool || freeTools[0]} onAddTool={onAddTool} /></BentoRow>}
+    {(decision || showUsage) && <BentoRow>
+      {decision && <Tile span={7} tone="question" label={peak > 1 ? t(`Une question · ${step} sur ${peak}`, `One question · ${step} of ${peak}`) : t("Une question", "One question")}
+        condensed={openTile === "usage"}>{decision}</Tile>}
+      {showUsage && <Tile span={5} tone={next ? "question" : "tile"} card="usage-tile"
+        label={next ? t(`Vos usages · ${fit.filter((row) => !row.usage).length} carte${fit.filter((row) => !row.usage).length > 1 ? "s" : ""}`, `Your use · ${fit.filter((row) => !row.usage).length} card${fit.filter((row) => !row.usage).length > 1 ? "s" : ""}`) : t("Vos usages", "Your use")}
+        statement={next ? undefined : <Amount size="figure" tone="overlap" value={format(Math.round(dustTotal))} unit={t("/mois", "/mo")} />}
+        status={next ? undefined : { text: t(`prennent la poussière chez ${dust.map((row) => row.tool.name).join(", ")}.`, `gathering dust with ${dust.map((row) => row.tool.name).join(", ")}.`) }}
+        detail={<StackUsagePlay key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format} dense
+          freeOnly={total === 0 && freeTools.length === toolCount} history={top ? history : undefined} onReviewTools={onReviewTools} />}
+        {...toggle("usage", questions)}>
+        {next && <Question media={<Logo tool={next.tool} size={40} />}>{t(`${next.tool.name}, vous vous en servez…`, `${next.tool.name}, how often do you use it…`)}</Question>}
+        {next && <Answers label={t("Votre réponse", "Your answer")}>
+          {([[5, "Tous les jours", "Every day"], [3, "Parfois", "Sometimes"], [1, "Prend la poussière", "Gathers dust"]] as const).map(([level, a, b]) => <Answer key={level} name={t(a, b)} onClick={() => next.setUsage(level)} />)}
+        </Answers>}
+      </Tile>}
+    </BentoRow>}
+  </Bento>;
 }

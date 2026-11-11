@@ -6,11 +6,11 @@
   container-type: inline-size;
 }
 
-/* A row keeps one height whatever opens; its tiles share the width. */
+/* A row keeps one height whatever opens (a floor its content never needs to pass); its tiles share the width. */
 .row {
   display: flex;
   gap: var(--tt-board-gap);
-  height: var(--tt-bento-row);
+  min-height: var(--tt-bento-row);
 }
 
 @container (width < 760px) {
@@ -153,7 +153,7 @@
 
 .answers {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
   gap: var(--tt-space-2);
 }
 
@@ -245,20 +245,28 @@
   }
 }
 
-.tile[data-condensed] .art,
-.tile[data-condensed] .body > :not(:first-child),
-.tile[data-condensed] .status,
-.tile[data-condensed] .toggle {
-  display: none;
-}
-
-.tile[data-condensed] .statement {
-  font: var(--tt-title-m-font);
-  letter-spacing: var(--tt-title-m-tracking);
-}
-
 @container (width < 760px) {
   .tile {
     flex: none;
+  }
+}
+
+/* Only on a wide bento does a tile narrow; on a phone the tiles stack and keep their whole fact. */
+@container (width >= 760px) {
+  .tile[data-condensed] .art,
+  .tile[data-condensed] .body > :not(:first-child),
+  .tile[data-condensed] .status,
+  .tile[data-condensed] .toggle {
+    display: none;
+  }
+
+  .tile[data-condensed] .statement {
+    font: var(--tt-title-m-font);
+    letter-spacing: var(--tt-title-m-tracking);
+  }
+
+  /* A narrowed tile keeps its words at the bottom, where its statement sits when it is closed. */
+  .tile[data-condensed] .body {
+    align-content: end;
   }
 }

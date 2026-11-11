@@ -11,20 +11,16 @@ function view({pending=false,count=2,other=false,history=false}={}){
  const rows=Array.from({length:count},(_,i)=>({tool:i===0?illustrator:i===1?slack:tool('tool-'+i,'Tool '+i),cost:20,power:i===1?undefined:5,usage:pending&&i===0?undefined:3,setUsage:change,detailHref:'/fr/tool/illustrator',lighter:{alt:canva,cost:9,power:3,href:'/fr/comparatif/illustrator-vs-canva'}}));
  return render(<MemoryRouter><StackFindings lang="fr" total={40} format={n=>`${n} €`} spend={rows.map(row=>({tool:row.tool,amount:row.cost}))} areas={[]} toolCount={count} fit={rows} freeTools={[]} items={other?[{key:'price',kind:'price',tools:[slack],title:'Préciser Slack',detail:'Votre formule',actions:[]}]:[]} history={history ? <span>Baisse estimée : devise inconnue.</span> : undefined} saved={0} toReview={0} resolved={[]} onAddTool={()=>{}} onReviewTools={()=>{}} /></MemoryRouter>);
 }
-it('ends with a truthful score, and a pile logo replays only that card',()=>{
- change.mockClear();
+// The bento (11/11/2026): a question tile leaves once nothing is left to ask; nothing gathering dust, nothing to show.
+it('lets the usage tile go once the whole cast plays, without a verdict it cannot back',()=>{
  view({count:4});
- expect(screen.getByText('Partie terminée')).toBeVisible();
- expect(screen.getByText('Toute la troupe joue.')).toBeVisible();
+ expect(screen.queryByText(/^Vos usages/)).not.toBeInTheDocument();
  expect(screen.queryByText(/à la bonne taille|marathonien|Puissance non évaluée/)).not.toBeInTheDocument();
- fireEvent.click(screen.getByRole('button',{name:'Rejouer la carte Adobe Illustrator'}));
- expect(change).toHaveBeenCalledTimes(1);
- expect(change).toHaveBeenCalledWith(null);
 });
 it('never declares the game over while a card remains',()=>{
  view({pending:true});
  expect(screen.queryByText('Partie terminée')).not.toBeInTheDocument();
- expect(screen.getByText('Il reste 1 carte')).toBeVisible();
+ expect(screen.getByText('Vos usages · 1 carte')).toBeVisible();
 });
 it('asks about usage with named answers and no catalogue power comparison',()=>{
  view({pending:true});

@@ -6,6 +6,13 @@ import { MemoryRouter } from "react-router-dom";
 import { setPersonalStackScope } from "@/lib/personalStackStore";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 
+// The bento (11/11/2026): a tile says one fact; its whole module opens with « Voir le détail ».
+const openTile = (container: HTMLElement, card: string) => {
+  const button = [...container.querySelectorAll(`[data-card="${card}"] button`)].find((b) => /Voir le détail|See the detail/.test(b.textContent || ""));
+  if (button) fireEvent.click(button);
+};
+
+
 const tool = (id: string) => ({ id, slug: id, name: id, categoryId: "x", pricing: { free: "", paid: "" } } as ToolSummary);
 afterEach(() => {cleanup(); setPersonalStackScope("anonymous");});
 
@@ -40,13 +47,16 @@ describe("StackFindings", () => {
     const { container } = module([card("Figma"), card("Grammarly")], { total: 29, areas: [{ id: "create", label: "Créer", amount: 29, color: "blue" }, { id: "communicate", label: "Communiquer", amount: 0, color: "orange" }] });
     expect(screen.getByText("2 outils sur 4 renseignés")).toBeTruthy();
     expect(screen.getByText("Confirmer 2 formules")).toBeTruthy();
+    openTile(container, "price");
     expect(screen.getByText("4 outils · 2 payants · 2 à préciser")).toBeTruthy();
     expect(screen.queryByText(/fiable à|Total exact/)).toBeNull();
+    openTile(container, "split");
     expect(container.querySelector('[data-card="split"] [role="img"]')).not.toBeNull();
     expect(screen.queryByText(/dès trois domaines/)).toBeNull();
   });
   it("accounts for all four tools when only two have a paid cost", () => {
     const { container } = module([], { total: 41, spend: [{tool:tool("Motion Array"),amount:29},{tool:tool("Grammarly"),amount:12}], freeTools:[tool("Figma"),tool("Audacity")] });
+    openTile(container, "price");
     expect(screen.getByText("4 outils · 2 payants · 2 gratuits")).toBeTruthy();
     expect(screen.getByText("Figma")).toBeTruthy();
     expect(screen.getByText("Audacity")).toBeTruthy();
@@ -90,10 +100,11 @@ describe("StackFindings", () => {
   });
   it("shows where the money goes: the reading, the bar, one row per paid area, the biggest open on its tools", () => {
     const { container } = module([card("Canva")], { areas: [{ id: "rh", label: "RH", amount: 257, color: "#2A78D6", tools: [{ tool: tool("Workable"), amount: 257 }] }, { id: "it", label: "IT", amount: 76, color: "#EDA100", tools: [{ tool: tool("SysAid"), amount: 76 }] }, { id: "ia", label: "IA", amount: 0, color: "#6250D6" }] });
+    openTile(container, "split");
     // The ring (wide card) and the bar (narrow card) carry the same reading; CSS shows one of them.
     expect(screen.getAllByRole("img", { name: "RH 77\u00a0%, IT 23\u00a0%" })).toHaveLength(2);
     expect(screen.getByRole("heading", { name: /^RH prend 77\s% du budget\.$/ })).toBeTruthy();
-    const rows = [...container.querySelectorAll('[data-card="split"] button[aria-expanded]')];
+    const rows = [...container.querySelectorAll('[data-card="split"] button[aria-expanded]')].filter((row) => !/Réduire|Collapse/.test(row.textContent || ""));
     expect(rows.map((row) => row.textContent?.split(/\d/)[0])).toEqual(["RH", "IT"]);
     expect(rows.map((row) => row.getAttribute("aria-expanded"))).toEqual(["true", "false"]);
     expect(container.querySelector('[data-card="split"]')?.textContent).toContain("Workable");

@@ -9,7 +9,7 @@ import styles from "./Bento.module.css";
  * refine and leave when there is nothing left to ask, so the page gets shorter as one plays.
  */
 export default function Bento({ label, children }: { label: string; children: ReactNode }) {
-  return <section className={styles.bento} aria-label={label} data-bento="">{children}</section>;
+  return <section className={styles.bento} aria-label={label} data-bento="" data-board="">{children}</section>;
 }
 
 /**
@@ -24,7 +24,7 @@ export function BentoRow({ children }: { children: ReactNode }) {
  * One fact: a small label top left, a picture top right, the statement in large at the bottom,
  * its state under it. A question tile puts its question between the two.
  */
-export function Tile({ span, label, art, statement, status, children, tone = "tile", leaving, detail, open = false, onToggle, moreLabel, lessLabel, condensed = false }: {
+export function Tile({ span, label, art, statement, status, children, tone = "tile", leaving, detail, open = false, onToggle, moreLabel, lessLabel, condensed = false, card, footer }: {
   /** Columns out of 12 on a wide bento; every tile takes the full width on a phone. */
   span: 4 | 5 | 6 | 7 | 8 | 12;
   label: ReactNode; art?: ReactNode; statement?: ReactNode;
@@ -42,17 +42,21 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
   lessLabel?: string;
   /** Another tile of the row is open: this one narrows to its label and statement. */
   condensed?: boolean;
+  /** For the page and its tests: data-card="price". */
+  card?: string;
+  /** Under the state line: what to do next about this fact (« Confirmer 2 prix »). */
+  footer?: ReactNode;
 }) {
   const toggleMore = detail && onToggle && <button type="button" className={styles.toggle} aria-expanded={open} onClick={onToggle}>{open ? lessLabel : moreLabel}<svg viewBox="0 0 24 24" aria-hidden="true"><path d={open ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"} /></svg></button>;
   if (open && detail) return (
-    <article className={styles.tile} data-open="" data-tone={tone} style={{ "--span": span } as CSSProperties}>
+    <article className={styles.tile} data-open="" data-tone={tone} data-card={card} style={{ "--span": span } as CSSProperties}>
       <span className={styles.srOnly}>{label}</span>
       <div className={styles.detail}>{detail}</div>
       {toggleMore}
     </article>
   );
   return (
-    <article className={styles.tile} data-span={span} data-tone={tone} data-leaving={leaving || undefined} data-condensed={condensed || undefined} style={{ "--span": span } as CSSProperties}>
+    <article className={styles.tile} data-span={span} data-tone={tone} data-card={card} data-leaving={leaving || undefined} data-condensed={condensed || undefined} style={{ "--span": span } as CSSProperties}>
       <div className={styles.top}><span className={styles.label}>{label}</span>{art && <span className={styles.art} aria-hidden="true">{art}</span>}</div>
       {children && <div className={styles.body}>{children}{!statement && !status && toggleMore}</div>}
       {(statement || status) && <div className={styles.foot}>
@@ -61,6 +65,7 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
           {status.done && <svg className={styles.check} viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>}
           {status.text}
         </p>}
+        {footer}
         {toggleMore}
       </div>}
     </article>

@@ -201,12 +201,10 @@
 /* Dense: inside an opened bento tile, its row height for a frame. The step is in the tile's label. */
 .card[data-dense] {
   gap: var(--tt-space-3);
+  padding: 0;
+  background: none;
 }
 
 .card[data-dense] .head {
   display: none;
-}
-
-.card[data-dense] > [data-choices] {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
