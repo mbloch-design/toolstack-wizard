@@ -64,6 +64,16 @@ describe("StackFindings", () => {
       const { container } = module([card("Canva")], { welcome: { greeting: <>Bonjour</>, eyebrow: "Ma stack", verdict: "", lead: "", facts: [], quip } });
       expect(container.querySelector('[data-card="price"]')?.textContent).toContain(quip);
     });
+    it("a « keep one » that saves plays the trim in the Result tile, with what it cut", () => {
+      const props = { items: [], saved: 0, resolved: [] as never[] };
+      const view = render(<MemoryRouter><StackFindings lang="fr" total={446} format={(n) => `${Math.round(n)} €`} toolCount={4}
+        spend={[{ tool: tool("Workable"), amount: 257 }, { tool: tool("SysAid"), amount: 76 }]} areas={[{ id: "rh", label: "RH", amount: 257, color: "#2A78D6" }]} fit={[]} toReview={0} onAddTool={vi.fn()} onReviewTools={vi.fn()} {...props} /></MemoryRouter>);
+      view.rerender(<MemoryRouter><StackFindings lang="fr" total={422} format={(n) => `${Math.round(n)} €`} toolCount={3}
+        spend={[{ tool: tool("Workable"), amount: 257 }, { tool: tool("SysAid"), amount: 76 }]} areas={[{ id: "rh", label: "RH", amount: 257, color: "#2A78D6" }]} fit={[]} toReview={0} onAddTool={vi.fn()} onReviewTools={vi.fn()}
+        items={[]} saved={24} resolved={[{ key: "asana|trello", a: tool("Asana"), b: tool("Trello"), kind: "keep-one", kept: "Trello", removed: "Asana" }]} /></MemoryRouter>);
+      expect(view.container.querySelector('[data-card="result"], [data-phase]')).not.toBeNull();
+      expect(view.container.textContent).toMatch(/Asana faisait le travail de Trello\./);
+    });
     it("the first visit names the question « Étape suivante »", () => {
       module([card("Canva")], { guide: true });
       expect(screen.getByText("Étape suivante")).toBeTruthy();

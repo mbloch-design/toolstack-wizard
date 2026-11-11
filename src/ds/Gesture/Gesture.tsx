@@ -98,7 +98,6 @@ function Blades() {
 }
 
 /**
- * @ds-pending 2026-11-11: validated in Storybook; its place on Ma stack (the Result tile) waits for Michael.
  * The trim, the signature gesture (planche, « Le geste signature »). The scissors travel the cut line and stop
  * under each tool that goes: one snip, the tool falls (one clings a moment first). Then what stays closes ranks
  * and the saving counts up. Kept for the moment ToolTrim makes you gain something.

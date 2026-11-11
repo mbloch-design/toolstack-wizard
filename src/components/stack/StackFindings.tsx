@@ -14,7 +14,8 @@ import Decision, { type DecisionLink } from "@/ds/Decision/Decision";
 import Choice, { Choices, IconTile } from "@/ds/Choice/Choice";
 import Seats from "@/ds/Seats/Seats";
 import Logo from "@/ds/Logo/Logo";
-import { Meet, Stamp } from "@/ds/Gesture/Gesture";
+import { Meet, Stamp, Trim } from "@/ds/Gesture/Gesture";
+import { toolKey } from "@/lib/stackView";
 import Bento, { Answer, Answers, BentoRow, MiniRing, Question, Tile } from "@/ds/Bento/Bento";
 import Amount from "@/ds/Amount/Amount";
 import Starter from "@/ds/Starter/Starter";
@@ -278,6 +279,33 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   // The story of the page (11/11/2026): the premise without a box, then the bento, read as chapters in the
   // order of the story: where the money goes, what overlaps (or is left to confirm), what really serves,
   // the result. A question tile leaves once answered; the result comes with the first saving.
+  // The trim, the signature gesture (planche; placed 11/11/2026): when a « keep one » decision has just saved
+  // something, the Result tile plays it once with the stack's paid tools and the ones just let go, then rests.
+  const [trim, setTrim] = useState<{ tools: { id: string; node: ReactNode; cut?: "fall" | "cling" }[]; before: number; delta: number; sentence: string; cut: boolean } | null>(null);
+  const lastSaved = useRef(saved);
+  const trimTimers = useRef<number[]>([]);
+  const lastGone = useRef(new Set(resolved.filter((r) => r.kind === "keep-one" && r.removed).map((r) => r.removed!)));
+  useEffect(() => {
+    const goneNow = resolved.filter((r) => r.kind === "keep-one" && r.removed && !lastGone.current.has(r.removed));
+    const delta = saved - lastSaved.current;
+    lastSaved.current = saved;
+    goneNow.forEach((r) => lastGone.current.add(r.removed!));
+    if (delta <= 0 || goneNow.length === 0) return;
+    const leaving = goneNow.flatMap((r) => [r.a, r.b].filter((tool) => toolKey(tool) === r.removed));
+    const keptBy = goneNow.flatMap((r) => [r.a, r.b].filter((tool) => toolKey(tool) !== r.removed));
+    const staying = spend.map((row) => row.tool).filter((tool) => !leaving.some((gone) => gone.id === tool.id)).slice(0, Math.max(1, 5 - leaving.length));
+    const tools: { id: string; node: ReactNode; cut?: "fall" | "cling" }[] = staying.map((tool) => ({ id: tool.id, node: <Logo tool={tool} size={40} /> }));
+    leaving.forEach((tool, index) => tools.splice(Math.min(tools.length, 1 + index * 2), 0, { id: tool.id, node: <Logo tool={tool} size={40} />, cut: index === leaving.length - 1 && leaving.length > 1 ? "cling" as const : "fall" as const }));
+    const names = (list: ToolSummary[]) => list.map((tool) => tool.name).join(t(" et ", " and "));
+    const sentence = leaving.length > 1
+      ? t(`${names(leaving)} faisaient le travail de ${names(keptBy)}.`, `${names(leaving)} were doing ${names(keptBy)}'s job.`)
+      : t(`${names(leaving)} faisait le travail de ${names(keptBy)}.`, `${names(leaving)} was doing ${names(keptBy)}'s job.`);
+    setTrim({ tools, before: total + delta, delta, sentence, cut: false });
+    // The page re-renders while it plays: the timers live in a ref, cleared only when the page leaves.
+    trimTimers.current.forEach((timer) => window.clearTimeout(timer));
+    trimTimers.current = [window.setTimeout(() => setTrim((value) => value && { ...value, cut: true }), 300), window.setTimeout(() => setTrim(null), 5200)];
+  }, [saved, resolved]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => () => trimTimers.current.forEach((timer) => window.clearTimeout(timer)), []);
   const tiles: { id: string; node: (row: string[]) => ReactNode }[] = [];
   const condensed = (id: string, row: string[]) => !!openTile && openTile !== id && row.includes(openTile);
   if (showSplit) tiles.push({ id: "split", node: (row) => <Tile key="split" span={5} card="split" label={t("Où va l’argent", "Where the money goes")} art={<MiniRing parts={shares.map((area) => ({ color: area.color, share: area.amount / total }))} />}
@@ -302,8 +330,10 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
     </Answers>}
   </Tile> });
   if (saved > 0 || (!top && history)) tiles.push({ id: "result", node: () => <Tile key="result" span={7} label={t("Résultat", "Result")}
-    statement={saved > 0 ? <Ending figure={<Amount size="figure" roll value={`−${format(Math.round(saved))}`} unit={t("/mois", "/mo")} />} /> : undefined}
-    status={saved > 0 ? { text: <>{t("Vous économisez déjà ", "You're already saving ")}{format(Math.round(saved))}{t(" par mois.", " a month.")}</>, done: true } : undefined}
+    statement={trim ? <Trim cut={trim.cut} total={trim.before} saved={trim.delta} format={(value) => format(value)} unit={t("/mois", "/mo")} clingSay={t("Attendez…", "Wait…")}
+      restSentence="" sentence={trim.sentence} tools={trim.tools} />
+      : saved > 0 ? <Ending figure={<Amount size="figure" roll value={`−${format(Math.round(saved))}`} unit={t("/mois", "/mo")} />} /> : undefined}
+    status={!trim && saved > 0 ? { text: <>{t("Vous économisez déjà ", "You're already saving ")}{format(Math.round(saved))}{t(" par mois.", " a month.")}</>, done: true } : undefined}
     footer={history || undefined} /> });
   const rows = [tiles.slice(0, 2), tiles.slice(2, 4)].filter((row) => row.length > 0);
 

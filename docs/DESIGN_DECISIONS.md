@@ -132,7 +132,7 @@ Carte de décision au repos : arbitrage du matin maintenu (la tuile part, la phr
 - [x] Économiser : l'économie de la tuile Résultat défile chiffre par chiffre (`Amount roll`).
 - [ ] Copier : l'icône devient une coche, le libellé glisse. Aucun lien à copier sur Ma stack : viendra avec le partage (retiré du système pour ne pas garder de composant sans usage).
 - [x] Survoler : les cartes de l'inventaire s'inclinent, un reflet suit le pointeur (`Tilt` dans `ToolCard`).
-- [~] Le trim : la carte retirée de l'inventaire tombe (`ToolCard leaving`) ; séquence complète montée (`Trim`, story « Molécules/Gestes / Le trim »), à valider puis à brancher : la ligne de coupe court, les doublons tombent (l'un s'accroche un instant), ce qui reste se resserre, l'économie s'affiche.
+- [x] Le trim : la carte retirée de l'inventaire tombe (`ToolCard leaving`) ; la séquence complète se joue une fois dans la tuile Résultat quand une décision « garder l'un » fait économiser (Michael, « go sur tout », 11/11) : la ligne de coupe court, les doublons tombent (l'un s'accroche un instant), ce qui reste se resserre, l'économie s'affiche.
 - [ ] Le fil : la ligne de coupe aux couleurs de l'aura (refusé entre les chapitres le 11/11 ; reste possible sous une économie).
 
 ### Hors Ma stack (chantiers suivants)
