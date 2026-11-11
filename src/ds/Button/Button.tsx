@@ -1,4 +1,5 @@
-import { forwardRef, type ButtonHTMLAttributes, type PointerEvent, type ReactNode } from "react";
+import { forwardRef, useState, type ButtonHTMLAttributes, type CSSProperties, type PointerEvent, type ReactNode } from "react";
+import { SPARK_CORE, SPARK_GLOW, type SparkRow } from "./spark";
 import { ArrowRight } from "@/lib/icons";
 import styles from "./Button.module.css";
 
@@ -35,18 +36,31 @@ function releasePointer(event: PointerEvent<HTMLElement>) {
   event.currentTarget.style.setProperty("--tt-pull-y", "0px");
 }
 
-/** The shooting star (planche): a point of light running round the lead's edge at a steady pace, on hover only. */
+const sparkStroke = (mix: number) => mix < 0 ? "var(--tt-edge-head)" : `color-mix(in oklch, var(--tt-edge-3), var(--tt-edge-2) ${mix}%)`;
+function SparkTrail({ rows, glow }: { rows: SparkRow[]; glow?: boolean }) {
+  return (
+    <svg className={styles.spark} data-glow={glow || undefined} aria-hidden="true">
+      {rows.map(([offset, mix, opacity, width]) => <rect key={offset} pathLength={100}
+        style={{ "--o": offset, stroke: sparkStroke(mix), strokeOpacity: opacity, strokeWidth: width } as CSSProperties} />)}
+    </svg>
+  );
+}
+/**
+ * The shooting star (planche): on hover, a 1 px P3 rim drifts along the pill and a soft trail of light runs round
+ * it at a steady pace, a blurred flare under a white core. Nothing is drawn before the first hover.
+ */
 function Spark() {
-  return <svg className={styles.spark} aria-hidden="true"><rect pathLength="100" /><rect className={styles.sparkGlow} pathLength="100" /></svg>;
+  return <><span className={styles.edge} aria-hidden="true" /><SparkTrail rows={SPARK_GLOW} glow /><SparkTrail rows={SPARK_CORE} /></>;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button({ variant = "secondary", size = "md", icon, pressed, arrow, children, type = "button", onPointerMove, onPointerLeave, ...rest }, ref) {
   const lead = variant === "primary";
+  const [armed, setArmed] = useState(false);
   return (
     <button ref={ref} type={type} className={styles.button} data-variant={variant} data-size={size} aria-pressed={pressed}
-      onPointerMove={lead ? (event) => { followPointer(event); onPointerMove?.(event); } : onPointerMove}
+      onPointerMove={lead ? (event) => { if (!armed) setArmed(true); followPointer(event); onPointerMove?.(event); } : onPointerMove}
       onPointerLeave={lead ? (event) => { releasePointer(event); onPointerLeave?.(event); } : onPointerLeave} {...rest}>
-      {lead && <Spark />}
+      {lead && armed && <Spark />}
       {icon && <span className={styles.icon} aria-hidden="true">{icon}</span>}
       <span>{children}</span>
       {arrow && <Arrow />}

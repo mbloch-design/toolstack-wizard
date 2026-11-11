@@ -71,27 +71,16 @@
   transition: box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease, opacity var(--tt-dur-state) ease, translate 280ms var(--tt-spring);
 }
 
-.button[data-variant="primary"]::before,
-.button[data-variant="primary"]::after {
+.button[data-variant="primary"]::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: -1;
   border-radius: inherit;
+  background: var(--tt-lead-glow);
   pointer-events: none;
   opacity: 0;
-}
-
-.button[data-variant="primary"]::before {
-  z-index: -1;
-  background: var(--tt-lead-glow);
   transition: opacity 400ms ease;
-}
-
-.button[data-variant="primary"]::after {
-  padding: var(--tt-lead-edge-width);
-  background: var(--tt-lead-edge);
-  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-  transition: opacity 700ms var(--tt-ease);
 }
 
 .button[data-variant="primary"]:hover:not(:disabled) {
@@ -99,8 +88,9 @@
   transform: var(--tt-lead-lift);
 }
 
-/* The shooting star: one stroke dash along the pill's own perimeter, so its speed never changes in the curves.
-   More specific than the icon rule (.button > svg): the star's drawing spans the whole pill. */
+/* The shooting star (planche): one registered number (--tt-run) drives the whole trail; each segment sits --o units
+   behind the head, so the tail stays rigid and glides as one, at a steady pace round the pill's own outline.
+   More specific than the icon rule (.button > svg): the drawing spans the whole pill. */
 .button > .spark {
   position: absolute;
   inset: 0;
@@ -110,48 +100,65 @@
   overflow: visible;
   pointer-events: none;
   opacity: 0;
+  filter: drop-shadow(0 0 1.5px var(--tt-spark-halo));
   transition: opacity 700ms var(--tt-ease);
 }
 
-.spark rect {
-  x: 0.75px;
-  y: 0.75px;
-  width: calc(100% - 1.5px);
-  height: calc(100% - 1.5px);
+/* The flare: a blurred copy under the streak, violet at its ends. */
+.button > .spark[data-glow] {
+  filter: blur(2.5px);
+}
 
-  /* The pill's own radius on both axes: a huge rx would round it into an ellipse inside the button. */
-  rx: calc(var(--tt-button-h) / 2 - 0.75px);
-  ry: calc(var(--tt-button-h) / 2 - 0.75px);
+.spark rect {
+  x: 1.5px;
+  y: 1.5px;
+  width: calc(100% - 3px);
+  height: calc(100% - 3px);
+  rx: calc(var(--tt-button-h) / 2 - 1.5px);
+  ry: calc(var(--tt-button-h) / 2 - 1.5px);
   fill: none;
-  stroke: var(--tt-edge-head);
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-dasharray: 3 97;
+  stroke-linecap: butt;
+  stroke-dasharray: 0.5 99.5;
+  stroke-dashoffset: calc((var(--o) - var(--tt-run)) * 1px);
 }
 
 .button[data-size="lg"] .spark rect {
-  rx: calc(var(--tt-button-h-lg) / 2 - 0.75px);
-  ry: calc(var(--tt-button-h-lg) / 2 - 0.75px);
+  rx: calc(var(--tt-button-h-lg) / 2 - 1.5px);
+  ry: calc(var(--tt-button-h-lg) / 2 - 1.5px);
 }
 
-.spark .sparkGlow {
-  stroke: var(--tt-edge-3);
-  stroke-width: 3;
-  stroke-dasharray: 8 92;
-  filter: blur(2px);
+/* The rim: 1 px in the P3 edge colours, drifting slowly. */
+.edge {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: var(--tt-lead-edge-width);
+  border-radius: inherit;
+  background: var(--tt-lead-edge);
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 700ms var(--tt-ease);
 }
 
 .button[data-variant="primary"]:hover:not(:disabled) .spark {
   opacity: 1;
-}
-
-.button[data-variant="primary"]:hover:not(:disabled) .spark rect {
   animation: spark-run 4.2s linear infinite;
 }
 
+.button[data-variant="primary"]:hover:not(:disabled) .edge {
+  opacity: 0.45;
+  animation: lead-flow 10s linear infinite;
+}
+
+
 @keyframes spark-run {
+  0% {
+    --tt-run: 0;
+  }
+
   100% {
-    stroke-dashoffset: -100;
+    --tt-run: 100;
   }
 }
 
@@ -159,10 +166,7 @@
   opacity: 1;
 }
 
-.button[data-variant="primary"]:hover:not(:disabled)::after {
-  opacity: 0.45;
-  animation: lead-flow 10s linear infinite;
-}
+
 
 .button[data-variant="primary"]:active:not(:disabled) {
   box-shadow: var(--tt-lead-shadow-press);
@@ -176,7 +180,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .button[data-variant="primary"]::after,
+  .edge,
   .spark {
     display: none;
   }
