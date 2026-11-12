@@ -28,3 +28,8 @@ export default function Chip({ pressed, check, count, alert, size = "sm", tone =
 export function Chips({ label, children }: { label: string; children: ReactNode }) {
   return <div className={styles.chips} role="group" aria-label={label}>{children}</div>;
 }
+
+/** A chip that is a link (a sibling page in a rail): spread on the router link; the current page reads as pressed. */
+export function chipLinkAttrs(current: boolean) {
+  return { className: styles.chip, "data-size": "sm", "aria-current": current ? ("page" as const) : undefined };
+}

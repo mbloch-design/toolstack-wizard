@@ -1,17 +1,21 @@
 import { useLocation, useParams } from "react-router-dom";
-import RailThumb from "@/components/motion/RailThumb";
 import { Link } from "@/lib/routerLinks";
 import { REDIRECTED_TOOL_SLUGS } from "@/lib/redirectedTools";
-import { useState, useEffect, useMemo, type CSSProperties } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts, type ToolSummary } from "@/hooks/useSupabaseData";
-import { Filter, Search, X } from "@/lib/icons";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Search } from "@/lib/icons";
+import Page from "@/ds/Page/Page";
+import Chip, { Chips, chipLinkAttrs } from "@/ds/Chip/Chip";
+import Drawer, { DrawerTitle } from "@/ds/Drawer/Drawer";
+import Segmented from "@/ds/Segmented/Segmented";
+import Button, { TextButton, buttonAttrs } from "@/ds/Button/Button";
+import MediaCard, { MediaCards } from "@/ds/MediaCard/MediaCard";
+import { SheetSection } from "@/ds/ToolSheet/ToolSheet";
+import { ActiveFilter, ActiveFilters, CatalogSection, CatalogTitle, EmptyState, FilterBar, FiltersButton, FiltersFoot, FiltersPanel, LinkIndex, LinkRow, LinkRows } from "@/ds/Catalog/Catalog";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, removeNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
-import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolCardImage from "@/components/tool/ToolCardImage";
-import { getExplorerHref } from "@/lib/toolExploration";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import Breadcrumb from "@/components/Breadcrumb";
 import { GuideCardEditorial } from "@/components/GuideCardEditorial";
@@ -74,6 +78,8 @@ const CategoryPage = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [visibleCount, setVisibleCount] = useState(PER_PAGE);
   const [panelOpen, setPanelOpen] = useState(false);
+  // The filters sheet hands the focus back to the button that opened it.
+  const filtersButtonRef = useRef<HTMLButtonElement>(null);
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
   const year = useMemo(() => new Date().getFullYear(), []);
 
@@ -198,11 +204,11 @@ const CategoryPage = () => {
 
   if (!category) {
     return (
-      <div className="tt-catalog-page min-h-screen">
-        <div className="cat-body tt-catalog-empty">
-          <p>{t("Catégorie non trouvée", "Category not found")}</p>
-          <Link to={`${prefix}/tools`} className="tt-pill">{t("Voir tout le catalogue", "See the whole catalogue")}</Link>
-        </div>
+      <div className="tt-catalog-page" data-catalog="">
+        <Page>
+          <EmptyState icon={<Search />} title={t("Catégorie non trouvée", "Category not found") as string}
+            action={<Link to={`${prefix}/tools`} {...buttonAttrs("secondary")}>{t("Voir tout le catalogue", "See the whole catalogue")}</Link>} />
+        </Page>
       </div>
     );
   }
@@ -214,7 +220,6 @@ const CategoryPage = () => {
     .filter((c) => c.id !== category.id && !siblings.some((s) => s.id === c.id) && isCategoryLinkable(toolCountByCategory.get(c.id) || 0))
     .sort((a, b) => (toolCountByCategory.get(b.id) || 0) - (toolCountByCategory.get(a.id) || 0))
     .slice(0, 4);
-  const exploreState = { explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: displayName };
 
   const resetFilters = () => {
     setPriceFilter("all");
@@ -229,23 +234,29 @@ const CategoryPage = () => {
     // No category eyebrow: the page already is the category.
     const eyebrow = (lang === "en" ? entry?.eyebrowEn : entry?.eyebrowFr) || "";
     return (
-      <Link key={tool.id} to={`${prefix}/tool/${tool.slug || tool.id}`} className="tt-pepite">
-        <ToolCardImage tool={tool} logoSize={56} className="tt-pepite-media" />
-        {eyebrow || entry?.sponsored ? (
-          <span className="tt-pepite-eyebrow">
-            {eyebrow}
-            {entry?.sponsored ? <span className="tt-sponsored">{t("Sponsorisé", "Sponsored")}</span> : null}
-          </span>
-        ) : null}
-        <span className="tt-pepite-title">{tool.name}</span>
-        {pitch ? <span className="tt-pepite-sub">{pitch}</span> : null}
-      </Link>
+      <MediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
+        image={<ToolCardImage tool={tool} logoSize={56} />}
+        category={[eyebrow, entry?.sponsored ? t("Sponsorisé", "Sponsored") : ""].filter(Boolean).join(" · ") || undefined} reason={pitch || undefined}
+        renderLink={(className, content) => <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className={className}>{content}</Link>} />
     );
   }
 
+  const sortOptions: Array<{ value: SortKey; label: string }> = [
+    { value: "popular", label: t("Populaire", "Popular") },
+    { value: "name", label: "A → Z" },
+    { value: "price-asc", label: t("Prix croissant", "Price: low to high") },
+  ];
+  const priceOptions: Array<{ value: PriceFilter; label: string }> = [
+    { value: "all", label: t("Tous", "All") },
+    { value: "free", label: t("Plan gratuit", "Free plan") },
+    { value: "paid", label: t("Payant", "Paid") },
+  ];
+
+  // The category on the system (12/11/2026), the same build as Tools: title and lead, sibling categories as link
+  // chips on the filter bar, filters in the side sheet, top picks as media cards, then the full list and its index.
   return (
-    <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#78EB2B" } as CSSProperties}>
-      <div className="cat-body">
+    <div className="tt-catalog-page" data-catalog="">
+      <Page>
         <Breadcrumb
           items={[
             { label: t("Outils", "Tools") as string, href: `${prefix}/tools` },
@@ -254,271 +265,109 @@ const CategoryPage = () => {
           ]}
           includeSchema={false}
         />
-        {/* Title and the category's own lead: unique, crawlable copy. */}
-        <div className="tt-catalog-compact-header">
-          <h1 className="tt-catalog-compact-title">{displayName}</h1>
-          {lead ? <p className="tt-catalog-compact-intro">{lead}</p> : null}
-        </div>
+        <CatalogTitle title={displayName} lead={lead || undefined} sentinelRef={toolbarSentinelRef} />
 
-        <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
+        {/* Real links: each sibling category is its own indexable page. */}
+        <FilterBar stuck={toolbarStuck} railLabel={t(`Catégories ${needLabel}`, `${needLabel} categories`) as string}
+          prevLabel={t("Catégories précédentes", "Previous categories") as string} nextLabel={t("Catégories suivantes", "Next categories") as string}
+          rail={siblings.length > 1 ? siblings.map((sibling) => {
+            const name = stripLeadingEmoji(sibling.name, sibling.id);
+            return <Link key={sibling.id} to={`${prefix}/category/${sibling.slug}`} {...chipLinkAttrs(sibling.id === category.id)}>{t(name, stripLeadingEmoji(sibling.nameEn, name))}</Link>;
+          }) : null}
+          tail={<FiltersButton ref={filtersButtonRef} label={t("Filtres", "Filters") as string} count={activeFilterCount} open={panelOpen} onClick={() => setPanelOpen(true)} ariaLabel={t("Filtres et tri", "Filters and sort") as string} />} />
 
-        <div data-toolbar="catalog" className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
-          {/* Real links: each sibling category is its own indexable page. */}
-          <nav className="tt-pillrow tt-rail" aria-label={t(`Catégories ${needLabel}`, `${needLabel} categories`) as string}>
-            <RailThumb />
-            {siblings.length > 1 && siblings.map((sibling) => {
-              const active = sibling.id === category.id;
-              const name = stripLeadingEmoji(sibling.name, sibling.id);
-              return (
-                <Link
-                  key={sibling.id}
-                  to={`${prefix}/category/${sibling.slug}`}
-                  className={`tt-pill${active ? " tt-pill--active" : ""}`}
-                  aria-current={active ? "page" : undefined}
-                >
-                  {t(name, stripLeadingEmoji(sibling.nameEn, name))}
-                </Link>
-              );
-            })}
-          </nav>
-
-          <div className="tt-catalog-toolbar-tail">
-            <Popover open={panelOpen} onOpenChange={setPanelOpen}>
-              <PopoverTrigger asChild>
-                <button
-                  type="button"
-                  className={`tt-pill tt-pill--more${activeFilterCount > 0 ? " tt-pill--active" : ""}`}
-                  aria-label={t("Filtres et tri", "Filters and sort") as string}
-                >
-                  <Filter size={16} aria-hidden />
-                  <span className="tt-pill-label">{t("Filtres", "Filters")}</span>
-                  {activeFilterCount > 0 && <span className="tt-pill-count">{activeFilterCount}</span>}
-                </button>
-              </PopoverTrigger>
-              <PopoverContent className="tt-filter-panel" align="end" sideOffset={8}>
-                <div className="tt-filter-panel-head">
-                  <strong>{t("Filtres", "Filters")}</strong>
-                  <div className="tt-filter-panel-head-actions">
-                    {activeFilterCount > 0 && (
-                      <button type="button" className="tt-filter-panel-reset" onClick={resetFilters}>
-                        {t("Tout effacer", "Clear all")}
-                      </button>
-                    )}
-                    <button type="button" className="tt-filter-panel-close" onClick={() => setPanelOpen(false)} aria-label={t("Fermer", "Close") as string}>
-                      <X size={18} aria-hidden />
-                    </button>
-                  </div>
-                </div>
-                <div className="tt-filter-panel-body">
-                  <section className="tt-filter-group">
-                    <h3>{t("Trier par", "Sort by")}</h3>
-                    <div className="tt-filter-segmented" role="radiogroup" aria-label={t("Trier par", "Sort by") as string}>
-                      {([
-                        { id: "popular", label: t("Populaire", "Popular") },
-                        { id: "name", label: "A → Z" },
-                        { id: "price-asc", label: t("Prix croissant", "Price: low to high") },
-                      ] as Array<{ id: SortKey; label: string }>).map((option) => (
-                        <button
-                          key={option.id}
-                          type="button"
-                          role="radio"
-                          aria-checked={sort === option.id}
-                          className={`tt-pill${sort === option.id ? " tt-pill--active" : ""}`}
-                          onClick={() => setSort(option.id)}
-                        >
-                          {option.label}
-                        </button>
-                      ))}
-                    </div>
-                  </section>
-                  <section className="tt-filter-group">
-                    <h3>{t("Prix", "Price")}</h3>
-                    <div className="tt-filter-segmented" role="radiogroup" aria-label={t("Prix", "Price") as string}>
-                      {([
-                        { id: "all", label: t("Tous", "All") },
-                        { id: "free", label: t("Plan gratuit", "Free plan") },
-                        { id: "paid", label: t("Payant", "Paid") },
-                      ] as Array<{ id: PriceFilter; label: string }>).map((option) => (
-                        <button
-                          key={option.id}
-                          type="button"
-                          role="radio"
-                          aria-checked={priceFilter === option.id}
-                          className={`tt-pill${priceFilter === option.id ? " tt-pill--active" : ""}`}
-                          onClick={() => setPriceFilter(option.id)}
-                        >
-                          {option.label}
-                        </button>
-                      ))}
-                    </div>
-                  </section>
-                  {facetOptions.length > 0 && (
-                    <section className="tt-filter-group">
-                      <h3>{t("Usages", "Uses")}</h3>
-                      <div className="tt-filter-facets">
-                        {facetOptions.map((facet) => {
-                          const checked = selectedTags.includes(facet.id);
-                          return (
-                            <button
-                              key={facet.id}
-                              type="button"
-                              className={`tt-pill${checked ? " tt-pill--active" : ""}`}
-                              onClick={() => toggleTag(facet.id)}
-                              aria-pressed={checked}
-                              disabled={!checked && facet.count === 0}
-                            >
-                              {facet.label}
-                              <span className="tt-pill-count">{facet.count}</span>
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </section>
-                  )}
-                </div>
-              </PopoverContent>
-            </Popover>
-          </div>
-        </div>
-        {/* Outside the bar: its stuck-state animation leaves a transform that
-            would trap this fixed scrim inside the bar's own box. */}
-        {panelOpen && <div className="tt-filter-panel-backdrop" aria-hidden />}
+        <Drawer open={panelOpen} onClose={() => setPanelOpen(false)} closeLabel={t("Fermer", "Close") as string}
+          onCloseAutoFocus={(event) => { event.preventDefault(); filtersButtonRef.current?.focus(); }}>
+          <DrawerTitle>{t("Filtres", "Filters")}</DrawerTitle>
+          <FiltersPanel>
+            <SheetSection title={t("Trier par", "Sort by") as string}>
+              <Segmented label={t("Trier par", "Sort by") as string} value={sort} options={sortOptions} onChange={setSort} />
+            </SheetSection>
+            <SheetSection title={t("Prix", "Price") as string}>
+              <Segmented label={t("Prix", "Price") as string} value={priceFilter} options={priceOptions} onChange={setPriceFilter} />
+            </SheetSection>
+            {facetOptions.length > 0 && <SheetSection title={t("Usages", "Uses") as string}>
+              <Chips label={t("Usages", "Uses") as string}>
+                {facetOptions.map((facet) => {
+                  const on = selectedTags.includes(facet.id);
+                  return <Chip key={facet.id} pressed={on} check count={facet.count} disabled={!on && facet.count === 0} onClick={() => toggleTag(facet.id)}>{facet.label}</Chip>;
+                })}
+              </Chips>
+            </SheetSection>}
+            <FiltersFoot>
+              <Button variant="primary" onClick={() => setPanelOpen(false)}>
+                {filtered.length === 0 ? t("Aucun outil", "No tools") : t(`Voir ${filtered.length} outil${filtered.length > 1 ? "s" : ""}`, `Show ${filtered.length} tool${filtered.length > 1 ? "s" : ""}`)}
+              </Button>
+              {activeFilterCount > 0 && <TextButton tone="quiet" onClick={resetFilters}>{t("Tout effacer", "Clear all")}</TextButton>}
+            </FiltersFoot>
+          </FiltersPanel>
+        </Drawer>
 
         {topPicks.length > 0 && (
-          <section className="tt-spotlight" aria-labelledby="cat-top-title">
-            <h2 id="cat-top-title" className="tt-section-title">
-              {/* "Most searched" would misdescribe a paid slot. */}
-              {topPicks.some((item) => item.entry?.sponsored)
-                ? t("À la une", "Featured")
-                : t("Les plus recherchés", "Most searched")}
-            </h2>
-            <div className="tt-pepites">{topPicks.map(renderPick)}</div>
-          </section>
+          <CatalogSection id="cat-top-title" title={topPicks.some((item) => item.entry?.sponsored) ? t("À la une", "Featured") : t("Les plus recherchés", "Most searched")}>
+            <MediaCards label={t("Les plus recherchés", "Most searched") as string}>{topPicks.map(renderPick)}</MediaCards>
+          </CatalogSection>
         )}
 
-        <section className="tt-catalog-results" aria-labelledby="cat-results-title">
+        <section aria-labelledby={filtered.length > 0 ? "cat-results-title" : undefined} data-catalog-results="">
           {filtered.length === 0 ? (
-            <div className="tt-catalog-empty">
-              <Search size={28} aria-hidden />
-              <p>{t("Aucun outil ne correspond", "No tool matches")}</p>
-              <button type="button" className="tt-pill" onClick={resetFilters}>
-                {t("Retirer les filtres", "Remove filters")}
-              </button>
-            </div>
+            <EmptyState icon={<Search />} title={t("Aucun outil ne correspond", "No tool matches") as string}
+              action={<Button onClick={resetFilters}>{t("Retirer les filtres", "Remove filters")}</Button>} />
           ) : (
-            <>
-              <header className="tt-catalog-results-header">
-                <p className="tt-catalog-results-kicker">
-                  {t(`${filtered.length} outil${filtered.length > 1 ? "s" : ""}`, `${filtered.length} tool${filtered.length > 1 ? "s" : ""}`)}
-                </p>
-                <h2 id="cat-results-title" className="tt-catalog-results-title">
-                  {topPicks.length > 0
-                    ? t(`Plus d'outils ${catName}`, `More ${catNameEn} tools`)
-                    : t(`Outils ${catName}`, `${catNameEn} tools`)}
-                </h2>
-                {activeFilterCount > 0 && (
-                  <div className="tt-active-filters" aria-label={t("Filtres actifs", "Active filters") as string}>
-                    {priceFilter !== "all" && (
-                      <button type="button" className="tt-active-chip" onClick={() => setPriceFilter("all")}>
-                        {priceFilter === "free" ? t("Plan gratuit", "Free plan") : t("Payant", "Paid")}
-                        <X size={14} aria-hidden />
-                      </button>
-                    )}
-                    {selectedTags.map((tagId) => (
-                      <button key={tagId} type="button" className="tt-active-chip" onClick={() => toggleTag(tagId)}>
-                        {formatFacetLabel(tagId, lang)}
-                        <X size={14} aria-hidden />
-                      </button>
-                    ))}
-                    {sort !== "popular" && (
-                      <button type="button" className="tt-active-chip" onClick={() => setSort("popular")}>
-                        {sort === "name" ? "A → Z" : t("Prix croissant", "Price: low to high")}
-                        <X size={14} aria-hidden />
-                      </button>
-                    )}
-                    {activeFilterCount > 1 && (
-                      <button type="button" className="tt-active-clear" onClick={resetFilters}>
-                        {t("Tout effacer", "Clear all")}
-                      </button>
-                    )}
-                  </div>
-                )}
-              </header>
-              <div className="tc-grid">
-                {visible.map((tool) => (
-                  <ToolCardEditorial
-                    key={tool.id}
-                    tool={tool}
-                    prefix={prefix}
-                    t={t}
-                    lang={lang}
-                    // What the tool does; the category is the page itself.
-                    categoryLabel={toolTagline(tool.slug || tool.id, lang) || undefined}
-                    showPrice={false}
-                    identityLogoSize={56}
-                    exploreHref={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
-                    exploreState={exploreState}
-                  />
-                ))}
-              </div>
-              {hasMore && (
-                <div className="tt-catalog-more">
-                  <button type="button" className="tt-pill" onClick={() => setVisibleCount((count) => count + PER_PAGE)}>
-                    {t("Afficher plus", "Show more")}
-                  </button>
-                </div>
+            <CatalogSection id="cat-results-title" count={filtered.length}
+              title={topPicks.length > 0 ? t(`Plus d’outils ${catName}`, `More ${catNameEn} tools`) : t(`Outils ${catName}`, `${catNameEn} tools`)}>
+              {activeFilterCount > 0 && (
+                <ActiveFilters label={t("Filtres actifs", "Active filters") as string}>
+                  {priceFilter !== "all" && <ActiveFilter onRemove={() => setPriceFilter("all")} removeLabel={t("Retirer ce filtre", "Remove this filter") as string}>{priceFilter === "free" ? t("Plan gratuit", "Free plan") : t("Payant", "Paid")}</ActiveFilter>}
+                  {selectedTags.map((tagId) => <ActiveFilter key={tagId} onRemove={() => toggleTag(tagId)} removeLabel={t("Retirer ce filtre", "Remove this filter") as string}>{formatFacetLabel(tagId, lang)}</ActiveFilter>)}
+                  {sort !== "popular" && <ActiveFilter onRemove={() => setSort("popular")} removeLabel={t("Retirer ce tri", "Remove this sort") as string}>{sort === "name" ? "A → Z" : t("Prix croissant", "Price: low to high")}</ActiveFilter>}
+                  {activeFilterCount > 1 && <TextButton tone="quiet" onClick={resetFilters}>{t("Tout effacer", "Clear all")}</TextButton>}
+                </ActiveFilters>
               )}
-            </>
+              <MediaCards label={t(`Outils ${catName}`, `${catNameEn} tools`) as string}>
+                {visible.map((tool) => (
+                  <MediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
+                    image={<ToolCardImage tool={tool} logoSize={56} />}
+                    reason={toolTagline(tool.slug || tool.id, lang) || undefined}
+                    renderLink={(className, content) => <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className={className}>{content}</Link>} />
+                ))}
+              </MediaCards>
+              {hasMore && <div><Button onClick={() => setVisibleCount((count) => count + PER_PAGE)}>{t("Afficher plus", "Show more")}</Button></div>}
+            </CatalogSection>
           )}
         </section>
 
         {categoryArticles.length > 0 && (
-          <section className="cat-guides" aria-labelledby="cat-guides-title">
-            <h2 id="cat-guides-title" className="tt-section-title">{t("Guides", "Guides")}</h2>
+          <CatalogSection id="cat-guides-title" title={t("Guides", "Guides")}>
             <div className="cat-article-grid">
               {categoryArticles.map((post) => (
                 <GuideCardEditorial key={post.id} post={post} prefix={prefix} ctaLabel={t("Lire", "Read") as string} />
               ))}
             </div>
-          </section>
+          </CatalogSection>
         )}
 
-        {/* Every tool of the category, linked: the grid only shows its first
-            page, and crawlers do not press "Show more". */}
+        {/* Every tool of the category, linked: the grid only shows its first page, and crawlers do not press "Show more". */}
         {azTools.length > PER_PAGE && (
-          <section className="cat-az" aria-labelledby="cat-az-title">
-            <h2 id="cat-az-title" className="cat-az-title">
-              {t(`Tous les outils ${catName} de A à Z`, `All ${catNameEn} tools from A to Z`)}
-            </h2>
-            <ul className="cat-az-list">
-              {azTools.map((tool) => (
-                <li key={tool.id}>
-                  <Link to={`${prefix}/tool/${tool.slug || tool.id}`}>{tool.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </section>
+          <CatalogSection id="cat-az-title" title={t(`Tous les outils ${catName} de A à Z`, `All ${catNameEn} tools from A to Z`)}>
+            <LinkIndex label={t(`Tous les outils ${catName}`, `All ${catNameEn} tools`) as string}>
+              {azTools.map((tool) => <li key={tool.id}><Link to={`${prefix}/tool/${tool.slug || tool.id}`}>{tool.name}</Link></li>)}
+            </LinkIndex>
+          </CatalogSection>
         )}
 
         {relatedCats.length > 0 && (
-          <section className="cat-related">
-            <span className="cat-related-eyebrow">{t("Autres catégories", "Other categories")}</span>
-            <ul className="cat-related-list" role="list">
+          <CatalogSection id="cat-related-title" title={t("Autres catégories", "Other categories")}>
+            <LinkRows>
               {relatedCats.map((cat) => {
                 const name = stripLeadingEmoji(cat.name, cat.id);
-                return (
-                  <li key={cat.id} className="cat-related-item">
-                    <Link to={`${prefix}/category/${cat.slug}`} className="cat-related-row">
-                      <span className="cat-related-name">{t(name, cat.nameEn || name)}</span>
-                      <span className="cat-related-count">{toolCountByCategory.get(cat.id) || 0} {t("outils", "tools")}</span>
-                    </Link>
-                  </li>
-                );
+                return <LinkRow key={cat.id} name={t(name, cat.nameEn || name) as string} note={`${toolCountByCategory.get(cat.id) || 0} ${t("outils", "tools")}`}
+                  renderLink={(className, content) => <Link to={`${prefix}/category/${cat.slug}`} className={className}>{content}</Link>} />;
               })}
-            </ul>
-          </section>
+            </LinkRows>
+          </CatalogSection>
         )}
-      </div>
+      </Page>
     </div>
   );
 };

@@ -10,7 +10,9 @@ import styles from "./Catalog.module.css";
  */
 
 /** The page title, with the number of tools as a light figure after it (read as a sentence by assistive tech). */
-export function CatalogTitle({ title, count, countLabel, sentinelRef }: { title: string; count?: number; countLabel?: string;
+export function CatalogTitle({ title, count, countLabel, lead, sentinelRef }: { title: string; count?: number; countLabel?: string;
+  /** The page's own sentence under its title (a category's lead: unique, crawlable copy). */
+  lead?: string;
   /** The filter bar's sticky detector, set at the title's foot so it takes no row of its own. */
   sentinelRef?: Ref<HTMLDivElement> }) {
   return (
@@ -19,6 +21,7 @@ export function CatalogTitle({ title, count, countLabel, sentinelRef }: { title:
         {title}
         {count !== undefined && <sup className={styles.count}><span aria-hidden="true">{count}</span>{countLabel && <span className={styles.sr}>{countLabel}</span>}</sup>}
       </h1>
+      {lead && <p className={styles.lead}>{lead}</p>}
       {sentinelRef && <div ref={sentinelRef} className={styles.sentinel} aria-hidden="true" />}
     </div>
   );
@@ -115,3 +118,17 @@ export const FiltersButton = forwardRef<HTMLButtonElement, { label: string; coun
       </button>
     );
   });
+
+/** Every item of a page as plain links, in columns (crawlers do not press « Afficher plus »). */
+export function LinkIndex({ label, children }: { label: string; children: ReactNode }) {
+  return <ul className={styles.index} aria-label={label}>{children}</ul>;
+}
+
+/** A place to go next, as a row: its name and one figure (« 128 outils »). renderLink gives the router link. */
+export function LinkRow({ name, note, renderLink }: { name: string; note?: string; renderLink: (className: string, content: ReactNode) => ReactNode }) {
+  return <li>{renderLink(styles.linkRow, <><span className={styles.linkName}>{name}</span>{note && <span className={styles.linkNote}>{note}</span>}<ChevronRight className={styles.linkArrow} aria-hidden="true" /></>)}</li>;
+}
+
+export function LinkRows({ children }: { children: ReactNode }) {
+  return <ul className={styles.linkRows}>{children}</ul>;
+}

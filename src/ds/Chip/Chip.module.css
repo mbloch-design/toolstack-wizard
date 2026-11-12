@@ -23,6 +23,7 @@
   letter-spacing: var(--tt-tag-tracking);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
+  text-decoration: none;
   cursor: pointer;
   transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
 }
@@ -54,7 +55,7 @@
   cursor: default;
 }
 
-.chip:hover:not(:disabled, [aria-pressed="true"]) {
+.chip:hover:not(:disabled, [aria-pressed="true"], [aria-current="page"]) {
   box-shadow: var(--tt-hairline-ink);
 }
 
@@ -63,7 +64,8 @@
   color: var(--tt-overlap-strong);
 }
 
-.chip[aria-pressed="true"] {
+.chip[aria-pressed="true"],
+.chip[aria-current="page"] {
   background: var(--tt-ink);
   box-shadow: none;
   color: var(--tt-bg);  font-weight: var(--tt-w-on-ink);
