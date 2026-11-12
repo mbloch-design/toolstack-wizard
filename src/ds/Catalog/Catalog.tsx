@@ -52,26 +52,37 @@ export function FilterBar({ stuck, rail, railRef, railLabel, tail, prevLabel, ne
   // The slot keeps the bar's height in the page and gives the floating bar its left edge and width.
   const slot = useRef<HTMLDivElement | null>(null);
   // Coming back to its place: the colours swap at once and the bar fades in, so no chip is seen turning.
-  const wasStuck = useRef(stuck);
+  // Three moments, each with its own move: floating (rises in), leaving (sinks out, still smoked), then back in
+  // its place (fades in, light). Never two places changing in the same frame.
+  const [mode, setMode] = useState<"inline" | "float" | "leaving">(stuck ? "float" : "inline");
   const [settling, setSettling] = useState(false);
   useLayoutEffect(() => {
-    if (wasStuck.current && !stuck) { setSettling(true); const id = window.setTimeout(() => setSettling(false), 400); wasStuck.current = stuck; return () => window.clearTimeout(id); }
-    wasStuck.current = stuck;
-  }, [stuck]);
+    if (stuck) { setMode("float"); setSettling(false); return; }
+    if (mode !== "float") return;
+    setMode("leaving");
+    const out = window.setTimeout(() => { setMode("inline"); setSettling(true); }, 300);
+    return () => window.clearTimeout(out);
+  }, [stuck]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (!settling) return;
+    const id = window.setTimeout(() => setSettling(false), 400);
+    return () => window.clearTimeout(id);
+  }, [settling]);
+  const floating = mode !== "inline";
   const [frame, setFrame] = useState({ left: 0, width: 0, height: 0 });
   useEffect(() => {
     const node = slot.current;
     if (!node) return;
-    const measure = () => { const r = node.getBoundingClientRect(); setFrame((f) => ({ left: r.left, width: r.width, height: stuck ? f.height : (node.firstElementChild as HTMLElement | null)?.offsetHeight ?? f.height })); };
+    const measure = () => { const r = node.getBoundingClientRect(); setFrame((f) => ({ left: r.left, width: r.width, height: floating ? f.height : (node.firstElementChild as HTMLElement | null)?.offsetHeight ?? f.height })); };
     measure();
     const observer = typeof ResizeObserver !== "undefined" ? new ResizeObserver(measure) : null;
     observer?.observe(node);
     window.addEventListener("resize", measure);
     return () => { observer?.disconnect(); window.removeEventListener("resize", measure); };
-  }, [stuck]);
+  }, [floating]);
   return (
-    <div ref={slot} className={styles.barSlot} style={stuck && frame.height ? { height: frame.height } : undefined}>
-    <div data-toolbar="catalog" className={styles.bar} data-stuck={stuck || undefined} data-settling={settling || undefined}
+    <div ref={slot} className={styles.barSlot} style={floating && frame.height ? { height: frame.height } : undefined}>
+    <div data-toolbar="catalog" className={styles.bar} data-stuck={floating || undefined} data-leaving={mode === "leaving" || undefined} data-settling={settling || undefined}
       style={{ "--bar-left": `${frame.left}px`, "--bar-width": `${frame.width}px` } as CSSProperties}>
       <div className={styles.railWrap} data-start={edges.start || undefined} data-end={edges.end || undefined}>
         <button type="button" className={styles.railArrow} data-side="start" onClick={() => go(-1)} aria-label={prevLabel} tabIndex={-1} hidden={edges.start}><ChevronLeft aria-hidden="true" /></button>

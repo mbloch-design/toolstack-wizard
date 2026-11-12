@@ -104,6 +104,19 @@
   }
 }
 
+/* Leaving: it sinks back out the way it came, still smoked, before the light bar returns to its place. */
+.bar[data-leaving] {
+  animation: bar-sink 300ms var(--tt-ease) both;
+  pointer-events: none;
+}
+
+@keyframes bar-sink {
+  to {
+    opacity: 0;
+    translate: 0 var(--tt-space-4);
+  }
+}
+
 @keyframes bar-rise {
   from {
     opacity: 0;
@@ -456,7 +469,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bar[data-stuck] {
+  .bar[data-stuck],
+  .bar[data-leaving],
+  .bar[data-settling] {
     animation: none;
   }
 }
