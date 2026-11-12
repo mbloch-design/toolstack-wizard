@@ -37,11 +37,11 @@ export default function MediaCard({ lang, tool, image, category, price, badge, s
       {(category || badge || price) && <span className={styles.tags}>
         {category && <span className={styles.tag}>{category}</span>}
         {price && <span className={styles.tag} data-tone={price.free ? "free" : undefined}>{price.label}</span>}
-        {badge && <span className={styles.tag}>{badge}</span>}
+        {badge && <span className={styles.tag} data-tone="notice">{badge}</span>}
       </span>}
     </span>
-    <span className={styles.caption} data-bare={image ? undefined : ""}>
-      {image && <Logo tool={tool} size={32} localOnly={localLogosOnly} />}
+    <span className={styles.caption}>
+      <Logo tool={tool} size={32} localOnly={localLogosOnly} />
       <span className={styles.name}>{tool.name}</span>
       {reason && <span className={styles.reason}>{reason}</span>}
     </span>

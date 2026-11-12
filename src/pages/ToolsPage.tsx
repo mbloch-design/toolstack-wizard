@@ -9,7 +9,8 @@ import Chip, { Chips } from "@/ds/Chip/Chip";
 import Drawer, { DrawerTitle } from "@/ds/Drawer/Drawer";
 import Segmented from "@/ds/Segmented/Segmented";
 import Button, { LinkArrow, TextButton, linkClass } from "@/ds/Button/Button";
-import MediaCard, { MediaCards } from "@/ds/MediaCard/MediaCard";
+import { MediaCards } from "@/ds/MediaCard/MediaCard";
+import ToolMediaCard from "@/components/tool/ToolMediaCard";
 import Tag from "@/ds/Tag/Tag";
 import { SheetNote, SheetSection, ToolRow, ToolRows } from "@/ds/ToolSheet/ToolSheet";
 import { ActiveFilter, ActiveFilters, CatalogSection, CatalogTitle, EmptyState, FilterBar, FiltersButton, FiltersFoot, FiltersPanel } from "@/ds/Catalog/Catalog";
@@ -17,14 +18,11 @@ import { compareByDemand, formatFacetLabel, getToolSearchText, hasFreePlan, isPa
 import { toolTagline } from "@/data/toolTaglines";
 import { CATALOG_NEEDS } from "@/data/catalogNeeds";
 import { activePlacements, type CatalogPlacement } from "@/data/catalogPlacements";
-import ToolCardImage from "@/components/tool/ToolCardImage";
 import ToolLogo from "@/components/ToolLogo";
 import PinToolButton from "@/components/PinToolButton";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, hasNonCanonicalSearchParams } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
-import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import Breadcrumb from "@/components/Breadcrumb";
-import { getExplorerHref } from "@/lib/toolExploration";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import { trackEvent } from "@/lib/analytics";
 
@@ -360,8 +358,7 @@ const ToolsPage = () => {
     // Two or three words on what the tool does.
     const pitch = (lang === "en" ? entry?.pitchEn : entry?.pitchFr) || toolTagline(tool.slug || tool.id, lang);
     return (
-      <MediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
-        image={<ToolCardImage tool={tool} logoSize={56} />}
+      <ToolMediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
         category={eyebrow || undefined} badge={entry?.sponsored ? t("Sponsorisé", "Sponsored") as string : undefined} reason={pitch || undefined}
         renderLink={(className, content) => <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className={className}>{content}</Link>} />
     );
@@ -388,7 +385,6 @@ const ToolsPage = () => {
   const resultsTitle = search
     ? t(`Résultats pour «\u00a0${search}\u00a0»`, `Results for “${search}”`)
     : activeNeed ? (lang === "en" ? activeNeed.en : activeNeed.fr) : browsedCategory ? getCatLabel(browsedCategory) : t("Tous les outils", "All tools");
-  const exploreState = { explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: t("Catalogue", "Catalog") };
 
   // The catalogue on the system (11/11/2026, « mise à plat »): the page title, the needs as chips on a bar that turns
   // to glass once stuck, the filters in the side sheet, featured tools as media cards, shelves of tool rows.
@@ -493,15 +489,16 @@ const ToolsPage = () => {
                   <MediaCards label={t("Les plus recherchés", "Most searched") as string}>{needTop.map(renderPepite)}</MediaCards>
                 </CatalogSection>
               )}
-              <div className="tc-grid">
+              <MediaCards label={t("Tous les outils", "All tools") as string}>
                 {visible.map(tool => {
                   const catObj = categoryById.get(tool.categoryId);
                   const catLabel = catObj ? (lang === "en" ? stripLeadingEmoji(catObj.nameEn, catObj.id) : stripLeadingEmoji(catObj.name, catObj.id)) : undefined;
                   const subtitle = toolTagline(tool.slug || tool.id, lang) || catLabel;
-                  return <ToolCardEditorial key={tool.id} tool={tool} prefix={prefix} t={t} lang={lang} categoryLabel={subtitle} showPrice={false} identityLogoSize={56}
-                    exploreHref={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })} exploreState={exploreState} />;
+                  return <ToolMediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
+                    category={catLabel} reason={subtitle !== catLabel ? subtitle : undefined}
+                    renderLink={(className, content) => <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className={className}>{content}</Link>} />;
                 })}
-              </div>
+              </MediaCards>
               {hasMore && <div><Button onClick={() => setVisibleCount(c => c + TOOLS_PER_PAGE)}>{t("Afficher plus", "Show more")}</Button></div>}
             </CatalogSection>
           )}

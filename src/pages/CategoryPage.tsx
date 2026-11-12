@@ -10,12 +10,12 @@ import Chip, { Chips, chipLinkAttrs } from "@/ds/Chip/Chip";
 import Drawer, { DrawerTitle } from "@/ds/Drawer/Drawer";
 import Segmented from "@/ds/Segmented/Segmented";
 import Button, { TextButton, buttonAttrs } from "@/ds/Button/Button";
-import MediaCard, { MediaCards } from "@/ds/MediaCard/MediaCard";
+import { MediaCards } from "@/ds/MediaCard/MediaCard";
+import ToolMediaCard from "@/components/tool/ToolMediaCard";
 import { SheetSection } from "@/ds/ToolSheet/ToolSheet";
 import { ActiveFilter, ActiveFilters, CatalogSection, CatalogTitle, EmptyState, FilterBar, FiltersButton, FiltersFoot, FiltersPanel, LinkIndex, LinkRow, LinkRows } from "@/ds/Catalog/Catalog";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, removeNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
-import ToolCardImage from "@/components/tool/ToolCardImage";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import Breadcrumb from "@/components/Breadcrumb";
 import { GuideCardEditorial } from "@/components/GuideCardEditorial";
@@ -234,8 +234,7 @@ const CategoryPage = () => {
     // No category eyebrow: the page already is the category.
     const eyebrow = (lang === "en" ? entry?.eyebrowEn : entry?.eyebrowFr) || "";
     return (
-      <MediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
-        image={<ToolCardImage tool={tool} logoSize={56} />}
+      <ToolMediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
         category={eyebrow || undefined} badge={entry?.sponsored ? t("Sponsorisé", "Sponsored") as string : undefined} reason={pitch || undefined}
         renderLink={(className, content) => <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className={className}>{content}</Link>} />
     );
@@ -326,8 +325,7 @@ const CategoryPage = () => {
               )}
               <MediaCards label={t(`Outils ${catName}`, `${catNameEn} tools`) as string}>
                 {visible.map((tool) => (
-                  <MediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
-                    image={<ToolCardImage tool={tool} logoSize={56} />}
+                  <ToolMediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
                     reason={toolTagline(tool.slug || tool.id, lang) || undefined}
                     renderLink={(className, content) => <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className={className}>{content}</Link>} />
                 ))}

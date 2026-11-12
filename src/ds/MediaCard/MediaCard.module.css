@@ -85,7 +85,7 @@
   height: auto;
   margin: 0;
   border: 0;
-  filter: blur(var(--tt-ambient-blur)) saturate(1.8);
+  filter: blur(var(--tt-ambient-blur)) saturate(2.2);
   transform: scale(var(--tt-ambient-scale));
 }
 
@@ -113,10 +113,14 @@
 }
 
 /* The picture at its own ratio (a screenshot keeps all of it); a missing one falls back to the screenshot ratio. */
+
+/* One frame for every card of a row: the share-image ratio (1200 x 630) that nearly every screenshot of the
+   catalogue already has, so a screenshot shows whole and the row stays aligned. */
 .shot {
   position: relative;
   overflow: hidden;
-  min-height: 0;
+  flex: none;
+  aspect-ratio: 40 / 21;
   mask-image: linear-gradient(to bottom, black 40%, transparent 96%);
 }
 
@@ -133,7 +137,7 @@
 
 .shot.shot > :not(.tags, .ambient) {
   width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0;
   border: 0;
   border-radius: 0;
@@ -141,15 +145,12 @@
   background: none;
 }
 
-/* Nothing to measure yet (loading, or a logo panel): the screenshot ratio holds the place. */
-.shot.shot > :not(.tags, :has(img)) {
-  aspect-ratio: 40 / 21;
-}
-
 .shot img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
   transition: transform 600ms var(--tt-ease);
 }
 
@@ -161,8 +162,9 @@
 .ambient {
   display: grid;
   place-items: center;
-  aspect-ratio: 40 / 21;
+  height: 100%;
 }
+
 
 .shot .ambient > * {
   transform: scale(1.5);
@@ -173,30 +175,42 @@
   position: absolute;
   top: var(--inset);
   left: var(--inset);
-  right: calc(var(--inset) + 52px);
+  right: calc(var(--inset) + var(--tt-card-action) + var(--tt-space-2));
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--tt-space-1);
+  align-items: center;
+  gap: calc(var(--tt-space-1) * 1.5);
+  height: var(--tt-card-action);
+  min-width: 0;
 }
 
 .tag {
   display: inline-flex;
+  flex: 0 1 auto;
+  min-width: 0;
   align-items: center;
   gap: calc(var(--tt-space-1) * 1.5);
   max-width: 100%;
-  height: 24px;
+  height: 22px;
   overflow: hidden;
-  padding: 0 calc(var(--tt-space-1) * 2.5);
+  padding: 0 var(--tt-space-2);
   border-radius: var(--tt-r-pill);
   background: var(--tt-tag-glass);
   box-shadow: var(--tt-tag-glass-edge);
   color: var(--tt-tag-glass-ink);
-  font: var(--tt-tag-font);
-  font-size: var(--tt-count-small);
-  letter-spacing: var(--tt-tag-tracking);
+  font: var(--tt-tag-chip-font);
+  letter-spacing: var(--tt-tag-chip-tracking);
+  font-variant-numeric: tabular-nums;
   text-overflow: ellipsis;
   white-space: nowrap;
-  backdrop-filter: var(--tt-glass-filter);
+  backdrop-filter: var(--tt-tag-glass-filter);
+}
+
+
+/* A notice (« Sponsorisé »), not an attribute: light glass, ink text. */
+.tag[data-tone="notice"] {
+  background: var(--tt-glass-bg);
+  box-shadow: var(--tt-glass-edge);
+  color: var(--tt-ink);
 }
 
 .tag[data-tone="free"]::before {
@@ -210,39 +224,44 @@
 
 /* The caption, on the colour: logo and name on one line, the reason under it. */
 
-/* The caption: one inset with the tags and the card's edge; the name and its reason held tight (they are one
-   statement), the logo set apart beside the name. It tucks under the picture's fade by the same inset. */
+/* The caption is a fixed grid, so every card of a row reads the same:
+   two columns, the logo, then one text edge (hanging indent) for the name and its reason;
+   the logo sits on the name's first line; the name holds one line, the reason two, both reserved even when
+   empty, so captions share one height and never float. */
 .caption {
   position: relative;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: center;
+  grid-template-columns: var(--tt-caption-logo) minmax(0, 1fr);
+  grid-template-rows: var(--tt-caption-name) var(--tt-caption-reason);
+  align-items: start;
   gap: calc(var(--tt-space-1) * .5) calc(var(--tt-space-1) * 2.5);
   margin-top: calc(var(--tt-space-4) * -1);
   padding: var(--inset);
 }
 
-.name {
-  font: var(--tt-title-m-font);
-  letter-spacing: var(--tt-title-m-tracking);
-  text-wrap: balance;
+.caption > :first-child:not(.name) {
+  grid-row: 1 / span 2;
 }
 
-/* No logo in the caption (a card without a screenshot): one column, the name on the reason's edge. */
-.caption[data-bare] {
-  grid-template-columns: minmax(0, 1fr);
+.name {
+  overflow: hidden;
+  font: var(--tt-title-m-font);
+  letter-spacing: var(--tt-title-m-tracking);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  align-self: center;
 }
 
 .reason {
   display: -webkit-box;
-  grid-column: 1 / -1;
+  grid-column: 2;
   overflow: hidden;
   color: var(--tt-ink);
   font: var(--tt-note-font);
   letter-spacing: var(--tt-note-tracking);
-  opacity: .64;
+  opacity: .8;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
 }
 
 .slot[data-size="s"] .reason {
@@ -280,12 +299,12 @@
 .action {
   position: absolute;
   z-index: 2;
-  top: calc(var(--tt-space-1) * 2.5);
-  right: calc(var(--tt-space-1) * 2.5);
+  top: var(--tt-space-4);
+  right: var(--tt-space-4);
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: var(--tt-card-action);
+  height: var(--tt-card-action);
   padding: 0;
   border: 0;
   border-radius: var(--tt-r-round);

@@ -139,7 +139,20 @@
   padding: var(--tt-space-3) var(--tt-space-4) var(--tt-space-3) var(--tt-space-3);
   border-radius: var(--tt-r-card);
   background: var(--tt-bg);
-  box-shadow: var(--tt-hairline);
+  box-shadow: var(--tt-row-rest);
+  transition: box-shadow 700ms var(--tt-spring-card), transform 700ms var(--tt-spring-card);
+}
+
+/* The same quiet lift as the media card: a row is a card too. */
+.toolRow:hover {
+  box-shadow: var(--tt-row-lift);
+  transform: translateY(-1.5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toolRow:hover {
+    transform: none;
+  }
 }
 
 .toolMain {
