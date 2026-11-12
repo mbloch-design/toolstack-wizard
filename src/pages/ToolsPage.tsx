@@ -388,6 +388,20 @@ const ToolsPage = () => {
 
   // The catalogue on the system (11/11/2026, « mise à plat »): the page title, the needs as chips on a bar that turns
   // to glass once stuck, the filters in the side sheet, featured tools as media cards, shelves of tool rows.
+  // Every tool of the current view; under a need it gets its own title after « Les plus recherchés ».
+  const allTools = (
+              <MediaCards label={t("Tous les outils", "All tools") as string}>
+                {visible.map(tool => {
+                  const catObj = categoryById.get(tool.categoryId);
+                  const catLabel = catObj ? (lang === "en" ? stripLeadingEmoji(catObj.nameEn, catObj.id) : stripLeadingEmoji(catObj.name, catObj.id)) : undefined;
+                  const subtitle = toolTagline(tool.slug || tool.id, lang) || catLabel;
+                  return <ToolMediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
+                    category={catLabel} reason={subtitle !== catLabel ? subtitle : undefined}
+                    renderLink={(className, content) => <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className={className}>{content}</Link>} />;
+                })}
+              </MediaCards>
+  );
+
   return (
     <div className="tt-catalog-page" data-catalog="">
       <Page>
@@ -475,7 +489,7 @@ const ToolsPage = () => {
                 : <Button onClick={() => { setSearch(""); setPriceFilter("all"); setSearchParams(new URLSearchParams(), { replace: true }); }}>{t("Voir tout le catalogue", "See the whole catalogue")}</Button>} />
           ) : (
             <CatalogSection id="catalogue-results-title" title={titleInHeader ? <span className="sr-only">{resultsTitle}</span> : resultsTitle}
-              count={isFiltering || sort !== "popular" ? filtered.length : undefined}>
+              count={!titleInHeader && (isFiltering || sort !== "popular") ? filtered.length : undefined}>
               {activeFilterCount > 0 && (
                 <ActiveFilters label={t("Filtres actifs", "Active filters") as string}>
                   {priceFilter !== "all" && <ActiveFilter onRemove={() => applyPrice("all")} removeLabel={t("Retirer ce filtre", "Remove this filter") as string}>{priceFilter === "free" ? t("Plan gratuit", "Free plan") : t("Payant uniquement", "Paid only")}</ActiveFilter>}
@@ -489,16 +503,11 @@ const ToolsPage = () => {
                   <MediaCards label={t("Les plus recherchés", "Most searched") as string}>{needTop.map(renderPepite)}</MediaCards>
                 </CatalogSection>
               )}
-              <MediaCards label={t("Tous les outils", "All tools") as string}>
-                {visible.map(tool => {
-                  const catObj = categoryById.get(tool.categoryId);
-                  const catLabel = catObj ? (lang === "en" ? stripLeadingEmoji(catObj.nameEn, catObj.id) : stripLeadingEmoji(catObj.name, catObj.id)) : undefined;
-                  const subtitle = toolTagline(tool.slug || tool.id, lang) || catLabel;
-                  return <ToolMediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
-                    category={catLabel} reason={subtitle !== catLabel ? subtitle : undefined}
-                    renderLink={(className, content) => <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className={className}>{content}</Link>} />;
-                })}
-              </MediaCards>
+              {needTop.length > 0 && activeNeed ? (
+                <CatalogSection as="h3" id="tt-need-all-title" title={t("Tous les outils", "All tools")} count={filtered.length}>
+                  {allTools}
+                </CatalogSection>
+              ) : allTools}
               {hasMore && <div><Button onClick={() => setVisibleCount(c => c + TOOLS_PER_PAGE)}>{t("Afficher plus", "Show more")}</Button></div>}
             </CatalogSection>
           )}
