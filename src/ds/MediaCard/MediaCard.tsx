@@ -30,21 +30,23 @@ export type MediaCardProps = {
 export default function MediaCard({ lang, tool, image, category, price, badge, size = "l", reason, renderLink, add, localLogosOnly = false, dataTool }: MediaCardProps) {
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
   const content = <>
-    {image && <span className={styles.shot} data-tt-tilt="">{image}{badge && <span className={styles.badge}>{badge}</span>}</span>}
-    {/* One accent, the name. The logo hangs on its first line; the facts and the reason follow, quieter. */}
-    <span className={styles.id}>
-      <Logo tool={tool} size={image ? 24 : 40} localOnly={localLogosOnly} />
-      <span className={styles.name}>{tool.name}</span>
-    </span>
-    {(category || price || (!image && badge)) && <span className={styles.facts}>
-      {category && <span className={styles.fact}>{category}</span>}
-      {price && <span className={styles.fact} data-free={price.free ? "" : undefined}>{price.label}</span>}
-      {!image && badge && <span className={styles.fact}>{badge}</span>}
+    {image
+      ? <span className={styles.shot} data-tt-tilt="">{image}</span>
+      : <span className={styles.ambient} aria-hidden="true"><Logo tool={tool} size={40} localOnly={localLogosOnly} /><Logo tool={tool} size={40} localOnly={localLogosOnly} /></span>}
+    <span className={styles.veil} aria-hidden="true" />
+    {(category || badge || price) && <span className={styles.tags}>
+      {category && <span className={styles.tag}>{category}</span>}
+      {price && <span className={styles.tag} data-tone={price.free ? "free" : undefined}>{price.label}</span>}
+      {badge && <span className={styles.tag}>{badge}</span>}
     </span>}
-    {reason && <span className={styles.reason}>{reason}</span>}
+    <span className={styles.caption}>
+      {image && <span className={styles.top}><Logo tool={tool} size={32} localOnly={localLogosOnly} /></span>}
+      <span className={styles.name}>{tool.name}</span>
+      {reason && <span className={styles.reason}>{reason}</span>}
+    </span>
   </>;
   return (
-    <li className={styles.slot} data-size={size} data-bare={image ? undefined : ""} data-discovery-tool={dataTool}>
+    <li className={styles.slot} data-size={size} data-discovery-tool={dataTool}>
       {renderLink(styles.card, content)}
       {add && <button type="button" className={styles.action} data-media-add="" disabled={add.state !== "idle" || add.disabled} aria-busy={add.state === "pending" || undefined}
         aria-label={add.state === "pending" ? t(`Ajout de ${tool.name} en cours`, `Adding ${tool.name}`) : add.state === "added" ? t(`${tool.name} ajouté à ma stack`, `${tool.name} added to my stack`) : t(`Ajouter ${tool.name} à ma stack`, `Add ${tool.name} to my stack`)}

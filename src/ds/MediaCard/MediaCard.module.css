@@ -1,12 +1,11 @@
-/* The media card, as validated (.tt-mediacard): picture, tool, reason; the add button on the picture. */
-
-.label { composes: label from "../atoms.module.css"; }
-.note { composes: note from "../atoms.module.css"; }
+/* The media card (12/11/2026): the picture is the card. A progressive blur rises from its foot and the
+   text rests on it, frameless; the tags float as glass pills at the top. Without a screenshot, the tool's own
+   logo, enlarged and blurred, becomes the colour field. The site's signature: light, glass, one big name. */
 
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: var(--tt-space-6) var(--tt-space-4);
+  gap: var(--tt-space-4);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -14,7 +13,7 @@
 
 .cards[data-size="s"] {
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: var(--tt-space-5) var(--tt-space-3);
+  gap: var(--tt-space-3);
 }
 
 .slot {
@@ -22,33 +21,31 @@
   min-width: 0;
 }
 
-/* A column that fills the row's height, so the facts line up at the foot across a row of cards. */
 .card {
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--tt-space-1) * 2.5);
-  height: 100%;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--tt-r-card);
+  background: var(--tt-tile);
   color: var(--tt-ink);
   text-decoration: none;
+  isolation: isolate;
 }
 
 .card:focus-visible {
-  border-radius: var(--tt-r-card);
   outline: var(--tt-focus-ring);
   outline-offset: var(--tt-focus-offset);
 }
 
+/* The picture, full bleed; a screenshot keeps its top, where its headline is. */
 .shot {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 16 / 10;
-  border-radius: var(--tt-r-card);
-  background: var(--tt-tile);
+  position: absolute;
+  inset: 0;
+  z-index: -2;
 }
 
-/* Whatever the picture's wrapper, it fills the frame exactly: no inherited margin, border or ratio
-   (the legacy .tc-image bleeds out of a padded card with negative margins). Doubled class to win over it. */
-.shot.shot > :not(.badge) {
+.shot.shot > * {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -62,71 +59,110 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 500ms var(--tt-ease);
+  object-position: top center;
+  transition: transform 600ms var(--tt-ease);
 }
 
 .card:hover .shot img {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
-.id {
+/* No screenshot: the logo, enlarged and blurred, is the colour field; the crisp logo sits in its light. */
+.ambient {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: start;
-  column-gap: var(--tt-space-2);
-  margin-top: var(--tt-space-1);
-  min-width: 0;
+  grid-template-rows: 3fr 2fr;
+  place-items: center;
+  background: var(--tt-tile);
 }
 
-/* The 24 px logo sits on the name's first line (line box 20.8 px): centred on it, never alone on a line. */
-.id > :first-child {
-  margin-top: var(--tt-logo-nudge);
+/* The crisp logo, larger, in the light of its blur (the upper part, above the caption). */
+.ambient > :last-child {
+  transform: scale(1.5);
 }
 
-.name {
-  font: var(--tt-label-font);
-  letter-spacing: var(--tt-label-tracking);
-  text-wrap: balance;
+/* Only the mark is blurred, not its white tile: enlarged, it floods the card with the tool's own colours. */
+.ambient.ambient > :first-child {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  background: none;
+  box-shadow: none;
+  filter: blur(var(--tt-ambient-blur)) saturate(1.8);
+  opacity: .85;
+  transform: translateX(-50%) scale(var(--tt-ambient-scale));
 }
 
-/* What it is · what it costs: one quiet line, cut with an ellipsis rather than wrapped. */
-.facts {
+/* The progressive blur: a glass layer whose blur fades in towards the foot, so the picture melts into the text. */
+.veil {
+  position: absolute;
+  inset: 45% 0 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, transparent, var(--tt-veil-tint) 70%);
+  backdrop-filter: var(--tt-glass-filter);
+  mask-image: linear-gradient(to bottom, transparent, black 45%);
+}
+
+/* The tags, floating at the top: glass pills, the right corner left to the add button. */
+.tags {
+  position: absolute;
+  top: var(--tt-space-3);
+  left: var(--tt-space-3);
+  right: calc(var(--tt-space-3) + 52px);
   display: flex;
-  gap: var(--tt-space-2);
-  margin-top: calc(var(--tt-space-1) * -1.5);
-  overflow: hidden;
-  color: var(--tt-meta);
-  font: var(--tt-note-font);
-  letter-spacing: var(--tt-note-tracking);
-  white-space: nowrap;
+  flex-wrap: wrap;
+  gap: var(--tt-space-1);
 }
 
-.fact {
+.tag {
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: calc(var(--tt-space-1) * 1.25) calc(var(--tt-space-1) * 2.5);
+  border-radius: var(--tt-r-round);
+  background: var(--tt-glass-bg);
+  box-shadow: var(--tt-glass-edge);
+  color: var(--tt-ink);
+  font: var(--tt-tag-font);
+  font-size: var(--tt-count-small);
+  letter-spacing: var(--tt-tag-tracking);
+  white-space: nowrap;
+  backdrop-filter: var(--tt-glass-filter);
 }
 
-.fact:first-child {
-  flex: 0 1 auto;
-}
-
-.fact + .fact {
-  flex: none;
-}
-
-.fact + .fact::before {
-  margin-right: var(--tt-space-2);
-  content: "·";
-}
-
-.fact[data-free] {
+.tag[data-tone="free"] {
   color: var(--tt-gain-ink);
+}
+
+/* The caption, on the blur: logo and price on one line, the name large, the reason in the reading face. */
+.caption {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  gap: var(--tt-space-1);
+  padding: var(--tt-space-4);
+}
+
+.top {
+  display: flex;
+  margin-bottom: var(--tt-space-1);
+}
+
+
+.name {
+  overflow: hidden;
+  font: var(--tt-title-m-font);
+  letter-spacing: var(--tt-title-m-tracking);
+  text-overflow: ellipsis;
+  text-wrap: balance;
 }
 
 .reason {
   display: -webkit-box;
   overflow: hidden;
-  color: var(--tt-ink);
+  color: var(--tt-meta);
   font: var(--tt-note-font);
   letter-spacing: var(--tt-note-tracking);
   -webkit-box-orient: vertical;
@@ -137,21 +173,13 @@
   -webkit-line-clamp: 1;
 }
 
-/* The exceptional qualifier, on the picture: a small glass pill, top left (the add button holds the right). */
-.badge {
-  position: absolute;
-  z-index: 2;
-  top: calc(var(--tt-space-1) * 2.5);
-  left: calc(var(--tt-space-1) * 2.5);
-  padding: var(--tt-space-1) var(--tt-space-2);
-  border-radius: var(--tt-r-round);
-  background: var(--tt-glass-bg);
-  box-shadow: var(--tt-glass-edge);
-  color: var(--tt-ink);
-  font: var(--tt-tag-font);
-  font-size: var(--tt-count-small);
-  letter-spacing: var(--tt-tag-tracking);
-  backdrop-filter: var(--tt-glass-filter);
+.slot[data-size="s"] .name {
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+}
+
+.slot[data-size="s"] .caption {
+  padding: var(--tt-space-3);
 }
 
 /* Above the picture: a screenshot may set its own stacking. */
@@ -167,8 +195,9 @@
   padding: 0;
   border: 0;
   border-radius: var(--tt-r-round);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-logo-shadow);
+  background: var(--tt-glass-bg);
+  box-shadow: var(--tt-glass-shadow);
+  backdrop-filter: var(--tt-glass-filter);
   color: var(--tt-ink);
   cursor: pointer;
   transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
@@ -200,31 +229,4 @@
   stroke-width: var(--tt-icon-stroke);
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-/* Without a picture: the tool on a tile, the same margin all round. Logo, then name, facts, reason in one
-   tight column from the top; equal heights in a row come from the grid, never from pushing text down. */
-.slot[data-bare] .card {
-  gap: var(--tt-space-1);
-  padding: var(--tt-space-5);
-  border-radius: var(--tt-r-card);
-  background: var(--tt-tile);
-}
-
-.slot[data-bare] .id {
-  grid-template-columns: minmax(0, 1fr);
-  row-gap: var(--tt-space-3);
-  margin-top: 0;
-}
-
-.slot[data-bare] .id > :first-child {
-  margin-top: 0;
-}
-
-.slot[data-bare] .reason {
-  margin-top: var(--tt-space-1);
-}
-
-.slot[data-bare][data-size="s"] .card {
-  padding: var(--tt-space-4);
 }

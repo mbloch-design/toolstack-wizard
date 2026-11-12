@@ -18,7 +18,6 @@ type Pair = [string, string];
 const pick = (lang: Lang, pair: Pair) => (lang === "fr" ? pair[0] : pair[1]);
 
 const shot = (file: string, alt: string, w = 1000, h = 525) => <img src={`/og-screenshots/${file}`} alt={alt} width={w} height={h} />;
-const tileLogo = (slug: string, name: string) => <span style={{ display: "grid", placeItems: "center", width: "100%", height: "100%" }}><Logo tool={{ name, slug }} size={40} localOnly /></span>;
 const loading = <span aria-hidden="true" style={{ display: "block", width: "100%", height: "100%", background: "var(--tt-skeleton)" }} />;
 
 type Card = { name: string; slug: string; image?: ReactNode; category?: Pair; price?: Pair; badge?: Pair; reason?: Pair; add?: "idle" | "pending" | "added" };
@@ -36,11 +35,11 @@ const SPONSORED: Pair = ["Sponsorisé", "Sponsored"];
 const WITH_IMAGE: Card[] = [
   { name: "Aloware", slug: "aloware", image: shot("aloware.jpg", "Aloware"), category: ["Téléphonie", "Phone"], price: PRICE, reason: ["Capture large, le cas courant.", "Wide screenshot, the usual case."] },
   { name: "Zed", slug: "zed", image: shot("zed.webp", "Zed", 1920, 1357), category: ["Éditeur de code", "Code editor"], price: FREE, reason: ["Capture haute : recadrée, jamais de bande.", "Tall screenshot: cropped, never a band."] },
-  { name: "Notion", slug: "notion", image: tileLogo("notion", "Notion"), category: ["Notes", "Notes"], reason: ["Pas de capture : le logo au centre du cadre.", "No screenshot: the logo in the frame."] },
+  { name: "Notion", slug: "notion", category: ["Notes", "Notes"], reason: ["Pas de capture : le logo flouté devient le fond.", "No screenshot: the blurred logo becomes the backdrop."] },
   { name: "Airtable", slug: "airtable", image: loading, category: ["Bases de données", "Databases"], reason: ["En chargement.", "Loading."] },
 ];
 const LOGO_ONLY: Card[] = [
-  { name: "Notion", slug: "notion", category: ["Notes", "Notes"], price: FREE, reason: ["Sans image : l’outil seul, logo plus grand, sur une tuile.", "No picture: the tool alone, a larger logo, on a tile."] },
+  { name: "Notion", slug: "notion", category: ["Notes", "Notes"], price: FREE, reason: ["Sans image : le logo, agrandi et flouté, colore la carte.", "No picture: the logo, enlarged and blurred, colours the card."] },
   { name: "Figma", slug: "figma", category: ["Design", "Design"], price: PRICE },
   { name: "Loom", slug: "loom", reason: ["Nom et raison, sans étiquette.", "Name and reason, no tag."] },
   { name: "Make", slug: "make" },
@@ -53,9 +52,9 @@ const TEXTS: Card[] = [
     reason: ["Le cas complet : un nom long, une catégorie longue coupée proprement, le prix toujours visible, et cette raison qui s’arrête à deux lignes.", "The full case: a long name, a long category cut cleanly, the price always visible, and this reason stopping at two lines."] },
 ];
 const ADD: Card[] = [
-  { name: "Loom", slug: "loom", image: tileLogo("loom", "Loom"), category: ["Vidéo", "Video"], reason: ["Pas encore dans ma stack.", "Not in my stack yet."], add: "idle" },
-  { name: "Make", slug: "make", image: tileLogo("make", "Make"), category: ["Automatisation", "Automation"], reason: ["Ajout en cours.", "Being added."], add: "pending" },
-  { name: "Airtable", slug: "airtable", image: tileLogo("airtable", "Airtable"), category: ["Bases de données", "Databases"], reason: ["Déjà dans ma stack.", "Already in my stack."], add: "added" },
+  { name: "Loom", slug: "loom", category: ["Vidéo", "Video"], reason: ["Pas encore dans ma stack.", "Not in my stack yet."], add: "idle" },
+  { name: "Make", slug: "make", category: ["Automatisation", "Automation"], reason: ["Ajout en cours.", "Being added."], add: "pending" },
+  { name: "Airtable", slug: "airtable", category: ["Bases de données", "Databases"], reason: ["Déjà dans ma stack.", "Already in my stack."], add: "added" },
 ];
 
 const block = (lang: Lang, id: string, title: Pair, note: Pair, cards: Card[], size: "l" | "s" = "l") => <Section labelledBy={id}>
@@ -68,7 +67,7 @@ const system = (lang: Lang) => <div style={{ display: "grid", gap: 48 }}>
   {block(lang, "c-s", ["Petite, avec image", "Small, with a picture"], ["Rails et colonnes : Accueil, Explorer, À découvrir. La raison tient une ligne.", "Rails and columns: Home, Explorer, Discover. The reason holds one line."], WITH_IMAGE, "s")}
   {block(lang, "c-bare", ["Grande, logo seul", "Large, logo only"], ["Sans image : Recherche, Comparatifs, alternatives d’une fiche.", "No picture: Search, Comparisons, a tool's alternatives."], LOGO_ONLY)}
   {block(lang, "c-bare-s", ["Petite, logo seul", "Small, logo only"], ["La plus dense : listes de suggestions.", "The densest: suggestion lists."], LOGO_ONLY, "s")}
-  {block(lang, "c-txt", ["Les textes", "The text"], ["Un seul accent, le nom. Dessous, une ligne discrète : ce qu’est l’outil · son prix. Puis la raison, deux lignes au plus. Le badge exceptionnel se pose sur l’image.", "One accent, the name. Below, one quiet line: what the tool is · its price. Then the reason, two lines at most. The exceptional badge sits on the picture."], TEXTS)}
+  {block(lang, "c-txt", ["Les textes", "The text"], ["L’image est la carte. En haut, les étiquettes en verre : catégorie, prix, sponsorisé. En bas, sur le flou : logo, le nom en grand, la raison.", "The picture is the card. At the top, glass tags: category, price, sponsored. At the foot, on the blur: logo, the name large, the reason."], TEXTS)}
   {block(lang, "c-add", ["L’ajout à ma stack", "Adding to my stack"], ["Le bouton sur l’image : à ajouter, en cours, ajouté.", "The button on the picture: to add, adding, added."], ADD)}
 </div>;
 
