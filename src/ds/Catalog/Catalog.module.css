@@ -74,6 +74,10 @@
   --tt-hairline-ink: var(--tt-smoke-hairline-strong);
   --tt-bar-arrow-hover: var(--tt-smoke-hover);
 
+  /* The colours swap while the bar is still invisible (opacity 0 at the start of its rise): no chip may fade
+     from white to dark on its own, that was the flash. */
+  --tt-dur-state: 0s;
+
   position: fixed;
   bottom: var(--tt-bar-float-bottom);
   left: var(--bar-left);
