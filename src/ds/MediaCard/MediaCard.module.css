@@ -24,6 +24,8 @@
 /* The card is the picture's colour: the same picture, heavily blurred and saturated, fills the whole card;
    the crisp picture sits on top at its own ratio, never cropped; the text rests on the colour below it. */
 .card {
+  --inset: var(--tt-space-4);
+
   position: relative;
   display: flex;
   flex-direction: column;
@@ -138,9 +140,9 @@
 /* Tags on the picture: dark glass, white text, the classic code that reads on any screenshot. */
 .tags {
   position: absolute;
-  top: var(--tt-space-3);
-  left: var(--tt-space-3);
-  right: calc(var(--tt-space-3) + 52px);
+  top: var(--inset);
+  left: var(--inset);
+  right: calc(var(--inset) + 52px);
   display: flex;
   flex-wrap: wrap;
   gap: var(--tt-space-1);
@@ -177,22 +179,27 @@
 
 /* The caption, on the colour: logo and name on one line, the reason under it. */
 
-/* The caption tucks under the picture's fade: no hard edge between picture and colour. */
+/* The caption: one inset with the tags and the card's edge; the name and its reason held tight (they are one
+   statement), the logo set apart beside the name. It tucks under the picture's fade by the same inset. */
 .caption {
   position: relative;
-  margin-top: calc(var(--tt-space-6) * -1);
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: var(--tt-space-1) var(--tt-space-3);
-  padding: var(--tt-space-4);
+  gap: calc(var(--tt-space-1) * .5) calc(var(--tt-space-1) * 2.5);
+  margin-top: calc(var(--tt-space-4) * -1);
+  padding: var(--inset);
 }
 
 .name {
-  grid-column: auto / -1;
   font: var(--tt-title-m-font);
   letter-spacing: var(--tt-title-m-tracking);
   text-wrap: balance;
+}
+
+/* No logo in the caption (a card without a screenshot): one column, the name on the reason's edge. */
+.caption[data-bare] {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .reason {
@@ -202,7 +209,7 @@
   color: var(--tt-ink);
   font: var(--tt-note-font);
   letter-spacing: var(--tt-note-tracking);
-  opacity: .72;
+  opacity: .64;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
@@ -216,8 +223,26 @@
   letter-spacing: var(--tt-label-tracking);
 }
 
+.slot[data-size="s"] .card {
+  --inset: var(--tt-space-3);
+}
+
+/* Small: one tag only (what the tool is), smaller; the crisp logo back to its own size. */
+.slot[data-size="s"] .tag {
+  height: 20px;
+  padding: 0 var(--tt-space-2);
+}
+
+.slot[data-size="s"] .tag:not(:first-child) {
+  display: none;
+}
+
 .slot[data-size="s"] .caption {
-  padding: var(--tt-space-3);
+  margin-top: calc(var(--tt-space-3) * -1);
+}
+
+.slot[data-size="s"] .ambient > * {
+  transform: none;
 }
 
 /* Above the picture: a screenshot may set its own stacking. */

@@ -40,7 +40,7 @@ export default function MediaCard({ lang, tool, image, category, price, badge, s
         {badge && <span className={styles.tag}>{badge}</span>}
       </span>}
     </span>
-    <span className={styles.caption}>
+    <span className={styles.caption} data-bare={image ? undefined : ""}>
       {image && <Logo tool={tool} size={32} localOnly={localLogosOnly} />}
       <span className={styles.name}>{tool.name}</span>
       {reason && <span className={styles.reason}>{reason}</span>}
