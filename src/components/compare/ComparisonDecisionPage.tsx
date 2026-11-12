@@ -47,7 +47,9 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
   const visual = comparisonVisuals[slugPair];
   const reviewed = newGuide || pilotComparisonGuides[slugPair]?.[lang] || (affiliateComparison ? activeCampaignKlaviyoGuides[lang] : slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined);
   const curated = reviewed || (slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined);
-  const scenarios = reviewed ? (affiliateComparison ? [reviewed.scenarios[1], reviewed.scenarios[0]] : reviewed.scenarios).map(s => ({ choice: s.choice, reason: s.reason, limits: [s.limit] })) : toolsForEditorial();
+  const scenarios = reviewed
+    ? (affiliateComparison ? [reviewed.scenarios[1], reviewed.scenarios[0]] : reviewed.scenarios).map(s => ({ situation: s.situation, choice: s.choice, reason: s.reason, limits: [s.limit] }))
+    : toolsForEditorial().map(s => ({ ...s, situation: '' }));
   function toolsForEditorial() {
     return [
       { choice: pick(content.verdictCardTitleA || `Choisir ${toolA.name}`, content.verdictCardTitleAEn || `Choose ${toolA.name}`), reason: pick(content.verdictCardTextA || content.quickVerdictA, content.verdictCardTextAEn || content.quickVerdictAEn), limits: content.limitsA.length ? pickList(content.limitsA, content.limitsAEn) : content.avoidAIfList.map(value => lang === 'fr' ? value : translateBattleCopy(value)) },
@@ -117,6 +119,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
         })()}
         <div className="cp-glance-grid">
           {scenarios.slice(0, 2).map((s, i) => <article className="cp-glance-card" key={s.choice}>
+            {s.situation && <p className="cp-glance-situation">{s.situation}</p>}
             <div className="cp-glance-head"><ToolLogo tool={tools[i]} size={40} className="cp-glance-icon" /><h3>{s.choice}</h3></div>
             <p className="cp-glance-reason">{s.reason}</p>
             {s.limits.length > 0 && <div className="cp-glance-watch"><h4>{t('À savoir', 'Watch out')}</h4><ul>{s.limits.slice(0, 2).map(limit => <li key={limit}>{limit}</li>)}</ul></div>}

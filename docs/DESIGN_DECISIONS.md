@@ -79,6 +79,12 @@ Ce que la page doit toujours dire, quel que soit son dessin (testé) :
 - l'économie déjà faite, en mots ;
 - le nom de chaque outil (inventaire).
 
+## Comparatifs éditoriaux
+
+| Date | Décision | Règle | Où |
+|---|---|---|---|
+| 12/11/2026 | « le champ `situation` des scénarios n'est jamais affiché : rends-le visible dans la carte de scénario pour qu'on comprenne à quel cas d'usage la recommandation répond » | La carte « Notre avis » affiche la situation du scénario au-dessus du choix, en 12 px muted : le cas d'usage d'abord, l'outil ensuite | `ComparisonDecisionPage`, `.cp-glance-situation` |
+
 ## À arbitrer
 
 Rien en attente.

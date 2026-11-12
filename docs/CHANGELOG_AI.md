@@ -1,3 +1,10 @@
+## 2026-11-12 · SEO · comparatifs : la situation du scénario est rendue
+
+- Le contrat `ComparisonDecisionGuide` porte un champ `situation` (« Vous documentez des processus », « Vous voulez vendre vite, sans technique ») que la carte « Notre avis » ignorait : la page nommait l'outil sans dire à quel cas d'usage la recommandation répondait.
+- `ComparisonDecisionPage` transmet et affiche désormais la situation au-dessus du choix, dans `.cp-glance-situation` (12 px, muted, Inter Tight 600). Les scénarios génériques, qui n'en ont pas, ne rendent rien.
+- Vérification visuelle au navigateur sur les trois pilotes FR (DeepSeek/ChatGPT, Notion/Trello, Shopify/WooCommerce) et sur DeepSeek/ChatGPT en EN : les deux cartes affichent chacune leur situation, sans débordement ni changement de hiérarchie.
+- Effet sur la mesure de l'action 9 : 1 490 / 1 415 / 1 325 mots de corps en FR, 1 284 / 1 261 / 1 238 en EN. Build production PASS, validation SEO PASS (10 726 URLs).
+
 ## 2026-11-12 · SEO · comparatifs : trois pilotes enrichis au-delà de 1 200 mots
 
 - Action 9, premier lot. Trois comparatifs passent du contenu générique (`buildFallbackContent`) à un guide de décision complet, en FR et EN : `deepseek-vs-chatgpt`, `notion-vs-trello`, `shopify-vs-woocommerce`.
