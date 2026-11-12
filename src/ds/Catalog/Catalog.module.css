@@ -64,9 +64,19 @@
   transition: background-color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease, top var(--tt-dur-state) var(--tt-ease);
 }
 
+/* Stuck, the bar owns its place: smoked glass, the family of the cards' tags. It redefines the system's
+   colours locally, so the chips, the arrows and the filters button invert on their own: white text, a light
+   hairline, the current chip in white. */
 .bar[data-stuck] {
-  background: var(--tt-bar-glass);
+  --tt-bg: var(--tt-smoke);
+  --tt-ink: var(--tt-smoke-ink);
+  --tt-hairline: var(--tt-smoke-hairline);
+  --tt-hairline-ink: var(--tt-smoke-hairline-strong);
+  --tt-bar-arrow-hover: var(--tt-smoke-hover);
+
+  background: var(--tt-smoke-glass);
   box-shadow: var(--tt-bar-glass-shadow);
+  color: var(--tt-smoke-ink);
   backdrop-filter: var(--tt-glass-filter);
 }
 
@@ -88,15 +98,19 @@
   overflow-x: auto;
   scroll-padding-inline: var(--tt-space-8);
   scrollbar-width: none;
-  mask-image: linear-gradient(to right, transparent 0, #000 var(--tt-rail-fade-start, 0%), #000 calc(100% - var(--tt-rail-fade-end, 0%)), transparent 100%);
+
+  /* The fade clears fully under the arrow (its 32 px plus a breath), so no chip is ever cut beneath it. */
+  mask-image: linear-gradient(to right, transparent 0, transparent var(--tt-rail-clear-start, 0%), #000 var(--tt-rail-fade-start, 0%), #000 calc(100% - var(--tt-rail-fade-end, 0%)), transparent calc(100% - var(--tt-rail-clear-end, 0%)), transparent 100%);
 }
 
 .railWrap:not([data-start]) {
-  --tt-rail-fade-start: var(--tt-space-12);
+  --tt-rail-clear-start: var(--tt-space-10);
+  --tt-rail-fade-start: var(--tt-space-16);
 }
 
 .railWrap:not([data-end]) {
-  --tt-rail-fade-end: var(--tt-space-12);
+  --tt-rail-clear-end: var(--tt-space-10);
+  --tt-rail-fade-end: var(--tt-space-16);
 }
 
 .rail::-webkit-scrollbar {
@@ -119,10 +133,14 @@
   padding: 0;
   border: 0;
   border-radius: var(--tt-r-round);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-raised);
+  background: transparent;
   color: var(--tt-ink);
   cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease;
+}
+
+.railArrow:hover {
+  background: var(--tt-bar-arrow-hover);
 }
 
 .railArrow[data-side="start"] {
