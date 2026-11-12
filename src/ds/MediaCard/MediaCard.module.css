@@ -37,13 +37,20 @@
   color: var(--tt-ink);
   text-decoration: none;
   isolation: isolate;
-  transition: box-shadow 400ms var(--tt-ease), transform 400ms var(--tt-ease);
+  transition: box-shadow 520ms var(--tt-spring-card), transform 520ms var(--tt-spring-card);
 }
 
-/* Hover: the card lifts, softly (a longer, lighter shadow), never an ink outline. */
+/* Real physics, no 3D: the card rises off the page on a spring (a slight overshoot, then rest); its shadow
+   moves down and spreads as it would under a light from above. A press pushes it back onto the page, fast. */
 .card:hover {
   box-shadow: var(--tt-card-lift);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+}
+
+.card:active {
+  box-shadow: var(--tt-raised);
+  transform: translateY(0) scale(.985);
+  transition-duration: 120ms;
 }
 
 .card:focus-visible {
@@ -297,7 +304,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card:hover {
+  .card:hover,
+  .card:active {
     transform: none;
   }
 }

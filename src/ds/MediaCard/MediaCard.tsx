@@ -32,7 +32,7 @@ export default function MediaCard({ lang, tool, image, category, price, badge, s
   const mark = <Logo tool={tool} size={40} localOnly={localLogosOnly} />;
   const content = <>
     <span className={styles.glow} data-mark={image ? undefined : ""} aria-hidden="true">{image ?? mark}</span>
-    <span className={styles.shot} data-tt-tilt="">
+    <span className={styles.shot}>
       {image ?? <span className={styles.ambient}>{mark}</span>}
       {(category || badge || price) && <span className={styles.tags}>
         {category && <span className={styles.tag}>{category}</span>}
