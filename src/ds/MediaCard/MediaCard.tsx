@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import Logo from "../Logo/Logo";
-import Tag from "../Tag/Tag";
 import type { LogoTool } from "@/lib/useToolLogoSource";
 import styles from "./MediaCard.module.css";
 
@@ -9,10 +8,12 @@ export type MediaCardProps = {
   tool: LogoTool;
   /** The tool's picture (the page passes its screenshot component). Without it, the card is the tool alone on a raised tile. */
   image?: ReactNode;
-  /** Shown as the first tag (never inline after the name: it would orphan its separator when the name wraps). */
+  /** What the tool is. Opens the quiet line of facts under the name. */
   category?: string;
-  /** Short facts after the category: price, free plan, sponsored. The system's Tag. */
-  tags?: ReactNode;
+  /** The price, already worded (« Dès 10 €/mois », « Gratuit »). Closes the line of facts; free reads in green. */
+  price?: { label: string; free?: boolean };
+  /** The one exceptional qualifier (« Sponsorisé »): a glass pill on the picture, outside the text. */
+  badge?: string;
   /** l: the catalogue's card. s: a denser card for rails and side columns (the reason holds one line). */
   size?: "l" | "s";
   reason?: string;
@@ -26,12 +27,20 @@ export type MediaCardProps = {
 };
 
 /** A tool to discover: its picture, the tool, why it is here; the add button sits on the picture. */
-export default function MediaCard({ lang, tool, image, category, tags, size = "l", reason, renderLink, add, localLogosOnly = false, dataTool }: MediaCardProps) {
+export default function MediaCard({ lang, tool, image, category, price, badge, size = "l", reason, renderLink, add, localLogosOnly = false, dataTool }: MediaCardProps) {
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
   const content = <>
-    {image && <span className={styles.shot} data-tt-tilt="">{image}</span>}
-    <span className={styles.id}><Logo tool={tool} size={image ? 24 : 40} localOnly={localLogosOnly} /><span className={styles.label}>{tool.name}</span></span>
-    {(category || tags) && <span className={styles.tags}>{category && <Tag on={image ? "card" : "tile"}>{category}</Tag>}{tags}</span>}
+    {image && <span className={styles.shot} data-tt-tilt="">{image}{badge && <span className={styles.badge}>{badge}</span>}</span>}
+    {/* One accent, the name. The logo hangs on its first line; the facts and the reason follow, quieter. */}
+    <span className={styles.id}>
+      <Logo tool={tool} size={image ? 24 : 40} localOnly={localLogosOnly} />
+      <span className={styles.name}>{tool.name}</span>
+    </span>
+    {(category || price || (!image && badge)) && <span className={styles.facts}>
+      {category && <span className={styles.fact}>{category}</span>}
+      {price && <span className={styles.fact} data-free={price.free ? "" : undefined}>{price.label}</span>}
+      {!image && badge && <span className={styles.fact}>{badge}</span>}
+    </span>}
     {reason && <span className={styles.reason}>{reason}</span>}
   </>;
   return (

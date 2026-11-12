@@ -236,7 +236,7 @@ const CategoryPage = () => {
     return (
       <MediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
         image={<ToolCardImage tool={tool} logoSize={56} />}
-        category={[eyebrow, entry?.sponsored ? t("Sponsorisé", "Sponsored") : ""].filter(Boolean).join(" · ") || undefined} reason={pitch || undefined}
+        category={eyebrow || undefined} badge={entry?.sponsored ? t("Sponsorisé", "Sponsored") as string : undefined} reason={pitch || undefined}
         renderLink={(className, content) => <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className={className}>{content}</Link>} />
     );
   }

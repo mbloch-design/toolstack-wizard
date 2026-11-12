@@ -22,9 +22,12 @@
   min-width: 0;
 }
 
+/* A column that fills the row's height, so the facts line up at the foot across a row of cards. */
 .card {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: calc(var(--tt-space-1) * 2.5);
+  height: 100%;
   color: var(--tt-ink);
   text-decoration: none;
 }
@@ -36,6 +39,7 @@
 }
 
 .shot {
+  position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 10;
   border-radius: var(--tt-r-card);
@@ -44,7 +48,7 @@
 
 /* Whatever the picture's wrapper, it fills the frame exactly: no inherited margin, border or ratio
    (the legacy .tc-image bleeds out of a padded card with negative margins). Doubled class to win over it. */
-.shot.shot > * {
+.shot.shot > :not(.badge) {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -65,18 +69,66 @@
   transform: scale(1.03);
 }
 
-/* The text, in three steps: who (name), what (tags), why (the reason, quieter, two lines at most). */
-.tags {
+.id {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  column-gap: var(--tt-space-2);
+  margin-top: var(--tt-space-1);
+  min-width: 0;
+}
+
+/* The 24 px logo sits on the name's first line (line box 20.8 px): centred on it, never alone on a line. */
+.id > :first-child {
+  margin-top: var(--tt-logo-nudge);
+}
+
+.name {
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  text-wrap: balance;
+}
+
+/* What it is · what it costs: one quiet line, cut with an ellipsis rather than wrapped. */
+.facts {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--tt-space-1);
+  gap: var(--tt-space-2);
+  margin-top: calc(var(--tt-space-1) * -1.5);
+  overflow: hidden;
+  color: var(--tt-meta);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+  white-space: nowrap;
+}
+
+.fact {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fact:first-child {
+  flex: 0 1 auto;
+}
+
+.fact + .fact {
+  flex: none;
+}
+
+.fact + .fact::before {
+  margin-right: var(--tt-space-2);
+  content: "·";
+}
+
+.fact[data-free] {
+  color: var(--tt-gain-ink);
 }
 
 .reason {
-  composes: note from "../atoms.module.css";
   display: -webkit-box;
   overflow: hidden;
-  color: var(--tt-meta);
+  color: var(--tt-ink);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
@@ -85,21 +137,21 @@
   -webkit-line-clamp: 1;
 }
 
-/* Without a picture: the tool alone on a raised tile, its logo larger. */
-.slot[data-bare] .card {
-  align-content: start;
-  height: 100%;
-  padding: var(--tt-space-4);
-  border-radius: var(--tt-r-card);
-  background: var(--tt-tile);
-}
-
-.id {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--tt-space-1) var(--tt-space-2);
-  min-width: 0;
+/* The exceptional qualifier, on the picture: a small glass pill, top left (the add button holds the right). */
+.badge {
+  position: absolute;
+  z-index: 2;
+  top: calc(var(--tt-space-1) * 2.5);
+  left: calc(var(--tt-space-1) * 2.5);
+  padding: var(--tt-space-1) var(--tt-space-2);
+  border-radius: var(--tt-r-round);
+  background: var(--tt-glass-bg);
+  box-shadow: var(--tt-glass-edge);
+  color: var(--tt-ink);
+  font: var(--tt-tag-font);
+  font-size: var(--tt-count-small);
+  letter-spacing: var(--tt-tag-tracking);
+  backdrop-filter: var(--tt-glass-filter);
 }
 
 /* Above the picture: a screenshot may set its own stacking. */
@@ -148,4 +200,31 @@
   stroke-width: var(--tt-icon-stroke);
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* Without a picture: the tool on a tile, the same margin all round. Logo, then name, facts, reason in one
+   tight column from the top; equal heights in a row come from the grid, never from pushing text down. */
+.slot[data-bare] .card {
+  gap: var(--tt-space-1);
+  padding: var(--tt-space-5);
+  border-radius: var(--tt-r-card);
+  background: var(--tt-tile);
+}
+
+.slot[data-bare] .id {
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: var(--tt-space-3);
+  margin-top: 0;
+}
+
+.slot[data-bare] .id > :first-child {
+  margin-top: 0;
+}
+
+.slot[data-bare] .reason {
+  margin-top: var(--tt-space-1);
+}
+
+.slot[data-bare][data-size="s"] .card {
+  padding: var(--tt-space-4);
 }
