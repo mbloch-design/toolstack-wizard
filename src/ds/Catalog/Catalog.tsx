@@ -1,4 +1,4 @@
-import type { ReactNode, Ref } from "react";
+import type { CSSProperties, ReactNode, Ref } from "react";
 import { forwardRef, useEffect, useRef, useState, type MutableRefObject } from "react";
 import { ChevronLeft, ChevronRight, Filter, X } from "@/lib/icons";
 import styles from "./Catalog.module.css";
@@ -49,14 +49,30 @@ export function FilterBar({ stuck, rail, railRef, railLabel, tail, prevLabel, ne
     return () => { node.removeEventListener("scroll", read); observer?.disconnect(); };
   }, []);
   const go = (direction: 1 | -1) => own.current?.scrollBy({ left: direction * own.current.clientWidth * 0.7, behavior: "smooth" });
+  // The slot keeps the bar's height in the page and gives the floating bar its left edge and width.
+  const slot = useRef<HTMLDivElement | null>(null);
+  const [frame, setFrame] = useState({ left: 0, width: 0, height: 0 });
+  useEffect(() => {
+    const node = slot.current;
+    if (!node) return;
+    const measure = () => { const r = node.getBoundingClientRect(); setFrame((f) => ({ left: r.left, width: r.width, height: stuck ? f.height : (node.firstElementChild as HTMLElement | null)?.offsetHeight ?? f.height })); };
+    measure();
+    const observer = typeof ResizeObserver !== "undefined" ? new ResizeObserver(measure) : null;
+    observer?.observe(node);
+    window.addEventListener("resize", measure);
+    return () => { observer?.disconnect(); window.removeEventListener("resize", measure); };
+  }, [stuck]);
   return (
-    <div data-toolbar="catalog" className={styles.bar} data-stuck={stuck || undefined}>
+    <div ref={slot} className={styles.barSlot} style={stuck && frame.height ? { height: frame.height } : undefined}>
+    <div data-toolbar="catalog" className={styles.bar} data-stuck={stuck || undefined}
+      style={{ "--bar-left": `${frame.left}px`, "--bar-width": `${frame.width}px` } as CSSProperties}>
       <div className={styles.railWrap} data-start={edges.start || undefined} data-end={edges.end || undefined}>
         <button type="button" className={styles.railArrow} data-side="start" onClick={() => go(-1)} aria-label={prevLabel} tabIndex={-1} hidden={edges.start}><ChevronLeft aria-hidden="true" /></button>
         <nav ref={setRail} className={styles.rail} aria-label={railLabel}>{rail}</nav>
         <button type="button" className={styles.railArrow} data-side="end" onClick={() => go(1)} aria-label={nextLabel} tabIndex={-1} hidden={edges.end}><ChevronRight aria-hidden="true" /></button>
       </div>
       <div className={styles.tail}>{tail}</div>
+    </div>
     </div>
   );
 }

@@ -48,30 +48,25 @@
   height: 1px;
 }
 
-/* The bar: 24 px under the title (the page's gap pulled in). Once stuck it floats, never glued to an edge:
-   a 12 px gap under the top of the content, the page's own side edges, and a denser glass that holds its own
-   over any card scrolling beneath. */
+/* The bar lives in two places (12/11/2026). In the page, 24 px under the title, light. Once scrolled past,
+   it leaves its place (a slot keeps its height, nothing jumps) and floats at the foot of the screen, over the
+   content's own width, in smoked glass: it rises in on its own move, opacity and position only, so it never
+   steps. The system's colours are redefined inside it, so chips, arrows and the filters button invert alone. */
+.barSlot {
+  margin: calc(var(--tt-gap-group) - var(--tt-page-gap)) calc(var(--tt-space-2) * -1) 0;
+}
+
 .bar {
-  position: sticky;
-  top: calc(var(--tt-bar-top, 0px) + var(--tt-space-3));
+  position: relative;
   z-index: 10;
   display: flex;
   align-items: center;
   gap: var(--tt-space-3);
-  margin: calc(var(--tt-gap-group) - var(--tt-page-gap)) calc(var(--tt-space-2) * -1) 0;
   padding: var(--tt-space-1) var(--tt-space-2);
   border-radius: var(--tt-r-pill);
-
-  /* One tempo for the whole bar: its glass, its shadow and every chip inside (they read --tt-dur-state)
-     turn together, on the same curve, so sticking reads as one change of state, not a flicker. */
-  --tt-dur-state: var(--tt-bar-turn);
-
   isolation: isolate;
 }
 
-/* Stuck, the bar owns its place: smoked glass, the family of the cards' tags. It redefines the system's
-   colours locally, so the chips, the arrows and the filters button invert on their own: white text, a light
-   hairline, the current chip in white. */
 .bar[data-stuck] {
   --tt-bg: var(--tt-smoke);
   --tt-ink: var(--tt-smoke-ink);
@@ -79,27 +74,29 @@
   --tt-hairline-ink: var(--tt-smoke-hairline-strong);
   --tt-bar-arrow-hover: var(--tt-smoke-hover);
 
-  color: var(--tt-smoke-ink);
-}
-
-/* The smoked glass is its own layer, always built (blur, shadow), only its opacity moves: the one property a
-   browser animates without steps. */
-.bar::before {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
+  position: fixed;
+  bottom: var(--tt-bar-float-bottom);
+  left: var(--bar-left);
+  width: var(--bar-width);
   background: var(--tt-smoke-glass);
   box-shadow: var(--tt-bar-glass-shadow);
-  opacity: 0;
-  content: "";
-  transition: opacity var(--tt-bar-turn) var(--tt-ease);
+  color: var(--tt-smoke-ink);
   backdrop-filter: var(--tt-glass-filter);
-  pointer-events: none;
+  animation: bar-rise var(--tt-bar-turn) var(--tt-ease) both;
 }
 
-.bar[data-stuck]::before {
-  opacity: 1;
+@keyframes bar-rise {
+  from {
+    opacity: 0;
+    translate: 0 var(--tt-space-4);
+  }
+}
+
+/* On a phone the tab bar holds the foot: the bar floats just above it. */
+@media (width < 640px) {
+  .bar[data-stuck] {
+    bottom: var(--tt-bar-float-bottom-phone);
+  }
 }
 
 .railWrap {
@@ -440,7 +437,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bar {
-    transition: none;
+  .bar[data-stuck] {
+    animation: none;
   }
 }
