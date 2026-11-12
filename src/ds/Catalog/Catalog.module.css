@@ -66,8 +66,7 @@
      turn together, on the same curve, so sticking reads as one change of state, not a flicker. */
   --tt-dur-state: var(--tt-bar-turn);
 
-  background-color: transparent;
-  transition: background-color var(--tt-bar-turn) var(--tt-ease), box-shadow var(--tt-bar-turn) var(--tt-ease), backdrop-filter var(--tt-bar-turn) var(--tt-ease), color var(--tt-bar-turn) var(--tt-ease);
+  isolation: isolate;
 }
 
 /* Stuck, the bar owns its place: smoked glass, the family of the cards' tags. It redefines the system's
@@ -80,10 +79,27 @@
   --tt-hairline-ink: var(--tt-smoke-hairline-strong);
   --tt-bar-arrow-hover: var(--tt-smoke-hover);
 
-  background-color: var(--tt-smoke-glass);
-  box-shadow: var(--tt-bar-glass-shadow);
   color: var(--tt-smoke-ink);
+}
+
+/* The smoked glass is its own layer, always built (blur, shadow), only its opacity moves: the one property a
+   browser animates without steps. */
+.bar::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--tt-smoke-glass);
+  box-shadow: var(--tt-bar-glass-shadow);
+  opacity: 0;
+  content: "";
+  transition: opacity var(--tt-bar-turn) var(--tt-ease);
   backdrop-filter: var(--tt-glass-filter);
+  pointer-events: none;
+}
+
+.bar[data-stuck]::before {
+  opacity: 1;
 }
 
 .railWrap {
