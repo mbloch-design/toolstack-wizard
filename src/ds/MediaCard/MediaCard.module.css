@@ -33,7 +33,7 @@
   overflow: hidden;
   border-radius: var(--tt-r-card);
   background: var(--tt-tile);
-  box-shadow: var(--tt-raised);
+  box-shadow: var(--tt-card-rest);
   color: var(--tt-ink);
   text-decoration: none;
   isolation: isolate;
@@ -48,9 +48,20 @@
 }
 
 .card:active {
-  box-shadow: var(--tt-raised);
+  box-shadow: var(--tt-card-rest);
   transform: translateY(0) scale(.995);
   transition-duration: 160ms;
+}
+
+/* The edge, drawn over the picture and its colour: a 0.5 px hairline, felt more than seen. */
+.card::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  box-shadow: var(--tt-card-edge);
+  content: "";
+  pointer-events: none;
 }
 
 .card:focus-visible {
