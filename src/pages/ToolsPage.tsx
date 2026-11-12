@@ -23,7 +23,7 @@ import PinToolButton from "@/components/PinToolButton";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, hasNonCanonicalSearchParams } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import Breadcrumb from "@/components/Breadcrumb";
-import { CATALOG_BAR_NAV, useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
+import { CATALOG_BAR_NAV, runCatalogFilter, useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import { trackEvent } from "@/lib/analytics";
 
 const TOOLS_PER_PAGE = 40;
@@ -307,7 +307,7 @@ const ToolsPage = () => {
   function updateParams(mutate: (params: URLSearchParams) => void, replace = false) {
     const next = new URLSearchParams(searchParams);
     mutate(next);
-    setSearchParams(next, { replace, ...CATALOG_BAR_NAV });
+    void runCatalogFilter(() => setSearchParams(next, { replace, ...CATALOG_BAR_NAV }));
   }
 
   function openCategoryBranch(categoryId: string) {

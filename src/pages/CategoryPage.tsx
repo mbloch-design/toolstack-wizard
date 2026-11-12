@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { REDIRECTED_TOOL_SLUGS } from "@/lib/redirectedTools";
 import { useState, useEffect, useMemo, useRef } from "react";
@@ -16,7 +16,7 @@ import { SheetSection } from "@/ds/ToolSheet/ToolSheet";
 import { ActiveFilter, ActiveFilters, CatalogSection, CatalogTitle, EmptyState, FilterBar, FiltersButton, FiltersFoot, FiltersPanel, LinkIndex, LinkRow, LinkRows } from "@/ds/Catalog/Catalog";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, removeNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
-import { CATALOG_BAR_NAV, useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
+import { CATALOG_BAR_NAV, runCatalogFilter, useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import Breadcrumb from "@/components/Breadcrumb";
 import { GuideCardEditorial } from "@/components/GuideCardEditorial";
 import { CATALOG_NEEDS } from "@/data/catalogNeeds";
@@ -80,6 +80,7 @@ const CategoryPage = () => {
   const [panelOpen, setPanelOpen] = useState(false);
   // The filters sheet hands the focus back to the button that opened it.
   const filtersButtonRef = useRef<HTMLButtonElement>(null);
+  const navigate = useNavigate();
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
   const year = useMemo(() => new Date().getFullYear(), []);
 
@@ -271,7 +272,8 @@ const CategoryPage = () => {
           prevLabel={t("Catégories précédentes", "Previous categories") as string} nextLabel={t("Catégories suivantes", "Next categories") as string}
           rail={siblings.length > 1 ? siblings.map((sibling) => {
             const name = stripLeadingEmoji(sibling.name, sibling.id);
-            return <Link key={sibling.id} to={`${prefix}/category/${sibling.slug}`} {...CATALOG_BAR_NAV} {...chipLinkAttrs(sibling.id === category.id)}>{t(name, stripLeadingEmoji(sibling.nameEn, name))}</Link>;
+            return <Link key={sibling.id} to={`${prefix}/category/${sibling.slug}`} {...CATALOG_BAR_NAV} {...chipLinkAttrs(sibling.id === category.id)}
+              onClick={(event) => { if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return; event.preventDefault(); void runCatalogFilter(() => navigate(`${prefix}/category/${sibling.slug}`, CATALOG_BAR_NAV)); }}>{t(name, stripLeadingEmoji(sibling.nameEn, name))}</Link>;
           }) : null}
           tail={<FiltersButton ref={filtersButtonRef} label={t("Filtres", "Filters") as string} count={activeFilterCount} open={panelOpen} onClick={() => setPanelOpen(true)} ariaLabel={t("Filtres et tri", "Filters and sort") as string} />} />
 

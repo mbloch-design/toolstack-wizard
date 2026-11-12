@@ -91,11 +91,6 @@
   animation: bar-rise var(--tt-bar-turn) var(--tt-ease) both;
 }
 
-/* Already floating when the page came in (a filter): the same bar, no second rise. */
-.bar[data-instant] {
-  animation: none;
-}
-
 /* Back in its place: colours swap at once, the light bar fades in. */
 .bar[data-settling] {
   --tt-dur-state: 0s;

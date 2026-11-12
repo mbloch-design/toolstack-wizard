@@ -19,7 +19,7 @@ export default function ToolMediaCard({ tool, ...rest }: Omit<MediaCardProps, "i
   const slug = tool.slug || tool.id || "";
   const added = state.pinnedToolSlugs.includes(slug);
   const image = cover.src
-    ? <img ref={cover.imgRef} src={cover.src} alt="" width={1200} height={630} loading="lazy" decoding="async" onLoad={cover.onLoad} onError={cover.onError} />
+    ? <img ref={cover.imgRef} src={cover.src} alt="" width={1200} height={630} loading="lazy" decoding="async" data-loading={cover.loading ? "" : undefined} onLoad={cover.onLoad} onError={cover.onError} />
     : undefined;
   return <MediaCard tool={tool} image={image} {...rest}
     add={slug ? { state: flyingSlug === slug ? "pending" : added ? "added" : "idle", disabled: !ready,

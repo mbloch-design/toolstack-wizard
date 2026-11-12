@@ -105,6 +105,7 @@
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  transition: opacity 320ms var(--tt-ease);
 }
 
 .glow::after {
@@ -138,13 +139,19 @@
   background: none;
 }
 
+/* A screenshot still on its way stays invisible, then fades in: it never pops onto the grey. */
+.shot img[data-loading],
+.glow img[data-loading] {
+  opacity: 0;
+}
+
 .shot img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  transition: transform 600ms var(--tt-ease);
+  transition: transform 600ms var(--tt-ease), opacity 320ms var(--tt-ease);
 }
 
 .card:hover .shot img {
