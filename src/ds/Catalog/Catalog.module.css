@@ -48,10 +48,12 @@
   height: 1px;
 }
 
-/* The bar: 24 px under the title (the page's gap pulled in), sticks under the top bar, glass once stuck. */
+/* The bar: 24 px under the title (the page's gap pulled in). Once stuck it floats, never glued to an edge:
+   a 12 px gap under the top of the content, the page's own side edges, and a denser glass that holds its own
+   over any card scrolling beneath. */
 .bar {
   position: sticky;
-  top: var(--tt-bar-top, 0);
+  top: calc(var(--tt-bar-top, 0px) + var(--tt-space-3));
   z-index: 10;
   display: flex;
   align-items: center;
@@ -63,8 +65,8 @@
 }
 
 .bar[data-stuck] {
-  background: var(--tt-glass-bg);
-  box-shadow: var(--tt-glass-shadow);
+  background: var(--tt-bar-glass);
+  box-shadow: var(--tt-bar-glass-shadow);
   backdrop-filter: var(--tt-glass-filter);
 }
 
