@@ -1,4 +1,24 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { getScrollTop, scrollContainerCandidate, scrollToY } from "@/lib/scroll";
+
+/**
+ * A click in the catalogue bar is a filter, not a new page (12/11/2026): the bar stays where it is, the
+ * results swap in a cross-fade (the browser's view transition) and the page holds its place at the top of the
+ * results. Pass these with every navigation the bar triggers.
+ */
+export const CATALOG_BAR_NAV = { viewTransition: true, preventScrollReset: true, state: { skipScrollReset: true, catalogBar: true } } as const;
+
+/** After a filter: if the bar was floating, land at the top of the new results so it keeps floating. */
+function holdCatalogPlace() {
+  const slot = document.querySelector<HTMLElement>('[data-toolbar="catalog"]')?.parentElement;
+  if (!slot) return;
+  const scroller = scrollContainerCandidate();
+  const origin = scroller && getComputedStyle(scroller).overflowY !== "visible" ? scroller.getBoundingClientRect().top : 0;
+  const top = getScrollTop();
+  const resultsTop = top + slot.getBoundingClientRect().bottom - origin;
+  if (top > resultsTop - 1) scrollToY(resultsTop);
+}
 
 /**
  * Single sticky-state controller for every catalogue command bar.
@@ -34,6 +54,10 @@ export function useCatalogStickyToolbar() {
   }, []);
 
   useEffect(() => () => observerRef.current?.disconnect(), []);
+
+  const location = useLocation();
+  const fromBar = (location.state as { catalogBar?: boolean } | null)?.catalogBar;
+  useLayoutEffect(() => { if (fromBar) holdCatalogPlace(); }, [location.key, fromBar]);
 
   return { toolbarStuck, toolbarSentinelRef };
 }

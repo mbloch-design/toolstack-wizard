@@ -87,6 +87,13 @@
   color: var(--tt-smoke-ink);
   backdrop-filter: var(--tt-glass-filter);
   animation: bar-rise var(--tt-bar-turn) var(--tt-ease) both;
+  view-transition-name: catalog-bar;
+}
+
+/* Already floating when the page came in (a filter): the same bar, no second rise. During the cross-fade
+   of a filter it keeps its own layer, so it holds still while the results change beneath it. */
+.bar[data-instant] {
+  animation: none;
 }
 
 @keyframes bar-rise {

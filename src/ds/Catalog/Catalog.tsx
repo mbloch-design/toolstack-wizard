@@ -51,6 +51,13 @@ export function FilterBar({ stuck, rail, railRef, railLabel, tail, prevLabel, ne
   const go = (direction: 1 | -1) => own.current?.scrollBy({ left: direction * own.current.clientWidth * 0.7, behavior: "smooth" });
   // The slot keeps the bar's height in the page and gives the floating bar its left edge and width.
   const slot = useRef<HTMLDivElement | null>(null);
+  // Mounted already floating (a filter that loaded a new page): it is the same bar, it does not rise again.
+  const mountedAt = useRef(typeof performance !== "undefined" ? performance.now() : 0);
+  // Decided once per floating spell: floating within 600 ms of mounting means it was already floating.
+  const instantRef = useRef<boolean | null>(null);
+  if (!stuck) instantRef.current = null;
+  else if (instantRef.current === null) instantRef.current = typeof performance === "undefined" || performance.now() - mountedAt.current < 600;
+  const instant = stuck && instantRef.current;
   const [frame, setFrame] = useState({ left: 0, width: 0, height: 0 });
   useEffect(() => {
     const node = slot.current;
@@ -64,7 +71,7 @@ export function FilterBar({ stuck, rail, railRef, railLabel, tail, prevLabel, ne
   }, [stuck]);
   return (
     <div ref={slot} className={styles.barSlot} style={stuck && frame.height ? { height: frame.height } : undefined}>
-    <div data-toolbar="catalog" className={styles.bar} data-stuck={stuck || undefined}
+    <div data-toolbar="catalog" className={styles.bar} data-stuck={stuck || undefined} data-instant={instant || undefined}
       style={{ "--bar-left": `${frame.left}px`, "--bar-width": `${frame.width}px` } as CSSProperties}>
       <div className={styles.railWrap} data-start={edges.start || undefined} data-end={edges.end || undefined}>
         <button type="button" className={styles.railArrow} data-side="start" onClick={() => go(-1)} aria-label={prevLabel} tabIndex={-1} hidden={edges.start}><ChevronLeft aria-hidden="true" /></button>

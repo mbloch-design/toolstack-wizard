@@ -16,7 +16,7 @@ import { SheetSection } from "@/ds/ToolSheet/ToolSheet";
 import { ActiveFilter, ActiveFilters, CatalogSection, CatalogTitle, EmptyState, FilterBar, FiltersButton, FiltersFoot, FiltersPanel, LinkIndex, LinkRow, LinkRows } from "@/ds/Catalog/Catalog";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, removeNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
-import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
+import { CATALOG_BAR_NAV, useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import Breadcrumb from "@/components/Breadcrumb";
 import { GuideCardEditorial } from "@/components/GuideCardEditorial";
 import { CATALOG_NEEDS } from "@/data/catalogNeeds";
@@ -271,7 +271,7 @@ const CategoryPage = () => {
           prevLabel={t("Catégories précédentes", "Previous categories") as string} nextLabel={t("Catégories suivantes", "Next categories") as string}
           rail={siblings.length > 1 ? siblings.map((sibling) => {
             const name = stripLeadingEmoji(sibling.name, sibling.id);
-            return <Link key={sibling.id} to={`${prefix}/category/${sibling.slug}`} {...chipLinkAttrs(sibling.id === category.id)}>{t(name, stripLeadingEmoji(sibling.nameEn, name))}</Link>;
+            return <Link key={sibling.id} to={`${prefix}/category/${sibling.slug}`} {...CATALOG_BAR_NAV} {...chipLinkAttrs(sibling.id === category.id)}>{t(name, stripLeadingEmoji(sibling.nameEn, name))}</Link>;
           }) : null}
           tail={<FiltersButton ref={filtersButtonRef} label={t("Filtres", "Filters") as string} count={activeFilterCount} open={panelOpen} onClick={() => setPanelOpen(true)} ariaLabel={t("Filtres et tri", "Filters and sort") as string} />} />
 
