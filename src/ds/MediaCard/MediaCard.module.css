@@ -123,7 +123,7 @@
   overflow: hidden;
   flex: none;
   aspect-ratio: 40 / 21;
-  mask-image: linear-gradient(to bottom, black 45%, rgb(0 0 0 / 82%) 60%, rgb(0 0 0 / 50%) 74%, rgb(0 0 0 / 18%) 88%, transparent);
+  mask-image: linear-gradient(to bottom, black 30%, rgb(0 0 0 / 80%) 48%, rgb(0 0 0 / 48%) 66%, rgb(0 0 0 / 18%) 84%, transparent 98%);
 }
 
 
@@ -229,7 +229,7 @@
   align-items: start;
   gap: calc(var(--tt-space-1) * .5) calc(var(--tt-space-1) * 2.5);
   margin-top: calc(var(--tt-space-4) * -1);
-  padding: var(--inset);
+  padding: var(--inset) var(--inset) calc(var(--inset) + var(--tt-space-1));
 }
 
 .caption > :first-child:not(.name) {
@@ -327,14 +327,16 @@
   transform: var(--tt-press-round);
 }
 
+/* Same sign and size as the site's add-to-stack button (IconButton 32): a 16 px bookmark. */
 .action svg {
-  width: var(--tt-icon-xl);
-  height: var(--tt-icon-xl);
-  fill: none;
-  stroke: currentColor;
-  stroke-width: var(--tt-icon-stroke);
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+/* In my stack: the same green tint as the « done » bookmark everywhere else. */
+.action[data-state="added"] {
+  background: color-mix(in oklch, var(--tt-live) 16%, var(--tt-bg));
+  box-shadow: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
