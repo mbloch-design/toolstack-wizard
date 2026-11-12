@@ -77,16 +77,17 @@
   overflow: hidden;
 }
 
-/* Larger than the card: a blur fades to transparent at its own edges, which would draw a pale rim. */
+/* The same picture, blurred, laid exactly where the crisp one is (same width, same top), then carried down:
+   the crisp picture fades into its own blur, so the colours meet without a halo. It bleeds past the edges
+   because a blur fades to transparent at its own border. */
 .glow > * {
   position: absolute;
-  inset: -25%;
+  inset: calc(var(--tt-ambient-blur) * -2);
   width: auto;
   height: auto;
   margin: 0;
   border: 0;
-  filter: blur(var(--tt-ambient-blur)) saturate(2.2);
-  transform: scale(var(--tt-ambient-scale));
+  filter: blur(var(--tt-ambient-blur)) saturate(1.6);
 }
 
 /* A logo's glow: only the mark, blown up much further, so its colours flood the card. */
@@ -103,6 +104,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
 }
 
 .glow::after {
@@ -121,18 +123,9 @@
   overflow: hidden;
   flex: none;
   aspect-ratio: 40 / 21;
-  mask-image: linear-gradient(to bottom, black 40%, transparent 96%);
+  mask-image: linear-gradient(to bottom, black 45%, rgb(0 0 0 / 82%) 60%, rgb(0 0 0 / 50%) 74%, rgb(0 0 0 / 18%) 88%, transparent);
 }
 
-/* A real progressive blur on the picture's lower half: sharp at the top, melting into the colour below. */
-.shot::after {
-  position: absolute;
-  inset: 35% 0 0;
-  backdrop-filter: blur(var(--tt-shot-blur));
-  mask-image: linear-gradient(to bottom, transparent, black 70%);
-  content: "";
-  pointer-events: none;
-}
 
 
 .shot.shot > :not(.tags, .ambient) {
@@ -259,7 +252,7 @@
   color: var(--tt-ink);
   font: var(--tt-note-font);
   letter-spacing: var(--tt-note-tracking);
-  opacity: .8;
+  opacity: .88;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 }
