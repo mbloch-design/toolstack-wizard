@@ -14,6 +14,7 @@ import { BATTLE_COMPARISON_DATA, type BattleComparisonSlug } from "@/data/compar
 import { trackEvent } from "@/lib/analytics";
 import { comparisonPriceDisplay, comparisonPriceText } from "@/lib/comparisonPricing";
 import { comparisonJsonLd } from "@/lib/comparisonSchema";
+import { pilotComparisonGuides } from "@/data/comparisonDecisionGuidesPilot";
 import { fitBrandedTitle } from "@/lib/seoTitle";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
@@ -2021,7 +2022,7 @@ const ComparePage = () => {
       : fitBrandedTitle(`${toolA.name} vs ${toolB.name}: comparison ${year}`);
 
     // Decision-framing description: verb-driven, no audience assumption, no hardcoded copy.
-    const guide = affiliateComparisonGuides[slugPair || '']?.[lang] || (slugPair === "chatgpt-vs-claude" ? chatgptClaudeGuides[lang] : slugPair === "activecampaign-vs-klaviyo" ? activeCampaignKlaviyoGuides[lang] : undefined);
+    const guide = affiliateComparisonGuides[slugPair || '']?.[lang] || pilotComparisonGuides[slugPair || '']?.[lang] || (slugPair === "chatgpt-vs-claude" ? chatgptClaudeGuides[lang] : slugPair === "activecampaign-vs-klaviyo" ? activeCampaignKlaviyoGuides[lang] : undefined);
     const decisionLine = guide?.intro ?? (battleDataForSeo
       ? (lang === "fr"
           ? (battleDataForSeo.comparison.decisionSummary || battleDataForSeo.comparison.mainDifference)

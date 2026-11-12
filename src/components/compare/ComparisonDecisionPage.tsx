@@ -11,6 +11,7 @@ import { relExterne } from '@/lib/externalLink';
 import type { Tool } from '@/data/types';
 import type { CompareEditorialContent } from '@/pages/ComparePage';
 import { activeCampaignKlaviyoGuides, chatgptClaudeGuides, type ComparisonDecisionGuide } from '@/data/comparisonDecisionGuides';
+import { pilotComparisonGuides } from '@/data/comparisonDecisionGuidesPilot';
 import { useToolSummaries } from '@/hooks/useSupabaseData';
 import { comparisonPriceDisplay, comparisonPriceText } from '@/lib/comparisonPricing';
 import { computeToolTrimScore } from '@/lib/toolTrimScore';
@@ -44,7 +45,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
   const newGuide = affiliateComparisonGuides[slugPair]?.[lang];
   const offers = comparisonOffers[slugPair];
   const visual = comparisonVisuals[slugPair];
-  const reviewed = newGuide || (affiliateComparison ? activeCampaignKlaviyoGuides[lang] : slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined);
+  const reviewed = newGuide || pilotComparisonGuides[slugPair]?.[lang] || (affiliateComparison ? activeCampaignKlaviyoGuides[lang] : slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined);
   const curated = reviewed || (slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined);
   const scenarios = reviewed ? (affiliateComparison ? [reviewed.scenarios[1], reviewed.scenarios[0]] : reviewed.scenarios).map(s => ({ choice: s.choice, reason: s.reason, limits: [s.limit] })) : toolsForEditorial();
   function toolsForEditorial() {

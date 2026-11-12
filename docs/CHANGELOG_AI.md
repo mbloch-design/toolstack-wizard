@@ -1,3 +1,13 @@
+## 2026-11-12 · SEO · comparatifs : trois pilotes enrichis au-delà de 1 200 mots
+
+- Action 9, premier lot. Trois comparatifs passent du contenu générique (`buildFallbackContent`) à un guide de décision complet, en FR et EN : `deepseek-vs-chatgpt`, `notion-vs-trello`, `shopify-vs-woocommerce`.
+- `src/data/comparisonDecisionGuidesPilot.ts` réutilise le contrat `ComparisonDecisionGuide` déjà employé par `chatgpt-vs-claude` et `activecampaign-vs-klaviyo` : aucun composant ni balisage modifié. Le guide alimente le prérendu et le client par la même source, donc pas de divergence à l'hydratation.
+- Mesure dans le corps de page (`<article class="cp-guide">`, balises équilibrées) : 1 472 / 1 403 / 1 313 mots en FR, 1 267 / 1 252 / 1 224 en EN. Témoins génériques mesurés de la même façon : 430 à 493 mots de médiane sur les 83 pages de chaque langue. Quatre pages par langue dépassent désormais 1 200 mots, dont les trois pilotes.
+- Les prix restent ceux du catalogue (relevés du 25/09/2026) et chaque affirmation de coût renvoie à une page officielle listée dans `sources`. Aucun chiffre inventé, aucun benchmark pratique revendiqué.
+- `comparisonSchema` et `ComparePage` lisent aussi ces guides : `datePublished`/`dateModified` valent 2026-11-12 des deux côtés, et la description de page reprend l'intro du guide au lieu du texte générique.
+- Vérification : `typecheck:app` PASS, build production PASS (13 292 pages HTML, budget 15 262 fichiers / 854,2 MiB), `validate:seo-generated` PASS (10 726 URLs), tests `comparisonSchema` (7) et `toolSchema` (6) PASS.
+- Reste 79 comparatifs sous 1 200 mots. Le lot suivant doit être choisi par demande réelle : l'export Performances de Search Console reste bloqué (scope), donc aucun tri par impressions n'est possible pour l'instant.
+
 ## 2026-11-11 · SEO · revue senior 2 : unification résiduelle client/prérendu
 
 - Seconde passe de revue senior sur les lots « fiches outils » et « comparatifs ». Deux divergences résiduelles corrigées :

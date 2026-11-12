@@ -1,5 +1,6 @@
 import { affiliateComparisonGuides } from "../data/affiliateComparisonGuides";
 import { activeCampaignKlaviyoGuides, chatgptClaudeGuides } from "../data/comparisonDecisionGuides";
+import { pilotComparisonGuides } from "../data/comparisonDecisionGuidesPilot";
 import { BATTLE_COMPARISON_DATA } from "../data/comparisonBattles";
 
 /**
@@ -96,6 +97,7 @@ export function comparisonDates(
   const language: Lang = lang === "en" ? "en" : "fr";
   const guide =
     affiliateComparisonGuides[slugPair]?.[language] ??
+    pilotComparisonGuides[slugPair]?.[language] ??
     (slugPair === "chatgpt-vs-claude"
       ? chatgptClaudeGuides[language]
       : slugPair === "activecampaign-vs-klaviyo"
