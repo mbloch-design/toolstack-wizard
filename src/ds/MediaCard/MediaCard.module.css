@@ -117,7 +117,17 @@
   position: relative;
   overflow: hidden;
   min-height: 0;
-  mask-image: linear-gradient(to bottom, black 62%, transparent);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 96%);
+}
+
+/* A real progressive blur on the picture's lower half: sharp at the top, melting into the colour below. */
+.shot::after {
+  position: absolute;
+  inset: 35% 0 0;
+  backdrop-filter: blur(var(--tt-shot-blur));
+  mask-image: linear-gradient(to bottom, transparent, black 70%);
+  content: "";
+  pointer-events: none;
 }
 
 
