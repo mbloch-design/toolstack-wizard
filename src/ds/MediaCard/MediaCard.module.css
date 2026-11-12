@@ -12,6 +12,11 @@
   list-style: none;
 }
 
+.cards[data-size="s"] {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--tt-space-5) var(--tt-space-3);
+}
+
 .slot {
   position: relative;
   min-width: 0;
@@ -58,6 +63,35 @@
 
 .card:hover .shot img {
   transform: scale(1.03);
+}
+
+/* The text, in three steps: who (name), what (tags), why (the reason, quieter, two lines at most). */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-1);
+}
+
+.reason {
+  composes: note from "../atoms.module.css";
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--tt-meta);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.slot[data-size="s"] .reason {
+  -webkit-line-clamp: 1;
+}
+
+/* Without a picture: the tool alone on a raised tile, its logo larger. */
+.slot[data-bare] .card {
+  align-content: start;
+  height: 100%;
+  padding: var(--tt-space-4);
+  border-radius: var(--tt-r-card);
+  background: var(--tt-tile);
 }
 
 .id {
