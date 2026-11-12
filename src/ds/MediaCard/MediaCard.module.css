@@ -37,11 +37,13 @@
   color: var(--tt-ink);
   text-decoration: none;
   isolation: isolate;
-  transition: box-shadow var(--tt-dur-state) ease;
+  transition: box-shadow 400ms var(--tt-ease), transform 400ms var(--tt-ease);
 }
 
+/* Hover: the card lifts, softly (a longer, lighter shadow), never an ink outline. */
 .card:hover {
-  box-shadow: var(--tt-raised-hover);
+  box-shadow: var(--tt-card-lift);
+  transform: translateY(-2px);
 }
 
 .card:focus-visible {
@@ -292,4 +294,10 @@
   stroke-width: var(--tt-icon-stroke);
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover {
+    transform: none;
+  }
 }
