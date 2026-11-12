@@ -3,11 +3,12 @@ import { useLocation } from "react-router-dom";
 import { getScrollTop, scrollContainerCandidate, scrollToY } from "@/lib/scroll";
 
 /**
- * A click in the catalogue bar is a filter, not a new page (12/11/2026): the bar stays where it is, the
- * results swap in a cross-fade (the browser's view transition) and the page holds its place at the top of the
- * results. Pass these with every navigation the bar triggers.
+ * A click in the catalogue bar is a filter, not a new page (12/11/2026): the bar stays where it is (same state,
+ * no frame without it) and the page holds its place at the top of the results. Pass these with every
+ * navigation the bar triggers.
  */
-export const CATALOG_BAR_NAV = { viewTransition: true, preventScrollReset: true, state: { skipScrollReset: true, catalogBar: true } } as const;
+export const CATALOG_BAR_NAV = { preventScrollReset: true, state: { skipScrollReset: true, catalogBar: true } } as const;
+
 
 /** After a filter: if the bar was floating, land at the top of the new results so it keeps floating. */
 function holdCatalogPlace(force = false): boolean {
@@ -26,8 +27,14 @@ function holdCatalogPlace(force = false): boolean {
  * Single sticky-state controller for every catalogue command bar.
  * The callback ref also supports pages whose sentinel mounts after loading.
  */
+/** The bar's last state, so a page loaded by a filter starts where the bar was (no frame without it). */
+let lastStuck = false;
+
 export function useCatalogStickyToolbar() {
-  const [toolbarStuck, setToolbarStuck] = useState(false);
+  const location = useLocation();
+  const fromBar = (location.state as { catalogBar?: boolean } | null)?.catalogBar;
+  const [toolbarStuck, setStuckState] = useState(() => Boolean(fromBar) && lastStuck);
+  const setToolbarStuck = useCallback((next: boolean) => { lastStuck = next; setStuckState(next); }, []);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   const toolbarSentinelRef = useCallback((node: HTMLDivElement | null) => {
@@ -35,7 +42,8 @@ export function useCatalogStickyToolbar() {
     observerRef.current = null;
 
     if (!node) {
-      setToolbarStuck(false);
+      // Unmounting (often a filter loading the next page): keep the remembered state for that page.
+      setStuckState(false);
       return;
     }
 
@@ -53,12 +61,10 @@ export function useCatalogStickyToolbar() {
 
     observer.observe(node);
     observerRef.current = observer;
-  }, []);
+  }, [setToolbarStuck]);
 
   useEffect(() => () => observerRef.current?.disconnect(), []);
 
-  const location = useLocation();
-  const fromBar = (location.state as { catalogBar?: boolean } | null)?.catalogBar;
   // Once now, then again after the layout settles (the new page's sections mount a frame or two later), so the
   // landing is the same on every page: the top of the results, under the top of the content.
   useLayoutEffect(() => {
