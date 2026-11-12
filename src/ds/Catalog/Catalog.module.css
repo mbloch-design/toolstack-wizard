@@ -178,8 +178,10 @@
   margin-left: var(--tt-space-2);
   color: var(--tt-meta);
   font: var(--tt-note-font);
+  font-size: var(--tt-count-small);
   letter-spacing: var(--tt-note-tracking);
   font-variant-numeric: tabular-nums;
+  vertical-align: super;
 }
 
 .empty {
