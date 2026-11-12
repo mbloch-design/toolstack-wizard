@@ -37,20 +37,20 @@
   color: var(--tt-ink);
   text-decoration: none;
   isolation: isolate;
-  transition: box-shadow 520ms var(--tt-spring-card), transform 520ms var(--tt-spring-card);
+  transition: box-shadow 700ms var(--tt-spring-card), transform 700ms var(--tt-spring-card);
 }
 
-/* Real physics, no 3D: the card rises off the page on a spring (a slight overshoot, then rest); its shadow
-   moves down and spreads as it would under a light from above. A press pushes it back onto the page, fast. */
+/* Quiet luxury, real physics: the card barely leaves the page (1.5 px, a long ease-out, no bounce) and its
+   shadow is three faint layers, contact, near and far, as under a soft light. A press settles it back. */
 .card:hover {
   box-shadow: var(--tt-card-lift);
-  transform: translateY(-4px);
+  transform: translateY(-1.5px);
 }
 
 .card:active {
   box-shadow: var(--tt-raised);
-  transform: translateY(0) scale(.985);
-  transition-duration: 120ms;
+  transform: translateY(0) scale(.995);
+  transition-duration: 160ms;
 }
 
 .card:focus-visible {
@@ -132,7 +132,7 @@
 }
 
 .card:hover .shot img {
-  transform: scale(1.03);
+  transform: scale(1.015);
 }
 
 /* No screenshot: the frame keeps the screenshot ratio, the crisp logo in the light of its own colour. */
