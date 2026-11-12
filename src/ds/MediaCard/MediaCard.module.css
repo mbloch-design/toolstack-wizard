@@ -21,16 +21,25 @@
   min-width: 0;
 }
 
+/* The card is the picture's colour: the same picture, heavily blurred and saturated, fills the whole card;
+   the crisp picture sits on top at its own ratio, never cropped; the text rests on the colour below it. */
 .card {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
   border-radius: var(--tt-r-card);
   background: var(--tt-tile);
+  box-shadow: var(--tt-raised);
   color: var(--tt-ink);
   text-decoration: none;
   isolation: isolate;
+  transition: box-shadow var(--tt-dur-state) ease;
+}
+
+.card:hover {
+  box-shadow: var(--tt-raised-hover);
 }
 
 .card:focus-visible {
@@ -38,74 +47,95 @@
   outline-offset: var(--tt-focus-offset);
 }
 
-/* The picture, full bleed; a screenshot keeps its top, where its headline is. */
-.shot {
+/* The colour field: the picture again, blown up and blurred, washed just enough for the text to read. */
+.glow {
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: -1;
+  overflow: hidden;
 }
 
-.shot.shot > * {
+.glow > * {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   margin: 0;
   border: 0;
+  filter: blur(var(--tt-ambient-blur)) saturate(1.8);
+  transform: scale(var(--tt-ambient-scale));
+}
+
+/* A logo's glow: only the mark, blown up much further, so its colours flood the card. */
+.glow[data-mark] > * {
+  inset: 25% 35%;
+  width: auto;
+  height: auto;
+  background: none;
+  box-shadow: none;
+  transform: scale(var(--tt-ambient-mark-scale));
+}
+
+.glow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.glow::after {
+  position: absolute;
+  inset: 0;
+  background: var(--tt-veil-tint);
+  content: "";
+}
+
+/* The picture at its own ratio (a screenshot keeps all of it); a missing one falls back to the screenshot ratio. */
+.shot {
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  mask-image: linear-gradient(to bottom, black 62%, transparent);
+}
+
+
+.shot.shot > :not(.tags, .ambient) {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: 0;
   border-radius: 0;
   aspect-ratio: auto;
+  background: none;
+}
+
+/* Nothing to measure yet (loading, or a logo panel): the screenshot ratio holds the place. */
+.shot.shot > :not(.tags, :has(img)) {
+  aspect-ratio: 40 / 21;
 }
 
 .shot img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
   transition: transform 600ms var(--tt-ease);
 }
 
 .card:hover .shot img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
-/* No screenshot: the logo, enlarged and blurred, is the colour field; the crisp logo sits in its light. */
+/* No screenshot: the frame keeps the screenshot ratio, the crisp logo in the light of its own colour. */
 .ambient {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
   display: grid;
-  grid-template-rows: 3fr 2fr;
   place-items: center;
-  background: var(--tt-tile);
+  aspect-ratio: 40 / 21;
 }
 
-/* The crisp logo, larger, in the light of its blur (the upper part, above the caption). */
-.ambient > :last-child {
+.shot .ambient > * {
   transform: scale(1.5);
 }
 
-/* Only the mark is blurred, not its white tile: enlarged, it floods the card with the tool's own colours. */
-.ambient.ambient > :first-child {
-  position: absolute;
-  top: 18%;
-  left: 50%;
-  background: none;
-  box-shadow: none;
-  filter: blur(var(--tt-ambient-blur)) saturate(1.8);
-  opacity: .85;
-  transform: translateX(-50%) scale(var(--tt-ambient-scale));
-}
-
-/* The progressive blur: a glass layer whose blur fades in towards the foot, so the picture melts into the text. */
-.veil {
-  position: absolute;
-  inset: 45% 0 0;
-  z-index: -1;
-  background: linear-gradient(to bottom, transparent, var(--tt-veil-tint) 70%);
-  backdrop-filter: var(--tt-glass-filter);
-  mask-image: linear-gradient(to bottom, transparent, black 45%);
-}
-
-/* The tags, floating at the top: glass pills, the right corner left to the add button. */
+/* Tags on the picture: dark glass, white text, the classic code that reads on any screenshot. */
 .tags {
   position: absolute;
   top: var(--tt-space-3);
@@ -117,54 +147,62 @@
 }
 
 .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--tt-space-1) * 1.5);
   max-width: 100%;
+  height: 24px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  padding: calc(var(--tt-space-1) * 1.25) calc(var(--tt-space-1) * 2.5);
-  border-radius: var(--tt-r-round);
-  background: var(--tt-glass-bg);
-  box-shadow: var(--tt-glass-edge);
-  color: var(--tt-ink);
+  padding: 0 calc(var(--tt-space-1) * 2.5);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tag-glass);
+  box-shadow: var(--tt-tag-glass-edge);
+  color: var(--tt-tag-glass-ink);
   font: var(--tt-tag-font);
   font-size: var(--tt-count-small);
   letter-spacing: var(--tt-tag-tracking);
+  text-overflow: ellipsis;
   white-space: nowrap;
   backdrop-filter: var(--tt-glass-filter);
 }
 
-.tag[data-tone="free"] {
-  color: var(--tt-gain-ink);
+.tag[data-tone="free"]::before {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--tt-r-round);
+  background: var(--tt-live);
+  content: "";
 }
 
-/* The caption, on the blur: logo and price on one line, the name large, the reason in the reading face. */
+/* The caption, on the colour: logo and name on one line, the reason under it. */
+
+/* The caption tucks under the picture's fade: no hard edge between picture and colour. */
 .caption {
-  position: absolute;
-  inset: auto 0 0;
+  position: relative;
+  margin-top: calc(var(--tt-space-6) * -1);
   display: grid;
-  gap: var(--tt-space-1);
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--tt-space-1) var(--tt-space-3);
   padding: var(--tt-space-4);
 }
 
-.top {
-  display: flex;
-  margin-bottom: var(--tt-space-1);
-}
-
-
 .name {
-  overflow: hidden;
+  grid-column: auto / -1;
   font: var(--tt-title-m-font);
   letter-spacing: var(--tt-title-m-tracking);
-  text-overflow: ellipsis;
   text-wrap: balance;
 }
 
 .reason {
   display: -webkit-box;
+  grid-column: 1 / -1;
   overflow: hidden;
-  color: var(--tt-meta);
+  color: var(--tt-ink);
   font: var(--tt-note-font);
   letter-spacing: var(--tt-note-tracking);
+  opacity: .72;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }

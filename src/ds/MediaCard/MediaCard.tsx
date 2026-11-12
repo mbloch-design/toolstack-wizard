@@ -29,18 +29,19 @@ export type MediaCardProps = {
 /** A tool to discover: its picture, the tool, why it is here; the add button sits on the picture. */
 export default function MediaCard({ lang, tool, image, category, price, badge, size = "l", reason, renderLink, add, localLogosOnly = false, dataTool }: MediaCardProps) {
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
+  const mark = <Logo tool={tool} size={40} localOnly={localLogosOnly} />;
   const content = <>
-    {image
-      ? <span className={styles.shot} data-tt-tilt="">{image}</span>
-      : <span className={styles.ambient} aria-hidden="true"><Logo tool={tool} size={40} localOnly={localLogosOnly} /><Logo tool={tool} size={40} localOnly={localLogosOnly} /></span>}
-    <span className={styles.veil} aria-hidden="true" />
-    {(category || badge || price) && <span className={styles.tags}>
-      {category && <span className={styles.tag}>{category}</span>}
-      {price && <span className={styles.tag} data-tone={price.free ? "free" : undefined}>{price.label}</span>}
-      {badge && <span className={styles.tag}>{badge}</span>}
-    </span>}
+    <span className={styles.glow} data-mark={image ? undefined : ""} aria-hidden="true">{image ?? mark}</span>
+    <span className={styles.shot} data-tt-tilt="">
+      {image ?? <span className={styles.ambient}>{mark}</span>}
+      {(category || badge || price) && <span className={styles.tags}>
+        {category && <span className={styles.tag}>{category}</span>}
+        {price && <span className={styles.tag} data-tone={price.free ? "free" : undefined}>{price.label}</span>}
+        {badge && <span className={styles.tag}>{badge}</span>}
+      </span>}
+    </span>
     <span className={styles.caption}>
-      {image && <span className={styles.top}><Logo tool={tool} size={32} localOnly={localLogosOnly} /></span>}
+      {image && <Logo tool={tool} size={32} localOnly={localLogosOnly} />}
       <span className={styles.name}>{tool.name}</span>
       {reason && <span className={styles.reason}>{reason}</span>}
     </span>
