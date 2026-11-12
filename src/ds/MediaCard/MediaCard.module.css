@@ -238,8 +238,8 @@
 
 .name {
   overflow: hidden;
-  font: var(--tt-title-m-font);
-  letter-spacing: var(--tt-title-m-tracking);
+  font: var(--tt-card-name-font);
+  letter-spacing: var(--tt-card-name-tracking);
   text-overflow: ellipsis;
   white-space: nowrap;
   align-self: center;

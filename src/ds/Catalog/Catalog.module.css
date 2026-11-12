@@ -23,6 +23,8 @@
 }
 
 .lead {
+  /* Two lines reserved, one or two written: the bar under it never moves from one category to the next. */
+  min-height: var(--tt-lead-lines);
   max-width: 64ch;
   margin: 0;
   color: var(--tt-meta);
@@ -94,6 +96,19 @@
    of a filter it keeps its own layer, so it holds still while the results change beneath it. */
 .bar[data-instant] {
   animation: none;
+}
+
+/* Back in its place: colours swap at once, the light bar fades in. */
+.bar[data-settling] {
+  --tt-dur-state: 0s;
+
+  animation: bar-settle var(--tt-bar-turn) var(--tt-ease) both;
+}
+
+@keyframes bar-settle {
+  from {
+    opacity: 0;
+  }
 }
 
 @keyframes bar-rise {
@@ -225,7 +240,7 @@
 }
 
 .sectionCount {
-  margin-left: var(--tt-space-2);
+  margin-left: calc(var(--tt-space-1) * .75);
   color: var(--tt-meta);
   font: var(--tt-note-font);
   font-size: var(--tt-count-small);

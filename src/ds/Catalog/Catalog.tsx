@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactNode, Ref } from "react";
-import { forwardRef, useEffect, useRef, useState, type MutableRefObject } from "react";
+import { forwardRef, useEffect, useLayoutEffect, useRef, useState, type MutableRefObject } from "react";
 import { ChevronLeft, ChevronRight, Filter, X } from "@/lib/icons";
 import styles from "./Catalog.module.css";
 
@@ -58,6 +58,13 @@ export function FilterBar({ stuck, rail, railRef, railLabel, tail, prevLabel, ne
   if (!stuck) instantRef.current = null;
   else if (instantRef.current === null) instantRef.current = typeof performance === "undefined" || performance.now() - mountedAt.current < 600;
   const instant = stuck && instantRef.current;
+  // Coming back to its place: the colours swap at once and the bar fades in, so no chip is seen turning.
+  const wasStuck = useRef(stuck);
+  const [settling, setSettling] = useState(false);
+  useLayoutEffect(() => {
+    if (wasStuck.current && !stuck) { setSettling(true); const id = window.setTimeout(() => setSettling(false), 400); wasStuck.current = stuck; return () => window.clearTimeout(id); }
+    wasStuck.current = stuck;
+  }, [stuck]);
   const [frame, setFrame] = useState({ left: 0, width: 0, height: 0 });
   useEffect(() => {
     const node = slot.current;
@@ -71,7 +78,7 @@ export function FilterBar({ stuck, rail, railRef, railLabel, tail, prevLabel, ne
   }, [stuck]);
   return (
     <div ref={slot} className={styles.barSlot} style={stuck && frame.height ? { height: frame.height } : undefined}>
-    <div data-toolbar="catalog" className={styles.bar} data-stuck={stuck || undefined} data-instant={instant || undefined}
+    <div data-toolbar="catalog" className={styles.bar} data-stuck={stuck || undefined} data-instant={instant || undefined} data-settling={settling || undefined}
       style={{ "--bar-left": `${frame.left}px`, "--bar-width": `${frame.width}px` } as CSSProperties}>
       <div className={styles.railWrap} data-start={edges.start || undefined} data-end={edges.end || undefined}>
         <button type="button" className={styles.railArrow} data-side="start" onClick={() => go(-1)} aria-label={prevLabel} tabIndex={-1} hidden={edges.start}><ChevronLeft aria-hidden="true" /></button>

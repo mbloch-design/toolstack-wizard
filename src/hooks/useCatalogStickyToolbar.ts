@@ -10,14 +10,16 @@ import { getScrollTop, scrollContainerCandidate, scrollToY } from "@/lib/scroll"
 export const CATALOG_BAR_NAV = { viewTransition: true, preventScrollReset: true, state: { skipScrollReset: true, catalogBar: true } } as const;
 
 /** After a filter: if the bar was floating, land at the top of the new results so it keeps floating. */
-function holdCatalogPlace() {
+function holdCatalogPlace(force = false): boolean {
   const slot = document.querySelector<HTMLElement>('[data-toolbar="catalog"]')?.parentElement;
-  if (!slot) return;
+  if (!slot) return false;
   const scroller = scrollContainerCandidate();
   const origin = scroller && getComputedStyle(scroller).overflowY !== "visible" ? scroller.getBoundingClientRect().top : 0;
   const top = getScrollTop();
   const resultsTop = top + slot.getBoundingClientRect().bottom - origin;
-  if (top > resultsTop - 1) scrollToY(resultsTop);
+  if (!force && top <= resultsTop - 1) return false;
+  scrollToY(resultsTop);
+  return true;
 }
 
 /**
@@ -57,7 +59,17 @@ export function useCatalogStickyToolbar() {
 
   const location = useLocation();
   const fromBar = (location.state as { catalogBar?: boolean } | null)?.catalogBar;
-  useLayoutEffect(() => { if (fromBar) holdCatalogPlace(); }, [location.key, fromBar]);
+  // Once now, then again after the layout settles (the new page's sections mount a frame or two later), so the
+  // landing is the same on every page: the top of the results, under the top of the content.
+  useLayoutEffect(() => {
+    if (!fromBar) return;
+    if (!holdCatalogPlace()) return;
+    const again = () => holdCatalogPlace(true);
+    let second = 0;
+    const first = requestAnimationFrame(() => { second = requestAnimationFrame(again); });
+    const late = window.setTimeout(again, 250);
+    return () => { cancelAnimationFrame(first); cancelAnimationFrame(second); window.clearTimeout(late); };
+  }, [location.key, fromBar]);
 
   return { toolbarStuck, toolbarSentinelRef };
 }
