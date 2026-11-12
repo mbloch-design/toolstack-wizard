@@ -61,7 +61,13 @@
   margin: calc(var(--tt-gap-group) - var(--tt-page-gap)) calc(var(--tt-space-2) * -1) 0;
   padding: var(--tt-space-1) var(--tt-space-2);
   border-radius: var(--tt-r-pill);
-  transition: background-color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease, top var(--tt-dur-state) var(--tt-ease);
+
+  /* One tempo for the whole bar: its glass, its shadow and every chip inside (they read --tt-dur-state)
+     turn together, on the same curve, so sticking reads as one change of state, not a flicker. */
+  --tt-dur-state: var(--tt-bar-turn);
+
+  background-color: transparent;
+  transition: background-color var(--tt-bar-turn) var(--tt-ease), box-shadow var(--tt-bar-turn) var(--tt-ease), backdrop-filter var(--tt-bar-turn) var(--tt-ease), color var(--tt-bar-turn) var(--tt-ease);
 }
 
 /* Stuck, the bar owns its place: smoked glass, the family of the cards' tags. It redefines the system's
@@ -74,7 +80,7 @@
   --tt-hairline-ink: var(--tt-smoke-hairline-strong);
   --tt-bar-arrow-hover: var(--tt-smoke-hover);
 
-  background: var(--tt-smoke-glass);
+  background-color: var(--tt-smoke-glass);
   box-shadow: var(--tt-bar-glass-shadow);
   color: var(--tt-smoke-ink);
   backdrop-filter: var(--tt-glass-filter);
