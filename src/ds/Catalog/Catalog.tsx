@@ -59,13 +59,13 @@ export function FilterBar({ stuck, rail, railRef, railLabel, tail, prevLabel, ne
   useLayoutEffect(() => {
     if (stuck) { setMode("float"); setSettling(false); return; }
     if (mode !== "float") return;
-    setMode("leaving");
-    const out = window.setTimeout(() => { setMode("inline"); setSettling(true); }, 300);
-    return () => window.clearTimeout(out);
+    // Back at once (13/11/2026): waiting for the floating bar to sink first left the top slot empty for ~0.7 s.
+    setMode("inline");
+    setSettling(true);
   }, [stuck]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!settling) return;
-    const id = window.setTimeout(() => setSettling(false), 400);
+    const id = window.setTimeout(() => setSettling(false), 240);
     return () => window.clearTimeout(id);
   }, [settling]);
   const floating = mode !== "inline";

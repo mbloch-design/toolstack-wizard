@@ -95,7 +95,7 @@
 .bar[data-settling] {
   --tt-dur-state: 0s;
 
-  animation: bar-settle var(--tt-bar-turn) var(--tt-ease) both;
+  animation: bar-settle 200ms var(--tt-ease) both;
 }
 
 @keyframes bar-settle {

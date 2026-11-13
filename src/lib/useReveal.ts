@@ -34,6 +34,10 @@ export function useReveal<T extends HTMLElement>() {
   return useCallback((el: T | null) => {
     const io = shared();
     if (!el || !io || el.dataset.reveal) return;
+    // Only what is on screen when it mounts (the first view, a new filter) arrives. Content met while scrolling is
+    // already there: hiding it left blank sections during a fast scroll (13/11/2026).
+    const box = el.getBoundingClientRect();
+    if (box.top > window.innerHeight || box.bottom < 0) { el.dataset.reveal = "done"; return; }
     el.dataset.reveal = "wait";
     io.observe(el);
   }, []);
