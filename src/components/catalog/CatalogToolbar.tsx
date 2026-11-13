@@ -1,7 +1,9 @@
-import { Fragment, useState, type ReactNode } from "react";
-import RailThumb from "@/components/motion/RailThumb";
-import { ArrowUpDown, ChevronLeft, Filter, X } from "@/lib/icons";
+import { useState, type ReactNode } from "react";
+import { ChevronLeft, X } from "@/lib/icons";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import Chip from "@/ds/Chip/Chip";
+import { FilterBar, FiltersButton } from "@/ds/Catalog/Catalog";
+import { runCatalogFilter } from "@/hooks/useCatalogStickyToolbar";
 
 export type ToolbarPill = {
   id: string;
@@ -84,8 +86,6 @@ export default function CatalogToolbar({
   const defaultSort = sort.defaultValue ?? sort.options[0]?.value;
   const sortChanged = sort.value !== defaultSort;
   const badgeCount = activeFilterCount + (sortChanged ? 1 : 0);
-  // Sans facettes, le bouton n'ouvre que le tri : il le dit et le montre.
-  const TriggerIcon = panel ? Filter : ArrowUpDown;
 
   function handlePanelOpenChange(next: boolean) {
     setPanelOpen(next);
@@ -97,42 +97,24 @@ export default function CatalogToolbar({
     if (sortChanged && defaultSort) sort.onChange(defaultSort);
   }
 
+  // 13/11/2026: the stacks and comparisons catalogues on the system's bar (the one of /tools): same chips, same
+  // floating bar once scrolled past, same quiet filter change from down the list (runCatalogFilter).
   return (
     <>
-      <div data-toolbar="catalog" className={`tt-catalog-toolbar tt-sticky-toolbar${stuck ? " tt-sticky-toolbar--stuck" : ""}${className ? ` ${className}` : ""}`}>
-        <nav className="tt-pillrow tt-rail" aria-label={navLabel}>
-          <RailThumb />
-          {pills.map((pill, index) => (
-            <Fragment key={pill.id}>
-              <button
-                type="button"
-                className={`tt-pill${pill.active ? " tt-pill--active" : ""}${pill.parent ? " tt-pill--parent" : ""}`}
-                onClick={pill.onClick}
-                aria-pressed={!!pill.active}
-              >
-                {pill.parent && <ChevronLeft size={16} aria-hidden />}
-                {pill.label}
-              </button>
-              {pill.parent && <span className="tt-pillrow-divider" aria-hidden />}
-              {dividerAfter === index && <span className="tt-pillrow-divider" aria-hidden />}
-            </Fragment>
+      <FilterBar stuck={stuck} railLabel={navLabel} prevLabel={navLabel} nextLabel={navLabel}
+        rail={<>
+          {pills.map((pill) => (
+            <Chip key={pill.id} pressed={!!pill.active} onClick={() => { void runCatalogFilter(pill.onClick); }}>
+              {pill.parent && <ChevronLeft size={16} aria-hidden />}
+              {pill.label}
+            </Chip>
           ))}
-        </nav>
-
-        <div className="tt-catalog-toolbar-tail">
+        </>}
+        tail={<>
           {extraTail}
           <Popover open={panelOpen} onOpenChange={handlePanelOpenChange}>
             <PopoverTrigger asChild>
-              <button
-                type="button"
-                className={`tt-pill tt-pill--more${badgeCount > 0 ? " tt-pill--active" : ""}`}
-                aria-label={moreLabel}
-                title={sort.title}
-              >
-                <TriggerIcon size={16} aria-hidden />
-                <span className="tt-pill-label">{moreLabel}</span>
-                {badgeCount > 0 && <span className="tt-pill-count">{badgeCount}</span>}
-              </button>
+              <FiltersButton label={moreLabel} count={badgeCount} open={panelOpen} onClick={() => {}} ariaLabel={sort.title ?? moreLabel} />
             </PopoverTrigger>
             <PopoverContent className="tt-filter-panel" aria-label={panelTitle} align="end" sideOffset={8}>
               <div className="tt-filter-panel-head">
@@ -175,8 +157,7 @@ export default function CatalogToolbar({
               </div>
             </PopoverContent>
           </Popover>
-        </div>
-      </div>
+        </>} />
       {/* Outside the bar: its stuck-state animation leaves a transform that
           would trap this fixed scrim inside the bar's own box. */}
       {panelOpen && <div className="tt-filter-panel-backdrop" aria-hidden />}
