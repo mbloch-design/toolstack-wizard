@@ -16704,6 +16704,17 @@ img[data-logo-loading] {
    the top unseen, then fades back in. One quiet change, never a visible scroll. */
 .asv2-main { transition: opacity 140ms ease; }
 html[data-catalog-swap="out"] .asv2-main { opacity: 0; }
+/* Stacks, comparatifs and guides on the catalogue's type and rhythm (13/11/2026): measured against /tools, their
+   title was 56 px / 500 (system: title-xl), their section titles 22-28 px / 500 (system: title-l), and the bar sat
+   4-5 px from the title and the first section (system: 24 px under the title, a page gap before the content). */
+/* Doubled class: these pages carry older, more specific title rules (.tt-catalog-page, .gi-container). */
+.asv2-main .tt-catalog-compact-title.tt-catalog-compact-title { margin: 0; font: var(--tt-title-xl-font); letter-spacing: var(--tt-title-xl-tracking); }
+.asv2-main .tt-catalog-compact-header.tt-catalog-compact-header, .asv2-main .tt-catalog-page .cix-hero.cix-hero { margin-bottom: 0; padding-top: var(--tt-space-12); padding-bottom: 0; }
+.asv2-main .sk-featured .sk-group-title.sk-group-title { margin-top: 0; }
+@media (width <= 639px) { .asv2-main .tt-catalog-compact-header.tt-catalog-compact-header, .asv2-main .tt-catalog-page .cix-hero.cix-hero { padding-top: var(--tt-space-6); } }
+.asv2-main .sk-group-title.sk-group-title, .asv2-main #gi-bestof-title, .asv2-main #guides-stories-title { color: var(--tt-ink); font: var(--tt-title-l-font); letter-spacing: var(--tt-title-l-tracking); }
+.tt-catalog-barwrap { margin: var(--tt-gap-group) 0 var(--tt-page-gap); }
+.tt-catalog-barwrap > * { margin-top: 0; }
 /* Cards arrive (useReveal): unseen until in view, then they rise into place once, a beat apart. Only once the
    observer runs (html[data-reveal-on]), so without script or with reduced motion nothing is ever hidden. */
 html[data-reveal-on] [data-reveal="wait"] { opacity: 0; transform: translateY(10px) scale(.985); }

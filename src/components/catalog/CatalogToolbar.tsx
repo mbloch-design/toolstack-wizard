@@ -101,6 +101,7 @@ export default function CatalogToolbar({
   // floating bar once scrolled past, same quiet filter change from down the list (runCatalogFilter).
   return (
     <>
+      <div className="tt-catalog-barwrap">
       <FilterBar stuck={stuck} railLabel={navLabel} prevLabel={navLabel} nextLabel={navLabel}
         rail={<>
           {pills.map((pill) => (
@@ -158,6 +159,7 @@ export default function CatalogToolbar({
             </PopoverContent>
           </Popover>
         </>} />
+      </div>
       {/* Outside the bar: its stuck-state animation leaves a transform that
           would trap this fixed scrim inside the bar's own box. */}
       {panelOpen && <div className="tt-filter-panel-backdrop" aria-hidden />}
