@@ -83,11 +83,22 @@
 .glow > * {
   position: absolute;
   inset: calc(var(--tt-ambient-blur) * -2);
-  width: auto;
-  height: auto;
   margin: 0;
   border: 0;
   filter: blur(var(--tt-ambient-blur)) saturate(1.6);
+}
+
+/* Light (12/11/2026, measured: screenshots up to 2 400 px, decoded and blurred twice per card). A blur shows no
+   detail, so the glow is drawn at an eighth of its size on its own layer, then scaled up: same look, 1/64 of the
+   pixels to blur. */
+.glow:not([data-mark]) > * {
+  inset: calc(var(--tt-ambient-blur) * -2) auto auto calc(var(--tt-ambient-blur) * -2);
+  width: calc((100% + var(--tt-ambient-blur) * 4) / var(--tt-glow-shrink));
+  height: calc((100% + var(--tt-ambient-blur) * 4) / var(--tt-glow-shrink));
+  filter: blur(calc(var(--tt-ambient-blur) / var(--tt-glow-shrink))) saturate(1.6);
+  transform: scale(var(--tt-glow-shrink));
+  transform-origin: top left;
+  will-change: transform;
 }
 
 /* A logo's glow: only the mark, blown up much further, so its colours flood the card. */
@@ -139,10 +150,12 @@
   background: none;
 }
 
-/* A screenshot still on its way stays invisible, then fades in: it never pops onto the grey. */
+/* A screenshot still on its way stays invisible over its own colour (the glow, from the light copy, is already
+   there), then settles onto it: a fade with a slight zoom-out, never a pop onto the grey (13/11/2026). */
 .shot img[data-loading],
 .glow img[data-loading] {
   opacity: 0;
+  transform: scale(1.04);
 }
 
 .shot img {
@@ -151,7 +164,21 @@
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  transition: transform 600ms var(--tt-ease), opacity 320ms var(--tt-ease);
+  transition: transform 700ms var(--tt-spring-card), opacity 420ms var(--tt-ease);
+}
+
+/* The colour washes in under the picture rather than appearing at once. */
+.glow img {
+  animation: tt-glow-in 600ms var(--tt-ease) both;
+}
+
+@keyframes tt-glow-in {
+  from { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shot img, .glow img { transition: none; animation: none; }
+  .shot img[data-loading] { transform: none; }
 }
 
 .card:hover .shot img {
@@ -202,7 +229,9 @@
   font-variant-numeric: tabular-nums;
   text-overflow: ellipsis;
   white-space: nowrap;
-  backdrop-filter: var(--tt-tag-glass-filter);
+  /* No backdrop blur on cards (13/11/2026, measured): two blurred layers per card, ~90 on /fr/tools, took
+     scrolling from 8 ms to 116 ms a frame under 4x CPU throttle. A denser tint reads the same on any screenshot. */
+  background: rgb(14 14 16 / 80%);
 }
 
 
@@ -308,9 +337,9 @@
   padding: 0;
   border: 0;
   border-radius: var(--tt-r-round);
-  background: var(--tt-glass-bg);
+  /* Opaque instead of blurred glass: see .tag above. */
+  background: color-mix(in oklch, var(--tt-bg) 92%, transparent);
   box-shadow: var(--tt-glass-shadow);
-  backdrop-filter: var(--tt-glass-filter);
   color: var(--tt-ink);
   cursor: pointer;
   transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;

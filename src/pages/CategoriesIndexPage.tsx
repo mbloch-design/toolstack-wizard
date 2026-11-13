@@ -1,14 +1,19 @@
 import { Link } from "@/lib/routerLinks";
 import { useEffect, useMemo, useState } from "react";
-import type { ReactNode } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import type { Category } from "@/data/types";
 import { getCategoryIcon } from "@/lib/categoryIcons";
-import EditorialHero from "@/components/EditorialHero";
+import Breadcrumb from "@/components/Breadcrumb";
+import Page from "@/ds/Page/Page";
+import Chip from "@/ds/Chip/Chip";
+import { LinkArrow, linkClass } from "@/ds/Button/Button";
+import { CatalogSection, CatalogTitle, Chapter, FigureCard, FigureCards, FilterBar, LinkRow, LinkRows, PlaceTile, PlaceTiles } from "@/ds/Catalog/Catalog";
+import Logo from "@/ds/Logo/Logo";
+import { compareByDemand } from "@/lib/catalogFilters";
+import { runCatalogFilter, useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import {
-  ArrowRight,
   Banknote,
   Boxes,
   Clock3,
@@ -41,7 +46,6 @@ const INTENTS = [
     labelEn: "Reduce costs",
     descriptionFr: "Doublons, plans inutiles, alternatives gratuites.",
     descriptionEn: "Duplicates, unused plans, free alternatives.",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=86",
     categoryIds: ["organization", "ai-general", "communication", "email-productivity", "design-tools", "creation"],
   },
   {
@@ -51,7 +55,6 @@ const INTENTS = [
     labelEn: "Replace a tool",
     descriptionFr: "Une option plus simple ou moins chère.",
     descriptionEn: "A simpler or cheaper option.",
-    image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=900&q=86",
     categoryIds: ["finance", "automation", "nocode-web", "analytics", "storage", "email-productivity"],
   },
   {
@@ -61,7 +64,6 @@ const INTENTS = [
     labelEn: "Automate a task",
     descriptionFr: "Formulaires, données, workflows.",
     descriptionEn: "Forms, data, workflows.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=86",
     categoryIds: ["automation", "nocode-web", "analytics", "organization", "email-productivity"],
   },
   {
@@ -71,7 +73,6 @@ const INTENTS = [
     labelEn: "Manage invoicing",
     descriptionFr: "Temps, factures, contrats, paiements.",
     descriptionEn: "Time, invoices, contracts, payments.",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=86",
     categoryIds: ["finance", "productivity-tracking", "legal-contracts", "budgeting-fpa"],
   },
   {
@@ -81,7 +82,6 @@ const INTENTS = [
     labelEn: "Create content",
     descriptionFr: "Contenu, design, IA, pages web.",
     descriptionEn: "Content, design, AI, web pages.",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=86",
     categoryIds: ["creation", "design-tools", "ai-general", "nocode-web", "formation-education"],
   },
   {
@@ -91,7 +91,6 @@ const INTENTS = [
     labelEn: "Structure work",
     descriptionFr: "Projets, docs, échanges, stockage.",
     descriptionEn: "Projects, docs, communication, storage.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=86",
     categoryIds: ["organization", "project-management", "communication", "communication-team", "storage", "security"],
   },
 ];
@@ -136,7 +135,6 @@ const STACK_TEMPLATES = [
     titleEn: "Sell, deliver, and get paid without useless tools",
     descriptionFr: "Le socle clair pour gérer clients, livrables et paiement.",
     descriptionEn: "A clear baseline for clients, deliverables, and payment.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85",
   },
   {
     slug: "agence-marketing",
@@ -146,7 +144,6 @@ const STACK_TEMPLATES = [
     titleEn: "Produce, manage, and report without dispersion",
     descriptionFr: "Une stack pour briefs, contenus, campagnes et reporting.",
     descriptionEn: "A stack for briefs, content, campaigns, and reporting.",
-    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85",
   },
   {
     slug: "solopreneur",
@@ -156,7 +153,6 @@ const STACK_TEMPLATES = [
     titleEn: "Sell alone without building a machine",
     descriptionFr: "Offre, contenu, demandes et paiement avec peu d'abonnements.",
     descriptionEn: "Offer, content, requests, and payment with few subscriptions.",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85",
   },
   {
     slug: "ecommerce",
@@ -166,7 +162,6 @@ const STACK_TEMPLATES = [
     titleEn: "Sell and retain without stacking apps",
     descriptionFr: "Boutique, email, support et analytics sans perdre la marge.",
     descriptionEn: "Store, email, support, and analytics without losing margin.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85",
   },
   {
     slug: "startup-saas",
@@ -176,16 +171,11 @@ const STACK_TEMPLATES = [
     titleEn: "Build, measure, and sell without over-tooling",
     descriptionFr: "Produit, code, tracking, support et vente pour early-stage.",
     descriptionEn: "Product, code, tracking, support, and sales for early-stage.",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85",
   },
 ];
 
 function cleanCategoryName(name: string) {
   return name.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
-}
-
-function SectionTitle({ children }: { children: ReactNode }) {
-  return <h2 className="tt-section-title">{children}</h2>;
 }
 
 const CategoriesIndexPage = () => {
@@ -245,299 +235,68 @@ const CategoriesIndexPage = () => {
     return () => cleanupSeo(["cats-jsonld"]);
   }, [lang, categories.length]);
 
+  const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
+  const toolsLabel = (count: number) => t(`${count} outils`, `${count} tools`);
+  const categoryRow = (cat: Category) => {
+    const Icon = getCategoryIcon(cat.id);
+    const name = cleanCategoryName(cat.name);
+    return <LinkRow key={cat.id} name={t(name, cat.nameEn || name)} icon={<Icon />}
+      detail={cat.description ? t(cat.description, cat.descriptionEn || cat.description) : undefined}
+      note={toolsLabel(categoryStats.get(cat.id)?.count || 0)}
+      renderLink={(className, content) => <Link to={`${prefix}/category/${cat.slug}`} className={className}>{content}</Link>} />;
+  };
+
+  // The strongest tools of a category, as faces on its tile.
+  const facesOf = (catId: string) => tools.filter((tool) => tool.categoryId === catId).sort(compareByDemand).slice(0, 4)
+    .map((tool) => <Logo key={tool.id} tool={tool} size={24} />);
+
+  // The catalogue's language (12/11/2026): title and figure, the needs as the filter bar, then sections of rows.
   return (
-    <div className="min-h-screen">
-      <EditorialHero
-        breadcrumb={[
-          { label: t("Outils", "Tools"), href: `${prefix}/tools` },
-          { label: t("Catégories", "Categories") },
-        ]}
-        eyebrow={t("Catégories", "Categories")}
-        title={
-          <>
-            {t("Explorer les outils", "Explore tools")}<br />
-            {t("par usage.", "by use case.")}
-          </>
-        }
-        description={t(
-          `${categories.length} catégories pour comparer ${tools.length}+ outils SaaS par besoin.`,
-          `${categories.length} categories to compare ${tools.length}+ SaaS tools by need.`
-        )}
-        primaryCta={{ label: t("Tous les outils", "All tools"), href: `${prefix}/tools` }}
-        secondaryCta={{ label: t("Voir les stacks", "See stacks"), href: `${prefix}/stacks` }}
-        meta={[
-          { label: t("CATÉGORIES", "CATEGORIES"), value: categories.length },
-          { label: t("OUTILS", "TOOLS"), value: `${tools.length}+` },
-        ]}
-      />
+    <Page>
+      <Breadcrumb items={[{ label: t("Outils", "Tools") as string, href: `${prefix}/tools` }, { label: t("Catégories", "Categories") as string }]} includeSchema={false} />
+      <CatalogTitle title={t("Catégories", "Categories") as string} count={categories.length} countLabel={t("catégories", "categories") as string}
+        lead={t(`${tools.length} outils SaaS à comparer, rangés par usage. Partez d'un besoin.`, `${tools.length} SaaS tools to compare, sorted by use. Start from a need.`) as string}
+        sentinelRef={toolbarSentinelRef} />
 
-      <section className="border-b border-border bg-background py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-6 flex flex-col justify-between gap-2 md:flex-row md:items-end">
-            <p className="label-section">{t("Par besoin", "By need")}</p>
-            <p className="max-w-xl text-sm text-muted-foreground md:text-right">
-              {t("Choisis un point de départ.", "Choose a starting point.")}
-            </p>
-          </div>
+      <FilterBar stuck={toolbarStuck} railLabel={t("Besoins", "Needs") as string}
+        prevLabel={t("Besoins précédents", "Previous needs") as string} nextLabel={t("Besoins suivants", "Next needs") as string}
+        rail={INTENTS.map((intent) => <Chip key={intent.id} pressed={activeIntent === intent.id}
+          onClick={() => { if (activeIntent !== intent.id) void runCatalogFilter(() => setActiveIntent(intent.id)); }}>{t(intent.labelFr, intent.labelEn)}</Chip>)} />
 
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {INTENTS.map((intent) => {
-              const Icon = intent.icon;
-              const isActive = activeIntent === intent.id;
+      {/* The strong moment: the need's categories as large tiles. */}
+      <CatalogSection id="cats-need" title={t(activeIntentConfig.descriptionFr, activeIntentConfig.descriptionEn).replace(/\.$/, "")} count={priorityCategories.length}>
+        <PlaceTiles label={t(activeIntentConfig.labelFr, activeIntentConfig.labelEn) as string}>{priorityCategories.map((cat) => {
+          const Icon = getCategoryIcon(cat.id);
+          const name = cleanCategoryName(cat.name);
+          return <PlaceTile key={cat.id} icon={<Icon />} name={t(name, cat.nameEn || name)} faces={facesOf(cat.id)}
+            detail={cat.description ? t(cat.description, cat.descriptionEn || cat.description) : undefined}
+            note={toolsLabel(categoryStats.get(cat.id)?.count || 0)}
+            renderLink={(className, content) => <Link to={`${prefix}/category/${cat.slug}`} className={className}>{content}</Link>} />;
+        })}</PlaceTiles>
+      </CatalogSection>
 
-              return (
-                <button
-                  key={intent.id}
-                  type="button"
-                  onClick={() => setActiveIntent(intent.id)}
-                  className={`group flex min-h-[20rem] flex-col rounded-lg p-3 text-left transition-colors duration-200 ${
-                    isActive
-                      ? "bg-secondary"
-                      : "bg-secondary/70 hover:bg-secondary"
-                  }`}
-                >
-                  <div className="relative overflow-hidden rounded-md bg-background">
-                    <img
-                      src={intent.image}
-                      alt={t(intent.labelFr, intent.labelEn)}
-                      className="aspect-[1.45/1] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
-                      loading="lazy"
-                    />
-                    <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground shadow-xs backdrop-blur">
-                      <Icon className="h-3.5 w-3.5 text-primary" />
-                      {isActive ? t("Sélectionné", "Selected") : t("Explorer", "Explore")}
-                    </div>
-                  </div>
+      <CatalogSection id="cats-stacks" title={t("Partir d'une situation réelle", "Start from a real situation")}
+        action={<Link to={`${prefix}/stacks`} className={linkClass()}>{t("Toutes les stacks types", "All stack templates")}<LinkArrow /></Link>}>
+        <FigureCards label={t("Stacks types", "Stack templates") as string}>{featuredStacks.slice(0, 4).map((template) => {
+          const stack = template.stack!;
+          return <FigureCard key={template.slug} figure={t(`${stack.monthlyBudget} €`, `€${stack.monthlyBudget}`)} unit={t("/mois", "/mo")}
+            name={t(template.labelFr, template.labelEn)} detail={t(template.titleFr, template.titleEn)}
+            renderLink={(className, content) => <Link to={`${prefix}/stacks/${template.slug}`} className={className}>{content}</Link>} />;
+        })}</FigureCards>
+      </CatalogSection>
 
-                  <div className="flex flex-1 flex-col justify-between px-1 pb-1 pt-4">
-                    <div>
-                      <h3 className="text-lg font-semibold leading-tight tracking-tight text-foreground">
-                        {t(intent.labelFr, intent.labelEn)}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                        {t(intent.descriptionFr, intent.descriptionEn)}
-                      </p>
-                    </div>
-                    <span className={`mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-opacity ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}>
-                      {t("Voir la sélection", "View selection")}
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                    </span>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-border bg-background py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div className="max-w-3xl">
-              <p className="label-section mb-2">{t("Stacks types", "Stack templates")}</p>
-              <SectionTitle>{t("Pars d'une situation réelle", "Start from a real situation")}</SectionTitle>
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
-                {t(
-                  "Une catégorie aide à comparer. Une stack type aide à décider quoi garder, remplacer ou éviter selon ton profil.",
-                  "A category helps you compare. A stack template helps you decide what to keep, replace, or avoid for your profile."
-                )}
-              </p>
-            </div>
-            <Link
-              to={`${prefix}/stacks`}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-            >
-              {t("Toutes les stacks types", "All stack templates")}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-            {featuredStacks.map((template) => {
-              const stack = template.stack!;
-              return (
-                <Link
-                  key={template.slug}
-                  to={`${prefix}/stacks/${template.slug}`}
-                  className="group flex min-h-[27rem] flex-col rounded-lg bg-secondary/70 p-3 transition-colors duration-200 hover:bg-secondary"
-                >
-                  <div className="relative overflow-hidden rounded-md bg-background">
-                    <img
-                      src={template.image}
-                      alt={t(template.labelFr, template.labelEn)}
-                      className="aspect-[1.2/1] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
-                      loading="lazy"
-                    />
-                    <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground shadow-xs backdrop-blur">
-                      <Boxes className="h-3.5 w-3.5 text-primary" />
-                      {t(template.labelFr, template.labelEn)}
-                    </div>
-                  </div>
-
-                  <div className="flex flex-1 flex-col justify-between px-1 pb-1 pt-5">
-                    <div>
-                      <h3 className="text-lg font-semibold leading-tight tracking-tight text-foreground">
-                        {t(template.titleFr, template.titleEn)}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                        {t(template.descriptionFr, template.descriptionEn)}
-                      </p>
-                    </div>
-                    <div className="mt-5 border-t border-border/70 pt-4">
-                      <div className="flex items-center justify-between gap-3 text-xs font-semibold text-muted-foreground">
-                        <span>
-                          <span className="num-mono text-foreground">{stack.monthlyBudget}€</span>/{t("mois", "mo")}
-                        </span>
-                        <span>
-                          {t("jusqu'à", "up to")} <span className="num-mono text-primary">{stack.savings}€</span> {t("à revoir", "to review")}
-                        </span>
-                      </div>
-                      <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                        {t("Voir la stack", "View stack")}
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-border py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <p className="label-section mb-2">{t("Recommandé", "Recommended")}</p>
-              <SectionTitle>{t("À regarder d'abord", "Check first")}</SectionTitle>
-            </div>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {priorityCategories.map((cat) => (
-              <CategoryCard
-                key={cat.id}
-                cat={cat}
-                prefix={prefix}
-                t={t}
-                stats={categoryStats.get(cat.id)}
-                featured
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-8">
-            <p className="label-section mb-2">{t("Bibliothèque", "Library")}</p>
-            <SectionTitle>{t("Toutes les catégories par usage", "All categories by use case")}</SectionTitle>
-          </div>
-
-          <div className="space-y-10">
-            {CATEGORY_GROUPS.map((group) => {
-              const groupCategories = group.categoryIds
-                .map((id) => categories.find((cat) => cat.id === id))
-                .filter((cat): cat is Category => Boolean(cat));
-
-              if (groupCategories.length === 0) return null;
-
-              return (
-                <div key={group.titleFr}>
-                  <div className="mb-4 flex flex-col justify-between gap-2 border-b border-border pb-3 md:flex-row md:items-end">
-                    <div>
-                      <h3 className="font-display text-lg font-semibold leading-snug text-foreground">
-                        {t(group.titleFr, group.titleEn)}
-                      </h3>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {t(group.descriptionFr, group.descriptionEn)}
-                      </p>
-                    </div>
-                    <span className="text-xs font-medium text-muted-foreground">
-                      {groupCategories.length} {t("catégories", "categories")}
-                    </span>
-                  </div>
-
-                  <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-                    {groupCategories.map((cat) => (
-                      <CategoryCard
-                        key={cat.id}
-                        cat={cat}
-                        prefix={prefix}
-                        t={t}
-                        stats={categoryStats.get(cat.id)}
-                      />
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-    </div>
+      {CATEGORY_GROUPS.map((group, index) => {
+        const groupCategories = group.categoryIds
+          .map((id) => categories.find((cat) => cat.id === id))
+          .filter((cat): cat is Category => Boolean(cat));
+        if (groupCategories.length === 0) return null;
+        return <Chapter key={group.titleFr} id={`cats-group-${index}`} title={t(group.titleFr, group.titleEn)} count={groupCategories.length}
+          detail={t(group.descriptionFr, group.descriptionEn)}>
+          <LinkRows>{groupCategories.map(categoryRow)}</LinkRows>
+        </Chapter>;
+      })}
+    </Page>
   );
 };
-
-function CategoryCard({
-  cat,
-  prefix,
-  t,
-  stats,
-  featured = false,
-}: {
-  cat: ReturnType<typeof useCategories>["categories"][number];
-  prefix: string;
-  t: (fr: string, en: string) => string;
-  stats?: { count: number; freeCount: number; paidCount: number };
-  featured?: boolean;
-}) {
-  const Icon = getCategoryIcon(cat.id);
-  const catName = cleanCategoryName(cat.name);
-  const englishName = cat.nameEn || catName;
-
-  return (
-    <Link
-      to={`${prefix}/category/${cat.slug}`}
-      className="cat-index-card"
-    >
-      <div className="cat-index-card-layout">
-        <div className="cat-index-card-icon">
-          <Icon className="h-5 w-5" />
-        </div>
-        <div className="cat-index-card-copy">
-          <div className="cat-index-card-head">
-            <h3 className="cat-index-card-title">
-              {t(catName, englishName)}
-            </h3>
-            <ArrowRight className="cat-index-card-arrow" />
-          </div>
-          {cat.description && (
-            <p className="cat-index-card-description">
-              {t(cat.description, cat.descriptionEn || cat.description)}
-            </p>
-          )}
-          <div className="cat-index-card-meta">
-            <span className="cat-index-card-count">
-              <span className="num-mono">{stats?.count || 0}</span> {t("outils", "tools")}
-            </span>
-            {(stats?.freeCount || 0) > 0 && (
-              <span>
-                <span className="num-mono">{stats?.freeCount}</span> {t("gratuits ou freemium", "free or freemium")}
-              </span>
-            )}
-            {(stats?.paidCount || 0) > 0 && featured && (
-              <span>
-                <span className="num-mono">{stats?.paidCount}</span> {t("plans payants", "paid plans")}
-              </span>
-            )}
-          </div>
-        </div>
-      </div>
-    </Link>
-  );
-}
 
 export default CategoriesIndexPage;

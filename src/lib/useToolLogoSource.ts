@@ -129,6 +129,10 @@ export function useToolLogoSource(tool: LogoTool, size: number, allowRemoteSourc
 
   return {
     src,
+    // What the <img> may actually request. Native lazy loading inside the app's own scroll container
+    // fetched logos several screens below the fold (13/11/2026: 84 of 189 image requests on /fr/tools),
+    // so a remote file waits until the logo is near view. Same-origin and inline files stay immediate.
+    shown: inView || !src?.startsWith("http") ? src : undefined,
     imgRef,
     loaded,
     loading: (eager ? "eager" : "lazy") as "eager" | "lazy",

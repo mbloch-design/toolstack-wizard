@@ -358,7 +358,7 @@ const ToolsPage = () => {
     // Two or three words on what the tool does.
     const pitch = (lang === "en" ? entry?.pitchEn : entry?.pitchFr) || toolTagline(tool.slug || tool.id, lang);
     return (
-      <ToolMediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
+      <ToolMediaCard key={tool.id} priority lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
         category={eyebrow || undefined} badge={entry?.sponsored ? t("Sponsorisé", "Sponsored") as string : undefined} reason={pitch || undefined}
         renderLink={(className, content) => <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className={className}>{content}</Link>} />
     );

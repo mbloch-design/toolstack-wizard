@@ -33,7 +33,7 @@ export function CatalogTitle({ title, count, countLabel, lead, sentinelRef }: { 
  * It sits 24 px under the title and sticks under the top bar, turning to glass once stuck.
  */
 export function FilterBar({ stuck, rail, railRef, railLabel, tail, prevLabel, nextLabel }: {
-  stuck: boolean; rail: ReactNode; railRef?: MutableRefObject<HTMLElement | null>; railLabel: string; tail: ReactNode; prevLabel: string; nextLabel: string;
+  stuck: boolean; rail: ReactNode; railRef?: MutableRefObject<HTMLElement | null>; railLabel: string; tail?: ReactNode; prevLabel: string; nextLabel: string;
 }) {
   const own = useRef<HTMLElement | null>(null);
   const [edges, setEdges] = useState({ start: true, end: true });
@@ -89,7 +89,7 @@ export function FilterBar({ stuck, rail, railRef, railLabel, tail, prevLabel, ne
         <nav ref={setRail} className={styles.rail} aria-label={railLabel}>{rail}</nav>
         <button type="button" className={styles.railArrow} data-side="end" onClick={() => go(1)} aria-label={nextLabel} tabIndex={-1} hidden={edges.end}><ChevronRight aria-hidden="true" /></button>
       </div>
-      <div className={styles.tail}>{tail}</div>
+      {tail && <div className={styles.tail}>{tail}</div>}
     </div>
     </div>
   );
@@ -158,11 +158,65 @@ export function LinkIndex({ label, children }: { label: string; children: ReactN
   return <ul className={styles.index} aria-label={label}>{children}</ul>;
 }
 
-/** A place to go next, as a row: its name and one figure (« 128 outils »). renderLink gives the router link. */
-export function LinkRow({ name, note, renderLink }: { name: string; note?: string; renderLink: (className: string, content: ReactNode) => ReactNode }) {
-  return <li>{renderLink(styles.linkRow, <><span className={styles.linkName}>{name}</span>{note && <span className={styles.linkNote}>{note}</span>}<ChevronRight className={styles.linkArrow} aria-hidden="true" /></>)}</li>;
+/**
+ * A place to go next, as a row: its sign, its name and one line on what it holds, one figure (« 128 outils »).
+ * renderLink gives the router link. A row is a card too: the same hairline and quiet lift as the media card.
+ */
+export function LinkRow({ name, note, detail, icon, renderLink }: { name: string; note?: string; detail?: string; icon?: ReactNode; renderLink: (className: string, content: ReactNode) => ReactNode }) {
+  return <li>{renderLink(styles.linkRow, <>
+    {icon && <span className={styles.linkIcon} aria-hidden="true">{icon}</span>}
+    <span className={styles.linkText}><span className={styles.linkName}>{name}</span>{detail && <span className={styles.linkDetail}>{detail}</span>}</span>
+    {note && <span className={styles.linkNote}>{note}</span>}
+    <ChevronRight className={styles.linkArrow} aria-hidden="true" />
+  </>)}</li>;
 }
 
 export function LinkRows({ children }: { children: ReactNode }) {
   return <ul className={styles.linkRows}>{children}</ul>;
+}
+
+
+/* Three rhythms for an index page (12/11/2026): a few large tiles for the strong moment, compact cards led by
+   a figure, then chapters of dense rows. The scale changes, so the page breathes. */
+
+/** The strong moment: a few large tiles, each a place with its sign, its name large, why, and who is inside. */
+export function PlaceTiles({ label, children }: { label: string; children: ReactNode }) {
+  return <ul className={styles.placeTiles} aria-label={label}>{children}</ul>;
+}
+
+export function PlaceTile({ icon, name, detail, note, faces, renderLink }: { icon: ReactNode; name: string; detail?: string; note?: string;
+  /** A few logos of what the place holds (the system's Logo, 24 px). */
+  faces?: ReactNode; renderLink: (className: string, content: ReactNode) => ReactNode }) {
+  return <li className={styles.placeSlot}>{renderLink(styles.placeTile, <>
+    <span className={styles.placeTop}><span className={styles.placeIcon} aria-hidden="true">{icon}</span>{faces && <span className={styles.placeFaces} aria-hidden="true">{faces}</span>}</span>
+    <span className={styles.placeName}>{name}</span>
+    {detail && <span className={styles.placeDetail}>{detail}</span>}
+    {note && <span className={styles.placeNote}>{note}<ChevronRight aria-hidden="true" /></span>}
+  </>)}</li>;
+}
+
+/** Compact cards led by one figure (a budget, a saving): the figure first, large; what it is, under it. */
+export function FigureCards({ label, children }: { label: string; children: ReactNode }) {
+  return <ul className={styles.figureCards} aria-label={label}>{children}</ul>;
+}
+
+export function FigureCard({ figure, unit, name, detail, renderLink }: { figure: string; unit?: string; name: string; detail?: string; renderLink: (className: string, content: ReactNode) => ReactNode }) {
+  return <li className={styles.placeSlot}>{renderLink(styles.figureCard, <>
+    <span className={styles.figure}>{figure}{unit && <small>{unit}</small>}</span>
+    <span className={styles.figureName}>{name}</span>
+    {detail && <span className={styles.figureDetail}>{detail}</span>}
+  </>)}</li>;
+}
+
+/** A chapter: its title, its sentence and its figure on the left (they stay in view), its content on the right. */
+export function Chapter({ id, title, detail, count, children }: { id: string; title: string; detail?: string; count?: number; children: ReactNode }) {
+  return (
+    <section className={styles.chapter} aria-labelledby={id}>
+      <header className={styles.chapterHead}>
+        <h2 id={id} className={styles.sectionTitle}>{title}{count !== undefined && <span className={styles.sectionCount}>{count}</span>}</h2>
+        {detail && <p className={styles.chapterDetail}>{detail}</p>}
+      </header>
+      <div className={styles.chapterBody}>{children}</div>
+    </section>
+  );
 }

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Logo from "../Logo/Logo";
 import { Bookmark, BookmarkCheck } from "@/lib/icons";
 import type { LogoTool } from "@/lib/useToolLogoSource";
+import { useReveal } from "@/lib/useReveal";
 import styles from "./MediaCard.module.css";
 
 export type MediaCardProps = {
@@ -9,6 +10,8 @@ export type MediaCardProps = {
   tool: LogoTool;
   /** The tool's picture (the page passes its screenshot component). Without it, the card is the tool alone on a raised tile. */
   image?: ReactNode;
+  /** A lighter copy of the picture for the blurred glow behind it (it shows no detail). Defaults to the picture. */
+  glow?: ReactNode;
   /** What the tool is. Opens the quiet line of facts under the name. */
   category?: string;
   /** The price, already worded (« Dès 10 €/mois », « Gratuit »). Closes the line of facts; free reads in green. */
@@ -28,11 +31,12 @@ export type MediaCardProps = {
 };
 
 /** A tool to discover: its picture, the tool, why it is here; the add button sits on the picture. */
-export default function MediaCard({ lang, tool, image, category, price, badge, size = "l", reason, renderLink, add, localLogosOnly = false, dataTool }: MediaCardProps) {
+export default function MediaCard({ lang, tool, image, glow, category, price, badge, size = "l", reason, renderLink, add, localLogosOnly = false, dataTool }: MediaCardProps) {
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
+  const reveal = useReveal<HTMLLIElement>();
   const mark = <Logo tool={tool} size={40} localOnly={localLogosOnly} />;
   const content = <>
-    <span className={styles.glow} data-mark={image ? undefined : ""} aria-hidden="true">{image ?? mark}</span>
+    <span className={styles.glow} data-mark={image ? undefined : ""} aria-hidden="true">{glow ?? image ?? mark}</span>
     <span className={styles.shot}>
       {image ?? <span className={styles.ambient}>{mark}</span>}
       {(category || badge || price) && <span className={styles.tags}>
@@ -48,7 +52,7 @@ export default function MediaCard({ lang, tool, image, category, price, badge, s
     </span>
   </>;
   return (
-    <li className={styles.slot} data-size={size} data-discovery-tool={dataTool}>
+    <li ref={reveal} className={styles.slot} data-size={size} data-discovery-tool={dataTool}>
       {renderLink(styles.card, content)}
       {add && <button type="button" className={styles.action} data-media-add="" data-state={add.state} disabled={add.state !== "idle" || add.disabled} aria-busy={add.state === "pending" || undefined}
         aria-label={add.state === "pending" ? t(`Ajout de ${tool.name} en cours`, `Adding ${tool.name}`) : add.state === "added" ? t(`${tool.name} ajouté à ma stack`, `${tool.name} added to my stack`) : t(`Ajouter ${tool.name} à ma stack`, `Add ${tool.name} to my stack`)}

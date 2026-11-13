@@ -21,11 +21,11 @@ export function initials(name: string): string {
 
 /** A tool's logo on its tile. When no file answers, the tile shows two letters of its name. */
 export default function Logo({ tool, size = 40, localOnly = false }: LogoProps) {
-  const { src, imgRef, loaded, loading, onLoad, onError } = useToolLogoSource(tool, size, !localOnly);
+  const { src, shown, imgRef, loaded, loading, onLoad, onError } = useToolLogoSource(tool, size, !localOnly);
   return (
     <span className={styles.tile} data-size={size} data-small={SMALL_MARKS.has(tool.slug || "") ? "" : undefined}>
       {src ? (
-        <img ref={imgRef} key={src} src={src} alt="" width={size} height={size} loading={loading} data-loading={loaded ? undefined : ""} className={styles.image} onLoad={onLoad} onError={onError} />
+        <img ref={imgRef} key={src} src={shown} alt="" width={size} height={size} loading={loading} data-loading={loaded ? undefined : ""} className={styles.image} onLoad={onLoad} onError={onError} />
       ) : (
         <span className={styles.initial} aria-hidden="true">{initials(tool.name ?? "?")}</span>
       )}

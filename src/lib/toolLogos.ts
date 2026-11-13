@@ -1,4 +1,11 @@
-import { getDomainFromUrl } from "@/lib/toolUtils";
+import { getDomainFromUrl } from "@/lib/domain";
+import logoThumbs from "@/data/logoThumbs.json";
+
+/** Self-hosted copies of the outside logos (scripts/logo-thumbs.ts), on the same R2 bucket as the card thumbnails. */
+const LOGOS_BASE = (() => {
+  try { return ((import.meta as { env?: Record<string, string | undefined> }).env?.VITE_CARD_THUMBS_BASE || "").replace(/\/$/, ""); } catch { return ""; }
+})();
+const LOGO_THUMBS = logoThumbs as Record<string, string>;
 
 export type LogoCandidateTool = {
   id?: string;
@@ -329,6 +336,11 @@ export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 
   // Vector where the raster was below 2x (29 Oct 2026, image rule).
   const LOCAL_LOGO_EXT: Record<string, string> = { chatgpt: "svg", notion: "svg" };
   if (LOCAL_LOGO_SLUGS.has(localSlug)) sources.push(`/home-logos/${localSlug}.${LOCAL_LOGO_EXT[localSlug] || "png"}`);
+
+  // 0b. Our own copy of the logo the chain below would have found (13/11/2026): one request to one host
+  // instead of up to four probes across a dozen. The chain stays behind it as the fallback.
+  const hosted = LOGOS_BASE && LOGO_THUMBS[tool.slug || tool.id || ""];
+  if (hosted) sources.push(`${LOGOS_BASE}/logos/${hosted}`);
 
   // 1. Custom logo override. Accept canonical remote URLs and local assets:
   // homepage/card-specific local logos must win before CDN probing so they

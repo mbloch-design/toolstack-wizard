@@ -432,24 +432,56 @@
   align-items: center;
   gap: var(--tt-space-3);
   min-height: var(--tt-field-h);
-  padding: 0 var(--tt-space-4);
+  padding: var(--tt-space-3) var(--tt-space-4);
   border-radius: var(--tt-r-card);
   background: var(--tt-bg);
-  box-shadow: var(--tt-hairline);
+  box-shadow: var(--tt-row-rest);
   color: var(--tt-ink);
   text-decoration: none;
-  transition: box-shadow var(--tt-dur-state) ease;
+  transition: box-shadow 700ms var(--tt-spring-card), transform 700ms var(--tt-spring-card);
 }
 
 .linkRow:hover {
-  box-shadow: var(--tt-hairline-ink);
+  box-shadow: var(--tt-row-lift);
+  transform: translateY(-1.5px);
+}
+
+/* The sign of the place: a 40 px tile, the same as a tool's logo tile. */
+.linkIcon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--tt-r-chip);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+}
+
+.linkIcon svg {
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+}
+
+.linkText {
+  display: grid;
+  flex: 1;
+  gap: calc(var(--tt-space-1) * .5);
+  min-width: 0;
 }
 
 .linkName {
-  flex: 1;
-  min-width: 0;
   font: var(--tt-label-font);
   letter-spacing: var(--tt-label-tracking);
+}
+
+.linkDetail {
+  overflow: hidden;
+  color: var(--tt-meta);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .linkNote {
@@ -468,7 +500,212 @@
   stroke-linejoin: round;
 }
 
+/* Large tiles: the strong moment of an index page. A tile is a card: the same hairline and quiet lift. */
+.placeTiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--tt-place-min)), 1fr));
+  gap: var(--tt-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.placeSlot {
+  display: grid;
+  min-width: 0;
+}
+
+.placeTile {
+  composes: focus from "../atoms.module.css";
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--tt-space-2);
+  min-height: var(--tt-place-h);
+  padding: var(--tt-space-5);
+  border-radius: var(--tt-r-card);
+  background: var(--tt-tile);
+  box-shadow: var(--tt-row-rest);
+  color: var(--tt-ink);
+  text-decoration: none;
+  transition: box-shadow 700ms var(--tt-spring-card), transform 700ms var(--tt-spring-card);
+}
+
+.placeTile:hover {
+  box-shadow: var(--tt-row-lift);
+  transform: translateY(-1.5px);
+}
+
+.placeTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--tt-space-3);
+  margin-bottom: var(--tt-space-4);
+}
+
+.placeIcon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--tt-r-chip);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-logo-shadow);
+}
+
+.placeIcon svg {
+  width: var(--tt-icon-xl);
+  height: var(--tt-icon-xl);
+}
+
+/* Who is inside: logos that overlap a little, like a row of faces. */
+.placeFaces {
+  display: flex;
+}
+
+.placeFaces > * + * {
+  margin-left: calc(var(--tt-space-1) * -1.5);
+}
+
+.placeName {
+  align-self: end;
+  font: var(--tt-title-m-font);
+  letter-spacing: var(--tt-title-m-tracking);
+}
+
+.placeDetail {
+  display: -webkit-box;
+  overflow: hidden;
+  min-height: var(--tt-place-detail);
+  color: var(--tt-meta);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.placeNote {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-1);
+  margin-top: var(--tt-space-2);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+.placeNote svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+/* Compact cards led by a figure. */
+.figureCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--tt-figure-min)), 1fr));
+  gap: var(--tt-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.figureCard {
+  composes: focus from "../atoms.module.css";
+  display: grid;
+  align-content: start;
+  gap: var(--tt-space-1);
+  padding: var(--tt-space-4);
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
+  color: var(--tt-ink);
+  text-decoration: none;
+  transition: box-shadow 700ms var(--tt-spring-card), transform 700ms var(--tt-spring-card);
+}
+
+.figureCard:hover {
+  box-shadow: var(--tt-row-lift);
+  transform: translateY(-1.5px);
+}
+
+.figure {
+  margin-bottom: var(--tt-space-2);
+  font: var(--tt-figure-font);
+  letter-spacing: var(--tt-figure-tracking);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.figure small {
+  margin-left: var(--tt-space-1);
+  color: var(--tt-meta);
+  font: var(--tt-unit-font);
+  letter-spacing: var(--tt-unit-tracking);
+}
+
+.figureName {
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+}
+
+.figureDetail {
+  color: var(--tt-meta);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+}
+
+/* Chapters: title and sentence on the left, in view while the rows go by; the rows on the right. On a
+   narrow column they stack. Each chapter opens on a hairline. */
+.chapter {
+  container-type: inline-size;
+  padding-top: var(--tt-space-6);
+  border-top: var(--tt-hairline-w) solid var(--tt-line);
+}
+
+.chapterHead {
+  display: grid;
+  align-content: start;
+  gap: var(--tt-space-2);
+  margin-bottom: var(--tt-space-4);
+}
+
+.chapterDetail {
+  max-width: 36ch;
+  margin: 0;
+  color: var(--tt-meta);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+}
+
+.chapterBody {
+  min-width: 0;
+}
+
+@container (width > 760px) {
+  .chapter {
+    display: grid;
+    grid-template-columns: var(--tt-chapter-aside) minmax(0, 1fr);
+    gap: var(--tt-space-8);
+  }
+
+  .chapterHead {
+    position: sticky;
+    top: var(--tt-space-6);
+    align-self: start;
+    margin-bottom: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .placeTile:hover,
+  .figureCard:hover {
+    transform: none;
+  }
+
+  .linkRow:hover {
+    transform: none;
+  }
+
   .bar[data-stuck],
   .bar[data-leaving],
   .bar[data-settling] {
