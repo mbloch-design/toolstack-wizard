@@ -114,13 +114,16 @@ export function StackLink({ link: Link = PlainLink, to, label, icon, count, curr
 }
 
 /** The menu on the right: who you are (or how to sign in), then the site's settings with their state written out. */
-export function ShellMenu({ trigger, label, open, onOpenChange, children, signedIn }: { trigger: ReactNode; label: string; open?: boolean; onOpenChange?: (open: boolean) => void; children: ReactNode;
+export function ShellMenu({ trigger, label, open, onOpenChange, children, signedIn, account = true }: { trigger: ReactNode; label: string; open?: boolean; onOpenChange?: (open: boolean) => void; children: ReactNode;
   /** Marks the trigger of a signed-in person (pages and tests tell the account from the settings). */
-  signedIn?: boolean }) {
+  signedIn?: boolean;
+  /** The menu is also the way to the account (sign-in, settings). False while accounts are off: it is then only the
+      site's settings, and must not carry the account entry point's mark (13/11/2026, e2e account-generated-routing). */
+  account?: boolean }) {
   return (
     // Modal: keyboard focus stays in the menu while it is open and returns to its trigger on Escape.
     <Popover.Root modal open={open} onOpenChange={onOpenChange}>
-      <Popover.Trigger asChild><button type="button" className={styles.menuTrigger} aria-label={label} data-account-trigger="" data-signed-in={signedIn || undefined}>{trigger}</button></Popover.Trigger>
+      <Popover.Trigger asChild><button type="button" className={styles.menuTrigger} aria-label={label} data-account-trigger={account ? "" : undefined} data-signed-in={signedIn || undefined}>{trigger}</button></Popover.Trigger>
       <Popover.Portal>
         <Popover.Content className={styles.menu} align="end" sideOffset={8} aria-label={label} data-shell-menu="">{children}</Popover.Content>
       </Popover.Portal>
