@@ -117,6 +117,9 @@
   object-fit: cover;
   object-position: top center;
   transition: opacity 320ms var(--tt-ease);
+
+  /* The colour washes in under the picture rather than appearing at once. */
+  animation: tt-glow-in 600ms var(--tt-ease) both;
 }
 
 .glow::after {
@@ -167,18 +170,22 @@
   transition: transform 700ms var(--tt-spring-card), opacity 420ms var(--tt-ease);
 }
 
-/* The colour washes in under the picture rather than appearing at once. */
-.glow img {
-  animation: tt-glow-in 600ms var(--tt-ease) both;
-}
-
 @keyframes tt-glow-in {
-  from { opacity: 0; }
+  from {
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .shot img, .glow img { transition: none; animation: none; }
-  .shot img[data-loading] { transform: none; }
+  .shot img,
+  .glow img {
+    transition: none;
+    animation: none;
+  }
+
+  .shot img[data-loading] {
+    transform: none;
+  }
 }
 
 .card:hover .shot img {
@@ -229,9 +236,6 @@
   font-variant-numeric: tabular-nums;
   text-overflow: ellipsis;
   white-space: nowrap;
-  /* No backdrop blur on cards (13/11/2026, measured): two blurred layers per card, ~90 on /fr/tools, took
-     scrolling from 8 ms to 116 ms a frame under 4x CPU throttle. A denser tint reads the same on any screenshot. */
-  background: rgb(14 14 16 / 80%);
 }
 
 
@@ -337,8 +341,9 @@
   padding: 0;
   border: 0;
   border-radius: var(--tt-r-round);
-  /* Opaque instead of blurred glass: see .tag above. */
-  background: color-mix(in oklch, var(--tt-bg) 92%, transparent);
+
+  /* Opaque instead of blurred glass (see --tt-tag-glass in tokens.css). */
+  background: var(--tt-card-action-bg);
   box-shadow: var(--tt-glass-shadow);
   color: var(--tt-ink);
   cursor: pointer;
