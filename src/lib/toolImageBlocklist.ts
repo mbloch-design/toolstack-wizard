@@ -25,6 +25,9 @@ export const TOOL_IMAGE_BLOCKLIST = new Set([
   "pagespeed-insights", "personio", "pixco", "poetry", "pro-tools",
   "product-hunt", "recharts", "shield", "shotdeck", "taplio", "tezza",
   "ukg-pro", "vue-cli", "webxr", "whisper", "youtube-studio",
+  // 13/11/2026: the card thumbnails ranked by visual entropy, the flattest 48 checked by eye. Epic Games' bot
+  // check (« One more step ») on three tools, and blank, black or still-loading captures on four more.
+  "artstation", "twinmotion", "unreal-engine", "linear", "superdev-pro", "figma-stark", "meme-templates",
 ]);
 
 /** Keep old bad captures blocked, but allow an exact verified replacement. */
