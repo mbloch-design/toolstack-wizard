@@ -5,8 +5,8 @@ import { useCurrency } from "@/hooks/useCurrency";
 import { ToolDetailPresentation, type ToolDetailSubPage } from "@/pages/ToolDetailPage";
 import { mapToolFromJson } from "@/lib/toolFromJson";
 import { catalogCapabilities } from "@/lib/catalogPolicy";
-import { CatalogEditorPresentation } from "./CatalogEditingContext";
-import { catalogIssueMessage } from "./catalogEditingModel";
+import { CatalogRecordWorkspace } from "./CatalogRecordWorkspace";
+import { catalogFieldLabel, catalogIssueMessage } from "./catalogEditingModel";
 import type { CatalogDraftSession } from "./catalogDraftSession";
 import { Button, LinkAction } from "@/ds/Controls/Controls";
 import { CatalogIssues, CatalogToolbar } from "@/ds/CatalogAuthoring/CatalogAuthoring";
@@ -39,6 +39,7 @@ export function CatalogInlineFiche({
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewPage, setPreviewPage] = useState<ToolDetailSubPage>("presentation");
   const [confirmVersion, setConfirmVersion] = useState<number | null>(null);
+  const blockOpen = Boolean(session.getStagedBlock(slug));
   useEffect(() => {
     if (previewOpen) previewBack.current?.focus();
     else if (wasPreviewOpen.current) previewTrigger.current?.focus();
@@ -67,7 +68,7 @@ export function CatalogInlineFiche({
         <Button onClick={onBack}>
           {t("Retour aux fiches", "Back to records")}
         </Button>
-        <Button ref={previewTrigger} onClick={() => setPreviewOpen(true)}>{t("Aperçu", "Preview")}</Button>
+        <Button ref={previewTrigger} disabled={blockOpen} onClick={() => setPreviewOpen(true)}>{t("Aperçu", "Preview")}</Button>
         <p role="status">
           {entry.saving
             ? t("Enregistrement…", "Saving…")
@@ -76,16 +77,18 @@ export function CatalogInlineFiche({
                   "Saisies conservées sur cet écran",
                   "Edits retained on this screen",
                 )
-              : dirty
-                ? t("Modifications locales", "Local changes")
+              : blockOpen
+                ? t("Modification en cours", "Editing in progress")
+                : dirty
+                  ? t("Modifications locales", "Local changes")
                 : detail.draft
                   ? t("Brouillon enregistré", "Draft saved")
                   : t("Version publiée", "Published version")}
         </p>
         <p>
           {t(
-            "Le brouillon est enregistré automatiquement après votre saisie.",
-            "Your draft saves automatically after you finish typing.",
+            "Terminez un bloc pour enregistrer ses modifications dans le brouillon.",
+            "Finish a block to save its changes to the draft.",
           )}
         </p>
       </CatalogToolbar>
@@ -117,7 +120,7 @@ export function CatalogInlineFiche({
           </p>
           {(error?.status === 401 || error?.status === 403) &&
             onReauthenticate && (
-              <Button onClick={onReauthenticate}>
+              <Button disabled={blockOpen} onClick={onReauthenticate}>
                 {t("Me reconnecter", "Sign in again")}
               </Button>
             )}
@@ -133,7 +136,7 @@ export function CatalogInlineFiche({
           <ul>
             {issues.map((i, n) => (
               <li key={n}>
-                {i.path} · {catalogIssueMessage(i.code, lang)}
+                {catalogFieldLabel(i.path.split("."), lang)} · {catalogIssueMessage(i.code, lang)}
                 {i.severity === "warning"
                   ? t(" (information)", " (information)")
                   : ""}
@@ -143,8 +146,11 @@ export function CatalogInlineFiche({
         </CatalogIssues>
       )}
       <fieldset disabled={locked} className={styles.content}>
-        <CatalogEditorPresentation
+        <CatalogRecordWorkspace
           key={slug}
+          currency={currency}
+          transaction={session.getStagedBlock(slug)}
+          onTransaction={(block) => session.setStagedBlock(slug, block)}
           context={{
             lang,
             value,
@@ -159,34 +165,21 @@ export function CatalogInlineFiche({
               session.change(slug, [{ path, value: undefined, remove: true }]),
             onChanges: (changes) => session.change(slug, changes),
           }}
-        >
-          {(editing) => (
-            <ToolDetailPresentation
-              tool={mapToolFromJson(value)}
-              tools={tools}
-              categories={categories}
-              lang={lang}
-              currency={currency}
-              privateMode
-              authorMode
-              editing={editing}
-            />
-          )}
-        </CatalogEditorPresentation>
+        />
       </fieldset>
       <CatalogToolbar>
         <Button
-          disabled={locked || entry.saving || !dirty}
+          disabled={blockOpen || locked || entry.saving || !dirty}
           onClick={() => session.discardLocal(slug)}
         >
           {t("Abandonner mes saisies", "Discard my edits")}
         </Button>
-        <Button disabled={locked || entry.saving || dirty} onClick={onReload}>
+        <Button disabled={blockOpen || locked || entry.saving || dirty} onClick={onReload}>
           {t("Recharger la fiche", "Reload record")}
         </Button>
         {detail.draft && caps.canDiscardDraft && (
           <Button
-            disabled={locked || entry.saving || dirty}
+            disabled={blockOpen || locked || entry.saving || dirty}
             onClick={() => setConfirmVersion(detail.version)}
           >
             {t("Supprimer ce brouillon", "Remove this draft")}
@@ -208,6 +201,9 @@ export function CatalogInlineFiche({
           {([ ["presentation", "Présentation", "Overview"], ["prix", "Prix", "Pricing"], ["avis", "Avis", "Reviews"], ["alternatives", "Alternatives", "Alternatives"] ] as const).map(([page, fr, en]) => <Button key={page} aria-pressed={previewPage === page} onClick={() => setPreviewPage(page)}>{t(fr, en)}</Button>)}
         </CatalogToolbar>
         </nav>
+        {dirty && <p className={styles.previewStatus} role="status">
+          {t("Aperçu des modifications en cours d’enregistrement.", "Preview of changes awaiting save.")}
+        </p>}
         <ToolDetailPresentation tool={mapToolFromJson(value)} tools={tools} categories={categories} lang={lang} currency={currency} privateMode previewMode subPage={previewPage} />
       </section>}
       <Dialog open={confirmVersion !== null} onOpenChange={(open) => { if (!open) setConfirmVersion(null); }}>
@@ -218,7 +214,7 @@ export function CatalogInlineFiche({
           </DialogHeader>
           <DialogFooter>
             <Button onClick={() => setConfirmVersion(null)}>{t("Annuler", "Cancel")}</Button>
-            <Button disabled={locked || entry.saving || dirty || confirmVersion !== detail.version} onClick={() => { if (confirmVersion !== null) onRemoveDraft(confirmVersion); setConfirmVersion(null); }}>{t("Confirmer la suppression", "Confirm removal")}</Button>
+            <Button disabled={blockOpen || locked || entry.saving || dirty || confirmVersion !== detail.version} onClick={() => { if (confirmVersion !== null) onRemoveDraft(confirmVersion); setConfirmVersion(null); }}>{t("Confirmer la suppression", "Confirm removal")}</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

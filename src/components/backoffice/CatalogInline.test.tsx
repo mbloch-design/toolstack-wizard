@@ -100,9 +100,8 @@ it("opens saved raw data from the deep URL and denies absent capabilities", asyn
       <CatalogEditor />
     </MemoryRouter>,
   );
-  const field = await screen.findByLabelText("Description courte · français");
-  expect(field).toHaveValue("Persisted draft");
-  expect(field).toBeDisabled();
+  expect(await screen.findByText("Persisted draft")).toBeVisible();
+  expect(screen.queryByRole("button", { name: "Modifier la description" })).not.toBeInTheDocument();
   expect(
     screen
       .getAllByRole("alert")
@@ -258,7 +257,7 @@ it("retains the publication receipt and a usable list/deep-link retry after deta
     return { commitSha: "abc123", commitUrl: "https://example.test/commit/abc123", published: 1, cleanupPending: false };
   });
   render(<MemoryRouter><CatalogEditor /></MemoryRouter>);
-  await screen.findByLabelText("Description courte · français");
+  await screen.findByText("Published copy");
   fireEvent.click(screen.getByRole("button", { name: "Retour aux fiches" }));
   fireEvent.click(await screen.findByRole("button", { name: "Mettre en ligne (1)" }));
   const review = await screen.findByRole("region", { name: "Modifications à publier" });
@@ -270,7 +269,7 @@ it("retains the publication receipt and a usable list/deep-link retry after deta
   expect(await screen.findByRole("alert")).toBeVisible();
   expect(screen.getByRole("link", { name: /Voir le commit/ })).toBeVisible();
   fireEvent.click(screen.getByRole("button", { name: "Édition directe · Notion" }));
-  expect(await screen.findByLabelText("Description courte · français")).toHaveValue("Published copy");
+  expect(await screen.findByText("Published copy")).toBeVisible();
   expect(new URLSearchParams(window.location.search).get("tool")).toBe("notion");
   fireEvent.click(screen.getByRole("button", { name: "Retour aux fiches" }));
   expect(await screen.findByRole("button", { name: "Édition directe · Notion" })).toBeVisible();

@@ -1,3 +1,9 @@
+## 2026-11-10 · Back-office · édition de la fiche sur une page
+
+- La fiche présente ses valeurs par section et ouvre les champs dans le bloc ou l’offre à modifier. Terminer applique les changements au brouillon et Annuler écarte uniquement les saisies du bloc.
+- Les usages se choisissent dans le vocabulaire ToolTrim. Les offres présentent leur montant, leur unité et leur période, avec ajout provisoire, édition, déplacement et retrait réversible.
+- La recette utilise des comptes et des données de test pour la sauvegarde, l’aperçu et la publication groupée.
+
 ## 2026-11-12 · SEO · comparatifs : la situation du scénario est rendue
 
 - Le contrat `ComparisonDecisionGuide` porte un champ `situation` (« Vous documentez des processus », « Vous voulez vendre vite, sans technique ») que la carte « Notre avis » ignorait : la page nommait l'outil sans dire à quel cas d'usage la recommandation répondait.

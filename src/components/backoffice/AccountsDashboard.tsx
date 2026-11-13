@@ -197,7 +197,7 @@ export function AccountsDashboard({
   const navigate = async (next: View) => {
     if (onSectionNavigate) { await onSectionNavigate(next); return; }
     if (view === "catalog" && catalogDirty) {
-      if (!catalogSession.dirty) { setNavigationError(true); return; }
+      if (catalogSession.stagedEditing || !catalogSession.dirty) { setNavigationError(true); return; }
       try { await catalogSession.flush(); }
       catch { setNavigationError(true); return; }
     }

@@ -1,0 +1,70 @@
+.workspace, .section, .form {
+  display: grid;
+  gap: var(--tt-space-4);
+  min-width: 0;
+}
+.workspace { gap: var(--tt-space-8); }
+.section { scroll-margin-block-start: var(--tt-space-16); }
+.title { composes: titleM from "../atoms.module.css"; }
+.label { composes: label from "../atoms.module.css"; }
+
+.value {
+  composes: text from "../atoms.module.css";
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.note { composes: note from "../atoms.module.css"; }
+
+.card {
+  composes: raised from "../atoms.module.css";
+  display: grid;
+  min-width: 0;
+  gap: var(--tt-space-4);
+  padding: var(--tt-space-4);
+}
+
+.cardHeader, .actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-2);
+}
+.cardHeader { justify-content: space-between; }
+
+.values {
+  display: grid;
+  margin: 0;
+  gap: var(--tt-space-3);
+}
+.values dd { margin: 0; }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: var(--tt-space-2);
+  padding: 0;
+  margin: 0;
+}
+
+.chip {
+  composes: note from "../atoms.module.css";
+  background: var(--tt-tile);
+  padding: var(--tt-space-1) var(--tt-space-2);
+  border-radius: var(--tt-r-pill);
+  overflow-wrap: anywhere;
+}
+
+.thumbnail {
+  display: block;
+  object-fit: contain;
+  width: var(--tt-space-16);
+  height: var(--tt-space-16);
+}
+
+.textList {
+  display: grid;
+  gap: var(--tt-space-1);
+  margin: 0;
+  padding-inline-start: var(--tt-space-5);
+}

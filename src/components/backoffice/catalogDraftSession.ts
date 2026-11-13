@@ -21,12 +21,16 @@ export type DraftEntry = {
 const equal = (a: unknown, b: unknown) =>
   JSON.stringify(a) === JSON.stringify(b);
 /** In-memory, account-scoped recovery only; never serialized to browser storage. */
+export type CatalogStagedBlock = { id: string; original: CatalogTool; value: CatalogTool };
+export type CatalogStagedUpdate = CatalogStagedBlock | null | ((block: CatalogStagedBlock | null) => CatalogStagedBlock | null);
+
 export class CatalogDraftSession {
   private records = new Map<string, DraftEntry>();
   private listeners = new Set<() => void>();
   private revision = 0;
   private owner: string | null = null;
   private enabled = true;
+  private staged = new Map<string, CatalogStagedBlock>();
   constructor(private save: Save = saveCatalogDraft) {}
   subscribe = (listener: () => void) => {
     this.listeners.add(listener);
@@ -44,6 +48,18 @@ export class CatalogDraftSession {
     return [...this.records.values()].flatMap((e) =>
       e.detail.draft ? [e.detail.draft] : [],
     );
+  }
+  get stagedEditing() {
+    return [...this.staged.values()].some((block) => !equal(block.original, block.value));
+  }
+  getStagedBlock(slug: string) { return this.staged.get(slug) ?? null; }
+  setStagedBlock(slug: string, update: CatalogStagedUpdate) {
+    const previous = this.getStagedBlock(slug);
+    const block = typeof update === "function" ? update(previous) : update;
+    if (previous === block) return;
+    if (block) this.staged.set(slug, block);
+    else this.staged.delete(slug);
+    this.emit();
   }
   get dirty() {
     return [...this.records.values()].some(
@@ -76,6 +92,7 @@ export class CatalogDraftSession {
   clear() {
     for (const e of this.records.values()) clearTimeout(e.timer);
     this.records.clear();
+    this.staged.clear();
     this.emit();
   }
   adopt(detail: CatalogEditorDetail, replace = false) {
