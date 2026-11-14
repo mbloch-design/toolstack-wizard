@@ -12,6 +12,7 @@ import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import CatalogToolbar from "@/components/catalog/CatalogToolbar";
 import Breadcrumb from "@/components/Breadcrumb";
 import brandColors from "@/data/brandColors.json";
+import RevealItem from "@/lib/RevealItem";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 function findTool(tools: ToolSummary[], idOrSlug: string): ToolSummary | undefined {
@@ -285,7 +286,7 @@ const ComparesIndexPage = () => {
                   <h2 id="cix-featured-title" className="sk-group-title">{t("À la une", "Featured")}</h2>
                   <ul className="cix-featured-grid">
                     {featuredComparisons.map((c) => (
-                      <li key={c.slugPair}>{renderFeatured(c)}</li>
+                      <RevealItem key={c.slugPair}>{renderFeatured(c)}</RevealItem>
                     ))}
                   </ul>
                 </section>
@@ -296,13 +297,13 @@ const ComparesIndexPage = () => {
                   return (
                     <section key={cat.id} className="cix-shelf" aria-labelledby={`cix-shelf-${cat.id}`}>
                       <h2 id={`cix-shelf-${cat.id}`} className="sk-group-title">{lang === "fr" ? cat.label : cat.labelEn}<span className="cix-shelf-count">{items.length}</span></h2>
-                      <ul className="cix-list">{items.map((c) => <li key={c.slugPair}>{renderRow(c)}</li>)}</ul>
+                      <ul className="cix-list">{items.map((c) => <RevealItem key={c.slugPair}>{renderRow(c)}</RevealItem>)}</ul>
                     </section>
                   );
                 })}
               </>
             ) : (
-              <ul className="cix-list cix-list--flat">{filteredComparisons.map((c) => <li key={c.slugPair}>{renderRow(c)}</li>)}</ul>
+              <ul className="cix-list cix-list--flat">{filteredComparisons.map((c) => <RevealItem key={c.slugPair}>{renderRow(c)}</RevealItem>)}</ul>
             )
           ) : (
             <div className="cix-empty">

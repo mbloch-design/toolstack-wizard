@@ -181,8 +181,10 @@ export const LangLayout = () => {
   );
 };
 
+// Fills the screen while a page's code loads: at half a screen the footer showed under the spinner, then jumped
+// away when the page arrived (13/11/2026, layout shift 0.23 on /fr/tools).
 const LazyFallback = () => (
-  <div className="flex items-center justify-center min-h-[50vh]">
+  <div className="flex items-center justify-center min-h-[100dvh]">
     <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
   </div>
 );

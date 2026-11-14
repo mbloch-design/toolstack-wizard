@@ -13,9 +13,10 @@ for(const lang of ['fr','en'] as const) for(const width of [320,1440]) test(`dis
  const targets=await section.locator('a,button').evaluateAll(items=>items.map(item=>({class:item.className,height:item.getBoundingClientRect().height})));
  expect(targets.every(item=>item.height>=44),JSON.stringify(targets)).toBe(true);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
- expect(await cards.locator('[data-media-link]').evaluateAll(items=>items.every(item=>getComputedStyle(item).borderTopWidth==='0px'&&getComputedStyle(item).backgroundColor==='rgba(0, 0, 0, 0)'))).toBe(true);
- expect(await cards.locator('.tc-image').evaluateAll(items=>items.every(item=>Math.abs(item.getBoundingClientRect().width/item.getBoundingClientRect().height-1.6)<.01))).toBe(true);
- if(width===320) expect(await section.locator('ul').evaluate(el=>el.scrollWidth>el.clientWidth)).toBe(true);
+ // The media card (12/11/2026): frameless, the picture is the card.
+ expect(await cards.locator('[data-media-link]').evaluateAll(items=>items.every(item=>getComputedStyle(item).borderTopWidth==='0px'))).toBe(true);
+ // The media card grid stacks on a phone (12/11/2026): no sideways scroll inside the section.
+ expect(await section.locator('ul').evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);
  await section.screenshot({path:test.info().outputPath(`discovery-${lang}-${width}.png`)});
  if(width===320) await section.locator('ul').evaluate(el=>{el.scrollLeft=el.scrollWidth;});
  await section.getByRole('button',{name:fr?'D’autres pistes':'More ideas',exact:true}).click();

@@ -41,7 +41,7 @@ export async function dismissConsent(page: Page) {
 /** The shell's sign-in (11/11/2026): in the settings menu on a computer, in the tab bar's menu on a phone. */
 export async function openShellSignIn(page: Page, lang: 'fr' | 'en') {
   const phone = (page.viewportSize()?.width ?? 1280) <= 640;
-  if (phone) await page.locator('[data-shell-tabbar]').getByRole('button', { name: 'Menu', exact: true }).click();
+  if (phone) await openPhoneMenu(page);
   else await page.locator('[data-shell-topbar]').getByRole('button', { name: lang === 'fr' ? 'Réglages' : 'Settings', exact: true }).click();
   await page.getByRole('dialog').getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
 }
@@ -68,7 +68,7 @@ export async function saved(page: Page, lang: 'fr' | 'en' = 'en') {
 }
 export async function signOut(page: Page, lang: 'fr' | 'en' = 'en') {
   await page.evaluate(() => { window.scrollTo(0, 0); document.querySelector('.asv2-content')?.scrollTo(0, 0); });
-  if ((page.viewportSize()?.width ?? 1280) <= 640) await page.locator('[data-shell-tabbar]').getByRole('button', { name: 'Menu', exact: true }).click();
+  if ((page.viewportSize()?.width ?? 1280) <= 640) await openPhoneMenu(page);
   else await page.locator('[data-account-trigger]').click();
   await page.getByRole('dialog').getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
   const dialog = page.getByRole('dialog', {name: lang === 'fr' ? 'Vous déconnecter ?' : 'Sign out?', exact: true});
@@ -98,3 +98,10 @@ export const test = base.extend({
   },
 });
 export { expect };
+
+/** The phone menu: the tab bar slides away while the page scrolls down, so a click can find it off screen.
+ *  Focus brings it back (focus-within), then Enter opens it, as a keyboard user would (14/11/2026). */
+export async function openPhoneMenu(page: Page) {
+  const menu = page.locator('[data-shell-tabbar]').getByRole('button', { name: 'Menu', exact: true });
+  await menu.focus(); await page.keyboard.press('Enter');
+}

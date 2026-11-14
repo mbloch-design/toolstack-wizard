@@ -122,10 +122,10 @@ for (const slug of ["notion", "1001bit-tools", "17hats", "8fig", "adobe-acrobat-
           }
           expect(navigations).toEqual([]);
           if (savedStack) {
-            await expect(page.locator(".td-hero-actions [data-pin-tool][aria-pressed="true"]")).toBeVisible();
+            await expect(page.locator('.td-hero-actions [data-pin-tool][aria-pressed="true"]')).toBeVisible();
             expect(await page.evaluate(() => localStorage.getItem("tooltrim-ma-stack-mvp-v3"))).toBe(savedState);
             await page.reload({ waitUntil: "load" });
-            await expect(page.locator(".td-hero-actions [data-pin-tool][aria-pressed="true"]")).toBeVisible();
+            await expect(page.locator('.td-hero-actions [data-pin-tool][aria-pressed="true"]')).toBeVisible();
             expect(await page.evaluate(() => localStorage.getItem("tooltrim-ma-stack-mvp-v3"))).toBe(savedState);
           }
           expect(hydrationErrors).toEqual([]);

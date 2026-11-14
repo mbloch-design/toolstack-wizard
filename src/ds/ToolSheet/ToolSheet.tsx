@@ -1,4 +1,5 @@
 import type { ReactNode, Ref } from "react";
+import { useReveal } from "@/lib/useReveal";
 import { DrawerDescription, DrawerTitle } from "../Drawer/Drawer";
 import Tag from "../Tag/Tag";
 import styles from "./ToolSheet.module.css";
@@ -79,8 +80,9 @@ export function SheetNote({ children }: { children: ReactNode }) {
  * the row itself opens it (renderMain gives a button or a link), an action on the right.
  */
 export function ToolRow({ logo, name, note, renderMain, action }: { logo: ReactNode; name: string; note?: ReactNode; renderMain: (className: string, content: ReactNode) => ReactNode; action?: ReactNode }) {
+  const reveal = useReveal<HTMLLIElement>();
   return (
-    <li className={styles.toolRow}>
+    <li ref={reveal} className={styles.toolRow}>
       {renderMain(styles.toolMain, <>{logo}<span className={styles.rowText}><span className={styles.label}>{name}</span>{note && <span className={styles.note}>{note}</span>}</span></>)}
       {action}
     </li>

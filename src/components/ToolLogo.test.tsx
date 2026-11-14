@@ -35,6 +35,18 @@ describe("ToolLogo deferred loading", () => {
     expect(logo).toHaveAttribute("src", originalSource);
   });
 
+  // Native lazy loading inside the app's scroll container fetched logos several screens below the fold
+  // (13/11/2026: 84 of 189 image requests on /fr/tools). A remote logo is only requested once near view.
+  it("does not request a remote logo while it is far below the viewport", () => {
+    const remote = { name: "Zzz Remote", slug: "zzz-remote", websiteUrl: "https://zzz-remote.example" };
+    render(<ToolLogo tool={remote} />);
+    act(() => vi.advanceTimersByTime(6000));
+    expect(screen.getByRole("img")).not.toHaveAttribute("src");
+    top = 100;
+    fireEvent.scroll(window);
+    expect(screen.getByRole("img").getAttribute("src")).toMatch(/^https:/);
+  });
+
   it("recovers a visible logo when the observer never reports", () => {
     top = 100;
     render(<ToolLogo tool={{ name: "Notion", slug: "notion" }} />);

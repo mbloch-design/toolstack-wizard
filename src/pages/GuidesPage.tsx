@@ -13,6 +13,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { Search, X } from "@/lib/icons";
 import { getGuidePosts } from "@/lib/guideCatalog";
 import BestOfCard, { BEST_OF_CARDS } from "@/components/guide/BestOfCard";
+import { useReveal } from "@/lib/useReveal";
+import CatalogToolbar from "@/components/catalog/CatalogToolbar";
+import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    GuidesPage — editorial redesign v2
@@ -117,6 +120,7 @@ const GuidesPage = () => {
   const [sortBy, setSortBy] = useState("recent");
   const [searchQuery, setSearchQuery] = useState("");
   const [showAll, setShowAll] = useState(false);
+  const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
   /* Reset pagination on filter/sort change */
   useEffect(() => { setShowAll(false); }, [activeFilter, sortBy, searchQuery]);
@@ -193,48 +197,39 @@ const GuidesPage = () => {
           </div>
 
           <h2 className="sr-only">{t("Derniers guides", "Latest guides")}</h2>
-          <div className="gi-simple-controls">
-            <div className="gi-filter-pills tt-rail" aria-label={t("Filtrer les guides par thème", "Filter guides by topic") as string}>
-              <RailThumb />
-              {filters.map((filter) => (
-                <button
-                  key={filter.id}
-                  type="button"
-                  className={`gi-filter-pill${activeFilter === filter.id ? " gi-filter-pill--active" : ""}`}
-                  aria-pressed={activeFilter === filter.id}
-                  onClick={() => setActiveFilter(filter.id)}
-                >
-                  {filter.label}
-                </button>
-              ))}
-            </div>
-
-            <div className="gi-simple-search">
-              <Search size={18} aria-hidden />
-              <input
-                id="guide-search"
-                name="guide-search"
-                type="search"
-                value={searchQuery}
-                onChange={(event) => setSearchQuery(event.target.value)}
-                placeholder={t("Rechercher un guide", "Search guides") as string}
-                aria-label={t("Rechercher un guide", "Search guides") as string}
-                autoComplete="off"
-              />
-              {searchQuery ? (
-                <button type="button" onClick={() => setSearchQuery("")} aria-label={t("Effacer la recherche", "Clear search") as string}>
-                  <X size={16} aria-hidden />
-                </button>
-              ) : null}
-            </div>
-
-            <label className="gi-sort-wrapper">
-              <span className="gi-sort-label">{t("Trier", "Sort")}</span>
-              <select className="gi-sort-select" value={sortBy} onChange={(event) => setSortBy(event.target.value)}>
-                {sortOptions.map((option) => <option key={option.id} value={option.id}>{option.label}</option>)}
-              </select>
-            </label>
-          </div>
+          {/* 13/11/2026: the system's catalogue bar, as on /tools, /stacks and /comparatifs (chips, floating bar once
+              scrolled past, a quiet filter change from down the list); the search stays in its tail. */}
+          <div ref={toolbarSentinelRef} aria-hidden />
+          <CatalogToolbar
+            stuck={toolbarStuck}
+            navLabel={t("Filtrer les guides par thème", "Filter guides by topic") as string}
+            pills={filters.map((filter) => ({ id: filter.id, label: filter.label, active: activeFilter === filter.id, onClick: () => setActiveFilter(filter.id) }))}
+            sort={{ value: sortBy, options: sortOptions.map((o) => ({ value: o.id, label: o.label })), onChange: setSortBy,
+              ariaLabel: t("Trier", "Sort") as string, title: t("Trier", "Sort") as string }}
+            panelTitle={t("Trier", "Sort") as string}
+            moreLabel={t("Trier", "Sort") as string}
+            closeLabel={t("Fermer", "Close") as string}
+            extraTail={
+              <div className="gi-simple-search">
+                <Search size={18} aria-hidden />
+                <input
+                  id="guide-search"
+                  name="guide-search"
+                  type="search"
+                  value={searchQuery}
+                  onChange={(event) => setSearchQuery(event.target.value)}
+                  placeholder={t("Rechercher un guide", "Search guides") as string}
+                  aria-label={t("Rechercher un guide", "Search guides") as string}
+                  autoComplete="off"
+                />
+                {searchQuery ? (
+                  <button type="button" onClick={() => setSearchQuery("")} aria-label={t("Effacer la recherche", "Clear search") as string}>
+                    <X size={16} aria-hidden />
+                  </button>
+                ) : null}
+              </div>
+            }
+          />
 
           {/* Guides list */}
           {filteredPosts.length === 0 && (
@@ -376,8 +371,9 @@ function ArticleCard({
   const postPath = `/${postLang}/guide/${post.slug}`;
   const eyebrow = [post.category ? localizeGuideCategory(post.category, lang) : "", post.readTime || ""].filter(Boolean).join(" · ");
 
+  const reveal = useReveal<HTMLAnchorElement>();
   return (
-    <Link
+    <Link ref={reveal}
       to={postPath}
       className={`gi-card${featured ? " gi-card--featured" : ""}${compact ? " gi-card--compact" : ""}`}
     >

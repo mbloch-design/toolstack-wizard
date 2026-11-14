@@ -10,6 +10,7 @@ import { useLang } from "@/hooks/useLang";
 import { cleanupSeo, hasNonCanonicalSearchParams, SEO_BASE, setHreflang, setJsonLd, setNoindex, setSeoTags } from "@/lib/seo";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import stackCatalog from "@/data/stacks-catalog-index.json";
+import RevealItem from "@/lib/RevealItem";
 
 /* ─── Types ─────────────────────────────────────────────────────────────────── */
 type StackPersona = "dev" | "designer" | "consultant" | "content" | "ops" | "solo";
@@ -866,9 +867,9 @@ const StacksPage = () => {
                     <h2 id="sk-featured-title" className="sk-group-title">{t("À la une", "Featured")}</h2>
                     <ul className="sk-featured-grid">
                       {featuredStacks.map((enriched) => (
-                        <li key={enriched.stack.id}>
+                        <RevealItem key={enriched.stack.id}>
                           <StackRow enriched={enriched} prefix={prefix} lang={lang} t={t} tools={toolsFor(enriched)} featured />
-                        </li>
+                        </RevealItem>
                       ))}
                     </ul>
                   </section>
@@ -876,9 +877,9 @@ const StacksPage = () => {
                 {showFeatured && <h2 className="sk-group-title">{t("Toutes les stacks", "All stacks")}</h2>}
                 <ul className="sk-list">
                   {listStacks.slice(0, visibleCount).map((enriched) => (
-                    <li key={enriched.stack.id}>
+                    <RevealItem key={enriched.stack.id}>
                       <StackRow enriched={enriched} prefix={prefix} lang={lang} t={t} tools={toolsFor(enriched)} />
-                    </li>
+                    </RevealItem>
                   ))}
                 </ul>
                 {listStacks.length > visibleCount && (

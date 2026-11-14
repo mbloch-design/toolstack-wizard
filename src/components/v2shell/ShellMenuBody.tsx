@@ -82,7 +82,7 @@ export function ShellAccountMenu({ languageHref }: { languageHref: string }) {
   if (who.kind === "loading") return null;
   return (
     <ShellMenu label={who.kind === "user" ? t(`Compte : ${who.name}`, `Account: ${who.name}`) : t("Réglages", "Settings")}
-      open={open} onOpenChange={setOpen} signedIn={who.kind === "user"}
+      open={open} onOpenChange={setOpen} signedIn={who.kind === "user"} account={who.kind !== "off"}
       trigger={who.kind === "user" ? <AccountAvatar ownerId={who.id} label={who.name} avatarUrl={who.avatarUrl} /> : <UserRound />}>
       <ShellMenuBody languageHref={languageHref} onDone={() => setOpen(false)} />
     </ShellMenu>

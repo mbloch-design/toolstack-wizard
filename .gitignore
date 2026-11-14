@@ -78,3 +78,7 @@ skills-lock.json
 /.vitest-attachments/
 /src/ds/**/__screenshots__/
 /visual/review/
+
+# Card thumbnails, built locally then sent to Cloudflare R2 (scripts/card-thumbs.ts)
+.cache/card-thumbs/
+.cache/logo-thumbs/

@@ -48,7 +48,8 @@ for (const htmlPath of htmlFiles) {
     else standalone += 1;
     continue;
   }
-  documents.push({ htmlPath, html, css: match[1] });
+  // Only the CSS is kept: holding all 13 000 pages (≈ 840 MB) ran the CI build out of memory (14/11/2026).
+  documents.push({ htmlPath, css: match[1] });
 }
 
 // Seuil : en dessous, le round-trip reseau supplementaire ne vaut pas l'octet
@@ -69,7 +70,7 @@ const emitted = new Map();
 let converted = 0;
 let inlineBytes = 0;
 
-for (const [index, { htmlPath, html, css }] of documents.entries()) {
+for (const [index, { htmlPath, css }] of documents.entries()) {
   const { own, hasPrefix } = split.parts[index];
   const hash = crypto.createHash("sha256").update(own).digest("hex").slice(0, 16);
   const fileName = `critical-${hash}.css`;
@@ -81,7 +82,7 @@ for (const [index, { htmlPath, html, css }] of documents.entries()) {
   }
 
   const link = `${hasPrefix ? prefixLink : ""}<link id="critical-css" rel="stylesheet" href="/assets/${fileName}">${sharedLink}`;
-  fs.writeFileSync(htmlPath, html.replace(stylePattern, link), "utf8");
+  fs.writeFileSync(htmlPath, fs.readFileSync(htmlPath, "utf8").replace(stylePattern, link), "utf8");
   converted += 1;
   inlineBytes += Buffer.byteLength(css);
 }

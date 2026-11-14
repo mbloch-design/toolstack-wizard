@@ -5,6 +5,7 @@
     "api/backoffice-accounts.ts": { "regions": ["fra1"] }
   },
   "headers": [
+    {"source": "/thumbs/:path*", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}, {"key": "CDN-Cache-Control", "value": "public, max-age=31536000, immutable"}]},
     {
       "source": "/:directory(fonts|hero|home-logos|home-cards|logos|tool-media|editorial|guides|og-images|og-screenshots)/:path*",
       "headers": [
@@ -364,6 +365,7 @@
     {"source": "/:lang(fr|en)/tool/clearbit/:path*", "destination": "/:lang/tool/hubspot/:path*", "permanent": true}
   ],
   "rewrites": [
+    {"source": "/thumbs/:path*", "destination": "https://pub-3719557c91544ada852e23e03c2091cd.r2.dev/:path*"},
     {"source": "/fr/connexion", "destination": "/client-only.html"},
     {"source": "/fr/inscription", "destination": "/client-only.html"},
     {"source": "/fr/connexion/retour", "destination": "/client-only.html"},
