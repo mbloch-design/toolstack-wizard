@@ -34,15 +34,20 @@ export async function runCatalogFilter(change: () => void) {
  * The callback ref also supports pages whose sentinel mounts after loading.
  */
 export function useCatalogStickyToolbar() {
-  const [toolbarStuck, setToolbarStuck] = useState(false);
+  const [pastBar, setPastBar] = useState(false);
+  const [footerInView, setFooterInView] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const footerObserverRef = useRef<IntersectionObserver | null>(null);
 
   const toolbarSentinelRef = useCallback((node: HTMLDivElement | null) => {
     observerRef.current?.disconnect();
     observerRef.current = null;
+    footerObserverRef.current?.disconnect();
+    footerObserverRef.current = null;
 
     if (!node) {
-      setToolbarStuck(false);
+      setPastBar(false);
+      setFooterInView(false);
       return;
     }
 
@@ -52,15 +57,23 @@ export function useCatalogStickyToolbar() {
     // ancestor scroll container still clips the sentinel, so both layouts
     // report correctly. The -56px top margin is the app topbar.
     const observer = new IntersectionObserver(
-      ([entry]) => setToolbarStuck(!entry.isIntersecting),
+      ([entry]) => setPastBar(!entry.isIntersecting),
       { root: null, rootMargin: "-56px 0px 0px 0px", threshold: 0 },
     );
 
     observer.observe(node);
     observerRef.current = observer;
+
+    // The list is over once the site footer shows: the floating bar leaves rather than lie over it (14/11/2026).
+    const footer = document.querySelector("footer");
+    if (footer) {
+      const footerObserver = new IntersectionObserver(([entry]) => setFooterInView(entry.isIntersecting), { root: null, threshold: 0 });
+      footerObserver.observe(footer);
+      footerObserverRef.current = footerObserver;
+    }
   }, []);
 
-  useEffect(() => () => observerRef.current?.disconnect(), []);
+  useEffect(() => () => { observerRef.current?.disconnect(); footerObserverRef.current?.disconnect(); }, []);
 
-  return { toolbarStuck, toolbarSentinelRef };
+  return { toolbarStuck: pastBar && !footerInView, toolbarSentinelRef };
 }

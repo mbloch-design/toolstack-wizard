@@ -29,9 +29,12 @@
   container-type: inline-size;
 }
 
+/* In the page flow (Storybook) the fixed panel's offsets would push it 16 px off its own box: reset them. */
 .panel[data-inline] {
   position: relative;
+  inset: auto;
   z-index: auto;
+  box-sizing: border-box;
   width: min(520px, 100%);
   max-height: none;
   overflow: visible;
