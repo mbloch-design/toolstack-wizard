@@ -141,7 +141,9 @@ run(
   process.platform === "win32" ? "node_modules\\.bin\\tsx.cmd" : "node_modules/.bin/tsx",
   ["scripts/emit-stack-catalog-shards.ts"],
 );
-run("Mutualisation du CSS critique", "node", ["scripts/externalize-critical-css.mjs"]);
+// 13 000 pages' critical CSS are compared at once: Node's default heap (about 2 GB) ran out on the CI runner
+// (14/11/2026), which has 16 GB. 4 GB leaves room as the catalogue grows.
+run("Mutualisation du CSS critique", "node", ["--max-old-space-size=4096", "scripts/externalize-critical-css.mjs"]);
 run("Compactage HTML avec contrôle d'équivalence", "node", ["scripts/compact-generated-html.mjs"]);
 run("Validation SEO du sitemap généré", "node", ["scripts/validate-generated-seo.mjs"]);
 run("Validation des routes générées et des fallbacks client", "node", ["scripts/validate-generated-routing.mjs"]);

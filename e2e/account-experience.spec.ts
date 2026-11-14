@@ -1,4 +1,4 @@
-import { test, expect, control, draft, state, snapshot, saved, isolate, login, signOut, dismissConsent, change, openShellSignIn } from './fixtures/accounts';
+import { test, expect, control, draft, state, snapshot, saved, isolate, login, signOut, dismissConsent, change, openShellSignIn, openPhoneMenu } from './fixtures/accounts';
 
 test('signup requires confirmation delivered only through local mailbox', async ({ page, request, browser }) => {
   const full = state(['notion', 'figma']); full.billing = { paid: ['notion'], reviewed: ['figma'], choices: { notion: { source: 'custom', amount: 49, currency: 'EUR', period: 'annual', seats: 2 } } }; full.decisions = { 'figma|notion': { kind: 'keep-both', kept: 'notion', saving: 4, at: '2026-10-19T12:00:00Z' } };
@@ -263,7 +263,7 @@ for (const width of [390, 1440]) test(`navigation roles ${width}: cart access st
  await expect(page.getByRole('heading',{name:'Which tools do you use?',exact:true})).toBeVisible();
  await expect(page.getByRole('searchbox',{name:'Add a tool to my stack',exact:true})).toHaveCount(0);
  await login(page,'en',`navigation-${width}@example.invalid`); await saved(page);
- if(width<=640) await page.locator('[data-shell-tabbar]').getByRole('button',{name:'Menu',exact:true}).click();
+ if(width<=640) await openPhoneMenu(page);
  else await page.locator('[data-shell-topbar]').getByRole('button',{name:/^Account: /}).click();
  const menu=page.getByRole('dialog');
  await expect(menu.getByRole('link',{name:'My stack',exact:true})).toHaveCount(0);
@@ -409,7 +409,7 @@ for (const width of [390,1440]) test(`switching stack language ${width} keeps th
  await page.evaluate(()=>{(window as unknown as {languageMarker:string}).languageMarker='same-document';});
  const before=(await control(request,'state')).requests.filter((r:{path:string})=>r.path==='/api/stack-account'||r.path==='/api/account-profile').length;
  if(width===390){
-  await page.locator('[data-shell-tabbar]').getByRole('button',{name:'Menu',exact:true}).click();
+  await openPhoneMenu(page);
   await page.getByRole('dialog').getByRole('button',{name:'Français',exact:true}).click();
  }else{
   await page.locator('[data-shell-topbar]').getByRole('button',{name:/^Account: /}).click();
@@ -431,7 +431,7 @@ for(const lang of ['fr','en'] as const) test(`friendly logout ${lang}: real pend
  const fr=lang==='fr';await page.setViewportSize({width:fr?390:1440,height:900});
  await page.goto(`/${lang}/ma-stack`);await login(page,lang,`farewell-${lang}@example.invalid`);await saved(page,lang);
  await control(request,'fault',{path:'/auth/v1/logout',method:'POST',delayMs:2200});
- if(fr) await page.locator('[data-shell-tabbar]').getByRole('button',{name:'Menu',exact:true}).click(); else await page.locator('[data-account-trigger]').click();
+ if(fr) await openPhoneMenu(page); else await page.locator('[data-account-trigger]').click();
  await page.getByRole('dialog').getByRole('button',{name:fr?'Me déconnecter':'Sign out',exact:true}).click();
  const dialog=page.getByRole('dialog');await dialog.getByRole('button',{name:fr?'Me déconnecter':'Sign out',exact:true}).click();
  await expect(dialog.getByRole('heading',{name:fr?'On ferme la porte…':'Closing the door…',exact:true})).toBeVisible();
