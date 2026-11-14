@@ -145,3 +145,26 @@
 .stepAction {
   margin-top: var(--tt-space-1);
 }
+
+/* In a narrow tile: one step per line, the pastille on the left, the action at the end. */
+.steps[data-layout="list"] {
+  grid-template-columns: 1fr;
+  gap: var(--tt-space-3);
+}
+
+.steps[data-layout="list"] .step {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  column-gap: var(--tt-space-3);
+  align-items: center;
+}
+
+.steps[data-layout="list"] .stepMark {
+  grid-row: 1 / span 2;
+  margin-bottom: 0;
+}
+
+.steps[data-layout="list"] .stepAction {
+  grid-row: 1 / span 2;
+  grid-column: 3;
+  margin-top: 0;
+}

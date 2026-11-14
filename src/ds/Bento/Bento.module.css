@@ -43,6 +43,8 @@
 }
 
 .bento[data-compact] .tile {
+  grid-template-rows: auto;
+  align-content: start;
   gap: var(--tt-space-3);
   padding-block: var(--tt-space-5);
 }

@@ -551,21 +551,6 @@ export default function CartPage() {
           })()}
         </Section>
 
-        {/* 6. Where the budget goes (M01 design v2): after the tools, the one real chart of the page, shown once
-            the money is spread over at least two trades (a single slice says nothing). */}
-        {(() => {
-          const paidAreas = areaCosts.filter((area) => area.cost > 0);
-          if (paidAreas.length < 2) return null;
-          const converted = selectedTools.some((tool) => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" && cost.currency !== currency; });
-          return <Section labelledBy="ms-budget-title" name="budget">
-            <SectionHead title={t("Où va votre budget", "Where your budget goes")} titleId="ms-budget-title" />
-            <Split lang={lang} format={(amount) => formatAmount(amount, currency, lang)} unpriced={unknownTools.map((tool) => tool.name)}
-              rateDate={converted ? new Date(`${CURRENCY_RATE_DATE}T00:00:00Z`).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : null}
-              areas={paidAreas.map((area) => ({ id: area.id, label: area.id === "assist" ? t("IA", "AI") : area.label, amount: area.cost, color: colorOf(area.id),
-                tools: (mapTerritories.find((territory) => territory.id === area.id)?.tools || []).map((tool) => ({ id: tool.id, name: tool.name, slug: tool.slug, logo: tool.logo, amount: monthlyOf(tool) })).filter((row) => row.amount > 0).sort((x, y) => y.amount - x.amount) }))} />
-          </Section>;
-        })()}
-
         <StackDiscovery key={`${reviewScope}:${reviewEpoch}`} candidates={recos} lang={lang} prefix={prefix}
           note={recos[0]?.categoryLabel === t("Facturer", "Invoicing") ? t("Votre stack ne facture pas encore. Voici de quoi combler ce manque.", "Your stack doesn't invoice yet. Here's how to fill the gap.") : undefined}
           sourceIds={selectedTools.map(tool => tool.id)} selectedIds={selectedTools.map(tool => tool.id)} pendingSlug={flyingSlug}

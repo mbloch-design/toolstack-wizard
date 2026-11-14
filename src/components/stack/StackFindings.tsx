@@ -31,6 +31,7 @@ import Button, { TextButton } from "@/ds/Button/Button";
 import { trackEvent } from "@/lib/analytics";
 import { Clock, Copy, Euro, FolderKanban, Globe, MessagesSquare, Palette, PiggyBank, Plus, Receipt, Wallet } from "@/lib/icons";
 import { Checkpoints, TradeMap } from "@/ds/StackBoard/StackBoard";
+import { FigureCard, FigureCards } from "@/ds/Catalog/Catalog";
 import { useNavigate } from "react-router-dom";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
@@ -375,25 +376,28 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
     return h > 0 ? `${h}\u00a0h${m ? `\u00a0${String(m).padStart(2, "0")}` : ""}` : `${m}\u00a0min`; })() : null;
   return <>
     {toolCount > 0 && <div data-card="price">
-      <StoryHero greeting={welcome?.greeting} eyebrow={`${welcome?.eyebrow ?? t("Ma stack", "My stack")}${profileTrade ? ` · ${profileTrade}` : ""}`} titleRef={welcome?.titleRef}
-        title={monthly
-          ? <>{t(`${toolCount} outil${toolCount > 1 ? "s" : ""}, `, `${toolCount} tool${toolCount > 1 ? "s" : ""}, `)}<Key>{monthly}</Key>{t(" par mois.", " a month.")}</>
-          : t(`${toolCount} outil${toolCount > 1 ? "s" : ""} dans votre stack.`, `${toolCount} tool${toolCount > 1 ? "s" : ""} in your stack.`)}
-        lead={monthly ? undefined
-          : toolCount === 1 ? t("Il en faut au moins deux pour parler de stack.", "It takes at least two to call it a stack.") : undefined}
-        // The key figures (M01, 14/11/2026: « architecture d'information »): their own row, one rule for each.
-        figuresLabel={t("Ma stack en chiffres", "My stack in figures")}
-        figures={monthly ? [
-          { id: "year", icon: <Wallet />, label: t("par an", "a year"), value: <Amount value={yearly ?? ""} /> },
-          ...(composition ? [{ id: "made", label: composition.replace(/\.$/, "").replace(/^D/, "d").replace(/^O/, "o"), value: null }] : []),
-          ...(heroWork ? [{ id: "work", icon: <Clock />, label: t("de votre travail par mois", "of your work a month"), value: <Amount value={heroWork} />,
-            detail: profileRate ? t(`à ${profileRate.split(" · ")[0]}`, `at ${profileRate.split(" · ")[0]}`) : undefined }] : []),
-          ...(saved > 0 ? [{ id: "saved", icon: <PiggyBank />, label: t("par mois grâce à vos décisions", "a month thanks to your decisions"), value: <Amount tone="gain" value={`−${format(Math.round(saved))}`} /> }] : []),
-          ...(converted ? [{ id: "rate", label: "", value: null, detail: t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`) }] : []),
-        ] : undefined}
-        // One place per thing (M01, 14/11/2026): the hero keeps one action; the trade goes to the stack tile,
-        // the day rate to the budget tile, the price count to the budget tile's button.
-        aside={welcome?.secondary} />
+      {/* The hero of a dashboard (M01, 14/11/2026): the page's name and who it is for, its two actions, then the
+          key figures, each said once and only here. The bento below explains them; it never repeats them. */}
+      <StoryHero greeting={welcome?.greeting} titleRef={welcome?.titleRef}
+        eyebrow={[welcome?.eyebrow ?? t("Ma stack", "My stack"), profileTrade, profileRate?.split(" · ")[0]].filter(Boolean).join(" · ")}
+        title={t("Ma stack", "My stack")}
+        lead={toolCount === 1 ? t("Il en faut au moins deux pour parler de stack.", "It takes at least two to call it a stack.") : undefined}
+        aside={<><Button variant="primary" icon={<Plus aria-hidden />} onClick={onAddTool}>{t("Ajouter un outil", "Add a tool")}</Button>{welcome?.secondary}</>} />
+      {toolCount > 1 && (() => {
+        const pairs = items.filter((item) => item.kind === "pair");
+        const go = (selector: string) => (className: string, content: ReactNode) => <a className={className} href={selector}
+          onClick={(event) => { const target = document.querySelector<HTMLElement>(selector); if (!target) return; event.preventDefault(); target.scrollIntoView({ block: "center", behavior: "smooth" }); }}>{content}</a>;
+        const spendDetail = monthly
+          ? [t(`${yearly}/an`, `${yearly}/yr`), heroWork && t(`${heroWork} de travail`, `${heroWork} of work`), converted && t(`taux de référence du ${rateDate}`, `reference rate of ${rateDate}`)].filter(Boolean).join(" · ")
+          : t(`${unsure.length} prix à préciser`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} to confirm`);
+        return <div style={{ marginTop: "var(--tt-gap-group)" }}><FigureCards label={t("Ma stack en chiffres", "My stack in figures")}>
+          <FigureCard figure={monthly ? format(Math.round(total)) : "?"} unit={monthly ? t("/mois", "/mo") : undefined} name={t("Dépense", "Spend")} detail={spendDetail} renderLink={go('[data-card="split"]')} />
+          <FigureCard figure={String(toolCount)} name={t("Outils", "Tools")} detail={composition ? composition.replace(/^(Dont|Of which) /, "").replace(/\.$/, "") : undefined} renderLink={go("#ms-all-title")} />
+          <FigureCard figure={String(pairs.length)} name={t(pairs.length > 1 ? "Doublons" : "Doublon", pairs.length > 1 ? "Overlaps" : "Overlap")}
+            detail={pairs[0] ? pairs[0].tools.slice(0, 2).map((tool) => tool.name).join(" · ") : t("Aucun", "None")} renderLink={go('[data-card="decision"]')} />
+          <FigureCard figure={saved > 0 ? `−${format(Math.round(saved))}` : format(0)} unit={t("/mois", "/mo")} name={t("Économisé", "Saved")} detail={t("par vos décisions", "by your decisions")} renderLink={go('[data-card="decision"]')} />
+        </FigureCards></div>;
+      })()}
     </div>}
     {/* The dashboard (M01, 14/11/2026): four tiles, each a finding with its picture and the action that settles it.
         They carry what the « worth a look » list said, so the list is gone. */}
@@ -425,21 +429,19 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       ][done];
       return <Bento compact label={t("Ma stack en bref", "My stack at a glance")}>
         <BentoRow>
-          <Tile span={12} label={t("Ma stack", "My stack")}
-            statement={<><Key>{coveredCount}</Key>{t(` métier${coveredCount > 1 ? "s" : ""} sur ${CORE_TRADES.length}`, ` of ${CORE_TRADES.length} trades`)}</>}
-            footer={<div style={{ display: "grid", gap: "var(--tt-space-4)" }}>
-              <TradeMap label={t("Vos métiers", "Your trades")} addLabel={(name) => t(`Ajouter un outil pour ${name}`, `Add a tool for ${name}`)} onAdd={() => onAddTool()}
-                trades={CORE_TRADES.map((id) => ({ id, name: t(...TRADE_NAMES[id]), icon: TRADE_ICONS[id], tools: territories.find((territory) => territory.id === id)?.tools ?? [] }))} />
-              <span><Button variant="primary" icon={<Plus aria-hidden />} onClick={onAddTool}>{t("Ajouter un outil", "Add a tool")}</Button></span>
-            </div>} />
-        </BentoRow>
-        <BentoRow>
-          {/* Tile rules of the site (DESIGN_DECISIONS 11/11): label in 12 capitals, the fact is a figure in 42, one line under. */}
-          <Tile span={12} label={`${t("État de la stack", "State of the stack")} · ${level[0]}`} tone={done < checks.length ? "question" : "tile"}
-            statement={<><Key tone={done === checks.length ? "gain" : done === 0 ? "overlap" : "brand"}>{done}</Key>{t(` étape${done > 1 ? "s" : ""} sur ${checks.length}`, ` of ${checks.length} steps`)}</>}
+          <Tile span={7} label={t("Vos métiers", "Your trades")}
+            statement={<><Key>{coveredCount}</Key>{t(` sur ${CORE_TRADES.length}`, ` of ${CORE_TRADES.length}`)}</>}
+            footer={<TradeMap label={t("Vos métiers", "Your trades")} addLabel={(name) => t(`Ajouter un outil pour ${name}`, `Add a tool for ${name}`)} onAdd={() => onAddTool()}
+              trades={CORE_TRADES.map((id) => ({ id, name: t(...TRADE_NAMES[id]), icon: TRADE_ICONS[id], tools: territories.find((territory) => territory.id === id)?.tools ?? [] }))} />} />
+          <Tile span={5} label={`${t("À faire", "To do")} · ${level[0]}`} tone={done < checks.length ? "question" : "tile"}
+            statement={done === checks.length ? <Key tone="gain">{t("Rien", "Nothing")}</Key> : <><Key tone={done === 0 ? "overlap" : "brand"}>{checks.length - done}</Key>{t(` étape${checks.length - done > 1 ? "s" : ""}`, ` step${checks.length - done > 1 ? "s" : ""}`)}</>}
             status={{ text: level[1], done: done === checks.length }}
-            footer={<Checkpoints label={t("Étapes", "Steps")} steps={checks.map((check) => ({ id: check.id, name: check.name, icon: check.icon, done: check.done, note: check.note, action: check.action }))} />} />
+            footer={<Checkpoints layout="list" label={t("Étapes", "Steps")} steps={checks.map((check) => ({ id: check.id, name: check.name, icon: check.icon, done: check.done, note: check.note, action: check.action }))} />} />
         </BentoRow>
+        {showSplit && <BentoRow>
+          <Tile span={12} card="split" label={t("Où va l'argent", "Where the money goes")}>{<Split bare lang={fr ? "fr" : "en"} format={format} unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => tool.name)} rateDate={converted ? rateDate : null}
+              areas={areas.map((area) => ({ id: area.id, label: area.label, color: area.color, amount: area.amount, tools: (area.tools || []).map((row) => ({ ...row.tool, amount: row.amount })) }))} />}</Tile>
+        </BentoRow>}
       </Bento>;
     })()}
     {toolCount === 1 && !decision && <Bento label={t("Pour commencer", "To start")}><BentoRow><Starter lang={fr ? "fr" : "en"} tool={spend[0]?.tool || freeTools[0]} onAddTool={onAddTool} /></BentoRow></Bento>}

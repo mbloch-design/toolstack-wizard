@@ -602,7 +602,7 @@
 /* Compact cards led by a figure. */
 .figureCards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--tt-figure-min)), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--tt-figure-min)), 1fr));
   gap: var(--tt-space-3);
   margin: 0;
   padding: 0;

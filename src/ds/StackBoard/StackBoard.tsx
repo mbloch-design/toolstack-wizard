@@ -35,9 +35,11 @@ export function TradeMap({ label, trades, addLabel, onAdd, localLogosOnly = fals
 
 export type Checkpoint = { id: string; name: string; icon: ReactNode; done: boolean; note: string; action?: ReactNode };
 
-export function Checkpoints({ label, steps }: { label: string; steps: Checkpoint[] }) {
+export function Checkpoints({ label, steps, layout = "row" }: { label: string; steps: Checkpoint[];
+  /** row: side by side (a wide tile); list: one under the other, the action at the end of its line (a narrow tile). */
+  layout?: "row" | "list" }) {
   return (
-    <ol className={styles.steps} aria-label={label}>
+    <ol className={styles.steps} aria-label={label} data-layout={layout}>
       {steps.map((step) => (
         <li key={step.id} className={styles.step} data-done={step.done || undefined}>
           <span className={styles.stepMark} aria-hidden="true">{step.done ? <Check /> : step.icon}</span>

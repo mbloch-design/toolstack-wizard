@@ -41,11 +41,13 @@ describe("StackFindings", () => {
     it("the hero says the cost, the year, what the stack is made of and how far prices are known", () => {
       const { container } = module([card("Canva")], { toolCount: 4, freeTools: [tool("Figma")] });
       const hero = container.querySelector('[data-card="price"]')?.textContent ?? "";
-      expect(screen.getByRole("heading", { level: 1 }).textContent).toMatch(/446\s€ par mois/);
-      expect(hero).toMatch(/par an/);
+      expect(screen.getByRole("heading", { level: 1 }).textContent).toBe("Ma stack");
+      // M01 dashboard hero: the monthly spend is the first key figure.
+      expect(screen.getByRole("list", { name: "Ma stack en chiffres" }).textContent).toMatch(/446\s€\/mois/);
+      expect(hero).toMatch(/\/an/);
       // The content contract holds (DESIGN_DECISIONS): the year and what the stack is made of, in the hero's facts.
-      expect(hero).toMatch(/par an/);
-      expect(hero).toMatch(/dont .+/);
+      expect(hero).toMatch(/\/an/);
+      expect(hero).toMatch(/payant/);
     });
     it("a converted figure says its reference rate", () => {
       const { container } = module([], { converted: true });
@@ -53,7 +55,7 @@ describe("StackFindings", () => {
     });
     it("a saving is said in words, never only in colour", () => {
       const { container } = module([], { saved: 24 });
-      expect(container.textContent).toMatch(/−24\s€.*grâce à vos décisions/);
+      expect(container.textContent).toMatch(/−24\s€\/moisÉconomisépar vos décisions/);
     });
     it("the first visit names the question « Étape suivante »", () => {
       module([card("Canva")], { guide: true });
@@ -63,7 +65,7 @@ describe("StackFindings", () => {
 
   it("reads the price first, then one decision at a time", () => {
     module([card("Canva"), card("Slack"), card("Notion")], { toolCount: 5 });
-    expect(screen.getByRole("heading", { level: 1 }).textContent).toMatch(/446\s€ par mois\./);
+    expect(screen.getByRole("list", { name: "Ma stack en chiffres" }).textContent).toMatch(/446\s€\/mois/);
     expect(screen.getByRole("region", { name: "Prochaine décision" })).toBeTruthy();
     expect(screen.getByText("Payez-vous Canva ?")).toBeTruthy();
     // The price count moved from the hero to the state of the stack (M01 design v2).
@@ -80,12 +82,12 @@ describe("StackFindings", () => {
     const { container } = module([], { total: 41, spend: [{tool:tool("Motion Array"),amount:29},{tool:tool("Grammarly"),amount:12}], freeTools:[tool("Figma"),tool("Audacity")] });
     openTile(container, "price");
     // The hero counts every tool; their names are in the inventory (Mes outils), outside this component.
-    expect(screen.getByRole("heading", { level: 1 }).textContent).toMatch(/^4 outils, /);
+    expect(screen.getByRole("list", { name: "Ma stack en chiffres" }).textContent).toMatch(/4Outils/);
     expect(screen.queryByText(/autres/)).toBeNull();
   });
   it("does not invent a zero budget before the first plan is selected", () => {
     const {container}=module([card("Notion")],{total:0,toolCount:1,spend:[],areas:[],fit:[]});
-    expect(screen.getByText("1 outil dans votre stack.")).toBeTruthy();
+    expect(screen.getByText("Il en faut au moins deux pour parler de stack.")).toBeTruthy();
     expect(screen.queryByRole("text",{name:"0 €"})).toBeNull();
     expect(container.querySelector(".mf-balance")).toBeNull();
     expect(container.querySelector(".mf-fit")).toBeNull();
@@ -140,7 +142,7 @@ describe("StackFindings", () => {
   it("drops the decision card once nothing is left, the saving stays on the price card", () => {
     const { container } = module([], { saved: 67, total: 379, toReview: 0 });
     expect(container.querySelector('[data-card="decision"]:not([data-done])')).toBeNull();
-    expect(container.textContent).toMatch(/−67\s€.*grâce à vos décisions/);
+    expect(container.textContent).toMatch(/−67\s€\/moisÉconomisépar vos décisions/);
   });
 });
 
