@@ -107,6 +107,7 @@ Une branche `mission/m01-ma-stack`, un push à la fin. Les deux correctifs déj�
 | 1. Décisions | Toi : promesse (H1), cibles des KPI, conception. | Sections 1, 2 et 4 marquées « validé » |
 | 2. Maquettes | Les 3 états et la grille dans Storybook, FR/EN, 390/1440. | Validées par toi dans le Storybook en ligne |
 | 3. Grille | Titres de domaine au-dessus, pas de regroupement sous 6 outils, un seul indicateur par carte. | Tests e2e réécrits, invariants Storybook verts |
+| 3b. Rôles | Phrase de rôle FR/EN vérifiée pour les 200 outils les plus recherchés (~70 à écrire, le reste à harmoniser). | Top 200 couvert à 100 % |
 | 4. Rôles et recoupements | Phrase de rôle sur chaque carte, lecture de la stack en une phrase, question « même tâche ? » et comparaison courte. Badges redondants retirés. | Parcours « 3 outils → comprendre → décider » en e2e |
 | 5. Page vide | Recherche dans la page, outils fréquents, 3 outils en 30 s. | Parcours e2e « vide → 3 outils » |
 | 6. Pour la suite | Raison rattachée à un outil de la personne, texte jamais coupé. | Aucune raison générique affichée |
@@ -114,9 +115,57 @@ Une branche `mission/m01-ma-stack`, un push à la fin. Les deux correctifs déj�
 | 8. Recette et mise en ligne | CI complète en local, vérification navigateur, push sur ton accord. | PR fusionnée, site vérifié |
 | 9. Bilan | KPI relevés à 2 et 4 semaines. 5 essais R9 si tu les fais. | Décision garder / ajuster |
 
+## Lot 0 — mesures de départ (14/11/2026)
+
+### GA4, 28 derniers jours (17/10 → 13/11/2026)
+
+Seules les personnes qui acceptent la mesure sont comptées. Les chiffres réels sont donc plus élevés.
+
+| Mesure | Valeur |
+|---|---|
+| Utilisateurs du site | 4 189 |
+| Utilisateurs sur Ma stack (FR 21 + EN 27) | 48 (567 vues) |
+| Vues par utilisateur sur /fr/ma-stack | 18,9 : très probablement nos propres tests |
+| Personnes qui ajoutent un outil (`add_to_stack`) | 17 (97 ajouts) |
+| Ouvrent un outil de leur stack (`stack_tool_open`) | 7 |
+| Choisissent une formule (`stack_plan_pick`) | 6 |
+| Prennent une décision (`stack_decision`) | 4 |
+| Ajoutent une suggestion (`stack_reco_add`) | 4 |
+| Retirent un outil (`stack_remove`) | 2 |
+| Ouvrent une comparaison (`stack_compare_click`) | 1 |
+
+**Lecture**
+- L'échantillon est trop petit pour fixer des cibles en pourcentage : 48 personnes, dont une part importante de tests internes.
+- Les ordres de grandeur suffisent pour la direction. Environ 1 visiteur du site sur 90 ouvre Ma stack, 1 sur 3 y ajoute un outil, et presque personne n'ouvre une comparaison.
+- **Proposition :**
+  - remplacer les cibles en pourcentage par des cibles en nombre de personnes sur 28 jours ;
+  - exclure le trafic interne de GA4 (filtre d'adresse IP ou paramètre de développeur) avant le bilan ;
+  - garder les essais réels (R9) comme mesure principale de la compréhension.
+
+### Couverture des rôles d'outils
+
+| Source | Outils couverts (sur 1 360) |
+|---|---|
+| Accroche écrite à la main (`toolTaglines.ts`, 2-3 mots) | 92 (7 %) |
+| Rôle dans au moins une stack éditoriale (`stacks.ts`) | 595 (44 %) |
+| L'un ou l'autre | 624 (46 %) |
+| Description courte (`shortDescription`, ~88 caractères, commerciale) | 1 360 (100 %) |
+
+Pondéré par la demande (impressions Google, `tool_demand.json`) :
+- **top 50** des outils recherchés : 42 ont une accroche ou un rôle (84 %) ;
+- **top 200** : 132 (66 %).
+
+**Lecture.** Les outils qu'on ajoute réellement sont en majorité couverts. Il faut tout de même :
+- écrire une phrase de rôle pour les ~70 outils du top 200 qui n'en ont pas ;
+- harmoniser les rôles de stack, écrits pour une stack précise (« Code et repo »), en une phrase de rôle propre à l'outil.
+
+La description commerciale ne sert que de dernier recours, et jamais coupée.
+
+**Lot ajouté au plan :** « 3b. Rôles » — une phrase de rôle FR/EN vérifiée pour les 200 outils les plus recherchés, dans un fichier dédié.
+
 ## Décisions ouvertes (pour toi)
 
 1. ~~La promesse~~ : **comprendre d'abord**, validé le 14/11.
-2. **Les cibles des KPI.** Les garder telles quelles, ou attendre les chiffres de départ du lot 0 pour les fixer ?
+2. **Les cibles des KPI.** Le lot 0 montre un échantillon trop petit (48 personnes). Proposition : des cibles en nombre de personnes, l'exclusion du trafic interne dans GA4, et les essais R9 comme mesure principale de la compréhension.
 3. **Les essais avec de vraies personnes (R9).** On les prévoit à la fin de cette mission, ou on les laisse de côté ?
 4. **Ce qui ne va pas pour toi aujourd'hui.** Ta capture et ton message disent que la logique des user stories n'est pas bonne. Dis-moi ce que tu attends, pour que la section 4 parte de ton intention et pas seulement de mon analyse.
