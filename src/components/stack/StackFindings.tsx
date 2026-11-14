@@ -376,14 +376,16 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         title={monthly
           ? <>{t(`${toolCount} outil${toolCount > 1 ? "s" : ""}, `, `${toolCount} tool${toolCount > 1 ? "s" : ""}, `)}<Key>{monthly}</Key>{t(" par mois.", " a month.")}</>
           : t(`${toolCount} outil${toolCount > 1 ? "s" : ""} dans votre stack.`, `${toolCount} tool${toolCount > 1 ? "s" : ""} in your stack.`)}
-        lead={monthly
-          // Figures, not a sentence (M01, 14/11/2026: « ça doit être visuel »): each one a number and a short caption.
-          ? <span style={{ display: "flex", flexWrap: "wrap", gap: "var(--tt-space-3) var(--tt-space-8)", marginTop: "var(--tt-space-2)" }}>
-              <span style={{ display: "grid" }}><Amount size="figure" value={yearly ?? ""} /><span>{t("par an", "a year")}</span></span>
-              {heroWork && <span style={{ display: "grid" }}><Amount size="figure" value={heroWork} /><span>{t("de votre travail par mois", "of your work a month")}{profileRate ? ` · ${profileRate.split(" · ")[0]}` : ""}</span></span>}
-              {saved > 0 && <span style={{ display: "grid" }}><Amount size="figure" tone="gain" value={`−${format(Math.round(saved))}`} unit={t("/mois", "/mo")} /><span>{t("grâce à vos décisions", "thanks to your decisions")}</span></span>}
-            </span>
+        lead={monthly ? undefined
           : toolCount === 1 ? t("Il en faut au moins deux pour parler de stack.", "It takes at least two to call it a stack.") : undefined}
+        // The key figures (M01, 14/11/2026: « architecture d'information »): their own row, one rule for each.
+        figures={monthly ? [
+          { id: "year", label: t("Par an", "A year"), value: <Amount size="figure" value={yearly ?? ""} /> },
+          ...(heroWork ? [{ id: "work", label: t("Temps de travail", "Working time"), value: <Amount size="figure" value={heroWork} unit={t("/mois", "/mo")} />,
+            detail: profileRate ? t(`à ${profileRate.split(" · ")[0]}`, `at ${profileRate.split(" · ")[0]}`) : undefined }] : []),
+          ...(saved > 0 ? [{ id: "saved", label: t("Économisé", "Saved"), value: <Amount size="figure" tone="gain" value={`−${format(Math.round(saved))}`} unit={t("/mois", "/mo")} />,
+            detail: t("grâce à vos décisions", "thanks to your decisions") }] : []),
+        ] : undefined}
         // One place per thing (M01, 14/11/2026): the hero keeps one action; the trade goes to the stack tile,
         // the day rate to the budget tile, the price count to the budget tile's button.
         aside={welcome?.secondary} />
