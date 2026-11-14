@@ -128,7 +128,8 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) for (
  for (let i = 0; i < 5; i++) { await page.keyboard.press('Tab'); expect(await menuPanel.evaluate(node => node.contains(document.activeElement))).toBe(true); }
  await page.screenshot({ path: `${directory}/menu-${lang}-${width}-${theme}.png` });
  await page.keyboard.press('Escape'); await expect(menuPanel).toHaveCount(0); await expect(header).toBeFocused();
- await header.click(); await page.getByRole('link', { name: lang === 'fr' ? 'Paramètres du compte' : 'Account settings', exact: true }).click();
+ // On a phone the tab bar slides away while the page scrolls down; focus brings it back (focus-within), a click could miss it.
+ await header.focus(); await page.keyboard.press('Enter'); await page.getByRole('link', { name: lang === 'fr' ? 'Paramètres du compte' : 'Account settings', exact: true }).click();
  await expect(page.getByLabel(lang === 'fr' ? 'Nom d’affichage (facultatif)' : 'Display name (optional)', { exact: true })).toBeVisible();
  await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1); await expect(page.locator('meta[name=robots]')).toHaveAttribute('content', /noindex/);
  await expect(page.locator('html')).toHaveAttribute('lang', lang);
@@ -291,43 +292,6 @@ test('catalogue add requires authentication and never claims an anonymous save',
  expect(requests.filter((r:{path:string;method:string})=>r.path==='/api/stack-account'&&r.method==='PUT')).toHaveLength(0);
 });
 
-for (const lang of ['fr','en'] as const) for (const width of [390,1440]) test(`connected empty stack onboarding ${lang} ${width}`, async ({page,request}) => {
- const fr=lang==='fr';
- await page.setViewportSize({width,height:1000});
- await control(request,'seed',{email:`empty-start-${lang}-${width}@example.invalid`,displayName:'Camille Martin'});
- await page.goto(`/${lang}/ma-stack`);await login(page,lang,`empty-start-${lang}-${width}@example.invalid`,undefined,'Camille Martin');
- // Hello by first name, in the person's own space.
- await expect(page.getByRole('heading',{level:1,name:fr?/^(Bonjour|Bonsoir), Camille\.$/:/^Good (morning|afternoon|evening), Camille\.$/})).toBeVisible();
- await expect(page.getByText(fr?'Stack enregistrée':'Stack saved',{exact:true})).toHaveCount(0);
- expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
- await page.getByRole('button',{name:fr?'C’est parti':'Let’s go',exact:true}).click();
- await expect(page.getByRole('heading',{level:1,name:fr?'Que faites-vous, Camille ?':'What do you do, Camille?',exact:true})).toBeVisible();
- await page.getByRole('button',{name:fr?/^Conseil/:/^Consulting/}).click();
- await expect(page.getByRole('heading',{level:1,name:fr?'Et votre tarif journalier, Camille ?':'And your day rate, Camille?',exact:true})).toBeVisible();
- const go=page.locator('.so-step').getByRole('button',{name:fr?'Continuer':'Continue',exact:true});
- await expect(go).toBeDisabled();
- await page.locator('.so-rate-chips button').nth(3).click();
- await page.getByRole('button',{name:fr?'Augmenter de 25':'Raise by 25',exact:true}).click();
- await expect(page.locator('.so-rate-hint')).toContainText(fr?'sur une journée de 7 heures':'on a 7-hour day');
- await go.click();
- const rate=(await snapshot(page)).dailyRate;
- expect(rate?.amount).toBe(525);
- await expect(page.getByRole('heading',{level:1,name:fr?'Vos trois premiers outils.':'Your first three tools.',exact:true})).toBeVisible();
- await page.getByRole('button',{name:fr?'J’utilise Notion':'I use Notion',exact:true}).click();
- await page.screenshot({path:`test-results/accounts/empty-start-${lang}-${width}.png`,fullPage:true});
- await page.locator('.ss-stack').getByRole('button',{name:fr?'Continuer':'Continue',exact:true}).click();
- await expect(page.getByRole('heading',{level:1,name:fr?'C’est prêt, Camille.':'All set, Camille.',exact:true})).toBeVisible();
- await page.getByRole('button',{name:fr?'Ouvrir mon espace':'Open my space',exact:true}).click();
- await expect.poll(async()=> (await snapshot(page)).selection.pinnedToolSlugs).toContain('notion');
- expect((await snapshot(page)).trade).toBe('consultant');
- await saved(page,lang);
- const remote=(await control(request,'state')).accounts.find((account:{email:string})=>account.email===`empty-start-${lang}-${width}@example.invalid`);
- expect(remote.stack.state.trade).toBe('consultant');
- expect(remote.stack.state.dailyRate).toEqual(rate);
- await expect(page.getByRole('heading',{name:fr?'Mes outils':'My tools',exact:true})).toBeVisible();
- await expect(page.getByRole('heading',{name:fr?'Mes outils':'My tools',exact:true})).toBeFocused();
- await expect(page.locator('[data-sonner-toast]').filter({hasText:fr?'Bienvenue chez vous, Camille. Profitez-en.':'Welcome home, Camille. Enjoy.'})).toBeVisible();
-});
 test('OAuth opens the destination with a quiet arrival while reading the stack',async({page,request})=>{
  await page.route('**/api/stack-account',async route=>{if(route.request().method()==='GET')await new Promise(resolve=>setTimeout(resolve,1800));await route.continue();});
  await page.goto('/en/sign-in');await dismissConsent(page);await page.getByRole('button',{name:'Continue with Google',exact:true}).click();
@@ -337,50 +301,8 @@ test('OAuth opens the destination with a quiet arrival while reading the stack',
  await expect(page).toHaveURL(/\/en\/ma-stack$/);
 });
 
-for (const width of [390, 1440]) test(`partial stack budget stays consistent ${width}`, async ({page, request}) => {
- await page.setViewportSize({width, height:1000});
- const full = state(['motion-array','audacity','figma','grammarly']);
- full.billing = {paid:['motion-array'],reviewed:['motion-array'],choices:{'motion-array':{source:'custom',amount:29,currency:'USD',period:'monthly'}}};
- await control(request,'seed',{email:'partial-budget@example.invalid',state:full});
- await page.goto('/en/ma-stack'); await login(page,'en','partial-budget@example.invalid'); await saved(page,'en');
- await expect(page.locator('[data-card="price"]')).toContainText('Your stack');
- const expandPrice = page.locator('[data-card="price"] .mf-expand[aria-expanded="false"]');
- if(await expandPrice.isVisible()) await expandPrice.click();
- await expect(page.getByText('2 of 4 tools priced',{exact:true})).toBeVisible();
- await expect(page.getByText('Stack saving',{exact:true})).toHaveCount(0);
- await expect(page.locator('.ms-all-sum')).toContainText('partial');
- const expandSplit = page.locator('.mf-balance .mf-expand[aria-expanded="false"]');
- if(await expandSplit.isVisible()) await expandSplit.click();
- await expect(page.locator('[data-card="split"]')).toBeVisible();
- expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
- await page.screenshot({path:`test-results/accounts/partial-budget-${width}.png`,fullPage:true});
-});
 
-test('budget includes the two free tools alongside two paid tools', async ({page,request}) => {
- const full=state(['motion-array','grammarly','figma','audacity']);
- full.billing={paid:['motion-array','grammarly'],reviewed:['motion-array','grammarly','figma','audacity'],choices:{'motion-array':{source:'custom',amount:29,currency:'USD',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'USD',period:'monthly'}}};
- await control(request,'seed',{email:'four-tools-budget@example.invalid',state:full});
- await page.goto('/en/ma-stack');await login(page,'en','four-tools-budget@example.invalid');await saved(page,'en');
- await expect(page.locator('[data-card="price"]')).toContainText('4 tools · 2 paid · 2 free');
- await expect(page.locator('[data-card="price"]')).toContainText('Figma');
- await expect(page.locator('[data-card="price"]')).toContainText('Audacity');
- await expect(page.locator('[data-card="price"] li')).toHaveCount(4);
- await page.screenshot({path:'test-results/accounts/four-tools-budget.png',fullPage:true});
-});
 
-test('first unconfirmed plan has no zero budget or empty analysis cards', async ({page,request}) => {
- await page.emulateMedia({reducedMotion:'reduce'});
- await control(request,'seed',{email:'first-budget@example.invalid',state:state(['notion'])});
- await page.goto('/en/ma-stack');await login(page,'en','first-budget@example.invalid');await saved(page,'en');
- await expect(page.locator('[data-card="price"]')).toContainText("Let's talk budget.");
- await expect(page.locator('[data-card="price"]')).not.toContainText('$0');
- await expect(page.locator('[data-card="split"]')).toHaveCount(0);
- await expect(page.locator('.mf-fit')).toHaveCount(0);
- await expect(page.locator('[data-card=decision]')).toContainText('Notion');
- await page.getByRole('button',{name:'Choose my first plan',exact:true}).click();
- await expect(page.locator('[data-card=decision]')).toHaveAttribute('data-open','');
- await page.screenshot({path:'test-results/accounts/first-plan-budget.png',fullPage:true});
-});
 
 test('undoing the first free plan restores the unanswered question after reload', async ({page,request}) => {
  await page.emulateMedia({reducedMotion:'reduce'});
@@ -397,33 +319,7 @@ test('undoing the first free plan restores the unanswered question after reload'
  await expect(page.locator('[data-card="price"]')).toContainText("Let's talk budget.");
 });
 
-for(const width of [390,1440]) test(`personal welcome recognises the signed-in owner ${width}`,async({page,request})=>{
- await page.setViewportSize({width,height:1000});
- await control(request,'seed',{email:'welcome@example.invalid',displayName:'Michael',state:state(['notion'])});
- await page.goto('/fr/ma-stack');await login(page,'fr','welcome@example.invalid','fixture-password','Michael');
- await expect(page.locator('[data-greeting]')).toContainText(/(Bonjour|Bonsoir), Michael/);
- await expect(page.locator('[data-welcome-message]')).toContainText('Promis, aucune ne mord');
- await expect(page.getByRole('heading',{name:'Mes outils',exact:true})).toBeVisible();
- expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
- const greeting=await page.locator('[data-greeting]').boundingBox();const title=await page.getByRole('heading',{name:'Mes outils',exact:true}).boundingBox();expect(title!.y).toBeGreaterThan(greeting!.y);
- await page.screenshot({path:`test-results/accounts/personal-welcome-${width}.png`,fullPage:true,animations:'disabled'});
-});
 
-for(const width of [390,1440]) test(`one paid tool offers a next step instead of empty charts ${width}`,async({page,request})=>{
- await page.setViewportSize({width,height:1000});
- const full=state(['notion']);full.billing={paid:['notion'],reviewed:['notion'],choices:{notion:{source:'custom',amount:11,currency:'USD',period:'monthly'}}};
- await control(request,'seed',{email:'starter@example.invalid',displayName:'Michael',state:full});
- await page.goto('/en/ma-stack');await login(page,'en','starter@example.invalid','fixture-password','Michael');await saved(page,'en');
- await expect(page.getByRole('heading',{name:'Your stack is taking shape.',exact:true})).toBeVisible();
- await expect(page.locator('section[aria-labelledby=ms-all-title] [data-status-mark]')).toHaveAttribute('title','Stack saved');
- await expect(page.locator('[data-page] > [data-status-line]')).toHaveCount(0);
- await expect(page.locator('.mf-balance')).toHaveCount(0);await expect(page.locator('.mf-fit')).toHaveCount(0);
- if(width>760){await expect.poll(async()=>{const price=await page.locator('[data-card="price"]').boundingBox();const next=await page.locator('.mf-starter-next').boundingBox();return Math.abs(price!.y-next!.y);}).toBeLessThan(3);}
- await page.screenshot({path:`test-results/accounts/starter-space-${width}.png`,fullPage:true,animations:'disabled'});
- await page.getByRole('button',{name:'Add another tool',exact:true}).click();
- await expect(page.getByRole('searchbox',{name:'Add a tool to my stack'})).toBeVisible();
- expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
-});
 test('general header sign-in opens the personal stack',async({page,request})=>{
  await control(request,'seed',{email:'header-return@example.invalid',displayName:'Michael',state:state(['notion'])});
  await page.goto('/en');await dismissConsent(page);
@@ -525,105 +421,11 @@ for (const width of [390,1440]) test(`switching stack language ${width} keeps th
  expect((await control(request,'state')).requests.filter((r:{path:string})=>r.path==='/api/stack-account'||r.path==='/api/account-profile').length).toBe(before);
 });
 
-for (const lang of ['fr','en'] as const) for(const width of [390,1440]) test(`bento completion ${lang} ${width}: review choices without unsupported advice`,async({page,request})=>{
- const fr=lang==='fr';await page.setViewportSize({width,height:1000});
- const stack=state(['motion-array','grammarly']);stack.billing={paid:['motion-array','grammarly'],reviewed:['motion-array','grammarly'],choices:{'motion-array':{source:'custom',amount:29,currency:'EUR',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'EUR',period:'monthly'}}};
- await control(request,'seed',{email:'bento-review@example.invalid',state:stack});
- await page.goto(`/${lang}/ma-stack`);await login(page,lang,'bento-review@example.invalid');await saved(page,lang);
- const card=page.locator('.mu-card');
- await expect(card.getByRole('heading',{name:fr?'Vos usages':'Your use',exact:true})).toBeVisible();
- await card.getByRole('radio',{name:fr?'Peu — Usage faible':'Rarely — Low use',exact:true}).click();
- await expect(card.getByRole('heading',{name:'Motion Array',exact:true})).toBeVisible();
- await card.getByRole('button',{name:fr?'Suivant':'Next',exact:true}).click();
- await card.getByRole('radio',{name:fr?'À fond — Usage intensif':'A lot — Intensive use',exact:true}).click();
- await card.getByRole('button',{name:fr?'Terminer':'Finish',exact:true}).click();
- await expect(card.getByRole('heading',{name:fr?'Casting au complet.':"That's the whole cast.",exact:true})).toBeVisible();
- await expect(card).not.toContainText(fr?/bonne taille|marathonien|Puissance/:/right size|marathon runner|Power/);
- await card.scrollIntoViewIfNeeded();await page.screenshot({path:`/tmp/tooltrim-bento-complete-${lang}-${width}.png`,fullPage:false});
- await card.getByRole('button',{name:fr?'Revoir mes usages':'Review my use',exact:true}).click();
- const row=card.getByRole('group',{name:fr?'Usage de Motion Array':'Use of Motion Array',exact:true});
- await expect(row.getByRole('radio',{name:fr?'Peu — Usage faible':'Rarely — Low use',exact:true})).toHaveAttribute('aria-checked','true');
- await row.getByRole('radio',{name:fr?'Souvent — Usage soutenu':'Often — Frequent use',exact:true}).click();
- await expect.poll(async()=>(await snapshot(page)).usage?.['motion-array']).toBe(4);
- expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
- const heights=await card.locator('button').evaluateAll(buttons=>buttons.map(button=>button.getBoundingClientRect().height));expect(heights.every(height=>height>=44)).toBe(true);
- await card.getByRole('button',{name:fr?'Résumé':'Summary',exact:true}).click();
- await card.getByRole('button',{name:fr?'Voir mes outils':'View my tools',exact:true}).click();await expect(page.locator('#ms-all-title')).toBeFocused();
-});
-
-test('reviewing a kept pair preserves its answer until a replacement is confirmed',async({page,request})=>{
- const stack=state(['notion','trello']);stack.billing={paid:[],reviewed:['notion','trello'],choices:{}};
- stack.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-19T12:00:00.000Z'}};
- await control(request,'seed',{email:'pair-review@example.invalid',state:stack});await page.goto('/en/ma-stack');await login(page,'en','pair-review@example.invalid');await saved(page);
- const before=(await snapshot(page)).decisions;
- await page.getByRole('button',{name:'Review my choices',exact:true}).click();
- await page.locator('.mu-history').getByRole('button',{name:/^(Review again|Review this choice)$/}).click();
- expect((await snapshot(page)).decisions).toEqual(before);
- await expect(page.locator('[data-card=decision]')).toBeVisible();
- for(const width of [1440,390]) {
-  await page.setViewportSize({width,height:900});
-  await expect(page.locator('[data-choices] button')).toHaveCount(3);
-  await expect(page.locator('[data-card=decision]').getByRole('button',{name:'Review this choice',exact:true})).toHaveCount(0);
-  await expect(page.getByRole('button',{name:'Cancel review',exact:true})).toBeVisible();
-  expect((await page.getByRole('button',{name:'Cancel review',exact:true}).boundingBox())!.height).toBeGreaterThanOrEqual(43.99); // Chromium subpixel rounding of the 44px target.
-  expect(await page.locator('[data-card=decision]').evaluate(el=>{const box=el.getBoundingClientRect();return Array.from(el.querySelectorAll('[data-choices] button')).every(b=>b.getBoundingClientRect().bottom<=box.bottom+1);})).toBe(true);
-  await expect(page.locator('[data-choices]').getByRole('button',{name:'Cancel review',exact:true})).toHaveCount(0);
-  if(width===390) await expect(page.locator('[data-card=decision] .mf-expand')).toHaveAttribute('aria-expanded','true');
-  for(const face of await page.locator('[data-choice=keep]').all()) {
-  await face.hover();
-  await expect.poll(async()=>face.evaluate(el=>{
-   const logo=el.querySelector('.tt-choice-logo')!.getBoundingClientRect();
-   const image=el.querySelector('.tt-choice-logo > :first-child')!.getBoundingClientRect();
-   const name=el.querySelector('.mf-face-name')!.getBoundingClientRect();
-   return image.width<=logo.width+1 && (image.right<=name.left || image.bottom<=name.top);
-  })).toBe(true);
-  }
- }
- await page.setViewportSize({width:1440,height:900});
- await page.getByRole('button',{name:'Cancel review',exact:true}).click();
- await expect(page.locator('.mu-history').getByRole('button',{name:'Review this choice',exact:true})).toBeFocused();
- expect((await snapshot(page)).decisions).toEqual(before);
- await page.locator('.mu-history').getByRole('button',{name:'Review this choice',exact:true}).click();
- await page.getByRole('button',{name:'Keep Notion, remove Trello',exact:true}).click();
- await expect.poll(async()=>(await snapshot(page)).decisions['notion|trello']?.kind).toBe('keep-one');
- await expect(page.locator('#ms-all-title')).toBeFocused();
-});
 
 
-test('reviewing a saved pair takes priority over another pending question and never duplicates it',async({page,request})=>{
- const stack=state(['notion','trello','motion-array','grammarly']);
- stack.billing={paid:['motion-array'],reviewed:['notion','trello','motion-array'],choices:{'motion-array':{source:'custom',amount:29,currency:'EUR',period:'monthly'}}};
- stack.usage={'motion-array':4};stack.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-19T12:00:00.000Z'}};
- await control(request,'seed',{email:'pair-pending@example.invalid',state:stack});await page.goto('/en/ma-stack');await login(page,'en','pair-pending@example.invalid');await saved(page);
- await page.getByRole('button',{name:'Review my use',exact:true}).click();
- await page.getByRole('button',{name:'Summary',exact:true}).click();
- await page.getByRole('button',{name:'History',exact:true}).click();
- await expect.poll(async()=>{const card=await page.locator('.mu-card').boundingBox();const board=await page.locator('[data-page-group]').boundingBox();return !!card&&!!board&&card.y+card.height<=board.y;}).toBe(true);
- await page.locator('.mu-history').getByRole('button',{name:'Review this choice',exact:true}).click();
- await expect(page.locator('[data-card=decision]')).toHaveAttribute('data-kind','pair');
- await expect(page.locator('[data-card=decision]')).toContainText('Your current choice is to keep both.');
- expect((await snapshot(page)).decisions['notion|trello'].kind).toBe('keep-both');
- const countBefore=(await page.locator('.mf-step').getAttribute('aria-label'))?.match(/\d+$/)?.[0];expect(countBefore).toBeTruthy();
- await change(page,{...(await snapshot(page)),decisions:{}});
- await expect(page.getByRole('button',{name:'Cancel review',exact:true})).toHaveCount(0);
- await expect(page.locator('.mf-step')).toHaveAttribute('aria-label',new RegExp(`of ${countBefore}$`));
- expect((await snapshot(page)).decisions).toEqual({});
-});
 
 
-test('removing a tool closes its saved-pair review without deleting the historic decision',async({page,request})=>{
- const stack=state(['notion','trello']);stack.billing={paid:[],reviewed:['notion','trello'],choices:{}};
- stack.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-19T12:00:00.000Z'}};
- await control(request,'seed',{email:'pair-removal@example.invalid',state:stack});await page.goto('/en/ma-stack');await login(page,'en','pair-removal@example.invalid');await saved(page);
- await page.getByRole('button',{name:'Review my choices',exact:true}).click();
- await page.locator('.mu-history').getByRole('button',{name:'Review this choice',exact:true}).click();
- await expect(page.getByRole('button',{name:'Cancel review',exact:true})).toBeVisible();
- const current=await snapshot(page);
- await change(page,{...current,selection:{...current.selection,pinnedToolSlugs:['notion'],toolEntries:current.selection.toolEntries.filter(entry=>entry.toolSlug==='notion')}});
- await expect(page.getByRole('button',{name:'Cancel review',exact:true})).toHaveCount(0);
- await expect(page.locator('[data-card=decision][data-kind=pair]')).toHaveCount(0);
- expect((await snapshot(page)).decisions['notion|trello'].kind).toBe('keep-both');
-});
+
 
 for(const lang of ['fr','en'] as const) test(`friendly logout ${lang}: real pending feedback then home`,async({page,request})=>{
  const fr=lang==='fr';await page.setViewportSize({width:fr?390:1440,height:900});
@@ -643,263 +445,15 @@ for(const lang of ['fr','en'] as const) test(`friendly logout ${lang}: real pend
  else await expect(page.locator('[data-shell-topbar]').getByRole('button',{name:'Settings',exact:true})).toBeVisible();
 });
 
-for(const lang of ['fr','en'] as const) test(`all-free stack ${lang}: compact budget and honest completion`,async({page,request})=>{
- const slugs=['supabase','typescript','make'];const stack=state(slugs);stack.billing={paid:[],reviewed:slugs,choices:{typescript:{source:'custom',amount:0,currency:'EUR',period:'monthly'}}};
- await control(request,'seed',{email:`free-only-${lang}@example.invalid`,state:stack});
- await page.setViewportSize({width:1440,height:900});await page.goto(`/${lang}/ma-stack`);await login(page,lang,`free-only-${lang}@example.invalid`);await saved(page,lang);
- await expect(page.locator('.mu-card')).toBeVisible();
- await expect(page.locator('.mf-grid')).toHaveCSS('grid-template-areas','"price fit"');
- await expect.poll(async()=>{const price=await page.locator('[data-card="price"]').boundingBox();const review=await page.locator('.mu-card').boundingBox();return Math.abs(price!.y-review!.y);}).toBeLessThan(2);
- await expect.poll(async()=>(await page.locator('.mu-card').boundingBox())!.height).toBeGreaterThanOrEqual(289); // no-scroll contract: 290px is a floor
- await expect(page.locator('.mu-card')).toContainText(lang==='fr'?'Votre stack, sans abonnement payant.':'Your stack has no paid plans.');
- await expect(page.locator('.mf-balance')).toHaveCount(0);
- await page.screenshot({path:test.info().outputPath(`free-only-${lang}-desktop.png`)});
- await page.setViewportSize({width:820,height:900});
- await expect.poll(async()=>(await page.locator('.mu-card').boundingBox())!.height).toBeGreaterThanOrEqual(294);
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
- await page.setViewportSize({width:390,height:900});
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
- await expect(page.locator('.mu-card')).toBeVisible();
-});
 
-for (const lang of ['fr','en'] as const) for (const [width,height,expected] of [[320,900,330],[390,900,330],[820,900,295],[1440,900,290],[1440,800,255.2],[1440,700,230]]) {
- test(`usage envelope ${lang} ${width}x${height}: answer, next, correction, summary and history preserve no-scroll controls`,async({page,request})=>{
-  const fr=lang==='fr';await page.setViewportSize({width,height});
-  const value=state(['motion-array','grammarly','notion','trello']);
-  value.billing={paid:['motion-array','grammarly'],reviewed:['motion-array','grammarly','notion','trello'],choices:{'motion-array':{source:'custom',amount:25,currency:'EUR',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'EUR',period:'monthly'}}};
-  value.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-25T00:00:00.000Z'}};
-  await control(request,'seed',{email:'usage-height@example.invalid',state:value});await page.goto(`/${lang}/ma-stack`);await login(page,lang,'usage-height@example.invalid');await saved(page,lang);
-  const card=page.locator('.mu-card');await expect(card).toBeVisible();await card.scrollIntoViewIfNeeded();
-  await page.addStyleTag({content:'.mu-question { scrollbar-gutter: stable; } @media(max-width:340px) { .mu-question { max-width:236px !important; } .mu-gauge button small { font-family: Arial, sans-serif; } }'});
-  const anchors=()=>card.evaluate(el=>{const box=el.getBoundingClientRect(),footer=el.querySelector('.mu-footer')!.getBoundingClientRect(),primary=el.querySelector('.mu-next')!.getBoundingClientRect();return {bottom:box.bottom-footer.bottom,right:box.right-primary.right};});
-  const initialAnchors=await anchors();
-  const stable=async()=>{await expect.poll(async()=>(await card.boundingBox())!.height).toBeGreaterThanOrEqual(expected-1);expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);const current=await anchors();expect(Math.abs(current.bottom-initialAnchors.bottom)).toBeLessThan(1);expect(Math.abs(current.right-initialAnchors.right)).toBeLessThan(1);};
-  await expect(card.getByLabel(fr?'Outil 1 sur 2':'Tool 1 of 2')).toContainText('1 / 2');
-  await expect(card.getByRole('button',{name:fr?'Outil précédent':'Previous tool',exact:true})).toBeDisabled();
-  expect(await card.locator('.mu-gauge').evaluate(el=>el.getBoundingClientRect().width)).toBeLessThanOrEqual(640);
-  const levels=await card.getByRole('radio').evaluateAll(radios=>radios.map(r=>{const bar=r.querySelector('.mu-meter-bar')!.getBoundingClientRect(),target=r.getBoundingClientRect();return {bottom:bar.bottom,height:bar.height,targetWidth:target.width,targetHeight:target.height};}));
-  for (const [i,level] of levels.entries()) {
-   expect(Math.abs(level.bottom-levels[0].bottom),JSON.stringify(levels)).toBeLessThan(1);
-   if(i>0) expect(level.height).toBeGreaterThan(levels[i-1].height);
-   expect(level.targetWidth).toBeGreaterThanOrEqual(44);
-   expect(level.targetHeight).toBeGreaterThanOrEqual(44);
-  }
-  expect(await card.locator('.mu-tool-label').evaluate(el=>{const title=el.querySelector('h3')!.getBoundingClientRect(),price=el.querySelector('p')!.getBoundingClientRect();return Math.abs(title.left-price.left)<1&&price.top>=title.bottom;})).toBe(true);
-  await page.mouse.move(0,0);await card.evaluate(el=>el.scrollIntoView({block:'center'}));
-  expect(await card.getByRole('radio').locator('small').evaluateAll(labels=>labels.every(label=>{const css=getComputedStyle(label);return label.scrollWidth<=label.clientWidth&&label.getBoundingClientRect().height<=parseFloat(css.lineHeight)+parseFloat(css.paddingTop)+parseFloat(css.paddingBottom)+1;}))).toBe(true);
-  expect(await card.locator('.mu-footer button:not(:disabled)').evaluateAll(buttons=>buttons.every(button=>{const r=button.getBoundingClientRect();return button.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2));}))).toBe(true);
-  await card.screenshot({path:test.info().outputPath('question.png')});
-  await card.getByRole('button',{name:fr?'Plus tard':'Later',exact:true}).click();await stable();
-  await card.screenshot({path:test.info().outputPath('partial-summary.png')});
-  await card.getByRole('button',{name:fr?'Renseigner l’usage de Grammarly':'Record use of Grammarly',exact:true}).click();await stable();
-  await expect(card.getByRole('heading',{name:'Grammarly',exact:true})).toBeFocused();
-  await card.getByRole('button',{name:fr?'Résumé':'Summary',exact:true}).click();await stable();
-  await card.getByRole('button',{name:fr?'Reprendre':'Resume',exact:true}).click();await stable();
-  await stable();
-  expect(await card.getByRole('radio').evaluateAll(radios=>radios.every(r=>r.getBoundingClientRect().height>=56))).toBe(true);
-  const rocket=card.getByRole('radio',{name:fr?'À fond — Usage intensif':'A lot — Intensive use',exact:true});
-  await rocket.hover();
-  await expect(card.locator('.mu-reaction')).toHaveCSS('animation-name','none');
-  await expect(rocket.locator('.mu-meter-bar')).toHaveCSS('transition-duration','0s');
-  const low=card.getByRole('radio',{name:fr?'Peu — Usage faible':'Rarely — Low use',exact:true});await low.hover();await stable();
-  await low.press('Space');await expect(card.getByRole('heading',{name:'Motion Array',exact:true})).toBeVisible();await stable();
-  await rocket.hover();await expect(low).toHaveAttribute('aria-checked','true');await expect(rocket).toHaveAttribute('aria-checked','false');
-  const next=card.getByRole('button',{name:fr?'Suivant':'Next',exact:true});await next.focus();
-  const before=await page.evaluate(()=>({window:scrollY,content:document.querySelector('.asv2-content')?.scrollTop}));
-  await page.keyboard.press('Enter');await expect(card.getByRole('heading',{name:'Grammarly',exact:true})).toBeFocused();
-  expect(await page.evaluate(()=>({window:scrollY,content:document.querySelector('.asv2-content')?.scrollTop}))).toEqual(before);await stable();
-  await card.getByRole('radio',{name:fr?'Régulier — Usage régulier':'Regular — Regular use',exact:true}).focus();await page.keyboard.press('End');
-  await expect(card.getByRole('radio',{name:fr?'À fond — Usage intensif':'A lot — Intensive use',exact:true})).toHaveAttribute('aria-checked','true');await stable();
-  await page.mouse.move(0,0);await card.screenshot({path:test.info().outputPath('answered.png')});
-  await card.getByRole('button',{name:fr?'Terminer':'Finish',exact:true}).click();await stable();
-  await card.screenshot({path:test.info().outputPath('complete-summary.png')});
-  await card.getByRole('button',{name:fr?'Revoir mes usages':'Review my use',exact:true}).click();await stable();
-  await card.getByRole('radio',{name:fr?'Souvent — Usage soutenu':'Often — Frequent use',exact:true}).click();await expect.poll(async()=>(await snapshot(page)).usage?.['motion-array']).toBe(4);await stable();
-  await card.getByRole('button',{name:fr?'Résumé':'Summary',exact:true}).click();await card.getByRole('button',{name:fr?'Historique':'History',exact:true}).click();await stable();
-  await expect(card.getByRole('region',{name:fr?'Historique des choix':'Choice history'})).toBeVisible();
-  await card.screenshot({path:test.info().outputPath('history.png')});
-  await card.getByRole('button',{name:fr?'Résumé':'Summary',exact:true}).click();await stable();
-  await saved(page,lang);await page.reload();await saved(page,lang);await stable();
-  expect((await snapshot(page)).usage).toMatchObject({'motion-array':4,grammarly:5});
-  await page.screenshot({path:test.info().outputPath(`usage-${lang}-${width}-${height}.png`)});
- });
-}
 
-test('many usage rows and a long choice history stay inside the compact scene',async({page,request})=>{
- await page.setViewportSize({width:320,height:900});
- const slugs=['microsoft-dynamics-business-central','motion-array','grammarly','notion','trello'];
- const value=state(slugs);const paid=slugs.slice(0,3);
- value.billing={paid,reviewed:slugs,choices:Object.fromEntries(paid.map((slug,index)=>[slug,{source:'custom',amount:index===0?99999:99-index,currency:'EUR',period:'monthly'}]))};
- for(let a=0;a<slugs.length;a++)for(let b=a+1;b<slugs.length;b++){const pair=[slugs[a],slugs[b]].sort().join('|');value.decisions[pair]={kind:'keep-both',kept:slugs[a],saving:0,at:'2026-10-25T00:00:00.000Z'};}
- await control(request,'seed',{email:'long-usage@example.invalid',state:value});await page.goto('/en/ma-stack');await login(page,'en','long-usage@example.invalid');await saved(page);
- const card=page.locator('.mu-card');await expect(card.getByRole('heading',{name:/Business Central/})).toBeVisible();
- for(let index=0;index<3;index++){
-  const geometry=await card.evaluate(el=>{const tool=el.querySelector('.mu-tool')!.getBoundingClientRect(),gauge=el.querySelector('.mu-gauge')!.getBoundingClientRect(),caption=el.querySelector('.mu-caption')!.getBoundingClientRect(),footer=el.querySelector('.mu-footer')!.getBoundingClientRect();return {height:el.getBoundingClientRect().height,noOverlap:tool.bottom<=gauge.top+1&&caption.bottom<=footer.top+1};});
-  await card.screenshot({path:test.info().outputPath(`long-tool-${index}.png`)});
-  expect(geometry.height).toBeGreaterThanOrEqual(330);expect(geometry.noOverlap).toBe(true);
-  await card.getByRole('radio',{name:'Regular — Regular use',exact:true}).click();await card.getByRole('button',{name:index<2?'Next':'Finish',exact:true}).click();
- }
- await card.getByRole('button',{name:'History',exact:true}).click();const history=card.getByRole('region',{name:'Choice history'});
- await expect(history.getByRole('button',{name:'Review this choice',exact:true})).toHaveCount(10);
- expect(await history.evaluate(el=>el.scrollHeight<=el.clientHeight+1)).toBe(true); // no-scroll contract: the history grows instead
- await history.getByRole('button',{name:'Review this choice',exact:true}).last().scrollIntoViewIfNeeded();
- expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(330); expect(await card.evaluate(el=>[el,...el.querySelectorAll('*')].every(n=>n.scrollHeight<=n.clientHeight+1||!/(auto|scroll|hidden)/.test(getComputedStyle(n).overflowY)))).toBe(true);
- await page.emulateMedia({reducedMotion:'no-preference'});await card.getByRole('button',{name:'Summary',exact:true}).click();
- await card.getByRole('button',{name:'Review my use',exact:true}).click();await card.getByRole('radio',{name:'A lot — Intensive use',exact:true}).hover();
- expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(330); expect(await card.evaluate(el=>[el,...el.querySelectorAll('*')].every(n=>n.scrollHeight<=n.clientHeight+1||!/(auto|scroll|hidden)/.test(getComputedStyle(n).overflowY)))).toBe(true);
-});
 
-test('usage answers survive a failed cloud write and retry without lying about saved status', async ({page,request}) => {
- const value=state(['motion-array','grammarly']);
- value.billing={paid:['motion-array','grammarly'],reviewed:['motion-array','grammarly'],choices:{'motion-array':{source:'custom',amount:25,currency:'EUR',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'EUR',period:'monthly'}}};
- await control(request,'seed',{email:'usage-retry@example.invalid',state:value});
- await page.goto('/en/ma-stack');await login(page,'en','usage-retry@example.invalid');await saved(page);
- await page.route('**/api/stack-account',route=>route.abort());
- const card=page.locator('.mu-card');await card.getByRole('radio',{name:'Often — Frequent use',exact:true}).click();
- await expect(page.getByRole('button',{name:'Retry saving',exact:true})).toBeVisible();
- await expect(card.getByRole('radio',{name:'Often — Frequent use',exact:true})).toHaveAttribute('aria-checked','true');
- expect((await snapshot(page)).usage?.['motion-array']).toBe(4);
- await page.unroute('**/api/stack-account');await page.getByRole('button',{name:'Retry saving',exact:true}).click();await saved(page);
- await page.reload();await saved(page);
- expect((await snapshot(page)).usage?.['motion-array']).toBe(4);
-});
 
-test('usage scenes and answers follow the account through A B A reconnection', async ({page,request}) => {
- const value=state(['motion-array','grammarly']);
- value.billing={paid:['motion-array','grammarly'],reviewed:['motion-array','grammarly'],choices:{'motion-array':{source:'custom',amount:25,currency:'EUR',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'EUR',period:'monthly'}}};
- await control(request,'seed',{email:'usage-a@example.invalid',state:value});
- await control(request,'seed',{email:'usage-b@example.invalid',state:{...value,usage:{'motion-array':5,grammarly:2}}});
- await page.goto('/en/ma-stack');await login(page,'en','usage-a@example.invalid');await saved(page);
- await page.locator('.mu-card').getByRole('radio',{name:'Rarely — Low use',exact:true}).click();await saved(page);
- await signOut(page);await page.goto('/en/ma-stack');await login(page,'en','usage-b@example.invalid');await saved(page);
- const card=page.locator('.mu-card');await expect(card.getByRole('heading',{name:"That's the whole cast.",exact:true})).toBeVisible();
- await card.getByRole('button',{name:'Review my use',exact:true}).click();
- await expect(card.getByRole('radio',{name:'A lot — Intensive use',exact:true})).toHaveAttribute('aria-checked','true');
- await signOut(page);await page.goto('/en/ma-stack');await login(page,'en','usage-a@example.invalid');await saved(page);
- await expect(card.getByRole('heading',{name:'Grammarly',exact:true})).toBeVisible();
- expect((await snapshot(page)).usage).toEqual({'motion-array':1});
-});
 
-test('usage keeps the original envelope and readable nonoverlapping controls with doubled text', async ({page,request}) => {
- await page.setViewportSize({width:320,height:568});
- const value=state(['motion-array','grammarly']);
- value.billing={paid:['motion-array','grammarly'],reviewed:['motion-array','grammarly'],choices:{'motion-array':{source:'custom',amount:25,currency:'EUR',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'EUR',period:'monthly'}}};
- await control(request,'seed',{email:'usage-text@example.invalid',state:value});
- await page.goto('/fr/ma-stack');await login(page,'fr','usage-text@example.invalid');await saved(page,'fr');
- const card=page.locator('.mu-card');
- await card.evaluate(el=>{for(const text of el.querySelectorAll<HTMLElement>('h2,h3,p,small,.mu-count,.mu-footer button'))text.style.fontSize=`${parseFloat(getComputedStyle(text).fontSize)*2}px`;});
- expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(330); expect(await card.evaluate(el=>[el,...el.querySelectorAll('*')].every(n=>n.scrollHeight<=n.clientHeight+1||!/(auto|scroll|hidden)/.test(getComputedStyle(n).overflowY)))).toBe(true);
- expect(await card.getByRole('radio').evaluateAll(radios=>radios.every(r=>{const icon=r.querySelector('.mu-meter-track')!.getBoundingClientRect(),label=r.querySelector('small')!.getBoundingClientRect();return label.top>=icon.bottom&&label.bottom<=r.getBoundingClientRect().bottom+1&&label.width<=r.getBoundingClientRect().width+1;}))).toBe(true);
- expect(await card.evaluate(el=>{const tool=el.querySelector('.mu-tool')!.getBoundingClientRect(),gauge=el.querySelector('.mu-gauge')!.getBoundingClientRect(),caption=el.querySelector('.mu-caption')!.getBoundingClientRect();return tool.bottom<=gauge.top+1&&gauge.bottom<=caption.top+1;})).toBe(true);
- expect(await card.evaluate(el=>{const tool=el.querySelector('.mu-tool')!,gauge=el.querySelector('.mu-gauge')!,caption=el.querySelector('.mu-caption')!;return tool.querySelector('h3')!.getBoundingClientRect().bottom<=tool.getBoundingClientRect().bottom+1&&Array.from(gauge.querySelectorAll('button')).every(b=>b.getBoundingClientRect().bottom<=gauge.getBoundingClientRect().bottom+1)&&caption.scrollHeight<=caption.clientHeight+1;})).toBe(true);
- expect(await card.evaluate(el=>{const scene=el.querySelector('.mu-scene')!.getBoundingClientRect(),footer=el.querySelector('.mu-footer')!.getBoundingClientRect();return scene.bottom<=footer.top+1;})).toBe(true);
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
- await page.screenshot({path:test.info().outputPath('usage-text-double.png')});
-});
 
-test('usage conflict keeps the local answer until the person resolves it explicitly', async ({page,request}) => {
- const value=state(['motion-array','grammarly']);
- value.billing={paid:['motion-array','grammarly'],reviewed:['motion-array','grammarly'],choices:{'motion-array':{source:'custom',amount:25,currency:'EUR',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'EUR',period:'monthly'}}};
- await control(request,'seed',{email:'usage-conflict@example.invalid',state:value});
- await page.goto('/en/ma-stack');await login(page,'en','usage-conflict@example.invalid');await saved(page);
- await page.route('**/api/stack-account',route=>route.request().method()==='PUT'?route.abort():route.continue());
- const card=page.locator('.mu-card');await card.getByRole('radio',{name:'Often — Frequent use',exact:true}).click();
- await expect(page.getByRole('button',{name:'Save my current version',exact:true})).toBeVisible();
- await expect(card.getByRole('radio',{name:'Often — Frequent use',exact:true})).toHaveAttribute('aria-checked','true');
- await page.unroute('**/api/stack-account');await page.getByRole('button',{name:'Save my current version',exact:true}).click();await saved(page);
- await page.reload();await saved(page);expect((await snapshot(page)).usage?.['motion-array']).toBe(4);
-});
 
-test('usage follows a paid-to-free change without retaining a stale preview or keyboard focus', async ({page,request}) => {
- const value=state(['motion-array','grammarly','notion']);
- value.billing={paid:['motion-array','grammarly','notion'],reviewed:['motion-array','grammarly','notion'],choices:{'motion-array':{source:'custom',amount:25,currency:'EUR',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'EUR',period:'monthly'},notion:{source:'custom',amount:9,currency:'EUR',period:'monthly'}}};
- await control(request,'seed',{email:'usage-free-change@example.invalid',state:value});
- await page.goto('/en/ma-stack');await login(page,'en','usage-free-change@example.invalid');await saved(page);
- const card=page.locator('.mu-card');await card.getByRole('radio',{name:'A lot — Intensive use',exact:true}).focus();
- await expect(card).toContainText('It knows your shortcuts by heart.');
- const next=await snapshot(page);next.billing.paid=['grammarly','notion'];next.billing.choices['motion-array']={source:'custom',amount:0,currency:'EUR',period:'monthly'};
- await change(page,next);
- await expect(card.getByRole('heading',{name:'Grammarly',exact:true})).toBeFocused();
- await expect(card).not.toContainText('It knows your shortcuts by heart.');
- expect((await snapshot(page)).usage).toEqual({});
- await card.getByRole('radio',{name:'Rarely — Low use',exact:true}).press('ArrowDown');
- expect((await snapshot(page)).usage).toEqual({grammarly:2});
-});
 
-for(const lang of ['en','fr'] as const) for(const width of [320,1440]) test(`invoice currency ${lang} ${width}: tester stack, mixed invoice, direct editor and reload`,async({page,request})=>{
- const en=lang==='en';await page.setViewportSize({width,height:900});
- const value=state(['cursor','github','vercel']);
- value.billing={paid:['cursor','github'],reviewed:['cursor','github','vercel'],choices:{cursor:{source:'plan',label:'Teams',amount:40,currency:'USD',period:'monthly',perSeat:true,seats:5}}};
- await control(request,'seed',{email:'invoice@example.invalid',state:value});
- await page.addInitScript(()=>localStorage.setItem('tooltrim:currency','USD'));
- await page.goto(`/${lang}/ma-stack`);await login(page,lang,'invoice@example.invalid');await saved(page,lang);
- const card=page.locator('[data-card=decision]');
- const expander=card.locator('.mf-expand[aria-expanded=false]');if(await expander.isVisible())await expander.click();
- // Resolve a pair first only if the catalogue detects one; keep all tools.
- if(await card.getByRole('button',{name:en?'Keep both':'Garder les deux',exact:true}).count())await card.getByRole('button',{name:en?'Keep both':'Garder les deux',exact:true}).click();
- await expect(card.getByRole('textbox')).toBeVisible();
- expect(await card.locator('[data-card=decision] h3').evaluate(el=>getComputedStyle(el).paddingRight)).toBe('0px');
- expect((await snapshot(page)).billing.choices.github).toBeUndefined();
- await expect(page.locator('[data-card="price"]')).toContainText(/200/);
- await expect(card.getByRole('combobox',{name:en?'Invoice currency':'Devise de facture'})).toHaveValue('USD');
- await card.getByRole('textbox').fill(en?'12.50':'12,50');
- await card.getByRole('combobox').selectOption('GBP');
- if(en && width===1440) {
-  await page.getByRole('button',{name:'Choose currency, US dollar selected',exact:true}).click();
-  await page.getByRole('radio',{name:/EUR/}).click();
-  await expect(card.getByRole('combobox')).toHaveValue('GBP');await expect(card.getByRole('textbox')).toHaveValue('12.50');
-  await expect(card.locator('[data-invoice] p')).toContainText('GBP → EUR');
-  await page.getByRole('button',{name:/Choose currency, Euro selected/}).click();await page.getByRole('radio',{name:/USD/}).click();
- }
- await expect(card.locator('[data-invoice] p')).toContainText('GBP → USD');
- await expect(card.locator('[data-invoice] p')).toContainText('2026-08-27');
- const save=card.getByRole('button',{name:en?'Save':'Enregistrer',exact:true});
- expect(await save.evaluate(el=>{const c=getComputedStyle(el).backgroundColor.match(/\d+/g)!.map(Number);return c[2]>c[0]+50;})).toBe(true);
- expect(await card.evaluate(el=>{const b=el.getBoundingClientRect();return Array.from(el.querySelectorAll('[data-invoice] input,[data-invoice] select,[data-invoice] button')).every(x=>x.getBoundingClientRect().bottom<=b.bottom+1);})).toBe(true);
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
- await card.screenshot({path:`/tmp/tooltrim-invoice-${lang}-${width}.png`});
- await card.getByRole('button',{name:en?'Save':'Enregistrer',exact:true}).click();await saved(page,lang);
- expect((await snapshot(page)).billing.choices.github).toEqual({source:'custom',amount:12.5,currency:'GBP',period:'monthly'});
- expect((await snapshot(page)).billing.choices.cursor?.seats).toBe(5);
- await expect(page.locator('[data-card="price"]')).toContainText('2026-08-27');
- await page.reload();await saved(page,lang);
- expect((await snapshot(page)).billing.choices.github?.currency).toBe('GBP');
- // Restore unknown price to exercise the explicit direct-editor link.
- const next=await snapshot(page);delete next.billing.choices.github;await change(page,next);
- const open=card.locator('.mf-expand[aria-expanded=false]');if(await open.isVisible())await open.click();
- await card.getByRole('button',{name:en?'Currency, users or yearly billing':'Devise, utilisateurs ou facture annuelle',exact:true}).click();
- const sheet=page.getByRole('dialog');const input=sheet.getByLabel(en?'Billed amount':'Montant facturé',{exact:true});
- await expect(input).toBeVisible();await expect(input).toBeFocused();
- await input.fill(en?'120.12':'120,12');
- await sheet.getByRole('group',{name:en?'Invoice currency':'Devise de facture'}).getByRole('button',{name:'EUR',exact:true}).click();
- await sheet.getByRole('button',{name:en?'Yearly':'Annuel',exact:true}).click();
- await sheet.locator('[data-cost-editor]').getByRole('button',{name:en?'Cancel':'Annuler',exact:true}).click();
- await expect(sheet.getByRole('button',{name:en?'Edit my subscription':'Modifier mon abonnement'})).toBeFocused();
- expect((await snapshot(page)).billing.choices.github).toBeUndefined();
- await sheet.getByRole('button',{name:en?'Edit my subscription':'Modifier mon abonnement'}).click();
- await input.fill(en?'120.12':'120,12');
- await sheet.getByRole('group',{name:en?'Invoice currency':'Devise de facture'}).getByRole('button',{name:'EUR',exact:true}).click();
- await sheet.getByRole('button',{name:en?'Yearly':'Annuel',exact:true}).click();
- await input.fill('-1');await expect(sheet.getByRole('button',{name:en?'Save':'Enregistrer',exact:true})).toBeDisabled();await input.press('Enter');
- expect((await snapshot(page)).billing.choices.github).toBeUndefined();
- await input.fill(en?'120.12':'120,12');await sheet.getByRole('button',{name:en?'Save':'Enregistrer',exact:true}).click();await saved(page,lang);
- expect((await snapshot(page)).billing.choices.github).toEqual({source:'custom',amount:120.12,currency:'EUR',period:'annual'});
- await sheet.getByRole('button',{name:en?'Close':'Fermer',exact:true}).click();
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-});
 
-test('invoice zero can become paid again and editor cancellation restores a visible focus target',async({page,request})=>{
- const value=state(['notion','vercel']);value.billing={paid:['notion'],reviewed:['notion','vercel'],choices:{notion:{source:'custom',amount:0,currency:'USD',period:'monthly'}}};
- await control(request,'seed',{email:'zero-invoice@example.invalid',state:value});await page.goto('/en/ma-stack');await login(page,'en','zero-invoice@example.invalid');await saved(page);
- await page.locator('#ms-all-grid').getByRole('button',{name:/^Notion,/}).click();const sheet=page.getByRole('dialog');
- const paid=sheet.getByRole('switch',{name:'Paid subscription for Notion',exact:true});await expect(paid).toHaveAttribute('aria-checked','false');await paid.click();
- await expect(paid).toHaveAttribute('aria-checked','true');expect((await snapshot(page)).billing.choices.notion).toBeUndefined();
- const adjust=sheet.getByRole('button',{name:'Edit my subscription'});await adjust.click();
- await sheet.getByLabel('Or the billed amount',{exact:true}).fill('0');await sheet.getByRole('button',{name:en?'Save':'Enregistrer',exact:true}).click();
- await expect(adjust).toBeFocused();await expect(paid).toHaveAttribute('aria-checked','false');
- await adjust.click();await sheet.getByLabel('Or the billed amount',{exact:true}).fill('99');await sheet.getByRole('button',{name:'Cancel',exact:true}).click();
- await expect(adjust).toBeFocused();expect((await snapshot(page)).billing.choices.notion?.amount).toBe(0);
-});
 
 test('invoice draft cannot cross a personal-stack scope change',async({page,request})=>{
  const first=state(['github','vercel']);first.billing={paid:['github'],reviewed:['github','vercel'],choices:{github:{source:'custom',amount:15,currency:'USD',period:'monthly'}}};

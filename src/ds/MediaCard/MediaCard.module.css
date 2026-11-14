@@ -328,26 +328,38 @@
   transform: none;
 }
 
-/* Above the picture: a screenshot may set its own stacking. */
+/* Above the picture: a screenshot may set its own stacking. The button is a 44 px touch target (--tt-tap, WCAG
+   2.5.5) around a 32 px visible disc drawn by ::before, so the card keeps its look and a finger never misses. */
 .action {
+  --edge: calc((var(--tt-tap) - var(--tt-card-action)) / 2);
+
   position: absolute;
   z-index: 2;
-  top: var(--tt-space-4);
-  right: var(--tt-space-4);
+  top: calc(var(--tt-space-4) - var(--edge));
+  right: calc(var(--tt-space-4) - var(--edge));
   display: grid;
   place-items: center;
-  width: var(--tt-card-action);
-  height: var(--tt-card-action);
+  width: var(--tt-tap);
+  height: var(--tt-tap);
   padding: 0;
   border: 0;
   border-radius: var(--tt-r-round);
-
-  /* Opaque instead of blurred glass (see --tt-tag-glass in tokens.css). */
-  background: var(--tt-card-action-bg);
-  box-shadow: var(--tt-glass-shadow);
+  background: none;
   color: var(--tt-ink);
   cursor: pointer;
-  transition: background-color var(--tt-dur-state) ease, color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
+  transition: color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease;
+}
+
+/* The visible disc: opaque instead of blurred glass (see --tt-tag-glass in tokens.css). */
+.action::before {
+  position: absolute;
+  inset: var(--edge);
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--tt-card-action-bg);
+  box-shadow: var(--tt-glass-shadow);
+  content: "";
+  transition: background-color var(--tt-dur-state) ease;
 }
 
 .action:disabled {
@@ -356,12 +368,15 @@
 
 .action:focus-visible {
   outline: var(--tt-focus-ring);
-  outline-offset: var(--tt-focus-offset);
+  outline-offset: calc(var(--tt-focus-offset) - var(--edge));
 }
 
 .action:hover:not(:disabled) {
-  background: var(--tt-ink);
   color: var(--tt-bg);
+}
+
+.action:hover:not(:disabled)::before {
+  background: var(--tt-ink);
 }
 
 .action:active:not(:disabled) {
@@ -375,7 +390,7 @@
 }
 
 /* In my stack: the same green tint as the « done » bookmark everywhere else. */
-.action[data-state="added"] {
+.action[data-state="added"]::before {
   background: color-mix(in oklch, var(--tt-live) 16%, var(--tt-bg));
   box-shadow: none;
 }

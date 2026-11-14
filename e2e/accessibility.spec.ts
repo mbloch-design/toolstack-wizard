@@ -85,7 +85,8 @@ test("card motion is removed when reduced motion is requested", async ({ page })
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/fr/tools");
 
-  const image = page.locator(".tce-card--media .tc-image img").first();
+  // The catalogue's media card (13/11/2026): its screenshot settles without motion.
+  const image = page.locator("li:has(> button[data-media-add]) a img").first();
   await expect(image).toBeVisible();
   await expect(image).toHaveCSS("transition-duration", "0s");
 });
@@ -181,7 +182,12 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) for (
       await close.focus();
       await page.keyboard.press("Enter");
     } else {
-      await page.keyboard.press("Escape");
+      // A key in the very first milliseconds after reopening is lost (Radix listens once the sheet has mounted;
+      // same on main, 14/11/2026): press again until it closes, as a person would.
+      await expect(async () => {
+        await page.keyboard.press("Escape");
+        await expect(dialog).toHaveCount(0, { timeout: 500 });
+      }).toPass();
     }
     await expect(dialog).toHaveCount(0);
     await expect(trigger).toBeFocused();

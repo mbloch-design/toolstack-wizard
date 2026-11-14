@@ -115,7 +115,7 @@ export default function CatalogToolbar({
           {extraTail}
           <Popover open={panelOpen} onOpenChange={handlePanelOpenChange}>
             <PopoverTrigger asChild>
-              <FiltersButton label={moreLabel} count={badgeCount} open={panelOpen} onClick={() => {}} ariaLabel={sort.title ?? moreLabel} />
+              <FiltersButton label={moreLabel} count={badgeCount} open={panelOpen} onClick={() => {}} ariaLabel={moreLabel} />{/* Its name is what it shows (WCAG 2.5.3, 14/11/2026). */}
             </PopoverTrigger>
             <PopoverContent className="tt-filter-panel" aria-label={panelTitle} align="end" sideOffset={8}>
               <div className="tt-filter-panel-head">

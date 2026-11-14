@@ -20330,3 +20330,15 @@ body { font-family: var(--tt-read); font-optical-sizing: auto; letter-spacing: 0
 @media (max-width: 640px) and (prefers-reduced-motion: reduce) {
   .shell-top, .shell-tabs { transition: none; }
 }
+
+/* My stack, discovery: every target a finger can reach is at least 44 px tall (--tt-tap), the section's link and
+   its « More ideas » button included (e2e/stack-discovery-section.spec.ts, 14/11/2026). */
+[data-section="discovery"] a:not([data-media-link]),
+[data-section="discovery"] button:not([data-media-add]) {
+  min-height: var(--tt-tap);
+}
+
+[data-section="discovery"] a:not([data-media-link]) {
+  display: inline-flex;
+  align-items: center;
+}
