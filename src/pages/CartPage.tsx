@@ -1,4 +1,6 @@
 import { toolRole } from "@/data/toolRoles";
+import Split from "@/ds/Split/Split";
+import { CURRENCY_RATE_DATE } from "@/lib/currencyRates";
 import { toolTagline } from "@/data/toolTaglines";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
 import StackDiscovery from "@/components/stack/StackDiscovery";
@@ -149,10 +151,23 @@ export default function CartPage() {
     for (const { a, b } of overlapScore.pairs) { map.set(a.id, [...(map.get(a.id) || []), b]); map.set(b.id, [...(map.get(b.id) || []), a]); }
     return map;
   }, [overlapScore]);
-  const recos = useMemo(() => buildStackDiscovery({
-    getCategoryLabel: (tool: ToolSummary) => stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang),
-    sourceTools: selectedTools, stackEntries: state.toolEntries, tools,
-  }), [selectedTools, categories, lang, state.toolEntries, tools]);
+  const recos = useMemo(() => {
+    const related = buildStackDiscovery({
+      getCategoryLabel: (tool: ToolSummary) => stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang),
+      sourceTools: selectedTools, stackEntries: state.toolEntries, tools,
+    });
+    // M01 (14/11/2026): an everyday job the stack does not cover comes first, each idea saying the gap it fills.
+    if (selectedTools.length < 2 || selectedTools.some((tool) => stackPlacement(tool, categories, lang).id === "finance")) return related;
+    const inStack = new Set(selectedTools.map((tool) => tool.id));
+    const preferred = ["tiime", "indy", "pennylane", "qonto", "freebe", "stripe"];
+    const finance = tools.filter((tool) => !inStack.has(tool.id) && stackPlacement(tool, categories, lang).id === "finance" && toolRole(toolKey(tool), lang))
+      .sort((a, b) => (preferred.indexOf(toolKey(a)) + 1 || 99) - (preferred.indexOf(toolKey(b)) + 1 || 99)).slice(0, 3);
+    const gap = finance.map((tool) => ({
+      tool, categoryLabel: t("Facturer", "Invoicing"), direction: "adjacent" as const, relatedSource: { id: selectedTools[0].id, slug: selectedTools[0].slug, name: selectedTools[0].name }, score: 1, stackState: "new" as const,
+      reasonFr: toolRole(toolKey(tool), "fr") ?? "", reasonEn: toolRole(toolKey(tool), "en") ?? "",
+    }));
+    return [...gap, ...related.filter((candidate) => !finance.some((tool) => tool.id === candidate.tool.id))];
+  }, [selectedTools, categories, lang, state.toolEntries, tools]); // eslint-disable-line react-hooks/exhaustive-deps
   const unknownTools = selectedTools.filter((tool) => toolMonthlyCost(tool, plans.isPaid, lang).kind === "unknown");
   // One page logic (Oct 2026): the stack is shown once, at the centre, and
   // read through lenses; every open question is a card in one deck; a tool is
@@ -389,7 +404,7 @@ export default function CartPage() {
     const info = infoOf(tool);
     const areaLabel = area ? (area.id === "assist" ? t("IA", "AI") : area.label) : "";
     // One card per tool (src/ds/ToolCard), the same in every view; the area joins the status only when the list is not grouped by area.
-    return <ToolCard key={tool.id} lang={lang} tool={tool} role={toolRole(toolKey(tool), lang) ?? (toolTagline(toolKey(tool), lang) || undefined)} amount={info.kind === "unknown" ? t("Prix ?", "Price?") : info.cost} monthly={info.kind === "paid"}
+    return <ToolCard key={tool.id} lang={lang} tool={tool} role={toolRole(toolKey(tool), lang) ?? (toolTagline(toolKey(tool), lang) || undefined)} amount={info.kind === "unknown" || info.cost === "Freemium" ? "" : info.cost} monthly={info.kind === "paid"}
       status={statusOf(tool)} area={groupBy !== "area" ? areaLabel || undefined : undefined} areaColor={area ? colorOf(area.id) : undefined} selected={active} editing={editing}
       onOpen={(button) => { lastToolButton.current = button; if (active) closeInspector(); else selectTool(toolKey(tool)); }}
       onRemove={() => removeTool(slug, tool.name)} leaving={leaving.includes(tool.id)} />;
@@ -489,6 +504,7 @@ export default function CartPage() {
           items={deckItems} reviewFindingKey={reviewingFinding?.key} saved={saved} toReview={overlapScore.doubleTotal} resolved={resolved} history={history}
           onAddTool={() => { setEditing(false); setSearchOpen(true); requestAnimationFrame(() => document.getElementById("ms-search")?.scrollIntoView({ block: "center" })); }}
           trades={mapTerritories.filter((territory) => territory.tools.length > 0).length}
+          covered={mapTerritories.filter((territory) => territory.tools.length > 0).map((territory) => territory.id)}
           gaps={selectedTools.some((tool) => stackPlacement(tool, categories, lang).id === "finance") ? [] : [{ id: "finance", label: t("facturer", "invoice"), href: `${prefix}/category/finance-facturation` }]}
           exploreHref={state.toolEntries.some((entry) => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? getExplorerHref(prefix, { type: "stack" }) : undefined} />;
       })()}
@@ -513,11 +529,7 @@ export default function CartPage() {
             return <>
               {/* Three controls, three affordances (src/ds/Toolbar): filter chips for what needs me, a menu to sort, icons for the layout. */}
               <Toolbar>
-                <FilterChips label={t("Filtrer par statut", "Filter by status")} value={statusFilter} onChange={setStatusFilter} filters={[
-                  { id: "all" as const, label: t("Tous", "All"), count: counts.all },
-                  ...(counts.review ? [{ id: "review" as const, label: t("À vérifier", "To check"), count: counts.review }] : []),
-                  ...(counts.overlap ? [{ id: "overlap" as const, label: t("Doublons", "Overlaps"), count: counts.overlap, alert: true }] : []),
-                ]} />
+                {/* The status filters left (M01): the state of the stack carries overlaps and prices. */}
                 <ToolbarTools>
                   <SortSelect label={t("Trier mes outils", "Sort my tools")} caption={t("Trier :", "Sort:")} value={sortBy} onChange={sortTo} options={[
                     { value: "area", label: t("Domaine", "Area") }, { value: "cost", label: t("Coût", "Cost") }, { value: "name", label: t("Nom", "Name") }, { value: "recent", label: t("Ajout récent", "Recently added") }]} />
@@ -538,7 +550,23 @@ export default function CartPage() {
           })()}
         </Section>
 
+        {/* 6. Where the budget goes (M01 design v2): after the tools, the one real chart of the page, shown once
+            the money is spread over at least two trades (a single slice says nothing). */}
+        {(() => {
+          const paidAreas = areaCosts.filter((area) => area.cost > 0);
+          if (paidAreas.length < 2) return null;
+          const converted = selectedTools.some((tool) => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" && cost.currency !== currency; });
+          return <Section labelledBy="ms-budget-title" name="budget">
+            <SectionHead title={t("Où va votre budget", "Where your budget goes")} titleId="ms-budget-title" />
+            <Split lang={lang} format={(amount) => formatAmount(amount, currency, lang)} unpriced={unknownTools.map((tool) => tool.name)}
+              rateDate={converted ? new Date(`${CURRENCY_RATE_DATE}T00:00:00Z`).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : null}
+              areas={paidAreas.map((area) => ({ id: area.id, label: area.id === "assist" ? t("IA", "AI") : area.label, amount: area.cost, color: colorOf(area.id),
+                tools: (mapTerritories.find((territory) => territory.id === area.id)?.tools || []).map((tool) => ({ id: tool.id, name: tool.name, slug: tool.slug, logo: tool.logo, amount: monthlyOf(tool) })).filter((row) => row.amount > 0).sort((x, y) => y.amount - x.amount) }))} />
+          </Section>;
+        })()}
+
         <StackDiscovery key={`${reviewScope}:${reviewEpoch}`} candidates={recos} lang={lang} prefix={prefix}
+          note={recos[0]?.categoryLabel === t("Facturer", "Invoicing") ? t("Votre stack ne facture pas encore. Voici de quoi combler ce manque.", "Your stack doesn't invoice yet. Here's how to fill the gap.") : undefined}
           sourceIds={selectedTools.map(tool => tool.id)} selectedIds={selectedTools.map(tool => tool.id)} pendingSlug={flyingSlug}
           explorerSources={state.toolEntries.filter(entry => entry.intent === "stack").flatMap(entry => { const tool = lookup.get(entry.toolSlug); return tool ? [toolKey(tool)] : []; })}
           onAdd={(tool, origin) => addToStack(toolKey(tool), tool.name, { origin, onAdded: () => trackEvent("stack_reco_add", { tool: toolKey(tool) }) })} />

@@ -10,7 +10,7 @@ export type ToolStatus = "ok" | "review" | "overlap";
 export type ToolCardProps = {
   lang: "fr" | "en";
   tool: LogoTool & { id: string };
-  /** What the person pays, already formatted (« 36 € »), or a word (« Gratuit », « Prix ? »). */
+  /** What the person pays, already formatted (« 36 € »), or « Gratuit »; empty when unknown (nothing is shown). */
   amount: string;
   /** A monthly amount shows « /mois » after it. */
   monthly: boolean;
@@ -47,10 +47,10 @@ export default function ToolCard({ lang, tool, amount, monthly, status, role, ar
       <Fall leaving={leaving}>
       <Tilt>
       <button type="button" className={styles.card} data-tool-id={tool.id} data-tool-name={tool.name} data-status={status} data-selected={selected ? "" : undefined}
-        aria-haspopup="dialog" aria-label={`${tool.name}, ${showRole ? `${role}, ` : ""}${amount}${monthly ? t("/mois", "/mo") : ""}, ${label}`} tabIndex={editing ? -1 : undefined}
+        aria-haspopup="dialog" aria-label={[tool.name, showRole ? role : null, amount ? `${amount}${monthly ? t("/mois", "/mo") : ""}` : null, label].filter(Boolean).join(", ")} tabIndex={editing ? -1 : undefined}
         onClick={(event) => { if (!editing) onOpen(event.currentTarget); }}>
         <span className={styles.logo}><Logo tool={tool} size={40} localOnly={localLogosOnly} /></span>
-        <span className={styles.amount} data-amount="" aria-hidden="true"><Amount value={amount} unit={monthly ? t("/mois", "/mo") : undefined} /></span>
+        {amount && <span className={styles.amount} data-amount="" aria-hidden="true"><Amount value={amount} unit={monthly ? t("/mois", "/mo") : undefined} /></span>}
         <span className={styles.name} data-name="" aria-hidden="true">{areaColor && <i className={styles.dot} style={{ "--c": areaColor } as CSSProperties} />}{tool.name}</span>
         <span className={styles.foot} aria-hidden="true">{tag}{area && <span className={styles.note}>{area}</span>}</span>
       </button>

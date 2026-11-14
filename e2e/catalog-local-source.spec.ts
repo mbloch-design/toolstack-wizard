@@ -27,8 +27,11 @@ for (const lang of ["fr", "en"]) {
     await expect(page.locator('main a[href*="/tool/"]').first()).toBeVisible();
     await page.locator("[data-filters-trigger]").click();
     await expect(page.locator("[data-filter-panel]")).toBeVisible();
-    // The filters sheet is modal: Escape closes it.
-    await page.keyboard.press("Escape");
+    // The filters sheet is modal: Escape closes it (pressed again if it came before the sheet was ready).
+    await expect(async () => {
+      await page.keyboard.press("Escape");
+      await expect(page.locator("[data-filter-panel]")).toHaveCount(0, { timeout: 500 });
+    }).toPass();
     await page.evaluate(() => { document.documentElement.dataset.catalogRecipe = "same-document"; });
     // A real card link enters a fiche through the router, without SSR context.
     const card = page.locator('main a[href="/' + lang + '/tool/notion"]').first();

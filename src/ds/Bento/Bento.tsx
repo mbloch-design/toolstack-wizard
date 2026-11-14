@@ -10,8 +10,10 @@ import styles from "./Bento.module.css";
  * Two tiles always stay (the stack, the split); question tiles come while there is something to
  * refine and leave when there is nothing left to ask, so the page gets shorter as one plays.
  */
-export default function Bento({ label, children }: { label: string; children: ReactNode }) {
-  return <section className={styles.bento} aria-label={label} data-bento="" data-board="">{children}</section>;
+export default function Bento({ label, children, compact = false }: { label: string; children: ReactNode;
+  /** Figures only (the dashboard, M01): rows as tall as their content, no empty floor. */
+  compact?: boolean }) {
+  return <section className={styles.bento} aria-label={label} data-bento="" data-board="" data-compact={compact || undefined}>{children}</section>;
 }
 
 /**

@@ -20,7 +20,7 @@ export const TOOL_ROLES: Record<string, [fr: string, en: string]> = {
   zapier: ["Automatisations entre outils", "Automations between tools"],
   webflow: ["Création de sites sans code", "No-code website building"],
   tiime: ["Facturation et comptabilité", "Invoicing and bookkeeping"],
-  indy: ["Comptabilité des indépendants", "Bookkeeping for freelancers"],
+  indy: ["Comptabilité freelance", "Freelance bookkeeping"],
   freebe: ["Facturation et suivi du temps", "Invoicing and time tracking"],
 
   // The 200 most searched tools

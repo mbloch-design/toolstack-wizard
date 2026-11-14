@@ -13,6 +13,11 @@
   min-height: var(--tt-bento-row);
 }
 
+/* A bento of figures (M01, 14/11/2026): no floor to fill, the tile is as tall as what it says. */
+.bento[data-compact] .row {
+  min-height: 0;
+}
+
 /* Anything set in a row (a tile, the starter card) shares its width; tiles then weigh by their span. */
 .row > * {
   flex: 1 1 0;
@@ -35,6 +40,11 @@
   min-height: 0;
   overflow: hidden;
   transition: flex-grow var(--tt-dur-reveal) var(--tt-ease), opacity var(--tt-dur-state) ease, transform var(--tt-dur-move) var(--tt-ease);
+}
+
+.bento[data-compact] .tile {
+  gap: var(--tt-space-3);
+  padding-block: var(--tt-space-5);
 }
 
 .tile[data-tone="question"] {

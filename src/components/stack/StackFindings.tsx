@@ -19,10 +19,17 @@ import { toolKey } from "@/lib/stackView";
 import Bento, { Answer, Answers, BentoRow, MiniRing, Question, Tile } from "@/ds/Bento/Bento";
 import Amount from "@/ds/Amount/Amount";
 import Starter from "@/ds/Starter/Starter";
-import { FigureCard, FigureCards } from "@/ds/Catalog/Catalog";
+
+/** The five everyday jobs of a freelancer, as stack territories: the dashboard's coverage ring (M01). */
+const CORE_TRADES = ["create", "organize", "communicate", "build", "manage"] as const;
+const TRADE_NAMES: Record<(typeof CORE_TRADES)[number], [string, string]> = {
+  create: ["Créer", "Create"], organize: ["Organiser", "Organise"], communicate: ["Communiquer", "Communicate"], build: ["Sites et apps", "Sites and apps"], manage: ["Gérer et facturer", "Manage and invoice"],
+};
 import { Section, SectionHead } from "@/ds/Toolbar/Toolbar";
+import Button, { TextButton } from "@/ds/Button/Button";
 import { NoticeRows } from "@/ds/Notice/Notice";
-import { TextButton } from "@/ds/Button/Button";
+import { trackEvent } from "@/lib/analytics";
+import { Plus } from "@/lib/icons";
 import { useNavigate } from "react-router-dom";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
@@ -87,6 +94,8 @@ interface Props {
   hourly?: number | null;
   /** How many trades (areas) the stack covers: the dashboard's first figure (M01, 14/11/2026). */
   trades?: number;
+  /** The territories the stack covers (create, organize…): the dashboard's coverage ring. */
+  covered?: string[];
   /** Everyday jobs no tool of the stack covers (invoicing…), with where to look: the « worth a look » list. */
   gaps?: { id: string; label: string; href: string }[];
   /** The hero's words (greeting, verdict, humour) and its actions; the findings add the cost. */
@@ -101,7 +110,7 @@ export type FitRow = { tool: ToolSummary; cost: number; usage?: number; setUsage
 // costs, then the one thing to decide now, then, quietly, what comes next.
 // Settling the current finding brings the next one in; once nothing is left,
 // the space becomes the summary of what was decided and what it saved.
-export default function StackFindings({ lang, currency = "EUR", converted = false, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly, welcome, trades, gaps = [] }: Props) {
+export default function StackFindings({ lang, currency = "EUR", converted = false, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly, welcome, trades, gaps = [], covered = [] }: Props) {
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
   const navigate = useNavigate();
@@ -282,7 +291,18 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   // A question tile leaves once nothing is left to ask, unless the game revealed something: then it stays as a fact.
   const dust = fit.filter((row) => row.usage !== undefined && row.usage !== null && row.usage < 2);
   const dustTotal = dust.reduce((sum, row) => sum + row.cost, 0);
-  const showUsage = toolCount > 1 && fit.length > 0 && (!!next || dustTotal > 0);
+  // The three steps of the dashboard (M01): overlaps settled, prices known, the essentials covered.
+  const allSettled = !items.some((item) => item.kind === "pair") && unsure.length === 0 && gaps.length === 0;
+  // « Ce qui sert vraiment » is the bonus step: offered once the stack is on point (M01 design v2).
+  const settledSteps = [!items.some((item) => item.kind === "pair"), unsure.length === 0, gaps.length === 0].filter(Boolean).length;
+  // The level the person reaches (0 « En vrac » to 3 « Stack au top »): sent when it changes, not on every visit.
+  const lastLevel = useRef<number | null>(null);
+  useEffect(() => {
+    if (toolCount < 2) return;
+    if (lastLevel.current !== null && lastLevel.current !== settledSteps) trackEvent("stack_level", { level: settledSteps, from: lastLevel.current });
+    lastLevel.current = settledSteps;
+  }, [settledSteps, toolCount]);
+  const showUsage = allSettled && toolCount > 1 && fit.length > 0 && (!!next || dustTotal > 0);
 
   // The story of the page (11/11/2026): the premise without a box, then the bento, read as chapters in the
   // order of the story: where the money goes, what overlaps (or is left to confirm), what really serves,
@@ -317,7 +337,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   const tiles: { id: string; node: (row: string[]) => ReactNode }[] = [];
   const condensed = (id: string, row: string[]) => !!openTile && openTile !== id && row.includes(openTile);
   // The split left the bento for its own section, « Où va votre budget » (M01, 14/11/2026).
-  if (decision && top) tiles.push({ id: "decision", node: (row) => <Tile key="decision" span={7} tone="question"
+  if (decision && top) tiles.push({ id: "decision", node: (row) => <Tile key="decision" span={12} tone="question"
     label={`${top.kind === "pair" ? t("Ce qui se recoupe", "What overlaps") : t("Ce qui reste à préciser", "What is left to confirm")}${peak > 1 ? ` · ${t(`${step} sur ${peak}`, `${step} of ${peak}`)}` : ""}`}
     condensed={condensed("decision", row)}>{decision}</Tile> });
   if (showUsage) tiles.push({ id: "usage", node: (row) => <Tile key="usage" span={5} tone={next ? "question" : "tile"} card="usage-tile"
@@ -332,12 +352,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       {([[5, "Tous les jours", "Every day"], [3, "Parfois", "Sometimes"], [1, "Prend la poussière", "Gathers dust"]] as const).map(([level, a, b]) => <Answer key={level} name={t(a, b)} tone={level === 1 ? "cut" : "ink"} onClick={() => next.setUsage(level)} />)}
     </Answers>}
   </Tile> });
-  if (saved > 0 || (!top && history)) tiles.push({ id: "result", node: () => <Tile key="result" span={7} label={t("Résultat", "Result")}
-    statement={trim ? <Trim cut={trim.cut} total={trim.before} saved={trim.delta} format={(value) => format(value)} unit={t("/mois", "/mo")} clingSay={t("Attendez…", "Wait…")}
-      restSentence="" sentence={trim.sentence} tools={trim.tools} />
-      : saved > 0 ? <Ending figure={<Amount size="figure" roll value={`−${format(Math.round(saved))}`} unit={t("/mois", "/mo")} />} /> : undefined}
-    status={!trim && saved > 0 ? { text: <>{t("Vous économisez déjà ", "You're already saving ")}{format(Math.round(saved))}{t(" par mois.", " a month.")}</>, done: true } : undefined}
-    footer={history || undefined} /> });
+  // The result left its tile (M01): the saving is said in the hero, the history stays with the decision.
   const rows = [tiles.slice(0, 2), tiles.slice(2, 4)].filter((row) => row.length > 0);
 
   // What the stack is made of, in one sentence: « Dont 2 payants et 2 à préciser. »
@@ -349,6 +364,9 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   ].filter(Boolean) as string[];
   const composition = parts.length > 1 ? t(`Dont ${parts.slice(0, -1).join(", ")} et ${parts[parts.length - 1]}.`, `Of which ${parts.slice(0, -1).join(", ")} and ${parts[parts.length - 1]}.`) : "";
 
+  // The day rate turns the budget into working time (M01): said once, in the hero.
+  const heroWork = total > 0 && hourly ? (() => { const minutes = Math.round((total / hourly) * 60); const h = Math.floor(minutes / 60), m = minutes % 60;
+    return h > 0 ? `${h}\u00a0h${m ? `\u00a0${String(m).padStart(2, "0")}` : ""}` : `${m}\u00a0min`; })() : null;
   return <>
     {toolCount > 0 && <div data-card="price">
       <StoryHero greeting={welcome?.greeting} eyebrow={welcome?.eyebrow ?? t("Ma stack", "My stack")} titleRef={welcome?.titleRef}
@@ -356,57 +374,59 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           ? <>{t(`${toolCount} outil${toolCount > 1 ? "s" : ""}, `, `${toolCount} tool${toolCount > 1 ? "s" : ""}, `)}<Key>{monthly}</Key>{t(" par mois.", " a month.")}</>
           : t(`${toolCount} outil${toolCount > 1 ? "s" : ""} dans votre stack.`, `${toolCount} tool${toolCount > 1 ? "s" : ""} in your stack.`)}
         lead={monthly
-          ? <>{composition && <>{composition} </>}{t("Soit ", "That's ")}{yearly}{t(" par an", " a year")}{unsure.length > 0 ? t(`, d’après ${known} prix sur ${budgetTools.length}. On affine en chemin.`, `, from ${known} of ${budgetTools.length} prices. We refine as we go.`) : t(". Tous les prix sont renseignés.", ". Every price is known.")}{converted && <> {t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`)}</>}{welcome?.quip && <> <span data-welcome-message="">{welcome.quip}</span></>}</>
-          : (() => { const pairs = items.filter((item) => item.kind === "pair").length; return pairs > 0
-            ? t(`${pairs > 1 ? `${pairs} paires d'outils font peut-être` : "Deux outils font peut-être"} la même chose. Précisez vos formules pour voir votre budget.`, `${pairs > 1 ? `${pairs} pairs of tools may do` : "Two tools may do"} the same job. Confirm your plans to see your budget.`)
-            : t("Précisez vos formules pour voir votre budget.", "Confirm your plans to see your budget."); })()}
-        aside={<>
-          {(welcome?.facts ?? []).map((fact) => <Tag key={fact.label} title={fact.title}>{fact.label}</Tag>)}
-          {budgetTools.length > 0 && monthly && unsure.length > 0 && <BudgetTrust lang={fr ? "fr" : "en"} known={known} total={budgetTools.length} left={left} onConfirmNext={confirmNext} />}
-          {welcome?.secondary}
-        </>} />
+          // One useful sentence (M01, 14/11/2026: « indigeste, texte qui ne sert pas »); the tiles below say the rest.
+          ? <>{t(`Soit ${yearly} par an`, `That's ${yearly} a year`)}{heroWork ? t(`, ou ${heroWork} de votre travail chaque mois.`, `, or ${heroWork} of your work every month.`) : "."}{saved > 0 && <> {t(`Déjà ${format(Math.round(saved))} de moins par mois grâce à vos décisions.`, `Already ${format(Math.round(saved))} less a month thanks to your decisions.`)}</>}{unsure.length > 0 && <> {t(`${unsure.length} prix encore à préciser.`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} still to confirm.`)}</>}</>
+          : toolCount === 1 ? t("Il en faut au moins deux pour parler de stack.", "It takes at least two to call it a stack.") : undefined}
+        // One place per thing (M01, 14/11/2026): the hero keeps one action; the trade goes to the stack tile,
+        // the day rate to the budget tile, the price count to the budget tile's button.
+        aside={welcome?.secondary} />
     </div>}
-    {/* The dashboard's figures (M01, 14/11/2026): the stack at a glance before any question. Each figure leads
-        to where it is explained. */}
+    {/* The dashboard (M01, 14/11/2026): four tiles, each a finding with its picture and the action that settles it.
+        They carry what the « worth a look » list said, so the list is gone. */}
     {toolCount > 1 && (() => {
-      const pairs = items.filter((item) => item.kind === "pair");
-      const go = (selector: string) => (className: string, content: ReactNode) => <a className={className} href={selector}
-        onClick={(event) => { const target = document.querySelector<HTMLElement>(selector); if (!target) return; event.preventDefault(); target.scrollIntoView({ block: "start", behavior: "smooth" }); }}>{content}</a>;
-      return <FigureCards label={t("Ma stack en chiffres", "My stack in figures")}>
-        <FigureCard figure={String(toolCount)} name={t(toolCount > 1 ? "Outils" : "Outil", toolCount > 1 ? "Tools" : "Tool")}
-          detail={trades ? t(`${trades} métier${trades > 1 ? "s" : ""} couvert${trades > 1 ? "s" : ""}`, `${trades} trade${trades > 1 ? "s" : ""} covered`) : undefined} renderLink={go("#ms-all-title")} />
-        <FigureCard figure={total > 0 ? format(Math.round(total)) : "?"} unit={total > 0 ? t("/mois", "/mo") : undefined} name={t("Budget mensuel", "Monthly budget")}
-          detail={total > 0 ? t(`${format(Math.round(total * 12))} par an`, `${format(Math.round(total * 12))} a year`) : t("À renseigner", "Not set yet")} renderLink={go('[data-card="price"]')} />
-        <FigureCard figure={String(pairs.length)} name={t(pairs.length > 1 ? "Doublons possibles" : "Doublon possible", pairs.length > 1 ? "Possible overlaps" : "Possible overlap")}
-          detail={pairs[0] ? pairs[0].tools.slice(0, 2).map((tool) => tool.name).join(" · ") : t("Rien ne se recoupe", "Nothing overlaps")} renderLink={go('[data-card="decision"]')} />
-        <FigureCard figure={String(unsure.length)} name={t("Prix à préciser", "Prices to confirm")}
-          detail={unsure.length ? t("Pour un budget juste", "For an honest budget") : t("Tout est renseigné", "All set")} renderLink={go('[data-card="decision"]')} />
-      </FigureCards>;
-    })()}
-    {/* Where the money goes, in plain sight (M01): it was folded inside a tile. */}
-    {showSplit && <div data-card="split"><Section labelledBy="ms-budget-title" name="budget">
-      <SectionHead title={t("Où va votre budget", "Where your budget goes")} titleId="ms-budget-title" />
-      <Split lang={fr ? "fr" : "en"} format={format} unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => tool.name)} rateDate={converted ? rateDate : null}
-        areas={areas.map((area) => ({ id: area.id, label: area.label, color: area.color, amount: area.amount, tools: (area.tools || []).map((row) => ({ ...row.tool, amount: row.amount })) }))} />
-    </Section></div>}
-    {/* What is worth a look (M01): every finding in one line, each leading to where it is settled. */}
-    {toolCount > 1 && (() => {
-      const toDecision = () => { const target = document.querySelector<HTMLElement>('[data-card="decision"]'); target?.scrollIntoView({ block: "center", behavior: "smooth" }); target?.querySelector<HTMLElement>("h3, button")?.focus({ preventScroll: true }); };
-      const rows = [
-        ...items.filter((item) => item.kind === "pair").map((item) => ({ id: item.key, label: t(`${item.tools.slice(0, 2).map((tool) => tool.name).join(" et ")} font peut-être la même chose`, `${item.tools.slice(0, 2).map((tool) => tool.name).join(" and ")} may do the same job`),
-          action: <TextButton onClick={toDecision}>{t("Décider", "Decide")}</TextButton> })),
-        ...(unsure.length > 0 ? [{ id: "prices", label: t(`${unsure.length} prix à préciser pour un budget juste`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} to confirm for an honest budget`),
-          action: <TextButton onClick={toDecision}>{t("Préciser", "Confirm")}</TextButton> }] : []),
-        ...gaps.map((gap) => ({ id: gap.id, label: t(`Rien pour ${gap.label}`, `Nothing to ${gap.label}`),
-          action: <TextButton onClick={() => navigate(gap.href)}>{t("Voir des outils", "See tools")}</TextButton> })),
+      const scrollTo = (selector: string) => { const target = document.querySelector<HTMLElement>(selector); target?.scrollIntoView({ block: "center", behavior: "smooth" }); target?.querySelector<HTMLElement>("h3, button")?.focus({ preventScroll: true }); };
+      const pair = items.find((item) => item.kind === "pair");
+      const coveredCount = CORE_TRADES.filter((id) => covered.includes(id)).length;
+      const gap = gaps[0];
+      const trade = welcome?.facts?.find((fact) => !fact.title)?.label;
+      const logos = <span style={{ display: "flex", gap: 4 }}>{[...spend.map((row) => row.tool), ...freeTools, ...pending].filter((tool, index, list) => list.findIndex((x) => x.id === tool.id) === index).slice(0, 6).map((tool) => <Logo key={tool.id} tool={tool} size={32} />)}</span>;
+      // The stack's state (M01, 14/11/2026, Michael: « de la stack en bordel à la stack au top »): three checks, each
+      // open one carries its action, each settled one shrinks to a ticked line. Good news takes one line, not a tile.
+      const checks = [
+        pair ? { id: "overlap", done: false, label: t(`${pair.tools[0].name} ou ${pair.tools[1]?.name ?? ""} ?`, `${pair.tools[0].name} or ${pair.tools[1]?.name ?? ""}?`),
+            action: <TextButton onClick={() => { trackEvent("stack_step_click", { step: "overlap" }); scrollTo('[data-card="decision"]'); }}>{t("Départager", "Settle it")}</TextButton> }
+          : { id: "overlap", done: true, label: t("Aucun doublon", "No overlap") },
+        unsure.length > 0 ? { id: "prices", done: false, label: t(`${unsure.length} prix à préciser`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} to confirm`),
+            action: <TextButton onClick={() => { trackEvent("stack_step_click", { step: "prices" }); scrollTo('[data-card="decision"]'); }}>{t("Renseigner", "Add")}</TextButton> }
+          : { id: "prices", done: true, label: t("Tous les prix sont connus", "Every price is known") },
+        gap ? { id: "gap", done: false, label: t(`Rien pour ${gap.label}`, `Nothing to ${gap.label}`),
+            action: <TextButton onClick={() => { trackEvent("stack_step_click", { step: "gap" }); scrollTo("#ms-recos-title"); }}>{t("Voir des outils", "See tools")}</TextButton> }
+          : { id: "gap", done: true, label: t("L'essentiel est couvert", "The essentials are covered") },
       ];
-      return rows.length > 0 && <Section labelledBy="ms-watch-title" name="watch">
-        <SectionHead title={t("À regarder", "Worth a look")} titleId="ms-watch-title" />
-        <NoticeRows rows={rows} />
-      </Section>;
+      const done = checks.filter((check) => check.done).length;
+      const level = [
+        [t("En vrac", "All over the place"), t("Un peu le tiroir à câbles. On range ensemble, en trois étapes.", "A bit like the cable drawer. Let's tidy up, in three steps.")],
+        [t("Ça prend forme", "Taking shape"), t("Encore deux étapes et c'est rangé.", "Two more steps and it's tidy.")],
+        [t("Presque au top", "Nearly there"), t("Une dernière étape.", "One last step.")],
+        [t("Stack au top", "Stack on point"), t("Rangée, chiffrée, complète. Allez prendre un café.", "Tidy, priced, complete. Go grab a coffee.")],
+      ][done];
+      return <Bento compact label={t("Ma stack en bref", "My stack at a glance")}>
+        <BentoRow>
+          <Tile span={7} label={t(`État de la stack · ${done} étape${done > 1 ? "s" : ""} sur ${checks.length}`, `State of the stack · ${done} of ${checks.length} steps`)} tone={done < checks.length ? "question" : "tile"}
+            statement={<Key tone={done === checks.length ? "gain" : done === 0 ? "overlap" : "brand"}>{level[0]}</Key>}
+            status={{ text: level[1], done: done === checks.length }}
+            footer={<NoticeRows rows={checks.map((check) => ({ id: check.id, label: check.done ? `✓ ${check.label}` : check.label, action: check.done ? null : check.action }))} />} />
+          <Tile span={5} label={trade ? `${t("Ma stack", "My stack")} · ${trade}` : t("Ma stack", "My stack")}
+            statement={fr ? <>{toolCount} outils, <Key>{coveredCount} métier{coveredCount > 1 ? "s" : ""}</Key> sur {CORE_TRADES.length}</> : <>{toolCount} tools, <Key>{coveredCount} trade{coveredCount > 1 ? "s" : ""}</Key> of {CORE_TRADES.length}</>}
+            status={{ text: <span style={{ display: "flex", flexWrap: "wrap", gap: 6 }} aria-label={t("Métiers couverts", "Trades covered")}>
+              {CORE_TRADES.map((id) => <Tag key={id} tone={covered.includes(id) ? "ok" : "neutral"}>{covered.includes(id) ? "✓ " : ""}{t(...TRADE_NAMES[id])}</Tag>)}</span> }}
+            footer={<span style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>{logos}
+              <Button variant="primary" icon={<Plus aria-hidden />} onClick={onAddTool}>{t("Ajouter un outil", "Add a tool")}</Button></span>} />
+        </BentoRow>
+      </Bento>;
     })()}
     {toolCount === 1 && !decision && <Bento label={t("Pour commencer", "To start")}><BentoRow><Starter lang={fr ? "fr" : "en"} tool={spend[0]?.tool || freeTools[0]} onAddTool={onAddTool} /></BentoRow></Bento>}
-    {rows.length > 0 && <Bento label={t("Ma stack en bref", "My stack at a glance")}>
+    {rows.length > 0 && <Bento label={t("Étape en cours", "Current step")}>
       {rows.map((row) => <BentoRow key={row.map((tile) => tile.id).join("-")}>{row.map((tile) => tile.node(row.map((x) => x.id)))}</BentoRow>)}
     </Bento>}
   </>;

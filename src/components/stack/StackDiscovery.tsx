@@ -10,7 +10,9 @@ import type { ToolSummary } from '@/hooks/useSupabaseData';
 import { trackEvent } from '@/lib/analytics';
 
 const firstRound = (candidates: ExplorationCandidate[]) => ({ cards: candidates.slice(0, 3), seen: candidates.slice(0, 3).map(candidate => candidate.tool.id) });
-export default function StackDiscovery({ candidates, lang, prefix, sourceIds, selectedIds, pendingSlug, explorerSources, onAdd }: {
+export default function StackDiscovery({ candidates, lang, prefix, sourceIds, selectedIds, pendingSlug, explorerSources, onAdd, note }: {
+  /** What the first ideas answer, when the stack has a gap (M01): replaces the general sentence. */
+  note?: string;
   candidates: ExplorationCandidate[]; lang: 'fr' | 'en'; prefix: string; sourceIds: string[]; selectedIds: string[]; pendingSlug?: string | null; explorerSources?: string[];
   onAdd: (tool: ToolSummary, origin: HTMLElement) => void;
 }) {
@@ -41,7 +43,7 @@ export default function StackDiscovery({ candidates, lang, prefix, sourceIds, se
   };
   // The section and its cards are design system components (src/ds); the page only passes its router links and screenshots.
   return <Section labelledBy="ms-recos-title" name="discovery">
-    <SectionHead title={t('Et pour la suite ?', 'And next?')} titleId="ms-recos-title" note={t('D’autres approches autour de vos outils. La prochaine bonne pioche est peut-être ici.', 'Fresh approaches around your tools. Your next good find could be here.')}
+    <SectionHead title={t('Et pour la suite ?', 'And next?')} titleId="ms-recos-title" note={note ?? t('D’autres approches autour de vos outils. La prochaine bonne pioche est peut-être ici.', 'Fresh approaches around your tools. Your next good find could be here.')}
       action={<Link className={linkClass()} to={getExplorerHref(prefix, { type: 'stack' })} state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`, ...(explorerSources?.length ? { explorerStackSources: explorerSources } : {}) }} onClick={() => trackEvent('stack_explorer_click', { source: 'recos' })}>{t('Explorer les pistes', 'Explore more ideas')}<LinkArrow /></Link>} />
     {round.cards.length > 0 ? <MediaCards listRef={list} label={t("Idées à découvrir", "Ideas to discover")}>{round.cards.map(candidate => {
       const { tool } = candidate;
