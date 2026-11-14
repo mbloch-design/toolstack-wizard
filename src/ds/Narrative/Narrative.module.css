@@ -71,6 +71,23 @@
   gap: 0 var(--tt-space-1);
 }
 
+.figureIcon {
+  display: grid;
+  place-items: center;
+  align-self: center;
+  width: 28px;
+  height: 28px;
+  margin-right: var(--tt-space-1);
+  border-radius: var(--tt-r-round);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+}
+
+.figureIcon svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
 .figureLabel {
   color: var(--tt-ink);
   font: var(--tt-text-font);

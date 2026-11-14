@@ -67,13 +67,13 @@ describe("StackFindings", () => {
     expect(screen.getByRole("region", { name: "Prochaine décision" })).toBeTruthy();
     expect(screen.getByText("Payez-vous Canva ?")).toBeTruthy();
     // The price count moved from the hero to the state of the stack (M01 design v2).
-    expect(screen.getByText(/prix à préciser/)).toBeTruthy();
+    expect(screen.getAllByText(/à préciser/).length).toBeGreaterThan(0);
     expect(screen.getByLabelText("Étape 1 sur 3")).toBeTruthy();
   });
   it("labels incomplete costs as partial", () => {
     const { container } = module([card("Figma"), card("Grammarly")], { total: 29, areas: [{ id: "create", label: "Créer", amount: 29, color: "blue" }, { id: "communicate", label: "Communiquer", amount: 0, color: "orange" }] });
     // M01 design v2: the hero says what is left to confirm; the split is drawn by the page, after « Mes outils ».
-    expect(container.textContent).toMatch(/2 prix à préciser/);
+    expect(container.textContent).toMatch(/2 à préciser/);
     expect(screen.queryByText(/fiable à|Total exact/)).toBeNull();
   });
   it("accounts for all four tools when only two have a paid cost", () => {

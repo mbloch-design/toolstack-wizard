@@ -1,0 +1,147 @@
+/* The stack seen, not read (M01): pictograms, logos and ticks carry the meaning; words only name. */
+
+/* TradeMap: five jobs side by side, each a pictogram over its name and the logos of its tools. */
+.trades {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--tt-space-3) var(--tt-space-1);
+  max-width: 560px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* On a phone the five jobs take two rows (three, then two) rather than squeeze their names. */
+@media (width < 480px) {
+  .trades {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.trade {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: var(--tt-space-2);
+  min-width: 0;
+  text-align: center;
+}
+
+/* A job the stack does: its pictogram on the page colour, in ink. One it lacks: a dashed ring, nothing inside lit. */
+.tradeIcon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--tt-r-round);
+  background: transparent;
+  box-shadow: var(--tt-trade-off-ring);
+  color: var(--tt-line);
+}
+
+.trade[data-on] .tradeIcon {
+  background: var(--tt-bg);
+  box-shadow: var(--tt-raised);
+  color: var(--tt-ink);
+}
+
+.tradeIcon svg {
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+}
+
+/* Words never break (« mot coupé »): a short name in the note size, on one line. */
+.tradeName {
+  color: var(--tt-ink);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+  white-space: nowrap;
+}
+
+.tradeTools {
+  display: flex;
+  justify-content: center;
+}
+
+.tradeTools > * + * {
+  margin-left: var(--tt-logo-overlap);
+}
+
+.more {
+  composes: note from "../atoms.module.css";
+  align-self: center;
+  margin-left: var(--tt-space-1);
+}
+
+.tradeAdd {
+  composes: focus from "../atoms.module.css";
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--tt-r-round);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-raised);
+  color: var(--tt-ink);
+  cursor: pointer;
+}
+
+.tradeAdd svg {
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
+}
+
+/* Checkpoints: the way to a tidy stack, one pastille per step: green tick once settled, orange pictogram while open. */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--tt-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  gap: var(--tt-space-1);
+  min-width: 0;
+}
+
+.stepMark {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--tt-space-1);
+  border-radius: var(--tt-r-round);
+  background: var(--tt-delta-cost-bg);
+  color: var(--tt-overlap);
+}
+
+.step[data-done] .stepMark {
+  background: var(--tt-delta-gain-bg);
+  color: var(--tt-live);
+}
+
+.stepMark svg {
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+}
+
+.stepName {
+  composes: eyebrow from "../atoms.module.css";
+}
+
+.stepNote {
+  color: var(--tt-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+}
+
+.stepAction {
+  margin-top: var(--tt-space-1);
+}

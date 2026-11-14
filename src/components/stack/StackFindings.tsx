@@ -22,13 +22,15 @@ import Starter from "@/ds/Starter/Starter";
 
 /** The five everyday jobs of a freelancer, as stack territories: the dashboard's coverage ring (M01). */
 const CORE_TRADES = ["create", "organize", "communicate", "build", "manage"] as const;
+const TRADE_ICONS: Record<(typeof CORE_TRADES)[number], ReactNode> = { create: <Palette />, organize: <FolderKanban />, communicate: <MessagesSquare />, build: <Globe />, manage: <Receipt /> };
 const TRADE_NAMES: Record<(typeof CORE_TRADES)[number], [string, string]> = {
-  create: ["Créer", "Create"], organize: ["Organiser", "Organise"], communicate: ["Communiquer", "Communicate"], build: ["Sites et apps", "Sites and apps"], manage: ["Gérer et facturer", "Manage and invoice"],
+  create: ["Créer", "Create"], organize: ["Organiser", "Organise"], communicate: ["Échanger", "Talk"], build: ["Sites", "Sites"], manage: ["Gérer", "Manage"],
 };
 import { Section, SectionHead } from "@/ds/Toolbar/Toolbar";
 import Button, { TextButton } from "@/ds/Button/Button";
 import { trackEvent } from "@/lib/analytics";
-import { Plus } from "@/lib/icons";
+import { Clock, Copy, Euro, FolderKanban, Globe, MessagesSquare, Palette, PiggyBank, Plus, Receipt, Wallet } from "@/lib/icons";
+import { Checkpoints, TradeMap } from "@/ds/StackBoard/StackBoard";
 import { useNavigate } from "react-router-dom";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
@@ -95,6 +97,8 @@ interface Props {
   trades?: number;
   /** The territories the stack covers (create, organize…): the dashboard's coverage ring. */
   covered?: string[];
+  /** The stack's tools by territory: the trade map shows each job with the logos of its tools. */
+  territories?: { id: string; tools: ToolSummary[] }[];
   /** Everyday jobs no tool of the stack covers (invoicing…), with where to look: the « worth a look » list. */
   gaps?: { id: string; label: string; href: string }[];
   /** The hero's words (greeting, verdict, humour) and its actions; the findings add the cost. */
@@ -109,7 +113,7 @@ export type FitRow = { tool: ToolSummary; cost: number; usage?: number; setUsage
 // costs, then the one thing to decide now, then, quietly, what comes next.
 // Settling the current finding brings the next one in; once nothing is left,
 // the space becomes the summary of what was decided and what it saved.
-export default function StackFindings({ lang, currency = "EUR", converted = false, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly, welcome, trades, gaps = [], covered = [] }: Props) {
+export default function StackFindings({ lang, currency = "EUR", converted = false, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly, welcome, trades, gaps = [], covered = [], territories = [] }: Props) {
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
   const navigate = useNavigate();
@@ -380,11 +384,11 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         // The key figures (M01, 14/11/2026: « architecture d'information »): their own row, one rule for each.
         figuresLabel={t("Ma stack en chiffres", "My stack in figures")}
         figures={monthly ? [
-          { id: "year", label: t("par an", "a year"), value: <Amount value={yearly ?? ""} /> },
+          { id: "year", icon: <Wallet />, label: t("par an", "a year"), value: <Amount value={yearly ?? ""} /> },
           ...(composition ? [{ id: "made", label: composition.replace(/\.$/, "").replace(/^D/, "d").replace(/^O/, "o"), value: null }] : []),
-          ...(heroWork ? [{ id: "work", label: t("de votre travail par mois", "of your work a month"), value: <Amount value={heroWork} />,
+          ...(heroWork ? [{ id: "work", icon: <Clock />, label: t("de votre travail par mois", "of your work a month"), value: <Amount value={heroWork} />,
             detail: profileRate ? t(`à ${profileRate.split(" · ")[0]}`, `at ${profileRate.split(" · ")[0]}`) : undefined }] : []),
-          ...(saved > 0 ? [{ id: "saved", label: t("par mois grâce à vos décisions", "a month thanks to your decisions"), value: <Amount tone="gain" value={`−${format(Math.round(saved))}`} /> }] : []),
+          ...(saved > 0 ? [{ id: "saved", icon: <PiggyBank />, label: t("par mois grâce à vos décisions", "a month thanks to your decisions"), value: <Amount tone="gain" value={`−${format(Math.round(saved))}`} /> }] : []),
           ...(converted ? [{ id: "rate", label: "", value: null, detail: t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`) }] : []),
         ] : undefined}
         // One place per thing (M01, 14/11/2026): the hero keeps one action; the trade goes to the stack tile,
@@ -402,15 +406,15 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       // The stack's state (M01, 14/11/2026, Michael: « de la stack en bordel à la stack au top »): three checks, each
       // open one carries its action, each settled one shrinks to a ticked line. Good news takes one line, not a tile.
       const checks = [
-        pair ? { id: "overlap", done: false, label: t(`${pair.tools[0].name} ou ${pair.tools[1]?.name ?? ""} ?`, `${pair.tools[0].name} or ${pair.tools[1]?.name ?? ""}?`),
-            action: <TextButton onClick={() => { trackEvent("stack_step_click", { step: "overlap" }); scrollTo('[data-card="decision"]'); }}>{t("Départager", "Settle it")}</TextButton> }
-          : { id: "overlap", done: true, label: t("Aucun doublon", "No overlap") },
-        unsure.length > 0 ? { id: "prices", done: false, label: t(`${unsure.length} prix à préciser`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} to confirm`),
-            action: <TextButton onClick={() => { trackEvent("stack_step_click", { step: "prices" }); scrollTo('[data-card="decision"]'); }}>{t("Renseigner", "Add")}</TextButton> }
-          : { id: "prices", done: true, label: t("Tous les prix sont connus", "Every price is known") },
-        gap ? { id: "gap", done: false, label: t(`Rien pour ${gap.label}`, `Nothing to ${gap.label}`),
-            action: <TextButton onClick={() => { trackEvent("stack_step_click", { step: "gap" }); scrollTo("#ms-recos-title"); }}>{t("Voir des outils", "See tools")}</TextButton> }
-          : { id: "gap", done: true, label: t("L'essentiel est couvert", "The essentials are covered") },
+        { id: "overlap", name: t("Doublons", "Overlaps"), icon: <Copy />, done: !pair,
+          note: pair ? t(`${pair.tools[0].name} ou ${pair.tools[1]?.name ?? ""} ?`, `${pair.tools[0].name} or ${pair.tools[1]?.name ?? ""}?`) : t("Aucun", "None"),
+          action: <TextButton onClick={() => { trackEvent("stack_step_click", { step: "overlap" }); scrollTo('[data-card="decision"]'); }}>{t("Départager", "Settle it")}</TextButton> },
+        { id: "prices", name: t("Prix", "Prices"), icon: <Euro />, done: unsure.length === 0,
+          note: unsure.length ? t(`${unsure.length} à préciser`, `${unsure.length} to confirm`) : t("Tous connus", "All known"),
+          action: <TextButton onClick={() => { trackEvent("stack_step_click", { step: "prices" }); scrollTo('[data-card="decision"]'); }}>{t("Renseigner", "Add")}</TextButton> },
+        { id: "gap", name: t("Facturer", "Invoicing"), icon: <Receipt />, done: !gap,
+          note: gap ? t("Aucun outil", "No tool") : t("Couvert", "Covered"),
+          action: <TextButton onClick={() => { trackEvent("stack_step_click", { step: "gap" }); scrollTo("#ms-recos-title"); }}>{t("Voir des outils", "See tools")}</TextButton> },
       ];
       const done = checks.filter((check) => check.done).length;
       const level = [
@@ -421,20 +425,20 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       ][done];
       return <Bento compact label={t("Ma stack en bref", "My stack at a glance")}>
         <BentoRow>
+          <Tile span={12} label={t("Ma stack", "My stack")}
+            statement={<><Key>{coveredCount}</Key>{t(` métier${coveredCount > 1 ? "s" : ""} sur ${CORE_TRADES.length}`, ` of ${CORE_TRADES.length} trades`)}</>}
+            footer={<div style={{ display: "grid", gap: "var(--tt-space-4)" }}>
+              <TradeMap label={t("Vos métiers", "Your trades")} addLabel={(name) => t(`Ajouter un outil pour ${name}`, `Add a tool for ${name}`)} onAdd={() => onAddTool()}
+                trades={CORE_TRADES.map((id) => ({ id, name: t(...TRADE_NAMES[id]), icon: TRADE_ICONS[id], tools: territories.find((territory) => territory.id === id)?.tools ?? [] }))} />
+              <span><Button variant="primary" icon={<Plus aria-hidden />} onClick={onAddTool}>{t("Ajouter un outil", "Add a tool")}</Button></span>
+            </div>} />
+        </BentoRow>
+        <BentoRow>
           {/* Tile rules of the site (DESIGN_DECISIONS 11/11): label in 12 capitals, the fact is a figure in 42, one line under. */}
-          <Tile span={7} label={`${t("État de la stack", "State of the stack")} · ${level[0]}`} tone={done < checks.length ? "question" : "tile"}
+          <Tile span={12} label={`${t("État de la stack", "State of the stack")} · ${level[0]}`} tone={done < checks.length ? "question" : "tile"}
             statement={<><Key tone={done === checks.length ? "gain" : done === 0 ? "overlap" : "brand"}>{done}</Key>{t(` étape${done > 1 ? "s" : ""} sur ${checks.length}`, ` of ${checks.length} steps`)}</>}
             status={{ text: level[1], done: done === checks.length }}
-            footer={<ul style={{ display: "grid", gap: "var(--tt-space-2)", margin: 0, padding: 0, listStyle: "none" }}>
-              {checks.map((check) => <li key={check.id} style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "var(--tt-space-3)" }}>
-                <span>{check.done ? `✓ ${check.label}` : check.label}</span>{!check.done && check.action}</li>)}
-            </ul>} />
-          <Tile span={5} label={t("Ma stack", "My stack")}
-            statement={<><Key>{coveredCount}</Key>{t(` métier${coveredCount > 1 ? "s" : ""} sur ${CORE_TRADES.length}`, ` of ${CORE_TRADES.length} trades`)}</>}
-            status={{ text: <span style={{ display: "flex", flexWrap: "wrap", gap: 6 }} aria-label={t("Métiers couverts", "Trades covered")}>
-              {CORE_TRADES.map((id) => <Tag key={id} tone={covered.includes(id) ? "ok" : "neutral"}>{covered.includes(id) ? "✓ " : ""}{t(...TRADE_NAMES[id])}</Tag>)}</span> }}
-            footer={<span style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>{logos}
-              <Button variant="primary" icon={<Plus aria-hidden />} onClick={onAddTool}>{t("Ajouter un outil", "Add a tool")}</Button></span>} />
+            footer={<Checkpoints label={t("Étapes", "Steps")} steps={checks.map((check) => ({ id: check.id, name: check.name, icon: check.icon, done: check.done, note: check.note, action: check.action }))} />} />
         </BentoRow>
       </Bento>;
     })()}

@@ -1,7 +1,7 @@
 import { SMALL_MARKS, useToolLogoSource, type LogoTool } from "@/lib/useToolLogoSource";
 import styles from "./Logo.module.css";
 
-type LogoProps = {
+export type LogoProps = {
   tool: LogoTool;
   /** Side of the tile, in pixels. */
   size?: 24 | 32 | 40;

@@ -505,6 +505,7 @@ export default function CartPage() {
           onAddTool={() => { setEditing(false); setSearchOpen(true); requestAnimationFrame(() => document.getElementById("ms-search")?.scrollIntoView({ block: "center" })); }}
           trades={mapTerritories.filter((territory) => territory.tools.length > 0).length}
           covered={mapTerritories.filter((territory) => territory.tools.length > 0).map((territory) => territory.id)}
+          territories={mapTerritories.map((territory) => ({ id: territory.id, tools: territory.tools }))}
           gaps={selectedTools.some((tool) => stackPlacement(tool, categories, lang).id === "finance") ? [] : [{ id: "finance", label: t("facturer", "invoice"), href: `${prefix}/category/finance-facturation` }]}
           exploreHref={state.toolEntries.some((entry) => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? getExplorerHref(prefix, { type: "stack" }) : undefined} />;
       })()}

@@ -12,7 +12,7 @@ import styles from "./Narrative.module.css";
  * The aura, the page's one dose of light, stays on the right, never under the words.
  */
 /** One key figure of the hero: a short label above, the figure, a detail under it (M01, 14/11/2026). */
-export type HeroFigure = { id: string; label: string; value: ReactNode; detail?: string };
+export type HeroFigure = { id: string; label: string; value: ReactNode; detail?: string; icon?: ReactNode };
 
 export function StoryHero({ greeting, eyebrow, titleRef, title, lead, figures, figuresLabel, aside }: {
   greeting?: ReactNode; eyebrow: string; titleRef?: Ref<HTMLHeadingElement>;
@@ -49,6 +49,7 @@ export function StoryHero({ greeting, eyebrow, titleRef, title, lead, figures, f
       {lead && <p className={styles.after}>{lead}</p>}
       {figures && figures.length > 0 && <ul className={styles.figures} aria-label={figuresLabel}>
         {figures.map((figure) => <li key={figure.id} className={styles.figureCell}>
+          {figure.icon && <span className={styles.figureIcon} aria-hidden="true">{figure.icon}</span>}
           {figure.value && <span className={styles.figureValue}>{figure.value}</span>}
           {figure.label && <span className={styles.figureLabel}>{figure.label}</span>}
           {figure.detail && <span className={styles.figureDetail}>{figure.detail}</span>}
