@@ -28,14 +28,15 @@ export function BentoRow({ children }: { children: ReactNode }) {
  * One fact: a small label top left, a picture top right, the statement in large at the bottom,
  * its state under it. A question tile puts its question between the two.
  */
-export function Tile({ span, label, art, statement, status, children, tone = "tile", leaving, detail, open = false, onToggle, moreLabel, lessLabel, condensed = false, card, footer }: {
+export function Tile({ span, label, art, statement, status, children, tone = "tile", leaving, detail, open = false, onToggle, moreLabel, lessLabel, condensed = false, card, footer, wash }: {
   /** Columns out of 12 on a wide bento; every tile takes the full width on a phone. */
   span: 4 | 5 | 6 | 7 | 8 | 12;
   label: ReactNode; art?: ReactNode; statement?: ReactNode;
   status?: { text: ReactNode; done?: boolean };
   children?: ReactNode;
-  /** question: the tile asks something; it lifts off the page a little. */
-  tone?: "tile" | "question";
+  /** question: the tile asks something; it lifts off the page a little. smoke: the page's call to act, in the
+   *  smoked glass of the floating bar, light moving inside it (M01). */
+  tone?: "tile" | "question" | "smoke";
   /** The tile is on its way out (its last question was answered). */
   leaving?: boolean;
   /** The whole module behind the fact: open, the tile takes the full width and shows it in place. */
@@ -50,6 +51,9 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
   card?: string;
   /** Under the state line: what to do next about this fact (« Confirmer 2 prix »). */
   footer?: ReactNode;
+  /** Up to three colours washed very softly inside the tile, from its top right (the site's diffuse light, M01):
+   *  the trades it covers, orange while things are to settle, green once settled. */
+  wash?: string[];
 }) {
   const toggleMore = detail && onToggle && <span className={styles.toggle}><TextButton aria-expanded={open} onClick={onToggle}>{open ? lessLabel : moreLabel}<svg viewBox="0 0 24 24" aria-hidden="true"><path d={open ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"} /></svg></TextButton></span>;
   if (open && detail) return (
@@ -60,7 +64,8 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
     </article>
   );
   return (
-    <article className={styles.tile} data-span={span} data-tone={tone} data-card={card} data-leaving={leaving || undefined} data-condensed={condensed || undefined} style={{ "--span": span } as CSSProperties}>
+    <article className={styles.tile} data-span={span} data-tone={tone} data-card={card} data-leaving={leaving || undefined} data-condensed={condensed || undefined} data-wash={wash?.length ? "" : undefined}
+      style={{ "--span": span, ...(wash?.length ? { "--w1": wash[0], "--w2": wash[1] ?? wash[0], "--w3": wash[2] ?? wash[1] ?? wash[0] } : {}) } as CSSProperties}>
       <div className={styles.top}><span className={styles.label}>{label}</span>{art && <span className={styles.art} aria-hidden="true">{art}</span>}</div>
       {children && <div className={styles.body}>{children}{!statement && !status && toggleMore}</div>}
       {(statement || status) && <div className={styles.foot}>
@@ -69,7 +74,7 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
           {status.done && <svg className={styles.check} viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>}
           {status.text}
         </p>}
-        {footer}
+        {footer && <div className={styles.footer}>{footer}</div>}
         {toggleMore}
       </div>}
     </article>

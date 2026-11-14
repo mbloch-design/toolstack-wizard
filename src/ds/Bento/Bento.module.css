@@ -42,11 +42,42 @@
   transition: flex-grow var(--tt-dur-reveal) var(--tt-ease), opacity var(--tt-dur-state) ease, transform var(--tt-dur-move) var(--tt-ease);
 }
 
+/* The type architecture of a figure tile (M01): label, 24, figure, 8, sentence, 16, what to do or see. */
 .bento[data-compact] .tile {
   grid-template-rows: auto;
   align-content: start;
-  gap: var(--tt-space-3);
+  gap: var(--tt-gap-group);
   padding-block: var(--tt-space-5);
+}
+
+/* A tile's diffuse light (M01): its colours melt in from the top right, very soft, never under the words' contrast. */
+.tile[data-wash] {
+  background:
+    radial-gradient(70% 90% at 100% 0%, color-mix(in oklch, var(--w1) 16%, transparent), transparent 70%),
+    var(--tt-tile);
+}
+
+.tile[data-wash][data-tone="question"] {
+  background:
+    radial-gradient(70% 90% at 100% 0%, color-mix(in oklch, var(--w1) 14%, transparent), transparent 70%),
+    radial-gradient(60% 80% at 80% 0%, color-mix(in oklch, var(--w2) 10%, transparent), transparent 70%),
+    var(--tt-bg);
+}
+
+/* Smoked glass (M01, « la façon dont la lumière réagit à l'intérieur »): the floating bar's glass, a light caught at
+   the top left, the tile's own colour glowing up from the bottom right, a bright edge on top. Words turn light. */
+.tile[data-tone="smoke"] {
+  --tt-ink: var(--tt-smoke-ink);
+  --tt-line: var(--tt-smoke-line);
+  --tt-tile: var(--tt-smoke-veil);
+  --tt-meta: var(--tt-smoke-ink);
+
+  background:
+    var(--tt-smoke-light),
+    radial-gradient(90% 80% at 100% 100%, color-mix(in oklch, var(--w1, var(--tt-brand)) 38%, transparent), transparent 70%),
+    var(--tt-smoke);
+  box-shadow: var(--tt-smoke-tile-shadow);
+  color: var(--tt-smoke-ink);
 }
 
 .tile[data-tone="question"] {
@@ -94,6 +125,10 @@
   font: var(--tt-title-section-font);
   letter-spacing: var(--tt-title-section-tracking);
   text-wrap: balance;
+}
+
+.footer {
+  margin-top: calc(var(--tt-space-4) - var(--tt-gap-item));
 }
 
 .status {

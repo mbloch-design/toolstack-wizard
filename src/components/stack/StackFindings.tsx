@@ -401,9 +401,9 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           : t(`${unsure.length} prix à préciser`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} to confirm`);
         return <div style={{ marginTop: "var(--tt-gap-group)" }}><FigureCards label={t("Ma stack en chiffres", "My stack in figures")}>
           <FigureCard icon={<Wallet />} figure={monthly ? format(Math.round(total)) : "?"} unit={monthly ? t("/mois", "/mo") : undefined} name={t("Dépense", "Spend")} detail={spendDetail} renderLink={go('[data-card="split"]')} />
-          <FigureCard icon={<LayoutGrid />} visual={<span style={{ display: "flex" }}>{stackLogos.slice(0, 4).map((tool, index) => <span key={tool.id} style={{ marginLeft: index ? "var(--tt-logo-overlap)" : 0 }}><Logo tool={tool} size={28} /></span>)}</span>}
+          <FigureCard icon={<LayoutGrid />} visual={<span style={{ display: "flex" }}>{stackLogos.slice(0, 4).map((tool, index) => <span key={tool.id} style={{ marginLeft: index ? "var(--tt-logo-overlap)" : 0 }}><Logo tool={tool} size={24} /></span>)}</span>}
             figure={String(toolCount)} name={t("Outils", "Tools")} detail={composition ? composition.replace(/^(Dont|Of which) /, "").replace(/\.$/, "") : undefined} renderLink={go("#ms-all-title")} />
-          <FigureCard icon={<Copy />} tone={pairs.length ? "overlap" : "gain"} visual={pairs[0] ? <span style={{ display: "flex", gap: "var(--tt-space-1)" }}>{pairs[0].tools.slice(0, 2).map((tool) => <Logo key={tool.id} tool={tool} size={28} />)}</span> : undefined}
+          <FigureCard icon={<Copy />} tone={pairs.length ? "overlap" : "gain"} visual={pairs[0] ? <span style={{ display: "flex", gap: "var(--tt-space-1)" }}>{pairs[0].tools.slice(0, 2).map((tool) => <Logo key={tool.id} tool={tool} size={24} />)}</span> : undefined}
             figure={String(pairs.length)} name={t(pairs.length > 1 ? "Doublons" : "Doublon", pairs.length > 1 ? "Overlaps" : "Overlap")}
             detail={pairs[0] ? t(`${pairs[0].tools[0].name} et ${pairs[0].tools[1]?.name ?? ""} se marchent dessus`, `${pairs[0].tools[0].name} and ${pairs[0].tools[1]?.name ?? ""} step on each other`) : t("Chacun son rôle", "Each to its role")} renderLink={go('[data-card="decision"]')} />
           <FigureCard icon={<PiggyBank />} tone={saved > 0 ? "gain" : "ink"} figure={saved > 0 ? `−${format(Math.round(saved))}` : format(0)} unit={t("/mois", "/mo")} name={t("Économisé", "Saved")}
@@ -442,12 +442,13 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       ][done];
       return <Bento compact label={t("Ma stack en bref", "My stack at a glance")}>
         <BentoRow>
-          <Tile span={7} label={t("Vos métiers", "Your trades")}
+          <Tile span={7} label={t("Vos métiers", "Your trades")} wash={CORE_TRADES.flatMap((id, index) => covered.includes(id) ? [`var(--tt-area-${index + 1})`] : []).slice(0, 1)}
             statement={<><Key>{coveredCount}</Key>{t(` sur ${CORE_TRADES.length}`, ` of ${CORE_TRADES.length}`)}</>}
             status={{ text: (() => { const missing = CORE_TRADES.find((id) => !covered.includes(id)); return missing ? t(...TRADE_JOKES[missing]) : t("Tout le métier est couvert. Rien ne dépasse.", "The whole job is covered. Nothing sticks out."); })(), done: coveredCount === CORE_TRADES.length }}
             footer={<TradeMap label={t("Vos métiers", "Your trades")} addLabel={(name) => t(`Ajouter un outil pour ${name}`, `Add a tool for ${name}`)} onAdd={() => onAddTool()}
               trades={CORE_TRADES.map((id) => ({ id, name: t(...TRADE_NAMES[id]), icon: TRADE_ICONS[id], tools: territories.find((territory) => territory.id === id)?.tools ?? [], color: `var(--tt-area-${CORE_TRADES.indexOf(id) + 1})` }))} />} />
-          <Tile span={5} label={`${t("À faire", "To do")} · ${level[0]}`} tone={done < checks.length ? "question" : "tile"}
+          <Tile span={5} label={`${t("À faire", "To do")} · ${level[0]}`} tone={done < checks.length ? "smoke" : "tile"}
+            wash={[done === checks.length ? "var(--tt-live)" : done === 0 ? "var(--tt-overlap)" : "var(--tt-brand)"]}
             statement={done === checks.length ? <Key tone="gain">{t("Rien", "Nothing")}</Key> : <><Key tone={done === 0 ? "overlap" : "brand"}>{checks.length - done}</Key>{t(` étape${checks.length - done > 1 ? "s" : ""}`, ` step${checks.length - done > 1 ? "s" : ""}`)}</>}
             status={{ text: level[1], done: done === checks.length }}
             footer={<Checkpoints layout="list" progressLabel={t(`${done} étape${done > 1 ? "s" : ""} sur ${checks.length} réglée${done > 1 ? "s" : ""}`, `${done} of ${checks.length} steps settled`)} label={t("Étapes", "Steps")} steps={checks.map((check) => ({ id: check.id, name: check.name, icon: check.icon, done: check.done, note: check.note, action: check.action }))} />} />

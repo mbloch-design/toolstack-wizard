@@ -660,6 +660,15 @@
   margin-bottom: var(--tt-space-2);
 }
 
+/* An overlap or a gain tints its card with a diffuse light from the top right (M01). */
+.figureCard:has(.figure[data-tone="overlap"]) {
+  background: radial-gradient(80% 90% at 100% 0%, color-mix(in oklch, var(--tt-overlap) 10%, transparent), transparent 70%), var(--tt-bg);
+}
+
+.figureCard:has(.figure[data-tone="gain"]) {
+  background: radial-gradient(80% 90% at 100% 0%, color-mix(in oklch, var(--tt-live) 10%, transparent), transparent 70%), var(--tt-bg);
+}
+
 .figureIcon {
   display: grid;
   place-items: center;

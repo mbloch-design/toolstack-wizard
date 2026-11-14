@@ -23,7 +23,7 @@ export function TradeMap({ label, trades, addLabel, onAdd, localLogosOnly = fals
             <span className={styles.tradeIcon} aria-hidden="true">{trade.icon}</span>
             <span className={styles.tradeName}>{trade.name}</span>
             {on
-              ? <span className={styles.tradeTools}>{trade.tools.slice(0, 3).map((tool) => <Logo key={tool.id} tool={tool} size={28} localOnly={localLogosOnly} />)}
+              ? <span className={styles.tradeTools}>{trade.tools.slice(0, 3).map((tool) => <Logo key={tool.id} tool={tool} size={24} localOnly={localLogosOnly} />)}
                 {trade.tools.length > 3 && <span className={styles.more}>+{trade.tools.length - 3}</span>}</span>
               : <button type="button" className={styles.tradeAdd} onClick={() => onAdd?.(trade.id)} aria-label={addLabel(trade.name)}><Plus aria-hidden /></button>}
           </li>
