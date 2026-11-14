@@ -364,18 +364,25 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   ].filter(Boolean) as string[];
   const composition = parts.length > 1 ? t(`Dont ${parts.slice(0, -1).join(", ")} et ${parts[parts.length - 1]}.`, `Of which ${parts.slice(0, -1).join(", ")} and ${parts[parts.length - 1]}.`) : "";
 
+  // The person's profile (M01): the trade in the eyebrow, the day rate under the working time.
+  const profileTrade = welcome?.facts?.find((fact) => !fact.title)?.label;
+  const profileRate = welcome?.facts?.find((fact) => !!fact.title)?.label;
   // The day rate turns the budget into working time (M01): said once, in the hero.
   const heroWork = total > 0 && hourly ? (() => { const minutes = Math.round((total / hourly) * 60); const h = Math.floor(minutes / 60), m = minutes % 60;
     return h > 0 ? `${h}\u00a0h${m ? `\u00a0${String(m).padStart(2, "0")}` : ""}` : `${m}\u00a0min`; })() : null;
   return <>
     {toolCount > 0 && <div data-card="price">
-      <StoryHero greeting={welcome?.greeting} eyebrow={welcome?.eyebrow ?? t("Ma stack", "My stack")} titleRef={welcome?.titleRef}
+      <StoryHero greeting={welcome?.greeting} eyebrow={`${welcome?.eyebrow ?? t("Ma stack", "My stack")}${profileTrade ? ` · ${profileTrade}` : ""}`} titleRef={welcome?.titleRef}
         title={monthly
           ? <>{t(`${toolCount} outil${toolCount > 1 ? "s" : ""}, `, `${toolCount} tool${toolCount > 1 ? "s" : ""}, `)}<Key>{monthly}</Key>{t(" par mois.", " a month.")}</>
           : t(`${toolCount} outil${toolCount > 1 ? "s" : ""} dans votre stack.`, `${toolCount} tool${toolCount > 1 ? "s" : ""} in your stack.`)}
         lead={monthly
-          // One useful sentence (M01, 14/11/2026: « indigeste, texte qui ne sert pas »); the tiles below say the rest.
-          ? <>{t(`Soit ${yearly} par an`, `That's ${yearly} a year`)}{heroWork ? t(`, ou ${heroWork} de votre travail chaque mois.`, `, or ${heroWork} of your work every month.`) : "."}{saved > 0 && <> {t(`Déjà ${format(Math.round(saved))} de moins par mois grâce à vos décisions.`, `Already ${format(Math.round(saved))} less a month thanks to your decisions.`)}</>}{unsure.length > 0 && <> {t(`${unsure.length} prix encore à préciser.`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} still to confirm.`)}</>}</>
+          // Figures, not a sentence (M01, 14/11/2026: « ça doit être visuel »): each one a number and a short caption.
+          ? <span style={{ display: "flex", flexWrap: "wrap", gap: "var(--tt-space-3) var(--tt-space-8)", marginTop: "var(--tt-space-2)" }}>
+              <span style={{ display: "grid" }}><Amount size="figure" value={yearly ?? ""} /><span>{t("par an", "a year")}</span></span>
+              {heroWork && <span style={{ display: "grid" }}><Amount size="figure" value={heroWork} /><span>{t("de votre travail par mois", "of your work a month")}{profileRate ? ` · ${profileRate.split(" · ")[0]}` : ""}</span></span>}
+              {saved > 0 && <span style={{ display: "grid" }}><Amount size="figure" tone="gain" value={`−${format(Math.round(saved))}`} unit={t("/mois", "/mo")} /><span>{t("grâce à vos décisions", "thanks to your decisions")}</span></span>}
+            </span>
           : toolCount === 1 ? t("Il en faut au moins deux pour parler de stack.", "It takes at least two to call it a stack.") : undefined}
         // One place per thing (M01, 14/11/2026): the hero keeps one action; the trade goes to the stack tile,
         // the day rate to the budget tile, the price count to the budget tile's button.
@@ -388,7 +395,6 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       const pair = items.find((item) => item.kind === "pair");
       const coveredCount = CORE_TRADES.filter((id) => covered.includes(id)).length;
       const gap = gaps[0];
-      const trade = welcome?.facts?.find((fact) => !fact.title)?.label;
       const logos = <span style={{ display: "flex", gap: 4 }}>{[...spend.map((row) => row.tool), ...freeTools, ...pending].filter((tool, index, list) => list.findIndex((x) => x.id === tool.id) === index).slice(0, 6).map((tool) => <Logo key={tool.id} tool={tool} size={32} />)}</span>;
       // The stack's state (M01, 14/11/2026, Michael: « de la stack en bordel à la stack au top »): three checks, each
       // open one carries its action, each settled one shrinks to a ticked line. Good news takes one line, not a tile.
@@ -416,7 +422,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
             statement={<Key tone={done === checks.length ? "gain" : done === 0 ? "overlap" : "brand"}>{level[0]}</Key>}
             status={{ text: level[1], done: done === checks.length }}
             footer={<NoticeRows rows={checks.map((check) => ({ id: check.id, label: check.done ? `✓ ${check.label}` : check.label, action: check.done ? null : check.action }))} />} />
-          <Tile span={5} label={trade ? `${t("Ma stack", "My stack")} · ${trade}` : t("Ma stack", "My stack")}
+          <Tile span={5} label={t("Ma stack", "My stack")}
             statement={fr ? <>{toolCount} outils, <Key>{coveredCount} métier{coveredCount > 1 ? "s" : ""}</Key> sur {CORE_TRADES.length}</> : <>{toolCount} tools, <Key>{coveredCount} trade{coveredCount > 1 ? "s" : ""}</Key> of {CORE_TRADES.length}</>}
             status={{ text: <span style={{ display: "flex", flexWrap: "wrap", gap: 6 }} aria-label={t("Métiers couverts", "Trades covered")}>
               {CORE_TRADES.map((id) => <Tag key={id} tone={covered.includes(id) ? "ok" : "neutral"}>{covered.includes(id) ? "✓ " : ""}{t(...TRADE_NAMES[id])}</Tag>)}</span> }}

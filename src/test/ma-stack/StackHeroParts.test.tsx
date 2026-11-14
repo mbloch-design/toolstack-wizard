@@ -43,12 +43,12 @@ describe("StackFindings", () => {
       const hero = container.querySelector('[data-card="price"]')?.textContent ?? "";
       expect(screen.getByRole("heading", { level: 1 }).textContent).toMatch(/446\s€ par mois/);
       expect(hero).toMatch(/par an/);
-      // One useful sentence (M01 design v2): the year, and what is left to confirm.
-      expect(hero).toMatch(/prix encore à préciser/);
+      // Figures, not a sentence (M01): the year; what is left to confirm is said by the state of the stack.
+      expect(hero).toMatch(/par an/);
     });
     it("a saving is said in words, never only in colour", () => {
       const { container } = module([], { saved: 24 });
-      expect(container.textContent).toMatch(/Déjà 24 € de moins par mois grâce à vos décisions\./);
+      expect(container.textContent).toMatch(/−24 €.*grâce à vos décisions/);
     });
     it("the first visit names the question « Étape suivante »", () => {
       module([card("Canva")], { guide: true });
@@ -68,7 +68,7 @@ describe("StackFindings", () => {
   it("labels incomplete costs as partial", () => {
     const { container } = module([card("Figma"), card("Grammarly")], { total: 29, areas: [{ id: "create", label: "Créer", amount: 29, color: "blue" }, { id: "communicate", label: "Communiquer", amount: 0, color: "orange" }] });
     // M01 design v2: the hero says what is left to confirm; the split is drawn by the page, after « Mes outils ».
-    expect(container.querySelector('[data-card="price"]')?.textContent).toMatch(/2 prix encore à préciser\./);
+    expect(container.textContent).toMatch(/2 prix à préciser/);
     expect(screen.queryByText(/fiable à|Total exact/)).toBeNull();
   });
   it("accounts for all four tools when only two have a paid cost", () => {
@@ -135,7 +135,7 @@ describe("StackFindings", () => {
   it("drops the decision card once nothing is left, the saving stays on the price card", () => {
     const { container } = module([], { saved: 67, total: 379, toReview: 0 });
     expect(container.querySelector('[data-card="decision"]:not([data-done])')).toBeNull();
-    expect(container.textContent).toMatch(/Déjà 67 € de moins par mois grâce à vos décisions\./);
+    expect(container.textContent).toMatch(/−67 €.*grâce à vos décisions/);
   });
 });
 
