@@ -486,6 +486,7 @@ export default function CartPage() {
           spend={selectedTools.filter((tool) => monthlyOf(tool) > 0).map((tool) => ({ tool, amount: monthlyOf(tool) })).sort((x, y) => y.amount - x.amount)}
           items={deckItems} reviewFindingKey={reviewingFinding?.key} saved={saved} toReview={overlapScore.doubleTotal} resolved={resolved} history={history}
           onAddTool={() => { setEditing(false); setSearchOpen(true); requestAnimationFrame(() => document.getElementById("ms-search")?.scrollIntoView({ block: "center" })); }}
+          trades={mapTerritories.filter((territory) => territory.tools.length > 0).length}
           exploreHref={state.toolEntries.some((entry) => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? getExplorerHref(prefix, { type: "stack" }) : undefined} />;
       })()}
       {/* Where the stack is saved: this browser, or the account. */}

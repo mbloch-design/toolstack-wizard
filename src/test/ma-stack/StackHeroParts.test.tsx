@@ -109,7 +109,7 @@ describe("StackFindings", () => {
   });
   it("does not invent a zero budget before the first plan is selected", () => {
     const {container}=module([card("Notion")],{total:0,toolCount:1,spend:[],areas:[],fit:[]});
-    expect(screen.getByText("On fait les comptes ?")).toBeTruthy();
+    expect(screen.getByText("1 outil dans votre stack.")).toBeTruthy();
     expect(screen.queryByRole("text",{name:"0 €"})).toBeNull();
     expect(container.querySelector(".mf-balance")).toBeNull();
     expect(container.querySelector(".mf-fit")).toBeNull();

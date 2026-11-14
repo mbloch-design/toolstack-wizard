@@ -19,6 +19,7 @@ import { toolKey } from "@/lib/stackView";
 import Bento, { Answer, Answers, BentoRow, MiniRing, Question, Tile } from "@/ds/Bento/Bento";
 import Amount from "@/ds/Amount/Amount";
 import Starter from "@/ds/Starter/Starter";
+import { FigureCard, FigureCards } from "@/ds/Catalog/Catalog";
 import { useNavigate } from "react-router-dom";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
@@ -81,6 +82,8 @@ interface Props {
   guide?: boolean;
   /** The person's hour, from their day rate, in the display currency: prices become time. */
   hourly?: number | null;
+  /** How many trades (areas) the stack covers: the dashboard's first figure (M01, 14/11/2026). */
+  trades?: number;
   /** The hero's words (greeting, verdict, humour) and its actions; the findings add the cost. */
   welcome?: StackWelcome & { titleRef?: Ref<HTMLHeadingElement>; action?: ReactNode; secondary?: ReactNode };
 }
@@ -93,7 +96,7 @@ export type FitRow = { tool: ToolSummary; cost: number; usage?: number; setUsage
 // costs, then the one thing to decide now, then, quietly, what comes next.
 // Settling the current finding brings the next one in; once nothing is left,
 // the space becomes the summary of what was decided and what it saved.
-export default function StackFindings({ lang, currency = "EUR", converted = false, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly, welcome }: Props) {
+export default function StackFindings({ lang, currency = "EUR", converted = false, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly, welcome, trades }: Props) {
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
   const navigate = useNavigate();
@@ -351,16 +354,35 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       <StoryHero greeting={welcome?.greeting} eyebrow={welcome?.eyebrow ?? t("Ma stack", "My stack")} titleRef={welcome?.titleRef}
         title={monthly
           ? <>{t(`${toolCount} outil${toolCount > 1 ? "s" : ""}, `, `${toolCount} tool${toolCount > 1 ? "s" : ""}, `)}<Key>{monthly}</Key>{t(" par mois.", " a month.")}</>
-          : t("On fait les comptes ?", "Let's talk budget.")}
+          : t(`${toolCount} outil${toolCount > 1 ? "s" : ""} dans votre stack.`, `${toolCount} tool${toolCount > 1 ? "s" : ""} in your stack.`)}
         lead={monthly
           ? <>{composition && <>{composition} </>}{t("Soit ", "That's ")}{yearly}{t(" par an", " a year")}{unsure.length > 0 ? t(`, d’après ${known} prix sur ${budgetTools.length}. On affine en chemin.`, `, from ${known} of ${budgetTools.length} prices. We refine as we go.`) : t(". Tous les prix sont renseignés.", ". Every price is known.")}{converted && <> {t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`)}</>}{welcome?.quip && <> <span data-welcome-message="">{welcome.quip}</span></>}</>
-          : t("Dites-nous quelle formule vous utilisez. Promis, pas de tableur.", "Tell us which plan you use. No spreadsheet required, promise.")}
+          : (() => { const pairs = items.filter((item) => item.kind === "pair").length; return pairs > 0
+            ? t(`${pairs > 1 ? `${pairs} paires d'outils font peut-être` : "Deux outils font peut-être"} la même chose. Précisez vos formules pour voir votre budget.`, `${pairs > 1 ? `${pairs} pairs of tools may do` : "Two tools may do"} the same job. Confirm your plans to see your budget.`)
+            : t("Précisez vos formules pour voir votre budget.", "Confirm your plans to see your budget."); })()}
         aside={<>
           {(welcome?.facts ?? []).map((fact) => <Tag key={fact.label} title={fact.title}>{fact.label}</Tag>)}
           {budgetTools.length > 0 && monthly && unsure.length > 0 && <BudgetTrust lang={fr ? "fr" : "en"} known={known} total={budgetTools.length} left={left} onConfirmNext={confirmNext} />}
           {welcome?.secondary}
         </>} />
     </div>}
+    {/* The dashboard's figures (M01, 14/11/2026): the stack at a glance before any question. Each figure leads
+        to where it is explained. */}
+    {toolCount > 1 && (() => {
+      const pairs = items.filter((item) => item.kind === "pair");
+      const go = (selector: string) => (className: string, content: ReactNode) => <a className={className} href={selector}
+        onClick={(event) => { const target = document.querySelector<HTMLElement>(selector); if (!target) return; event.preventDefault(); target.scrollIntoView({ block: "start", behavior: "smooth" }); }}>{content}</a>;
+      return <FigureCards label={t("Ma stack en chiffres", "My stack in figures")}>
+        <FigureCard figure={String(toolCount)} name={t(toolCount > 1 ? "Outils" : "Outil", toolCount > 1 ? "Tools" : "Tool")}
+          detail={trades ? t(`${trades} métier${trades > 1 ? "s" : ""} couvert${trades > 1 ? "s" : ""}`, `${trades} trade${trades > 1 ? "s" : ""} covered`) : undefined} renderLink={go("#ms-all-title")} />
+        <FigureCard figure={total > 0 ? format(Math.round(total)) : "?"} unit={total > 0 ? t("/mois", "/mo") : undefined} name={t("Budget mensuel", "Monthly budget")}
+          detail={total > 0 ? t(`${format(Math.round(total * 12))} par an`, `${format(Math.round(total * 12))} a year`) : t("À renseigner", "Not set yet")} renderLink={go('[data-card="price"]')} />
+        <FigureCard figure={String(pairs.length)} name={t(pairs.length > 1 ? "Doublons possibles" : "Doublon possible", pairs.length > 1 ? "Possible overlaps" : "Possible overlap")}
+          detail={pairs[0] ? pairs[0].tools.slice(0, 2).map((tool) => tool.name).join(" · ") : t("Rien ne se recoupe", "Nothing overlaps")} renderLink={go('[data-card="decision"]')} />
+        <FigureCard figure={String(unsure.length)} name={t("Prix à préciser", "Prices to confirm")}
+          detail={unsure.length ? t("Pour un budget juste", "For an honest budget") : t("Tout est renseigné", "All set")} renderLink={go('[data-card="decision"]')} />
+      </FigureCards>;
+    })()}
     {toolCount === 1 && !decision && <Bento label={t("Pour commencer", "To start")}><BentoRow><Starter lang={fr ? "fr" : "en"} tool={spend[0]?.tool || freeTools[0]} onAddTool={onAddTool} /></BentoRow></Bento>}
     {rows.length > 0 && <Bento label={t("Ma stack en bref", "My stack at a glance")}>
       {rows.map((row) => <BentoRow key={row.map((tile) => tile.id).join("-")}>{row.map((tile) => tile.node(row.map((x) => x.id)))}</BentoRow>)}

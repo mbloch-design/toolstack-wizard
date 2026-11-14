@@ -47,7 +47,7 @@ for (const lang of ["fr", "en"]) {
   test(`${lang}: an unknown stack cost is not free and a mixed total is partial`, async ({ page }) => {
     await page.addInitScript(({ key, state }) => { if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(state)); }, { key: stackKey, state: seed(["adp-workforce"]) });
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
-    await expect(page.locator('[data-card="price"]')).toContainText(lang === "fr" ? "On fait les comptes ?" : "Let's talk budget.");
+    await expect(page.locator('[data-card="price"]')).toContainText(lang === "fr" ? "1 outil dans votre stack." : "1 tool in your stack.");
     await expect(page.locator('[data-card="price"]')).not.toContainText(/Gratuit|Free|rien de payant|nothing paid/i);
     await page.locator("section[aria-labelledby=ms-all-title]").getByRole("button", { name: lang === "fr" ? "Ajouter un outil" : "Add a tool", exact: true }).click();
     await page.getByRole("searchbox").fill("chatgpt");
