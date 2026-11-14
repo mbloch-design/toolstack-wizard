@@ -20,6 +20,9 @@ import Bento, { Answer, Answers, BentoRow, MiniRing, Question, Tile } from "@/ds
 import Amount from "@/ds/Amount/Amount";
 import Starter from "@/ds/Starter/Starter";
 import { FigureCard, FigureCards } from "@/ds/Catalog/Catalog";
+import { Section, SectionHead } from "@/ds/Toolbar/Toolbar";
+import { NoticeRows } from "@/ds/Notice/Notice";
+import { TextButton } from "@/ds/Button/Button";
 import { useNavigate } from "react-router-dom";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
@@ -84,6 +87,8 @@ interface Props {
   hourly?: number | null;
   /** How many trades (areas) the stack covers: the dashboard's first figure (M01, 14/11/2026). */
   trades?: number;
+  /** Everyday jobs no tool of the stack covers (invoicing…), with where to look: the « worth a look » list. */
+  gaps?: { id: string; label: string; href: string }[];
   /** The hero's words (greeting, verdict, humour) and its actions; the findings add the cost. */
   welcome?: StackWelcome & { titleRef?: Ref<HTMLHeadingElement>; action?: ReactNode; secondary?: ReactNode };
 }
@@ -96,7 +101,7 @@ export type FitRow = { tool: ToolSummary; cost: number; usage?: number; setUsage
 // costs, then the one thing to decide now, then, quietly, what comes next.
 // Settling the current finding brings the next one in; once nothing is left,
 // the space becomes the summary of what was decided and what it saved.
-export default function StackFindings({ lang, currency = "EUR", converted = false, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly, welcome, trades }: Props) {
+export default function StackFindings({ lang, currency = "EUR", converted = false, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly, welcome, trades, gaps = [] }: Props) {
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
   const navigate = useNavigate();
@@ -311,12 +316,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   useEffect(() => () => trimTimers.current.forEach((timer) => window.clearTimeout(timer)), []);
   const tiles: { id: string; node: (row: string[]) => ReactNode }[] = [];
   const condensed = (id: string, row: string[]) => !!openTile && openTile !== id && row.includes(openTile);
-  if (showSplit) tiles.push({ id: "split", node: (row) => <Tile key="split" span={5} card="split" label={t("Où va l’argent", "Where the money goes")} art={<MiniRing parts={shares.map((area) => ({ color: area.color, share: area.amount / total }))} />}
-    statement={<Key>{`${leadShare}\u00a0%`}</Key>}
-    status={{ text: t(`dans « ${lead.label} ».${spend[0] ? ` ${spend[0].tool.name} pèse le plus lourd.` : ""}`, `in « ${lead.label} ».${spend[0] ? ` ${spend[0].tool.name} weighs the most.` : ""}`) }}
-    detail={<Split lang={fr ? "fr" : "en"} format={format} dense unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => tool.name)} rateDate={converted ? rateDate : null}
-      areas={areas.map((area) => ({ id: area.id, label: area.label, color: area.color, amount: area.amount, tools: (area.tools || []).map((row) => ({ ...row.tool, amount: row.amount })) }))} />}
-    {...toggle("split", row)} /> });
+  // The split left the bento for its own section, « Où va votre budget » (M01, 14/11/2026).
   if (decision && top) tiles.push({ id: "decision", node: (row) => <Tile key="decision" span={7} tone="question"
     label={`${top.kind === "pair" ? t("Ce qui se recoupe", "What overlaps") : t("Ce qui reste à préciser", "What is left to confirm")}${peak > 1 ? ` · ${t(`${step} sur ${peak}`, `${step} of ${peak}`)}` : ""}`}
     condensed={condensed("decision", row)}>{decision}</Tile> });
@@ -382,6 +382,28 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         <FigureCard figure={String(unsure.length)} name={t("Prix à préciser", "Prices to confirm")}
           detail={unsure.length ? t("Pour un budget juste", "For an honest budget") : t("Tout est renseigné", "All set")} renderLink={go('[data-card="decision"]')} />
       </FigureCards>;
+    })()}
+    {/* Where the money goes, in plain sight (M01): it was folded inside a tile. */}
+    {showSplit && <div data-card="split"><Section labelledBy="ms-budget-title" name="budget">
+      <SectionHead title={t("Où va votre budget", "Where your budget goes")} titleId="ms-budget-title" />
+      <Split lang={fr ? "fr" : "en"} format={format} unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => tool.name)} rateDate={converted ? rateDate : null}
+        areas={areas.map((area) => ({ id: area.id, label: area.label, color: area.color, amount: area.amount, tools: (area.tools || []).map((row) => ({ ...row.tool, amount: row.amount })) }))} />
+    </Section></div>}
+    {/* What is worth a look (M01): every finding in one line, each leading to where it is settled. */}
+    {toolCount > 1 && (() => {
+      const toDecision = () => { const target = document.querySelector<HTMLElement>('[data-card="decision"]'); target?.scrollIntoView({ block: "center", behavior: "smooth" }); target?.querySelector<HTMLElement>("h3, button")?.focus({ preventScroll: true }); };
+      const rows = [
+        ...items.filter((item) => item.kind === "pair").map((item) => ({ id: item.key, label: t(`${item.tools.slice(0, 2).map((tool) => tool.name).join(" et ")} font peut-être la même chose`, `${item.tools.slice(0, 2).map((tool) => tool.name).join(" and ")} may do the same job`),
+          action: <TextButton onClick={toDecision}>{t("Décider", "Decide")}</TextButton> })),
+        ...(unsure.length > 0 ? [{ id: "prices", label: t(`${unsure.length} prix à préciser pour un budget juste`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} to confirm for an honest budget`),
+          action: <TextButton onClick={toDecision}>{t("Préciser", "Confirm")}</TextButton> }] : []),
+        ...gaps.map((gap) => ({ id: gap.id, label: t(`Rien pour ${gap.label}`, `Nothing to ${gap.label}`),
+          action: <TextButton onClick={() => navigate(gap.href)}>{t("Voir des outils", "See tools")}</TextButton> })),
+      ];
+      return rows.length > 0 && <Section labelledBy="ms-watch-title" name="watch">
+        <SectionHead title={t("À regarder", "Worth a look")} titleId="ms-watch-title" />
+        <NoticeRows rows={rows} />
+      </Section>;
     })()}
     {toolCount === 1 && !decision && <Bento label={t("Pour commencer", "To start")}><BentoRow><Starter lang={fr ? "fr" : "en"} tool={spend[0]?.tool || freeTools[0]} onAddTool={onAddTool} /></BentoRow></Bento>}
     {rows.length > 0 && <Bento label={t("Ma stack en bref", "My stack at a glance")}>

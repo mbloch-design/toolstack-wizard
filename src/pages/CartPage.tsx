@@ -489,6 +489,7 @@ export default function CartPage() {
           items={deckItems} reviewFindingKey={reviewingFinding?.key} saved={saved} toReview={overlapScore.doubleTotal} resolved={resolved} history={history}
           onAddTool={() => { setEditing(false); setSearchOpen(true); requestAnimationFrame(() => document.getElementById("ms-search")?.scrollIntoView({ block: "center" })); }}
           trades={mapTerritories.filter((territory) => territory.tools.length > 0).length}
+          gaps={selectedTools.some((tool) => stackPlacement(tool, categories, lang).id === "finance") ? [] : [{ id: "finance", label: t("facturer", "invoice"), href: `${prefix}/category/finance-facturation` }]}
           exploreHref={state.toolEntries.some((entry) => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? getExplorerHref(prefix, { type: "stack" }) : undefined} />;
       })()}
       {/* Where the stack is saved: this browser, or the account. */}
