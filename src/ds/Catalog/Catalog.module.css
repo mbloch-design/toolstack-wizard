@@ -644,8 +644,88 @@
 }
 
 .figureName {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-1);
   font: var(--tt-label-font);
   letter-spacing: var(--tt-label-tracking);
+}
+
+/* The figure card is a door (M01): its pictogram and picture on top, an arrow that slides in on hover. */
+.figureTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 36px;
+  margin-bottom: var(--tt-space-2);
+}
+
+.figureIcon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--tt-r-round);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+  transition: transform var(--tt-dur-move) var(--tt-spring-card);
+}
+
+.figureIcon[data-tone="overlap"] {
+  background: var(--tt-delta-cost-bg);
+  color: var(--tt-overlap);
+}
+
+.figureIcon[data-tone="gain"] {
+  background: var(--tt-delta-gain-bg);
+  color: var(--tt-live);
+}
+
+.figureIcon svg {
+  width: var(--tt-icon-l);
+  height: var(--tt-icon-l);
+}
+
+.figureVisual {
+  display: flex;
+  align-items: center;
+}
+
+.figure[data-tone="overlap"] {
+  color: var(--tt-overlap);
+}
+
+.figure[data-tone="gain"] {
+  color: var(--tt-live);
+}
+
+.figureGo {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity var(--tt-dur-state) ease, transform var(--tt-dur-move) var(--tt-spring-card);
+}
+
+.figureCard:hover .figureGo,
+.figureCard:focus-visible .figureGo {
+  opacity: 1;
+  transform: none;
+}
+
+.figureCard:hover .figureIcon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .figureGo,
+  .figureIcon {
+    transition: none;
+  }
+
+  .figureCard:hover .figureIcon {
+    transform: none;
+  }
 }
 
 .figureDetail {

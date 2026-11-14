@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { Check, Plus } from "@/lib/icons";
 import Logo, { type LogoProps } from "../Logo/Logo";
 import styles from "./StackBoard.module.css";
@@ -9,21 +9,21 @@ import styles from "./StackBoard.module.css";
  * Checkpoints: the steps to a tidy stack as a track of pastilles, a green tick once settled, the action under an open one.
  */
 
-export type Trade = { id: string; name: string; icon: ReactNode; tools: LogoProps["tool"][] };
+export type Trade = { id: string; name: string; icon: ReactNode; tools: LogoProps["tool"][]; /** The job's colour (an area token). */ color?: string };
 
 export function TradeMap({ label, trades, addLabel, onAdd, localLogosOnly = false }: {
   label: string; trades: Trade[]; addLabel: (trade: string) => string; onAdd?: (trade: string) => void; localLogosOnly?: boolean;
 }) {
   return (
     <ul className={styles.trades} aria-label={label}>
-      {trades.map((trade) => {
+      {trades.map((trade, index) => {
         const on = trade.tools.length > 0;
         return (
-          <li key={trade.id} className={styles.trade} data-on={on || undefined}>
+          <li key={trade.id} className={styles.trade} data-on={on || undefined} style={{ "--c": trade.color ?? "var(--tt-ink)", "--i": index } as CSSProperties}>
             <span className={styles.tradeIcon} aria-hidden="true">{trade.icon}</span>
             <span className={styles.tradeName}>{trade.name}</span>
             {on
-              ? <span className={styles.tradeTools}>{trade.tools.slice(0, 3).map((tool) => <Logo key={tool.id} tool={tool} size={24} localOnly={localLogosOnly} />)}
+              ? <span className={styles.tradeTools}>{trade.tools.slice(0, 3).map((tool) => <Logo key={tool.id} tool={tool} size={28} localOnly={localLogosOnly} />)}
                 {trade.tools.length > 3 && <span className={styles.more}>+{trade.tools.length - 3}</span>}</span>
               : <button type="button" className={styles.tradeAdd} onClick={() => onAdd?.(trade.id)} aria-label={addLabel(trade.name)}><Plus aria-hidden /></button>}
           </li>
@@ -35,10 +35,16 @@ export function TradeMap({ label, trades, addLabel, onAdd, localLogosOnly = fals
 
 export type Checkpoint = { id: string; name: string; icon: ReactNode; done: boolean; note: string; action?: ReactNode };
 
-export function Checkpoints({ label, steps, layout = "row" }: { label: string; steps: Checkpoint[];
+export function Checkpoints({ label, steps, layout = "row", progressLabel }: { label: string; steps: Checkpoint[];
+  /** A track of one segment per step above the list, filled as steps are settled (« 2 étapes sur 3 »). */
+  progressLabel?: string;
   /** row: side by side (a wide tile); list: one under the other, the action at the end of its line (a narrow tile). */
   layout?: "row" | "list" }) {
   return (
+    <div className={styles.checkpoints}>
+    {progressLabel && <span className={styles.track} role="img" aria-label={progressLabel}>
+      {steps.map((step) => <span key={step.id} className={styles.segment} data-done={step.done || undefined} />)}
+    </span>}
     <ol className={styles.steps} aria-label={label} data-layout={layout}>
       {steps.map((step) => (
         <li key={step.id} className={styles.step} data-done={step.done || undefined}>
@@ -49,5 +55,6 @@ export function Checkpoints({ label, steps, layout = "row" }: { label: string; s
         </li>
       ))}
     </ol>
+    </div>
   );
 }

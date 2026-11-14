@@ -23,13 +23,21 @@ import Starter from "@/ds/Starter/Starter";
 /** The five everyday jobs of a freelancer, as stack territories: the dashboard's coverage ring (M01). */
 const CORE_TRADES = ["create", "organize", "communicate", "build", "manage"] as const;
 const TRADE_ICONS: Record<(typeof CORE_TRADES)[number], ReactNode> = { create: <Palette />, organize: <FolderKanban />, communicate: <MessagesSquare />, build: <Globe />, manage: <Receipt /> };
+/** What the first missing job says, with a smile at the situation, never at the person (M01). */
+const TRADE_JOKES: Record<(typeof CORE_TRADES)[number], [string, string]> = {
+  create: ["Rien pour créer. Tout à la main, comme au temps des Lumières.", "Nothing to create with. All by hand, like in the Enlightenment."],
+  organize: ["Rien pour s'organiser. Vos projets vivent dans votre tête ?", "Nothing to get organised. Do your projects live in your head?"],
+  communicate: ["Rien pour échanger. Les pigeons voyageurs, c'est charmant mais lent.", "Nothing to talk with. Carrier pigeons are charming, but slow."],
+  build: ["Pas de site. Votre portfolio vit sur Instagram, c'est ça ?", "No website. Your portfolio lives on Instagram, right?"],
+  manage: ["Rien pour facturer. Vos clients adorent, votre banquier moins.", "Nothing to invoice. Your clients love it, your banker less so."],
+};
 const TRADE_NAMES: Record<(typeof CORE_TRADES)[number], [string, string]> = {
   create: ["Créer", "Create"], organize: ["Organiser", "Organise"], communicate: ["Échanger", "Talk"], build: ["Sites", "Sites"], manage: ["Gérer", "Manage"],
 };
 import { Section, SectionHead } from "@/ds/Toolbar/Toolbar";
 import Button, { TextButton } from "@/ds/Button/Button";
 import { trackEvent } from "@/lib/analytics";
-import { Clock, Copy, Euro, FolderKanban, Globe, MessagesSquare, Palette, PiggyBank, Plus, Receipt, Wallet } from "@/lib/icons";
+import { Clock, Copy, Euro, LayoutGrid, FolderKanban, Globe, MessagesSquare, Palette, PiggyBank, Plus, Receipt, Wallet } from "@/lib/icons";
 import { Checkpoints, TradeMap } from "@/ds/StackBoard/StackBoard";
 import { FigureCard, FigureCards } from "@/ds/Catalog/Catalog";
 import { useNavigate } from "react-router-dom";
@@ -385,18 +393,23 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         aside={<><Button variant="primary" icon={<Plus aria-hidden />} onClick={onAddTool}>{t("Ajouter un outil", "Add a tool")}</Button>{welcome?.secondary}</>} />
       {toolCount > 1 && (() => {
         const pairs = items.filter((item) => item.kind === "pair");
+        const stackLogos = [...spend.map((row) => row.tool), ...freeTools, ...pending].filter((tool, index, list) => list.findIndex((x) => x.id === tool.id) === index);
         const go = (selector: string) => (className: string, content: ReactNode) => <a className={className} href={selector}
           onClick={(event) => { const target = document.querySelector<HTMLElement>(selector); if (!target) return; event.preventDefault(); target.scrollIntoView({ block: "center", behavior: "smooth" }); }}>{content}</a>;
         const spendDetail = monthly
-          ? [t(`${yearly}/an`, `${yearly}/yr`), heroWork && t(`${heroWork} de travail`, `${heroWork} of work`), converted && t(`taux de référence du ${rateDate}`, `reference rate of ${rateDate}`)].filter(Boolean).join(" · ")
+          ? [t(`${yearly}/an`, `${yearly}/yr`), heroWork && t(`${heroWork} de travail`, `${heroWork} of work`)].filter(Boolean).join(" · ")
           : t(`${unsure.length} prix à préciser`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} to confirm`);
         return <div style={{ marginTop: "var(--tt-gap-group)" }}><FigureCards label={t("Ma stack en chiffres", "My stack in figures")}>
-          <FigureCard figure={monthly ? format(Math.round(total)) : "?"} unit={monthly ? t("/mois", "/mo") : undefined} name={t("Dépense", "Spend")} detail={spendDetail} renderLink={go('[data-card="split"]')} />
-          <FigureCard figure={String(toolCount)} name={t("Outils", "Tools")} detail={composition ? composition.replace(/^(Dont|Of which) /, "").replace(/\.$/, "") : undefined} renderLink={go("#ms-all-title")} />
-          <FigureCard figure={String(pairs.length)} name={t(pairs.length > 1 ? "Doublons" : "Doublon", pairs.length > 1 ? "Overlaps" : "Overlap")}
-            detail={pairs[0] ? pairs[0].tools.slice(0, 2).map((tool) => tool.name).join(" · ") : t("Aucun", "None")} renderLink={go('[data-card="decision"]')} />
-          <FigureCard figure={saved > 0 ? `−${format(Math.round(saved))}` : format(0)} unit={t("/mois", "/mo")} name={t("Économisé", "Saved")} detail={t("par vos décisions", "by your decisions")} renderLink={go('[data-card="decision"]')} />
-        </FigureCards></div>;
+          <FigureCard icon={<Wallet />} figure={monthly ? format(Math.round(total)) : "?"} unit={monthly ? t("/mois", "/mo") : undefined} name={t("Dépense", "Spend")} detail={spendDetail} renderLink={go('[data-card="split"]')} />
+          <FigureCard icon={<LayoutGrid />} visual={<span style={{ display: "flex" }}>{stackLogos.slice(0, 4).map((tool, index) => <span key={tool.id} style={{ marginLeft: index ? "var(--tt-logo-overlap)" : 0 }}><Logo tool={tool} size={28} /></span>)}</span>}
+            figure={String(toolCount)} name={t("Outils", "Tools")} detail={composition ? composition.replace(/^(Dont|Of which) /, "").replace(/\.$/, "") : undefined} renderLink={go("#ms-all-title")} />
+          <FigureCard icon={<Copy />} tone={pairs.length ? "overlap" : "gain"} visual={pairs[0] ? <span style={{ display: "flex", gap: "var(--tt-space-1)" }}>{pairs[0].tools.slice(0, 2).map((tool) => <Logo key={tool.id} tool={tool} size={28} />)}</span> : undefined}
+            figure={String(pairs.length)} name={t(pairs.length > 1 ? "Doublons" : "Doublon", pairs.length > 1 ? "Overlaps" : "Overlap")}
+            detail={pairs[0] ? t(`${pairs[0].tools[0].name} et ${pairs[0].tools[1]?.name ?? ""} se marchent dessus`, `${pairs[0].tools[0].name} and ${pairs[0].tools[1]?.name ?? ""} step on each other`) : t("Chacun son rôle", "Each to its role")} renderLink={go('[data-card="decision"]')} />
+          <FigureCard icon={<PiggyBank />} tone={saved > 0 ? "gain" : "ink"} figure={saved > 0 ? `−${format(Math.round(saved))}` : format(0)} unit={t("/mois", "/mo")} name={t("Économisé", "Saved")}
+            detail={saved > 0 ? t("par vos décisions", "by your decisions") : t("La tirelire attend son premier choix", "The piggy bank awaits your first call")} renderLink={go('[data-card="decision"]')} />
+        </FigureCards>
+        {converted && <p style={{ margin: "var(--tt-space-2) 0 0", font: "var(--tt-note-font)", letterSpacing: "var(--tt-note-tracking)" }}>{t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`)}</p>}</div>;
       })()}
     </div>}
     {/* The dashboard (M01, 14/11/2026): four tiles, each a finding with its picture and the action that settles it.
@@ -431,15 +444,16 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         <BentoRow>
           <Tile span={7} label={t("Vos métiers", "Your trades")}
             statement={<><Key>{coveredCount}</Key>{t(` sur ${CORE_TRADES.length}`, ` of ${CORE_TRADES.length}`)}</>}
+            status={{ text: (() => { const missing = CORE_TRADES.find((id) => !covered.includes(id)); return missing ? t(...TRADE_JOKES[missing]) : t("Tout le métier est couvert. Rien ne dépasse.", "The whole job is covered. Nothing sticks out."); })(), done: coveredCount === CORE_TRADES.length }}
             footer={<TradeMap label={t("Vos métiers", "Your trades")} addLabel={(name) => t(`Ajouter un outil pour ${name}`, `Add a tool for ${name}`)} onAdd={() => onAddTool()}
-              trades={CORE_TRADES.map((id) => ({ id, name: t(...TRADE_NAMES[id]), icon: TRADE_ICONS[id], tools: territories.find((territory) => territory.id === id)?.tools ?? [] }))} />} />
+              trades={CORE_TRADES.map((id) => ({ id, name: t(...TRADE_NAMES[id]), icon: TRADE_ICONS[id], tools: territories.find((territory) => territory.id === id)?.tools ?? [], color: `var(--tt-area-${CORE_TRADES.indexOf(id) + 1})` }))} />} />
           <Tile span={5} label={`${t("À faire", "To do")} · ${level[0]}`} tone={done < checks.length ? "question" : "tile"}
             statement={done === checks.length ? <Key tone="gain">{t("Rien", "Nothing")}</Key> : <><Key tone={done === 0 ? "overlap" : "brand"}>{checks.length - done}</Key>{t(` étape${checks.length - done > 1 ? "s" : ""}`, ` step${checks.length - done > 1 ? "s" : ""}`)}</>}
             status={{ text: level[1], done: done === checks.length }}
-            footer={<Checkpoints layout="list" label={t("Étapes", "Steps")} steps={checks.map((check) => ({ id: check.id, name: check.name, icon: check.icon, done: check.done, note: check.note, action: check.action }))} />} />
+            footer={<Checkpoints layout="list" progressLabel={t(`${done} étape${done > 1 ? "s" : ""} sur ${checks.length} réglée${done > 1 ? "s" : ""}`, `${done} of ${checks.length} steps settled`)} label={t("Étapes", "Steps")} steps={checks.map((check) => ({ id: check.id, name: check.name, icon: check.icon, done: check.done, note: check.note, action: check.action }))} />} />
         </BentoRow>
         {showSplit && <BentoRow>
-          <Tile span={12} card="split" label={t("Où va l'argent", "Where the money goes")}>{<Split bare lang={fr ? "fr" : "en"} format={format} unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => tool.name)} rateDate={converted ? rateDate : null}
+          <Tile span={12} card="split" label={t("Où va l'argent", "Where the money goes")}>{<Split bare dense lang={fr ? "fr" : "en"} format={format} unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => tool.name)} rateDate={converted ? rateDate : null}
               areas={areas.map((area) => ({ id: area.id, label: area.label, color: area.color, amount: area.amount, tools: (area.tools || []).map((row) => ({ ...row.tool, amount: row.amount })) }))} />}</Tile>
         </BentoRow>}
       </Bento>;

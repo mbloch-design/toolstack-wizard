@@ -200,10 +200,18 @@ export function FigureCards({ label, children }: { label: string; children: Reac
   return <ul className={styles.figureCards} aria-label={label}>{children}</ul>;
 }
 
-export function FigureCard({ figure, unit, name, detail, renderLink }: { figure: string; unit?: string; name: string; detail?: string; renderLink: (className: string, content: ReactNode) => ReactNode }) {
+export function FigureCard({ figure, unit, name, detail, icon, visual, tone = "ink", renderLink }: { figure: string; unit?: string; name: string; detail?: string;
+  /** A pictogram in a pastille, top left: what the figure is about, seen before it is read (M01). */
+  icon?: ReactNode;
+  /** A small picture, top right: the logos it counts, two tools face to face… */
+  visual?: ReactNode;
+  /** The figure's colour: ink, orange for something to settle, green for a gain. */
+  tone?: "ink" | "overlap" | "gain";
+  renderLink: (className: string, content: ReactNode) => ReactNode }) {
   return <li className={styles.placeSlot}>{renderLink(styles.figureCard, <>
-    <span className={styles.figure}>{figure}{unit && <small>{unit}</small>}</span>
-    <span className={styles.figureName}>{name}</span>
+    {(icon || visual) && <span className={styles.figureTop}>{icon && <span className={styles.figureIcon} data-tone={tone} aria-hidden="true">{icon}</span>}{visual && <span className={styles.figureVisual} aria-hidden="true">{visual}</span>}</span>}
+    <span className={styles.figure} data-tone={tone}>{figure}{unit && <small>{unit}</small>}</span>
+    <span className={styles.figureName}>{name}<ChevronRight className={styles.figureGo} aria-hidden="true" /></span>
     {detail && <span className={styles.figureDetail}>{detail}</span>}
   </>)}</li>;
 }

@@ -5,19 +5,12 @@
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--tt-space-3) var(--tt-space-1);
-  max-width: 560px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* On a phone the five jobs take two rows (three, then two) rather than squeeze their names. */
-@media (width < 480px) {
-  .trades {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
+/* The jobs arrive one after the other. */
 .trade {
   display: grid;
   justify-items: center;
@@ -25,29 +18,33 @@
   gap: var(--tt-space-2);
   min-width: 0;
   text-align: center;
+  animation: trade-in var(--tt-dur-reveal) var(--tt-spring-card) both;
+  animation-delay: calc(var(--i) * var(--tt-cascade));
 }
 
-/* A job the stack does: its pictogram on the page colour, in ink. One it lacks: a dashed ring, nothing inside lit. */
+/* A job it lacks: a dashed ring, nothing lit, an invitation to fill it. */
 .tradeIcon {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   border-radius: var(--tt-r-round);
   background: transparent;
-  box-shadow: var(--tt-trade-off-ring);
+  outline: var(--tt-trade-off-dash);
+  outline-offset: var(--tt-trade-off-offset);
   color: var(--tt-line);
 }
 
+/* A job the stack does lights up in its own colour. */
 .trade[data-on] .tradeIcon {
-  background: var(--tt-bg);
-  box-shadow: var(--tt-raised);
-  color: var(--tt-ink);
+  background: color-mix(in oklch, var(--c) 14%, var(--tt-bg));
+  outline: none;
+  color: var(--c);
 }
 
 .tradeIcon svg {
-  width: var(--tt-icon-l);
-  height: var(--tt-icon-l);
+  width: 24px;
+  height: 24px;
 }
 
 /* Words never break (« mot coupé »): a short name in the note size, on one line. */
@@ -73,6 +70,7 @@
   margin-left: var(--tt-space-1);
 }
 
+/* The plus turns when its empty job is hovered or focused. */
 .tradeAdd {
   composes: focus from "../atoms.module.css";
   display: grid;
@@ -86,6 +84,12 @@
   box-shadow: var(--tt-raised);
   color: var(--tt-ink);
   cursor: pointer;
+  transition: transform var(--tt-dur-move) var(--tt-spring-card);
+}
+
+.tradeAdd:focus-visible,
+.trade:not([data-on]):hover .tradeAdd {
+  transform: rotate(90deg) scale(1.1);
 }
 
 .tradeAdd svg {
@@ -93,7 +97,52 @@
   height: var(--tt-icon-s);
 }
 
-/* Checkpoints: the way to a tidy stack, one pastille per step: green tick once settled, orange pictogram while open. */
+@keyframes trade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(.92);
+  }
+}
+
+/* On a phone the five jobs take two rows (three, then two) rather than squeeze their names. */
+@media (width < 480px) {
+  .trades {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Checkpoints: the progress track, then one line per step. */
+.checkpoints {
+  display: grid;
+  gap: var(--tt-space-4);
+}
+
+/* One segment per step, green once settled; the fill grows in. */
+.track {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  gap: var(--tt-space-1);
+}
+
+.segment {
+  height: 6px;
+  overflow: hidden;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-line);
+}
+
+.segment[data-done] {
+  background: var(--tt-segment-done);
+  animation: segment-fill var(--tt-dur-reveal) var(--tt-ease) both;
+}
+
+@keyframes segment-fill {
+  from {
+    background-size: 0 100%;
+  }
+}
+
 .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -111,6 +160,7 @@
   min-width: 0;
 }
 
+/* Green tick once settled, orange pictogram while open. */
 .stepMark {
   display: grid;
   place-items: center;
@@ -146,16 +196,24 @@
   margin-top: var(--tt-space-1);
 }
 
-/* In a narrow tile: one step per line, the pastille on the left, the action at the end. */
+/* In a narrow tile: one step per line, the pastille on the left, the action at the end; an open line answers the pointer. */
 .steps[data-layout="list"] {
   grid-template-columns: 1fr;
-  gap: var(--tt-space-3);
+  gap: var(--tt-space-1);
 }
 
 .steps[data-layout="list"] .step {
   grid-template-columns: auto minmax(0, 1fr) auto;
   column-gap: var(--tt-space-3);
   align-items: center;
+  margin-inline: calc(var(--tt-space-2) * -1);
+  padding: var(--tt-space-2);
+  border-radius: var(--tt-r-field);
+  transition: background-color var(--tt-dur-state) ease;
+}
+
+.steps[data-layout="list"] .step:not([data-done]):hover {
+  background: var(--tt-tile);
 }
 
 .steps[data-layout="list"] .stepMark {
@@ -167,4 +225,16 @@
   grid-row: 1 / span 2;
   grid-column: 3;
   margin-top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trade,
+  .segment[data-done] {
+    animation: none;
+  }
+
+  .tradeAdd,
+  .steps[data-layout="list"] .step {
+    transition: none;
+  }
 }
