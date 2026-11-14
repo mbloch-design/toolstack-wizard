@@ -1,3 +1,5 @@
+import { toolRole } from "@/data/toolRoles";
+import { toolTagline } from "@/data/toolTaglines";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
 import StackDiscovery from "@/components/stack/StackDiscovery";
 import { buildStackDiscovery } from "@/lib/stackDiscovery";
@@ -387,7 +389,7 @@ export default function CartPage() {
     const info = infoOf(tool);
     const areaLabel = area ? (area.id === "assist" ? t("IA", "AI") : area.label) : "";
     // One card per tool (src/ds/ToolCard), the same in every view; the area joins the status only when the list is not grouped by area.
-    return <ToolCard key={tool.id} lang={lang} tool={tool} amount={info.kind === "unknown" ? t("Prix ?", "Price?") : info.cost} monthly={info.kind === "paid"}
+    return <ToolCard key={tool.id} lang={lang} tool={tool} role={toolRole(toolKey(tool), lang) ?? (toolTagline(toolKey(tool), lang) || undefined)} amount={info.kind === "unknown" ? t("Prix ?", "Price?") : info.cost} monthly={info.kind === "paid"}
       status={statusOf(tool)} area={groupBy !== "area" ? areaLabel || undefined : undefined} areaColor={area ? colorOf(area.id) : undefined} selected={active} editing={editing}
       onOpen={(button) => { lastToolButton.current = button; if (active) closeInspector(); else selectTool(toolKey(tool)); }}
       onRemove={() => removeTool(slug, tool.name)} leaving={leaving.includes(tool.id)} />;

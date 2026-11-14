@@ -15,6 +15,9 @@ export type ToolCardProps = {
   /** A monthly amount shows « /mois » after it. */
   monthly: boolean;
   status: ToolStatus;
+  /** What the tool does for the person, in a few words (M01, 14/11/2026). Shown in place of the status unless
+   *  the tool overlaps another: an overlap stays a tag, it calls for a decision. */
+  role?: string;
   /** The tool's area, shown when the list is not grouped by area. */
   area?: string;
   /** The colour of its area: a dot before the name, so a group cut by the end of a row still reads. */
@@ -32,16 +35,19 @@ export type ToolCardProps = {
 const STATUS: Record<ToolStatus, [string, string]> = { ok: ["Prix renseigné", "Price recorded"], review: ["À vérifier", "To check"], overlap: ["Doublon", "Overlap"] };
 
 /** One tool of the stack: logo, what it costs, name, one status. The same card in every view; views only arrange it. */
-export default function ToolCard({ lang, tool, amount, monthly, status, area, areaColor, selected, editing, onOpen, onRemove, leaving = false, localLogosOnly = false }: ToolCardProps) {
+export default function ToolCard({ lang, tool, amount, monthly, status, role, area, areaColor, selected, editing, onOpen, onRemove, leaving = false, localLogosOnly = false }: ToolCardProps) {
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
   const label = t(...STATUS[status]);
-  const tag: ReactNode = <Tag tone={status === "ok" ? "ok" : status === "overlap" ? "overlap" : "neutral"} on="tile" data-status-tag={status}>{label}</Tag>;
+  const showRole = !!role;
+  const statusTag = <Tag tone={status === "ok" ? "ok" : status === "overlap" ? "overlap" : "neutral"} on="tile" data-status-tag={status}>{label}</Tag>;
+  // The role says what the tool does; an overlap keeps its tag beside it (it calls for a decision), the other statuses give way.
+  const tag: ReactNode = showRole ? <>{status === "overlap" && statusTag}<span className={styles.role} data-role="">{role}</span></> : statusTag;
   return (
     <div className={styles.wrap} data-flip-id={tool.id}>
       <Fall leaving={leaving}>
       <Tilt>
       <button type="button" className={styles.card} data-tool-id={tool.id} data-tool-name={tool.name} data-status={status} data-selected={selected ? "" : undefined}
-        aria-haspopup="dialog" aria-label={`${tool.name}, ${amount}${monthly ? t("/mois", "/mo") : ""}, ${label}`} tabIndex={editing ? -1 : undefined}
+        aria-haspopup="dialog" aria-label={`${tool.name}, ${showRole ? `${role}, ` : ""}${amount}${monthly ? t("/mois", "/mo") : ""}, ${label}`} tabIndex={editing ? -1 : undefined}
         onClick={(event) => { if (!editing) onOpen(event.currentTarget); }}>
         <span className={styles.logo}><Logo tool={tool} size={40} localOnly={localLogosOnly} /></span>
         <span className={styles.amount} data-amount="" aria-hidden="true"><Amount value={amount} unit={monthly ? t("/mois", "/mo") : undefined} /></span>

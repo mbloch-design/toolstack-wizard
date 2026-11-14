@@ -194,3 +194,15 @@
   background: var(--c);
   vertical-align: 0.1em;
 }
+
+/* The role line (M01): what the tool does for the person, up to two lines so it is never cut on a narrow card. */
+.role {
+  display: -webkit-box;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--tt-ink);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

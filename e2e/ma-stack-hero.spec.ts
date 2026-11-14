@@ -44,9 +44,9 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
     const map = page.getByRole("group", { name: fr ? "Mes outils" : "My tools", exact: true });
     await expect(map.locator("[data-tool-id]")).toHaveCount(10);
     await expect(page.locator("[data-tool-id]")).toHaveCount(10);
-    // Every card says what the tool costs and its status.
+    // Every card says what the tool costs, and what it does or its status (M01: the role when one is written).
     await expect(map.locator("[data-tool-id] [data-amount]")).toHaveCount(10);
-    await expect(map.locator("[data-tool-id] [data-status-tag]")).toHaveCount(10);
+    await expect(map.locator("[data-tool-id]").filter({ has: page.locator("[data-role], [data-status-tag]") })).toHaveCount(10);
     // The map opens the tool sheet.
     await map.getByRole("button").first().click();
     await expect(page.locator("[data-drawer]")).toBeVisible();
