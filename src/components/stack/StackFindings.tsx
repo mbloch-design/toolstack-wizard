@@ -456,14 +456,26 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
             footer={<Checkpoints layout="list" progressLabel={t(`${done} étape${done > 1 ? "s" : ""} sur ${checks.length} réglée${done > 1 ? "s" : ""}`, `${done} of ${checks.length} steps settled`)} label={t("Étapes", "Steps")} steps={checks.map((check) => ({ id: check.id, name: check.name, icon: check.icon, done: check.done, note: check.note, action: check.action }))} />} />
         </BentoRow>
         {spend.length >= 2 && (() => {
-          const colorOf = (id: string) => areas.find((area) => (area.tools || []).some((row) => row.tool.id === id))?.color ?? "var(--tt-brand)";
+          const areaOf = (id: string) => areas.find((area) => (area.tools || []).some((row) => row.tool.id === id))?.label;
+          const overlapOf = (id: string) => { const pair = items.find((item) => item.kind === "pair" && item.tools.some((tool) => tool.id === id)); return pair?.tools.find((tool) => tool.id !== id)?.name; };
           const top = spend[0], topShare = Math.round((top.amount / (total || 1)) * 100);
+          // What deciding the overlaps can save: the cheaper priced tool of each pair, counted once.
+          const amountOf = (id: string) => spend.find((row) => row.tool.id === id)?.amount;
+          const saveable = items.filter((item) => item.kind === "pair").reduce((sum, item) => {
+            const costs = item.tools.slice(0, 2).map((tool) => amountOf(tool.id)).filter((amount): amount is number => amount !== undefined);
+            return costs.length === 2 ? sum + Math.min(...costs) : sum;
+          }, 0);
           return <BentoRow>
             <Tile span={12} card="split" label={t("Où va l'argent", "Where the money goes")}
-              statement={<><Key>{topShare}{"\u00a0"}%</Key>{t(` pour ${top.tool.name}`, ` for ${top.tool.name}`)}</>}
-              status={{ text: topShare >= 50 ? t("Il a le sens des priorités. Ou de l'addition.", "It knows its priorities. Or the bill.") : t("L'argent est bien réparti. Rien ne fait de l'ombre au reste.", "The money is well spread. Nothing overshadows the rest.") }}
+              statement={saveable > 0
+                ? <><Key tone="overlap">{format(Math.round(saveable))}</Key>{t(" par mois à trancher", " a month to settle")}</>
+                : <><Key>{topShare}{"\u00a0"}%</Key>{t(` pour ${top.tool.name}`, ` for ${top.tool.name}`)}</>}
+              status={{ text: saveable > 0
+                ? t("C'est ce que coûte le moins cher de chaque doublon. À vous de choisir lequel garder.", "That's what the cheaper tool of each overlap costs. You choose which one to keep.")
+                : topShare >= 50 ? t("Il a le sens des priorités. Ou de l'addition.", "It knows its priorities. Or the bill.") : t("L'argent est bien réparti. Rien ne fait de l'ombre au reste.", "The money is well spread. Nothing overshadows the rest.") }}
               footer={<SpendBar label={t("Répartition par outil", "Split by tool")} format={format}
-                items={spend.map((row) => ({ id: row.tool.id, tool: row.tool, amount: row.amount, color: colorOf(row.tool.id) }))}
+                items={spend.map((row) => ({ id: row.tool.id, tool: row.tool, amount: row.amount, area: areaOf(row.tool.id), overlapWith: overlapOf(row.tool.id) }))}
+                otherLabel={(count) => t(`${count} autres outils`, `${count} other tools`)} overlapLabel={(other) => t(`Doublon avec ${other}`, `Overlaps with ${other}`)}
                 unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id))} unpricedLabel={t("Sans prix, pas comptés", "No price, not counted")}
                 priceAction={<TextButton onClick={() => { const target = document.querySelector<HTMLElement>('[data-card="decision"]'); target?.scrollIntoView({ block: "center", behavior: "smooth" }); }}>{t("Renseigner", "Add prices")}</TextButton>}
                 note={converted ? t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`) : undefined} />} />

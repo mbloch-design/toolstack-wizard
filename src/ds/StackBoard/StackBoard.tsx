@@ -59,34 +59,49 @@ export function Checkpoints({ label, steps, layout = "row", progressLabel }: { l
   );
 }
 
-export type SpendItem = { id: string; tool: LogoProps["tool"]; amount: number; color: string };
+export type SpendItem = { id: string; tool: LogoProps["tool"]; amount: number;
+  /** A short line under the name: the job it does. */
+  area?: string;
+  /** Overlaps another tool: its bar turns orange and says with which one. */
+  overlapWith?: string };
 
 /**
- * Where the money goes, tool by tool (M01, 14/11/2026): one bar cut into the tools, each in its job's colour, so
- * the shares read at a glance; then the ranked list (logo, name, amount, share). A single-slice ring said nothing.
- * The tools without a price wait as small chips with the action that prices them.
+ * Where the money goes, tool by tool (M01, 14/11/2026): a ranked list of bars on one baseline, the most expensive
+ * first, so amounts compare at a glance (a stacked bar hid the middle). Colour carries one meaning only: orange
+ * for a tool that overlaps another, the money a decision can save. Past five tools, the rest folds into one line.
  */
-export function SpendBar({ label, items, format, unpriced = [], unpricedLabel, priceAction, note, localLogosOnly = false }: {
+export function SpendBar({ label, items, format, unpriced = [], unpricedLabel, priceAction, note, otherLabel, overlapLabel, localLogosOnly = false }: {
   label: string; items: SpendItem[]; format: (amount: number) => string;
-  unpriced?: LogoProps["tool"][]; unpricedLabel?: string; priceAction?: ReactNode; note?: string; localLogosOnly?: boolean;
+  unpriced?: LogoProps["tool"][]; unpricedLabel?: string; priceAction?: ReactNode; note?: string;
+  /** « 3 autres » for the folded line. */ otherLabel?: (count: number) => string;
+  /** « Doublon avec Canva ». */ overlapLabel?: (other: string) => string;
+  localLogosOnly?: boolean;
 }) {
-  const total = items.reduce((sum, item) => sum + item.amount, 0) || 1;
-  const share = (amount: number) => `${Math.round((amount / total) * 100)} %`;
+  const sorted = [...items].sort((x, y) => y.amount - x.amount);
+  const shown = sorted.length > 6 ? sorted.slice(0, 5) : sorted;
+  const rest = sorted.slice(shown.length);
+  const restAmount = rest.reduce((sum, item) => sum + item.amount, 0);
+  const max = Math.max(...shown.map((item) => item.amount), restAmount, 1);
   return (
     <div className={styles.spend}>
-      <span className={styles.spendBar} role="img" aria-label={`${label} : ${items.map((item) => `${item.tool.name} ${share(item.amount)}`).join(", ")}`}>
-        {items.map((item, index) => <span key={item.id} className={styles.spendSegment} style={{ "--c": item.color, "--g": item.amount, "--i": index } as CSSProperties} />)}
-      </span>
       <ol className={styles.spendList} aria-label={label}>
-        {items.map((item) => (
-          <li key={item.id} className={styles.spendRow}>
-            <span className={styles.spendDot} style={{ "--c": item.color } as CSSProperties} aria-hidden="true" />
+        {shown.map((item, index) => (
+          <li key={item.id} className={styles.spendRow} data-overlap={item.overlapWith ? "" : undefined}>
             <Logo tool={item.tool} size={24} localOnly={localLogosOnly} />
-            <span className={styles.spendName}>{item.tool.name}</span>
+            <span className={styles.spendWho}>
+              <span className={styles.spendName}>{item.tool.name}</span>
+              <span className={styles.spendArea}>{item.overlapWith && overlapLabel ? overlapLabel(item.overlapWith) : item.area}</span>
+            </span>
+            <span className={styles.spendTrack} aria-hidden="true"><span className={styles.spendFill} style={{ "--w": item.amount / max, "--i": index } as CSSProperties} /></span>
             <span className={styles.spendAmount}>{format(item.amount)}</span>
-            <span className={styles.spendShare}>{share(item.amount)}</span>
           </li>
         ))}
+        {rest.length > 0 && <li className={styles.spendRow}>
+          <span className={styles.spendMore} aria-hidden="true">+{rest.length}</span>
+          <span className={styles.spendWho}><span className={styles.spendName}>{otherLabel ? otherLabel(rest.length) : `+${rest.length}`}</span></span>
+          <span className={styles.spendTrack} aria-hidden="true"><span className={styles.spendFill} style={{ "--w": restAmount / max, "--i": shown.length } as CSSProperties} /></span>
+          <span className={styles.spendAmount}>{format(restAmount)}</span>
+        </li>}
       </ol>
       {unpriced.length > 0 && <div className={styles.unpriced}>
         <span className={styles.unpricedLabel}>{unpricedLabel}</span>

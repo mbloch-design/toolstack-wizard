@@ -258,33 +258,10 @@
   }
 }
 
-/* SpendBar: one bar cut into the tools, the ranked list under it, the unpriced tools waiting with their action. */
+/* SpendBar: one line per tool, bars on one baseline, the most expensive first; orange only for an overlap. */
 .spend {
   display: grid;
   gap: var(--tt-gap-group);
-}
-
-.spendBar {
-  display: flex;
-  gap: var(--tt-hairline-w);
-  height: 12px;
-  overflow: hidden;
-  border-radius: var(--tt-r-pill);
-}
-
-.spendSegment {
-  flex: var(--g) 1 0;
-  min-width: 4px;
-  background: var(--c);
-  transform-origin: left;
-  animation: segment-grow var(--tt-dur-reveal) var(--tt-spring-card) both;
-  animation-delay: calc(var(--i) * var(--tt-cascade));
-}
-
-@keyframes segment-grow {
-  from {
-    transform: scaleX(0);
-  }
 }
 
 .spendList {
@@ -297,16 +274,14 @@
 
 .spendRow {
   display: grid;
-  grid-template-columns: 8px 24px minmax(0, 1fr) auto 48px;
+  grid-template-columns: 24px minmax(120px, 220px) minmax(0, 1fr) 88px;
   align-items: center;
   gap: var(--tt-space-3);
 }
 
-.spendDot {
-  width: 8px;
-  height: 8px;
-  border-radius: var(--tt-r-round);
-  background: var(--c);
+.spendWho {
+  display: grid;
+  min-width: 0;
 }
 
 .spendName {
@@ -318,19 +293,69 @@
   white-space: nowrap;
 }
 
+.spendArea {
+  overflow: hidden;
+  color: var(--tt-meta);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.spendRow[data-overlap] .spendArea {
+  color: var(--tt-overlap);
+}
+
+.spendTrack {
+  height: 8px;
+  overflow: hidden;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-line);
+}
+
+.spendFill {
+  display: block;
+  width: calc(var(--w) * 100%);
+  height: 100%;
+  border-radius: inherit;
+  background: var(--tt-ink);
+  transform-origin: left;
+  animation: segment-grow var(--tt-dur-reveal) var(--tt-spring-card) both;
+  animation-delay: calc(var(--i) * var(--tt-cascade));
+}
+
+.spendRow[data-overlap] .spendFill {
+  background: var(--tt-overlap);
+}
+
+@keyframes segment-grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+
 .spendAmount {
   color: var(--tt-ink);
   font: var(--tt-label-font);
   letter-spacing: var(--tt-label-tracking);
   font-variant-numeric: tabular-nums;
+  text-align: right;
 }
 
-.spendShare {
-  color: var(--tt-meta);
-  font: var(--tt-note-font);
-  letter-spacing: var(--tt-note-tracking);
-  font-variant-numeric: tabular-nums;
-  text-align: right;
+.spendMore {
+  composes: note from "../atoms.module.css";
+  text-align: center;
+}
+
+@media (width < 480px) {
+  .spendRow {
+    grid-template-columns: 24px minmax(0, 1fr) auto;
+  }
+
+  .spendTrack {
+    grid-column: 2 / -1;
+    grid-row: 2;
+  }
 }
 
 .unpriced {
@@ -358,7 +383,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .spendSegment {
+  .spendFill {
     animation: none;
   }
 }
