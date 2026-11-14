@@ -356,9 +356,10 @@ const ToolsPage = () => {
     const catLabel = catObj ? (lang === "en" ? stripLeadingEmoji(catObj.nameEn, catObj.id) : stripLeadingEmoji(catObj.name, catObj.id)) : "";
     const eyebrow = (lang === "en" ? entry?.eyebrowEn : entry?.eyebrowFr) || catLabel;
     // Two or three words on what the tool does.
-    const pitch = (lang === "en" ? entry?.pitchEn : entry?.pitchFr) || toolTagline(tool.slug || tool.id, lang);
+    const pitch = (lang === "en" ? entry?.pitchEn : entry?.pitchFr) || toolTagline(tool.slug || tool.id, lang)
+      || (lang === "en" ? tool.shortDescriptionEn || tool.shortDescription : tool.shortDescription);
     return (
-      <ToolMediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
+      <ToolMediaCard key={tool.id} priority lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
         category={eyebrow || undefined} badge={entry?.sponsored ? t("Sponsorisé", "Sponsored") as string : undefined} reason={pitch || undefined}
         renderLink={(className, content) => <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className={className}>{content}</Link>} />
     );
@@ -394,7 +395,10 @@ const ToolsPage = () => {
                 {visible.map(tool => {
                   const catObj = categoryById.get(tool.categoryId);
                   const catLabel = catObj ? (lang === "en" ? stripLeadingEmoji(catObj.nameEn, catObj.id) : stripLeadingEmoji(catObj.name, catObj.id)) : undefined;
-                  const subtitle = toolTagline(tool.slug || tool.id, lang) || catLabel;
+                  // Only 92 of 1 360 tools have a hand-written card line; the others fell back to nothing (13/11/2026).
+                  // Their short description stands in, held to one line by the card.
+                  const short = (lang === "en" ? tool.shortDescriptionEn || tool.shortDescription : tool.shortDescription) || "";
+                  const subtitle = toolTagline(tool.slug || tool.id, lang) || short || catLabel;
                   return <ToolMediaCard key={tool.id} lang={lang === "en" ? "en" : "fr"} tool={tool} dataTool={tool.slug || tool.id}
                     category={catLabel} reason={subtitle !== catLabel ? subtitle : undefined}
                     renderLink={(className, content) => <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className={className}>{content}</Link>} />;

@@ -97,11 +97,11 @@ export const SiteAujourdhui: Story = {
       <SectionHead title={page} titleId={`inv-${page}`} note={`${views.length} vue${views.length > 1 ? "s" : ""}`} />
       <div style={{ display: "grid", gap: 32 }}>
         {views.map(([name, label]) => <figure key={name} style={{ margin: 0, display: "grid", gap: 12 }}>
-          <figcaption style={{ font: "var(--tt-label-font)" }}>{label}</figcaption>
+          <figcaption style={{ font: "var(--tt-label-font)", letterSpacing: "var(--tt-label-tracking)" }}>{label}</figcaption>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 24, alignItems: "start" }}>
             {(["bureau", "tel"] as const).map((device) => src(name, device) && <div key={device} style={{ display: "grid", gap: 6, maxWidth: device === "bureau" ? 560 : 300, flex: "1 1 240px" }}>
               <img src={src(name, device)} alt={`${label}, ${device === "bureau" ? "bureau" : "téléphone"}`} style={{ width: "100%", height: "auto", borderRadius: 12, boxShadow: "var(--tt-raised)" }} />
-              <span style={{ font: "var(--tt-note-font)", color: "var(--tt-meta)" }}>{device === "bureau" ? "Bureau 1280" : "Téléphone 390"}</span>
+              <span style={{ font: "var(--tt-note-font)", letterSpacing: "var(--tt-note-tracking)", color: "var(--tt-ink)" }}>{device === "bureau" ? "Bureau 1280" : "Téléphone 390"}</span>
             </div>)}
           </div>
         </figure>)}

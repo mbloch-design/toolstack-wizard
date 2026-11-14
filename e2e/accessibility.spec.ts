@@ -59,27 +59,24 @@ for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
 test(`editorial card direct save is keyboard accessible and persists ${lang}/${width}`, async ({ page }) => {
   await page.setViewportSize({ width, height: 1000 });
   await page.goto(`/${lang}/tools`);
-  const firstCard = page.locator(".tce-card--media").filter({ has: page.locator("[data-pin-tool]") }).first();
-  const href = await firstCard.locator(".tce-primary-link").getAttribute("href");
+  // The catalogue's media card (13/11/2026): the card is a link, its round button adds the tool to my stack.
+  const card = page.locator("li:has(> button[data-media-add])").first();
+  const save = card.locator("button[data-media-add]");
+  const link = card.locator("a").first();
+  const href = await link.getAttribute("href");
   expect(href).toBeTruthy();
   const slug = href!.split("/").pop()!;
-  const card = page.locator(".tce-card--media").filter({ has: page.locator(`.tce-primary-link[href="${href}"]`) });
-  const save = card.locator("[data-pin-tool]");
   await expect(save).toBeEnabled();
-  await card.locator(".tce-primary-link").focus();
-  // Follow the card's actual tab order, including any exploration action.
-  for (let step = 0; step < 3 && !(await save.evaluate((el) => el === document.activeElement)); step++) {
-    await page.keyboard.press("Tab");
-  }
+  await link.focus();
+  await page.keyboard.press("Tab");
   await expect(save).toBeVisible();
   await expect(save).toBeFocused();
-  await expect(card.locator(".tce-hover-actions")).toHaveCSS("opacity", "1");
   await page.keyboard.press("Enter");
-  await expect(save).toHaveAttribute("aria-pressed", "true");
+  await expect(save).toHaveAttribute("data-state", "added");
   await expect.poll(() => new URL(page.url()).pathname).toBe(`/${lang}/tools`);
   await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-personal-stack-v4:anonymous") || "{}").selection?.pinnedToolSlugs)).toEqual([slug]);
   await page.reload();
-  await expect(save).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator(`li:has(> a[href="${href}"]) button[data-media-add]`)).toHaveAttribute("data-state", "added");
 });
 
 }

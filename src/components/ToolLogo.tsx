@@ -10,14 +10,14 @@ interface ToolLogoProps {
 }
 
 const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true, alt }: ToolLogoProps) => {
-  const { src, imgRef, loaded, loading, onLoad, onError } = useToolLogoSource(tool, size, allowRemoteSources);
+  const { src, shown, imgRef, loaded, loading, onLoad, onError } = useToolLogoSource(tool, size, allowRemoteSources);
 
   if (src) {
     return (
       <img
         ref={imgRef}
         key={src}
-        src={src}
+        src={shown}
         alt={alt ?? `${tool.name} logo`}
         width={size}
         height={size}

@@ -88,16 +88,8 @@ export function getToolDomain(tool: {
 }
 
 /** Extract bare hostname from any URL string */
-export function getDomainFromUrl(url?: string): string {
-  if (!url) return "";
-  try {
-    return new URL(
-      url.startsWith("http") ? url : `https://${url}`
-    ).hostname.replace("www.", "");
-  } catch {
-    return "";
-  }
-}
+import { getDomainFromUrl } from "@/lib/domain";
+export { getDomainFromUrl };
 
 /** Deprecated: logo fallbacks are rendered locally to avoid third-party favicon 404s. */
 export function getToolFaviconUrl(
