@@ -43,12 +43,17 @@ describe("StackFindings", () => {
       const hero = container.querySelector('[data-card="price"]')?.textContent ?? "";
       expect(screen.getByRole("heading", { level: 1 }).textContent).toMatch(/446\s€ par mois/);
       expect(hero).toMatch(/par an/);
-      // Figures, not a sentence (M01): the year; what is left to confirm is said by the state of the stack.
+      // The content contract holds (DESIGN_DECISIONS): the year and what the stack is made of, in the hero's facts.
       expect(hero).toMatch(/par an/);
+      expect(hero).toMatch(/dont .+/);
+    });
+    it("a converted figure says its reference rate", () => {
+      const { container } = module([], { converted: true });
+      expect(container.querySelector('[data-card="price"]')?.textContent).toMatch(/taux de référence du/);
     });
     it("a saving is said in words, never only in colour", () => {
       const { container } = module([], { saved: 24 });
-      expect(container.textContent).toMatch(/−24 €.*grâce à vos décisions/);
+      expect(container.textContent).toMatch(/−24\s€.*grâce à vos décisions/);
     });
     it("the first visit names the question « Étape suivante »", () => {
       module([card("Canva")], { guide: true });
@@ -135,7 +140,7 @@ describe("StackFindings", () => {
   it("drops the decision card once nothing is left, the saving stays on the price card", () => {
     const { container } = module([], { saved: 67, total: 379, toReview: 0 });
     expect(container.querySelector('[data-card="decision"]:not([data-done])')).toBeNull();
-    expect(container.textContent).toMatch(/−67 €.*grâce à vos décisions/);
+    expect(container.textContent).toMatch(/−67\s€.*grâce à vos décisions/);
   });
 });
 

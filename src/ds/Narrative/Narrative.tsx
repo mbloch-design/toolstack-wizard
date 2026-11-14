@@ -1,5 +1,4 @@
 import { useLayoutEffect, useRef, type ReactNode, type Ref } from "react";
-import type { CSSProperties } from "react";
 import styles from "./Narrative.module.css";
 
 /*
@@ -15,13 +14,15 @@ import styles from "./Narrative.module.css";
 /** One key figure of the hero: a short label above, the figure, a detail under it (M01, 14/11/2026). */
 export type HeroFigure = { id: string; label: string; value: ReactNode; detail?: string };
 
-export function StoryHero({ greeting, eyebrow, titleRef, title, lead, figures, aside }: {
+export function StoryHero({ greeting, eyebrow, titleRef, title, lead, figures, figuresLabel, aside }: {
   greeting?: ReactNode; eyebrow: string; titleRef?: Ref<HTMLHeadingElement>;
   /** One sentence; wrap the amount in <Key> to give it the brand's colour. */
   title: ReactNode;
   lead?: ReactNode;
   /** Key figures under the title, in their own row of equal columns: never a sentence stretched into numbers. */
   figures?: HeroFigure[];
+  /** The figures list's name for assistive technology (« Ma stack en chiffres »). */
+  figuresLabel?: string;
   /** The hero's action. */
   aside?: ReactNode;
 }) {
@@ -46,13 +47,13 @@ export function StoryHero({ greeting, eyebrow, titleRef, title, lead, figures, a
       <p className={styles.eyebrow}>{greeting && <span data-greeting="">{greeting}</span>}{greeting && <span aria-hidden="true"> · </span>}<span>{eyebrow}</span></p>
       <h1 ref={titleRef} tabIndex={-1} className={styles.premise}>{title}</h1>
       {lead && <p className={styles.after}>{lead}</p>}
-      {figures && figures.length > 0 && <dl className={styles.figures} style={{ "--n": figures.length } as CSSProperties}>
-        {figures.map((figure) => <div key={figure.id} className={styles.figureCell}>
-          <dt className={styles.figureLabel}>{figure.label}</dt>
-          <dd className={styles.figureValue}>{figure.value}</dd>
-          {figure.detail && <dd className={styles.figureDetail}>{figure.detail}</dd>}
-        </div>)}
-      </dl>}
+      {figures && figures.length > 0 && <ul className={styles.figures} aria-label={figuresLabel}>
+        {figures.map((figure) => <li key={figure.id} className={styles.figureCell}>
+          {figure.value && <span className={styles.figureValue}>{figure.value}</span>}
+          {figure.label && <span className={styles.figureLabel}>{figure.label}</span>}
+          {figure.detail && <span className={styles.figureDetail}>{figure.detail}</span>}
+        </li>)}
+      </ul>}
       {aside && <div className={styles.afterRow}>{aside}</div>}
     </header>
   );

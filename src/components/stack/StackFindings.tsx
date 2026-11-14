@@ -27,7 +27,6 @@ const TRADE_NAMES: Record<(typeof CORE_TRADES)[number], [string, string]> = {
 };
 import { Section, SectionHead } from "@/ds/Toolbar/Toolbar";
 import Button, { TextButton } from "@/ds/Button/Button";
-import { NoticeRows } from "@/ds/Notice/Notice";
 import { trackEvent } from "@/lib/analytics";
 import { Plus } from "@/lib/icons";
 import { useNavigate } from "react-router-dom";
@@ -379,12 +378,14 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         lead={monthly ? undefined
           : toolCount === 1 ? t("Il en faut au moins deux pour parler de stack.", "It takes at least two to call it a stack.") : undefined}
         // The key figures (M01, 14/11/2026: « architecture d'information »): their own row, one rule for each.
+        figuresLabel={t("Ma stack en chiffres", "My stack in figures")}
         figures={monthly ? [
-          { id: "year", label: t("Par an", "A year"), value: <Amount size="figure" value={yearly ?? ""} /> },
-          ...(heroWork ? [{ id: "work", label: t("Temps de travail", "Working time"), value: <Amount size="figure" value={heroWork} unit={t("/mois", "/mo")} />,
+          { id: "year", label: t("par an", "a year"), value: <Amount value={yearly ?? ""} /> },
+          ...(composition ? [{ id: "made", label: composition.replace(/\.$/, "").replace(/^D/, "d").replace(/^O/, "o"), value: null }] : []),
+          ...(heroWork ? [{ id: "work", label: t("de votre travail par mois", "of your work a month"), value: <Amount value={heroWork} />,
             detail: profileRate ? t(`à ${profileRate.split(" · ")[0]}`, `at ${profileRate.split(" · ")[0]}`) : undefined }] : []),
-          ...(saved > 0 ? [{ id: "saved", label: t("Économisé", "Saved"), value: <Amount size="figure" tone="gain" value={`−${format(Math.round(saved))}`} unit={t("/mois", "/mo")} />,
-            detail: t("grâce à vos décisions", "thanks to your decisions") }] : []),
+          ...(saved > 0 ? [{ id: "saved", label: t("par mois grâce à vos décisions", "a month thanks to your decisions"), value: <Amount tone="gain" value={`−${format(Math.round(saved))}`} /> }] : []),
+          ...(converted ? [{ id: "rate", label: "", value: null, detail: t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`) }] : []),
         ] : undefined}
         // One place per thing (M01, 14/11/2026): the hero keeps one action; the trade goes to the stack tile,
         // the day rate to the budget tile, the price count to the budget tile's button.
@@ -420,12 +421,16 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       ][done];
       return <Bento compact label={t("Ma stack en bref", "My stack at a glance")}>
         <BentoRow>
-          <Tile span={7} label={t(`État de la stack · ${done} étape${done > 1 ? "s" : ""} sur ${checks.length}`, `State of the stack · ${done} of ${checks.length} steps`)} tone={done < checks.length ? "question" : "tile"}
-            statement={<Key tone={done === checks.length ? "gain" : done === 0 ? "overlap" : "brand"}>{level[0]}</Key>}
+          {/* Tile rules of the site (DESIGN_DECISIONS 11/11): label in 12 capitals, the fact is a figure in 42, one line under. */}
+          <Tile span={7} label={`${t("État de la stack", "State of the stack")} · ${level[0]}`} tone={done < checks.length ? "question" : "tile"}
+            statement={<><Key tone={done === checks.length ? "gain" : done === 0 ? "overlap" : "brand"}>{done}</Key>{t(` étape${done > 1 ? "s" : ""} sur ${checks.length}`, ` of ${checks.length} steps`)}</>}
             status={{ text: level[1], done: done === checks.length }}
-            footer={<NoticeRows rows={checks.map((check) => ({ id: check.id, label: check.done ? `✓ ${check.label}` : check.label, action: check.done ? null : check.action }))} />} />
+            footer={<ul style={{ display: "grid", gap: "var(--tt-space-2)", margin: 0, padding: 0, listStyle: "none" }}>
+              {checks.map((check) => <li key={check.id} style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "var(--tt-space-3)" }}>
+                <span>{check.done ? `✓ ${check.label}` : check.label}</span>{!check.done && check.action}</li>)}
+            </ul>} />
           <Tile span={5} label={t("Ma stack", "My stack")}
-            statement={fr ? <>{toolCount} outils, <Key>{coveredCount} métier{coveredCount > 1 ? "s" : ""}</Key> sur {CORE_TRADES.length}</> : <>{toolCount} tools, <Key>{coveredCount} trade{coveredCount > 1 ? "s" : ""}</Key> of {CORE_TRADES.length}</>}
+            statement={<><Key>{coveredCount}</Key>{t(` métier${coveredCount > 1 ? "s" : ""} sur ${CORE_TRADES.length}`, ` of ${CORE_TRADES.length} trades`)}</>}
             status={{ text: <span style={{ display: "flex", flexWrap: "wrap", gap: 6 }} aria-label={t("Métiers couverts", "Trades covered")}>
               {CORE_TRADES.map((id) => <Tag key={id} tone={covered.includes(id) ? "ok" : "neutral"}>{covered.includes(id) ? "✓ " : ""}{t(...TRADE_NAMES[id])}</Tag>)}</span> }}
             footer={<span style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>{logos}

@@ -52,27 +52,29 @@
   max-width: 60ch;
 }
 
-/* The hero's key figures (M01): equal columns, the same three lines in each (label, figure, detail), one
-   rule repeated. On a narrow screen each figure becomes a row: its label and detail on the left, the figure right. */
+/* The hero's key facts (M01): one short line under the premise, never a second wall of big numbers
+   (« une bande courte »). Each fact is its figure in ink, then a few words; no rule, no box, a gap between. */
 .figures {
-  display: grid;
-  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
-  gap: var(--tt-space-6);
-  width: min(100%, 760px);
-  margin: var(--tt-space-2) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--tt-space-1) var(--tt-space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .figureCell {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  align-content: start;
-  gap: var(--tt-space-1);
-  padding-top: var(--tt-space-3);
-  border-top: var(--tt-hairline-w) solid var(--tt-line);
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--tt-space-1);
 }
 
 .figureLabel {
-  composes: eyebrow from "../atoms.module.css";
+  color: var(--tt-ink);
+  font: var(--tt-text-font);
+  letter-spacing: var(--tt-text-tracking);
 }
 
 .figureValue {
@@ -84,25 +86,6 @@
   color: var(--tt-ink);
   font: var(--tt-note-font);
   letter-spacing: var(--tt-note-tracking);
-}
-
-@container (width < 520px) {
-  .figures {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .figureCell {
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    padding-block: var(--tt-space-3);
-  }
-
-  .figureValue {
-    grid-row: 1 / span 2;
-    grid-column: 2;
-    align-self: center;
-  }
 }
 
 .afterRow {
