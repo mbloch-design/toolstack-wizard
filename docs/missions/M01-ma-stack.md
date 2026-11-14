@@ -64,7 +64,17 @@ Observé en local le 14/11/2026 avec Notion, Figma et Slack, et sur ta capture.
 - **H2.** Une seule file de questions (« 1 sur N ») suffit, sans badges dans la grille.
 - **H3.** Regrouper par domaine n'aide qu'à partir d'environ 6 outils. En dessous, une liste simple se lit mieux.
 
-## 4. Conception — parcours cible (proposition, révisée « comprendre d'abord »)
+## 4. Conception — validée dans son principe le 14/11 (bilan, carte, décision)
+
+La page suit le chemin « constat → compréhension → décision ». Les trois directions esquissées le 14/11 se complètent, dans cet ordre :
+
+**1. Le bilan (en haut, la promesse).** Une phrase de diagnostic, puis ses constats : « 4 outils. Deux font la même chose, et rien ne facture. » La valeur se lit en trois secondes.
+
+**2. La carte (au milieu, la preuve).** La stack est rangée par métier (créer, organiser, communiquer, facturer…), avec le rôle de chaque outil en une ligne et les métiers vides bien visibles. Elle remplace la grille actuelle et ses badges « À vérifier » ou « Freemium ».
+
+**3. Un pas à la fois (au moment d'agir).** Chaque constat du bilan devient une décision, posée une à la fois : « Figma et Canva, vous gardez les deux ? ». La décision est réversible. Le prix n'apparaît qu'ici, quand il aide à trancher.
+
+### Détail par état (proposition précédente, à reprendre dans les maquettes)
 
 Trois états de la page. Le rôle de chaque outil passe devant, le prix derrière.
 
