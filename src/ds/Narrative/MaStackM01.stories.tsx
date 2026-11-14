@@ -1,23 +1,26 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { formatAmount } from "@/lib/currencyRates";
-import { FolderKanban, MessagesSquare, Palette, Receipt } from "@/lib/icons";
+import { Plus } from "@/lib/icons";
 import Page from "../Page/Page";
 import Logo from "../Logo/Logo";
-import { linkClass, LinkArrow } from "../Button/Button";
+import Button, { linkClass, LinkArrow } from "../Button/Button";
 import Chip, { Chips } from "../Chip/Chip";
 import Choice, { Choices } from "../Choice/Choice";
 import Decision from "../Decision/Decision";
 import MediaCard, { MediaCards } from "../MediaCard/MediaCard";
-import { PlaceTile, PlaceTiles } from "../Catalog/Catalog";
+import { FigureCard, FigureCards } from "../Catalog/Catalog";
+import { NoticeRows } from "../Notice/Notice";
+import Split from "../Split/Split";
+import ToolCard, { ToolCards, ToolGroup, ToolGroups } from "../ToolCard/ToolCard";
 import { SearchField } from "../ToolSearch/ToolSearch";
 import { Section, SectionHead } from "../Toolbar/Toolbar";
 import { Key, StoryHero } from "./Narrative";
 
 /*
  * Mission M01 (docs/missions/M01-ma-stack.md), 14/11/2026: the page reads « constat → compréhension → décision ».
- * 1. Le bilan: one sentence that says what the stack does well and where it falls short.
- * 2. La carte: the stack by trade, each tool's role, the empty trades in plain sight.
+ * A dashboard first (14/11, Michael: « on doit voir des éléments de présentation de ton stack »): the stack in figures,
+ * where the budget goes, what to look at, every tool with its role.
  * 3. Un pas à la fois: each finding becomes one decision; the price only shows up there.
  * Built only from the design system; proposal to review, nothing wired to the page yet.
  */
@@ -31,24 +34,67 @@ const tool = (name: string, slug: string) => ({ id: slug, name, slug });
 const faces = (...tools: [string, string][]) => <>{tools.map(([name, slug]) => <Logo key={slug} tool={tool(name, slug)} size={24} localOnly />)}</>;
 const href = (id: string) => (className: string, content: React.ReactNode) => <a className={className} href={`#${id}`}>{content}</a>;
 
-/** La carte: one tile per trade; a trade nobody covers stays on the map, so the gap is seen. */
-function Map({ lang, decided }: { lang: Lang; decided: boolean }) {
+/** The tools of the example stack, as the dashboard reads them. */
+type Item = { name: string; slug: string; monthly: number; area: "create" | "organise" | "talk"; role: [string, string]; overlap?: boolean };
+const AREAS = { create: { fr: "Créer", en: "Create", color: "var(--tt-area-2)" }, organise: { fr: "Organiser", en: "Organize", color: "var(--tt-area-1)" }, talk: { fr: "Communiquer", en: "Communicate", color: "var(--tt-area-3)" } };
+const STACK: Item[] = [
+  { name: "Figma", slug: "figma", monthly: 15, area: "create", role: ["Maquettes et interfaces", "Mock-ups and interfaces"], overlap: true },
+  { name: "Canva", slug: "canva", monthly: 11.99, area: "create", role: ["Visuels réseaux sociaux", "Social media visuals"], overlap: true },
+  { name: "Notion", slug: "notion", monthly: 0, area: "organise", role: ["Notes, projets et wiki client", "Notes, projects and client wiki"] },
+  { name: "Slack", slug: "slack", monthly: 0, area: "talk", role: ["Échanges avec vos clients", "Talking with your clients"] },
+];
+
+/** The dashboard: the stack in figures, where the money goes, what to look at, then every tool. */
+function Dashboard({ lang, decided }: { lang: Lang; decided: boolean }) {
+  const items = decided ? STACK.filter((item) => item.slug !== "canva").map((item) => ({ ...item, overlap: false })) : STACK;
+  const monthly = items.reduce((sum, item) => sum + item.monthly, 0);
+  const areas = (Object.keys(AREAS) as Item["area"][]).map((id, index) => ({ id, label: t(lang, AREAS[id].fr, AREAS[id].en), color: `var(--tt-area-${index + 1})`,
+    tools: items.filter((item) => item.area === id).map((item) => ({ id: item.slug, name: item.name, slug: item.slug, amount: item.monthly })) }))
+    .map((area) => ({ ...area, amount: area.tools.reduce((sum, tool) => sum + tool.amount, 0) }));
+  const watch = [
+    ...(decided ? [] : [{ id: "overlap", label: t(lang, "Figma et Canva font tous deux des visuels", "Figma and Canva both make visuals"), action: <a className={linkClass()} href="#m01-next">{t(lang, "Décider", "Decide")}<LinkArrow /></a> }]),
+    { id: "gap", label: t(lang, "Aucun outil pour facturer", "No tool to invoice"), action: <a className={linkClass()} href="#m01-ideas">{t(lang, "Voir des pistes", "See options")}<LinkArrow /></a> },
+  ];
   return (
-    <Section labelledBy="m01-map">
-      <SectionHead title={t(lang, "Ce que votre stack sait faire", "What your stack can do")} titleId="m01-map"
-        note={t(lang, "Vos outils rangés par métier, avec ce que chacun fait pour vous.", "Your tools by trade, with what each one does for you.")} />
-      <PlaceTiles label={t(lang, "Vos métiers", "Your trades")}>
-        <PlaceTile icon={<Palette />} name={t(lang, "Créer", "Create")} faces={decided ? faces(["Figma", "figma"]) : faces(["Figma", "figma"], ["Canva", "canva"])}
-          detail={decided ? t(lang, "Figma : maquettes et interfaces", "Figma: mock-ups and interfaces") : t(lang, "Figma : maquettes · Canva : visuels réseaux", "Figma: mock-ups · Canva: social visuals")}
-          note={decided ? undefined : t(lang, "Deux outils pour la même tâche ?", "Two tools for one job?")} renderLink={href("create")} />
-        <PlaceTile icon={<FolderKanban />} name={t(lang, "Organiser", "Organise")} faces={faces(["Notion", "notion"])}
-          detail={t(lang, "Notion : notes, projets et wiki client", "Notion: notes, projects and client wiki")} renderLink={href("organise")} />
-        <PlaceTile icon={<MessagesSquare />} name={t(lang, "Communiquer", "Communicate")} faces={faces(["Slack", "slack"])}
-          detail={t(lang, "Slack : échanges avec vos clients", "Slack: talking with your clients")} renderLink={href("communicate")} />
-        <PlaceTile icon={<Receipt />} name={t(lang, "Facturer", "Invoice")}
-          detail={t(lang, "Aucun outil pour l'instant", "No tool yet")} note={t(lang, "Voir des pistes", "See options")} renderLink={href("invoice")} />
-      </PlaceTiles>
-    </Section>
+    <Page rhythm="chapters">
+      <Page group>
+        <StoryHero eyebrow={t(lang, "Ma stack", "My stack")}
+          title={lang === "fr" ? <>{items.length} outils, <Key>{money(lang, monthly)}</Key> par mois.</> : <>{items.length} tools, <Key>{money(lang, monthly)}</Key> a month.</>}
+          lead={decided ? t(lang, "Un outil par métier. Il reste à couvrir la facturation.", "One tool per trade. Invoicing is still to cover.")
+            : t(lang, "Deux outils font la même chose, et rien ne facture.", "Two tools do the same job, and nothing invoices.")}
+          aside={<Button variant="raised" icon={<Plus aria-hidden />}>{t(lang, "Ajouter un outil", "Add a tool")}</Button>} />
+        <FigureCards label={t(lang, "Votre stack en chiffres", "Your stack in figures")}>
+          <FigureCard figure={String(items.length)} name={t(lang, "Outils", "Tools")} detail={t(lang, "3 métiers couverts", "3 trades covered")} renderLink={href("tools")} />
+          <FigureCard figure={money(lang, Math.round(monthly))} unit={t(lang, "/mois", "/mo")} name={t(lang, "Budget mensuel", "Monthly budget")} detail={t(lang, `${money(lang, Math.round(monthly * 12))} par an`, `${money(lang, Math.round(monthly * 12))} a year`)} renderLink={href("budget")} />
+          <FigureCard figure={decided ? "0" : "1"} name={t(lang, "Doublon possible", "Possible overlap")} detail={decided ? t(lang, "Tout est clair", "All clear") : "Figma · Canva"} renderLink={href("m01-next")} />
+          <FigureCard figure="1" name={t(lang, "Métier non couvert", "Trade not covered")} detail={t(lang, "Facturer", "Invoicing")} renderLink={href("m01-ideas")} />
+        </FigureCards>
+      </Page>
+
+      <Section labelledBy="m01-budget">
+        <SectionHead title={t(lang, "Où va votre budget", "Where your budget goes")} titleId="m01-budget" />
+        <Split lang={lang} areas={areas} format={(n) => money(lang, n)} unpriced={[]} rateDate={null} localLogosOnly />
+      </Section>
+
+      <Section labelledBy="m01-watch">
+        <SectionHead title={t(lang, "À regarder", "Worth a look")} titleId="m01-watch" />
+        <NoticeRows rows={watch} />
+      </Section>
+
+      <Section labelledBy="m01-tools">
+        <SectionHead title={t(lang, "Mes outils", "My tools")} titleId="m01-tools" note={t(lang, "Ce que chacun fait pour vous.", "What each one does for you.")} />
+        <ToolGroups label={t(lang, "Mes outils", "My tools")} layout="list" grouped editing={false}>
+          {(Object.keys(AREAS) as Item["area"][]).map((id) => { const tools = items.filter((item) => item.area === id); return tools.length > 0 &&
+            <ToolGroup key={id} label={t(lang, AREAS[id].fr, AREAS[id].en)} color={AREAS[id].color} note={tools.map((item) => `${item.name} : ${t(lang, item.role[0], item.role[1])}`).join(" · ")}>
+              <ToolCards layout="list">{tools.map((item) => <ToolCard key={item.slug} lang={lang} tool={{ id: item.slug, name: item.name, slug: item.slug }}
+                amount={item.monthly === 0 ? t(lang, "Gratuit", "Free") : money(lang, item.monthly)} monthly={item.monthly > 0} status={item.overlap ? "overlap" : "ok"} onOpen={() => {}} onRemove={() => {}} localLogosOnly />)}</ToolCards>
+            </ToolGroup>; })}
+        </ToolGroups>
+      </Section>
+
+      {!decided && <NextDecision lang={lang} />}
+      <Next lang={lang} />
+    </Page>
   );
 }
 
@@ -56,7 +102,7 @@ function Map({ lang, decided }: { lang: Lang; decided: boolean }) {
 function NextDecision({ lang }: { lang: Lang }) {
   return (
     <Section labelledBy="m01-next">
-      <SectionHead title={t(lang, "Votre prochaine décision", "Your next decision")} titleId="m01-next" />
+      <SectionHead title={t(lang, "Votre prochaine décision", "Your next decision")} titleId="m01-next" note={t(lang, "Figma et Canva font tous deux des visuels.", "Figma and Canva both make visuals.")} />
       <Decision lang={lang} kind="pair" eyebrow={t(lang, "Créer", "Create")} step={{ current: 1, total: 2 }}
         title={t(lang, "Figma et Canva, vous gardez les deux ?", "Figma and Canva, keep both?")}
         detail={t(lang, "Les deux font des visuels. Figma conçoit des interfaces, Canva produit vite pour les réseaux. Si vous ne faites que l'un des deux, un seul suffit.",
@@ -117,38 +163,9 @@ function Empty({ lang }: { lang: Lang }) {
   );
 }
 
-/** 2. Bilan: the finding first, the map that proves it, the one decision that follows. */
-function Review({ lang }: { lang: Lang }) {
-  return (
-    <Page rhythm="chapters">
-      <StoryHero eyebrow={t(lang, "Ma stack · le bilan", "My stack · the review")}
-        title={lang === "fr"
-          ? <>4 outils. <Key tone="overlap">Deux font la même chose</Key>, et <Key>rien ne facture</Key>.</>
-          : <>4 tools. <Key tone="overlap">Two do the same job</Key>, and <Key>nothing invoices</Key>.</>}
-        lead={t(lang, "Voici ce que votre stack sait faire, et les deux points à regarder.", "Here's what your stack can do, and the two things to look at.")}
-        aside={<a className={linkClass()} href="#m01-next">{t(lang, "Voir la décision", "See the decision")}<LinkArrow /></a>} />
-      <Map lang={lang} decided={false} />
-      <NextDecision lang={lang} />
-      <Next lang={lang} />
-    </Page>
-  );
-}
-
-/** 3. Après décision: the review says what changed; the remaining gap leads on. */
-function Decided({ lang }: { lang: Lang }) {
-  return (
-    <Page rhythm="chapters">
-      <StoryHero eyebrow={t(lang, "Ma stack · le bilan", "My stack · the review")}
-        title={lang === "fr"
-          ? <>3 outils, <Key tone="gain">un par métier</Key>. Il reste à <Key>facturer</Key>.</>
-          : <>3 tools, <Key tone="gain">one per trade</Key>. Invoicing is left.</>}
-        lead={t(lang, `Vous avez gardé Figma : ${money(lang, 11.99)} de moins par mois. Décision modifiable à tout moment.`,
-          `You kept Figma: ${money(lang, 11.99)} less a month. You can change this decision anytime.`)} />
-      <Map lang={lang} decided />
-      <Next lang={lang} />
-    </Page>
-  );
-}
+/** 2. Bilan: the dashboard with one overlap and one gap. 3. After the decision: the same dashboard, cleared. */
+function Review({ lang }: { lang: Lang }) { return <Dashboard lang={lang} decided={false} />; }
+function Decided({ lang }: { lang: Lang }) { return <Dashboard lang={lang} decided />; }
 
 export const Vide: Story = { render: (_a, { globals: { lang } }) => <Empty lang={lang} /> };
 export const Bilan: Story = { render: (_a, { globals: { lang } }) => <Review lang={lang} /> };
