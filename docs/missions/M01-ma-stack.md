@@ -179,3 +179,71 @@ La description commerciale ne sert que de dernier recours, et jamais coupée.
 2. **Les cibles des KPI.** Le lot 0 montre un échantillon trop petit (48 personnes). Proposition : des cibles en nombre de personnes, l'exclusion du trafic interne dans GA4, et les essais R9 comme mesure principale de la compréhension.
 3. **Les essais avec de vraies personnes (R9).** On les prévoit à la fin de cette mission, ou on les laisse de côté ?
 4. **Ce qui ne va pas pour toi aujourd'hui.** Ta capture et ton message disent que la logique des user stories n'est pas bonne. Dis-moi ce que tu attends, pour que la section 4 parte de ton intention et pas seulement de mon analyse.
+
+## Conception v2 — la page entière (14/11/2026)
+
+### 1. Ce que la page doit faire
+
+Répondre à trois questions, dans cet ordre et une seule fois chacune :
+
+1. **Qu'est-ce que j'ai ?** Les outils, ce que chacun fait, et ce que tout ça coûte.
+2. **Est-ce que c'est en ordre ?** L'état de la stack, de « En vrac » à « Stack au top ».
+3. **Que faire maintenant ?** Une seule action à la fois, à l'endroit où on la lit.
+
+Tout bloc qui ne répond à aucune des trois disparaît. Tout bloc qui répond à une question déjà traitée fusionne avec celui qui la traite.
+
+### 2. L'ordre de la page
+
+| # | Bloc | Question | Contenu | Action |
+|---|---|---|---|---|
+| 1 | En-tête | 1 | Titre : « N outils, X € par mois. » Une phrase : « Soit Y € par an, ou Z de votre travail chaque mois. » | Explorer autour de ma stack (secondaire) |
+| 2 | État de la stack | 2 | Niveau + « N étapes sur 3 » + 3 lignes (doublons, prix, essentiel), cochées ou avec leur bouton | Le bouton de l'étape ouverte |
+| 3 | Ma stack | 1 | « N outils, M métiers sur 5 », les 5 métiers nommés (✓ ou gris), les logos | Ajouter un outil (seule action principale de la page) |
+| 4 | Étape en cours | 3 | La décision de la première étape ouverte : départager, choisir une formule… Elle s'ouvre **juste sous l'état**, pas plus bas dans la page | Les choix de la décision, « Plus tard » |
+| 5 | Mes outils | 1 | La liste par métier, le rôle de chaque outil, son prix, le badge « Doublon » | Trier, grille/liste, modifier |
+| 6 | Où va votre budget | 1 | La répartition par métier, en euros | Aucune |
+| 7 | Et pour la suite ? | 3 | Pistes reliées à un manque d'abord (« Pour facturer »), puis les autres | Ajouter à ma stack |
+
+### 3. Ce qui disparaît ou fusionne
+
+- **L'ancien bento** (« Ce qui reste à préciser », « Ce qui sert vraiment », « Résultat ») :
+  - la décision devient le bloc 4 ;
+  - l'économie réalisée passe dans l'en-tête (« −26 €/mois depuis vos décisions ») ;
+  - le jeu « Ce qui sert vraiment » devient une étape bonus, proposée seulement une fois les 3 étapes réglées (« Stack au top… et vraiment utilisée ? »).
+- **Les filtres « À vérifier » et « Doublons » de Mes outils** : l'état de la stack les porte déjà. Il ne reste que le tri et l'affichage.
+- **Le badge « À vérifier » et l'étiquette « Freemium »** sur les cartes : remplacés par le rôle, et le prix s'affiche seulement s'il est connu.
+- **Le compteur « 2 outils sur 3 renseignés » de l'en-tête** : déjà retiré, c'est l'étape « prix ».
+
+### 4. Les états de la page
+
+| État | Condition | En-tête | État de la stack | Ma stack | Étape en cours | Budget | Pistes |
+|---|---|---|---|---|---|---|---|
+| Vide | 0 outil | « Voyez ce que vos outils font pour vous » + recherche | — | — | — | — | Outils fréquents |
+| Démarrage | 1 outil | « 1 outil. Il en faut au moins deux pour parler de stack. » | — | Oui | — | — | Autour de cet outil |
+| En vrac | 0 étape réglée | Titre sans montant si aucun prix | Orange, 3 boutons | Oui | Ouverte | — | Manque d'abord |
+| Ça prend forme / Presque | 1 ou 2 étapes | Montant partiel | Bleu, lignes cochées | Oui | Ouverte | Si 2 métiers payants ou plus | Manque d'abord |
+| Stack au top | 3 étapes | Montant + économie réalisée | Vert, une ligne : « Rangée, chiffrée, complète » + bonus usage | Oui | — | Oui | Autour de la stack |
+
+Un bloc sans rien à dire ne s'affiche pas : jamais de tuile pour dire que tout va bien, une ligne suffit.
+
+### 5. Règles de visualisation
+
+- **Un graphique seulement pour une quantité** : la répartition du budget, en euros, avec chaque part nommée.
+- **Un état ou une présence s'écrivent** : étapes cochées, métiers nommés. Pas d'anneau, de jauge ni d'arc sans étiquette.
+- **Un chiffre est toujours exact et dit son unité** (« 42 €/mois », « 44 min ») ; un chiffre arrondi le dit (« ≈ »).
+- **La couleur suit le sens, jamais la décoration** : vert = réglé, orange = à régler, bleu = la marque. Elle ne porte jamais seule l'information : il y a toujours une coche ou un mot.
+
+### 6. Règles de texte et d'humour
+
+- **Une phrase par bloc**, au plus une touche d'humour, toujours sur la situation, jamais sur la personne.
+- Le chiffre d'abord, la blague ensuite : « 0 € facturés ce mois-ci. Vos clients adorent. »
+- Aucun texte qui répète un autre bloc.
+
+### 7. Mesure (KPI)
+
+| Action | Événement | KPI |
+|---|---|---|
+| Ajouter un outil | `add_to_stack` | Activation |
+| Bouton d'une étape | `stack_step_click` (nouveau, avec l'étape) | Exploration |
+| Départager, choisir une formule | `stack_decision`, `stack_plan_pick` | Décision |
+| Niveau atteint | `stack_level` (nouveau, à chaque changement) | Part des stacks « au top » |
