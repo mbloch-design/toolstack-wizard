@@ -32,6 +32,14 @@
 
 .eyebrow {
   composes: eyebrow from "../atoms.module.css";
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 var(--tt-space-1);
+}
+
+.eyebrowAside {
+  margin-left: var(--tt-space-2);
 }
 
 /* The premise: one sentence in display. */

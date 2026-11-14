@@ -26,8 +26,8 @@
 .tradeIcon {
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--tt-r-round);
   background: transparent;
   outline: var(--tt-trade-off-dash);
@@ -43,8 +43,8 @@
 }
 
 .tradeIcon svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 /* Words never break (« mot coupé »): a short name in the note size, on one line. */
@@ -218,7 +218,26 @@
 
 .steps[data-layout="list"] .stepMark {
   grid-row: 1 / span 2;
+  grid-column: 1;
+  width: 32px;
+  height: 32px;
   margin-bottom: 0;
+}
+
+.steps[data-layout="list"] .stepMark svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+/* Each part has its cell: the name above, what it says under it, the action at the end of the line. */
+.steps[data-layout="list"] .stepName {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.steps[data-layout="list"] .stepNote {
+  grid-row: 2;
+  grid-column: 2;
 }
 
 .steps[data-layout="list"] .stepAction {
@@ -236,5 +255,110 @@
   .tradeAdd,
   .steps[data-layout="list"] .step {
     transition: none;
+  }
+}
+
+/* SpendBar: one bar cut into the tools, the ranked list under it, the unpriced tools waiting with their action. */
+.spend {
+  display: grid;
+  gap: var(--tt-gap-group);
+}
+
+.spendBar {
+  display: flex;
+  gap: var(--tt-hairline-w);
+  height: 12px;
+  overflow: hidden;
+  border-radius: var(--tt-r-pill);
+}
+
+.spendSegment {
+  flex: var(--g) 1 0;
+  min-width: 4px;
+  background: var(--c);
+  transform-origin: left;
+  animation: segment-grow var(--tt-dur-reveal) var(--tt-spring-card) both;
+  animation-delay: calc(var(--i) * var(--tt-cascade));
+}
+
+@keyframes segment-grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+.spendList {
+  display: grid;
+  gap: var(--tt-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.spendRow {
+  display: grid;
+  grid-template-columns: 8px 24px minmax(0, 1fr) auto 48px;
+  align-items: center;
+  gap: var(--tt-space-3);
+}
+
+.spendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--tt-r-round);
+  background: var(--c);
+}
+
+.spendName {
+  overflow: hidden;
+  color: var(--tt-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.spendAmount {
+  color: var(--tt-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+  font-variant-numeric: tabular-nums;
+}
+
+.spendShare {
+  color: var(--tt-meta);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.unpriced {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--tt-space-3);
+}
+
+.unpricedLabel {
+  composes: eyebrow from "../atoms.module.css";
+}
+
+.unpricedTools {
+  display: flex;
+  align-items: center;
+  gap: var(--tt-space-1);
+}
+
+.spendNote {
+  margin: 0;
+  color: var(--tt-meta);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spendSegment {
+    animation: none;
   }
 }

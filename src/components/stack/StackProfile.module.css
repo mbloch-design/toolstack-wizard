@@ -1,0 +1,38 @@
+/* The profile pill (M01): who the page is for, beside the eyebrow; a pencil shows it can be edited. */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tt-space-1);
+  height: 24px;
+  padding: 0 var(--tt-space-2);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile);
+  color: var(--tt-ink);
+  font: var(--tt-tag-chip-font);
+  letter-spacing: var(--tt-tag-chip-tracking);
+  text-transform: none;
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) ease;
+}
+
+.pill svg {
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
+  opacity: .5;
+  transition: opacity var(--tt-dur-state) ease;
+}
+
+.pill:hover {
+  background: var(--tt-line);
+}
+
+.pill:hover svg,
+.pill:focus-visible svg {
+  opacity: 1;
+}
+
+.pill:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}

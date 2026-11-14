@@ -27,7 +27,7 @@ export function firstNameOf(display: string | null | undefined): string | null {
   const first = clean.split(" ")[0];
   return first.charAt(0).toLocaleUpperCase() + first.slice(1);
 }
-const TRADE_LABELS: Record<Trade, [string, string]> = {
+export const TRADE_LABELS: Record<Trade, [string, string]> = {
   dev: ["Développement", "Development"], designer: ["Design", "Design"], consultant: ["Conseil", "Consulting"],
   content: ["Création de contenu", "Content creation"], ops: ["Opérations", "Operations"], solo: ["Un peu de tout", "A bit of everything"],
 };

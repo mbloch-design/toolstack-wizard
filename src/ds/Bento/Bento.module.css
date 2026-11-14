@@ -71,6 +71,7 @@
   --tt-line: var(--tt-smoke-line);
   --tt-tile: var(--tt-smoke-veil);
   --tt-meta: var(--tt-smoke-ink);
+  --tt-brand: var(--tt-smoke-ink);
 
   background:
     var(--tt-smoke-light),
@@ -130,6 +131,8 @@
 .footer {
   margin-top: calc(var(--tt-space-4) - var(--tt-gap-item));
 }
+
+
 
 .status {
   composes: text from "../atoms.module.css";

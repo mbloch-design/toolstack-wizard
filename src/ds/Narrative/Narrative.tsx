@@ -14,8 +14,10 @@ import styles from "./Narrative.module.css";
 /** One key figure of the hero: a short label above, the figure, a detail under it (M01, 14/11/2026). */
 export type HeroFigure = { id: string; label: string; value: ReactNode; detail?: string; icon?: ReactNode };
 
-export function StoryHero({ greeting, eyebrow, titleRef, title, lead, figures, figuresLabel, aside }: {
+export function StoryHero({ greeting, eyebrow, eyebrowAside, titleRef, title, lead, figures, figuresLabel, aside }: {
   greeting?: ReactNode; eyebrow: string; titleRef?: Ref<HTMLHeadingElement>;
+  /** Next to the eyebrow, who the page is for (a profile pill the person can edit). */
+  eyebrowAside?: ReactNode;
   /** One sentence; wrap the amount in <Key> to give it the brand's colour. */
   title: ReactNode;
   lead?: ReactNode;
@@ -44,7 +46,7 @@ export function StoryHero({ greeting, eyebrow, titleRef, title, lead, figures, f
   return (
     <header ref={hero} className={styles.hero} data-hero="" data-pagehead="">
       <span className={styles.aura} aria-hidden="true" />
-      <p className={styles.eyebrow}>{greeting && <span data-greeting="">{greeting}</span>}{greeting && <span aria-hidden="true"> · </span>}<span>{eyebrow}</span></p>
+      <p className={styles.eyebrow}>{greeting && <span data-greeting="">{greeting}</span>}{greeting && <span aria-hidden="true"> · </span>}<span>{eyebrow}</span>{eyebrowAside && <span className={styles.eyebrowAside}>{eyebrowAside}</span>}</p>
       <h1 ref={titleRef} tabIndex={-1} className={styles.premise}>{title}</h1>
       {lead && <p className={styles.after}>{lead}</p>}
       {figures && figures.length > 0 && <ul className={styles.figures} aria-label={figuresLabel}>

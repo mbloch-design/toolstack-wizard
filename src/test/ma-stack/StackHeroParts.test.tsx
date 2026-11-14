@@ -51,7 +51,8 @@ describe("StackFindings", () => {
     });
     it("a converted figure says its reference rate", () => {
       const { container } = module([], { converted: true });
-      expect(container.querySelector('[data-card="price"]')?.textContent).toMatch(/taux de référence du/);
+      // M01: the reference rate is said with the amounts it converts, under « Où va l'argent ».
+      expect(container.querySelector('[data-card="split"]')?.textContent).toMatch(/taux de référence du/);
     });
     it("a saving is said in words, never only in colour", () => {
       const { container } = module([], { saved: 24 });

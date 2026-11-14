@@ -58,3 +58,42 @@ export function Checkpoints({ label, steps, layout = "row", progressLabel }: { l
     </div>
   );
 }
+
+export type SpendItem = { id: string; tool: LogoProps["tool"]; amount: number; color: string };
+
+/**
+ * Where the money goes, tool by tool (M01, 14/11/2026): one bar cut into the tools, each in its job's colour, so
+ * the shares read at a glance; then the ranked list (logo, name, amount, share). A single-slice ring said nothing.
+ * The tools without a price wait as small chips with the action that prices them.
+ */
+export function SpendBar({ label, items, format, unpriced = [], unpricedLabel, priceAction, note, localLogosOnly = false }: {
+  label: string; items: SpendItem[]; format: (amount: number) => string;
+  unpriced?: LogoProps["tool"][]; unpricedLabel?: string; priceAction?: ReactNode; note?: string; localLogosOnly?: boolean;
+}) {
+  const total = items.reduce((sum, item) => sum + item.amount, 0) || 1;
+  const share = (amount: number) => `${Math.round((amount / total) * 100)} %`;
+  return (
+    <div className={styles.spend}>
+      <span className={styles.spendBar} role="img" aria-label={`${label} : ${items.map((item) => `${item.tool.name} ${share(item.amount)}`).join(", ")}`}>
+        {items.map((item, index) => <span key={item.id} className={styles.spendSegment} style={{ "--c": item.color, "--g": item.amount, "--i": index } as CSSProperties} />)}
+      </span>
+      <ol className={styles.spendList} aria-label={label}>
+        {items.map((item) => (
+          <li key={item.id} className={styles.spendRow}>
+            <span className={styles.spendDot} style={{ "--c": item.color } as CSSProperties} aria-hidden="true" />
+            <Logo tool={item.tool} size={24} localOnly={localLogosOnly} />
+            <span className={styles.spendName}>{item.tool.name}</span>
+            <span className={styles.spendAmount}>{format(item.amount)}</span>
+            <span className={styles.spendShare}>{share(item.amount)}</span>
+          </li>
+        ))}
+      </ol>
+      {unpriced.length > 0 && <div className={styles.unpriced}>
+        <span className={styles.unpricedLabel}>{unpricedLabel}</span>
+        <span className={styles.unpricedTools}>{unpriced.slice(0, 6).map((tool) => <Logo key={tool.id} tool={tool} size={24} localOnly={localLogosOnly} />)}{unpriced.length > 6 && <span className={styles.more}>+{unpriced.length - 6}</span>}</span>
+        {priceAction}
+      </div>}
+      {note && <p className={styles.spendNote}>{note}</p>}
+    </div>
+  );
+}

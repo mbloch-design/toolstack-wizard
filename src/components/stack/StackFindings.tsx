@@ -38,7 +38,8 @@ import { Section, SectionHead } from "@/ds/Toolbar/Toolbar";
 import Button, { TextButton } from "@/ds/Button/Button";
 import { trackEvent } from "@/lib/analytics";
 import { Clock, Copy, Euro, LayoutGrid, FolderKanban, Globe, MessagesSquare, Palette, PiggyBank, Plus, Receipt, Wallet } from "@/lib/icons";
-import { Checkpoints, TradeMap } from "@/ds/StackBoard/StackBoard";
+import { Checkpoints, SpendBar, TradeMap } from "@/ds/StackBoard/StackBoard";
+import StackProfile from "@/components/stack/StackProfile";
 import { FigureCard, FigureCards } from "@/ds/Catalog/Catalog";
 import { useNavigate } from "react-router-dom";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
@@ -387,7 +388,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       {/* The hero of a dashboard (M01, 14/11/2026): the page's name and who it is for, its two actions, then the
           key figures, each said once and only here. The bento below explains them; it never repeats them. */}
       <StoryHero greeting={welcome?.greeting} titleRef={welcome?.titleRef}
-        eyebrow={[welcome?.eyebrow ?? t("Ma stack", "My stack"), profileTrade, profileRate?.split(" · ")[0]].filter(Boolean).join(" · ")}
+        eyebrow={welcome?.eyebrow ?? t("Ma stack", "My stack")} eyebrowAside={<StackProfile lang={fr ? "fr" : "en"} />}
         title={t("Ma stack", "My stack")}
         lead={toolCount === 1 ? t("Il en faut au moins deux pour parler de stack.", "It takes at least two to call it a stack.") : undefined}
         aside={<><Button variant="primary" icon={<Plus aria-hidden />} onClick={onAddTool}>{t("Ajouter un outil", "Add a tool")}</Button>{welcome?.secondary}</>} />
@@ -399,7 +400,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         const spendDetail = monthly
           ? [t(`${yearly}/an`, `${yearly}/yr`), heroWork && t(`${heroWork} de travail`, `${heroWork} of work`)].filter(Boolean).join(" · ")
           : t(`${unsure.length} prix à préciser`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} to confirm`);
-        return <div style={{ marginTop: "var(--tt-gap-group)" }}><FigureCards label={t("Ma stack en chiffres", "My stack in figures")}>
+        return <div style={{ marginTop: "calc(var(--tt-gap-head) + var(--tt-gap-item) * 2)", marginBottom: "calc(var(--tt-board-gap) - var(--tt-page-gap))" }}><FigureCards label={t("Ma stack en chiffres", "My stack in figures")}>
           <FigureCard icon={<Wallet />} figure={monthly ? format(Math.round(total)) : "?"} unit={monthly ? t("/mois", "/mo") : undefined} name={t("Dépense", "Spend")} detail={spendDetail} renderLink={go('[data-card="split"]')} />
           <FigureCard icon={<LayoutGrid />} visual={<span style={{ display: "flex" }}>{stackLogos.slice(0, 4).map((tool, index) => <span key={tool.id} style={{ marginLeft: index ? "var(--tt-logo-overlap)" : 0 }}><Logo tool={tool} size={24} /></span>)}</span>}
             figure={String(toolCount)} name={t("Outils", "Tools")} detail={composition ? composition.replace(/^(Dont|Of which) /, "").replace(/\.$/, "") : undefined} renderLink={go("#ms-all-title")} />
@@ -409,7 +410,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           <FigureCard icon={<PiggyBank />} tone={saved > 0 ? "gain" : "ink"} figure={saved > 0 ? `−${format(Math.round(saved))}` : format(0)} unit={t("/mois", "/mo")} name={t("Économisé", "Saved")}
             detail={saved > 0 ? t("par vos décisions", "by your decisions") : t("La tirelire attend son premier choix", "The piggy bank awaits your first call")} renderLink={go('[data-card="decision"]')} />
         </FigureCards>
-        {converted && <p style={{ margin: "var(--tt-space-2) 0 0", font: "var(--tt-note-font)", letterSpacing: "var(--tt-note-tracking)" }}>{t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`)}</p>}</div>;
+</div>;
       })()}
     </div>}
     {/* The dashboard (M01, 14/11/2026): four tiles, each a finding with its picture and the action that settles it.
@@ -445,18 +446,29 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           <Tile span={7} label={t("Vos métiers", "Your trades")} wash={CORE_TRADES.flatMap((id, index) => covered.includes(id) ? [`var(--tt-area-${index + 1})`] : []).slice(0, 1)}
             statement={<><Key>{coveredCount}</Key>{t(` sur ${CORE_TRADES.length}`, ` of ${CORE_TRADES.length}`)}</>}
             status={{ text: (() => { const missing = CORE_TRADES.find((id) => !covered.includes(id)); return missing ? t(...TRADE_JOKES[missing]) : t("Tout le métier est couvert. Rien ne dépasse.", "The whole job is covered. Nothing sticks out."); })(), done: coveredCount === CORE_TRADES.length }}
-            footer={<TradeMap label={t("Vos métiers", "Your trades")} addLabel={(name) => t(`Ajouter un outil pour ${name}`, `Add a tool for ${name}`)} onAdd={() => onAddTool()}
-              trades={CORE_TRADES.map((id) => ({ id, name: t(...TRADE_NAMES[id]), icon: TRADE_ICONS[id], tools: territories.find((territory) => territory.id === id)?.tools ?? [], color: `var(--tt-area-${CORE_TRADES.indexOf(id) + 1})` }))} />} />
+            footer={<div style={{ display: "grid", gap: "var(--tt-space-8)" }}><TradeMap label={t("Vos métiers", "Your trades")} addLabel={(name) => t(`Ajouter un outil pour ${name}`, `Add a tool for ${name}`)} onAdd={() => onAddTool()}
+              trades={CORE_TRADES.map((id) => ({ id, name: t(...TRADE_NAMES[id]), icon: TRADE_ICONS[id], tools: territories.find((territory) => territory.id === id)?.tools ?? [], color: `var(--tt-area-${CORE_TRADES.indexOf(id) + 1})` }))} />
+              {coveredCount < CORE_TRADES.length && <span><TextButton arrow onClick={onAddTool}>{t(`Compléter ma stack · ${CORE_TRADES.length - coveredCount} métier${CORE_TRADES.length - coveredCount > 1 ? "s" : ""} à couvrir`, `Complete my stack · ${CORE_TRADES.length - coveredCount} trade${CORE_TRADES.length - coveredCount > 1 ? "s" : ""} to cover`)}</TextButton></span>}
+            </div>} />
           <Tile span={5} label={`${t("À faire", "To do")} · ${level[0]}`} tone={done < checks.length ? "smoke" : "tile"}
             wash={[done === checks.length ? "var(--tt-live)" : done === 0 ? "var(--tt-overlap)" : "var(--tt-brand)"]}
             statement={done === checks.length ? <Key tone="gain">{t("Rien", "Nothing")}</Key> : <><Key tone={done === 0 ? "overlap" : "brand"}>{checks.length - done}</Key>{t(` étape${checks.length - done > 1 ? "s" : ""}`, ` step${checks.length - done > 1 ? "s" : ""}`)}</>}
-            status={{ text: level[1], done: done === checks.length }}
             footer={<Checkpoints layout="list" progressLabel={t(`${done} étape${done > 1 ? "s" : ""} sur ${checks.length} réglée${done > 1 ? "s" : ""}`, `${done} of ${checks.length} steps settled`)} label={t("Étapes", "Steps")} steps={checks.map((check) => ({ id: check.id, name: check.name, icon: check.icon, done: check.done, note: check.note, action: check.action }))} />} />
         </BentoRow>
-        {showSplit && <BentoRow>
-          <Tile span={12} card="split" label={t("Où va l'argent", "Where the money goes")}>{<Split bare dense lang={fr ? "fr" : "en"} format={format} unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id)).map((tool) => tool.name)} rateDate={converted ? rateDate : null}
-              areas={areas.map((area) => ({ id: area.id, label: area.label, color: area.color, amount: area.amount, tools: (area.tools || []).map((row) => ({ ...row.tool, amount: row.amount })) }))} />}</Tile>
-        </BentoRow>}
+        {spend.length >= 2 && (() => {
+          const colorOf = (id: string) => areas.find((area) => (area.tools || []).some((row) => row.tool.id === id))?.color ?? "var(--tt-brand)";
+          const top = spend[0], topShare = Math.round((top.amount / (total || 1)) * 100);
+          return <BentoRow>
+            <Tile span={12} card="split" label={t("Où va l'argent", "Where the money goes")}
+              statement={<><Key>{topShare}{"\u00a0"}%</Key>{t(` pour ${top.tool.name}`, ` for ${top.tool.name}`)}</>}
+              status={{ text: topShare >= 50 ? t("Il a le sens des priorités. Ou de l'addition.", "It knows its priorities. Or the bill.") : t("L'argent est bien réparti. Rien ne fait de l'ombre au reste.", "The money is well spread. Nothing overshadows the rest.") }}
+              footer={<SpendBar label={t("Répartition par outil", "Split by tool")} format={format}
+                items={spend.map((row) => ({ id: row.tool.id, tool: row.tool, amount: row.amount, color: colorOf(row.tool.id) }))}
+                unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id))} unpricedLabel={t("Sans prix, pas comptés", "No price, not counted")}
+                priceAction={<TextButton onClick={() => { const target = document.querySelector<HTMLElement>('[data-card="decision"]'); target?.scrollIntoView({ block: "center", behavior: "smooth" }); }}>{t("Renseigner", "Add prices")}</TextButton>}
+                note={converted ? t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`) : undefined} />} />
+          </BentoRow>;
+        })()}
       </Bento>;
     })()}
     {toolCount === 1 && !decision && <Bento label={t("Pour commencer", "To start")}><BentoRow><Starter lang={fr ? "fr" : "en"} tool={spend[0]?.tool || freeTools[0]} onAddTool={onAddTool} /></BentoRow></Bento>}
