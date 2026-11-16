@@ -133,6 +133,7 @@
   --tt-slab-shadow: var(--tt-slab-edge), 0 10px 24px -16px rgb(20 20 40 / 10%);
 
   box-shadow: var(--tt-slab-shadow);
+  text-shadow: var(--tt-on-glass);
 }
 
 /* The glass's own edge (M01): a 1 px rim in a gradient, in the slab's own colour where its light sits (lower left),
