@@ -47,7 +47,7 @@
   grid-template-rows: auto;
   align-content: start;
   gap: var(--tt-gap-group);
-  padding-block: var(--tt-space-5);
+  padding: var(--tt-space-8);
 }
 
 /* A tile's diffuse light (M01): its colours melt in from the top right, very soft, never under the words' contrast. */
@@ -64,8 +64,9 @@
     var(--tt-bg);
 }
 
-/* Smoked glass (M01, « la façon dont la lumière réagit à l'intérieur »): the floating bar's glass, a light caught at
-   the top left, the tile's own colour glowing up from the bottom right, a bright edge on top. Words turn light. */
+/* Smoked glass (M01, « la façon dont la lumière réagit à l'intérieur »): a dark, translucent glass; coloured lights
+   blur behind it (the tile's colour from the bottom right, the brand from the top left); a bright top edge and a slanting
+   sheen catch the light. Words turn light. */
 .tile[data-tone="smoke"] {
   --tt-ink: var(--tt-smoke-ink);
   --tt-line: var(--tt-smoke-line);
@@ -73,20 +74,44 @@
   --tt-meta: var(--tt-smoke-ink);
   --tt-brand: var(--tt-smoke-ink);
 
-  background:
-    var(--tt-smoke-light),
-    radial-gradient(90% 80% at 100% 100%, color-mix(in oklch, var(--w1, var(--tt-brand)) 38%, transparent), transparent 70%),
-    var(--tt-smoke);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--tt-smoke);
   box-shadow: var(--tt-smoke-tile-shadow);
   color: var(--tt-smoke-ink);
 }
 
-/* Light rising from the bottom of a white tile (M01, the site's references): two colours, very diffuse, meeting
-   under the content; the tile stays white where the words are. */
+.tile[data-tone="smoke"]::before {
+  position: absolute;
+  inset: -30%;
+  z-index: -2;
+  background:
+    radial-gradient(45% 40% at 90% 95%, var(--w1, var(--tt-overlap)), transparent 70%),
+    radial-gradient(40% 34% at 10% 6%, var(--tt-area-3), transparent 70%),
+    radial-gradient(34% 30% at 62% 48%, var(--tt-area-1), transparent 70%);
+  filter: blur(var(--tt-ambient-blur));
+  opacity: .95;
+  content: "";
+}
+
+.tile[data-tone="smoke"]::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--tt-smoke-sheen);
+  content: "";
+  pointer-events: none;
+}
+
+/* Light rising from the bottom of a white tile (M01, the site's references): two colours, diffuse but present,
+   meeting under the content; the tile stays white where the words are. */
 .tile[data-bloom] {
   background:
-    radial-gradient(65% 60% at 25% 115%, color-mix(in oklch, var(--b1) 55%, transparent), transparent 72%),
-    radial-gradient(60% 55% at 80% 120%, color-mix(in oklch, var(--b2) 50%, transparent), transparent 72%),
+    radial-gradient(75% 70% at 22% 118%, color-mix(in oklch, var(--b1) 78%, transparent), transparent 70%),
+    radial-gradient(70% 65% at 82% 122%, color-mix(in oklch, var(--b2) 72%, transparent), transparent 70%),
+    radial-gradient(90% 45% at 50% 110%, color-mix(in oklch, var(--b1) 30%, white), transparent 80%),
     var(--tt-bg);
   box-shadow: var(--tt-row-rest);
 }
@@ -286,7 +311,7 @@
   width: 44px;
   height: 44px;
   border-radius: var(--tt-r-field);
-  background: var(--tt-glass-icon);
+  background: linear-gradient(160deg, color-mix(in oklch, var(--g) 50%, white), var(--g));
   box-shadow: var(--tt-glass-icon-edge);
   color: var(--tt-on-color);
 }

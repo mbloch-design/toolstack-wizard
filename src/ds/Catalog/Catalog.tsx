@@ -200,7 +200,9 @@ export function FigureCards({ label, children }: { label: string; children: Reac
   return <ul className={styles.figureCards} aria-label={label}>{children}</ul>;
 }
 
-export function FigureCard({ figure, unit, name, detail, icon, visual, tone = "ink", renderLink }: { figure: string; unit?: string; name: string; detail?: string;
+export function FigureCard({ figure, unit, name, detail, icon, visual, tone = "ink", centered = false, renderLink }: { figure: string; unit?: string; name: string; detail?: string;
+  /** The reference layout of a figure (M01): pictogram on top, the figure large and centred, a short caption. */
+  centered?: boolean;
   /** A pictogram in a pastille, top left: what the figure is about, seen before it is read (M01). */
   icon?: ReactNode;
   /** A small picture, top right: the logos it counts, two tools face to face… */
@@ -208,6 +210,12 @@ export function FigureCard({ figure, unit, name, detail, icon, visual, tone = "i
   /** The figure's colour: ink, orange for something to settle, green for a gain. */
   tone?: "ink" | "overlap" | "gain";
   renderLink: (className: string, content: ReactNode) => ReactNode }) {
+  if (centered) return <li className={styles.placeSlot}>{renderLink(`${styles.figureCard} ${styles.figureCentered}`, <>
+    {(visual || icon) && <span className={styles.figureMark} aria-hidden="true">{visual ?? icon}</span>}
+    <span className={styles.figure} data-tone={tone}>{figure}{unit && <small>{unit}</small>}</span>
+    <span className={styles.figureName}>{name}<ChevronRight className={styles.figureGo} aria-hidden="true" /></span>
+    {detail && <span className={styles.figureDetail}>{detail}</span>}
+  </>)}</li>;
   return <li className={styles.placeSlot}>{renderLink(styles.figureCard, <>
     {(icon || visual) && <span className={styles.figureTop}>{icon && <span className={styles.figureIcon} data-tone={tone} aria-hidden="true">{icon}</span>}{visual && <span className={styles.figureVisual} aria-hidden="true">{visual}</span>}</span>}
     <span className={styles.figure} data-tone={tone}>{figure}{unit && <small>{unit}</small>}</span>

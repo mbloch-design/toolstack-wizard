@@ -617,8 +617,8 @@
   padding: var(--tt-space-4);
   border-radius: var(--tt-r-card);
   background:
-    radial-gradient(70% 55% at 20% 118%, color-mix(in oklch, var(--fc1, var(--tt-brand)) 28%, transparent), transparent 72%),
-    radial-gradient(60% 50% at 85% 120%, color-mix(in oklch, var(--fc2, var(--tt-area-3)) 24%, transparent), transparent 72%),
+    radial-gradient(80% 60% at 20% 120%, color-mix(in oklch, var(--fc1, var(--tt-brand)) 60%, transparent), transparent 72%),
+    radial-gradient(70% 55% at 85% 122%, color-mix(in oklch, var(--fc2, var(--tt-area-3)) 55%, transparent), transparent 72%),
     var(--tt-bg);
   box-shadow: var(--tt-row-rest);
   color: var(--tt-ink);
@@ -807,4 +807,30 @@
   .bar[data-settling] {
     animation: none;
   }
+}
+
+/* A centred figure (M01, the site's references): its mark on top, the figure large, a short caption; air around. */
+.figureCentered {
+  justify-items: center;
+  align-content: center;
+  gap: var(--tt-space-1);
+  min-height: 220px;
+  padding: var(--tt-space-8) var(--tt-space-6);
+  text-align: center;
+}
+
+.figureMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-bottom: var(--tt-space-3);
+}
+
+.figureCentered .figure {
+  margin-bottom: var(--tt-space-1);
+}
+
+.figureCentered .figureDetail {
+  max-width: 24ch;
 }

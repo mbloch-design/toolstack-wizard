@@ -16,7 +16,7 @@ import Seats from "@/ds/Seats/Seats";
 import Logo from "@/ds/Logo/Logo";
 import { Meet, Stamp, Trim } from "@/ds/Gesture/Gesture";
 import { toolKey } from "@/lib/stackView";
-import Bento, { Answer, Answers, BentoRow, MiniRing, Question, Tile } from "@/ds/Bento/Bento";
+import Bento, { Answer, Answers, BentoRow, GlassIcon, MiniRing, Question, Tile } from "@/ds/Bento/Bento";
 import Amount from "@/ds/Amount/Amount";
 import Starter from "@/ds/Starter/Starter";
 
@@ -401,13 +401,13 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           ? [t(`${yearly}/an`, `${yearly}/yr`), heroWork && t(`${heroWork} de travail`, `${heroWork} of work`)].filter(Boolean).join(" · ")
           : t(`${unsure.length} prix à préciser`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} to confirm`);
         return <div style={{ marginTop: "calc(var(--tt-gap-head) + var(--tt-gap-item) * 2)", marginBottom: "calc(var(--tt-board-gap) - var(--tt-page-gap))" }}><FigureCards label={t("Ma stack en chiffres", "My stack in figures")}>
-          <FigureCard icon={<Wallet />} figure={monthly ? format(Math.round(total)) : "?"} unit={monthly ? t("/mois", "/mo") : undefined} name={t("Dépense", "Spend")} detail={spendDetail} renderLink={go('[data-card="split"]')} />
-          <FigureCard icon={<LayoutGrid />} visual={<span style={{ display: "flex" }}>{stackLogos.slice(0, 4).map((tool, index) => <span key={tool.id} style={{ marginLeft: index ? "var(--tt-logo-overlap)" : 0 }}><Logo tool={tool} size={24} /></span>)}</span>}
+          <FigureCard centered icon={<GlassIcon color="var(--tt-brand)"><Wallet /></GlassIcon>} figure={monthly ? format(Math.round(total)) : "?"} unit={monthly ? t("/mois", "/mo") : undefined} name={t("Dépense", "Spend")} detail={spendDetail} renderLink={go('[data-card="split"]')} />
+          <FigureCard centered icon={<LayoutGrid />} visual={<span style={{ display: "flex" }}>{stackLogos.slice(0, 4).map((tool, index) => <span key={tool.id} style={{ marginLeft: index ? "var(--tt-logo-overlap)" : 0 }}><Logo tool={tool} size={32} /></span>)}</span>}
             figure={String(toolCount)} name={t("Outils", "Tools")} detail={composition ? composition.replace(/^(Dont|Of which) /, "").replace(/\.$/, "") : undefined} renderLink={go("#ms-all-title")} />
-          <FigureCard icon={<Copy />} tone={pairs.length ? "overlap" : "gain"} visual={pairs[0] ? <span style={{ display: "flex", gap: "var(--tt-space-1)" }}>{pairs[0].tools.slice(0, 2).map((tool) => <Logo key={tool.id} tool={tool} size={24} />)}</span> : undefined}
+          <FigureCard centered icon={<GlassIcon color="var(--tt-overlap)"><Copy /></GlassIcon>} tone={pairs.length ? "overlap" : "gain"} visual={pairs[0] ? <span style={{ display: "flex", gap: "var(--tt-space-1)" }}>{pairs[0].tools.slice(0, 2).map((tool) => <Logo key={tool.id} tool={tool} size={32} />)}</span> : undefined}
             figure={String(pairs.length)} name={t(pairs.length > 1 ? "Doublons" : "Doublon", pairs.length > 1 ? "Overlaps" : "Overlap")}
             detail={pairs[0] ? t(`${pairs[0].tools[0].name} et ${pairs[0].tools[1]?.name ?? ""} se marchent dessus`, `${pairs[0].tools[0].name} and ${pairs[0].tools[1]?.name ?? ""} step on each other`) : t("Chacun son rôle", "Each to its role")} renderLink={go('[data-card="decision"]')} />
-          <FigureCard icon={<PiggyBank />} tone={saved > 0 ? "gain" : "ink"} figure={saved > 0 ? `−${format(Math.round(saved))}` : format(0)} unit={t("/mois", "/mo")} name={t("Économisé", "Saved")}
+          <FigureCard centered icon={<GlassIcon color="var(--tt-live)"><PiggyBank /></GlassIcon>} tone={saved > 0 ? "gain" : "ink"} figure={saved > 0 ? `−${format(Math.round(saved))}` : format(0)} unit={t("/mois", "/mo")} name={t("Économisé", "Saved")}
             detail={saved > 0 ? t("par vos décisions", "by your decisions") : t("La tirelire attend son premier choix", "The piggy bank awaits your first call")} renderLink={go('[data-card="decision"]')} />
         </FigureCards>
 </div>;
