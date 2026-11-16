@@ -617,9 +617,9 @@
   padding: var(--tt-space-4);
   border-radius: var(--tt-r-card);
   background:
-    radial-gradient(135% 66% at 55% 4%, var(--tt-slab-white) 52%, rgb(248 252 252 / 0%) 68%),
-    radial-gradient(70% 55% at 8% 108%, color-mix(in oklch, var(--tt-slab-blue) 70%, transparent), transparent 75%),
-    linear-gradient(var(--tt-slab-white) 28%, color-mix(in oklch, var(--tt-slab-aqua) 30%, var(--tt-slab-white)) 46%, color-mix(in oklch, var(--tt-slab-aqua) 75%, var(--tt-slab-white)) 62%, color-mix(in oklch, var(--tt-slab-teal) 70%, var(--tt-slab-aqua)) 80%, var(--tt-slab-teal));
+    radial-gradient(140% 72% at 55% 4%, var(--tt-slab-white) 58%, rgb(248 252 252 / 0%) 74%),
+    radial-gradient(60% 45% at 8% 108%, color-mix(in oklch, var(--tt-slab-blue) 30%, transparent), transparent 75%),
+    linear-gradient(var(--tt-slab-white) 48%, color-mix(in oklch, var(--tt-slab-aqua) 16%, var(--tt-slab-white)) 64%, color-mix(in oklch, var(--tt-slab-aqua) 34%, var(--tt-slab-white)) 80%, color-mix(in oklch, color-mix(in oklch, var(--tt-slab-teal) 45%, var(--tt-slab-aqua)) 52%, var(--tt-slab-white)));
 
   --tt-slab-shadow: var(--tt-slab-edge), 0 10px 24px -16px rgb(20 20 40 / 10%);
 
@@ -632,7 +632,7 @@
 /* Under the pointer the slab keeps its matter: it rises, its shadow opens, the colour inside wakes a little. */
 .figureCard:hover {
   box-shadow: var(--tt-slab-lift);
-  filter: saturate(1.15) brightness(1.02);
+  filter: saturate(1.25);
   transform: translateY(-3px);
 }
 
