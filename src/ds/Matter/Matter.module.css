@@ -53,6 +53,28 @@
   mask-image: var(--tt-pmask-5);
 }
 
+/* The screen's own light (M01): on an HDR screen, a PQ image adds real light at the heart of the colour, brighter than
+   the interface white; its black adds nothing. Elsewhere it is not drawn. */
+.glow {
+  display: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--tt-hdr-glow);
+  mix-blend-mode: plus-lighter;
+}
+
+@media (dynamic-range: high) {
+  .matter {
+    dynamic-range-limit: no-limit;
+  }
+
+  .glow {
+    display: block;
+    opacity: .8;
+  }
+}
+
 /* The grain of frosted glass: a fine noise over everything, kept sharp and clearly felt. */
 .grain {
   position: absolute;
@@ -65,7 +87,8 @@
 
 /* Less transparency: no layered blur, the lights softened once instead. */
 @media (prefers-reduced-transparency: reduce) {
-  .blur {
+  .blur,
+  .glow {
     display: none;
   }
 
