@@ -617,6 +617,14 @@ export type Database = {
     Functions: {
       _personal_stack_strings: { Args: { p_value: Json }; Returns: boolean }
       _personal_stack_valid: { Args: { p_state: Json }; Returns: boolean }
+      cms_read_tool_draft: {
+        Args: { p_actor: string; p_session: string; p_tool: string }
+        Returns: Json
+      }
+      cms_save_tool_draft: {
+        Args: { p_actor: string; p_session: string; p_tool: string; p_expected_brand: string; p_expected_version: number; p_value: Json }
+        Returns: Json
+      }
       require_account_session: {
         Args: { p_owner: string; p_session: string }
         Returns: undefined

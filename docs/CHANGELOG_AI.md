@@ -1,3 +1,8 @@
+## 2026-11-16 · CMS éditeurs · accès et sauvegarde versionnée
+
+- Migration et API locales pour lire et modifier le brouillon d’une fiche à attribution principale validée. Refus après révocation et contrôle de la marque et de la version lors de la sauvegarde.
+- Couverture PostgreSQL locale avec schéma comptes réel et relations catalogue de test. Tests API pour la validation des changements et le refus si l’attribution change pendant la sauvegarde.
+
 ## 2026-11-16 · CMS éditeurs · validation des brouillons
 
 - Contrat produit strict avec validation FR/EN, offres et variantes, médias, classifications proposées et intégrations. Contrat éditorial distinct fondé sur le registre admin existant.

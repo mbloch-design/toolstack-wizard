@@ -28,3 +28,11 @@ Décision d’implémentation du rapprochement : une différence de slug ou d’
 L’introspection en lecture seule confirme des autorisations héritées au rôle `authenticated` dans `catalog_contrib`. Les six tables accordent SELECT. Les items accordent aussi DELETE. Les droits de colonne permettent INSERT (10 colonnes) et UPDATE (9 colonnes) sur les items, puis INSERT (5) et UPDATE (1) sur les demandes. Tester les politiques et révoquer les anciens chemins d’écriture de façon ciblée lors de la migration. Les droits de table seuls ne suffisent pas à fermer ces accès.
 
 Le contrat TypeScript est vérifié en local. Les objets de prix du catalogue historique mélangent faits et données réservées. Le brouillon éditorial les refuse dans cette première implémentation. Le parcours admin actuel continue de porter ces données jusqu’au raccordement champ par champ.
+
+## Accès et sauvegarde des fiches rattachées
+
+La migration `20261116203729_cms_tool_drafts.sql` et l’API `publisher-catalog` couvrent un brouillon préalablement provisionné pour une attribution principale vérifiée. La base vérifie la session, l’adresse confirmée, l’état du compte, la marque, l’attribution et le rôle dans la transaction. La sauvegarde vérifie la marque et la version lues par l’éditeur. Ce contrôle empêche qu’un changement d’attribution réutilise la version d’un autre brouillon. Les fiches JSON sans attribution ne possèdent pas de workspace CMS.
+
+Le test PostgreSQL local réutilise la migration des comptes. Les relations du catalogue déjà déployées sont représentées par une fixture minimale. Il reste à reproduire complètement le schéma historique et à tester le déploiement sur un environnement isolé. Cette migration ne modifie pas les anciennes permissions de contribution. Leur retrait doit accompagner le remplacement de leurs chemins d’écriture.
+
+Suivi : provisionnement à partir d’une attribution validée, création et reprise des dossiers, offres et preuves commerciales, interface, revue et publication restent à raccorder. Aucun SQL de migration appliqué en production.

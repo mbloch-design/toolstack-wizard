@@ -105,6 +105,8 @@ Ce que la page doit toujours dire, quel que soit son dessin (testé) :
 
 - **Bilan de l’étape contrat CMS :** gardés, les champs réservés et le parcours admin existant. Aucun contenu perdu. À raccorder, les opérations serveur qui créent les identités d’offre, de variante et de média, et les champs de conseil tarifaire mélangés aux faits dans l’ancien JSON.
 
+- **Bilan du raccordement brouillon :** gardé, le modèle d’attribution principale du catalogue et les rôles de marque. Aucun contenu perdu. L’accès à une fiche préprovisionnée est testé localement. À raccorder, le provisionnement du brouillon et le retrait des anciennes écritures de contribution.
+
 Arbitrés le 11/11/2026 (bilan des refontes du 09 au 11/11) :
 - [x] Humour d'accueil : revient, en fin de lead du hero, sous le coût. Appliqué, testé.
 - [x] Décision au repos : la tuile question part ; la phrase « Rien à trancher. Profitez-en, ça ne dure jamais très longtemps. » passe dans le lead du hero. Appliqué, testé.
