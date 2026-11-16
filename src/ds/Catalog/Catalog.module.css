@@ -626,8 +626,8 @@
   position: relative;
 
   /* Inside the glass, the accents join its family (M01): figures and ticks in deep teal and aqua, the overlap a soft coral. */
-  --tt-brand-mark: var(--tt-slab-ink-teal);
-  --tt-gain-ink: var(--tt-slab-ink-aqua);
+  --tt-brand-mark: var(--tt-ink);
+  --tt-gain-ink: var(--tt-ink);
   --tt-overlap-strong: var(--tt-slab-ink-coral);
 
   display: grid;

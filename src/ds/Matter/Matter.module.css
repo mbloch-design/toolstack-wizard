@@ -15,6 +15,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
+  opacity: .7;
   background:
     radial-gradient(26% 30% at 66% 78%, var(--tt-slab-iris), transparent 72%),
     radial-gradient(34% 42% at 14% 100%, var(--tt-slab-teal), transparent 72%),
