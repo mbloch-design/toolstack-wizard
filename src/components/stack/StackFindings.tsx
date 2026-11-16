@@ -443,7 +443,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       ][done];
       return <Bento compact label={t("Ma stack en bref", "My stack at a glance")}>
         <BentoRow>
-          <Tile span={7} label={t("Vos métiers", "Your trades")} bloom={[(() => { const i = CORE_TRADES.findIndex((id) => covered.includes(id)); return `var(--tt-area-${(i < 0 ? 0 : i) + 1})`; })(), "var(--tt-area-3)"]}
+          <Tile span={7} label={t("Vos métiers", "Your trades")} bloom={["var(--tt-area-3)", "var(--tt-area-3)"]}
             statement={<><Key>{coveredCount}</Key>{t(` sur ${CORE_TRADES.length}`, ` of ${CORE_TRADES.length}`)}</>}
             status={{ text: (() => { const missing = CORE_TRADES.find((id) => !covered.includes(id)); return missing ? t(...TRADE_JOKES[missing]) : t("Tout le métier est couvert. Rien ne dépasse.", "The whole job is covered. Nothing sticks out."); })(), done: coveredCount === CORE_TRADES.length }}
             footer={<div style={{ display: "grid", gap: "var(--tt-space-8)" }}><TradeMap label={t("Vos métiers", "Your trades")} addLabel={(name) => t(`Ajouter un outil pour ${name}`, `Add a tool for ${name}`)} onAdd={() => onAddTool()}
@@ -451,7 +451,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
               {coveredCount < CORE_TRADES.length && <span><TextButton arrow onClick={onAddTool}>{t(`Compléter ma stack · ${CORE_TRADES.length - coveredCount} métier${CORE_TRADES.length - coveredCount > 1 ? "s" : ""} à couvrir`, `Complete my stack · ${CORE_TRADES.length - coveredCount} trade${CORE_TRADES.length - coveredCount > 1 ? "s" : ""} to cover`)}</TextButton></span>}
             </div>} />
           <Tile span={5} label={`${t("À faire", "To do")} · ${level[0]}`}
-            bloom={[done === checks.length ? "var(--tt-live)" : done === 0 ? "var(--tt-overlap)" : "var(--tt-brand)", "var(--tt-area-3)"]}
+            bloom={[done === checks.length ? "var(--tt-live)" : done === 0 ? "var(--tt-overlap)" : "var(--tt-area-4)", "var(--tt-area-3)"]}
             statement={done === checks.length ? <Key tone="gain">{t("Rien", "Nothing")}</Key> : <><Key tone={done === 0 ? "overlap" : "brand"}>{checks.length - done}</Key>{t(` étape${checks.length - done > 1 ? "s" : ""}`, ` step${checks.length - done > 1 ? "s" : ""}`)}</>}
             footer={<Checkpoints layout="list" progressLabel={t(`${done} étape${done > 1 ? "s" : ""} sur ${checks.length} réglée${done > 1 ? "s" : ""}`, `${done} of ${checks.length} steps settled`)} label={t("Étapes", "Steps")} steps={checks.map((check) => ({ id: check.id, name: check.name, icon: check.icon, done: check.done, note: check.note, action: check.action }))} />} />
         </BentoRow>
