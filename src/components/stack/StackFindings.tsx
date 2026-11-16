@@ -443,7 +443,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       ][done];
       return <Bento compact label={t("Ma stack en bref", "My stack at a glance")}>
         <BentoRow>
-          <Tile span={7} label={t("Vos métiers", "Your trades")} wash={CORE_TRADES.flatMap((id, index) => covered.includes(id) ? [`var(--tt-area-${index + 1})`] : []).slice(0, 1)}
+          <Tile span={7} label={t("Vos métiers", "Your trades")} bloom={[(() => { const i = CORE_TRADES.findIndex((id) => covered.includes(id)); return `var(--tt-area-${(i < 0 ? 0 : i) + 1})`; })(), "var(--tt-area-3)"]}
             statement={<><Key>{coveredCount}</Key>{t(` sur ${CORE_TRADES.length}`, ` of ${CORE_TRADES.length}`)}</>}
             status={{ text: (() => { const missing = CORE_TRADES.find((id) => !covered.includes(id)); return missing ? t(...TRADE_JOKES[missing]) : t("Tout le métier est couvert. Rien ne dépasse.", "The whole job is covered. Nothing sticks out."); })(), done: coveredCount === CORE_TRADES.length }}
             footer={<div style={{ display: "grid", gap: "var(--tt-space-8)" }}><TradeMap label={t("Vos métiers", "Your trades")} addLabel={(name) => t(`Ajouter un outil pour ${name}`, `Add a tool for ${name}`)} onAdd={() => onAddTool()}
@@ -466,7 +466,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
             return costs.length === 2 ? sum + Math.min(...costs) : sum;
           }, 0);
           return <BentoRow>
-            <Tile span={12} card="split" label={t("Où va l'argent", "Where the money goes")}
+            <Tile span={12} card="split" label={t("Où va l'argent", "Where the money goes")} bloom={saveable > 0 ? ["var(--tt-overlap)", "var(--tt-area-5)"] : ["var(--tt-brand)", "var(--tt-area-3)"]}
               statement={saveable > 0
                 ? <><Key tone="overlap">{format(Math.round(saveable))}</Key>{t(" par mois à trancher", " a month to settle")}</>
                 : <><Key>{topShare}{"\u00a0"}%</Key>{t(` pour ${top.tool.name}`, ` for ${top.tool.name}`)}</>}

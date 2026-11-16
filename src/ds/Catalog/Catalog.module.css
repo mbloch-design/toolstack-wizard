@@ -616,7 +616,10 @@
   gap: var(--tt-space-1);
   padding: var(--tt-space-4);
   border-radius: var(--tt-r-card);
-  background: var(--tt-bg);
+  background:
+    radial-gradient(70% 55% at 20% 118%, color-mix(in oklch, var(--fc1, var(--tt-brand)) 28%, transparent), transparent 72%),
+    radial-gradient(60% 50% at 85% 120%, color-mix(in oklch, var(--fc2, var(--tt-area-3)) 24%, transparent), transparent 72%),
+    var(--tt-bg);
   box-shadow: var(--tt-row-rest);
   color: var(--tt-ink);
   text-decoration: none;
@@ -660,13 +663,17 @@
   margin-bottom: var(--tt-space-2);
 }
 
-/* An overlap or a gain tints its card with a diffuse light from the top right (M01). */
+/* The figure card's light rises from its bottom (M01, the site's references): blue and violet by default, orange
+   for something to settle, green for a gain. White where the words are. */
+
 .figureCard:has(.figure[data-tone="overlap"]) {
-  background: radial-gradient(80% 90% at 100% 0%, color-mix(in oklch, var(--tt-overlap) 10%, transparent), transparent 70%), var(--tt-bg);
+  --fc1: var(--tt-overlap);
+  --fc2: var(--tt-area-5);
 }
 
 .figureCard:has(.figure[data-tone="gain"]) {
-  background: radial-gradient(80% 90% at 100% 0%, color-mix(in oklch, var(--tt-live) 10%, transparent), transparent 70%), var(--tt-bg);
+  --fc1: var(--tt-live);
+  --fc2: var(--tt-area-4);
 }
 
 .figureIcon {

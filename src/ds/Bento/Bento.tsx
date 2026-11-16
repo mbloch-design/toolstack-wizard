@@ -28,7 +28,7 @@ export function BentoRow({ children }: { children: ReactNode }) {
  * One fact: a small label top left, a picture top right, the statement in large at the bottom,
  * its state under it. A question tile puts its question between the two.
  */
-export function Tile({ span, label, art, statement, status, children, tone = "tile", leaving, detail, open = false, onToggle, moreLabel, lessLabel, condensed = false, card, footer, wash }: {
+export function Tile({ span, label, art, statement, status, children, tone = "tile", leaving, detail, open = false, onToggle, moreLabel, lessLabel, condensed = false, card, footer, wash, bloom, hero = false }: {
   /** Columns out of 12 on a wide bento; every tile takes the full width on a phone. */
   span: 4 | 5 | 6 | 7 | 8 | 12;
   label: ReactNode; art?: ReactNode; statement?: ReactNode;
@@ -54,6 +54,10 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
   /** Up to three colours washed very softly inside the tile, from its top right (the site's diffuse light, M01):
    *  the trades it covers, orange while things are to settle, green once settled. */
   wash?: string[];
+  /** Two colours of light rising from the bottom of a white tile, very diffuse (the site's references, M01). */
+  bloom?: [string, string];
+  /** One big figure, centred, with its caption: the tile is the number. */
+  hero?: boolean;
 }) {
   const toggleMore = detail && onToggle && <span className={styles.toggle}><TextButton aria-expanded={open} onClick={onToggle}>{open ? lessLabel : moreLabel}<svg viewBox="0 0 24 24" aria-hidden="true"><path d={open ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"} /></svg></TextButton></span>;
   if (open && detail) return (
@@ -65,7 +69,8 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
   );
   return (
     <article className={styles.tile} data-span={span} data-tone={tone} data-card={card} data-leaving={leaving || undefined} data-condensed={condensed || undefined} data-wash={wash?.length ? "" : undefined}
-      style={{ "--span": span, ...(wash?.length ? { "--w1": wash[0], "--w2": wash[1] ?? wash[0], "--w3": wash[2] ?? wash[1] ?? wash[0] } : {}) } as CSSProperties}>
+      data-bloom={bloom ? "" : undefined} data-hero={hero || undefined}
+      style={{ "--span": span, ...(wash?.length ? { "--w1": wash[0], "--w2": wash[1] ?? wash[0], "--w3": wash[2] ?? wash[1] ?? wash[0] } : {}), ...(bloom ? { "--b1": bloom[0], "--b2": bloom[1] } : {}) } as CSSProperties}>
       <div className={styles.top}><span className={styles.label}>{label}</span>{art && <span className={styles.art} aria-hidden="true">{art}</span>}</div>
       {children && <div className={styles.body}>{children}{!statement && !status && toggleMore}</div>}
       {(statement || status) && <div className={styles.foot}>
@@ -108,4 +113,9 @@ export function Answer({ name, onClick, tone = "ink" }: { name: string; onClick:
 /** The question of a tile, with the thing it is about. */
 export function Question({ media, children }: { media?: ReactNode; children: ReactNode }) {
   return <p className={styles.question}>{media && <span className={styles.questionMedia} aria-hidden="true">{media}</span>}<span>{children}</span></p>;
+}
+
+/** A pictogram in a glossy pastille (M01): light from the top, the tile's colour behind it. */
+export function GlassIcon({ children, color = "var(--tt-brand)" }: { children: ReactNode; color?: string }) {
+  return <span className={styles.glassIcon} style={{ "--g": color } as CSSProperties} aria-hidden="true">{children}</span>;
 }

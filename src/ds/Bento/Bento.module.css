@@ -81,6 +81,16 @@
   color: var(--tt-smoke-ink);
 }
 
+/* Light rising from the bottom of a white tile (M01, the site's references): two colours, very diffuse, meeting
+   under the content; the tile stays white where the words are. */
+.tile[data-bloom] {
+  background:
+    radial-gradient(65% 60% at 25% 115%, color-mix(in oklch, var(--b1) 55%, transparent), transparent 72%),
+    radial-gradient(60% 55% at 80% 120%, color-mix(in oklch, var(--b2) 50%, transparent), transparent 72%),
+    var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
+}
+
 .tile[data-tone="question"] {
   background: var(--tt-bg);
   box-shadow: var(--tt-card-lift);
@@ -249,4 +259,39 @@
   .tile[data-condensed] .body {
     align-content: end;
   }
+}
+
+/* The tile is the number: one big figure, centred, its caption under it. */
+.tile[data-hero] {
+  text-align: center;
+}
+
+.tile[data-hero] .top {
+  justify-content: center;
+}
+
+.tile[data-hero] .foot {
+  justify-items: center;
+}
+
+.tile[data-hero] .statement {
+  font: var(--tt-title-xl-font);
+  letter-spacing: var(--tt-title-xl-tracking);
+}
+
+/* A glossy pastille: the colour under a light coming from the top, a bright edge (M01). */
+.glassIcon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--tt-r-field);
+  background: var(--tt-glass-icon);
+  box-shadow: var(--tt-glass-icon-edge);
+  color: var(--tt-on-color);
+}
+
+.glassIcon svg {
+  width: 20px;
+  height: 20px;
 }
