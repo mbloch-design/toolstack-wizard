@@ -649,14 +649,14 @@
   transition: box-shadow 700ms var(--tt-spring-card), transform 700ms var(--tt-spring-card), filter 700ms var(--tt-spring-card);
 }
 
-/* The glass's own edge (M01): a 1 px rim in a gradient, bright where the light comes from (top left), pale petrol
-   on the far side, drawn as a ring so it never covers the content. */
+/* The glass's own edge (M01): a 1 px rim in a gradient, in the slab's own colour where its light sits (lower left),
+   white across, a hint of its neighbour on the far side, drawn as a ring so it never covers the content. */
 .figureCard::after {
   position: absolute;
   inset: 0;
   padding: var(--tt-hairline-w);
   border-radius: inherit;
-  background: var(--tt-slab-rim);
+  background: linear-gradient(35deg, var(--tt-slab-teal), color-mix(in oklch, var(--tt-slab-teal) 35%, white) 28%, rgb(255 255 255 / 90%) 55%, color-mix(in oklch, var(--tt-slab-iris) 30%, white));
   content: "";
   pointer-events: none;
   mask: var(--tt-ring-mask);

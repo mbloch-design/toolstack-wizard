@@ -53,13 +53,13 @@
   mask-image: var(--tt-pmask-5);
 }
 
-/* The grain of frosted glass: a fine noise over everything, kept sharp, barely there. */
+/* The grain of frosted glass: a fine noise over everything, kept sharp and clearly felt. */
 .grain {
   position: absolute;
   inset: 0;
   border-radius: inherit;
   background: var(--tt-grain);
-  opacity: .07;
+  opacity: .28;
   mix-blend-mode: multiply;
 }
 
