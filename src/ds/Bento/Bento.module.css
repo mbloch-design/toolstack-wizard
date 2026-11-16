@@ -109,8 +109,10 @@
    rising from the bottom over the whole width as if the glass deepened; its thickness shows on the edges, a bright
    rim and a light caught inside along them; its shadow takes its colour. Nothing in the right corner. */
 .tile[data-bloom] {
+  --tt-slab-tone: color-mix(in oklch, var(--b1) 82%, rgb(112 122 134));
+
   background:
-    linear-gradient(color-mix(in oklch, color-mix(in oklch, var(--b1) 62%, rgb(112 122 134)) 0%, rgb(244 246 248)) 0%, color-mix(in oklch, color-mix(in oklch, var(--b1) 62%, rgb(112 122 134)) 2%, rgb(244 246 248)) 30%, color-mix(in oklch, color-mix(in oklch, var(--b1) 62%, rgb(112 122 134)) 8%, rgb(244 246 248)) 42%, color-mix(in oklch, color-mix(in oklch, var(--b1) 62%, rgb(112 122 134)) 22%, rgb(244 246 248)) 56%, color-mix(in oklch, color-mix(in oklch, var(--b1) 62%, rgb(112 122 134)) 40%, rgb(244 246 248)) 72%, color-mix(in oklch, color-mix(in oklch, var(--b1) 62%, rgb(112 122 134)) 56%, rgb(244 246 248)) 88%, color-mix(in oklch, color-mix(in oklch, var(--b1) 62%, rgb(112 122 134)) 62%, rgb(244 246 248)) 100%);
+    linear-gradient(color-mix(in oklch, var(--tt-slab-tone) 0%, rgb(244 246 248)) 0%, color-mix(in oklch, var(--tt-slab-tone) 2%, rgb(244 246 248)) 40%, color-mix(in oklch, var(--tt-slab-tone) 7%, rgb(244 246 248)) 58%, color-mix(in oklch, var(--tt-slab-tone) 18%, rgb(244 246 248)) 72%, color-mix(in oklch, var(--tt-slab-tone) 45%, rgb(244 246 248)) 87%, color-mix(in oklch, var(--tt-slab-tone) 80%, rgb(244 246 248)) 100%);
 
   --tt-slab-shadow: var(--tt-slab-edge), 0 10px 24px -16px rgb(20 20 40 / 10%);
 
@@ -342,3 +344,10 @@
   }
 }
 
+
+/* On a wide-gamut screen the slab takes colours sRGB cannot show: the hue unmuted, its chroma pushed past the token. */
+@media (color-gamut: p3) {
+  .tile[data-bloom] {
+    --tt-slab-tone: oklch(from var(--b1) calc(l - .03) calc(c * 1.25) h);
+  }
+}
