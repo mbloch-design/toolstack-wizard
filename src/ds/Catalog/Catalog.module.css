@@ -834,3 +834,10 @@
 .figureCentered .figureDetail {
   max-width: 24ch;
 }
+
+/* More contrast asked: the figure cards keep their white, without the light under the words. */
+@media (prefers-contrast: more) {
+  .figureCard {
+    background: var(--tt-bg);
+  }
+}

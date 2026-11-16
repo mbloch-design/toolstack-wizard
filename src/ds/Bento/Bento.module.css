@@ -320,3 +320,34 @@
   width: 20px;
   height: 20px;
 }
+
+/* The screen's own light (M01, 16/11/2026). On an HDR screen the glass catches more light: a brighter top edge and
+   sheen. Asking for less transparency makes the glass solid, without lights behind it. Asking for more contrast
+   takes the blooms away from under the words. */
+@media (dynamic-range: high) {
+  .tile[data-tone="smoke"] {
+    box-shadow: var(--tt-smoke-tile-shadow-hdr);
+  }
+
+  .tile[data-tone="smoke"]::after {
+    background: var(--tt-smoke-sheen-hdr);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .tile[data-tone="smoke"]::before,
+  .tile[data-tone="smoke"]::after {
+    display: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .tile[data-bloom],
+  .tile[data-wash] {
+    background: var(--tt-bg);
+  }
+
+  .tile[data-tone="smoke"]::before {
+    display: none;
+  }
+}
