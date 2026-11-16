@@ -109,7 +109,7 @@ test("invalid catalogue ID can be removed without losing valid tools", async ({ 
   await expect(page.locator("[data-tool-id]")).toHaveCount(1);
   await expect(page.locator("[data-page]")).not.toContainText(/undefined|null/);
   await expect(page.locator("[data-tool-id]")).toContainText("Figma");
-  await expect(page.locator("#ms-all-grid")).toContainText("Freemium");
+  await expect(page.locator("#ms-all-grid")).toContainText("To confirm");
 });
 
 test("corrupt storage recovers without crashing", async ({ page }) => {

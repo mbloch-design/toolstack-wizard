@@ -48,7 +48,7 @@ export function StoryHero({ greeting, eyebrow, eyebrowAside, titleRef, title, le
   return (
     <header ref={hero} className={styles.hero} data-hero="" data-pagehead="">
       {aura && <span className={styles.aura} aria-hidden="true" />}
-      <p className={styles.eyebrow}>{greeting && <span data-greeting="">{greeting}</span>}{greeting && <span aria-hidden="true"> · </span>}<span>{eyebrow}</span>{eyebrowAside && <span className={styles.eyebrowAside}>{eyebrowAside}</span>}</p>
+      <p className={styles.eyebrow}>{greeting && <span data-greeting="">{greeting}</span>}{greeting && eyebrow && <span aria-hidden="true"> · </span>}{eyebrow && <span>{eyebrow}</span>}{eyebrowAside && <span className={styles.eyebrowAside}>{eyebrowAside}</span>}</p>
       <h1 ref={titleRef} tabIndex={-1} className={styles.premise}>{title}</h1>
       {lead && <p className={styles.after}>{lead}</p>}
       {figures && figures.length > 0 && <ul className={styles.figures} aria-label={figuresLabel}>

@@ -413,6 +413,7 @@
   color: var(--tt-ink);
   font: var(--tt-action-link-font);
   letter-spacing: var(--tt-action-tracking);
+  text-align: start;
   text-decoration: none;
   cursor: pointer;
   transition: background-size 320ms var(--tt-ease);

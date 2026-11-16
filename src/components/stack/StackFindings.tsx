@@ -280,8 +280,10 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
             {tiles.map((plan) => {
               const [, main, qualifier] = /^(.*?)\s*\((.+)\)\s*$/.exec(plan.label) ?? [null, plan.label, null];
               const PlanIcon = plan.monthly === 0 ? Moon : plan.monthly >= max ? Rocket : Zap;
-              const detail = [qualifier, plan.monthly === 0 ? t("Rien à payer", "Nothing to pay") : plan.note || t("par mois", "a month"), workTime(plan.monthly)].filter(Boolean).join(" · ");
-              return <Choice key={plan.key} role="radio" data-plan={plan.key} media={<IconTile><PlanIcon /></IconTile>} name={main} note={detail}
+              // Two plans with one name (« Professional », dev seat or full seat): the qualifier joins the name, or they read as twins.
+              const twin = !!qualifier && tiles.filter((other) => (/^(.*?)\s*\((.+)\)\s*$/.exec(other.label)?.[1] ?? other.label) === main).length > 1;
+              const detail = [twin ? null : qualifier, plan.monthly === 0 ? t("Rien à payer", "Nothing to pay") : plan.note || t("par mois", "a month"), workTime(plan.monthly)].filter(Boolean).join(" · ");
+              return <Choice key={plan.key} role="radio" data-plan={plan.key} media={<IconTile><PlanIcon /></IconTile>} name={twin ? `${main} · ${qualifier}` : main} note={detail}
                 amount={plan.monthly > 0 ? format(plan.monthly) : t("Gratuit", "Free")} unit={plan.monthly > 0 ? per : undefined}
                 state={pickedTile === null ? undefined : pickedTile === plan.key ? "kept" : "gone"} checked={pickedTile === plan.key}
                 onPreview={(on) => setPreview(on ? total + plan.monthly : null)}
@@ -388,7 +390,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       {/* The hero of a dashboard (M01, 14/11/2026): the page's name and who it is for, its two actions, then the
           key figures, each said once and only here. The bento below explains them; it never repeats them. */}
       <StoryHero aura={false} greeting={welcome?.greeting} titleRef={welcome?.titleRef}
-        eyebrow={welcome?.eyebrow ?? t("Ma stack", "My stack")} eyebrowAside={<StackProfile lang={fr ? "fr" : "en"} />}
+        eyebrow={welcome?.greeting ? "" : welcome?.eyebrow ?? t("Ma stack", "My stack")} eyebrowAside={<StackProfile lang={fr ? "fr" : "en"} />}
         title={t("Ma stack", "My stack")}
         lead={toolCount === 1 ? t("Il en faut au moins deux pour parler de stack.", "It takes at least two to call it a stack.") : undefined}
         aside={<><Button variant="primary" icon={<Plus aria-hidden />} onClick={onAddTool}>{t("Ajouter un outil", "Add a tool")}</Button>{welcome?.secondary}</>} />
@@ -484,7 +486,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       </Bento>;
     })()}
     {toolCount === 1 && !decision && <Bento label={t("Pour commencer", "To start")}><BentoRow><Starter lang={fr ? "fr" : "en"} tool={spend[0]?.tool || freeTools[0]} onAddTool={onAddTool} /></BentoRow></Bento>}
-    {rows.length > 0 && <Bento label={t("Étape en cours", "Current step")}>
+    {rows.length > 0 && <Bento compact label={t("Étape en cours", "Current step")}>
       {rows.map((row) => <BentoRow key={row.map((tile) => tile.id).join("-")}>{row.map((tile) => tile.node(row.map((x) => x.id)))}</BentoRow>)}
     </Bento>}
   </>;

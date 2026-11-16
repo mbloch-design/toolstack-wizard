@@ -856,7 +856,7 @@
 /* A centred figure (M01, the site's references): its mark on top, the figure large, a short caption; air around. */
 .figureCentered {
   justify-items: center;
-  align-content: center;
+  align-content: start;
   gap: var(--tt-space-1);
   min-height: 220px;
   padding: var(--tt-space-8) var(--tt-space-6);
@@ -877,6 +877,18 @@
 
 .figureCentered .figureDetail {
   max-width: 24ch;
+}
+
+/* On a phone the four figures sit two by two (M01): one per row made the page four screens longer. */
+@media (width < 480px) {
+  .figureCards:has(.figureCentered) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .figureCentered {
+    min-height: 0;
+    padding: var(--tt-space-4) var(--tt-space-3);
+  }
 }
 
 /* More contrast asked: the figure cards keep their white, without the light under the words. */
