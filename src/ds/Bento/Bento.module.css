@@ -109,15 +109,18 @@
    corner and melting into the white over most of the tile; no band at the foot, no shadow, a 0.5 px edge only. */
 .tile[data-bloom] {
   background:
-    radial-gradient(120% 110% at 100% 100%, color-mix(in oklch, var(--b1) 20%, transparent), transparent 62%),
-    radial-gradient(90% 80% at 0% 100%, color-mix(in oklch, var(--b2) 10%, transparent), transparent 60%),
+    radial-gradient(120% 110% at 100% 100%, color-mix(in oklch, color-mix(in oklch, var(--b1) 60%, white) 26%, transparent), transparent 62%),
+    radial-gradient(90% 80% at 0% 100%, color-mix(in oklch, color-mix(in oklch, var(--b2) 60%, white) 14%, transparent), transparent 60%),
     var(--tt-bg);
   box-shadow: var(--tt-card-edge);
 }
 
+/* A question asked of the person: the same light as the others, a brand halo from the corner, no shadow. */
 .tile[data-tone="question"] {
-  background: var(--tt-bg);
-  box-shadow: var(--tt-card-lift);
+  background:
+    radial-gradient(120% 110% at 100% 100%, color-mix(in oklch, color-mix(in oklch, var(--tt-brand) 60%, white) 22%, transparent), transparent 62%),
+    var(--tt-bg);
+  box-shadow: var(--tt-card-edge);
 }
 
 .tile[data-leaving] {
@@ -334,7 +337,7 @@
     border-radius: inherit;
     background: var(--tt-hdr-paper);
     mix-blend-mode: plus-lighter;
-    opacity: .35;
+    opacity: .7;
     content: "";
     pointer-events: none;
   }

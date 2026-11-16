@@ -515,8 +515,8 @@ export default function CartPage() {
         {/* 1. The stack itself, one box to see it: by area, as cards or as a list, sorted from a menu. Add and edit live here. */}
         <Section labelledBy="ms-all-title">
           <SectionHead title={t("Mes outils", "My tools")} titleId="ms-all-title" beside={<StackAccountPanel placement="inline" />}
-            note={<>{t("Les voici, rangés par domaine : ", "Here they are, by area: ")}{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</>}
-            action={<Button ref={addRef} variant="primary" icon={<Plus />} onClick={() => { setEditing(false); setSearchOpen((open) => !open); }} aria-expanded={searchOpen} aria-controls="ms-search">{t("Ajouter un outil", "Add a tool")}</Button>} />
+            note={t("Rangés par domaine, du plus cher au moins cher.", "By area, most expensive first.")}
+            action={<Button ref={addRef} variant="secondary" icon={<Plus />} onClick={() => { setEditing(false); setSearchOpen((open) => !open); }} aria-expanded={searchOpen} aria-controls="ms-search">{t("Ajouter un outil", "Add a tool")}</Button>} />
           {searchPanel}
           {(() => {
             const counts = { all: listTools.length, review: listTools.filter((tool) => statusOf(tool) === "review").length, overlap: listTools.filter((tool) => statusOf(tool) === "overlap").length };

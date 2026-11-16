@@ -53,8 +53,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--tt-space-3);
-  padding-bottom: var(--tt-space-4);
-  box-shadow: var(--tt-hairline-bottom);
+  padding-bottom: var(--tt-space-2);
 }
 
 .tools {
