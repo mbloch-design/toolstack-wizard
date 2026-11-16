@@ -620,7 +620,7 @@
     radial-gradient(80% 60% at 20% 105%, color-mix(in oklch, var(--fc2, var(--tt-area-3)) 28%, transparent), transparent 70%),
     linear-gradient(color-mix(in oklch, var(--fc1, var(--tt-brand)) 3%, white) 35%, color-mix(in oklch, var(--fc1, var(--tt-brand)) 34%, white));
 
-  --tt-slab-shadow: var(--tt-slab-edge), 0 24px 48px -28px color-mix(in oklch, var(--fc1, var(--tt-brand)) 50%, transparent);
+  --tt-slab-shadow: var(--tt-slab-edge), 0 1px 1px rgb(20 20 40 / 6%), 0 6px 12px -6px rgb(20 20 40 / 12%), 0 20px 36px -20px color-mix(in oklch, var(--fc1, var(--tt-brand)) 30%, rgb(20 20 40 / 22%));
 
   box-shadow: var(--tt-slab-shadow);
   color: var(--tt-ink);
