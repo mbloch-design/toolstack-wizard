@@ -6,7 +6,6 @@
 @import "./styles/tooltrim-system.css";
 @config "../tailwind.config.ts";
 @source "./";
-@source not "./components/dashboard";
 @source inline("ga-cta-btn");
 
 /* ─────────────────────────────────────────────
@@ -19824,8 +19823,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .bo-navigation-items { min-width: 0; }
   .bo-navigation-items > button { gap: var(--space-xs); }
   .bo-navigation-items svg { flex: none; }
-  .bo-history, .bo-workspace .mk-link { display: inline-flex; align-items: center; gap: var(--space-xs); }
-  .bo-history { margin-left: auto; }
+  .bo-workspace .mk-link { display: inline-flex; align-items: center; gap: var(--space-xs); }
   .bo-page-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-lg); margin-bottom: var(--space-xl); }
   .bo-page-heading h1 { margin: 0; color: var(--ms-ink); font: 600 var(--tt-size-page-title)/1.08 var(--ap-display); letter-spacing: -.045em; }
   .bo-page-heading p { max-width: 60ch; margin: var(--space-sm) 0 0; color: var(--ms-text2); font: 400 var(--tt-size-body)/1.5 var(--ap-font); }
@@ -20007,7 +20005,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     .bo-account-toolbar > p { max-width: 65%; font-size: 12px; }
     .bo-navigation { margin-bottom: var(--space-xl); gap: var(--space-md); }
     .bo-navigation-items { width: 100%; }
-    .bo-history { margin-left: 0; }
     .bo-metrics { grid-template-columns: minmax(0,1fr); padding: var(--space-sm) var(--space-lg); margin-bottom: var(--space-xl); }
     .bo-metrics > button { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--space-xs); padding: var(--space-lg) 0; border-right: 0; border-bottom: 1px solid var(--ms-track); }
     .bo-metrics > button:last-child { border-bottom: 0; }

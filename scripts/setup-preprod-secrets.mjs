@@ -153,7 +153,7 @@ try {
   if (mode === "all" || mode === "supabase") await runGroup("supabase", env, rl);
   if (mode === "all" || mode === "vercel") await runGroup("vercel", env, rl);
   console.log("");
-  console.log("Done. Now run: npm run validate:preprod");
+  console.log("Done. Now run: npm run validate:preprod-app");
 } finally {
   rl.close();
 }

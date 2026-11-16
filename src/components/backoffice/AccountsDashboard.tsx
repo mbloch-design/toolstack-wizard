@@ -35,7 +35,6 @@ import { accessDenied, date, tradeLabel } from "./backofficeDisplay";
 type View = "overview" | "users" | "stacks" | "usage" | "sources" | "catalog";
 export function AccountsDashboard({
   initialView = "users",
-  onOpenHistory,
   catalogSession: suppliedSession,
   onCatalogDirtyChange,
   onCatalogReauthenticate,
@@ -51,7 +50,6 @@ export function AccountsDashboard({
   onCatalogReauthenticate?: () => void;
   onCatalogDirtyChange?: (dirty: boolean) => void;
   initialView?: View;
-  onOpenHistory?: () => void;
 }) {
   const { lang, t } = useLang();
   const searchId = useId();
@@ -328,16 +326,7 @@ export function AccountsDashboard({
             </button>
           ))}
         </div>
-        {onOpenHistory && (
-          <button
-            type="button"
-            className="mk-link bo-history"
-            onClick={() => { if (catalogDirty) { setNavigationError(true); return; } onOpenHistory(); }}
-          >
-            <FileText size={16} aria-hidden />
-            {t("Diagnostic historique", "Historical diagnostic")}
-          </button>
-        )}
+
       </nav>}
       <div className="bo-content">
         {navigationError && <p role="alert">{t("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</p>}
@@ -679,8 +668,8 @@ export function AccountsDashboard({
                 [
                   t("Demandes & emails", "Requests & emails"),
                   t(
-                    "Leads et soumissions proviennent de sources distinctes. Leur regroupement reste à intégrer ; le suivi historique des emails reste dans le diagnostic.",
-                    "Leads and submissions come from distinct sources. Their combined view still needs integration; historical email monitoring remains in the diagnostic.",
+                    "Leads et soumissions proviennent de sources distinctes. Leur regroupement reste à intégrer.",
+                    "Leads and submissions come from distinct sources. Their combined view still needs integration.",
                   ),
                   t("Intégration à compléter", "Integration pending"),
                 ],
