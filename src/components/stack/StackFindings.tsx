@@ -401,13 +401,13 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           ? [t(`${yearly}/an`, `${yearly}/yr`), heroWork && t(`${heroWork}\u00a0de\u00a0travail`, `${heroWork}\u00a0of\u00a0work`)].filter(Boolean).join(" · ")
           : t(`${unsure.length} prix à préciser`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} to confirm`);
         return <div style={{ marginTop: "calc(var(--tt-gap-head) + var(--tt-gap-item) * 2)", marginBottom: "calc(var(--tt-board-gap) - var(--tt-page-gap))" }}><FigureCards label={t("Ma stack en chiffres", "My stack in figures")}>
-          <FigureCard centered color="var(--tt-area-1)" icon={<GlassIcon color="var(--tt-slab-teal)"><Wallet /></GlassIcon>} figure={monthly ? format(Math.round(total)) : "?"} unit={monthly ? t("/mois", "/mo") : undefined} name={t("Dépense", "Spend")} detail={spendDetail} renderLink={go('[data-card="split"]')} />
-          <FigureCard centered color="var(--tt-area-3)" icon={<LayoutGrid />} visual={<span style={{ display: "flex" }}>{stackLogos.slice(0, 4).map((tool, index) => <span key={tool.id} style={{ marginLeft: index ? "var(--tt-logo-overlap)" : 0 }}><Logo tool={tool} size={32} /></span>)}</span>}
+          <FigureCard centered color="var(--tt-range-1)" icon={<GlassIcon color="var(--tt-slab-teal)"><Wallet /></GlassIcon>} figure={monthly ? format(Math.round(total)) : "?"} unit={monthly ? t("/mois", "/mo") : undefined} name={t("Dépense", "Spend")} detail={spendDetail} renderLink={go('[data-card="split"]')} />
+          <FigureCard centered color="var(--tt-range-2)" icon={<LayoutGrid />} visual={<span style={{ display: "flex" }}>{stackLogos.slice(0, 4).map((tool, index) => <span key={tool.id} style={{ marginLeft: index ? "var(--tt-logo-overlap)" : 0 }}><Logo tool={tool} size={32} /></span>)}</span>}
             figure={String(toolCount)} name={t("Outils", "Tools")} detail={composition ? composition.replace(/^(Dont|Of which) /, "").replace(/\.$/, "") : undefined} renderLink={go("#ms-all-title")} />
-          <FigureCard centered color={pairs.length ? "var(--tt-overlap)" : "var(--tt-area-4)"} icon={<GlassIcon color="var(--tt-slab-blue)"><Copy /></GlassIcon>} tone={pairs.length ? "overlap" : "gain"} visual={pairs[0] ? <span style={{ display: "flex", gap: "var(--tt-space-1)" }}>{pairs[0].tools.slice(0, 2).map((tool) => <Logo key={tool.id} tool={tool} size={32} />)}</span> : undefined}
+          <FigureCard centered color={pairs.length ? "var(--tt-overlap)" : "var(--tt-range-3)"} icon={<GlassIcon color="var(--tt-slab-blue)"><Copy /></GlassIcon>} tone={pairs.length ? "overlap" : "gain"} visual={pairs[0] ? <span style={{ display: "flex", gap: "var(--tt-space-1)" }}>{pairs[0].tools.slice(0, 2).map((tool) => <Logo key={tool.id} tool={tool} size={32} />)}</span> : undefined}
             figure={String(pairs.length)} name={t(pairs.length > 1 ? "Doublons" : "Doublon", pairs.length > 1 ? "Overlaps" : "Overlap")}
             detail={pairs[0] ? t(`${pairs[0].tools[0].name} et ${pairs[0].tools[1]?.name ?? ""} se marchent dessus`, `${pairs[0].tools[0].name} and ${pairs[0].tools[1]?.name ?? ""} step on each other`) : t("Chacun son rôle", "Each to its role")} renderLink={go('[data-card="decision"]')} />
-          <FigureCard centered color="var(--tt-area-2)" icon={<GlassIcon color="var(--tt-slab-aqua)"><PiggyBank /></GlassIcon>} tone={saved > 0 ? "gain" : "ink"} figure={saved > 0 ? `−${format(Math.round(saved))}` : format(0)} unit={t("/mois", "/mo")} name={t("Économisé", "Saved")}
+          <FigureCard centered color="var(--tt-range-4)" icon={<GlassIcon color="var(--tt-slab-aqua)"><PiggyBank /></GlassIcon>} tone={saved > 0 ? "gain" : "ink"} figure={saved > 0 ? `−${format(Math.round(saved))}` : format(0)} unit={t("/mois", "/mo")} name={t("Économisé", "Saved")}
             detail={saved > 0 ? t("par vos décisions", "by your decisions") : t("La tirelire attend son premier choix", "The piggy bank awaits your first call")} renderLink={go('[data-card="decision"]')} />
         </FigureCards>
 </div>;
@@ -443,7 +443,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       ][done];
       return <Bento compact label={t("Ma stack en bref", "My stack at a glance")}>
         <BentoRow>
-          <Tile span={7} label={t("Vos métiers", "Your trades")} bloom={["var(--tt-area-5)", "var(--tt-area-5)"]}
+          <Tile span={7} label={t("Vos métiers", "Your trades")} bloom={["var(--tt-range-5)", "var(--tt-range-5)"]}
             statement={<><Key>{coveredCount}</Key>{t(` sur ${CORE_TRADES.length}`, ` of ${CORE_TRADES.length}`)}</>}
             status={{ text: (() => { const missing = CORE_TRADES.find((id) => !covered.includes(id)); return missing ? t(...TRADE_JOKES[missing]) : t("Tout le métier est couvert. Rien ne dépasse.", "The whole job is covered. Nothing sticks out."); })(), done: coveredCount === CORE_TRADES.length }}
             footer={<div style={{ display: "grid", gap: "var(--tt-space-8)" }}><TradeMap label={t("Vos métiers", "Your trades")} addLabel={(name) => t(`Ajouter un outil pour ${name}`, `Add a tool for ${name}`)} onAdd={() => onAddTool()}
@@ -451,7 +451,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
               {coveredCount < CORE_TRADES.length && <span><TextButton arrow onClick={onAddTool}>{t(`Compléter ma stack · ${CORE_TRADES.length - coveredCount} métier${CORE_TRADES.length - coveredCount > 1 ? "s" : ""} à couvrir`, `Complete my stack · ${CORE_TRADES.length - coveredCount} trade${CORE_TRADES.length - coveredCount > 1 ? "s" : ""} to cover`)}</TextButton></span>}
             </div>} />
           <Tile span={5} label={`${t("À faire", "To do")} · ${level[0]}`}
-            bloom={[done === checks.length ? "var(--tt-live)" : done === 0 ? "var(--tt-overlap)" : "oklch(0.66 0.12 215)", "var(--tt-area-3)"]}
+            bloom={[done === checks.length ? "var(--tt-live)" : done === 0 ? "var(--tt-overlap)" : "var(--tt-range-6)", "var(--tt-range-6)"]}
             statement={done === checks.length ? <Key tone="gain">{t("Rien", "Nothing")}</Key> : <><Key tone={done === 0 ? "overlap" : "brand"}>{checks.length - done}</Key>{t(` étape${checks.length - done > 1 ? "s" : ""}`, ` step${checks.length - done > 1 ? "s" : ""}`)}</>}
             footer={<Checkpoints layout="list" progressLabel={t(`${done} étape${done > 1 ? "s" : ""} sur ${checks.length} réglée${done > 1 ? "s" : ""}`, `${done} of ${checks.length} steps settled`)} label={t("Étapes", "Steps")} steps={checks.map((check) => ({ id: check.id, name: check.name, icon: check.icon, done: check.done, note: check.note, action: check.action }))} />} />
         </BentoRow>
