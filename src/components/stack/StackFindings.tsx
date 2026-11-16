@@ -387,7 +387,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
     {toolCount > 0 && <div data-card="price">
       {/* The hero of a dashboard (M01, 14/11/2026): the page's name and who it is for, its two actions, then the
           key figures, each said once and only here. The bento below explains them; it never repeats them. */}
-      <StoryHero greeting={welcome?.greeting} titleRef={welcome?.titleRef}
+      <StoryHero aura={false} greeting={welcome?.greeting} titleRef={welcome?.titleRef}
         eyebrow={welcome?.eyebrow ?? t("Ma stack", "My stack")} eyebrowAside={<StackProfile lang={fr ? "fr" : "en"} />}
         title={t("Ma stack", "My stack")}
         lead={toolCount === 1 ? t("Il en faut au moins deux pour parler de stack.", "It takes at least two to call it a stack.") : undefined}

@@ -14,7 +14,9 @@ import styles from "./Narrative.module.css";
 /** One key figure of the hero: a short label above, the figure, a detail under it (M01, 14/11/2026). */
 export type HeroFigure = { id: string; label: string; value: ReactNode; detail?: string; icon?: ReactNode };
 
-export function StoryHero({ greeting, eyebrow, eyebrowAside, titleRef, title, lead, figures, figuresLabel, aside }: {
+export function StoryHero({ greeting, eyebrow, eyebrowAside, titleRef, title, lead, figures, figuresLabel, aside, aura = true }: {
+  /** The coloured light on the right; off where the tiles carry their own (Ma stack, 16/11/2026). */
+  aura?: boolean;
   greeting?: ReactNode; eyebrow: string; titleRef?: Ref<HTMLHeadingElement>;
   /** Next to the eyebrow, who the page is for (a profile pill the person can edit). */
   eyebrowAside?: ReactNode;
@@ -45,7 +47,7 @@ export function StoryHero({ greeting, eyebrow, eyebrowAside, titleRef, title, le
   }, []);
   return (
     <header ref={hero} className={styles.hero} data-hero="" data-pagehead="">
-      <span className={styles.aura} aria-hidden="true" />
+      {aura && <span className={styles.aura} aria-hidden="true" />}
       <p className={styles.eyebrow}>{greeting && <span data-greeting="">{greeting}</span>}{greeting && <span aria-hidden="true"> · </span>}<span>{eyebrow}</span>{eyebrowAside && <span className={styles.eyebrowAside}>{eyebrowAside}</span>}</p>
       <h1 ref={titleRef} tabIndex={-1} className={styles.premise}>{title}</h1>
       {lead && <p className={styles.after}>{lead}</p>}
