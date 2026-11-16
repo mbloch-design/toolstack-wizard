@@ -105,14 +105,11 @@
   pointer-events: none;
 }
 
-/* Light, not paint (M01, 16/11/2026, « lumière, clarté, légèreté »): one colour per tile, very diluted, born in a
-   corner and melting into the white over most of the tile; no band at the foot, no shadow, a 0.5 px edge only. */
+/* Light inside the glass (M01, 16/11/2026): the page stays white; each tile holds its own coloured lights low on
+   the left, under a frosted veil that keeps the words on near-white. Nothing in the right corner. */
 .tile[data-bloom] {
-  background:
-    radial-gradient(90% 80% at 0% 100%, color-mix(in oklch, color-mix(in oklch, var(--b2) 60%, white) 14%, transparent), transparent 60%),
-    var(--tt-stage-surface, var(--tt-bg));
-  box-shadow: var(--tt-stage-edge, var(--tt-card-edge));
-  backdrop-filter: var(--tt-stage-filter, none);
+  background: var(--tt-frost-veil), radial-gradient(60% 75% at 12% 108%, color-mix(in oklch, var(--b1) 60%, transparent), transparent 70%), radial-gradient(55% 65% at 52% 115%, color-mix(in oklch, var(--b2) 45%, transparent), transparent 70%), var(--tt-bg);
+  box-shadow: var(--tt-frost-edge);
 }
 
 /* A question asked of the person: the same light as the others, a brand halo from the corner, no shadow. */
@@ -340,46 +337,3 @@
   }
 }
 
-/* The stage: lights behind, glass in front. The lights overflow the stage a little and never catch the pointer. */
-.stage {
-  --tt-stage-surface: var(--tt-frost);
-  --tt-stage-edge: var(--tt-frost-edge);
-  --tt-stage-filter: var(--tt-frost-filter);
-
-  position: relative;
-  isolation: isolate;
-}
-
-.stageLights {
-  position: absolute;
-  inset: -6% -4%;
-  z-index: -1;
-  background: var(--tt-stage-lights);
-  filter: blur(var(--tt-stage-blur));
-  pointer-events: none;
-  animation: stage-drift 24s var(--tt-ease) infinite alternate;
-}
-
-@keyframes stage-drift {
-  to {
-    transform: translate3d(2%, -1.5%, 0) scale(1.04);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .stageLights {
-    animation: none;
-  }
-}
-
-/* Less transparency or more contrast: no lights, solid white tiles. */
-@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
-  .stageLights {
-    display: none;
-  }
-
-  .stage {
-    --tt-stage-surface: var(--tt-bg);
-    --tt-stage-filter: none;
-  }
-}

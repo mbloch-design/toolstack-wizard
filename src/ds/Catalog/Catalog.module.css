@@ -617,10 +617,11 @@
   padding: var(--tt-space-4);
   border-radius: var(--tt-r-card);
   background:
-    radial-gradient(130% 100% at 50% 130%, color-mix(in oklch, var(--fc1, var(--tt-brand)) 16%, transparent), transparent 65%),
-    var(--tt-stage-surface, var(--tt-bg));
-  box-shadow: var(--tt-stage-edge, var(--tt-card-edge));
-  backdrop-filter: var(--tt-stage-filter, none);
+    var(--tt-frost-veil),
+    radial-gradient(70% 70% at 18% 112%, color-mix(in oklch, var(--fc1, var(--tt-brand)) 55%, transparent), transparent 70%),
+    radial-gradient(60% 60% at 70% 118%, color-mix(in oklch, var(--fc2, var(--tt-area-3)) 40%, transparent), transparent 70%),
+    var(--tt-bg);
+  box-shadow: var(--tt-frost-edge);
   color: var(--tt-ink);
   text-decoration: none;
   transition: box-shadow 700ms var(--tt-spring-card), transform 700ms var(--tt-spring-card);

@@ -16,7 +16,7 @@ import Seats from "@/ds/Seats/Seats";
 import Logo from "@/ds/Logo/Logo";
 import { Meet, Stamp, Trim } from "@/ds/Gesture/Gesture";
 import { toolKey } from "@/lib/stackView";
-import Bento, { Answer, Answers, BentoRow, GlassIcon, GlassStage, MiniRing, Question, Tile } from "@/ds/Bento/Bento";
+import Bento, { Answer, Answers, BentoRow, GlassIcon, MiniRing, Question, Tile } from "@/ds/Bento/Bento";
 import Amount from "@/ds/Amount/Amount";
 import Starter from "@/ds/Starter/Starter";
 
@@ -384,7 +384,6 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   const heroWork = total > 0 && hourly ? (() => { const minutes = Math.round((total / hourly) * 60); const h = Math.floor(minutes / 60), m = minutes % 60;
     return h > 0 ? `${h}\u00a0h${m ? `\u00a0${String(m).padStart(2, "0")}` : ""}` : `${m}\u00a0min`; })() : null;
   return <>
-    <GlassStage>
     {toolCount > 0 && <div data-card="price">
       {/* The hero of a dashboard (M01, 14/11/2026): the page's name and who it is for, its two actions, then the
           key figures, each said once and only here. The bento below explains them; it never repeats them. */}
@@ -484,7 +483,6 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         })()}
       </Bento>;
     })()}
-      </GlassStage>
     {toolCount === 1 && !decision && <Bento label={t("Pour commencer", "To start")}><BentoRow><Starter lang={fr ? "fr" : "en"} tool={spend[0]?.tool || freeTools[0]} onAddTool={onAddTool} /></BentoRow></Bento>}
     {rows.length > 0 && <Bento label={t("Étape en cours", "Current step")}>
       {rows.map((row) => <BentoRow key={row.map((tile) => tile.id).join("-")}>{row.map((tile) => tile.node(row.map((x) => x.id)))}</BentoRow>)}
