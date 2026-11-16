@@ -327,10 +327,20 @@
 @media (dynamic-range: high) {
   .tile[data-tone="smoke"] {
     box-shadow: var(--tt-smoke-tile-shadow-hdr);
+    dynamic-range-limit: no-limit;
   }
 
+  /* The sheen becomes real light: an HDR image (PQ, ≈ 1 000 nits) added to the glass, brighter than the page's
+     white. Its black adds nothing; only the streak shines. */
   .tile[data-tone="smoke"]::after {
-    background: var(--tt-smoke-sheen-hdr);
+    background: var(--tt-hdr-sheen);
+    mix-blend-mode: plus-lighter;
+    opacity: .55;
+  }
+
+  /* The veil gave way to the light: the coloured lights inside dim to keep the glass smoked. */
+  .tile[data-tone="smoke"]::before {
+    opacity: .55;
   }
 }
 
