@@ -611,6 +611,17 @@
 
 .figureCard {
   composes: focus from "../atoms.module.css";
+  position: relative;
+
+  /* Inside the glass, the accents join its family (M01): figures and ticks in deep teal and aqua, the overlap a soft coral. */
+  --tt-brand: var(--tt-slab-ink-teal);
+  --tt-live: var(--tt-slab-ink-aqua);
+  --tt-overlap: var(--tt-slab-ink-coral);
+  --tt-brand-mark: var(--tt-slab-ink-teal);
+  --tt-gain-ink: var(--tt-slab-ink-aqua);
+  --tt-overlap-strong: var(--tt-slab-ink-coral);
+  --tt-segment-done: var(--tt-slab-segment);
+
   display: grid;
   align-content: start;
   gap: var(--tt-space-1);
@@ -628,6 +639,20 @@
   color: var(--tt-ink);
   text-decoration: none;
   transition: box-shadow 700ms var(--tt-spring-card), transform 700ms var(--tt-spring-card), filter 700ms var(--tt-spring-card);
+}
+
+/* The glass's own edge (M01): a 1 px rim in a gradient, bright where the light comes from (top left), pale petrol
+   on the far side, drawn as a ring so it never covers the content. */
+.figureCard::after {
+  position: absolute;
+  inset: 0;
+  padding: var(--tt-hairline-w);
+  border-radius: inherit;
+  background: var(--tt-slab-rim);
+  content: "";
+  pointer-events: none;
+  mask: var(--tt-ring-mask);
+  mask-composite: exclude;
 }
 
 /* Under the pointer the slab keeps its matter: it rises, its shadow opens, the colour inside wakes a little. */

@@ -109,6 +109,15 @@
    rising from the bottom over the whole width as if the glass deepened; its thickness shows on the edges, a bright
    rim and a light caught inside along them; its shadow takes its colour. Nothing in the right corner. */
 .tile[data-bloom] {
+  /* Inside the glass, the accents join its family (M01): figures and ticks in deep teal and aqua, the overlap a soft coral. */
+  --tt-brand: var(--tt-slab-ink-teal);
+  --tt-live: var(--tt-slab-ink-aqua);
+  --tt-overlap: var(--tt-slab-ink-coral);
+  --tt-brand-mark: var(--tt-slab-ink-teal);
+  --tt-gain-ink: var(--tt-slab-ink-aqua);
+  --tt-overlap-strong: var(--tt-slab-ink-coral);
+  --tt-segment-done: var(--tt-slab-segment);
+
   background:
     radial-gradient(140% 72% at 55% 2%, var(--tt-slab-mist) 55%, rgb(242 248 249 / 0%) 74%),
     radial-gradient(60% 50% at 10% 105%, color-mix(in oklch, var(--tt-slab-aqua) 32%, transparent), transparent 75%),
@@ -118,6 +127,20 @@
   --tt-slab-shadow: var(--tt-slab-edge), 0 10px 24px -16px rgb(20 20 40 / 10%);
 
   box-shadow: var(--tt-slab-shadow);
+}
+
+/* The glass's own edge (M01): a 1 px rim in a gradient, bright where the light comes from (top left), pale petrol
+   on the far side, drawn as a ring so it never covers the content. */
+.tile[data-bloom]::after {
+  position: absolute;
+  inset: 0;
+  padding: var(--tt-hairline-w);
+  border-radius: inherit;
+  background: var(--tt-slab-rim);
+  content: "";
+  pointer-events: none;
+  mask: var(--tt-ring-mask);
+  mask-composite: exclude;
 }
 
 /* A question asked of the person: the same light as the others, a brand halo from the corner, no shadow. */
