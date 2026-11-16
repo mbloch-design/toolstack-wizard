@@ -211,3 +211,32 @@
     stroke-dashoffset: 0;
   }
 }
+
+/* Cards (M01): the answers side by side as white glass cards, pictogram on top, the amount large at the foot. */
+.choices[data-layout="cards"] {
+  grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+  gap: var(--tt-space-3);
+}
+
+.choices[data-layout="cards"] .choice {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  gap: var(--tt-space-3);
+  min-height: 176px;
+  padding: var(--tt-space-4);
+  background: var(--tt-glass-chip-face);
+  box-shadow: var(--tt-glass-chip-edge);
+}
+
+.choices[data-layout="cards"] .choice:hover:not(:disabled) {
+  box-shadow: var(--tt-glass-chip-lift);
+}
+
+.choices[data-layout="cards"] .choice[data-state="kept"] {
+  box-shadow: var(--tt-row-ring-on);
+}
+
+.choices[data-layout="cards"] .amount {
+  justify-self: start;
+}

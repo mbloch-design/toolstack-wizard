@@ -207,11 +207,14 @@
   margin-inline: calc(var(--tt-space-2) * -1);
   padding: var(--tt-space-2);
   border-radius: var(--tt-r-field);
-  transition: background-color var(--tt-dur-state) ease;
+  transition: background-color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease;
 }
 
-.steps[data-layout="list"] .step:not([data-done]):hover {
-  background: var(--tt-tile);
+/* An open step answers the pointer as a pane of glass lifting off the slab, never a grey block (M01). */
+.steps[data-layout="list"] .step:not([data-done]):hover,
+.steps[data-layout="list"] .step:not([data-done]):focus-within {
+  background: var(--tt-glass-chip-face);
+  box-shadow: var(--tt-glass-chip-lift);
 }
 
 .steps[data-layout="list"] .stepMark {

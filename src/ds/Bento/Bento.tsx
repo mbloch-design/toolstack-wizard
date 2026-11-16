@@ -29,7 +29,9 @@ export function BentoRow({ children }: { children: ReactNode }) {
  * One fact: a small label top left, a picture top right, the statement in large at the bottom,
  * its state under it. A question tile puts its question between the two.
  */
-export function Tile({ span, label, art, statement, status, children, tone = "tile", leaving, detail, open = false, onToggle, moreLabel, lessLabel, condensed = false, card, footer, wash, bloom, hero = false }: {
+export function Tile({ span, label, art, statement, status, children, tone = "tile", leaving, detail, open = false, onToggle, moreLabel, lessLabel, condensed = false, card, footer, wash, bloom, hero = false, quiet = false }: {
+  /** A secondary slab (M01): the same glass, its light dimmed, so the page is not a Christmas tree. */
+  quiet?: boolean;
   /** Columns out of 12 on a wide bento; every tile takes the full width on a phone. */
   span: 4 | 5 | 6 | 7 | 8 | 12;
   label: ReactNode; art?: ReactNode; statement?: ReactNode;
@@ -60,6 +62,8 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
   /** One big figure, centred, with its caption: the tile is the number. */
   hero?: boolean;
 }) {
+  // A question to the person is a quiet slab of glass too, in one discreet range.
+  const slab = bloom ?? (tone === "question" ? ["var(--tt-range-2)", "var(--tt-range-2)"] as [string, string] : undefined);
   const toggleMore = detail && onToggle && <span className={styles.toggle}><TextButton aria-expanded={open} onClick={onToggle}>{open ? lessLabel : moreLabel}<svg viewBox="0 0 24 24" aria-hidden="true"><path d={open ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"} /></svg></TextButton></span>;
   if (open && detail) return (
     <article className={styles.tile} data-open="" data-tone={tone} data-card={card} style={{ "--span": span } as CSSProperties}>
@@ -70,9 +74,9 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
   );
   return (
     <article className={styles.tile} data-span={span} data-tone={tone} data-card={card} data-leaving={leaving || undefined} data-condensed={condensed || undefined} data-wash={wash?.length ? "" : undefined}
-      data-bloom={bloom ? "" : undefined} data-hero={hero || undefined}
-      style={{ "--span": span, ...(wash?.length ? { "--w1": wash[0], "--w2": wash[1] ?? wash[0], "--w3": wash[2] ?? wash[1] ?? wash[0] } : {}), ...(bloom ? { "--b1": bloom[0], "--b2": bloom[1] } : {}) } as CSSProperties}>
-      {bloom && <Matter balance={span >= 7} />}
+      data-bloom={slab ? "" : undefined} data-quiet={slab && (quiet || !bloom) ? "" : undefined} data-hero={hero || undefined}
+      style={{ "--span": span, ...(wash?.length ? { "--w1": wash[0], "--w2": wash[1] ?? wash[0], "--w3": wash[2] ?? wash[1] ?? wash[0] } : {}), ...(slab ? { "--b1": slab[0], "--b2": slab[1] } : {}) } as CSSProperties}>
+      {slab && <Matter balance={span >= 7} quiet={quiet || !bloom} />}
       <div className={styles.top}><span className={styles.label}>{label}</span>{art && <span className={styles.art} aria-hidden="true">{art}</span>}</div>
       {children && <div className={styles.body}>{children}{!statement && !status && toggleMore}</div>}
       {(statement || status) && <div className={styles.foot}>

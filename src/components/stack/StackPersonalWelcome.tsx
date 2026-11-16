@@ -20,6 +20,11 @@ export function isFreshFromOnboarding() {
  * A first name to greet with, or null. A provider handle ("blochmic-ops", "jdoe42")
  * or an address is not a name: then the onboarding asks for one.
  */
+/** The first name a visitor gave on the welcome, kept in this browser only, so the dashboard greets them by it (M01). */
+const LOCAL_NAME = "tooltrim-first-name";
+export function rememberLocalName(name: string) { try { localStorage.setItem(LOCAL_NAME, name); } catch { /* private window: the greeting stays generic */ } }
+function localName(): string | null { try { return localStorage.getItem(LOCAL_NAME); } catch { return null; } }
+
 export function firstNameOf(display: string | null | undefined): string | null {
   const clean = display?.trim().replace(/\s+/g, " ");
   if (!clean) return null;
@@ -49,7 +54,8 @@ export function useStackWelcome({ empty, pending = 0, cards = 0 }: { empty: bool
   // Everyone is greeted: by first name when signed in, simply otherwise.
   const signedIn = !!user && syncStatus !== "session-expired";
   const full = signedIn && profile?.userId === user!.id ? profile.displayName : null;
-  const name = firstNameOf(full);
+  // Signed in: the account's name. Otherwise: the first name given on this browser's welcome, never an earlier account's.
+  const name = signedIn ? firstNameOf(full) : firstNameOf(localName());
   const hour = new Date().getHours();
   const evening = hour >= 18 || hour < 5;
   const hello = name ? t(`${evening ? "Bonsoir" : "Bonjour"}, ${name}`, `${evening ? "Good evening" : "Hi"}, ${name}`) : t(evening ? "Bonsoir" : "Bonjour", evening ? "Good evening" : "Hello");

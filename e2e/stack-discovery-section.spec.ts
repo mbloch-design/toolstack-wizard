@@ -5,7 +5,7 @@ for(const lang of ['fr','en'] as const) for(const width of [320,1440]) test(`dis
  await control(request,'seed',{email:'discovery@example.invalid',state:value});
  await page.goto(`/${lang}/ma-stack`);await login(page,lang,'discovery@example.invalid');await saved(page,lang);
  const section=page.locator('[data-section="discovery"]');await expect(section).toBeVisible();await section.evaluate(el=>el.scrollIntoView({block:'center'}));
- const cards=section.locator('[data-discovery-tool]');await expect(cards).toHaveCount(3);
+ const cards=section.locator('[data-discovery-tool]');await expect(cards).toHaveCount(4);
  const firstSlugs=await cards.evaluateAll(items=>items.map(item=>item.getAttribute('data-discovery-tool')));
  expect(firstSlugs.filter(slug=>slug?.startsWith('adobe-')).length).toBeLessThanOrEqual(1);
  expect(firstSlugs.some(slug=>!slug?.startsWith('adobe-'))).toBe(true);
@@ -19,11 +19,12 @@ for(const lang of ['fr','en'] as const) for(const width of [320,1440]) test(`dis
  expect(await section.locator('ul').evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);
  await section.screenshot({path:test.info().outputPath(`discovery-${lang}-${width}.png`)});
  if(width===320) await section.locator('ul').evaluate(el=>{el.scrollLeft=el.scrollWidth;});
- await section.getByRole('button',{name:fr?'D’autres pistes':'More ideas',exact:true}).click();
- await expect(cards.first().getByRole('link')).toBeFocused();
- expect(await section.locator('ul').evaluate(el=>el.scrollLeft)).toBe(0);
+ // « More » loads the next ideas after the first ones, never swaps them (16/11/2026).
+ await section.getByRole('button',{name:fr?/^Voir \d pistes? de plus$/:/^Show \d more ideas?$/}).click();
+ await expect(cards.nth(firstSlugs.length).getByRole('link')).toBeFocused();
  const secondSlugs=await cards.evaluateAll(items=>items.map(item=>item.getAttribute('data-discovery-tool')));
- expect(secondSlugs.some(slug=>firstSlugs.includes(slug))).toBe(false);
+ expect(secondSlugs.slice(0,firstSlugs.length)).toEqual(firstSlugs);
+ expect(secondSlugs.length).toBeGreaterThan(firstSlugs.length);
  expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual(['firefly','notion']);
  const selectedCard=cards.first(), slug=await selectedCard.getAttribute('data-discovery-tool');
  await selectedCard.getByRole('link',{name:/^(Voir la fiche de|View) /}).click();

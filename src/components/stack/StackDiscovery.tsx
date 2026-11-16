@@ -9,7 +9,9 @@ import { getExplorerHref, type ExplorationCandidate } from '@/lib/toolExploratio
 import type { ToolSummary } from '@/hooks/useSupabaseData';
 import { trackEvent } from '@/lib/analytics';
 
-const firstRound = (candidates: ExplorationCandidate[]) => ({ cards: candidates.slice(0, 3), seen: candidates.slice(0, 3).map(candidate => candidate.tool.id) });
+/** Ideas come by rows of four, the width of the media grid, so a row is never left with a hole (M01). */
+const BATCH = 4;
+const firstRound = (candidates: ExplorationCandidate[]) => ({ cards: candidates.slice(0, BATCH), seen: candidates.slice(0, BATCH).map(candidate => candidate.tool.id) });
 export default function StackDiscovery({ candidates, lang, prefix, sourceIds, selectedIds, pendingSlug, explorerSources, onAdd, note }: {
   /** What the first ideas answer, when the stack has a gap (M01): replaces the general sentence. */
   note?: string;
@@ -19,27 +21,26 @@ export default function StackDiscovery({ candidates, lang, prefix, sourceIds, se
   const t = (fr: string, en: string) => lang === 'fr' ? fr : en;
   const [round, setRound] = useState(() => firstRound(candidates));
   const list = useRef<HTMLUListElement>(null);
-  const focusNewRound = useRef(false);
+  // Index of the first card a « more » added: focus lands on it, the cards already read stay where they were.
+  const focusFrom = useRef<number | null>(null);
   useLayoutEffect(() => {
-    if (!focusNewRound.current) return;
-    focusNewRound.current = false;
-    if (list.current) { list.current.scrollLeft = 0; list.current.querySelector<HTMLAnchorElement>('[data-media-link]')?.focus({ preventScroll: true }); }
+    if (focusFrom.current === null) return;
+    const index = focusFrom.current;
+    focusFrom.current = null;
+    list.current?.querySelectorAll<HTMLAnchorElement>('[data-media-link]')[index]?.focus();
   }, [round.cards]);
   const sourceKey = [...sourceIds].sort().join('|');
   useEffect(() => {
     // Adding a discovery keeps its card in place. Removing its source invalidates the reason.
     if ((!round.cards.length && candidates.length) || round.cards.some(card => !sourceIds.includes(card.relatedSource.id))) setRound(firstRound(candidates));
   }, [candidates, sourceKey, round.cards]);
-  const more = candidates.some(candidate => !round.cards.some(card => card.tool.id === candidate.tool.id));
-  const renew = () => {
-    focusNewRound.current = true;
-    setRound(previous => {
-      const fresh = candidates.filter(candidate => !previous.seen.includes(candidate.tool.id));
-      const pool = fresh.length ? fresh : candidates.filter(candidate => !previous.cards.some(card => card.tool.id === candidate.tool.id));
-      const cards = pool.slice(0, 3);
-      return { cards, seen: fresh.length ? [...previous.seen, ...cards.map(card => card.tool.id)] : cards.map(card => card.tool.id) };
-    });
-    trackEvent('stack_explorer_click', { source: 'recos_refresh' });
+  // « More » loads the next ideas after the ones shown, never swaps them (M01, 16/11/2026: « pas une roulette russe »).
+  const next = candidates.filter(candidate => !round.cards.some(card => card.tool.id === candidate.tool.id)).slice(0, BATCH);
+  const more = next.length > 0;
+  const loadMore = () => {
+    focusFrom.current = round.cards.length;
+    setRound(previous => ({ cards: [...previous.cards, ...next], seen: [...previous.seen, ...next.map(card => card.tool.id)] }));
+    trackEvent('stack_explorer_click', { source: 'recos_more' });
   };
   // The section and its cards are design system components (src/ds); the page only passes its router links and screenshots.
   return <Section labelledBy="ms-recos-title" name="discovery">
@@ -55,6 +56,6 @@ export default function StackDiscovery({ candidates, lang, prefix, sourceIds, se
         renderLink={(className, content) => <Link className={className} data-media-link="" to={`${prefix}/tool/${tool.slug ?? tool.id}`} aria-label={t(`Voir la fiche de ${tool.name}`, `View ${tool.name}`)} onClick={() => trackEvent('stack_reco_click', { tool: tool.slug || tool.id })}>{content}</Link>}
         add={{ state: pending ? 'pending' : added ? 'added' : 'idle', disabled: !!pendingSlug, onAdd: (origin) => onAdd(tool, origin) }} />;
     })}</MediaCards> : <p className={atoms.text}>{t('La curiosité ne s’arrête pas aux liens du catalogue. Ouvrez l’Explorer pour choisir votre piste.', 'Curiosity goes beyond catalogue connections. Open the Explorer to choose your direction.')}</p>}
-    {more && <SectionFoot><Button onClick={renew}>{t('D’autres pistes', 'More ideas')}</Button></SectionFoot>}
+    {more && <SectionFoot><Button onClick={loadMore}>{t(`Voir ${next.length} piste${next.length > 1 ? 's' : ''} de plus`, `Show ${next.length} more idea${next.length > 1 ? 's' : ''}`)}</Button></SectionFoot>}
   </Section>;
 }

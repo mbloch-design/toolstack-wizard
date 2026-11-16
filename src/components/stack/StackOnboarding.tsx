@@ -7,7 +7,7 @@ import { convertAmount, formatAmount } from "@/lib/currencyRates";
 import type { DailyRate } from "@/lib/personalStack";
 import { useLang } from "@/hooks/useLang";
 import { useStackAccount } from "@/hooks/useStackAccount";
-import { firstNameOf } from "@/components/stack/StackPersonalWelcome";
+import { firstNameOf, rememberLocalName } from "@/components/stack/StackPersonalWelcome";
 import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { TRADE_TOOLS } from "@/data/tradeTools";
@@ -110,7 +110,7 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
 
   const begin = () => {
     const clean = typed.trim().replace(/\s+/g, " ").slice(0, 40);
-    if (!fromAccount && clean) { setGiven(firstNameOf(clean) ?? clean.split(" ")[0]); void experience.saveDisplayName?.(clean); }
+    if (!fromAccount && clean) { const first = firstNameOf(clean) ?? clean.split(" ")[0]; setGiven(first); rememberLocalName(first); void experience.saveDisplayName?.(clean); }
     setStep("trade");
   };
   const progress = index >= 0 && <div className="so-progress" aria-label={t(`Étape ${index + 1} sur ${STEPS.length}`, `Step ${index + 1} of ${STEPS.length}`)}>

@@ -51,8 +51,8 @@
   padding: var(--tt-space-4);
   border: 0;
   border-radius: var(--tt-r-tile);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-card-edge);
+  background: var(--tt-glass-chip-face);
+  box-shadow: var(--tt-glass-chip-edge);
   color: var(--tt-ink);
   font: inherit;
   letter-spacing: inherit;

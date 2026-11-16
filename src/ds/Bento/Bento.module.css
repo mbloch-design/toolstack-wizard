@@ -149,8 +149,12 @@
   mask-composite: exclude;
 }
 
+.tile[data-quiet]::after {
+  background: var(--tt-clear-rim);
+}
+
 /* A question asked of the person: the same light as the others, a brand halo from the corner, no shadow. */
-.tile[data-tone="question"] {
+.tile[data-tone="question"]:not([data-bloom]) {
   background:
     var(--tt-bg);
   box-shadow: var(--tt-card-edge);

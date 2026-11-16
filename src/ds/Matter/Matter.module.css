@@ -95,6 +95,17 @@
   mask-image: var(--tt-grain-mask);
 }
 
+/* A secondary slab is clear glass (M01): no colour, a diagonal sheen like a pane, so only the dashboard tiles carry colour. */
+.matter[data-quiet] {
+  background: var(--tt-clear-glass);
+}
+
+.matter[data-quiet] .lights,
+.matter[data-quiet] .grain,
+.matter[data-quiet] .glow {
+  display: none;
+}
+
 /* Less transparency: no layered blur, the lights softened once instead. */
 @media (prefers-reduced-transparency: reduce) {
   .blur,

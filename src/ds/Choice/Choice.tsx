@@ -55,8 +55,10 @@ export default function Choice({ media, pair, name, tag, note, amount, unit, sav
 }
 
 /** The group the rows sit in: a narrow group puts the amount under the text. */
-export function Choices({ children, label, radio }: { children: ReactNode; label?: string; radio?: boolean }) {
-  return <div className={styles.choices} data-choices="" role={radio ? "radiogroup" : undefined} aria-label={label}>{children}</div>;
+export function Choices({ children, label, radio, layout = "rows" }: { children: ReactNode; label?: string; radio?: boolean;
+  /** rows: one answer per line; cards: side by side as glass cards, the amount large at the foot (M01, plans). */
+  layout?: "rows" | "cards" }) {
+  return <div className={styles.choices} data-choices="" data-layout={layout} role={radio ? "radiogroup" : undefined} aria-label={label}>{children}</div>;
 }
 
 /** A plan's icon on the logo tile, so plans and tools share one column. */

@@ -276,7 +276,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           {chosen && <Seats lang={fr ? "fr" : "en"} plan={chosen.label} seats={seats} total={format(chosen.monthly * seats)}
             onChange={(n) => { setSeats(n); setPreview(total + chosen.monthly * n); }} onConfirm={() => chosen.pick(seats)} onChangePlan={() => { setSeatPlan(null); setPreview(null); }} />}
           {/* A plan question: one row per plan, the price on the right. */}
-          {tiles && !chosen && <Choices radio label={t("Votre formule", "Your plan")}>
+          {tiles && !chosen && <Choices radio layout="cards" label={t("Votre formule", "Your plan")}>
             {tiles.map((plan) => {
               const [, main, qualifier] = /^(.*?)\s*\((.+)\)\s*$/.exec(plan.label) ?? [null, plan.label, null];
               const PlanIcon = plan.monthly === 0 ? Moon : plan.monthly >= max ? Rocket : Zap;
@@ -466,7 +466,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
             return costs.length === 2 ? sum + Math.min(...costs) : sum;
           }, 0);
           return <BentoRow>
-            <Tile span={12} card="split" label={t("Où va l'argent", "Where the money goes")} bloom={saveable > 0 ? ["var(--tt-overlap)", "var(--tt-area-5)"] : ["var(--tt-brand)", "var(--tt-area-3)"]}
+            <Tile span={12} card="split" quiet label={t("Où va l'argent", "Where the money goes")} bloom={["var(--tt-range-2)", "var(--tt-range-2)"]}
               statement={saveable > 0
                 ? <><Key tone="overlap">{format(Math.round(saveable))}</Key>{t(" par mois à trancher", " a month to settle")}</>
                 : <><Key>{topShare}{"\u00a0"}%</Key>{t(` pour ${top.tool.name}`, ` for ${top.tool.name}`)}</>}

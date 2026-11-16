@@ -103,15 +103,16 @@
   margin: 0 0 0 auto;
 }
 
-/* The difference an answer makes, as a small pill: figure in ink, direction in colour. */
+/* The difference an answer makes (M01): a glass pastille, the figure in ink, only the small arrow in colour. */
 .delta {
   display: inline-flex;
   align-items: center;
   gap: var(--tt-space-1);
-  padding: var(--tt-space-1) var(--tt-space-2);
+  padding: var(--tt-space-1) var(--tt-space-3);
   border-radius: var(--tt-r-pill);
-  background: var(--tt-delta-cost-bg);
-  color: var(--tt-overlap-strong);
+  background: var(--tt-glass-chip-face);
+  box-shadow: var(--tt-glass-chip-edge);
+  color: var(--tt-ink);
   font: var(--tt-note-font);
   letter-spacing: var(--tt-note-tracking);
   font-variant-numeric: tabular-nums;
@@ -119,9 +120,14 @@
   animation: pop 380ms var(--tt-spring) both;
 }
 
-.delta[data-down] {
-  background: var(--tt-delta-gain-bg);
-  color: var(--tt-gain-ink);
+.delta::before {
+  color: var(--tt-slab-ink-coral);
+  content: "↑";
+}
+
+.delta[data-down]::before {
+  color: var(--tt-live);
+  content: "↓";
 }
 
 /* At rest: a green check before « Rien à trancher. » */
