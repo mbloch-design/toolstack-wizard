@@ -39,8 +39,88 @@ Ce tableau pilote la suite ; les bilans et tableaux datés du 9 octobre plus bas
 | R10 — Chaîne de build | Remédiation publiée (`ffbb3f7ac7`, CI/Vercel et recette publique réussis) : Tailwind 4.3.3, plugins obsolètes retirés, tests alignés sur le plugin React actif et fusionneur de classes compatible. Audit npm **9 → 0** ; build Node 20 et budgets validés, cascade et tokens conservés. [Bilan et preuves](R10_R11_CLOTURE_2026-10-15.md). |
 | R11 — SEO/GEO et médias | Correctifs techniques publiés (`ffbb3f7ac7`, CI/Vercel et recette publique réussis) : descriptions/LLM, 62 références corrigées sur 54 outils, filtre des captures invalides, vrais 404 conservés après hydratation, sept traductions libérées des redirections obsolètes. Sitemap/routing contrôlés ensemble ; Search Console consultée. Publication et réexploration Google restent des états distincts. [Bilan](R10_R11_CLOTURE_2026-10-15.md). |
 | Soumissions et paiement | Chantier séparé. Cette passe ne recertifie pas son fonctionnement et n’effectue aucun paiement. Rotation Production déjà vérifiée le 16 octobre ; copie privée locale du jeton à actualiser séparément. |
+| Axe agentique et MCP — 16 novembre | Angle décidé : attribut des fiches d'abord. Schéma du bloc `agent` proposé, à valider ; rien d'implémenté. [Plan et schéma](#axe-agentique-mcp). |
 
 **Suite :** publier les deux lots locaux R3/R7 après revue, puis contrôler les parcours, requêtes, compression et cache CDN en production. Le transport commun est désormais réduit sans suppression de champs ; un fractionnement supplémentaire n’est pas requis pour clôturer ce canary et ne sera ouvert que sur un besoin mesuré. L’exploitation GA4 et les essais utilisateurs restent distincts ; R5/R6 éditoriaux ne sont pas relancés.
+
+<a id="axe-agentique-mcp"></a>
+
+## Axe agentique et MCP — 16 novembre 2026
+
+**Décision (Michael, 16/11) :** le MCP entre d'abord comme attribut de décision des fiches existantes, pas comme annuaire dédié. L'intégration à Ma Stack et à l'Explorer vient après la mission Ma Stack en cours ; le cadrage du bloc de faits et le pilote peuvent avancer en parallèle. Rien n'est implémenté à cette date.
+
+### État des lieux (relevé le 16/11)
+
+- Référence : [Toolfolio, Agent Resources](https://toolfolio.com/agent-resources/mcp-servers). 335 serveurs MCP et 146 skills dans leur sitemap. Fiche : description, éditeur officiel ou non, connexion distante/locale, authentification, clients compatibles, commande d'installation, date de vérification. Aucun verdict, public développeur ; rien sur le forfait requis ni sur l'accès en écriture. Leur catalogue est lui-même exposé en serveur MCP (lecture seule).
+- ToolTrim : `form_factor = 'mcp'`, la route `/mcp/:slug`, `guard-plugins.mjs` et la règle éditoriale de `scripts/repass/SPEC.md` existent. Aucune fiche de l'index JSON (1 360) ne porte `formFactor` ni `worksWith` : ces champs ne viennent que de Supabase, donc les pages hôtes restent vides avec la source publique par défaut. 16 fiches mentionnent MCP, en prose seulement.
+- Recouvrement : 119 des 335 serveurs Toolfolio correspondent par slug ou nom exact à une fiche du catalogue ; quelques autres existent sous un autre slug (Mailchimp, HubSpot, Jira, Wix, Softr), soit environ 130. Correspondance automatique, non relue fiche par fiche.
+
+### Étapes
+
+| Étape | Livrable | Condition de sortie |
+|---|---|---|
+| M0 — Cadrage | Schéma du bloc `agent` (ci-dessous) validé ; choix de la source structurée de contrôle (registre MCP officiel à évaluer, non consulté à ce jour) | Schéma validé par Michael, vocabulaires fermés ajoutés au garde-fou |
+| M1 — Pilote | 20 outils les plus présents dans les stacks, faits vérifiés sur la documentation officielle ; bloc sur la fiche ; guide pilier FR/EN « MCP pour freelances non-développeurs » | 20 blocs sourcés et datés, projection JSON, rendu fiche validé |
+| M2 — Extension | Les ~130 recouvrements ; filtre Explorer « connectable à mon assistant » ; signal Ma Stack ; critère dans les comparatifs | Après la mission Ma Stack ; contrôle de fraîcheur automatisé en place |
+| M3 — Fiches MCP autonomes | Serveurs sans outil hôte au catalogue (`form_factor = 'mcp'`), pages `/mcp/<client>` au seuil de 3 | Demande constatée sur M1/M2 |
+| M4 — Serveur MCP ToolTrim | Catalogue et Ma Stack interrogeables depuis un assistant | À décider après M2 |
+
+**Risque principal : la fraîcheur.** Ces faits changent vite ; c'est le motif qui a fait différer R5/R6. Pas de passage à M2 sans contrôle automatisé et sans budget convenu.
+
+### Schéma proposé du bloc `agent` (à valider, M0)
+
+Écrit dans le fichier de recherche de la fiche (`facts.agent`), projeté en `agentAccess` dans `tools_v4.json` et en version réduite dans `tools_index.json`.
+
+```jsonc
+"agent": {
+  "mcp": "official",            // official | community | none ; bloc absent = non vérifié
+  "verified_on": "2026-11-16",  // obligatoire, y compris pour "none"
+  "sources": [{ "label": "…", "url": "…" }],   // au moins une source éditeur, sauf "none"
+  "servers": [{                 // vide si "none" ; plusieurs possibles (Cloudflare, Mailchimp)
+    "name": "GitHub MCP",
+    "transport": "remote",      // remote | local
+    "auth": ["oauth", "token"], // oauth | api_key | token | none
+    "access": "read_write",     // read | read_write | docs_only
+    "plan": "all",              // all | paid | specific | unknown
+    "plan_note": "…", "plan_note_en": "…",     // requis si "specific"
+    "clients": ["claude", "cursor"],            // slugs du catalogue, attestés par l'éditeur uniquement
+    "docs_url": "…"
+  }]
+}
+```
+
+Règles : vocabulaires fermés, contrôlés par le garde-fou comme `form_factor` ; `none` signifie « vérifié, pas de serveur » et se distingue du bloc absent ; aucun client listé sans attestation de l'éditeur ; pas de commande d'installation recopiée (lien vers la documentation). `form_factor` et `works_with` ne changent pas : ils restent réservés aux fiches MCP autonomes de M3. Index réduit : `mcp`, `transport`, `access`, `clients`, `verifiedOn`.
+
+Schéma accepté à titre provisoire (Michael, 16/11), à éprouver avant d'être figé. Trois champs sont incertains : `plan` (souvent non documenté par les éditeurs, risque de `unknown` en masse), `clients` (un serveur distant fonctionne en principe avec tout client MCP ; premier champ à retirer s'il coûte trop), `access` (dépend souvent des permissions du compte ; une valeur supplémentaire peut être nécessaire).
+
+### Prochaine action — essai du schéma sur cinq outils (brief de reprise)
+
+Tâche d'exécution, autonome, à faire dans une session neuve à partir de ce seul brief.
+
+- **But :** savoir quels champs du bloc `agent` se remplissent proprement depuis les documentations officielles, avant le pilote de 20.
+- **Outils :** `notion`, `stripe`, `canva`, `figma`, plus un outil du catalogue sans serveur MCP (candidat non vérifié : `hotjar` ; en changer s'il en a un) pour éprouver la valeur `none`.
+- **Sources :** uniquement la documentation ou le site de l'éditeur, consultés le jour même. Toolfolio sert à repérer, jamais de preuve. Un fait introuvable s'écrit `unknown` ou se note comme manquant ; ne rien déduire.
+- **Sortie :** un fichier par outil dans `research/agent-trial/<slug>.json`, contenant le seul bloc `agent` au format ci-dessus. Ne toucher ni à `research/dossiers/`, ni à `research/bundle-editorial/`, ni à `src/data/`, ni au code. Pas de commit sur la branche Ma Stack.
+- **Bilan attendu, en réponse et non en fichier :** pour chaque champ, combien d'outils sur cinq l'ont rempli avec une source ; les cas qui n'entrent pas dans le vocabulaire ; une recommandation garder / modifier / retirer pour `plan`, `clients` et `access`.
+- **Terminé quand :** cinq fichiers sourcés et datés existent, le bilan est rendu, et la section « Schéma proposé » ci-dessus est corrigée selon ce que Michael retient.
+
+### Règles d'arbitrage pour la suite (écrites le 16/11 pour décider sans nouvelle session de cadrage)
+
+**Après l'essai sur cinq outils, pour chaque champ incertain :**
+- `plan` : le garder si au moins 3 outils sur 5 le remplissent avec une source éditeur ; sinon le retirer du schéma et dire le forfait en prose dans le verdict quand il est connu.
+- `clients` : le garder seulement si les éditeurs restreignent réellement certains clients. S'ils disent « tout client MCP », le remplacer par rien pour les serveurs distants et ne le conserver que pour les serveurs locaux.
+- `access` : si plusieurs outils répondent « selon les permissions du compte », ajouter la valeur `account_scoped` plutôt que de forcer `read_write`.
+- Tout autre champ rempli sur moins de 3 outils sur 5 sort du schéma. Dans le doute, retirer : un bloc court et vrai vaut mieux qu'un bloc complet à moitié `unknown`.
+
+**Choix des 20 outils du pilote M1 :** partir de `research/agent-trial/toolfolio-overlap-2026-11-16.json`, croiser avec la présence dans les stacks (`src/data/stacks-catalog-index.json`) et les impressions (`src/data/tool_demand.json`), puis équilibrer les catégories. Écarter les outils pour développeurs (Terraform, Redis, Playwright…) : le public est le freelance non-développeur. Inclure deux ou trois outils `none`.
+
+**Rendu sur la fiche (M1) :** le bloc dit une décision, pas une fiche technique. Une phrase de verdict (« pilotable depuis votre assistant, en lecture et écriture, sur tous les forfaits »), puis les faits, la date de vérification et le lien vers la documentation. Pas de badge, pas de logo de client, pas de commande d'installation (règles de `PRODUCT.md`). Composant dans `src/ds/`, stories d'abord. Un outil `none` l'affiche aussi : « pas de serveur MCP officiel au JJ/MM ».
+
+**Guide pilier (M1) :** répond à « qu'est-ce que ça change pour moi ? » pour un freelance sans code : ce qu'un assistant peut faire dans ses outils, ce qu'il faut vérifier avant de connecter (accès en écriture, forfait), trois exemples tirés des fiches du pilote. Ton et format des guides existants.
+
+**Critère pour passer à M2 :** les 20 blocs tiennent sans correction un mois après leur vérification, ou un contrôle automatisé signale les écarts ; et le guide ou les fiches du pilote montrent des impressions ou des clics. Sans l'un des deux, s'arrêter à M1.
+
+**Ce que ToolTrim ne fait pas sur cet axe :** annuaire neutre de serveurs, classement par popularité, skills, commandes d'installation. C'est le terrain de Toolfolio.
 
 ## Priorité révisée — 13 octobre 2026
 

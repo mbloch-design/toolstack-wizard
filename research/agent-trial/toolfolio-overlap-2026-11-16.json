@@ -1,0 +1,39 @@
+{
+  "relevé_le": "2026-11-16",
+  "source": "https://toolfolio.com/sitemap.xml (335 URL /agent-resources/mcp-servers/<slug>)",
+  "méthode": "Slug Toolfolio sans le suffixe -mcp, normalisé (minuscules, alphanumérique), comparé au slug puis au nom des 1 360 fiches de src/data/tools_index.json. Correspondance automatique, non relue fiche par fiche : un nom identique peut désigner un autre produit.",
+  "usage": "Liste de repérage pour choisir le pilote M1 et l'extension M2. Ce n'est pas une preuve : chaque serveur se vérifie sur la documentation de l'éditeur.",
+  "correspondances_exactes": [
+    "calendly", "jotform", "netlify", "intercom", "cal-com", "clickup", "perplexity", "todoist",
+    "chrome-devtools", "clerk", "github", "grafana", "playwright", "redis", "resend", "sanity",
+    "sentry", "terraform", "ahrefs", "airtable", "amplemarket", "artlist", "base44", "beehiiv",
+    "bloom-crm", "brevo", "buffer", "canva", "chatbase", "circle", "cloudflare", "contra", "craft",
+    "descript", "dynamic-mockups", "eagle", "elevenlabs", "folk", "framer", "google-analytics",
+    "gumloop", "gumroad", "heygen", "hootsuite", "hugeicons", "hyperbrowser", "icons8", "inbound",
+    "jasper", "krea-ai", "leadpages", "loops", "magic-patterns", "mailerlite", "make", "memberstack",
+    "metricool", "microsoft-clarity", "miro", "mixpanel", "monday", "octarine", "outrank", "paddle",
+    "payload-cms", "penpot", "pics-io", "pitch", "plane", "planetscale", "postsyncer", "railway",
+    "restream", "retool", "revenuecat", "rezi", "riverside", "runway", "sellfy", "semrush",
+    "shadcn-ui", "shopify", "sketch", "slack", "squarespace", "stripe", "superhuman", "superlist",
+    "taskade", "tella", "trello", "typeform", "typefully", "unbounce", "vercel", "vidiq",
+    "whalesync", "wized", "youform", "zapier", "zoom", "lemlist", "spline", "figma-anima", "apollo",
+    "asana", "canny", "close", "expo", "granola", "neon", "posthog", "supabase", "tally", "webflow",
+    "figma", "firecrawl", "linear", "notion"
+  ],
+  "au_catalogue_sous_un_autre_slug": {
+    "mailchimp": ["mailchimp-docs-mcp", "mailchimp-transactional-mcp"],
+    "hubspot": ["hubspot-developer-mcp"],
+    "jira": ["atlassian-mcp"],
+    "confluence": ["atlassian-mcp"],
+    "kit": ["convertkit-mcp"],
+    "wix": ["wix-com-mcp"],
+    "softr": ["softr-platform-mcp"],
+    "mongodb-atlas": ["mongodb-mcp"],
+    "surferseo": ["surfer-mcp"],
+    "mem-ai": ["mem-mcp"]
+  },
+  "à_vérifier": [
+    "bloom-crm (Toolfolio : bloom-mcp, produit peut-être différent)",
+    "craft, circle, close, loops, make, plane, pitch, inbound, eagle : noms courts, homonymes possibles"
+  ]
+}
