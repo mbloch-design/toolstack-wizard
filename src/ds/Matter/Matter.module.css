@@ -10,18 +10,16 @@
   pointer-events: none;
 }
 
-/* Sharp lights in the slab's range, low in the glass: deep on the left, light in the middle, a neighbour on the right. */
+/* Points of light, not a wash (M01, after the reference): the slab's colour concentrated in the lower left corner, a
+   neighbouring touch beside it; the rest of the glass stays clear. */
 .lights {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  opacity: .7;
   background:
-    radial-gradient(26% 30% at 66% 78%, var(--tt-slab-iris), transparent 72%),
-    radial-gradient(34% 42% at 14% 100%, var(--tt-slab-teal), transparent 72%),
-    radial-gradient(32% 40% at 50% 106%, var(--tt-slab-aqua), transparent 72%),
-    radial-gradient(34% 42% at 88% 102%, var(--tt-slab-blue), transparent 72%),
-    linear-gradient(transparent 50%, color-mix(in oklch, var(--tt-slab-aqua) 35%, transparent));
+    radial-gradient(40% 46% at 10% 104%, var(--tt-slab-teal), transparent 70%),
+    radial-gradient(26% 30% at 34% 108%, var(--tt-slab-iris), transparent 70%),
+    radial-gradient(22% 26% at 4% 70%, color-mix(in oklch, var(--tt-slab-aqua) 70%, transparent), transparent 70%);
 }
 
 .blur {

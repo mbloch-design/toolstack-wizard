@@ -614,7 +614,7 @@
 
   /* Each slab its own range (M01): a camaieu drawn from its colour, light, mid and deep, never grey. */
   --tt-slab-white: oklch(from var(--fc1, var(--fc-tone, var(--tt-brand))) 99% .008 h);
-  --tt-slab-mist: oklch(from var(--fc1, var(--fc-tone, var(--tt-brand))) 97.5% .018 h);
+  --tt-slab-mist: oklch(from var(--fc1, var(--fc-tone, var(--tt-brand))) 98% .005 h);
   --tt-slab-aqua: oklch(from var(--fc1, var(--fc-tone, var(--tt-brand))) 86% calc(c * .75) calc(h - 22));
   --tt-slab-teal: oklch(from var(--fc1, var(--fc-tone, var(--tt-brand))) 70% calc(c * .95) h);
   --tt-slab-blue: oklch(from var(--fc1, var(--fc-tone, var(--tt-brand))) 78% calc(c * .8) calc(h + 34));

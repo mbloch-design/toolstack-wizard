@@ -111,7 +111,7 @@
 .tile[data-bloom] {
   /* Each slab its own range (M01): a camaieu drawn from its colour, light, mid and deep, never grey. */
   --tt-slab-white: oklch(from var(--b1) 99% .008 h);
-  --tt-slab-mist: oklch(from var(--b1) 97.5% .018 h);
+  --tt-slab-mist: oklch(from var(--b1) 98% .005 h);
   --tt-slab-aqua: oklch(from var(--b1) 86% calc(c * .75) calc(h - 22));
   --tt-slab-teal: oklch(from var(--b1) 70% calc(c * .95) h);
   --tt-slab-blue: oklch(from var(--b1) 78% calc(c * .8) calc(h + 34));
