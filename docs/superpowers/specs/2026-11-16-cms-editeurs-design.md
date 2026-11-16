@@ -1,8 +1,23 @@
 # CMS éditeurs ToolTrim — inscription, création, validation et vie de la fiche
 
 Date : 16 novembre 2026. Auteur : Codex, cadrage Astra pour exécution Sol.
-Statut : cadrage livré, **aucune fonctionnalité CMS éditeur déployée par ce travail**.
+Statut : cadrage corrigé après décision de Michael sur le stockage, **aucune fonctionnalité CMS éditeur déployée par ce travail**.
 Plan associé : [plan d’implémentation](../plans/2026-11-16-cms-editeurs.md).
+
+## Contrainte prioritaire — correction de Michael du 16/11/2026
+
+**Conserver Supabase Free. Seules les fiches rattachées à un compte éditeur sont gérées en BDD ; les autres restent dans le circuit JSON.** Le compte administrateur ne constitue pas un rattachement éditeur. Cette décision remplace la proposition antérieure de migration générale du catalogue.
+
+- Un dossier initial créé par un compte peut conserver son brouillon privé en BDD. Une simple revendication ne migre pas la fiche publique : l’attribution doit être validée.
+- Lors du rattachement validé d’une fiche existante, importer uniquement cette fiche et ses brouillons concernés, avec contrôle de la révision JSON. Elle garde son identifiant, son URL, ses contenus et son analyse ToolTrim.
+- Un seul propriétaire d’écriture par fiche : JSON pour les fiches non rattachées, service CMS pour les fiches rattachées. Le JSON publié contient toujours tout le catalogue ; sa copie d’une fiche CMS est une projection, pas une deuxième source modifiable.
+- Une publication assemble la révision Git des fiches JSON et les versions approuvées des fiches CMS. Le site, la recherche, Ma Stack et le sitemap utilisent le même résultat statique ; aucune lecture Supabase par visite publique.
+- Les schémas, versions, brouillons et releases décrits ci-dessous sont limités au périmètre CMS. Ne pas enregistrer le catalogue complet dans chaque release DB : conserver les références Git, hashes et seuls éléments CMS concernés. Les références à un outil JSON ne doivent pas forcer son import ni une clé étrangère vers une ligne DB inexistante.
+- Une révocation bloque l’accès immédiatement mais ne supprime ni la fiche ni ses versions. Le retour définitif au circuit JSON doit être une opération explicite, avec résolution des brouillons et sauvegarde vérifiée avant toute purge DB.
+- Les données historiques déjà présentes dans Supabase nécessitent un inventaire et une décision de retrait distincte ; aucune suppression automatique ou migration générale dans ce chantier.
+- Budget global du projet, pas seulement par éditeur : mesurer base, fichiers et transferts ; borner les uploads et la rétention. Aucun plan payant, transformation d’image payante ou nouveau projet pour contourner les quotas. Le traitement d’images doit rester compatible avec les services gratuits retenus.
+
+La limite de 1 000 résultats par requête n’est pas une limite de lignes stockées. Les quotas publiés du plan Free incluent 500 Mo de base et 1 Go de fichiers : [tarifs Supabase](https://supabase.com/pricing), [pagination et résultats](https://supabase.com/docs/reference/javascript/v1/select). Leur respect doit être mesuré ; le cadrage ne prouve pas la capacité restante du projet.
 
 ## 1. Objectif et décisions
 
@@ -23,11 +38,11 @@ Une personne découvre l’offre ToolTrim, crée son compte, crée une demande d
 1. **Compte unique, espace éditeur dédié** : réutiliser Supabase Auth et le profil existant. La même personne peut utiliser Ma Stack et représenter un ou plusieurs outils ; aucun second mot de passe.
 2. **Inscription ouverte, attribution contrôlée.** Un inscrit peut préparer sa propre demande de nouvelle fiche ; ToolTrim vérifie le représentant avant de lui attribuer une fiche publique. Invitation pour les représentants existants et récupération des anciennes souscriptions. Ni le domaine email ni le paiement ne donnent à eux seuls la propriété d’une fiche existante.
 3. **Validation humaine avant publication.** L’éditeur envoie une proposition ; ToolTrim l’accepte ou demande des corrections. L’éditeur ne pousse jamais sur GitHub et ne publie pas seul. Ce choix peut évoluer sans changer le modèle de données.
-4. **Supabase devient la source d’écriture unique.** Les JSON du site deviennent des exports reproductibles d’une version de publication en base. Le site conserve son rendu statique et sa rapidité ; « fiche en BDD » n’impose pas un appel distant à chaque visite.
+4. **Stockage sélectif imposé par Michael.** Supabase gère uniquement les fiches rattachées à un compte éditeur ; les autres restent éditées via le circuit JSON. La publication assemble les deux périmètres dans un catalogue statique commun, sans deux writers pour une même fiche.
 5. **Même éditeur de fiche pour les deux rôles**, avec des capacités calculées côté serveur. Pas une copie simplifiée du back-office qui divergera ensuite.
 6. Première recette complète sur un nouveau dossier gratuit, un payant et une fiche existante, puis un canari de production autorisé. Plusieurs fiches/membres sont possibles ; gestion autonome d’équipe et nouveaux abonnements hors V1. **Les offres et paiements déjà vendus sont dans V1**, sans nouveau tarif ni nouvelle obligation d’achat.
 
-Ces six choix sont des décisions de cadrage proposées, sauf la conservation des offres et du parcours global explicitement demandée par Michael. Aucun paiement ne doit modifier le score, le classement organique ou les droits sur l’analyse par effet implicite. La mise en avant commerciale reste distincte et signalée comme telle.
+Ces choix restent proposés sauf les contraintes explicitement demandées par Michael : offres existantes, parcours global, Supabase gratuit et stockage sélectif. Aucun paiement ne doit modifier le score, le classement organique ou les droits sur l’analyse par effet implicite. La mise en avant commerciale reste distincte et signalée comme telle.
 
 ## 2. État vérifié et aptitude à démarrer
 
@@ -36,7 +51,7 @@ Sources examinées le 16/11/2026 : code du commit de production `415800ebdfa3c1f
 | Élément | État constaté | Conséquence pour Sol |
 |---|---|---|
 | Site et back-office public | Vercel READY sur `415800e`, retrait Diagnostic. Réponse 200 du back-office et redirection 308 Diagnostic vers Ma Stack | Cela ne constitue pas une recette complète édition/publication |
-| Brouillons administrateur | `api/_backoffice-catalog-store.ts` : Redis `tt:catalog-editor:v1` ; `api/backoffice-catalog.ts` : admin confirmé, publication JSON par GitHub | À migrer en base ; ne pas donner ce jeton ni cette API admin aux éditeurs |
+| Brouillons administrateur | `api/_backoffice-catalog-store.ts` : Redis `tt:catalog-editor:v1` ; `api/backoffice-catalog.ts` : admin confirmé, publication JSON par GitHub | Migrer uniquement les brouillons des fiches rattachées ; conserver le circuit des autres. Ne pas exposer cette API admin aux éditeurs |
 | Catalogue du build | 1 360 enregistrements/slugs dans `src/data/tools_v4.json` du commit publié ; `SB_SOURCE_DISABLED_WHILE_CODEX_RESTRUCTURES = true` dans `vite.config.ts` | Le JSON publié est une entrée obligatoire de la réconciliation |
 | Catalogue Supabase | 1 178 lignes `public.tools`, dont 1 047 `published` ; 2 094 lignes FR/EN dans `catalog_api.published_tool_projection` | Les périmètres diffèrent. Les seuls décomptes ne permettent pas d’attribuer chaque écart |
 | Canonique existant | `catalog_private` contient plans, observations de prix, localisations, médias, sources, versions éditoriales, relations, états de domaines, événements de publication | Réutiliser ces entités ; ne pas recréer une seconde base outils |
@@ -260,39 +275,34 @@ V1 : PNG, JPEG et WebP statiques, 5 Mio maximum par fichier, 20 mégapixels maxi
 
 Dimensionnement de livraison : logo dérivé jusqu’à 512 px sans agrandissement ; galerie jusqu’à 1 920 px sans découpe ; couverture avec aperçu du cadrage choisi, dérivé 1 200 × 630 et original conservé. Une petite image produit un avertissement, pas une promesse de qualité. Le recadrage visuel avancé est une zone DS à retravailler ; V1 peut fournir un choix de cadrage centré/haut/bas avec aperçu et un lien « remplacer », sans prétendre fournir un éditeur photo.
 
-## 8. Source de vérité, publication et migration
+## 8. Source de vérité, publication et rattachement sélectif
 
 ```mermaid
 flowchart LR
-  P[Compte éditeur] --> D[Brouillon privé en base]
-  D --> S[Proposition figée]
-  S --> R[Revue ToolTrim]
-  A[Analyse ToolTrim] --> C[Contenu canonique en base]
-  R --> C
-  C --> V[Lot et projections immuables]
-  V --> G[Export JSON généré et commit groupé]
+  J[Fiches sans compte : JSON] --> V[Assemblage versionné]
+  P[Fiches rattachées : brouillons en BDD] --> R[Revue ToolTrim]
+  R --> C[Versions CMS approuvées]
+  C --> V
+  V --> G[Catalogue JSON complet et commit groupé]
   G --> B[Build et déploiement Vercel]
   B --> K[Contrôle des routes et version]
   K --> L[Version publique confirmée]
 ```
 
-Les JSON restent utiles comme artefacts ; ils ne sont plus éditables comme une source concurrente. Conserver d’abord leur forme pour limiter le risque sur la fiche, la recherche, Ma Stack et le SEO. Tous les générateurs (`tools_index`, shards, sitemap, JSON-LD, llms, pages pré-rendues) lisent le **même export de lot**, jamais une requête live différente au milieu du build. `catalogProjection.ts` est l’adaptateur partagé avec l’aperçu ; il doit couvrir les champs réellement visibles avant bascule.
+L’assemblage épingle une révision Git et les versions CMS approuvées. Il conserve les fiches JSON non concernées, remplace les seules fiches du périmètre CMS et refuse doublons, slugs en conflit et révisions obsolètes. Le registre de rattachement route les écritures admin. Les données historiques Supabase ne deviennent pas publiables par leur seule présence en base.
 
-Un lot approuvé capture les révisions exactes, produit un export déterministe et un manifeste `{releaseId, schemaVersion, sourceHashes, snapshotSha256}`. Le commit contient uniquement les artefacts catalogue concernés et le manifeste. Une reprise utilise le même lot et la même clé d’idempotence ; une réponse GitHub perdue ne crée pas un nouveau lot. Les modifications de code étrangères sont conservées, les modifications catalogue concurrentes font échouer le compare-and-swap. Aucun force push.
+Tous les générateurs (`tools_index`, shards, sitemap, JSON-LD, llms, pages pré-rendues) lisent le même catalogue assemblé. `catalogProjection.ts` reste partagé avec l’aperçu. Les références vers les fiches JSON restent possibles sans importer leur contenu en base. L’unicité des slugs est vérifiée contre le catalogue Git, ses archives et les réservations CMS, puis revérifiée à la publication avec contrôle de concurrence.
 
-États de livraison : `prepared → exporting → building → verifying → live`, ou `failed` à l’étape concernée. Une publication en cours conserve les propositions et expose « Mise en ligne en cours ». Après Vercel READY, vérifier l’alias, le SHA, le manifeste public et le rendu FR/EN des fiches affectées ; activer alors la référence publique en DB et confirmer les projections. Vercel et Postgres ne forment pas une transaction distribuée : la courte phase de convergence reste `verifying`, jamais un faux succès. Si l’activation échoue, reprendre le même lot et afficher l’incident ; une seule livraison catalogue est active à la fois.
+La DB conserve un manifeste compact : révision Git, éléments CMS, hashes, état de livraison. Le snapshot public complet est versionné dans Git, pas recopié intégralement en base à chaque lot. Les états restent `prepared/exporting/building/verifying/live/failed` ; commit créé et version effectivement déployée sont distincts. Reprise du même lot sur échec ; aucune suppression d’un brouillon plus récent. Rollback par version compensatoire et contrôle du rendu.
 
-L’aperçu privé peut lire les révisions candidates, le site et les API publiques ne lisent que le snapshot actif. L’état `applied` signifie appliqué au canonique ; l’état `live` signifie livré et vérifié. Un build raté ne modifie pas le snapshot public actif et ne supprime pas le brouillon. Un rollback republie un snapshot précédent et enregistre un événement compensatoire ; aucune réécriture du journal ni perte des propositions plus récentes.
+### Bascule par fiche
 
-### Migration obligatoire avant ouverture
-
-1. Repartir du dernier `origin/main`, préserver et inventorier le travail local. Porter uniquement les composants utiles validés, sans modifier DS/stories.
-2. Extraire en lecture seule les identités, versions et sources : JSON du déploiement réellement actif, JSON archives s’il existe, brouillons Redis, DB canonique, corrections d’URL, prix attestés et registres annexes effectivement consommés. Produire un rapport par id/slug/champ et provenance. Les chiffres 1 360/1 178/1 047 sont un signal, pas une règle de fusion.
-3. Pour chaque conflit, conserver les deux valeurs et leur provenance. Le rendu actuellement publié est la référence de non-régression, pas une attestation de vérité. Une donnée non vérifiée ne reçoit pas artificiellement un statut approuvé. Conserver FR/EN, plans et prix masqués, textes, médias, slugs archivés, inconnus historiques. Aucun import global qui écrase la BDD.
-4. Construire en staging le premier snapshot DB reproduisant le catalogue publié. Les outils legacy peuvent rester legacy ; les champs CMS sont migrés explicitement sans prétendre que toute recherche est canonique. Vérifier tous les identifiants et champs consommés, puis des rendus représentatifs ; toute divergence intentionnelle doit être listée et acceptée.
-5. Les writers admin, scripts catalogue et usine d’import passent par les révisions/transactions communes. Pour les outils migrés, interdire les anciennes écritures Redis/JSON et toute réimportation aveugle. Les scripts de recherche proposent des changements ; ils ne remplacent pas les contributions ou l’analyse acceptées. Pas de dual-write permanent.
-6. Court gel explicite des écritures catalogue pour l’import final des brouillons et contrôle d’empreinte ; lecture du site conservée. À la moindre modification concurrente, interrompre la bascule et conserver les données. Archiver l’export de secours Redis, vérifier la reprise de chaque brouillon, puis retirer son ancien writer.
-7. Livrer le snapshot DB via le circuit unique, vérifier le déploiement, puis inviter le pilote. Étendre après recette. Ne pas remettre simplement le flag Supabase du build sur `false` : cela republierait une source divergente.
+1. Inventorier en lecture seule JSON publié, archives, brouillons Redis, données DB et droits existants ; mesurer aussi l’usage du plan Free.
+2. Réconcilier les identités sans importer le catalogue. Choisir une fiche rattachée pilote et une fiche sans compte témoin.
+3. Après attribution validée, verrouiller les écritures de la seule fiche pilote ; importer contenu et brouillon avec empreintes de source. Toute divergence concurrente interrompt l’opération.
+4. Vérifier la parité FR/EN, prix, médias et analyse ; activer son writer CMS et neutraliser son ancien writer JSON/Redis. Les fiches sans compte conservent leur parcours admin.
+5. Publier le lot assemblé, vérifier que le témoin et les fiches non concernées restent identiques, puis contrôler le déploiement et les droits.
+6. Tester révocation, reprise et retour explicite vers JSON sans perte. Ne pas purger de données historiques avant inventaire des dépendances et sauvegarde vérifiée.
 
 ## 9. User stories et critères de recette
 

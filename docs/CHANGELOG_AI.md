@@ -1,3 +1,15 @@
+## 2026-11-16 · CMS éditeurs · démarrage de la réconciliation
+
+- Rapprochement en lecture seule du JSON sur `origin/main` avec Supabase, mesure de la volumétrie et statut des attributions dans `docs/CMS_MIGRATION_STATUS.md`.
+- Script local de comparaison et quatre tests ciblés. Inventaire des contenus, des brouillons et des dépendances du schéma encore en cours.
+
+## 2026-11-16 · CMS éditeurs · périmètre BDD et gratuité corrigés
+
+- Décision de Michael : seules les fiches liées à un compte éditeur passent en BDD, les autres restent en JSON ; maintien de Supabase Free.
+- Cadrage et plan Sol corrigés : transfert par fiche après attribution, routage exclusif des écritures, publication commune, manifeste DB compact et mesure des quotas. Aucun import général ou effacement des données historiques autorisé par cette correction.
+- Vérification documentaire : 1 000 lignes est une limite de résultat par requête ; quotas Free publiés de 500 Mo de base et 1 Go de fichiers. Ce contrôle ne mesure pas la consommation réelle du projet.
+- Documents uniquement ; aucune modification de code, migration, paiement ou production.
+
 ## 2026-11-16 · CMS éditeurs · cadrage du parcours complet
 
 - Cadrage Astra et plan de relais Sol : offres existantes, inscription, dossier initial privé, récupération de fiche/ancien paiement, attribution, faits et médias, revue ToolTrim, relecture initiale, publication groupée et mises à jour.

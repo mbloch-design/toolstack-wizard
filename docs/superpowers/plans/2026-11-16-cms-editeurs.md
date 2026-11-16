@@ -4,11 +4,15 @@
 
 **Goal:** Relier les offres actuelles, l’inscription, la création ou récupération de fiche, le badge/paiement, la préparation factuelle, la validation ToolTrim et les mises à jour dans un CMS Supabase complet.
 
-**Architecture:** Réutiliser Supabase Auth, `catalog_contrib` et le canonique existant ; ajouter les dossiers initiaux et versions manquantes. Les éditeurs proposent les faits, ToolTrim garde son analyse et publie des lots immuables dont le JSON est un export. Reprendre Creem et la vérification du badge existants, sans inventer de deuxième tunnel commercial.
+**Architecture:** Supabase Free uniquement. Fiches rattachées à un compte éditeur en BDD ; fiches non rattachées dans le circuit JSON existant. Réutiliser Auth et les entités CMS nécessaires sans importer le catalogue entier. Une publication assemble les versions CMS approuvées et la révision Git des autres fiches. Reprendre Creem et le badge existants.
 
 **Tech Stack:** React, Router, TypeScript, Vite, composants Storybook existants, API Vercel, Supabase Postgres/Auth/Storage, Creem, GitHub et Vercel pour livraison des snapshots publics.
 
 **Spec:** [2026-11-16-cms-editeurs-design.md](../specs/2026-11-16-cms-editeurs-design.md), notamment les corrections de Michael en §1 et §3. Lire les deux documents avant de coder.
+
+## Correction prioritaire du 16/11/2026 — à appliquer à chaque tâche
+
+Michael refuse la migration générale : BDD réservée aux fiches rattachées à un compte éditeur, maintien de Supabase gratuit. Toute mention de baseline, import, version canonique, writer DB ou migration dans T0–T11 s’applique exclusivement à ce périmètre. Les contenus sans compte restent dans leur circuit JSON ; un administrateur n’est pas un éditeur rattaché. Une revendication en attente ne déclenche pas l’import du contenu public. Ne pas créer de lignes outils pour résoudre les références aux fiches JSON. Les anciennes données DB ne sont ni activées ni supprimées automatiquement.
 
 ## Global Constraints
 
@@ -19,7 +23,7 @@
 - L’éditeur ne modifie jamais analyse, notation, verdict, alternatives, plan comparatif, taux de conversion, statut de vérification ou affiliation, même via objet parent/alias/API/SQL.
 - Le droit est calculé côté serveur par compte/session + cible + attribution + capacité ; un paiement, email, badge ou JWT metadata n’accorde pas la propriété d’un outil.
 - Brouillons, originaux d’images, données de paiement et notes internes sont privés. Publication uniquement par ToolTrim, un lot et une livraison identifiés, échec récupérable.
-- Un export JSON est généré depuis une release DB immuable. Le même snapshot alimente rendu, index, recherche, Ma Stack et SEO. Pas de dual-write permanent.
+- Le catalogue publié assemble une révision Git des fiches sans compte et les versions approuvées des fiches CMS. Même snapshot pour rendu, index, recherche, Ma Stack et SEO. Un writer par fiche ; le routage est contrôlé côté serveur. Aucun snapshot complet du catalogue stocké à répétition en BDD.
 - À chaque tâche : test du contrat avant implémentation, correction, tests ciblés, commit des chemins explicites seulement. Ne pas modifier les travaux locaux étrangers au chantier.
 
 ## Review Focus
@@ -95,7 +99,7 @@ type ToolTrimApproval = { id: string; target: CmsTarget; version: number; hash: 
 
 - [ ] Vérifier SHA de production, `origin/main`, statut des worktrees et index. Vérifier `git rev-parse --show-toplevel` : la configuration commune pointe vers un autre checkout dans cette session ; utiliser `git --work-tree='<checkout attendu>'` et contrôler le git-dir avant toute mutation. Choisir un checkout propre sans reset de travail existant ; si besoin utiliser le tool de worktree géré. Ne pas intégrer les 5 commits et changements locaux du backoffice-pilotage en bloc.
 - [ ] Écrire les tests : id≠slug conservé, doublon de slug détecté y compris archive, outil absent DB conservé dans le rapport, conflit prix sourcé non résolu par date seule, draft Redis et champ inconnu non perdus. `node --test scripts/cms/reconcile.test.mjs` doit échouer avant le code puis passer.
-- [ ] Produire la cartographie actuelle et un fingerprint des entrées. Contrôler les lecteurs de JSON, les overrides prix/URL, les tables et fonctions DB réellement déployées ; ne pas recopier les anciens chiffres comme actuels.
+- [ ] Mesurer base, fichiers et transferts du projet Free ; définir les plafonds globaux et la rétention avant les uploads. Produire la cartographie actuelle et un fingerprint des entrées. Contrôler les lecteurs de JSON, les overrides prix/URL, les tables et fonctions DB réellement déployées ; ne pas recopier les anciens chiffres comme actuels.
 - [ ] Versionner une baseline de schéma reproductible sans données personnelles ni secrets si les objets `catalog_contrib` déployés manquent des migrations du dépôt. Créer la migration via `supabase migration new cms_catalog_baseline` (version CLI vérifiée) ; conditionner précisément l’état attendu, échouer sur dérive plutôt qu’un `IF NOT EXISTS` qui masque un conflit.
 - [ ] Rapport : chaque écart classé conservé/corrigé/à arbitrer ; fiche pilote factuelle et cohorte de parité choisies. Commit scoped du rapport, scripts et migration vérifiée, aucun import production.
 
@@ -231,7 +235,7 @@ Contrat admin distinct dans le même service : `readToolTrimDraft(actor,target: 
 **Interfaces :** `prepareRelease(actor,inputs: ReleaseInput[],idempotencyKey): Release`; `exportRelease(releaseId): {tools,manifest,media}`; `deliverRelease(releaseId): DeliveryStatus`; `verifyAndActivateRelease(releaseId,deploymentId): DeliveryStatus`; `projectDraft(baseCanonical,productDraft,editorialRevision): PublicToolProjection` utilisé aussi pour l’aperçu.
 
 - [ ] Tests parité chaque champ consommé, id/slugs, FR/EN, descriptions factuelles distinctes analyse, affichage médias et alt, variantes localisées, absence de fuite inactive, prix withheld, alternatives, note, FAQ, override prix/URL. Toute différence intentionnelle est documentée et approuvée ; aucun fallback muet qui annule une donnée CMS.
-- [ ] Implémenter release/items immuables, hash stable, publication SQL transactionnelle et snapshot complet. Vues publiques pointent sur la release active ; brouillons/candidats jamais exposés. Références à un outil archivé exclues de l’export public, contenu conservé.
+- [ ] Implémenter un manifeste DB compact et des items CMS immuables ; assembler avec la révision Git épinglée sans importer les autres fiches. Tester témoin JSON inchangé, relation CMS vers JSON, collision de slug et concurrence Git. Snapshot complet conservé dans Git ; candidats privés ; outils archivés exclus du public.
 - [ ] Tester un même lot avec création initiale, update produit et update éditorial seul. Chaque item épingle les versions produit et ToolTrim exactes ; deux inputs du même outil sont composés ou refusés explicitement en cas de versions incompatibles. Première publication ouvre le suivi de fiche attribuée ; une modification en cours ne change pas le snapshot figé.
 - [ ] Générer les artefacts et manifeste public de version ; un commit groupé sans force push. Gestion compare-and-swap, commit ambigu relu, concurrence avec code ou autre lot ; une seule livraison active. Reprise même lot et même snapshot.
 - [ ] Vérifier SHA, alias prod, READY, manifeste et routes FR/EN avant `live` ; activer le pointeur public DB puis recontrôler. Échec d’activation garde `verifying/failed`, pas `live`. Documenter la fenêtre de convergence, pas de transaction distribuée fictive.
@@ -240,19 +244,21 @@ Contrat admin distinct dans le même service : `readToolTrimDraft(actor,target: 
 
 **Sortie :** ce que voit l’éditeur peut devenir exactement ce que voit le public ; US08, US10.
 
-## T10 — Migration réelle et retrait des doubles écritures
+## T10 — Rattachement sélectif et routage des écritures
 
-**Fichiers :** `scripts/cms/reconcile.mjs`, créer `scripts/cms/import-baseline.mjs`, `scripts/cms/import-drafts.mjs` et tests ; `docs/CMS_MIGRATION_STATUS.md`, `docs/BACKOFFICE_CATALOG_EDITOR.md`, `docs/SUPABASE_REPRISE.md`, registres de couverture actifs.
+**Fichiers :** `scripts/cms/reconcile.mjs`, `scripts/cms/import-baseline.mjs`, `scripts/cms/import-drafts.mjs` et tests ; `docs/CMS_MIGRATION_STATUS.md`, `docs/BACKOFFICE_CATALOG_EDITOR.md`. Les noms de scripts ne permettent aucun import global.
 
-**Interfaces :** `importBaseline({sourceHashes,approvedResolutions,dryRun}): ImportReport`; `importLegacyDrafts({expectedRedisRevision,dryRun}): ImportReport`. Import relançable par clé de source, journal avant/après et aucun écrasement d’un changement plus récent.
+**Interfaces :** `importBaseline({toolIds,validatedAssignments,sourceHashes,approvedResolutions,dryRun}): ImportReport`; `importLegacyDrafts({toolIds,expectedRedisRevision,dryRun}): ImportReport`. Refuser l’absence de sélection explicite ou une fiche sans attribution validée. Reprise idempotente, journal avant/après.
 
-- [ ] Construire en staging une baseline depuis le publié + résolutions explicites, exporter et comparer TOUS les IDs/champs consommés. Garder contenu inconnu dans une archive de compatibilité ; ne pas promouvoir des observations non revues. Les scripts factory passent eux aussi par le circuit de révision.
-- [ ] Importer archives, brouillons Redis, dossiers et droits historiques, médias hérités et corrections de sources. Vérifier chaque mapping d’identité et chaque reçu, pas seulement un total.
-- [ ] Tester un gel bref des écritures, snapshot, import final, check des révisions, activation et retour arrière. Si un writer ou hash change, interrompre sans perte. Le site reste lisible.
-- [ ] Après activation réussie, couper writer Redis/JSON pour données migrées ; anciens endpoints compatibles deviennent adaptateurs DB ou erreur explicite. Conserver export de secours privé jusqu’à validation, pas de dual-write permanent. Retirer rescue overrides au fur et à mesure que leur parité est prouvée.
-- [ ] Rejouer création, archive et restauration admin, suppression compte éditeur, changements d’offre et reprise d’achat ancien. Rapport audit kept/lost/to decide ; PASS avant tout canari production. Commit scoped.
+- [ ] Tester une fiche rattachée importée et une fiche sans compte demeurant en JSON ; comparaison intégrale de leurs champs rendus, IDs et URLs.
+- [ ] Importer seulement les contenus et brouillons concernés ; conserver le parcours Redis/JSON des autres fiches. Les reprises commerciales requièrent un rattachement prouvé.
+- [ ] Verrouiller brièvement la fiche concernée, vérifier ses empreintes puis activer son writer CMS. Un changement concurrent interrompt l’opération sans perte.
+- [ ] Tester le routage admin : fiche CMS vers DB ; fiche sans compte vers le circuit existant. Les scripts catalogue respectent le même registre d’autorité.
+- [ ] Tester un lot mixte, création, archive et restauration ; vérifier catalogue, recherche, sitemap et absence d’import implicite d’une fiche liée.
+- [ ] Révoquer les droits sans supprimer le contenu. Tester un retour explicite vers JSON avec brouillons résolus, copie vérifiée et transfert d’autorité avant toute purge. Inventorier séparément les anciennes données DB et leurs dépendances.
+- [ ] Mesurer l’usage base/fichiers/transferts après le pilote, vérifier quotas et nettoyage relançable des fichiers abandonnés. Aucun upgrade payant. Rapport gardé/perdu/à décider puis commit scoped.
 
-**Sortie :** la BDD est réellement la source de vérité, et l’ancienne usine n’écrase plus les fiches. US08–US15.
+**Sortie :** seules les fiches rattachées sont prises en charge par le CMS ; une fiche possède un seul circuit d’écriture ; la publication reste commune. US08–US15.
 
 ## T11 — Recette autonome et ouverture contrôlée
 

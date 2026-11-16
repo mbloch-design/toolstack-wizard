@@ -96,9 +96,10 @@ Ce que la page doit toujours dire, quel que soit son dessin (testé) :
 
 - **Demandé par Michael :** « On revoit tout le system global d'inscription, création de fiche, processus de validation ». Le lot couvre les nouvelles demandes, les fiches existantes et les anciens clients, puis l’édition courante ; pas seulement un rôle ajouté à une fiche admin existante.
 - **Demandé par Michael :** les offres existent déjà, gratuit avec badge et payant sans badge, avec paiement et page de souscription. Les conserver et raccorder le compte/la fiche aux preuves existantes, sans nouvel abonnement ni repaiement implicite.
-- **Demandé par Michael :** fiches en BDD, téléversement de visuels, partie factuelle modifiable ; analyse et notation réservées à ToolTrim. Le compte reste personnel, les droits portent sur les outils attribués.
+- **Demandé par Michael, précisé le 16/11/2026 :** seules les fiches rattachées à un compte éditeur sont en BDD ; conserver Supabase gratuit. Les fiches sans compte restent en JSON. Téléversement et édition factuelle pour les fiches rattachées ; analyse et notation réservées à ToolTrim. Le compte admin ne justifie pas une migration générale. La limite de réponse API de 1 000 lignes ne constitue pas un quota de fiches stockées.
 - **Gardé :** Auth, offres Creem et vérification badge, tables canoniques et contributions existantes, indépendance éditoriale, publication groupée, Storybook et `src/ds/` en lecture seule.
-- **Perdu :** rien à ce stade documentaire ; aucune migration ni modification de production. Les anciens parcours ne sont pas supprimés par un simple cadrage.
+- **Abandonné :** la proposition de Supabase comme writer de toutes les fiches. Garder une publication commune assemblant JSON et seules fiches CMS validées.
+- **Perdu :** aucun contenu à ce stade documentaire ; aucune migration ni modification de production. Les anciens parcours ne sont pas supprimés par un simple cadrage.
 - **À décider avant automatisation :** maintien du badge gratuit après publication et éventuelle sanction ; cohérence entre promesse commerciale des liens et politique centrale de liens. Par défaut documenté : contrôle informatif/revue humaine, aucune dépublication automatique.
 - **Livrables de référence :** [cadrage CMS](superpowers/specs/2026-11-16-cms-editeurs-design.md) et [plan Sol](superpowers/plans/2026-11-16-cms-editeurs.md). Les choix Astra sont identifiés comme propositions, pas présentés comme validations de Michael.
 
