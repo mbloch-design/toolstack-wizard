@@ -14,7 +14,7 @@ it('offers a row of four discoveries, loads more after them without editing the 
  expect(screen.getAllByRole('link',{name:/^Voir la fiche de Tool/})).toHaveLength(4);
  expect(screen.getByRole('link',{name:'Voir la fiche de Tool 0'})).toHaveAttribute('href','/fr/tool/tool-0');
  expect(screen.getByRole('link',{name:'Explorer les pistes'})).toHaveAttribute('href','/fr/explorer?type=stack&source=ma-stack');
- fireEvent.click(screen.getByRole('button',{name:/^Voir \d pistes? de plus$/}));
+ fireEvent.click(screen.getByRole('button',{name:'Afficher plus'}));
  expect(screen.getByRole('link',{name:'Voir la fiche de Tool 0'})).toBeVisible();
  expect(screen.getByRole('link',{name:'Voir la fiche de Tool 4'})).toBeVisible();
  expect(props.onAdd).not.toHaveBeenCalled();
@@ -28,14 +28,14 @@ it('keeps the added idea visible and disables repeat addition until another batc
 it('keeps an exploration destination when no supported suggestion exists',()=>{
  render(view({candidates:[]}));
  expect(screen.getByRole('link',{name:'Explorer les pistes'})).toBeVisible();
- expect(screen.queryByRole('button',{name:/de plus$/})).toBeNull();
+ expect(screen.queryByRole('button',{name:'Afficher plus'})).toBeNull();
 });
 it('clears suggestions linked to a removed source',()=>{
  const result=render(view());result.rerender(view({sourceIds:['other'],candidates:[]}));
  expect(screen.queryByRole('link',{name:'Voir la fiche de Tool 0'})).toBeNull();
 });
 it('focuses the first new discovery when more ideas load after the others',()=>{
- render(view());fireEvent.click(screen.getByRole('button',{name:/de plus$/}));
+ render(view());fireEvent.click(screen.getByRole('button',{name:'Afficher plus'}));
  expect(screen.getByRole('link',{name:'Voir la fiche de Tool 4'})).toHaveFocus();
 });
 it('blocks repeat additions during the shared flight without claiming the tool is added',()=>{
@@ -48,7 +48,7 @@ it('blocks repeat additions during the shared flight without claiming the tool i
 it('keeps keyboard context when the last fresh idea removes the renewal button',()=>{
  const result=render(view({candidates:candidates.slice(0,5)}));
  result.rerender(view({candidates:candidates.slice(4,5),selectedIds:['tool-0','tool-1','tool-2','tool-3']}));
- fireEvent.click(screen.getByRole('button',{name:'Voir 1 piste de plus'}));
- expect(screen.queryByRole('button',{name:/de plus$/})).toBeNull();
+ fireEvent.click(screen.getByRole('button',{name:'Afficher plus'}));
+ expect(screen.queryByRole('button',{name:'Afficher plus'})).toBeNull();
  expect(screen.getByRole('link',{name:'Voir la fiche de Tool 4'})).toHaveFocus();
 });

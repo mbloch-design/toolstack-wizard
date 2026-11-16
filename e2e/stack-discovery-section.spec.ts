@@ -20,7 +20,7 @@ for(const lang of ['fr','en'] as const) for(const width of [320,1440]) test(`dis
  await section.screenshot({path:test.info().outputPath(`discovery-${lang}-${width}.png`)});
  if(width===320) await section.locator('ul').evaluate(el=>{el.scrollLeft=el.scrollWidth;});
  // « More » loads the next ideas after the first ones, never swaps them (16/11/2026).
- await section.getByRole('button',{name:fr?/^Voir \d pistes? de plus$/:/^Show \d more ideas?$/}).click();
+ await section.getByRole('button',{name:fr?'Afficher plus':'Show more',exact:true}).click();
  await expect(cards.nth(firstSlugs.length).getByRole('link')).toBeFocused();
  const secondSlugs=await cards.evaluateAll(items=>items.map(item=>item.getAttribute('data-discovery-tool')));
  expect(secondSlugs.slice(0,firstSlugs.length)).toEqual(firstSlugs);
