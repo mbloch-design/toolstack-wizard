@@ -23,7 +23,67 @@
       "Webhook pour intégrations custom.",
       "Dashboard temps réel et rapports.",
       "Tarifs dégressifs volume très élevé."
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Stripe Docs — Model Context Protocol (MCP)",
+          "url": "https://docs.stripe.com/mcp"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Stripe MCP",
+          "transport": "remote",
+          "auth": [
+            "oauth",
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "unknown",
+          "docs_url": "https://docs.stripe.com/mcp"
+        }
+      ],
+      "status": "beta",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire les données du compte, les analyses et la documentation Stripe",
+          "en": "Read account data, analytics and Stripe documentation"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier des objets Stripe (clients, remboursements…)",
+          "en": "Create and update Stripe objects (customers, refunds…)"
+        },
+        {
+          "kind": "pay",
+          "fr": "Envoyer ou convertir de l'argent depuis un compte Treasury, avec confirmation humaine",
+          "en": "Send or convert money from a Treasury account, with human confirmation"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "plugin"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "human_confirmation",
+        "admin_controls",
+        "scoped_keys"
+      ]
+    }
   },
   "fr": {
     "verdict": {

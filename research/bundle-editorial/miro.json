@@ -21,7 +21,82 @@
       "Modèles (brainstorming, mapping, sprint)",
       "Diagrammes et post-its",
       "Fonctions IA (crédits partagés)"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Miro Developers — MCP Server FAQ",
+          "url": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions"
+        },
+        {
+          "label": "Miro Developers — Miro's MCP Server",
+          "url": "https://developers.miro.com/docs/miro-mcp"
+        },
+        {
+          "label": "Miro Developers — MCP tools",
+          "url": "https://developers.miro.com/docs/miro-mcp-tools"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Miro MCP Server",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "plan_note": "Tous les forfaits. Sur Enterprise, désactivé par défaut jusqu'à activation par un administrateur.",
+          "plan_note_en": "All plans. On Enterprise, off by default until an admin turns it on.",
+          "docs_url": "https://developers.miro.com/docs/connecting-to-miro-mcp"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire et résumer le contenu des tableaux, commentaires compris ; rechercher tableaux et espaces",
+          "en": "Read and summarise board content, comments included; search boards and spaces"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier tableaux, cadres, notes, formes, textes, images et commentaires",
+          "en": "Create and edit boards, frames, notes, shapes, text, images and comments"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer des éléments du tableau ou une section d'espace",
+          "en": "Delete board items or a space section"
+        },
+        {
+          "kind": "send",
+          "fr": "Donner accès à des personnes ou des groupes, et changer leur rôle",
+          "en": "Grant people or groups access, and change their role"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "copilot",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "admin_controls"
+      ]
+    }
   },
   "fr": {
     "verdict": {

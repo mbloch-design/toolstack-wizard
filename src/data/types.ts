@@ -221,6 +221,46 @@ export interface DecisionPolicyV3 {
   default_decision_lane?: string;
 }
 
+/**
+ * What an AI assistant can do in the tool through an official MCP server, as checked on the vendor's
+ * documentation (research/bundle-editorial/<slug>.json, facts.agent; closed vocabularies in
+ * scripts/lib/agent-access.mjs). No block means not checked; mcp "none" means checked, none found.
+ */
+export interface AgentAccess {
+  mcp: "official" | "none";
+  verifiedOn: string;
+  sources: { label: string; url: string }[];
+  servers: AgentServer[];
+  /** Tool level, each absent when the vendor does not say. */
+  status?: "ga" | "beta";
+  /** 1 to 5 lines in business words, from the vendor's tool reference. */
+  capabilities?: { kind: AgentCapabilityKind; fr: string; en: string }[];
+  /** How to plug it from a consumer assistant, from the vendor's help page. */
+  setup?: { assistant: "claude" | "chatgpt" | "gemini" | "copilot" | "other"; how: "connector" | "plugin" | "url" | "local" }[];
+  /** [] when the vendor documents none. */
+  safeguards?: ("human_confirmation" | "admin_controls" | "scoped_keys" | "no_delete")[];
+  /** Editorial precision the fields cannot carry (a beta, a technical setup, a merger). */
+  note?: string;
+  noteEn?: string;
+}
+
+export type AgentCapabilityKind = "read" | "write" | "delete" | "send" | "pay";
+
+export interface AgentServer {
+  name: string;
+  /** Absent: the vendor does not say. */
+  transport?: "remote" | "local";
+  auth?: ("oauth" | "key" | "none")[];
+  /** The most the server exposes, always within the account's own rights. */
+  access?: "read" | "read_write" | "docs_only";
+  plan: "all" | "paid" | "specific" | "unknown";
+  planNote?: string;
+  planNoteEn?: string;
+  /** Catalogue slugs, only when the vendor restricts clients. Absent: any MCP client. */
+  clients?: string[];
+  docsUrl: string;
+}
+
 export interface Tool {
   id: string;
   slug?: string;
@@ -285,6 +325,7 @@ export interface Tool {
   pricing_v5En?: PricingV5 | null;
   decision_policy_v3?: DecisionPolicyV3 | null;
   toolTrimRating?: ToolTrimRating | null;
+  agentAccess?: AgentAccess | null;
 }
 
 export interface BlogPost {

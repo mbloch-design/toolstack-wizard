@@ -35,7 +35,103 @@
       "FigJam (tableau blanc collaboratif)",
       "Dev Mode (inspection, export CSS/iOS/Android, handoff)",
       "Prototypage avancé (animations, variables, logique conditionnelle)"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Figma Help Center — Guide to the Figma MCP server",
+          "url": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server"
+        },
+        {
+          "label": "Figma Developer Docs — Rate limits & access",
+          "url": "https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/"
+        },
+        {
+          "label": "Figma Developer Docs — Set up the remote server",
+          "url": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/"
+        },
+        {
+          "label": "Figma Developer Docs — Set up the desktop server",
+          "url": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/"
+        },
+        {
+          "label": "Figma Developer Docs — Tools and prompts",
+          "url": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Figma MCP server (remote)",
+          "transport": "remote",
+          "access": "read_write",
+          "plan": "all",
+          "plan_note": "Tous les forfaits, mais 20 appels par mois sur le forfait Starter et les sièges View ou Collab ; 200 par jour avec un siège Full ou Dev payant. Écrire hors de ses brouillons demande un siège Full.",
+          "plan_note_en": "All plans, but 20 tool calls per month on the Starter plan and on View or Collab seats; 200 per day with a paid Full or Dev seat. Writing outside your drafts requires a Full seat.",
+          "clients": [
+            "claude",
+            "cursor",
+            "vs-code",
+            "replit",
+            "linear",
+            "warp",
+            "clickup",
+            "notion"
+          ],
+          "docs_url": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/"
+        },
+        {
+          "name": "Figma MCP server (desktop)",
+          "transport": "local",
+          "access": "read",
+          "plan": "specific",
+          "plan_note": "Siège Dev ou Full sur un forfait Professional, Education, Organization ou Enterprise ; application de bureau Figma requise.",
+          "plan_note_en": "Dev or Full seat on a Professional, Education, Organization or Enterprise plan; requires the Figma desktop app.",
+          "clients": [
+            "claude",
+            "cursor",
+            "vs-code",
+            "warp"
+          ],
+          "docs_url": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/"
+        }
+      ],
+      "note": "L'écriture dans les fichiers est en bêta.",
+      "note_en": "Writing to files is in beta.",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire le contexte d'un design : variables, composants, mise en page, y compris FigJam",
+          "en": "Read a design's context: variables, components, layout, including FigJam"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier frames, composants, variables et auto layout dans vos fichiers",
+          "en": "Create and edit frames, components, variables and auto layout in your files"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer des calques ou contenus existants, par l'outil d'écriture",
+          "en": "Delete existing layers or content, through the write tool"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "copilot",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": []
+    }
   },
   "fr": {
     "verdict": {

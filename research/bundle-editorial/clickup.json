@@ -21,7 +21,80 @@
       "Agents IA pour automatiser les workflows",
       "Docs intégrés et whiteboards collaboratifs",
       "Plus de 1 000 intégrations disponibles"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "ClickUp Help — What is ClickUp MCP?",
+          "url": "https://help.clickup.com/hc/en-us/articles/33335772678423-What-is-ClickUp-MCP"
+        },
+        {
+          "label": "ClickUp Developer — ClickUp's MCP Server",
+          "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+        },
+        {
+          "label": "ClickUp Developer — MCP tools",
+          "url": "https://developer.clickup.com/docs/mcp-tools"
+        },
+        {
+          "label": "ClickUp Developer — Connect an AI assistant",
+          "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server-1"
+        }
+      ],
+      "servers": [
+        {
+          "name": "ClickUp MCP Server",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "plan_note": "Tous les forfaits, y compris Free Forever, avec un plafond d'appels par 24 h : 100 sur Free Forever, jusqu'à 5 000 sur Enterprise.",
+          "plan_note_en": "Every plan, including Free Forever, with a 24-hour call cap: 100 on Free Forever, up to 5,000 on Enterprise.",
+          "docs_url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire tâches, documents, commentaires, temps passé et messages",
+          "en": "Read tasks, docs, comments, time entries and messages"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier tâches, documents, commentaires et temps passé",
+          "en": "Create and edit tasks, docs, comments and time entries"
+        },
+        {
+          "kind": "delete",
+          "fr": "Mettre une tâche à la corbeille, supprimer un commentaire",
+          "en": "Send a task to Trash, delete a comment"
+        },
+        {
+          "kind": "send",
+          "fr": "Envoyer des messages de chat en votre nom",
+          "en": "Send chat messages as you"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "url"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": []
+    }
   },
   "fr": {
     "verdict": {

@@ -92,7 +92,7 @@ Ce que la page doit toujours dire, quel que soit son dessin (testé) :
 
 ## À arbitrer
 
-Rien en attente.
+- [ ] Bloc « Assistant IA » de la fiche outil (`src/ds/AgentAccess`, 16/11, axe MCP) : à valider dans Storybook (« Fiche outil / Assistant IA »). Choix faits sans validation : tuile grise du système sous le titre de section de la page ; verdict en titre 21 ; capacités, branchement et garde-fous en lignes libellé / texte avant les faits par serveur ; faits en libellés capitales 12 et texte 16 ; deux serveurs côte à côte au-delà de 640 px ; « Documentation de l'éditeur » en lien d'action ; date et rappel « jamais plus de droits que votre compte » en note. Références visuelles non posées.
 
 Arbitrés le 11/11/2026 (bilan des refontes du 09 au 11/11) :
 - [x] Humour d'accueil : revient, en fin de lead du hero, sous le coût. Appliqué, testé.

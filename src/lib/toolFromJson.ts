@@ -78,5 +78,6 @@ export function mapToolFromJson(raw: unknown): Tool {
     pricing_v5En: t.pricing_v5En || null,
     decision_policy_v3: t.decision_policy_v3 || null,
     toolTrimRating: t.toolTrimRating || null,
+    agentAccess: t.agentAccess || null,
   });
 }

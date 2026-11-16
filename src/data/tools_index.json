@@ -2230,7 +2230,15 @@
       "semrush",
       "google-search-console"
     ],
-    "freeAlternative": "Ahrefs Webmaster Tools"
+    "freeAlternative": "Ahrefs Webmaster Tools",
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "airbyte",
@@ -2430,7 +2438,15 @@
       "notion",
       "monday-com"
     ],
-    "freeAlternative": "notion"
+    "freeAlternative": "notion",
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "albato",
@@ -6815,7 +6831,12 @@
       "hootsuite",
       "later",
       "sprout-social"
-    ]
+    ],
+    "agentAccess": {
+      "mcp": "official",
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "bugherd",
@@ -7140,7 +7161,15 @@
     "alternatives": [
       "cal-com"
     ],
-    "freeAlternative": "Cal.com"
+    "freeAlternative": "Cal.com",
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "callhippo",
@@ -7411,7 +7440,15 @@
       "adobe-express",
       "visme",
       "figma"
-    ]
+    ],
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "canva-ai",
@@ -9065,7 +9102,15 @@
       "monday",
       "trello"
     ],
-    "freeAlternative": "notion"
+    "freeAlternative": "notion",
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "clickup-ai",
@@ -14845,7 +14890,16 @@
       "invision",
       "framer"
     ],
-    "substitutable": false
+    "substitutable": false,
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote",
+        "local"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "figma-make",
@@ -18119,7 +18173,15 @@
       "plausible",
       "fathom-analytics",
       "mixpanel"
-    ]
+    ],
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "local"
+      ],
+      "access": "read",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "ga4",
@@ -20326,6 +20388,10 @@
       "reason": "Microsoft Clarity propose heatmaps et replays de sessions gratuitement, sans limite de sessions.",
       "saving": 32,
       "performanceGain": null
+    },
+    "agentAccess": {
+      "mcp": "none",
+      "verifiedOn": "2026-11-16"
     }
   },
   {
@@ -20477,7 +20543,15 @@
     "alternatives": [
       "salesforce",
       "pipedrive"
-    ]
+    ],
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "hugeicons",
@@ -26584,7 +26658,15 @@
       "zapier",
       "n8n"
     ],
-    "freeAlternative": "make"
+    "freeAlternative": "make",
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "managewp",
@@ -28449,7 +28531,11 @@
       "notion",
       "figma",
       "miro"
-    ]
+    ],
+    "agentAccess": {
+      "mcp": "none",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "miro",
@@ -28488,7 +28574,15 @@
     "prescription_quality": "silence",
     "alternatives": [
       "figjam"
-    ]
+    ],
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "mixpanel",
@@ -30344,7 +30438,15 @@
       "coda",
       "clickup"
     ],
-    "freeAlternative": "Obsidian"
+    "freeAlternative": "Obsidian",
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "notion-ai",
@@ -41300,7 +41402,12 @@
       "Marchands omnichannel",
       "Entrepreneurs en phase de lancement"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "agentAccess": {
+      "mcp": "official",
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "shopify-cli",
@@ -42023,7 +42130,15 @@
     "alternatives": [
       "microsoft-teams"
     ],
-    "freeAlternative": "discord"
+    "freeAlternative": "discord",
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "slido",
@@ -43793,7 +43908,15 @@
     "alternatives": [
       "paypal"
     ],
-    "freeAlternative": "stripe"
+    "freeAlternative": "stripe",
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "styled-components",
@@ -45119,7 +45242,15 @@
       "jotform",
       "fillout"
     ],
-    "freeAlternative": "tally"
+    "freeAlternative": "tally",
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "tanstack-router",
@@ -49529,7 +49660,15 @@
       "wix",
       "framer"
     ],
-    "freeAlternative": "carrd"
+    "freeAlternative": "carrd",
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
+    }
   },
   {
     "id": "webflow-framer",
@@ -51187,6 +51326,14 @@
       "reason": "Make est 3x moins cher et gère des scénarios plus complexes visuellement",
       "saving": 9,
       "performanceGain": "Make est 3x moins cher et gère des scénarios plus complexes visuellement"
+    },
+    "agentAccess": {
+      "mcp": "official",
+      "transport": [
+        "remote"
+      ],
+      "access": "read_write",
+      "verifiedOn": "2026-11-16"
     }
   },
   {

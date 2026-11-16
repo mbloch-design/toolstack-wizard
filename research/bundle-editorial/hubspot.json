@@ -24,7 +24,63 @@
       "Agents IA 24/7 pour support",
       "Content Hub pour gestion web et contenu",
       "300000+ clients à travers 135+ pays"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "HubSpot Developers — Integrate AI tools with the HubSpot MCP server",
+          "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server"
+        },
+        {
+          "label": "HubSpot Developers — Remote HubSpot MCP server is now generally available",
+          "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available"
+        }
+      ],
+      "servers": [
+        {
+          "name": "HubSpot MCP server",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "plan_note": "Utilisable avec les outils gratuits ; certains outils exigent Marketing Hub ou Revenue Hub Professional ou Enterprise.",
+          "plan_note_en": "Works with free tools; some tools require Marketing Hub or Revenue Hub Professional or Enterprise.",
+          "docs_url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server"
+        }
+      ],
+      "status": "ga",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Consulter le CRM (contacts, entreprises, transactions, tickets), les activités, les conversations et les statistiques d'e-mails",
+          "en": "Read the CRM (contacts, companies, deals, tickets), activities, conversations and email statistics"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier fiches CRM, activités, campagnes, brouillons d'e-mails et segments",
+          "en": "Create and edit CRM records, activities, campaigns, email drafts and segments"
+        },
+        {
+          "kind": "send",
+          "fr": "Publier pages et articles de blog, programmer des publications sociales",
+          "en": "Publish pages and blog posts, schedule social posts"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "human_confirmation",
+        "admin_controls"
+      ]
+    }
   },
   "fr": {
     "verdict": {

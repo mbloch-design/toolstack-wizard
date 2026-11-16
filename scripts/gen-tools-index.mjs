@@ -2,6 +2,7 @@
 
 import { nativeSummaryPrices, nativeMonthlyAmount, selectNativeComparePlan, hasExplicitNonNumericPricing } from "../src/lib/nativeComparePlan.mjs";
 import { readFile, writeFile } from "node:fs/promises";
+import { agentAccessIndex } from "./lib/agent-access.mjs";
 
 const sourcePath = "src/data/tools_v4.json";
 const outputPath = "src/data/tools_index.json";
@@ -91,6 +92,9 @@ const summaries = tools.map((tool, index) => {
     ...(tool.freeAlternative ? { freeAlternative: tool.freeAlternative } : {}),
     ...(tool.substitutable === false ? { substitutable: false } : {}),
     ...(tool.betterAlternative ? { betterAlternative: tool.betterAlternative } : {}),
+    // Reduced agent block (mcp, transport, access, verifiedOn): enough for a
+    // future filter; the full block stays on the detail record.
+    ...(agentAccessIndex(tool.agentAccess) ? { agentAccess: agentAccessIndex(tool.agentAccess) } : {}),
   };
 });
 

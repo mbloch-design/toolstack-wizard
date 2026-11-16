@@ -11784,6 +11784,67 @@
       "dossier": "research/dossiers/ahrefs.json",
       "researchedOn": "2026-09-25",
       "sources": 2
+    },
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Ahrefs for Developers — What is Ahrefs MCP",
+          "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+        },
+        {
+          "label": "Ahrefs Help — Getting started with Ahrefs MCP",
+          "url": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp"
+        },
+        {
+          "label": "Ahrefs — Ahrefs SEO MCP",
+          "url": "https://ahrefs.com/mcp"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Ahrefs MCP",
+          "transport": "remote",
+          "auth": [
+            "oauth",
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "paid",
+          "planNote": "Forfaits payants à partir de Lite ; chaque appel consomme des unités API du quota mensuel du forfait.",
+          "planNoteEn": "Paid plans from Lite up; each call uses API units from the plan's monthly allowance.",
+          "docsUrl": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire les données SEO : mots-clés, backlinks, positions",
+          "en": "Read SEO data: keywords, backlinks, rankings"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier des publications pour les réseaux sociaux",
+          "en": "Create and edit social media posts"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer des publications pour les réseaux sociaux",
+          "en": "Delete social media posts"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        }
+      ],
+      "safeguards": []
     }
   },
   {
@@ -12901,6 +12962,80 @@
       "dossier": "research/dossiers/airtable.json",
       "researchedOn": "2026-09-25",
       "sources": 1
+    },
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Airtable Developers — MCP server overview",
+          "url": "https://airtable.com/developers/agents/mcp/getting-started"
+        },
+        {
+          "label": "Airtable Support — Using the Airtable MCP server",
+          "url": "https://support.airtable.com/docs/using-the-airtable-mcp-server"
+        },
+        {
+          "label": "Airtable Developers — MCP tools",
+          "url": "https://airtable.com/developers/agents/mcp/tools"
+        },
+        {
+          "label": "Airtable Developers — Claude, ChatGPT, Gemini",
+          "url": "https://airtable.com/developers/agents/mcp/claude"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Airtable MCP server",
+          "transport": "remote",
+          "auth": [
+            "oauth",
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "docsUrl": "https://airtable.com/developers/agents/mcp/getting-started"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Consulter et rechercher enregistrements, bases, tables et automatisations",
+          "en": "Look up and search records, bases, tables and automations"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier enregistrements, tables, champs, bases, interfaces et brouillons d'automatisations ; soumettre un formulaire",
+          "en": "Create and edit records, tables, fields, bases, interfaces and automation drafts; submit a form"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer des enregistrements, des tables entières, des interfaces et des pages",
+          "en": "Delete records, whole tables, interfaces and pages"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "gemini",
+          "how": "connector"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "admin_controls",
+        "scoped_keys"
+      ]
     }
   },
   {
@@ -34999,6 +35134,69 @@
       "dossier": "research/dossiers/buffer.json",
       "researchedOn": "2026-09-25",
       "sources": 1
+    },
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Buffer — Buffer MCP Server",
+          "url": "https://buffer.com/mcp"
+        },
+        {
+          "label": "Buffer Developers — MCP",
+          "url": "https://developers.buffer.com/guides/integrations/mcp.html"
+        },
+        {
+          "label": "Buffer — Claude integration",
+          "url": "https://buffer.com/integrations/claude"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Buffer MCP",
+          "access": "read_write",
+          "plan": "all",
+          "docsUrl": "https://buffer.com/mcp"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire canaux, file d'attente, brouillons, idées et statistiques",
+          "en": "Read channels, queue, drafts, ideas and analytics"
+        },
+        {
+          "kind": "write",
+          "fr": "Rédiger, modifier et programmer posts et idées",
+          "en": "Draft, edit and schedule posts and ideas"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer définitivement un post",
+          "en": "Permanently delete a post"
+        },
+        {
+          "kind": "send",
+          "fr": "Publier un post sur vos réseaux, immédiatement si demandé",
+          "en": "Publish a post to your networks, immediately if asked"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "url"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": []
     }
   },
   {
@@ -36700,7 +36898,68 @@
     "force_silence": false,
     "description": "Calendly automatise la prise de rendez-vous à partir des disponibilités connectées aux calendriers et distribue les réunions individuelles ou d'équipe.\n\nFonctions clés : Pages de réservation ; Synchronisation de calendriers ; Rappels automatisés ; Paiements Stripe et PayPal ; Round-robin et routage de leads.\n\nRetenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié.",
     "ogImageUrl": "https://calendly.com/favicon.ico",
-    "galleryImages": []
+    "galleryImages": [],
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Calendly Developer — Calendly MCP Overview",
+          "url": "https://developer.calendly.com/docs/mcp/calendly-mcp-server"
+        },
+        {
+          "label": "Calendly Help — Connect Calendly to your AI tools",
+          "url": "https://calendly.com/help/connect-calendly-to-your-ai-tools"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Calendly MCP server",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "planNote": "Aucun forfait payant requis ; certaines actions dépendent du forfait.",
+          "planNoteEn": "No paid plan required; some actions depend on your plan.",
+          "docsUrl": "https://developer.calendly.com/docs/mcp/calendly-mcp-server"
+        }
+      ],
+      "status": "ga",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Trouver des créneaux libres et voir les plages occupées",
+          "en": "Find open time and view busy slots"
+        },
+        {
+          "kind": "write",
+          "fr": "Réserver un rendez-vous, créer un lien à usage unique, modifier disponibilités et types d'événements",
+          "en": "Book meetings, create single-use links, update availability and event types"
+        },
+        {
+          "kind": "delete",
+          "fr": "Annuler un rendez-vous",
+          "en": "Cancel meetings"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": []
+    }
   },
   {
     "id": "callhippo",
@@ -38429,6 +38688,64 @@
       "dossier": "research/dossiers/canva.json",
       "researchedOn": "2026-09-25",
       "sources": 1
+    },
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Canva Help Center — Connect Canva to an AI assistant",
+          "url": "https://www.canva.com/help/mcp-agent-setup/"
+        },
+        {
+          "label": "Canva Developers — About Canva MCP",
+          "url": "https://www.canva.dev/docs/apps/mcp/"
+        },
+        {
+          "label": "Canva Developers — Access and permissions",
+          "url": "https://www.canva.dev/docs/apps/mcp/access/"
+        },
+        {
+          "label": "Canva Developers — Tools",
+          "url": "https://www.canva.dev/docs/apps/mcp/tools/"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Canva AI Connector (Canva MCP)",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "planNote": "Tous les comptes, y compris Canva Free. Modèles de marque, kits de marque, remplissage automatique et redimensionnement : forfait payant. Dans une équipe, l'administrateur doit autoriser le connecteur.",
+          "planNoteEn": "All accounts, including Canva Free. Brand Templates, brand kits, autofill and resizing: paid plan. On a team, the admin must allow the connector.",
+          "clients": [
+            "chatgpt",
+            "claude",
+            "gemini",
+            "cursor",
+            "lovable",
+            "make",
+            "perplexity",
+            "grok"
+          ],
+          "docsUrl": "https://www.canva.com/help/mcp-agent-setup/"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Rechercher et consulter vos designs, pages, dossiers et commentaires",
+          "en": "Search and view your designs, pages, folders and comments"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer des designs à partir d'une description, modifier un design, importer des fichiers, ranger, commenter, exporter",
+          "en": "Create designs from a description, edit a design, upload files, organise, comment, export"
+        }
+      ]
     }
   },
   {
@@ -46164,6 +46481,79 @@
       "dossier": "research/dossiers/clickup.json",
       "researchedOn": "2026-09-25",
       "sources": 1
+    },
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "ClickUp Help — What is ClickUp MCP?",
+          "url": "https://help.clickup.com/hc/en-us/articles/33335772678423-What-is-ClickUp-MCP"
+        },
+        {
+          "label": "ClickUp Developer — ClickUp's MCP Server",
+          "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+        },
+        {
+          "label": "ClickUp Developer — MCP tools",
+          "url": "https://developer.clickup.com/docs/mcp-tools"
+        },
+        {
+          "label": "ClickUp Developer — Connect an AI assistant",
+          "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server-1"
+        }
+      ],
+      "servers": [
+        {
+          "name": "ClickUp MCP Server",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "planNote": "Tous les forfaits, y compris Free Forever, avec un plafond d'appels par 24 h : 100 sur Free Forever, jusqu'à 5 000 sur Enterprise.",
+          "planNoteEn": "Every plan, including Free Forever, with a 24-hour call cap: 100 on Free Forever, up to 5,000 on Enterprise.",
+          "docsUrl": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire tâches, documents, commentaires, temps passé et messages",
+          "en": "Read tasks, docs, comments, time entries and messages"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier tâches, documents, commentaires et temps passé",
+          "en": "Create and edit tasks, docs, comments and time entries"
+        },
+        {
+          "kind": "delete",
+          "fr": "Mettre une tâche à la corbeille, supprimer un commentaire",
+          "en": "Send a task to Trash, delete a comment"
+        },
+        {
+          "kind": "send",
+          "fr": "Envoyer des messages de chat en votre nom",
+          "en": "Send chat messages as you"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "url"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": []
     }
   },
   {
@@ -75903,6 +76293,102 @@
       "dossier": "research/dossiers/figma.json",
       "researchedOn": "2026-09-25",
       "sources": 2
+    },
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Figma Help Center — Guide to the Figma MCP server",
+          "url": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server"
+        },
+        {
+          "label": "Figma Developer Docs — Rate limits & access",
+          "url": "https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/"
+        },
+        {
+          "label": "Figma Developer Docs — Set up the remote server",
+          "url": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/"
+        },
+        {
+          "label": "Figma Developer Docs — Set up the desktop server",
+          "url": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/"
+        },
+        {
+          "label": "Figma Developer Docs — Tools and prompts",
+          "url": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Figma MCP server (remote)",
+          "transport": "remote",
+          "access": "read_write",
+          "plan": "all",
+          "planNote": "Tous les forfaits, mais 20 appels par mois sur le forfait Starter et les sièges View ou Collab ; 200 par jour avec un siège Full ou Dev payant. Écrire hors de ses brouillons demande un siège Full.",
+          "planNoteEn": "All plans, but 20 tool calls per month on the Starter plan and on View or Collab seats; 200 per day with a paid Full or Dev seat. Writing outside your drafts requires a Full seat.",
+          "clients": [
+            "claude",
+            "cursor",
+            "vs-code",
+            "replit",
+            "linear",
+            "warp",
+            "clickup",
+            "notion"
+          ],
+          "docsUrl": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/"
+        },
+        {
+          "name": "Figma MCP server (desktop)",
+          "transport": "local",
+          "access": "read",
+          "plan": "specific",
+          "planNote": "Siège Dev ou Full sur un forfait Professional, Education, Organization ou Enterprise ; application de bureau Figma requise.",
+          "planNoteEn": "Dev or Full seat on a Professional, Education, Organization or Enterprise plan; requires the Figma desktop app.",
+          "clients": [
+            "claude",
+            "cursor",
+            "vs-code",
+            "warp"
+          ],
+          "docsUrl": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire le contexte d'un design : variables, composants, mise en page, y compris FigJam",
+          "en": "Read a design's context: variables, components, layout, including FigJam"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier frames, composants, variables et auto layout dans vos fichiers",
+          "en": "Create and edit frames, components, variables and auto layout in your files"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer des calques ou contenus existants, par l'outil d'écriture",
+          "en": "Delete existing layers or content, through the write tool"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "copilot",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [],
+      "note": "L'écriture dans les fichiers est en bêta.",
+      "noteEn": "Writing to files is in beta."
     }
   },
   {
@@ -92026,7 +92512,53 @@
     "substitution_cluster_v2": "analytics",
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-analytics.jpg"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-analytics.jpg",
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Google for Developers — Try the Google Analytics MCP server",
+          "url": "https://developers.google.com/analytics/devguides/MCP"
+        },
+        {
+          "label": "GitHub googleanalytics/google-analytics-mcp",
+          "url": "https://github.com/googleanalytics/google-analytics-mcp"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Google Analytics MCP server",
+          "transport": "local",
+          "access": "read",
+          "plan": "unknown",
+          "docsUrl": "https://developers.google.com/analytics/devguides/MCP"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire comptes, propriétés, rapports et données en temps réel",
+          "en": "Read accounts, properties, reports and realtime data"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "local"
+        },
+        {
+          "assistant": "other",
+          "how": "local"
+        }
+      ],
+      "safeguards": [
+        "scoped_keys",
+        "no_delete"
+      ],
+      "note": "Serveur à installer sur votre ordinateur et à relier par des identifiants Google Cloud : une mise en place technique.",
+      "noteEn": "A server to install on your computer and connect with Google Cloud credentials: a technical setup."
+    }
   },
   {
     "id": "ga4",
@@ -103217,6 +103749,23 @@
       "dossier": "research/dossiers/hotjar.json",
       "researchedOn": "2026-09-25",
       "sources": 4
+    },
+    "agentAccess": {
+      "mcp": "none",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Contentsquare — Hotjar Free vs Contentsquare Free (« Connect your AI assistant » : — pour Hotjar)",
+          "url": "https://contentsquare.com/hotjar/free-mcp/"
+        },
+        {
+          "label": "Hotjar Documentation — recherche « MCP », aucun résultat",
+          "url": "https://help.hotjar.com/hc/en-us/search?query=MCP"
+        }
+      ],
+      "servers": [],
+      "note": "Hotjar a rejoint Contentsquare, dont l'offre propose un serveur MCP.",
+      "noteEn": "Hotjar has joined Contentsquare, whose offer includes an MCP server."
     }
   },
   {
@@ -104051,7 +104600,63 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://www.hubspot.com/hubfs/assets/hubspot.com/homepage/hero-backgrounds-2025/HS_Full_Bleed_1.jpg"
+    "ogImageUrl": "https://www.hubspot.com/hubfs/assets/hubspot.com/homepage/hero-backgrounds-2025/HS_Full_Bleed_1.jpg",
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "HubSpot Developers — Integrate AI tools with the HubSpot MCP server",
+          "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server"
+        },
+        {
+          "label": "HubSpot Developers — Remote HubSpot MCP server is now generally available",
+          "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available"
+        }
+      ],
+      "servers": [
+        {
+          "name": "HubSpot MCP server",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "planNote": "Utilisable avec les outils gratuits ; certains outils exigent Marketing Hub ou Revenue Hub Professional ou Enterprise.",
+          "planNoteEn": "Works with free tools; some tools require Marketing Hub or Revenue Hub Professional or Enterprise.",
+          "docsUrl": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server"
+        }
+      ],
+      "status": "ga",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Consulter le CRM (contacts, entreprises, transactions, tickets), les activités, les conversations et les statistiques d'e-mails",
+          "en": "Read the CRM (contacts, companies, deals, tickets), activities, conversations and email statistics"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier fiches CRM, activités, campagnes, brouillons d'e-mails et segments",
+          "en": "Create and edit CRM records, activities, campaigns, email drafts and segments"
+        },
+        {
+          "kind": "send",
+          "fr": "Publier pages et articles de blog, programmer des publications sociales",
+          "en": "Publish pages and blog posts, schedule social posts"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "human_confirmation",
+        "admin_controls"
+      ]
+    }
   },
   {
     "id": "hugeicons",
@@ -134818,7 +135423,65 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://images.ctfassets.net/un655fb9wln6/1EVkH7bZmWSxq6gG8GR3rd/f51b402ee9e3a36ce85019a40b7ca89d/image__18_.png"
+    "ogImageUrl": "https://images.ctfassets.net/un655fb9wln6/1EVkH7bZmWSxq6gG8GR3rd/f51b402ee9e3a36ce85019a40b7ca89d/image__18_.png",
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Make Help Center — Make MCP server",
+          "url": "https://help.make.com/make-mcp-server"
+        },
+        {
+          "label": "Make Developers — MCP server",
+          "url": "https://developers.make.com/mcp-server/"
+        },
+        {
+          "label": "Make Developers — Usage with Claude",
+          "url": "https://developers.make.com/mcp-server/connect-using-oauth/usage-with-claude"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Make MCP server",
+          "transport": "remote",
+          "auth": [
+            "oauth",
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "planNote": "Lancer des scénarios : tous les forfaits. Modifier les scénarios (portées de gestion) : forfaits payants.",
+          "planNoteEn": "Running scenarios: every plan. Editing scenarios (management scopes): paid plans.",
+          "docsUrl": "https://help.make.com/make-mcp-server"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Consulter scénarios, équipes, connexions, webhooks et data stores",
+          "en": "View scenarios, teams, connections, webhooks and data stores"
+        },
+        {
+          "kind": "write",
+          "fr": "Lancer vos scénarios actifs ; modifier scénarios et data stores, inviter des membres (forfaits payants)",
+          "en": "Run your active scenarios; edit scenarios and data stores, invite members (paid plans)"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "scoped_keys"
+      ]
+    }
   },
   {
     "id": "managewp",
@@ -143839,6 +144502,23 @@
       "dossier": "research/dossiers/milanote.json",
       "researchedOn": "2026-09-25",
       "sources": 1
+    },
+    "agentAccess": {
+      "mcp": "none",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Milanote Help Center — recherche « MCP », aucun résultat",
+          "url": "https://help.milanote.com/en/?q=MCP"
+        },
+        {
+          "label": "Milanote — vote sur les fonctionnalités à venir (serveur MCP demandé, non livré)",
+          "url": "https://poll.milanote.com/c/76-affiliate-programme"
+        }
+      ],
+      "servers": [],
+      "note": "Un serveur MCP est demandé par des utilisateurs, pas livré.",
+      "noteEn": "Users have asked for an MCP server; none has shipped."
     }
   },
   {
@@ -144002,7 +144682,82 @@
     "substitution_cluster_v2": "design-prototyping",
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://framerusercontent.com/assets/Bab0War93Jeq5MpDPwqKFiyI.png"
+    "ogImageUrl": "https://framerusercontent.com/assets/Bab0War93Jeq5MpDPwqKFiyI.png",
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Miro Developers — MCP Server FAQ",
+          "url": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions"
+        },
+        {
+          "label": "Miro Developers — Miro's MCP Server",
+          "url": "https://developers.miro.com/docs/miro-mcp"
+        },
+        {
+          "label": "Miro Developers — MCP tools",
+          "url": "https://developers.miro.com/docs/miro-mcp-tools"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Miro MCP Server",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "planNote": "Tous les forfaits. Sur Enterprise, désactivé par défaut jusqu'à activation par un administrateur.",
+          "planNoteEn": "All plans. On Enterprise, off by default until an admin turns it on.",
+          "docsUrl": "https://developers.miro.com/docs/connecting-to-miro-mcp"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire et résumer le contenu des tableaux, commentaires compris ; rechercher tableaux et espaces",
+          "en": "Read and summarise board content, comments included; search boards and spaces"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier tableaux, cadres, notes, formes, textes, images et commentaires",
+          "en": "Create and edit boards, frames, notes, shapes, text, images and comments"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer des éléments du tableau ou une section d'espace",
+          "en": "Delete board items or a space section"
+        },
+        {
+          "kind": "send",
+          "fr": "Donner accès à des personnes ou des groupes, et changer leur rôle",
+          "en": "Grant people or groups access, and change their role"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "copilot",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "admin_controls"
+      ]
+    }
   },
   {
     "id": "mixpanel",
@@ -153058,6 +153813,78 @@
       "dossier": "research/dossiers/notion.json",
       "researchedOn": "2026-09-25",
       "sources": 1
+    },
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Notion Developers — Notion MCP, overview",
+          "url": "https://developers.notion.com/guides/mcp/overview"
+        },
+        {
+          "label": "Notion Developers — Connect to Notion MCP (setup, FAQ plans)",
+          "url": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+        },
+        {
+          "label": "Notion Developers — Supported tools",
+          "url": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Notion MCP",
+          "transport": "remote",
+          "auth": [
+            "oauth",
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "planNote": "Tous les forfaits. Jetons MCP (connexion sans navigateur), recherche dans les sources connectées et requêtes SQL illimitées : Business et Enterprise. Les invités d'un espace ne peuvent pas se connecter.",
+          "planNoteEn": "Every plan. MCP tokens (no browser sign-in), connected-source search and unlimited SQL queries: Business and Enterprise. Workspace guests cannot connect.",
+          "docsUrl": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+        }
+      ],
+      "status": "ga",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Chercher et lire pages, bases et notes de réunion, y compris dans les sources connectées",
+          "en": "Search and read pages, databases and meeting notes, including connected sources"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier pages, bases, vues, commentaires et événements d'agenda",
+          "en": "Create and edit pages, databases, views, comments and calendar events"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer pages, bases et commentaires ; restaurer une version",
+          "en": "Delete pages, databases and comments; restore a version"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "connector"
+        },
+        {
+          "assistant": "gemini",
+          "how": "connector"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "admin_controls"
+      ]
     }
   },
   {
@@ -206294,7 +207121,90 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://cdn.shopify.com/b/shopify-brochure2-assets/d617483c5e5cdd01ae8b4f2571c76f34.png?originalWidth=2400&amp;originalHeight=1260"
+    "ogImageUrl": "https://cdn.shopify.com/b/shopify-brochure2-assets/d617483c5e5cdd01ae8b4f2571c76f34.png?originalWidth=2400&amp;originalHeight=1260",
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Shopify Help Center — Building and managing your store with third-party AI tools",
+          "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools"
+        },
+        {
+          "label": "Shopify Help Center — Authorizing AI tool access to your store",
+          "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/authorizing-access"
+        },
+        {
+          "label": "Shopify Help Center — Considerations",
+          "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations"
+        },
+        {
+          "label": "Shopify Help Center — Shopify connector for Claude",
+          "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Intégrations Shopify pour assistants IA",
+          "access": "read_write",
+          "plan": "unknown",
+          "clients": [
+            "chatgpt",
+            "claude",
+            "gemini",
+            "grok",
+            "perplexity"
+          ],
+          "docsUrl": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/authorizing-access"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire commandes, produits, clients, stocks et statistiques",
+          "en": "Read orders, products, customers, inventory and analytics"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier produits, collections, stocks, codes de réduction, pages, menus et thèmes non publiés",
+          "en": "Create and edit products, collections, inventory, discount codes, pages, menus and unpublished themes"
+        },
+        {
+          "kind": "send",
+          "fr": "Publier des collections et, après confirmation, un thème",
+          "en": "Publish collections and, after confirming, a theme"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "gemini",
+          "how": "connector"
+        },
+        {
+          "assistant": "copilot",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "connector"
+        }
+      ],
+      "safeguards": [
+        "human_confirmation",
+        "admin_controls",
+        "scoped_keys"
+      ],
+      "note": "Shopify passe par des intégrations installées depuis chaque assistant, sans les présenter comme un serveur MCP.",
+      "noteEn": "Shopify works through integrations installed from each assistant, without calling them an MCP server."
+    }
   },
   {
     "id": "shopify-cli",
@@ -210026,7 +210936,61 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://a.slack-edge.com/737c9d1/marketing/img/homepage/revamped-24/unfurl/hp-revamp-unfurl.en-GB.jpg"
+    "ogImageUrl": "https://a.slack-edge.com/737c9d1/marketing/img/homepage/revamped-24/unfurl/hp-revamp-unfurl.en-GB.jpg",
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Slack Developer Docs — Slack MCP server overview",
+          "url": "https://docs.slack.dev/ai/slack-mcp-server/"
+        },
+        {
+          "label": "Slack Developer Docs — Announcing the Slack MCP server",
+          "url": "https://docs.slack.dev/changelog/2026/02/17/slack-mcp/"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Slack MCP server",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "unknown",
+          "clients": [
+            "claude",
+            "cursor",
+            "perplexity"
+          ],
+          "docsUrl": "https://docs.slack.dev/ai/slack-mcp-server/"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Chercher et lire messages, fils, fichiers, canvases et listes",
+          "en": "Search and read messages, threads, files, canvases and lists"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier canvases, canaux, listes et brouillons de messages",
+          "en": "Create and edit canvases, channels, lists and message drafts"
+        },
+        {
+          "kind": "send",
+          "fr": "Envoyer des messages dans n'importe quelle conversation, ou les programmer",
+          "en": "Send messages to any conversation, or schedule them"
+        }
+      ],
+      "safeguards": [
+        "admin_controls",
+        "scoped_keys"
+      ],
+      "note": "Ouvert aux applications publiées dans le Slack Marketplace, aux applications internes et à quelques assistants partenaires.",
+      "noteEn": "Open to apps published in the Slack Marketplace, internal apps and a few partner assistants."
+    }
   },
   {
     "id": "slido",
@@ -218849,7 +219813,67 @@
       "requires_context_questions": true
     },
     "force_silence": true,
-    "ogImageUrl": "https://images.stripeassets.com/fzn2n1nzq965/XtX984S1GJVsVOXFC7kMu/01988281e867728dfb09aa7793a6e3b9/Stripe.jpg?q=80"
+    "ogImageUrl": "https://images.stripeassets.com/fzn2n1nzq965/XtX984S1GJVsVOXFC7kMu/01988281e867728dfb09aa7793a6e3b9/Stripe.jpg?q=80",
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Stripe Docs — Model Context Protocol (MCP)",
+          "url": "https://docs.stripe.com/mcp"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Stripe MCP",
+          "transport": "remote",
+          "auth": [
+            "oauth",
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "unknown",
+          "docsUrl": "https://docs.stripe.com/mcp"
+        }
+      ],
+      "status": "beta",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire les données du compte, les analyses et la documentation Stripe",
+          "en": "Read account data, analytics and Stripe documentation"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier des objets Stripe (clients, remboursements…)",
+          "en": "Create and update Stripe objects (customers, refunds…)"
+        },
+        {
+          "kind": "pay",
+          "fr": "Envoyer ou convertir de l'argent depuis un compte Treasury, avec confirmation humaine",
+          "en": "Send or convert money from a Treasury account, with human confirmation"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "plugin"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "human_confirmation",
+        "admin_controls",
+        "scoped_keys"
+      ]
+    }
   },
   {
     "id": "styled-components",
@@ -225488,6 +226512,76 @@
       "dossier": "research/dossiers/tally.json",
       "researchedOn": "2026-09-25",
       "sources": 1
+    },
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Tally Developer Docs — MCP server",
+          "url": "https://developers.tally.so/api-reference/mcp"
+        },
+        {
+          "label": "Tally Help — Tally MCP Server",
+          "url": "https://tally.so/help/mcp"
+        },
+        {
+          "label": "Tally Help — Claude connector",
+          "url": "https://tally.so/help/claude-connector"
+        },
+        {
+          "label": "Tally Help — ChatGPT",
+          "url": "https://tally.so/help/chatgpt-integration"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Tally MCP server (bêta)",
+          "transport": "remote",
+          "auth": [
+            "oauth",
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "docsUrl": "https://developers.tally.so/api-reference/mcp"
+        }
+      ],
+      "status": "beta",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire vos formulaires et leurs réponses",
+          "en": "Read your forms and their submissions"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer un formulaire à partir d'une description, modifier un formulaire",
+          "en": "Create a form from a description, edit a form"
+        },
+        {
+          "kind": "send",
+          "fr": "Publier un formulaire pour le partager",
+          "en": "Publish a form to share it"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "no_delete"
+      ]
     }
   },
   {
@@ -247265,7 +248359,83 @@
     },
     "force_silence": false,
     "ogImageUrl": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/6a048234cec10a58c38e1758_webflow-og.jpg",
-    "galleryImages": []
+    "galleryImages": [],
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Webflow Help Center — Webflow MCP server overview",
+          "url": "https://help.webflow.com/hc/en-us/articles/52536562285203-Webflow-MCP-server-overview"
+        },
+        {
+          "label": "Webflow Developers — MCP getting started",
+          "url": "https://developers.webflow.com/mcp/reference/getting-started"
+        },
+        {
+          "label": "Webflow Developers — MCP overview",
+          "url": "https://developers.webflow.com/mcp/reference/overview"
+        },
+        {
+          "label": "Webflow Developers — Data tools",
+          "url": "https://developers.webflow.com/mcp/tools/data-tools"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Webflow MCP server",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "planNote": "Tous les forfaits de site, y compris Starter gratuit. Gestion des accès au Workspace : Workspace Enterprise.",
+          "planNoteEn": "All Site plans, including the free Starter plan. Workspace access management: Enterprise Workspace.",
+          "docsUrl": "https://help.webflow.com/hc/en-us/articles/52536616701971-Connect-your-AI-tools-to-the-Webflow-MCP-server"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire le contenu du site, les collections, les formulaires et les statistiques",
+          "en": "Read site content, collections, forms and analytics"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier éléments, styles, composants, variables, pages et éléments CMS (en brouillon)",
+          "en": "Create and edit elements, styles, components, variables, pages and CMS items (as drafts)"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer certains contenus : fichiers, collections, formulaires",
+          "en": "Delete some content: assets, collections, forms"
+        },
+        {
+          "kind": "send",
+          "fr": "Publier le site ou des éléments CMS, qui deviennent publics",
+          "en": "Publish the site or CMS items, making them live"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "admin_controls",
+        "scoped_keys"
+      ]
+    }
   },
   {
     "id": "webflow-framer",
@@ -255325,7 +256495,78 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://res.cloudinary.com/zapier-media/image/upload/q_auto/f_auto/v1776210705/Governance/og-image-homepage_mskeaq.png"
+    "ogImageUrl": "https://res.cloudinary.com/zapier-media/image/upload/q_auto/f_auto/v1776210705/Governance/og-image-homepage_mskeaq.png",
+    "agentAccess": {
+      "mcp": "official",
+      "verifiedOn": "2026-11-16",
+      "sources": [
+        {
+          "label": "Zapier Docs — Zapier MCP quickstart",
+          "url": "https://docs.zapier.com/mcp/get-started/quickstart"
+        },
+        {
+          "label": "Zapier Docs — Usage and billing",
+          "url": "https://docs.zapier.com/mcp/overview/usage"
+        },
+        {
+          "label": "Zapier Docs — How tools work",
+          "url": "https://docs.zapier.com/mcp/overview/how-tools-work"
+        },
+        {
+          "label": "Zapier Docs — Connect Claude",
+          "url": "https://docs.zapier.com/mcp/get-started/connect/claude"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Zapier MCP",
+          "transport": "remote",
+          "auth": [
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "planNote": "Tous les comptes ; chaque appel réussi consomme deux tâches du forfait.",
+          "planNoteEn": "All accounts; each successful call uses two tasks from your plan.",
+          "docsUrl": "https://docs.zapier.com/mcp/get-started/quickstart"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Chercher et lire des données dans vos applications connectées",
+          "en": "Search and read data in your connected apps"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer ou modifier des données dans vos applications (tâche, fiche…)",
+          "en": "Create or update data in your apps (a task, a record…)"
+        },
+        {
+          "kind": "send",
+          "fr": "Envoyer e-mails et messages depuis vos comptes connectés",
+          "en": "Send emails and messages from your connected accounts"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "url"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "admin_controls",
+        "scoped_keys"
+      ]
+    }
   },
   {
     "id": "zapier-make",

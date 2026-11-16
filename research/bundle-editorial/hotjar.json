@@ -33,7 +33,24 @@
       "Cartes de chaleur par zones (heatmaps)",
       "Sondages et feedback sur site",
       "Analyse par IA (chat en langage naturel côté Contentsquare)"
-    ]
+    ],
+    "agent": {
+      "mcp": "none",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Contentsquare — Hotjar Free vs Contentsquare Free (« Connect your AI assistant » : — pour Hotjar)",
+          "url": "https://contentsquare.com/hotjar/free-mcp/"
+        },
+        {
+          "label": "Hotjar Documentation — recherche « MCP », aucun résultat",
+          "url": "https://help.hotjar.com/hc/en-us/search?query=MCP"
+        }
+      ],
+      "servers": [],
+      "note": "Hotjar a rejoint Contentsquare, dont l'offre propose un serveur MCP.",
+      "note_en": "Hotjar has joined Contentsquare, whose offer includes an MCP server."
+    }
   },
   "fr": {
     "verdict": {

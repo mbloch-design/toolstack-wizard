@@ -32,7 +32,65 @@
       "Kit de marque et redimensionnement automatique",
       "Outils magiques/IA (fond transparent, retouche, génération)",
       "Collaboration et partage d'équipe"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Canva Help Center — Connect Canva to an AI assistant",
+          "url": "https://www.canva.com/help/mcp-agent-setup/"
+        },
+        {
+          "label": "Canva Developers — About Canva MCP",
+          "url": "https://www.canva.dev/docs/apps/mcp/"
+        },
+        {
+          "label": "Canva Developers — Access and permissions",
+          "url": "https://www.canva.dev/docs/apps/mcp/access/"
+        },
+        {
+          "label": "Canva Developers — Tools",
+          "url": "https://www.canva.dev/docs/apps/mcp/tools/"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Canva AI Connector (Canva MCP)",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "plan_note": "Tous les comptes, y compris Canva Free. Modèles de marque, kits de marque, remplissage automatique et redimensionnement : forfait payant. Dans une équipe, l'administrateur doit autoriser le connecteur.",
+          "plan_note_en": "All accounts, including Canva Free. Brand Templates, brand kits, autofill and resizing: paid plan. On a team, the admin must allow the connector.",
+          "clients": [
+            "chatgpt",
+            "claude",
+            "gemini",
+            "cursor",
+            "lovable",
+            "make",
+            "perplexity",
+            "grok"
+          ],
+          "docs_url": "https://www.canva.com/help/mcp-agent-setup/"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Rechercher et consulter vos designs, pages, dossiers et commentaires",
+          "en": "Search and view your designs, pages, folders and comments"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer des designs à partir d'une description, modifier un design, importer des fichiers, ranger, commenter, exporter",
+          "en": "Create designs from a description, edit a design, upload files, organise, comment, export"
+        }
+      ]
+    }
   },
   "fr": {
     "verdict": {

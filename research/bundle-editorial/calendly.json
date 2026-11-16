@@ -44,7 +44,68 @@
       "Rappels automatisés",
       "Paiements Stripe et PayPal",
       "Round-robin et routage de leads"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Calendly Developer — Calendly MCP Overview",
+          "url": "https://developer.calendly.com/docs/mcp/calendly-mcp-server"
+        },
+        {
+          "label": "Calendly Help — Connect Calendly to your AI tools",
+          "url": "https://calendly.com/help/connect-calendly-to-your-ai-tools"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Calendly MCP server",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "docs_url": "https://developer.calendly.com/docs/mcp/calendly-mcp-server",
+          "plan_note": "Aucun forfait payant requis ; certaines actions dépendent du forfait.",
+          "plan_note_en": "No paid plan required; some actions depend on your plan."
+        }
+      ],
+      "status": "ga",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Trouver des créneaux libres et voir les plages occupées",
+          "en": "Find open time and view busy slots"
+        },
+        {
+          "kind": "write",
+          "fr": "Réserver un rendez-vous, créer un lien à usage unique, modifier disponibilités et types d'événements",
+          "en": "Book meetings, create single-use links, update availability and event types"
+        },
+        {
+          "kind": "delete",
+          "fr": "Annuler un rendez-vous",
+          "en": "Cancel meetings"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": []
+    }
   },
   "fr": {
     "verdict": {

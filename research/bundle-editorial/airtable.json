@@ -21,7 +21,81 @@
       "Automations pour réduire les tâches répétitives",
       "Interfaces personnalisées sans code",
       "Intégrations extensibles et API robuste"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Airtable Developers — MCP server overview",
+          "url": "https://airtable.com/developers/agents/mcp/getting-started"
+        },
+        {
+          "label": "Airtable Support — Using the Airtable MCP server",
+          "url": "https://support.airtable.com/docs/using-the-airtable-mcp-server"
+        },
+        {
+          "label": "Airtable Developers — MCP tools",
+          "url": "https://airtable.com/developers/agents/mcp/tools"
+        },
+        {
+          "label": "Airtable Developers — Claude, ChatGPT, Gemini",
+          "url": "https://airtable.com/developers/agents/mcp/claude"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Airtable MCP server",
+          "transport": "remote",
+          "auth": [
+            "oauth",
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "docs_url": "https://airtable.com/developers/agents/mcp/getting-started"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Consulter et rechercher enregistrements, bases, tables et automatisations",
+          "en": "Look up and search records, bases, tables and automations"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier enregistrements, tables, champs, bases, interfaces et brouillons d'automatisations ; soumettre un formulaire",
+          "en": "Create and edit records, tables, fields, bases, interfaces and automation drafts; submit a form"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer des enregistrements, des tables entières, des interfaces et des pages",
+          "en": "Delete records, whole tables, interfaces and pages"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "gemini",
+          "how": "connector"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "admin_controls",
+        "scoped_keys"
+      ]
+    }
   },
   "fr": {
     "verdict": {

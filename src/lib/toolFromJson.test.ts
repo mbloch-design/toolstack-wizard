@@ -19,7 +19,7 @@ describe("mapToolFromJson", () => {
       better_alternative: "better", migration_guide: "guide", downgrade_plan: "downgrade",
       prescription_quality: "ready", prescription_output: { recommendation: "keep" }, prescription_block_reasons: ["reason"],
       prescription_context_questions: ["question"], substitution_cluster_v2: { cluster: "image" }, pricing_v5: { version: 5 },
-      pricing_v5En: { version: 5 }, decision_policy_v3: { version: 3 }, toolTrimRating: { score: 4 },
+      pricing_v5En: { version: 5 }, decision_policy_v3: { version: 3 }, toolTrimRating: { score: 4 }, agentAccess: { mcp: "none", verifiedOn: "2026-11-16", sources: [], servers: [] },
       affiliateDisclosureFr: "Disclosure FR", affiliateDisclosureEn: "Disclosure EN", affiliateCtaLabelFr: "Voir", affiliateCtaLabelEn: "View",
       promoCode: "CODE", promoDescriptionFr: "Promo FR", promoDescriptionEn: "Promo EN",
     };
@@ -35,7 +35,7 @@ describe("mapToolFromJson", () => {
       betterAlternative: "better", migrationGuide: "guide", downgradePlan: "downgrade", prescription_quality: "ready",
       prescription_output: { recommendation: "keep" }, prescription_block_reasons: ["reason"], prescription_context_questions: ["question"],
       substitution_cluster_v2: { cluster: "image" }, pricing_v5: { version: 5 }, pricing_v5En: { version: 5 },
-      decision_policy_v3: { version: 3 }, toolTrimRating: { score: 4 }, affiliateDisclosureFr: "Disclosure FR", affiliateDisclosureEn: "Disclosure EN",
+      decision_policy_v3: { version: 3 }, toolTrimRating: { score: 4 }, agentAccess: { mcp: "none", verifiedOn: "2026-11-16", sources: [], servers: [] }, affiliateDisclosureFr: "Disclosure FR", affiliateDisclosureEn: "Disclosure EN",
       affiliateCtaLabelFr: "Voir", affiliateCtaLabelEn: "View", promoCode: "CODE", promoDescriptionFr: "Promo FR", promoDescriptionEn: "Promo EN",
     });
   });

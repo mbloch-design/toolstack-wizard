@@ -35,7 +35,90 @@
       "Shopify Payments intégré",
       "Shopify Capital pour financement jusqu'à 5 millions USD",
       "21 000+ applications disponibles dans l'App Store"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Shopify Help Center — Building and managing your store with third-party AI tools",
+          "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools"
+        },
+        {
+          "label": "Shopify Help Center — Authorizing AI tool access to your store",
+          "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/authorizing-access"
+        },
+        {
+          "label": "Shopify Help Center — Considerations",
+          "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations"
+        },
+        {
+          "label": "Shopify Help Center — Shopify connector for Claude",
+          "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Intégrations Shopify pour assistants IA",
+          "access": "read_write",
+          "plan": "unknown",
+          "clients": [
+            "chatgpt",
+            "claude",
+            "gemini",
+            "grok",
+            "perplexity"
+          ],
+          "docs_url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/authorizing-access"
+        }
+      ],
+      "note": "Shopify passe par des intégrations installées depuis chaque assistant, sans les présenter comme un serveur MCP.",
+      "note_en": "Shopify works through integrations installed from each assistant, without calling them an MCP server.",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire commandes, produits, clients, stocks et statistiques",
+          "en": "Read orders, products, customers, inventory and analytics"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier produits, collections, stocks, codes de réduction, pages, menus et thèmes non publiés",
+          "en": "Create and edit products, collections, inventory, discount codes, pages, menus and unpublished themes"
+        },
+        {
+          "kind": "send",
+          "fr": "Publier des collections et, après confirmation, un thème",
+          "en": "Publish collections and, after confirming, a theme"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "gemini",
+          "how": "connector"
+        },
+        {
+          "assistant": "copilot",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "connector"
+        }
+      ],
+      "safeguards": [
+        "human_confirmation",
+        "admin_controls",
+        "scoped_keys"
+      ]
+    }
   },
   "fr": {
     "verdict": {

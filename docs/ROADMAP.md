@@ -39,8 +39,159 @@ Ce tableau pilote la suite ; les bilans et tableaux datés du 9 octobre plus bas
 | R10 — Chaîne de build | Remédiation publiée (`ffbb3f7ac7`, CI/Vercel et recette publique réussis) : Tailwind 4.3.3, plugins obsolètes retirés, tests alignés sur le plugin React actif et fusionneur de classes compatible. Audit npm **9 → 0** ; build Node 20 et budgets validés, cascade et tokens conservés. [Bilan et preuves](R10_R11_CLOTURE_2026-10-15.md). |
 | R11 — SEO/GEO et médias | Correctifs techniques publiés (`ffbb3f7ac7`, CI/Vercel et recette publique réussis) : descriptions/LLM, 62 références corrigées sur 54 outils, filtre des captures invalides, vrais 404 conservés après hydratation, sept traductions libérées des redirections obsolètes. Sitemap/routing contrôlés ensemble ; Search Console consultée. Publication et réexploration Google restent des états distincts. [Bilan](R10_R11_CLOTURE_2026-10-15.md). |
 | Soumissions et paiement | Chantier séparé. Cette passe ne recertifie pas son fonctionnement et n’effectue aucun paiement. Rotation Production déjà vérifiée le 16 octobre ; copie privée locale du jeton à actualiser séparément. |
+| Axe agentique et MCP — 16 novembre | Angle décidé : attribut des fiches d'abord. M1 livré en local le 16/11 sur `claude/distracted-grothendieck-64ebde` (non poussé) : 20 blocs `facts.agent` projetés, bloc « Assistant IA » sur les 20 fiches, guide pilier FR/EN. Reste : validation de Michael dans Storybook, publication, puis [critère de passage à M2](#critere-m2). [Plan et schéma](#axe-agentique-mcp). |
 
 **Suite :** publier les deux lots locaux R3/R7 après revue, puis contrôler les parcours, requêtes, compression et cache CDN en production. Le transport commun est désormais réduit sans suppression de champs ; un fractionnement supplémentaire n’est pas requis pour clôturer ce canary et ne sera ouvert que sur un besoin mesuré. L’exploitation GA4 et les essais utilisateurs restent distincts ; R5/R6 éditoriaux ne sont pas relancés.
+
+<a id="axe-agentique-mcp"></a>
+
+## Axe agentique et MCP — 16 novembre 2026
+
+**Décision (Michael, 16/11) :** le MCP entre d'abord comme attribut de décision des fiches existantes, pas comme annuaire dédié. L'intégration à Ma Stack et à l'Explorer vient après la mission Ma Stack en cours ; le cadrage du bloc de faits et le pilote peuvent avancer en parallèle.
+
+### État des lieux (relevé le 16/11)
+
+- Référence : [Toolfolio, Agent Resources](https://toolfolio.com/agent-resources/mcp-servers). 335 serveurs MCP et 146 skills dans leur sitemap. Fiche : description, éditeur officiel ou non, connexion distante/locale, authentification, clients compatibles, commande d'installation, date de vérification. Aucun verdict, public développeur ; rien sur le forfait requis ni sur l'accès en écriture. Leur catalogue est lui-même exposé en serveur MCP (lecture seule).
+- ToolTrim : `form_factor = 'mcp'`, la route `/mcp/:slug`, `guard-plugins.mjs` et la règle éditoriale de `scripts/repass/SPEC.md` existent. Aucune fiche de l'index JSON (1 360) ne porte `formFactor` ni `worksWith` : ces champs ne viennent que de Supabase, donc les pages hôtes restent vides avec la source publique par défaut. 16 fiches mentionnent MCP, en prose seulement.
+- Recouvrement : 119 des 335 serveurs Toolfolio correspondent par slug ou nom exact à une fiche du catalogue ; quelques autres existent sous un autre slug (Mailchimp, HubSpot, Jira, Wix, Softr), soit environ 130. Correspondance automatique, non relue fiche par fiche.
+
+### Étapes
+
+| Étape | Livrable | Condition de sortie |
+|---|---|---|
+| M0 — Cadrage | Schéma du bloc `agent` (ci-dessous) validé ; choix de la source structurée de contrôle (registre MCP officiel à évaluer, non consulté à ce jour) | Schéma validé par Michael, vocabulaires fermés ajoutés au garde-fou |
+| M1 — Pilote | 20 outils les plus présents dans les stacks, faits vérifiés sur la documentation officielle ; bloc sur la fiche ; guide pilier FR/EN « MCP pour freelances non-développeurs » | 20 blocs sourcés et datés, projection JSON, rendu fiche validé |
+| M2 — Extension | Les ~130 recouvrements ; filtre Explorer « connectable à mon assistant » ; signal Ma Stack ; critère dans les comparatifs | Après la mission Ma Stack ; contrôle de fraîcheur automatisé en place |
+| M3 — Fiches MCP autonomes | Serveurs sans outil hôte au catalogue (`form_factor = 'mcp'`), pages `/mcp/<client>` au seuil de 3 | Demande constatée sur M1/M2 |
+| M4 — Serveur MCP ToolTrim | Catalogue et Ma Stack interrogeables depuis un assistant | À décider après M2 |
+
+**Risque principal : la fraîcheur.** Ces faits changent vite ; c'est le motif qui a fait différer R5/R6. Pas de passage à M2 sans contrôle automatisé et sans budget convenu.
+
+### Schéma du bloc `agent` (arbitré le 16/11 après l'essai et le relevé des 20 outils)
+
+Écrit dans le fichier de recherche de la fiche (`facts.agent`), projeté en `agentAccess` dans `tools_v4.json` et en version réduite dans `tools_index.json`.
+
+```jsonc
+"agent": {
+  "mcp": "official",            // official | none ; bloc absent = non vérifié
+  "verified_on": "2026-11-16",  // obligatoire, y compris pour "none"
+  "sources": [{ "label": "…", "url": "…" }],   // sources éditeur ; pour "none", la recherche faite chez l'éditeur
+  "servers": [{                 // vide si "none" ; plusieurs possibles (Figma : distant et bureau)
+    "name": "…",
+    "transport": "remote",      // remote | local ; absent si l'éditeur ne le dit pas
+    "auth": ["oauth", "key"],   // oauth | key | none ; absent si l'éditeur ne nomme pas la méthode
+    "access": "read_write",     // read | read_write | docs_only : le maximum exposé, toujours borné par les droits du compte
+    "plan": "all",              // all | paid | specific | unknown
+    "plan_note": "…", "plan_note_en": "…",     // requis si "specific" ; admis avec "all" ou "paid" pour dire ce qui reste payant ou plafonné
+    "clients": ["claude", "cursor"],            // seulement si l'éditeur restreint les clients ; absent = tout client MCP
+    "docs_url": "…"
+  }]
+}
+```
+
+Règles : vocabulaires fermés, contrôlés par le garde-fou comme `form_factor` ; `none` signifie « vérifié, pas de serveur officiel » et se distingue du bloc absent ; un serveur tiers ne compte pas ; aucun client listé sans attestation de l'éditeur, et seulement des slugs du catalogue ; pas de commande d'installation recopiée (lien vers la documentation). `form_factor` et `works_with` ne changent pas : ils restent réservés aux fiches MCP autonomes de M3. Index réduit : `mcp`, `transport`, `access`, `verifiedOn`.
+
+**Arbitrages (Claude, 16/11, en autonomie demandée par Michael ; à revoir s'il le souhaite) :**
+- `access` : `account_scoped`, ajouté après l'essai, est retiré. Tous les serveurs distants relevés sont bornés par les droits du compte ; la valeur ne distinguait donc rien et masquait l'écriture, qui est le fait utile au verdict. `access` dit le maximum exposé.
+- `api_key` et `token` fusionnés en `key` : chez Notion, Stripe, Airtable, Make et Tally, c'est une clé envoyée en jeton porteur.
+- `community` retiré : aucune source éditeur ne peut l'établir. Hotjar et Milanote ont des serveurs tiers ou des demandes ; ils sont `none`.
+- `clients` gardé seulement quand l'éditeur restreint (5 serveurs sur 19) et retiré de l'index réduit.
+
+### Mieux que Toolfolio : enrichissement du bloc (Michael, 16/11)
+
+**Constat (fiche Notion de Toolfolio, vérifiée le 23/10) :** description de ce que fait le serveur, catalogue des 52 outils techniques, connexion, authentification, clients pour développeurs (Claude Code, Cursor, Codex, VS Code), commande d'installation, date de vérification. C'est plus riche que notre bloc, mais tourné vers le développeur. Toolfolio ne dit rien des points suivants : forfait requis et quotas, risque d'écriture ou de suppression, garde-fous, branchement depuis ChatGPT ou Claude grand public, statut bêta. Il ne formule pas non plus de verdict.
+
+**Décision :** battre Toolfolio sur la décision du freelance non-développeur, pas sur le catalogue technique. Ajouts au bloc, au niveau de l'outil :
+
+```jsonc
+"status": "ga",                 // ga | beta
+"capabilities": [               // 2 à 5 lignes en langage métier, tirées de la référence d'outils de l'éditeur
+  { "kind": "read", "fr": "…", "en": "…" }      // read | write | delete | send | pay
+],
+"setup": [                      // comment le brancher depuis un assistant grand public
+  { "assistant": "claude", "how": "connector" } // assistant : claude | chatgpt | gemini | copilot | other
+],                                              // how : connector | plugin | url | local
+"safeguards": ["human_confirmation"]            // human_confirmation | admin_controls | scoped_keys | no_delete ; [] si l'éditeur n'en documente aucun
+```
+
+Ce qui reste exclu, et pourquoi : le catalogue nominatif des outils (`notion-create-pages`…) et la commande d'installation n'aident pas un non-développeur à décider, et vieillissent vite. Le décompte des outils n'est pas repris : il ne dit rien du risque ni de l'utilité.
+
+**Essai (16/11) sur Notion, Stripe, Calendly :** les quatre champs se remplissent sur les trois outils, depuis la référence d'outils et la page d'aide « connecter à votre assistant ». `pay` n'apparaît que chez Stripe (Treasury, avec confirmation humaine) et `delete` chez Notion et Calendly : ce sont précisément les faits que Toolfolio ne signale pas. Calendly ne documente aucun garde-fou (`[]`), ce qui est aussi une information.
+
+**Étape 0 faite le 16/11** (documentation éditeur consultée le jour même ; un fait introuvable n'est pas écrit). Remplissage sur les 18 outils à serveur : `capabilities` 18/18 ; `safeguards` 17/18 (dont `[]` pour Ahrefs, Buffer, Calendly, ClickUp, Figma) ; `setup` 16/18 ; `status` 5/18 (`ga` : Notion, Calendly, HubSpot ; `beta` : Stripe, Tally). `pay` seulement chez Stripe ; `delete` chez Airtable, Ahrefs (publications sociales), Buffer, Calendly, ClickUp, Figma, Miro, Notion, Webflow ; `send` chez Buffer, ClickUp, HubSpot, Miro, Shopify, Slack, Tally, Webflow, Zapier.
+
+**Manques notés (champ non écrit) :**
+- `status` : non dit par 13 éditeurs (ni bêta ni disponibilité générale). Figma : seule l'écriture est en bêta, dite dans la note.
+- Canva : `setup` et `safeguards` non écrits, la page d'aide « connecter votre assistant » (canva.com/help/mcp-agent-setup) répond 403 ; la documentation développeur ne nomme aucun assistant.
+- Slack : `setup` non écrit, la documentation nomme les clients partenaires sans dire comment on les branche.
+- Ahrefs : pas de liste d'outils lisible (docs.ahrefs.com/…/mcp en 404) ; capacités tirées de ahrefs.com/mcp, dont « créer, modifier ou supprimer des publications sociales » : `access` passe à `read_write`.
+- Google Analytics : la page Google dit « lecture seule » ; le README du dépôt officiel décrit des outils d'écriture facultatifs. La page Google est retenue (`read`, `no_delete`).
+- ClickUp : la FAQ dit « aucun outil de suppression », la référence d'outils en liste deux (corbeille, commentaire). La référence est retenue.
+- Buffer : la page produit dit « vous êtes toujours la dernière étape », la documentation développeur dit qu'un post peut être publié immédiatement. La documentation est retenue, `safeguards: []`.
+- ChatGPT : les installations depuis l'annuaire d'applications de ChatGPT sont notées `plugin` (comme Stripe et Calendly dans l'essai) ; l'ajout d'une adresse de serveur en mode développeur est noté `url`.
+- `capabilities` accepte 1 à 5 lignes (Google Analytics n'en a qu'une, la lecture). Exemples : « depuis Claude ou ChatGPT en un clic ; peut réserver et annuler vos rendez-vous ; aucune confirmation avant action » ; « peut envoyer de l'argent, avec confirmation humaine ; bêta ».
+
+### Relevé du pilote M1 : 20 outils (16/11)
+
+Blocs déplacés le 16/11 dans `research/bundle-editorial/<slug>.json` (`facts.agent`) ; `research/agent-trial/` ne garde que le relevé de recouvrement Toolfolio. Sources éditeur consultées le 16/11 (pages ouvertes, ou extraits de pages éditeur par recherche restreinte au domaine de l'éditeur).
+
+**Choix des 20** (recouvrement Toolfolio × présence dans les 212 stacks × impressions, outils pour développeurs écartés) : notion, airtable, canva, figma, miro, hubspot, stripe, make, google-analytics, webflow, clickup, zapier, calendly, tally, shopify, slack, ahrefs, buffer ; `none` : hotjar, milanote. CapCut, troisième outil le plus présent hors recouvrement, est écarté : ses pages « MCP » sont des pages de référencement sans documentation technique ; bloc non écrit (non vérifié).
+
+**Remplissage, sur 19 serveurs (18 outils, Figma en a deux) :** `access` 18 ; `transport` 17 ; `plan` 15 renseignés hors `unknown` (Stripe, Google Analytics, Shopify, Slack restent `unknown`) ; `auth` 14 ; `clients` 5 (Canva, Figma ×2, Shopify, Slack). Tous les champs gardés dépassent le seuil de 3 sur 5 de la règle d'arbitrage.
+
+**Cas limites à connaître pour le rendu :**
+- Shopify : intégrations officielles installées depuis chaque assistant, sans que l'aide les présente comme serveur MCP ; pas de transport ni d'authentification nommés.
+- Slack : réservé aux applications publiées dans le Marketplace, aux applications internes et à quatre clients partenaires (Claude, Claude Code, Perplexity, Cursor ; Claude Code sans fiche au catalogue).
+- Ahrefs : `access` non écrit ; la documentation liste des groupes d'outils dont un groupe « gestion » sans dire s'il écrit. Forfait payant dès Lite, appels décomptés en unités API.
+- Google Analytics : serveur local seulement, en lecture ; authentification par identifiants Google Cloud (ADC ou compte de service), hors vocabulaire, champ non écrit. Le plus technique des 20 : à dire dans le verdict.
+- Zapier : `auth` ne nomme que le jeton de connexion ; la connexion depuis un assistant de discussion passe par un connecteur dont la méthode n'est pas nommée.
+- Bêta (Stripe, Tally, écriture Figma) : pas de champ ; le dire en prose dans le verdict.
+- Hotjar a fusionné avec Contentsquare, qui a un serveur MCP : à dire en prose sur la fiche, pas dans le bloc.
+
+### Fait le 16/11 — rendu du bloc sur la fiche (M1)
+
+Branche `claude/distracted-grothendieck-64ebde`, tirée de `main`, non poussée.
+
+- **Données :** `facts.agent` dans les 20 fichiers `research/bundle-editorial/<slug>.json`. `scripts/project-agent-access.mjs --apply` projette `agentAccess` dans `tools_v4.json` (et retire un bloc périmé) ; `gen-tools-index.mjs` écrit l'index réduit `agentAccess: { mcp, transport[], access, verifiedOn }` (plusieurs serveurs : tous les transports, l'accès le plus large). Vocabulaires fermés et règles dans `scripts/lib/agent-access.mjs`, contrôlés par `npm run guard:agent-access` (ajouté à la CI, renvoi depuis `guard-plugins.mjs`).
+- **Arbitrage (Claude, 16/11) :** champ facultatif `note` / `note_en` au niveau du bloc, pour la précision que les champs ne portent pas : écriture en bêta chez Figma, mise en place technique (Google Analytics), Shopify, restrictions Slack, Hotjar/Contentsquare, demande non livrée chez Milanote. La bêta de Stripe et Tally passe par `status`. Les clients sans fiche au catalogue sont refusés par le garde-fou (Claude Code, retiré du relevé Slack).
+- **Composant :** `src/ds/AgentAccess/` (fixtures réelles : Notion, Figma à deux serveurs, Ahrefs payant, Hotjar `none`, plus Calendly sans garde-fou, Stripe qui paie, Canva aux manques, Google Analytics local, Slack restreint). Verdict composé des champs (`agentVerdict.ts`, FR/EN) : d'où on le branche, ce que l'assistant peut faire (lire, modifier, supprimer, envoyer ou publier, payer), le forfait, la bêta, puis le garde-fou ou son absence — « Depuis Claude ou ChatGPT en un clic, votre assistant peut lire, modifier et supprimer, sur tous les forfaits ; aucun garde-fou documenté par l'éditeur. » Puis les capacités en langage métier, le branchement, les garde-fous, les faits par serveur, la documentation de l'éditeur, la date. Pas de badge, de logo de client, de catalogue nominatif d'outils, de décompte ni de commande d'installation.
+- **Fiche :** section « Assistant IA » dans l'approfondissement de `ToolDetailPage.tsx`, après l'angle IA ; rien sans bloc.
+- **Guide pilier :** `mcp-freelances-non-developpeurs` / `mcp-for-non-developer-freelancers` (exemples Notion, Canva, Calendly, avec suppression, garde-fous et branchement), paire déclarée dans `seo.ts` et `App.tsx`.
+- **Enrichissement « Mieux que Toolfolio » :** les quatre champs (`status`, `capabilities`, `setup`, `safeguards`) sont dans les 18 blocs à serveur, projetés et contrôlés par le garde-fou ; voir « Étape 0 faite » ci-dessus pour les manques.
+- **Reste à faire :** validation de Michael dans Storybook (« Fiche outil / Assistant IA ») ; références visuelles à poser après cette validation (workflow « Visual baselines ») ; publication. Puis appliquer le critère ci-dessous avant toute extension.
+
+<a id="critere-m2"></a>
+**Suite : M2 seulement si le critère est rempli** (règle « Critère pour passer à M2 » ci-dessous) : les 20 blocs tiennent sans correction un mois après le 16/11 (revérification vers le 16/12) ou un contrôle automatisé de fraîcheur signale les écarts, et le guide ou les fiches du pilote montrent des impressions ou des clics. Sinon, s'arrêter à M1.
+
+### Brief d'origine (M1, exécuté le 16/11)
+
+Tâche d'exécution, autonome, à faire à partir de ce seul brief, **après la fin de la mission Ma Stack** ou sur une branche dédiée créée depuis `main` (ne rien commiter de cet axe sur `mission/m01-ma-stack`).
+
+1. **Données :** déplacer les 20 blocs de `research/agent-trial/` vers le fichier de recherche de chaque fiche (`facts.agent`), puis les projeter en `agentAccess` dans `tools_v4.json` et en index réduit (`mcp`, `transport`, `access`, `verifiedOn`) dans `tools_index.json` par le script de projection existant. Ajouter les vocabulaires ci-dessus au garde-fou, sur le modèle de `form_factor`.
+2. **Composant :** `src/ds/AgentAccess/` (tsx, module.css, fixtures avec Notion, Figma à deux serveurs, Ahrefs payant, Hotjar `none`, stories d'abord), selon `docs/DESIGN_SYSTEM.md` et `docs/DESIGN_DECISIONS.md`. Une phrase de verdict, puis les faits, la date de vérification et le lien vers la documentation ; pas de badge, de logo de client ni de commande d'installation. `none` affiche « pas de serveur MCP officiel au JJ/MM ». Verdict composé à partir des champs, FR/EN.
+3. **Fiche :** insérer le composant dans `ToolDetailPage.tsx` sans style de page ; ne rien afficher quand le bloc est absent.
+4. **Guide pilier FR/EN** « MCP pour freelances non-développeurs » selon la règle « Guide pilier » ci-dessous, avec trois exemples tirés du relevé (Notion, Canva, Calendly).
+5. **Vérification :** `npm run lint:ds`, `npm run test:ds`, `npm run build-storybook && npm run test:visual`, `npm run build` ; captures de la fiche Notion, Figma et Hotjar.
+
+Terminé quand les 20 fiches affichent le bloc, le guide est publié en local, les contrôles passent, et cette section renvoie à la suite (critère de passage à M2).
+
+### Règles d'arbitrage pour la suite (écrites le 16/11 pour décider sans nouvelle session de cadrage)
+
+**Après l'essai sur cinq outils, pour chaque champ incertain :**
+- `plan` : le garder si au moins 3 outils sur 5 le remplissent avec une source éditeur ; sinon le retirer du schéma et dire le forfait en prose dans le verdict quand il est connu.
+- `clients` : le garder seulement si les éditeurs restreignent réellement certains clients. S'ils disent « tout client MCP », le remplacer par rien pour les serveurs distants et ne le conserver que pour les serveurs locaux.
+- `access` : si plusieurs outils répondent « selon les permissions du compte », ajouter la valeur `account_scoped` plutôt que de forcer `read_write`.
+- Tout autre champ rempli sur moins de 3 outils sur 5 sort du schéma. Dans le doute, retirer : un bloc court et vrai vaut mieux qu'un bloc complet à moitié `unknown`.
+
+**Choix des 20 outils du pilote M1 :** partir de `research/agent-trial/toolfolio-overlap-2026-11-16.json`, croiser avec la présence dans les stacks (`src/data/stacks-catalog-index.json`) et les impressions (`src/data/tool_demand.json`), puis équilibrer les catégories. Écarter les outils pour développeurs (Terraform, Redis, Playwright…) : le public est le freelance non-développeur. Inclure deux ou trois outils `none`.
+
+**Rendu sur la fiche (M1) :** le bloc dit une décision, pas une fiche technique. Une phrase de verdict (« pilotable depuis votre assistant, en lecture et écriture, sur tous les forfaits »), puis les faits, la date de vérification et le lien vers la documentation. Pas de badge, pas de logo de client, pas de commande d'installation (règles de `PRODUCT.md`). Composant dans `src/ds/`, stories d'abord. Un outil `none` l'affiche aussi : « pas de serveur MCP officiel au JJ/MM ».
+
+**Guide pilier (M1) :** répond à « qu'est-ce que ça change pour moi ? » pour un freelance sans code : ce qu'un assistant peut faire dans ses outils, ce qu'il faut vérifier avant de connecter (accès en écriture, forfait), trois exemples tirés des fiches du pilote. Ton et format des guides existants.
+
+<a id="critere-m2-regle"></a>**Critère pour passer à M2 :** les 20 blocs tiennent sans correction un mois après leur vérification, ou un contrôle automatisé signale les écarts ; et le guide ou les fiches du pilote montrent des impressions ou des clics. Sans l'un des deux, s'arrêter à M1.
+
+**Ce que ToolTrim ne fait pas sur cet axe :** annuaire neutre de serveurs, classement par popularité, skills, commandes d'installation. C'est le terrain de Toolfolio.
 
 ## Priorité révisée — 13 octobre 2026
 

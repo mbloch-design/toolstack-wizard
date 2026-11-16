@@ -1,0 +1,100 @@
+/* What an AI assistant can do in the tool: the verdict, the facts, the date, the documentation.
+   A tile of the system; a grid of facts, never a separator. */
+
+.block {
+  composes: tile from "../atoms.module.css";
+  gap: var(--tt-gap-group);
+}
+
+.lead {
+  display: grid;
+  gap: var(--tt-gap-item);
+  max-width: 62ch;
+}
+
+.verdict {
+  composes: titleM from "../atoms.module.css";
+}
+
+.text {
+  composes: text from "../atoms.module.css";
+}
+
+.eyebrow {
+  composes: eyebrow from "../atoms.module.css";
+}
+
+.servers {
+  display: grid;
+  gap: var(--tt-gap-group);
+}
+
+@container (min-width: 640px) {
+  .servers[data-several] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.tool,
+.server,
+.group {
+  display: grid;
+  gap: var(--tt-space-3);
+  align-content: start;
+  min-width: 0;
+}
+
+.facts {
+  display: grid;
+  gap: var(--tt-space-3);
+  margin: 0;
+}
+
+.row {
+  display: grid;
+  gap: var(--tt-space-1);
+  min-width: 0;
+}
+
+@container (min-width: 520px) {
+  .tool .row,
+  .servers:not([data-several]) .row {
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: var(--tt-space-4);
+    align-items: baseline;
+  }
+}
+
+.term {
+  composes: eyebrow from "../atoms.module.css";
+}
+
+.value {
+  composes: text from "../atoms.module.css";
+  display: grid;
+  gap: var(--tt-space-1);
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.detail {
+  composes: note from "../atoms.module.css";
+  max-width: 62ch;
+}
+
+.sources {
+  display: grid;
+  gap: var(--tt-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sources a {
+  overflow-wrap: anywhere;
+}
+
+.meta {
+  composes: note from "../atoms.module.css";
+  max-width: 62ch;
+}

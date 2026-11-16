@@ -23,7 +23,24 @@
       "Applications mobiles et desktop synchronisées",
       "Intégrations avec Slack et autres outils",
       "Modèles prédéfinis pour différents workflows créatifs"
-    ]
+    ],
+    "agent": {
+      "mcp": "none",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Milanote Help Center — recherche « MCP », aucun résultat",
+          "url": "https://help.milanote.com/en/?q=MCP"
+        },
+        {
+          "label": "Milanote — vote sur les fonctionnalités à venir (serveur MCP demandé, non livré)",
+          "url": "https://poll.milanote.com/c/76-affiliate-programme"
+        }
+      ],
+      "servers": [],
+      "note": "Un serveur MCP est demandé par des utilisateurs, pas livré.",
+      "note_en": "Users have asked for an MCP server; none has shipped."
+    }
   },
   "fr": {
     "verdict": {

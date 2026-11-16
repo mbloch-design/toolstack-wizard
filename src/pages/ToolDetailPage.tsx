@@ -33,6 +33,7 @@ import ToolProfitabilityBlock from "@/components/tool/ToolProfitabilityBlock";
 import ToolBillingTrapsBlock from "@/components/tool/ToolBillingTrapsBlock";
 import ToolAiBlock from "@/components/tool/ToolAiBlock";
 import ToolGallery from "@/components/tool/ToolGallery";
+import AgentAccess from "@/ds/AgentAccess/AgentAccess";
 import { getToolTutorials } from "@/data/toolTutorials";
 import { getToolMediaImages } from "@/data/toolMedia";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
@@ -1219,6 +1220,21 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 {editing?.block(["lifecycle", "decision_policy_v3", "force_silence", "pivot_integration_source", "prescription_block_reasons", "prescription_context_questions"], t("Cycle de vie et recommandations", "Lifecycle and recommendations"), { advanced: true })}
                 {editing?.block(["id", "slug", "research", "prescription_output", "prescription_quality", "bestFor", "tags", "nameEn", "categoryId", "gallery_images", "link", "website", "lifecycleStatus", "pricingTiers", "verdictFr"], t("Informations protégées et compatibilité", "Protected information and compatibility"), { advanced: true })}
                 {!authorMode && <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />}
+
+                {/* 10b · Assistant IA (MCP) : ce qu'un assistant peut faire dans
+                     l'outil, vérifié chez l'éditeur. Rien sans bloc : absent veut
+                     dire non vérifié (docs/ROADMAP.md, axe agentique). */}
+                {!authorMode && tool.agentAccess && (
+                  <div className="td-section" id="assistant-ia">
+                    <h2 className="td-title">
+                      {t("Assistant IA.", "AI assistant.")} <span className="tt-title-muted">{t(`${tool.name} et votre assistant.`, `${tool.name} and your assistant.`)}</span>
+                    </h2>
+                    <AgentAccess
+                      access={tool.agentAccess} toolName={tool.name} lang={lang === "en" ? "en" : "fr"}
+                      clientName={(slug) => tools.find((item) => (item.slug || item.id) === slug)?.name ?? slug}
+                    />
+                  </div>
+                )}
 
                 {/* Quiet structured recap for search and extraction. Keeping
                     it at the end of the deep dive avoids interrupting the

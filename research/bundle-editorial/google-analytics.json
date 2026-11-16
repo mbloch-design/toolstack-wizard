@@ -19,7 +19,53 @@
       "Rapports temps réel et explorations (entonnoirs, chemins)",
       "Audiences et intégration Google Ads",
       "Insights et requêtes en langage naturel (Gemini)"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Google for Developers — Try the Google Analytics MCP server",
+          "url": "https://developers.google.com/analytics/devguides/MCP"
+        },
+        {
+          "label": "GitHub googleanalytics/google-analytics-mcp",
+          "url": "https://github.com/googleanalytics/google-analytics-mcp"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Google Analytics MCP server",
+          "transport": "local",
+          "access": "read",
+          "plan": "unknown",
+          "docs_url": "https://developers.google.com/analytics/devguides/MCP"
+        }
+      ],
+      "note": "Serveur à installer sur votre ordinateur et à relier par des identifiants Google Cloud : une mise en place technique.",
+      "note_en": "A server to install on your computer and connect with Google Cloud credentials: a technical setup.",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire comptes, propriétés, rapports et données en temps réel",
+          "en": "Read accounts, properties, reports and realtime data"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "local"
+        },
+        {
+          "assistant": "other",
+          "how": "local"
+        }
+      ],
+      "safeguards": [
+        "scoped_keys",
+        "no_delete"
+      ]
+    }
   },
   "fr": {
     "verdict": {
