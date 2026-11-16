@@ -109,11 +109,10 @@
    rising from the bottom over the whole width as if the glass deepened; its thickness shows on the edges, a bright
    rim and a light caught inside along them; its shadow takes its colour. Nothing in the right corner. */
 .tile[data-bloom] {
-  --tt-slab-tone: var(--tt-slab-teal);
-
   background:
-    radial-gradient(120% 62% at 58% 6%, rgb(244 246 248) 30%, rgb(244 246 248 / 0%) 80%),
-    linear-gradient(color-mix(in oklch, var(--tt-slab-tone) 0%, rgb(244 246 248)) 0%, color-mix(in oklch, var(--tt-slab-tone) 5%, rgb(244 246 248)) 32%, color-mix(in oklch, var(--tt-slab-tone) 16%, rgb(244 246 248)) 46%, color-mix(in oklch, var(--tt-slab-tone) 36%, rgb(244 246 248)) 60%, color-mix(in oklch, var(--tt-slab-tone) 60%, rgb(244 246 248)) 78%, color-mix(in oklch, var(--tt-slab-tone) 80%, rgb(244 246 248)) 100%);
+    radial-gradient(135% 66% at 55% 4%, var(--tt-slab-white) 52%, rgb(248 252 252 / 0%) 68%),
+    radial-gradient(70% 55% at 8% 108%, color-mix(in oklch, var(--tt-slab-blue) 70%, transparent), transparent 75%),
+    linear-gradient(var(--tt-slab-white) 28%, color-mix(in oklch, var(--tt-slab-aqua) 30%, var(--tt-slab-white)) 46%, color-mix(in oklch, var(--tt-slab-aqua) 75%, var(--tt-slab-white)) 62%, color-mix(in oklch, var(--tt-slab-teal) 70%, var(--tt-slab-aqua)) 80%, var(--tt-slab-teal));
 
   --tt-slab-shadow: var(--tt-slab-edge), 0 10px 24px -16px rgb(20 20 40 / 10%);
 
