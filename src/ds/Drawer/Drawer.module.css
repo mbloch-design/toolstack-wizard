@@ -32,6 +32,22 @@
   container-type: inline-size;
 }
 
+/* The scroll is owned (M01): the content melts into the card's white at its foot instead of being cut against the
+   rounded edge; the fade stays at the bottom while the content scrolls under it. */
+.panel::after {
+  position: sticky;
+  bottom: calc(var(--tt-space-6) * -1);
+  height: var(--tt-space-8);
+  margin-top: calc((var(--tt-space-8) + var(--tt-space-6)) * -1);
+  background: var(--tt-sheet-fade);
+  content: "";
+  pointer-events: none;
+}
+
+.panel[data-inline]::after {
+  display: none;
+}
+
 /* In the page flow (Storybook) the fixed panel's offsets would push it 16 px off its own box: reset them. */
 .panel[data-inline] {
   position: relative;
