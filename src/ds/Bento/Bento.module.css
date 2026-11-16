@@ -109,16 +109,15 @@
    corner and melting into the white over most of the tile; no band at the foot, no shadow, a 0.5 px edge only. */
 .tile[data-bloom] {
   background:
-    radial-gradient(120% 110% at 100% 100%, color-mix(in oklch, color-mix(in oklch, var(--b1) 60%, white) 26%, transparent), transparent 62%),
     radial-gradient(90% 80% at 0% 100%, color-mix(in oklch, color-mix(in oklch, var(--b2) 60%, white) 14%, transparent), transparent 60%),
-    var(--tt-bg);
-  box-shadow: var(--tt-card-edge);
+    var(--tt-stage-surface, var(--tt-bg));
+  box-shadow: var(--tt-stage-edge, var(--tt-card-edge));
+  backdrop-filter: var(--tt-stage-filter, none);
 }
 
 /* A question asked of the person: the same light as the others, a brand halo from the corner, no shadow. */
 .tile[data-tone="question"] {
   background:
-    radial-gradient(120% 110% at 100% 100%, color-mix(in oklch, color-mix(in oklch, var(--tt-brand) 60%, white) 22%, transparent), transparent 62%),
     var(--tt-bg);
   box-shadow: var(--tt-card-edge);
 }
@@ -323,28 +322,7 @@
   height: 20px;
 }
 
-/* The screen's own light (M01, 16/11/2026). On an HDR screen the white of a tile glows a little past the page's
-   white, like lit paper: a soft PQ image (about 1.5 times the interface white at its peak, top of the tile) added
-   in light. Its black adds nothing. Less transparency or more contrast: plain white tiles. */
-@media (dynamic-range: high) {
-  .tile[data-bloom] {
-    dynamic-range-limit: no-limit;
-  }
-
-  .tile[data-bloom]::after {
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: var(--tt-hdr-paper);
-    mix-blend-mode: plus-lighter;
-    opacity: .7;
-    content: "";
-    pointer-events: none;
-  }
-}
-
 @media (prefers-reduced-transparency: reduce) {
-  .tile[data-bloom]::after,
   .tile[data-tone="smoke"]::before,
   .tile[data-tone="smoke"]::after {
     display: none;
@@ -359,5 +337,49 @@
 
   .tile[data-tone="smoke"]::before {
     display: none;
+  }
+}
+
+/* The stage: lights behind, glass in front. The lights overflow the stage a little and never catch the pointer. */
+.stage {
+  --tt-stage-surface: var(--tt-frost);
+  --tt-stage-edge: var(--tt-frost-edge);
+  --tt-stage-filter: var(--tt-frost-filter);
+
+  position: relative;
+  isolation: isolate;
+}
+
+.stageLights {
+  position: absolute;
+  inset: -6% -4%;
+  z-index: -1;
+  background: var(--tt-stage-lights);
+  filter: blur(var(--tt-stage-blur));
+  pointer-events: none;
+  animation: stage-drift 24s var(--tt-ease) infinite alternate;
+}
+
+@keyframes stage-drift {
+  to {
+    transform: translate3d(2%, -1.5%, 0) scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stageLights {
+    animation: none;
+  }
+}
+
+/* Less transparency or more contrast: no lights, solid white tiles. */
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .stageLights {
+    display: none;
+  }
+
+  .stage {
+    --tt-stage-surface: var(--tt-bg);
+    --tt-stage-filter: none;
   }
 }

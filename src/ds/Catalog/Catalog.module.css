@@ -618,8 +618,9 @@
   border-radius: var(--tt-r-card);
   background:
     radial-gradient(130% 100% at 50% 130%, color-mix(in oklch, var(--fc1, var(--tt-brand)) 16%, transparent), transparent 65%),
-    var(--tt-bg);
-  box-shadow: var(--tt-card-edge);
+    var(--tt-stage-surface, var(--tt-bg));
+  box-shadow: var(--tt-stage-edge, var(--tt-card-edge));
+  backdrop-filter: var(--tt-stage-filter, none);
   color: var(--tt-ink);
   text-decoration: none;
   transition: box-shadow 700ms var(--tt-spring-card), transform 700ms var(--tt-spring-card);

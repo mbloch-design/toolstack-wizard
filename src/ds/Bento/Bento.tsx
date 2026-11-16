@@ -119,3 +119,11 @@ export function Question({ media, children }: { media?: ReactNode; children: Rea
 export function GlassIcon({ children, color = "var(--tt-brand)" }: { children: ReactNode; color?: string }) {
   return <span className={styles.glassIcon} style={{ "--g": color } as CSSProperties} aria-hidden="true">{children}</span>;
 }
+
+/**
+ * Glass over light (M01, 16/11/2026, « glassmorphism »): coloured lights, large and very blurred, behind the key
+ * figures and the bento; the tiles above them turn to frosted glass, so the colour shows through without paint.
+ */
+export function GlassStage({ children }: { children: ReactNode }) {
+  return <div className={styles.stage}><span className={styles.stageLights} aria-hidden="true" />{children}</div>;
+}
