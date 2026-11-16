@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode, Ref } from "react";
 import { forwardRef, useEffect, useLayoutEffect, useRef, useState, type MutableRefObject } from "react";
 import { ChevronLeft, ChevronRight, Filter, X } from "@/lib/icons";
+import Matter from "../Matter/Matter";
 import styles from "./Catalog.module.css";
 
 /**
@@ -211,12 +212,14 @@ export function FigureCard({ figure, unit, name, detail, icon, visual, tone = "i
   tone?: "ink" | "overlap" | "gain";
   renderLink: (className: string, content: ReactNode) => ReactNode }) {
   if (centered) return <li className={styles.placeSlot}>{renderLink(`${styles.figureCard} ${styles.figureCentered}`, <>
+    <Matter />
     {(visual || icon) && <span className={styles.figureMark} aria-hidden="true">{visual ?? icon}</span>}
     <span className={styles.figure} data-tone={tone}>{figure}{unit && <small>{unit}</small>}</span>
     <span className={styles.figureName}>{name}<ChevronRight className={styles.figureGo} aria-hidden="true" /></span>
     {detail && <span className={styles.figureDetail}>{detail}</span>}
   </>)}</li>;
   return <li className={styles.placeSlot}>{renderLink(styles.figureCard, <>
+    <Matter />
     {(icon || visual) && <span className={styles.figureTop}>{icon && <span className={styles.figureIcon} data-tone={tone} aria-hidden="true">{icon}</span>}{visual && <span className={styles.figureVisual} aria-hidden="true">{visual}</span>}</span>}
     <span className={styles.figure} data-tone={tone}>{figure}{unit && <small>{unit}</small>}</span>
     <span className={styles.figureName}>{name}<ChevronRight className={styles.figureGo} aria-hidden="true" /></span>

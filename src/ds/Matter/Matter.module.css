@@ -1,0 +1,61 @@
+/* The matter of a glass slab: lights below, a progressive blur over them. The host is positioned and isolated. */
+.matter {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  clip-path: inset(0 round var(--tt-matter-r, 0));
+  background: var(--tt-slab-mist);
+  pointer-events: none;
+}
+
+/* Sharp lights in the slab's range, low in the glass: deep on the left, light in the middle, a neighbour on the right. */
+.lights {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--tt-matter-lights);
+}
+
+.blur {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.blur[data-step="1"] {
+  backdrop-filter: var(--tt-pblur-1);
+  mask-image: var(--tt-pmask-1);
+}
+
+.blur[data-step="2"] {
+  backdrop-filter: var(--tt-pblur-2);
+  mask-image: var(--tt-pmask-2);
+}
+
+.blur[data-step="3"] {
+  backdrop-filter: var(--tt-pblur-3);
+  mask-image: var(--tt-pmask-3);
+}
+
+.blur[data-step="4"] {
+  backdrop-filter: var(--tt-pblur-4);
+  mask-image: var(--tt-pmask-4);
+}
+
+.blur[data-step="5"] {
+  backdrop-filter: var(--tt-pblur-5);
+  mask-image: var(--tt-pmask-5);
+}
+
+/* Less transparency: no layered blur, the lights softened once instead. */
+@media (prefers-reduced-transparency: reduce) {
+  .blur {
+    display: none;
+  }
+
+  .lights {
+    filter: blur(var(--tt-ambient-blur));
+  }
+}

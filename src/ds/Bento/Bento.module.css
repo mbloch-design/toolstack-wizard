@@ -123,12 +123,11 @@
   --tt-brand-mark: var(--tt-slab-ink-teal);
   --tt-gain-ink: var(--tt-slab-ink-aqua);
   --tt-overlap-strong: var(--tt-slab-ink-coral);
+  --tt-matter-r: var(--tt-r-tile);
 
-  background:
-    radial-gradient(140% 72% at 55% 2%, var(--tt-slab-mist) 55%, rgb(242 248 249 / 0%) 74%),
-    radial-gradient(60% 50% at 10% 105%, color-mix(in oklch, var(--tt-slab-aqua) 32%, transparent), transparent 75%),
-    radial-gradient(60% 50% at 92% 105%, color-mix(in oklch, var(--tt-slab-blue) 18%, transparent), transparent 75%),
-    linear-gradient(var(--tt-slab-mist) 50%, color-mix(in oklch, var(--tt-slab-teal) 14%, var(--tt-slab-mist)));
+  position: relative;
+  isolation: isolate;
+  background: transparent;
 
   --tt-slab-shadow: var(--tt-slab-edge), 0 10px 24px -16px rgb(20 20 40 / 10%);
 
