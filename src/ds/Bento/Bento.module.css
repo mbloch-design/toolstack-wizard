@@ -105,15 +105,14 @@
   pointer-events: none;
 }
 
-/* Light rising from the bottom of a white tile (M01, the site's references): two colours, diffuse but present,
-   meeting under the content; the tile stays white where the words are. */
+/* Light, not paint (M01, 16/11/2026, « lumière, clarté, légèreté »): one colour per tile, very diluted, born in a
+   corner and melting into the white over most of the tile; no band at the foot, no shadow, a 0.5 px edge only. */
 .tile[data-bloom] {
   background:
-    radial-gradient(75% 70% at 22% 118%, color-mix(in oklch, var(--b1) 78%, transparent), transparent 70%),
-    radial-gradient(70% 65% at 82% 122%, color-mix(in oklch, var(--b2) 72%, transparent), transparent 70%),
-    radial-gradient(90% 45% at 50% 110%, color-mix(in oklch, var(--b1) 30%, white), transparent 80%),
+    radial-gradient(120% 110% at 100% 100%, color-mix(in oklch, var(--b1) 20%, transparent), transparent 62%),
+    radial-gradient(90% 80% at 0% 100%, color-mix(in oklch, var(--b2) 10%, transparent), transparent 60%),
     var(--tt-bg);
-  box-shadow: var(--tt-row-rest);
+  box-shadow: var(--tt-card-edge);
 }
 
 .tile[data-tone="question"] {
@@ -321,30 +320,28 @@
   height: 20px;
 }
 
-/* The screen's own light (M01, 16/11/2026). On an HDR screen the glass catches more light: a brighter top edge and
-   sheen. Asking for less transparency makes the glass solid, without lights behind it. Asking for more contrast
-   takes the blooms away from under the words. */
+/* The screen's own light (M01, 16/11/2026). On an HDR screen the white of a tile glows a little past the page's
+   white, like lit paper: a soft PQ image (about 1.5 times the interface white at its peak, top of the tile) added
+   in light. Its black adds nothing. Less transparency or more contrast: plain white tiles. */
 @media (dynamic-range: high) {
-  .tile[data-tone="smoke"] {
-    box-shadow: var(--tt-smoke-tile-shadow-hdr);
+  .tile[data-bloom] {
     dynamic-range-limit: no-limit;
   }
 
-  /* The sheen becomes real light: an HDR image (PQ, ≈ 1 000 nits) added to the glass, brighter than the page's
-     white. Its black adds nothing; only the streak shines. */
-  .tile[data-tone="smoke"]::after {
-    background: var(--tt-hdr-sheen);
+  .tile[data-bloom]::after {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--tt-hdr-paper);
     mix-blend-mode: plus-lighter;
-    opacity: .55;
-  }
-
-  /* The veil gave way to the light: the coloured lights inside dim to keep the glass smoked. */
-  .tile[data-tone="smoke"]::before {
-    opacity: .55;
+    opacity: .35;
+    content: "";
+    pointer-events: none;
   }
 }
 
 @media (prefers-reduced-transparency: reduce) {
+  .tile[data-bloom]::after,
   .tile[data-tone="smoke"]::before,
   .tile[data-tone="smoke"]::after {
     display: none;

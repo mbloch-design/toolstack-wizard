@@ -450,8 +450,8 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
               trades={CORE_TRADES.map((id) => ({ id, name: t(...TRADE_NAMES[id]), icon: TRADE_ICONS[id], tools: territories.find((territory) => territory.id === id)?.tools ?? [], color: `var(--tt-area-${CORE_TRADES.indexOf(id) + 1})` }))} />
               {coveredCount < CORE_TRADES.length && <span><TextButton arrow onClick={onAddTool}>{t(`Compléter ma stack · ${CORE_TRADES.length - coveredCount} métier${CORE_TRADES.length - coveredCount > 1 ? "s" : ""} à couvrir`, `Complete my stack · ${CORE_TRADES.length - coveredCount} trade${CORE_TRADES.length - coveredCount > 1 ? "s" : ""} to cover`)}</TextButton></span>}
             </div>} />
-          <Tile span={5} label={`${t("À faire", "To do")} · ${level[0]}`} tone={done < checks.length ? "smoke" : "tile"}
-            wash={[done === checks.length ? "var(--tt-live)" : done === 0 ? "var(--tt-overlap)" : "var(--tt-brand)"]}
+          <Tile span={5} label={`${t("À faire", "To do")} · ${level[0]}`}
+            bloom={[done === checks.length ? "var(--tt-live)" : done === 0 ? "var(--tt-overlap)" : "var(--tt-brand)", "var(--tt-area-3)"]}
             statement={done === checks.length ? <Key tone="gain">{t("Rien", "Nothing")}</Key> : <><Key tone={done === 0 ? "overlap" : "brand"}>{checks.length - done}</Key>{t(` étape${checks.length - done > 1 ? "s" : ""}`, ` step${checks.length - done > 1 ? "s" : ""}`)}</>}
             footer={<Checkpoints layout="list" progressLabel={t(`${done} étape${done > 1 ? "s" : ""} sur ${checks.length} réglée${done > 1 ? "s" : ""}`, `${done} of ${checks.length} steps settled`)} label={t("Étapes", "Steps")} steps={checks.map((check) => ({ id: check.id, name: check.name, icon: check.icon, done: check.done, note: check.note, action: check.action }))} />} />
         </BentoRow>
