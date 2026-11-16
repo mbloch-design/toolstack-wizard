@@ -15,7 +15,12 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: var(--tt-matter-lights);
+  background:
+    radial-gradient(26% 30% at 66% 78%, var(--tt-slab-iris), transparent 72%),
+    radial-gradient(34% 42% at 14% 100%, var(--tt-slab-teal), transparent 72%),
+    radial-gradient(32% 40% at 50% 106%, var(--tt-slab-aqua), transparent 72%),
+    radial-gradient(34% 42% at 88% 102%, var(--tt-slab-blue), transparent 72%),
+    linear-gradient(transparent 50%, color-mix(in oklch, var(--tt-slab-aqua) 35%, transparent));
 }
 
 .blur {
@@ -47,6 +52,16 @@
 .blur[data-step="5"] {
   backdrop-filter: var(--tt-pblur-5);
   mask-image: var(--tt-pmask-5);
+}
+
+/* The grain of frosted glass: a fine noise over everything, kept sharp, barely there. */
+.grain {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--tt-grain);
+  opacity: .07;
+  mix-blend-mode: multiply;
 }
 
 /* Less transparency: no layered blur, the lights softened once instead. */
