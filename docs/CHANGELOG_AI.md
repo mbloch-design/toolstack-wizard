@@ -1,3 +1,10 @@
+## 2026-11-16 · CMS éditeurs · cadrage du parcours complet
+
+- Cadrage Astra et plan de relais Sol : offres existantes, inscription, dossier initial privé, récupération de fiche/ancien paiement, attribution, faits et médias, revue ToolTrim, relecture initiale, publication groupée et mises à jour.
+- Vérification en lecture seule du code publié `415800e` et de Supabase : réutilisation de `catalog_contrib`, séparation produit/analyse, migration obligatoire des sources JSON/BDD divergentes, aucun accès éditeur actuellement déclaré livré.
+- Correction du premier périmètre après retour de Michael : le chantier commence avant la création de fiche et reprend le gratuit avec badge, le paiement Creem unique à 29 $ et la mise en avant sur contact. Aucun nouveau tarif décidé.
+- Documents : `docs/superpowers/specs/2026-11-16-cms-editeurs-design.md` et `docs/superpowers/plans/2026-11-16-cms-editeurs.md`. Travail documentaire uniquement, sans mutation DB, paiement, email ni déploiement.
+
 ## 2026-11-10 · Back-office · édition de la fiche sur une page
 
 - La fiche présente ses valeurs par section et ouvre les champs dans le bloc ou l’offre à modifier. Terminer applique les changements au brouillon et Annuler écarte uniquement les saisies du bloc.
