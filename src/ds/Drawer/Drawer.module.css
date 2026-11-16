@@ -22,6 +22,9 @@
   padding: var(--tt-space-8) var(--tt-space-7) var(--tt-space-6);
   overflow-y: auto;
   overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--tt-sheet-scroll);
+  scrollbar-gutter: stable;
   border-radius: var(--tt-r-sheet);
   background: var(--tt-bg);
   box-shadow: var(--tt-sheet-shadow);
