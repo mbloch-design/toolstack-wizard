@@ -617,11 +617,12 @@
   padding: var(--tt-space-4);
   border-radius: var(--tt-r-card);
   background:
-    var(--tt-frost-veil),
-    radial-gradient(70% 70% at 18% 112%, color-mix(in oklch, var(--fc1, var(--tt-brand)) 55%, transparent), transparent 70%),
-    radial-gradient(60% 60% at 70% 118%, color-mix(in oklch, var(--fc2, var(--tt-area-3)) 40%, transparent), transparent 70%),
-    var(--tt-bg);
-  box-shadow: var(--tt-frost-edge);
+    radial-gradient(80% 60% at 20% 105%, color-mix(in oklch, var(--fc2, var(--tt-area-3)) 28%, transparent), transparent 70%),
+    linear-gradient(color-mix(in oklch, var(--fc1, var(--tt-brand)) 3%, white) 35%, color-mix(in oklch, var(--fc1, var(--tt-brand)) 34%, white));
+
+  --tt-slab-shadow: var(--tt-slab-edge), 0 24px 48px -28px color-mix(in oklch, var(--fc1, var(--tt-brand)) 50%, transparent);
+
+  box-shadow: var(--tt-slab-shadow);
   color: var(--tt-ink);
   text-decoration: none;
   transition: box-shadow 700ms var(--tt-spring-card), transform 700ms var(--tt-spring-card);

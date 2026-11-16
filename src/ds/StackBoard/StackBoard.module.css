@@ -29,16 +29,14 @@
   width: 48px;
   height: 48px;
   border-radius: var(--tt-r-round);
-  background: transparent;
-  outline: var(--tt-trade-off-dash);
-  outline-offset: var(--tt-trade-off-offset);
-  color: var(--tt-line);
+  background: var(--tt-glass-chip);
+  box-shadow: var(--tt-glass-chip-edge);
+  color: var(--tt-meta);
 }
 
 /* A job the stack does lights up in its own colour. */
 .trade[data-on] .tradeIcon {
-  background: color-mix(in oklch, var(--c) 14%, var(--tt-bg));
-  outline: none;
+  background: linear-gradient(160deg, color-mix(in oklch, var(--c) 8%, white), color-mix(in oklch, var(--c) 24%, white));
   color: var(--c);
 }
 
@@ -80,8 +78,8 @@
   padding: 0;
   border: 0;
   border-radius: var(--tt-r-round);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-raised);
+  background: var(--tt-glass-chip);
+  box-shadow: var(--tt-glass-chip-edge);
   color: var(--tt-ink);
   cursor: pointer;
   transition: transform var(--tt-dur-move) var(--tt-spring-card);
@@ -168,12 +166,12 @@
   height: 40px;
   margin-bottom: var(--tt-space-1);
   border-radius: var(--tt-r-round);
-  background: var(--tt-delta-cost-bg);
+  background: var(--tt-glass-chip);
+  box-shadow: var(--tt-glass-chip-edge);
   color: var(--tt-overlap);
 }
 
 .step[data-done] .stepMark {
-  background: var(--tt-delta-gain-bg);
   color: var(--tt-live);
 }
 

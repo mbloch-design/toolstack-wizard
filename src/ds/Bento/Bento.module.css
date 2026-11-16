@@ -105,11 +105,17 @@
   pointer-events: none;
 }
 
-/* Light inside the glass (M01, 16/11/2026): the page stays white; each tile holds its own coloured lights low on
-   the left, under a frosted veil that keeps the words on near-white. Nothing in the right corner. */
+/* A slab of glass (M01, 16/11/2026, after Michael's reference): white at the top where the words are, the colour
+   rising from the bottom over the whole width as if the glass deepened; its thickness shows on the edges, a bright
+   rim and a light caught inside along them; its shadow takes its colour. Nothing in the right corner. */
 .tile[data-bloom] {
-  background: var(--tt-frost-veil), radial-gradient(60% 75% at 12% 108%, color-mix(in oklch, var(--b1) 60%, transparent), transparent 70%), radial-gradient(55% 65% at 52% 115%, color-mix(in oklch, var(--b2) 45%, transparent), transparent 70%), var(--tt-bg);
-  box-shadow: var(--tt-frost-edge);
+  background:
+    radial-gradient(80% 60% at 20% 105%, color-mix(in oklch, var(--b2) 30%, transparent), transparent 70%),
+    linear-gradient(color-mix(in oklch, var(--b1) 3%, white) 30%, color-mix(in oklch, var(--b1) 38%, white));
+
+  --tt-slab-shadow: var(--tt-slab-edge), 0 24px 48px -28px color-mix(in oklch, var(--b1) 55%, transparent);
+
+  box-shadow: var(--tt-slab-shadow);
 }
 
 /* A question asked of the person: the same light as the others, a brand halo from the corner, no shadow. */
