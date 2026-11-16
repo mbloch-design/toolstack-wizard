@@ -22,3 +22,9 @@ Le rapprochement est reproductible avec `node scripts/cms/reconcile.mjs --publis
 Restent à vérifier avant la bascule d’une fiche pilote : les contenus et correctifs de projection, les brouillons Redis, les réservations et archives, les transferts et plafonds de médias, ainsi que la reproduction locale du schéma de contribution. Garder une fiche JSON témoin et une fiche pilote à attribution vérifiée. Le relevé courant n’établit aucune attribution existante.
 
 Décision d’implémentation du rapprochement : une différence de slug ou d’ID est signalée pour examen. Seule une paire exacte et non ambiguë apparaît parmi les correspondances. Un changement de slug légitime se traite donc explicitement avant import.
+
+## Contrôles avant raccordement du CMS
+
+L’introspection en lecture seule confirme des autorisations héritées au rôle `authenticated` dans `catalog_contrib`. Les six tables accordent SELECT. Les items accordent aussi DELETE. Les droits de colonne permettent INSERT (10 colonnes) et UPDATE (9 colonnes) sur les items, puis INSERT (5) et UPDATE (1) sur les demandes. Tester les politiques et révoquer les anciens chemins d’écriture de façon ciblée lors de la migration. Les droits de table seuls ne suffisent pas à fermer ces accès.
+
+Le contrat TypeScript est vérifié en local. Les objets de prix du catalogue historique mélangent faits et données réservées. Le brouillon éditorial les refuse dans cette première implémentation. Le parcours admin actuel continue de porter ces données jusqu’au raccordement champ par champ.

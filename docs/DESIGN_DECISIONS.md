@@ -103,6 +103,8 @@ Ce que la page doit toujours dire, quel que soit son dessin (testé) :
 - **À décider avant automatisation :** maintien du badge gratuit après publication et éventuelle sanction ; cohérence entre promesse commerciale des liens et politique centrale de liens. Par défaut documenté : contrôle informatif/revue humaine, aucune dépublication automatique.
 - **Livrables de référence :** [cadrage CMS](superpowers/specs/2026-11-16-cms-editeurs-design.md) et [plan Sol](superpowers/plans/2026-11-16-cms-editeurs.md). Les choix Astra sont identifiés comme propositions, pas présentés comme validations de Michael.
 
+- **Bilan de l’étape contrat CMS :** gardés, les champs réservés et le parcours admin existant. Aucun contenu perdu. À raccorder, les opérations serveur qui créent les identités d’offre, de variante et de média, et les champs de conseil tarifaire mélangés aux faits dans l’ancien JSON.
+
 Arbitrés le 11/11/2026 (bilan des refontes du 09 au 11/11) :
 - [x] Humour d'accueil : revient, en fin de lead du hero, sous le coût. Appliqué, testé.
 - [x] Décision au repos : la tuile question part ; la phrase « Rien à trancher. Profitez-en, ça ne dure jamais très longtemps. » passe dans le lead du hero. Appliqué, testé.

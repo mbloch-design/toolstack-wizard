@@ -334,6 +334,20 @@ function draftIssues(
   }
   return issues;
 }
+/** Validate a set of values using the existing admin field registry. */
+export function validateCatalogFieldValues(
+  value: Record<string, unknown>,
+): CatalogValidationIssue[] {
+  const unsafe = safeTree(value);
+  if (unsafe.length) return unsafe;
+  const capabilities = catalogCapabilities({ isAdmin: true });
+  return Object.entries(value).flatMap(([field, fieldValue]) =>
+    Object.hasOwn(catalogSchema, field)
+      ? shape(catalogSchema[field], fieldValue, undefined, [field], capabilities)
+      : [issue(field, "PROTECTED_PATH")],
+  );
+}
+
 export function validateCatalogDraft(
   base: CatalogTool,
   value: unknown,

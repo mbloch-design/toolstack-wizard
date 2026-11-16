@@ -1,3 +1,9 @@
+## 2026-11-16 · CMS éditeurs · validation des brouillons
+
+- Contrat produit strict avec validation FR/EN, offres et variantes, médias, classifications proposées et intégrations. Contrat éditorial distinct fondé sur le registre admin existant.
+- Autorisations de modification par champ et opérations explicites de liste. La création d’une identité d’offre, de variante ou de média devra passer par une opération serveur. Les tarifs annuels gardent leur montant de facturation et un équivalent mensuel distinct.
+- Contrôles locaux de validation, autorisations et prix. Le raccord à l’API et les contrôles transactionnels Supabase restent à livrer.
+
 ## 2026-11-16 · CMS éditeurs · démarrage de la réconciliation
 
 - Rapprochement en lecture seule du JSON sur `origin/main` avec Supabase, mesure de la volumétrie et statut des attributions dans `docs/CMS_MIGRATION_STATUS.md`.
