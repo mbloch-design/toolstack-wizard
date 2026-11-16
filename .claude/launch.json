@@ -12,6 +12,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["vite", "preview"],
       "autoPort": true
+    },
+    {
+      "name": "storybook",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "storybook"],
+      "port": 6006
     }
   ]
 }

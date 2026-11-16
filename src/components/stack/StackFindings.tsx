@@ -398,7 +398,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         const go = (selector: string) => (className: string, content: ReactNode) => <a className={className} href={selector}
           onClick={(event) => { const target = document.querySelector<HTMLElement>(selector); if (!target) return; event.preventDefault(); target.scrollIntoView({ block: "center", behavior: "smooth" }); }}>{content}</a>;
         const spendDetail = monthly
-          ? [t(`${yearly}/an`, `${yearly}/yr`), heroWork && t(`${heroWork} de travail`, `${heroWork} of work`)].filter(Boolean).join(" · ")
+          ? [t(`${yearly}/an`, `${yearly}/yr`), heroWork && t(`${heroWork}\u00a0de\u00a0travail`, `${heroWork}\u00a0of\u00a0work`)].filter(Boolean).join(" · ")
           : t(`${unsure.length} prix à préciser`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} to confirm`);
         return <div style={{ marginTop: "calc(var(--tt-gap-head) + var(--tt-gap-item) * 2)", marginBottom: "calc(var(--tt-board-gap) - var(--tt-page-gap))" }}><FigureCards label={t("Ma stack en chiffres", "My stack in figures")}>
           <FigureCard centered icon={<GlassIcon color="var(--tt-brand)"><Wallet /></GlassIcon>} figure={monthly ? format(Math.round(total)) : "?"} unit={monthly ? t("/mois", "/mo") : undefined} name={t("Dépense", "Spend")} detail={spendDetail} renderLink={go('[data-card="split"]')} />
