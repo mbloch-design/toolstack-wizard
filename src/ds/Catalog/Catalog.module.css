@@ -647,7 +647,6 @@
   color: var(--tt-ink);
   text-decoration: none;
   transition: box-shadow 700ms var(--tt-spring-card), transform 700ms var(--tt-spring-card), filter 700ms var(--tt-spring-card);
-  text-shadow: var(--tt-on-glass);
 }
 
 /* The glass's own edge (M01): a 1 px rim in a gradient, in the slab's own colour where its light sits (lower left),

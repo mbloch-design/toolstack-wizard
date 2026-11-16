@@ -426,13 +426,13 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       const checks = [
         { id: "overlap", name: t("Doublons", "Overlaps"), icon: <Copy />, done: !pair,
           note: pair ? t(`${pair.tools[0].name} ou ${pair.tools[1]?.name ?? ""} ?`, `${pair.tools[0].name} or ${pair.tools[1]?.name ?? ""}?`) : t("Aucun", "None"),
-          action: <TextButton onClick={() => { trackEvent("stack_step_click", { step: "overlap" }); scrollTo('[data-card="decision"]'); }}>{t("Départager", "Settle it")}</TextButton> },
+          action: <TextButton arrow onClick={() => { trackEvent("stack_step_click", { step: "overlap" }); scrollTo('[data-card="decision"]'); }}>{t("Départager", "Settle it")}</TextButton> },
         { id: "prices", name: t("Prix", "Prices"), icon: <Euro />, done: unsure.length === 0,
           note: unsure.length ? t(`${unsure.length} à préciser`, `${unsure.length} to confirm`) : t("Tous connus", "All known"),
-          action: <TextButton onClick={() => { trackEvent("stack_step_click", { step: "prices" }); scrollTo('[data-card="decision"]'); }}>{t("Renseigner", "Add")}</TextButton> },
+          action: <TextButton arrow onClick={() => { trackEvent("stack_step_click", { step: "prices" }); scrollTo('[data-card="decision"]'); }}>{t("Renseigner", "Add")}</TextButton> },
         { id: "gap", name: t("Facturer", "Invoicing"), icon: <Receipt />, done: !gap,
           note: gap ? t("Aucun outil", "No tool") : t("Couvert", "Covered"),
-          action: <TextButton onClick={() => { trackEvent("stack_step_click", { step: "gap" }); scrollTo("#ms-recos-title"); }}>{t("Voir des outils", "See tools")}</TextButton> },
+          action: <TextButton arrow onClick={() => { trackEvent("stack_step_click", { step: "gap" }); scrollTo("#ms-recos-title"); }}>{t("Voir des outils", "See tools")}</TextButton> },
       ];
       const done = checks.filter((check) => check.done).length;
       const level = [

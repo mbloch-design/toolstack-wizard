@@ -84,7 +84,7 @@
   }
 }
 
-/* The grain of frosted glass: a fine noise over everything, kept sharp and clearly felt. */
+/* The grain of frosted glass: a fine noise where the light is, kept sharp; the white under the words stays clean. */
 .grain {
   position: absolute;
   inset: 0;
@@ -92,6 +92,7 @@
   background: var(--tt-grain);
   opacity: .18;
   mix-blend-mode: multiply;
+  mask-image: var(--tt-grain-mask);
 }
 
 /* Less transparency: no layered blur, the lights softened once instead. */
