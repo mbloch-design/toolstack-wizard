@@ -8,6 +8,7 @@ import Button, { linkClass, LinkArrow } from '@/ds/Button/Button';
 import { getExplorerHref, type ExplorationCandidate } from '@/lib/toolExploration';
 import type { ToolSummary } from '@/hooks/useSupabaseData';
 import { trackEvent } from '@/lib/analytics';
+import { ChevronDown } from '@/lib/icons';
 
 /** Ideas come by rows of four, the width of the media grid, so a row is never left with a hole (M01). */
 const BATCH = 4;
@@ -58,6 +59,6 @@ export default function StackDiscovery({ candidates, lang, prefix, sourceIds, se
     })}</MediaCards> : <p className={atoms.text}>{t('La curiosité ne s’arrête pas aux liens du catalogue. Ouvrez l’Explorer pour choisir votre piste.', 'Curiosity goes beyond catalogue connections. Open the Explorer to choose your direction.')}</p>}
     {/* The site's convention (src/pages/ToolsPage.tsx): the way to everything sits in the section head, « Afficher plus »
         ends the list and loads the next ones in place, after the others. */}
-    {more && <SectionFoot><Button onClick={loadMore}>{t('Afficher plus', 'Show more')}</Button></SectionFoot>}
+    {more && <SectionFoot><Button variant="raised" icon={<ChevronDown aria-hidden />} onClick={loadMore}>{t('Afficher plus', 'Show more')}</Button></SectionFoot>}
   </Section>;
 }

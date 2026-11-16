@@ -15,12 +15,12 @@
   gap: var(--tt-space-5);
 }
 
-/* The foot of a section starts where its content starts (M01): never a centred button under a left-aligned grid. */
+/* The foot of a section: its « more » centred under the grid it extends. */
 .sectionFoot {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: var(--tt-space-4);
 }
 
