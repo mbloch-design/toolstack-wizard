@@ -9,9 +9,9 @@ import styles from "./Matter.module.css";
  */
 const STEPS = [1, 2, 3, 4, 5];
 
-export default function Matter() {
+export default function Matter({ balance = false }: { /** A wide slab: a second, quieter light in the upper right. */ balance?: boolean }) {
   return (
-    <span className={styles.matter} aria-hidden="true">
+    <span className={styles.matter} data-balance={balance || undefined} aria-hidden="true">
       <span className={styles.lights} />
       {STEPS.map((step) => <span key={step} className={styles.blur} data-step={step} />)}
       <span className={styles.glow} />

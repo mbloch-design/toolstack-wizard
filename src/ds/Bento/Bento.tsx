@@ -72,7 +72,7 @@ export function Tile({ span, label, art, statement, status, children, tone = "ti
     <article className={styles.tile} data-span={span} data-tone={tone} data-card={card} data-leaving={leaving || undefined} data-condensed={condensed || undefined} data-wash={wash?.length ? "" : undefined}
       data-bloom={bloom ? "" : undefined} data-hero={hero || undefined}
       style={{ "--span": span, ...(wash?.length ? { "--w1": wash[0], "--w2": wash[1] ?? wash[0], "--w3": wash[2] ?? wash[1] ?? wash[0] } : {}), ...(bloom ? { "--b1": bloom[0], "--b2": bloom[1] } : {}) } as CSSProperties}>
-      {bloom && <Matter />}
+      {bloom && <Matter balance={span >= 7} />}
       <div className={styles.top}><span className={styles.label}>{label}</span>{art && <span className={styles.art} aria-hidden="true">{art}</span>}</div>
       {children && <div className={styles.body}>{children}{!statement && !status && toggleMore}</div>}
       {(statement || status) && <div className={styles.foot}>

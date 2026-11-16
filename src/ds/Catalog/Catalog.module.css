@@ -621,7 +621,7 @@
   --tt-slab-iris: oklch(from var(--fc1, var(--fc-tone, var(--tt-brand))) 84% calc(c * .6) calc(h + 75));
   --tt-slab-ink-teal: oklch(from var(--fc1, var(--fc-tone, var(--tt-brand))) 46% calc(c * .85) h);
   --tt-slab-ink-aqua: oklch(from var(--fc1, var(--fc-tone, var(--tt-brand))) 50% calc(c * .75) calc(h - 18));
-  --tt-segment-done: linear-gradient(var(--tt-slab-ink-aqua), var(--tt-slab-ink-aqua)) left / 100% 100% no-repeat, var(--tt-line);
+  --tt-segment-done: linear-gradient(var(--tt-slab-teal), var(--tt-slab-teal)) left / 100% 100% no-repeat, var(--tt-line);
 
   position: relative;
 
@@ -752,6 +752,11 @@
 
 .figure[data-tone="gain"] {
   color: var(--tt-live);
+}
+
+/* On a slab with its own range, a gain takes the deep tone of that range, never a green from elsewhere. */
+.figureCard .figure[data-tone="gain"] {
+  color: var(--tt-slab-ink-teal);
 }
 
 .figureGo {

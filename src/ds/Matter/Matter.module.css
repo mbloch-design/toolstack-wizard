@@ -53,6 +53,15 @@
   mask-image: var(--tt-pmask-5);
 }
 
+/* A wide slab balances its light: a second, quieter point in the upper right corner. */
+.matter[data-balance] .lights {
+  background:
+    radial-gradient(30% 40% at 98% -6%, color-mix(in oklch, var(--tt-slab-blue) 55%, transparent), transparent 70%),
+    radial-gradient(40% 46% at 10% 104%, var(--tt-slab-teal), transparent 70%),
+    radial-gradient(26% 30% at 34% 108%, var(--tt-slab-iris), transparent 70%),
+    radial-gradient(22% 26% at 4% 70%, color-mix(in oklch, var(--tt-slab-aqua) 70%, transparent), transparent 70%);
+}
+
 /* The screen's own light (M01): on an HDR screen, a PQ image adds real light at the heart of the colour, brighter than
    the interface white; its black adds nothing. Elsewhere it is not drawn. */
 .glow {
@@ -81,7 +90,7 @@
   inset: 0;
   border-radius: inherit;
   background: var(--tt-grain);
-  opacity: .28;
+  opacity: .22;
   mix-blend-mode: multiply;
 }
 

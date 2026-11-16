@@ -118,7 +118,7 @@
   --tt-slab-iris: oklch(from var(--b1) 84% calc(c * .6) calc(h + 75));
   --tt-slab-ink-teal: oklch(from var(--b1) 46% calc(c * .85) h);
   --tt-slab-ink-aqua: oklch(from var(--b1) 50% calc(c * .75) calc(h - 18));
-  --tt-segment-done: linear-gradient(var(--tt-slab-ink-aqua), var(--tt-slab-ink-aqua)) left / 100% 100% no-repeat, var(--tt-line);
+  --tt-segment-done: linear-gradient(var(--tt-slab-teal), var(--tt-slab-teal)) left / 100% 100% no-repeat, var(--tt-line);
 
   /* Inside the glass, the accents join its family (M01): figures and ticks in deep teal and aqua, the overlap a soft coral. */
   --tt-brand-mark: var(--tt-ink);
