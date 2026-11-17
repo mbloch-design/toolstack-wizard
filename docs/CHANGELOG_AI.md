@@ -1,3 +1,10 @@
+## 2026-11-17 · CMS éditeurs · parcours intégrés sur la branche
+
+- Dossiers privés, recherche avant création, demande de rattachement, invitation liée au compte, et édition factuelle dans la fiche. Réutilisation des offres gratuit avec badge et priorité Creem.
+- Revue initiale avec confirmation d’une révision de faits, analyse ToolTrim distincte et préparation de la première version. Propositions d’édition figées, revue ToolTrim et retrait avant publication.
+- Médias privés limités et normalisés en WebP. Projection publique des contenus validés et constitution d’un lot commun avec les brouillons JSON. Commit vérifié séparément de la mise en ligne.
+- Recette locale avec données de test. Activation de la livraison derrière les variables CMS. Aucune migration distante, aucun paiement et aucune publication réels.
+
 ## 2026-11-16 · CMS éditeurs · accès et sauvegarde versionnée
 
 - Migration et API locales pour lire et modifier le brouillon d’une fiche à attribution principale validée. Refus après révocation et contrôle de la marque et de la version lors de la sauvegarde.

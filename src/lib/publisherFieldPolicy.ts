@@ -45,7 +45,7 @@ function inspectChanges(
     const current = new Map((next as JsonObject[]).map((row) => [row[key], row]));
     for (const [id, row] of current) {
       if (previous.has(id)) inspectChanges(previous.get(id), row, path + ".*", grants, issues);
-      else if (serverKey) issues.push(cmsIssue(path, "SERVER_IDENTITY_REQUIRED"));
+      else if (serverKey && path !== "media") issues.push(cmsIssue(path, "SERVER_IDENTITY_REQUIRED"));
       else check(path + ".$add");
     }
     for (const id of previous.keys()) {

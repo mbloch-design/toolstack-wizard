@@ -107,6 +107,8 @@ Ce que la page doit toujours dire, quel que soit son dessin (testé) :
 
 - **Bilan du raccordement brouillon :** gardé, le modèle d’attribution principale du catalogue et les rôles de marque. Aucun contenu perdu. L’accès à une fiche préprovisionnée est testé localement. À raccorder, le provisionnement du brouillon et le retrait des anciennes écritures de contribution.
 
+- **Bilan du parcours 17/11 :** gardés, le circuit JSON pour les fiches sans éditeur, le compte unique, les preuves commerciales et l’analyse indépendante. Les tarifs déclarés apparaissent avec leur provenance. Les dérivés WebP sont livrés dans le commit du catalogue. À valider sur environnement isolé, la reprise des fournisseurs, les droits lors de la suppression de compte et le suivi de la mise en ligne.
+
 Arbitrés le 11/11/2026 (bilan des refontes du 09 au 11/11) :
 - [x] Humour d'accueil : revient, en fin de lead du hero, sous le coût. Appliqué, testé.
 - [x] Décision au repos : la tuile question part ; la phrase « Rien à trancher. Profitez-en, ça ne dure jamais très longtemps. » passe dans le lead du hero. Appliqué, testé.

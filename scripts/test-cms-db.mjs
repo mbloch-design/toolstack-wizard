@@ -50,8 +50,8 @@ try {
     insert into catalog_contrib.brand_memberships(brand_id,user_id,status,role) values
       ('${brand}','${owner}','active','owner'), ('${brand}','${viewer}','active','viewer');
     insert into catalog_contrib.brand_tool_assignments(brand_id,tool_id,status,is_primary) values ('${brand}','id-42','verified',true);
-    insert into catalog_contrib.cms_tool_drafts(brand_id,tool_id,value)
-      values ('${brand}','id-42','{"schemaVersion":1,"name":"Original"}');
+    insert into catalog_contrib.cms_tool_drafts(brand_id,tool_id,base_hash,value)
+      values ('${brand}','id-42',repeat('a',64),'{"schemaVersion":1,"name":"Original"}');
   `);
   await as("service_role", async () => {
     const draft = await read(owner, session);

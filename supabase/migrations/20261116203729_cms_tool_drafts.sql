@@ -82,7 +82,7 @@ begin
     raise sqlstate 'PT404' using message = 'CMS_WORKSPACE_NOT_FOUND';
   end if;
   return jsonb_build_object('brandId', draft.brand_id, 'value', draft.value, 'version', draft.version,
-    'updatedAt', draft.updated_at, 'canEdit', access_record.can_edit);
+    'updatedAt', draft.updated_at, 'canEdit', access_record.can_edit and draft.base_hash is not null);
 end $$;
 
 create function public.cms_save_tool_draft(
@@ -108,7 +108,7 @@ begin
   update catalog_contrib.cms_tool_drafts d
     set value = p_value, version = d.version + 1, updated_at = clock_timestamp()
     where d.brand_id = access_record.brand_id and d.tool_id = p_tool
-      and d.version = p_expected_version
+      and d.version = p_expected_version and d.base_hash is not null
     returning d.* into draft;
   if not found then
     raise sqlstate 'PT409' using message = 'CMS_REVISION_CONFLICT';

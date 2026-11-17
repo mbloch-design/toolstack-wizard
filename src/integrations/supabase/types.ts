@@ -637,6 +637,30 @@ export type Database = {
         Args: { p_actor: string; p_session: string; p_id?: string }
         Returns: Json
       }
+      cms_initial_release_inputs: {
+        Args: { p_actor: string; p_session: string }
+        Returns: Json
+      }
+      cms_get_release_batch: {
+        Args: { p_actor: string; p_session: string; p_key: string }
+        Returns: Json
+      }
+      cms_seal_release_batch: {
+        Args: { p_actor: string; p_session: string; p_key: string; p_manifest: Json }
+        Returns: Json
+      }
+      cms_record_release_commit: {
+        Args: { p_actor: string; p_session: string; p_key: string; p_commit: string }
+        Returns: Json
+      }
+      cms_record_verified_release: {
+        Args: { p_actor: string; p_session: string; p_key: string; p_commit: string }
+        Returns: Json
+      }
+      cms_protected_tool_ids: {
+        Args: { p_actor: string; p_session: string }
+        Returns: Json
+      }
       cms_approved_release_inputs: {
         Args: { p_actor: string; p_session: string }
         Returns: Json

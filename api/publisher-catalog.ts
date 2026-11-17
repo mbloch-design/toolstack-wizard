@@ -13,7 +13,7 @@ const editablePaths = [
   "plans.*.options.$order", "plans.*.options.$remove",
   ...["type", "amount", "currency", "period", "unit", "commitment", "tax",
     "market", "offerLocale", "sourceUrl", "observedOn"].map((key) => "plans.*.options.*." + key),
-  "media.$order", "media.$remove", "media.*.role",
+  "media.$add", "media.$order", "media.$remove", "media.*.role",
   "classificationProposals.$add", "classificationProposals.$remove", "classificationProposals.*.values",
   "integrations.$add", "integrations.$remove", "integrations.$order", "integrations.*.relatedToolId",
   "integrations.*.type", "integrations.*.sourceUrl",
@@ -120,7 +120,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       throw new AccountApiError(409, "CMS_REVISION_CONFLICT");
     }
     const value = assertProductPatchAllowed(snapshot.value, input.value, {
-      canRead: true, canEditFacts: true, canUpload: false, canSubmit: false,
+      canRead: true, canEditFacts: true, canUpload: true, canSubmit: false,
       canReview: false, canPublish: false, editablePaths,
     });
     const draft = await savePublisherDraft(actor, toolId, snapshot, value);

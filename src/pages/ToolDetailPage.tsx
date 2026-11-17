@@ -695,6 +695,8 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 ...curatedMedia.map((image) => image.src),
               ].filter((url): url is string => !!url && url !== blockedCover))];
               const imageAlts = images.map((src) => {
+                const fromPublisher = tool.publisherMediaAlts?.find((image) => image.url === src);
+                if (fromPublisher) return fromPublisher[lang] || fromPublisher[lang === "fr" ? "en" : "fr"];
                 const curated = curatedMedia.find((image) => image.src === src);
                 return curated ? (lang === "en" ? curated.altEn : curated.altFr) : "";
               });

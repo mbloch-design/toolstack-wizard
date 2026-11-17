@@ -1,4 +1,4 @@
-const PRODUCT_ID = "prod_2LMoN4zyRhNAb53r3rWpwX";
+export const PRIORITY_PRODUCT_ID = "prod_2LMoN4zyRhNAb53r3rWpwX";
 
 export class PaymentVerificationError extends Error {
   constructor(public readonly status: 400 | 503, code: string) { super(code); }
@@ -41,7 +41,7 @@ export async function verifySubmissionPayment(input: { checkoutId?: unknown; pay
   const metadata = record(checkout.metadata);
   if (checkout.id !== checkoutId || checkout.mode !== "prod" || checkout.status !== "completed"
     || record(checkout.order).status !== "paid"
-    || productId(checkout.product) !== PRODUCT_ID
+    || productId(checkout.product) !== PRIORITY_PRODUCT_ID
     || metadata.tooltrim_submission_id !== paymentReference
     || metadata.tooltrim_tool_url !== toolUrl) throw invalid();
 }

@@ -12,6 +12,10 @@
         { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
     },
+    {"source": "/:lang(fr|en)/publisher", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
+    {"source": "/:lang(fr|en)/publisher/tools/:slug", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
+    {"source": "/:lang(fr|en)/publisher/invitations/:token", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}, {"key": "Referrer-Policy", "value": "no-referrer"}, {"key": "Cache-Control", "value": "private, no-store"}]},
+    {"source": "/:lang(fr|en)/editeur", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
     {"source": "/fr/connexion", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
     {"source": "/fr/inscription", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
     {"source": "/fr/connexion/retour", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
@@ -377,6 +381,10 @@
     {"source": "/en/account/reset-password", "destination": "/client-only.html"},
     {"source": "/en/account/settings", "destination": "/client-only.html"},
     {"source": "/:lang(fr|en)/tool/:slug([a-z0-9-]+)\\.md", "destination": "/api/tool-md?lang=:lang&slug=:slug"},
+    {"source": "/:lang(fr|en)/publisher", "destination": "/client-only.html"},
+    {"source": "/:lang(fr|en)/publisher/tools/:slug", "destination": "/client-only.html"},
+    {"source": "/:lang(fr|en)/publisher/invitations/:token", "destination": "/client-only.html"},
+    {"source": "/:lang(fr|en)/editeur", "destination": "/client-only.html"},
     {"source": "/:lang(fr|en)/:page(search|back-office)", "destination": "/client-only.html"},
     {"source": "/submit", "destination": "/client-only.html"},
     {"source": "/:lang(fr|en)/comparatif/:slugPair", "destination": "/client-only.html"},

@@ -118,9 +118,32 @@ async function downloadCatalog(headSha: string): Promise<CatalogSource> {
   }
   return { headSha, treeSha, tools, text };
 }
+const RELEASE_MARKER = "public/catalog-release.json";
+export type CatalogReleaseArtifacts = {
+  marker: { batchKey: string; catalogueHash: string };
+  media: { path: string; bytes: Uint8Array }[];
+};
+
+export async function matchPublishedCatalogRelease(source: CatalogSource, marker: CatalogReleaseArtifacts["marker"]) {
+  const raw = await github(`contents/${RELEASE_MARKER}?ref=${source.headSha}`, "GET", undefined, true)
+    .catch((error) => {
+      // A catalogue can predate the first CMS publication marker.
+      if (error instanceof Error && error.message === "CATALOG_UNAVAILABLE") return null;
+      throw error;
+    });
+  if (typeof raw !== "string") return null;
+  const published = JSON.parse(raw);
+  if (published?.batchKey !== marker.batchKey || published?.catalogueHash !== marker.catalogueHash) return null;
+  const commits = await github(`commits?path=${encodeURIComponent(RELEASE_MARKER)}&sha=${source.headSha}&per_page=1`);
+  if (!Array.isArray(commits) || !commits.length) throw catalogError();
+  const commitSha = sha(commits[0]?.sha);
+  return { commitSha, commitUrl: `https://github.com/${CATALOG_REPO}/commit/${commitSha}` };
+}
+
 export async function publishCatalog(
   source: CatalogSource,
   tools: CatalogTool[],
+  artifacts?: CatalogReleaseArtifacts,
 ): Promise<{
   commitSha: string;
   commitUrl: string;
@@ -133,16 +156,29 @@ export async function publishCatalog(
   })) as {
     sha?: unknown;
   };
+  const entries = [{ path: CATALOG_PATH, mode: "100644", type: "blob", sha: sha(blob?.sha) }];
+  if (artifacts) {
+    const files = [{ path: RELEASE_MARKER, bytes: Buffer.from(JSON.stringify(artifacts.marker)) }, ...artifacts.media];
+    const paths = new Set<string>();
+    for (const file of files) {
+      if (paths.has(file.path) || (file.path !== RELEASE_MARKER
+        && !/^public\/tool-media\/cms\/[a-f0-9-]{36}\/[a-f0-9]{64}\.webp$/.test(file.path))) throw catalogError();
+      paths.add(file.path);
+      const uploaded = await github("git/blobs", "POST", {
+        content: Buffer.from(file.bytes).toString("base64"), encoding: "base64",
+      }) as { sha?: unknown };
+      entries.push({ path: file.path, mode: "100644", type: "blob", sha: sha(uploaded?.sha) });
+    }
+  }
   const tree = (await github("git/trees", "POST", {
     base_tree: source.treeSha,
-    tree: [
-      { path: CATALOG_PATH, mode: "100644", type: "blob", sha: sha(blob?.sha) },
-    ],
+    tree: entries,
   })) as {
     sha?: unknown;
   };
   const commit = (await github("git/commits", "POST", {
-    message: "feat(catalog): publish back-office editorial drafts",
+    message: artifacts ? `feat(catalog): publish batch ${artifacts.marker.batchKey.slice(0, 12)}`
+      : "feat(catalog): publish back-office editorial drafts",
     tree: sha(tree?.sha),
     parents: [source.headSha],
   })) as {

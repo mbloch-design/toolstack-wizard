@@ -21,6 +21,14 @@ describe('generated route fallback contract',()=>{
   for(const route of ['/fr/connexion', '/fr/inscription', '/fr/connexion/retour', '/fr/compte/reinitialiser', '/fr/compte/parametres', '/en/sign-in', '/en/sign-up', '/en/sign-in/callback', '/en/account/reset-password', '/en/account/settings']) expect(rewriteFor(route),route).toBe('/client-only.html');
   for(const route of ['/fr/compte/inconnu','/en/account/unknown','/en/connexion','/fr/sign-in','/fr/compte/parametres/extra']) expect(rewriteFor(route),route).toBeUndefined();
  });
+ it('serves private publisher routes including invitation entry without indexing them',()=>{
+  for (const route of ['/fr/publisher', '/en/publisher', '/fr/editeur', '/en/publisher/tools/figma', '/fr/publisher/invitations/example-token']) {
+   expect(rewriteFor(route)).toBe('/client-only.html');
+   const headers = config.headers.filter(rule => match(rule.source)(route)).flatMap(rule => rule.headers);
+   expect(headers).toContainEqual({ key: 'X-Robots-Tag', value: 'noindex, nofollow' });
+   if (route.includes('/invitations/')) expect(headers).toContainEqual({ key: 'Referrer-Policy', value: 'no-referrer' });
+  }
+ });
  it('leaves unknown localized pages and missing catalogue documents to the static 404',()=>{
   for(const route of ['/fr/r11-route-inexistante','/en/r11-route-inexistante','/fr/tool/r11-inexistant','/en/guide/r11-inexistant','/fr/explorer/around/r11-inexistant','/en/tool/notion/faux','/fr/assets/missing.js']) expect(rewriteFor(route),route).toBeUndefined();
  });

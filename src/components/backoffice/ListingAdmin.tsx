@@ -5,6 +5,7 @@ import Button from "@/ds/Button/Button";
 import Field, { SelectField } from "@/ds/Field/Field";
 import { Notice } from "@/ds/Notice/Notice";
 import BackofficePageHeading from "@/ds/BackofficePageHeading/BackofficePageHeading";
+import InitialListingAdminReview from "./InitialListingAdminReview";
 import styles from "./ContributionQueue.module.css";
 
 type Claim = { ownerId: string; toolId: string; slug: string; confirmedEmail: string; createdAt: string };
@@ -34,6 +35,7 @@ async function listingRequest(body?: Record<string, string>) {
 export function ListingAdmin({ onBack }: { onBack: () => void }) {
   const { t, lang, prefix } = useLang();
   const [directory, setDirectory] = useState<Directory>();
+  const [listingId, setListingId] = useState<string>();
   const [claim, setClaim] = useState<Claim>();
   const [brandId, setBrandId] = useState("");
   const [brandName, setBrandName] = useState("");
@@ -94,6 +96,8 @@ export function ListingAdmin({ onBack }: { onBack: () => void }) {
     }
   }
 
+  if (listingId && directory) return <InitialListingAdminReview listingId={listingId}
+    brands={directory.brands} onBack={() => { setListingId(undefined); reload((n) => n + 1); }} />;
   return <section className={styles.queue} aria-busy={busy}>
     <BackofficePageHeading title={t("Demandes de fiche", "Listing requests")}
       action={<Button disabled={busy} onClick={onBack}>{t("Retour aux fiches", "Back to records")}</Button>} />
@@ -148,6 +152,7 @@ export function ListingAdmin({ onBack }: { onBack: () => void }) {
         <h2>{t("Nouvelles fiches", "New listings")}</h2>
         {directory.listings.length ? <ul className={styles.rows}>{directory.listings.map((row) => <li key={row.id}>
           <span>{row.name} · {row.confirmedEmail}</span>
+          <Button disabled={busy} onClick={() => setListingId(row.id)}>{t("Examiner la fiche", "Review listing")}</Button>
         </li>)}</ul> : <p>{t("Aucune nouvelle fiche envoyée.", "No new listings submitted.")}</p>}
       </section>
       {directory.invitations.length > 0 && <section className={styles.content}>

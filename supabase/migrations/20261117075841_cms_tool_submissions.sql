@@ -51,7 +51,7 @@ begin
     ) order by slug), '[]'::jsonb)
     from (
       select d.tool_id as id, t.slug, d.value->>'name' as name,
-        m.role in ('owner','admin','editor') as can_edit
+        (m.role in ('owner','admin','editor') and d.base_hash is not null) as can_edit
       from catalog_contrib.cms_tool_drafts d
       join public.tools t on t.id = d.tool_id
       join catalog_contrib.brand_tool_assignments a using (brand_id, tool_id)
@@ -90,8 +90,13 @@ begin
     where d.brand_id = access_record.brand_id and d.tool_id = p_tool for update;
   select s.* into submission from catalog_contrib.cms_tool_submissions s
     where s.brand_id = access_record.brand_id and s.tool_id = p_tool and s.version = p_expected_version;
-  if found then return catalog_contrib.cms_submission_summary(submission); end if;
-  if draft.version is distinct from p_expected_version or draft.version is null then
+  if found then
+    if submission.status in ('withdrawn','changes_requested','rejected') then
+      raise sqlstate 'PT409' using message = 'CMS_NEW_REVISION_REQUIRED';
+    end if;
+    return catalog_contrib.cms_submission_summary(submission);
+  end if;
+  if draft.version is distinct from p_expected_version or draft.base_hash is null then
     raise sqlstate 'PT409' using message = 'CMS_REVISION_CONFLICT';
   end if;
   insert into catalog_contrib.cms_tool_submissions(brand_id,tool_id,version,base_hash,value,submitted_by)
@@ -143,14 +148,17 @@ returns jsonb language plpgsql security invoker set search_path = pg_catalog as 
 declare submission catalog_contrib.cms_tool_submissions%rowtype;
 begin
   perform catalog_contrib.cms_require_admin(p_actor, p_session);
-  if p_action is null or p_action not in ('approved','changes_requested','rejected')
+  if p_action is null or p_action not in ('approved','changes_requested','rejected','cancel_approval')
     or length(p_note) > 2000
     or (p_action <> 'approved' and nullif(btrim(coalesce(p_note,'')), '') is null) then
     raise sqlstate 'PT400' using message = 'INVALID_CMS_REVIEW';
   end if;
   update catalog_contrib.cms_tool_submissions s
-    set status = p_action, reviewed_by = p_actor, reviewed_at = clock_timestamp(), review_note = p_note
-    where s.id = p_id and s.status = 'submitted' returning s.* into submission;
+    set status = case when p_action = 'cancel_approval' then 'rejected' else p_action end, reviewed_by = p_actor, reviewed_at = clock_timestamp(), review_note = p_note
+    where s.id = p_id
+      and ((s.status = 'submitted' and p_action <> 'cancel_approval')
+        or (s.status = 'approved' and p_action = 'cancel_approval'))
+    returning s.* into submission;
   if not found then raise sqlstate 'PT409' using message = 'CMS_REVISION_CONFLICT'; end if;
   return catalog_contrib.cms_submission_summary(submission);
 end $$;
@@ -165,9 +173,17 @@ begin
   end if;
   return (
     select coalesce(jsonb_agg(catalog_contrib.cms_submission_summary(r) order by r.submitted_at,r.id),'[]'::jsonb)
-    from (select s.* from catalog_contrib.cms_tool_submissions s where s.status = 'submitted'
+    from (select s.* from catalog_contrib.cms_tool_submissions s where s.status in ('submitted','approved')
           order by s.submitted_at,s.id limit 100) r
   );
+end $$;
+
+create function public.cms_protected_tool_ids(p_actor uuid, p_session uuid)
+returns jsonb language plpgsql security invoker set search_path = pg_catalog as $$
+begin
+  perform catalog_contrib.cms_require_admin(p_actor, p_session);
+  return (select coalesce(jsonb_agg(t.tool_id order by t.tool_id),'[]'::jsonb)
+          from (select distinct d.tool_id from catalog_contrib.cms_tool_drafts d) t);
 end $$;
 
 create function public.cms_approved_release_inputs(p_actor uuid, p_session uuid)
@@ -195,13 +211,13 @@ revoke all on function catalog_contrib.cms_require_admin(uuid,uuid),
   public.cms_list_tool_submissions(uuid,uuid,text), public.cms_withdraw_tool_submission(uuid,uuid,text,uuid),
   public.cms_read_review_queue(uuid,uuid,uuid),
   public.cms_review_tool_submission(uuid,uuid,uuid,text,text),
-  public.cms_approved_release_inputs(uuid,uuid) from public,anon,authenticated;
+  public.cms_protected_tool_ids(uuid,uuid), public.cms_approved_release_inputs(uuid,uuid) from public,anon,authenticated;
 grant execute on function catalog_contrib.cms_require_admin(uuid,uuid),
   catalog_contrib.cms_submission_summary(catalog_contrib.cms_tool_submissions),
   public.cms_list_tool_drafts(uuid,uuid), public.cms_submit_tool_draft(uuid,uuid,text,uuid,bigint),
   public.cms_list_tool_submissions(uuid,uuid,text), public.cms_withdraw_tool_submission(uuid,uuid,text,uuid),
   public.cms_read_review_queue(uuid,uuid,uuid),
   public.cms_review_tool_submission(uuid,uuid,uuid,text,text),
-  public.cms_approved_release_inputs(uuid,uuid) to service_role;
+  public.cms_protected_tool_ids(uuid,uuid), public.cms_approved_release_inputs(uuid,uuid) to service_role;
 
 commit;

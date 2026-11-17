@@ -225,6 +225,7 @@ export interface DecisionPolicyV3 {
 
 export interface Tool {
   publisherFacts?: PublisherPublicFacts;
+  publisherMediaAlts?: { url: string; fr: string; en: string }[];
   id: string;
   slug?: string;
   name: string;

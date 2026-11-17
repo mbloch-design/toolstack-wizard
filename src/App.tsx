@@ -41,6 +41,7 @@ const MethodologyPage = lazy(() => import("@/pages/MethodologyPage"));
 const TransparencyPage = lazy(() => import("@/pages/TransparencyPage"));
 const ContactPage = lazy(() => import("@/pages/ContactPage"));
 const SubmitToolPage = lazy(() => import("@/pages/SubmitToolPage"));
+const PublisherPage = lazy(() => import("@/pages/PublisherPage"));
 const LegalNoticePage = lazy(() => import("@/pages/LegalNoticePage"));
 const PrivacyPolicyPage = lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsPage = lazy(() => import("@/pages/TermsPage"));
@@ -265,6 +266,10 @@ export const AppRoutes = () => {
       <Route path="transparency" element={<TransparencyPage />} />
       <Route path="contact" element={<ContactPage />} />
       <Route path="submit" element={<SubmitToolPage />} />
+      <Route path="publisher" element={<PublisherPage />} />
+      <Route path="publisher/tools/:slug" element={<PublisherPage />} />
+      <Route path="publisher/invitations/:invitationToken" element={<PublisherPage />} />
+      <Route path="editeur" element={<PublisherPage />} />
       <Route path="legal-notice" element={<LegalNoticePage />} />
       <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="terms" element={<TermsPage />} />

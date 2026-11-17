@@ -110,6 +110,7 @@ export function CatalogEditor({
   onDirtyChange?: (dirty: boolean) => void;
 }) {
   const { lang, t } = useLang();
+  const groupedCms = import.meta.env.VITE_PUBLISHER_CMS_ENABLED === "true";
   const [ownSession] = useState(() => new CatalogDraftSession());
   const session = suppliedSession ?? ownSession;
   useSyncExternalStore(session.subscribe, session.snapshot, session.snapshot);
@@ -533,8 +534,9 @@ export function CatalogEditor({
       tabIndex={-1}
       aria-label={t("Édition du catalogue", "Catalogue editor")}
     >
-      {!review && !inlineSlug && <BackofficePageHeading title={t("Fiches", "Records")} description={t("Enregistrez vos brouillons, puis publiez tout le lot ensemble.", "Save drafts, then publish the whole batch together.")} action={<StackButton ref={publishTriggerRef} variant="primary" type="button" disabled={(!draftCount && !session.dirty) || busy || legacyDirty || listLoading || !workspace?.capabilities?.canPublishAll} onClick={() => void prepareReview()}>{t(`Mettre en ligne (${draftCount})`, `Publish (${draftCount})`)}</StackButton>} />}
-      {!review && !inlineSlug && !detail && <Button type="button" disabled={busy || dirty}
+      {!review && !inlineSlug && <BackofficePageHeading title={t("Fiches", "Records")} description={t("Enregistrez vos brouillons, puis publiez tout le lot ensemble.", "Save drafts, then publish the whole batch together.")} action={groupedCms ? <Button variant="primary" disabled={busy || dirty}
+        onClick={() => setContributionsOpen(true)}>{t("Réviser et publier le lot", "Review and publish batch")}</Button> : <StackButton ref={publishTriggerRef} variant="primary" type="button" disabled={(!draftCount && !session.dirty) || busy || legacyDirty || listLoading || !workspace?.capabilities?.canPublishAll} onClick={() => void prepareReview()}>{t(`Mettre en ligne (${draftCount})`, `Publish (${draftCount})`)}</StackButton>} />}
+      {!groupedCms && !review && !inlineSlug && !detail && <Button type="button" disabled={busy || dirty}
         onClick={() => setContributionsOpen(true)}>{t("Propositions éditeur", "Publisher submissions")}</Button>}
       {!review && !inlineSlug && !detail && <Button type="button" disabled={busy || dirty}
         onClick={() => setListingAdminOpen(true)}>{t("Demandes de fiche", "Listing requests")}</Button>}

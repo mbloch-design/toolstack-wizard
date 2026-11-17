@@ -18,8 +18,8 @@ export function requireCmsRpcSuccess(error: { code: string; message: string } | 
     if (error.code === "PT409" && error.message === "ACCOUNT_DELETING") {
       throw new AccountApiError(409, "ACCOUNT_DELETING");
     }
-    if (error.code === "PT409" && error.message === "CMS_SUBMISSION_PENDING") {
-      throw new AccountApiError(409, "CMS_SUBMISSION_PENDING");
+    if (error.code === "PT409" && ["CMS_SUBMISSION_PENDING", "CMS_NEW_REVISION_REQUIRED"].includes(error.message)) {
+      throw new AccountApiError(409, error.message);
     }
     if (error.code === "PT400" && error.message === "INVALID_CMS_REVIEW") {
       throw new AccountApiError(400, "INVALID_CMS_REVIEW");

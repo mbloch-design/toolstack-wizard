@@ -48,7 +48,7 @@ export function assembleCmsRelease(
     updated.set(toolId, tool);
   }
   for (const { tool, baseHash, version } of legacyDrafts) {
-    if (updated.has(tool.id)) throw catalogError(409, "CMS_RELEASE_DRAFT_OVERLAP");
+    if (updated.has(tool.id) || allowed.has(tool.id)) throw catalogError(409, "CMS_RELEASE_DRAFT_OVERLAP");
     const current = byId.get(tool.id);
     if (!current || catalogHash(current) !== baseHash) throw catalogError(409, "CMS_RELEASE_SOURCE_CHANGED");
     if (tool.slug !== current.slug || !Number.isSafeInteger(version) || version < 1) {
@@ -65,10 +65,10 @@ export function assembleCmsRelease(
       sourceHead: source.headSha,
       catalogueHash: catalogHash(tools),
       legacyItems: legacyDrafts.map(({ tool, version }) => ({
-        slug: tool.slug, version, hash: catalogHash(tool),
+        slug: tool.slug, name: tool.name, version, hash: catalogHash(tool),
       })).sort((a, b) => a.slug.localeCompare(b.slug, "en")),
       items: changes.map(({ approvalId, version, toolId, tool }) => ({
-        approvalId, version, toolId, hash: catalogHash(tool),
+        approvalId, version, toolId, slug: tool.slug, name: tool.name, hash: catalogHash(tool),
       })).sort((a, b) => a.toolId.localeCompare(b.toolId, "en")),
     },
   };
@@ -98,7 +98,8 @@ export function projectPublisherFacts(base: CatalogTool, draft: ProductDraft): C
         localized: plan.localized,
         options: plan.options.map((option) => {
           const { id: _id, ...facts } = option;
-          if (option.type === "paid") return facts;
+          if (option.type === "paid"
+            || (option.type === "usage" && option.period === "usage" && option.amount && option.currency && option.unit)) return facts;
           return { type: option.type, market: option.market, offerLocale: option.offerLocale };
         }),
       })),

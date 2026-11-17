@@ -11,6 +11,8 @@ import { trackEvent } from "@/lib/analytics";
 import { normalizeSiteUrl, type NormalizeUrlFailure } from "@/lib/normalizeSiteUrl";
 import { pickProofTools } from "@/lib/submitProofTools";
 import { INVITE_PRIVATE_PARAMS, parseSubmitInvite } from "@/lib/submitInvite";
+import { publisherPath } from "@/lib/publisherCatalogApi";
+import { linkClass } from "@/ds/Button/Button";
 import toolsIndex from "@/data/tools_index.json";
 
 const PROOF_TOOLS = pickProofTools(toolsIndex as { name?: string; slug?: string; websiteUrl?: string }[]);
@@ -429,6 +431,7 @@ const SubmitToolPage = () => {
             <a className="sp-hero-cta-secondary" href="#submit-plans-title">{t("Ou gratuitement, avec un badge ›", "Or submit free with a badge ›")}</a>
           </div>
           <p className="sp-pitch-reassurance"><ShieldCheck size={15} />{t("Vous vérifiez les faits avant publication · paiement unique · sans badge", "You check the facts before it goes live · one-time payment · no badge")}</p>
+          <Link to={publisherPath(prefix)} className={linkClass("inline")}>{t("Accéder à mes fiches", "Go to my listings")}</Link>
           {inviteName && <p className="sp-founder-note">{t("Une question ? Réponds simplement à mon email. Michael, fondateur de ToolTrim", "Questions? Just reply to my email. Michael, founder of ToolTrim")}</p>}
         </div>
         <div className="sp-hero-visual" aria-hidden="true">

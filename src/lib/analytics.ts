@@ -1,4 +1,4 @@
-import { sanitizeAnalyticsUrl } from "./analyticsPrivacy";
+import { isPublisherAnalyticsPath, sanitizeAnalyticsUrl } from "./analyticsPrivacy";
 /** GA4 is configured before any events, and loaded with denied storage until explicit consent (advanced Consent Mode). */
 export const GA_ID = 'G-DL5MJKQ3JE';
 declare global {
@@ -38,6 +38,10 @@ export function whenAnalyticsReady(report: () => void): () => void {
 
 
 export function trackPageView(rawPath: string, title: string): void {
+  if (isPublisherAnalyticsPath(rawPath.split("?")[0])) {
+    lastPagePath = null;
+    return;
+  }
   const path = sanitizeAnalyticsUrl(rawPath);
   if (!ready || !window.gtag || lastPagePath === path) return;
   const granted = window.__tooltrimAnalyticsConsent;
@@ -57,6 +61,7 @@ export function trackPageView(rawPath: string, title: string): void {
 }
 
 export function loadGoogleAnalytics(granted = true): void {
+  if (isPublisherAnalyticsPath(window.location.pathname)) return;
   const existing = document.querySelector(`script[data-tooltrim-ga="${GA_ID}"]`);
   const changed = window.__tooltrimAnalyticsConsent !== granted;
   window.__tooltrimAnalyticsConsent = granted;

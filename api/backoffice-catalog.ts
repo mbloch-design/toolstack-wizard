@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "../types/vercel-http.js";
 import { readAccountBody } from "./_account-body.js";
-import { AccountApiError, requireAccount } from "./_account-auth.js";
+import { AccountApiError, getAccountServiceClient, requireAccount } from "./_account-auth.js";
 import {
   validateCatalogTool,
   validateCatalogDraft,
@@ -25,6 +25,7 @@ import {
   deleteCatalogDraft,
   cleanupCatalogDrafts,
 } from "./_backoffice-catalog-store.js";
+import { cmsActorArgs, requireCmsRpcSuccess } from "./_cms-store.js";
 import { readCatalog, publishCatalog } from "./_backoffice-catalog-github.js";
 const query = (req: VercelRequest, key: string, fallback = "") => {
   const v = req.query[key] ?? fallback;
@@ -103,7 +104,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       throw catalogError(409, "CATALOG_REVISION_CONFLICT");
     const source = await readCatalog();
     const bySlug = new Map(source.tools.map((t) => [t.slug, t]));
+    const cmsActive = process.env.PUBLISHER_CMS_ENABLED === "true";
     if (req.method === "POST") {
+      if (cmsActive) throw catalogError(409, "CMS_USE_GROUPED_RELEASE");
       if (!snapshot.drafts.length) throw catalogError(400, "CATALOG_NO_DRAFTS");
       if (!capabilities.canPublishAll)
         throw catalogError(403, "BACKOFFICE_FORBIDDEN");
@@ -188,6 +191,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         throw catalogError(403, "BACKOFFICE_FORBIDDEN");
       await deleteCatalogDraft(slug, expected);
       return res.status(200).json({ ok: true });
+    }
+    if (cmsActive) {
+      const { data, error } = await getAccountServiceClient().rpc("cms_protected_tool_ids", cmsActorArgs(account));
+      requireCmsRpcSuccess(error);
+      if (!Array.isArray(data)) throw catalogError();
+      if (data.includes(tool.id)) throw catalogError(409, "CMS_TOOL_REQUIRES_WORKSPACE");
     }
     if (
       typeof body.baseHash !== "string" ||

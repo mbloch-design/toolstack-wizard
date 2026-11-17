@@ -73,7 +73,7 @@ it("combines reviewed publisher edits and existing admin drafts against the same
     legacyDrafts: [{ tool: legacy, baseHash: catalogHash(witness), version: 2 }],
   });
   expect(batch.tools).toEqual([approved.tool, legacy]);
-  expect(batch.manifest.legacyItems).toEqual([{ slug: witness.slug, version: 2, hash: catalogHash(legacy) }]);
+  expect(batch.manifest.legacyItems).toEqual([{ slug: witness.slug, name: legacy.name, version: 2, hash: catalogHash(legacy) }]);
   expect(() => assembleCmsRelease(source, {
     expectedHead: headSha, attachedToolIds: [linked.id], changes: [approved],
     legacyDrafts: [{ tool: linked, baseHash: catalogHash(linked), version: 2 }],

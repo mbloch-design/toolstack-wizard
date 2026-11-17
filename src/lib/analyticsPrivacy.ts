@@ -7,7 +7,12 @@ function privateQueryKey(key: string): boolean {
   const normalized = key.replace(/[_-]/g, "").toLowerCase();
   return PRIVATE_QUERY_PARAMS.has(normalized) || /token|password|secret|authorization|credential/i.test(normalized);
 }
-const PRIVATE_ACCOUNT_PATH = /^\/(?:fr|en)\/(?:connexion|inscription|compte|sign-in|sign-up|account|back-office)(?:\/|$)/i;
+const PRIVATE_ACCOUNT_PATH = /^\/(?:fr|en)\/(?:connexion|inscription|compte|sign-in|sign-up|account|back-office|publisher|editeur)(?:\/|$)/i;
+const PUBLISHER_PATH = /^\/(fr|en)\/(?:publisher|editeur)(?:\/|$)/i;
+
+export function isPublisherAnalyticsPath(path: string): boolean {
+  return PUBLISHER_PATH.test(path);
+}
 
 /** Auth transport can still be in the URL while the SDK initializes. Consent
  * never permits credentials, nested return URLs, or fragments to leave the page.
@@ -20,6 +25,8 @@ export function sanitizeAnalyticsUrl(url: string): string {
     parsed.hash = "";
     parsed.username = "";
     parsed.password = "";
+    const publisher = parsed.pathname.match(PUBLISHER_PATH);
+    if (publisher) parsed.pathname = `/${publisher[1]}/publisher`;
     if (PRIVATE_ACCOUNT_PATH.test(parsed.pathname) || /^\/auth\/v1(?:\/|$)/i.test(parsed.pathname)) parsed.search = "";
     else for (const key of [...parsed.searchParams.keys()]) {
       const normalized = key.replace(/[_-]/g, "").toLowerCase();

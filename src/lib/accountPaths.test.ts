@@ -2,6 +2,12 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { accountPath, safeAccountReturnTo } from './accountPaths';
 
 describe('account navigation', () => {
+  it('retains allowed publisher routes without carrying payment or auth credentials', () => {
+    expect(safeAccountReturnTo('/en/publisher?listingId=1&payment=return&checkout_id=private&code=private', 'en', 'https://tooltrim.test')).toBe('/en/publisher?listingId=1&payment=return');
+    expect(safeAccountReturnTo('/fr/publisher/tools/figma#pricing', 'fr', 'https://tooltrim.test')).toBe('/fr/publisher/tools/figma#pricing');
+    expect(safeAccountReturnTo('/fr/editeur?listingId=1&payment=return', 'fr', 'https://tooltrim.test')).toBe('/fr/editeur?listingId=1&payment=return');
+    expect(safeAccountReturnTo('/en/publisher/invitations/secret', 'en', 'https://tooltrim.test')).toBe('/en/ma-stack');
+  });
   it('maps the two exact localized account route families', () => {
     expect(['signin', 'signup', 'callback', 'reset', 'settings'].map(kind => accountPath('fr', kind as Parameters<typeof accountPath>[1]))).toEqual(['/fr/connexion', '/fr/inscription', '/fr/connexion/retour', '/fr/compte/reinitialiser', '/fr/compte/parametres']);
     expect(['signin', 'signup', 'callback', 'reset', 'settings'].map(kind => accountPath('en', kind as Parameters<typeof accountPath>[1]))).toEqual(['/en/sign-in', '/en/sign-up', '/en/sign-in/callback', '/en/account/reset-password', '/en/account/settings']);

@@ -24,22 +24,23 @@ type ReleasePreview = {
   legacyItems: { slug: string; version: number }[];
   items: { approvalId: string; toolId: string; version: number }[];
 };
-type Decision = "approved" | "changes_requested" | "rejected";
+type Decision = "approved" | "changes_requested" | "rejected" | "cancel_approval";
 
-async function request(id?: string, decision?: { status: Decision; note: string }, releasePreview = false) {
+async function request(id?: string, decision?: { status: Decision; note: string }, mode?: string, batchKey?: string) {
   const { data } = await supabase.auth.getSession();
   if (!data.session) throw new Error("SESSION_REQUIRED");
   const params = new URLSearchParams();
   if (id) params.set("id", id);
-  if (releasePreview) params.set("mode", "release-preview");
+  if (mode) params.set("mode", mode);
+  const body = decision ?? (batchKey ? { batchKey } : undefined);
   const url = "/api/backoffice-contributions" + (params.size ? "?" + params : "");
   const response = await fetch(url, {
-    method: decision ? "POST" : "GET",
+    method: body ? "POST" : "GET",
     headers: {
       Authorization: "Bearer " + data.session.access_token,
-      ...(decision ? { "Content-Type": "application/json" } : {}),
+      ...(body ? { "Content-Type": "application/json" } : {}),
     },
-    body: decision ? JSON.stringify(decision) : undefined,
+    body: body ? JSON.stringify(body) : undefined,
   });
   if (!response.ok) throw new Error(String(response.status));
   return response.json();
@@ -55,6 +56,9 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
   const [error, setError] = useState("");
   const [feedback, setFeedback] = useState("");
   const [release, setRelease] = useState<ReleasePreview>();
+  const [batchKey, setBatchKey] = useState("");
+  const [canDeliver, setCanDeliver] = useState(false);
+  const [releaseState, setReleaseState] = useState<"committed" | "live">();
   const [revision, reload] = useState(0);
   const back = useRef<HTMLButtonElement>(null);
   const selected = useRef<string>();
@@ -99,7 +103,8 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
     try {
       await request(detail.id, { status, note: note.trim() });
       setDetail(undefined);
-      setRows((current) => current?.filter((row) => row.id !== detail.id));
+      setRows((current) => current?.flatMap((row) => row.id !== detail.id ? [row]
+        : status === "approved" ? [{ ...row, status }] : []));
       setFeedback(status === "approved"
         ? t("Proposition approuvée. Elle attend la publication.", "Submission approved and awaiting publication.")
         : t("Décision enregistrée.", "Decision saved."));
@@ -115,12 +120,34 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
     setError("");
     setRelease(undefined);
     try {
-      const result = await request(undefined, undefined, true);
+      const result = await request(undefined, undefined, "release-preview");
+      setBatchKey(typeof result.batchKey === "string" ? result.batchKey : "");
+      setCanDeliver(result.canDeliver === true);
+      setReleaseState(undefined);
       if (!Array.isArray(result.manifest?.items) || !Array.isArray(result.manifest?.legacyItems)) throw new Error("INVALID_RELEASE");
       setRelease(result.manifest);
     } catch {
       setError(t("Impossible de préparer l’aperçu du lot. Vérifiez les rattachements et l’état des fiches publiées.",
         "Could not prepare the batch preview. Check the assignments and the published records."));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function deliver(mode: "publish-release" | "verify-release") {
+    if (!batchKey || busy) return;
+    setBusy(true);
+    setError("");
+    try {
+      const result = await request(undefined, undefined, mode, batchKey);
+      if (!result.release?.commit_sha) throw new Error("INVALID_RELEASE");
+      setReleaseState(result.release.verified_at ? "live" : "committed");
+      setFeedback(result.cleanupPending ? t("Le commit est créé. Le nettoyage des brouillons reste à faire.", "Commit created. Draft cleanup is pending.") : "");
+      reload((n) => n + 1);
+    } catch {
+      setError(mode === "verify-release"
+        ? t("La mise en ligne reste à vérifier. Réessayez après le déploiement.", "The release remains unverified. Try again after deployment.")
+        : t("Impossible de confirmer le commit. Réessayez pour reprendre le même lot.", "The commit could not be confirmed. Retry to resume the same batch."));
     } finally {
       setBusy(false);
     }
@@ -141,7 +168,7 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
     {!detail && rows && (rows.length === 0
       ? <p>{t("Aucune proposition à examiner.", "No submissions to review.")}</p>
       : <ul className={styles.rows}>{rows.map((row) => <li key={row.id}>
-        <span>{row.name || row.toolId} · {new Date(row.submittedAt).toLocaleDateString(lang)} · {t("Version", "Version")} {row.version}</span>
+        <span>{row.name || row.toolId} · {new Date(row.submittedAt).toLocaleDateString(lang)} · {t("Version", "Version")} {row.version}{row.status === "approved" && (" · " + t("Approuvée", "Approved"))}</span>
         <Button disabled={busy} onClick={() => void open(row)}>{t("Examiner", "Review")}</Button>
       </li>)}</ul>)}
     {!detail && <div className={styles.content}>
@@ -157,6 +184,16 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
             {item.slug} · {t("Brouillon ToolTrim", "ToolTrim draft")} · {t("Version", "Version")} {item.version}
           </li>)}
         </ul>
+        {batchKey && canDeliver && (release.items.length > 0 || release.legacyItems.length > 0) && <div className={styles.actions}>
+          {!releaseState && <Button variant="primary" disabled={busy} onClick={() => void deliver("publish-release")}>
+            {t("Publier le lot complet", "Publish the whole batch")}
+          </Button>}
+          {releaseState === "committed" && <>
+            <p role="status">{t("Commit créé. Mise en ligne à vérifier.", "Commit created. Deployment verification pending.")}</p>
+            <Button disabled={busy} onClick={() => void deliver("verify-release")}>{t("Vérifier la mise en ligne", "Verify deployment")}</Button>
+          </>}
+          {releaseState === "live" && <p role="status">{t("Mise en ligne vérifiée.", "Deployment verified.")}</p>}
+        </div>}
       </Notice>}
     </div>}
     {detail && <div className={styles.content}>
@@ -205,11 +242,12 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
       <TextAreaField label={t("Message à l’éditeur", "Message to publisher")} value={note} maxLength={2000}
         onChange={(event) => setNote(event.target.value)}
         help={t("Indiquez ce que l’éditeur doit corriger si vous demandez une modification ou refusez la proposition.", "Explain what the publisher needs to change if you request corrections or reject the submission.")} />
-      <div className={styles.actions}>
+      {detail.status === "approved" ? <Button disabled={busy || !note.trim()} variant="quiet"
+        onClick={() => void review("cancel_approval")}>{t("Retirer l’approbation", "Withdraw approval")}</Button> : <div className={styles.actions}>
         <Button disabled={busy} variant="primary" onClick={() => void review("approved")}>{t("Approuver la proposition", "Approve submission")}</Button>
         <Button disabled={busy || !note.trim()} onClick={() => void review("changes_requested")}>{t("Demander des corrections", "Request changes")}</Button>
         <Button disabled={busy || !note.trim()} variant="quiet" onClick={() => void review("rejected")}>{t("Refuser", "Reject")}</Button>
-      </div>
+      </div>}
     </div>}
   </section>;
 }

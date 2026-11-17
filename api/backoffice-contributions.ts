@@ -1,6 +1,8 @@
 import { AccountApiError, getAccountServiceClient, requireAccount } from "./_account-auth.js";
 import { readAccountBody } from "./_account-body.js";
 import { cmsActorArgs, requireCmsRpcSuccess } from "./_cms-store.js";
+import { catalogHash } from "./_backoffice-catalog-contract.js";
+import { deliverPublisherRelease, verifyPublisherRelease } from "./_cms-delivery.js";
 import { readCatalog } from "./_backoffice-catalog-github.js";
 import { preparePublisherRelease } from "./_cms-prepare-release.js";
 import type { VercelRequest, VercelResponse } from "../types/vercel-http.js";
@@ -27,7 +29,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     const client = getAccountServiceClient();
     if (req.method === "GET" && req.query.mode === "release-preview") {
       const { manifest } = await preparePublisherRelease(actor);
-      res.status(200).json({ manifest });
+      res.status(200).json({ manifest, batchKey: catalogHash(manifest),
+        canDeliver: process.env.PUBLISHER_CMS_ENABLED === "true" });
       return;
     }
     if (req.method === "GET") {
@@ -54,10 +57,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       });
       return;
     }
+    if (req.query.mode === "publish-release" || req.query.mode === "verify-release") {
+      if (process.env.PUBLISHER_CMS_ENABLED !== "true") throw new AccountApiError(503, "CMS_RELEASE_DISABLED");
+      const body = await readAccountBody(req, 2048, "INVALID_CMS_RELEASE");
+      const batchKey = body && typeof body === "object" && !Array.isArray(body)
+        ? (body as Record<string, unknown>).batchKey : null;
+      if (typeof batchKey !== "string" || !/^[a-f0-9]{64}$/.test(batchKey)) {
+        throw new AccountApiError(400, "INVALID_CMS_RELEASE");
+      }
+      if (req.query.mode === "publish-release") {
+        res.status(200).json(await deliverPublisherRelease(actor, batchKey));
+      } else {
+        res.status(200).json({ release: await verifyPublisherRelease(actor, batchKey) });
+      }
+      return;
+    }
     const body = await readAccountBody(req, 12000, "INVALID_CMS_REVIEW");
     if (!body || typeof body !== "object" || Array.isArray(body) || !id) throw new AccountApiError(400, "INVALID_CMS_REVIEW");
     const { status, note } = body as Record<string, unknown>;
-    if (Object.keys(body).length !== 2 || typeof status !== "string" || !["approved", "changes_requested", "rejected"].includes(status)
+    if (Object.keys(body).length !== 2 || typeof status !== "string" || !["approved", "changes_requested", "rejected", "cancel_approval"].includes(status)
       || typeof note !== "string" || note.length > 2000) throw new AccountApiError(400, "INVALID_CMS_REVIEW");
     const { data, error } = await client.rpc("cms_review_tool_submission", {
       ...args, p_id: id, p_action: status, p_note: note.trim(),
