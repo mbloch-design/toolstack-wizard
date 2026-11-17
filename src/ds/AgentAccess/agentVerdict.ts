@@ -37,7 +37,7 @@ const COUNT_EN = ["", "", "Two", "Three", "Four"];
 const ONE_CLICK = ["connector", "plugin"];
 const ASSISTANT_NAMES = { claude: "Claude", chatgpt: "ChatGPT", gemini: "Gemini", copilot: "Copilot" } as const;
 const KIND_ORDER = ["read", "write", "delete", "send", "pay"] as const;
-export const VERBS = {
+export const actionVerbs = {
   read: ["lire", "read"], write: ["modifier", "edit"], delete: ["supprimer", "delete"],
   send: ["envoyer ou publier", "send or publish"], pay: ["payer", "pay"],
 } as const;
@@ -86,7 +86,7 @@ export function agentVerdict(access: AgentAccess, lang: Lang): string {
   let can: string;
   const readOnly = kinds.length === 1 && kinds[0] === "read";
   if (readOnly) can = pick(lang, "votre assistant peut seulement lire", "your assistant can only read");
-  else if (kinds.length) can = pick(lang, `votre assistant peut ${joinWords(kinds.map((kind) => VERBS[kind][0]), lang)}`, `your assistant can ${joinWords(kinds.map((kind) => VERBS[kind][1]), lang)}`);
+  else if (kinds.length) can = pick(lang, `votre assistant peut ${joinWords(kinds.map((kind) => actionVerbs[kind][0]), lang)}`, `your assistant can ${joinWords(kinds.map((kind) => actionVerbs[kind][1]), lang)}`);
   else if (server.access === "read_write") can = pick(lang, "votre assistant peut lire et modifier", "your assistant can read and edit");
   else if (server.access === "read") can = pick(lang, "votre assistant peut lire", "your assistant can read");
   else if (server.access === "docs_only") can = pick(lang, "votre assistant peut consulter sa documentation", "your assistant can read its documentation");

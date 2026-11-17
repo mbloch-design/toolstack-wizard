@@ -92,7 +92,7 @@ Ce que la page doit toujours dire, quel que soit son dessin (testé) :
 
 ## À arbitrer
 
-- [ ] Bloc « Assistant IA » de la fiche outil (`src/ds/AgentAccess`, 16/11, axe MCP) : à valider dans Storybook (« Fiche outil / Assistant IA »). Choix faits sans validation : tuile grise du système sous le titre de section de la page ; verdict en titre 21 ; capacités, branchement et garde-fous en lignes libellé / texte avant les faits par serveur ; faits en libellés capitales 12 et texte 16 ; deux serveurs côte à côte au-delà de 640 px ; « Documentation de l'éditeur » en lien d'action ; date et rappel « jamais plus de droits que votre compte » en note. Références visuelles non posées.
+- [ ] Section agents (S1, 16-17/11, axe MCP), à valider dans Storybook (« Agents / Fiche », « Fiche outil / Assistant IA ») et sur `/fr/agents`, `/fr/mcp/notion-mcp`. Choix faits sans validation : fiche en tuiles grises par partie (titre 21), verdict en titre 21 sous le titre de page ; capacités rangées du plus risqué au plus anodin en lignes libellé capitales 12 / texte 16 ; commandes d'installation en Inter 14 dans un cadre blanc défilant avec bouton de copie rond (aucune police à chasse fixe admise par l'audit) ; catalogue d'outils replié par défaut, groupé par risque ; index en `LinkRow` du catalogue, onglets en puces-liens, filtres en puces cochées dans la `FilterBar` ; passerelle de la fiche outil réduite au verdict, trois faits et le lien vers la fiche serveur. Références visuelles non posées.
 
 Arbitrés le 11/11/2026 (bilan des refontes du 09 au 11/11) :
 - [x] Humour d'accueil : revient, en fin de lead du hero, sous le coût. Appliqué, testé.

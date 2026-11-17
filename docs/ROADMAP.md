@@ -39,7 +39,7 @@ Ce tableau pilote la suite ; les bilans et tableaux datés du 9 octobre plus bas
 | R10 — Chaîne de build | Remédiation publiée (`ffbb3f7ac7`, CI/Vercel et recette publique réussis) : Tailwind 4.3.3, plugins obsolètes retirés, tests alignés sur le plugin React actif et fusionneur de classes compatible. Audit npm **9 → 0** ; build Node 20 et budgets validés, cascade et tokens conservés. [Bilan et preuves](R10_R11_CLOTURE_2026-10-15.md). |
 | R11 — SEO/GEO et médias | Correctifs techniques publiés (`ffbb3f7ac7`, CI/Vercel et recette publique réussis) : descriptions/LLM, 62 références corrigées sur 54 outils, filtre des captures invalides, vrais 404 conservés après hydratation, sept traductions libérées des redirections obsolètes. Sitemap/routing contrôlés ensemble ; Search Console consultée. Publication et réexploration Google restent des états distincts. [Bilan](R10_R11_CLOTURE_2026-10-15.md). |
 | Soumissions et paiement | Chantier séparé. Cette passe ne recertifie pas son fonctionnement et n’effectue aucun paiement. Rotation Production déjà vérifiée le 16 octobre ; copie privée locale du jeton à actualiser séparément. |
-| Axe agentique et MCP — 16 novembre | Angle décidé : attribut des fiches d'abord. M1 livré en local le 16/11 sur `claude/distracted-grothendieck-64ebde` (non poussé) : 20 blocs `facts.agent` projetés, bloc « Assistant IA » sur les 20 fiches, guide pilier FR/EN. Reste : validation de Michael dans Storybook, publication, puis [critère de passage à M2](#critere-m2). [Plan et schéma](#axe-agentique-mcp). |
+| Axe agentique et MCP — 16 novembre | Angle décidé : attribut des fiches d'abord. Décision révisée : le MCP devient un pilier, avec une section `/agents` (serveurs MCP et skills) sur la logique de Toolfolio. S1 livré en local le 17/11 sur `claude/distracted-grothendieck-64ebde` (non poussé) : 19 fiches serveur, 60 skills officiels, `/agents`, `/mcp`, `/skills` et leurs fiches FR/EN, passerelle sur les 20 fiches outils. Reste : validation de Michael, publication, puis [critère de passage à S2](#critere-s2). [Plan et schéma](#axe-agentique-mcp). |
 
 **Suite :** publier les deux lots locaux R3/R7 après revue, puis contrôler les parcours, requêtes, compression et cache CDN en production. Le transport commun est désormais réduit sans suppression de champs ; un fractionnement supplémentaire n’est pas requis pour clôturer ce canary et ne sera ouvert que sur un besoin mesuré. L’exploitation GA4 et les essais utilisateurs restent distincts ; R5/R6 éditoriaux ne sont pas relancés.
 
@@ -47,7 +47,7 @@ Ce tableau pilote la suite ; les bilans et tableaux datés du 9 octobre plus bas
 
 ## Axe agentique et MCP — 16 novembre 2026
 
-**Décision (Michael, 16/11) :** le MCP entre d'abord comme attribut de décision des fiches existantes, pas comme annuaire dédié. L'intégration à Ma Stack et à l'Explorer vient après la mission Ma Stack en cours ; le cadrage du bloc de faits et le pilote peuvent avancer en parallèle.
+**Décision révisée (Michael, 16/11, en fin de journée) :** le MCP devient un **pilier du site**, avec sa propre section et la même logique que la référence [Toolfolio, Agent Resources](https://toolfolio.com/agent-resources/mcp-servers) : un index des serveurs MCP filtrable et une fiche par serveur. Chaque fiche dit ce que fait le serveur, liste les outils documentés, donne la connexion, l'authentification, les clients compatibles, l'installation et la date de vérification. Elle va au-delà de Toolfolio sur la décision : verdict, forfait et quotas, risque d'écriture, de suppression ou de paiement, garde-fous, branchement depuis ChatGPT ou Claude, lien avec la fiche de l'outil et les comparatifs. Le bloc `agent` des fiches outils reste, comme passerelle vers la fiche serveur. Cette décision remplace la première du même jour (« attribut des fiches d'abord, pas d'annuaire »). Même logique ne veut pas dire copie : aucun texte de Toolfolio n'est repris ; les faits viennent de l'éditeur, et les descriptions sont écrites par ToolTrim.
 
 ### État des lieux (relevé le 16/11)
 
@@ -59,11 +59,10 @@ Ce tableau pilote la suite ; les bilans et tableaux datés du 9 octobre plus bas
 
 | Étape | Livrable | Condition de sortie |
 |---|---|---|
-| M0 — Cadrage | Schéma du bloc `agent` (ci-dessous) validé ; choix de la source structurée de contrôle (registre MCP officiel à évaluer, non consulté à ce jour) | Schéma validé par Michael, vocabulaires fermés ajoutés au garde-fou |
-| M1 — Pilote | 20 outils les plus présents dans les stacks, faits vérifiés sur la documentation officielle ; bloc sur la fiche ; guide pilier FR/EN « MCP pour freelances non-développeurs » | 20 blocs sourcés et datés, projection JSON, rendu fiche validé |
-| M2 — Extension | Les ~130 recouvrements ; filtre Explorer « connectable à mon assistant » ; signal Ma Stack ; critère dans les comparatifs | Après la mission Ma Stack ; contrôle de fraîcheur automatisé en place |
-| M3 — Fiches MCP autonomes | Serveurs sans outil hôte au catalogue (`form_factor = 'mcp'`), pages `/mcp/<client>` au seuil de 3 | Demande constatée sur M1/M2 |
-| M4 — Serveur MCP ToolTrim | Catalogue et Ma Stack interrogeables depuis un assistant | À décider après M2 |
+| M0 — Cadrage | Schéma du bloc `agent` et de la fiche serveur (ci-dessous) | Fait le 16/11 ; schéma serveur à éprouver en S1 |
+| S1 — Section MCP et skills, fondation | Hub `/agents` (tout, serveurs MCP, skills), index `/mcp` et `/skills` filtrables, fiches `/mcp/<serveur>` et `/skills/<skill>`, les 19 serveurs des 20 outils du pilote, les skills officiels de leurs éditeurs, bloc passerelle sur la fiche outil, entrée de navigation, guide pilier FR/EN | 19 fiches serveur et les fiches skills sourcées et datées, rendu validé, contrôles DS et build verts |
+| S2 — Extension | Les ~130 recouvrements, puis les serveurs officiels sans outil hôte au catalogue ; filtre Explorer « connectable à mon assistant » ; signal Ma Stack ; critère dans les comparatifs | Contrôle de fraîcheur automatisé en place ; Ma Stack/Explorer après la mission en cours |
+| S3 — Serveur MCP ToolTrim | Catalogue et Ma Stack interrogeables depuis un assistant | À décider après S2 |
 
 **Risque principal : la fraîcheur.** Ces faits changent vite ; c'est le motif qui a fait différer R5/R6. Pas de passage à M2 sans contrôle automatisé et sans budget convenu.
 
@@ -97,6 +96,54 @@ Règles : vocabulaires fermés, contrôlés par le garde-fou comme `form_factor`
 - `community` retiré : aucune source éditeur ne peut l'établir. Hotjar et Milanote ont des serveurs tiers ou des demandes ; ils sont `none`.
 - `clients` gardé seulement quand l'éditeur restreint (5 serveurs sur 19) et retiré de l'index réduit.
 
+### Section MCP : fiche serveur (schéma S1)
+
+Un fichier par serveur dans `research/mcp/<serveur>.json` (slug `<outil>-mcp`, suffixe pour un deuxième serveur : `figma-mcp-desktop`), projeté en `src/data/mcp_index.json` (cartes de l'index) et en données de fiche, selon le principe du catalogue JSON public (R3). Le bloc `agent` de la fiche outil renvoie aux slugs serveur.
+
+```jsonc
+{
+  "slug": "notion-mcp", "name": "Notion MCP",
+  "publisher": "Notion", "official": true, "host_tool": "notion",   // slug catalogue, ou null
+  "category": "productivity",                                     // catégories du catalogue
+  "summary": { "fr": "…", "en": "…" },          // 2 phrases, écrites par ToolTrim depuis la doc éditeur
+  "verified_on": "2026-11-16", "status": "ga",  // ga | beta
+  "transport": "remote", "auth": ["oauth", "key"],
+  "access": "read_write", "plan": "all", "plan_note": {"fr": "…", "en": "…"},
+  "capabilities": [ { "kind": "read", "fr": "…", "en": "…" } ],   // read | write | delete | send | pay
+  "tools": [ { "name": "notion-create-pages", "kind": "write", "fr": "…", "en": "…" } ],  // catalogue documenté par l'éditeur ; kind pour signaler le risque
+  "setup": [ { "assistant": "claude", "how": "connector" } ],     // assistants grand public
+  "install": [ { "client": "claude-code", "type": "command", "value": "…" },  // recopié de la doc éditeur, jamais composé
+               { "client": "any", "type": "url", "value": "https://mcp.notion.com/mcp" } ],
+  "clients": ["claude", "cursor", "vs-code"],   // attestés par l'éditeur ; les clients sans fiche catalogue gardent un libellé
+  "safeguards": ["admin_controls"],
+  "docs_url": "…", "sources": [ { "label": "…", "url": "…" } ]
+}
+```
+
+Rendu : **index** (cartes : nom, éditeur, officiel, résumé, connexion, authentification ; filtres catégorie, connexion, authentification, compatible avec, et en plus forfait, « peut supprimer ou payer », « en un clic depuis ChatGPT ou Claude ») ; **fiche** (verdict en tête, ce que ça fait, ce que l'assistant peut faire par niveau de risque, branchement et installation avec copie, catalogue d'outils repliable, forfait et garde-fous, date et sources, lien vers la fiche outil et ses alternatives qui ont un serveur). Système de design : hiérarchie typographique, pas de badges (`PRODUCT.md`). Route : `/mcp` et `/mcp/:slug` remplacent la page hôte `HostPage famille="mcp"`, à retirer avec sa règle de seuil pour cette famille.
+
+### Section skills : fiche skill (schéma S1, décision Michael du 16/11 : skills dès S1)
+
+Même mécanique que les serveurs : `research/skills/<skill>.json`, projeté en `src/data/skills_index.json`. Périmètre S1 : les skills **officiels** publiés par les éditeurs des 20 outils du pilote (repérés le 16/11 dans leurs docs : Notion Skills, skills Figma, Stripe, Webflow, Miro, Slack, Make, Google Analytics ; Airtable et HubSpot à vérifier). Inventaire exhaustif sur la doc éditeur au moment de S1.
+
+```jsonc
+{
+  "slug": "figma-implement-design", "name": "…",
+  "publisher": "Figma", "official": true, "host_tool": "figma",
+  "server": "figma-mcp",                        // serveur MCP qu'il utilise, ou null
+  "category": "design",
+  "summary": { "fr": "…", "en": "…" },          // écrit par ToolTrim
+  "does": [ { "fr": "…", "en": "…" } ],         // 2 à 4 tâches que le skill guide
+  "agents": ["claude-code", "cursor", "codex"], // attestés par l'éditeur
+  "install": [ { "client": "claude-code", "type": "command", "value": "…" } ],  // recopié de la doc éditeur
+  "requires": { "fr": "…", "en": "…" },         // forfait, siège ou serveur requis, si l'éditeur le dit
+  "verified_on": "2026-11-16", "status": "ga",
+  "docs_url": "…", "sources": [ { "label": "…", "url": "…" } ]
+}
+```
+
+Rendu : cartes et fiches sur les mêmes composants que les serveurs ; la fiche serveur liste ses skills, la fiche skill renvoie à son serveur et à la fiche outil. Hub `/agents` : onglets Tout, Serveurs MCP, Skills.
+
 ### Mieux que Toolfolio : enrichissement du bloc (Michael, 16/11)
 
 **Constat (fiche Notion de Toolfolio, vérifiée le 23/10) :** description de ce que fait le serveur, catalogue des 52 outils techniques, connexion, authentification, clients pour développeurs (Claude Code, Cursor, Codex, VS Code), commande d'installation, date de vérification. C'est plus riche que notre bloc, mais tourné vers le développeur. Toolfolio ne dit rien des points suivants : forfait requis et quotas, risque d'écriture ou de suppression, garde-fous, branchement depuis ChatGPT ou Claude grand public, statut bêta. Il ne formule pas non plus de verdict.
@@ -118,22 +165,11 @@ Ce qui reste exclu, et pourquoi : le catalogue nominatif des outils (`notion-cre
 
 **Essai (16/11) sur Notion, Stripe, Calendly :** les quatre champs se remplissent sur les trois outils, depuis la référence d'outils et la page d'aide « connecter à votre assistant ». `pay` n'apparaît que chez Stripe (Treasury, avec confirmation humaine) et `delete` chez Notion et Calendly : ce sont précisément les faits que Toolfolio ne signale pas. Calendly ne documente aucun garde-fou (`[]`), ce qui est aussi une information.
 
-**Étape 0 faite le 16/11** (documentation éditeur consultée le jour même ; un fait introuvable n'est pas écrit). Remplissage sur les 18 outils à serveur : `capabilities` 18/18 ; `safeguards` 17/18 (dont `[]` pour Ahrefs, Buffer, Calendly, ClickUp, Figma) ; `setup` 16/18 ; `status` 5/18 (`ga` : Notion, Calendly, HubSpot ; `beta` : Stripe, Tally). `pay` seulement chez Stripe ; `delete` chez Airtable, Ahrefs (publications sociales), Buffer, Calendly, ClickUp, Figma, Miro, Notion, Webflow ; `send` chez Buffer, ClickUp, HubSpot, Miro, Shopify, Slack, Tally, Webflow, Zapier.
-
-**Manques notés (champ non écrit) :**
-- `status` : non dit par 13 éditeurs (ni bêta ni disponibilité générale). Figma : seule l'écriture est en bêta, dite dans la note.
-- Canva : `setup` et `safeguards` non écrits, la page d'aide « connecter votre assistant » (canva.com/help/mcp-agent-setup) répond 403 ; la documentation développeur ne nomme aucun assistant.
-- Slack : `setup` non écrit, la documentation nomme les clients partenaires sans dire comment on les branche.
-- Ahrefs : pas de liste d'outils lisible (docs.ahrefs.com/…/mcp en 404) ; capacités tirées de ahrefs.com/mcp, dont « créer, modifier ou supprimer des publications sociales » : `access` passe à `read_write`.
-- Google Analytics : la page Google dit « lecture seule » ; le README du dépôt officiel décrit des outils d'écriture facultatifs. La page Google est retenue (`read`, `no_delete`).
-- ClickUp : la FAQ dit « aucun outil de suppression », la référence d'outils en liste deux (corbeille, commentaire). La référence est retenue.
-- Buffer : la page produit dit « vous êtes toujours la dernière étape », la documentation développeur dit qu'un post peut être publié immédiatement. La documentation est retenue, `safeguards: []`.
-- ChatGPT : les installations depuis l'annuaire d'applications de ChatGPT sont notées `plugin` (comme Stripe et Calendly dans l'essai) ; l'ajout d'une adresse de serveur en mode développeur est noté `url`.
-- `capabilities` accepte 1 à 5 lignes (Google Analytics n'en a qu'une, la lecture). Exemples : « depuis Claude ou ChatGPT en un clic ; peut réserver et annuler vos rendez-vous ; aucune confirmation avant action » ; « peut envoyer de l'argent, avec confirmation humaine ; bêta ».
+**Reste à faire :** remplir ces champs pour les 17 autres outils du pilote, avant le rendu sur la fiche. Le verdict s'appuie dessus. Exemples : « depuis Claude ou ChatGPT en un clic ; peut réserver et annuler vos rendez-vous ; aucune confirmation avant action » ; « peut envoyer de l'argent, avec confirmation humaine ; bêta ».
 
 ### Relevé du pilote M1 : 20 outils (16/11)
 
-Blocs déplacés le 16/11 dans `research/bundle-editorial/<slug>.json` (`facts.agent`) ; `research/agent-trial/` ne garde que le relevé de recouvrement Toolfolio. Sources éditeur consultées le 16/11 (pages ouvertes, ou extraits de pages éditeur par recherche restreinte au domaine de l'éditeur).
+Fichiers : `research/agent-trial/<slug>.json`, non commités. Sources éditeur consultées le 16/11 (pages ouvertes, ou extraits de pages éditeur par recherche restreinte au domaine de l'éditeur).
 
 **Choix des 20** (recouvrement Toolfolio × présence dans les 212 stacks × impressions, outils pour développeurs écartés) : notion, airtable, canva, figma, miro, hubspot, stripe, make, google-analytics, webflow, clickup, zapier, calendly, tally, shopify, slack, ahrefs, buffer ; `none` : hotjar, milanote. CapCut, troisième outil le plus présent hors recouvrement, est écarté : ses pages « MCP » sont des pages de référencement sans documentation technique ; bloc non écrit (non vérifié).
 
@@ -148,32 +184,41 @@ Blocs déplacés le 16/11 dans `research/bundle-editorial/<slug>.json` (`facts.a
 - Bêta (Stripe, Tally, écriture Figma) : pas de champ ; le dire en prose dans le verdict.
 - Hotjar a fusionné avec Contentsquare, qui a un serveur MCP : à dire en prose sur la fiche, pas dans le bloc.
 
-### Fait le 16/11 — rendu du bloc sur la fiche (M1)
+### Fait — S1, section agents (16-17/11)
 
-Branche `claude/distracted-grothendieck-64ebde`, tirée de `main`, non poussée.
+Branche `claude/distracted-grothendieck-64ebde`, tirée de `main`, non poussée. Documentation éditeur consultée le 16/11 ; un fait introuvable n'est pas écrit.
 
-- **Données :** `facts.agent` dans les 20 fichiers `research/bundle-editorial/<slug>.json`. `scripts/project-agent-access.mjs --apply` projette `agentAccess` dans `tools_v4.json` (et retire un bloc périmé) ; `gen-tools-index.mjs` écrit l'index réduit `agentAccess: { mcp, transport[], access, verifiedOn }` (plusieurs serveurs : tous les transports, l'accès le plus large). Vocabulaires fermés et règles dans `scripts/lib/agent-access.mjs`, contrôlés par `npm run guard:agent-access` (ajouté à la CI, renvoi depuis `guard-plugins.mjs`).
-- **Arbitrage (Claude, 16/11) :** champ facultatif `note` / `note_en` au niveau du bloc, pour la précision que les champs ne portent pas : écriture en bêta chez Figma, mise en place technique (Google Analytics), Shopify, restrictions Slack, Hotjar/Contentsquare, demande non livrée chez Milanote. La bêta de Stripe et Tally passe par `status`. Les clients sans fiche au catalogue sont refusés par le garde-fou (Claude Code, retiré du relevé Slack).
-- **Composant :** `src/ds/AgentAccess/` (fixtures réelles : Notion, Figma à deux serveurs, Ahrefs payant, Hotjar `none`, plus Calendly sans garde-fou, Stripe qui paie, Canva aux manques, Google Analytics local, Slack restreint). Verdict composé des champs (`agentVerdict.ts`, FR/EN) : d'où on le branche, ce que l'assistant peut faire (lire, modifier, supprimer, envoyer ou publier, payer), le forfait, la bêta, puis le garde-fou ou son absence — « Depuis Claude ou ChatGPT en un clic, votre assistant peut lire, modifier et supprimer, sur tous les forfaits ; aucun garde-fou documenté par l'éditeur. » Puis les capacités en langage métier, le branchement, les garde-fous, les faits par serveur, la documentation de l'éditeur, la date. Pas de badge, de logo de client, de catalogue nominatif d'outils, de décompte ni de commande d'installation.
-- **Fiche :** section « Assistant IA » dans l'approfondissement de `ToolDetailPage.tsx`, après l'angle IA ; rien sans bloc.
-- **Guide pilier :** `mcp-freelances-non-developpeurs` / `mcp-for-non-developer-freelancers` (exemples Notion, Canva, Calendly, avec suppression, garde-fous et branchement), paire déclarée dans `seo.ts` et `App.tsx`.
-- **Enrichissement « Mieux que Toolfolio » :** les quatre champs (`status`, `capabilities`, `setup`, `safeguards`) sont dans les 18 blocs à serveur, projetés et contrôlés par le garde-fou ; voir « Étape 0 faite » ci-dessus pour les manques.
-- **Reste à faire :** validation de Michael dans Storybook (« Fiche outil / Assistant IA ») ; références visuelles à poser après cette validation (workflow « Visual baselines ») ; publication. Puis appliquer le critère ci-dessous avant toute extension.
+- **Données :** `research/mcp/<serveur>.json` (19) et `research/skills/<skill>.json` (60 : Figma 11, Stripe 11, Webflow 22, Make 7, Miro 3, Google Analytics 2, Zapier 2, Notion 1, Shopify 1). Les blocs `facts.agent` des 20 fiches portent les quatre champs « Mieux que Toolfolio ». `scripts/project-agents.mjs` projette `src/data/agents/{mcp_index,skills_index,catalog}.json` ; `scripts/project-agent-access.mjs` relie chaque serveur du bloc à sa fiche (`mcpSlug`). Vocabulaires et règles dans `scripts/lib/agent-access.mjs` ; `npm run guard:agent-access` (CI) contrôle les trois projections.
+- **Composants :** `src/ds/AgentSheet` (fiche serveur et fiche skill : verdict, capacités du plus risqué au plus anodin, branchement et installation recopiée avec copie, catalogue d'outils replié, forfait et garde-fous, date et sources) ; `src/ds/AgentAccess` devient la passerelle (verdict, trois faits, lien vers la fiche). L'index réutilise le catalogue du système (`CatalogTitle`, `FilterBar`, `Chip`, `LinkRow`).
+- **Pages :** `/agents` (onglets Tout, Serveurs MCP, Skills), `/mcp`, `/skills`, `/mcp/:slug`, `/skills/:slug`, FR/EN, rendu serveur (`renderAgentsPage`), sitemap. `HostPage` ne sert plus la famille `mcp` (route, `hosts-eligibles.mjs`, réécriture Vercel). Entrée « Agents IA » dans la navigation. Le méga-panneau Explorer n'a pas été touché.
+- **Guide pilier** relié à la section et aux fiches Notion, Canva, Calendly.
 
-<a id="critere-m2"></a>
-**Suite : M2 seulement si le critère est rempli** (règle « Critère pour passer à M2 » ci-dessous) : les 20 blocs tiennent sans correction un mois après le 16/11 (revérification vers le 16/12) ou un contrôle automatisé de fraîcheur signale les écarts, et le guide ou les fiches du pilote montrent des impressions ou des clics. Sinon, s'arrêter à M1.
+**Manques notés (champ non écrit) :** `status` dit par 5 éditeurs seulement (`ga` : Notion, Calendly, HubSpot ; `beta` : Stripe, Tally). Canva : `setup` et `safeguards` (page d'aide en 403). Slack : `setup` (clients partenaires nommés sans méthode) et noms d'outils (deux seulement nommés). Outils non nommés par l'éditeur : Tally, Ahrefs (pages en 404), Make (outils générés depuis les scénarios). Skills : aucun identifiable chez Airtable (le plugin Claude Code en contient, non nommés), HubSpot, Slack, Calendly (deux outils de skills non décrits).
 
-### Brief d'origine (M1, exécuté le 16/11)
+**Arbitrages (Claude, 16-17/11) :**
+- Le `kind` de chaque outil est classé par ToolTrim d'après le nom et la description de l'éditeur, qui ne le donne pas ; un outil groupé (Webflow) prend son action la plus risquée.
+- `install` recopié tel quel ; type `steps` ajouté pour les parcours sans commande (« Customize > Connectors… »).
+- Google Analytics : la page Google (lecture seule) prime sur le README, qui décrit trois outils d'écriture facultatifs ; dit dans `tools_note`.
+- Webflow : 19 de ses 22 skills n'ont qu'un nom d'affichage ; leur slug est composé par ToolTrim (`webflow-…`).
+- Zapier : les deux skills livrés sur chaque serveur sont repris (onboarding, construction de workflow), pas le skill humoristique.
+- `capabilities` accepte 1 à 5 lignes (Google Analytics n'en a qu'une).
+- Champs `note` (bloc) et `tools_note` (fiche) pour ce que les champs ne portent pas.
+- Les commandes d'installation s'affichent en Inter dans un cadre défilant : l'audit typographique n'admet aucune police à chasse fixe, et les invariants refusent une ligne coupée au milieu d'un mot.
 
-Tâche d'exécution, autonome, à faire à partir de ce seul brief, **après la fin de la mission Ma Stack** ou sur une branche dédiée créée depuis `main` (ne rien commiter de cet axe sur `mission/m01-ma-stack`).
+**Reste à faire :** validation de Michael dans Storybook (« Agents / Fiche », « Fiche outil / Assistant IA ») et sur les pages ; références visuelles à poser après validation ; méga-panneau Explorer ; publication. Puis le [critère de passage à S2](#critere-s2).
 
-1. **Données :** déplacer les 20 blocs de `research/agent-trial/` vers le fichier de recherche de chaque fiche (`facts.agent`), puis les projeter en `agentAccess` dans `tools_v4.json` et en index réduit (`mcp`, `transport`, `access`, `verifiedOn`) dans `tools_index.json` par le script de projection existant. Ajouter les vocabulaires ci-dessus au garde-fou, sur le modèle de `form_factor`.
-2. **Composant :** `src/ds/AgentAccess/` (tsx, module.css, fixtures avec Notion, Figma à deux serveurs, Ahrefs payant, Hotjar `none`, stories d'abord), selon `docs/DESIGN_SYSTEM.md` et `docs/DESIGN_DECISIONS.md`. Une phrase de verdict, puis les faits, la date de vérification et le lien vers la documentation ; pas de badge, de logo de client ni de commande d'installation. `none` affiche « pas de serveur MCP officiel au JJ/MM ». Verdict composé à partir des champs, FR/EN.
-3. **Fiche :** insérer le composant dans `ToolDetailPage.tsx` sans style de page ; ne rien afficher quand le bloc est absent.
-4. **Guide pilier FR/EN** « MCP pour freelances non-développeurs » selon la règle « Guide pilier » ci-dessous, avec trois exemples tirés du relevé (Notion, Canva, Calendly).
-5. **Vérification :** `npm run lint:ds`, `npm run test:ds`, `npm run build-storybook && npm run test:visual`, `npm run build` ; captures de la fiche Notion, Figma et Hotjar.
+### Brief d'origine — S1, section MCP (exécuté les 16-17/11)
 
-Terminé quand les 20 fiches affichent le bloc, le guide est publié en local, les contrôles passent, et cette section renvoie à la suite (critère de passage à M2).
+Tâche d'exécution sur une branche dédiée tirée de `main` (rien sur `mission/m01-ma-stack`).
+
+0. **Données :** inventorier les skills officiels des éditeurs du pilote et écrire `research/skills/<skill>.json` ; pour les 19 serveurs du relevé, écrire `research/mcp/<serveur>.json` au schéma « fiche serveur », à partir des fichiers `research/agent-trial/` et de la documentation éditeur consultée le jour même. Remplir notamment `tools` depuis la référence d'outils, `install` recopié tel quel, `setup`, `capabilities`, `safeguards` et `status`. Fait introuvable : champ absent et manque noté. Résumés écrits par ToolTrim, rien de Toolfolio. Vocabulaires au garde-fou.
+1. **Projection :** `src/data/mcp_index.json` et données de fiche ; bloc `agent` réduit sur les 20 fiches outils, avec lien vers le serveur.
+2. **Composants `src/ds/`, stories d'abord :** carte serveur, filtres de l'index, fiche serveur, bloc passerelle, catalogue d'outils repliable. Fixtures : Notion, Figma (deux serveurs), Stripe (paiement, bêta), Ahrefs (payant), Hotjar (`none`, côté bloc).
+3. **Pages et routes :** hub `/agents`, `/mcp`, `/mcp/:slug`, `/skills`, `/skills/:slug` FR/EN, SEO et prérendu ; retirer `HostPage` pour la famille `mcp` ; entrée dans la navigation et le méga-panneau Explorer.
+4. **Guide pilier FR/EN** « MCP pour freelances non-développeurs », lié à la section.
+5. **Vérification :** `npm run lint:ds`, `npm run test:ds`, `npm run build-storybook && npm run test:visual`, `npm run build` ; captures de l'index, des fiches Notion, Stripe et Figma, et du bloc sur la fiche Hotjar.
+
+Terminé quand la section est servie en local avec ses 19 fiches, les contrôles passent, et cette section renvoie au critère de passage à S2.
 
 ### Règles d'arbitrage pour la suite (écrites le 16/11 pour décider sans nouvelle session de cadrage)
 
@@ -185,13 +230,14 @@ Terminé quand les 20 fiches affichent le bloc, le guide est publié en local, l
 
 **Choix des 20 outils du pilote M1 :** partir de `research/agent-trial/toolfolio-overlap-2026-11-16.json`, croiser avec la présence dans les stacks (`src/data/stacks-catalog-index.json`) et les impressions (`src/data/tool_demand.json`), puis équilibrer les catégories. Écarter les outils pour développeurs (Terraform, Redis, Playwright…) : le public est le freelance non-développeur. Inclure deux ou trois outils `none`.
 
-**Rendu sur la fiche (M1) :** le bloc dit une décision, pas une fiche technique. Une phrase de verdict (« pilotable depuis votre assistant, en lecture et écriture, sur tous les forfaits »), puis les faits, la date de vérification et le lien vers la documentation. Pas de badge, pas de logo de client, pas de commande d'installation (règles de `PRODUCT.md`). Composant dans `src/ds/`, stories d'abord. Un outil `none` l'affiche aussi : « pas de serveur MCP officiel au JJ/MM ».
+**Bloc passerelle sur la fiche outil :** une phrase de verdict, trois faits et le lien vers la fiche serveur. Un outil `none` l'affiche aussi : « pas de serveur MCP officiel au JJ/MM ». Le détail (outils, installation) vit sur la fiche serveur. Composant dans `src/ds/`, stories d'abord.
 
 **Guide pilier (M1) :** répond à « qu'est-ce que ça change pour moi ? » pour un freelance sans code : ce qu'un assistant peut faire dans ses outils, ce qu'il faut vérifier avant de connecter (accès en écriture, forfait), trois exemples tirés des fiches du pilote. Ton et format des guides existants.
 
-<a id="critere-m2-regle"></a>**Critère pour passer à M2 :** les 20 blocs tiennent sans correction un mois après leur vérification, ou un contrôle automatisé signale les écarts ; et le guide ou les fiches du pilote montrent des impressions ou des clics. Sans l'un des deux, s'arrêter à M1.
+<a id="critere-s2"></a>
+**Critère pour passer à S2 :** un contrôle automatisé de fraîcheur signale les écarts sur les fiches serveur ; et la section S1 montre des impressions ou des clics après un mois.
 
-**Ce que ToolTrim ne fait pas sur cet axe :** annuaire neutre de serveurs, classement par popularité, skills, commandes d'installation. C'est le terrain de Toolfolio.
+**Ce que ToolTrim ne fait pas sur cet axe :** classement par popularité, serveurs et skills tiers non officiels (S1 et S2), reprise de textes de Toolfolio. Les commandes d'installation et le catalogue d'outils, exclus le matin du 16/11, sont réintégrés par la décision révisée.
 
 ## Priorité révisée — 13 octobre 2026
 

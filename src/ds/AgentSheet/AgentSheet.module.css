@@ -109,7 +109,6 @@
   min-width: 0;
   margin: 0;
   padding-block: var(--tt-space-1);
-  font-family: inherit;
   white-space: pre-wrap;
 }
 

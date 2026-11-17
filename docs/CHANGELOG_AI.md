@@ -1,3 +1,10 @@
+## 2026-11-17 · Axe MCP · section agents S1 (branche `claude/distracted-grothendieck-64ebde`, non poussée)
+
+- Données : bloc `facts.agent` sur 20 fiches (dont `status`, `capabilities`, `setup`, `safeguards`), 19 fiches serveur `research/mcp/` (catalogue d'outils, installation recopiée de la doc éditeur, clients cités) et 60 skills officiels `research/skills/`, documentation éditeur consultée le 16/11. Projections `agentAccess` (tools_v4, index réduit) et `src/data/agents/*.json`, garde-fou `npm run guard:agent-access` en CI.
+- Interface : `src/ds/AgentSheet` (fiches serveur et skill), `src/ds/AgentAccess` (passerelle de la fiche outil), pages `/agents`, `/mcp`, `/skills` et leurs fiches FR/EN avec rendu serveur et sitemap ; `HostPage` ne sert plus la famille `mcp` ; entrée « Agents IA » dans la navigation.
+- Guide pilier FR/EN « MCP pour freelances non-développeurs ».
+- Manques et arbitrages : `docs/ROADMAP.md`, « Fait — S1 ». À valider par Michael ; références visuelles non posées.
+
 ## 2026-11-10 · Back-office · édition de la fiche sur une page
 
 - La fiche présente ses valeurs par section et ouvre les champs dans le bloc ou l’offre à modifier. Terminer applique les changements au brouillon et Annuler écarte uniquement les saisies du bloc.

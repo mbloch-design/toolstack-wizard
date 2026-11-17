@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import type { AgentAccess as AgentAccessData } from "@/data/types";
 import { LinkArrow, linkClass } from "../Button/Button";
-import { VERBS, agentVerdict, factWords, joinWords, leadServer, longDate, say, type Lang } from "./agentVerdict";
+import { actionVerbs, agentVerdict, factWords, joinWords, leadServer, longDate, say, type Lang } from "./agentVerdict";
 import styles from "./AgentAccess.module.css";
 
 /*
@@ -71,7 +71,7 @@ function GatewayFacts({ access, lang }: { access: AgentAccessData; lang: Lang })
   const server = leadServer(access.servers);
   const kinds = KIND_ORDER.filter((kind) => access.capabilities?.some((line) => line.kind === kind));
   const rows: { label: string; value: string; detail?: string }[] = [];
-  if (kinds.length) rows.push({ label: t("Actions", "Actions"), value: raise(joinWords(kinds.map((kind) => say(lang, VERBS[kind])), lang)) });
+  if (kinds.length) rows.push({ label: t("Actions", "Actions"), value: raise(joinWords(kinds.map((kind) => say(lang, actionVerbs[kind])), lang)) });
   const planNote = lang === "en" ? server.planNoteEn ?? server.planNote : server.planNote;
   const plan = say(lang, factWords.plan[server.plan]);
   rows.push({ label: t("Forfait", "Plan"), value: plan, detail: planNote && withoutEcho(planNote, plan) });
