@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent } from "storybook/test";
 import Button from "../Button/Button";
-import { byLine, say, serverFacts } from "@/lib/agents";
-import { AgentCard, AgentCards, NeedPicker, StackAgents, StartHere } from "./AgentHub";
+import { byLine, cardSentence, say, serverFacts } from "@/lib/agents";
+import Chip from "../Chip/Chip";
+import { AgentCard, AgentCards, FilterGroups, NeedPicker, StackAgents, StartHere } from "./AgentHub";
 import { cards, links, logo, needs, stackItems, toolName } from "./AgentHub.fixtures";
 
 // The hub /agents in its reading order: a need, the stack, where to start.
@@ -30,11 +31,11 @@ export const ParBesoin: Story = {
   play: async ({ canvas, globals }) => {
     const fr = globals.lang !== "en";
     // Every need leads to a sheet: the first one opens on Calendly.
-    await expect(canvas.getByRole("link", { name: fr ? /brancher Calendly/i : /plugging in Calendly/i })).toHaveAttribute("href", "/fr/mcp/calendly-mcp");
+    await expect(canvas.getByRole("link", { name: fr ? /brancher Calendly/i : /plug in Calendly/i })).toHaveAttribute("href", "/fr/mcp/calendly-mcp");
     const payments = canvas.getByRole("button", { name: fr ? "Suivre mes paiements" : "Follow my payments" });
     await userEvent.click(payments);
     await expect(payments).toHaveAttribute("aria-pressed", "true");
-    await expect(canvas.getByRole("heading", { name: fr ? "Branchez Stripe à votre assistant" : "Plug Stripe into your assistant" })).toBeVisible();
+    await expect(canvas.getByRole("heading", { name: "Stripe" })).toBeVisible();
     await expect(canvas.getByText(fr ? /après votre confirmation/ : /after your confirmation/)).toBeVisible();
   },
 };
@@ -62,11 +63,11 @@ export const SansStack: Story = {
 export const Cartes: Story = {
   render: (_args, { globals }) => (
     <AgentCards label="Cartes">
-      <AgentCard icon={logo("notion")} name="Notion" by={globals.lang === "en" ? "ToolTrim tool page" : "Fiche outil ToolTrim"} summary={globals.lang === "en" ? "Notes, docs, wikis and databases." : "Notes, docs, wikis et bases de données."}
+      <AgentCard icon={logo("notion")} name="Notion" facts={[{ kind: "tool", text: globals.lang === "en" ? "Pricing, reviews and alternatives" : "Prix, avis et alternatives" }]} by={globals.lang === "en" ? "ToolTrim tool page" : "Fiche outil ToolTrim"} summary={globals.lang === "en" ? "Notes, docs, wikis and databases." : "Notes, docs, wikis et bases de données."}
         renderLink={(className, content) => <a className={className} href="/fr/tool/notion">{content}</a>}
         action={<Button variant="secondary">{globals.lang === "en" ? "Add to my stack" : "Ajouter à ma stack"}</Button>} />
       {cards.filter((c) => ["notion-mcp", "figma-mcp-desktop", "stripe-mcp"].includes(c.slug)).map((card) => (
-        <AgentCard key={card.slug} icon={logo(card.host_tool)} name={card.name} by={byLine(card.publisher, globals.lang)} summary={say(globals.lang, card.summary)}
+        <AgentCard key={card.slug} icon={logo(card.host_tool)} name={card.name} by={byLine(card.publisher, globals.lang)} summary={card.card ? say(globals.lang, card.card) : cardSentence(say(globals.lang, card.summary))}
           facts={serverFacts(card, globals.lang)} renderLink={(className, content) => <a className={className} href={`/fr/mcp/${card.slug}`}>{content}</a>} />
       ))}
     </AgentCards>
@@ -74,5 +75,20 @@ export const Cartes: Story = {
   play: async ({ canvas, globals }) => {
     await expect(canvas.getAllByText(globals.lang === "en" ? "By Notion · Official" : "Par Notion · Officiel")[0]).toBeVisible();
     await expect(canvas.getByRole("button", { name: globals.lang === "en" ? "Add to my stack" : "Ajouter à ma stack" })).toBeVisible();
+  },
+};
+
+/** The list's filters in two labelled groups that wrap: no rail overflows at any width. */
+export const Filtres: Story = {
+  render: (_args, { globals }) => {
+    const fr = globals.lang !== "en";
+    const chips = (labels: string[]) => labels.map((label, i) => <Chip key={label} check pressed={i === 0}>{label}</Chip>);
+    return <FilterGroups groups={[
+      { label: fr ? "Comment" : "How", chips: chips(fr ? ["En un clic depuis ChatGPT ou Claude", "Peut supprimer ou payer", "En ligne", "Sur l'ordinateur", "Tous les forfaits", "Connexion à votre compte"] : ["One click from ChatGPT or Claude", "Can delete or pay", "Online", "On your computer", "Every plan", "Sign in to your account"]) },
+      { label: fr ? "Avec quel assistant" : "With which assistant", chips: chips(["Claude", "ChatGPT", "Gemini", "Copilot"]) },
+    ]} />;
+  },
+  play: async ({ canvas, globals }) => {
+    await expect(canvas.getByRole("group", { name: globals.lang === "en" ? "With which assistant" : "Avec quel assistant" })).toBeVisible();
   },
 };

@@ -25,39 +25,37 @@ interface ClientEntry {
   paste?: Partial<Record<InstallRow["type"], Pair>>;
   /** The client's page that backs `paste`. */
   source?: string;
-  /** Its website, for its logo. */
-  site?: string;
 }
 
 const P = (fr: string, en: string): Pair => ({ fr, en });
 
 export const CLIENTS: Record<ClientId, ClientEntry> = {
-  claude: { site: "https://claude.ai",
+  claude: {
     name: P("Claude", "Claude"), group: "assistant",
     paste: { url: P("Dans Claude, ouvrez Personnaliser > Connecteurs, cliquez sur « + Ajouter » puis « Ajouter un connecteur personnalisé », et collez l'adresse telle quelle.", "In Claude, open Customize > Connectors, click “+ Add” then “Add custom connector”, and paste the address as is.") },
     source: "https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp",
   },
   chatgpt: {
-    site: "https://chatgpt.com", name: P("ChatGPT", "ChatGPT"), group: "assistant",
+    name: P("ChatGPT", "ChatGPT"), group: "assistant",
     paste: { url: P("Sur chatgpt.com/plugins, cliquez sur « + » puis « Add custom MCP server », collez l'adresse sous « Connection », puis choisissez « Create as a plugin ».", "On chatgpt.com/plugins, click \u201c+\u201d then \u201cAdd custom MCP server\u201d, paste the address under \u201cConnection\u201d, then choose \u201cCreate as a plugin\u201d.") },
     source: "https://developers.openai.com/apps-sdk/deploy/connect-chatgpt",
   },
-  gemini: { site: "https://gemini.google.com", name: P("Gemini", "Gemini"), group: "assistant" },
-  copilot: { site: "https://copilot.microsoft.com", name: P("Copilot", "Copilot"), group: "assistant" },
-  "claude-code": { site: "https://www.anthropic.com",
+  gemini: { name: P("Gemini", "Gemini"), group: "assistant" },
+  copilot: { name: P("Copilot", "Copilot"), group: "assistant" },
+  "claude-code": {
     name: P("Claude Code", "Claude Code"), group: "dev",
     paste: { command: P("Collez-la dans votre terminal et validez : Claude Code enregistre le serveur.", "Paste it in your terminal and run it: Claude Code registers the server.") },
     source: "https://code.claude.com/docs/en/mcp",
   },
   cursor: {
-    site: "https://cursor.com", name: P("Cursor", "Cursor"), group: "dev",
+    name: P("Cursor", "Cursor"), group: "dev",
     paste: {
       config: P("Collez-la dans le fichier ~/.cursor/mcp.json pour tous vos projets, ou .cursor/mcp.json pour un seul, sous la clé « mcpServers ».", "Paste it in the ~/.cursor/mcp.json file for all your projects, or .cursor/mcp.json for one, under the \u201cmcpServers\u201d key."),
       command: P("Collez-la dans votre terminal et validez.", "Paste it in your terminal and run it."),
     },
     source: "https://cursor.com/docs/context/mcp",
   },
-  "vs-code": { site: "https://code.visualstudio.com",
+  "vs-code": {
     name: P("VS Code", "VS Code"), group: "dev",
     paste: {
       config: P("Dans VS Code, lancez la commande « MCP: Open User Configuration » et collez la configuration dans le fichier qui s'ouvre.", "In VS Code, run the “MCP: Open User Configuration” command and paste the configuration in the file that opens."),
@@ -65,7 +63,7 @@ export const CLIENTS: Record<ClientId, ClientEntry> = {
     },
     source: "https://code.visualstudio.com/docs/copilot/chat/mcp-servers",
   },
-  codex: { site: "https://openai.com",
+  codex: {
     name: P("Codex", "Codex"), group: "dev",
     paste: {
       command: P("Collez-la dans votre terminal et validez : Codex l'ajoute à sa configuration.", "Paste it in your terminal and run it: Codex adds it to its configuration."),
@@ -81,6 +79,17 @@ export const CLIENTS: Record<ClientId, ClientEntry> = {
       command: P("Collez-la dans votre terminal et validez.", "Paste it in your terminal and run it."),
     },
   },
+};
+
+/** The logo of each place, for the small marks (sheet facts, copy menu); none for Codex, which has no logo of its own. */
+export const CLIENT_MARKS: Partial<Record<ClientId, { name: string; slug: string; websiteUrl: string }>> = {
+  claude: { name: "Claude", slug: "claude", websiteUrl: "https://claude.ai" },
+  "claude-code": { name: "Claude", slug: "claude", websiteUrl: "https://claude.ai" },
+  chatgpt: { name: "ChatGPT", slug: "chatgpt", websiteUrl: "https://chatgpt.com" },
+  gemini: { name: "Gemini", slug: "gemini", websiteUrl: "https://gemini.google.com" },
+  copilot: { name: "Copilot", slug: "copilot", websiteUrl: "https://copilot.microsoft.com" },
+  cursor: { name: "Cursor", slug: "cursor", websiteUrl: "https://cursor.com" },
+  "vs-code": { name: "VS Code", slug: "vs-code", websiteUrl: "https://code.visualstudio.com" },
 };
 
 const ORDER: ClientId[] = ["claude", "chatgpt", "gemini", "copilot", "claude-code", "cursor", "vs-code", "codex", "any"];
@@ -175,14 +184,16 @@ export function plugCard(sheet: McpSheet, client: ClientId, toolName: string, la
     }
   }
 
-  // 4. Sign in, then check with a request of the sheet.
+  // 4. Sign in, then check with a request of the sheet: two steps when the card has room, one when it would pass four.
   const example = sheet.examples?.[0];
-  const check = example ? t(` Vérifiez : demandez-lui « ${example.fr} »`, ` Check it: ask “${example.en}”`) : "";
+  const check = example ? t(`Vérifiez : demandez-lui « ${example.fr} »`, `Check it: ask \u201c${example.en}\u201d`) : "";
   const auth = sheet.auth ?? [];
   const sign = auth.includes("oauth")
-    ? t(`Connectez-vous à votre compte ${toolName} et lisez les accès demandés.`, `Sign in to your ${toolName} account and read the access requested.`)
+    ? t(`Connectez votre compte ${toolName} et lisez les accès demandés.`, `Connect your ${toolName} account and read the access requested.`)
     : auth.includes("key") ? t(`Créez une clé d'accès dans ${toolName} et donnez-la quand elle est demandée.`, `Create an access key in ${toolName} and give it when asked.`) : "";
-  if (sign || check) steps.push({ text: `${sign}${check}`.trim() });
+  const tail = [sign, check].filter(Boolean);
+  if (steps.length + tail.length <= 4) steps.push(...tail.map((text) => ({ text })));
+  else if (tail.length) steps.push({ text: tail.join(" ") });
   return steps.slice(0, 4);
 }
 

@@ -9,6 +9,10 @@
     "fr": "Le serveur de bureau de Figma tourne dans l'application Figma, sur votre ordinateur. Il lit vos designs mais n'écrit pas dans vos fichiers, et demande un siège Dev ou Full sur un forfait payant.",
     "en": "Figma's desktop server runs inside the Figma app on your computer. It reads your designs but does not write to your files, and needs a Dev or Full seat on a paid plan."
   },
+  "card": {
+    "fr": "Lire vos maquettes depuis l'application de bureau, sans les modifier.",
+    "en": "Read your mockups from the desktop app, without editing them."
+  },
   "examples": [
     {
       "fr": "Donne-moi les couleurs et les typographies de la frame sélectionnée.",

@@ -9,6 +9,10 @@
     "fr": "Le serveur officiel de Buffer permet à votre assistant de lire votre file d'attente et vos statistiques, de rédiger et programmer des posts, et de les publier tout de suite si on le lui demande. Il peut aussi supprimer définitivement un post ; il est inclus dans tous les forfaits, gratuit compris.",
     "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post; it is included on every plan, free included."
   },
+  "card": {
+    "fr": "Rédiger, programmer et publier vos posts, lire leurs résultats.",
+    "en": "Write, schedule and publish your posts, read their results."
+  },
   "examples": [
     {
       "fr": "Programme ce post sur LinkedIn pour mardi à 9 h.",

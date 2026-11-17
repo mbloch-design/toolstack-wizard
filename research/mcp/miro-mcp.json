@@ -9,6 +9,10 @@
     "fr": "Le serveur officiel de Miro permet à votre assistant de lire et résumer vos tableaux, d'y créer cadres, notes, schémas et commentaires, et de partager tableaux et espaces avec d'autres personnes. Il fonctionne sur tous les forfaits, gratuit compris.",
     "en": "Miro's official server lets your assistant read and summarise your boards, create frames, notes, diagrams and comments on them, and share boards and spaces with other people. It works on every plan, free included."
   },
+  "card": {
+    "fr": "Résumer vos tableaux et en créer de nouveaux.",
+    "en": "Summarise your boards and create new ones."
+  },
   "examples": [
     {
       "fr": "Résume ce tableau d'atelier, commentaires compris.",

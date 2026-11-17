@@ -12,6 +12,8 @@ export type InstallRow = { client: string; type: "command" | "url" | "config" | 
 export interface McpSheet {
   slug: string; name: string; publisher: string; official: true; host_tool: string; category: string | null;
   summary: Pair; verified_on: string; status?: "ga" | "beta";
+  /** One sentence written for the card. */
+  card?: Pair;
   /** ToolTrim's words (S1 bis): example requests, for whom it is and is not. */
   examples?: Pair[]; for?: Pair; not_for?: Pair;
   transport?: "remote" | "local"; auth?: ("oauth" | "key" | "none")[]; access?: "read" | "read_write" | "docs_only";
@@ -31,7 +33,7 @@ export interface SkillSheet {
 }
 
 export interface McpCard {
-  slug: string; name: string; publisher: string; host_tool: string; category: string | null; summary: Pair;
+  slug: string; name: string; publisher: string; host_tool: string; category: string | null; summary: Pair; card?: Pair;
   status?: "ga" | "beta"; transport?: "remote" | "local"; auth?: ("oauth" | "key" | "none")[]; access?: string;
   plan: McpSheet["plan"]; kinds: AgentCapabilityKind[]; capability_kinds: AgentCapabilityKind[]; one_click: Assistant[]; clients?: string[];
   setup?: McpSheet["setup"]; safeguards?: McpSheet["safeguards"]; for?: Pair; not_for?: Pair;
@@ -160,12 +162,31 @@ export const STACK_CALL_WORDS: Record<StackCall, readonly [string, string]> = {
 export const authWords = (auth: NonNullable<McpSheet["auth"]>, lang: Lang) =>
   auth.map((a, i) => { const word = say(lang, AUTH_WORDS[a]); return i ? word.charAt(0).toLowerCase() + word.slice(1) : word; }).join(lang === "en" ? " or " : " ou ");
 
+/** The sign-in in a card's few words: « Compte », « Clé d'accès », « Compte ou clé ». */
+const shortAuth = (auth: NonNullable<McpCard["auth"]>, lang: Lang) => {
+  const account = auth.includes("oauth"), key = auth.includes("key");
+  if (account && key) return lang === "en" ? "Account or key" : "Compte ou clé";
+  if (account) return lang === "en" ? "Your account" : "Votre compte";
+  if (key) return lang === "en" ? "Access key" : "Clé d'accès";
+  return lang === "en" ? "No sign-in" : "Sans connexion";
+};
+/** A fact at a card's foot; the card draws the icon of its kind (the same icons as the sheet's facts line). */
+export type CardFact = { kind: "online" | "local" | "account" | "skill" | "tool" | "assistant"; text: string };
 /** The two facts of a server card: where it runs, which account. */
-export function serverFacts(card: Pick<McpCard, "transport" | "auth">, lang: Lang) {
+export function serverFacts(card: Pick<McpCard, "transport" | "auth">, lang: Lang): CardFact[] {
   return [
-    card.transport ? say(lang, TRANSPORT_WORDS[card.transport]) : null,
-    card.auth?.length ? authWords(card.auth, lang) : null,
-  ].filter((fact): fact is string => Boolean(fact));
+    ...(card.transport ? [{ kind: card.transport === "local" ? "local" as const : "online" as const, text: say(lang, TRANSPORT_WORDS[card.transport]) }] : []),
+    ...(card.auth?.length ? [{ kind: "account" as const, text: shortAuth(card.auth, lang) }] : []),
+  ];
+}
+/** A card says one sentence: the summary's first, never cut mid-sentence by the card. */
+export const cardSentence = (text: string) => text.match(/^.+?[.!?](\s|$)/)?.[0].trim() ?? text;
+/** ToolTrim's name for a server: the tool's name, or « Figma, application de bureau » when the tool has two. */
+export function serverName(card: Pick<McpCard, "transport" | "name">, toolName: string, hasSibling: boolean, lang: Lang) {
+  if (!hasSibling) return toolName;
+  if (card.transport === "local") return lang === "en" ? `${toolName}, desktop app` : `${toolName}, application de bureau`;
+  if (card.transport === "remote") return lang === "en" ? `${toolName}, online` : `${toolName}, en ligne`;
+  return card.name;
 }
 /** « Par Notion · Officiel ». */
 export const byLine = (publisher: string, lang: Lang) => (lang === "en" ? `By ${publisher} · Official` : `Par ${publisher} · Officiel`);

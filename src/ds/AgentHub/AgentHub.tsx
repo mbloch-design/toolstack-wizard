@@ -1,30 +1,38 @@
 import { useId, useState, type ReactNode } from "react";
 import {
   STACK_CALL_WORDS, assistantLabel, guardOf, assistantWords, assistantsOf, plugSteps, riskSentence, say,
-  type Lang, type McpCard, type Need, type StackCall,
+  type CardFact, type Lang, type McpCard, type Need, type StackCall,
 } from "@/lib/agents";
-import Chip, { Chips } from "../Chip/Chip";
-import { LinkArrow, linkClass } from "../Button/Button";
+import { BarChart3, Bot, Clock3, FolderKanban, Globe, Handshake, Laptop2, Lightbulb, Megaphone, Palette, Search, ShieldCheck, Sparkles, UserRound, Wallet, Wrench } from "@/lib/icons";
+import { ButtonArrow, LinkArrow, buttonAttrs, linkClass } from "../Button/Button";
 import { LinkRow, LinkRows } from "../Catalog/Catalog";
 import styles from "./AgentHub.module.css";
 
 /*
- * The hub /agents (S1 bis, 17/11/2026): it starts from the person, not the list. What do you want your assistant
- * to do (a need leads to one tool, the request you could type, the risk in words, three steps and the sheet);
- * what your stack can plug in; where to start. The full list comes after, on the page.
+ * The hub /agents (S1 bis, 17/11/2026; layout pass the same day): it starts from the person, not the list. What do
+ * you want your assistant to do (a need leads to one tool, the request you could type, the risk in words, three
+ * steps and « Brancher Calendly → »); what your stack can plug in; where to start. The full list comes after.
  */
 
-type SheetLink = (slug: string, className: string, content: ReactNode) => ReactNode;
+/** A router link to a sheet; attrs carry a button's look (buttonAttrs) when the link is the block's action. */
+type SheetLink = (slug: string, className: string, content: ReactNode, attrs?: Record<string, string>) => ReactNode;
+type LinkAttrs = { className: string } & Record<string, string>;
+const split = ({ className, ...attrs }: LinkAttrs) => [className, attrs] as const;
 
-/** « Que voulez-vous que votre assistant fasse ? »: one need at a time, its advice under the choice. */
+const NEED_ICONS: Record<string, ReactNode> = {
+  meetings: <Clock3 />, notes: <Search />, payments: <Wallet />, traffic: <BarChart3 />,
+  social: <Megaphone />, projects: <FolderKanban />, visuals: <Palette />, clients: <Handshake />,
+};
+
+/** « Que voulez-vous que votre assistant fasse ? »: needs as a compact grid of choices, the advice under the choice. */
 export function NeedPicker({ needs, cards, lang, toolName, logo, renderSheetLink }: {
   needs: Need[];
   cards: McpCard[];
   lang: Lang;
   /** The catalogue name of a tool (« Notion »), from its slug. */
   toolName: (toolSlug: string) => string;
-  /** The system's Logo for a tool slug, 24 px. */
-  logo: (toolSlug: string) => ReactNode;
+  /** The system's Logo for a tool slug. */
+  logo: (toolSlug: string, size?: 24 | 40) => ReactNode;
   renderSheetLink: SheetLink;
 }) {
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
@@ -35,11 +43,13 @@ export function NeedPicker({ needs, cards, lang, toolName, logo, renderSheetLink
   if (!need || !card) return null;
   return (
     <div className={styles.picker}>
-      <Chips label={t("Besoins", "Needs")}>
+      <div className={styles.needs} role="group" aria-label={t("Besoins", "Needs")}>
         {needs.map((n) => (
-          <Chip key={n.id} size="md" pressed={n.id === need.id} aria-controls={panel} onClick={() => setCurrent(n.id)}>{say(lang, n)}</Chip>
+          <button key={n.id} type="button" className={styles.need} aria-pressed={n.id === need.id} aria-controls={panel} onClick={() => setCurrent(n.id)}>
+            <span className={styles.needIcon} aria-hidden="true">{NEED_ICONS[n.id] ?? <Bot />}</span>{say(lang, n)}
+          </button>
         ))}
-      </Chips>
+      </div>
       <div id={panel} aria-live="polite">
         <NeedAdvice need={need} card={card} also={need.also.flatMap((slug) => cards.filter((c) => c.slug === slug))}
           lang={lang} toolName={toolName} logo={logo} renderSheetLink={renderSheetLink} />
@@ -48,10 +58,10 @@ export function NeedPicker({ needs, cards, lang, toolName, logo, renderSheetLink
   );
 }
 
-/** One need's advice: the tool, the request you could type, with which assistant, the risk, our view, three steps. */
+/** One need's advice: the tool, the request you could type, three facts, three steps, « Brancher Calendly → ». */
 function NeedAdvice({ need, card, also, lang, toolName, logo, renderSheetLink }: {
   need: Need; card: McpCard; also: McpCard[]; lang: Lang;
-  toolName: (toolSlug: string) => string; logo: (toolSlug: string) => ReactNode; renderSheetLink: SheetLink;
+  toolName: (toolSlug: string) => string; logo: (toolSlug: string, size?: 24 | 40) => ReactNode; renderSheetLink: SheetLink;
 }) {
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
   const name = toolName(card.host_tool);
@@ -59,36 +69,41 @@ function NeedAdvice({ need, card, also, lang, toolName, logo, renderSheetLink }:
   const steps = assistant ? plugSteps(card, assistant, name, lang) : [];
   const assistants = assistantWords(card.setup, lang);
   const titleId = useId();
+  const [buttonClass, buttonRest] = split(buttonAttrs("primary") as unknown as LinkAttrs);
   return (
     <article className={styles.advice} aria-labelledby={titleId} data-need={need.id}>
       <header className={styles.adviceHead}>
-        <span className={styles.logo} aria-hidden="true">{logo(card.host_tool)}</span>
-        <h3 id={titleId} className={styles.title}>{t(`Branchez ${name} à votre assistant`, `Plug ${name} into your assistant`)}</h3>
+        <span className={styles.logo} aria-hidden="true">{logo(card.host_tool, 40)}</span>
+        <h3 id={titleId} className={styles.title}>{name}</h3>
       </header>
       <figure className={styles.request}>
         <figcaption className={styles.term}>{t("Vous pourrez lui demander", "You could ask it")}</figcaption>
         <blockquote className={styles.requestText}>{t(`« ${need.example.fr} »`, `“${need.example.en}”`)}</blockquote>
       </figure>
-      <dl className={styles.facts}>
-        {assistants && <Row label={t("Avec", "With")} value={assistants} />}
-        <Row label={t("Le risque", "The risk")} value={riskSentence(guardOf(card), lang)} />
-        {card.for && <Row label={t("Notre avis", "Our view")} value={t(`Utile si ${lower(card.for.fr)}`, `Useful if ${lower(card.for.en)}`)} />}
-      </dl>
+      <ul className={styles.factLine}>
+        {assistants && <li className={styles.fact}><Bot aria-hidden="true" /><span><span className={styles.srOnly}>{t("Avec : ", "With: ")}</span>{assistants}</span></li>}
+        <li className={styles.fact}><ShieldCheck aria-hidden="true" /><span><span className={styles.srOnly}>{t("Le risque : ", "The risk: ")}</span>{riskSentence(guardOf(card), lang)}</span></li>
+        {card.for && <li className={styles.fact}><Lightbulb aria-hidden="true" /><span>{t(`Utile si ${lower(card.for.fr)}`, `Useful if ${lower(card.for.en)}`)}</span></li>}
+      </ul>
       {steps.length > 0 && assistant && (
         <div className={styles.group}>
           <p className={styles.term}>{t(`En 3 étapes, avec ${assistantLabel(assistant, lang)}`, `In 3 steps, with ${assistantLabel(assistant, lang)}`)}</p>
           <Steps steps={steps} />
         </div>
       )}
-      <div className={styles.links}>
-        {renderSheetLink(card.slug, linkClass(), <>{t(`Tout savoir pour brancher ${name}`, `All about plugging in ${name}`)}<LinkArrow /></>)}
+      <div className={styles.actions}>
+        {renderSheetLink(card.slug, buttonClass, <><span>{t(`Brancher ${name}`, `Plug in ${name}`)}</span><ButtonArrow /></>, buttonRest)}
         {also.length > 0 && (
-          <p className={styles.note}>
-            {t("Aussi pour ce besoin : ", "Also for this need: ")}
-            {also.map((other, i) => (
-              <span key={other.slug}>{i > 0 && ", "}{renderSheetLink(other.slug, linkClass("inline"), toolName(other.host_tool))}</span>
-            ))}
-          </p>
+          <div className={styles.also}>
+            <p className={styles.note}>{t("Aussi pour ce besoin", "Also for this need")}</p>
+            <ul className={styles.alsoList}>
+              {also.map((other) => (
+                <li key={other.slug}>{renderSheetLink(other.slug, styles.alsoCard, <>
+                  <span className={styles.logo} aria-hidden="true">{logo(other.host_tool)}</span><span className={styles.alsoName}>{toolName(other.host_tool)}</span><LinkArrow />
+                </>)}</li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
     </article>
@@ -99,10 +114,12 @@ function Steps({ steps }: { steps: string[] }) {
   return <ol className={styles.steps}>{steps.map((step) => <li key={step} className={styles.step}>{step}</li>)}</ol>;
 }
 
-function Row({ label, value }: { label: string; value: string }) {
-  return <div className={styles.row}><dt className={styles.term}>{label}</dt><dd className={styles.value}>{value}</dd></div>;
-}
 const lower = (text: string) => text.charAt(0).toLowerCase() + text.slice(1);
+/** A link that looks like a button: its class, its content, the button's data attributes. */
+function buttonLink(variant: "primary" | "secondary", content: ReactNode) {
+  const [className, attrs] = split(buttonAttrs(variant) as unknown as LinkAttrs);
+  return [className, content, attrs] as const;
+}
 
 export interface StackAgentItem {
   /** The tool's catalogue slug. */
@@ -124,14 +141,14 @@ export function StackAgents({ items, lang, renderSheetLink, renderToolLink, rend
   lang: Lang;
   renderSheetLink: SheetLink;
   renderToolLink: (slug: string, className: string, content: ReactNode) => ReactNode;
-  renderStackLink: (className: string, content: ReactNode) => ReactNode;
+  renderStackLink: (className: string, content: ReactNode, attrs?: Record<string, string>) => ReactNode;
 }) {
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
   if (!items) {
     return (
       <div className={styles.invite}>
         <p className={styles.text}>{t("Ajoutez vos outils dans Ma stack : nous vous dirons lesquels brancher à votre assistant, et avec quelle prudence.", "Add your tools to My stack: we will tell you which ones to plug into your assistant, and with how much care.")}</p>
-        {renderStackLink(linkClass(), <>{t("Composer ma stack", "Build my stack")}<LinkArrow /></>)}
+        {renderStackLink(...buttonLink("secondary", <><span>{t("Composer ma stack", "Build my stack")}</span><ButtonArrow /></>))}
       </div>
     );
   }
@@ -184,11 +201,15 @@ export function StartHere({ lang, renderGuideLink }: { lang: Lang; renderGuideLi
 }
 
 /**
- * A sheet as a card (server, skill or the host tool): logo, name, « Par Notion · Officiel », a summary on 2-3 lines,
- * two facts; an action beside the link when the page gives one (« Ajouter à ma stack »).
+ * A sheet as a card (server, skill or the host tool): logo, name, « Par Notion · Officiel », one sentence on two
+ * lines, two facts with icons at the foot; an action under the link when the page gives one (« Ajouter à ma stack »).
  */
 export function AgentCard({ icon, name, by, summary, facts, renderLink, action }: {
-  icon: ReactNode; name: string; by: string; summary?: string; facts?: string[];
+  icon: ReactNode; name: string; by: string;
+  /** One sentence written for the card, shown on two lines at most. */
+  summary?: string;
+  /** Two facts at the card's foot, each with its icon, so every foot lines up. */
+  facts?: CardFact[];
   renderLink: (className: string, content: ReactNode) => ReactNode;
   action?: ReactNode;
 }) {
@@ -200,13 +221,32 @@ export function AgentCard({ icon, name, by, summary, facts, renderLink, action }
           <span className={styles.cardNames}><span className={styles.cardName}>{name}</span><span className={styles.cardBy}>{by}</span></span>
         </span>
         {summary && <span className={styles.cardSummary}>{summary}</span>}
-        {facts?.length ? <span className={styles.cardFacts}>{facts.map((fact) => <span key={fact}>{fact}</span>)}</span> : null}
+        {facts?.length ? <span className={styles.cardFacts}>{facts.map((fact) => <span key={fact.text} className={styles.cardFact}>{FACT_ICONS[fact.kind]}{fact.text}</span>)}</span> : null}
       </>)}
       {action && <div className={styles.cardAction}>{action}</div>}
     </li>
   );
 }
 
+const FACT_ICONS: Record<CardFact["kind"], ReactNode> = {
+  online: <Globe aria-hidden="true" />, local: <Laptop2 aria-hidden="true" />, account: <UserRound aria-hidden="true" />,
+  skill: <Sparkles aria-hidden="true" />, tool: <Wrench aria-hidden="true" />, assistant: <Bot aria-hidden="true" />,
+};
+
 export function AgentCards({ label, children }: { label: string; children: ReactNode }) {
   return <ul className={styles.cards} aria-label={label}>{children}</ul>;
+}
+
+/** Filters in labelled groups (« Comment », « Avec quel assistant »): they wrap, never a rail that overflows. */
+export function FilterGroups({ groups }: { groups: { label: string; chips: ReactNode }[] }) {
+  return (
+    <div className={styles.filterGroups}>
+      {groups.map((group) => (
+        <div key={group.label} className={styles.filterGroup} role="group" aria-label={group.label}>
+          <p className={styles.note} aria-hidden="true">{group.label}</p>
+          <div className={styles.filterChips}>{group.chips}</div>
+        </div>
+      ))}
+    </div>
+  );
 }

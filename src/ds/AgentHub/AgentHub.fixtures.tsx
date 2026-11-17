@@ -15,12 +15,12 @@ const NAMES: Record<string, string> = {
   hotjar: "Hotjar", tally: "Tally", webflow: "Webflow", zapier: "Zapier", make: "Make",
 };
 export const toolName = (slug: string) => NAMES[slug] ?? slug;
-export const logo = (slug: string): ReactNode => <Logo tool={{ name: toolName(slug), slug }} size={24} localOnly />;
+export const logo = (slug: string, size: 24 | 40 = 24): ReactNode => <Logo tool={{ name: toolName(slug), slug }} size={size} localOnly />;
 const a = (className: string, href: string, content: ReactNode) => <a className={className} href={href}>{content}</a>;
 export const links = {
-  renderSheetLink: (slug: string, className: string, content: ReactNode) => a(className, `/fr/mcp/${slug}`, content),
+  renderSheetLink: (slug: string, className: string, content: ReactNode, attrs?: Record<string, string>) => <a className={className} href={`/fr/mcp/${slug}`} {...attrs}>{content}</a>,
   renderToolLink: (slug: string, className: string, content: ReactNode) => a(className, `/fr/tool/${slug}`, content),
-  renderStackLink: (className: string, content: ReactNode) => a(className, "/fr/ma-stack", content),
+  renderStackLink: (className: string, content: ReactNode, attrs?: Record<string, string>) => <a className={className} href="/fr/ma-stack" {...attrs}>{content}</a>,
   renderGuideLink: (className: string, content: ReactNode) => a(className, "/fr/guide/mcp-freelances-non-developpeurs", content),
 };
 

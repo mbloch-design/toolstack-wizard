@@ -97,6 +97,9 @@ export function LinkArrow() {
   return <span className={styles.linkArrow} aria-hidden="true"><ArrowRight /></span>;
 }
 
+/** The button's arrow, for a link that looks like a button (buttonAttrs): put the label in a span before it. */
+export { Arrow as ButtonArrow };
+
 /** A link that looks like a button (router links): spread on the link. */
 export function buttonAttrs(variant: "primary" | "secondary" | "raised" = "secondary", size: "md" | "lg" = "md") {
   return { className: styles.button, "data-variant": variant, "data-size": size } as const;

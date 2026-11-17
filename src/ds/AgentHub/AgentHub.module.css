@@ -5,6 +5,7 @@
   display: grid;
   gap: var(--tt-gap-group);
   min-width: 0;
+  container-type: inline-size;
 }
 
 .advice {
@@ -14,7 +15,7 @@
 
 .adviceHead {
   display: flex;
-  gap: var(--tt-space-3);
+  gap: var(--tt-space-4);
   align-items: center;
   min-width: 0;
 }
@@ -42,47 +43,179 @@
   max-width: 62ch;
 }
 
-/* The request you could type: a white card lifted off the tile, like a message. */
+/* The request you could type, put forward: a large quote on a white card lifted off the tile. */
 .request {
   composes: raised from "../atoms.module.css";
   display: grid;
-  gap: var(--tt-space-2);
+  gap: var(--tt-space-3);
   margin: 0;
-  padding: var(--tt-space-4) var(--tt-space-5);
-  max-width: 62ch;
+  padding: var(--tt-space-5) var(--tt-space-6);
 }
 
 .requestText {
-  composes: label from "../atoms.module.css";
+  composes: titleM from "../atoms.module.css";
   margin: 0;
+  max-width: 40ch;
 }
 
-.facts {
+/* Needs: a compact grid of choices with an icon; one row on a wide screen when it fits. */
+.needs {
   display: grid;
-  gap: var(--tt-space-3);
-  margin: 0;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
+  gap: var(--tt-space-2);
 }
 
-.row {
-  display: grid;
-  gap: var(--tt-space-1);
-  min-width: 0;
-}
+/* On a phone the tiles stay low (small label, icon inline): the advice starts on the first screen. */
+@container (max-width: 559px) {
+  .needs .need {
+    min-height: var(--tt-tap);
+    padding: var(--tt-space-1) var(--tt-space-2);
+    gap: var(--tt-space-1);
+    font: var(--tt-note-font);
+    letter-spacing: var(--tt-note-tracking);
+  }
 
-@container (min-width: 560px) {
-  .row {
-    grid-template-columns: 9rem minmax(0, 1fr);
-    gap: var(--tt-space-4);
-    align-items: baseline;
+  .needs .needIcon svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
-.value {
-  composes: text from "../atoms.module.css";
-  margin: 0;
-  max-width: 62ch;
-  overflow-wrap: break-word;
+/* Four by two on a wide screen: an even block, never six then two. */
+@container (min-width: 760px) {
+  .needs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
+
+.need {
+  composes: label from "../atoms.module.css";
+  display: flex;
+  gap: var(--tt-space-2);
+  align-items: center;
+  min-height: var(--tt-tap);
+  padding: var(--tt-space-2) var(--tt-space-3);
+  border: 0;
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-hairline);
+  color: var(--tt-ink);
+  text-align: start;
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) var(--tt-ease), color var(--tt-dur-state) var(--tt-ease), box-shadow var(--tt-dur-state) var(--tt-ease);
+}
+
+.need:hover {
+  box-shadow: var(--tt-raised-hover);
+}
+
+.need[aria-pressed="true"] {
+  background: var(--tt-ink);
+  box-shadow: none;
+  color: var(--tt-bg);
+}
+
+.need:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.needIcon {
+  display: inline-flex;
+  flex: none;
+}
+
+.needIcon svg,
+.fact > svg,
+.cardFact > svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Three facts on a line, each with its icon: with which assistant, the risk, our view. */
+.factLine {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--tt-space-3) var(--tt-space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fact {
+  composes: note from "../atoms.module.css";
+  display: flex;
+  gap: var(--tt-space-2);
+  align-items: flex-start;
+}
+
+.fact > svg {
+  flex: none;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-4) var(--tt-space-6);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.also {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-2) var(--tt-space-3);
+  align-items: center;
+}
+
+.alsoList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* « Aussi pour ce besoin »: a small white card with the tool's logo. */
+.alsoCard {
+  display: inline-flex;
+  gap: var(--tt-space-2);
+  align-items: center;
+  min-height: var(--tt-tap);
+  padding: var(--tt-space-1) var(--tt-space-3) var(--tt-space-1) var(--tt-space-2);
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
+  color: var(--tt-ink);
+  text-decoration: none;
+  transition: box-shadow var(--tt-dur-state) var(--tt-ease);
+}
+
+.alsoCard:hover {
+  box-shadow: var(--tt-row-lift);
+}
+
+.alsoCard:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.alsoName {
+  composes: label from "../atoms.module.css";
+}
+
+
+
 
 .group {
   display: grid;
@@ -122,13 +255,21 @@
   font: var(--tt-label-font);
 }
 
-.links {
-  display: grid;
-  gap: var(--tt-space-2);
-  justify-items: start;
+
+/* No stack yet: the sentence and its button side by side on a tile, never an orphan paragraph. */
+.invite {
+  composes: tile from "../atoms.module.css";
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-4) var(--tt-space-6);
+  align-items: center;
+  justify-content: space-between;
 }
 
-.invite,
+.invite > p {
+  flex: 1 1 320px;
+}
+
 .stack,
 .start {
   display: grid;
@@ -187,8 +328,8 @@
 
 .agentCard {
   display: grid;
+  grid-template-rows: auto auto 1fr;
   gap: var(--tt-space-3);
-  align-content: start;
   padding: var(--tt-space-5);
   border-radius: var(--tt-r-card);
   color: var(--tt-ink);
@@ -228,19 +369,45 @@
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
 }
 
+/* The facts sit at the card's foot: every foot of a row lines up. */
 .cardFacts {
   composes: note from "../atoms.module.css";
   display: flex;
   flex-wrap: wrap;
-  gap: var(--tt-space-1) var(--tt-space-3);
+  gap: var(--tt-space-1) var(--tt-space-4);
+  align-self: end;
   color: var(--tt-meta);
+}
+
+.cardFact {
+  display: inline-flex;
+  gap: var(--tt-space-1);
+  align-items: center;
 }
 
 .cardAction {
   display: flex;
   padding: 0 var(--tt-space-5) var(--tt-space-5);
+}
+
+.filterGroups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-4) var(--tt-space-8);
+}
+
+.filterGroup {
+  display: grid;
+  gap: var(--tt-space-2);
+  min-width: 0;
+}
+
+.filterChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-2);
 }

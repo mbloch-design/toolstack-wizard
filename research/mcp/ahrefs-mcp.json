@@ -9,6 +9,10 @@
     "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités API du forfait.",
     "en": "Ahrefs' official server brings your SEO data (keywords, backlinks, rankings) into your assistant, and can manage social media posts. It needs a paid plan from Lite and uses your plan's API units."
   },
+  "card": {
+    "fr": "Vos données SEO dans votre assistant : mots-clés, liens, positions.",
+    "en": "Your SEO data in your assistant: keywords, links, rankings."
+  },
   "examples": [
     {
       "fr": "Sur quels mots-clés mon site a-t-il gagné des positions ce mois-ci ?",

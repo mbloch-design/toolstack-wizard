@@ -9,6 +9,10 @@
     "fr": "Le serveur officiel d'Airtable relie votre assistant à vos bases : enregistrements, tables, champs, interfaces et brouillons d'automatisations. Il peut aussi supprimer des enregistrements et des tables entières, et on peut le limiter à certaines bases.",
     "en": "Airtable's official server connects your assistant to your bases: records, tables, fields, interfaces and automation drafts. It can also delete records and whole tables, and can be limited to chosen bases."
   },
+  "card": {
+    "fr": "Chercher, ajouter et modifier les enregistrements de vos bases.",
+    "en": "Search, add and edit the records of your bases."
+  },
   "examples": [
     {
       "fr": "Dans ma base Clients, trouve ceux que je n'ai pas relancés depuis un mois.",

@@ -9,6 +9,10 @@
     "fr": "Le serveur officiel de Tally, en bêta, permet à votre assistant de créer un formulaire à partir d'une description, de le modifier, de le publier et de lire les réponses. Il ne peut supprimer ni formulaire ni réponse, et il est gratuit sur tous les forfaits.",
     "en": "Tally's official server, in beta, lets your assistant create a form from a description, edit it, publish it and read submissions. It cannot delete forms or submissions, and it is free on every plan."
   },
+  "card": {
+    "fr": "Créer un formulaire en une phrase et lire ses réponses.",
+    "en": "Create a form in one sentence and read its answers."
+  },
   "examples": [
     {
       "fr": "Crée un formulaire de demande de devis : nom, e-mail, budget et délai.",

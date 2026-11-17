@@ -9,6 +9,10 @@
       "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités API du forfait.",
       "en": "Ahrefs' official server brings your SEO data (keywords, backlinks, rankings) into your assistant, and can manage social media posts. It needs a paid plan from Lite and uses your plan's API units."
     },
+    "card": {
+      "fr": "Vos données SEO dans votre assistant : mots-clés, liens, positions.",
+      "en": "Your SEO data in your assistant: keywords, links, rankings."
+    },
     "transport": "remote",
     "auth": [
       "oauth",
@@ -70,6 +74,10 @@
     "summary": {
       "fr": "Le serveur officiel d'Airtable relie votre assistant à vos bases : enregistrements, tables, champs, interfaces et brouillons d'automatisations. Il peut aussi supprimer des enregistrements et des tables entières, et on peut le limiter à certaines bases.",
       "en": "Airtable's official server connects your assistant to your bases: records, tables, fields, interfaces and automation drafts. It can also delete records and whole tables, and can be limited to chosen bases."
+    },
+    "card": {
+      "fr": "Chercher, ajouter et modifier les enregistrements de vos bases.",
+      "en": "Search, add and edit the records of your bases."
     },
     "transport": "remote",
     "auth": [
@@ -146,6 +154,10 @@
       "fr": "Le serveur officiel de Buffer permet à votre assistant de lire votre file d'attente et vos statistiques, de rédiger et programmer des posts, et de les publier tout de suite si on le lui demande. Il peut aussi supprimer définitivement un post ; il est inclus dans tous les forfaits, gratuit compris.",
       "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post; it is included on every plan, free included."
     },
+    "card": {
+      "fr": "Rédiger, programmer et publier vos posts, lire leurs résultats.",
+      "en": "Write, schedule and publish your posts, read their results."
+    },
     "access": "read_write",
     "plan": "all",
     "kinds": [
@@ -213,6 +225,10 @@
       "fr": "Le serveur officiel de Calendly permet à votre assistant de trouver vos créneaux, réserver et annuler des rendez-vous, et modifier vos types d'événements et disponibilités. Aucun forfait payant n'est requis, et Calendly ne documente pas de confirmation avant action.",
       "en": "Calendly's official server lets your assistant find your open slots, book and cancel meetings, and edit your event types and availability. No paid plan is required, and Calendly documents no confirmation before acting."
     },
+    "card": {
+      "fr": "Trouver un créneau, réserver ou annuler un rendez-vous.",
+      "en": "Find a slot, book or cancel a meeting."
+    },
     "status": "ga",
     "transport": "remote",
     "auth": [
@@ -278,6 +294,10 @@
       "fr": "Le connecteur officiel de Canva laisse votre assistant chercher vos designs, en générer à partir d'une description, les modifier, les exporter et les commenter. La liste d'outils publiée ne comprend aucune suppression ; les fonctions de marque demandent un forfait Pro.",
       "en": "Canva's official connector lets your assistant search your designs, generate new ones from a description, edit, export and comment on them. The published tool list has no deletion; brand features need a Pro plan."
     },
+    "card": {
+      "fr": "Créer un visuel à partir d'une phrase, retrouver et exporter vos designs.",
+      "en": "Create a visual from a sentence, find and export your designs."
+    },
     "transport": "remote",
     "auth": [
       "oauth"
@@ -325,6 +345,10 @@
     "summary": {
       "fr": "Le serveur officiel de ClickUp permet à votre assistant de gérer tâches, documents, commentaires, temps passé et messages, en votre nom et avec vos droits. Il peut mettre une tâche à la corbeille et envoyer des messages de chat ; les appels sont plafonnés selon le forfait.",
       "en": "ClickUp's official server lets your assistant manage tasks, docs, comments, time and messages, as you and with your rights. It can send a task to Trash and post chat messages; calls are capped by plan."
+    },
+    "card": {
+      "fr": "Suivre vos tâches, vos documents et votre temps passé.",
+      "en": "Follow your tasks, documents and time spent."
     },
     "transport": "remote",
     "auth": [
@@ -395,6 +419,10 @@
       "fr": "Le serveur de bureau de Figma tourne dans l'application Figma, sur votre ordinateur. Il lit vos designs mais n'écrit pas dans vos fichiers, et demande un siège Dev ou Full sur un forfait payant.",
       "en": "Figma's desktop server runs inside the Figma app on your computer. It reads your designs but does not write to your files, and needs a Dev or Full seat on a paid plan."
     },
+    "card": {
+      "fr": "Lire vos maquettes depuis l'application de bureau, sans les modifier.",
+      "en": "Read your mockups from the desktop app, without editing them."
+    },
     "transport": "local",
     "access": "read",
     "plan": "specific",
@@ -444,6 +472,10 @@
     "summary": {
       "fr": "Le serveur distant de Figma donne à votre assistant le contexte de vos designs (composants, variables, mise en page) et, en bêta, le droit de créer et de modifier dans vos fichiers. C'est le serveur à préférer : rien à installer.",
       "en": "Figma's remote server gives your assistant your designs' context (components, variables, layout) and, in beta, the ability to create and edit in your files. It is the one to prefer: nothing to install."
+    },
+    "card": {
+      "fr": "Lire vos maquettes et en créer de nouvelles, depuis le web.",
+      "en": "Read your mockups and create new ones, from the web."
     },
     "transport": "remote",
     "access": "read_write",
@@ -513,6 +545,10 @@
       "fr": "Le serveur officiel de Google Analytics permet à votre assistant de lire vos comptes, propriétés et rapports, y compris en temps réel. Il s'installe sur votre ordinateur avec Python et des identifiants Google Cloud : c'est le plus technique de la section.",
       "en": "Google Analytics' official server lets your assistant read your accounts, properties and reports, realtime included. It is installed on your computer with Python and Google Cloud credentials: the most technical one in this section."
     },
+    "card": {
+      "fr": "Lire vos chiffres de trafic, en temps réel compris.",
+      "en": "Read your traffic figures, realtime included."
+    },
     "transport": "local",
     "access": "read",
     "plan": "unknown",
@@ -566,6 +602,10 @@
       "fr": "Le serveur officiel de HubSpot ouvre à votre assistant le CRM, les campagnes, le contenu et les publications sociales. Les créations et modifications demandent une confirmation explicite, et aucune suppression n'est documentée.",
       "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating and editing require explicit confirmation, and no deletion is documented."
     },
+    "card": {
+      "fr": "Consulter et mettre à jour votre CRM, vos campagnes et vos contenus.",
+      "en": "Read and update your CRM, campaigns and content."
+    },
     "status": "ga",
     "transport": "remote",
     "auth": [
@@ -615,6 +655,10 @@
     "summary": {
       "fr": "Le serveur officiel de Make transforme vos scénarios actifs en actions que votre assistant peut lancer ; sur un forfait payant, il peut aussi consulter et modifier scénarios, connexions et data stores. Make ne publie pas de liste nominative d'outils : ils dépendent de vos scénarios et des portées choisies.",
       "en": "Make's official server turns your active scenarios into actions your assistant can run; on a paid plan it can also view and edit scenarios, connections and data stores. Make publishes no named tool list: tools depend on your scenarios and the scopes you grant."
+    },
+    "card": {
+      "fr": "Lancer vos scénarios Make en une phrase.",
+      "en": "Run your Make scenarios in one sentence."
     },
     "transport": "remote",
     "auth": [
@@ -679,6 +723,10 @@
     "summary": {
       "fr": "Le serveur officiel de Miro permet à votre assistant de lire et résumer vos tableaux, d'y créer cadres, notes, schémas et commentaires, et de partager tableaux et espaces avec d'autres personnes. Il fonctionne sur tous les forfaits, gratuit compris.",
       "en": "Miro's official server lets your assistant read and summarise your boards, create frames, notes, diagrams and comments on them, and share boards and spaces with other people. It works on every plan, free included."
+    },
+    "card": {
+      "fr": "Résumer vos tableaux et en créer de nouveaux.",
+      "en": "Summarise your boards and create new ones."
     },
     "transport": "remote",
     "auth": [
@@ -761,6 +809,10 @@
       "fr": "Le serveur officiel de Notion donne à votre assistant l'accès à vos pages, bases de données, commentaires, fichiers et agenda Notion. Il peut lire, créer, modifier et mettre à la corbeille, toujours dans la limite de vos droits.",
       "en": "Notion's official server gives your assistant access to your Notion pages, databases, comments, files and calendar. It can read, create, edit and move to trash, always within your own rights."
     },
+    "card": {
+      "fr": "Retrouver, résumer et créer des pages dans votre espace Notion.",
+      "en": "Find, summarise and create pages in your Notion workspace."
+    },
     "status": "ga",
     "transport": "remote",
     "auth": [
@@ -842,6 +894,10 @@
       "fr": "Shopify propose des intégrations officielles pour Claude, ChatGPT, Gemini, Copilot et d'autres assistants : lire commandes et statistiques, créer produits, collections et réductions, modifier un thème. Remboursements, paiements et réglages de la boutique restent bloqués, même avec l'accès en écriture.",
       "en": "Shopify offers official integrations for Claude, ChatGPT, Gemini, Copilot and other assistants: read orders and analytics, create products, collections and discounts, edit a theme. Refunds, payments and store settings stay blocked, even with write access."
     },
+    "card": {
+      "fr": "Suivre commandes et stocks, créer produits et réductions.",
+      "en": "Follow orders and stock, create products and discounts."
+    },
     "access": "read_write",
     "plan": "unknown",
     "kinds": [
@@ -918,6 +974,10 @@
       "fr": "Le serveur officiel de Slack permet à votre assistant de chercher et lire messages, fils, fichiers et canvases, de créer des canaux et des canvases, et d'envoyer ou programmer des messages. Il est réservé aux applications publiées ou internes et à quelques assistants partenaires, sous le contrôle des administrateurs.",
       "en": "Slack's official server lets your assistant search and read messages, threads, files and canvases, create channels and canvases, and send or schedule messages. It is limited to published or internal apps and a few partner assistants, under admin control."
     },
+    "card": {
+      "fr": "Retrouver une conversation, résumer un canal, préparer une réponse.",
+      "en": "Find a conversation, summarise a channel, draft a reply."
+    },
     "transport": "remote",
     "auth": [
       "oauth"
@@ -965,6 +1025,10 @@
     "summary": {
       "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Il est en bêta.",
       "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. It is in beta."
+    },
+    "card": {
+      "fr": "Suivre vos paiements et votre solde, avec confirmation avant tout envoi d'argent.",
+      "en": "Follow your payments and balance, with confirmation before any money moves."
     },
     "status": "beta",
     "transport": "remote",
@@ -1042,6 +1106,10 @@
       "fr": "Le serveur officiel de Tally, en bêta, permet à votre assistant de créer un formulaire à partir d'une description, de le modifier, de le publier et de lire les réponses. Il ne peut supprimer ni formulaire ni réponse, et il est gratuit sur tous les forfaits.",
       "en": "Tally's official server, in beta, lets your assistant create a form from a description, edit it, publish it and read submissions. It cannot delete forms or submissions, and it is free on every plan."
     },
+    "card": {
+      "fr": "Créer un formulaire en une phrase et lire ses réponses.",
+      "en": "Create a form in one sentence and read its answers."
+    },
     "status": "beta",
     "transport": "remote",
     "auth": [
@@ -1114,6 +1182,10 @@
       "fr": "Le serveur officiel de Webflow laisse votre assistant lire et modifier votre site : pages, styles, composants, CMS, fichiers, et le publier en ligne. Les droits se donnent site par site, par le propriétaire ou un administrateur.",
       "en": "Webflow's official server lets your assistant read and edit your site: pages, styles, components, CMS, assets, and publish it live. Access is granted site by site, by the owner or an admin."
     },
+    "card": {
+      "fr": "Lire et modifier votre site Webflow, jusqu'à le publier.",
+      "en": "Read and edit your Webflow site, up to publishing it."
+    },
     "transport": "remote",
     "auth": [
       "oauth"
@@ -1183,6 +1255,10 @@
     "summary": {
       "fr": "Zapier MCP met à la portée de votre assistant les actions de milliers d'applications connectées à votre compte Zapier : chercher, créer, envoyer. Vous choisissez les actions exposées, et chaque appel réussi consomme deux tâches du forfait.",
       "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful call uses two tasks from your plan."
+    },
+    "card": {
+      "fr": "Agir dans des milliers d'applications, via les actions que vous activez.",
+      "en": "Act in thousands of apps, through the actions you turn on."
     },
     "transport": "remote",
     "auth": [

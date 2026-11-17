@@ -9,6 +9,10 @@
     "fr": "Le serveur officiel de Webflow laisse votre assistant lire et modifier votre site : pages, styles, composants, CMS, fichiers, et le publier en ligne. Les droits se donnent site par site, par le propriétaire ou un administrateur.",
     "en": "Webflow's official server lets your assistant read and edit your site: pages, styles, components, CMS, assets, and publish it live. Access is granted site by site, by the owner or an admin."
   },
+  "card": {
+    "fr": "Lire et modifier votre site Webflow, jusqu'à le publier.",
+    "en": "Read and edit your Webflow site, up to publishing it."
+  },
   "examples": [
     {
       "fr": "Liste les articles de blog en brouillon sur mon site.",

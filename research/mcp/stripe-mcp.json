@@ -9,6 +9,10 @@
     "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Il est en bêta.",
     "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. It is in beta."
   },
+  "card": {
+    "fr": "Suivre vos paiements et votre solde, avec confirmation avant tout envoi d'argent.",
+    "en": "Follow your payments and balance, with confirmation before any money moves."
+  },
   "examples": [
     {
       "fr": "Quel est mon solde Stripe et combien ai-je encaissé ce mois-ci ?",

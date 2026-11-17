@@ -9,6 +9,10 @@
     "fr": "Le serveur officiel de Google Analytics permet à votre assistant de lire vos comptes, propriétés et rapports, y compris en temps réel. Il s'installe sur votre ordinateur avec Python et des identifiants Google Cloud : c'est le plus technique de la section.",
     "en": "Google Analytics' official server lets your assistant read your accounts, properties and reports, realtime included. It is installed on your computer with Python and Google Cloud credentials: the most technical one in this section."
   },
+  "card": {
+    "fr": "Lire vos chiffres de trafic, en temps réel compris.",
+    "en": "Read your traffic figures, realtime included."
+  },
   "examples": [
     {
       "fr": "Combien de visiteurs mon site a-t-il eus le mois dernier, et d'où venaient-ils ?",

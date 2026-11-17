@@ -41,7 +41,7 @@ const KINDS = ["read", "write", "delete", "send", "pay"];
 const ONE_CLICK = ["connector", "plugin"];
 const kindsOf = (s) => KINDS.filter((k) => (s.capabilities ?? []).some((c) => c.kind === k) || (s.tools ?? []).some((t) => t.kind === k));
 const mcpIndex = servers.map((s) => ({
-  slug: s.slug, name: s.name, publisher: s.publisher, host_tool: s.host_tool, category: s.category, summary: s.summary,
+  slug: s.slug, name: s.name, publisher: s.publisher, host_tool: s.host_tool, category: s.category, summary: s.summary, ...(s.card ? { card: s.card } : {}),
   ...(s.status ? { status: s.status } : {}), ...(s.transport ? { transport: s.transport } : {}), ...(s.auth ? { auth: s.auth } : {}),
   ...(s.access ? { access: s.access } : {}), plan: s.plan, kinds: kindsOf(s),
   // The risk said in words follows the capability lines shown on the sheet; the tools only when there are none.

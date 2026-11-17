@@ -1,16 +1,15 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
-import { Check, ChevronDown, Clock, Copy, ExternalLink, Flag, Globe, Laptop2, UserRound } from "@/lib/icons";
+import { Check, ChevronDown, Clock, Code2, Copy, ExternalLink, FileText, Flag, Globe, Laptop2, UserRound, X } from "@/lib/icons";
+import { useToolLogoSource } from "@/lib/useToolLogoSource";
 import {
   KIND_WORDS, authWords, PLAN_WORDS, RISK_ORDER, SAFEGUARD_WORDS, TRANSPORT_WORDS, clientName, riskSentence, say,
   type InstallRow, type Lang, type McpSheet, type SkillSheet,
 } from "@/lib/agents";
-import { CLIENTS, clientGroup, clientLabel, clientsOf, cursorInstallLink, plugCard, vsCodeInstallLink, type ClientId, type PlugStep } from "@/lib/agentClients";
+import { CLIENTS, CLIENT_MARKS, clientGroup, clientLabel, clientsOf, cursorInstallLink, plugCard, vsCodeInstallLink, type ClientId, type PlugStep } from "@/lib/agentClients";
 import { RISK_PILL, freshness, sheetMarkdown, sourceLinks, toolTopics, toolsSummary } from "@/lib/agentSheet";
 import Button, { LinkArrow, TextButton, buttonAttrs, linkClass } from "../Button/Button";
 import Chip from "../Chip/Chip";
-import Logo from "../Logo/Logo";
 import Tag from "../Tag/Tag";
-import Tooltip from "../Tooltip/Tooltip";
 import { Collapse } from "../Motion/Motion";
 import { longDate } from "../AgentAccess/agentVerdict";
 import styles from "./AgentSheet.module.css";
@@ -28,11 +27,25 @@ const KINDS = ["read", "write", "delete", "send", "pay"] as const;
 const kindsOf = (sheet: McpSheet) => KINDS.filter((kind) => (sheet.capabilities?.length ? sheet.capabilities : sheet.tools ?? []).some((line) => line.kind === kind));
 const raise = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 const STORE_KEY = "tooltrim.agents.client";
+/** The capability's verb as a tag, the same words as the action list (reading said too, here). */
+const ABILITY_TAG = { read: ["Lit", "Reads"], write: ["Modifie", "Edits"], delete: ["Supprime", "Deletes"], send: ["Envoie", "Sends"], pay: ["Paie", "Pays"] } as const;
+/** A plan note often opens on the value it details as its own sentence (« Tous les forfaits. Jetons… »): said once. */
+const withoutEcho = (note: string, value: string) => note.replace(new RegExp(`^${value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.\\s+`, "i"), "") || note;
+/** What the fold hides: « 70 actions, 12 assistants, détails techniques ». */
+function furtherSummary(sheet: McpSheet, lang: Lang) {
+  const t = (fr: string, en: string) => (lang === "en" ? en : fr);
+  const assistants = new Set<string>([...clientsOf(sheet).filter((c) => c !== "any"), ...(sheet.clients ?? [])]).size;
+  return [
+    sheet.tools?.length ? t(`${sheet.tools.length} actions`, `${sheet.tools.length} actions`) : null,
+    assistants ? t(`${assistants} assistants`, `${assistants} assistants`) : null,
+    t("détails techniques", "technical details"),
+  ].filter(Boolean).join(", ");
+}
 
-export function McpSheetView({ sheet, lang, toolName = sheet.publisher, pageUrl, reportHref, related, localLogos = false }: {
+export function McpSheetView({ sheet, lang, title, toolName = sheet.publisher, pageUrl, reportHref, related }: {
   sheet: McpSheet; lang: Lang;
-  /** Our own logo files only (Storybook, visual tests). */
-  localLogos?: boolean;
+  /** The page's title (« Brancher Notion à votre assistant »): the sheet draws its own head, the copy action beside it. */
+  title: string;
   /** The tool's catalogue name (« Notion »), said in the steps and titles. */
   toolName?: string;
   /** The sheet's public address, given in the Markdown copy. */
@@ -45,9 +58,8 @@ export function McpSheetView({ sheet, lang, toolName = sheet.publisher, pageUrl,
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
   const capabilities = RISK_ORDER.flatMap((kind) => (sheet.capabilities ?? []).filter((line) => line.kind === kind));
   const control = [
-    ...capabilities.map((line) => ({ label: say(lang, KIND_WORDS[line.kind]), value: say(lang, line) })),
     ...(sheet.safeguards ? [{ label: t("Garde-fous", "Safeguards"), value: sheet.safeguards.length ? raise(sheet.safeguards.map((s) => say(lang, SAFEGUARD_WORDS[s])).join(", ")) : t("Aucun documenté par l'éditeur", "None documented by the vendor") }] : []),
-    { label: t("Forfait", "Plan"), value: say(lang, PLAN_WORDS[sheet.plan]), detail: sheet.plan_note ? say(lang, sheet.plan_note) : undefined },
+    { label: t("Forfait", "Plan"), value: say(lang, PLAN_WORDS[sheet.plan]), detail: sheet.plan_note ? withoutEcho(say(lang, sheet.plan_note), say(lang, PLAN_WORDS[sheet.plan])) : undefined },
     ...(sheet.status === "beta" ? [{ label: t("Statut", "Status"), value: t("En bêta chez l'éditeur", "In beta at the vendor") }] : []),
   ];
   const served = new Set<string>(clientsOf(sheet));
@@ -59,18 +71,22 @@ export function McpSheetView({ sheet, lang, toolName = sheet.publisher, pageUrl,
   ];
   return (
     <div className={styles.sheet} data-agent-sheet="mcp">
-      <div className={styles.head}>
-        <SheetFacts sheet={sheet} lang={lang} localLogos={localLogos} />
-        <CopyMenu sheet={sheet} lang={lang} toolName={toolName} pageUrl={pageUrl} />
-      </div>
-      <div className={styles.lead}>
-        <p className={styles.text}>{say(lang, sheet.summary)}</p>
+      <header className={styles.head}>
+        <div className={styles.titleRow}>
+          <div className={styles.titles}>
+            <h1 className={styles.title}>{title}</h1>
+            <p className={styles.byline}>{t(`${sheet.name}, publié par ${sheet.publisher} · Officiel`, `${sheet.name}, published by ${sheet.publisher} · Official`)}</p>
+          </div>
+          <CopyMenu sheet={sheet} lang={lang} toolName={toolName} pageUrl={pageUrl} />
+        </div>
+        <SheetFacts sheet={sheet} lang={lang} />
+        <p className={styles.lead}>{say(lang, sheet.summary)}</p>
         {sheet.note && <p className={styles.text}>{say(lang, sheet.note)}</p>}
-      </div>
+      </header>
 
       {sheet.examples?.length ? (
-        <Part chapter="change" title={t("Ce que ça change pour vous", "What it changes for you")}>
-          <p className={styles.term}>{t("Vous pourrez lui demander", "You could ask it")}</p>
+        <Part chapter="change" tone="plain" title={t("Ce que ça change pour vous", "What it changes for you")}>
+          <p className={styles.note}>{t("Vous pourrez lui demander :", "You could ask it:")}</p>
           <ul className={styles.requests}>
             {sheet.examples.map((example) => <li key={example.fr} className={styles.request}>{t(`« ${example.fr} »`, `“${example.en}”`)}</li>)}
           </ul>
@@ -78,11 +94,11 @@ export function McpSheetView({ sheet, lang, toolName = sheet.publisher, pageUrl,
       ) : null}
 
       {sheet.for && sheet.not_for && (
-        <Part chapter="view" title={t("Notre avis", "Our view")}>
-          <Facts rows={[
-            { label: t("Utile si", "Useful if"), value: raise(say(lang, sheet.for)) },
-            { label: t("Moins utile si", "Less useful if"), value: raise(say(lang, sheet.not_for)) },
-          ]} />
+        <Part chapter="view" tone="plain" title={t("Notre avis", "Our view")}>
+          <div className={styles.view}>
+            <div className={styles.viewSide} data-side="yes"><p className={styles.viewHead}><span className={styles.viewMark} aria-hidden="true"><Check /></span>{t("Utile si", "Useful if")}</p><p className={styles.text}>{raise(say(lang, sheet.for))}</p></div>
+            <div className={styles.viewSide} data-side="no"><p className={styles.viewHead}><span className={styles.viewMark} aria-hidden="true"><X /></span>{t("Moins utile si", "Less useful if")}</p><p className={styles.text}>{raise(say(lang, sheet.not_for))}</p></div>
+          </div>
         </Part>
       )}
 
@@ -90,15 +106,25 @@ export function McpSheetView({ sheet, lang, toolName = sheet.publisher, pageUrl,
         <PlugChapter sheet={sheet} lang={lang} toolName={toolName} />
       </Part>
 
-      <Part chapter="control" title={t("Ce qu'il peut faire, et comment garder la main", "What it can do, and how to stay in control")}>
+      <Part chapter="control" tone="plain" title={t("Ce qu'il peut faire, et comment garder la main", "What it can do, and how to stay in control")}>
         <p className={styles.text}>{riskSentence({ kinds: kindsOf(sheet), safeguards: sheet.safeguards, status: sheet.status }, lang)}</p>
+        {capabilities.length > 0 && (
+          <ul className={styles.abilities}>
+            {capabilities.map((line) => (
+              <li key={line.en} className={styles.ability}>
+                <Tag on="card" tone={line.kind === "pay" || line.kind === "delete" ? "overlap" : "neutral"}>{say(lang, ABILITY_TAG[line.kind])}</Tag>
+                <span className={styles.text}>{say(lang, line)}</span>
+              </li>
+            ))}
+          </ul>
+        )}
         <Facts rows={control} />
         <p className={styles.note}>{t("L'assistant n'a jamais plus de droits que votre compte.", "The assistant never has more rights than your account.")}</p>
       </Part>
 
       {related}
 
-      <Further lang={lang}>
+      <Further lang={lang} summary={furtherSummary(sheet, lang)}>
         {technical.length > 0 && <Facts rows={technical} />}
         <ToolList sheet={sheet} lang={lang} />
       </Further>
@@ -109,7 +135,7 @@ export function McpSheetView({ sheet, lang, toolName = sheet.publisher, pageUrl,
 }
 
 /** Under the title: when it was checked, how it connects, which account, and where it works. Said once. */
-function SheetFacts({ sheet, lang, localLogos }: { sheet: McpSheet; lang: Lang; localLogos: boolean }) {
+function SheetFacts({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
   const works = clientsOf(sheet).filter((client) => client !== "any");
   return (
@@ -120,13 +146,8 @@ function SheetFacts({ sheet, lang, localLogos }: { sheet: McpSheet; lang: Lang; 
       {works.length > 0 && (
         <li className={styles.fact}>
           <span>{t("Fonctionne avec", "Works with")}</span>
-          <span className={styles.faces}>
-            {works.map((client) => (
-              <Tooltip key={client} label={clientLabel(client, lang)}>
-                <span className={styles.face} tabIndex={0}><Logo tool={{ name: clientLabel(client, lang), slug: client, websiteUrl: CLIENTS[client].site }} size={24} localOnly={localLogos} /><span className={styles.srOnly}>{clientLabel(client, lang)}</span></span>
-              </Tooltip>
-            ))}
-          </span>
+          {/* Short names, all alike: no logo loads late above the fold, no empty circle (17/11). */}
+          <span className={styles.faces}>{works.map((client) => <span key={client} className={styles.faceName}><ClientMark client={client} size={14} />{clientLabel(client, lang)}</span>)}</span>
         </li>
       )}
     </ul>
@@ -156,15 +177,21 @@ function CopyMenu({ sheet, lang, toolName, pageUrl }: { sheet: McpSheet; lang: L
   const claudeCode = sheet.install.find((row) => row.client === "claude-code" && row.type === "command");
   const vsCode = sheet.install.find((row) => row.client === "vs-code" && row.type === "url" && row.value.startsWith("vscode:"))?.value ?? vsCodeInstallLink(sheet);
   const cursor = sheet.install.find((row) => row.client === "cursor" && row.type === "url")?.value ?? cursorInstallLink(sheet);
-  const entries: { label: string; run?: () => void; href?: string }[] = [
-    { label: t("Copier la fiche en Markdown", "Copy the sheet as Markdown"), run: () => copy(sheetMarkdown(sheet, { toolName, url: pageUrl, lang }), t("Fiche copiée", "Sheet copied")) },
-    ...(claudeCode ? [{ label: t("Copier la commande pour Claude Code", "Copy the Claude Code command"), run: () => copy(claudeCode.value, t("Commande copiée", "Command copied")) }] : []),
-    ...(vsCode ? [{ label: t("Brancher à VS Code", "Plug into VS Code"), href: vsCode }] : []),
-    ...(cursor ? [{ label: t("Brancher à Cursor", "Plug into Cursor"), href: cursor }] : []),
+  const claude = sheet.install.find((row) => row.client === "claude" && row.type === "url" && row.value.includes("claude.ai/directory"))?.value;
+  const entries: { label: string; help: string; icon: ReactNode; run?: () => void; href?: string }[] = [
+    { label: t("Copier la fiche en Markdown", "Copy the sheet as Markdown"), help: t("À coller dans votre assistant", "To paste in your assistant"), icon: <FileText />,
+      run: () => copy(sheetMarkdown(sheet, { toolName, url: pageUrl, lang }), t("Fiche copiée", "Sheet copied")) },
+    ...(claude ? [{ label: t("Ouvrir dans Claude", "Open in Claude"), help: t(`Ouvre ${toolName} dans l'annuaire de Claude`, `Opens ${toolName} in Claude's directory`), icon: <ClientMark client="claude" size={20} />, href: claude }] : []),
+    ...(claudeCode ? [{ label: t("Commande Claude Code", "Claude Code command"), help: t("Ajoute le serveur depuis le terminal", "Adds the server from the terminal"), icon: <Code2 />,
+      run: () => copy(claudeCode.value, t("Commande copiée", "Command copied")) }] : []),
+    ...(vsCode ? [{ label: t("Brancher à VS Code", "Plug into VS Code"), help: t("Ouvre VS Code et propose l'installation", "Opens VS Code and offers to install"), icon: <ClientMark client="vs-code" size={20} />, href: vsCode }] : []),
+    ...(cursor ? [{ label: t("Brancher à Cursor", "Plug into Cursor"), help: t("Ouvre Cursor et propose l'installation", "Opens Cursor and offers to install"), icon: <ClientMark client="cursor" size={20} />, href: cursor }] : []),
   ];
+  const assistants = clientsOf(sheet).filter((client) => clientGroup(client) === "assistant");
   return (
     <div className={styles.menuRoot} ref={root}>
-      <Button variant="secondary" icon={<Copy />} aria-expanded={open} aria-controls={menu} onClick={() => setOpen((v) => !v)}>
+      {assistants.length > 0 && <span className={styles.menuMarks} aria-hidden="true">{assistants.map((client) => <ClientMark key={client} client={client} size={16} />)}</span>}
+      <Button variant="primary" icon={<Copy />} aria-expanded={open} aria-controls={menu} onClick={() => setOpen((v) => !v)}>
         {t("Copier pour votre assistant", "Copy for your assistant")}<span className={styles.chevron} data-open={open || undefined} aria-hidden="true"><ChevronDown /></span>
       </Button>
       {open && (
@@ -172,8 +199,8 @@ function CopyMenu({ sheet, lang, toolName, pageUrl }: { sheet: McpSheet; lang: L
           {entries.map((entry) => (
             <li key={entry.label}>
               {entry.href
-                ? <a className={styles.menuItem} href={entry.href} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>{entry.label}<ExternalLink aria-hidden="true" /></a>
-                : <button type="button" className={styles.menuItem} onClick={entry.run}>{entry.label}</button>}
+                ? <a className={styles.menuItem} href={entry.href} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}><MenuEntry {...entry} /><ExternalLink aria-hidden="true" /></a>
+                : <button type="button" className={styles.menuItem} onClick={entry.run}><MenuEntry {...entry} /></button>}
             </li>
           ))}
         </ul>
@@ -181,6 +208,32 @@ function CopyMenu({ sheet, lang, toolName, pageUrl }: { sheet: McpSheet; lang: L
       <span className={styles.srOnly} aria-live="polite">{said}</span>
       {said && <span className={styles.done} aria-hidden="true"><Check />{said}</span>}
     </div>
+  );
+}
+
+function MenuEntry({ label, help, icon }: { label: string; help: string; icon: ReactNode }) {
+  return <>
+    <span className={styles.menuIcon} aria-hidden="true">{icon}</span>
+    <span className={styles.menuWords}><span className={styles.menuLabel}>{label}</span><span className={styles.menuHelp}>{help}</span></span>
+  </>;
+}
+
+/**
+ * A place's small logo. Its space is reserved and it loads at once (it sits above the fold); it stays invisible
+ * until loaded and steps through the logo sources on error, so a reader never sees an empty circle. No logo: a pictogram.
+ */
+function ClientMark({ client, size }: { client: ClientId; size: 14 | 16 | 20 }) {
+  const mark = CLIENT_MARKS[client];
+  return mark ? <LogoMark tool={mark} size={size} /> : <span className={styles.mark} style={{ width: size, height: size }} aria-hidden="true"><Code2 /></span>;
+}
+
+function LogoMark({ tool, size }: { tool: { name: string; slug: string; websiteUrl: string }; size: 14 | 16 | 20 }) {
+  // The system's source chain: it moves on from a source that hangs, which a bare onError never sees.
+  const { src, shown, imgRef, loaded, onLoad, onError } = useToolLogoSource(tool, 32);
+  return (
+    <span className={styles.mark} style={{ width: size, height: size }} aria-hidden="true">
+      {src ? <img ref={imgRef} key={src} src={shown} alt="" width={size} height={size} loading="eager" decoding="async" data-loaded={loaded || undefined} onLoad={onLoad} onError={onError} /> : <Code2 />}
+    </span>
   );
 }
 
@@ -272,7 +325,7 @@ export function SkillSheetView({ skill, lang, reportHref, related }: { skill: Sk
       </Part>
       {related}
       {skill.install.length > 0 && (
-        <Further lang={lang}>
+        <Further lang={lang} summary={t("Instructions d'installation de l'éditeur", "The vendor's install instructions")}>
           <ul className={styles.install}>
             {skill.install.map((row, index) => (
               <li key={index} className={styles.installRow}>
@@ -289,27 +342,32 @@ export function SkillSheetView({ skill, lang, reportHref, related }: { skill: Sk
   );
 }
 
-function Part({ chapter, title, children }: { chapter: string; title: string; children: ReactNode }) {
+/** A chapter: the main one (Brancher) on a tile; the others on the page, so the sheet has a rhythm. */
+function Part({ chapter, title, tone = "tile", children }: { chapter: string; title: string; tone?: "tile" | "plain"; children: ReactNode }) {
   const id = useId();
-  return <section className={styles.part} aria-labelledby={id} data-chapter={chapter}><h2 id={id} className={styles.partTitle}>{title}</h2>{children}</section>;
+  return <section className={tone === "tile" ? styles.part : styles.plain} aria-labelledby={id} data-chapter={chapter}><h2 id={id} className={styles.partTitle}>{title}</h2>{children}</section>;
 }
 
-/** « Pour aller plus loin »: the technical sheet, folded at the end. */
-function Further({ lang, children }: { lang: Lang; children: ReactNode }) {
+/** « Pour aller plus loin »: a full-width row that says what it hides; the technical sheet folds out under it. */
+function Further({ lang, summary, children }: { lang: Lang; summary?: string; children: ReactNode }) {
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
   const [open, setOpen] = useState(false);
   const panel = useId();
   return (
-    <Part chapter="further" title={t("Pour aller plus loin", "Going further")}>
-      <div className={styles.toggle}>
-        <TextButton aria-expanded={open} aria-controls={panel} onClick={() => setOpen((v) => !v)}>
-          {open ? t("Replier la fiche technique", "Fold the technical sheet") : t("Déplier la fiche technique", "Show the technical sheet")}<span className={styles.chevron} data-open={open || undefined} aria-hidden="true"><ChevronDown /></span>
-        </TextButton>
-      </div>
+    <section className={styles.furtherBlock} data-chapter="further">
+      <h2 className={styles.furtherHeading}>
+        <button type="button" className={styles.furtherRow} aria-expanded={open} aria-controls={panel} onClick={() => setOpen((v) => !v)}>
+          <span className={styles.furtherText}>
+            <span className={styles.partTitle}>{t("Pour aller plus loin", "Going further")}</span>
+            <span className={styles.note}>{summary ?? t("Détails techniques", "Technical details")}</span>
+          </span>
+          <span className={styles.chevron} data-open={open || undefined} aria-hidden="true"><ChevronDown /></span>
+        </button>
+      </h2>
       <div id={panel}>
         <Collapse open={open}><div className={styles.further}>{children}</div></Collapse>
       </div>
-    </Part>
+    </section>
   );
 }
 

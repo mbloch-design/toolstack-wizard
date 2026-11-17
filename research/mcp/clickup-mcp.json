@@ -9,6 +9,10 @@
     "fr": "Le serveur officiel de ClickUp permet à votre assistant de gérer tâches, documents, commentaires, temps passé et messages, en votre nom et avec vos droits. Il peut mettre une tâche à la corbeille et envoyer des messages de chat ; les appels sont plafonnés selon le forfait.",
     "en": "ClickUp's official server lets your assistant manage tasks, docs, comments, time and messages, as you and with your rights. It can send a task to Trash and post chat messages; calls are capped by plan."
   },
+  "card": {
+    "fr": "Suivre vos tâches, vos documents et votre temps passé.",
+    "en": "Follow your tasks, documents and time spent."
+  },
   "examples": [
     {
       "fr": "Quelles tâches sont en retard sur le projet Refonte ?",

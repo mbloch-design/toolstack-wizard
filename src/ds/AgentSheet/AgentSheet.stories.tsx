@@ -19,7 +19,8 @@ type Story = StoryObj<typeof McpSheetView>;
 const REPORT = "/fr/contact?subject=correction";
 const server = (name: keyof typeof sheetStates, toolName: string): Story => ({
   render: (_args, context) => <McpSheetView sheet={sheetStates[name]} toolName={toolName} lang={context.globals.lang}
-    pageUrl={`https://tooltrim.com/fr/mcp/${sheetStates[name].slug}`} reportHref={REPORT} localLogos />,
+    title={context.globals.lang === "en" ? `Plug ${toolName} into your assistant` : `Brancher ${toolName} à votre assistant`}
+    pageUrl={`https://tooltrim.com/fr/mcp/${sheetStates[name].slug}`} reportHref={REPORT} />,
 });
 const chapters = (root: HTMLElement) => [...root.querySelectorAll<HTMLElement>("[data-chapter]")].map((el) => el.dataset.chapter);
 
@@ -30,6 +31,7 @@ export const Notion: Story = {
     const fr = globals.lang !== "en";
     // Content contract: our view and the plugging precede the technique.
     await expect(chapters(canvasElement)).toEqual(["change", "view", "plug", "control", "further", "sources"]);
+    await expect(canvas.getByRole("heading", { level: 1 })).toHaveTextContent(fr ? "Brancher Notion à votre assistant" : "Plug Notion into your assistant");
     await expect(canvas.getByRole("heading", { name: fr ? "Brancher Notion" : "Plug in Notion" })).toBeVisible();
     await expect(canvas.getByText(fr ? /Dans Claude, ouvrez la liste des connecteurs/ : /In Claude, open the list of connectors/)).toBeVisible();
     await userEvent.click(canvas.getByRole("button", { name: "Cursor" }));
@@ -39,13 +41,16 @@ export const Notion: Story = {
     const menu = canvas.getByRole("button", { name: fr ? /copier pour votre assistant/i : /copy for your assistant/i });
     await userEvent.click(menu);
     await expect(menu).toHaveAttribute("aria-expanded", "true");
-    await expect(canvas.getByRole("button", { name: fr ? "Copier la fiche en Markdown" : "Copy the sheet as Markdown" })).toBeVisible();
+    await expect(canvas.getByRole("button", { name: fr ? /^Copier la fiche en Markdown/ : /^Copy the sheet as Markdown/ })).toBeVisible();
+    await expect(canvas.getByRole("button", { name: fr ? /^Commande Claude Code/ : /^Claude Code command/ })).toBeVisible();
     await expect(canvas.getByRole("link", { name: fr ? /brancher à vs code/i : /plug into vs code/i })).toHaveAttribute("href", expect.stringMatching(/^vscode:mcp\/install\?/));
     await userEvent.keyboard("{Escape}");
     await expect(menu).toHaveAttribute("aria-expanded", "false");
+    // The primary button follows the pointer (magnetic hover): let it go before the layout invariants run.
+    await userEvent.unhover(menu);
 
     // The technical sheet opens on click (17/11: it once did not).
-    const toggle = canvas.getByRole("button", { name: fr ? /déplier la fiche technique/i : /show the technical sheet/i });
+    const toggle = canvas.getByRole("button", { name: fr ? /pour aller plus loin/i : /going further/i });
     await userEvent.click(toggle);
     await expect(toggle).toHaveAttribute("aria-expanded", "true");
     await waitFor(() => expect(canvas.getByText(fr ? /70 actions, dont 4 qui suppriment/ : /70 actions, 4 of which delete/)).toBeVisible());

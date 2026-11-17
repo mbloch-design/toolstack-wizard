@@ -15,7 +15,7 @@ import { useStackPins } from "@/hooks/useStackPins";
 import { Check, Plus, Plug } from "@/lib/icons";
 import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import catalog from "@/data/agents/catalog.json";
-import { byLine, clientName, say, serverFacts, type Lang, type McpSheet, type SkillSheet } from "@/lib/agents";
+import { byLine, cardSentence, clientName, say, serverFacts, serverName, type Lang, type McpSheet, type SkillSheet } from "@/lib/agents";
 import NotFound from "@/pages/NotFound";
 
 /*
@@ -64,12 +64,12 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
   const reportHref = `${prefix}/contact?subject=${encodeURIComponent(t(`Correction de fiche : ${sheet.name} (${url})`, `Page correction: ${sheet.name} (${url})`) as string)}`;
   const toolOf = (toolSlug: string) => tools.find((x) => (x.slug || x.id) === toolSlug);
   const logo = (toolSlug: string) => { const tool = toolOf(toolSlug); return tool ? <Logo tool={tool} size={24} /> : <Plug />; };
-  const nameOf = (s: McpSheet) => (SERVERS.some((o) => o.host_tool === s.host_tool && o.slug !== s.slug) ? s.name : toolOf(s.host_tool)?.name ?? s.name);
+  const nameOf = (s: McpSheet) => serverName(s, toolOf(s.host_tool)?.name ?? s.publisher, SERVERS.some((o) => o.host_tool === s.host_tool && o.slug !== s.slug), lang);
   const inStack = state.pinnedToolSlugs.includes(sheet.host_tool);
   const toolCard = (toolSlug: string, name: string) => (
     <AgentCard key={`tool-${toolSlug}`} icon={logo(toolSlug)} name={name} by={t("Fiche outil ToolTrim", "ToolTrim tool page") as string}
       summary={(lang === "en" ? toolOf(toolSlug)?.shortDescriptionEn : undefined) ?? toolOf(toolSlug)?.shortDescription}
-      facts={[t("Prix, avis et alternatives", "Pricing, reviews and alternatives") as string]}
+      facts={[{ kind: "tool", text: t("Prix, avis et alternatives", "Pricing, reviews and alternatives") as string }]}
       renderLink={(className, content) => <Link to={`${prefix}/tool/${toolSlug}`} className={className}>{content}</Link>}
       action={<Button variant="secondary" icon={inStack ? <Check /> : <Plus />} disabled={inStack || flyingSlug === toolSlug}
         onClick={(event) => addToStack(toolSlug, name, { origin: event.currentTarget })}>
@@ -77,12 +77,12 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
       </Button>} />
   );
   const serverCard = (s: McpSheet) => (
-    <AgentCard key={s.slug} icon={logo(s.host_tool)} name={nameOf(s)} by={byLine(s.publisher, lang)} summary={say(lang, s.summary)} facts={serverFacts(s, lang)}
+    <AgentCard key={s.slug} icon={logo(s.host_tool)} name={nameOf(s)} by={byLine(s.publisher, lang)} summary={s.card ? say(lang, s.card) : cardSentence(say(lang, s.summary))} facts={serverFacts(s, lang)}
       renderLink={(className, content) => <Link to={`${prefix}/mcp/${s.slug}`} className={className}>{content}</Link>} />
   );
   const skillCard = (k: SkillSheet) => (
-    <AgentCard key={k.slug} icon={logo(k.host_tool)} name={k.name} by={byLine(k.publisher, lang)} summary={say(lang, k.summary)}
-      facts={[t("Savoir-faire", "Know-how") as string, k.agents.length > 3 ? t(`${k.agents.length} agents`, `${k.agents.length} agents`) as string : k.agents.map((a) => clientName(a, lang)).join(", ")]}
+    <AgentCard key={k.slug} icon={logo(k.host_tool)} name={k.name} by={byLine(k.publisher, lang)} summary={cardSentence(say(lang, k.summary))}
+      facts={[{ kind: "skill", text: t("Savoir-faire", "Know-how") as string }, { kind: "assistant", text: k.agents.length > 3 ? t(`${k.agents.length} assistants`, `${k.agents.length} assistants`) as string : k.agents.map((a) => clientName(a, lang)).join(", ") }]}
       renderLink={(className, content) => <Link to={`${prefix}/skills/${k.slug}`} className={className}>{content}</Link>} />
   );
 
@@ -117,11 +117,12 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
         kind === "mcp" ? { label: t("Outils à brancher", "Tools to plug in") as string, href: `${prefix}/mcp` } : { label: t("Savoir-faire", "Know-how") as string, href: `${prefix}/skills` },
         { label: kind === "mcp" && siblingCount === 0 ? hostName : sheet.name },
       ]} />
-      <CatalogTitle title={kind === "mcp" ? t(`Brancher ${hostName} à votre assistant`, `Plug ${hostName} into your assistant`) as string : sheet.name}
-        lead={kind === "mcp"
-          ? t(`${sheet.name} : le branchement officiel publié par ${sheet.publisher}.`, `${sheet.name}: the official connection published by ${sheet.publisher}.`) as string
-          : t(`Un savoir-faire officiel de ${sheet.publisher} pour votre assistant.`, `Official know-how from ${sheet.publisher} for your assistant.`) as string} />
-      {server ? <McpSheetView sheet={server} toolName={hostName} lang={lang} pageUrl={url} reportHref={reportHref} related={related} /> : <SkillSheetView skill={skill!} lang={lang} reportHref={reportHref} related={related} />}
+      {server
+        ? <McpSheetView sheet={server} title={t(`Brancher ${hostName} à votre assistant`, `Plug ${hostName} into your assistant`) as string} toolName={hostName} lang={lang} pageUrl={url} reportHref={reportHref} related={related} />
+        : <>
+          <CatalogTitle title={sheet.name} lead={t(`Un savoir-faire officiel de ${sheet.publisher} pour votre assistant.`, `Official know-how from ${sheet.publisher} for your assistant.`) as string} />
+          <SkillSheetView skill={skill!} lang={lang} reportHref={reportHref} related={related} />
+        </>}
     </Page>
   );
 };

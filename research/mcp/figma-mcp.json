@@ -9,6 +9,10 @@
     "fr": "Le serveur distant de Figma donne à votre assistant le contexte de vos designs (composants, variables, mise en page) et, en bêta, le droit de créer et de modifier dans vos fichiers. C'est le serveur à préférer : rien à installer.",
     "en": "Figma's remote server gives your assistant your designs' context (components, variables, layout) and, in beta, the ability to create and edit in your files. It is the one to prefer: nothing to install."
   },
+  "card": {
+    "fr": "Lire vos maquettes et en créer de nouvelles, depuis le web.",
+    "en": "Read your mockups and create new ones, from the web."
+  },
   "examples": [
     {
       "fr": "Décris cette maquette : ses pages, ses composants et ses couleurs.",

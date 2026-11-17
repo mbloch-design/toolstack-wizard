@@ -9,6 +9,10 @@
     "fr": "Le serveur officiel de HubSpot ouvre à votre assistant le CRM, les campagnes, le contenu et les publications sociales. Les créations et modifications demandent une confirmation explicite, et aucune suppression n'est documentée.",
     "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating and editing require explicit confirmation, and no deletion is documented."
   },
+  "card": {
+    "fr": "Consulter et mettre à jour votre CRM, vos campagnes et vos contenus.",
+    "en": "Read and update your CRM, campaigns and content."
+  },
   "examples": [
     {
       "fr": "Quelles transactions sont encore ouvertes, de la plus grosse à la plus petite ?",

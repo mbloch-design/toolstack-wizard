@@ -9,6 +9,10 @@
     "fr": "Le serveur officiel de Notion donne à votre assistant l'accès à vos pages, bases de données, commentaires, fichiers et agenda Notion. Il peut lire, créer, modifier et mettre à la corbeille, toujours dans la limite de vos droits.",
     "en": "Notion's official server gives your assistant access to your Notion pages, databases, comments, files and calendar. It can read, create, edit and move to trash, always within your own rights."
   },
+  "card": {
+    "fr": "Retrouver, résumer et créer des pages dans votre espace Notion.",
+    "en": "Find, summarise and create pages in your Notion workspace."
+  },
   "examples": [
     {
       "fr": "Résume mes notes de réunion de cette semaine et liste les actions à faire.",
