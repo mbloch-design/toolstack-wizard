@@ -1,203 +1,161 @@
 import { useId, useState, type ReactNode } from "react";
-import {
-  STACK_CALL_WORDS, assistantLabel, guardOf, assistantWords, assistantsOf, plugSteps, riskSentence, say,
-  type CardFact, type Lang, type McpCard, type Need, type StackCall,
-} from "@/lib/agents";
-import { BarChart3, Bot, Clock3, FolderKanban, Globe, Handshake, Laptop2, Lightbulb, Megaphone, Palette, Search, ShieldCheck, Sparkles, UserRound, Wallet, Wrench } from "@/lib/icons";
-import { ButtonArrow, LinkArrow, buttonAttrs, linkClass } from "../Button/Button";
-import { LinkRow, LinkRows } from "../Catalog/Catalog";
+import type { AgentCapabilityKind } from "@/data/types";
+import { CONSEQUENCE, say, typo, type CardFact, type Lang } from "@/lib/agents";
+import type { ToolStatus } from "@/lib/agentReport";
+import { Bot, Check, CreditCard, Eye, Globe, Laptop2, Mail, Pencil, Sparkles, Trash2, UserRound, Wrench } from "@/lib/icons";
+import { LinkArrow, linkClass } from "../Button/Button";
+import Field from "../Field/Field";
 import Prompt from "../Prompt/Prompt";
 import styles from "./AgentHub.module.css";
 
 /*
- * The hub /agents (S1 bis, 17/11/2026; layout pass the same day): it starts from the person, not the list. What do
- * you want your assistant to do (a need leads to one tool, the request you could type, the risk in words, three
- * steps and « Brancher Calendly → »); what your stack can plug in; where to start. The full list comes after.
+ * The hub /agents as a report (step 4, 17/11/2026): your assistant, your tools, one sentence that sums it up, one
+ * row per tool (where it stands, the gravest thing the assistant could do there, a request to copy, « Brancher → »),
+ * then every tool that plugs in, by family. No need picker, no technical filter, no skills.
  */
 
-/** A router link to a sheet; attrs carry a button's look (buttonAttrs) when the link is the block's action. */
-type SheetLink = (slug: string, className: string, content: ReactNode, attrs?: Record<string, string>) => ReactNode;
-type LinkAttrs = { className: string } & Record<string, string>;
-const split = ({ className, ...attrs }: LinkAttrs) => [className, attrs] as const;
+type RenderLink = (slug: string, className: string, content: ReactNode) => ReactNode;
 
-const NEED_ICONS: Record<string, ReactNode> = {
-  meetings: <Clock3 />, notes: <Search />, payments: <Wallet />, traffic: <BarChart3 />,
-  social: <Megaphone />, projects: <FolderKanban />, visuals: <Palette />, clients: <Handshake />,
-};
+export interface ChecklistTool { slug: string; name: string; logo: ReactNode }
 
-/** « Que voulez-vous que votre assistant fasse ? »: needs as a compact grid of choices, the advice under the choice. */
-export function NeedPicker({ needs, cards, lang, toolName, logo, renderSheetLink }: {
-  needs: Need[];
-  cards: McpCard[];
-  lang: Lang;
-  /** The catalogue name of a tool (« Notion »), from its slug. */
-  toolName: (toolSlug: string) => string;
-  /** The system's Logo for a tool slug. */
-  logo: (toolSlug: string, size?: 24 | 40) => ReactNode;
-  renderSheetLink: SheetLink;
-}) {
-  const t = (fr: string, en: string) => (lang === "en" ? en : fr);
-  const [current, setCurrent] = useState(needs[0]?.id);
-  const panel = useId();
-  const need = needs.find((n) => n.id === current) ?? needs[0];
-  const card = need && cards.find((c) => c.slug === need.server);
-  if (!need || !card) return null;
+/** One of the hub's two questions (« Votre assistant », « Vos outils »): its words, then its control. */
+export function HubQuestion({ title, note, children }: { title: string; note?: ReactNode; children: ReactNode }) {
+  const id = useId();
   return (
-    <div className={styles.picker}>
-      <div className={styles.needs} role="group" aria-label={t("Besoins", "Needs")}>
-        {needs.map((n) => (
-          <button key={n.id} type="button" className={styles.need} aria-pressed={n.id === need.id} aria-controls={panel} onClick={() => setCurrent(n.id)}>
-            <span className={styles.needIcon} aria-hidden="true">{NEED_ICONS[n.id] ?? <Bot />}</span>{say(lang, n)}
-          </button>
-        ))}
+    <section className={styles.question} aria-labelledby={id}>
+      <div className={styles.questionHead}>
+        <h2 id={id} className={styles.questionTitle}>{title}</h2>
+        {note && <p className={styles.questionNote}>{note}</p>}
       </div>
-      <div id={panel} aria-live="polite">
-        <NeedAdvice need={need} card={card} also={need.also.flatMap((slug) => cards.filter((c) => c.slug === slug))}
-          lang={lang} toolName={toolName} logo={logo} renderSheetLink={renderSheetLink} />
-      </div>
-    </div>
+      {children}
+    </section>
   );
 }
 
-/** One need's advice: the tool, the request you could type, three facts, three steps, « Brancher Calendly → ». */
-function NeedAdvice({ need, card, also, lang, toolName, logo, renderSheetLink }: {
-  need: Need; card: McpCard; also: McpCard[]; lang: Lang;
-  toolName: (toolSlug: string) => string; logo: (toolSlug: string, size?: 24 | 40) => ReactNode; renderSheetLink: SheetLink;
-}) {
-  const t = (fr: string, en: string) => (lang === "en" ? en : fr);
-  const name = toolName(card.host_tool);
-  const assistant = assistantsOf(card.setup)[0];
-  const steps = assistant ? plugSteps(card, assistant, name, lang) : [];
-  const assistants = assistantWords(card.setup, lang);
-  const titleId = useId();
-  const [buttonClass, buttonRest] = split(buttonAttrs("primary") as unknown as LinkAttrs);
-  return (
-    <article className={styles.advice} aria-labelledby={titleId} data-need={need.id}>
-      <header className={styles.adviceHead}>
-        <span className={styles.logo} aria-hidden="true">{logo(card.host_tool, 40)}</span>
-        <h3 id={titleId} className={styles.title}>{name}</h3>
-      </header>
-      <figure className={styles.request}>
-        <figcaption className={styles.term}>{t("Vous pourrez lui demander", "You could ask it")}</figcaption>
-        <Prompt text={lang === "en" ? need.example.en : need.example.fr} lang={lang} size="lead" />
-      </figure>
-      <ul className={styles.factLine}>
-        {assistants && <li className={styles.fact}><Bot aria-hidden="true" /><span><span className={styles.srOnly}>{t("Avec : ", "With: ")}</span>{assistants}</span></li>}
-        <li className={styles.fact}><ShieldCheck aria-hidden="true" /><span><span className={styles.srOnly}>{t("Le risque : ", "The risk: ")}</span>{riskSentence(guardOf(card), lang)}</span></li>
-        {card.for && <li className={styles.fact}><Lightbulb aria-hidden="true" /><span>{t(`Utile si ${lower(card.for.fr)}`, `Useful if ${lower(card.for.en)}`)}</span></li>}
-      </ul>
-      {steps.length > 0 && assistant && (
-        <div className={styles.group}>
-          <p className={styles.term}>{t(`En 3 étapes, avec ${assistantLabel(assistant, lang)}`, `In 3 steps, with ${assistantLabel(assistant, lang)}`)}</p>
-          <Steps steps={steps} />
-        </div>
-      )}
-      <div className={styles.actions}>
-        {renderSheetLink(card.slug, buttonClass, <><span>{t(`Brancher ${name}`, `Plug in ${name}`)}</span><ButtonArrow /></>, buttonRest)}
-        {also.length > 0 && (
-          <div className={styles.also}>
-            <p className={styles.note}>{t("Aussi pour ce besoin", "Also for this need")}</p>
-            <ul className={styles.alsoList}>
-              {also.map((other) => (
-                <li key={other.slug}>{renderSheetLink(other.slug, styles.alsoCard, <>
-                  <span className={styles.logo} aria-hidden="true">{logo(other.host_tool)}</span><span className={styles.alsoName}>{toolName(other.host_tool)}</span><LinkArrow />
-                </>)}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
-    </article>
-  );
-}
-
-function Steps({ steps }: { steps: string[] }) {
-  return <ol className={styles.steps}>{steps.map((step) => <li key={step} className={styles.step}>{step}</li>)}</ol>;
-}
-
-const lower = (text: string) => text.charAt(0).toLowerCase() + text.slice(1);
-/** A link that looks like a button: its class, its content, the button's data attributes. */
-function buttonLink(variant: "primary" | "secondary", content: ReactNode) {
-  const [className, attrs] = split(buttonAttrs(variant) as unknown as LinkAttrs);
-  return [className, content, attrs] as const;
-}
-
-export interface StackAgentItem {
-  /** The tool's catalogue slug. */
-  slug: string;
-  name: string;
-  icon: ReactNode;
-  call: StackCall;
-  /** Its server, when it has one. */
-  card?: McpCard;
+/** The two questions together: side by side when there is room, the first screen on a phone. */
+export function HubQuestions({ children }: { children: ReactNode }) {
+  return <div className={styles.questions}>{children}</div>;
 }
 
 /**
- * « Avec votre stack »: the tools of Ma stack and our call on each (plug it, with care, not yet).
- * Without a stack: a short invitation, never an empty block.
+ * « Vos outils » without a stack: the checked tools as a grid of logos to tick, and the catalogue in a search field.
+ * Ticking never writes Ma stack; the page offers that separately.
  */
-export function StackAgents({ items, lang, renderSheetLink, renderToolLink, renderStackLink }: {
-  /** null: the visitor has no stack yet; []: none of its tools has been checked. */
-  items: StackAgentItem[] | null;
+export function ToolChecklist({ tools, catalogue = [], selected, onToggle, lang }: {
+  /** The tools ToolTrim has checked, always shown. */
+  tools: ChecklistTool[];
+  /** The rest of the catalogue, reached by search. */
+  catalogue?: ChecklistTool[];
+  selected: string[];
+  onToggle: (slug: string) => void;
   lang: Lang;
-  renderSheetLink: SheetLink;
-  renderToolLink: (slug: string, className: string, content: ReactNode) => ReactNode;
-  renderStackLink: (className: string, content: ReactNode, attrs?: Record<string, string>) => ReactNode;
 }) {
-  const t = (fr: string, en: string) => (lang === "en" ? en : fr);
-  if (!items) {
+  const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
+  const [query, setQuery] = useState("");
+  const shown = new Set(tools.map((tool) => tool.slug));
+  const needle = query.trim().toLowerCase();
+  // A tool ticked from the search stays in view, after the checked ones.
+  const extra = catalogue.filter((tool) => !shown.has(tool.slug) && (selected.includes(tool.slug) || (needle.length > 1 && tool.name.toLowerCase().includes(needle))));
+  const tile = (tool: ChecklistTool) => {
+    const on = selected.includes(tool.slug);
     return (
-      <div className={styles.invite}>
-        <p className={styles.text}>{t("Ajoutez vos outils dans Ma stack : nous vous dirons lesquels brancher à votre assistant, et avec quelle prudence.", "Add your tools to My stack: we will tell you which ones to plug into your assistant, and with how much care.")}</p>
-        {renderStackLink(...buttonLink("secondary", <><span>{t("Composer ma stack", "Build my stack")}</span><ButtonArrow /></>))}
-      </div>
+      <li key={tool.slug}>
+        <button type="button" className={styles.check} aria-pressed={on} onClick={() => onToggle(tool.slug)}>
+          <span className={styles.logo} aria-hidden="true">{tool.logo}</span>
+          <span className={styles.checkName}>{tool.name}</span>
+          <span className={styles.checkMark} aria-hidden="true">{on && <Check />}</span>
+        </button>
+      </li>
     );
-  }
-  if (!items.length) {
-    return <p className={styles.text}>{t("Nous n'avons pas encore vérifié les outils de votre stack. La liste complète, plus bas, dit ce qui se branche aujourd'hui.", "We have not checked the tools of your stack yet. The full list, further down, says what plugs in today.")}</p>;
-  }
-  const plugged = items.filter((item) => item.card).length;
-  const order: StackCall[] = ["plug", "careful", "not_yet"];
-  const sorted = order.flatMap((call) => items.filter((item) => item.call === call));
+  };
   return (
-    <div className={styles.stack}>
-      <p className={styles.text}>{plugged === 0
-        ? t("Aucun de vos outils ne se branche encore officiellement à un assistant.", "None of your tools plugs into an assistant officially yet.")
-        : t(`${plugged} de vos ${items.length} outils se branche${plugged > 1 ? "nt" : ""} à votre assistant.`, `${plugged} of your ${items.length} tools plug${plugged > 1 ? "" : "s"} into your assistant.`)}</p>
-      <LinkRows>
-        {sorted.map((item) => {
-          const detail = item.card ? (item.card.for ? t(`Utile si ${lower(item.card.for.fr)}`, `Useful if ${lower(item.card.for.en)}`) : riskSentence(guardOf(item.card), lang))
-            : t("Pas de branchement officiel vérifié chez l'éditeur.", "No official connection checked with the vendor.");
-          return (
-            <LinkRow key={item.slug} name={item.name} icon={item.icon} detail={detail} note={say(lang, STACK_CALL_WORDS[item.call])}
-              renderLink={(className, content) => item.card ? renderSheetLink(item.card.slug, className, content) : renderToolLink(item.slug, className, content)} />
-          );
-        })}
-      </LinkRows>
+    <div className={styles.checklist}>
+      <ul className={styles.checks} aria-label={t("Outils vérifiés", "Checked tools")}>{tools.map(tile)}</ul>
+      {catalogue.length > 0 && (
+        <Field type="search" label={t("Un autre outil ?", "Another tool?")} placeholder={t("Chercher dans le catalogue", "Search the catalogue")}
+          value={query} onChange={(event) => setQuery(event.target.value)} />
+      )}
+      {extra.length > 0 && <ul className={styles.checks} aria-label={t("Du catalogue", "From the catalogue")}>{extra.slice(0, 12).map(tile)}</ul>}
     </div>
   );
 }
 
-/** « Par où commencer »: three habits, then the guide. */
-export function StartHere({ lang, renderGuideLink }: { lang: Lang; renderGuideLink: (className: string, content: ReactNode) => ReactNode }) {
-  const t = (fr: string, en: string) => (lang === "en" ? en : fr);
-  const points = [
-    [t("Choisir son assistant", "Pick your assistant"), t("Claude et ChatGPT branchent en un clic la plupart des outils de cette page ; Gemini et Copilot, quelques-uns. Gardez celui que vous utilisez déjà.", "Claude and ChatGPT plug most tools on this page in one click; Gemini and Copilot, a few. Keep the one you already use.")],
-    [t("Brancher d'abord en lecture", "Plug in for reading first"), t("Les premiers jours, demandez des résumés, des recherches, des chiffres. Vous verrez ce que l'assistant comprend de vos outils.", "For the first days, ask for summaries, searches, figures. You will see what the assistant understands of your tools.")],
-    [t("Garder la main", "Stay in control"), t("Avant d'accepter, lisez ce qu'il peut modifier, supprimer ou payer. L'assistant n'a jamais plus de droits que votre compte.", "Before accepting, read what it can edit, delete or pay. The assistant never has more rights than your account.")],
-  ];
+const KIND_ICON: Record<AgentCapabilityKind, ReactNode> = { pay: <CreditCard />, delete: <Trash2 />, send: <Mail />, write: <Pencil />, read: <Eye /> };
+
+export interface ReportItem {
+  slug: string;
+  name: string;
+  logo: ReactNode;
+  status: ToolStatus;
+  /** The server sheet the row leads to. */
+  sheet?: string;
+  gravest?: AgentCapabilityKind;
+  /** A request to copy, from ToolTrim's words for the server. */
+  request?: string;
+  /** For a tool without an official server: one of its own alternatives that plugs in. */
+  alternative?: { slug: string; name: string; logo: ReactNode };
+}
+
+/** The report: one row per tool, in the order of the rows given (one click, to set up, elsewhere, none, not checked). */
+export function StackReport({ items, assistant, lang, renderSheetLink, renderToolLink, renderReportLink }: {
+  items: ReportItem[];
+  /** The assistant's name in the rows (« Claude »), or null for « Autre ». */
+  assistant: string | null;
+  lang: Lang;
+  renderSheetLink: RenderLink;
+  renderToolLink: RenderLink;
+  /** « Signaler cet outil »: the contact page, the tool named in the subject. */
+  renderReportLink: (name: string, className: string, content: ReactNode) => ReactNode;
+}) {
+  const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
+  const status = (item: ReportItem) => ({
+    one_click: assistant ? t(`En un clic depuis ${assistant}`, `One click from ${assistant}`) : t("En un clic", "One click"),
+    configure: assistant ? t(`À configurer dans ${assistant}`, `To set up in ${assistant}`) : t("À configurer dans votre assistant", "To set up in your assistant"),
+    elsewhere: assistant ? t(`L'éditeur ne documente pas ${assistant}`, `The vendor does not document ${assistant}`) : t("L'éditeur ne documente pas votre assistant", "The vendor does not document your assistant"),
+    none: t("Pas de branchement officiel", "No official connection"),
+    unchecked: t("Pas encore vérifié", "Not checked yet"),
+  })[item.status];
   return (
-    <div className={styles.start}>
-      <ol className={styles.points}>
-        {points.map(([title, text]) => (
-          <li key={title} className={styles.point}>
-            <p className={styles.pointTitle}>{title}</p>
-            <p className={styles.text}>{text}</p>
-          </li>
-        ))}
-      </ol>
-      {renderGuideLink(linkClass(), <>{t("Le guide pour freelances non-développeurs", "The guide for non-developer freelancers")}<LinkArrow /></>)}
-    </div>
+    <ul className={styles.report} aria-label={t("Vos outils", "Your tools")}>
+      {items.map((item) => (
+        <li key={item.slug} className={styles.reportRow} data-status={item.status}>
+          <div className={styles.reportHead}>
+            <span className={styles.logo} aria-hidden="true">{item.logo}</span>
+            <span className={styles.reportNames}>
+              <span className={styles.reportName}>{item.name}</span>
+              <span className={styles.reportStatus}>{status(item)}</span>
+            </span>
+          </div>
+          {item.gravest && (
+            <p className={styles.consequence} data-alert={item.gravest === "delete" || item.gravest === "pay" || undefined}>
+              <span className={styles.consequenceIcon} aria-hidden="true">{KIND_ICON[item.gravest]}</span>{say(lang, CONSEQUENCE[item.gravest])}
+            </p>
+          )}
+          {/* The status already says it does not plug in: only its own alternative that does, when it has one. */}
+          {item.status === "none" && item.alternative && (
+            <p className={styles.reportText}>{t("Une alternative qui se branche : ", "An alternative that plugs in: ")}{renderToolLink(item.alternative.slug, linkClass("inline"), item.alternative.name)}.</p>
+          )}
+          {item.request && <div className={styles.reportRequest}><Prompt text={item.request} lang={lang} /></div>}
+          {(item.sheet || item.status === "unchecked") && (
+            <div className={styles.reportAction}>
+              {item.sheet && renderSheetLink(item.sheet, linkClass(), <>{t("Brancher", "Plug in")}<span className={styles.srOnly}> {item.name}</span><LinkArrow shown /></>)}
+              {item.status === "unchecked" && renderReportLink(item.name, linkClass("quiet"), <>{t("Signaler cet outil", "Report this tool")}<span className={styles.srOnly}> : {item.name}</span></>)}
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** One catalogue category of the full list: its name and count, then its cards. */
+export function AgentShelf({ title, count, children }: { title: string; count: number; children: ReactNode }) {
+  const id = useId();
+  return (
+    <section className={styles.shelf} aria-labelledby={id}>
+      <h3 id={id} className={styles.shelfTitle}>{title} <span className={styles.shelfCount}>{count}</span></h3>
+      {children}
+    </section>
   );
 }
 
@@ -234,22 +192,9 @@ const FACT_ICONS: Record<CardFact["kind"], ReactNode> = {
   skill: <Sparkles aria-hidden="true" />, tool: <Wrench aria-hidden="true" />, assistant: <Bot aria-hidden="true" />,
 };
 
+
 export function AgentCards({ label, flat = false, children }: { label: string;
-  /** The sheet's one card shape (step 1 bis): light grey on a white band, no shadow, three columns. */
+  /** The sheet's one card shape (step 1 bis): white, resting shadow, three columns. */
   flat?: boolean; children: ReactNode }) {
   return <ul className={styles.cards} data-flat={flat || undefined} aria-label={label}>{children}</ul>;
-}
-
-/** Filters in labelled groups (« Comment », « Avec quel assistant »): they wrap, never a rail that overflows. */
-export function FilterGroups({ groups }: { groups: { label: string; chips: ReactNode }[] }) {
-  return (
-    <div className={styles.filterGroups}>
-      {groups.map((group) => (
-        <div key={group.label} className={styles.filterGroup} role="group" aria-label={group.label}>
-          <p className={styles.note} aria-hidden="true">{group.label}</p>
-          <div className={styles.filterChips}>{group.chips}</div>
-        </div>
-      ))}
-    </div>
-  );
 }

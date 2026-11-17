@@ -7,7 +7,9 @@ type Option<T extends string> = { value: T; label: ReactNode; ariaLabel?: string
  * A segmented picker: one thumb that slides from option to option with a light spring. Each option takes the width of
  * its own label (never a share that a long label overflows); the thumb is set on the chosen option's real box.
  */
-export default function Segmented<T extends string>({ options, value, onChange, label }: { options: Option<T>[]; value: T; onChange: (value: T) => void; label: string }) {
+export default function Segmented<T extends string>({ options, value, onChange, label, compact = false }: { options: Option<T>[]; value: T; onChange: (value: T) => void; label: string;
+  /** Many short options (five assistants): a tighter padding, so five fit on a phone. */
+  compact?: boolean }) {
   const index = Math.max(0, options.findIndex((option) => option.value === value));
   const group = useRef<HTMLDivElement>(null);
   const [thumb, setThumb] = useState<{ left: number; width: number } | null>(null);
@@ -24,7 +26,7 @@ export default function Segmented<T extends string>({ options, value, onChange, 
     return () => observer?.disconnect();
   }, [index, options.length]);
   return (
-    <div ref={group} className={styles.segmented} role="group" aria-label={label}
+    <div ref={group} className={styles.segmented} data-compact={compact || undefined} role="group" aria-label={label}
       style={(thumb ? { "--thumb-x": `${thumb.left}px`, "--thumb-w": `${thumb.width}px` } : { "--n": options.length, "--i": index }) as unknown as CSSProperties}>
       <span className={styles.thumb} data-measured={thumb ? "" : undefined} aria-hidden="true" />
       {options.map((option) => (

@@ -7,74 +7,74 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Page from "@/ds/Page/Page";
 import Chip, { Chips, chipLinkAttrs } from "@/ds/Chip/Chip";
 import Logo from "@/ds/Logo/Logo";
-import { CatalogSection, CatalogTitle, EmptyState } from "@/ds/Catalog/Catalog";
-import { LinkArrow, linkClass } from "@/ds/Button/Button";
-import { AgentCard, AgentCards, FilterGroups, NeedPicker, StackAgents, StartHere, type StackAgentItem } from "@/ds/AgentHub/AgentHub";
-import { runCatalogFilter } from "@/hooks/useCatalogStickyToolbar";
-import { Plug, SearchCheck } from "@/lib/icons";
+import Segmented from "@/ds/Segmented/Segmented";
+import Chapter, { Chapters } from "@/ds/Chapter/Chapter";
+import { CatalogSection, CatalogTitle } from "@/ds/Catalog/Catalog";
+import { LinkArrow, TextButton, linkClass } from "@/ds/Button/Button";
+import { AgentCard, AgentCards, AgentShelf, HubQuestion, HubQuestions, StackReport, ToolChecklist, type ReportItem } from "@/ds/AgentHub/AgentHub";
+import { Plug } from "@/lib/icons";
 import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import mcpIndex from "@/data/agents/mcp_index.json";
+import { resolveToolAlternatives } from "@/lib/toolSchema";
+import { pluggedAlternatives } from "@/lib/agentAlternatives";
+import { agentShelves } from "@/lib/agentShelves";
+import { HUB_ASSISTANTS, SERVERS, checkedTools, fromStoredClient, isPlugged, reportRows, reportVerdict, toStoredClient, toolStatus, type HubAssistant } from "@/lib/agentReport";
 import skillsIndex from "@/data/agents/skills_index.json";
-import needsData from "@/data/agents/needs.json";
-import checkedNone from "@/data/agents/checked_none.json";
-import { byLine, cardSentence, guardOf, say, serverFacts, serverName, stackCall, type Lang, type McpCard, type Need, type SkillCard } from "@/lib/agents";
+import adviceData from "@/data/agents/advice.json";
+import { byLine, cardSentence, say, serverFacts, serverName, type Advice, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
 
 /*
- * The agents section (S1, 16/11/2026; S1 bis, 17/11): the hub /agents starts from the person — what you want
- * your assistant to do, what your stack can plug in, where to start — and keeps the full list at the bottom,
- * for whoever looks for one tool. /mcp (tools to plug in) and /skills (know-how) stay indexes, opening on one
- * sentence that guides. Surface words without jargon; « MCP » stays in the SEO title.
+ * The agents section, step 4 (17/11/2026): the hub /agents is a report on your stack from your assistant's side.
+ * Two questions (your assistant, your tools), one sentence that sums it up, one row per tool, then every tool that
+ * plugs in by family (need universes). /mcp is that full list on its own page. /skills stays an index until step 5.
+ * « MCP » stays in the SEO titles only.
  */
 export type AgentsView = "all" | "mcp" | "skills";
-const SERVERS = mcpIndex as McpCard[];
 const SKILLS = skillsIndex as SkillCard[];
-const NEEDS = needsData as Need[];
-const CHECKED_NONE = new Set(checkedNone as string[]);
+const ADVICE = adviceData as Record<string, Advice>;
+/** The same key as the server sheet's « Où utilisez-vous l'IA ? » (AgentSheet). */
+const CLIENT_KEY = "tooltrim.agents.client";
+/** The tools ticked without a stack, for this visitor only: never written to Ma stack. */
+const PICKS_KEY = "tooltrim.agents.tools";
 
-type FilterId = "one_click" | "risky" | "remote" | "local" | "all_plans" | "oauth" | "claude" | "chatgpt" | "gemini" | "copilot";
-const ASSISTANT_FILTERS: FilterId[] = ["claude", "chatgpt", "gemini", "copilot"];
-const FILTERS: { id: FilterId; fr: string; en: string; test: (card: McpCard) => boolean }[] = [
-  { id: "one_click", fr: "En un clic depuis ChatGPT ou Claude", en: "One click from ChatGPT or Claude", test: (c) => c.one_click.includes("claude") || c.one_click.includes("chatgpt") },
-  { id: "risky", fr: "Supprime des données ou engage un paiement", en: "Deletes data or makes a payment", test: (c) => c.kinds.includes("delete") || c.kinds.includes("pay") },
-  { id: "remote", fr: "En ligne", en: "Online", test: (c) => c.transport === "remote" },
-  { id: "local", fr: "Sur l'ordinateur", en: "On your computer", test: (c) => c.transport === "local" },
-  { id: "all_plans", fr: "Tous les forfaits", en: "Every plan", test: (c) => c.plan === "all" },
-  { id: "oauth", fr: "Connexion à votre compte", en: "Sign in to your account", test: (c) => Boolean(c.auth?.includes("oauth")) },
-  { id: "claude", fr: "Claude", en: "Claude", test: (c) => c.one_click.includes("claude") || Boolean(c.clients?.includes("claude")) },
-  { id: "chatgpt", fr: "ChatGPT", en: "ChatGPT", test: (c) => c.one_click.includes("chatgpt") || Boolean(c.clients?.includes("chatgpt")) },
-  { id: "gemini", fr: "Gemini", en: "Gemini", test: (c) => c.one_click.includes("gemini") || Boolean(c.clients?.includes("gemini")) },
-  { id: "copilot", fr: "Copilot", en: "Copilot", test: (c) => c.one_click.includes("copilot") },
-];
-
-const TITLES: Record<AgentsView, [string, string]> = { all: ["Agents IA", "AI agents"], mcp: ["Outils à brancher", "Tools to plug in"], skills: ["Savoir-faire", "Know-how"] };
-/** SEO titles keep the vendors' words (MCP, skills), in the background. */
+const TITLES: Record<AgentsView, [string, string]> = { all: ["Votre assistant IA", "Your AI assistant"], mcp: ["Outils à brancher", "Tools to plug in"], skills: ["Savoir-faire", "Know-how"] };
 const SEO_TITLES: Record<AgentsView, [string, string]> = {
-  all: ["Agents IA : brancher vos outils à votre assistant (MCP et skills)", "AI agents: plug your tools into your assistant (MCP and skills)"],
+  all: ["Votre assistant IA : ce qu'il peut faire dans vos outils (MCP)", "Your AI assistant: what it can do in your tools (MCP)"],
   mcp: ["Serveurs MCP officiels : brancher vos outils à votre assistant IA", "Official MCP servers: plug your tools into your AI assistant"],
   skills: ["Skills officiels : le savoir-faire des éditeurs pour votre assistant IA", "Official skills: vendors' know-how for your AI assistant"],
 };
 const LEADS: Record<AgentsView, [string, string]> = {
-  all: ["Votre assistant IA peut travailler dans vos outils. Dites ce que vous voulez faire : nous vous disons quoi brancher, comment, et avec quelle prudence.", "Your AI assistant can work inside your tools. Say what you want done: we tell you what to plug in, how, and with how much care."],
-  mcp: ["Les outils du catalogue qui se branchent officiellement à votre assistant IA, avec ce qu'il pourra y faire. Pas sûr de par où commencer ? Partez d'un besoin sur la page Agents IA.", "The catalogue's tools that officially plug into your AI assistant, with what it can do there. Not sure where to start? Start from a need on the AI agents page."],
+  all: ["Ce que votre assistant peut faire dans vos outils, et avec quelle prudence.", "What your assistant can do in your tools, and with how much care."],
+  mcp: ["Les outils du catalogue qui se branchent officiellement à votre assistant IA, rangés par famille.", "The catalogue's tools that officially plug into your AI assistant, by family."],
   skills: ["Des modes d'emploi publiés par les éditeurs, que votre assistant suit pour mieux travailler dans leur outil. Chacun s'ajoute au branchement de l'outil.", "Instructions published by vendors that your assistant follows to work better in their tool. Each one comes on top of plugging the tool in."],
 };
 const PATHS: Record<AgentsView, string> = { all: "agents", mcp: "mcp", skills: "skills" };
 const GUIDE = { fr: "mcp-freelances-non-developpeurs", en: "mcp-for-non-developer-freelancers" };
-/** A tool's lead server: online first (Figma has two). */
-const serverOf = (toolSlug: string) => SERVERS.filter((card) => card.host_tool === toolSlug).sort((a, b) => Number(b.transport === "remote") - Number(a.transport === "remote"))[0];
+const ASSISTANT_LABELS: Record<HubAssistant, [string, string]> = { claude: ["Claude", "Claude"], chatgpt: ["ChatGPT", "ChatGPT"], gemini: ["Gemini", "Gemini"], copilot: ["Copilot", "Copilot"], other: ["Autre", "Other"] };
+
+const read = (key: string) => { try { return window.localStorage.getItem(key); } catch { return null; } };
+const write = (key: string, value: string) => { try { window.localStorage.setItem(key, value); } catch { /* the page works without it */ } };
+
+/** The assistant, shared with the server sheet: read once after hydration, written on change. */
+function useAssistant(): [HubAssistant, (next: HubAssistant) => void] {
+  const [assistant, setAssistant] = useState<HubAssistant>("claude");
+  useEffect(() => { const stored = fromStoredClient(read(CLIENT_KEY)); if (stored) setAssistant(stored); }, []);
+  return [assistant, (next) => { setAssistant(next); write(CLIENT_KEY, toStoredClient(next)); }];
+}
 
 const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
   const { lang: rawLang, prefix, t } = useLang();
   const lang: Lang = rawLang === "en" ? "en" : "fr";
   const { tools } = useToolSummaries();
-  const { state } = useStackPins();
-  const [active, setActive] = useState<FilterId[]>([]);
+  const { state, pinTool } = useStackPins();
+  const [assistant, setAssistant] = useAssistant();
+  const [picks, setPicks] = useState<string[]>([]);
+  const [withMine, setWithMine] = useState(false);
+  useEffect(() => { try { const stored = JSON.parse(read(PICKS_KEY) ?? "[]"); if (Array.isArray(stored)) setPicks(stored.filter((slug) => typeof slug === "string")); } catch { /* none */ } }, []);
+
   const toolOf = (slug: string) => tools.find((tool) => (tool.slug || tool.id) === slug);
   const toolName = (slug: string) => toolOf(slug)?.name ?? SERVERS.find((card) => card.host_tool === slug)?.publisher ?? slug;
-
-  const servers = useMemo(() => SERVERS.filter((card) => active.every((id) => FILTERS.find((f) => f.id === id)!.test(card))), [active]);
-  const visibleServerSlugs = new Set(servers.map((card) => card.slug));
-  const skills = active.length ? SKILLS.filter((skill) => skill.server && visibleServerSlugs.has(skill.server)) : SKILLS;
+  const logo = (slug: string, size: 24 | 40 = 24) => { const tool = toolOf(slug); return tool ? <Logo tool={tool} size={size} /> : <Plug />; };
+  const assistantName = assistant === "other" ? null : ASSISTANT_LABELS[assistant][0];
 
   useEffect(() => {
     const title = `${t(...SEO_TITLES[view])} | ToolTrim`;
@@ -85,96 +85,121 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
     return () => cleanupSeo(["agents-jsonld"]);
   }, [view, prefix, t]);
 
-  // On the hub the list sits at the bottom: its filters stay in place and never send the reader back to the top.
-  const hub = view === "all";
-  const chip = (filter: (typeof FILTERS)[number]) => <Chip key={filter.id} pressed={active.includes(filter.id)} check onClick={() => toggle(filter.id)}>{t(filter.fr, filter.en)}</Chip>;
-  const toggle = (id: FilterId) => {
-    const change = () => setActive((list) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id]));
-    if (hub) change(); else void runCatalogFilter(change);
-  };
-  const logo = (slug: string, size: 24 | 40 = 24) => { const tool = toolOf(slug); return tool ? <Logo tool={tool} size={size} /> : <Plug />; };
-  const sheetLink = (slug: string, className: string, content: ReactNode, attrs?: Record<string, string>) => <Link to={`${prefix}/mcp/${slug}`} className={className} {...attrs}>{content}</Link>;
+  // Your tools: Ma stack when there is one (read only), otherwise what you ticked here.
+  const pinned = state.pinnedToolSlugs;
+  const fromStack = pinned.length > 0;
+  const slugs = fromStack ? pinned : picks;
+  const rows = useMemo(() => reportRows(slugs, assistant), [slugs, assistant]);
+  const items: ReportItem[] = rows.map((row) => {
+    const tool = toolOf(row.slug);
+    const alternative = row.status === "none" && tool ? pluggedAlternatives(resolveToolAlternatives(tool, tools))[0] : undefined;
+    const example = row.card ? ADVICE[row.card.slug]?.examples?.[0] : undefined;
+    return {
+      slug: row.slug, name: toolName(row.slug), logo: logo(row.slug), status: row.status,
+      ...(row.card ? { sheet: row.card.slug } : {}),
+      ...(row.gravest ? { gravest: row.gravest } : {}),
+      ...(example && row.status !== "elsewhere" ? { request: lang === "en" ? example.en : example.fr } : {}),
+      ...(alternative ? { alternative: { slug: alternative.slug || alternative.id, name: alternative.name, logo: logo(alternative.slug || alternative.id) } } : {}),
+    };
+  });
+  const toggle = (slug: string) => setPicks((list) => {
+    const next = list.includes(slug) ? list.filter((x) => x !== slug) : [...list, slug];
+    write(PICKS_KEY, JSON.stringify(next));
+    return next;
+  });
+  const checked = checkedTools();
+  const checklist = checked.map((slug) => ({ slug, name: toolName(slug), logo: logo(slug) })).sort((a, b) => a.name.localeCompare(b.name));
+  const catalogue = tools.filter((tool) => !checked.includes(tool.slug || tool.id)).map((tool) => ({ slug: tool.slug || tool.id, name: tool.name, logo: <Logo tool={tool} size={24} /> }));
+
+  const sheetLink = (slug: string, className: string, content: ReactNode) => <Link to={`${prefix}/mcp/${slug}`} className={className}>{content}</Link>;
+  const toolLink = (slug: string, className: string, content: ReactNode) => <Link to={`${prefix}/tool/${slug}`} className={className}>{content}</Link>;
+  const reportLink = (name: string, className: string, content: ReactNode) => (
+    <Link to={`${prefix}/contact?subject=${encodeURIComponent(t(`Outil à vérifier pour les assistants IA : ${name}`, `Tool to check for AI assistants: ${name}`) as string)}`} className={className}>{content}</Link>
+  );
+
+  // Every tool that plugs in, by family; « avec mon assistant » keeps those that plug into it.
   const serverRow = (card: McpCard) => (
     <AgentCard key={card.slug} icon={logo(card.host_tool)} name={serverName(card, toolName(card.host_tool), SERVERS.some((other) => other.host_tool === card.host_tool && other.slug !== card.slug), lang)}
       by={byLine(card.publisher, lang)} summary={card.card ? say(lang, card.card) : cardSentence(say(lang, card.summary))} facts={serverFacts(card, lang)}
       renderLink={(className, content) => sheetLink(card.slug, className, content)} />
   );
+  const listed = SERVERS.filter((card) => !withMine || isPlugged(toolStatus(card.host_tool, assistant)));
+  // A few families from Explorer's need universes, not a shelf per fine category (step 4, 17/11).
+  const shelves = agentShelves(listed, lang);
+  const fullList = <>
+    <Chips label={t("Filtrer", "Filter") as string}>
+      <Chip pressed={withMine} check onClick={() => setWithMine((on) => !on)}>{assistantName ? t(`Avec ${assistantName}`, `With ${assistantName}`) : t("Avec mon assistant", "With my assistant")}</Chip>
+    </Chips>
+    {shelves.map((shelf) => (
+      <AgentShelf key={shelf.id} title={shelf.title} count={shelf.cards.length}>
+        <AgentCards flat label={shelf.title}>{shelf.cards.map(serverRow)}</AgentCards>
+      </AgentShelf>
+    ))}
+    <Link to={`${prefix}/guide/${lang === "en" ? GUIDE.en : GUIDE.fr}`} className={linkClass()}>{t("Le guide pour bien commencer", "The guide to get started")}<LinkArrow shown /></Link>
+  </>;
+
   const skillRow = (skill: SkillCard) => (
     <AgentCard key={skill.slug} icon={logo(skill.host_tool)} name={skill.name} by={byLine(skill.publisher, lang)} summary={cardSentence(say(lang, skill.summary))}
       facts={[{ kind: "skill", text: t("Savoir-faire", "Know-how") as string }, { kind: "tool", text: toolName(skill.host_tool) }]}
       renderLink={(className, content) => <Link to={`${prefix}/skills/${skill.slug}`} className={className}>{content}</Link>} />
   );
-
-  // « Avec votre stack »: the same source as Ma stack; a tool not checked yet is left out, never guessed.
-  const pinned = state.pinnedToolSlugs;
-  const stackItems: StackAgentItem[] | null = pinned.length ? pinned.flatMap((slug) => {
-    const card = serverOf(slug);
-    const checked = card || CHECKED_NONE.has(slug);
-    if (!checked) return [];
-    return [{ slug, name: toolName(slug), icon: logo(slug), call: stackCall(card ? guardOf(card) : null), ...(card ? { card } : {}) }];
-  }) : null;
-
   const tabs = (
     <nav aria-label={t("Rubriques", "Sections") as string}>
       <Chips label={t("Rubriques", "Sections") as string}>
         {(["all", "mcp", "skills"] as AgentsView[]).map((tab) => (
-          <Link key={tab} to={`${prefix}/${PATHS[tab]}`} {...chipLinkAttrs(tab === view)}>{tab === "all" ? t("Tout", "All") : t(...TITLES[tab])}</Link>
+          <Link key={tab} to={`${prefix}/${PATHS[tab]}`} {...chipLinkAttrs(tab === view)}>{t(...TITLES[tab])}</Link>
         ))}
       </Chips>
     </nav>
   );
-  const list = <>
-    {view !== "skills" && (
-      <FilterGroups groups={[
-        { label: t("Comment", "How") as string, chips: FILTERS.filter((f) => !ASSISTANT_FILTERS.includes(f.id)).map(chip) },
-        { label: t("Avec quel assistant", "With which assistant") as string, chips: FILTERS.filter((f) => ASSISTANT_FILTERS.includes(f.id)).map(chip) },
-      ]} />
-    )}
-    {view !== "skills" && (
-      <CatalogSection id="agents-servers" title={t("Outils à brancher", "Tools to plug in")} count={servers.length}
-        action={view === "all" ? <Link to={`${prefix}/mcp`} className={linkClass()}>{t("Voir tout", "See all")}<LinkArrow /></Link> : undefined}>
-        {servers.length ? <AgentCards label={t("Outils à brancher", "Tools to plug in") as string}>{servers.map(serverRow)}</AgentCards>
-          : <EmptyState icon={<SearchCheck />} title={t("Aucun outil ne réunit ces filtres.", "No tool matches these filters.") as string}
-            action={<Chip onClick={() => setActive([])}>{t("Retirer les filtres", "Clear filters")}</Chip>} />}
-      </CatalogSection>
-    )}
-    {view !== "mcp" && skills.length > 0 && (
-      <CatalogSection id="agents-skills" title={t("Savoir-faire des éditeurs", "Vendors' know-how")} count={skills.length}
-        action={view === "all" ? <Link to={`${prefix}/skills`} className={linkClass()}>{t("Voir tout", "See all")}<LinkArrow /></Link> : undefined}>
-        <AgentCards label={t("Savoir-faire des éditeurs", "Vendors' know-how") as string}>{(view === "all" ? skills.slice(0, 12) : skills).map(skillRow)}</AgentCards>
-      </CatalogSection>
-    )}
-  </>;
-  const count = view === "mcp" ? servers.length : view === "skills" ? skills.length : undefined;
+  const assistantChoice = (
+    <Segmented compact label={t("Votre assistant", "Your assistant") as string} value={assistant} onChange={setAssistant}
+      options={HUB_ASSISTANTS.map((value) => ({ value, label: lang === "en" ? ASSISTANT_LABELS[value][1] : ASSISTANT_LABELS[value][0] }))} />
+  );
+
+  if (view !== "all") {
+    return (
+      <Page>
+        <Breadcrumb includeSchema={false} items={[{ label: t(...TITLES.all) as string, href: `${prefix}/agents` }, { label: t(...TITLES[view]) as string }]} />
+        <CatalogTitle title={t(...TITLES[view]) as string} count={view === "mcp" ? SERVERS.length : SKILLS.length} countLabel={t("fiches", "sheets") as string} lead={t(...LEADS[view]) as string} />
+        {tabs}
+        {view === "mcp"
+          ? <Chapters><Chapter chapter="list" width="wide">{fullList}</Chapter></Chapters>
+          : <CatalogSection id="agents-skills" title={t("Savoir-faire des éditeurs", "Vendors' know-how")} count={SKILLS.length}>
+            <AgentCards label={t("Savoir-faire des éditeurs", "Vendors' know-how") as string}>{SKILLS.map(skillRow)}</AgentCards>
+          </CatalogSection>}
+      </Page>
+    );
+  }
 
   return (
     <Page>
-      <Breadcrumb includeSchema={false} items={view === "all"
-        ? [{ label: t("Agents IA", "AI agents") as string }]
-        : [{ label: t("Agents IA", "AI agents") as string, href: `${prefix}/agents` }, { label: t(...TITLES[view]) as string }]} />
-      <CatalogTitle title={t(...TITLES[view]) as string} count={count} countLabel={count === undefined ? undefined : t("fiches", "sheets") as string}
-        lead={t(...LEADS[view]) as string} />
-
-      {hub ? <>
-        <CatalogSection id="agents-needs" title={t("Que voulez-vous que votre assistant fasse ?", "What do you want your assistant to do?")}>
-          <NeedPicker needs={NEEDS} cards={SERVERS} lang={lang} toolName={toolName} logo={logo} renderSheetLink={sheetLink} />
-        </CatalogSection>
-        <CatalogSection id="agents-stack" title={t("Avec votre stack", "With your stack")}>
-          <StackAgents items={stackItems} lang={lang} renderSheetLink={sheetLink}
-            renderToolLink={(slug, className, content) => <Link to={`${prefix}/tool/${slug}`} className={className}>{content}</Link>}
-            renderStackLink={(className, content, attrs) => <Link to={`${prefix}/ma-stack`} className={className} {...attrs}>{content}</Link>} />
-        </CatalogSection>
-        <CatalogSection id="agents-start" title={t("Par où commencer", "Where to start")}>
-          <StartHere lang={lang} renderGuideLink={(className, content) => <Link to={`${prefix}/guide/${lang === "en" ? GUIDE.en : GUIDE.fr}`} className={className}>{content}</Link>} />
-        </CatalogSection>
-        <CatalogSection id="agents-all" title={t("Toute la liste", "The full list")}>
-          {tabs}
-        </CatalogSection>
-        {list}
-      </> : <>
-        {tabs}
-        {list}
-      </>}
+      <Breadcrumb includeSchema={false} items={[{ label: t(...TITLES.all) as string }]} />
+      <CatalogTitle title={t(...TITLES.all) as string} lead={t(...LEADS.all) as string} />
+      <Chapters>
+        <Chapter chapter="questions" width="wide">
+          <HubQuestions>
+            <HubQuestion title={t("Votre assistant", "Your assistant") as string}>{assistantChoice}</HubQuestion>
+            <HubQuestion title={t("Vos outils", "Your tools") as string}
+              note={fromStack
+                ? <>{t(`Les ${pinned.length} outils de Ma stack.`, `The ${pinned.length} tools in My stack.`)} <Link to={`${prefix}/ma-stack`} className={linkClass("inline")}>{t("Modifier", "Edit")}</Link></>
+                : t("Cochez ceux que vous utilisez.", "Tick the ones you use.")}>
+              {!fromStack && <ToolChecklist tools={checklist} catalogue={catalogue} selected={picks} onToggle={toggle} lang={lang} />}
+              {!fromStack && picks.length > 0 && (
+                <div><TextButton arrow onClick={() => picks.forEach((slug) => pinTool(slug))}>{t("Enregistrer dans Ma stack", "Save to My stack")}</TextButton></div>
+              )}
+            </HubQuestion>
+          </HubQuestions>
+        </Chapter>
+        {rows.length > 0 && (
+          <Chapter id="bilan" chapter="report" width="wide" title={reportVerdict(rows, assistant, lang)}>
+            <StackReport items={items} assistant={assistantName} lang={lang} renderSheetLink={sheetLink} renderToolLink={toolLink} renderReportLink={reportLink} />
+          </Chapter>
+        )}
+        <Chapter id="tous" chapter="list" width="wide" title={t("Tous les outils qui se branchent", "Every tool that plugs in") as string}>
+          {fullList}
+        </Chapter>
+      </Chapters>
     </Page>
   );
 };

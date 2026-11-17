@@ -19,11 +19,15 @@ export function initials(name: string): string {
   return word.charAt(0).toUpperCase() + word.slice(1, 2);
 }
 
-/** A tool's logo on its tile. When no file answers, the tile shows two letters of its name. */
+/**
+ * A tool's logo on its tile. When no file answers, the tile shows two letters of its name; while a file is still on
+ * its way, those letters hold the tile, so it is never an empty square (17/11/2026).
+ */
 export default function Logo({ tool, size = 40, localOnly = false }: LogoProps) {
   const { src, shown, imgRef, loaded, loading, onLoad, onError } = useToolLogoSource(tool, size, !localOnly);
   return (
-    <span className={styles.tile} data-size={size} data-small={SMALL_MARKS.has(tool.slug || "") ? "" : undefined}>
+    // While a file loads, its letters are drawn by CSS (data-initial): decoration, never part of the tile's text.
+    <span className={styles.tile} data-size={size} data-small={SMALL_MARKS.has(tool.slug || "") ? "" : undefined} data-initial={src && !loaded ? initials(tool.name ?? "?") : undefined}>
       {src ? (
         <img ref={imgRef} key={src} src={shown} alt="" width={size} height={size} loading={loading} data-loading={loaded ? undefined : ""} className={styles.image} onLoad={onLoad} onError={onError} />
       ) : (

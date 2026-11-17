@@ -23,6 +23,25 @@
   border-radius: var(--tt-logo-radius);
 }
 
+/* The image and the letters share the tile's one cell: the letters hold it while the file loads. */
+.image,
+.tile[data-initial]::before {
+  grid-area: 1 / 1;
+}
+
+.tile[data-initial]::before {
+  content: attr(data-initial);
+  color: var(--tt-logo-tile-ink);
+  font: var(--tt-label-font);
+  letter-spacing: var(--tt-label-tracking);
+}
+
+.tile[data-size="24"][data-initial]::before {
+  font: var(--tt-eyebrow-font);
+  letter-spacing: var(--tt-eyebrow-tracking);
+  text-transform: uppercase;
+}
+
 .image {
   display: block;
   width: 72%;
