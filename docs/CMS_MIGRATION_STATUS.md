@@ -56,8 +56,9 @@ La recette navigateur s’appuie sur des comptes de test et des réponses API co
 
 Lancer `PLAYWRIGHT_ACCOUNTS_PORT=5191 node e2e/fixtures/accounts-server.mjs --cms-demo` dans ce checkout. Le serveur écoute sur `127.0.0.1` et garde les changements en mémoire jusqu’au redémarrage.
 
-- Espace éditeur `http://127.0.0.1:5191/fr/publisher` avec `editeur@example.invalid`. Ouvrir Atelier Démo et modifier un bloc, une offre ou un tag avant d’envoyer la proposition.
-- Back-office `http://127.0.0.1:5191/fr/back-office?view=catalog` avec `admin@example.invalid`. Ouvrir « Propositions éditeur », examiner Boussole Démo ou la nouvelle proposition et vérifier le lot après approbation.
+- [Atelier Démo côté éditeur](http://127.0.0.1:5191/fr/publisher?listingId=51910000-0000-4000-8000-000000000001) avec `editeur@example.invalid`. Le dossier est renseigné et le badge est déjà vérifié dans la démo. Ouvrir la relecture et confirmer les informations produit.
+- [Le même dossier côté admin](http://127.0.0.1:5191/fr/back-office?view=catalog&listingRequest=51910000-0000-4000-8000-000000000001) avec `admin@example.invalid`. Après confirmation des faits, actualiser le dossier, valider le rattachement et vérifier le lot.
+- [Carnet Démo côté éditeur](http://127.0.0.1:5191/fr/publisher?listingId=51910000-0000-4000-8000-000000000002) montre la fiche prioritaire à 29 $ US avec un paiement simulé. Boussole Démo reste disponible pour essayer la modification d’une fiche déjà rattachée.
 - Mot de passe des deux comptes fictifs `fixture-password`. Utiliser deux profils de navigateur pour garder les deux sessions ouvertes.
 
 Ce mode sert à essayer les écrans et les enchaînements sur des données fictives. Les contrôles de fournisseurs et les écritures de production se font dans une recette hébergée séparée.

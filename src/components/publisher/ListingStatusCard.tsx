@@ -1,10 +1,12 @@
 import CatalogMediaUpload, { CatalogMediaPreview } from "./CatalogMediaUpload";
 import type { ProductDraft } from "@/lib/publisherCatalog";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import Button, { linkClass } from "@/ds/Button/Button";
+import { Link } from "react-router-dom";
+import Button, { buttonAttrs, linkClass } from "@/ds/Button/Button";
 import Field, { TextAreaField } from "@/ds/Field/Field";
 import { useLang } from "@/hooks/useLang";
-import { PublisherApiError, publisherRequest, type ListingCommerce, type ListingRequest, type PublisherToken } from "@/lib/publisherCatalogApi";
+import { PublisherApiError, publisherPath, publisherRequest, type ListingCommerce, type ListingRequest, type PublisherToken } from "@/lib/publisherCatalogApi";
+import { listingCommercialLabel, listingOfferLabel } from "@/lib/listingOfferPresentation";
 import { useCatalogExitGuard } from "@/components/backoffice/useCatalogExitGuard";
 import ListingFactualReview from "./ListingFactualReview";
 import styles from "./PublisherWorkspace.module.css";
@@ -25,18 +27,11 @@ export function listingStatus(status: string, t: Translate) {
   return labels[status] ?? t("En cours", "In progress");
 }
 
-function commercialStatus(status: string, t: Translate) {
-  return status === "satisfied" ? t("Condition remplie", "Requirement met")
-    : status === "verifying" ? t("Vérification en cours", "Verification in progress")
-      : status === "issue" ? t("À vérifier avec ToolTrim", "Check with ToolTrim")
-        : t("Condition à remplir", "Requirement to complete");
-}
-
-export default function ListingStatusCard({ listing, getToken, update, returnedFromPayment, clearPaymentReturn }: {
+export default function ListingStatusCard({ listing, toolSlug, getToken, update, returnedFromPayment, clearPaymentReturn }: {
   listing: ListingRequest; getToken: PublisherToken; update: (listing: ListingRequest) => void;
-  returnedFromPayment: boolean; clearPaymentReturn: () => void;
+  toolSlug?: string; returnedFromPayment: boolean; clearPaymentReturn: () => void;
 }) {
-  const { t, lang } = useLang();
+  const { t, lang, prefix } = useLang();
   const [media, setMedia] = useState(listing.media ?? []);
   const [uploading, setUploading] = useState(false);
   const [role, setRole] = useState(listing.representativeRole ?? "");
@@ -45,6 +40,7 @@ export default function ListingStatusCard({ listing, getToken, update, returnedF
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [refreshError, setRefreshError] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   const pending = useRef(false);
   const editable = ["draft", "changes_requested"].includes(listing.status);
   const dirty = editable && (role !== (listing.representativeRole ?? "") || notes !== (listing.notes ?? "") || JSON.stringify(media) !== JSON.stringify(listing.media ?? []));
@@ -77,24 +73,48 @@ export default function ListingStatusCard({ listing, getToken, update, returnedF
   }
 
   async function refresh() {
+    setRefreshing(true);
     try {
       const { listing: next } = await publisherRequest<{ listing: ListingRequest }>(getToken, `/api/listing-requests?id=${encodeURIComponent(listing.id)}`);
       update(next);
       setRefreshError(false);
     } catch {
       setRefreshError(true);
+    } finally {
+      setRefreshing(false);
     }
   }
 
   const verified = listing.representationStatus === "verified";
   const active = listing.status !== "archived" && listing.status !== "rejected";
+  const published = listing.deliveryStatus === "published";
+  const paymentRequired = listing.offer === "priority_paid";
+  const commercialComplete = listing.commercialStatus === "satisfied";
+  const offerAction = paymentRequired ? t("Voir le paiement", "View payment") : t("Installer le badge", "Set up the badge");
+  const waitingMessage = published || !active ? null : {
+    submitted: t("ToolTrim vérifie votre demande et votre lien avec l’outil.", "ToolTrim is checking your application and your relationship with the tool."),
+    in_preparation: t("ToolTrim prépare la fiche et vous enverra les informations produit à relire.", "ToolTrim is preparing the listing and will send you the product facts to review."),
+    ready: t("ToolTrim prépare la publication. Vous pourrez ouvrir la fiche publique ici une fois la mise en ligne vérifiée.", "ToolTrim is preparing publication. You can open the public listing here once it is confirmed live."),
+  }[listing.status];
+  const next = !active || published ? null
+    : !commercialComplete ? { target: "#publisher-listing-offer", label: listing.commercialStatus === "pending"
+      ? offerAction : paymentRequired ? t("Vérifier le paiement", "Check payment") : t("Vérifier le badge", "Check badge") }
+      : listing.status === "facts_to_review" ? { target: "#publisher-facts-review", label: t("Relire les informations produit", "Review product facts") }
+        : editable ? { target: "#publisher-submission-title", label: listing.status === "changes_requested"
+          ? t("Reprendre la demande", "Resume the application") : t("Compléter la demande", "Complete the application") } : null;
   return <>
     <section className={styles.section} aria-labelledby="publisher-listing-name">
-      <h2 id="publisher-listing-name">{listing.name}</h2>
-      <a href={listing.websiteUrl} target="_blank" rel="noreferrer" className={linkClass("inline")}>{listing.websiteUrl}</a>
+      <header className={styles.fields}>
+        <h2 id="publisher-listing-name">{listing.name}</h2>
+        <a href={listing.websiteUrl} target="_blank" rel="noreferrer" className={linkClass("inline")}>{listing.websiteUrl}</a>
+      </header>
+      <dl className={styles.card}>
+        <dt className={styles.muted}>{t("Votre offre", "Your offer")}</dt>
+        <dd><strong>{listingOfferLabel(listing.offer, t)}</strong></dd>
+        <dd>{listingCommercialLabel(listing.offer, listing.commercialStatus, t)}</dd>
+      </dl>
       <dl className={styles.states}>
         <div><dt>{t("Demande", "Application")}</dt><dd>{listingStatus(listing.status, t)}</dd></div>
-        <div><dt>{t("Offre", "Offer")}</dt><dd>{commercialStatus(listing.commercialStatus, t)}</dd></div>
         <div><dt>{t("Représentation", "Representation")}</dt><dd>{verified ? t("Vérifiée", "Verified")
           : ["rejected", "revoked"].includes(listing.representationStatus) ? t("Accès refusé ou retiré", "Access declined or revoked")
             : t("En attente de vérification", "Awaiting verification")}</dd></div>
@@ -103,15 +123,22 @@ export default function ListingStatusCard({ listing, getToken, update, returnedF
             : listing.deliveryStatus === "publishing" ? t("Publication en cours", "Publishing")
               : listing.deliveryStatus === "offline" ? t("Hors ligne", "Offline") : t("Non publiée", "Unpublished")}</dd></div>
       </dl>
-      {listing.status === "in_preparation" && <p>{t("ToolTrim prépare votre fiche. Vous pourrez vérifier les faits avant publication.", "ToolTrim is preparing your listing. You will be able to check the facts before it goes live.")}</p>}
-      {refreshError && <div className={styles.actions}><p role="alert">{t("Impossible d’actualiser le statut de la demande.", "The application status could not be refreshed.")}</p><Button onClick={() => void refresh()}>{t("Réessayer", "Try again")}</Button></div>}
+      {waitingMessage && <p>{waitingMessage}</p>}
+      {refreshError && <p role="alert">{t("Impossible d’actualiser le statut de la demande.", "The application status could not be refreshed.")}</p>}
+      <div className={styles.actions}>
+        {next && <a {...buttonAttrs("primary")} href={next.target}>{next.label}</a>}
+        {published && <Link {...buttonAttrs("primary")} to={`${prefix}/tool/${encodeURIComponent(listing.slug)}`}>{t("Voir la fiche publique", "View public listing")}</Link>}
+        {published && toolSlug && <Link {...buttonAttrs()} to={publisherPath(prefix, toolSlug)}>{t("Gérer la fiche", "Manage listing")}</Link>}
+        {(waitingMessage || refreshError) && <Button disabled={refreshing || dirty || busy} onClick={() => void refresh()}>{refreshing
+          ? t("Actualisation…", "Refreshing…") : refreshError ? t("Réessayer", "Try again") : t("Actualiser le suivi", "Refresh progress")}</Button>}
+      </div>
     </section>
-    {active && <ListingOfferStatus listing={listing} getToken={getToken} returnedFromPayment={returnedFromPayment}
+    {active && (!commercialComplete || returnedFromPayment) && <ListingOfferStatus listing={listing} getToken={getToken} returnedFromPayment={returnedFromPayment}
       clearPaymentReturn={clearPaymentReturn} onChange={refresh} locked={dirty || busy} />}
     {["facts_to_review", "changes_requested", "ready"].includes(listing.status) &&
       <ListingFactualReview listing={listing} getToken={getToken} update={update} />}
-    {editable && <section className={styles.section} aria-labelledby="publisher-submission-title">
-      <h2 id="publisher-submission-title">{t("Préparer la demande", "Prepare the application")}</h2>
+    {editable && <section id="publisher-submission-title" tabIndex={-1} className={styles.section} aria-labelledby="publisher-submission-heading">
+      <h2 id="publisher-submission-heading">{t("Préparer la demande", "Prepare the application")}</h2>
       <form onSubmit={(event: FormEvent) => { event.preventDefault(); void mutate("save"); }}>
         <Field label={t("Votre rôle auprès de l’outil", "Your role with the tool")} value={role} maxLength={120} disabled={busy}
           onChange={(event) => setRole(event.target.value)} placeholder={t("Ex. fondatrice ou responsable produit", "E.g. founder or product manager")} />
@@ -145,7 +172,7 @@ export default function ListingStatusCard({ listing, getToken, update, returnedF
       {listing.commercialStatus === "satisfied" && !role.trim() && <p className={styles.muted}>{t("Renseignez votre rôle pour envoyer votre demande.", "Enter your role to send your application.")}</p>}
       <div className={styles.actions}>
         {listing.commercialStatus === "satisfied" && role.trim() && !dirty && <Button variant="primary" disabled={busy || uploading} onClick={() => void mutate("submit")}>{t("Envoyer à ToolTrim", "Send to ToolTrim")}</Button>}
-        {listing.commercialStatus === "pending" && !dirty && <Button variant="quiet" disabled={busy} onClick={() => {
+        {!paymentRequired && listing.commercialStatus === "pending" && !dirty && <Button variant="quiet" disabled={busy} onClick={() => {
           if (window.confirm(t("Archiver ce brouillon ?", "Archive this draft?"))) void mutate("withdraw");
         }}>{t("Archiver le brouillon", "Archive draft")}</Button>}
       </div>
@@ -237,8 +264,8 @@ function ListingOfferStatus({ listing, getToken, returnedFromPayment, clearPayme
   };
   const badgeCode = '<a href="https://tooltrim.com/"><img src="https://tooltrim.com/tooltrim-badge.svg" alt="ToolTrim" height="54"></a>';
 
-  return <section className={styles.section} aria-labelledby="publisher-listing-offer">
-    <h2 id="publisher-listing-offer">{standard ? t("Revue standard · 0 $", "Standard review · $0") : t("Fiche prioritaire · 29 $ une fois", "Priority listing · $29 once")}</h2>
+  return <section id="publisher-listing-offer" tabIndex={-1} className={styles.section} aria-labelledby="publisher-listing-offer-heading">
+    <h2 id="publisher-listing-offer-heading">{standard ? t("Badge ToolTrim", "ToolTrim badge") : t("Paiement de la fiche", "Listing payment")}</h2>
     <p role="status">{status ? labels[status] : t("Vérification de l’état de l’offre…", "Checking offer status…")}</p>
     {locked && <p className={styles.muted}>{t("Enregistrez ou annulez vos changements pour continuer.", "Save or cancel your changes to continue.")}</p>}
     {error && <p role="alert" className={styles.error}>{error}</p>}

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import BackofficePageHeading from "@/ds/BackofficePageHeading/BackofficePageHeading";
 import Button from "@/ds/Button/Button";
 import { TextAreaField } from "@/ds/Field/Field";
@@ -21,8 +21,8 @@ type Detail = Summary & { value: ProductDraft };
 type Published = { name: string; slug: string; websiteUrl: string | null; shortDescription: string | null; shortDescriptionEn: string | null };
 type ReleasePreview = {
   sourceHead: string;
-  legacyItems: { slug: string; version: number }[];
-  items: { approvalId: string; toolId: string; version: number }[];
+  legacyItems: { slug: string; name?: string; version: number }[];
+  items: { approvalId: string; toolId: string; name?: string; version: number }[];
 };
 type ReleaseHistory = { batch_key: string; prepared_at: string; commit_sha: string | null; verified_at: string | null; cancelled_at: string | null; leased_until: string };
 type Decision = "approved" | "changes_requested" | "rejected" | "cancel_approval";
@@ -47,17 +47,18 @@ async function request(id?: string, decision?: { status: Decision; note: string 
   return response.json();
 }
 
-export function ContributionQueue({ onBack }: { onBack: () => void }) {
+export function ContributionQueue({ onBack, fromListing }: { onBack: () => void; fromListing?: { toolId: string; name: string } }) {
   const { lang, t } = useLang();
   const [rows, setRows] = useState<Summary[]>();
   const [detail, setDetail] = useState<Detail>();
   const [mediaPreviews, setMediaPreviews] = useState<{ assetId: string; url: string }[]>([]);
   const [published, setPublished] = useState<Published>();
   const [note, setNote] = useState("");
-  const [busy, setBusy] = useState(false);
+  const [busy, setBusy] = useState(Boolean(fromListing));
   const [error, setError] = useState("");
   const [feedback, setFeedback] = useState("");
   const [release, setRelease] = useState<ReleasePreview>();
+  const [newToolIds, setNewToolIds] = useState<string[]>([]);
   const [batchKey, setBatchKey] = useState("");
   const [blocked, setBlocked] = useState<{ toolId: string; approvalId: string }[]>([]);
   const [canDeliver, setCanDeliver] = useState(false);
@@ -66,8 +67,10 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
   const [revision, reload] = useState(0);
   const back = useRef<HTMLButtonElement>(null);
   const selected = useRef<string>();
+  const needsInitialPreview = useRef(Boolean(fromListing));
 
   useEffect(() => {
+    if (fromListing) return;
     let active = true;
     void request().then((result) => {
       if (!active) return;
@@ -77,7 +80,7 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
       if (active) setError(t("Impossible de charger les propositions.", "Could not load submissions."));
     });
     return () => { active = false; };
-  }, [revision, t]);
+  }, [fromListing, revision, t]);
 
   async function open(row: Summary) {
     selected.current = row.id;
@@ -120,7 +123,7 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
     }
   }
 
-  async function previewRelease() {
+  const previewRelease = useCallback(async () => {
     setBusy(true);
     setError("");
     setRelease(undefined);
@@ -131,6 +134,7 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
       setReleaseState(undefined);
       if (!Array.isArray(result.manifest?.items) || !Array.isArray(result.manifest?.legacyItems)) throw new Error("INVALID_RELEASE");
       setBlocked(Array.isArray(result.blocked) ? result.blocked : []);
+      setNewToolIds(Array.isArray(result.newToolIds) ? result.newToolIds : []);
       setRelease(result.manifest);
     } catch {
       setError(t("Impossible de préparer l’aperçu du lot. Vérifiez les rattachements et l’état des fiches publiées.",
@@ -138,7 +142,13 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
     } finally {
       setBusy(false);
     }
-  }
+  }, [t]);
+
+  useEffect(() => {
+    if (!needsInitialPreview.current) return;
+    needsInitialPreview.current = false;
+    void previewRelease();
+  }, [previewRelease]);
 
   async function loadHistory() {
     setBusy(true);
@@ -193,17 +203,22 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
   }
 
   return <section className={styles.queue} aria-busy={busy}>
-    <BackofficePageHeading title={t("Propositions éditeur", "Publisher submissions")}
+    <BackofficePageHeading title={fromListing ? t("Lot de publication", "Publication batch") : t("Propositions éditeur", "Publisher submissions")}
+      description={fromListing?.name}
       action={<Button ref={back} onClick={() => {
         if (detail) setDetail(undefined);
         else onBack();
-      }} disabled={busy}>{detail ? t("Toutes les propositions", "All submissions") : t("Retour aux fiches", "Back to records")}</Button>} />
+      }} disabled={busy}>{detail ? t("Toutes les propositions", "All submissions")
+        : fromListing ? t("Retour au dossier", "Back to application") : t("Retour aux fiches", "Back to records")}</Button>} />
     {feedback && <p role="status">{feedback}</p>}
     {error && <Notice title={error} role="alert"
-      actions={<Button onClick={() => { setError(""); setDetail(undefined); setRows(undefined); reload((n) => n + 1); }}>
+      actions={<Button onClick={() => {
+        if (fromListing) { void previewRelease(); return; }
+        setError(""); setDetail(undefined); setRows(undefined); reload((n) => n + 1);
+      }}>
         {t("Actualiser", "Refresh")}
       </Button>} />}
-    {!detail && !rows && !error && <p role="status">{t("Chargement des propositions…", "Loading submissions…")}</p>}
+    {!fromListing && !detail && !rows && !error && <p role="status">{t("Chargement des propositions…", "Loading submissions…")}</p>}
     {!detail && rows && (rows.length === 0
       ? <p>{t("Aucune proposition à examiner.", "No submissions to review.")}</p>
       : <ul className={styles.rows}>{rows.map((row) => <li key={row.id}>
@@ -211,7 +226,10 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
         <Button disabled={busy} onClick={() => void open(row)}>{t("Examiner", "Review")}</Button>
       </li>)}</ul>)}
     {!detail && <div className={styles.content}>
-      <Button disabled={busy} onClick={() => void previewRelease()}>{t("Vérifier le lot approuvé", "Check the approved batch")}</Button>
+      {fromListing && busy && !release && <p role="status">{t("Préparation de l’aperçu du lot…", "Preparing the batch preview…")}</p>}
+      {(!fromListing || (!busy && !error)) && <Button disabled={busy} onClick={() => void previewRelease()}>
+        {fromListing ? t("Actualiser le lot", "Refresh batch") : t("Vérifier le lot approuvé", "Check the approved batch")}
+      </Button>}
       {blocked.length > 0 && <Notice title={t("Propositions exclues du lot", "Submissions excluded from the batch")}>
         <NoticeText>{t("Le rattachement ou les conditions de mise en ligne doivent être revérifiés.", "The assignment or publication requirements need checking.")}</NoticeText>
         <ul>{blocked.map((item) => <li key={item.approvalId}>{item.toolId}</li>)}</ul>
@@ -221,10 +239,10 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
         : t("Aucun changement approuvé à préparer", "No approved changes to prepare")}>
         <ul>
           {release.items.map((item) => <li key={item.approvalId}>
-            {item.toolId} · {t("Proposition éditeur", "Publisher submission")} · {t("Version", "Version")} {item.version}
+            {item.name || (fromListing?.toolId === item.toolId ? fromListing.name : item.toolId)} · {newToolIds.includes(item.toolId) ? t("Première publication", "First publication") : t("Mise à jour éditeur", "Publisher update")} · {t("Version", "Version")} {item.version}
           </li>)}
           {release.legacyItems.map((item) => <li key={item.slug}>
-            {item.slug} · {t("Brouillon ToolTrim", "ToolTrim draft")} · {t("Version", "Version")} {item.version}
+            {item.name || item.slug} · {t("Brouillon ToolTrim", "ToolTrim draft")} · {t("Version", "Version")} {item.version}
           </li>)}
         </ul>
         {batchKey && canDeliver && (release.items.length > 0 || release.legacyItems.length > 0) && <div className={styles.actions}>

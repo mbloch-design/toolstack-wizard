@@ -9,6 +9,7 @@ export type ListingRequest = {
   id: string; name: string; websiteUrl: string; slug: string; offer: ListingOffer;
   status: string; version: number; createdAt: string; updatedAt: string;
   reservationExpiresAt: string | null; commercialStatus: string; representationStatus: string; deliveryStatus: string;
+  toolId?: string | null;
   representativeRole: string; notes: string; media?: ProductDraft["media"];
 };
 export type ListingCandidate = { kind: "tool" | "listing"; id: string; slug: string; name: string; websiteUrl: string };

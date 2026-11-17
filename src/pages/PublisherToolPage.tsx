@@ -3,15 +3,17 @@ import { Link } from "react-router-dom";
 import AccountPageFrame from "@/components/account/AccountPageFrame";
 import PublisherFiche from "@/components/publisher/PublisherFiche";
 import styles from "@/components/publisher/PublisherWorkspace.module.css";
-import Button, { linkClass } from "@/ds/Button/Button";
+import Button, { buttonAttrs, linkClass } from "@/ds/Button/Button";
 import { useLang } from "@/hooks/useLang";
-import { PublisherApiError, publisherPath, publisherRequest, type PublisherDraft, type PublisherSubmission, type PublisherToken, type PublisherTool } from "@/lib/publisherCatalogApi";
+import { PublisherApiError, publisherPath, publisherRequest, type ListingRequest, type PublisherDraft, type PublisherSubmission, type PublisherToken, type PublisherTool } from "@/lib/publisherCatalogApi";
+import { listingCommercialLabel, listingOfferLabel } from "@/lib/listingOfferPresentation";
 import type { ProductDraft } from "@/lib/publisherCatalog";
 
 export default function PublisherToolPage({ slug, getToken }: { slug: string; getToken: PublisherToken }) {
   const { lang, prefix, t } = useLang();
   const [state, setState] = useState<"loading" | "ready" | "denied" | "error">("loading");
   const [tool, setTool] = useState<PublisherTool | null>(null);
+  const [application, setApplication] = useState<ListingRequest>();
   const [draft, setDraft] = useState<PublisherDraft | null>(null);
   const latestDraft = useRef<PublisherDraft | null>(null);
   const [submissions, setSubmissions] = useState<PublisherSubmission[] | null>(null);
@@ -45,6 +47,10 @@ export default function PublisherToolPage({ slug, getToken }: { slug: string; ge
         setDraft(draft);
         setTool(selected);
         setState("ready");
+        void publisherRequest<{ listings: ListingRequest[] }>(getToken, "/api/listing-requests", { signal }).then(
+          ({ listings }) => { if (!signal.aborted) setApplication(listings.find((item) => item.toolId === selected.id)); },
+          () => { if (!signal.aborted) setApplication(undefined); },
+        );
         const { submissions } = await publisherRequest<{ submissions: PublisherSubmission[] }>(getToken, "/api/publisher-contributions" + query, { signal });
         if (!signal.aborted) setSubmissions(submissions);
       } catch (cause) {
@@ -122,6 +128,15 @@ export default function PublisherToolPage({ slug, getToken }: { slug: string; ge
   const updated = draft && new Intl.DateTimeFormat(lang, { dateStyle: "medium", timeStyle: "short" }).format(Date.parse(draft.updatedAt));
   return <AccountPageFrame wide title={draft?.value.name || tool?.name || t("Fiche éditeur", "Publisher listing")}
     headerExtra={<Link to={publisherPath(prefix)} className={linkClass()}>{t("Mes fiches", "My listings")}</Link>}>
+    {state === "ready" && application && application.toolId === tool?.id && <section className={styles.section} aria-label={t("Votre offre", "Your offer")}>
+      <div className={styles.split}>
+        <div>
+          <p><strong>{listingOfferLabel(application.offer, t)}</strong></p>
+          <p className={styles.muted}>{listingCommercialLabel(application.offer, application.commercialStatus, t)}</p>
+        </div>
+        <Link {...buttonAttrs()} to={`${publisherPath(prefix)}?listingId=${encodeURIComponent(application.id)}`}>{t("Voir le suivi", "View progress")}</Link>
+      </div>
+    </section>}
     {state === "loading" && <p role="status">{t("Chargement de la fiche…", "Loading listing…")}</p>}
     {state === "denied" && <p role="alert">{t("Cette fiche n’est pas accessible depuis votre compte. ToolTrim vérifie les demandes d’accès.", "Your account cannot access this listing. ToolTrim verifies requests for access.")}</p>}
     {state === "error" && <section className={styles.section}>

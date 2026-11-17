@@ -5,17 +5,32 @@ import Button from "@/ds/Button/Button";
 import Field, { SelectField } from "@/ds/Field/Field";
 import { Notice } from "@/ds/Notice/Notice";
 import BackofficePageHeading from "@/ds/BackofficePageHeading/BackofficePageHeading";
-import InitialListingAdminReview from "./InitialListingAdminReview";
+import { listingCommercialLabel, listingOfferLabel } from "@/lib/listingOfferPresentation";
+import type { ListingRequest } from "@/lib/publisherCatalogApi";
+import InitialListingAdminReview, { adminListingStatus, type ListingBatchSubject } from "./InitialListingAdminReview";
 import styles from "./ContributionQueue.module.css";
 
 type Claim = { ownerId: string; toolId: string; slug: string; confirmedEmail: string; createdAt: string };
 type Invitation = { id: string; toolId: string; expiresAt: string; status: "pending" | "accepted" | "revoked" | "expired" };
+type ListingRow = Pick<ListingRequest, "id" | "name" | "status" | "offer" | "commercialStatus" | "toolId" | "deliveryStatus"> & { confirmedEmail: string | null };
 type Directory = {
   claims: Claim[];
-  listings: { id: string; name: string; websiteUrl: string; confirmedEmail: string }[];
+  listings: ListingRow[];
   brands: { id: string; name: string; websiteDomain: string }[];
   invitations: Invitation[];
 };
+
+export function readAdminListingId() {
+  const id = new URLSearchParams(window.location.search).get("listingRequest");
+  return id && /^[a-f\d]{8}(?:-[a-f\d]{4}){3}-[a-f\d]{12}$/i.test(id) ? id : undefined;
+}
+
+export function setAdminListingUrl(id?: string) {
+  const url = new URL(window.location.href);
+  if (id) url.searchParams.set("listingRequest", id);
+  else url.searchParams.delete("listingRequest");
+  window.history.replaceState(window.history.state, "", url);
+}
 
 async function listingRequest(body?: Record<string, string>) {
   const { data } = await supabase.auth.getSession();
@@ -32,10 +47,10 @@ async function listingRequest(body?: Record<string, string>) {
   return response.json();
 }
 
-export function ListingAdmin({ onBack }: { onBack: () => void }) {
+export function ListingAdmin({ onBack, onReviewBatch }: { onBack: () => void; onReviewBatch: (subject: ListingBatchSubject) => void }) {
   const { t, lang, prefix } = useLang();
   const [directory, setDirectory] = useState<Directory>();
-  const [listingId, setListingId] = useState<string>();
+  const [listingId, setListingId] = useState(readAdminListingId);
   const [claim, setClaim] = useState<Claim>();
   const [brandId, setBrandId] = useState("");
   const [brandName, setBrandName] = useState("");
@@ -59,6 +74,11 @@ export function ListingAdmin({ onBack }: { onBack: () => void }) {
     });
     return () => { active = false; };
   }, [revision, t]);
+
+  function openListing(id?: string) {
+    setAdminListingUrl(id);
+    setListingId(id);
+  }
 
   async function invite() {
     if (!claim || busy || (!brandId && (!brandName.trim() || !brandDomain.trim()))) return;
@@ -97,10 +117,11 @@ export function ListingAdmin({ onBack }: { onBack: () => void }) {
   }
 
   if (listingId && directory) return <InitialListingAdminReview listingId={listingId}
-    brands={directory.brands} onBack={() => { setListingId(undefined); reload((n) => n + 1); }} />;
+    brands={directory.brands} onReviewBatch={onReviewBatch}
+    onBack={() => { openListing(); reload((n) => n + 1); }} />;
   return <section className={styles.queue} aria-busy={busy}>
     <BackofficePageHeading title={t("Demandes de fiche", "Listing requests")}
-      action={<Button disabled={busy} onClick={onBack}>{t("Retour aux fiches", "Back to records")}</Button>} />
+      action={<Button disabled={busy} onClick={() => { openListing(); onBack(); }}>{t("Retour aux fiches", "Back to records")}</Button>} />
     {error && <Notice title={error} role="alert" actions={<Button onClick={() => {
       setError(""); reload((n) => n + 1);
     }}>{t("Actualiser", "Refresh")}</Button>} />}
@@ -114,6 +135,24 @@ export function ListingAdmin({ onBack }: { onBack: () => void }) {
       {copied && <p role="status">{t("Lien copié.", "Link copied.")}</p>}
     </div>}
     {directory && <>
+      <section className={styles.content}>
+        <h2>{t("Nouvelles fiches à suivre", "New listings in progress")}</h2>
+        {directory.listings.length ? <ul className={styles.rows}>{directory.listings.map((row) => <li key={row.id}>
+          <div>
+            <h3>{row.name}</h3>
+            {row.confirmedEmail && <p>{row.confirmedEmail}</p>}
+            {(row.offer === "standard_badge" || row.offer === "priority_paid") && <>
+              <p>{listingOfferLabel(row.offer, t)}</p>
+              <p>{listingCommercialLabel(row.offer, row.commercialStatus, t)}</p>
+            </>}
+            {row.status && <p>{row.toolId
+              ? row.deliveryStatus === "publishing" ? t("Mise en ligne à vérifier", "Deployment verification pending")
+                : t("Dans le lot de publication", "In the publication batch")
+              : adminListingStatus(row.status, t)}</p>}
+          </div>
+          <Button disabled={busy} onClick={() => openListing(row.id)}>{t("Examiner la fiche", "Review listing")}</Button>
+        </li>)}</ul> : <p>{t("Aucune demande de nouvelle fiche en cours.", "No new listing requests in progress.")}</p>}
+      </section>
       <section className={styles.content}>
         <h2>{t("Rattacher une fiche existante", "Claim an existing record")}</h2>
         {!directory.claims.length && <p>{t("Aucune demande de rattachement.", "No claims to review.")}</p>}
@@ -147,13 +186,6 @@ export function ListingAdmin({ onBack }: { onBack: () => void }) {
             <Button type="button" disabled={busy} onClick={() => setClaim(undefined)}>{t("Annuler", "Cancel")}</Button>
           </div>
         </form>}
-      </section>
-      <section className={styles.content}>
-        <h2>{t("Nouvelles fiches", "New listings")}</h2>
-        {directory.listings.length ? <ul className={styles.rows}>{directory.listings.map((row) => <li key={row.id}>
-          <span>{row.name} · {row.confirmedEmail}</span>
-          <Button disabled={busy} onClick={() => setListingId(row.id)}>{t("Examiner la fiche", "Review listing")}</Button>
-        </li>)}</ul> : <p>{t("Aucune nouvelle fiche envoyée.", "No new listings submitted.")}</p>}
       </section>
       {directory.invitations.length > 0 && <section className={styles.content}>
         <h2>{t("Invitations", "Invitations")}</h2>

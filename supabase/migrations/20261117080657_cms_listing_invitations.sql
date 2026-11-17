@@ -69,7 +69,9 @@ begin
           'ownerId', r.owner_id, 'confirmedEmail', case when u.email_confirmed_at is not null then u.email end
         ) order by r.updated_at, r.id)
         from (
-          select * from catalog_contrib.listing_requests where status = 'submitted' and canonical_tool_id is null
+          select * from catalog_contrib.listing_requests
+          where status in ('submitted', 'in_preparation', 'facts_to_review', 'changes_requested', 'ready')
+            and (canonical_tool_id is null or (status = 'ready' and delivery_status in ('unpublished', 'publishing')))
           order by updated_at, id limit 100
         ) r join auth.users u on u.id = r.owner_id
       ), '[]'::jsonb),

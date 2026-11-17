@@ -5,6 +5,7 @@ import Field, { SelectField } from "@/ds/Field/Field";
 import Page from "@/ds/Page/Page";
 import { useLang } from "@/hooks/useLang";
 import { clearPublisherInvitation, PublisherApiError, publisherPath, publisherRequest, readPublisherInvitation, type ListingCandidate, type ListingOffer, type ListingRequest, type PublisherToken, type PublisherTool } from "@/lib/publisherCatalogApi";
+import { listingCommercialLabel, listingOfferLabel } from "@/lib/listingOfferPresentation";
 import ListingStatusCard, { listingStatus } from "./ListingStatusCard";
 import styles from "./PublisherWorkspace.module.css";
 
@@ -105,11 +106,17 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
   }
 
   const selected = listings?.find((item) => item.id === listingId);
-  const shownTools = tools?.filter((tool) => tool.name.toLowerCase().includes(toolFilter.toLowerCase().trim()));
+  const selectedTool = selected?.toolId && tools?.find((tool) => tool.id === selected.toolId);
+  const toolIdsWithApplication = new Set(listings?.map((item) => item.toolId));
+  const standaloneTools = tools?.filter((tool) => !toolIdsWithApplication.has(tool.id));
+  const filter = toolFilter.toLowerCase().trim();
+  const shownTools = standaloneTools?.filter((tool) => tool.name.toLowerCase().includes(filter));
+  const shownListings = listings?.filter((listing) => listing.name.toLowerCase().includes(filter));
+  const shownClaims = claims.filter((claim) => claim.slug.toLowerCase().includes(filter));
   return <Page>
     {listingId && <>
-      <Link className={linkClass()} to={publisherPath(prefix)}>{t("Toutes mes fiches", "All my listings")}</Link>
-      {selected ? <ListingStatusCard key={selected.id} listing={selected} getToken={getToken} update={updateListing}
+      <Link className={linkClass()} to={publisherPath(prefix)}>{t("Retour à mes fiches", "Back to my listings")}</Link>
+      {selected ? <ListingStatusCard key={selected.id} listing={selected} toolSlug={selectedTool ? selectedTool.slug : undefined} getToken={getToken} update={updateListing}
         returnedFromPayment={query.get("payment") === "return"}
         clearPaymentReturn={() => setQuery({ listingId: selected.id }, { replace: true })} />
         : <p role="status">{listings ? t("Ce dossier n’est pas accessible depuis votre compte.", "Your account cannot access this application.") : t("Recherche du dossier…", "Finding your application…")}</p>}
@@ -117,29 +124,32 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
     {!listingId && <>
       {!!notice && <p role="status">{notice}</p>}
       {!!error && <p role="alert" className={styles.error}>{error}</p>}
-      <section className={styles.section} aria-labelledby="publisher-assigned">
-        <h2 id="publisher-assigned">{t("Fiches rattachées", "Assigned listings")}</h2>
-        {tools && !tools.length && <p>{t("Votre compte n’est pas encore rattaché à un outil.", "Your account is not yet linked to a tool.")}</p>}
-        {tools && tools.length > 1 && <Field type="search" label={t("Rechercher parmi mes fiches", "Search my listings")} value={toolFilter} onChange={(event) => setToolFilter(event.target.value)} />}
-        {shownTools && shownTools.length > 0 && <div className={styles.cards}>{shownTools.map((tool) => <article className={styles.card} key={tool.id}>
-          <h3>{tool.name}</h3>
-          <Link {...buttonAttrs()} to={publisherPath(prefix, tool.slug)}>{tool.canEdit ? t("Modifier la fiche", "Edit listing") : t("Consulter la fiche", "View listing")}</Link>
-        </article>)}</div>}
-        {tools?.length && !shownTools?.length ? <p>{t("Aucune fiche ne correspond à cette recherche.", "No listings match this search.")}</p> : null}
-        {tools === null && <p role="status">{t("Les fiches rattachées sont en cours de chargement ou temporairement indisponibles.", "Assigned listings are loading or temporarily unavailable.")}</p>}
-      </section>
-
-      <section className={styles.section} aria-labelledby="publisher-listings">
-        <h2 id="publisher-listings">{t("Mes demandes", "My applications")}</h2>
-        {listings && !listings.length && !claims.length && <p>{t("Vous n’avez pas encore de demande.", "You have no applications yet.")}</p>}
-        {listings === null && <p role="status">{t("Les demandes sont en cours de chargement ou temporairement indisponibles.", "Applications are loading or temporarily unavailable.")}</p>}
-        {(!!listings?.length || !!claims.length) && <div className={styles.cards}>
-          {listings?.map((listing) => <article className={styles.card} key={listing.id}>
-            <h3>{listing.name}</h3>
-            <p>{listingStatus(listing.status, t)}</p>
-            <Link {...buttonAttrs()} to={`?listingId=${encodeURIComponent(listing.id)}`}>{t("Ouvrir le dossier", "Open application")}</Link>
+      <section className={styles.section} aria-label={t("Fiches et demandes", "Listings and applications")}>
+        {(standaloneTools?.length ?? 0) + (listings?.length ?? 0) + claims.length > 1 &&
+          <Field type="search" label={t("Rechercher parmi mes fiches", "Search my listings")} value={toolFilter} onChange={(event) => setToolFilter(event.target.value)} />}
+        {listings && tools && !shownTools?.length && !shownListings?.length && !shownClaims.length && <p>{filter
+          ? t("Aucune fiche ne correspond à cette recherche.", "No listings match this search.")
+          : t("Vous n’avez pas encore de fiche. Vous pouvez proposer un outil ci-dessous.", "You have no listings yet. You can suggest a tool below.")}</p>}
+        {(listings === null || tools === null) && <p role="status">{t("Chargement de vos fiches et de vos demandes…", "Loading your listings and applications…")}</p>}
+        {(!!shownTools?.length || !!shownListings?.length || !!shownClaims.length) && <div className={styles.cards}>
+          {shownListings?.map((listing) => {
+            const published = listing.deliveryStatus === "published";
+            const tool = published || listing.deliveryStatus === "offline" ? tools?.find((item) => item.id === listing.toolId) : undefined;
+            return <article className={styles.card} key={listing.id}>
+              <h3>{listing.name}</h3>
+              <p>{listingOfferLabel(listing.offer, t)}</p>
+              <p className={styles.muted}>{listingCommercialLabel(listing.offer, listing.commercialStatus, t)} · {published ? t("En ligne", "Live") : listingStatus(listing.status, t)}</p>
+              <div className={styles.actions}>
+                {tool && <Link {...buttonAttrs()} to={publisherPath(prefix, tool.slug)}>{tool.canEdit ? t("Modifier la fiche", "Edit listing") : t("Consulter la fiche", "View listing")}</Link>}
+                <Link {...buttonAttrs()} to={`?listingId=${encodeURIComponent(listing.id)}`}>{published ? t("Voir le suivi", "View progress") : t("Ouvrir le dossier", "Open application")}</Link>
+              </div>
+            </article>;
+          })}
+          {shownTools?.map((tool) => <article className={styles.card} key={tool.id}>
+            <h3>{tool.name}</h3>
+            <Link {...buttonAttrs()} to={publisherPath(prefix, tool.slug)}>{tool.canEdit ? t("Modifier la fiche", "Edit listing") : t("Consulter la fiche", "View listing")}</Link>
           </article>)}
-          {claims.map((claim) => <article className={styles.card} key={claim.toolId}>
+          {shownClaims.map((claim) => <article className={styles.card} key={claim.toolId}>
             <h3>{claim.slug}</h3><p>{t("Demande d’accès en attente de vérification", "Access request awaiting verification")}</p>
           </article>)}
         </div>}
@@ -174,8 +184,8 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
               setOffer(event.target.value as ListingOffer);
               createKey.current = null;
             }}>
-              <option value="standard_badge">{t("Revue standard · 0 $ avec badge", "Standard review · $0 with a badge")}</option>
-              <option value="priority_paid">{t("Fiche prioritaire · 29 $ une fois, sans badge", "Priority listing · $29 once, no badge")}</option>
+              <option value="standard_badge">{listingOfferLabel("standard_badge", t)}</option>
+              <option value="priority_paid">{listingOfferLabel("priority_paid", t)}</option>
             </SelectField>
             <div className={styles.actions}><Button variant="primary" disabled={busy} onClick={create}>{t("Créer le dossier", "Create application")}</Button></div>
             <p className={styles.muted}>{t("Vous avez déjà payé ? Ouvrez un dossier prioritaire, puis utilisez « J’ai déjà payé » pour le rapprocher de votre reçu.", "Already paid? Open a priority application, then choose “I’ve already paid” to match it to your receipt.")}</p>

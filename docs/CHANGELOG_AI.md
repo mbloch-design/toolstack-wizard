@@ -1,3 +1,9 @@
+## 2026-11-17 · CMS éditeurs · suivi d’une fiche et de son offre
+
+- Offre choisie et preuve commerciale visibles dans l’espace éditeur et le back-office. Une fiche rattachée retrouve son dossier sans créer une seconde entrée dans « Mes fiches ».
+- Liens directs vers le même dossier éditeur et admin. Après rattachement, accès au lot avec le nom de la fiche et le type de publication.
+- Démo locale avec Atelier Démo pour la revue gratuite et Carnet Démo pour la priorité payante simulée.
+
 ## 2026-11-17 · CMS éditeurs · parcours intégrés sur la branche
 
 - Dossiers privés, recherche avant création, demande de rattachement, invitation liée au compte, et édition factuelle dans la fiche. Réutilisation des offres gratuit avec badge et priorité Creem.

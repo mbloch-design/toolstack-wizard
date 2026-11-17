@@ -19,7 +19,7 @@ export default function PublisherPage() {
   const { slug, invitationToken } = useParams();
   const navigate = useNavigate();
   const query = new URLSearchParams(location.search);
-  const title = t("Mes fiches", "My listings");
+  const title = query.has("listingId") ? t("Suivi de la fiche", "Listing progress") : t("Mes fiches", "My listings");
   useEffect(() => {
     if (!invitationToken) return;
     const kept = keepPublisherInvitation(invitationToken);

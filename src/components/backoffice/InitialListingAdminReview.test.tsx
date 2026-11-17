@@ -20,7 +20,7 @@ it("sends the exact saved product revision for factual review", async () => {
   const review = {
     listing: {
       id: "listing-1", name: "Publisher fixture", websiteUrl: "https://example.org/", status: "in_preparation",
-      version: 4, commercialStatus: "satisfied", representationStatus: "verified", deliveryStatus: "unpublished",
+      version: 4, offer: "priority_paid", commercialStatus: "satisfied", representationStatus: "verified", deliveryStatus: "unpublished",
       representativeRole: "Founder", notes: "Initial request",
     },
     productRevision,
@@ -39,10 +39,12 @@ it("sends the exact saved product revision for factual review", async () => {
     </LangContext.Provider>,
   );
   expect(await screen.findByText("Version to review")).toBeVisible();
+  expect(screen.getByText(/\$29.*no badge/i)).toBeVisible();
+  expect(screen.getByText("Payment confirmed")).toBeVisible();
   fireEvent.click(screen.getByRole("button", { name: "Request factual review" }));
   await waitFor(() => expect(fetch).toHaveBeenCalledTimes(2));
   expect(JSON.parse(String(fetch.mock.calls[1][1].body))).toEqual({
     action: "requestFactualReview", id: review.listing.id, version: 4, productRevisionId: productRevision.id,
   });
-  expect(await screen.findByText("Facts to review")).toBeVisible();
+  expect(await screen.findByText("Awaiting the publisher’s review")).toBeVisible();
 });

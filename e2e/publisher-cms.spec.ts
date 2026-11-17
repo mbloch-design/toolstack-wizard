@@ -118,6 +118,7 @@ test("publisher creates a standard application, supplies the badge and confirms 
   const timestamp = "2026-11-17T13:00:00Z";
   const listing = {
     id: "f6ce53d9-5fa1-49cb-bc56-6d61d536df03", name: "New Product", websiteUrl: "https://publisher.example.org",
+    toolId: null as string | null,
     slug: "new-product", offer: "standard_badge", status: "draft", version: 1, createdAt: timestamp,
     updatedAt: timestamp, commercialStatus: "pending", representationStatus: "pending", deliveryStatus: "unpublished",
     representativeRole: "", notes: "",
@@ -136,7 +137,9 @@ test("publisher creates a standard application, supplies the badge and confirms 
     expect(req.headers().authorization).toMatch(/^Bearer /);
     const url = new URL(req.url());
     const body = req.method() === "POST" ? req.postDataJSON() : null;
-    if (url.pathname === "/api/publisher-catalog") return route.fulfill({ json: { tools: [] } });
+    if (url.pathname === "/api/publisher-catalog") return route.fulfill({ json: { tools: listing.toolId
+      ? [{ id: listing.toolId, name: listing.name, slug: listing.slug, canEdit: true }]
+      : [] } });
     if (url.pathname === "/api/listing-review") {
       if (body) {
         expect(body).toEqual({ action: "respondFactualReview", id: listing.id, version: listing.version,
@@ -179,8 +182,10 @@ test("publisher creates a standard application, supplies the badge and confirms 
   await page.getByRole("textbox", { name: "Official website" }).fill(listing.websiteUrl);
   await page.getByRole("button", { name: "Search ToolTrim" }).click();
   await page.getByRole("button", { name: "Create application" }).click();
+  await expect(page.getByText("Standard review · Free with a badge", { exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Set up the badge" })).toBeVisible();
   await page.getByRole("button", { name: "Verify badge" }).click();
-  await expect(page.getByText("Badge detected", { exact: true })).toBeVisible();
+  await expect(page.getByText("Badge verified", { exact: true })).toBeVisible();
   await page.getByRole("textbox", { name: "Your role with the tool" }).fill("Founder");
   await page.getByRole("button", { name: "Save draft" }).click();
   await page.getByRole("button", { name: "Send to ToolTrim" }).click();
@@ -188,11 +193,20 @@ test("publisher creates a standard application, supplies the badge and confirms 
   listing.status = "facts_to_review";
   listing.version++;
   await page.reload();
+  await expect(page.getByRole("link", { name: "Review product facts" })).toBeVisible();
   await expect(page.getByText("Product facts to confirm.")).toBeVisible();
   await page.getByRole("button", { name: "Confirm product facts" }).click();
   await page.getByRole("button", { name: "Send my response" }).click();
   await expect(page.getByText("You confirmed the facts for this version.")).toBeVisible();
   await expect(page.getByText("Unpublished", { exact: true })).toBeVisible();
+  listing.toolId = "published-tool";
+  listing.deliveryStatus = "published";
+  await page.goto("/en/publisher");
+  const listingCard = page.getByRole("article").filter({ has: page.getByRole("heading", { name: listing.name }) });
+  await expect(listingCard).toHaveCount(1);
+  await expect(listingCard.getByText("Standard review · Free with a badge")).toBeVisible();
+  await expect(listingCard.getByRole("link", { name: "Edit listing" })).toBeVisible();
+  await expect(listingCard.getByRole("link", { name: "View progress" })).toBeVisible();
 });
 
 test("removes an invitation token from the URL before sign-in and consumes it after acceptance", async ({ page, request }) => {

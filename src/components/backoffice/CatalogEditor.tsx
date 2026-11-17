@@ -33,7 +33,8 @@ import {
 import { CatalogField, CatalogValue, catalogFieldLabel } from "./CatalogFields";
 
 import { CatalogDraftSession } from "./catalogDraftSession";
-import { ListingAdmin } from "./ListingAdmin";
+import { ListingAdmin, readAdminListingId, setAdminListingUrl } from "./ListingAdmin";
+import type { ListingBatchSubject } from "./InitialListingAdminReview";
 import { ContributionQueue } from "./ContributionQueue";
 import { CatalogInlineFiche } from "./CatalogInlineFiche";
 import {
@@ -114,7 +115,8 @@ export function CatalogEditor({
   const [ownSession] = useState(() => new CatalogDraftSession());
   const session = suppliedSession ?? ownSession;
   useSyncExternalStore(session.subscribe, session.snapshot, session.snapshot);
-  const [listingAdminOpen, setListingAdminOpen] = useState(false);
+  const [listingAdminOpen, setListingAdminOpen] = useState(() => Boolean(readAdminListingId()));
+  const [batchSubject, setBatchSubject] = useState<ListingBatchSubject>();
   const [contributionsOpen, setContributionsOpen] = useState(false);
   const [inlineSlug, setInlineSlug] = useState<string | null>(null);
   const [reviewDetails, setReviewDetails] = useState<
@@ -246,7 +248,7 @@ export function CatalogEditor({
   );
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    if (params.get("editor") === "inline" && params.get("tool"))
+    if (!readAdminListingId() && params.get("editor") === "inline" && params.get("tool"))
       void openInline(params.get("tool")!);
   }, []);
   async function openInline(slug: string) {
@@ -525,7 +527,14 @@ export function CatalogEditor({
             (locale === "en" ? field.endsWith("En") : !field.endsWith("En"))),
       )
     : [];
-  if (listingAdminOpen) return <ListingAdmin onBack={() => setListingAdminOpen(false)} />;
+  if (batchSubject) return <ContributionQueue fromListing={batchSubject} onBack={() => {
+    setAdminListingUrl(batchSubject.listingId);
+    setBatchSubject(undefined);
+  }} />;
+  if (listingAdminOpen) return <ListingAdmin onBack={() => setListingAdminOpen(false)} onReviewBatch={(subject) => {
+    setAdminListingUrl();
+    setBatchSubject(subject);
+  }} />;
   if (contributionsOpen) return <ContributionQueue onBack={() => setContributionsOpen(false)} />;
   return (
     <section

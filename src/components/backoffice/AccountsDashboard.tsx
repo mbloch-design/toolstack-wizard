@@ -201,7 +201,7 @@ export function AccountsDashboard({
     }
     const url = new URL(window.location.href);
     url.searchParams.set("view", next);
-    if (next !== "catalog") { url.searchParams.delete("tool"); url.searchParams.delete("editor"); }
+    if (next !== "catalog") { url.searchParams.delete("tool"); url.searchParams.delete("editor"); url.searchParams.delete("listingRequest"); }
     window.history.replaceState(window.history.state, "", url);
     setNavigationError(false);
     setView(next);

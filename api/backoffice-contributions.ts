@@ -34,9 +34,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       return;
     }
     if (req.method === "GET" && req.query.mode === "release-preview") {
-      const { manifest, blocked } = await preparePublisherRelease(actor);
+      const { manifest, blocked, source } = await preparePublisherRelease(actor);
+      const publishedIds = new Set(source.tools.map((tool) => tool.id));
+      const newToolIds = manifest.items.filter((item) => !publishedIds.has(item.toolId)).map((item) => item.toolId);
       res.status(200).json({ manifest, blocked, batchKey: catalogHash(manifest),
-        canDeliver: process.env.PUBLISHER_CMS_ENABLED === "true" });
+        newToolIds, canDeliver: process.env.PUBLISHER_CMS_ENABLED === "true" });
       return;
     }
     if (req.method === "GET") {

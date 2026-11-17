@@ -163,6 +163,10 @@ try {
   })).review;
   assert.equal(prepared.listing.status, "in_preparation");
   assert.equal(prepared.productRevision.hash, productHash);
+  const queued = (await adminCall("list")).listings.find((row) => row.id === initial.id);
+  assert.equal(queued?.status, "in_preparation");
+  assert.equal(queued.offer, "priority_paid");
+  assert.equal(queued.commercialStatus, "satisfied");
 
   const approved = (await review("approveInitialEditorial", {
     id: initial.id, version: 4, category: "crm", fields: {
@@ -179,6 +183,7 @@ try {
     id: initial.id, version: 5, productRevisionId: prepared.productRevision.id,
   })).review;
   assert.equal(requested.listing.status, "facts_to_review");
+  assert.ok((await adminCall("list")).listings.some((row) => row.id === initial.id));
   const ownerReview = (await review("ownerRead", { id: initial.id }, owner, session)).review;
   assert.equal(ownerReview.productRevision.id, prepared.productRevision.id);
   assert.equal(ownerReview.editorialRevision, null);
@@ -189,8 +194,10 @@ try {
   await assert.rejects(review("respondFactualReview", { ...confirmation, hash: "d".repeat(64) }, owner, session),
     { code: "PT409", message: "LISTING_REVISION_CONFLICT" });
   assert.equal((await review("respondFactualReview", confirmation, owner, session)).review.listing.status, "ready");
+  assert.ok((await adminCall("list")).listings.some((row) => row.id === initial.id));
 
   const promoted = (await review("promoteInitial", { ...promotion, version: 7 })).approval;
+  assert.equal((await adminCall("list")).listings.find((row) => row.id === initial.id)?.deliveryStatus, "unpublished");
   assert.equal((await review("promoteInitial", { ...promotion, version: 7 })).approval.approvalId, promoted.approvalId);
   assert.equal((await call("read", { id: initial.id })).listing.id, initial.id);
   assert.ok((await call("list")).listings.some((row) => row.id === initial.id));
@@ -242,10 +249,12 @@ try {
   assert.equal(stamped.rows[0].result.commit_sha, commit);
   assert.equal(stamped.rows[0].result.verified_at, null);
   assert.equal((await call("read", { id: initial.id })).listing.deliveryStatus, "publishing");
+  assert.equal((await adminCall("list")).listings.find((row) => row.id === initial.id)?.deliveryStatus, "publishing");
   await assert.rejects(db.query("select public.cms_record_verified_release($1,$2,$3,$4)",
     [admin, adminSession, key, "f".repeat(40)]), { code: "PT409" });
   await db.query("select public.cms_record_verified_release($1,$2,$3,$4)", [admin, adminSession, key, commit]);
   assert.equal((await call("read", { id: initial.id })).listing.deliveryStatus, "published");
+  assert.equal((await adminCall("list")).listings.some((row) => row.id === initial.id), false);
   await db.exec("reset role");
 
   for (const role of ["anon", "authenticated"]) {

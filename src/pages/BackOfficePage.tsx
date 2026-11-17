@@ -70,7 +70,7 @@ function BackOfficePageContent() {
     }
     const params = new URLSearchParams(window.location.search || location.search);
     params.set("view", next);
-    if (next !== "catalog") { params.delete("tool"); params.delete("editor"); }
+    if (next !== "catalog") { params.delete("tool"); params.delete("editor"); params.delete("listingRequest"); }
     if (next !== "users") params.delete("account");
     setSectionError(false);
     routerNavigate({ pathname: location.pathname, search: `?${params}`, hash: location.hash });
@@ -79,7 +79,7 @@ function BackOfficePageContent() {
   const accountLocation = useCallback((id: string | null) => {
     const params = new URLSearchParams(location.search);
     params.set("view", "users");
-    params.delete("tool"); params.delete("editor");
+    params.delete("tool"); params.delete("editor"); params.delete("listingRequest");
     if (id) params.set("account", id); else params.delete("account");
     return { pathname: location.pathname, search: `?${params}`, hash: location.hash };
   }, [location]);

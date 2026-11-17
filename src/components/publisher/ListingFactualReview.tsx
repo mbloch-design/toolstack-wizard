@@ -78,8 +78,8 @@ export default function ListingFactualReview({ listing, getToken, update }: {
   }
 
   return <div className={styles.fields}>
-    <section aria-labelledby="publisher-facts-review" className={styles.section}>
-      <h2 id="publisher-facts-review">{t("Relire les faits", "Review product facts")}</h2>
+    <section id="publisher-facts-review" aria-labelledby="publisher-facts-review-heading" tabIndex={-1} className={styles.section}>
+      <h2 id="publisher-facts-review-heading">{t("Relire les faits", "Review product facts")}</h2>
       {review?.productRevision && available && <p>{t("Vérifiez les informations produit ci-dessous. Votre réponse porte sur cette version.", "Check the product information below. Your response applies to this version.")}</p>}
       {review?.confirmation && <p role="status">{review.confirmation.decision === "confirm"
         ? t("Vous avez confirmé les faits de cette version.", "You confirmed the facts for this version.")

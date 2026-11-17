@@ -6,6 +6,7 @@ import { Notice } from "@/ds/Notice/Notice";
 import { useLang } from "@/hooks/useLang";
 import categories from "@/data/categories_index.json";
 import { supabase } from "@/integrations/supabase/client";
+import { listingCommercialLabel, listingOfferLabel } from "@/lib/listingOfferPresentation";
 import type { ProductDraft } from "@/lib/publisherCatalog";
 import { PublisherApiError, publisherRequest, type ListingRequest } from "@/lib/publisherCatalogApi";
 import PublisherFiche from "@/components/publisher/PublisherFiche";
@@ -25,9 +26,17 @@ type Review = {
   badgeUrl: string | null;
 };
 type Approval = { approvalId: string; toolId: string; version: number };
+export type ListingBatchSubject = { listingId: string; toolId: string; name: string };
 const endpoint = "/api/backoffice-listing-review";
 const editableStatuses = ["submitted", "in_preparation", "changes_requested", "ready"];
 const analysisStatuses = [...editableStatuses, "facts_to_review"];
+
+export function adminListingStatus(status: string, t: (fr: string, en: string) => string) {
+  if (status === "facts_to_review") return t("Relecture attendue de l’éditeur", "Awaiting the publisher’s review");
+  if (status === "changes_requested") return t("Corrections demandées par l’éditeur", "Publisher requested changes");
+  if (status === "ready") return t("Faits confirmés par l’éditeur", "Facts confirmed by the publisher");
+  return listingStatus(status, t);
+}
 
 async function getToken() {
   const { data } = await supabase.auth.getSession();
@@ -42,10 +51,11 @@ function emptyFacts({ name, websiteUrl, media }: ListingRequest): ProductDraft {
   };
 }
 
-export default function InitialListingAdminReview({ listingId, brands, onBack }: {
+export default function InitialListingAdminReview({ listingId, brands, onBack, onReviewBatch }: {
   listingId: string;
   brands: Brand[];
   onBack: () => void;
+  onReviewBatch?: (subject: ListingBatchSubject) => void;
 }) {
   const { t } = useLang();
   const [review, setReview] = useState<Review | null>(null);
@@ -121,9 +131,11 @@ export default function InitialListingAdminReview({ listingId, brands, onBack }:
   }
 
   const listing = review?.listing;
+  const offer = listing?.offer === "standard_badge" || listing?.offer === "priority_paid" ? listing.offer : undefined;
   const product = review?.productRevision;
   const editorial = review?.editorialRevision;
   const sealed = !!(review?.approvalId || approval);
+  const initialToolId = approval?.toolId ?? listing?.toolId;
   const editable = !!listing && editableStatuses.includes(listing.status) && !sealed;
   const canApproveEditorial = !!listing && analysisStatuses.includes(listing.status) && !sealed;
   const confirmed = !!product && review?.confirmation?.decision === "confirm" && review.confirmation.productRevisionId === product.id;
@@ -137,27 +149,40 @@ export default function InitialListingAdminReview({ listingId, brands, onBack }:
   }
 
   return <section className={styles.queue} aria-busy={busy}>
-    <BackofficePageHeading title={listing?.name || t("Première fiche", "Initial listing")} action={<Button disabled={busy || factEdits} onClick={onBack}>{t("Retour aux demandes", "Back to requests")}</Button>} />
+    <BackofficePageHeading title={listing?.name || t("Première fiche", "Initial listing")}
+      description={offer && listingOfferLabel(offer, t)}
+      action={<Button disabled={busy || factEdits} onClick={onBack}>{t("Retour aux demandes", "Back to requests")}</Button>} />
     {error && <Notice title={error} role="alert" actions={<Button disabled={busy || factEdits} onClick={() => setReload(reload + 1)}>{t("Actualiser", "Refresh")}</Button>} />}
     {notice && <p role="status">{notice}</p>}
     {!review && !error && <p role="status">{t("Chargement du dossier…", "Loading application…")}</p>}
     {listing && review && <>
       <section className={styles.content} aria-label={t("État du dossier", "Application status")}>
         <dl className={styles.metadata}>
-          <div><dt>{t("Demande", "Application")}</dt><dd>{listingStatus(listing.status, t)}</dd></div>
+          <div><dt>{t("Demande", "Application")}</dt><dd>{sealed
+            ? t("Première version approuvée", "First version approved")
+            : adminListingStatus(listing.status, t)}</dd></div>
           <div><dt>{t("Site officiel", "Official website")}</dt><dd><a href={listing.websiteUrl} className={linkClass("inline")} target="_blank" rel="noreferrer">{listing.websiteUrl}</a></dd></div>
           <div><dt>{t("Rôle déclaré", "Applicant role")}</dt><dd>{listing.representativeRole || "—"}</dd></div>
           <div><dt>{t("Informations transmises", "Information provided")}</dt><dd>{listing.notes || "—"}</dd></div>
-          <div><dt>{t("Condition commerciale", "Offer requirement")}</dt><dd>{listing.commercialStatus === "satisfied" ? t("Remplie", "Met") : t("À vérifier", "Needs verification")}</dd></div>
-          <div><dt>{t("Fiche publique", "Public listing")}</dt><dd>{listing.deliveryStatus === "published" ? t("En ligne", "Live") : t("Non publiée", "Unpublished")}</dd></div>
+          {offer && <div><dt>{t("Condition de l’offre", "Offer requirement")}</dt><dd>{listingCommercialLabel(offer, listing.commercialStatus, t)}</dd></div>}
+          <div><dt>{t("Représentation", "Representation")}</dt><dd>{approval || listing.representationStatus === "verified" ? t("Vérifiée", "Verified")
+            : ["rejected", "revoked"].includes(listing.representationStatus) ? t("Accès refusé ou retiré", "Access declined or revoked")
+              : t("À vérifier", "Needs verification")}</dd></div>
+          <div><dt>{t("Fiche publique", "Public listing")}</dt><dd>{listing.deliveryStatus === "published" ? t("En ligne", "Live")
+            : listing.deliveryStatus === "publishing" ? t("Publication en cours", "Publishing")
+              : listing.deliveryStatus === "offline" ? t("Hors ligne", "Offline") : t("Non publiée", "Unpublished")}</dd></div>
         </dl>
-        {review.badgeUrl && <a href={review.badgeUrl} className={linkClass("inline")} target="_blank" rel="noreferrer">{t("Ouvrir la page du badge", "Open the badge page")}</a>}
+        {offer === "standard_badge" && review.badgeUrl && <a href={review.badgeUrl} className={linkClass("inline")} target="_blank" rel="noreferrer">{t("Ouvrir la page du badge", "Open the badge page")}</a>}
       </section>
       {review.confirmation && <Notice title={confirmed ? t("Cette version factuelle est confirmée.", "This factual version is confirmed.")
         : t("Le représentant a demandé des corrections.", "The representative requested corrections.")}>
         {review.confirmation.note && <p>{review.confirmation.note}</p>}
       </Notice>}
-      {sealed && <Notice title={t("Première version approuvée. La livraison est suivie dans le lot de publication.", "First version approved. Delivery is tracked in the publication batch.")} />}
+      {sealed && listing.deliveryStatus !== "published" && <Notice title={t("Cette fiche rejoint le lot de publication.", "This listing is part of the publication batch.")}
+        actions={initialToolId && onReviewBatch && <Button variant="primary"
+          onClick={() => onReviewBatch({ listingId: listing.id, toolId: initialToolId, name: listing.name })}>
+          {t("Vérifier le lot de publication", "Check the publication batch")}
+        </Button>} />}
       <section className={styles.content} aria-labelledby="initial-product-facts">
         <h2 id="initial-product-facts">{t("Faits produit", "Product facts")}</h2>
         <PublisherFiche value={product?.value ?? emptyFacts(listing)} canEdit={editable && !busy} onSave={editable ? saveFacts : undefined}
