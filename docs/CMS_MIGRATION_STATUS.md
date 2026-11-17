@@ -51,3 +51,13 @@ Restent à prouver ou terminer avant ouverture : rapprochement complet des ancie
 La revue indépendante du 17 novembre a conduit à réserver les versions approuvées pendant l’envoi Git, limiter les lots en attente, accepter une version descendante uniquement si les fiches du lot conservent leurs empreintes et réserver les dossiers déposés au demandeur. Les demandes initiales permettent d’ajouter des visuels privés avant l’envoi. Les paiements en réponse ambiguë demandent encore un rapprochement manuel. L’édition éditoriale courante des fiches déjà attribuées et l’approbation par champ restent des écarts avant ouverture.
 
 La recette navigateur s’appuie sur des comptes de test et des réponses API contrôlées. Les tests PostgreSQL vérifient séparément les migrations et les rôles. La construction production et la validation du sitemap ont réussi sur l’intégration. Le build Storybook et les tests DS ont réussi. La campagne de captures locale a rencontré des délais dépassés sur certaines stories existantes et s’est arrêtée avant la fin.
+
+## Démonstration locale à essayer
+
+Lancer `PLAYWRIGHT_ACCOUNTS_PORT=5191 node e2e/fixtures/accounts-server.mjs --cms-demo` dans ce checkout. Le serveur écoute sur `127.0.0.1` et garde les changements en mémoire jusqu’au redémarrage.
+
+- Espace éditeur `http://127.0.0.1:5191/fr/publisher` avec `editeur@example.invalid`. Ouvrir Atelier Démo et modifier un bloc, une offre ou un tag avant d’envoyer la proposition.
+- Back-office `http://127.0.0.1:5191/fr/back-office?view=catalog` avec `admin@example.invalid`. Ouvrir « Propositions éditeur », examiner Boussole Démo ou la nouvelle proposition et vérifier le lot après approbation.
+- Mot de passe des deux comptes fictifs `fixture-password`. Utiliser deux profils de navigateur pour garder les deux sessions ouvertes.
+
+Ce mode sert à essayer les écrans et les enchaînements sur des données fictives. Les contrôles de fournisseurs et les écritures de production se font dans une recette hébergée séparée.

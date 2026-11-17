@@ -1,8 +1,11 @@
 // Playwright-only loopback Auth/API simulation. No application imports this file.
 import { createServer } from 'vite';
+import { createPublisherDemo } from './publisher-demo.mjs';
 import { catalogFixture } from './catalog-editor.mjs';
 const catalog = catalogFixture();
 import { randomUUID } from 'node:crypto';
+const isCmsDemo = process.argv.includes('--cms-demo');
+const demo = isCmsDemo ? createPublisherDemo() : null;
 const port = Number(process.env.PLAYWRIGHT_ACCOUNTS_PORT || 8192);
 const origin = `http://127.0.0.1:${port}`;
 const users = new Map(), tokens = new Map(), stacks = new Map(), faults = [], requests = [];
@@ -73,12 +76,31 @@ function seed(input) {
   if (input.state) stacks.set(user.id, { state: clone(input.state), revision: input.revision || 1, updatedAt: now() });
   return user;
 }
-const fixture = { name: 'playwright-account-fixture', configureServer(server) {
+if (isCmsDemo) {
+  seed({ email: 'editeur@example.invalid', displayName: 'Éditeur démo' });
+  seed({ email: 'admin@example.invalid', displayName: 'Administrateur démo' });
+}
+const fixture = {
+  name: 'playwright-account-fixture',
+  transformIndexHtml: {
+    order: 'pre',
+    handler() {
+      if (!isCmsDemo) return [];
+      return [{ tag: 'script', injectTo: 'head-prepend', children: `
+        try {
+          localStorage.setItem('tooltrim-analytics-consent', JSON.stringify({
+            version: 1, choice: 'refused', decidedAt: Date.now(), expiresAt: Date.now() + 3600000
+          }));
+        } catch {}
+      ` }];
+    },
+  },
+  configureServer(server) {
   server.middlewares.use(async (req, res, next) => {
     const url = new URL(req.url, origin), path = url.pathname;
     if (!['/__accounts-test/', '/auth/v1/', '/api/', '/rest/v1/', '/functions/v1/'].some(prefix => path.startsWith(prefix))) return next();
     try {
-      const input = ['POST', 'PUT', 'DELETE'].includes(req.method) ? await body(req) : {};
+      const input = ['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method) ? await body(req) : {};
       if (typeof input.email === 'string' && !normalizeEmail(input.email).endsWith('@example.invalid')) return fail(res, 400, 'FIXTURE_IDENTITIES_ONLY');
       if (path.startsWith('/__accounts-test/')) {
         if (path.endsWith('/reset')) { catalog.reset(input); users.clear(); tokens.clear(); stacks.clear(); passwords.clear(); profiles.clear(); mail.length = 0; faults.length = 0; requests.length = 0; oauthDenied = false; for (const item of input.users || []) seed(item); return send(res, 200, {}); }
@@ -157,6 +179,10 @@ const fixture = { name: 'playwright-account-fixture', configureServer(server) {
       }
       if (path === '/auth/v1/logout') { if (url.searchParams.get('scope') !== 'others') tokens.delete(token); return send(res, 204); }
       if (path.startsWith('/rest/v1/')) return send(res, 200, []);
+      if (demo?.paths.has(path)) {
+        if (!user || !users.has(user.email) || !tokens.has(token)) return fail(res, 401, 'ACCOUNT_SESSION_INVALID');
+        return await demo.handle({ req, res, url, input, user, server, send, fail });
+      }
       if (!path.startsWith('/api/stack-account') && !path.startsWith('/api/backoffice-accounts') && !path.startsWith('/api/backoffice-catalog') && path !== '/api/account-profile') return fail(res, 503, 'LEGACY_ENDPOINT_DISABLED_IN_RECIPE');
       if (!user || !users.has(user.email) || !tokens.has(token)) return fail(res, 401, 'ACCOUNT_SESSION_INVALID');
       if (path === '/api/backoffice-catalog') return catalog.handle({ req, url, input, user, server, send, fail, res });
