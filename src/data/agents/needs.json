@@ -1,0 +1,108 @@
+[
+  {
+    "id": "meetings",
+    "fr": "Préparer mes rendez-vous",
+    "en": "Prepare my meetings",
+    "server": "calendly-mcp",
+    "example": {
+      "fr": "Trouve-moi trois créneaux libres jeudi après-midi.",
+      "en": "Find me three free slots on Thursday afternoon."
+    },
+    "also": [
+      "hubspot-mcp"
+    ]
+  },
+  {
+    "id": "notes",
+    "fr": "Retrouver une info dans mes notes",
+    "en": "Find something in my notes",
+    "server": "notion-mcp",
+    "example": {
+      "fr": "Retrouve la page où j'ai noté les tarifs de mon client Dupont.",
+      "en": "Find the page where I wrote down my client Dupont's rates."
+    },
+    "also": [
+      "slack-mcp",
+      "airtable-mcp"
+    ]
+  },
+  {
+    "id": "payments",
+    "fr": "Suivre mes paiements",
+    "en": "Follow my payments",
+    "server": "stripe-mcp",
+    "example": {
+      "fr": "Quel est mon solde Stripe et combien ai-je encaissé ce mois-ci ?",
+      "en": "What is my Stripe balance and how much did I take in this month?"
+    },
+    "also": [
+      "shopify-mcp"
+    ]
+  },
+  {
+    "id": "traffic",
+    "fr": "Lire mes stats de trafic",
+    "en": "Read my traffic stats",
+    "server": "google-analytics-mcp",
+    "example": {
+      "fr": "Combien de visiteurs mon site a-t-il eus le mois dernier, et d'où venaient-ils ?",
+      "en": "How many visitors did my site get last month, and where did they come from?"
+    },
+    "also": [
+      "ahrefs-mcp"
+    ]
+  },
+  {
+    "id": "social",
+    "fr": "Publier sur mes réseaux",
+    "en": "Post on my networks",
+    "server": "buffer-mcp",
+    "example": {
+      "fr": "Programme ce post sur LinkedIn pour mardi à 9 h.",
+      "en": "Schedule this post on LinkedIn for Tuesday at 9am."
+    },
+    "also": [
+      "hubspot-mcp"
+    ]
+  },
+  {
+    "id": "projects",
+    "fr": "Gérer mes projets",
+    "en": "Manage my projects",
+    "server": "clickup-mcp",
+    "example": {
+      "fr": "Quelles tâches sont en retard sur le projet Refonte ?",
+      "en": "Which tasks are late on the Redesign project?"
+    },
+    "also": [
+      "airtable-mcp",
+      "miro-mcp"
+    ]
+  },
+  {
+    "id": "visuals",
+    "fr": "Créer des visuels",
+    "en": "Create visuals",
+    "server": "canva-mcp",
+    "example": {
+      "fr": "Crée un visuel Instagram pour annoncer mon atelier de samedi.",
+      "en": "Create an Instagram visual announcing my Saturday workshop."
+    },
+    "also": [
+      "figma-mcp"
+    ]
+  },
+  {
+    "id": "clients",
+    "fr": "Suivre mes clients et prospects",
+    "en": "Follow my clients and leads",
+    "server": "hubspot-mcp",
+    "example": {
+      "fr": "Quelles transactions sont encore ouvertes, de la plus grosse à la plus petite ?",
+      "en": "Which deals are still open, largest first?"
+    },
+    "also": [
+      "airtable-mcp"
+    ]
+  }
+]

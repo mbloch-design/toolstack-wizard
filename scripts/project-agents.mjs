@@ -5,13 +5,16 @@
  *   src/data/agents/mcp_index.json     cards of /mcp (filters included)
  *   src/data/agents/skills_index.json  cards of /skills
  *   src/data/agents/catalog.json       the sheets, read by /mcp/:slug and /skills/:slug
+ *   src/data/agents/needs.json         the hub's needs (research/agents/needs.json), each resolved to its sheet
+ *   src/data/agents/checked_none.json  catalogue tools checked with no official server (the hub's « not yet »)
+ *   src/data/agents/advice.json        ToolTrim's words per server (one example request, for whom), for the tool pages
  *
  *   node scripts/project-agents.mjs           # writes (refuses anything outside the vocabularies)
  *   node scripts/project-agents.mjs --check   # guard: exits 1 when invalid or out of step
  */
 import fs from "node:fs";
 import path from "node:path";
-import { validateMcpSheet, validateSkillSheet } from "./lib/agent-access.mjs";
+import { validateMcpSheet, validateNeeds, validateSkillSheet } from "./lib/agent-access.mjs";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const CHECK = process.argv.includes("--check");
@@ -23,10 +26,12 @@ const tools = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/tools_v4.json
 const catalogSlugs = new Set(tools.map((t) => t.slug || t.id));
 const serverSlugs = new Set(servers.map((s) => s.slug));
 const skillSlugs = new Set(skills.map((s) => s.slug));
+const needsTable = JSON.parse(fs.readFileSync(path.join(ROOT, "research/agents/needs.json"), "utf8"));
 
 const errors = [
   ...servers.flatMap((s) => validateMcpSheet(s, { catalogSlugs, skillSlugs })),
   ...skills.flatMap((s) => validateSkillSheet(s, { catalogSlugs, serverSlugs })),
+  ...validateNeeds(needsTable, servers),
 ];
 for (const server of servers) for (const skill of skills.filter((k) => k.server === server.slug)) {
   if (!(server.skills ?? []).includes(skill.slug)) errors.push(`${server.slug} : ne liste pas son skill ${skill.slug}`);
@@ -39,18 +44,33 @@ const mcpIndex = servers.map((s) => ({
   slug: s.slug, name: s.name, publisher: s.publisher, host_tool: s.host_tool, category: s.category, summary: s.summary,
   ...(s.status ? { status: s.status } : {}), ...(s.transport ? { transport: s.transport } : {}), ...(s.auth ? { auth: s.auth } : {}),
   ...(s.access ? { access: s.access } : {}), plan: s.plan, kinds: kindsOf(s),
+  // The risk said in words follows the capability lines shown on the sheet; the tools only when there are none.
+  capability_kinds: s.capabilities?.length ? KINDS.filter((k) => s.capabilities.some((c) => c.kind === k)) : kindsOf(s),
   one_click: [...new Set((s.setup ?? []).filter((w) => ONE_CLICK.includes(w.how) && w.assistant !== "other").map((w) => w.assistant))],
-  ...(s.clients ? { clients: s.clients } : {}), tools: s.tools?.length ?? 0, skills: s.skills?.length ?? 0, verified_on: s.verified_on,
+  ...(s.clients ? { clients: s.clients } : {}), ...(s.setup ? { setup: s.setup } : {}), ...(s.safeguards ? { safeguards: s.safeguards } : {}),
+  ...(s.for ? { for: s.for, not_for: s.not_for } : {}), tools: s.tools?.length ?? 0, skills: s.skills?.length ?? 0, verified_on: s.verified_on,
 }));
 const skillsIndex = skills.map((k) => ({
   slug: k.slug, name: k.name, publisher: k.publisher, host_tool: k.host_tool, server: k.server, category: k.category,
   summary: k.summary, agents: k.agents, verified_on: k.verified_on,
 }));
 
+const bySlug = new Map(servers.map((s) => [s.slug, s]));
+const needs = (needsTable.needs ?? []).filter((need) => bySlug.get(need.server)?.examples?.[need.example]).map((need) => ({
+  id: need.id, fr: need.fr, en: need.en, server: need.server, example: bySlug.get(need.server).examples[need.example], also: need.also ?? [],
+}));
+// The tool page's gateway says one request and our view: only those travel to its bundle.
+const advice = Object.fromEntries(servers.filter((s) => s.examples || s.for).map((s) => [s.slug, {
+  ...(s.examples ? { examples: s.examples.slice(0, 1) } : {}), ...(s.for ? { for: s.for } : {}),
+}]));
+
 const outputs = {
   "src/data/agents/mcp_index.json": mcpIndex,
   "src/data/agents/skills_index.json": skillsIndex,
   "src/data/agents/catalog.json": { servers, skills },
+  "src/data/agents/needs.json": needs,
+  "src/data/agents/advice.json": advice,
+  "src/data/agents/checked_none.json": tools.filter((t) => t.agentAccess?.mcp === "none").map((t) => t.slug || t.id).sort(),
 };
 for (const error of errors) console.log(`✗ ${error}`);
 let stale = 0;

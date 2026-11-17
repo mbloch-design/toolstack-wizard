@@ -557,7 +557,7 @@
       "en": "Reusable instruction pages, written and shared in Notion, that any assistant connected to Notion MCP can follow."
     },
     "agents": [
-      "any MCP client connected to Notion"
+      "any"
     ],
     "verified_on": "2026-11-16"
   },
@@ -1121,7 +1121,7 @@
       "en": "Guide the assistant before building a Zapier workflow."
     },
     "agents": [
-      "any MCP client connected to Zapier MCP"
+      "any"
     ],
     "verified_on": "2026-11-16"
   },
@@ -1137,7 +1137,7 @@
       "en": "Introduce Zapier MCP with a first workflow across your apps."
     },
     "agents": [
-      "any MCP client connected to Zapier MCP"
+      "any"
     ],
     "verified_on": "2026-11-16"
   }

@@ -9,6 +9,28 @@
     "fr": "Le serveur officiel de Notion donne à votre assistant l'accès à vos pages, bases de données, commentaires, fichiers et agenda Notion. Il peut lire, créer, modifier et mettre à la corbeille, toujours dans la limite de vos droits.",
     "en": "Notion's official server gives your assistant access to your Notion pages, databases, comments, files and calendar. It can read, create, edit and move to trash, always within your own rights."
   },
+  "examples": [
+    {
+      "fr": "Résume mes notes de réunion de cette semaine et liste les actions à faire.",
+      "en": "Summarise this week's meeting notes and list the action items."
+    },
+    {
+      "fr": "Retrouve la page où j'ai noté les tarifs de mon client Dupont.",
+      "en": "Find the page where I wrote down my client Dupont's rates."
+    },
+    {
+      "fr": "Crée une page de compte rendu dans ma base Clients avec ces trois points.",
+      "en": "Create a meeting report page in my Clients database with these three points."
+    }
+  ],
+  "for": {
+    "fr": "Vous rangez déjà vos notes, vos clients ou vos projets dans Notion et vous perdez du temps à les retrouver.",
+    "en": "You already keep your notes, clients or projects in Notion and lose time finding them again."
+  },
+  "not_for": {
+    "fr": "Vous êtes invité dans l'espace d'un client : les invités ne peuvent pas se connecter.",
+    "en": "You are a guest in a client's workspace: guests cannot connect."
+  },
   "verified_on": "2026-11-16",
   "status": "ga",
   "transport": "remote",

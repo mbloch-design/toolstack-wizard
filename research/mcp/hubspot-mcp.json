@@ -9,6 +9,28 @@
     "fr": "Le serveur officiel de HubSpot ouvre à votre assistant le CRM, les campagnes, le contenu et les publications sociales. Les créations et modifications demandent une confirmation explicite, et aucune suppression n'est documentée.",
     "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating and editing require explicit confirmation, and no deletion is documented."
   },
+  "examples": [
+    {
+      "fr": "Quelles transactions sont encore ouvertes, de la plus grosse à la plus petite ?",
+      "en": "Which deals are still open, largest first?"
+    },
+    {
+      "fr": "Ajoute une note à la fiche de Claire Martin après notre appel.",
+      "en": "Add a note to Claire Martin's record after our call."
+    },
+    {
+      "fr": "Comment s'est passée ma dernière campagne d'e-mails ?",
+      "en": "How did my last email campaign do?"
+    }
+  ],
+  "for": {
+    "fr": "Votre suivi commercial et vos campagnes vivent dans HubSpot.",
+    "en": "Your sales follow-up and campaigns live in HubSpot."
+  },
+  "not_for": {
+    "fr": "Vous voulez un branchement en un clic depuis Claude ou ChatGPT : HubSpot ne documente que l'adresse du serveur à ajouter.",
+    "en": "You want a one-click setup from Claude or ChatGPT: HubSpot only documents the server address to add."
+  },
   "verified_on": "2026-11-16",
   "status": "ga",
   "transport": "remote",

@@ -1,17 +1,23 @@
 import type { ReactNode } from "react";
 import type { AgentAccess as AgentAccessData } from "@/data/types";
+import type { Advice } from "@/lib/agents";
 import { LinkArrow, linkClass } from "../Button/Button";
 import { actionVerbs, agentVerdict, factWords, joinWords, leadServer, longDate, say, type Lang } from "./agentVerdict";
 import styles from "./AgentAccess.module.css";
 
 /*
- * The gateway on a tool page (S1, 16/11/2026): one verdict sentence, three facts and the link to the server sheet,
- * where the tools and the install live. No badge, no client logo. The page renders nothing without a block:
- * absent means not checked, « none » means checked and none found.
+ * The gateway on a tool page (S1, 16/11/2026; tone of S1 bis, 17/11): one verdict sentence, a request you could
+ * type, our view, three facts and « Brancher Notion à votre assistant », the link to the server sheet.
+ * No badge, no client logo. The page renders nothing without a block: absent means not checked,
+ * « none » means checked and none found.
  */
-export default function AgentAccess({ access, lang, renderSheetLink }: {
+export default function AgentAccess({ access, lang, toolName, advice, renderSheetLink }: {
   access: AgentAccessData;
   lang: Lang;
+  /** The tool's name (« Notion »), said in the link and the « none » verdict. */
+  toolName: string;
+  /** ToolTrim's words for the lead server (example requests, for whom), from src/data/agents/advice.json. */
+  advice?: Advice;
   /** The router link to a server sheet (/mcp/:slug); Storybook gives a plain anchor. */
   renderSheetLink?: (slug: string, className: string, content: ReactNode) => ReactNode;
 }) {
@@ -24,9 +30,21 @@ export default function AgentAccess({ access, lang, renderSheetLink }: {
   return (
     <div className={styles.block} data-agent-access={access.mcp}>
       <div className={styles.lead}>
-        <p className={styles.verdict}>{agentVerdict(access, lang)}</p>
+        <p className={styles.verdict}>{access.mcp === "none"
+          ? t(`${toolName} ne se branche pas encore officiellement à un assistant IA.`, `${toolName} does not plug into an AI assistant officially yet.`)
+          : agentVerdict(access, lang)}</p>
         {note && <p className={styles.text}>{note}</p>}
       </div>
+
+      {access.mcp === "official" && advice?.examples?.[0] && (
+        <figure className={styles.request}>
+          <figcaption className={styles.eyebrow}>{t("Vous pourrez lui demander", "You could ask it")}</figcaption>
+          <blockquote className={styles.requestText}>{t(`« ${advice.examples[0].fr} »`, `“${advice.examples[0].en}”`)}</blockquote>
+        </figure>
+      )}
+      {access.mcp === "official" && advice?.for && (
+        <p className={styles.text}><span className={styles.strong}>{t("Notre avis : ", "Our view: ")}</span>{t(`utile si ${lower(advice.for.fr)}`, `useful if ${lower(advice.for.en)}`)}</p>
+      )}
 
       {access.mcp === "official" && <GatewayFacts access={access} lang={lang} />}
 
@@ -34,7 +52,7 @@ export default function AgentAccess({ access, lang, renderSheetLink }: {
         <ul className={styles.links}>
           {linked.map((server) => (
             <li key={server.mcpSlug}>{link(server.mcpSlug!, linkClass(), <>
-              {access.servers.length > 1 ? t(`Fiche du serveur : ${server.name}`, `Server sheet: ${server.name}`) : t("Outils, installation et sources du serveur", "The server's tools, install and sources")}<LinkArrow />
+              {linked.length > 1 ? t(`Brancher ${toolName} : ${server.name}`, `Plug in ${toolName}: ${server.name}`) : t(`Brancher ${toolName} à votre assistant`, `Plug ${toolName} into your assistant`)}<LinkArrow />
             </>)}</li>
           ))}
         </ul>
@@ -61,6 +79,7 @@ export default function AgentAccess({ access, lang, renderSheetLink }: {
 }
 
 const KIND_ORDER = ["read", "write", "delete", "send", "pay"] as const;
+const lower = (text: string) => text.charAt(0).toLowerCase() + text.slice(1);
 const raise = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 /** A plan note often opens on the value it details as its own sentence (« Tous les forfaits. Jetons… »): said once. */
 const withoutEcho = (note: string, value: string) => note.replace(new RegExp(`^${value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.\\s+`, "i"), "") || note;

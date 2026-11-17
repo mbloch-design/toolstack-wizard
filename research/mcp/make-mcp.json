@@ -9,6 +9,24 @@
     "fr": "Le serveur officiel de Make transforme vos scénarios actifs en actions que votre assistant peut lancer ; sur un forfait payant, il peut aussi consulter et modifier scénarios, connexions et data stores. Make ne publie pas de liste nominative d'outils : ils dépendent de vos scénarios et des portées choisies.",
     "en": "Make's official server turns your active scenarios into actions your assistant can run; on a paid plan it can also view and edit scenarios, connections and data stores. Make publishes no named tool list: tools depend on your scenarios and the scopes you grant."
   },
+  "examples": [
+    {
+      "fr": "Lance mon scénario de facturation pour ce client.",
+      "en": "Run my invoicing scenario for this client."
+    },
+    {
+      "fr": "Quels scénarios ai-je, et lesquels sont actifs ?",
+      "en": "Which scenarios do I have, and which are active?"
+    }
+  ],
+  "for": {
+    "fr": "Vous avez déjà des scénarios Make et voulez les lancer en une phrase.",
+    "en": "You already have Make scenarios and want to run them in one sentence."
+  },
+  "not_for": {
+    "fr": "Vous n'avez pas encore d'automatisation : le serveur sert surtout à lancer et gérer des scénarios existants.",
+    "en": "You have no automation yet: the server is mostly for running and managing existing scenarios."
+  },
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

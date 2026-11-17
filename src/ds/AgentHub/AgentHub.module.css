@@ -1,0 +1,246 @@
+/* The hub /agents: a need, its advice, the stack, where to start. Tiles and white cards of the system,
+   groups and space, never a separator. */
+
+.picker {
+  display: grid;
+  gap: var(--tt-gap-group);
+  min-width: 0;
+}
+
+.advice {
+  composes: tile from "../atoms.module.css";
+  gap: var(--tt-gap-group);
+}
+
+.adviceHead {
+  display: flex;
+  gap: var(--tt-space-3);
+  align-items: center;
+  min-width: 0;
+}
+
+.logo {
+  display: inline-flex;
+  flex: none;
+}
+
+.title {
+  composes: titleM from "../atoms.module.css";
+}
+
+.term {
+  composes: eyebrow from "../atoms.module.css";
+}
+
+.text {
+  composes: text from "../atoms.module.css";
+  max-width: 62ch;
+}
+
+.note {
+  composes: note from "../atoms.module.css";
+  max-width: 62ch;
+}
+
+/* The request you could type: a white card lifted off the tile, like a message. */
+.request {
+  composes: raised from "../atoms.module.css";
+  display: grid;
+  gap: var(--tt-space-2);
+  margin: 0;
+  padding: var(--tt-space-4) var(--tt-space-5);
+  max-width: 62ch;
+}
+
+.requestText {
+  composes: label from "../atoms.module.css";
+  margin: 0;
+}
+
+.facts {
+  display: grid;
+  gap: var(--tt-space-3);
+  margin: 0;
+}
+
+.row {
+  display: grid;
+  gap: var(--tt-space-1);
+  min-width: 0;
+}
+
+@container (min-width: 560px) {
+  .row {
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: var(--tt-space-4);
+    align-items: baseline;
+  }
+}
+
+.value {
+  composes: text from "../atoms.module.css";
+  margin: 0;
+  max-width: 62ch;
+  overflow-wrap: break-word;
+}
+
+.group {
+  display: grid;
+  gap: var(--tt-space-3);
+  min-width: 0;
+}
+
+/* Numbered steps: the figure in a round, the sentence beside it. */
+.steps {
+  display: grid;
+  gap: var(--tt-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.step {
+  composes: text from "../atoms.module.css";
+  display: grid;
+  grid-template-columns: var(--tt-space-8) minmax(0, 1fr);
+  gap: var(--tt-space-3);
+  align-items: baseline;
+  max-width: 62ch;
+  counter-increment: step;
+}
+
+.step::before {
+  content: counter(step);
+  display: inline-grid;
+  place-items: center;
+  width: var(--tt-space-8);
+  height: var(--tt-space-8);
+  border-radius: var(--tt-r-round);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-hairline);
+  font: var(--tt-label-font);
+}
+
+.links {
+  display: grid;
+  gap: var(--tt-space-2);
+  justify-items: start;
+}
+
+.invite,
+.stack,
+.start {
+  display: grid;
+  gap: var(--tt-gap-group);
+  justify-items: start;
+  min-width: 0;
+}
+
+.stack {
+  justify-items: stretch;
+}
+
+.points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: var(--tt-space-4);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.point {
+  composes: tile from "../atoms.module.css";
+  gap: var(--tt-space-2);
+}
+
+.pointTitle {
+  composes: label from "../atoms.module.css";
+  composes: strong from "../atoms.module.css";
+}
+
+/* Cards of sheets: a white card with its hairline and quiet lift, like the catalogue's rows. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--tt-place-min)), 1fr));
+  gap: var(--tt-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cardSlot {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
+  transition: box-shadow var(--tt-dur-state) var(--tt-ease);
+  min-width: 0;
+}
+
+.cardSlot:hover {
+  box-shadow: var(--tt-row-lift);
+}
+
+.agentCard {
+  display: grid;
+  gap: var(--tt-space-3);
+  align-content: start;
+  padding: var(--tt-space-5);
+  border-radius: var(--tt-r-card);
+  color: var(--tt-ink);
+  text-decoration: none;
+  min-width: 0;
+}
+
+.agentCard:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: calc(-1 * var(--tt-focus-offset));
+}
+
+.cardHead {
+  display: flex;
+  gap: var(--tt-space-3);
+  align-items: center;
+  min-width: 0;
+}
+
+.cardNames {
+  display: grid;
+  min-width: 0;
+}
+
+.cardName {
+  composes: label from "../atoms.module.css";
+  composes: strong from "../atoms.module.css";
+}
+
+.cardBy {
+  composes: note from "../atoms.module.css";
+  color: var(--tt-meta);
+}
+
+.cardSummary {
+  composes: note from "../atoms.module.css";
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.cardFacts {
+  composes: note from "../atoms.module.css";
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-1) var(--tt-space-3);
+  color: var(--tt-meta);
+}
+
+.cardAction {
+  display: flex;
+  padding: 0 var(--tt-space-5) var(--tt-space-5);
+}

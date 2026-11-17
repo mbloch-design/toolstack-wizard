@@ -34,6 +34,8 @@ import ToolBillingTrapsBlock from "@/components/tool/ToolBillingTrapsBlock";
 import ToolAiBlock from "@/components/tool/ToolAiBlock";
 import ToolGallery from "@/components/tool/ToolGallery";
 import AgentAccess from "@/ds/AgentAccess/AgentAccess";
+import agentAdviceData from "@/data/agents/advice.json";
+import type { Advice } from "@/lib/agents";
 import { getToolTutorials } from "@/data/toolTutorials";
 import { getToolMediaImages } from "@/data/toolMedia";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
@@ -64,6 +66,13 @@ import { getExplorerHref } from "@/lib/toolExploration";
    - Right: sticky StickyDecisionCard
    - Hero: large tool name + short description + metadata row
 ───────────────────────────────────────────────────────────────────────────── */
+
+/** ToolTrim's words (one request, our view) for the tool's first server with a sheet. */
+const AGENT_ADVICE = agentAdviceData as Record<string, Advice>;
+const agentAdvice = (access: { servers: { mcpSlug?: string }[] }) => {
+  const slug = access.servers.find((server) => server.mcpSlug)?.mcpSlug;
+  return slug ? AGENT_ADVICE[slug] : undefined;
+};
 
 function splitUseCase(value: string): { title: string; detail?: string } {
   const separators = [" : ", ": ", " qui veut ", " that wants ", " avec ", " with "];
@@ -1230,7 +1239,8 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                       {t("Assistant IA.", "AI assistant.")} <span className="tt-title-muted">{t(`${tool.name} et votre assistant.`, `${tool.name} and your assistant.`)}</span>
                     </h2>
                     <AgentAccess
-                      access={tool.agentAccess} lang={lang === "en" ? "en" : "fr"}
+                      access={tool.agentAccess} lang={lang === "en" ? "en" : "fr"} toolName={tool.name}
+                      advice={agentAdvice(tool.agentAccess)}
                       renderSheetLink={(slug, className, content) => <Link to={`${prefix}/mcp/${slug}`} className={className}>{content}</Link>}
                     />
                   </div>

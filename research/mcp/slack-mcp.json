@@ -9,6 +9,28 @@
     "fr": "Le serveur officiel de Slack permet à votre assistant de chercher et lire messages, fils, fichiers et canvases, de créer des canaux et des canvases, et d'envoyer ou programmer des messages. Il est réservé aux applications publiées ou internes et à quelques assistants partenaires, sous le contrôle des administrateurs.",
     "en": "Slack's official server lets your assistant search and read messages, threads, files and canvases, create channels and canvases, and send or schedule messages. It is limited to published or internal apps and a few partner assistants, under admin control."
   },
+  "examples": [
+    {
+      "fr": "Résume ce qui s'est dit dans #projet-client depuis lundi.",
+      "en": "Summarise what was said in #client-project since Monday."
+    },
+    {
+      "fr": "Retrouve le devis que Paul a partagé la semaine dernière.",
+      "en": "Find the quote Paul shared last week."
+    },
+    {
+      "fr": "Prépare un brouillon de réponse à ce fil.",
+      "en": "Draft a reply to this thread."
+    }
+  ],
+  "for": {
+    "fr": "Vous échangez avec vos clients ou votre équipe dans Slack.",
+    "en": "You talk with your clients or team in Slack."
+  },
+  "not_for": {
+    "fr": "Vous ne voulez aucun message envoyé en votre nom : l'assistant peut écrire dans n'importe quelle conversation.",
+    "en": "You want no message sent in your name: the assistant can write in any conversation."
+  },
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

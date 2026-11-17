@@ -9,6 +9,28 @@
     "fr": "Le serveur officiel de Calendly permet à votre assistant de trouver vos créneaux, réserver et annuler des rendez-vous, et modifier vos types d'événements et disponibilités. Aucun forfait payant n'est requis, et Calendly ne documente pas de confirmation avant action.",
     "en": "Calendly's official server lets your assistant find your open slots, book and cancel meetings, and edit your event types and availability. No paid plan is required, and Calendly documents no confirmation before acting."
   },
+  "examples": [
+    {
+      "fr": "Trouve-moi trois créneaux libres jeudi après-midi.",
+      "en": "Find me three free slots on Thursday afternoon."
+    },
+    {
+      "fr": "Quels rendez-vous ai-je la semaine prochaine ?",
+      "en": "Which meetings do I have next week?"
+    },
+    {
+      "fr": "Crée un lien de réservation à usage unique pour mon rendez-vous découverte.",
+      "en": "Create a single-use booking link for my discovery call."
+    }
+  ],
+  "for": {
+    "fr": "Vos clients réservent leurs rendez-vous avec vous sur Calendly.",
+    "en": "Your clients book their meetings with you on Calendly."
+  },
+  "not_for": {
+    "fr": "Vous voulez seulement consulter votre agenda : l'assistant peut aussi annuler un rendez-vous, sans garde-fou documenté.",
+    "en": "You only want to look at your calendar: the assistant can also cancel a meeting, with no documented safeguard."
+  },
   "verified_on": "2026-11-16",
   "status": "ga",
   "transport": "remote",

@@ -9,6 +9,28 @@
     "fr": "Le serveur officiel de Google Analytics permet à votre assistant de lire vos comptes, propriétés et rapports, y compris en temps réel. Il s'installe sur votre ordinateur avec Python et des identifiants Google Cloud : c'est le plus technique de la section.",
     "en": "Google Analytics' official server lets your assistant read your accounts, properties and reports, realtime included. It is installed on your computer with Python and Google Cloud credentials: the most technical one in this section."
   },
+  "examples": [
+    {
+      "fr": "Combien de visiteurs mon site a-t-il eus le mois dernier, et d'où venaient-ils ?",
+      "en": "How many visitors did my site get last month, and where did they come from?"
+    },
+    {
+      "fr": "Combien de personnes sont sur mon site en ce moment ?",
+      "en": "How many people are on my site right now?"
+    },
+    {
+      "fr": "Quelles pages amènent le plus de conversions ?",
+      "en": "Which pages bring the most conversions?"
+    }
+  ],
+  "for": {
+    "fr": "Vous suivez votre site dans Google Analytics et voulez des réponses sans construire de rapport.",
+    "en": "You track your site in Google Analytics and want answers without building a report."
+  },
+  "not_for": {
+    "fr": "Vous voulez un branchement en un clic : il s'installe sur votre ordinateur, avec Python et des identifiants Google Cloud.",
+    "en": "You want a one-click setup: it is installed on your computer, with Python and Google Cloud credentials."
+  },
   "verified_on": "2026-11-16",
   "transport": "local",
   "access": "read",

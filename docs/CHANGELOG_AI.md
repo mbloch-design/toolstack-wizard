@@ -1,3 +1,9 @@
+## 2026-11-17 · Axe MCP · section agents S1 bis : accompagner, pas un annuaire (même branche, non poussée)
+
+- Contenu ToolTrim : demandes types, « utile si » et « moins utile si » sur les 19 fiches serveur, écrits depuis les outils documentés ; 8 besoins du hub (`research/agents/needs.json`), garde-fou testé (un besoin mène toujours à une fiche).
+- Hub `/agents` : besoins, « Avec votre stack », « Par où commencer », puis toute la liste. Fiches en chapitres (ce que ça change, notre avis, trois étapes par assistant, garder la main, technique repliée). Passerelle de la fiche outil : une demande, l'avis, « Brancher Notion à votre assistant ». Vocabulaire de surface sans jargon, « MCP » gardé dans les titres SEO.
+- Détail et choix à valider : `docs/ROADMAP.md`, « Fait — S1 bis » ; `docs/DESIGN_DECISIONS.md`, « À arbitrer ».
+
 ## 2026-11-17 · Axe MCP · section agents S1 (branche `claude/distracted-grothendieck-64ebde`, non poussée)
 
 - Données : bloc `facts.agent` sur 20 fiches (dont `status`, `capabilities`, `setup`, `safeguards`), 19 fiches serveur `research/mcp/` (catalogue d'outils, installation recopiée de la doc éditeur, clients cités) et 60 skills officiels `research/skills/`, documentation éditeur consultée le 16/11. Projections `agentAccess` (tools_v4, index réduit) et `src/data/agents/*.json`, garde-fou `npm run guard:agent-access` en CI.

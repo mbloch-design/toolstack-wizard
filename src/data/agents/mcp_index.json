@@ -21,6 +21,11 @@
       "write",
       "delete"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete"
+    ],
     "one_click": [
       "claude",
       "chatgpt"
@@ -33,6 +38,25 @@
       "Copilot Studio",
       "n8n"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      }
+    ],
+    "safeguards": [],
+    "for": {
+      "fr": "Vous avez un forfait Ahrefs payant et suivez le référencement de votre site ou de ceux de vos clients.",
+      "en": "You pay for Ahrefs and follow the search ranking of your site or your clients' sites."
+    },
+    "not_for": {
+      "fr": "Vous n'avez pas de forfait payant : le serveur n'y est pas ouvert.",
+      "en": "You have no paid plan: the server is not open to you."
+    },
     "tools": 0,
     "skills": 0,
     "verified_on": "2026-11-16"
@@ -60,6 +84,11 @@
       "delete",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete"
+    ],
     "one_click": [
       "claude",
       "chatgpt",
@@ -73,6 +102,36 @@
       "cursor",
       "Codex"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "gemini",
+        "how": "connector"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "admin_controls",
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Vos clients, vos projets ou vos contenus vivent dans des bases Airtable.",
+      "en": "Your clients, projects or content live in Airtable bases."
+    },
+    "not_for": {
+      "fr": "Vous branchez une base importante sans sauvegarde : l'assistant peut aussi supprimer des tables entières.",
+      "en": "You connect an important base with no backup: the assistant can also delete whole tables."
+    },
     "tools": 41,
     "skills": 0,
     "verified_on": "2026-11-16"
@@ -95,6 +154,12 @@
       "delete",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
     "one_click": [
       "claude"
     ],
@@ -111,6 +176,29 @@
       "Grok",
       "n8n"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "url"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [],
+    "for": {
+      "fr": "Vous publiez régulièrement sur plusieurs réseaux avec Buffer.",
+      "en": "You post regularly on several networks with Buffer."
+    },
+    "not_for": {
+      "fr": "Vous ne voulez rien publier sans relire : l'assistant peut publier tout de suite, et Buffer ne documente pas de confirmation.",
+      "en": "You never want anything posted unread: the assistant can post right away, and Buffer documents no confirmation."
+    },
     "tools": 17,
     "skills": 0,
     "verified_on": "2026-11-16"
@@ -138,6 +226,11 @@
       "delete",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete"
+    ],
     "one_click": [
       "claude",
       "chatgpt"
@@ -148,6 +241,29 @@
       "Codex",
       "Muse"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [],
+    "for": {
+      "fr": "Vos clients réservent leurs rendez-vous avec vous sur Calendly.",
+      "en": "Your clients book their meetings with you on Calendly."
+    },
+    "not_for": {
+      "fr": "Vous voulez seulement consulter votre agenda : l'assistant peut aussi annuler un rendez-vous, sans garde-fou documenté.",
+      "en": "You only want to look at your calendar: the assistant can also cancel a meeting, with no documented safeguard."
+    },
     "tools": 39,
     "skills": 0,
     "verified_on": "2026-11-16"
@@ -173,6 +289,10 @@
       "write",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write"
+    ],
     "one_click": [],
     "clients": [
       "chatgpt",
@@ -184,6 +304,14 @@
       "perplexity",
       "grok"
     ],
+    "for": {
+      "fr": "Vous faites vos visuels dans Canva et partez souvent d'une page blanche.",
+      "en": "You make your visuals in Canva and often start from a blank page."
+    },
+    "not_for": {
+      "fr": "Vous attendez un visuel prêt à publier : un design généré se relit et s'ajuste dans Canva.",
+      "en": "You expect a visual ready to publish: a generated design still needs a review in Canva."
+    },
     "tools": 46,
     "skills": 0,
     "verified_on": "2026-11-16"
@@ -210,6 +338,12 @@
       "delete",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
     "one_click": [
       "chatgpt"
     ],
@@ -224,6 +358,29 @@
       "Windsurf",
       "Copilot Studio"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "url"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [],
+    "for": {
+      "fr": "Vous suivez vos projets et votre temps dans ClickUp.",
+      "en": "You track your projects and time in ClickUp."
+    },
+    "not_for": {
+      "fr": "Votre espace est partagé et vous ne voulez aucun message en votre nom : l'assistant peut écrire dans le chat ClickUp.",
+      "en": "Your workspace is shared and you want no message sent in your name: the assistant can write in ClickUp chat."
+    },
     "tools": 65,
     "skills": 0,
     "verified_on": "2026-11-16"
@@ -245,6 +402,9 @@
       "read",
       "write"
     ],
+    "capability_kinds": [
+      "read"
+    ],
     "one_click": [],
     "clients": [
       "claude",
@@ -256,6 +416,21 @@
       "Amazon Q",
       "Gemini CLI"
     ],
+    "setup": [
+      {
+        "assistant": "other",
+        "how": "local"
+      }
+    ],
+    "safeguards": [],
+    "for": {
+      "fr": "Vous travaillez dans l'application de bureau Figma et voulez que l'assistant lise vos fichiers sans pouvoir les modifier.",
+      "en": "You work in the Figma desktop app and want the assistant to read your files without editing them."
+    },
+    "not_for": {
+      "fr": "Vous n'utilisez pas l'application de bureau : le serveur en ligne de Figma suffit.",
+      "en": "You don't use the desktop app: Figma's online server is enough."
+    },
     "tools": 12,
     "skills": 0,
     "verified_on": "2026-11-16"
@@ -278,6 +453,11 @@
       "write",
       "delete"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete"
+    ],
     "one_click": [
       "claude",
       "copilot"
@@ -296,6 +476,29 @@
       "Kiro",
       "Xcode"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "copilot",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [],
+    "for": {
+      "fr": "Vous dessinez des interfaces dans Figma et voulez gagner du temps sur la documentation et les maquettes.",
+      "en": "You design interfaces in Figma and want to save time on documentation and mockups."
+    },
+    "not_for": {
+      "fr": "Vous ouvrez Figma de temps en temps pour une image : l'intérêt tient surtout aux fichiers d'interface.",
+      "en": "You open Figma now and then for an image: the value lies mostly in interface files."
+    },
     "tools": 34,
     "skills": 11,
     "verified_on": "2026-11-16"
@@ -316,6 +519,9 @@
     "kinds": [
       "read"
     ],
+    "capability_kinds": [
+      "read"
+    ],
     "one_click": [],
     "clients": [
       "claude",
@@ -324,6 +530,28 @@
       "Antigravity",
       "Gemini CLI"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "local"
+      },
+      {
+        "assistant": "other",
+        "how": "local"
+      }
+    ],
+    "safeguards": [
+      "scoped_keys",
+      "no_delete"
+    ],
+    "for": {
+      "fr": "Vous suivez votre site dans Google Analytics et voulez des réponses sans construire de rapport.",
+      "en": "You track your site in Google Analytics and want answers without building a report."
+    },
+    "not_for": {
+      "fr": "Vous voulez un branchement en un clic : il s'installe sur votre ordinateur, avec Python et des identifiants Google Cloud.",
+      "en": "You want a one-click setup: it is installed on your computer, with Python and Google Cloud credentials."
+    },
     "tools": 9,
     "skills": 2,
     "verified_on": "2026-11-16"
@@ -350,7 +578,30 @@
       "write",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "send"
+    ],
     "one_click": [],
+    "setup": [
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "human_confirmation",
+      "admin_controls"
+    ],
+    "for": {
+      "fr": "Votre suivi commercial et vos campagnes vivent dans HubSpot.",
+      "en": "Your sales follow-up and campaigns live in HubSpot."
+    },
+    "not_for": {
+      "fr": "Vous voulez un branchement en un clic depuis Claude ou ChatGPT : HubSpot ne documente que l'adresse du serveur à ajouter.",
+      "en": "You want a one-click setup from Claude or ChatGPT: HubSpot only documents the server address to add."
+    },
     "tools": 36,
     "skills": 0,
     "verified_on": "2026-11-16"
@@ -376,6 +627,10 @@
       "read",
       "write"
     ],
+    "capability_kinds": [
+      "read",
+      "write"
+    ],
     "one_click": [
       "claude"
     ],
@@ -390,6 +645,27 @@
       "Windsurf",
       "Cline"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Vous avez déjà des scénarios Make et voulez les lancer en une phrase.",
+      "en": "You already have Make scenarios and want to run them in one sentence."
+    },
+    "not_for": {
+      "fr": "Vous n'avez pas encore d'automatisation : le serveur sert surtout à lancer et gérer des scénarios existants.",
+      "en": "You have no automation yet: the server is mostly for running and managing existing scenarios."
+    },
     "tools": 2,
     "skills": 7,
     "verified_on": "2026-11-16"
@@ -416,6 +692,12 @@
       "delete",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
     "one_click": [
       "claude",
       "chatgpt",
@@ -436,6 +718,35 @@
       "Kiro",
       "Amazon Q"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "copilot",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "admin_controls"
+    ],
+    "for": {
+      "fr": "Vous animez des ateliers ou planifiez vos projets sur des tableaux Miro.",
+      "en": "You run workshops or plan projects on Miro boards."
+    },
+    "not_for": {
+      "fr": "Vos tableaux sont partagés avec des clients : l'assistant peut aussi donner des accès ou changer des rôles.",
+      "en": "Your boards are shared with clients: the assistant can also grant access or change roles."
+    },
     "tools": 46,
     "skills": 3,
     "verified_on": "2026-11-16"
@@ -464,6 +775,11 @@
       "delete",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete"
+    ],
     "one_click": [
       "claude",
       "chatgpt",
@@ -483,6 +799,35 @@
       "Hermes",
       "Pi"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "connector"
+      },
+      {
+        "assistant": "gemini",
+        "how": "connector"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "admin_controls"
+    ],
+    "for": {
+      "fr": "Vous rangez déjà vos notes, vos clients ou vos projets dans Notion et vous perdez du temps à les retrouver.",
+      "en": "You already keep your notes, clients or projects in Notion and lose time finding them again."
+    },
+    "not_for": {
+      "fr": "Vous êtes invité dans l'espace d'un client : les invités ne peuvent pas se connecter.",
+      "en": "You are a guest in a client's workspace: guests cannot connect."
+    },
     "tools": 70,
     "skills": 1,
     "verified_on": "2026-11-16"
@@ -504,6 +849,11 @@
       "write",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "send"
+    ],
     "one_click": [
       "claude",
       "chatgpt",
@@ -519,6 +869,41 @@
       "Microsoft Copilot",
       "Muse"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "gemini",
+        "how": "connector"
+      },
+      {
+        "assistant": "copilot",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "connector"
+      }
+    ],
+    "safeguards": [
+      "human_confirmation",
+      "admin_controls",
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Vous vendez en ligne avec une boutique Shopify.",
+      "en": "You sell online with a Shopify store."
+    },
+    "not_for": {
+      "fr": "Vous gérez plusieurs boutiques sans vérifier laquelle est branchée : l'assistant peut passer de l'une à l'autre.",
+      "en": "You run several stores without checking which one is connected: the assistant can switch between them."
+    },
     "tools": 43,
     "skills": 1,
     "verified_on": "2026-11-16"
@@ -544,12 +929,29 @@
       "write",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "send"
+    ],
     "one_click": [],
     "clients": [
       "claude",
       "cursor",
       "perplexity"
     ],
+    "safeguards": [
+      "admin_controls",
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Vous échangez avec vos clients ou votre équipe dans Slack.",
+      "en": "You talk with your clients or team in Slack."
+    },
+    "not_for": {
+      "fr": "Vous ne voulez aucun message envoyé en votre nom : l'assistant peut écrire dans n'importe quelle conversation.",
+      "en": "You want no message sent in your name: the assistant can write in any conversation."
+    },
     "tools": 2,
     "skills": 0,
     "verified_on": "2026-11-16"
@@ -579,6 +981,11 @@
       "send",
       "pay"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "pay"
+    ],
     "one_click": [
       "claude",
       "chatgpt"
@@ -594,6 +1001,33 @@
       "Kiro",
       "OpenClaw"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "plugin"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "human_confirmation",
+      "admin_controls",
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Vous encaissez avec Stripe et voulez suivre paiements et solde sans ouvrir le tableau de bord.",
+      "en": "You take payments with Stripe and want to follow payments and balance without opening the dashboard."
+    },
+    "not_for": {
+      "fr": "Vous voulez confier vos virements à l'assistant : le serveur est en bêta et chaque envoi d'argent attend votre confirmation.",
+      "en": "You want the assistant to handle your transfers: the server is in beta and every money transfer waits for your confirmation."
+    },
     "tools": 15,
     "skills": 11,
     "verified_on": "2026-11-16"
@@ -621,6 +1055,11 @@
       "write",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "send"
+    ],
     "one_click": [
       "claude",
       "chatgpt"
@@ -636,6 +1075,31 @@
       "Cline",
       "Continue"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "no_delete"
+    ],
+    "for": {
+      "fr": "Vous recueillez demandes, inscriptions ou avis avec Tally.",
+      "en": "You collect requests, sign-ups or feedback with Tally."
+    },
+    "not_for": {
+      "fr": "Vos formulaires sont critiques pour votre activité : le serveur est encore en bêta.",
+      "en": "Your forms are critical to your business: the server is still in beta."
+    },
     "tools": 0,
     "skills": 0,
     "verified_on": "2026-11-16"
@@ -662,6 +1126,12 @@
       "delete",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
     "one_click": [
       "claude",
       "chatgpt"
@@ -674,6 +1144,32 @@
       "Postman",
       "slack"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "admin_controls",
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Votre site, ou ceux de vos clients, est construit sur Webflow.",
+      "en": "Your site, or your clients' sites, is built on Webflow."
+    },
+    "not_for": {
+      "fr": "Vous craignez une mise en ligne par erreur : l'assistant peut publier le site.",
+      "en": "You fear publishing by mistake: the assistant can publish the site."
+    },
     "tools": 37,
     "skills": 22,
     "verified_on": "2026-11-16"
@@ -700,6 +1196,11 @@
       "delete",
       "send"
     ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "send"
+    ],
     "one_click": [
       "claude"
     ],
@@ -719,6 +1220,32 @@
       "Copilot Studio",
       "Gemini Enterprise"
     ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "url"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "admin_controls",
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Vous utilisez des applications que personne ne branche encore à votre assistant : Zapier sert de relais.",
+      "en": "You use apps nobody plugs into your assistant yet: Zapier acts as the go-between."
+    },
+    "not_for": {
+      "fr": "Vous ne voulez pas choisir les actions une à une : il faut activer chaque action que l'assistant peut faire.",
+      "en": "You don't want to pick actions one by one: each action the assistant may take has to be turned on."
+    },
     "tools": 16,
     "skills": 2,
     "verified_on": "2026-11-16"

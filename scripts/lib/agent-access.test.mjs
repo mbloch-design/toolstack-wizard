@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { agentAccessIndex, projectAgentAccess, validateAgentBlock } from "./agent-access.mjs";
+import fs from "node:fs";
+import { agentAccessIndex, projectAgentAccess, validateAgentBlock, validateMcpSheet, validateNeeds } from "./agent-access.mjs";
 
 const official = {
   mcp: "official",
@@ -65,5 +66,36 @@ describe("agent block guard", () => {
     expect(access.capabilities).toHaveLength(2);
     expect(agentAccessIndex(access)).toEqual({ mcp: "official", transport: ["remote", "local"], access: "read_write", verifiedOn: "2026-11-16" });
     expect(agentAccessIndex(null)).toBeNull();
+  });
+});
+
+// S1 bis (17/11/2026): the hub starts from needs, the sheets tell a story with ToolTrim's words.
+const readJson = (file) => JSON.parse(fs.readFileSync(new URL(`../../${file}`, import.meta.url), "utf8"));
+const servers = fs.readdirSync(new URL("../../research/mcp/", import.meta.url)).filter((f) => f.endsWith(".json")).map((f) => readJson(`research/mcp/${f}`));
+
+describe("agents hub and sheet contract", () => {
+  it("leads every need to a server sheet and one of its example requests", () => {
+    const table = readJson("research/agents/needs.json");
+    expect(validateNeeds(table, servers)).toEqual([]);
+    for (const need of table.needs) expect(servers.find((s) => s.slug === need.server).examples[need.example].fr).toBeTruthy();
+  });
+
+  it("refuses a need without a sheet, a missing example or a repeated alternative", () => {
+    const table = { needs: Array.from({ length: 6 }, (_, i) => ({ id: `n${"abcdef"[i]}`, fr: "Besoin", en: "Need", server: "notion-mcp", example: 0, also: [] })) };
+    table.needs[0].server = "nowhere-mcp";
+    table.needs[1].example = 9;
+    table.needs[2].also = ["notion-mcp"];
+    const errors = validateNeeds(table, servers).join("\n");
+    for (const word of ["nowhere-mcp", "demande type 9", "also"]) expect(errors).toContain(word);
+  });
+
+  it("accepts 2 or 3 example requests and a view that goes in pairs", () => {
+    const notion = servers.find((s) => s.slug === "notion-mcp");
+    expect(validateMcpSheet(notion)).toEqual([]);
+    const loose = { ...structuredClone(notion), examples: [notion.examples[0]] };
+    delete loose.not_for;
+    const errors = validateMcpSheet(loose).join("\n");
+    expect(errors).toContain("examples");
+    expect(errors).toContain("for et not_for");
   });
 });

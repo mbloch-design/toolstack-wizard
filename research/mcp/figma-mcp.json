@@ -9,6 +9,24 @@
     "fr": "Le serveur distant de Figma donne à votre assistant le contexte de vos designs (composants, variables, mise en page) et, en bêta, le droit de créer et de modifier dans vos fichiers. C'est le serveur à préférer : rien à installer.",
     "en": "Figma's remote server gives your assistant your designs' context (components, variables, layout) and, in beta, the ability to create and edit in your files. It is the one to prefer: nothing to install."
   },
+  "examples": [
+    {
+      "fr": "Décris cette maquette : ses pages, ses composants et ses couleurs.",
+      "en": "Describe this mockup: its pages, components and colours."
+    },
+    {
+      "fr": "Crée un diagramme FigJam du parcours de commande.",
+      "en": "Create a FigJam diagram of the checkout journey."
+    }
+  ],
+  "for": {
+    "fr": "Vous dessinez des interfaces dans Figma et voulez gagner du temps sur la documentation et les maquettes.",
+    "en": "You design interfaces in Figma and want to save time on documentation and mockups."
+  },
+  "not_for": {
+    "fr": "Vous ouvrez Figma de temps en temps pour une image : l'intérêt tient surtout aux fichiers d'interface.",
+    "en": "You open Figma now and then for an image: the value lies mostly in interface files."
+  },
   "verified_on": "2026-11-16",
   "transport": "remote",
   "access": "read_write",

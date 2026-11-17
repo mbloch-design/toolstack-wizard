@@ -9,6 +9,24 @@
     "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités API du forfait.",
     "en": "Ahrefs' official server brings your SEO data (keywords, backlinks, rankings) into your assistant, and can manage social media posts. It needs a paid plan from Lite and uses your plan's API units."
   },
+  "examples": [
+    {
+      "fr": "Sur quels mots-clés mon site a-t-il gagné des positions ce mois-ci ?",
+      "en": "Which keywords did my site climb on this month?"
+    },
+    {
+      "fr": "Quels sites ont fait un lien vers mon site récemment ?",
+      "en": "Which sites linked to my site recently?"
+    }
+  ],
+  "for": {
+    "fr": "Vous avez un forfait Ahrefs payant et suivez le référencement de votre site ou de ceux de vos clients.",
+    "en": "You pay for Ahrefs and follow the search ranking of your site or your clients' sites."
+  },
+  "not_for": {
+    "fr": "Vous n'avez pas de forfait payant : le serveur n'y est pas ouvert.",
+    "en": "You have no paid plan: the server is not open to you."
+  },
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

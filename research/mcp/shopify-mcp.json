@@ -9,6 +9,28 @@
     "fr": "Shopify propose des intégrations officielles pour Claude, ChatGPT, Gemini, Copilot et d'autres assistants : lire commandes et statistiques, créer produits, collections et réductions, modifier un thème. Remboursements, paiements et réglages de la boutique restent bloqués, même avec l'accès en écriture.",
     "en": "Shopify offers official integrations for Claude, ChatGPT, Gemini, Copilot and other assistants: read orders and analytics, create products, collections and discounts, edit a theme. Refunds, payments and store settings stay blocked, even with write access."
   },
+  "examples": [
+    {
+      "fr": "Montre-moi les commandes de la semaine.",
+      "en": "Show me this week's orders."
+    },
+    {
+      "fr": "Quels produits sont presque en rupture de stock ?",
+      "en": "Which products are almost out of stock?"
+    },
+    {
+      "fr": "Crée un code de réduction de 10 % pour le week-end.",
+      "en": "Create a 10% discount code for the weekend."
+    }
+  ],
+  "for": {
+    "fr": "Vous vendez en ligne avec une boutique Shopify.",
+    "en": "You sell online with a Shopify store."
+  },
+  "not_for": {
+    "fr": "Vous gérez plusieurs boutiques sans vérifier laquelle est branchée : l'assistant peut passer de l'une à l'autre.",
+    "en": "You run several stores without checking which one is connected: the assistant can switch between them."
+  },
   "verified_on": "2026-11-16",
   "access": "read_write",
   "plan": "unknown",

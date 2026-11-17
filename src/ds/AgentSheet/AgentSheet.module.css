@@ -1,4 +1,6 @@
-/* A server or skill sheet: the decision, then the facts by part. Groups and space, never a separator. */
+/* A server or skill sheet told in chapters (S1 bis): facts and the copy menu under the title, what it changes,
+   our view, plugging it for your client, control, then the technical sheet folded and the sources.
+   Groups and space, never a separator. */
 
 .sheet {
   display: grid;
@@ -7,14 +9,19 @@
   container-type: inline-size;
 }
 
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-4) var(--tt-space-6);
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+}
+
 .lead {
   display: grid;
   gap: var(--tt-gap-item);
   max-width: 62ch;
-}
-
-.verdict {
-  composes: titleM from "../atoms.module.css";
 }
 
 .text {
@@ -27,6 +34,126 @@
 
 .term {
   composes: eyebrow from "../atoms.module.css";
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* The line of facts: icon, words; the assistants as logos with their names for screen readers. */
+.factLine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-3) var(--tt-space-5);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 0;
+}
+
+.fact {
+  composes: note from "../atoms.module.css";
+  display: inline-flex;
+  gap: var(--tt-space-2);
+  align-items: center;
+}
+
+.fact > svg {
+  flex: none;
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
+}
+
+.faces {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-1);
+}
+
+.face {
+  position: relative;
+  display: inline-flex;
+  border-radius: var(--tt-r-chip);
+}
+
+.face:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+/* « Copier pour votre assistant » and its menu. */
+.menuRoot {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-3);
+  align-items: center;
+}
+
+.menu {
+  position: absolute;
+  inset-block-start: calc(100% + var(--tt-space-2));
+  inset-inline-end: 0;
+  z-index: 5;
+  display: grid;
+  gap: var(--tt-space-1);
+  width: min(var(--tt-menu-w), calc(100vw - 2 * var(--tt-space-4)));
+  margin: 0;
+  padding: var(--tt-space-2);
+  list-style: none;
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-menu-shadow);
+}
+
+.menuItem {
+  composes: label from "../atoms.module.css";
+  display: flex;
+  gap: var(--tt-space-2);
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: var(--tt-tap);
+  padding: 0 var(--tt-space-3);
+  border: 0;
+  border-radius: var(--tt-r-chip);
+  background: transparent;
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  background: var(--tt-tile);
+}
+
+.menuItem:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: calc(-1 * var(--tt-focus-offset));
+}
+
+.menuItem svg {
+  flex: none;
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
+}
+
+.done {
+  composes: note from "../atoms.module.css";
+  display: inline-flex;
+  gap: var(--tt-space-1);
+  align-items: center;
+}
+
+.done svg {
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
 }
 
 .part {
@@ -71,51 +198,117 @@
   max-width: 62ch;
 }
 
-.install {
+/* The requests you could type: white cards lifted off the tile, like messages. */
+.requests {
   display: grid;
-  gap: var(--tt-space-4);
+  gap: var(--tt-space-3);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.installRow {
+.request {
+  composes: raised from "../atoms.module.css";
+  composes: label from "../atoms.module.css";
+  max-width: 62ch;
+  padding: var(--tt-space-4) var(--tt-space-5);
+}
+
+/* « Où utilisez-vous l'IA ? »: a short row of choices per group. They wrap: the layout invariants refuse a
+   sideways-scrolling rail (a box wider than its parent), and a group holds five choices at most. */
+.choices {
   display: grid;
-  gap: var(--tt-space-2);
+  gap: var(--tt-space-3);
   min-width: 0;
 }
 
-.installHead {
+.rail {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--tt-space-2) var(--tt-space-3);
-  margin: 0;
+  gap: var(--tt-space-2);
+  align-items: center;
+  min-width: 0;
 }
 
-.code {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--tt-space-2);
+.railLabel {
+  composes: note from "../atoms.module.css";
+  flex-basis: 100%;
+}
+
+/* The card for the chosen client: numbered steps on a white card, four at most. */
+.card {
+  composes: raised from "../atoms.module.css";
+  display: grid;
+  gap: var(--tt-space-5);
+  margin: 0;
+  padding: var(--tt-space-5);
+  list-style: none;
+  counter-reset: step;
   min-width: 0;
-  padding: var(--tt-space-3) var(--tt-space-3) var(--tt-space-3) var(--tt-space-4);
-  border-radius: var(--tt-r-card);
-  background: var(--tt-bg);
+}
+
+.step {
+  display: grid;
+  grid-template-columns: var(--tt-space-8) minmax(0, 1fr);
+  gap: var(--tt-space-3);
+  align-items: start;
+  min-width: 0;
+  counter-increment: step;
+}
+
+.step::before {
+  content: counter(step);
+  display: inline-grid;
+  place-items: center;
+  grid-row: span 2;
+  width: var(--tt-space-8);
+  height: var(--tt-space-8);
+  border-radius: var(--tt-r-round);
+  background: var(--tt-tile);
+  font: var(--tt-label-font);
+}
+
+.stepText {
+  composes: text from "../atoms.module.css";
+  align-self: center;
+  max-width: 62ch;
+}
+
+.step > a,
+.step > div {
+  grid-column: 2;
+  justify-self: start;
+  max-width: 100%;
+}
+
+.copyBlock {
+  display: grid;
+  gap: var(--tt-space-3);
+  width: 100%;
+  min-width: 0;
+}
+
+.copyAction {
+  display: flex;
 }
 
 .pre {
   composes: note from "../atoms.module.css";
-  flex: 1 1 auto;
   min-width: 0;
   margin: 0;
-  padding-block: var(--tt-space-1);
+  padding: var(--tt-space-3) var(--tt-space-4);
+  border-radius: var(--tt-r-chip);
+  background: var(--tt-tile);
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
-/* Code keeps its lines whole (a URL or a config never breaks inside a word): it scrolls sideways. */
-.pre:not([data-type="steps"]) {
+/* A command or an address keeps its line whole: it scrolls sideways. A configuration wraps. */
+.pre[data-type="command"],
+.pre[data-type="url"] {
   overflow-x: auto;
   white-space: pre;
+  overflow-wrap: normal;
   scrollbar-width: thin;
 }
 
@@ -139,50 +332,49 @@
   transform: rotate(180deg);
 }
 
-.toolGroups {
+/* A fold's button keeps its own width, at the start of the tile. */
+.toggle {
+  display: flex;
+  justify-self: start;
+}
+
+.group {
+  display: grid;
+  gap: var(--tt-space-3);
+  min-width: 0;
+}
+
+.further {
   display: grid;
   gap: var(--tt-gap-group);
   padding-top: var(--tt-space-4);
 }
 
-.toolGroup {
+/* The tool list: topics, one column, the action in words, its risk, the vendor's name small. */
+.topics {
   display: grid;
-  gap: var(--tt-space-3);
+  gap: var(--tt-space-5);
 }
 
-.tools {
+.topic {
   display: grid;
-  gap: var(--tt-space-3);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-@container (min-width: 720px) {
-  .tools {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--tt-space-6);
-  }
-}
-
-.tool {
-  display: grid;
-  gap: var(--tt-space-1);
+  gap: var(--tt-space-2);
   min-width: 0;
 }
 
-.toolName {
+.topicHead {
+  display: flex;
+  gap: var(--tt-space-2);
+  align-items: baseline;
+  margin: 0;
+}
+
+.topicTitle {
   composes: label from "../atoms.module.css";
-  overflow-wrap: anywhere;
+  composes: strong from "../atoms.module.css";
 }
 
-.footer {
-  display: grid;
-  gap: var(--tt-space-3);
-  justify-items: start;
-}
-
-.sources {
+.tools {
   display: grid;
   gap: var(--tt-space-2);
   margin: 0;
@@ -190,6 +382,89 @@
   list-style: none;
 }
 
-.sources a {
+.tool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-1) var(--tt-space-3);
+  align-items: baseline;
+  min-width: 0;
+}
+
+.toolAction {
+  composes: text from "../atoms.module.css";
+}
+
+.toolName {
+  composes: note from "../atoms.module.css";
+  color: var(--tt-meta);
   overflow-wrap: anywhere;
+}
+
+.install {
+  display: grid;
+  gap: var(--tt-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.installRow {
+  display: grid;
+  gap: var(--tt-space-2);
+  min-width: 0;
+}
+
+/* Sources: lighter than a chapter, at the end. */
+.sourcesBlock {
+  display: grid;
+  gap: var(--tt-space-3);
+  min-width: 0;
+}
+
+.sourcesTitle {
+  composes: label from "../atoms.module.css";
+  composes: strong from "../atoms.module.css";
+}
+
+.sources {
+  display: grid;
+  gap: var(--tt-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.source {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-1) var(--tt-space-2);
+  align-items: baseline;
+  min-height: var(--tt-tap);
+  align-content: center;
+  color: var(--tt-ink);
+  text-decoration: none;
+}
+
+.sourceLabel {
+  composes: label from "../atoms.module.css";
+}
+
+.source:hover .sourceLabel {
+  text-decoration: underline;
+}
+
+.source:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.source svg {
+  align-self: center;
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
+}
+
+.sourceDomain {
+  composes: note from "../atoms.module.css";
+  color: var(--tt-meta);
 }

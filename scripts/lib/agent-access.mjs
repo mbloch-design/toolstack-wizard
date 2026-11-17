@@ -147,7 +147,7 @@ export function agentAccessIndex(access) {
 
 // ── Section « agents » (S1) : fiche serveur (research/mcp) et fiche skill (research/skills) ──
 const INSTALL_TYPES = ["command", "url", "config", "steps"];
-const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "docs_url", "sources"]);
+const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "examples", "for", "not_for", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "docs_url", "sources"]);
 const SKILL_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "server", "category", "summary", "agents", "install", "requires", "verified_on", "status", "docs_url", "sources"]);
 const isPair = (value) => value && isText(value.fr) && isText(value.en);
 
@@ -173,6 +173,10 @@ export function validateMcpSheet(sheet, { catalogSlugs, skillSlugs } = {}) {
   if (sheet?.plan_note && !isPair(sheet.plan_note)) errors.push(`${at} : plan_note fr/en`);
   if (sheet?.tools_note && !isPair(sheet.tools_note)) errors.push(`${at} : tools_note fr/en`);
   if (sheet?.note && !isPair(sheet.note)) errors.push(`${at} : note fr/en`);
+  // ToolTrim's words (S1 bis): 2 or 3 example requests, who it is for and not for. Absent when nothing allows writing them.
+  if ("examples" in (sheet || {}) && (!Array.isArray(sheet.examples) || sheet.examples.length < 2 || sheet.examples.length > 3 || !sheet.examples.every(isPair))) errors.push(`${at} : examples, 2 ou 3 demandes fr/en`);
+  for (const key of ["for", "not_for"]) if (key in (sheet || {}) && !isPair(sheet[key])) errors.push(`${at} : ${key} fr/en`);
+  if (("for" in (sheet || {})) !== ("not_for" in (sheet || {}))) errors.push(`${at} : for et not_for vont ensemble`);
   // Reuse the block rules on the tool-level and server-level fields.
   const block = {
     mcp: "official", verified_on: sheet?.verified_on, sources: sheet?.sources,
@@ -211,5 +215,28 @@ export function validateSkillSheet(skill, { catalogSlugs, serverSlugs } = {}) {
   if (serverSlugs && skill?.server && !serverSlugs.has(skill.server)) errors.push(`${at} : serveur inconnu (${skill.server})`);
   if (!Array.isArray(skill?.sources) || !skill.sources.length) errors.push(`${at} : sources requises`);
   validateInstall(skill?.install, at, errors);
+  return errors;
+}
+
+/**
+ * Errors of the hub's needs table (research/agents/needs.json): every need leads to a server sheet
+ * and quotes one of its example requests; its alternatives are sheets too.
+ */
+export function validateNeeds(table, servers) {
+  const errors = [];
+  const bySlug = new Map(servers.map((server) => [server.slug, server]));
+  const needs = table?.needs;
+  if (!Array.isArray(needs) || needs.length < 6 || needs.length > 8) return ["needs : 6 à 8 besoins attendus"];
+  const ids = new Set();
+  needs.forEach((need, i) => {
+    const at = `needs[${i}] ${need?.id ?? "?"}`;
+    if (!/^[a-z-]+$/.test(need?.id || "") || ids.has(need.id)) errors.push(`${at} : id unique requis`);
+    ids.add(need?.id);
+    if (!isText(need?.fr) || !isText(need?.en)) errors.push(`${at} : fr/en requis`);
+    const server = bySlug.get(need?.server);
+    if (!server) errors.push(`${at} : fiche serveur inconnue (${need?.server})`);
+    else if (!server.examples?.[need.example]) errors.push(`${at} : demande type ${need.example} absente de ${server.slug}`);
+    for (const slug of need?.also ?? []) if (!bySlug.has(slug) || slug === need.server) errors.push(`${at} : also, fiche inconnue ou répétée (${slug})`);
+  });
   return errors;
 }

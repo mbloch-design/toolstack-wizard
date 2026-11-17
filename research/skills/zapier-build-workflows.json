@@ -11,7 +11,7 @@
     "en": "Guide the assistant before building a Zapier workflow."
   },
   "agents": [
-    "any MCP client connected to Zapier MCP"
+    "any"
   ],
   "install": [],
   "requires": {

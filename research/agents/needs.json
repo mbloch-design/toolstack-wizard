@@ -1,0 +1,14 @@
+{
+  "written_on": "2026-11-17",
+  "note": "Besoins du hub /agents, écrits par ToolTrim (S1 bis). Chaque besoin mène à une fiche serveur et reprend une de ses demandes types (examples[example]) ; also liste d'autres fiches qui répondent au même besoin.",
+  "needs": [
+    { "id": "meetings", "fr": "Préparer mes rendez-vous", "en": "Prepare my meetings", "server": "calendly-mcp", "example": 0, "also": ["hubspot-mcp"] },
+    { "id": "notes", "fr": "Retrouver une info dans mes notes", "en": "Find something in my notes", "server": "notion-mcp", "example": 1, "also": ["slack-mcp", "airtable-mcp"] },
+    { "id": "payments", "fr": "Suivre mes paiements", "en": "Follow my payments", "server": "stripe-mcp", "example": 0, "also": ["shopify-mcp"] },
+    { "id": "traffic", "fr": "Lire mes stats de trafic", "en": "Read my traffic stats", "server": "google-analytics-mcp", "example": 0, "also": ["ahrefs-mcp"] },
+    { "id": "social", "fr": "Publier sur mes réseaux", "en": "Post on my networks", "server": "buffer-mcp", "example": 0, "also": ["hubspot-mcp"] },
+    { "id": "projects", "fr": "Gérer mes projets", "en": "Manage my projects", "server": "clickup-mcp", "example": 0, "also": ["airtable-mcp", "miro-mcp"] },
+    { "id": "visuals", "fr": "Créer des visuels", "en": "Create visuals", "server": "canva-mcp", "example": 0, "also": ["figma-mcp"] },
+    { "id": "clients", "fr": "Suivre mes clients et prospects", "en": "Follow my clients and leads", "server": "hubspot-mcp", "example": 0, "also": ["airtable-mcp"] }
+  ]
+}

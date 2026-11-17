@@ -1,123 +1,177 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
+import { useStackPins } from "@/hooks/useStackPins";
 import Breadcrumb from "@/components/Breadcrumb";
 import Page from "@/ds/Page/Page";
 import Chip, { Chips, chipLinkAttrs } from "@/ds/Chip/Chip";
 import Logo from "@/ds/Logo/Logo";
-import { CatalogSection, CatalogTitle, EmptyState, FilterBar, LinkRow, LinkRows } from "@/ds/Catalog/Catalog";
+import { CatalogSection, CatalogTitle, EmptyState, FilterBar } from "@/ds/Catalog/Catalog";
+import { AgentCard, AgentCards, NeedPicker, StackAgents, StartHere, type StackAgentItem } from "@/ds/AgentHub/AgentHub";
 import { useCatalogStickyToolbar, runCatalogFilter } from "@/hooks/useCatalogStickyToolbar";
 import { Plug, SearchCheck } from "@/lib/icons";
 import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import mcpIndex from "@/data/agents/mcp_index.json";
 import skillsIndex from "@/data/agents/skills_index.json";
-import { TRANSPORT_WORDS, say, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
+import needsData from "@/data/agents/needs.json";
+import checkedNone from "@/data/agents/checked_none.json";
+import { byLine, guardOf, say, serverFacts, stackCall, type Lang, type McpCard, type Need, type SkillCard } from "@/lib/agents";
 
 /*
- * The agents section (S1, 16/11/2026): the hub /agents (everything), /mcp (official MCP servers) and /skills
- * (official skills) of the catalogue's tools. Same page, three views: tabs are links, filters are chips.
- * Facts from the vendors' documentation; the words are ToolTrim's.
+ * The agents section (S1, 16/11/2026; S1 bis, 17/11): the hub /agents starts from the person — what you want
+ * your assistant to do, what your stack can plug in, where to start — and keeps the full list at the bottom,
+ * for whoever looks for one tool. /mcp (tools to plug in) and /skills (know-how) stay indexes, opening on one
+ * sentence that guides. Surface words without jargon; « MCP » stays in the SEO title.
  */
 export type AgentsView = "all" | "mcp" | "skills";
 const SERVERS = mcpIndex as McpCard[];
 const SKILLS = skillsIndex as SkillCard[];
+const NEEDS = needsData as Need[];
+const CHECKED_NONE = new Set(checkedNone as string[]);
 
 type FilterId = "one_click" | "risky" | "remote" | "local" | "all_plans" | "oauth" | "claude" | "chatgpt" | "gemini" | "copilot";
 const FILTERS: { id: FilterId; fr: string; en: string; test: (card: McpCard) => boolean }[] = [
   { id: "one_click", fr: "En un clic depuis ChatGPT ou Claude", en: "One click from ChatGPT or Claude", test: (c) => c.one_click.includes("claude") || c.one_click.includes("chatgpt") },
   { id: "risky", fr: "Peut supprimer ou payer", en: "Can delete or pay", test: (c) => c.kinds.includes("delete") || c.kinds.includes("pay") },
-  { id: "remote", fr: "À distance", en: "Remote", test: (c) => c.transport === "remote" },
+  { id: "remote", fr: "En ligne", en: "Online", test: (c) => c.transport === "remote" },
   { id: "local", fr: "Sur l'ordinateur", en: "On your computer", test: (c) => c.transport === "local" },
   { id: "all_plans", fr: "Tous les forfaits", en: "Every plan", test: (c) => c.plan === "all" },
-  { id: "oauth", fr: "Connexion au compte", en: "Account sign-in", test: (c) => Boolean(c.auth?.includes("oauth")) },
+  { id: "oauth", fr: "Connexion à votre compte", en: "Sign in to your account", test: (c) => Boolean(c.auth?.includes("oauth")) },
   { id: "claude", fr: "Claude", en: "Claude", test: (c) => c.one_click.includes("claude") || Boolean(c.clients?.includes("claude")) },
   { id: "chatgpt", fr: "ChatGPT", en: "ChatGPT", test: (c) => c.one_click.includes("chatgpt") || Boolean(c.clients?.includes("chatgpt")) },
   { id: "gemini", fr: "Gemini", en: "Gemini", test: (c) => c.one_click.includes("gemini") || Boolean(c.clients?.includes("gemini")) },
   { id: "copilot", fr: "Copilot", en: "Copilot", test: (c) => c.one_click.includes("copilot") },
 ];
 
-const TITLES: Record<AgentsView, [string, string]> = { all: ["Agents IA", "AI agents"], mcp: ["Serveurs MCP", "MCP servers"], skills: ["Skills", "Skills"] };
+const TITLES: Record<AgentsView, [string, string]> = { all: ["Agents IA", "AI agents"], mcp: ["Outils à brancher", "Tools to plug in"], skills: ["Savoir-faire", "Know-how"] };
+/** SEO titles keep the vendors' words (MCP, skills), in the background. */
+const SEO_TITLES: Record<AgentsView, [string, string]> = {
+  all: ["Agents IA : brancher vos outils à votre assistant (MCP et skills)", "AI agents: plug your tools into your assistant (MCP and skills)"],
+  mcp: ["Serveurs MCP officiels : brancher vos outils à votre assistant IA", "Official MCP servers: plug your tools into your AI assistant"],
+  skills: ["Skills officiels : le savoir-faire des éditeurs pour votre assistant IA", "Official skills: vendors' know-how for your AI assistant"],
+};
 const LEADS: Record<AgentsView, [string, string]> = {
-  all: ["Ce que votre assistant IA peut faire dans vos outils : les serveurs MCP et les skills officiels, vérifiés chez l'éditeur, avec le risque et le forfait.", "What your AI assistant can do in your tools: official MCP servers and skills, checked with the vendor, with the risk and the plan."],
-  mcp: ["Les serveurs MCP officiels des outils du catalogue : ce que l'assistant peut lire, modifier, supprimer ou payer, et comment le brancher.", "Official MCP servers of the catalogue's tools: what the assistant can read, edit, delete or pay, and how to plug it in."],
-  skills: ["Les skills officiels publiés par les éditeurs : des instructions prêtes à l'emploi pour votre agent, à côté de leur serveur.", "Official skills published by vendors: ready-made instructions for your agent, next to their server."],
+  all: ["Votre assistant IA peut travailler dans vos outils : retrouver une note, préparer un rendez-vous, suivre un paiement. Partez de ce que vous voulez faire ; nous vous disons quoi brancher, comment, et avec quelle prudence.", "Your AI assistant can work inside your tools: find a note, prepare a meeting, follow a payment. Start from what you want done; we tell you what to plug in, how, and with how much care."],
+  mcp: ["Les outils du catalogue qui se branchent officiellement à votre assistant IA, avec ce qu'il pourra y faire. Pas sûr de par où commencer ? Partez d'un besoin sur la page Agents IA.", "The catalogue's tools that officially plug into your AI assistant, with what it can do there. Not sure where to start? Start from a need on the AI agents page."],
+  skills: ["Des modes d'emploi publiés par les éditeurs, que votre assistant suit pour mieux travailler dans leur outil. Chacun s'ajoute au branchement de l'outil.", "Instructions published by vendors that your assistant follows to work better in their tool. Each one comes on top of plugging the tool in."],
 };
 const PATHS: Record<AgentsView, string> = { all: "agents", mcp: "mcp", skills: "skills" };
-const AUTH_SHORT = { oauth: ["OAuth", "OAuth"], key: ["clé", "key"], none: ["sans", "none"] } as const;
-const firstSentence = (text: string) => text.match(/^.+?[.!?](\s|$)/)?.[0].trim() ?? text;
+const GUIDE = { fr: "mcp-freelances-non-developpeurs", en: "mcp-for-non-developer-freelancers" };
+/** A tool's lead server: online first (Figma has two). */
+const serverOf = (toolSlug: string) => SERVERS.filter((card) => card.host_tool === toolSlug).sort((a, b) => Number(b.transport === "remote") - Number(a.transport === "remote"))[0];
 
 const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
   const { lang: rawLang, prefix, t } = useLang();
   const lang: Lang = rawLang === "en" ? "en" : "fr";
   const { tools } = useToolSummaries();
+  const { state } = useStackPins();
   const [active, setActive] = useState<FilterId[]>([]);
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
   const toolOf = (slug: string) => tools.find((tool) => (tool.slug || tool.id) === slug);
+  const toolName = (slug: string) => toolOf(slug)?.name ?? SERVERS.find((card) => card.host_tool === slug)?.publisher ?? slug;
 
   const servers = useMemo(() => SERVERS.filter((card) => active.every((id) => FILTERS.find((f) => f.id === id)!.test(card))), [active]);
   const visibleServerSlugs = new Set(servers.map((card) => card.slug));
   const skills = active.length ? SKILLS.filter((skill) => skill.server && visibleServerSlugs.has(skill.server)) : SKILLS;
 
   useEffect(() => {
-    const title = `${t(...TITLES[view])} | ToolTrim`;
+    const title = `${t(...SEO_TITLES[view])} | ToolTrim`;
     const description = t(...LEADS[view]);
     const url = `${SEO_BASE}${prefix}/${PATHS[view]}`;
     setSeoTags({ title, description, url });
-    setJsonLd("agents-jsonld", { "@context": "https://schema.org", "@type": "CollectionPage", name: t(...TITLES[view]), description, url });
+    setJsonLd("agents-jsonld", { "@context": "https://schema.org", "@type": "CollectionPage", name: t(...SEO_TITLES[view]), description, url });
     return () => cleanupSeo(["agents-jsonld"]);
   }, [view, prefix, t]);
 
-  const toggle = (id: FilterId) => void runCatalogFilter(() => setActive((list) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id])));
+  // On the hub the list sits at the bottom: its filters stay in place and never send the reader back to the top.
+  const hub = view === "all";
+  const toggle = (id: FilterId) => {
+    const change = () => setActive((list) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id]));
+    if (hub) change(); else void runCatalogFilter(change);
+  };
   const logo = (slug: string) => { const tool = toolOf(slug); return tool ? <Logo tool={tool} size={24} /> : <Plug />; };
+  const sheetLink = (slug: string, className: string, content: ReactNode) => <Link to={`${prefix}/mcp/${slug}`} className={className}>{content}</Link>;
   const serverRow = (card: McpCard) => (
-    <LinkRow key={card.slug} name={card.name} icon={logo(card.host_tool)} detail={firstSentence(say(lang, card.summary))}
-      note={[card.transport && say(lang, TRANSPORT_WORDS[card.transport]), card.auth?.map((a) => say(lang, AUTH_SHORT[a])).join(" / ")].filter(Boolean).join(" · ") || undefined}
-      renderLink={(className, content) => <Link to={`${prefix}/mcp/${card.slug}`} className={className}>{content}</Link>} />
+    <AgentCard key={card.slug} icon={logo(card.host_tool)} name={SERVERS.some((other) => other.host_tool === card.host_tool && other.slug !== card.slug) ? card.name : toolName(card.host_tool)}
+      by={byLine(card.publisher, lang)} summary={say(lang, card.summary)} facts={serverFacts(card, lang)}
+      renderLink={(className, content) => sheetLink(card.slug, className, content)} />
   );
   const skillRow = (skill: SkillCard) => (
-    <LinkRow key={skill.slug} name={skill.name} icon={logo(skill.host_tool)} detail={say(lang, skill.summary)} note={skill.publisher}
+    <AgentCard key={skill.slug} icon={logo(skill.host_tool)} name={skill.name} by={byLine(skill.publisher, lang)} summary={say(lang, skill.summary)}
+      facts={[t("Savoir-faire", "Know-how") as string, toolName(skill.host_tool)]}
       renderLink={(className, content) => <Link to={`${prefix}/skills/${skill.slug}`} className={className}>{content}</Link>} />
   );
-  const count = view === "mcp" ? servers.length : view === "skills" ? skills.length : servers.length + skills.length;
+
+  // « Avec votre stack »: the same source as Ma stack; a tool not checked yet is left out, never guessed.
+  const pinned = state.pinnedToolSlugs;
+  const stackItems: StackAgentItem[] | null = pinned.length ? pinned.flatMap((slug) => {
+    const card = serverOf(slug);
+    const checked = card || CHECKED_NONE.has(slug);
+    if (!checked) return [];
+    return [{ slug, name: toolName(slug), icon: logo(slug), call: stackCall(card ? guardOf(card) : null), ...(card ? { card } : {}) }];
+  }) : null;
+
+  const tabs = (
+    <nav aria-label={t("Rubriques", "Sections") as string}>
+      <Chips label={t("Rubriques", "Sections") as string}>
+        {(["all", "mcp", "skills"] as AgentsView[]).map((tab) => (
+          <Link key={tab} to={`${prefix}/${PATHS[tab]}`} {...chipLinkAttrs(tab === view)}>{tab === "all" ? t("Tout", "All") : t(...TITLES[tab])}</Link>
+        ))}
+      </Chips>
+    </nav>
+  );
+  const list = <>
+    {view !== "skills" && (
+      <FilterBar stuck={!hub && toolbarStuck} railLabel={t("Filtres", "Filters") as string}
+        prevLabel={t("Filtres précédents", "Previous filters") as string} nextLabel={t("Filtres suivants", "Next filters") as string}
+        rail={FILTERS.map((filter) => <Chip key={filter.id} pressed={active.includes(filter.id)} check onClick={() => toggle(filter.id)}>{t(filter.fr, filter.en)}</Chip>)} />
+    )}
+    {view !== "skills" && (
+      <CatalogSection id="agents-servers" title={t("Outils à brancher", "Tools to plug in")} count={servers.length}
+        action={view === "all" ? <Link to={`${prefix}/mcp`} {...chipLinkAttrs(false)}>{t("Voir tout", "See all")}</Link> : undefined}>
+        {servers.length ? <AgentCards label={t("Outils à brancher", "Tools to plug in") as string}>{servers.map(serverRow)}</AgentCards>
+          : <EmptyState icon={<SearchCheck />} title={t("Aucun outil ne réunit ces filtres.", "No tool matches these filters.") as string}
+            action={<Chip onClick={() => setActive([])}>{t("Retirer les filtres", "Clear filters")}</Chip>} />}
+      </CatalogSection>
+    )}
+    {view !== "mcp" && skills.length > 0 && (
+      <CatalogSection id="agents-skills" title={t("Savoir-faire des éditeurs", "Vendors' know-how")} count={skills.length}
+        action={view === "all" ? <Link to={`${prefix}/skills`} {...chipLinkAttrs(false)}>{t("Voir tout", "See all")}</Link> : undefined}>
+        <AgentCards label={t("Savoir-faire des éditeurs", "Vendors' know-how") as string}>{(view === "all" ? skills.slice(0, 12) : skills).map(skillRow)}</AgentCards>
+      </CatalogSection>
+    )}
+  </>;
+  const count = view === "mcp" ? servers.length : view === "skills" ? skills.length : undefined;
 
   return (
     <Page>
       <Breadcrumb includeSchema={false} items={view === "all"
         ? [{ label: t("Agents IA", "AI agents") as string }]
         : [{ label: t("Agents IA", "AI agents") as string, href: `${prefix}/agents` }, { label: t(...TITLES[view]) as string }]} />
-      <CatalogTitle title={t(...TITLES[view]) as string} count={count} countLabel={t("fiches", "sheets") as string}
-        lead={t(...LEADS[view]) as string} sentinelRef={toolbarSentinelRef} />
+      <CatalogTitle title={t(...TITLES[view]) as string} count={count} countLabel={count === undefined ? undefined : t("fiches", "sheets") as string}
+        lead={t(...LEADS[view]) as string} sentinelRef={hub ? undefined : toolbarSentinelRef} />
 
-      <nav aria-label={t("Rubriques", "Sections") as string}>
-        <Chips label={t("Rubriques", "Sections") as string}>
-          {(["all", "mcp", "skills"] as AgentsView[]).map((tab) => (
-            <Link key={tab} to={`${prefix}/${PATHS[tab]}`} {...chipLinkAttrs(tab === view)}>{tab === "all" ? t("Tout", "All") : t(...TITLES[tab])}</Link>
-          ))}
-        </Chips>
-      </nav>
-
-      {view !== "skills" && (
-        <FilterBar stuck={toolbarStuck} railLabel={t("Filtres", "Filters") as string}
-          prevLabel={t("Filtres précédents", "Previous filters") as string} nextLabel={t("Filtres suivants", "Next filters") as string}
-          rail={FILTERS.map((filter) => <Chip key={filter.id} pressed={active.includes(filter.id)} check onClick={() => toggle(filter.id)}>{t(filter.fr, filter.en)}</Chip>)} />
-      )}
-
-      {view !== "skills" && (
-        <CatalogSection id="agents-servers" title={t("Serveurs MCP officiels", "Official MCP servers")} count={servers.length}
-          action={view === "all" ? <Link to={`${prefix}/mcp`} {...chipLinkAttrs(false)}>{t("Voir tout", "See all")}</Link> : undefined}>
-          {servers.length ? <LinkRows>{servers.map(serverRow)}</LinkRows>
-            : <EmptyState icon={<SearchCheck />} title={t("Aucun serveur ne réunit ces filtres.", "No server matches these filters.") as string}
-              action={<Chip onClick={() => setActive([])}>{t("Retirer les filtres", "Clear filters")}</Chip>} />}
+      {hub ? <>
+        <CatalogSection id="agents-needs" title={t("Que voulez-vous que votre assistant fasse ?", "What do you want your assistant to do?")}>
+          <NeedPicker needs={NEEDS} cards={SERVERS} lang={lang} toolName={toolName} logo={logo} renderSheetLink={sheetLink} />
         </CatalogSection>
-      )}
-
-      {view !== "mcp" && skills.length > 0 && (
-        <CatalogSection id="agents-skills" title={t("Skills officiels", "Official skills")} count={skills.length}
-          action={view === "all" ? <Link to={`${prefix}/skills`} {...chipLinkAttrs(false)}>{t("Voir tout", "See all")}</Link> : undefined}>
-          <LinkRows>{(view === "all" ? skills.slice(0, 12) : skills).map(skillRow)}</LinkRows>
+        <CatalogSection id="agents-stack" title={t("Avec votre stack", "With your stack")}>
+          <StackAgents items={stackItems} lang={lang} renderSheetLink={sheetLink}
+            renderToolLink={(slug, className, content) => <Link to={`${prefix}/tool/${slug}`} className={className}>{content}</Link>}
+            renderStackLink={(className, content) => <Link to={`${prefix}/ma-stack`} className={className}>{content}</Link>} />
         </CatalogSection>
-      )}
+        <CatalogSection id="agents-start" title={t("Par où commencer", "Where to start")}>
+          <StartHere lang={lang} renderGuideLink={(className, content) => <Link to={`${prefix}/guide/${lang === "en" ? GUIDE.en : GUIDE.fr}`} className={className}>{content}</Link>} />
+        </CatalogSection>
+        <CatalogSection id="agents-all" title={t("Toute la liste", "The full list")}>
+          {tabs}
+        </CatalogSection>
+        {list}
+      </> : <>
+        {tabs}
+        {list}
+      </>}
     </Page>
   );
 };

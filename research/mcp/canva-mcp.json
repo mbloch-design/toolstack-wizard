@@ -9,6 +9,24 @@
     "fr": "Le connecteur officiel de Canva laisse votre assistant chercher vos designs, en générer à partir d'une description, les modifier, les exporter et les commenter. La liste d'outils publiée ne comprend aucune suppression ; les fonctions de marque demandent un forfait Pro.",
     "en": "Canva's official connector lets your assistant search your designs, generate new ones from a description, edit, export and comment on them. The published tool list has no deletion; brand features need a Pro plan."
   },
+  "examples": [
+    {
+      "fr": "Crée un visuel Instagram pour annoncer mon atelier de samedi.",
+      "en": "Create an Instagram visual announcing my Saturday workshop."
+    },
+    {
+      "fr": "Retrouve ma dernière présentation client et exporte-la en PDF.",
+      "en": "Find my latest client presentation and export it as a PDF."
+    }
+  ],
+  "for": {
+    "fr": "Vous faites vos visuels dans Canva et partez souvent d'une page blanche.",
+    "en": "You make your visuals in Canva and often start from a blank page."
+  },
+  "not_for": {
+    "fr": "Vous attendez un visuel prêt à publier : un design généré se relit et s'ajuste dans Canva.",
+    "en": "You expect a visual ready to publish: a generated design still needs a review in Canva."
+  },
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

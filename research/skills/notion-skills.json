@@ -11,7 +11,7 @@
     "en": "Reusable instruction pages, written and shared in Notion, that any assistant connected to Notion MCP can follow."
   },
   "agents": [
-    "any MCP client connected to Notion"
+    "any"
   ],
   "install": [],
   "requires": {

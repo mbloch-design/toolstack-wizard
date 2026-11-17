@@ -20,6 +20,25 @@
   composes: text from "../atoms.module.css";
 }
 
+.strong {
+  composes: strong from "../atoms.module.css";
+}
+
+/* The request you could type: a white card lifted off the tile, like a message. */
+.request {
+  composes: raised from "../atoms.module.css";
+  display: grid;
+  gap: var(--tt-space-2);
+  margin: 0;
+  padding: var(--tt-space-4) var(--tt-space-5);
+  max-width: 62ch;
+}
+
+.requestText {
+  composes: label from "../atoms.module.css";
+  margin: 0;
+}
+
 .eyebrow {
   composes: eyebrow from "../atoms.module.css";
 }

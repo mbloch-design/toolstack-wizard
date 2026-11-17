@@ -9,6 +9,28 @@
     "fr": "Le serveur officiel d'Airtable relie votre assistant à vos bases : enregistrements, tables, champs, interfaces et brouillons d'automatisations. Il peut aussi supprimer des enregistrements et des tables entières, et on peut le limiter à certaines bases.",
     "en": "Airtable's official server connects your assistant to your bases: records, tables, fields, interfaces and automation drafts. It can also delete records and whole tables, and can be limited to chosen bases."
   },
+  "examples": [
+    {
+      "fr": "Dans ma base Clients, trouve ceux que je n'ai pas relancés depuis un mois.",
+      "en": "In my Clients base, find the ones I haven't followed up with for a month."
+    },
+    {
+      "fr": "Ajoute ces trois nouveaux prospects à ma table Contacts.",
+      "en": "Add these three new leads to my Contacts table."
+    },
+    {
+      "fr": "Crée une table pour suivre mes factures, avec un montant et une date.",
+      "en": "Create a table to track my invoices, with an amount and a date."
+    }
+  ],
+  "for": {
+    "fr": "Vos clients, vos projets ou vos contenus vivent dans des bases Airtable.",
+    "en": "Your clients, projects or content live in Airtable bases."
+  },
+  "not_for": {
+    "fr": "Vous branchez une base importante sans sauvegarde : l'assistant peut aussi supprimer des tables entières.",
+    "en": "You connect an important base with no backup: the assistant can also delete whole tables."
+  },
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

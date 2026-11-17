@@ -9,6 +9,28 @@
     "fr": "Le serveur officiel de ClickUp permet à votre assistant de gérer tâches, documents, commentaires, temps passé et messages, en votre nom et avec vos droits. Il peut mettre une tâche à la corbeille et envoyer des messages de chat ; les appels sont plafonnés selon le forfait.",
     "en": "ClickUp's official server lets your assistant manage tasks, docs, comments, time and messages, as you and with your rights. It can send a task to Trash and post chat messages; calls are capped by plan."
   },
+  "examples": [
+    {
+      "fr": "Quelles tâches sont en retard sur le projet Refonte ?",
+      "en": "Which tasks are late on the Redesign project?"
+    },
+    {
+      "fr": "Crée une tâche « Envoyer le devis » pour vendredi dans ma liste Clients.",
+      "en": "Create a task \"Send the quote\" for Friday in my Clients list."
+    },
+    {
+      "fr": "Combien de temps ai-je passé sur ce client ce mois-ci ?",
+      "en": "How much time did I spend on this client this month?"
+    }
+  ],
+  "for": {
+    "fr": "Vous suivez vos projets et votre temps dans ClickUp.",
+    "en": "You track your projects and time in ClickUp."
+  },
+  "not_for": {
+    "fr": "Votre espace est partagé et vous ne voulez aucun message en votre nom : l'assistant peut écrire dans le chat ClickUp.",
+    "en": "Your workspace is shared and you want no message sent in your name: the assistant can write in ClickUp chat."
+  },
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

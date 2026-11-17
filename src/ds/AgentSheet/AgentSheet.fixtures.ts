@@ -16,6 +16,10 @@ export const sheetStates = {
   figmaDesktop: server("figma-mcp-desktop"),
   /** Moves money, with human confirmation; beta. */
   stripe: server("stripe-mcp"),
+  /** ChatGPT documented only as « address to paste »: the card uses the address and ChatGPT's own steps. */
+  buffer: server("buffer-mcp"),
+  /** A Gemini command with no Gemini documentation we could read: the card says so, never guesses. */
+  miro: server("miro-mcp"),
   /** Paid plans, no tool list published, no safeguard documented. */
   ahrefs: server("ahrefs-mcp"),
 };

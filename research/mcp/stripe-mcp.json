@@ -9,6 +9,28 @@
     "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Il est en bêta.",
     "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. It is in beta."
   },
+  "examples": [
+    {
+      "fr": "Quel est mon solde Stripe et combien ai-je encaissé ce mois-ci ?",
+      "en": "What is my Stripe balance and how much did I take in this month?"
+    },
+    {
+      "fr": "Liste les paiements de la semaine dernière et dis-moi lesquels ont échoué.",
+      "en": "List last week's payments and tell me which ones failed."
+    },
+    {
+      "fr": "Crée une fiche client pour Studio Martin avec cette adresse e-mail.",
+      "en": "Create a customer for Studio Martin with this email address."
+    }
+  ],
+  "for": {
+    "fr": "Vous encaissez avec Stripe et voulez suivre paiements et solde sans ouvrir le tableau de bord.",
+    "en": "You take payments with Stripe and want to follow payments and balance without opening the dashboard."
+  },
+  "not_for": {
+    "fr": "Vous voulez confier vos virements à l'assistant : le serveur est en bêta et chaque envoi d'argent attend votre confirmation.",
+    "en": "You want the assistant to handle your transfers: the server is in beta and every money transfer waits for your confirmation."
+  },
   "verified_on": "2026-11-16",
   "status": "beta",
   "transport": "remote",

@@ -205,7 +205,128 @@ Branche `claude/distracted-grothendieck-64ebde`, tirée de `main`, non poussée.
 - Champs `note` (bloc) et `tools_note` (fiche) pour ce que les champs ne portent pas.
 - Les commandes d'installation s'affichent en Inter dans un cadre défilant : l'audit typographique n'admet aucune police à chasse fixe, et les invariants refusent une ligne coupée au milieu d'un mot.
 
-**Reste à faire :** validation de Michael dans Storybook (« Agents / Fiche », « Fiche outil / Assistant IA ») et sur les pages ; références visuelles à poser après validation ; méga-panneau Explorer ; publication. Puis le [critère de passage à S2](#critere-s2).
+**Reste à faire :** remplacé par [S1 bis](#s1-bis) (le méga-panneau Explorer est fait : « Agents IA » dans le groupe Explorer du menu téléphone, commit `924f7db0`).
+
+<a id="s1-bis"></a>
+
+### Prochaine action — S1 bis : une section qui accompagne (Michael, 17/11)
+
+Retour de Michael sur S1 : « un peu brut de décoffrage. On doit accompagner, pas faire un énième annuaire » (règle dans `docs/DESIGN_DECISIONS.md`, « Section agents »). Plan accepté par Michael le 17/11 (« Oui, lance »). Même branche, les données de S1 restent ; on refait l'entrée et le récit.
+
+**Hub `/agents` : partir de la personne, pas du catalogue.** Ordre de la page :
+1. « Que voulez-vous que votre assistant fasse ? » : 6 à 8 besoins concrets (préparer ses rendez-vous, retrouver une info dans ses notes, suivre ses paiements, lire ses stats de trafic, publier sur ses réseaux, gérer ses projets, créer des visuels…). Chaque besoin mène à une recommandation : l'outil, l'assistant, le risque en mots, le branchement en trois étapes, le lien vers la fiche.
+2. « Avec votre stack » si Ma stack contient des outils (même source que Ma stack) : « N de vos outils se branchent à votre assistant », chacun avec un avis (à brancher / avec prudence / pas encore). Sans stack : une invitation courte vers Ma stack, pas un bloc vide.
+3. « Par où commencer » : trois points (choisir son assistant ; brancher d'abord en lecture ; garder la main sur ce qui modifie, supprime ou paie), lien vers le guide `mcp-freelances-non-developpeurs`.
+4. La liste complète (serveurs et skills, filtres) en bas, pour qui cherche un outil précis. `/mcp` et `/skills` restent des index, mais ouvrent sur une phrase d'accompagnement.
+
+**Fiche serveur et fiche skill : un récit en chapitres** (esprit Ma stack, « notre page doit raconter une histoire ») :
+1. Ce que ça change pour vous : 2 ou 3 demandes types en langage courant (« Résume mes notes de réunion de la semaine »), tirées uniquement des outils documentés par l'éditeur.
+2. Notre avis : pour qui c'est utile, pour qui ça ne l'est pas.
+3. Le brancher en 3 étapes, selon l'assistant choisi (Claude, ChatGPT ; Gemini ou Copilot si l'éditeur le dit).
+4. Ce qu'il peut faire et comment garder la main : risques et garde-fous réunis.
+5. Pour aller plus loin, replié en fin de fiche : commandes d'installation, liste des outils, clients, sources et date.
+
+**Brancher et « Pour aller plus loin » : revus par Michael le 17/11** (« on peut mieux accompagner encore, plus digest, l'action copier-coller »). Aujourd'hui la fiche empile toutes les entrées `install` brutes (Notion : 7 blocs, dont deux « any ») ; c'est un mur.
+- **Un seul chapitre « Brancher Notion »**, qui fusionne les 3 étapes et l'installation. En tête, un choix « Où utilisez-vous l'IA ? » : Claude, ChatGPT, Gemini d'abord ; puis, derrière « Outils de développeur », Claude Code, Cursor, VS Code, Codex ; « Autre outil » en dernier, qui regroupe les entrées `any`. On ne montre que les choix que la fiche peut servir. Le choix est retenu d'une fiche à l'autre (stockage navigateur, en `try/catch`, la page marche sans).
+- **Pour le choix fait, une seule carte d'étapes numérotées**, jamais plus de 4 :
+  1. Préalable s'il existe, en une ligne : forfait requis, Node.js pour une config `npx`, application de bureau ouverte pour un serveur local.
+  2. L'action : un bouton principal « Ouvrir dans Claude » quand l'éditeur donne un lien d'annuaire (Stripe). Sinon le bloc à copier, avec un bouton nommé selon ce qu'il copie (« Copier la commande », « Copier l'adresse », « Copier la configuration ») et un état « Copié » de 2 s, annoncé aux lecteurs d'écran (`aria-live`). Une configuration JSON est affichée indentée.
+  3. Où le coller, dit concrètement : terminal, réglages, fichier de configuration du client. Cette consigne tient au client, pas au serveur : une table commune par client, sourcée sur la doc du client (Cursor, VS Code, Claude Code, Codex), écrite une fois.
+  4. Connexion au compte quand `auth = oauth` ou `key`, puis « Vérifiez : demandez à votre assistant… », avec une des demandes types de la fiche.
+- **« Pour aller plus loin » ne garde que la fiche technique**, compacte et repliée : connexion, authentification, accès maximum, liste des outils, clients, sources et date. Plus aucun bloc d'installation à cet endroit.
+- **Sur téléphone**, les bascules de choix défilent sur une ligne, le bloc copiable ne déborde pas (retour à la ligne pour la config, défilement pour une commande), et le bouton de copie fait 44 px.
+- **À corriger :** sur `/fr/mcp/notion-mcp`, « Déplier la partie technique » n'a rien ouvert au clic le 17/11 (vérifié pendant la refonte en cours, peut-être un rechargement à chaud). À vérifier et à couvrir par une story avec test d'interaction.
+- **Liste des outils, revue par Michael le 17/11** (« ça aussi », sur la capture de « Créer et modifier · 26 » de Notion). Aujourd'hui, c'est une grille de 26 identifiants techniques (`notion-create-comment`…) en titre, avec la traduction en dessous. On la refait :
+  - **Ranger par sujet, en mots de tous les jours**, et non par niveau de risque seul. Pour Notion : Pages, Bases et vues, Commentaires et discussions, Fichiers, Skills et agents. Chaque sujet a un titre et son nombre d'actions ; il est replié s'il dépasse 5 actions.
+  - **Le titre de chaque ligne est l'action en français** (« Commenter ou répondre à une discussion »). L'identifiant technique passe en petit, en couleur atténuée, en fin de ligne ou au survol. On ne le montre jamais en titre.
+  - **Le risque est porté par chaque ligne** : une pastille « Modifie », « Supprime » ou « Paie » à côté de l'action, dans le vocabulaire des capacités, et rien pour la lecture. En tête de liste, une phrase de synthèse : « 26 actions, dont 2 qui suppriment ».
+  - **Une ligne par action** sur une colonne, plutôt qu'une grille à deux colonnes qui se lit mal. La liste reste dans « Pour aller plus loin ».
+  - Le regroupement par sujet est un classement ToolTrim, dit comme tel dans `tools_note` ou dans une note de méthode. Si l'éditeur ne nomme pas ses outils, on garde la phrase actuelle.
+- **Sources, revues par Michael le 17/11** (sa capture : le bloc « Documentation de l'éditeur » de Notion). Aujourd'hui, quatre titres anglais bruts en corps 16, qu'on ne reconnaît pas comme des liens, et une phrase défensive (« sans reprise d'autres annuaires ») qui s'adresse à un concurrent, pas au lecteur.
+  - **Le titre devient « Sources »**, et la phrase sert le lecteur : « Vérifié le 16 novembre 2026 chez Notion », avec la fraîcheur en clair (« il y a 1 jour »). On retire la mention des autres annuaires. La règle de ne rien reprendre reste dans la méthode, pas sur la fiche.
+  - **Chaque source se lit comme un lien**, sur une ligne de `LinkRow` ou équivalent du système, avec l'icône de lien externe. Le libellé est traduit et court (« Présentation », « Connexion et forfaits », « Liste des outils »). Le domaine (`developers.notion.com`) apparaît en petit. Le titre anglais d'origine reste dans les données. On fusionne les doublons proches : les deux « Supported tools » de Notion.
+  - **Une action « Signaler une erreur »** en fin de bloc, qui renvoie au contact ou au formulaire existant avec la fiche en contexte. Le bloc reste en fin de fiche, avec un poids typographique inférieur aux chapitres.
+- **Fonctionnel et lisible, à la manière de Toolfolio (Michael, 17/11, captures Toolfolio à l'appui : « je veux que ce soit ici plus fonctionnel et lisible »).** On reprend leurs fonctions, jamais leurs textes.
+  - **Un bouton d'action en tête de fiche, « Copier pour votre assistant »**, avec un menu déroulant :
+    - copier toute la fiche en Markdown pour la donner à l'assistant (ce que fait le serveur, le branchement par client, les risques et les garde-fous, les sources), généré depuis les données ;
+    - « Ouvrir dans ChatGPT » et « Ouvrir dans Claude », avec une question pré-remplie sur la fiche (adresse de la page dans le texte) ;
+    - « Copier la commande d'installation » (Claude Code) ;
+    - « Brancher à Cursor » et « Brancher à VS Code », par lien direct d'installation si la doc du client le documente.
+    
+    Chaque entrée n'apparaît que si la fiche peut la servir, et la retenue « Copié » s'affiche en aria-live. Les formats de lien (requête pré-remplie, liens d'installation Cursor et VS Code) sont vérifiés sur la doc de chaque client et notés dans la table commune par client.
+  - **Une ligne de faits sous le titre**, avec icônes : « Vérifié le … », Connexion (en ligne / sur votre ordinateur), Compte (connexion au compte / clé / aucune), Fonctionne avec (logos des assistants, nom en infobulle et en texte pour les lecteurs d'écran). Ces faits ne se répètent pas plus bas.
+  - **Cartes des fiches liées** (alternatives, skills de l'éditeur, et sur le hub) : logo, nom, « Par Notion · Officiel », résumé en 2 ou 3 lignes, puis deux faits (connexion, compte) ou « Skill · thème ». Ajouter un bouton « Ajouter à ma stack » sur l'outil hôte, à la place du marque-page de Toolfolio, si Ma stack l'accepte.
+  - **Liste des outils** : la capture de Michael montre encore l'ancienne grille (70 outils, identifiants en titre). La refonte décrite plus haut est attendue telle quelle.
+- **Passe de mise en page et de design (demandée par Michael le 17/11, relevé de Claude sur `/fr/agents` et `/fr/mcp/notion-mcp`, à 1440 px et 375 px).** Le contenu est bon. La forme reste celle d'une fiche de données : mêmes tuiles grises, même titre de 21 px, colonnes de libellés en petites capitales partout, liens sans signe qu'on peut cliquer. Règles touchées : « il doit y avoir du rythme » (09/11), « notre page doit raconter une histoire » (11/11), et « un bouton est un objet qui répond » (planche du 30/10).
+  
+  *Hub*
+  1. **La réponse à un besoin devient une vraie recommandation.**
+     - En tête : le logo de l'outil (40 px), son nom en titre, puis la demande type mise en avant (citation large).
+     - Ensuite, trois faits sur une ligne avec icônes : assistant, risque, avis. Ils remplacent les lignes AVEC, LE RISQUE et NOTRE AVIS.
+     - Puis les 3 étapes, et un bouton principal « Brancher Calendly → » à la place du lien texte.
+     - « Aussi pour ce besoin : HubSpot » devient une petite carte avec logo.
+  2. **Choix du besoin.** Sur téléphone, les 8 puces s'empilent et occupent tout l'écran avant la réponse. Il faut une rangée qui défile, ou une grille compacte de 2 colonnes avec icône, et la réponse doit commencer au-dessus de la ligne de flottaison. Sur bureau, garder une seule rangée si la largeur le permet.
+  3. **« Avec votre stack » sans stack.** Un vrai bouton « Composer ma stack », pas un lien texte, avec la phrase à côté. Le bloc ne doit pas ressembler à un paragraphe orphelin.
+  4. **Liens d'action.** Tous les liens d'action (« Tout savoir pour brancher », « Le guide pour freelances… », « Voir tout ») portent une flèche et un état de survol.
+  5. **Cartes de la liste.**
+     - Le résumé est coupé à 2 lignes, sur une phrase écrite pour la carte : plus de « … » au milieu d'une phrase.
+     - Les faits sont posés en bas de carte, sur une ligne, avec les icônes de la ligne de faits de la fiche, pour que tous les bas de cartes s'alignent.
+     - Les noms sont ceux de ToolTrim : « Figma, application de bureau », pas « Figma MCP server (desktop) ».
+  6. **Filtres.** À 1440 px, la rangée de filtres déborde et défile. La ranger en deux groupes (« Comment » et « Avec quel assistant »), ou derrière un bouton « Filtrer ».
+  
+  *Fiche*
+  7. **En-tête.**
+     - « Copier pour votre assistant » est l'action principale : bouton sombre, aligné à droite du titre sur bureau, pleine largeur sous le titre sur téléphone.
+     - Dans « Fonctionne avec », un logo est vide (cercle blanc) : le corriger ou l'enlever.
+     - Les logos passent de 14 à 20 px.
+     - Le paragraphe d'introduction répète le sous-titre : les fusionner.
+  8. **Rythme entre les chapitres.** Il ne faut plus cinq tuiles grises identiques.
+     - « Ce que ça change » : les trois demandes en cartes de citation côte à côte (3 colonnes sur bureau, défilement sur téléphone).
+     - « Notre avis » : deux colonnes « Utile si » et « Moins utile si », avec icônes oui/non, sans colonne de libellés.
+     - « Brancher » : reste la tuile principale.
+     - Risques : les mêmes pastilles Supprime / Modifie / Lit que la liste des actions, au lieu des libellés en petites capitales.
+  9. **Brancher.**
+     - Sur téléphone, les puces de client sur une seule rangée qui défile : aujourd'hui « Autre outil » et « Codex » tombent seuls sur leur ligne.
+     - Le bloc de configuration défile horizontalement : l'URL se coupe en « …/mc p ».
+     - Réduire les marges imbriquées (carte dans tuile dans page) sur téléphone.
+     - Séparer l'étape 3 en « Connectez votre compte » et « Vérifiez ».
+  10. **Risques.** « Forfait » répète « Tous les forfaits » en valeur, puis en début de note : n'en garder qu'un.
+  11. **« Pour aller plus loin ».** La tuile n'a qu'un lien. En faire une rangée pleine largeur avec chevron et un résumé de ce qu'elle cache : « 70 actions, 12 assistants, détails techniques ».
+  
+  Les correctifs passent par les composants du système (stories d'abord) et respectent la règle « pas de séparateur, agencement et espace ». Il faut des captures avant/après à 1440 et 375 px pour Michael.
+- **Stories :** fiche Notion (connecteur, choix Claude puis Cursor), Stripe (lien d'annuaire), Figma bureau (serveur local avec préalable), un serveur sans entrée pour le client choisi, avec renvoi à la doc éditeur.
+
+**Passerelle de la fiche outil** : même ton (une demande type, l'avis, le lien « Brancher Notion à votre assistant »).
+
+**Vocabulaire de surface :** « brancher à votre assistant » plutôt que « serveur MCP » ; « connexion à votre compte » plutôt que « OAuth » ; « sur votre ordinateur » / « en ligne » plutôt que « local » / « distant » ; « savoir-faire » ou « mode d'emploi pour l'assistant » pour les skills, à trancher en relisant. « MCP » reste dans le titre SEO et la balise, au second plan.
+
+**Contenu nouveau, écrit par ToolTrim :** les demandes types (`examples` fr/en par fiche serveur, 2-3), l'avis pour qui / pas pour qui (`for` / `not_for` fr/en), la table besoins → outils (`src/data/agents/needs.json` ou équivalent, projetée). Aucun fait éditeur inventé : une demande type n'utilise qu'un outil listé ou une capacité documentée ; si rien ne permet d'écrire, le champ reste absent.
+
+**Méthode :** stories d'abord (hub par besoin, avec et sans stack ; fiche en récit, Notion, Stripe, Ahrefs sans liste d'outils, une skill) ; `lint:ds`, `test:ds`, `test:visual` (Storybook sur un port libre, pas 6006/6007 tenus par d'autres worktrees) ; contrat de contenu testé pour le hub (un besoin mène toujours à une fiche) et la fiche (l'avis et le branchement précèdent la technique). Mettre à jour `DESIGN_DECISIONS.md` (« À arbitrer ») et la section « Fait » ci-dessus. Commits sur la branche, rien de poussé ni de fusionné.
+
+**Sortie :** Michael revoit `/fr/agents`, une fiche serveur et une fiche outil, et dit si ça accompagne.
+
+### Fait — S1 bis (17/11)
+
+Même branche, rien de poussé ni de fusionné. Les données de S1 restent ; l'entrée et le récit sont refaits.
+
+- **Contenu ToolTrim :** `examples` (2-3 demandes types), `for` et `not_for` (fr/en) sur les 19 fiches `research/mcp/`, écrits à partir des outils et capacités documentés seulement ; besoins du hub dans `research/agents/needs.json` (8 besoins, chacun mène à une fiche et cite une de ses demandes ; `also` pour les autres fiches du même besoin). Garde-fou : `validateNeeds` et les règles `examples` / `for` / `not_for` dans `scripts/lib/agent-access.mjs`, testés (contrat : un besoin mène toujours à une fiche).
+- **Projection :** `src/data/agents/needs.json`, `advice.json` (une demande et l'avis, pour la passerelle des fiches outils), `checked_none.json` (outils vérifiés sans serveur : Hotjar, Milanote) ; cartes de `mcp_index.json` enrichies de `setup`, `safeguards`, `for`, `not_for` et `capability_kinds` (le risque en mots suit les lignes de capacités affichées, pas les outils mineurs).
+- **Composants :** `src/ds/AgentHub/` (`NeedPicker` : besoins en puces, conseil sous le choix avec la demande type, l'assistant, le risque, notre avis, trois étapes et la fiche ; `StackAgents` : avis « À brancher / Avec prudence / Pas encore » sur Ma stack, invitation sans stack ; `StartHere` : trois points et le guide). `AgentSheet` réécrit en chapitres (`data-chapter` : change, view, plug, control, further), choix de l'assistant pour les trois étapes, technique repliée dans « Pour aller plus loin ». `AgentAccess` : une demande type, l'avis, « Brancher Notion à votre assistant ». Aides partagées dans `src/lib/agents.ts` (`plugSteps`, `riskSentence`, `stackCall`, `assistantWords`).
+- **Pages :** `/agents` dans l'ordre besoins → « Avec votre stack » (même source que Ma stack) → « Par où commencer » → toute la liste (filtres sur place, sans remontée) ; `/mcp` « Outils à brancher » et `/skills` « Savoir-faire » ouvrent sur une phrase d'accompagnement ; fiche serveur titrée « Brancher Notion à votre assistant ». « MCP » et « skills » restent dans les titres SEO.
+- **Vocabulaire :** « en ligne », « connexion à votre compte », « clé d'accès », « outils à brancher », « savoir-faire » (retenu pour les skills ; « mode d'emploi pour l'assistant » sert dans la phrase d'ouverture de `/skills`).
+- **Stories :** « Agents / Hub » (par besoin, avec et sans stack), « Agents / Fiche » (Notion avec contrat d'ordre des chapitres, Stripe, Ahrefs sans liste d'outils, Figma bureau, deux skills), « Fiche outil / Assistant IA » ; toutes marquées `a-valider` (pas de référence avant validation).
+
+- **Revue de Michael du 17/11 (branchement, outils, sources, « fonctionnel et lisible ») :**
+  - Chapitre unique « Brancher Notion » : choix « Où utilisez-vous l'IA ? » (Claude, ChatGPT, Gemini, Copilot ; outils de développeur Claude Code, Cursor, VS Code, Codex ; « Autre outil »), retenu d'une fiche à l'autre (`localStorage`, en `try/catch`) ; une carte de 1 à 4 étapes (préalable, action « Ouvrir dans Claude » ou copie nommée avec « Copié » en `aria-live`, où coller, connexion puis demande de vérification). Table commune par client : `src/lib/agentClients.ts`, sourcée sur la doc lue le 17/11 (Claude, Claude Code, VS Code, Codex).
+  - Fiche technique repliée (accès maximum, outils cités, liste des actions), plus aucun bloc d'installation à cet endroit. Liste des actions par sujet (classement ToolTrim, dit sur la fiche), une colonne, l'action en français, `Tag` « Modifie / Supprime / Envoie / Paie », l'identifiant en petit et atténué, phrase de synthèse (« 70 actions, dont 4 qui suppriment »), sujet replié au-delà de 5 actions. Le pli « Déplier la fiche technique » est couvert par la story Notion.
+  - Bloc « Sources » : « Vérifié le … chez Notion (il y a 1 jour) », libellés courts traduits avec domaine et icône externe, doublons fusionnés, « Signaler une erreur » vers `/contact` avec la fiche en sujet.
+  - En tête de fiche : ligne de faits à icônes (date, en ligne / sur votre ordinateur, compte, « Fonctionne avec » en logos nommés) et menu « Copier pour votre assistant » (fiche en Markdown, commande Claude Code, « Brancher à VS Code » par le lien `vscode:mcp/install` documenté, « Brancher à Cursor » quand l'éditeur donne un lien de la place de marché Cursor).
+  - Cartes `AgentCard` (logo, nom, « Par Notion · Officiel », résumé sur 3 lignes, deux faits) sur le hub et pour les fiches liées ; « Ajouter à ma stack » sur la carte de l'outil hôte.
+  - Table par client sourcée le 17/11 : Claude (connecteur personnalisé), ChatGPT (« Add custom MCP server » sur chatgpt.com/plugins), Claude Code, Cursor (`~/.cursor/mcp.json` ou `.cursor/mcp.json`, lien `cursor://anysphere.cursor-deeplink/mcp/install`), VS Code (`vscode:mcp/install`, « MCP: Open User Configuration »), Codex (`~/.codex/config.toml`). Manques : l'aide Gemini n'a pas pu être lue, donc une carte Gemini sans entrée de l'éditeur le dit et renvoie à sa documentation ; aucune question pré-remplie n'est documentée par ChatGPT ni par Claude, donc pas d'« Ouvrir dans ChatGPT / Claude avec une question » dans le menu.
+  - Relecture de la session « Axe agentique » (17/11) : valeurs anglaises brutes des `agents` de trois skills ramenées à `any` (« Tout client MCP ») ; « Autres assistants cités par l'éditeur » ne garde que ceux absents de « Fonctionne avec » ; « Importer une Skill » rangé dans Skills et agents, les dossiers dans « Pages et dossiers ».
+
+**Reste à faire :** Michael revoit `/fr/agents`, `/fr/mcp/notion-mcp` et `/fr/tool/notion#assistant-ia` et dit si ça accompagne ; références visuelles après validation ; publication. Puis le [critère de passage à S2](#critere-s2).
 
 ### Brief d'origine — S1, section MCP (exécuté les 16-17/11)
 

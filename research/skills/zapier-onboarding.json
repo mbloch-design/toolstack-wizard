@@ -11,7 +11,7 @@
     "en": "Introduce Zapier MCP with a first workflow across your apps."
   },
   "agents": [
-    "any MCP client connected to Zapier MCP"
+    "any"
   ],
   "install": [],
   "requires": {

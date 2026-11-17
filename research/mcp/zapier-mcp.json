@@ -9,6 +9,24 @@
     "fr": "Zapier MCP met à la portée de votre assistant les actions de milliers d'applications connectées à votre compte Zapier : chercher, créer, envoyer. Vous choisissez les actions exposées, et chaque appel réussi consomme deux tâches du forfait.",
     "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful call uses two tasks from your plan."
   },
+  "examples": [
+    {
+      "fr": "Envoie ce message de relance depuis mon adresse e-mail connectée.",
+      "en": "Send this follow-up from my connected email address."
+    },
+    {
+      "fr": "Ajoute ce nouveau client à mon tableur de suivi.",
+      "en": "Add this new client to my tracking spreadsheet."
+    }
+  ],
+  "for": {
+    "fr": "Vous utilisez des applications que personne ne branche encore à votre assistant : Zapier sert de relais.",
+    "en": "You use apps nobody plugs into your assistant yet: Zapier acts as the go-between."
+  },
+  "not_for": {
+    "fr": "Vous ne voulez pas choisir les actions une à une : il faut activer chaque action que l'assistant peut faire.",
+    "en": "You don't want to pick actions one by one: each action the assistant may take has to be turned on."
+  },
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

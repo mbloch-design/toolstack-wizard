@@ -9,6 +9,28 @@
     "fr": "Le serveur officiel de Buffer permet à votre assistant de lire votre file d'attente et vos statistiques, de rédiger et programmer des posts, et de les publier tout de suite si on le lui demande. Il peut aussi supprimer définitivement un post ; il est inclus dans tous les forfaits, gratuit compris.",
     "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post; it is included on every plan, free included."
   },
+  "examples": [
+    {
+      "fr": "Programme ce post sur LinkedIn pour mardi à 9 h.",
+      "en": "Schedule this post on LinkedIn for Tuesday at 9am."
+    },
+    {
+      "fr": "Lesquels de mes posts du mois ont le mieux marché ?",
+      "en": "Which of this month's posts did best?"
+    },
+    {
+      "fr": "Ajoute cette idée de post à mes idées.",
+      "en": "Add this post idea to my ideas."
+    }
+  ],
+  "for": {
+    "fr": "Vous publiez régulièrement sur plusieurs réseaux avec Buffer.",
+    "en": "You post regularly on several networks with Buffer."
+  },
+  "not_for": {
+    "fr": "Vous ne voulez rien publier sans relire : l'assistant peut publier tout de suite, et Buffer ne documente pas de confirmation.",
+    "en": "You never want anything posted unread: the assistant can post right away, and Buffer documents no confirmation."
+  },
   "verified_on": "2026-11-16",
   "access": "read_write",
   "plan": "all",
