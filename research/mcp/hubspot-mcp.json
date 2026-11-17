@@ -1,0 +1,287 @@
+{
+  "slug": "hubspot-mcp",
+  "name": "HubSpot MCP server",
+  "publisher": "HubSpot",
+  "official": true,
+  "host_tool": "hubspot",
+  "category": "crm",
+  "summary": {
+    "fr": "Le serveur officiel de HubSpot ouvre à votre assistant le CRM, les campagnes, le contenu et les publications sociales. Les créations et modifications demandent une confirmation explicite, et aucune suppression n'est documentée.",
+    "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating and editing require explicit confirmation, and no deletion is documented."
+  },
+  "verified_on": "2026-11-16",
+  "status": "ga",
+  "transport": "remote",
+  "auth": [
+    "oauth"
+  ],
+  "access": "read_write",
+  "plan": "all",
+  "plan_note": {
+    "fr": "Utilisable avec les outils gratuits ; certains outils exigent Marketing Hub ou Revenue Hub Professional ou Enterprise.",
+    "en": "Works with free tools; some tools require Marketing Hub or Revenue Hub Professional or Enterprise."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Consulter le CRM (contacts, entreprises, transactions, tickets), les activités, les conversations et les statistiques d'e-mails",
+      "en": "Read the CRM (contacts, companies, deals, tickets), activities, conversations and email statistics"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier fiches CRM, activités, campagnes, brouillons d'e-mails et segments",
+      "en": "Create and edit CRM records, activities, campaigns, email drafts and segments"
+    },
+    {
+      "kind": "send",
+      "fr": "Publier pages et articles de blog, programmer des publications sociales",
+      "en": "Publish pages and blog posts, schedule social posts"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [
+    "human_confirmation",
+    "admin_controls"
+  ],
+  "tools": [
+    {
+      "name": "get_user_details",
+      "kind": "read",
+      "fr": "Lire votre compte et vos accès",
+      "en": "Read your user, account and access"
+    },
+    {
+      "name": "get_organization_details",
+      "kind": "read",
+      "fr": "Lire équipes, sièges et marques",
+      "en": "Read teams, seats and brands"
+    },
+    {
+      "name": "discover_hubspot_schema",
+      "kind": "read",
+      "fr": "Découvrir les objets et les droits",
+      "en": "Find object types and access"
+    },
+    {
+      "name": "search_crm_objects",
+      "kind": "read",
+      "fr": "Chercher dans le CRM",
+      "en": "Search CRM records"
+    },
+    {
+      "name": "get_crm_objects",
+      "kind": "read",
+      "fr": "Lire des fiches CRM",
+      "en": "Fetch CRM records by ID"
+    },
+    {
+      "name": "manage_crm_objects",
+      "kind": "write",
+      "fr": "Créer ou modifier des fiches CRM, avec confirmation",
+      "en": "Create or update CRM records, with confirmation"
+    },
+    {
+      "name": "manage_segment",
+      "kind": "write",
+      "fr": "Créer des segments, avec confirmation",
+      "en": "Create segments, with confirmation"
+    },
+    {
+      "name": "query_crm_data",
+      "kind": "read",
+      "fr": "Interroger les données CRM",
+      "en": "Query CRM data"
+    },
+    {
+      "name": "search_properties",
+      "kind": "read",
+      "fr": "Chercher des propriétés",
+      "en": "Search property definitions"
+    },
+    {
+      "name": "get_properties",
+      "kind": "read",
+      "fr": "Lire des propriétés",
+      "en": "Read property definitions"
+    },
+    {
+      "name": "manage_custom_properties",
+      "kind": "write",
+      "fr": "Créer des propriétés",
+      "en": "Create custom properties"
+    },
+    {
+      "name": "manage_custom_pipelines",
+      "kind": "write",
+      "fr": "Gérer les pipelines",
+      "en": "Create and manage pipelines"
+    },
+    {
+      "name": "search_owners",
+      "kind": "read",
+      "fr": "Trouver les propriétaires de fiches",
+      "en": "Find record owners"
+    },
+    {
+      "name": "get_campaign_attribution_reports",
+      "kind": "read",
+      "fr": "Lire l'attribution des campagnes",
+      "en": "Read campaign revenue attribution"
+    },
+    {
+      "name": "read_campaign_data",
+      "kind": "read",
+      "fr": "Lire les statistiques de campagne",
+      "en": "Read campaign analytics"
+    },
+    {
+      "name": "manage_campaign_objects",
+      "kind": "write",
+      "fr": "Gérer les campagnes, avec confirmation",
+      "en": "Create or update campaigns, with confirmation"
+    },
+    {
+      "name": "search_conversations",
+      "kind": "read",
+      "fr": "Chercher dans les conversations",
+      "en": "Search inbox conversations"
+    },
+    {
+      "name": "get_conversation_channel_metadata",
+      "kind": "read",
+      "fr": "Lister boîtes et canaux",
+      "en": "List inboxes and channels"
+    },
+    {
+      "name": "search_intent_signals",
+      "kind": "read",
+      "fr": "Chercher des signaux d'intention",
+      "en": "Search buyer intent signals"
+    },
+    {
+      "name": "get_marketing_email_analytics",
+      "kind": "read",
+      "fr": "Lire les statistiques d'e-mails",
+      "en": "Read marketing email analytics"
+    },
+    {
+      "name": "manage_marketing_email",
+      "kind": "write",
+      "fr": "Gérer brouillons et modèles d'e-mails",
+      "en": "Manage email drafts and templates"
+    },
+    {
+      "name": "get_content_analytics_report",
+      "kind": "read",
+      "fr": "Lire les statistiques de contenu",
+      "en": "Read page and blog analytics"
+    },
+    {
+      "name": "manage_landing_page",
+      "kind": "send",
+      "fr": "Créer, modifier et publier des pages",
+      "en": "Create, edit and publish landing pages"
+    },
+    {
+      "name": "manage_website_page",
+      "kind": "send",
+      "fr": "Créer, modifier et publier des pages de site",
+      "en": "Create, edit and publish website pages"
+    },
+    {
+      "name": "get_aeo_metrics",
+      "kind": "read",
+      "fr": "Lire la visibilité dans les recherches IA",
+      "en": "Read AI search visibility metrics"
+    },
+    {
+      "name": "manage_aeo_prompts",
+      "kind": "write",
+      "fr": "Suivre des requêtes IA",
+      "en": "Track AI search prompts"
+    },
+    {
+      "name": "manage_aeo_recommendations",
+      "kind": "write",
+      "fr": "Appliquer des recommandations",
+      "en": "Act on AI search recommendations"
+    },
+    {
+      "name": "render_asset",
+      "kind": "read",
+      "fr": "Prévisualiser un contenu",
+      "en": "Preview a content asset"
+    },
+    {
+      "name": "manage_blog_post",
+      "kind": "send",
+      "fr": "Créer, modifier et publier des articles",
+      "en": "Create, edit and publish blog posts"
+    },
+    {
+      "name": "get_social_channels",
+      "kind": "read",
+      "fr": "Lister les réseaux sociaux",
+      "en": "List social channels"
+    },
+    {
+      "name": "read_social_posts",
+      "kind": "read",
+      "fr": "Lire les publications sociales",
+      "en": "Read social posts"
+    },
+    {
+      "name": "get_social_post_analytics",
+      "kind": "read",
+      "fr": "Lire les statistiques sociales",
+      "en": "Read social post analytics"
+    },
+    {
+      "name": "manage_social_posts",
+      "kind": "send",
+      "fr": "Créer, modifier ou annuler des publications",
+      "en": "Create, update or cancel social posts"
+    },
+    {
+      "name": "manage_onboarding",
+      "kind": "write",
+      "fr": "Suivre la prise en main du CRM",
+      "en": "Follow CRM onboarding steps"
+    },
+    {
+      "name": "tool_guidance",
+      "kind": "read",
+      "fr": "Obtenir de l'aide sur les outils",
+      "en": "Get guidance on using tools"
+    },
+    {
+      "name": "submit_feedback",
+      "kind": "send",
+      "fr": "Envoyer un avis à HubSpot",
+      "en": "Send feedback to HubSpot"
+    }
+  ],
+  "install": [
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.hubspot.com"
+    }
+  ],
+  "docs_url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+  "sources": [
+    {
+      "label": "HubSpot Developers — Integrate AI tools with the HubSpot MCP server",
+      "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server"
+    },
+    {
+      "label": "HubSpot Developers — Remote HubSpot MCP server is now generally available",
+      "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available"
+    }
+  ]
+}

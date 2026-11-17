@@ -1,0 +1,153 @@
+{
+  "slug": "figma-mcp-desktop",
+  "name": "Figma MCP server (desktop)",
+  "publisher": "Figma",
+  "official": true,
+  "host_tool": "figma",
+  "category": "design-tools",
+  "summary": {
+    "fr": "Le serveur de bureau de Figma tourne dans l'application Figma, sur votre ordinateur. Il lit vos designs mais n'écrit pas dans vos fichiers, et demande un siège Dev ou Full sur un forfait payant.",
+    "en": "Figma's desktop server runs inside the Figma app on your computer. It reads your designs but does not write to your files, and needs a Dev or Full seat on a paid plan."
+  },
+  "verified_on": "2026-11-16",
+  "transport": "local",
+  "access": "read",
+  "plan": "specific",
+  "plan_note": {
+    "fr": "Siège Dev ou Full sur un forfait Professional, Education, Organization ou Enterprise ; application de bureau Figma requise.",
+    "en": "Dev or Full seat on a Professional, Education, Organization or Enterprise plan; requires the Figma desktop app."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire le contexte d'un design depuis l'application de bureau",
+      "en": "Read a design's context from the desktop app"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "other",
+      "how": "local"
+    }
+  ],
+  "safeguards": [],
+  "tools": [
+    {
+      "name": "get_code_connect_map",
+      "kind": "read",
+      "fr": "Lire les liens Code Connect",
+      "en": "Read Code Connect mappings"
+    },
+    {
+      "name": "get_code_connect_suggestions",
+      "kind": "read",
+      "fr": "Suggérer des liens Code Connect",
+      "en": "Suggest Code Connect mappings"
+    },
+    {
+      "name": "get_design_context",
+      "kind": "read",
+      "fr": "Lire le contexte et le code d'une sélection",
+      "en": "Read a selection's design context and code"
+    },
+    {
+      "name": "get_figjam",
+      "kind": "read",
+      "fr": "Lire un diagramme FigJam",
+      "en": "Read a FigJam diagram"
+    },
+    {
+      "name": "get_metadata",
+      "kind": "read",
+      "fr": "Résumer la structure d'une sélection",
+      "en": "Outline a selection"
+    },
+    {
+      "name": "get_motion_context",
+      "kind": "read",
+      "fr": "Lire les données d'animation",
+      "en": "Read animation data"
+    },
+    {
+      "name": "get_screenshot",
+      "kind": "read",
+      "fr": "Capturer une sélection",
+      "en": "Capture a selection"
+    },
+    {
+      "name": "get_shader",
+      "kind": "read",
+      "fr": "Lire un shader",
+      "en": "Read a shader"
+    },
+    {
+      "name": "get_variable_defs",
+      "kind": "read",
+      "fr": "Lister variables et styles utilisés",
+      "en": "List variables and styles in use"
+    },
+    {
+      "name": "list_shaders",
+      "kind": "read",
+      "fr": "Lister les shaders de la bibliothèque",
+      "en": "List library shaders"
+    },
+    {
+      "name": "add_code_connect_map",
+      "kind": "write",
+      "fr": "Relier un composant à du code",
+      "en": "Map a component to code"
+    },
+    {
+      "name": "send_code_connect_mappings",
+      "kind": "write",
+      "fr": "Valider des liens Code Connect",
+      "en": "Confirm Code Connect mappings"
+    }
+  ],
+  "install": [
+    {
+      "client": "any",
+      "type": "config",
+      "value": "{\"mcpServers\":{\"figma-desktop\":{\"url\":\"http://127.0.0.1:3845/mcp\"}}}"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add --transport http figma-desktop http://127.0.0.1:3845/mcp"
+    }
+  ],
+  "clients": [
+    "claude",
+    "claude-code",
+    "cursor",
+    "vs-code",
+    "warp",
+    "Codex",
+    "Amazon Q",
+    "Gemini CLI"
+  ],
+  "docs_url": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/",
+  "sources": [
+    {
+      "label": "Figma Help Center — Guide to the Figma MCP server",
+      "url": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server"
+    },
+    {
+      "label": "Figma Developer Docs — Rate limits & access",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/"
+    },
+    {
+      "label": "Figma Developer Docs — Set up the remote server",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/"
+    },
+    {
+      "label": "Figma Developer Docs — Set up the desktop server",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/"
+    },
+    {
+      "label": "Figma Developer Docs — Tools and prompts",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/"
+    }
+  ]
+}

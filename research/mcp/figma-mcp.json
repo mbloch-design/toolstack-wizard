@@ -1,0 +1,349 @@
+{
+  "slug": "figma-mcp",
+  "name": "Figma MCP server (remote)",
+  "publisher": "Figma",
+  "official": true,
+  "host_tool": "figma",
+  "category": "design-tools",
+  "summary": {
+    "fr": "Le serveur distant de Figma donne à votre assistant le contexte de vos designs (composants, variables, mise en page) et, en bêta, le droit de créer et de modifier dans vos fichiers. C'est le serveur à préférer : rien à installer.",
+    "en": "Figma's remote server gives your assistant your designs' context (components, variables, layout) and, in beta, the ability to create and edit in your files. It is the one to prefer: nothing to install."
+  },
+  "verified_on": "2026-11-16",
+  "transport": "remote",
+  "access": "read_write",
+  "plan": "all",
+  "plan_note": {
+    "fr": "Tous les forfaits, mais 20 appels par mois sur le forfait Starter et les sièges View ou Collab ; 200 par jour avec un siège Full ou Dev payant. Écrire hors de ses brouillons demande un siège Full.",
+    "en": "All plans, but 20 tool calls per month on the Starter plan and on View or Collab seats; 200 per day with a paid Full or Dev seat. Writing outside your drafts requires a Full seat."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire le contexte d'un design : variables, composants, mise en page, y compris FigJam",
+      "en": "Read a design's context: variables, components, layout, including FigJam"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier frames, composants, variables et auto layout dans vos fichiers",
+      "en": "Create and edit frames, components, variables and auto layout in your files"
+    },
+    {
+      "kind": "delete",
+      "fr": "Supprimer des calques ou contenus existants, par l'outil d'écriture",
+      "en": "Delete existing layers or content, through the write tool"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "copilot",
+      "how": "plugin"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [],
+  "tools": [
+    {
+      "name": "download_assets",
+      "kind": "read",
+      "fr": "Télécharger exports et images sources",
+      "en": "Download exports and source images"
+    },
+    {
+      "name": "export_video",
+      "kind": "read",
+      "fr": "Exporter un cadre animé en vidéo",
+      "en": "Export an animated frame as video"
+    },
+    {
+      "name": "get_code_connect_map",
+      "kind": "read",
+      "fr": "Lire les liens Code Connect",
+      "en": "Read Code Connect mappings"
+    },
+    {
+      "name": "get_code_connect_suggestions",
+      "kind": "read",
+      "fr": "Suggérer des liens Code Connect",
+      "en": "Suggest Code Connect mappings"
+    },
+    {
+      "name": "get_context_for_code_connect",
+      "kind": "read",
+      "fr": "Lire un composant pour Code Connect",
+      "en": "Read component details for Code Connect"
+    },
+    {
+      "name": "get_design_context",
+      "kind": "read",
+      "fr": "Lire le contexte et le code d'une sélection",
+      "en": "Read a selection's design context and code"
+    },
+    {
+      "name": "get_figjam",
+      "kind": "read",
+      "fr": "Lire un diagramme FigJam",
+      "en": "Read a FigJam diagram"
+    },
+    {
+      "name": "get_generative_plugin",
+      "kind": "read",
+      "fr": "Lire un plugin génératif",
+      "en": "Read a generative plugin's source"
+    },
+    {
+      "name": "get_libraries",
+      "kind": "read",
+      "fr": "Lister vos bibliothèques",
+      "en": "List your libraries"
+    },
+    {
+      "name": "get_metadata",
+      "kind": "read",
+      "fr": "Résumer la structure d'une sélection",
+      "en": "Outline a selection"
+    },
+    {
+      "name": "get_motion_context",
+      "kind": "read",
+      "fr": "Lire les données d'animation",
+      "en": "Read animation data"
+    },
+    {
+      "name": "get_screenshot",
+      "kind": "read",
+      "fr": "Capturer une sélection",
+      "en": "Capture a selection"
+    },
+    {
+      "name": "get_shader",
+      "kind": "read",
+      "fr": "Lire un shader",
+      "en": "Read a shader"
+    },
+    {
+      "name": "get_variable_defs",
+      "kind": "read",
+      "fr": "Lister variables et styles utilisés",
+      "en": "List variables and styles in use"
+    },
+    {
+      "name": "list_file_shaders",
+      "kind": "read",
+      "fr": "Lister les shaders d'un fichier",
+      "en": "List a file's shaders"
+    },
+    {
+      "name": "list_generative_plugins",
+      "kind": "read",
+      "fr": "Lister les plugins génératifs",
+      "en": "List generative plugins"
+    },
+    {
+      "name": "list_shaders",
+      "kind": "read",
+      "fr": "Lister les shaders de la bibliothèque",
+      "en": "List library shaders"
+    },
+    {
+      "name": "search_design_system",
+      "kind": "read",
+      "fr": "Chercher composants, variables et styles",
+      "en": "Search components, variables and styles"
+    },
+    {
+      "name": "whoami",
+      "kind": "read",
+      "fr": "Lire votre compte, forfaits et sièges",
+      "en": "Read your identity, plans and seats"
+    },
+    {
+      "name": "add_code_connect_map",
+      "kind": "write",
+      "fr": "Relier un composant à du code",
+      "en": "Map a component to code"
+    },
+    {
+      "name": "create_generative_plugin",
+      "kind": "write",
+      "fr": "Créer un plugin génératif",
+      "en": "Create a generative plugin"
+    },
+    {
+      "name": "create_new_file",
+      "kind": "write",
+      "fr": "Créer un fichier vierge dans vos brouillons",
+      "en": "Create a blank file in your drafts"
+    },
+    {
+      "name": "create_shader",
+      "kind": "write",
+      "fr": "Créer un shader",
+      "en": "Create a shader"
+    },
+    {
+      "name": "generate_diagram",
+      "kind": "write",
+      "fr": "Générer un diagramme FigJam",
+      "en": "Generate a FigJam diagram"
+    },
+    {
+      "name": "generate_figma_design",
+      "kind": "write",
+      "fr": "Envoyer une page web dans Figma",
+      "en": "Send a live web page to Figma as layers"
+    },
+    {
+      "name": "generate_image",
+      "kind": "write",
+      "fr": "Générer une image (crédits IA)",
+      "en": "Generate an image (uses AI credits)"
+    },
+    {
+      "name": "generate_vector_illustration",
+      "kind": "write",
+      "fr": "Générer une illustration vectorielle (crédits IA)",
+      "en": "Generate vector art (uses AI credits)"
+    },
+    {
+      "name": "html_to_figma",
+      "kind": "write",
+      "fr": "Transformer du HTML en calques",
+      "en": "Turn HTML into design layers"
+    },
+    {
+      "name": "send_code_connect_mappings",
+      "kind": "write",
+      "fr": "Valider des liens Code Connect",
+      "en": "Confirm Code Connect mappings"
+    },
+    {
+      "name": "send_code_to_figma",
+      "kind": "write",
+      "fr": "Importer un projet local dans Figma",
+      "en": "Import a local project into Figma"
+    },
+    {
+      "name": "update_generative_plugin",
+      "kind": "write",
+      "fr": "Modifier un plugin génératif",
+      "en": "Update a generative plugin"
+    },
+    {
+      "name": "update_shader",
+      "kind": "write",
+      "fr": "Modifier un shader",
+      "en": "Update a shader"
+    },
+    {
+      "name": "upload_assets",
+      "kind": "write",
+      "fr": "Importer des images dans un fichier",
+      "en": "Upload images into a file"
+    },
+    {
+      "name": "use_figma",
+      "kind": "delete",
+      "fr": "Créer, modifier ou supprimer du contenu",
+      "en": "Create, edit or delete file content"
+    }
+  ],
+  "install": [
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude plugin install figma@claude-plugins-official"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add --transport http figma https://mcp.figma.com/mcp"
+    },
+    {
+      "client": "codex",
+      "type": "command",
+      "value": "codex mcp add figma --url https://mcp.figma.com/mcp"
+    },
+    {
+      "client": "cursor",
+      "type": "command",
+      "value": "/add-plugin figma"
+    },
+    {
+      "client": "cursor",
+      "type": "config",
+      "value": "{\"mcpServers\":{\"figma\":{\"url\":\"https://mcp.figma.com/mcp\"}}}"
+    },
+    {
+      "client": "vs-code",
+      "type": "url",
+      "value": "vscode:mcp/by-name/com.figma.mcp/mcp"
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.figma.com/mcp"
+    }
+  ],
+  "clients": [
+    "claude",
+    "claude-code",
+    "cursor",
+    "vs-code",
+    "replit",
+    "linear",
+    "warp",
+    "Codex",
+    "Copilot CLI",
+    "Gemini CLI",
+    "Kiro",
+    "Xcode"
+  ],
+  "skills": [
+    "figma-use",
+    "figma-use-figjam",
+    "figma-use-slides",
+    "figma-swiftui",
+    "figma-code-connect",
+    "figma-create-new-file",
+    "figma-generate-diagram",
+    "figma-code-workflows",
+    "figma-spec",
+    "figma-generate-library",
+    "figma-generate-design"
+  ],
+  "note": {
+    "fr": "L'écriture dans les fichiers est en bêta.",
+    "en": "Writing to files is in beta."
+  },
+  "docs_url": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/",
+  "sources": [
+    {
+      "label": "Figma Help Center — Guide to the Figma MCP server",
+      "url": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server"
+    },
+    {
+      "label": "Figma Developer Docs — Rate limits & access",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/"
+    },
+    {
+      "label": "Figma Developer Docs — Set up the remote server",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/"
+    },
+    {
+      "label": "Figma Developer Docs — Set up the desktop server",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/"
+    },
+    {
+      "label": "Figma Developer Docs — Tools and prompts",
+      "url": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "slug": "stripe-mcp",
+  "name": "Stripe MCP",
+  "publisher": "Stripe",
+  "official": true,
+  "host_tool": "stripe",
+  "category": "finance",
+  "summary": {
+    "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Il est en bêta.",
+    "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. It is in beta."
+  },
+  "verified_on": "2026-11-16",
+  "status": "beta",
+  "transport": "remote",
+  "auth": [
+    "oauth",
+    "key"
+  ],
+  "access": "read_write",
+  "plan": "unknown",
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire les données du compte, les analyses et la documentation Stripe",
+      "en": "Read account data, analytics and Stripe documentation"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier des objets Stripe (clients, remboursements…)",
+      "en": "Create and update Stripe objects (customers, refunds…)"
+    },
+    {
+      "kind": "pay",
+      "fr": "Envoyer ou convertir de l'argent depuis un compte Treasury, avec confirmation humaine",
+      "en": "Send or convert money from a Treasury account, with human confirmation"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "plugin"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "plugin"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [
+    "human_confirmation",
+    "admin_controls",
+    "scoped_keys"
+  ],
+  "tools": [
+    {
+      "name": "stripe_api_search",
+      "kind": "read",
+      "fr": "Chercher dans l'API Stripe",
+      "en": "Search Stripe API methods"
+    },
+    {
+      "name": "stripe_api_details",
+      "kind": "read",
+      "fr": "Lire les paramètres d'une méthode",
+      "en": "Read an API method's parameters"
+    },
+    {
+      "name": "stripe_api_read",
+      "kind": "read",
+      "fr": "Lire des données du compte",
+      "en": "Read data from any API method"
+    },
+    {
+      "name": "stripe_api_write",
+      "kind": "delete",
+      "fr": "Créer, modifier ou supprimer via l'API",
+      "en": "Create, update or delete through the API"
+    },
+    {
+      "name": "get_stripe_account_info",
+      "kind": "read",
+      "fr": "Lire le compte Stripe",
+      "en": "Read the Stripe account"
+    },
+    {
+      "name": "atlas_company_formation",
+      "kind": "write",
+      "fr": "Préparer une création de société Atlas",
+      "en": "Prepare an Atlas company formation"
+    },
+    {
+      "name": "stripe_analytics",
+      "kind": "read",
+      "fr": "Trouver métriques et rapports (aperçu)",
+      "en": "Find metrics and reports (preview)"
+    },
+    {
+      "name": "get_balance_summary",
+      "kind": "read",
+      "fr": "Résumer les soldes",
+      "en": "Summarise Stripe and Treasury balances"
+    },
+    {
+      "name": "convert_currency",
+      "kind": "pay",
+      "fr": "Convertir des fonds, avec confirmation",
+      "en": "Convert Treasury funds, with confirmation"
+    },
+    {
+      "name": "send_money",
+      "kind": "pay",
+      "fr": "Envoyer de l'argent, avec confirmation",
+      "en": "Send Treasury money, with confirmation"
+    },
+    {
+      "name": "setup_recipient",
+      "kind": "write",
+      "fr": "Créer un bénéficiaire",
+      "en": "Set up a payment recipient"
+    },
+    {
+      "name": "transfer_money",
+      "kind": "pay",
+      "fr": "Virer entre soldes, avec confirmation",
+      "en": "Move money between balances, with confirmation"
+    },
+    {
+      "name": "search_stripe_documentation",
+      "kind": "read",
+      "fr": "Chercher dans la documentation",
+      "en": "Search Stripe documentation"
+    },
+    {
+      "name": "stripe_implementation_planner",
+      "kind": "read",
+      "fr": "Préparer une intégration Stripe",
+      "en": "Plan a Stripe integration"
+    },
+    {
+      "name": "send_stripe_feedback",
+      "kind": "send",
+      "fr": "Envoyer un avis à Stripe",
+      "en": "Send feedback to Stripe"
+    }
+  ],
+  "install": [
+    {
+      "client": "claude",
+      "type": "url",
+      "value": "https://claude.ai/directory/de127013-63f1-43d0-8dd2-b6cb5b4e5d1b"
+    },
+    {
+      "client": "chatgpt",
+      "type": "url",
+      "value": "https://chatgpt.com/plugins/plugin_connector_690ab09fa43c8191bca40280e4563238"
+    },
+    {
+      "client": "any",
+      "type": "command",
+      "value": "stripe agent setup"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add --transport http stripe https://mcp.stripe.com/"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude plugin install stripe@anthropic-plugin-directory"
+    },
+    {
+      "client": "codex",
+      "type": "command",
+      "value": "codex mcp add stripe --url https://mcp.stripe.com"
+    },
+    {
+      "client": "cursor",
+      "type": "config",
+      "value": "{\n \"mcpServers\": {\n   \"stripe\": {\n     \"url\": \"https://mcp.stripe.com\"\n   }\n }\n}"
+    },
+    {
+      "client": "vs-code",
+      "type": "config",
+      "value": "{\n \"servers\": {\n   \"stripe\": {\n     \"type\": \"http\",\n     \"url\": \"https://mcp.stripe.com\"\n   }\n }\n}"
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.stripe.com"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "claude-code",
+    "cursor",
+    "vs-code",
+    "Codex",
+    "Grok",
+    "Kiro",
+    "OpenClaw"
+  ],
+  "skills": [
+    "connect-recommend",
+    "connect-required-verification-information",
+    "metronome",
+    "stripe-apps",
+    "stripe-best-practices",
+    "stripe-directory",
+    "stripe-docs",
+    "stripe-implementation-planner",
+    "stripe-pay",
+    "stripe-projects",
+    "upgrade-stripe"
+  ],
+  "docs_url": "https://docs.stripe.com/mcp",
+  "sources": [
+    {
+      "label": "Stripe Docs — Model Context Protocol (MCP)",
+      "url": "https://docs.stripe.com/mcp"
+    },
+    {
+      "label": "Stripe Docs — Agent plugin",
+      "url": "https://docs.stripe.com/agents/plugin.md"
+    },
+    {
+      "label": "Stripe Docs — Skills",
+      "url": "https://docs.stripe.com/skills.md"
+    }
+  ]
+}

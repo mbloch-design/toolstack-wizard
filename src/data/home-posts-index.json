@@ -1,6 +1,22 @@
 {
   "fr": [
     {
+      "slug": "mcp-freelances-non-developpeurs",
+      "title": "MCP pour freelances non-développeurs : ce que ça change vraiment",
+      "date": "2026-11-16",
+      "tags": [
+        "mcp",
+        "assistant ia",
+        "freelance",
+        "notion",
+        "canva",
+        "calendly",
+        "automatisation",
+        "2026"
+      ],
+      "thumbnail": null
+    },
+    {
       "slug": "plateforme-ecommerce-solo-petite-equipe-produits-physiques",
       "title": "Quelle plateforme e-commerce choisir en solo ou en petite équipe, pour vendre des produits physiques ?",
       "date": "2026-10-07",
@@ -176,25 +192,25 @@
         "workflow"
       ],
       "thumbnail": "/editorial/stories/atelier-hors-champ/hero.jpg"
-    },
-    {
-      "slug": "auditer-stack-saas-45-minutes",
-      "title": "Auditer sa stack SaaS en 45 minutes : supprimer les doublons sans casser son travail",
-      "date": "2026-08-16",
-      "tags": [
-        "audit de stack",
-        "construire une stack",
-        "réduire les coûts",
-        "abonnements SaaS",
-        "doublons outils",
-        "migration SaaS",
-        "freelance",
-        "organisation"
-      ],
-      "thumbnail": "/editorial/stack-visuale/franken-stack-photo.jpg"
     }
   ],
   "en": [
+    {
+      "slug": "mcp-for-non-developer-freelancers",
+      "title": "MCP for non-developer freelancers: what it actually changes",
+      "date": "2026-11-16",
+      "tags": [
+        "mcp",
+        "ai assistant",
+        "freelance",
+        "notion",
+        "canva",
+        "calendly",
+        "automation",
+        "2026"
+      ],
+      "thumbnail": null
+    },
     {
       "slug": "measure-ai-search-visibility-geo-2026",
       "title": "How to measure AI search visibility in 2026 without trusting a score",
@@ -378,21 +394,6 @@
         "automation"
       ],
       "thumbnail": "/editorial/guides/kit-huberman-systeme-audience/hero.jpg"
-    },
-    {
-      "slug": "atelier-hors-champ-scenography-storytelling-space",
-      "title": "Drawing What the Visitor Feels Before What They Look At",
-      "date": "2026-08-17",
-      "tags": [
-        "stories",
-        "scenography",
-        "creative studio",
-        "exhibition",
-        "ephemeral architecture",
-        "art direction",
-        "workflow"
-      ],
-      "thumbnail": "/editorial/stories/atelier-hors-champ/hero.jpg"
     }
   ]
 }

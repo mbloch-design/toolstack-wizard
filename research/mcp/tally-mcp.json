@@ -1,0 +1,111 @@
+{
+  "slug": "tally-mcp",
+  "name": "Tally MCP server",
+  "publisher": "Tally",
+  "official": true,
+  "host_tool": "tally",
+  "category": "communication",
+  "summary": {
+    "fr": "Le serveur officiel de Tally, en bêta, permet à votre assistant de créer un formulaire à partir d'une description, de le modifier, de le publier et de lire les réponses. Il ne peut supprimer ni formulaire ni réponse, et il est gratuit sur tous les forfaits.",
+    "en": "Tally's official server, in beta, lets your assistant create a form from a description, edit it, publish it and read submissions. It cannot delete forms or submissions, and it is free on every plan."
+  },
+  "verified_on": "2026-11-16",
+  "status": "beta",
+  "transport": "remote",
+  "auth": [
+    "oauth",
+    "key"
+  ],
+  "access": "read_write",
+  "plan": "all",
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire vos formulaires et leurs réponses",
+      "en": "Read your forms and their submissions"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer un formulaire à partir d'une description, modifier un formulaire",
+      "en": "Create a form from a description, edit a form"
+    },
+    {
+      "kind": "send",
+      "fr": "Publier un formulaire pour le partager",
+      "en": "Publish a form to share it"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "plugin"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [
+    "no_delete"
+  ],
+  "tools_note": {
+    "fr": "Tally décrit ce que fait le serveur (créer, modifier, publier un formulaire ; lister les formulaires ; lire les réponses) sans nommer ses outils.",
+    "en": "Tally describes what the server does (create, edit, publish a form; list forms; read submissions) without naming its tools."
+  },
+  "install": [
+    {
+      "client": "claude",
+      "type": "steps",
+      "value": "Claude > Customize → Connectors → Browse connectors; search 'Tally'; click Connect"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add tally --transport http https://api.tally.so/mcp"
+    },
+    {
+      "client": "cursor",
+      "type": "config",
+      "value": "{\"mcpServers\": {\"tally\": {\"url\": \"https://api.tally.so/mcp\", \"headers\": {\"Authorization\": \"Bearer YOUR_API_KEY_HERE\"}}}}"
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://api.tally.so/mcp"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "claude-code",
+    "cursor",
+    "Grok",
+    "Windsurf",
+    "Zed",
+    "Cline",
+    "Continue"
+  ],
+  "docs_url": "https://developers.tally.so/api-reference/mcp",
+  "sources": [
+    {
+      "label": "Tally Developer Docs — MCP server",
+      "url": "https://developers.tally.so/api-reference/mcp"
+    },
+    {
+      "label": "Tally Help — Tally MCP Server",
+      "url": "https://tally.so/help/mcp"
+    },
+    {
+      "label": "Tally Help — Claude connector",
+      "url": "https://tally.so/help/claude-connector"
+    },
+    {
+      "label": "Tally Help — ChatGPT",
+      "url": "https://tally.so/help/chatgpt-integration"
+    }
+  ]
+}

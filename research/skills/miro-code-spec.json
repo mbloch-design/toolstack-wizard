@@ -1,0 +1,38 @@
+{
+  "slug": "miro-code-spec",
+  "name": "miro-code-spec",
+  "publisher": "Miro",
+  "official": true,
+  "host_tool": "miro",
+  "server": "miro-mcp",
+  "category": "design-tools",
+  "summary": {
+    "fr": "Extraire les spécifications d'un tableau (documents, schémas, maquettes) vers le projet.",
+    "en": "Extract specs from a board (docs, diagrams, prototypes) into the project."
+  },
+  "agents": [
+    "claude-code",
+    "cursor",
+    "Codex",
+    "GitHub Copilot"
+  ],
+  "install": [
+    {
+      "client": "any",
+      "type": "command",
+      "value": "npx skills add miroapp/miro-ai"
+    }
+  ],
+  "requires": {
+    "fr": "Connexion au serveur MCP Miro.",
+    "en": "A connection to the Miro MCP server."
+  },
+  "verified_on": "2026-11-16",
+  "docs_url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md",
+  "sources": [
+    {
+      "label": "Miro — skills",
+      "url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md"
+    }
+  ]
+}

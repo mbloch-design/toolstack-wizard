@@ -1,0 +1,38 @@
+{
+  "slug": "google-analytics-data-api-basics",
+  "name": "google-analytics-data-api-basics",
+  "publisher": "Google",
+  "official": true,
+  "host_tool": "google-analytics",
+  "server": "google-analytics-mcp",
+  "category": "analytics",
+  "summary": {
+    "fr": "Mettre en place l'API Data et construire des requêtes de rapport.",
+    "en": "Set up the Data API and build report queries."
+  },
+  "agents": [
+    "claude-code",
+    "Codex",
+    "cursor",
+    "Antigravity"
+  ],
+  "install": [
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "npx skills add google/skills/skills/analytics --agent=claude-code"
+    }
+  ],
+  "requires": {
+    "fr": "Node.js et un accès à une propriété Google Analytics.",
+    "en": "Node.js and access to a Google Analytics property."
+  },
+  "verified_on": "2026-11-16",
+  "docs_url": "https://developers.google.com/analytics/devguides/agent-skills",
+  "sources": [
+    {
+      "label": "Google — skills",
+      "url": "https://developers.google.com/analytics/devguides/agent-skills"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "miro-code-explain-on-board",
+  "name": "miro-code-explain-on-board",
+  "publisher": "Miro",
+  "official": true,
+  "host_tool": "miro",
+  "server": "miro-mcp",
+  "category": "design-tools",
+  "summary": {
+    "fr": "Expliquer un code sur un tableau Miro, en schémas et document d'accompagnement.",
+    "en": "Explain a codebase on a Miro board, as diagrams and a companion doc."
+  },
+  "agents": [
+    "claude-code",
+    "cursor",
+    "Codex",
+    "GitHub Copilot"
+  ],
+  "install": [
+    {
+      "client": "any",
+      "type": "command",
+      "value": "npx skills add miroapp/miro-ai"
+    }
+  ],
+  "requires": {
+    "fr": "Connexion au serveur MCP Miro.",
+    "en": "A connection to the Miro MCP server."
+  },
+  "verified_on": "2026-11-16",
+  "docs_url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md",
+  "sources": [
+    {
+      "label": "Miro — skills",
+      "url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md"
+    }
+  ]
+}

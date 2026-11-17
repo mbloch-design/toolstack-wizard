@@ -1,0 +1,226 @@
+{
+  "slug": "zapier-mcp",
+  "name": "Zapier MCP",
+  "publisher": "Zapier",
+  "official": true,
+  "host_tool": "zapier",
+  "category": "automation",
+  "summary": {
+    "fr": "Zapier MCP met à la portée de votre assistant les actions de milliers d'applications connectées à votre compte Zapier : chercher, créer, envoyer. Vous choisissez les actions exposées, et chaque appel réussi consomme deux tâches du forfait.",
+    "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful call uses two tasks from your plan."
+  },
+  "verified_on": "2026-11-16",
+  "transport": "remote",
+  "auth": [
+    "key"
+  ],
+  "access": "read_write",
+  "plan": "all",
+  "plan_note": {
+    "fr": "Tous les comptes ; chaque appel réussi consomme deux tâches du forfait.",
+    "en": "All accounts; each successful call uses two tasks from your plan."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Chercher et lire des données dans vos applications connectées",
+      "en": "Search and read data in your connected apps"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer ou modifier des données dans vos applications (tâche, fiche…)",
+      "en": "Create or update data in your apps (a task, a record…)"
+    },
+    {
+      "kind": "send",
+      "fr": "Envoyer e-mails et messages depuis vos comptes connectés",
+      "en": "Send emails and messages from your connected accounts"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "url"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [
+    "admin_controls",
+    "scoped_keys"
+  ],
+  "tools": [
+    {
+      "name": "inspect_zapier_actions",
+      "kind": "read",
+      "fr": "Lister les actions activées",
+      "en": "List enabled actions and their needs"
+    },
+    {
+      "name": "discover_zapier_actions",
+      "kind": "read",
+      "fr": "Chercher des actions à ajouter",
+      "en": "Search apps and actions to add"
+    },
+    {
+      "name": "enable_zapier_action",
+      "kind": "write",
+      "fr": "Activer une action",
+      "en": "Enable an action as a tool"
+    },
+    {
+      "name": "disable_zapier_action",
+      "kind": "write",
+      "fr": "Désactiver une action",
+      "en": "Remove an action"
+    },
+    {
+      "name": "auto_provision_mcp",
+      "kind": "write",
+      "fr": "Ajouter des outils depuis vos connexions",
+      "en": "Add tools from your app connections"
+    },
+    {
+      "name": "execute_zapier_read_action",
+      "kind": "read",
+      "fr": "Lancer une recherche dans une appli",
+      "en": "Run a read or search action"
+    },
+    {
+      "name": "execute_zapier_write_action",
+      "kind": "send",
+      "fr": "Lancer une action : envoyer, créer, modifier",
+      "en": "Run a write action: send, create, update"
+    },
+    {
+      "name": "list_zapier_connections",
+      "kind": "read",
+      "fr": "Lister les connexions",
+      "en": "List app connections"
+    },
+    {
+      "name": "manage_zapier_connections",
+      "kind": "write",
+      "fr": "Gérer les connexions",
+      "en": "Add or choose a connection"
+    },
+    {
+      "name": "get_configuration_url",
+      "kind": "read",
+      "fr": "Obtenir le lien de configuration",
+      "en": "Get the configuration page link"
+    },
+    {
+      "name": "list_zapier_skills",
+      "kind": "read",
+      "fr": "Lister les skills",
+      "en": "List saved skills"
+    },
+    {
+      "name": "get_zapier_skill",
+      "kind": "read",
+      "fr": "Lire une skill",
+      "en": "Read a skill"
+    },
+    {
+      "name": "create_zapier_skill",
+      "kind": "write",
+      "fr": "Créer une skill",
+      "en": "Create a skill"
+    },
+    {
+      "name": "update_zapier_skill",
+      "kind": "write",
+      "fr": "Modifier une skill",
+      "en": "Update a skill"
+    },
+    {
+      "name": "delete_zapier_skill",
+      "kind": "delete",
+      "fr": "Supprimer une skill",
+      "en": "Delete a skill"
+    },
+    {
+      "name": "send_feedback",
+      "kind": "send",
+      "fr": "Envoyer un avis à Zapier",
+      "en": "Send feedback to Zapier"
+    }
+  ],
+  "tools_note": {
+    "fr": "Ce sont les outils du serveur ; les actions des applications (envoyer un e-mail, créer une tâche…) passent par les deux outils d'exécution, selon ce que vous activez. Les outils de workflow, en accès anticipé, ne sont pas listés.",
+    "en": "These are the server's own tools; app actions (send an email, create a task…) go through the two run tools, depending on what you enable. Workflow tools, in early access, are not listed."
+  },
+  "install": [
+    {
+      "client": "claude",
+      "type": "steps",
+      "value": "Claude searches its connectors and shows a Zapier card. Click Connect on the Zapier card."
+    },
+    {
+      "client": "chatgpt",
+      "type": "url",
+      "value": "https://mcp.zapier.com/api/v1/connect"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add --transport http \"Zapier-MCP\" https://mcp.zapier.com/api/v1/connect"
+    },
+    {
+      "client": "codex",
+      "type": "command",
+      "value": "codex mcp add zapier --url https://mcp.zapier.com/api/v1/connect"
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.zapier.com/api/v1/connect"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "claude-code",
+    "cursor",
+    "vs-code",
+    "replit",
+    "linear",
+    "warp",
+    "slack",
+    "Codex",
+    "Windsurf",
+    "Zed",
+    "Copilot Studio",
+    "Gemini Enterprise"
+  ],
+  "skills": [
+    "zapier-onboarding",
+    "zapier-build-workflows"
+  ],
+  "docs_url": "https://docs.zapier.com/mcp/get-started/quickstart",
+  "sources": [
+    {
+      "label": "Zapier Docs — Zapier MCP quickstart",
+      "url": "https://docs.zapier.com/mcp/get-started/quickstart"
+    },
+    {
+      "label": "Zapier Docs — Usage and billing",
+      "url": "https://docs.zapier.com/mcp/overview/usage"
+    },
+    {
+      "label": "Zapier Docs — How tools work",
+      "url": "https://docs.zapier.com/mcp/overview/how-tools-work"
+    },
+    {
+      "label": "Zapier Docs — Connect Claude",
+      "url": "https://docs.zapier.com/mcp/get-started/connect/claude"
+    }
+  ]
+}

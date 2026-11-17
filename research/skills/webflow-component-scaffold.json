@@ -1,0 +1,47 @@
+{
+  "slug": "webflow-component-scaffold",
+  "name": "Component scaffold",
+  "publisher": "Webflow",
+  "official": true,
+  "host_tool": "webflow",
+  "server": "webflow-mcp",
+  "category": "nocode-web",
+  "summary": {
+    "fr": "Créer la base d'un nouveau composant.",
+    "en": "Scaffold a new component."
+  },
+  "agents": [
+    "claude",
+    "claude-code",
+    "Grok Build"
+  ],
+  "install": [
+    {
+      "client": "any",
+      "type": "command",
+      "value": "npx skills add webflow/webflow-skills"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude plugin marketplace add webflow/webflow-skills"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude plugin install webflow-skills@webflow-skills"
+    }
+  ],
+  "requires": {
+    "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
+    "en": "An agent that supports skills, with the Webflow MCP server configured."
+  },
+  "verified_on": "2026-11-16",
+  "docs_url": "https://developers.webflow.com/mcp/reference/skills",
+  "sources": [
+    {
+      "label": "Webflow — skills",
+      "url": "https://developers.webflow.com/mcp/reference/skills"
+    }
+  ]
+}

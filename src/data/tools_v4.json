@@ -11814,7 +11814,8 @@
           "plan": "paid",
           "planNote": "Forfaits payants à partir de Lite ; chaque appel consomme des unités API du quota mensuel du forfait.",
           "planNoteEn": "Paid plans from Lite up; each call uses API units from the plan's monthly allowance.",
-          "docsUrl": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+          "docsUrl": "https://docs.ahrefs.com/en/mcp/docs/introduction",
+          "mcpSlug": "ahrefs-mcp"
         }
       ],
       "capabilities": [
@@ -12994,7 +12995,8 @@
           ],
           "access": "read_write",
           "plan": "all",
-          "docsUrl": "https://airtable.com/developers/agents/mcp/getting-started"
+          "docsUrl": "https://airtable.com/developers/agents/mcp/getting-started",
+          "mcpSlug": "airtable-mcp"
         }
       ],
       "capabilities": [
@@ -35157,7 +35159,8 @@
           "name": "Buffer MCP",
           "access": "read_write",
           "plan": "all",
-          "docsUrl": "https://buffer.com/mcp"
+          "docsUrl": "https://buffer.com/mcp",
+          "mcpSlug": "buffer-mcp"
         }
       ],
       "capabilities": [
@@ -36923,7 +36926,8 @@
           "plan": "all",
           "planNote": "Aucun forfait payant requis ; certaines actions dépendent du forfait.",
           "planNoteEn": "No paid plan required; some actions depend on your plan.",
-          "docsUrl": "https://developer.calendly.com/docs/mcp/calendly-mcp-server"
+          "docsUrl": "https://developer.calendly.com/docs/mcp/calendly-mcp-server",
+          "mcpSlug": "calendly-mcp"
         }
       ],
       "status": "ga",
@@ -38731,7 +38735,8 @@
             "perplexity",
             "grok"
           ],
-          "docsUrl": "https://www.canva.com/help/mcp-agent-setup/"
+          "docsUrl": "https://www.canva.com/help/mcp-agent-setup/",
+          "mcpSlug": "canva-mcp"
         }
       ],
       "capabilities": [
@@ -46514,7 +46519,8 @@
           "plan": "all",
           "planNote": "Tous les forfaits, y compris Free Forever, avec un plafond d'appels par 24 h : 100 sur Free Forever, jusqu'à 5 000 sur Enterprise.",
           "planNoteEn": "Every plan, including Free Forever, with a 24-hour call cap: 100 on Free Forever, up to 5,000 on Enterprise.",
-          "docsUrl": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+          "docsUrl": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+          "mcpSlug": "clickup-mcp"
         }
       ],
       "capabilities": [
@@ -76337,7 +76343,8 @@
             "clickup",
             "notion"
           ],
-          "docsUrl": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/"
+          "docsUrl": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/",
+          "mcpSlug": "figma-mcp"
         },
         {
           "name": "Figma MCP server (desktop)",
@@ -76352,7 +76359,8 @@
             "vs-code",
             "warp"
           ],
-          "docsUrl": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/"
+          "docsUrl": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/",
+          "mcpSlug": "figma-mcp-desktop"
         }
       ],
       "capabilities": [
@@ -92532,7 +92540,8 @@
           "transport": "local",
           "access": "read",
           "plan": "unknown",
-          "docsUrl": "https://developers.google.com/analytics/devguides/MCP"
+          "docsUrl": "https://developers.google.com/analytics/devguides/MCP",
+          "mcpSlug": "google-analytics-mcp"
         }
       ],
       "capabilities": [
@@ -104625,7 +104634,8 @@
           "plan": "all",
           "planNote": "Utilisable avec les outils gratuits ; certains outils exigent Marketing Hub ou Revenue Hub Professional ou Enterprise.",
           "planNoteEn": "Works with free tools; some tools require Marketing Hub or Revenue Hub Professional or Enterprise.",
-          "docsUrl": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server"
+          "docsUrl": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+          "mcpSlug": "hubspot-mcp"
         }
       ],
       "status": "ga",
@@ -135453,7 +135463,8 @@
           "plan": "all",
           "planNote": "Lancer des scénarios : tous les forfaits. Modifier les scénarios (portées de gestion) : forfaits payants.",
           "planNoteEn": "Running scenarios: every plan. Editing scenarios (management scopes): paid plans.",
-          "docsUrl": "https://help.make.com/make-mcp-server"
+          "docsUrl": "https://help.make.com/make-mcp-server",
+          "mcpSlug": "make-mcp"
         }
       ],
       "capabilities": [
@@ -144711,7 +144722,8 @@
           "plan": "all",
           "planNote": "Tous les forfaits. Sur Enterprise, désactivé par défaut jusqu'à activation par un administrateur.",
           "planNoteEn": "All plans. On Enterprise, off by default until an admin turns it on.",
-          "docsUrl": "https://developers.miro.com/docs/connecting-to-miro-mcp"
+          "docsUrl": "https://developers.miro.com/docs/connecting-to-miro-mcp",
+          "mcpSlug": "miro-mcp"
         }
       ],
       "capabilities": [
@@ -153843,7 +153855,8 @@
           "plan": "all",
           "planNote": "Tous les forfaits. Jetons MCP (connexion sans navigateur), recherche dans les sources connectées et requêtes SQL illimitées : Business et Enterprise. Les invités d'un espace ne peuvent pas se connecter.",
           "planNoteEn": "Every plan. MCP tokens (no browser sign-in), connected-source search and unlimited SQL queries: Business and Enterprise. Workspace guests cannot connect.",
-          "docsUrl": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+          "docsUrl": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+          "mcpSlug": "notion-mcp"
         }
       ],
       "status": "ga",
@@ -207155,7 +207168,8 @@
             "grok",
             "perplexity"
           ],
-          "docsUrl": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/authorizing-access"
+          "docsUrl": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/authorizing-access",
+          "mcpSlug": "shopify-mcp"
         }
       ],
       "capabilities": [
@@ -210964,7 +210978,8 @@
             "cursor",
             "perplexity"
           ],
-          "docsUrl": "https://docs.slack.dev/ai/slack-mcp-server/"
+          "docsUrl": "https://docs.slack.dev/ai/slack-mcp-server/",
+          "mcpSlug": "slack-mcp"
         }
       ],
       "capabilities": [
@@ -219833,7 +219848,8 @@
           ],
           "access": "read_write",
           "plan": "unknown",
-          "docsUrl": "https://docs.stripe.com/mcp"
+          "docsUrl": "https://docs.stripe.com/mcp",
+          "mcpSlug": "stripe-mcp"
         }
       ],
       "status": "beta",
@@ -226544,7 +226560,8 @@
           ],
           "access": "read_write",
           "plan": "all",
-          "docsUrl": "https://developers.tally.so/api-reference/mcp"
+          "docsUrl": "https://developers.tally.so/api-reference/mcp",
+          "mcpSlug": "tally-mcp"
         }
       ],
       "status": "beta",
@@ -248392,7 +248409,8 @@
           "plan": "all",
           "planNote": "Tous les forfaits de site, y compris Starter gratuit. Gestion des accès au Workspace : Workspace Enterprise.",
           "planNoteEn": "All Site plans, including the free Starter plan. Workspace access management: Enterprise Workspace.",
-          "docsUrl": "https://help.webflow.com/hc/en-us/articles/52536616701971-Connect-your-AI-tools-to-the-Webflow-MCP-server"
+          "docsUrl": "https://help.webflow.com/hc/en-us/articles/52536616701971-Connect-your-AI-tools-to-the-Webflow-MCP-server",
+          "mcpSlug": "webflow-mcp"
         }
       ],
       "capabilities": [
@@ -256528,7 +256546,8 @@
           "plan": "all",
           "planNote": "Tous les comptes ; chaque appel réussi consomme deux tâches du forfait.",
           "planNoteEn": "All accounts; each successful call uses two tasks from your plan.",
-          "docsUrl": "https://docs.zapier.com/mcp/get-started/quickstart"
+          "docsUrl": "https://docs.zapier.com/mcp/get-started/quickstart",
+          "mcpSlug": "zapier-mcp"
         }
       ],
       "capabilities": [

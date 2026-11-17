@@ -1,0 +1,91 @@
+{
+  "slug": "ahrefs-mcp",
+  "name": "Ahrefs MCP",
+  "publisher": "Ahrefs",
+  "official": true,
+  "host_tool": "ahrefs",
+  "category": "analytics",
+  "summary": {
+    "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités API du forfait.",
+    "en": "Ahrefs' official server brings your SEO data (keywords, backlinks, rankings) into your assistant, and can manage social media posts. It needs a paid plan from Lite and uses your plan's API units."
+  },
+  "verified_on": "2026-11-16",
+  "transport": "remote",
+  "auth": [
+    "oauth",
+    "key"
+  ],
+  "access": "read_write",
+  "plan": "paid",
+  "plan_note": {
+    "fr": "Forfaits payants à partir de Lite ; chaque appel consomme des unités API du quota mensuel du forfait.",
+    "en": "Paid plans from Lite up; each call uses API units from the plan's monthly allowance."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire les données SEO : mots-clés, backlinks, positions",
+      "en": "Read SEO data: keywords, backlinks, rankings"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier des publications pour les réseaux sociaux",
+      "en": "Create and edit social media posts"
+    },
+    {
+      "kind": "delete",
+      "fr": "Supprimer des publications pour les réseaux sociaux",
+      "en": "Delete social media posts"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "plugin"
+    }
+  ],
+  "safeguards": [],
+  "tools_note": {
+    "fr": "Ahrefs ne publie pas de liste d'outils lisible à ce jour (pages de documentation en erreur).",
+    "en": "Ahrefs publishes no readable tool list today (documentation pages return errors)."
+  },
+  "install": [
+    {
+      "client": "claude",
+      "type": "url",
+      "value": "https://claude.com/connectors/ahrefs"
+    },
+    {
+      "client": "chatgpt",
+      "type": "url",
+      "value": "https://chatgpt.com/apps/ahrefs/asdk_app_6966958473488191b775fdb667c52eab"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "cursor",
+    "lovable",
+    "Copilot Studio",
+    "n8n"
+  ],
+  "docs_url": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp",
+  "sources": [
+    {
+      "label": "Ahrefs for Developers — What is Ahrefs MCP",
+      "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+    },
+    {
+      "label": "Ahrefs Help — Getting started with Ahrefs MCP",
+      "url": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp"
+    },
+    {
+      "label": "Ahrefs — Ahrefs SEO MCP",
+      "url": "https://ahrefs.com/mcp"
+    }
+  ]
+}

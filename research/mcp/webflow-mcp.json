@@ -1,0 +1,363 @@
+{
+  "slug": "webflow-mcp",
+  "name": "Webflow MCP server",
+  "publisher": "Webflow",
+  "official": true,
+  "host_tool": "webflow",
+  "category": "nocode-web",
+  "summary": {
+    "fr": "Le serveur officiel de Webflow laisse votre assistant lire et modifier votre site : pages, styles, composants, CMS, fichiers, et le publier en ligne. Les droits se donnent site par site, par le propriétaire ou un administrateur.",
+    "en": "Webflow's official server lets your assistant read and edit your site: pages, styles, components, CMS, assets, and publish it live. Access is granted site by site, by the owner or an admin."
+  },
+  "verified_on": "2026-11-16",
+  "transport": "remote",
+  "auth": [
+    "oauth"
+  ],
+  "access": "read_write",
+  "plan": "all",
+  "plan_note": {
+    "fr": "Tous les forfaits de site, y compris Starter gratuit. Gestion des accès au Workspace : Workspace Enterprise.",
+    "en": "All Site plans, including the free Starter plan. Workspace access management: Enterprise Workspace."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire le contenu du site, les collections, les formulaires et les statistiques",
+      "en": "Read site content, collections, forms and analytics"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier éléments, styles, composants, variables, pages et éléments CMS (en brouillon)",
+      "en": "Create and edit elements, styles, components, variables, pages and CMS items (as drafts)"
+    },
+    {
+      "kind": "delete",
+      "fr": "Supprimer certains contenus : fichiers, collections, formulaires",
+      "en": "Delete some content: assets, collections, forms"
+    },
+    {
+      "kind": "send",
+      "fr": "Publier le site ou des éléments CMS, qui deviennent publics",
+      "en": "Publish the site or CMS items, making them live"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "plugin"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [
+    "admin_controls",
+    "scoped_keys"
+  ],
+  "tools": [
+    {
+      "name": "data_aeo_tool",
+      "kind": "read",
+      "fr": "Lire la visibilité IA (option AEO)",
+      "en": "Read AI search visibility (AEO add-on)"
+    },
+    {
+      "name": "data_agent_instructions_tool",
+      "kind": "delete",
+      "fr": "Gérer les règles d'agent du site",
+      "en": "Manage site agent rules"
+    },
+    {
+      "name": "data_analyze_tool",
+      "kind": "read",
+      "fr": "Lire les rapports Analyze (option)",
+      "en": "Read Analyze reports (add-on)"
+    },
+    {
+      "name": "data_apps_tool",
+      "kind": "delete",
+      "fr": "Gérer les applis Webflow Cloud",
+      "en": "Manage Webflow Cloud apps and deployments"
+    },
+    {
+      "name": "data_assets_tool",
+      "kind": "delete",
+      "fr": "Importer, ranger et supprimer des fichiers",
+      "en": "Upload, organise and delete assets"
+    },
+    {
+      "name": "data_campaigns_tool",
+      "kind": "delete",
+      "fr": "Gérer les campagnes (option)",
+      "en": "Manage campaigns (add-on)"
+    },
+    {
+      "name": "data_cms_tool",
+      "kind": "send",
+      "fr": "Gérer le CMS et publier des éléments",
+      "en": "Manage CMS collections and publish items"
+    },
+    {
+      "name": "data_comments_tool",
+      "kind": "write",
+      "fr": "Lire et répondre aux commentaires",
+      "en": "Read and reply to comments"
+    },
+    {
+      "name": "data_component_builder",
+      "kind": "write",
+      "fr": "Insérer des composants",
+      "en": "Insert components on a page"
+    },
+    {
+      "name": "data_component_props_tool",
+      "kind": "delete",
+      "fr": "Gérer les propriétés de composants",
+      "en": "Manage component properties"
+    },
+    {
+      "name": "data_component_tool",
+      "kind": "delete",
+      "fr": "Gérer les composants",
+      "en": "Manage components and instances"
+    },
+    {
+      "name": "data_component_variants_tool",
+      "kind": "delete",
+      "fr": "Gérer les variantes",
+      "en": "Manage component variants"
+    },
+    {
+      "name": "data_element_builder",
+      "kind": "write",
+      "fr": "Construire des éléments",
+      "en": "Build element trees on a page"
+    },
+    {
+      "name": "data_element_settings_tool",
+      "kind": "write",
+      "fr": "Régler les éléments",
+      "en": "Set element settings"
+    },
+    {
+      "name": "data_element_tool",
+      "kind": "delete",
+      "fr": "Déplacer, modifier ou retirer des éléments",
+      "en": "Move, edit or remove elements"
+    },
+    {
+      "name": "data_enterprise_tool",
+      "kind": "delete",
+      "fr": "Gérer redirections et robots.txt (Enterprise)",
+      "en": "Manage redirects and robots.txt (Enterprise)"
+    },
+    {
+      "name": "data_fonts_tool",
+      "kind": "delete",
+      "fr": "Gérer les polices",
+      "en": "Manage custom fonts"
+    },
+    {
+      "name": "data_forms_tool",
+      "kind": "delete",
+      "fr": "Lire formulaires et réponses",
+      "en": "Read forms and submissions"
+    },
+    {
+      "name": "data_interactions_tool",
+      "kind": "delete",
+      "fr": "Gérer les animations",
+      "en": "Manage animations"
+    },
+    {
+      "name": "data_localization_tool",
+      "kind": "write",
+      "fr": "Traduire pages et composants",
+      "en": "Localise pages and components"
+    },
+    {
+      "name": "data_members_tool",
+      "kind": "delete",
+      "fr": "Gérer les membres (Enterprise)",
+      "en": "Manage members and invites (Enterprise)"
+    },
+    {
+      "name": "data_optimize_tool",
+      "kind": "read",
+      "fr": "Lire les résultats Optimize (option)",
+      "en": "Read Optimize results (add-on)"
+    },
+    {
+      "name": "data_pages_tool",
+      "kind": "delete",
+      "fr": "Créer et modifier pages et SEO",
+      "en": "Create and update pages and SEO"
+    },
+    {
+      "name": "data_scripts_tool",
+      "kind": "delete",
+      "fr": "Gérer le code personnalisé",
+      "en": "Manage custom code"
+    },
+    {
+      "name": "data_sitemap_tool",
+      "kind": "write",
+      "fr": "Régler le plan du site",
+      "en": "Set sitemap inclusion"
+    },
+    {
+      "name": "data_sites_tool",
+      "kind": "send",
+      "fr": "Consulter et publier les sites",
+      "en": "Inspect and publish sites"
+    },
+    {
+      "name": "data_style_tool",
+      "kind": "delete",
+      "fr": "Gérer les styles",
+      "en": "Manage styles"
+    },
+    {
+      "name": "data_variable_tool",
+      "kind": "delete",
+      "fr": "Gérer les variables",
+      "en": "Manage design variables"
+    },
+    {
+      "name": "data_webhook_tool",
+      "kind": "delete",
+      "fr": "Gérer les webhooks",
+      "en": "Manage webhooks"
+    },
+    {
+      "name": "data_whtml_builder",
+      "kind": "write",
+      "fr": "Insérer du HTML et du CSS",
+      "en": "Insert HTML and CSS fragments"
+    },
+    {
+      "name": "asset_tool",
+      "kind": "write",
+      "fr": "Importer une image (Designer)",
+      "en": "Upload an image from a link (Designer)"
+    },
+    {
+      "name": "designer_tool",
+      "kind": "write",
+      "fr": "Naviguer dans le Designer",
+      "en": "Navigate the Designer canvas"
+    },
+    {
+      "name": "element_snapshot_tool",
+      "kind": "read",
+      "fr": "Capturer un élément (Designer)",
+      "en": "Capture an element (Designer)"
+    },
+    {
+      "name": "ask_webflow_ai",
+      "kind": "read",
+      "fr": "Interroger Webflow AI",
+      "en": "Ask Webflow AI about the API"
+    },
+    {
+      "name": "get_asset_preview",
+      "kind": "read",
+      "fr": "Prévisualiser un fichier",
+      "en": "Preview an asset"
+    },
+    {
+      "name": "get_more_tools",
+      "kind": "read",
+      "fr": "Demander un outil spécialisé",
+      "en": "Request a specialised tool"
+    },
+    {
+      "name": "webflow_guide_tool",
+      "kind": "read",
+      "fr": "Obtenir les bonnes pratiques",
+      "en": "Get recommended workflows"
+    }
+  ],
+  "tools_note": {
+    "fr": "Chaque outil de données regroupe plusieurs actions ; le niveau indiqué est le plus risqué de ses actions.",
+    "en": "Each data tool groups several actions; the level shown is its riskiest action."
+  },
+  "install": [
+    {
+      "client": "claude",
+      "type": "steps",
+      "value": "Use the Webflow connector: click + in chat, then 'Add connectors', search 'Webflow', click Connect, grant access, select sites/Workspaces, 'Authorize App'"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add --transport http webflow https://mcp.webflow.com/mcp"
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.webflow.com/mcp"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "claude-code",
+    "Grok Build",
+    "Postman",
+    "slack"
+  ],
+  "skills": [
+    "bulk-cms-update",
+    "webflow-cms-collection-setup",
+    "webflow-cms-best-practices",
+    "site-audit",
+    "webflow-asset-audit",
+    "webflow-link-checker",
+    "accessibility-audit",
+    "webflow-site-activity-log",
+    "webflow-safe-publish",
+    "webflow-custom-code-management",
+    "webflow-flowkit-naming",
+    "webflow-code-components",
+    "webflow-component-scaffold",
+    "webflow-convert-component",
+    "webflow-code-component-deployment-guide",
+    "webflow-code-component-dev-environment",
+    "webflow-validate-code-components",
+    "webflow-troubleshoot-code-component-deployment",
+    "webflow-designer-extensions",
+    "webflow-devlink-commands",
+    "webflow-cli-troubleshooter",
+    "webflow-cloud-commands"
+  ],
+  "docs_url": "https://developers.webflow.com/mcp/reference/getting-started",
+  "sources": [
+    {
+      "label": "Webflow Help Center — Webflow MCP server overview",
+      "url": "https://help.webflow.com/hc/en-us/articles/52536562285203-Webflow-MCP-server-overview"
+    },
+    {
+      "label": "Webflow Developers — MCP getting started",
+      "url": "https://developers.webflow.com/mcp/reference/getting-started"
+    },
+    {
+      "label": "Webflow Developers — MCP overview",
+      "url": "https://developers.webflow.com/mcp/reference/overview"
+    },
+    {
+      "label": "Webflow Developers — Data tools",
+      "url": "https://developers.webflow.com/mcp/tools/data-tools"
+    },
+    {
+      "label": "Webflow Developers — Skills",
+      "url": "https://developers.webflow.com/mcp/reference/skills"
+    }
+  ]
+}

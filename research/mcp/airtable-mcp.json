@@ -1,0 +1,366 @@
+{
+  "slug": "airtable-mcp",
+  "name": "Airtable MCP server",
+  "publisher": "Airtable",
+  "official": true,
+  "host_tool": "airtable",
+  "category": "project-management",
+  "summary": {
+    "fr": "Le serveur officiel d'Airtable relie votre assistant à vos bases : enregistrements, tables, champs, interfaces et brouillons d'automatisations. Il peut aussi supprimer des enregistrements et des tables entières, et on peut le limiter à certaines bases.",
+    "en": "Airtable's official server connects your assistant to your bases: records, tables, fields, interfaces and automation drafts. It can also delete records and whole tables, and can be limited to chosen bases."
+  },
+  "verified_on": "2026-11-16",
+  "transport": "remote",
+  "auth": [
+    "oauth",
+    "key"
+  ],
+  "access": "read_write",
+  "plan": "all",
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Consulter et rechercher enregistrements, bases, tables et automatisations",
+      "en": "Look up and search records, bases, tables and automations"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier enregistrements, tables, champs, bases, interfaces et brouillons d'automatisations ; soumettre un formulaire",
+      "en": "Create and edit records, tables, fields, bases, interfaces and automation drafts; submit a form"
+    },
+    {
+      "kind": "delete",
+      "fr": "Supprimer des enregistrements, des tables entières, des interfaces et des pages",
+      "en": "Delete records, whole tables, interfaces and pages"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "plugin"
+    },
+    {
+      "assistant": "gemini",
+      "how": "connector"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [
+    "admin_controls",
+    "scoped_keys"
+  ],
+  "tools": [
+    {
+      "name": "create_automation",
+      "kind": "write",
+      "fr": "Créer un brouillon d'automatisation (désactivé)",
+      "en": "Create an automation draft, off until enabled"
+    },
+    {
+      "name": "delete_automation",
+      "kind": "delete",
+      "fr": "Supprimer une automatisation désactivée",
+      "en": "Delete an automation that is off"
+    },
+    {
+      "name": "fetch_automation_input_data",
+      "kind": "read",
+      "fr": "Lire les options d'une automatisation",
+      "en": "Fetch options for triggers and actions"
+    },
+    {
+      "name": "get_automation",
+      "kind": "read",
+      "fr": "Lire la configuration d'une automatisation",
+      "en": "Read one automation's setup"
+    },
+    {
+      "name": "get_create_automation_instructions",
+      "kind": "read",
+      "fr": "Obtenir la notice des automatisations",
+      "en": "Get the spec for building automations"
+    },
+    {
+      "name": "list_automations",
+      "kind": "read",
+      "fr": "Lister les automatisations",
+      "en": "List automations in a base"
+    },
+    {
+      "name": "test_automation_webhook_trigger",
+      "kind": "write",
+      "fr": "Relancer le test d'un déclencheur webhook",
+      "en": "Re-run a webhook trigger test"
+    },
+    {
+      "name": "update_automation",
+      "kind": "write",
+      "fr": "Modifier un brouillon d'automatisation",
+      "en": "Replace an automation draft"
+    },
+    {
+      "name": "create_base",
+      "kind": "write",
+      "fr": "Créer une base",
+      "en": "Create a base"
+    },
+    {
+      "name": "list_bases",
+      "kind": "read",
+      "fr": "Lister vos bases",
+      "en": "Find bases you can access"
+    },
+    {
+      "name": "list_permission_sets",
+      "kind": "read",
+      "fr": "Lister les droits d'une base",
+      "en": "List a base's permission sets"
+    },
+    {
+      "name": "search_bases",
+      "kind": "read",
+      "fr": "Chercher une base par nom",
+      "en": "Find bases by name"
+    },
+    {
+      "name": "create_field",
+      "kind": "write",
+      "fr": "Ajouter un champ",
+      "en": "Add a field to a table"
+    },
+    {
+      "name": "update_field",
+      "kind": "write",
+      "fr": "Modifier un champ",
+      "en": "Rename or edit a field"
+    },
+    {
+      "name": "get_form_schema",
+      "kind": "read",
+      "fr": "Lire la structure d'un formulaire",
+      "en": "Read a form's layout"
+    },
+    {
+      "name": "submit_form",
+      "kind": "send",
+      "fr": "Soumettre un formulaire en votre nom",
+      "en": "Submit a form on your behalf"
+    },
+    {
+      "name": "create_page",
+      "kind": "write",
+      "fr": "Créer une page d'interface",
+      "en": "Create an interface page"
+    },
+    {
+      "name": "create_interface",
+      "kind": "write",
+      "fr": "Créer une interface",
+      "en": "Create an interface"
+    },
+    {
+      "name": "delete_interface",
+      "kind": "delete",
+      "fr": "Supprimer une interface",
+      "en": "Delete an interface and its pages"
+    },
+    {
+      "name": "delete_page",
+      "kind": "delete",
+      "fr": "Supprimer une page d'interface",
+      "en": "Delete an interface page"
+    },
+    {
+      "name": "list_records_for_page",
+      "kind": "read",
+      "fr": "Lister les enregistrements d'une page",
+      "en": "List records shown on a page"
+    },
+    {
+      "name": "get_record_for_page",
+      "kind": "read",
+      "fr": "Lire un enregistrement d'une page",
+      "en": "Read one record from a page"
+    },
+    {
+      "name": "describe_page_element",
+      "kind": "read",
+      "fr": "Décrire un élément de page",
+      "en": "Describe a page element's options"
+    },
+    {
+      "name": "describe_page_type",
+      "kind": "read",
+      "fr": "Décrire un type de page",
+      "en": "Describe a page type's options"
+    },
+    {
+      "name": "list_pages_for_base",
+      "kind": "read",
+      "fr": "Lister interfaces et pages",
+      "en": "List interfaces and pages"
+    },
+    {
+      "name": "create_records_for_table",
+      "kind": "write",
+      "fr": "Créer des enregistrements",
+      "en": "Create records"
+    },
+    {
+      "name": "delete_records_for_table",
+      "kind": "delete",
+      "fr": "Supprimer des enregistrements",
+      "en": "Delete records"
+    },
+    {
+      "name": "display_records_for_table",
+      "kind": "read",
+      "fr": "Afficher des enregistrements en widget",
+      "en": "Show records as a board widget"
+    },
+    {
+      "name": "list_records_for_table",
+      "kind": "read",
+      "fr": "Lister des enregistrements filtrés",
+      "en": "List records with filters"
+    },
+    {
+      "name": "revert_action",
+      "kind": "write",
+      "fr": "Annuler une modification récente",
+      "en": "Undo an eligible earlier change"
+    },
+    {
+      "name": "search_candidate_linked_records",
+      "kind": "read",
+      "fr": "Chercher des enregistrements à lier",
+      "en": "Search records to link"
+    },
+    {
+      "name": "search_records",
+      "kind": "read",
+      "fr": "Chercher des enregistrements",
+      "en": "Search records by keyword"
+    },
+    {
+      "name": "update_records_for_table",
+      "kind": "write",
+      "fr": "Modifier des enregistrements",
+      "en": "Update fields on records"
+    },
+    {
+      "name": "create_table",
+      "kind": "write",
+      "fr": "Créer une table",
+      "en": "Create a table"
+    },
+    {
+      "name": "delete_table",
+      "kind": "delete",
+      "fr": "Supprimer une table et son contenu",
+      "en": "Delete a table with its records"
+    },
+    {
+      "name": "get_table_schema",
+      "kind": "read",
+      "fr": "Lire la structure d'une table",
+      "en": "Read a table's fields"
+    },
+    {
+      "name": "list_views_for_table",
+      "kind": "read",
+      "fr": "Lister les vues d'une table",
+      "en": "List a table's views"
+    },
+    {
+      "name": "list_tables_for_base",
+      "kind": "read",
+      "fr": "Lister les tables d'une base",
+      "en": "List a base's tables"
+    },
+    {
+      "name": "update_table",
+      "kind": "write",
+      "fr": "Renommer ou décrire une table",
+      "en": "Rename or describe a table"
+    },
+    {
+      "name": "list_workspaces",
+      "kind": "read",
+      "fr": "Lister vos espaces de travail",
+      "en": "List your workspaces"
+    },
+    {
+      "name": "list_external_accounts",
+      "kind": "read",
+      "fr": "Lister les comptes externes connectés",
+      "en": "List connected outside accounts"
+    }
+  ],
+  "install": [
+    {
+      "client": "claude",
+      "type": "url",
+      "value": "https://claude.ai/directory/connectors/cb504fab-e494-490f-bff8-bb3ab23a2209"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude plugin install airtable@claude-plugins-official"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add --transport http airtable https://mcp.airtable.com/mcp"
+    },
+    {
+      "client": "chatgpt",
+      "type": "url",
+      "value": "https://chatgpt.com/apps/airtable/asdk_app_693ca6ce2db08191bb52d66743c65184"
+    },
+    {
+      "client": "gemini",
+      "type": "url",
+      "value": "https://gemini.google.com/apps"
+    },
+    {
+      "client": "any",
+      "type": "config",
+      "value": "{\"mcpServers\": {\"airtable\": {\"type\": \"http\", \"url\": \"https://mcp.airtable.com/mcp\"}}}"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "gemini",
+    "claude-code",
+    "cursor",
+    "Codex"
+  ],
+  "docs_url": "https://airtable.com/developers/agents/mcp/getting-started",
+  "sources": [
+    {
+      "label": "Airtable Developers — MCP server overview",
+      "url": "https://airtable.com/developers/agents/mcp/getting-started"
+    },
+    {
+      "label": "Airtable Support — Using the Airtable MCP server",
+      "url": "https://support.airtable.com/docs/using-the-airtable-mcp-server"
+    },
+    {
+      "label": "Airtable Developers — MCP tools",
+      "url": "https://airtable.com/developers/agents/mcp/tools"
+    },
+    {
+      "label": "Airtable Developers — Claude, ChatGPT, Gemini",
+      "url": "https://airtable.com/developers/agents/mcp/claude"
+    }
+  ]
+}

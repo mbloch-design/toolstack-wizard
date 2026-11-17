@@ -1,0 +1,201 @@
+{
+  "slug": "buffer-mcp",
+  "name": "Buffer MCP",
+  "publisher": "Buffer",
+  "official": true,
+  "host_tool": "buffer",
+  "category": "creation",
+  "summary": {
+    "fr": "Le serveur officiel de Buffer permet à votre assistant de lire votre file d'attente et vos statistiques, de rédiger et programmer des posts, et de les publier tout de suite si on le lui demande. Il peut aussi supprimer définitivement un post ; il est inclus dans tous les forfaits, gratuit compris.",
+    "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post; it is included on every plan, free included."
+  },
+  "verified_on": "2026-11-16",
+  "access": "read_write",
+  "plan": "all",
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire canaux, file d'attente, brouillons, idées et statistiques",
+      "en": "Read channels, queue, drafts, ideas and analytics"
+    },
+    {
+      "kind": "write",
+      "fr": "Rédiger, modifier et programmer posts et idées",
+      "en": "Draft, edit and schedule posts and ideas"
+    },
+    {
+      "kind": "delete",
+      "fr": "Supprimer définitivement un post",
+      "en": "Permanently delete a post"
+    },
+    {
+      "kind": "send",
+      "fr": "Publier un post sur vos réseaux, immédiatement si demandé",
+      "en": "Publish a post to your networks, immediately if asked"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "url"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [],
+  "tools": [
+    {
+      "name": "get_account",
+      "kind": "read",
+      "fr": "Lire votre compte",
+      "en": "Read your account and organisations"
+    },
+    {
+      "name": "list_channels",
+      "kind": "read",
+      "fr": "Lister les réseaux connectés",
+      "en": "List connected social channels"
+    },
+    {
+      "name": "get_channel",
+      "kind": "read",
+      "fr": "Lire un réseau et sa file",
+      "en": "Read a channel's schedule and queue"
+    },
+    {
+      "name": "list_posts",
+      "kind": "read",
+      "fr": "Lister les posts",
+      "en": "List posts"
+    },
+    {
+      "name": "get_post",
+      "kind": "read",
+      "fr": "Lire un post",
+      "en": "Read a post"
+    },
+    {
+      "name": "create_post",
+      "kind": "send",
+      "fr": "Programmer ou publier un post",
+      "en": "Schedule or publish a post"
+    },
+    {
+      "name": "edit_post",
+      "kind": "write",
+      "fr": "Modifier un post",
+      "en": "Edit a post"
+    },
+    {
+      "name": "delete_post",
+      "kind": "delete",
+      "fr": "Supprimer définitivement un post",
+      "en": "Permanently delete a post"
+    },
+    {
+      "name": "get_aggregated_post_metrics",
+      "kind": "read",
+      "fr": "Lire les statistiques",
+      "en": "Read post analytics"
+    },
+    {
+      "name": "list_ideas",
+      "kind": "read",
+      "fr": "Lister les idées",
+      "en": "List saved ideas"
+    },
+    {
+      "name": "list_idea_groups",
+      "kind": "read",
+      "fr": "Lister les colonnes d'idées",
+      "en": "List idea board columns"
+    },
+    {
+      "name": "create_idea",
+      "kind": "write",
+      "fr": "Enregistrer une idée",
+      "en": "Save an idea"
+    },
+    {
+      "name": "list_post_templates",
+      "kind": "read",
+      "fr": "Lister les modèles",
+      "en": "List post templates"
+    },
+    {
+      "name": "get_post_template",
+      "kind": "read",
+      "fr": "Lire un modèle",
+      "en": "Read a template"
+    },
+    {
+      "name": "create_post_template",
+      "kind": "write",
+      "fr": "Créer un modèle",
+      "en": "Create a template"
+    },
+    {
+      "name": "update_post_template",
+      "kind": "write",
+      "fr": "Modifier un modèle",
+      "en": "Update a template"
+    },
+    {
+      "name": "delete_post_template",
+      "kind": "delete",
+      "fr": "Supprimer définitivement un modèle",
+      "en": "Permanently delete a template"
+    }
+  ],
+  "install": [
+    {
+      "client": "claude",
+      "type": "steps",
+      "value": "Navigate to \"Customize\", then click \"Connectors\". Search for \"Buffer\" in the connector list, then select it. Click \"Connect\"."
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add --transport http buffer https://mcp.buffer.com/mcp"
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.buffer.com/mcp"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "claude-code",
+    "cursor",
+    "perplexity",
+    "notion",
+    "zapier",
+    "Raycast",
+    "Manus",
+    "Grok",
+    "n8n"
+  ],
+  "docs_url": "https://developers.buffer.com/guides/integrations/mcp.html",
+  "sources": [
+    {
+      "label": "Buffer — Buffer MCP Server",
+      "url": "https://buffer.com/mcp"
+    },
+    {
+      "label": "Buffer Developers — MCP",
+      "url": "https://developers.buffer.com/guides/integrations/mcp.html"
+    },
+    {
+      "label": "Buffer — Claude integration",
+      "url": "https://buffer.com/integrations/claude"
+    }
+  ]
+}

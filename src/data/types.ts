@@ -259,6 +259,8 @@ export interface AgentServer {
   /** Catalogue slugs, only when the vendor restricts clients. Absent: any MCP client. */
   clients?: string[];
   docsUrl: string;
+  /** Its server sheet in the agents section (/mcp/:slug). */
+  mcpSlug?: string;
 }
 
 export interface Tool {

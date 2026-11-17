@@ -1,0 +1,133 @@
+{
+  "slug": "make-mcp",
+  "name": "Make MCP server",
+  "publisher": "Make",
+  "official": true,
+  "host_tool": "make",
+  "category": "automation",
+  "summary": {
+    "fr": "Le serveur officiel de Make transforme vos scénarios actifs en actions que votre assistant peut lancer ; sur un forfait payant, il peut aussi consulter et modifier scénarios, connexions et data stores. Make ne publie pas de liste nominative d'outils : ils dépendent de vos scénarios et des portées choisies.",
+    "en": "Make's official server turns your active scenarios into actions your assistant can run; on a paid plan it can also view and edit scenarios, connections and data stores. Make publishes no named tool list: tools depend on your scenarios and the scopes you grant."
+  },
+  "verified_on": "2026-11-16",
+  "transport": "remote",
+  "auth": [
+    "oauth",
+    "key"
+  ],
+  "access": "read_write",
+  "plan": "all",
+  "plan_note": {
+    "fr": "Lancer des scénarios : tous les forfaits. Modifier les scénarios (portées de gestion) : forfaits payants.",
+    "en": "Running scenarios: every plan. Editing scenarios (management scopes): paid plans."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Consulter scénarios, équipes, connexions, webhooks et data stores",
+      "en": "View scenarios, teams, connections, webhooks and data stores"
+    },
+    {
+      "kind": "write",
+      "fr": "Lancer vos scénarios actifs ; modifier scénarios et data stores, inviter des membres (forfaits payants)",
+      "en": "Run your active scenarios; edit scenarios and data stores, invite members (paid plans)"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [
+    "scoped_keys"
+  ],
+  "tools": [
+    {
+      "name": "scenario run tools",
+      "kind": "write",
+      "fr": "Lancer vos scénarios actifs (tous forfaits)",
+      "en": "Run your active, on-demand scenarios (all plans)"
+    },
+    {
+      "name": "management tools",
+      "kind": "write",
+      "fr": "Consulter et modifier scénarios, connexions, data stores (forfaits payants)",
+      "en": "View and edit scenarios, connections, data stores (paid plans)"
+    }
+  ],
+  "tools_note": {
+    "fr": "Make ne nomme pas ses outils : ils sont générés depuis vos scénarios et les portées accordées.",
+    "en": "Make does not name its tools: they are generated from your scenarios and granted scopes."
+  },
+  "install": [
+    {
+      "client": "claude",
+      "type": "steps",
+      "value": "Customize > Connectors > Discover > search Make, click +; select Organization and scopes in OAuth consent; click Allow"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude plugin marketplace add integromat/make-skills && claude plugin install make-skills@make-marketplace"
+    },
+    {
+      "client": "cursor",
+      "type": "url",
+      "value": "https://cursor.com/marketplace/make"
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.make.com/v2"
+    },
+    {
+      "client": "any",
+      "type": "config",
+      "value": "{ \"mcpServers\": { \"make\": { \"url\": \"https://mcp.make.com/v2\" } } }"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "claude-code",
+    "cursor",
+    "Codex",
+    "GitHub Copilot",
+    "OpenClaw",
+    "Windsurf",
+    "Cline"
+  ],
+  "skills": [
+    "make-scenario-reference",
+    "make-scenario-explore",
+    "make-scenario-building",
+    "make-scenario-operations",
+    "make-functions-v2",
+    "make-endpoints",
+    "make-credential-requests"
+  ],
+  "docs_url": "https://developers.make.com/mcp-server/",
+  "sources": [
+    {
+      "label": "Make Help Center — Make MCP server",
+      "url": "https://help.make.com/make-mcp-server"
+    },
+    {
+      "label": "Make Developers — MCP server",
+      "url": "https://developers.make.com/mcp-server/"
+    },
+    {
+      "label": "Make Developers — Usage with Claude",
+      "url": "https://developers.make.com/mcp-server/connect-using-oauth/usage-with-claude"
+    },
+    {
+      "label": "Make — Skills",
+      "url": "https://skills.make.com/"
+    }
+  ]
+}

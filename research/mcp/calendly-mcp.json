@@ -1,0 +1,330 @@
+{
+  "slug": "calendly-mcp",
+  "name": "Calendly MCP server",
+  "publisher": "Calendly",
+  "official": true,
+  "host_tool": "calendly",
+  "category": "communication",
+  "summary": {
+    "fr": "Le serveur officiel de Calendly permet à votre assistant de trouver vos créneaux, réserver et annuler des rendez-vous, et modifier vos types d'événements et disponibilités. Aucun forfait payant n'est requis, et Calendly ne documente pas de confirmation avant action.",
+    "en": "Calendly's official server lets your assistant find your open slots, book and cancel meetings, and edit your event types and availability. No paid plan is required, and Calendly documents no confirmation before acting."
+  },
+  "verified_on": "2026-11-16",
+  "status": "ga",
+  "transport": "remote",
+  "auth": [
+    "oauth"
+  ],
+  "access": "read_write",
+  "plan": "all",
+  "plan_note": {
+    "fr": "Aucun forfait payant requis ; certaines actions dépendent du forfait.",
+    "en": "No paid plan required; some actions depend on your plan."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Trouver des créneaux libres et voir les plages occupées",
+      "en": "Find open time and view busy slots"
+    },
+    {
+      "kind": "write",
+      "fr": "Réserver un rendez-vous, créer un lien à usage unique, modifier disponibilités et types d'événements",
+      "en": "Book meetings, create single-use links, update availability and event types"
+    },
+    {
+      "kind": "delete",
+      "fr": "Annuler un rendez-vous",
+      "en": "Cancel meetings"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "plugin"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [],
+  "tools": [
+    {
+      "name": "event_types-create_event_type",
+      "kind": "write",
+      "fr": "Créer un type d'événement",
+      "en": "Create an event type"
+    },
+    {
+      "name": "event_types-update_event_type",
+      "kind": "write",
+      "fr": "Modifier un type d'événement",
+      "en": "Update an event type"
+    },
+    {
+      "name": "event_types-list_event_types",
+      "kind": "read",
+      "fr": "Lister les types d'événements",
+      "en": "List event types"
+    },
+    {
+      "name": "event_types-get_event_type",
+      "kind": "read",
+      "fr": "Lire un type d'événement",
+      "en": "Read an event type"
+    },
+    {
+      "name": "event_types-list_event_type_available_times",
+      "kind": "read",
+      "fr": "Lister les créneaux libres",
+      "en": "List open time slots"
+    },
+    {
+      "name": "event_types-list_event_type_availability_schedule",
+      "kind": "read",
+      "fr": "Lire les horaires d'un type",
+      "en": "Read an event type's schedule"
+    },
+    {
+      "name": "event_types-update_event_type_availability_schedule",
+      "kind": "write",
+      "fr": "Modifier les horaires d'un type",
+      "en": "Update an event type's schedule"
+    },
+    {
+      "name": "locations-list_user_meeting_locations",
+      "kind": "read",
+      "fr": "Lister les lieux de rendez-vous",
+      "en": "List meeting locations"
+    },
+    {
+      "name": "meetings-list_events",
+      "kind": "read",
+      "fr": "Lister les rendez-vous",
+      "en": "List scheduled meetings"
+    },
+    {
+      "name": "meetings-get_event",
+      "kind": "read",
+      "fr": "Lire un rendez-vous",
+      "en": "Read a meeting"
+    },
+    {
+      "name": "meetings-cancel_event",
+      "kind": "delete",
+      "fr": "Annuler un rendez-vous",
+      "en": "Cancel a meeting"
+    },
+    {
+      "name": "meetings-create_invitee",
+      "kind": "write",
+      "fr": "Réserver un rendez-vous",
+      "en": "Book a meeting"
+    },
+    {
+      "name": "meetings-list_event_invitees",
+      "kind": "read",
+      "fr": "Lister les invités",
+      "en": "List a meeting's invitees"
+    },
+    {
+      "name": "meetings-get_event_invitee",
+      "kind": "read",
+      "fr": "Lire un invité",
+      "en": "Read an invitee"
+    },
+    {
+      "name": "scheduling_links-create_single_use_scheduling_link",
+      "kind": "write",
+      "fr": "Créer un lien à usage unique",
+      "en": "Create a single-use link"
+    },
+    {
+      "name": "shares-create_share",
+      "kind": "write",
+      "fr": "Créer un lien personnalisé à usage unique",
+      "en": "Create a customised single-use link"
+    },
+    {
+      "name": "availability-list_user_availability_schedules",
+      "kind": "read",
+      "fr": "Lister les disponibilités",
+      "en": "List availability schedules"
+    },
+    {
+      "name": "availability-get_user_availability_schedule",
+      "kind": "read",
+      "fr": "Lire des disponibilités",
+      "en": "Read a schedule"
+    },
+    {
+      "name": "availability-list_user_busy_times",
+      "kind": "read",
+      "fr": "Lister les plages occupées",
+      "en": "List busy times"
+    },
+    {
+      "name": "meetings-create_invitee_no_show",
+      "kind": "write",
+      "fr": "Marquer un invité absent",
+      "en": "Mark an invitee as no-show"
+    },
+    {
+      "name": "meetings-get_invitee_no_show",
+      "kind": "read",
+      "fr": "Lire une absence",
+      "en": "Read a no-show"
+    },
+    {
+      "name": "meetings-delete_invitee_no_show",
+      "kind": "delete",
+      "fr": "Retirer une absence",
+      "en": "Remove a no-show mark"
+    },
+    {
+      "name": "routing_forms-list_routing_forms",
+      "kind": "read",
+      "fr": "Lister les formulaires de routage (Teams)",
+      "en": "List routing forms (Teams plan)"
+    },
+    {
+      "name": "routing_forms-get_routing_form",
+      "kind": "read",
+      "fr": "Lire un formulaire de routage (Teams)",
+      "en": "Read a routing form (Teams plan)"
+    },
+    {
+      "name": "routing_forms-list_routing_form_submissions",
+      "kind": "read",
+      "fr": "Lister les réponses (Teams)",
+      "en": "List form submissions (Teams plan)"
+    },
+    {
+      "name": "routing_forms-get_routing_form_submission",
+      "kind": "read",
+      "fr": "Lire une réponse (Teams)",
+      "en": "Read a submission (Teams plan)"
+    },
+    {
+      "name": "users-get_current_user",
+      "kind": "read",
+      "fr": "Lire votre compte",
+      "en": "Read your user"
+    },
+    {
+      "name": "users-get_user",
+      "kind": "read",
+      "fr": "Lire un utilisateur",
+      "en": "Read a user"
+    },
+    {
+      "name": "organizations-get_organization",
+      "kind": "read",
+      "fr": "Lire l'organisation",
+      "en": "Read the organisation"
+    },
+    {
+      "name": "organizations-list_organization_memberships",
+      "kind": "read",
+      "fr": "Lister les membres",
+      "en": "List members"
+    },
+    {
+      "name": "organizations-get_organization_membership",
+      "kind": "read",
+      "fr": "Lire une adhésion",
+      "en": "Read a membership"
+    },
+    {
+      "name": "organizations-list_organization_invitations",
+      "kind": "read",
+      "fr": "Lister les invitations",
+      "en": "List pending invitations"
+    },
+    {
+      "name": "organizations-create_organization_invitation",
+      "kind": "send",
+      "fr": "Inviter quelqu'un",
+      "en": "Invite someone to the organisation"
+    },
+    {
+      "name": "organizations-revoke_organization_invitation",
+      "kind": "delete",
+      "fr": "Révoquer une invitation",
+      "en": "Revoke an invitation"
+    },
+    {
+      "name": "notetaker-list_recaps",
+      "kind": "read",
+      "fr": "Lister les comptes rendus (Notetaker)",
+      "en": "List meeting recaps (Notetaker)"
+    },
+    {
+      "name": "notetaker-get_recap",
+      "kind": "read",
+      "fr": "Lire un compte rendu (Notetaker)",
+      "en": "Read a recap (Notetaker)"
+    },
+    {
+      "name": "notetaker-get_recap_transcript",
+      "kind": "read",
+      "fr": "Lire une transcription (Notetaker)",
+      "en": "Read a transcript (Notetaker)"
+    },
+    {
+      "name": "list_calendly_skills",
+      "kind": "read",
+      "fr": "Lister les skills Calendly",
+      "en": "List Calendly skills"
+    },
+    {
+      "name": "load_calendly_skill",
+      "kind": "read",
+      "fr": "Charger une skill Calendly",
+      "en": "Load a Calendly skill"
+    }
+  ],
+  "install": [
+    {
+      "client": "claude",
+      "type": "steps",
+      "value": "From the sidebar in Claude, select Customize. / Select Connect your tools and search Calendly. / Select Connect."
+    },
+    {
+      "client": "chatgpt",
+      "type": "steps",
+      "value": "From the sidebar in ChatGPT, select Plugins. / Search for and select Calendly. / Select Connect."
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.calendly.com/"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "Codex",
+    "Muse"
+  ],
+  "docs_url": "https://developer.calendly.com/docs/mcp/calendly-mcp-server",
+  "sources": [
+    {
+      "label": "Calendly Developer — Calendly MCP Overview",
+      "url": "https://developer.calendly.com/docs/mcp/calendly-mcp-server"
+    },
+    {
+      "label": "Calendly Help — Connect Calendly to your AI tools",
+      "url": "https://calendly.com/help/connect-calendly-to-your-ai-tools"
+    },
+    {
+      "label": "Calendly Developer — Supported tools",
+      "url": "https://developer.calendly.com/docs/mcp/supported-tools"
+    }
+  ]
+}

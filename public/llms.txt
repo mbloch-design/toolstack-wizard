@@ -37,7 +37,7 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 - [Machine-readable catalogue](https://tooltrim.com/llms-full.txt) — every record in a single file.
 - The same records are also published split by category family: one shard per family, same schema (see Catalogue Shards below).
 - [Editorial index: guide and comparison summaries](https://tooltrim.com/llms-editorial.txt)
-- 106 localized guide pages and 166 localized comparison pages are included in the editorial index, generated from the same build as the sitemap.
+- 108 localized guide pages and 166 localized comparison pages are included in the editorial index, generated from the same build as the sitemap.
 - Editorial records provide localized titles, summaries and canonical URLs, not full articles. Read the linked page for the complete analysis.
 - Pricing text retains the stated currency and billing period. Missing prices are unknown, not zero; annual or lifetime offers are not converted into monthly EUR prices.
 - Prices and descriptions are editorial data, not a promise that a vendor has not changed its offer since publication.

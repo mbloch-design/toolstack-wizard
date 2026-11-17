@@ -26,6 +26,8 @@ const tools = JSON.parse(fs.readFileSync(CATALOGUE, "utf8"));
 const bySlug = new Map(tools.map((tool) => [tool.slug || tool.id, tool]));
 const catalogSlugs = new Set(bySlug.keys());
 
+const MCP_DIR = path.join(ROOT, "research/mcp");
+const mcpSheets = fs.existsSync(MCP_DIR) ? fs.readdirSync(MCP_DIR).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(fs.readFileSync(path.join(MCP_DIR, f), "utf8"))) : [];
 const blocks = new Map();
 const errors = [];
 for (const file of fs.readdirSync(RESEARCH).filter((name) => name.endsWith(".json")).sort()) {
@@ -35,7 +37,12 @@ for (const file of fs.readdirSync(RESEARCH).filter((name) => name.endsWith(".jso
   const problems = validateAgentBlock(agent, { catalogSlugs });
   if (!bySlug.has(slug)) problems.push("aucune fiche à ce slug dans tools_v4.json");
   if (problems.length) errors.push(...problems.map((problem) => `${slug} : ${problem}`));
-  else blocks.set(slug, projectAgentAccess(agent));
+  else {
+    // The server sheet of each server (research/mcp): the only one of its tool, else the one with its transport.
+    const sheets = mcpSheets.filter((sheet) => sheet.host_tool === slug);
+    const sheetFor = (server) => (sheets.length === 1 ? sheets[0] : sheets.find((sheet) => sheet.transport === server.transport))?.slug;
+    blocks.set(slug, projectAgentAccess(agent, { sheetFor }));
+  }
 }
 
 const changes = [];

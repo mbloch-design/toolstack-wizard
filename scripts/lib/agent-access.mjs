@@ -102,7 +102,7 @@ export function validateAgentBlock(block, { catalogSlugs } = {}) {
 }
 
 /** The block as the site reads it (tools_v4.json agentAccess), camelCase, absent fields left out. */
-export function projectAgentAccess(block) {
+export function projectAgentAccess(block, { sheetFor } = {}) {
   return {
     mcp: block.mcp,
     verifiedOn: block.verified_on,
@@ -116,6 +116,7 @@ export function projectAgentAccess(block) {
       ...(server.plan_note ? { planNote: server.plan_note, planNoteEn: server.plan_note_en } : {}),
       ...(server.clients ? { clients: [...server.clients] } : {}),
       docsUrl: server.docs_url,
+      ...(sheetFor?.(server) ? { mcpSlug: sheetFor(server) } : {}),
     })),
     ...(block.status ? { status: block.status } : {}),
     ...(block.capabilities ? { capabilities: block.capabilities.map(({ kind, fr, en }) => ({ kind, fr, en })) } : {}),
@@ -142,4 +143,73 @@ export function agentAccessIndex(access) {
     ...(widest ? { access: widest } : {}),
     verifiedOn: access.verifiedOn,
   };
+}
+
+// ── Section « agents » (S1) : fiche serveur (research/mcp) et fiche skill (research/skills) ──
+const INSTALL_TYPES = ["command", "url", "config", "steps"];
+const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "docs_url", "sources"]);
+const SKILL_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "server", "category", "summary", "agents", "install", "requires", "verified_on", "status", "docs_url", "sources"]);
+const isPair = (value) => value && isText(value.fr) && isText(value.en);
+
+function validateInstall(rows, at, errors) {
+  if (!Array.isArray(rows)) return errors.push(`${at} : install, tableau requis`);
+  rows.forEach((row, i) => {
+    if (!isText(row?.client)) errors.push(`${at} : install[${i}].client requis`);
+    if (!INSTALL_TYPES.includes(row?.type)) errors.push(`${at} : install[${i}].type hors vocabulaire (${row?.type})`);
+    if (!isText(row?.value)) errors.push(`${at} : install[${i}].value requis (recopié de la doc éditeur)`);
+  });
+}
+
+/** Errors of one server sheet. The tool-level fields reuse the agent block's rules. */
+export function validateMcpSheet(sheet, { catalogSlugs, skillSlugs } = {}) {
+  const at = sheet?.slug || "?";
+  const errors = [];
+  for (const key of Object.keys(sheet || {})) if (!SHEET_KEYS.has(key)) errors.push(`${at} : clé inconnue ${key}`);
+  if (!/^[a-z0-9-]+-mcp(-[a-z0-9]+)?$/.test(sheet?.slug || "")) errors.push(`${at} : slug <outil>-mcp attendu`);
+  for (const key of ["name", "publisher", "docs_url"]) if (!isText(sheet?.[key])) errors.push(`${at} : ${key} requis`);
+  if (sheet?.official !== true) errors.push(`${at} : seuls les serveurs officiels entrent`);
+  if (catalogSlugs && sheet?.host_tool && !catalogSlugs.has(sheet.host_tool)) errors.push(`${at} : host_tool sans fiche (${sheet.host_tool})`);
+  if (!isPair(sheet?.summary)) errors.push(`${at} : summary fr/en requis`);
+  if (sheet?.plan_note && !isPair(sheet.plan_note)) errors.push(`${at} : plan_note fr/en`);
+  if (sheet?.tools_note && !isPair(sheet.tools_note)) errors.push(`${at} : tools_note fr/en`);
+  if (sheet?.note && !isPair(sheet.note)) errors.push(`${at} : note fr/en`);
+  // Reuse the block rules on the tool-level and server-level fields.
+  const block = {
+    mcp: "official", verified_on: sheet?.verified_on, sources: sheet?.sources,
+    servers: [{ name: sheet?.name, docs_url: sheet?.docs_url, plan: sheet?.plan,
+      ...(sheet?.transport ? { transport: sheet.transport } : {}), ...(sheet?.auth ? { auth: sheet.auth } : {}), ...(sheet?.access ? { access: sheet.access } : {}),
+      ...(isPair(sheet?.plan_note) ? { plan_note: sheet.plan_note.fr, plan_note_en: sheet.plan_note.en } : {}) }],
+    ...Object.fromEntries(["status", "capabilities", "setup", "safeguards"].filter((key) => key in (sheet || {})).map((key) => [key, sheet[key]])),
+  };
+  errors.push(...validateAgentBlock(block).map((error) => `${at} : ${error}`));
+  if ("tools" in (sheet || {})) {
+    if (!Array.isArray(sheet.tools)) errors.push(`${at} : tools, tableau`);
+    else sheet.tools.forEach((tool, i) => {
+      if (!isText(tool?.name)) errors.push(`${at} : tools[${i}].name requis`);
+      if (!AGENT_VOCAB.capability.includes(tool?.kind)) errors.push(`${at} : tools[${i}].kind hors vocabulaire (${tool?.kind})`);
+      if (!isText(tool?.fr) || !isText(tool?.en)) errors.push(`${at} : tools[${i}] fr/en requis`);
+    });
+  }
+  validateInstall(sheet?.install, at, errors);
+  if (skillSlugs) for (const skill of sheet?.skills ?? []) if (!skillSlugs.has(skill)) errors.push(`${at} : skill inconnu (${skill})`);
+  return errors;
+}
+
+/** Errors of one skill sheet. */
+export function validateSkillSheet(skill, { catalogSlugs, serverSlugs } = {}) {
+  const at = skill?.slug || "?";
+  const errors = [];
+  for (const key of Object.keys(skill || {})) if (!SKILL_KEYS.has(key)) errors.push(`${at} : clé inconnue ${key}`);
+  for (const key of ["slug", "name", "publisher", "docs_url"]) if (!isText(skill?.[key])) errors.push(`${at} : ${key} requis`);
+  if (skill?.official !== true) errors.push(`${at} : seuls les skills officiels entrent`);
+  if (!isPair(skill?.summary)) errors.push(`${at} : summary fr/en requis`);
+  if (skill?.requires && !isPair(skill.requires)) errors.push(`${at} : requires fr/en`);
+  if ("status" in (skill || {}) && !AGENT_VOCAB.status.includes(skill.status)) errors.push(`${at} : status hors vocabulaire`);
+  if (!DATE.test(skill?.verified_on || "")) errors.push(`${at} : verified_on requis`);
+  if (!Array.isArray(skill?.agents) || !skill.agents.length) errors.push(`${at} : agents attestés requis`);
+  if (catalogSlugs && skill?.host_tool && !catalogSlugs.has(skill.host_tool)) errors.push(`${at} : host_tool sans fiche`);
+  if (serverSlugs && skill?.server && !serverSlugs.has(skill.server)) errors.push(`${at} : serveur inconnu (${skill.server})`);
+  if (!Array.isArray(skill?.sources) || !skill.sources.length) errors.push(`${at} : sources requises`);
+  validateInstall(skill?.install, at, errors);
+  return errors;
 }

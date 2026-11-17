@@ -1,0 +1,46 @@
+{
+  "slug": "make-endpoints",
+  "name": "Endpoints",
+  "publisher": "Make",
+  "official": true,
+  "host_tool": "make",
+  "server": "make-mcp",
+  "category": "automation",
+  "summary": {
+    "fr": "Travailler avec les points d'accès de Make.",
+    "en": "Work with Make endpoints."
+  },
+  "agents": [
+    "claude",
+    "claude-code",
+    "Codex",
+    "cursor",
+    "GitHub Copilot",
+    "Windsurf",
+    "Cline"
+  ],
+  "install": [
+    {
+      "client": "any",
+      "type": "command",
+      "value": "npx skills add integromat/make-skills"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude plugin marketplace add integromat/make-skills && claude plugin install make-skills@make-marketplace"
+    }
+  ],
+  "requires": {
+    "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
+    "en": "A Make account; a paid Make plan for management scopes."
+  },
+  "verified_on": "2026-11-16",
+  "docs_url": "https://skills.make.com/",
+  "sources": [
+    {
+      "label": "Make — skills",
+      "url": "https://skills.make.com/"
+    }
+  ]
+}
