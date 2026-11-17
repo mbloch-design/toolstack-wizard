@@ -35,6 +35,48 @@
     "fr": "Votre espace est partagé et vous ne voulez aucun message en votre nom : l'assistant peut écrire dans le chat ClickUp.",
     "en": "Your workspace is shared and you want no message sent in your name: the assistant can write in ClickUp chat."
   },
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits ClickUp.",
+      "en": "Works on every ClickUp plan."
+    },
+    "advanced": {
+      "fr": "Le nombre de demandes par jour dépend du forfait : 100 sur Free Forever, 300 sur Unlimited, 1 000 sur Business.",
+      "en": "The number of requests per day depends on the plan: 100 on Free Forever, 300 on Unlimited, 1,000 on Business."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Quelles tâches me sont assignées cette semaine ?",
+        "en": "Which tasks are assigned to me this week?"
+      },
+      {
+        "fr": "Qui sont les membres de mon espace de travail ?",
+        "en": "Who are the members of my workspace?"
+      },
+      {
+        "fr": "Combien de temps ai-je suivi aujourd'hui ?",
+        "en": "How much time did I track today?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Crée une tâche « Test ToolTrim » dans une liste de test.",
+        "en": "Create a task “ToolTrim test” in a test list."
+      },
+      "check": {
+        "fr": "Elle apparaît dans la liste ; supprimez-la ensuite.",
+        "en": "It appears in the list; delete it afterwards."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Une fois la limite du jour atteinte, il répond « RATE_LIMIT_EXCEEDED » ; elle ne se réinitialise pas, il faut attendre.",
+      "en": "Once the daily limit is reached, it answers “RATE_LIMIT_EXCEEDED”; it cannot be reset, you have to wait."
+    }
+  ],
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

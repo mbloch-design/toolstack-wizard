@@ -1,45 +1,40 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
-import { Check, ChevronDown, Code2, Copy, ExternalLink, FileText, Flag, Globe, Laptop2, Plug, UserRound, X } from "@/lib/icons";
+import { Check, ChevronDown, Code2, Copy, ExternalLink, FileText, Flag, Plug, X } from "@/lib/icons";
 import { getToolLogoSources } from "@/lib/toolLogos";
 import {
-  KIND_WORDS, authWords, PLAN_WORDS, RISK_ORDER, SAFEGUARD_WORDS, TRANSPORT_WORDS, clientName, riskSentence, say,
+  clientName, say,
   type InstallRow, type Lang, type McpSheet, type SkillSheet,
 } from "@/lib/agents";
 import { CLIENTS, CLIENT_MARKS, clientGroup, clientLabel, clientsOf, cursorInstallLink, plugCard, vsCodeInstallLink, type ClientId, type PlugStep } from "@/lib/agentClients";
-import { RISK_PILL, freshness, sheetMarkdown, sourceLinks, toolTopics, toolsSummary } from "@/lib/agentSheet";
-import Button, { IconButton, LinkArrow, TextButton, buttonAttrs, linkClass } from "../Button/Button";
-import Chip from "../Chip/Chip";
+import { hookSentence, sheetMarkdown, sourceLinks, toolTopics, toolsSummary } from "@/lib/agentSheet";
+import Button, { LinkArrow, TextButton, buttonAttrs, linkClass } from "../Button/Button";
+import Chip, { Chips } from "../Chip/Chip";
 import Tag from "../Tag/Tag";
 import { Collapse } from "../Motion/Motion";
 import { longDate } from "../AgentAccess/agentVerdict";
 import styles from "./AgentSheet.module.css";
 
 /*
- * A server or skill sheet of the agents section, told as a story (S1 bis, 17/11/2026). Under the title, a line of
- * facts and « Copier pour votre assistant ». Then what it changes for you, our view, « Brancher Notion » for the
- * place you use AI (one card, four steps at most, a named copy), what it can do and how to stay in control; the
- * technical sheet folded; the sources. Facts come from the vendor's documentation; the requests and the view are
- * ToolTrim's, written from the documented tools only. Functions inspired by other directories, never their words.
+ * A server or skill sheet of the agents section (step 1 of the product analysis, 17/11/2026). A calm head: logo and
+ * title, a hook composed from the data, « Copier pour votre assistant », a trust line. Then what it changes for you,
+ * « Brancher Notion » for the place you use AI, your first requests, what to check if it fails, what it can do and
+ * how to stay in control (in sentences), our view; the documented actions folded; the sources. A fact has one place.
+ * Facts come from the vendor's documentation; requests and views are ToolTrim's, from documented tools only.
  */
 
-const KINDS = ["read", "write", "delete", "send", "pay"] as const;
-/** The risk follows the capability lines shown in the chapter; the tools only when the vendor gives none. */
-const kindsOf = (sheet: McpSheet) => KINDS.filter((kind) => (sheet.capabilities?.length ? sheet.capabilities : sheet.tools ?? []).some((line) => line.kind === kind));
 const raise = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 const STORE_KEY = "tooltrim.agents.client";
 /** The capability's verb as a tag, the same words as the action list (reading said too, here). */
 const ABILITY_TAG = { read: ["Lit", "Reads"], write: ["Modifie", "Edits"], delete: ["Supprime", "Deletes"], send: ["Envoie", "Sends"], pay: ["Paie", "Pays"] } as const;
-/** A plan note often opens on the value it details as its own sentence (« Tous les forfaits. Jetons… »): said once. */
-const withoutEcho = (note: string, value: string) => note.replace(new RegExp(`^${value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.\\s+`, "i"), "") || note;
 
 
 export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publisher, pageUrl, reportHref, related }: {
   sheet: McpSheet; lang: Lang;
-  /** The tool's logo beside the title (the system's Logo, 48 px). */
+  /** The tool's logo beside the title (the system's Logo, 40 px). */
   logo?: ReactNode;
-  /** The page's title (« Brancher Notion à votre assistant »): the sheet draws its own head, the copy action beside it. */
+  /** The page's title (« Brancher Notion à votre assistant »): the sheet draws its own head. */
   title: string;
-  /** The tool's catalogue name (« Notion »), said in the steps and titles. */
+  /** The tool's catalogue name (« Notion »), said in the hook, the steps and the titles. */
   toolName?: string;
   /** The sheet's public address, given in the Markdown copy. */
   pageUrl: string;
@@ -49,38 +44,92 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
   related?: ReactNode;
 }) {
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
-  const capabilities = RISK_ORDER.flatMap((kind) => (sheet.capabilities ?? []).filter((line) => line.kind === kind));
-  const control = [
-    ...(sheet.safeguards ? [{ label: t("Garde-fous", "Safeguards"), value: sheet.safeguards.length ? raise(sheet.safeguards.map((s) => say(lang, SAFEGUARD_WORDS[s])).join(", ")) : t("Aucun documenté par l'éditeur", "None documented by the vendor") }] : []),
-    { label: t("Forfait", "Plan"), value: say(lang, PLAN_WORDS[sheet.plan]), detail: sheet.plan_note ? withoutEcho(say(lang, sheet.plan_note), say(lang, PLAN_WORDS[sheet.plan])) : undefined },
-    ...(sheet.status === "beta" ? [{ label: t("Statut", "Status"), value: t("En bêta chez l'éditeur", "In beta at the vendor") }] : []),
-  ];
-  const served = new Set<string>(clientsOf(sheet));
-  const others = (sheet.clients ?? []).filter((client) => !served.has(client));
+  const capabilities = LIST_ORDER.flatMap((kind) => (sheet.capabilities ?? []).filter((line) => line.kind === kind));
+  const plugId = `${sheet.slug}-brancher`;
   return (
     <div className={styles.sheet} data-agent-sheet="mcp">
-      <header className={styles.head}>
+      {/* A calm head, one left edge: logo and title, the hook, the actions, the trust line (17/11). */}
+      <header className={styles.head} data-chapter="head">
         <div className={styles.titleRow}>
           {logo && <span className={styles.titleLogo} aria-hidden="true">{logo}</span>}
-          <div className={styles.titles}>
-            <h1 className={styles.title}>{title}</h1>
-            <p className={styles.byline}>{t(`${sheet.name}, publié par ${sheet.publisher} · Officiel`, `${sheet.name}, published by ${sheet.publisher} · Official`)}</p>
-          </div>
-          <CopyMenu sheet={sheet} lang={lang} toolName={toolName} pageUrl={pageUrl} />
+          <h1 className={styles.title}>{title}</h1>
         </div>
-        <SheetFacts sheet={sheet} lang={lang} />
-        <p className={styles.lead}>{say(lang, sheet.summary)}</p>
+        <p className={styles.lead}>{hookSentence(sheet, toolName, lang)}</p>
         {sheet.note && <p className={styles.text}>{say(lang, sheet.note)}</p>}
+        <div className={styles.actions}>
+          <CopyMenu sheet={sheet} lang={lang} toolName={toolName} pageUrl={pageUrl} />
+          <a className={linkClass()} href={`#${plugId}`}>{t("Voir les étapes", "See the steps")} <span aria-hidden="true">↓</span></a>
+        </div>
+        <p className={styles.trust}>{t(`Officiel, publié par ${sheet.publisher} · vérifié le ${longDate(sheet.verified_on, lang)}`, `Official, published by ${sheet.publisher} · checked on ${longDate(sheet.verified_on, lang)}`)}</p>
       </header>
 
       {sheet.examples?.length ? (
         <Part chapter="change" tone="plain" title={t("Ce que ça change pour vous", "What it changes for you")}>
-          <p className={styles.note}>{t("Vous pourrez lui demander :", "You could ask it:")}</p>
           <ul className={styles.requests}>
             {sheet.examples.map((example) => <li key={example.fr} className={styles.request}>{t(`« ${example.fr} »`, `“${example.en}”`)}</li>)}
           </ul>
         </Part>
       ) : null}
+
+      <Part chapter="plug" id={plugId} title={t(`Brancher ${toolName}`, `Plug in ${toolName}`)}>
+        <PlugChapter sheet={sheet} lang={lang} toolName={toolName} />
+      </Part>
+
+      {sheet.first_requests && (
+        <Part chapter="first" tone="plain" title={t("Vos premières demandes", "Your first requests")}>
+          <p className={styles.text}>{t("Commencez par des demandes qui ne font que lire ; passez à l'écriture une fois rassuré.", "Start with requests that only read; move on to writing once reassured.")}</p>
+          <ul className={styles.firsts}>
+            {sheet.first_requests.read.map((ask) => (
+              <li key={ask.fr} className={styles.first}><span className={styles.firstWords}>{t(`« ${ask.fr} »`, `“${ask.en}”`)}</span><span className={styles.firstTag}><Tag on="tile" tone="neutral">{say(lang, ABILITY_TAG.read)}</Tag></span></li>
+            ))}
+            {sheet.first_requests.write && (
+              <li className={styles.first}>
+                <span className={styles.firstWords}>
+                  <span>{t(`« ${sheet.first_requests.write.ask.fr} »`, `“${sheet.first_requests.write.ask.en}”`)}</span>
+                  <span className={styles.firstCheck}>{t("À vérifier : ", "Check: ")}{lower(say(lang, sheet.first_requests.write.check))}</span>
+                </span>
+                <span className={styles.firstTag}><Tag on="tile" tone="neutral">{say(lang, ABILITY_TAG.write)}</Tag></span>
+              </li>
+            )}
+          </ul>
+        </Part>
+      )}
+
+      {sheet.troubleshoot && (
+        <Part chapter="help" tone="plain" title={t("Si ça ne marche pas", "If it does not work")}>
+          <ul className={styles.sentences}>{sheet.troubleshoot.map((line) => <li key={line.fr} className={styles.text}>{say(lang, line)}</li>)}</ul>
+        </Part>
+      )}
+
+      <Part chapter="control" tone="plain" title={t("Ce qu'il peut faire, et comment garder la main", "What it can do, and how to stay in control")}>
+        {capabilities.length > 0 && (
+          <div className={styles.question}>
+            <h3 className={styles.questionTitle}>{t("Ce qu'il peut faire chez vous", "What it can do in your account")}</h3>
+            <ul className={styles.abilities}>
+              {capabilities.map((line) => (
+                <li key={line.en} className={styles.ability}>
+                  <Tag on="card" tone={line.kind === "pay" || line.kind === "delete" ? "overlap" : "neutral"}>{say(lang, ABILITY_TAG[line.kind])}</Tag>
+                  <span className={styles.text}>{t(`Il peut ${lower(line.fr)}.`, `It can ${lower(line.en)}.`)}</span>
+                </li>
+              ))}
+            </ul>
+            {sheet.status === "beta" && <p className={styles.text}>{t("Le service est encore en bêta chez l'éditeur.", "The service is still in beta at the vendor.")}</p>}
+          </div>
+        )}
+        {sheet.control && (
+          <div className={styles.question}>
+            <h3 className={styles.questionTitle}>{t("Comment garder la main", "How to stay in control")}</h3>
+            <ul className={styles.sentences}>{sheet.control.map((line) => <li key={line.fr} className={styles.text}>{say(lang, line)}</li>)}</ul>
+          </div>
+        )}
+        {sheet.plan_words?.advanced && (
+          <div className={styles.question}>
+            <h3 className={styles.questionTitle}>{t("Quel forfait", "Which plan")}</h3>
+            <p className={styles.text}>{say(lang, sheet.plan_words.common)} {say(lang, sheet.plan_words.advanced)}</p>
+          </div>
+        )}
+        <p className={styles.text}>{t("L'assistant n'a jamais plus de droits que votre compte.", "The assistant never has more rights than your account.")}</p>
+      </Part>
 
       {sheet.for && sheet.not_for && (
         <Part chapter="view" tone="plain" title={t("Notre avis", "Our view")}>
@@ -91,58 +140,20 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
         </Part>
       )}
 
-      <Part chapter="plug" title={t(`Brancher ${toolName}`, `Plug in ${toolName}`)}>
-        <PlugChapter sheet={sheet} lang={lang} toolName={toolName} />
-      </Part>
-
-      <Part chapter="control" tone="plain" title={t("Ce qu'il peut faire, et comment garder la main", "What it can do, and how to stay in control")}>
-        <p className={styles.text}>{riskSentence({ kinds: kindsOf(sheet), safeguards: sheet.safeguards, status: sheet.status }, lang)}</p>
-        {capabilities.length > 0 && (
-          <ul className={styles.abilities}>
-            {capabilities.map((line) => (
-              <li key={line.en} className={styles.ability}>
-                <Tag on="card" tone={line.kind === "pay" || line.kind === "delete" ? "overlap" : "neutral"}>{say(lang, ABILITY_TAG[line.kind])}</Tag>
-                <span className={styles.text}>{say(lang, line)}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-        <Facts rows={control} />
-        <p className={styles.note}>{t("L'assistant n'a jamais plus de droits que votre compte.", "The assistant never has more rights than your account.")}</p>
-      </Part>
-
       {related}
 
-      <TechSheet sheet={sheet} lang={lang} others={others} />
       {sheet.tools?.length || sheet.tools_note ? (
         <Further lang={lang} title={t("Les actions documentées", "The documented actions")} summary={sheet.tools?.length ? toolsSummary(sheet.tools, lang) : t("Liste non publiée par l'éditeur", "List not published by the vendor")}>
           <ToolList sheet={sheet} lang={lang} />
         </Further>
       ) : null}
 
-      <Sources lang={lang} date={sheet.verified_on} publisher={sheet.publisher} sources={sheet.sources} reportHref={reportHref} />
+      <Sources lang={lang} publisher={sheet.publisher} sources={sheet.sources} reportHref={reportHref} />
     </div>
   );
 }
 
-/** Under the title: when it was checked, how it connects, which account, and where it works. Said once. */
-function SheetFacts({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
-  const t = (fr: string, en: string) => (lang === "en" ? en : fr);
-  const works = clientsOf(sheet).filter((client) => client !== "any");
-  return (
-    <ul className={styles.factLine} aria-label={t("En bref", "At a glance")}>
-      {sheet.transport && <li className={styles.fact}>{sheet.transport === "local" ? <Laptop2 aria-hidden="true" /> : <Globe aria-hidden="true" />}{say(lang, TRANSPORT_WORDS[sheet.transport])}</li>}
-      {sheet.auth?.length ? <li className={styles.fact}><UserRound aria-hidden="true" />{authWords(sheet.auth, lang)}</li> : null}
-      {works.length > 0 && (
-        <li className={styles.fact}>
-          <span>{t("Fonctionne avec", "Works with")}</span>
-          {/* Short names, all alike: no logo loads late above the fold, no empty circle (17/11). */}
-          <span className={styles.faces}>{works.map((client) => <span key={client} className={styles.faceName}><ClientMark client={client} size={14} />{clientLabel(client, lang)}</span>)}</span>
-        </li>
-      )}
-    </ul>
-  );
-}
+const lower = (text: string) => text.charAt(0).toLowerCase() + text.slice(1);
 
 /** « Copier pour votre assistant »: only what this sheet can serve, each entry checked on the client's documentation. */
 function CopyMenu({ sheet, lang, toolName, pageUrl }: { sheet: McpSheet; lang: Lang; toolName: string; pageUrl: string }) {
@@ -177,10 +188,8 @@ function CopyMenu({ sheet, lang, toolName, pageUrl }: { sheet: McpSheet; lang: L
     ...(vsCode ? [{ label: t("Brancher à VS Code", "Plug into VS Code"), help: t("Ouvre VS Code et propose l'installation", "Opens VS Code and offers to install"), icon: <ClientMark client="vs-code" size={20} />, href: vsCode }] : []),
     ...(cursor ? [{ label: t("Brancher à Cursor", "Plug into Cursor"), help: t("Ouvre Cursor et propose l'installation", "Opens Cursor and offers to install"), icon: <ClientMark client="cursor" size={20} />, href: cursor }] : []),
   ];
-  const assistants = clientsOf(sheet).filter((client) => clientGroup(client) === "assistant");
   return (
     <div className={styles.menuRoot} ref={root}>
-      {assistants.length > 0 && <span className={styles.menuMarks} aria-hidden="true">{assistants.map((client) => <ClientMark key={client} client={client} size={16} />)}</span>}
       <Button variant="primary" icon={<Copy />} aria-expanded={open} aria-controls={menu} onClick={() => setOpen((v) => !v)}>
         {t("Copier pour votre assistant", "Copy for your assistant")}<span className={styles.chevron} data-open={open || undefined} aria-hidden="true"><ChevronDown /></span>
       </Button>
@@ -254,51 +263,6 @@ function useMarkSource(tool: { name: string; slug: string; websiteUrl: string } 
     return () => { live = false; };
   }, [tool]);
   return src;
-}
-
-/**
- * The technical sheet, always in view at the sheet's foot (after Claude's directory, 17/11): six boxes, three
- * columns on a computer, two on a phone. The head already says connection, account and where it works: not here.
- */
-function TechSheet({ sheet, lang, others }: { sheet: McpSheet; lang: Lang; others: string[] }) {
-  const t = (fr: string, en: string) => (lang === "en" ? en : fr);
-  const id = useId();
-  const address = sheet.install.find((row) => row.client === "any" && row.type === "url")?.value;
-  const month = (iso: string) => { const [y, m] = iso.split("-").map(Number); return longDate(`${y}-${String(m).padStart(2, "0")}-01`, lang).replace(/^1\s/, ""); };
-  const boxes: { label: string; value: ReactNode }[] = [
-    { label: t("Accès maximum", "Widest access"), value: sheet.access ? { read: t("Lecture seule", "Read only"), read_write: t("Lecture et écriture, dans vos droits", "Read and write, within your rights"), docs_only: t("Documentation seulement", "Documentation only") }[sheet.access] : t("Non précisé", "Not stated") },
-    { label: t("Éditeur", "Publisher"), value: <a className={linkClass("inline")} href={sheet.docs_url} target="_blank" rel="noopener noreferrer">{sheet.publisher}</a> },
-    { label: t("Vérifié le", "Checked on"), value: longDate(sheet.verified_on, lang) },
-    { label: t("Répertoire Claude", "Claude directory"), value: sheet.claude_directory
-      ? <a className={linkClass("inline")} href={sheet.claude_directory.url} target="_blank" rel="noopener noreferrer">{t(`Ajouté en ${month(sheet.claude_directory.added)}`, `Added in ${month(sheet.claude_directory.added)}`)}</a>
-      : t("Absent du répertoire", "Not in the directory") },
-    { label: t("Actions documentées", "Documented actions"), value: sheet.tools?.length ? String(sheet.tools.length) : t("Liste non publiée", "List not published") },
-    { label: t("Adresse du serveur", "Server address"), value: address ? <CopyLine value={address} lang={lang} /> : sheet.transport === "local" ? t("Sur votre ordinateur", "On your computer") : t("Non publiée", "Not published") },
-  ];
-  return (
-    <section className={styles.plain} aria-labelledby={id} data-chapter="tech">
-      <h2 id={id} className={styles.partTitle}>{t("Fiche technique", "Technical sheet")}</h2>
-      <dl className={styles.techGrid}>
-        {boxes.map((box) => <div key={box.label} className={styles.techBox}><dt className={styles.techLabel}>{box.label}</dt><dd className={styles.techValue}>{box.value}</dd></div>)}
-      </dl>
-      {others.length > 0 && <p className={styles.note}>{t("Autres assistants cités par l'éditeur : ", "Other assistants the vendor names: ")}{others.map((c) => clientName(c, lang)).join(", ")}.</p>}
-    </section>
-  );
-}
-
-/** An address on one line, with a named copy and a « Copié » said to screen readers. */
-function CopyLine({ value, lang }: { value: string; lang: Lang }) {
-  const [copied, setCopied] = useState(false);
-  const label = lang === "en" ? "Copy the server address" : "Copier l'adresse du serveur";
-  const done = lang === "en" ? "Copied" : "Copié";
-  const copy = () => { void navigator.clipboard?.writeText(value).then(() => { setCopied(true); window.setTimeout(() => setCopied(false), 2000); }); };
-  return (
-    <span className={styles.copyLine}>
-      <code className={styles.copyValue} tabIndex={0}>{value}</code>
-      <IconButton size={44} tone="quiet" icon={copied ? <Check /> : <Copy />} label={copied ? done : label} onClick={copy} />
-      <span className={styles.srOnly} aria-live="polite">{copied ? done : ""}</span>
-    </span>
-  );
 }
 
 /** « Où utilisez-vous l'IA ? », then one card for that place. The choice follows the reader from sheet to sheet. */
@@ -407,9 +371,9 @@ export function SkillSheetView({ skill, lang, reportHref, related }: { skill: Sk
 }
 
 /** A chapter: the main one (Brancher) on a tile; the others on the page, so the sheet has a rhythm. */
-function Part({ chapter, title, tone = "tile", children }: { chapter: string; title: string; tone?: "tile" | "plain"; children: ReactNode }) {
+function Part({ chapter, id: anchor, title, tone = "tile", children }: { chapter: string; id?: string; title: string; tone?: "tile" | "plain"; children: ReactNode }) {
   const id = useId();
-  return <section className={tone === "tile" ? styles.part : styles.plain} aria-labelledby={id} data-chapter={chapter}><h2 id={id} className={styles.partTitle}>{title}</h2>{children}</section>;
+  return <section id={anchor} className={tone === "tile" ? styles.part : styles.plain} aria-labelledby={id} data-chapter={chapter}><h2 id={id} className={styles.partTitle}>{title}</h2>{children}</section>;
 }
 
 /** « Pour aller plus loin »: a full-width row that says what it hides; the technical sheet folds out under it. */
@@ -448,17 +412,33 @@ function Facts({ rows }: { rows: { label: string; value: string; detail?: string
   );
 }
 
-/** The documented tools by topic (ToolTrim's classification): the action in words, its risk, the technical name small. */
+/** The list's order of risk: what deletes first, what only reads last. */
+const LIST_ORDER = ["delete", "pay", "send", "write", "read"] as const;
+type Kind = (typeof LIST_ORDER)[number];
+
+/**
+ * The documented tools by topic (ToolTrim's classification), filtered by risk. Each action is a row of its own:
+ * the action in words over the vendor's technical name, and its tag in one column aligned down the list
+ * (reading tagged too, so the eye compares). Rows are white objects on the tile, never separated by a rule.
+ */
 function ToolList({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
   const tools = sheet.tools ?? [];
+  const [kind, setKind] = useState<Kind | "all">("all");
   if (!tools.length && !sheet.tools_note) return null;
+  const kinds = LIST_ORDER.filter((k) => tools.some((tool) => tool.kind === k));
+  const shown = kind === "all" ? tools : tools.filter((tool) => tool.kind === kind);
   return (
     <div className={styles.group}>
-      <p className={styles.term}>{t("Les actions documentées par l'éditeur", "The actions the vendor documents")}</p>
       {sheet.tools_note && <p className={styles.text}>{say(lang, sheet.tools_note)}</p>}
       {tools.length > 0 && <>
-        <div className={styles.topics}>{toolTopics(tools).map((topic) => <ToolTopicGroup key={topic.id} topic={topic} lang={lang} />)}</div>
+        {kinds.length > 1 && (
+          <Chips label={t("Filtrer par risque", "Filter by risk")}>
+            <Chip pressed={kind === "all"} count={tools.length} onClick={() => setKind("all")}>{t("Tout", "All")}</Chip>
+            {kinds.map((k) => <Chip key={k} pressed={kind === k} count={tools.filter((tool) => tool.kind === k).length} onClick={() => setKind(k)}>{say(lang, ABILITY_TAG[k])}</Chip>)}
+          </Chips>
+        )}
+        <div className={styles.topics}>{toolTopics(shown).map((topic) => <ToolTopicGroup key={`${kind}-${topic.id}`} topic={topic} lang={lang} />)}</div>
         <p className={styles.note}>{t("Le classement par sujet est celui de ToolTrim ; les noms techniques sont ceux de l'éditeur.", "The grouping by topic is ToolTrim's; the technical names are the vendor's.")}</p>
       </>}
     </div>
@@ -470,13 +450,18 @@ function ToolTopicGroup({ topic, lang }: { topic: ReturnType<typeof toolTopics>[
   const long = topic.tools.length > 5;
   const [open, setOpen] = useState(!long);
   const panel = useId();
+  const ordered = [...topic.tools].sort((a, b) => LIST_ORDER.indexOf(a.kind as Kind) - LIST_ORDER.indexOf(b.kind as Kind));
   const lines = (
     <ul className={styles.tools}>
-      {topic.tools.map((tool) => (
-        <li key={tool.name} className={styles.tool}>
-          <span className={styles.toolAction}>{say(lang, tool)}</span>
-          {RISK_PILL[tool.kind] && <Tag on="tile" tone={tool.kind === "pay" || tool.kind === "delete" ? "overlap" : "neutral"}>{say(lang, RISK_PILL[tool.kind]!)}</Tag>}
-          <code className={styles.toolName}>{tool.name}</code>
+      {ordered.map((tool) => (
+        <li key={tool.name} className={styles.tool} data-kind={tool.kind}>
+          <span className={styles.toolWords}>
+            <span className={styles.toolAction}>{say(lang, tool)}</span>
+            <code className={styles.toolName}>{tool.name}</code>
+          </span>
+          <span className={styles.toolRisk}>
+            <Tag on="card" tone={tool.kind === "pay" || tool.kind === "delete" ? "overlap" : "neutral"}>{say(lang, ABILITY_TAG[tool.kind])}</Tag>
+          </span>
         </li>
       ))}
     </ul>
@@ -496,17 +481,19 @@ function ToolTopicGroup({ topic, lang }: { topic: ReturnType<typeof toolTopics>[
   );
 }
 
-/** « Sources »: when and where we checked, short links with their site, and a way to report an error. Lighter than a chapter. */
-function Sources({ lang, date, publisher, sources, reportHref }: { lang: Lang; date: string; publisher: string; sources: { label: string; url: string }[]; reportHref: string }) {
+/** « Sources »: the vendor's pages as short links with their site, and a way to report an error. Lighter than a chapter;
+    the date is said once, in the head's trust line. */
+function Sources({ lang, date, publisher, sources, reportHref }: { lang: Lang;
+  /** The skill sheet, which has no trust line, says its date here; the server sheet says it in its head. */
+  date?: string; publisher: string; sources: { label: string; url: string }[]; reportHref: string }) {
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
-  // The age is said once the page runs in the reader's browser: a prerendered page cannot know today's date.
-  const [age, setAge] = useState("");
-  useEffect(() => setAge(freshness(date, new Date(), lang)), [date, lang]);
   const id = useId();
   return (
     <section className={styles.sourcesBlock} aria-labelledby={id} data-chapter="sources">
       <h2 id={id} className={styles.sourcesTitle}>Sources</h2>
-      <p className={styles.note}>{t(`Vérifié le ${longDate(date, lang)} chez ${publisher}`, `Checked on ${longDate(date, lang)} with ${publisher}`)}{age && ` (${age})`}.</p>
+      <p className={styles.note}>{date
+        ? t(`Vérifié le ${longDate(date, lang)} chez ${publisher}.`, `Checked on ${longDate(date, lang)} with ${publisher}.`)
+        : t(`Pages consultées chez ${publisher} :`, `Pages read at ${publisher}:`)}</p>
       <ul className={styles.sources}>
         {sourceLinks(sources, lang).map((source) => (
           <li key={source.url}>

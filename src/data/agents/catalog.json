@@ -33,6 +33,48 @@
         "fr": "Vous n'avez pas de forfait payant : le serveur n'y est pas ouvert.",
         "en": "You have no paid plan: the server is not open to you."
       },
+      "control": [
+        {
+          "fr": "Chaque demande consomme au moins 50 unités d'API, partagées avec l'API Ahrefs : demandez des résultats courts.",
+          "en": "Each request uses at least 50 API units, shared with the Ahrefs API: ask for short results."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Sur les forfaits Lite, Standard, Advanced et Enterprise : pas sur le gratuit.",
+          "en": "On Lite, Standard, Advanced and Enterprise plans: not on the free one."
+        },
+        "advanced": {
+          "fr": "Les unités et les lignes par demande grandissent avec le forfait : 200 000 unités et 100 lignes en Lite.",
+          "en": "Units and rows per request grow with the plan: 200,000 units and 100 rows on Lite."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Quels mots-clés amènent le plus de trafic sur monsite.fr ?",
+            "en": "Which keywords bring the most traffic to mysite.com?"
+          },
+          {
+            "fr": "Quels sites font un lien vers monsite.fr ?",
+            "en": "Which sites link to mysite.com?"
+          },
+          {
+            "fr": "Sur quels mots-clés monsite.fr est-il en première page ?",
+            "en": "Which keywords is mysite.com on page one for?"
+          }
+        ]
+      },
+      "troubleshoot": [
+        {
+          "fr": "Une erreur 401 vient d'une clé expirée, d'un abonnement inactif ou d'une clé d'API utilisée à la place de la clé MCP.",
+          "en": "A 401 error comes from an expired key, an inactive subscription or an API key used instead of the MCP key."
+        },
+        {
+          "fr": "L'installation sur l'ordinateur n'est plus prise en charge : branchez le serveur en ligne.",
+          "en": "Installing on your computer is no longer supported: plug in the online server."
+        }
+      ],
       "verified_on": "2026-11-16",
       "transport": "remote",
       "auth": [
@@ -159,6 +201,70 @@
         "fr": "Vous branchez une base importante sans sauvegarde : l'assistant peut aussi supprimer des tables entières.",
         "en": "You connect an important base with no backup: the assistant can also delete whole tables."
       },
+      "control": [
+        {
+          "fr": "À la connexion, vous choisissez exactement les bases, applications et espaces qu'il voit.",
+          "en": "When connecting, you pick exactly the bases, apps and workspaces it sees."
+        },
+        {
+          "fr": "Pour qu'il ne fasse que lire, n'accordez que les autorisations de lecture.",
+          "en": "For reading only, grant only the read permissions."
+        },
+        {
+          "fr": "Pour ajouter ou retirer des bases, ou couper l'accès : votre profil, Intégrations, puis Intégrations tierces.",
+          "en": "To add or remove bases, or cut access: your profile, Integrations, then Third-party integrations."
+        },
+        {
+          "fr": "En Enterprise, l'administrateur autorise l'intégration dans le panneau d'administration, rubrique Intégrations et développement.",
+          "en": "On Enterprise, the admin allows the integration in the Admin panel, under Integrations and development."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Fonctionne sur tous les forfaits Airtable, sans frais en plus.",
+          "en": "Works on every Airtable plan, at no extra cost."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Liste mes bases Airtable.",
+            "en": "List my Airtable bases."
+          },
+          {
+            "fr": "Montre la structure de ma table Clients.",
+            "en": "Show the structure of my Clients table."
+          },
+          {
+            "fr": "Cherche les enregistrements qui mentionnent Dupont.",
+            "en": "Search the records that mention Dupont."
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Ajoute un enregistrement « Test ToolTrim » dans une table de test.",
+            "en": "Add a record “ToolTrim test” to a test table."
+          },
+          "check": {
+            "fr": "Ouvrez la table : la ligne y est ; supprimez-la ensuite.",
+            "en": "Open the table: the row is there; delete it afterwards."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Avec un accès Commentateur ou Lecture seule, il lit sans modifier : il faut au moins le rôle Éditeur.",
+          "en": "With Commenter or Read-only access, it reads without editing: you need the Editor role at least."
+        },
+        {
+          "fr": "Créer une base demande le rôle Créateur dans l'espace.",
+          "en": "Creating a base needs the Creator role in the workspace."
+        },
+        {
+          "fr": "Il crée au plus 10 enregistrements par demande.",
+          "en": "It creates at most 10 records per request."
+        }
+      ],
       "verified_on": "2026-11-16",
       "transport": "remote",
       "auth": [
@@ -560,6 +666,70 @@
         "fr": "Vous ne voulez rien publier sans relire : l'assistant peut publier tout de suite, et Buffer ne documente pas de confirmation.",
         "en": "You never want anything posted unread: the assistant can post right away, and Buffer documents no confirmation."
       },
+      "control": [
+        {
+          "fr": "La connexion couvre tout votre compte Buffer, sans choix d'organisation.",
+          "en": "The connection covers your whole Buffer account, with no organisation choice."
+        },
+        {
+          "fr": "Laissez les demandes de confirmation de votre assistant : la plupart attendent votre accord avant de publier, modifier ou supprimer.",
+          "en": "Keep your assistant's confirmation prompts: most wait for your approval before posting, editing or deleting."
+        },
+        {
+          "fr": "Pour couper l'accès : Réglages, puis API, dans Buffer.",
+          "en": "To cut access: Settings, then API, in Buffer."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Fonctionne sur tous les forfaits Buffer, y compris le gratuit.",
+          "en": "Works on every Buffer plan, free included."
+        },
+        "advanced": {
+          "fr": "Sur le gratuit, les statistiques ne remontent qu'aux 31 derniers jours.",
+          "en": "On the free plan, stats only go back 31 days."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Liste mes canaux Buffer.",
+            "en": "List my Buffer channels."
+          },
+          {
+            "fr": "Montre les posts programmés cette semaine.",
+            "en": "Show the posts scheduled this week."
+          },
+          {
+            "fr": "Quelles idées de posts ai-je enregistrées ?",
+            "en": "Which post ideas have I saved?"
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Ajoute une idée de post « Test ToolTrim ».",
+            "en": "Add a post idea “ToolTrim test”."
+          },
+          "check": {
+            "fr": "Dans Buffer, rubrique Idées, elle y est ; supprimez-la ensuite.",
+            "en": "In Buffer, under Ideas, it is there; delete it afterwards."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Au-delà du quota de votre forfait, la demande échoue (erreur 429) : attendez avant de relancer.",
+          "en": "Past your plan's quota, the request fails (error 429): wait before retrying."
+        },
+        {
+          "fr": "Les statistiques se mettent à jour une fois par jour.",
+          "en": "Stats refresh once a day."
+        },
+        {
+          "fr": "La seule adresse officielle est https://mcp.buffer.com/mcp.",
+          "en": "The only official address is https://mcp.buffer.com/mcp."
+        }
+      ],
       "verified_on": "2026-11-16",
       "access": "read_write",
       "plan": "all",
@@ -796,6 +966,58 @@
         "fr": "Vous voulez seulement consulter votre agenda : l'assistant peut aussi annuler un rendez-vous, sans garde-fou documenté.",
         "en": "You only want to look at your calendar: the assistant can also cancel a meeting, with no documented safeguard."
       },
+      "control": [
+        {
+          "fr": "Dans Claude, activez Calendly dans chaque conversation où vous voulez l'utiliser.",
+          "en": "In Claude, turn Calendly on in each conversation where you want it."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Fonctionne sur tous les forfaits Calendly, y compris le gratuit.",
+          "en": "Works on every Calendly plan, free included."
+        },
+        "advanced": {
+          "fr": "Certaines actions dépendent de votre forfait ; Calendly ne dit pas lesquelles.",
+          "en": "Some actions depend on your plan; Calendly does not say which."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Quels rendez-vous ai-je demain ?",
+            "en": "Which meetings do I have tomorrow?"
+          },
+          {
+            "fr": "Quels types de rendez-vous ai-je ?",
+            "en": "Which event types do I have?"
+          },
+          {
+            "fr": "Quels créneaux sont libres jeudi ?",
+            "en": "Which slots are free on Thursday?"
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Crée un lien de réservation à usage unique pour mon rendez-vous découverte.",
+            "en": "Create a single-use booking link for my discovery call."
+          },
+          "check": {
+            "fr": "Ouvrez le lien : il propose vos créneaux et ne sert qu'une fois.",
+            "en": "Open the link: it offers your slots and works only once."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Un assistant qui demande de coller un identifiant et un secret ne marche pas avec Calendly.",
+          "en": "An assistant that asks you to paste an ID and a secret does not work with Calendly."
+        },
+        {
+          "fr": "Les jetons d'accès personnels ne fonctionnent pas : la connexion passe par votre compte.",
+          "en": "Personal access tokens do not work: the connection goes through your account."
+        }
+      ],
       "verified_on": "2026-11-16",
       "status": "ga",
       "transport": "remote",
@@ -1157,6 +1379,54 @@
         "fr": "Vous attendez un visuel prêt à publier : un design généré se relit et s'ajuste dans Canva.",
         "en": "You expect a visual ready to publish: a generated design still needs a review in Canva."
       },
+      "control": [
+        {
+          "fr": "L'assistant n'agit que sur les designs et fichiers que votre compte peut voir ou modifier.",
+          "en": "The assistant only acts on the designs and files your account can see or edit."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Fonctionne sur tous les forfaits Canva.",
+          "en": "Works on every Canva plan."
+        },
+        "advanced": {
+          "fr": "En plus, avec Canva Pro et au-delà : redimensionner un design, remplissage automatique, kits et modèles de marque.",
+          "en": "On top, with Canva Pro and up: resizing a design, autofill, brand kits and brand templates."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Retrouve mes designs qui contiennent « devis ».",
+            "en": "Find my designs that contain “quote”."
+          },
+          {
+            "fr": "Liste les dossiers de mon Canva.",
+            "en": "List the folders in my Canva."
+          },
+          {
+            "fr": "Quels formats d'export sont possibles pour mon dernier design ?",
+            "en": "Which export formats are possible for my latest design?"
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Crée un design vierge au format post Instagram, nommé « Test ToolTrim ».",
+            "en": "Create a blank Instagram post design named “ToolTrim test”."
+          },
+          "check": {
+            "fr": "Il apparaît dans vos designs récents ; supprimez-le ensuite dans Canva.",
+            "en": "It appears in your recent designs; delete it afterwards in Canva."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Chaque personne se connecte avec son propre compte Canva.",
+          "en": "Each person connects with their own Canva account."
+        }
+      ],
       "verified_on": "2026-11-16",
       "transport": "remote",
       "auth": [
@@ -1550,6 +1820,48 @@
         "fr": "Votre espace est partagé et vous ne voulez aucun message en votre nom : l'assistant peut écrire dans le chat ClickUp.",
         "en": "Your workspace is shared and you want no message sent in your name: the assistant can write in ClickUp chat."
       },
+      "plan_words": {
+        "common": {
+          "fr": "Fonctionne sur tous les forfaits ClickUp.",
+          "en": "Works on every ClickUp plan."
+        },
+        "advanced": {
+          "fr": "Le nombre de demandes par jour dépend du forfait : 100 sur Free Forever, 300 sur Unlimited, 1 000 sur Business.",
+          "en": "The number of requests per day depends on the plan: 100 on Free Forever, 300 on Unlimited, 1,000 on Business."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Quelles tâches me sont assignées cette semaine ?",
+            "en": "Which tasks are assigned to me this week?"
+          },
+          {
+            "fr": "Qui sont les membres de mon espace de travail ?",
+            "en": "Who are the members of my workspace?"
+          },
+          {
+            "fr": "Combien de temps ai-je suivi aujourd'hui ?",
+            "en": "How much time did I track today?"
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Crée une tâche « Test ToolTrim » dans une liste de test.",
+            "en": "Create a task “ToolTrim test” in a test list."
+          },
+          "check": {
+            "fr": "Elle apparaît dans la liste ; supprimez-la ensuite.",
+            "en": "It appears in the list; delete it afterwards."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Une fois la limite du jour atteinte, il répond « RATE_LIMIT_EXCEEDED » ; elle ne se réinitialise pas, il faut attendre.",
+          "en": "Once the daily limit is reached, it answers “RATE_LIMIT_EXCEEDED”; it cannot be reset, you have to wait."
+        }
+      ],
       "verified_on": "2026-11-16",
       "transport": "remote",
       "auth": [
@@ -2094,6 +2406,44 @@
         "fr": "Vous n'utilisez pas l'application de bureau : le serveur en ligne de Figma suffit.",
         "en": "You don't use the desktop app: Figma's online server is enough."
       },
+      "control": [
+        {
+          "fr": "Il ne fonctionne que tant que l'application Figma est ouverte et le serveur activé dans Dev Mode.",
+          "en": "It only works while the Figma app is open and the server is on in Dev Mode."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Demande un siège Dev ou Full sur un forfait Professional, Education, Organization ou Enterprise ; Starter n'est pas dans la liste.",
+          "en": "Needs a Dev or Full seat on a Professional, Education, Organization or Enterprise plan; Starter is not on the list."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Donne-moi les couleurs de la frame sélectionnée.",
+            "en": "Give me the colours of the selected frame."
+          },
+          {
+            "fr": "Fais une capture de la frame sélectionnée.",
+            "en": "Take a screenshot of the selected frame."
+          },
+          {
+            "fr": "Décris la structure de la frame sélectionnée.",
+            "en": "Describe the structure of the selected frame."
+          }
+        ]
+      },
+      "troubleshoot": [
+        {
+          "fr": "Si rien n'apparaît, vérifiez que le serveur est toujours activé dans l'application Figma.",
+          "en": "If nothing shows, check that the server is still on in the Figma app."
+        },
+        {
+          "fr": "Avec VS Code, redémarrez Figma et VS Code.",
+          "en": "With VS Code, restart Figma and VS Code."
+        }
+      ],
       "verified_on": "2026-11-16",
       "transport": "local",
       "access": "read",
@@ -2269,6 +2619,62 @@
         "fr": "Vous ouvrez Figma de temps en temps pour une image : l'intérêt tient surtout aux fichiers d'interface.",
         "en": "You open Figma now and then for an image: the value lies mostly in interface files."
       },
+      "control": [
+        {
+          "fr": "Il n'accède qu'aux fichiers Figma auxquels votre compte a déjà accès.",
+          "en": "It only reaches the Figma files your account already has access to."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Fonctionne sur tous les forfaits Figma.",
+          "en": "Works on every Figma plan."
+        },
+        "advanced": {
+          "fr": "Lire un fichier compte dans une limite : 20 demandes par mois avec un siège View ou Collab, jusqu'à 200 par jour avec un siège Full ou Dev en Professional. Écrire dans les fichiers est gratuit pendant la bêta, payant à l'usage ensuite.",
+          "en": "Reading a file counts towards a limit: 20 requests a month with a View or Collab seat, up to 200 a day with a Full or Dev seat on Professional. Writing to files is free during the beta, usage-based later."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Liste les pages de ce fichier Figma.",
+            "en": "List the pages of this Figma file."
+          },
+          {
+            "fr": "Donne-moi les couleurs et variables de ce fichier.",
+            "en": "Give me the colours and variables of this file."
+          },
+          {
+            "fr": "Fais une capture de cette frame.",
+            "en": "Take a screenshot of this frame."
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Crée un nouveau fichier Figma nommé « Test ToolTrim ».",
+            "en": "Create a new Figma file named “ToolTrim test”."
+          },
+          "check": {
+            "fr": "Il apparaît dans vos brouillons Figma ; supprimez-le ensuite.",
+            "en": "It appears in your Figma drafts; delete it afterwards."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Pour connaître votre siège et vos forfaits, demandez-lui « whoami ».",
+          "en": "To see your seat and plans, ask it “whoami”."
+        },
+        {
+          "fr": "Le fichier doit appartenir au forfait de votre compte.",
+          "en": "The file must belong to your account's plan."
+        },
+        {
+          "fr": "Dans une organisation, l'administrateur peut avoir bloqué l'installation.",
+          "en": "In an organisation, the admin may have blocked the install."
+        }
+      ],
       "verified_on": "2026-11-16",
       "transport": "remote",
       "access": "read_write",
@@ -2653,6 +3059,46 @@
         "fr": "Vous voulez un branchement en un clic : il s'installe sur votre ordinateur, avec Python et des identifiants Google Cloud.",
         "en": "You want a one-click setup: it is installed on your computer, with Python and Google Cloud credentials."
       },
+      "control": [
+        {
+          "fr": "Il ne fait que lire : l'accès demandé est la lecture seule de vos données Analytics.",
+          "en": "It only reads: the access requested is read-only on your Analytics data."
+        },
+        {
+          "fr": "Il ne voit que les propriétés où votre compte a au moins le rôle Lecteur.",
+          "en": "It only sees the properties where your account has at least the Viewer role."
+        }
+      ],
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Liste mes comptes et propriétés Google Analytics.",
+            "en": "List my Google Analytics accounts and properties."
+          },
+          {
+            "fr": "Combien de visiteurs mon site a-t-il eus hier ?",
+            "en": "How many visitors did my site get yesterday?"
+          },
+          {
+            "fr": "Quelles sont mes dix pages les plus vues ce mois-ci ?",
+            "en": "What are my ten most viewed pages this month?"
+          }
+        ]
+      },
+      "troubleshoot": [
+        {
+          "fr": "Erreur 403 : activez les API Admin et Data dans votre projet Google Cloud, et vérifiez vos droits sur la propriété.",
+          "en": "Error 403: turn on the Admin and Data APIs in your Google Cloud project, and check your rights on the property."
+        },
+        {
+          "fr": "« Insufficient authentication scopes » : reconnectez-vous en demandant la lecture Analytics.",
+          "en": "“Insufficient authentication scopes”: sign in again asking for Analytics read access."
+        },
+        {
+          "fr": "Il faut Python 3.10 ou plus sur l'ordinateur.",
+          "en": "Python 3.10 or later is needed on the computer."
+        }
+      ],
       "verified_on": "2026-11-16",
       "transport": "local",
       "access": "read",
@@ -2814,6 +3260,66 @@
         "fr": "Vous voulez un branchement en un clic depuis Claude ou ChatGPT : HubSpot ne documente que l'adresse du serveur à ajouter.",
         "en": "You want a one-click setup from Claude or ChatGPT: HubSpot only documents the server address to add."
       },
+      "control": [
+        {
+          "fr": "À la connexion, vous choisissez le compte HubSpot et accordez les permissions.",
+          "en": "When connecting, you pick the HubSpot account and grant the permissions."
+        },
+        {
+          "fr": "Avant de créer ou de modifier une fiche du CRM, il demande votre confirmation.",
+          "en": "Before creating or editing a CRM record, it asks for your confirmation."
+        },
+        {
+          "fr": "Il ne voit que les fiches auxquelles votre utilisateur a accès.",
+          "en": "It only sees the records your user can access."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Ouvert à tous les comptes HubSpot.",
+          "en": "Open to every HubSpot account."
+        },
+        "advanced": {
+          "fr": "Avec les outils gratuits, pas de pipelines personnalisés. Devis : Revenue Hub Professional ou Enterprise. Suivi de votre visibilité dans les IA : Marketing Hub Professional ou Enterprise.",
+          "en": "With free tools, no custom pipelines. Quotes: Revenue Hub Professional or Enterprise. Tracking your visibility in AI answers: Marketing Hub Professional or Enterprise."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Qui sont mes dix derniers contacts ?",
+            "en": "Who are my ten latest contacts?"
+          },
+          {
+            "fr": "Quelles transactions sont encore ouvertes ?",
+            "en": "Which deals are still open?"
+          },
+          {
+            "fr": "Que vois-tu de mon compte HubSpot ?",
+            "en": "What can you see of my HubSpot account?"
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Crée un contact de test « Essai ToolTrim ».",
+            "en": "Create a test contact “ToolTrim test”."
+          },
+          "check": {
+            "fr": "Il vous demande confirmation, puis le contact apparaît dans HubSpot ; supprimez-le ensuite.",
+            "en": "It asks you to confirm, then the contact appears in HubSpot; delete it afterwards."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Les outils disponibles dépendent de votre abonnement et de vos droits : demandez-lui de vérifier votre compte (outil get_user_details).",
+          "en": "The tools available depend on your subscription and rights: ask it to check your account (get_user_details tool)."
+        },
+        {
+          "fr": "Après l'ajout d'autorisations, reconnectez l'application.",
+          "en": "After permissions are added, reconnect the app."
+        }
+      ],
       "verified_on": "2026-11-16",
       "status": "ga",
       "transport": "remote",
@@ -3132,6 +3638,62 @@
         "fr": "Vous n'avez pas encore d'automatisation : le serveur sert surtout à lancer et gérer des scénarios existants.",
         "en": "You have no automation yet: the server is mostly for running and managing existing scenarios."
       },
+      "control": [
+        {
+          "fr": "À la connexion, vous choisissez les autorisations : lancer vos scénarios, ou aussi les gérer.",
+          "en": "When connecting, you choose the permissions: run your scenarios, or manage them too."
+        },
+        {
+          "fr": "Avec la connexion au compte, vous pouvez limiter l'accès à une seule organisation Make.",
+          "en": "With account sign-in, you can limit access to a single Make organisation."
+        },
+        {
+          "fr": "Seuls vos scénarios actifs et lançables à la demande deviennent des actions.",
+          "en": "Only your active, on-demand scenarios become actions."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Lancer vos scénarios : sur tous les forfaits Make.",
+          "en": "Running your scenarios: on every Make plan."
+        },
+        "advanced": {
+          "fr": "En plus, sur les forfaits payants : gérer vos scénarios, connexions et data stores.",
+          "en": "On top, on paid plans: managing your scenarios, connections and data stores."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Liste mes scénarios Make.",
+            "en": "List my Make scenarios."
+          },
+          {
+            "fr": "Lesquels sont actifs ?",
+            "en": "Which ones are active?"
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Lance mon scénario de test.",
+            "en": "Run my test scenario."
+          },
+          "check": {
+            "fr": "Dans Make, l'historique du scénario montre l'exécution.",
+            "en": "In Make, the scenario's history shows the run."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Au-delà de 25 secondes, la réponse s'arrête mais le scénario continue jusqu'à 40 minutes dans Make : demandez le résultat ensuite.",
+          "en": "Past 25 seconds the answer stops but the scenario keeps running for up to 40 minutes in Make: ask for the result afterwards."
+        },
+        {
+          "fr": "Un scénario n'apparaît que s'il est actif et planifié « à la demande ».",
+          "en": "A scenario only shows if it is active and scheduled “on demand”."
+        }
+      ],
       "verified_on": "2026-11-16",
       "transport": "remote",
       "auth": [
@@ -3296,6 +3858,70 @@
         "fr": "Vos tableaux sont partagés avec des clients : l'assistant peut aussi donner des accès ou changer des rôles.",
         "en": "Your boards are shared with clients: the assistant can also grant access or change roles."
       },
+      "control": [
+        {
+          "fr": "À la connexion, vous choisissez l'équipe : il ne travaille que dans celle-là.",
+          "en": "When connecting, you pick the team: it only works in that one."
+        },
+        {
+          "fr": "Il respecte les droits de chaque tableau, vérifiés à chaque demande.",
+          "en": "It follows each board's rights, checked on every request."
+        },
+        {
+          "fr": "En Enterprise, l'administrateur l'ouvre à toute l'organisation ou à certaines équipes : Paramètres d'administration, Apps et intégrations, MCP.",
+          "en": "On Enterprise, the admin opens it to the whole organisation or some teams: Admin settings, Apps and integrations, MCP."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Fonctionne sur tous les forfaits Miro, y compris les équipes gratuites.",
+          "en": "Works on every Miro plan, free teams included."
+        },
+        "advanced": {
+          "fr": "En Enterprise, un administrateur doit d'abord l'autoriser.",
+          "en": "On Enterprise, an admin must allow it first."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Liste mes tableaux Miro.",
+            "en": "List my Miro boards."
+          },
+          {
+            "fr": "Résume le tableau de mon dernier atelier.",
+            "en": "Summarise my latest workshop board."
+          },
+          {
+            "fr": "Liste les commentaires de ce tableau.",
+            "en": "List the comments on this board."
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Crée un tableau « Test ToolTrim ».",
+            "en": "Create a board “ToolTrim test”."
+          },
+          "check": {
+            "fr": "Il apparaît dans votre équipe Miro ; supprimez-le ensuite.",
+            "en": "It appears in your Miro team; delete it afterwards."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "« Ce tableau appartient à une autre équipe » : reconnectez-vous en ouvrant un tableau de la bonne équipe.",
+          "en": "“This board belongs to a different team”: sign in again while viewing a board of the right team."
+        },
+        {
+          "fr": "Tableau introuvable : donnez son adresse complète.",
+          "en": "Board not found: give its full address."
+        },
+        {
+          "fr": "Rubrique MCP absente : il n'est pas activé pour votre équipe, ou il faut des droits d'administration.",
+          "en": "No MCP section: it is not enabled for your team, or admin rights are needed."
+        }
+      ],
       "verified_on": "2026-11-16",
       "transport": "remote",
       "auth": [
@@ -3751,6 +4377,66 @@
         "fr": "Vous êtes invité dans l'espace d'un client : les invités ne peuvent pas se connecter.",
         "en": "You are a guest in a client's workspace: guests cannot connect."
       },
+      "control": [
+        {
+          "fr": "À la connexion, vous choisissez l'espace de travail : l'assistant n'y voit que ce que votre compte voit.",
+          "en": "When connecting, you pick the workspace: the assistant only sees what your account sees."
+        },
+        {
+          "fr": "Les propriétaires de l'espace encadrent l'accès dans les contrôles d'administration de Notion.",
+          "en": "Workspace owners manage access in Notion's admin controls."
+        },
+        {
+          "fr": "Pour couper l'accès, choisissez « Déconnecter » ou « Effacer l'authentification » dans les réglages de votre assistant.",
+          "en": "To cut access, choose “Disconnect” or “Clear authentication” in your assistant's settings."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Fonctionne sur tous les forfaits Notion.",
+          "en": "Works on every Notion plan."
+        },
+        "advanced": {
+          "fr": "En plus, sur Business et Enterprise : connexion sans passer par le navigateur (utile aux outils de développeur) et recherche dans les outils reliés à Notion, avec Notion AI.",
+          "en": "On top, on Business and Enterprise: connecting without a browser (useful for developer tools) and searching the tools linked to Notion, with Notion AI."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Trouve mes pages qui parlent de facturation.",
+            "en": "Find my pages about invoicing."
+          },
+          {
+            "fr": "Résume mes dernières notes de réunion.",
+            "en": "Summarise my latest meeting notes."
+          },
+          {
+            "fr": "Liste mes pages favorites.",
+            "en": "List my favourite pages."
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Ajoute un commentaire « À relire » sur une page de test.",
+            "en": "Add a comment “To review” on a test page."
+          },
+          "check": {
+            "fr": "Ouvrez la page dans Notion : le commentaire y est, à votre nom.",
+            "en": "Open the page in Notion: the comment is there, under your name."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Vérifiez vos droits dans l'espace Notion visé : l'assistant ne fait que ce que votre compte permet.",
+          "en": "Check your rights in the Notion workspace you target: the assistant only does what your account allows."
+        },
+        {
+          "fr": "Dans une entreprise, un administrateur peut interdire l'ajout de nouveaux branchements à l'assistant.",
+          "en": "In a company, an admin may forbid adding new connections to the assistant."
+        }
+      ],
       "verified_on": "2026-11-16",
       "status": "ga",
       "transport": "remote",
@@ -3772,13 +4458,13 @@
         },
         {
           "kind": "write",
-          "fr": "Créer et modifier pages, bases, vues, commentaires et événements d'agenda",
-          "en": "Create and edit pages, databases, views, comments and calendar events"
+          "fr": "Créer et modifier pages, bases, vues, commentaires et événements d'agenda ; restaurer une version antérieure",
+          "en": "Create and edit pages, databases, views, comments and calendar events; restore an earlier version"
         },
         {
           "kind": "delete",
-          "fr": "Supprimer pages, bases et commentaires ; restaurer une version",
-          "en": "Delete pages, databases and comments; restore a version"
+          "fr": "Mettre à la corbeille des pages, des bases et des commentaires",
+          "en": "Move pages, databases and comments to trash"
         }
       ],
       "setup": [
@@ -4344,6 +5030,64 @@
         "fr": "Vous gérez plusieurs boutiques sans vérifier laquelle est branchée : l'assistant peut passer de l'une à l'autre.",
         "en": "You run several stores without checking which one is connected: the assistant can switch between them."
       },
+      "control": [
+        {
+          "fr": "À la connexion, vous choisissez la boutique, et vous pouvez refuser la demande.",
+          "en": "When connecting, you pick the store, and you can decline the request."
+        },
+        {
+          "fr": "Vous réglez le niveau d'accès de chaque membre dans l'administration Shopify ; certaines autorisations sont en lecture seule.",
+          "en": "You set each member's access level in the Shopify admin; some permissions are read-only."
+        },
+        {
+          "fr": "Il ne peut ni rembourser, ni annuler ou encaisser une commande, ni toucher au forfait, aux paiements, aux taxes ou aux domaines.",
+          "en": "It cannot refund, cancel or capture an order, nor touch your plan, payments, taxes or domains."
+        },
+        {
+          "fr": "Pour couper l'accès : désinstallez l'intégration dans l'administration Shopify.",
+          "en": "To cut access: uninstall the integration in the Shopify admin."
+        }
+      ],
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Montre mes dix dernières commandes.",
+            "en": "Show my ten latest orders."
+          },
+          {
+            "fr": "Quels produits ont moins de cinq articles en stock ?",
+            "en": "Which products have fewer than five items in stock?"
+          },
+          {
+            "fr": "Donne-moi les informations de ma boutique.",
+            "en": "Give me my store's details."
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Crée un produit « Test ToolTrim ».",
+            "en": "Create a product “ToolTrim test”."
+          },
+          "check": {
+            "fr": "Il apparaît dans vos produits : vérifiez qu'il n'est pas en vente, puis supprimez-le.",
+            "en": "It appears in your products: check it is not for sale, then delete it."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Après un changement de boutique, ouvrez une nouvelle conversation : l'ancienne garde la boutique précédente.",
+          "en": "After switching stores, open a new conversation: the old one keeps the previous store."
+        },
+        {
+          "fr": "Un gros lot de modifications peut s'arrêter en route : terminez dans l'administration.",
+          "en": "A large batch of changes can stop partway: finish it in the admin."
+        },
+        {
+          "fr": "Ses droits dépendent de ceux de votre compte employé.",
+          "en": "Its rights depend on your staff account's."
+        }
+      ],
       "verified_on": "2026-11-16",
       "access": "read_write",
       "plan": "unknown",
@@ -4749,6 +5493,52 @@
         "fr": "Vous ne voulez aucun message envoyé en votre nom : l'assistant peut écrire dans n'importe quelle conversation.",
         "en": "You want no message sent in your name: the assistant can write in any conversation."
       },
+      "control": [
+        {
+          "fr": "À la connexion, vous accordez l'accès ; les canaux privés ne sont lus qu'avec votre accord.",
+          "en": "When connecting, you grant access; private channels are only read with your consent."
+        },
+        {
+          "fr": "Les administrateurs de l'espace approuvent et gèrent les assistants branchés, et suivent leur activité dans les journaux d'audit.",
+          "en": "Workspace admins approve and manage connected assistants, and follow their activity in the audit logs."
+        }
+      ],
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Résume #général depuis hier.",
+            "en": "Summarise #general since yesterday."
+          },
+          {
+            "fr": "Retrouve les messages qui parlent du devis Martin.",
+            "en": "Find the messages about the Martin quote."
+          },
+          {
+            "fr": "Quels canaux suis-je ?",
+            "en": "Which channels am I in?"
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Prépare un brouillon de message dans un canal de test.",
+            "en": "Draft a message in a test channel."
+          },
+          "check": {
+            "fr": "Le brouillon apparaît dans Slack, non envoyé.",
+            "en": "The draft appears in Slack, not sent."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Si votre espace limite les adresses IP, les demandes venues d'ailleurs sont refusées.",
+          "en": "If your workspace limits IP addresses, requests from elsewhere are refused."
+        },
+        {
+          "fr": "L'assistant doit être une application publiée dans le répertoire Slack ou interne à votre entreprise.",
+          "en": "The assistant must be an app published in the Slack directory or internal to your company."
+        }
+      ],
       "verified_on": "2026-11-16",
       "transport": "remote",
       "auth": [
@@ -4869,6 +5659,64 @@
         "fr": "Vous voulez confier vos virements à l'assistant : le serveur est en bêta et chaque envoi d'argent attend votre confirmation.",
         "en": "You want the assistant to handle your transfers: the server is in beta and every money transfer waits for your confirmation."
       },
+      "control": [
+        {
+          "fr": "À la connexion, vous choisissez les comptes et les environnements, production ou test, avec des droits pour chacun.",
+          "en": "When connecting, you pick the accounts and environments, live or test, with rights for each."
+        },
+        {
+          "fr": "Les actions marquées « Confirmation humaine » attendent votre accord dans le Dashboard Stripe, pendant 24 heures.",
+          "en": "Actions marked “Human confirmation” wait for your approval in the Stripe Dashboard, for 24 hours."
+        },
+        {
+          "fr": "Un administrateur active ou coupe l'accès pour toute l'équipe dans les réglages du Dashboard, rubrique accès MCP et CLI.",
+          "en": "An admin turns access on or off for the whole team in the Dashboard settings, under MCP and CLI access."
+        },
+        {
+          "fr": "Pour retirer l'accès : réglages de votre profil, « Sessions OAuth », puis « Révoquer l'accès ».",
+          "en": "To remove access: your profile settings, “OAuth sessions”, then “Revoke access”."
+        }
+      ],
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Quel est mon solde disponible ?",
+            "en": "What is my available balance?"
+          },
+          {
+            "fr": "Combien ai-je encaissé la semaine dernière ?",
+            "en": "How much did I take in last week?"
+          },
+          {
+            "fr": "Qui sont mes cinq derniers clients ?",
+            "en": "Who are my five latest customers?"
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "En mode test, crée un client nommé « Essai ToolTrim ».",
+            "en": "In test mode, create a customer named “ToolTrim test”."
+          },
+          "check": {
+            "fr": "Dans le Dashboard, en mode test, le client apparaît ; supprimez-le ensuite.",
+            "en": "In the Dashboard, in test mode, the customer appears; delete it afterwards."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Sur un réseau d'entreprise, demandez au service informatique d'autoriser mcp.stripe.com.",
+          "en": "On a company network, ask IT to allow mcp.stripe.com."
+        },
+        {
+          "fr": "Pour un compte connecté (Connect), la connexion au compte ne marche pas : il faut une clé d'accès d'agent.",
+          "en": "For a connected account (Connect), signing in does not work: you need an agent access key."
+        },
+        {
+          "fr": "Remplacez avant le 30 novembre 2026 les clés sans restriction par des clés d'agent : les autres seront refusées.",
+          "en": "Replace unrestricted keys with agent keys before 30 November 2026: the others will be refused."
+        }
+      ],
       "verified_on": "2026-11-16",
       "status": "beta",
       "transport": "remote",
@@ -5135,6 +5983,58 @@
         "fr": "Vos formulaires sont critiques pour votre activité : le serveur est encore en bêta.",
         "en": "Your forms are critical to your business: the server is still in beta."
       },
+      "control": [
+        {
+          "fr": "Il ne peut supprimer ni un formulaire ni une réponse.",
+          "en": "It cannot delete a form or a response."
+        },
+        {
+          "fr": "Un nouveau formulaire reste un brouillon privé tant que vous ne demandez pas de le publier.",
+          "en": "A new form stays a private draft until you ask to publish it."
+        },
+        {
+          "fr": "Il ne lit vos réponses que si vous le demandez.",
+          "en": "It only reads your responses when you ask."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Fonctionne sur tous les forfaits Tally, y compris le gratuit.",
+          "en": "Works on every Tally plan, free included."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Liste mes formulaires Tally.",
+            "en": "List my Tally forms."
+          },
+          {
+            "fr": "Combien de réponses a reçu mon dernier formulaire ?",
+            "en": "How many responses did my latest form get?"
+          },
+          {
+            "fr": "Résume les réponses de mon formulaire de contact.",
+            "en": "Summarise the responses to my contact form."
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Crée un formulaire de test avec un champ e-mail.",
+            "en": "Create a test form with an email field."
+          },
+          "check": {
+            "fr": "Il apparaît en brouillon privé dans Tally ; supprimez-le ensuite.",
+            "en": "It appears as a private draft in Tally; delete it afterwards."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Dans Claude Desktop, redémarrez l'application après l'ajout.",
+          "en": "In Claude Desktop, restart the app after adding it."
+        }
+      ],
       "verified_on": "2026-11-16",
       "status": "beta",
       "transport": "remote",
@@ -5277,6 +6177,44 @@
         "fr": "Vous craignez une mise en ligne par erreur : l'assistant peut publier le site.",
         "en": "You fear publishing by mistake: the assistant can publish the site."
       },
+      "control": [
+        {
+          "fr": "À la connexion, vous autorisez l'assistant sur vos sites ; une application de liaison s'installe pendant cette étape.",
+          "en": "When connecting, you authorise the assistant on your sites; a bridge app installs during this step."
+        }
+      ],
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Liste mes sites Webflow.",
+            "en": "List my Webflow sites."
+          },
+          {
+            "fr": "Liste les pages de mon site.",
+            "en": "List my site's pages."
+          },
+          {
+            "fr": "Liste les collections de mon CMS.",
+            "en": "List my CMS collections."
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Crée un élément de test en brouillon dans une collection.",
+            "en": "Create a draft test item in a collection."
+          },
+          "check": {
+            "fr": "Il apparaît en brouillon, non publié ; supprimez-le ensuite.",
+            "en": "It appears as a draft, not published; delete it afterwards."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Il faut un compte Webflow avec au moins un site auquel vous avez accès.",
+          "en": "You need a Webflow account with at least one site you can access."
+        }
+      ],
       "verified_on": "2026-11-16",
       "transport": "remote",
       "auth": [
@@ -5671,6 +6609,66 @@
         "fr": "Vous ne voulez pas choisir les actions une à une : il faut activer chaque action que l'assistant peut faire.",
         "en": "You don't want to pick actions one by one: each action the assistant may take has to be turned on."
       },
+      "control": [
+        {
+          "fr": "Votre assistant demande votre accord au premier lancement d'une action Zapier.",
+          "en": "Your assistant asks for your approval the first time a Zapier action runs."
+        },
+        {
+          "fr": "En mode géré, sur mcp.zapier.com, vous fixez la liste exacte des actions, sans que l'assistant puisse en ajouter.",
+          "en": "In managed mode, on mcp.zapier.com, you set the exact list of actions, and the assistant cannot add any."
+        },
+        {
+          "fr": "Chaque action lancée est notée dans l'onglet Historique de mcp.zapier.com.",
+          "en": "Each action run is logged in the History tab of mcp.zapier.com."
+        }
+      ],
+      "plan_words": {
+        "common": {
+          "fr": "Utilise votre forfait Zapier actuel : chaque action réussie compte pour 2 tâches.",
+          "en": "Uses your current Zapier plan: each successful action counts as 2 tasks."
+        },
+        "advanced": {
+          "fr": "Les outils de workflow demandent l'accès anticipé.",
+          "en": "Workflow tools need early access."
+        }
+      },
+      "first_requests": {
+        "read": [
+          {
+            "fr": "Quelles actions Zapier as-tu ?",
+            "en": "Which Zapier actions do you have?"
+          },
+          {
+            "fr": "Quelles applications sont connectées ?",
+            "en": "Which apps are connected?"
+          }
+        ],
+        "write": {
+          "ask": {
+            "fr": "Ajoute une ligne de test dans mon tableur de suivi.",
+            "en": "Add a test row to my tracking spreadsheet."
+          },
+          "check": {
+            "fr": "La ligne apparaît dans le tableur ; supprimez-la ensuite.",
+            "en": "The row appears in the spreadsheet; delete it afterwards."
+          }
+        }
+      },
+      "troubleshoot": [
+        {
+          "fr": "Quand votre compte atteint sa limite de tâches, les actions échouent : attendez le nouveau cycle ou changez de forfait.",
+          "en": "When your account hits its task limit, actions fail: wait for the new cycle or change plan."
+        },
+        {
+          "fr": "Sans application connectée dans Zapier, il n'a aucune action.",
+          "en": "With no app connected in Zapier, it has no action."
+        },
+        {
+          "fr": "Les connexions partagées par un autre utilisateur ne sont pas reprises.",
+          "en": "Connections shared by another user are not included."
+        }
+      ],
       "verified_on": "2026-11-16",
       "transport": "remote",
       "auth": [

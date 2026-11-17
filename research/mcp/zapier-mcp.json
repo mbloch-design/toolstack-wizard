@@ -31,6 +31,66 @@
     "fr": "Vous ne voulez pas choisir les actions une à une : il faut activer chaque action que l'assistant peut faire.",
     "en": "You don't want to pick actions one by one: each action the assistant may take has to be turned on."
   },
+  "control": [
+    {
+      "fr": "Votre assistant demande votre accord au premier lancement d'une action Zapier.",
+      "en": "Your assistant asks for your approval the first time a Zapier action runs."
+    },
+    {
+      "fr": "En mode géré, sur mcp.zapier.com, vous fixez la liste exacte des actions, sans que l'assistant puisse en ajouter.",
+      "en": "In managed mode, on mcp.zapier.com, you set the exact list of actions, and the assistant cannot add any."
+    },
+    {
+      "fr": "Chaque action lancée est notée dans l'onglet Historique de mcp.zapier.com.",
+      "en": "Each action run is logged in the History tab of mcp.zapier.com."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Utilise votre forfait Zapier actuel : chaque action réussie compte pour 2 tâches.",
+      "en": "Uses your current Zapier plan: each successful action counts as 2 tasks."
+    },
+    "advanced": {
+      "fr": "Les outils de workflow demandent l'accès anticipé.",
+      "en": "Workflow tools need early access."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Quelles actions Zapier as-tu ?",
+        "en": "Which Zapier actions do you have?"
+      },
+      {
+        "fr": "Quelles applications sont connectées ?",
+        "en": "Which apps are connected?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Ajoute une ligne de test dans mon tableur de suivi.",
+        "en": "Add a test row to my tracking spreadsheet."
+      },
+      "check": {
+        "fr": "La ligne apparaît dans le tableur ; supprimez-la ensuite.",
+        "en": "The row appears in the spreadsheet; delete it afterwards."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Quand votre compte atteint sa limite de tâches, les actions échouent : attendez le nouveau cycle ou changez de forfait.",
+      "en": "When your account hits its task limit, actions fail: wait for the new cycle or change plan."
+    },
+    {
+      "fr": "Sans application connectée dans Zapier, il n'a aucune action.",
+      "en": "With no app connected in Zapier, it has no action."
+    },
+    {
+      "fr": "Les connexions partagées par un autre utilisateur ne sont pas reprises.",
+      "en": "Connections shared by another user are not included."
+    }
+  ],
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

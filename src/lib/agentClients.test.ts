@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import catalog from "@/data/agents/catalog.json";
 import type { McpSheet } from "@/lib/agents";
 import { clientsOf, cursorInstallLink, plugCard, vsCodeInstallLink } from "@/lib/agentClients";
-import { sheetMarkdown, sourceLinks, toolTopics, toolsSummary } from "@/lib/agentSheet";
+import { hookSentence, sheetMarkdown, sourceLinks, toolTopics, toolsSummary } from "@/lib/agentSheet";
 
 const servers = catalog.servers as McpSheet[];
 const notion = servers.find((s) => s.slug === "notion-mcp")!;
@@ -68,5 +68,14 @@ describe("technical sheet and sources", () => {
     expect(md).toContain("# Brancher Notion à votre assistant IA");
     expect(md).toContain("https://tooltrim.com/fr/mcp/notion-mcp");
     expect(md).toContain("## Sources");
+  });
+});
+
+describe("the sheet's hook (step 1, 17/11)", () => {
+  const sheet = (slug: string) => servers.find((s) => s.slug === slug)!;
+  it("says what it can do, the plan and the easiest way in, from the data only", () => {
+    expect(hookSentence(notion, "Notion", "fr")).toBe("Votre assistant peut lire, modifier et supprimer dans Notion. Fonctionne sur tous les forfaits Notion. En un clic depuis Claude, ChatGPT ou Gemini.");
+    expect(hookSentence(sheet("google-analytics-mcp"), "Google Analytics", "fr")).toBe("Votre assistant peut lire vos données Google Analytics, sans rien y modifier. Installé sur votre ordinateur.");
+    expect(hookSentence(sheet("stripe-mcp"), "Stripe", "fr")).toBe("Votre assistant peut lire, modifier et payer dans Stripe. En un clic depuis Claude ou ChatGPT.");
   });
 });

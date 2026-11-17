@@ -147,7 +147,7 @@ export function agentAccessIndex(access) {
 
 // ── Section « agents » (S1) : fiche serveur (research/mcp) et fiche skill (research/skills) ──
 const INSTALL_TYPES = ["command", "url", "config", "steps"];
-const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "card", "examples", "for", "not_for", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "claude_directory", "docs_url", "sources"]);
+const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "card", "examples", "for", "not_for", "control", "plan_words", "first_requests", "troubleshoot", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "claude_directory", "docs_url", "sources"]);
 const SKILL_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "server", "category", "summary", "agents", "install", "requires", "verified_on", "status", "docs_url", "sources"]);
 const isPair = (value) => value && isText(value.fr) && isText(value.en);
 
@@ -177,6 +177,15 @@ export function validateMcpSheet(sheet, { catalogSlugs, skillSlugs } = {}) {
   if ("claude_directory" in (sheet || {})) {
     const d = sheet.claude_directory;
     if (!/^https:\/\/claude\.ai\/directory\/[a-z0-9-]+$/.test(d?.url || "") || !/^\d{4}-\d{2}$/.test(d?.added || "") || !DATE.test(d?.read_on || "")) errors.push(`${at} : claude_directory { url claude.ai/directory/<slug>, added AAAA-MM, read_on }`);
+  }
+  // Step 1 of the product analysis (17/11): gestures to stay in control, the plan in plain words, first requests,
+  // what to check when it fails. Each from the vendor's documentation; absent rather than empty.
+  for (const key of ["control", "troubleshoot"]) if (key in (sheet || {}) && (!Array.isArray(sheet[key]) || !sheet[key].length || !sheet[key].every(isPair))) errors.push(`${at} : ${key}, phrases fr/en`);
+  if ("plan_words" in (sheet || {}) && (!isPair(sheet.plan_words?.common) || ("advanced" in sheet.plan_words && !isPair(sheet.plan_words.advanced)))) errors.push(`${at} : plan_words { common, advanced? } fr/en`);
+  if ("first_requests" in (sheet || {})) {
+    const f = sheet.first_requests;
+    if (!Array.isArray(f?.read) || !f.read.length || f.read.length > 3 || !f.read.every(isPair)) errors.push(`${at} : first_requests.read, 1 à 3 demandes fr/en`);
+    if (f && "write" in f && (!isPair(f.write?.ask) || !isPair(f.write?.check))) errors.push(`${at} : first_requests.write { ask, check } fr/en`);
   }
   // One sentence written for the card (S1 bis): short enough for two lines, never cut mid-sentence.
   if ("card" in (sheet || {}) && (!isPair(sheet.card) || sheet.card.fr.length > 90 || sheet.card.en.length > 90)) errors.push(`${at} : card fr/en, 90 signes au plus`);

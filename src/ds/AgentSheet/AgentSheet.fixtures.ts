@@ -20,6 +20,8 @@ export const sheetStates = {
   buffer: server("buffer-mcp"),
   /** A Gemini command with no Gemini documentation we could read: the card says so, never guesses. */
   miro: server("miro-mcp"),
+  /** Reading only: every action tagged « Lit », no risk filter to offer. */
+  googleAnalytics: server("google-analytics-mcp"),
   /** Paid plans, no tool list published, no safeguard documented. */
   ahrefs: server("ahrefs-mcp"),
 };

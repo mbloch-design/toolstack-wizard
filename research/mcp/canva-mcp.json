@@ -31,6 +31,54 @@
     "fr": "Vous attendez un visuel prêt à publier : un design généré se relit et s'ajuste dans Canva.",
     "en": "You expect a visual ready to publish: a generated design still needs a review in Canva."
   },
+  "control": [
+    {
+      "fr": "L'assistant n'agit que sur les designs et fichiers que votre compte peut voir ou modifier.",
+      "en": "The assistant only acts on the designs and files your account can see or edit."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits Canva.",
+      "en": "Works on every Canva plan."
+    },
+    "advanced": {
+      "fr": "En plus, avec Canva Pro et au-delà : redimensionner un design, remplissage automatique, kits et modèles de marque.",
+      "en": "On top, with Canva Pro and up: resizing a design, autofill, brand kits and brand templates."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Retrouve mes designs qui contiennent « devis ».",
+        "en": "Find my designs that contain “quote”."
+      },
+      {
+        "fr": "Liste les dossiers de mon Canva.",
+        "en": "List the folders in my Canva."
+      },
+      {
+        "fr": "Quels formats d'export sont possibles pour mon dernier design ?",
+        "en": "Which export formats are possible for my latest design?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Crée un design vierge au format post Instagram, nommé « Test ToolTrim ».",
+        "en": "Create a blank Instagram post design named “ToolTrim test”."
+      },
+      "check": {
+        "fr": "Il apparaît dans vos designs récents ; supprimez-le ensuite dans Canva.",
+        "en": "It appears in your recent designs; delete it afterwards in Canva."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Chaque personne se connecte avec son propre compte Canva.",
+      "en": "Each person connects with their own Canva account."
+    }
+  ],
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

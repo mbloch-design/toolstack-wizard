@@ -35,6 +35,66 @@
     "fr": "Vous êtes invité dans l'espace d'un client : les invités ne peuvent pas se connecter.",
     "en": "You are a guest in a client's workspace: guests cannot connect."
   },
+  "control": [
+    {
+      "fr": "À la connexion, vous choisissez l'espace de travail : l'assistant n'y voit que ce que votre compte voit.",
+      "en": "When connecting, you pick the workspace: the assistant only sees what your account sees."
+    },
+    {
+      "fr": "Les propriétaires de l'espace encadrent l'accès dans les contrôles d'administration de Notion.",
+      "en": "Workspace owners manage access in Notion's admin controls."
+    },
+    {
+      "fr": "Pour couper l'accès, choisissez « Déconnecter » ou « Effacer l'authentification » dans les réglages de votre assistant.",
+      "en": "To cut access, choose “Disconnect” or “Clear authentication” in your assistant's settings."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits Notion.",
+      "en": "Works on every Notion plan."
+    },
+    "advanced": {
+      "fr": "En plus, sur Business et Enterprise : connexion sans passer par le navigateur (utile aux outils de développeur) et recherche dans les outils reliés à Notion, avec Notion AI.",
+      "en": "On top, on Business and Enterprise: connecting without a browser (useful for developer tools) and searching the tools linked to Notion, with Notion AI."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Trouve mes pages qui parlent de facturation.",
+        "en": "Find my pages about invoicing."
+      },
+      {
+        "fr": "Résume mes dernières notes de réunion.",
+        "en": "Summarise my latest meeting notes."
+      },
+      {
+        "fr": "Liste mes pages favorites.",
+        "en": "List my favourite pages."
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Ajoute un commentaire « À relire » sur une page de test.",
+        "en": "Add a comment “To review” on a test page."
+      },
+      "check": {
+        "fr": "Ouvrez la page dans Notion : le commentaire y est, à votre nom.",
+        "en": "Open the page in Notion: the comment is there, under your name."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Vérifiez vos droits dans l'espace Notion visé : l'assistant ne fait que ce que votre compte permet.",
+      "en": "Check your rights in the Notion workspace you target: the assistant only does what your account allows."
+    },
+    {
+      "fr": "Dans une entreprise, un administrateur peut interdire l'ajout de nouveaux branchements à l'assistant.",
+      "en": "In a company, an admin may forbid adding new connections to the assistant."
+    }
+  ],
   "verified_on": "2026-11-16",
   "status": "ga",
   "transport": "remote",
@@ -56,13 +116,13 @@
     },
     {
       "kind": "write",
-      "fr": "Créer et modifier pages, bases, vues, commentaires et événements d'agenda",
-      "en": "Create and edit pages, databases, views, comments and calendar events"
+      "fr": "Créer et modifier pages, bases, vues, commentaires et événements d'agenda ; restaurer une version antérieure",
+      "en": "Create and edit pages, databases, views, comments and calendar events; restore an earlier version"
     },
     {
       "kind": "delete",
-      "fr": "Supprimer pages, bases et commentaires ; restaurer une version",
-      "en": "Delete pages, databases and comments; restore a version"
+      "fr": "Mettre à la corbeille des pages, des bases et des commentaires",
+      "en": "Move pages, databases and comments to trash"
     }
   ],
   "setup": [

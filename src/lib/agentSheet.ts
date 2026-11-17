@@ -4,7 +4,7 @@
  * classification, made from each tool's name and line; the vendors do not group their tools this way.
  */
 import type { AgentCapabilityKind } from "@/data/types";
-import { KIND_WORDS, PLAN_WORDS, RISK_ORDER, SAFEGUARD_WORDS, TRANSPORT_WORDS, authWords, type Lang, type McpSheet, type Pair } from "@/lib/agents";
+import { KIND_WORDS, PLAN_WORDS, RISK_ORDER, SAFEGUARD_WORDS, TRANSPORT_WORDS, authWords, say, type Lang, type McpSheet, type Pair } from "@/lib/agents";
 
 type Tool = NonNullable<McpSheet["tools"]>[number];
 const P = (fr: string, en: string): Pair => ({ fr, en });
@@ -44,10 +44,6 @@ export function toolTopics(tools: Tool[]): ToolTopic[] {
   return [...TOPICS, OTHER].flatMap((topic) => groups.get(topic.id) ?? []).map((group) => ({ ...group, tools: [...group.tools].sort((a, b) => rank(a.kind) - rank(b.kind)) }));
 }
 
-/** The risk a line carries, said as a verb; nothing for reading. */
-export const RISK_PILL: Partial<Record<AgentCapabilityKind, Pair>> = {
-  pay: P("Paie", "Pays"), delete: P("Supprime", "Deletes"), send: P("Envoie", "Sends"), write: P("Modifie", "Edits"),
-};
 
 /** « 70 actions, dont 5 qui suppriment » / « 15 actions, dont 3 qui paient ». */
 export function toolsSummary(tools: Tool[], lang: Lang) {
@@ -128,4 +124,35 @@ export function sheetMarkdown(sheet: McpSheet, { toolName, url, lang }: { toolNa
   if (sheet.examples?.length) lines.push("", `## ${t("Demandes types", "Example requests")}`, "", ...sheet.examples.map((e) => `- ${say(e)}`));
   lines.push("", `## Sources`, "", ...sheet.sources.map((s) => `- [${s.label}](${s.url})`), "");
   return lines.join("\n");
+}
+
+const HOOK_KINDS = ["read", "write", "delete", "send", "pay"] as const;
+const raiseFirst = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
+const VERBS = { read: ["lire", "read"], write: ["modifier", "edit"], delete: ["supprimer", "delete"], send: ["envoyer", "send"], pay: ["payer", "pay"] } as const;
+const PLAN_PHRASE = { all: ["Sur tous les forfaits", "On every plan"], paid: ["Sur les forfaits payants", "On paid plans"], specific: ["Sur certains forfaits", "On some plans"], unknown: null } as const;
+
+/**
+ * The hook under the title, composed from the data only (17/11): what the assistant can do, on which plan, and the
+ * easiest way in. « Votre assistant peut lire, modifier et supprimer dans Notion. Fonctionne sur tous les forfaits
+ * Notion. En un clic depuis Claude, ChatGPT ou Gemini. »
+ */
+export function hookSentence(sheet: McpSheet, toolName: string, lang: Lang) {
+  const t = (fr: string, en: string) => (lang === "en" ? en : fr);
+  const kinds = HOOK_KINDS.filter((kind) => sheet.capabilities?.some((line) => line.kind === kind));
+  const words = kinds.map((kind) => (lang === "en" ? VERBS[kind][1] : VERBS[kind][0]));
+  const join = (list: string[], last: string) => (list.length < 2 ? list.join("") : `${list.slice(0, -1).join(", ")} ${last} ${list[list.length - 1]}`);
+  const can = kinds.length === 1 && kinds[0] === "read"
+    ? t(`Votre assistant peut lire vos données ${toolName}, sans rien y modifier.`, `Your assistant can read your ${toolName} data, without changing anything.`)
+    : kinds.length ? t(`Votre assistant peut ${join(words, "et")} dans ${toolName}.`, `Your assistant can ${join(words, "and")} in ${toolName}.`)
+      : t(`Votre assistant peut travailler dans ${toolName}.`, `Your assistant can work in ${toolName}.`);
+  const ways = (["claude", "chatgpt", "gemini", "copilot"] as const).filter((a) => sheet.setup?.some((w) => w.assistant === a && (w.how === "connector" || w.how === "plugin")));
+  const names = ways.map((a) => ({ claude: "Claude", chatgpt: "ChatGPT", gemini: "Gemini", copilot: "Copilot" })[a]);
+  const path = names.length ? t(`en un clic depuis ${join(names, "ou")}`, `in one click from ${join(names, "or")}`)
+    : sheet.transport === "local" ? t("installé sur votre ordinateur", "installed on your computer")
+      : sheet.install.some((row) => row.client === "any" && row.type === "url") ? t("en ajoutant son adresse à votre assistant", "by adding its address to your assistant") : null;
+  const plan = sheet.plan_words ? say(lang, sheet.plan_words.common) : null;
+  const planPhrase = PLAN_PHRASE[sheet.plan];
+  if (plan) return [can, plan, path ? `${raiseFirst(path)}.` : null].filter(Boolean).join(" ");
+  const tail = [planPhrase ? (lang === "en" ? planPhrase[1] : planPhrase[0]) : null, path].filter(Boolean).join(", ");
+  return tail ? `${can} ${raiseFirst(tail)}.` : can;
 }

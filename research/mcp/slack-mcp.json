@@ -35,6 +35,52 @@
     "fr": "Vous ne voulez aucun message envoyé en votre nom : l'assistant peut écrire dans n'importe quelle conversation.",
     "en": "You want no message sent in your name: the assistant can write in any conversation."
   },
+  "control": [
+    {
+      "fr": "À la connexion, vous accordez l'accès ; les canaux privés ne sont lus qu'avec votre accord.",
+      "en": "When connecting, you grant access; private channels are only read with your consent."
+    },
+    {
+      "fr": "Les administrateurs de l'espace approuvent et gèrent les assistants branchés, et suivent leur activité dans les journaux d'audit.",
+      "en": "Workspace admins approve and manage connected assistants, and follow their activity in the audit logs."
+    }
+  ],
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Résume #général depuis hier.",
+        "en": "Summarise #general since yesterday."
+      },
+      {
+        "fr": "Retrouve les messages qui parlent du devis Martin.",
+        "en": "Find the messages about the Martin quote."
+      },
+      {
+        "fr": "Quels canaux suis-je ?",
+        "en": "Which channels am I in?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Prépare un brouillon de message dans un canal de test.",
+        "en": "Draft a message in a test channel."
+      },
+      "check": {
+        "fr": "Le brouillon apparaît dans Slack, non envoyé.",
+        "en": "The draft appears in Slack, not sent."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Si votre espace limite les adresses IP, les demandes venues d'ailleurs sont refusées.",
+      "en": "If your workspace limits IP addresses, requests from elsewhere are refused."
+    },
+    {
+      "fr": "L'assistant doit être une application publiée dans le répertoire Slack ou interne à votre entreprise.",
+      "en": "The assistant must be an app published in the Slack directory or internal to your company."
+    }
+  ],
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

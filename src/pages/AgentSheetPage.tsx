@@ -82,7 +82,7 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
   );
   const skillCard = (k: SkillSheet) => (
     <AgentCard key={k.slug} icon={logo(k.host_tool)} name={k.name} by={byLine(k.publisher, lang)} summary={cardSentence(say(lang, k.summary))}
-      facts={[{ kind: "skill", text: t("Savoir-faire", "Know-how") as string }, { kind: "assistant", text: k.agents.length > 3 ? t(`${k.agents.length} assistants`, `${k.agents.length} assistants`) as string : k.agents.map((a) => clientName(a, lang)).join(", ") }]}
+      facts={[{ kind: "skill", text: t("Savoir-faire", "Know-how") as string }, { kind: "assistant", text: k.agents.length > 3 ? t(`${k.agents.length} assistants`, `${k.agents.length} assistants`) as string : k.agents.map((a) => (a === "any" ? t(`Tout assistant branché à ${hostName}`, `Any assistant plugged into ${hostName}`) as string : clientName(a, lang))).join(", ") }]}
       renderLink={(className, content) => <Link to={`${prefix}/skills/${k.slug}`} className={className}>{content}</Link>} />
   );
 
@@ -118,7 +118,7 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
         { label: kind === "mcp" && siblingCount === 0 ? hostName : sheet.name },
       ]} />
       {server
-        ? <McpSheetView sheet={server} logo={host ? <Logo tool={host} size={48} /> : undefined} title={t(`Brancher ${hostName} à votre assistant`, `Plug ${hostName} into your assistant`) as string} toolName={hostName} lang={lang} pageUrl={url} reportHref={reportHref} related={related} />
+        ? <McpSheetView sheet={server} logo={host ? <Logo tool={host} size={40} /> : undefined} title={t(`Brancher ${hostName} à votre assistant`, `Plug ${hostName} into your assistant`) as string} toolName={hostName} lang={lang} pageUrl={url} reportHref={reportHref} related={related} />
         : <>
           <CatalogTitle title={sheet.name} lead={t(`Un savoir-faire officiel de ${sheet.publisher} pour votre assistant.`, `Official know-how from ${sheet.publisher} for your assistant.`) as string} />
           <SkillSheetView skill={skill!} lang={lang} reportHref={reportHref} related={related} />

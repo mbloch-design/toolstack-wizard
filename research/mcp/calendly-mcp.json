@@ -35,6 +35,58 @@
     "fr": "Vous voulez seulement consulter votre agenda : l'assistant peut aussi annuler un rendez-vous, sans garde-fou documenté.",
     "en": "You only want to look at your calendar: the assistant can also cancel a meeting, with no documented safeguard."
   },
+  "control": [
+    {
+      "fr": "Dans Claude, activez Calendly dans chaque conversation où vous voulez l'utiliser.",
+      "en": "In Claude, turn Calendly on in each conversation where you want it."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits Calendly, y compris le gratuit.",
+      "en": "Works on every Calendly plan, free included."
+    },
+    "advanced": {
+      "fr": "Certaines actions dépendent de votre forfait ; Calendly ne dit pas lesquelles.",
+      "en": "Some actions depend on your plan; Calendly does not say which."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Quels rendez-vous ai-je demain ?",
+        "en": "Which meetings do I have tomorrow?"
+      },
+      {
+        "fr": "Quels types de rendez-vous ai-je ?",
+        "en": "Which event types do I have?"
+      },
+      {
+        "fr": "Quels créneaux sont libres jeudi ?",
+        "en": "Which slots are free on Thursday?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Crée un lien de réservation à usage unique pour mon rendez-vous découverte.",
+        "en": "Create a single-use booking link for my discovery call."
+      },
+      "check": {
+        "fr": "Ouvrez le lien : il propose vos créneaux et ne sert qu'une fois.",
+        "en": "Open the link: it offers your slots and works only once."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Un assistant qui demande de coller un identifiant et un secret ne marche pas avec Calendly.",
+      "en": "An assistant that asks you to paste an ID and a secret does not work with Calendly."
+    },
+    {
+      "fr": "Les jetons d'accès personnels ne fonctionnent pas : la connexion passe par votre compte.",
+      "en": "Personal access tokens do not work: the connection goes through your account."
+    }
+  ],
   "verified_on": "2026-11-16",
   "status": "ga",
   "transport": "remote",

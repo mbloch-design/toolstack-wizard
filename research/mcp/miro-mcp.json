@@ -31,6 +31,70 @@
     "fr": "Vos tableaux sont partagés avec des clients : l'assistant peut aussi donner des accès ou changer des rôles.",
     "en": "Your boards are shared with clients: the assistant can also grant access or change roles."
   },
+  "control": [
+    {
+      "fr": "À la connexion, vous choisissez l'équipe : il ne travaille que dans celle-là.",
+      "en": "When connecting, you pick the team: it only works in that one."
+    },
+    {
+      "fr": "Il respecte les droits de chaque tableau, vérifiés à chaque demande.",
+      "en": "It follows each board's rights, checked on every request."
+    },
+    {
+      "fr": "En Enterprise, l'administrateur l'ouvre à toute l'organisation ou à certaines équipes : Paramètres d'administration, Apps et intégrations, MCP.",
+      "en": "On Enterprise, the admin opens it to the whole organisation or some teams: Admin settings, Apps and integrations, MCP."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits Miro, y compris les équipes gratuites.",
+      "en": "Works on every Miro plan, free teams included."
+    },
+    "advanced": {
+      "fr": "En Enterprise, un administrateur doit d'abord l'autoriser.",
+      "en": "On Enterprise, an admin must allow it first."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Liste mes tableaux Miro.",
+        "en": "List my Miro boards."
+      },
+      {
+        "fr": "Résume le tableau de mon dernier atelier.",
+        "en": "Summarise my latest workshop board."
+      },
+      {
+        "fr": "Liste les commentaires de ce tableau.",
+        "en": "List the comments on this board."
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Crée un tableau « Test ToolTrim ».",
+        "en": "Create a board “ToolTrim test”."
+      },
+      "check": {
+        "fr": "Il apparaît dans votre équipe Miro ; supprimez-le ensuite.",
+        "en": "It appears in your Miro team; delete it afterwards."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "« Ce tableau appartient à une autre équipe » : reconnectez-vous en ouvrant un tableau de la bonne équipe.",
+      "en": "“This board belongs to a different team”: sign in again while viewing a board of the right team."
+    },
+    {
+      "fr": "Tableau introuvable : donnez son adresse complète.",
+      "en": "Board not found: give its full address."
+    },
+    {
+      "fr": "Rubrique MCP absente : il n'est pas activé pour votre équipe, ou il faut des droits d'administration.",
+      "en": "No MCP section: it is not enabled for your team, or admin rights are needed."
+    }
+  ],
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

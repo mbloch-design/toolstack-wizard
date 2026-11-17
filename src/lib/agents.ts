@@ -16,6 +16,9 @@ export interface McpSheet {
   card?: Pair;
   /** ToolTrim's words (S1 bis): example requests, for whom it is and is not. */
   examples?: Pair[]; for?: Pair; not_for?: Pair;
+  /** Gestures to stay in control, the plan in plain words, first requests, what to check when it fails (vendor docs). */
+  control?: Pair[]; plan_words?: { common: Pair; advanced?: Pair };
+  first_requests?: { read: Pair[]; write?: { ask: Pair; check: Pair } }; troubleshoot?: Pair[];
   transport?: "remote" | "local"; auth?: ("oauth" | "key" | "none")[]; access?: "read" | "read_write" | "docs_only";
   plan: "all" | "paid" | "specific" | "unknown"; plan_note?: Pair;
   capabilities?: { kind: AgentCapabilityKind; fr: string; en: string }[];

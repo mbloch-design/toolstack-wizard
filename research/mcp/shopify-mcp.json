@@ -35,6 +35,64 @@
     "fr": "Vous gérez plusieurs boutiques sans vérifier laquelle est branchée : l'assistant peut passer de l'une à l'autre.",
     "en": "You run several stores without checking which one is connected: the assistant can switch between them."
   },
+  "control": [
+    {
+      "fr": "À la connexion, vous choisissez la boutique, et vous pouvez refuser la demande.",
+      "en": "When connecting, you pick the store, and you can decline the request."
+    },
+    {
+      "fr": "Vous réglez le niveau d'accès de chaque membre dans l'administration Shopify ; certaines autorisations sont en lecture seule.",
+      "en": "You set each member's access level in the Shopify admin; some permissions are read-only."
+    },
+    {
+      "fr": "Il ne peut ni rembourser, ni annuler ou encaisser une commande, ni toucher au forfait, aux paiements, aux taxes ou aux domaines.",
+      "en": "It cannot refund, cancel or capture an order, nor touch your plan, payments, taxes or domains."
+    },
+    {
+      "fr": "Pour couper l'accès : désinstallez l'intégration dans l'administration Shopify.",
+      "en": "To cut access: uninstall the integration in the Shopify admin."
+    }
+  ],
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Montre mes dix dernières commandes.",
+        "en": "Show my ten latest orders."
+      },
+      {
+        "fr": "Quels produits ont moins de cinq articles en stock ?",
+        "en": "Which products have fewer than five items in stock?"
+      },
+      {
+        "fr": "Donne-moi les informations de ma boutique.",
+        "en": "Give me my store's details."
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Crée un produit « Test ToolTrim ».",
+        "en": "Create a product “ToolTrim test”."
+      },
+      "check": {
+        "fr": "Il apparaît dans vos produits : vérifiez qu'il n'est pas en vente, puis supprimez-le.",
+        "en": "It appears in your products: check it is not for sale, then delete it."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Après un changement de boutique, ouvrez une nouvelle conversation : l'ancienne garde la boutique précédente.",
+      "en": "After switching stores, open a new conversation: the old one keeps the previous store."
+    },
+    {
+      "fr": "Un gros lot de modifications peut s'arrêter en route : terminez dans l'administration.",
+      "en": "A large batch of changes can stop partway: finish it in the admin."
+    },
+    {
+      "fr": "Ses droits dépendent de ceux de votre compte employé.",
+      "en": "Its rights depend on your staff account's."
+    }
+  ],
   "verified_on": "2026-11-16",
   "access": "read_write",
   "plan": "unknown",

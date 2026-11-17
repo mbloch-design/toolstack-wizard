@@ -31,6 +31,44 @@
     "fr": "Vous n'utilisez pas l'application de bureau : le serveur en ligne de Figma suffit.",
     "en": "You don't use the desktop app: Figma's online server is enough."
   },
+  "control": [
+    {
+      "fr": "Il ne fonctionne que tant que l'application Figma est ouverte et le serveur activé dans Dev Mode.",
+      "en": "It only works while the Figma app is open and the server is on in Dev Mode."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Demande un siège Dev ou Full sur un forfait Professional, Education, Organization ou Enterprise ; Starter n'est pas dans la liste.",
+      "en": "Needs a Dev or Full seat on a Professional, Education, Organization or Enterprise plan; Starter is not on the list."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Donne-moi les couleurs de la frame sélectionnée.",
+        "en": "Give me the colours of the selected frame."
+      },
+      {
+        "fr": "Fais une capture de la frame sélectionnée.",
+        "en": "Take a screenshot of the selected frame."
+      },
+      {
+        "fr": "Décris la structure de la frame sélectionnée.",
+        "en": "Describe the structure of the selected frame."
+      }
+    ]
+  },
+  "troubleshoot": [
+    {
+      "fr": "Si rien n'apparaît, vérifiez que le serveur est toujours activé dans l'application Figma.",
+      "en": "If nothing shows, check that the server is still on in the Figma app."
+    },
+    {
+      "fr": "Avec VS Code, redémarrez Figma et VS Code.",
+      "en": "With VS Code, restart Figma and VS Code."
+    }
+  ],
   "verified_on": "2026-11-16",
   "transport": "local",
   "access": "read",

@@ -35,6 +35,70 @@
     "fr": "Vous ne voulez rien publier sans relire : l'assistant peut publier tout de suite, et Buffer ne documente pas de confirmation.",
     "en": "You never want anything posted unread: the assistant can post right away, and Buffer documents no confirmation."
   },
+  "control": [
+    {
+      "fr": "La connexion couvre tout votre compte Buffer, sans choix d'organisation.",
+      "en": "The connection covers your whole Buffer account, with no organisation choice."
+    },
+    {
+      "fr": "Laissez les demandes de confirmation de votre assistant : la plupart attendent votre accord avant de publier, modifier ou supprimer.",
+      "en": "Keep your assistant's confirmation prompts: most wait for your approval before posting, editing or deleting."
+    },
+    {
+      "fr": "Pour couper l'accès : Réglages, puis API, dans Buffer.",
+      "en": "To cut access: Settings, then API, in Buffer."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits Buffer, y compris le gratuit.",
+      "en": "Works on every Buffer plan, free included."
+    },
+    "advanced": {
+      "fr": "Sur le gratuit, les statistiques ne remontent qu'aux 31 derniers jours.",
+      "en": "On the free plan, stats only go back 31 days."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Liste mes canaux Buffer.",
+        "en": "List my Buffer channels."
+      },
+      {
+        "fr": "Montre les posts programmés cette semaine.",
+        "en": "Show the posts scheduled this week."
+      },
+      {
+        "fr": "Quelles idées de posts ai-je enregistrées ?",
+        "en": "Which post ideas have I saved?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Ajoute une idée de post « Test ToolTrim ».",
+        "en": "Add a post idea “ToolTrim test”."
+      },
+      "check": {
+        "fr": "Dans Buffer, rubrique Idées, elle y est ; supprimez-la ensuite.",
+        "en": "In Buffer, under Ideas, it is there; delete it afterwards."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Au-delà du quota de votre forfait, la demande échoue (erreur 429) : attendez avant de relancer.",
+      "en": "Past your plan's quota, the request fails (error 429): wait before retrying."
+    },
+    {
+      "fr": "Les statistiques se mettent à jour une fois par jour.",
+      "en": "Stats refresh once a day."
+    },
+    {
+      "fr": "La seule adresse officielle est https://mcp.buffer.com/mcp.",
+      "en": "The only official address is https://mcp.buffer.com/mcp."
+    }
+  ],
   "verified_on": "2026-11-16",
   "access": "read_write",
   "plan": "all",

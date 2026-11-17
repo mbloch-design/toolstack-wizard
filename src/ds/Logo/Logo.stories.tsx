@@ -5,7 +5,7 @@ const meta: Meta<typeof Logo> = { title: "Atomes/Logo", component: Logo };
 export default meta;
 type Story = StoryObj<typeof Logo>;
 
-const row = (tools: { name: string; slug?: string }[], size: 24 | 32 | 40 | 48 = 40): Story => ({
+const row = (tools: { name: string; slug?: string }[], size: 24 | 32 | 40 = 40): Story => ({
   render: () => <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>{tools.map((tool) => <Logo key={tool.name} tool={tool} size={size} localOnly />)}</div>,
 });
 
@@ -15,4 +15,3 @@ export const Files = row([{ name: "Notion", slug: "notion" }, { name: "Figma", s
 export const Initials = row([{ name: "Microsoft Dynamics 365 Finance and Operations" }, { name: "CallTrackingMetrics" }, { name: "Vercel", slug: "vercel" }]);
 export const Sizes32 = row([{ name: "Notion", slug: "notion" }, { name: "Vercel", slug: "vercel" }], 32);
 export const Sizes24 = row([{ name: "Notion", slug: "notion" }, { name: "Vercel", slug: "vercel" }], 24);
-export const Sizes48 = row([{ name: "Notion", slug: "notion" }, { name: "Vercel", slug: "vercel" }], 48);

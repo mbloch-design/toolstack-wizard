@@ -35,6 +35,70 @@
     "fr": "Vous branchez une base importante sans sauvegarde : l'assistant peut aussi supprimer des tables entières.",
     "en": "You connect an important base with no backup: the assistant can also delete whole tables."
   },
+  "control": [
+    {
+      "fr": "À la connexion, vous choisissez exactement les bases, applications et espaces qu'il voit.",
+      "en": "When connecting, you pick exactly the bases, apps and workspaces it sees."
+    },
+    {
+      "fr": "Pour qu'il ne fasse que lire, n'accordez que les autorisations de lecture.",
+      "en": "For reading only, grant only the read permissions."
+    },
+    {
+      "fr": "Pour ajouter ou retirer des bases, ou couper l'accès : votre profil, Intégrations, puis Intégrations tierces.",
+      "en": "To add or remove bases, or cut access: your profile, Integrations, then Third-party integrations."
+    },
+    {
+      "fr": "En Enterprise, l'administrateur autorise l'intégration dans le panneau d'administration, rubrique Intégrations et développement.",
+      "en": "On Enterprise, the admin allows the integration in the Admin panel, under Integrations and development."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits Airtable, sans frais en plus.",
+      "en": "Works on every Airtable plan, at no extra cost."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Liste mes bases Airtable.",
+        "en": "List my Airtable bases."
+      },
+      {
+        "fr": "Montre la structure de ma table Clients.",
+        "en": "Show the structure of my Clients table."
+      },
+      {
+        "fr": "Cherche les enregistrements qui mentionnent Dupont.",
+        "en": "Search the records that mention Dupont."
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Ajoute un enregistrement « Test ToolTrim » dans une table de test.",
+        "en": "Add a record “ToolTrim test” to a test table."
+      },
+      "check": {
+        "fr": "Ouvrez la table : la ligne y est ; supprimez-la ensuite.",
+        "en": "Open the table: the row is there; delete it afterwards."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Avec un accès Commentateur ou Lecture seule, il lit sans modifier : il faut au moins le rôle Éditeur.",
+      "en": "With Commenter or Read-only access, it reads without editing: you need the Editor role at least."
+    },
+    {
+      "fr": "Créer une base demande le rôle Créateur dans l'espace.",
+      "en": "Creating a base needs the Creator role in the workspace."
+    },
+    {
+      "fr": "Il crée au plus 10 enregistrements par demande.",
+      "en": "It creates at most 10 records per request."
+    }
+  ],
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

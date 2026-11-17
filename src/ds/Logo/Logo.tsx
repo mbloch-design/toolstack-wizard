@@ -4,7 +4,7 @@ import styles from "./Logo.module.css";
 type LogoProps = {
   tool: LogoTool;
   /** Side of the tile, in pixels. */
-  size?: 24 | 32 | 40 | 48;
+  size?: 24 | 32 | 40;
   /** Our own files only (Storybook, visual tests). */
   localOnly?: boolean;
 };

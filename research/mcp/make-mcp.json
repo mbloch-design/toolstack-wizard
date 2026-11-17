@@ -31,6 +31,62 @@
     "fr": "Vous n'avez pas encore d'automatisation : le serveur sert surtout à lancer et gérer des scénarios existants.",
     "en": "You have no automation yet: the server is mostly for running and managing existing scenarios."
   },
+  "control": [
+    {
+      "fr": "À la connexion, vous choisissez les autorisations : lancer vos scénarios, ou aussi les gérer.",
+      "en": "When connecting, you choose the permissions: run your scenarios, or manage them too."
+    },
+    {
+      "fr": "Avec la connexion au compte, vous pouvez limiter l'accès à une seule organisation Make.",
+      "en": "With account sign-in, you can limit access to a single Make organisation."
+    },
+    {
+      "fr": "Seuls vos scénarios actifs et lançables à la demande deviennent des actions.",
+      "en": "Only your active, on-demand scenarios become actions."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Lancer vos scénarios : sur tous les forfaits Make.",
+      "en": "Running your scenarios: on every Make plan."
+    },
+    "advanced": {
+      "fr": "En plus, sur les forfaits payants : gérer vos scénarios, connexions et data stores.",
+      "en": "On top, on paid plans: managing your scenarios, connections and data stores."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Liste mes scénarios Make.",
+        "en": "List my Make scenarios."
+      },
+      {
+        "fr": "Lesquels sont actifs ?",
+        "en": "Which ones are active?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Lance mon scénario de test.",
+        "en": "Run my test scenario."
+      },
+      "check": {
+        "fr": "Dans Make, l'historique du scénario montre l'exécution.",
+        "en": "In Make, the scenario's history shows the run."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Au-delà de 25 secondes, la réponse s'arrête mais le scénario continue jusqu'à 40 minutes dans Make : demandez le résultat ensuite.",
+      "en": "Past 25 seconds the answer stops but the scenario keeps running for up to 40 minutes in Make: ask for the result afterwards."
+    },
+    {
+      "fr": "Un scénario n'apparaît que s'il est actif et planifié « à la demande ».",
+      "en": "A scenario only shows if it is active and scheduled “on demand”."
+    }
+  ],
   "verified_on": "2026-11-16",
   "transport": "remote",
   "auth": [

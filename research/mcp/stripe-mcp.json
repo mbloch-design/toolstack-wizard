@@ -35,6 +35,64 @@
     "fr": "Vous voulez confier vos virements à l'assistant : le serveur est en bêta et chaque envoi d'argent attend votre confirmation.",
     "en": "You want the assistant to handle your transfers: the server is in beta and every money transfer waits for your confirmation."
   },
+  "control": [
+    {
+      "fr": "À la connexion, vous choisissez les comptes et les environnements, production ou test, avec des droits pour chacun.",
+      "en": "When connecting, you pick the accounts and environments, live or test, with rights for each."
+    },
+    {
+      "fr": "Les actions marquées « Confirmation humaine » attendent votre accord dans le Dashboard Stripe, pendant 24 heures.",
+      "en": "Actions marked “Human confirmation” wait for your approval in the Stripe Dashboard, for 24 hours."
+    },
+    {
+      "fr": "Un administrateur active ou coupe l'accès pour toute l'équipe dans les réglages du Dashboard, rubrique accès MCP et CLI.",
+      "en": "An admin turns access on or off for the whole team in the Dashboard settings, under MCP and CLI access."
+    },
+    {
+      "fr": "Pour retirer l'accès : réglages de votre profil, « Sessions OAuth », puis « Révoquer l'accès ».",
+      "en": "To remove access: your profile settings, “OAuth sessions”, then “Revoke access”."
+    }
+  ],
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Quel est mon solde disponible ?",
+        "en": "What is my available balance?"
+      },
+      {
+        "fr": "Combien ai-je encaissé la semaine dernière ?",
+        "en": "How much did I take in last week?"
+      },
+      {
+        "fr": "Qui sont mes cinq derniers clients ?",
+        "en": "Who are my five latest customers?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "En mode test, crée un client nommé « Essai ToolTrim ».",
+        "en": "In test mode, create a customer named “ToolTrim test”."
+      },
+      "check": {
+        "fr": "Dans le Dashboard, en mode test, le client apparaît ; supprimez-le ensuite.",
+        "en": "In the Dashboard, in test mode, the customer appears; delete it afterwards."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Sur un réseau d'entreprise, demandez au service informatique d'autoriser mcp.stripe.com.",
+      "en": "On a company network, ask IT to allow mcp.stripe.com."
+    },
+    {
+      "fr": "Pour un compte connecté (Connect), la connexion au compte ne marche pas : il faut une clé d'accès d'agent.",
+      "en": "For a connected account (Connect), signing in does not work: you need an agent access key."
+    },
+    {
+      "fr": "Remplacez avant le 30 novembre 2026 les clés sans restriction par des clés d'agent : les autres seront refusées.",
+      "en": "Replace unrestricted keys with agent keys before 30 November 2026: the others will be refused."
+    }
+  ],
   "verified_on": "2026-11-16",
   "status": "beta",
   "transport": "remote",

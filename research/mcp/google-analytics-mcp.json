@@ -35,6 +35,46 @@
     "fr": "Vous voulez un branchement en un clic : il s'installe sur votre ordinateur, avec Python et des identifiants Google Cloud.",
     "en": "You want a one-click setup: it is installed on your computer, with Python and Google Cloud credentials."
   },
+  "control": [
+    {
+      "fr": "Il ne fait que lire : l'accès demandé est la lecture seule de vos données Analytics.",
+      "en": "It only reads: the access requested is read-only on your Analytics data."
+    },
+    {
+      "fr": "Il ne voit que les propriétés où votre compte a au moins le rôle Lecteur.",
+      "en": "It only sees the properties where your account has at least the Viewer role."
+    }
+  ],
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Liste mes comptes et propriétés Google Analytics.",
+        "en": "List my Google Analytics accounts and properties."
+      },
+      {
+        "fr": "Combien de visiteurs mon site a-t-il eus hier ?",
+        "en": "How many visitors did my site get yesterday?"
+      },
+      {
+        "fr": "Quelles sont mes dix pages les plus vues ce mois-ci ?",
+        "en": "What are my ten most viewed pages this month?"
+      }
+    ]
+  },
+  "troubleshoot": [
+    {
+      "fr": "Erreur 403 : activez les API Admin et Data dans votre projet Google Cloud, et vérifiez vos droits sur la propriété.",
+      "en": "Error 403: turn on the Admin and Data APIs in your Google Cloud project, and check your rights on the property."
+    },
+    {
+      "fr": "« Insufficient authentication scopes » : reconnectez-vous en demandant la lecture Analytics.",
+      "en": "“Insufficient authentication scopes”: sign in again asking for Analytics read access."
+    },
+    {
+      "fr": "Il faut Python 3.10 ou plus sur l'ordinateur.",
+      "en": "Python 3.10 or later is needed on the computer."
+    }
+  ],
   "verified_on": "2026-11-16",
   "transport": "local",
   "access": "read",

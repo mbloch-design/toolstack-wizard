@@ -31,6 +31,62 @@
     "fr": "Vous ouvrez Figma de temps en temps pour une image : l'intérêt tient surtout aux fichiers d'interface.",
     "en": "You open Figma now and then for an image: the value lies mostly in interface files."
   },
+  "control": [
+    {
+      "fr": "Il n'accède qu'aux fichiers Figma auxquels votre compte a déjà accès.",
+      "en": "It only reaches the Figma files your account already has access to."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits Figma.",
+      "en": "Works on every Figma plan."
+    },
+    "advanced": {
+      "fr": "Lire un fichier compte dans une limite : 20 demandes par mois avec un siège View ou Collab, jusqu'à 200 par jour avec un siège Full ou Dev en Professional. Écrire dans les fichiers est gratuit pendant la bêta, payant à l'usage ensuite.",
+      "en": "Reading a file counts towards a limit: 20 requests a month with a View or Collab seat, up to 200 a day with a Full or Dev seat on Professional. Writing to files is free during the beta, usage-based later."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Liste les pages de ce fichier Figma.",
+        "en": "List the pages of this Figma file."
+      },
+      {
+        "fr": "Donne-moi les couleurs et variables de ce fichier.",
+        "en": "Give me the colours and variables of this file."
+      },
+      {
+        "fr": "Fais une capture de cette frame.",
+        "en": "Take a screenshot of this frame."
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Crée un nouveau fichier Figma nommé « Test ToolTrim ».",
+        "en": "Create a new Figma file named “ToolTrim test”."
+      },
+      "check": {
+        "fr": "Il apparaît dans vos brouillons Figma ; supprimez-le ensuite.",
+        "en": "It appears in your Figma drafts; delete it afterwards."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Pour connaître votre siège et vos forfaits, demandez-lui « whoami ».",
+      "en": "To see your seat and plans, ask it “whoami”."
+    },
+    {
+      "fr": "Le fichier doit appartenir au forfait de votre compte.",
+      "en": "The file must belong to your account's plan."
+    },
+    {
+      "fr": "Dans une organisation, l'administrateur peut avoir bloqué l'installation.",
+      "en": "In an organisation, the admin may have blocked the install."
+    }
+  ],
   "verified_on": "2026-11-16",
   "transport": "remote",
   "access": "read_write",

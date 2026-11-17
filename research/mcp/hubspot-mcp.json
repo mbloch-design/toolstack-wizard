@@ -35,6 +35,66 @@
     "fr": "Vous voulez un branchement en un clic depuis Claude ou ChatGPT : HubSpot ne documente que l'adresse du serveur à ajouter.",
     "en": "You want a one-click setup from Claude or ChatGPT: HubSpot only documents the server address to add."
   },
+  "control": [
+    {
+      "fr": "À la connexion, vous choisissez le compte HubSpot et accordez les permissions.",
+      "en": "When connecting, you pick the HubSpot account and grant the permissions."
+    },
+    {
+      "fr": "Avant de créer ou de modifier une fiche du CRM, il demande votre confirmation.",
+      "en": "Before creating or editing a CRM record, it asks for your confirmation."
+    },
+    {
+      "fr": "Il ne voit que les fiches auxquelles votre utilisateur a accès.",
+      "en": "It only sees the records your user can access."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Ouvert à tous les comptes HubSpot.",
+      "en": "Open to every HubSpot account."
+    },
+    "advanced": {
+      "fr": "Avec les outils gratuits, pas de pipelines personnalisés. Devis : Revenue Hub Professional ou Enterprise. Suivi de votre visibilité dans les IA : Marketing Hub Professional ou Enterprise.",
+      "en": "With free tools, no custom pipelines. Quotes: Revenue Hub Professional or Enterprise. Tracking your visibility in AI answers: Marketing Hub Professional or Enterprise."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Qui sont mes dix derniers contacts ?",
+        "en": "Who are my ten latest contacts?"
+      },
+      {
+        "fr": "Quelles transactions sont encore ouvertes ?",
+        "en": "Which deals are still open?"
+      },
+      {
+        "fr": "Que vois-tu de mon compte HubSpot ?",
+        "en": "What can you see of my HubSpot account?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Crée un contact de test « Essai ToolTrim ».",
+        "en": "Create a test contact “ToolTrim test”."
+      },
+      "check": {
+        "fr": "Il vous demande confirmation, puis le contact apparaît dans HubSpot ; supprimez-le ensuite.",
+        "en": "It asks you to confirm, then the contact appears in HubSpot; delete it afterwards."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Les outils disponibles dépendent de votre abonnement et de vos droits : demandez-lui de vérifier votre compte (outil get_user_details).",
+      "en": "The tools available depend on your subscription and rights: ask it to check your account (get_user_details tool)."
+    },
+    {
+      "fr": "Après l'ajout d'autorisations, reconnectez l'application.",
+      "en": "After permissions are added, reconnect the app."
+    }
+  ],
   "verified_on": "2026-11-16",
   "status": "ga",
   "transport": "remote",
