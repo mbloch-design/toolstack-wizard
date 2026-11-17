@@ -1,3 +1,5 @@
+import type { PublisherPublicFacts } from "../lib/publisherPublicFacts.js";
+
 export interface Category {
   id: string;
   slug: string;
@@ -222,6 +224,7 @@ export interface DecisionPolicyV3 {
 }
 
 export interface Tool {
+  publisherFacts?: PublisherPublicFacts;
   id: string;
   slug?: string;
   name: string;

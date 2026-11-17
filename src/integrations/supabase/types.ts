@@ -617,6 +617,34 @@ export type Database = {
     Functions: {
       _personal_stack_strings: { Args: { p_value: Json }; Returns: boolean }
       _personal_stack_valid: { Args: { p_state: Json }; Returns: boolean }
+      cms_list_tool_drafts: {
+        Args: { p_actor: string; p_session: string }
+        Returns: Json
+      }
+      cms_list_tool_submissions: {
+        Args: { p_actor: string; p_session: string; p_tool: string }
+        Returns: Json
+      }
+      cms_submit_tool_draft: {
+        Args: { p_actor: string; p_session: string; p_tool: string; p_expected_brand: string; p_expected_version: number }
+        Returns: Json
+      }
+      cms_withdraw_tool_submission: {
+        Args: { p_actor: string; p_session: string; p_tool: string; p_id: string }
+        Returns: Json
+      }
+      cms_read_review_queue: {
+        Args: { p_actor: string; p_session: string; p_id?: string }
+        Returns: Json
+      }
+      cms_approved_release_inputs: {
+        Args: { p_actor: string; p_session: string }
+        Returns: Json
+      }
+      cms_review_tool_submission: {
+        Args: { p_actor: string; p_session: string; p_id: string; p_action: string; p_note: string }
+        Returns: Json
+      }
       cms_read_tool_draft: {
         Args: { p_actor: string; p_session: string; p_tool: string }
         Returns: Json

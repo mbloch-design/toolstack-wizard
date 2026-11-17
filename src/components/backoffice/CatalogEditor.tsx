@@ -33,6 +33,8 @@ import {
 import { CatalogField, CatalogValue, catalogFieldLabel } from "./CatalogFields";
 
 import { CatalogDraftSession } from "./catalogDraftSession";
+import { ListingAdmin } from "./ListingAdmin";
+import { ContributionQueue } from "./ContributionQueue";
 import { CatalogInlineFiche } from "./CatalogInlineFiche";
 import {
   catalogValidationIssues,
@@ -111,6 +113,8 @@ export function CatalogEditor({
   const [ownSession] = useState(() => new CatalogDraftSession());
   const session = suppliedSession ?? ownSession;
   useSyncExternalStore(session.subscribe, session.snapshot, session.snapshot);
+  const [listingAdminOpen, setListingAdminOpen] = useState(false);
+  const [contributionsOpen, setContributionsOpen] = useState(false);
   const [inlineSlug, setInlineSlug] = useState<string | null>(null);
   const [reviewDetails, setReviewDetails] = useState<
     Record<string, CatalogEditorDetail>
@@ -520,6 +524,8 @@ export function CatalogEditor({
             (locale === "en" ? field.endsWith("En") : !field.endsWith("En"))),
       )
     : [];
+  if (listingAdminOpen) return <ListingAdmin onBack={() => setListingAdminOpen(false)} />;
+  if (contributionsOpen) return <ContributionQueue onBack={() => setContributionsOpen(false)} />;
   return (
     <section
       className="bo-catalog"
@@ -528,6 +534,10 @@ export function CatalogEditor({
       aria-label={t("Édition du catalogue", "Catalogue editor")}
     >
       {!review && !inlineSlug && <BackofficePageHeading title={t("Fiches", "Records")} description={t("Enregistrez vos brouillons, puis publiez tout le lot ensemble.", "Save drafts, then publish the whole batch together.")} action={<StackButton ref={publishTriggerRef} variant="primary" type="button" disabled={(!draftCount && !session.dirty) || busy || legacyDirty || listLoading || !workspace?.capabilities?.canPublishAll} onClick={() => void prepareReview()}>{t(`Mettre en ligne (${draftCount})`, `Publish (${draftCount})`)}</StackButton>} />}
+      {!review && !inlineSlug && !detail && <Button type="button" disabled={busy || dirty}
+        onClick={() => setContributionsOpen(true)}>{t("Propositions éditeur", "Publisher submissions")}</Button>}
+      {!review && !inlineSlug && !detail && <Button type="button" disabled={busy || dirty}
+        onClick={() => setListingAdminOpen(true)}>{t("Demandes de fiche", "Listing requests")}</Button>}
       {error && (
         <div className="bo-catalog-feedback" role="alert">
           <p>{error}</p>

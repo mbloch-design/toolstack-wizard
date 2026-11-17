@@ -22,6 +22,7 @@ import { hasGenuineFreeTier, isPriceUndisclosed, resolveMonthlyPrice } from "@/l
 
 
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
+import { PublisherPlanFacts, PublisherProductFacts } from "@/components/tool/PublisherFactsBlock";
 import ToolPricingSection from "@/components/tool/ToolPricingSection";
 import EvidenceInfo from "@/components/tool/EvidenceInfo";
 import ToolBundleSection from "@/components/tool/ToolBundleSection";
@@ -720,6 +721,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
             {/* Editorial overview: the reference layout is reproduced inside
                 the content itself — analysis on the left, factual rail on the
                 right. The global sticky decision card remains action-only. */}
+            {isPresentation && tool.publisherFacts && <PublisherProductFacts facts={tool.publisherFacts} lang={lang} />}
             {showAnalysis && showEditorialOverview && (
               <section className="td-editorial-overview">
                 <div className="td-editorial-intro">
@@ -936,6 +938,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                     onOfficialClick={() => trackOutbound("tool_pricing", "official_pricing")}
                   />
                   {editing?.block(["pricing", "pricingEn", "defaultMonthlyPrice", "pricing_v5", "pricing_v5En"], t("Sources, textes et paramètres tarifaires", "Pricing sources, descriptions and settings"), { advanced: true, omit: ["plans"] })}
+                  {tool.publisherFacts && <PublisherPlanFacts facts={tool.publisherFacts} lang={lang} />}
                   {pricingDetail && <ToolPricingExtras detail={pricingDetail} toolName={tool.name} t={t} />}
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
                   {!authorMode && <ToolBundleSection controlled={privateMode} tool={tool} tools={tools} lang={lang} t={t} />}

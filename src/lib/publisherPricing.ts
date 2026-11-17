@@ -53,7 +53,7 @@ const labels = {
     month: "par mois", year: "par an", one_time: "paiement unique", annual_prepaid: "par mois, facturé à l’année" },
 };
 
-export function pricePresentation(option: PriceOption, locale: "fr" | "en") {
+export function pricePresentation(option: Pick<PriceOption, "type" | "amount" | "currency" | "period" | "commitment">, locale: "fr" | "en") {
   const copy = labels[locale];
   if (option.type !== "paid") {
     return { amountLabel: copy[option.type], billingLabel: "", monthlyEquivalent: null };

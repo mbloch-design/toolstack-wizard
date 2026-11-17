@@ -18,6 +18,7 @@ export function mapToolFromJson(raw: unknown): Tool {
   // Catalogue records retain their existing permissive field contract.
   const t = raw as Record<string, any>;
   return applyAuditedToolUrls({
+    ...(t.publisherFacts ? { publisherFacts: t.publisherFacts } : {}),
     id: asLocalizedText(t.id, ""),
     slug: asLocalizedText(t.slug || t.id, ""),
     name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),

@@ -13,15 +13,24 @@ const rpcErrors = {
   PT409: [409, "CMS_REVISION_CONFLICT"],
 } as const;
 
-function parseSnapshot(data: Json | null, error: { code: string; message: string } | null): DraftSnapshot {
+export function requireCmsRpcSuccess(error: { code: string; message: string } | null): void {
   if (error) {
     if (error.code === "PT409" && error.message === "ACCOUNT_DELETING") {
       throw new AccountApiError(409, "ACCOUNT_DELETING");
+    }
+    if (error.code === "PT409" && error.message === "CMS_SUBMISSION_PENDING") {
+      throw new AccountApiError(409, "CMS_SUBMISSION_PENDING");
+    }
+    if (error.code === "PT400" && error.message === "INVALID_CMS_REVIEW") {
+      throw new AccountApiError(400, "INVALID_CMS_REVIEW");
     }
     const known = rpcErrors[error.code as keyof typeof rpcErrors];
     if (known) throw new AccountApiError(known[0], known[1]);
     throw new AccountApiError(503, "CMS_WORKSPACE_UNAVAILABLE");
   }
+}
+function parseSnapshot(data: Json | null, error: { code: string; message: string } | null): DraftSnapshot {
+  requireCmsRpcSuccess(error);
   if (!data || typeof data !== "object" || Array.isArray(data)
     || typeof data.brandId !== "string" || typeof data.canEdit !== "boolean"
     || typeof data.version !== "number" || !Number.isSafeInteger(data.version) || data.version < 1
@@ -37,8 +46,10 @@ function parseSnapshot(data: Json | null, error: { code: string; message: string
   };
 }
 
+export const cmsActorArgs = (actor: CmsActor) => ({ p_actor: actor.userId, p_session: actor.sessionId });
+
 const target = (actor: CmsActor, toolId: string) => ({
-  p_actor: actor.userId, p_session: actor.sessionId, p_tool: toolId,
+  ...cmsActorArgs(actor), p_tool: toolId,
 });
 
 export async function readPublisherDraft(actor: CmsActor, toolId: string) {

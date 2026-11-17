@@ -8,6 +8,7 @@ create table catalog_contrib.cms_tool_drafts (
   brand_id uuid not null,
   tool_id varchar not null,
   version bigint not null default 1 check (version between 1 and 9007199254740991),
+  base_hash text check (base_hash ~ '^[a-f0-9]{64}$'),
   value jsonb not null check (
     jsonb_typeof(value) = 'object'
     and (value->'schemaVersion' = '1'::jsonb) is true
@@ -22,10 +23,8 @@ alter table catalog_contrib.cms_tool_drafts enable row level security;
 revoke all on catalog_contrib.cms_tool_drafts from public, anon, authenticated;
 grant select, insert, update on catalog_contrib.cms_tool_drafts to service_role;
 
-create function catalog_contrib.cms_require_tool_access(
-  p_actor uuid, p_session uuid, p_tool text, p_write boolean
-) returns table (brand_id uuid, can_edit boolean)
-language plpgsql security invoker set search_path = pg_catalog as $$
+create function catalog_contrib.cms_require_actor(p_actor uuid, p_session uuid)
+returns void language plpgsql security invoker set search_path = pg_catalog as $$
 begin
   perform public.require_account_session(p_actor, p_session);
   perform from public.profiles p
@@ -41,6 +40,15 @@ begin
   ) then
     raise sqlstate 'PT403' using message = 'CMS_ACCESS_DENIED';
   end if;
+
+end $$;
+
+create function catalog_contrib.cms_require_tool_access(
+  p_actor uuid, p_session uuid, p_tool text, p_write boolean
+) returns table (brand_id uuid, can_edit boolean)
+language plpgsql security invoker set search_path = pg_catalog as $$
+begin
+  perform catalog_contrib.cms_require_actor(p_actor, p_session);
 
   -- Share locks serialize draft writes with membership, brand and assignment changes.
   return query
@@ -109,10 +117,12 @@ begin
     'updatedAt', draft.updated_at, 'canEdit', true);
 end $$;
 
-revoke all on function catalog_contrib.cms_require_tool_access(uuid,uuid,text,boolean),
+revoke all on function catalog_contrib.cms_require_actor(uuid,uuid),
+  catalog_contrib.cms_require_tool_access(uuid,uuid,text,boolean),
   public.cms_read_tool_draft(uuid,uuid,text),
   public.cms_save_tool_draft(uuid,uuid,text,uuid,bigint,jsonb) from public, anon, authenticated;
-grant execute on function catalog_contrib.cms_require_tool_access(uuid,uuid,text,boolean),
+grant execute on function catalog_contrib.cms_require_actor(uuid,uuid),
+  catalog_contrib.cms_require_tool_access(uuid,uuid,text,boolean),
   public.cms_read_tool_draft(uuid,uuid,text),
   public.cms_save_tool_draft(uuid,uuid,text,uuid,bigint,jsonb) to service_role;
 

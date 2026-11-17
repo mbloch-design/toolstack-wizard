@@ -66,3 +66,15 @@ it("keeps the SQL revocation check authoritative after a successful read", async
     .mockResolvedValueOnce({ data: null, error: { code: "PT403", message: "CMS_ACCESS_DENIED" } });
   expect((await invoke("PUT", { brandId, version: 2, value })).res.statusCode).toBe(403);
 });
+
+it("allocates plan identity on the server while preserving the draft revision", async () => {
+  auth.rpc.mockImplementation(async (name: string, args: { p_value?: typeof value }) => name === "cms_read_tool_draft"
+    ? { data: draft, error: null }
+    : { data: { ...draft, value: args.p_value, version: 3 }, error: null });
+  const result = await invoke("PATCH", { brandId, version: 2, action: "addPlan" });
+  expect(result.res.statusCode).toBe(200);
+  expect(result.body).toMatchObject({ draft: { version: 3, value: { plans: [{
+    id: expect.stringMatching(/^[0-9a-f-]{36}$/), planKey: expect.stringMatching(/^offer-/), archived: false, options: [],
+  }] } } });
+  expect((await invoke("PATCH", { brandId, version: 2, action: "addPlan", id: "forged" })).res.statusCode).toBe(400);
+});
