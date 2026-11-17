@@ -97,6 +97,11 @@
     "fr": "Ouvert aux applications publiées dans le Slack Marketplace, aux applications internes et à quelques assistants partenaires.",
     "en": "Open to apps published in the Slack Marketplace, internal apps and a few partner assistants."
   },
+  "claude_directory": {
+    "url": "https://claude.ai/directory/slack",
+    "added": "2025-11",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://docs.slack.dev/ai/slack-mcp-server/",
   "sources": [
     {
@@ -106,6 +111,10 @@
     {
       "label": "Slack Developer Docs — Announcing the Slack MCP server",
       "url": "https://docs.slack.dev/changelog/2026/02/17/slack-mcp/"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/slack"
     }
   ]
 }

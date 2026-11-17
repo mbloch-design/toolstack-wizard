@@ -299,6 +299,11 @@
       "value": "https://mcp.hubspot.com"
     }
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/hubspot",
+    "added": "2025-11",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
   "sources": [
     {
@@ -308,6 +313,10 @@
     {
       "label": "HubSpot Developers — Remote HubSpot MCP server is now generally available",
       "url": "https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/hubspot"
     }
   ]
 }

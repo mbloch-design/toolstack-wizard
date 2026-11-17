@@ -1,13 +1,13 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
-import { Check, ChevronDown, Clock, Code2, Copy, ExternalLink, FileText, Flag, Globe, Laptop2, UserRound, X } from "@/lib/icons";
-import { useToolLogoSource } from "@/lib/useToolLogoSource";
+import { Check, ChevronDown, Code2, Copy, ExternalLink, FileText, Flag, Globe, Laptop2, Plug, UserRound, X } from "@/lib/icons";
+import { getToolLogoSources } from "@/lib/toolLogos";
 import {
   KIND_WORDS, authWords, PLAN_WORDS, RISK_ORDER, SAFEGUARD_WORDS, TRANSPORT_WORDS, clientName, riskSentence, say,
   type InstallRow, type Lang, type McpSheet, type SkillSheet,
 } from "@/lib/agents";
 import { CLIENTS, CLIENT_MARKS, clientGroup, clientLabel, clientsOf, cursorInstallLink, plugCard, vsCodeInstallLink, type ClientId, type PlugStep } from "@/lib/agentClients";
 import { RISK_PILL, freshness, sheetMarkdown, sourceLinks, toolTopics, toolsSummary } from "@/lib/agentSheet";
-import Button, { LinkArrow, TextButton, buttonAttrs, linkClass } from "../Button/Button";
+import Button, { IconButton, LinkArrow, TextButton, buttonAttrs, linkClass } from "../Button/Button";
 import Chip from "../Chip/Chip";
 import Tag from "../Tag/Tag";
 import { Collapse } from "../Motion/Motion";
@@ -31,19 +31,12 @@ const STORE_KEY = "tooltrim.agents.client";
 const ABILITY_TAG = { read: ["Lit", "Reads"], write: ["Modifie", "Edits"], delete: ["Supprime", "Deletes"], send: ["Envoie", "Sends"], pay: ["Paie", "Pays"] } as const;
 /** A plan note often opens on the value it details as its own sentence (« Tous les forfaits. Jetons… »): said once. */
 const withoutEcho = (note: string, value: string) => note.replace(new RegExp(`^${value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.\\s+`, "i"), "") || note;
-/** What the fold hides: « 70 actions, 12 assistants, détails techniques ». */
-function furtherSummary(sheet: McpSheet, lang: Lang) {
-  const t = (fr: string, en: string) => (lang === "en" ? en : fr);
-  const assistants = new Set<string>([...clientsOf(sheet).filter((c) => c !== "any"), ...(sheet.clients ?? [])]).size;
-  return [
-    sheet.tools?.length ? t(`${sheet.tools.length} actions`, `${sheet.tools.length} actions`) : null,
-    assistants ? t(`${assistants} assistants`, `${assistants} assistants`) : null,
-    t("détails techniques", "technical details"),
-  ].filter(Boolean).join(", ");
-}
 
-export function McpSheetView({ sheet, lang, title, toolName = sheet.publisher, pageUrl, reportHref, related }: {
+
+export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publisher, pageUrl, reportHref, related }: {
   sheet: McpSheet; lang: Lang;
+  /** The tool's logo beside the title (the system's Logo, 48 px). */
+  logo?: ReactNode;
   /** The page's title (« Brancher Notion à votre assistant »): the sheet draws its own head, the copy action beside it. */
   title: string;
   /** The tool's catalogue name (« Notion »), said in the steps and titles. */
@@ -64,15 +57,11 @@ export function McpSheetView({ sheet, lang, title, toolName = sheet.publisher, p
   ];
   const served = new Set<string>(clientsOf(sheet));
   const others = (sheet.clients ?? []).filter((client) => !served.has(client));
-  const technical = [
-    ...(sheet.access ? [{ label: t("Accès maximum", "Widest access"), value: { read: t("Lecture seule", "Read only"), read_write: t("Lecture et écriture, dans la limite de vos droits", "Read and write, within your rights"), docs_only: t("Documentation seulement", "Documentation only") }[sheet.access] }] : []),
-    // « Fonctionne avec », in the facts line, already names the clients a card serves: only the others here.
-    ...(others.length ? [{ label: t("Autres assistants cités par l'éditeur", "Other assistants the vendor names"), value: others.map((c) => clientName(c, lang)).join(", ") }] : []),
-  ];
   return (
     <div className={styles.sheet} data-agent-sheet="mcp">
       <header className={styles.head}>
         <div className={styles.titleRow}>
+          {logo && <span className={styles.titleLogo} aria-hidden="true">{logo}</span>}
           <div className={styles.titles}>
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.byline}>{t(`${sheet.name}, publié par ${sheet.publisher} · Officiel`, `${sheet.name}, published by ${sheet.publisher} · Official`)}</p>
@@ -124,10 +113,12 @@ export function McpSheetView({ sheet, lang, title, toolName = sheet.publisher, p
 
       {related}
 
-      <Further lang={lang} summary={furtherSummary(sheet, lang)}>
-        {technical.length > 0 && <Facts rows={technical} />}
-        <ToolList sheet={sheet} lang={lang} />
-      </Further>
+      <TechSheet sheet={sheet} lang={lang} others={others} />
+      {sheet.tools?.length || sheet.tools_note ? (
+        <Further lang={lang} title={t("Les actions documentées", "The documented actions")} summary={sheet.tools?.length ? toolsSummary(sheet.tools, lang) : t("Liste non publiée par l'éditeur", "List not published by the vendor")}>
+          <ToolList sheet={sheet} lang={lang} />
+        </Further>
+      ) : null}
 
       <Sources lang={lang} date={sheet.verified_on} publisher={sheet.publisher} sources={sheet.sources} reportHref={reportHref} />
     </div>
@@ -140,7 +131,6 @@ function SheetFacts({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
   const works = clientsOf(sheet).filter((client) => client !== "any");
   return (
     <ul className={styles.factLine} aria-label={t("En bref", "At a glance")}>
-      <li className={styles.fact}><Clock aria-hidden="true" />{t(`Vérifié le ${longDate(sheet.verified_on, lang)}`, `Checked on ${longDate(sheet.verified_on, lang)}`)}</li>
       {sheet.transport && <li className={styles.fact}>{sheet.transport === "local" ? <Laptop2 aria-hidden="true" /> : <Globe aria-hidden="true" />}{say(lang, TRANSPORT_WORDS[sheet.transport])}</li>}
       {sheet.auth?.length ? <li className={styles.fact}><UserRound aria-hidden="true" />{authWords(sheet.auth, lang)}</li> : null}
       {works.length > 0 && (
@@ -177,11 +167,11 @@ function CopyMenu({ sheet, lang, toolName, pageUrl }: { sheet: McpSheet; lang: L
   const claudeCode = sheet.install.find((row) => row.client === "claude-code" && row.type === "command");
   const vsCode = sheet.install.find((row) => row.client === "vs-code" && row.type === "url" && row.value.startsWith("vscode:"))?.value ?? vsCodeInstallLink(sheet);
   const cursor = sheet.install.find((row) => row.client === "cursor" && row.type === "url")?.value ?? cursorInstallLink(sheet);
-  const claude = sheet.install.find((row) => row.client === "claude" && row.type === "url" && row.value.includes("claude.ai/directory"))?.value;
+  const claude = sheet.claude_directory?.url ?? sheet.install.find((row) => row.client === "claude" && row.type === "url" && row.value.includes("claude.ai/directory"))?.value;
   const entries: { label: string; help: string; icon: ReactNode; run?: () => void; href?: string }[] = [
     { label: t("Copier la fiche en Markdown", "Copy the sheet as Markdown"), help: t("À coller dans votre assistant", "To paste in your assistant"), icon: <FileText />,
       run: () => copy(sheetMarkdown(sheet, { toolName, url: pageUrl, lang }), t("Fiche copiée", "Sheet copied")) },
-    ...(claude ? [{ label: t("Ouvrir dans Claude", "Open in Claude"), help: t(`Ouvre ${toolName} dans l'annuaire de Claude`, `Opens ${toolName} in Claude's directory`), icon: <ClientMark client="claude" size={20} />, href: claude }] : []),
+    ...(claude ? [{ label: t("Ouvrir dans Claude", "Open in Claude"), help: t(`Ouvre ${toolName} dans le répertoire de Claude`, `Opens ${toolName} in Claude's directory`), icon: <ClientMark client="claude" size={20} />, href: claude }] : []),
     ...(claudeCode ? [{ label: t("Commande Claude Code", "Claude Code command"), help: t("Ajoute le serveur depuis le terminal", "Adds the server from the terminal"), icon: <Code2 />,
       run: () => copy(claudeCode.value, t("Commande copiée", "Command copied")) }] : []),
     ...(vsCode ? [{ label: t("Brancher à VS Code", "Plug into VS Code"), help: t("Ouvre VS Code et propose l'installation", "Opens VS Code and offers to install"), icon: <ClientMark client="vs-code" size={20} />, href: vsCode }] : []),
@@ -224,15 +214,89 @@ function MenuEntry({ label, help, icon }: { label: string; help: string; icon: R
  */
 function ClientMark({ client, size }: { client: ClientId; size: 14 | 16 | 20 }) {
   const mark = CLIENT_MARKS[client];
-  return mark ? <LogoMark tool={mark} size={size} /> : <span className={styles.mark} style={{ width: size, height: size }} aria-hidden="true"><Code2 /></span>;
+  const src = useMarkSource(mark);
+  return (
+    <span className={styles.mark} style={{ width: size, height: size }} aria-hidden="true" data-mark={src ? "logo" : "picto"}>
+      {src ? <img src={src} alt="" width={size} height={size} /> : <Plug />}
+    </span>
+  );
 }
 
-function LogoMark({ tool, size }: { tool: { name: string; slug: string; websiteUrl: string }; size: 14 | 16 | 20 }) {
-  // The system's source chain: it moves on from a source that hangs, which a bare onError never sees.
-  const { src, shown, imgRef, loaded, onLoad, onError } = useToolLogoSource(tool, 32);
+/* A mark's source, resolved once per logo and shared (facts line, menu): each source is tried with a time limit,
+   since a remote logo host can hang instead of failing, and the <img> is only drawn once its file has loaded. */
+const markCache = new Map<string, Promise<string | null>>();
+const SOURCE_LIMIT_MS = 2500;
+function resolveMark(tool: { name: string; slug: string; websiteUrl: string }) {
+  const key = tool.slug;
+  if (!markCache.has(key)) {
+    markCache.set(key, (async () => {
+      for (const source of getToolLogoSources(tool, 32)) {
+        const ok = await new Promise<boolean>((resolve) => {
+          const image = new Image();
+          const timer = window.setTimeout(() => resolve(false), SOURCE_LIMIT_MS);
+          image.onload = () => { window.clearTimeout(timer); resolve(image.naturalWidth > 0); };
+          image.onerror = () => { window.clearTimeout(timer); resolve(false); };
+          image.src = source;
+        });
+        if (ok) return source;
+      }
+      return null;
+    })());
+  }
+  return markCache.get(key)!;
+}
+function useMarkSource(tool: { name: string; slug: string; websiteUrl: string } | undefined) {
+  const [src, setSrc] = useState<string | null>(null);
+  useEffect(() => {
+    if (!tool) return;
+    let live = true;
+    void resolveMark(tool).then((found) => { if (live) setSrc(found); });
+    return () => { live = false; };
+  }, [tool]);
+  return src;
+}
+
+/**
+ * The technical sheet, always in view at the sheet's foot (after Claude's directory, 17/11): six boxes, three
+ * columns on a computer, two on a phone. The head already says connection, account and where it works: not here.
+ */
+function TechSheet({ sheet, lang, others }: { sheet: McpSheet; lang: Lang; others: string[] }) {
+  const t = (fr: string, en: string) => (lang === "en" ? en : fr);
+  const id = useId();
+  const address = sheet.install.find((row) => row.client === "any" && row.type === "url")?.value;
+  const month = (iso: string) => { const [y, m] = iso.split("-").map(Number); return longDate(`${y}-${String(m).padStart(2, "0")}-01`, lang).replace(/^1\s/, ""); };
+  const boxes: { label: string; value: ReactNode }[] = [
+    { label: t("Accès maximum", "Widest access"), value: sheet.access ? { read: t("Lecture seule", "Read only"), read_write: t("Lecture et écriture, dans vos droits", "Read and write, within your rights"), docs_only: t("Documentation seulement", "Documentation only") }[sheet.access] : t("Non précisé", "Not stated") },
+    { label: t("Éditeur", "Publisher"), value: <a className={linkClass("inline")} href={sheet.docs_url} target="_blank" rel="noopener noreferrer">{sheet.publisher}</a> },
+    { label: t("Vérifié le", "Checked on"), value: longDate(sheet.verified_on, lang) },
+    { label: t("Répertoire Claude", "Claude directory"), value: sheet.claude_directory
+      ? <a className={linkClass("inline")} href={sheet.claude_directory.url} target="_blank" rel="noopener noreferrer">{t(`Ajouté en ${month(sheet.claude_directory.added)}`, `Added in ${month(sheet.claude_directory.added)}`)}</a>
+      : t("Absent du répertoire", "Not in the directory") },
+    { label: t("Actions documentées", "Documented actions"), value: sheet.tools?.length ? String(sheet.tools.length) : t("Liste non publiée", "List not published") },
+    { label: t("Adresse du serveur", "Server address"), value: address ? <CopyLine value={address} lang={lang} /> : sheet.transport === "local" ? t("Sur votre ordinateur", "On your computer") : t("Non publiée", "Not published") },
+  ];
   return (
-    <span className={styles.mark} style={{ width: size, height: size }} aria-hidden="true">
-      {src ? <img ref={imgRef} key={src} src={shown} alt="" width={size} height={size} loading="eager" decoding="async" data-loaded={loaded || undefined} onLoad={onLoad} onError={onError} /> : <Code2 />}
+    <section className={styles.plain} aria-labelledby={id} data-chapter="tech">
+      <h2 id={id} className={styles.partTitle}>{t("Fiche technique", "Technical sheet")}</h2>
+      <dl className={styles.techGrid}>
+        {boxes.map((box) => <div key={box.label} className={styles.techBox}><dt className={styles.techLabel}>{box.label}</dt><dd className={styles.techValue}>{box.value}</dd></div>)}
+      </dl>
+      {others.length > 0 && <p className={styles.note}>{t("Autres assistants cités par l'éditeur : ", "Other assistants the vendor names: ")}{others.map((c) => clientName(c, lang)).join(", ")}.</p>}
+    </section>
+  );
+}
+
+/** An address on one line, with a named copy and a « Copié » said to screen readers. */
+function CopyLine({ value, lang }: { value: string; lang: Lang }) {
+  const [copied, setCopied] = useState(false);
+  const label = lang === "en" ? "Copy the server address" : "Copier l'adresse du serveur";
+  const done = lang === "en" ? "Copied" : "Copié";
+  const copy = () => { void navigator.clipboard?.writeText(value).then(() => { setCopied(true); window.setTimeout(() => setCopied(false), 2000); }); };
+  return (
+    <span className={styles.copyLine}>
+      <code className={styles.copyValue} tabIndex={0}>{value}</code>
+      <IconButton size={44} tone="quiet" icon={copied ? <Check /> : <Copy />} label={copied ? done : label} onClick={copy} />
+      <span className={styles.srOnly} aria-live="polite">{copied ? done : ""}</span>
     </span>
   );
 }
@@ -349,7 +413,7 @@ function Part({ chapter, title, tone = "tile", children }: { chapter: string; ti
 }
 
 /** « Pour aller plus loin »: a full-width row that says what it hides; the technical sheet folds out under it. */
-function Further({ lang, summary, children }: { lang: Lang; summary?: string; children: ReactNode }) {
+function Further({ lang, title, summary, children }: { lang: Lang; title?: string; summary?: string; children: ReactNode }) {
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
   const [open, setOpen] = useState(false);
   const panel = useId();
@@ -358,7 +422,7 @@ function Further({ lang, summary, children }: { lang: Lang; summary?: string; ch
       <h2 className={styles.furtherHeading}>
         <button type="button" className={styles.furtherRow} aria-expanded={open} aria-controls={panel} onClick={() => setOpen((v) => !v)}>
           <span className={styles.furtherText}>
-            <span className={styles.partTitle}>{t("Pour aller plus loin", "Going further")}</span>
+            <span className={styles.partTitle}>{title ?? t("Pour aller plus loin", "Going further")}</span>
             <span className={styles.note}>{summary ?? t("Détails techniques", "Technical details")}</span>
           </span>
           <span className={styles.chevron} data-open={open || undefined} aria-hidden="true"><ChevronDown /></span>
@@ -394,7 +458,6 @@ function ToolList({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
       <p className={styles.term}>{t("Les actions documentées par l'éditeur", "The actions the vendor documents")}</p>
       {sheet.tools_note && <p className={styles.text}>{say(lang, sheet.tools_note)}</p>}
       {tools.length > 0 && <>
-        <p className={styles.text}>{toolsSummary(tools, lang)}.</p>
         <div className={styles.topics}>{toolTopics(tools).map((topic) => <ToolTopicGroup key={topic.id} topic={topic} lang={lang} />)}</div>
         <p className={styles.note}>{t("Le classement par sujet est celui de ToolTrim ; les noms techniques sont ceux de l'éditeur.", "The grouping by topic is ToolTrim's; the technical names are the vendor's.")}</p>
       </>}

@@ -23,6 +23,8 @@ export interface McpSheet {
   safeguards?: ("human_confirmation" | "admin_controls" | "scoped_keys" | "no_delete")[];
   tools?: { name: string; kind: AgentCapabilityKind; fr: string; en: string }[]; tools_note?: Pair;
   install: InstallRow[]; clients?: string[]; skills?: string[]; note?: Pair;
+  /** Claude's directory page: « Ouvrir dans Claude » and the month added (never the tool list). */
+  claude_directory?: { url: string; added: string; read_on: string };
   docs_url: string; sources: { label: string; url: string }[];
 }
 

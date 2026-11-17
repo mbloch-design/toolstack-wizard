@@ -370,6 +370,11 @@
     "cursor",
     "Codex"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/airtable",
+    "added": "2026-02",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://airtable.com/developers/agents/mcp/getting-started",
   "sources": [
     {
@@ -387,6 +392,10 @@
     {
       "label": "Airtable Developers — Claude, ChatGPT, Gemini",
       "url": "https://airtable.com/developers/agents/mcp/claude"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/airtable"
     }
   ]
 }

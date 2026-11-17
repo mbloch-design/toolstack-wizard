@@ -111,6 +111,11 @@
     "Cline",
     "Continue"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/tally",
+    "added": "2026-07",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://developers.tally.so/api-reference/mcp",
   "sources": [
     {
@@ -128,6 +133,10 @@
     {
       "label": "Tally Help — ChatGPT",
       "url": "https://tally.so/help/chatgpt-integration"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/tally"
     }
   ]
 }

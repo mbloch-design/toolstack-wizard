@@ -243,6 +243,11 @@
     "stripe-projects",
     "upgrade-stripe"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/stripe",
+    "added": "2025-11",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://docs.stripe.com/mcp",
   "sources": [
     {
@@ -256,6 +261,10 @@
     {
       "label": "Stripe Docs — Skills",
       "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/stripe"
     }
   ]
 }

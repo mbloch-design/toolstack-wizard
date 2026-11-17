@@ -81,7 +81,7 @@ export const CLIENTS: Record<ClientId, ClientEntry> = {
   },
 };
 
-/** The logo of each place, for the small marks (sheet facts, copy menu); none for Codex, which has no logo of its own. */
+/** The logo of each place, for the small marks (sheet facts, copy menu). */
 export const CLIENT_MARKS: Partial<Record<ClientId, { name: string; slug: string; websiteUrl: string }>> = {
   claude: { name: "Claude", slug: "claude", websiteUrl: "https://claude.ai" },
   "claude-code": { name: "Claude", slug: "claude", websiteUrl: "https://claude.ai" },
@@ -90,6 +90,8 @@ export const CLIENT_MARKS: Partial<Record<ClientId, { name: string; slug: string
   copilot: { name: "Copilot", slug: "copilot", websiteUrl: "https://copilot.microsoft.com" },
   cursor: { name: "Cursor", slug: "cursor", websiteUrl: "https://cursor.com" },
   "vs-code": { name: "VS Code", slug: "vs-code", websiteUrl: "https://code.visualstudio.com" },
+  // Codex is OpenAI's: it takes OpenAI's mark, the one ChatGPT carries (a local file).
+  codex: { name: "Codex", slug: "chatgpt", websiteUrl: "https://chatgpt.com" },
 };
 
 const ORDER: ClientId[] = ["claude", "chatgpt", "gemini", "copilot", "claude-code", "cursor", "vs-code", "codex", "any"];
@@ -155,7 +157,10 @@ export function plugCard(sheet: McpSheet, client: ClientId, toolName: string, la
 
   // 2. The action, and 3. where it goes.
   const paste = (type: InstallRow["type"]) => CLIENTS[client].paste?.[type];
-  if (row?.type === "url" && !(client === "any" || (client === "claude" && isAddress(row.value)))) {
+  if (client === "claude" && sheet.claude_directory) {
+    // Claude's own directory page (read on 17/11/2026): one click to add it from Claude.
+    steps.push({ text: t(`Ouvrez la page de ${toolName} dans le répertoire de Claude et ajoutez le connecteur.`, `Open ${toolName}'s page in Claude's directory and add the connector.`), action: { kind: "open", href: sheet.claude_directory.url, label: t("Ouvrir dans Claude", "Open in Claude") } });
+  } else if (row?.type === "url" && !(client === "any" || (client === "claude" && isAddress(row.value)))) {
     steps.push({ text: t(`Ouvrez la page de ${toolName} dans ${who} et acceptez l'ajout.`, `Open ${toolName}'s page in ${who} and accept.`), action: { kind: "open", href: row.value, label: t(`Ouvrir dans ${who}`, `Open in ${who}`) } });
   } else if (row) {
     const label = { url: t("Copier l'adresse", "Copy the address"), command: t("Copier la commande", "Copy the command"), config: t("Copier la configuration", "Copy the configuration"), steps: "" }[row.type];

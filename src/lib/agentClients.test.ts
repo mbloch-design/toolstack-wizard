@@ -27,6 +27,8 @@ describe("plugging card (S1 bis)", () => {
     const miro = servers.find((s) => s.slug === "miro-mcp")!;
     expect(plugCard(miro, "gemini", "Miro", "fr").map((s) => s.text).join(" ")).toContain("Gemini ne documente pas où la coller");
     expect(plugCard(notion, "claude", "Notion", "fr").at(-1)?.text).toContain("Résume mes notes de réunion");
+    // Claude's directory page, read on 17/11/2026, is the one-click way in.
+    expect(plugCard(notion, "claude", "Notion", "fr")[0].action).toMatchObject({ kind: "open", href: "https://claude.ai/directory/notion" });
   });
 
   it("builds VS Code's documented install link from the server address", () => {
@@ -57,7 +59,7 @@ describe("technical sheet and sources", () => {
 
   it("merges near-duplicate sources and labels them shortly", () => {
     const links = sourceLinks(notion.sources, "fr");
-    expect(links.map((l) => l.label)).toEqual(["Présentation", "Connexion et forfaits", "Liste des outils"]);
+    expect(links.map((l) => l.label)).toEqual(["Présentation", "Connexion et forfaits", "Liste des outils", "Répertoire Claude"]);
     expect(links[0].domain).toBe("developers.notion.com");
   });
 

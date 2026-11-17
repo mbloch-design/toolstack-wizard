@@ -338,6 +338,11 @@
     "Codex",
     "Muse"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/calendly",
+    "added": "2026-03",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://developer.calendly.com/docs/mcp/calendly-mcp-server",
   "sources": [
     {
@@ -351,6 +356,10 @@
     {
       "label": "Calendly Developer — Supported tools",
       "url": "https://developer.calendly.com/docs/mcp/supported-tools"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/calendly"
     }
   ]
 }

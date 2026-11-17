@@ -133,6 +133,11 @@
     "make-endpoints",
     "make-credential-requests"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/make",
+    "added": "2026-01",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://developers.make.com/mcp-server/",
   "sources": [
     {
@@ -150,6 +155,10 @@
     {
       "label": "Make — Skills",
       "url": "https://skills.make.com/"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/make"
     }
   ]
 }

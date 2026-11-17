@@ -513,6 +513,11 @@
     "Windsurf",
     "Copilot Studio"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/clickup",
+    "added": "2026-01",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server-1",
   "sources": [
     {
@@ -534,6 +539,10 @@
     {
       "label": "ClickUp Developer — MCP tools",
       "url": "https://developer.clickup.com/docs/mcp-tools"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/clickup"
     }
   ]
 }

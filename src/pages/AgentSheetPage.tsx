@@ -118,7 +118,7 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
         { label: kind === "mcp" && siblingCount === 0 ? hostName : sheet.name },
       ]} />
       {server
-        ? <McpSheetView sheet={server} title={t(`Brancher ${hostName} à votre assistant`, `Plug ${hostName} into your assistant`) as string} toolName={hostName} lang={lang} pageUrl={url} reportHref={reportHref} related={related} />
+        ? <McpSheetView sheet={server} logo={host ? <Logo tool={host} size={48} /> : undefined} title={t(`Brancher ${hostName} à votre assistant`, `Plug ${hostName} into your assistant`) as string} toolName={hostName} lang={lang} pageUrl={url} reportHref={reportHref} related={related} />
         : <>
           <CatalogTitle title={sheet.name} lead={t(`Un savoir-faire officiel de ${sheet.publisher} pour votre assistant.`, `Official know-how from ${sheet.publisher} for your assistant.`) as string} />
           <SkillSheetView skill={skill!} lang={lang} reportHref={reportHref} related={related} />

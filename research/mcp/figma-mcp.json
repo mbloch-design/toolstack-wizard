@@ -345,6 +345,11 @@
     "fr": "L'écriture dans les fichiers est en bêta.",
     "en": "Writing to files is in beta."
   },
+  "claude_directory": {
+    "url": "https://claude.ai/directory/figma",
+    "added": "2025-11",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/",
   "sources": [
     {
@@ -366,6 +371,10 @@
     {
       "label": "Figma Developer Docs — Tools and prompts",
       "url": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/figma"
     }
   ]
 }

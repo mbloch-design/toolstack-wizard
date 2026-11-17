@@ -420,6 +420,11 @@
     "miro-code-review",
     "miro-code-spec"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/miro",
+    "added": "2026-02",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://developers.miro.com/docs/miro-mcp",
   "sources": [
     {
@@ -437,6 +442,10 @@
     {
       "label": "Miro Developers — Connecting Miro MCP to AI coding tools",
       "url": "https://developers.miro.com/docs/connecting-miro-mcp-to-ai-coding-tools"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/miro"
     }
   ]
 }

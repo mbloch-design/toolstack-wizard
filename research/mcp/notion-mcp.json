@@ -562,6 +562,11 @@
   "skills": [
     "notion-skills"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/notion",
+    "added": "2025-11",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
   "sources": [
     {
@@ -579,6 +584,10 @@
     {
       "label": "Notion Developers — Supported tools (by category)",
       "url": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/notion"
     }
   ]
 }

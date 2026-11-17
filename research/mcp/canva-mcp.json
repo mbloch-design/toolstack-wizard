@@ -354,6 +354,11 @@
     "perplexity",
     "grok"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/canva",
+    "added": "2025-11",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://www.canva.dev/docs/apps/mcp/",
   "sources": [
     {
@@ -375,6 +380,10 @@
     {
       "label": "Canva Developers — Quickstart (Canva for AI assistants)",
       "url": "https://www.canva.dev/docs/apps/quickstart/"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/canva"
     }
   ]
 }

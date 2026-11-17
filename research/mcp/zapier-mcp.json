@@ -226,6 +226,11 @@
     "zapier-onboarding",
     "zapier-build-workflows"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/zapier",
+    "added": "2025-11",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://docs.zapier.com/mcp/get-started/quickstart",
   "sources": [
     {
@@ -243,6 +248,10 @@
     {
       "label": "Zapier Docs — Connect Claude",
       "url": "https://docs.zapier.com/mcp/get-started/connect/claude"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/zapier"
     }
   ]
 }

@@ -359,6 +359,11 @@
     "webflow-cli-troubleshooter",
     "webflow-cloud-commands"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/webflow",
+    "added": "2026-01",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://developers.webflow.com/mcp/reference/getting-started",
   "sources": [
     {
@@ -380,6 +385,10 @@
     {
       "label": "Webflow Developers — Skills",
       "url": "https://developers.webflow.com/mcp/reference/skills"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/webflow"
     }
   ]
 }

@@ -147,7 +147,7 @@ export function agentAccessIndex(access) {
 
 // ── Section « agents » (S1) : fiche serveur (research/mcp) et fiche skill (research/skills) ──
 const INSTALL_TYPES = ["command", "url", "config", "steps"];
-const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "card", "examples", "for", "not_for", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "docs_url", "sources"]);
+const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "card", "examples", "for", "not_for", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "claude_directory", "docs_url", "sources"]);
 const SKILL_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "server", "category", "summary", "agents", "install", "requires", "verified_on", "status", "docs_url", "sources"]);
 const isPair = (value) => value && isText(value.fr) && isText(value.en);
 
@@ -173,6 +173,11 @@ export function validateMcpSheet(sheet, { catalogSlugs, skillSlugs } = {}) {
   if (sheet?.plan_note && !isPair(sheet.plan_note)) errors.push(`${at} : plan_note fr/en`);
   if (sheet?.tools_note && !isPair(sheet.tools_note)) errors.push(`${at} : tools_note fr/en`);
   if (sheet?.note && !isPair(sheet.note)) errors.push(`${at} : note fr/en`);
+  // Claude's directory page (S1 bis): the link « Ouvrir dans Claude » and the month added, never the tool list.
+  if ("claude_directory" in (sheet || {})) {
+    const d = sheet.claude_directory;
+    if (!/^https:\/\/claude\.ai\/directory\/[a-z0-9-]+$/.test(d?.url || "") || !/^\d{4}-\d{2}$/.test(d?.added || "") || !DATE.test(d?.read_on || "")) errors.push(`${at} : claude_directory { url claude.ai/directory/<slug>, added AAAA-MM, read_on }`);
+  }
   // One sentence written for the card (S1 bis): short enough for two lines, never cut mid-sentence.
   if ("card" in (sheet || {}) && (!isPair(sheet.card) || sheet.card.fr.length > 90 || sheet.card.en.length > 90)) errors.push(`${at} : card fr/en, 90 signes au plus`);
   // ToolTrim's words (S1 bis): 2 or 3 example requests, who it is for and not for. Absent when nothing allows writing them.

@@ -374,6 +374,11 @@
     "fr": "Shopify passe par des intégrations installées depuis chaque assistant, sans les présenter comme un serveur MCP.",
     "en": "Shopify works through integrations installed from each assistant, without calling them an MCP server."
   },
+  "claude_directory": {
+    "url": "https://claude.ai/directory/shopify",
+    "added": "2026-04",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools",
   "sources": [
     {
@@ -391,6 +396,10 @@
     {
       "label": "Shopify Help Center — Shopify connector for Claude",
       "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/shopify"
     }
   ]
 }

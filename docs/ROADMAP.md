@@ -332,6 +332,8 @@ Même branche, rien de poussé ni de fusionné. Les données de S1 restent ; l'e
 
 - **Passe de mise en page (17/11, les 11 points ci-dessus) :** faite, avec deux écarts dits dans `DESIGN_DECISIONS.md` (grilles compactes au lieu de rangées qui défilent ; flèche des liens texte au survol). Captures avant/après à 1440 et 375 px dans le dossier de notes de la session.
 
+- **Emprunts au répertoire Claude (17/11) :** fiche technique toujours visible en pied de fiche (accès maximum, éditeur, vérifié le, répertoire Claude avec le mois d'ajout, actions documentées, adresse du serveur copiable), 3 colonnes sur bureau et 2 sur téléphone ; seule la liste des actions reste repliable. L'en-tête garde trois faits (connexion, compte, « Fonctionne avec ») et la date passe dans la grille, pour ne rien répéter. Logo de l'outil à 48 px à côté du titre (taille 48 ajoutée au `Logo` du système). « Ouvrir dans Claude » vers la page du répertoire : 17 serveurs sur 19, relevés page par page le 17/11 sur `claude.ai/directory/<slug>` (nom, éditeur et adresse du connecteur vérifiés), champ `claude_directory` et source « Répertoire Claude (relevé le 17/11/2026) ». Absents : Google Analytics (seuls des connecteurs tiers sortent à la recherche) et l'application de bureau de Figma (la page Figma décrit le serveur en ligne). Buffer y figure avec la mention « Communautaire ».
+
 **Reste à faire :** Michael revoit `/fr/agents`, `/fr/mcp/notion-mcp` et `/fr/tool/notion#assistant-ia` et dit si ça accompagne ; références visuelles après validation ; publication. Puis le [critère de passage à S2](#critere-s2).
 
 ### Brief d'origine — S1, section MCP (exécuté les 16-17/11)

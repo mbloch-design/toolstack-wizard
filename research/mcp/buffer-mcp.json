@@ -209,6 +209,11 @@
     "Grok",
     "n8n"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/buffer",
+    "added": "2026-08",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://developers.buffer.com/guides/integrations/mcp.html",
   "sources": [
     {
@@ -222,6 +227,10 @@
     {
       "label": "Buffer — Claude integration",
       "url": "https://buffer.com/integrations/claude"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/buffer"
     }
   ]
 }

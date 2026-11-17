@@ -70,6 +70,7 @@ export function sourceLinks(sources: { label: string; url: string }[], lang: Lan
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
   const short = (label: string, url: string) => {
     const said = `${label} ${url}`;
+    if (/claude\.ai\/directory/.test(url)) return t("Répertoire Claude", "Claude directory");
     if (/supported tools|tools?\b|reference/i.test(label)) return t("Liste des outils", "List of tools");
     if (/github|readme|repo/i.test(said)) return t("Code source", "Source code");
     if (/skill/i.test(label)) return t("Skills", "Skills");

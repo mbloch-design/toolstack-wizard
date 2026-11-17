@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent, waitFor } from "storybook/test";
+import Logo from "../Logo/Logo";
 import { McpSheetView, SkillSheetView } from "./AgentSheet";
 import { sheetStates, skillStates } from "./AgentSheet.fixtures";
 
@@ -20,6 +21,7 @@ const REPORT = "/fr/contact?subject=correction";
 const server = (name: keyof typeof sheetStates, toolName: string): Story => ({
   render: (_args, context) => <McpSheetView sheet={sheetStates[name]} toolName={toolName} lang={context.globals.lang}
     title={context.globals.lang === "en" ? `Plug ${toolName} into your assistant` : `Brancher ${toolName} à votre assistant`}
+    logo={<Logo tool={{ name: toolName, slug: sheetStates[name].host_tool }} size={48} localOnly />}
     pageUrl={`https://tooltrim.com/fr/mcp/${sheetStates[name].slug}`} reportHref={REPORT} />,
 });
 const chapters = (root: HTMLElement) => [...root.querySelectorAll<HTMLElement>("[data-chapter]")].map((el) => el.dataset.chapter);
@@ -30,10 +32,13 @@ export const Notion: Story = {
   play: async ({ canvas, canvasElement, globals }) => {
     const fr = globals.lang !== "en";
     // Content contract: our view and the plugging precede the technique.
-    await expect(chapters(canvasElement)).toEqual(["change", "view", "plug", "control", "further", "sources"]);
+    await expect(chapters(canvasElement)).toEqual(["change", "view", "plug", "control", "tech", "further", "sources"]);
     await expect(canvas.getByRole("heading", { level: 1 })).toHaveTextContent(fr ? "Brancher Notion à votre assistant" : "Plug Notion into your assistant");
     await expect(canvas.getByRole("heading", { name: fr ? "Brancher Notion" : "Plug in Notion" })).toBeVisible();
-    await expect(canvas.getByText(fr ? /Dans Claude, ouvrez la liste des connecteurs/ : /In Claude, open the list of connectors/)).toBeVisible();
+    await expect(canvas.getByRole("link", { name: fr ? "Ouvrir dans Claude" : "Open in Claude" })).toHaveAttribute("href", "https://claude.ai/directory/notion");
+    // The technical sheet is always in view; only the action list folds.
+    await expect(canvas.getByText(fr ? "Adresse du serveur" : "Server address")).toBeVisible();
+    await expect(canvas.getByRole("link", { name: fr ? /^Ajouté en novembre\s2025$/ : /^Added in November\s2025$/ })).toBeVisible();
     await userEvent.click(canvas.getByRole("button", { name: "Cursor" }));
     await expect(canvas.getByRole("button", { name: fr ? "Copier la configuration" : "Copy the configuration" })).toBeVisible();
     await expect(canvas.getAllByRole("listitem").filter((li) => li.closest("ol")).length).toBeLessThanOrEqual(4);
@@ -43,6 +48,10 @@ export const Notion: Story = {
     await expect(menu).toHaveAttribute("aria-expanded", "true");
     await expect(canvas.getByRole("button", { name: fr ? /^Copier la fiche en Markdown/ : /^Copy the sheet as Markdown/ })).toBeVisible();
     await expect(canvas.getByRole("button", { name: fr ? /^Commande Claude Code/ : /^Claude Code command/ })).toBeVisible();
+    // No empty icon on opening: every logo drawn has loaded, every other mark shows its pictogram.
+    const list = canvasElement.querySelector<HTMLElement>("ul[id]")!;
+    for (const image of list.querySelectorAll("img")) await expect(image.complete && image.naturalWidth > 0).toBe(true);
+    for (const mark of list.querySelectorAll<HTMLElement>("[data-mark]")) await expect(mark.querySelector("img, svg")).not.toBeNull();
     await expect(canvas.getByRole("link", { name: fr ? /brancher à vs code/i : /plug into vs code/i })).toHaveAttribute("href", expect.stringMatching(/^vscode:mcp\/install\?/));
     await userEvent.keyboard("{Escape}");
     await expect(menu).toHaveAttribute("aria-expanded", "false");
@@ -50,11 +59,11 @@ export const Notion: Story = {
     await userEvent.unhover(menu);
 
     // The technical sheet opens on click (17/11: it once did not).
-    const toggle = canvas.getByRole("button", { name: fr ? /pour aller plus loin/i : /going further/i });
+    const toggle = canvas.getByRole("button", { name: fr ? /les actions documentées/i : /the documented actions/i });
     await userEvent.click(toggle);
     await expect(toggle).toHaveAttribute("aria-expanded", "true");
-    await waitFor(() => expect(canvas.getByText(fr ? /70 actions, dont 4 qui suppriment/ : /70 actions, 4 of which delete/)).toBeVisible());
-    await expect(canvas.getByRole("region", { name: fr ? "Commentaires et discussions" : "Comments and discussions" })).toBeVisible();
+    await expect(canvas.getByText(fr ? /70 actions, dont 4 qui suppriment/ : /70 actions, 4 of which delete/)).toBeVisible();
+    await waitFor(() => expect(canvas.getByRole("region", { name: fr ? "Commentaires et discussions" : "Comments and discussions" })).toBeVisible());
     await expect(canvas.getAllByRole("link", { name: fr ? /liste des outils/i : /list of tools/i })).toHaveLength(1);
     await expect(canvas.getByRole("link", { name: fr ? /signaler une erreur/i : /report an error/i })).toHaveAttribute("href", REPORT);
   },
@@ -64,7 +73,7 @@ export const StripePays: Story = {
   ...server("stripe", "Stripe"),
   play: async ({ canvas, globals }) => {
     const fr = globals.lang !== "en";
-    await expect(canvas.getByRole("link", { name: fr ? "Ouvrir dans Claude" : "Open in Claude" })).toHaveAttribute("href", expect.stringContaining("claude.ai/directory"));
+    await expect(canvas.getByRole("link", { name: fr ? "Ouvrir dans Claude" : "Open in Claude" })).toHaveAttribute("href", "https://claude.ai/directory/stripe");
     await expect(canvas.getByText(fr ? /Peut déplacer de l'argent, après votre confirmation/ : /Can move money, after your confirmation/)).toBeVisible();
   },
 };

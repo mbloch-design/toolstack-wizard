@@ -24,6 +24,12 @@
   justify-content: space-between;
 }
 
+.titleLogo {
+  display: inline-flex;
+  flex: none;
+  padding-top: var(--tt-space-2);
+}
+
 .titles {
   display: grid;
   flex: 1 1 420px;
@@ -148,12 +154,6 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  opacity: 0;
-  transition: opacity var(--tt-dur-state) var(--tt-ease);
-}
-
-.mark img[data-loaded] {
-  opacity: 1;
 }
 
 .mark svg {
@@ -692,4 +692,58 @@
 .sourceDomain {
   composes: note from "../atoms.module.css";
   color: var(--tt-meta);
+}
+
+/* The technical sheet: six boxes, three columns on a computer, two on a phone; always in view. */
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--tt-space-3);
+  margin: 0;
+}
+
+@container (max-width: 640px) {
+  .techGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.techBox {
+  composes: tile from "../atoms.module.css";
+  gap: var(--tt-space-1);
+  padding: var(--tt-space-4);
+  min-width: 0;
+}
+
+.techLabel {
+  composes: note from "../atoms.module.css";
+  color: var(--tt-meta);
+}
+
+.techValue {
+  composes: label from "../atoms.module.css";
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.copyLine {
+  display: flex;
+  gap: var(--tt-space-1);
+  align-items: center;
+  min-width: 0;
+}
+
+.copyValue {
+  composes: note from "../atoms.module.css";
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+}
+
+.copyValue:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
 }

@@ -95,6 +95,11 @@
     "Copilot Studio",
     "n8n"
   ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/ahrefs",
+    "added": "2026-01",
+    "read_on": "2026-11-17"
+  },
   "docs_url": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp",
   "sources": [
     {
@@ -108,6 +113,10 @@
     {
       "label": "Ahrefs — Ahrefs SEO MCP",
       "url": "https://ahrefs.com/mcp"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/ahrefs"
     }
   ]
 }
