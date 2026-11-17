@@ -30,6 +30,8 @@ import { ArticleFacturation, ComparePage, GuideDetailPage, ToolDetailPage } from
 const ToolsPage = lazy(() => import("@/pages/ToolsPage"));
 const CategoryPage = lazy(() => import("@/pages/CategoryPage"));
 const HostPage = lazy(() => import("@/pages/HostPage"));
+const AgentsIndexPage = lazy(() => import("@/pages/AgentsIndexPage"));
+const AgentSheetPage = lazy(() => import("@/pages/AgentSheetPage"));
 const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
 const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
 const StacksPage = lazy(() => import("@/pages/StacksPage"));
@@ -229,7 +231,12 @@ export const AppRoutes = () => {
           La page se replie sur la fiche de l'hôte sous le seuil de contenu. */}
       <Route path="plugins/:slug" element={<HostPage famille="plugins" />} />
       <Route path="libraries/:slug" element={<HostPage famille="libraries" />} />
-      <Route path="mcp/:slug" element={<HostPage famille="mcp" />} />
+      {/* Section agents (S1, 16/11/2026) : serveurs MCP et skills officiels ; remplace la page hôte « mcp ». */}
+      <Route path="agents" element={<AgentsIndexPage view="all" />} />
+      <Route path="mcp" element={<AgentsIndexPage view="mcp" />} />
+      <Route path="mcp/:slug" element={<AgentSheetPage kind="mcp" />} />
+      <Route path="skills" element={<AgentsIndexPage view="skills" />} />
+      <Route path="skills/:slug" element={<AgentSheetPage kind="skill" />} />
       <Route path="guides" element={<GuidesPage />} />
       <Route path="stories" element={<RedirectStoriesToGuides />} />
       <Route path="ma-stack" element={<CartPage />} />

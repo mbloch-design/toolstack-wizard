@@ -29,6 +29,8 @@ import ContactPage from "@/pages/ContactPage";
 import LegalNoticePage from "@/pages/LegalNoticePage";
 import TermsPage from "@/pages/TermsPage";
 import CartPage from "@/pages/CartPage";
+import AgentsIndexPage from "@/pages/AgentsIndexPage";
+import AgentSheetPage from "@/pages/AgentSheetPage";
 import SubmitToolPage from "@/pages/SubmitToolPage";
 import ExplorerPage from "@/pages/ExplorerPage";
 import PersonaPillarPage from "@/pages/PersonaPillarPage";
@@ -649,3 +651,28 @@ function renderAdditionalSection(path: string, element: ReactNode): string {
 export async function renderLegalNoticePage(path: string): Promise<string> { return renderAdditionalSection(path, <LegalNoticePage />); }
 export async function renderTermsPage(path: string): Promise<string> { return renderAdditionalSection(path, <TermsPage />); }
 export async function renderCartPage(path: string): Promise<string> { return renderAdditionalSection(path, <CartPage />); }
+
+// Section agents (S1, 16/11/2026): hub, indexes and sheets, rendered in their own routes so a sheet reads its slug.
+export async function renderAgentsPage(path: string): Promise<string> {
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={new QueryClient()}>
+        <TooltipProvider>
+          <Toaster /><Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop /><DynamicCanonical />
+            <ErrorBoundary><Suspense fallback={null}>
+              <Routes><Route path="/:lang" element={<LangLayout />}>
+                <Route path="agents" element={<AgentsIndexPage view="all" />} />
+                <Route path="mcp" element={<AgentsIndexPage view="mcp" />} />
+                <Route path="mcp/:slug" element={<AgentSheetPage kind="mcp" />} />
+                <Route path="skills" element={<AgentsIndexPage view="skills" />} />
+                <Route path="skills/:slug" element={<AgentSheetPage kind="skill" />} />
+              </Route></Routes>
+            </Suspense></ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}

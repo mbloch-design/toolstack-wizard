@@ -28,7 +28,7 @@ describe('generated route fallback contract',()=>{
   for(const route of ['/fr/search','/en/search','/fr/back-office','/en/back-office','/submit','/fr/comparatif/notion-vs-figma','/en/comparatif/canva-vs-photoshop-elements'])expect(rewriteFor(route),route).toBe('/client-only.html');
  });
  it('keeps host pages client rendered without the homepage canonical',()=>{
-  for(const route of ['/fr/plugins/figma','/en/libraries/react','/fr/mcp/claude'])expect(rewriteFor(route),route).toBe('/client-only.html');
+  for(const route of ['/fr/plugins/figma','/en/libraries/react'])expect(rewriteFor(route),route).toBe('/client-only.html');
  });
  it('does not intercept prerendered routes or parameter variants',()=>{
   for(const route of ['/fr/tool/notion','/en/explorer/around/notion','/fr/tools','/en/submit','/fr/explorer','/en/ma-stack'])expect(rewriteFor(new URL(route+'?utm_source=test','https://tooltrim.com').pathname),route).toBeUndefined();

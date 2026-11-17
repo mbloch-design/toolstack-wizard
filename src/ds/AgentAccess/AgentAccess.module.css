@@ -1,4 +1,4 @@
-/* What an AI assistant can do in the tool: the verdict, the facts, the date, the documentation.
+/* The gateway on a tool page: the verdict, three facts, the link to the server sheet, the date.
    A tile of the system; a grid of facts, never a separator. */
 
 .block {
@@ -24,23 +24,9 @@
   composes: eyebrow from "../atoms.module.css";
 }
 
-.servers {
-  display: grid;
-  gap: var(--tt-gap-group);
-}
-
-@container (min-width: 640px) {
-  .servers[data-several] {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.tool,
-.server,
 .group {
   display: grid;
   gap: var(--tt-space-3);
-  align-content: start;
   min-width: 0;
 }
 
@@ -57,8 +43,7 @@
 }
 
 @container (min-width: 520px) {
-  .tool .row,
-  .servers:not([data-several]) .row {
+  .row {
     grid-template-columns: 9rem minmax(0, 1fr);
     gap: var(--tt-space-4);
     align-items: baseline;
@@ -82,6 +67,7 @@
   max-width: 62ch;
 }
 
+.links,
 .sources {
   display: grid;
   gap: var(--tt-space-2);

@@ -1,0 +1,196 @@
+/* A server or skill sheet: the decision, then the facts by part. Groups and space, never a separator. */
+
+.sheet {
+  display: grid;
+  gap: var(--tt-gap-head);
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.lead {
+  display: grid;
+  gap: var(--tt-gap-item);
+  max-width: 62ch;
+}
+
+.verdict {
+  composes: titleM from "../atoms.module.css";
+}
+
+.text {
+  composes: text from "../atoms.module.css";
+}
+
+.note {
+  composes: note from "../atoms.module.css";
+}
+
+.term {
+  composes: eyebrow from "../atoms.module.css";
+}
+
+.part {
+  composes: tile from "../atoms.module.css";
+  gap: var(--tt-gap-group);
+}
+
+.partTitle {
+  composes: titleM from "../atoms.module.css";
+}
+
+.facts {
+  display: grid;
+  gap: var(--tt-space-3);
+  margin: 0;
+}
+
+.row {
+  display: grid;
+  gap: var(--tt-space-1);
+  min-width: 0;
+}
+
+@container (min-width: 560px) {
+  .row {
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: var(--tt-space-4);
+    align-items: baseline;
+  }
+}
+
+.value {
+  composes: text from "../atoms.module.css";
+  display: grid;
+  gap: var(--tt-space-1);
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.detail {
+  composes: note from "../atoms.module.css";
+  max-width: 62ch;
+}
+
+.install {
+  display: grid;
+  gap: var(--tt-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.installRow {
+  display: grid;
+  gap: var(--tt-space-2);
+  min-width: 0;
+}
+
+.installHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--tt-space-2) var(--tt-space-3);
+  margin: 0;
+}
+
+.code {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--tt-space-2);
+  min-width: 0;
+  padding: var(--tt-space-3) var(--tt-space-3) var(--tt-space-3) var(--tt-space-4);
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+}
+
+.pre {
+  composes: note from "../atoms.module.css";
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding-block: var(--tt-space-1);
+  font-family: inherit;
+  white-space: pre-wrap;
+}
+
+/* Code keeps its lines whole (a URL or a config never breaks inside a word): it scrolls sideways. */
+.pre:not([data-type="steps"]) {
+  overflow-x: auto;
+  white-space: pre;
+  scrollbar-width: thin;
+}
+
+.pre:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.chevron {
+  display: inline-grid;
+  margin-inline-start: var(--tt-space-1);
+  transition: transform var(--tt-dur-state) var(--tt-ease);
+}
+
+.chevron svg {
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
+}
+
+.chevron[data-open] {
+  transform: rotate(180deg);
+}
+
+.toolGroups {
+  display: grid;
+  gap: var(--tt-gap-group);
+  padding-top: var(--tt-space-4);
+}
+
+.toolGroup {
+  display: grid;
+  gap: var(--tt-space-3);
+}
+
+.tools {
+  display: grid;
+  gap: var(--tt-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@container (min-width: 720px) {
+  .tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--tt-space-6);
+  }
+}
+
+.tool {
+  display: grid;
+  gap: var(--tt-space-1);
+  min-width: 0;
+}
+
+.toolName {
+  composes: label from "../atoms.module.css";
+  overflow-wrap: anywhere;
+}
+
+.footer {
+  display: grid;
+  gap: var(--tt-space-3);
+  justify-items: start;
+}
+
+.sources {
+  display: grid;
+  gap: var(--tt-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sources a {
+  overflow-wrap: anywhere;
+}

@@ -43,7 +43,7 @@ try {
   const ROUTES = [
     { segment: "plugins", champ: "plugins", forme: "plugin" },
     { segment: "libraries", champ: "libs", forme: "library" },
-    { segment: "mcp", champ: "mcp", forme: "mcp" },
+    // mcp : section dédiée depuis le 16/11/2026 (/mcp, /mcp/:slug), plus de page hôte.
   ];
 
   console.log(`Seuil : ${SEUIL} outil(s) minimum.\n`);

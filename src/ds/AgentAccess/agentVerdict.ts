@@ -37,7 +37,7 @@ const COUNT_EN = ["", "", "Two", "Three", "Four"];
 const ONE_CLICK = ["connector", "plugin"];
 const ASSISTANT_NAMES = { claude: "Claude", chatgpt: "ChatGPT", gemini: "Gemini", copilot: "Copilot" } as const;
 const KIND_ORDER = ["read", "write", "delete", "send", "pay"] as const;
-const VERBS = {
+export const VERBS = {
   read: ["lire", "read"], write: ["modifier", "edit"], delete: ["supprimer", "delete"],
   send: ["envoyer ou publier", "send or publish"], pay: ["payer", "pay"],
 } as const;

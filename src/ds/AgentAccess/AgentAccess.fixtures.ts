@@ -32,7 +32,8 @@ export const agentAccessStates = {
         "plan": "all",
         "planNote": "Tous les forfaits. Jetons MCP (connexion sans navigateur), recherche dans les sources connectées et requêtes SQL illimitées : Business et Enterprise. Les invités d'un espace ne peuvent pas se connecter.",
         "planNoteEn": "Every plan. MCP tokens (no browser sign-in), connected-source search and unlimited SQL queries: Business and Enterprise. Workspace guests cannot connect.",
-        "docsUrl": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+        "docsUrl": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+        "mcpSlug": "notion-mcp"
       }
     ],
     "status": "ga",
@@ -75,7 +76,7 @@ export const agentAccessStates = {
       "admin_controls"
     ]
   } satisfies AgentAccess,
-  /** Two servers: remote on every plan, desktop read-only on some plans; restricted clients. */
+  /** Two servers, two sheet links. */
   figma: {
     "mcp": "official",
     "verifiedOn": "2026-11-16",
@@ -119,7 +120,8 @@ export const agentAccessStates = {
           "clickup",
           "notion"
         ],
-        "docsUrl": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/"
+        "docsUrl": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/",
+        "mcpSlug": "figma-mcp"
       },
       {
         "name": "Figma MCP server (desktop)",
@@ -134,7 +136,8 @@ export const agentAccessStates = {
           "vs-code",
           "warp"
         ],
-        "docsUrl": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/"
+        "docsUrl": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/",
+        "mcpSlug": "figma-mcp-desktop"
       }
     ],
     "capabilities": [
@@ -202,7 +205,8 @@ export const agentAccessStates = {
         "plan": "paid",
         "planNote": "Forfaits payants à partir de Lite ; chaque appel consomme des unités API du quota mensuel du forfait.",
         "planNoteEn": "Paid plans from Lite up; each call uses API units from the plan's monthly allowance.",
-        "docsUrl": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+        "docsUrl": "https://docs.ahrefs.com/en/mcp/docs/introduction",
+        "mcpSlug": "ahrefs-mcp"
       }
     ],
     "capabilities": [
@@ -252,7 +256,7 @@ export const agentAccessStates = {
     "note": "Hotjar a rejoint Contentsquare, dont l'offre propose un serveur MCP.",
     "noteEn": "Hotjar has joined Contentsquare, whose offer includes an MCP server."
   } satisfies AgentAccess,
-  /** Can cancel meetings; no safeguard documented (the example of the brief). */
+  /** Can cancel meetings; no safeguard documented. */
   calendly: {
     "mcp": "official",
     "verifiedOn": "2026-11-16",
@@ -277,7 +281,8 @@ export const agentAccessStates = {
         "plan": "all",
         "planNote": "Aucun forfait payant requis ; certaines actions dépendent du forfait.",
         "planNoteEn": "No paid plan required; some actions depend on your plan.",
-        "docsUrl": "https://developer.calendly.com/docs/mcp/calendly-mcp-server"
+        "docsUrl": "https://developer.calendly.com/docs/mcp/calendly-mcp-server",
+        "mcpSlug": "calendly-mcp"
       }
     ],
     "status": "ga",
@@ -334,7 +339,8 @@ export const agentAccessStates = {
         ],
         "access": "read_write",
         "plan": "unknown",
-        "docsUrl": "https://docs.stripe.com/mcp"
+        "docsUrl": "https://docs.stripe.com/mcp",
+        "mcpSlug": "stripe-mcp"
       }
     ],
     "status": "beta",
@@ -395,7 +401,8 @@ export const agentAccessStates = {
         "transport": "local",
         "access": "read",
         "plan": "unknown",
-        "docsUrl": "https://developers.google.com/analytics/devguides/MCP"
+        "docsUrl": "https://developers.google.com/analytics/devguides/MCP",
+        "mcpSlug": "google-analytics-mcp"
       }
     ],
     "capabilities": [
@@ -421,61 +428,6 @@ export const agentAccessStates = {
     ],
     "note": "Serveur à installer sur votre ordinateur et à relier par des identifiants Google Cloud : une mise en place technique.",
     "noteEn": "A server to install on your computer and connect with Google Cloud credentials: a technical setup."
-  } satisfies AgentAccess,
-  /** Restricted to a few assistants; setup not stated by the vendor. */
-  slack: {
-    "mcp": "official",
-    "verifiedOn": "2026-11-16",
-    "sources": [
-      {
-        "label": "Slack Developer Docs — Slack MCP server overview",
-        "url": "https://docs.slack.dev/ai/slack-mcp-server/"
-      },
-      {
-        "label": "Slack Developer Docs — Announcing the Slack MCP server",
-        "url": "https://docs.slack.dev/changelog/2026/02/17/slack-mcp/"
-      }
-    ],
-    "servers": [
-      {
-        "name": "Slack MCP server",
-        "transport": "remote",
-        "auth": [
-          "oauth"
-        ],
-        "access": "read_write",
-        "plan": "unknown",
-        "clients": [
-          "claude",
-          "cursor",
-          "perplexity"
-        ],
-        "docsUrl": "https://docs.slack.dev/ai/slack-mcp-server/"
-      }
-    ],
-    "capabilities": [
-      {
-        "kind": "read",
-        "fr": "Chercher et lire messages, fils, fichiers, canvases et listes",
-        "en": "Search and read messages, threads, files, canvases and lists"
-      },
-      {
-        "kind": "write",
-        "fr": "Créer et modifier canvases, canaux, listes et brouillons de messages",
-        "en": "Create and edit canvases, channels, lists and message drafts"
-      },
-      {
-        "kind": "send",
-        "fr": "Envoyer des messages dans n'importe quelle conversation, ou les programmer",
-        "en": "Send messages to any conversation, or schedule them"
-      }
-    ],
-    "safeguards": [
-      "admin_controls",
-      "scoped_keys"
-    ],
-    "note": "Ouvert aux applications publiées dans le Slack Marketplace, aux applications internes et à quelques assistants partenaires.",
-    "noteEn": "Open to apps published in the Slack Marketplace, internal apps and a few partner assistants."
   } satisfies AgentAccess,
   /** Setup and safeguards unread (vendor help page blocked): left out, never guessed. */
   canva: {
@@ -520,7 +472,8 @@ export const agentAccessStates = {
           "perplexity",
           "grok"
         ],
-        "docsUrl": "https://www.canva.com/help/mcp-agent-setup/"
+        "docsUrl": "https://www.canva.com/help/mcp-agent-setup/",
+        "mcpSlug": "canva-mcp"
       }
     ],
     "capabilities": [
@@ -537,6 +490,3 @@ export const agentAccessStates = {
     ]
   } satisfies AgentAccess,
 };
-
-/** Client names as the page resolves them from the catalogue. */
-export const clientNames: Record<string, string> = { claude: "Claude", cursor: "Cursor", "vs-code": "VS Code", replit: "Replit", linear: "Linear", warp: "Warp", clickup: "ClickUp", notion: "Notion", perplexity: "Perplexity", chatgpt: "ChatGPT", gemini: "Gemini", lovable: "Lovable", make: "Make", grok: "Grok" };

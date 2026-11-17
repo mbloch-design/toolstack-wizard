@@ -1230,8 +1230,8 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                       {t("Assistant IA.", "AI assistant.")} <span className="tt-title-muted">{t(`${tool.name} et votre assistant.`, `${tool.name} and your assistant.`)}</span>
                     </h2>
                     <AgentAccess
-                      access={tool.agentAccess} toolName={tool.name} lang={lang === "en" ? "en" : "fr"}
-                      clientName={(slug) => tools.find((item) => (item.slug || item.id) === slug)?.name ?? slug}
+                      access={tool.agentAccess} lang={lang === "en" ? "en" : "fr"}
+                      renderSheetLink={(slug, className, content) => <Link to={`${prefix}/mcp/${slug}`} className={className}>{content}</Link>}
                     />
                   </div>
                 )}
