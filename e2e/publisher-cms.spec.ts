@@ -14,7 +14,7 @@ async function signIn(page: Page, lang: "fr" | "en", email: string) {
   await page.locator(".ac-form").getByRole("button", { name: lang === "fr" ? "Se connecter" : "Sign in", exact: true }).click();
 }
 
-for (const { width, lang } of [{ width: 390, lang: "fr" }, { width: 768, lang: "en" }, { width: 1280, lang: "en" }] as const) {
+for (const { width, lang, dark } of [{ width: 390, lang: "fr", dark: false }, { width: 768, lang: "en", dark: true }, { width: 1280, lang: "en", dark: false }] as const) {
   test(`publisher facts at ${width}px (${lang})`, async ({ page, request }) => {
     const ownerEmail = "editor@example.invalid";
     const guestEmail = "other@example.invalid";
@@ -24,7 +24,12 @@ for (const { width, lang } of [{ width: 390, lang: "fr" }, { width: 768, lang: "
     const owner = accounts.find((account: { email: string }) => account.email === ownerEmail).id;
     let value: ProductDraft = {
       schemaVersion: 1, name: tool.name, websiteUrl: "https://example.org",
-      localized: { fr: language, en: language }, plans: [], media: [], classificationProposals: [], integrations: [],
+      localized: { fr: language, en: language }, plans: width === 1280 ? [{
+        id: "plan-basic", planKey: "basic", archived: false,
+        localized: { fr: { name: "Base", highlights: [], summary: null }, en: { name: "Basic", highlights: [], summary: null } },
+        options: [{ id: "basic-price", type: "paid", amount: "100", currency: "EUR", period: "year", unit: "seat",
+          commitment: "annual_prepaid", tax: "unknown", market: "FR", offerLocale: null, sourceUrl: null, observedOn: null }],
+      }] : [], media: [], classificationProposals: [], integrations: [],
     };
     let revision = 1;
     let submitted = false;
@@ -58,11 +63,13 @@ for (const { width, lang } of [{ width: 390, lang: "fr" }, { width: 768, lang: "
     });
 
     await page.setViewportSize({ width, height: 900 });
+    if (dark) await page.addInitScript(() => localStorage.setItem("tooltrim:theme", "dark"));
     await page.goto(`/${lang}/publisher`);
     await dismissConsent(page);
     await signIn(page, lang, ownerEmail);
     await expect(page).toHaveURL(new RegExp(`/${lang}/publisher$`));
     await page.getByRole("link", { name: lang === "fr" ? "Modifier la fiche" : "Edit listing" }).click();
+    if (dark) await expect(page.locator("html")).toHaveClass(/(?:^| )dark(?: |$)/);
     const edit = page.getByRole("button", { name: lang === "fr" ? "Modifier la présentation" : "Edit overview" });
     await edit.focus();
     await page.keyboard.press("Enter");
@@ -74,6 +81,19 @@ for (const { width, lang } of [{ width: 390, lang: "fr" }, { width: 768, lang: "
     expect(value.localized[lang].productDescription).toContain(lang === "fr" ? "Produit" : "Product");
     await expect(page.getByRole("textbox", { name: /verdict|rating|notation/i })).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width + 1);
+
+    if (width === 1280) {
+      await page.getByRole("button", { name: "Edit pricing" }).click();
+      await page.getByRole("textbox", { name: "Amount charged" }).fill("120");
+      await page.getByRole("button", { name: "Save draft" }).click();
+      await expect(page.getByText("Draft saved.")).toBeVisible();
+      await expect.poll(() => value.plans[0].options[0].amount).toBe("120");
+      await page.getByRole("button", { name: "Edit category suggestions" }).click();
+      await page.getByRole("combobox", { name: "Add · Needs covered" }).selectOption("productivite");
+      await page.getByRole("button", { name: "Save draft" }).click();
+      await expect(page.getByText("Draft saved.")).toBeVisible();
+      await expect.poll(() => value.classificationProposals).toEqual([{ key: "functional_needs", values: ["productivite"] }]);
+    }
 
     await page.reload();
     await expect(page.getByText(lang === "fr" ? "Produit pour les petites équipes." : "Product for small teams.")).toBeVisible();
@@ -173,4 +193,31 @@ test("publisher creates a standard application, supplies the badge and confirms 
   await page.getByRole("button", { name: "Send my response" }).click();
   await expect(page.getByText("You confirmed the facts for this version.")).toBeVisible();
   await expect(page.getByText("Unpublished", { exact: true })).toBeVisible();
+});
+
+test("removes an invitation token from the URL before sign-in and consumes it after acceptance", async ({ page, request }) => {
+  const email = "invited-publisher@example.invalid";
+  const token = "a".repeat(43);
+  await control(request, "seed", { email });
+  let accepted = false;
+  await page.route(/\/api\/(?:publisher-catalog|listing-requests)(?:\?|$)/, async (route) => {
+    if (route.request().method() === "POST") {
+      expect(route.request().postDataJSON()).toEqual({ action: "acceptInvitation", token });
+      accepted = true;
+      return route.fulfill({ json: { assignment: { toolId: tool.id, slug: tool.slug, role: "owner" } } });
+    }
+    if (new URL(route.request().url()).pathname === "/api/publisher-catalog") {
+      return route.fulfill({ json: { tools: accepted ? [tool] : [] } });
+    }
+    return route.fulfill({ json: { listings: [], claims: [] } });
+  });
+  await page.goto("/en/publisher/invitations/" + token);
+  await expect(page).toHaveURL(/\/en\/publisher\?invite=continue$/);
+  await dismissConsent(page);
+  await signIn(page, "en", email);
+  await expect(page.getByLabel("Invitation code")).toHaveValue(token);
+  await page.getByRole("button", { name: "Accept invitation" }).click();
+  await expect(page).toHaveURL(/\/en\/publisher$/);
+  await expect(page.getByRole("link", { name: "Edit listing" })).toBeVisible();
+  expect(await page.evaluate(() => sessionStorage.getItem("tooltrim:publisher-invitation"))).toBeNull();
 });

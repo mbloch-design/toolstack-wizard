@@ -1,6 +1,6 @@
 import { AccountApiError, getAccountServiceClient } from "./_account-auth.js";
 import { catalogHash } from "./_backoffice-catalog-contract.js";
-import { matchPublishedCatalogRelease, publishCatalog, readCatalog } from "./_backoffice-catalog-github.js";
+import { matchPublishedCatalogRelease, publishCatalog, readCatalog, readPublishedDescendant } from "./_backoffice-catalog-github.js";
 import { cleanupCatalogDrafts } from "./_backoffice-catalog-store.js";
 import { preparePublisherRelease } from "./_cms-prepare-release.js";
 import { cmsActorArgs, requireCmsRpcSuccess, type CmsActor } from "./_cms-store.js";
@@ -32,11 +32,26 @@ export async function readReleaseStatus(actor: CmsActor, batchKey: string) {
   return receipt(data);
 }
 
+async function cleanupReleaseDrafts(manifest: ReleaseManifest) {
+  if (!manifest.legacyItems.length) return false;
+  try {
+    await cleanupCatalogDrafts(manifest.legacyItems);
+    return false;
+  } catch {
+    return true;
+  }
+}
+
 export async function deliverPublisherRelease(actor: CmsActor, batchKey: string) {
+  if (process.env.CMS_CREEM_MODE === "test"
+    && (!process.env.CMS_CATALOG_BRANCH || process.env.CMS_CATALOG_BRANCH === "main"
+      || !process.env.CMS_PUBLIC_ORIGIN || new URL(process.env.CMS_PUBLIC_ORIGIN).hostname === "tooltrim.com")) {
+    throw new AccountApiError(503, "CMS_RELEASE_VERIFICATION_NOT_CONFIGURED");
+  }
   const client = getAccountServiceClient();
   const args = { ...cmsActorArgs(actor), p_key: batchKey };
   const existing = await readReleaseStatus(actor, batchKey);
-  if (existing?.commit_sha) return { release: existing, cleanupPending: false };
+  if (existing?.commit_sha) return { release: existing, cleanupPending: await cleanupReleaseDrafts(existing.manifest) };
   if (existing) {
     const source = await readCatalog();
     if (source.headSha !== existing.manifest.sourceHead) {
@@ -45,7 +60,7 @@ export async function deliverPublisherRelease(actor: CmsActor, batchKey: string)
       if (!committed) throw new AccountApiError(409, "CMS_RELEASE_SOURCE_CHANGED");
       const { data, error } = await client.rpc("cms_record_release_commit", { ...args, p_commit: committed.commitSha });
       requireCmsRpcSuccess(error);
-      return { release: receipt(data), cleanupPending: existing.manifest.legacyItems.length > 0 };
+      return { release: receipt(data), cleanupPending: await cleanupReleaseDrafts(existing.manifest) };
     }
   }
 
@@ -57,7 +72,7 @@ export async function deliverPublisherRelease(actor: CmsActor, batchKey: string)
   const sealed = await client.rpc("cms_seal_release_batch", { ...args, p_manifest: prepared.manifest });
   requireCmsRpcSuccess(sealed.error);
   const sealedReceipt = receipt(sealed.data);
-  if (sealedReceipt?.commit_sha) return { release: sealedReceipt, cleanupPending: false };
+  if (sealedReceipt?.commit_sha) return { release: sealedReceipt, cleanupPending: await cleanupReleaseDrafts(sealedReceipt.manifest) };
 
   const committed = await publishCatalog(prepared.source, prepared.tools, {
     marker: { batchKey, catalogueHash: prepared.manifest.catalogueHash },
@@ -66,13 +81,7 @@ export async function deliverPublisherRelease(actor: CmsActor, batchKey: string)
   const stamp = await client.rpc("cms_record_release_commit", { ...args, p_commit: committed.commitSha });
   requireCmsRpcSuccess(stamp.error);
 
-  let cleanupPending = false;
-  try {
-    await cleanupCatalogDrafts(prepared.legacyDrafts);
-  } catch {
-    cleanupPending = true;
-  }
-  return { release: receipt(stamp.data), cleanupPending };
+  return { release: receipt(stamp.data), cleanupPending: await cleanupReleaseDrafts(prepared.manifest) };
 }
 
 async function fetchVercel(path: string, token: string) {
@@ -86,6 +95,18 @@ async function fetchVercel(path: string, token: string) {
   return response.json();
 }
 
+export async function cancelPreparedRelease(actor: CmsActor, batchKey: string) {
+  const release = await readReleaseStatus(actor, batchKey);
+  if (!release || release.commit_sha) throw new AccountApiError(409, "CMS_RELEASE_SOURCE_CHANGED");
+  const source = await readCatalog();
+  if (source.headSha !== release.manifest.sourceHead) throw new AccountApiError(409, "CMS_RELEASE_SOURCE_CHANGED");
+  const { data, error } = await getAccountServiceClient().rpc("cms_cancel_release_batch", {
+    ...cmsActorArgs(actor), p_key: batchKey, p_source: source.headSha,
+  });
+  requireCmsRpcSuccess(error);
+  return receipt(data);
+}
+
 export async function verifyPublisherRelease(actor: CmsActor, batchKey: string) {
   const release = await readReleaseStatus(actor, batchKey);
   if (!release?.commit_sha) throw new AccountApiError(409, "CMS_RELEASE_NOT_COMMITTED");
@@ -94,16 +115,22 @@ export async function verifyPublisherRelease(actor: CmsActor, batchKey: string) 
   const projectId = process.env.CMS_VERCEL_PROJECT_ID;
   if (!token || !projectId) throw new AccountApiError(503, "CMS_RELEASE_VERIFICATION_NOT_CONFIGURED");
 
-  const alias = await fetchVercel("/v4/aliases/tooltrim.com", token);
+  const origin = new URL(process.env.CMS_PUBLIC_ORIGIN ?? "https://tooltrim.com");
+  if (origin.protocol !== "https:" || origin.pathname !== "/" || origin.search || origin.hash ||
+    origin.username || origin.password || origin.port) {
+    throw new AccountApiError(503, "CMS_RELEASE_VERIFICATION_NOT_CONFIGURED");
+  }
+  const aliasPath = "/v4/aliases/" + encodeURIComponent(origin.hostname);
+  const alias = await fetchVercel(aliasPath, token);
   if (typeof alias.deploymentId !== "string" || !/^dpl_[a-zA-Z0-9]+$/.test(alias.deploymentId)) {
     throw new AccountApiError(503, "CMS_RELEASE_VERIFICATION_UNAVAILABLE");
   }
   const deployment = await fetchVercel("/v13/deployments/" + alias.deploymentId, token);
   const sha = deployment.meta?.githubCommitSha ?? deployment.gitSource?.sha;
-  if (deployment.projectId !== projectId || deployment.readyState !== "READY" || sha !== release.commit_sha) {
+  if (deployment.projectId !== projectId || deployment.readyState !== "READY" || typeof sha !== "string" || !/^[a-f0-9]{40}$/.test(sha)) {
     throw new AccountApiError(409, "CMS_RELEASE_AWAITING_DEPLOYMENT");
   }
-  const marker = await fetch("https://tooltrim.com/catalog-release.json?batch=" + batchKey, {
+  const marker = await fetch(origin.origin + "/catalog-release.json?batch=" + batchKey, {
     redirect: "error", cache: "no-store", signal: AbortSignal.timeout(10000),
   });
   if (!marker.ok) throw new AccountApiError(409, "CMS_RELEASE_AWAITING_DEPLOYMENT");
@@ -113,11 +140,26 @@ export async function verifyPublisherRelease(actor: CmsActor, batchKey: string) 
   }
   const items = [...release.manifest.items, ...release.manifest.legacyItems];
   // Check all changed records in small groups to stay within the HTTP runtime budget.
+  if (sha !== release.commit_sha) {
+    const candidate = await readPublishedDescendant(release.commit_sha, sha);
+    const allBySlug = new Map(candidate?.tools.map((tool) => [tool.slug, tool]));
+    if (!candidate || items.some(({ slug, hash }) => catalogHash(allBySlug.get(slug) ?? null) !== hash)) {
+      throw new AccountApiError(409, "CMS_RELEASE_AWAITING_DEPLOYMENT");
+    }
+  }
   const slugs = [...new Set(items.map(({ slug }) => slug))];
+  const sitemap = await fetch(origin.origin + "/sitemap.xml", {
+    redirect: "error", cache: "no-store", signal: AbortSignal.timeout(10000),
+  });
+  const entries = sitemap.ok ? await sitemap.text() : "";
+  if (!sitemap.ok || slugs.some((slug) => ["fr", "en"].some((lang) =>
+    !entries.includes(`<loc>https://tooltrim.com/${lang}/tool/${encodeURIComponent(slug)}</loc>`)))) {
+    throw new AccountApiError(409, "CMS_RELEASE_ROUTE_NOT_VERIFIED");
+  }
   for (let offset = 0; offset < slugs.length; offset += 5) {
     await Promise.all(slugs.slice(offset, offset + 5).flatMap((slug) => ["fr", "en"].map(async (lang) => {
       const path = `/${lang}/tool/${encodeURIComponent(slug)}`;
-      const response = await fetch("https://tooltrim.com" + path, {
+      const response = await fetch(origin.origin + path, {
         redirect: "error", cache: "no-store", signal: AbortSignal.timeout(10000),
       });
       if (!response.ok || !(await response.text()).includes('href="https://tooltrim.com' + path + '"')) {
@@ -126,7 +168,7 @@ export async function verifyPublisherRelease(actor: CmsActor, batchKey: string) 
     })));
   }
   // Check the alias again once the pages have been read.
-  const finalAlias = await fetchVercel("/v4/aliases/tooltrim.com", token);
+  const finalAlias = await fetchVercel(aliasPath, token);
   if (finalAlias.deploymentId !== alias.deploymentId) throw new AccountApiError(409, "CMS_RELEASE_AWAITING_DEPLOYMENT");
   const { data, error } = await getAccountServiceClient().rpc("cms_record_verified_release", {
     ...cmsActorArgs(actor), p_key: batchKey, p_commit: release.commit_sha,

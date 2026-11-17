@@ -33,3 +33,14 @@ describe("publisher product contract", () => {
       .map(({ path }) => path)).toEqual(expect.arrayContaining(["websiteUrl", "plans.0.isComparePlan"]));
   });
 });
+
+it("checks classification against the same vocabulary as the input", () => {
+  const withTag = (tag: string) => ({
+    ...emptyDraft, classificationProposals: [{ key: "functional_needs", values: [tag] }],
+  });
+  const context = { phase: "draft", purpose: "update" } as const;
+  expect(validateProductDraft(withTag("productivite"), context)).toEqual([]);
+  expect(validateProductDraft(withTag("made-up"), context)).toMatchObject([
+    { path: "classificationProposals.0.values", code: "CLASSIFICATION_UNKNOWN" },
+  ]);
+});

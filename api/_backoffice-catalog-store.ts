@@ -133,7 +133,7 @@ if removed>0 then redis.call('HINCRBY',KEYS[1],'revision',1) end
 return removed
 `;
 export async function cleanupCatalogDrafts(
-  drafts: CatalogDraft[],
+  drafts: Pick<CatalogDraft, "slug" | "version">[],
 ): Promise<void> {
   const r = await redisCommand([
     "EVAL",

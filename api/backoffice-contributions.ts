@@ -2,7 +2,7 @@ import { AccountApiError, getAccountServiceClient, requireAccount } from "./_acc
 import { readAccountBody } from "./_account-body.js";
 import { cmsActorArgs, requireCmsRpcSuccess } from "./_cms-store.js";
 import { catalogHash } from "./_backoffice-catalog-contract.js";
-import { deliverPublisherRelease, verifyPublisherRelease } from "./_cms-delivery.js";
+import { cancelPreparedRelease, deliverPublisherRelease, verifyPublisherRelease } from "./_cms-delivery.js";
 import { readCatalog } from "./_backoffice-catalog-github.js";
 import { preparePublisherRelease } from "./_cms-prepare-release.js";
 import type { VercelRequest, VercelResponse } from "../types/vercel-http.js";
@@ -27,9 +27,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     const id = req.query.id;
     if (id !== undefined && (typeof id !== "string" || !uuid.test(id))) throw new AccountApiError(400, "INVALID_CMS_REVIEW");
     const client = getAccountServiceClient();
+    if (req.method === "GET" && req.query.mode === "release-history") {
+      const { data, error } = await client.rpc("cms_list_release_batches", args);
+      requireCmsRpcSuccess(error);
+      res.status(200).json({ history: data, canDeliver: process.env.PUBLISHER_CMS_ENABLED === "true" });
+      return;
+    }
     if (req.method === "GET" && req.query.mode === "release-preview") {
-      const { manifest } = await preparePublisherRelease(actor);
-      res.status(200).json({ manifest, batchKey: catalogHash(manifest),
+      const { manifest, blocked } = await preparePublisherRelease(actor);
+      res.status(200).json({ manifest, blocked, batchKey: catalogHash(manifest),
         canDeliver: process.env.PUBLISHER_CMS_ENABLED === "true" });
       return;
     }
@@ -46,8 +52,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       const source = await readCatalog();
       const current = source.tools.find(({ id }) => id === data.toolId);
       if (!current) throw new AccountApiError(409, "CMS_RELEASE_BASE_REQUIRED");
+      const value = data.value;
+      const hasMedia = value && typeof value === "object" && !Array.isArray(value)
+        && Array.isArray(value.media) && value.media.length > 0;
+      let media: { assetId: string; url: string }[] = [];
+      if (hasMedia) {
+        const result = await client.rpc("cms_review_submission_media", { ...args, p_id: id });
+        requireCmsRpcSuccess(result.error);
+        if (!Array.isArray(result.data)) throw new AccountApiError(503, "CMS_MEDIA_UNAVAILABLE");
+        media = await Promise.all(result.data.map(async (item) => {
+          if (!item || typeof item !== "object" || Array.isArray(item) || typeof item.assetId !== "string"
+            || typeof item.path !== "string" || !/^derived\/[a-f0-9-]{36}\/[a-f0-9]{64}\.webp$/.test(item.path)) {
+            throw new AccountApiError(503, "CMS_MEDIA_UNAVAILABLE");
+          }
+          const signed = await client.storage.from("catalog-drafts").createSignedUrl(item.path, 60);
+          if (signed.error || !signed.data?.signedUrl) throw new AccountApiError(503, "CMS_MEDIA_UNAVAILABLE");
+          return { assetId: item.assetId, url: signed.data.signedUrl };
+        }));
+      }
       res.status(200).json({
         submission: data,
+        media,
         published: {
           name: current.name, slug: current.slug,
           websiteUrl: current.websiteUrl ?? null,
@@ -57,7 +82,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       });
       return;
     }
-    if (req.query.mode === "publish-release" || req.query.mode === "verify-release") {
+    if (req.query.mode === "publish-release" || req.query.mode === "verify-release" || req.query.mode === "cancel-release") {
       if (process.env.PUBLISHER_CMS_ENABLED !== "true") throw new AccountApiError(503, "CMS_RELEASE_DISABLED");
       const body = await readAccountBody(req, 2048, "INVALID_CMS_RELEASE");
       const batchKey = body && typeof body === "object" && !Array.isArray(body)
@@ -67,6 +92,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       }
       if (req.query.mode === "publish-release") {
         res.status(200).json(await deliverPublisherRelease(actor, batchKey));
+      } else if (req.query.mode === "cancel-release") {
+        res.status(200).json({ release: await cancelPreparedRelease(actor, batchKey) });
       } else {
         res.status(200).json({ release: await verifyPublisherRelease(actor, batchKey) });
       }

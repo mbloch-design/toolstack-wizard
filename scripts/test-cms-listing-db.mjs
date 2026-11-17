@@ -34,6 +34,13 @@ try {
   await run("migrations/20261019081436_personal_stack_v4.sql");
   await db.exec(`
     create schema catalog_private;
+    create schema storage;
+    create table storage.buckets(id text primary key,name text,public boolean,file_size_limit bigint,allowed_mime_types text[]);
+    create table storage.objects(bucket_id text,name text,owner uuid,owner_id text,primary key(bucket_id,name));
+    alter table storage.objects enable row level security;
+    create function auth.jwt() returns jsonb language sql stable as $$
+      select current_setting('request.jwt.claims',true)::jsonb
+    $$;
     create table public.tools (
       id varchar primary key, slug text unique not null, name text not null default '', website_url text,
       content_status text not null default 'draft'
@@ -42,7 +49,7 @@ try {
   `);
   await run("migrations/20261116200000_cms_assignment_baseline.sql");
   const migrations = await readdir(new URL("../supabase/migrations/", import.meta.url));
-  for (const filename of migrations.filter((name) => /_cms_(tool_drafts|tool_submissions|listing_requests|listing_invitations|commerce|initial_listing_review|release_batches)\.sql$/.test(name)).sort()) {
+  for (const filename of migrations.filter((name) => /_cms_(tool_drafts|tool_submissions|listing_requests|listing_invitations|commerce|media|initial_listing_review|release_batches|media_release)\.sql$/.test(name)).sort()) {
     await run("migrations/" + filename);
   }
   await db.exec(`
@@ -122,7 +129,19 @@ try {
     ...create, name: "New Initial Product", slug: "new-initial-product", websiteUrl: "https://new-listing.com/",
     hostname: "new-listing.com", idempotencyKey: "new-initial-product", offer: "priority_paid",
   })).listing;
-  await call("save", { id: initial.id, version: 1, representativeRole: "Founder", notes: "" });
+  await db.exec("reset role");
+  const assetId = "00000000-0000-0000-0000-000000000042";
+  await db.query(`insert into catalog_private.cms_media_assets(
+    id,target_kind,target_id,uploader_id,session_id,role,mime_type,expected_bytes,idempotency_key,state,derived_sha,
+    original_bytes,derivative_bytes,width,height
+  ) values ($1,'listing',$2,$3,$4,'logo','image/png',123,'listing-image-1','ready',$5,123,100,10,10)`,
+    [assetId, initial.id, owner, session, "9".repeat(64)]);
+  const media = [{ assetId, role: "logo", alt: { fr: "Logo", en: "Logo" }, caption: { fr: "", en: "" } }];
+  await db.exec("set role service_role");
+  await assert.rejects(call("save", { id: initial.id, version: 1, representativeRole: "Founder", notes: "",
+    media: [{ ...media[0], assetId: "00000000-0000-0000-0000-000000000043" }] }),
+  { code: "PT403", message: "CMS_INVALID_MEDIA_REFERENCE" });
+  await call("save", { id: initial.id, version: 1, representativeRole: "Founder", notes: "", media });
   await db.exec("reset role");
   await db.query("update catalog_contrib.listing_requests set commercial_status = 'satisfied' where id = $1", [initial.id]);
   await db.query(`insert into catalog_private.cms_listing_payments(
@@ -133,7 +152,7 @@ try {
   await call("submit", { id: initial.id, version: 2 });
   const productValue = {
     schemaVersion: 1, name: initial.name, websiteUrl: initial.websiteUrl,
-    localized: { fr: {}, en: {} }, plans: [], media: [], classificationProposals: [], integrations: [],
+    localized: { fr: {}, en: {} }, plans: [], media, classificationProposals: [], integrations: [],
   };
   const productHash = "a".repeat(64);
   assert.equal((await review("ownerRead", { id: initial.id }, owner, session)).review.productRevision, null);
@@ -184,6 +203,10 @@ try {
   assert.equal(inputs[0].base.longDescription, "Analyse ToolTrim");
   assert.equal(inputs[0].base.category, "crm");
   assert.deepEqual(inputs[0].value, productValue);
+  const approvedMedia = (await db.query("select public.cms_approved_media_inputs($1,$2,$3) as assets",
+    [admin, adminSession, [promoted.approvalId]])).rows[0].assets;
+  assert.equal(approvedMedia[0].assetId, assetId);
+  assert.equal(approvedMedia[0].toolId, promoted.toolId);
   assert.equal((await db.query("select content_status from public.tools where id = $1", [promoted.toolId])).rows[0].content_status, "draft");
   await db.exec("reset role");
   await db.query("update catalog_contrib.brand_tool_assignments set status = 'revoked' where tool_id = $1", [promoted.toolId]);
@@ -211,6 +234,9 @@ try {
   await assert.rejects(seal(owner, session, key, manifest), { code: "PT403" });
   assert.equal((await seal(admin, adminSession, key, manifest)).rows[0].result.commit_sha, null);
   await assert.rejects(seal(admin, adminSession, key, { ...manifest, catalogueHash: "d".repeat(64) }), { code: "PT409" });
+  await assert.rejects(seal(admin, adminSession, "f".repeat(64), manifest), { code: "PT409", message: "CMS_RELEASE_VERIFICATION_PENDING" });
+  await assert.rejects(db.query("update catalog_contrib.brand_tool_assignments set status='revoked' where tool_id=$1",
+    [promoted.toolId]), { code: "PT409", message: "CMS_RELEASE_IN_PROGRESS" });
   const stamped = await db.query("select public.cms_record_release_commit($1,$2,$3,$4) as result",
     [admin, adminSession, key, commit]);
   assert.equal(stamped.rows[0].result.commit_sha, commit);

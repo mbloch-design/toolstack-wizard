@@ -53,13 +53,15 @@ const labels = {
     month: "par mois", year: "par an", one_time: "paiement unique", annual_prepaid: "par mois, facturé à l’année" },
 };
 
-export function pricePresentation(option: Pick<PriceOption, "type" | "amount" | "currency" | "period" | "commitment">, locale: "fr" | "en") {
+export function pricePresentation(option: Pick<PriceOption, "type" | "amount" | "currency" | "period" | "commitment"> & { unit?: string | null }, locale: "fr" | "en") {
   const copy = labels[locale];
-  if (option.type !== "paid") {
+  const metered = option.type === "usage" && option.period === "usage"
+    && Boolean(option.amount && option.currency && option.unit?.trim());
+  if (option.type !== "paid" && !metered) {
     return { amountLabel: copy[option.type], billingLabel: "", monthlyEquivalent: null };
   }
   const { amount, currency, period } = option;
-  if (!amount || !currency || !period || period === "usage") {
+  if (!amount || !currency || !period || (period === "usage" && !metered)) {
     return { amountLabel: copy.unknown, billingLabel: "", monthlyEquivalent: null };
   }
   const [whole, fraction = ""] = amount.split(".");

@@ -1,4 +1,7 @@
 import * as v from "valibot";
+import { CATALOG_NEEDS } from "../data/catalogNeeds.js";
+import { STACK_PERSONAS } from "../data/stacks.js";
+import { VERTICAL_FAMILIES } from "../data/types.js";
 import { identifier, priceOptionSchema, publicUrl } from "./publisherPricing.js";
 
 export type CmsTarget = { kind: "listing" | "tool"; id: string };
@@ -29,6 +32,13 @@ const planLocale = v.strictObject({
   highlights: v.pipe(v.array(text(500)), v.maxLength(30)),
 });
 
+export const productMediaSchema = v.pipe(v.array(v.strictObject({
+    assetId: identifier,
+    role: v.picklist(["logo", "cover", "gallery"]),
+    alt: localizedText,
+    caption: localizedText,
+  })), v.maxLength(14));
+
 const productDraftSchema = v.strictObject({
   schemaVersion: v.literal(1),
   name: text(120),
@@ -41,12 +51,7 @@ const productDraftSchema = v.strictObject({
     localized: v.strictObject({ fr: planLocale, en: planLocale }),
     options: v.pipe(v.array(priceOptionSchema), v.maxLength(12)),
   })), v.maxLength(30)),
-  media: v.pipe(v.array(v.strictObject({
-    assetId: identifier,
-    role: v.picklist(["logo", "cover", "gallery"]),
-    alt: localizedText,
-    caption: localizedText,
-  })), v.maxLength(14)),
+  media: productMediaSchema,
   classificationProposals: v.pipe(v.array(v.strictObject({
     key: identifier,
     values: v.pipe(v.array(identifier), v.maxLength(30)),
@@ -58,6 +63,12 @@ const productDraftSchema = v.strictObject({
     sourceUrl: publicUrl,
   })), v.maxLength(30)),
 });
+
+const classificationValues = new Map<string, ReadonlySet<string>>([
+  ["functional_needs", new Set(CATALOG_NEEDS.map(({ id }) => id))],
+  ["personas", new Set(STACK_PERSONAS.map(({ value }) => value).filter((value) => value !== "all"))],
+  ["verticals", new Set(VERTICAL_FAMILIES.map(({ value }) => value))],
+]);
 
 export type ProductDraft = v.InferOutput<typeof productDraftSchema>;
 
@@ -107,6 +118,13 @@ export function parseProductDraft(value: unknown, context: ValidationContext) {
   unique(draft.plans.flatMap(({ options }) => options.map(({ id }) => id)), "plans");
   unique(draft.media.map(({ assetId }) => assetId), "media");
   unique(draft.classificationProposals.map(({ key }) => key), "classificationProposals");
+  draft.classificationProposals.forEach(({ key, values }, index) => {
+    const accepted = classificationValues.get(key);
+    if (!accepted || values.some((value) => !accepted.has(value))) {
+      issues.push(cmsIssue(`classificationProposals.${index}.values`, "CLASSIFICATION_UNKNOWN"));
+    }
+    unique(values, `classificationProposals.${index}.values`);
+  });
   unique(draft.integrations.map(({ id }) => id), "integrations");
   for (const role of ["logo", "cover", "gallery"] as const) {
     if (draft.media.filter((item) => item.role === role).length > (role === "gallery" ? 12 : 1)) {

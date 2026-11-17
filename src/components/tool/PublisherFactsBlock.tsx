@@ -37,7 +37,7 @@ export function PublisherPlanFacts({ facts, lang }: { facts: PublisherPublicFact
         {(copy.summary || fallback.summary) && <p>{copy.summary || fallback.summary}</p>}
         {plan.options.map((option, position) => {
           const price = pricePresentation({
-            amount: null, currency: null, period: null, commitment: null,
+            amount: null, currency: null, period: null, commitment: null, unit: null,
             ...option,
           }, lang);
           return <p key={position}>{[

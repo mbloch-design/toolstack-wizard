@@ -149,6 +149,8 @@ begin
     if kind = 'tool' then
       select coalesce(d.value->'media', '[]'::jsonb) into previous_media from catalog_contrib.cms_tool_drafts d
         where d.brand_id = selected_brand and d.tool_id = target;
+    else
+      select l.media into previous_media from catalog_contrib.listing_requests l where l.id = target::uuid;
     end if;
     if replace_id is not null and not exists (select 1 from jsonb_array_elements(previous_media) m
         where m->>'assetId' = replace_id and m->>'role' = media_role) then raise sqlstate 'PT409'; end if;
@@ -157,13 +159,13 @@ begin
     occupied := occupied + (select count(*) from catalog_private.cms_media_assets a
       where a.target_kind = kind and a.target_id = target and a.brand_id is not distinct from selected_brand and a.role = media_role
         and ((a.state = 'reserved' and a.expires_at > clock_timestamp()) or
-          (a.state = 'ready' and (kind = 'listing' or (a.attached_at is null and a.created_at > clock_timestamp() - interval '24 hours')))));
+          (a.state = 'ready' and a.attached_at is null and a.created_at > clock_timestamp() - interval '24 hours')));
     if occupied >= (case when media_role = 'gallery' then 12 else 1 end) then raise sqlstate 'PT409'; end if;
 
     select coalesce(sum(coalesce(a.original_bytes, 5242880) + coalesce(a.derivative_bytes, 2097152)), 0),
       coalesce(sum(coalesce(a.original_bytes, 5242880) + coalesce(a.derivative_bytes, 2097152)) filter (
-        where (selected_brand is not null and a.brand_id = selected_brand) or
-          (selected_brand is null and a.target_kind = 'listing' and a.uploader_id = p_actor)
+        where a.attached_at is null and ((selected_brand is not null and a.brand_id = selected_brand) or
+          (selected_brand is null and a.target_kind = 'listing' and a.uploader_id = p_actor))
       ), 0) into total_bytes, group_bytes from catalog_private.cms_media_assets a;
     if group_bytes + 7340032 > 104857600 or total_bytes + 7340032 > 805306368 then raise sqlstate 'PT429'; end if;
 
@@ -232,6 +234,24 @@ end;
 $$;
 create trigger cms_tool_draft_media_ownership before update of value on catalog_contrib.cms_tool_drafts
   for each row execute function catalog_private.cms_require_draft_media_ownership();
+
+create function catalog_private.cms_require_listing_media_ownership()
+returns trigger language plpgsql security invoker set search_path = '' as $$
+declare item jsonb;
+begin
+  if new.media is not distinct from old.media then return new; end if;
+  for item in select value from jsonb_array_elements(new.media) loop
+    update catalog_private.cms_media_assets a set attached_at = coalesce(a.attached_at, clock_timestamp())
+      where a.id::text = item->>'assetId' and a.role = item->>'role' and a.state = 'ready'
+        and a.target_kind = 'listing' and a.target_id = new.id::text and a.uploader_id = new.owner_id;
+    if not found then raise sqlstate 'PT403' using message = 'CMS_INVALID_MEDIA_REFERENCE'; end if;
+  end loop;
+  return new;
+end $$;
+create trigger cms_listing_media_ownership before update of media on catalog_contrib.listing_requests
+  for each row execute function catalog_private.cms_require_listing_media_ownership();
+revoke all on function catalog_private.cms_require_listing_media_ownership() from public,anon,authenticated;
+grant execute on function catalog_private.cms_require_listing_media_ownership() to service_role;
 
 revoke all on function catalog_private.cms_media_require_target(uuid,uuid,text,text,boolean),
   catalog_private.cms_can_upload_reserved_object(text), catalog_private.cms_media_dto(catalog_private.cms_media_assets),

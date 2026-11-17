@@ -2,7 +2,7 @@ import { AccountApiError, getAccountServiceClient } from "./_account-auth.js";
 import { pinnedBadgeTransport } from "./_cms-commercial-badge.js";
 import { verifyBadgeOnPage } from "./_badge-verification.js";
 import {
-  asObject, checkoutRedirect, creemCheckoutId, creemTransactionId, dispatchListingCheckout, listingUuid,
+  asObject, checkoutRedirect, cmsCreemMode, cmsCreemProductId, creemCheckoutId, creemTransactionId, dispatchListingCheckout, listingUuid,
   parseCreemEvent, readListingReceipt, validatePriorityProduct, type CheckoutAttempt, type Receipt,
 } from "./_cms-commercial-creem.js";
 import type { CmsActor } from "./_cms-store.js";
@@ -57,9 +57,12 @@ async function ownedCommerce(actor: CmsActor, listingId: string, action: Operati
 }
 
 function visible(snapshot: CommerceSnapshot) {
-  const checkoutUrl = snapshot.state === "pending" ? checkoutRedirect(snapshot.checkoutUrl) : null;
+  const stalled = snapshot.attempt?.dispatchStartedAt && !snapshot.attempt.checkoutId
+    && Date.now() - Date.parse(snapshot.attempt.dispatchStartedAt) > 60000;
+  const state = snapshot.state === "pending" && stalled ? "review_required" : snapshot.state;
+  const checkoutUrl = state === "pending" ? checkoutRedirect(snapshot.checkoutUrl) : null;
   return {
-    state: snapshot.state,
+    state,
     ...(snapshot.checkedAt && { checkedAt: snapshot.checkedAt }),
     ...(snapshot.attempt && { attemptId: snapshot.attempt.id }),
     ...(checkoutUrl && { checkoutUrl }),
@@ -67,7 +70,7 @@ function visible(snapshot: CommerceSnapshot) {
 }
 
 async function startListingCheckout(actor: CmsActor, listingId: string) {
-  let snapshot = await ownedCommerce(actor, listingId, "prepare");
+  let snapshot = await ownedCommerce(actor, listingId, "prepare", { mode: cmsCreemMode(), productId: cmsCreemProductId() });
   const attempt = snapshot.attempt;
   if (!attempt || snapshot.state !== "pending" || attempt.dispatchStartedAt) return visible(snapshot);
   await validatePriorityProduct(attempt);
@@ -129,13 +132,13 @@ export async function runListingCommerce(actor: CmsActor, listingId: string, act
 export async function applyVerifiedBillingEvent(event: ReturnType<typeof parseCreemEvent>) {
   if (event.eventType === "refund.created" || event.eventType === "dispute.created") {
     const transaction = asObject(event.object.transaction);
-    if (!creemTransactionId(transaction.id) || transaction.mode !== "prod" || transaction.type !== "payment"
+    if (!creemTransactionId(transaction.id) || transaction.mode !== cmsCreemMode() || transaction.type !== "payment"
       || transaction.currency !== "USD" || (event.eventType === "refund.created" && event.object.status !== "succeeded")) {
       return { ignored: true };
     }
     return applyBilling(event.eventType, event.id, event.occurredAt, { transactionId: transaction.id });
   }
-  if (event.eventType !== "checkout.completed" || event.object.mode !== "prod"
+  if (event.eventType !== "checkout.completed" || event.object.mode !== cmsCreemMode()
     || !listingUuid(event.object.request_id) || !creemCheckoutId(event.object.id)
     || !listingUuid(asObject(event.object.metadata).tooltrim_listing_id)) return { ignored: true };
   const lookup = asObject(await rpc("cms_lookup_listing_payment", { p_attempt: event.object.request_id, p_event: event.id }));

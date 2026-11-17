@@ -91,7 +91,7 @@ export default function ListingFactualReview({ listing, getToken, update }: {
         <Button disabled={busy} onClick={() => setRetry(retry + 1)}>{t("Actualiser la version", "Refresh version")}</Button>
       </div>}
     </section>
-    {review?.productRevision && <PublisherFiche key={review.productRevision.id} value={review.productRevision.value} canEdit={false} />}
+    {review?.productRevision && <PublisherFiche key={review.productRevision.id} value={review.productRevision.value} canEdit={false} mediaAccess={{ getToken, listingId: listing.id }} />}
     {review?.productRevision && available && <section className={styles.section} aria-label={t("Répondre à ToolTrim", "Respond to ToolTrim")}>
       {decision === "confirm" && <p>{t("Confirmer que les informations produit affichées sont exactes ?", "Confirm that the product facts shown are accurate?")}</p>}
       {decision === "requestChanges" && <TextAreaField label={t("Corrections à apporter", "Corrections needed")}

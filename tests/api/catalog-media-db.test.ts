@@ -26,11 +26,11 @@ beforeAll(async () => {
     create function auth.jwt() returns jsonb language sql stable as $$ select current_setting('request.jwt.claims',true)::jsonb $$;
     create function auth.uid() returns uuid language sql stable as $$ select (auth.jwt()->>'sub')::uuid $$;
     create table storage.buckets(id text primary key, name text, public boolean, file_size_limit bigint, allowed_mime_types text[]);
-    create table storage.objects(bucket_id text, name text, primary key(bucket_id,name));
+    create table storage.objects(bucket_id text, name text, owner uuid, owner_id text, primary key(bucket_id,name));
     alter table storage.objects enable row level security;
     grant select, insert, update, delete on storage.objects to authenticated, anon;
     create table catalog_contrib.listing_requests(id uuid primary key, owner_id uuid not null,
-      status text not null default 'draft', representation_status text not null default 'pending', canonical_tool_id text, initial_approval_id uuid,
+      media jsonb not null default '[]', status text not null default 'draft', representation_status text not null default 'pending', canonical_tool_id text, initial_approval_id uuid,
       reservation_expires_at timestamptz not null default (now() + interval '30 days'));
     insert into catalog_contrib.listing_requests(id,owner_id) values ('${listing}','${owner}');
     create function catalog_contrib.cms_require_listing_account(uuid,uuid) returns void language plpgsql as $$begin

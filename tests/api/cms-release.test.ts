@@ -79,3 +79,10 @@ it("combines reviewed publisher edits and existing admin drafts against the same
     legacyDrafts: [{ tool: linked, baseHash: catalogHash(linked), version: 2 }],
   })).toThrow("CMS_RELEASE_DRAFT_OVERLAP");
 });
+
+it("rejects legacy writers for a retained CMS workspace even without an approved change", () => {
+  expect(() => assembleCmsRelease(source, {
+    expectedHead: headSha, attachedToolIds: [linked.id], changes: [],
+    legacyDrafts: [{ tool: linked, baseHash: catalogHash(linked), version: 2 }],
+  })).toThrow("CMS_RELEASE_DRAFT_OVERLAP");
+});

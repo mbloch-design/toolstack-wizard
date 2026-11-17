@@ -117,3 +117,23 @@ it("shares a pending download for concurrent readers of the same commit", async 
   expect(sources.map((s) => s.tools[0].name)).toEqual(["One", "One", "One"]);
   expect(fetcher.mock.calls.filter(([url]) => url.includes("contents/"))).toHaveLength(1);
 });
+
+it("places the public marker and approved image in the same Git tree as the catalogue", async () => {
+  const image = "public/tool-media/cms/00000000-0000-0000-0000-000000000001/" + "a".repeat(64) + ".webp";
+  fetcher
+    .mockResolvedValueOnce(json({ sha: blob }))
+    .mockResolvedValueOnce(json({ sha: blob }))
+    .mockResolvedValueOnce(json({ sha: blob }))
+    .mockResolvedValueOnce(json({ sha: tree }))
+    .mockResolvedValueOnce(json({ sha: commit }))
+    .mockResolvedValueOnce(json({ object: { sha: commit } }))
+    .mockResolvedValueOnce(json({ object: { sha: commit } }));
+  await publishCatalog({ headSha: head, treeSha: tree, tools, text: "[]" }, tools, {
+    marker: { batchKey: "b".repeat(64), catalogueHash: "c".repeat(64) },
+    media: [{ path: image, bytes: new Uint8Array([0, 128, 255]) }],
+  });
+  const treeWrite = fetcher.mock.calls.find(([url]) => url.endsWith("git/trees"));
+  expect(JSON.parse(treeWrite![1].body).tree.map(({ path }: { path: string }) => path))
+    .toEqual(["src/data/tools_v4.json", "public/catalog-release.json", image]);
+  expect(JSON.parse(fetcher.mock.calls[2][1].body).content).toBe("AID/");
+});

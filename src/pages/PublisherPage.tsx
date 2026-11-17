@@ -3,6 +3,7 @@ import { Link, Navigate, useLocation, useNavigate, useParams } from "react-route
 import AccountPageFrame from "@/components/account/AccountPageFrame";
 import Button, { buttonAttrs } from "@/ds/Button/Button";
 import { useStackAccount } from "@/hooks/useStackAccount";
+import { useTheme } from "@/hooks/useTheme";
 import { useLang } from "@/hooks/useLang";
 import { accountPath, safeAccountReturnTo } from "@/lib/accountPaths";
 import { keepPublisherInvitation, publisherPath } from "@/lib/publisherCatalogApi";
@@ -11,6 +12,7 @@ import PublisherToolPage from "./PublisherToolPage";
 import styles from "@/components/publisher/PublisherWorkspace.module.css";
 
 export default function PublisherPage() {
+  useTheme();
   const { t, lang, prefix } = useLang();
   const account = useStackAccount();
   const location = useLocation();

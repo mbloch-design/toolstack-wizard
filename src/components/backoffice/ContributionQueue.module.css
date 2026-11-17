@@ -33,3 +33,9 @@
 .content {
   overflow-wrap: anywhere;
 }
+
+.mediaPreview {
+  display: block;
+  max-inline-size: min(100%, var(--tt-chapter-aside));
+  block-size: auto;
+}

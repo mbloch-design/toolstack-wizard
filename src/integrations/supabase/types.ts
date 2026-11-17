@@ -641,6 +641,14 @@ export type Database = {
         Args: { p_actor: string; p_session: string }
         Returns: Json
       }
+      cms_cancel_release_batch: {
+        Args: { p_actor: string; p_session: string; p_key: string; p_source: string }
+        Returns: Json
+      }
+      cms_list_release_batches: {
+        Args: { p_actor: string; p_session: string }
+        Returns: Json
+      }
       cms_get_release_batch: {
         Args: { p_actor: string; p_session: string; p_key: string }
         Returns: Json
@@ -659,6 +667,14 @@ export type Database = {
       }
       cms_protected_tool_ids: {
         Args: { p_actor: string; p_session: string }
+        Returns: Json
+      }
+      cms_owned_media_originals: {
+        Args: { p_owner: string; p_session: string }
+        Returns: Json
+      }
+      cms_review_submission_media: {
+        Args: { p_actor: string; p_session: string; p_id: string }
         Returns: Json
       }
       cms_approved_release_inputs: {

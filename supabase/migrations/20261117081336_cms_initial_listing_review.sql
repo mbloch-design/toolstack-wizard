@@ -111,7 +111,7 @@ returns jsonb language sql stable security invoker set search_path = pg_catalog 
       where b.listing_id = r.id and b.website_url = r.website_url and b.state = 'present'
     )
     when r.offer = 'priority_paid' then (
-      select jsonb_build_object('type', 'priority_paid', 'receiptId', p.id, 'paidAt', p.paid_at)
+      select jsonb_build_object('type', 'priority_paid', 'receiptId', p.id, 'paidAt', p.paid_at, 'mode', p.mode)
       from catalog_private.cms_listing_payments p where p.listing_id = r.id and p.owner_id = r.owner_id
         and p.website_url = r.website_url and p.offer_version = r.offer_version
         and p.state = 'paid' and p.checkout_id is not null and p.order_id is not null
@@ -143,7 +143,7 @@ begin
   select r.* into listing from catalog_contrib.listing_requests r
     where r.id = (p_payload->>'id')::uuid and (
       is_admin or (r.owner_id = p_actor and r.canonical_tool_id is null)
-      or (p_action = 'ownerRead' and catalog_contrib.cms_can_read_attached_listing(p_actor, r.canonical_tool_id))
+      or (p_action = 'ownerRead' and r.owner_id = p_actor and catalog_contrib.cms_can_read_attached_listing(p_actor, r.canonical_tool_id))
     )
     for update;
   if not found then raise sqlstate 'PT404' using message = 'LISTING_NOT_FOUND'; end if;
@@ -166,6 +166,11 @@ begin
   end if;
 
   if p_action = 'prepareInitial' then
+    if exists (
+      select from jsonb_array_elements(coalesce(p_payload#>'{value,media}', '[]'::jsonb)) m
+      where not exists (select from jsonb_array_elements(listing.media) saved
+        where saved->>'assetId' = m->>'assetId' and saved->>'role' = m->>'role')
+    ) then raise sqlstate 'PT403' using message = 'CMS_INVALID_MEDIA_REFERENCE'; end if;
     if listing.status not in ('submitted', 'in_preparation', 'changes_requested', 'ready') then
       raise sqlstate 'PT409' using message = 'LISTING_NOT_EDITABLE';
     end if;

@@ -58,7 +58,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     if (action === "prepareInitial") {
       listingFieldsOnly(input, [...common, "value"]);
       const { draft } = parseProductDraft(input.value, { phase: "submit", purpose: "initial" });
-      if (!draft || draft.websiteUrl.length > 500 || draft.media.length) throw invalidListing();
+      if (!draft || draft.websiteUrl.length > 500) throw invalidListing();
       res.status(200).json(await callListingInitialReview(actor, action, { ...target, value: draft, hash: catalogHash(draft) }));
       return;
     }

@@ -25,7 +25,7 @@ type FicheProps = {
   lockWebsite?: boolean;
   renderReview?: (save: () => Promise<boolean>, disabled: boolean) => ReactNode;
   publicSlug?: string;
-  mediaAccess?: { getToken: PublisherToken; toolId: string };
+  mediaAccess?: { getToken: PublisherToken; toolId?: string; listingId?: string };
   onAllocate?: (planId?: string) => Promise<ProductDraft>;
 };
 
@@ -109,6 +109,7 @@ export default function PublisherFiche({ value, canEdit, onSave, onDenied, onDir
     setError("");
     setIssues([]);
     if (!dirty) return true;
+    setNotice("");
     if (!onSave) return false;
     const validation = validateProductDraft(draft, { phase: "draft", purpose: "update" });
     if (validation.length) {

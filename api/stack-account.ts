@@ -21,6 +21,23 @@ export function personalStackRecordFromRpc(value: unknown): PersonalStackRecord 
   return { state: normalizeStoredPersonalStack(record.state), revision: record.revision as number, updatedAt: record.updatedAt };
 }
 
+async function deleteCmsOriginals(
+  client: ReturnType<typeof getAccountServiceClient>,
+  args: { p_owner: string; p_session: string },
+) {
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const { data, error } = await client.rpc("cms_owned_media_originals", args);
+    if (error || !Array.isArray(data) || !data.every((path) =>
+      typeof path === "string" && /^originals\/[a-f0-9-]{36}$/.test(path))) {
+      throw new AccountApiError(503, "ACCOUNT_DELETION_FAILED");
+    }
+    if (!data.length) return;
+    const removed = await client.storage.from("catalog-drafts").remove(data as string[]);
+    if (removed.error) throw new AccountApiError(503, "ACCOUNT_DELETION_FAILED");
+  }
+  throw new AccountApiError(503, "ACCOUNT_DELETION_FAILED");
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   res.setHeader("Cache-Control", "no-store");
   try {
@@ -40,6 +57,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       if (history.error) throw accountRpcError(history.error);
       if (history.data !== false) throw new AccountApiError(history.data === true ? 409 : 503,
         history.data === true ? "ACCOUNT_HAS_CONTRIBUTIONS" : "STACK_ACCOUNT_UNAVAILABLE");
+      if (process.env.PUBLISHER_CMS_ENABLED === "true") await deleteCmsOriginals(client, args);
       const deleted = await client.auth.admin.deleteUser(account.userId);
       if (deleted.error) throw new AccountApiError(deleted.error.code === "23503" ? 409 : 503,
         deleted.error.code === "23503" ? "ACCOUNT_HAS_CONTRIBUTIONS" : "ACCOUNT_DELETION_FAILED");

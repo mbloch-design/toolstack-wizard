@@ -19,3 +19,8 @@ it.each(["free", "quote", "unknown", "usage"] as const)("makes retained amounts 
   expect(price.amountLabel).not.toContain("120");
   expect(price.monthlyEquivalent).toBeNull();
 });
+
+it("shows an active metered price without inventing a monthly equivalent", () => {
+  expect(pricePresentation({ ...annual, type: "usage", period: "usage", amount: "0.003", unit: "request" }, "en"))
+    .toEqual({ amountLabel: "€0.003", billingLabel: "Usage based", monthlyEquivalent: null });
+});

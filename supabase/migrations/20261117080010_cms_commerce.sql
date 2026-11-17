@@ -8,6 +8,7 @@ create table catalog_private.cms_listing_payments (
   website_url text not null,
   locale text not null check (locale in ('fr', 'en')),
   offer_version integer not null check (offer_version = 1),
+  mode text not null default 'prod' check (mode in ('prod','test')),
   product_id text not null default 'prod_2LMoN4zyRhNAb53r3rWpwX',
   dispatch_started_at timestamptz,
   checkout_id text unique,
@@ -65,7 +66,7 @@ returns jsonb language sql stable security invoker set search_path = '' as $$
   select case when p.id is not null then jsonb_build_object(
     'id', p.id, 'listingId', p.listing_id, 'ownerId', p.owner_id, 'websiteUrl', p.website_url,
     'locale', p.locale, 'offerVersion', p.offer_version, 'productId', p.product_id,
-    'mode', 'prod', 'checkoutId', p.checkout_id, 'dispatchStartedAt', p.dispatch_started_at
+    'mode', p.mode, 'checkoutId', p.checkout_id, 'dispatchStartedAt', p.dispatch_started_at
   ) end;
 $$;
 
@@ -100,8 +101,9 @@ begin
     when 'status' then null;
     when 'prepare' then
       if not historical and payment.id is null then
-        insert into catalog_private.cms_listing_payments(listing_id, owner_id, website_url, locale, offer_version)
-        values (p_listing, p_actor, listing.website_url, listing.locale, listing.offer_version) returning * into payment;
+        insert into catalog_private.cms_listing_payments(listing_id, owner_id, website_url, locale, offer_version, mode, product_id)
+        values (p_listing, p_actor, listing.website_url, listing.locale, listing.offer_version,
+          coalesce(p_value->>'mode','prod'), coalesce(p_value->>'productId','prod_2LMoN4zyRhNAb53r3rWpwX')) returning * into payment;
         if listing.offer = 'priority_paid' then
           update catalog_contrib.listing_requests set commercial_status = 'verifying' where id = p_listing;
         end if;

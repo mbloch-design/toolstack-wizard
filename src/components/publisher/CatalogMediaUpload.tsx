@@ -38,8 +38,8 @@ export function CatalogMediaPreview({ asset, locale, getToken }: { asset: Media;
   return url ? <img className={styles.asset} src={url} alt={asset.alt[locale]} loading="lazy" referrerPolicy="no-referrer" onError={() => setFailed(true)} /> : null;
 }
 
-export default function CatalogMediaUpload({ toolId, role, replaceAssetId, getToken, onReady, setUploading, disabled }: {
-  toolId: string; role: Media["role"]; replaceAssetId?: string; getToken: PublisherToken;
+export default function CatalogMediaUpload({ toolId, listingId, role, replaceAssetId, getToken, onReady, setUploading, disabled }: {
+  toolId?: string; listingId?: string; role: Media["role"]; replaceAssetId?: string; getToken: PublisherToken;
   onReady: (assetId: string) => void; setUploading: (value: boolean) => void; disabled?: boolean;
 }) {
   const { t } = useLang();
@@ -67,7 +67,7 @@ export default function CatalogMediaUpload({ toolId, role, replaceAssetId, getTo
     setUploading(true);
     try {
       const reserved = await publisherRequest<Reservation>(getToken, mediaApi, { method: "POST", signal, body: {
-        action: "reserve", target: { kind: "tool", id: toolId }, role, mimeType: file.type, bytes: file.size,
+        action: "reserve", target: listingId ? { kind: "listing", id: listingId } : { kind: "tool", id: toolId }, role, mimeType: file.type, bytes: file.size,
         idempotencyKey: key.current, ...(replaceAssetId && { replaceAssetId }),
       } });
       if (signal?.aborted) return;

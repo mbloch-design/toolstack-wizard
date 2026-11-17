@@ -34,11 +34,11 @@ async function getToken() {
   return data.session?.access_token ?? null;
 }
 
-function emptyFacts({ name, websiteUrl }: ListingRequest): ProductDraft {
+function emptyFacts({ name, websiteUrl, media }: ListingRequest): ProductDraft {
   const emptyLocale = { shortDescription: null, productDescription: null, features: [], useCases: [] };
   return {
     schemaVersion: 1, name, websiteUrl, localized: { fr: emptyLocale, en: emptyLocale },
-    plans: [], media: [], classificationProposals: [], integrations: [],
+    plans: [], media: media ?? [], classificationProposals: [], integrations: [],
   };
 }
 

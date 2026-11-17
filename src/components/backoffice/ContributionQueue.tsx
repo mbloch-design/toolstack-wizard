@@ -24,6 +24,7 @@ type ReleasePreview = {
   legacyItems: { slug: string; version: number }[];
   items: { approvalId: string; toolId: string; version: number }[];
 };
+type ReleaseHistory = { batch_key: string; prepared_at: string; commit_sha: string | null; verified_at: string | null; cancelled_at: string | null; leased_until: string };
 type Decision = "approved" | "changes_requested" | "rejected" | "cancel_approval";
 
 async function request(id?: string, decision?: { status: Decision; note: string }, mode?: string, batchKey?: string) {
@@ -50,6 +51,7 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
   const { lang, t } = useLang();
   const [rows, setRows] = useState<Summary[]>();
   const [detail, setDetail] = useState<Detail>();
+  const [mediaPreviews, setMediaPreviews] = useState<{ assetId: string; url: string }[]>([]);
   const [published, setPublished] = useState<Published>();
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
@@ -57,7 +59,9 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
   const [feedback, setFeedback] = useState("");
   const [release, setRelease] = useState<ReleasePreview>();
   const [batchKey, setBatchKey] = useState("");
+  const [blocked, setBlocked] = useState<{ toolId: string; approvalId: string }[]>([]);
   const [canDeliver, setCanDeliver] = useState(false);
+  const [history, setHistory] = useState<ReleaseHistory[]>();
   const [releaseState, setReleaseState] = useState<"committed" | "live">();
   const [revision, reload] = useState(0);
   const back = useRef<HTMLButtonElement>(null);
@@ -87,6 +91,7 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
       if (selected.current !== row.id) return;
       if (!result.submission?.value) throw new Error("INVALID_SUBMISSION");
       setPublished(result.published);
+      setMediaPreviews(Array.isArray(result.media) ? result.media : []);
       setDetail(result.submission);
       requestAnimationFrame(() => back.current?.focus());
     } catch {
@@ -125,6 +130,7 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
       setCanDeliver(result.canDeliver === true);
       setReleaseState(undefined);
       if (!Array.isArray(result.manifest?.items) || !Array.isArray(result.manifest?.legacyItems)) throw new Error("INVALID_RELEASE");
+      setBlocked(Array.isArray(result.blocked) ? result.blocked : []);
       setRelease(result.manifest);
     } catch {
       setError(t("Impossible de préparer l’aperçu du lot. Vérifiez les rattachements et l’état des fiches publiées.",
@@ -134,20 +140,53 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
     }
   }
 
-  async function deliver(mode: "publish-release" | "verify-release") {
-    if (!batchKey || busy) return;
+  async function loadHistory() {
     setBusy(true);
     setError("");
     try {
-      const result = await request(undefined, undefined, mode, batchKey);
+      const result = await request(undefined, undefined, "release-history");
+      if (!Array.isArray(result.history)) throw new Error("INVALID_RELEASE");
+      setHistory(result.history);
+      setCanDeliver(result.canDeliver === true);
+    } catch {
+      setError(t("Impossible de lire le suivi des publications.", "Could not load publication history."));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function deliver(mode: "publish-release" | "verify-release", requestedKey = batchKey) {
+    if (!requestedKey || busy) return;
+    setBusy(true);
+    setError("");
+    try {
+      const result = await request(undefined, undefined, mode, requestedKey);
       if (!result.release?.commit_sha) throw new Error("INVALID_RELEASE");
-      setReleaseState(result.release.verified_at ? "live" : "committed");
+      if (requestedKey === batchKey) setReleaseState(result.release.verified_at ? "live" : "committed");
+      setHistory((rows) => rows?.map((row) => row.batch_key === requestedKey
+        ? { ...row, commit_sha: result.release.commit_sha, verified_at: result.release.verified_at } : row));
       setFeedback(result.cleanupPending ? t("Le commit est créé. Le nettoyage des brouillons reste à faire.", "Commit created. Draft cleanup is pending.") : "");
       reload((n) => n + 1);
     } catch {
       setError(mode === "verify-release"
         ? t("La mise en ligne reste à vérifier. Réessayez après le déploiement.", "The release remains unverified. Try again after deployment.")
         : t("Impossible de confirmer le commit. Réessayez pour reprendre le même lot.", "The commit could not be confirmed. Retry to resume the same batch."));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function cancelRelease(key: string) {
+    if (busy) return;
+    setBusy(true);
+    setError("");
+    try {
+      const result = await request(undefined, undefined, "cancel-release", key);
+      if (!result.release?.cancelled_at) throw new Error("INVALID_RELEASE");
+      setHistory((rows) => rows?.map((row) => row.batch_key === key ? { ...row, cancelled_at: result.release.cancelled_at } : row));
+      setFeedback(t("Lot annulé. Les propositions approuvées sont conservées.", "Batch cancelled. Approved submissions are preserved."));
+    } catch {
+      setError(t("Le lot reste actif. Vérifiez le suivi après la tentative de publication.", "The batch is still active. Check its status after the publication attempt."));
     } finally {
       setBusy(false);
     }
@@ -173,6 +212,10 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
       </li>)}</ul>)}
     {!detail && <div className={styles.content}>
       <Button disabled={busy} onClick={() => void previewRelease()}>{t("Vérifier le lot approuvé", "Check the approved batch")}</Button>
+      {blocked.length > 0 && <Notice title={t("Propositions exclues du lot", "Submissions excluded from the batch")}>
+        <NoticeText>{t("Le rattachement ou les conditions de mise en ligne doivent être revérifiés.", "The assignment or publication requirements need checking.")}</NoticeText>
+        <ul>{blocked.map((item) => <li key={item.approvalId}>{item.toolId}</li>)}</ul>
+      </Notice>}
       {release && <Notice title={(release.items.length || release.legacyItems.length)
         ? t("Lot prêt pour vérification", "Batch ready for verification")
         : t("Aucun changement approuvé à préparer", "No approved changes to prepare")}>
@@ -196,6 +239,24 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
         </div>}
       </Notice>}
     </div>}
+    {!detail && <section className={styles.content}>
+      <Button disabled={busy} onClick={() => void loadHistory()}>{t("Suivi des publications", "Publication history")}</Button>
+      {history && (history.length > 0 ? <ul className={styles.rows}>{history.map((row) =>
+        <li key={row.batch_key}>
+          <span>{new Date(row.prepared_at).toLocaleString(lang)} · {row.cancelled_at ? t("Annulé", "Cancelled") : row.verified_at
+            ? t("En ligne, vérifiée", "Live, verified")
+            : row.commit_sha ? t("Commit créé", "Commit created") : t("Préparée", "Prepared")}</span>
+          {canDeliver && !row.cancelled_at && !row.verified_at && <Button disabled={busy}
+            onClick={() => void deliver(row.commit_sha ? "verify-release" : "publish-release", row.batch_key)}>
+            {row.commit_sha ? t("Vérifier la mise en ligne", "Verify deployment") : t("Reprendre le lot", "Resume batch")}
+          </Button>}
+          {canDeliver && !row.cancelled_at && !row.commit_sha && Date.parse(row.leased_until) <= Date.now()
+            && <Button variant="quiet" disabled={busy} onClick={() => void cancelRelease(row.batch_key)}>
+              {t("Annuler le lot préparé", "Cancel the prepared batch")}
+            </Button>}
+        </li>
+      )}</ul> : <p>{t("Aucune publication préparée.", "No prepared publications.")}</p>)}
+    </section>}
     {detail && <div className={styles.content}>
       <div>
         <h2>{detail.value.name}</h2>
@@ -226,7 +287,13 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
           <strong>{plan.localized[lang === "fr" ? "fr" : "en"].name || plan.planKey}</strong>
           {plan.archived ? ` · ${t("Archivée", "Archived")}` : plan.options.map((option) => {
             const price = pricePresentation(option, lang === "fr" ? "fr" : "en");
-            return <p key={option.id}>{[price.amountLabel, price.billingLabel, option.market].filter(Boolean).join(" · ")}</p>;
+            return <div key={option.id}>
+              <p>{[price.amountLabel, price.billingLabel, option.unit, option.market].filter(Boolean).join(" · ")}</p>
+              {(option.sourceUrl || option.observedOn) && <p>
+                {option.sourceUrl && <a href={option.sourceUrl} target="_blank" rel="noreferrer">{t("Source du tarif", "Pricing source")}</a>}
+                {option.observedOn && <span> · {option.observedOn}</span>}
+              </p>}
+            </div>;
           })}
         </li>)}</ul>
       </section>}
@@ -234,7 +301,13 @@ export function ContributionQueue({ onBack }: { onBack: () => void }) {
         <Notice title={t("Éléments à vérifier", "Items to check")}>
           <NoticeText>{t("Médias, intégrations et classement figurent dans la proposition ci-dessous.", "Media, integrations and classification are listed below.")}</NoticeText>
           <dl className={styles.metadata}>
-            {detail.value.media.map((media) => <div key={media.assetId}><dt>{media.role}</dt><dd>{media.alt.fr || media.alt.en || media.assetId}</dd></div>)}
+            {detail.value.media.map((media) => {
+              const preview = mediaPreviews.find((item) => item.assetId === media.assetId);
+              const alt = media.alt[lang] || media.alt[lang === "fr" ? "en" : "fr"];
+              return <div key={media.assetId}><dt>{media.role}</dt><dd>{preview
+                ? <img className={styles.mediaPreview} src={preview.url} alt={alt} referrerPolicy="no-referrer" />
+                : <span>{t("Aperçu indisponible", "Preview unavailable")}</span>}</dd></div>;
+            })}
             {detail.value.integrations.map((item) => <div key={item.id}><dt>{item.type}</dt><dd>{item.relatedToolId}</dd></div>)}
             {detail.value.classificationProposals.map((item) => <div key={item.key}><dt>{item.key}</dt><dd>{item.values.join(", ")}</dd></div>)}
           </dl>

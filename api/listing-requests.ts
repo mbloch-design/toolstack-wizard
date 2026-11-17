@@ -1,3 +1,5 @@
+import { safeParse } from "valibot";
+import { productMediaSchema } from "../src/lib/publisherCatalog.js";
 import { AccountApiError, requireAccount } from "./_account-auth.js";
 import { readAccountBody } from "./_account-body.js";
 import { runListingCommerce } from "./_cms-commercial.js";
@@ -14,7 +16,7 @@ const fieldNames: Record<string, readonly string[]> = {
   create: ["name", "websiteUrl", "offer", "locale", "idempotencyKey"],
   claimExisting: ["toolId"],
   acceptInvitation: ["token"],
-  save: ["id", "version", "representativeRole", "notes"],
+  save: ["id", "version", "representativeRole", "notes", "media"],
   submit: ["id", "version"],
   withdraw: ["id", "version"],
 };
@@ -92,7 +94,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       const { representativeRole, notes } = input;
       if (typeof representativeRole !== "string" || representativeRole.trim().length > 120
         || typeof notes !== "string" || notes.trim().length > 3000) throw invalidListing();
-      res.status(200).json(await callListing(actor, action, { id, version, representativeRole: representativeRole.trim(), notes: notes.trim() }));
+      let media;
+      if (input.media !== undefined) {
+        const parsed = safeParse(productMediaSchema, input.media);
+        if (!parsed.success) throw invalidListing();
+        media = parsed.output;
+      }
+      res.status(200).json(await callListing(actor, action, {
+        id, version, representativeRole: representativeRole.trim(), notes: notes.trim(),
+        ...(media && { media }),
+      }));
       return;
     }
     if (action === "submit") {

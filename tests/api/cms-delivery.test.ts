@@ -1,4 +1,4 @@
-import { beforeEach, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
   rpc: vi.fn(), prepare: vi.fn(), publish: vi.fn(), match: vi.fn(), read: vi.fn(), cleanup: vi.fn(),
@@ -12,13 +12,13 @@ vi.mock("../../api/_backoffice-catalog-github.js", () => ({
   readCatalog: mocks.read, publishCatalog: mocks.publish, matchPublishedCatalogRelease: mocks.match,
 }));
 vi.mock("../../api/_backoffice-catalog-store.js", () => ({ cleanupCatalogDrafts: mocks.cleanup }));
-import { deliverPublisherRelease } from "../../api/_cms-delivery";
+import { deliverPublisherRelease, verifyPublisherRelease } from "../../api/_cms-delivery";
 import { catalogHash } from "../../api/_backoffice-catalog-contract";
 
 const actor = { userId: "admin", sessionId: "session" };
 const tools = [{ id: "t1", slug: "example", name: "Example" }];
 const manifest = {
-  sourceHead: "1".repeat(40), catalogueHash: catalogHash(tools), legacyItems: [],
+  sourceHead: "1".repeat(40), catalogueHash: catalogHash(tools), legacyItems: [{ slug: "legacy", name: "Legacy", version: 2, hash: "hash" }],
   items: [{ approvalId: "approval", version: 1, toolId: "t1", slug: "example", name: "Example", hash: catalogHash(tools[0]) }],
 };
 const key = catalogHash(manifest);
@@ -49,7 +49,7 @@ it("writes catalogue, media and marker together and keeps verification separate"
   expect(mocks.rpc).toHaveBeenCalledWith("cms_record_release_commit", {
     p_actor: "admin", p_session: "session", p_key: key, p_commit: committed.commit_sha,
   });
-  expect(mocks.cleanup).toHaveBeenCalledOnce();
+  expect(mocks.cleanup).toHaveBeenCalledWith(manifest.legacyItems);
 });
 
 it("recovers a lost receipt without writing Git a second time", async () => {
@@ -58,4 +58,32 @@ it("recovers a lost receipt without writing Git a second time", async () => {
   mocks.match.mockResolvedValue({ commitSha: committed.commit_sha });
   expect((await deliverPublisherRelease(actor, key)).release?.commit_sha).toBe(committed.commit_sha);
   expect(mocks.publish).not.toHaveBeenCalled();
+});
+
+afterEach(() => { vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
+
+it("requires the matching READY Vercel deployment, public marker and localized pages", async () => {
+  vi.stubEnv("CMS_VERCEL_TOKEN", "fixture");
+  vi.stubEnv("CMS_VERCEL_PROJECT_ID", "project");
+  mocks.rpc.mockResolvedValueOnce({ data: committed, error: null });
+  mocks.rpc.mockResolvedValueOnce({ data: { ...committed, verified_at: "2026-11-17T12:00:00Z" }, error: null });
+  const html = (path: string) => new Response(`<link rel="canonical" href="https://tooltrim.com${path}">`);
+  const canonicalPaths = ["/fr/tool/example", "/en/tool/example", "/fr/tool/legacy", "/en/tool/legacy"];
+  const fetcher = vi.fn(async (input: string | URL) => {
+    const path = new URL(input).pathname;
+    if (path.startsWith("/v4/aliases/")) return Response.json({ deploymentId: "dpl_fixture" });
+    if (path.startsWith("/v13/deployments/")) return Response.json({
+      projectId: "project", readyState: "READY", meta: { githubCommitSha: committed.commit_sha },
+    });
+    if (path.endsWith("catalog-release.json")) return Response.json({ batchKey: key, catalogueHash: manifest.catalogueHash });
+    if (path === "/sitemap.xml") return new Response(canonicalPaths.map((route) => `<loc>https://tooltrim.com${route}</loc>`).join(""));
+    if (canonicalPaths.includes(path)) return html(path);
+    return new Response("", { status: 404 });
+  });
+  vi.stubGlobal("fetch", fetcher);
+  expect((await verifyPublisherRelease(actor, key))?.verified_at).toBeTruthy();
+  expect(fetcher.mock.calls.filter(([input]) => new URL(input).pathname.startsWith("/v4/aliases/"))).toHaveLength(2);
+  expect(mocks.rpc).toHaveBeenCalledWith("cms_record_verified_release", {
+    p_actor: "admin", p_session: "session", p_key: key, p_commit: committed.commit_sha,
+  });
 });

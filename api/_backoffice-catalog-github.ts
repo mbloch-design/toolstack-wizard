@@ -62,8 +62,17 @@ async function github(
   }
   return response.json();
 }
+function catalogBranchPath() {
+  const ref = process.env.CMS_CATALOG_BRANCH ?? CATALOG_BRANCH;
+  if (!/^[a-zA-Z0-9][a-zA-Z0-9_./-]{0,159}$/.test(ref) ||
+    ref.includes("..") || ref.includes("//") || ref.endsWith("/") || ref.endsWith(".lock")) {
+    throw catalogError(503, "CMS_CATALOG_BRANCH_INVALID");
+  }
+  return ref.split("/").map(encodeURIComponent).join("/");
+}
+
 async function head(): Promise<string> {
-  const r = (await github(`git/ref/heads/${CATALOG_BRANCH}`)) as {
+  const r = (await github(`git/ref/heads/${catalogBranchPath()}`)) as {
     object?: {
       sha?: unknown;
     };
@@ -118,6 +127,12 @@ async function downloadCatalog(headSha: string): Promise<CatalogSource> {
   }
   return { headSha, treeSha, tools, text };
 }
+export async function readPublishedDescendant(baseSha: string, candidateSha: string) {
+  const comparison = await github(`compare/${sha(baseSha)}...${sha(candidateSha)}?per_page=1`) as { status?: unknown };
+  if (comparison?.status !== "ahead" && comparison?.status !== "identical") return null;
+  return downloadCatalog(candidateSha);
+}
+
 const RELEASE_MARKER = "public/catalog-release.json";
 export type CatalogReleaseArtifacts = {
   marker: { batchKey: string; catalogueHash: string };
@@ -187,7 +202,7 @@ export async function publishCatalog(
   const commitSha = sha(commit?.sha);
   let updateError: unknown;
   try {
-    await github(`git/refs/heads/${CATALOG_BRANCH}`, "PATCH", {
+    await github(`git/refs/heads/${catalogBranchPath()}`, "PATCH", {
       sha: commitSha,
       force: false,
     });

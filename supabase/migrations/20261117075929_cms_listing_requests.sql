@@ -19,6 +19,7 @@ create table catalog_contrib.listing_requests (
   canonical_tool_id varchar references public.tools(id) on delete restrict,
   initial_approval_id uuid,
   representative_role text not null default '' check (char_length(representative_role) <= 120),
+  media jsonb not null default '[]'::jsonb check (jsonb_typeof(media) = 'array' and jsonb_array_length(media) <= 14),
   notes text not null default '' check (char_length(notes) <= 3000),
   lock_version bigint not null default 1 check (lock_version between 1 and 9007199254740991),
   idempotency_key text not null check (idempotency_key ~ '^[A-Za-z0-9_-]{8,128}$'),
@@ -82,7 +83,7 @@ returns jsonb language sql stable security invoker set search_path = pg_catalog 
     'id', r.id, 'name', r.name, 'websiteUrl', r.website_url, 'slug', r.slug, 'offer', r.offer,
     'locale', r.locale, 'status', r.status, 'version', r.lock_version,
     'commercialStatus', r.commercial_status, 'representationStatus', r.representation_status,
-    'deliveryStatus', r.delivery_status, 'toolId', r.canonical_tool_id, 'representativeRole', r.representative_role, 'notes', r.notes,
+    'deliveryStatus', r.delivery_status, 'toolId', r.canonical_tool_id, 'representativeRole', r.representative_role, 'notes', r.notes, 'media', r.media,
     'createdAt', r.created_at, 'updatedAt', r.updated_at, 'reservationExpiresAt', r.reservation_expires_at
   )
 $$;
@@ -118,8 +119,8 @@ begin
         select jsonb_agg(catalog_contrib.cms_listing_dto(r) order by r.updated_at desc, r.id)
         from (
           select d.* from catalog_contrib.listing_requests d
-          where (d.owner_id = p_actor and d.canonical_tool_id is null)
-            or catalog_contrib.cms_can_read_attached_listing(p_actor, d.canonical_tool_id)
+          where d.owner_id = p_actor and (d.canonical_tool_id is null
+            or catalog_contrib.cms_can_read_attached_listing(p_actor, d.canonical_tool_id))
           order by d.updated_at desc, d.id limit 100
         ) r
       ), '[]'::jsonb),
@@ -182,7 +183,7 @@ begin
 
   if p_action = 'read' then
     select r.* into listing from catalog_contrib.listing_requests r
-      where r.id = (p_payload->>'id')::uuid and ((r.owner_id = p_actor and r.canonical_tool_id is null)
+      where r.id = (p_payload->>'id')::uuid and r.owner_id = p_actor and (r.canonical_tool_id is null
         or catalog_contrib.cms_can_read_attached_listing(p_actor, r.canonical_tool_id));
     if not found then raise sqlstate 'PT404' using message = 'LISTING_NOT_FOUND'; end if;
     return jsonb_build_object('listing', catalog_contrib.cms_listing_dto(listing));
@@ -227,7 +228,8 @@ begin
   update catalog_contrib.listing_requests
     set status = next_status, lock_version = lock_version + 1, updated_at = clock_timestamp(), reservation_expires_at = expires_at,
       representative_role = case when p_action = 'save' then p_payload->>'representativeRole' else representative_role end,
-      notes = case when p_action = 'save' then p_payload->>'notes' else notes end
+      notes = case when p_action = 'save' then p_payload->>'notes' else notes end,
+      media = case when p_action = 'save' and p_payload ? 'media' then p_payload->'media' else media end
     where id = listing.id
     returning * into strict listing;
   return jsonb_build_object('listing', catalog_contrib.cms_listing_dto(listing));

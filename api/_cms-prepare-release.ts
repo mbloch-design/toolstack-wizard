@@ -7,6 +7,7 @@ import { assembleCmsRelease, projectPublisherFacts } from "./_cms-release.js";
 import type { CatalogTool } from "../src/lib/backofficeCatalog.js";
 import { verifyBadgeOnPage } from "./_badge-verification.js";
 import { materializePublisherMedia } from "./_catalog-media.js";
+import { cmsCreemMode } from "./_cms-commercial-creem.js";
 import { pinnedBadgeTransport } from "./_cms-commercial-badge.js";
 import { parseProductDraft } from "../src/lib/publisherCatalog.js";
 
@@ -28,7 +29,19 @@ export async function preparePublisherRelease(actor: CmsActor, verifyCommercial 
     throw new AccountApiError(503, "CMS_WORKSPACE_UNAVAILABLE");
   }
   const attachedToolIds = protectedResult.data as string[];
-  const changes = await Promise.all([...data, ...initialResult.data].map(async (entry) => {
+  const blocked: { toolId: string; approvalId: string }[] = [];
+  const all = [...data, ...initialResult.data].filter((entry) => {
+    if (!entry || typeof entry !== "object" || Array.isArray(entry)) return true;
+    const commercial = entry.commercialEvidence;
+    const mixedMode = commercial && typeof commercial === "object" && !Array.isArray(commercial)
+      && commercial.type === "priority_paid" && commercial.mode !== cmsCreemMode();
+    if ((entry.attached === false || mixedMode) && typeof entry.toolId === "string" && typeof entry.approvalId === "string") {
+      blocked.push({ toolId: entry.toolId, approvalId: entry.approvalId });
+      return false;
+    }
+    return true;
+  });
+  const changes = await Promise.all(all.map(async (entry) => {
     if (!entry || typeof entry !== "object" || Array.isArray(entry)
       || typeof entry.approvalId !== "string" || typeof entry.toolId !== "string"
       || typeof entry.version !== "number") {
@@ -70,6 +83,13 @@ export async function preparePublisherRelease(actor: CmsActor, verifyCommercial 
   const assets = await materializePublisherMedia(actor, approvalIds);
   for (const change of changes) {
     const media = assets.filter((asset) => asset.approvalId === change.approvalId && asset.toolId === change.toolId);
+    const isCmsImage = (candidate: unknown) => typeof candidate === "string" && candidate.startsWith("/tool-media/cms/");
+    if (isCmsImage(change.tool.logo)) delete change.tool.logo;
+    if (isCmsImage(change.tool.ogImageUrl)) delete change.tool.ogImageUrl;
+    if (Array.isArray(change.tool.galleryImages)) {
+      change.tool.galleryImages = change.tool.galleryImages.filter((image) => !isCmsImage(image));
+    }
+    delete change.tool.publisherMediaAlts;
     const alternateText: { url: string; fr: string; en: string }[] = [];
     for (const ref of change.draft.media) {
       const asset = media.find((item) => item.assetId === ref.assetId && item.role === ref.role);
@@ -86,5 +106,5 @@ export async function preparePublisherRelease(actor: CmsActor, verifyCommercial 
     if (alternateText.length) change.tool.publisherMediaAlts = alternateText;
   }
   const assembled = assembleCmsRelease(source, { expectedHead: source.headSha, attachedToolIds, changes, legacyDrafts });
-  return { ...assembled, source, legacyDrafts: legacy.drafts, mediaFiles: [...new Map(assets.map((item) => [item.path, { path: item.path, bytes: item.bytes }])).values()] };
+  return { ...assembled, blocked, source, legacyDrafts: legacy.drafts, mediaFiles: [...new Map(assets.map((item) => [item.path, { path: item.path, bytes: item.bytes }])).values()] };
 }

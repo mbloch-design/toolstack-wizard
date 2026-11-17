@@ -59,6 +59,20 @@ begin
 end;
 $$;
 
+create function public.cms_review_submission_media(p_actor uuid, p_session uuid, p_id uuid)
+returns jsonb language plpgsql security invoker set search_path = '' as $$
+begin
+  perform catalog_contrib.cms_require_admin(p_actor,p_session);
+  return (
+    select coalesce(jsonb_agg(jsonb_build_object('assetId', a.id, 'path', a.derivative_path)),'[]'::jsonb)
+    from catalog_contrib.cms_tool_submissions s
+    cross join lateral jsonb_array_elements(coalesce(s.value->'media','[]'::jsonb)) item
+    join catalog_private.cms_media_assets a
+      on a.id::text = item->>'assetId' and a.role = item->>'role' and a.state = 'ready'
+    where s.id = p_id and a.brand_id = s.brand_id and a.target_kind = 'tool' and a.target_id = s.tool_id
+  );
+end $$;
+
 alter table catalog_private.cms_media_assets drop constraint cms_media_assets_state_check;
 alter table catalog_private.cms_media_assets add constraint cms_media_assets_state_check
   check (state in ('reserved', 'ready', 'rejected', 'deleting'));
@@ -110,10 +124,35 @@ begin
 end;
 $$;
 
+-- During explicit account deletion, remove user-owned originals via Storage.
+-- The approved WebP derivatives are service-owned and remain available.
+grant select (owner,owner_id) on storage.objects to service_role;
+create function public.cms_owned_media_originals(p_owner uuid, p_session uuid)
+returns jsonb language plpgsql security invoker set search_path = '' as $$
+begin
+  perform public.require_account_session(p_owner,p_session);
+  if not exists (select from public.profiles p where p.id = p_owner and p.account_status = 'deleting') then
+    raise sqlstate 'PT409' using message = 'ACCOUNT_DELETION_NOT_STARTED';
+  end if;
+  return (
+    select coalesce(jsonb_agg(o.name order by o.name), '[]'::jsonb)
+    from (
+      select s.name from storage.objects s
+      where s.bucket_id = 'catalog-drafts' and s.name ~ '^originals/[a-f0-9-]{36}$'
+        and (s.owner_id = p_owner::text or s.owner = p_owner)
+      order by s.name limit 100
+    ) o
+  );
+end $$;
+revoke all on function public.cms_owned_media_originals(uuid,uuid) from public,anon,authenticated;
+grant execute on function public.cms_owned_media_originals(uuid,uuid) to service_role;
+
 revoke all on function catalog_private.cms_transfer_initial_listing_media(),
   catalog_private.cms_media_can_clean(catalog_private.cms_media_assets),
-  public.cms_approved_media_inputs(uuid,uuid,uuid[]), public.cms_cleanup_media(text,uuid) from public, anon, authenticated;
+  public.cms_approved_media_inputs(uuid,uuid,uuid[]),
+  public.cms_review_submission_media(uuid,uuid,uuid), public.cms_cleanup_media(text,uuid) from public, anon, authenticated;
 grant execute on function catalog_private.cms_transfer_initial_listing_media(),
-  catalog_private.cms_media_can_clean(catalog_private.cms_media_assets), public.cms_approved_media_inputs(uuid,uuid,uuid[]), public.cms_cleanup_media(text,uuid) to service_role;
+  catalog_private.cms_media_can_clean(catalog_private.cms_media_assets), public.cms_approved_media_inputs(uuid,uuid,uuid[]),
+  public.cms_review_submission_media(uuid,uuid,uuid), public.cms_cleanup_media(text,uuid) to service_role;
 
 commit;

@@ -1,3 +1,5 @@
+import CatalogMediaUpload, { CatalogMediaPreview } from "./CatalogMediaUpload";
+import type { ProductDraft } from "@/lib/publisherCatalog";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import Button, { linkClass } from "@/ds/Button/Button";
 import Field, { TextAreaField } from "@/ds/Field/Field";
@@ -34,7 +36,9 @@ export default function ListingStatusCard({ listing, getToken, update, returnedF
   listing: ListingRequest; getToken: PublisherToken; update: (listing: ListingRequest) => void;
   returnedFromPayment: boolean; clearPaymentReturn: () => void;
 }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const [media, setMedia] = useState(listing.media ?? []);
+  const [uploading, setUploading] = useState(false);
   const [role, setRole] = useState(listing.representativeRole ?? "");
   const [notes, setNotes] = useState(listing.notes ?? "");
   const [busy, setBusy] = useState(false);
@@ -43,21 +47,24 @@ export default function ListingStatusCard({ listing, getToken, update, returnedF
   const [refreshError, setRefreshError] = useState(false);
   const pending = useRef(false);
   const editable = ["draft", "changes_requested"].includes(listing.status);
-  const dirty = editable && (role !== (listing.representativeRole ?? "") || notes !== (listing.notes ?? ""));
-  useCatalogExitGuard(dirty || busy, () => setError(t("Enregistrez ou annulez vos modifications avant de quitter.", "Save or cancel your edits before leaving.")));
+  const dirty = editable && (role !== (listing.representativeRole ?? "") || notes !== (listing.notes ?? "") || JSON.stringify(media) !== JSON.stringify(listing.media ?? []));
+  useCatalogExitGuard(dirty || busy || uploading, () => setError(t("Enregistrez ou annulez vos modifications avant de quitter.", "Save or cancel your edits before leaving.")));
 
   async function mutate(action: "save" | "submit" | "withdraw") {
-    if (pending.current) return;
+    if (pending.current || uploading) return;
     pending.current = true;
     setBusy(true);
     setError("");
     setMessage("");
     try {
-      const body = { action, id: listing.id, version: listing.version, ...(action === "save" && { representativeRole: role.trim(), notes: notes.trim() }) };
+      const body = { action, id: listing.id, version: listing.version, ...(action === "save" && { representativeRole: role.trim(), notes: notes.trim(),
+        ...(JSON.stringify(media) !== JSON.stringify(listing.media ?? []) && { media }),
+      }) };
       const { listing: next } = await publisherRequest<{ listing: ListingRequest }>(getToken, "/api/listing-requests", { method: "POST", body });
       update(next);
       setRole(next.representativeRole ?? "");
       setNotes(next.notes ?? "");
+      setMedia(next.media ?? []);
       setMessage(action === "save" ? t("Brouillon enregistré.", "Draft saved.") : action === "submit" ? t("Demande envoyée à ToolTrim.", "Application submitted to ToolTrim.") : t("Demande archivée.", "Application archived."));
     } catch (cause) {
       setError(cause instanceof PublisherApiError && cause.status === 409
@@ -110,15 +117,34 @@ export default function ListingStatusCard({ listing, getToken, update, returnedF
           onChange={(event) => setRole(event.target.value)} placeholder={t("Ex. fondatrice ou responsable produit", "E.g. founder or product manager")} />
         <TextAreaField label={t("Informations produit à transmettre (facultatif)", "Product details to share (optional)")} value={notes}
           maxLength={3000} disabled={busy} onChange={(event) => setNotes(event.target.value)} />
+        <h3>{t("Visuels du produit", "Product images")}</h3>
+        {media.map((asset) => <div key={asset.assetId} className={styles.content}>
+          <CatalogMediaPreview asset={asset} locale={lang} getToken={getToken} />
+          <Button disabled={busy || uploading} onClick={() => setMedia((items) => items.filter((item) => item.assetId !== asset.assetId))}>
+            {t("Retirer le visuel", "Remove image")}
+          </Button>
+        </div>)}
+        {(["logo", "cover", "gallery"] as const).map((mediaRole) => {
+          const count = media.filter((asset) => asset.role === mediaRole).length;
+          if (count >= (mediaRole === "gallery" ? 12 : 1)) return null;
+          return <div key={mediaRole}>
+            <p>{mediaRole === "logo" ? t("Logo", "Logo") : mediaRole === "cover" ? t("Couverture", "Cover") : t("Capture d’écran", "Screenshot")}</p>
+            <CatalogMediaUpload listingId={listing.id} role={mediaRole} getToken={getToken} setUploading={setUploading}
+              disabled={busy || uploading} onReady={(assetId) => {
+                const asset: ProductDraft["media"][number] = { assetId, role: mediaRole, alt: { fr: "", en: "" }, caption: { fr: "", en: "" } };
+                setMedia((items) => [...items, asset]);
+              }} />
+          </div>;
+        })}
         {dirty && <div className={styles.actions}>
           <Button variant="primary" type="submit" disabled={busy}>{t("Enregistrer le brouillon", "Save draft")}</Button>
-          <Button disabled={busy} onClick={() => { setRole(listing.representativeRole ?? ""); setNotes(listing.notes ?? ""); setError(""); }}>{t("Annuler", "Cancel")}</Button>
+          <Button disabled={busy} onClick={() => { setRole(listing.representativeRole ?? ""); setNotes(listing.notes ?? ""); setMedia(listing.media ?? []); setError(""); }}>{t("Annuler", "Cancel")}</Button>
         </div>}
       </form>
       {listing.commercialStatus !== "satisfied" && <p className={styles.muted}>{t("Remplissez la condition de l’offre avant d’envoyer votre demande.", "Complete the offer requirement before sending your application.")}</p>}
       {listing.commercialStatus === "satisfied" && !role.trim() && <p className={styles.muted}>{t("Renseignez votre rôle pour envoyer votre demande.", "Enter your role to send your application.")}</p>}
       <div className={styles.actions}>
-        {listing.commercialStatus === "satisfied" && role.trim() && !dirty && <Button variant="primary" disabled={busy} onClick={() => void mutate("submit")}>{t("Envoyer à ToolTrim", "Send to ToolTrim")}</Button>}
+        {listing.commercialStatus === "satisfied" && role.trim() && !dirty && <Button variant="primary" disabled={busy || uploading} onClick={() => void mutate("submit")}>{t("Envoyer à ToolTrim", "Send to ToolTrim")}</Button>}
         {listing.commercialStatus === "pending" && !dirty && <Button variant="quiet" disabled={busy} onClick={() => {
           if (window.confirm(t("Archiver ce brouillon ?", "Archive this draft?"))) void mutate("withdraw");
         }}>{t("Archiver le brouillon", "Archive draft")}</Button>}

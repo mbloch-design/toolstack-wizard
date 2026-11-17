@@ -23,7 +23,7 @@ export type CheckoutAttempt = {
   websiteUrl: string;
   offerVersion: number;
   locale: "fr" | "en";
-  mode: "prod";
+  mode: "prod" | "test";
   productId: string;
   checkoutId?: string | null;
 };
@@ -31,11 +31,20 @@ export type CheckoutAttempt = {
 const unavailable = () => new AccountApiError(503, "CREEM_UNAVAILABLE");
 const mismatch = () => new AccountApiError(409, "CREEM_RECEIPT_MISMATCH");
 
-async function creem(path: string, body?: Record<string, unknown>) {
-  const key = process.env.CREEM_API_KEY;
+export const cmsCreemMode = () => process.env.CMS_CREEM_MODE === "test" ? "test" as const : "prod" as const;
+export function cmsCreemProductId() {
+  const id = cmsCreemMode() === "test" ? process.env.CMS_CREEM_TEST_PRODUCT_ID : PRIORITY_PRODUCT_ID;
+  if (!id || !/^prod_[a-zA-Z0-9_-]{1,128}$/.test(id)) throw unavailable();
+  return id;
+}
+
+async function creem(path: string, mode: CheckoutAttempt["mode"], body?: Record<string, unknown>) {
+  if (mode !== cmsCreemMode()) throw mismatch();
+  const key = mode === "test" ? process.env.CMS_CREEM_TEST_API_KEY : process.env.CREEM_API_KEY;
   if (!key) throw unavailable();
   try {
-    const result = await fetch(`https://api.creem.io/v1/${path}`, {
+    const host = mode === "test" ? "test-api.creem.io" : "api.creem.io";
+    const result = await fetch(`https://${host}/v1/${path}`, {
       headers: { "x-api-key": key, ...(body && { "Content-Type": "application/json" }) },
       redirect: "error", signal: AbortSignal.timeout(8000),
       ...(body && { method: "POST", body: JSON.stringify(body) }),
@@ -62,10 +71,10 @@ function assertCheckout(attempt: CheckoutAttempt, checkout: Record<string, unkno
 }
 
 export async function validatePriorityProduct(attempt: CheckoutAttempt) {
-  if (attempt.productId !== PRIORITY_PRODUCT_ID || attempt.offerVersion !== 1) {
+  if (attempt.mode !== cmsCreemMode() || attempt.productId !== cmsCreemProductId() || attempt.offerVersion !== 1) {
     throw new AccountApiError(409, "CREEM_PRODUCT_MISMATCH");
   }
-  const product = await creem(`products?product_id=${encodeURIComponent(attempt.productId)}`);
+  const product = await creem(`products?product_id=${encodeURIComponent(attempt.productId)}`, attempt.mode);
   if (product.id !== attempt.productId || product.mode !== attempt.mode || product.billing_type !== "onetime"
     || product.status !== "active" || product.currency !== PRIORITY_CURRENCY || product.price !== PRIORITY_AMOUNT) {
     throw new AccountApiError(409, "CREEM_PRODUCT_MISMATCH");
@@ -87,10 +96,13 @@ export async function createListingCheckout(attempt: CheckoutAttempt) {
 }
 
 export async function dispatchListingCheckout(attempt: CheckoutAttempt) {
-  const successUrl = new URL(attempt.locale === "fr" ? "/fr/editeur" : "/en/publisher", "https://tooltrim.com");
+  const origin = new URL(process.env.CMS_PUBLIC_ORIGIN ?? "https://tooltrim.com");
+  if (origin.protocol !== "https:" || origin.username || origin.password || origin.port ||
+    (attempt.mode === "test" && origin.hostname === "tooltrim.com")) throw unavailable();
+  const successUrl = new URL(attempt.locale === "fr" ? "/fr/editeur" : "/en/publisher", origin.origin);
   successUrl.searchParams.set("listingId", attempt.listingId);
   successUrl.searchParams.set("payment", "return");
-  const checkout = await creem("checkouts", {
+  const checkout = await creem("checkouts", attempt.mode, {
     product_id: attempt.productId,
     request_id: attempt.id,
     units: 1,
@@ -113,7 +125,7 @@ export type Receipt = {
 
 export async function readListingReceipt(attempt: CheckoutAttempt, checkoutId: string): Promise<Receipt | null> {
   if (!creemCheckoutId(checkoutId) || (attempt.checkoutId && attempt.checkoutId !== checkoutId)) throw mismatch();
-  const checkout = await creem(`checkouts?checkout_id=${encodeURIComponent(checkoutId)}`);
+  const checkout = await creem(`checkouts?checkout_id=${encodeURIComponent(checkoutId)}`, attempt.mode);
   if (assertCheckout(attempt, checkout) !== checkoutId) throw mismatch();
   if (checkout.status !== "completed") return null;
   const order = asObject(checkout.order);
@@ -124,7 +136,7 @@ export async function readListingReceipt(attempt: CheckoutAttempt, checkoutId: s
     || entityId(order.product) !== attempt.productId || order.status !== "paid" || order.type !== "onetime"
     || !matchesBasePrice || Number(order.discount_amount ?? 0) !== 0
     || typeof order.amount_paid !== "number" || order.amount_paid <= 0) throw mismatch();
-  const transaction = await creem(`transactions?transaction_id=${encodeURIComponent(order.transaction)}`);
+  const transaction = await creem(`transactions?transaction_id=${encodeURIComponent(order.transaction)}`, attempt.mode);
   if (transaction.id !== order.transaction || transaction.mode !== attempt.mode || transaction.order !== order.id
     || transaction.type !== "payment" || transaction.currency !== PRIORITY_CURRENCY) throw mismatch();
   const incident = ["refunded", "partialRefund", "chargedBack", "partially_refunded", "chargeback"].includes(String(transaction.status))
