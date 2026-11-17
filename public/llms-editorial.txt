@@ -631,18 +631,18 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "chatgpt-plus-worth-it",
-    "url": "https://tooltrim.com/en/guide/chatgpt-plus-worth-it",
-    "title": "2h a day on repetitive work: does ChatGPT Plus help?",
-    "summary": "ChatGPT Plus isn't 2x faster than free. It's maybe 20-30% faster. But for a solo freelancer, it's often a luxury."
-  },
-  {
-    "type": "guide",
-    "language": "en",
     "slug": "mcp-for-non-developer-freelancers",
     "url": "https://tooltrim.com/en/guide/mcp-for-non-developer-freelancers",
     "title": "MCP for non-developer freelancers: the guide",
     "summary": "What an MCP server lets your AI assistant do in Notion, Canva or Calendly, and what to check before connecting it: write access, plan, setup."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "chatgpt-plus-worth-it",
+    "url": "https://tooltrim.com/en/guide/chatgpt-plus-worth-it",
+    "title": "2h a day on repetitive work: does ChatGPT Plus help?",
+    "summary": "ChatGPT Plus isn't 2x faster than free. It's maybe 20-30% faster. But for a solo freelancer, it's often a luxury."
   },
   {
     "type": "comparison",

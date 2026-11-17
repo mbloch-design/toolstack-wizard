@@ -96,6 +96,7 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "alternatives-freshservice-2026": "freshservice-alternatives-2026",
   "zapier-vs-make-vs-n8n-2026-automatiser-stack": "zapier-vs-make-vs-n8n-pricing",
   "agents-ia-freelances-2026-lesquels-valent-le-coup": "ai-agents-freelancers-2026",
+  "mcp-freelances-non-developpeurs": "mcp-for-non-developer-freelancers",
   "stack-saas-minimaliste-freelance-2026-moins-50-euros": "minimalist-saas-stack-freelancer-2026-under-50-euros",
   "plateforme-ecommerce-solo-petite-equipe-produits-physiques": "ecommerce-platform-solo-small-team-physical-products-2026",
   // Guides anglais qui gardaient le slug français (audit du 19/10/2026).
