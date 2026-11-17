@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { Boxes, CirclePlus, Lightbulb, LogOut, Settings2, ShieldCheck } from "@/lib/icons";
+import { Boxes, CirclePlus, Lightbulb, LogOut, Plug, Settings2, ShieldCheck } from "@/lib/icons";
 import Button from "@/ds/Button/Button";
 import Segmented from "@/ds/Segmented/Segmented";
 import { forwardRef, useState } from "react";
@@ -50,6 +50,8 @@ export default function ShellMenuBody({ languageHref, places = false, onDone }: 
     {places && <MenuGroup label={t("Explorer", "Explore")}>
       <MenuLink link={RouterLink} to={`${prefix}/stacks`} icon={<Boxes />} onClick={onDone}>{t("Stacks", "Stacks")}</MenuLink>
       <MenuLink link={RouterLink} to={`${prefix}/guides`} icon={<Lightbulb />} onClick={onDone}>{t("Guides", "Guides")}</MenuLink>
+      {/* La section agents (S1, 16/11/2026) : hors de la barre d'onglets, comme Stacks et Guides. */}
+      <MenuLink link={RouterLink} to={`${prefix}/agents`} icon={<Plug />} onClick={onDone}>{t("Agents IA", "AI agents")}</MenuLink>
       <MenuLink link={RouterLink} to={`${prefix}/submit`} icon={<CirclePlus />} onClick={onDone}>{t("Soumettre un outil", "Submit a tool")}</MenuLink>
     </MenuGroup>}
     <MenuGroup label={t("Réglages", "Settings")}>
