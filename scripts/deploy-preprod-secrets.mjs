@@ -83,7 +83,7 @@ try {
   await pushSecrets(accessToken, envFile, keys);
 
   console.log("");
-  console.log("Supabase Edge Function secrets pushed. Now run: npm run validate:preprod");
+  console.log("Supabase Edge Function secrets pushed. Now run: npm run validate:preprod-app");
 } catch (error) {
   console.error("[FAIL] Supabase Edge Function secrets push failed");
   console.error(`     ${error instanceof Error ? error.message : String(error)}`);

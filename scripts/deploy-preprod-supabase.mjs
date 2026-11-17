@@ -4,11 +4,6 @@ import readline from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
 
 const PROJECT_REF = "rtfyfuwfdpnsogovkwai";
-const FUNCTIONS = [
-  "backoffice-diagnostic",
-  "send-backoffice-alerts",
-  "process-diagnostic-email-jobs",
-];
 const SUPABASE_BIN = process.env.SUPABASE_CLI || "supabase";
 
 function loadEnv(path = ".env.preprod") {
@@ -64,9 +59,7 @@ const env = loadEnv();
 const rl = readline.createInterface({ input, output });
 
 try {
-  console.log("This assistant deploys the missing Supabase preprod pieces:");
-  console.log("- database migrations, after a dry-run");
-  console.log("- required Edge Functions");
+  console.log("This script applies Supabase preprod database migrations.");
   console.log("");
   console.log(`Project: ${PROJECT_REF}`);
   console.log("");
@@ -107,22 +100,9 @@ try {
       env: supabaseEnv,
     });
 
-    for (const fn of FUNCTIONS) {
-      run(`Deploy Edge Function ${fn}`, [
-        "functions",
-        "deploy",
-        fn,
-        "--project-ref",
-        PROJECT_REF,
-        "--no-verify-jwt",
-        "--use-api",
-      ], {
-        env: supabaseEnv,
-      });
-    }
 
     console.log("");
-    console.log("Supabase preprod deploy done. Now run: npm run validate:preprod");
+    console.log("Supabase preprod migrations applied.");
   }
 } finally {
   rl.close();
