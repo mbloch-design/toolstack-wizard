@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { Boxes, CirclePlus, Lightbulb, LogOut, Settings2, ShieldCheck } from "@/lib/icons";
+import { Boxes, CirclePlus, FileText, Lightbulb, LogOut, Settings2, ShieldCheck } from "@/lib/icons";
 import Button from "@/ds/Button/Button";
 import Segmented from "@/ds/Segmented/Segmented";
 import { forwardRef, useState } from "react";
@@ -14,6 +14,7 @@ import { useStackAccount } from "@/hooks/useStackAccount";
 import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
 import { accountPath } from "@/lib/accountPaths";
 import { trackEvent } from "@/lib/analytics";
+import { publisherPath } from "@/lib/publisherCatalogApi";
 
 /** The router's link, for the system's shell (src/ds/Shell is router-free). */
 export const RouterLink: ShellLink = forwardRef<HTMLAnchorElement, ShellLinkProps>(function RouterLink({ to, children, ...rest }, ref) { return <Link ref={ref} to={to} {...rest}>{children}</Link>; });
@@ -28,7 +29,8 @@ export function useShellAccount() {
   if (!account.user || account.syncStatus === "session-expired") return { kind: "guest" as const, expired: account.syncStatus === "session-expired" };
   const profile = experience.profile?.userId === account.user.id ? experience.profile : null;
   const name = profile?.displayName || account.user.email || t("Mon compte", "My account");
-  return { kind: "user" as const, id: account.user.id, name, email: account.user.email ?? undefined, avatarUrl: profile?.avatarUrl ?? null, backoffice: !!profile?.canAccessBackoffice, busy: account.authBusy };
+  const publisher = import.meta.env.VITE_PUBLISHER_CMS_ENABLED === "true" && Boolean(account.user.email_confirmed_at || account.user.confirmed_at);
+  return { kind: "user" as const, id: account.user.id, name, email: account.user.email ?? undefined, avatarUrl: profile?.avatarUrl ?? null, backoffice: !!profile?.canAccessBackoffice, publisher, busy: account.authBusy };
 }
 
 /**
@@ -44,6 +46,9 @@ export default function ShellMenuBody({ languageHref, places = false, onDone }: 
   const who = useShellAccount();
   return <>
     {who.kind === "user" && <MenuGroup><MenuIdentity name={who.name} detail={who.email !== who.name ? who.email : undefined} /></MenuGroup>}
+    {who.kind === "user" && who.publisher && <MenuGroup>
+      <MenuLink link={RouterLink} to={publisherPath(prefix)} icon={<FileText />} onClick={onDone}>{t("Mes fiches", "My listings")}</MenuLink>
+    </MenuGroup>}
     {who.kind === "guest" && <MenuGroup>
       <Button variant="primary" onClick={() => { onDone(); experience.openAuth("signin", `${prefix}/ma-stack`); }}>{who.expired ? t("Me reconnecter", "Sign in again") : t("Se connecter", "Sign in")}</Button>
     </MenuGroup>}

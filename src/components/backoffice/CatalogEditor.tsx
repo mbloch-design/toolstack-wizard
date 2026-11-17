@@ -548,7 +548,7 @@ export function CatalogEditor({
       {!groupedCms && !review && !inlineSlug && !detail && <Button type="button" disabled={busy || dirty}
         onClick={() => setContributionsOpen(true)}>{t("Propositions éditeur", "Publisher submissions")}</Button>}
       {!review && !inlineSlug && !detail && <Button type="button" disabled={busy || dirty}
-        onClick={() => setListingAdminOpen(true)}>{t("Demandes de fiche", "Listing requests")}</Button>}
+        onClick={() => setListingAdminOpen(true)}>{t("Demandes et accès éditeur", "Requests and publisher access")}</Button>}
       {error && (
         <div className="bo-catalog-feedback" role="alert">
           <p>{error}</p>

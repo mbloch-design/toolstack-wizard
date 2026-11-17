@@ -212,7 +212,7 @@ export default function PublisherFiche({ value, canEdit, onSave, onDenied, onDir
   const availableMediaRoles = mediaRoles.filter(({ id, limit }) => draft.media.filter((asset) => asset.role === id).length < limit);
   const chosenMediaRole = availableMediaRoles.find((role) => role.id === newMediaRole) ?? availableMediaRoles[0];
 
-  return <Page>
+  return <Page group>
     <div className={styles.split}>
       <div className={styles.actions} aria-label={t("Langue du contenu", "Content language")} role="group">
         {(["fr", "en"] as const).map((language) => <Button key={language} lang={language} pressed={language === locale} disabled={busy || uploading}

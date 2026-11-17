@@ -1,7 +1,9 @@
 import type { CmsIssue, ProductDraft } from "./publisherCatalog";
 
 export type PublisherToken = () => Promise<string | null>;
-export type PublisherTool = { id: string; slug: string; name: string; canEdit: boolean };
+export type PublisherRole = "owner" | "admin" | "editor" | "viewer";
+export type PublisherTool = { id: string; slug: string; name: string; canEdit: boolean; role?: PublisherRole };
+export type PublisherClaim = { toolId: string; slug: string; status: string };
 export type PublisherDraft = { brandId: string; version: number; updatedAt: string; canEdit: boolean; value: ProductDraft };
 export type PublisherSubmission = { id: string; version: number; status: string; submittedAt: string; reviewNote?: string | null };
 export type ListingOffer = "standard_badge" | "priority_paid";

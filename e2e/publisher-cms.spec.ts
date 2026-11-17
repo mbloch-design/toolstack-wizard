@@ -195,6 +195,12 @@ test("publisher creates a standard application, supplies the badge and confirms 
   await page.reload();
   await expect(page.getByRole("link", { name: "Review product facts" })).toBeVisible();
   await expect(page.getByText("Product facts to confirm.")).toBeVisible();
+  for (const width of [390, 768, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    const review = await page.getByRole("region", { name: "Review product facts" }).boundingBox();
+    const overview = await page.getByRole("region", { name: "Overview", exact: true }).boundingBox();
+    expect(overview?.width).toBeCloseTo(review!.width, 0);
+  }
   await page.getByRole("button", { name: "Confirm product facts" }).click();
   await page.getByRole("button", { name: "Send my response" }).click();
   await expect(page.getByText("You confirmed the facts for this version.")).toBeVisible();
@@ -218,12 +224,12 @@ test("removes an invitation token from the URL before sign-in and consumes it af
     if (route.request().method() === "POST") {
       expect(route.request().postDataJSON()).toEqual({ action: "acceptInvitation", token });
       accepted = true;
-      return route.fulfill({ json: { assignment: { toolId: tool.id, slug: tool.slug, role: "owner" } } });
+      return route.fulfill({ json: { assignment: { toolId: tool.id, brandId: "fixture-brand", role: "viewer" } } });
     }
     if (new URL(route.request().url()).pathname === "/api/publisher-catalog") {
-      return route.fulfill({ json: { tools: accepted ? [tool] : [] } });
+      return route.fulfill({ json: { tools: accepted ? [{ ...tool, role: "viewer", canEdit: false }] : [] } });
     }
-    return route.fulfill({ json: { listings: [], claims: [] } });
+    return route.fulfill({ json: { listings: [], claims: [{ toolId: tool.id, slug: tool.slug, status: accepted ? "verified" : "pending" }] } });
   });
   await page.goto("/en/publisher/invitations/" + token);
   await expect(page).toHaveURL(/\/en\/publisher\?invite=continue$/);
@@ -232,6 +238,8 @@ test("removes an invitation token from the URL before sign-in and consumes it af
   await expect(page.getByLabel("Invitation code")).toHaveValue(token);
   await page.getByRole("button", { name: "Accept invitation" }).click();
   await expect(page).toHaveURL(/\/en\/publisher$/);
-  await expect(page.getByRole("link", { name: "Edit listing" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "View listing" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Edit listing" })).toHaveCount(0);
+  await expect(page.getByText("Access request awaiting verification")).toHaveCount(0);
   expect(await page.evaluate(() => sessionStorage.getItem("tooltrim:publisher-invitation"))).toBeNull();
 });

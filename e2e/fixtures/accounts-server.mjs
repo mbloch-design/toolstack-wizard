@@ -78,6 +78,7 @@ function seed(input) {
 }
 if (isCmsDemo) {
   seed({ email: 'editeur@example.invalid', displayName: 'Éditeur démo' });
+  seed({ email: 'lecteur@example.invalid', displayName: 'Lecteur démo' });
   seed({ email: 'admin@example.invalid', displayName: 'Administrateur démo' });
 }
 const fixture = {
@@ -234,6 +235,6 @@ const fixture = {
   });
 } };
 const server = await createServer({ root: process.cwd(), cacheDir: `node_modules/.vite-accounts-${port}`,
-  define: { 'import.meta.env.VITE_STACK_ACCOUNT_ENABLED': '"true"', 'import.meta.env.VITE_ACCOUNT_GOOGLE_ENABLED': '"true"', 'import.meta.env.VITE_ACCOUNT_GITHUB_ENABLED': '"true"', 'import.meta.env.VITE_SUPABASE_URL': JSON.stringify(origin), 'import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY': '"playwright-only-publishable-key"' },
+  define: { 'import.meta.env.VITE_STACK_ACCOUNT_ENABLED': '"true"', 'import.meta.env.VITE_ACCOUNT_GOOGLE_ENABLED': '"true"', 'import.meta.env.VITE_ACCOUNT_GITHUB_ENABLED': '"true"', 'import.meta.env.VITE_SUPABASE_URL': JSON.stringify(origin), 'import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY': '"playwright-only-publishable-key"', ...(isCmsDemo && { 'import.meta.env.VITE_PUBLISHER_CMS_ENABLED': '"true"' }) },
   server: { host: '127.0.0.1', port, strictPort: true }, plugins: [fixture] });
 await server.listen(); console.log(`Playwright-only accounts fixture: ${origin}`);

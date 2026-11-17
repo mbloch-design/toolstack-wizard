@@ -1,3 +1,9 @@
+## 2026-11-17 · CMS éditeurs · accès et lecture de la fiche
+
+- Entrée « Mes fiches » dans le menu du compte et détail des rôles par fiche dans les paramètres. Les droits sont lus depuis le rattachement et contrôlés côté serveur.
+- Recette locale de la demande d’accès à Boussole Démo, de l’invitation par l’admin et de l’acceptation en lecture seule.
+- La relecture factuelle compose la fiche comme un groupe de la page. Les blocs occupent la largeur disponible à 390, 768 et 1 280 px.
+
 ## 2026-11-17 · CMS éditeurs · suivi d’une fiche et de son offre
 
 - Offre choisie et preuve commerciale visibles dans l’espace éditeur et le back-office. Une fiche rattachée retrouve son dossier sans créer une seconde entrée dans « Mes fiches ».

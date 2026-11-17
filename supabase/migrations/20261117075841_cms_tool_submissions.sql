@@ -47,10 +47,10 @@ begin
   perform catalog_contrib.cms_require_actor(p_actor, p_session);
   return (
     select coalesce(jsonb_agg(jsonb_build_object(
-      'id', id, 'slug', slug, 'name', name, 'canEdit', can_edit
+      'id', id, 'slug', slug, 'name', name, 'canEdit', can_edit, 'role', role
     ) order by slug), '[]'::jsonb)
     from (
-      select d.tool_id as id, t.slug, d.value->>'name' as name,
+      select d.tool_id as id, t.slug, d.value->>'name' as name, m.role,
         (m.role in ('owner','admin','editor') and d.base_hash is not null) as can_edit
       from catalog_contrib.cms_tool_drafts d
       join public.tools t on t.id = d.tool_id

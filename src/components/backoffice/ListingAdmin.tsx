@@ -55,7 +55,7 @@ export function ListingAdmin({ onBack, onReviewBatch }: { onBack: () => void; on
   const [brandId, setBrandId] = useState("");
   const [brandName, setBrandName] = useState("");
   const [brandDomain, setBrandDomain] = useState("");
-  const [role, setRole] = useState("owner");
+  const [role, setRole] = useState("");
   const [link, setLink] = useState("");
   const [copied, setCopied] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -81,7 +81,7 @@ export function ListingAdmin({ onBack, onReviewBatch }: { onBack: () => void; on
   }
 
   async function invite() {
-    if (!claim || busy || (!brandId && (!brandName.trim() || !brandDomain.trim()))) return;
+    if (!claim || busy || (brandId ? !role : !brandName.trim() || !brandDomain.trim())) return;
     setBusy(true);
     setError("");
     try {
@@ -120,7 +120,7 @@ export function ListingAdmin({ onBack, onReviewBatch }: { onBack: () => void; on
     brands={directory.brands} onReviewBatch={onReviewBatch}
     onBack={() => { openListing(); reload((n) => n + 1); }} />;
   return <section className={styles.queue} aria-busy={busy}>
-    <BackofficePageHeading title={t("Demandes de fiche", "Listing requests")}
+    <BackofficePageHeading title={t("Demandes et accès éditeur", "Requests and publisher access")}
       action={<Button disabled={busy} onClick={() => { openListing(); onBack(); }}>{t("Retour aux fiches", "Back to records")}</Button>} />
     {error && <Notice title={error} role="alert" actions={<Button onClick={() => {
       setError(""); reload((n) => n + 1);
@@ -154,23 +154,25 @@ export function ListingAdmin({ onBack, onReviewBatch }: { onBack: () => void; on
         </li>)}</ul> : <p>{t("Aucune demande de nouvelle fiche en cours.", "No new listing requests in progress.")}</p>}
       </section>
       <section className={styles.content}>
-        <h2>{t("Rattacher une fiche existante", "Claim an existing record")}</h2>
+        <h2>{t("Demandes d’accès aux fiches existantes", "Access requests for existing listings")}</h2>
         {!directory.claims.length && <p>{t("Aucune demande de rattachement.", "No claims to review.")}</p>}
         <ul className={styles.rows}>{directory.claims.map((row) => <li key={row.ownerId + ":" + row.toolId}>
           <span>{row.slug} · {row.confirmedEmail}</span>
           <Button disabled={busy} onClick={() => {
-            setClaim(row); setBrandId(""); setBrandName(""); setBrandDomain(""); setRole("owner"); setError("");
-          }}>{t("Vérifier et inviter", "Verify and invite")}</Button>
+            setClaim(row); setBrandId(""); setBrandName(""); setBrandDomain(""); setRole(""); setError("");
+          }}>{t("Examiner l’accès", "Review access request")}</Button>
         </li>)}</ul>
         {claim && <form className={styles.content} onSubmit={(event) => { event.preventDefault(); void invite(); }}>
           <h3>{claim.slug} · {claim.confirmedEmail}</h3>
           <SelectField label={t("Marque responsable de la fiche", "Brand responsible for this record")}
-            value={brandId} onChange={(event) => setBrandId(event.target.value)}>
+            value={brandId} onChange={(event) => { setBrandId(event.target.value); setRole(""); }}>
             <option value="">{t("Nouvelle marque", "New brand")}</option>
             {directory.brands.map((brand) => <option key={brand.id} value={brand.id}>{brand.name} · {brand.websiteDomain}</option>)}
           </SelectField>
-          {brandId ? <SelectField label={t("Droits du demandeur", "Applicant permissions")} value={role}
+          {brandId ? <SelectField required label={t("Droits du demandeur", "Applicant permissions")} value={role}
+            help={t("Ce rôle s’applique aux fiches rattachées à cette marque.", "This role applies to the listings assigned to this brand.")}
             onChange={(event) => setRole(event.target.value)}>
+            <option value="">{t("Choisir un rôle", "Choose a role")}</option>
             <option value="owner">{t("Propriétaire", "Owner")}</option>
             <option value="admin">{t("Administrateur de marque", "Brand administrator")}</option>
             <option value="editor">{t("Éditeur", "Editor")}</option>
@@ -182,7 +184,7 @@ export function ListingAdmin({ onBack, onReviewBatch }: { onBack: () => void; on
               onChange={(event) => setBrandDomain(event.target.value)} />
           </>}
           <div className={styles.actions}>
-            <Button type="submit" variant="primary" disabled={busy}>{t("Créer le lien d’invitation", "Create invitation link")}</Button>
+            <Button type="submit" variant="primary" disabled={busy || Boolean(brandId && !role)}>{t("Créer le lien d’invitation", "Create invitation link")}</Button>
             <Button type="button" disabled={busy} onClick={() => setClaim(undefined)}>{t("Annuler", "Cancel")}</Button>
           </div>
         </form>}

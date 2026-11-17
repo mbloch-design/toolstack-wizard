@@ -111,6 +111,8 @@ Ce que la page doit toujours dire, quel que soit son dessin (testé) :
 
 - **Demandé par Michael le 17/11 :** suivre une fiche renseignée et identifier immédiatement son offre gratuite avec badge ou payante sans badge. Une entrée par fiche dans l’espace éditeur, reliée à son dossier par l’identifiant canonique. L’offre et sa preuve apparaissent ensemble dans la liste et le dossier. Après rattachement, le back-office permet de passer du dossier au lot et d’y retrouver la fiche par son nom. La démo s’arrête à la revue du lot avec des preuves fictives.
 
+- **Accès éditeur, 17/11 :** « Mes fiches » est accessible depuis le menu du compte lorsque l’espace est ouvert. Les paramètres montrent les droits par fiche d’après le rattachement vérifié. Le rôle de marque et l’édition effectivement disponible sont deux informations distinctes. L’admin attribue l’accès à la suite d’une demande. L’invitation est liée à l’adresse confirmée du demandeur.
+
 Arbitrés le 11/11/2026 (bilan des refontes du 09 au 11/11) :
 - [x] Humour d'accueil : revient, en fin de lead du hero, sous le coût. Appliqué, testé.
 - [x] Décision au repos : la tuile question part ; la phrase « Rien à trancher. Profitez-en, ça ne dure jamais très longtemps. » passe dans le lead du hero. Appliqué, testé.

@@ -1,4 +1,4 @@
-import { UserRound, ShieldCheck, Palette, Database, Settings2, Download, CheckCircle2, Sun, Moon, Check } from "@/lib/icons";
+import { UserRound, ShieldCheck, Palette, Database, Settings2, Download, CheckCircle2, Sun, Moon, Check, FileText } from "@/lib/icons";
 import AccountLanguageIcon from "@/components/account/AccountLanguageIcon";
 import AccountAvatar from "@/components/account/AccountAvatar";
 import { useEffect, useRef, useState, type FormEvent } from "react";
@@ -12,6 +12,11 @@ import AccountPageFrame from "@/components/account/AccountPageFrame";
 import AccountStackStatus from "@/components/account/AccountStackStatus";
 import { accountErrorMessage } from "@/components/account/accountMessages";
 import { accountPath } from "@/lib/accountPaths";
+import { usePublisherAccess } from "@/hooks/usePublisherAccess";
+import { publisherPath } from "@/lib/publisherCatalogApi";
+import Button, { buttonAttrs, linkClass } from "@/ds/Button/Button";
+import { Notice } from "@/ds/Notice/Notice";
+import publisherStyles from "@/components/publisher/PublisherWorkspace.module.css";
 import {
   getPersonalStackScope,
   readPersonalStack,
@@ -103,12 +108,24 @@ export default function AccountSettingsPage() {
   const account = useStackAccount();
   const experience = useAccountExperience();
   const { status } = experience;
+  const publisher = usePublisherAccess();
   const profile = experience.profile?.userId === account.user?.id ? experience.profile : null;
   const { theme, setTheme } = useTheme();
   const { currency, setCurrency } = useCurrency();
   const location = useLocation();
-  const requestedSection = location.hash.match(/^#ac-(profile|security|preferences|data)-section$/)?.[1];
-  const activeSection = requestedSection ?? "profile";
+  const requestedSection = location.hash.match(/^#ac-(profile|publisher|security|preferences|data)-section$/)?.[1];
+  const hasPublisherSection = publisher.status !== "unavailable";
+  const activeSection = !requestedSection || requestedSection === "publisher" && !hasPublisherSection ? "profile" : requestedSection;
+  const workspace = publisherPath(prefix);
+  const hasPendingRequests = publisher.listings.some((listing) => !listing.toolId && !["archived", "rejected"].includes(listing.status))
+    || publisher.claims.some((claim) => claim.status === "pending");
+  const needsOnboarding = publisher.status === "ready" && !publisher.tools.length && !hasPendingRequests;
+  const roles = {
+    owner: t("Propriétaire", "Owner"),
+    admin: t("Administrateur de marque", "Brand administrator"),
+    editor: t("Éditeur", "Editor"),
+    viewer: t("Lecteur", "Viewer"),
+  };
   const [preferenceFeedback, setPreferenceFeedback] = useState(false);
   useEffect(() => {
     if (!preferenceFeedback) return;
@@ -197,6 +214,7 @@ export default function AccountSettingsPage() {
             <span className="ac-nav-label">{t("Paramètres", "Settings")}</span>
             {[
               { id: "profile", label: t("Profil", "Profile"), Icon: UserRound },
+              ...(hasPublisherSection ? [{ id: "publisher", label: t("Espace éditeur", "Publisher workspace"), Icon: FileText }] : []),
               { id: "security", label: t("Connexion et sécurité", "Sign-in and security"), Icon: ShieldCheck },
               { id: "preferences", label: t("Préférences", "Preferences"), Icon: Palette },
               { id: "data", label: t("Stack et données", "Stack and data"), Icon: Database },
@@ -261,6 +279,48 @@ export default function AccountSettingsPage() {
               )}
             </div>
           </section>
+          {hasPublisherSection && <section className="ac-settings-section" id="ac-publisher-section"
+            hidden={activeSection !== "publisher"} aria-labelledby="ac-publisher">
+            <div className="ac-section-heading">
+              <h2 id="ac-publisher"><FileText size={21} aria-hidden />{t("Espace éditeur", "Publisher workspace")}</h2>
+            </div>
+            <div className="ac-section-content">
+              {publisher.status === "loading" && <p role="status">{t("Chargement de vos accès…", "Loading your access…")}</p>}
+              {publisher.status === "error" && <Notice title={t("Vos accès sont momentanément indisponibles.", "Your access details are temporarily unavailable.")}
+                role="alert" actions={<Button onClick={publisher.retry}>{t("Réessayer", "Try again")}</Button>} />}
+              {publisher.status === "ready" && <>
+                {publisher.tools.length > 0 && <>
+                  <h3>{t("Vos droits par fiche", "Your access by listing")}</h3>
+                  <div className={publisherStyles.cards}>{publisher.tools.map((tool) => {
+                    const application = publisher.listings.find(({ toolId }) => toolId === tool.id);
+                    const awaitingPublication = application && ["unpublished", "publishing"].includes(application.deliveryStatus);
+                    const destination = awaitingPublication
+                      ? `${workspace}?listingId=${encodeURIComponent(application.id)}` : publisherPath(prefix, tool.slug);
+                    const action = awaitingPublication ? t("Suivre la publication", "Track publication")
+                      : tool.canEdit ? t("Modifier la fiche", "Edit listing") : t("Consulter la fiche", "View listing");
+                    return <article className={publisherStyles.card} key={tool.id}>
+                      <strong>{tool.name}</strong>
+                      <p>{tool.role && `${roles[tool.role]} · `}{tool.canEdit
+                        ? t("Modification autorisée", "Editing allowed") : t("Lecture seule", "Read-only access")}</p>
+                      <div className={publisherStyles.actions}>
+                        <Link className={linkClass("inline")} to={destination}>{action}</Link>
+                      </div>
+                    </article>;
+                  })}</div>
+                </>}
+                {hasPendingRequests && <p>{t("Retrouvez vos demandes et leur avancement dans Mes fiches.", "Find your applications and their progress in My listings.")}</p>}
+                {needsOnboarding && <p>
+                  {t("Proposez un outil ou demandez l’accès à une fiche existante si vous représentez son éditeur.", "Suggest a tool or request access to an existing listing if you represent its publisher.")}
+                </p>}
+              </>}
+              <div className={publisherStyles.actions}>
+                {needsOnboarding
+                  ? <Link {...buttonAttrs("primary")} to={`${workspace}#publisher-new`}>{t("Proposer un outil", "Suggest a tool")}</Link>
+                  : <Link {...buttonAttrs("primary")} to={workspace}>{t("Ouvrir Mes fiches", "Open My listings")}</Link>}
+                <Link {...buttonAttrs()} to={`${workspace}?invite=manual`}>{t("Accepter une invitation", "Accept an invitation")}</Link>
+              </div>
+            </div>
+          </section>}
           <section
             className="ac-settings-section"
             id="ac-security-section" hidden={activeSection !== "security"} aria-labelledby="ac-security"

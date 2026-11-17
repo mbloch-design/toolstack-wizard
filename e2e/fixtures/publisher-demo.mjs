@@ -1,12 +1,17 @@
 // Loopback-only UX fixture. No calls to Supabase, Creem, GitHub or Vercel.
-import { createHash, randomUUID } from "node:crypto";
+import { createHash, randomBytes, randomUUID } from "node:crypto";
 
 export function createPublisherDemo() {
   const owner = "editeur@example.invalid";
+  const reader = "lecteur@example.invalid";
   const brandId = randomUUID();
-  const tools = [
-    { id: "demo-boussole", slug: "boussole-demo", name: "Boussole Démo", canEdit: true },
-  ];
+  const boussole = { id: "demo-boussole", slug: "boussole-demo", name: "Boussole Démo", role: "owner", canEdit: true };
+  const boussoleUrl = "https://outil.example.invalid";
+  const tools = [boussole];
+  const brand = { id: brandId, name: boussole.name, websiteDomain: new URL(boussoleUrl).hostname };
+  const invitations = new Map();
+  let readerClaim = null;
+  let readerGrant = null;
   const timestamp = () => new Date().toISOString();
   const planText = (name) => ({ name, highlights: ["Projets partagés"], summary: null });
   const product = (name, websiteUrl = "https://outil.example.invalid") => ({
@@ -32,6 +37,13 @@ export function createPublisherDemo() {
     version: 1, status: "submitted", submittedAt: timestamp(), value: structuredClone(drafts.get(tools[0].id).value),
   }];
   const seal = (value) => ({ id: randomUUID(), hash: createHash("sha256").update(JSON.stringify(value)).digest("hex") });
+  const digest = (token) => createHash("sha256").update(token).digest("hex");
+  const invitationStatus = (invitation) => invitation.revoked ? "revoked" : invitation.accepted ? "accepted"
+    : Date.parse(invitation.expiresAt) <= Date.now() ? "expired" : "pending";
+  const invitationSummary = (invitation) => ({
+    id: invitation.id, ownerId: invitation.ownerId, toolId: boussole.id,
+    expiresAt: invitation.expiresAt, status: invitationStatus(invitation),
+  });
   const makeApplication = ({ id = randomUUID(), name, websiteUrl, slug, offer }) => ({
     listing: { id, name, websiteUrl, slug, offer, status: "draft", version: 1, createdAt: timestamp(), updatedAt: timestamp(),
       reservationExpiresAt: null, commercialStatus: "pending", representationStatus: "pending", deliveryStatus: "unpublished",
@@ -122,8 +134,8 @@ export function createPublisherDemo() {
           const { name, slug } = listing;
           review.approvalId = randomUUID();
           changeListing(listing, { representationStatus: "verified", toolId });
-          tools.push({ id: toolId, name, slug, canEdit: true });
-          drafts.set(toolId, { brandId, canEdit: true, version: 1, updatedAt: timestamp(), value: structuredClone(review.productRevision.value) });
+          tools.push({ id: toolId, name, slug, role: "owner", canEdit: false });
+          drafts.set(toolId, { brandId, canEdit: false, version: 1, updatedAt: timestamp(), value: structuredClone(review.productRevision.value) });
           submissions.push({ id: review.approvalId, toolId, name, version: 1, status: "approved",
             submittedAt: timestamp(), value: structuredClone(review.productRevision.value) });
           return ok({ approval: { approvalId: review.approvalId, toolId, version: 1 } });
@@ -133,12 +145,36 @@ export function createPublisherDemo() {
 
       if (path.startsWith("/api/backoffice-")) {
         if (!admin) return error(403, "CMS_ACCESS_DENIED");
-        if (path === "/api/backoffice-listings") return ok({ claims: [], brands: [], invitations: [],
-          listings: applications.map(({ listing }) => listing)
-            .filter(({ status, toolId, deliveryStatus }) => !toolId
-              ? ["submitted", "in_preparation", "facts_to_review", "changes_requested", "ready"].includes(status)
-              : status === "ready" && ["unpublished", "publishing"].includes(deliveryStatus))
-            .map((row) => ({ ...row, confirmedEmail: owner })) });
+        if (path === "/api/backoffice-listings") {
+          if (method === "GET") return ok({
+            claims: readerClaim ? [readerClaim] : [], brands: [brand],
+            invitations: [...invitations.values()].map(invitationSummary).reverse(),
+            listings: applications.map(({ listing }) => listing)
+              .filter(({ status, toolId, deliveryStatus }) => !toolId
+                ? ["submitted", "in_preparation", "facts_to_review", "changes_requested", "ready"].includes(status)
+                : status === "ready" && ["unpublished", "publishing"].includes(deliveryStatus))
+              .map((row) => ({ ...row, confirmedEmail: owner })),
+          });
+          if (method !== "POST") return error(405, "METHOD_NOT_ALLOWED");
+          if (input.action === "invite") {
+            if (!readerClaim || readerClaim.ownerId !== input.ownerId || input.toolId !== boussole.id) {
+              return error(404, "LISTING_NOT_FOUND");
+            }
+            if (!["viewer", "editor", "admin", "owner"].includes(input.role) || input.brandId !== brandId) return invalid();
+            const token = randomBytes(32).toString("base64url");
+            const invitation = { id: randomUUID(), ownerId: readerClaim.ownerId, email: reader, role: input.role,
+              expiresAt: new Date(Date.now() + 7 * 86_400_000).toISOString() };
+            invitations.set(digest(token), invitation);
+            return ok({ invitation: { ...invitationSummary(invitation), token } });
+          }
+          if (input.action === "revokeInvitation") {
+            const invitation = [...invitations.values()].find((entry) => entry.id === input.id);
+            if (!invitation || invitationStatus(invitation) !== "pending") return error(404, "LISTING_INVITATION_NOT_FOUND");
+            invitation.revoked = true;
+            return ok({ invitation: invitationSummary(invitation) });
+          }
+          return invalid();
+        }
         if (query.get("mode") === "release-preview") return ok({
           manifest: { sourceHead: "0".repeat(40), legacyItems: [],
             items: submissions.filter(({ status }) => status === "approved").map(({ id, toolId, name, version }) => ({ approvalId: id, toolId, name, version })) },
@@ -169,7 +205,38 @@ export function createPublisherDemo() {
       }
 
       if (path === "/api/listing-requests") {
-        if (method === "GET" && !query.has("id")) return ok({ listings: ownsApplication ? applications.map(({ listing }) => listing) : [], claims: [] });
+        if (method === "GET" && !query.has("id")) return ok({
+          listings: ownsApplication ? applications.map(({ listing }) => listing) : [],
+          claims: readerClaim?.ownerId === user.id ? [{ toolId: boussole.id, slug: boussole.slug, status: "pending" }] : [],
+        });
+        if (method === "POST" && input.action === "acceptInvitation") {
+          if (!/^[a-zA-Z0-9_-]{43}$/.test(input.token)) return invalid();
+          const invitation = invitations.get(digest(input.token));
+          if (!invitation) return error(404, "LISTING_INVITATION_NOT_FOUND");
+          if (user.id !== invitation.ownerId || user.email !== invitation.email || !user.email_confirmed_at) {
+            return error(403, "LISTING_INVITATION_ACCOUNT_MISMATCH");
+          }
+          const status = invitationStatus(invitation);
+          if (status !== "pending") return error(409, status === "accepted" ? "LISTING_INVITATION_USED" : "LISTING_INVITATION_" + status.toUpperCase());
+          invitation.accepted = true;
+          readerGrant = { userId: user.id, role: invitation.role };
+          readerClaim = null;
+          return ok({ assignment: { toolId: boussole.id, brandId, role: readerGrant.role } });
+        }
+        if (method === "POST" && input.action === "claimExisting" && user.email === reader && user.email_confirmed_at) {
+          if (input.toolId !== boussole.id) return error(404, "LISTING_NOT_FOUND");
+          if (readerGrant?.userId === user.id) return ok({ claim: { toolId: boussole.id, status: "verified" } });
+          readerClaim ??= { ownerId: user.id, toolId: boussole.id, slug: boussole.slug, createdAt: timestamp(), confirmedEmail: reader };
+          return ok({ claim: { toolId: boussole.id, status: "pending" } });
+        }
+        if (method === "POST" && input.action === "lookup" && (ownsApplication || user.email === reader)) {
+          let hostname;
+          try { hostname = new URL(input.websiteUrl).hostname; } catch { return invalid(); }
+          if (boussole.name.toLowerCase() === input.name?.trim().toLowerCase() || hostname === brand.websiteDomain) {
+            return ok({ candidates: [{ id: boussole.id, slug: boussole.slug, name: boussole.name, websiteUrl: boussoleUrl, kind: "tool" }] });
+          }
+          if (user.email === reader) return ok({ candidates: [] });
+        }
         if (!ownsApplication) return error(403, "CMS_ACCESS_DENIED");
         if (method === "GET") return listing ? ok({ listing }) : error(404, "LISTING_NOT_FOUND");
         if (method !== "POST") return error(405, "METHOD_NOT_ALLOWED");
@@ -184,7 +251,7 @@ export function createPublisherDemo() {
           if (creationKeys.has(idempotencyKey)) return ok({ listing: creationKeys.get(idempotencyKey) });
           if (!["priority_paid", "standard_badge"].includes(offer) || !idempotencyKey) return invalid();
           const slug = name.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
-          if (!slug || matches.length || tools.some((tool) => tool.slug === slug) || applications.some(({ listing }) => listing.slug === slug)) return conflict();
+          if (!slug || matches.length || website.hostname === brand.websiteDomain || tools.some((tool) => tool.slug === slug) || applications.some(({ listing }) => listing.slug === slug)) return conflict();
           const application = makeApplication({ name: name.trim(), websiteUrl: website.href, slug, offer });
           applications.push(application);
           creationKeys.set(idempotencyKey, application.listing);
@@ -213,11 +280,15 @@ export function createPublisherDemo() {
         if (input.action === "requestHistoricalReview" && !standard) return ok({ state: "review_required" });
         return error(503, "DEMO_CHECKOUT_DISABLED");
       }
+      const grant = readerGrant?.userId === user.id && user.email === reader ? readerGrant : null;
+      const grantedTool = grant && { ...boussole, role: grant.role, canEdit: grant.role !== "viewer" };
       if (path === "/api/publisher-catalog" && method === "GET" && !query.has("tool")) {
-        return ok({ tools: user.email === owner ? tools : [] });
+        return ok({ tools: ownsApplication ? tools : grantedTool ? [grantedTool] : [] });
       }
-      if (user.email !== owner) return error(403, "CMS_ACCESS_DENIED");
       const toolId = query.get("tool");
+      if (!ownsApplication && (!grantedTool || toolId !== boussole.id || (!grantedTool.canEdit && method !== "GET"))) {
+        return error(403, "CMS_ACCESS_DENIED");
+      }
       const draft = drafts.get(toolId);
       if (!draft) return error(403, "CMS_ACCESS_DENIED");
 
@@ -243,7 +314,8 @@ export function createPublisherDemo() {
       }
 
       if (path !== "/api/publisher-catalog") return error(503, "DEMO_ACTION_UNAVAILABLE");
-      if (method === "GET") return ok({ draft });
+      if (method === "GET") return ok({ draft: grantedTool ? { ...draft, canEdit: grantedTool.canEdit } : draft });
+      if (!draft.canEdit) return error(403, "CMS_ACCESS_DENIED");
       if (input.brandId !== brandId || input.version !== draft.version) return error(409, "CMS_REVISION_CONFLICT");
       let value = structuredClone(draft.value);
       if (method === "PATCH" && input.action === "addPlan") {

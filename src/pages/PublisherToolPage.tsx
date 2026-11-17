@@ -4,6 +4,7 @@ import AccountPageFrame from "@/components/account/AccountPageFrame";
 import PublisherFiche from "@/components/publisher/PublisherFiche";
 import styles from "@/components/publisher/PublisherWorkspace.module.css";
 import Button, { buttonAttrs, linkClass } from "@/ds/Button/Button";
+import { Notice } from "@/ds/Notice/Notice";
 import { useLang } from "@/hooks/useLang";
 import { PublisherApiError, publisherPath, publisherRequest, type ListingRequest, type PublisherDraft, type PublisherSubmission, type PublisherToken, type PublisherTool } from "@/lib/publisherCatalogApi";
 import { listingCommercialLabel, listingOfferLabel } from "@/lib/listingOfferPresentation";
@@ -128,6 +129,9 @@ export default function PublisherToolPage({ slug, getToken }: { slug: string; ge
   const updated = draft && new Intl.DateTimeFormat(lang, { dateStyle: "medium", timeStyle: "short" }).format(Date.parse(draft.updatedAt));
   return <AccountPageFrame wide title={draft?.value.name || tool?.name || t("Fiche éditeur", "Publisher listing")}
     headerExtra={<Link to={publisherPath(prefix)} className={linkClass()}>{t("Mes fiches", "My listings")}</Link>}>
+    {state === "ready" && draft && !draft.canEdit && <Notice title={t("Lecture seule", "Read-only access")}>
+      {tool?.role === "viewer" && <p>{t("Votre rôle vous permet de consulter cette fiche.", "Your role lets you view this listing.")}</p>}
+    </Notice>}
     {state === "ready" && application && application.toolId === tool?.id && <section className={styles.section} aria-label={t("Votre offre", "Your offer")}>
       <div className={styles.split}>
         <div>

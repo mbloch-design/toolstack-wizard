@@ -362,6 +362,23 @@ it("distinguishes a recoverable local draft from incomplete privacy cleanup", ()
   expect(screen.getByRole("alert")).not.toHaveTextContent("vue personnelle a été effacée");
 });
 
+it("offers the publisher workspace only for confirmed accounts while it is enabled", () => {
+  vi.stubEnv("VITE_PUBLISHER_CMS_ENABLED", "true");
+  try {
+    account = { ...account, authInitialized: true, user: { ...user, email_confirmed_at: user.created_at } };
+    const view = render(centralContent());
+    fireEvent.click(screen.getByRole("button", { name: "Compte : a@example.test" }));
+    expect(screen.getByRole("link", { name: "Mes fiches" })).toHaveAttribute("href", "/fr/publisher");
+    view.unmount();
+    account = { ...account, user };
+    render(centralContent());
+    fireEvent.click(screen.getByRole("button", { name: "Compte : a@example.test" }));
+    expect(screen.queryByRole("link", { name: "Mes fiches" })).not.toBeInTheDocument();
+  } finally {
+    vi.unstubAllEnvs();
+  }
+});
+
 it("contains keyboard focus in the account menu and restores it after Escape", async () => {
   account.authInitialized = true;
   account = { ...account, user };

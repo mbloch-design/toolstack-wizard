@@ -115,7 +115,9 @@ try {
     (await db.query("select public.cms_review_tool_submission($1,$2,$3,$4,$5) as result", [actor, token, id, action, "Reviewed"])).rows[0].result;
   await as("service_role", async () => {
     const listing = (await db.query("select public.cms_list_tool_drafts($1,$2) as result", [owner, session])).rows[0].result;
-    assert.deepEqual(listing, [{ id: "id-42", slug: "slug-42", name: "Updated", canEdit: true }]);
+    assert.deepEqual(listing, [{ id: "id-42", slug: "slug-42", name: "Updated", canEdit: true, role: "owner" }]);
+    const readOnly = (await db.query("select public.cms_list_tool_drafts($1,$2) as result", [viewer, viewSession])).rows[0].result;
+    assert.deepEqual(readOnly, [{ id: "id-42", slug: "slug-42", name: "Updated", canEdit: false, role: "viewer" }]);
     await assert.rejects(submit(viewer, viewSession, 2), { code: "PT403" });
     await assert.rejects(submit(owner, session, 1), { code: "PT409" });
     const request = await submit(owner, session, 2);

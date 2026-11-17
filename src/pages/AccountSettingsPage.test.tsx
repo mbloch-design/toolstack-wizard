@@ -13,6 +13,7 @@ import AccountSettingsPage from "./AccountSettingsPage";
 const mocks = vi.hoisted(() => ({
   account: {} as Record<string, unknown>,
   experience: {} as Record<string, unknown>,
+  publisher: {} as Record<string, unknown>,
 }));
 vi.mock("@/hooks/useStackAccount", () => ({
   useStackAccount: () => mocks.account,
@@ -20,6 +21,7 @@ vi.mock("@/hooks/useStackAccount", () => ({
 vi.mock("@/components/account/AccountExperienceProvider", () => ({
   useAccountExperience: () => mocks.experience,
 }));
+vi.mock("@/hooks/usePublisherAccess", () => ({ usePublisherAccess: () => mocks.publisher }));
 const user = {
   id: "A",
   email: "a@example.test",
@@ -27,6 +29,7 @@ const user = {
   created_at: "2026-10-20T12:00:00Z",
 };
 beforeEach(() => {
+  mocks.publisher = { status: "unavailable", tools: [], listings: [], claims: [], retry: vi.fn() };
   mocks.account = {
     ...INITIAL_ACCOUNT_SNAPSHOT,
     enabled: true,
@@ -83,6 +86,28 @@ it("shows four settings sections with real identities and device-only preference
   expect(screen.getByText("E-mail")).toBeVisible();
   expect(screen.queryByText("Google")).not.toBeInTheDocument();
   expect(screen.queryByRole("main")).not.toBeInTheDocument();
+});
+it("offers confirmed personal accounts an onboarding path from settings", () => {
+  mocks.publisher.status = "ready";
+  view();
+  selectSection("Espace éditeur");
+  expect(screen.getByRole("link", { name: "Espace éditeur" })).toHaveAttribute("aria-current", "location");
+  expect(screen.getByRole("link", { name: "Proposer un outil" })).toHaveAttribute("href", "/fr/publisher#publisher-new");
+  expect(screen.queryByText("Modification autorisée")).not.toBeInTheDocument();
+});
+it("shows the confirmed role and actual permission for each publisher listing", () => {
+  mocks.publisher = { ...mocks.publisher, status: "ready", tools: [
+    { id: "b", slug: "boussole", name: "Boussole", role: "editor", canEdit: true },
+    { id: "a", slug: "atelier", name: "Atelier", role: "owner", canEdit: false },
+    { id: "c", slug: "carnet", name: "Carnet", role: "viewer", canEdit: false },
+  ], listings: [{ id: "draft-atelier", toolId: "a", status: "ready", deliveryStatus: "publishing" }] };
+  view();
+  selectSection("Espace éditeur");
+  expect(screen.getByText("Éditeur · Modification autorisée")).toBeVisible();
+  expect(screen.getByText("Propriétaire · Lecture seule")).toBeVisible();
+  expect(screen.getByText("Lecteur · Lecture seule")).toBeVisible();
+  expect(screen.getByRole("link", { name: "Modifier la fiche" })).toHaveAttribute("href", "/fr/publisher/tools/boussole");
+  expect(screen.getByRole("link", { name: "Suivre la publication" })).toHaveAttribute("href", "/fr/publisher?listingId=draft-atelier");
 });
 it("saves an optional display name with confirmation only after success", async () => {
   view();

@@ -1,24 +1,24 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import Button, { buttonAttrs, linkClass } from "@/ds/Button/Button";
 import Field, { SelectField } from "@/ds/Field/Field";
 import Page from "@/ds/Page/Page";
 import { useLang } from "@/hooks/useLang";
-import { clearPublisherInvitation, PublisherApiError, publisherPath, publisherRequest, readPublisherInvitation, type ListingCandidate, type ListingOffer, type ListingRequest, type PublisherToken, type PublisherTool } from "@/lib/publisherCatalogApi";
+import { clearPublisherInvitation, PublisherApiError, publisherPath, publisherRequest, readPublisherInvitation, type ListingCandidate, type ListingOffer, type ListingRequest, type PublisherClaim, type PublisherToken, type PublisherTool } from "@/lib/publisherCatalogApi";
 import { listingCommercialLabel, listingOfferLabel } from "@/lib/listingOfferPresentation";
 import ListingStatusCard, { listingStatus } from "./ListingStatusCard";
 import styles from "./PublisherWorkspace.module.css";
 
-type Claim = { toolId: string; slug: string; status: "pending" };
 const endpoint = "/api/listing-requests";
 
 export default function PublisherDashboard({ getToken }: { getToken: PublisherToken }) {
   const { lang, prefix, t } = useLang();
+  const { hash } = useLocation();
   const [query, setQuery] = useSearchParams();
   const listingId = query.get("listingId");
   const [tools, setTools] = useState<PublisherTool[] | null>(null);
   const [listings, setListings] = useState<ListingRequest[] | null>(null);
-  const [claims, setClaims] = useState<Claim[]>([]);
+  const [claims, setClaims] = useState<PublisherClaim[]>([]);
   const [toolFilter, setToolFilter] = useState("");
   const [name, setName] = useState("");
   const [websiteUrl, setWebsite] = useState("");
@@ -33,6 +33,8 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
   const [notice, setNotice] = useState("");
   const [reload, setReload] = useState(0);
   const invitationField = useRef<HTMLInputElement>(null);
+  const proposalHeading = useRef<HTMLHeadingElement>(null);
+  const listingsLoaded = listings !== null;
 
   useEffect(() => {
     active.current = true;
@@ -42,16 +44,21 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
       (result) => { if (!controller.signal.aborted) setTools(result.tools); },
       () => { if (!controller.signal.aborted) setTools(null); },
     );
-    void publisherRequest<{ listings: ListingRequest[]; claims?: Claim[] }>(getToken, endpoint, options).then(
-      (result) => { if (!controller.signal.aborted) { setListings(result.listings); setClaims(result.claims ?? []); } },
+    void publisherRequest<{ listings: ListingRequest[]; claims?: PublisherClaim[] }>(getToken, endpoint, options).then(
+      (result) => { if (!controller.signal.aborted) {
+        setListings(result.listings);
+        setClaims((result.claims ?? []).filter((claim) => claim.status === "pending"));
+      } },
       () => { if (!controller.signal.aborted) setListings(null); },
     );
     return () => { active.current = false; controller.abort(); };
   }, [getToken, reload]);
 
   useEffect(() => {
-    if (listings && query.has("invite")) invitationField.current?.focus();
-  }, [listings, query]);
+    if (!listingsLoaded) return;
+    if (query.has("invite")) invitationField.current?.focus();
+    else if (hash === "#publisher-new") proposalHeading.current?.focus();
+  }, [hash, listingsLoaded, query]);
 
   function resetLookup() {
     setCandidates(null);
@@ -70,9 +77,17 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
       if (active.current) complete(result);
     } catch (cause) {
       if (!active.current) return;
-      setError(cause instanceof PublisherApiError && cause.status === 409
-        ? t("Le dossier ou le lien d’invitation a changé. Vérifiez son état avant de réessayer.", "The application or invitation has changed. Check its status before trying again.")
-        : t("La demande n’a pas abouti. Vérifiez les informations saisies, puis réessayez.", "The request could not be completed. Check the information you entered, then try again."));
+      const invitationErrors: Record<string, string> = {
+        LISTING_INVITATION_ACCOUNT_MISMATCH: t("Cette invitation est liée à un autre compte. Connectez-vous avec l’adresse à laquelle elle a été envoyée.", "This invitation is linked to another account. Sign in with the email address it was sent to."),
+        LISTING_INVITATION_EXPIRED: t("Cette invitation a expiré. Demandez un nouveau lien à ToolTrim.", "This invitation has expired. Ask ToolTrim for a new link."),
+        LISTING_INVITATION_REVOKED: t("Cette invitation a été retirée. Contactez ToolTrim pour vérifier votre accès.", "This invitation was revoked. Contact ToolTrim to check your access."),
+        LISTING_INVITATION_USED: t("Cette invitation a déjà été acceptée. Retrouvez votre accès dans Mes fiches.", "This invitation has already been accepted. Find your access in My listings."),
+      };
+      setError(cause instanceof PublisherApiError && invitationErrors[cause.code]
+        ? invitationErrors[cause.code]
+        : cause instanceof PublisherApiError && cause.status === 409
+          ? t("Le dossier a changé. Vérifiez son état avant de réessayer.", "The application has changed. Check its status before trying again.")
+          : t("La demande n’a pas abouti. Vérifiez les informations saisies, puis réessayez.", "The request could not be completed. Check the information you entered, then try again."));
     } finally {
       pending.current = false;
       if (active.current) setBusy(false);
@@ -156,7 +171,7 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
       </section>
 
       {listings && <section className={styles.section} aria-labelledby="publisher-new">
-        <h2 id="publisher-new">{t("Proposer ou retrouver un outil", "Suggest or find a tool")}</h2>
+        <h2 id="publisher-new" ref={proposalHeading} tabIndex={-1}>{t("Proposer ou retrouver un outil", "Suggest or find a tool")}</h2>
         <form onSubmit={lookup}>
           <Field label={t("Nom de l’outil", "Tool name")} value={name} required maxLength={120} disabled={busy}
             onChange={(event) => { setName(event.target.value); resetLookup(); }} />
@@ -202,7 +217,7 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
             setInvitation("");
             if (query.has("invite")) setQuery({}, { replace: true });
             setReload((current) => current + 1);
-            setNotice(t("Invitation acceptée. Actualisation de vos fiches…", "Invitation accepted. Refreshing your listings…"));
+            setNotice(t("Invitation acceptée. Retrouvez la fiche et vos droits dans Mes fiches.", "Invitation accepted. Find the listing and your access in My listings."));
           });
         }}>
           <Field inputRef={invitationField} label={t("Code d’invitation", "Invitation code")} type="password" autoComplete="off" value={invitation}
