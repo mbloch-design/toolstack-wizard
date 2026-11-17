@@ -609,7 +609,7 @@ export function RelatedCard({ logo, role, name, sentence, cta, renderLink, extra
       <p className={styles.relatedName}>{name}</p>
       {sentence && <p className={styles.text}>{sentence}</p>}
       <div className={styles.relatedFoot}>
-        {renderLink(linkClass(), <>{cta}<LinkArrow /></>)}
+        {renderLink(linkClass(), <>{cta}<LinkArrow shown /></>)}
         {extra}
       </div>
     </li>

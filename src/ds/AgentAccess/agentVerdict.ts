@@ -13,12 +13,6 @@ export function longDate(iso: string, lang: Lang) {
   return `${d} ${(lang === "en" ? MONTHS_EN : MONTHS_FR)[m - 1]} ${y}`;
 }
 
-/** « 16/11 » / « 16 November »: the date of a « none » verdict. */
-function shortDate(iso: string, lang: Lang) {
-  const { m, d } = parts(iso);
-  return lang === "en" ? `${d} ${MONTHS_EN[m - 1]}` : `${String(d).padStart(2, "0")}/${String(m).padStart(2, "0")}`;
-}
-
 const ACCESS_RANK = { docs_only: 0, read: 1, read_write: 2 } as const;
 const PLAN_RANK = { unknown: 0, specific: 1, paid: 2, all: 3 } as const;
 
@@ -31,12 +25,8 @@ export function leadServer(servers: AgentServer[]) {
   })[0];
 }
 
-const COUNT_FR = ["", "", "Deux", "Trois", "Quatre"];
-const COUNT_EN = ["", "", "Two", "Three", "Four"];
-
 const ONE_CLICK = ["connector", "plugin"];
 const ASSISTANT_NAMES = { claude: "Claude", chatgpt: "ChatGPT", gemini: "Gemini", copilot: "Copilot" } as const;
-const KIND_ORDER = ["read", "write", "delete", "send", "pay"] as const;
 export const actionVerbs = {
   read: ["lire", "read"], write: ["modifier", "edit"], delete: ["supprimer", "delete"],
   send: ["envoyer ou publier", "send or publish"], pay: ["payer", "pay"],
@@ -46,63 +36,43 @@ export const actionVerbs = {
 export function joinWords(words: string[], lang: Lang, last = pick(lang, "et", "and")) {
   return words.length < 2 ? words.join("") : `${words.slice(0, -1).join(", ")} ${last} ${words[words.length - 1]}`;
 }
-const raise = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 
-/** Where the assistant reaches it from: « depuis Claude ou ChatGPT en un clic », or how else. */
-function reach(access: AgentAccess, lang: Lang) {
+const CONSEQUENCE_WORDS = {
+  pay: ["Peut engager un paiement.", "Can make a payment."],
+  delete: ["Peut supprimer des données.", "Can delete data."],
+  send: ["Peut envoyer en votre nom.", "Can send in your name."],
+  write: ["Peut modifier vos données.", "Can edit your data."],
+  read: ["En lecture seule : sans effet sur vos données.", "Read only: no effect on your data."],
+} as const;
+
+/** Where it plugs in, as a sentence: « Se branche en un clic à Claude, ChatGPT et Gemini. » */
+function plugs(access: AgentAccess, lang: Lang) {
   const setup = access.setup ?? [];
   const named = (Object.keys(ASSISTANT_NAMES) as (keyof typeof ASSISTANT_NAMES)[])
     .filter((assistant) => setup.some((way) => way.assistant === assistant && ONE_CLICK.includes(way.how)))
     .map((assistant) => ASSISTANT_NAMES[assistant]);
-  if (named.length) return pick(lang, `depuis ${joinWords(named, lang, "ou")} en un clic`, `from ${joinWords(named, lang, "or")} in one click`);
-  if (setup.some((way) => way.how === "url")) return pick(lang, "en ajoutant l'adresse de son serveur à votre assistant", "by adding its server address to your assistant");
-  if (setup.some((way) => way.how === "local")) return pick(lang, "une fois installé sur votre ordinateur", "once installed on your computer");
-  return null;
+  if (named.length) return pick(lang, `Se branche en un clic à ${joinWords(named, lang)}.`, `Plugs into ${joinWords(named, lang)} in one click.`);
+  if (setup.some((way) => way.how === "url")) return pick(lang, "Se branche à votre assistant avec l'adresse de son serveur.", "Plugs into your assistant with its server address.");
+  if (setup.some((way) => way.how === "local")) return pick(lang, "S'installe sur votre ordinateur pour votre assistant.", "Installs on your computer for your assistant.");
+  return pick(lang, "Se branche à votre assistant.", "Plugs into your assistant.");
 }
-
-/** What the vendor documents as a safeguard, said once: the confirmation first, or that there is none. */
-function guard(access: AgentAccess, lang: Lang) {
-  if (!access.safeguards) return null;
-  if (access.safeguards.includes("human_confirmation")) return pick(lang, "confirmation demandée avant certaines actions", "asks before some actions");
-  if (access.safeguards.length === 0) return pick(lang, "aucun garde-fou documenté par l'éditeur", "no safeguard documented by the vendor");
-  if (access.safeguards.includes("no_delete")) return pick(lang, "aucune suppression possible", "cannot delete");
-  return null;
-}
-
-const PLAN_WORDS = {
-  all: ["sur tous les forfaits", "on every plan"], paid: ["sur les forfaits payants", "on paid plans"],
-  specific: ["sur certains forfaits", "on some plans"], unknown: null,
-} as const;
 
 /**
- * One sentence that says the decision, composed from the fields only:
- * « Depuis Claude ou ChatGPT en un clic, votre assistant peut lire, modifier et supprimer, sur tous les forfaits ;
- *   aucun garde-fou documenté par l'éditeur. »
+ * The gateway's verdict in the section's vocabulary of consequence (step 2, 17/11): where it plugs in, the gravest
+ * thing it can do, and the plan only when the plan restricts it.
+ * « Se branche en un clic à Claude, ChatGPT et Gemini. Peut supprimer des données. »
  */
 export function agentVerdict(access: AgentAccess, lang: Lang): string {
-  if (access.mcp === "none") return pick(lang, `Pas de serveur MCP officiel au ${shortDate(access.verifiedOn, lang)}.`, `No official MCP server as of ${shortDate(access.verifiedOn, lang)}.`);
+  if (access.mcp === "none") return pick(lang, "Ne se branche pas à un assistant IA.", "Does not plug into an AI assistant.");
   const server = leadServer(access.servers);
-  const kinds = KIND_ORDER.filter((kind) => access.capabilities?.some((line) => line.kind === kind));
-  let can: string;
-  const readOnly = kinds.length === 1 && kinds[0] === "read";
-  if (readOnly) can = pick(lang, "votre assistant peut seulement lire", "your assistant can only read");
-  else if (kinds.length) can = pick(lang, `votre assistant peut ${joinWords(kinds.map((kind) => actionVerbs[kind][0]), lang)}`, `your assistant can ${joinWords(kinds.map((kind) => actionVerbs[kind][1]), lang)}`);
-  else if (server.access === "read_write") can = pick(lang, "votre assistant peut lire et modifier", "your assistant can read and edit");
-  else if (server.access === "read") can = pick(lang, "votre assistant peut lire", "your assistant can read");
-  else if (server.access === "docs_only") can = pick(lang, "votre assistant peut consulter sa documentation", "your assistant can read its documentation");
-  else can = pick(lang, "votre assistant peut s'y connecter", "your assistant can connect to it");
-  const where = reach(access, lang);
-  const said = [where ? `${raise(where)}, ${can}` : raise(can)];
-  const plan = PLAN_WORDS[server.plan];
-  if (plan) said.push(pick(lang, plan[0], plan[1]));
-  if (server.clients?.length) said.push(pick(lang, "depuis certains assistants seulement", "from some assistants only"));
-  if (access.status === "beta") said.push(pick(lang, "en bêta", "in beta"));
-  // Read-only already says it cannot delete.
-  const safe = readOnly && access.safeguards?.length ? null : guard(access, lang);
-  let sentence = `${said.join(", ")}${safe ? `${pick(lang, "\u00a0; ", "; ")}${safe}` : ""}.`;
-  const count = access.servers.length;
-  if (count > 1) sentence += ` ${pick(lang, `${COUNT_FR[count] ?? count} serveurs officiels.`, `${COUNT_EN[count] ?? count} official servers.`)}`;
-  return sentence;
+  const kinds = (["pay", "delete", "send", "write", "read"] as const).filter((kind) => access.capabilities?.some((line) => line.kind === kind));
+  const gravest = kinds[0] ?? (server.access === "read_write" ? "write" : server.access === "read" ? "read" : undefined);
+  const said = [plugs(access, lang)];
+  if (gravest) said.push(pick(lang, CONSEQUENCE_WORDS[gravest][0], CONSEQUENCE_WORDS[gravest][1]));
+  else if (server.access === "docs_only") said.push(pick(lang, "Lit seulement sa documentation.", "Reads its documentation only."));
+  if (server.plan === "paid") said.push(pick(lang, "Forfait payant requis.", "Paid plan required."));
+  if (server.plan === "specific") said.push(pick(lang, "Certains forfaits seulement.", "Some plans only."));
+  return said.join(" ");
 }
 
 /** The words of each fact, FR/EN. */

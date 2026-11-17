@@ -2,28 +2,30 @@ import { describe, expect, it } from "vitest";
 import { agentVerdict, leadServer } from "./agentVerdict";
 import { agentAccessStates } from "./AgentAccess.fixtures";
 
-describe("agent verdict", () => {
-  it("says where from, what it can do, on which plan and what holds it back, from the fields only", () => {
-    expect(agentVerdict(agentAccessStates.calendly, "fr")).toBe("Depuis Claude ou ChatGPT en un clic, votre assistant peut lire, modifier et supprimer, sur tous les forfaits ; aucun garde-fou documenté par l'éditeur.");
-    expect(agentVerdict(agentAccessStates.calendly, "en")).toBe("From Claude or ChatGPT in one click, your assistant can read, edit and delete, on every plan; no safeguard documented by the vendor.");
+describe("agent verdict (step 2, consequence vocabulary)", () => {
+  it("says where it plugs in and the gravest thing it can do", () => {
+    expect(agentVerdict(agentAccessStates.notion, "fr")).toBe("Se branche en un clic à Claude, ChatGPT et Gemini. Peut supprimer des données.");
+    expect(agentVerdict(agentAccessStates.notion, "en")).toBe("Plugs into Claude, ChatGPT and Gemini in one click. Can delete data.");
   });
 
-  it("says money, beta and the confirmation", () => {
-    expect(agentVerdict(agentAccessStates.stripe, "fr")).toBe("Depuis Claude ou ChatGPT en un clic, votre assistant peut lire, modifier et payer, en bêta ; confirmation demandée avant certaines actions.");
+  it("puts a payment before anything else", () => {
+    expect(agentVerdict(agentAccessStates.stripe, "fr")).toBe("Se branche en un clic à Claude et ChatGPT. Peut engager un paiement.");
   });
 
-  it("speaks for the widest server and counts the others", () => {
+  it("says the plan only when it restricts access", () => {
+    expect(agentVerdict(agentAccessStates.ahrefs, "fr")).toMatch(/Forfait payant requis\.$/);
+    expect(agentVerdict(agentAccessStates.notion, "fr")).not.toMatch(/forfait/i);
+  });
+
+  it("speaks for the widest server", () => {
     expect(leadServer(agentAccessStates.figma.servers).name).toBe("Figma MCP server (remote)");
-    expect(agentVerdict(agentAccessStates.figma, "fr")).toMatch(/Deux serveurs officiels\.$/);
   });
 
-  it("leaves out what the vendor does not say", () => {
-    expect(agentVerdict(agentAccessStates.canva, "fr")).toBe("Votre assistant peut lire et modifier, sur tous les forfaits, depuis certains assistants seulement.");
-    expect(agentVerdict(agentAccessStates.googleAnalytics, "fr")).toBe("Une fois installé sur votre ordinateur, votre assistant peut seulement lire.");
+  it("says reading only and a local install in plain words", () => {
+    expect(agentVerdict(agentAccessStates.googleAnalytics, "fr")).toBe("S'installe sur votre ordinateur pour votre assistant. En lecture seule : sans effet sur vos données.");
   });
 
-  it("says « none » with its date", () => {
-    expect(agentVerdict(agentAccessStates.hotjar, "fr")).toBe("Pas de serveur MCP officiel au 16/11.");
-    expect(agentVerdict(agentAccessStates.hotjar, "en")).toBe("No official MCP server as of 16 November.");
+  it("says « none » without a date", () => {
+    expect(agentVerdict(agentAccessStates.hotjar, "fr")).toBe("Ne se branche pas à un assistant IA.");
   });
 });
