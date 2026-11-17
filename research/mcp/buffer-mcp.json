@@ -37,14 +37,29 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Tout le compte",
+        "en": "The whole account"
+      },
+      "icon": "account",
       "fr": "La connexion couvre tout votre compte Buffer, sans choix d'organisation.",
       "en": "The connection covers your whole Buffer account, with no organisation choice."
     },
     {
+      "title": {
+        "fr": "Vous confirmez avant",
+        "en": "You confirm first"
+      },
+      "icon": "confirm",
       "fr": "Laissez les demandes de confirmation de votre assistant : la plupart attendent votre accord avant de publier, modifier ou supprimer.",
       "en": "Keep your assistant's confirmation prompts: most wait for your approval before posting, editing or deleting."
     },
     {
+      "title": {
+        "fr": "Vous coupez quand vous voulez",
+        "en": "You cut whenever you want"
+      },
+      "icon": "cut",
       "fr": "Pour couper l'accès : Réglages, puis API, dans Buffer.",
       "en": "To cut access: Settings, then API, in Buffer."
     }

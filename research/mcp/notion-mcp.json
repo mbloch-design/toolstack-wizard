@@ -37,16 +37,31 @@
   },
   "control": [
     {
-      "fr": "À la connexion, vous choisissez l'espace de travail : l'assistant n'y voit que ce que votre compte voit.",
-      "en": "When connecting, you pick the workspace: the assistant only sees what your account sees."
+      "title": {
+        "fr": "Vous choisissez l'espace",
+        "en": "You choose the workspace"
+      },
+      "icon": "account",
+      "fr": "à la connexion ; l'assistant n'y voit que ce que votre compte voit.",
+      "en": "when connecting; the assistant only sees what your account sees."
     },
     {
-      "fr": "Les propriétaires de l'espace encadrent l'accès dans les contrôles d'administration de Notion.",
-      "en": "Workspace owners manage access in Notion's admin controls."
+      "title": {
+        "fr": "L'administrateur encadre",
+        "en": "The admin sets the frame"
+      },
+      "icon": "admin",
+      "fr": "dans les contrôles d'administration de Notion.",
+      "en": "in Notion's admin controls."
     },
     {
-      "fr": "Pour couper l'accès, choisissez « Déconnecter » ou « Effacer l'authentification » dans les réglages de votre assistant.",
-      "en": "To cut access, choose “Disconnect” or “Clear authentication” in your assistant's settings."
+      "title": {
+        "fr": "Vous coupez quand vous voulez",
+        "en": "You cut whenever you want"
+      },
+      "icon": "cut",
+      "fr": "« Déconnecter » ou « Effacer l'authentification » dans les réglages de l'assistant.",
+      "en": "“Disconnect” or “Clear authentication” in the assistant's settings."
     }
   ],
   "plan_words": {

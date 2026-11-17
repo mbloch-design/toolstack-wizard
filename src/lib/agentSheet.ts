@@ -4,7 +4,7 @@
  * classification, made from each tool's name and line; the vendors do not group their tools this way.
  */
 import type { AgentCapabilityKind } from "@/data/types";
-import { KIND_WORDS, PLAN_WORDS, RISK_ORDER, SAFEGUARD_WORDS, TRANSPORT_WORDS, authWords, say, type Lang, type McpSheet, type Pair } from "@/lib/agents";
+import { KIND_WORDS, PLAN_WORDS, RISK_ORDER, SAFEGUARD_WORDS, TRANSPORT_WORDS, authWords, say, typo, type Lang, type McpSheet, type Pair } from "@/lib/agents";
 
 type Tool = NonNullable<McpSheet["tools"]>[number];
 const P = (fr: string, en: string): Pair => ({ fr, en });
@@ -45,20 +45,23 @@ export function toolTopics(tools: Tool[]): ToolTopic[] {
 }
 
 
-/** « 70 actions, dont 5 qui suppriment » / « 15 actions, dont 3 qui paient ». */
+/** « 70 actions : 4 suppriment des données, 2 envoient en votre nom, 26 modifient, 38 en lecture seule ». */
 export function toolsSummary(tools: Tool[], lang: Lang) {
-  const t = (fr: string, en: string) => (lang === "en" ? en : fr);
   const count = (kind: AgentCapabilityKind) => tools.filter((tool) => tool.kind === kind).length;
-  const total = t(`${tools.length} action${tools.length > 1 ? "s" : ""}`, `${tools.length} action${tools.length > 1 ? "s" : ""}`);
-  const verbs: [AgentCapabilityKind, string, string, string, string][] = [
-    ["pay", "qui paie", "qui paient", "that pays", "that pay"], ["delete", "qui supprime", "qui suppriment", "that deletes", "that delete"],
-    ["send", "qui envoie", "qui envoient", "that sends", "that send"], ["write", "qui modifie", "qui modifient", "that edits", "that edit"],
-  ];
-  const lead = verbs.find(([kind]) => count(kind) > 0);
-  if (!lead) return t(`${total}, toutes en lecture`, `${total}, all reading only`);
-  const [kind, one, many, oneEn, manyEn] = lead;
-  const n = count(kind);
-  return t(`${total}, dont ${n} ${n > 1 ? many : one}`, `${total}, ${n} of which ${n > 1 ? manyEn : oneEn}`);
+  const words: Record<AgentCapabilityKind, [string, string, string, string]> = {
+    delete: ["supprime des données", "suppriment des données", "deletes data", "delete data"],
+    pay: ["engage un paiement", "engagent un paiement", "makes a payment", "make a payment"],
+    send: ["envoie en votre nom", "envoient en votre nom", "sends in your name", "send in your name"],
+    write: ["modifie", "modifient", "edits", "edit"],
+    read: ["en lecture seule", "en lecture seule", "read only", "read only"],
+  };
+  const parts = (["delete", "pay", "send", "write", "read"] as const).filter((kind) => count(kind) > 0).map((kind) => {
+    const n = count(kind);
+    const [one, many, oneEn, manyEn] = words[kind];
+    return `${n} ${lang === "en" ? (n > 1 ? manyEn : oneEn) : n > 1 ? many : one}`;
+  });
+  const total = `${tools.length} action${tools.length > 1 ? "s" : ""}`;
+  return lang === "en" ? `${total}: ${parts.join(", ")}` : typo(`${total} : ${parts.join(", ")}`);
 }
 
 /** A source, short and in the reader's language (« Liste des outils »), with its domain; the vendor's title stays in the data. */

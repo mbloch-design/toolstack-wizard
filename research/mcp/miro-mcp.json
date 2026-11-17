@@ -33,14 +33,29 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Vous choisissez l'équipe",
+        "en": "You choose the team"
+      },
+      "icon": "account",
       "fr": "À la connexion, vous choisissez l'équipe : il ne travaille que dans celle-là.",
       "en": "When connecting, you pick the team: it only works in that one."
     },
     {
+      "title": {
+        "fr": "Les droits de chaque tableau",
+        "en": "Each board's rights"
+      },
+      "icon": "limit",
       "fr": "Il respecte les droits de chaque tableau, vérifiés à chaque demande.",
       "en": "It follows each board's rights, checked on every request."
     },
     {
+      "title": {
+        "fr": "L'administrateur encadre",
+        "en": "The admin sets the frame"
+      },
+      "icon": "admin",
       "fr": "En Enterprise, l'administrateur l'ouvre à toute l'organisation ou à certaines équipes : Paramètres d'administration, Apps et intégrations, MCP.",
       "en": "On Enterprise, the admin opens it to the whole organisation or some teams: Admin settings, Apps and integrations, MCP."
     }

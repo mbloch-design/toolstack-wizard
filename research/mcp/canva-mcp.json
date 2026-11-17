@@ -33,6 +33,11 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Vos droits, pas plus",
+        "en": "Your rights, no more"
+      },
+      "icon": "account",
       "fr": "L'assistant n'agit que sur les designs et fichiers que votre compte peut voir ou modifier.",
       "en": "The assistant only acts on the designs and files your account can see or edit."
     }

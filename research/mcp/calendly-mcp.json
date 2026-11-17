@@ -37,6 +37,11 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Activé conversation par conversation",
+        "en": "Turned on per conversation"
+      },
+      "icon": "confirm",
       "fr": "Dans Claude, activez Calendly dans chaque conversation où vous voulez l'utiliser.",
       "en": "In Claude, turn Calendly on in each conversation where you want it."
     }

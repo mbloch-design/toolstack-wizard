@@ -6,6 +6,7 @@ import {
 import { BarChart3, Bot, Clock3, FolderKanban, Globe, Handshake, Laptop2, Lightbulb, Megaphone, Palette, Search, ShieldCheck, Sparkles, UserRound, Wallet, Wrench } from "@/lib/icons";
 import { ButtonArrow, LinkArrow, buttonAttrs, linkClass } from "../Button/Button";
 import { LinkRow, LinkRows } from "../Catalog/Catalog";
+import Prompt from "../Prompt/Prompt";
 import styles from "./AgentHub.module.css";
 
 /*
@@ -78,7 +79,7 @@ function NeedAdvice({ need, card, also, lang, toolName, logo, renderSheetLink }:
       </header>
       <figure className={styles.request}>
         <figcaption className={styles.term}>{t("Vous pourrez lui demander", "You could ask it")}</figcaption>
-        <blockquote className={styles.requestText}>{t(`« ${need.example.fr} »`, `“${need.example.en}”`)}</blockquote>
+        <Prompt text={lang === "en" ? need.example.en : need.example.fr} lang={lang} size="lead" />
       </figure>
       <ul className={styles.factLine}>
         {assistants && <li className={styles.fact}><Bot aria-hidden="true" /><span><span className={styles.srOnly}>{t("Avec : ", "With: ")}</span>{assistants}</span></li>}
@@ -233,8 +234,10 @@ const FACT_ICONS: Record<CardFact["kind"], ReactNode> = {
   skill: <Sparkles aria-hidden="true" />, tool: <Wrench aria-hidden="true" />, assistant: <Bot aria-hidden="true" />,
 };
 
-export function AgentCards({ label, children }: { label: string; children: ReactNode }) {
-  return <ul className={styles.cards} aria-label={label}>{children}</ul>;
+export function AgentCards({ label, flat = false, children }: { label: string;
+  /** The sheet's one card shape (step 1 bis): light grey on a white band, no shadow, three columns. */
+  flat?: boolean; children: ReactNode }) {
+  return <ul className={styles.cards} data-flat={flat || undefined} aria-label={label}>{children}</ul>;
 }
 
 /** Filters in labelled groups (« Comment », « Avec quel assistant »): they wrap, never a rail that overflows. */

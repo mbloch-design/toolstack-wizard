@@ -180,7 +180,11 @@ export function validateMcpSheet(sheet, { catalogSlugs, skillSlugs } = {}) {
   }
   // Step 1 of the product analysis (17/11): gestures to stay in control, the plan in plain words, first requests,
   // what to check when it fails. Each from the vendor's documentation; absent rather than empty.
-  for (const key of ["control", "troubleshoot"]) if (key in (sheet || {}) && (!Array.isArray(sheet[key]) || !sheet[key].length || !sheet[key].every(isPair))) errors.push(`${at} : ${key}, phrases fr/en`);
+  if ("troubleshoot" in (sheet || {}) && (!Array.isArray(sheet.troubleshoot) || !sheet.troubleshoot.length || !sheet.troubleshoot.every(isPair))) errors.push(`${at} : troubleshoot, phrases fr/en`);
+  // A safeguard: a short title, an icon of a closed set, a sentence (« Vos garde-fous », 17/11).
+  const CONTROL_ICONS = ["account", "admin", "cut", "confirm", "limit", "read", "cost", "log"];
+  if ("control" in (sheet || {}) && (!Array.isArray(sheet.control) || !sheet.control.length
+    || !sheet.control.every((item) => isPair(item) && isPair(item?.title) && CONTROL_ICONS.includes(item?.icon)))) errors.push(`${at} : control, { title, icon, fr, en }`);
   if ("plan_words" in (sheet || {}) && (!isPair(sheet.plan_words?.common) || ("advanced" in sheet.plan_words && !isPair(sheet.plan_words.advanced)))) errors.push(`${at} : plan_words { common, advanced? } fr/en`);
   if ("first_requests" in (sheet || {})) {
     const f = sheet.first_requests;

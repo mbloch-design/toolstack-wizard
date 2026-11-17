@@ -33,6 +33,11 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Seulement application ouverte",
+        "en": "Only while the app is open"
+      },
+      "icon": "limit",
       "fr": "Il ne fonctionne que tant que l'application Figma est ouverte et le serveur activé dans Dev Mode.",
       "en": "It only works while the Figma app is open and the server is on in Dev Mode."
     }

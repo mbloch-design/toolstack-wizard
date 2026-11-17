@@ -33,14 +33,29 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Vous choisissez les autorisations",
+        "en": "You choose the permissions"
+      },
+      "icon": "account",
       "fr": "À la connexion, vous choisissez les autorisations : lancer vos scénarios, ou aussi les gérer.",
       "en": "When connecting, you choose the permissions: run your scenarios, or manage them too."
     },
     {
+      "title": {
+        "fr": "Une seule organisation",
+        "en": "A single organisation"
+      },
+      "icon": "limit",
       "fr": "Avec la connexion au compte, vous pouvez limiter l'accès à une seule organisation Make.",
       "en": "With account sign-in, you can limit access to a single Make organisation."
     },
     {
+      "title": {
+        "fr": "Seulement vos scénarios prêts",
+        "en": "Only your ready scenarios"
+      },
+      "icon": "limit",
       "fr": "Seuls vos scénarios actifs et lançables à la demande deviennent des actions.",
       "en": "Only your active, on-demand scenarios become actions."
     }

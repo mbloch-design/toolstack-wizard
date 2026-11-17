@@ -35,7 +35,7 @@ type FilterId = "one_click" | "risky" | "remote" | "local" | "all_plans" | "oaut
 const ASSISTANT_FILTERS: FilterId[] = ["claude", "chatgpt", "gemini", "copilot"];
 const FILTERS: { id: FilterId; fr: string; en: string; test: (card: McpCard) => boolean }[] = [
   { id: "one_click", fr: "En un clic depuis ChatGPT ou Claude", en: "One click from ChatGPT or Claude", test: (c) => c.one_click.includes("claude") || c.one_click.includes("chatgpt") },
-  { id: "risky", fr: "Peut supprimer ou payer", en: "Can delete or pay", test: (c) => c.kinds.includes("delete") || c.kinds.includes("pay") },
+  { id: "risky", fr: "Supprime des données ou engage un paiement", en: "Deletes data or makes a payment", test: (c) => c.kinds.includes("delete") || c.kinds.includes("pay") },
   { id: "remote", fr: "En ligne", en: "Online", test: (c) => c.transport === "remote" },
   { id: "local", fr: "Sur l'ordinateur", en: "On your computer", test: (c) => c.transport === "local" },
   { id: "all_plans", fr: "Tous les forfaits", en: "Every plan", test: (c) => c.plan === "all" },

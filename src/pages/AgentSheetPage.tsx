@@ -7,9 +7,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Page from "@/ds/Page/Page";
 import Logo from "@/ds/Logo/Logo";
 import { CatalogSection, CatalogTitle } from "@/ds/Catalog/Catalog";
-import { McpSheetView, SkillSheetView } from "@/ds/AgentSheet/AgentSheet";
+import { McpSheetView, RelatedCard, RelatedCards, SkillSheetView } from "@/ds/AgentSheet/AgentSheet";
 import { AgentCard, AgentCards } from "@/ds/AgentHub/AgentHub";
-import Button from "@/ds/Button/Button";
+import Button, { TextButton } from "@/ds/Button/Button";
 import { useAddToStack } from "@/hooks/useAddToStack";
 import { useStackPins } from "@/hooks/useStackPins";
 import { Check, Plus, Plug } from "@/lib/icons";
@@ -92,13 +92,31 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
     const siblings = SERVERS.filter((s) => s.host_tool === server.host_tool && s.slug !== server.slug);
     const alternatives = ((host as { alternatives?: string[] } | undefined)?.alternatives ?? [])
       .flatMap((alt) => SERVERS.filter((s) => s.host_tool === alt)).slice(0, 6);
-    related = <>
-      <CatalogSection id="agent-tool" title={t("L'outil", "The tool")}>
-        <AgentCards label={t("L'outil", "The tool") as string}>{toolCard(server.host_tool, hostName)}{siblings.map(serverCard)}</AgentCards>
-      </CatalogSection>
-      {skills.length > 0 && <CatalogSection id="agent-skills" title={t("Ses savoir-faire officiels", "Its official know-how")} count={skills.length}><AgentCards label={t("Savoir-faire", "Know-how") as string}>{skills.map(skillCard)}</AgentCards></CatalogSection>}
-      {alternatives.length > 0 && <CatalogSection id="agent-alternatives" title={t("Alternatives qui se branchent aussi", "Alternatives that also plug in")} count={alternatives.length}><AgentCards label={t("Alternatives", "Alternatives") as string}>{alternatives.map(serverCard)}</AgentCards></CatalogSection>}
-    </>;
+    // « Pour aller plus loin »: the tool, an alternative that plugs in, a know-how of the vendor, on one card template;
+    // empty places take other alternatives, then the tool's other server. Sentences are written for cards, never cut.
+    const short = (text?: string) => { if (!text) return undefined; const first = cardSentence(text); return text.length <= 110 ? text : first.length <= 110 ? first : undefined; };
+    const big = (toolSlug: string) => { const tool = toolOf(toolSlug); return tool ? <Logo tool={tool} size={40} /> : <Plug />; };
+    const hostTool = toolOf(server.host_tool);
+    const toolRelated = (
+      <RelatedCard key="tool" logo={big(server.host_tool)} role={t("La fiche de l'outil", "The tool's page") as string} name={hostName}
+        sentence={short((lang === "en" ? hostTool?.shortDescriptionEn : undefined) ?? hostTool?.shortDescription)}
+        cta={t("Prix, avis et alternatives", "Pricing, reviews and alternatives") as string}
+        renderLink={(className, content) => <Link to={`${prefix}/tool/${server.host_tool}`} className={className}>{content}</Link>}
+        extra={inStack ? undefined : <TextButton tone="quiet" disabled={flyingSlug === server.host_tool} onClick={(event) => addToStack(server.host_tool, hostName, { origin: event.currentTarget })}>{t("Ajouter à ma stack", "Add to my stack")}</TextButton>} />
+    );
+    const altRelated = (s: McpSheet) => (
+      <RelatedCard key={s.slug} logo={big(s.host_tool)} role={t("Une alternative qui se branche", "An alternative that plugs in") as string} name={nameOf(s)}
+        sentence={s.card ? say(lang, s.card) : short(say(lang, s.summary))} cta={t("Voir la fiche", "See the page") as string}
+        renderLink={(className, content) => <Link to={`${prefix}/mcp/${s.slug}`} className={className}>{content}</Link>} />
+    );
+    const skillRelated = (k: SkillSheet) => (
+      <RelatedCard key={k.slug} logo={big(k.host_tool)} role={t(`Un savoir-faire de ${k.publisher}`, `A know-how from ${k.publisher}`) as string} name={k.name}
+        sentence={short(say(lang, k.summary))} cta={t("Voir le savoir-faire", "See the know-how") as string}
+        renderLink={(className, content) => <Link to={`${prefix}/skills/${k.slug}`} className={className}>{content}</Link>} />
+    );
+    const row = [toolRelated, ...alternatives.slice(0, 1).map(altRelated), ...(skills.length ? [skillRelated(skills[0])] : []),
+      ...alternatives.slice(1).map(altRelated), ...siblings.map(altRelated)].slice(0, 3);
+    related = <RelatedCards label={t("Pour aller plus loin", "Going further") as string}>{row}</RelatedCards>;
   } else if (skill) {
     const parent = SERVERS.find((s) => s.slug === skill.server);
     const others = SKILLS.filter((k) => k.server === skill.server && k.slug !== skill.slug).slice(0, 8);

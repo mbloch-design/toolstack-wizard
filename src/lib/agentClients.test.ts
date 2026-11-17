@@ -20,13 +20,15 @@ describe("plugging card (S1 bis)", () => {
     const stripe = servers.find((s) => s.slug === "stripe-mcp")!;
     expect(plugCard(stripe, "claude", "Stripe", "fr").find((s) => s.action)?.action).toMatchObject({ kind: "open", label: "Ouvrir dans Claude" });
     const cursor = plugCard(notion, "cursor", "Notion", "fr");
-    expect(cursor.find((s) => s.action)?.action).toMatchObject({ kind: "copy", label: "Copier la configuration", type: "config" });
+    // Cursor documents a direct install link: it is the step's action, the copy goes under it.
+    expect(cursor.find((s) => s.action)?.action).toMatchObject({ kind: "open", label: "Ouvrir dans Cursor" });
+    expect(cursor.find((s) => s.secondary)?.secondary).toMatchObject({ kind: "copy", label: "Copier la configuration", type: "config" });
     // Where to paste comes from Cursor's own documentation.
     expect(cursor.map((s) => s.text).join(" ")).toContain("~/.cursor/mcp.json");
     // Gemini documents nothing we could read: the step says so and sends to the vendor's documentation.
     const miro = servers.find((s) => s.slug === "miro-mcp")!;
     expect(plugCard(miro, "gemini", "Miro", "fr").map((s) => s.text).join(" ")).toContain("Gemini ne documente pas où la coller");
-    expect(plugCard(notion, "claude", "Notion", "fr").at(-1)?.text).toContain("Résume mes notes de réunion");
+    expect(plugCard(notion, "claude", "Notion", "fr").at(-1)?.prompt?.fr).toContain("Résume mes notes de réunion");
     // Claude's directory page, read on 17/11/2026, is the one-click way in.
     expect(plugCard(notion, "claude", "Notion", "fr")[0].action).toMatchObject({ kind: "open", href: "https://claude.ai/directory/notion" });
   });
@@ -54,7 +56,7 @@ describe("technical sheet and sources", () => {
       const tools = sheet.tools ?? [];
       expect(toolTopics(tools).reduce((n, topic) => n + topic.tools.length, 0)).toBe(tools.length);
     }
-    expect(toolsSummary(notion.tools!, "fr")).toBe("70 actions, dont 4 qui suppriment");
+    expect(toolsSummary(notion.tools!, "fr")).toBe("70 actions\u00a0: 4 suppriment des données, 2 envoient en votre nom, 26 modifient, 38 en lecture seule");
   });
 
   it("merges near-duplicate sources and labels them shortly", () => {

@@ -1,8 +1,11 @@
 /* The gateway on a tool page: the verdict, three facts, the link to the server sheet, the date.
    A tile of the system; a grid of facts, never a separator. */
 
+/* The gateway is an object on the tool page's white sheet, never a grey zone (17/11). */
 .block {
   composes: tile from "../atoms.module.css";
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
   gap: var(--tt-gap-group);
 }
 

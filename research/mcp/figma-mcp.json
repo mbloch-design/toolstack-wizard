@@ -33,6 +33,11 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Vos fichiers, pas plus",
+        "en": "Your files, no more"
+      },
+      "icon": "account",
       "fr": "Il n'accède qu'aux fichiers Figma auxquels votre compte a déjà accès.",
       "en": "It only reaches the Figma files your account already has access to."
     }

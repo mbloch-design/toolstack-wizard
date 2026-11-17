@@ -33,6 +33,11 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Chaque demande a un coût",
+        "en": "Each request has a cost"
+      },
+      "icon": "cost",
       "fr": "Chaque demande consomme au moins 50 unités d'API, partagées avec l'API Ahrefs : demandez des résultats courts.",
       "en": "Each request uses at least 50 API units, shared with the Ahrefs API: ask for short results."
     }

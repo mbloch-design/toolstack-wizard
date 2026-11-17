@@ -37,18 +37,38 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Vous choisissez la boutique",
+        "en": "You choose the store"
+      },
+      "icon": "account",
       "fr": "À la connexion, vous choisissez la boutique, et vous pouvez refuser la demande.",
       "en": "When connecting, you pick the store, and you can decline the request."
     },
     {
+      "title": {
+        "fr": "Vous réglez les accès",
+        "en": "You set the access"
+      },
+      "icon": "admin",
       "fr": "Vous réglez le niveau d'accès de chaque membre dans l'administration Shopify ; certaines autorisations sont en lecture seule.",
       "en": "You set each member's access level in the Shopify admin; some permissions are read-only."
     },
     {
+      "title": {
+        "fr": "Ce qu'il ne fera jamais",
+        "en": "What it never does"
+      },
+      "icon": "limit",
       "fr": "Il ne peut ni rembourser, ni annuler ou encaisser une commande, ni toucher au forfait, aux paiements, aux taxes ou aux domaines.",
       "en": "It cannot refund, cancel or capture an order, nor touch your plan, payments, taxes or domains."
     },
     {
+      "title": {
+        "fr": "Vous coupez quand vous voulez",
+        "en": "You cut whenever you want"
+      },
+      "icon": "cut",
       "fr": "Pour couper l'accès : désinstallez l'intégration dans l'administration Shopify.",
       "en": "To cut access: uninstall the integration in the Shopify admin."
     }

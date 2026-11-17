@@ -1,0 +1,53 @@
+/* Verdict cards: a soft tint of the system (gain, caution), the tile's radius, 24 of padding; same height side by side. */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: var(--tt-gap-item);
+  min-width: 0;
+}
+
+.card {
+  display: grid;
+  gap: var(--tt-space-3);
+  align-content: start;
+  padding: var(--tt-space-6);
+  border-radius: var(--tt-r-tile);
+  min-width: 0;
+}
+
+.card[data-tone="gain"] {
+  background: var(--tt-delta-gain-bg);
+}
+
+.card[data-tone="caution"] {
+  background: var(--tt-delta-cost-bg);
+}
+
+.icon {
+  display: inline-grid;
+  place-items: center;
+  width: var(--tt-space-12);
+  height: var(--tt-space-12);
+  border-radius: var(--tt-r-round);
+  background: var(--tt-bg);
+  color: var(--tt-ink);
+}
+
+.icon svg {
+  width: var(--tt-space-6);
+  height: var(--tt-space-6);
+}
+
+.title {
+  composes: label from "../atoms.module.css";
+  composes: strong from "../atoms.module.css";
+}
+
+.text {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-title-m-font);
+  letter-spacing: var(--tt-title-m-tracking);
+  text-wrap: pretty;
+}

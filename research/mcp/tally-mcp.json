@@ -33,14 +33,29 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Aucune suppression",
+        "en": "No deleting"
+      },
+      "icon": "limit",
       "fr": "Il ne peut supprimer ni un formulaire ni une réponse.",
       "en": "It cannot delete a form or a response."
     },
     {
+      "title": {
+        "fr": "Brouillon jusqu'à votre accord",
+        "en": "Draft until you say so"
+      },
+      "icon": "confirm",
       "fr": "Un nouveau formulaire reste un brouillon privé tant que vous ne demandez pas de le publier.",
       "en": "A new form stays a private draft until you ask to publish it."
     },
     {
+      "title": {
+        "fr": "Vos réponses, sur demande",
+        "en": "Your responses, on request"
+      },
+      "icon": "read",
       "fr": "Il ne lit vos réponses que si vous le demandez.",
       "en": "It only reads your responses when you ask."
     }

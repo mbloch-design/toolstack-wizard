@@ -33,14 +33,29 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Vous confirmez avant",
+        "en": "You confirm first"
+      },
+      "icon": "confirm",
       "fr": "Votre assistant demande votre accord au premier lancement d'une action Zapier.",
       "en": "Your assistant asks for your approval the first time a Zapier action runs."
     },
     {
+      "title": {
+        "fr": "Vous fixez les actions",
+        "en": "You set the actions"
+      },
+      "icon": "limit",
       "fr": "En mode géré, sur mcp.zapier.com, vous fixez la liste exacte des actions, sans que l'assistant puisse en ajouter.",
       "en": "In managed mode, on mcp.zapier.com, you set the exact list of actions, and the assistant cannot add any."
     },
     {
+      "title": {
+        "fr": "Tout est noté",
+        "en": "Everything is logged"
+      },
+      "icon": "log",
       "fr": "Chaque action lancée est notée dans l'onglet Historique de mcp.zapier.com.",
       "en": "Each action run is logged in the History tab of mcp.zapier.com."
     }

@@ -33,6 +33,11 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Vous autorisez vos sites",
+        "en": "You authorise your sites"
+      },
+      "icon": "account",
       "fr": "À la connexion, vous autorisez l'assistant sur vos sites ; une application de liaison s'installe pendant cette étape.",
       "en": "When connecting, you authorise the assistant on your sites; a bridge app installs during this step."
     }

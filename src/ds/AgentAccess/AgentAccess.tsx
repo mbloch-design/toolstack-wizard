@@ -2,7 +2,9 @@ import type { ReactNode } from "react";
 import type { AgentAccess as AgentAccessData } from "@/data/types";
 import type { Advice } from "@/lib/agents";
 import { LinkArrow, linkClass } from "../Button/Button";
-import { actionVerbs, agentVerdict, factWords, joinWords, leadServer, longDate, say, type Lang } from "./agentVerdict";
+import { agentVerdict, factWords, leadServer, longDate, say, type Lang } from "./agentVerdict";
+import { CONSEQUENCE } from "@/lib/agents";
+import Prompt from "../Prompt/Prompt";
 import styles from "./AgentAccess.module.css";
 
 /*
@@ -39,7 +41,7 @@ export default function AgentAccess({ access, lang, toolName, advice, renderShee
       {access.mcp === "official" && advice?.examples?.[0] && (
         <figure className={styles.request}>
           <figcaption className={styles.eyebrow}>{t("Vous pourrez lui demander", "You could ask it")}</figcaption>
-          <blockquote className={styles.requestText}>{t(`« ${advice.examples[0].fr} »`, `“${advice.examples[0].en}”`)}</blockquote>
+          <Prompt text={lang === "en" ? advice.examples[0].en : advice.examples[0].fr} lang={lang} />
         </figure>
       )}
       {access.mcp === "official" && advice?.for && (
@@ -90,7 +92,8 @@ function GatewayFacts({ access, lang }: { access: AgentAccessData; lang: Lang })
   const server = leadServer(access.servers);
   const kinds = KIND_ORDER.filter((kind) => access.capabilities?.some((line) => line.kind === kind));
   const rows: { label: string; value: string; detail?: string }[] = [];
-  if (kinds.length) rows.push({ label: t("Actions", "Actions"), value: raise(joinWords(kinds.map((kind) => say(lang, actionVerbs[kind])), lang)) });
+  // The section's one vocabulary of consequence, gravest first (17/11).
+  if (kinds.length) rows.push({ label: t("Actions", "Actions"), value: [...kinds].reverse().map((kind) => (lang === "en" ? CONSEQUENCE[kind][1] : CONSEQUENCE[kind][0])).join(" · ") });
   const planNote = lang === "en" ? server.planNoteEn ?? server.planNote : server.planNote;
   const plan = say(lang, factWords.plan[server.plan]);
   rows.push({ label: t("Forfait", "Plan"), value: plan, detail: planNote && withoutEcho(planNote, plan) });

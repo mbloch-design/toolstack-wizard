@@ -84,7 +84,7 @@ export const Filtres: Story = {
     const fr = globals.lang !== "en";
     const chips = (labels: string[]) => labels.map((label, i) => <Chip key={label} check pressed={i === 0}>{label}</Chip>);
     return <FilterGroups groups={[
-      { label: fr ? "Comment" : "How", chips: chips(fr ? ["En un clic depuis ChatGPT ou Claude", "Peut supprimer ou payer", "En ligne", "Sur l'ordinateur", "Tous les forfaits", "Connexion à votre compte"] : ["One click from ChatGPT or Claude", "Can delete or pay", "Online", "On your computer", "Every plan", "Sign in to your account"]) },
+      { label: fr ? "Comment" : "How", chips: chips(fr ? ["En un clic depuis ChatGPT ou Claude", "Supprime des données ou engage un paiement", "En ligne", "Sur l'ordinateur", "Tous les forfaits", "Connexion à votre compte"] : ["One click from ChatGPT or Claude", "Deletes data or makes a payment", "Online", "On your computer", "Every plan", "Sign in to your account"]) },
       { label: fr ? "Avec quel assistant" : "With which assistant", chips: chips(["Claude", "ChatGPT", "Gemini", "Copilot"]) },
     ]} />;
   },

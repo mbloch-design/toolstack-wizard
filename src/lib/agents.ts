@@ -17,7 +17,7 @@ export interface McpSheet {
   /** ToolTrim's words (S1 bis): example requests, for whom it is and is not. */
   examples?: Pair[]; for?: Pair; not_for?: Pair;
   /** Gestures to stay in control, the plan in plain words, first requests, what to check when it fails (vendor docs). */
-  control?: Pair[]; plan_words?: { common: Pair; advanced?: Pair };
+  control?: { title: Pair; icon: "account" | "admin" | "cut" | "confirm" | "limit" | "read" | "cost" | "log"; fr: string; en: string }[]; plan_words?: { common: Pair; advanced?: Pair };
   first_requests?: { read: Pair[]; write?: { ask: Pair; check: Pair } }; troubleshoot?: Pair[];
   transport?: "remote" | "local"; auth?: ("oauth" | "key" | "none")[]; access?: "read" | "read_write" | "docs_only";
   plan: "all" | "paid" | "specific" | "unknown"; plan_note?: Pair;
@@ -51,8 +51,15 @@ export interface SkillCard {
 }
 
 export type Lang = "fr" | "en";
+/**
+ * French typography for everything the section renders: a non-breaking space inside « » and before : ; ? !, so a
+ * guillemet or a colon never ends up alone at a line's start or end (17/11). English text is left as it is.
+ */
+export const typo = (text: string) => text
+  .replace(/« /g, "«\u00a0").replace(/ »/g, "\u00a0»")
+  .replace(/ ([:;?!])/g, "\u00a0$1");
 export const say = (lang: Lang, pair: Pair | readonly [string, string]) =>
-  Array.isArray(pair) ? (lang === "en" ? pair[1] : pair[0]) : lang === "en" ? (pair as Pair).en : (pair as Pair).fr;
+  typo(Array.isArray(pair) ? (lang === "en" ? pair[1] : pair[0]) : lang === "en" ? (pair as Pair).en : (pair as Pair).fr);
 
 /** Names of the clients the vendors name; anything else is shown as written. */
 const CLIENT_NAMES: Record<string, string> = {
@@ -195,3 +202,17 @@ export function serverName(card: Pick<McpCard, "transport" | "name">, toolName: 
 }
 /** « Par Notion · Officiel ». */
 export const byLine = (publisher: string, lang: Lang) => (lang === "en" ? `By ${publisher} · Official` : `Par ${publisher} · Officiel`);
+
+/**
+ * One vocabulary of consequence for the whole section, said from the person's side (Michael, 17/11): it replaces
+ * « Lit / Modifie / Supprime / Envoie / Paie » everywhere (action list, « Garder la main », request cards, hub, gateway).
+ */
+export const CONSEQUENCE: Record<AgentCapabilityKind, readonly [string, string]> = {
+  read: ["Lecture seule", "Read only"],
+  write: ["Modifie vos données", "Edits your data"],
+  send: ["Envoie en votre nom", "Sends in your name"],
+  delete: ["Supprime des données", "Deletes data"],
+  pay: ["Engage un paiement", "Makes a payment"],
+};
+/** Gravest first: what the list and the risk chapter show first. */
+export const CONSEQUENCE_ORDER: AgentCapabilityKind[] = ["delete", "pay", "send", "write", "read"];

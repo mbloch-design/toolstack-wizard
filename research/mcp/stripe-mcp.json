@@ -37,18 +37,38 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Vous choisissez les comptes",
+        "en": "You choose the accounts"
+      },
+      "icon": "account",
       "fr": "À la connexion, vous choisissez les comptes et les environnements, production ou test, avec des droits pour chacun.",
       "en": "When connecting, you pick the accounts and environments, live or test, with rights for each."
     },
     {
+      "title": {
+        "fr": "Vous confirmez les paiements",
+        "en": "You confirm payments"
+      },
+      "icon": "confirm",
       "fr": "Les actions marquées « Confirmation humaine » attendent votre accord dans le Dashboard Stripe, pendant 24 heures.",
       "en": "Actions marked “Human confirmation” wait for your approval in the Stripe Dashboard, for 24 hours."
     },
     {
+      "title": {
+        "fr": "L'administrateur encadre",
+        "en": "The admin sets the frame"
+      },
+      "icon": "admin",
       "fr": "Un administrateur active ou coupe l'accès pour toute l'équipe dans les réglages du Dashboard, rubrique accès MCP et CLI.",
       "en": "An admin turns access on or off for the whole team in the Dashboard settings, under MCP and CLI access."
     },
     {
+      "title": {
+        "fr": "Vous coupez quand vous voulez",
+        "en": "You cut whenever you want"
+      },
+      "icon": "cut",
       "fr": "Pour retirer l'accès : réglages de votre profil, « Sessions OAuth », puis « Révoquer l'accès ».",
       "en": "To remove access: your profile settings, “OAuth sessions”, then “Revoke access”."
     }

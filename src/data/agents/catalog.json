@@ -35,6 +35,11 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Chaque demande a un coût",
+            "en": "Each request has a cost"
+          },
+          "icon": "cost",
           "fr": "Chaque demande consomme au moins 50 unités d'API, partagées avec l'API Ahrefs : demandez des résultats courts.",
           "en": "Each request uses at least 50 API units, shared with the Ahrefs API: ask for short results."
         }
@@ -203,18 +208,38 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Vous choisissez ce qu'il voit",
+            "en": "You choose what it sees"
+          },
+          "icon": "account",
           "fr": "À la connexion, vous choisissez exactement les bases, applications et espaces qu'il voit.",
           "en": "When connecting, you pick exactly the bases, apps and workspaces it sees."
         },
         {
+          "title": {
+            "fr": "Lecture seule possible",
+            "en": "Read-only possible"
+          },
+          "icon": "read",
           "fr": "Pour qu'il ne fasse que lire, n'accordez que les autorisations de lecture.",
           "en": "For reading only, grant only the read permissions."
         },
         {
+          "title": {
+            "fr": "Vous ajustez ou coupez",
+            "en": "You adjust or cut"
+          },
+          "icon": "cut",
           "fr": "Pour ajouter ou retirer des bases, ou couper l'accès : votre profil, Intégrations, puis Intégrations tierces.",
           "en": "To add or remove bases, or cut access: your profile, Integrations, then Third-party integrations."
         },
         {
+          "title": {
+            "fr": "L'administrateur autorise",
+            "en": "The admin allows"
+          },
+          "icon": "admin",
           "fr": "En Enterprise, l'administrateur autorise l'intégration dans le panneau d'administration, rubrique Intégrations et développement.",
           "en": "On Enterprise, the admin allows the integration in the Admin panel, under Integrations and development."
         }
@@ -668,14 +693,29 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Tout le compte",
+            "en": "The whole account"
+          },
+          "icon": "account",
           "fr": "La connexion couvre tout votre compte Buffer, sans choix d'organisation.",
           "en": "The connection covers your whole Buffer account, with no organisation choice."
         },
         {
+          "title": {
+            "fr": "Vous confirmez avant",
+            "en": "You confirm first"
+          },
+          "icon": "confirm",
           "fr": "Laissez les demandes de confirmation de votre assistant : la plupart attendent votre accord avant de publier, modifier ou supprimer.",
           "en": "Keep your assistant's confirmation prompts: most wait for your approval before posting, editing or deleting."
         },
         {
+          "title": {
+            "fr": "Vous coupez quand vous voulez",
+            "en": "You cut whenever you want"
+          },
+          "icon": "cut",
           "fr": "Pour couper l'accès : Réglages, puis API, dans Buffer.",
           "en": "To cut access: Settings, then API, in Buffer."
         }
@@ -968,6 +1008,11 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Activé conversation par conversation",
+            "en": "Turned on per conversation"
+          },
+          "icon": "confirm",
           "fr": "Dans Claude, activez Calendly dans chaque conversation où vous voulez l'utiliser.",
           "en": "In Claude, turn Calendly on in each conversation where you want it."
         }
@@ -1381,6 +1426,11 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Vos droits, pas plus",
+            "en": "Your rights, no more"
+          },
+          "icon": "account",
           "fr": "L'assistant n'agit que sur les designs et fichiers que votre compte peut voir ou modifier.",
           "en": "The assistant only acts on the designs and files your account can see or edit."
         }
@@ -2408,6 +2458,11 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Seulement application ouverte",
+            "en": "Only while the app is open"
+          },
+          "icon": "limit",
           "fr": "Il ne fonctionne que tant que l'application Figma est ouverte et le serveur activé dans Dev Mode.",
           "en": "It only works while the Figma app is open and the server is on in Dev Mode."
         }
@@ -2621,6 +2676,11 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Vos fichiers, pas plus",
+            "en": "Your files, no more"
+          },
+          "icon": "account",
           "fr": "Il n'accède qu'aux fichiers Figma auxquels votre compte a déjà accès.",
           "en": "It only reaches the Figma files your account already has access to."
         }
@@ -3061,10 +3121,20 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Lecture seule",
+            "en": "Read only"
+          },
+          "icon": "read",
           "fr": "Il ne fait que lire : l'accès demandé est la lecture seule de vos données Analytics.",
           "en": "It only reads: the access requested is read-only on your Analytics data."
         },
         {
+          "title": {
+            "fr": "Vos propriétés, pas plus",
+            "en": "Your properties, no more"
+          },
+          "icon": "account",
           "fr": "Il ne voit que les propriétés où votre compte a au moins le rôle Lecteur.",
           "en": "It only sees the properties where your account has at least the Viewer role."
         }
@@ -3262,14 +3332,29 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Vous choisissez le compte",
+            "en": "You choose the account"
+          },
+          "icon": "account",
           "fr": "À la connexion, vous choisissez le compte HubSpot et accordez les permissions.",
           "en": "When connecting, you pick the HubSpot account and grant the permissions."
         },
         {
+          "title": {
+            "fr": "Vous confirmez avant",
+            "en": "You confirm first"
+          },
+          "icon": "confirm",
           "fr": "Avant de créer ou de modifier une fiche du CRM, il demande votre confirmation.",
           "en": "Before creating or editing a CRM record, it asks for your confirmation."
         },
         {
+          "title": {
+            "fr": "Vos fiches, pas plus",
+            "en": "Your records, no more"
+          },
+          "icon": "limit",
           "fr": "Il ne voit que les fiches auxquelles votre utilisateur a accès.",
           "en": "It only sees the records your user can access."
         }
@@ -3640,14 +3725,29 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Vous choisissez les autorisations",
+            "en": "You choose the permissions"
+          },
+          "icon": "account",
           "fr": "À la connexion, vous choisissez les autorisations : lancer vos scénarios, ou aussi les gérer.",
           "en": "When connecting, you choose the permissions: run your scenarios, or manage them too."
         },
         {
+          "title": {
+            "fr": "Une seule organisation",
+            "en": "A single organisation"
+          },
+          "icon": "limit",
           "fr": "Avec la connexion au compte, vous pouvez limiter l'accès à une seule organisation Make.",
           "en": "With account sign-in, you can limit access to a single Make organisation."
         },
         {
+          "title": {
+            "fr": "Seulement vos scénarios prêts",
+            "en": "Only your ready scenarios"
+          },
+          "icon": "limit",
           "fr": "Seuls vos scénarios actifs et lançables à la demande deviennent des actions.",
           "en": "Only your active, on-demand scenarios become actions."
         }
@@ -3860,14 +3960,29 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Vous choisissez l'équipe",
+            "en": "You choose the team"
+          },
+          "icon": "account",
           "fr": "À la connexion, vous choisissez l'équipe : il ne travaille que dans celle-là.",
           "en": "When connecting, you pick the team: it only works in that one."
         },
         {
+          "title": {
+            "fr": "Les droits de chaque tableau",
+            "en": "Each board's rights"
+          },
+          "icon": "limit",
           "fr": "Il respecte les droits de chaque tableau, vérifiés à chaque demande.",
           "en": "It follows each board's rights, checked on every request."
         },
         {
+          "title": {
+            "fr": "L'administrateur encadre",
+            "en": "The admin sets the frame"
+          },
+          "icon": "admin",
           "fr": "En Enterprise, l'administrateur l'ouvre à toute l'organisation ou à certaines équipes : Paramètres d'administration, Apps et intégrations, MCP.",
           "en": "On Enterprise, the admin opens it to the whole organisation or some teams: Admin settings, Apps and integrations, MCP."
         }
@@ -4379,16 +4494,31 @@
       },
       "control": [
         {
-          "fr": "À la connexion, vous choisissez l'espace de travail : l'assistant n'y voit que ce que votre compte voit.",
-          "en": "When connecting, you pick the workspace: the assistant only sees what your account sees."
+          "title": {
+            "fr": "Vous choisissez l'espace",
+            "en": "You choose the workspace"
+          },
+          "icon": "account",
+          "fr": "à la connexion ; l'assistant n'y voit que ce que votre compte voit.",
+          "en": "when connecting; the assistant only sees what your account sees."
         },
         {
-          "fr": "Les propriétaires de l'espace encadrent l'accès dans les contrôles d'administration de Notion.",
-          "en": "Workspace owners manage access in Notion's admin controls."
+          "title": {
+            "fr": "L'administrateur encadre",
+            "en": "The admin sets the frame"
+          },
+          "icon": "admin",
+          "fr": "dans les contrôles d'administration de Notion.",
+          "en": "in Notion's admin controls."
         },
         {
-          "fr": "Pour couper l'accès, choisissez « Déconnecter » ou « Effacer l'authentification » dans les réglages de votre assistant.",
-          "en": "To cut access, choose “Disconnect” or “Clear authentication” in your assistant's settings."
+          "title": {
+            "fr": "Vous coupez quand vous voulez",
+            "en": "You cut whenever you want"
+          },
+          "icon": "cut",
+          "fr": "« Déconnecter » ou « Effacer l'authentification » dans les réglages de l'assistant.",
+          "en": "“Disconnect” or “Clear authentication” in the assistant's settings."
         }
       ],
       "plan_words": {
@@ -5032,18 +5162,38 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Vous choisissez la boutique",
+            "en": "You choose the store"
+          },
+          "icon": "account",
           "fr": "À la connexion, vous choisissez la boutique, et vous pouvez refuser la demande.",
           "en": "When connecting, you pick the store, and you can decline the request."
         },
         {
+          "title": {
+            "fr": "Vous réglez les accès",
+            "en": "You set the access"
+          },
+          "icon": "admin",
           "fr": "Vous réglez le niveau d'accès de chaque membre dans l'administration Shopify ; certaines autorisations sont en lecture seule.",
           "en": "You set each member's access level in the Shopify admin; some permissions are read-only."
         },
         {
+          "title": {
+            "fr": "Ce qu'il ne fera jamais",
+            "en": "What it never does"
+          },
+          "icon": "limit",
           "fr": "Il ne peut ni rembourser, ni annuler ou encaisser une commande, ni toucher au forfait, aux paiements, aux taxes ou aux domaines.",
           "en": "It cannot refund, cancel or capture an order, nor touch your plan, payments, taxes or domains."
         },
         {
+          "title": {
+            "fr": "Vous coupez quand vous voulez",
+            "en": "You cut whenever you want"
+          },
+          "icon": "cut",
           "fr": "Pour couper l'accès : désinstallez l'intégration dans l'administration Shopify.",
           "en": "To cut access: uninstall the integration in the Shopify admin."
         }
@@ -5495,10 +5645,20 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Vous accordez l'accès",
+            "en": "You grant access"
+          },
+          "icon": "account",
           "fr": "À la connexion, vous accordez l'accès ; les canaux privés ne sont lus qu'avec votre accord.",
           "en": "When connecting, you grant access; private channels are only read with your consent."
         },
         {
+          "title": {
+            "fr": "L'administrateur encadre",
+            "en": "The admin sets the frame"
+          },
+          "icon": "admin",
           "fr": "Les administrateurs de l'espace approuvent et gèrent les assistants branchés, et suivent leur activité dans les journaux d'audit.",
           "en": "Workspace admins approve and manage connected assistants, and follow their activity in the audit logs."
         }
@@ -5661,18 +5821,38 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Vous choisissez les comptes",
+            "en": "You choose the accounts"
+          },
+          "icon": "account",
           "fr": "À la connexion, vous choisissez les comptes et les environnements, production ou test, avec des droits pour chacun.",
           "en": "When connecting, you pick the accounts and environments, live or test, with rights for each."
         },
         {
+          "title": {
+            "fr": "Vous confirmez les paiements",
+            "en": "You confirm payments"
+          },
+          "icon": "confirm",
           "fr": "Les actions marquées « Confirmation humaine » attendent votre accord dans le Dashboard Stripe, pendant 24 heures.",
           "en": "Actions marked “Human confirmation” wait for your approval in the Stripe Dashboard, for 24 hours."
         },
         {
+          "title": {
+            "fr": "L'administrateur encadre",
+            "en": "The admin sets the frame"
+          },
+          "icon": "admin",
           "fr": "Un administrateur active ou coupe l'accès pour toute l'équipe dans les réglages du Dashboard, rubrique accès MCP et CLI.",
           "en": "An admin turns access on or off for the whole team in the Dashboard settings, under MCP and CLI access."
         },
         {
+          "title": {
+            "fr": "Vous coupez quand vous voulez",
+            "en": "You cut whenever you want"
+          },
+          "icon": "cut",
           "fr": "Pour retirer l'accès : réglages de votre profil, « Sessions OAuth », puis « Révoquer l'accès ».",
           "en": "To remove access: your profile settings, “OAuth sessions”, then “Revoke access”."
         }
@@ -5985,14 +6165,29 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Aucune suppression",
+            "en": "No deleting"
+          },
+          "icon": "limit",
           "fr": "Il ne peut supprimer ni un formulaire ni une réponse.",
           "en": "It cannot delete a form or a response."
         },
         {
+          "title": {
+            "fr": "Brouillon jusqu'à votre accord",
+            "en": "Draft until you say so"
+          },
+          "icon": "confirm",
           "fr": "Un nouveau formulaire reste un brouillon privé tant que vous ne demandez pas de le publier.",
           "en": "A new form stays a private draft until you ask to publish it."
         },
         {
+          "title": {
+            "fr": "Vos réponses, sur demande",
+            "en": "Your responses, on request"
+          },
+          "icon": "read",
           "fr": "Il ne lit vos réponses que si vous le demandez.",
           "en": "It only reads your responses when you ask."
         }
@@ -6179,6 +6374,11 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Vous autorisez vos sites",
+            "en": "You authorise your sites"
+          },
+          "icon": "account",
           "fr": "À la connexion, vous autorisez l'assistant sur vos sites ; une application de liaison s'installe pendant cette étape.",
           "en": "When connecting, you authorise the assistant on your sites; a bridge app installs during this step."
         }
@@ -6611,14 +6811,29 @@
       },
       "control": [
         {
+          "title": {
+            "fr": "Vous confirmez avant",
+            "en": "You confirm first"
+          },
+          "icon": "confirm",
           "fr": "Votre assistant demande votre accord au premier lancement d'une action Zapier.",
           "en": "Your assistant asks for your approval the first time a Zapier action runs."
         },
         {
+          "title": {
+            "fr": "Vous fixez les actions",
+            "en": "You set the actions"
+          },
+          "icon": "limit",
           "fr": "En mode géré, sur mcp.zapier.com, vous fixez la liste exacte des actions, sans que l'assistant puisse en ajouter.",
           "en": "In managed mode, on mcp.zapier.com, you set the exact list of actions, and the assistant cannot add any."
         },
         {
+          "title": {
+            "fr": "Tout est noté",
+            "en": "Everything is logged"
+          },
+          "icon": "log",
           "fr": "Chaque action lancée est notée dans l'onglet Historique de mcp.zapier.com.",
           "en": "Each action run is logged in the History tab of mcp.zapier.com."
         }

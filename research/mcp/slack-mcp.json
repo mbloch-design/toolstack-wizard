@@ -37,10 +37,20 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Vous accordez l'accès",
+        "en": "You grant access"
+      },
+      "icon": "account",
       "fr": "À la connexion, vous accordez l'accès ; les canaux privés ne sont lus qu'avec votre accord.",
       "en": "When connecting, you grant access; private channels are only read with your consent."
     },
     {
+      "title": {
+        "fr": "L'administrateur encadre",
+        "en": "The admin sets the frame"
+      },
+      "icon": "admin",
       "fr": "Les administrateurs de l'espace approuvent et gèrent les assistants branchés, et suivent leur activité dans les journaux d'audit.",
       "en": "Workspace admins approve and manage connected assistants, and follow their activity in the audit logs."
     }

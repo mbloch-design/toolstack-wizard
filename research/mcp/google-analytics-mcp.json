@@ -37,10 +37,20 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Lecture seule",
+        "en": "Read only"
+      },
+      "icon": "read",
       "fr": "Il ne fait que lire : l'accès demandé est la lecture seule de vos données Analytics.",
       "en": "It only reads: the access requested is read-only on your Analytics data."
     },
     {
+      "title": {
+        "fr": "Vos propriétés, pas plus",
+        "en": "Your properties, no more"
+      },
+      "icon": "account",
       "fr": "Il ne voit que les propriétés où votre compte a au moins le rôle Lecteur.",
       "en": "It only sees the properties where your account has at least the Viewer role."
     }

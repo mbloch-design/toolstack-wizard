@@ -13,7 +13,7 @@
  * Not readable that day: Gemini's help on adding a server, so nothing is said about it. No prefilled-question link
  * is documented by ChatGPT or Claude: the sheet does not offer « open in ChatGPT / Claude with a question ».
  */
-import type { InstallRow, Lang, McpSheet, Pair } from "@/lib/agents";
+import { typo, type InstallRow, type Lang, type McpSheet, type Pair } from "@/lib/agents";
 
 export type ClientId = "claude" | "chatgpt" | "gemini" | "copilot" | "claude-code" | "cursor" | "vs-code" | "codex" | "any";
 export type ClientGroup = "assistant" | "dev" | "other";
@@ -128,10 +128,13 @@ export const clientGroup = (client: ClientId) => CLIENTS[client].group;
 export const clientLabel = (client: ClientId, lang: Lang) => (lang === "en" ? CLIENTS[client].name.en : CLIENTS[client].name.fr);
 
 /** One step of the card: words, and at most one action. */
-export type PlugAction =
-  | { kind: "open"; href: string; label: string }
-  | { kind: "copy"; value: string; label: string; type: InstallRow["type"] };
-export interface PlugStep { text: string; action?: PlugAction }
+export type CopyAction = { kind: "copy"; value: string; label: string; type: InstallRow["type"] };
+export type PlugAction = { kind: "open"; href: string; label: string } | CopyAction;
+/**
+ * A step: its words, its own action (the step holds its action, 17/11), a secondary copy under a direct link
+ * (« ou copier la configuration »), and a request to copy for the assistant (« Vérifiez en lui demandant : »).
+ */
+export interface PlugStep { text: string; action?: PlugAction; secondary?: CopyAction; prompt?: Pair }
 
 const PRIMARY: InstallRow["type"][] = ["url", "command", "config", "steps"];
 const isAddress = (value: string) => /^https:\/\/[^\s]+$/.test(value) && /mcp|sse/i.test(value);
@@ -165,7 +168,12 @@ export function plugCard(sheet: McpSheet, client: ClientId, toolName: string, la
   } else if (row) {
     const label = { url: t("Copier l'adresse", "Copy the address"), command: t("Copier la commande", "Copy the command"), config: t("Copier la configuration", "Copy the configuration"), steps: "" }[row.type];
     const what = { url: t("l'adresse du serveur", "the server address"), command: t("la commande", "the command"), config: t("la configuration", "the configuration"), steps: "" }[row.type];
-    steps.push({ text: t(`Copiez ${what}.`, `Copy ${what}.`), action: { kind: "copy", value: row.value, label, type: row.type } });
+    const copy: CopyAction = { kind: "copy", value: row.value, label, type: row.type };
+    // A direct install link documented by the client (VS Code, Cursor) is the step's main action; the copy goes under it.
+    const direct = client === "vs-code" ? vsCodeInstallLink(sheet) : client === "cursor" ? cursorInstallLink(sheet) : null;
+    steps.push(direct
+      ? { text: t(`Ouvrez le lien dans ${who} et confirmez l'installation de ${toolName}.`, `Open the link in ${who} and confirm installing ${toolName}.`), action: { kind: "open", href: direct, label: t(`Ouvrir dans ${who}`, `Open in ${who}`) }, secondary: copy }
+      : { text: t(`Copiez ${what}.`, `Copy ${what}.`), action: copy });
     const where = paste(row.type);
     const docs = CLIENTS[client].source;
     steps.push(where ? { text: say(where, lang) }
@@ -189,17 +197,19 @@ export function plugCard(sheet: McpSheet, client: ClientId, toolName: string, la
     }
   }
 
-  // 4. Sign in, then check with a request of the sheet: two steps when the card has room, one when it would pass four.
+  // 4. Sign in, then check with a request of the sheet, which the reader can copy (17/11).
   const example = sheet.examples?.[0];
-  const check = example ? t(`Vérifiez : demandez-lui « ${example.fr} »`, `Check it: ask \u201c${example.en}\u201d`) : "";
   const auth = sheet.auth ?? [];
   const sign = auth.includes("oauth")
     ? t(`Connectez votre compte ${toolName} et lisez les accès demandés.`, `Connect your ${toolName} account and read the access requested.`)
     : auth.includes("key") ? t(`Créez une clé d'accès dans ${toolName} et donnez-la quand elle est demandée.`, `Create an access key in ${toolName} and give it when asked.`) : "";
-  const tail = [sign, check].filter(Boolean);
-  if (steps.length + tail.length <= 4) steps.push(...tail.map((text) => ({ text })));
-  else if (tail.length) steps.push({ text: tail.join(" ") });
-  return steps.slice(0, 4);
+  const check: PlugStep | null = example ? { text: t("Vérifiez en lui demandant :", "Check it by asking:"), prompt: example } : null;
+  if (sign && check && steps.length + 2 > 4) steps.push({ ...check, text: `${sign} ${check.text}` });
+  else {
+    if (sign) steps.push({ text: sign });
+    if (check) steps.push(check);
+  }
+  return steps.slice(0, 4).map((step) => ({ ...step, text: typo(step.text) }));
 }
 
 const say = (pair: Pair, lang: Lang) => (lang === "en" ? pair.en : pair.fr);

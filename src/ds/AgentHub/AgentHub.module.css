@@ -10,6 +10,8 @@
 
 .advice {
   composes: tile from "../atoms.module.css";
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
   gap: var(--tt-gap-group);
 }
 
@@ -259,6 +261,8 @@
 /* No stack yet: the sentence and its button side by side on a tile, never an orphan paragraph. */
 .invite {
   composes: tile from "../atoms.module.css";
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
   display: flex;
   flex-wrap: wrap;
   gap: var(--tt-space-4) var(--tt-space-6);
@@ -294,6 +298,8 @@
 
 .point {
   composes: tile from "../atoms.module.css";
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
   gap: var(--tt-space-2);
 }
 
@@ -410,4 +416,28 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--tt-space-2);
+}
+
+/* The sheet's row of three (step 1 bis): the cards keep their white and resting shadow, with the tile's radius and 24 of padding. */
+.cards[data-flat] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--tt-gap-item);
+}
+
+@container (max-width: 640px) {
+  .cards[data-flat] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.cards[data-flat] .cardSlot {
+  border-radius: var(--tt-r-tile);
+}
+
+.cards[data-flat] .agentCard {
+  padding: var(--tt-space-6);
+}
+
+.cards[data-flat] .cardAction {
+  padding: 0 var(--tt-space-6) var(--tt-space-6);
 }

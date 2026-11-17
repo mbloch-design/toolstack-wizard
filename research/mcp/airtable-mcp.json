@@ -37,18 +37,38 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Vous choisissez ce qu'il voit",
+        "en": "You choose what it sees"
+      },
+      "icon": "account",
       "fr": "À la connexion, vous choisissez exactement les bases, applications et espaces qu'il voit.",
       "en": "When connecting, you pick exactly the bases, apps and workspaces it sees."
     },
     {
+      "title": {
+        "fr": "Lecture seule possible",
+        "en": "Read-only possible"
+      },
+      "icon": "read",
       "fr": "Pour qu'il ne fasse que lire, n'accordez que les autorisations de lecture.",
       "en": "For reading only, grant only the read permissions."
     },
     {
+      "title": {
+        "fr": "Vous ajustez ou coupez",
+        "en": "You adjust or cut"
+      },
+      "icon": "cut",
       "fr": "Pour ajouter ou retirer des bases, ou couper l'accès : votre profil, Intégrations, puis Intégrations tierces.",
       "en": "To add or remove bases, or cut access: your profile, Integrations, then Third-party integrations."
     },
     {
+      "title": {
+        "fr": "L'administrateur autorise",
+        "en": "The admin allows"
+      },
+      "icon": "admin",
       "fr": "En Enterprise, l'administrateur autorise l'intégration dans le panneau d'administration, rubrique Intégrations et développement.",
       "en": "On Enterprise, the admin allows the integration in the Admin panel, under Integrations and development."
     }

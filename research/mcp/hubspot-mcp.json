@@ -37,14 +37,29 @@
   },
   "control": [
     {
+      "title": {
+        "fr": "Vous choisissez le compte",
+        "en": "You choose the account"
+      },
+      "icon": "account",
       "fr": "À la connexion, vous choisissez le compte HubSpot et accordez les permissions.",
       "en": "When connecting, you pick the HubSpot account and grant the permissions."
     },
     {
+      "title": {
+        "fr": "Vous confirmez avant",
+        "en": "You confirm first"
+      },
+      "icon": "confirm",
       "fr": "Avant de créer ou de modifier une fiche du CRM, il demande votre confirmation.",
       "en": "Before creating or editing a CRM record, it asks for your confirmation."
     },
     {
+      "title": {
+        "fr": "Vos fiches, pas plus",
+        "en": "Your records, no more"
+      },
+      "icon": "limit",
       "fr": "Il ne voit que les fiches auxquelles votre utilisateur a accès.",
       "en": "It only sees the records your user can access."
     }
