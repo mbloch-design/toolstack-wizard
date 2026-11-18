@@ -9,8 +9,8 @@ const ASSISTANTS: HubAssistant[] = ["claude", "chatgpt", "gemini", "copilot", "o
 
 describe("the hub's report (step 4)", () => {
   it("says the stack in one sentence for Claude", () => {
-    expect(reportVerdict(reportRows(STACK, "claude"), "claude", "fr")).toBe("4 de vos 9 outils se branchent à Claude, dont 3 en un clic. 1 peut engager un paiement.");
-    expect(reportVerdict(reportRows(STACK, "claude"), "claude", "en")).toBe("4 of your 9 tools plug into Claude, 3 of them in one click. 1 can make a payment.");
+    expect(reportVerdict(reportRows(STACK, "claude"), "claude", "fr")).toBe("4 de vos 8 outils se branchent à Claude, dont 3 en un clic. 1 peut engager un paiement. 1 outil pas encore vérifié.");
+    expect(reportVerdict(reportRows(STACK, "claude"), "claude", "en")).toBe("4 of your 8 tools plug into Claude, 3 of them in one click. 1 can make a payment. 1 tool not checked yet.");
   });
 
   it("agrees with its rows, for every assistant: the counts in the sentence are the rows' counts", () => {
@@ -18,7 +18,8 @@ describe("the hub's report (step 4)", () => {
       const rows = reportRows(STACK, assistant);
       const sentence = reportVerdict(rows, assistant, "fr");
       const plugged = rows.filter(isPlugged);
-      if (plugged.length) expect(sentence).toMatch(new RegExp(`^${plugged.length} de vos ${rows.length} outils`));
+      const checked = rows.filter((row) => row.status !== "unchecked").length;
+      if (plugged.length) expect(sentence).toMatch(new RegExp(`^${plugged.length} de vos ${checked} outils`));
       else expect(sentence).toMatch(/^Aucun de vos/);
       const oneClick = rows.filter((row) => row.status === "one_click").length;
       if (oneClick && oneClick < plugged.length) expect(sentence).toContain(`dont ${oneClick} en un clic`);
@@ -49,7 +50,12 @@ describe("the hub's report (step 4)", () => {
     expect(verdictNbsp(reportRows(STACK, "claude"), "claude", "fr")).toContain("1\u00a0peut engager");
   });
 
+  it("never counts a tool not checked yet, and says how many are left aside", () => {
+    expect(reportVerdict(reportRows(["notion", "trello", "asana"], "claude"), "claude", "fr")).toBe("Votre outil se branche à Claude, en un clic. 1 peut supprimer des données. 2 outils pas encore vérifiés.");
+    expect(reportVerdict(reportRows(["trello"], "claude"), "claude", "fr")).toBe("Aucun de vos outils n'est encore vérifié.");
+  });
+
   it("says when nothing plugs in", () => {
-    expect(reportVerdict(reportRows(["hotjar", "trello"], "claude"), "claude", "fr")).toBe("Aucun de vos 2 outils ne se branche encore à Claude.");
+    expect(reportVerdict(reportRows(["hotjar", "trello"], "claude"), "claude", "fr")).toBe("Votre outil ne se branche pas encore à Claude. 1 outil pas encore vérifié.");
   });
 });

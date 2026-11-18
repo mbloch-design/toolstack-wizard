@@ -10,6 +10,7 @@ import { useStackAccount } from "@/hooks/useStackAccount";
 import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useSearchParams } from "react-router-dom";
+import { normalizeToolCartState } from "@/lib/stackState";
 import { Link } from "@/lib/routerLinks";
 import { Plus, Check, Pencil, LayoutGrid, List, Compass } from "@/lib/icons";
 import { toast } from "sonner";
@@ -60,6 +61,9 @@ const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u03
 /** What the page knows about one tool's cost. */
 type MapToolInfo = { cost: string; share: number; kind: "paid" | "free" | "unknown"; pending: boolean };
 
+
+/** The review stack (?demo=stack9, development only): every assistant status for Claude. */
+const DEMO_STACK9 = ["notion", "stripe", "figma", "slack", "google-analytics", "canva", "hotjar", "milanote", "trello"];
 export default function CartPage() {
   const { t, lang, prefix } = useLang();
   const account = useStackAccount();
@@ -69,7 +73,7 @@ export default function CartPage() {
   if (account.user && ["synced", "syncing", "unsaved"].includes(account.syncStatus)) arrival.current.settled = true;
   const { tools, loading } = useToolSummaries();
   const { categories } = useCategories();
-  const { state, persistenceStatus, pinTool, unpinTool, restoreTool, requiresAccount } = useStackPins();
+  const { state, persistenceStatus, pinTool, unpinTool, restoreTool, requiresAccount, replaceState } = useStackPins();
   const { dailyRate } = useStackTrade();
   const inventoryHeadingRef = useRef<HTMLHeadingElement>(null);
   const { addToStack: sharedAddToStack, flyingSlug } = useAddToStack();
@@ -81,6 +85,13 @@ export default function CartPage() {
     } });
   };
   const [params, setParams] = useSearchParams();
+  // Development only (18/11/2026): ?demo=stack9 loads a stack of nine tools with every assistant status (one click,
+  // to set up, not documented, no official server, not checked) through the stack's own state, for reviews.
+  useEffect(() => {
+    if (!import.meta.env.DEV || params.get("demo") !== "stack9") return;
+    replaceState(normalizeToolCartState({ pinnedToolSlugs: DEMO_STACK9 }));
+    const next = new URLSearchParams(params); next.delete("demo"); setParams(next, { replace: true });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const [domainFilter, setDomainFilter] = useState("all");
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -507,7 +518,8 @@ export default function CartPage() {
           covered={mapTerritories.filter((territory) => territory.tools.length > 0).map((territory) => territory.id)}
           territories={mapTerritories.map((territory) => ({ id: territory.id, tools: territory.tools }))}
           gaps={selectedTools.some((tool) => stackPlacement(tool, categories, lang).id === "finance") ? [] : [{ id: "finance", label: t("facturer", "invoice"), href: `${prefix}/category/finance-facturation` }]}
-          exploreHref={state.toolEntries.some((entry) => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? getExplorerHref(prefix, { type: "stack" }) : undefined} />;
+          exploreHref={state.toolEntries.some((entry) => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? getExplorerHref(prefix, { type: "stack" }) : undefined}
+          agentsHref={`${prefix}/agents#bilan`} />;
       })()}
       {/* Where the stack is saved: this browser, or the account. */}
       <StackAccountPanel empty={false} placement="notice" />

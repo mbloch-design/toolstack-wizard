@@ -70,7 +70,10 @@ const agrees = async (root: HTMLElement, assistant: HubAssistant, stack: string[
   const rows = reportRows(stack, assistant);
   const title = root.querySelector("[data-chapter=report] h2")!.textContent!.replace(/\s/g, " ");
   const plugged = rows.filter(isPlugged).length;
-  await expect(title).toContain(plugged ? `${plugged} de vos ${stack.length} outils` : `Aucun de vos ${stack.length} outils`);
+  const checked = rows.filter((row) => row.status !== "unchecked").length;
+  await expect(title).toContain(plugged ? `${plugged} de vos ${checked} outils` : `Aucun de vos ${checked} outils`);
+  // A tool not checked yet is not counted, and the sentence says so.
+  await expect(title).toContain(`${rows.length - checked} outil pas encore vérifié`);
   const shown = [...root.querySelectorAll<HTMLElement>("[data-status]")];
   await expect(shown.filter((row) => ["one_click", "configure"].includes(row.dataset.status!)).length).toBe(plugged);
   await expect(shown.map((row) => row.dataset.status)).toEqual(rows.map((row) => row.status));
@@ -89,12 +92,12 @@ export const SansStack: Story = {
   },
 };
 
-/** Nine tools, every status, with Claude: « 4 de vos 9 outils se branchent à Claude, dont 3 en un clic. 1 peut engager un paiement. » */
+/** Nine tools, every status, with Claude: « 4 de vos 8 outils se branchent à Claude, dont 3 en un clic. 1 peut engager un paiement. 1 outil pas encore vérifié. » */
 export const StackDeNeuf: Story = {
   render: (_args, { globals }) => <Hub stack={STACK} start="claude" lang={globals.lang} />,
   play: async ({ canvas, canvasElement, globals }) => {
     const fr = globals.lang !== "en";
-    if (fr) await expect(canvas.getByRole("heading", { level: 2, name: /^4\sde vos 9\soutils se branchent à Claude, dont 3\sen un clic\. 1\speut engager un paiement\.$/ })).toBeVisible();
+    if (fr) await expect(canvas.getByRole("heading", { level: 2, name: /^4\sde vos 8\soutils se branchent à Claude, dont 3\sen un clic\. 1\speut engager un paiement\. 1\soutil pas encore vérifié\.$/ })).toBeVisible();
     if (fr) await agrees(canvasElement, "claude", STACK);
     // A request to copy and « Brancher → » on a plugged row; a report link on the unchecked one.
     const stripe = within(canvasElement.querySelector<HTMLElement>("[data-status=one_click]")!);

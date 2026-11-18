@@ -71,15 +71,22 @@ const CONSEQUENCE_VERB: Record<AgentCapabilityKind, [string, string, string, str
  */
 export function reportVerdict(rows: ReportRow[], assistant: HubAssistant, lang: Lang): string {
   const en = lang === "en";
-  const total = rows.length;
-  const plugged = rows.filter(isPlugged);
-  const oneClick = rows.filter((row) => row.status === "one_click").length;
+  // A tool not checked yet is never counted (step 3, 18/11): the sentence says how many are left aside.
+  const checked = rows.filter((row) => row.status !== "unchecked");
+  const waiting = rows.length - checked.length;
+  const tail = waiting ? ` ${waiting} ${en ? `tool${waiting > 1 ? "s" : ""} not checked yet` : `outil${waiting > 1 ? "s" : ""} pas encore vérifié${waiting > 1 ? "s" : ""}`}.` : "";
+  // A figure never ends a line apart from its word (« 1 peut engager… »).
+  const tie = (text: string) => typo(text).replace(/(\d) /g, "$1\u00a0");
+  if (!checked.length) return tie(en ? "None of your tools is checked yet." : "Aucun de vos outils n'est encore vérifié.");
+  const total = checked.length;
+  const plugged = checked.filter(isPlugged);
+  const oneClick = checked.filter((row) => row.status === "one_click").length;
   const to = assistant === "other" ? (en ? "your assistant" : "à votre assistant") : en ? ASSISTANT_NAMES[assistant] : `à ${ASSISTANT_NAMES[assistant]}`;
   const of = en ? (total === 1 ? "your tool" : `of your ${total} tools`) : total === 1 ? "votre outil" : `de vos ${total} outils`;
   if (!plugged.length) {
-    return typo(en
+    return tie((en
       ? `${total === 1 ? "Your tool does not plug" : `None of your ${total} tools plugs`} into ${to} yet.`
-      : total === 1 ? `Votre outil ne se branche pas encore ${to}.` : `Aucun de vos ${total} outils ne se branche encore ${to}.`);
+      : total === 1 ? `Votre outil ne se branche pas encore ${to}.` : `Aucun de vos ${total} outils ne se branche encore ${to}.`) + tail);
   }
   const n = plugged.length;
   let first = en
@@ -94,8 +101,7 @@ export function reportVerdict(rows: ReportRow[], assistant: HubAssistant, lang: 
     const [one, many, oneEn, manyEn] = CONSEQUENCE_VERB[gravest];
     second = ` ${count} ${en ? (count === 1 ? oneEn : manyEn) : count === 1 ? one : many}.`;
   }
-  // A figure never ends a line apart from its word (« 1 peut engager… »).
-  return typo(`${first}.${second}`).replace(/(\d) /g, "$1\u00a0");
+  return tie(`${first}.${second}${tail}`);
 }
 
 /**

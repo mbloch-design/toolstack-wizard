@@ -22,6 +22,8 @@ import type { ScoredPair } from "@/lib/stackOverlap";
 import { trackEvent } from "@/lib/analytics";
 import { getExplorerHref } from "@/lib/toolExploration";
 import toolAccents from "@/data/toolAccents.json";
+import { serverFoot, toolStatus } from "@/lib/agentReport";
+import { useAgentAssistant } from "@/hooks/useAgentAssistant";
 
 /**
  * Un outil de Ma stack, ouvert depuis sa carte : une feuille (à droite sur
@@ -57,6 +59,7 @@ interface Props {
 
 export default function StackToolSheet({ editCostRequest, tool, detail, pairs, categories, paid, currency, prefix, lang, onClose, onReturnFocus, onSelect, onRemove, catalog, stackIds }: Props) {
   const en = lang === "en";
+  const [assistant] = useAgentAssistant();
   const [editing, setEditing] = useState<string | null>(null);
   // Each opening starts a fresh draft from what is saved.
   const [opened, setOpened] = useState(0);
@@ -143,6 +146,20 @@ export default function StackToolSheet({ editCostRequest, tool, detail, pairs, c
             {uses.length > 0 && <SheetSection title={en ? "What it covers" : "Ce qu’il couvre"}>
               <TagList items={uses.map((use) => stackDisplayLabel(use, lang))} />
             </SheetSection>}
+
+            {/* With your assistant (step 3, 18/11): where this tool stands for the assistant you chose, the gravest
+                thing it could do, and the way to plug it in. Same words as the hub and the server cards. */}
+            {(() => {
+              const row = toolStatus(slug, assistant);
+              const foot = row.card ? serverFoot(row.card, assistant, lang) : null;
+              const text = foot ? foot.map((fact) => fact.text).join(" · ")
+                : row.status === "none" ? (en ? "No official connection" : "Pas de branchement officiel")
+                : (en ? "Not checked yet" : "Pas encore vérifié");
+              return <SheetSection title={en ? "With your assistant" : "Avec votre assistant"}>
+                <SheetNote>{text}</SheetNote>
+                {row.card && <Link className={linkClass()} to={`${prefix}/mcp/${row.card.slug}`} onClick={() => trackEvent("stack_assistant_plug", { tool_slug: slug, assistant })}>{en ? `Plug ${tool.name} in` : `Brancher ${tool.name}`}<LinkArrow shown /></Link>}
+              </SheetSection>;
+            })()}
 
             <SheetSection title={en ? "Overlaps in my stack" : "Recoupements dans ma stack"}>
               {mine.length === 0

@@ -16,6 +16,10 @@ import Seats from "@/ds/Seats/Seats";
 import Logo from "@/ds/Logo/Logo";
 import { Meet, Stamp, Trim } from "@/ds/Gesture/Gesture";
 import { toolKey } from "@/lib/stackView";
+import { HUB_ASSISTANTS, isPlugged, reportRows, reportVerdict } from "@/lib/agentReport";
+import { useAgentAssistant } from "@/hooks/useAgentAssistant";
+
+const HUB_ASSISTANT_NAMES = { claude: "Claude", chatgpt: "ChatGPT", gemini: "Gemini", copilot: "Copilot" } as const;
 import Bento, { Answer, Answers, BentoRow, GlassIcon, MiniRing, Question, Tile } from "@/ds/Bento/Bento";
 import Amount from "@/ds/Amount/Amount";
 import Starter from "@/ds/Starter/Starter";
@@ -35,7 +39,8 @@ const TRADE_NAMES: Record<(typeof CORE_TRADES)[number], [string, string]> = {
   create: ["Créer", "Create"], organize: ["Organiser", "Organise"], communicate: ["Échanger", "Talk"], build: ["Sites", "Sites"], manage: ["Gérer", "Manage"],
 };
 import { Section, SectionHead } from "@/ds/Toolbar/Toolbar";
-import Button, { TextButton } from "@/ds/Button/Button";
+import Button, { LinkArrow, TextButton, linkClass } from "@/ds/Button/Button";
+import { Link } from "@/lib/routerLinks";
 import { trackEvent } from "@/lib/analytics";
 import { Clock, Copy, Euro, LayoutGrid, FolderKanban, Globe, MessagesSquare, Palette, PiggyBank, Plus, Receipt, Wallet } from "@/lib/icons";
 import { Checkpoints, SpendBar, TradeMap } from "@/ds/StackBoard/StackBoard";
@@ -113,6 +118,8 @@ interface Props {
   gaps?: { id: string; label: string; href: string }[];
   /** The hero's words (greeting, verdict, humour) and its actions; the findings add the cost. */
   welcome?: StackWelcome & { titleRef?: Ref<HTMLHeadingElement>; action?: ReactNode; secondary?: ReactNode };
+  /** The hub /agents, where the assistant finding's detail lives (one row per tool), with the page's language prefix. */
+  agentsHref?: string;
 }
 
 export type FitRow = { tool: ToolSummary; cost: number; usage?: number; setUsage: (value: number | null) => void; detailHref: string };
@@ -123,12 +130,15 @@ export type FitRow = { tool: ToolSummary; cost: number; usage?: number; setUsage
 // costs, then the one thing to decide now, then, quietly, what comes next.
 // Settling the current finding brings the next one in; once nothing is left,
 // the space becomes the summary of what was decided and what it saved.
-export default function StackFindings({ lang, currency = "EUR", converted = false, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly, welcome, trades, gaps = [], covered = [], territories = [] }: Props) {
+export default function StackFindings({ lang, currency = "EUR", converted = false, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly, welcome, trades, gaps = [], covered = [], territories = [], agentsHref }: Props) {
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
   const navigate = useNavigate();
   const rateDate = new Date(`${CURRENCY_RATE_DATE}T00:00:00Z`).toLocaleDateString(fr ? "fr-FR" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).replace(/ /g, "\u00a0");
   const [later, setLater] = useState<string[]>([]);
+  // The assistant (step 3, 18/11/2026): shared with the hub and the server sheet; asked once, then a finding.
+  const [assistant, setAssistant, assistantChosen] = useAgentAssistant();
+  const [askAssistant, setAskAssistant] = useState(false);
   // On a phone each card is a summary line; one opens at a time.
   // No accordion: in one column every card stays open, in reading order (the decision is the page’s action).
   // The face just picked: it lights up, the other swipes away, the saving
@@ -481,6 +491,31 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 unpriced={pending.filter((tool) => !spend.some((line) => line.tool.id === tool.id))} unpricedLabel={t("Sans prix, pas comptés", "No price, not counted")}
                 priceAction={<TextButton onClick={() => { const target = document.querySelector<HTMLElement>('[data-card="decision"]'); target?.scrollIntoView({ block: "center", behavior: "smooth" }); }}>{t("Renseigner", "Add prices")}</TextButton>}
                 note={converted ? t(`Montants convertis au taux de référence du ${rateDate}.`, `Amounts converted at the reference rate of ${rateDate}.`) : undefined} />} />
+          </BentoRow>;
+        })()}
+        {(() => {
+          // « Votre assistant IA »: a question tile until answered (it leaves once answered, 09/11), then the hub's
+          // verdict for this stack, word for word (agentReport); its detail is the hub's row per tool.
+          const slugs = [...spend.map((row) => row.tool), ...freeTools, ...pending].filter((tool, index, list) => list.findIndex((x) => x.id === tool.id) === index).map((tool) => toolKey(tool));
+          const rows = reportRows(slugs, assistant);
+          const checked = rows.filter((row) => row.status !== "unchecked").length;
+          const plugged = rows.filter(isPlugged).length;
+          const asking = !assistantChosen || askAssistant;
+          return <BentoRow>
+            <Tile span={12} card="assistant" tone={asking ? "question" : "tile"} label={t("Votre assistant IA", "Your AI assistant")}
+              statement={asking || !checked ? undefined : <><Key tone={plugged ? "brand" : undefined}>{plugged}</Key>{t(` sur ${checked}`, ` of ${checked}`)}</>}
+              status={asking ? undefined : { text: reportVerdict(rows, assistant, lang) }}
+              footer={asking ? undefined : <span style={{ display: "flex", flexWrap: "wrap", gap: "var(--tt-space-2) var(--tt-space-6)" }}>
+                {/* The detail is the hub (no opening in place): the system's action link, its arrow there at rest. */}
+                {agentsHref && <Link to={agentsHref} className={linkClass()} onClick={() => trackEvent("stack_assistant_detail", { assistant })}>{t("Outil par outil", "Tool by tool")}<LinkArrow shown /></Link>}
+                <TextButton onClick={() => setAskAssistant(true)}>{t("Changer d'assistant", "Change assistant")}</TextButton>
+              </span>}>
+              {asking && <Question>{t("Quel assistant utilisez-vous ?", "Which assistant do you use?")}</Question>}
+              {asking && <Answers label={t("Votre assistant", "Your assistant")}>
+                {HUB_ASSISTANTS.map((value) => <Answer key={value} name={value === "other" ? t("Autre", "Other") : HUB_ASSISTANT_NAMES[value]}
+                  onClick={() => { trackEvent("stack_assistant_answer", { assistant: value }); setAssistant(value); setAskAssistant(false); }} />)}
+              </Answers>}
+            </Tile>
           </BentoRow>;
         })()}
       </Bento>;
