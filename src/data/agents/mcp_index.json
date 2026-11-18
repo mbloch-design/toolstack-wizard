@@ -63,6 +63,7 @@
     },
     "tools": 0,
     "skills": 0,
+    "in_stacks": 6,
     "verified_on": "2026-11-16"
   },
   {
@@ -142,6 +143,7 @@
     },
     "tools": 41,
     "skills": 0,
+    "in_stacks": 37,
     "verified_on": "2026-11-16"
   },
   {
@@ -213,6 +215,7 @@
     },
     "tools": 17,
     "skills": 0,
+    "in_stacks": 5,
     "verified_on": "2026-11-16"
   },
   {
@@ -282,6 +285,7 @@
     },
     "tools": 39,
     "skills": 0,
+    "in_stacks": 10,
     "verified_on": "2026-11-16"
   },
   {
@@ -334,6 +338,7 @@
     },
     "tools": 46,
     "skills": 0,
+    "in_stacks": 30,
     "verified_on": "2026-11-16"
   },
   {
@@ -407,6 +412,7 @@
     },
     "tools": 65,
     "skills": 0,
+    "in_stacks": 11,
     "verified_on": "2026-11-16"
   },
   {
@@ -461,6 +467,7 @@
     },
     "tools": 12,
     "skills": 0,
+    "in_stacks": 24,
     "verified_on": "2026-11-16"
   },
   {
@@ -533,6 +540,7 @@
     },
     "tools": 34,
     "skills": 11,
+    "in_stacks": 24,
     "verified_on": "2026-11-16"
   },
   {
@@ -590,6 +598,7 @@
     },
     "tools": 9,
     "skills": 2,
+    "in_stacks": 13,
     "verified_on": "2026-11-16"
   },
   {
@@ -644,6 +653,7 @@
     },
     "tools": 36,
     "skills": 0,
+    "in_stacks": 16,
     "verified_on": "2026-11-16"
   },
   {
@@ -712,6 +722,7 @@
     },
     "tools": 2,
     "skills": 7,
+    "in_stacks": 14,
     "verified_on": "2026-11-16"
   },
   {
@@ -797,6 +808,7 @@
     },
     "tools": 46,
     "skills": 3,
+    "in_stacks": 19,
     "verified_on": "2026-11-16"
   },
   {
@@ -882,6 +894,7 @@
     },
     "tools": 70,
     "skills": 1,
+    "in_stacks": 89,
     "verified_on": "2026-11-16"
   },
   {
@@ -962,6 +975,7 @@
     },
     "tools": 43,
     "skills": 1,
+    "in_stacks": 10,
     "verified_on": "2026-11-16"
   },
   {
@@ -1014,6 +1028,7 @@
     },
     "tools": 2,
     "skills": 0,
+    "in_stacks": 8,
     "verified_on": "2026-11-16"
   },
   {
@@ -1094,6 +1109,7 @@
     },
     "tools": 15,
     "skills": 11,
+    "in_stacks": 15,
     "verified_on": "2026-11-16"
   },
   {
@@ -1170,6 +1186,7 @@
     },
     "tools": 0,
     "skills": 0,
+    "in_stacks": 10,
     "verified_on": "2026-11-16"
   },
   {
@@ -1244,6 +1261,7 @@
     },
     "tools": 37,
     "skills": 22,
+    "in_stacks": 12,
     "verified_on": "2026-11-16"
   },
   {
@@ -1324,6 +1342,7 @@
     },
     "tools": 16,
     "skills": 2,
+    "in_stacks": 11,
     "verified_on": "2026-11-16"
   }
 ]

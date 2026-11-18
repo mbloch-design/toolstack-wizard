@@ -1,39 +1,39 @@
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, type ReactNode } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { useStackPins } from "@/hooks/useStackPins";
 import { useAgentAssistant } from "@/hooks/useAgentAssistant";
+import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import Breadcrumb from "@/components/Breadcrumb";
+import CatalogToolbar from "@/components/catalog/CatalogToolbar";
+import ToolMediaCard from "@/components/tool/ToolMediaCard";
 import Page from "@/ds/Page/Page";
-import Chip, { Chips } from "@/ds/Chip/Chip";
 import Logo from "@/ds/Logo/Logo";
-import Segmented from "@/ds/Segmented/Segmented";
-import Chapter, { Chapters } from "@/ds/Chapter/Chapter";
-import { CatalogTitle } from "@/ds/Catalog/Catalog";
+import { CatalogSection, CatalogTitle } from "@/ds/Catalog/Catalog";
+import { MediaCards } from "@/ds/MediaCard/MediaCard";
+import { Notice } from "@/ds/Notice/Notice";
+import { ToolRow, ToolRows } from "@/ds/ToolSheet/ToolSheet";
 import { LinkArrow, TextButton, linkClass } from "@/ds/Button/Button";
-import { AgentCard, AgentCards, AgentShelf, HubQuestion, HubQuestions, RecipeCards, StackReport, ToolChecklist, type RecipeItem, type ReportItem } from "@/ds/AgentHub/AgentHub";
+import { AgentRowNote, RecipeCards, type RecipeItem } from "@/ds/AgentHub/AgentHub";
 import { Plug } from "@/lib/icons";
 import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { resolveToolAlternatives } from "@/lib/toolSchema";
-import { pluggedAlternatives } from "@/lib/agentAlternatives";
 import { agentShelves } from "@/lib/agentShelves";
-import { HUB_ASSISTANTS, SERVERS, checkedTools, isPlugged, recipesFor, reportRows, reportVerdict, serverFoot, toolStatus, type HubAssistant } from "@/lib/agentReport";
+import { HUB_ASSISTANTS, SERVERS, featuredServers, recipesFor, reportRows, serverFoot, stackHeadline, type HubAssistant } from "@/lib/agentReport";
+import { runCatalogFilter } from "@/hooks/useCatalogStickyToolbar";
 import skillsIndex from "@/data/agents/skills_index.json";
-import adviceData from "@/data/agents/advice.json";
-import { byLine, cardLine, say, serverName, skillFoot, type Advice, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
+import { cardLine, say, serverName, skillFoot, typo, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
 
 /*
- * The agents section, step 4 (17/11/2026): the hub /agents is a report on your stack from your assistant's side.
- * Two questions (your assistant, your tools), one sentence that sums it up, one row per tool, then every tool that
- * plugs in by family (need universes). /mcp is that full list on its own page. /skills stays an index until step 5.
- * « MCP » stays in the SEO titles only.
+ * The agents section on the hubs' template (step 8, 18/11/2026; Michael: « cette page n'utilise pas encore les codes
+ * du hub »). Like Outils, Stacks and Comparatifs: the catalogue title, the sticky CatalogToolbar (Tout and the shelves,
+ * the assistant at its right where the others have « Filtres » or « Trier »), « À la une » in the catalogue's media
+ * cards, then the shelves as the catalogue's compact rows. The report on your stack lives in Ma stack: here, one line
+ * that leads there. /mcp is the same page without « À la une ». /skills stays an index. « MCP » stays in the SEO titles.
  */
 export type AgentsView = "all" | "mcp" | "skills";
 const SKILLS = skillsIndex as SkillCard[];
-const ADVICE = adviceData as Record<string, Advice>;
-/** The tools ticked without a stack, for this visitor only: never written to Ma stack. */
-const PICKS_KEY = "tooltrim.agents.tools";
 
 const TITLES: Record<AgentsView, [string, string]> = { all: ["Votre assistant IA", "Your AI assistant"], mcp: ["Outils à brancher", "Tools to plug in"], skills: ["Savoir-faire pour développeurs", "Know-how for developers"] };
 const SEO_TITLES: Record<AgentsView, [string, string]> = {
@@ -42,26 +42,24 @@ const SEO_TITLES: Record<AgentsView, [string, string]> = {
   skills: ["Skills officiels : le savoir-faire des éditeurs pour votre assistant IA", "Official skills: vendors' know-how for your AI assistant"],
 };
 const LEADS: Record<AgentsView, [string, string]> = {
-  all: ["Ce que votre assistant peut faire dans vos outils, et avec quelle prudence.", "What your assistant can do in your tools, and with how much care."],
-  mcp: ["Les outils du catalogue qui se branchent officiellement à votre assistant IA, rangés par famille.", "The catalogue's tools that officially plug into your AI assistant, by family."],
+  all: ["Les outils qui se branchent officiellement à votre assistant, et ce qu'il peut y faire.", "The tools that officially plug into your assistant, and what it can do there."],
+  mcp: ["Tous les outils du catalogue qui se branchent officiellement à votre assistant IA.", "Every catalogue tool that officially plugs into your AI assistant."],
   skills: ["Pour développeurs : des modes d'emploi publiés par les éditeurs, que votre assistant de code suit pour mieux travailler dans leur outil. Ceux de Notion et de Zapier s'utilisent sans rien installer.", "For developers: instructions published by vendors that your coding assistant follows to work better in their tool. Notion's and Zapier's need nothing installed."],
 };
 const PATHS: Record<AgentsView, string> = { all: "agents", mcp: "mcp", skills: "skills" };
 const GUIDE = { fr: "mcp-freelances-non-developpeurs", en: "mcp-for-non-developer-freelancers" };
 const ASSISTANT_LABELS: Record<HubAssistant, [string, string]> = { claude: ["Claude", "Claude"], chatgpt: ["ChatGPT", "ChatGPT"], gemini: ["Gemini", "Gemini"], copilot: ["Copilot", "Copilot"], other: ["Autre", "Other"] };
-
-const read = (key: string) => { try { return window.localStorage.getItem(key); } catch { return null; } };
-const write = (key: string, value: string) => { try { window.localStorage.setItem(key, value); } catch { /* the page works without it */ } };
+/** Rows a shelf shows before « Voir tout »: two rows of three on a computer. */
+const SHELF_ROWS = 6;
 
 const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
   const { lang: rawLang, prefix, t } = useLang();
   const lang: Lang = rawLang === "en" ? "en" : "fr";
   const { tools } = useToolSummaries();
-  const { state, pinTool } = useStackPins();
+  const { state } = useStackPins();
   const [assistant, setAssistant] = useAgentAssistant();
-  const [picks, setPicks] = useState<string[]>([]);
-  const [withMine, setWithMine] = useState(false);
-  useEffect(() => { try { const stored = JSON.parse(read(PICKS_KEY) ?? "[]"); if (Array.isArray(stored)) setPicks(stored.filter((slug) => typeof slug === "string")); } catch { /* none */ } }, []);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
   const toolOf = (slug: string) => tools.find((tool) => (tool.slug || tool.id) === slug);
   const toolName = (slug: string) => toolOf(slug)?.name ?? SERVERS.find((card) => card.host_tool === slug)?.publisher ?? slug;
@@ -77,131 +75,123 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
     return () => cleanupSeo(["agents-jsonld"]);
   }, [view, prefix, t]);
 
-  // Your tools: Ma stack when there is one (read only), otherwise what you ticked here.
+  // Your stack, read only (Ma stack composes it): one line that leads to its report, and the recipes of two of its tools.
   const pinned = state.pinnedToolSlugs;
-  const fromStack = pinned.length > 0;
-  const slugs = fromStack ? pinned : picks;
-  const rows = useMemo(() => reportRows(slugs, assistant), [slugs, assistant]);
-  const recipes: RecipeItem[] = recipesFor(slugs, assistant).map((recipe) => ({
+  const rows = useMemo(() => reportRows(pinned, assistant), [pinned, assistant]);
+  const recipes: RecipeItem[] = recipesFor(pinned, assistant).map((recipe) => ({
     id: recipe.id, request: lang === "en" ? recipe.request.en : recipe.request.fr,
     sides: recipe.sides.map((side) => ({ name: toolName(side.host_tool), logo: logo(side.host_tool), ...(side.gravest ? { gravest: side.gravest } : {}) })),
   }));
-  const items: ReportItem[] = rows.map((row) => {
-    const tool = toolOf(row.slug);
-    const alternative = row.status === "none" && tool ? pluggedAlternatives(resolveToolAlternatives(tool, tools))[0] : undefined;
-    const example = row.card ? ADVICE[row.card.slug]?.examples?.[0] : undefined;
-    return {
-      slug: row.slug, name: toolName(row.slug), logo: logo(row.slug), status: row.status,
-      ...(row.card ? { sheet: row.card.slug } : {}),
-      ...(row.gravest ? { gravest: row.gravest } : {}),
-      ...(example && row.status !== "elsewhere" ? { request: lang === "en" ? example.en : example.fr } : {}),
-      ...(alternative ? { alternative: { slug: alternative.slug || alternative.id, name: alternative.name, logo: logo(alternative.slug || alternative.id) } } : {}),
-    };
-  });
-  const toggle = (slug: string) => setPicks((list) => {
-    const next = list.includes(slug) ? list.filter((x) => x !== slug) : [...list, slug];
-    write(PICKS_KEY, JSON.stringify(next));
-    return next;
-  });
-  const checked = checkedTools();
-  const checklist = checked.map((slug) => ({ slug, name: toolName(slug), logo: logo(slug) })).sort((a, b) => a.name.localeCompare(b.name));
-  const catalogue = tools.filter((tool) => !checked.includes(tool.slug || tool.id)).map((tool) => ({ slug: tool.slug || tool.id, name: tool.name, logo: <Logo tool={tool} size={24} /> }));
+
+  // The shelves (Explorer's need universes) and the chip that filters them, kept in the address like the other hubs.
+  const shelves = agentShelves(SERVERS, lang);
+  const shelfId = shelves.some((shelf) => shelf.id === searchParams.get("rayon")) ? searchParams.get("rayon")! : "all";
+  const setShelf = (id: string) => setSearchParams((params) => { const next = new URLSearchParams(params); if (id === "all") next.delete("rayon"); else next.set("rayon", id); return next; }, { replace: true, preventScrollReset: true });
+  const shown = shelfId === "all" ? shelves : shelves.filter((shelf) => shelf.id === shelfId);
 
   const sheetLink = (slug: string, className: string, content: ReactNode) => <Link to={`${prefix}/mcp/${slug}`} className={className}>{content}</Link>;
-  const toolLink = (slug: string, className: string, content: ReactNode) => <Link to={`${prefix}/tool/${slug}`} className={className}>{content}</Link>;
-  const reportLink = (name: string, className: string, content: ReactNode) => (
-    <Link to={`${prefix}/contact?subject=${encodeURIComponent(t(`Outil à vérifier pour les assistants IA : ${name}`, `Tool to check for AI assistants: ${name}`) as string)}`} className={className}>{content}</Link>
-  );
+  const serverRow = (card: McpCard) => {
+    const tool = toolOf(card.host_tool);
+    const status = serverFoot(card, assistant, lang)[0].kind as "one_click" | "configure" | "elsewhere";
+    const gravest = (["pay", "delete", "send", "write", "read"] as const).find((kind) => card.kinds.includes(kind));
+    return (
+      <ToolRow key={card.slug} logo={tool ? <Logo tool={tool} size={40} /> : <Plug />}
+        name={serverName(card, toolName(card.host_tool), SERVERS.some((other) => other.host_tool === card.host_tool && other.slug !== card.slug), lang)}
+        note={<AgentRowNote lang={lang} status={status} summary={card.card ? say(lang, card.card) : cardLine(say(lang, card.summary))} {...(gravest ? { gravest } : {})} />}
+        renderMain={(className, content) => sheetLink(card.slug, className, content)} />
+    );
+  };
 
-  // Every tool that plugs in, by family; « avec mon assistant » keeps those that plug into it.
-  const serverRow = (card: McpCard) => (
-    <AgentCard key={card.slug} icon={logo(card.host_tool)} name={serverName(card, toolName(card.host_tool), SERVERS.some((other) => other.host_tool === card.host_tool && other.slug !== card.slug), lang)}
-      by={byLine(card.publisher, lang)} summary={card.card ? say(lang, card.card) : cardLine(say(lang, card.summary))} facts={serverFoot(card, assistant, lang)}
-      renderLink={(className, content) => sheetLink(card.slug, className, content)} />
-  );
-  const listed = SERVERS.filter((card) => !withMine || isPlugged(toolStatus(card.host_tool, assistant)));
-  // A few families from Explorer's need universes, not a shelf per fine category (step 4, 17/11).
-  const shelves = agentShelves(listed, lang);
-  const fullList = <>
-    <Chips label={t("Filtrer", "Filter") as string}>
-      <Chip pressed={withMine} check onClick={() => setWithMine((on) => !on)}>{assistantName ? t(`Avec ${assistantName}`, `With ${assistantName}`) : t("Avec mon assistant", "With my assistant")}</Chip>
-    </Chips>
-    {shelves.map((shelf) => (
-      <AgentShelf key={shelf.id} title={shelf.title} count={shelf.cards.length}>
-        <AgentCards flat label={shelf.title}>{shelf.cards.map(serverRow)}</AgentCards>
-      </AgentShelf>
-    ))}
-    <Link to={`${prefix}/guide/${lang === "en" ? GUIDE.en : GUIDE.fr}`} className={linkClass()}>{t("Le guide pour bien commencer", "The guide to get started")}<LinkArrow shown /></Link>
-  </>;
+  const featured = view === "all" && shelfId === "all" ? featuredServers(assistant) : [];
+  const featuredCard = (card: McpCard) => {
+    const tool = toolOf(card.host_tool);
+    if (!tool) return null;
+    return <ToolMediaCard key={card.slug} priority lang={lang} tool={tool} dataTool={card.host_tool}
+      category={shelves.find((shelf) => shelf.cards.includes(card))?.short}
+      reason={card.card ? say(lang, card.card) : cardLine(say(lang, card.summary))}
+      renderLink={(className, content) => sheetLink(card.slug, className, content)} />;
+  };
 
-  const skillRow = (skill: SkillCard) => (
-    <AgentCard key={skill.slug} icon={logo(skill.host_tool)} name={skill.name} by={byLine(skill.publisher, lang)} summary={cardLine(say(lang, skill.summary))}
-      facts={skillFoot(skill, lang)}
-      renderLink={(className, content) => <Link to={`${prefix}/skills/${skill.slug}`} className={className}>{content}</Link>} />
-  );
+  const skillRow = (skill: SkillCard) => {
+    const tool = toolOf(skill.host_tool);
+    return <ToolRow key={skill.slug} logo={tool ? <Logo tool={tool} size={40} /> : <Plug />} name={skill.name}
+      note={<AgentRowNote lang={lang} summary={cardLine(say(lang, skill.summary))} meta={skillFoot(skill, lang)[0]} />}
+      renderMain={(className, content) => <Link to={`${prefix}/skills/${skill.slug}`} className={className}>{content}</Link>} />;
+  };
 
-  // /skills by tool: those that need nothing installed first (Notion, Zapier), then the others by size.
-  const skillShelves = [...new Set(SKILLS.map((skill) => skill.host_tool))]
-    .map((tool) => ({ tool, name: toolName(tool), skills: SKILLS.filter((skill) => skill.host_tool === tool) }))
-    .sort((a, b) => Number(b.skills.some((k) => k.everyone)) - Number(a.skills.some((k) => k.everyone)) || b.skills.length - a.skills.length);
-  const assistantChoice = (
-    <Segmented compact label={t("Votre assistant", "Your assistant") as string} value={assistant} onChange={setAssistant}
-      options={HUB_ASSISTANTS.map((value) => ({ value, label: lang === "en" ? ASSISTANT_LABELS[value][1] : ASSISTANT_LABELS[value][0] }))} />
-  );
-
-  if (view !== "all") {
+  if (view === "skills") {
+    // /skills by tool: those that need nothing installed first (Notion, Zapier), then the others by size.
+    const skillShelves = [...new Set(SKILLS.map((skill) => skill.host_tool))]
+      .map((tool) => ({ tool, name: toolName(tool), skills: SKILLS.filter((skill) => skill.host_tool === tool) }))
+      .sort((a, b) => Number(b.skills.some((k) => k.everyone)) - Number(a.skills.some((k) => k.everyone)) || b.skills.length - a.skills.length);
     return (
       <Page>
-        <Breadcrumb includeSchema={false} items={[{ label: t(...TITLES.all) as string, href: `${prefix}/agents` }, { label: t(...TITLES[view]) as string }]} />
-        <CatalogTitle title={t(...TITLES[view]) as string} count={view === "mcp" ? SERVERS.length : SKILLS.length} countLabel={t("fiches", "sheets") as string} lead={t(...LEADS[view]) as string} />
-        <Chapters>
-          <Chapter chapter="list" width="wide">
-            {view === "mcp" ? fullList : skillShelves.map((shelf) => (
-              <AgentShelf key={shelf.tool} title={shelf.name} count={shelf.skills.length}>
-                <AgentCards flat label={shelf.name}>{shelf.skills.map(skillRow)}</AgentCards>
-              </AgentShelf>
-            ))}
-          </Chapter>
-        </Chapters>
+        <Breadcrumb includeSchema={false} items={[{ label: t(...TITLES.all) as string, href: `${prefix}/agents` }, { label: t(...TITLES.skills) as string }]} />
+        <CatalogTitle title={t(...TITLES.skills) as string} count={SKILLS.length} countLabel={t("fiches", "sheets") as string} lead={t(...LEADS.skills) as string} />
+        {skillShelves.map((shelf) => (
+          <CatalogSection key={shelf.tool} id={`skills-shelf-${shelf.tool}`} title={shelf.name} count={shelf.skills.length}>
+            <ToolRows>{shelf.skills.map(skillRow)}</ToolRows>
+          </CatalogSection>
+        ))}
       </Page>
     );
   }
 
+  const assistantLabel = (assistantName ? t(`Avec ${assistantName}`, `With ${assistantName}`) : t("Votre assistant", "Your assistant")) as string;
   return (
-    <Page>
-      <Breadcrumb includeSchema={false} items={[{ label: t(...TITLES.all) as string }]} />
-      <CatalogTitle title={t(...TITLES.all) as string} lead={t(...LEADS.all) as string} />
-      <Chapters>
-        <Chapter chapter="questions" width="wide">
-          <HubQuestions>
-            <HubQuestion title={t("Votre assistant", "Your assistant") as string}>{assistantChoice}</HubQuestion>
-            <HubQuestion title={t("Vos outils", "Your tools") as string}
-              note={fromStack
-                ? <>{t(`Les ${pinned.length} outils de Ma stack.`, `The ${pinned.length} tools in My stack.`)} <Link to={`${prefix}/ma-stack`} className={linkClass("inline")}>{t("Modifier", "Edit")}</Link></>
-                : t("Cochez ceux que vous utilisez.", "Tick the ones you use.")}>
-              {!fromStack && <ToolChecklist tools={checklist} catalogue={catalogue} selected={picks} onToggle={toggle} lang={lang} />}
-              {!fromStack && picks.length > 0 && (
-                <div><TextButton arrow onClick={() => picks.forEach((slug) => pinTool(slug))}>{t("Enregistrer dans Ma stack", "Save to My stack")}</TextButton></div>
-              )}
-            </HubQuestion>
-          </HubQuestions>
-        </Chapter>
-        {rows.length > 0 && (
-          <Chapter id="bilan" chapter="report" width="wide" title={reportVerdict(rows, assistant, lang)}>
-            <StackReport items={items} assistant={assistantName} lang={lang} renderSheetLink={sheetLink} renderToolLink={toolLink} renderReportLink={reportLink} />
-            {/* Recipes (step 6): two tools of this stack, both plugged into this assistant; three at most. */}
-            {recipes.length > 0 && (
-              <AgentShelf title={t("Avec deux de vos outils", "With two of your tools") as string} count={recipes.length}>
-                <RecipeCards lang={lang} items={recipes} />
-              </AgentShelf>
-            )}
-          </Chapter>
+    <div className="tt-catalog-page" data-catalog="" data-agents-hub={view}>
+      <Page>
+        <Breadcrumb includeSchema={false} items={view === "all"
+          ? [{ label: t(...TITLES.all) as string }]
+          : [{ label: t(...TITLES.all) as string, href: `${prefix}/agents` }, { label: t(...TITLES.mcp) as string }]} />
+        <CatalogTitle sentinelRef={toolbarSentinelRef} title={t(...TITLES[view]) as string} lead={t(...LEADS[view]) as string} />
+        <CatalogToolbar
+          stuck={toolbarStuck}
+          navLabel={t("Filtrer par famille", "Filter by family") as string}
+          pills={[{ id: "all", label: t("Tout", "All") as string, active: shelfId === "all", onClick: () => setShelf("all") },
+            ...shelves.map((shelf) => ({ id: shelf.id, label: shelf.short, active: shelfId === shelf.id, onClick: () => setShelf(shelf.id) }))]}
+          panelTitle={t("Votre assistant", "Your assistant") as string}
+          moreLabel={assistantLabel}
+          closeLabel={t("Fermer", "Close") as string}
+          sort={{
+            value: assistant, defaultValue: assistant,
+            options: HUB_ASSISTANTS.map((value) => ({ value, label: lang === "en" ? ASSISTANT_LABELS[value][1] : ASSISTANT_LABELS[value][0] })),
+            onChange: (value) => setAssistant(value as HubAssistant),
+            ariaLabel: t("Votre assistant", "Your assistant") as string,
+            groupLabel: t("Quel assistant utilisez-vous ?", "Which assistant do you use?") as string,
+          }} />
+
+        {pinned.length > 0 && (
+          <Notice tone="line" name="agents-stack" icon={<Plug />} title={typo(stackHeadline(rows, assistant, lang))}
+            actions={<Link to={`${prefix}/ma-stack#assistant`} className={linkClass()}>{t("Voir le bilan", "See the report")}<LinkArrow shown /></Link>} />
         )}
-        <Chapter id="tous" chapter="list" width="wide" title={t("Tous les outils qui se branchent", "Every tool that plugs in") as string}>
-          {fullList}
-        </Chapter>
-      </Chapters>
-    </Page>
+
+        {featured.length > 0 && (
+          <CatalogSection id="agents-featured-title" title={t("À la une", "Featured")}>
+            <MediaCards label={t("À la une", "Featured") as string}>{featured.map(featuredCard)}</MediaCards>
+          </CatalogSection>
+        )}
+
+        {/* Recipes (step 6): two tools of your stack, both plugged into this assistant; only with a stack. */}
+        {view === "all" && shelfId === "all" && recipes.length > 0 && (
+          <CatalogSection id="agents-recipes-title" title={t("Avec deux de vos outils", "With two of your tools")}>
+            <RecipeCards lang={lang} items={recipes} />
+          </CatalogSection>
+        )}
+
+        {shown.map((shelf) => {
+          const all = shelfId !== "all" || shelf.cards.length <= SHELF_ROWS;
+          return (
+            <CatalogSection key={shelf.id} id={`agents-shelf-${shelf.id}`} title={shelf.title} count={shelf.cards.length}
+              action={all ? undefined : <TextButton arrow onClick={() => { void runCatalogFilter(() => setShelf(shelf.id)); }}>{t("Voir tout", "See all")}</TextButton>}>
+              <ToolRows>{(all ? shelf.cards : shelf.cards.slice(0, SHELF_ROWS)).map(serverRow)}</ToolRows>
+            </CatalogSection>
+          );
+        })}
+
+        <p><Link to={`${prefix}/guide/${lang === "en" ? GUIDE.en : GUIDE.fr}`} className={linkClass()}>{t("Le guide pour bien commencer", "The guide to get started")}<LinkArrow shown /></Link></p>
+      </Page>
+    </div>
   );
 };
 

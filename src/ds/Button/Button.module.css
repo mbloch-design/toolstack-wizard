@@ -418,6 +418,10 @@
 /* Text link: label font, a line that draws itself on hover or focus.
    quiet: reading font, for « Plus tard ». inline: inside a sentence, the line is always there. */
 .link {
+  /* An action link never stretches with its parent (grid or flex): it is as wide as its words and arrow (18/11/2026). */
+  justify-self: start;
+  width: fit-content;
+  max-width: 100%;
   padding: 0;
   border: 0;
   background: linear-gradient(currentColor, currentColor) 100% 100% / 0 1px no-repeat;

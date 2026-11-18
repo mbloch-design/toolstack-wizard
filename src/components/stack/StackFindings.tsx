@@ -496,7 +496,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         })()}
         {(() => {
           // « Votre assistant IA »: a question tile until answered (it leaves once answered, 09/11), then the hub's
-          // verdict for this stack, word for word (agentReport); its detail is the hub's row per tool.
+          // verdict for this stack, word for word (agentReport); the hub lists every tool to plug in (step 8: the report lives here).
           const stackTools = [...spend.map((row) => row.tool), ...freeTools, ...pending].filter((tool, index, list) => list.findIndex((x) => x.id === tool.id) === index);
           const slugs = stackTools.map((tool) => toolKey(tool));
           const rows = reportRows(slugs, assistant);
@@ -514,7 +514,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                   sides: recipe.sides.map((side) => { const tool = stackTools.find((x) => toolKey(x) === side.host_tool)!; return { name: tool.name, logo: <Logo tool={tool} size={24} />, ...(side.gravest ? { gravest: side.gravest } : {}) }; }) }))} />}
                 <span style={{ display: "flex", flexWrap: "wrap", gap: "var(--tt-space-2) var(--tt-space-6)" }}>
                 {/* The detail is the hub (no opening in place): the system's action link, its arrow there at rest. */}
-                {agentsHref && <Link to={agentsHref} className={linkClass()} onClick={() => trackEvent("stack_assistant_detail", { assistant })}>{t("Outil par outil", "Tool by tool")}<LinkArrow shown /></Link>}
+                {agentsHref && <Link to={agentsHref} className={linkClass()} onClick={() => trackEvent("stack_assistant_detail", { assistant })}>{t("Tous les outils à brancher", "Every tool to plug in")}<LinkArrow shown /></Link>}
                 <TextButton onClick={() => setAskAssistant(true)}>{t("Changer d'assistant", "Change assistant")}</TextButton>
                 </span>
               </div>}>

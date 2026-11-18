@@ -23,7 +23,8 @@ const universeOf = (category: string | null) => {
 };
 const mutual = (a: Universe, b: Universe) => a.related.includes(b.categoryId) && b.related.includes(a.categoryId);
 
-export interface Shelf { id: string; title: string; cards: McpCard[] }
+/** One short name per shelf (step 8, 18/11): its first universe alone, the same in the bar's chip and the shelf title. */
+export interface Shelf { id: string; title: string; short: string; cards: McpCard[] }
 
 export function agentShelves(cards: McpCard[], lang: Lang): Shelf[] {
   const groups: { universes: Universe[]; cards: McpCard[] }[] = [];
@@ -39,7 +40,7 @@ export function agentShelves(cards: McpCard[], lang: Lang): Shelf[] {
   const label = (universe: Universe) => (lang === "en" ? universe.labelEn : universe.labelFr);
   const shelves = groups
     .sort((a, b) => b.cards.length - a.cards.length || label(a.universes[0]).localeCompare(label(b.universes[0])))
-    .map((group) => ({ id: group.universes.map((u) => u.categoryId).join("+"), title: group.universes.map(label).join(lang === "en" ? " and " : " et "), cards: group.cards }));
+    .map((group) => ({ id: group.universes.map((u) => u.categoryId).join("+"), title: label(group.universes[0]), short: label(group.universes[0]), cards: group.cards }));
   if (rest.length === 1 && shelves.length) shelves[0].cards.push(...rest);
-  return rest.length > 1 ? [...shelves, { id: "other", title: lang === "en" ? "Other tools" : "Autres outils", cards: rest }] : shelves;
+  return rest.length > 1 ? [...shelves, { id: "other", title: lang === "en" ? "Other" : "Autres", short: lang === "en" ? "Other" : "Autres", cards: rest }] : shelves;
 }

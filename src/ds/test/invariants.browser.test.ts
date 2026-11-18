@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { brokenWords, overflowing, splitUnits } from "./invariants";
+import { brokenWords, overflowing, splitUnits, stretchedLinks } from "./invariants";
 
 const mount = (html: string) => { const el = document.createElement("div"); el.innerHTML = html; document.body.append(el); return el; };
 afterEach(() => { document.body.innerHTML = ""; });
@@ -49,5 +49,9 @@ describe("layout invariants", () => {
   it("ignores decoration positioned on purpose", () => {
     const el = mount(`<div style="width:100px;position:relative"><span style="position:absolute;left:-8px;width:140px">x</span></div>`);
     expect(overflowing(el)).toEqual([]);
+  });
+  it("finds an action link stretched by its parent, not one as wide as its words", () => {
+    const el = mount(`<div style="display:grid;width:400px"><a class="_link_test" href="#">Le guide</a></div><div style="display:grid;width:400px"><a class="_link_test" href="#" style="justify-self:start">Le guide</a></div>`);
+    expect(stretchedLinks(el)).toHaveLength(1);
   });
 });

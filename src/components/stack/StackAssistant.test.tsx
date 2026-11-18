@@ -16,7 +16,7 @@ const tile = () => document.querySelector<HTMLElement>('[data-card="assistant"]'
 function view() {
   return render(<MemoryRouter><StackFindings lang="fr" total={80} format={(n) => `${n} €`} spend={PAID.map((t) => ({ tool: t, amount: 20 }))} areas={[]}
     toolCount={PAID.length + FREE.length} fit={[]} freeTools={FREE} items={[]} saved={0} toReview={0} resolved={[]}
-    onAddTool={() => {}} onReviewTools={() => {}} agentsHref="/fr/agents#bilan" /></MemoryRouter>);
+    onAddTool={() => {}} onReviewTools={() => {}} agentsHref="/fr/agents" /></MemoryRouter>);
 }
 // The test environment has no working storage: a small one per test.
 beforeEach(() => {

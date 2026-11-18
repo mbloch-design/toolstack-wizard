@@ -92,6 +92,19 @@ export default function CartPage() {
     replaceState(normalizeToolCartState({ pinnedToolSlugs: DEMO_STACK9 }));
     const next = new URLSearchParams(params); next.delete("demo"); setParams(next, { replace: true });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  // From the hub's stack line (step 8, 18/11/2026): /ma-stack#assistant lands on the « Votre assistant IA » tile once
+  // it is drawn (the findings render after the stack loads; a few frames at most).
+  useEffect(() => {
+    if (window.location.hash !== "#assistant") return;
+    let frames = 0, id = 0;
+    const land = () => {
+      const tile = document.querySelector<HTMLElement>('[data-card="assistant"]');
+      if (tile) { tile.scrollIntoView({ block: "center" }); return; }
+      if (++frames < 120) id = requestAnimationFrame(land);
+    };
+    id = requestAnimationFrame(land);
+    return () => cancelAnimationFrame(id);
+  }, []);
   const [domainFilter, setDomainFilter] = useState("all");
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -519,7 +532,7 @@ export default function CartPage() {
           territories={mapTerritories.map((territory) => ({ id: territory.id, tools: territory.tools }))}
           gaps={selectedTools.some((tool) => stackPlacement(tool, categories, lang).id === "finance") ? [] : [{ id: "finance", label: t("facturer", "invoice"), href: `${prefix}/category/finance-facturation` }]}
           exploreHref={state.toolEntries.some((entry) => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? getExplorerHref(prefix, { type: "stack" }) : undefined}
-          agentsHref={`${prefix}/agents#bilan`} />;
+          agentsHref={`${prefix}/agents`} />;
       })()}
       {/* Where the stack is saved: this browser, or the account. */}
       <StackAccountPanel empty={false} placement="notice" />

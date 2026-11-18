@@ -1,153 +1,71 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { useState } from "react";
-import { expect, userEvent, within } from "storybook/test";
-import Button from "../Button/Button";
-import Segmented from "../Segmented/Segmented";
-import Chapter, { Chapters } from "../Chapter/Chapter";
-import { byLine, cardLine, say, type Advice } from "@/lib/agents";
+import { expect } from "storybook/test";
+import { CatalogSection } from "../Catalog/Catalog";
+import { ToolRow, ToolRows } from "../ToolSheet/ToolSheet";
+import { cardLine, say, skillFoot, type SkillCard } from "@/lib/agents";
 import { agentShelves } from "@/lib/agentShelves";
-import { HUB_ASSISTANTS, checkedTools, isPlugged, recipesFor, reportRows, reportVerdict, serverFoot, type HubAssistant } from "@/lib/agentReport";
-import advice from "@/data/agents/advice.json";
-import { AgentCard, AgentCards, AgentShelf, HubQuestion, HubQuestions, RecipeCards, StackReport, ToolChecklist, type ReportItem } from "./AgentHub";
-import { STACK, cards, links, logo, toolName } from "./AgentHub.fixtures";
+import { GRAVITY, recipesFor, serverFoot } from "@/lib/agentReport";
+import skillsIndex from "@/data/agents/skills_index.json";
+import { AgentRowNote, RecipeCards } from "./AgentHub";
+import { STACK, cards, logo, toolName } from "./AgentHub.fixtures";
 
-// The hub /agents as a report (step 4): your assistant, your tools, one sentence, one row per tool.
-const meta: Meta<typeof StackReport> = {
+// The agents section on the catalogue's pieces (step 8, 18/11/2026): servers and skills are the catalogue's rows
+// (ToolRow) with one line of meta; the recipes are the section's own cards.
+const meta: Meta<typeof RecipeCards> = {
   title: "Agents/Hub",
-  component: StackReport,
-  // No reference until Michael validates the agents section.
+  component: RecipeCards,
   tags: ["a-valider"],
   decorators: [(Story) => <div style={{ maxWidth: 1080 }}><Story /></div>],
 };
 export default meta;
-type Story = StoryObj<typeof StackReport>;
+type Story = StoryObj<typeof RecipeCards>;
 
-const ADVICE = advice as Record<string, Advice>;
-const LABELS: Record<HubAssistant, string> = { claude: "Claude", chatgpt: "ChatGPT", gemini: "Gemini", copilot: "Copilot", other: "Autre" };
+const SKILLS = skillsIndex as SkillCard[];
+const status = (card: (typeof cards)[number]) => serverFoot(card, "claude", "fr")[0].kind as "one_click" | "configure" | "elsewhere";
 
-/** The hub as the page composes it, from the real data: the questions, then the report as a chapter. */
-function Hub({ stack, start, lang }: { stack: string[]; start: HubAssistant; lang: "fr" | "en" }) {
-  const [assistant, setAssistant] = useState(start);
-  const [picks, setPicks] = useState<string[]>([]);
-  const slugs = stack.length ? stack : picks;
-  const rows = reportRows(slugs, assistant);
-  const items: ReportItem[] = rows.map((row) => {
-    const example = row.card ? ADVICE[row.card.slug]?.examples?.[0] : undefined;
-    return {
-      slug: row.slug, name: toolName(row.slug), logo: logo(row.slug), status: row.status,
-      ...(row.card ? { sheet: row.card.slug } : {}), ...(row.gravest ? { gravest: row.gravest } : {}),
-      ...(example && row.status !== "elsewhere" ? { request: lang === "en" ? example.en : example.fr } : {}),
-      ...(row.slug === "milanote" ? { alternative: { slug: "notion", name: "Notion", logo: logo("notion") } } : {}),
-    };
-  });
-  return (
-    <Chapters>
-      <Chapter chapter="questions" width="wide">
-        <HubQuestions>
-          <HubQuestion title={lang === "en" ? "Your assistant" : "Votre assistant"}>
-            <Segmented compact label={lang === "en" ? "Your assistant" : "Votre assistant"} value={assistant} onChange={setAssistant} options={HUB_ASSISTANTS.map((value) => ({ value, label: LABELS[value] }))} />
-          </HubQuestion>
-          <HubQuestion title={lang === "en" ? "Your tools" : "Vos outils"} note={stack.length ? (lang === "en" ? `The ${stack.length} tools in My stack.` : `Les ${stack.length} outils de Ma stack.`) : (lang === "en" ? "Tick the ones you use." : "Cochez ceux que vous utilisez.")}>
-            {!stack.length && <ToolChecklist tools={checkedTools().map((slug) => ({ slug, name: toolName(slug), logo: logo(slug) }))} selected={picks}
-              onToggle={(slug) => setPicks((list) => (list.includes(slug) ? list.filter((x) => x !== slug) : [...list, slug]))} lang={lang} />}
-          </HubQuestion>
-        </HubQuestions>
-      </Chapter>
-      {rows.length > 0 && (
-        <Chapter chapter="report" width="wide" title={reportVerdict(rows, assistant, lang)}>
-          <StackReport items={items} assistant={assistant === "other" ? null : LABELS[assistant]} lang={lang} {...links} />
-        </Chapter>
-      )}
-    </Chapters>
-  );
-}
-
-/**
- * Contract: the sentence and the rows agree (as many plugged rows as the sentence says, as many one-click rows), and
- * no tool is classed without data (a tool with no server and no check is « not checked »).
- */
-const agrees = async (root: HTMLElement, assistant: HubAssistant, stack: string[]) => {
-  const rows = reportRows(stack, assistant);
-  const title = root.querySelector("[data-chapter=report] h2")!.textContent!.replace(/\s/g, " ");
-  const plugged = rows.filter(isPlugged).length;
-  const checked = rows.filter((row) => row.status !== "unchecked").length;
-  await expect(title).toContain(plugged ? `${plugged} de vos ${checked} outils` : `Aucun de vos ${checked} outils`);
-  // A tool not checked yet is not counted, and the sentence says so.
-  await expect(title).toContain(`${rows.length - checked} outil pas encore vérifié`);
-  const shown = [...root.querySelectorAll<HTMLElement>("[data-status]")];
-  await expect(shown.filter((row) => ["one_click", "configure"].includes(row.dataset.status!)).length).toBe(plugged);
-  await expect(shown.map((row) => row.dataset.status)).toEqual(rows.map((row) => row.status));
-  await expect(root.querySelector("[data-status=unchecked]")?.textContent).toContain("Trello");
-};
-
-/** No stack: the checked tools to tick; ticking two of them makes the report. */
-export const SansStack: Story = {
-  render: (_args, { globals }) => <Hub stack={[]} start="claude" lang={globals.lang} />,
-  play: async ({ canvas, canvasElement, globals }) => {
-    const fr = globals.lang !== "en";
-    await expect(canvasElement.querySelector("[data-chapter=report]")).toBeNull();
-    await userEvent.click(canvas.getByRole("button", { name: "Notion" }));
-    await userEvent.click(canvas.getByRole("button", { name: "Hotjar" }));
-    await expect(canvas.getByRole("heading", { level: 2, name: fr ? /^1\sde vos 2\soutils se branche à Claude, en un clic/ : /^1\sof your 2\stools plugs into Claude, in one click/ })).toBeVisible();
-  },
-};
-
-/** Nine tools, every status, with Claude: « 4 de vos 8 outils se branchent à Claude, dont 3 en un clic. 1 peut engager un paiement. 1 outil pas encore vérifié. » */
-export const StackDeNeuf: Story = {
-  render: (_args, { globals }) => <Hub stack={STACK} start="claude" lang={globals.lang} />,
-  play: async ({ canvas, canvasElement, globals }) => {
-    const fr = globals.lang !== "en";
-    if (fr) await expect(canvas.getByRole("heading", { level: 2, name: /^4\sde vos 8\soutils se branchent à Claude, dont 3\sen un clic\. 1\speut engager un paiement\. 1\soutil pas encore vérifié\.$/ })).toBeVisible();
-    if (fr) await agrees(canvasElement, "claude", STACK);
-    // A request to copy and « Brancher → » on a plugged row; a report link on the unchecked one.
-    const stripe = within(canvasElement.querySelector<HTMLElement>("[data-status=one_click]")!);
-    await expect(stripe.getByRole("button", { name: fr ? "Copier la demande" : "Copy the request" })).toBeVisible();
-    await expect(stripe.getByRole("link", { name: fr ? /^Brancher/ : /^Plug in/ })).toHaveAttribute("href", "/fr/mcp/stripe-mcp");
-    await expect(canvas.getByRole("link", { name: fr ? /Signaler cet outil/ : /Report this tool/ })).toBeVisible();
-  },
-};
-
-/** With ChatGPT: fewer tools in one click, the sentence follows the rows. */
-export const AvecChatGPT: Story = {
-  render: (_args, { globals }) => <Hub stack={STACK} start="chatgpt" lang={globals.lang} />,
-  play: async ({ canvasElement, globals }) => {
-    if (globals.lang !== "en") await agrees(canvasElement, "chatgpt", STACK);
-  },
-};
-
-/** « Autre »: only what the vendors document for any client, never « one click ». */
-export const AvecAutre: Story = {
-  render: (_args, { globals }) => <Hub stack={STACK} start="other" lang={globals.lang} />,
-  play: async ({ canvasElement, globals }) => {
-    await expect(canvasElement.querySelector("[data-status=one_click]")).toBeNull();
-    if (globals.lang !== "en") await agrees(canvasElement, "other", STACK);
-  },
-};
-
-/** The full list in a few families (Explorer's need universes): Slack with Communication, Stripe with e-commerce, no shelf of one. */
-export const ParFamille: Story = {
+/** The hub's shelves: the card sentence, then one line of meta (status, and a consequence only when grave). */
+export const Rayons: Story = {
   render: (_args, { globals }) => <div style={{ display: "grid", gap: 48 }}>
     {agentShelves(cards, globals.lang).map((shelf) => (
-      <AgentShelf key={shelf.id} title={shelf.title} count={shelf.cards.length}>
-        <AgentCards flat label={shelf.title}>
-          {shelf.cards.map((card) => (
-            <AgentCard key={card.slug} icon={logo(card.host_tool)} name={toolName(card.host_tool)} by={byLine(card.publisher, globals.lang)} summary={card.card ? say(globals.lang, card.card) : cardLine(say(globals.lang, card.summary))}
-              facts={serverFoot(card, "claude", globals.lang)} renderLink={(className, content) => <a className={className} href={`/fr/mcp/${card.slug}`}>{content}</a>} />
-          ))}
-        </AgentCards>
-      </AgentShelf>
+      <CatalogSection key={shelf.id} id={`story-shelf-${shelf.id}`} title={shelf.title} count={shelf.cards.length}>
+        <ToolRows>
+          {shelf.cards.map((card) => {
+            const worst = GRAVITY.find((kind) => card.kinds.includes(kind));
+            return <ToolRow key={card.slug} logo={logo(card.host_tool, 40)} name={toolName(card.host_tool)}
+              note={<AgentRowNote lang={globals.lang} status={status(card)} summary={card.card ? say(globals.lang, card.card) : cardLine(say(globals.lang, card.summary))} {...(worst ? { gravest: worst } : {})} />}
+              renderMain={(className, content) => <a className={className} href={`/fr/mcp/${card.slug}`}>{content}</a>} />;
+          })}
+        </ToolRows>
+      </CatalogSection>
     ))}
   </div>,
-  play: async ({ canvas, globals }) => {
-    const shelves = canvas.getAllByRole("heading", { level: 3 });
-    await expect(shelves.length).toBeLessThanOrEqual(6);
-    // Slack sits with Communication; no shelf of one « Autres outils ».
-    await expect(shelves.some((shelf) => /^(Communication)/.test(shelf.textContent ?? "") && shelf.parentElement!.textContent!.includes("Slack"))).toBe(true);
-    await expect(canvas.queryByRole("heading", { level: 3, name: globals.lang === "en" ? /^Other tools/ : /^Autres outils/ })).toBeNull();
+  play: async ({ canvas, canvasElement, globals }) => {
+    const fr = globals.lang !== "en";
+    await expect(canvasElement.querySelectorAll("[data-status]").length).toBe(cards.length);
+    await expect(canvas.queryByText(fr ? /Officiel/ : /Official/)).toBeNull();
+    await expect(canvas.getAllByText(fr ? "Engage un paiement" : "Makes a payment").length).toBe(1);
+    await expect(canvas.queryByText(fr ? "Lecture seule" : "Read only")).toBeNull();
+    await expect(canvas.queryByText(fr ? "Modifie vos données" : "Edits your data")).toBeNull();
   },
 };
 
-/** Recipes for the nine-tool stack with Claude: two plugged tools each, the request to copy, each side's gravest consequence. */
+/** /skills and the skill sheet: the same rows, the meta says where the know-how works. */
+export const SavoirFaire: Story = {
+  render: (_args, { globals }) => (
+    <ToolRows>
+      {SKILLS.filter((skill) => ["notion", "figma"].includes(skill.host_tool)).slice(0, 6).map((skill) => (
+        <ToolRow key={skill.slug} logo={logo(skill.host_tool, 40)} name={skill.name}
+          note={<AgentRowNote lang={globals.lang} summary={cardLine(say(globals.lang, skill.summary))} meta={skillFoot(skill, globals.lang)[0]} />}
+          renderMain={(className, content) => <a className={className} href={`/fr/skills/${skill.slug}`}>{content}</a>} />
+      ))}
+    </ToolRows>
+  ),
+  play: async ({ canvasElement }) => {
+    await expect(canvasElement.querySelectorAll("[data-meta]").length).toBe(6);
+  },
+};
+
+/** Recipes for the nine-tool stack with Claude. */
 export const Recettes: Story = {
   render: (_args, { globals }) => (
     <RecipeCards lang={globals.lang} items={recipesFor(STACK, "claude").map((recipe) => ({
@@ -156,34 +74,7 @@ export const Recettes: Story = {
     }))} />
   ),
   play: async ({ canvas, canvasElement, globals }) => {
-    const fr = globals.lang !== "en";
     await expect(canvasElement.querySelectorAll("[data-recipe]").length).toBe(3);
-    await expect(canvas.getAllByRole("button", { name: fr ? "Copier la demande" : "Copy the request" }).length).toBe(3);
-    await expect(canvas.getAllByText(fr ? /^Stripe\s:\s/ : /^Stripe: /).length).toBe(1);
-  },
-};
-
-/** Cards of sheets (hub list, related sheets): logo, name, « Par Notion · Officiel », summary, two facts; the host tool with « Ajouter à ma stack ». */
-export const Cartes: Story = {
-  render: (_args, { globals }) => (
-    <AgentCards label="Cartes">
-      <AgentCard icon={logo("notion")} name="Notion" facts={[{ kind: "tool", text: globals.lang === "en" ? "Pricing, reviews and alternatives" : "Prix, avis et alternatives" }]} by={globals.lang === "en" ? "ToolTrim tool page" : "Fiche outil ToolTrim"} summary={globals.lang === "en" ? "Notes, docs, wikis and databases." : "Notes, docs, wikis et bases de données."}
-        renderLink={(className, content) => <a className={className} href="/fr/tool/notion">{content}</a>}
-        action={<Button variant="secondary">{globals.lang === "en" ? "Add to my stack" : "Ajouter à ma stack"}</Button>} />
-      {cards.filter((c) => ["notion-mcp", "figma-mcp-desktop", "stripe-mcp"].includes(c.slug)).map((card) => (
-        <AgentCard key={card.slug} icon={logo(card.host_tool)} name={card.name} by={byLine(card.publisher, globals.lang)} summary={card.card ? say(globals.lang, card.card) : cardLine(say(globals.lang, card.summary))}
-          facts={serverFoot(card, "claude", globals.lang)} renderLink={(className, content) => <a className={className} href={`/fr/mcp/${card.slug}`}>{content}</a>} />
-      ))}
-    </AgentCards>
-  ),
-  play: async ({ canvas, globals }) => {
-    const fr = globals.lang !== "en";
-    await expect(canvas.getAllByText(fr ? "Par Notion · Officiel" : "By Notion · Official")[0]).toBeVisible();
-    // The foot says how it plugs into Claude and the gravest consequence, never « En ligne » or « Votre compte ».
-    await expect(canvas.getAllByText(fr ? "En un clic avec Claude" : "One click with Claude").length).toBeGreaterThan(0);
-    await expect(canvas.getAllByText(fr ? "Engage un paiement" : "Makes a payment").length).toBe(1);
-    await expect(canvas.queryByText(fr ? "En ligne" : "Online")).toBeNull();
-    await expect(canvas.queryByText(fr ? "Votre compte" : "Your account")).toBeNull();
-    await expect(canvas.getByRole("button", { name: globals.lang === "en" ? "Add to my stack" : "Ajouter à ma stack" })).toBeVisible();
+    await expect(canvas.getAllByRole("button", { name: globals.lang !== "en" ? "Copier la demande" : "Copy the request" }).length).toBe(3);
   },
 };

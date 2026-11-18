@@ -174,3 +174,33 @@ export function compareAssistant(a: { slug: string; name: string }, b: { slug: s
   }
   return { a: cell(rows[0]), b: cell(rows[1]), ...(takeaway ? { takeaway: typo(takeaway) } : {}) };
 }
+
+/**
+ * The hub's line on your stack (step 8, 18/11/2026), the report's first clause alone: « 4 de vos 8 outils se branchent
+ * à Claude ». The tools not checked yet are left out of both figures, as in the report.
+ */
+export function stackHeadline(rows: ReportRow[], assistant: HubAssistant, lang: Lang): string {
+  const en = lang === "en";
+  const checked = rows.filter((row) => row.status !== "unchecked");
+  const tie = (text: string) => typo(text).replace(/(\d) /g, "$1 ");
+  if (!checked.length) return en ? "None of your tools is checked yet" : "Aucun de vos outils n'est encore vérifié";
+  const total = checked.length;
+  const n = checked.filter(isPlugged).length;
+  const to = assistant === "other" ? (en ? "your assistant" : "à votre assistant") : en ? ASSISTANT_NAMES[assistant] : `à ${ASSISTANT_NAMES[assistant]}`;
+  if (en) {
+    if (total === 1) return tie(n ? `Your tool plugs into ${to}` : `Your tool does not plug into ${to} yet`);
+    return tie(n ? `${n} of your ${total} tools plug${n === 1 ? "s" : ""} into ${to}` : `None of your ${total} tools plugs into ${to} yet`);
+  }
+  if (total === 1) return tie(n ? `Votre outil se branche ${to}` : `Votre outil ne se branche pas encore ${to}`);
+  return tie(n ? `${n} de vos ${total} outils se branche${n === 1 ? "" : "nt"} ${to}` : `Aucun de vos ${total} outils ne se branche encore ${to}`);
+}
+
+/**
+ * « À la une » of the hub (step 8): one server per tool, those that plug in one click into the assistant (all of them
+ * for « Autre »), the tools most present in the catalogue's stacks first; four at most.
+ */
+export function featuredServers(assistant: HubAssistant, limit = 4): McpCard[] {
+  const leads = [...new Set(SERVERS.map((card) => card.host_tool))].map((slug) => serverOf(slug)!);
+  return leads.filter((card) => assistant === "other" || card.one_click.includes(assistant))
+    .sort((a, b) => b.in_stacks - a.in_stacks || a.name.localeCompare(b.name)).slice(0, limit);
+}

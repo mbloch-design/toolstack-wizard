@@ -48,12 +48,30 @@ export function overflowing(root: HTMLElement): HTMLElement[] {
   });
 }
 
+/**
+ * Action links (the system's linkClass: words and their arrow) wider than what they hold (18/11/2026, « Le guide pour
+ * bien commencer » stretched over the whole page): a link is never stretched by its grid or flex parent.
+ */
+export function stretchedLinks(root: HTMLElement): HTMLElement[] {
+  return [...root.querySelectorAll<HTMLElement>("a, button")].filter((el) => {
+    if (!/(^|\s)_link_/.test(el.className) || el.closest("[aria-hidden='true']")) return false;
+    // Its own width (words, arrow, padding, a tap target's minimum) is what max-content gives; wider is a stretch.
+    const box = el.getBoundingClientRect().width;
+    const before = el.style.width;
+    el.style.width = "max-content";
+    const own = el.getBoundingClientRect().width;
+    el.style.width = before;
+    return own > 0 && box > own + 1;
+  });
+}
+
 /** Every invariant on a story's root; one readable failure lists them all. */
 export function assertLayout(root: HTMLElement) {
   const problems = [
     ...brokenWords(root).map((word) => `mot coupé : « ${word} »`),
     ...splitUnits(root).map((unit) => `unité séparée : « ${unit} »`),
     ...overflowing(root).map((el) => `débordement : <${el.tagName.toLowerCase()} class="${el.className}">`),
+    ...stretchedLinks(root).map((el) => `lien étiré : « ${el.textContent ?? ""} »`),
   ];
   if (problems.length) throw new Error(problems.join("\n"));
 }

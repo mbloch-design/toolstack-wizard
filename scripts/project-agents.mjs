@@ -29,6 +29,9 @@ const serverSlugs = new Set(servers.map((s) => s.slug));
 const skillSlugs = new Set(skills.map((s) => s.slug));
 const needsTable = JSON.parse(fs.readFileSync(path.join(ROOT, "research/agents/needs.json"), "utf8"));
 const recipesTable = JSON.parse(fs.readFileSync(path.join(ROOT, "research/agents/recipes.json"), "utf8"));
+// How many of the catalogue's stacks hold each tool (step 8, 18/11): the hub's « À la une » order.
+const catalogStacks = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/stacks-catalog-index.json"), "utf8")).stacks;
+const inStacks = (slug) => catalogStacks.filter((stack) => (stack.tools ?? []).some((tool) => tool.slug === slug)).length;
 
 const errors = [
   ...servers.flatMap((s) => validateMcpSheet(s, { catalogSlugs, skillSlugs })),
@@ -51,7 +54,7 @@ const mcpIndex = servers.map((s) => ({
   capability_kinds: s.capabilities?.length ? KINDS.filter((k) => s.capabilities.some((c) => c.kind === k)) : kindsOf(s),
   one_click: [...new Set((s.setup ?? []).filter((w) => ONE_CLICK.includes(w.how) && w.assistant !== "other").map((w) => w.assistant))],
   ...(s.clients ? { clients: s.clients } : {}), ...(s.setup ? { setup: s.setup } : {}), ...(s.safeguards ? { safeguards: s.safeguards } : {}),
-  ...(s.for ? { for: s.for, not_for: s.not_for } : {}), tools: s.tools?.length ?? 0, skills: s.skills?.length ?? 0, verified_on: s.verified_on,
+  ...(s.for ? { for: s.for, not_for: s.not_for } : {}), tools: s.tools?.length ?? 0, skills: s.skills?.length ?? 0, in_stacks: inStacks(s.host_tool), verified_on: s.verified_on,
 }));
 const skillsIndex = skills.map((k) => ({
   slug: k.slug, name: k.name, publisher: k.publisher, host_tool: k.host_tool, server: k.server, category: k.category,

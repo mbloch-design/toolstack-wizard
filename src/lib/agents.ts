@@ -64,7 +64,10 @@ export interface McpCard {
   status?: "ga" | "beta"; transport?: "remote" | "local"; auth?: ("oauth" | "key" | "none")[]; access?: string;
   plan: McpSheet["plan"]; kinds: AgentCapabilityKind[]; capability_kinds: AgentCapabilityKind[]; one_click: Assistant[]; clients?: string[];
   setup?: McpSheet["setup"]; safeguards?: McpSheet["safeguards"]; for?: Pair; not_for?: Pair;
-  tools: number; skills: number; verified_on: string;
+  tools: number; skills: number;
+  /** How many of the catalogue's stacks hold the host tool (the hub's « À la une » order). */
+  in_stacks: number;
+  verified_on: string;
 }
 
 export interface SkillCard {

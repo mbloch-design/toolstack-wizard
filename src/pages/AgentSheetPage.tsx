@@ -7,14 +7,16 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Page from "@/ds/Page/Page";
 import Logo from "@/ds/Logo/Logo";
 import { McpSheetView, RelatedCard, RelatedCards, SkillSheetView } from "@/ds/AgentSheet/AgentSheet";
-import { AgentCard, AgentCards, AgentShelf } from "@/ds/AgentHub/AgentHub";
+import { AgentRowNote } from "@/ds/AgentHub/AgentHub";
+import { CatalogSection } from "@/ds/Catalog/Catalog";
+import { ToolRow, ToolRows } from "@/ds/ToolSheet/ToolSheet";
 import Button, { TextButton } from "@/ds/Button/Button";
 import { useAddToStack } from "@/hooks/useAddToStack";
 import { useStackPins } from "@/hooks/useStackPins";
 import { Check, Plus, Plug } from "@/lib/icons";
 import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import catalog from "@/data/agents/catalog.json";
-import { byLine, cardLine, cardSentence, clientName, forEveryone, say, serverName, skillFoot, type Lang, type McpSheet, type SkillSheet } from "@/lib/agents";
+import { cardLine, cardSentence, clientName, forEveryone, say, serverName, skillFoot, type Lang, type McpSheet, type SkillSheet } from "@/lib/agents";
 import NotFound from "@/pages/NotFound";
 import { useAgentAssistant } from "@/hooks/useAgentAssistant";
 import { serverFoot } from "@/lib/agentReport";
@@ -68,24 +70,22 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
   const logo = (toolSlug: string) => { const tool = toolOf(toolSlug); return tool ? <Logo tool={tool} size={24} /> : <Plug />; };
   const nameOf = (s: McpSheet) => serverName(s, toolOf(s.host_tool)?.name ?? s.publisher, SERVERS.some((o) => o.host_tool === s.host_tool && o.slug !== s.slug), lang);
   const inStack = state.pinnedToolSlugs.includes(sheet.host_tool);
+  // Step 8 (18/11/2026): the skill sheet's related sheets are the catalogue's rows, one line of meta, no « Par X · Officiel ».
+  const rowLogo = (toolSlug: string) => { const tool = toolOf(toolSlug); return tool ? <Logo tool={tool} size={40} /> : <Plug />; };
   const toolCard = (toolSlug: string, name: string) => (
-    <AgentCard key={`tool-${toolSlug}`} icon={logo(toolSlug)} name={name} by={t("Fiche outil ToolTrim", "ToolTrim tool page") as string}
-      summary={cardLine((lang === "en" ? toolOf(toolSlug)?.shortDescriptionEn : undefined) ?? toolOf(toolSlug)?.shortDescription)}
-      facts={[{ kind: "tool", text: t("Prix, avis et alternatives", "Pricing, reviews and alternatives") as string }]}
-      renderLink={(className, content) => <Link to={`${prefix}/tool/${toolSlug}`} className={className}>{content}</Link>}
-      action={<Button variant="secondary" icon={inStack ? <Check /> : <Plus />} disabled={inStack || flyingSlug === toolSlug}
-        onClick={(event) => addToStack(toolSlug, name, { origin: event.currentTarget })}>
-        {inStack ? t("Dans ma stack", "In my stack") : t("Ajouter à ma stack", "Add to my stack")}
-      </Button>} />
+    <ToolRow key={`tool-${toolSlug}`} logo={rowLogo(toolSlug)} name={name}
+      note={<AgentRowNote lang={lang} summary={cardLine((lang === "en" ? toolOf(toolSlug)?.shortDescriptionEn : undefined) ?? toolOf(toolSlug)?.shortDescription)} meta={{ kind: "tool", text: t("Prix, avis et alternatives", "Pricing, reviews and alternatives") as string }} />}
+      renderMain={(className, content) => <Link to={`${prefix}/tool/${toolSlug}`} className={className}>{content}</Link>} />
   );
   const serverCard = (s: McpSheet) => (
-    <AgentCard key={s.slug} icon={logo(s.host_tool)} name={nameOf(s)} by={byLine(s.publisher, lang)} summary={s.card ? say(lang, s.card) : cardLine(say(lang, s.summary))} facts={serverFoot({ setup: s.setup, kinds: [...new Set([...(s.tools ?? []).map((tool) => tool.kind), ...(s.capabilities ?? []).map((line) => line.kind)])] }, assistant, lang)}
-      renderLink={(className, content) => <Link to={`${prefix}/mcp/${s.slug}`} className={className}>{content}</Link>} />
+    <ToolRow key={s.slug} logo={rowLogo(s.host_tool)} name={nameOf(s)}
+      note={<AgentRowNote lang={lang} summary={s.card ? say(lang, s.card) : cardLine(say(lang, s.summary))} status={serverFoot({ setup: s.setup, kinds: [] }, assistant, lang)[0].kind as "one_click" | "configure" | "elsewhere"} />}
+      renderMain={(className, content) => <Link to={`${prefix}/mcp/${s.slug}`} className={className}>{content}</Link>} />
   );
   const skillCard = (k: SkillSheet) => (
-    <AgentCard key={k.slug} icon={logo(k.host_tool)} name={k.name} by={byLine(k.publisher, lang)} summary={cardLine(say(lang, k.summary))}
-      facts={skillFoot(k, lang)}
-      renderLink={(className, content) => <Link to={`${prefix}/skills/${k.slug}`} className={className}>{content}</Link>} />
+    <ToolRow key={k.slug} logo={rowLogo(k.host_tool)} name={k.name}
+      note={<AgentRowNote lang={lang} summary={cardLine(say(lang, k.summary))} meta={skillFoot(k, lang)[0]} />}
+      renderMain={(className, content) => <Link to={`${prefix}/skills/${k.slug}`} className={className}>{content}</Link>} />
   );
 
   let related;
@@ -124,11 +124,11 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
     const parent = SERVERS.find((s) => s.slug === skill.server);
     const others = SKILLS.filter((k) => k.server === skill.server && k.slug !== skill.slug).slice(0, 8);
     related = <>
-      <AgentCards flat label={t("Le branchement et l'outil", "The connection and the tool") as string}>{parent && serverCard(parent)}{toolCard(skill.host_tool, hostName)}</AgentCards>
+      <ToolRows>{parent && serverCard(parent)}{toolCard(skill.host_tool, hostName)}</ToolRows>
       {others.length > 0 && (
-        <AgentShelf title={t(`Autres savoir-faire de ${skill.publisher}`, `Other ${skill.publisher} know-how`) as string} count={others.length}>
-          <AgentCards flat label={t("Savoir-faire", "Know-how") as string}>{others.map(skillCard)}</AgentCards>
-        </AgentShelf>
+        <CatalogSection id="skill-others-title" title={t(`Autres savoir-faire de ${skill.publisher}`, `Other ${skill.publisher} know-how`) as string} count={others.length}>
+          <ToolRows>{others.map(skillCard)}</ToolRows>
+        </CatalogSection>
       )}
     </>;
   }
