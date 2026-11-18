@@ -201,7 +201,9 @@ export function FigureCards({ label, children }: { label: string; children: Reac
   return <ul className={styles.figureCards} aria-label={label}>{children}</ul>;
 }
 
-export function FigureCard({ figure, unit, name, detail, icon, visual, tone = "ink", centered = false, color, renderLink }: { figure: string; unit?: string; name: string; detail?: string;
+export function FigureCard({ figure, unit, name, detail, icon, visual, tone = "ink", centered = false, color, palette, renderLink }: { figure: string; unit?: string; name: string; detail?: string;
+  /** Ma stack's palette (trial, 18/11/2026): a flat colour and its ink in place of the glass slab. */
+  palette?: import("../Bento/Bento").Palette;
   /** The card's own colour range (M01): its glass, lights and accents are drawn from it. */
   color?: string;
   /** The reference layout of a figure (M01): pictogram on top, the figure large and centred, a short caption. */
@@ -213,15 +215,16 @@ export function FigureCard({ figure, unit, name, detail, icon, visual, tone = "i
   /** The figure's colour: ink, orange for something to settle, green for a gain. */
   tone?: "ink" | "overlap" | "gain";
   renderLink: (className: string, content: ReactNode) => ReactNode }) {
-  if (centered) return <li className={styles.placeSlot} style={color ? { "--fc1": color } as CSSProperties : undefined}>{renderLink(`${styles.figureCard} ${styles.figureCentered}`, <>
-    <Matter />
+  const matter = palette ? null : <Matter />;
+  if (centered) return <li className={styles.placeSlot} data-palette={palette} data-surface={palette ? (palette === "night" || palette === "blue" ? "dark" : "light") : undefined} style={color && !palette ? { "--fc1": color } as CSSProperties : undefined}>{renderLink(`${styles.figureCard} ${styles.figureCentered}`, <>
+    {matter}
     {(visual || icon) && <span className={styles.figureMark} aria-hidden="true">{visual ?? icon}</span>}
     <span className={styles.figure} data-tone={tone}>{figure}{unit && <small>{unit}</small>}</span>
     <span className={styles.figureName}>{name}<ChevronRight className={styles.figureGo} aria-hidden="true" /></span>
     {detail && <span className={styles.figureDetail}>{detail}</span>}
   </>)}</li>;
-  return <li className={styles.placeSlot} style={color ? { "--fc1": color } as CSSProperties : undefined}>{renderLink(styles.figureCard, <>
-    <Matter />
+  return <li className={styles.placeSlot} data-palette={palette} data-surface={palette ? (palette === "night" || palette === "blue" ? "dark" : "light") : undefined} style={color && !palette ? { "--fc1": color } as CSSProperties : undefined}>{renderLink(styles.figureCard, <>
+    {matter}
     {(icon || visual) && <span className={styles.figureTop}>{icon && <span className={styles.figureIcon} data-tone={tone} aria-hidden="true">{icon}</span>}{visual && <span className={styles.figureVisual} aria-hidden="true">{visual}</span>}</span>}
     <span className={styles.figure} data-tone={tone}>{figure}{unit && <small>{unit}</small>}</span>
     <span className={styles.figureName}>{name}<ChevronRight className={styles.figureGo} aria-hidden="true" /></span>

@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { brokenWords, chapterGaps, emptyColumns, misalignedColumns, overflowing, splitUnits, stretchedLinks } from "./invariants";
+import { brokenWords, chapterGaps, contrast, emptyColumns, lowContrast, misalignedColumns, overflowing, splitUnits, stretchedLinks } from "./invariants";
 
 const mount = (html: string) => { const el = document.createElement("div"); el.innerHTML = html; document.body.append(el); return el; };
 afterEach(() => { document.body.innerHTML = ""; });
@@ -68,5 +68,12 @@ describe("layout invariants", () => {
     expect(misalignedColumns(mount(`<div>${table("fixed")}</div>`))).toEqual([]);
     const two = mount(`<div><table data-table style="width:600px"><tbody><tr><th style="width:100px">x</th><td>a</td></tr><tr><td style="padding-left:60px">y</td><td>b</td></tr></tbody></table></div>`);
     expect(misalignedColumns(two).length).toBeGreaterThanOrEqual(0);
+  });
+  it("finds words below AA on a coloured tile, not the palette's own inks", () => {
+    expect(contrast("#14183D", "#FF7A59")).toBeGreaterThan(4.5);
+    expect(contrast("#FFFFFF", "#1E52F1")).toBeGreaterThan(4.5);
+    const tile = (bg: string, ink: string) => `<div data-palette="coral" style="background:${bg};color:${ink};font-size:16px"><p style="margin:0">Doublons</p></div>`;
+    expect(lowContrast(mount(tile("#FF7A59", "#14183D")))).toEqual([]);
+    expect(lowContrast(mount(tile("#FF7A59", "#FFFFFF")))).toHaveLength(1);
   });
 });

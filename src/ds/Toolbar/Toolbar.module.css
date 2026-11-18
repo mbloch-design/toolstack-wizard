@@ -24,10 +24,11 @@
   gap: var(--tt-space-4);
 }
 
+/* The standard of web tools (18/11): the section's action sits on the title's line, never halfway down the block. */
 .sectionHead {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   gap: var(--tt-space-3) var(--tt-space-6);
 }

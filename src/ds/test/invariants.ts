@@ -122,6 +122,74 @@ export function misalignedColumns(root: HTMLElement): string[] {
   return found;
 }
 
+/** A CSS colour as sRGB 0-255, read back from a 1 px canvas (computed colours may come as oklch or color-mix). */
+function rgbOf(color: string): [number, number, number, number] {
+  const canvas = document.createElement("canvas"); canvas.width = canvas.height = 1;
+  const ctx = canvas.getContext("2d", { willReadFrequently: true })!;
+  ctx.clearRect(0, 0, 1, 1); ctx.fillStyle = color; ctx.fillRect(0, 0, 1, 1);
+  const [r, g, b, a] = ctx.getImageData(0, 0, 1, 1).data;
+  return [r, g, b, a / 255];
+}
+const luminance = ([r, g, b]: number[]) => {
+  const lin = (v: number) => { const c = v / 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
+  return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+};
+export const contrast = (a: string, b: string) => { const [x, y] = [luminance(rgbOf(a)), luminance(rgbOf(b))].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
+
+/**
+ * Words on a coloured tile of the palette (trial, 18/11/2026) read at AA: 4.5 for running text, 3 for large text
+ * (24 px, or 18.66 px bold). The ground is the nearest box with its own colour, up to the tile.
+ */
+export function lowContrast(root: HTMLElement): string[] {
+  const found: string[] = [];
+  for (const tile of root.querySelectorAll<HTMLElement>("[data-palette]:not([data-palette='plain'])")) {
+    for (const el of [tile, ...tile.querySelectorAll<HTMLElement>("*")]) {
+      const own = [...el.childNodes].some((node) => node.nodeType === Node.TEXT_NODE && node.textContent!.trim());
+      if (!own || el.closest("[aria-hidden='true']") || el.getBoundingClientRect().width === 0) continue;
+      const style = getComputedStyle(el);
+      if (style.visibility === "hidden" || Number(style.opacity) === 0) continue;
+      let ground: HTMLElement | null = el, bg = "";
+      while (ground) { const b = getComputedStyle(ground).backgroundColor; if (rgbOf(b)[3] > 0.5) { bg = b; break; } if (ground === tile) break; ground = ground.parentElement; }
+      if (!bg) bg = getComputedStyle(tile).backgroundColor;
+      const size = parseFloat(style.fontSize), bold = Number(style.fontWeight) >= 700;
+      const need = size >= 24 || (bold && size >= 18.66) ? 3 : 4.5;
+      const ratio = contrast(style.color, bg);
+      if (ratio < need) found.push(`« ${el.textContent!.trim().slice(0, 30)} » ${ratio.toFixed(2)} sur ${tile.dataset.palette}`);
+    }
+  }
+  return found;
+}
+
+/** The colour an element's words actually sit on: its own and its ancestors' grounds composited, top to bottom. */
+export function effectiveBackground(el: HTMLElement): string {
+  const layers: [number, number, number, number][] = [];
+  for (let node: HTMLElement | null = el; node; node = node.parentElement) {
+    const layer = rgbOf(getComputedStyle(node).backgroundColor);
+    if (layer[3] > 0) layers.push(layer);
+    if (layer[3] >= 1) break;
+  }
+  let [r, g, b] = [255, 255, 255];
+  for (const [lr, lg, lb, la] of layers.reverse()) { r = lr * la + r * (1 - la); g = lg * la + g * (1 - la); b = lb * la + b * (1 - la); }
+  return `rgb(${Math.round(r)} ${Math.round(g)} ${Math.round(b)})`;
+}
+
+/**
+ * One interactive element in its current state (hover, focus, press, open), 18/11/2026: its words at AA on the ground
+ * they really sit on, and, when it shows a focus ring, the ring at 3:1 against the surface around it.
+ */
+export function stateProblems(el: HTMLElement, state: string): string[] {
+  const found: string[] = [];
+  const style = getComputedStyle(el);
+  const words = (el.textContent ?? "").trim().slice(0, 24);
+  const ratio = contrast(style.color, effectiveBackground(el));
+  if (words && ratio < 4.5) found.push(`${state} « ${words} » : texte ${ratio.toFixed(2)}`);
+  if (state === "focus" && style.outlineStyle !== "none" && parseFloat(style.outlineWidth) > 0) {
+    const ring = contrast(style.outlineColor, effectiveBackground(el.parentElement ?? el));
+    if (ring < 3) found.push(`focus « ${words} » : anneau ${ring.toFixed(2)}`);
+  }
+  return found;
+}
+
 /** Every invariant on a story's root; one readable failure lists them all. */
 export function assertLayout(root: HTMLElement) {
   const problems = [
@@ -132,6 +200,7 @@ export function assertLayout(root: HTMLElement) {
     ...chapterGaps(root).map((gap) => `écart de chapitre dans un chapitre : ${gap}`),
     ...emptyColumns(root).map((label) => `colonne vide dans une rangée de cartes : « ${label} »`),
     ...misalignedColumns(root).map((column) => `colonne de tableau mal alignée : ${column}`),
+    ...lowContrast(root).map((words) => `contraste insuffisant : ${words}`),
   ];
   if (problems.length) throw new Error(problems.join("\n"));
 }

@@ -12,6 +12,8 @@ export type ToolCardProps = {
   tool: LogoTool & { id: string };
   /** What the person pays, already formatted (« 36 € »), or « Gratuit »; empty when unknown (nothing is shown). */
   amount: string;
+  /** The price is still to confirm (18/11): a quiet « Prix à préciser » in the meta style, never the weight of a figure. */
+  pending?: boolean;
   /** A monthly amount shows « /mois » after it. */
   monthly: boolean;
   status: ToolStatus;
@@ -35,22 +37,26 @@ export type ToolCardProps = {
 const STATUS: Record<ToolStatus, [string, string]> = { ok: ["Prix renseigné", "Price recorded"], review: ["À vérifier", "To check"], overlap: ["Doublon", "Overlap"] };
 
 /** One tool of the stack: logo, what it costs, name, one status. The same card in every view; views only arrange it. */
-export default function ToolCard({ lang, tool, amount, monthly, status, role, area, areaColor, selected, editing, onOpen, onRemove, leaving = false, localLogosOnly = false }: ToolCardProps) {
+export default function ToolCard({ lang, tool, amount, pending = false, monthly, status, role, area, areaColor, selected, editing, onOpen, onRemove, leaving = false, localLogosOnly = false }: ToolCardProps) {
   const t = (fr: string, en: string) => (lang === "fr" ? fr : en);
   const label = t(...STATUS[status]);
   const showRole = !!role;
   const statusTag = <Tag tone={status === "ok" ? "ok" : status === "overlap" ? "overlap" : "neutral"} on="tile" data-status-tag={status}>{label}</Tag>;
-  // The role says what the tool does; an overlap keeps its tag beside it (it calls for a decision), the other statuses give way.
-  const tag: ReactNode = showRole ? <>{status === "overlap" && statusTag}<span className={styles.role} data-role="">{role}</span></> : statusTag;
+  // Fixed places (18/11, « des tuiles à hauteur variable, non »): a tag line, empty when there is none (an overlap
+  // keeps its tag, it calls for a decision; without a role the status takes it), then the role on two reserved lines.
+  const tagLine = status === "overlap" || !showRole ? statusTag : null;
+  const tag: ReactNode = <><span className={styles.tagLine}>{tagLine}</span>{showRole && <span className={styles.role} data-role="">{role}</span>}</>;
   return (
     <div className={styles.wrap} data-flip-id={tool.id}>
       <Fall leaving={leaving}>
       <Tilt>
       <button type="button" className={styles.card} data-tool-id={tool.id} data-tool-name={tool.name} data-status={status} data-selected={selected ? "" : undefined}
-        aria-haspopup="dialog" aria-label={[tool.name, showRole ? role : null, amount ? `${amount}${monthly ? t("/mois", "/mo") : ""}` : null, label].filter(Boolean).join(", ")} tabIndex={editing ? -1 : undefined}
+        aria-haspopup="dialog" aria-label={[tool.name, showRole ? role : null, pending ? t("Prix à préciser", "Price to confirm") : amount ? `${amount}${monthly ? t("/mois", "/mo") : ""}` : null, label].filter(Boolean).join(", ")} tabIndex={editing ? -1 : undefined}
         onClick={(event) => { if (!editing) onOpen(event.currentTarget); }}>
         <span className={styles.logo}><Logo tool={tool} size={40} localOnly={localLogosOnly} /></span>
-        {amount && <span className={styles.amount} data-amount="" aria-hidden="true"><Amount value={amount} unit={monthly ? t("/mois", "/mo") : undefined} /></span>}
+        {pending
+          ? <span className={`${styles.amount} ${styles.pending}`} data-amount="" data-pending="" aria-hidden="true">{t("Prix à préciser", "Price to confirm")}</span>
+          : amount && <span className={styles.amount} data-amount="" aria-hidden="true"><Amount value={amount} unit={monthly ? t("/mois", "/mo") : undefined} /></span>}
         <span className={styles.name} data-name="" aria-hidden="true">{areaColor && <i className={styles.dot} style={{ "--c": areaColor } as CSSProperties} />}{tool.name}</span>
         <span className={styles.foot} aria-hidden="true">{tag}{area && <span className={styles.note}>{area}</span>}</span>
       </button>
@@ -65,17 +71,7 @@ export default function ToolCard({ lang, tool, amount, monthly, status, role, ar
 
 /** The cards of one group, as a grid or a list. */
 export function ToolCards({ layout, children }: { layout: "grid" | "list"; children: ReactNode }) {
-  return <div className={styles.cards} data-layout={layout}>{children}</div>;
-}
-
-/** An area of the stack: its colour, name, how many tools and what they cost. */
-export function ToolGroup({ label, color, note, children }: { label?: string; color?: string; note?: ReactNode; children: ReactNode }) {
-  return (
-    <section className={styles.group} aria-label={label}>
-      {label && <header className={styles.groupName} style={{ "--c": color } as CSSProperties}><i aria-hidden="true" /><h3 className={styles.label}>{label}</h3>{note && <span className={styles.note}>{note}</span>}</header>}
-      {children}
-    </section>
-  );
+  return <div className={styles.cards} data-layout={layout} data-tool-cards="">{children}</div>;
 }
 
 /** All the groups of the inventory, and what to say when a filter leaves nothing. */

@@ -101,3 +101,49 @@ export default function Tabs<T extends string>({ label, value, onChange, tabs, m
     </div>
   );
 }
+
+/**
+ * A compact choice that opens a menu (18/11/2026; Michael on « Changer d'assistant »: « un composant pour sélectionner
+ * l'IA directement dans la box »): the current choice as a pill, its mark and its name with a chevron; the menu of the
+ * other choices opens under it (a popover on a computer, a sheet from the bottom on a phone). The same menu as the tabs'.
+ */
+export function ChoiceMenu<T extends string>({ label, value, onChange, options, closeLabel }: {
+  /** The menu's name, read by assistive tech (« Votre assistant »). */
+  label: string; value: T; onChange: (value: T) => void; options: TabItem<T>[]; closeLabel: string;
+}) {
+  const mobile = useIsMobile();
+  const [open, setOpen] = useState(false);
+  const current = options.find((option) => option.value === value) ?? options[0];
+  const pick = (next: T) => { onChange(next); setOpen(false); };
+  const menu = (
+    <div className={styles.menu} role="menu" aria-label={label}
+      onKeyDown={(event) => {
+        const items = [...event.currentTarget.querySelectorAll<HTMLElement>("[role=menuitemradio]")];
+        const step = { ArrowDown: 1, ArrowUp: -1 }[event.key];
+        if (step === undefined) return;
+        event.preventDefault();
+        items[(items.indexOf(document.activeElement as HTMLElement) + step + items.length) % items.length]?.focus();
+      }}>
+      {options.map((option) => (
+        <button key={option.value} type="button" role="menuitemradio" aria-checked={option.value === value} className={styles.item} onClick={() => pick(option.value)}>
+          {option.icon && <span className={styles.icon} aria-hidden="true">{option.icon}</span>}{option.label}
+        </button>
+      ))}
+    </div>
+  );
+  const trigger = (
+    <button type="button" className={styles.choice} aria-haspopup="menu" aria-expanded={open} aria-label={`${label} : ${current.label}`} onClick={() => setOpen((v) => !v)}>
+      {current.icon && <span className={styles.icon} aria-hidden="true">{current.icon}</span>}
+      <span>{current.label}</span><ChevronDown className={styles.chevron} aria-hidden="true" />
+    </button>
+  );
+  return mobile
+    ? <>{trigger}<Drawer open={open} onClose={() => setOpen(false)} closeLabel={closeLabel}><DrawerTitle>{label}</DrawerTitle>{menu}</Drawer></>
+    : <Popover.Root open={open} onOpenChange={setOpen}>
+        <Popover.Trigger asChild>{trigger}</Popover.Trigger>
+        <Popover.Portal><Popover.Content className={styles.popover} align="end" sideOffset={8}
+          onOpenAutoFocus={(event) => { event.preventDefault(); (event.currentTarget as HTMLElement).querySelector<HTMLElement>("[aria-checked=true], [role=menuitemradio]")?.focus(); }}>
+          {menu}
+        </Popover.Content></Popover.Portal>
+      </Popover.Root>;
+}

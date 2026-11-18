@@ -65,3 +65,17 @@ it("shows no assistant tile when none of the stack's tools has been looked at", 
     onAddTool={() => {}} onReviewTools={() => {}} agentsHref="/fr/agents" /></MemoryRouter>);
   expect(document.querySelector('[data-card="assistant"]')).toBeNull();
 });
+
+// The choice lives in the tile (18/11): its compact menu changes the verdict in place, the tile stays, the key is shared.
+it("changes the assistant from the tile's menu, the tile staying in place", async () => {
+  window.localStorage.setItem("tooltrim.agents.client", "claude");
+  view();
+  const before = tile();
+  fireEvent.click(screen.getByRole("button", { name: /Votre assistant : Claude/ }));
+  fireEvent.click(await screen.findByRole("menuitemradio", { name: "ChatGPT" }));
+  expect(tile()).toBe(before);
+  expect(tile().textContent).toContain(reportVerdict(reportRows(SLUGS, "chatgpt"), "chatgpt", "fr", nameOf));
+  expect(screen.queryByText("Quel assistant utilisez-vous ?")).toBeNull();
+  expect(screen.queryByRole("button", { name: "Changer d'assistant" })).toBeNull();
+  expect(window.localStorage.getItem("tooltrim.agents.client")).toBe("chatgpt");
+});

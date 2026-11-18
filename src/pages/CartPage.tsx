@@ -21,7 +21,7 @@ import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
 import { scoreOverlapPairs } from "@/lib/stackOverlap";
 import StackToolSheet from "@/components/stack/StackToolSheet";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
-import ToolCard, { ToolCards, ToolGroup, ToolGroups } from "@/ds/ToolCard/ToolCard";
+import ToolCard, { ToolCards, ToolGroups } from "@/ds/ToolCard/ToolCard";
 import { fallDuration } from "@/ds/Gesture/Gesture";
 import Button, { buttonAttrs, linkClass, TextButton } from "@/ds/Button/Button";
 import ToolSearch, { SearchField } from "@/ds/ToolSearch/ToolSearch";
@@ -434,7 +434,7 @@ export default function CartPage() {
     const info = infoOf(tool);
     const areaLabel = area ? (area.id === "assist" ? t("IA", "AI") : area.label) : "";
     // One card per tool (src/ds/ToolCard), the same in every view; the area joins the status only when the list is not grouped by area.
-    return <ToolCard key={tool.id} lang={lang} tool={tool} role={toolRole(toolKey(tool), lang) ?? (toolTagline(toolKey(tool), lang) || undefined)} amount={info.kind === "unknown" || info.cost === "Freemium" ? t("À préciser", "To confirm") : info.cost} monthly={info.kind === "paid"}
+    return <ToolCard key={tool.id} lang={lang} tool={tool} role={toolRole(toolKey(tool), lang) ?? (toolTagline(toolKey(tool), lang) || undefined)} amount={info.kind === "unknown" || info.cost === "Freemium" ? "" : info.cost} pending={info.kind === "unknown" || info.cost === "Freemium"} monthly={info.kind === "paid"}
       status={statusOf(tool)} area={groupBy !== "area" ? areaLabel || undefined : undefined} areaColor={area ? colorOf(area.id) : undefined} selected={active} editing={editing}
       onOpen={(button) => { lastToolButton.current = button; if (active) closeInspector(); else selectTool(toolKey(tool)); }}
       onRemove={() => removeTool(slug, tool.name)} leaving={leaving.includes(tool.id)} />;
@@ -560,23 +560,22 @@ export default function CartPage() {
               : [{ id: "all", label: "", tools: shown, subtotal: 0 }];
             return <>
               {/* Three controls, three affordances (src/ds/Toolbar): filter chips for what needs me, a menu to sort, icons for the layout. */}
+              {/* The standard of web tools (18/11): what changes the content on the left (the sort), what changes the view or
+                  the mode on the right (grid or list, then « Modifier », « Terminé » once on). */}
               <Toolbar>
-                {/* The status filters left (M01): the state of the stack carries overlaps and prices. */}
+                <SortSelect label={t("Trier mes outils", "Sort my tools")} caption={t("Trier :", "Sort:")} value={sortBy} onChange={sortTo} options={[
+                  { value: "area", label: t("Domaine", "Area") }, { value: "cost", label: t("Coût", "Cost") }, { value: "name", label: t("Nom", "Name") }, { value: "recent", label: t("Ajout récent", "Recently added") }]} />
                 <ToolbarTools>
-                  <SortSelect label={t("Trier mes outils", "Sort my tools")} caption={t("Trier :", "Sort:")} value={sortBy} onChange={sortTo} options={[
-                    { value: "area", label: t("Domaine", "Area") }, { value: "cost", label: t("Coût", "Cost") }, { value: "name", label: t("Nom", "Name") }, { value: "recent", label: t("Ajout récent", "Recently added") }]} />
                   <IconSwitch label={t("Affichage", "Layout")} value={layout} onChange={setLayout} options={[
                     { value: "grid", label: t("Grille", "Grid"), icon: <LayoutGrid aria-hidden /> }, { value: "list", label: t("Liste", "List"), icon: <List aria-hidden /> }]} />
-                  {/* Edit acts on the grid right below, so it lives with the other view controls. */}
                   <Button pressed={editing} icon={editing ? <Check /> : <Pencil />} onClick={() => { setSearchOpen(false); setEditing((value) => !value); }}>{editing ? t("Terminé", "Done") : t("Modifier", "Edit")}</Button>
                 </ToolbarTools>
               </Toolbar>
-              <ToolGroups id="ms-all-grid" ref={gridRef} label={t("Mes outils", "My tools")} layout={layout} grouped={groupBy === "area"} editing={editing}
+              <ToolGroups id="ms-all-grid" ref={gridRef} label={t("Mes outils", "My tools")} layout={layout} grouped={false} editing={editing}
                 empty={shown.length === 0 ? t("Rien ici. Tout est à jour.", "Nothing here. All up to date.") : undefined}>
-                {groups.map((group) => <ToolGroup key={group.id} label={group.label || undefined} color={colorOf(group.id)}
-                  note={group.label ? <>{t(`${group.tools.length} outil${group.tools.length > 1 ? "s" : ""}`, `${group.tools.length} tool${group.tools.length > 1 ? "s" : ""}`)}{group.subtotal > 0 && <> · {money(group.subtotal)}{group.tools.some(tool => unreviewed.some(item => item.id === tool.id) || unknownTools.some(item => item.id === tool.id)) && t(" · partiel", " · partial")}</>}</> : undefined}>
-                  <ToolCards layout={layout}>{group.tools.map(renderTool)}</ToolCards>
-                </ToolGroup>)}
+                {/* One continuous grid (DESIGN_DECISIONS, 11/11, « Grille d'inventaire continue, pastille de domaine sur chaque
+                    carte »): the cards in the areas' order, one after the other, the area's dot on each card. */}
+                <ToolCards layout={layout}>{groups.flatMap((group) => group.tools).map(renderTool)}</ToolCards>
                               </ToolGroups>
             </>;
           })()}

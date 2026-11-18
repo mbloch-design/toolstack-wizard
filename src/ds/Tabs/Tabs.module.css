@@ -55,8 +55,10 @@
   cursor: pointer;
 }
 
-.tab[aria-selected="false"] {
-  color: var(--tt-meta);
+/* Every tab in the ink, as in the segmented control (18/11: the meta grey fell under AA on the control's ground); the
+   thumb says which one is chosen, the state layer answers the pointer. */
+.tab[aria-selected="false"]:hover {
+  background: var(--tt-state-hover);
 }
 
 .icon {
@@ -146,7 +148,44 @@
   cursor: pointer;
 }
 
-.item:hover,
-.item[aria-checked="true"] {
-  background: var(--tt-tile-2);
+.item:hover {
+  background: var(--tt-state-hover);
 }
+
+.item:active {
+  background: var(--tt-state-press);
+}
+
+.item[aria-checked="true"] {
+  background: var(--tt-state-selected);
+}
+
+/* The compact choice (ChoiceMenu): a pill on the surface's state layer, the mark, the name and its chevron, 44 high. */
+.choice {
+  composes: focus from "../atoms.module.css";
+  box-sizing: border-box;
+  display: inline-flex;
+  gap: var(--tt-space-2);
+  align-items: center;
+  min-height: var(--tt-tap);
+  padding: 0 var(--tt-space-3) 0 var(--tt-space-2);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-state-rest, transparent);
+  box-shadow: var(--tt-state-outline);
+  color: var(--tt-ink);
+  font: var(--tt-action-small-font);
+  letter-spacing: var(--tt-action-tracking);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.choice:hover {
+  background: var(--tt-state-hover);
+}
+
+.choice:active,
+.choice[aria-expanded="true"] {
+  background: var(--tt-state-press);
+}
+

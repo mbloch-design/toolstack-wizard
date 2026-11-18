@@ -82,6 +82,14 @@ tbody:first-of-type > .sectionRow > .section {
   cursor: pointer;
 }
 
+.fold:hover {
+  background: var(--tt-state-hover);
+}
+
+.fold:active {
+  background: var(--tt-state-press);
+}
+
 .chevron {
   width: var(--tt-icon-m);
   height: var(--tt-icon-m);

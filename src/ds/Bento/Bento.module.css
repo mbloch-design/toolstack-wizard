@@ -175,6 +175,13 @@
 
 .label { composes: eyebrow from "../atoms.module.css"; }
 
+/* A control on the label's line (« Claude ▾ »): centred on it, never pushing the tile taller. */
+.control {
+  display: inline-flex;
+  flex: none;
+  margin: calc((var(--tt-tap) - 24px) / -2) 0;
+}
+
 .art {
   display: inline-flex;
   flex: none;
@@ -343,23 +350,6 @@
   letter-spacing: var(--tt-title-xl-tracking);
 }
 
-/* A glossy pastille: the colour under a light coming from the top, a bright edge (M01). */
-.glassIcon {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--tt-r-field);
-  background: linear-gradient(160deg, color-mix(in oklch, var(--g) 50%, white), var(--g));
-  box-shadow: var(--tt-glass-icon-edge);
-  color: var(--tt-on-color);
-}
-
-.glassIcon svg {
-  width: 20px;
-  height: 20px;
-}
-
 @media (prefers-reduced-transparency: reduce) {
   .tile[data-tone="smoke"]::before,
   .tile[data-tone="smoke"]::after {
@@ -377,3 +367,12 @@
     display: none;
   }
 }
+
+/* Ma stack's palette (trial, 18/11/2026): the tile in its flat colour, the system's resting shadow, nothing else. */
+.tile[data-palette] {
+  background: var(--pal-bg);
+  box-shadow: var(--tt-row-rest);
+  color: var(--tt-ink);
+}
+
+

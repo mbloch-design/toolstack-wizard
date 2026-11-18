@@ -40,10 +40,12 @@
   list-style: none;
 }
 
+/* A column (18/11, palette trial): the request takes the room, its copy button and the two consequences sit at the
+   card's foot, aligned from one card to the next whatever the request's length. */
 .recipe {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--tt-space-3);
-  align-content: start;
   padding: var(--tt-space-5);
   border-radius: var(--tt-r-tile);
   background: var(--tt-bg);

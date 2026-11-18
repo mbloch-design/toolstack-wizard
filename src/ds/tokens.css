@@ -350,3 +350,111 @@
     --tt-gap-chapter: 64px;
   }
 }
+
+/* Ma stack palette (trial, 18/11/2026; Michael: « on oublie les effets lourds, on essaie avec une gamme de couleur de ce
+   type »): three primaries and five pastels in flat colour, each with its ink, AA for running text and figures. The
+   blue is ToolTrim's own brand. Only Ma stack's tiles use it (data-palette); the rest of the site keeps its neutrals. */
+:root {
+  --tt-pal-blue: #1E52F1;
+  --tt-pal-blue-ink: #FFFFFF;
+  --tt-pal-night: #14183D;
+  --tt-pal-night-ink: #FFFFFF;
+  --tt-pal-bone: #FFF8EC;
+  --tt-pal-bone-ink: #14183D;
+  --tt-pal-sky: #CFE2F7;
+  --tt-pal-sky-ink: #14183D;
+  --tt-pal-butter: #FFD45C;
+  --tt-pal-butter-ink: #14183D;
+  --tt-pal-coral: #FF7A59;
+  --tt-pal-coral-ink: #14183D;
+  --tt-pal-pink: #FF9EC0;
+  --tt-pal-pink-ink: #14183D;
+  --tt-pal-mint: #8EE0C0;
+  --tt-pal-mint-ink: #14183D;
+  --tt-pal-paper: #FFFFFF;
+
+  /* Two intensities (18/11, « trop clivant, le rose ») : the full flat colour for the small key-figure tiles, a soft tint
+     for the large tiles (a large surface in bright colour tires the eye, a small one carries it), its ink the night. */
+  --tt-pal-blue-soft: color-mix(in oklch, var(--tt-pal-blue) 22%, var(--tt-pal-bone));
+  --tt-pal-sky-soft: color-mix(in oklch, var(--tt-pal-sky) 45%, var(--tt-pal-bone));
+  --tt-pal-butter-soft: color-mix(in oklch, var(--tt-pal-butter) 30%, var(--tt-pal-bone));
+  --tt-pal-coral-soft: color-mix(in oklch, var(--tt-pal-coral) 24%, var(--tt-pal-bone));
+  --tt-pal-pink-soft: color-mix(in oklch, var(--tt-pal-pink) 28%, var(--tt-pal-bone));
+  --tt-pal-mint-soft: color-mix(in oklch, var(--tt-pal-mint) 32%, var(--tt-pal-bone));
+}
+
+[data-palette="blue"] { --pal-bg: var(--tt-pal-blue); --pal-ink: var(--tt-pal-blue-ink); }
+[data-palette="night"] { --pal-bg: var(--tt-pal-night); --pal-ink: var(--tt-pal-night-ink); }
+[data-palette="bone"] { --pal-bg: var(--tt-pal-bone); --pal-ink: var(--tt-pal-bone-ink); }
+[data-palette="sky"] { --pal-bg: var(--tt-pal-sky); --pal-ink: var(--tt-pal-sky-ink); }
+[data-palette="butter"] { --pal-bg: var(--tt-pal-butter); --pal-ink: var(--tt-pal-butter-ink); }
+[data-palette="coral"] { --pal-bg: var(--tt-pal-coral); --pal-ink: var(--tt-pal-coral-ink); }
+[data-palette="pink"] { --pal-bg: var(--tt-pal-pink); --pal-ink: var(--tt-pal-pink-ink); }
+[data-palette="mint"] { --pal-bg: var(--tt-pal-mint); --pal-ink: var(--tt-pal-mint-ink); }
+[data-palette="blue-soft"] { --pal-bg: var(--tt-pal-blue-soft); --pal-ink: var(--tt-pal-night); }
+[data-palette="sky-soft"] { --pal-bg: var(--tt-pal-sky-soft); --pal-ink: var(--tt-pal-night); }
+[data-palette="butter-soft"] { --pal-bg: var(--tt-pal-butter-soft); --pal-ink: var(--tt-pal-night); }
+[data-palette="coral-soft"] { --pal-bg: var(--tt-pal-coral-soft); --pal-ink: var(--tt-pal-night); }
+[data-palette="pink-soft"] { --pal-bg: var(--tt-pal-pink-soft); --pal-ink: var(--tt-pal-night); }
+[data-palette="mint-soft"] { --pal-bg: var(--tt-pal-mint-soft); --pal-ink: var(--tt-pal-night); }
+
+/* Inside a coloured tile, the words, figures and accents take the tile's ink; secondary words a step lighter; the
+   progress fills in mint. « plain » is a flat tile on the page's own ground, in its own inks. */
+[data-palette]:not([data-palette="plain"]) {
+  --tt-ink: var(--pal-ink);
+  --tt-meta: color-mix(in oklch, var(--pal-ink) 80%, var(--pal-bg));
+  --tt-line: color-mix(in oklch, var(--pal-ink) 18%, var(--pal-bg));
+  --tt-tile: color-mix(in oklch, var(--pal-ink) 8%, var(--pal-bg));
+  --tt-tile-2: color-mix(in oklch, var(--pal-ink) 12%, var(--pal-bg));
+  --tt-brand: var(--pal-ink);
+  --tt-brand-mark: var(--pal-ink);
+  --tt-live: var(--pal-ink);
+  --tt-gain-ink: var(--pal-ink);
+  --tt-overlap: var(--pal-ink);
+  --tt-overlap-strong: var(--pal-ink);
+  --tt-segment-done: linear-gradient(var(--tt-pal-mint), var(--tt-pal-mint)) left / 100% 100% no-repeat, var(--tt-line);
+}
+
+[data-palette="plain"] { --pal-bg: var(--tt-bg); }
+
+/* State layers (18/11/2026; Michael on « À faire » in night: hovered, a line turned white under white words). A state
+   is a veil of the surface's own ink, never a colour of its own: on a light surface the ink at 6 % (hover), 10 %
+   (press), 12 % (selected); on a dark one white at 10, 16, 20 %. Words and icons keep the surface's ink, so no state can
+   ever put white on white or black on black. Every coloured tile says which surface it is (data-surface). */
+:root {
+  --tt-state-on-light-hover: color-mix(in oklch, var(--tt-ink) 6%, transparent);
+  --tt-state-on-light-press: color-mix(in oklch, var(--tt-ink) 10%, transparent);
+  --tt-state-on-light-selected: color-mix(in oklch, var(--tt-ink) 12%, transparent);
+  --tt-state-on-dark-hover: rgb(255 255 255 / 10%);
+  --tt-state-on-dark-press: rgb(255 255 255 / 16%);
+  --tt-state-on-dark-selected: rgb(255 255 255 / 20%);
+  --tt-state-hover: var(--tt-state-on-light-hover);
+  --tt-state-press: var(--tt-state-on-light-press);
+  --tt-state-selected: var(--tt-state-on-light-selected);
+  --tt-state-outline: inset 0 0 0 var(--tt-hairline-w) var(--tt-line);
+}
+
+[data-surface="light"] {
+  --tt-state-on-light-hover: color-mix(in oklch, var(--pal-ink, var(--tt-ink)) 6%, transparent);
+  --tt-state-on-light-press: color-mix(in oklch, var(--pal-ink, var(--tt-ink)) 10%, transparent);
+  --tt-state-on-light-selected: color-mix(in oklch, var(--pal-ink, var(--tt-ink)) 12%, transparent);
+  --tt-state-hover: var(--tt-state-on-light-hover);
+  --tt-state-press: var(--tt-state-on-light-press);
+  --tt-state-selected: var(--tt-state-on-light-selected);
+  --tt-state-outline: inset 0 0 0 var(--tt-hairline-w) var(--tt-line);
+}
+
+[data-surface="dark"] {
+  /* The page's ground is the tile's own colour: an ink button turns white with the night's words, never white on white. */
+  --tt-bg: var(--pal-bg);
+  --tt-state-hover: var(--tt-state-on-dark-hover);
+  --tt-state-press: var(--tt-state-on-dark-press);
+  --tt-state-selected: var(--tt-state-on-dark-selected);
+  --tt-state-outline: inset 0 0 0 var(--tt-hairline-w) var(--tt-line);
+}
+
+/* The focus ring in the surface's ink: visible on light and on dark alike. */
+[data-palette]:not([data-palette="plain"]) {
+  --tt-focus: var(--pal-ink);
+  --tt-focus-ring: var(--tt-focus-width) solid var(--pal-ink);
+}

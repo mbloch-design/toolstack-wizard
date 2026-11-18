@@ -8,25 +8,8 @@
   gap: calc(var(--tt-space-1) * 7);
 }
 
-.group {
-  display: grid;
-  gap: var(--tt-space-3);
-}
 
-.groupName {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--tt-space-1) calc(var(--tt-space-1) * 2.5);
-}
 
-.groupName > i {
-  align-self: center;
-  width: 8px;
-  height: 8px;
-  border-radius: var(--tt-r-round);
-  background: var(--c, var(--tt-ink));
-}
 
 .cards {
   container-type: inline-size;
@@ -173,20 +156,6 @@
   gap: var(--tt-space-3);
 }
 
-.groups[data-grouped][data-layout="grid"] .group,
-.groups[data-grouped][data-layout="grid"] .cards {
-  display: contents;
-}
-
-.groups[data-grouped][data-layout="grid"] .groupName {
-  grid-column: 1 / -1;
-  padding: var(--tt-space-3) 0 0;
-}
-
-.groups[data-grouped][data-layout="grid"] .group:first-child .groupName {
-  padding-top: 0;
-}
-
 .dot {
   display: inline-block;
   width: 8px;
@@ -197,14 +166,37 @@
   vertical-align: 0.1em;
 }
 
-/* The role line (M01): what the tool does for the person, up to two lines so it is never cut on a narrow card. */
+/* The role line (M01): what the tool does for the person, written to hold on two lines, never cut. */
 .role {
-  display: -webkit-box;
   min-width: 0;
-  overflow: hidden;
   color: var(--tt-ink);
   font: var(--tt-note-font);
   letter-spacing: var(--tt-note-tracking);
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+}
+
+/* A grid card keeps its places (18/11): the tag line always there, even empty, the role on two reserved lines; every
+   card of the grid has the same height. */
+.cards:not([data-layout="list"]) .foot {
+  display: grid;
+  gap: var(--tt-space-2);
+}
+
+.cards:not([data-layout="list"]) .tagLine {
+  display: flex;
+  min-height: 22px;
+}
+
+.cards:not([data-layout="list"]) .role {
+  min-height: var(--tt-caption-reason);
+}
+
+/* In a list, an empty tag line takes no room. */
+.cards[data-layout="list"] .tagLine:empty {
+  display: none;
+}
+
+/* A price still to confirm: the meta style, never the weight of a figure; the name stays the card's strongest words. */
+.pending {
+  composes: note from "../atoms.module.css";
+  color: var(--tt-meta);
 }

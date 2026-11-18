@@ -204,17 +204,24 @@
   grid-template-columns: auto minmax(0, 1fr) auto;
   column-gap: var(--tt-space-3);
   align-items: center;
-  margin-inline: calc(var(--tt-space-2) * -1);
-  padding: var(--tt-space-2);
+  padding: var(--tt-space-2) 0;
   border-radius: var(--tt-r-field);
   transition: background-color var(--tt-dur-state) ease, box-shadow var(--tt-dur-state) ease;
 }
 
-/* An open step answers the pointer as a pane of glass lifting off the slab, never a grey block (M01). */
+/* An open step answers the pointer with the surface's own state layer (18/11): a veil of its ink on a light tile, of
+   white on a dark one; its words keep the surface's ink, never white on white. */
+
+/* The state layer reaches past the words on both sides by a spread, never by a negative margin (no overflow). */
 .steps[data-layout="list"] .step:not([data-done]):hover,
 .steps[data-layout="list"] .step:not([data-done]):focus-within {
-  background: var(--tt-glass-chip-face);
-  box-shadow: var(--tt-glass-chip-lift);
+  background: var(--tt-state-hover);
+  box-shadow: 0 0 0 var(--tt-space-2) var(--tt-state-hover);
+}
+
+.steps[data-layout="list"] .step:not([data-done]):active {
+  background: var(--tt-state-press);
+  box-shadow: 0 0 0 var(--tt-space-2) var(--tt-state-press);
 }
 
 .steps[data-layout="list"] .stepMark {
@@ -389,3 +396,11 @@
     animation: none;
   }
 }
+
+/* Ma stack's palette (trial, 18/11/2026): on a coloured tile, a step's mark is a white round, its sign in the night ink. */
+[data-palette] .step .stepMark {
+  background: var(--tt-pal-paper);
+  box-shadow: none;
+  color: var(--tt-pal-night);
+}
+

@@ -21,7 +21,9 @@ import { RecipeCards } from "@/ds/AgentHub/AgentHub";
 import { useAgentAssistant } from "@/hooks/useAgentAssistant";
 
 const HUB_ASSISTANT_NAMES = { claude: "Claude", chatgpt: "ChatGPT", gemini: "Gemini", copilot: "Copilot" } as const;
-import Bento, { Answer, Answers, BentoRow, GlassIcon, MiniRing, Question, Tile } from "@/ds/Bento/Bento";
+import Bento, { Answer, Answers, BentoRow, MiniRing, Question, Tile } from "@/ds/Bento/Bento";
+import { ChoiceMenu } from "@/ds/Tabs/Tabs";
+import { ClientMark } from "@/ds/AgentSheet/AgentSheet";
 import Amount from "@/ds/Amount/Amount";
 import Starter from "@/ds/Starter/Starter";
 
@@ -43,7 +45,7 @@ import { Section, SectionHead } from "@/ds/Toolbar/Toolbar";
 import Button, { LinkArrow, TextButton, linkClass } from "@/ds/Button/Button";
 import { Link } from "@/lib/routerLinks";
 import { trackEvent } from "@/lib/analytics";
-import { Clock, Copy, Euro, LayoutGrid, FolderKanban, Globe, MessagesSquare, Palette, PiggyBank, Plus, Receipt, Wallet } from "@/lib/icons";
+import { Clock, Copy, Euro, FolderKanban, Globe, MessagesSquare, Palette, PiggyBank, Plus, Receipt, Wallet } from "@/lib/icons";
 import { Checkpoints, SpendBar, TradeMap } from "@/ds/StackBoard/StackBoard";
 import StackProfile from "@/components/stack/StackProfile";
 import { FigureCard, FigureCards } from "@/ds/Catalog/Catalog";
@@ -139,7 +141,6 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   const [later, setLater] = useState<string[]>([]);
   // The assistant (step 3, 18/11/2026): shared with the hub and the server sheet; asked once, then a finding.
   const [assistant, setAssistant, assistantChosen] = useAgentAssistant();
-  const [askAssistant, setAskAssistant] = useState(false);
   // On a phone each card is a summary line; one opens at a time.
   // No accordion: in one column every card stays open, in reading order (the decision is the page’s action).
   // The face just picked: it lights up, the other swipes away, the saving
@@ -363,10 +364,10 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
   const tiles: { id: string; node: (row: string[]) => ReactNode }[] = [];
   const condensed = (id: string, row: string[]) => !!openTile && openTile !== id && row.includes(openTile);
   // The split left the bento for its own section, « Où va votre budget » (M01, 14/11/2026).
-  if (decision && top) tiles.push({ id: "decision", node: (row) => <Tile key="decision" span={12} tone="question"
+  if (decision && top) tiles.push({ id: "decision", node: (row) => <Tile key="decision" span={12} tone="question" palette="plain"
     label={`${top.kind === "pair" ? t("Ce qui se recoupe", "What overlaps") : t("Ce qui reste à préciser", "What is left to confirm")}${peak > 1 ? ` · ${t(`${step} sur ${peak}`, `${step} of ${peak}`)}` : ""}`}
     condensed={condensed("decision", row)}>{decision}</Tile> });
-  if (showUsage) tiles.push({ id: "usage", node: (row) => <Tile key="usage" span={5} tone={next ? "question" : "tile"} card="usage-tile"
+  if (showUsage) tiles.push({ id: "usage", node: (row) => <Tile key="usage" span={5} tone={next ? "question" : "tile"} card="usage-tile" palette="plain"
     label={next ? t(`Ce qui sert vraiment · ${fit.filter((r) => !r.usage).length} carte${fit.filter((r) => !r.usage).length > 1 ? "s" : ""}`, `What really serves · ${fit.filter((r) => !r.usage).length} card${fit.filter((r) => !r.usage).length > 1 ? "s" : ""}`) : t("Ce qui sert vraiment", "What really serves")}
     statement={next ? undefined : <Amount size="figure" tone="overlap" value={format(Math.round(dustTotal))} unit={t("/mois", "/mo")} />}
     status={next ? undefined : { text: t(`prennent la poussière chez ${dust.map((r) => r.tool.name).join(", ")}.`, `gathering dust with ${dust.map((r) => r.tool.name).join(", ")}.`) }}
@@ -414,13 +415,16 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           ? [t(`${yearly}/an`, `${yearly}/yr`), heroWork && t(`${heroWork}\u00a0de\u00a0travail`, `${heroWork}\u00a0of\u00a0work`)].filter(Boolean).join(" · ")
           : t(`${unsure.length} prix à préciser`, `${unsure.length} price${unsure.length > 1 ? "s" : ""} to confirm`);
         return <div style={{ marginTop: "calc(var(--tt-gap-head) + var(--tt-gap-item) * 2)", marginBottom: "calc(var(--tt-board-gap) - var(--tt-page-gap))" }}><FigureCards label={t("Ma stack en chiffres", "My stack in figures")}>
-          <FigureCard centered color="var(--tt-range-1)" icon={<GlassIcon color="color-mix(in oklch, var(--tt-slab-teal) 78%, white)"><Wallet /></GlassIcon>} figure={monthly ? format(Math.round(total)) : "?"} unit={monthly ? t("/mois", "/mo") : undefined} name={t("Dépense", "Spend")} detail={spendDetail} renderLink={go('[data-card="split"]')} />
-          <FigureCard centered color="var(--tt-range-2)" icon={<LayoutGrid />} visual={<span style={{ display: "flex" }}>{stackLogos.slice(0, 4).map((tool, index) => <span key={tool.id} style={{ marginLeft: index ? "var(--tt-logo-overlap)" : 0 }}><Logo tool={tool} size={32} /></span>)}</span>}
+          <FigureCard palette="butter" icon={<Wallet />} figure={monthly ? format(Math.round(total)) : "?"} unit={monthly ? t("/mois", "/mo") : undefined} name={t("Dépense", "Spend")} detail={spendDetail} renderLink={go('[data-card="split"]')} />
+          <FigureCard palette="sky" visual={<span style={{ display: "flex" }}>{stackLogos.slice(0, 4).map((tool, index) => <span key={tool.id} style={{ marginLeft: index ? "var(--tt-logo-overlap)" : 0 }}><Logo tool={tool} size={32} /></span>)}</span>}
             figure={String(toolCount)} name={t("Outils", "Tools")} detail={composition ? composition.replace(/^(Dont|Of which) /, "").replace(/\.$/, "") : undefined} renderLink={go("#ms-all-title")} />
-          <FigureCard centered color={pairs.length ? "var(--tt-overlap)" : "var(--tt-range-3)"} icon={<GlassIcon color="color-mix(in oklch, var(--tt-slab-teal) 78%, white)"><Copy /></GlassIcon>} tone={pairs.length ? "overlap" : "gain"} visual={pairs[0] ? <span style={{ display: "flex", gap: "var(--tt-space-1)" }}>{pairs[0].tools.slice(0, 2).map((tool) => <Logo key={tool.id} tool={tool} size={32} />)}</span> : undefined}
-            figure={String(pairs.length)} name={t(pairs.length > 1 ? "Doublons" : "Doublon", pairs.length > 1 ? "Overlaps" : "Overlap")}
-            detail={pairs[0] ? t(`${pairs[0].tools[0].name} et ${pairs[0].tools[1]?.name ?? ""} se marchent dessus`, `${pairs[0].tools[0].name} and ${pairs[0].tools[1]?.name ?? ""} step on each other`) : t("Chacun son rôle", "Each to its role")} renderLink={go('[data-card="decision"]')} />
-          <FigureCard centered color="var(--tt-range-4)" icon={<GlassIcon color="color-mix(in oklch, var(--tt-slab-teal) 78%, white)"><PiggyBank /></GlassIcon>} tone={saved > 0 ? "gain" : "ink"} figure={saved > 0 ? `−${format(Math.round(saved))}` : format(0)} unit={t("/mois", "/mo")} name={t("Économisé", "Saved")}
+          <FigureCard palette="coral" {...(pairs[0] ? {} : { icon: <Copy /> })} tone={pairs.length ? "overlap" : "gain"} visual={pairs[0] ? <span style={{ display: "flex", gap: "var(--tt-space-1)" }}>{pairs[0].tools.slice(0, 2).map((tool) => <Logo key={tool.id} tool={tool} size={32} />)}</span> : undefined}
+            figure={String(pairs.length)} name={pairs.length ? t(pairs.length > 1 ? "Paires en doublon" : "Paire en doublon", pairs.length > 1 ? "Overlapping pairs" : "Overlapping pair") : t("Doublon", "Overlap")}
+            detail={pairs[0]
+              // The figure counts pairs (18/11, option a): what « À faire » will ask, one pair at a time; the first one named.
+              ? `${t(`${pairs[0].tools[0].name} et ${pairs[0].tools[1]?.name ?? ""}`, `${pairs[0].tools[0].name} and ${pairs[0].tools[1]?.name ?? ""}`)}${pairs.length > 1 ? t(`, et ${pairs.length - 1} autre${pairs.length > 2 ? "s" : ""}`, `, and ${pairs.length - 1} more`) : ""}`
+              : t("Chacun son rôle", "Each to its role")} renderLink={go('[data-card="decision"]')} />
+          <FigureCard palette="mint" icon={<PiggyBank />} tone={saved > 0 ? "gain" : "ink"} figure={saved > 0 ? `−${format(Math.round(saved))}` : format(0)} unit={t("/mois", "/mo")} name={t("Économisé", "Saved")}
             detail={saved > 0 ? t("par vos décisions", "by your decisions") : t("La tirelire attend son premier choix", "The piggy bank awaits your first call")} renderLink={go('[data-card="decision"]')} />
         </FigureCards>
 </div>;
@@ -456,15 +460,14 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
       ][done];
       return <Bento compact label={t("Ma stack en bref", "My stack at a glance")}>
         <BentoRow>
-          <Tile span={7} label={t("Vos métiers", "Your trades")} bloom={["var(--tt-range-5)", "var(--tt-range-5)"]}
+          <Tile span={7} label={t("Vos métiers", "Your trades")} palette="bone"
             statement={<><Key>{coveredCount}</Key>{t(` sur ${CORE_TRADES.length}`, ` of ${CORE_TRADES.length}`)}</>}
             status={{ text: (() => { const missing = CORE_TRADES.find((id) => !covered.includes(id)); return missing ? t(...TRADE_JOKES[missing]) : t("Tout le métier est couvert. Rien ne dépasse.", "The whole job is covered. Nothing sticks out."); })(), done: coveredCount === CORE_TRADES.length }}
             footer={<div style={{ display: "grid", gap: "var(--tt-space-8)" }}><TradeMap label={t("Vos métiers", "Your trades")} addLabel={(name) => t(`Ajouter un outil pour ${name}`, `Add a tool for ${name}`)} onAdd={() => onAddTool()}
               trades={CORE_TRADES.map((id) => ({ id, name: t(...TRADE_NAMES[id]), icon: TRADE_ICONS[id], tools: territories.find((territory) => territory.id === id)?.tools ?? [], color: ["var(--tt-slab-teal)", "var(--tt-slab-blue)", "var(--tt-slab-aqua)"][CORE_TRADES.indexOf(id) % 3] }))} />
               {coveredCount < CORE_TRADES.length && <span><TextButton arrow onClick={onAddTool}>{t(`Compléter ma stack · ${CORE_TRADES.length - coveredCount} métier${CORE_TRADES.length - coveredCount > 1 ? "s" : ""} à couvrir`, `Complete my stack · ${CORE_TRADES.length - coveredCount} trade${CORE_TRADES.length - coveredCount > 1 ? "s" : ""} to cover`)}</TextButton></span>}
             </div>} />
-          <Tile span={5} label={`${t("À faire", "To do")} · ${level[0]}`}
-            bloom={[done === checks.length ? "var(--tt-live)" : done === 0 ? "var(--tt-overlap)" : "var(--tt-range-6)", "var(--tt-range-6)"]}
+          <Tile span={5} label={`${t("À faire", "To do")} · ${level[0]}`} palette="night"
             statement={done === checks.length ? <Key tone="gain">{t("Rien", "Nothing")}</Key> : <><Key tone={done === 0 ? "overlap" : "brand"}>{checks.length - done}</Key>{t(` étape${checks.length - done > 1 ? "s" : ""}`, ` step${checks.length - done > 1 ? "s" : ""}`)}</>}
             footer={<Checkpoints layout="list" progressLabel={t(`${done} étape${done > 1 ? "s" : ""} sur ${checks.length} réglée${done > 1 ? "s" : ""}`, `${done} of ${checks.length} steps settled`)} label={t("Étapes", "Steps")} steps={checks.map((check) => ({ id: check.id, name: check.name, icon: check.icon, done: check.done, note: check.note, action: check.action }))} />} />
         </BentoRow>
@@ -479,7 +482,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
             return costs.length === 2 ? sum + Math.min(...costs) : sum;
           }, 0);
           return <BentoRow>
-            <Tile span={12} card="split" quiet label={t("Où va l'argent", "Where the money goes")} bloom={["var(--tt-range-2)", "var(--tt-range-2)"]}
+            <Tile span={12} card="split" palette="plain" label={t("Où va l'argent", "Where the money goes")}
               statement={saveable > 0
                 ? <><Key tone="overlap">{format(Math.round(saveable))}</Key>{t(" par mois à trancher", " a month to settle")}</>
                 : <><Key>{topShare}{"\u00a0"}%</Key>{t(` pour ${top.tool.name}`, ` for ${top.tool.name}`)}</>}
@@ -503,29 +506,31 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           const recipes = recipesFor(slugs, assistant);
           const checked = rows.filter((row) => row.status !== "unchecked").length;
           const plugged = rows.filter(isPlugged).length;
-          const asking = !assistantChosen || askAssistant;
+          // The question until answered (it leaves once answered, 09/11); then the choice lives in the tile (18/11): a compact
+          // menu on its label's line changes the figure, the verdict and the recipes in place.
+          const asking = !assistantChosen;
           // A tile with nothing to say leaves (09/11; step 8d): none of the stack's tools looked at yet, no tile.
           if (!checked) return null;
           const nameOf = (slug: string) => stackTools.find((tool) => toolKey(tool) === slug)?.name ?? slug;
           return <BentoRow>
-            <Tile span={12} card="assistant" tone={asking ? "question" : "tile"} label={t("Votre assistant IA", "Your AI assistant")}
+            <Tile span={12} card="assistant" tone={asking ? "question" : "tile"} palette="pink-soft" label={t("Votre assistant IA", "Your AI assistant")}
+              control={asking ? undefined : <ChoiceMenu label={t("Votre assistant", "Your assistant")} closeLabel={t("Fermer", "Close")} value={assistant}
+                onChange={(value) => { trackEvent("stack_assistant_answer", { assistant: value, source: "tile" }); setAssistant(value); }}
+                options={HUB_ASSISTANTS.map((value) => ({ value, label: value === "other" ? t("Autre", "Other") : HUB_ASSISTANT_NAMES[value], icon: <ClientMark client={value === "other" ? "any" : value} size={20} /> }))} />}
               statement={asking ? undefined : <><Key tone={plugged ? "brand" : undefined}>{plugged}</Key>{t(` sur ${rows.length}`, ` of ${rows.length}`)}</>}
               status={asking ? undefined : { text: reportVerdict(rows, assistant, lang, nameOf) }}
               footer={asking ? undefined : <div style={{ display: "grid", gap: "var(--tt-gap-group)" }}>
                 {/* Recipes (step 6): two tools of this stack, both plugged into this assistant; three at most. */}
                 {recipes.length > 0 && <RecipeCards lang={lang} items={recipes.map((recipe) => ({ id: recipe.id, request: fr ? recipe.request.fr : recipe.request.en,
                   sides: recipe.sides.map((side) => { const tool = stackTools.find((x) => toolKey(x) === side.host_tool)!; return { name: tool.name, logo: <Logo tool={tool} size={24} />, ...(side.gravest ? { gravest: side.gravest } : {}) }; }) }))} />}
-                <span style={{ display: "flex", flexWrap: "wrap", gap: "var(--tt-space-2) var(--tt-space-6)" }}>
                 {/* The detail is the hub (no opening in place): the system's action link, its arrow there at rest. */}
-                {agentsHref && <Link to={agentsHref} className={linkClass()} onClick={() => trackEvent("stack_assistant_detail", { assistant })}>{t("Tous les outils à brancher", "Every tool to plug in")}<LinkArrow shown /></Link>}
-                <TextButton onClick={() => setAskAssistant(true)}>{t("Changer d'assistant", "Change assistant")}</TextButton>
-                </span>
+                {agentsHref && <span><Link to={agentsHref} className={linkClass()} onClick={() => trackEvent("stack_assistant_detail", { assistant })}>{t("Tous les outils à brancher", "Every tool to plug in")}<LinkArrow shown /></Link></span>}
               </div>}>
               {/* Only the question has a body: a finding without it leaves no empty row under its label (step 8d). */}
               {asking ? <><Question>{t("Quel assistant utilisez-vous ?", "Which assistant do you use?")}</Question>
               <Answers label={t("Votre assistant", "Your assistant")}>
                 {HUB_ASSISTANTS.map((value) => <Answer key={value} name={value === "other" ? t("Autre", "Other") : HUB_ASSISTANT_NAMES[value]}
-                  onClick={() => { trackEvent("stack_assistant_answer", { assistant: value }); setAssistant(value); setAskAssistant(false); }} />)}
+                  onClick={() => { trackEvent("stack_assistant_answer", { assistant: value }); setAssistant(value); }} />)}
               </Answers></> : undefined}
             </Tile>
           </BentoRow>;

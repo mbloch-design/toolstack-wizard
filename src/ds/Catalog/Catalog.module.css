@@ -897,3 +897,36 @@
     background: var(--tt-bg);
   }
 }
+
+/* Ma stack's palette (trial, 18/11/2026): the figure card in its flat colour (set on its slot), the system's resting
+   shadow; no glass rim, no lit hover; the figure and its pictogram in the card's ink, the pictogram on a white round. */
+.placeSlot[data-palette] > .figureCard {
+  background: var(--pal-bg);
+  box-shadow: var(--tt-row-rest);
+}
+
+.placeSlot[data-palette] > .figureCard::after {
+  display: none;
+}
+
+.placeSlot[data-palette] > .figureCard:hover {
+  box-shadow: var(--tt-row-lift);
+  filter: none;
+}
+
+.placeSlot[data-palette] > .figureCard .figure[data-tone] {
+  color: var(--tt-ink);
+}
+
+.placeSlot[data-palette] > .figureCard .figureIcon {
+  background: var(--tt-pal-paper);
+  color: var(--tt-pal-night);
+}
+
+/* One inner grid for the four figures (18/11, « ma mise en page à l'intérieur ? »): left-aligned, the mark or the logos
+   on a reserved line at the top, the figure, its name, then its detail on two reserved lines, so the four cards line up
+   line by line whatever they say. */
+.placeSlot[data-palette] > .figureCard .figureDetail {
+  min-height: var(--tt-caption-reason);
+}
+

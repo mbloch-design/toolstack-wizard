@@ -12,7 +12,7 @@ import MediaCard, { MediaCards } from "../MediaCard/MediaCard";
 import { FigureCard, FigureCards } from "../Catalog/Catalog";
 import { NoticeRows } from "../Notice/Notice";
 import Split from "../Split/Split";
-import ToolCard, { ToolCards, ToolGroup, ToolGroups } from "../ToolCard/ToolCard";
+import ToolCard, { ToolCards, ToolGroups } from "../ToolCard/ToolCard";
 import { SearchField } from "../ToolSearch/ToolSearch";
 import { Section, SectionHead } from "../Toolbar/Toolbar";
 import { Key, StoryHero } from "./Narrative";
@@ -84,11 +84,10 @@ function Dashboard({ lang, decided }: { lang: Lang; decided: boolean }) {
       <Section labelledBy="m01-tools">
         <SectionHead title={t(lang, "Mes outils", "My tools")} titleId="m01-tools" note={t(lang, "Ce que chacun fait pour vous.", "What each one does for you.")} />
         <ToolGroups label={t(lang, "Mes outils", "My tools")} layout="list" grouped editing={false}>
-          {(Object.keys(AREAS) as Item["area"][]).map((id) => { const tools = items.filter((item) => item.area === id); return tools.length > 0 &&
-            <ToolGroup key={id} label={t(lang, AREAS[id].fr, AREAS[id].en)} color={AREAS[id].color} note={tools.map((item) => `${item.name} : ${t(lang, item.role[0], item.role[1])}`).join(" · ")}>
-              <ToolCards layout="list">{tools.map((item) => <ToolCard key={item.slug} lang={lang} tool={{ id: item.slug, name: item.name, slug: item.slug }}
-                amount={item.monthly === 0 ? t(lang, "Gratuit", "Free") : money(lang, item.monthly)} monthly={item.monthly > 0} status={item.overlap ? "overlap" : "ok"} onOpen={() => {}} onRemove={() => {}} localLogosOnly />)}</ToolCards>
-            </ToolGroup>; })}
+          {/* One continuous list (11/11, 18/11): by area, the area's dot on each card, its role in its own words. */}
+          <ToolCards layout="list">{(Object.keys(AREAS) as Item["area"][]).flatMap((id) => items.filter((item) => item.area === id)).map((item) => <ToolCard key={item.slug} lang={lang} tool={{ id: item.slug, name: item.name, slug: item.slug }}
+            role={t(lang, item.role[0], item.role[1])} areaColor={AREAS[item.area].color}
+            amount={item.monthly === 0 ? t(lang, "Gratuit", "Free") : money(lang, item.monthly)} monthly={item.monthly > 0} status={item.overlap ? "overlap" : "ok"} onOpen={() => {}} onRemove={() => {}} localLogosOnly />)}</ToolCards>
         </ToolGroups>
       </Section>
 
