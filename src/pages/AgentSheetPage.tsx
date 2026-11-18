@@ -14,7 +14,7 @@ import { useStackPins } from "@/hooks/useStackPins";
 import { Check, Plus, Plug } from "@/lib/icons";
 import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import catalog from "@/data/agents/catalog.json";
-import { byLine, cardLine, cardSentence, clientName, forEveryone, say, serverName, type Lang, type McpSheet, type SkillSheet } from "@/lib/agents";
+import { byLine, cardLine, cardSentence, clientName, forEveryone, say, serverName, skillFoot, type Lang, type McpSheet, type SkillSheet } from "@/lib/agents";
 import NotFound from "@/pages/NotFound";
 import { useAgentAssistant } from "@/hooks/useAgentAssistant";
 import { serverFoot } from "@/lib/agentReport";
@@ -84,7 +84,7 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
   );
   const skillCard = (k: SkillSheet) => (
     <AgentCard key={k.slug} icon={logo(k.host_tool)} name={k.name} by={byLine(k.publisher, lang)} summary={cardLine(say(lang, k.summary))}
-      facts={[{ kind: "skill", text: t("Savoir-faire", "Know-how") as string }, { kind: "assistant", text: k.agents.length > 3 ? t(`${k.agents.length} assistants`, `${k.agents.length} assistants`) as string : k.agents.map((a) => (a === "any" ? t(`Tout assistant branché à ${hostName}`, `Any assistant plugged into ${hostName}`) as string : clientName(a, lang))).join(", ") }]}
+      facts={skillFoot(k, lang)}
       renderLink={(className, content) => <Link to={`${prefix}/skills/${k.slug}`} className={className}>{content}</Link>} />
   );
 

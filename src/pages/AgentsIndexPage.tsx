@@ -21,7 +21,7 @@ import { agentShelves } from "@/lib/agentShelves";
 import { HUB_ASSISTANTS, SERVERS, checkedTools, isPlugged, reportRows, reportVerdict, serverFoot, toolStatus, type HubAssistant } from "@/lib/agentReport";
 import skillsIndex from "@/data/agents/skills_index.json";
 import adviceData from "@/data/agents/advice.json";
-import { byLine, cardLine, say, serverName, type Advice, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
+import { byLine, cardLine, say, serverName, skillFoot, type Advice, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
 
 /*
  * The agents section, step 4 (17/11/2026): the hub /agents is a report on your stack from your assistant's side.
@@ -132,7 +132,7 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
 
   const skillRow = (skill: SkillCard) => (
     <AgentCard key={skill.slug} icon={logo(skill.host_tool)} name={skill.name} by={byLine(skill.publisher, lang)} summary={cardLine(say(lang, skill.summary))}
-      facts={[{ kind: "skill", text: t("Savoir-faire", "Know-how") as string }, { kind: "tool", text: toolName(skill.host_tool) }]}
+      facts={skillFoot(skill, lang)}
       renderLink={(className, content) => <Link to={`${prefix}/skills/${skill.slug}`} className={className}>{content}</Link>} />
   );
 

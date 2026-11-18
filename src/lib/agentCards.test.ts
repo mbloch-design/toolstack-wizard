@@ -33,3 +33,19 @@ describe("skills (step 5)", () => {
     expect(everyone).toEqual(["notion-skills", "zapier-build-workflows", "zapier-onboarding"]);
   });
 });
+
+describe("skill cards (step 5)", () => {
+  it("end on where the skill goes, never on « Savoir-faire » or the vendor", async () => {
+    const { default: index } = await import("@/data/agents/skills_index.json");
+    const { skillFoot } = await import("@/lib/agents");
+    const skills = index as unknown as { slug: string; everyone: boolean; agents: string[]; publisher: string }[];
+    const foot = (slug: string) => skillFoot(skills.find((skill) => skill.slug === slug)!, "fr");
+    expect(foot("notion-skills")).toEqual([{ kind: "ready", text: "Sans installation" }]);
+    expect(foot("figma-use")).toEqual([{ kind: "install", text: "Dans Claude Code, Codex, Cursor" }]);
+    for (const skill of skills) {
+      const text = skillFoot(skill, "fr").map((fact) => fact.text).join(" ");
+      expect(text).not.toMatch(/Savoir-faire/);
+      expect(text).not.toContain(skill.publisher === "Figma" ? "Par Figma" : `Par ${skill.publisher}`);
+    }
+  });
+});

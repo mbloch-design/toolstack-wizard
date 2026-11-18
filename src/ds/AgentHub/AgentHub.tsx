@@ -2,7 +2,7 @@ import { useId, useState, type ReactNode } from "react";
 import type { AgentCapabilityKind } from "@/data/types";
 import { CONSEQUENCE, say, typo, type CardFact, type Lang } from "@/lib/agents";
 import type { ToolStatus } from "@/lib/agentReport";
-import { Bot, Check, CreditCard, Eye, Info, Mail, Pencil, Settings2, Sparkles, Trash2, Wrench, Zap } from "@/lib/icons";
+import { Check, CheckCircle2, Code2, CreditCard, Eye, Info, Mail, Pencil, Settings2, Trash2, Wrench, Zap } from "@/lib/icons";
 import { LinkArrow, linkClass } from "../Button/Button";
 import Field from "../Field/Field";
 import Prompt from "../Prompt/Prompt";
@@ -190,7 +190,7 @@ export function AgentCard({ icon, name, by, summary, facts, renderLink, action }
 const FACT_ICONS: Record<CardFact["kind"], ReactNode> = {
   one_click: <Zap aria-hidden="true" />, configure: <Settings2 aria-hidden="true" />, elsewhere: <Info aria-hidden="true" />,
   pay: <CreditCard aria-hidden="true" />, delete: <Trash2 aria-hidden="true" />, send: <Mail aria-hidden="true" />, write: <Pencil aria-hidden="true" />, read: <Eye aria-hidden="true" />,
-  skill: <Sparkles aria-hidden="true" />, tool: <Wrench aria-hidden="true" />, assistant: <Bot aria-hidden="true" />,
+  install: <Code2 aria-hidden="true" />, ready: <CheckCircle2 aria-hidden="true" />, tool: <Wrench aria-hidden="true" />,
 };
 
 

@@ -43,6 +43,22 @@ export interface SkillSheet {
  */
 export const forEveryone = (skill: Pick<SkillSheet, "install">) => !skill.install.length;
 
+/**
+ * A skill card's foot (step 5, 17/11): where it goes, the decision a reader makes. « Sans installation » when it ships
+ * with the server; otherwise the coding tools the vendor documents (« Dans Claude Code, Codex, Cursor »), four named
+ * at most. Never « Savoir-faire » or the vendor, already on the card.
+ */
+export function skillFoot(skill: { everyone?: boolean; install?: InstallRow[]; agents: string[] }, lang: Lang): CardFact[] {
+  const en = lang === "en";
+  const everyone = skill.everyone ?? (skill.install ? forEveryone({ install: skill.install }) : false);
+  if (everyone) return [{ kind: "ready", text: en ? "No install" : "Sans installation" }];
+  const tools = skill.agents.filter((a) => a !== "any").map((a) => clientName(a, lang));
+  // Four or fewer are all named; past that, three and how many more (« et 3 autres »).
+  const more = tools.length - 3;
+  const named = tools.length > 4 ? `${tools.slice(0, 3).join(", ")}${en ? ` and ${more} more` : ` et ${more} autres`}` : tools.join(", ");
+  return [{ kind: "install", text: tools.length ? (en ? `In ${named}` : `Dans ${named}`) : (en ? "In a coding tool" : "Dans un outil de code") }];
+}
+
 export interface McpCard {
   slug: string; name: string; publisher: string; host_tool: string; category: string | null; summary: Pair; card?: Pair;
   status?: "ga" | "beta"; transport?: "remote" | "local"; auth?: ("oauth" | "key" | "none")[]; access?: string;
@@ -186,7 +202,7 @@ export const authWords = (auth: NonNullable<McpSheet["auth"]>, lang: Lang) =>
  * A fact at a card's foot; the card draws the icon of its kind. A server card says how it plugs into your assistant
  * and the gravest thing it can do (step 4, 17/11: no technical words such as « En ligne » or « Votre compte »).
  */
-export type CardFact = { kind: "one_click" | "configure" | "elsewhere" | AgentCapabilityKind | "skill" | "tool" | "assistant"; text: string };
+export type CardFact = { kind: "one_click" | "configure" | "elsewhere" | AgentCapabilityKind | "install" | "ready" | "tool"; text: string };
 /** A card sentence fits two lines of the narrowest server card (280 px, 14 px text); the research validator holds the same 56. */
 export const CARD_MAX = 56;
 /** A card says one sentence: the summary's first, never cut mid-sentence by the card. */
