@@ -16,7 +16,7 @@ import { MediaCards } from "@/ds/MediaCard/MediaCard";
 import { Notice } from "@/ds/Notice/Notice";
 import { ToolRow, ToolRows } from "@/ds/ToolSheet/ToolSheet";
 import { LinkArrow, TextButton, linkClass } from "@/ds/Button/Button";
-import { AgentRowNote, RecipeCards, type RecipeItem } from "@/ds/AgentHub/AgentHub";
+import { AgentRowNote, AssistantChoice, RecipeCards, type RecipeItem } from "@/ds/AgentHub/AgentHub";
 import { Plug } from "@/lib/icons";
 import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { agentShelves } from "@/lib/agentShelves";
@@ -153,13 +153,9 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
           panelTitle={t("Votre assistant", "Your assistant") as string}
           moreLabel={assistantLabel}
           closeLabel={t("Fermer", "Close") as string}
-          sort={{
-            value: assistant, defaultValue: assistant,
-            options: HUB_ASSISTANTS.map((value) => ({ value, label: lang === "en" ? ASSISTANT_LABELS[value][1] : ASSISTANT_LABELS[value][0] })),
-            onChange: (value) => setAssistant(value as HubAssistant),
-            ariaLabel: t("Votre assistant", "Your assistant") as string,
-            groupLabel: t("Quel assistant utilisez-vous ?", "Which assistant do you use?") as string,
-          }} />
+          panel={<AssistantChoice label={t("Quel assistant utilisez-vous ?", "Which assistant do you use?") as string} value={assistant}
+            onChange={(value) => setAssistant(value)}
+            options={HUB_ASSISTANTS.map((value) => ({ value, label: lang === "en" ? ASSISTANT_LABELS[value][1] : ASSISTANT_LABELS[value][0] }))} />} />
 
         {pinned.length > 0 && (
           <Notice tone="line" name="agents-stack" icon={<Plug />} title={typo(stackHeadline(rows, assistant, lang))}

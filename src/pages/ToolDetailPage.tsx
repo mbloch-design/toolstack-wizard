@@ -34,6 +34,7 @@ import ToolBillingTrapsBlock from "@/components/tool/ToolBillingTrapsBlock";
 import ToolAiBlock, { toolAiAngle } from "@/components/tool/ToolAiBlock";
 import ToolGallery from "@/components/tool/ToolGallery";
 import AgentAccess from "@/ds/AgentAccess/AgentAccess";
+import { useAgentAssistant } from "@/hooks/useAgentAssistant";
 import agentAdviceData from "@/data/agents/advice.json";
 import { pluggedAlternatives } from "@/lib/agentAlternatives";
 import type { Advice } from "@/lib/agents";
@@ -133,6 +134,8 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
   const prefix = `/${lang}`;
   const { slug } = useParams();
   const location = useLocation();
+  // The reader's assistant (shared with the agents section): named first in « Avec votre assistant ».
+  const [agentAssistant] = useAgentAssistant();
   const heroRef = useRef<HTMLDivElement | null>(null);
   const scrollBodyRef = useRef<HTMLDivElement | null>(null);
   // Compact bars: armed once the hero actions have scrolled out of view.
@@ -882,6 +885,20 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
               </div>
             )}
 
+            {/* « Avec votre assistant » (step 8b, 18/11/2026): a fact of the decision, right after what the tool is for and
+                before the decision flow; a card of the system, verified with the vendor. Absent: not checked, nothing. */}
+            {showAnalysis && !authorMode && tool.agentAccess && (
+              <div className="td-section" id="assistant-ia">
+                <AgentAccess
+                  access={tool.agentAccess} lang={lang === "en" ? "en" : "fr"} toolName={tool.name} assistant={agentAssistant}
+                  advice={agentAdvice(tool.agentAccess)}
+                  alternatives={tool.agentAccess.mcp === "none" ? pluggedAlternatives(alternatives).map((alt) => ({ slug: alt.slug || alt.id, name: alt.name, logo: <ToolLogo tool={alt} size={24} /> })) : []}
+                  renderSheetLink={(slug, attrs, content) => <Link to={`${prefix}/mcp/${slug}`} {...attrs}>{content}</Link>}
+                  renderToolLink={(slug, className, content) => <Link to={`${prefix}/tool/${slug}`} className={className}>{content}</Link>}
+                />
+              </div>
+            )}
+
             {/* Then when it makes sense, price, alternatives, our verdict,
                 and the background. */}
             {showAnalysis && (
@@ -1229,32 +1246,8 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 {editing?.block(["seo"], t("Référencement par langue et sous-page, angle IA", "Search metadata by language and page, AI angle"), { advanced: true })}
                 {editing?.block(["lifecycle", "decision_policy_v3", "force_silence", "pivot_integration_source", "prescription_block_reasons", "prescription_context_questions"], t("Cycle de vie et recommandations", "Lifecycle and recommendations"), { advanced: true })}
                 {editing?.block(["id", "slug", "research", "prescription_output", "prescription_quality", "bestFor", "tags", "nameEn", "categoryId", "gallery_images", "link", "website", "lifecycleStatus", "pricingTiers", "verdictFr"], t("Informations protégées et compatibilité", "Protected information and compatibility"), { advanced: true })}
-                {/* 10b · Assistant IA (MCP), step 2 (17/11): whether your own assistant can work in the tool, verified
-                     with the vendor. Inside the AI section when there is one (one sentence of transition, no second
-                     title), its own section otherwise. Nothing without a block: absent means not checked. */}
-                {!authorMode && (() => {
-                  const access = tool.agentAccess;
-                  const gateway = access && (
-                    <div className="td-ai-agent" id="assistant-ia">
-                      <AgentAccess
-                        access={access} lang={lang === "en" ? "en" : "fr"} toolName={tool.name}
-                        advice={agentAdvice(access)} after={Boolean(toolAiAngle(tool, lang))}
-                        alternatives={access.mcp === "none" ? pluggedAlternatives(alternatives).map((alt) => ({ slug: alt.slug || alt.id, name: alt.name, logo: <ToolLogo tool={alt} size={24} /> })) : []}
-                        renderSheetLink={(slug, className, content) => <Link to={`${prefix}/mcp/${slug}`} className={className}>{content}</Link>}
-                        renderToolLink={(slug, className, content) => <Link to={`${prefix}/tool/${slug}`} className={className}>{content}</Link>}
-                      />
-                    </div>
-                  );
-                  if (toolAiAngle(tool, lang)) return <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t}>{gateway}</ToolAiBlock>;
-                  return gateway && (
-                    <div className="td-section">
-                      <h2 className="td-title">
-                        {t("Assistant IA.", "AI assistant.")} <span className="tt-title-muted">{t(`${tool.name} et votre assistant.`, `${tool.name} and your assistant.`)}</span>
-                      </h2>
-                      {gateway}
-                    </div>
-                  );
-                })()}
+                {/* 10b · L'angle IA, when there is one. « Avec votre assistant » moved up after the overview (step 8b). */}
+                {!authorMode && toolAiAngle(tool, lang) && <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />}
 
                 {/* Quiet structured recap for search and extraction. Keeping
                     it at the end of the deep dive avoids interrupting the

@@ -45,12 +45,18 @@ const CONSEQUENCE_WORDS = {
   read: ["En lecture seule : sans effet sur vos données.", "Read only: no effect on your data."],
 } as const;
 
-/** Where it plugs in, as a sentence: « Se branche en un clic à Claude, ChatGPT et Gemini. » */
-function plugs(access: AgentAccess, lang: Lang) {
+/** The assistants it plugs into in one click, the reader's own first when it is one of them (step 8b, 18/11/2026). */
+export function oneClickAssistants(access: AgentAccess, first?: string) {
   const setup = access.setup ?? [];
-  const named = (Object.keys(ASSISTANT_NAMES) as (keyof typeof ASSISTANT_NAMES)[])
-    .filter((assistant) => setup.some((way) => way.assistant === assistant && ONE_CLICK.includes(way.how)))
-    .map((assistant) => ASSISTANT_NAMES[assistant]);
+  const all = (Object.keys(ASSISTANT_NAMES) as (keyof typeof ASSISTANT_NAMES)[])
+    .filter((assistant) => setup.some((way) => way.assistant === assistant && ONE_CLICK.includes(way.how)));
+  return [...all.filter((assistant) => assistant === first), ...all.filter((assistant) => assistant !== first)];
+}
+
+/** Where it plugs in, as a sentence: « Se branche en un clic à Claude, ChatGPT et Gemini. » */
+function plugs(access: AgentAccess, lang: Lang, first?: string) {
+  const named = oneClickAssistants(access, first).map((assistant) => ASSISTANT_NAMES[assistant]);
+  const setup = access.setup ?? [];
   if (named.length) return pick(lang, `Se branche en un clic à ${joinWords(named, lang)}.`, `Plugs into ${joinWords(named, lang)} in one click.`);
   if (setup.some((way) => way.how === "url")) return pick(lang, "Se branche à votre assistant avec l'adresse de son serveur.", "Plugs into your assistant with its server address.");
   if (setup.some((way) => way.how === "local")) return pick(lang, "S'installe sur votre ordinateur pour votre assistant.", "Installs on your computer for your assistant.");
@@ -62,12 +68,12 @@ function plugs(access: AgentAccess, lang: Lang) {
  * thing it can do, and the plan only when the plan restricts it.
  * « Se branche en un clic à Claude, ChatGPT et Gemini. Peut supprimer des données. »
  */
-export function agentVerdict(access: AgentAccess, lang: Lang): string {
+export function agentVerdict(access: AgentAccess, lang: Lang, first?: string): string {
   if (access.mcp === "none") return pick(lang, "Ne se branche pas à un assistant IA.", "Does not plug into an AI assistant.");
   const server = leadServer(access.servers);
   const kinds = (["pay", "delete", "send", "write", "read"] as const).filter((kind) => access.capabilities?.some((line) => line.kind === kind));
   const gravest = kinds[0] ?? (server.access === "read_write" ? "write" : server.access === "read" ? "read" : undefined);
-  const said = [plugs(access, lang)];
+  const said = [plugs(access, lang, first)];
   if (gravest) said.push(pick(lang, CONSEQUENCE_WORDS[gravest][0], CONSEQUENCE_WORDS[gravest][1]));
   else if (server.access === "docs_only") said.push(pick(lang, "Lit seulement sa documentation.", "Reads its documentation only."));
   if (server.plan === "paid") said.push(pick(lang, "Forfait payant requis.", "Paid plan required."));

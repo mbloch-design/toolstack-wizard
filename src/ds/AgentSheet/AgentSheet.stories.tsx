@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, fn, screen, userEvent, waitFor } from "storybook/test";
 import Logo from "../Logo/Logo";
 import { CONSEQUENCE, say } from "@/lib/agents";
-import { McpSheetView, RelatedCard, RelatedCards, SkillSheetView } from "./AgentSheet";
+import { CatalogSection } from "../Catalog/Catalog";
+import MediaCard, { MediaCards } from "../MediaCard/MediaCard";
+import { McpSheetView, SkillSheetView } from "./AgentSheet";
 import { sheetStates, skillStates } from "./AgentSheet.fixtures";
 
 // The sheet as /mcp/:slug and /skills/:slug show it, in the reading column: a story in chapters.
@@ -45,14 +47,16 @@ export const Notion: Story = {
     // One action in the head: no « Voir les étapes » (17/11).
     await expect(canvas.queryByRole("link", { name: fr ? /voir les étapes/i : /see the steps/i })).toBeNull();
     // Every action that deletes, pays or sends is in view without a click.
-    for (const row of canvasElement.querySelectorAll<HTMLElement>("li[data-kind=delete], li[data-kind=pay], li[data-kind=send]")) await expect(row).toBeVisible();
+    for (const row of canvasElement.querySelectorAll<HTMLElement>("tr[data-kind=delete]:not([hidden]), tr[data-kind=pay]:not([hidden]), tr[data-kind=send]:not([hidden])")) await expect(row).toBeVisible();
     await expect(canvas.getByRole("link", { name: fr ? "Ouvrir dans Claude" : "Open in Claude" })).toHaveAttribute("href", "https://claude.ai/directory/notion");
     // One fact in one place: a short section shows its list, not a sentence that repeats it; a long one sums up what is folded.
     await expect(canvas.queryByText(fr ? "Mettre à la corbeille des pages, des bases et des commentaires." : "Move pages, databases and comments to trash.")).toBeNull();
     await expect(canvas.getByText(fr ? /^Et aussi\s:/ : /^And also:/)).toBeVisible();
     await expect(canvas.getByText(fr ? /Sur Business et Enterprise/ : /On Business and Enterprise/)).toBeVisible();
     await expect(canvas.getByText(fr ? /À vérifier : ouvrez la page dans Notion/ : /Check: open the page in Notion/)).toBeVisible();
-    await userEvent.click(canvas.getByRole("button", { name: fr ? "Autres" : "Others" }));
+    // One control, one row (step 8b): no « Autres » level, the coding tools after « Pour développeurs ».
+    await expect(canvas.queryByRole("button", { name: fr ? "Autres" : "Others" })).toBeNull();
+    await expect(canvas.getByText(fr ? "Pour développeurs" : "For developers")).toBeVisible();
     await userEvent.click(canvas.getByRole("button", { name: "Cursor" }));
     // A direct link is the step's main action; the copy goes just under it.
     await expect(canvas.getByRole("link", { name: fr ? "Ouvrir dans Cursor" : "Open in Cursor" })).toHaveAttribute("href", expect.stringMatching(/^cursor:\/\/anysphere\.cursor-deeplink\/mcp\/install/));
@@ -95,15 +99,15 @@ export const NotionActions: Story = {
   play: async ({ canvas, canvasElement, globals }) => {
     const fr = globals.lang !== "en";
     const control = canvasElement.querySelector<HTMLElement>("[data-chapter=control]")!;
-    await expect(control.querySelectorAll("li[data-kind]").length).toBe(70);
+    await expect(control.querySelectorAll("tr[data-kind]").length).toBe(70);
     await expect(canvas.getByText(fr ? "Supprime des données · 4" : "Deletes data · 4")).toBeVisible();
     await expect(canvas.getByText(fr ? "Envoie en votre nom · 2" : "Sends in your name · 2")).toBeVisible();
     await expect(canvas.getByText(fr ? "Modifie vos données · 26" : "Edits your data · 26")).toBeVisible();
     await expect(canvas.getByText(fr ? "Lecture seule · 38" : "Read only · 38")).toBeVisible();
-    await expect([...control.querySelectorAll<HTMLElement>("li[data-kind=write]")].filter((row) => !row.closest("[aria-hidden=true]")).length).toBe(6);
+    await expect(control.querySelectorAll("tr[data-kind=write]:not([hidden])").length).toBe(6);
     await userEvent.click(canvas.getByRole("button", { name: fr ? /^Voir les 26 actions/ : /^Show the 26 actions/ }));
-    await waitFor(() => expect([...control.querySelectorAll<HTMLElement>("li[data-kind=write]")].filter((row) => !row.closest("[aria-hidden=true]")).length).toBe(26));
-    await expect(canvasElement.querySelector("[data-chapter=annex] li[data-kind]")).toBeNull();
+    await waitFor(() => expect(control.querySelectorAll("tr[data-kind=write]:not([hidden])").length).toBe(26));
+    await expect(canvasElement.querySelector("[data-chapter=annex] tr[data-kind]")).toBeNull();
   },
 };
 /** A payment: « Engage un paiement » with its actions in view, its icon in the alert colour. */
@@ -111,7 +115,7 @@ export const StripeActions: Story = {
   ...server("stripe", "Stripe"),
   play: async ({ canvas, canvasElement, globals }) => {
     await expect(canvas.getByText(globals.lang === "en" ? "Makes a payment · 3" : "Engage un paiement · 3")).toBeVisible();
-    for (const row of canvasElement.querySelectorAll<HTMLElement>("li[data-kind=pay]")) await expect(row).toBeVisible();
+    for (const row of canvasElement.querySelectorAll<HTMLElement>("tr[data-kind=pay]:not([hidden])")) await expect(row).toBeVisible();
   },
 };
 /** Reading only: « Lecture seule · 9 », « Sans effet sur vos données », the actions folded. */
@@ -132,7 +136,7 @@ export const StripePays: Story = {
   play: async ({ canvas, canvasElement, globals }) => {
     const fr = globals.lang !== "en";
     await expect(canvas.getByRole("link", { name: fr ? "Ouvrir dans Claude" : "Open in Claude" })).toHaveAttribute("href", "https://claude.ai/directory/stripe");
-    for (const row of canvasElement.querySelectorAll<HTMLElement>("[data-chapter=control] li[data-kind=pay]")) await expect(row).toBeVisible();
+    for (const row of canvasElement.querySelectorAll<HTMLElement>("[data-chapter=control] tr[data-kind=pay]:not([hidden])")) await expect(row).toBeVisible();
     await expect(canvas.getByText(fr ? /attendent votre accord dans le Dashboard Stripe/ : /wait for your approval in the Stripe Dashboard/)).toBeVisible();
   },
 };
@@ -192,17 +196,17 @@ export const FicheComplete: Story = {
       title={lang === "en" ? "Plug Notion into your assistant" : "Brancher Notion à votre assistant"}
       logo={<Logo tool={{ name: "Notion", slug: "notion" }} size={40} localOnly />}
       pageUrl="https://tooltrim.com/fr/mcp/notion-mcp" reportHref={REPORT}
-      related={<RelatedCards label="Pour aller plus loin">
-        <RelatedCard logo={<Logo tool={{ name: "Notion", slug: "notion" }} size={40} localOnly />} role={lang === "en" ? "The tool's page" : "La fiche de l'outil"} name="Notion"
-          sentence={lang === "en" ? "Notes, docs, wikis and databases." : "Notes, docs, wikis et bases de données."} cta={lang === "en" ? "Pricing, reviews and alternatives" : "Prix, avis et alternatives"}
-          renderLink={(className, content) => <a className={className} href="/fr/tool/notion">{content}</a>} />
-        <RelatedCard logo={<Logo tool={{ name: "Buffer", slug: "buffer" }} size={40} localOnly />} role={lang === "en" ? "An alternative that plugs in" : "Une alternative qui se branche"} name="Buffer"
-          sentence={alt.card ? say(lang, alt.card) : undefined} cta={lang === "en" ? "See the page" : "Voir la fiche"}
-          renderLink={(className, content) => <a className={className} href="/fr/mcp/buffer-mcp">{content}</a>} />
-        <RelatedCard logo={<Logo tool={{ name: "Notion", slug: "notion" }} size={40} localOnly />} role={lang === "en" ? "A know-how from Notion" : "Un savoir-faire de Notion"} name="Notion Skills"
-          cta={lang === "en" ? "See the know-how" : "Voir le savoir-faire"}
-          renderLink={(className, content) => <a className={className} href="/fr/skills/notion-skills">{content}</a>} />
-      </RelatedCards>} />;
+      related={<CatalogSection as="h3" id="story-further" title={lang === "en" ? "Going further" : "Pour aller plus loin"}>
+        <MediaCards size="s" label={lang === "en" ? "Going further" : "Pour aller plus loin"}>
+          <MediaCard size="s" lang={lang} localLogosOnly tool={{ name: "Notion", slug: "notion" }} category={lang === "en" ? "The tool's page" : "La fiche de l'outil"}
+            reason={lang === "en" ? "Notes, docs, wikis and databases." : "Notes, docs, wikis et bases de données."}
+            add={{ state: "idle", onAdd: () => {} }} renderLink={(className, content) => <a className={className} href="/fr/tool/notion">{content}</a>} />
+          <MediaCard size="s" lang={lang} localLogosOnly tool={{ name: "Buffer", slug: "buffer" }} category={lang === "en" ? "Plugs in too" : "Se branche aussi"}
+            reason={alt.card ? say(lang, alt.card) : undefined} renderLink={(className, content) => <a className={className} href="/fr/mcp/buffer-mcp">{content}</a>} />
+          <MediaCard size="s" lang={lang} localLogosOnly tool={{ name: "Notion Skills", slug: "notion" }} category={lang === "en" ? "Know-how" : "Savoir-faire"}
+            renderLink={(className, content) => <a className={className} href="/fr/skills/notion-skills">{content}</a>} />
+        </MediaCards>
+      </CatalogSection>} />;
   },
   play: async ({ canvasElement }) => {
     // Content contract: five chapters on the white sheet, then the annexes as footnotes.
@@ -212,8 +216,9 @@ export const FicheComplete: Story = {
     // One vocabulary of consequence: no « Lit / Modifie / Supprime / Envoie / Paie » tag left anywhere.
     const words = new Set(Object.values(CONSEQUENCE).flatMap((pair) => [...pair]));
     for (const tag of canvasElement.querySelectorAll("span[data-tone]")) await expect(words.has((tag.textContent ?? "").trim())).toBe(true);
-    // No orphan card: the row under our view holds three.
-    await expect(canvasElement.querySelectorAll("[data-chapter=view] ul > li").length).toBe(3);
+    // No orphan card: the row under our view holds three of the catalogue's media cards (step 8b), the tool with its add button.
+    await expect(canvasElement.querySelectorAll("[data-chapter=view] [data-discovery-tool], [data-chapter=view] ul > li").length).toBe(3);
+    await expect(canvasElement.querySelectorAll("[data-chapter=view] [data-media-add]").length).toBe(1);
   },
 };
 
@@ -228,7 +233,6 @@ export const CopierDepuisLEtape: Story = {
   },
   play: async ({ canvas, globals }) => {
     const fr = globals.lang !== "en";
-    await userEvent.click(canvas.getByRole("button", { name: fr ? "Autres" : "Others" }));
     await userEvent.click(canvas.getByRole("button", { name: fr ? "Autre outil" : "Another tool" }));
     await userEvent.click(canvas.getByRole("button", { name: fr ? "Copier l'adresse" : "Copy the address" }));
     const writeText = (globalThis as { __writeText?: ReturnType<typeof fn> }).__writeText!;

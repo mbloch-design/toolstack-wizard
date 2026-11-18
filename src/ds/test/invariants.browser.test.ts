@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { brokenWords, overflowing, splitUnits, stretchedLinks } from "./invariants";
+import { brokenWords, chapterGaps, overflowing, splitUnits, stretchedLinks } from "./invariants";
 
 const mount = (html: string) => { const el = document.createElement("div"); el.innerHTML = html; document.body.append(el); return el; };
 afterEach(() => { document.body.innerHTML = ""; });
@@ -53,5 +53,9 @@ describe("layout invariants", () => {
   it("finds an action link stretched by its parent, not one as wide as its words", () => {
     const el = mount(`<div style="display:grid;width:400px"><a class="_link_test" href="#">Le guide</a></div><div style="display:grid;width:400px"><a class="_link_test" href="#" style="justify-self:start">Le guide</a></div>`);
     expect(stretchedLinks(el)).toHaveLength(1);
+  });
+  it("finds a chapter's own gap (96) between two children of a chapter, not a smaller one", () => {
+    const el = mount(`<section data-chapter="control"><div style="display:grid;gap:96px"><p style="margin:0">a</p><p style="margin:0">b</p></div><div style="display:grid;gap:48px"><p style="margin:0">c</p><p style="margin:0">d</p></div></section>`);
+    expect(chapterGaps(el)).toHaveLength(1);
   });
 });

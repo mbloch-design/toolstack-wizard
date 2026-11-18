@@ -33,7 +33,8 @@ type Props = {
   /** Index après lequel tracer le séparateur de groupe. Omis : pas de séparateur. */
   dividerAfter?: number;
   navLabel: string;
-  sort: ToolbarSort;
+  /** The sort group, first in the panel. Absent: the panel holds only `panel` (the agents hub's assistant choice). */
+  sort?: ToolbarSort;
   /** Filtres du panneau, rendus sous le tri. Absent : le panneau ne porte que le tri. */
   panel?: ReactNode;
   panelTitle: string;
@@ -83,8 +84,8 @@ export default function CatalogToolbar({
   className = "",
 }: Props) {
   const [panelOpen, setPanelOpen] = useState(false);
-  const defaultSort = sort.defaultValue ?? sort.options[0]?.value;
-  const sortChanged = sort.value !== defaultSort;
+  const defaultSort = sort ? sort.defaultValue ?? sort.options[0]?.value : undefined;
+  const sortChanged = !!sort && sort.value !== defaultSort;
   const badgeCount = activeFilterCount + (sortChanged ? 1 : 0);
 
   function handlePanelOpenChange(next: boolean) {
@@ -94,7 +95,7 @@ export default function CatalogToolbar({
 
   function clearAll() {
     onClearFilters?.();
-    if (sortChanged && defaultSort) sort.onChange(defaultSort);
+    if (sort && sortChanged && defaultSort) sort.onChange(defaultSort);
   }
 
   // 13/11/2026: the stacks and comparisons catalogues on the system's bar (the one of /tools): same chips, same
@@ -137,7 +138,7 @@ export default function CatalogToolbar({
                 </div>
               </div>
               <div className="tt-filter-panel-body">
-                <section className="tt-filter-group">
+                {sort && <section className="tt-filter-group">
                   <h3>{sort.groupLabel ?? sort.ariaLabel}</h3>
                   <div className="tt-filter-segmented" role="radiogroup" aria-label={sort.ariaLabel}>
                     {sort.options.map((option) => (
@@ -153,7 +154,7 @@ export default function CatalogToolbar({
                       </button>
                     ))}
                   </div>
-                </section>
+                </section>}
                 {panel}
               </div>
             </PopoverContent>

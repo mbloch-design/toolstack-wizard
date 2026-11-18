@@ -65,6 +65,25 @@ export function stretchedLinks(root: HTMLElement): HTMLElement[] {
   });
 }
 
+/**
+ * Gaps inside a chapter (18/11/2026, « attention ici ça flotte »): between two children stacked in the same box, never
+ * the 96 that separates two chapters. Positioned decoration and empty boxes are left out.
+ */
+export function chapterGaps(root: HTMLElement): string[] {
+  const found: string[] = [];
+  for (const chapter of root.querySelectorAll<HTMLElement>("[data-chapter]")) {
+    for (const box of [chapter, ...chapter.querySelectorAll<HTMLElement>("*")]) {
+      if (box !== chapter && box.closest("[data-chapter]") !== chapter) continue;
+      const kids = [...box.children].filter((kid): kid is HTMLElement => kid instanceof HTMLElement && !["absolute", "fixed"].includes(getComputedStyle(kid).position) && kid.getBoundingClientRect().height > 0);
+      for (let i = 0; i + 1 < kids.length; i++) {
+        const above = kids[i].getBoundingClientRect(), below = kids[i + 1].getBoundingClientRect();
+        if (below.top - above.bottom >= 96) found.push(`${kids[i].tagName.toLowerCase()} → ${kids[i + 1].tagName.toLowerCase()} (${Math.round(below.top - above.bottom)} px) dans « ${chapter.dataset.chapter} »`);
+      }
+    }
+  }
+  return found;
+}
+
 /** Every invariant on a story's root; one readable failure lists them all. */
 export function assertLayout(root: HTMLElement) {
   const problems = [
@@ -72,6 +91,7 @@ export function assertLayout(root: HTMLElement) {
     ...splitUnits(root).map((unit) => `unité séparée : « ${unit} »`),
     ...overflowing(root).map((el) => `débordement : <${el.tagName.toLowerCase()} class="${el.className}">`),
     ...stretchedLinks(root).map((el) => `lien étiré : « ${el.textContent ?? ""} »`),
+    ...chapterGaps(root).map((gap) => `écart de chapitre dans un chapitre : ${gap}`),
   ];
   if (problems.length) throw new Error(problems.join("\n"));
 }

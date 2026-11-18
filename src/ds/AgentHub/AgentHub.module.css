@@ -249,3 +249,11 @@
   padding: 0 var(--tt-space-6) var(--tt-space-6);
 }
 
+
+/* « Pour développeurs » before the coding tools in the assistant choice (step 8b): a quiet word, on the chips' line. */
+.choiceGroup {
+  composes: note from "../atoms.module.css";
+  align-self: center;
+  margin-inline-start: var(--tt-space-2);
+  color: var(--tt-meta);
+}

@@ -1,8 +1,9 @@
-import type { ReactNode } from "react";
+import { useId, type ReactNode } from "react";
 import type { AgentAccess as AgentAccessData } from "@/data/types";
 import { typo, type Advice } from "@/lib/agents";
-import { LinkArrow, linkClass } from "../Button/Button";
-import { agentVerdict, type Lang } from "./agentVerdict";
+import { buttonAttrs } from "../Button/Button";
+import { ClientMark } from "../AgentSheet/AgentSheet";
+import { agentVerdict, oneClickAssistants, type Lang } from "./agentVerdict";
 import Prompt from "../Prompt/Prompt";
 import styles from "./AgentAccess.module.css";
 
@@ -10,38 +11,42 @@ import styles from "./AgentAccess.module.css";
 export type AgentAlternative = { slug: string; name: string; logo: ReactNode };
 
 /*
- * The gateway on a tool page (step 2, 17/11/2026): short, in the tool page's grammar, no card and no grey.
- * One verdict in the section's vocabulary of consequence, one request you could type, « Brancher Notion à votre
- * assistant → » to the server sheet. Nothing the page already says (plan only when it restricts access).
- * « none »: one sentence and two or three tools of the same category that plug in. Not checked: the page renders
- * nothing at all.
+ * The card on a tool page (step 2, 17/11/2026; made a card and moved up, step 8b, 18/11: « revoir le design de la box,
+ * elle doit être plus haut dans la page »). Right after what the tool is for, as a fact of the decision: « Avec votre
+ * assistant », the marks of the assistants it plugs into in one click, the verdict at 21 (your assistant named first),
+ * one request to copy, then « Brancher Notion à votre assistant » as the system's secondary button (never a blue one
+ * on a tool page). « none »: the same card, short — the sentence and the tools of its kind that plug in. Not checked:
+ * the page renders nothing at all.
  */
-export default function AgentAccess({ access, lang, toolName, advice, after = false, alternatives = [], renderSheetLink, renderToolLink }: {
+export default function AgentAccess({ access, lang, toolName, advice, assistant, alternatives = [], renderSheetLink, renderToolLink }: {
   access: AgentAccessData;
   lang: Lang;
-  /** The tool's name (« Notion »), said in the verdict and the link. */
+  /** The tool's name (« Notion »), said in the verdict and the action. */
   toolName: string;
   /** ToolTrim's words for the lead server (example requests), from src/data/agents/advice.json. */
   advice?: Advice;
-  /** The block follows « Les IA qui comptent ici »: it opens on a one-sentence transition, never a second title. */
-  after?: boolean;
+  /** The reader's assistant (useAgentAssistant): named first in the verdict and the marks. */
+  assistant?: string;
   /** For « none »: tools of the same category that plug in. */
   alternatives?: AgentAlternative[];
-  /** The router link to a server sheet (/mcp/:slug); Storybook gives a plain anchor. */
-  renderSheetLink?: (slug: string, className: string, content: ReactNode) => ReactNode;
+  /** The router link to a server sheet (/mcp/:slug), given the system's attributes for its look; Storybook gives a plain anchor. */
+  renderSheetLink?: (slug: string, attrs: { className: string } & Record<string, string>, content: ReactNode) => ReactNode;
   /** The router link to a tool page (/tool/:slug); Storybook gives a plain anchor. */
   renderToolLink?: (slug: string, className: string, content: ReactNode) => ReactNode;
 }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
-  const sheetLink = renderSheetLink ?? ((slug: string, className: string, content: ReactNode) => <a className={className} href={`/${lang}/mcp/${slug}`}>{content}</a>);
+  const titleId = useId();
+  const sheetLink = renderSheetLink ?? ((slug: string, attrs: { className: string } & Record<string, string>, content: ReactNode) => <a {...attrs} href={`/${lang}/mcp/${slug}`}>{content}</a>);
   const toolLink = renderToolLink ?? ((slug: string, className: string, content: ReactNode) => <a className={className} href={`/${lang}/tool/${slug}`}>{content}</a>);
   const linked = access.servers.filter((server) => server.mcpSlug);
   const example = advice?.examples?.[0];
+  const eyebrow = <p className={styles.eyebrow}>{t("Avec votre assistant", "With your assistant")}</p>;
 
   if (access.mcp === "none") {
     return (
-      <div className={styles.block} data-agent-access="none" data-after={after || undefined}>
-        <p className={styles.verdict}>{t(`${toolName} ne se branche pas à un assistant IA.`, `${toolName} does not plug into an AI assistant.`)}</p>
+      <section className={styles.card} data-agent-access="none" aria-labelledby={titleId}>
+        {eyebrow}
+        <p id={titleId} className={styles.verdict}>{t(`${toolName} ne se branche pas à un assistant IA.`, `${toolName} does not plug into an AI assistant.`)}</p>
         {alternatives.length > 0 && <>
           <p className={styles.text}>{t("Ces outils de la même catégorie se branchent :", "These tools of the same category plug in:")}</p>
           <ul className={styles.alternatives}>
@@ -50,24 +55,26 @@ export default function AgentAccess({ access, lang, toolName, advice, after = fa
             ))}
           </ul>
         </>}
-      </div>
+      </section>
     );
   }
 
+  const marks = oneClickAssistants(access, assistant);
   return (
-    <div className={styles.block} data-agent-access={access.mcp} data-after={after || undefined}>
-      {after && <p className={styles.text}>{t(`Et votre propre assistant ? Il peut travailler directement dans ${toolName}.`, `And your own assistant? It can work directly in ${toolName}.`)}</p>}
-      <p className={styles.verdict}>{typo(agentVerdict(access, lang))}</p>
+    <section className={styles.card} data-agent-access={access.mcp} aria-labelledby={titleId}>
+      {eyebrow}
+      <div className={styles.head}>
+        {marks.length > 0 && <span className={styles.marks} aria-hidden="true">{marks.map((client) => <ClientMark key={client} client={client} size={20} />)}</span>}
+        <p id={titleId} className={styles.verdict}>{typo(agentVerdict(access, lang, assistant))}</p>
+      </div>
       {example && <Prompt text={lang === "en" ? example.en : example.fr} lang={lang} />}
       {linked.length > 0 && (
-        <ul className={styles.links}>
-          {linked.map((server) => (
-            <li key={server.mcpSlug}>{sheetLink(server.mcpSlug!, linkClass(), <>
-              {linked.length > 1 ? t(`Brancher ${toolName} : ${server.name}`, `Plug in ${toolName}: ${server.name}`) : t(`Brancher ${toolName} à votre assistant`, `Plug ${toolName} into your assistant`)}<LinkArrow shown />
-            </>)}</li>
-          ))}
-        </ul>
+        <div className={styles.actions}>
+          {linked.map((server) => <span key={server.mcpSlug}>{sheetLink(server.mcpSlug!, { ...buttonAttrs("secondary") }, <>
+            {linked.length > 1 ? t(`Brancher ${toolName} : ${server.name}`, `Plug in ${toolName}: ${server.name}`) : t(`Brancher ${toolName} à votre assistant`, `Plug ${toolName} into your assistant`)}
+          </>)}</span>)}
+        </div>
       )}
-    </div>
+    </section>
   );
 }

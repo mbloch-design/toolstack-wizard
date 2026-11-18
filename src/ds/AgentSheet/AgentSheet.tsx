@@ -8,9 +8,9 @@ import {
 import { CLIENTS, CLIENT_MARKS, clientLabel, clientsOf, cursorInstallLink, plugCard, vsCodeInstallLink, type ClientId, type CopyAction } from "@/lib/agentClients";
 import { hookSentence, sheetMarkdown, sourceLinks, toolTopics } from "@/lib/agentSheet";
 import Button, { LinkArrow, TextButton, buttonAttrs, linkClass } from "../Button/Button";
-import Chip, { Chips } from "../Chip/Chip";
-import Segmented from "../Segmented/Segmented";
 import Prompt from "../Prompt/Prompt";
+import Table from "../Table/Table";
+import { AssistantChoice } from "../AgentHub/AgentHub";
 import CopyText from "../CopyText/CopyText";
 import ToneCard, { ToneCards } from "../ToneCard/ToneCard";
 import Tag from "../Tag/Tag";
@@ -47,7 +47,7 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
   pageUrl: string;
   /** « Signaler une erreur »: the contact page with the sheet in context. */
   reportHref: string;
-  /** The row of three cards under our view: the tool, an alternative that plugs in, a know-how (the page composes it). */
+  /** « Pour aller plus loin » under our view, composed by the page from the catalogue's media cards (step 8b). */
   related?: ReactNode;
 }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
@@ -111,7 +111,7 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
               <ToneCard tone="gain" icon={<Check />} title={t("Utile si", "Useful if")}>{raise(say(lang, sheet.for))}</ToneCard>
               <ToneCard tone="caution" icon={<X />} title={t("Moins utile si", "Less useful if")}>{raise(say(lang, sheet.not_for))}</ToneCard>
             </ToneCards>
-            {related && <div className={styles.related}><p className={styles.columnHead}>{t("Pour aller plus loin", "Going further")}</p>{related}</div>}
+            {related}
           </Chapter>
         )}
 
@@ -245,7 +245,8 @@ function MenuEntry({ label, help, icon }: { label: string; help: string; icon: R
  * A place's small logo. Its space is reserved and it loads at once (it sits above the fold); it stays invisible
  * until loaded and steps through the logo sources on error, so a reader never sees an empty circle. No logo: a pictogram.
  */
-function ClientMark({ client, size }: { client: ClientId; size: 14 | 16 | 20 }) {
+/** An assistant's or a client's mark, its logo once loaded (a pictogram otherwise); shared with the tool page's card. */
+export function ClientMark({ client, size }: { client: ClientId; size: 14 | 16 | 20 }) {
   const mark = CLIENT_MARKS[client];
   const src = useMarkSource(mark);
   return (
@@ -297,7 +298,6 @@ function PlugChapter({ sheet, lang, toolName }: { sheet: McpSheet; lang: Lang; t
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   const clients = clientsOf(sheet);
   const main = clients.filter((client) => (["claude", "chatgpt", "gemini"] as ClientId[]).includes(client));
-  const others = clients.filter((client) => !main.includes(client));
   const [current, setCurrent] = useState<ClientId | undefined>(clients[0]);
   useEffect(() => {
     try {
@@ -315,21 +315,10 @@ function PlugChapter({ sheet, lang, toolName }: { sheet: McpSheet; lang: Lang; t
     return <p className={styles.reading}>{t(`${toolName} ne détaille pas son branchement : suivez sa documentation, en lien dans les sources.`, `${toolName} does not detail its setup: follow its documentation, linked in the sources.`)}</p>;
   }
   const steps = plugCard(sheet, current, toolName, lang);
-  const segment = main.includes(current) ? current : "others";
-  const options = [
-    ...main.map((client) => ({ value: client as string, label: clientLabel(client, lang) })),
-    ...(others.length ? [{ value: "others", label: t("Autres", "Others") }] : []),
-  ];
   return <>
-    <div className={styles.choices}>
-      <Segmented label={t("Où utilisez-vous l'IA ?", "Where do you use AI?")} options={options} value={segment}
-        onChange={(value) => choose(value === "others" ? (others.includes(current) ? current : others[0]) : (value as ClientId))} />
-      {segment === "others" && others.length > 1 && (
-        <Chips label={t("Autres outils", "Other tools")}>
-          {others.map((client) => <Chip key={client} pressed={client === current} onClick={() => choose(client)}>{clientLabel(client, lang)}</Chip>)}
-        </Chips>
-      )}
-    </div>
+    {/* One control, one row (step 8b): the everyday assistants, then the coding tools, then « Autre outil ». */}
+    <AssistantChoice label={t("Où utilisez-vous l'IA ?", "Where do you use AI?")} value={current} onChange={choose} devLabel={t("Pour développeurs", "For developers")}
+      options={clients.map((client) => ({ value: client, label: clientLabel(client, lang), dev: !main.includes(client) && client !== "any" }))} />
     <ol className={styles.steps}>
       {steps.map((step, index) => (
         <li key={step.text} className={styles.stepCard}>
@@ -458,125 +447,92 @@ type Kind = (typeof LIST_ORDER)[number];
 const CONTROL_ICON = { account: <UserRound />, admin: <Settings2 />, cut: <LogOut />, confirm: <CheckCircle2 />, limit: <ShieldCheck />, read: <Eye />, cost: <Gauge />, log: <ListChecks /> } as const;
 const KIND_ICON = { delete: <Trash2 />, pay: <CreditCard />, send: <Mail />, write: <Pencil />, read: <Eye /> } as const;
 
-/** One entry of « Garder la main », the same shape on both sides: an icon in a round, a short title, a sentence. */
-function Entry({ icon, title, alert = false, children }: { icon: ReactNode; title: string; alert?: boolean; children?: ReactNode }) {
+/**
+ * One entry of « Garder la main », the same shape on both sides (step 8b, 18/11/2026): an icon in a round, its title on
+ * the round's centre line, what follows aligned under the title, 8 below it.
+ */
+function Entry({ icon, title, titleId, alert = false, children }: { icon: ReactNode; title: string; titleId?: string; alert?: boolean; children?: ReactNode }) {
   return (
     <div className={styles.entry}>
       <span className={styles.entryIcon} data-alert={alert || undefined} aria-hidden="true">{icon}</span>
-      <div className={styles.entryBody}>
-        <p className={styles.entryTitle}>{title}</p>
-        {children}
-      </div>
+      <p id={titleId} className={styles.entryTitle}>{title}</p>
+      {children && <div className={styles.entryBody}>{children}</div>}
     </div>
   );
 }
 
 /**
- * « Garder la main » (17/11): « Ce qu'il peut faire » on the left, each consequence with its count and its documented
- * actions right under it (deleting, paying, sending always in view; editing past 6 and reading fold out in place, still
- * in the server-rendered HTML); « Vos garde-fous » on the right, sticking at the top on a computer. No tag column.
+ * « Garder la main » (17/11, laid out again 18/11): « Ce qu'il peut faire », each consequence a real table of its
+ * documented actions; « Vos garde-fous » beside it on a computer, or above it in one full row when there are one or two
+ * (a short column floated beside a long table). The four distances of 09/11 inside the chapter: 24 from a column's
+ * subtitle to its content, 8 from a note to what it annotates, 48 between two consequences; 96 only between chapters.
  */
 function ControlColumns({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
+  const id = useId();
   const tools = sheet.tools ?? [];
   const kinds = LIST_ORDER.filter((kind) => sheet.capabilities?.some((line) => line.kind === kind) || tools.some((tool) => tool.kind === kind));
-  return (
-    <div className={styles.controlGrid}>
-      {kinds.length > 0 && (
-        // One identifier column for the whole list, as wide as its longest identifier (17/11).
-        <div className={styles.controlColumn} data-column="can" style={{ "--id-chars": Math.max(0, ...tools.map((tool) => tool.name.length)) } as CSSProperties}>
-          <p className={styles.columnHead}>{t("Ce qu'il peut faire", "What it can do")}</p>
-          {sheet.tools_note && <p className={styles.meta}>{say(lang, sheet.tools_note)}</p>}
-          {kinds.map((kind) => {
-            const line = sheet.capabilities?.find((capability) => capability.kind === kind);
-            const own = tools.filter((tool) => tool.kind === kind);
-            const title = own.length ? `${say(lang, CONSEQUENCE[kind])} · ${own.length}` : say(lang, CONSEQUENCE[kind]);
-            return (
-              <Entry key={kind} icon={KIND_ICON[kind]} title={title} alert={kind === "delete" || kind === "pay"}>
+  const count = sheet.control?.length ?? 0;
+  const few = count > 0 && count <= 2;
+  const can = kinds.length > 0 && (
+    <section className={styles.controlColumn} data-column="can" aria-labelledby={`${id}-can`}>
+      <h3 id={`${id}-can`} className={styles.columnHead}>{t("Ce qu'il peut faire", "What it can do")}</h3>
+      <div className={styles.groups}>
+        {kinds.map((kind, index) => {
+          const line = sheet.capabilities?.find((capability) => capability.kind === kind);
+          const own = tools.filter((tool) => tool.kind === kind);
+          const title = own.length ? `${say(lang, CONSEQUENCE[kind])} · ${own.length}` : say(lang, CONSEQUENCE[kind]);
+          return (
+            <div key={kind} data-group={kind}>
+              <Entry icon={KIND_ICON[kind]} title={title} titleId={`${id}-${kind}`} alert={kind === "delete" || kind === "pay"}>
+                {/* The method note sits under the first table's title, the thing it explains (8 below it). */}
+                {index === 0 && sheet.tools_note && <p className={styles.meta}>{say(lang, sheet.tools_note)}</p>}
                 {/* One fact in one place (17/11): the sentence only when there is no list to show. */}
                 {line && !own.length && <p className={styles.text}>{raise(say(lang, line))}.</p>}
-                {own.length > 0 && <ActionList kind={kind} tools={own} lang={lang} />}
+                {own.length > 0 && <ActionTable kind={kind} tools={own} labelledBy={`${id}-${kind}`} lang={lang} />}
               </Entry>
-            );
-          })}
-          {tools.length > 0 && <p className={styles.meta}>{t("Les actions sont celles que l'éditeur documente ; le classement par sujet est celui de ToolTrim.", "The actions are those the vendor documents; the grouping by topic is ToolTrim's.")}</p>}
-        </div>
-      )}
-      {sheet.control && (
-        <div className={styles.controlColumn} data-column="safeguards">
-          <p className={styles.columnHead}>{t("Vos garde-fous", "Your safeguards")}</p>
-          {sheet.control.map((item) => (
-            <Entry key={item.fr} icon={CONTROL_ICON[item.icon]} title={say(lang, item.title)}>
-              <p className={styles.text}>{raise(say(lang, item))}</p>
-            </Entry>
-          ))}
-        </div>
-      )}
-    </div>
+            </div>
+          );
+        })}
+      </div>
+      {tools.length > 0 && <p className={styles.meta}>{t("Les actions sont celles que l'éditeur documente ; le résumé par sujet est celui de ToolTrim.", "The actions are those the vendor documents; the summary by topic is ToolTrim's.")}</p>}
+    </section>
   );
+  const safeguards = count > 0 && (
+    <section className={styles.controlColumn} data-column="safeguards" data-few={few || undefined} aria-labelledby={`${id}-safe`}>
+      <h3 id={`${id}-safe`} className={styles.columnHead}>{t("Vos garde-fous", "Your safeguards")}</h3>
+      <div className={styles.safeguards}>
+        {sheet.control!.map((item) => (
+          <Entry key={item.fr} icon={CONTROL_ICON[item.icon]} title={say(lang, item.title)}>
+            <p className={styles.text}>{raise(say(lang, item))}</p>
+          </Entry>
+        ))}
+      </div>
+    </section>
+  );
+  return <div className={styles.controlGrid} data-few={few || undefined}>{few ? <>{safeguards}{can}</> : <>{can}{safeguards}</>}</div>;
 }
 
-/** A consequence's actions in dense lines: all in view for deleting, paying, sending; 6 then the rest for editing; reading folded. */
-function ActionList({ kind, tools, lang }: { kind: (typeof LIST_ORDER)[number]; tools: NonNullable<McpSheet["tools"]>; lang: Lang }) {
+/** A consequence's actions as a real table (step 8b): « Action » | « Identifiant », six rows in view, the rest folded but in the HTML. */
+function ActionTable({ kind, tools, labelledBy, lang }: { kind: (typeof LIST_ORDER)[number]; tools: NonNullable<McpSheet["tools"]>; labelledBy: string; lang: Lang }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   const [open, setOpen] = useState(false);
   const panel = useId();
-  const sensitive = kind === "delete" || kind === "pay" || kind === "send";
-  const shown = sensitive ? tools : kind === "write" ? tools.slice(0, 6) : [];
-  const rest = sensitive ? [] : kind === "write" ? tools.slice(6) : tools;
-  const lines = (list: typeof tools) => (
-    <ul className={styles.tools}>
-      {list.map((tool) => <li key={tool.name} className={styles.tool} data-kind={tool.kind}><span className={styles.toolAction}>{say(lang, tool)}</span><span className={styles.toolId}><CopyText value={tool.name} lang={lang} /></span></li>)}
-    </ul>
-  );
-  return (
-    <div className={styles.actionList}>
-      {kind === "read" && <p className={styles.meta}>{t("Sans effet sur vos données.", "No effect on your data.")}</p>}
-      {shown.length > 0 && lines(shown)}
-      {rest.length > 0 && <>
-        {/* What is folded, in topics: a summary that never repeats the lines in view. */}
-        <p className={styles.text}>{kind === "write" ? t("Et aussi : ", "And also: ") : t("Lit : ", "Reads: ")}{toolTopics(rest).map((topic) => lower(say(lang, topic.words))).join(", ")}.</p>
-        <div className={styles.toggle}>
-          <TextButton tone="quiet" aria-expanded={open} aria-controls={panel} onClick={() => setOpen((v) => !v)}>
-            {open ? t("Replier", "Fold") : t(`Voir les ${tools.length} actions`, `Show the ${tools.length} actions`)}<span className={styles.chevron} data-open={open || undefined} aria-hidden="true"><ChevronDown /></span>
-          </TextButton>
-        </div>
-        {/* Folded actions stay in the server-rendered HTML, hidden only visually, so they are indexed. */}
-        <div id={panel}><Collapse open={open}>
-          <div className={styles.topics}>
-            {toolTopics(rest).map((topic) => <div key={topic.id} className={styles.topic}><p className={styles.topicHead}>{say(lang, topic.words)}</p>{lines(topic.tools)}</div>)}
-          </div>
-        </Collapse></div>
-      </>}
+  const folded = tools.length > 6 ? tools.slice(6) : [];
+  return <>
+    {kind === "read" && <p className={styles.meta}>{t("Sans effet sur vos données.", "No effect on your data.")}</p>}
+    <div id={panel}>
+      <Table labelledBy={labelledBy} columns={[t("Action", "Action"), t("Identifiant", "Identifier")]}
+        rows={tools.map((tool, index) => ({ key: tool.name, kind: tool.kind, hidden: index >= 6 && !open, cells: [say(lang, tool), <CopyText key={tool.name} value={tool.name} lang={lang} />] }))} />
     </div>
-  );
-}
-
-
-/**
- * A card of « Pour aller plus loin » (17/11): one template for the tool, an alternative and a know-how. Logo of 40, the
- * card's role, the name at 21, one complete sentence (two lines at most, never cut), one action link at the foot, aligned
- * across the row; an optional discreet second link (« Ajouter à ma stack »).
- */
-export function RelatedCard({ logo, role, name, sentence, cta, renderLink, extra }: {
-  logo: ReactNode; role: string; name: string; sentence?: string; cta: string;
-  renderLink: (className: string, content: ReactNode) => ReactNode;
-  extra?: ReactNode;
-}) {
-  return (
-    <li className={styles.relatedCard}>
-      <span className={styles.relatedLogo} aria-hidden="true">{logo}</span>
-      <p className={styles.meta}>{role}</p>
-      <p className={styles.relatedName}>{name}</p>
-      {sentence && <p className={styles.text}>{sentence}</p>}
-      <div className={styles.relatedFoot}>
-        {renderLink(linkClass(), <>{cta}<LinkArrow shown /></>)}
-        {extra}
+    {folded.length > 0 && <>
+      {/* What is folded, in topics: a summary that never repeats the rows in view. */}
+      {!open && <p className={styles.text}>{kind === "read" ? t("Lit aussi : ", "Also reads: ") : t("Et aussi : ", "And also: ")}{toolTopics(folded).map((topic) => lower(say(lang, topic.words))).join(", ")}.</p>}
+      <div className={styles.toggle}>
+        <TextButton tone="quiet" aria-expanded={open} aria-controls={panel} onClick={() => setOpen((v) => !v)}>
+          {open ? t("Replier", "Fold") : t(`Voir les ${tools.length} actions`, `Show the ${tools.length} actions`)}<span className={styles.chevron} data-open={open || undefined} aria-hidden="true"><ChevronDown /></span>
+        </TextButton>
       </div>
-    </li>
-  );
-}
-
-export function RelatedCards({ label, children }: { label: string; children: ReactNode }) {
-  return <ul className={styles.relatedCards} aria-label={label}>{children}</ul>;
+    </>}
+  </>;
 }

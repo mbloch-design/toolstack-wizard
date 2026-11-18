@@ -91,11 +91,12 @@
 
 /* Two columns on the wide grid, one on a phone. */
 
+/* A column's subtitle inside a chapter (step 8b): the system's subtitle, 21, the step above the body. */
 .columnHead {
-  composes: label from "../atoms.module.css";
-  display: flex;
-  gap: var(--tt-space-2);
-  align-items: center;
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-title-m-font);
+  letter-spacing: var(--tt-title-m-tracking);
 }
 
 @container (max-width: 640px) {
@@ -340,15 +341,6 @@
   height: var(--tt-icon-s);
 }
 
-/* « Où utilisez-vous l'IA ? »: a short row of choices per group. They wrap: the layout invariants refuse a
-   sideways-scrolling rail (a box wider than its parent), and a group holds five choices at most. */
-.choices {
-  display: grid;
-  gap: var(--tt-space-3);
-  justify-items: start;
-  min-width: 0;
-}
-
 .copyBlock {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -401,59 +393,6 @@
   justify-self: start;
 }
 
-/* The action list by consequence: a section per consequence, ToolTrim's topics as small subtitles, dense rows on
-   two columns, no frame, no rule; 8 between rows. */
-
-.topic {
-  display: grid;
-  gap: var(--tt-space-2);
-  min-width: 0;
-}
-
-.topicHead {
-  composes: note from "../atoms.module.css";
-  color: var(--tt-meta);
-}
-
-/* Two aligned columns over the whole list (17/11): the label at 16 on the left, the identifier at 14 on the right,
-   aligned at the start of its column; on a phone the identifier goes under its label. */
-.tools {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) calc(var(--id-chars, 24) * 0.8ch + var(--tt-space-6));
-  font: var(--tt-note-font);
-  gap: var(--tt-space-2) var(--tt-space-6);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.tool {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: subgrid;
-  align-items: baseline;
-  min-width: 0;
-}
-
-.toolId {
-  display: flex;
-  min-width: 0;
-}
-
-@container (max-width: 560px) {
-  .tools {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .tool {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-.toolAction {
-  composes: text from "../atoms.module.css";
-}
-
 /* One sentence per line, on the page's single left edge: no bullet indent. */
 .sentences {
   display: grid;
@@ -473,12 +412,34 @@
   align-items: start;
 }
 
-/* 48 between two consequences (17/11). */
+/* Inside the chapter (09/11, 18/11): 24 from a column's subtitle to its content, 48 between two consequences. */
 .controlColumn {
   display: grid;
-  gap: var(--tt-space-12);
+  gap: var(--tt-gap-group);
   align-content: start;
   min-width: 0;
+}
+
+.groups {
+  display: grid;
+  gap: var(--tt-space-12);
+  min-width: 0;
+}
+
+.safeguards {
+  display: grid;
+  gap: var(--tt-gap-group);
+  min-width: 0;
+}
+
+/* One or two safeguards: above the actions, in one full row side by side, never a short column floating beside a
+   long table. */
+.controlGrid[data-few] {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.controlColumn[data-few] .safeguards {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 }
 
 .controlColumn[data-column="can"] {
@@ -491,7 +452,7 @@
   grid-template-columns: minmax(0, 720px);
 }
 
-.controlColumn[data-column="safeguards"] {
+.controlColumn[data-column="safeguards"]:not([data-few]) {
   position: sticky;
   top: var(--tt-space-6);
 }
@@ -506,11 +467,12 @@
   }
 }
 
+/* An entry: the round icon, its title on the round's centre line, what follows under the title, 8 below it. */
 .entry {
   display: grid;
   grid-template-columns: var(--tt-space-10) minmax(0, 1fr);
-  gap: var(--tt-space-4);
-  align-items: start;
+  gap: var(--tt-space-2) var(--tt-space-4);
+  align-items: center;
   min-width: 0;
 }
 
@@ -536,80 +498,19 @@
 
 .entryBody {
   display: grid;
+  grid-column: 2;
   gap: var(--tt-space-2);
   min-width: 0;
 }
 
-/* The title sits on the centre of its round icon, not on its top edge. */
+/* The title sits on the centre line of its round icon. */
 .entryTitle {
   composes: label from "../atoms.module.css";
   composes: strong from "../atoms.module.css";
-  display: flex;
-  align-items: center;
-  min-height: var(--tt-space-10);
+  margin: 0;
   font-size: var(--tt-lead-size);
 }
 
-.actionList {
-  display: grid;
-  gap: var(--tt-space-2);
-  min-width: 0;
-}
-
-/* « Pour aller plus loin »: three cards on one template, their foot links aligned. */
-.related {
-  display: grid;
-  gap: var(--tt-space-3);
-}
-
-.relatedCards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--tt-gap-item);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-@container (max-width: 640px) {
-  .relatedCards {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-.relatedCard {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--tt-space-2);
-  padding: var(--tt-space-6);
-  border-radius: var(--tt-r-tile);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-row-rest);
-  min-width: 0;
-}
-
-.relatedLogo {
-  display: inline-flex;
-  margin-bottom: var(--tt-space-2);
-}
-
-.relatedName {
-  margin: 0;
-  color: var(--tt-ink);
-  font: var(--tt-title-m-font);
-  letter-spacing: var(--tt-title-m-tracking);
-}
-
-/* The foot sits at the bottom of every card: the three links of a row line up. */
-.relatedFoot {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--tt-space-2) var(--tt-space-4);
-  align-items: center;
-  margin-top: auto;
-  padding-top: var(--tt-space-2);
-}
 
 .strong {
   composes: strong from "../atoms.module.css";

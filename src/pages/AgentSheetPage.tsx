@@ -6,14 +6,14 @@ import { useToolSummaries } from "@/hooks/useSupabaseData";
 import Breadcrumb from "@/components/Breadcrumb";
 import Page from "@/ds/Page/Page";
 import Logo from "@/ds/Logo/Logo";
-import { McpSheetView, RelatedCard, RelatedCards, SkillSheetView } from "@/ds/AgentSheet/AgentSheet";
+import { McpSheetView, SkillSheetView } from "@/ds/AgentSheet/AgentSheet";
+import MediaCard, { MediaCards } from "@/ds/MediaCard/MediaCard";
+import { toolTagline } from "@/data/toolTaglines";
+import ToolMediaCard from "@/components/tool/ToolMediaCard";
 import { AgentRowNote } from "@/ds/AgentHub/AgentHub";
 import { CatalogSection } from "@/ds/Catalog/Catalog";
 import { ToolRow, ToolRows } from "@/ds/ToolSheet/ToolSheet";
-import Button, { TextButton } from "@/ds/Button/Button";
-import { useAddToStack } from "@/hooks/useAddToStack";
-import { useStackPins } from "@/hooks/useStackPins";
-import { Check, Plus, Plug } from "@/lib/icons";
+import { Plug } from "@/lib/icons";
 import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import catalog from "@/data/agents/catalog.json";
 import { cardLine, cardSentence, clientName, forEveryone, say, serverName, skillFoot, type Lang, type McpSheet, type SkillSheet } from "@/lib/agents";
@@ -37,8 +37,6 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
   const [assistant] = useAgentAssistant();
   const lang: Lang = rawLang === "en" ? "en" : "fr";
   const { tools } = useToolSummaries();
-  const { state } = useStackPins();
-  const { addToStack, flyingSlug } = useAddToStack();
   const server = kind === "mcp" ? SERVERS.find((s) => s.slug === slug) : undefined;
   const skill = kind === "skill" ? SKILLS.find((s) => s.slug === slug) : undefined;
   const sheet = server ?? skill;
@@ -69,7 +67,6 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
   const toolOf = (toolSlug: string) => tools.find((x) => (x.slug || x.id) === toolSlug);
   const logo = (toolSlug: string) => { const tool = toolOf(toolSlug); return tool ? <Logo tool={tool} size={24} /> : <Plug />; };
   const nameOf = (s: McpSheet) => serverName(s, toolOf(s.host_tool)?.name ?? s.publisher, SERVERS.some((o) => o.host_tool === s.host_tool && o.slug !== s.slug), lang);
-  const inStack = state.pinnedToolSlugs.includes(sheet.host_tool);
   // Step 8 (18/11/2026): the skill sheet's related sheets are the catalogue's rows, one line of meta, no « Par X · Officiel ».
   const rowLogo = (toolSlug: string) => { const tool = toolOf(toolSlug); return tool ? <Logo tool={tool} size={40} /> : <Plug />; };
   const toolCard = (toolSlug: string, name: string) => (
@@ -98,28 +95,30 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
     // « Pour aller plus loin »: the tool, an alternative that plugs in, a know-how of the vendor, on one card template;
     // empty places take other alternatives, then the tool's other server. Sentences are written for cards, never cut.
     const short = (text?: string) => { if (!text) return undefined; const first = cardSentence(text); return text.length <= 110 ? text : first.length <= 110 ? first : undefined; };
-    const big = (toolSlug: string) => { const tool = toolOf(toolSlug); return tool ? <Logo tool={tool} size={40} /> : <Plug />; };
+    // Step 8b (18/11/2026): the catalogue's media cards, as on /fr/tools — the tag says what the card is, the tool's card
+    // carries the system's « Ajouter à ma stack » (bookmark, its states); no local type, no local action.
+    const media = (toolSlug: string, name: string, category: string, reason: string | undefined, href: string) => {
+      const tool = toolOf(toolSlug);
+      if (!tool) return null;
+      return <ToolMediaCard key={href} size="s" lang={lang} tool={{ ...tool, name }} dataTool={toolSlug} category={category} {...(reason ? { reason } : {})}
+        renderLink={(className, content) => <Link to={href} className={className}>{content}</Link>} />;
+    };
     const hostTool = toolOf(server.host_tool);
-    const toolRelated = (
-      <RelatedCard key="tool" logo={big(server.host_tool)} role={t("La fiche de l'outil", "The tool's page") as string} name={hostName}
-        sentence={short((lang === "en" ? hostTool?.shortDescriptionEn : undefined) ?? hostTool?.shortDescription)}
-        cta={t("Prix, avis et alternatives", "Pricing, reviews and alternatives") as string}
-        renderLink={(className, content) => <Link to={`${prefix}/tool/${server.host_tool}`} className={className}>{content}</Link>}
-        extra={inStack ? undefined : <TextButton tone="quiet" disabled={flyingSlug === server.host_tool} onClick={(event) => addToStack(server.host_tool, hostName, { origin: event.currentTarget })}>{t("Ajouter à ma stack", "Add to my stack")}</TextButton>} />
-    );
-    const altRelated = (s: McpSheet) => (
-      <RelatedCard key={s.slug} logo={big(s.host_tool)} role={t("Une alternative qui se branche", "An alternative that plugs in") as string} name={nameOf(s)}
-        sentence={s.card ? say(lang, s.card) : short(say(lang, s.summary))} cta={t("Voir la fiche", "See the page") as string}
-        renderLink={(className, content) => <Link to={`${prefix}/mcp/${s.slug}`} className={className}>{content}</Link>} />
-    );
-    const skillRelated = (k: SkillSheet) => (
-      <RelatedCard key={k.slug} logo={big(k.host_tool)} role={t(`Un savoir-faire de ${k.publisher}`, `A know-how from ${k.publisher}`) as string} name={k.name}
-        sentence={short(say(lang, k.summary))} cta={t("Voir le savoir-faire", "See the know-how") as string}
-        renderLink={(className, content) => <Link to={`${prefix}/skills/${k.slug}`} className={className}>{content}</Link>} />
-    );
+    const toolRelated = media(server.host_tool, hostName, t("La fiche de l'outil", "The tool's page") as string,
+      toolTagline(server.host_tool, lang) || short((lang === "en" ? hostTool?.shortDescriptionEn : undefined) ?? hostTool?.shortDescription), `${prefix}/tool/${server.host_tool}`);
+    const altRelated = (s: McpSheet) => media(s.host_tool, nameOf(s), t("Se branche aussi", "Plugs in too") as string, s.card ? say(lang, s.card) : short(say(lang, s.summary)), `${prefix}/mcp/${s.slug}`);
+    // A know-how is not a tool to add: the system's plain media card, its vendor's mark on a raised tile, no bookmark.
+    const skillRelated = (k: SkillSheet) => {
+      const tool = toolOf(k.host_tool);
+      const reason = short(say(lang, k.summary));
+      return tool ? <MediaCard key={k.slug} size="s" lang={lang} tool={{ ...tool, name: k.name }} category={t("Savoir-faire", "Know-how") as string} {...(reason ? { reason } : {})}
+        renderLink={(className, content) => <Link to={`${prefix}/skills/${k.slug}`} className={className}>{content}</Link>} /> : null;
+    };
     const row = [toolRelated, ...alternatives.slice(0, 1).map(altRelated), ...(skills.length ? [skillRelated(skills[0])] : []),
-      ...alternatives.slice(1).map(altRelated), ...siblings.map(altRelated)].slice(0, 3);
-    related = <RelatedCards label={t("Pour aller plus loin", "Going further") as string}>{row}</RelatedCards>;
+      ...alternatives.slice(1).map(altRelated), ...siblings.map(altRelated)].filter(Boolean).slice(0, 3);
+    related = <CatalogSection as="h3" id="sheet-further-title" title={t("Pour aller plus loin", "Going further")}>
+      <MediaCards size="s" label={t("Pour aller plus loin", "Going further") as string}>{row}</MediaCards>
+    </CatalogSection>;
   } else if (skill) {
     const parent = SERVERS.find((s) => s.slug === skill.server);
     const others = SKILLS.filter((k) => k.server === skill.server && k.slug !== skill.slug).slice(0, 8);

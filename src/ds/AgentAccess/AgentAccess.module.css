@@ -1,17 +1,37 @@
-/* The gateway on a tool page (step 2, 17/11): a few lines in the page's own grammar, on the white sheet. No card,
-   no grey, no column of labels. */
-
-.block {
+/* The card on a tool page (step 8b, 18/11): white, the system's resting shadow and tile radius, 24 inside; its pieces
+   on the system's gaps (8 from the eyebrow, 16 between the rest). */
+.card {
   display: grid;
   gap: var(--tt-space-4);
   justify-items: start;
-  max-width: 62ch;
   min-width: 0;
+  padding: var(--tt-space-6);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
 }
 
-/* Inside the page's AI section, after « Les IA qui comptent ici »: the system's group gap above it. */
-.block[data-after] {
-  margin-top: var(--tt-gap-group);
+.eyebrow {
+  composes: eyebrow from "../atoms.module.css";
+  margin-bottom: calc(var(--tt-space-2) - var(--tt-space-4));
+}
+
+.head {
+  display: grid;
+  gap: var(--tt-space-2);
+  max-width: 62ch;
+}
+
+.marks {
+  display: inline-flex;
+  gap: var(--tt-space-1);
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-2);
 }
 
 .verdict {
@@ -22,13 +42,6 @@
   composes: text from "../atoms.module.css";
 }
 
-.links {
-  display: grid;
-  gap: var(--tt-space-2);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
 
 /* Tools that plug in instead: small white objects with their logo, the system's resting shadow. */
 .alternatives {

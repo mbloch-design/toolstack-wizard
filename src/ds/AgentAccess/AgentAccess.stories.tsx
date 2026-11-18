@@ -39,15 +39,17 @@ const repeatsNothing = async (root: HTMLElement, fr: boolean) => {
 
 /** Notion: plugs in one click, can delete; a request to copy; the way to its sheet. After « Les IA qui comptent ici ». */
 export const Notion: Story = {
-  ...state("notion", { after: true }),
+  ...state("notion", { assistant: "chatgpt" }),
   play: async ({ canvas, canvasElement, globals }) => {
     const fr = globals.lang !== "en";
-    await expect(canvas.getByText(fr ? /^Et votre propre assistant\s\?/ : /^And your own assistant\?/)).toBeVisible();
-    await expect(canvas.getByText(fr ? /^Se branche en un clic à Claude, ChatGPT et Gemini\. Peut supprimer des données\.$/ : "Plugs into Claude, ChatGPT and Gemini in one click. Can delete data.")).toBeVisible();
+    // A card of its own (step 8b): « Avec votre assistant », no transition sentence; the reader's assistant named first.
+    await expect(canvas.getByText(fr ? "Avec votre assistant" : "With your assistant")).toBeVisible();
+    await expect(canvas.queryByText(fr ? /^Et votre propre assistant/ : /^And your own assistant/)).toBeNull();
+    await expect(canvas.getByText(fr ? /^Se branche en un clic à ChatGPT, Claude et Gemini\. Peut supprimer des données\.$/ : "Plugs into ChatGPT, Claude and Gemini in one click. Can delete data.")).toBeVisible();
     await expect(canvas.getByRole("button", { name: fr ? "Copier la demande" : "Copy the request" })).toBeVisible();
     await expect(canvas.getByRole("link", { name: fr ? /brancher Notion à votre assistant/i : /plug Notion into your assistant/i })).toHaveAttribute("href", `/${fr ? "fr" : "en"}/mcp/notion-mcp`);
-    // An action link: its arrow is there at rest.
-    await expect(canvas.getByRole("link", { name: fr ? /brancher Notion/i : /plug Notion/i }).querySelector("[data-shown]")).not.toBeNull();
+    // The system's secondary button, never a primary one on a tool page.
+    await expect(canvas.getByRole("link", { name: fr ? /brancher Notion/i : /plug Notion/i })).toHaveAttribute("data-variant", "secondary");
     await repeatsNothing(canvasElement, fr);
   },
 };
