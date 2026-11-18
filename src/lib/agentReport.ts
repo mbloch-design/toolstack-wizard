@@ -1,7 +1,7 @@
 import mcpIndex from "@/data/agents/mcp_index.json";
 import checkedNone from "@/data/agents/checked_none.json";
 import type { AgentCapabilityKind } from "@/data/types";
-import { typo, type Lang, type McpCard } from "@/lib/agents";
+import { CONSEQUENCE, say, typo, type CardFact, type Lang, type McpCard, type McpSheet } from "@/lib/agents";
 
 /*
  * The hub as a report (step 4, 17/11/2026): for one assistant and a set of tools, where each tool stands and what the
@@ -96,4 +96,20 @@ export function reportVerdict(rows: ReportRow[], assistant: HubAssistant, lang: 
   }
   // A figure never ends a line apart from its word (« 1 peut engager… »).
   return typo(`${first}.${second}`).replace(/(\d) /g, "$1\u00a0");
+}
+
+/**
+ * A server card's foot, for the assistant you chose (step 4, 17/11; every server card of the site): « En un clic avec
+ * Claude » or « À configurer » (or that the vendor does not document it), then the gravest consequence.
+ */
+export function serverFoot(server: { setup?: McpSheet["setup"]; kinds: AgentCapabilityKind[] }, assistant: HubAssistant, lang: Lang): CardFact[] {
+  const en = lang === "en";
+  const name = assistant === "other" ? null : ASSISTANT_NAMES[assistant];
+  const oneClick = assistant !== "other" && (server.setup?.some((way) => way.assistant === assistant && (way.how === "connector" || way.how === "plugin")) ?? false);
+  const documented = server.setup?.some((way) => way.assistant === assistant) ?? false;
+  const status: CardFact = oneClick ? { kind: "one_click", text: en ? `One click with ${name}` : `En un clic avec ${name}` }
+    : documented ? { kind: "configure", text: en ? "To set up" : "À configurer" }
+    : { kind: "elsewhere", text: name ? (en ? `Not documented for ${name}` : `Non documenté pour ${name}`) : (en ? "Not documented for your assistant" : "Non documenté pour votre assistant") };
+  const gravest = GRAVITY.find((kind) => server.kinds.includes(kind));
+  return [status, ...(gravest ? [{ kind: gravest, text: say(lang, CONSEQUENCE[gravest]) }] : [])];
 }

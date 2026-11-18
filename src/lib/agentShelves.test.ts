@@ -6,11 +6,18 @@ import { agentShelves } from "./agentShelves";
 const CARDS = mcpIndex as McpCard[];
 
 describe("the full list's shelves (step 4)", () => {
-  it("ranges the servers in five or six families, « Autres outils » last", () => {
+  it("ranges the servers in five or six families, never a shelf of one « Autres outils »", () => {
     const shelves = agentShelves(CARDS, "fr");
     expect(shelves.length).toBeGreaterThanOrEqual(5);
     expect(shelves.length).toBeLessThanOrEqual(6);
-    expect(shelves.at(-1)!.title).toBe("Autres outils");
+    const other = shelves.find((shelf) => shelf.id === "other");
+    if (other) { expect(other.cards.length).toBeGreaterThan(1); expect(shelves.at(-1)).toBe(other); }
+  });
+
+  it("puts Slack with Communication and Stripe with e-commerce", () => {
+    const home = (tool: string) => agentShelves(CARDS, "fr").find((shelf) => shelf.cards.some((card) => card.host_tool === tool))!.title;
+    expect(home("slack")).toBe("Communication");
+    expect(home("stripe")).toBe(home("shopify"));
   });
 
   it("loses no server and shows each once", () => {

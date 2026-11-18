@@ -2,7 +2,7 @@ import { useId, useState, type ReactNode } from "react";
 import type { AgentCapabilityKind } from "@/data/types";
 import { CONSEQUENCE, say, typo, type CardFact, type Lang } from "@/lib/agents";
 import type { ToolStatus } from "@/lib/agentReport";
-import { Bot, Check, CreditCard, Eye, Globe, Laptop2, Mail, Pencil, Sparkles, Trash2, UserRound, Wrench } from "@/lib/icons";
+import { Bot, Check, CreditCard, Eye, Info, Mail, Pencil, Settings2, Sparkles, Trash2, Wrench, Zap } from "@/lib/icons";
 import { LinkArrow, linkClass } from "../Button/Button";
 import Field from "../Field/Field";
 import Prompt from "../Prompt/Prompt";
@@ -167,7 +167,7 @@ export function AgentCard({ icon, name, by, summary, facts, renderLink, action }
   icon: ReactNode; name: string; by: string;
   /** One sentence written for the card, shown on two lines at most. */
   summary?: string;
-  /** Two facts at the card's foot, each with its icon, so every foot lines up. */
+  /** Two facts at the card's foot, each with its icon, so every foot lines up: for a server, how it plugs into your assistant and the gravest consequence. */
   facts?: CardFact[];
   renderLink: (className: string, content: ReactNode) => ReactNode;
   action?: ReactNode;
@@ -180,7 +180,7 @@ export function AgentCard({ icon, name, by, summary, facts, renderLink, action }
           <span className={styles.cardNames}><span className={styles.cardName}>{name}</span><span className={styles.cardBy}>{by}</span></span>
         </span>
         {summary && <span className={styles.cardSummary}>{summary}</span>}
-        {facts?.length ? <span className={styles.cardFacts}>{facts.map((fact) => <span key={fact.text} className={styles.cardFact}>{FACT_ICONS[fact.kind]}{fact.text}</span>)}</span> : null}
+        {facts?.length ? <span className={styles.cardFacts}>{facts.map((fact) => <span key={fact.text} className={styles.cardFact} data-alert={fact.kind === "delete" || fact.kind === "pay" || undefined}>{FACT_ICONS[fact.kind]}{fact.text}</span>)}</span> : null}
       </>)}
       {action && <div className={styles.cardAction}>{action}</div>}
     </li>
@@ -188,7 +188,8 @@ export function AgentCard({ icon, name, by, summary, facts, renderLink, action }
 }
 
 const FACT_ICONS: Record<CardFact["kind"], ReactNode> = {
-  online: <Globe aria-hidden="true" />, local: <Laptop2 aria-hidden="true" />, account: <UserRound aria-hidden="true" />,
+  one_click: <Zap aria-hidden="true" />, configure: <Settings2 aria-hidden="true" />, elsewhere: <Info aria-hidden="true" />,
+  pay: <CreditCard aria-hidden="true" />, delete: <Trash2 aria-hidden="true" />, send: <Mail aria-hidden="true" />, write: <Pencil aria-hidden="true" />, read: <Eye aria-hidden="true" />,
   skill: <Sparkles aria-hidden="true" />, tool: <Wrench aria-hidden="true" />, assistant: <Bot aria-hidden="true" />,
 };
 

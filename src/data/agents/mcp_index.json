@@ -10,8 +10,8 @@
       "en": "Ahrefs' official server brings your SEO data (keywords, backlinks, rankings) into your assistant, and can manage social media posts. It needs a paid plan from Lite and uses your plan's API units."
     },
     "card": {
-      "fr": "Vos données SEO dans votre assistant : mots-clés, liens, positions.",
-      "en": "Your SEO data in your assistant: keywords, links, rankings."
+      "fr": "Vos mots-clés, liens et positions SEO, dans l'assistant.",
+      "en": "Your SEO keywords, links and rankings, in the assistant."
     },
     "transport": "remote",
     "auth": [
@@ -76,7 +76,7 @@
       "en": "Airtable's official server connects your assistant to your bases: records, tables, fields, interfaces and automation drafts. It can also delete records and whole tables, and can be limited to chosen bases."
     },
     "card": {
-      "fr": "Chercher, ajouter et modifier les enregistrements de vos bases.",
+      "fr": "Chercher, ajouter et modifier les fiches de vos bases.",
       "en": "Search, add and edit the records of your bases."
     },
     "transport": "remote",
@@ -155,8 +155,8 @@
       "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post; it is included on every plan, free included."
     },
     "card": {
-      "fr": "Rédiger, programmer et publier vos posts, lire leurs résultats.",
-      "en": "Write, schedule and publish your posts, read their results."
+      "fr": "Préparer et publier vos posts, puis lire leurs chiffres.",
+      "en": "Plan and publish your posts, then read their results."
     },
     "access": "read_write",
     "plan": "all",
@@ -295,8 +295,8 @@
       "en": "Canva's official connector lets your assistant search your designs, generate new ones from a description, edit, export and comment on them. The published tool list has no deletion; brand features need a Pro plan."
     },
     "card": {
-      "fr": "Créer un visuel à partir d'une phrase, retrouver et exporter vos designs.",
-      "en": "Create a visual from a sentence, find and export your designs."
+      "fr": "Créer un visuel d'une phrase, exporter vos designs.",
+      "en": "Create a visual from a sentence, export your designs."
     },
     "transport": "remote",
     "auth": [
@@ -420,8 +420,8 @@
       "en": "Figma's desktop server runs inside the Figma app on your computer. It reads your designs but does not write to your files, and needs a Dev or Full seat on a paid plan."
     },
     "card": {
-      "fr": "Lire vos maquettes depuis l'application de bureau, sans les modifier.",
-      "en": "Read your mockups from the desktop app, without editing them."
+      "fr": "Lire les maquettes ouvertes dans l'app de bureau.",
+      "en": "Read the mockups open in the desktop app."
     },
     "transport": "local",
     "access": "read",
@@ -474,7 +474,7 @@
       "en": "Figma's remote server gives your assistant your designs' context (components, variables, layout) and, in beta, the ability to create and edit in your files. It is the one to prefer: nothing to install."
     },
     "card": {
-      "fr": "Lire vos maquettes et en créer de nouvelles, depuis le web.",
+      "fr": "Lire vos maquettes et en créer de nouvelles, en ligne.",
       "en": "Read your mockups and create new ones, from the web."
     },
     "transport": "remote",
@@ -603,7 +603,7 @@
       "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating and editing require explicit confirmation, and no deletion is documented."
     },
     "card": {
-      "fr": "Consulter et mettre à jour votre CRM, vos campagnes et vos contenus.",
+      "fr": "Consulter et mettre à jour votre CRM et vos campagnes.",
       "en": "Read and update your CRM, campaigns and content."
     },
     "status": "ga",
@@ -810,8 +810,8 @@
       "en": "Notion's official server gives your assistant access to your Notion pages, databases, comments, files and calendar. It can read, create, edit and move to trash, always within your own rights."
     },
     "card": {
-      "fr": "Retrouver, résumer et créer des pages dans votre espace Notion.",
-      "en": "Find, summarise and create pages in your Notion workspace."
+      "fr": "Retrouver, résumer et créer des pages dans Notion.",
+      "en": "Find, summarise and create pages in Notion."
     },
     "status": "ga",
     "transport": "remote",
@@ -895,7 +895,7 @@
       "en": "Shopify offers official integrations for Claude, ChatGPT, Gemini, Copilot and other assistants: read orders and analytics, create products, collections and discounts, edit a theme. Refunds, payments and store settings stay blocked, even with write access."
     },
     "card": {
-      "fr": "Suivre commandes et stocks, créer produits et réductions.",
+      "fr": "Suivre commandes et stocks, créer produits et remises.",
       "en": "Follow orders and stock, create products and discounts."
     },
     "access": "read_write",
@@ -975,7 +975,7 @@
       "en": "Slack's official server lets your assistant search and read messages, threads, files and canvases, create channels and canvases, and send or schedule messages. It is limited to published or internal apps and a few partner assistants, under admin control."
     },
     "card": {
-      "fr": "Retrouver une conversation, résumer un canal, préparer une réponse.",
+      "fr": "Retrouver un fil, résumer un canal, rédiger une réponse.",
       "en": "Find a conversation, summarise a channel, draft a reply."
     },
     "transport": "remote",
@@ -1027,8 +1027,8 @@
       "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. It is in beta."
     },
     "card": {
-      "fr": "Suivre vos paiements et votre solde, avec confirmation avant tout envoi d'argent.",
-      "en": "Follow your payments and balance, with confirmation before any money moves."
+      "fr": "Suivre vos paiements et votre solde.",
+      "en": "Follow your payments and balance."
     },
     "status": "beta",
     "transport": "remote",
@@ -1257,8 +1257,8 @@
       "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful call uses two tasks from your plan."
     },
     "card": {
-      "fr": "Agir dans des milliers d'applications, via les actions que vous activez.",
-      "en": "Act in thousands of apps, through the actions you turn on."
+      "fr": "Agir dans vos applis via les actions que vous activez.",
+      "en": "Act in your apps through the actions you turn on."
     },
     "transport": "remote",
     "auth": [

@@ -330,14 +330,20 @@
   align-items: center;
 }
 
+/* Deleting or paying: the icon in the alert colour, as in the report and the sheet. */
+.cardFact[data-alert] > svg {
+  color: var(--tt-overlap);
+}
+
 .cardAction {
   display: flex;
   padding: 0 var(--tt-space-5) var(--tt-space-5);
 }
 
-/* The sheet's row of three (step 1 bis): the cards keep their white and resting shadow, with the tile's radius and 24 of padding. */
+/* The sheet's row of three (step 1 bis): white, resting shadow, the tile's radius and 24 of padding. Never narrower
+   than 280, so a card sentence of 56 signs stays whole on two lines (17/11); three to a row at most. */
 .cards[data-flat] {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(max(280px, calc((100% - 2 * var(--tt-gap-item)) / 3)), 1fr));
   gap: var(--tt-gap-item);
 }
 

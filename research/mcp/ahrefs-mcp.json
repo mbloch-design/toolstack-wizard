@@ -10,8 +10,8 @@
     "en": "Ahrefs' official server brings your SEO data (keywords, backlinks, rankings) into your assistant, and can manage social media posts. It needs a paid plan from Lite and uses your plan's API units."
   },
   "card": {
-    "fr": "Vos données SEO dans votre assistant : mots-clés, liens, positions.",
-    "en": "Your SEO data in your assistant: keywords, links, rankings."
+    "fr": "Vos mots-clés, liens et positions SEO, dans l'assistant.",
+    "en": "Your SEO keywords, links and rankings, in the assistant."
   },
   "examples": [
     {

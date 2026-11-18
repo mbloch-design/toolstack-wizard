@@ -10,8 +10,8 @@
     "en": "Canva's official connector lets your assistant search your designs, generate new ones from a description, edit, export and comment on them. The published tool list has no deletion; brand features need a Pro plan."
   },
   "card": {
-    "fr": "Créer un visuel à partir d'une phrase, retrouver et exporter vos designs.",
-    "en": "Create a visual from a sentence, find and export your designs."
+    "fr": "Créer un visuel d'une phrase, exporter vos designs.",
+    "en": "Create a visual from a sentence, export your designs."
   },
   "examples": [
     {

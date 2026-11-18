@@ -10,8 +10,8 @@
     "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. It is in beta."
   },
   "card": {
-    "fr": "Suivre vos paiements et votre solde, avec confirmation avant tout envoi d'argent.",
-    "en": "Follow your payments and balance, with confirmation before any money moves."
+    "fr": "Suivre vos paiements et votre solde.",
+    "en": "Follow your payments and balance."
   },
   "examples": [
     {

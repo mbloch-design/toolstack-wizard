@@ -4,9 +4,9 @@ import { expect, userEvent, within } from "storybook/test";
 import Button from "../Button/Button";
 import Segmented from "../Segmented/Segmented";
 import Chapter, { Chapters } from "../Chapter/Chapter";
-import { byLine, cardSentence, say, serverFacts, type Advice } from "@/lib/agents";
+import { byLine, cardSentence, say, type Advice } from "@/lib/agents";
 import { agentShelves } from "@/lib/agentShelves";
-import { HUB_ASSISTANTS, checkedTools, isPlugged, reportRows, reportVerdict, type HubAssistant } from "@/lib/agentReport";
+import { HUB_ASSISTANTS, checkedTools, isPlugged, reportRows, reportVerdict, serverFoot, type HubAssistant } from "@/lib/agentReport";
 import advice from "@/data/agents/advice.json";
 import { AgentCard, AgentCards, AgentShelf, HubQuestion, HubQuestions, StackReport, ToolChecklist, type ReportItem } from "./AgentHub";
 import { STACK, cards, links, logo, toolName } from "./AgentHub.fixtures";
@@ -121,7 +121,7 @@ export const AvecAutre: Story = {
   },
 };
 
-/** The full list in a few families (Explorer's need universes), « Autres outils » last; three cards to a row at a desktop. */
+/** The full list in a few families (Explorer's need universes): Slack with Communication, Stripe with e-commerce, no shelf of one. */
 export const ParFamille: Story = {
   render: (_args, { globals }) => <div style={{ display: "grid", gap: 48 }}>
     {agentShelves(cards, globals.lang).map((shelf) => (
@@ -129,7 +129,7 @@ export const ParFamille: Story = {
         <AgentCards flat label={shelf.title}>
           {shelf.cards.map((card) => (
             <AgentCard key={card.slug} icon={logo(card.host_tool)} name={toolName(card.host_tool)} by={byLine(card.publisher, globals.lang)} summary={card.card ? say(globals.lang, card.card) : cardSentence(say(globals.lang, card.summary))}
-              facts={serverFacts(card, globals.lang)} renderLink={(className, content) => <a className={className} href={`/fr/mcp/${card.slug}`}>{content}</a>} />
+              facts={serverFoot(card, "claude", globals.lang)} renderLink={(className, content) => <a className={className} href={`/fr/mcp/${card.slug}`}>{content}</a>} />
           ))}
         </AgentCards>
       </AgentShelf>
@@ -138,7 +138,9 @@ export const ParFamille: Story = {
   play: async ({ canvas, globals }) => {
     const shelves = canvas.getAllByRole("heading", { level: 3 });
     await expect(shelves.length).toBeLessThanOrEqual(6);
-    await expect(shelves.at(-1)!.textContent).toMatch(globals.lang === "en" ? /^Other tools/ : /^Autres outils/);
+    // Slack sits with Communication; no shelf of one « Autres outils ».
+    await expect(shelves.some((shelf) => /^(Communication)/.test(shelf.textContent ?? "") && shelf.parentElement!.textContent!.includes("Slack"))).toBe(true);
+    await expect(canvas.queryByRole("heading", { level: 3, name: globals.lang === "en" ? /^Other tools/ : /^Autres outils/ })).toBeNull();
   },
 };
 
@@ -151,12 +153,18 @@ export const Cartes: Story = {
         action={<Button variant="secondary">{globals.lang === "en" ? "Add to my stack" : "Ajouter à ma stack"}</Button>} />
       {cards.filter((c) => ["notion-mcp", "figma-mcp-desktop", "stripe-mcp"].includes(c.slug)).map((card) => (
         <AgentCard key={card.slug} icon={logo(card.host_tool)} name={card.name} by={byLine(card.publisher, globals.lang)} summary={card.card ? say(globals.lang, card.card) : cardSentence(say(globals.lang, card.summary))}
-          facts={serverFacts(card, globals.lang)} renderLink={(className, content) => <a className={className} href={`/fr/mcp/${card.slug}`}>{content}</a>} />
+          facts={serverFoot(card, "claude", globals.lang)} renderLink={(className, content) => <a className={className} href={`/fr/mcp/${card.slug}`}>{content}</a>} />
       ))}
     </AgentCards>
   ),
   play: async ({ canvas, globals }) => {
-    await expect(canvas.getAllByText(globals.lang === "en" ? "By Notion · Official" : "Par Notion · Officiel")[0]).toBeVisible();
+    const fr = globals.lang !== "en";
+    await expect(canvas.getAllByText(fr ? "Par Notion · Officiel" : "By Notion · Official")[0]).toBeVisible();
+    // The foot says how it plugs into Claude and the gravest consequence, never « En ligne » or « Votre compte ».
+    await expect(canvas.getAllByText(fr ? "En un clic avec Claude" : "One click with Claude").length).toBeGreaterThan(0);
+    await expect(canvas.getAllByText(fr ? "Engage un paiement" : "Makes a payment").length).toBe(1);
+    await expect(canvas.queryByText(fr ? "En ligne" : "Online")).toBeNull();
+    await expect(canvas.queryByText(fr ? "Votre compte" : "Your account")).toBeNull();
     await expect(canvas.getByRole("button", { name: globals.lang === "en" ? "Add to my stack" : "Ajouter à ma stack" })).toBeVisible();
   },
 };

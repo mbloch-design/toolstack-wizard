@@ -3,6 +3,7 @@ import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { useStackPins } from "@/hooks/useStackPins";
+import { useAgentAssistant } from "@/hooks/useAgentAssistant";
 import Breadcrumb from "@/components/Breadcrumb";
 import Page from "@/ds/Page/Page";
 import Chip, { Chips, chipLinkAttrs } from "@/ds/Chip/Chip";
@@ -17,10 +18,10 @@ import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { resolveToolAlternatives } from "@/lib/toolSchema";
 import { pluggedAlternatives } from "@/lib/agentAlternatives";
 import { agentShelves } from "@/lib/agentShelves";
-import { HUB_ASSISTANTS, SERVERS, checkedTools, fromStoredClient, isPlugged, reportRows, reportVerdict, toStoredClient, toolStatus, type HubAssistant } from "@/lib/agentReport";
+import { HUB_ASSISTANTS, SERVERS, checkedTools, isPlugged, reportRows, reportVerdict, serverFoot, toolStatus, type HubAssistant } from "@/lib/agentReport";
 import skillsIndex from "@/data/agents/skills_index.json";
 import adviceData from "@/data/agents/advice.json";
-import { byLine, cardSentence, say, serverFacts, serverName, type Advice, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
+import { byLine, cardSentence, say, serverName, type Advice, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
 
 /*
  * The agents section, step 4 (17/11/2026): the hub /agents is a report on your stack from your assistant's side.
@@ -31,8 +32,6 @@ import { byLine, cardSentence, say, serverFacts, serverName, type Advice, type L
 export type AgentsView = "all" | "mcp" | "skills";
 const SKILLS = skillsIndex as SkillCard[];
 const ADVICE = adviceData as Record<string, Advice>;
-/** The same key as the server sheet's « Où utilisez-vous l'IA ? » (AgentSheet). */
-const CLIENT_KEY = "tooltrim.agents.client";
 /** The tools ticked without a stack, for this visitor only: never written to Ma stack. */
 const PICKS_KEY = "tooltrim.agents.tools";
 
@@ -54,19 +53,12 @@ const ASSISTANT_LABELS: Record<HubAssistant, [string, string]> = { claude: ["Cla
 const read = (key: string) => { try { return window.localStorage.getItem(key); } catch { return null; } };
 const write = (key: string, value: string) => { try { window.localStorage.setItem(key, value); } catch { /* the page works without it */ } };
 
-/** The assistant, shared with the server sheet: read once after hydration, written on change. */
-function useAssistant(): [HubAssistant, (next: HubAssistant) => void] {
-  const [assistant, setAssistant] = useState<HubAssistant>("claude");
-  useEffect(() => { const stored = fromStoredClient(read(CLIENT_KEY)); if (stored) setAssistant(stored); }, []);
-  return [assistant, (next) => { setAssistant(next); write(CLIENT_KEY, toStoredClient(next)); }];
-}
-
 const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
   const { lang: rawLang, prefix, t } = useLang();
   const lang: Lang = rawLang === "en" ? "en" : "fr";
   const { tools } = useToolSummaries();
   const { state, pinTool } = useStackPins();
-  const [assistant, setAssistant] = useAssistant();
+  const [assistant, setAssistant] = useAgentAssistant();
   const [picks, setPicks] = useState<string[]>([]);
   const [withMine, setWithMine] = useState(false);
   useEffect(() => { try { const stored = JSON.parse(read(PICKS_KEY) ?? "[]"); if (Array.isArray(stored)) setPicks(stored.filter((slug) => typeof slug === "string")); } catch { /* none */ } }, []);
@@ -120,7 +112,7 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
   // Every tool that plugs in, by family; « avec mon assistant » keeps those that plug into it.
   const serverRow = (card: McpCard) => (
     <AgentCard key={card.slug} icon={logo(card.host_tool)} name={serverName(card, toolName(card.host_tool), SERVERS.some((other) => other.host_tool === card.host_tool && other.slug !== card.slug), lang)}
-      by={byLine(card.publisher, lang)} summary={card.card ? say(lang, card.card) : cardSentence(say(lang, card.summary))} facts={serverFacts(card, lang)}
+      by={byLine(card.publisher, lang)} summary={card.card ? say(lang, card.card) : cardSentence(say(lang, card.summary))} facts={serverFoot(card, assistant, lang)}
       renderLink={(className, content) => sheetLink(card.slug, className, content)} />
   );
   const listed = SERVERS.filter((card) => !withMine || isPlugged(toolStatus(card.host_tool, assistant)));

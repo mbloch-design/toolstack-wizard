@@ -10,8 +10,8 @@
     "en": "Figma's desktop server runs inside the Figma app on your computer. It reads your designs but does not write to your files, and needs a Dev or Full seat on a paid plan."
   },
   "card": {
-    "fr": "Lire vos maquettes depuis l'application de bureau, sans les modifier.",
-    "en": "Read your mockups from the desktop app, without editing them."
+    "fr": "Lire les maquettes ouvertes dans l'app de bureau.",
+    "en": "Read the mockups open in the desktop app."
   },
   "examples": [
     {

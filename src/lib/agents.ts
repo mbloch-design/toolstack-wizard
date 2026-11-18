@@ -174,23 +174,13 @@ export const STACK_CALL_WORDS: Record<StackCall, readonly [string, string]> = {
 export const authWords = (auth: NonNullable<McpSheet["auth"]>, lang: Lang) =>
   auth.map((a, i) => { const word = say(lang, AUTH_WORDS[a]); return i ? word.charAt(0).toLowerCase() + word.slice(1) : word; }).join(lang === "en" ? " or " : " ou ");
 
-/** The sign-in in a card's few words: « Compte », « Clé d'accès », « Compte ou clé ». */
-const shortAuth = (auth: NonNullable<McpCard["auth"]>, lang: Lang) => {
-  const account = auth.includes("oauth"), key = auth.includes("key");
-  if (account && key) return lang === "en" ? "Account or key" : "Compte ou clé";
-  if (account) return lang === "en" ? "Your account" : "Votre compte";
-  if (key) return lang === "en" ? "Access key" : "Clé d'accès";
-  return lang === "en" ? "No sign-in" : "Sans connexion";
-};
-/** A fact at a card's foot; the card draws the icon of its kind (the same icons as the sheet's facts line). */
-export type CardFact = { kind: "online" | "local" | "account" | "skill" | "tool" | "assistant"; text: string };
-/** The two facts of a server card: where it runs, which account. */
-export function serverFacts(card: Pick<McpCard, "transport" | "auth">, lang: Lang): CardFact[] {
-  return [
-    ...(card.transport ? [{ kind: card.transport === "local" ? "local" as const : "online" as const, text: say(lang, TRANSPORT_WORDS[card.transport]) }] : []),
-    ...(card.auth?.length ? [{ kind: "account" as const, text: shortAuth(card.auth, lang) }] : []),
-  ];
-}
+/**
+ * A fact at a card's foot; the card draws the icon of its kind. A server card says how it plugs into your assistant
+ * and the gravest thing it can do (step 4, 17/11: no technical words such as « En ligne » or « Votre compte »).
+ */
+export type CardFact = { kind: "one_click" | "configure" | "elsewhere" | AgentCapabilityKind | "skill" | "tool" | "assistant"; text: string };
+/** A card sentence fits two lines of the narrowest server card (280 px, 14 px text); the research validator holds the same 56. */
+export const CARD_MAX = 56;
 /** A card says one sentence: the summary's first, never cut mid-sentence by the card. */
 export const cardSentence = (text: string) => text.match(/^.+?[.!?](\s|$)/)?.[0].trim() ?? text;
 /** ToolTrim's name for a server: the tool's name, or « Figma, application de bureau » when the tool has two. */

@@ -15,8 +15,10 @@ import { useStackPins } from "@/hooks/useStackPins";
 import { Check, Plus, Plug } from "@/lib/icons";
 import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import catalog from "@/data/agents/catalog.json";
-import { byLine, cardSentence, clientName, say, serverFacts, serverName, type Lang, type McpSheet, type SkillSheet } from "@/lib/agents";
+import { byLine, cardSentence, clientName, say, serverName, type Lang, type McpSheet, type SkillSheet } from "@/lib/agents";
 import NotFound from "@/pages/NotFound";
+import { useAgentAssistant } from "@/hooks/useAgentAssistant";
+import { serverFoot } from "@/lib/agentReport";
 
 /*
  * A sheet of the agents section: /mcp/:slug (an official MCP server, « brancher Notion à votre assistant ») or
@@ -31,6 +33,7 @@ const SKILLS = catalog.skills as SkillSheet[];
 const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
   const { slug = "" } = useParams();
   const { lang: rawLang, prefix, t } = useLang();
+  const [assistant] = useAgentAssistant();
   const lang: Lang = rawLang === "en" ? "en" : "fr";
   const { tools } = useToolSummaries();
   const { state } = useStackPins();
@@ -77,7 +80,7 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
       </Button>} />
   );
   const serverCard = (s: McpSheet) => (
-    <AgentCard key={s.slug} icon={logo(s.host_tool)} name={nameOf(s)} by={byLine(s.publisher, lang)} summary={s.card ? say(lang, s.card) : cardSentence(say(lang, s.summary))} facts={serverFacts(s, lang)}
+    <AgentCard key={s.slug} icon={logo(s.host_tool)} name={nameOf(s)} by={byLine(s.publisher, lang)} summary={s.card ? say(lang, s.card) : cardSentence(say(lang, s.summary))} facts={serverFoot({ setup: s.setup, kinds: [...new Set([...(s.tools ?? []).map((tool) => tool.kind), ...(s.capabilities ?? []).map((line) => line.kind)])] }, assistant, lang)}
       renderLink={(className, content) => <Link to={`${prefix}/mcp/${s.slug}`} className={className}>{content}</Link>} />
   );
   const skillCard = (k: SkillSheet) => (
