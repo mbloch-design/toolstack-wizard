@@ -76,7 +76,7 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
   );
   const serverCard = (s: McpSheet) => (
     <ToolRow key={s.slug} logo={rowLogo(s.host_tool)} name={nameOf(s)}
-      note={<AgentRowNote lang={lang} summary={s.card ? say(lang, s.card) : cardLine(say(lang, s.summary))} status={serverFoot({ setup: s.setup, kinds: [] }, assistant, lang)[0].kind as "one_click" | "configure" | "elsewhere"} />}
+      note={<AgentRowNote lang={lang} assistant={assistant === "other" ? null : ({ claude: "Claude", chatgpt: "ChatGPT", gemini: "Gemini", copilot: "Copilot" } as const)[assistant]} summary={s.card ? say(lang, s.card) : cardLine(say(lang, s.summary))} status={serverFoot({ setup: s.setup, kinds: [] }, assistant, lang)[0].kind as "one_click" | "configure" | "elsewhere"} />}
       renderMain={(className, content) => <Link to={`${prefix}/mcp/${s.slug}`} className={className}>{content}</Link>} />
   );
   const skillCard = (k: SkillSheet) => (
@@ -135,7 +135,7 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
   return (
     <Page>
       <Breadcrumb includeSchema={false} items={[
-        { label: t("Votre assistant IA", "Your AI assistant") as string, href: `${prefix}/agents` },
+        { label: t("Outils pour l'IA", "Tools for AI") as string, href: `${prefix}/agents` },
         kind === "mcp" ? { label: t("Outils à brancher", "Tools to plug in") as string, href: `${prefix}/mcp` } : { label: t("Savoir-faire", "Know-how") as string, href: `${prefix}/skills` },
         { label: kind === "mcp" && siblingCount === 0 ? hostName : sheet.name },
       ]} />

@@ -7,7 +7,7 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: auto;
+  table-layout: fixed;
 }
 
 .caption {
@@ -40,17 +40,20 @@
   vertical-align: baseline;
 }
 
-/* A group of folded rows: its subtitle on a row of its own, in the quiet note type, 24 above it. */
-.groupRow {
-  border-top: var(--tt-hairline-w) solid var(--tt-line);
-}
-
-.group {
-  composes: note from "../atoms.module.css";
-  padding: var(--tt-space-6) 0 var(--tt-space-2);
-  color: var(--tt-meta);
+/* A section's head (step 8d): its mark in its colour, the label in bold and its count, a note at its right; marked by
+   its type and 24 above it, no ground and no extra rule. */
+.section {
+  composes: label from "../atoms.module.css";
   font-weight: inherit;
   text-align: start;
+}
+
+.sectionRow > .section {
+  padding: var(--tt-space-6) 0 var(--tt-space-2);
+}
+
+tbody:first-of-type > .sectionRow > .section {
+  padding-top: var(--tt-space-3);
 }
 
 /* The fold is the table's last row: a full-width button on the columns' line, the same rhythm as a row. */
@@ -92,8 +95,19 @@
 /* A narrow column: each row stacks, the second cell under the first; the column heads leave the eye (the first cell says it). */
 @container (max-width: 520px) {
   /* Still read by assistive tech, out of sight. */
+
+  /* Stacked, the table lays out as blocks: the fixed columns no longer apply. */
   .table {
     position: relative;
+    display: block;
+  }
+
+  .table > tbody {
+    display: block;
+  }
+
+  .table > colgroup {
+    display: none;
   }
 
   .table thead {

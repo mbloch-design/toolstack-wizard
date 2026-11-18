@@ -179,17 +179,20 @@
 }
 
 .rowMeta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 var(--tt-space-3);
+  display: block;
   margin-top: var(--tt-space-1);
   color: var(--tt-meta);
+}
+
+.rowPiece {
+  display: inline;
 }
 
 .rowFact {
   display: inline-flex;
   gap: var(--tt-space-1);
   align-items: center;
+  vertical-align: bottom;
   white-space: nowrap;
 }
 
@@ -197,10 +200,6 @@
   flex: none;
   width: var(--tt-icon-m);
   height: var(--tt-icon-m);
-}
-
-.rowFact[data-status="one_click"] {
-  color: var(--tt-ink);
 }
 
 .rowFact[data-alert] > svg {
@@ -250,3 +249,12 @@
 }
 
 
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

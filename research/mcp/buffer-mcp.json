@@ -10,8 +10,8 @@
     "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post; it is included on every plan, free included."
   },
   "card": {
-    "fr": "Préparer et publier vos posts, puis lire leurs chiffres.",
-    "en": "Plan and publish your posts, then read their results."
+    "fr": "Publier vos posts et lire leurs chiffres.",
+    "en": "Publish your posts and read their results."
   },
   "examples": [
     {

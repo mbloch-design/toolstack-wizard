@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { Children, type ReactNode } from "react";
 import Logo from "../Logo/Logo";
 import { Bookmark, BookmarkCheck } from "@/lib/icons";
 import type { LogoTool } from "@/lib/useToolLogoSource";
@@ -67,5 +67,7 @@ export default function MediaCard({ lang, tool, image, glow, category, price, ba
 
 /** The row of media cards. */
 export function MediaCards({ label, children, listRef, size = "l" }: { label: string; children: ReactNode; listRef?: React.Ref<HTMLUListElement>; size?: "l" | "s" }) {
-  return <ul ref={listRef} className={styles.cards} data-size={size} aria-label={label}>{children}</ul>;
+  // Two to four cards: the row's own layout (always full); more, the catalogue's grid.
+  const count = Children.toArray(children).length;
+  return <ul ref={listRef} className={styles.cards} data-size={size} data-count={count >= 2 && count <= 4 ? count : undefined} data-media-cards="" aria-label={label}>{children}</ul>;
 }

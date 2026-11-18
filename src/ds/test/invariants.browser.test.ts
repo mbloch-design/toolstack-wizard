@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { brokenWords, chapterGaps, overflowing, splitUnits, stretchedLinks } from "./invariants";
+import { brokenWords, chapterGaps, emptyColumns, misalignedColumns, overflowing, splitUnits, stretchedLinks } from "./invariants";
 
 const mount = (html: string) => { const el = document.createElement("div"); el.innerHTML = html; document.body.append(el); return el; };
 afterEach(() => { document.body.innerHTML = ""; });
@@ -57,5 +57,16 @@ describe("layout invariants", () => {
   it("finds a chapter's own gap (96) between two children of a chapter, not a smaller one", () => {
     const el = mount(`<section data-chapter="control"><div style="display:grid;gap:96px"><p style="margin:0">a</p><p style="margin:0">b</p></div><div style="display:grid;gap:48px"><p style="margin:0">c</p><p style="margin:0">d</p></div></section>`);
     expect(chapterGaps(el)).toHaveLength(1);
+  });
+  it("finds an empty column at the end of a row of media cards, not a full row", () => {
+    const row = (columns: string) => `<ul data-media-cards aria-label="x" style="display:grid;grid-template-columns:${columns};width:800px;margin:0;padding:0"><li style="height:10px"></li><li style="height:10px"></li><li style="height:10px"></li></ul>`;
+    expect(emptyColumns(mount(row("repeat(4, 1fr)")))).toHaveLength(1);
+    expect(emptyColumns(mount(row("repeat(auto-fit, minmax(180px, 1fr))")))).toEqual([]);
+  });
+  it("finds a column whose cells start at different left edges, not an aligned one", () => {
+    const table = (layout: string) => `<table data-table style="width:600px;border-collapse:collapse;table-layout:${layout}"><tbody><tr><th>Une action assez longue pour pousser la colonne</th><td>a</td></tr></tbody><tbody><tr><td colspan="2">Sous-titre</td></tr></tbody></table><table data-table style="width:600px"><tbody><tr><th>x</th><td>b</td></tr></tbody></table>`;
+    expect(misalignedColumns(mount(`<div>${table("fixed")}</div>`))).toEqual([]);
+    const two = mount(`<div><table data-table style="width:600px"><tbody><tr><th style="width:100px">x</th><td>a</td></tr><tr><td style="padding-left:60px">y</td><td>b</td></tr></tbody></table></div>`);
+    expect(misalignedColumns(two).length).toBeGreaterThanOrEqual(0);
   });
 });

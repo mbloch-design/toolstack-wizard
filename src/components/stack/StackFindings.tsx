@@ -504,10 +504,13 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           const checked = rows.filter((row) => row.status !== "unchecked").length;
           const plugged = rows.filter(isPlugged).length;
           const asking = !assistantChosen || askAssistant;
+          // A tile with nothing to say leaves (09/11; step 8d): none of the stack's tools looked at yet, no tile.
+          if (!checked) return null;
+          const nameOf = (slug: string) => stackTools.find((tool) => toolKey(tool) === slug)?.name ?? slug;
           return <BentoRow>
             <Tile span={12} card="assistant" tone={asking ? "question" : "tile"} label={t("Votre assistant IA", "Your AI assistant")}
-              statement={asking || !checked ? undefined : <><Key tone={plugged ? "brand" : undefined}>{plugged}</Key>{t(` sur ${checked}`, ` of ${checked}`)}</>}
-              status={asking ? undefined : { text: reportVerdict(rows, assistant, lang) }}
+              statement={asking ? undefined : <><Key tone={plugged ? "brand" : undefined}>{plugged}</Key>{t(` sur ${rows.length}`, ` of ${rows.length}`)}</>}
+              status={asking ? undefined : { text: reportVerdict(rows, assistant, lang, nameOf) }}
               footer={asking ? undefined : <div style={{ display: "grid", gap: "var(--tt-gap-group)" }}>
                 {/* Recipes (step 6): two tools of this stack, both plugged into this assistant; three at most. */}
                 {recipes.length > 0 && <RecipeCards lang={lang} items={recipes.map((recipe) => ({ id: recipe.id, request: fr ? recipe.request.fr : recipe.request.en,
@@ -518,11 +521,12 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 <TextButton onClick={() => setAskAssistant(true)}>{t("Changer d'assistant", "Change assistant")}</TextButton>
                 </span>
               </div>}>
-              {asking && <Question>{t("Quel assistant utilisez-vous ?", "Which assistant do you use?")}</Question>}
-              {asking && <Answers label={t("Votre assistant", "Your assistant")}>
+              {/* Only the question has a body: a finding without it leaves no empty row under its label (step 8d). */}
+              {asking ? <><Question>{t("Quel assistant utilisez-vous ?", "Which assistant do you use?")}</Question>
+              <Answers label={t("Votre assistant", "Your assistant")}>
                 {HUB_ASSISTANTS.map((value) => <Answer key={value} name={value === "other" ? t("Autre", "Other") : HUB_ASSISTANT_NAMES[value]}
                   onClick={() => { trackEvent("stack_assistant_answer", { assistant: value }); setAssistant(value); setAskAssistant(false); }} />)}
-              </Answers>}
+              </Answers></> : undefined}
             </Tile>
           </BentoRow>;
         })()}

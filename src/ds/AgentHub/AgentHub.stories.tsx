@@ -4,7 +4,9 @@ import { CatalogSection } from "../Catalog/Catalog";
 import { ToolRow, ToolRows } from "../ToolSheet/ToolSheet";
 import { cardLine, say, skillFoot, type SkillCard } from "@/lib/agents";
 import { agentShelves } from "@/lib/agentShelves";
-import { GRAVITY, recipesFor, serverFoot } from "@/lib/agentReport";
+import { GRAVITY, hasVerdict, recipesFor, reportRows, serverFoot, stackHeadline } from "@/lib/agentReport";
+import { Notice } from "../Notice/Notice";
+import { linkClass } from "../Button/Button";
 import skillsIndex from "@/data/agents/skills_index.json";
 import { AgentRowNote, RecipeCards } from "./AgentHub";
 import { STACK, cards, logo, toolName } from "./AgentHub.fixtures";
@@ -76,5 +78,34 @@ export const Recettes: Story = {
   play: async ({ canvas, canvasElement, globals }) => {
     await expect(canvasElement.querySelectorAll("[data-recipe]").length).toBe(3);
     await expect(canvas.getAllByRole("button", { name: globals.lang !== "en" ? "Copier la demande" : "Copy the request" }).length).toBe(3);
+  },
+};
+
+const STACKS: Record<string, string[]> = { none: ["google-sheets", "asana"], mix: ["notion", "asana"], all: ["notion", "stripe", "figma"] };
+const NAMES: Record<string, string> = { "google-sheets": "Google Sheets", asana: "Asana", notion: "Notion", stripe: "Stripe", figma: "Figma" };
+
+/**
+ * The hub's line on your stack (step 8d), in plain words: none of its tools looked at yet (named, « Nous le
+ * signaler »), a mix (the verdict, the one not looked at named, « Voir le bilan »), all looked at.
+ */
+export const LigneDeStack: Story = {
+  render: (_args, { globals }) => {
+    const fr = globals.lang !== "en";
+    return <div style={{ display: "grid", gap: 24 }}>
+      {Object.entries(STACKS).map(([id, slugs]) => {
+        const rows = reportRows(slugs, "claude");
+        return <div key={id} data-stack={id}><Notice tone="line" title={stackHeadline(rows, "claude", globals.lang, (slug) => NAMES[slug] ?? slug)}
+          actions={<a className={linkClass()} href="#">{hasVerdict(rows) ? (fr ? "Voir le bilan" : "See the report") : (fr ? "Nous le signaler" : "Tell us")}</a>} /></div>;
+      })}
+    </div>;
+  },
+  play: async ({ canvasElement, globals }) => {
+    const fr = globals.lang !== "en";
+    const line = (id: string) => canvasElement.querySelector<HTMLElement>(`[data-stack=${id}]`)!.textContent!.replace(/\u00a0/g, " ");
+    await expect(line("none")).toContain(fr ? "Nous n'avons pas encore vérifié si Google Sheets et Asana se branchent à Claude" : "We have not checked yet whether Google Sheets and Asana plug into Claude");
+    await expect(line("none")).toContain(fr ? "Nous le signaler" : "Tell us");
+    await expect(line("mix")).toContain(fr ? "1 de vos 2 outils se branche à Claude ; nous n'avons pas encore regardé Asana" : "1 of your 2 tools plugs into Claude; we have not looked at Asana yet");
+    await expect(line("mix")).toContain(fr ? "Voir le bilan" : "See the report");
+    await expect(line("all")).not.toMatch(fr ? /regardé|vérifié/ : /looked at|checked/);
   },
 };

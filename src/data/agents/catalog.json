@@ -12,8 +12,8 @@
         "en": "Ahrefs' official server brings your SEO data (keywords, backlinks, rankings) into your assistant, and can manage social media posts. It needs a paid plan from Lite and uses your plan's API units."
       },
       "card": {
-        "fr": "Vos mots-clés, liens et positions SEO, dans l'assistant.",
-        "en": "Your SEO keywords, links and rankings, in the assistant."
+        "fr": "Vos mots-clés, liens et positions SEO.",
+        "en": "Your SEO keywords, links and rankings."
       },
       "examples": [
         {
@@ -181,7 +181,7 @@
         "en": "Airtable's official server connects your assistant to your bases: records, tables, fields, interfaces and automation drafts. It can also delete records and whole tables, and can be limited to chosen bases."
       },
       "card": {
-        "fr": "Chercher, ajouter et modifier les fiches de vos bases.",
+        "fr": "Chercher et modifier les fiches de vos bases.",
         "en": "Search, add and edit the records of your bases."
       },
       "examples": [
@@ -666,8 +666,8 @@
         "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post; it is included on every plan, free included."
       },
       "card": {
-        "fr": "Préparer et publier vos posts, puis lire leurs chiffres.",
-        "en": "Plan and publish your posts, then read their results."
+        "fr": "Publier vos posts et lire leurs chiffres.",
+        "en": "Publish your posts and read their results."
       },
       "examples": [
         {
@@ -981,7 +981,7 @@
         "en": "Calendly's official server lets your assistant find your open slots, book and cancel meetings, and edit your event types and availability. No paid plan is required, and Calendly documents no confirmation before acting."
       },
       "card": {
-        "fr": "Trouver un créneau, réserver ou annuler un rendez-vous.",
+        "fr": "Trouver, réserver ou annuler un rendez-vous.",
         "en": "Find a slot, book or cancel a meeting."
       },
       "examples": [
@@ -1403,8 +1403,8 @@
         "en": "Canva's official connector lets your assistant search your designs, generate new ones from a description, edit, export and comment on them. The published tool list has no deletion; brand features need a Pro plan."
       },
       "card": {
-        "fr": "Créer un visuel d'une phrase, exporter vos designs.",
-        "en": "Create a visual from a sentence, export your designs."
+        "fr": "Créer un visuel d'une phrase, exporter un design.",
+        "en": "Create a visual from a sentence, export a design."
       },
       "examples": [
         {
@@ -1845,7 +1845,7 @@
         "en": "ClickUp's official server lets your assistant manage tasks, docs, comments, time and messages, as you and with your rights. It can send a task to Trash and post chat messages; calls are capped by plan."
       },
       "card": {
-        "fr": "Suivre vos tâches, vos documents et votre temps passé.",
+        "fr": "Suivre vos tâches, documents et temps passé.",
         "en": "Follow your tasks, documents and time spent."
       },
       "examples": [
@@ -2653,8 +2653,8 @@
         "en": "Figma's remote server gives your assistant your designs' context (components, variables, layout) and, in beta, the ability to create and edit in your files. It is the one to prefer: nothing to install."
       },
       "card": {
-        "fr": "Lire vos maquettes et en créer de nouvelles, en ligne.",
-        "en": "Read your mockups and create new ones, from the web."
+        "fr": "Lire vos maquettes et en créer, en ligne.",
+        "en": "Read your mockups and create new ones, online."
       },
       "examples": [
         {
@@ -3094,7 +3094,7 @@
         "en": "Google Analytics' official server lets your assistant read your accounts, properties and reports, realtime included. It is installed on your computer with Python and Google Cloud credentials: the most technical one in this section."
       },
       "card": {
-        "fr": "Lire vos chiffres de trafic, en temps réel compris.",
+        "fr": "Lire vos chiffres de trafic, en temps réel aussi.",
         "en": "Read your traffic figures, realtime included."
       },
       "examples": [
@@ -3305,8 +3305,8 @@
         "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating and editing require explicit confirmation, and no deletion is documented."
       },
       "card": {
-        "fr": "Consulter et mettre à jour votre CRM et vos campagnes.",
-        "en": "Read and update your CRM, campaigns and content."
+        "fr": "Mettre à jour votre CRM et vos campagnes.",
+        "en": "Read and update your CRM and campaigns."
       },
       "examples": [
         {
@@ -5135,8 +5135,8 @@
         "en": "Shopify offers official integrations for Claude, ChatGPT, Gemini, Copilot and other assistants: read orders and analytics, create products, collections and discounts, edit a theme. Refunds, payments and store settings stay blocked, even with write access."
       },
       "card": {
-        "fr": "Suivre commandes et stocks, créer produits et remises.",
-        "en": "Follow orders and stock, create products and discounts."
+        "fr": "Suivre commandes et stocks, créer des produits.",
+        "en": "Follow orders and stock, create products."
       },
       "examples": [
         {
@@ -5618,8 +5618,8 @@
         "en": "Slack's official server lets your assistant search and read messages, threads, files and canvases, create channels and canvases, and send or schedule messages. It is limited to published or internal apps and a few partner assistants, under admin control."
       },
       "card": {
-        "fr": "Retrouver un fil, résumer un canal, rédiger une réponse.",
-        "en": "Find a conversation, summarise a channel, draft a reply."
+        "fr": "Retrouver un fil, résumer un canal, répondre.",
+        "en": "Find a thread, summarise a channel, reply."
       },
       "examples": [
         {
@@ -6142,8 +6142,8 @@
         "en": "Tally's official server, in beta, lets your assistant create a form from a description, edit it, publish it and read submissions. It cannot delete forms or submissions, and it is free on every plan."
       },
       "card": {
-        "fr": "Créer un formulaire en une phrase et lire ses réponses.",
-        "en": "Create a form in one sentence and read its answers."
+        "fr": "Créer un formulaire et lire ses réponses.",
+        "en": "Create a form and read its answers."
       },
       "examples": [
         {
@@ -6351,8 +6351,8 @@
         "en": "Webflow's official server lets your assistant read and edit your site: pages, styles, components, CMS, assets, and publish it live. Access is granted site by site, by the owner or an admin."
       },
       "card": {
-        "fr": "Lire et modifier votre site Webflow, jusqu'à le publier.",
-        "en": "Read and edit your Webflow site, up to publishing it."
+        "fr": "Lire et modifier votre site, jusqu'à le publier.",
+        "en": "Read and edit your site, up to publishing it."
       },
       "examples": [
         {
@@ -6788,8 +6788,8 @@
         "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful call uses two tasks from your plan."
       },
       "card": {
-        "fr": "Agir dans vos applis via les actions que vous activez.",
-        "en": "Act in your apps through the actions you turn on."
+        "fr": "Agir dans vos applis via vos actions activées.",
+        "en": "Act in your apps through the actions you enable."
       },
       "examples": [
         {

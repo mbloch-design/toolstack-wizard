@@ -4,60 +4,80 @@ import styles from "./Table.module.css";
 
 export interface TableRow {
   key: string;
+  /** Two cells; one cell spans both columns (a sentence in place of a list). */
   cells: ReactNode[];
   /** For the page and its tests: data-kind="delete". */
   kind?: string;
 }
 
-/** The rows a table keeps folded, each group with its subtitle (a row-group head) when it has one. */
-export interface TableMore {
-  groups: { key: string; title?: string; rows: TableRow[] }[];
-  /** « Voir les 20 autres actions », given the number of rows folded. */
-  showLabel: (count: number) => string;
-  hideLabel: string;
+/** A group of rows under its own head (a row-group head), with the rows past `visible` folded in its last row. */
+export interface TableSection {
+  key: string;
+  head?: ReactNode;
+  rows: TableRow[];
+  /** Rows in view before the fold; all when absent. */
+  visible?: number;
+  /** « Voir les 8 autres actions », given the number of rows folded. */
+  showLabel?: (count: number) => string;
+  hideLabel?: string;
+  /** For the page and its tests: data-group="write". */
+  group?: string;
 }
 
 /**
  * A two-column data table (step 8b, 18/11/2026; Michael on the server sheet's actions: « tableau, non ? »): a real
- * <table>, its column heads, rows separated by a hairline as in the comparisons' decision table. On a narrow column
- * each row stacks, the second cell under the first. Its name comes from a heading outside (labelledBy) or a caption.
- * Folded rows (step 8c, « idem ici »): the fold is the table's last row, a full-width button in its foot that says how
- * many rows are hidden; opened, the rows follow in place, by group under a row-group head, and the foot says « Réduire ».
- * Folded rows stay in the HTML.
+ * <table>, one head of columns, rows separated by a hairline as in the comparisons' decision table; on a narrow column
+ * each row stacks, the second cell under the first. Fixed columns (step 8d, « aucune structure »): the second column
+ * keeps the same width and the same left edge all the way down. Its rows come in sections, each opened by a row-group
+ * head; a long section folds in its own last row (« Voir les 8 autres actions », then « Réduire »), its folded rows
+ * still in the HTML.
  */
-export default function Table({ columns, rows, labelledBy, caption, more }: { columns: [string, string]; rows: TableRow[]; labelledBy?: string; caption?: string; more?: TableMore }) {
-  const [open, setOpen] = useState(false);
-  const id = useId();
-  const hidden = more ? more.groups.reduce((sum, group) => sum + group.rows.length, 0) : 0;
-  const line = (row: TableRow) => (
-    <tr key={row.key} className={styles.row} data-kind={row.kind}>
-      {row.cells.map((cell, index) => index === 0 ? <th key={index} scope="row" className={styles.first}>{cell}</th> : <td key={index} className={styles.cell}>{cell}</td>)}
-    </tr>
-  );
+export default function Table({ columns, sections, labelledBy, caption, second = "40%" }: { columns: [string, string]; sections: TableSection[]; labelledBy?: string; caption?: string;
+  /** The second column's width (fixed layout). */
+  second?: string }) {
   return (
     <div className={styles.frame}>
-      <table className={styles.table} aria-labelledby={labelledBy}>
+      <table className={styles.table} aria-labelledby={labelledBy} data-table="">
         {caption && <caption className={styles.caption}>{caption}</caption>}
+        <colgroup><col /><col style={{ width: second }} /></colgroup>
         <thead><tr>{columns.map((column) => <th key={column} scope="col" className={styles.head}>{column}</th>)}</tr></thead>
-        <tbody>{rows.map(line)}</tbody>
-        {more && more.groups.map((group, index) => (
-          <tbody key={group.key} id={index === 0 ? `${id}-more` : undefined} hidden={!open} data-folded="">
-            {group.title && <tr className={styles.groupRow}><th scope="rowgroup" colSpan={2} className={styles.group}>{group.title}</th></tr>}
-            {group.rows.map(line)}
-          </tbody>
-        ))}
-        {more && hidden > 0 && (
-          <tfoot>
-            <tr className={styles.footRow}>
-              <td colSpan={2} className={styles.foot}>
-                <button type="button" className={styles.fold} aria-expanded={open} aria-controls={`${id}-more`} onClick={() => setOpen((value) => !value)}>
-                  {open ? more.hideLabel : more.showLabel(hidden)}<ChevronDown className={styles.chevron} data-open={open || undefined} aria-hidden="true" />
-                </button>
-              </td>
-            </tr>
-          </tfoot>
-        )}
+        {sections.map((section) => <Section key={section.key} section={section} />)}
       </table>
     </div>
   );
+}
+
+function Line({ row }: { row: TableRow }) {
+  return (
+    <tr className={styles.row} data-kind={row.kind}>
+      {row.cells.length === 1
+        ? <td colSpan={2} className={styles.cell}>{row.cells[0]}</td>
+        : row.cells.map((cell, index) => index === 0 ? <th key={index} scope="row" className={styles.first}>{cell}</th> : <td key={index} className={styles.cell}>{cell}</td>)}
+    </tr>
+  );
+}
+
+function Section({ section }: { section: TableSection }) {
+  const [open, setOpen] = useState(false);
+  const id = useId();
+  const visible = section.visible ?? section.rows.length;
+  const folded = section.rows.slice(visible);
+  return <>
+    <tbody data-group={section.group}>
+      {section.head && <tr className={styles.sectionRow}><th scope="rowgroup" colSpan={2} className={styles.section}>{section.head}</th></tr>}
+      {section.rows.slice(0, visible).map((row) => <Line key={row.key} row={row} />)}
+    </tbody>
+    {folded.length > 0 && <>
+      <tbody id={id} hidden={!open} data-folded="" data-group={section.group}>{folded.map((row) => <Line key={row.key} row={row} />)}</tbody>
+      <tbody data-group={section.group}>
+        <tr className={styles.footRow}>
+          <td colSpan={2} className={styles.foot}>
+            <button type="button" className={styles.fold} aria-expanded={open} aria-controls={id} onClick={() => setOpen((value) => !value)}>
+              {open ? section.hideLabel : section.showLabel?.(folded.length)}<ChevronDown className={styles.chevron} data-open={open || undefined} aria-hidden="true" />
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </>}
+  </>;
 }

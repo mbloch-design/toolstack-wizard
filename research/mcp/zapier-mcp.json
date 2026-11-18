@@ -10,8 +10,8 @@
     "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful call uses two tasks from your plan."
   },
   "card": {
-    "fr": "Agir dans vos applis via les actions que vous activez.",
-    "en": "Act in your apps through the actions you turn on."
+    "fr": "Agir dans vos applis via vos actions activées.",
+    "en": "Act in your apps through the actions you enable."
   },
   "examples": [
     {

@@ -60,24 +60,31 @@ const GRAVE: AgentCapabilityKind[] = ["pay", "delete", "send"];
 type StatusKind = "one_click" | "configure" | "elsewhere";
 
 /**
- * What a server or a skill says on the catalogue's row (step 8; Michael, 18/11: « ce n'est pas cohérent avec la finesse
- * du site »): its card sentence, then one quiet line of meta with 16 px icons — the status for your assistant (« En un
- * clic », « À configurer », « Non documenté ») and, only when it is grave, what it could do at worst; for a skill, where
- * it works. No « Par X · Officiel » (every sheet is official, said once in the page's lead), no foot of two lines.
+ * What a server or a skill says on the catalogue's row (step 8; one line, step 8d — Michael on Webflow: « mauvaise
+ * mise en page »): its card sentence, then one quiet line of meta, its pieces joined by « · », at most one 16 px icon.
+ * For a server, the status said for the assistant it names (« Non documenté pour Claude »; Claude when none is chosen)
+ * and, only when it is grave, the consequence as its mark in the alert colour (its words read aloud and on hover), so
+ * the line holds in the narrowest row. For a skill, where it works.
  */
-export function AgentRowNote({ summary, status, gravest, meta, lang }: { summary?: string; status?: StatusKind; gravest?: AgentCapabilityKind;
+export function AgentRowNote({ summary, status, assistant = "Claude", gravest, meta, lang }: { summary?: string; status?: StatusKind;
+  /** The assistant the status speaks for, by name; null for « Autre » (« votre assistant »). */
+  assistant?: string | null;
+  gravest?: AgentCapabilityKind;
   /** A skill's one fact instead of the status (« Sans installation », « Dans Claude Code, Cursor »). */
   meta?: CardFact; lang: Lang }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   const grave = gravest && GRAVE.includes(gravest) ? gravest : undefined;
-  const statusText = status && { one_click: t("En un clic", "One click"), configure: t("À configurer", "To set up"), elsewhere: t("Non documenté", "Not documented") }[status];
+  const who = assistant ?? t("votre assistant", "your assistant");
+  const statusText = status && { one_click: t(`En un clic avec ${who}`, `One click with ${who}`), configure: t(`À configurer pour ${who}`, `To set up for ${who}`), elsewhere: t(`Non documenté pour ${who}`, `Not documented for ${who}`) }[status];
+  const pieces = [
+    statusText && <span key="status" className={styles.rowFact} data-status={status}>{statusText}</span>,
+    meta && <span key="meta" className={styles.rowFact} data-meta={meta.kind}>{meta.text}</span>,
+    // The grave consequence as its mark alone, so the meta holds one line; its words for assistive tech and on hover.
+    grave && <span key="grave" className={styles.rowFact} data-alert={grave === "delete" || grave === "pay" || undefined} data-grave={grave} title={say(lang, CONSEQUENCE[grave])}>{KIND_ICON[grave]}<span className={styles.srOnly}>{say(lang, CONSEQUENCE[grave])}</span></span>,
+  ].filter(Boolean);
   return <>
     {summary && <span className={styles.rowSummary}>{summary}</span>}
-    {(status || grave || meta) && <span className={styles.rowMeta}>
-      {status && <span className={styles.rowFact} data-status={status}>{FACT_ICONS[status]}{statusText}</span>}
-      {meta && <span className={styles.rowFact} data-meta={meta.kind}>{FACT_ICONS[meta.kind]}{meta.text}</span>}
-      {grave && <span className={styles.rowFact} data-alert={grave === "delete" || grave === "pay" || undefined} data-grave={grave}>{KIND_ICON[grave]}{say(lang, CONSEQUENCE[grave])}</span>}
-    </span>}
+    {pieces.length > 0 && <span className={styles.rowMeta}>{pieces.map((piece, index) => <span key={index} className={styles.rowPiece}>{index > 0 && <span aria-hidden="true">{" · "}</span>}{piece}</span>)}</span>}
   </>;
 }
 

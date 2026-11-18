@@ -66,35 +66,58 @@ const CONSEQUENCE_VERB: Record<AgentCapabilityKind, [string, string, string, str
   read: ["est en lecture seule", "sont en lecture seule", "is read only", "are read only"],
 };
 
+/** A tool's name for the report's sentences; without one, its slug. */
+export type NameOf = (slug: string) => string;
+
+const and = (words: string[], en: boolean) => (words.length < 2 ? words.join("") : `${words.slice(0, -1).join(", ")} ${en ? "and" : "et"} ${words[words.length - 1]}`);
+
+/**
+ * The report's first clause, in plain words (step 8d, 18/11/2026; Michael on « Aucun de vos outils n'est encore
+ * vérifié »: « je ne comprends pas »): « 1 de vos 2 outils se branche à Claude, en un clic ; nous n'avons pas encore
+ * regardé Asana ». Every tool counts; the ones ToolTrim has not looked at yet are named (one or two) or counted.
+ * With none looked at: « Nous n'avons pas encore vérifié si Google Sheets et Asana se branchent à Claude ».
+ */
+function firstClause(rows: ReportRow[], assistant: HubAssistant, lang: Lang, nameOf?: NameOf, detail = true): string {
+  const en = lang === "en";
+  const total = rows.length;
+  const waiting = rows.filter((row) => row.status === "unchecked");
+  const checked = rows.filter((row) => row.status !== "unchecked");
+  const name = assistant === "other" ? null : ASSISTANT_NAMES[assistant];
+  const to = name ? (en ? name : `à ${name}`) : en ? "your assistant" : "à votre assistant";
+  const named = (list: ReportRow[]) => (nameOf && list.length <= 2 ? and(list.map((row) => nameOf(row.slug)), en) : null);
+  if (!checked.length) {
+    const who = named(waiting) ?? (en ? (total === 1 ? "your tool" : `your ${total} tools`) : total === 1 ? "votre outil" : `vos ${total} outils`);
+    return en ? `We have not checked yet whether ${who} plug${total === 1 ? "s" : ""} into ${to}` : `Nous n'avons pas encore vérifié si ${who} se branche${total === 1 ? "" : "nt"} ${to}`;
+  }
+  const plugged = checked.filter(isPlugged);
+  const n = plugged.length;
+  const oneClick = checked.filter((row) => row.status === "one_click").length;
+  const of = en ? (total === 1 ? "your tool" : `of your ${total} tools`) : total === 1 ? "votre outil" : `de vos ${total} outils`;
+  let first = !n
+    ? (en ? `${total === 1 ? "Your tool does not plug" : `None of your ${total} tools plugs`} into ${to} yet` : total === 1 ? `Votre outil ne se branche pas encore ${to}` : `Aucun de vos ${total} outils ne se branche encore ${to}`)
+    : en ? `${total === 1 ? "Your tool plugs" : `${n} ${of} plug${n === 1 ? "s" : ""}`} into ${to}` : `${total === 1 ? "Votre outil se branche" : `${n} ${of} se branche${n === 1 ? "" : "nt"}`} ${to}`;
+  if (detail && n) {
+    if (oneClick === n) first += en ? (n === 1 ? ", in one click" : ", all in one click") : n === 1 ? ", en un clic" : ", tous en un clic";
+    else if (oneClick > 0) first += en ? `, ${oneClick} of them in one click` : `, dont ${oneClick} en un clic`;
+  }
+  if (waiting.length) {
+    const who = named(waiting) ?? (en ? `${waiting.length} other tool${waiting.length > 1 ? "s" : ""}` : `${waiting.length} autre${waiting.length > 1 ? "s" : ""} outil${waiting.length > 1 ? "s" : ""}`);
+    first += en ? `; we have not looked at ${who} yet` : ` ; nous n'avons pas encore regardé ${who}`;
+  }
+  return first;
+}
+
+/** A figure never ends a line apart from its word (« 1 peut engager… »). */
+const tie = (text: string) => typo(text).replace(/(\d) /g, "$1\u00a0");
+
 /**
  * The report in one sentence, from the rows only:
- * « 4 de vos 9 outils se branchent à Claude, dont 3 en un clic. 1 peut engager un paiement. »
+ * « 4 de vos 9 outils se branchent à Claude, dont 3 en un clic ; nous n'avons pas encore regardé Trello. 1 peut engager
+ * un paiement. »
  */
-export function reportVerdict(rows: ReportRow[], assistant: HubAssistant, lang: Lang): string {
+export function reportVerdict(rows: ReportRow[], assistant: HubAssistant, lang: Lang, nameOf?: NameOf): string {
   const en = lang === "en";
-  // A tool not checked yet is never counted (step 3, 18/11): the sentence says how many are left aside.
-  const checked = rows.filter((row) => row.status !== "unchecked");
-  const waiting = rows.length - checked.length;
-  const tail = waiting ? ` ${waiting} ${en ? `tool${waiting > 1 ? "s" : ""} not checked yet` : `outil${waiting > 1 ? "s" : ""} pas encore vérifié${waiting > 1 ? "s" : ""}`}.` : "";
-  // A figure never ends a line apart from its word (« 1 peut engager… »).
-  const tie = (text: string) => typo(text).replace(/(\d) /g, "$1\u00a0");
-  if (!checked.length) return tie(en ? "None of your tools is checked yet." : "Aucun de vos outils n'est encore vérifié.");
-  const total = checked.length;
-  const plugged = checked.filter(isPlugged);
-  const oneClick = checked.filter((row) => row.status === "one_click").length;
-  const to = assistant === "other" ? (en ? "your assistant" : "à votre assistant") : en ? ASSISTANT_NAMES[assistant] : `à ${ASSISTANT_NAMES[assistant]}`;
-  const of = en ? (total === 1 ? "your tool" : `of your ${total} tools`) : total === 1 ? "votre outil" : `de vos ${total} outils`;
-  if (!plugged.length) {
-    return tie((en
-      ? `${total === 1 ? "Your tool does not plug" : `None of your ${total} tools plugs`} into ${to} yet.`
-      : total === 1 ? `Votre outil ne se branche pas encore ${to}.` : `Aucun de vos ${total} outils ne se branche encore ${to}.`) + tail);
-  }
-  const n = plugged.length;
-  let first = en
-    ? `${total === 1 ? "Your tool plugs" : `${n} ${of} plug${n === 1 ? "s" : ""}`} into ${to}`
-    : `${total === 1 ? "Votre outil se branche" : `${n} ${of} se branche${n === 1 ? "" : "nt"}`} ${to}`;
-  if (oneClick === n) first += en ? (n === 1 ? ", in one click" : ", all in one click") : n === 1 ? ", en un clic" : ", tous en un clic";
-  else if (oneClick > 0) first += en ? `, ${oneClick} of them in one click` : `, dont ${oneClick} en un clic`;
+  const plugged = rows.filter(isPlugged);
   const gravest = GRAVITY.find((kind) => plugged.some((row) => row.gravest === kind));
   let second = "";
   if (gravest) {
@@ -102,8 +125,11 @@ export function reportVerdict(rows: ReportRow[], assistant: HubAssistant, lang: 
     const [one, many, oneEn, manyEn] = CONSEQUENCE_VERB[gravest];
     second = ` ${count} ${en ? (count === 1 ? oneEn : manyEn) : count === 1 ? one : many}.`;
   }
-  return tie(`${first}.${second}${tail}`);
+  return tie(`${firstClause(rows, assistant, lang, nameOf)}.${second}`);
 }
+
+/** Whether the report has anything to say: at least one tool of the stack ToolTrim has looked at. */
+export const hasVerdict = (rows: ReportRow[]) => rows.some((row) => row.status !== "unchecked");
 
 /**
  * A server card's foot, for the assistant you chose (step 4, 17/11; every server card of the site): « En un clic avec
@@ -176,31 +202,23 @@ export function compareAssistant(a: { slug: string; name: string }, b: { slug: s
 }
 
 /**
- * The hub's line on your stack (step 8, 18/11/2026), the report's first clause alone: « 4 de vos 8 outils se branchent
- * à Claude ». The tools not checked yet are left out of both figures, as in the report.
+ * The hub's line on your stack (step 8; plain words, step 8d): the report's first clause alone, « 1 de vos 2 outils se
+ * branche à Claude ; nous n'avons pas encore regardé Asana ».
  */
-export function stackHeadline(rows: ReportRow[], assistant: HubAssistant, lang: Lang): string {
-  const en = lang === "en";
-  const checked = rows.filter((row) => row.status !== "unchecked");
-  const tie = (text: string) => typo(text).replace(/(\d) /g, "$1 ");
-  if (!checked.length) return en ? "None of your tools is checked yet" : "Aucun de vos outils n'est encore vérifié";
-  const total = checked.length;
-  const n = checked.filter(isPlugged).length;
-  const to = assistant === "other" ? (en ? "your assistant" : "à votre assistant") : en ? ASSISTANT_NAMES[assistant] : `à ${ASSISTANT_NAMES[assistant]}`;
-  if (en) {
-    if (total === 1) return tie(n ? `Your tool plugs into ${to}` : `Your tool does not plug into ${to} yet`);
-    return tie(n ? `${n} of your ${total} tools plug${n === 1 ? "s" : ""} into ${to}` : `None of your ${total} tools plugs into ${to} yet`);
-  }
-  if (total === 1) return tie(n ? `Votre outil se branche ${to}` : `Votre outil ne se branche pas encore ${to}`);
-  return tie(n ? `${n} de vos ${total} outils se branche${n === 1 ? "" : "nt"} ${to}` : `Aucun de vos ${total} outils ne se branche encore ${to}`);
+export function stackHeadline(rows: ReportRow[], assistant: HubAssistant, lang: Lang, nameOf?: NameOf): string {
+  return tie(firstClause(rows, assistant, lang, nameOf, false));
 }
 
 /**
- * « À la une » of the hub (step 8): one server per tool, those that plug in one click into the assistant (all of them
- * for « Autre »), the tools most present in the catalogue's stacks first; four at most.
+ * « À la une » of the hub (step 8): one server per tool, those that plug in one click into the assistant first, then
+ * (step 8d, a row is always full) those to set up for it; each group with the tools most present in the catalogue's
+ * stacks first. Every server for « Autre ». Four at most.
  */
 export function featuredServers(assistant: HubAssistant, limit = 4): McpCard[] {
-  const leads = [...new Set(SERVERS.map((card) => card.host_tool))].map((slug) => serverOf(slug)!);
-  return leads.filter((card) => assistant === "other" || card.one_click.includes(assistant))
-    .sort((a, b) => b.in_stacks - a.in_stacks || a.name.localeCompare(b.name)).slice(0, limit);
+  const leads = [...new Set(SERVERS.map((card) => card.host_tool))].map((slug) => serverOf(slug)!)
+    .sort((a, b) => b.in_stacks - a.in_stacks || a.name.localeCompare(b.name));
+  if (assistant === "other") return leads.slice(0, limit);
+  const oneClick = leads.filter((card) => card.one_click.includes(assistant));
+  const toSetUp = leads.filter((card) => !card.one_click.includes(assistant) && (card.setup?.some((way) => way.assistant === assistant) ?? false));
+  return [...oneClick, ...toSetUp].slice(0, limit);
 }

@@ -87,6 +87,41 @@ export function chapterGaps(root: HTMLElement): string[] {
   return found;
 }
 
+/**
+ * A row of 4 media cards or fewer leaves no empty column (step 8d, « trou dans la grille »): the last card of each line
+ * reaches the list's right edge.
+ */
+export function emptyColumns(root: HTMLElement): string[] {
+  return [...root.querySelectorAll<HTMLElement>("[data-media-cards]")].filter((list) => {
+    const cards = [...list.children].filter((card): card is HTMLElement => card instanceof HTMLElement && card.getBoundingClientRect().width > 0);
+    if (!cards.length || cards.length > 4) return false;
+    const right = list.getBoundingClientRect().right;
+    const lines = new Map<number, number>();
+    for (const card of cards) { const box = card.getBoundingClientRect(); lines.set(Math.round(box.top), Math.max(lines.get(Math.round(box.top)) ?? 0, box.right)); }
+    return [...lines.values()].some((end) => right - end > 2);
+  }).map((list) => list.getAttribute("aria-label") ?? "");
+}
+
+/**
+ * In a data table (step 8d, « aucune structure »), every cell of a column starts at the same left edge, all the way
+ * down. Cells spanning both columns are left out.
+ */
+export function misalignedColumns(root: HTMLElement): string[] {
+  const found: string[] = [];
+  for (const table of root.querySelectorAll<HTMLElement>("[data-table]")) {
+    const lefts: number[][] = [[], []];
+    for (const row of table.querySelectorAll<HTMLTableRowElement>("tr")) {
+      // Column heads kept for assistive tech only (out of sight on a narrow column) are not part of the layout.
+      if (row.closest("thead") && getComputedStyle(row.closest("thead")!).position === "absolute") continue;
+      const cells = [...row.cells].filter((cell) => cell.colSpan === 1 && cell.getBoundingClientRect().width > 0);
+      if (cells.length !== 2) continue;
+      cells.forEach((cell, index) => lefts[index].push(Math.round(cell.getBoundingClientRect().left)));
+    }
+    lefts.forEach((column, index) => { if (new Set(column).size > 1) found.push(`colonne ${index + 1} de « ${table.getAttribute("aria-labelledby") ?? ""} »`); });
+  }
+  return found;
+}
+
 /** Every invariant on a story's root; one readable failure lists them all. */
 export function assertLayout(root: HTMLElement) {
   const problems = [
@@ -95,6 +130,8 @@ export function assertLayout(root: HTMLElement) {
     ...overflowing(root).map((el) => `débordement : <${el.tagName.toLowerCase()} class="${el.className}">`),
     ...stretchedLinks(root).map((el) => `lien étiré : « ${el.textContent ?? ""} »`),
     ...chapterGaps(root).map((gap) => `écart de chapitre dans un chapitre : ${gap}`),
+    ...emptyColumns(root).map((label) => `colonne vide dans une rangée de cartes : « ${label} »`),
+    ...misalignedColumns(root).map((column) => `colonne de tableau mal alignée : ${column}`),
   ];
   if (problems.length) throw new Error(problems.join("\n"));
 }

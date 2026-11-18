@@ -206,8 +206,8 @@ export const authWords = (auth: NonNullable<McpSheet["auth"]>, lang: Lang) =>
  * and the gravest thing it can do (step 4, 17/11: no technical words such as « En ligne » or « Votre compte »).
  */
 export type CardFact = { kind: "one_click" | "configure" | "elsewhere" | AgentCapabilityKind | "install" | "ready" | "tool"; text: string };
-/** A card sentence fits two lines of the narrowest server card (280 px, 14 px text); the research validator holds the same 56. */
-export const CARD_MAX = 56;
+/** A card sentence fits two lines of the narrowest card, a media card in a row of four (step 8d); the research validator holds the same 50. */
+export const CARD_MAX = 50;
 /** A card says one sentence: the summary's first, never cut mid-sentence by the card. */
 export const cardSentence = (text: string) => text.match(/^.+?[.!?](\s|$)/)?.[0].trim() ?? text;
 /** A card's sentence from text not written for cards (a skill's summary, a tool's description): its first sentence when that fits, or none, never cut. */

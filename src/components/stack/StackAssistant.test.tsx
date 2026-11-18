@@ -12,6 +12,7 @@ const PAID = [tool("notion", "Notion"), tool("stripe", "Stripe"), tool("figma", 
 const FREE = [tool("google-analytics", "Google Analytics"), tool("canva", "Canva"), tool("hotjar", "Hotjar"), tool("milanote", "Milanote"), tool("trello", "Trello")];
 const SLUGS = [...PAID, ...FREE].map((t) => t.slug!);
 const tile = () => document.querySelector<HTMLElement>('[data-card="assistant"]')!;
+const nameOf = (slug: string) => [...PAID, ...FREE].find((t) => t.slug === slug)?.name ?? slug;
 
 function view() {
   return render(<MemoryRouter><StackFindings lang="fr" total={80} format={(n) => `${n} €`} spend={PAID.map((t) => ({ tool: t, amount: 20 }))} areas={[]}
@@ -31,8 +32,9 @@ beforeEach(() => {
 it("says the hub's verdict for the same stack once an assistant is known", () => {
   window.localStorage.setItem("tooltrim.agents.client", "claude");
   view();
-  expect(tile().textContent).toContain(reportVerdict(reportRows(SLUGS, "claude"), "claude", "fr"));
-  expect(tile().textContent).toContain("1 outil pas encore vérifié");
+  expect(tile().textContent).toContain(reportVerdict(reportRows(SLUGS, "claude"), "claude", "fr", nameOf));
+  expect(tile().textContent).toContain("nous n'avons pas encore regardé Trello");
+  expect(tile().textContent).not.toContain("vérifié");
 });
 
 it("asks which assistant until answered, then the question leaves and the verdict follows the answer", () => {
@@ -40,7 +42,7 @@ it("asks which assistant until answered, then the question leaves and the verdic
   expect(screen.getByText("Quel assistant utilisez-vous ?")).toBeVisible();
   fireEvent.click(screen.getByRole("button", { name: "ChatGPT" }));
   expect(screen.queryByText("Quel assistant utilisez-vous ?")).not.toBeInTheDocument();
-  expect(tile().textContent).toContain(reportVerdict(reportRows(SLUGS, "chatgpt"), "chatgpt", "fr"));
+  expect(tile().textContent).toContain(reportVerdict(reportRows(SLUGS, "chatgpt"), "chatgpt", "fr", nameOf));
   expect(window.localStorage.getItem("tooltrim.agents.client")).toBe("chatgpt");
 });
 
@@ -52,4 +54,14 @@ it("shows the hub's recipes for this stack and assistant, three at most", () => 
   expect(shown).toEqual(recipesFor(SLUGS, "claude").map((recipe) => recipe.id));
   expect(shown.length).toBeLessThanOrEqual(3);
   expect(screen.getAllByRole("button", { name: "Copier la demande" }).length).toBe(shown.length);
+});
+
+// A tile with nothing to say leaves (step 8d): no tool of the stack looked at yet, no assistant tile at all.
+it("shows no assistant tile when none of the stack's tools has been looked at", () => {
+  window.localStorage.setItem("tooltrim.agents.client", "claude");
+  const unknown = [tool("google-sheets", "Google Sheets"), tool("asana", "Asana")];
+  render(<MemoryRouter><StackFindings lang="fr" total={0} format={(n) => `${n} €`} spend={[]} areas={[]}
+    toolCount={2} fit={[]} freeTools={unknown} items={[]} saved={0} toReview={0} resolved={[]}
+    onAddTool={() => {}} onReviewTools={() => {}} agentsHref="/fr/agents" /></MemoryRouter>);
+  expect(document.querySelector('[data-card="assistant"]')).toBeNull();
 });

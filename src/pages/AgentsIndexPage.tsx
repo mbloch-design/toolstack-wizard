@@ -22,7 +22,7 @@ import Tabs from "@/ds/Tabs/Tabs";
 import { Plug } from "@/lib/icons";
 import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { agentShelves } from "@/lib/agentShelves";
-import { SERVERS, featuredServers, recipesFor, reportRows, serverFoot, stackHeadline, type HubAssistant } from "@/lib/agentReport";
+import { SERVERS, featuredServers, hasVerdict, recipesFor, reportRows, serverFoot, stackHeadline, type HubAssistant } from "@/lib/agentReport";
 import { runCatalogFilter } from "@/hooks/useCatalogStickyToolbar";
 import skillsIndex from "@/data/agents/skills_index.json";
 import { cardLine, say, serverName, skillFoot, typo, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
@@ -37,9 +37,9 @@ import { cardLine, say, serverName, skillFoot, typo, type Lang, type McpCard, ty
 export type AgentsView = "all" | "mcp" | "skills";
 const SKILLS = skillsIndex as SkillCard[];
 
-const TITLES: Record<AgentsView, [string, string]> = { all: ["Votre assistant IA", "Your AI assistant"], mcp: ["Outils à brancher", "Tools to plug in"], skills: ["Savoir-faire pour développeurs", "Know-how for developers"] };
+const TITLES: Record<AgentsView, [string, string]> = { all: ["Outils pour l'IA", "Tools for AI"], mcp: ["Outils à brancher", "Tools to plug in"], skills: ["Savoir-faire pour développeurs", "Know-how for developers"] };
 const SEO_TITLES: Record<AgentsView, [string, string]> = {
-  all: ["Votre assistant IA : ce qu'il peut faire dans vos outils (MCP)", "Your AI assistant: what it can do in your tools (MCP)"],
+  all: ["Outils pour l'IA : ce que votre assistant peut faire dans vos outils (MCP)", "Tools for AI: what your assistant can do in your tools (MCP)"],
   mcp: ["Serveurs MCP officiels : brancher vos outils à votre assistant IA", "Official MCP servers: plug your tools into your AI assistant"],
   skills: ["Skills officiels : le savoir-faire des éditeurs pour votre assistant IA", "Official skills: vendors' know-how for your AI assistant"],
 };
@@ -99,7 +99,7 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
     return (
       <ToolRow key={card.slug} logo={tool ? <Logo tool={tool} size={40} /> : <Plug />}
         name={serverName(card, toolName(card.host_tool), SERVERS.some((other) => other.host_tool === card.host_tool && other.slug !== card.slug), lang)}
-        note={<AgentRowNote lang={lang} status={status} summary={card.card ? say(lang, card.card) : cardLine(say(lang, card.summary))} {...(gravest ? { gravest } : {})} />}
+        note={<AgentRowNote lang={lang} status={status} assistant={assistantName} summary={card.card ? say(lang, card.card) : cardLine(say(lang, card.summary))} {...(gravest ? { gravest } : {})} />}
         renderMain={(className, content) => sheetLink(card.slug, className, content)} />
     );
   };
@@ -161,9 +161,13 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
               options: [{ value: "copilot" as const, label: "Copilot", icon: <ClientMark client="copilot" size={20} /> },
                 { value: "other" as const, label: t("Un autre assistant", "Another assistant") as string, icon: <ClientMark client="any" size={20} /> }] }} />} />
 
+        {/* Your stack in plain words (step 8d): its report in Ma stack when ToolTrim has looked at one of its tools,
+            otherwise a way to tell us which tools to look at — there is no report to see. */}
         {pinned.length > 0 && (
-          <Notice tone="line" name="agents-stack" icon={<Plug />} title={typo(stackHeadline(rows, assistant, lang))}
-            actions={<Link to={`${prefix}/ma-stack#assistant`} className={linkClass()}>{t("Voir le bilan", "See the report")}<LinkArrow shown /></Link>} />
+          <Notice tone="line" name="agents-stack" icon={<Plug />} title={typo(stackHeadline(rows, assistant, lang, toolName))}
+            actions={hasVerdict(rows)
+              ? <Link to={`${prefix}/ma-stack#assistant`} className={linkClass()}>{t("Voir le bilan", "See the report")}<LinkArrow shown /></Link>
+              : <Link to={`${prefix}/contact?subject=${encodeURIComponent(t(`Outils à regarder pour les assistants IA : ${pinned.map(toolName).join(", ")}`, `Tools to look at for AI assistants: ${pinned.map(toolName).join(", ")}`) as string)}`} className={linkClass()}>{t("Nous le signaler", "Tell us")}<LinkArrow shown /></Link>} />
         )}
 
         {featured.length > 0 && (

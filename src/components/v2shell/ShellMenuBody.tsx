@@ -48,10 +48,10 @@ export default function ShellMenuBody({ languageHref, places = false, onDone }: 
       <Button variant="primary" onClick={() => { onDone(); experience.openAuth("signin", `${prefix}/ma-stack`); }}>{who.expired ? t("Me reconnecter", "Sign in again") : t("Se connecter", "Sign in")}</Button>
     </MenuGroup>}
     {places && <MenuGroup label={t("Explorer", "Explore")}>
+      {/* La section agents (S1, 16/11/2026), rattachée aux outils (18/11, étape 8d) : en tête du groupe, juste après Outils de la barre d'onglets. */}
+      <MenuLink link={RouterLink} to={`${prefix}/agents`} icon={<Plug />} onClick={onDone}>{t("Outils pour l'IA", "Tools for AI")}</MenuLink>
       <MenuLink link={RouterLink} to={`${prefix}/stacks`} icon={<Boxes />} onClick={onDone}>{t("Stacks", "Stacks")}</MenuLink>
       <MenuLink link={RouterLink} to={`${prefix}/guides`} icon={<Lightbulb />} onClick={onDone}>{t("Guides", "Guides")}</MenuLink>
-      {/* La section agents (S1, 16/11/2026) : hors de la barre d'onglets, comme Stacks et Guides. */}
-      <MenuLink link={RouterLink} to={`${prefix}/agents`} icon={<Plug />} onClick={onDone}>{t("Votre assistant IA", "Your AI assistant")}</MenuLink>
       <MenuLink link={RouterLink} to={`${prefix}/submit`} icon={<CirclePlus />} onClick={onDone}>{t("Soumettre un outil", "Submit a tool")}</MenuLink>
     </MenuGroup>}
     <MenuGroup label={t("Réglages", "Settings")}>

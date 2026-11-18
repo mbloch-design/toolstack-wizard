@@ -10,8 +10,8 @@
     "en": "Slack's official server lets your assistant search and read messages, threads, files and canvases, create channels and canvases, and send or schedule messages. It is limited to published or internal apps and a few partner assistants, under admin control."
   },
   "card": {
-    "fr": "Retrouver un fil, résumer un canal, rédiger une réponse.",
-    "en": "Find a conversation, summarise a channel, draft a reply."
+    "fr": "Retrouver un fil, résumer un canal, répondre.",
+    "en": "Find a thread, summarise a channel, reply."
   },
   "examples": [
     {

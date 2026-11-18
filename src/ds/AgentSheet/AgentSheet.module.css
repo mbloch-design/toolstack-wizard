@@ -467,11 +467,13 @@
   min-width: 0;
 }
 
-.groups {
+/* A column's title and its note: 8 between them. */
+.columnTop {
   display: grid;
-  gap: var(--tt-space-12);
-  min-width: 0;
+  gap: var(--tt-space-2);
 }
+
+
 
 .safeguards {
   display: grid;
@@ -561,4 +563,32 @@
 
 .strong {
   composes: strong from "../atoms.module.css";
+}
+
+/* A consequence's head row in the actions table (step 8d): its 20 px mark in its colour, the label in bold, the count,
+   a quiet note at its right. */
+.sectionHead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-2);
+  align-items: center;
+}
+
+.sectionHead > svg {
+  flex: none;
+  width: var(--tt-icon-xl);
+  height: var(--tt-icon-xl);
+}
+
+.sectionHead[data-alert] > svg {
+  color: var(--tt-overlap);
+}
+
+.sectionCount {
+  color: var(--tt-meta);
+}
+
+.sectionNote {
+  composes: note from "../atoms.module.css";
+  color: var(--tt-meta);
 }

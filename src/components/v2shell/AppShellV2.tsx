@@ -41,13 +41,14 @@ const NAV_ITEMS: NavItem[] = [
   // stack d'outils (l'ancien glyphe montrait une pile de documents), deux
   // colonnes côte à côte pour un comparatif (« Scale » rendait un poids).
   { id: "tools",      labelFr: "Outils",      labelEn: "Tools",      Icon: LayoutGrid, to: "/tools",       match: ["/tools", "/tool/"] },
+  // La section agents (serveurs MCP et skills, S1 du 16/11) : une prise, ce qui se branche sur un assistant. Rattachée
+  // aux outils (Michael, 18/11, étape 8d) : « Outils pour l'IA », juste après Outils.
+  { id: "agents",     labelFr: "Outils pour l'IA",   labelEn: "Tools for AI",        Icon: Plug,      to: "/agents",      match: ["/agents", "/mcp", "/skills"] },
   { id: "stacks",     labelFr: "Stacks",      labelEn: "Stacks",     Icon: Boxes,      to: "/stacks",      match: ["/stacks"] },
   { id: "compare",    labelFr: "Comparatifs", labelEn: "Compare",    Icon: Columns2,   to: "/comparatifs", match: ["/comparatifs", "/comparatif/"] },
   // Une ampoule pour des guides de conseil : le livre ouvert avait la même
   // silhouette que les deux colonnes des comparatifs.
   { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: Lightbulb, to: "/guides",      match: ["/guides", "/guide/"] },
-  // La section agents (serveurs MCP et skills, S1 du 16/11) : une prise, ce qui se branche sur un assistant.
-  { id: "agents",     labelFr: "Votre assistant IA", labelEn: "Your AI assistant",  Icon: Plug,      to: "/agents",      match: ["/agents", "/mcp", "/skills"] },
 ];
 
 /** Expanded unless the visitor collapsed it. Prerendered HTML ships expanded;

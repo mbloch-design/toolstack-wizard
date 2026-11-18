@@ -2,18 +2,33 @@
    text rests on it, frameless; the tags float as glass pills at the top. Without a screenshot, the tool's own
    logo, enlarged and blurred, becomes the colour field. The site's signature: light, glass, one big name. */
 
+/* auto-fit (step 8d, « trou dans la grille »): a row of 2 to 4 cards is always full, its cards sharing it equally;
+   past one row, the columns stay those of a full row. Three cards go 3 or 1 to a line, four go 4, 2 or 1, never a
+   line with a hole: each track's minimum is a third (a quarter, a half) of the row while that many fit, the whole
+   row otherwise (a clamp flips on the row's width, no breakpoint). */
 .cards {
+  --min: 240px;
+  --gap: var(--tt-space-4);
+
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: var(--tt-space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+  gap: var(--gap);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .cards[data-size="s"] {
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: var(--tt-space-3);
+  --min: 180px;
+  --gap: var(--tt-space-3);
+}
+
+.cards[data-count="3"] {
+  grid-template-columns: repeat(auto-fit, minmax(clamp(calc((100% - 2 * var(--gap)) / 3), calc((3 * var(--min) + 2 * var(--gap) - 100%) * 999), 100%), 1fr));
+}
+
+.cards[data-count="4"] {
+  grid-template-columns: repeat(auto-fit, minmax(clamp(calc((100% - 3 * var(--gap)) / 4), calc((4 * var(--min) + 3 * var(--gap) - 100%) * 999), clamp(calc((100% - var(--gap)) / 2), calc((2 * var(--min) + var(--gap) - 100%) * 999), 100%)), 1fr));
 }
 
 .slot {
@@ -228,7 +243,7 @@
   overflow: hidden;
   padding: 0 var(--tt-space-2);
   border-radius: var(--tt-r-pill);
-  background: var(--tt-tag-glass);
+  background: var(--tt-tag-solid);
   box-shadow: var(--tt-tag-glass-edge);
   color: var(--tt-tag-glass-ink);
   font: var(--tt-tag-chip-font);
@@ -294,11 +309,7 @@
   letter-spacing: var(--tt-note-tracking);
   opacity: .88;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-}
-
-.slot[data-size="s"] .reason {
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
 }
 
 .slot[data-size="s"] .name {

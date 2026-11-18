@@ -10,7 +10,7 @@
     "en": "Google Analytics' official server lets your assistant read your accounts, properties and reports, realtime included. It is installed on your computer with Python and Google Cloud credentials: the most technical one in this section."
   },
   "card": {
-    "fr": "Lire vos chiffres de trafic, en temps réel compris.",
+    "fr": "Lire vos chiffres de trafic, en temps réel aussi.",
     "en": "Read your traffic figures, realtime included."
   },
   "examples": [

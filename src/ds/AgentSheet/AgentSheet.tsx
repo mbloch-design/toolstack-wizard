@@ -6,7 +6,7 @@ import {
   type InstallRow, type Lang, type McpSheet, type Pair, type SkillSheet,
 } from "@/lib/agents";
 import { CLIENTS, CLIENT_MARKS, clientLabel, clientsOf, cursorInstallLink, plugCard, vsCodeInstallLink, type ClientId, type CopyAction } from "@/lib/agentClients";
-import { hookSentence, sheetMarkdown, sourceLinks, toolTopics } from "@/lib/agentSheet";
+import { hookSentence, sheetMarkdown, sourceLinks } from "@/lib/agentSheet";
 import Button, { LinkArrow, TextButton, buttonAttrs, linkClass } from "../Button/Button";
 import Prompt from "../Prompt/Prompt";
 import Table from "../Table/Table";
@@ -488,28 +488,30 @@ function ControlColumns({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
   const kinds = LIST_ORDER.filter((kind) => sheet.capabilities?.some((line) => line.kind === kind) || tools.some((tool) => tool.kind === kind));
   const count = sheet.control?.length ?? 0;
   const few = count > 0 && count <= 2;
+  // One table for every action of the server (step 8d, « aucune structure »): one head of columns, fixed columns, a
+  // section per consequence opened by its own head row; a consequence without a documented list says its sentence.
+  const sections = kinds.map((kind) => {
+    const line = sheet.capabilities?.find((capability) => capability.kind === kind);
+    const own = tools.filter((tool) => tool.kind === kind);
+    const head = <span className={styles.sectionHead} data-alert={kind === "delete" || kind === "pay" || undefined}>
+      {KIND_ICON[kind]}<strong>{say(lang, CONSEQUENCE[kind])}</strong>{own.length > 0 && <span className={styles.sectionCount}>{`· ${own.length}`}</span>}
+      {kind === "read" && <span className={styles.sectionNote}>{t("Sans effet sur vos données", "No effect on your data")}</span>}
+    </span>;
+    const rows = own.length
+      ? own.map((tool) => ({ key: tool.name, kind: tool.kind, cells: [say(lang, tool), <CopyText key={tool.name} value={tool.name} lang={lang} />] }))
+      : line ? [{ key: `${kind}-line`, cells: [<span key="line" className={styles.text}>{raise(say(lang, line))}.</span>] }] : [];
+    return { key: kind, group: kind, head, rows, visible: 6, hideLabel: t("Réduire", "Show less"),
+      showLabel: (n: number) => t(`Voir ${n === 1 ? "l'autre action" : `les ${n} autres actions`}`, `Show ${n === 1 ? "the other action" : `the ${n} other actions`}`) };
+  });
   const can = kinds.length > 0 && (
     <section className={styles.controlColumn} data-column="can" aria-labelledby={`${id}-can`}>
-      <h3 id={`${id}-can`} className={styles.columnHead}>{t("Ce qu'il peut faire", "What it can do")}</h3>
-      <div className={styles.groups}>
-        {kinds.map((kind, index) => {
-          const line = sheet.capabilities?.find((capability) => capability.kind === kind);
-          const own = tools.filter((tool) => tool.kind === kind);
-          const title = own.length ? `${say(lang, CONSEQUENCE[kind])} · ${own.length}` : say(lang, CONSEQUENCE[kind]);
-          return (
-            <div key={kind} data-group={kind}>
-              <Entry icon={KIND_ICON[kind]} title={title} titleId={`${id}-${kind}`} alert={kind === "delete" || kind === "pay"}>
-                {/* The method note sits under the first table's title, the thing it explains (8 below it). */}
-                {index === 0 && sheet.tools_note && <p className={styles.meta}>{say(lang, sheet.tools_note)}</p>}
-                {/* One fact in one place (17/11): the sentence only when there is no list to show. */}
-                {line && !own.length && <p className={styles.text}>{raise(say(lang, line))}.</p>}
-                {own.length > 0 && <ActionTable kind={kind} tools={own} labelledBy={`${id}-${kind}`} lang={lang} />}
-              </Entry>
-            </div>
-          );
-        })}
+      <div className={styles.columnTop}>
+        <h3 id={`${id}-can`} className={styles.columnHead}>{t("Ce qu'il peut faire", "What it can do")}</h3>
+        {/* The grouped tools' note, once, under the title (8 below it). */}
+        {sheet.tools_note && <p className={styles.meta}>{say(lang, sheet.tools_note)}</p>}
       </div>
-      {tools.length > 0 && <p className={styles.meta}>{t("Les actions sont celles que l'éditeur documente ; le résumé par sujet est celui de ToolTrim.", "The actions are those the vendor documents; the summary by topic is ToolTrim's.")}</p>}
+      <Table labelledBy={`${id}-can`} columns={[t("Action", "Action"), t("Identifiant", "Identifier")]} sections={sections} />
+      {tools.length > 0 && <p className={styles.meta}>{t("Les actions sont celles que l'éditeur documente.", "The actions are those the vendor documents.")}</p>}
     </section>
   );
   const safeguards = count > 0 && (
@@ -527,22 +529,3 @@ function ControlColumns({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
   return <div className={styles.controlGrid} data-few={few || undefined}>{few ? <>{safeguards}{can}</> : <>{can}{safeguards}</>}</div>;
 }
 
-/**
- * A consequence's actions as a real table (step 8b): « Action » | « Identifiant », six rows in view; the rest folded in
- * the table's own foot (step 8c), « Voir les 20 autres actions », and, only past 12 rows, under ToolTrim's topics as
- * row-group heads. No sentence listing what is folded. Folded rows stay in the HTML.
- */
-function ActionTable({ kind, tools, labelledBy, lang }: { kind: (typeof LIST_ORDER)[number]; tools: NonNullable<McpSheet["tools"]>; labelledBy: string; lang: Lang }) {
-  const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
-  const row = (tool: NonNullable<McpSheet["tools"]>[number]) => ({ key: tool.name, kind: tool.kind, cells: [say(lang, tool), <CopyText key={tool.name} value={tool.name} lang={lang} />] });
-  const folded = tools.slice(6);
-  const groups = !folded.length ? [] : tools.length > 12
-    ? toolTopics(folded).map((topic) => ({ key: topic.id, title: say(lang, topic.words), rows: topic.tools.map(row) }))
-    : [{ key: "rest", rows: folded.map(row) }];
-  return <>
-    {kind === "read" && <p className={styles.meta}>{t("Sans effet sur vos données.", "No effect on your data.")}</p>}
-    <Table labelledBy={labelledBy} columns={[t("Action", "Action"), t("Identifiant", "Identifier")]} rows={tools.slice(0, 6).map(row)}
-      {...(groups.length ? { more: { groups, hideLabel: t("Réduire", "Show less"),
-        showLabel: (count: number) => t(`Voir ${count === 1 ? "l'autre action" : `les ${count} autres actions`}`, `Show ${count === 1 ? "the other action" : `the ${count} other actions`}`) } } : {})} />
-  </>;
-}

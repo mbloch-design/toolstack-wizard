@@ -155,11 +155,12 @@
   }
 }
 
+/* The logo sits on the name's line, at the top (step 8d): a note on two lines leaves it in place. */
 .toolMain {
   composes: focus from "../atoms.module.css";
   display: flex;
   flex: 1;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--tt-space-3);
   min-width: 0;
   padding: 0;

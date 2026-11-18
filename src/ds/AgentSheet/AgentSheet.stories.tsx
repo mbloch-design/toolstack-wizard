@@ -20,6 +20,10 @@ const meta: Meta<typeof McpSheetView> = {
 export default meta;
 
 type Story = StoryObj<typeof McpSheetView>;
+
+/** A consequence's head row in the actions table (« Supprime des données · 4 »), its label and count in separate spans. */
+const sectionHead = (root: HTMLElement, text: string) => [...root.querySelectorAll<HTMLElement>("th[scope=rowgroup]")].find((head) => norm(head.textContent!).includes(norm(text)))!;
+const norm = (text: string) => text.replace(/\s+/g, " ").replace(/ ?· ?/g, " · ");
 const REPORT = "/fr/contact?subject=correction";
 const server = (name: keyof typeof sheetStates, toolName: string): Story => ({
   render: (_args, context) => <McpSheetView sheet={sheetStates[name]} toolName={toolName} lang={context.globals.lang}
@@ -53,7 +57,7 @@ export const Notion: Story = {
     await expect(canvas.queryByText(fr ? "Mettre à la corbeille des pages, des bases et des commentaires." : "Move pages, databases and comments to trash.")).toBeNull();
     // No sentence listing what is folded (step 8c): the fold is the table's last row and counts the hidden rows only.
     await expect(canvas.queryByText(fr ? /^Et aussi\s:/ : /^And also:/)).toBeNull();
-    await expect(canvas.getByRole("button", { name: fr ? /^Voir les 20 autres actions/ : /^Show the 20 other actions/ }).closest("tfoot")).not.toBeNull();
+    await expect(canvas.getByRole("button", { name: fr ? /^Voir les 20 autres actions/ : /^Show the 20 other actions/ }).closest("table")).not.toBeNull();
     await expect(canvas.getByText(fr ? /Sur Business et Enterprise/ : /On Business and Enterprise/)).toBeVisible();
     await expect(canvas.getByText(fr ? /ouvrez la page dans Notion/ : /open the page in Notion/)).toBeVisible();
     // Tabs (step 8c): the assistants, then « Outil de code ▾ » and its menu.
@@ -77,12 +81,14 @@ export const Notion: Story = {
     await expect(screen.getByRole("button", { name: fr ? /^Commande Claude Code/ : /^Claude Code command/ })).toBeVisible();
     const list = screen.getByRole("button", { name: fr ? /^Copier la fiche en Markdown/ : /^Copy the sheet as Markdown/ }).closest("ul")!;
     // No empty icon on opening: every logo drawn has loaded, every other mark shows its pictogram.
-    for (const image of list.querySelectorAll("img")) await expect(image.complete && image.naturalWidth > 0).toBe(true);
+    // (A drawn logo may still be decoding under a loaded run: wait for it, never accept one that fails.)
+    await waitFor(() => { for (const image of list.querySelectorAll("img")) expect(image.complete && image.naturalWidth > 0).toBe(true); });
     for (const mark of list.querySelectorAll<HTMLElement>("[data-mark]")) await expect(mark.querySelector("img, svg")).not.toBeNull();
     // The menu stays inside the content area, never under the sidebar or off screen.
     if (list.dataset.menu !== undefined) {
       const box = list.getBoundingClientRect(), area = canvasElement.querySelector<HTMLElement>("[data-agent-sheet]")!.getBoundingClientRect();
-      await expect(box.left >= area.left - 1 && box.right <= area.right + 1).toBe(true);
+      await expect(box.left).toBeGreaterThanOrEqual(area.left - 1);
+      await expect(box.right).toBeLessThanOrEqual(area.right + 1);
     }
     await userEvent.keyboard("{Escape}");
     await waitFor(() => expect(menu).toHaveAttribute("aria-expanded", "false"));
@@ -105,10 +111,10 @@ export const NotionActions: Story = {
     const fr = globals.lang !== "en";
     const control = canvasElement.querySelector<HTMLElement>("[data-chapter=control]")!;
     await expect(control.querySelectorAll("tr[data-kind]").length).toBe(70);
-    await expect(canvas.getByText(fr ? "Supprime des données · 4" : "Deletes data · 4")).toBeVisible();
-    await expect(canvas.getByText(fr ? "Envoie en votre nom · 2" : "Sends in your name · 2")).toBeVisible();
-    await expect(canvas.getByText(fr ? "Modifie vos données · 26" : "Edits your data · 26")).toBeVisible();
-    await expect(canvas.getByText(fr ? "Lecture seule · 38" : "Read only · 38")).toBeVisible();
+    await expect(sectionHead(canvasElement, fr ? "Supprime des données · 4" : "Deletes data · 4")).toBeVisible();
+    await expect(sectionHead(canvasElement, fr ? "Envoie en votre nom · 2" : "Sends in your name · 2")).toBeVisible();
+    await expect(sectionHead(canvasElement, fr ? "Modifie vos données · 26" : "Edits your data · 26")).toBeVisible();
+    await expect(sectionHead(canvasElement, fr ? "Lecture seule · 38" : "Read only · 38")).toBeVisible();
     await expect(control.querySelectorAll("tr[data-kind=write]:not(tbody[hidden] tr)").length).toBe(6);
     await userEvent.click(canvas.getByRole("button", { name: fr ? /^Voir les 20 autres actions/ : /^Show the 20 other actions/ }));
     await waitFor(() => expect(control.querySelectorAll("tr[data-kind=write]:not(tbody[hidden] tr)").length).toBe(26));
@@ -124,17 +130,17 @@ export const NotionActions: Story = {
 export const StripeActions: Story = {
   ...server("stripe", "Stripe"),
   play: async ({ canvas, canvasElement, globals }) => {
-    await expect(canvas.getByText(globals.lang === "en" ? "Makes a payment · 3" : "Engage un paiement · 3")).toBeVisible();
+    await expect(sectionHead(canvasElement, globals.lang === "en" ? "Makes a payment · 3" : "Engage un paiement · 3")).toBeVisible();
     for (const row of canvasElement.querySelectorAll<HTMLElement>("tr[data-kind=pay]:not(tbody[hidden] tr)")) await expect(row).toBeVisible();
   },
 };
 /** Reading only: « Lecture seule · 9 », « Sans effet sur vos données », the actions folded. */
 export const GoogleAnalyticsReadOnly: Story = {
   ...server("googleAnalytics", "Google Analytics"),
-  play: async ({ canvas, globals }) => {
+  play: async ({ canvas, canvasElement, globals }) => {
     const fr = globals.lang !== "en";
-    await expect(canvas.getByText(fr ? "Lecture seule · 9" : "Read only · 9")).toBeVisible();
-    await expect(canvas.getByText(fr ? "Sans effet sur vos données." : "No effect on your data.")).toBeVisible();
+    // « Sans effet sur vos données » sits in the section's head, at the label's right (step 8d).
+    await expect(sectionHead(canvasElement, fr ? "Lecture seule · 9" : "Read only · 9").textContent).toContain(fr ? "Sans effet sur vos données" : "No effect on your data");
     await expect(canvas.getByRole("button", { name: fr ? /^Voir les 3 autres actions/ : /^Show the 3 other actions/ })).toBeVisible();
     await expect(canvas.getByText(fr ? /Votre assistant peut lire vos données Google Analytics, sans rien y modifier\./ : /Your assistant can read your Google Analytics data, without changing anything\./)).toBeVisible();
     await expect(canvas.queryByText(fr ? /À vérifier/ : /Check:/)).toBeNull();

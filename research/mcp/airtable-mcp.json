@@ -10,7 +10,7 @@
     "en": "Airtable's official server connects your assistant to your bases: records, tables, fields, interfaces and automation drafts. It can also delete records and whole tables, and can be limited to chosen bases."
   },
   "card": {
-    "fr": "Chercher, ajouter et modifier les fiches de vos bases.",
+    "fr": "Chercher et modifier les fiches de vos bases.",
     "en": "Search, add and edit the records of your bases."
   },
   "examples": [

@@ -62,8 +62,13 @@ const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u03
 type MapToolInfo = { cost: string; share: number; kind: "paid" | "free" | "unknown"; pending: boolean };
 
 
-/** The review stack (?demo=stack9, development only): every assistant status for Claude. */
-const DEMO_STACK9 = ["notion", "stripe", "figma", "slack", "google-analytics", "canva", "hotjar", "milanote", "trello"];
+/** The review stacks (?demo=stack9 | unchecked2 | mixed2, development only): every assistant status for Claude, none looked at, a mix. */
+const DEMO_STACKS: Record<string, string[]> = {
+  stack9: ["notion", "stripe", "figma", "slack", "google-analytics", "canva", "hotjar", "milanote", "trello"],
+  // Step 8d: no tool looked at yet (the assistant tile leaves), and a mix (its verdict names the one not looked at).
+  unchecked2: ["google-sheets", "asana"],
+  mixed2: ["notion", "asana"],
+};
 export default function CartPage() {
   const { t, lang, prefix } = useLang();
   const account = useStackAccount();
@@ -88,8 +93,9 @@ export default function CartPage() {
   // Development only (18/11/2026): ?demo=stack9 loads a stack of nine tools with every assistant status (one click,
   // to set up, not documented, no official server, not checked) through the stack's own state, for reviews.
   useEffect(() => {
-    if (!import.meta.env.DEV || params.get("demo") !== "stack9") return;
-    replaceState(normalizeToolCartState({ pinnedToolSlugs: DEMO_STACK9 }));
+    const demo = DEMO_STACKS[params.get("demo") ?? ""];
+    if (!import.meta.env.DEV || !demo) return;
+    replaceState(normalizeToolCartState({ pinnedToolSlugs: demo }));
     const next = new URLSearchParams(params); next.delete("demo"); setParams(next, { replace: true });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
   // From the hub's stack line (step 8, 18/11/2026): /ma-stack#assistant lands on the « Votre assistant IA » tile once
