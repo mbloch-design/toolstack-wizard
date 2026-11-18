@@ -6,9 +6,9 @@ import Segmented from "../Segmented/Segmented";
 import Chapter, { Chapters } from "../Chapter/Chapter";
 import { byLine, cardLine, say, type Advice } from "@/lib/agents";
 import { agentShelves } from "@/lib/agentShelves";
-import { HUB_ASSISTANTS, checkedTools, isPlugged, reportRows, reportVerdict, serverFoot, type HubAssistant } from "@/lib/agentReport";
+import { HUB_ASSISTANTS, checkedTools, isPlugged, recipesFor, reportRows, reportVerdict, serverFoot, type HubAssistant } from "@/lib/agentReport";
 import advice from "@/data/agents/advice.json";
-import { AgentCard, AgentCards, AgentShelf, HubQuestion, HubQuestions, StackReport, ToolChecklist, type ReportItem } from "./AgentHub";
+import { AgentCard, AgentCards, AgentShelf, HubQuestion, HubQuestions, RecipeCards, StackReport, ToolChecklist, type ReportItem } from "./AgentHub";
 import { STACK, cards, links, logo, toolName } from "./AgentHub.fixtures";
 
 // The hub /agents as a report (step 4): your assistant, your tools, one sentence, one row per tool.
@@ -144,6 +144,22 @@ export const ParFamille: Story = {
     // Slack sits with Communication; no shelf of one « Autres outils ».
     await expect(shelves.some((shelf) => /^(Communication)/.test(shelf.textContent ?? "") && shelf.parentElement!.textContent!.includes("Slack"))).toBe(true);
     await expect(canvas.queryByRole("heading", { level: 3, name: globals.lang === "en" ? /^Other tools/ : /^Autres outils/ })).toBeNull();
+  },
+};
+
+/** Recipes for the nine-tool stack with Claude: two plugged tools each, the request to copy, each side's gravest consequence. */
+export const Recettes: Story = {
+  render: (_args, { globals }) => (
+    <RecipeCards lang={globals.lang} items={recipesFor(STACK, "claude").map((recipe) => ({
+      id: recipe.id, request: globals.lang === "en" ? recipe.request.en : recipe.request.fr,
+      sides: recipe.sides.map((side) => ({ name: toolName(side.host_tool), logo: logo(side.host_tool), ...(side.gravest ? { gravest: side.gravest } : {}) })),
+    }))} />
+  ),
+  play: async ({ canvas, canvasElement, globals }) => {
+    const fr = globals.lang !== "en";
+    await expect(canvasElement.querySelectorAll("[data-recipe]").length).toBe(3);
+    await expect(canvas.getAllByRole("button", { name: fr ? "Copier la demande" : "Copy the request" }).length).toBe(3);
+    await expect(canvas.getAllByText(fr ? /^Stripe\s:\s/ : /^Stripe: /).length).toBe(1);
   },
 };
 

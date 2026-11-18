@@ -12,13 +12,13 @@ import Segmented from "@/ds/Segmented/Segmented";
 import Chapter, { Chapters } from "@/ds/Chapter/Chapter";
 import { CatalogTitle } from "@/ds/Catalog/Catalog";
 import { LinkArrow, TextButton, linkClass } from "@/ds/Button/Button";
-import { AgentCard, AgentCards, AgentShelf, HubQuestion, HubQuestions, StackReport, ToolChecklist, type ReportItem } from "@/ds/AgentHub/AgentHub";
+import { AgentCard, AgentCards, AgentShelf, HubQuestion, HubQuestions, RecipeCards, StackReport, ToolChecklist, type RecipeItem, type ReportItem } from "@/ds/AgentHub/AgentHub";
 import { Plug } from "@/lib/icons";
 import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { resolveToolAlternatives } from "@/lib/toolSchema";
 import { pluggedAlternatives } from "@/lib/agentAlternatives";
 import { agentShelves } from "@/lib/agentShelves";
-import { HUB_ASSISTANTS, SERVERS, checkedTools, isPlugged, reportRows, reportVerdict, serverFoot, toolStatus, type HubAssistant } from "@/lib/agentReport";
+import { HUB_ASSISTANTS, SERVERS, checkedTools, isPlugged, recipesFor, reportRows, reportVerdict, serverFoot, toolStatus, type HubAssistant } from "@/lib/agentReport";
 import skillsIndex from "@/data/agents/skills_index.json";
 import adviceData from "@/data/agents/advice.json";
 import { byLine, cardLine, say, serverName, skillFoot, type Advice, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
@@ -82,6 +82,10 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
   const fromStack = pinned.length > 0;
   const slugs = fromStack ? pinned : picks;
   const rows = useMemo(() => reportRows(slugs, assistant), [slugs, assistant]);
+  const recipes: RecipeItem[] = recipesFor(slugs, assistant).map((recipe) => ({
+    id: recipe.id, request: lang === "en" ? recipe.request.en : recipe.request.fr,
+    sides: recipe.sides.map((side) => ({ name: toolName(side.host_tool), logo: logo(side.host_tool), ...(side.gravest ? { gravest: side.gravest } : {}) })),
+  }));
   const items: ReportItem[] = rows.map((row) => {
     const tool = toolOf(row.slug);
     const alternative = row.status === "none" && tool ? pluggedAlternatives(resolveToolAlternatives(tool, tools))[0] : undefined;
@@ -185,6 +189,12 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
         {rows.length > 0 && (
           <Chapter id="bilan" chapter="report" width="wide" title={reportVerdict(rows, assistant, lang)}>
             <StackReport items={items} assistant={assistantName} lang={lang} renderSheetLink={sheetLink} renderToolLink={toolLink} renderReportLink={reportLink} />
+            {/* Recipes (step 6): two tools of this stack, both plugged into this assistant; three at most. */}
+            {recipes.length > 0 && (
+              <AgentShelf title={t("Avec deux de vos outils", "With two of your tools") as string} count={recipes.length}>
+                <RecipeCards lang={lang} items={recipes} />
+              </AgentShelf>
+            )}
           </Chapter>
         )}
         <Chapter id="tous" chapter="list" width="wide" title={t("Tous les outils qui se branchent", "Every tool that plugs in") as string}>

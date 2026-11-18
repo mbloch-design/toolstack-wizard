@@ -16,7 +16,8 @@ import Seats from "@/ds/Seats/Seats";
 import Logo from "@/ds/Logo/Logo";
 import { Meet, Stamp, Trim } from "@/ds/Gesture/Gesture";
 import { toolKey } from "@/lib/stackView";
-import { HUB_ASSISTANTS, isPlugged, reportRows, reportVerdict } from "@/lib/agentReport";
+import { HUB_ASSISTANTS, isPlugged, recipesFor, reportRows, reportVerdict } from "@/lib/agentReport";
+import { RecipeCards } from "@/ds/AgentHub/AgentHub";
 import { useAgentAssistant } from "@/hooks/useAgentAssistant";
 
 const HUB_ASSISTANT_NAMES = { claude: "Claude", chatgpt: "ChatGPT", gemini: "Gemini", copilot: "Copilot" } as const;
@@ -496,8 +497,10 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         {(() => {
           // « Votre assistant IA »: a question tile until answered (it leaves once answered, 09/11), then the hub's
           // verdict for this stack, word for word (agentReport); its detail is the hub's row per tool.
-          const slugs = [...spend.map((row) => row.tool), ...freeTools, ...pending].filter((tool, index, list) => list.findIndex((x) => x.id === tool.id) === index).map((tool) => toolKey(tool));
+          const stackTools = [...spend.map((row) => row.tool), ...freeTools, ...pending].filter((tool, index, list) => list.findIndex((x) => x.id === tool.id) === index);
+          const slugs = stackTools.map((tool) => toolKey(tool));
           const rows = reportRows(slugs, assistant);
+          const recipes = recipesFor(slugs, assistant);
           const checked = rows.filter((row) => row.status !== "unchecked").length;
           const plugged = rows.filter(isPlugged).length;
           const asking = !assistantChosen || askAssistant;
@@ -505,11 +508,16 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
             <Tile span={12} card="assistant" tone={asking ? "question" : "tile"} label={t("Votre assistant IA", "Your AI assistant")}
               statement={asking || !checked ? undefined : <><Key tone={plugged ? "brand" : undefined}>{plugged}</Key>{t(` sur ${checked}`, ` of ${checked}`)}</>}
               status={asking ? undefined : { text: reportVerdict(rows, assistant, lang) }}
-              footer={asking ? undefined : <span style={{ display: "flex", flexWrap: "wrap", gap: "var(--tt-space-2) var(--tt-space-6)" }}>
+              footer={asking ? undefined : <div style={{ display: "grid", gap: "var(--tt-gap-group)" }}>
+                {/* Recipes (step 6): two tools of this stack, both plugged into this assistant; three at most. */}
+                {recipes.length > 0 && <RecipeCards lang={lang} items={recipes.map((recipe) => ({ id: recipe.id, request: fr ? recipe.request.fr : recipe.request.en,
+                  sides: recipe.sides.map((side) => { const tool = stackTools.find((x) => toolKey(x) === side.host_tool)!; return { name: tool.name, logo: <Logo tool={tool} size={24} />, ...(side.gravest ? { gravest: side.gravest } : {}) }; }) }))} />}
+                <span style={{ display: "flex", flexWrap: "wrap", gap: "var(--tt-space-2) var(--tt-space-6)" }}>
                 {/* The detail is the hub (no opening in place): the system's action link, its arrow there at rest. */}
                 {agentsHref && <Link to={agentsHref} className={linkClass()} onClick={() => trackEvent("stack_assistant_detail", { assistant })}>{t("Outil par outil", "Tool by tool")}<LinkArrow shown /></Link>}
                 <TextButton onClick={() => setAskAssistant(true)}>{t("Changer d'assistant", "Change assistant")}</TextButton>
-              </span>}>
+                </span>
+              </div>}>
               {asking && <Question>{t("Quel assistant utilisez-vous ?", "Which assistant do you use?")}</Question>}
               {asking && <Answers label={t("Votre assistant", "Your assistant")}>
                 {HUB_ASSISTANTS.map((value) => <Answer key={value} name={value === "other" ? t("Autre", "Other") : HUB_ASSISTANT_NAMES[value]}

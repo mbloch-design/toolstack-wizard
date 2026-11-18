@@ -223,6 +223,47 @@
   }
 }
 
+/* Recipes between two tools (step 6): white objects on the sheet, three to a row at most, never narrower than 280. */
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max(280px, calc((100% - 2 * var(--tt-gap-item)) / 3)), 1fr));
+  gap: var(--tt-gap-item);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recipe {
+  display: grid;
+  gap: var(--tt-space-3);
+  align-content: start;
+  padding: var(--tt-space-5);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
+  min-width: 0;
+}
+
+.recipeLogos {
+  display: flex;
+  gap: var(--tt-space-1);
+}
+
+.recipeSides {
+  display: grid;
+  gap: var(--tt-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A side's consequence: the report row's line, out of its grid area, in the note's size. */
+.recipeSides .consequence {
+  grid-area: auto;
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+}
+
 /* The full list by catalogue category: a small title with its count, then the cards. */
 .shelf {
   display: grid;

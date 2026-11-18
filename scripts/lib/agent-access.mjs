@@ -263,3 +263,31 @@ export function validateNeeds(table, servers) {
   });
   return errors;
 }
+
+/**
+ * Recipes between two tools (step 6, 18/11/2026): two distinct servers, each with at least one documented tool used,
+ * every tool present on its server sheet, a request in both languages. Never a tool the sheet does not list.
+ */
+export function validateRecipes(table, servers) {
+  const errors = [];
+  const bySlug = new Map(servers.map((s) => [s.slug, s]));
+  const ids = new Set();
+  for (const recipe of table?.recipes ?? []) {
+    const at = `recette ${recipe?.id ?? "?"}`;
+    if (!recipe?.id || ids.has(recipe.id)) errors.push(`${at} : id absent ou en double`);
+    ids.add(recipe?.id);
+    const pair = recipe?.servers ?? [];
+    if (pair.length !== 2 || pair[0] === pair[1]) { errors.push(`${at} : deux serveurs distincts attendus`); continue; }
+    for (const slug of pair) {
+      const server = bySlug.get(slug);
+      if (!server) { errors.push(`${at} : serveur inconnu ${slug}`); continue; }
+      const used = recipe.uses?.[slug] ?? [];
+      if (!used.length) errors.push(`${at} : aucun outil cité pour ${slug}`);
+      const listed = new Set((server.tools ?? []).map((tool) => tool.name));
+      for (const name of used) if (!listed.has(name)) errors.push(`${at} : ${name} absent de la fiche ${slug}`);
+    }
+    for (const slug of Object.keys(recipe.uses ?? {})) if (!pair.includes(slug)) errors.push(`${at} : outils cités pour ${slug}, hors de la paire`);
+    if (!isPair(recipe.request)) errors.push(`${at} : request fr/en attendue`);
+  }
+  return errors;
+}

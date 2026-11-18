@@ -1,0 +1,285 @@
+[
+  {
+    "id": "calendly-notion-notes",
+    "request": {
+      "fr": "Prépare une page de notes Notion pour chacun de mes rendez-vous Calendly de demain.",
+      "en": "Prepare a Notion notes page for each of my Calendly meetings tomorrow."
+    },
+    "sides": [
+      {
+        "server": "calendly-mcp",
+        "host_tool": "calendly",
+        "tools": [
+          "meetings-list_events",
+          "meetings-list_event_invitees"
+        ],
+        "gravest": "read"
+      },
+      {
+        "server": "notion-mcp",
+        "host_tool": "notion",
+        "tools": [
+          "notion-create-pages"
+        ],
+        "gravest": "write"
+      }
+    ]
+  },
+  {
+    "id": "airtable-notion-weekly",
+    "request": {
+      "fr": "Résume dans une page Notion les enregistrements ajoutés cette semaine à ma base Airtable « Projets ».",
+      "en": "Sum up in a Notion page the records added this week to my Airtable base “Projects”."
+    },
+    "sides": [
+      {
+        "server": "airtable-mcp",
+        "host_tool": "airtable",
+        "tools": [
+          "search_records",
+          "list_records_for_table"
+        ],
+        "gravest": "read"
+      },
+      {
+        "server": "notion-mcp",
+        "host_tool": "notion",
+        "tools": [
+          "notion-create-pages"
+        ],
+        "gravest": "write"
+      }
+    ]
+  },
+  {
+    "id": "canva-notion-index",
+    "request": {
+      "fr": "Liste dans une page Notion mes designs Canva de ce mois-ci, avec leur titre.",
+      "en": "List in a Notion page my Canva designs from this month, with their titles."
+    },
+    "sides": [
+      {
+        "server": "canva-mcp",
+        "host_tool": "canva",
+        "tools": [
+          "search-designs"
+        ],
+        "gravest": "read"
+      },
+      {
+        "server": "notion-mcp",
+        "host_tool": "notion",
+        "tools": [
+          "notion-create-pages"
+        ],
+        "gravest": "write"
+      }
+    ]
+  },
+  {
+    "id": "notion-miro-workshop",
+    "request": {
+      "fr": "Transforme ma page Notion « Ateliers » en tableau Miro, une zone par atelier.",
+      "en": "Turn my Notion page “Workshops” into a Miro board, one area per workshop."
+    },
+    "sides": [
+      {
+        "server": "notion-mcp",
+        "host_tool": "notion",
+        "tools": [
+          "notion-fetch"
+        ],
+        "gravest": "read"
+      },
+      {
+        "server": "miro-mcp",
+        "host_tool": "miro",
+        "tools": [
+          "board_create",
+          "canvas_create_from_svg"
+        ],
+        "gravest": "write"
+      }
+    ]
+  },
+  {
+    "id": "figma-notion-handoff",
+    "request": {
+      "fr": "Rédige dans Notion la fiche de passation de la maquette Figma sélectionnée : écrans, composants, couleurs.",
+      "en": "Write in Notion the handoff page for the selected Figma design: screens, components, colours."
+    },
+    "sides": [
+      {
+        "server": "figma-mcp",
+        "host_tool": "figma",
+        "tools": [
+          "get_metadata",
+          "get_design_context",
+          "get_variable_defs"
+        ],
+        "gravest": "read"
+      },
+      {
+        "server": "notion-mcp",
+        "host_tool": "notion",
+        "tools": [
+          "notion-create-pages"
+        ],
+        "gravest": "write"
+      }
+    ]
+  },
+  {
+    "id": "stripe-notion-monthly",
+    "request": {
+      "fr": "Mets à jour ma page Notion « Suivi » avec mon solde Stripe et les paiements reçus ce mois-ci.",
+      "en": "Update my Notion page “Tracking” with my Stripe balance and the payments received this month."
+    },
+    "sides": [
+      {
+        "server": "stripe-mcp",
+        "host_tool": "stripe",
+        "tools": [
+          "get_balance_summary",
+          "stripe_api_read"
+        ],
+        "gravest": "read"
+      },
+      {
+        "server": "notion-mcp",
+        "host_tool": "notion",
+        "tools": [
+          "notion-update-page"
+        ],
+        "gravest": "write"
+      }
+    ]
+  },
+  {
+    "id": "hubspot-notion-contacts",
+    "request": {
+      "fr": "Crée une page Notion pour chaque contact HubSpot ajouté cette semaine, avec son entreprise.",
+      "en": "Create a Notion page for each HubSpot contact added this week, with their company."
+    },
+    "sides": [
+      {
+        "server": "hubspot-mcp",
+        "host_tool": "hubspot",
+        "tools": [
+          "search_crm_objects"
+        ],
+        "gravest": "read"
+      },
+      {
+        "server": "notion-mcp",
+        "host_tool": "notion",
+        "tools": [
+          "notion-create-pages"
+        ],
+        "gravest": "write"
+      }
+    ]
+  },
+  {
+    "id": "buffer-canva-week",
+    "request": {
+      "fr": "Liste mes posts Buffer de la semaine prochaine et retrouve dans Canva les designs qui vont avec.",
+      "en": "List my Buffer posts for next week and find in Canva the designs that go with them."
+    },
+    "sides": [
+      {
+        "server": "buffer-mcp",
+        "host_tool": "buffer",
+        "tools": [
+          "list_posts"
+        ],
+        "gravest": "read"
+      },
+      {
+        "server": "canva-mcp",
+        "host_tool": "canva",
+        "tools": [
+          "search-designs"
+        ],
+        "gravest": "read"
+      }
+    ]
+  },
+  {
+    "id": "analytics-notion-figures",
+    "request": {
+      "fr": "Ajoute à ma page Notion « Chiffres » les visites du mois dernier dans Google Analytics.",
+      "en": "Add to my Notion page “Figures” last month's visits from Google Analytics."
+    },
+    "sides": [
+      {
+        "server": "google-analytics-mcp",
+        "host_tool": "google-analytics",
+        "tools": [
+          "run_report"
+        ],
+        "gravest": "read"
+      },
+      {
+        "server": "notion-mcp",
+        "host_tool": "notion",
+        "tools": [
+          "notion-update-page"
+        ],
+        "gravest": "write"
+      }
+    ]
+  },
+  {
+    "id": "airtable-miro-ideas",
+    "request": {
+      "fr": "Crée un tableau Miro avec une note par idée de ma table Airtable « Idées ».",
+      "en": "Create a Miro board with one note per idea from my Airtable table “Ideas”."
+    },
+    "sides": [
+      {
+        "server": "airtable-mcp",
+        "host_tool": "airtable",
+        "tools": [
+          "list_records_for_table"
+        ],
+        "gravest": "read"
+      },
+      {
+        "server": "miro-mcp",
+        "host_tool": "miro",
+        "tools": [
+          "board_create",
+          "canvas_create_from_svg"
+        ],
+        "gravest": "write"
+      }
+    ]
+  },
+  {
+    "id": "calendly-stripe-paid",
+    "request": {
+      "fr": "Pour chaque rendez-vous Calendly de la semaine, vérifie dans Stripe si le client a payé.",
+      "en": "For each Calendly meeting this week, check in Stripe whether the client has paid."
+    },
+    "sides": [
+      {
+        "server": "calendly-mcp",
+        "host_tool": "calendly",
+        "tools": [
+          "meetings-list_events",
+          "meetings-list_event_invitees"
+        ],
+        "gravest": "read"
+      },
+      {
+        "server": "stripe-mcp",
+        "host_tool": "stripe",
+        "tools": [
+          "stripe_api_read"
+        ],
+        "gravest": "read"
+      }
+    ]
+  }
+]

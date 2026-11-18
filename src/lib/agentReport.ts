@@ -1,5 +1,6 @@
 import mcpIndex from "@/data/agents/mcp_index.json";
 import checkedNone from "@/data/agents/checked_none.json";
+import recipesData from "@/data/agents/recipes.json";
 import type { AgentCapabilityKind } from "@/data/types";
 import { CONSEQUENCE, say, typo, type CardFact, type Lang, type McpCard, type McpSheet } from "@/lib/agents";
 
@@ -118,4 +119,21 @@ export function serverFoot(server: { setup?: McpSheet["setup"]; kinds: AgentCapa
     : { kind: "elsewhere", text: name ? (en ? `Not documented for ${name}` : `Non documenté pour ${name}`) : (en ? "Not documented for your assistant" : "Non documenté pour votre assistant") };
   const gravest = GRAVITY.find((kind) => server.kinds.includes(kind));
   return [status, ...(gravest ? [{ kind: gravest, text: say(lang, CONSEQUENCE[gravest]) }] : [])];
+}
+
+/** A recipe between two tools (step 6, 18/11/2026): one request, two sides, each with its gravest consequence. */
+export interface Recipe {
+  id: string;
+  request: { fr: string; en: string };
+  sides: { server: string; host_tool: string; tools: string[]; gravest?: AgentCapabilityKind }[];
+}
+export const RECIPES = recipesData as Recipe[];
+
+/**
+ * The recipes for a stack and an assistant: both tools in the stack and both plugged into that assistant (one click
+ * or to set up), three at most, in the data's order (the most common pairs first). Never a tool outside the stack.
+ */
+export function recipesFor(slugs: string[], assistant: HubAssistant, limit = 3): Recipe[] {
+  const stack = new Set(slugs);
+  return RECIPES.filter((recipe) => recipe.sides.every((side) => stack.has(side.host_tool) && isPlugged(toolStatus(side.host_tool, assistant)))).slice(0, limit);
 }

@@ -135,7 +135,7 @@ export function StackReport({ items, assistant, lang, renderSheetLink, renderToo
           {item.status === "none" && item.alternative && (
             <p className={styles.reportText}>{t("Une alternative qui se branche : ", "An alternative that plugs in: ")}{renderToolLink(item.alternative.slug, linkClass("inline"), item.alternative.name)}.</p>
           )}
-          {item.request && <div className={styles.reportRequest}><Prompt text={item.request} lang={lang} /></div>}
+          {item.request && <div className={styles.reportRequest}><Prompt text={typo(item.request)} lang={lang} /></div>}
           {(item.sheet || item.status === "unchecked") && (
             <div className={styles.reportAction}>
               {item.sheet && renderSheetLink(item.sheet, linkClass(), <>{t("Brancher", "Plug in")}<span className={styles.srOnly}> {item.name}</span><LinkArrow shown /></>)}
@@ -147,6 +147,41 @@ export function StackReport({ items, assistant, lang, renderSheetLink, renderToo
     </ul>
   );
 }
+
+export interface RecipeItem {
+  id: string;
+  /** The request to copy, in the page's language. */
+  request: string;
+  /** The two tools, each with its logo and the gravest consequence of what the recipe does there. */
+  sides: { name: string; logo: ReactNode; gravest?: AgentCapabilityKind }[];
+}
+
+/**
+ * Recipes between two tools of the stack (step 6, 18/11/2026): the two logos, the request to copy, then what each side
+ * can do at worst, in the section's vocabulary of consequence. Three at most; the page decides which.
+ */
+export function RecipeCards({ items, lang }: { items: RecipeItem[]; lang: Lang }) {
+  const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
+  return (
+    <ul className={styles.recipes} aria-label={t("Avec deux de vos outils", "With two of your tools")}>
+      {items.map((item) => (
+        <li key={item.id} className={styles.recipe} data-recipe={item.id}>
+          <span className={styles.recipeLogos} aria-hidden="true">{item.sides.map((side) => <span key={side.name} className={styles.logo}>{side.logo}</span>)}</span>
+          <Prompt text={typo(item.request)} lang={lang} />
+          <ul className={styles.recipeSides} aria-label={t("Ce que chaque outil peut faire", "What each tool can do")}>
+            {item.sides.map((side) => side.gravest && (
+              <li key={side.name} className={styles.consequence} data-alert={side.gravest === "delete" || side.gravest === "pay" || undefined}>
+                <span className={styles.consequenceIcon} aria-hidden="true">{KIND_ICON[side.gravest]}</span>{side.name}{lang === "en" ? ": " : "\u00a0: "}{lower(say(lang, CONSEQUENCE[side.gravest]))}
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+const lower = (text: string) => text.charAt(0).toLowerCase() + text.slice(1);
 
 /** One catalogue category of the full list: its name and count, then its cards. */
 export function AgentShelf({ title, count, children }: { title: string; count: number; children: ReactNode }) {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
-import { agentAccessIndex, projectAgentAccess, validateAgentBlock, validateMcpSheet, validateNeeds } from "./agent-access.mjs";
+import { agentAccessIndex, projectAgentAccess, validateAgentBlock, validateMcpSheet, validateNeeds, validateRecipes } from "./agent-access.mjs";
 
 const official = {
   mcp: "official",
@@ -97,5 +97,22 @@ describe("agents hub and sheet contract", () => {
     const errors = validateMcpSheet(loose).join("\n");
     expect(errors).toContain("examples");
     expect(errors).toContain("for et not_for");
+  });
+});
+
+describe("recipes between two tools (step 6)", () => {
+  const servers = [
+    { slug: "calendly-mcp", host_tool: "calendly", tools: [{ name: "meetings-list_events", kind: "read" }] },
+    { slug: "notion-mcp", host_tool: "notion", tools: [{ name: "notion-create-pages", kind: "write" }] },
+  ];
+  const recipe = (uses) => ({ recipes: [{ id: "r", servers: ["calendly-mcp", "notion-mcp"], uses, request: { fr: "Prépare…", en: "Prepare…" } }] });
+
+  it("accepts tools listed on each sheet", () => {
+    expect(validateRecipes(recipe({ "calendly-mcp": ["meetings-list_events"], "notion-mcp": ["notion-create-pages"] }), servers)).toEqual([]);
+  });
+
+  it("refuses a tool the server sheet does not list, and a side with no tool", () => {
+    expect(validateRecipes(recipe({ "calendly-mcp": ["meetings-delete_everything"], "notion-mcp": ["notion-create-pages"] }), servers).join(" ")).toMatch(/absent de la fiche calendly-mcp/);
+    expect(validateRecipes(recipe({ "calendly-mcp": ["meetings-list_events"] }), servers).join(" ")).toMatch(/aucun outil cité pour notion-mcp/);
   });
 });

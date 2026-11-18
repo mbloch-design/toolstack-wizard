@@ -3,7 +3,7 @@ import { MemoryRouter } from "react-router-dom";
 import { beforeEach, expect, it, vi } from "vitest";
 import StackFindings from "./StackFindings";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
-import { reportRows, reportVerdict } from "@/lib/agentReport";
+import { recipesFor, reportRows, reportVerdict } from "@/lib/agentReport";
 
 vi.mock("@/components/ToolLogo", () => ({ default: () => <span aria-hidden="true" /> }));
 const tool = (id: string, name: string) => ({ id, slug: id, name }) as ToolSummary;
@@ -42,4 +42,14 @@ it("asks which assistant until answered, then the question leaves and the verdic
   expect(screen.queryByText("Quel assistant utilisez-vous ?")).not.toBeInTheDocument();
   expect(tile().textContent).toContain(reportVerdict(reportRows(SLUGS, "chatgpt"), "chatgpt", "fr"));
   expect(window.localStorage.getItem("tooltrim.agents.client")).toBe("chatgpt");
+});
+
+// Recipes (step 6): the same ones as the hub for the same stack and assistant, three at most, none once the question is open.
+it("shows the hub's recipes for this stack and assistant, three at most", () => {
+  window.localStorage.setItem("tooltrim.agents.client", "claude");
+  view();
+  const shown = [...tile().querySelectorAll<HTMLElement>("[data-recipe]")].map((card) => card.dataset.recipe);
+  expect(shown).toEqual(recipesFor(SLUGS, "claude").map((recipe) => recipe.id));
+  expect(shown.length).toBeLessThanOrEqual(3);
+  expect(screen.getAllByRole("button", { name: "Copier la demande" }).length).toBe(shown.length);
 });

@@ -59,3 +59,19 @@ describe("the hub's report (step 4)", () => {
     expect(reportVerdict(reportRows(["hotjar", "trello"], "claude"), "claude", "fr")).toBe("Votre outil ne se branche pas encore à Claude. 1 outil pas encore vérifié.");
   });
 });
+
+describe("recipes between two tools (step 6)", () => {
+  it("offers only pairs whose two tools are in the stack and plugged into the assistant, three at most", async () => {
+    const { recipesFor, isPlugged, toolStatus } = await import("./agentReport");
+    for (const assistant of ASSISTANTS) {
+      const recipes = recipesFor(STACK, assistant);
+      expect(recipes.length).toBeLessThanOrEqual(3);
+      for (const recipe of recipes) for (const side of recipe.sides) {
+        expect(STACK).toContain(side.host_tool);
+        expect(isPlugged(toolStatus(side.host_tool, assistant))).toBe(true);
+      }
+    }
+    expect(recipesFor(STACK, "claude").map((recipe) => recipe.id)).toEqual(["figma-notion-handoff", "stripe-notion-monthly", "analytics-notion-figures"]);
+    expect(recipesFor(["notion"], "claude")).toEqual([]);
+  });
+});
