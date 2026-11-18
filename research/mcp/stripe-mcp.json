@@ -1,0 +1,348 @@
+{
+  "slug": "stripe-mcp",
+  "name": "Stripe MCP",
+  "publisher": "Stripe",
+  "official": true,
+  "host_tool": "stripe",
+  "category": "finance",
+  "summary": {
+    "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Il est en bêta.",
+    "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. It is in beta."
+  },
+  "card": {
+    "fr": "Suivre vos paiements et votre solde.",
+    "en": "Follow your payments and balance."
+  },
+  "examples": [
+    {
+      "fr": "Quel est mon solde Stripe et combien ai-je encaissé ce mois-ci ?",
+      "en": "What is my Stripe balance and how much did I take in this month?"
+    },
+    {
+      "fr": "Liste les paiements de la semaine dernière et dis-moi lesquels ont échoué.",
+      "en": "List last week's payments and tell me which ones failed."
+    },
+    {
+      "fr": "Crée une fiche client pour Studio Martin avec cette adresse e-mail.",
+      "en": "Create a customer for Studio Martin with this email address."
+    }
+  ],
+  "for": {
+    "fr": "Vous encaissez avec Stripe et voulez suivre paiements et solde sans ouvrir le tableau de bord.",
+    "en": "You take payments with Stripe and want to follow payments and balance without opening the dashboard."
+  },
+  "not_for": {
+    "fr": "Vous voulez confier vos virements à l'assistant : le serveur est en bêta et chaque envoi d'argent attend votre confirmation.",
+    "en": "You want the assistant to handle your transfers: the server is in beta and every money transfer waits for your confirmation."
+  },
+  "control": [
+    {
+      "title": {
+        "fr": "Vous choisissez les comptes",
+        "en": "You choose the accounts"
+      },
+      "icon": "account",
+      "fr": "À la connexion, vous choisissez les comptes et les environnements, production ou test, avec des droits pour chacun.",
+      "en": "When connecting, you pick the accounts and environments, live or test, with rights for each."
+    },
+    {
+      "title": {
+        "fr": "Vous confirmez les paiements",
+        "en": "You confirm payments"
+      },
+      "icon": "confirm",
+      "fr": "Les actions marquées « Confirmation humaine » attendent votre accord dans le Dashboard Stripe, pendant 24 heures.",
+      "en": "Actions marked “Human confirmation” wait for your approval in the Stripe Dashboard, for 24 hours."
+    },
+    {
+      "title": {
+        "fr": "L'administrateur encadre",
+        "en": "The admin sets the frame"
+      },
+      "icon": "admin",
+      "fr": "Un administrateur active ou coupe l'accès pour toute l'équipe dans les réglages du Dashboard, rubrique accès MCP et CLI.",
+      "en": "An admin turns access on or off for the whole team in the Dashboard settings, under MCP and CLI access."
+    },
+    {
+      "title": {
+        "fr": "Vous coupez quand vous voulez",
+        "en": "You cut whenever you want"
+      },
+      "icon": "cut",
+      "fr": "Pour retirer l'accès : réglages de votre profil, « Sessions OAuth », puis « Révoquer l'accès ».",
+      "en": "To remove access: your profile settings, “OAuth sessions”, then “Revoke access”."
+    }
+  ],
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Quel est mon solde disponible ?",
+        "en": "What is my available balance?"
+      },
+      {
+        "fr": "Combien ai-je encaissé la semaine dernière ?",
+        "en": "How much did I take in last week?"
+      },
+      {
+        "fr": "Qui sont mes cinq derniers clients ?",
+        "en": "Who are my five latest customers?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "En mode test, crée un client nommé « Essai ToolTrim ».",
+        "en": "In test mode, create a customer named “ToolTrim test”."
+      },
+      "check": {
+        "fr": "Dans le Dashboard, en mode test, le client apparaît ; supprimez-le ensuite.",
+        "en": "In the Dashboard, in test mode, the customer appears; delete it afterwards."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Sur un réseau d'entreprise, demandez au service informatique d'autoriser mcp.stripe.com.",
+      "en": "On a company network, ask IT to allow mcp.stripe.com."
+    },
+    {
+      "fr": "Pour un compte connecté (Connect), la connexion au compte ne marche pas : il faut une clé d'accès d'agent.",
+      "en": "For a connected account (Connect), signing in does not work: you need an agent access key."
+    },
+    {
+      "fr": "Remplacez avant le 30 novembre 2026 les clés sans restriction par des clés d'agent : les autres seront refusées.",
+      "en": "Replace unrestricted keys with agent keys before 30 November 2026: the others will be refused."
+    }
+  ],
+  "verified_on": "2026-11-16",
+  "status": "beta",
+  "transport": "remote",
+  "auth": [
+    "oauth",
+    "key"
+  ],
+  "access": "read_write",
+  "plan": "unknown",
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire les données du compte, les analyses et la documentation Stripe",
+      "en": "Read account data, analytics and Stripe documentation"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier des objets Stripe (clients, remboursements…)",
+      "en": "Create and update Stripe objects (customers, refunds…)"
+    },
+    {
+      "kind": "pay",
+      "fr": "Envoyer ou convertir de l'argent depuis un compte Treasury, avec confirmation humaine",
+      "en": "Send or convert money from a Treasury account, with human confirmation"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "plugin"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "plugin"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [
+    "human_confirmation",
+    "admin_controls",
+    "scoped_keys"
+  ],
+  "tools": [
+    {
+      "name": "stripe_api_search",
+      "kind": "read",
+      "fr": "Chercher dans l'API Stripe",
+      "en": "Search Stripe API methods"
+    },
+    {
+      "name": "stripe_api_details",
+      "kind": "read",
+      "fr": "Lire les paramètres d'une méthode",
+      "en": "Read an API method's parameters"
+    },
+    {
+      "name": "stripe_api_read",
+      "kind": "read",
+      "fr": "Lire des données du compte",
+      "en": "Read data from any API method"
+    },
+    {
+      "name": "stripe_api_write",
+      "kind": "delete",
+      "fr": "Créer, modifier ou supprimer via l'API",
+      "en": "Create, update or delete through the API"
+    },
+    {
+      "name": "get_stripe_account_info",
+      "kind": "read",
+      "fr": "Lire le compte Stripe",
+      "en": "Read the Stripe account"
+    },
+    {
+      "name": "atlas_company_formation",
+      "kind": "write",
+      "fr": "Préparer une création de société Atlas",
+      "en": "Prepare an Atlas company formation"
+    },
+    {
+      "name": "stripe_analytics",
+      "kind": "read",
+      "fr": "Trouver métriques et rapports (aperçu)",
+      "en": "Find metrics and reports (preview)"
+    },
+    {
+      "name": "get_balance_summary",
+      "kind": "read",
+      "fr": "Résumer les soldes",
+      "en": "Summarise Stripe and Treasury balances"
+    },
+    {
+      "name": "convert_currency",
+      "kind": "pay",
+      "fr": "Convertir des fonds, avec confirmation",
+      "en": "Convert Treasury funds, with confirmation"
+    },
+    {
+      "name": "send_money",
+      "kind": "pay",
+      "fr": "Envoyer de l'argent, avec confirmation",
+      "en": "Send Treasury money, with confirmation"
+    },
+    {
+      "name": "setup_recipient",
+      "kind": "write",
+      "fr": "Créer un bénéficiaire",
+      "en": "Set up a payment recipient"
+    },
+    {
+      "name": "transfer_money",
+      "kind": "pay",
+      "fr": "Virer entre soldes, avec confirmation",
+      "en": "Move money between balances, with confirmation"
+    },
+    {
+      "name": "search_stripe_documentation",
+      "kind": "read",
+      "fr": "Chercher dans la documentation",
+      "en": "Search Stripe documentation"
+    },
+    {
+      "name": "stripe_implementation_planner",
+      "kind": "read",
+      "fr": "Préparer une intégration Stripe",
+      "en": "Plan a Stripe integration"
+    },
+    {
+      "name": "send_stripe_feedback",
+      "kind": "send",
+      "fr": "Envoyer un avis à Stripe",
+      "en": "Send feedback to Stripe"
+    }
+  ],
+  "install": [
+    {
+      "client": "claude",
+      "type": "url",
+      "value": "https://claude.ai/directory/de127013-63f1-43d0-8dd2-b6cb5b4e5d1b"
+    },
+    {
+      "client": "chatgpt",
+      "type": "url",
+      "value": "https://chatgpt.com/plugins/plugin_connector_690ab09fa43c8191bca40280e4563238"
+    },
+    {
+      "client": "any",
+      "type": "command",
+      "value": "stripe agent setup"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add --transport http stripe https://mcp.stripe.com/"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude plugin install stripe@anthropic-plugin-directory"
+    },
+    {
+      "client": "codex",
+      "type": "command",
+      "value": "codex mcp add stripe --url https://mcp.stripe.com"
+    },
+    {
+      "client": "cursor",
+      "type": "config",
+      "value": "{\n \"mcpServers\": {\n   \"stripe\": {\n     \"url\": \"https://mcp.stripe.com\"\n   }\n }\n}"
+    },
+    {
+      "client": "vs-code",
+      "type": "config",
+      "value": "{\n \"servers\": {\n   \"stripe\": {\n     \"type\": \"http\",\n     \"url\": \"https://mcp.stripe.com\"\n   }\n }\n}"
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.stripe.com"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "claude-code",
+    "cursor",
+    "vs-code",
+    "Codex",
+    "Grok",
+    "Kiro",
+    "OpenClaw"
+  ],
+  "skills": [
+    "connect-recommend",
+    "connect-required-verification-information",
+    "metronome",
+    "stripe-apps",
+    "stripe-best-practices",
+    "stripe-directory",
+    "stripe-docs",
+    "stripe-implementation-planner",
+    "stripe-pay",
+    "stripe-projects",
+    "upgrade-stripe"
+  ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/stripe",
+    "added": "2025-11",
+    "read_on": "2026-11-17"
+  },
+  "docs_url": "https://docs.stripe.com/mcp",
+  "sources": [
+    {
+      "label": "Stripe Docs — Model Context Protocol (MCP)",
+      "url": "https://docs.stripe.com/mcp"
+    },
+    {
+      "label": "Stripe Docs — Agent plugin",
+      "url": "https://docs.stripe.com/agents/plugin.md"
+    },
+    {
+      "label": "Stripe Docs — Skills",
+      "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/stripe"
+    }
+  ]
+}

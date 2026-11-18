@@ -1,0 +1,44 @@
+{
+  "slug": "shopify-ai-toolkit",
+  "name": "Shopify AI Toolkit",
+  "publisher": "Shopify",
+  "official": true,
+  "host_tool": "shopify",
+  "server": "shopify-mcp",
+  "category": "nocode-web",
+  "summary": {
+    "fr": "Aider un agent de code à développer pour Shopify : API Admin, Liquid, Polaris, Hydrogen, CLI.",
+    "en": "Help a coding agent build for Shopify: Admin API, Liquid, Polaris, Hydrogen, CLI."
+  },
+  "agents": [
+    "claude-code",
+    "Codex",
+    "cursor",
+    "vs-code",
+    "Antigravity"
+  ],
+  "install": [
+    {
+      "client": "any",
+      "type": "command",
+      "value": "npx skills add Shopify/shopify-ai-toolkit"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude plugin install shopify-ai-toolkit@claude-plugins-official"
+    }
+  ],
+  "requires": {
+    "fr": "Node.js 18 ou plus.",
+    "en": "Node.js 18 or higher."
+  },
+  "verified_on": "2026-11-16",
+  "docs_url": "https://shopify.dev/docs/apps/build/ai-toolkit",
+  "sources": [
+    {
+      "label": "Shopify — skills",
+      "url": "https://shopify.dev/docs/apps/build/ai-toolkit"
+    }
+  ]
+}

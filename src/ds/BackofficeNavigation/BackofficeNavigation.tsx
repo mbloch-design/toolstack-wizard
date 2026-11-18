@@ -1,4 +1,4 @@
-import { Activity, Database, FileText, Layers3, Users, ShieldAlert, Home } from "@/lib/icons";
+import { Activity, Database, FileText, Layers3, Users, Home } from "@/lib/icons";
 import type { BackofficeNavigationModel, BackofficeSection } from "@/components/backoffice/backofficeNavigation";
 import styles from "./BackofficeNavigation.module.css";
 
@@ -9,7 +9,6 @@ const entries = [
   ["stacks", "Stacks et outils", "Stacks and tools", Layers3],
   ["usage", "Activité", "Activity", Activity],
   ["sources", "Sources", "Sources", Database],
-  ["diagnostic", "Diagnostic", "Diagnostic", ShieldAlert],
 ] as const;
 export function BackofficeNavigation({ section, onNavigate, lang, homeHref, onDone, onBlocked, collapsed = false }: Partial<BackofficeNavigationModel> & { lang: "fr" | "en"; homeHref: string; onDone?: () => void; onBlocked?: () => void; collapsed?: boolean }) {
   return <nav className={styles.navigation} aria-label={lang === "fr" ? "Navigation du back-office" : "Back-office navigation"}>

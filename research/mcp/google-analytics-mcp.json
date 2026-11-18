@@ -1,0 +1,211 @@
+{
+  "slug": "google-analytics-mcp",
+  "name": "Google Analytics MCP server",
+  "publisher": "Google",
+  "official": true,
+  "host_tool": "google-analytics",
+  "category": "analytics",
+  "summary": {
+    "fr": "Le serveur officiel de Google Analytics permet à votre assistant de lire vos comptes, propriétés et rapports, y compris en temps réel. Il s'installe sur votre ordinateur avec Python et des identifiants Google Cloud : c'est le plus technique de la section.",
+    "en": "Google Analytics' official server lets your assistant read your accounts, properties and reports, realtime included. It is installed on your computer with Python and Google Cloud credentials: the most technical one in this section."
+  },
+  "card": {
+    "fr": "Lire vos chiffres de trafic, en temps réel compris.",
+    "en": "Read your traffic figures, realtime included."
+  },
+  "examples": [
+    {
+      "fr": "Combien de visiteurs mon site a-t-il eus le mois dernier, et d'où venaient-ils ?",
+      "en": "How many visitors did my site get last month, and where did they come from?"
+    },
+    {
+      "fr": "Combien de personnes sont sur mon site en ce moment ?",
+      "en": "How many people are on my site right now?"
+    },
+    {
+      "fr": "Quelles pages amènent le plus de conversions ?",
+      "en": "Which pages bring the most conversions?"
+    }
+  ],
+  "for": {
+    "fr": "Vous suivez votre site dans Google Analytics et voulez des réponses sans construire de rapport.",
+    "en": "You track your site in Google Analytics and want answers without building a report."
+  },
+  "not_for": {
+    "fr": "Vous voulez un branchement en un clic : il s'installe sur votre ordinateur, avec Python et des identifiants Google Cloud.",
+    "en": "You want a one-click setup: it is installed on your computer, with Python and Google Cloud credentials."
+  },
+  "control": [
+    {
+      "title": {
+        "fr": "Lecture seule",
+        "en": "Read only"
+      },
+      "icon": "read",
+      "fr": "Il ne fait que lire : l'accès demandé est la lecture seule de vos données Analytics.",
+      "en": "It only reads: the access requested is read-only on your Analytics data."
+    },
+    {
+      "title": {
+        "fr": "Vos propriétés, pas plus",
+        "en": "Your properties, no more"
+      },
+      "icon": "account",
+      "fr": "Il ne voit que les propriétés où votre compte a au moins le rôle Lecteur.",
+      "en": "It only sees the properties where your account has at least the Viewer role."
+    }
+  ],
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Liste mes comptes et propriétés Google Analytics.",
+        "en": "List my Google Analytics accounts and properties."
+      },
+      {
+        "fr": "Combien de visiteurs mon site a-t-il eus hier ?",
+        "en": "How many visitors did my site get yesterday?"
+      },
+      {
+        "fr": "Quelles sont mes dix pages les plus vues ce mois-ci ?",
+        "en": "What are my ten most viewed pages this month?"
+      }
+    ]
+  },
+  "troubleshoot": [
+    {
+      "fr": "Erreur 403 : activez les API Admin et Data dans votre projet Google Cloud, et vérifiez vos droits sur la propriété.",
+      "en": "Error 403: turn on the Admin and Data APIs in your Google Cloud project, and check your rights on the property."
+    },
+    {
+      "fr": "« Insufficient authentication scopes » : reconnectez-vous en demandant la lecture Analytics.",
+      "en": "“Insufficient authentication scopes”: sign in again asking for Analytics read access."
+    },
+    {
+      "fr": "Il faut Python 3.10 ou plus sur l'ordinateur.",
+      "en": "Python 3.10 or later is needed on the computer."
+    }
+  ],
+  "verified_on": "2026-11-16",
+  "transport": "local",
+  "access": "read",
+  "plan": "unknown",
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire comptes, propriétés, rapports et données en temps réel",
+      "en": "Read accounts, properties, reports and realtime data"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "local"
+    },
+    {
+      "assistant": "other",
+      "how": "local"
+    }
+  ],
+  "safeguards": [
+    "scoped_keys",
+    "no_delete"
+  ],
+  "tools": [
+    {
+      "name": "get_account_summaries",
+      "kind": "read",
+      "fr": "Lister comptes et propriétés",
+      "en": "List accounts and properties"
+    },
+    {
+      "name": "get_property_details",
+      "kind": "read",
+      "fr": "Lire une propriété",
+      "en": "Read a property's settings"
+    },
+    {
+      "name": "list_google_ads_links",
+      "kind": "read",
+      "fr": "Lister les liens Google Ads",
+      "en": "List Google Ads links"
+    },
+    {
+      "name": "list_property_annotations",
+      "kind": "read",
+      "fr": "Lister les annotations",
+      "en": "List property annotations"
+    },
+    {
+      "name": "get_custom_dimensions_and_metrics",
+      "kind": "read",
+      "fr": "Lire dimensions et métriques personnalisées",
+      "en": "Read custom dimensions and metrics"
+    },
+    {
+      "name": "run_report",
+      "kind": "read",
+      "fr": "Lancer un rapport",
+      "en": "Run a report"
+    },
+    {
+      "name": "run_realtime_report",
+      "kind": "read",
+      "fr": "Lancer un rapport en temps réel",
+      "en": "Run a realtime report"
+    },
+    {
+      "name": "run_funnel_report",
+      "kind": "read",
+      "fr": "Lancer un rapport d'entonnoir",
+      "en": "Run a funnel report"
+    },
+    {
+      "name": "run_conversions_report",
+      "kind": "read",
+      "fr": "Lancer un rapport de conversions",
+      "en": "Run a conversions report"
+    }
+  ],
+  "tools_note": {
+    "fr": "La documentation Google dit le serveur en lecture seule ; le dépôt officiel décrit aussi trois outils d'écriture facultatifs, désactivés par défaut. Seule la liste Google est reprise ici.",
+    "en": "Google's documentation says the server is read-only; the official repository also describes three optional write tools, off by default. Only Google's list is shown here."
+  },
+  "install": [
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add analytics-mcp --scope user -e GOOGLE_APPLICATION_CREDENTIALS=\"PATH_TO_CREDENTIALS_JSON\" -e GOOGLE_CLOUD_PROJECT=\"YOUR_PROJECT_ID\" -- pipx run analytics-mcp"
+    },
+    {
+      "client": "cursor",
+      "type": "config",
+      "value": "{\"mcpServers\": {\"google-analytics-mcp\": {\"command\": \"uvx\", \"args\": [\"--from\", \"analytics-mcp\", \"google-analytics-mcp\"]}}}"
+    }
+  ],
+  "clients": [
+    "claude",
+    "claude-code",
+    "cursor",
+    "Antigravity",
+    "Gemini CLI"
+  ],
+  "skills": [
+    "google-analytics-data-api-basics",
+    "google-analytics-admin-api-basics"
+  ],
+  "note": {
+    "fr": "Serveur à installer sur votre ordinateur et à relier par des identifiants Google Cloud : une mise en place technique.",
+    "en": "A server to install on your computer and connect with Google Cloud credentials: a technical setup."
+  },
+  "docs_url": "https://developers.google.com/analytics/devguides/MCP",
+  "sources": [
+    {
+      "label": "Google for Developers — Try the Google Analytics MCP server",
+      "url": "https://developers.google.com/analytics/devguides/MCP"
+    },
+    {
+      "label": "GitHub googleanalytics/google-analytics-mcp",
+      "url": "https://github.com/googleanalytics/google-analytics-mcp"
+    }
+  ]
+}

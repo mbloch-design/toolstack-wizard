@@ -113,16 +113,18 @@ export function useToolLogoSource(tool: LogoTool, size: number, allowRemoteSourc
   }, [inView, src]);
 
   useEffect(() => {
-    if (!src || loaded || !inView) return;
-    // Same-origin and inline sources cannot hang, and a lazy image still
-    // off-screen has not been requested yet: timing it out would skip a
-    // perfectly good local icon. onError still covers a missing file.
-    if (!src.startsWith("http")) return;
-    // A cached image can be complete before React attaches onLoad.
+    if (!src || loaded) return;
+    // A cached image can be complete before React attaches onLoad, a local one
+    // too (the same logo already shown higher on the page, 17/11/2026).
     if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
       setLoaded(true);
       return;
     }
+    if (!inView) return;
+    // Same-origin and inline sources cannot hang, and a lazy image still
+    // off-screen has not been requested yet: timing it out would skip a
+    // perfectly good local icon. onError still covers a missing file.
+    if (!src.startsWith("http")) return;
     const timer = setTimeout(() => setSourceIndex((index) => index + 1), SOURCE_TIMEOUT_MS);
     return () => clearTimeout(timer);
   }, [src, loaded, inView]);

@@ -1,0 +1,78 @@
+/* A name that copies itself: quiet at rest with a faint copy icon, a light tint and a full icon on hover and focus. The tint spills
+   past the text as a ring (box-shadow), so the line keeps its width. */
+
+.wrap {
+  display: inline-flex;
+  min-width: 0;
+}
+
+.copy {
+  composes: note from "../atoms.module.css";
+  position: relative;
+  display: inline-flex;
+  gap: var(--tt-space-1);
+  align-items: center;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--tt-r-check);
+  background: transparent;
+  color: var(--tt-meta);
+  text-align: start;
+  cursor: pointer;
+  transition: background-color var(--tt-dur-state) var(--tt-ease), box-shadow var(--tt-dur-state) var(--tt-ease), color var(--tt-dur-state) var(--tt-ease);
+}
+
+/* 44 of touch height, the line itself unchanged. */
+.copy::after {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--tt-space-3)) 0;
+}
+
+.copy:hover,
+.copy:focus-visible,
+.copy[data-copied] {
+  background: var(--tt-swap-bg);
+  box-shadow: 0 0 0 var(--tt-space-1) var(--tt-swap-bg);
+  color: var(--tt-ink);
+}
+
+.copy:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.value {
+  font: inherit;
+  letter-spacing: inherit;
+  white-space: nowrap;
+}
+
+/* Always there, faint at rest, so the name reads as copyable before any hover (17/11). */
+.icon {
+  display: inline-grid;
+  place-items: center;
+  opacity: 0.55;
+  transition: opacity var(--tt-dur-state) var(--tt-ease);
+}
+
+.icon svg {
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
+}
+
+.copy:hover .icon,
+.copy:focus-visible .icon,
+.copy[data-copied] .icon {
+  opacity: 1;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

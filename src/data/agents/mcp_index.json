@@ -1,0 +1,1329 @@
+[
+  {
+    "slug": "ahrefs-mcp",
+    "name": "Ahrefs MCP",
+    "publisher": "Ahrefs",
+    "host_tool": "ahrefs",
+    "category": "analytics",
+    "summary": {
+      "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités API du forfait.",
+      "en": "Ahrefs' official server brings your SEO data (keywords, backlinks, rankings) into your assistant, and can manage social media posts. It needs a paid plan from Lite and uses your plan's API units."
+    },
+    "card": {
+      "fr": "Vos mots-clés, liens et positions SEO, dans l'assistant.",
+      "en": "Your SEO keywords, links and rankings, in the assistant."
+    },
+    "transport": "remote",
+    "auth": [
+      "oauth",
+      "key"
+    ],
+    "access": "read_write",
+    "plan": "paid",
+    "kinds": [
+      "read",
+      "write",
+      "delete"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete"
+    ],
+    "one_click": [
+      "claude",
+      "chatgpt"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "cursor",
+      "lovable",
+      "Copilot Studio",
+      "n8n"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      }
+    ],
+    "safeguards": [],
+    "for": {
+      "fr": "Vous avez un forfait Ahrefs payant et suivez le référencement de votre site ou de ceux de vos clients.",
+      "en": "You pay for Ahrefs and follow the search ranking of your site or your clients' sites."
+    },
+    "not_for": {
+      "fr": "Vous n'avez pas de forfait payant : le serveur n'y est pas ouvert.",
+      "en": "You have no paid plan: the server is not open to you."
+    },
+    "tools": 0,
+    "skills": 0,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "airtable-mcp",
+    "name": "Airtable MCP server",
+    "publisher": "Airtable",
+    "host_tool": "airtable",
+    "category": "project-management",
+    "summary": {
+      "fr": "Le serveur officiel d'Airtable relie votre assistant à vos bases : enregistrements, tables, champs, interfaces et brouillons d'automatisations. Il peut aussi supprimer des enregistrements et des tables entières, et on peut le limiter à certaines bases.",
+      "en": "Airtable's official server connects your assistant to your bases: records, tables, fields, interfaces and automation drafts. It can also delete records and whole tables, and can be limited to chosen bases."
+    },
+    "card": {
+      "fr": "Chercher, ajouter et modifier les fiches de vos bases.",
+      "en": "Search, add and edit the records of your bases."
+    },
+    "transport": "remote",
+    "auth": [
+      "oauth",
+      "key"
+    ],
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete"
+    ],
+    "one_click": [
+      "claude",
+      "chatgpt",
+      "gemini"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "gemini",
+      "claude-code",
+      "cursor",
+      "Codex"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "gemini",
+        "how": "connector"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "admin_controls",
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Vos clients, vos projets ou vos contenus vivent dans des bases Airtable.",
+      "en": "Your clients, projects or content live in Airtable bases."
+    },
+    "not_for": {
+      "fr": "Vous branchez une base importante sans sauvegarde : l'assistant peut aussi supprimer des tables entières.",
+      "en": "You connect an important base with no backup: the assistant can also delete whole tables."
+    },
+    "tools": 41,
+    "skills": 0,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "buffer-mcp",
+    "name": "Buffer MCP",
+    "publisher": "Buffer",
+    "host_tool": "buffer",
+    "category": "creation",
+    "summary": {
+      "fr": "Le serveur officiel de Buffer permet à votre assistant de lire votre file d'attente et vos statistiques, de rédiger et programmer des posts, et de les publier tout de suite si on le lui demande. Il peut aussi supprimer définitivement un post ; il est inclus dans tous les forfaits, gratuit compris.",
+      "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post; it is included on every plan, free included."
+    },
+    "card": {
+      "fr": "Préparer et publier vos posts, puis lire leurs chiffres.",
+      "en": "Plan and publish your posts, then read their results."
+    },
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
+    "one_click": [
+      "claude"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "claude-code",
+      "cursor",
+      "perplexity",
+      "notion",
+      "zapier",
+      "Raycast",
+      "Manus",
+      "Grok",
+      "n8n"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "url"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [],
+    "for": {
+      "fr": "Vous publiez régulièrement sur plusieurs réseaux avec Buffer.",
+      "en": "You post regularly on several networks with Buffer."
+    },
+    "not_for": {
+      "fr": "Vous ne voulez rien publier sans relire : l'assistant peut publier tout de suite, et Buffer ne documente pas de confirmation.",
+      "en": "You never want anything posted unread: the assistant can post right away, and Buffer documents no confirmation."
+    },
+    "tools": 17,
+    "skills": 0,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "calendly-mcp",
+    "name": "Calendly MCP server",
+    "publisher": "Calendly",
+    "host_tool": "calendly",
+    "category": "communication",
+    "summary": {
+      "fr": "Le serveur officiel de Calendly permet à votre assistant de trouver vos créneaux, réserver et annuler des rendez-vous, et modifier vos types d'événements et disponibilités. Aucun forfait payant n'est requis, et Calendly ne documente pas de confirmation avant action.",
+      "en": "Calendly's official server lets your assistant find your open slots, book and cancel meetings, and edit your event types and availability. No paid plan is required, and Calendly documents no confirmation before acting."
+    },
+    "card": {
+      "fr": "Trouver un créneau, réserver ou annuler un rendez-vous.",
+      "en": "Find a slot, book or cancel a meeting."
+    },
+    "status": "ga",
+    "transport": "remote",
+    "auth": [
+      "oauth"
+    ],
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete"
+    ],
+    "one_click": [
+      "claude",
+      "chatgpt"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "Codex",
+      "Muse"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [],
+    "for": {
+      "fr": "Vos clients réservent leurs rendez-vous avec vous sur Calendly.",
+      "en": "Your clients book their meetings with you on Calendly."
+    },
+    "not_for": {
+      "fr": "Vous voulez seulement consulter votre agenda : l'assistant peut aussi annuler un rendez-vous, sans garde-fou documenté.",
+      "en": "You only want to look at your calendar: the assistant can also cancel a meeting, with no documented safeguard."
+    },
+    "tools": 39,
+    "skills": 0,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "canva-mcp",
+    "name": "Canva AI Connector",
+    "publisher": "Canva",
+    "host_tool": "canva",
+    "category": "creation",
+    "summary": {
+      "fr": "Le connecteur officiel de Canva laisse votre assistant chercher vos designs, en générer à partir d'une description, les modifier, les exporter et les commenter. La liste d'outils publiée ne comprend aucune suppression ; les fonctions de marque demandent un forfait Pro.",
+      "en": "Canva's official connector lets your assistant search your designs, generate new ones from a description, edit, export and comment on them. The published tool list has no deletion; brand features need a Pro plan."
+    },
+    "card": {
+      "fr": "Créer un visuel d'une phrase, exporter vos designs.",
+      "en": "Create a visual from a sentence, export your designs."
+    },
+    "transport": "remote",
+    "auth": [
+      "oauth"
+    ],
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write"
+    ],
+    "one_click": [],
+    "clients": [
+      "chatgpt",
+      "claude",
+      "gemini",
+      "cursor",
+      "lovable",
+      "make",
+      "perplexity",
+      "grok"
+    ],
+    "for": {
+      "fr": "Vous faites vos visuels dans Canva et partez souvent d'une page blanche.",
+      "en": "You make your visuals in Canva and often start from a blank page."
+    },
+    "not_for": {
+      "fr": "Vous attendez un visuel prêt à publier : un design généré se relit et s'ajuste dans Canva.",
+      "en": "You expect a visual ready to publish: a generated design still needs a review in Canva."
+    },
+    "tools": 46,
+    "skills": 0,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "clickup-mcp",
+    "name": "ClickUp MCP Server",
+    "publisher": "ClickUp",
+    "host_tool": "clickup",
+    "category": "project-management",
+    "summary": {
+      "fr": "Le serveur officiel de ClickUp permet à votre assistant de gérer tâches, documents, commentaires, temps passé et messages, en votre nom et avec vos droits. Il peut mettre une tâche à la corbeille et envoyer des messages de chat ; les appels sont plafonnés selon le forfait.",
+      "en": "ClickUp's official server lets your assistant manage tasks, docs, comments, time and messages, as you and with your rights. It can send a task to Trash and post chat messages; calls are capped by plan."
+    },
+    "card": {
+      "fr": "Suivre vos tâches, vos documents et votre temps passé.",
+      "en": "Follow your tasks, documents and time spent."
+    },
+    "transport": "remote",
+    "auth": [
+      "oauth"
+    ],
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
+    "one_click": [
+      "chatgpt"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "claude-code",
+      "cursor",
+      "vs-code",
+      "devin",
+      "antigravity",
+      "Windsurf",
+      "Copilot Studio"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "url"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [],
+    "for": {
+      "fr": "Vous suivez vos projets et votre temps dans ClickUp.",
+      "en": "You track your projects and time in ClickUp."
+    },
+    "not_for": {
+      "fr": "Votre espace est partagé et vous ne voulez aucun message en votre nom : l'assistant peut écrire dans le chat ClickUp.",
+      "en": "Your workspace is shared and you want no message sent in your name: the assistant can write in ClickUp chat."
+    },
+    "tools": 65,
+    "skills": 0,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "figma-mcp-desktop",
+    "name": "Figma MCP server (desktop)",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Le serveur de bureau de Figma tourne dans l'application Figma, sur votre ordinateur. Il lit vos designs mais n'écrit pas dans vos fichiers, et demande un siège Dev ou Full sur un forfait payant.",
+      "en": "Figma's desktop server runs inside the Figma app on your computer. It reads your designs but does not write to your files, and needs a Dev or Full seat on a paid plan."
+    },
+    "card": {
+      "fr": "Lire les maquettes ouvertes dans l'app de bureau.",
+      "en": "Read the mockups open in the desktop app."
+    },
+    "transport": "local",
+    "access": "read",
+    "plan": "specific",
+    "kinds": [
+      "read",
+      "write"
+    ],
+    "capability_kinds": [
+      "read"
+    ],
+    "one_click": [],
+    "clients": [
+      "claude",
+      "claude-code",
+      "cursor",
+      "vs-code",
+      "warp",
+      "Codex",
+      "Amazon Q",
+      "Gemini CLI"
+    ],
+    "setup": [
+      {
+        "assistant": "other",
+        "how": "local"
+      }
+    ],
+    "safeguards": [],
+    "for": {
+      "fr": "Vous travaillez dans l'application de bureau Figma et voulez que l'assistant lise vos fichiers sans pouvoir les modifier.",
+      "en": "You work in the Figma desktop app and want the assistant to read your files without editing them."
+    },
+    "not_for": {
+      "fr": "Vous n'utilisez pas l'application de bureau : le serveur en ligne de Figma suffit.",
+      "en": "You don't use the desktop app: Figma's online server is enough."
+    },
+    "tools": 12,
+    "skills": 0,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "figma-mcp",
+    "name": "Figma MCP server (remote)",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Le serveur distant de Figma donne à votre assistant le contexte de vos designs (composants, variables, mise en page) et, en bêta, le droit de créer et de modifier dans vos fichiers. C'est le serveur à préférer : rien à installer.",
+      "en": "Figma's remote server gives your assistant your designs' context (components, variables, layout) and, in beta, the ability to create and edit in your files. It is the one to prefer: nothing to install."
+    },
+    "card": {
+      "fr": "Lire vos maquettes et en créer de nouvelles, en ligne.",
+      "en": "Read your mockups and create new ones, from the web."
+    },
+    "transport": "remote",
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write",
+      "delete"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete"
+    ],
+    "one_click": [
+      "claude",
+      "copilot"
+    ],
+    "clients": [
+      "claude",
+      "claude-code",
+      "cursor",
+      "vs-code",
+      "replit",
+      "linear",
+      "warp",
+      "Codex",
+      "Copilot CLI",
+      "Gemini CLI",
+      "Kiro",
+      "Xcode"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "copilot",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [],
+    "for": {
+      "fr": "Vous dessinez des interfaces dans Figma et voulez gagner du temps sur la documentation et les maquettes.",
+      "en": "You design interfaces in Figma and want to save time on documentation and mockups."
+    },
+    "not_for": {
+      "fr": "Vous ouvrez Figma de temps en temps pour une image : l'intérêt tient surtout aux fichiers d'interface.",
+      "en": "You open Figma now and then for an image: the value lies mostly in interface files."
+    },
+    "tools": 34,
+    "skills": 11,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "google-analytics-mcp",
+    "name": "Google Analytics MCP server",
+    "publisher": "Google",
+    "host_tool": "google-analytics",
+    "category": "analytics",
+    "summary": {
+      "fr": "Le serveur officiel de Google Analytics permet à votre assistant de lire vos comptes, propriétés et rapports, y compris en temps réel. Il s'installe sur votre ordinateur avec Python et des identifiants Google Cloud : c'est le plus technique de la section.",
+      "en": "Google Analytics' official server lets your assistant read your accounts, properties and reports, realtime included. It is installed on your computer with Python and Google Cloud credentials: the most technical one in this section."
+    },
+    "card": {
+      "fr": "Lire vos chiffres de trafic, en temps réel compris.",
+      "en": "Read your traffic figures, realtime included."
+    },
+    "transport": "local",
+    "access": "read",
+    "plan": "unknown",
+    "kinds": [
+      "read"
+    ],
+    "capability_kinds": [
+      "read"
+    ],
+    "one_click": [],
+    "clients": [
+      "claude",
+      "claude-code",
+      "cursor",
+      "Antigravity",
+      "Gemini CLI"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "local"
+      },
+      {
+        "assistant": "other",
+        "how": "local"
+      }
+    ],
+    "safeguards": [
+      "scoped_keys",
+      "no_delete"
+    ],
+    "for": {
+      "fr": "Vous suivez votre site dans Google Analytics et voulez des réponses sans construire de rapport.",
+      "en": "You track your site in Google Analytics and want answers without building a report."
+    },
+    "not_for": {
+      "fr": "Vous voulez un branchement en un clic : il s'installe sur votre ordinateur, avec Python et des identifiants Google Cloud.",
+      "en": "You want a one-click setup: it is installed on your computer, with Python and Google Cloud credentials."
+    },
+    "tools": 9,
+    "skills": 2,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "hubspot-mcp",
+    "name": "HubSpot MCP server",
+    "publisher": "HubSpot",
+    "host_tool": "hubspot",
+    "category": "crm",
+    "summary": {
+      "fr": "Le serveur officiel de HubSpot ouvre à votre assistant le CRM, les campagnes, le contenu et les publications sociales. Les créations et modifications demandent une confirmation explicite, et aucune suppression n'est documentée.",
+      "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating and editing require explicit confirmation, and no deletion is documented."
+    },
+    "card": {
+      "fr": "Consulter et mettre à jour votre CRM et vos campagnes.",
+      "en": "Read and update your CRM, campaigns and content."
+    },
+    "status": "ga",
+    "transport": "remote",
+    "auth": [
+      "oauth"
+    ],
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "send"
+    ],
+    "one_click": [],
+    "setup": [
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "human_confirmation",
+      "admin_controls"
+    ],
+    "for": {
+      "fr": "Votre suivi commercial et vos campagnes vivent dans HubSpot.",
+      "en": "Your sales follow-up and campaigns live in HubSpot."
+    },
+    "not_for": {
+      "fr": "Vous voulez un branchement en un clic depuis Claude ou ChatGPT : HubSpot ne documente que l'adresse du serveur à ajouter.",
+      "en": "You want a one-click setup from Claude or ChatGPT: HubSpot only documents the server address to add."
+    },
+    "tools": 36,
+    "skills": 0,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "make-mcp",
+    "name": "Make MCP server",
+    "publisher": "Make",
+    "host_tool": "make",
+    "category": "automation",
+    "summary": {
+      "fr": "Le serveur officiel de Make transforme vos scénarios actifs en actions que votre assistant peut lancer ; sur un forfait payant, il peut aussi consulter et modifier scénarios, connexions et data stores. Make ne publie pas de liste nominative d'outils : ils dépendent de vos scénarios et des portées choisies.",
+      "en": "Make's official server turns your active scenarios into actions your assistant can run; on a paid plan it can also view and edit scenarios, connections and data stores. Make publishes no named tool list: tools depend on your scenarios and the scopes you grant."
+    },
+    "card": {
+      "fr": "Lancer vos scénarios Make en une phrase.",
+      "en": "Run your Make scenarios in one sentence."
+    },
+    "transport": "remote",
+    "auth": [
+      "oauth",
+      "key"
+    ],
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write"
+    ],
+    "capability_kinds": [
+      "read",
+      "write"
+    ],
+    "one_click": [
+      "claude"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "claude-code",
+      "cursor",
+      "Codex",
+      "GitHub Copilot",
+      "OpenClaw",
+      "Windsurf",
+      "Cline"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Vous avez déjà des scénarios Make et voulez les lancer en une phrase.",
+      "en": "You already have Make scenarios and want to run them in one sentence."
+    },
+    "not_for": {
+      "fr": "Vous n'avez pas encore d'automatisation : le serveur sert surtout à lancer et gérer des scénarios existants.",
+      "en": "You have no automation yet: the server is mostly for running and managing existing scenarios."
+    },
+    "tools": 2,
+    "skills": 7,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "miro-mcp",
+    "name": "Miro MCP Server",
+    "publisher": "Miro",
+    "host_tool": "miro",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Le serveur officiel de Miro permet à votre assistant de lire et résumer vos tableaux, d'y créer cadres, notes, schémas et commentaires, et de partager tableaux et espaces avec d'autres personnes. Il fonctionne sur tous les forfaits, gratuit compris.",
+      "en": "Miro's official server lets your assistant read and summarise your boards, create frames, notes, diagrams and comments on them, and share boards and spaces with other people. It works on every plan, free included."
+    },
+    "card": {
+      "fr": "Résumer vos tableaux et en créer de nouveaux.",
+      "en": "Summarise your boards and create new ones."
+    },
+    "transport": "remote",
+    "auth": [
+      "oauth"
+    ],
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
+    "one_click": [
+      "claude",
+      "chatgpt",
+      "copilot"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "claude-code",
+      "cursor",
+      "vs-code",
+      "replit",
+      "lovable",
+      "Codex",
+      "Gemini CLI",
+      "GitHub Agents",
+      "Windsurf",
+      "Kiro",
+      "Amazon Q"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "copilot",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "admin_controls"
+    ],
+    "for": {
+      "fr": "Vous animez des ateliers ou planifiez vos projets sur des tableaux Miro.",
+      "en": "You run workshops or plan projects on Miro boards."
+    },
+    "not_for": {
+      "fr": "Vos tableaux sont partagés avec des clients : l'assistant peut aussi donner des accès ou changer des rôles.",
+      "en": "Your boards are shared with clients: the assistant can also grant access or change roles."
+    },
+    "tools": 46,
+    "skills": 3,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "notion-mcp",
+    "name": "Notion MCP",
+    "publisher": "Notion",
+    "host_tool": "notion",
+    "category": "organization",
+    "summary": {
+      "fr": "Le serveur officiel de Notion donne à votre assistant l'accès à vos pages, bases de données, commentaires, fichiers et agenda Notion. Il peut lire, créer, modifier et mettre à la corbeille, toujours dans la limite de vos droits.",
+      "en": "Notion's official server gives your assistant access to your Notion pages, databases, comments, files and calendar. It can read, create, edit and move to trash, always within your own rights."
+    },
+    "card": {
+      "fr": "Retrouver, résumer et créer des pages dans Notion.",
+      "en": "Find, summarise and create pages in Notion."
+    },
+    "status": "ga",
+    "transport": "remote",
+    "auth": [
+      "oauth",
+      "key"
+    ],
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete"
+    ],
+    "one_click": [
+      "claude",
+      "chatgpt",
+      "gemini"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "gemini",
+      "claude-code",
+      "cursor",
+      "vs-code",
+      "devin",
+      "antigravity",
+      "Codex",
+      "fx",
+      "Hermes",
+      "Pi"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "connector"
+      },
+      {
+        "assistant": "gemini",
+        "how": "connector"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "admin_controls"
+    ],
+    "for": {
+      "fr": "Vous rangez déjà vos notes, vos clients ou vos projets dans Notion et vous perdez du temps à les retrouver.",
+      "en": "You already keep your notes, clients or projects in Notion and lose time finding them again."
+    },
+    "not_for": {
+      "fr": "Vous êtes invité dans l'espace d'un client : les invités ne peuvent pas se connecter.",
+      "en": "You are a guest in a client's workspace: guests cannot connect."
+    },
+    "tools": 70,
+    "skills": 1,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "shopify-mcp",
+    "name": "Shopify AI tool integrations",
+    "publisher": "Shopify",
+    "host_tool": "shopify",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Shopify propose des intégrations officielles pour Claude, ChatGPT, Gemini, Copilot et d'autres assistants : lire commandes et statistiques, créer produits, collections et réductions, modifier un thème. Remboursements, paiements et réglages de la boutique restent bloqués, même avec l'accès en écriture.",
+      "en": "Shopify offers official integrations for Claude, ChatGPT, Gemini, Copilot and other assistants: read orders and analytics, create products, collections and discounts, edit a theme. Refunds, payments and store settings stay blocked, even with write access."
+    },
+    "card": {
+      "fr": "Suivre commandes et stocks, créer produits et remises.",
+      "en": "Follow orders and stock, create products and discounts."
+    },
+    "access": "read_write",
+    "plan": "unknown",
+    "kinds": [
+      "read",
+      "write",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "send"
+    ],
+    "one_click": [
+      "claude",
+      "chatgpt",
+      "gemini",
+      "copilot"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "gemini",
+      "perplexity",
+      "grok",
+      "Microsoft Copilot",
+      "Muse"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "gemini",
+        "how": "connector"
+      },
+      {
+        "assistant": "copilot",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "connector"
+      }
+    ],
+    "safeguards": [
+      "human_confirmation",
+      "admin_controls",
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Vous vendez en ligne avec une boutique Shopify.",
+      "en": "You sell online with a Shopify store."
+    },
+    "not_for": {
+      "fr": "Vous gérez plusieurs boutiques sans vérifier laquelle est branchée : l'assistant peut passer de l'une à l'autre.",
+      "en": "You run several stores without checking which one is connected: the assistant can switch between them."
+    },
+    "tools": 43,
+    "skills": 1,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "slack-mcp",
+    "name": "Slack MCP server",
+    "publisher": "Slack",
+    "host_tool": "slack",
+    "category": "communication-team",
+    "summary": {
+      "fr": "Le serveur officiel de Slack permet à votre assistant de chercher et lire messages, fils, fichiers et canvases, de créer des canaux et des canvases, et d'envoyer ou programmer des messages. Il est réservé aux applications publiées ou internes et à quelques assistants partenaires, sous le contrôle des administrateurs.",
+      "en": "Slack's official server lets your assistant search and read messages, threads, files and canvases, create channels and canvases, and send or schedule messages. It is limited to published or internal apps and a few partner assistants, under admin control."
+    },
+    "card": {
+      "fr": "Retrouver un fil, résumer un canal, rédiger une réponse.",
+      "en": "Find a conversation, summarise a channel, draft a reply."
+    },
+    "transport": "remote",
+    "auth": [
+      "oauth"
+    ],
+    "access": "read_write",
+    "plan": "unknown",
+    "kinds": [
+      "read",
+      "write",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "send"
+    ],
+    "one_click": [],
+    "clients": [
+      "claude",
+      "cursor",
+      "perplexity"
+    ],
+    "safeguards": [
+      "admin_controls",
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Vous échangez avec vos clients ou votre équipe dans Slack.",
+      "en": "You talk with your clients or team in Slack."
+    },
+    "not_for": {
+      "fr": "Vous ne voulez aucun message envoyé en votre nom : l'assistant peut écrire dans n'importe quelle conversation.",
+      "en": "You want no message sent in your name: the assistant can write in any conversation."
+    },
+    "tools": 2,
+    "skills": 0,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "stripe-mcp",
+    "name": "Stripe MCP",
+    "publisher": "Stripe",
+    "host_tool": "stripe",
+    "category": "finance",
+    "summary": {
+      "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Il est en bêta.",
+      "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. It is in beta."
+    },
+    "card": {
+      "fr": "Suivre vos paiements et votre solde.",
+      "en": "Follow your payments and balance."
+    },
+    "status": "beta",
+    "transport": "remote",
+    "auth": [
+      "oauth",
+      "key"
+    ],
+    "access": "read_write",
+    "plan": "unknown",
+    "kinds": [
+      "read",
+      "write",
+      "delete",
+      "send",
+      "pay"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "pay"
+    ],
+    "one_click": [
+      "claude",
+      "chatgpt"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "claude-code",
+      "cursor",
+      "vs-code",
+      "Codex",
+      "Grok",
+      "Kiro",
+      "OpenClaw"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "plugin"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "human_confirmation",
+      "admin_controls",
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Vous encaissez avec Stripe et voulez suivre paiements et solde sans ouvrir le tableau de bord.",
+      "en": "You take payments with Stripe and want to follow payments and balance without opening the dashboard."
+    },
+    "not_for": {
+      "fr": "Vous voulez confier vos virements à l'assistant : le serveur est en bêta et chaque envoi d'argent attend votre confirmation.",
+      "en": "You want the assistant to handle your transfers: the server is in beta and every money transfer waits for your confirmation."
+    },
+    "tools": 15,
+    "skills": 11,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "tally-mcp",
+    "name": "Tally MCP server",
+    "publisher": "Tally",
+    "host_tool": "tally",
+    "category": "communication",
+    "summary": {
+      "fr": "Le serveur officiel de Tally, en bêta, permet à votre assistant de créer un formulaire à partir d'une description, de le modifier, de le publier et de lire les réponses. Il ne peut supprimer ni formulaire ni réponse, et il est gratuit sur tous les forfaits.",
+      "en": "Tally's official server, in beta, lets your assistant create a form from a description, edit it, publish it and read submissions. It cannot delete forms or submissions, and it is free on every plan."
+    },
+    "card": {
+      "fr": "Créer un formulaire en une phrase et lire ses réponses.",
+      "en": "Create a form in one sentence and read its answers."
+    },
+    "status": "beta",
+    "transport": "remote",
+    "auth": [
+      "oauth",
+      "key"
+    ],
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "send"
+    ],
+    "one_click": [
+      "claude",
+      "chatgpt"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "claude-code",
+      "cursor",
+      "Grok",
+      "Windsurf",
+      "Zed",
+      "Cline",
+      "Continue"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "no_delete"
+    ],
+    "for": {
+      "fr": "Vous recueillez demandes, inscriptions ou avis avec Tally.",
+      "en": "You collect requests, sign-ups or feedback with Tally."
+    },
+    "not_for": {
+      "fr": "Vos formulaires sont critiques pour votre activité : le serveur est encore en bêta.",
+      "en": "Your forms are critical to your business: the server is still in beta."
+    },
+    "tools": 0,
+    "skills": 0,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "webflow-mcp",
+    "name": "Webflow MCP server",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Le serveur officiel de Webflow laisse votre assistant lire et modifier votre site : pages, styles, composants, CMS, fichiers, et le publier en ligne. Les droits se donnent site par site, par le propriétaire ou un administrateur.",
+      "en": "Webflow's official server lets your assistant read and edit your site: pages, styles, components, CMS, assets, and publish it live. Access is granted site by site, by the owner or an admin."
+    },
+    "card": {
+      "fr": "Lire et modifier votre site Webflow, jusqu'à le publier.",
+      "en": "Read and edit your Webflow site, up to publishing it."
+    },
+    "transport": "remote",
+    "auth": [
+      "oauth"
+    ],
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
+    "one_click": [
+      "claude",
+      "chatgpt"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "claude-code",
+      "Grok Build",
+      "Postman",
+      "slack"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "plugin"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "admin_controls",
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Votre site, ou ceux de vos clients, est construit sur Webflow.",
+      "en": "Your site, or your clients' sites, is built on Webflow."
+    },
+    "not_for": {
+      "fr": "Vous craignez une mise en ligne par erreur : l'assistant peut publier le site.",
+      "en": "You fear publishing by mistake: the assistant can publish the site."
+    },
+    "tools": 37,
+    "skills": 22,
+    "verified_on": "2026-11-16"
+  },
+  {
+    "slug": "zapier-mcp",
+    "name": "Zapier MCP",
+    "publisher": "Zapier",
+    "host_tool": "zapier",
+    "category": "automation",
+    "summary": {
+      "fr": "Zapier MCP met à la portée de votre assistant les actions de milliers d'applications connectées à votre compte Zapier : chercher, créer, envoyer. Vous choisissez les actions exposées, et chaque appel réussi consomme deux tâches du forfait.",
+      "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful call uses two tasks from your plan."
+    },
+    "card": {
+      "fr": "Agir dans vos applis via les actions que vous activez.",
+      "en": "Act in your apps through the actions you turn on."
+    },
+    "transport": "remote",
+    "auth": [
+      "key"
+    ],
+    "access": "read_write",
+    "plan": "all",
+    "kinds": [
+      "read",
+      "write",
+      "delete",
+      "send"
+    ],
+    "capability_kinds": [
+      "read",
+      "write",
+      "send"
+    ],
+    "one_click": [
+      "claude"
+    ],
+    "clients": [
+      "claude",
+      "chatgpt",
+      "claude-code",
+      "cursor",
+      "vs-code",
+      "replit",
+      "linear",
+      "warp",
+      "slack",
+      "Codex",
+      "Windsurf",
+      "Zed",
+      "Copilot Studio",
+      "Gemini Enterprise"
+    ],
+    "setup": [
+      {
+        "assistant": "claude",
+        "how": "connector"
+      },
+      {
+        "assistant": "chatgpt",
+        "how": "url"
+      },
+      {
+        "assistant": "other",
+        "how": "url"
+      }
+    ],
+    "safeguards": [
+      "admin_controls",
+      "scoped_keys"
+    ],
+    "for": {
+      "fr": "Vous utilisez des applications que personne ne branche encore à votre assistant : Zapier sert de relais.",
+      "en": "You use apps nobody plugs into your assistant yet: Zapier acts as the go-between."
+    },
+    "not_for": {
+      "fr": "Vous ne voulez pas choisir les actions une à une : il faut activer chaque action que l'assistant peut faire.",
+      "en": "You don't want to pick actions one by one: each action the assistant may take has to be turned on."
+    },
+    "tools": 16,
+    "skills": 2,
+    "verified_on": "2026-11-16"
+  }
+]

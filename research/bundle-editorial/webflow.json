@@ -43,7 +43,83 @@
       "CMS structuré et publication de contenu",
       "Animations et interactions basées sur GSAP",
       "Hébergement, formulaires et domaine personnalisé"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Webflow Help Center — Webflow MCP server overview",
+          "url": "https://help.webflow.com/hc/en-us/articles/52536562285203-Webflow-MCP-server-overview"
+        },
+        {
+          "label": "Webflow Developers — MCP getting started",
+          "url": "https://developers.webflow.com/mcp/reference/getting-started"
+        },
+        {
+          "label": "Webflow Developers — MCP overview",
+          "url": "https://developers.webflow.com/mcp/reference/overview"
+        },
+        {
+          "label": "Webflow Developers — Data tools",
+          "url": "https://developers.webflow.com/mcp/tools/data-tools"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Webflow MCP server",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "plan_note": "Tous les forfaits de site, y compris Starter gratuit. Gestion des accès au Workspace : Workspace Enterprise.",
+          "plan_note_en": "All Site plans, including the free Starter plan. Workspace access management: Enterprise Workspace.",
+          "docs_url": "https://help.webflow.com/hc/en-us/articles/52536616701971-Connect-your-AI-tools-to-the-Webflow-MCP-server"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire le contenu du site, les collections, les formulaires et les statistiques",
+          "en": "Read site content, collections, forms and analytics"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier éléments, styles, composants, variables, pages et éléments CMS (en brouillon)",
+          "en": "Create and edit elements, styles, components, variables, pages and CMS items (as drafts)"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer certains contenus : fichiers, collections, formulaires",
+          "en": "Delete some content: assets, collections, forms"
+        },
+        {
+          "kind": "send",
+          "fr": "Publier le site ou des éléments CMS, qui deviennent publics",
+          "en": "Publish the site or CMS items, making them live"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "admin_controls",
+        "scoped_keys"
+      ]
+    }
   },
   "fr": {
     "verdict": {

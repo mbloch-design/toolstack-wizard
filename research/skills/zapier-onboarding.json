@@ -1,0 +1,29 @@
+{
+  "slug": "zapier-onboarding",
+  "name": "Onboarding",
+  "publisher": "Zapier",
+  "official": true,
+  "host_tool": "zapier",
+  "server": "zapier-mcp",
+  "category": "automation",
+  "summary": {
+    "fr": "Faire découvrir Zapier MCP avec un premier enchaînement entre vos applications.",
+    "en": "Introduce Zapier MCP with a first workflow across your apps."
+  },
+  "agents": [
+    "any"
+  ],
+  "install": [],
+  "requires": {
+    "fr": "Zapier MCP connecté ; les skills sont fournies sur chaque serveur.",
+    "en": "Zapier MCP connected; the skills ship on every server."
+  },
+  "verified_on": "2026-11-16",
+  "docs_url": "https://docs.zapier.com/mcp/manage/skills",
+  "sources": [
+    {
+      "label": "Zapier — skills",
+      "url": "https://docs.zapier.com/mcp/manage/skills"
+    }
+  ]
+}

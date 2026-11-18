@@ -215,7 +215,7 @@ test('admin entry retains return to site and language preserves the selected sec
   await expect(page.getByRole('button', { name: 'Sources', exact: true })).toHaveAttribute('aria-current', 'page');
 });
 
-test('direct diagnostic uses the isolated configured Supabase and keeps admin signed in', async ({ page, request }) => {
+test('old diagnostic bookmark opens the overview without contacting the retired service', async ({ page, request }) => {
   await control(request, 'seed', { email: 'admin@example.invalid' });
   const external: string[] = [];
   await page.route('**/*', route => {
@@ -228,12 +228,10 @@ test('direct diagnostic uses the isolated configured Supabase and keeps admin si
   await page.getByLabel('E-mail administrateur', { exact: true }).fill('admin@example.invalid');
   await page.getByLabel('Mot de passe', { exact: true }).fill('fixture-password');
   await page.locator('.ba-login').getByRole('button', { name: 'Se connecter', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Back-office diagnostic' })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Diagnostic', exact: true })).toHaveAttribute('aria-current', 'page');
-  await page.getByRole('button', { name: 'Vue d’ensemble', exact: true }).click();
+  await expect(page.getByRole('button', { name: 'Diagnostic', exact: true })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'Vue d’ensemble', exact: true })).toBeVisible();
   expect(external.filter(origin => origin.includes('supabase'))).toEqual([]);
-  expect((await control(request, 'state')).requests.some((r: {path: string; email: string}) => r.path === '/functions/v1/backoffice-diagnostic' && r.email === 'admin@example.invalid')).toBe(true);
+  expect((await control(request, 'state')).requests.some((r: {path: string; email: string}) => r.path === '/functions/v1/backoffice-diagnostic')).toBe(false);
 });
 
 test('case-insensitive admin route keeps the admin shell before sign-in', async ({ page }) => {

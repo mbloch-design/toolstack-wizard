@@ -35,7 +35,70 @@
       "Analytics de performance",
       "Assistant IA de rédaction",
       "Facturation par canal, pas par utilisateur"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Buffer — Buffer MCP Server",
+          "url": "https://buffer.com/mcp"
+        },
+        {
+          "label": "Buffer Developers — MCP",
+          "url": "https://developers.buffer.com/guides/integrations/mcp.html"
+        },
+        {
+          "label": "Buffer — Claude integration",
+          "url": "https://buffer.com/integrations/claude"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Buffer MCP",
+          "access": "read_write",
+          "plan": "all",
+          "docs_url": "https://buffer.com/mcp"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire canaux, file d'attente, brouillons, idées et statistiques",
+          "en": "Read channels, queue, drafts, ideas and analytics"
+        },
+        {
+          "kind": "write",
+          "fr": "Rédiger, modifier et programmer posts et idées",
+          "en": "Draft, edit and schedule posts and ideas"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer définitivement un post",
+          "en": "Permanently delete a post"
+        },
+        {
+          "kind": "send",
+          "fr": "Publier un post sur vos réseaux, immédiatement si demandé",
+          "en": "Publish a post to your networks, immediately if asked"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "url"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": []
+    }
   },
   "fr": {
     "verdict": {

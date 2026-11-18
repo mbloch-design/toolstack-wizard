@@ -45,7 +45,68 @@
       "Content Explorer : découverte de contenu viral",
       "Site Audit : audit technique SEO",
       "AI Content Helper : optimisation contenu pour SEO et IA"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Ahrefs for Developers — What is Ahrefs MCP",
+          "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+        },
+        {
+          "label": "Ahrefs Help — Getting started with Ahrefs MCP",
+          "url": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp"
+        },
+        {
+          "label": "Ahrefs — Ahrefs SEO MCP",
+          "url": "https://ahrefs.com/mcp"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Ahrefs MCP",
+          "transport": "remote",
+          "auth": [
+            "oauth",
+            "key"
+          ],
+          "plan": "paid",
+          "plan_note": "Forfaits payants à partir de Lite ; chaque appel consomme des unités API du quota mensuel du forfait.",
+          "plan_note_en": "Paid plans from Lite up; each call uses API units from the plan's monthly allowance.",
+          "docs_url": "https://docs.ahrefs.com/en/mcp/docs/introduction",
+          "access": "read_write"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire les données SEO : mots-clés, backlinks, positions",
+          "en": "Read SEO data: keywords, backlinks, rankings"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier des publications pour les réseaux sociaux",
+          "en": "Create and edit social media posts"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer des publications pour les réseaux sociaux",
+          "en": "Delete social media posts"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        }
+      ],
+      "safeguards": []
+    }
   },
   "fr": {
     "verdict": {

@@ -1,0 +1,176 @@
+{
+  "slug": "slack-mcp",
+  "name": "Slack MCP server",
+  "publisher": "Slack",
+  "official": true,
+  "host_tool": "slack",
+  "category": "communication-team",
+  "summary": {
+    "fr": "Le serveur officiel de Slack permet à votre assistant de chercher et lire messages, fils, fichiers et canvases, de créer des canaux et des canvases, et d'envoyer ou programmer des messages. Il est réservé aux applications publiées ou internes et à quelques assistants partenaires, sous le contrôle des administrateurs.",
+    "en": "Slack's official server lets your assistant search and read messages, threads, files and canvases, create channels and canvases, and send or schedule messages. It is limited to published or internal apps and a few partner assistants, under admin control."
+  },
+  "card": {
+    "fr": "Retrouver un fil, résumer un canal, rédiger une réponse.",
+    "en": "Find a conversation, summarise a channel, draft a reply."
+  },
+  "examples": [
+    {
+      "fr": "Résume ce qui s'est dit dans #projet-client depuis lundi.",
+      "en": "Summarise what was said in #client-project since Monday."
+    },
+    {
+      "fr": "Retrouve le devis que Paul a partagé la semaine dernière.",
+      "en": "Find the quote Paul shared last week."
+    },
+    {
+      "fr": "Prépare un brouillon de réponse à ce fil.",
+      "en": "Draft a reply to this thread."
+    }
+  ],
+  "for": {
+    "fr": "Vous échangez avec vos clients ou votre équipe dans Slack.",
+    "en": "You talk with your clients or team in Slack."
+  },
+  "not_for": {
+    "fr": "Vous ne voulez aucun message envoyé en votre nom : l'assistant peut écrire dans n'importe quelle conversation.",
+    "en": "You want no message sent in your name: the assistant can write in any conversation."
+  },
+  "control": [
+    {
+      "title": {
+        "fr": "Vous accordez l'accès",
+        "en": "You grant access"
+      },
+      "icon": "account",
+      "fr": "À la connexion, vous accordez l'accès ; les canaux privés ne sont lus qu'avec votre accord.",
+      "en": "When connecting, you grant access; private channels are only read with your consent."
+    },
+    {
+      "title": {
+        "fr": "L'administrateur encadre",
+        "en": "The admin sets the frame"
+      },
+      "icon": "admin",
+      "fr": "Les administrateurs de l'espace approuvent et gèrent les assistants branchés, et suivent leur activité dans les journaux d'audit.",
+      "en": "Workspace admins approve and manage connected assistants, and follow their activity in the audit logs."
+    }
+  ],
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Résume #général depuis hier.",
+        "en": "Summarise #general since yesterday."
+      },
+      {
+        "fr": "Retrouve les messages qui parlent du devis Martin.",
+        "en": "Find the messages about the Martin quote."
+      },
+      {
+        "fr": "Quels canaux suis-je ?",
+        "en": "Which channels am I in?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Prépare un brouillon de message dans un canal de test.",
+        "en": "Draft a message in a test channel."
+      },
+      "check": {
+        "fr": "Le brouillon apparaît dans Slack, non envoyé.",
+        "en": "The draft appears in Slack, not sent."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Si votre espace limite les adresses IP, les demandes venues d'ailleurs sont refusées.",
+      "en": "If your workspace limits IP addresses, requests from elsewhere are refused."
+    },
+    {
+      "fr": "L'assistant doit être une application publiée dans le répertoire Slack ou interne à votre entreprise.",
+      "en": "The assistant must be an app published in the Slack directory or internal to your company."
+    }
+  ],
+  "verified_on": "2026-11-16",
+  "transport": "remote",
+  "auth": [
+    "oauth"
+  ],
+  "access": "read_write",
+  "plan": "unknown",
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Chercher et lire messages, fils, fichiers, canvases et listes",
+      "en": "Search and read messages, threads, files, canvases and lists"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier canvases, canaux, listes et brouillons de messages",
+      "en": "Create and edit canvases, channels, lists and message drafts"
+    },
+    {
+      "kind": "send",
+      "fr": "Envoyer des messages dans n'importe quelle conversation, ou les programmer",
+      "en": "Send messages to any conversation, or schedule them"
+    }
+  ],
+  "safeguards": [
+    "admin_controls",
+    "scoped_keys"
+  ],
+  "tools": [
+    {
+      "name": "slack_get_file_upload_url",
+      "kind": "write",
+      "fr": "Préparer l'envoi d'un fichier",
+      "en": "Prepare a file upload"
+    },
+    {
+      "name": "slack_complete_file_upload",
+      "kind": "send",
+      "fr": "Terminer l'envoi et partager",
+      "en": "Finish an upload and share it"
+    }
+  ],
+  "tools_note": {
+    "fr": "Slack décrit ses autres outils sans les nommer : chercher messages, fichiers, personnes et canaux ; lire canaux, fils et canvases ; créer canaux, canvases et listes ; envoyer et programmer des messages ; ajouter des réactions.",
+    "en": "Slack describes its other tools without naming them: search messages, files, people and channels; read channels, threads and canvases; create channels, canvases and lists; send and schedule messages; add reactions."
+  },
+  "install": [
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.slack.com/mcp"
+    }
+  ],
+  "clients": [
+    "claude",
+    "cursor",
+    "perplexity"
+  ],
+  "note": {
+    "fr": "Ouvert aux applications publiées dans le Slack Marketplace, aux applications internes et à quelques assistants partenaires.",
+    "en": "Open to apps published in the Slack Marketplace, internal apps and a few partner assistants."
+  },
+  "claude_directory": {
+    "url": "https://claude.ai/directory/slack",
+    "added": "2025-11",
+    "read_on": "2026-11-17"
+  },
+  "docs_url": "https://docs.slack.dev/ai/slack-mcp-server/",
+  "sources": [
+    {
+      "label": "Slack Developer Docs — Slack MCP server overview",
+      "url": "https://docs.slack.dev/ai/slack-mcp-server/"
+    },
+    {
+      "label": "Slack Developer Docs — Announcing the Slack MCP server",
+      "url": "https://docs.slack.dev/changelog/2026/02/17/slack-mcp/"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/slack"
+    }
+  ]
+}

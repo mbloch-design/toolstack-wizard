@@ -1,0 +1,169 @@
+{
+  "slug": "ahrefs-mcp",
+  "name": "Ahrefs MCP",
+  "publisher": "Ahrefs",
+  "official": true,
+  "host_tool": "ahrefs",
+  "category": "analytics",
+  "summary": {
+    "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités API du forfait.",
+    "en": "Ahrefs' official server brings your SEO data (keywords, backlinks, rankings) into your assistant, and can manage social media posts. It needs a paid plan from Lite and uses your plan's API units."
+  },
+  "card": {
+    "fr": "Vos mots-clés, liens et positions SEO, dans l'assistant.",
+    "en": "Your SEO keywords, links and rankings, in the assistant."
+  },
+  "examples": [
+    {
+      "fr": "Sur quels mots-clés mon site a-t-il gagné des positions ce mois-ci ?",
+      "en": "Which keywords did my site climb on this month?"
+    },
+    {
+      "fr": "Quels sites ont fait un lien vers mon site récemment ?",
+      "en": "Which sites linked to my site recently?"
+    }
+  ],
+  "for": {
+    "fr": "Vous avez un forfait Ahrefs payant et suivez le référencement de votre site ou de ceux de vos clients.",
+    "en": "You pay for Ahrefs and follow the search ranking of your site or your clients' sites."
+  },
+  "not_for": {
+    "fr": "Vous n'avez pas de forfait payant : le serveur n'y est pas ouvert.",
+    "en": "You have no paid plan: the server is not open to you."
+  },
+  "control": [
+    {
+      "title": {
+        "fr": "Chaque demande a un coût",
+        "en": "Each request has a cost"
+      },
+      "icon": "cost",
+      "fr": "Chaque demande consomme au moins 50 unités d'API, partagées avec l'API Ahrefs : demandez des résultats courts.",
+      "en": "Each request uses at least 50 API units, shared with the Ahrefs API: ask for short results."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Sur les forfaits Lite, Standard, Advanced et Enterprise : pas sur le gratuit.",
+      "en": "On Lite, Standard, Advanced and Enterprise plans: not on the free one."
+    },
+    "advanced": {
+      "fr": "Les unités et les lignes par demande grandissent avec le forfait : 200 000 unités et 100 lignes en Lite.",
+      "en": "Units and rows per request grow with the plan: 200,000 units and 100 rows on Lite."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Quels mots-clés amènent le plus de trafic sur monsite.fr ?",
+        "en": "Which keywords bring the most traffic to mysite.com?"
+      },
+      {
+        "fr": "Quels sites font un lien vers monsite.fr ?",
+        "en": "Which sites link to mysite.com?"
+      },
+      {
+        "fr": "Sur quels mots-clés monsite.fr est-il en première page ?",
+        "en": "Which keywords is mysite.com on page one for?"
+      }
+    ]
+  },
+  "troubleshoot": [
+    {
+      "fr": "Une erreur 401 vient d'une clé expirée, d'un abonnement inactif ou d'une clé d'API utilisée à la place de la clé MCP.",
+      "en": "A 401 error comes from an expired key, an inactive subscription or an API key used instead of the MCP key."
+    },
+    {
+      "fr": "L'installation sur l'ordinateur n'est plus prise en charge : branchez le serveur en ligne.",
+      "en": "Installing on your computer is no longer supported: plug in the online server."
+    }
+  ],
+  "verified_on": "2026-11-16",
+  "transport": "remote",
+  "auth": [
+    "oauth",
+    "key"
+  ],
+  "access": "read_write",
+  "plan": "paid",
+  "plan_note": {
+    "fr": "Forfaits payants à partir de Lite ; chaque appel consomme des unités API du quota mensuel du forfait.",
+    "en": "Paid plans from Lite up; each call uses API units from the plan's monthly allowance."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire les données SEO : mots-clés, backlinks, positions",
+      "en": "Read SEO data: keywords, backlinks, rankings"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier des publications pour les réseaux sociaux",
+      "en": "Create and edit social media posts"
+    },
+    {
+      "kind": "delete",
+      "fr": "Supprimer des publications pour les réseaux sociaux",
+      "en": "Delete social media posts"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "plugin"
+    }
+  ],
+  "safeguards": [],
+  "tools_note": {
+    "fr": "Ahrefs ne publie pas de liste d'outils lisible à ce jour (pages de documentation en erreur).",
+    "en": "Ahrefs publishes no readable tool list today (documentation pages return errors)."
+  },
+  "install": [
+    {
+      "client": "claude",
+      "type": "url",
+      "value": "https://claude.com/connectors/ahrefs"
+    },
+    {
+      "client": "chatgpt",
+      "type": "url",
+      "value": "https://chatgpt.com/apps/ahrefs/asdk_app_6966958473488191b775fdb667c52eab"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "cursor",
+    "lovable",
+    "Copilot Studio",
+    "n8n"
+  ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/ahrefs",
+    "added": "2026-01",
+    "read_on": "2026-11-17"
+  },
+  "docs_url": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp",
+  "sources": [
+    {
+      "label": "Ahrefs for Developers — What is Ahrefs MCP",
+      "url": "https://docs.ahrefs.com/en/mcp/docs/introduction"
+    },
+    {
+      "label": "Ahrefs Help — Getting started with Ahrefs MCP",
+      "url": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp"
+    },
+    {
+      "label": "Ahrefs — Ahrefs SEO MCP",
+      "url": "https://ahrefs.com/mcp"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/ahrefs"
+    }
+  ]
+}

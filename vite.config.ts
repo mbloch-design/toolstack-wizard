@@ -96,6 +96,7 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "alternatives-freshservice-2026": "freshservice-alternatives-2026",
   "zapier-vs-make-vs-n8n-2026-automatiser-stack": "zapier-vs-make-vs-n8n-pricing",
   "agents-ia-freelances-2026-lesquels-valent-le-coup": "ai-agents-freelancers-2026",
+  "mcp-freelances-non-developpeurs": "mcp-for-non-developer-freelancers",
   "stack-saas-minimaliste-freelance-2026-moins-50-euros": "minimalist-saas-stack-freelancer-2026-under-50-euros",
   "plateforme-ecommerce-solo-petite-equipe-produits-physiques": "ecommerce-platform-solo-small-team-physical-products-2026",
   // Guides anglais qui gardaient le slug français (audit du 19/10/2026).
@@ -715,6 +716,14 @@ function sitemapPlugin(): Plugin {
           addPair(`${BASE}/fr/stacks/${stack.slug}`, `${BASE}/en/stacks/${stack.slug}`, "monthly", "0.7", stackLastmod);
         }
 
+        // ── Section agents (S1) : hub, index, fiches serveur et skill ─────────
+        {
+          const agents = JSON.parse(fs.readFileSync(path.resolve(__dirname, "src/data/agents/catalog.json"), "utf-8"));
+          for (const segment of ["agents", "mcp", "skills"]) addPair(`${BASE}/fr/${segment}`, `${BASE}/en/${segment}`, "weekly", "0.7");
+          for (const s of agents.servers) addPair(`${BASE}/fr/mcp/${s.slug}`, `${BASE}/en/mcp/${s.slug}`, "monthly", "0.6", s.verified_on);
+          for (const k of agents.skills) addPair(`${BASE}/fr/skills/${k.slug}`, `${BASE}/en/skills/${k.slug}`, "monthly", "0.5", k.verified_on);
+        }
+
         // ── Standalone FR article: facturation freelance 2026 ─────────────────
         addSingle(`${BASE}/fr/guide/outils-facturation-freelance-2026`, "monthly", "0.8", "2026-05-08");
 
@@ -886,6 +895,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         let renderExplorerAroundPage: ((path: string) => Promise<string>) | null = null;
         let renderPersonaPillarPage: ((path: string, persona: string, lang: string) => Promise<string>) | null = null;
         let renderBestOfGuidePage: ((path: string, guideId: string, lang: string) => Promise<string>) | null = null;
+        let renderAgentsPage: ((path: string) => Promise<string>) | null = null;
         const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
         if (fs.existsSync(ssrEntryPath)) {
           try {
@@ -913,6 +923,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               "renderExplorerAroundPage",
               "renderPersonaPillarPage",
               "renderBestOfGuidePage",
+              "renderAgentsPage",
             ]);
             renderToolPage = ssrModule.renderToolPage;
             renderComparePage = ssrModule.renderComparePage;
@@ -936,6 +947,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             renderExplorerAroundPage = ssrModule.renderExplorerAroundPage;
             renderPersonaPillarPage = ssrModule.renderPersonaPillarPage;
             renderBestOfGuidePage = ssrModule.renderBestOfGuidePage;
+            renderAgentsPage = ssrModule.renderAgentsPage;
           } catch (e) {
             throw new Error("SSR entry failed to load", { cause: e });
           }
@@ -1698,6 +1710,29 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           { path: "/en/my-stack",    lang: "en", title: "My stack — ToolTrim",  description: "Build and track your SaaS tool stack with ToolTrim.", canonicalPath: "/en/ma-stack", noindex: true },
         ];
 
+        // Section agents (S1, 16/11/2026) : hub, index et une fiche par serveur MCP et par skill, FR et EN.
+        {
+          const agents = JSON.parse(fs.readFileSync(path.resolve(__dirname, "src/data/agents/catalog.json"), "utf-8"));
+          const toolName = (slug: string) => tools.find((t: any) => (t.slug || t.id) === slug)?.name || slug;
+          for (const lang of ["fr", "en"] as const) {
+            const fr = lang === "fr";
+            SECTION_PAGES.push(
+              { path: `/${lang}/agents`, lang, title: fr ? "Agents IA : serveurs MCP et skills officiels | ToolTrim" : "AI agents: official MCP servers and skills | ToolTrim",
+                description: fr ? "Ce que votre assistant IA peut faire dans vos outils : serveurs MCP et skills officiels, vérifiés chez l'éditeur, avec le risque et le forfait." : "What your AI assistant can do in your tools: official MCP servers and skills, checked with the vendor, with the risk and the plan." },
+              { path: `/${lang}/mcp`, lang, title: fr ? "Serveurs MCP officiels des outils SaaS | ToolTrim" : "Official MCP servers of SaaS tools | ToolTrim",
+                description: fr ? "Les serveurs MCP officiels des outils du catalogue : ce que l'assistant peut lire, modifier, supprimer ou payer, et comment le brancher." : "Official MCP servers of the catalogue's tools: what the assistant can read, edit, delete or pay, and how to plug it in." },
+              { path: `/${lang}/skills`, lang, title: fr ? "Skills officiels pour agents IA | ToolTrim" : "Official skills for AI agents | ToolTrim",
+                description: fr ? "Les skills officiels publiés par les éditeurs : des instructions prêtes à l'emploi pour votre agent, à côté de leur serveur." : "Official skills published by vendors: ready-made instructions for your agent, next to their server." },
+              ...agents.servers.map((s: any) => ({ path: `/${lang}/mcp/${s.slug}`, lang,
+                title: fitBrandedTitle(fr ? `${s.name} : serveur MCP officiel de ${toolName(s.host_tool)}` : `${s.name}: ${toolName(s.host_tool)}'s official MCP server`),
+                description: fr ? s.summary.fr : s.summary.en })),
+              ...agents.skills.map((k: any) => ({ path: `/${lang}/skills/${k.slug}`, lang,
+                title: fitBrandedTitle(fr ? `${k.name} : skill officiel de ${k.publisher}` : `${k.name}: ${k.publisher}'s official skill`),
+                description: fr ? k.summary.fr : k.summary.en })),
+            );
+          }
+        }
+
         for (const sp of SECTION_PAGES) {
           const url = `${BASE}${sp.path}`;
           const altLang = sp.lang === "fr" ? "en" : "fr";
@@ -1752,6 +1787,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             : /\/(?:ma-stack|my-stack)$/.test(sp.path) ? renderCartPage
             : sp.path.endsWith("/submit") ? renderSubmitToolPage
             : sp.path.endsWith("/explorer") ? renderExplorerLandingPage
+            : /^\/(fr|en)\/(agents|mcp|skills)(\/|$)/.test(sp.path) ? renderAgentsPage
             : null;
           if (sectionRenderer) {
             try {

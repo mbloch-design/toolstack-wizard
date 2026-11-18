@@ -1,0 +1,80 @@
+/* A chapter on the white sheet (17/11: the grey of the navigation is never a content background): the rhythm comes
+   from the scale (42), the gaps (96 between chapters, 48 before the notes, 24 from title to content) and the objects;
+   its content on two widths only, one left edge. */
+
+.chapters {
+  display: grid;
+  gap: var(--tt-gap-chapter);
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.band {
+  display: grid;
+  gap: var(--tt-gap-group);
+  min-width: 0;
+}
+
+/* Footnotes (annexes, sources): no title, 48 under the last chapter instead of 96; the page's bottom padding is
+   taken back, so the footer comes about one chapter gap lower. */
+.band[data-tone="notes"] {
+  margin-block: calc(var(--tt-space-12) - var(--tt-gap-chapter)) calc(-1 * var(--tt-space-16));
+}
+
+@media (width <= 639px) {
+  .band[data-tone="notes"] {
+    margin-block-end: calc(-1 * var(--tt-space-12));
+  }
+}
+
+.head {
+  display: grid;
+  gap: var(--tt-gap-item);
+  max-width: 720px;
+}
+
+.title {
+  margin: 0;
+  color: var(--tt-ink);
+  font: var(--tt-title-section-font);
+  letter-spacing: var(--tt-title-xl-tracking);
+  text-wrap: balance;
+}
+
+
+
+.lead {
+  margin: 0;
+  color: var(--tt-meta);
+  font: var(--tt-title-m-font);
+  letter-spacing: var(--tt-title-m-tracking);
+  text-wrap: pretty;
+}
+
+/* On a phone the title drops to 21 and the standfirst to 17: the title stays above its line. */
+@container (max-width: 640px) {
+  .title {
+    font: var(--tt-title-m-font);
+    letter-spacing: var(--tt-title-m-tracking);
+  }
+
+  .lead {
+    font: var(--tt-text-font);
+    font-size: var(--tt-lead-size);
+    letter-spacing: var(--tt-text-tracking);
+  }
+}
+
+.body {
+  display: grid;
+  gap: var(--tt-gap-group);
+  min-width: 0;
+}
+
+.body[data-width="read"] {
+  max-width: 720px;
+}
+
+.body[data-width="wide"] {
+  max-width: 1080px;
+}

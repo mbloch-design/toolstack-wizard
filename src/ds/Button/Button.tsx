@@ -92,10 +92,16 @@ export function linkClass(tone: LinkTone = "label") {
 export function TextButton({ tone, arrow, children, type = "button", ...rest }: Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className"> & { tone?: LinkTone; arrow?: boolean; children: ReactNode }) {
   return <button type={type} className={linkClass(tone)} {...rest}>{children}{arrow && <LinkArrow />}</button>;
 }
-/** The arrow of a link that leads somewhere, for router links too. */
-export function LinkArrow() {
-  return <span className={styles.linkArrow} aria-hidden="true"><ArrowRight /></span>;
+/**
+ * The arrow of a link that leads somewhere, for router links too. `shown`: an action link (« Prix, avis et
+ * alternatives → », « Brancher Notion à votre assistant → ») keeps its arrow at rest, and it moves on hover (17/11).
+ */
+export function LinkArrow({ shown = false }: { shown?: boolean } = {}) {
+  return <span className={styles.linkArrow} data-shown={shown || undefined} aria-hidden="true"><ArrowRight /></span>;
 }
+
+/** The button's arrow, for a link that looks like a button (buttonAttrs): put the label in a span before it. */
+export { Arrow as ButtonArrow };
 
 /** A link that looks like a button (router links): spread on the link. */
 export function buttonAttrs(variant: "primary" | "secondary" | "raised" = "secondary", size: "md" | "lg" = "md") {

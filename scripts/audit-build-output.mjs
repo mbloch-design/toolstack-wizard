@@ -43,12 +43,14 @@ const budgets = {
   // 2026-11-10: three bilingual fiches and their sourced media. The local
   // audit measured 15,231 files before the three final OG assets were added.
   // Keep a small margin for shared CSS variants; byte ceilings still apply.
+  // 2026-11-17: agents section (S1): /agents, /mcp, /skills and 79 sheets, FR/EN
+  // (164 prerendered pages). Measured 15,441 files; byte ceilings unchanged.
   // 2026-11-11: 24 llms-full category shards (public/llms-full/{family}.txt),
   // so an agent fetches one family instead of the 2.6 MiB catalogue. Measured
   // 15,260 files and 852.7 MiB total, HTML unchanged at 735.0 MiB: the shards
   // add 24 files and 2.5 MiB, nothing per-page. Without this the audit failed
   // on file count and total bytes, which would have stopped the Vercel build.
-  files: 15_265,
+  files: 15_480,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
   // 2026-10-02 (US-NAV-01): search and menu buttons in the shared topbar add
   // about 2 KB of markup and critical CSS to each of the ~13,100 pages, plus

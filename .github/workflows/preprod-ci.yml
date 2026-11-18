@@ -57,6 +57,9 @@ jobs:
       - name: SEO build contract fixtures
         run: npm run test:seo-contracts
 
+      - name: Agent block vocabularies (MCP)
+        run: npm run guard:agent-access
+
       - name: Design tokens gate
         run: npm run validate:design-tokens
 

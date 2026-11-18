@@ -1,0 +1,68 @@
+/* The gateway on a tool page (step 2, 17/11): a few lines in the page's own grammar, on the white sheet. No card,
+   no grey, no column of labels. */
+
+.block {
+  display: grid;
+  gap: var(--tt-space-4);
+  justify-items: start;
+  max-width: 62ch;
+  min-width: 0;
+}
+
+/* Inside the page's AI section, after « Les IA qui comptent ici »: the system's group gap above it. */
+.block[data-after] {
+  margin-top: var(--tt-gap-group);
+}
+
+.verdict {
+  composes: titleM from "../atoms.module.css";
+}
+
+.text {
+  composes: text from "../atoms.module.css";
+}
+
+.links {
+  display: grid;
+  gap: var(--tt-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Tools that plug in instead: small white objects with their logo, the system's resting shadow. */
+.alternatives {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.alternative {
+  display: inline-flex;
+  gap: var(--tt-space-2);
+  align-items: center;
+  min-height: var(--tt-tap);
+  padding: var(--tt-space-1) var(--tt-space-3) var(--tt-space-1) var(--tt-space-2);
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
+  color: var(--tt-ink);
+  text-decoration: none;
+  transition: box-shadow var(--tt-dur-state) var(--tt-ease);
+}
+
+.alternative:hover {
+  box-shadow: var(--tt-row-lift);
+}
+
+.alternative:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.alternativeName {
+  composes: label from "../atoms.module.css";
+}

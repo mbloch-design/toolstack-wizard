@@ -31,8 +31,12 @@ import ToolAudienceBlock from "@/components/tool/ToolAudienceBlock";
 import ToolPluginsBlock from "@/components/tool/ToolPluginsBlock";
 import ToolProfitabilityBlock from "@/components/tool/ToolProfitabilityBlock";
 import ToolBillingTrapsBlock from "@/components/tool/ToolBillingTrapsBlock";
-import ToolAiBlock from "@/components/tool/ToolAiBlock";
+import ToolAiBlock, { toolAiAngle } from "@/components/tool/ToolAiBlock";
 import ToolGallery from "@/components/tool/ToolGallery";
+import AgentAccess from "@/ds/AgentAccess/AgentAccess";
+import agentAdviceData from "@/data/agents/advice.json";
+import { pluggedAlternatives } from "@/lib/agentAlternatives";
+import type { Advice } from "@/lib/agents";
 import { getToolTutorials } from "@/data/toolTutorials";
 import { getToolMediaImages } from "@/data/toolMedia";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
@@ -63,6 +67,13 @@ import { getExplorerHref } from "@/lib/toolExploration";
    - Right: sticky StickyDecisionCard
    - Hero: large tool name + short description + metadata row
 ───────────────────────────────────────────────────────────────────────────── */
+
+/** ToolTrim's words (one request, our view) for the tool's first server with a sheet. */
+const AGENT_ADVICE = agentAdviceData as Record<string, Advice>;
+const agentAdvice = (access: { servers: { mcpSlug?: string }[] }) => {
+  const slug = access.servers.find((server) => server.mcpSlug)?.mcpSlug;
+  return slug ? AGENT_ADVICE[slug] : undefined;
+};
 
 function splitUseCase(value: string): { title: string; detail?: string } {
   const separators = [" : ", ": ", " qui veut ", " that wants ", " avec ", " with "];
@@ -1218,7 +1229,32 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 {editing?.block(["seo"], t("Référencement par langue et sous-page, angle IA", "Search metadata by language and page, AI angle"), { advanced: true })}
                 {editing?.block(["lifecycle", "decision_policy_v3", "force_silence", "pivot_integration_source", "prescription_block_reasons", "prescription_context_questions"], t("Cycle de vie et recommandations", "Lifecycle and recommendations"), { advanced: true })}
                 {editing?.block(["id", "slug", "research", "prescription_output", "prescription_quality", "bestFor", "tags", "nameEn", "categoryId", "gallery_images", "link", "website", "lifecycleStatus", "pricingTiers", "verdictFr"], t("Informations protégées et compatibilité", "Protected information and compatibility"), { advanced: true })}
-                {!authorMode && <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />}
+                {/* 10b · Assistant IA (MCP), step 2 (17/11): whether your own assistant can work in the tool, verified
+                     with the vendor. Inside the AI section when there is one (one sentence of transition, no second
+                     title), its own section otherwise. Nothing without a block: absent means not checked. */}
+                {!authorMode && (() => {
+                  const access = tool.agentAccess;
+                  const gateway = access && (
+                    <div className="td-ai-agent" id="assistant-ia">
+                      <AgentAccess
+                        access={access} lang={lang === "en" ? "en" : "fr"} toolName={tool.name}
+                        advice={agentAdvice(access)} after={Boolean(toolAiAngle(tool, lang))}
+                        alternatives={access.mcp === "none" ? pluggedAlternatives(alternatives).map((alt) => ({ slug: alt.slug || alt.id, name: alt.name, logo: <ToolLogo tool={alt} size={24} /> })) : []}
+                        renderSheetLink={(slug, className, content) => <Link to={`${prefix}/mcp/${slug}`} className={className}>{content}</Link>}
+                        renderToolLink={(slug, className, content) => <Link to={`${prefix}/tool/${slug}`} className={className}>{content}</Link>}
+                      />
+                    </div>
+                  );
+                  if (toolAiAngle(tool, lang)) return <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t}>{gateway}</ToolAiBlock>;
+                  return gateway && (
+                    <div className="td-section">
+                      <h2 className="td-title">
+                        {t("Assistant IA.", "AI assistant.")} <span className="tt-title-muted">{t(`${tool.name} et votre assistant.`, `${tool.name} and your assistant.`)}</span>
+                      </h2>
+                      {gateway}
+                    </div>
+                  );
+                })()}
 
                 {/* Quiet structured recap for search and extraction. Keeping
                     it at the end of the deep dive avoids interrupting the

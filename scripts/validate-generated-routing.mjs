@@ -50,7 +50,10 @@ for (const lang of ['fr', 'en']) {
     let pathname = route.startsWith('/') ? route : `/${lang}/${route}`;
     const slug = pathname.includes('/category/') ? 'gestion-projet'
       : pathname.includes('/stacks/') ? fs.readdirSync(path.join(dist, lang, 'stacks'))[0]
-      : /\/(guide|blog|article|story)\//.test(pathname) ? 'stack-redactrice-freelance' : 'notion';
+      : /\/(guide|blog|article|story)\//.test(pathname) ? 'stack-redactrice-freelance'
+      // Agents section (S1): a server sheet and a skill sheet that exist.
+      : pathname.includes('/mcp/') ? 'notion-mcp'
+      : pathname.includes('/skills/') ? 'notion-skills' : 'notion';
     pathname = pathname.replace(':slugPair', 'notion-vs-coda').replace(':slug', slug).replace(/\/\*$/, '').replace(':lang', lang);
     let current = pathname;
     const chain = [];

@@ -803,6 +803,18 @@
       ],
       "related": [
         {
+          "slug": "mcp-freelances-non-developpeurs",
+          "title": "MCP pour freelances non-développeurs : ce que ça change vraiment",
+          "readTime": "6 min",
+          "category": "Guides pratiques",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "mesurer-visibilite-ia-geo-2026",
           "title": "Visibilité dans les IA : mesurer son GEO en 2026 sans se fier à un score",
           "thumbnail": "https://georankers.ai/assets/hero-dashboard--2DBfIch.webp",
@@ -815,13 +827,6 @@
           "thumbnail": "/tool-media/flexclip/editor.webp",
           "readTime": "6 min",
           "category": "Guides pratiques"
-        },
-        {
-          "slug": "notion-canva-ai-tax-pricing-2026",
-          "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
-          "thumbnail": "/guides/ai-tax-hero.jpg",
-          "readTime": "7 min",
-          "category": "Comparatifs"
         }
       ]
     },
@@ -1031,6 +1036,18 @@
           "category": "Guides pratiques"
         },
         {
+          "slug": "mcp-freelances-non-developpeurs",
+          "title": "MCP pour freelances non-développeurs : ce que ça change vraiment",
+          "readTime": "6 min",
+          "category": "Guides pratiques",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
           "title": "Zapier vs Make vs n8n : pourquoi l'écart de prix est de 14x",
           "readTime": "9 min",
@@ -1041,13 +1058,6 @@
             "hasPricing": true,
             "websiteUrl": "https://zapier.com"
           }
-        },
-        {
-          "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
-          "title": "Remettre de la clarté dans une entreprise qui grandit trop vite",
-          "thumbnail": "/editorial/stories/marc-operations/hero.jpg",
-          "readTime": "9 min",
-          "category": "Stories"
         }
       ]
     },
@@ -1279,11 +1289,16 @@
           "category": "Productivité"
         },
         {
-          "slug": "notion-canva-ai-tax-pricing-2026",
-          "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
-          "thumbnail": "/guides/ai-tax-hero.jpg",
-          "readTime": "7 min",
-          "category": "Comparatifs"
+          "slug": "mcp-freelances-non-developpeurs",
+          "title": "MCP pour freelances non-développeurs : ce que ça change vraiment",
+          "readTime": "6 min",
+          "category": "Guides pratiques",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
         }
       ]
     },
@@ -1410,6 +1425,18 @@
           }
         },
         {
+          "slug": "mcp-freelances-non-developpeurs",
+          "title": "MCP pour freelances non-développeurs : ce que ça change vraiment",
+          "readTime": "6 min",
+          "category": "Guides pratiques",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "plateforme-ecommerce-solo-petite-equipe-produits-physiques",
           "title": "Quelle plateforme e-commerce choisir en solo ou en petite équipe, pour vendre des produits physiques ?",
           "readTime": "7 min",
@@ -1420,13 +1447,6 @@
             "hasPricing": true,
             "websiteUrl": "https://shopify.com"
           }
-        },
-        {
-          "slug": "mesurer-visibilite-ia-geo-2026",
-          "title": "Visibilité dans les IA : mesurer son GEO en 2026 sans se fier à un score",
-          "thumbnail": "https://georankers.ai/assets/hero-dashboard--2DBfIch.webp",
-          "readTime": "8 min",
-          "category": "Guides pratiques"
         }
       ]
     },
@@ -1453,6 +1473,18 @@
       ],
       "related": [
         {
+          "slug": "mcp-freelances-non-developpeurs",
+          "title": "MCP pour freelances non-développeurs : ce que ça change vraiment",
+          "readTime": "6 min",
+          "category": "Guides pratiques",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "notion-canva-ai-tax-pricing-2026",
           "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
           "thumbnail": "/guides/ai-tax-hero.jpg",
@@ -1470,13 +1502,6 @@
             "hasPricing": true,
             "websiteUrl": "https://zapier.com"
           }
-        },
-        {
-          "slug": "agents-ia-freelances-2026-lesquels-valent-le-coup",
-          "title": "Agents IA pour freelances en 2026 : lesquels valent vraiment le coup ?",
-          "thumbnail": "/editorial/agents-ia-freelances-2026/hero-agent.jpg",
-          "readTime": "8 min",
-          "category": "Comparatifs"
         }
       ]
     },
@@ -1511,22 +1536,23 @@
           "category": "Comparatifs"
         },
         {
+          "slug": "mcp-freelances-non-developpeurs",
+          "title": "MCP pour freelances non-développeurs : ce que ça change vraiment",
+          "readTime": "6 min",
+          "category": "Guides pratiques",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "notion-canva-ai-tax-pricing-2026",
           "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
           "thumbnail": "/guides/ai-tax-hero.jpg",
           "readTime": "7 min",
           "category": "Comparatifs"
-        },
-        {
-          "slug": "meilleurs-outils-ia-freelances-2026",
-          "title": "Meilleurs outils IA pour freelances 2026 : Le guide complet pour choisir (et ne pas gaspiller)",
-          "category": "Guides",
-          "tool": {
-            "slug": "chatgpt",
-            "name": "ChatGPT",
-            "hasPricing": true,
-            "websiteUrl": "https://chat.openai.com"
-          }
         }
       ]
     },
@@ -1559,23 +1585,23 @@
           }
         },
         {
+          "slug": "mcp-freelances-non-developpeurs",
+          "title": "MCP pour freelances non-développeurs : ce que ça change vraiment",
+          "readTime": "6 min",
+          "category": "Guides pratiques",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "notion-canva-ai-tax-pricing-2026",
           "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
           "thumbnail": "/guides/ai-tax-hero.jpg",
           "readTime": "7 min",
           "category": "Comparatifs"
-        },
-        {
-          "slug": "chatgpt-plus-utile-ou-inutile",
-          "title": "GPT-6 Astra : ChatGPT Pro vaut-il vraiment son prix ?",
-          "readTime": "10 min",
-          "category": "IA Généraliste",
-          "tool": {
-            "slug": "chatgpt",
-            "name": "ChatGPT",
-            "hasPricing": true,
-            "websiteUrl": "https://chat.openai.com"
-          }
         }
       ]
     },
@@ -2450,6 +2476,18 @@
       ],
       "related": [
         {
+          "slug": "mcp-freelances-non-developpeurs",
+          "title": "MCP pour freelances non-développeurs : ce que ça change vraiment",
+          "readTime": "6 min",
+          "category": "Guides pratiques",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "meilleurs-outils-ia-freelances-2026",
           "title": "Meilleurs outils IA pour freelances 2026 : Le guide complet pour choisir (et ne pas gaspiller)",
           "category": "Guides",
@@ -2470,6 +2508,37 @@
             "hasPricing": true,
             "websiteUrl": "https://canva.com"
           }
+        }
+      ]
+    },
+    "fr:mcp-freelances-non-developpeurs": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
+        },
+        {
+          "slug": "canva",
+          "name": "Canva",
+          "hasPricing": true,
+          "websiteUrl": "https://canva.com"
+        },
+        {
+          "slug": "calendly",
+          "name": "Calendly",
+          "hasPricing": true,
+          "websiteUrl": "https://calendly.com"
+        }
+      ],
+      "related": [
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
         },
         {
           "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
@@ -2481,6 +2550,17 @@
             "name": "Zapier",
             "hasPricing": true,
             "websiteUrl": "https://zapier.com"
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         }
       ]
@@ -2688,23 +2768,23 @@
           }
         },
         {
-          "slug": "notion-canva-ai-tax-pricing-2026",
-          "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
-          "thumbnail": "/guides/ai-tax-hero.jpg",
-          "readTime": "7 min",
-          "category": "Comparatifs"
-        },
-        {
-          "slug": "notion-free-vs-paid-real-cost",
-          "title": "Notion Free vs. Paid: The Real Calculation (2026)",
-          "readTime": "10 min",
-          "category": "Comparatifs",
+          "slug": "mcp-for-non-developer-freelancers",
+          "title": "MCP for non-developer freelancers: what it actually changes",
+          "readTime": "6 min",
+          "category": "Practical guides",
           "tool": {
             "slug": "notion",
             "name": "Notion",
             "hasPricing": true,
             "websiteUrl": "https://notion.so"
           }
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
         }
       ]
     },
@@ -2744,23 +2824,23 @@
           }
         },
         {
+          "slug": "mcp-for-non-developer-freelancers",
+          "title": "MCP for non-developer freelancers: what it actually changes",
+          "readTime": "6 min",
+          "category": "Practical guides",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "notion-canva-ai-tax-pricing-2026",
           "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
           "thumbnail": "/guides/ai-tax-hero.jpg",
           "readTime": "7 min",
           "category": "Comparatifs"
-        },
-        {
-          "slug": "grammarly-vs-languagetool-comparison-2026",
-          "title": "Grammarly vs LanguageTool 2026: Which One Is Worth Paying For?",
-          "readTime": "9 min",
-          "category": "Guides",
-          "tool": {
-            "slug": "grammarly",
-            "name": "Grammarly",
-            "hasPricing": true,
-            "websiteUrl": "https://grammarly.com"
-          }
         }
       ]
     },
@@ -2858,6 +2938,18 @@
       ],
       "related": [
         {
+          "slug": "mcp-for-non-developer-freelancers",
+          "title": "MCP for non-developer freelancers: what it actually changes",
+          "readTime": "6 min",
+          "category": "Practical guides",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "notion-canva-ai-tax-pricing-2026",
           "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
           "thumbnail": "/guides/ai-tax-hero.jpg",
@@ -2868,18 +2960,6 @@
           "slug": "ai-agents-freelancers-2026",
           "title": "AI agents for freelancers in 2026: which ones earn a place",
           "readTime": "8 min",
-          "category": "Comparatifs",
-          "tool": {
-            "slug": "zapier",
-            "name": "Zapier",
-            "hasPricing": true,
-            "websiteUrl": "https://zapier.com"
-          }
-        },
-        {
-          "slug": "zapier-vs-make-vs-n8n-pricing",
-          "title": "Zapier vs Make vs n8n: the price gap is 14x, here is why",
-          "readTime": "9 min",
           "category": "Comparatifs",
           "tool": {
             "slug": "zapier",
@@ -3031,23 +3111,23 @@
           }
         },
         {
+          "slug": "mcp-for-non-developer-freelancers",
+          "title": "MCP for non-developer freelancers: what it actually changes",
+          "readTime": "6 min",
+          "category": "Practical guides",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "notion-canva-ai-tax-pricing-2026",
           "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
           "thumbnail": "/guides/ai-tax-hero.jpg",
           "readTime": "7 min",
           "category": "Comparatifs"
-        },
-        {
-          "slug": "ai-agents-freelancers-2026",
-          "title": "AI agents for freelancers in 2026: which ones earn a place",
-          "readTime": "8 min",
-          "category": "Comparatifs",
-          "tool": {
-            "slug": "zapier",
-            "name": "Zapier",
-            "hasPricing": true,
-            "websiteUrl": "https://zapier.com"
-          }
         }
       ]
     },
@@ -3132,21 +3212,21 @@
           "category": "Practical guides"
         },
         {
-          "slug": "ai-agents-freelancers-2026",
-          "title": "AI agents for freelancers in 2026: which ones earn a place",
-          "readTime": "8 min",
-          "category": "Comparatifs",
+          "slug": "mcp-for-non-developer-freelancers",
+          "title": "MCP for non-developer freelancers: what it actually changes",
+          "readTime": "6 min",
+          "category": "Practical guides",
           "tool": {
-            "slug": "zapier",
-            "name": "Zapier",
+            "slug": "notion",
+            "name": "Notion",
             "hasPricing": true,
-            "websiteUrl": "https://zapier.com"
+            "websiteUrl": "https://notion.so"
           }
         },
         {
-          "slug": "zapier-vs-make-vs-n8n-pricing",
-          "title": "Zapier vs Make vs n8n: the price gap is 14x, here is why",
-          "readTime": "9 min",
+          "slug": "ai-agents-freelancers-2026",
+          "title": "AI agents for freelancers in 2026: which ones earn a place",
+          "readTime": "8 min",
           "category": "Comparatifs",
           "tool": {
             "slug": "zapier",
@@ -3294,23 +3374,23 @@
           }
         },
         {
+          "slug": "mcp-for-non-developer-freelancers",
+          "title": "MCP for non-developer freelancers: what it actually changes",
+          "readTime": "6 min",
+          "category": "Practical guides",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "measure-ai-search-visibility-geo-2026",
           "title": "How to measure AI search visibility in 2026 without trusting a score",
           "thumbnail": "https://georankers.ai/assets/hero-dashboard--2DBfIch.webp",
           "readTime": "8 min",
           "category": "Guides pratiques"
-        },
-        {
-          "slug": "ecommerce-platform-solo-small-team-physical-products-2026",
-          "title": "Which E-Commerce Platform Should You Pick Solo or in a Small Team, to Sell Physical Products?",
-          "readTime": "7 min",
-          "category": "Comparisons",
-          "tool": {
-            "slug": "shopify",
-            "name": "Shopify",
-            "hasPricing": true,
-            "websiteUrl": "https://shopify.com"
-          }
         }
       ]
     },
@@ -3349,23 +3429,23 @@
           }
         },
         {
+          "slug": "mcp-for-non-developer-freelancers",
+          "title": "MCP for non-developer freelancers: what it actually changes",
+          "readTime": "6 min",
+          "category": "Practical guides",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "notion-canva-ai-tax-pricing-2026",
           "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
           "thumbnail": "/guides/ai-tax-hero.jpg",
           "readTime": "7 min",
           "category": "Comparatifs"
-        },
-        {
-          "slug": "zapier-vs-make-vs-n8n-pricing",
-          "title": "Zapier vs Make vs n8n: the price gap is 14x, here is why",
-          "readTime": "9 min",
-          "category": "Comparatifs",
-          "tool": {
-            "slug": "zapier",
-            "name": "Zapier",
-            "hasPricing": true,
-            "websiteUrl": "https://zapier.com"
-          }
         }
       ]
     },
@@ -3548,23 +3628,23 @@
           }
         },
         {
+          "slug": "mcp-for-non-developer-freelancers",
+          "title": "MCP for non-developer freelancers: what it actually changes",
+          "readTime": "6 min",
+          "category": "Practical guides",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "notion-canva-ai-tax-pricing-2026",
           "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
           "thumbnail": "/guides/ai-tax-hero.jpg",
           "readTime": "7 min",
           "category": "Comparatifs"
-        },
-        {
-          "slug": "ai-agents-freelancers-2026",
-          "title": "AI agents for freelancers in 2026: which ones earn a place",
-          "readTime": "8 min",
-          "category": "Comparatifs",
-          "tool": {
-            "slug": "zapier",
-            "name": "Zapier",
-            "hasPricing": true,
-            "websiteUrl": "https://zapier.com"
-          }
         }
       ]
     },
@@ -3591,23 +3671,23 @@
           }
         },
         {
+          "slug": "mcp-for-non-developer-freelancers",
+          "title": "MCP for non-developer freelancers: what it actually changes",
+          "readTime": "6 min",
+          "category": "Practical guides",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "notion-canva-ai-tax-pricing-2026",
           "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
           "thumbnail": "/guides/ai-tax-hero.jpg",
           "readTime": "7 min",
           "category": "Comparatifs"
-        },
-        {
-          "slug": "ai-agents-freelancers-2026",
-          "title": "AI agents for freelancers in 2026: which ones earn a place",
-          "readTime": "8 min",
-          "category": "Comparatifs",
-          "tool": {
-            "slug": "zapier",
-            "name": "Zapier",
-            "hasPricing": true,
-            "websiteUrl": "https://zapier.com"
-          }
         }
       ]
     },
@@ -4072,15 +4152,15 @@
           }
         },
         {
-          "slug": "ai-agents-freelancers-2026",
-          "title": "AI agents for freelancers in 2026: which ones earn a place",
-          "readTime": "8 min",
-          "category": "Comparatifs",
+          "slug": "mcp-for-non-developer-freelancers",
+          "title": "MCP for non-developer freelancers: what it actually changes",
+          "readTime": "6 min",
+          "category": "Practical guides",
           "tool": {
-            "slug": "zapier",
-            "name": "Zapier",
+            "slug": "notion",
+            "name": "Notion",
             "hasPricing": true,
-            "websiteUrl": "https://zapier.com"
+            "websiteUrl": "https://notion.so"
           }
         }
       ]
@@ -4114,6 +4194,18 @@
       ],
       "related": [
         {
+          "slug": "mcp-for-non-developer-freelancers",
+          "title": "MCP for non-developer freelancers: what it actually changes",
+          "readTime": "6 min",
+          "category": "Practical guides",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
+          }
+        },
+        {
           "slug": "measure-ai-search-visibility-geo-2026",
           "title": "How to measure AI search visibility in 2026 without trusting a score",
           "thumbnail": "https://georankers.ai/assets/hero-dashboard--2DBfIch.webp",
@@ -4126,13 +4218,61 @@
           "thumbnail": "/tool-media/flexclip/editor.webp",
           "readTime": "6 min",
           "category": "Practical guides"
+        }
+      ]
+    },
+    "en:mcp-for-non-developer-freelancers": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         },
+        {
+          "slug": "canva",
+          "name": "Canva",
+          "hasPricing": true,
+          "websiteUrl": "https://canva.com"
+        },
+        {
+          "slug": "calendly",
+          "name": "Calendly",
+          "hasPricing": true,
+          "websiteUrl": "https://calendly.com"
+        }
+      ],
+      "related": [
         {
           "slug": "notion-canva-ai-tax-pricing-2026",
           "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
           "thumbnail": "/guides/ai-tax-hero.jpg",
           "readTime": "7 min",
           "category": "Comparatifs"
+        },
+        {
+          "slug": "ai-agents-freelancers-2026",
+          "title": "AI agents for freelancers in 2026: which ones earn a place",
+          "readTime": "8 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
+          }
+        },
+        {
+          "slug": "zapier-vs-make-vs-n8n-pricing",
+          "title": "Zapier vs Make vs n8n: the price gap is 14x, here is why",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
+          }
         }
       ]
     }

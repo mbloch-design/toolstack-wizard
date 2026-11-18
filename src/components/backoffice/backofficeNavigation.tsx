@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 
-export type BackofficeSection = "overview" | "catalog" | "users" | "stacks" | "usage" | "sources" | "diagnostic";
-const sections: BackofficeSection[] = ["overview", "catalog", "users", "stacks", "usage", "sources", "diagnostic"];
+export type BackofficeSection = "overview" | "catalog" | "users" | "stacks" | "usage" | "sources";
+const sections: BackofficeSection[] = ["overview", "catalog", "users", "stacks", "usage", "sources"];
 export function readBackofficeSection(search: string): BackofficeSection {
   const value = new URLSearchParams(search).get("view");
   return sections.find((section) => section === value) ?? "overview";

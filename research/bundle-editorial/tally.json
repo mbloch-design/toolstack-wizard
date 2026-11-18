@@ -40,7 +40,77 @@
       "Intégrations Notion, Airtable, Google Sheets",
       "Branding personnalisé (Pro+)",
       "Domaines custom (Pro+)"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Tally Developer Docs — MCP server",
+          "url": "https://developers.tally.so/api-reference/mcp"
+        },
+        {
+          "label": "Tally Help — Tally MCP Server",
+          "url": "https://tally.so/help/mcp"
+        },
+        {
+          "label": "Tally Help — Claude connector",
+          "url": "https://tally.so/help/claude-connector"
+        },
+        {
+          "label": "Tally Help — ChatGPT",
+          "url": "https://tally.so/help/chatgpt-integration"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Tally MCP server (bêta)",
+          "transport": "remote",
+          "auth": [
+            "oauth",
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "docs_url": "https://developers.tally.so/api-reference/mcp"
+        }
+      ],
+      "status": "beta",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Lire vos formulaires et leurs réponses",
+          "en": "Read your forms and their submissions"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer un formulaire à partir d'une description, modifier un formulaire",
+          "en": "Create a form from a description, edit a form"
+        },
+        {
+          "kind": "send",
+          "fr": "Publier un formulaire pour le partager",
+          "en": "Publish a form to share it"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "plugin"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "no_delete"
+      ]
+    }
   },
   "fr": {
     "verdict": {

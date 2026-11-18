@@ -310,6 +310,17 @@
   transform: none;
 }
 
+/* An action link: the arrow is there at rest, and steps forward on hover. */
+.linkArrow[data-shown] {
+  opacity: 1;
+  transform: none;
+}
+
+.link:hover .linkArrow[data-shown],
+.link:focus-visible .linkArrow[data-shown] {
+  transform: translateX(var(--tt-space-1));
+}
+
 @media (prefers-reduced-motion: reduce) {
   .arrowOut,
   .arrowIn,

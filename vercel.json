@@ -380,6 +380,6 @@
     {"source": "/:lang(fr|en)/:page(search|back-office)", "destination": "/client-only.html"},
     {"source": "/submit", "destination": "/client-only.html"},
     {"source": "/:lang(fr|en)/comparatif/:slugPair", "destination": "/client-only.html"},
-    {"source": "/:lang(fr|en)/:family(plugins|libraries|mcp)/:slug", "destination": "/client-only.html"}
+    {"source": "/:lang(fr|en)/:family(plugins|libraries)/:slug", "destination": "/client-only.html"}
   ]
 }

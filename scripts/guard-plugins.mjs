@@ -47,6 +47,8 @@ try {
   // base. C'est cette gouvernance qui evite de refaire le nettoyage de
   // taxonomie : covers avait derive a 590 termes faute de liste fermee.
   const FORM_FACTORS = ["app", "plugin", "library", "mcp", "suite", "asset"];
+  // Même gouvernance pour le bloc « agent » des fiches (serveur MCP de l'outil) :
+  // vocabulaires dans scripts/lib/agent-access.mjs, contrôle par npm run guard:agent-access.
 
   const formatsInconnus = await sql`
     select coalesce(form_factor, '(null)') v, count(*)::int n from public.tools

@@ -48,7 +48,79 @@
       "Wikis et projets",
       "Formulaires et sites",
       "Notion AI et connecteurs"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Notion Developers — Notion MCP, overview",
+          "url": "https://developers.notion.com/guides/mcp/overview"
+        },
+        {
+          "label": "Notion Developers — Connect to Notion MCP (setup, FAQ plans)",
+          "url": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+        },
+        {
+          "label": "Notion Developers — Supported tools",
+          "url": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Notion MCP",
+          "transport": "remote",
+          "auth": [
+            "oauth",
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "plan_note": "Tous les forfaits. Jetons MCP (connexion sans navigateur), recherche dans les sources connectées et requêtes SQL illimitées : Business et Enterprise. Les invités d'un espace ne peuvent pas se connecter.",
+          "plan_note_en": "Every plan. MCP tokens (no browser sign-in), connected-source search and unlimited SQL queries: Business and Enterprise. Workspace guests cannot connect.",
+          "docs_url": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+        }
+      ],
+      "status": "ga",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Chercher et lire pages, bases et notes de réunion, y compris dans les sources connectées",
+          "en": "Search and read pages, databases and meeting notes, including connected sources"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier pages, bases, vues, commentaires et événements d'agenda",
+          "en": "Create and edit pages, databases, views, comments and calendar events"
+        },
+        {
+          "kind": "delete",
+          "fr": "Supprimer pages, bases et commentaires ; restaurer une version",
+          "en": "Delete pages, databases and comments; restore a version"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "connector"
+        },
+        {
+          "assistant": "gemini",
+          "how": "connector"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "admin_controls"
+      ]
+    }
   },
   "fr": {
     "verdict": {

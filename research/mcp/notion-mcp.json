@@ -1,0 +1,668 @@
+{
+  "slug": "notion-mcp",
+  "name": "Notion MCP",
+  "publisher": "Notion",
+  "official": true,
+  "host_tool": "notion",
+  "category": "organization",
+  "summary": {
+    "fr": "Le serveur officiel de Notion donne à votre assistant l'accès à vos pages, bases de données, commentaires, fichiers et agenda Notion. Il peut lire, créer, modifier et mettre à la corbeille, toujours dans la limite de vos droits.",
+    "en": "Notion's official server gives your assistant access to your Notion pages, databases, comments, files and calendar. It can read, create, edit and move to trash, always within your own rights."
+  },
+  "card": {
+    "fr": "Retrouver, résumer et créer des pages dans Notion.",
+    "en": "Find, summarise and create pages in Notion."
+  },
+  "examples": [
+    {
+      "fr": "Résume mes notes de réunion de cette semaine et liste les actions à faire.",
+      "en": "Summarise this week's meeting notes and list the action items."
+    },
+    {
+      "fr": "Retrouve la page où j'ai noté les tarifs de mon client Dupont.",
+      "en": "Find the page where I wrote down my client Dupont's rates."
+    },
+    {
+      "fr": "Crée une page de compte rendu dans ma base Clients avec ces trois points.",
+      "en": "Create a meeting report page in my Clients database with these three points."
+    }
+  ],
+  "for": {
+    "fr": "Vous rangez déjà vos notes, vos clients ou vos projets dans Notion et vous perdez du temps à les retrouver.",
+    "en": "You already keep your notes, clients or projects in Notion and lose time finding them again."
+  },
+  "not_for": {
+    "fr": "Vous êtes invité dans l'espace d'un client : les invités ne peuvent pas se connecter.",
+    "en": "You are a guest in a client's workspace: guests cannot connect."
+  },
+  "control": [
+    {
+      "title": {
+        "fr": "Vous choisissez l'espace",
+        "en": "You choose the workspace"
+      },
+      "icon": "account",
+      "fr": "à la connexion ; l'assistant n'y voit que ce que votre compte voit.",
+      "en": "when connecting; the assistant only sees what your account sees."
+    },
+    {
+      "title": {
+        "fr": "L'administrateur encadre",
+        "en": "The admin sets the frame"
+      },
+      "icon": "admin",
+      "fr": "dans les contrôles d'administration de Notion.",
+      "en": "in Notion's admin controls."
+    },
+    {
+      "title": {
+        "fr": "Vous coupez quand vous voulez",
+        "en": "You cut whenever you want"
+      },
+      "icon": "cut",
+      "fr": "« Déconnecter » ou « Effacer l'authentification » dans les réglages de l'assistant.",
+      "en": "“Disconnect” or “Clear authentication” in the assistant's settings."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits Notion.",
+      "en": "Works on every Notion plan."
+    },
+    "advanced": {
+      "fr": "En plus, sur Business et Enterprise : connexion sans passer par le navigateur (utile aux outils de développeur) et recherche dans les outils reliés à Notion, avec Notion AI.",
+      "en": "On top, on Business and Enterprise: connecting without a browser (useful for developer tools) and searching the tools linked to Notion, with Notion AI."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Trouve mes pages qui parlent de facturation.",
+        "en": "Find my pages about invoicing."
+      },
+      {
+        "fr": "Résume mes dernières notes de réunion.",
+        "en": "Summarise my latest meeting notes."
+      },
+      {
+        "fr": "Liste mes pages favorites.",
+        "en": "List my favourite pages."
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Ajoute un commentaire « À relire » sur une page de test.",
+        "en": "Add a comment “To review” on a test page."
+      },
+      "check": {
+        "fr": "Ouvrez la page dans Notion : le commentaire y est, à votre nom.",
+        "en": "Open the page in Notion: the comment is there, under your name."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Vérifiez vos droits dans l'espace Notion visé : l'assistant ne fait que ce que votre compte permet.",
+      "en": "Check your rights in the Notion workspace you target: the assistant only does what your account allows."
+    },
+    {
+      "fr": "Dans une entreprise, un administrateur peut interdire l'ajout de nouveaux branchements à l'assistant.",
+      "en": "In a company, an admin may forbid adding new connections to the assistant."
+    }
+  ],
+  "verified_on": "2026-11-16",
+  "status": "ga",
+  "transport": "remote",
+  "auth": [
+    "oauth",
+    "key"
+  ],
+  "access": "read_write",
+  "plan": "all",
+  "plan_note": {
+    "fr": "Tous les forfaits. Jetons MCP (connexion sans navigateur), recherche dans les sources connectées et requêtes SQL illimitées : Business et Enterprise. Les invités d'un espace ne peuvent pas se connecter.",
+    "en": "Every plan. MCP tokens (no browser sign-in), connected-source search and unlimited SQL queries: Business and Enterprise. Workspace guests cannot connect."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Chercher et lire pages, bases et notes de réunion, y compris dans les sources connectées",
+      "en": "Search and read pages, databases and meeting notes, including connected sources"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier pages, bases, vues, commentaires et événements d'agenda ; restaurer une version antérieure",
+      "en": "Create and edit pages, databases, views, comments and calendar events; restore an earlier version"
+    },
+    {
+      "kind": "delete",
+      "fr": "Mettre à la corbeille des pages, des bases et des commentaires",
+      "en": "Move pages, databases and comments to trash"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "connector"
+    },
+    {
+      "assistant": "gemini",
+      "how": "connector"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [
+    "admin_controls"
+  ],
+  "tools": [
+    {
+      "name": "notion-search",
+      "kind": "read",
+      "fr": "Trouver pages et bases par sujet ou titre",
+      "en": "Find pages and databases by topic or title"
+    },
+    {
+      "name": "notion-connector-search",
+      "kind": "read",
+      "fr": "Chercher dans les applis connectées (Slack, Drive…)",
+      "en": "Search connected apps such as Slack or Drive"
+    },
+    {
+      "name": "notion-fetch",
+      "kind": "read",
+      "fr": "Ouvrir une page, une base ou un résultat connecté",
+      "en": "Open a page, database or connected result"
+    },
+    {
+      "name": "notion-list-private-pages",
+      "kind": "read",
+      "fr": "Lister les pages privées",
+      "en": "List private sidebar pages"
+    },
+    {
+      "name": "notion-list-shared-pages",
+      "kind": "read",
+      "fr": "Lister les pages partagées",
+      "en": "List shared sidebar pages"
+    },
+    {
+      "name": "notion-list-favorite-pages",
+      "kind": "read",
+      "fr": "Lister les favoris",
+      "en": "List favorite pages"
+    },
+    {
+      "name": "notion-list-recent-pages",
+      "kind": "read",
+      "fr": "Lister les pages récentes",
+      "en": "List recently viewed pages"
+    },
+    {
+      "name": "notion-list-page-backlinks",
+      "kind": "read",
+      "fr": "Trouver les pages qui citent une page",
+      "en": "Find pages that link to a page"
+    },
+    {
+      "name": "notion-query-meeting-notes",
+      "kind": "read",
+      "fr": "Retrouver des notes de réunion",
+      "en": "Find meeting notes"
+    },
+    {
+      "name": "notion-get-self",
+      "kind": "read",
+      "fr": "Identifier l'espace et l'utilisateur connectés",
+      "en": "Identify the connected workspace and user"
+    },
+    {
+      "name": "notion-get-teams",
+      "kind": "read",
+      "fr": "Lister les espaces d'équipe",
+      "en": "List teamspaces"
+    },
+    {
+      "name": "notion-get-groups",
+      "kind": "read",
+      "fr": "Consulter les groupes de permissions",
+      "en": "Look up permission groups"
+    },
+    {
+      "name": "notion-get-users",
+      "kind": "read",
+      "fr": "Trouver membres et invités",
+      "en": "Find members and guests"
+    },
+    {
+      "name": "notion-get-tool-access",
+      "kind": "read",
+      "fr": "Voir les outils permis à la connexion",
+      "en": "Show which tools the connection can use"
+    },
+    {
+      "name": "notion-get-version-changes",
+      "kind": "read",
+      "fr": "Voir ce qui a changé, et qui l'a changé",
+      "en": "Show what changed and who changed it"
+    },
+    {
+      "name": "notion-view-version",
+      "kind": "read",
+      "fr": "Voir une page à une date passée",
+      "en": "View a page at a past time"
+    },
+    {
+      "name": "notion-restore-version",
+      "kind": "write",
+      "fr": "Restaurer une version passée",
+      "en": "Restore a page or database to a past version"
+    },
+    {
+      "name": "notion-restore-pages",
+      "kind": "write",
+      "fr": "Récupérer des pages de la corbeille",
+      "en": "Recover pages from Trash"
+    },
+    {
+      "name": "notion-create-comment",
+      "kind": "write",
+      "fr": "Commenter ou répondre à une discussion",
+      "en": "Comment or reply to a discussion"
+    },
+    {
+      "name": "notion-get-comments",
+      "kind": "read",
+      "fr": "Lire commentaires et suggestions",
+      "en": "Read comments and suggestions"
+    },
+    {
+      "name": "notion-update-comment",
+      "kind": "write",
+      "fr": "Modifier ses commentaires",
+      "en": "Edit your own comments"
+    },
+    {
+      "name": "notion-delete-comment",
+      "kind": "delete",
+      "fr": "Supprimer ses commentaires",
+      "en": "Delete your own comments"
+    },
+    {
+      "name": "notion-set-discussion-resolved",
+      "kind": "write",
+      "fr": "Clore ou rouvrir une discussion",
+      "en": "Resolve or reopen a discussion"
+    },
+    {
+      "name": "notion-set-comment-reaction",
+      "kind": "write",
+      "fr": "Ajouter ou retirer une réaction",
+      "en": "Add or remove a reaction"
+    },
+    {
+      "name": "notion-create-suggested-edit",
+      "kind": "write",
+      "fr": "Proposer une modification",
+      "en": "Propose an edit for review"
+    },
+    {
+      "name": "notion-get-suggested-edit",
+      "kind": "read",
+      "fr": "Lire une modification proposée",
+      "en": "Read a proposed change"
+    },
+    {
+      "name": "notion-resolve-suggested-edit",
+      "kind": "write",
+      "fr": "Accepter ou refuser une suggestion",
+      "en": "Accept or reject a suggestion"
+    },
+    {
+      "name": "notion-create-pages",
+      "kind": "write",
+      "fr": "Créer des pages, au besoin depuis un modèle",
+      "en": "Create pages, from templates if needed"
+    },
+    {
+      "name": "notion-update-page",
+      "kind": "write",
+      "fr": "Modifier contenu et propriétés d'une page",
+      "en": "Update page content and properties"
+    },
+    {
+      "name": "notion-move-pages",
+      "kind": "write",
+      "fr": "Déplacer des pages",
+      "en": "Move pages elsewhere"
+    },
+    {
+      "name": "notion-duplicate-page",
+      "kind": "write",
+      "fr": "Dupliquer une page",
+      "en": "Duplicate a page"
+    },
+    {
+      "name": "notion-delete-pages",
+      "kind": "delete",
+      "fr": "Mettre des pages à la corbeille",
+      "en": "Move pages to Trash"
+    },
+    {
+      "name": "notion-get-async-task",
+      "kind": "read",
+      "fr": "Vérifier qu'une création est terminée",
+      "en": "Check whether a create or update finished"
+    },
+    {
+      "name": "notion-create-database",
+      "kind": "write",
+      "fr": "Créer une base avec une vue",
+      "en": "Create a database with a view"
+    },
+    {
+      "name": "notion-update-data-source",
+      "kind": "write",
+      "fr": "Modifier les champs d'une source",
+      "en": "Change a data source's fields"
+    },
+    {
+      "name": "notion-create-view",
+      "kind": "write",
+      "fr": "Ajouter une vue (tableau, kanban, agenda…)",
+      "en": "Add a table, board, calendar or chart view"
+    },
+    {
+      "name": "notion-update-view",
+      "kind": "write",
+      "fr": "Modifier une vue",
+      "en": "Change how a view displays"
+    },
+    {
+      "name": "notion-query-data-sources",
+      "kind": "read",
+      "fr": "Lire une vue ou filtrer des entrées",
+      "en": "Read a view or find matching entries"
+    },
+    {
+      "name": "notion-query-multiple-data-sources",
+      "kind": "read",
+      "fr": "Croiser plusieurs sources",
+      "en": "Combine results across sources"
+    },
+    {
+      "name": "notion-delete-databases",
+      "kind": "delete",
+      "fr": "Mettre une base et ses entrées à la corbeille",
+      "en": "Move a database and its entries to Trash"
+    },
+    {
+      "name": "notion-create-file-upload",
+      "kind": "write",
+      "fr": "Préparer l'envoi d'un fichier",
+      "en": "Get an upload address for a file"
+    },
+    {
+      "name": "notion-create-attachment",
+      "kind": "write",
+      "fr": "Joindre un fichier",
+      "en": "Save a file as an attachment"
+    },
+    {
+      "name": "notion-download-attachment",
+      "kind": "read",
+      "fr": "Lire le texte d'une pièce jointe",
+      "en": "Read an attachment's text"
+    },
+    {
+      "name": "notion-get-file-download-urls",
+      "kind": "read",
+      "fr": "Obtenir des liens de téléchargement",
+      "en": "Get temporary download links"
+    },
+    {
+      "name": "notion-create-folder",
+      "kind": "write",
+      "fr": "Créer un dossier sous une page",
+      "en": "Add a folder under a page"
+    },
+    {
+      "name": "notion-update-folder",
+      "kind": "write",
+      "fr": "Modifier le contenu d'un dossier",
+      "en": "Add or remove files in a folder"
+    },
+    {
+      "name": "notion-convert-page-to-skill",
+      "kind": "write",
+      "fr": "Transformer une page d'instructions en Skill",
+      "en": "Turn an instructions page into a Skill"
+    },
+    {
+      "name": "notion-download-skill",
+      "kind": "read",
+      "fr": "Exporter une Skill",
+      "en": "Export a Skill"
+    },
+    {
+      "name": "notion-upload-skill",
+      "kind": "write",
+      "fr": "Importer une Skill",
+      "en": "Import a Skill"
+    },
+    {
+      "name": "notion-get-enabled-skills",
+      "kind": "read",
+      "fr": "Voir les Skills actives",
+      "en": "See enabled Skills"
+    },
+    {
+      "name": "notion-update-enabled-skills",
+      "kind": "write",
+      "fr": "Activer ou désactiver des Skills",
+      "en": "Enable or disable Skills"
+    },
+    {
+      "name": "notion-memory-search",
+      "kind": "read",
+      "fr": "Chercher dans ses mémoires",
+      "en": "Search private saved memories"
+    },
+    {
+      "name": "notion-search-agents",
+      "kind": "read",
+      "fr": "Trouver les agents partagés",
+      "en": "Find Custom Agents shared with you"
+    },
+    {
+      "name": "notion-query-sessions",
+      "kind": "read",
+      "fr": "Parcourir les sessions d'agents",
+      "en": "Browse agent sessions"
+    },
+    {
+      "name": "notion-search-sessions",
+      "kind": "read",
+      "fr": "Chercher dans les sessions d'agents",
+      "en": "Search agent sessions"
+    },
+    {
+      "name": "notion-spawn-session",
+      "kind": "write",
+      "fr": "Confier une tâche à un agent",
+      "en": "Hand a task to a Custom Agent"
+    },
+    {
+      "name": "notion-send-message-to-session",
+      "kind": "send",
+      "fr": "Relancer une session d'agent",
+      "en": "Send a follow-up to an agent session"
+    },
+    {
+      "name": "notion-get-session-status",
+      "kind": "read",
+      "fr": "Suivre une session d'agent",
+      "en": "Check an agent session's progress"
+    },
+    {
+      "name": "notion-wait-session",
+      "kind": "read",
+      "fr": "Attendre la réponse d'un agent",
+      "en": "Wait for an agent's answer"
+    },
+    {
+      "name": "notion-stop-session",
+      "kind": "write",
+      "fr": "Arrêter une session d'agent",
+      "en": "Stop an agent session"
+    },
+    {
+      "name": "notion-list-session-events",
+      "kind": "read",
+      "fr": "Lister les événements d'une session",
+      "en": "List an agent session's events"
+    },
+    {
+      "name": "notion-read-session-event",
+      "kind": "read",
+      "fr": "Lire un événement de session",
+      "en": "Read one agent session event"
+    },
+    {
+      "name": "notion-calendar-list-calendars",
+      "kind": "read",
+      "fr": "Lister les agendas",
+      "en": "List calendars"
+    },
+    {
+      "name": "notion-calendar-list-events",
+      "kind": "read",
+      "fr": "Lire les événements d'une période",
+      "en": "Read events for a period"
+    },
+    {
+      "name": "notion-calendar-list-coworkers-events",
+      "kind": "read",
+      "fr": "Voir l'agenda des collègues",
+      "en": "Read coworkers' events"
+    },
+    {
+      "name": "notion-calendar-list-calendar-resources",
+      "kind": "read",
+      "fr": "Trouver salles et ressources",
+      "en": "Find rooms and resources"
+    },
+    {
+      "name": "notion-calendar-list-contacts",
+      "kind": "read",
+      "fr": "Trouver des contacts",
+      "en": "Find contacts"
+    },
+    {
+      "name": "notion-calendar-create-events",
+      "kind": "send",
+      "fr": "Créer des événements (invités prévenus)",
+      "en": "Create events, may notify attendees"
+    },
+    {
+      "name": "notion-calendar-update-events",
+      "kind": "write",
+      "fr": "Modifier un événement",
+      "en": "Update a calendar event"
+    },
+    {
+      "name": "notion-calendar-cancel-events",
+      "kind": "delete",
+      "fr": "Annuler un événement",
+      "en": "Cancel a calendar event"
+    }
+  ],
+  "install": [
+    {
+      "client": "claude",
+      "type": "steps",
+      "value": "Search \"Notion\" in the assistant's connector or plugin library and authorize."
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add --transport http notion https://mcp.notion.com/mcp"
+    },
+    {
+      "client": "codex",
+      "type": "config",
+      "value": "[mcp_servers.notion]\nurl = \"https://mcp.notion.com/mcp\""
+    },
+    {
+      "client": "cursor",
+      "type": "config",
+      "value": "{\"mcpServers\": {\"notion\": {\"url\": \"https://mcp.notion.com/mcp\"}}}"
+    },
+    {
+      "client": "vs-code",
+      "type": "config",
+      "value": "{\"servers\": {\"notion\": {\"type\": \"http\", \"url\": \"https://mcp.notion.com/mcp\"}}}"
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.notion.com/mcp"
+    },
+    {
+      "client": "any",
+      "type": "config",
+      "value": "{\"mcpServers\": {\"notion\": {\"command\": \"npx\", \"args\": [\"-y\", \"mcp-remote\", \"https://mcp.notion.com/mcp\"]}}}"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "gemini",
+    "claude-code",
+    "cursor",
+    "vs-code",
+    "devin",
+    "antigravity",
+    "Codex",
+    "fx",
+    "Hermes",
+    "Pi"
+  ],
+  "skills": [
+    "notion-skills"
+  ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/notion",
+    "added": "2025-11",
+    "read_on": "2026-11-17"
+  },
+  "docs_url": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+  "sources": [
+    {
+      "label": "Notion Developers — Notion MCP, overview",
+      "url": "https://developers.notion.com/guides/mcp/overview"
+    },
+    {
+      "label": "Notion Developers — Connect to Notion MCP (setup, FAQ plans)",
+      "url": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+    },
+    {
+      "label": "Notion Developers — Supported tools",
+      "url": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
+    },
+    {
+      "label": "Notion Developers — Supported tools (by category)",
+      "url": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/notion"
+    }
+  ]
+}

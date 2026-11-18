@@ -1,0 +1,530 @@
+{
+  "slug": "miro-mcp",
+  "name": "Miro MCP Server",
+  "publisher": "Miro",
+  "official": true,
+  "host_tool": "miro",
+  "category": "design-tools",
+  "summary": {
+    "fr": "Le serveur officiel de Miro permet à votre assistant de lire et résumer vos tableaux, d'y créer cadres, notes, schémas et commentaires, et de partager tableaux et espaces avec d'autres personnes. Il fonctionne sur tous les forfaits, gratuit compris.",
+    "en": "Miro's official server lets your assistant read and summarise your boards, create frames, notes, diagrams and comments on them, and share boards and spaces with other people. It works on every plan, free included."
+  },
+  "card": {
+    "fr": "Résumer vos tableaux et en créer de nouveaux.",
+    "en": "Summarise your boards and create new ones."
+  },
+  "examples": [
+    {
+      "fr": "Résume ce tableau d'atelier, commentaires compris.",
+      "en": "Summarise this workshop board, comments included."
+    },
+    {
+      "fr": "Crée un tableau avec un cadre par étape du projet.",
+      "en": "Create a board with one frame per project stage."
+    }
+  ],
+  "for": {
+    "fr": "Vous animez des ateliers ou planifiez vos projets sur des tableaux Miro.",
+    "en": "You run workshops or plan projects on Miro boards."
+  },
+  "not_for": {
+    "fr": "Vos tableaux sont partagés avec des clients : l'assistant peut aussi donner des accès ou changer des rôles.",
+    "en": "Your boards are shared with clients: the assistant can also grant access or change roles."
+  },
+  "control": [
+    {
+      "title": {
+        "fr": "Vous choisissez l'équipe",
+        "en": "You choose the team"
+      },
+      "icon": "account",
+      "fr": "À la connexion, vous choisissez l'équipe : il ne travaille que dans celle-là.",
+      "en": "When connecting, you pick the team: it only works in that one."
+    },
+    {
+      "title": {
+        "fr": "Les droits de chaque tableau",
+        "en": "Each board's rights"
+      },
+      "icon": "limit",
+      "fr": "Il respecte les droits de chaque tableau, vérifiés à chaque demande.",
+      "en": "It follows each board's rights, checked on every request."
+    },
+    {
+      "title": {
+        "fr": "L'administrateur encadre",
+        "en": "The admin sets the frame"
+      },
+      "icon": "admin",
+      "fr": "En Enterprise, l'administrateur l'ouvre à toute l'organisation ou à certaines équipes : Paramètres d'administration, Apps et intégrations, MCP.",
+      "en": "On Enterprise, the admin opens it to the whole organisation or some teams: Admin settings, Apps and integrations, MCP."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits Miro, y compris les équipes gratuites.",
+      "en": "Works on every Miro plan, free teams included."
+    },
+    "advanced": {
+      "fr": "En Enterprise, un administrateur doit d'abord l'autoriser.",
+      "en": "On Enterprise, an admin must allow it first."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Liste mes tableaux Miro.",
+        "en": "List my Miro boards."
+      },
+      {
+        "fr": "Résume le tableau de mon dernier atelier.",
+        "en": "Summarise my latest workshop board."
+      },
+      {
+        "fr": "Liste les commentaires de ce tableau.",
+        "en": "List the comments on this board."
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Crée un tableau « Test ToolTrim ».",
+        "en": "Create a board “ToolTrim test”."
+      },
+      "check": {
+        "fr": "Il apparaît dans votre équipe Miro ; supprimez-le ensuite.",
+        "en": "It appears in your Miro team; delete it afterwards."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "« Ce tableau appartient à une autre équipe » : reconnectez-vous en ouvrant un tableau de la bonne équipe.",
+      "en": "“This board belongs to a different team”: sign in again while viewing a board of the right team."
+    },
+    {
+      "fr": "Tableau introuvable : donnez son adresse complète.",
+      "en": "Board not found: give its full address."
+    },
+    {
+      "fr": "Rubrique MCP absente : il n'est pas activé pour votre équipe, ou il faut des droits d'administration.",
+      "en": "No MCP section: it is not enabled for your team, or admin rights are needed."
+    }
+  ],
+  "verified_on": "2026-11-16",
+  "transport": "remote",
+  "auth": [
+    "oauth"
+  ],
+  "access": "read_write",
+  "plan": "all",
+  "plan_note": {
+    "fr": "Tous les forfaits. Sur Enterprise, désactivé par défaut jusqu'à activation par un administrateur.",
+    "en": "All plans. On Enterprise, off by default until an admin turns it on."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire et résumer le contenu des tableaux, commentaires compris ; rechercher tableaux et espaces",
+      "en": "Read and summarise board content, comments included; search boards and spaces"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier tableaux, cadres, notes, formes, textes, images et commentaires",
+      "en": "Create and edit boards, frames, notes, shapes, text, images and comments"
+    },
+    {
+      "kind": "delete",
+      "fr": "Supprimer des éléments du tableau ou une section d'espace",
+      "en": "Delete board items or a space section"
+    },
+    {
+      "kind": "send",
+      "fr": "Donner accès à des personnes ou des groupes, et changer leur rôle",
+      "en": "Grant people or groups access, and change their role"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "plugin"
+    },
+    {
+      "assistant": "copilot",
+      "how": "plugin"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [
+    "admin_controls"
+  ],
+  "tools": [
+    {
+      "name": "canvas_create_from_svg",
+      "kind": "write",
+      "fr": "Créer des éléments depuis un dessin",
+      "en": "Create board items from a drawing"
+    },
+    {
+      "name": "canvas_update_from_svg",
+      "kind": "delete",
+      "fr": "Mettre à jour une zone : crée, modifie, supprime",
+      "en": "Update a board area: creates, edits, deletes"
+    },
+    {
+      "name": "canvas_read_as_svg",
+      "kind": "read",
+      "fr": "Lire une zone du tableau",
+      "en": "Read a board area"
+    },
+    {
+      "name": "canvas_search",
+      "kind": "read",
+      "fr": "Chercher dans un tableau",
+      "en": "Search board content"
+    },
+    {
+      "name": "canvas_get_canvas_composer_skill",
+      "kind": "read",
+      "fr": "Obtenir le guide de composition",
+      "en": "Get the board authoring guide"
+    },
+    {
+      "name": "canvas_load_format_skill",
+      "kind": "read",
+      "fr": "Charger le guide d'un format",
+      "en": "Load guidance for a format"
+    },
+    {
+      "name": "canvas_get_html_upload_url",
+      "kind": "read",
+      "fr": "Préparer un envoi HTML",
+      "en": "Reserve slots for HTML uploads"
+    },
+    {
+      "name": "board_create",
+      "kind": "write",
+      "fr": "Créer un tableau",
+      "en": "Create a board"
+    },
+    {
+      "name": "board_create_format",
+      "kind": "write",
+      "fr": "Créer un tableau, une frise ou un kanban",
+      "en": "Create a table, timeline or kanban"
+    },
+    {
+      "name": "board_search_boards",
+      "kind": "read",
+      "fr": "Lister les tableaux (obsolète)",
+      "en": "List boards (deprecated)"
+    },
+    {
+      "name": "content_search",
+      "kind": "read",
+      "fr": "Chercher tableaux, espaces et enregistrements",
+      "en": "Search boards, spaces and recordings"
+    },
+    {
+      "name": "board_show",
+      "kind": "read",
+      "fr": "Prévisualiser des éléments",
+      "en": "Preview board items"
+    },
+    {
+      "name": "board_get_space",
+      "kind": "read",
+      "fr": "Trouver l'espace d'un tableau",
+      "en": "Find a board's space"
+    },
+    {
+      "name": "board_move",
+      "kind": "write",
+      "fr": "Déplacer un tableau",
+      "en": "Move a board to a space or folder"
+    },
+    {
+      "name": "board_move_to_team",
+      "kind": "write",
+      "fr": "Déplacer un tableau vers une autre équipe",
+      "en": "Move a board to another team"
+    },
+    {
+      "name": "board_restore",
+      "kind": "write",
+      "fr": "Restaurer des tableaux de la corbeille",
+      "en": "Restore boards from trash"
+    },
+    {
+      "name": "board_update_metadata",
+      "kind": "write",
+      "fr": "Modifier le titre d'un tableau",
+      "en": "Update a board's title or icon"
+    },
+    {
+      "name": "content_item_list_roles",
+      "kind": "read",
+      "fr": "Voir qui a accès",
+      "en": "List who can access a board or space"
+    },
+    {
+      "name": "board_share",
+      "kind": "send",
+      "fr": "Donner accès à un tableau",
+      "en": "Give a person or group access to a board"
+    },
+    {
+      "name": "board_role_update",
+      "kind": "write",
+      "fr": "Changer un rôle sur un tableau",
+      "en": "Change a board access role"
+    },
+    {
+      "name": "space_share",
+      "kind": "send",
+      "fr": "Donner accès à un espace",
+      "en": "Give a person or group access to a space"
+    },
+    {
+      "name": "space_role_update",
+      "kind": "write",
+      "fr": "Changer un rôle sur un espace",
+      "en": "Change a space access role"
+    },
+    {
+      "name": "space_create",
+      "kind": "write",
+      "fr": "Créer un espace",
+      "en": "Create a space"
+    },
+    {
+      "name": "space_list",
+      "kind": "read",
+      "fr": "Lister les espaces",
+      "en": "List spaces"
+    },
+    {
+      "name": "space_list_boards",
+      "kind": "read",
+      "fr": "Lister les tableaux d'un espace",
+      "en": "List a space's boards"
+    },
+    {
+      "name": "space_list_children",
+      "kind": "read",
+      "fr": "Lister le contenu d'un espace",
+      "en": "List a space's contents"
+    },
+    {
+      "name": "space_update_metadata",
+      "kind": "write",
+      "fr": "Modifier un espace",
+      "en": "Update a space's title or icon"
+    },
+    {
+      "name": "section_create",
+      "kind": "write",
+      "fr": "Créer une section",
+      "en": "Create a section"
+    },
+    {
+      "name": "section_update_metadata",
+      "kind": "write",
+      "fr": "Renommer une section",
+      "en": "Rename or reorder a section"
+    },
+    {
+      "name": "section_delete",
+      "kind": "delete",
+      "fr": "Supprimer une section",
+      "en": "Delete a section"
+    },
+    {
+      "name": "blog_post_create",
+      "kind": "write",
+      "fr": "Publier un billet dans un espace",
+      "en": "Write a post in a space"
+    },
+    {
+      "name": "blog_post_list",
+      "kind": "read",
+      "fr": "Lister les billets",
+      "en": "List a space's posts"
+    },
+    {
+      "name": "blog_post_update",
+      "kind": "write",
+      "fr": "Modifier un billet",
+      "en": "Update a space post"
+    },
+    {
+      "name": "table_get_latest_update_history",
+      "kind": "read",
+      "fr": "Lire l'historique d'une ligne",
+      "en": "Read a row's update history"
+    },
+    {
+      "name": "comment_list_comments",
+      "kind": "read",
+      "fr": "Lister les commentaires",
+      "en": "List comments"
+    },
+    {
+      "name": "comment_create",
+      "kind": "write",
+      "fr": "Commenter",
+      "en": "Comment on the board"
+    },
+    {
+      "name": "comment_reply",
+      "kind": "write",
+      "fr": "Répondre à un commentaire",
+      "en": "Reply to a comment"
+    },
+    {
+      "name": "comment_resolve",
+      "kind": "write",
+      "fr": "Clore ou rouvrir une discussion",
+      "en": "Resolve or reopen a thread"
+    },
+    {
+      "name": "image_get_data",
+      "kind": "read",
+      "fr": "Lire une image",
+      "en": "Read an image"
+    },
+    {
+      "name": "image_get_url",
+      "kind": "read",
+      "fr": "Obtenir le lien d'une image",
+      "en": "Get an image's download link"
+    },
+    {
+      "name": "image_get_upload_url",
+      "kind": "read",
+      "fr": "Préparer l'envoi d'une image",
+      "en": "Prepare an image upload"
+    },
+    {
+      "name": "image_create",
+      "kind": "write",
+      "fr": "Ajouter une image",
+      "en": "Add an image to a board"
+    },
+    {
+      "name": "import-claude-design-from-url",
+      "kind": "write",
+      "fr": "Importer un design depuis un lien",
+      "en": "Import a design from a public link"
+    },
+    {
+      "name": "user_who_am_i",
+      "kind": "read",
+      "fr": "Identifier l'utilisateur",
+      "en": "Identify the connected user"
+    },
+    {
+      "name": "user_search_organization_users",
+      "kind": "read",
+      "fr": "Chercher dans l'organisation",
+      "en": "Search people in your organisation"
+    },
+    {
+      "name": "get_brand_context",
+      "kind": "read",
+      "fr": "Lire votre charte de marque",
+      "en": "Read your brand guidelines"
+    }
+  ],
+  "install": [
+    {
+      "client": "claude",
+      "type": "url",
+      "value": "https://claude.ai/directory/connectors/72480fb8-32ed-4075-b1c4-79e09c858b29"
+    },
+    {
+      "client": "chatgpt",
+      "type": "url",
+      "value": "https://chatgpt.com/plugins/miro?open_in_app"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude plugin install miro@claude-plugins-official"
+    },
+    {
+      "client": "cursor",
+      "type": "url",
+      "value": "https://cursor.com/marketplace/miro"
+    },
+    {
+      "client": "gemini",
+      "type": "command",
+      "value": "gemini extensions install https://github.com/miroapp/miro-ai"
+    },
+    {
+      "client": "vs-code",
+      "type": "url",
+      "value": "https://github.com/mcp/miroapp/mcp-server"
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.miro.com/"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "claude-code",
+    "cursor",
+    "vs-code",
+    "replit",
+    "lovable",
+    "Codex",
+    "Gemini CLI",
+    "GitHub Agents",
+    "Windsurf",
+    "Kiro",
+    "Amazon Q"
+  ],
+  "skills": [
+    "miro-code-explain-on-board",
+    "miro-code-review",
+    "miro-code-spec"
+  ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/miro",
+    "added": "2026-02",
+    "read_on": "2026-11-17"
+  },
+  "docs_url": "https://developers.miro.com/docs/miro-mcp",
+  "sources": [
+    {
+      "label": "Miro Developers — MCP Server FAQ",
+      "url": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions"
+    },
+    {
+      "label": "Miro Developers — Miro's MCP Server",
+      "url": "https://developers.miro.com/docs/miro-mcp"
+    },
+    {
+      "label": "Miro Developers — MCP tools",
+      "url": "https://developers.miro.com/docs/miro-mcp-tools"
+    },
+    {
+      "label": "Miro Developers — Connecting Miro MCP to AI coding tools",
+      "url": "https://developers.miro.com/docs/connecting-miro-mcp-to-ai-coding-tools"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/miro"
+    }
+  ]
+}

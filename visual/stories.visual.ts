@@ -15,6 +15,8 @@ for (const story of stories) for (const width of [390, 768, 1280]) for (const la
     await page.goto(`/iframe.html?id=${story.id}&viewMode=story&globals=lang:${lang};theme:${theme}`);
     await page.locator("#storybook-root > *").first().waitFor();
     await page.evaluate(() => document.fonts.ready);
+    // A lazy logo far below the fold (a long story at 390) would never load: ask for every image now.
+    await page.evaluate(() => document.querySelectorAll<HTMLImageElement>("img[loading=lazy]").forEach((img) => { img.loading = "eager"; }));
     // Visible logos only: a logo hidden at this width is lazy and never loads.
     await page.waitForFunction(() => [...document.images].filter((img) => img.checkVisibility()).every((img) => img.complete && img.naturalWidth > 0 && !img.hasAttribute("data-loading")));
     // A story that failed (a layout invariant, an a11y error) shows Storybook's error screen: never take that as a reference.

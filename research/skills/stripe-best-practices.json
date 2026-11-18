@@ -1,0 +1,45 @@
+{
+  "slug": "stripe-best-practices",
+  "name": "stripe-best-practices",
+  "publisher": "Stripe",
+  "official": true,
+  "host_tool": "stripe",
+  "server": "stripe-mcp",
+  "category": "finance",
+  "summary": {
+    "fr": "Guider les choix d'intégration : API, facturation, taxes, sécurité.",
+    "en": "Guide integration choices: API, billing, tax, security."
+  },
+  "agents": [
+    "claude-code",
+    "Codex",
+    "cursor",
+    "Grok",
+    "Kiro",
+    "OpenClaw"
+  ],
+  "install": [
+    {
+      "client": "any",
+      "type": "command",
+      "value": "npx skills add https://docs.stripe.com"
+    },
+    {
+      "client": "any",
+      "type": "command",
+      "value": "stripe agent setup"
+    }
+  ],
+  "requires": {
+    "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
+    "en": "A compatible coding agent; the Stripe MCP server for live account data."
+  },
+  "verified_on": "2026-11-16",
+  "docs_url": "https://docs.stripe.com/skills.md",
+  "sources": [
+    {
+      "label": "Stripe — skills",
+      "url": "https://docs.stripe.com/skills.md"
+    }
+  ]
+}

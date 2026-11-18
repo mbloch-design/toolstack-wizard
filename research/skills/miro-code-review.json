@@ -1,0 +1,38 @@
+{
+  "slug": "miro-code-review",
+  "name": "miro-code-review",
+  "publisher": "Miro",
+  "official": true,
+  "host_tool": "miro",
+  "server": "miro-mcp",
+  "category": "design-tools",
+  "summary": {
+    "fr": "Relire visuellement des changements de code sur un tableau.",
+    "en": "Review code changes visually on a board."
+  },
+  "agents": [
+    "claude-code",
+    "cursor",
+    "Codex",
+    "GitHub Copilot"
+  ],
+  "install": [
+    {
+      "client": "any",
+      "type": "command",
+      "value": "npx skills add miroapp/miro-ai"
+    }
+  ],
+  "requires": {
+    "fr": "Connexion au serveur MCP Miro.",
+    "en": "A connection to the Miro MCP server."
+  },
+  "verified_on": "2026-11-16",
+  "docs_url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md",
+  "sources": [
+    {
+      "label": "Miro — skills",
+      "url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md"
+    }
+  ]
+}

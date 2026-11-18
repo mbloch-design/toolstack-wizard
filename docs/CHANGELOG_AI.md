@@ -1,3 +1,16 @@
+## 2026-11-17 · Axe MCP · section agents S1 bis : accompagner, pas un annuaire (même branche, non poussée)
+
+- Contenu ToolTrim : demandes types, « utile si » et « moins utile si » sur les 19 fiches serveur, écrits depuis les outils documentés ; 8 besoins du hub (`research/agents/needs.json`), garde-fou testé (un besoin mène toujours à une fiche).
+- Hub `/agents` : besoins, « Avec votre stack », « Par où commencer », puis toute la liste. Fiches en chapitres (ce que ça change, notre avis, trois étapes par assistant, garder la main, technique repliée). Passerelle de la fiche outil : une demande, l'avis, « Brancher Notion à votre assistant ». Vocabulaire de surface sans jargon, « MCP » gardé dans les titres SEO.
+- Détail et choix à valider : `docs/ROADMAP.md`, « Fait — S1 bis » ; `docs/DESIGN_DECISIONS.md`, « À arbitrer ».
+
+## 2026-11-17 · Axe MCP · section agents S1 (branche `claude/distracted-grothendieck-64ebde`, non poussée)
+
+- Données : bloc `facts.agent` sur 20 fiches (dont `status`, `capabilities`, `setup`, `safeguards`), 19 fiches serveur `research/mcp/` (catalogue d'outils, installation recopiée de la doc éditeur, clients cités) et 60 skills officiels `research/skills/`, documentation éditeur consultée le 16/11. Projections `agentAccess` (tools_v4, index réduit) et `src/data/agents/*.json`, garde-fou `npm run guard:agent-access` en CI.
+- Interface : `src/ds/AgentSheet` (fiches serveur et skill), `src/ds/AgentAccess` (passerelle de la fiche outil), pages `/agents`, `/mcp`, `/skills` et leurs fiches FR/EN avec rendu serveur et sitemap ; `HostPage` ne sert plus la famille `mcp` ; entrée « Agents IA » dans la navigation.
+- Guide pilier FR/EN « MCP pour freelances non-développeurs ».
+- Manques et arbitrages : `docs/ROADMAP.md`, « Fait — S1 ». À valider par Michael ; références visuelles non posées.
+
 ## 2026-11-10 · Back-office · édition de la fiche sur une page
 
 - La fiche présente ses valeurs par section et ouvre les champs dans le bloc ou l’offre à modifier. Terminer applique les changements au brouillon et Annuler écarte uniquement les saisies du bloc.
@@ -6563,3 +6576,7 @@ Connexion GitHub réelle confirmée par le propriétaire ; import serveur du nom
 - Paramètres avancés montés à leur première ouverture, puis conservés. Avec 1 357 outils, le rendu initial passe de 9 906 à 1 696 options dans le test représentatif. Aucun contenu n’est modifié à l’ouverture.
 - Revue de récupération : reconnexion du même compte relançant la sauvegarde interrompue, retour à une liste utilisable si la lecture échoue après publication, et conservation des filtres/pages en annulant la revue globale. Régressions ciblées et contrôle TypeScript app vérifiés.
 - Validation : 81 tests ciblés, 11 parcours Chromium FR/EN à 390/1440 px, TypeScript app/node/API. Build complet et contrôle de saisie avec vocabulaire complet dans un navigateur laissés à la validation d’intégration ; aucune publication réelle, aucun push ni déploiement.
+
+## 2026-11-16 — Retrait de l’ancien audit de stack
+
+Le back-office n’affiche plus le diagnostic historique. Ses anciens liens ouvrent la vue d’ensemble. Les liens publics historiques redirigent vers Ma Stack. Les écrans, le moteur de l’ancien audit, les fonctions Supabase dédiées et leurs scripts de déploiement ou de recette ont été retirés du dépôt. Les migrations historiques sont conservées. Le retrait en production reste à faire. Après la mise en ligne du back-office, supprimer les cinq fonctions encore déployées sur le projet ToolTrim : `backoffice-diagnostic`, `generate-report`, `seed-diagnostic`, `send-backoffice-alerts` et `process-diagnostic-email-jobs`. Le webhook historique était déjà absent de l’inventaire distant.

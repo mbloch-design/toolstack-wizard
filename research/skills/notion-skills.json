@@ -1,0 +1,29 @@
+{
+  "slug": "notion-skills",
+  "name": "Notion Skills",
+  "publisher": "Notion",
+  "official": true,
+  "host_tool": "notion",
+  "server": "notion-mcp",
+  "category": "organization",
+  "summary": {
+    "fr": "Des pages d'instructions réutilisables, écrites et partagées dans Notion, que tout assistant connecté à Notion MCP peut suivre.",
+    "en": "Reusable instruction pages, written and shared in Notion, that any assistant connected to Notion MCP can follow."
+  },
+  "agents": [
+    "any"
+  ],
+  "install": [],
+  "requires": {
+    "fr": "Notion MCP connecté ; droit de modification pour transformer une page en Skill.",
+    "en": "Notion MCP connected; edit access to turn a page into a Skill."
+  },
+  "verified_on": "2026-11-16",
+  "docs_url": "https://developers.notion.com/guides/mcp/notion-skills",
+  "sources": [
+    {
+      "label": "Notion — skills",
+      "url": "https://developers.notion.com/guides/mcp/notion-skills"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Link } from "@/lib/routerLinks";
 import type { Tool } from "@/data/types";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
@@ -9,6 +10,18 @@ interface Props {
   prefix: string;
   lang: string;
   t: (fr: string, en: string) => string;
+  /** What follows « Les IA qui comptent ici » inside the same section: the agents gateway (step 2, 17/11). */
+  children?: ReactNode;
+}
+
+/** The angle the section is written from, or null: the page knows whether the section renders. */
+export function toolAiAngle(tool: Tool, lang: string) {
+  const ai = ((tool as any).aiAngle || (tool as any).seo?.aiAngle) as any;
+  if (!ai) return null;
+  const isFr = lang !== "en";
+  const augment = isFr ? ai.augmentFr : ai.augmentEn || ai.augmentFr;
+  const replace = isFr ? ai.replaceFr : ai.replaceEn || ai.replaceFr;
+  return augment || replace ? { ai, augment, replace } : null;
 }
 
 const STANCE: Record<string, { fr: string; en: string; tone: "pro" | "con" }> = {
@@ -17,16 +30,13 @@ const STANCE: Record<string, { fr: string; en: string; tone: "pro" | "con" }> = 
   menace: { fr: "L'IA le menace sérieusement", en: "AI seriously threatens it", tone: "con" },
 };
 
-export default function ToolAiBlock({ tool, allTools, prefix, lang, t }: Props) {
+export default function ToolAiBlock({ tool, allTools, prefix, lang, t, children }: Props) {
   // aiAngle lives either as a top-level field (future dedicated column) or
   // nested under seo.aiAngle (current pilot, no schema change).
-  const ai = ((tool as any).aiAngle || (tool as any).seo?.aiAngle) as any;
-  if (!ai) return null;
-
+  const angle = toolAiAngle(tool, lang);
+  if (!angle) return null;
+  const { ai, augment, replace } = angle;
   const isFr = lang !== "en";
-  const augment = isFr ? ai.augmentFr : ai.augmentEn || ai.augmentFr;
-  const replace = isFr ? ai.replaceFr : ai.replaceEn || ai.replaceFr;
-  if (!augment && !replace) return null;
 
   const stance = STANCE[ai.stance];
   const aiTools = Array.isArray(ai.aiTools)
@@ -74,6 +84,7 @@ export default function ToolAiBlock({ tool, allTools, prefix, lang, t }: Props) 
           </div>
         </div>
       )}
+      {children}
     </section>
   );
 }

@@ -1,0 +1,590 @@
+{
+  "slug": "clickup-mcp",
+  "name": "ClickUp MCP Server",
+  "publisher": "ClickUp",
+  "official": true,
+  "host_tool": "clickup",
+  "category": "project-management",
+  "summary": {
+    "fr": "Le serveur officiel de ClickUp permet à votre assistant de gérer tâches, documents, commentaires, temps passé et messages, en votre nom et avec vos droits. Il peut mettre une tâche à la corbeille et envoyer des messages de chat ; les appels sont plafonnés selon le forfait.",
+    "en": "ClickUp's official server lets your assistant manage tasks, docs, comments, time and messages, as you and with your rights. It can send a task to Trash and post chat messages; calls are capped by plan."
+  },
+  "card": {
+    "fr": "Suivre vos tâches, vos documents et votre temps passé.",
+    "en": "Follow your tasks, documents and time spent."
+  },
+  "examples": [
+    {
+      "fr": "Quelles tâches sont en retard sur le projet Refonte ?",
+      "en": "Which tasks are late on the Redesign project?"
+    },
+    {
+      "fr": "Crée une tâche « Envoyer le devis » pour vendredi dans ma liste Clients.",
+      "en": "Create a task \"Send the quote\" for Friday in my Clients list."
+    },
+    {
+      "fr": "Combien de temps ai-je passé sur ce client ce mois-ci ?",
+      "en": "How much time did I spend on this client this month?"
+    }
+  ],
+  "for": {
+    "fr": "Vous suivez vos projets et votre temps dans ClickUp.",
+    "en": "You track your projects and time in ClickUp."
+  },
+  "not_for": {
+    "fr": "Votre espace est partagé et vous ne voulez aucun message en votre nom : l'assistant peut écrire dans le chat ClickUp.",
+    "en": "Your workspace is shared and you want no message sent in your name: the assistant can write in ClickUp chat."
+  },
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits ClickUp.",
+      "en": "Works on every ClickUp plan."
+    },
+    "advanced": {
+      "fr": "Le nombre de demandes par jour dépend du forfait : 100 sur Free Forever, 300 sur Unlimited, 1 000 sur Business.",
+      "en": "The number of requests per day depends on the plan: 100 on Free Forever, 300 on Unlimited, 1,000 on Business."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Quelles tâches me sont assignées cette semaine ?",
+        "en": "Which tasks are assigned to me this week?"
+      },
+      {
+        "fr": "Qui sont les membres de mon espace de travail ?",
+        "en": "Who are the members of my workspace?"
+      },
+      {
+        "fr": "Combien de temps ai-je suivi aujourd'hui ?",
+        "en": "How much time did I track today?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Crée une tâche « Test ToolTrim » dans une liste de test.",
+        "en": "Create a task “ToolTrim test” in a test list."
+      },
+      "check": {
+        "fr": "Elle apparaît dans la liste ; supprimez-la ensuite.",
+        "en": "It appears in the list; delete it afterwards."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Une fois la limite du jour atteinte, il répond « RATE_LIMIT_EXCEEDED » ; elle ne se réinitialise pas, il faut attendre.",
+      "en": "Once the daily limit is reached, it answers “RATE_LIMIT_EXCEEDED”; it cannot be reset, you have to wait."
+    }
+  ],
+  "verified_on": "2026-11-16",
+  "transport": "remote",
+  "auth": [
+    "oauth"
+  ],
+  "access": "read_write",
+  "plan": "all",
+  "plan_note": {
+    "fr": "Tous les forfaits, y compris Free Forever, avec un plafond d'appels par 24 h : 100 sur Free Forever, jusqu'à 5 000 sur Enterprise.",
+    "en": "Every plan, including Free Forever, with a 24-hour call cap: 100 on Free Forever, up to 5,000 on Enterprise."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire tâches, documents, commentaires, temps passé et messages",
+      "en": "Read tasks, docs, comments, time entries and messages"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier tâches, documents, commentaires et temps passé",
+      "en": "Create and edit tasks, docs, comments and time entries"
+    },
+    {
+      "kind": "delete",
+      "fr": "Mettre une tâche à la corbeille, supprimer un commentaire",
+      "en": "Send a task to Trash, delete a comment"
+    },
+    {
+      "kind": "send",
+      "fr": "Envoyer des messages de chat en votre nom",
+      "en": "Send chat messages as you"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "url"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "plugin"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [],
+  "tools": [
+    {
+      "name": "clickup_create_task",
+      "kind": "write",
+      "fr": "Créer une tâche (assignés prévenus)",
+      "en": "Create a task; assignees are notified"
+    },
+    {
+      "name": "clickup_get_task",
+      "kind": "read",
+      "fr": "Lire une tâche",
+      "en": "Read a task"
+    },
+    {
+      "name": "clickup_update_task",
+      "kind": "write",
+      "fr": "Modifier une tâche",
+      "en": "Update a task's fields"
+    },
+    {
+      "name": "clickup_delete_task",
+      "kind": "delete",
+      "fr": "Mettre une tâche à la corbeille",
+      "en": "Send a task and subtasks to Trash"
+    },
+    {
+      "name": "clickup_filter_tasks",
+      "kind": "read",
+      "fr": "Filtrer des tâches",
+      "en": "Filter tasks"
+    },
+    {
+      "name": "clickup_move_task",
+      "kind": "write",
+      "fr": "Déplacer une tâche",
+      "en": "Move a task to another list"
+    },
+    {
+      "name": "clickup_add_task_to_list",
+      "kind": "write",
+      "fr": "Ajouter une tâche à une liste",
+      "en": "Add a task to another list"
+    },
+    {
+      "name": "clickup_remove_task_from_list",
+      "kind": "write",
+      "fr": "Retirer une tâche d'une liste",
+      "en": "Remove a task from an extra list"
+    },
+    {
+      "name": "clickup_merge_tasks",
+      "kind": "delete",
+      "fr": "Fusionner des tâches, sans retour",
+      "en": "Merge tasks; sources are consumed, no undo"
+    },
+    {
+      "name": "clickup_add_task_dependency",
+      "kind": "write",
+      "fr": "Ajouter une dépendance",
+      "en": "Add a dependency"
+    },
+    {
+      "name": "clickup_remove_task_dependency",
+      "kind": "write",
+      "fr": "Retirer une dépendance",
+      "en": "Remove a dependency"
+    },
+    {
+      "name": "clickup_add_task_link",
+      "kind": "write",
+      "fr": "Lier deux tâches",
+      "en": "Link two tasks"
+    },
+    {
+      "name": "clickup_remove_task_link",
+      "kind": "write",
+      "fr": "Délier deux tâches",
+      "en": "Unlink two tasks"
+    },
+    {
+      "name": "clickup_create_space_tag",
+      "kind": "write",
+      "fr": "Créer une étiquette",
+      "en": "Create a space tag"
+    },
+    {
+      "name": "clickup_add_tag_to_task",
+      "kind": "write",
+      "fr": "Étiqueter une tâche",
+      "en": "Tag a task"
+    },
+    {
+      "name": "clickup_remove_tag_from_task",
+      "kind": "write",
+      "fr": "Retirer une étiquette",
+      "en": "Untag a task"
+    },
+    {
+      "name": "clickup_get_custom_fields",
+      "kind": "read",
+      "fr": "Lire les champs personnalisés",
+      "en": "Read custom field definitions"
+    },
+    {
+      "name": "clickup_start_time_tracking",
+      "kind": "write",
+      "fr": "Démarrer un chronomètre",
+      "en": "Start a timer"
+    },
+    {
+      "name": "clickup_stop_time_tracking",
+      "kind": "write",
+      "fr": "Arrêter le chronomètre",
+      "en": "Stop the timer"
+    },
+    {
+      "name": "clickup_add_time_entry",
+      "kind": "write",
+      "fr": "Saisir du temps",
+      "en": "Log time on a task"
+    },
+    {
+      "name": "clickup_get_current_time_entry",
+      "kind": "read",
+      "fr": "Lire le chronomètre en cours",
+      "en": "Read the running timer"
+    },
+    {
+      "name": "clickup_get_time_entries",
+      "kind": "read",
+      "fr": "Lire les temps saisis",
+      "en": "Read time entries"
+    },
+    {
+      "name": "clickup_get_task_time_in_status",
+      "kind": "read",
+      "fr": "Lire le temps par statut",
+      "en": "Read time spent per status"
+    },
+    {
+      "name": "clickup_get_bulk_tasks_time_in_status",
+      "kind": "read",
+      "fr": "Lire le temps par statut (lot)",
+      "en": "Read time per status for many tasks"
+    },
+    {
+      "name": "clickup_attach_task_file",
+      "kind": "write",
+      "fr": "Joindre un fichier",
+      "en": "Attach a file to a task"
+    },
+    {
+      "name": "clickup_request_attachment_upload",
+      "kind": "write",
+      "fr": "Préparer l'envoi d'un gros fichier",
+      "en": "Prepare a large file upload"
+    },
+    {
+      "name": "clickup_download_task_attachment",
+      "kind": "read",
+      "fr": "Télécharger une pièce jointe",
+      "en": "Get an attachment's download link"
+    },
+    {
+      "name": "clickup_create_comment",
+      "kind": "write",
+      "fr": "Commenter en votre nom",
+      "en": "Post a comment as you"
+    },
+    {
+      "name": "clickup_create_task_comment",
+      "kind": "write",
+      "fr": "Commenter une tâche (ancien nom)",
+      "en": "Post a task comment (legacy)"
+    },
+    {
+      "name": "clickup_get_task_comments",
+      "kind": "read",
+      "fr": "Lire les commentaires",
+      "en": "Read a task's comments"
+    },
+    {
+      "name": "clickup_get_threaded_comments",
+      "kind": "read",
+      "fr": "Lire les réponses",
+      "en": "Read comment replies"
+    },
+    {
+      "name": "clickup_update_comment",
+      "kind": "write",
+      "fr": "Modifier ou clore un commentaire",
+      "en": "Edit or resolve a comment"
+    },
+    {
+      "name": "clickup_delete_comment",
+      "kind": "delete",
+      "fr": "Supprimer un commentaire",
+      "en": "Delete a comment"
+    },
+    {
+      "name": "clickup_create_document",
+      "kind": "write",
+      "fr": "Créer un document",
+      "en": "Create a Doc"
+    },
+    {
+      "name": "clickup_list_document_pages",
+      "kind": "read",
+      "fr": "Lister les pages d'un document",
+      "en": "List a Doc's pages"
+    },
+    {
+      "name": "clickup_get_document_pages",
+      "kind": "read",
+      "fr": "Lire des pages de document",
+      "en": "Read Doc pages"
+    },
+    {
+      "name": "clickup_create_document_page",
+      "kind": "write",
+      "fr": "Ajouter une page",
+      "en": "Add a Doc page"
+    },
+    {
+      "name": "clickup_update_document_page",
+      "kind": "write",
+      "fr": "Modifier une page",
+      "en": "Replace or append page content"
+    },
+    {
+      "name": "clickup_list_document_page_attachments",
+      "kind": "read",
+      "fr": "Lister les fichiers d'une page",
+      "en": "List a page's files"
+    },
+    {
+      "name": "clickup_download_document_page_attachment",
+      "kind": "read",
+      "fr": "Télécharger un fichier de page",
+      "en": "Download a page's file"
+    },
+    {
+      "name": "clickup_get_chat_channels",
+      "kind": "read",
+      "fr": "Lister les canaux",
+      "en": "List chat channels"
+    },
+    {
+      "name": "clickup_get_chat_channel_messages",
+      "kind": "read",
+      "fr": "Lire les messages",
+      "en": "Read channel messages"
+    },
+    {
+      "name": "clickup_get_chat_message_replies",
+      "kind": "read",
+      "fr": "Lire les réponses",
+      "en": "Read message replies"
+    },
+    {
+      "name": "clickup_send_chat_message",
+      "kind": "send",
+      "fr": "Envoyer un message en votre nom",
+      "en": "Send a chat message as you"
+    },
+    {
+      "name": "clickup_update_chat_message",
+      "kind": "write",
+      "fr": "Modifier un message",
+      "en": "Edit a chat message"
+    },
+    {
+      "name": "clickup_react_to_chat_message",
+      "kind": "write",
+      "fr": "Réagir à un message",
+      "en": "React to a message"
+    },
+    {
+      "name": "clickup_get_list",
+      "kind": "read",
+      "fr": "Lire une liste",
+      "en": "Read a list"
+    },
+    {
+      "name": "clickup_create_list",
+      "kind": "write",
+      "fr": "Créer une liste",
+      "en": "Create a list in a space"
+    },
+    {
+      "name": "clickup_create_list_in_folder",
+      "kind": "write",
+      "fr": "Créer une liste dans un dossier",
+      "en": "Create a list in a folder"
+    },
+    {
+      "name": "clickup_update_list",
+      "kind": "write",
+      "fr": "Modifier une liste",
+      "en": "Update a list"
+    },
+    {
+      "name": "clickup_get_folder",
+      "kind": "read",
+      "fr": "Lire un dossier",
+      "en": "Read a folder"
+    },
+    {
+      "name": "clickup_create_folder",
+      "kind": "write",
+      "fr": "Créer un dossier",
+      "en": "Create a folder"
+    },
+    {
+      "name": "clickup_update_folder",
+      "kind": "write",
+      "fr": "Modifier un dossier",
+      "en": "Update a folder"
+    },
+    {
+      "name": "clickup_create_reminder",
+      "kind": "write",
+      "fr": "Créer un rappel",
+      "en": "Create a reminder"
+    },
+    {
+      "name": "clickup_update_reminder",
+      "kind": "write",
+      "fr": "Modifier un rappel",
+      "en": "Edit or complete a reminder"
+    },
+    {
+      "name": "clickup_search_reminders",
+      "kind": "read",
+      "fr": "Lister vos rappels",
+      "en": "List your reminders"
+    },
+    {
+      "name": "clickup_get_workspace_hierarchy",
+      "kind": "read",
+      "fr": "Lister l'arborescence",
+      "en": "List spaces, folders and lists"
+    },
+    {
+      "name": "clickup_get_workspace_members",
+      "kind": "read",
+      "fr": "Lister les membres",
+      "en": "List members"
+    },
+    {
+      "name": "clickup_find_member_by_name",
+      "kind": "read",
+      "fr": "Trouver un membre",
+      "en": "Find a member"
+    },
+    {
+      "name": "clickup_resolve_assignees",
+      "kind": "read",
+      "fr": "Identifier des assignés",
+      "en": "Turn names into user IDs"
+    },
+    {
+      "name": "clickup_get_user",
+      "kind": "read",
+      "fr": "Lire l'utilisateur connecté",
+      "en": "Read the signed-in user"
+    },
+    {
+      "name": "clickup_search",
+      "kind": "read",
+      "fr": "Chercher dans l'espace",
+      "en": "Search tasks, docs and chats"
+    },
+    {
+      "name": "clickup_get_operators",
+      "kind": "read",
+      "fr": "Lister les opérations groupées",
+      "en": "List allowed bulk operations"
+    },
+    {
+      "name": "clickup_get_schema",
+      "kind": "read",
+      "fr": "Décrire les objets",
+      "en": "Describe how objects relate"
+    },
+    {
+      "name": "clickup_execute_operator",
+      "kind": "write",
+      "fr": "Lancer une opération groupée",
+      "en": "Run a bulk operation as you"
+    }
+  ],
+  "install": [
+    {
+      "client": "claude",
+      "type": "url",
+      "value": "https://mcp.clickup.com/mcp"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add --transport http clickup https://mcp.clickup.com/mcp"
+    },
+    {
+      "client": "cursor",
+      "type": "url",
+      "value": "https://cursor.com/marketplace/clickup"
+    },
+    {
+      "client": "vs-code",
+      "type": "command",
+      "value": "code --add-mcp '{\"type\":\"http\",\"name\":\"clickup\",\"url\":\"https://mcp.clickup.com/mcp\"}'"
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://mcp.clickup.com/mcp"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "claude-code",
+    "cursor",
+    "vs-code",
+    "devin",
+    "antigravity",
+    "Windsurf",
+    "Copilot Studio"
+  ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/clickup",
+    "added": "2026-01",
+    "read_on": "2026-11-17"
+  },
+  "docs_url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server-1",
+  "sources": [
+    {
+      "label": "ClickUp Help — What is ClickUp MCP?",
+      "url": "https://help.clickup.com/hc/en-us/articles/33335772678423-What-is-ClickUp-MCP"
+    },
+    {
+      "label": "ClickUp Developer — ClickUp's MCP Server",
+      "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+    },
+    {
+      "label": "ClickUp Developer — MCP tools",
+      "url": "https://developer.clickup.com/docs/mcp-tools"
+    },
+    {
+      "label": "ClickUp Developer — Connect an AI assistant",
+      "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server-1"
+    },
+    {
+      "label": "ClickUp Developer — MCP tools",
+      "url": "https://developer.clickup.com/docs/mcp-tools"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/clickup"
+    }
+  ]
+}

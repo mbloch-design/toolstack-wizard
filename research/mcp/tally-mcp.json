@@ -1,0 +1,209 @@
+{
+  "slug": "tally-mcp",
+  "name": "Tally MCP server",
+  "publisher": "Tally",
+  "official": true,
+  "host_tool": "tally",
+  "category": "communication",
+  "summary": {
+    "fr": "Le serveur officiel de Tally, en bêta, permet à votre assistant de créer un formulaire à partir d'une description, de le modifier, de le publier et de lire les réponses. Il ne peut supprimer ni formulaire ni réponse, et il est gratuit sur tous les forfaits.",
+    "en": "Tally's official server, in beta, lets your assistant create a form from a description, edit it, publish it and read submissions. It cannot delete forms or submissions, and it is free on every plan."
+  },
+  "card": {
+    "fr": "Créer un formulaire en une phrase et lire ses réponses.",
+    "en": "Create a form in one sentence and read its answers."
+  },
+  "examples": [
+    {
+      "fr": "Crée un formulaire de demande de devis : nom, e-mail, budget et délai.",
+      "en": "Create a quote request form: name, email, budget and deadline."
+    },
+    {
+      "fr": "Résume les réponses à mon formulaire de satisfaction.",
+      "en": "Summarise the answers to my satisfaction form."
+    }
+  ],
+  "for": {
+    "fr": "Vous recueillez demandes, inscriptions ou avis avec Tally.",
+    "en": "You collect requests, sign-ups or feedback with Tally."
+  },
+  "not_for": {
+    "fr": "Vos formulaires sont critiques pour votre activité : le serveur est encore en bêta.",
+    "en": "Your forms are critical to your business: the server is still in beta."
+  },
+  "control": [
+    {
+      "title": {
+        "fr": "Aucune suppression",
+        "en": "No deleting"
+      },
+      "icon": "limit",
+      "fr": "Il ne peut supprimer ni un formulaire ni une réponse.",
+      "en": "It cannot delete a form or a response."
+    },
+    {
+      "title": {
+        "fr": "Brouillon jusqu'à votre accord",
+        "en": "Draft until you say so"
+      },
+      "icon": "confirm",
+      "fr": "Un nouveau formulaire reste un brouillon privé tant que vous ne demandez pas de le publier.",
+      "en": "A new form stays a private draft until you ask to publish it."
+    },
+    {
+      "title": {
+        "fr": "Vos réponses, sur demande",
+        "en": "Your responses, on request"
+      },
+      "icon": "read",
+      "fr": "Il ne lit vos réponses que si vous le demandez.",
+      "en": "It only reads your responses when you ask."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits Tally, y compris le gratuit.",
+      "en": "Works on every Tally plan, free included."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Liste mes formulaires Tally.",
+        "en": "List my Tally forms."
+      },
+      {
+        "fr": "Combien de réponses a reçu mon dernier formulaire ?",
+        "en": "How many responses did my latest form get?"
+      },
+      {
+        "fr": "Résume les réponses de mon formulaire de contact.",
+        "en": "Summarise the responses to my contact form."
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Crée un formulaire de test avec un champ e-mail.",
+        "en": "Create a test form with an email field."
+      },
+      "check": {
+        "fr": "Il apparaît en brouillon privé dans Tally ; supprimez-le ensuite.",
+        "en": "It appears as a private draft in Tally; delete it afterwards."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Dans Claude Desktop, redémarrez l'application après l'ajout.",
+      "en": "In Claude Desktop, restart the app after adding it."
+    }
+  ],
+  "verified_on": "2026-11-16",
+  "status": "beta",
+  "transport": "remote",
+  "auth": [
+    "oauth",
+    "key"
+  ],
+  "access": "read_write",
+  "plan": "all",
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire vos formulaires et leurs réponses",
+      "en": "Read your forms and their submissions"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer un formulaire à partir d'une description, modifier un formulaire",
+      "en": "Create a form from a description, edit a form"
+    },
+    {
+      "kind": "send",
+      "fr": "Publier un formulaire pour le partager",
+      "en": "Publish a form to share it"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "plugin"
+    },
+    {
+      "assistant": "other",
+      "how": "url"
+    }
+  ],
+  "safeguards": [
+    "no_delete"
+  ],
+  "tools_note": {
+    "fr": "Tally décrit ce que fait le serveur (créer, modifier, publier un formulaire ; lister les formulaires ; lire les réponses) sans nommer ses outils.",
+    "en": "Tally describes what the server does (create, edit, publish a form; list forms; read submissions) without naming its tools."
+  },
+  "install": [
+    {
+      "client": "claude",
+      "type": "steps",
+      "value": "Claude > Customize → Connectors → Browse connectors; search 'Tally'; click Connect"
+    },
+    {
+      "client": "claude-code",
+      "type": "command",
+      "value": "claude mcp add tally --transport http https://api.tally.so/mcp"
+    },
+    {
+      "client": "cursor",
+      "type": "config",
+      "value": "{\"mcpServers\": {\"tally\": {\"url\": \"https://api.tally.so/mcp\", \"headers\": {\"Authorization\": \"Bearer YOUR_API_KEY_HERE\"}}}}"
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://api.tally.so/mcp"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "claude-code",
+    "cursor",
+    "Grok",
+    "Windsurf",
+    "Zed",
+    "Cline",
+    "Continue"
+  ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/tally",
+    "added": "2026-07",
+    "read_on": "2026-11-17"
+  },
+  "docs_url": "https://developers.tally.so/api-reference/mcp",
+  "sources": [
+    {
+      "label": "Tally Developer Docs — MCP server",
+      "url": "https://developers.tally.so/api-reference/mcp"
+    },
+    {
+      "label": "Tally Help — Tally MCP Server",
+      "url": "https://tally.so/help/mcp"
+    },
+    {
+      "label": "Tally Help — Claude connector",
+      "url": "https://tally.so/help/claude-connector"
+    },
+    {
+      "label": "Tally Help — ChatGPT",
+      "url": "https://tally.so/help/chatgpt-integration"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/tally"
+    }
+  ]
+}

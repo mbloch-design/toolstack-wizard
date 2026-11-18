@@ -21,7 +21,65 @@
       "Maia by Make : construction conversationnelle d'agents IA",
       "Make MCP Server pour intégration business actions sécurisée",
       "400,000+ organisations dans 200+ pays"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Make Help Center — Make MCP server",
+          "url": "https://help.make.com/make-mcp-server"
+        },
+        {
+          "label": "Make Developers — MCP server",
+          "url": "https://developers.make.com/mcp-server/"
+        },
+        {
+          "label": "Make Developers — Usage with Claude",
+          "url": "https://developers.make.com/mcp-server/connect-using-oauth/usage-with-claude"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Make MCP server",
+          "transport": "remote",
+          "auth": [
+            "oauth",
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "plan_note": "Lancer des scénarios : tous les forfaits. Modifier les scénarios (portées de gestion) : forfaits payants.",
+          "plan_note_en": "Running scenarios: every plan. Editing scenarios (management scopes): paid plans.",
+          "docs_url": "https://help.make.com/make-mcp-server"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Consulter scénarios, équipes, connexions, webhooks et data stores",
+          "en": "View scenarios, teams, connections, webhooks and data stores"
+        },
+        {
+          "kind": "write",
+          "fr": "Lancer vos scénarios actifs ; modifier scénarios et data stores, inviter des membres (forfaits payants)",
+          "en": "Run your active scenarios; edit scenarios and data stores, invite members (paid plans)"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "scoped_keys"
+      ]
+    }
   },
   "fr": {
     "verdict": {

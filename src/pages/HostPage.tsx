@@ -12,7 +12,7 @@ import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
  * Page hôte : liste ce qui se rattache à un outil du catalogue.
  *
  * Une seule mécanique pour trois familles de route, le préfixe est dérivé de
- * form_factor : /plugins/<hôte>, /libraries/<hôte>, /mcp/<hôte>.
+ * form_factor : /plugins/<hôte>, /libraries/<hôte> (les serveurs MCP ont leur section depuis le 16/11/2026).
  *
  * Règle d'existence (voir scripts/repass/SPEC.md) : la page n'existe que si
  * elle a de quoi la remplir. En dessous du seuil, on renvoie vers la fiche de
@@ -22,7 +22,8 @@ import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 
 export const HOST_PAGE_MIN = 3;
 
-type Famille = "plugin" | "library" | "mcp";
+// La famille « mcp » a quitté cette mécanique le 16/11/2026 : les serveurs MCP ont leur section (/mcp, AgentsIndexPage).
+type Famille = "plugin" | "library";
 
 const FAMILLES: Record<string, { forme: Famille; titreFr: string; titreEn: string; introFr: string; introEn: string }> = {
   plugins: {
@@ -38,13 +39,6 @@ const FAMILLES: Record<string, { forme: Famille; titreFr: string; titreEn: strin
     titreEn: "Libraries for",
     introFr: "Les bibliothèques que l'on importe dans un projet",
     introEn: "Libraries you import into a",
-  },
-  mcp: {
-    forme: "mcp",
-    titreFr: "Serveurs MCP pour",
-    titreEn: "MCP servers for",
-    introFr: "Les serveurs MCP qui exposent",
-    introEn: "MCP servers exposing",
   },
 };
 

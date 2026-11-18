@@ -1,0 +1,46 @@
+{
+  "slug": "figma-generate-design",
+  "name": "figma-generate-design",
+  "publisher": "Figma",
+  "official": true,
+  "host_tool": "figma",
+  "server": "figma-mcp",
+  "category": "design-tools",
+  "summary": {
+    "fr": "Composer des écrans complets avec les composants de votre design system.",
+    "en": "Compose full screens from your design system's components."
+  },
+  "agents": [
+    "claude-code",
+    "Codex",
+    "cursor"
+  ],
+  "install": [
+    {
+      "client": "any",
+      "type": "steps",
+      "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+    },
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://github.com/figma/mcp-server-guide/archive/refs/heads/main.zip"
+    }
+  ],
+  "requires": {
+    "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
+    "en": "Figma remote server; edit access to the file to write."
+  },
+  "verified_on": "2026-11-16",
+  "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
+  "sources": [
+    {
+      "label": "Figma — skills",
+      "url": "https://help.figma.com/hc/en-us/articles/39166810751895"
+    },
+    {
+      "label": "Figma — repository",
+      "url": "https://github.com/figma/mcp-server-guide"
+    }
+  ]
+}

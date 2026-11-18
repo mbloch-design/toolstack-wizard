@@ -1864,5 +1864,85 @@
         "answer": "Both are all-in-one hosted platforms built for a solo person with no technical skills. Wix starts at $17.77/month and adds CRM and email marketing in the same interface; Squarespace starts at $19/month and is worth it when the platform replaces several tools you currently manage separately (site, hosting, store)."
       }
     ]
+  },
+  {
+    "slug": "mcp-for-non-developer-freelancers",
+    "title": "MCP for non-developer freelancers: what it actually changes",
+    "excerpt": "Connecting your AI assistant to Notion, Canva or Calendly: what it can do there, deletion included, and the checks to run first.",
+    "date": "2026-11-16",
+    "category": "Practical guides",
+    "toolId": null,
+    "readTime": "6 min",
+    "tags": [
+      "mcp",
+      "ai assistant",
+      "freelance",
+      "notion",
+      "canva",
+      "calendly",
+      "automation",
+      "2026"
+    ],
+    "content": "# MCP for non-developer freelancers: what it actually changes\n\nYou have probably seen the letters MCP next to Claude, ChatGPT or Gemini. The idea behind them is simple: let your AI assistant work directly in your tools, instead of copying and pasting between two windows.\n\nFor a freelancer who does not code, the question is not technical. It comes down to two points: what will the assistant be able to do in my account, and what should I check before connecting it?\n\n## MCP in one sentence\n\nThe Model Context Protocol is a standard way to connect an AI assistant to a piece of software. The vendor publishes an \"MCP server\"; your assistant connects to it, with your consent, and can then read your data and, in some cases, act on it.\n\nIn practice, instead of exporting a Notion database to paste it into a chat, you ask the assistant to read it. Instead of copying its answer into a Canva design, you ask it to prepare the design.\n\n## What an assistant can do in your tools\n\nIt all depends on what the vendor exposes. Three levels come up:\n\n- **documentation only**: the assistant knows the tool better, but does not touch your account;\n- **read**: it looks at your data (pages, bookings, statistics) to answer or summarise;\n- **read and write**: it creates, edits or tidies up for you.\n\nIn every case, the assistant never has more rights than your account. If you cannot edit a page, neither can it.\n\n## Before connecting: four checks\n\n**1. What it can do.** This is the point that matters. An assistant that reads can only get its answer wrong; an assistant that writes can get your data wrong. Look for three verbs above all: delete, send (a message, a post) and pay. Stripe lets the assistant move money, with a confirmation; Calendly lets it cancel your meetings.\n\n**Then the safeguards.** Some vendors document a confirmation before acting (HubSpot, Stripe), admin controls or access limited to part of the account (Airtable, Webflow). Others document none: that is information too.\n\n**2. The plan.** Many servers are open on every plan, but with caps. At Figma, the free plan and seats without editing rights are limited to 20 calls a month. At ClickUp, Free Forever caps at 100 calls per 24 hours. At Zapier, each successful call uses two tasks from your plan.\n\n**3. The official server.** A server published by a third party does not commit the vendor. ToolTrim only lists official servers, documented by the vendor itself.\n\n**4. The setup.** Most servers are \"remote\": nothing to install, you sign in to your account as with any app. A few run on your computer and need a real technical setup: that is the case for the Google Analytics server.\n\n## Three examples from our tool pages\n\n### Notion: the most complete\n\nNotion offers an official remote server, on every plan, that you plug in with one click from Claude, ChatGPT or Gemini. The assistant can search and read your pages and databases, create and edit them, and also delete pages, databases and comments. Notion documents admin controls for the workspace.\n\nTwo caveats: browserless sign-in (MCP tokens), search across connected sources and unlimited queries are reserved for the Business and Enterprise plans; and workspace guests cannot connect. If you work in a client's workspace as a guest, the assistant will not reach it.\n\n[See the Notion MCP server sheet →](/en/mcp/notion-mcp)\n\n### Canva: open on the free plan, with limits\n\nCanva's official connector is remote and open to every account, Canva Free included. The assistant can search your designs, create one from a description, edit, upload files and comment; the published tool list includes no deletion. Brand templates, brand kits, autofill and resizing stay on paid plans.\n\nTwo things to keep in mind: Canva restricts its connector to a list of assistants (ChatGPT, Claude, Gemini, Cursor, Lovable, Make, Perplexity, Grok), and on a team, the admin must allow it before you can use it.\n\n[See the Canva connector sheet →](/en/mcp/canva-mcp)\n\n### Calendly: simple, but no documented safeguard\n\nCalendly publishes an official remote server, on every plan, that you plug in with one click from Claude or ChatGPT. The assistant can find your open slots, book a meeting, update your availability… and cancel a meeting.\n\nCalendly documents no confirmation before these actions. A meeting cancelled by mistake shows up on your client's side before it shows up on yours: keep approval in your assistant.\n\n[See the Calendly server sheet →](/en/mcp/calendly-mcp)\n\n## Every server, in the same format\n\nThe [AI agents](/en/agents) section gathers the official MCP servers and skills of the tools ToolTrim follows. Each sheet says what the assistant can do, riskiest first, how to plug it in, the plan and safeguards, the tools the vendor documents and when it was checked.\n\n## And when there is no server?\n\nSome tools do not have one yet. As of 16 November 2026, Hotjar and Milanote have no official MCP server; our tool pages say so too, with the date it was checked. In that case, classic automations (Zapier, Make) remain the simplest way to move your data around.\n\n## Our verdict\n\nMCP does not change your stack: it changes what your assistant can do with it. Before connecting a tool, check four things on its ToolTrim page: what the assistant can do there (above all delete, send, pay), the safeguards, the plan, and when those facts were checked.\n\nStart with a tool where the assistant reads, then open up writing where a mistake is easy to fix. Notion and Calendly lend themselves to it; keep invoicing and payment tools for later.\n\n[Browse the official MCP servers →](/en/mcp)\n\n*These facts come from the vendors' documentation, checked on 16 November 2026. MCP servers change fast: check the current terms before connecting your data.*",
+    "faq": [
+      {
+        "question": "Do I need to code to use an MCP server?",
+        "answer": "Not in most cases. Remote servers (Notion, Canva, Calendly…) connect from your assistant by signing in to your account, with nothing to install. Servers that run on your computer, like the Google Analytics one, need a technical setup."
+      },
+      {
+        "question": "Can a connected assistant change my data?",
+        "answer": "Yes, if the vendor exposes it. Notion and Calendly also allow deleting or cancelling, Stripe moving money (with confirmation). The assistant never goes beyond your account's rights; start with requests you review before approving."
+      },
+      {
+        "question": "Is MCP free?",
+        "answer": "Often open on every plan, but with caps: 20 calls a month on Figma's free plan, 100 calls per 24 hours on ClickUp's Free Forever, two tasks used per call at Zapier. Ahrefs reserves it for paid plans."
+      },
+      {
+        "question": "How do I know whether a tool has an official MCP server?",
+        "answer": "On the ToolTrim pages of the pilot, an \"AI assistant\" block says so, with the date it was checked and a link to the vendor's documentation. When there is none, the page says that too."
+      }
+    ],
+    "seo": {
+      "metaTitle": "MCP for non-developer freelancers: the guide",
+      "metaDescription": "What an MCP server lets your AI assistant do in Notion, Canva or Calendly, and what to check before connecting it: write access, plan, setup.",
+      "schema": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I need to code to use an MCP server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not in most cases. Remote servers (Notion, Canva, Calendly…) connect from your assistant by signing in to your account, with nothing to install. Servers that run on your computer, like the Google Analytics one, need a technical setup."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a connected assistant change my data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, if the vendor exposes it. Notion and Calendly also allow deleting or cancelling, Stripe moving money (with confirmation). The assistant never goes beyond your account's rights; start with requests you review before approving."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is MCP free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Often open on every plan, but with caps: 20 calls a month on Figma's free plan, 100 calls per 24 hours on ClickUp's Free Forever, two tasks used per call at Zapier. Ahrefs reserves it for paid plans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I know whether a tool has an official MCP server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "On the ToolTrim pages of the pilot, an \"AI assistant\" block says so, with the date it was checked and a link to the vendor's documentation. When there is none, the page says that too."
+            }
+          }
+        ]
+      }
+    }
   }
 ]

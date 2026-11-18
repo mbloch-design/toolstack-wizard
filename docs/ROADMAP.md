@@ -39,7 +39,7 @@ Ce tableau pilote la suite ; les bilans et tableaux datés du 9 octobre plus bas
 | R10 — Chaîne de build | Remédiation publiée (`ffbb3f7ac7`, CI/Vercel et recette publique réussis) : Tailwind 4.3.3, plugins obsolètes retirés, tests alignés sur le plugin React actif et fusionneur de classes compatible. Audit npm **9 → 0** ; build Node 20 et budgets validés, cascade et tokens conservés. [Bilan et preuves](R10_R11_CLOTURE_2026-10-15.md). |
 | R11 — SEO/GEO et médias | Correctifs techniques publiés (`ffbb3f7ac7`, CI/Vercel et recette publique réussis) : descriptions/LLM, 62 références corrigées sur 54 outils, filtre des captures invalides, vrais 404 conservés après hydratation, sept traductions libérées des redirections obsolètes. Sitemap/routing contrôlés ensemble ; Search Console consultée. Publication et réexploration Google restent des états distincts. [Bilan](R10_R11_CLOTURE_2026-10-15.md). |
 | Soumissions et paiement | Chantier séparé. Cette passe ne recertifie pas son fonctionnement et n’effectue aucun paiement. Rotation Production déjà vérifiée le 16 octobre ; copie privée locale du jeton à actualiser séparément. |
-| Axe agentique et MCP — 16 novembre | Angle décidé : attribut des fiches d'abord. Décision révisée : le MCP devient un pilier, avec une section `/agents` (serveurs MCP et skills) sur la logique de Toolfolio. 20 outils relevés sur sources éditeur (non commités) ; S1 en cours sur une branche dédiée. [Plan et schéma](#axe-agentique-mcp). |
+| Axe agentique et MCP — 16 novembre | Angle décidé : attribut des fiches d'abord. Décision révisée : le MCP devient un pilier, avec une section `/agents` (serveurs MCP et skills) sur la logique de Toolfolio. S1 livré en local le 17/11 sur `claude/distracted-grothendieck-64ebde` (non poussé) : 19 fiches serveur, 60 skills officiels, `/agents`, `/mcp`, `/skills` et leurs fiches FR/EN, passerelle sur les 20 fiches outils. Reste : validation de Michael, publication, puis [critère de passage à S2](#critere-s2). [Plan et schéma](#axe-agentique-mcp). |
 
 **Suite :** publier les deux lots locaux R3/R7 après revue, puis contrôler les parcours, requêtes, compression et cache CDN en production. Le transport commun est désormais réduit sans suppression de champs ; un fractionnement supplémentaire n’est pas requis pour clôturer ce canary et ne sera ouvert que sur un besoin mesuré. L’exploitation GA4 et les essais utilisateurs restent distincts ; R5/R6 éditoriaux ne sont pas relancés.
 
@@ -184,7 +184,410 @@ Fichiers : `research/agent-trial/<slug>.json`, non commités. Sources éditeur c
 - Bêta (Stripe, Tally, écriture Figma) : pas de champ ; le dire en prose dans le verdict.
 - Hotjar a fusionné avec Contentsquare, qui a un serveur MCP : à dire en prose sur la fiche, pas dans le bloc.
 
-### Prochaine action — S1, section MCP (brief de reprise)
+### Fait — S1, section agents (16-17/11)
+
+Branche `claude/distracted-grothendieck-64ebde`, tirée de `main`, non poussée. Documentation éditeur consultée le 16/11 ; un fait introuvable n'est pas écrit.
+
+- **Données :** `research/mcp/<serveur>.json` (19) et `research/skills/<skill>.json` (60 : Figma 11, Stripe 11, Webflow 22, Make 7, Miro 3, Google Analytics 2, Zapier 2, Notion 1, Shopify 1). Les blocs `facts.agent` des 20 fiches portent les quatre champs « Mieux que Toolfolio ». `scripts/project-agents.mjs` projette `src/data/agents/{mcp_index,skills_index,catalog}.json` ; `scripts/project-agent-access.mjs` relie chaque serveur du bloc à sa fiche (`mcpSlug`). Vocabulaires et règles dans `scripts/lib/agent-access.mjs` ; `npm run guard:agent-access` (CI) contrôle les trois projections.
+- **Composants :** `src/ds/AgentSheet` (fiche serveur et fiche skill : verdict, capacités du plus risqué au plus anodin, branchement et installation recopiée avec copie, catalogue d'outils replié, forfait et garde-fous, date et sources) ; `src/ds/AgentAccess` devient la passerelle (verdict, trois faits, lien vers la fiche). L'index réutilise le catalogue du système (`CatalogTitle`, `FilterBar`, `Chip`, `LinkRow`).
+- **Pages :** `/agents` (onglets Tout, Serveurs MCP, Skills), `/mcp`, `/skills`, `/mcp/:slug`, `/skills/:slug`, FR/EN, rendu serveur (`renderAgentsPage`), sitemap. `HostPage` ne sert plus la famille `mcp` (route, `hosts-eligibles.mjs`, réécriture Vercel). Entrée « Agents IA » dans la navigation. Le méga-panneau Explorer n'a pas été touché.
+- **Guide pilier** relié à la section et aux fiches Notion, Canva, Calendly.
+
+**Manques notés (champ non écrit) :** `status` dit par 5 éditeurs seulement (`ga` : Notion, Calendly, HubSpot ; `beta` : Stripe, Tally). Canva : `setup` et `safeguards` (page d'aide en 403). Slack : `setup` (clients partenaires nommés sans méthode) et noms d'outils (deux seulement nommés). Outils non nommés par l'éditeur : Tally, Ahrefs (pages en 404), Make (outils générés depuis les scénarios). Skills : aucun identifiable chez Airtable (le plugin Claude Code en contient, non nommés), HubSpot, Slack, Calendly (deux outils de skills non décrits).
+
+**Arbitrages (Claude, 16-17/11) :**
+- Le `kind` de chaque outil est classé par ToolTrim d'après le nom et la description de l'éditeur, qui ne le donne pas ; un outil groupé (Webflow) prend son action la plus risquée.
+- `install` recopié tel quel ; type `steps` ajouté pour les parcours sans commande (« Customize > Connectors… »).
+- Google Analytics : la page Google (lecture seule) prime sur le README, qui décrit trois outils d'écriture facultatifs ; dit dans `tools_note`.
+- Webflow : 19 de ses 22 skills n'ont qu'un nom d'affichage ; leur slug est composé par ToolTrim (`webflow-…`).
+- Zapier : les deux skills livrés sur chaque serveur sont repris (onboarding, construction de workflow), pas le skill humoristique.
+- `capabilities` accepte 1 à 5 lignes (Google Analytics n'en a qu'une).
+- Champs `note` (bloc) et `tools_note` (fiche) pour ce que les champs ne portent pas.
+- Les commandes d'installation s'affichent en Inter dans un cadre défilant : l'audit typographique n'admet aucune police à chasse fixe, et les invariants refusent une ligne coupée au milieu d'un mot.
+
+**Reste à faire :** remplacé par [S1 bis](#s1-bis) (le méga-panneau Explorer est fait : « Agents IA » dans le groupe Explorer du menu téléphone, commit `924f7db0`).
+
+<a id="agents-analyse-produit"></a>
+
+### Analyse produit de la section agents (17/11, cadre validé par Michael ; étape 1 lancée : « Oui, étape 1 »)
+
+Demandée par Michael après « tu as mal réfléchi à ce que doit être cette page… ça n'a aucun sens » : une vue d'ensemble, l'objectif, puis chaque section dans le fond et la forme, comment on la consomme et comment on aide à utiliser. Elle remplace la logique des briefs S1 bis, qui empilaient des correctifs sans cadre commun.
+
+**1. L'objectif.** ToolTrim aide un freelance à décider quels logiciels garder, remplacer ou ajouter. Dans cette section, l'objectif est le même, avec un critère en plus : *mon assistant IA peut-il travailler dans mes outils, sans risque, et qu'est-ce que j'y gagne ?* On n'est pas un annuaire de serveurs. On ne pousse pas à adopter un outil parce qu'il se branche. Le critère « se branche » sert la décision, il ne la remplace pas.
+
+**2. Les quatre moments où la question se pose.**
+| Moment | Ce que la personne pense | Où elle arrive | Ce qu'on lui doit |
+|---|---|---|---|
+| A. J'ai mes outils | « Qu'est-ce que je peux brancher à Claude / ChatGPT ? » | Ma stack, ou le hub | Un bilan de *sa* stack, outil par outil |
+| B. Je cherche comment brancher X | « brancher Notion à ChatGPT » sur Google | La fiche serveur, directement | La marche à suivre pour *son* assistant, en premier, puis le risque |
+| C. Je choisis un outil | « Notion ou ClickUp ? » | Fiche outil, comparatif | « Se branche à votre assistant » comme critère, avec la différence qui compte |
+| D. C'est branché, j'en fais quoi | « Et maintenant ? » | La fiche, après la copie ; Ma stack | Des premières demandes sûres, et des recettes qui combinent ses outils |
+
+**3. D'où vient le trafic, donc quelles pages comptent.** Par ordre d'audience attendue :
+1. Les fiches serveur, depuis la recherche (moment B) : c'est la page la plus vue.
+2. La passerelle sur les fiches outils, qui ont déjà leur trafic (moment C).
+3. Ma stack (moments A et D) : la seule page qui connaît les outils de la personne.
+4. Le hub en dernier : on y vient par la navigation, il doit renvoyer vers 1 et 3.
+
+On a dessiné le hub en premier et la fiche comme un annuaire. Il faut l'inverse.
+
+**4. Section par section.**
+
+*Fiche serveur `/mcp/:slug` : la page qui doit être parfaite.*
+- **Fond.** Elle répond dans cet ordre :
+  - qu'est-ce que ça me permet (deux ou trois demandes types) ;
+  - comment je branche, avec *mon* assistant ;
+  - qu'est-ce qu'il peut casser et comment garder la main ;
+  - quel forfait ;
+  - pour qui c'est utile.
+  
+  Un fait n'apparaît qu'une fois. Pas de fiche technique en grille. La liste des actions reste disponible pour qui veut vérifier.
+- **Forme.**
+  - Un seul bord gauche. En-tête calme : logo et titre sur une ligne, une phrase d'accroche, une action principale, une ligne de confiance.
+  - Des phrases, pas de colonnes de libellés en capitales.
+  - Au premier écran sur téléphone : le titre, la phrase et le bouton.
+- **Consommation.** La personne arrive de Google avec un assistant en tête : la fiche le reconnaît (choix retenu) et montre ses étapes tout de suite. Le menu « Copier pour votre assistant » sert ceux qui veulent déléguer la mise en place à l'assistant lui-même.
+- **Aider à utiliser.** Après la copie ou l'ouverture, un bloc « Vos premières demandes » : trois demandes en lecture seule à essayer d'abord, puis une qui écrit, avec ce qu'il faut vérifier. Puis « Si ça ne marche pas » : seulement ce que l'éditeur documente (droits du compte, invités, forfait).
+
+*Passerelle sur la fiche outil, le bloc « Assistant IA ».*
+- **Fond.** Une ligne de verdict (« Se branche à Claude et ChatGPT en un clic, peut supprimer des pages »), une demande type, un lien vers la fiche serveur. Pour un outil sans branchement officiel (Hotjar, Milanote), le dire sans détour et nommer les alternatives de la même catégorie qui se branchent : c'est une vraie information de décision.
+- **Forme.** Un bloc court, au même niveau que les autres critères de la fiche, pas une page dans la page.
+- **Comparatifs.** La même ligne, outil par outil, avec la différence qui compte (« ClickUp peut aussi envoyer des messages »).
+
+*Ma stack : le bilan côté assistant (nouveau).*
+- **Fond.** Un chapitre « Votre assistant » dans le récit de Ma stack :
+  - la question de l'assistant (Claude, ChatGPT, Gemini, Copilot), posée une fois et retenue ;
+  - le verdict en une phrase (« 4 de vos 9 outils se branchent à Claude, dont 3 en un clic ; 1 peut payer ») ;
+  - au détail, outil par outil : statut, une demande type, risque, « Brancher » ;
+  - les outils sans branchement, avec leur alternative.
+- **Recettes.** Des demandes qui combinent *ses* outils, par exemple Calendly avec Notion : « prépare une page de notes pour chacun de mes rendez-vous de demain ». N'utiliser que des capacités documentées des deux côtés, et dire quels branchements il faut.
+- **Forme.** Une tuile question du bento (« Quel assistant utilisez-vous ? ») qui part une fois répondue, puis le chapitre. Mêmes règles que Ma stack.
+
+*Hub `/agents`.*
+- **Fond.** C'est le même bilan que Ma stack, ouvert à qui n'a pas de stack.
+  - Deux questions : votre assistant ; vos outils, repris de Ma stack, ou cochés parmi les logos.
+  - Puis le verdict et la liste par outil.
+  - La liste complète en bas, rangée par catégorie (notes, CRM, paiement…), avec un seul filtre : « avec mon assistant ».
+  - Un lien vers le guide pour comprendre.
+- **On retire :** le sélecteur de besoins (il poussait à adopter un outil), les filtres techniques (en ligne / sur l'ordinateur / connexion), les skills.
+- **Forme.** Un outil, pas une page éditoriale : le premier écran pose les deux questions.
+
+*Index `/mcp`.* Il devient la liste complète du hub, en page propre pour le référencement. Même rangement par catégorie.
+
+*Skills `/skills` et leurs fiches.*
+- Sur les 60 skills, l'essentiel vise les développeurs (« figma-swiftui », « connect-required-verification-information ») et ne s'installe que dans Claude Code, Codex ou Cursor. Les pages sont gardées pour le référencement, marquées « Pour développeurs », et on les sort du hub et de la navigation.
+- Sur la fiche serveur, on ne les montre que s'il y en a un utile à un non-développeur (Notion Skills, par exemple).
+- La fiche skill reste en anglais technique sur son nom ; elle doit dire en une phrase ce que ça fait, et pour qui.
+
+*Guide pilier.* C'est le « pourquoi » et les bonnes habitudes (lecture d'abord, garder la main). Le hub et les fiches y renvoient une fois, pas à chaque bloc.
+
+*Navigation.* « Agents IA » ne parle pas à la cible. On propose « Votre assistant IA ». L'entrée mène au hub ; Ma stack porte le chapitre.
+
+**5. Une contrainte qui change tout : la couverture.** 20 outils sur 1 360 ont un bloc agent. Dans un bilan de stack, la plupart des outils seront « pas encore vérifié ». Il faut le dire honnêtement, en proposant de signaler l'outil. Le passage à S2 doit donc vérifier en premier les outils les plus présents dans les stacks et les catalogues de besoins, pas les ~130 recouvrements Toolfolio dans l'ordre alphabétique.
+
+**6. Règles de forme pour toute la section.**
+- Un fait, une seule place. Il apparaît seulement s'il aide à décider ou à agir.
+- Un seul bord gauche par page.
+- Des phrases, pas des libellés en capitales.
+- Une seule action principale par bloc.
+- Sur téléphone, le premier écran répond à la question de la page.
+- Les mots de la personne (« brancher », « votre compte ») ; le jargon (MCP, OAuth, serveur) seulement dans le titre SEO et la liste des actions.
+- Pas de séparateur ; le rythme vient de l'agencement.
+
+**7. Ordre de travail proposé.**
+1. Fiche serveur : en-tête, chapitre des risques en phrases, retrait de la grille technique, liste des actions structurée, « Vos premières demandes ».
+2. Passerelle de la fiche outil, avec les alternatives pour les outils sans branchement.
+3. Chapitre « Votre assistant » dans Ma stack.
+4. Hub en bilan, `/mcp` par catégorie.
+5. Skills retirés du hub et de la navigation, marqués « Pour développeurs ».
+6. Recettes entre outils.
+7. Comparatifs.
+8. S2, par ordre de présence dans les stacks.
+
+Chaque étape : stories, contrôles, commit, captures, puis relecture de Michael avant l'étape suivante.
+
+**Étape 1 bis : la mise en page de la fiche serveur (Michael, 17/11 : « ça commence à devenir vraiment le bordel. J'aime que ce soit clean, mais aussi qu'il y ait de la structure et du rythme visuel. Apple style »).**
+
+*Constat sur `/fr/mcp/notion-mcp` à 1440 px.* La fiche compte 12 blocs, et chacun a son propre traitement :
+- **Trois styles de conteneur sans logique.** Tuile grise pour Brancher et les actions, cartes grises pour l'avis, rien du tout pour les risques et l'en-tête.
+- **Des titres de 4 tailles,** tantôt hors de la tuile, tantôt dedans. Il y a aussi des sous-titres en gras de 14 px et des libellés en capitales.
+- **Une largeur de contenu qui change à chaque bloc.** Accroche à 640, citations pleine largeur, risques sur la moitié de la page en longues lignes, cartes à un tiers de la largeur avec deux tiers vides (« L'outil », « Savoir-faire », « Alternatives », une carte orpheline chacun).
+- **Deux blocs qui disent la même chose :** « Ce que ça change » et « Vos premières demandes » sont tous deux des demandes types.
+- **Pas de rythme :** tout est en 14-16 px, avec des écarts égaux.
+
+*Système, appliqué à toute la fiche et réutilisable pour la fiche skill.*
+1. **Deux largeurs seulement.**
+   - Colonne de lecture de 720 px pour le texte.
+   - Grille large de 1080 px, en 3 colonnes, pour les rangées d'objets.
+   - Tout s'aligne sur le même bord gauche.
+2. **Les tailles de l'échelle du système** (option A, 17/11 : on ne touche ni aux tokens ni à l'audit) : 64 pour le titre de page au bureau et 42 sur téléphone, en deux lignes équilibrées si besoin ; 42 pour le titre de chapitre au bureau et 21 sur téléphone ; 21 pour l'accroche et le chapeau ; 16 pour le corps et 17 pour les blocs de lecture ; 14 pour les métadonnées. Plus de libellés en capitales, plus de sous-titres en gras de 14 px.
+3. **Un modèle de chapitre unique :** titre en 42 (21 sur téléphone), chapeau d'une phrase en 21, contenu.
+   - Les titres sont toujours hors des conteneurs.
+   - Écarts : 96 px entre chapitres, 24 du titre au contenu, 8 entre objets. Ce sont les quatre distances du 09/11 ; sur téléphone, 64 entre chapitres.
+4. **Le rythme vient des bandes, pas des boîtes.**
+   - Les chapitres alternent un fond blanc et une bande gris clair qui s'étend sur toute la largeur de la feuille, comme sur une page produit.
+   - Les tuiles sont réservées aux objets qu'on manipule : étape, bloc à copier, carte, demande.
+   - Une seule forme de carte : fond blanc sur bande grise (ou gris clair sur blanc), rayon 20, padding 24, sans ombre.
+5. **Six chapitres au lieu de douze blocs :**
+   1. **En-tête** (blanc). Logo et titre de 64 (42 sur téléphone), accroche en 21, bouton principal et « Voir les étapes », ligne de confiance en 14.
+   2. **« Ce que vous pourrez lui demander »** (gris). Fusion de « Ce que ça change » et de « Vos premières demandes ». Trois cartes de demande sur la grille de 3, chacune avec sa pastille (Lit / Modifie) : les demandes de lecture d'abord, celle qui écrit en dernier, avec sa ligne « À vérifier ».
+   3. **« Brancher Notion »** (blanc).
+      - Choix de l'assistant en contrôle segmenté sur une ligne : Claude, ChatGPT, Gemini, puis « Autres » (outils de développeur et autre outil).
+      - Les étapes en 3 colonnes au bureau, avec un grand numéro (42) au-dessus de chaque étape, et en pile sur téléphone.
+      - « Si ça ne marche pas » en lien dépliable sous les étapes.
+   4. **« Ce qu'il peut faire, et comment garder la main »** (gris).
+      - Deux colonnes : à gauche, les trois niveaux (pastille et phrase) ; à droite, les gestes pour garder la main.
+      - Le forfait en une ligne sous les deux colonnes.
+   5. **« Notre avis »** (blanc). Deux colonnes, « Utile si » et « Moins utile si », puis une rangée de 3 cartes sur la grille : la fiche outil, une alternative qui se branche, un savoir-faire de l'éditeur. Les places vides sont comblées par d'autres alternatives. Plus de carte orpheline.
+   6. **Annexes** (gris, texte en 14-16) : « Les 70 actions » en dépliant, puis les sources sur une ligne de liens et « Signaler une erreur ».
+6. **Téléphone.** Même ordre ; une colonne de 16 px de marge ; le contrôle segmenté défile ; les grilles passent en pile. Au premier écran : titre, accroche, bouton.
+
+*Correction de Michael, 17/11 : pas de bandes grises.* Le gris des tuiles est réservé à la navigation : « cette couleur ne doit jamais être utilisée en background ». Les chapitres restent donc tous sur la feuille blanche, et le point 4 ci-dessus est remplacé. Le rythme vient de trois choses :
+- l'échelle de titres, avec des chapitres en 42 ;
+- les écarts : 96 entre chapitres, 48 avant les notes, 24 du titre au contenu ;
+- des objets posés sur le blanc, avec le bord et l'ombre de repos du système (`--tt-row-rest`).
+
+Les pastilles et les blocs de code ne prennent pas non plus ce gris comme fond de zone.
+
+*Méthode.* Un composant de chapitre du système (`Chapter`, avec ses variantes de bande blanche ou grise) porte le modèle, et la fiche ne fait que l'assembler. Une story « Fiche complète » sert de référence à Michael, en 1440 et 375. Le test de contrat vérifie l'ordre des 6 chapitres.
+
+**Attention Ma stack (Michael, 17/11).** La page Ma stack a été revue sur une autre branche, `mission/m01-ma-stack` : 46 commits Ma stack absents de `main`, dont le bento, le récit et le contrat de contenu. La branche agents est tirée de `main` et n'a donc pas cette version. Avant l'étape 3, il faut partir de `mission/m01-ma-stack`, ou de `main` une fois cette branche fusionnée, et relire ses décisions dans DESIGN_DECISIONS (« Ma stack : structure », « Contrat de contenu »). On ne touche à aucun fichier Ma stack depuis la branche agents. Le serveur de développement de cette branche est http://localhost:3000. Il tourne dans `~/code/toolstack-wizard-clean`, et c'est sur lui qu'on regarde Ma stack. Les fichiers communs (coquille, `ShellMenuBody.tsx`, `Navbar.tsx`) seront à réconcilier à la fusion.
+
+**Cadence en autonomie (Michael, 17/11 : « une fois cette partie finie, passe la suite de la roadmap en autonomie, avec les agents, cadence le reste jusqu'au bout »).** Claude orchestre, la session S1 exécute, et chaque étape suit le même cycle :
+1. brief dans ce document ;
+2. stories ;
+3. relecture par Claude dans le navigateur, à 1440 et 375 px, avec les règles de DESIGN_DECISIONS : pas de gris de navigation en fond, un fait à une seule place, vocabulaire de conséquence, copie en un clic, chapitres sur `Chapter` ;
+4. corrections ;
+5. contrôles complets ;
+6. commit.
+
+Rien n'est poussé ni fusionné dans `main`. L'ordre tient compte de la branche Ma stack :
+- **2. Fiche outil** (passerelle « Assistant IA »), sur la branche agents.
+- **4. Hub `/agents` en bilan**, et `/mcp` par catégorie, sur la branche agents. Le bilan lit la stack par `useStackPins` sans toucher aux fichiers de Ma stack.
+- **5. Skills.** On les sort du hub et de la navigation, avec la mention « Pour développeurs ». « Votre assistant IA » remplace « Agents IA » dans la navigation, comme proposé ; Michael pourra revenir dessus.
+- **3. Chapitre « Votre assistant » dans Ma stack.** Il se fait sur une branche d'intégration tirée de `mission/m01-ma-stack` (la bonne version de Ma stack, modifiée hier, 63 commits d'avance sur `main`). La branche agents y est fusionnée, avec l'accord de Michael (voir point 8). Ma stack est contrôlée sur http://localhost:3000.
+- **6. Recettes entre outils**, dans Ma stack, sur la même branche d'intégration.
+- **7. Comparatifs**, sur la branche agents. Ils seront reportés dans l'intégration ensuite.
+- **8. S2**, par ordre de présence dans les stacks. Ce sera un chantier de recherche à part, cadré à la fin.
+
+**Étape 2 : le bloc « Assistant IA » de la fiche outil (brief du 17/11).** Constat sur `/fr/tool/notion` à 1440 px :
+- Le bloc arrive juste après la section éditoriale « Les IA qui comptent ici » (Notion AI, ChatGPT, Claude) : deux blocs IA se suivent sans lien entre eux.
+- Il garde l'ancienne forme : une carte bordée et une colonne de libellés en capitales (ACTIONS, FORFAIT). On y lit encore du jargon (« Jetons MCP »), et des faits déjà donnés ailleurs, comme le forfait.
+
+Cible :
+1. **Un bloc court, dans la grammaire de la fiche outil.** Il reprend le style de titre de section de la fiche, sans carte bordée ni fond gris. Il contient :
+   - une phrase de verdict dans le vocabulaire de conséquence (« Se branche en un clic à Claude, ChatGPT et Gemini. Peut supprimer des données. ») ;
+   - une demande type avec « Copier la demande » ;
+   - une action principale « Brancher Notion à votre assistant → » vers la fiche serveur.
+   
+   Le forfait n'y figure que s'il restreint l'accès (« Forfait payant requis »).
+2. **Avec la section « Les IA qui comptent ici ».** Le bloc agents se place juste après et la complète. La section éditoriale dit quelle IA sert l'usage ; le bloc dit si votre assistant peut travailler dans l'outil. Mettez une transition d'une phrase, et pas deux titres IA collés. Si la fiche n'a pas de section éditoriale IA, le bloc garde sa place actuelle.
+3. **Outil sans branchement officiel** (`mcp: none`, par exemple Hotjar ou Milanote) : une phrase (« Hotjar ne se branche pas à un assistant IA. »), puis les alternatives de la même catégorie qui se branchent. Ce sont 2 ou 3 petits liens avec logo vers leur fiche outil, choisis dans les données agents, sans recommandation inventée.
+4. **Outil non vérifié** : rien du tout. Aucune mention « pas encore vérifié » sur la fiche outil.
+5. **Règles.** Avant de toucher la fiche outil, lire les décisions de la fiche outil dans DESIGN_DECISIONS et les règles d'AGENTS.md : pas de métadonnée répétée dans le hero et la barre latérale, pas de bouton bleu. Relire aussi les règles de la section agents : pas de gris de navigation en fond, copie en un clic.
+6. **Stories** : Notion (connecteur, demande), Stripe (paiement), Hotjar (aucun branchement, avec alternatives), Ahrefs (forfait payant requis). **Contrat** : le bloc ne répète aucun fait de la fiche.
+
+**Étape 4 : le hub `/agents` en bilan, puis `/mcp` par catégorie (brief du 17/11).** Le hub devient un outil : le bilan de votre stack côté assistant. Ce n'est plus une page éditoriale ni un annuaire.
+1. **En-tête.** Le titre « Votre assistant IA » (64), une phrase d'accroche (« Ce que votre assistant peut faire dans vos outils, et avec quelle prudence. »), puis deux questions :
+   - **Votre assistant** : un contrôle segmenté avec Claude, ChatGPT, Gemini, Copilot et Autre. Le choix est retenu par la même clé que celle de la fiche serveur.
+   - **Vos outils** : repris de Ma stack (`useStackPins`), sans toucher aux fichiers de Ma stack. Sans stack, une grille de logos à cocher, faite des 20 outils vérifiés et du catalogue en recherche. Le choix n'est pas enregistré dans Ma stack ; un lien « Enregistrer dans Ma stack » le propose.
+2. **Le verdict**, une phrase en 42 : « 4 de vos 9 outils se branchent à Claude, dont 3 en un clic. 1 peut engager un paiement. » Il est calculé depuis les données, dans le vocabulaire de conséquence.
+3. **Une ligne par outil** de la stack, dans l'ordre suivant : en un clic, à configurer, sans branchement officiel, pas encore vérifié. Chaque ligne donne :
+   - le logo et le nom ;
+   - le statut pour l'assistant choisi ;
+   - la conséquence la plus forte, avec son icône ;
+   - une demande type copiable ;
+   - « Brancher → », qui mène à la fiche serveur.
+   
+   Pour un outil sans branchement : une phrase, et une alternative qui se branche. Pour un outil non vérifié : « Pas encore vérifié », et « Signaler cet outil ».
+4. **La liste complète**, sous le sous-titre « Tous les outils qui se branchent ». Elle est rangée par catégorie du catalogue (notes, CRM, paiement…), avec un seul filtre : « avec mon assistant ». On utilise les cartes homogènes de l'étape 1 bis.
+5. **Ce qui disparaît du hub** : le sélecteur de besoins, les filtres techniques (en ligne / sur l'ordinateur / connexion), « Par où commencer » (remplacé par un lien unique vers le guide) et les skills.
+6. **`/mcp`.** C'est la liste complète du point 4, en page propre, avec le même rangement par catégorie.
+7. **Règles.** Les chapitres reposent sur `Chapter`, sur la feuille blanche. Pas de gris de navigation en fond. Le vocabulaire de conséquence et la copie en un clic s'appliquent aussi ici. Sur téléphone, le premier écran pose les deux questions.
+8. **Stories.** Sans stack ; stack de 9 outils mêlant en un clic, à configurer, sans branchement et non vérifié ; assistant ChatGPT ; assistant Autre. **Contrat** : le verdict et les lignes concordent, et aucun outil n'est classé sans donnée.
+
+**Étape 5 : skills et navigation (brief du 17/11).**
+- Les skills sortent du hub et de la navigation.
+- `/skills` et les fiches skill restent, marquées « Pour développeurs » dans le titre et l'accroche. Leur mise en page passe sur le modèle de chapitre de l'étape 1 bis.
+- Sur la fiche serveur, un skill ne paraît dans « Pour aller plus loin » que s'il sert un non-développeur (par exemple Notion Skills).
+- L'entrée de navigation « Agents IA » devient « Votre assistant IA » partout : barre latérale, menu téléphone, ancien panneau, fil d'Ariane. Les fichiers communs (coquille, menu) ne changent que pour ce libellé.
+
+**Étape 3 : « Votre assistant » dans Ma stack (brief du 18/11).**
+- **Branche.** `integration/agents-ma-stack`, tirée de `mission/m01-ma-stack` (fusion autorisée par Michael le 17/11), dans un worktree à part. On y fusionne `claude/distracted-grothendieck-64ebde` à jour, puis on règle les conflits :
+  - coquille et navigation : on garde la version de Ma stack, on y ajoute le libellé « Votre assistant IA » ;
+  - `docs/DESIGN_DECISIONS.md` et `docs/ROADMAP.md` : on réunit les deux versions, rien n'est perdu.
+  
+  On ne pousse rien, et `mission/m01-ma-stack` reste intacte. Ma stack se contrôle sur le serveur de cette intégration (un port libre) et se compare à http://localhost:3000.
+- **Avant de coder.** Relire les décisions Ma stack de la branche mission (DESIGN_DECISIONS : « Ma stack : structure », « Contrat de contenu », les règles du bento et du récit). Ne casser aucun test de contrat Ma stack.
+- **Fond.** L'assistant devient un constat de Ma stack, avec les mêmes mécaniques que les autres constats (`StackFindings`). Pas de nouvelle boîte.
+  - Une question « Quel assistant utilisez-vous ? » (Claude, ChatGPT, Gemini, Copilot, Autre), posée une fois, partant une fois répondue (règle du 09/11 : la tuile question part), et partagée avec la clé `tooltrim.agents.client`.
+  - Le constat dit le même verdict que le hub (`agentReport`), par exemple « 4 de vos 9 outils se branchent à Claude, dont 3 en un clic ; 1 peut engager un paiement ». Son détail mène au hub `/agents`, où les lignes par outil sont déjà faites.
+  - Dans la fiche d'un outil de la stack (`StackToolSheet`), une ligne « Avec votre assistant » : statut, conséquence la plus grave, « Brancher → ».
+  - Les outils non vérifiés ne comptent pas dans le verdict, et le constat le dit (« 3 outils pas encore vérifiés »).
+- **Stories et tests** : un test de contrat ajoute l'invariant « le constat assistant = le verdict du hub pour la même stack ». Puis les captures de Ma stack avant et après, à 1440 et 375 px.
+
+**Étape 6 : recettes entre outils (brief du 18/11, sur `integration/agents-ma-stack`).**
+- **Ce qu'est une recette.** Une demande qui combine deux outils de la stack, branchés tous les deux pour l'assistant choisi. Exemple : Calendly avec Notion : « Prépare une page de notes Notion pour chacun de mes rendez-vous Calendly de demain. »
+- **Données.** `research/agents/recipes.json`, écrit par ToolTrim. Chaque recette nomme les deux serveurs et les outils documentés qu'elle mobilise de chaque côté. Un garde-fou refuse toute recette qui cite un outil absent de la fiche serveur. On en vise 8 à 12, pour les paires les plus courantes du catalogue.
+- **Affichage.** Dans le constat assistant de Ma stack et sur le hub, 3 au plus, seulement si les deux outils sont dans la stack. Chacune porte la demande copiable, les deux logos, et la conséquence la plus grave des deux côtés.
+
+**Étape 7 : comparatifs (brief du 18/11, sur la branche agents, puis reporté dans l'intégration).**
+- Sur les pages comparatif (`ComparisonDecisionPage` et les duels), une ligne « Avec votre assistant » dans le tableau de décision, pour chaque outil qui a des données :
+  - le statut ;
+  - la conséquence la plus grave ;
+  - une phrase de différence quand elle existe, par exemple « ClickUp peut aussi envoyer des messages en votre nom ».
+- Sans donnée pour un des deux outils, pas de ligne. Un seul vocabulaire, celui de la conséquence. Avant de toucher les comparatifs, relire leurs décisions dans DESIGN_DECISIONS.
+
+**8. À trancher par Michael.**
+- ~~Autoriser la fusion de la branche agents dans une nouvelle branche d'intégration tirée de `mission/m01-ma-stack`~~ : accordé par Michael le 17/11 (« Oui, fusionne »). La fusion se fera au début de l'étape 3, sur la branche agents à jour. `mission/m01-ma-stack` reste intacte, et rien n'est poussé.
+- Le nom dans la navigation : « Votre assistant IA » ?
+- Les skills sortis du hub et marqués « Pour développeurs » ?
+- Les recettes entre outils : dans ce chantier, ou après S2 ?
+
+<a id="s1-bis"></a>
+
+### Prochaine action — S1 bis : une section qui accompagne (Michael, 17/11)
+
+Retour de Michael sur S1 : « un peu brut de décoffrage. On doit accompagner, pas faire un énième annuaire » (règle dans `docs/DESIGN_DECISIONS.md`, « Section agents »). Plan accepté par Michael le 17/11 (« Oui, lance »). Même branche, les données de S1 restent ; on refait l'entrée et le récit.
+
+**Hub `/agents` : partir de la personne, pas du catalogue.** Ordre de la page :
+1. « Que voulez-vous que votre assistant fasse ? » : 6 à 8 besoins concrets (préparer ses rendez-vous, retrouver une info dans ses notes, suivre ses paiements, lire ses stats de trafic, publier sur ses réseaux, gérer ses projets, créer des visuels…). Chaque besoin mène à une recommandation : l'outil, l'assistant, le risque en mots, le branchement en trois étapes, le lien vers la fiche.
+2. « Avec votre stack » si Ma stack contient des outils (même source que Ma stack) : « N de vos outils se branchent à votre assistant », chacun avec un avis (à brancher / avec prudence / pas encore). Sans stack : une invitation courte vers Ma stack, pas un bloc vide.
+3. « Par où commencer » : trois points (choisir son assistant ; brancher d'abord en lecture ; garder la main sur ce qui modifie, supprime ou paie), lien vers le guide `mcp-freelances-non-developpeurs`.
+4. La liste complète (serveurs et skills, filtres) en bas, pour qui cherche un outil précis. `/mcp` et `/skills` restent des index, mais ouvrent sur une phrase d'accompagnement.
+
+**Fiche serveur et fiche skill : un récit en chapitres** (esprit Ma stack, « notre page doit raconter une histoire ») :
+1. Ce que ça change pour vous : 2 ou 3 demandes types en langage courant (« Résume mes notes de réunion de la semaine »), tirées uniquement des outils documentés par l'éditeur.
+2. Notre avis : pour qui c'est utile, pour qui ça ne l'est pas.
+3. Le brancher en 3 étapes, selon l'assistant choisi (Claude, ChatGPT ; Gemini ou Copilot si l'éditeur le dit).
+4. Ce qu'il peut faire et comment garder la main : risques et garde-fous réunis.
+5. Pour aller plus loin, replié en fin de fiche : commandes d'installation, liste des outils, clients, sources et date.
+
+**Brancher et « Pour aller plus loin » : revus par Michael le 17/11** (« on peut mieux accompagner encore, plus digest, l'action copier-coller »). Aujourd'hui la fiche empile toutes les entrées `install` brutes (Notion : 7 blocs, dont deux « any ») ; c'est un mur.
+- **Un seul chapitre « Brancher Notion »**, qui fusionne les 3 étapes et l'installation. En tête, un choix « Où utilisez-vous l'IA ? » : Claude, ChatGPT, Gemini d'abord ; puis, derrière « Outils de développeur », Claude Code, Cursor, VS Code, Codex ; « Autre outil » en dernier, qui regroupe les entrées `any`. On ne montre que les choix que la fiche peut servir. Le choix est retenu d'une fiche à l'autre (stockage navigateur, en `try/catch`, la page marche sans).
+- **Pour le choix fait, une seule carte d'étapes numérotées**, jamais plus de 4 :
+  1. Préalable s'il existe, en une ligne : forfait requis, Node.js pour une config `npx`, application de bureau ouverte pour un serveur local.
+  2. L'action : un bouton principal « Ouvrir dans Claude » quand l'éditeur donne un lien d'annuaire (Stripe). Sinon le bloc à copier, avec un bouton nommé selon ce qu'il copie (« Copier la commande », « Copier l'adresse », « Copier la configuration ») et un état « Copié » de 2 s, annoncé aux lecteurs d'écran (`aria-live`). Une configuration JSON est affichée indentée.
+  3. Où le coller, dit concrètement : terminal, réglages, fichier de configuration du client. Cette consigne tient au client, pas au serveur : une table commune par client, sourcée sur la doc du client (Cursor, VS Code, Claude Code, Codex), écrite une fois.
+  4. Connexion au compte quand `auth = oauth` ou `key`, puis « Vérifiez : demandez à votre assistant… », avec une des demandes types de la fiche.
+- **« Pour aller plus loin » ne garde que la fiche technique**, compacte et repliée : connexion, authentification, accès maximum, liste des outils, clients, sources et date. Plus aucun bloc d'installation à cet endroit.
+- **Sur téléphone**, les bascules de choix défilent sur une ligne, le bloc copiable ne déborde pas (retour à la ligne pour la config, défilement pour une commande), et le bouton de copie fait 44 px.
+- **À corriger :** sur `/fr/mcp/notion-mcp`, « Déplier la partie technique » n'a rien ouvert au clic le 17/11 (vérifié pendant la refonte en cours, peut-être un rechargement à chaud). À vérifier et à couvrir par une story avec test d'interaction.
+- **Liste des outils, revue par Michael le 17/11** (« ça aussi », sur la capture de « Créer et modifier · 26 » de Notion). Aujourd'hui, c'est une grille de 26 identifiants techniques (`notion-create-comment`…) en titre, avec la traduction en dessous. On la refait :
+  - **Ranger par sujet, en mots de tous les jours**, et non par niveau de risque seul. Pour Notion : Pages, Bases et vues, Commentaires et discussions, Fichiers, Skills et agents. Chaque sujet a un titre et son nombre d'actions ; il est replié s'il dépasse 5 actions.
+  - **Le titre de chaque ligne est l'action en français** (« Commenter ou répondre à une discussion »). L'identifiant technique passe en petit, en couleur atténuée, en fin de ligne ou au survol. On ne le montre jamais en titre.
+  - **Le risque est porté par chaque ligne** : une pastille « Modifie », « Supprime » ou « Paie » à côté de l'action, dans le vocabulaire des capacités, et rien pour la lecture. En tête de liste, une phrase de synthèse : « 26 actions, dont 2 qui suppriment ».
+  - **Une ligne par action** sur une colonne, plutôt qu'une grille à deux colonnes qui se lit mal. La liste reste dans « Pour aller plus loin ».
+  - Le regroupement par sujet est un classement ToolTrim, dit comme tel dans `tools_note` ou dans une note de méthode. Si l'éditeur ne nomme pas ses outils, on garde la phrase actuelle.
+- **Sources, revues par Michael le 17/11** (sa capture : le bloc « Documentation de l'éditeur » de Notion). Aujourd'hui, quatre titres anglais bruts en corps 16, qu'on ne reconnaît pas comme des liens, et une phrase défensive (« sans reprise d'autres annuaires ») qui s'adresse à un concurrent, pas au lecteur.
+  - **Le titre devient « Sources »**, et la phrase sert le lecteur : « Vérifié le 16 novembre 2026 chez Notion », avec la fraîcheur en clair (« il y a 1 jour »). On retire la mention des autres annuaires. La règle de ne rien reprendre reste dans la méthode, pas sur la fiche.
+  - **Chaque source se lit comme un lien**, sur une ligne de `LinkRow` ou équivalent du système, avec l'icône de lien externe. Le libellé est traduit et court (« Présentation », « Connexion et forfaits », « Liste des outils »). Le domaine (`developers.notion.com`) apparaît en petit. Le titre anglais d'origine reste dans les données. On fusionne les doublons proches : les deux « Supported tools » de Notion.
+  - **Une action « Signaler une erreur »** en fin de bloc, qui renvoie au contact ou au formulaire existant avec la fiche en contexte. Le bloc reste en fin de fiche, avec un poids typographique inférieur aux chapitres.
+- **Fonctionnel et lisible, à la manière de Toolfolio (Michael, 17/11, captures Toolfolio à l'appui : « je veux que ce soit ici plus fonctionnel et lisible »).** On reprend leurs fonctions, jamais leurs textes.
+  - **Un bouton d'action en tête de fiche, « Copier pour votre assistant »**, avec un menu déroulant :
+    - copier toute la fiche en Markdown pour la donner à l'assistant (ce que fait le serveur, le branchement par client, les risques et les garde-fous, les sources), généré depuis les données ;
+    - « Ouvrir dans ChatGPT » et « Ouvrir dans Claude », avec une question pré-remplie sur la fiche (adresse de la page dans le texte) ;
+    - « Copier la commande d'installation » (Claude Code) ;
+    - « Brancher à Cursor » et « Brancher à VS Code », par lien direct d'installation si la doc du client le documente.
+    
+    Chaque entrée n'apparaît que si la fiche peut la servir, et la retenue « Copié » s'affiche en aria-live. Les formats de lien (requête pré-remplie, liens d'installation Cursor et VS Code) sont vérifiés sur la doc de chaque client et notés dans la table commune par client.
+  - **Une ligne de faits sous le titre**, avec icônes : « Vérifié le … », Connexion (en ligne / sur votre ordinateur), Compte (connexion au compte / clé / aucune), Fonctionne avec (logos des assistants, nom en infobulle et en texte pour les lecteurs d'écran). Ces faits ne se répètent pas plus bas.
+  - **Cartes des fiches liées** (alternatives, skills de l'éditeur, et sur le hub) : logo, nom, « Par Notion · Officiel », résumé en 2 ou 3 lignes, puis deux faits (connexion, compte) ou « Skill · thème ». Ajouter un bouton « Ajouter à ma stack » sur l'outil hôte, à la place du marque-page de Toolfolio, si Ma stack l'accepte.
+  - **Liste des outils** : la capture de Michael montre encore l'ancienne grille (70 outils, identifiants en titre). La refonte décrite plus haut est attendue telle quelle.
+- **Passe de mise en page et de design (demandée par Michael le 17/11, relevé de Claude sur `/fr/agents` et `/fr/mcp/notion-mcp`, à 1440 px et 375 px).** Le contenu est bon. La forme reste celle d'une fiche de données : mêmes tuiles grises, même titre de 21 px, colonnes de libellés en petites capitales partout, liens sans signe qu'on peut cliquer. Règles touchées : « il doit y avoir du rythme » (09/11), « notre page doit raconter une histoire » (11/11), et « un bouton est un objet qui répond » (planche du 30/10).
+  
+  *Hub*
+  1. **La réponse à un besoin devient une vraie recommandation.**
+     - En tête : le logo de l'outil (40 px), son nom en titre, puis la demande type mise en avant (citation large).
+     - Ensuite, trois faits sur une ligne avec icônes : assistant, risque, avis. Ils remplacent les lignes AVEC, LE RISQUE et NOTRE AVIS.
+     - Puis les 3 étapes, et un bouton principal « Brancher Calendly → » à la place du lien texte.
+     - « Aussi pour ce besoin : HubSpot » devient une petite carte avec logo.
+  2. **Choix du besoin.** Sur téléphone, les 8 puces s'empilent et occupent tout l'écran avant la réponse. Il faut une rangée qui défile, ou une grille compacte de 2 colonnes avec icône, et la réponse doit commencer au-dessus de la ligne de flottaison. Sur bureau, garder une seule rangée si la largeur le permet.
+  3. **« Avec votre stack » sans stack.** Un vrai bouton « Composer ma stack », pas un lien texte, avec la phrase à côté. Le bloc ne doit pas ressembler à un paragraphe orphelin.
+  4. **Liens d'action.** Tous les liens d'action (« Tout savoir pour brancher », « Le guide pour freelances… », « Voir tout ») portent une flèche et un état de survol.
+  5. **Cartes de la liste.**
+     - Le résumé est coupé à 2 lignes, sur une phrase écrite pour la carte : plus de « … » au milieu d'une phrase.
+     - Les faits sont posés en bas de carte, sur une ligne, avec les icônes de la ligne de faits de la fiche, pour que tous les bas de cartes s'alignent.
+     - Les noms sont ceux de ToolTrim : « Figma, application de bureau », pas « Figma MCP server (desktop) ».
+  6. **Filtres.** À 1440 px, la rangée de filtres déborde et défile. La ranger en deux groupes (« Comment » et « Avec quel assistant »), ou derrière un bouton « Filtrer ».
+  
+  *Fiche*
+  7. **En-tête.**
+     - « Copier pour votre assistant » est l'action principale : bouton sombre, aligné à droite du titre sur bureau, pleine largeur sous le titre sur téléphone.
+     - Dans « Fonctionne avec », un logo est vide (cercle blanc) : le corriger ou l'enlever.
+     - Les logos passent de 14 à 20 px.
+     - Le paragraphe d'introduction répète le sous-titre : les fusionner.
+  8. **Rythme entre les chapitres.** Il ne faut plus cinq tuiles grises identiques.
+     - « Ce que ça change » : les trois demandes en cartes de citation côte à côte (3 colonnes sur bureau, défilement sur téléphone).
+     - « Notre avis » : deux colonnes « Utile si » et « Moins utile si », avec icônes oui/non, sans colonne de libellés.
+     - « Brancher » : reste la tuile principale.
+     - Risques : les mêmes pastilles Supprime / Modifie / Lit que la liste des actions, au lieu des libellés en petites capitales.
+  9. **Brancher.**
+     - Sur téléphone, les puces de client sur une seule rangée qui défile : aujourd'hui « Autre outil » et « Codex » tombent seuls sur leur ligne.
+     - Le bloc de configuration défile horizontalement : l'URL se coupe en « …/mc p ».
+     - Réduire les marges imbriquées (carte dans tuile dans page) sur téléphone.
+     - Séparer l'étape 3 en « Connectez votre compte » et « Vérifiez ».
+  10. **Risques.** « Forfait » répète « Tous les forfaits » en valeur, puis en début de note : n'en garder qu'un.
+  11. **« Pour aller plus loin ».** La tuile n'a qu'un lien. En faire une rangée pleine largeur avec chevron et un résumé de ce qu'elle cache : « 70 actions, 12 assistants, détails techniques ».
+  
+  Les correctifs passent par les composants du système (stories d'abord) et respectent la règle « pas de séparateur, agencement et espace ». Il faut des captures avant/après à 1440 et 375 px pour Michael.
+- **Emprunts au répertoire Claude (Michael, 17/11, d'après la fiche Airtable `claude.ai/directory/cb504fab-…` : « la structure est intelligente »).** Accepté par Michael (« Oui, transmets »).
+  1. **Grille de faits en pied de fiche, toujours visible.** Six cases en 3 colonnes sur bureau, 2 sur téléphone : connexion, compte, accès maximum, éditeur, vérifié le, URL du serveur (copiable). Elle remplace la tuile « Pour aller plus loin » repliée. Seule la liste détaillée des actions reste repliable, sous la grille. Les faits de la ligne d'en-tête ne s'y répètent pas : en-tête = les 3 faits clés, grille = le détail.
+  2. **Logo de l'outil à côté du titre de la fiche** (48 px, cadre clair, comme sur les cartes). Le bouton « Copier pour votre assistant » reste la seule action en tête.
+  3. **« Ouvrir dans Claude » vers la page du répertoire Claude** de chaque serveur qui y figure. Relever le lien `claude.ai/directory/<id>` des 15 serveurs qui n'en ont pas (Notion, Canva, HubSpot, Figma, Calendly, ClickUp, Webflow, Zapier, Make, Slack, Buffer, Google Analytics, Ahrefs, Tally, Figma bureau). Le relevé se fait sur le répertoire même, page ouverte et nom vérifié, et rien n'est mis si le serveur n'y est pas. La source est notée « Répertoire Claude » avec la date. Ce répertoire vaut pour le lien et la date d'ajout, pas pour la liste des outils : la doc éditeur reste la référence (Airtable : 41 outils documentés contre 12 dans le répertoire).
+- **Stories :** fiche Notion (connecteur, choix Claude puis Cursor), Stripe (lien d'annuaire), Figma bureau (serveur local avec préalable), un serveur sans entrée pour le client choisi, avec renvoi à la doc éditeur.
+
+**Passerelle de la fiche outil** : même ton (une demande type, l'avis, le lien « Brancher Notion à votre assistant »).
+
+**Vocabulaire de surface :** « brancher à votre assistant » plutôt que « serveur MCP » ; « connexion à votre compte » plutôt que « OAuth » ; « sur votre ordinateur » / « en ligne » plutôt que « local » / « distant » ; « savoir-faire » ou « mode d'emploi pour l'assistant » pour les skills, à trancher en relisant. « MCP » reste dans le titre SEO et la balise, au second plan.
+
+**Contenu nouveau, écrit par ToolTrim :** les demandes types (`examples` fr/en par fiche serveur, 2-3), l'avis pour qui / pas pour qui (`for` / `not_for` fr/en), la table besoins → outils (`src/data/agents/needs.json` ou équivalent, projetée). Aucun fait éditeur inventé : une demande type n'utilise qu'un outil listé ou une capacité documentée ; si rien ne permet d'écrire, le champ reste absent.
+
+**Méthode :** stories d'abord (hub par besoin, avec et sans stack ; fiche en récit, Notion, Stripe, Ahrefs sans liste d'outils, une skill) ; `lint:ds`, `test:ds`, `test:visual` (Storybook sur un port libre, pas 6006/6007 tenus par d'autres worktrees) ; contrat de contenu testé pour le hub (un besoin mène toujours à une fiche) et la fiche (l'avis et le branchement précèdent la technique). Mettre à jour `DESIGN_DECISIONS.md` (« À arbitrer ») et la section « Fait » ci-dessus. Commits sur la branche, rien de poussé ni de fusionné.
+
+**Sortie :** Michael revoit `/fr/agents`, une fiche serveur et une fiche outil, et dit si ça accompagne.
+
+### Fait — S1 bis (17/11)
+
+Même branche, rien de poussé ni de fusionné. Les données de S1 restent ; l'entrée et le récit sont refaits.
+
+- **Contenu ToolTrim :** `examples` (2-3 demandes types), `for` et `not_for` (fr/en) sur les 19 fiches `research/mcp/`, écrits à partir des outils et capacités documentés seulement ; besoins du hub dans `research/agents/needs.json` (8 besoins, chacun mène à une fiche et cite une de ses demandes ; `also` pour les autres fiches du même besoin). Garde-fou : `validateNeeds` et les règles `examples` / `for` / `not_for` dans `scripts/lib/agent-access.mjs`, testés (contrat : un besoin mène toujours à une fiche).
+- **Projection :** `src/data/agents/needs.json`, `advice.json` (une demande et l'avis, pour la passerelle des fiches outils), `checked_none.json` (outils vérifiés sans serveur : Hotjar, Milanote) ; cartes de `mcp_index.json` enrichies de `setup`, `safeguards`, `for`, `not_for` et `capability_kinds` (le risque en mots suit les lignes de capacités affichées, pas les outils mineurs).
+- **Composants :** `src/ds/AgentHub/` (`NeedPicker` : besoins en puces, conseil sous le choix avec la demande type, l'assistant, le risque, notre avis, trois étapes et la fiche ; `StackAgents` : avis « À brancher / Avec prudence / Pas encore » sur Ma stack, invitation sans stack ; `StartHere` : trois points et le guide). `AgentSheet` réécrit en chapitres (`data-chapter` : change, view, plug, control, further), choix de l'assistant pour les trois étapes, technique repliée dans « Pour aller plus loin ». `AgentAccess` : une demande type, l'avis, « Brancher Notion à votre assistant ». Aides partagées dans `src/lib/agents.ts` (`plugSteps`, `riskSentence`, `stackCall`, `assistantWords`).
+- **Pages :** `/agents` dans l'ordre besoins → « Avec votre stack » (même source que Ma stack) → « Par où commencer » → toute la liste (filtres sur place, sans remontée) ; `/mcp` « Outils à brancher » et `/skills` « Savoir-faire » ouvrent sur une phrase d'accompagnement ; fiche serveur titrée « Brancher Notion à votre assistant ». « MCP » et « skills » restent dans les titres SEO.
+- **Vocabulaire :** « en ligne », « connexion à votre compte », « clé d'accès », « outils à brancher », « savoir-faire » (retenu pour les skills ; « mode d'emploi pour l'assistant » sert dans la phrase d'ouverture de `/skills`).
+- **Stories :** « Agents / Hub » (par besoin, avec et sans stack), « Agents / Fiche » (Notion avec contrat d'ordre des chapitres, Stripe, Ahrefs sans liste d'outils, Figma bureau, deux skills), « Fiche outil / Assistant IA » ; toutes marquées `a-valider` (pas de référence avant validation).
+
+- **Revue de Michael du 17/11 (branchement, outils, sources, « fonctionnel et lisible ») :**
+  - Chapitre unique « Brancher Notion » : choix « Où utilisez-vous l'IA ? » (Claude, ChatGPT, Gemini, Copilot ; outils de développeur Claude Code, Cursor, VS Code, Codex ; « Autre outil »), retenu d'une fiche à l'autre (`localStorage`, en `try/catch`) ; une carte de 1 à 4 étapes (préalable, action « Ouvrir dans Claude » ou copie nommée avec « Copié » en `aria-live`, où coller, connexion puis demande de vérification). Table commune par client : `src/lib/agentClients.ts`, sourcée sur la doc lue le 17/11 (Claude, Claude Code, VS Code, Codex).
+  - Fiche technique repliée (accès maximum, outils cités, liste des actions), plus aucun bloc d'installation à cet endroit. Liste des actions par sujet (classement ToolTrim, dit sur la fiche), une colonne, l'action en français, `Tag` « Modifie / Supprime / Envoie / Paie », l'identifiant en petit et atténué, phrase de synthèse (« 70 actions, dont 4 qui suppriment »), sujet replié au-delà de 5 actions. Le pli « Déplier la fiche technique » est couvert par la story Notion.
+  - Bloc « Sources » : « Vérifié le … chez Notion (il y a 1 jour) », libellés courts traduits avec domaine et icône externe, doublons fusionnés, « Signaler une erreur » vers `/contact` avec la fiche en sujet.
+  - En tête de fiche : ligne de faits à icônes (date, en ligne / sur votre ordinateur, compte, « Fonctionne avec » en logos nommés) et menu « Copier pour votre assistant » (fiche en Markdown, commande Claude Code, « Brancher à VS Code » par le lien `vscode:mcp/install` documenté, « Brancher à Cursor » quand l'éditeur donne un lien de la place de marché Cursor).
+  - Cartes `AgentCard` (logo, nom, « Par Notion · Officiel », résumé sur 3 lignes, deux faits) sur le hub et pour les fiches liées ; « Ajouter à ma stack » sur la carte de l'outil hôte.
+  - Table par client sourcée le 17/11 : Claude (connecteur personnalisé), ChatGPT (« Add custom MCP server » sur chatgpt.com/plugins), Claude Code, Cursor (`~/.cursor/mcp.json` ou `.cursor/mcp.json`, lien `cursor://anysphere.cursor-deeplink/mcp/install`), VS Code (`vscode:mcp/install`, « MCP: Open User Configuration »), Codex (`~/.codex/config.toml`). Manques : l'aide Gemini n'a pas pu être lue, donc une carte Gemini sans entrée de l'éditeur le dit et renvoie à sa documentation ; aucune question pré-remplie n'est documentée par ChatGPT ni par Claude, donc pas d'« Ouvrir dans ChatGPT / Claude avec une question » dans le menu.
+  - Relecture de la session « Axe agentique » (17/11) : valeurs anglaises brutes des `agents` de trois skills ramenées à `any` (« Tout client MCP ») ; « Autres assistants cités par l'éditeur » ne garde que ceux absents de « Fonctionne avec » ; « Importer une Skill » rangé dans Skills et agents, les dossiers dans « Pages et dossiers ».
+
+- **Passe de mise en page (17/11, les 11 points ci-dessus) :** faite, avec deux écarts dits dans `DESIGN_DECISIONS.md` (grilles compactes au lieu de rangées qui défilent ; flèche des liens texte au survol). Captures avant/après à 1440 et 375 px dans le dossier de notes de la session.
+
+- **Emprunts au répertoire Claude (17/11) :** fiche technique toujours visible en pied de fiche (accès maximum, éditeur, vérifié le, répertoire Claude avec le mois d'ajout, actions documentées, adresse du serveur copiable), 3 colonnes sur bureau et 2 sur téléphone ; seule la liste des actions reste repliable. L'en-tête garde trois faits (connexion, compte, « Fonctionne avec ») et la date passe dans la grille, pour ne rien répéter. Logo de l'outil à 48 px à côté du titre (taille 48 ajoutée au `Logo` du système). « Ouvrir dans Claude » vers la page du répertoire : 17 serveurs sur 19, relevés page par page le 17/11 sur `claude.ai/directory/<slug>` (nom, éditeur et adresse du connecteur vérifiés), champ `claude_directory` et source « Répertoire Claude (relevé le 17/11/2026) ». Absents : Google Analytics (seuls des connecteurs tiers sortent à la recherche) et l'application de bureau de Figma (la page Figma décrit le serveur en ligne). Buffer y figure avec la mention « Communautaire ».
+
+- **Liste des actions en rangées (17/11, « des bouts de texte mis bout à bout ») :** une action par rangée blanche sur la tuile, 8 px entre deux, sans filet ; l'action en 16 px au-dessus de l'identifiant en 12 px atténué ; la pastille dans une colonne alignée sur toute la liste, lecture comprise (« Lit ») ; sur téléphone, la pastille passe sous les mots. Filtre par risque en puces du système avec leur compte (Tout, Supprime, Paie, Envoie, Modifie, Lit, selon ce que le serveur fait) ; pas de filtre quand le serveur ne fait que lire (Google Analytics). Stories « Notion Actions » et « Google Analytics Read Only ».
+
+- **Étape 1 de l'analyse produit, la fiche serveur (17/11) :** en-tête calme sur un seul bord gauche (logo 40 et titre 42 sur une ligne au bureau ; une phrase d'accroche composée depuis les données, `hookSentence` ; « Copier pour votre assistant » et « Voir les étapes ↓ » ; ligne de confiance « Officiel, publié par Notion · vérifié le … ») ; ligne de faits, pastilles « Fonctionne avec », logos flottants et grille « Fiche technique » retirés ; citations sans ombre. Chapitres : ce que ça change, Brancher (l'adresse copiable sous « Autre outil »), « Vos premières demandes » (trois en lecture puis une qui écrit, avec ce qu'il faut vérifier), « Si ça ne marche pas » (seulement ce que l'éditeur documente), « Ce qu'il peut faire, et comment garder la main » en phrases (une par niveau avec sa pastille, « restaurer » sorti de « Supprime » chez Notion ; gestes concrets ; forfait : options avancées), notre avis, la liste des actions en rangées avec filtre par risque (repliée), les sources (sans redire la date). Contenu des 19 fiches relu sur la doc éditeur le 17/11 : `control`, `plan_words`, `first_requests`, `troubleshoot`, au garde-fou ; absents quand l'éditeur ne dit rien (ClickUp sans geste de contrôle, Stripe, Shopify, Slack, Webflow et Google Analytics sans forfait documenté). Contrat testé dans la story Notion : l'en-tête et Brancher précèdent la technique, la date, le forfait et « Officiel » n'apparaissent qu'une fois.
+
+- **Étape 1 bis, la mise en page de la fiche serveur (17/11) :** composant `Chapter` du système (`src/ds/Chapter` : titre 42, 21 sur téléphone ; chapeau 21, 17 sur téléphone ; colonne de lecture 720 ou grille 1080 ; 96 entre chapitres, 64 sur téléphone, 48 avant les notes, 24 et 8 ; variante `notes` sans titre). Tous les chapitres sur la feuille blanche (« cette couleur ne doit jamais être utilisée en background », Michael, 17/11) : le rythme vient de l'échelle, des écarts et des objets, posés sur le blanc avec le bord et l'ombre de repos du système (`--tt-row-rest`) : cartes de demande, étapes, cartes de l'avis, dépliant des actions ; bloc de code en filet ; passerelle de la fiche outil et tuiles du hub sorties du gris de la même façon. Les pastilles, le contrôle segmenté, le bouton désactivé et le survol du menu gardent la teinte que le système leur donne. Garde-fou : `src/ds/Chapter/surfaces.test.ts` refuse `--tt-tile` ou `--tt-chrome` en fond dans les styles de la section (hors survol). La fiche en six chapitres : en-tête (logo de 40 au-dessus du titre), « Ce que vous pourrez lui demander » (trois cartes, lecture d'abord, l'écriture en dernier avec sa vérification), Brancher (contrôle segmenté Claude, ChatGPT, Gemini, « Autres » à la largeur de son contenu ; étapes en cartes côte à côte avec grand numéro ; bloc à copier en pleine largeur dessous, « Copiez la commande ci-dessous » ; « Si ça ne marche pas » en dépliant), « Garder la main » en deux colonnes puis le forfait (pastille au-dessus de sa phrase sur téléphone), « Notre avis » en deux colonnes puis trois cartes (outil, alternative, savoir-faire), annexes en notes (actions repliées, sources et « Signaler une erreur » sur une ligne). Espaces insécables dans les guillemets et devant : ; ? ! par un utilitaire commun (`typo`, appliqué par `say`). Story « Fiche complète » ; contrat testé : l'ordre des six chapitres, aucun fond gris, trois cartes sous l'avis.
+- **Même passe, trois retours de Michael (17/11) :** (1) l'action d'une étape est dans l'étape : bouton principal « Copier la commande / la configuration / l'adresse » avec « Copié » en aria-live ; quand le client documente un lien direct (VS Code, Cursor), « Ouvrir dans … » devient l'action et la copie passe dessous (« ou copier la configuration ») ; le bloc de code reste en aperçu pleine largeur, sans bouton à lui. (2) Toute demande proposée a son bouton de copie : composant `Prompt` du système (`src/ds/Prompt`, story d'interaction : le presse-papiers reçoit la demande sans guillemets), utilisé dans « Vérifiez en lui demandant : », les cartes de demande, la recommandation du hub et la passerelle. (3) Un vocabulaire de conséquence pour toute la section (`CONSEQUENCE` dans `src/lib/agents.ts` : Lecture seule, Modifie vos données, Envoie en votre nom, Supprime des données, Engage un paiement) ; la liste des actions rangée par conséquence, du plus grave au plus anodin, sections dépliées pour supprimer, payer, envoyer, « Modifie » dépliée jusqu'à 10 actions, « Lecture seule » repliée (« Sans effet sur vos données ») ; sujets en sous-titres, lignes denses sur deux colonnes sans cadre ni pastille ; plus de filtre. Stories « Notion Actions », « Stripe Actions », « Google Analytics Read Only », « Copier depuis l'étape » ; la story « Fiche complète » refuse l'ancien vocabulaire.
+- **Même passe, cinq retours de plus (17/11) :** (1) « Garder la main » en deux colonnes bâties pareil : « Ce qu'il peut faire » et « Vos garde-fous », chaque entrée avec une icône de 20 dans un rond de 40, un titre en 17 gras et une phrase (garde-fous désormais `{ title, icon, fr, en }` dans les 19 fiches, au garde-fou) ; plus de colonne de pastilles ; le forfait quitte le chapitre et passe en « Selon votre forfait. … » à la fin de Brancher. (2) La liste des actions entre dans « Garder la main » : chaque conséquence porte son nombre et ses actions dessous ; supprimer, payer, envoyer toujours visibles ; « Modifie » montre 6 actions puis « Voir les 26 actions » ; « Lecture seule » repliée ; les actions repliées restent dans le HTML ; « Vos garde-fous » collée en haut à droite au bureau ; le dépliant d'annexe disparaît. (3) Menu « Copier pour votre assistant » ancré au bord gauche du bouton, 360 au moins, jamais plus large que la zone de contenu moins 32 ; sous 768, le `Drawer` du système depuis le bas ; story : le menu reste dans la zone de contenu. (4) « Voir les étapes » retiré : une seule action en tête, contrat testé. (5) « Notre avis » en deux cartes teintées (`ToneCard`, nouveau composant du système : gain et prudence, icône de 24 dans un rond de 48, texte en 21) puis « Pour aller plus loin » en trois cartes d'un seul gabarit (`RelatedCard` : logo de 40, rôle, nom en 21, une phrase complète ou rien, un lien d'action aligné en pied ; « Ajouter à ma stack » en second lien discret si l'outil n'y est pas).
+- **Même passe, copie en un clic (17/11) :** composant `CopyText` du système (`src/ds/CopyText`, story « Molécules/Texte copiable ») : le nom technique est lui-même le bouton (« Copier notion-delete-pages »), icône de copie et teinte légère au survol et au focus, coche et « Copié » 2 s après le clic, 44 de hauteur tactile sans grandir la ligne. Il sert aux identifiants des lignes d'action (le libellé français ne se copie pas) et à l'adresse du serveur sous les étapes ; le bouton de l'étape reste quand copier est l'action principale. Story d'interaction dans « Agents / Fiche » (`CopierDepuisLEtape` : le presse-papiers reçoit exactement `notion-delete-pages`).
+- **Même passe, liste des actions revue (17/11, « on est d'accord qu'on n'y est pas ? » sur ClickUp) :** un fait à une seule place : pas de phrase de synthèse au-dessus d'une liste de 6 actions ou moins ; au-delà, une ligne résume par sujets seulement ce qui est replié (« Et aussi : … », « Lit : … »). Deux colonnes alignées sur toute la liste : libellé en 16, identifiant en 14 couleur méta avec `CopyText`, colonne calée sur l'identifiant le plus long de la fiche ; sous le libellé quand la colonne fait moins de 560. Icône de copie visible au repos (atténuée), pleine au survol et au focus. 8 entre lignes, 48 entre conséquences, titre centré sur l'icône. « Garder la main » en 3/5 actions et 2/5 garde-fous ; sans garde-fous documentés (ClickUp, `control` absent : à enrichir), les actions seules sur 720. Vérifié sur ClickUp, Notion et Stripe à 1440 et 375.
+- **Étape 2, le bloc « Assistant IA » de la fiche outil (17/11) :** `AgentAccess` réduit à un verdict dans le vocabulaire de conséquence (où il se branche, la conséquence la plus grave, le forfait seulement s'il restreint : « Forfait payant requis »), une demande avec « Copier la demande » et le lien d'action « Brancher Notion à votre assistant → » (flèche visible au repos, `LinkArrow shown`, aussi sur les cartes liées de la fiche serveur). Plus de carte, de grille de libellés, de date ni d'avis. Dans la section « L'IA » quand elle existe (`ToolAiBlock` reçoit le bloc en enfant, transition « Et votre propre assistant ? »), sous son propre titre sinon (ClickUp, Tally). Sans branchement officiel : la phrase, puis les alternatives de l'outil (celles que la fiche affiche) qui se branchent, 3 au plus, sans repli par catégorie (`src/lib/agentAlternatives.ts` : Hotjar n'en a aucune, Milanote a Notion, Figma, Miro). Stories Notion, Stripe, Ahrefs, Hotjar, Milanote avec le contrat « ne répète aucun fait de la fiche ».
+- **Étape 4, le hub en bilan et /mcp par catégorie (17/11) :** `/agents` s'ouvre sur « Votre assistant IA » et deux questions : l'assistant (contrôle segmenté Claude, ChatGPT, Gemini, Copilot, Autre, variante `compact` de `Segmented`, même clé que la fiche serveur) et les outils (Ma stack lue sans être modifiée ; sans stack, `ToolChecklist` : les 20 outils vérifiés à cocher et le catalogue en recherche, choix gardé dans ce navigateur, « Enregistrer dans Ma stack » le propose). Le bilan est un chapitre dont le titre est le verdict calculé (`src/lib/agentReport.ts` : « 4 de vos 9 outils se branchent à Claude, dont 3 en un clic. 1 peut engager un paiement. »), puis une ligne par outil (`StackReport`) : en un clic, à configurer, non documenté pour cet assistant, sans branchement officiel (avec l'une de ses alternatives qui se branche), pas encore vérifié (« Signaler cet outil »). Chaque ligne porte la conséquence la plus grave avec son icône, une demande copiable et « Brancher → ». Puis « Tous les outils qui se branchent », par famille (`src/lib/agentShelves.ts` : les univers de besoin d'Explorer, `needUniverses.ts` ; deux univers qui se citent l'un l'autre partagent un rayon, une catégorie hors univers part dans « Autres outils », en dernier ; 6 rayons pour 19 serveurs), avec un seul filtre « Avec Claude ». Retirés du hub : besoins, filtres techniques, « Par où commencer » (remplacé par le lien du guide), skills. `/mcp` affiche la même liste. Au passage, dans le système : `useToolLogoSource` montre aussi un logo local déjà en cache (il restait masqué quand le même logo était affiché plus haut) ; `Logo` garde l'initiale tant que l'image charge, jamais un carré vide ; `Segmented` prend la largeur de ses options (`width: fit-content`), jamais celle de la ligne, partout où il sert. Contrat testé : le verdict et les lignes concordent pour chaque assistant ; aucun outil n'est classé sans donnée.
+- **Étape 4, la liste revue (17/11) :** Slack rejoint Communication (sous-besoin « Chat d'équipe ») et Stripe le rayon de Shopify (sous-besoin « E-commerce » ; aucun univers Finance) : 5 rayons, plus de « Autres outils » d'un seul outil. Phrases de carte entières, 56 signes au plus (12 réécrites dans `research/mcp/`, règle `CARD_MAX` dans le validateur et un test), cartes jamais plus étroites que 280 px. Pied de toutes les cartes de serveur (`serverFoot`) : « En un clic avec Claude », « À configurer » ou « Non documenté pour Claude », puis la conséquence la plus grave avec son icône, pour l'assistant retenu (`useAgentAssistant`, partagé avec la fiche serveur) ; plus de « En ligne » ni « Votre compte ».
+- **Étape 5, skills et navigation (17/11) :** « Votre assistant IA » remplace « Agents IA » dans la barre latérale, le menu téléphone, l'ancien panneau et les fils d'Ariane (fichiers communs : libellé seul). Les skills sortent du hub et de la navigation (plus d'onglets de rubriques). Règle `forEveryone` (`src/lib/agents.ts`, projetée en `everyone` dans `skills_index.json`) : un skill sert un non-développeur quand il n'y a rien à installer, il vient avec le serveur branché (Notion Skills et les deux skills Zapier) ; les autres passent par un outil de code. `/skills` devient « Savoir-faire pour développeurs », accroche « Pour développeurs : … », rayons par outil (ceux sans installation d'abord). La fiche skill passe au modèle de chapitre de l'étape 1 bis : en-tête (« X, pour développeurs » et accroche, ou « sans rien installer »), « Ce qu'il apprend à votre assistant », « L'ajouter » (une carte par outil avec sa commande à copier), « Pour aller plus loin » en cartes plates, sources en notes. Sur la fiche serveur, « Pour aller plus loin » ne propose plus qu'un skill pour tous. Une carte ne montre une phrase tirée d'un texte non écrit pour elle (résumé de skill, description d'outil) que si sa première phrase tient (`cardLine`), jamais coupée. Ménage : 321 lignes de CSS mortes retirées de `AgentSheet.module.css` (Part, Further, Sources, Facts et leurs styles). Reste : les instructions d'installation des skills Figma sont en anglais dans les données (« When you install the Figma plugin… »), à traduire au prochain enrichissement. Pied des cartes de skill (`skillFoot`) : « Sans installation », ou les outils de code documentés (« Dans Claude Code, Codex, Cursor », quatre nommés au plus) ; plus de « Savoir-faire » ni d'éditeur, déjà sur la carte.
+
+**Reste à faire :** Michael revoit `/fr/agents`, `/fr/mcp/notion-mcp` et `/fr/tool/notion#assistant-ia` et dit si ça accompagne ; références visuelles après validation ; publication. Puis le [critère de passage à S2](#critere-s2).
+
+### Brief d'origine — S1, section MCP (exécuté les 16-17/11)
 
 Tâche d'exécution sur une branche dédiée tirée de `main` (rien sur `mission/m01-ma-stack`).
 
@@ -211,6 +614,7 @@ Terminé quand la section est servie en local avec ses 19 fiches, les contrôles
 
 **Guide pilier (M1) :** répond à « qu'est-ce que ça change pour moi ? » pour un freelance sans code : ce qu'un assistant peut faire dans ses outils, ce qu'il faut vérifier avant de connecter (accès en écriture, forfait), trois exemples tirés des fiches du pilote. Ton et format des guides existants.
 
+<a id="critere-s2"></a>
 **Critère pour passer à S2 :** un contrôle automatisé de fraîcheur signale les écarts sur les fiches serveur ; et la section S1 montre des impressions ou des clics après un mois.
 
 **Ce que ToolTrim ne fait pas sur cet axe :** classement par popularité, serveurs et skills tiers non officiels (S1 et S2), reprise de textes de Toolfolio. Les commandes d'installation et le catalogue d'outils, exclus le matin du 16/11, sont réintégrés par la décision révisée.

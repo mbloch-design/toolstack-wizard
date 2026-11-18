@@ -23,7 +23,61 @@
       "Slack AI avec résumés, analyse, recherche sémantique",
       "Appels groupe et huddles pour discussions rapides",
       "SCIM provisioning et contrôles accès granulaires (Enterprise+)"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Slack Developer Docs — Slack MCP server overview",
+          "url": "https://docs.slack.dev/ai/slack-mcp-server/"
+        },
+        {
+          "label": "Slack Developer Docs — Announcing the Slack MCP server",
+          "url": "https://docs.slack.dev/changelog/2026/02/17/slack-mcp/"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Slack MCP server",
+          "transport": "remote",
+          "auth": [
+            "oauth"
+          ],
+          "access": "read_write",
+          "plan": "unknown",
+          "clients": [
+            "claude",
+            "cursor",
+            "perplexity"
+          ],
+          "docs_url": "https://docs.slack.dev/ai/slack-mcp-server/"
+        }
+      ],
+      "note": "Ouvert aux applications publiées dans le Slack Marketplace, aux applications internes et à quelques assistants partenaires.",
+      "note_en": "Open to apps published in the Slack Marketplace, internal apps and a few partner assistants.",
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Chercher et lire messages, fils, fichiers, canvases et listes",
+          "en": "Search and read messages, threads, files, canvases and lists"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer et modifier canvases, canaux, listes et brouillons de messages",
+          "en": "Create and edit canvases, channels, lists and message drafts"
+        },
+        {
+          "kind": "send",
+          "fr": "Envoyer des messages dans n'importe quelle conversation, ou les programmer",
+          "en": "Send messages to any conversation, or schedule them"
+        }
+      ],
+      "safeguards": [
+        "admin_controls",
+        "scoped_keys"
+      ]
+    }
   },
   "fr": {
     "verdict": {

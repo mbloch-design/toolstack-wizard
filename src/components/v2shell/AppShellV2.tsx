@@ -9,7 +9,7 @@ import { MenuGroup, MenuLink } from "@/ds/Shell/Shell";
 import { matchPath, useLocation, useNavigate } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { Home, Lightbulb, ChevronLeft, Bookmark, LayoutGrid, Boxes, Columns2, CirclePlus, UserRound, Menu, Languages } from "@/lib/icons";
+import { Plug, Home, Lightbulb, ChevronLeft, Bookmark, LayoutGrid, Boxes, Columns2, CirclePlus, UserRound, Menu, Languages } from "@/lib/icons";
 import type { IconComponent } from "@/lib/icons";
 import ShellMenuBody, { RouterLink, ShellAccountMenu } from "@/components/v2shell/ShellMenuBody";
 import { BackLink, Crumbs, SearchTrigger, SideFootLink, Sidebar, StackLink, TabBar, Topbar } from "@/ds/Shell/Shell";
@@ -46,6 +46,8 @@ const NAV_ITEMS: NavItem[] = [
   // Une ampoule pour des guides de conseil : le livre ouvert avait la même
   // silhouette que les deux colonnes des comparatifs.
   { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: Lightbulb, to: "/guides",      match: ["/guides", "/guide/"] },
+  // La section agents (serveurs MCP et skills, S1 du 16/11) : une prise, ce qui se branche sur un assistant.
+  { id: "agents",     labelFr: "Votre assistant IA", labelEn: "Your AI assistant",  Icon: Plug,      to: "/agents",      match: ["/agents", "/mcp", "/skills"] },
 ];
 
 /** Expanded unless the visitor collapsed it. Prerendered HTML ships expanded;

@@ -1,0 +1,1204 @@
+[
+  {
+    "slug": "accessibility-audit",
+    "name": "Accessibility audit",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Auditer l'accessibilité selon les WCAG 2.1.",
+      "en": "Audit accessibility against WCAG 2.1."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "bulk-cms-update",
+    "name": "Bulk CMS update",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Mettre à jour le CMS en lot, avec validation et aperçu des différences.",
+      "en": "Update the CMS in bulk, with validation and a diff preview."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "connect-recommend",
+    "name": "connect-recommend",
+    "publisher": "Stripe",
+    "host_tool": "stripe",
+    "server": "stripe-mcp",
+    "category": "finance",
+    "summary": {
+      "fr": "Recommander la configuration Stripe Connect d'une place de marché ou d'une plateforme.",
+      "en": "Recommend the Stripe Connect setup for a marketplace or platform."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Grok",
+      "Kiro",
+      "OpenClaw"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "connect-required-verification-information",
+    "name": "connect-required-verification-information",
+    "publisher": "Stripe",
+    "host_tool": "stripe",
+    "server": "stripe-mcp",
+    "category": "finance",
+    "summary": {
+      "fr": "Lister les informations de vérification demandées aux comptes connectés.",
+      "en": "List the verification information connected accounts must provide."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Grok",
+      "Kiro",
+      "OpenClaw"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "figma-code-connect",
+    "name": "figma-code-connect",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "server": "figma-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Relier les composants publiés à leur code pour le Dev Mode (forfait Professional ou plus).",
+      "en": "Link published components to their code for Dev Mode (Professional plan or above)."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "figma-code-workflows",
+    "name": "figma-code-workflows",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "server": "figma-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Importer un projet local dans Figma comme fichier Make, calque de code ou calques de design.",
+      "en": "Import a local project into Figma as a Make file, code layer or design layers."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "figma-create-new-file",
+    "name": "figma-create-new-file",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "server": "figma-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Créer un fichier Design ou FigJam vierge dans vos brouillons.",
+      "en": "Create a blank Design or FigJam file in your drafts."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "figma-generate-design",
+    "name": "figma-generate-design",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "server": "figma-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Composer des écrans complets avec les composants de votre design system.",
+      "en": "Compose full screens from your design system's components."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "figma-generate-diagram",
+    "name": "figma-generate-diagram",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "server": "figma-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Générer un diagramme FigJam modifiable depuis une description.",
+      "en": "Generate an editable FigJam diagram from a description."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "figma-generate-library",
+    "name": "figma-generate-library",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "server": "figma-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Construire une bibliothèque de design system à partir d'un code existant.",
+      "en": "Build a design system library from an existing codebase."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "figma-spec",
+    "name": "figma-spec",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "server": "figma-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Lire, créer et mettre à jour des Figma Specs (bêta ouverte).",
+      "en": "Read, create and update Figma Specs (open beta)."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "figma-swiftui",
+    "name": "figma-swiftui",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "server": "figma-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Passer d'un design Figma à du SwiftUI, et inversement.",
+      "en": "Go from a Figma design to SwiftUI, and back."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "figma-use-figjam",
+    "name": "figma-use-figjam",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "server": "figma-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Travailler dans un tableau FigJam : post-its, sections, connecteurs.",
+      "en": "Work in a FigJam board: stickies, sections, connectors."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "figma-use-slides",
+    "name": "figma-use-slides",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "server": "figma-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Créer et modifier une présentation Figma Slides, notes comprises.",
+      "en": "Create and edit a Figma Slides deck, notes included."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "figma-use",
+    "name": "figma-use",
+    "publisher": "Figma",
+    "host_tool": "figma",
+    "server": "figma-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "La base pour écrire dans Figma : cadres, composants, variables et mise en page.",
+      "en": "The foundation for writing to Figma: frames, components, variables and layout."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "google-analytics-admin-api-basics",
+    "name": "google-analytics-admin-api-basics",
+    "publisher": "Google",
+    "host_tool": "google-analytics",
+    "server": "google-analytics-mcp",
+    "category": "analytics",
+    "summary": {
+      "fr": "Mettre en place l'API Admin : propriétés, flux, dimensions, événements clés.",
+      "en": "Set up the Admin API: properties, streams, dimensions, key events."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Antigravity"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "google-analytics-data-api-basics",
+    "name": "google-analytics-data-api-basics",
+    "publisher": "Google",
+    "host_tool": "google-analytics",
+    "server": "google-analytics-mcp",
+    "category": "analytics",
+    "summary": {
+      "fr": "Mettre en place l'API Data et construire des requêtes de rapport.",
+      "en": "Set up the Data API and build report queries."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Antigravity"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "make-credential-requests",
+    "name": "Credential requests",
+    "publisher": "Make",
+    "host_tool": "make",
+    "server": "make-mcp",
+    "category": "automation",
+    "summary": {
+      "fr": "Gérer les demandes d'identifiants.",
+      "en": "Handle credential requests."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Codex",
+      "cursor",
+      "GitHub Copilot",
+      "Windsurf",
+      "Cline"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "make-endpoints",
+    "name": "Endpoints",
+    "publisher": "Make",
+    "host_tool": "make",
+    "server": "make-mcp",
+    "category": "automation",
+    "summary": {
+      "fr": "Travailler avec les points d'accès de Make.",
+      "en": "Work with Make endpoints."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Codex",
+      "cursor",
+      "GitHub Copilot",
+      "Windsurf",
+      "Cline"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "make-functions-v2",
+    "name": "Functions v2",
+    "publisher": "Make",
+    "host_tool": "make",
+    "server": "make-mcp",
+    "category": "automation",
+    "summary": {
+      "fr": "Utiliser les fonctions Make.",
+      "en": "Use Make functions."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Codex",
+      "cursor",
+      "GitHub Copilot",
+      "Windsurf",
+      "Cline"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "make-scenario-building",
+    "name": "Scenario building",
+    "publisher": "Make",
+    "host_tool": "make",
+    "server": "make-mcp",
+    "category": "automation",
+    "summary": {
+      "fr": "Construire un scénario : structure, modules, connexions.",
+      "en": "Build a scenario: structure, modules, connections."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Codex",
+      "cursor",
+      "GitHub Copilot",
+      "Windsurf",
+      "Cline"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "make-scenario-explore",
+    "name": "Scenario explore",
+    "publisher": "Make",
+    "host_tool": "make",
+    "server": "make-mcp",
+    "category": "automation",
+    "summary": {
+      "fr": "Explorer les scénarios existants.",
+      "en": "Explore existing scenarios."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Codex",
+      "cursor",
+      "GitHub Copilot",
+      "Windsurf",
+      "Cline"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "make-scenario-operations",
+    "name": "Scenario operations",
+    "publisher": "Make",
+    "host_tool": "make",
+    "server": "make-mcp",
+    "category": "automation",
+    "summary": {
+      "fr": "Comprendre et déboguer l'exécution d'un scénario.",
+      "en": "Understand and debug a scenario run."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Codex",
+      "cursor",
+      "GitHub Copilot",
+      "Windsurf",
+      "Cline"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "make-scenario-reference",
+    "name": "Scenario reference",
+    "publisher": "Make",
+    "host_tool": "make",
+    "server": "make-mcp",
+    "category": "automation",
+    "summary": {
+      "fr": "Référence pour décrire un scénario Make.",
+      "en": "Reference for describing a Make scenario."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Codex",
+      "cursor",
+      "GitHub Copilot",
+      "Windsurf",
+      "Cline"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "metronome",
+    "name": "metronome",
+    "publisher": "Stripe",
+    "host_tool": "stripe",
+    "server": "stripe-mcp",
+    "category": "finance",
+    "summary": {
+      "fr": "Guider une facturation à l'usage avec Metronome.",
+      "en": "Guide usage-based billing with Metronome."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Grok",
+      "Kiro",
+      "OpenClaw"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "miro-code-explain-on-board",
+    "name": "miro-code-explain-on-board",
+    "publisher": "Miro",
+    "host_tool": "miro",
+    "server": "miro-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Expliquer un code sur un tableau Miro, en schémas et document d'accompagnement.",
+      "en": "Explain a codebase on a Miro board, as diagrams and a companion doc."
+    },
+    "agents": [
+      "claude-code",
+      "cursor",
+      "Codex",
+      "GitHub Copilot"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "miro-code-review",
+    "name": "miro-code-review",
+    "publisher": "Miro",
+    "host_tool": "miro",
+    "server": "miro-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Relire visuellement des changements de code sur un tableau.",
+      "en": "Review code changes visually on a board."
+    },
+    "agents": [
+      "claude-code",
+      "cursor",
+      "Codex",
+      "GitHub Copilot"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "miro-code-spec",
+    "name": "miro-code-spec",
+    "publisher": "Miro",
+    "host_tool": "miro",
+    "server": "miro-mcp",
+    "category": "design-tools",
+    "summary": {
+      "fr": "Extraire les spécifications d'un tableau (documents, schémas, maquettes) vers le projet.",
+      "en": "Extract specs from a board (docs, diagrams, prototypes) into the project."
+    },
+    "agents": [
+      "claude-code",
+      "cursor",
+      "Codex",
+      "GitHub Copilot"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "notion-skills",
+    "name": "Notion Skills",
+    "publisher": "Notion",
+    "host_tool": "notion",
+    "server": "notion-mcp",
+    "category": "organization",
+    "summary": {
+      "fr": "Des pages d'instructions réutilisables, écrites et partagées dans Notion, que tout assistant connecté à Notion MCP peut suivre.",
+      "en": "Reusable instruction pages, written and shared in Notion, that any assistant connected to Notion MCP can follow."
+    },
+    "agents": [
+      "any"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": true
+  },
+  {
+    "slug": "shopify-ai-toolkit",
+    "name": "Shopify AI Toolkit",
+    "publisher": "Shopify",
+    "host_tool": "shopify",
+    "server": "shopify-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Aider un agent de code à développer pour Shopify : API Admin, Liquid, Polaris, Hydrogen, CLI.",
+      "en": "Help a coding agent build for Shopify: Admin API, Liquid, Polaris, Hydrogen, CLI."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "vs-code",
+      "Antigravity"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "site-audit",
+    "name": "Site audit",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Inventorier le site et lui donner un score de santé.",
+      "en": "Inventory the site and give it a health score."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "stripe-apps",
+    "name": "stripe-apps",
+    "publisher": "Stripe",
+    "host_tool": "stripe",
+    "server": "stripe-mcp",
+    "category": "finance",
+    "summary": {
+      "fr": "Construire et relire des Stripe Apps et des extensions du Dashboard.",
+      "en": "Build and review Stripe Apps and Dashboard extensions."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Grok",
+      "Kiro",
+      "OpenClaw"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "stripe-best-practices",
+    "name": "stripe-best-practices",
+    "publisher": "Stripe",
+    "host_tool": "stripe",
+    "server": "stripe-mcp",
+    "category": "finance",
+    "summary": {
+      "fr": "Guider les choix d'intégration : API, facturation, taxes, sécurité.",
+      "en": "Guide integration choices: API, billing, tax, security."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Grok",
+      "Kiro",
+      "OpenClaw"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "stripe-directory",
+    "name": "stripe-directory",
+    "publisher": "Stripe",
+    "host_tool": "stripe",
+    "server": "stripe-mcp",
+    "category": "finance",
+    "summary": {
+      "fr": "Identifier un prestataire et la façon de le payer ou de s'y intégrer.",
+      "en": "Identify a provider and how to pay or integrate with it."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Grok",
+      "Kiro",
+      "OpenClaw"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "stripe-docs",
+    "name": "stripe-docs",
+    "publisher": "Stripe",
+    "host_tool": "stripe",
+    "server": "stripe-mcp",
+    "category": "finance",
+    "summary": {
+      "fr": "Lire et chercher dans la documentation Stripe.",
+      "en": "Read and search Stripe documentation."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Grok",
+      "Kiro",
+      "OpenClaw"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "stripe-implementation-planner",
+    "name": "stripe-implementation-planner",
+    "publisher": "Stripe",
+    "host_tool": "stripe",
+    "server": "stripe-mcp",
+    "category": "finance",
+    "summary": {
+      "fr": "Planifier le choix des produits Stripe et l'architecture d'intégration.",
+      "en": "Plan Stripe product choice and integration architecture."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Grok",
+      "Kiro",
+      "OpenClaw"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "stripe-pay",
+    "name": "stripe-pay",
+    "publisher": "Stripe",
+    "host_tool": "stripe",
+    "server": "stripe-mcp",
+    "category": "finance",
+    "summary": {
+      "fr": "Envoyer des fonds à une autre entreprise Stripe.",
+      "en": "Send funds to another Stripe business."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Grok",
+      "Kiro",
+      "OpenClaw"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "stripe-projects",
+    "name": "stripe-projects",
+    "publisher": "Stripe",
+    "host_tool": "stripe",
+    "server": "stripe-mcp",
+    "category": "finance",
+    "summary": {
+      "fr": "Provisionner des services tiers avec Stripe Projects.",
+      "en": "Provision third-party services with Stripe Projects."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Grok",
+      "Kiro",
+      "OpenClaw"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "upgrade-stripe",
+    "name": "upgrade-stripe",
+    "publisher": "Stripe",
+    "host_tool": "stripe",
+    "server": "stripe-mcp",
+    "category": "finance",
+    "summary": {
+      "fr": "Guider la mise à jour des versions d'API, webhooks et SDK.",
+      "en": "Guide upgrades of API versions, webhooks and SDKs."
+    },
+    "agents": [
+      "claude-code",
+      "Codex",
+      "cursor",
+      "Grok",
+      "Kiro",
+      "OpenClaw"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-asset-audit",
+    "name": "Asset audit",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Vérifier textes alternatifs et noms de fichiers pour le référencement.",
+      "en": "Check alt text and file names for SEO."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-cli-troubleshooter",
+    "name": "CLI troubleshooter",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Dépanner la ligne de commande Webflow.",
+      "en": "Troubleshoot the Webflow CLI."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-cloud-commands",
+    "name": "Webflow Cloud commands",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Utiliser les commandes Webflow Cloud.",
+      "en": "Use Webflow Cloud commands."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-cms-best-practices",
+    "name": "CMS best practices",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Conseiller l'architecture du CMS.",
+      "en": "Advise on CMS architecture."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-cms-collection-setup",
+    "name": "CMS collection setup",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Créer des collections avec leurs champs et relations.",
+      "en": "Create collections with their fields and relationships."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-code-component-deployment-guide",
+    "name": "Code Component deployment guide",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Guider le déploiement d'un Code Component.",
+      "en": "Guide a Code Component deployment."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-code-component-dev-environment",
+    "name": "Code Component development environment",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Préparer l'environnement de développement.",
+      "en": "Set up the development environment."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-code-components",
+    "name": "Code Components",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Travailler avec les Code Components.",
+      "en": "Work with Code Components."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-component-scaffold",
+    "name": "Component scaffold",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Créer la base d'un nouveau composant.",
+      "en": "Scaffold a new component."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-convert-component",
+    "name": "Convert component",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Convertir un composant existant.",
+      "en": "Convert an existing component."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-custom-code-management",
+    "name": "Custom code management",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Gérer les scripts personnalisés du site.",
+      "en": "Manage the site's custom scripts."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-designer-extensions",
+    "name": "Designer extensions",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Travailler sur des extensions du Designer.",
+      "en": "Work on Designer extensions."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-devlink-commands",
+    "name": "DevLink commands",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Utiliser les commandes DevLink.",
+      "en": "Use DevLink commands."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-flowkit-naming",
+    "name": "Flowkit naming",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Appliquer les conventions de nommage CSS Flowkit.",
+      "en": "Apply Flowkit CSS naming conventions."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-link-checker",
+    "name": "Link checker",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Trouver les liens cassés ou non sécurisés, CMS compris.",
+      "en": "Find broken or insecure links, CMS included."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-safe-publish",
+    "name": "Safe publish",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Préparer, faire confirmer puis publier le site.",
+      "en": "Plan, confirm, then publish the site."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-site-activity-log",
+    "name": "Site activity log",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Résumer le journal d'activité du site (Enterprise).",
+      "en": "Summarise the site activity log (Enterprise)."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-troubleshoot-code-component-deployment",
+    "name": "Troubleshoot Code Component deployment",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Dépanner un déploiement de Code Component.",
+      "en": "Troubleshoot a Code Component deployment."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "webflow-validate-code-components",
+    "name": "Validate Code Components",
+    "publisher": "Webflow",
+    "host_tool": "webflow",
+    "server": "webflow-mcp",
+    "category": "nocode-web",
+    "summary": {
+      "fr": "Vérifier des Code Components.",
+      "en": "Validate Code Components."
+    },
+    "agents": [
+      "claude",
+      "claude-code",
+      "Grok Build"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": false
+  },
+  {
+    "slug": "zapier-build-workflows",
+    "name": "zapier:build-workflows",
+    "publisher": "Zapier",
+    "host_tool": "zapier",
+    "server": "zapier-mcp",
+    "category": "automation",
+    "summary": {
+      "fr": "Guider l'assistant avant de construire un workflow Zapier.",
+      "en": "Guide the assistant before building a Zapier workflow."
+    },
+    "agents": [
+      "any"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": true
+  },
+  {
+    "slug": "zapier-onboarding",
+    "name": "Onboarding",
+    "publisher": "Zapier",
+    "host_tool": "zapier",
+    "server": "zapier-mcp",
+    "category": "automation",
+    "summary": {
+      "fr": "Faire découvrir Zapier MCP avec un premier enchaînement entre vos applications.",
+      "en": "Introduce Zapier MCP with a first workflow across your apps."
+    },
+    "agents": [
+      "any"
+    ],
+    "verified_on": "2026-11-16",
+    "everyone": true
+  }
+]

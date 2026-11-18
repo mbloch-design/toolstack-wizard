@@ -1,0 +1,366 @@
+/* The hub /agents as a report (step 4, 17/11): your tools to tick, one row per tool, shelves of cards by category.
+   Objects on the white sheet with the system's resting shadow; groups and space, never a separator. */
+
+.logo {
+  display: inline-flex;
+  flex: none;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* The two questions under the title: the assistant, then the tools. */
+.questions {
+  display: grid;
+  gap: var(--tt-gap-group);
+  min-width: 0;
+}
+
+.question {
+  display: grid;
+  gap: var(--tt-space-3);
+  min-width: 0;
+}
+
+.questionHead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-1) var(--tt-space-4);
+  align-items: baseline;
+}
+
+.questionTitle {
+  composes: label from "../atoms.module.css";
+  composes: strong from "../atoms.module.css";
+  margin: 0;
+  font-size: var(--tt-lead-size);
+}
+
+.questionNote {
+  composes: note from "../atoms.module.css";
+  color: var(--tt-meta);
+}
+
+/* « Vos outils » without a stack: logos to tick, then the catalogue's search. */
+.checklist {
+  display: grid;
+  gap: var(--tt-gap-group);
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.checks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr));
+  gap: var(--tt-gap-item);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check {
+  composes: label from "../atoms.module.css";
+  display: flex;
+  gap: var(--tt-space-2);
+  align-items: center;
+  width: 100%;
+  min-height: var(--tt-tap);
+  padding: var(--tt-space-2) var(--tt-space-3);
+  border: 0;
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
+  color: var(--tt-ink);
+  text-align: start;
+  cursor: pointer;
+  transition: box-shadow var(--tt-dur-state) var(--tt-ease);
+}
+
+.check:hover {
+  box-shadow: var(--tt-row-lift);
+}
+
+/* Ticked: the system's pressed choice, ink with the sheet's colour. */
+.check[aria-pressed="true"] {
+  background: var(--tt-ink);
+  box-shadow: none;
+  color: var(--tt-bg);
+}
+
+.check:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: var(--tt-focus-offset);
+}
+
+.checkName {
+  flex: 1;
+  min-width: 0;
+}
+
+.checkMark {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+.checkMark svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+/* One row per tool: who and where it stands, the gravest consequence, a request to copy, « Brancher → ». */
+.report {
+  display: grid;
+  gap: var(--tt-gap-item);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  container-type: inline-size;
+}
+
+.reportRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto;
+  grid-template-areas:
+    "head consequence action"
+    "request request request";
+  gap: var(--tt-space-3) var(--tt-space-6);
+  align-items: center;
+  padding: var(--tt-space-5) var(--tt-space-6);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
+  min-width: 0;
+}
+
+/* On a phone the row stacks what it has: no empty area keeps its gap (a tool without a server). */
+@container (max-width: 640px) {
+  .reportRow {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--tt-space-4);
+  }
+}
+
+.reportHead {
+  display: flex;
+  grid-area: head;
+  gap: var(--tt-space-3);
+  align-items: center;
+  min-width: 0;
+}
+
+.reportNames {
+  display: grid;
+  min-width: 0;
+}
+
+.reportName {
+  composes: label from "../atoms.module.css";
+  composes: strong from "../atoms.module.css";
+}
+
+.reportStatus {
+  composes: note from "../atoms.module.css";
+  color: var(--tt-meta);
+}
+
+.consequence {
+  composes: text from "../atoms.module.css";
+  display: flex;
+  grid-area: consequence;
+  gap: var(--tt-space-2);
+  align-items: center;
+  margin: 0;
+}
+
+.consequenceIcon {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+}
+
+.consequenceIcon svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+.consequence[data-alert] .consequenceIcon {
+  color: var(--tt-overlap);
+}
+
+.reportText {
+  composes: text from "../atoms.module.css";
+  grid-area: consequence;
+  margin: 0;
+}
+
+.reportRequest {
+  grid-area: request;
+  min-width: 0;
+}
+
+.reportAction {
+  display: flex;
+  grid-area: action;
+  flex-wrap: wrap;
+  gap: var(--tt-space-2) var(--tt-space-4);
+  justify-content: flex-end;
+}
+
+@container (max-width: 640px) {
+  .reportAction {
+    justify-content: flex-start;
+  }
+}
+
+/* The full list by catalogue category: a small title with its count, then the cards. */
+.shelf {
+  display: grid;
+  gap: var(--tt-space-4);
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.shelfTitle {
+  composes: label from "../atoms.module.css";
+  composes: strong from "../atoms.module.css";
+  margin: 0;
+  font-size: var(--tt-lead-size);
+}
+
+.shelfCount {
+  color: var(--tt-meta);
+  font-weight: inherit;
+}
+
+/* Cards of sheets: a white card with its hairline and quiet lift, like the catalogue's rows. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--tt-place-min)), 1fr));
+  gap: var(--tt-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cardSlot {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  border-radius: var(--tt-r-card);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-row-rest);
+  transition: box-shadow var(--tt-dur-state) var(--tt-ease);
+  min-width: 0;
+}
+
+.cardSlot:hover {
+  box-shadow: var(--tt-row-lift);
+}
+
+.agentCard {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: var(--tt-space-3);
+  padding: var(--tt-space-5);
+  border-radius: var(--tt-r-card);
+  color: var(--tt-ink);
+  text-decoration: none;
+  min-width: 0;
+}
+
+.agentCard:focus-visible {
+  outline: var(--tt-focus-ring);
+  outline-offset: calc(-1 * var(--tt-focus-offset));
+}
+
+.cardHead {
+  display: flex;
+  gap: var(--tt-space-3);
+  align-items: center;
+  min-width: 0;
+}
+
+.cardNames {
+  display: grid;
+  min-width: 0;
+}
+
+.cardName {
+  composes: label from "../atoms.module.css";
+  composes: strong from "../atoms.module.css";
+}
+
+.cardBy {
+  composes: note from "../atoms.module.css";
+  color: var(--tt-meta);
+}
+
+.cardSummary {
+  composes: note from "../atoms.module.css";
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* The facts sit at the card's foot: every foot of a row lines up. */
+.cardFacts {
+  composes: note from "../atoms.module.css";
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tt-space-1) var(--tt-space-4);
+  align-self: end;
+  color: var(--tt-meta);
+}
+
+.cardFact {
+  display: inline-flex;
+  gap: var(--tt-space-1);
+  align-items: center;
+}
+
+/* Deleting or paying: the icon in the alert colour, as in the report and the sheet. */
+.cardFact[data-alert] > svg {
+  color: var(--tt-overlap);
+}
+
+.cardAction {
+  display: flex;
+  padding: 0 var(--tt-space-5) var(--tt-space-5);
+}
+
+/* The sheet's row of three (step 1 bis): white, resting shadow, the tile's radius and 24 of padding. Never narrower
+   than 280, so a card sentence of 56 signs stays whole on two lines (17/11); three to a row at most. */
+.cards[data-flat] {
+  grid-template-columns: repeat(auto-fill, minmax(max(280px, calc((100% - 2 * var(--tt-gap-item)) / 3)), 1fr));
+  gap: var(--tt-gap-item);
+}
+
+@container (max-width: 640px) {
+  .cards[data-flat] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.cards[data-flat] .cardSlot {
+  border-radius: var(--tt-r-tile);
+}
+
+.cards[data-flat] .agentCard {
+  padding: var(--tt-space-6);
+}
+
+.cards[data-flat] .cardAction {
+  padding: 0 var(--tt-space-6) var(--tt-space-6);
+}

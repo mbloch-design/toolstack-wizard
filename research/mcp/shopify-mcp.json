@@ -1,0 +1,483 @@
+{
+  "slug": "shopify-mcp",
+  "name": "Shopify AI tool integrations",
+  "publisher": "Shopify",
+  "official": true,
+  "host_tool": "shopify",
+  "category": "nocode-web",
+  "summary": {
+    "fr": "Shopify propose des intégrations officielles pour Claude, ChatGPT, Gemini, Copilot et d'autres assistants : lire commandes et statistiques, créer produits, collections et réductions, modifier un thème. Remboursements, paiements et réglages de la boutique restent bloqués, même avec l'accès en écriture.",
+    "en": "Shopify offers official integrations for Claude, ChatGPT, Gemini, Copilot and other assistants: read orders and analytics, create products, collections and discounts, edit a theme. Refunds, payments and store settings stay blocked, even with write access."
+  },
+  "card": {
+    "fr": "Suivre commandes et stocks, créer produits et remises.",
+    "en": "Follow orders and stock, create products and discounts."
+  },
+  "examples": [
+    {
+      "fr": "Montre-moi les commandes de la semaine.",
+      "en": "Show me this week's orders."
+    },
+    {
+      "fr": "Quels produits sont presque en rupture de stock ?",
+      "en": "Which products are almost out of stock?"
+    },
+    {
+      "fr": "Crée un code de réduction de 10 % pour le week-end.",
+      "en": "Create a 10% discount code for the weekend."
+    }
+  ],
+  "for": {
+    "fr": "Vous vendez en ligne avec une boutique Shopify.",
+    "en": "You sell online with a Shopify store."
+  },
+  "not_for": {
+    "fr": "Vous gérez plusieurs boutiques sans vérifier laquelle est branchée : l'assistant peut passer de l'une à l'autre.",
+    "en": "You run several stores without checking which one is connected: the assistant can switch between them."
+  },
+  "control": [
+    {
+      "title": {
+        "fr": "Vous choisissez la boutique",
+        "en": "You choose the store"
+      },
+      "icon": "account",
+      "fr": "À la connexion, vous choisissez la boutique, et vous pouvez refuser la demande.",
+      "en": "When connecting, you pick the store, and you can decline the request."
+    },
+    {
+      "title": {
+        "fr": "Vous réglez les accès",
+        "en": "You set the access"
+      },
+      "icon": "admin",
+      "fr": "Vous réglez le niveau d'accès de chaque membre dans l'administration Shopify ; certaines autorisations sont en lecture seule.",
+      "en": "You set each member's access level in the Shopify admin; some permissions are read-only."
+    },
+    {
+      "title": {
+        "fr": "Ce qu'il ne fera jamais",
+        "en": "What it never does"
+      },
+      "icon": "limit",
+      "fr": "Il ne peut ni rembourser, ni annuler ou encaisser une commande, ni toucher au forfait, aux paiements, aux taxes ou aux domaines.",
+      "en": "It cannot refund, cancel or capture an order, nor touch your plan, payments, taxes or domains."
+    },
+    {
+      "title": {
+        "fr": "Vous coupez quand vous voulez",
+        "en": "You cut whenever you want"
+      },
+      "icon": "cut",
+      "fr": "Pour couper l'accès : désinstallez l'intégration dans l'administration Shopify.",
+      "en": "To cut access: uninstall the integration in the Shopify admin."
+    }
+  ],
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Montre mes dix dernières commandes.",
+        "en": "Show my ten latest orders."
+      },
+      {
+        "fr": "Quels produits ont moins de cinq articles en stock ?",
+        "en": "Which products have fewer than five items in stock?"
+      },
+      {
+        "fr": "Donne-moi les informations de ma boutique.",
+        "en": "Give me my store's details."
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Crée un produit « Test ToolTrim ».",
+        "en": "Create a product “ToolTrim test”."
+      },
+      "check": {
+        "fr": "Il apparaît dans vos produits : vérifiez qu'il n'est pas en vente, puis supprimez-le.",
+        "en": "It appears in your products: check it is not for sale, then delete it."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Après un changement de boutique, ouvrez une nouvelle conversation : l'ancienne garde la boutique précédente.",
+      "en": "After switching stores, open a new conversation: the old one keeps the previous store."
+    },
+    {
+      "fr": "Un gros lot de modifications peut s'arrêter en route : terminez dans l'administration.",
+      "en": "A large batch of changes can stop partway: finish it in the admin."
+    },
+    {
+      "fr": "Ses droits dépendent de ceux de votre compte employé.",
+      "en": "Its rights depend on your staff account's."
+    }
+  ],
+  "verified_on": "2026-11-16",
+  "access": "read_write",
+  "plan": "unknown",
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Lire commandes, produits, clients, stocks et statistiques",
+      "en": "Read orders, products, customers, inventory and analytics"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer et modifier produits, collections, stocks, codes de réduction, pages, menus et thèmes non publiés",
+      "en": "Create and edit products, collections, inventory, discount codes, pages, menus and unpublished themes"
+    },
+    {
+      "kind": "send",
+      "fr": "Publier des collections et, après confirmation, un thème",
+      "en": "Publish collections and, after confirming, a theme"
+    }
+  ],
+  "setup": [
+    {
+      "assistant": "claude",
+      "how": "connector"
+    },
+    {
+      "assistant": "chatgpt",
+      "how": "plugin"
+    },
+    {
+      "assistant": "gemini",
+      "how": "connector"
+    },
+    {
+      "assistant": "copilot",
+      "how": "plugin"
+    },
+    {
+      "assistant": "other",
+      "how": "connector"
+    }
+  ],
+  "safeguards": [
+    "human_confirmation",
+    "admin_controls",
+    "scoped_keys"
+  ],
+  "tools": [
+    {
+      "name": "add-to-collection",
+      "kind": "write",
+      "fr": "Ajouter des produits à une collection",
+      "en": "Add products to a collection"
+    },
+    {
+      "name": "bulk-update-product-status",
+      "kind": "write",
+      "fr": "Changer le statut de 50 produits",
+      "en": "Set up to 50 products active, draft or archived"
+    },
+    {
+      "name": "create-collection",
+      "kind": "send",
+      "fr": "Créer et publier une collection",
+      "en": "Create a collection and publish it"
+    },
+    {
+      "name": "create-digital-product",
+      "kind": "write",
+      "fr": "Créer un produit numérique",
+      "en": "Create a draft digital product"
+    },
+    {
+      "name": "create-digital-product-from-link",
+      "kind": "write",
+      "fr": "Créer un produit numérique par lien",
+      "en": "Create a digital product delivering a link"
+    },
+    {
+      "name": "create-discount",
+      "kind": "write",
+      "fr": "Créer un code de réduction",
+      "en": "Create a percentage discount code"
+    },
+    {
+      "name": "create-product",
+      "kind": "write",
+      "fr": "Créer un produit",
+      "en": "Create a product with variants"
+    },
+    {
+      "name": "create_store",
+      "kind": "write",
+      "fr": "Créer une boutique",
+      "en": "Create a store from a description"
+    },
+    {
+      "name": "find-sample-product",
+      "kind": "read",
+      "fr": "Trouver des produits d'exemple",
+      "en": "Find sample products"
+    },
+    {
+      "name": "generate-business-names",
+      "kind": "read",
+      "fr": "Suggérer des noms de boutique",
+      "en": "Suggest store names"
+    },
+    {
+      "name": "generate-domain-names",
+      "kind": "read",
+      "fr": "Suggérer des domaines",
+      "en": "Suggest available domains"
+    },
+    {
+      "name": "get-collection",
+      "kind": "read",
+      "fr": "Lire une collection",
+      "en": "Read a collection"
+    },
+    {
+      "name": "get-digital-product",
+      "kind": "read",
+      "fr": "Lire un produit numérique",
+      "en": "Read a digital product"
+    },
+    {
+      "name": "get-inventory-levels",
+      "kind": "read",
+      "fr": "Lire les stocks",
+      "en": "Read stock across locations"
+    },
+    {
+      "name": "get-order",
+      "kind": "read",
+      "fr": "Lire une commande",
+      "en": "Read an order"
+    },
+    {
+      "name": "get_preview_store_links",
+      "kind": "read",
+      "fr": "Obtenir l'aperçu d'une boutique",
+      "en": "Get preview links for a new store"
+    },
+    {
+      "name": "get-product",
+      "kind": "read",
+      "fr": "Lire un produit",
+      "en": "Read a product"
+    },
+    {
+      "name": "get-shop-info",
+      "kind": "read",
+      "fr": "Lire les infos de la boutique",
+      "en": "Read the store's plan and currency"
+    },
+    {
+      "name": "get_uploaded_files",
+      "kind": "read",
+      "fr": "Lister les fichiers envoyés",
+      "en": "List files uploaded in the chat"
+    },
+    {
+      "name": "graphql_mutation",
+      "kind": "write",
+      "fr": "Modifier la boutique via l'API",
+      "en": "Change store data through the Admin API"
+    },
+    {
+      "name": "graphql_query",
+      "kind": "read",
+      "fr": "Lire la boutique via l'API",
+      "en": "Read store data through the Admin API"
+    },
+    {
+      "name": "graphql_schema",
+      "kind": "read",
+      "fr": "Lire le schéma de l'API",
+      "en": "Read the Admin API schema"
+    },
+    {
+      "name": "list-customers",
+      "kind": "read",
+      "fr": "Lister les clients",
+      "en": "List customers"
+    },
+    {
+      "name": "list-orders",
+      "kind": "read",
+      "fr": "Lister les commandes",
+      "en": "List recent orders"
+    },
+    {
+      "name": "open-digital-products-install",
+      "kind": "write",
+      "fr": "Proposer l'appli Digital Products",
+      "en": "Offer to install Digital Products"
+    },
+    {
+      "name": "publish-digital-product",
+      "kind": "send",
+      "fr": "Publier un produit numérique",
+      "en": "Activate and list a digital product"
+    },
+    {
+      "name": "run-analytics-query",
+      "kind": "read",
+      "fr": "Interroger les statistiques",
+      "en": "Run an analytics query"
+    },
+    {
+      "name": "search_collections",
+      "kind": "read",
+      "fr": "Chercher des collections",
+      "en": "Search collections"
+    },
+    {
+      "name": "search_docs_chunks",
+      "kind": "read",
+      "fr": "Chercher dans la documentation",
+      "en": "Search Shopify documentation"
+    },
+    {
+      "name": "search_products",
+      "kind": "read",
+      "fr": "Chercher dans le catalogue",
+      "en": "Search the catalogue"
+    },
+    {
+      "name": "set-inventory",
+      "kind": "write",
+      "fr": "Régler un stock",
+      "en": "Set stock at a location"
+    },
+    {
+      "name": "switch-shop",
+      "kind": "write",
+      "fr": "Changer de boutique",
+      "en": "Switch to another store"
+    },
+    {
+      "name": "test-digital-products-connection",
+      "kind": "read",
+      "fr": "Vérifier Digital Products",
+      "en": "Check the Digital Products link"
+    },
+    {
+      "name": "theme_bash",
+      "kind": "write",
+      "fr": "Modifier les fichiers du thème (en attente)",
+      "en": "Read and edit theme files (pending)"
+    },
+    {
+      "name": "theme_commit",
+      "kind": "write",
+      "fr": "Enregistrer une version du thème",
+      "en": "Save theme edits as a version"
+    },
+    {
+      "name": "theme_publish",
+      "kind": "send",
+      "fr": "Publier un thème, après confirmation",
+      "en": "Publish a theme, after confirmation"
+    },
+    {
+      "name": "theme_screenshot",
+      "kind": "read",
+      "fr": "Capturer une page",
+      "en": "Capture a store page"
+    },
+    {
+      "name": "update-collection",
+      "kind": "write",
+      "fr": "Modifier une collection",
+      "en": "Update a collection"
+    },
+    {
+      "name": "update-product",
+      "kind": "write",
+      "fr": "Modifier un produit",
+      "en": "Update a product"
+    },
+    {
+      "name": "upload-digital-product-file",
+      "kind": "write",
+      "fr": "Joindre un fichier à télécharger",
+      "en": "Attach a downloadable file"
+    },
+    {
+      "name": "upload-digital-product-media",
+      "kind": "write",
+      "fr": "Ajouter une image de couverture",
+      "en": "Add a cover image"
+    },
+    {
+      "name": "upload_file",
+      "kind": "write",
+      "fr": "Ouvrir l'envoi de fichiers",
+      "en": "Open the chat upload box"
+    },
+    {
+      "name": "validate_graphql_codeblocks",
+      "kind": "read",
+      "fr": "Vérifier une requête API",
+      "en": "Check an API request before running"
+    }
+  ],
+  "tools_note": {
+    "fr": "Liste du connecteur pour Claude ; l'application pour ChatGPT ajoute l'envoi d'images.",
+    "en": "List of the Claude connector; the ChatGPT app adds image upload."
+  },
+  "install": [
+    {
+      "client": "claude",
+      "type": "url",
+      "value": "https://claude.ai/directory/connectors/shopify"
+    },
+    {
+      "client": "chatgpt",
+      "type": "url",
+      "value": "https://chatgpt.com/plugins/shopify"
+    }
+  ],
+  "clients": [
+    "claude",
+    "chatgpt",
+    "gemini",
+    "perplexity",
+    "grok",
+    "Microsoft Copilot",
+    "Muse"
+  ],
+  "skills": [
+    "shopify-ai-toolkit"
+  ],
+  "note": {
+    "fr": "Shopify passe par des intégrations installées depuis chaque assistant, sans les présenter comme un serveur MCP.",
+    "en": "Shopify works through integrations installed from each assistant, without calling them an MCP server."
+  },
+  "claude_directory": {
+    "url": "https://claude.ai/directory/shopify",
+    "added": "2026-04",
+    "read_on": "2026-11-17"
+  },
+  "docs_url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools",
+  "sources": [
+    {
+      "label": "Shopify Help Center — Building and managing your store with third-party AI tools",
+      "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools"
+    },
+    {
+      "label": "Shopify Help Center — Authorizing AI tool access to your store",
+      "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/authorizing-access"
+    },
+    {
+      "label": "Shopify Help Center — Considerations",
+      "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations"
+    },
+    {
+      "label": "Shopify Help Center — Shopify connector for Claude",
+      "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/shopify"
+    }
+  ]
+}

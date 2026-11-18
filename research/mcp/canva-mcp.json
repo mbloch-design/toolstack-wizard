@@ -1,0 +1,442 @@
+{
+  "slug": "canva-mcp",
+  "name": "Canva AI Connector",
+  "publisher": "Canva",
+  "official": true,
+  "host_tool": "canva",
+  "category": "creation",
+  "summary": {
+    "fr": "Le connecteur officiel de Canva laisse votre assistant chercher vos designs, en générer à partir d'une description, les modifier, les exporter et les commenter. La liste d'outils publiée ne comprend aucune suppression ; les fonctions de marque demandent un forfait Pro.",
+    "en": "Canva's official connector lets your assistant search your designs, generate new ones from a description, edit, export and comment on them. The published tool list has no deletion; brand features need a Pro plan."
+  },
+  "card": {
+    "fr": "Créer un visuel d'une phrase, exporter vos designs.",
+    "en": "Create a visual from a sentence, export your designs."
+  },
+  "examples": [
+    {
+      "fr": "Crée un visuel Instagram pour annoncer mon atelier de samedi.",
+      "en": "Create an Instagram visual announcing my Saturday workshop."
+    },
+    {
+      "fr": "Retrouve ma dernière présentation client et exporte-la en PDF.",
+      "en": "Find my latest client presentation and export it as a PDF."
+    }
+  ],
+  "for": {
+    "fr": "Vous faites vos visuels dans Canva et partez souvent d'une page blanche.",
+    "en": "You make your visuals in Canva and often start from a blank page."
+  },
+  "not_for": {
+    "fr": "Vous attendez un visuel prêt à publier : un design généré se relit et s'ajuste dans Canva.",
+    "en": "You expect a visual ready to publish: a generated design still needs a review in Canva."
+  },
+  "control": [
+    {
+      "title": {
+        "fr": "Vos droits, pas plus",
+        "en": "Your rights, no more"
+      },
+      "icon": "account",
+      "fr": "L'assistant n'agit que sur les designs et fichiers que votre compte peut voir ou modifier.",
+      "en": "The assistant only acts on the designs and files your account can see or edit."
+    }
+  ],
+  "plan_words": {
+    "common": {
+      "fr": "Fonctionne sur tous les forfaits Canva.",
+      "en": "Works on every Canva plan."
+    },
+    "advanced": {
+      "fr": "En plus, avec Canva Pro et au-delà : redimensionner un design, remplissage automatique, kits et modèles de marque.",
+      "en": "On top, with Canva Pro and up: resizing a design, autofill, brand kits and brand templates."
+    }
+  },
+  "first_requests": {
+    "read": [
+      {
+        "fr": "Retrouve mes designs qui contiennent « devis ».",
+        "en": "Find my designs that contain “quote”."
+      },
+      {
+        "fr": "Liste les dossiers de mon Canva.",
+        "en": "List the folders in my Canva."
+      },
+      {
+        "fr": "Quels formats d'export sont possibles pour mon dernier design ?",
+        "en": "Which export formats are possible for my latest design?"
+      }
+    ],
+    "write": {
+      "ask": {
+        "fr": "Crée un design vierge au format post Instagram, nommé « Test ToolTrim ».",
+        "en": "Create a blank Instagram post design named “ToolTrim test”."
+      },
+      "check": {
+        "fr": "Il apparaît dans vos designs récents ; supprimez-le ensuite dans Canva.",
+        "en": "It appears in your recent designs; delete it afterwards in Canva."
+      }
+    }
+  },
+  "troubleshoot": [
+    {
+      "fr": "Chaque personne se connecte avec son propre compte Canva.",
+      "en": "Each person connects with their own Canva account."
+    }
+  ],
+  "verified_on": "2026-11-16",
+  "transport": "remote",
+  "auth": [
+    "oauth"
+  ],
+  "access": "read_write",
+  "plan": "all",
+  "plan_note": {
+    "fr": "Tous les comptes, y compris Canva Free. Modèles de marque, kits de marque, remplissage automatique et redimensionnement : forfait payant. Dans une équipe, l'administrateur doit autoriser le connecteur.",
+    "en": "All accounts, including Canva Free. Brand Templates, brand kits, autofill and resizing: paid plan. On a team, the admin must allow the connector."
+  },
+  "capabilities": [
+    {
+      "kind": "read",
+      "fr": "Rechercher et consulter vos designs, pages, dossiers et commentaires",
+      "en": "Search and view your designs, pages, folders and comments"
+    },
+    {
+      "kind": "write",
+      "fr": "Créer des designs à partir d'une description, modifier un design, importer des fichiers, ranger, commenter, exporter",
+      "en": "Create designs from a description, edit a design, upload files, organise, comment, export"
+    }
+  ],
+  "tools": [
+    {
+      "name": "upload-asset-from-url",
+      "kind": "write",
+      "fr": "Importer un fichier depuis un lien",
+      "en": "Upload an asset from a link"
+    },
+    {
+      "name": "get-assets",
+      "kind": "read",
+      "fr": "Lire les fichiers importés",
+      "en": "Read asset details"
+    },
+    {
+      "name": "create-upload-url",
+      "kind": "write",
+      "fr": "Préparer un envoi de fichier",
+      "en": "Prepare an asset upload"
+    },
+    {
+      "name": "autofill-design",
+      "kind": "write",
+      "fr": "Remplir un design avec des données (Pro)",
+      "en": "Fill a design with data (Pro)"
+    },
+    {
+      "name": "get-brand-template-dataset",
+      "kind": "read",
+      "fr": "Lire les champs d'un modèle de marque (Pro)",
+      "en": "Read a brand template's data fields (Pro)"
+    },
+    {
+      "name": "get-design-dataset",
+      "kind": "read",
+      "fr": "Lire les données d'un design (Pro)",
+      "en": "Read a design's data (Pro)"
+    },
+    {
+      "name": "search-brand-templates",
+      "kind": "read",
+      "fr": "Chercher des modèles de marque (Pro)",
+      "en": "Search brand templates (Pro)"
+    },
+    {
+      "name": "list-brand-kits",
+      "kind": "read",
+      "fr": "Lister les kits de marque (Pro)",
+      "en": "List brand kits (Pro)"
+    },
+    {
+      "name": "create-design-from-brand-template",
+      "kind": "write",
+      "fr": "Créer un design depuis un modèle de marque (Pro)",
+      "en": "Create a design from a brand template (Pro)"
+    },
+    {
+      "name": "create-brand-template-draft",
+      "kind": "write",
+      "fr": "Créer un brouillon de modèle de marque (Pro)",
+      "en": "Create a brand template draft (Pro)"
+    },
+    {
+      "name": "publish-brand-template",
+      "kind": "send",
+      "fr": "Publier un modèle de marque (Pro)",
+      "en": "Publish a brand template to your team (Pro)"
+    },
+    {
+      "name": "comment-on-design",
+      "kind": "write",
+      "fr": "Commenter un design",
+      "en": "Comment on a design"
+    },
+    {
+      "name": "reply-to-comment",
+      "kind": "write",
+      "fr": "Répondre à un commentaire",
+      "en": "Reply to a comment"
+    },
+    {
+      "name": "list-comments",
+      "kind": "read",
+      "fr": "Lister les commentaires",
+      "en": "List a design's comments"
+    },
+    {
+      "name": "list-replies",
+      "kind": "read",
+      "fr": "Lister les réponses",
+      "en": "List replies to a comment"
+    },
+    {
+      "name": "search-designs",
+      "kind": "read",
+      "fr": "Chercher vos designs",
+      "en": "Search your designs"
+    },
+    {
+      "name": "get-design",
+      "kind": "read",
+      "fr": "Lire un design",
+      "en": "Read a design's details"
+    },
+    {
+      "name": "get-design-pages",
+      "kind": "read",
+      "fr": "Lire les pages d'un design",
+      "en": "Read a design's pages"
+    },
+    {
+      "name": "get-design-content",
+      "kind": "read",
+      "fr": "Lire le contenu d'un design",
+      "en": "Read a design's content"
+    },
+    {
+      "name": "get-presenter-notes",
+      "kind": "read",
+      "fr": "Lire les notes de présentation",
+      "en": "Read presenter notes"
+    },
+    {
+      "name": "get-export-formats",
+      "kind": "read",
+      "fr": "Lister les formats d'export",
+      "en": "List export formats"
+    },
+    {
+      "name": "generate-design",
+      "kind": "write",
+      "fr": "Générer des propositions de design",
+      "en": "Generate design ideas from a prompt"
+    },
+    {
+      "name": "create-design-from-candidate",
+      "kind": "write",
+      "fr": "Créer un design depuis une proposition",
+      "en": "Turn a generated idea into a design"
+    },
+    {
+      "name": "create-design",
+      "kind": "write",
+      "fr": "Créer un design vierge",
+      "en": "Create a blank design"
+    },
+    {
+      "name": "get-create-design-async-job",
+      "kind": "read",
+      "fr": "Suivre une création de design",
+      "en": "Check a design creation job"
+    },
+    {
+      "name": "copy-design",
+      "kind": "write",
+      "fr": "Copier un design",
+      "en": "Copy a design"
+    },
+    {
+      "name": "merge-designs",
+      "kind": "write",
+      "fr": "Fusionner des designs",
+      "en": "Merge several designs"
+    },
+    {
+      "name": "import-design-from-url",
+      "kind": "write",
+      "fr": "Importer un design depuis un lien",
+      "en": "Import a design from a link"
+    },
+    {
+      "name": "resolve-shortlink",
+      "kind": "read",
+      "fr": "Résoudre un lien court Canva",
+      "en": "Resolve a Canva short link"
+    },
+    {
+      "name": "export-design",
+      "kind": "write",
+      "fr": "Exporter un design",
+      "en": "Export a design to a file"
+    },
+    {
+      "name": "generate-image",
+      "kind": "write",
+      "fr": "Générer une image",
+      "en": "Generate an image from a prompt"
+    },
+    {
+      "name": "get-generate-image-job",
+      "kind": "read",
+      "fr": "Suivre une génération d'image",
+      "en": "Check an image generation"
+    },
+    {
+      "name": "remove-background",
+      "kind": "write",
+      "fr": "Détourer une image",
+      "en": "Remove an image's background"
+    },
+    {
+      "name": "separate-image-layers",
+      "kind": "write",
+      "fr": "Séparer une image en calques",
+      "en": "Split an image into layers"
+    },
+    {
+      "name": "get-separate-image-layers-job",
+      "kind": "read",
+      "fr": "Suivre une séparation en calques",
+      "en": "Check a layer split"
+    },
+    {
+      "name": "create-folder",
+      "kind": "write",
+      "fr": "Créer un dossier",
+      "en": "Create a folder"
+    },
+    {
+      "name": "list-folder-items",
+      "kind": "read",
+      "fr": "Lister un dossier",
+      "en": "List a folder's items"
+    },
+    {
+      "name": "search-folders",
+      "kind": "read",
+      "fr": "Chercher des dossiers",
+      "en": "Search folders"
+    },
+    {
+      "name": "move-item-to-folder",
+      "kind": "write",
+      "fr": "Ranger un élément dans un dossier",
+      "en": "Move an item to a folder"
+    },
+    {
+      "name": "resize-design",
+      "kind": "write",
+      "fr": "Redimensionner un design (Pro)",
+      "en": "Resize a design (Pro)"
+    },
+    {
+      "name": "start-editing-transaction",
+      "kind": "write",
+      "fr": "Ouvrir une modification",
+      "en": "Start editing a design"
+    },
+    {
+      "name": "perform-editing-operations",
+      "kind": "write",
+      "fr": "Appliquer des modifications",
+      "en": "Apply edits to a design"
+    },
+    {
+      "name": "commit-editing-transaction",
+      "kind": "write",
+      "fr": "Enregistrer les modifications",
+      "en": "Save the edits"
+    },
+    {
+      "name": "cancel-editing-transaction",
+      "kind": "write",
+      "fr": "Abandonner les modifications",
+      "en": "Discard the edits"
+    },
+    {
+      "name": "get-design-thumbnail",
+      "kind": "read",
+      "fr": "Obtenir la miniature d'un design",
+      "en": "Get a design's thumbnail"
+    },
+    {
+      "name": "help",
+      "kind": "read",
+      "fr": "Obtenir de l'aide",
+      "en": "Get help on using the connector"
+    }
+  ],
+  "install": [
+    {
+      "client": "any",
+      "type": "url",
+      "value": "https://api.canva.com/connect/v1/mcp"
+    },
+    {
+      "client": "vs-code",
+      "type": "config",
+      "value": "{\n  \"servers\": {\n    \"Canva\": {\n      \"type\": \"stdio\",\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"mcp-remote@latest\",\n        \"https://api.canva.com/connect/v1/mcp\"\n      ]\n    }\n  }\n}"
+    }
+  ],
+  "clients": [
+    "chatgpt",
+    "claude",
+    "gemini",
+    "cursor",
+    "lovable",
+    "make",
+    "perplexity",
+    "grok"
+  ],
+  "claude_directory": {
+    "url": "https://claude.ai/directory/canva",
+    "added": "2025-11",
+    "read_on": "2026-11-17"
+  },
+  "docs_url": "https://www.canva.dev/docs/apps/mcp/",
+  "sources": [
+    {
+      "label": "Canva Help Center — Connect Canva to an AI assistant",
+      "url": "https://www.canva.com/help/mcp-agent-setup/"
+    },
+    {
+      "label": "Canva Developers — About Canva MCP",
+      "url": "https://www.canva.dev/docs/apps/mcp/"
+    },
+    {
+      "label": "Canva Developers — Access and permissions",
+      "url": "https://www.canva.dev/docs/apps/mcp/access/"
+    },
+    {
+      "label": "Canva Developers — Tools",
+      "url": "https://www.canva.dev/docs/apps/mcp/tools/"
+    },
+    {
+      "label": "Canva Developers — Quickstart (Canva for AI assistants)",
+      "url": "https://www.canva.dev/docs/apps/quickstart/"
+    },
+    {
+      "label": "Répertoire Claude (relevé le 17/11/2026)",
+      "url": "https://claude.ai/directory/canva"
+    }
+  ]
+}

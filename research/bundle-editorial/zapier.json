@@ -25,7 +25,78 @@
       "Zapier Forms pour collecte de données",
       "SOC 2 Type II, SOC 3, GDPR, CCPA compliance",
       "Audit logging et visibility en temps-réel"
-    ]
+    ],
+    "agent": {
+      "mcp": "official",
+      "verified_on": "2026-11-16",
+      "sources": [
+        {
+          "label": "Zapier Docs — Zapier MCP quickstart",
+          "url": "https://docs.zapier.com/mcp/get-started/quickstart"
+        },
+        {
+          "label": "Zapier Docs — Usage and billing",
+          "url": "https://docs.zapier.com/mcp/overview/usage"
+        },
+        {
+          "label": "Zapier Docs — How tools work",
+          "url": "https://docs.zapier.com/mcp/overview/how-tools-work"
+        },
+        {
+          "label": "Zapier Docs — Connect Claude",
+          "url": "https://docs.zapier.com/mcp/get-started/connect/claude"
+        }
+      ],
+      "servers": [
+        {
+          "name": "Zapier MCP",
+          "transport": "remote",
+          "auth": [
+            "key"
+          ],
+          "access": "read_write",
+          "plan": "all",
+          "plan_note": "Tous les comptes ; chaque appel réussi consomme deux tâches du forfait.",
+          "plan_note_en": "All accounts; each successful call uses two tasks from your plan.",
+          "docs_url": "https://docs.zapier.com/mcp/get-started/quickstart"
+        }
+      ],
+      "capabilities": [
+        {
+          "kind": "read",
+          "fr": "Chercher et lire des données dans vos applications connectées",
+          "en": "Search and read data in your connected apps"
+        },
+        {
+          "kind": "write",
+          "fr": "Créer ou modifier des données dans vos applications (tâche, fiche…)",
+          "en": "Create or update data in your apps (a task, a record…)"
+        },
+        {
+          "kind": "send",
+          "fr": "Envoyer e-mails et messages depuis vos comptes connectés",
+          "en": "Send emails and messages from your connected accounts"
+        }
+      ],
+      "setup": [
+        {
+          "assistant": "claude",
+          "how": "connector"
+        },
+        {
+          "assistant": "chatgpt",
+          "how": "url"
+        },
+        {
+          "assistant": "other",
+          "how": "url"
+        }
+      ],
+      "safeguards": [
+        "admin_controls",
+        "scoped_keys"
+      ]
+    }
   },
   "fr": {
     "verdict": {
