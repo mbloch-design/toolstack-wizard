@@ -27,10 +27,6 @@
   border-top: var(--tt-hairline-w) solid var(--tt-line);
 }
 
-.row[hidden] {
-  display: none;
-}
-
 .first {
   composes: text from "../atoms.module.css";
   padding: var(--tt-space-3) var(--tt-space-6) var(--tt-space-3) 0;
@@ -42,6 +38,55 @@
 .cell {
   padding: var(--tt-space-3) 0;
   vertical-align: baseline;
+}
+
+/* A group of folded rows: its subtitle on a row of its own, in the quiet note type, 24 above it. */
+.groupRow {
+  border-top: var(--tt-hairline-w) solid var(--tt-line);
+}
+
+.group {
+  composes: note from "../atoms.module.css";
+  padding: var(--tt-space-6) 0 var(--tt-space-2);
+  color: var(--tt-meta);
+  font-weight: inherit;
+  text-align: start;
+}
+
+/* The fold is the table's last row: a full-width button on the columns' line, the same rhythm as a row. */
+.footRow {
+  border-top: var(--tt-hairline-w) solid var(--tt-line);
+}
+
+.foot {
+  padding: 0;
+}
+
+.fold {
+  composes: focus from "../atoms.module.css";
+  display: flex;
+  gap: var(--tt-space-1);
+  align-items: center;
+  width: 100%;
+  min-height: var(--tt-tap);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--tt-ink);
+  font: var(--tt-action-small-font);
+  letter-spacing: var(--tt-action-tracking);
+  text-align: start;
+  cursor: pointer;
+}
+
+.chevron {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+  transition: transform var(--tt-dur-state) var(--tt-ease);
+}
+
+.chevron[data-open] {
+  transform: rotate(180deg);
 }
 
 /* A narrow column: each row stacks, the second cell under the first; the column heads leave the eye (the first cell says it). */
@@ -64,10 +109,6 @@
     display: grid;
     gap: var(--tt-space-1);
     padding-block: var(--tt-space-3);
-  }
-
-  .row[hidden] {
-    display: none;
   }
 
   .first,

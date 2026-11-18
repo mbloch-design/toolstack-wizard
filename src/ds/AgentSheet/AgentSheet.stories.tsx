@@ -47,21 +47,26 @@ export const Notion: Story = {
     // One action in the head: no « Voir les étapes » (17/11).
     await expect(canvas.queryByRole("link", { name: fr ? /voir les étapes/i : /see the steps/i })).toBeNull();
     // Every action that deletes, pays or sends is in view without a click.
-    for (const row of canvasElement.querySelectorAll<HTMLElement>("tr[data-kind=delete]:not([hidden]), tr[data-kind=pay]:not([hidden]), tr[data-kind=send]:not([hidden])")) await expect(row).toBeVisible();
+    for (const row of canvasElement.querySelectorAll<HTMLElement>("tr[data-kind=delete]:not(tbody[hidden] tr), tr[data-kind=pay]:not(tbody[hidden] tr), tr[data-kind=send]:not(tbody[hidden] tr)")) await expect(row).toBeVisible();
     await expect(canvas.getByRole("link", { name: fr ? "Ouvrir dans Claude" : "Open in Claude" })).toHaveAttribute("href", "https://claude.ai/directory/notion");
     // One fact in one place: a short section shows its list, not a sentence that repeats it; a long one sums up what is folded.
     await expect(canvas.queryByText(fr ? "Mettre à la corbeille des pages, des bases et des commentaires." : "Move pages, databases and comments to trash.")).toBeNull();
-    await expect(canvas.getByText(fr ? /^Et aussi\s:/ : /^And also:/)).toBeVisible();
+    // No sentence listing what is folded (step 8c): the fold is the table's last row and counts the hidden rows only.
+    await expect(canvas.queryByText(fr ? /^Et aussi\s:/ : /^And also:/)).toBeNull();
+    await expect(canvas.getByRole("button", { name: fr ? /^Voir les 20 autres actions/ : /^Show the 20 other actions/ }).closest("tfoot")).not.toBeNull();
     await expect(canvas.getByText(fr ? /Sur Business et Enterprise/ : /On Business and Enterprise/)).toBeVisible();
-    await expect(canvas.getByText(fr ? /À vérifier : ouvrez la page dans Notion/ : /Check: open the page in Notion/)).toBeVisible();
-    // One control, one row (step 8b): no « Autres » level, the coding tools after « Pour développeurs ».
-    await expect(canvas.queryByRole("button", { name: fr ? "Autres" : "Others" })).toBeNull();
-    await expect(canvas.getByText(fr ? "Pour développeurs" : "For developers")).toBeVisible();
-    await userEvent.click(canvas.getByRole("button", { name: "Cursor" }));
+    await expect(canvas.getByText(fr ? /ouvrez la page dans Notion/ : /open the page in Notion/)).toBeVisible();
+    // Tabs (step 8c): the assistants, then « Outil de code ▾ » and its menu.
+    await expect(canvas.getByRole("tab", { name: /Claude/ })).toHaveAttribute("aria-selected", "true");
+    await userEvent.click(canvas.getByRole("tab", { name: fr ? /Outil de code/ : /Coding tool/ }));
+    await userEvent.click(screen.getByRole("menuitemradio", { name: "Cursor" }));
+    await waitFor(() => expect(document.body.style.pointerEvents).not.toBe("none"));
     // A direct link is the step's main action; the copy goes just under it.
     await expect(canvas.getByRole("link", { name: fr ? "Ouvrir dans Cursor" : "Open in Cursor" })).toHaveAttribute("href", expect.stringMatching(/^cursor:\/\/anysphere\.cursor-deeplink\/mcp\/install/));
     await expect(canvas.getByRole("button", { name: fr ? "ou copier la configuration" : "or copy the configuration" })).toBeVisible();
-    await userEvent.click(canvas.getByRole("button", { name: fr ? "Autre outil" : "Another tool" }));
+    await userEvent.click(canvas.getByRole("tab", { name: /Cursor/ }));
+    await userEvent.click(screen.getByRole("menuitemradio", { name: fr ? "Adresse du serveur (autre outil)" : "Server address (another tool)" }));
+    await waitFor(() => expect(document.body.style.pointerEvents).not.toBe("none"));
     await expect(canvas.getByRole("button", { name: fr ? "Copier l'adresse" : "Copy the address" })).toBeVisible();
 
     const menu = canvas.getByRole("button", { name: fr ? /copier pour votre assistant/i : /copy for your assistant/i });
@@ -87,8 +92,8 @@ export const Notion: Story = {
     await userEvent.unhover(menu);
 
     // Editing past six and reading fold out in place.
-    await expect(canvas.getByRole("button", { name: fr ? /^Voir les 26 actions/ : /^Show the 26 actions/ })).toBeVisible();
-    await expect(canvas.getByRole("button", { name: fr ? /^Voir les 38 actions/ : /^Show the 38 actions/ })).toBeVisible();
+    await expect(canvas.getByRole("button", { name: fr ? /^Voir les 20 autres actions/ : /^Show the 20 other actions/ })).toBeVisible();
+    await expect(canvas.getByRole("button", { name: fr ? /^Voir les 32 autres actions/ : /^Show the 32 other actions/ })).toBeVisible();
     await expect(canvas.getAllByRole("link", { name: fr ? /liste des outils/i : /list of tools/i })).toHaveLength(1);
     await expect(canvas.getByRole("link", { name: fr ? /signaler une erreur/i : /report an error/i })).toHaveAttribute("href", REPORT);
   },
@@ -104,9 +109,14 @@ export const NotionActions: Story = {
     await expect(canvas.getByText(fr ? "Envoie en votre nom · 2" : "Sends in your name · 2")).toBeVisible();
     await expect(canvas.getByText(fr ? "Modifie vos données · 26" : "Edits your data · 26")).toBeVisible();
     await expect(canvas.getByText(fr ? "Lecture seule · 38" : "Read only · 38")).toBeVisible();
-    await expect(control.querySelectorAll("tr[data-kind=write]:not([hidden])").length).toBe(6);
-    await userEvent.click(canvas.getByRole("button", { name: fr ? /^Voir les 26 actions/ : /^Show the 26 actions/ }));
-    await waitFor(() => expect(control.querySelectorAll("tr[data-kind=write]:not([hidden])").length).toBe(26));
+    await expect(control.querySelectorAll("tr[data-kind=write]:not(tbody[hidden] tr)").length).toBe(6);
+    await userEvent.click(canvas.getByRole("button", { name: fr ? /^Voir les 20 autres actions/ : /^Show the 20 other actions/ }));
+    await waitFor(() => expect(control.querySelectorAll("tr[data-kind=write]:not(tbody[hidden] tr)").length).toBe(26));
+    // Opened in place: the foot now folds it back, the topics head their rows (more than 12 rows).
+    await expect(canvas.getAllByRole("button", { name: fr ? /^Réduire/ : /^Show less/ })[0]).toHaveAttribute("aria-expanded", "true");
+    await expect(control.querySelectorAll("th[scope=rowgroup]").length).toBeGreaterThan(0);
+    await userEvent.click(canvas.getAllByRole("button", { name: fr ? /^Réduire/ : /^Show less/ })[0]);
+    await expect(control.querySelectorAll("tr[data-kind=write]:not(tbody[hidden] tr)").length).toBe(6);
     await expect(canvasElement.querySelector("[data-chapter=annex] tr[data-kind]")).toBeNull();
   },
 };
@@ -115,7 +125,7 @@ export const StripeActions: Story = {
   ...server("stripe", "Stripe"),
   play: async ({ canvas, canvasElement, globals }) => {
     await expect(canvas.getByText(globals.lang === "en" ? "Makes a payment · 3" : "Engage un paiement · 3")).toBeVisible();
-    for (const row of canvasElement.querySelectorAll<HTMLElement>("tr[data-kind=pay]:not([hidden])")) await expect(row).toBeVisible();
+    for (const row of canvasElement.querySelectorAll<HTMLElement>("tr[data-kind=pay]:not(tbody[hidden] tr)")) await expect(row).toBeVisible();
   },
 };
 /** Reading only: « Lecture seule · 9 », « Sans effet sur vos données », the actions folded. */
@@ -125,7 +135,7 @@ export const GoogleAnalyticsReadOnly: Story = {
     const fr = globals.lang !== "en";
     await expect(canvas.getByText(fr ? "Lecture seule · 9" : "Read only · 9")).toBeVisible();
     await expect(canvas.getByText(fr ? "Sans effet sur vos données." : "No effect on your data.")).toBeVisible();
-    await expect(canvas.getByRole("button", { name: fr ? /^Voir les 9 actions/ : /^Show the 9 actions/ })).toBeVisible();
+    await expect(canvas.getByRole("button", { name: fr ? /^Voir les 3 autres actions/ : /^Show the 3 other actions/ })).toBeVisible();
     await expect(canvas.getByText(fr ? /Votre assistant peut lire vos données Google Analytics, sans rien y modifier\./ : /Your assistant can read your Google Analytics data, without changing anything\./)).toBeVisible();
     await expect(canvas.queryByText(fr ? /À vérifier/ : /Check:/)).toBeNull();
   },
@@ -136,7 +146,7 @@ export const StripePays: Story = {
   play: async ({ canvas, canvasElement, globals }) => {
     const fr = globals.lang !== "en";
     await expect(canvas.getByRole("link", { name: fr ? "Ouvrir dans Claude" : "Open in Claude" })).toHaveAttribute("href", "https://claude.ai/directory/stripe");
-    for (const row of canvasElement.querySelectorAll<HTMLElement>("[data-chapter=control] tr[data-kind=pay]:not([hidden])")) await expect(row).toBeVisible();
+    for (const row of canvasElement.querySelectorAll<HTMLElement>("[data-chapter=control] tr[data-kind=pay]:not(tbody[hidden] tr)")) await expect(row).toBeVisible();
     await expect(canvas.getByText(fr ? /attendent votre accord dans le Dashboard Stripe/ : /wait for your approval in the Stripe Dashboard/)).toBeVisible();
   },
 };
@@ -144,7 +154,7 @@ export const StripePays: Story = {
 export const BufferChatGPT: Story = {
   ...server("buffer", "Buffer"),
   play: async ({ canvas, globals }) => {
-    await userEvent.click(canvas.getByRole("button", { name: "ChatGPT" }));
+    await userEvent.click(canvas.getByRole("tab", { name: /ChatGPT/ }));
     await expect(canvas.getByRole("button", { name: globals.lang === "en" ? "Copy the address" : "Copier l'adresse" })).toBeVisible();
     await expect(canvas.getByText(/Add custom MCP server/)).toBeVisible();
   },
@@ -153,7 +163,7 @@ export const BufferChatGPT: Story = {
 export const MiroNoEntryForGemini: Story = {
   ...server("miro", "Miro"),
   play: async ({ canvas, globals }) => {
-    await userEvent.click(canvas.getByRole("button", { name: "Gemini" }));
+    await userEvent.click(canvas.getByRole("tab", { name: /Gemini/ }));
     await expect(canvas.getByText(globals.lang === "en" ? /Gemini does not document where to paste it/ : /Gemini ne documente pas où la coller/)).toBeVisible();
   },
 };
@@ -233,7 +243,9 @@ export const CopierDepuisLEtape: Story = {
   },
   play: async ({ canvas, globals }) => {
     const fr = globals.lang !== "en";
-    await userEvent.click(canvas.getByRole("button", { name: fr ? "Autre outil" : "Another tool" }));
+    await userEvent.click(canvas.getByRole("tab", { name: fr ? /Outil de code/ : /Coding tool/ }));
+    await userEvent.click(screen.getByRole("menuitemradio", { name: fr ? "Adresse du serveur (autre outil)" : "Server address (another tool)" }));
+    await waitFor(() => expect(document.body.style.pointerEvents).not.toBe("none"));
     await userEvent.click(canvas.getByRole("button", { name: fr ? "Copier l'adresse" : "Copy the address" }));
     const writeText = (globalThis as { __writeText?: ReturnType<typeof fn> }).__writeText!;
     await expect(writeText).toHaveBeenCalledWith("https://mcp.notion.com/mcp");

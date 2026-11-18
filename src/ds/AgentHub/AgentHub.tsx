@@ -3,7 +3,6 @@ import type { AgentCapabilityKind } from "@/data/types";
 import { CONSEQUENCE, say, typo, type CardFact, type Lang } from "@/lib/agents";
 import { CheckCircle2, Code2, CreditCard, Eye, Info, Mail, Pencil, Settings2, Trash2, Wrench, Zap } from "@/lib/icons";
 import Prompt from "../Prompt/Prompt";
-import Chip, { Chips } from "../Chip/Chip";
 import styles from "./AgentHub.module.css";
 
 /*
@@ -82,29 +81,3 @@ export function AgentRowNote({ summary, status, gravest, meta, lang }: { summary
   </>;
 }
 
-/**
- * Which assistant you use (step 8b, 18/11/2026; Michael: « pourquoi doubler ici ? »): one control, one row of the
- * system's chips, single choice — the everyday assistants first, then the coding tools after a quiet « Pour
- * développeurs », then « Autre outil ». The same component on the hub's bar and in a sheet's « Brancher »; each passes
- * only the choices it can serve.
- */
-export function AssistantChoice<T extends string>({ label, value, onChange, options, devLabel }: {
-  label: string; value: T; onChange: (value: T) => void;
-  options: { value: T; label: string; dev?: boolean }[];
-  /** The quiet word before the coding tools, when there are any. */
-  devLabel?: string;
-}) {
-  const chip = (option: { value: T; label: string }) => (
-    <Chip key={option.value} size="md" pressed={option.value === value} onClick={() => onChange(option.value)}>{option.label}</Chip>
-  );
-  const everyday = options.filter((option) => !option.dev);
-  const dev = options.filter((option) => option.dev);
-  return (
-    <Chips label={label}>
-      {everyday.filter((option) => option.value !== "any").map(chip)}
-      {dev.length > 0 && devLabel && <span className={styles.choiceGroup}>{devLabel}</span>}
-      {dev.map(chip)}
-      {everyday.filter((o) => o.value === "any").map(chip)}
-    </Chips>
-  );
-}

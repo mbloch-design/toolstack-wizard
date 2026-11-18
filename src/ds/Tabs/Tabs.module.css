@@ -1,0 +1,152 @@
+/* Tabs (step 8c): the segmented control's look, as a tablist; each tab a mark and a name, 44 px high. The frame is the
+   container its narrow layout answers to (a narrow column on a computer as well as a phone). */
+.frame {
+  container-type: inline-size;
+  justify-self: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+.tabs {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding: calc(var(--tt-space-1) * 0.75);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-tile-2);
+  isolation: isolate;
+}
+
+.thumb {
+  position: absolute;
+  z-index: -1;
+  top: 3px;
+  bottom: 3px;
+  left: 0;
+  width: var(--thumb-w, 0);
+  border-radius: var(--tt-r-pill);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-chip-raise);
+  transform: translateX(var(--thumb-x, 0));
+}
+
+.thumb[data-measured] {
+  transition: transform var(--tt-dur-move) var(--tt-spring), width var(--tt-dur-move) var(--tt-spring);
+}
+
+.tab {
+  composes: focus from "../atoms.module.css";
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  gap: var(--tt-space-2);
+  align-items: center;
+  min-height: var(--tt-tap);
+  padding: 0 var(--tt-space-4);
+  border: 0;
+  border-radius: var(--tt-r-pill);
+  background: none;
+  color: var(--tt-ink);
+  font: var(--tt-action-small-font);
+  letter-spacing: var(--tt-action-tracking);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tab[aria-selected="false"] {
+  color: var(--tt-meta);
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+}
+
+.icon > svg {
+  width: var(--tt-icon-xl);
+  height: var(--tt-icon-xl);
+}
+
+.short {
+  display: none;
+}
+
+.chevron {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+/* A narrow column: the row holds on one line; the long names give way to their short form. */
+@container (max-width: 560px) {
+  .tabs {
+    display: flex;
+    width: 100%;
+  }
+
+  /* The mark over its name in the tab bar's small type, as the site's own tab bar: four fit on 343 px. */
+  .tab {
+    flex: 1 1 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: calc(var(--tt-space-1) / 2);
+    min-width: 0;
+    padding: var(--tt-space-1);
+    font: var(--tt-tab-font);
+  }
+
+  .chevron {
+    display: none;
+  }
+
+  /* Out of sight, still the tab's name for assistive tech (the short form is aria-hidden). */
+  .name[data-short] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .short {
+    display: inline;
+  }
+}
+
+.popover {
+  z-index: 60;
+  min-width: 220px;
+  padding: var(--tt-space-2);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-bg);
+  box-shadow: var(--tt-menu-shadow);
+}
+
+.menu {
+  display: grid;
+  gap: var(--tt-space-1);
+}
+
+.item {
+  composes: focus from "../atoms.module.css";
+  display: flex;
+  gap: var(--tt-space-3);
+  align-items: center;
+  min-height: var(--tt-tap);
+  padding: 0 var(--tt-space-3);
+  border: 0;
+  border-radius: var(--tt-r-card);
+  background: none;
+  color: var(--tt-ink);
+  font: var(--tt-action-small-font);
+  letter-spacing: var(--tt-action-tracking);
+  text-align: start;
+  cursor: pointer;
+}
+
+.item:hover,
+.item[aria-checked="true"] {
+  background: var(--tt-tile-2);
+}

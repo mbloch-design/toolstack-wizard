@@ -74,10 +74,13 @@
   list-style: none;
 }
 
-.card {
-  display: grid;
+
+/* A request card (step 8c): Brancher's template — the number, its stage, what it does — then the message, its note
+   and the copy button at the foot; the cards of a row share their height, so the buttons line up. */
+.askCard {
+  display: flex;
+  flex-direction: column;
   gap: var(--tt-space-3);
-  align-content: start;
   padding: var(--tt-space-6);
   border-radius: var(--tt-r-tile);
   background: var(--tt-bg);
@@ -85,8 +88,45 @@
   min-width: 0;
 }
 
-.cardTag {
+.askStage {
+  composes: eyebrow from "../atoms.module.css";
+}
+
+/* The consequence's code, as in « Garder la main »: its icon and its tint, read without reading. */
+.askKind {
+  composes: note from "../atoms.module.css";
+  display: inline-flex;
+  gap: var(--tt-space-1);
+  align-items: center;
+  color: var(--tt-meta);
+}
+
+.askKind > svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+.askKind[data-kind="write"] {
+  color: var(--tt-ink);
+}
+
+.check {
+  composes: note from "../atoms.module.css";
   display: flex;
+  gap: var(--tt-space-2);
+  align-items: flex-start;
+  color: var(--tt-meta);
+}
+
+.check > svg {
+  flex: none;
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+  margin-top: calc(var(--tt-space-1) / 2);
+}
+
+.check strong {
+  color: var(--tt-ink);
 }
 
 /* Two columns on the wide grid, one on a phone. */
@@ -339,6 +379,13 @@
 .done svg {
   width: var(--tt-icon-s);
   height: var(--tt-icon-s);
+}
+
+/* What the tabs drive: the steps, what gets copied, where to paste (step 8c). */
+.plugPanel {
+  display: grid;
+  gap: var(--tt-gap-group);
+  min-width: 0;
 }
 
 .copyBlock {

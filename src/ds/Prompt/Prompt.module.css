@@ -1,15 +1,33 @@
-/* A proposed request: its words, then a discreet copy button with a 44 touch area. */
+/* A proposed request (step 8c): a message in a bubble, then its note, then the copy button at the foot. */
 
 .prompt {
-  display: grid;
-  gap: var(--tt-space-1);
-  justify-items: start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--tt-space-3);
+  align-items: stretch;
   min-width: 0;
+}
+
+.message {
+  display: flex;
+  gap: var(--tt-space-3);
+  align-items: flex-start;
+  padding: var(--tt-space-4);
+  border-radius: var(--tt-r-card);
+  background: var(--tt-message-bg);
+}
+
+.mark {
+  display: inline-flex;
+  flex: none;
+  padding-top: calc(var(--tt-space-1) / 2);
 }
 
 .words {
   composes: text from "../atoms.module.css";
   max-width: 62ch;
+  color: var(--tt-ink);
   font-size: var(--tt-lead-size);
   overflow-wrap: break-word;
 }
@@ -19,36 +37,10 @@
   letter-spacing: var(--tt-title-m-tracking);
 }
 
-.copy {
-  composes: note from "../atoms.module.css";
-  display: inline-flex;
-  gap: var(--tt-space-1);
-  align-items: center;
-  min-height: var(--tt-tap);
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--tt-meta);
-  cursor: pointer;
-}
-
-.copy:hover {
-  color: var(--tt-ink);
-}
-
-.copy:focus-visible {
-  outline: var(--tt-focus-ring);
-  outline-offset: var(--tt-focus-offset);
-}
-
-.icon {
-  display: inline-grid;
-  place-items: center;
-}
-
-.icon svg {
-  width: var(--tt-icon-s);
-  height: var(--tt-icon-s);
+/* At the foot: in a row of cards that stretch, the buttons line up. */
+.action {
+  display: flex;
+  margin-top: auto;
 }
 
 .srOnly {

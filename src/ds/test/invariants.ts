@@ -67,7 +67,8 @@ export function stretchedLinks(root: HTMLElement): HTMLElement[] {
 
 /**
  * Gaps inside a chapter (18/11/2026, « attention ici ça flotte »): between two children stacked in the same box, never
- * the 96 that separates two chapters. Positioned decoration and empty boxes are left out.
+ * the 96 that separates two chapters. Positioned decoration, empty boxes and actions pinned to a card's foot are left
+ * out.
  */
 export function chapterGaps(root: HTMLElement): string[] {
   const found: string[] = [];
@@ -76,6 +77,8 @@ export function chapterGaps(root: HTMLElement): string[] {
       if (box !== chapter && box.closest("[data-chapter]") !== chapter) continue;
       const kids = [...box.children].filter((kid): kid is HTMLElement => kid instanceof HTMLElement && !["absolute", "fixed"].includes(getComputedStyle(kid).position) && kid.getBoundingClientRect().height > 0);
       for (let i = 0; i + 1 < kids.length; i++) {
+        // An action pinned to a card's foot (data-foot) sits as low as its row's tallest card asks: a gap by design.
+        if (kids[i + 1].hasAttribute("data-foot")) continue;
         const above = kids[i].getBoundingClientRect(), below = kids[i + 1].getBoundingClientRect();
         if (below.top - above.bottom >= 96) found.push(`${kids[i].tagName.toLowerCase()} → ${kids[i + 1].tagName.toLowerCase()} (${Math.round(below.top - above.bottom)} px) dans « ${chapter.dataset.chapter} »`);
       }

@@ -16,11 +16,13 @@ import { MediaCards } from "@/ds/MediaCard/MediaCard";
 import { Notice } from "@/ds/Notice/Notice";
 import { ToolRow, ToolRows } from "@/ds/ToolSheet/ToolSheet";
 import { LinkArrow, TextButton, linkClass } from "@/ds/Button/Button";
-import { AgentRowNote, AssistantChoice, RecipeCards, type RecipeItem } from "@/ds/AgentHub/AgentHub";
+import { AgentRowNote, RecipeCards, type RecipeItem } from "@/ds/AgentHub/AgentHub";
+import { ClientMark } from "@/ds/AgentSheet/AgentSheet";
+import Tabs from "@/ds/Tabs/Tabs";
 import { Plug } from "@/lib/icons";
 import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { agentShelves } from "@/lib/agentShelves";
-import { HUB_ASSISTANTS, SERVERS, featuredServers, recipesFor, reportRows, serverFoot, stackHeadline, type HubAssistant } from "@/lib/agentReport";
+import { SERVERS, featuredServers, recipesFor, reportRows, serverFoot, stackHeadline, type HubAssistant } from "@/lib/agentReport";
 import { runCatalogFilter } from "@/hooks/useCatalogStickyToolbar";
 import skillsIndex from "@/data/agents/skills_index.json";
 import { cardLine, say, serverName, skillFoot, typo, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
@@ -153,9 +155,11 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
           panelTitle={t("Votre assistant", "Your assistant") as string}
           moreLabel={assistantLabel}
           closeLabel={t("Fermer", "Close") as string}
-          panel={<AssistantChoice label={t("Quel assistant utilisez-vous ?", "Which assistant do you use?") as string} value={assistant}
-            onChange={(value) => setAssistant(value)}
-            options={HUB_ASSISTANTS.map((value) => ({ value, label: lang === "en" ? ASSISTANT_LABELS[value][1] : ASSISTANT_LABELS[value][0] }))} />} />
+          panel={<Tabs label={t("Quel assistant utilisez-vous ?", "Which assistant do you use?") as string} value={assistant} onChange={(value) => setAssistant(value)}
+            tabs={(["claude", "chatgpt", "gemini"] as const).map((value) => ({ value, label: ASSISTANT_LABELS[value][lang === "en" ? 1 : 0], icon: <ClientMark client={value} size={20} /> }))}
+            more={{ label: t("Autre", "Other") as string, icon: <ClientMark client="any" size={20} />, menuLabel: t("Autre assistant", "Another assistant") as string, closeLabel: t("Fermer", "Close") as string,
+              options: [{ value: "copilot" as const, label: "Copilot", icon: <ClientMark client="copilot" size={20} /> },
+                { value: "other" as const, label: t("Un autre assistant", "Another assistant") as string, icon: <ClientMark client="any" size={20} /> }] }} />} />
 
         {pinned.length > 0 && (
           <Notice tone="line" name="agents-stack" icon={<Plug />} title={typo(stackHeadline(rows, assistant, lang))}

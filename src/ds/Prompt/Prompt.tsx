@@ -1,20 +1,27 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Check, Copy } from "@/lib/icons";
+import Button from "../Button/Button";
 import styles from "./Prompt.module.css";
 
 type Lang = "fr" | "en";
 
 /*
- * A request to the assistant that ToolTrim proposes (Michael, 17/11/2026: « quand on dit ce genre de chose, je veux
- * bien un bouton pour le copier-coller »). The request in words, between guillemets, then a discreet « Copier la
- * demande » (44 of touch area) with « Copié » said to screen readers. Only the request is copied, never the guillemets.
+ * A request to the assistant that ToolTrim proposes (17/11/2026: « je veux bien un bouton pour le copier-coller »;
+ * 18/11, step 8c: « plus de structure et de contraste »). It reads as the message you will send: in a bubble on a wash
+ * of ink, the chosen assistant's mark at its left, the words in full ink, no guillemets (the bubble says it is a
+ * message). Under it an optional note (« À vérifier »), then « Copier la demande », the system's secondary button, at
+ * the foot: in a row of cards whose content stretches, the buttons line up. « Copié » is said to screen readers.
  */
-export default function Prompt({ text, lang, size = "reading" }: {
-  /** The request itself, without guillemets. */
+export default function Prompt({ text, lang, size = "reading", mark, note }: {
+  /** The request itself. */
   text: string;
   lang: Lang;
-  /** reading: 17, a card's request; lead: 21, the hub's recommendation. */
+  /** reading: 17, a step's request; lead: 21, a card's request, the message to send. */
   size?: "reading" | "lead";
+  /** The chosen assistant's mark (20 px), at the message's left, as in a conversation. */
+  mark?: ReactNode;
+  /** What to check after sending it, between the message and the button. */
+  note?: ReactNode;
 }) {
   const [copied, setCopied] = useState(false);
   const fr = lang !== "en";
@@ -23,12 +30,15 @@ export default function Prompt({ text, lang, size = "reading" }: {
     void navigator.clipboard?.writeText(text).then(() => { setCopied(true); window.setTimeout(() => setCopied(false), 2000); });
   };
   return (
-    <div className={styles.prompt}>
-      <p className={styles.words} data-size={size}>{fr ? `« ${text} »` : `“${text}”`}</p>
-      <button type="button" className={styles.copy} onClick={copy}>
-        <span className={styles.icon} aria-hidden="true">{copied ? <Check /> : <Copy />}</span>
-        {copied ? done : fr ? "Copier la demande" : "Copy the request"}
-      </button>
+    <div className={styles.prompt} data-prompt="">
+      <div className={styles.message}>
+        {mark && <span className={styles.mark} aria-hidden="true">{mark}</span>}
+        <p className={styles.words} data-size={size}>{text}</p>
+      </div>
+      {note}
+      <div className={styles.action} data-foot="">
+        <Button variant="secondary" icon={copied ? <Check /> : <Copy />} onClick={copy}>{copied ? done : fr ? "Copier la demande" : "Copy the request"}</Button>
+      </div>
       <span className={styles.srOnly} aria-live="polite">{copied ? done : ""}</span>
     </div>
   );

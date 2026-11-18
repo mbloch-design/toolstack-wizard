@@ -10,10 +10,10 @@ import { hookSentence, sheetMarkdown, sourceLinks, toolTopics } from "@/lib/agen
 import Button, { LinkArrow, TextButton, buttonAttrs, linkClass } from "../Button/Button";
 import Prompt from "../Prompt/Prompt";
 import Table from "../Table/Table";
-import { AssistantChoice } from "../AgentHub/AgentHub";
+import Tabs from "../Tabs/Tabs";
+import { useAgentAssistant } from "@/hooks/useAgentAssistant";
 import CopyText from "../CopyText/CopyText";
 import ToneCard, { ToneCards } from "../ToneCard/ToneCard";
-import Tag from "../Tag/Tag";
 import { Collapse } from "../Motion/Motion";
 import Drawer, { DrawerTitle } from "../Drawer/Drawer";
 import Chapter, { Chapters } from "../Chapter/Chapter";
@@ -53,6 +53,9 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   const plugId = `${sheet.slug}-brancher`;
   const asks = askCards(sheet);
+  // The reader's assistant, its mark beside each request (a conversation).
+  const [assistant] = useAgentAssistant();
+  const assistantMark: ClientId = assistant === "other" ? "any" : assistant;
   return (
     <div className={styles.sheet} data-agent-sheet="mcp">
       <Chapters>
@@ -74,15 +77,19 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
         {asks.length > 0 && (
           <Chapter chapter="ask" width="wide" title={t("Ce que vous pourrez lui demander", "What you could ask it")}
             lead={t("Commencez par des demandes qui ne font que lire ; passez à l'écriture une fois rassuré.", "Start with requests that only read; move on to writing once reassured.")}>
-            <ul className={styles.cards}>
-              {asks.map((ask) => (
-                <li key={ask.words.fr} className={styles.card}>
-                  {ask.kind && <span className={styles.cardTag}><Tag on="card" tone="neutral">{say(lang, ABILITY_TAG[ask.kind])}</Tag></span>}
-                  <Prompt text={lang === "en" ? ask.words.en : ask.words.fr} lang={lang} />
-                  {ask.check && <p className={styles.meta}>{t("À vérifier : ", "Check: ")}{lower(say(lang, ask.check))}</p>}
+            {/* The same template as « Brancher » (step 8c): a number, where it stands in the progression, what it does, then
+                the request as the message to send, what to check, and the copy button at the foot of every card. */}
+            <ol className={styles.cards}>
+              {asks.map((ask, index) => (
+                <li key={ask.words.fr} className={styles.askCard} data-kind={ask.kind}>
+                  <span className={styles.stepNumber} aria-hidden="true">{index + 1}</span>
+                  <p className={styles.askStage}>{ask.kind === "write" ? t("Ensuite", "Then") : t("Pour commencer", "To start")}</p>
+                  {ask.kind && <p className={styles.askKind} data-kind={ask.kind}>{KIND_ICON[ask.kind]}{say(lang, ABILITY_TAG[ask.kind])}</p>}
+                  <Prompt size="lead" text={lang === "en" ? ask.words.en : ask.words.fr} lang={lang} mark={<ClientMark client={assistantMark} size={20} />}
+                    note={ask.check && <p className={styles.check}><CheckCircle2 aria-hidden="true" /><span><strong>{t("À vérifier", "Check")}</strong>{t(" : ", ": ")}{lower(say(lang, ask.check))}</span></p>} />
                 </li>
               ))}
-            </ul>
+            </ol>
           </Chapter>
         )}
 
@@ -315,10 +322,16 @@ function PlugChapter({ sheet, lang, toolName }: { sheet: McpSheet; lang: Lang; t
     return <p className={styles.reading}>{t(`${toolName} ne détaille pas son branchement : suivez sa documentation, en lien dans les sources.`, `${toolName} does not detail its setup: follow its documentation, linked in the sources.`)}</p>;
   }
   const steps = plugCard(sheet, current, toolName, lang);
+  // Tabs (step 8c): the everyday assistants the vendor documents, then « Outil de code ▾ » for the rest; the remembered
+  // choice opens on its own, so the reader sees their steps without deciding anything.
+  const tabs = (main.length ? main : clients).map((client) => ({ value: client, label: clientLabel(client, lang), icon: <ClientMark client={client} size={20} /> }));
+  const rest = main.length ? clients.filter((client) => !main.includes(client)) : [];
+  const anyLabel = t("Adresse du serveur (autre outil)", "Server address (another tool)");
   return <>
-    {/* One control, one row (step 8b): the everyday assistants, then the coding tools, then « Autre outil ». */}
-    <AssistantChoice label={t("Où utilisez-vous l'IA ?", "Where do you use AI?")} value={current} onChange={choose} devLabel={t("Pour développeurs", "For developers")}
-      options={clients.map((client) => ({ value: client, label: clientLabel(client, lang), dev: !main.includes(client) && client !== "any" }))} />
+    <Tabs label={t("Où utilisez-vous l'IA ?", "Where do you use AI?")} value={current} onChange={choose} tabs={tabs} panelId={`${sheet.slug}-steps`}
+      {...(rest.length ? { more: { label: t("Outil de code", "Coding tool"), short: t("Code", "Code"), icon: <Code2 />, menuLabel: t("Outil de code", "Coding tool"), closeLabel: t("Fermer", "Close"),
+        options: rest.map((client) => ({ value: client, label: client === "any" ? anyLabel : clientLabel(client, lang), ...(client === "any" ? { short: t("Adresse", "Address") } : {}), icon: <ClientMark client={client} size={20} /> })) } } : {})} />
+    <div id={`${sheet.slug}-steps`} role="tabpanel" className={styles.plugPanel}>
     <ol className={styles.steps}>
       {steps.map((step, index) => (
         <li key={step.text} className={styles.stepCard}>
@@ -334,6 +347,7 @@ function PlugChapter({ sheet, lang, toolName }: { sheet: McpSheet; lang: Lang; t
     {/* What gets copied, to read: full width under the steps; the only copy button is the step's own (17/11). */}
     {steps.flatMap((step) => [step.action, step.secondary]).map((action) => action?.kind === "copy" && <Preview key={action.value} action={action} lang={lang} />)}
     {CLIENTS[current].source && steps.some((step) => step.action?.kind === "copy") && <p className={styles.meta}>{t("Où coller : d'après la documentation de ", "Where to paste: from the documentation of ")}<a className={linkClass("inline")} href={CLIENTS[current].source} target="_blank" rel="noopener noreferrer">{clientLabel(current, lang)}</a>.</p>}
+    </div>
   </>;
 }
 
@@ -513,26 +527,22 @@ function ControlColumns({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
   return <div className={styles.controlGrid} data-few={few || undefined}>{few ? <>{safeguards}{can}</> : <>{can}{safeguards}</>}</div>;
 }
 
-/** A consequence's actions as a real table (step 8b): « Action » | « Identifiant », six rows in view, the rest folded but in the HTML. */
+/**
+ * A consequence's actions as a real table (step 8b): « Action » | « Identifiant », six rows in view; the rest folded in
+ * the table's own foot (step 8c), « Voir les 20 autres actions », and, only past 12 rows, under ToolTrim's topics as
+ * row-group heads. No sentence listing what is folded. Folded rows stay in the HTML.
+ */
 function ActionTable({ kind, tools, labelledBy, lang }: { kind: (typeof LIST_ORDER)[number]; tools: NonNullable<McpSheet["tools"]>; labelledBy: string; lang: Lang }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
-  const [open, setOpen] = useState(false);
-  const panel = useId();
-  const folded = tools.length > 6 ? tools.slice(6) : [];
+  const row = (tool: NonNullable<McpSheet["tools"]>[number]) => ({ key: tool.name, kind: tool.kind, cells: [say(lang, tool), <CopyText key={tool.name} value={tool.name} lang={lang} />] });
+  const folded = tools.slice(6);
+  const groups = !folded.length ? [] : tools.length > 12
+    ? toolTopics(folded).map((topic) => ({ key: topic.id, title: say(lang, topic.words), rows: topic.tools.map(row) }))
+    : [{ key: "rest", rows: folded.map(row) }];
   return <>
     {kind === "read" && <p className={styles.meta}>{t("Sans effet sur vos données.", "No effect on your data.")}</p>}
-    <div id={panel}>
-      <Table labelledBy={labelledBy} columns={[t("Action", "Action"), t("Identifiant", "Identifier")]}
-        rows={tools.map((tool, index) => ({ key: tool.name, kind: tool.kind, hidden: index >= 6 && !open, cells: [say(lang, tool), <CopyText key={tool.name} value={tool.name} lang={lang} />] }))} />
-    </div>
-    {folded.length > 0 && <>
-      {/* What is folded, in topics: a summary that never repeats the rows in view. */}
-      {!open && <p className={styles.text}>{kind === "read" ? t("Lit aussi : ", "Also reads: ") : t("Et aussi : ", "And also: ")}{toolTopics(folded).map((topic) => lower(say(lang, topic.words))).join(", ")}.</p>}
-      <div className={styles.toggle}>
-        <TextButton tone="quiet" aria-expanded={open} aria-controls={panel} onClick={() => setOpen((v) => !v)}>
-          {open ? t("Replier", "Fold") : t(`Voir les ${tools.length} actions`, `Show the ${tools.length} actions`)}<span className={styles.chevron} data-open={open || undefined} aria-hidden="true"><ChevronDown /></span>
-        </TextButton>
-      </div>
-    </>}
+    <Table labelledBy={labelledBy} columns={[t("Action", "Action"), t("Identifiant", "Identifier")]} rows={tools.slice(0, 6).map(row)}
+      {...(groups.length ? { more: { groups, hideLabel: t("Réduire", "Show less"),
+        showLabel: (count: number) => t(`Voir ${count === 1 ? "l'autre action" : `les ${count} autres actions`}`, `Show ${count === 1 ? "the other action" : `the ${count} other actions`}`) } } : {})} />
   </>;
 }

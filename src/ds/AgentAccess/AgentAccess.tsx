@@ -67,7 +67,7 @@ export default function AgentAccess({ access, lang, toolName, advice, assistant,
         {marks.length > 0 && <span className={styles.marks} aria-hidden="true">{marks.map((client) => <ClientMark key={client} client={client} size={20} />)}</span>}
         <p id={titleId} className={styles.verdict}>{typo(agentVerdict(access, lang, assistant))}</p>
       </div>
-      {example && <Prompt text={lang === "en" ? example.en : example.fr} lang={lang} />}
+      {example && <Prompt text={lang === "en" ? example.en : example.fr} lang={lang} {...(marks[0] ? { mark: <ClientMark client={marks[0]} size={20} /> } : {})} />}
       {linked.length > 0 && (
         <div className={styles.actions}>
           {linked.map((server) => <span key={server.mcpSlug}>{sheetLink(server.mcpSlug!, { ...buttonAttrs("secondary") }, <>
