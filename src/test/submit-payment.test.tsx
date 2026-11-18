@@ -208,3 +208,22 @@ it.each(['<!doctype html><title>Vite</title>', '{}', '{"token":""}', '{"token":7
  expect(window.localStorage.getItem('tt_submit_draft')).not.toBeNull();
  expect(request.mock.calls.some(([url]) => String(url).endsWith('/contact'))).toBe(false);
 });
+
+it.each([
+  ["Rejoindre la revue standard →", "standard_badge"],
+  ["Commencer · 29 $", "priority_paid"],
+])("opens the account dossier for %s when CMS is enabled", async (label, offer) => {
+  vi.stubEnv("VITE_PUBLISHER_CMS_ENABLED", "true");
+  try {
+    const { useLocation } = await import("react-router-dom");
+    function Destination() { const location = useLocation(); return <output data-testid="destination">{location.pathname + location.search + location.hash}</output>; }
+    render(<MemoryRouter initialEntries={["/fr/submit"]}><HelmetProvider><SubmitToolPage /><Destination /></HelmetProvider></MemoryRouter>);
+    fireEvent.click(screen.getByRole("button", { name: label }));
+    const destination = new URL(screen.getByTestId("destination").textContent!, "https://tooltrim.com");
+    expect(destination.pathname).toBe("/fr/publisher");
+    expect(destination.searchParams.get("offer")).toBe(offer);
+    expect(destination.searchParams.get("tool")).toBe("Sample");
+    expect(destination.hash).toBe("#publisher-new");
+    expect(screen.queryByLabelText("Email")).not.toBeInTheDocument();
+  } finally { vi.unstubAllEnvs(); }
+});

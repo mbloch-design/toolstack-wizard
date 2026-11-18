@@ -182,6 +182,7 @@ test("publisher creates a standard application, supplies the badge and confirms 
   await page.getByRole("textbox", { name: "Official website" }).fill(listing.websiteUrl);
   await page.getByRole("button", { name: "Search ToolTrim" }).click();
   await page.getByRole("button", { name: "Create application" }).click();
+  await expect(page).toHaveURL(/listingId=/);
   await expect(page.getByText("Standard review · Free with a badge", { exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: "Set up the badge" })).toBeVisible();
   await page.getByRole("button", { name: "Verify badge" }).click();

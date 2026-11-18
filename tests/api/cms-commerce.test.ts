@@ -44,7 +44,7 @@ describe("CMS Creem payment verification", () => {
     const { readListingReceipt } = await commercial();
     expect(await readListingReceipt(attempt, "ch_one")).toEqual({
       checkoutId: "ch_one", orderId: "ord_one", transactionId: "tran_one", state: "paid",
-      paidAt: "2026-11-16T21:00:00.000Z",
+      paidAt: "2026-11-16T21:00:00.000Z", amountPaidMinor: 3509, currency: "USD",
     });
   });
 

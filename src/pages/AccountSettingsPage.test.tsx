@@ -100,7 +100,7 @@ it("shows the confirmed role and actual permission for each publisher listing", 
     { id: "b", slug: "boussole", name: "Boussole", role: "editor", canEdit: true },
     { id: "a", slug: "atelier", name: "Atelier", role: "owner", canEdit: false },
     { id: "c", slug: "carnet", name: "Carnet", role: "viewer", canEdit: false },
-  ], listings: [{ id: "draft-atelier", toolId: "a", status: "ready", deliveryStatus: "publishing" }] };
+  ], listings: [{ id: "draft-atelier", name: "Atelier", toolId: "a", offer: "standard_badge", commercialStatus: "satisfied", status: "ready", deliveryStatus: "publishing" }] };
   view();
   selectSection("Espace éditeur");
   expect(screen.getByText("Éditeur · Modification autorisée")).toBeVisible();
@@ -108,6 +108,22 @@ it("shows the confirmed role and actual permission for each publisher listing", 
   expect(screen.getByText("Lecteur · Lecture seule")).toBeVisible();
   expect(screen.getByRole("link", { name: "Modifier la fiche" })).toHaveAttribute("href", "/fr/publisher/tools/boussole");
   expect(screen.getByRole("link", { name: "Suivre la publication" })).toHaveAttribute("href", "/fr/publisher?listingId=draft-atelier");
+});
+it("links each offer to its own dossier and keeps adding a tool available", () => {
+  mocks.publisher = { ...mocks.publisher, status: "ready", listings: [
+    { id: "standard", name: "Atelier", offer: "standard_badge", commercialStatus: "satisfied", status: "submitted" },
+    { id: "pending", name: "Carnet", offer: "priority_paid", commercialStatus: "pending", status: "draft" },
+    { id: "paid", name: "Carte", offer: "priority_paid", commercialStatus: "satisfied", status: "archived" },
+  ] };
+  view();
+  selectSection("Espace éditeur");
+  const billing = within(screen.getByRole("region", { name: "Offres et paiements" }));
+  expect(billing.getByText("Badge vérifié")).toBeVisible();
+  expect(billing.getByText("Paiement requis")).toBeVisible();
+  expect(billing.getByText("Paiement confirmé")).toBeVisible();
+  expect(billing.getByRole("link", { name: "Voir le badge · Atelier" })).toHaveAttribute("href", "/fr/publisher?listingId=standard#publisher-listing-offer");
+  expect(billing.getByRole("link", { name: "Voir le paiement · Carte" })).toHaveAttribute("href", "/fr/publisher?listingId=paid#publisher-listing-offer");
+  expect(screen.getByRole("link", { name: "Proposer un autre outil" })).toHaveAttribute("href", "/fr/publisher#publisher-new");
 });
 it("saves an optional display name with confirmation only after success", async () => {
   view();

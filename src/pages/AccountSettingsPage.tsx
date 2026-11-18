@@ -14,6 +14,7 @@ import { accountErrorMessage } from "@/components/account/accountMessages";
 import { accountPath } from "@/lib/accountPaths";
 import { usePublisherAccess } from "@/hooks/usePublisherAccess";
 import { publisherPath } from "@/lib/publisherCatalogApi";
+import { listingCommercialLabel, listingOfferLabel } from "@/lib/listingOfferPresentation";
 import Button, { buttonAttrs, linkClass } from "@/ds/Button/Button";
 import { Notice } from "@/ds/Notice/Notice";
 import publisherStyles from "@/components/publisher/PublisherWorkspace.module.css";
@@ -288,7 +289,36 @@ export default function AccountSettingsPage() {
               {publisher.status === "loading" && <p role="status">{t("Chargement de vos accès…", "Loading your access…")}</p>}
               {publisher.status === "error" && <Notice title={t("Vos accès sont momentanément indisponibles.", "Your access details are temporarily unavailable.")}
                 role="alert" actions={<Button onClick={publisher.retry}>{t("Réessayer", "Try again")}</Button>} />}
+              {needsOnboarding && <p>
+                {t("Proposez un outil ou demandez l’accès à une fiche existante si vous représentez son éditeur.", "Suggest a tool or request access to an existing listing if you represent its publisher.")}
+              </p>}
+              <div className={publisherStyles.actions}>
+                {needsOnboarding
+                  ? <Link {...buttonAttrs("primary")} to={`${workspace}#publisher-new`}>{t("Proposer un outil", "Suggest a tool")}</Link>
+                  : <Link {...buttonAttrs("primary")} to={workspace}>{t("Ouvrir Mes fiches", "Open My listings")}</Link>}
+                {publisher.status === "ready" && !needsOnboarding && <Link {...buttonAttrs()} to={`${workspace}#publisher-new`}>
+                  {t("Proposer un autre outil", "Suggest another tool")}
+                </Link>}
+                <Link {...buttonAttrs()} to={`${workspace}?invite=manual`}>{t("Accepter une invitation", "Accept an invitation")}</Link>
+              </div>
               {publisher.status === "ready" && <>
+                {publisher.listings.length > 0 && <section className={publisherStyles.fields} aria-labelledby="ac-publisher-billing">
+                  <h3 id="ac-publisher-billing">{t("Offres et paiements", "Offers and payments")}</h3>
+                  <div className={publisherStyles.cards}>
+                    {publisher.listings.map((listing) => {
+                      const label = listing.offer === "priority_paid" ? t("Voir le paiement", "View payment") : t("Voir le badge", "View badge");
+                      return <article className={publisherStyles.card} key={listing.id}>
+                        <strong>{listing.name}</strong>
+                        <p>{listingOfferLabel(listing.offer, t)}</p>
+                        <p>{listingCommercialLabel(listing.offer, listing.commercialStatus, t)}</p>
+                        <div className={publisherStyles.actions}>
+                          <Link className={linkClass("inline")} aria-label={`${label} · ${listing.name}`}
+                            to={`${workspace}?listingId=${encodeURIComponent(listing.id)}#publisher-listing-offer`}>{label}</Link>
+                        </div>
+                      </article>;
+                    })}
+                  </div>
+                </section>}
                 {publisher.tools.length > 0 && <>
                   <h3>{t("Vos droits par fiche", "Your access by listing")}</h3>
                   <div className={publisherStyles.cards}>{publisher.tools.map((tool) => {
@@ -309,16 +339,7 @@ export default function AccountSettingsPage() {
                   })}</div>
                 </>}
                 {hasPendingRequests && <p>{t("Retrouvez vos demandes et leur avancement dans Mes fiches.", "Find your applications and their progress in My listings.")}</p>}
-                {needsOnboarding && <p>
-                  {t("Proposez un outil ou demandez l’accès à une fiche existante si vous représentez son éditeur.", "Suggest a tool or request access to an existing listing if you represent its publisher.")}
-                </p>}
               </>}
-              <div className={publisherStyles.actions}>
-                {needsOnboarding
-                  ? <Link {...buttonAttrs("primary")} to={`${workspace}#publisher-new`}>{t("Proposer un outil", "Suggest a tool")}</Link>
-                  : <Link {...buttonAttrs("primary")} to={workspace}>{t("Ouvrir Mes fiches", "Open My listings")}</Link>}
-                <Link {...buttonAttrs()} to={`${workspace}?invite=manual`}>{t("Accepter une invitation", "Accept an invitation")}</Link>
-              </div>
             </div>
           </section>}
           <section

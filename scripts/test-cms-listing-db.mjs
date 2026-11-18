@@ -49,7 +49,7 @@ try {
   `);
   await run("migrations/20261116200000_cms_assignment_baseline.sql");
   const migrations = await readdir(new URL("../supabase/migrations/", import.meta.url));
-  for (const filename of migrations.filter((name) => /_cms_(tool_drafts|tool_submissions|listing_requests|listing_invitations|commerce|media|initial_listing_review|release_batches|media_release)\.sql$/.test(name)).sort()) {
+  for (const filename of migrations.filter((name) => /_cms_(tool_drafts|tool_submissions|listing_requests|listing_invitations|commerce|commerce_account|media|initial_listing_review|release_batches|media_release)\.sql$/.test(name)).sort()) {
     await run("migrations/" + filename);
   }
   await db.exec(`

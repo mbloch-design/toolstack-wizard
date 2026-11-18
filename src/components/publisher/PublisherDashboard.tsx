@@ -20,8 +20,8 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
   const [listings, setListings] = useState<ListingRequest[] | null>(null);
   const [claims, setClaims] = useState<PublisherClaim[]>([]);
   const [toolFilter, setToolFilter] = useState("");
-  const [name, setName] = useState("");
-  const [websiteUrl, setWebsite] = useState("");
+  const [name, setName] = useState(() => query.get("tool")?.slice(0, 120) ?? "");
+  const [websiteUrl, setWebsite] = useState(() => query.get("site")?.slice(0, 2048) ?? "");
   const [offer, setOffer] = useState<ListingOffer>(query.get("offer") === "priority_paid" ? "priority_paid" : "standard_badge");
   const [invitation, setInvitation] = useState(() => query.get("invite") === "continue" ? readPublisherInvitation() : "");
   const [candidates, setCandidates] = useState<ListingCandidate[] | null>(null);
@@ -32,24 +32,26 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
   const [reload, setReload] = useState(0);
+  const [loadErrors, setLoadErrors] = useState({ tools: false, listings: false });
   const invitationField = useRef<HTMLInputElement>(null);
   const proposalHeading = useRef<HTMLHeadingElement>(null);
   const listingsLoaded = listings !== null;
 
   useEffect(() => {
     active.current = true;
+    setLoadErrors({ tools: false, listings: false });
     const controller = new AbortController();
     const options = { signal: controller.signal };
     void publisherRequest<{ tools: PublisherTool[] }>(getToken, "/api/publisher-catalog", options).then(
       (result) => { if (!controller.signal.aborted) setTools(result.tools); },
-      () => { if (!controller.signal.aborted) setTools(null); },
+      () => { if (!controller.signal.aborted) { setTools(null); setLoadErrors((state) => ({ ...state, tools: true })); } },
     );
     void publisherRequest<{ listings: ListingRequest[]; claims?: PublisherClaim[] }>(getToken, endpoint, options).then(
       (result) => { if (!controller.signal.aborted) {
         setListings(result.listings);
         setClaims((result.claims ?? []).filter((claim) => claim.status === "pending"));
       } },
-      () => { if (!controller.signal.aborted) setListings(null); },
+      () => { if (!controller.signal.aborted) { setListings(null); setLoadErrors((state) => ({ ...state, listings: true })); } },
     );
     return () => { active.current = false; controller.abort(); };
   }, [getToken, reload]);
@@ -129,14 +131,21 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
   const shownListings = listings?.filter((listing) => listing.name.toLowerCase().includes(filter));
   const shownClaims = claims.filter((claim) => claim.slug.toLowerCase().includes(filter));
   return <Page>
+    {(loadErrors.tools || loadErrors.listings) && <div role="alert" className={styles.section}>
+      <p>{t("Une partie de vos fiches n’a pas pu être chargée. Les informations disponibles restent consultables.", "Some of your listings could not be loaded. Available information remains accessible.")}</p>
+      <div className={styles.actions}><Button onClick={() => setReload((value) => value + 1)}>{t("Réessayer", "Try again")}</Button></div>
+    </div>}
     {listingId && <>
       <Link className={linkClass()} to={publisherPath(prefix)}>{t("Retour à mes fiches", "Back to my listings")}</Link>
       {selected ? <ListingStatusCard key={selected.id} listing={selected} toolSlug={selectedTool ? selectedTool.slug : undefined} getToken={getToken} update={updateListing}
         returnedFromPayment={query.get("payment") === "return"}
         clearPaymentReturn={() => setQuery({ listingId: selected.id }, { replace: true })} />
-        : <p role="status">{listings ? t("Ce dossier n’est pas accessible depuis votre compte.", "Your account cannot access this application.") : t("Recherche du dossier…", "Finding your application…")}</p>}
+        : <p role="status">{listings ? t("Ce dossier n’est pas accessible depuis votre compte.", "Your account cannot access this application.") : loadErrors.listings ? t("Dossier indisponible. Réessayez le chargement.", "Application unavailable. Retry loading.") : t("Recherche du dossier…", "Finding your application…")}</p>}
     </>}
     {!listingId && <>
+      <div className={styles.actions}>
+        <a {...buttonAttrs("primary")} href="#publisher-new">{t("Ajouter un produit", "Add a product")}</a>
+      </div>
       {!!notice && <p role="status">{notice}</p>}
       {!!error && <p role="alert" className={styles.error}>{error}</p>}
       <section className={styles.section} aria-label={t("Fiches et demandes", "Listings and applications")}>
@@ -145,7 +154,7 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
         {listings && tools && !shownTools?.length && !shownListings?.length && !shownClaims.length && <p>{filter
           ? t("Aucune fiche ne correspond à cette recherche.", "No listings match this search.")
           : t("Vous n’avez pas encore de fiche. Vous pouvez proposer un outil ci-dessous.", "You have no listings yet. You can suggest a tool below.")}</p>}
-        {(listings === null || tools === null) && <p role="status">{t("Chargement de vos fiches et de vos demandes…", "Loading your listings and applications…")}</p>}
+        {((listings === null && !loadErrors.listings) || (tools === null && !loadErrors.tools)) && <p role="status">{t("Chargement de vos fiches et de vos demandes…", "Loading your listings and applications…")}</p>}
         {(!!shownTools?.length || !!shownListings?.length || !!shownClaims.length) && <div className={styles.cards}>
           {shownListings?.map((listing) => {
             const published = listing.deliveryStatus === "published";
@@ -172,6 +181,8 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
 
       {listings && <section className={styles.section} aria-labelledby="publisher-new">
         <h2 id="publisher-new" ref={proposalHeading} tabIndex={-1}>{t("Proposer ou retrouver un outil", "Suggest or find a tool")}</h2>
+        <p>{t("Un dossier par produit. Retrouvez ensuite son offre, son paiement et sa publication au même endroit.", "One application per product. Track its offer, payment and publication in one place.")}</p>
+        <p>{listingOfferLabel(offer, t)}</p>
         <form onSubmit={lookup}>
           <Field label={t("Nom de l’outil", "Tool name")} value={name} required maxLength={120} disabled={busy}
             onChange={(event) => { setName(event.target.value); resetLookup(); }} />

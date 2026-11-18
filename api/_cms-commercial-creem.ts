@@ -121,6 +121,8 @@ export type Receipt = {
   transactionId: string;
   state: "paid" | "review_required";
   paidAt: string;
+  amountPaidMinor: number;
+  currency: "USD";
 };
 
 export async function readListingReceipt(attempt: CheckoutAttempt, checkoutId: string): Promise<Receipt | null> {
@@ -135,7 +137,7 @@ export async function readListingReceipt(attempt: CheckoutAttempt, checkoutId: s
   if (!orderId(order.id) || !creemTransactionId(order.transaction) || order.currency !== PRIORITY_CURRENCY
     || entityId(order.product) !== attempt.productId || order.status !== "paid" || order.type !== "onetime"
     || !matchesBasePrice || Number(order.discount_amount ?? 0) !== 0
-    || typeof order.amount_paid !== "number" || order.amount_paid <= 0) throw mismatch();
+    || typeof order.amount_paid !== "number" || !Number.isSafeInteger(order.amount_paid) || order.amount_paid <= 0) throw mismatch();
   const transaction = await creem(`transactions?transaction_id=${encodeURIComponent(order.transaction)}`, attempt.mode);
   if (transaction.id !== order.transaction || transaction.mode !== attempt.mode || transaction.order !== order.id
     || transaction.type !== "payment" || transaction.currency !== PRIORITY_CURRENCY) throw mismatch();
@@ -144,7 +146,8 @@ export async function readListingReceipt(attempt: CheckoutAttempt, checkoutId: s
   if (transaction.status !== "paid" && !incident) return null;
   const paidAt = transaction.created_at ?? order.created_at;
   if ((typeof paidAt !== "string" && typeof paidAt !== "number") || !Number.isFinite(new Date(paidAt).getTime())) throw mismatch();
-  return { checkoutId, orderId: order.id, transactionId: order.transaction, state: incident ? "review_required" : "paid", paidAt: new Date(paidAt).toISOString() };
+  return { checkoutId, orderId: order.id, transactionId: order.transaction, state: incident ? "review_required" : "paid", paidAt: new Date(paidAt).toISOString(),
+    amountPaidMinor: order.amount_paid, currency: "USD" };
 }
 
 export function parseCreemEvent(raw: Buffer, signature: unknown, secret: string) {

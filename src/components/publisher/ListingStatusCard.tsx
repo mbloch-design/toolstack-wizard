@@ -1,6 +1,6 @@
 import CatalogMediaUpload, { CatalogMediaPreview } from "./CatalogMediaUpload";
 import type { ProductDraft } from "@/lib/publisherCatalog";
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import Button, { buttonAttrs, linkClass } from "@/ds/Button/Button";
 import Field, { TextAreaField } from "@/ds/Field/Field";
@@ -72,14 +72,17 @@ export default function ListingStatusCard({ listing, toolSlug, getToken, update,
     }
   }
 
-  async function refresh() {
+  async function refresh(signal?: AbortSignal) {
     setRefreshing(true);
     try {
-      const { listing: next } = await publisherRequest<{ listing: ListingRequest }>(getToken, `/api/listing-requests?id=${encodeURIComponent(listing.id)}`);
+      const { listing: next } = await publisherRequest<{ listing: ListingRequest }>(getToken, `/api/listing-requests?id=${encodeURIComponent(listing.id)}`, { signal });
+      if (signal?.aborted) return false;
       update(next);
       setRefreshError(false);
+      return true;
     } catch {
-      setRefreshError(true);
+      if (!signal?.aborted) setRefreshError(true);
+      return false;
     } finally {
       setRefreshing(false);
     }
@@ -127,14 +130,15 @@ export default function ListingStatusCard({ listing, toolSlug, getToken, update,
       {refreshError && <p role="alert">{t("Impossible d’actualiser le statut de la demande.", "The application status could not be refreshed.")}</p>}
       <div className={styles.actions}>
         {next && <a {...buttonAttrs("primary")} href={next.target}>{next.label}</a>}
+        {active && next?.target !== "#publisher-listing-offer" && <a {...buttonAttrs()} href="#publisher-listing-offer">{t("Offre et paiements", "Payments")}</a>}
         {published && <Link {...buttonAttrs("primary")} to={`${prefix}/tool/${encodeURIComponent(listing.slug)}`}>{t("Voir la fiche publique", "View public listing")}</Link>}
         {published && toolSlug && <Link {...buttonAttrs()} to={publisherPath(prefix, toolSlug)}>{t("Gérer la fiche", "Manage listing")}</Link>}
         {(waitingMessage || refreshError) && <Button disabled={refreshing || dirty || busy} onClick={() => void refresh()}>{refreshing
           ? t("Actualisation…", "Refreshing…") : refreshError ? t("Réessayer", "Try again") : t("Actualiser le suivi", "Refresh progress")}</Button>}
       </div>
     </section>
-    {active && (!commercialComplete || returnedFromPayment) && <ListingOfferStatus listing={listing} getToken={getToken} returnedFromPayment={returnedFromPayment}
-      clearPaymentReturn={clearPaymentReturn} onChange={refresh} locked={dirty || busy} />}
+    {(active || paymentRequired) && <ListingOfferStatus listing={listing} getToken={getToken} returnedFromPayment={returnedFromPayment}
+      clearPaymentReturn={clearPaymentReturn} onChange={refresh} locked={dirty || busy || uploading} active={active} />}
     {["facts_to_review", "changes_requested", "ready"].includes(listing.status) &&
       <ListingFactualReview listing={listing} getToken={getToken} update={update} />}
     {editable && <section id="publisher-submission-title" tabIndex={-1} className={styles.section} aria-labelledby="publisher-submission-heading">
@@ -184,107 +188,153 @@ export default function ListingStatusCard({ listing, toolSlug, getToken, update,
 
 type CommerceAction = "status" | "start" | "reconcile" | "checkBadge" | "requestHistoricalReview";
 
-function ListingOfferStatus({ listing, getToken, returnedFromPayment, clearPaymentReturn, onChange, locked }: {
+function ListingOfferStatus({ listing, getToken, returnedFromPayment, clearPaymentReturn, onChange, locked, active }: {
   listing: ListingRequest; getToken: PublisherToken; returnedFromPayment: boolean;
-  clearPaymentReturn: () => void; onChange: () => Promise<void>; locked: boolean;
+  clearPaymentReturn: () => void; onChange: (signal?: AbortSignal) => Promise<boolean>; locked: boolean; active: boolean;
 }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const standard = listing.offer === "standard_badge";
-  const [status, setStatus] = useState<ListingCommerce["state"] | null>(null);
+  const [commerce, setCommerce] = useState<ListingCommerce | null>(null);
   const [badgeUrl, setBadgeUrl] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
+  const [busy, setBusy] = useState(true);
+  const [errorAction, setErrorAction] = useState<CommerceAction | null>(null);
   const [badgeHelp, setBadgeHelp] = useState(false);
-  const paymentReturn = useRef(returnedFromPayment);
-  const listingUpdated = useRef(onChange);
-  listingUpdated.current = onChange;
-  const clearReturn = useRef(clearPaymentReturn);
-  clearReturn.current = clearPaymentReturn;
+  const [showUpgrade, setShowUpgrade] = useState(false);
+  const upgradeButton = useRef<HTMLButtonElement>(null);
   const pending = useRef(false);
   const scope = useRef<AbortController | null>(null);
+  const callbacks = useRef({ onChange, clearPaymentReturn });
+  callbacks.current = { onChange, clearPaymentReturn };
 
-  async function checkout(action: CommerceAction, signal?: AbortSignal) {
-    return publisherRequest<ListingCommerce>(getToken, "/api/listing-checkout", {
-      method: "POST", body: { action, listingId: listing.id, ...(action === "checkBadge" && badgeUrl.trim() && { badgeUrl: badgeUrl.trim() }) }, signal,
+  const perform = useCallback(async (action: CommerceAction, signal: AbortSignal, badgeUrl?: string) => {
+    const next = await publisherRequest<ListingCommerce>(getToken, "/api/listing-checkout", {
+      method: "POST", body: { action, listingId: listing.id, ...(action === "checkBadge" && badgeUrl && { badgeUrl }) }, signal,
     });
-  }
+    if (signal.aborted) return;
+    setCommerce(next);
+    if (action === "start" && next.checkoutUrl) {
+      const url = new URL(next.checkoutUrl);
+      if (url.protocol !== "https:" || !/(^|\.)creem\.io$/i.test(url.hostname) || url.username || url.password) throw new Error("Invalid checkout URL");
+      window.location.assign(url.href);
+      return;
+    }
+    if (action !== "status") {
+      const refreshed = await callbacks.current.onChange(signal);
+      if (!refreshed && !signal.aborted) throw new Error("Listing refresh failed");
+      if (action === "reconcile" && returnedFromPayment && !signal.aborted) callbacks.current.clearPaymentReturn();
+    }
+  }, [getToken, listing.id, returnedFromPayment]);
 
   useEffect(() => {
     const controller = new AbortController();
+    const { signal } = controller;
     scope.current = controller;
-    const reconcile = paymentReturn.current && !standard;
-    void checkout(reconcile ? "reconcile" : "status", controller.signal).then(async (result) => {
-      if (controller.signal.aborted) return;
-      setStatus(result.state);
-      if (reconcile) {
-        await listingUpdated.current();
-        if (!controller.signal.aborted) clearReturn.current();
-      }
-    }, () => {
-      if (!controller.signal.aborted) setStatus(null);
+    const action = returnedFromPayment ? "reconcile" : "status";
+    setBusy(true);
+    setErrorAction(null);
+    void perform(action, signal).catch(() => {
+      if (!signal.aborted) setErrorAction(action);
+    }).finally(() => {
+      if (!signal.aborted) setBusy(false);
     });
     return () => controller.abort();
-  }, [getToken, listing.id, standard]);
+  }, [perform, returnedFromPayment]);
 
   async function run(action: CommerceAction) {
-    if (pending.current || !scope.current) return;
-    const signal = scope.current.signal;
+    if (busy || locked || pending.current || !scope.current) return;
+    const { signal } = scope.current;
     pending.current = true;
     setBusy(true);
-    setError("");
+    setErrorAction(null);
     try {
-      const next = await checkout(action, signal);
-      if (signal.aborted) return;
-      setStatus(next.state);
-      if (action === "start" && next.checkoutUrl) {
-        const url = new URL(next.checkoutUrl);
-        if (url.protocol !== "https:" || !/(^|\.)creem\.io$/i.test(url.hostname) || url.username || url.password) throw new Error("Invalid checkout URL");
-        window.location.assign(url.href);
-        return;
-      }
-      await onChange();
-      if (paymentReturn.current && !signal.aborted) clearPaymentReturn();
+      await perform(action, signal, badgeUrl.trim());
     } catch {
-      if (!signal.aborted) setError(t("Impossible de vérifier la condition de l’offre. Réessayez.", "The offer requirement could not be verified. Try again."));
+      if (!signal.aborted) setErrorAction(action);
     } finally {
       pending.current = false;
       if (!signal.aborted) setBusy(false);
     }
   }
 
+  const status = commerce?.state;
+  const inProgress = status === "pending" && Boolean(commerce?.attemptId);
+  const canStartPriority = active && !standard && (status === "unchecked" || status === "pending") && !inProgress;
+  const canUpgrade = active && standard && commerce?.canUpgrade && !inProgress;
+  const badgeVerified = listing.commercialStatus === "satisfied" || status === "present";
+  const canCheckBadge = active && standard && !badgeVerified && status !== "review_required" && status !== "contact";
+  const blocked = busy || locked;
+  const badgeCode = '<a href="https://tooltrim.com/"><img src="https://tooltrim.com/tooltrim-badge.svg" alt="ToolTrim" height="54"></a>';
+  const payments = commerce?.payments;
   const labels: Record<ListingCommerce["state"], string> = {
-    unchecked: standard ? t("Badge à vérifier", "Badge needs verification") : t("Paiement en attente", "Awaiting payment"),
+    unchecked: standard ? t("Badge à vérifier", "Badge needs verification") : t("Paiement à effectuer", "Payment required"),
     missing: t("Badge introuvable sur la page indiquée", "Badge not found on the specified page"),
     unreachable: t("Page du badge inaccessible", "Badge page unavailable"),
     present: t("Badge détecté", "Badge detected"),
-    pending: t("Paiement en cours de vérification", "Payment verification in progress"),
-    paid: t("Paiement confirmé", "Payment confirmed"),
-    review_required: t("Rapprochement ToolTrim nécessaire", "ToolTrim needs to match your payment"),
+    pending: inProgress ? t("Paiement en attente de confirmation", "Awaiting payment confirmation") : t("Paiement à effectuer", "Payment required"),
+    paid: t("Paiement vérifié par Creem", "Payment verified by Creem"),
+    review_required: t("Paiement à rapprocher avec ToolTrim", "Payment needs to be matched by ToolTrim"),
     contact: t("Contactez ToolTrim", "Contact ToolTrim"),
   };
-  const badgeCode = '<a href="https://tooltrim.com/"><img src="https://tooltrim.com/tooltrim-badge.svg" alt="ToolTrim" height="54"></a>';
 
   return <section id="publisher-listing-offer" tabIndex={-1} className={styles.section} aria-labelledby="publisher-listing-offer-heading">
-    <h2 id="publisher-listing-offer-heading">{standard ? t("Badge ToolTrim", "ToolTrim badge") : t("Paiement de la fiche", "Listing payment")}</h2>
-    <p role="status">{status ? labels[status] : t("Vérification de l’état de l’offre…", "Checking offer status…")}</p>
+    <h2 id="publisher-listing-offer-heading">{t("Offre et paiements", "Payments")}</h2>
+    {busy && <p role="status">{t("Actualisation de l’offre et des paiements…", "Refreshing the offer and payments…")}</p>}
+    {!busy && status && status !== "present" && status !== "paid" && <p role="status">{labels[status]}</p>}
     {locked && <p className={styles.muted}>{t("Enregistrez ou annulez vos changements pour continuer.", "Save or cancel your changes to continue.")}</p>}
-    {error && <p role="alert" className={styles.error}>{error}</p>}
-    {status === null && <div className={styles.actions}><Button disabled={busy || locked} onClick={() => void run(paymentReturn.current ? "reconcile" : "status")}>{t("Actualiser le statut", "Refresh status")}</Button></div>}
-    {standard && status && status !== "present" && <div className={styles.fields}>
+    {errorAction && <div className={styles.fields}>
+      <p role="alert" className={styles.error}>{t("Impossible d’actualiser l’offre ou le paiement.", "The offer or payment could not be updated.")}</p>
+      {!["start", "checkBadge", "requestHistoricalReview"].includes(errorAction) &&
+        <div className={styles.actions}><Button disabled={blocked} onClick={() => void run(errorAction)}>{t("Réessayer", "Try again")}</Button></div>}
+    </div>}
+    {canCheckBadge && status && <div className={styles.fields}>
+      <h3>{t("Badge ToolTrim", "ToolTrim badge")}</h3>
       <div className={styles.actions}><Button variant="quiet" aria-expanded={badgeHelp} onClick={() => setBadgeHelp(!badgeHelp)}>{t("Voir le code du badge", "View badge code")}</Button></div>
       {badgeHelp && <TextAreaField readOnly label={t("Code à installer sur votre site", "Code to install on your website")} value={badgeCode} />}
       <form onSubmit={(event) => { event.preventDefault(); void run("checkBadge"); }}>
         <Field label={t("URL publique de la page du badge", "Public URL of the badge page")} help={t("Laissez vide si le badge est sur la page d’accueil de l’outil.", "Leave blank if the badge is on the tool’s homepage.")} type="url"
-          value={badgeUrl} onChange={(event) => setBadgeUrl(event.target.value)} disabled={busy || locked} />
-        <div className={styles.actions}><Button variant="primary" type="submit" disabled={busy || locked}>{t("Vérifier le badge", "Verify badge")}</Button></div>
+          value={badgeUrl} onChange={(event) => setBadgeUrl(event.target.value)} disabled={blocked} />
+        <div className={styles.actions}><Button variant="primary" type="submit" disabled={blocked}>{t("Vérifier le badge", "Verify badge")}</Button></div>
       </form>
     </div>}
-    {!standard && (status === "unchecked" || status === "pending") && <div className={styles.actions}>
-      <Button variant="primary" disabled={busy || locked} onClick={() => void run("start")}>{status === "pending" ? t("Reprendre le paiement", "Resume payment") : t("Continuer vers le paiement", "Continue to payment")}</Button>
-      {status === "pending" && <Button disabled={busy || locked} onClick={() => void run("reconcile")}>{t("Vérifier le paiement", "Verify payment")}</Button>}
-      {status === "unchecked" && <Button disabled={busy || locked} onClick={() => void run("requestHistoricalReview")}>{t("J’ai déjà payé", "I’ve already paid")}</Button>}
+    {canUpgrade && <div className={styles.card}>
+      <h3>{t("Fiche prioritaire", "Priority listing")}</h3>
+      <p>{t("29 $ US en un seul paiement. Après confirmation, le badge devient facultatif.", "US$29 once. Once payment is confirmed, the badge becomes optional.")}</p>
+      <div className={styles.actions}>
+        <Button ref={upgradeButton} aria-expanded={showUpgrade} disabled={blocked} onClick={() => setShowUpgrade(!showUpgrade)}>{t("Passer à l’offre prioritaire", "Upgrade to priority")}</Button>
+      </div>
+      {showUpgrade && <div className={styles.fields}>
+        <p>{t("Votre offre gratuite reste active jusqu’à la confirmation du paiement.", "Your free offer stays active until payment is confirmed.")}</p>
+        <div className={styles.actions}>
+          <Button variant="primary" disabled={blocked} onClick={() => void run("start")}>{t("Continuer vers le paiement", "Continue to payment")}</Button>
+          <Button disabled={blocked} onClick={() => { setShowUpgrade(false); upgradeButton.current?.focus(); }}>{t("Garder l’offre gratuite", "Keep the free offer")}</Button>
+        </div>
+      </div>}
     </div>}
-    {status === "review_required" && <p>{t("Envoyez votre reçu Creem à ToolTrim pour rattacher votre paiement à ce dossier.", "Send your Creem receipt to ToolTrim to link your payment to this application.")} <a className={linkClass("inline")} href={`mailto:contact@tooltrim.com?subject=${encodeURIComponent(t("Rapprochement de paiement", "Payment matching"))}&body=${encodeURIComponent(listing.id)}`}>contact@tooltrim.com</a></p>}
+    {active && (canStartPriority || inProgress) && <div className={styles.fields}>
+      {standard && inProgress && <p>{t("Votre offre gratuite reste active jusqu’à la confirmation du paiement.", "Your free offer stays active until payment is confirmed.")}</p>}
+      <div className={styles.actions}>
+        <Button variant="primary" disabled={blocked} onClick={() => void run("start")}>{inProgress ? t("Reprendre le paiement", "Resume payment") : t("Continuer vers le paiement", "Continue to payment")}</Button>
+        {inProgress && <Button disabled={blocked} onClick={() => void run("reconcile")}>{t("Vérifier le paiement", "Verify payment")}</Button>}
+        {canStartPriority && <Button disabled={blocked} onClick={() => void run("requestHistoricalReview")}>{t("J’ai déjà payé", "I’ve already paid")}</Button>}
+      </div>
+    </div>}
+    {status === "review_required" && <p>{t("Pour faire vérifier ce paiement, contactez ToolTrim avec votre référence Creem si vous l’avez.", "To check this payment, contact ToolTrim with your Creem reference if you have it.")} <a className={linkClass("inline")} href={`mailto:contact@tooltrim.com?subject=${encodeURIComponent(t("Rapprochement de paiement", "Payment matching"))}&body=${encodeURIComponent(listing.id)}`}>contact@tooltrim.com</a></p>}
     {status === "contact" && <a href="mailto:contact@tooltrim.com" className={linkClass("inline")}>{t("Contacter ToolTrim", "Contact ToolTrim")}</a>}
+    {commerce && <div className={styles.fields}>
+      <h3>{t("Historique des paiements", "Payment history")}</h3>
+      {!payments ? <p className={styles.muted}>{t("Historique indisponible pour le moment.", "Payment history is currently unavailable.")}</p>
+        : payments.length === 0 ? <p className={styles.muted}>{t("Aucun paiement enregistré pour cette fiche.", "No payments are recorded for this listing.")}</p>
+          : <ul className={styles.fields}>{payments.map((payment) => <li className={styles.card} key={payment.reference}>
+            <strong>{payment.mode === "test" ? t("Paiement de test", "Test payment") : t("Fiche prioritaire", "Priority listing")}</strong>
+            <dl className={styles.states}>
+              <div><dt>{t("État", "Status")}</dt><dd>{payment.status === "paid" ? t("Confirmé", "Confirmed") : t("À vérifier avec ToolTrim", "Check with ToolTrim")}</dd></div>
+              {payment.amountPaidMinor !== null && payment.currency && <div><dt>{t("Montant", "Amount")}</dt><dd>{new Intl.NumberFormat(lang, {
+                style: "currency", currency: payment.currency, currencyDisplay: "code",
+              }).format(payment.amountPaidMinor / 100)}</dd></div>}
+              <div><dt>{t("Date", "Date")}</dt><dd><time dateTime={payment.paidAt}>{new Intl.DateTimeFormat(lang, { dateStyle: "medium" }).format(new Date(payment.paidAt))}</time></dd></div>
+              <div><dt>{t("Référence Creem", "Creem reference")}</dt><dd>{payment.reference}</dd></div>
+            </dl>
+          </li>)}</ul>}
+    </div>}
   </section>;
 }

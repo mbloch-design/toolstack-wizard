@@ -30,3 +30,8 @@ it('keeps provider flags disabled unless explicitly true', async () => {
     expect(flags.ACCOUNT_GOOGLE_ENABLED).toBe(value === 'true'); expect(flags.ACCOUNT_GITHUB_ENABLED).toBe(value === 'true');
   }
 });
+
+it('preserves product prefill and offer across authentication without personal invitation data', () => {
+  expect(safeAccountReturnTo('/fr/publisher?offer=priority_paid&tool=Sample&site=https%3A%2F%2Fexample.com&email=private#publisher-new', 'fr', 'https://tooltrim.test'))
+    .toBe('/fr/publisher?offer=priority_paid&tool=Sample&site=https%3A%2F%2Fexample.com#publisher-new');
+});

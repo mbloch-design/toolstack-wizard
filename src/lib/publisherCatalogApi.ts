@@ -18,6 +18,10 @@ export type ListingCandidate = { kind: "tool" | "listing"; id: string; slug: str
 export type ListingCommerce = {
   state: "unchecked" | "missing" | "unreachable" | "present" | "pending" | "paid" | "review_required" | "contact";
   checkedAt?: string; checkoutUrl?: string; attemptId?: string;
+  canUpgrade?: boolean;
+  payments?: Array<{ reference: string; paidAt: string; amountPaidMinor: number | null; currency: string | null;
+    status: "paid" | "review_required"; mode: "prod" | "test" }>;
+
 };
 
 export class PublisherApiError extends Error {

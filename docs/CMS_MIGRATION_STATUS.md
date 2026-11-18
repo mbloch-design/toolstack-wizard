@@ -63,3 +63,15 @@ Lancer `PLAYWRIGHT_ACCOUNTS_PORT=5191 node e2e/fixtures/accounts-server.mjs --cm
 - Mot de passe des deux comptes fictifs `fixture-password`. Utiliser deux profils de navigateur pour garder les deux sessions ouvertes.
 
 Ce mode sert à essayer les écrans et les enchaînements sur des données fictives. Les contrôles de fournisseurs et les écritures de production se font dans une recette hébergée séparée.
+
+## Parcours offres et paiements — 18 novembre 2026
+
+Les choix de `/submit` rejoignent maintenant le dossier éditeur quand le CMS est activé, avec l’offre, le nom et le site conservés à travers la connexion. Les retours des anciens paiements gardent leur procédure de récupération. Mes fiches propose « Ajouter un produit ». Les paramètres regroupent offres et suivi commercial par dossier, distincts des droits de modification.
+
+Le bloc Offre et paiements reste consultable après confirmation. Il affiche la date, la référence et le montant réellement fourni par Creem ; les anciens reçus sans montant ne reçoivent aucune valeur inventée. Les paiements de test sont identifiés. Le passage à l’offre prioritaire conserve le gratuit jusqu’à confirmation du paiement. La préparation réutilise la tentative existante et contrôle les droits et les lots en cours. L’état commercial du compte n’est pas une preuve de modification déjà déployée de la fiche publique.
+
+La migration additive `20261117193000_cms_commerce_account.sql` est locale, non appliquée en production. Le port 5191 utilise un paiement simulé : « Continuer vers le paiement » prépare la tentative, « Vérifier le paiement » confirme la simulation. Aucun prestataire n’est appelé. Le test `playwright.publisher-demo.config.ts` repart de la page de souscription, traverse la connexion et la création d’un produit, annule puis confirme une montée en offre et retrouve son historique après rechargement ; captures à 390, 768 et 1280 px. Les limites de recette hébergée et de publication documentées plus haut restent ouvertes.
+
+Vérifications de ce lot : 60 tests UI/navigation ciblés (dont 4 sur le suivi commercial), 29 tests API/PostgreSQL commerce, scénario PostgreSQL dossiers, typecheck app/node/API, 290 tests du système de design et 48 captures ciblées des contrôles/formulaires FR/EN clair/sombre. Les cinq scénarios éditeur existants et le nouveau parcours de démonstration passent. La recette fournisseur réelle reste distincte de ces preuves locales.
+
+Construction de production complète : PASS (SSR, pré-rendu, sitemap, contrats SEO/routage et budgets de sortie). Construction Storybook : PASS. Ces résultats ne constituent pas un déploiement.

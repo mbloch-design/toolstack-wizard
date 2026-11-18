@@ -6616,3 +6616,10 @@ Connexion GitHub réelle confirmée par le propriétaire ; import serveur du nom
 ## 2026-11-16 — Retrait de l’ancien audit de stack
 
 Le back-office n’affiche plus le diagnostic historique. Ses anciens liens ouvrent la vue d’ensemble. Les liens publics historiques redirigent vers Ma Stack. Les écrans, le moteur de l’ancien audit, les fonctions Supabase dédiées et leurs scripts de déploiement ou de recette ont été retirés du dépôt. Les migrations historiques sont conservées. Le retrait en production reste à faire. Après la mise en ligne du back-office, supprimer les cinq fonctions encore déployées sur le projet ToolTrim : `backoffice-diagnostic`, `generate-report`, `seed-diagnostic`, `send-backoffice-alerts` et `process-diagnostic-email-jobs`. Le webhook historique était déjà absent de l’inventaire distant.
+
+## 2026-11-18 — Continuité du parcours éditeur et paiements
+
+- Relie les offres de souscription au dossier authentifié, conserve le choix et le produit à la connexion, garde la récupération des anciens paiements.
+- Rend visibles l’ajout d’un produit, l’offre par dossier dans les paramètres, le paiement confirmé et sa référence après règlement. Ajoute le passage gratuit → prioritaire sans abandon préalable du gratuit.
+- Persiste le montant du reçu vérifié et protège les tentatives contre la double émission ; migration additive locale. Les données de démo sont explicitement des paiements de test.
+- Recette navigateur via le serveur de fixture complet, sans mocks de routes par page. Storybook et `src/ds/` inchangés. Aucun déploiement effectué.

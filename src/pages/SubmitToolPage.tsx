@@ -1,6 +1,6 @@
 import type React from "react";
 import { FormEvent, MouseEvent, useEffect, useRef, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import Breadcrumb from "@/components/Breadcrumb";
 import ToolLogo from "@/components/ToolLogo";
@@ -67,6 +67,7 @@ function readDrafts(): Submission[] {
 const SubmitToolPage = () => {
   const { t, lang, prefix } = useLang();
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [plan, setPlan] = useState<ReviewPlan>(null);
   const [step, setStep] = useState<Step>(1);
   const [status, setStatus] = useState<Status>("idle");
@@ -258,6 +259,13 @@ const SubmitToolPage = () => {
   const price = t("29 $", "$29");
 
   const choosePlan = (next: Exclude<ReviewPlan, null>, source = "offers") => {
+    if (import.meta.env.VITE_PUBLISHER_CMS_ENABLED === "true" && !paymentRecovery) {
+      const query = new URLSearchParams({ offer: next === "paid" ? "priority_paid" : "standard_badge" });
+      if (submission.toolName.trim()) query.set("tool", submission.toolName.trim());
+      if (submission.toolUrl.trim()) query.set("site", submission.toolUrl.trim());
+      navigate(`${publisherPath(prefix)}?${query}#publisher-new`);
+      return;
+    }
     setPlan(next); setPaid(false); setStep(1); setStatus("idle"); setError("");
     trackEvent("submit_plan_select", { plan: next, source, personalized: Boolean(inviteName) });
   };

@@ -69,6 +69,7 @@ export function createPublisherDemo() {
   const priority = makeApplication({ id: "51910000-0000-4000-8000-000000000002",
     name: "Carnet Démo", websiteUrl: "https://carnet.example.invalid", slug: "carnet-demo", offer: "priority_paid" });
   Object.assign(priority.listing, { commercialStatus: "satisfied", representativeRole: "Responsable produit" });
+  priority.payments = [{ reference: "demo-payment-carnet", paidAt: timestamp(), amountPaidMinor: 2900, currency: "USD", status: "paid", mode: "test" }];
   const applications = [atelier, priority];
   const creationKeys = new Map();
   const changeListing = (listing, changes) => Object.assign(listing, changes, { version: listing.version + 1, updatedAt: timestamp() });
@@ -273,11 +274,24 @@ export function createPublisherDemo() {
           review.badgeUrl = listing.websiteUrl;
           changeListing(listing, { commercialStatus: "satisfied" });
         }
+        if (input.action === "start" && !["archived", "rejected"].includes(listing.status) && !review.payments?.length) {
+          review.paymentPending = true;
+        }
+        // Explicit simulated payment: no external checkout or real charge in this loopback fixture.
+        if (input.action === "reconcile" && review.paymentPending) {
+          review.paymentPending = false;
+          review.payments = [{ reference: `demo-payment-${listing.id}`, paidAt: timestamp(), amountPaidMinor: 2900,
+            currency: "USD", status: "paid", mode: "test" }];
+          changeListing(listing, { offer: "priority_paid", commercialStatus: "satisfied" });
+        }
         const satisfied = listing.commercialStatus === "satisfied";
-        if (["status", "reconcile", "checkBadge"].includes(input.action)) return ok({
-          state: satisfied ? (standard ? "present" : "paid") : "unchecked",
+        if (["status", "start", "reconcile", "checkBadge"].includes(input.action)) return ok({
+          state: review.paymentPending ? "pending" : satisfied ? (listing.offer === "standard_badge" ? "present" : "paid") : "unchecked",
+          canUpgrade: listing.offer === "standard_badge" && !["archived", "rejected"].includes(listing.status),
+          payments: review.payments ?? [],
+          ...(review.paymentPending && { attemptId: `demo-attempt-${listing.id}` }),
         });
-        if (input.action === "requestHistoricalReview" && !standard) return ok({ state: "review_required" });
+        if (input.action === "requestHistoricalReview" && !standard) return ok({ state: "review_required", payments: [] });
         return error(503, "DEMO_CHECKOUT_DISABLED");
       }
       const grant = readerGrant?.userId === user.id && user.email === reader ? readerGrant : null;

@@ -43,6 +43,8 @@ type CommerceSnapshot = {
   checkoutUrl: string | null;
   checkedAt: string | null;
   dispatch: boolean;
+  canUpgrade: boolean;
+  payments: Array<{ reference: string; paidAt: string; amountPaidMinor: number | null; currency: string | null; status: "paid" | "review_required"; mode: "prod" | "test" }>;
 };
 
 type Operation = "status" | "prepare" | "dispatch" | "bind" | "beginBadge" | "badge" | "requestHistoricalReview";
@@ -63,6 +65,8 @@ function visible(snapshot: CommerceSnapshot) {
   const checkoutUrl = state === "pending" ? checkoutRedirect(snapshot.checkoutUrl) : null;
   return {
     state,
+    payments: snapshot.payments ?? [],
+    canUpgrade: snapshot.canUpgrade === true,
     ...(snapshot.checkedAt && { checkedAt: snapshot.checkedAt }),
     ...(snapshot.attempt && { attemptId: snapshot.attempt.id }),
     ...(checkoutUrl && { checkoutUrl }),

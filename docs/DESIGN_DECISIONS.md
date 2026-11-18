@@ -174,3 +174,7 @@ Carte de décision au repos : arbitrage du matin maintenu (la tuile part, la phr
 
 ### Hors Ma stack (chantiers suivants)
 Fil d'Ariane, barre latérale et onglets, recherche ⌘K, pied de page, question fréquente, note ToolTrim, historique de prix et tableau de formules, formulaire de soumission, plaques de logo 28 à 80.
+
+## 18 novembre 2026 — Offre et suivi commercial éditeur
+
+Demandé par Michael : voir ce qui a été payé, passer du gratuit au payant et ajouter plusieurs produits depuis un même compte. Gardé : une offre et un historique par dossier, droits indépendants du paiement, publication groupée. Corrigé : le paiement ne disparaît plus après confirmation et les boutons de souscription rejoignent le dossier. À vérifier avant production : les reçus réels et les conséquences publiées de la montée en offre sur une fiche déjà en ligne. Aucun changement des composants de référence Storybook.
