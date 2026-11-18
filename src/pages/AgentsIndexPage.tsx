@@ -6,11 +6,11 @@ import { useStackPins } from "@/hooks/useStackPins";
 import { useAgentAssistant } from "@/hooks/useAgentAssistant";
 import Breadcrumb from "@/components/Breadcrumb";
 import Page from "@/ds/Page/Page";
-import Chip, { Chips, chipLinkAttrs } from "@/ds/Chip/Chip";
+import Chip, { Chips } from "@/ds/Chip/Chip";
 import Logo from "@/ds/Logo/Logo";
 import Segmented from "@/ds/Segmented/Segmented";
 import Chapter, { Chapters } from "@/ds/Chapter/Chapter";
-import { CatalogSection, CatalogTitle } from "@/ds/Catalog/Catalog";
+import { CatalogTitle } from "@/ds/Catalog/Catalog";
 import { LinkArrow, TextButton, linkClass } from "@/ds/Button/Button";
 import { AgentCard, AgentCards, AgentShelf, HubQuestion, HubQuestions, StackReport, ToolChecklist, type ReportItem } from "@/ds/AgentHub/AgentHub";
 import { Plug } from "@/lib/icons";
@@ -21,7 +21,7 @@ import { agentShelves } from "@/lib/agentShelves";
 import { HUB_ASSISTANTS, SERVERS, checkedTools, isPlugged, reportRows, reportVerdict, serverFoot, toolStatus, type HubAssistant } from "@/lib/agentReport";
 import skillsIndex from "@/data/agents/skills_index.json";
 import adviceData from "@/data/agents/advice.json";
-import { byLine, cardSentence, say, serverName, type Advice, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
+import { byLine, cardLine, say, serverName, type Advice, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
 
 /*
  * The agents section, step 4 (17/11/2026): the hub /agents is a report on your stack from your assistant's side.
@@ -35,7 +35,7 @@ const ADVICE = adviceData as Record<string, Advice>;
 /** The tools ticked without a stack, for this visitor only: never written to Ma stack. */
 const PICKS_KEY = "tooltrim.agents.tools";
 
-const TITLES: Record<AgentsView, [string, string]> = { all: ["Votre assistant IA", "Your AI assistant"], mcp: ["Outils à brancher", "Tools to plug in"], skills: ["Savoir-faire", "Know-how"] };
+const TITLES: Record<AgentsView, [string, string]> = { all: ["Votre assistant IA", "Your AI assistant"], mcp: ["Outils à brancher", "Tools to plug in"], skills: ["Savoir-faire pour développeurs", "Know-how for developers"] };
 const SEO_TITLES: Record<AgentsView, [string, string]> = {
   all: ["Votre assistant IA : ce qu'il peut faire dans vos outils (MCP)", "Your AI assistant: what it can do in your tools (MCP)"],
   mcp: ["Serveurs MCP officiels : brancher vos outils à votre assistant IA", "Official MCP servers: plug your tools into your AI assistant"],
@@ -44,7 +44,7 @@ const SEO_TITLES: Record<AgentsView, [string, string]> = {
 const LEADS: Record<AgentsView, [string, string]> = {
   all: ["Ce que votre assistant peut faire dans vos outils, et avec quelle prudence.", "What your assistant can do in your tools, and with how much care."],
   mcp: ["Les outils du catalogue qui se branchent officiellement à votre assistant IA, rangés par famille.", "The catalogue's tools that officially plug into your AI assistant, by family."],
-  skills: ["Des modes d'emploi publiés par les éditeurs, que votre assistant suit pour mieux travailler dans leur outil. Chacun s'ajoute au branchement de l'outil.", "Instructions published by vendors that your assistant follows to work better in their tool. Each one comes on top of plugging the tool in."],
+  skills: ["Pour développeurs : des modes d'emploi publiés par les éditeurs, que votre assistant de code suit pour mieux travailler dans leur outil. Ceux de Notion et de Zapier s'utilisent sans rien installer.", "For developers: instructions published by vendors that your coding assistant follows to work better in their tool. Notion's and Zapier's need nothing installed."],
 };
 const PATHS: Record<AgentsView, string> = { all: "agents", mcp: "mcp", skills: "skills" };
 const GUIDE = { fr: "mcp-freelances-non-developpeurs", en: "mcp-for-non-developer-freelancers" };
@@ -112,7 +112,7 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
   // Every tool that plugs in, by family; « avec mon assistant » keeps those that plug into it.
   const serverRow = (card: McpCard) => (
     <AgentCard key={card.slug} icon={logo(card.host_tool)} name={serverName(card, toolName(card.host_tool), SERVERS.some((other) => other.host_tool === card.host_tool && other.slug !== card.slug), lang)}
-      by={byLine(card.publisher, lang)} summary={card.card ? say(lang, card.card) : cardSentence(say(lang, card.summary))} facts={serverFoot(card, assistant, lang)}
+      by={byLine(card.publisher, lang)} summary={card.card ? say(lang, card.card) : cardLine(say(lang, card.summary))} facts={serverFoot(card, assistant, lang)}
       renderLink={(className, content) => sheetLink(card.slug, className, content)} />
   );
   const listed = SERVERS.filter((card) => !withMine || isPlugged(toolStatus(card.host_tool, assistant)));
@@ -131,19 +131,15 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
   </>;
 
   const skillRow = (skill: SkillCard) => (
-    <AgentCard key={skill.slug} icon={logo(skill.host_tool)} name={skill.name} by={byLine(skill.publisher, lang)} summary={cardSentence(say(lang, skill.summary))}
+    <AgentCard key={skill.slug} icon={logo(skill.host_tool)} name={skill.name} by={byLine(skill.publisher, lang)} summary={cardLine(say(lang, skill.summary))}
       facts={[{ kind: "skill", text: t("Savoir-faire", "Know-how") as string }, { kind: "tool", text: toolName(skill.host_tool) }]}
       renderLink={(className, content) => <Link to={`${prefix}/skills/${skill.slug}`} className={className}>{content}</Link>} />
   );
-  const tabs = (
-    <nav aria-label={t("Rubriques", "Sections") as string}>
-      <Chips label={t("Rubriques", "Sections") as string}>
-        {(["all", "mcp", "skills"] as AgentsView[]).map((tab) => (
-          <Link key={tab} to={`${prefix}/${PATHS[tab]}`} {...chipLinkAttrs(tab === view)}>{t(...TITLES[tab])}</Link>
-        ))}
-      </Chips>
-    </nav>
-  );
+
+  // /skills by tool: those that need nothing installed first (Notion, Zapier), then the others by size.
+  const skillShelves = [...new Set(SKILLS.map((skill) => skill.host_tool))]
+    .map((tool) => ({ tool, name: toolName(tool), skills: SKILLS.filter((skill) => skill.host_tool === tool) }))
+    .sort((a, b) => Number(b.skills.some((k) => k.everyone)) - Number(a.skills.some((k) => k.everyone)) || b.skills.length - a.skills.length);
   const assistantChoice = (
     <Segmented compact label={t("Votre assistant", "Your assistant") as string} value={assistant} onChange={setAssistant}
       options={HUB_ASSISTANTS.map((value) => ({ value, label: lang === "en" ? ASSISTANT_LABELS[value][1] : ASSISTANT_LABELS[value][0] }))} />
@@ -154,12 +150,15 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
       <Page>
         <Breadcrumb includeSchema={false} items={[{ label: t(...TITLES.all) as string, href: `${prefix}/agents` }, { label: t(...TITLES[view]) as string }]} />
         <CatalogTitle title={t(...TITLES[view]) as string} count={view === "mcp" ? SERVERS.length : SKILLS.length} countLabel={t("fiches", "sheets") as string} lead={t(...LEADS[view]) as string} />
-        {tabs}
-        {view === "mcp"
-          ? <Chapters><Chapter chapter="list" width="wide">{fullList}</Chapter></Chapters>
-          : <CatalogSection id="agents-skills" title={t("Savoir-faire des éditeurs", "Vendors' know-how")} count={SKILLS.length}>
-            <AgentCards label={t("Savoir-faire des éditeurs", "Vendors' know-how") as string}>{SKILLS.map(skillRow)}</AgentCards>
-          </CatalogSection>}
+        <Chapters>
+          <Chapter chapter="list" width="wide">
+            {view === "mcp" ? fullList : skillShelves.map((shelf) => (
+              <AgentShelf key={shelf.tool} title={shelf.name} count={shelf.skills.length}>
+                <AgentCards flat label={shelf.name}>{shelf.skills.map(skillRow)}</AgentCards>
+              </AgentShelf>
+            ))}
+          </Chapter>
+        </Chapters>
       </Page>
     );
   }

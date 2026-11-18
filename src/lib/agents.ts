@@ -37,6 +37,12 @@ export interface SkillSheet {
   docs_url: string; sources: { label: string; url: string }[];
 }
 
+/**
+ * A skill a non-developer can use (step 5, 17/11): nothing to install, it ships with the connected server (Notion
+ * Skills, Zapier's). The others go through a coding tool (a command, a plugin, a file): they are « pour développeurs ».
+ */
+export const forEveryone = (skill: Pick<SkillSheet, "install">) => !skill.install.length;
+
 export interface McpCard {
   slug: string; name: string; publisher: string; host_tool: string; category: string | null; summary: Pair; card?: Pair;
   status?: "ga" | "beta"; transport?: "remote" | "local"; auth?: ("oauth" | "key" | "none")[]; access?: string;
@@ -48,6 +54,8 @@ export interface McpCard {
 export interface SkillCard {
   slug: string; name: string; publisher: string; host_tool: string; server: string | null; category: string | null;
   summary: Pair; agents: string[]; verified_on: string;
+  /** Usable without a coding tool (forEveryone, projected). */
+  everyone: boolean;
 }
 
 export type Lang = "fr" | "en";
@@ -183,6 +191,8 @@ export type CardFact = { kind: "one_click" | "configure" | "elsewhere" | AgentCa
 export const CARD_MAX = 56;
 /** A card says one sentence: the summary's first, never cut mid-sentence by the card. */
 export const cardSentence = (text: string) => text.match(/^.+?[.!?](\s|$)/)?.[0].trim() ?? text;
+/** A card's sentence from text not written for cards (a skill's summary, a tool's description): its first sentence when that fits, or none, never cut. */
+export const cardLine = (text?: string) => { if (!text) return undefined; const first = cardSentence(text); return first.length <= CARD_MAX ? first : undefined; };
 /** ToolTrim's name for a server: the tool's name, or « Figma, application de bureau » when the tool has two. */
 export function serverName(card: Pick<McpCard, "transport" | "name">, toolName: string, hasSibling: boolean, lang: Lang) {
   if (!hasSibling) return toolName;

@@ -7,14 +7,6 @@
   container-type: inline-size;
 }
 
-/* The head, one left edge: logo and title on a line, the hook, the actions, the trust line. */
-.head {
-  display: grid;
-  gap: var(--tt-space-5);
-  justify-items: start;
-  min-width: 0;
-}
-
 /* The logo sits above the title, on the same left edge: it never floats beside two lines of 64. */
 .titleRow {
   display: grid;
@@ -98,18 +90,6 @@
 }
 
 /* Two columns on the wide grid, one on a phone. */
-.columns {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--tt-gap-group) var(--tt-space-12);
-}
-
-.column {
-  display: grid;
-  gap: var(--tt-space-3);
-  align-content: start;
-  min-width: 0;
-}
 
 .columnHead {
   composes: label from "../atoms.module.css";
@@ -119,8 +99,7 @@
 }
 
 @container (max-width: 640px) {
-  .cards,
-  .columns {
+  .cards {
     grid-template-columns: minmax(0, 1fr);
   }
 }
@@ -203,14 +182,6 @@
   composes: text from "../atoms.module.css";
 }
 
-.note {
-  composes: note from "../atoms.module.css";
-}
-
-.term {
-  composes: eyebrow from "../atoms.module.css";
-}
-
 .srOnly {
   position: absolute;
   width: 1px;
@@ -219,8 +190,6 @@
   clip-path: inset(50%);
   white-space: nowrap;
 }
-
-/* The line of facts: icon, words; the assistants as logos with their names for screen readers. */
 
 
 
@@ -266,8 +235,6 @@
   width: 100%;
   height: 100%;
 }
-
-/* The assistants the sheet serves, beside the copy action, on a wide screen only. */
 
 /* The menu hangs from the button's left edge (the button sits on the head's left edge), at least 360 so each help
    line holds on one line, never wider than the content area less 32: it cannot pass under the sidebar or the screen. */
@@ -373,129 +340,6 @@
   height: var(--tt-icon-s);
 }
 
-.part {
-  gap: var(--tt-gap-group);
-  border-radius: var(--tt-r-tile);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-row-rest);
-  display: grid;
-  padding: var(--tt-space-6);
-  container-type: inline-size;
-}
-
-/* A chapter on the page itself, no tile: the sheet alternates, it never stacks five identical tiles. */
-.plain {
-  display: grid;
-  gap: var(--tt-gap-group);
-  min-width: 0;
-}
-
-.partTitle {
-  composes: titleM from "../atoms.module.css";
-}
-
-.facts {
-  display: grid;
-  gap: var(--tt-space-3);
-  margin: 0;
-}
-
-.row {
-  display: grid;
-  gap: var(--tt-space-1);
-  min-width: 0;
-}
-
-@container (min-width: 560px) {
-  .row {
-    grid-template-columns: 11rem minmax(0, 1fr);
-    gap: var(--tt-space-4);
-    align-items: baseline;
-  }
-}
-
-.value {
-  composes: text from "../atoms.module.css";
-  display: grid;
-  gap: var(--tt-space-1);
-  margin: 0;
-  overflow-wrap: break-word;
-}
-
-.detail {
-  composes: note from "../atoms.module.css";
-  max-width: 62ch;
-}
-
-/* The requests you could type: white cards lifted off the tile, like messages. */
-.requests {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-  gap: var(--tt-space-4);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.request {
-  composes: text from "../atoms.module.css";
-  padding: var(--tt-space-4) var(--tt-space-5);
-  border-radius: var(--tt-r-card);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-hairline);
-}
-
-/* Our view: two columns, a yes and a no, each with its mark. */
-.view {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: var(--tt-space-4);
-}
-
-
-.viewHead {
-  composes: label from "../atoms.module.css";
-  composes: strong from "../atoms.module.css";
-  display: flex;
-  gap: var(--tt-space-2);
-  align-items: center;
-}
-
-.viewMark {
-  display: inline-grid;
-  place-items: center;
-  width: var(--tt-space-6);
-  height: var(--tt-space-6);
-  border-radius: var(--tt-r-round);
-  background: var(--tt-bg);
-}
-
-.viewMark svg {
-  width: var(--tt-icon-s);
-  height: var(--tt-icon-s);
-}
-
-/* What it can do: one tag per line, the riskiest first. */
-.abilities {
-  display: grid;
-  gap: var(--tt-space-3);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* The tags share one column, so every sentence starts at the same place. */
-.ability {
-  display: grid;
-  grid-template-columns: 11rem minmax(0, 1fr);
-  gap: var(--tt-space-3);
-  align-items: baseline;
-}
-
-.ability > span:first-child {
-  justify-self: start;
-}
-
 /* « Où utilisez-vous l'IA ? »: a short row of choices per group. They wrap: the layout invariants refuse a
    sideways-scrolling rail (a box wider than its parent), and a group holds five choices at most. */
 .choices {
@@ -503,18 +347,6 @@
   gap: var(--tt-space-3);
   justify-items: start;
   min-width: 0;
-}
-
-.rail {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
-  gap: var(--tt-space-2);
-  min-width: 0;
-}
-
-.railLabel {
-  composes: note from "../atoms.module.css";
-  grid-column: 1 / -1;
 }
 
 .copyBlock {
@@ -569,97 +401,8 @@
   justify-self: start;
 }
 
-.group {
-  display: grid;
-  gap: var(--tt-space-3);
-  min-width: 0;
-}
-
-.further {
-  display: grid;
-  gap: var(--tt-gap-group);
-  padding: var(--tt-space-5);
-}
-
-/* « Pour aller plus loin »: one full-width row that says what it hides, with its chevron. */
-
-/* The action fold: an object on the white sheet, with the system's resting edge and shadow. */
-.furtherBlock {
-  display: grid;
-  border-radius: var(--tt-r-tile);
-  background: var(--tt-bg);
-  box-shadow: var(--tt-row-rest);
-  min-width: 0;
-}
-
-.furtherHeading {
-  margin: 0;
-}
-
-.furtherRow {
-  display: flex;
-  gap: var(--tt-space-4);
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: var(--tt-space-5) var(--tt-space-6);
-  border: 0;
-  border-radius: var(--tt-r-tile);
-  background: transparent;
-  color: var(--tt-ink);
-  text-align: start;
-  cursor: pointer;
-}
-
-.furtherRow:hover .partTitle {
-  text-decoration: underline;
-}
-
-.furtherRow:focus-visible {
-  outline: var(--tt-focus-ring);
-  outline-offset: calc(-1 * var(--tt-focus-offset));
-}
-
-.furtherText {
-  display: grid;
-  gap: var(--tt-space-1);
-}
-
 /* The action list by consequence: a section per consequence, ToolTrim's topics as small subtitles, dense rows on
    two columns, no frame, no rule; 8 between rows. */
-.consequence {
-  display: grid;
-  gap: var(--tt-space-2);
-  min-width: 0;
-}
-
-.consequenceTitle {
-  margin: 0;
-}
-
-.consequenceToggle {
-  composes: label from "../atoms.module.css";
-  display: inline-flex;
-  gap: var(--tt-space-2);
-  align-items: center;
-  min-height: var(--tt-tap);
-  padding: 0;
-  border: 0;
-  background: transparent;
-  text-align: start;
-  cursor: pointer;
-}
-
-.consequenceToggle:focus-visible {
-  outline: var(--tt-focus-ring);
-  outline-offset: var(--tt-focus-offset);
-}
-
-.consequenceBody {
-  display: grid;
-  gap: var(--tt-gap-group);
-  padding-bottom: var(--tt-space-4);
-}
 
 .topic {
   display: grid;
@@ -711,95 +454,6 @@
   composes: text from "../atoms.module.css";
 }
 
-.install {
-  display: grid;
-  gap: var(--tt-space-4);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.installRow {
-  display: grid;
-  gap: var(--tt-space-2);
-  min-width: 0;
-}
-
-/* Sources: lighter than a chapter, at the end. */
-.sourcesBlock {
-  display: grid;
-  gap: var(--tt-space-3);
-  min-width: 0;
-}
-
-.sourcesTitle {
-  composes: label from "../atoms.module.css";
-  composes: strong from "../atoms.module.css";
-}
-
-.sources {
-  display: grid;
-  gap: var(--tt-space-1);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.source {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: var(--tt-space-1) var(--tt-space-2);
-  align-items: baseline;
-  min-height: var(--tt-tap);
-  align-content: center;
-  color: var(--tt-ink);
-  text-decoration: none;
-}
-
-.sourceLabel {
-  composes: label from "../atoms.module.css";
-}
-
-.source:hover .sourceLabel {
-  text-decoration: underline;
-}
-
-.source:focus-visible {
-  outline: var(--tt-focus-ring);
-  outline-offset: var(--tt-focus-offset);
-}
-
-.source svg {
-  align-self: center;
-  width: var(--tt-icon-s);
-  height: var(--tt-icon-s);
-}
-
-.sourceDomain {
-  composes: note from "../atoms.module.css";
-  color: var(--tt-meta);
-}
-
-/* The technical sheet: six boxes, three columns on a computer, two on a phone; always in view. */
-
-
-
-
-
-
-
-/* A chapter's questions, said as sentences: a small title over its lines, never a column of capitals. */
-.question {
-  display: grid;
-  gap: var(--tt-space-3);
-  min-width: 0;
-}
-
-.questionTitle {
-  composes: label from "../atoms.module.css";
-  composes: strong from "../atoms.module.css";
-}
-
 /* One sentence per line, on the page's single left edge: no bullet indent. */
 .sentences {
   display: grid;
@@ -808,20 +462,6 @@
   padding: 0;
   list-style: none;
   max-width: 62ch;
-}
-
-/* Your first requests: rows like the action list, the words on the left, the tag in an aligned column. */
-
-
-
-
-
-/* On a phone a capability's tag goes above its sentence: the text keeps the whole width. */
-@container (max-width: 640px) {
-  .ability {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--tt-space-2);
-  }
 }
 
 /* « Garder la main »: two columns built the same way, the actions on three fifths (they hold two columns of their own),

@@ -53,6 +53,8 @@ const mcpIndex = servers.map((s) => ({
 const skillsIndex = skills.map((k) => ({
   slug: k.slug, name: k.name, publisher: k.publisher, host_tool: k.host_tool, server: k.server, category: k.category,
   summary: k.summary, agents: k.agents, verified_on: k.verified_on,
+  // Usable without a coding tool: nothing to install, it ships with the connected server (step 5, 17/11; forEveryone in src/lib/agents.ts).
+  everyone: !(k.install ?? []).length,
 }));
 
 const bySlug = new Map(servers.map((s) => [s.slug, s]));

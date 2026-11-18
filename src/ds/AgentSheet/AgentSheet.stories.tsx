@@ -162,11 +162,26 @@ export const FigmaDesktop: Story = {
     await expect(canvas.getByText(globals.lang === "en" ? /You need a Figma plan that includes it/ : /Il faut un forfait Figma qui l'inclut/)).toBeVisible();
   },
 };
+/** A skill through a coding tool: « pour développeurs » in the title and the hook; the step 1 bis chapters. */
 export const SkillFigmaUse: Story = {
-  render: (_args, context) => <SkillSheetView skill={skillStates.figmaUse} lang={context.globals.lang} reportHref={REPORT} />,
-  play: async ({ canvasElement }) => { await expect(chapters(canvasElement)).toEqual(["change", "plug", "further", "sources"].filter((c) => c !== "further" || canvasElement.querySelector("[data-chapter-part=further]") === null)); },
+  render: (_args, context) => <SkillSheetView skill={skillStates.figmaUse} lang={context.globals.lang} reportHref={REPORT}
+    logo={<Logo tool={{ name: "Figma", slug: "figma" }} size={40} localOnly />} />,
+  play: async ({ canvas, canvasElement, globals }) => {
+    const fr = globals.lang !== "en";
+    await expect(chapters(canvasElement)).toEqual(["head", "teach", "plug", "annex"]);
+    await expect(canvas.getByRole("heading", { level: 1, name: fr ? /, pour développeurs$/ : /, for developers$/ })).toBeVisible();
+    await expect(canvas.getByText(fr ? /^Pour développeurs\s:/ : /^For developers:/)).toBeVisible();
+  },
 };
-export const SkillNothingToInstall: Story = { render: (_args, context) => <SkillSheetView skill={skillStates.notionSkills} lang={context.globals.lang} reportHref={REPORT} /> };
+/** A skill that ships with the server (Notion Skills): nothing to install, no « pour développeurs ». */
+export const SkillNothingToInstall: Story = {
+  render: (_args, context) => <SkillSheetView skill={skillStates.notionSkills} lang={context.globals.lang} reportHref={REPORT} />,
+  play: async ({ canvas, globals }) => {
+    const fr = globals.lang !== "en";
+    await expect(canvas.queryByText(fr ? /pour développeurs/i : /for developers/i)).toBeNull();
+    await expect(canvas.getByText(fr ? /^Rien à installer/ : /^Nothing to install/)).toBeVisible();
+  },
+};
 
 /** The whole Notion sheet as Michael reviews it (step 1 bis), at 1440 and 375: six chapters on alternating bands. */
 export const FicheComplete: Story = {

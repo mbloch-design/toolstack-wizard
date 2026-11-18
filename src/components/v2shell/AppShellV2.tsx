@@ -47,7 +47,7 @@ const NAV_ITEMS: NavItem[] = [
   // silhouette que les deux colonnes des comparatifs.
   { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: Lightbulb, to: "/guides",      match: ["/guides", "/guide/"] },
   // La section agents (serveurs MCP et skills, S1 du 16/11) : une prise, ce qui se branche sur un assistant.
-  { id: "agents",     labelFr: "Agents IA",   labelEn: "AI agents",  Icon: Plug,      to: "/agents",      match: ["/agents", "/mcp", "/skills"] },
+  { id: "agents",     labelFr: "Votre assistant IA", labelEn: "Your AI assistant",  Icon: Plug,      to: "/agents",      match: ["/agents", "/mcp", "/skills"] },
 ];
 
 /** Expanded unless the visitor collapsed it. Prerendered HTML ships expanded;

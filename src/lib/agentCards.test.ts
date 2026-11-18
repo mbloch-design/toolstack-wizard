@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import mcpIndex from "@/data/agents/mcp_index.json";
-import { CARD_MAX, type McpCard } from "@/lib/agents";
+import { CARD_MAX, type McpCard, type SkillSheet } from "@/lib/agents";
 import { serverFoot } from "./agentReport";
 
 const CARDS = mcpIndex as McpCard[];
@@ -21,5 +21,15 @@ describe("server cards (step 4)", () => {
     const ga = CARDS.find((card) => card.slug === "google-analytics-mcp")!;
     expect(serverFoot(ga, "claude", "fr")[0]).toEqual({ kind: "configure", text: "À configurer" });
     expect(serverFoot(ga, "gemini", "fr")[0].kind).toBe("elsewhere");
+  });
+});
+
+describe("skills (step 5)", () => {
+  it("are for everyone only when nothing is to install: Notion's and Zapier's; Figma's and Webflow's are for developers", async () => {
+    const { default: catalog } = await import("@/data/agents/catalog.json");
+    const { forEveryone } = await import("@/lib/agents");
+    const skills = (catalog as unknown as { skills: SkillSheet[] }).skills;
+    const everyone = skills.filter(forEveryone).map((skill) => skill.slug).sort();
+    expect(everyone).toEqual(["notion-skills", "zapier-build-workflows", "zapier-onboarding"]);
   });
 });

@@ -4,7 +4,7 @@ import { expect, userEvent, within } from "storybook/test";
 import Button from "../Button/Button";
 import Segmented from "../Segmented/Segmented";
 import Chapter, { Chapters } from "../Chapter/Chapter";
-import { byLine, cardSentence, say, type Advice } from "@/lib/agents";
+import { byLine, cardLine, say, type Advice } from "@/lib/agents";
 import { agentShelves } from "@/lib/agentShelves";
 import { HUB_ASSISTANTS, checkedTools, isPlugged, reportRows, reportVerdict, serverFoot, type HubAssistant } from "@/lib/agentReport";
 import advice from "@/data/agents/advice.json";
@@ -128,7 +128,7 @@ export const ParFamille: Story = {
       <AgentShelf key={shelf.id} title={shelf.title} count={shelf.cards.length}>
         <AgentCards flat label={shelf.title}>
           {shelf.cards.map((card) => (
-            <AgentCard key={card.slug} icon={logo(card.host_tool)} name={toolName(card.host_tool)} by={byLine(card.publisher, globals.lang)} summary={card.card ? say(globals.lang, card.card) : cardSentence(say(globals.lang, card.summary))}
+            <AgentCard key={card.slug} icon={logo(card.host_tool)} name={toolName(card.host_tool)} by={byLine(card.publisher, globals.lang)} summary={card.card ? say(globals.lang, card.card) : cardLine(say(globals.lang, card.summary))}
               facts={serverFoot(card, "claude", globals.lang)} renderLink={(className, content) => <a className={className} href={`/fr/mcp/${card.slug}`}>{content}</a>} />
           ))}
         </AgentCards>
@@ -152,7 +152,7 @@ export const Cartes: Story = {
         renderLink={(className, content) => <a className={className} href="/fr/tool/notion">{content}</a>}
         action={<Button variant="secondary">{globals.lang === "en" ? "Add to my stack" : "Ajouter à ma stack"}</Button>} />
       {cards.filter((c) => ["notion-mcp", "figma-mcp-desktop", "stripe-mcp"].includes(c.slug)).map((card) => (
-        <AgentCard key={card.slug} icon={logo(card.host_tool)} name={card.name} by={byLine(card.publisher, globals.lang)} summary={card.card ? say(globals.lang, card.card) : cardSentence(say(globals.lang, card.summary))}
+        <AgentCard key={card.slug} icon={logo(card.host_tool)} name={card.name} by={byLine(card.publisher, globals.lang)} summary={card.card ? say(globals.lang, card.card) : cardLine(say(globals.lang, card.summary))}
           facts={serverFoot(card, "claude", globals.lang)} renderLink={(className, content) => <a className={className} href={`/fr/mcp/${card.slug}`}>{content}</a>} />
       ))}
     </AgentCards>

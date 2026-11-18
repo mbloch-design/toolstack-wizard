@@ -2,7 +2,7 @@ import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode 
 import { Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X } from "@/lib/icons";
 import { getToolLogoSources } from "@/lib/toolLogos";
 import {
-  CONSEQUENCE, clientName, say, typo,
+  CONSEQUENCE, clientName, forEveryone, say, typo,
   type InstallRow, type Lang, type McpSheet, type Pair, type SkillSheet,
 } from "@/lib/agents";
 import { CLIENTS, CLIENT_MARKS, clientLabel, clientsOf, cursorInstallLink, plugCard, vsCodeInstallLink, type ClientId, type CopyAction } from "@/lib/agentClients";
@@ -387,80 +387,69 @@ function CopyBlock({ value, type, label, lang }: { value: string; type: InstallR
 }
 const indent = (value: string) => { try { return JSON.stringify(JSON.parse(value), null, 2); } catch { return value; } };
 
-export function SkillSheetView({ skill, lang, reportHref, related }: { skill: SkillSheet; lang: Lang; reportHref: string; related?: ReactNode }) {
+/**
+ * A skill's sheet on the server sheet's chapter model (step 5, 17/11/2026): the head with « Pour développeurs » when it
+ * needs a coding tool, what it teaches your assistant, how to add it (one card per tool, its command to copy), then the
+ * page's « Pour aller plus loin » and the sources as notes.
+ */
+export function SkillSheetView({ skill, lang, logo, reportHref, related }: {
+  skill: SkillSheet; lang: Lang;
+  /** The tool's logo beside the title (the system's Logo, 40 px). */
+  logo?: ReactNode;
+  reportHref: string;
+  /** The server and the tool, the vendor's other know-how (the page composes it). */
+  related?: ReactNode;
+}) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
-  const agents = skill.agents.map((a) => clientName(a, lang));
+  const agents = skill.agents.map((a) => (a === "any" ? t("tout assistant", "any assistant") : clientName(a, lang)));
+  const everyone = forEveryone(skill);
   return (
-    <div className={styles.sheet} data-agent-sheet="skill">
-      <Part chapter="change" title={t("Ce que ça change pour vous", "What it changes for you")}>
-        <p className={styles.text}>{say(lang, skill.summary)}</p>
-        {skill.requires && <Facts rows={[{ label: t("Il vous faut", "You need"), value: say(lang, skill.requires) }]} />}
-      </Part>
-      <Part chapter="plug" title={t("L'ajouter à votre assistant", "Add it to your assistant")}>
-        <p className={styles.text}>{skill.install.length
-          ? t(`Ce savoir-faire s'ajoute à ${agents.join(", ")}. Les instructions de l'éditeur sont dans la fiche technique.`, `This know-how is added to ${agents.join(", ")}. The vendor's instructions are in the technical sheet.`)
-          : t(`Rien à installer : le savoir-faire vit dans votre espace ${skill.publisher}, et ${agents.join(", ")} le lit une fois l'outil branché.`, `Nothing to install: the know-how lives in your ${skill.publisher} workspace, and ${agents.join(", ")} reads it once the tool is plugged in.`)}</p>
-      </Part>
-      {related}
-      {skill.install.length > 0 && (
-        <Further lang={lang} summary={t("Instructions d'installation de l'éditeur", "The vendor's install instructions")}>
-          <ul className={styles.install}>
-            {skill.install.map((row, index) => (
-              <li key={index} className={styles.installRow}>
-                <p className={styles.term}>{row.client === "any" ? t("Tout agent", "Any agent") : clientName(row.client, lang)}</p>
-                {row.type === "steps" ? <p className={styles.text}>{row.value}</p> : <CopyBlock value={row.value} type={row.type} lang={lang}
-                  label={{ url: t("Copier l'adresse", "Copy the address"), command: t("Copier la commande", "Copy the command"), config: t("Copier la configuration", "Copy the configuration"), steps: "" }[row.type]} />}
-              </li>
-            ))}
-          </ul>
-        </Further>
-      )}
-      <Sources lang={lang} date={skill.verified_on} publisher={skill.publisher} sources={skill.sources} reportHref={reportHref} />
+    <div className={styles.sheet} data-agent-sheet="skill" data-audience={everyone ? "everyone" : "developers"}>
+      <Chapters>
+        <Chapter chapter="head" as="header">
+          <div className={styles.titleRow}>
+            {logo && <span className={styles.titleLogo} aria-hidden="true">{logo}</span>}
+            <h1 className={styles.title}>{everyone ? skill.name : t(`${skill.name}, pour développeurs`, `${skill.name}, for developers`)}</h1>
+          </div>
+          <p className={styles.lead}>{everyone
+            ? t(`Un savoir-faire officiel de ${skill.publisher}, sans rien installer : il vient avec le branchement.`, `Official know-how from ${skill.publisher}, nothing to install: it comes with the connection.`)
+            : t(`Pour développeurs : un savoir-faire officiel de ${skill.publisher}, à installer dans votre outil de code.`, `For developers: official know-how from ${skill.publisher}, to install in your coding tool.`)}</p>
+          <p className={styles.trust}>{t(`Officiel, publié par ${skill.publisher} · vérifié le ${longDate(skill.verified_on, lang)}`, `Official, published by ${skill.publisher} · checked on ${longDate(skill.verified_on, lang)}`)}</p>
+        </Chapter>
+
+        <Chapter chapter="teach" title={t("Ce qu'il apprend à votre assistant", "What it teaches your assistant")}>
+          <p className={styles.reading}>{say(lang, skill.summary)}</p>
+          {skill.requires && <p className={styles.reading}><span className={styles.strong}>{t("Il vous faut : ", "You need: ")}</span>{lower(say(lang, skill.requires))}</p>}
+        </Chapter>
+
+        <Chapter chapter="plug" width="wide" title={t("L'ajouter", "Add it")}
+          lead={everyone ? t(`Rien à installer : ${agents.join(", ")} le lit une fois ${skill.publisher} branché.`, `Nothing to install: ${agents.join(", ")} reads it once ${skill.publisher} is plugged in.`)
+            : t(`Avec ${agents.join(", ")}, d'après l'éditeur.`, `With ${agents.join(", ")}, per the vendor.`)}>
+          {skill.install.length > 0 && (
+            <ul className={styles.steps}>
+              {skill.install.map((row, index) => (
+                <li key={index} className={styles.stepCard}>
+                  <p className={styles.entryTitle}>{row.client === "any" ? t("Tout outil", "Any tool") : clientName(row.client, lang)}</p>
+                  {row.type === "steps" ? <p className={styles.reading}>{row.value}</p> : <CopyBlock value={row.value} type={row.type} lang={lang}
+                    label={{ url: t("Copier l'adresse", "Copy the address"), command: t("Copier la commande", "Copy the command"), config: t("Copier la configuration", "Copy the configuration"), steps: "" }[row.type]} />}
+                </li>
+              ))}
+            </ul>
+          )}
+        </Chapter>
+
+        {related && <Chapter chapter="further" width="wide" title={t("Pour aller plus loin", "Going further")}>{related}</Chapter>}
+
+        <Chapter chapter="annex" tone="notes" width="wide">
+          <SourceLine lang={lang} publisher={skill.publisher} sources={skill.sources} reportHref={reportHref} />
+        </Chapter>
+      </Chapters>
     </div>
   );
 }
 
-/** A chapter: the main one (Brancher) on a tile; the others on the page, so the sheet has a rhythm. */
-function Part({ chapter, id: anchor, title, tone = "tile", children }: { chapter: string; id?: string; title: string; tone?: "tile" | "plain"; children: ReactNode }) {
-  const id = useId();
-  return <section id={anchor} className={tone === "tile" ? styles.part : styles.plain} aria-labelledby={id} data-chapter={chapter}><h2 id={id} className={styles.partTitle}>{title}</h2>{children}</section>;
-}
 
-/** « Pour aller plus loin »: a full-width row that says what it hides; the technical sheet folds out under it. */
-function Further({ lang, title, summary, children }: { lang: Lang; title?: string; summary?: string; children: ReactNode }) {
-  const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
-  const [open, setOpen] = useState(false);
-  const panel = useId();
-  return (
-    <section className={styles.furtherBlock} data-chapter-part="further">
-      <h2 className={styles.furtherHeading}>
-        <button type="button" className={styles.furtherRow} aria-expanded={open} aria-controls={panel} onClick={() => setOpen((v) => !v)}>
-          <span className={styles.furtherText}>
-            <span className={styles.partTitle}>{title ?? t("Pour aller plus loin", "Going further")}</span>
-            <span className={styles.note}>{summary ?? t("Détails techniques", "Technical details")}</span>
-          </span>
-          <span className={styles.chevron} data-open={open || undefined} aria-hidden="true"><ChevronDown /></span>
-        </button>
-      </h2>
-      <div id={panel}>
-        <Collapse open={open}><div className={styles.further}>{children}</div></Collapse>
-      </div>
-    </section>
-  );
-}
 
-function Facts({ rows }: { rows: { label: string; value: string; detail?: string }[] }) {
-  return (
-    <dl className={styles.facts}>
-      {rows.map((row, index) => (
-        <div key={`${row.label}-${index}`} className={styles.row}>
-          <dt className={styles.term}>{row.label}</dt>
-          <dd className={styles.value}>{row.value}{row.detail && <span className={styles.detail}>{row.detail}</span>}</dd>
-        </div>
-      ))}
-    </dl>
-  );
-}
 
 /** The list's order of risk: what deletes first, what only reads last. */
 const LIST_ORDER = ["delete", "pay", "send", "write", "read"] as const;
@@ -563,34 +552,6 @@ function ActionList({ kind, tools, lang }: { kind: (typeof LIST_ORDER)[number]; 
   );
 }
 
-/** « Sources »: the vendor's pages as short links with their site, and a way to report an error. Lighter than a chapter;
-    the date is said once, in the head's trust line. */
-function Sources({ lang, date, publisher, sources, reportHref }: { lang: Lang;
-  /** The skill sheet, which has no trust line, says its date here; the server sheet says it in its head. */
-  date?: string; publisher: string; sources: { label: string; url: string }[]; reportHref: string }) {
-  const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
-  const id = useId();
-  return (
-    <section className={styles.sourcesBlock} aria-labelledby={id} data-chapter="sources">
-      <h2 id={id} className={styles.sourcesTitle}>Sources</h2>
-      <p className={styles.note}>{date
-        ? t(`Vérifié le ${longDate(date, lang)} chez ${publisher}.`, `Checked on ${longDate(date, lang)} with ${publisher}.`)
-        : t(`Pages consultées chez ${publisher} :`, `Pages read at ${publisher}:`)}</p>
-      <ul className={styles.sources}>
-        {sourceLinks(sources, lang).map((source) => (
-          <li key={source.url}>
-            <a className={styles.source} href={source.url} target="_blank" rel="noopener noreferrer" title={source.title}>
-              <span className={styles.sourceLabel}>{source.label}</span>
-              <span className={styles.sourceDomain}>{source.domain}</span>
-              <ExternalLink aria-hidden="true" />
-            </a>
-          </li>
-        ))}
-      </ul>
-      <div className={styles.toggle}><a className={linkClass("quiet")} href={reportHref}><Flag aria-hidden="true" /> {t("Signaler une erreur", "Report an error")}<LinkArrow /></a></div>
-    </section>
-  );
-}
 
 /**
  * A card of « Pour aller plus loin » (17/11): one template for the tool, an alternative and a know-how. Logo of 40, the

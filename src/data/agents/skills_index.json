@@ -15,7 +15,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "bulk-cms-update",
@@ -33,7 +34,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "connect-recommend",
@@ -54,7 +56,8 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "connect-required-verification-information",
@@ -75,7 +78,8 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "figma-code-connect",
@@ -93,7 +97,8 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "figma-code-workflows",
@@ -111,7 +116,8 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "figma-create-new-file",
@@ -129,7 +135,8 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "figma-generate-design",
@@ -147,7 +154,8 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "figma-generate-diagram",
@@ -165,7 +173,8 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "figma-generate-library",
@@ -183,7 +192,8 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "figma-spec",
@@ -201,7 +211,8 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "figma-swiftui",
@@ -219,7 +230,8 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "figma-use-figjam",
@@ -237,7 +249,8 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "figma-use-slides",
@@ -255,7 +268,8 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "figma-use",
@@ -273,7 +287,8 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "google-analytics-admin-api-basics",
@@ -292,7 +307,8 @@
       "cursor",
       "Antigravity"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "google-analytics-data-api-basics",
@@ -311,7 +327,8 @@
       "cursor",
       "Antigravity"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "make-credential-requests",
@@ -333,7 +350,8 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "make-endpoints",
@@ -355,7 +373,8 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "make-functions-v2",
@@ -377,7 +396,8 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "make-scenario-building",
@@ -399,7 +419,8 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "make-scenario-explore",
@@ -421,7 +442,8 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "make-scenario-operations",
@@ -443,7 +465,8 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "make-scenario-reference",
@@ -465,7 +488,8 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "metronome",
@@ -486,7 +510,8 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "miro-code-explain-on-board",
@@ -505,7 +530,8 @@
       "Codex",
       "GitHub Copilot"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "miro-code-review",
@@ -524,7 +550,8 @@
       "Codex",
       "GitHub Copilot"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "miro-code-spec",
@@ -543,7 +570,8 @@
       "Codex",
       "GitHub Copilot"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "notion-skills",
@@ -559,7 +587,8 @@
     "agents": [
       "any"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": true
   },
   {
     "slug": "shopify-ai-toolkit",
@@ -579,7 +608,8 @@
       "vs-code",
       "Antigravity"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "site-audit",
@@ -597,7 +627,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "stripe-apps",
@@ -618,7 +649,8 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "stripe-best-practices",
@@ -639,7 +671,8 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "stripe-directory",
@@ -660,7 +693,8 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "stripe-docs",
@@ -681,7 +715,8 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "stripe-implementation-planner",
@@ -702,7 +737,8 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "stripe-pay",
@@ -723,7 +759,8 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "stripe-projects",
@@ -744,7 +781,8 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "upgrade-stripe",
@@ -765,7 +803,8 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-asset-audit",
@@ -783,7 +822,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-cli-troubleshooter",
@@ -801,7 +841,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-cloud-commands",
@@ -819,7 +860,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-cms-best-practices",
@@ -837,7 +879,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-cms-collection-setup",
@@ -855,7 +898,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-code-component-deployment-guide",
@@ -873,7 +917,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-code-component-dev-environment",
@@ -891,7 +936,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-code-components",
@@ -909,7 +955,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-component-scaffold",
@@ -927,7 +974,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-convert-component",
@@ -945,7 +993,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-custom-code-management",
@@ -963,7 +1012,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-designer-extensions",
@@ -981,7 +1031,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-devlink-commands",
@@ -999,7 +1050,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-flowkit-naming",
@@ -1017,7 +1069,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-link-checker",
@@ -1035,7 +1088,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-safe-publish",
@@ -1053,7 +1107,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-site-activity-log",
@@ -1071,7 +1126,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-troubleshoot-code-component-deployment",
@@ -1089,7 +1145,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "webflow-validate-code-components",
@@ -1107,7 +1164,8 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": false
   },
   {
     "slug": "zapier-build-workflows",
@@ -1123,7 +1181,8 @@
     "agents": [
       "any"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": true
   },
   {
     "slug": "zapier-onboarding",
@@ -1139,6 +1198,7 @@
     "agents": [
       "any"
     ],
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-16",
+    "everyone": true
   }
 ]

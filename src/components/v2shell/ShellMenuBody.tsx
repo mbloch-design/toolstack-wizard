@@ -51,7 +51,7 @@ export default function ShellMenuBody({ languageHref, places = false, onDone }: 
       <MenuLink link={RouterLink} to={`${prefix}/stacks`} icon={<Boxes />} onClick={onDone}>{t("Stacks", "Stacks")}</MenuLink>
       <MenuLink link={RouterLink} to={`${prefix}/guides`} icon={<Lightbulb />} onClick={onDone}>{t("Guides", "Guides")}</MenuLink>
       {/* La section agents (S1, 16/11/2026) : hors de la barre d'onglets, comme Stacks et Guides. */}
-      <MenuLink link={RouterLink} to={`${prefix}/agents`} icon={<Plug />} onClick={onDone}>{t("Agents IA", "AI agents")}</MenuLink>
+      <MenuLink link={RouterLink} to={`${prefix}/agents`} icon={<Plug />} onClick={onDone}>{t("Votre assistant IA", "Your AI assistant")}</MenuLink>
       <MenuLink link={RouterLink} to={`${prefix}/submit`} icon={<CirclePlus />} onClick={onDone}>{t("Soumettre un outil", "Submit a tool")}</MenuLink>
     </MenuGroup>}
     <MenuGroup label={t("Réglages", "Settings")}>
