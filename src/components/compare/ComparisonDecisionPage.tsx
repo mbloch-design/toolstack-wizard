@@ -18,11 +18,14 @@ import { computeToolTrimScore } from '@/lib/toolTrimScore';
 import { localizePlanName } from '@/lib/planNames';
 import brandColors from '@/data/brandColors.json';
 import StackCompareDecision from '@/components/stack/StackCompareDecision';
+import { compareAssistant } from '@/lib/agentReport';
+import { useAgentAssistant } from '@/hooks/useAgentAssistant';
 
 
 interface Props { toolA: Tool; toolB: Tool; content: CompareEditorialContent; slugPair: string }
 
 export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair }: Props) {
+  const [assistant] = useAgentAssistant();
   const { lang, t, prefix } = useLang();
   const [audience, setAudience] = useState<'solo' | 'team'>('solo');
   const { tools: toolSummaries } = useToolSummaries({ refreshRemote: false });
@@ -63,6 +66,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
   const faq = reviewed?.faq ?? content.faq.map(f => ({ question: pick(f.q, f.qEn), answer: pick(f.a, f.aEn) }));
   const alternatives = curated?.alternatives ?? content.alternatives.map(a => ({ ...a, reason: pick(a.reason, a.reasonEn) }));
   const tools = [toolA, toolB];
+  const assistantLine = compareAssistant({ slug: toolA.slug || toolA.id, name: toolA.name }, { slug: toolB.slug || toolB.id, name: toolB.name }, assistant, lang === 'en' ? 'en' : 'fr');
   const date = reviewed?.checkedAt || content.checkedAt;
   return (
     <article className="cp-guide">
@@ -160,6 +164,13 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
             <span role="cell">{c.a}</span>
             <span role="cell">{c.b}</span>
           </div>)}
+          {/* With your assistant (step 7, 18/11/2026): status and gravest consequence for the assistant chosen on the
+              site, and the difference when there is one. No line when either tool has no data. */}
+          {assistantLine && <div className="cp-spec-row" role="row" data-row="assistant">
+            <span role="rowheader" className="cp-spec-label">{t('Avec votre assistant', 'With your assistant')}{assistantLine.takeaway && <small>{assistantLine.takeaway}</small>}</span>
+            <span role="cell">{assistantLine.a}</span>
+            <span role="cell">{assistantLine.b}</span>
+          </div>}
         </div>
       </section>
       {visual && <figure className="cp-guide-product-visual">

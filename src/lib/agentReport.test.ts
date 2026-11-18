@@ -75,3 +75,18 @@ describe("recipes between two tools (step 6)", () => {
     expect(recipesFor(["notion"], "claude")).toEqual([]);
   });
 });
+
+describe("the comparison line « Avec votre assistant » (step 7)", () => {
+  it("says each side and the difference, in the consequence vocabulary", async () => {
+    const { compareAssistant } = await import("./agentReport");
+    const notion = { slug: "notion", name: "Notion" }, clickup = { slug: "clickup", name: "ClickUp" };
+    expect(compareAssistant(notion, clickup, "claude", "fr")).toEqual({ a: "En un clic avec Claude · Supprime des données", b: "À configurer · Supprime des données", takeaway: "Seul Notion se branche en un clic à Claude." });
+    expect(compareAssistant({ slug: "make", name: "Make" }, { slug: "zapier", name: "Zapier" }, "claude", "fr")?.takeaway).toBe("Zapier peut aussi supprimer des données.");
+    expect(compareAssistant({ slug: "hotjar", name: "Hotjar" }, { slug: "google-analytics", name: "Google Analytics" }, "claude", "fr")?.takeaway).toBe("Seul Google Analytics se branche à Claude.");
+  });
+
+  it("gives no line when either tool has no data", async () => {
+    const { compareAssistant } = await import("./agentReport");
+    expect(compareAssistant({ slug: "notion", name: "Notion" }, { slug: "trello", name: "Trello" }, "claude", "fr")).toBeNull();
+  });
+});

@@ -137,3 +137,40 @@ export function recipesFor(slugs: string[], assistant: HubAssistant, limit = 3):
   const stack = new Set(slugs);
   return RECIPES.filter((recipe) => recipe.sides.every((side) => stack.has(side.host_tool) && isPlugged(toolStatus(side.host_tool, assistant)))).slice(0, limit);
 }
+
+const EXTRA_VERB: Record<Exclude<AgentCapabilityKind, "read">, [string, string]> = {
+  pay: ["engager un paiement", "make a payment"], delete: ["supprimer des données", "delete data"],
+  send: ["envoyer en votre nom", "send in your name"], write: ["modifier vos données", "edit your data"],
+};
+
+/**
+ * The comparison line « Avec votre assistant » (step 7, 18/11/2026): for each tool, its status for the assistant and
+ * its gravest consequence; one sentence on the difference when there is one. Null when either tool has no data (not
+ * checked): no line rather than a guess.
+ */
+export function compareAssistant(a: { slug: string; name: string }, b: { slug: string; name: string }, assistant: HubAssistant, lang: Lang) {
+  const en = lang === "en";
+  const rows = [toolStatus(a.slug, assistant), toolStatus(b.slug, assistant)];
+  if (rows.some((row) => row.status === "unchecked")) return null;
+  const cell = (row: ReportRow) => row.card
+    ? serverFoot(row.card, assistant, lang).map((fact) => fact.text).join(" · ")
+    : en ? "No official connection" : "Pas de branchement officiel";
+  const name = assistant === "other" ? (en ? "your assistant" : "votre assistant") : ASSISTANT_NAMES[assistant];
+  const [pa, pb] = rows.map(isPlugged);
+  let takeaway: string | undefined;
+  if (pa !== pb) {
+    const only = pa ? a.name : b.name;
+    takeaway = en ? `Only ${only} plugs into ${name}.` : `Seul ${only} se branche à ${name}.`;
+  } else if (pa && pb) {
+    const kinds = rows.map((row) => new Set(row.card?.kinds ?? []));
+    const extra = GRAVITY.filter((kind) => kind !== "read").find((kind) => kinds[0].has(kind) !== kinds[1].has(kind)) as Exclude<AgentCapabilityKind, "read"> | undefined;
+    if (extra) {
+      const who = kinds[0].has(extra) ? a.name : b.name;
+      takeaway = en ? `${who} can also ${EXTRA_VERB[extra][1]}.` : `${who} peut aussi ${EXTRA_VERB[extra][0]}.`;
+    } else if ((rows[0].status === "one_click") !== (rows[1].status === "one_click")) {
+      const quick = rows[0].status === "one_click" ? a.name : b.name;
+      takeaway = en ? `Only ${quick} plugs into ${name} in one click.` : `Seul ${quick} se branche en un clic à ${name}.`;
+    }
+  }
+  return { a: cell(rows[0]), b: cell(rows[1]), ...(takeaway ? { takeaway: typo(takeaway) } : {}) };
+}
