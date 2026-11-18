@@ -959,6 +959,10 @@
     "url_en": "https://tooltrim.com/en/tool/google-analytics",
     "website": "https://analytics.google.com",
     "category": "analytics",
+    "pricing": {
+      "free": "Plan gratuit (Google Analytics standard).",
+      "paid": "Aucune offre payante nécessaire ; Analytics 360 existe pour les grandes entreprises."
+    },
     "description_fr": "Analytics web gratuit par Google",
     "description_en": "Free web analytics by Google.",
     "verdict_fr": {

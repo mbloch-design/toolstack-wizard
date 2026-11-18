@@ -18151,6 +18151,14 @@
     "categoryId": "analytics",
     "shortDescription": "Analytics web gratuit par Google",
     "shortDescriptionEn": "Free web analytics by Google.",
+    "pricing": {
+      "free": "Plan gratuit (Google Analytics standard).",
+      "paid": "Aucune offre payante nécessaire ; Analytics 360 existe pour les grandes entreprises."
+    },
+    "pricingEn": {
+      "free": "Free plan (standard Google Analytics).",
+      "paid": "No paid plan required; Analytics 360 exists for large enterprises."
+    },
     "websiteUrl": "https://analytics.google.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/google-analytics.jpg",
     "substitution_cluster_v2": "analytics",

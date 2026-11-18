@@ -92383,8 +92383,14 @@
     "description": "Google Analytics, c'est analytics web gratuit par Google. Entièrement gratuit.",
     "longDescription": "Google Analytics, c'est analytics web gratuit par Google. Entièrement gratuit.",
     "longDescriptionEn": "Google Analytics is free web analytics by Google. Completely free.",
-    "pricing": null,
-    "pricingEn": null,
+    "pricing": {
+      "free": "Plan gratuit (Google Analytics standard).",
+      "paid": "Aucune offre payante nécessaire ; Analytics 360 existe pour les grandes entreprises."
+    },
+    "pricingEn": {
+      "free": "Free plan (standard Google Analytics).",
+      "paid": "No paid plan required; Analytics 360 exists for large enterprises."
+    },
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
