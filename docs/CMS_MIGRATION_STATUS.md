@@ -83,3 +83,20 @@ Lecture réelle du projet ToolTrim : les tables CMS de ce chantier ne sont pas d
 Les révisions éditoriales et commerciales rejoignent le lot groupé. La liste admin expose les demandes de rapprochement historique ouvertes, même quand le dossier est en brouillon. Une offre prioritaire confirmée peut publier le lien officiel dofollow à l’URL exacte de la fiche contrôlée lors de la publication. Un changement d’URL ne reprend pas automatiquement cette autorisation.
 
 L’inventaire des variables par la CLI Vercel montre que les variables du CMS restent à configurer. La recette hébergée doit confirmer le webhook Creem, la publication Vercel et le rendu de la fiche. Aucun secret ni configuration distante n’a été modifié.
+
+## Jalon actif — publier une fiche pilote
+
+Le jalon est atteint quand une fiche créée ou revendiquée par un éditeur de recette est publiée via le lot admin, que les pages FR et EN rendent la version attendue et que Vercel confirme le commit servi. La preuve regroupe l’identifiant de la fiche, celui du lot, le SHA, l’identifiant du déploiement et les deux routes vérifiées.
+
+| Étape | Preuve attendue |
+|---|---|
+| Base et accès | Migrations CMS appliquées sur la cible de recette. Compte éditeur autorisé sur sa fiche, compte tiers refusé. Fiche témoin sans éditeur toujours issue du JSON. |
+| Offre | Offre gratuite et badge vérifiés. Passage à l’offre à 29 $ confirmé avec Creem en bac à sable. Reçu visible après rechargement. |
+| Édition et revue | Une modification factuelle et une modification ToolTrim dans le même lot. L’éditeur ne peut pas changer l’analyse ou la notation. |
+| Publication | Un seul commit catalogue. Déploiement READY associé à ce commit. Contenu et lien officiel vérifiés sur les deux routes. |
+
+Point de départ : commit code `a035b48e0b` sur `codex/cms-editeurs-cadrage`. La mise en ligne dépend de la cible de recette et des accès fournisseurs. Garder les deux drapeaux CMS désactivés en production jusqu’à la preuve du parcours. Ne pas importer le catalogue dans Supabase ni effectuer de paiement réel pour ce test.
+
+**Contrôle du 19 novembre.** Le scénario navigateur offre → connexion → ajout du produit → montée en offre → historique après rechargement passe avec les fixtures. Les deux suites PostgreSQL passent. Vercel ne liste aucun déploiement pour la branche. Supabase estime à 0 $ par mois un second projet dans l’organisation ToolTrim. Aucun projet de recette ne figure dans l’inventaire.
+
+**Prochaine action.** Provisionner le projet Supabase Free de recette, restaurer uniquement le schéma requis et rejouer les migrations CMS dans l’ordre après contrôle des dépendances. Les versions historiques de migration diffèrent entre dépôt et production : ne pas utiliser un `db push` global. Relier ensuite la preview Vercel aux identifiants dédiés de recette. La vérification du déploiement doit pouvoir lire l’alias HTTPS de recette, notamment le marqueur du lot, le sitemap et les fiches. Raccorder Creem en mode test avec sa clé de test, son produit de test et le secret du webhook. Aucun de ces secrets ne doit figurer dans le dépôt.
