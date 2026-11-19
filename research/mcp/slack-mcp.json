@@ -202,7 +202,8 @@
           "en": "Three days of thread, caught up."
         },
         "source": "https://docs.slack.dev/ai/slack-mcp-server/",
-        "icon": "chat"
+        "icon": "chat",
+        "scene": "slack-catchup"
       },
       {
         "title": {
@@ -218,7 +219,8 @@
           "en": "The right file, no scrolling."
         },
         "source": "https://docs.slack.dev/ai/slack-mcp-server/",
-        "icon": "search"
+        "icon": "search",
+        "scene": "slack-file"
       },
       {
         "title": {
@@ -234,7 +236,8 @@
           "en": "A draft to review, not a sent message."
         },
         "source": "https://slack.com/blog/news/feature-drop-feb26",
-        "icon": "email"
+        "icon": "email",
+        "scene": "slack-reply"
       }
     ],
     "tips": [

@@ -86,7 +86,19 @@ export type SituationScene =
   | "miro-kickoff"
   | "shopify-sales"
   | "shopify-stock"
-  | "shopify-promo";
+  | "shopify-promo"
+  | "slack-catchup"
+  | "slack-file"
+  | "slack-reply"
+  | "tally-form"
+  | "tally-feedback"
+  | "tally-signups"
+  | "webflow-draft"
+  | "webflow-links"
+  | "webflow-publish"
+  | "zapier-followup"
+  | "zapier-task"
+  | "zapier-sheet";
 export type AdviceIcon = "title" | "database" | "approve" | "suggest" | "click" | "guest" | "slow" | "limit" | "rights" | "brief" | "refine" | "copy" | "brand" | "settings" | "draft" | "credits" | "link" | "admin" | "sandbox" | "amount" | "key" | "mail" | "invoice" | "confirm" | "blocked" | "session";
 export type Sourced = Pair & { title: Pair; source: string; community?: boolean; icon: AdviceIcon };
 export interface McpAdvice {

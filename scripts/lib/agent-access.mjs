@@ -197,6 +197,18 @@ export const SITUATION_SCENES = [
   "shopify-sales",
   "shopify-stock",
   "shopify-promo",
+  "slack-catchup",
+  "slack-file",
+  "slack-reply",
+  "tally-form",
+  "tally-feedback",
+  "tally-signups",
+  "webflow-draft",
+  "webflow-links",
+  "webflow-publish",
+  "zapier-followup",
+  "zapier-task",
+  "zapier-sheet",
 ];
 /** A tip's or a pitfall's own pictogram (19/11, « une variance de picto »), from a closed list drawn in AgentSheet. */
 const ADVICE_ICONS = ["title", "database", "approve", "suggest", "click", "guest", "slow", "limit", "rights", "brief", "refine", "copy", "brand", "settings", "draft", "credits", "link", "admin", "sandbox", "amount", "key", "mail", "invoice", "confirm", "blocked", "session"];

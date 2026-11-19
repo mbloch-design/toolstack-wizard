@@ -238,7 +238,8 @@
           "en": "A ready form, as a private draft."
         },
         "source": "https://developers.tally.so/api-reference/mcp",
-        "icon": "form"
+        "icon": "form",
+        "scene": "tally-form"
       },
       {
         "title": {
@@ -254,7 +255,8 @@
           "en": "The feedback, read for you."
         },
         "source": "https://tally.so/help/mcp",
-        "icon": "feedback"
+        "icon": "feedback",
+        "scene": "tally-feedback"
       },
       {
         "title": {
@@ -270,7 +272,8 @@
           "en": "The trend, no spreadsheet needed."
         },
         "source": "https://tally.so/help/mcp",
-        "icon": "chart"
+        "icon": "chart",
+        "scene": "tally-signups"
       }
     ],
     "tips": [

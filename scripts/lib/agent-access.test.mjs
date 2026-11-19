@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
-import { agentAccessIndex, projectAgentAccess, validateAgentBlock, validateMcpSheet, validateNeeds, validateRecipes } from "./agent-access.mjs";
+import { SITUATION_SCENES, agentAccessIndex, projectAgentAccess, validateAgentBlock, validateMcpSheet, validateNeeds, validateRecipes } from "./agent-access.mjs";
 
 const official = {
   mcp: "official",
@@ -107,6 +107,20 @@ describe("agents hub and sheet contract", () => {
     const odd = structuredClone(notion);
     odd.advice.situations[0].scene = "notion-elsewhere";
     expect(validateMcpSheet(odd).join("\n")).toContain("scène hors liste (notion-elsewhere)");
+  });
+
+  it("keeps the guard's scene list and the SituationScene type the same (TypeScript checks the drawings against the type)", () => {
+    const source = fs.readFileSync("src/lib/agents.ts", "utf8");
+    const union = source.match(/export type SituationScene =([^;]+);/)[1];
+    const typed = [...union.matchAll(/"([a-z0-9-]+)"/g)].map((m) => m[1]);
+    expect([...typed].sort()).toEqual([...SITUATION_SCENES].sort());
+  });
+
+  it("never draws the same scene twice on one sheet (a situation without a scene keeps its round)", () => {
+    for (const server of servers.filter((s) => s.advice)) {
+      const scenes = server.advice.situations.map((x) => x.scene).filter(Boolean);
+      expect(new Set(scenes).size, server.slug).toBe(scenes.length);
+    }
   });
 });
 

@@ -466,7 +466,8 @@
           "en": "The post in place, not live yet."
         },
         "source": "https://developers.webflow.com/mcp/tools/data-tools",
-        "icon": "post"
+        "icon": "post",
+        "scene": "webflow-draft"
       },
       {
         "title": {
@@ -482,7 +483,8 @@
           "en": "The dead-link hunt, delegated."
         },
         "source": "https://developers.webflow.com/mcp/reference/skills",
-        "icon": "link"
+        "icon": "link",
+        "scene": "webflow-links"
       },
       {
         "title": {
@@ -498,7 +500,8 @@
           "en": "A publish checked before it ships."
         },
         "source": "https://developers.webflow.com/mcp/reference/skills",
-        "icon": "web"
+        "icon": "web",
+        "scene": "webflow-publish"
       }
     ],
     "tips": [

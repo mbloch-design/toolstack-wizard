@@ -8614,7 +8614,8 @@
               "en": "Three days of thread, caught up."
             },
             "source": "https://docs.slack.dev/ai/slack-mcp-server/",
-            "icon": "chat"
+            "icon": "chat",
+            "scene": "slack-catchup"
           },
           {
             "title": {
@@ -8630,7 +8631,8 @@
               "en": "The right file, no scrolling."
             },
             "source": "https://docs.slack.dev/ai/slack-mcp-server/",
-            "icon": "search"
+            "icon": "search",
+            "scene": "slack-file"
           },
           {
             "title": {
@@ -8646,7 +8648,8 @@
               "en": "A draft to review, not a sent message."
             },
             "source": "https://slack.com/blog/news/feature-drop-feb26",
-            "icon": "email"
+            "icon": "email",
+            "scene": "slack-reply"
           }
         ],
         "tips": [
@@ -9584,7 +9587,8 @@
               "en": "A ready form, as a private draft."
             },
             "source": "https://developers.tally.so/api-reference/mcp",
-            "icon": "form"
+            "icon": "form",
+            "scene": "tally-form"
           },
           {
             "title": {
@@ -9600,7 +9604,8 @@
               "en": "The feedback, read for you."
             },
             "source": "https://tally.so/help/mcp",
-            "icon": "feedback"
+            "icon": "feedback",
+            "scene": "tally-feedback"
           },
           {
             "title": {
@@ -9616,7 +9621,8 @@
               "en": "The trend, no spreadsheet needed."
             },
             "source": "https://tally.so/help/mcp",
-            "icon": "chart"
+            "icon": "chart",
+            "scene": "tally-signups"
           }
         ],
         "tips": [
@@ -10208,7 +10214,8 @@
               "en": "The post in place, not live yet."
             },
             "source": "https://developers.webflow.com/mcp/tools/data-tools",
-            "icon": "post"
+            "icon": "post",
+            "scene": "webflow-draft"
           },
           {
             "title": {
@@ -10224,7 +10231,8 @@
               "en": "The dead-link hunt, delegated."
             },
             "source": "https://developers.webflow.com/mcp/reference/skills",
-            "icon": "link"
+            "icon": "link",
+            "scene": "webflow-links"
           },
           {
             "title": {
@@ -10240,7 +10248,8 @@
               "en": "A publish checked before it ships."
             },
             "source": "https://developers.webflow.com/mcp/reference/skills",
-            "icon": "web"
+            "icon": "web",
+            "scene": "webflow-publish"
           }
         ],
         "tips": [
@@ -10735,7 +10744,8 @@
               "en": "Follow-up sent, no tab switching."
             },
             "source": "https://docs.zapier.com/mcp/get-started/connect/claude",
-            "icon": "email"
+            "icon": "email",
+            "scene": "zapier-followup"
           },
           {
             "title": {
@@ -10751,7 +10761,8 @@
               "en": "The task logged in the right place."
             },
             "source": "https://docs.zapier.com/mcp/get-started/connect/claude",
-            "icon": "task"
+            "icon": "task",
+            "scene": "zapier-task"
           },
           {
             "title": {
@@ -10767,7 +10778,8 @@
               "en": "Sheet up to date, no copy-paste."
             },
             "source": "https://docs.zapier.com/mcp/overview/usage",
-            "icon": "data"
+            "icon": "data",
+            "scene": "zapier-sheet"
           }
         ],
         "tips": [

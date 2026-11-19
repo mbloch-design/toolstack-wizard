@@ -361,7 +361,8 @@
           "en": "Follow-up sent, no tab switching."
         },
         "source": "https://docs.zapier.com/mcp/get-started/connect/claude",
-        "icon": "email"
+        "icon": "email",
+        "scene": "zapier-followup"
       },
       {
         "title": {
@@ -377,7 +378,8 @@
           "en": "The task logged in the right place."
         },
         "source": "https://docs.zapier.com/mcp/get-started/connect/claude",
-        "icon": "task"
+        "icon": "task",
+        "scene": "zapier-task"
       },
       {
         "title": {
@@ -393,7 +395,8 @@
           "en": "Sheet up to date, no copy-paste."
         },
         "source": "https://docs.zapier.com/mcp/overview/usage",
-        "icon": "data"
+        "icon": "data",
+        "scene": "zapier-sheet"
       }
     ],
     "tips": [
