@@ -3,6 +3,9 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { editorialRecord, editorialUrls, toolRecords } from "../../scripts/lib/llms-catalogue.mjs";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
+import agentsCatalog from "@/data/agents/catalog.json";
+import { agentsAdviceBlock, assertNoBracket, publishedServers } from "../../scripts/lib/llms-agents.mjs";
+import { parseCatalogue } from "../../api/tool-md";
 
 const read = (file: string) => fs.readFileSync(path.resolve(process.cwd(), file), "utf8");
 
@@ -185,5 +188,33 @@ describe("LLM export safeguards", () => {
     expect(editorialUrls(xml)).toEqual([url, "https://tooltrim.com/fr/comparatif/new-vs-other"]);
     expect(() => editorialUrls(xml + `<loc>${url}</loc>`)).toThrow();
     expect(() => editorialUrls("<urlset/>")).toThrow();
+  });
+
+  it("carries every MCP sheet's freelancer's advice before a catalogue the parsers still read (R2)", () => {
+    const servers = agentsCatalog.servers as unknown as Array<{ slug: string; name: string; advice: Record<string, any> }>;
+    const llms = read("public/llms.txt");
+    const llmsFull = read("public/llms-full.txt");
+    const head = llmsFull.slice(0, llmsFull.indexOf("\n["));
+    expect(head).not.toMatch(/[[\]]/);
+    for (const s of servers) {
+      expect(llms, s.slug).toContain(`https://tooltrim.com/en/mcp/${s.slug}`);
+      for (const lang of ["fr", "en"]) {
+        expect(head, s.slug).toContain(s.advice.verdict[lang].replace(/\s+/g, " ").trim());
+        for (const item of [...s.advice.situations.map((x: any) => x.ask), ...s.advice.tips, ...s.advice.pitfalls]) {
+          expect(head, s.slug).toContain(item[lang].replace(/\s+/g, " ").trim());
+        }
+      }
+    }
+    expect(parseCatalogue(llmsFull).size).toBe(JSON.parse(llmsFull.slice(llmsFull.indexOf("["))).length);
+  });
+
+  it("keeps the advice block free of brackets and to the sheets the sitemap publishes", () => {
+    const catalog = agentsCatalog as unknown as { servers: Array<{ slug: string; advice?: unknown }> };
+    const notion = catalog.servers.find((s) => s.slug === "notion-mcp")!;
+    const sitemap = ["en", "fr"].map((lang) => `<loc>https://tooltrim.com/${lang}/mcp/notion-mcp</loc>`).join("");
+    expect(publishedServers(catalog, sitemap).map((s: { slug: string }) => s.slug)).toEqual(["notion-mcp"]);
+    expect(publishedServers(catalog, "<loc>https://tooltrim.com/en/mcp/notion-mcp</loc>")).toEqual([]);
+    expect(agentsAdviceBlock([notion])).toContain("### Notion MCP");
+    expect(() => assertNoBracket("a [link](x)", "test")).toThrow();
   });
 });
