@@ -175,6 +175,17 @@ export const SITUATION_SCENES = [
   "calendly-slots",
   "calendly-week",
   "calendly-friday",
+  "clickup-hours",
+  "clickup-task",
+  "figmad-code",
+  "figmad-colors",
+  "figmad-figjam",
+  "figma-spec",
+  "figma-journey",
+  "figma-screen",
+  "ga-report",
+  "ga-live",
+  "ga-convert",
 ];
 /** A tip's or a pitfall's own pictogram (19/11, « une variance de picto »), from a closed list drawn in AgentSheet. */
 const ADVICE_ICONS = ["title", "database", "approve", "suggest", "click", "guest", "slow", "limit", "rights", "brief", "refine", "copy", "brand", "settings", "draft", "credits", "link", "admin", "sandbox", "amount", "key", "mail", "invoice", "confirm", "blocked", "session"];

@@ -64,7 +64,18 @@ export type SituationScene =
   | "buffer-stats"
   | "calendly-slots"
   | "calendly-week"
-  | "calendly-friday";
+  | "calendly-friday"
+  | "clickup-hours"
+  | "clickup-task"
+  | "figmad-code"
+  | "figmad-colors"
+  | "figmad-figjam"
+  | "figma-spec"
+  | "figma-journey"
+  | "figma-screen"
+  | "ga-report"
+  | "ga-live"
+  | "ga-convert";
 export type AdviceIcon = "title" | "database" | "approve" | "suggest" | "click" | "guest" | "slow" | "limit" | "rights" | "brief" | "refine" | "copy" | "brand" | "settings" | "draft" | "credits" | "link" | "admin" | "sandbox" | "amount" | "key" | "mail" | "invoice" | "confirm" | "blocked" | "session";
 export type Sourced = Pair & { title: Pair; source: string; community?: boolean; icon: AdviceIcon };
 export interface McpAdvice {

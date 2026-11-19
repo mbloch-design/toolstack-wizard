@@ -244,7 +244,8 @@
           "en": "A starting point true to the mockup."
         },
         "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
-        "icon": "web"
+        "icon": "web",
+        "scene": "figmad-code"
       },
       {
         "title": {
@@ -260,7 +261,8 @@
           "en": "The right values, no eyedropper."
         },
         "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
-        "icon": "design"
+        "icon": "design",
+        "scene": "figmad-colors"
       },
       {
         "title": {
@@ -276,7 +278,8 @@
           "en": "The diagram becomes a list of steps."
         },
         "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
-        "icon": "doc"
+        "icon": "doc",
+        "scene": "figmad-figjam"
       }
     ],
     "tips": [

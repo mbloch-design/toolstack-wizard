@@ -627,7 +627,8 @@
           "en": "Delays spotted without opening a list."
         },
         "source": "https://clickup.com/blog/how-to-use-clickup-mcp-server/",
-        "icon": "week"
+        "icon": "week",
+        "scene": "notion-week"
       },
       {
         "title": {
@@ -643,7 +644,8 @@
           "en": "Your hours ready for the invoice."
         },
         "source": "https://developer.clickup.com/docs/mcp-tools",
-        "icon": "chart"
+        "icon": "chart",
+        "scene": "clickup-hours"
       },
       {
         "title": {
@@ -659,7 +661,8 @@
           "en": "Logged without leaving the chat."
         },
         "source": "https://clickup.com/blog/how-to-use-clickup-mcp-server/",
-        "icon": "task"
+        "icon": "task",
+        "scene": "clickup-task"
       }
     ],
     "tips": [

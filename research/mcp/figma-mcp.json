@@ -467,7 +467,8 @@
           "en": "A spec sheet you didn't have to write."
         },
         "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
-        "icon": "doc"
+        "icon": "doc",
+        "scene": "figma-spec"
       },
       {
         "title": {
@@ -483,7 +484,8 @@
           "en": "A diagram ready for the workshop."
         },
         "source": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas",
-        "icon": "chart"
+        "icon": "chart",
+        "scene": "figma-journey"
       },
       {
         "title": {
@@ -499,7 +501,8 @@
           "en": "A first version, built from your components."
         },
         "source": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas",
-        "icon": "design"
+        "icon": "design",
+        "scene": "figma-screen"
       }
     ],
     "tips": [

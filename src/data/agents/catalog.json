@@ -3439,7 +3439,8 @@
               "en": "Delays spotted without opening a list."
             },
             "source": "https://clickup.com/blog/how-to-use-clickup-mcp-server/",
-            "icon": "week"
+            "icon": "week",
+            "scene": "notion-week"
           },
           {
             "title": {
@@ -3455,7 +3456,8 @@
               "en": "Your hours ready for the invoice."
             },
             "source": "https://developer.clickup.com/docs/mcp-tools",
-            "icon": "chart"
+            "icon": "chart",
+            "scene": "clickup-hours"
           },
           {
             "title": {
@@ -3471,7 +3473,8 @@
               "en": "Logged without leaving the chat."
             },
             "source": "https://clickup.com/blog/how-to-use-clickup-mcp-server/",
-            "icon": "task"
+            "icon": "task",
+            "scene": "clickup-task"
           }
         ],
         "tips": [
@@ -3853,7 +3856,8 @@
               "en": "A starting point true to the mockup."
             },
             "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
-            "icon": "web"
+            "icon": "web",
+            "scene": "figmad-code"
           },
           {
             "title": {
@@ -3869,7 +3873,8 @@
               "en": "The right values, no eyedropper."
             },
             "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
-            "icon": "design"
+            "icon": "design",
+            "scene": "figmad-colors"
           },
           {
             "title": {
@@ -3885,7 +3890,8 @@
               "en": "The diagram becomes a list of steps."
             },
             "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
-            "icon": "doc"
+            "icon": "doc",
+            "scene": "figmad-figjam"
           }
         ],
         "tips": [
@@ -4467,7 +4473,8 @@
               "en": "A spec sheet you didn't have to write."
             },
             "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
-            "icon": "doc"
+            "icon": "doc",
+            "scene": "figma-spec"
           },
           {
             "title": {
@@ -4483,7 +4490,8 @@
               "en": "A diagram ready for the workshop."
             },
             "source": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas",
-            "icon": "chart"
+            "icon": "chart",
+            "scene": "figma-journey"
           },
           {
             "title": {
@@ -4499,7 +4507,8 @@
               "en": "A first version, built from your components."
             },
             "source": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas",
-            "icon": "design"
+            "icon": "design",
+            "scene": "figma-screen"
           }
         ],
         "tips": [
@@ -4893,7 +4902,8 @@
               "en": "The month's review without opening a report."
             },
             "source": "https://developers.google.com/analytics/devguides/MCP",
-            "icon": "chart"
+            "icon": "chart",
+            "scene": "ga-report"
           },
           {
             "title": {
@@ -4909,7 +4919,8 @@
               "en": "Your site's pulse on launch day."
             },
             "source": "https://github.com/googleanalytics/google-analytics-mcp",
-            "icon": "web"
+            "icon": "web",
+            "scene": "ga-live"
           },
           {
             "title": {
@@ -4925,7 +4936,8 @@
               "en": "The pages that bring you clients."
             },
             "source": "https://github.com/googleanalytics/google-analytics-mcp",
-            "icon": "data"
+            "icon": "data",
+            "scene": "ga-convert"
           }
         ],
         "tips": [

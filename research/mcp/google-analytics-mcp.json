@@ -237,7 +237,8 @@
           "en": "The month's review without opening a report."
         },
         "source": "https://developers.google.com/analytics/devguides/MCP",
-        "icon": "chart"
+        "icon": "chart",
+        "scene": "ga-report"
       },
       {
         "title": {
@@ -253,7 +254,8 @@
           "en": "Your site's pulse on launch day."
         },
         "source": "https://github.com/googleanalytics/google-analytics-mcp",
-        "icon": "web"
+        "icon": "web",
+        "scene": "ga-live"
       },
       {
         "title": {
@@ -269,7 +271,8 @@
           "en": "The pages that bring you clients."
         },
         "source": "https://github.com/googleanalytics/google-analytics-mcp",
-        "icon": "data"
+        "icon": "data",
+        "scene": "ga-convert"
       }
     ],
     "tips": [

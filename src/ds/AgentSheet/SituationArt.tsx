@@ -12,6 +12,7 @@ import { useId } from "react";
 import type { SituationScene } from "@/lib/agents";
 import type { Scene } from "./scenes/kit";
 import { LOT1 } from "./scenes/lot1";
+import { LOT2 } from "./scenes/lot2";
 import { PILOTS } from "./scenes/pilots";
 import styles from "./SituationArt.module.css";
 
@@ -19,6 +20,7 @@ import styles from "./SituationArt.module.css";
 export const SCENES = {
   ...PILOTS,
   ...LOT1,
+  ...LOT2,
 } satisfies Record<SituationScene, Scene>;
 
 export type SceneId = SituationScene;
