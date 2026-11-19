@@ -11,9 +11,9 @@ export async function control(request: APIRequestContext, path: string, data: ob
   const response = await request.post(`/__accounts-test/${path}`, { data });
   expect(response.ok()).toBe(true); return response.json();
 }
-export async function isolate(context: BrowserContext) {
+export async function isolate(context: BrowserContext, baseURL = process.env.PLAYWRIGHT_BASE_URL) {
   // Match the exact fixture origin, including port; localhost and other loopback services are blocked too.
-  const origin = new URL(process.env.PLAYWRIGHT_BASE_URL!).origin;
+  const origin = new URL(baseURL!).origin;
   await context.route('**/*', route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
   // Every isolated context starts with a dated refusal that CookieConsent migrates.
   await context.addInitScript(() => {
@@ -90,7 +90,7 @@ export async function change(page: Page, value: PersonalStackV4) {
   }, value);
 }
 export const test = base.extend({
-  context: async ({ context }, runFixture) => { await isolate(context); await runFixture(context); },
+  context: async ({ context, baseURL }, runFixture) => { await isolate(context, baseURL); await runFixture(context); },
   page: async ({ page, request }, runFixture) => {
     await control(request, 'reset'); const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
     await page.emulateMedia({ reducedMotion: "reduce" });
