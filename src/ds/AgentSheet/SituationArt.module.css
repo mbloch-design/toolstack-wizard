@@ -82,14 +82,18 @@
   padding-top: var(--tt-space-4);
 }
 
-/* The drawing: straight on the card's grey, no plate, across the card's width (240:150), 16 above the eyebrow. Its ink
-   is the page's: night-black in light mode, chalk in dark mode. */
+/* The drawing (second pass, 19/11, « ça prend légèrement trop de place, le texte flotte »): a fixed band of 96
+   (twice the 48 step) in every card, the ink cropped to start on the text's left edge and standing on the band's floor,
+   24 above the eyebrow. Its width follows the scene; it never stretches across the card. Its ink is the page's:
+   night-black in light mode, chalk in dark mode. */
 .sketch {
   display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 8 / 5;
-  margin-bottom: var(--tt-space-4);
+  justify-self: start;
+  width: auto;
+  max-width: 100%;
+  height: calc(2 * var(--tt-space-12));
+  margin-bottom: var(--tt-space-6);
+  overflow: visible;
   color: var(--tt-ink);
 }
 

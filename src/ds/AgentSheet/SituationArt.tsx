@@ -29,13 +29,15 @@ const shoe = (x: number, y: number, flip = false) => (
   <path d={`M${x} ${y}c0 -6 6 -7 9 -4c3 1 7 1 8 4z`} {...ink} {...line} transform={flip ? `translate(${2 * x + 17} 0) scale(-1 1)` : undefined} />
 );
 
-type Scene = { touch: Touch; draw: (t: Touch) => ReactNode };
+/** `box`: the ink's bounds in the 240 × 150 drawing space (measured with getBBox, line excluded), to crop each scene
+ *  to its own ink so it starts on the text's left edge. */
+type Scene = { box: [number, number, number, number]; touch: Touch; draw: (t: Touch) => ReactNode };
 
 /** The nine pilot situations (research/mcp/{notion,canva,stripe}-mcp.json, advice.situations, in order). */
 export const SCENES = {
   /** Notion · Préparer un rendez-vous client: the assistant dives head first into the Notion attic; the one page that
    *  matters flies out. */
-  "notion-meeting": { touch: "butter", draw: (t) => (
+  "notion-meeting": { box: [34, 17, 208, 140], touch: "butter", draw: (t) => (
     <>
       <path d="M34 44L55 37L61 58L40 64Z" {...hide} />
       <path d="M41 47l12 -4M43 53l10 -3" {...fine} />
@@ -55,7 +57,7 @@ export const SCENES = {
     </>
   ) },
   /** Notion · Faire le point de la semaine: the week walks in, dragging its blocked task like a ball and chain. */
-  "notion-week": { touch: "coral", draw: (t) => (
+  "notion-week": { box: [16, 33, 170, 137], touch: "coral", draw: (t) => (
     <>
       <path d="M48 92C44 100 40 108 36 114" {...fine} />
       <circle cx="45" cy="98" r="3" {...fine} /><circle cx="40" cy="106" r="3" {...fine} /><circle cx="36" cy="114" r="3" {...fine} />
@@ -73,7 +75,7 @@ export const SCENES = {
     </>
   ) },
   /** Notion · Suivre les factures impayées: the invoice runs after the client, who is already leaving the frame. */
-  "notion-invoice": { touch: "butter", draw: (t) => (
+  "notion-invoice": { box: [22, 26, 251, 124], touch: "butter", draw: (t) => (
     <>
       <path d="M26 62H46M22 76H42M28 90H48" {...fine} />
       <path d="M60 46L104 40L112 100L68 106Z" {...touch(t)} />
@@ -94,7 +96,7 @@ export const SCENES = {
     </>
   ) },
   /** Canva · Un post, puis sa version story: the square post and its tall twin, same face, same sun, one embarrassed. */
-  "canva-post": { touch: "butter", draw: (t) => (
+  "canva-post": { box: [40, 6, 198, 138], touch: "butter", draw: (t) => (
     <>
       <path d="M40 64L100 62L101 122L41 123Z" {...hide} />
       <circle cx="88" cy="74" r="5" {...touch(t)} />
@@ -115,7 +117,7 @@ export const SCENES = {
     </>
   ) },
   /** Canva · Une présentation client tirée de vos notes: the crumpled notes go in the mincer, a neat slide comes out. */
-  "canva-deck": { touch: "mint", draw: (t) => (
+  "canva-deck": { box: [22, 29, 191, 128], touch: "mint", draw: (t) => (
     <>
       <path d="M92 66L80 34H142L130 66" {...hide} />
       <path d="M98 40c-2 -10 12 -14 18 -8c8 -2 11 10 2 12c-4 7 -17 5 -20 -4z" {...line} />
@@ -133,7 +135,7 @@ export const SCENES = {
     </>
   ) },
   /** Canva · Faire le point sur les retours d'un client: the slide buried under comments, a hand waving from the pile. */
-  "canva-feedback": { touch: "butter", draw: (t) => (
+  "canva-feedback": { box: [36, 30, 220, 136], touch: "butter", draw: (t) => (
     <>
       <path d="M36 98H204V136H36Z" {...hide} />
       <path d="M58 116l14 -10l12 8l10 -6l14 8" {...fine} />
@@ -152,7 +154,7 @@ export const SCENES = {
     </>
   ) },
   /** Stripe · Préparer une facture: the draft, knees knocking, under the magnifying glass of the review. */
-  "stripe-invoice": { touch: "sky", draw: (t) => (
+  "stripe-invoice": { box: [57, 22, 204, 134], touch: "sky", draw: (t) => (
     <>
       <path d="M70 56H112V122H70Z" {...hide} />
       <path d="M76 64H100M76 70H92" {...fine} />
@@ -170,7 +172,7 @@ export const SCENES = {
     </>
   ) },
   /** Stripe · Créer un lien de paiement: fishing for a payment, the link as the hook, a coin that wonders. */
-  "stripe-link": { touch: "butter", draw: (t) => (
+  "stripe-link": { box: [8, 30, 207, 146], touch: "butter", draw: (t) => (
     <>
       <path d="M58 82q10 -6 20 0t20 0t20 0t20 0t20 0t20 0t20 0" {...fine} />
       <path d="M18 138L120 30" {...line} />
@@ -186,7 +188,7 @@ export const SCENES = {
     </>
   ) },
   /** Stripe · Savoir qui ne vous a pas encore payé: the open invoices wait on a bench, long enough to grow a beard. */
-  "stripe-unpaid": { touch: "coral", draw: (t) => (
+  "stripe-unpaid": { box: [28, 10, 212, 136], touch: "coral", draw: (t) => (
     <>
       <circle cx="120" cy="22" r="12" {...touch(t)} />
       <path d="M120 22V14M120 22L126 26" {...fine} />
@@ -221,11 +223,22 @@ function Pencil({ id }: { id: string }) {
   );
 }
 
+/**
+ * One scale for every scene: the band is BAND drawing units high (the tallest ink, 132, plus the line), shown at the
+ * card's fixed height. Each scene is cropped to its ink on the left, so it starts on the text's edge, and stands on the
+ * band's floor, so every drawing sits on the same line, 24 above the eyebrow.
+ */
+const BAND = 140;
+const EDGE = 2.1; // on the left, half the line: the ink's outer edge lands on the text's edge
+const PAD = 4; // elsewhere, half the line plus the pencil's tremble
+
 export default function SituationArt({ scene, pencil = true }: { scene: SceneId; pencil?: boolean }) {
   const id = `pencil-${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
   const data: Scene = SCENES[scene];
+  const [x0, , x1, y1] = data.box;
+  const viewBox = `${x0 - EDGE} ${y1 + PAD - BAND} ${x1 - x0 + EDGE + PAD} ${BAND}`;
   return (
-    <svg className={styles.sketch} viewBox="0 0 240 150" aria-hidden="true" focusable="false">
+    <svg className={styles.sketch} viewBox={viewBox} preserveAspectRatio="xMinYMax meet" aria-hidden="true" focusable="false">
       {pencil && <defs><Pencil id={id} /></defs>}
       <g filter={pencil ? `url(#${id})` : undefined}>{data.draw(data.touch)}</g>
     </svg>

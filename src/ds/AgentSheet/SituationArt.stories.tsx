@@ -95,8 +95,9 @@ function Recommendation() {
         web ; au-delà de la bibliothèque, une scène vraiment nouvelle repasse par lui.
       </p>
       <p className={styles.text}>
-        Emplacement : en tête de carte, à la place de la pastille, sur le gris de la carte, sans plateau, pleine largeur au
-        format 8:5. Accessibilité : aria-hidden, jamais de texte dans l'image. Règle à amender, à toi Michael : le système
+        Emplacement : en tête de carte, à la place de la pastille, sur le gris de la carte, sans plateau. Une bande fixe de
+        96 px dans toutes les cartes, le dessin calé sur le bord gauche du texte et posé sur le bas de la bande, 24 au-dessus
+        du surtitre ; tous les dessins à la même échelle. Accessibilité : aria-hidden, jamais de texte dans l'image. Règle à amender, à toi Michael : le système
         dit qu'une illustration montre « un fragment réel du produit sur un plateau teinté, jamais une forme abstraite » ;
         ces scènes ne sont ni un fragment réel ni sur un plateau.
       </p>
