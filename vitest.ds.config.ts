@@ -10,6 +10,7 @@ const browser = () => ({ enabled: true, headless: true, provider: playwright(), 
 // Stories run at the three widths of the visual tests, one project each: a word breaks on a phone, not on a desktop.
 // Storybook sizes each story from its viewport global (1200 px by default, checked): .storybook/vitest.setup.ts sets it per project.
 const widths = [390, 768, 1280];
+// The states matrix walks every control of fifteen surfaces through five states: past 15 s on CI's machine.
 
 export default defineConfig({
   plugins: [react()],
@@ -17,7 +18,7 @@ export default defineConfig({
   test: {
     projects: [
       { extends: true, test: { name: "ds-unit", include: ["src/ds/**/*.browser.test.ts"], browser: browser() } },
-      ...widths.map((width) => ({ extends: true, plugins: [storybookTest({ configDir: ".storybook" })], test: { name: `storybook-${width}`, provide: { width }, setupFiles: [".storybook/vitest.setup.ts"], browser: browser() } })),
+      ...widths.map((width) => ({ extends: true, plugins: [storybookTest({ configDir: ".storybook" })], test: { name: `storybook-${width}`, testTimeout: 60_000, provide: { width }, setupFiles: [".storybook/vitest.setup.ts"], browser: browser() } })),
     ],
   },
 });
