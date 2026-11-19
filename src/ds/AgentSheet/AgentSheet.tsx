@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X } from "@/lib/icons";
+import { AlertTriangle, Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X, Lightbulb } from "@/lib/icons";
 import { getToolLogoSources } from "@/lib/toolLogos";
 import {
   CONSEQUENCE, clientName, forEveryone, isCopyRow, say, skillTitle, typo,
@@ -110,7 +110,7 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
 
         {/* From one freelancer to another (19/11/2026): what works and what gets stuck, before the how-to. */}
         {advice && (
-          <Chapter chapter="advice" width="wide" title={t("D'un free à l'autre", "From one freelancer to another")}>
+          <Chapter chapter="advice" width="wide" title={t("D'un free à l'autre", "From one freelancer to another")} lead={say(lang, advice.intro)}>
             <AdviceText advice={advice} lang={lang} />
           </Chapter>
         )}
@@ -558,43 +558,33 @@ function ControlColumns({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
 }
 
 /**
- * « D'un free à l'autre » (19/11/2026, « mets-toi dans la peau d'un free qui explique »): a text, not two lists. The
- * introduction sets the scene in a peer's voice, then the tips and what gets stuck, each opened by its short title and
- * told in a sentence; a pitfall gives its way around. One reading column, like an article.
+ * « D'un free à l'autre » (19/11/2026, after Apple's value cards): the introduction is the chapter's lead; each tip and
+ * each pitfall is a light grey card — its line icon in colour on top, its short title as the headline, its sentence
+ * (and, for a pitfall, its way around) below. Tips first, then what gets stuck, each group under its marker.
  */
 function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   const id = useId();
   const community = <p className={styles.meta}>{t("D'après des retours d'utilisateurs", "From users' accounts")}</p>;
+  const group = (key: "tips" | "pitfalls", head: string, items: McpAdvice["pitfalls"]) => (
+    <section className={styles.adviceGroup} data-column={key} aria-labelledby={`${id}-${key}`}>
+      <h3 id={`${id}-${key}`} className={styles.adviceHead}>{head}</h3>
+      <ul className={styles.adviceCards}>
+        {items.map((item) => (
+          <li key={item.fr} className={styles.adviceCard} data-kind={key}>
+            <span className={styles.adviceIcon} aria-hidden="true">{key === "tips" ? <Lightbulb /> : <AlertTriangle />}</span>
+            <p className={styles.adviceTitle}>{say(lang, item.title)}</p>
+            <p className={styles.text}>{say(lang, item)}{item.workaround && <> <span className={styles.strong}>{t("La parade", "The way around")}</span>{t(" : ", ": ")}{lower(say(lang, item.workaround))}</>}</p>
+            {item.community && community}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
   return (
     <div className={styles.advice}>
-      <p className={styles.adviceIntro}>{say(lang, advice.intro)}</p>
-      <div className={styles.advicePoints}>
-      <section className={styles.adviceGroup} data-column="tips" aria-labelledby={`${id}-tips`}>
-        <h3 id={`${id}-tips`} className={styles.adviceHead}>{t("Ce qui marche", "What works")}</h3>
-        <ul className={styles.adviceList}>
-          {advice.tips.map((tip) => (
-            <li key={tip.fr} className={styles.adviceItem}>
-              <p className={styles.adviceTitle}>{say(lang, tip.title)}</p>
-              <p className={styles.text}>{say(lang, tip)}</p>
-              {tip.community && community}
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section className={styles.adviceGroup} data-column="pitfalls" aria-labelledby={`${id}-pitfalls`}>
-        <h3 id={`${id}-pitfalls`} className={styles.adviceHead}>{t("Là où ça coince", "Where it gets stuck")}</h3>
-        <ul className={styles.adviceList}>
-          {advice.pitfalls.map((pitfall) => (
-            <li key={pitfall.fr} className={styles.adviceItem}>
-              <p className={styles.adviceTitle}>{say(lang, pitfall.title)}</p>
-              <p className={styles.text}>{say(lang, pitfall)}{pitfall.workaround && <> <span className={styles.strong}>{t("La parade", "The way around")}</span>{t(" : ", ": ")}{lower(say(lang, pitfall.workaround))}</>}</p>
-              {pitfall.community && community}
-            </li>
-          ))}
-        </ul>
-      </section>
-      </div>
+      {group("tips", t("Ce qui marche", "What works"), advice.tips)}
+      {group("pitfalls", t("Là où ça coince", "Where it gets stuck"), advice.pitfalls)}
     </div>
   );
 }

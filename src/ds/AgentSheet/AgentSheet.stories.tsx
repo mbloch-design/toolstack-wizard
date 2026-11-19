@@ -52,6 +52,8 @@ export const Notion: Story = {
     await expect(pitfalls.length).toBeGreaterThanOrEqual(2);
     for (const pitfall of pitfalls) await expect(pitfall.textContent).toMatch(fr ? /La parade/ : /The way around/);
     await expect(canvasElement.querySelector("[data-chapter=annex]")!.textContent).toMatch(fr ? /Nos conseils viennent de/ : /Our advice comes from/);
+    // Each point is a card: its icon, its title, its sentence.
+    for (const card of advice.querySelectorAll("li")) await expect(card.querySelector("svg")).not.toBeNull();
     await expect(canvas.getByRole("heading", { level: 1 })).toHaveTextContent(fr ? "Brancher Notion à votre assistant" : "Plug Notion into your assistant");
     // A fact has one place: the date, « official ». The plan is summed up in the hook and detailed once, on purpose.
     await expect(times(canvasElement, fr ? /16\s+novembre\s+2026/ : /16\s+November\s+2026/)).toBe(1);
