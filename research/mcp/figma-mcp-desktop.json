@@ -14,8 +14,8 @@
     "en": "Read the mockups open in the desktop app."
   },
   "meta_description": {
-    "fr": "Le serveur MCP de bureau de Figma : votre assistant lit vos designs depuis l'application, sans rien modifier. Siège Dev ou Full requis ; comment l'activer.",
-    "en": "Figma's desktop MCP server: your assistant reads your designs from the Figma app, without changing anything. Needs a Dev or Full seat; how to turn it on."
+    "fr": "Le MCP de bureau de Figma, pour coder dans Claude Code, Cursor ou VS Code : la frame sélectionnée devient du code fidèle, sans toucher à la maquette.",
+    "en": "Figma's desktop MCP, for coding in Claude Code, Cursor or VS Code: the selected frame becomes code true to the mockup, and the design stays untouched."
   },
   "examples": [
     {

@@ -14,8 +14,8 @@
     "en": "Read and update your CRM and campaigns."
   },
   "meta_description": {
-    "fr": "Brancher HubSpot à votre assistant IA : CRM, campagnes et contenu. Chaque création demande votre accord, aucune suppression documentée. Le mode d'emploi.",
-    "en": "Connect HubSpot to your AI assistant: CRM, campaigns and content. Every change asks for your confirmation, and no deletion is documented. How to set up."
+    "fr": "HubSpot dans votre assistant IA : la note et la relance après un appel, votre pipeline en une réponse. Il ne supprime rien et attend votre accord.",
+    "en": "HubSpot in your AI assistant: the note and follow-up after a call, your pipeline in one answer. It deletes nothing and waits for your go-ahead to write."
   },
   "examples": [
     {

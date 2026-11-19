@@ -14,8 +14,8 @@
     "en": "Find a thread, summarise a channel, reply."
   },
   "meta_description": {
-    "fr": "Le serveur MCP officiel de Slack : chercher et lire vos messages, créer des canvases, envoyer des messages. Réservé aux applis approuvées par l'admin.",
-    "en": "Slack's official MCP server: search and read your messages, create canvases, send messages from your assistant. Limited to admin-approved apps. Our view."
+    "fr": "Slack dans votre assistant IA : un fil client rattrapé, le fichier égaré retrouvé sans faire défiler. L'avis d'un free : l'envoi sous votre approbation.",
+    "en": "Slack in your AI assistant: a client thread caught up, the lost file found without scrolling. A freelancer's view: keep sending behind your approval."
   },
   "examples": [
     {

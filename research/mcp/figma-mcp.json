@@ -14,8 +14,8 @@
     "en": "Read your mockups and create new ones, online."
   },
   "meta_description": {
-    "fr": "Brancher Figma à Claude ou Copilot : composants, variables et mise en page dans l'assistant, et en bêta la modification de vos fichiers. Rien à installer.",
-    "en": "Connect Figma to Claude or Copilot: components, variables and layout in your assistant and, in beta, editing your files. Nothing to install; our view."
+    "fr": "Le serveur Figma en ligne, à choisir par défaut : rien à installer, une fiche de maquette sans la rédiger, un écran fait de vos composants, à relire.",
+    "en": "Figma's online server, the one to pick by default: nothing to install, mockup notes you don't have to write, a screen built from your components to review."
   },
   "examples": [
     {

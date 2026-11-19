@@ -16,8 +16,8 @@
         "en": "Your SEO keywords, links and rankings."
       },
       "meta_description": {
-        "fr": "Brancher Ahrefs à Claude ou ChatGPT : mots-clés, backlinks et positions dans votre assistant. Forfait payant dès Lite, ce qu'il peut modifier, comment.",
-        "en": "Connect Ahrefs to Claude or ChatGPT: keywords, backlinks and rankings in your assistant. Paid plan from Lite, what it can change, and how to set it up."
+        "fr": "Ahrefs dans Claude ou ChatGPT, l'avis d'un free : le bilan SEO du mois sans export, les liens des concurrents à démarcher. Des questions courtes, précises.",
+        "en": "Ahrefs in Claude or ChatGPT, a freelancer's view: the monthly SEO report with no export, competitor links to pitch. Keep each question short and precise."
       },
       "examples": [
         {
@@ -365,8 +365,8 @@
         "en": "Search, add and edit the records of your bases."
       },
       "meta_description": {
-        "fr": "Brancher Airtable à Claude, ChatGPT ou Gemini : vos bases et enregistrements dans l'assistant. Ce qu'il peut supprimer, comment le limiter, en 3 étapes.",
-        "en": "Connect Airtable to Claude, ChatGPT or Gemini: your bases and records in your assistant. What it can delete, how to limit it, set up in three steps."
+        "fr": "Airtable dans Claude, ChatGPT ou Gemini : vos relances clients et prospects gérés en langage courant. Notre avis de free : n'ouvrez que les bases utiles.",
+        "en": "Airtable in Claude, ChatGPT or Gemini: client follow-ups and new leads handled in plain language. Our freelancer's advice: open only the bases it needs."
       },
       "examples": [
         {
@@ -1056,8 +1056,8 @@
         "en": "Publish your posts and read their results."
       },
       "meta_description": {
-        "fr": "Brancher Buffer à Claude ou ChatGPT : rédiger, programmer et publier vos posts depuis l'assistant. Gratuit sur tous les forfaits ; ce qu'il peut supprimer.",
-        "en": "Connect Buffer to Claude or ChatGPT: draft, schedule and publish your posts from your assistant. Free on every plan; what it can delete, and how to set up."
+        "fr": "Buffer dans Claude ou ChatGPT : le post de la semaine rédigé, mis en file, relu par vous. L'avis d'un free : une confirmation avant chaque publication.",
+        "en": "Buffer in Claude or ChatGPT: this week's post drafted, queued and waiting for your review. A freelancer's advice: keep a confirmation before each post."
       },
       "examples": [
         {
@@ -1565,8 +1565,8 @@
         "en": "Find a slot, book or cancel a meeting."
       },
       "meta_description": {
-        "fr": "Brancher Calendly à Claude ou ChatGPT : trouver vos créneaux, réserver et annuler des rendez-vous. Sans forfait payant ; ce qu'il fait sans vous demander.",
-        "en": "Connect Calendly to Claude or ChatGPT: find open slots, book and cancel meetings from your assistant. No paid plan needed; what it does without asking."
+        "fr": "Calendly dans Claude ou ChatGPT : des créneaux à proposer au client, votre semaine résumée. L'avis d'un free : il peut annuler, alors gardez la main.",
+        "en": "Calendly in Claude or ChatGPT: offer open slots to a client, get your week summed up. A freelancer's view: it can cancel a meeting, so stay in control."
       },
       "examples": [
         {
@@ -2181,8 +2181,8 @@
         "en": "Create a visual from a sentence, export a design."
       },
       "meta_description": {
-        "fr": "Brancher Canva à votre assistant IA : chercher, générer, modifier et exporter vos designs. Aucune suppression documentée ; marque avec Pro. Notre avis.",
-        "en": "Connect Canva to your AI assistant: search, generate, edit and export your designs. No deletion in the tool list; brand features need Pro. Our view."
+        "fr": "Canva dans votre assistant IA : un post et sa story d'une seule mise en page, une présentation client tirée de vos notes. Et ce que Canva Pro garde.",
+        "en": "Canva in your AI assistant: a post and its story from one layout, a client deck from your notes. A freelancer's view, and what Canva Pro keeps for itself."
       },
       "examples": [
         {
@@ -2826,8 +2826,8 @@
         "en": "Follow your tasks, documents and time spent."
       },
       "meta_description": {
-        "fr": "Brancher ClickUp à Claude ou ChatGPT : tâches, documents, temps passé et messages, avec vos droits. Corbeille, envoi de messages, plafonds par forfait.",
-        "en": "Connect ClickUp to Claude or ChatGPT: tasks, docs, time tracking and messages, with your own rights. Trash, chat messages and call caps by plan, explained."
+        "fr": "ClickUp dans Claude ou ChatGPT : retards repérés, heures prêtes pour la facture, tâches créées. L'avis d'un free : il écrit en votre nom, gardez l'accord.",
+        "en": "ClickUp in Claude or ChatGPT: delays spotted, hours ready for the invoice, tasks created. A freelancer's view: it writes as you, so keep approval on."
       },
       "examples": [
         {
@@ -3623,8 +3623,8 @@
         "en": "Read the mockups open in the desktop app."
       },
       "meta_description": {
-        "fr": "Le serveur MCP de bureau de Figma : votre assistant lit vos designs depuis l'application, sans rien modifier. Siège Dev ou Full requis ; comment l'activer.",
-        "en": "Figma's desktop MCP server: your assistant reads your designs from the Figma app, without changing anything. Needs a Dev or Full seat; how to turn it on."
+        "fr": "Le MCP de bureau de Figma, pour coder dans Claude Code, Cursor ou VS Code : la frame sélectionnée devient du code fidèle, sans toucher à la maquette.",
+        "en": "Figma's desktop MCP, for coding in Claude Code, Cursor or VS Code: the selected frame becomes code true to the mockup, and the design stays untouched."
       },
       "examples": [
         {
@@ -4014,8 +4014,8 @@
         "en": "Read your mockups and create new ones, online."
       },
       "meta_description": {
-        "fr": "Brancher Figma à Claude ou Copilot : composants, variables et mise en page dans l'assistant, et en bêta la modification de vos fichiers. Rien à installer.",
-        "en": "Connect Figma to Claude or Copilot: components, variables and layout in your assistant and, in beta, editing your files. Nothing to install; our view."
+        "fr": "Le serveur Figma en ligne, à choisir par défaut : rien à installer, une fiche de maquette sans la rédiger, un écran fait de vos composants, à relire.",
+        "en": "Figma's online server, the one to pick by default: nothing to install, mockup notes you don't have to write, a screen built from your components to review."
       },
       "examples": [
         {
@@ -4670,8 +4670,8 @@
         "en": "Read your traffic figures, realtime included."
       },
       "meta_description": {
-        "fr": "Brancher Google Analytics à Claude : vos rapports et le temps réel dans l'assistant, en lecture seule. Installation avec Python et Google Cloud, pas à pas.",
-        "en": "Connect Google Analytics to Claude: your reports and realtime data in your assistant, read only. Setup with Python and Google Cloud, step by step, here."
+        "fr": "Google Analytics dans Claude : le bilan du mois et le trafic en direct, en lecture seule. L'avis d'un free : utile si un terminal ne vous fait pas peur.",
+        "en": "Google Analytics in Claude: the monthly review and live traffic, read only, in plain words. A freelancer's view: worth it if a terminal doesn't scare you."
       },
       "examples": [
         {
@@ -5063,8 +5063,8 @@
         "en": "Read and update your CRM and campaigns."
       },
       "meta_description": {
-        "fr": "Brancher HubSpot à votre assistant IA : CRM, campagnes et contenu. Chaque création demande votre accord, aucune suppression documentée. Le mode d'emploi.",
-        "en": "Connect HubSpot to your AI assistant: CRM, campaigns and content. Every change asks for your confirmation, and no deletion is documented. How to set up."
+        "fr": "HubSpot dans votre assistant IA : la note et la relance après un appel, votre pipeline en une réponse. Il ne supprime rien et attend votre accord.",
+        "en": "HubSpot in your AI assistant: the note and follow-up after a call, your pipeline in one answer. It deletes nothing and waits for your go-ahead to write."
       },
       "examples": [
         {
@@ -5652,8 +5652,8 @@
         "en": "Run your Make scenarios in one sentence."
       },
       "meta_description": {
-        "fr": "Brancher Make à Claude : vos scénarios deviennent des actions que l'assistant lance. Sur forfait payant, il modifie aussi scénarios et connexions.",
-        "en": "Connect Make to Claude: your active scenarios become actions your assistant can run. On a paid plan it can also edit scenarios and connections. Our view."
+        "fr": "Make dans Claude : vos scénarios lancés en une phrase, la facture client partie sans ouvrir Make. L'avis d'un free : sans scénario prêt, rien à lancer.",
+        "en": "Make in Claude: your scenarios run in one sentence, the client invoice sent without opening Make. A freelancer's view: no scenario ready, nothing to run."
       },
       "examples": [
         {
@@ -6097,8 +6097,8 @@
         "en": "Summarise your boards and create new ones."
       },
       "meta_description": {
-        "fr": "Brancher Miro à Claude, ChatGPT ou Copilot : lire et résumer vos tableaux, y ajouter notes et schémas, les partager. Gratuit sur tous les forfaits.",
-        "en": "Connect Miro to Claude, ChatGPT or Copilot: read and summarise your boards, add notes and diagrams, share them. Works on every plan, free included. Guide."
+        "fr": "Miro dans Claude, ChatGPT ou Copilot : le compte rendu d'atelier sans recopier les post-it, le squelette du projet posé. Il partage aussi : gardez la main.",
+        "en": "Miro in Claude, ChatGPT or Copilot: workshop minutes without retyping sticky notes, a project skeleton laid out. It can share boards, so stay in control."
       },
       "examples": [
         {
@@ -6823,8 +6823,8 @@
         "en": "Find, summarise and create pages in Notion."
       },
       "meta_description": {
-        "fr": "Brancher Notion à Claude, ChatGPT ou Gemini : retrouver vos notes, résumer vos réunions, créer des pages. Tous les forfaits ; ce qu'il peut effacer.",
-        "en": "Connect Notion to Claude, ChatGPT or Gemini: find your notes, summarise meetings, create pages. Every plan; what it can edit and delete, and how to set up."
+        "fr": "Notion dans Claude, ChatGPT ou Gemini : l'historique d'un client avant l'appel, vos relances d'impayés prêtes. L'avis d'un free, sans passer à Notion AI.",
+        "en": "Notion in Claude, ChatGPT or Gemini: a client's history before the call, unpaid-invoice follow-ups ready. A freelancer's view, no Notion AI plan needed."
       },
       "examples": [
         {
@@ -7716,8 +7716,8 @@
         "en": "Follow orders and stock, create products."
       },
       "meta_description": {
-        "fr": "Brancher Shopify à Claude, ChatGPT ou Gemini : commandes, produits et réductions dans l'assistant. Remboursements et paiements restent bloqués.",
-        "en": "Connect Shopify to Claude, ChatGPT or Gemini: orders, products and discounts in your assistant. Refunds and payments stay blocked. How to set it up, here."
+        "fr": "Shopify dans Claude, ChatGPT ou Gemini : vos ventes de la semaine en une question, les ruptures repérées à temps. Remboursements et paiements bloqués.",
+        "en": "Shopify in Claude, ChatGPT or Gemini: your week of sales in one question, stock-outs spotted in time. Refunds and payments stay off-limits. Our view."
       },
       "examples": [
         {
@@ -8402,8 +8402,8 @@
         "en": "Find a thread, summarise a channel, reply."
       },
       "meta_description": {
-        "fr": "Le serveur MCP officiel de Slack : chercher et lire vos messages, créer des canvases, envoyer des messages. Réservé aux applis approuvées par l'admin.",
-        "en": "Slack's official MCP server: search and read your messages, create canvases, send messages from your assistant. Limited to admin-approved apps. Our view."
+        "fr": "Slack dans votre assistant IA : un fil client rattrapé, le fichier égaré retrouvé sans faire défiler. L'avis d'un free : l'envoi sous votre approbation.",
+        "en": "Slack in your AI assistant: a client thread caught up, the lost file found without scrolling. A freelancer's view: keep sending behind your approval."
       },
       "examples": [
         {
@@ -8774,8 +8774,8 @@
         "en": "Follow your payments and balance."
       },
       "meta_description": {
-        "fr": "Brancher Stripe à Claude ou ChatGPT : vos données de compte, création d'objets et, avec Treasury, envoi d'argent après confirmation. En bêta.",
-        "en": "Connect Stripe to Claude or ChatGPT: your account data in your assistant, creating objects and, with Treasury, sending money after confirmation. In beta."
+        "fr": "Stripe dans Claude ou ChatGPT : qui vous doit quoi, une facture ou un lien de paiement prêts à relire. Il agit sur votre vrai compte : testez d'abord.",
+        "en": "Stripe in Claude or ChatGPT: who owes you what, an invoice or payment link ready to review. It acts on your real account, so start in a test environment."
       },
       "examples": [
         {
@@ -9336,8 +9336,8 @@
         "en": "Create a form and read its answers."
       },
       "meta_description": {
-        "fr": "Brancher Tally à Claude ou ChatGPT : créer un formulaire à partir d'une phrase, le publier et lire les réponses. Il ne supprime rien ; gratuit, en bêta.",
-        "en": "Connect Tally to Claude or ChatGPT: create a form from one sentence, publish it and read the submissions. It cannot delete anything; free, and in beta."
+        "fr": "Tally dans Claude ou ChatGPT : un formulaire de devis monté en une phrase, les retours clients lus pour vous. Il ne supprime rien ; en bêta, relisez avant.",
+        "en": "Tally in Claude or ChatGPT: a quote-request form built from one sentence, client feedback read for you. It deletes nothing; still in beta, so review first."
       },
       "examples": [
         {
@@ -9732,8 +9732,8 @@
         "en": "Read and edit your site, up to publishing it."
       },
       "meta_description": {
-        "fr": "Brancher Webflow à Claude ou ChatGPT : modifier pages, styles et CMS, puis publier le site depuis l'assistant. Accès site par site ; ses suppressions.",
-        "en": "Connect Webflow to Claude or ChatGPT: edit pages, styles and the CMS, then publish your site from your assistant. Access site by site; what it can delete."
+        "fr": "Webflow dans Claude ou ChatGPT : l'article de blog en place, les liens cassés traqués. L'avis d'un free : voyez toujours ce qui a changé avant de publier.",
+        "en": "Webflow in Claude or ChatGPT: the blog post in place, broken links hunted down. A freelancer's view: always see what changed before you publish the site."
       },
       "examples": [
         {
@@ -10364,8 +10364,8 @@
         "en": "Act in your apps through the actions you enable."
       },
       "meta_description": {
-        "fr": "Brancher Zapier à Claude ou ChatGPT : des milliers d'applications dans votre assistant. Vous choisissez ce qu'il expose ; deux tâches par appel réussi.",
-        "en": "Connect Zapier to Claude or ChatGPT: actions from thousands of apps in your assistant. You choose what it exposes; each successful call uses two tasks."
+        "fr": "Zapier dans Claude ou ChatGPT, le passe-partout des outils sans serveur : une relance client, un tableur à jour. Chaque action puise dans vos tâches.",
+        "en": "Zapier in Claude or ChatGPT, a master key for tools with no server: a client follow-up sent, a sheet kept up to date. Each action uses your Zapier tasks."
       },
       "examples": [
         {
