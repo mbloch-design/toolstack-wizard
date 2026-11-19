@@ -45,4 +45,35 @@ describe("the agents section's SEO, one source (step 9)", () => {
     expect(index[0]["@type"]).toBe("CollectionPage");
     expect(index[0].mainEntity?.numberOfItems).toBe(servers.length);
   });
+
+  it("puts the freelancer's advice in the server sheet's FAQ: verdict, situations, tips and pitfalls (R2)", () => {
+    type Faq = { "@type": string; inLanguage: string; mainEntity: { name: string; acceptedAnswer: { text: string } }[] };
+    for (const lang of ["fr", "en"] as const) {
+      for (const s of servers) {
+        const advice = s.advice!;
+        const faq = (serverSeo(s, lang, sibling(s)).jsonLd["@graph"] as Faq[]).find((node) => node["@type"] === "FAQPage")!;
+        expect(faq.inLanguage).toBe(lang);
+        const answers = faq.mainEntity.map((q) => q.acceptedAnswer.text);
+        expect(answers[0], s.slug).toBe(advice.verdict[lang]);
+        const all = answers.join(" ");
+        for (const item of [...advice.situations.map((x) => x.ask), ...advice.tips, ...advice.pitfalls]) expect(all, s.slug).toContain(item[lang]);
+        for (const p of advice.pitfalls) if (p.workaround) expect(all, s.slug).toContain(p.workaround[lang]);
+        for (const q of faq.mainEntity) {
+          expect(q.name, s.slug).toMatch(/\?$/);
+          expect(q.acceptedAnswer.text.trim().length, `${s.slug}: ${q.name}`).toBeGreaterThan(0);
+        }
+        expect(all, s.slug).not.toMatch(/\btest[ée]s?\b|\btested\b/i);
+      }
+    }
+    const stripe = servers.find((s) => s.slug === "stripe-mcp")!;
+    const names = (serverSeo(stripe, "fr", false).jsonLd["@graph"] as Faq[]).find((n) => n["@type"] === "FAQPage")!.mainEntity.map((q) => q.name);
+    expect(names).toEqual([
+      "Faut-il brancher Stripe à votre assistant IA ?",
+      "À quoi Stripe sert-il au quotidien dans votre assistant ?",
+      "Que peut faire votre assistant dans Stripe ?",
+      "Comment garder la main ?",
+      "Quels conseils pour bien utiliser Stripe avec votre assistant ?",
+      "Quels pièges éviter avec Stripe dans votre assistant ?",
+    ]);
+  });
 });

@@ -108,7 +108,7 @@ export function assistantsPhrase(sheet: Pick<McpSheet, "setup">, lang: Lang) {
   return served.join(two(lang, " ou ", " or "));
 }
 
-type ServerInput = Pick<McpSheet, "slug" | "name" | "publisher" | "host_tool" | "host_name" | "og_image" | "transport" | "setup" | "meta_description" | "verified_on" | "capabilities" | "plan_words" | "plan_note" | "control">;
+type ServerInput = Pick<McpSheet, "slug" | "name" | "publisher" | "host_tool" | "host_name" | "og_image" | "transport" | "setup" | "meta_description" | "verified_on" | "capabilities" | "plan_words" | "plan_note" | "control" | "advice">;
 
 /** The tool's name for this server: « Figma », or « Figma » with « (MCP de bureau) » when it has a remote sibling. */
 export function serverSeo(sheet: ServerInput, lang: Lang, hasSibling: boolean): AgentsSeo {
@@ -124,8 +124,20 @@ export function serverSeo(sheet: ServerInput, lang: Lang, hasSibling: boolean): 
   const leaf = desktop ? two(lang, `${tool}, application de bureau`, `${tool}, desktop app`) : tool;
   const trail = agentsTrail(lang, "mcp", leaf);
 
-  // The FAQ answers only what the sheet shows: what it can do, the plan, how to stay in control.
+  // The FAQ answers only what the sheet shows: the freelancer's verdict and situations (R2, 19/11/2026), what it can
+  // do, the plan, how to stay in control, then the advice's tips and pitfalls. FAQPage, not HowTo: Google shows neither
+  // as a rich result any more (HowTo since 2023, FAQ since 7 May 2026), but FAQPage stays valid schema.org that Bing
+  // and AI assistants read, and the sheet's advice is already questions a freelancer asks.
   const faq: { q: string; a: string }[] = [];
+  const advice = sheet.advice;
+  const sentence = (text: string) => (/[.!?…»”]$/.test(text.trim()) ? text.trim() : `${text.trim()}.`);
+  if (advice) {
+    faq.push({ q: two(lang, `Faut-il brancher ${tool} à votre assistant IA ?`, `Should you plug ${tool} into your AI assistant?`), a: pick(lang, advice.verdict) });
+    if (advice.situations.length) faq.push({
+      q: two(lang, `À quoi ${tool} sert-il au quotidien dans votre assistant ?`, `What does ${tool} do for you day to day in your assistant?`),
+      a: advice.situations.map((s) => `${sentence(pick(lang, s.title))} ${sentence(pick(lang, s.gain))} ${two(lang, `Demandez : « ${pick(lang, s.ask)} »`, `Ask: “${pick(lang, s.ask)}”`)}`).join(" "),
+    });
+  }
   if (sheet.capabilities?.length) faq.push({
     q: two(lang, `Que peut faire votre assistant dans ${tool} ?`, `What can your assistant do in ${tool}?`),
     a: `${sheet.capabilities.map((c, i) => (i ? pick(lang, c).charAt(0).toLowerCase() + pick(lang, c).slice(1) : pick(lang, c))).join(two(lang, " ; ", "; "))}.`,
@@ -135,6 +147,15 @@ export function serverSeo(sheet: ServerInput, lang: Lang, hasSibling: boolean): 
   if (sheet.control?.length) faq.push({
     q: two(lang, "Comment garder la main ?", "How do you stay in control?"),
     a: sheet.control.map((c) => `${pick(lang, c.title)} ${pick(lang, c)}`).join(" "),
+  });
+
+  if (advice?.tips.length) faq.push({
+    q: two(lang, `Quels conseils pour bien utiliser ${tool} avec votre assistant ?`, `What tips help you use ${tool} with your assistant?`),
+    a: advice.tips.map((t) => `${sentence(pick(lang, t.title))} ${sentence(pick(lang, t))}`).join(" "),
+  });
+  if (advice?.pitfalls.length) faq.push({
+    q: two(lang, `Quels pièges éviter avec ${tool} dans votre assistant ?`, `Which pitfalls should you avoid with ${tool} in your assistant?`),
+    a: advice.pitfalls.map((p) => [sentence(pick(lang, p.title)), sentence(pick(lang, p)), p.workaround ? sentence(pick(lang, p.workaround)) : ""].filter(Boolean).join(" ")).join(" "),
   });
 
   const jsonLd = {
