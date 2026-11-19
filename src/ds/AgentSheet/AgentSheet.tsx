@@ -81,8 +81,8 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
 
         {/* 2. What you could ask: reading first, the one that writes last with what to check. */}
         {advice && (
-          <Chapter chapter="ask" width="wide" title={t("Ce que ça change pour vous", "What it changes for you")}
-            lead={t("Des moments de votre semaine, et la phrase à lui écrire.", "Moments of your week, and the sentence to write to it.")}>
+          <Chapter chapter="ask" width="wide" title={t("Ce que ça change pour vous", "What changes for you")}
+            lead={t("Des situations de tous les jours, et ce qu'il suffit d'écrire à votre assistant.", "Everyday situations, and what to write to your assistant.")}>
             <ol className={styles.cards}>
               {advice.situations.map((situation) => (
                 <SituationCard key={situation.ask.fr} situation={situation} lang={lang} />
@@ -92,7 +92,7 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
         )}
         {!advice && asks.length > 0 && (
           <Chapter chapter="ask" width="wide" title={t("Ce que vous pourrez lui demander", "What you could ask it")}
-            lead={t("Commencez par des demandes qui ne font que lire ; passez à l'écriture une fois rassuré.", "Start with requests that only read; move on to writing once reassured.")}>
+            lead={t("Commencez par des demandes qui ne font que lire ; passez à l'écriture une fois en confiance.", "Start with requests that only read; move on to writing once you trust it.")}>
             {/* The same template as « Brancher » (step 8c): a number, where it stands in the progression, what it does, then
                 the request as the message to send, what to check, and the copy button at the foot of every card. */}
             <ol className={styles.cards}>
@@ -398,7 +398,7 @@ function PlugChapter({ sheet, lang, toolName }: { sheet: McpSheet; lang: Lang; t
     </ol>
     {/* What gets copied, to read: full width under the steps; the only copy button is the step's own (17/11). */}
     {steps.flatMap((step) => [step.action, step.secondary]).map((action) => action?.kind === "copy" && <Preview key={action.value} action={action} lang={lang} />)}
-    {CLIENTS[current].source && steps.some((step) => step.action?.kind === "copy") && <p className={styles.meta}>{t("Où coller : d'après la documentation de ", "Where to paste: from the documentation of ")}<a className={linkClass("inline")} href={CLIENTS[current].source} target="_blank" rel="noopener noreferrer">{clientLabel(current, lang)}</a>.</p>}
+    {CLIENTS[current].source && steps.some((step) => step.action?.kind === "copy") && <p className={styles.meta}>{t("Où coller la configuration : voir la documentation de ", "Where to paste the configuration: see the documentation of ")}<a className={linkClass("inline")} href={CLIENTS[current].source} target="_blank" rel="noopener noreferrer">{clientLabel(current, lang)}</a>.</p>}
     </div>
   </>;
 }
@@ -567,7 +567,7 @@ function ControlColumns({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
         {sheet.tools_note && <p className={styles.meta}>{say(lang, sheet.tools_note)}</p>}
       </div>
       <Table labelledBy={`${id}-can`} columns={[t("Action", "Action"), t("Identifiant", "Identifier")]} sections={sections} />
-      {tools.length > 0 && <p className={styles.meta}>{t("Les actions sont celles que l'éditeur documente.", "The actions are those the vendor documents.")}</p>}
+      {tools.length > 0 && <p className={styles.meta}>{t("Actions telles que l'éditeur les documente.", "Actions as the vendor documents them.")}</p>}
     </section>
   );
   const safeguards = count > 0 && (
@@ -601,9 +601,9 @@ function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
           <li key={item.fr} className={styles.adviceCard} data-kind={key}>
             <span className={styles.adviceIcon} data-palette={key === "tips" ? "mint" : "butter"} aria-hidden="true">{ADVICE_ICON[item.icon]}</span>
             <p className={styles.adviceTitle}>{say(lang, item.title)}</p>
-            <p className={styles.text}>{say(lang, item)}{item.workaround && <> <span className={styles.strong}>{t("La parade", "The way around")}</span>{t(" : ", ": ")}{lower(say(lang, item.workaround))}</>}</p>
+            <p className={styles.text}>{say(lang, item)}{item.workaround && <> <span className={styles.strong}>{t("La parade", "Workaround")}</span>{t(" : ", ": ")}{lower(say(lang, item.workaround))}</>}</p>
             <a className={styles.cardSource} href={item.source} target="_blank" rel="noopener noreferrer">
-              {item.community ? t("D'après des retours d'utilisateurs · ", "From users' accounts · ") : t("Source : ", "Source: ")}{siteOf(item.source)}<ArrowUpRight aria-hidden="true" />
+              {item.community ? t("D'après des retours d'utilisateurs · ", "From user reports · ") : t("Source : ", "Source: ")}{siteOf(item.source)}<ArrowUpRight aria-hidden="true" />
             </a>
           </li>
         ))}
@@ -613,7 +613,7 @@ function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
   return (
     <div className={styles.advice}>
       {group("tips", t("Ce qui marche", "What works"), advice.tips)}
-      {group("pitfalls", t("Là où ça coince", "Where it gets stuck"), advice.pitfalls)}
+      {group("pitfalls", t("Là où ça coince", "Where it falls short"), advice.pitfalls)}
     </div>
   );
 }

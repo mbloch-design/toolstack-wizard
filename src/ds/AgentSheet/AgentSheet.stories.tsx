@@ -53,7 +53,7 @@ export const Notion: Story = {
     // Every pitfall says its way around; the advice says where it comes from.
     const pitfalls = advice.querySelectorAll("[data-column=pitfalls] li");
     await expect(pitfalls.length).toBeGreaterThanOrEqual(2);
-    for (const pitfall of pitfalls) await expect(pitfall.textContent).toMatch(fr ? /La parade/ : /The way around/);
+    for (const pitfall of pitfalls) await expect(pitfall.textContent).toMatch(fr ? /La parade/ : /Workaround/);
     // Every tip and pitfall says where it comes from, at its foot.
     for (const card of advice.querySelectorAll("li")) await expect(card.querySelector("a[target=_blank]")).not.toBeNull();
     // The sources are a section: a row per source, each name once (« Présentation 4 fois », 19/11).
