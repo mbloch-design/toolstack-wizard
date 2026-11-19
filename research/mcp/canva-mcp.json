@@ -512,7 +512,8 @@
         "fr": "Format, couleurs, textes exacts, nom du design : plus la demande est précise, moins vous retouchez. Canva le conseille lui-même.",
         "en": "Format, colours, exact text, design name: the sharper the request, the less you retouch. Canva itself recommends it.",
         "source": "https://www.canva.com/help/mcp-canva-usage/",
-        "community": false
+        "community": false,
+        "icon": "brief"
       },
       {
         "title": {
@@ -522,7 +523,8 @@
         "fr": "Quand c'est presque bon, demandez un changement précis. Tout relancer, c'est rejouer au loto.",
         "en": "When it's almost right, ask for one precise change. Starting over is buying another lottery ticket.",
         "source": "https://www.canva.com/help/mcp-canva-usage/",
-        "community": false
+        "community": false,
+        "icon": "refine"
       },
       {
         "title": {
@@ -532,7 +534,8 @@
         "fr": "Avant de faire modifier un design déjà envoyé au client, demandez une copie : l'original reste intact.",
         "en": "Before having a design already sent to the client edited, ask for a copy: the original stays intact.",
         "source": "https://www.canva.com/help/mcp-canva-usage/",
-        "community": false
+        "community": false,
+        "icon": "copy"
       },
       {
         "title": {
@@ -542,7 +545,8 @@
         "fr": "Couleurs et polices du kit sont bien reprises, mais les logos rangés seulement dans le kit sont souvent oubliés : importez-les aussi dans vos fichiers.",
         "en": "The kit's colours and fonts are picked up, but logos stored only in the kit are often skipped: upload them to your files too.",
         "source": "https://www.mejba.me/blog/claude-canva-connector-design-workflow",
-        "community": true
+        "community": true,
+        "icon": "brand"
       },
       {
         "title": {
@@ -552,7 +556,8 @@
         "fr": "Dans Claude, les réglages de l'intégration Canva permettent de désactiver des actions et de choisir s'il vous demande votre accord à chaque fois.",
         "en": "In Claude, the Canva integration's settings let you switch actions off and choose whether it asks for your approval each time.",
         "source": "https://www.canva.com/help/mcp-canva-usage/",
-        "community": false
+        "community": false,
+        "icon": "settings"
       }
     ],
     "pitfalls": [
@@ -568,7 +573,8 @@
           "en": "Finish typography and images in Canva, and start from your own template for recurring formats."
         },
         "source": "https://www.mejba.me/blog/claude-canva-connector-design-workflow",
-        "community": true
+        "community": true,
+        "icon": "draft"
       },
       {
         "title": {
@@ -582,7 +588,8 @@
           "en": "Keep generation for first drafts, then have your existing designs edited, copied or exported."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/",
-        "community": false
+        "community": false,
+        "icon": "credits"
       },
       {
         "title": {
@@ -596,7 +603,8 @@
           "en": "Choose Save or Open in Canva from the preview, or find the design in your Canva projects."
         },
         "source": "https://www.canva.com/help/connect-chatgpt-to-canva/",
-        "community": false
+        "community": false,
+        "icon": "link"
       },
       {
         "title": {
@@ -610,7 +618,8 @@
           "en": "Ask the client to turn it on; in your own team, see Settings > Permissions > Magic and AI."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/",
-        "community": false
+        "community": false,
+        "icon": "admin"
       }
     ],
     "sources": [

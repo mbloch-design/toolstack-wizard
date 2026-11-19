@@ -42,7 +42,8 @@ export interface McpSheet {
 }
 
 export type SituationIcon = "meeting" | "week" | "invoice" | "post" | "deck" | "feedback" | "link" | "unpaid";
-export type Sourced = Pair & { title: Pair; source: string; community?: boolean };
+export type AdviceIcon = "title" | "database" | "approve" | "suggest" | "click" | "guest" | "slow" | "limit" | "rights" | "brief" | "refine" | "copy" | "brand" | "settings" | "draft" | "credits" | "link" | "admin" | "sandbox" | "amount" | "key" | "mail" | "invoice" | "confirm" | "blocked" | "session";
+export type Sourced = Pair & { title: Pair; source: string; community?: boolean; icon: AdviceIcon };
 export interface McpAdvice {
   verdict: Pair & { source: string };
   /** The peer's introduction to « D'un free à l'autre »: the scene, in a human voice. */

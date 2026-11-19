@@ -418,7 +418,8 @@
         "fr": "À la connexion, Stripe vous laisse choisir un environnement de test : rien n'y est réellement encaissé ni remboursé. C'est l'endroit pour faire vos bêtises.",
         "en": "When you connect, Stripe lets you pick a test environment: nothing is really charged or refunded there. It's the place to make your mistakes.",
         "source": "https://docs.stripe.com/mcp",
-        "community": false
+        "community": false,
+        "icon": "sandbox"
       },
       {
         "title": {
@@ -428,7 +429,8 @@
         "fr": "Laissez les outils d'écriture sur « Approbation requise », comme Stripe le recommande. « Toujours autoriser » sur votre compte d'encaissement, c'est non.",
         "en": "Leave write tools on “Needs approval”, as Stripe recommends. “Always allow” on the account that collects your money is a no.",
         "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
-        "community": false
+        "community": false,
+        "icon": "approve"
       },
       {
         "title": {
@@ -438,7 +440,8 @@
         "fr": "Client, montant, devise : trois secondes de lecture évitent un remboursement gênant. Ne mémorisez votre accord que pour un outil en qui vous avez pleinement confiance.",
         "en": "Customer, amount, currency: three seconds of reading spare you an awkward refund. Only remember your approval for a tool you fully trust.",
         "source": "https://developers.openai.com/api/docs/guides/developer-mode",
-        "community": false
+        "community": false,
+        "icon": "amount"
       },
       {
         "title": {
@@ -448,7 +451,8 @@
         "fr": "Si vous passez par une clé (Claude Code, Codex), créez une clé d'agent limitée aux droits utiles et gardez-la hors de la conversation. Stripe y applique des règles d'approbation pour les remboursements et les virements.",
         "en": "If you go through a key (Claude Code, Codex), create an agent key limited to the rights you need and keep it out of the chat. Stripe applies approval rules to it for refunds and payouts.",
         "source": "https://docs.stripe.com/account/approvals.md",
-        "community": false
+        "community": false,
+        "icon": "key"
       },
       {
         "title": {
@@ -458,7 +462,8 @@
         "fr": "N'activez pas Stripe dans la même conversation qu'un serveur qui lit des e-mails ou des pages web : Stripe met en garde contre les consignes cachées dans ces contenus.",
         "en": "Don't turn Stripe on in the same chat as a server that reads emails or web pages: Stripe warns about instructions hidden in such content.",
         "source": "https://docs.stripe.com/mcp",
-        "community": false
+        "community": false,
+        "icon": "mail"
       }
     ],
     "pitfalls": [
@@ -474,7 +479,8 @@
           "en": "Turn on “Send finalized invoices to customers” in your billing settings, or click “Send invoice” in the Dashboard."
         },
         "source": "https://docs.stripe.com/invoicing/send-email",
-        "community": false
+        "community": false,
+        "icon": "invoice"
       },
       {
         "title": {
@@ -488,7 +494,8 @@
           "en": "Never set this tool to “Always allow”, and read every write request before accepting it."
         },
         "source": "https://docs.stripe.com/mcp",
-        "community": false
+        "community": false,
+        "icon": "confirm"
       },
       {
         "title": {
@@ -502,7 +509,8 @@
           "en": "Check that MCP access is on for live mode in the Dashboard's “MCP and CLI access” settings and that your role allows it."
         },
         "source": "https://github.com/stripe/ai/issues/600",
-        "community": true
+        "community": true,
+        "icon": "blocked"
       },
       {
         "title": {
@@ -516,7 +524,8 @@
           "en": "Reconnect Stripe from your assistant when it stops answering."
         },
         "source": "https://docs.stripe.com/mcp",
-        "community": false
+        "community": false,
+        "icon": "session"
       }
     ],
     "sources": [

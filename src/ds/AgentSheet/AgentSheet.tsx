@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { AlertTriangle, Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X, ArrowUpRight, Lightbulb, Handshake, ListChecks as Checklist, Receipt, Megaphone, MessageSquare, Link2, Wallet } from "@/lib/icons";
+import { Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X, ArrowUpRight, Handshake, ListChecks as Checklist, Receipt, Megaphone, MessageSquare, Link2, Wallet, Tag, Database, PenLine, MessageCircle, Clock, Shield, PenTool, RefreshCw, Palette, SlidersHorizontal, WandSparkles, Boxes, Euro, Lock, ShieldAlert, Ban } from "@/lib/icons";
 import { getToolLogoSources } from "@/lib/toolLogos";
 import {
   CONSEQUENCE, clientName, forEveryone, isCopyRow, say, skillTitle, typo,
@@ -598,7 +598,7 @@ function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
       <ul className={styles.adviceCards}>
         {items.map((item) => (
           <li key={item.fr} className={styles.adviceCard} data-kind={key}>
-            <span className={styles.adviceIcon} data-palette={key === "tips" ? "mint" : "butter"} aria-hidden="true">{key === "tips" ? <Lightbulb /> : <AlertTriangle />}</span>
+            <span className={styles.adviceIcon} data-palette={key === "tips" ? "mint" : "butter"} aria-hidden="true">{ADVICE_ICON[item.icon]}</span>
             <p className={styles.adviceTitle}>{say(lang, item.title)}</p>
             <p className={styles.text}>{say(lang, item)}{item.workaround && <> <span className={styles.strong}>{t("La parade", "The way around")}</span>{t(" : ", ": ")}{lower(say(lang, item.workaround))}</>}</p>
             <a className={styles.cardSource} href={item.source} target="_blank" rel="noopener noreferrer">
@@ -622,6 +622,15 @@ function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
  * as the eyebrow, what it brings as the headline, then at the foot the request in a white bubble — the message to send —
  * and the round copy button in the corner.
  */
+/** A tip's or a pitfall's own pictogram (19/11): what the point is about, so two points never look alike. */
+const ADVICE_ICON = {
+  title: <Tag />, database: <Database />, approve: <ShieldCheck />, suggest: <PenLine />, click: <MessageCircle />,
+  guest: <UserRound />, slow: <Clock />, limit: <Gauge />, rights: <Shield />, brief: <PenTool />, refine: <RefreshCw />,
+  copy: <Copy />, brand: <Palette />, settings: <SlidersHorizontal />, draft: <WandSparkles />, credits: <Wallet />,
+  link: <Link2 />, admin: <Settings2 />, sandbox: <Boxes />, amount: <Euro />, key: <Lock />, mail: <Mail />,
+  invoice: <Receipt />, confirm: <ShieldAlert />, blocked: <Ban />, session: <LogOut />,
+} as const;
+
 const SITUATION_ICON = { meeting: <Handshake />, week: <Checklist />, invoice: <Receipt />, post: <Megaphone />, deck: <FileText />, feedback: <MessageSquare />, link: <Link2 />, unpaid: <Wallet /> } as const;
 
 function SituationCard({ situation, lang }: { situation: McpAdvice["situations"][number]; lang: Lang }) {

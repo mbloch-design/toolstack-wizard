@@ -741,7 +741,8 @@
         "fr": "Client, type de document, date : l'assistant s'appuie sur les titres pour comprendre ce qu'il trouve. « Notes 3 » ne l'aidera pas plus que vous.",
         "en": "Client, document type, date: the assistant relies on titles to understand what it finds. “Notes 3” won't help it any more than it helps you.",
         "source": "https://www.notion.com/help/notion-mcp",
-        "community": false
+        "community": false,
+        "icon": "title"
       },
       {
         "title": {
@@ -751,7 +752,8 @@
         "fr": "Clients, projets, factures, chacun dans sa base, avec les tâches reliées aux pages client : c'est ce qui lui permet de vous résumer l'avancement et les blocages.",
         "en": "Clients, projects, invoices, each in its own database, with tasks linked to client pages: that is what lets it sum up progress and blockers for you.",
         "source": "https://developers.notion.com/guides/mcp/overview",
-        "community": false
+        "community": false,
+        "icon": "database"
       },
       {
         "title": {
@@ -761,7 +763,8 @@
         "fr": "Dans les réglages du connecteur, laissez-le lire librement, mais gardez la modification et la suppression sous votre approbation.",
         "en": "In the connector's settings, let it read freely, but keep editing and deleting behind your approval.",
         "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
-        "community": false
+        "community": false,
+        "icon": "approve"
       },
       {
         "title": {
@@ -771,7 +774,8 @@
         "fr": "Demandez-lui de proposer une modification : vous l'acceptez dans Notion, et le texte que lit votre client reste le vôtre.",
         "en": "Ask it to suggest an edit: you accept it in Notion, and the text your client reads stays yours.",
         "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools",
-        "community": false
+        "community": false,
+        "icon": "suggest"
       },
       {
         "title": {
@@ -781,7 +785,8 @@
         "fr": "Chaque mise à jour demande votre accord. Pour vingt fiches d'un coup, ça devient un exercice de patience : travaillez par petits lots.",
         "en": "Every update asks for your approval. For twenty records at once, it turns into a patience exercise: work in small batches.",
         "source": "https://community.openai.com/t/trusted-approval-policy-for-repeated-connector-write-actions/1381447",
-        "community": true
+        "community": true,
+        "icon": "click"
       }
     ],
     "pitfalls": [
@@ -797,7 +802,8 @@
           "en": "Ask the client to add you as a member, or copy the pages you need into your own workspace."
         },
         "source": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
-        "community": false
+        "community": false,
+        "icon": "guest"
       },
       {
         "title": {
@@ -811,7 +817,8 @@
           "en": "Point to a specific page or database and work in small batches; for a full review, start from an export."
         },
         "source": "https://rahulsrivathsa-website.pages.dev/thoughts/mcp-learnings",
-        "community": true
+        "community": true,
+        "icon": "slow"
       },
       {
         "title": {
@@ -825,7 +832,8 @@
           "en": "Ask it to do fewer things at once, or try again a little later."
         },
         "source": "https://developers.notion.com/guides/mcp/rate-limits",
-        "community": false
+        "community": false,
+        "icon": "limit"
       },
       {
         "title": {
@@ -839,7 +847,8 @@
           "en": "Keep writing behind approval and try your requests on a test page first."
         },
         "source": "https://www.notion.com/help/notion-mcp",
-        "community": false
+        "community": false,
+        "icon": "rights"
       }
     ],
     "sources": [

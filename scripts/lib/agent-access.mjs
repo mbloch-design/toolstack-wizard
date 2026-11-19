@@ -152,6 +152,8 @@ export const CARD_MAX = 50;
 
 /** A situation's icon (19/11): what the moment is, from a closed list drawn in AgentSheet. */
 const SITUATION_ICONS = ["meeting", "week", "invoice", "post", "deck", "feedback", "link", "unpaid"];
+/** A tip's or a pitfall's own pictogram (19/11, « une variance de picto »), from a closed list drawn in AgentSheet. */
+const ADVICE_ICONS = ["title", "database", "approve", "suggest", "click", "guest", "slow", "limit", "rights", "brief", "refine", "copy", "brand", "settings", "draft", "credits", "link", "admin", "sandbox", "amount", "key", "mail", "invoice", "confirm", "blocked", "session"];
 const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "card", "meta_description", "examples", "for", "not_for", "control", "plan_words", "first_requests", "troubleshoot", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "claude_directory", "docs_url", "sources", "advice"]);
 const SKILL_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "server", "category", "summary", "agents", "install", "requires", "verified_on", "status", "docs_url", "sources",
   // Step 9 (18/11/2026), from the vendors' pages: what it does for you, a request to try, the search snippet, a readable name.
@@ -215,6 +217,7 @@ export function validateMcpSheet(sheet, { catalogSlugs, skillSlugs } = {}) {
     // The peer's voice (19/11): an introduction that sets the scene, and a short title opening every tip and pitfall.
     if (!isPair(a?.intro)) errors.push(`${at} : advice.intro fr/en`);
     for (const item of [...(a?.tips ?? []), ...(a?.pitfalls ?? [])]) if (!isPair(item?.title)) errors.push(`${at} : advice, titre fr/en manquant (${item?.fr?.slice(0, 30)})`);
+    for (const item of [...(a?.tips ?? []), ...(a?.pitfalls ?? [])]) if (!ADVICE_ICONS.includes(item?.icon)) errors.push(`${at} : advice, pictogramme hors liste (${item?.fr?.slice(0, 30)})`);
     if (!Array.isArray(a?.situations) || a.situations.length < 2 || a.situations.length > 3
       || !a.situations.every((x) => isPair(x?.title) && isPair(x?.ask) && isPair(x?.gain) && isUrl(x?.source) && SITUATION_ICONS.includes(x?.icon))) errors.push(`${at} : advice.situations, 2 ou 3 (titre, demande, gain, source, icône parmi ${SITUATION_ICONS.join(", ")})`);
     if (!Array.isArray(a?.tips) || a.tips.length < 3 || a.tips.length > 5 || !a.tips.every((x) => isPair(x) && sourced(x))) errors.push(`${at} : advice.tips, 3 à 5 conseils fr/en sourcés`);
