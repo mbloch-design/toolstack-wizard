@@ -1,193 +1,233 @@
 /**
- * PROPOSITION (19/11/2026), à valider par Michael : les illustrations dessinées des cartes de situation des fiches MCP.
- * Pas branché sur AgentSheet : la planche est dans SituationArt.stories.tsx.
+ * PROPOSITION (19/11/2026, second tour), à valider par Michael : les illustrations dessinées des cartes de situation des
+ * fiches MCP, dans la direction qu'il a donnée : « tracé crayon, scène ou dessin avec de l'autodérision et du second
+ * degré ». Pas branché sur AgentSheet : la planche est dans SituationArt.stories.tsx.
  *
- * Une scène est un petit fragment réel du résultat (la page résumée, la base de factures, le post et sa story…), décrit
- * une fois en formes simples ; chaque direction de style le rend à sa manière. Ainsi les trois directions montrent le même
- * sujet, et une scène nouvelle se dessine une seule fois pour toutes. Jamais de texte dans l'image : les lignes d'écriture
- * sont des traits. SVG inline, `aria-hidden` : le titre et la demande de la carte disent déjà tout.
+ * Chaque scène est un petit gag sur la vie de free (la facture qui court après le client, les factures qui attendent sur
+ * un banc jusqu'à la barbe…). Trait épais à la main, quasi monochrome, des aplats d'encre ponctuels, au plus une touche
+ * de la palette par dessin. Le crayon est simulé : un filtre de déplacement fait trembler le trait, une texture de bruit
+ * le grène. Jamais de texte dans l'image ; SVG inline, `aria-hidden`.
  */
-import type { CSSProperties } from "react";
+import { useId, type ReactNode } from "react";
 import styles from "./SituationArt.module.css";
 
-export type Tone = "paper" | "sky" | "butter" | "coral" | "mint" | "pink";
-type Shape = { fill: Tone; accent?: boolean };
-export type Part =
-  | (Shape & { el: "rect"; x: number; y: number; w: number; h: number; r?: number; rotate?: number })
-  | (Shape & { el: "circle"; cx: number; cy: number; r: number })
-  | (Shape & { el: "path"; d: string })
-  /** A stroke only: a line of writing, a tick, a hand, an arrow. */
-  | { el: "line"; d: string; rotate?: [number, number, number] };
+export type Touch = "sky" | "butter" | "coral" | "mint";
+const TOUCH: Record<Touch, string> = {
+  sky: "var(--tt-pal-sky)", butter: "var(--tt-pal-butter)", coral: "var(--tt-pal-coral)", mint: "var(--tt-pal-mint)",
+};
 
-export type Scene = { plate: Exclude<Tone, "paper">; parts: Part[] };
+/** The ink: the page's, so the drawing turns to chalk in dark mode by itself. */
+const line = { fill: "none", stroke: "currentColor", strokeWidth: 4.2, strokeLinecap: "round", strokeLinejoin: "round" } as const;
+const fine = { ...line, strokeWidth: 3 };
+const ink = { fill: "currentColor" } as const;
+/** A shape that hides what is behind it: the card's own grey, never a box. */
+const hide = { ...line, fill: "var(--tt-tile)" } as const;
+const touch = (tone: Touch) => ({ ...line, fill: TOUCH[tone] });
+
+/** A small black shoe, toe to the right (flip with scale(-1 1) about its heel). */
+const shoe = (x: number, y: number, flip = false) => (
+  <path d={`M${x} ${y}c0 -6 6 -7 9 -4c3 1 7 1 8 4z`} {...ink} {...line} transform={flip ? `translate(${2 * x + 17} 0) scale(-1 1)` : undefined} />
+);
+
+type Scene = { touch: Touch; draw: (t: Touch) => ReactNode };
 
 /** The nine pilot situations (research/mcp/{notion,canva,stripe}-mcp.json, advice.situations, in order). */
 export const SCENES = {
-  /** Notion · Préparer un rendez-vous client: the summarised page, its decision highlighted, the date beside it. */
-  "notion-meeting": { plate: "sky", parts: [
-    { el: "rect", x: 60, y: 22, w: 92, h: 100, r: 6, fill: "paper" },
-    { el: "line", d: "M74 40H124M74 52H138M74 64H116" },
-    { el: "rect", x: 70, y: 74, w: 74, h: 14, r: 4, fill: "butter", accent: true },
-    { el: "line", d: "M76 81H134M74 102H122" },
-    { el: "rect", x: 134, y: 58, w: 52, h: 48, r: 8, fill: "sky" },
-    { el: "line", d: "M134 72H186M148 53V63M172 53V63" },
-    { el: "circle", cx: 160, cy: 89, r: 6, fill: "coral" },
-  ] },
-  /** Notion · Faire le point de la semaine: the week's board, two cards done, one blocked. */
-  "notion-week": { plate: "sky", parts: [
-    { el: "rect", x: 40, y: 26, w: 160, h: 90, r: 8, fill: "paper" },
-    { el: "line", d: "M93 38V104M147 38V104" },
-    { el: "rect", x: 50, y: 40, w: 34, h: 16, r: 4, fill: "mint" },
-    { el: "rect", x: 50, y: 62, w: 34, h: 16, r: 4, fill: "mint" },
-    { el: "line", d: "M60 48l3 3l7 -7M60 70l3 3l7 -7" },
-    { el: "rect", x: 103, y: 40, w: 34, h: 16, r: 4, fill: "coral", accent: true },
-    { el: "line", d: "M120 44V49M120 52.5V53" },
-    { el: "rect", x: 103, y: 62, w: 34, h: 16, r: 4, fill: "sky" },
-    { el: "rect", x: 157, y: 40, w: 34, h: 16, r: 4, fill: "butter" },
-    { el: "line", d: "M162 92H186M162 100H180" },
-  ] },
-  /** Notion · Suivre les factures impayées: the invoices database, one status switched to « À relancer ». */
-  "notion-invoice": { plate: "butter", parts: [
-    { el: "rect", x: 36, y: 28, w: 168, h: 84, r: 8, fill: "paper" },
-    { el: "line", d: "M36 56H204M36 84H204M48 42H100M48 70H92M48 98H104" },
-    { el: "rect", x: 144, y: 35, w: 48, h: 14, r: 7, fill: "mint" },
-    { el: "rect", x: 144, y: 63, w: 48, h: 14, r: 7, fill: "butter", accent: true },
-    { el: "rect", x: 144, y: 91, w: 48, h: 14, r: 7, fill: "mint" },
-    { el: "line", d: "M134 64.5A6 6 0 1 0 134 75.5M134 60.5V64.5H130" },
-  ] },
-  /** Canva · Un post, puis sa version story: the square post, then the same layout standing up. */
-  "canva-post": { plate: "pink", parts: [
-    { el: "rect", x: 40, y: 34, w: 72, h: 72, r: 6, fill: "paper" },
-    { el: "circle", cx: 62, cy: 56, r: 9, fill: "butter" },
-    { el: "path", d: "M48 98L72 72L88 88L98 78L104 98Z", fill: "sky" },
-    { el: "line", d: "M120 70H140M135 65l5 5l-5 5" },
-    { el: "rect", x: 150, y: 18, w: 52, h: 104, r: 8, fill: "paper" },
-    { el: "circle", cx: 168, cy: 44, r: 8, fill: "butter", accent: true },
-    { el: "path", d: "M156 110L174 86L186 98L194 90L196 110Z", fill: "sky" },
-  ] },
-  /** Canva · Une présentation client tirée de vos notes: notes, then a slide, then the PDF. */
-  "canva-deck": { plate: "mint", parts: [
-    { el: "rect", x: 32, y: 32, w: 60, h: 78, r: 5, fill: "paper" },
-    { el: "line", d: "M42 48H80M42 58H76M42 68H82M42 78H70M42 88H78" },
-    { el: "line", d: "M100 66H120M115 61l5 5l-5 5" },
-    { el: "rect", x: 128, y: 30, w: 82, h: 54, r: 5, fill: "paper" },
-    { el: "rect", x: 140, y: 58, w: 9, h: 16, r: 1.5, fill: "sky" },
-    { el: "rect", x: 154, y: 50, w: 9, h: 24, r: 1.5, fill: "mint" },
-    { el: "rect", x: 168, y: 42, w: 9, h: 32, r: 1.5, fill: "coral" },
-    { el: "line", d: "M186 44H200M186 52H196" },
-    { el: "path", d: "M156 92H182L190 100V120H156Z", fill: "pink", accent: true },
-    { el: "line", d: "M182 92V100H190" },
-  ] },
-  /** Canva · Faire le point sur les retours d'un client: the slide and its comments, one resolved. */
-  "canva-feedback": { plate: "butter", parts: [
-    { el: "rect", x: 36, y: 36, w: 120, h: 78, r: 6, fill: "paper" },
-    { el: "rect", x: 48, y: 48, w: 48, h: 54, r: 4, fill: "sky" },
-    { el: "line", d: "M106 56H142M106 66H136M106 76H140" },
-    { el: "path", d: "M148 20h44a8 8 0 0 1 8 8v14a8 8 0 0 1 -8 8h-30l-10 8v-8h-4a8 8 0 0 1 -8 -8v-14a8 8 0 0 1 8 -8z", fill: "butter", accent: true },
-    { el: "line", d: "M150 31H186M150 39H174" },
-    { el: "path", d: "M166 72h30a8 8 0 0 1 8 8v12a8 8 0 0 1 -8 8h-22l-10 8v-8h0a8 8 0 0 1 -8 -8v-12a8 8 0 0 1 8 -8z", fill: "mint" },
-    { el: "line", d: "M172 86l4 4l8 -8" },
-  ] },
-  /** Stripe · Préparer une facture: the draft, its total, the magnifying glass of the review. */
-  "stripe-invoice": { plate: "mint", parts: [
-    { el: "rect", x: 66, y: 18, w: 86, h: 104, r: 6, fill: "paper" },
-    { el: "rect", x: 78, y: 30, w: 24, h: 10, r: 3, fill: "sky" },
-    { el: "line", d: "M78 54H138M78 64H128M78 74H134" },
-    { el: "rect", x: 78, y: 90, w: 60, h: 16, r: 4, fill: "mint" },
-    { el: "line", d: "M86 98H112M174 102L190 118" },
-    { el: "circle", cx: 164, cy: 92, r: 15, fill: "butter", accent: true },
-  ] },
-  /** Stripe · Créer un lien de paiement: the payment page and the link that carries it. */
-  "stripe-link": { plate: "sky", parts: [
-    { el: "rect", x: 36, y: 32, w: 104, h: 76, r: 8, fill: "paper" },
-    { el: "line", d: "M50 50H100M50 60H88" },
-    { el: "rect", x: 50, y: 80, w: 56, h: 16, r: 8, fill: "mint", accent: true },
-    { el: "line", d: "M158 66H182A10 10 0 0 1 182 86H158A10 10 0 0 1 158 66Z", rotate: [-40, 170, 76] },
-    { el: "line", d: "M176 48H200A10 10 0 0 1 200 68H176A10 10 0 0 1 176 48Z", rotate: [-40, 188, 58] },
-  ] },
-  /** Stripe · Savoir qui ne vous a pas encore payé: the open invoices fanned out, one overdue, the clock. */
-  "stripe-unpaid": { plate: "coral", parts: [
-    { el: "rect", x: 40, y: 40, w: 64, h: 80, r: 6, fill: "paper" },
-    { el: "line", d: "M48 52H76" },
-    { el: "rect", x: 82, y: 30, w: 64, h: 80, r: 6, fill: "paper" },
-    { el: "line", d: "M90 42H116" },
-    { el: "rect", x: 124, y: 20, w: 64, h: 80, r: 6, fill: "paper" },
-    { el: "line", d: "M136 36H170M136 46H162" },
-    { el: "rect", x: 136, y: 74, w: 40, h: 12, r: 3, fill: "coral", accent: true },
-    { el: "circle", cx: 186, cy: 100, r: 16, fill: "butter" },
-    { el: "line", d: "M186 91V100L193 104" },
-  ] },
+  /** Notion · Préparer un rendez-vous client: the assistant dives head first into the Notion attic; the one page that
+   *  matters flies out. */
+  "notion-meeting": { touch: "butter", draw: (t) => (
+    <>
+      <path d="M34 44L55 37L61 58L40 64Z" {...hide} />
+      <path d="M41 47l12 -4M43 53l10 -3" {...fine} />
+      <path d="M178 30L201 36L196 57L173 51Z" {...hide} />
+      <path d="M180 38l13 3M178 44l11 3" {...fine} />
+      <path d="M100 74C98 60 95 50 93 39M114 74C116 60 119 50 122 40" {...line} />
+      <path d="M84 40c-1 -8 10 -10 13 -3c2 4 -6 6 -13 3z" {...ink} {...line} />
+      <path d="M118 40c0 -8 11 -9 13 -2c1 4 -7 5 -13 2z" {...ink} {...line} />
+      <path d="M70 80L150 80L145 69L77 70Z" {...ink} {...line} />
+      <path d="M70 80L48 71L56 58L77 70M150 80L172 71L167 57L145 69" {...line} />
+      <path d="M70 80L150 80L150 134L70 134Z" {...hide} />
+      <path d="M90 96l40 0M84 104l10 0" {...fine} />
+      <path d="M178 84L203 79L208 104L183 109Z" {...touch(t)} />
+      <path d="M184 90l15 -3M186 97l14 -3" {...fine} />
+      <path d="M62 30q5 -7 12 -5M166 24q4 -7 11 -6M168 96q-6 -2 -10 2" {...fine} />
+      <path d="M60 140H162" {...fine} />
+    </>
+  ) },
+  /** Notion · Faire le point de la semaine: the week walks in, dragging its blocked task like a ball and chain. */
+  "notion-week": { touch: "coral", draw: (t) => (
+    <>
+      <path d="M48 92C44 100 40 108 36 114" {...fine} />
+      <circle cx="45" cy="98" r="3" {...fine} /><circle cx="40" cy="106" r="3" {...fine} /><circle cx="36" cy="114" r="3" {...fine} />
+      <circle cx="28" cy="125" r="12" {...touch(t)} />
+      <path d="M72 40L132 38L134 104L70 106Z" {...hide} />
+      <path d="M80 34v10M124 33v10M71 58H133M91 58V105M112 58V104M71 82H133" {...fine} />
+      <path d="M75 68l4 5l7 -9M96 66l4 5l7 -9" {...fine} />
+      <circle cx="95" cy="48" r="2.4" {...ink} /><circle cx="110" cy="48" r="2.4" {...ink} />
+      <path d="M140 44q3 6 0 9q-3 -3 0 -9M146 56q2 4 0 6q-2 -2 0 -6" {...fine} />
+      <path d="M71 72C60 76 53 84 48 92" {...line} />
+      <path d="M134 70C146 66 152 72 156 66" {...line} />
+      <path d="M90 106L84 128M114 105L121 126" {...line} />
+      {shoe(75, 129)}{shoe(118, 127)}
+      <path d="M150 116q10 -2 20 2M156 124q8 -1 14 1" {...fine} />
+    </>
+  ) },
+  /** Notion · Suivre les factures impayées: the invoice runs after the client, who is already leaving the frame. */
+  "notion-invoice": { touch: "butter", draw: (t) => (
+    <>
+      <path d="M26 62H46M22 76H42M28 90H48" {...fine} />
+      <path d="M60 46L104 40L112 100L68 106Z" {...touch(t)} />
+      <path d="M70 54l26 -4M71 61l20 -3" {...fine} />
+      <path d="M75 70l8 2M99 66l-8 3" {...fine} />
+      <circle cx="81" cy="76" r="2.4" {...ink} /><circle cx="95" cy="74" r="2.4" {...ink} />
+      <path d="M82 86q6 5 11 -1" {...fine} />
+      <path d="M109 68C122 64 132 60 144 58M144 58l6 -5M144 58l8 0M144 58l6 5" {...line} />
+      <path d="M80 105L70 124L60 121M98 103L110 117L124 112" {...line} />
+      {shoe(46, 122)}{shoe(122, 112)}
+      <circle cx="214" cy="36" r="10" {...hide} />
+      <path d="M202 52C208 48 222 48 228 52L226 86L202 86Z" {...hide} />
+      <path d="M226 62L234 72" {...line} />
+      <rect x="226" y="72" width="14" height="11" rx="2" {...ink} {...line} />
+      <path d="M200 84L190 110L180 110M210 84L222 106L236 102" {...line} />
+      {shoe(165, 111, true)}{shoe(234, 103)}
+      <path d="M182 52H194M178 64H192M184 76H196" {...fine} />
+    </>
+  ) },
+  /** Canva · Un post, puis sa version story: the square post and its tall twin, same face, same sun, one embarrassed. */
+  "canva-post": { touch: "butter", draw: (t) => (
+    <>
+      <path d="M40 64L100 62L101 122L41 123Z" {...hide} />
+      <circle cx="88" cy="74" r="5" {...touch(t)} />
+      <circle cx="61" cy="86" r="2.4" {...ink} /><circle cx="79" cy="86" r="2.4" {...ink} />
+      <path d="M61 100q9 7 18 0" {...fine} />
+      <path d="M56 123v12M84 122v12" {...line} />
+      {shoe(48, 136, true)}{shoe(83, 135)}
+      <path d="M140 22L178 21L179 124L141 125Z" {...hide} />
+      <circle cx="170" cy="32" r="5" {...touch(t)} />
+      <circle cx="152" cy="48" r="2.4" {...ink} /><circle cx="166" cy="48" r="2.4" {...ink} />
+      <path d="M152 62q7 -4 14 0" {...fine} />
+      <path d="M182 58q4 2 6 6" {...fine} />
+      <path d="M141 72C126 66 112 64 101 72" {...line} />
+      <path d="M152 125v12M168 124v12" {...line} />
+      {shoe(144, 138, true)}{shoe(167, 137)}
+      <path d="M152 12l7 -6l7 6" {...fine} />
+      <path d="M190 32h8M190 112h8M130 32h-6M130 112h-6" {...fine} />
+    </>
+  ) },
+  /** Canva · Une présentation client tirée de vos notes: the crumpled notes go in the mincer, a neat slide comes out. */
+  "canva-deck": { touch: "mint", draw: (t) => (
+    <>
+      <path d="M92 66L80 34H142L130 66" {...hide} />
+      <path d="M98 40c-2 -10 12 -14 18 -8c8 -2 11 10 2 12c-4 7 -17 5 -20 -4z" {...line} />
+      <path d="M104 37l6 4l4 -6M108 44l4 -2" {...fine} />
+      <path d="M84 66H136V96H84Z" {...hide} />
+      <path d="M100 79l4 2l-4 2M120 79l-4 2l4 2" {...fine} />
+      <path d="M136 80H156V60H166" {...line} />
+      <circle cx="170" cy="60" r="4.5" {...ink} />
+      <path d="M84 75H70V89H84" {...line} />
+      <path d="M96 96L90 126M124 96L130 126M80 128H140" {...line} />
+      <path d="M22 94L64 89L67 119L25 123Z" {...touch(t)} />
+      <path d="M34 114v-7M42 113v-13M50 112v-9M58 111v-15" {...line} />
+      <path d="M60 80l5 -5M54 74l2 -7M66 86l7 -2" {...fine} />
+      <path d="M178 66q5 -4 2 -10M184 72q8 -4 6 -14" {...fine} />
+    </>
+  ) },
+  /** Canva · Faire le point sur les retours d'un client: the slide buried under comments, a hand waving from the pile. */
+  "canva-feedback": { touch: "butter", draw: (t) => (
+    <>
+      <path d="M36 98H204V136H36Z" {...hide} />
+      <path d="M58 116l14 -10l12 8l10 -6l14 8" {...fine} />
+      <rect x="44" y="70" width="48" height="28" rx="12" {...hide} />
+      <rect x="132" y="72" width="46" height="26" rx="12" {...hide} />
+      <rect x="86" y="58" width="52" height="30" rx="13" {...hide} />
+      <path d="M100 88l-4 10l12 -10" {...hide} />
+      <rect x="62" y="36" width="44" height="26" rx="12" {...touch(t)} />
+      <path d="M70 62l-2 9l10 -9" {...touch(t)} />
+      <rect x="116" y="30" width="44" height="26" rx="12" {...hide} />
+      <rect x="152" y="50" width="38" height="22" rx="11" {...hide} />
+      {[[78, 49], [84, 49], [90, 49], [130, 43], [138, 43], [146, 43], [104, 73], [112, 73], [120, 73]].map(([x, y]) => <circle key={`${x}${y}`} cx={x} cy={y} r="2" {...ink} />)}
+      <path d="M186 96C192 86 194 78 196 66" {...line} />
+      <path d="M190 66c-1 -10 12 -11 12 -1M191 60v-9M196 58v-11M201 60v-8" {...line} />
+      <path d="M208 52q5 2 6 8M210 44q8 3 10 12" {...fine} />
+    </>
+  ) },
+  /** Stripe · Préparer une facture: the draft, knees knocking, under the magnifying glass of the review. */
+  "stripe-invoice": { touch: "sky", draw: (t) => (
+    <>
+      <path d="M70 56H112V122H70Z" {...hide} />
+      <path d="M76 64H100M76 70H92" {...fine} />
+      <circle cx="84" cy="82" r="5" {...fine} /><circle cx="99" cy="82" r="5" {...fine} />
+      <circle cx="85" cy="83" r="2" {...ink} /><circle cx="98" cy="83" r="2" {...ink} />
+      <path d="M83 98q3 -3 6 0q3 3 6 0q3 -3 6 0" {...fine} />
+      <path d="M82 122l5 10M100 122l-5 10" {...line} />
+      {shoe(72, 134, true)}{shoe(94, 134)}
+      <path d="M62 60q-3 6 0 9q3 -3 0 -9M58 76q-2 4 0 6q2 -2 0 -6" {...fine} />
+      <path d="M172 90L204 122" {...line} strokeWidth={7} />
+      <circle cx="150" cy="66" r="30" {...touch(t)} />
+      <path d="M128 66q22 -18 44 0q-22 18 -44 0" {...hide} />
+      <circle cx="146" cy="68" r="6" {...ink} />
+      <path d="M128 50q-4 -6 -2 -12M150 30q2 -6 8 -8" {...fine} />
+    </>
+  ) },
+  /** Stripe · Créer un lien de paiement: fishing for a payment, the link as the hook, a coin that wonders. */
+  "stripe-link": { touch: "butter", draw: (t) => (
+    <>
+      <path d="M58 82q10 -6 20 0t20 0t20 0t20 0t20 0t20 0t20 0" {...fine} />
+      <path d="M18 138L120 30" {...line} />
+      <circle cx="38" cy="117" r="6" {...line} />
+      <path d="M120 30C126 50 128 68 130 84" {...fine} />
+      <rect x="125" y="83" width="10" height="18" rx="5" {...line} />
+      <rect x="125" y="95" width="10" height="18" rx="5" {...line} />
+      <circle cx="178" cy="106" r="16" {...touch(t)} />
+      <circle cx="171" cy="101" r="2.4" {...ink} />
+      <path d="M163 110q3 2 6 0M194 106l13 -10v20z" {...line} />
+      <circle cx="160" cy="92" r="2" {...fine} /><circle cx="165" cy="86" r="1.5" {...fine} />
+      <path d="M8 146c4 -12 16 -12 18 -2" {...line} />
+    </>
+  ) },
+  /** Stripe · Savoir qui ne vous a pas encore payé: the open invoices wait on a bench, long enough to grow a beard. */
+  "stripe-unpaid": { touch: "coral", draw: (t) => (
+    <>
+      <circle cx="120" cy="22" r="12" {...touch(t)} />
+      <path d="M120 22V14M120 22L126 26" {...fine} />
+      <path d="M34 74H206M40 74V102M200 74V102M28 102H212M40 102V132M200 102V132" {...line} />
+      <path d="M54 56H86V102H54Z" {...hide} />
+      <path d="M61 72h6M73 72h6M64 86h12" {...fine} />
+      <path d="M104 50H136V102H104Z" {...hide} />
+      <circle cx="113" cy="66" r="2.4" {...ink} /><circle cx="127" cy="66" r="2.4" {...ink} />
+      <path d="M108 76C106 104 118 124 120 136C122 124 134 104 132 76C126 82 114 82 108 76Z" {...hide} />
+      <path d="M114 90l4 10M126 92l-3 10M120 104v12" {...fine} />
+      <path d="M154 56H186V102H154Z" {...hide} />
+      <path d="M161 72q3 3 6 0M173 72q3 3 6 0" {...fine} />
+      <path d="M62 102v16M78 102v16M160 102v16M178 102v16" {...line} />
+      {shoe(54, 119, true)}{shoe(77, 119)}{shoe(152, 119, true)}{shoe(177, 119)}
+      <path d="M212 104l-14 14M212 104v14M212 104h-14M204 110q4 4 8 1" {...fine} />
+    </>
+  ) },
 } satisfies Record<string, Scene>;
 
 export type SceneId = keyof typeof SCENES;
 
-/**
- * The three directions.
- * - ink: « Encre et aplat » — a fine night line (1.5) over pastel fills set a hair off (2 px), as a riso print; on bone.
- * - flat: « Aplats posés » — fills only, no outline, writing as short ink bars; on the scene's soft palette tone.
- * - line: « Trait seul » — one line in the page's ink, a single pastel accent, no plate; the size of a large pictogram.
- */
-export type Direction = "ink" | "flat" | "line";
-
-const FILL: Record<Tone, string> = {
-  paper: "var(--tt-pal-paper)", sky: "var(--tt-pal-sky)", butter: "var(--tt-pal-butter)", coral: "var(--tt-pal-coral)",
-  mint: "var(--tt-pal-mint)", pink: "var(--tt-pal-pink)",
-};
-const PLATE: Record<Scene["plate"], string> = {
-  sky: "var(--tt-pal-sky-soft)", butter: "var(--tt-pal-butter-soft)", coral: "var(--tt-pal-coral-soft)",
-  mint: "var(--tt-pal-mint-soft)", pink: "var(--tt-pal-pink-soft)",
-};
-/** The plates stay light in dark mode (as Ma stack's tiles): their ink is the fixed night, never the page's ink. */
-const NIGHT = "var(--tt-pal-night)";
-const CAST = "color-mix(in oklch, var(--tt-pal-night) 12%, transparent)";
-
-function shape(part: Exclude<Part, { el: "line" }>, props: Record<string, string | number>, key: string | number) {
-  if (part.el === "rect") {
-    const transform = part.rotate ? `rotate(${part.rotate} ${part.x + part.w / 2} ${part.y + part.h / 2})` : undefined;
-    return <rect key={key} x={part.x} y={part.y} width={part.w} height={part.h} rx={part.r ?? 0} transform={transform} {...props} />;
-  }
-  if (part.el === "circle") return <circle key={key} cx={part.cx} cy={part.cy} r={part.r} {...props} />;
-  return <path key={key} d={part.d} {...props} />;
-}
-
-const turn = (part: Extract<Part, { el: "line" }>) => (part.rotate ? `rotate(${part.rotate.join(" ")})` : undefined);
-
-function render(scene: Scene, direction: Direction) {
-  const stroke = { vectorEffect: "non-scaling-stroke", strokeLinecap: "round", strokeLinejoin: "round" } as const;
-  return scene.parts.flatMap((part, i) => {
-    if (direction === "ink") {
-      if (part.el === "line") return [<path key={i} d={part.d} transform={turn(part)} fill="none" stroke={NIGHT} strokeWidth={1.5} {...stroke} />];
-      // The fill set a hair off its line (paper stays in register: it is the sheet, not an ink).
-      const offset = part.fill === "paper" ? undefined : "translate(2.5 2.5)";
-      return [
-        <g key={`${i}f`} transform={offset}>{shape(part, { fill: FILL[part.fill] }, 0)}</g>,
-        shape(part, { fill: "none", stroke: NIGHT, strokeWidth: 1.5, ...stroke }, `${i}s`),
-      ];
-    }
-    if (direction === "flat") {
-      if (part.el === "line") return [<path key={i} d={part.d} transform={turn(part)} fill="none" stroke={NIGHT} strokeWidth={3} {...stroke} />];
-      // Paper on paper (stacked invoices, a card over a page) needs an edge without a line: a flat cast, 3 below.
-      const cast = part.fill === "paper" ? [<g key={`${i}c`} transform="translate(0 3)">{shape(part, { fill: CAST }, 0)}</g>] : [];
-      return [...cast, shape(part, { fill: FILL[part.fill] }, i)];
-    }
-    if (part.el === "line") return [<path key={i} d={part.d} transform={turn(part)} fill="none" stroke="currentColor" strokeWidth={1.5} {...stroke} />];
-    return [shape(part, { fill: part.accent ? FILL[part.fill] : "var(--tt-tile)", stroke: "currentColor", strokeWidth: 1.5, ...stroke }, i)];
-  });
-}
-
-export default function SituationArt({ scene, direction, style }: { scene: SceneId; direction: Direction; style?: CSSProperties }) {
-  const data: Scene = SCENES[scene];
-  if (direction === "line") {
-    return (
-      <svg className={styles.line} viewBox="24 10 192 120" aria-hidden="true" focusable="false" style={style}>
-        {render(data, direction)}
-      </svg>
-    );
-  }
-  const plate = direction === "ink" ? "var(--tt-pal-bone)" : PLATE[data.plate];
+/** The pencil: the line trembles (a low-frequency displacement), then a fine noise eats into it (the grain). */
+function Pencil({ id }: { id: string }) {
   return (
-    <svg className={styles.plate} viewBox="0 0 240 140" aria-hidden="true" focusable="false" style={{ background: plate, ...style }}>
-      {render(data, direction)}
+    <filter id={id} x="-5%" y="-5%" width="110%" height="110%" colorInterpolationFilters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="wobble" />
+      <feDisplacementMap in="SourceGraphic" in2="wobble" scale="3.2" xChannelSelector="R" yChannelSelector="G" result="shaky" />
+      <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="9" result="noise" />
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.75" result="grain" />
+      <feComposite in="shaky" in2="grain" operator="in" />
+    </filter>
+  );
+}
+
+export default function SituationArt({ scene, pencil = true }: { scene: SceneId; pencil?: boolean }) {
+  const id = `pencil-${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
+  const data: Scene = SCENES[scene];
+  return (
+    <svg className={styles.sketch} viewBox="0 0 240 150" aria-hidden="true" focusable="false">
+      {pencil && <defs><Pencil id={id} /></defs>}
+      <g filter={pencil ? `url(#${id})` : undefined}>{data.draw(data.touch)}</g>
     </svg>
   );
 }
