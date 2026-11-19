@@ -69,12 +69,12 @@ export const Notion: Story = {
     await expect(canvas.getByRole("button", { name: fr ? /^Voir les 20 autres actions/ : /^Show the 20 other actions/ }).closest("table")).not.toBeNull();
     await expect(canvas.getByText(fr ? /Sur Business et Enterprise/ : /On Business and Enterprise/)).toBeVisible();
     // Each situation says what it gains (19/11), in place of the first requests and their check.
-    // A situation card reads in one order: its title (h3), then what you gain, then the request; no step number.
-    for (const card of canvasElement.querySelectorAll("[data-situation]")) {
-      await expect(card.firstElementChild!.tagName).toBe("H3");
-      await expect(card.querySelector("[class*='stepNumber']")).toBeNull();
-      // The message is the reader's: no assistant's mark in it.
-      await expect(card.querySelector("[data-prompt] > :first-child > [aria-hidden='true']")).toBeNull();
+    // A situation (19/11, after Apple's cards): a light grey box, the situation as eyebrow, the headline (h3), the
+    // request at the foot and a round copy button that has a name.
+    for (const card of canvasElement.querySelectorAll<HTMLElement>("[data-situation]")) {
+      await expect(card.querySelector("h3")).not.toBeNull();
+      await expect(card.querySelector("button[aria-label]")!.getAttribute("aria-label")).toBe(fr ? "Copier la demande" : "Copy the request");
+      await expect(getComputedStyle(card).boxShadow).toBe("none");
     }
     // Tabs (step 8c): the assistants, then « Outil de code ▾ » and its menu.
     await expect(canvas.getByRole("tab", { name: /Claude/ })).toHaveAttribute("aria-selected", "true");

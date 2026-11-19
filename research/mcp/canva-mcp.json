@@ -464,8 +464,8 @@
           "en": "Create an Instagram post announcing my Saturday workshop, then make a story version of it."
         },
         "gain": {
-          "fr": "deux formats modifiables dans Canva, sans refaire la mise en page.",
-          "en": "two editable formats in Canva, without redoing the layout."
+          "fr": "Deux formats, une seule mise en page.",
+          "en": "Two formats, one layout."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/"
       },
@@ -479,8 +479,8 @@
           "en": "Turn these notes into a short presentation for my client, then export it as a PDF."
         },
         "gain": {
-          "fr": "une présentation mise en page et son PDF, sans quitter la conversation.",
-          "en": "a laid-out deck and its PDF, without leaving the chat."
+          "fr": "Vos notes deviennent un PDF.",
+          "en": "Your notes become a PDF."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/"
       },
@@ -494,8 +494,8 @@
           "en": "Show me the unresolved comments on the “Spring launch” deck."
         },
         "gain": {
-          "fr": "la liste de ce qu'il reste à corriger.",
-          "en": "the list of what's left to fix."
+          "fr": "Ce qu'il reste à corriger, d'un coup d'œil.",
+          "en": "What's left to fix, at a glance."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/"
       }

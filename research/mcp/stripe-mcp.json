@@ -370,8 +370,8 @@
           "en": "Draft an invoice for Studio Martin for the website redesign; I'll review it before you finalize it."
         },
         "gain": {
-          "fr": "client, lignes et brouillon de facture créés ; vous finalisez.",
-          "en": "customer, line items and draft invoice created; you finalize."
+          "fr": "Une facture prête à relire.",
+          "en": "An invoice ready to review."
         },
         "source": "https://docs.stripe.com/mcp"
       },
@@ -385,8 +385,8 @@
           "en": "Create a payment link for my “SEO audit” package and give me the URL to send the client."
         },
         "gain": {
-          "fr": "un lien prêt à coller dans votre e-mail ou votre devis.",
-          "en": "a link ready to paste into your email or quote."
+          "fr": "Un lien à coller dans votre devis.",
+          "en": "A link to paste into your quote."
         },
         "source": "https://docs.stripe.com/mcp"
       },
@@ -400,8 +400,8 @@
           "en": "Which invoices are still open, for which clients, and which are past due?"
         },
         "gain": {
-          "fr": "votre liste de relances, sans filtrer à la main.",
-          "en": "your follow-up list, with no manual filtering."
+          "fr": "Qui vous doit quoi, en une question.",
+          "en": "Who owes you what, in one question."
         },
         "source": "https://docs.stripe.com/mcp"
       }

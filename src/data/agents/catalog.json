@@ -1886,8 +1886,8 @@
               "en": "Create an Instagram post announcing my Saturday workshop, then make a story version of it."
             },
             "gain": {
-              "fr": "deux formats modifiables dans Canva, sans refaire la mise en page.",
-              "en": "two editable formats in Canva, without redoing the layout."
+              "fr": "Deux formats, une seule mise en page.",
+              "en": "Two formats, one layout."
             },
             "source": "https://www.canva.com/help/mcp-canva-usage/"
           },
@@ -1901,8 +1901,8 @@
               "en": "Turn these notes into a short presentation for my client, then export it as a PDF."
             },
             "gain": {
-              "fr": "une présentation mise en page et son PDF, sans quitter la conversation.",
-              "en": "a laid-out deck and its PDF, without leaving the chat."
+              "fr": "Vos notes deviennent un PDF.",
+              "en": "Your notes become a PDF."
             },
             "source": "https://www.canva.com/help/mcp-canva-usage/"
           },
@@ -1916,8 +1916,8 @@
               "en": "Show me the unresolved comments on the “Spring launch” deck."
             },
             "gain": {
-              "fr": "la liste de ce qu'il reste à corriger.",
-              "en": "the list of what's left to fix."
+              "fr": "Ce qu'il reste à corriger, d'un coup d'œil.",
+              "en": "What's left to fix, at a glance."
             },
             "source": "https://www.canva.com/help/mcp-canva-usage/"
           }
@@ -5417,8 +5417,8 @@
               "en": "Before my call with Dupont, summarise their latest meeting notes and any open decisions."
             },
             "gain": {
-              "fr": "l'historique en tête avant l'appel, sans rouvrir chaque page.",
-              "en": "the history in mind before the call, without reopening every page."
+              "fr": "L'historique en tête avant l'appel.",
+              "en": "The history in mind before the call."
             },
             "source": "https://developers.notion.com/guides/mcp/overview"
           },
@@ -5432,8 +5432,8 @@
               "en": "In my Projects database, list what is late or blocked and what I must deliver next week."
             },
             "gain": {
-              "fr": "un état des lieux en une réponse.",
-              "en": "a status overview in one answer."
+              "fr": "Votre semaine en une réponse.",
+              "en": "Your week in one answer."
             },
             "source": "https://developers.notion.com/guides/mcp/overview"
           },
@@ -5447,8 +5447,8 @@
               "en": "In my Invoices database, find the ones still “Sent” for over a month and switch them to “Follow up”."
             },
             "gain": {
-              "fr": "la liste des relances, et une base à jour.",
-              "en": "your follow-up list, and an up-to-date database."
+              "fr": "Les relances prêtes, la base à jour.",
+              "en": "Follow-ups ready, database up to date."
             },
             "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
           }
@@ -6641,8 +6641,8 @@
               "en": "Draft an invoice for Studio Martin for the website redesign; I'll review it before you finalize it."
             },
             "gain": {
-              "fr": "client, lignes et brouillon de facture créés ; vous finalisez.",
-              "en": "customer, line items and draft invoice created; you finalize."
+              "fr": "Une facture prête à relire.",
+              "en": "An invoice ready to review."
             },
             "source": "https://docs.stripe.com/mcp"
           },
@@ -6656,8 +6656,8 @@
               "en": "Create a payment link for my “SEO audit” package and give me the URL to send the client."
             },
             "gain": {
-              "fr": "un lien prêt à coller dans votre e-mail ou votre devis.",
-              "en": "a link ready to paste into your email or quote."
+              "fr": "Un lien à coller dans votre devis.",
+              "en": "A link to paste into your quote."
             },
             "source": "https://docs.stripe.com/mcp"
           },
@@ -6671,8 +6671,8 @@
               "en": "Which invoices are still open, for which clients, and which are past due?"
             },
             "gain": {
-              "fr": "votre liste de relances, sans filtrer à la main.",
-              "en": "your follow-up list, with no manual filtering."
+              "fr": "Qui vous doit quoi, en une question.",
+              "en": "Who owes you what, in one question."
             },
             "source": "https://docs.stripe.com/mcp"
           }

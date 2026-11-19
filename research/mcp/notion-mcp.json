@@ -693,8 +693,8 @@
           "en": "Before my call with Dupont, summarise their latest meeting notes and any open decisions."
         },
         "gain": {
-          "fr": "l'historique en tête avant l'appel, sans rouvrir chaque page.",
-          "en": "the history in mind before the call, without reopening every page."
+          "fr": "L'historique en tête avant l'appel.",
+          "en": "The history in mind before the call."
         },
         "source": "https://developers.notion.com/guides/mcp/overview"
       },
@@ -708,8 +708,8 @@
           "en": "In my Projects database, list what is late or blocked and what I must deliver next week."
         },
         "gain": {
-          "fr": "un état des lieux en une réponse.",
-          "en": "a status overview in one answer."
+          "fr": "Votre semaine en une réponse.",
+          "en": "Your week in one answer."
         },
         "source": "https://developers.notion.com/guides/mcp/overview"
       },
@@ -723,8 +723,8 @@
           "en": "In my Invoices database, find the ones still “Sent” for over a month and switch them to “Follow up”."
         },
         "gain": {
-          "fr": "la liste des relances, et une base à jour.",
-          "en": "your follow-up list, and an up-to-date database."
+          "fr": "Les relances prêtes, la base à jour.",
+          "en": "Follow-ups ready, database up to date."
         },
         "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
       }

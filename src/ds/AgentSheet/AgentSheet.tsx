@@ -7,7 +7,7 @@ import {
 } from "@/lib/agents";
 import { CLIENTS, CLIENT_MARKS, clientLabel, clientsOf, cursorInstallLink, plugCard, vsCodeInstallLink, type ClientId, type CopyAction } from "@/lib/agentClients";
 import { hookSentence, sheetMarkdown, sourceLinks } from "@/lib/agentSheet";
-import Button, { LinkArrow, TextButton, buttonAttrs, linkClass } from "../Button/Button";
+import Button, { IconButton, LinkArrow, TextButton, buttonAttrs, linkClass } from "../Button/Button";
 import Prompt from "../Prompt/Prompt";
 import Table from "../Table/Table";
 import Tabs from "../Tabs/Tabs";
@@ -84,13 +84,7 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
             lead={t("Des moments de votre semaine, et la phrase à lui écrire.", "Moments of your week, and the sentence to write to it.")}>
             <ol className={styles.cards}>
               {advice.situations.map((situation) => (
-                // What the reader looks for (19/11): in which situation (the title), what to type (the message, yours: no
-                // assistant's mark), what comes out (one line), then the copy button. No number: no sequence.
-                <li key={situation.ask.fr} className={styles.askCard} data-situation="">
-                  <h3 className={styles.situationTitle}>{say(lang, situation.title)}</h3>
-                  <Prompt tone="sent" text={lang === "en" ? situation.ask.en : situation.ask.fr} lang={lang}
-                    note={<p className={styles.situationResult}><span className={styles.strong}>{t("Résultat", "Result")}</span>{t(" : ", ": ")}{say(lang, situation.gain)}</p>} />
-                </li>
+                <SituationCard key={situation.ask.fr} situation={situation} lang={lang} />
               ))}
             </ol>
           </Chapter>
@@ -602,5 +596,28 @@ function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
       </section>
       </div>
     </div>
+  );
+}
+
+/**
+ * A situation (19/11, after Apple's store cards): a light grey box on the white sheet, no edge, no shadow. The situation
+ * as the eyebrow, what it brings as the headline, then at the foot the request in a white bubble — the message to send —
+ * and the round copy button in the corner.
+ */
+function SituationCard({ situation, lang }: { situation: McpAdvice["situations"][number]; lang: Lang }) {
+  const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
+  const [copied, setCopied] = useState(false);
+  const words = lang === "en" ? situation.ask.en : situation.ask.fr;
+  const copy = () => { void navigator.clipboard?.writeText(words).then(() => { setCopied(true); window.setTimeout(() => setCopied(false), 2000); }); };
+  return (
+    <li className={styles.situation} data-situation="">
+      <p className={styles.situationEyebrow}>{say(lang, situation.title)}</p>
+      <h3 className={styles.situationHeadline}>{say(lang, situation.gain)}</h3>
+      <p className={styles.situationMessage}>{words}</p>
+      <div className={styles.situationAction}>
+        <IconButton tone="grey" label={copied ? t("Copié", "Copied") : t("Copier la demande", "Copy the request")} icon={copied ? <Check /> : <Copy />} onClick={copy} />
+        <span className={styles.srOnly} aria-live="polite">{copied ? t("Copié", "Copied") : ""}</span>
+      </div>
+    </li>
   );
 }
