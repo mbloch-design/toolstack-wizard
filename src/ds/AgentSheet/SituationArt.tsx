@@ -1,7 +1,7 @@
 /**
- * PROPOSITION (19/11/2026, second tour), à valider par Michael : les illustrations dessinées des cartes de situation des
- * fiches MCP, dans la direction qu'il a donnée : « tracé crayon, scène ou dessin avec de l'autodérision et du second
- * degré ». Pas branché sur AgentSheet : la planche est dans SituationArt.stories.tsx.
+ * The pencil scenes of the MCP sheets' situation cards (19/11/2026). Michael's direction: « tracé crayon, scène ou dessin
+ * avec de l'autodérision et du second degré » ; then « parfait, go sur ça ». A situation names its scene in its data
+ * (advice.situations[].scene); SituationCard draws it in place of the icon round.
  *
  * Chaque scène est un petit gag sur la vie de free (la facture qui court après le client, les factures qui attendent sur
  * un banc jusqu'à la barbe…). Trait épais à la main, quasi monochrome, des aplats d'encre ponctuels, au plus une touche
@@ -9,6 +9,7 @@
  * le grène. Jamais de texte dans l'image ; SVG inline, `aria-hidden`.
  */
 import { useId, type ReactNode } from "react";
+import type { SituationScene } from "@/lib/agents";
 import styles from "./SituationArt.module.css";
 
 export type Touch = "sky" | "butter" | "coral" | "mint";
@@ -21,8 +22,9 @@ const line = { fill: "none", stroke: "currentColor", strokeWidth: 4.2, strokeLin
 const fine = { ...line, strokeWidth: 3 };
 const ink = { fill: "currentColor" } as const;
 /** A shape that hides what is behind it: the card's own grey, never a box. */
-const hide = { ...line, fill: "var(--tt-tile)" } as const;
-const touch = (tone: Touch) => ({ ...line, fill: TOUCH[tone] });
+// Token colours go in `style`, never in an attribute (DESIGN_SYSTEM, « Couleur et image »: an attribute takes no var()).
+const hide = { ...line, style: { fill: "var(--tt-tile)" } } as const;
+const touch = (tone: Touch) => ({ ...line, style: { fill: TOUCH[tone] } });
 
 /** A small black shoe, toe to the right (flip with scale(-1 1) about its heel). */
 const shoe = (x: number, y: number, flip = false) => (
@@ -206,9 +208,9 @@ export const SCENES = {
       <path d="M212 104l-14 14M212 104v14M212 104h-14M204 110q4 4 8 1" {...fine} />
     </>
   ) },
-} satisfies Record<string, Scene>;
+} satisfies Record<SituationScene, Scene>;
 
-export type SceneId = keyof typeof SCENES;
+export type SceneId = SituationScene;
 
 /** The pencil: the line trembles (a low-frequency displacement), then a fine noise eats into it (the grain). */
 function Pencil({ id }: { id: string }) {

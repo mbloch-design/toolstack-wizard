@@ -1,5 +1,4 @@
-/* PROPOSITION (19/11/2026, second tour : tracé crayon), à valider par Michael : illustrations des cartes de situation.
-   Rien ici n'est branché sur les fiches ; la planche vit dans SituationArt.stories.tsx. */
+/* The pencil scenes of the situation cards (19/11/2026), and the board of SituationArt.stories.tsx. */
 
 .board {
   display: grid;

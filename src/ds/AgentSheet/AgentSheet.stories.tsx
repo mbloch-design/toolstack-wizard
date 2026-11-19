@@ -85,6 +85,16 @@ export const Notion: Story = {
       await expect(card.querySelector("h3")).not.toBeNull();
       await expect(card.querySelector("button[aria-label]")!.getAttribute("aria-label")).toBe(fr ? "Copier la demande" : "Copy the request");
       await expect(getComputedStyle(card).boxShadow).toBe("none");
+      // Its pencil scene (19/11, « parfait, go sur ça »), in place of the icon round: a band of 96 on the text's left
+      // edge, 24 above the eyebrow, hidden from assistive technology, no text in it.
+      const art = card.querySelector<SVGSVGElement>(":scope > svg[aria-hidden='true']")!;
+      await expect(art).not.toBeNull();
+      await expect(card.querySelector("[data-palette]")).toBeNull();
+      await expect(art.querySelector("text")).toBeNull();
+      const box = art.getBoundingClientRect(), eyebrow = card.querySelector("p")!.getBoundingClientRect();
+      await expect(Math.round(box.height)).toBe(96);
+      await expect(Math.round(eyebrow.top - box.bottom)).toBe(24);
+      await expect(Math.abs(box.left - eyebrow.left)).toBeLessThan(3);
     }
     // Tabs (step 8c): the assistants, then « Outil de code ▾ » and its menu.
     await expect(canvas.getByRole("tab", { name: /Claude/ })).toHaveAttribute("aria-selected", "true");

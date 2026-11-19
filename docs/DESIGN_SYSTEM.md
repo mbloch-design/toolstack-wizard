@@ -109,6 +109,7 @@ Référence de qualité : apple.com. Chaque couleur saturée vibre, chaque image
 - Logos et pictogrammes en vectoriel (SVG) dès que possible ; sinon une source d'au moins 2x la taille affichée.
 - Recadrages, arrondis et ombres au pixel près : pas de bord blanc incrusté dans un logo, pas de double cadre.
 - Animations de décor : uniquement `transform` et `opacity` (composées par la carte graphique), jamais de propriété qui force à repeindre à chaque image.
+- Illustration : par défaut, une illustration montre un fragment réel du produit sur un plateau teinté, jamais une forme abstraite. Exception (19/11/2026, décision Michael, « parfait, go sur ça ») : les cartes de situation des fiches MCP portent une scène dessinée au crayon, au second degré (un gag sur la vie de free), trait épais à la main, quasi monochrome à l'encre de la page, au plus une touche de la palette (ciel, beurre, corail ou menthe). SVG inline (`SituationArt`), trait simulé par un filtre de déplacement et un grain de bruit ; bande de 96 px à la place de la pastille, sur le bord gauche du texte, 24 au-dessus du surtitre ; `aria-hidden`, jamais de texte dans l'image ; la scène se choisit dans les données (`advice.situations[].scene`), une situation sans scène garde sa pastille. Les styles d'autres illustrateurs servent de référence de trait, jamais de modèle à copier.
 
 ## Palette
 
@@ -1828,7 +1829,7 @@ Quand tout est réglé, la carte large devient le **bilan** : économie en compt
 
 ## Ma stack — landing et onboarding (`ss-*`, `sl-*`, `so-*`)
 
-- Non connecté : le hero est le sélecteur d'outils (`StackStarter`, `ss-*`) avec la carte « Votre stack » à droite. Sous le hero, bandes `sl-*` claires uniquement : pas de gris foncé ni de noir, les illustrations montrent un fragment réel du produit sur un plateau teinté (`--tone`), jamais une forme abstraite.
+- Non connecté : le hero est le sélecteur d'outils (`StackStarter`, `ss-*`) avec la carte « Votre stack » à droite. Sous le hero, bandes `sl-*` claires uniquement : pas de gris foncé ni de noir, les illustrations montrent un fragment réel du produit sur un plateau teinté (`--tone`), jamais une forme abstraite (règle « Image » ; seule exception, les scènes au crayon des fiches MCP).
 - Connecté avec une stack vide : un écran centré par étape (`so-*`), progression en segments, bouton « Retour » à gauche. Un seul champ libre : le prénom, et seulement s'il manque. Le tarif se choisit avec des pastilles et un stepper.
 - Mouvement : aucune `transform` ne doit rester sur un ancêtre du dock mobile fixe (`animation-fill-mode: backwards` sur les étapes). Le bonjour défile mot par mot dans une ligne masquée, sans fondu superposé. Chaque animation a son équivalent `prefers-reduced-motion`.
 - Accessibilité : pas de `aria-live` dans une page qui ouvre une fenêtre Radix, sinon la page reste exposée derrière elle.

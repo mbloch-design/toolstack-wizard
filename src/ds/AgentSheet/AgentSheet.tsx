@@ -18,6 +18,7 @@ import { Collapse } from "../Motion/Motion";
 import Drawer, { DrawerTitle } from "../Drawer/Drawer";
 import Chapter, { Chapters } from "../Chapter/Chapter";
 import { longDate } from "../AgentAccess/agentVerdict";
+import SituationArt from "./SituationArt";
 import styles from "./AgentSheet.module.css";
 
 /*
@@ -633,15 +634,18 @@ const ADVICE_ICON = {
 
 const SITUATION_ICON = { meeting: <Handshake />, week: <Checklist />, invoice: <Receipt />, post: <Megaphone />, deck: <FileText />, feedback: <MessageSquare />, link: <Link2 />, unpaid: <Wallet /> } as const;
 
-/** `art` (proposal of 19/11, not wired into the sheet yet): a drawing in place of the round, in the same row. */
-export function SituationCard({ situation, lang, art }: { situation: McpAdvice["situations"][number]; lang: Lang; art?: ReactNode }) {
+/** A situation with a scene (19/11) shows its pencil drawing in place of the icon round, in the same row: a band of 96
+ *  on the text's left edge, 24 above the eyebrow. Without one, the round stays. */
+export function SituationCard({ situation, lang, pencil = true }: { situation: McpAdvice["situations"][number]; lang: Lang; pencil?: boolean }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   const [copied, setCopied] = useState(false);
   const words = lang === "en" ? situation.ask.en : situation.ask.fr;
   const copy = () => { void navigator.clipboard?.writeText(words).then(() => { setCopied(true); window.setTimeout(() => setCopied(false), 2000); }); };
   return (
     <li className={styles.situation} data-situation="">
-      {art ?? <span className={styles.situationIcon} data-palette="sky" aria-hidden="true">{SITUATION_ICON[situation.icon]}</span>}
+      {situation.scene
+        ? <SituationArt scene={situation.scene} pencil={pencil} />
+        : <span className={styles.situationIcon} data-palette="sky" aria-hidden="true">{SITUATION_ICON[situation.icon]}</span>}
       <p className={styles.situationEyebrow}>{say(lang, situation.title)}</p>
       <h3 className={styles.situationHeadline}>{say(lang, situation.gain)}</h3>
       <p className={styles.situationMessage}>{words}</p>

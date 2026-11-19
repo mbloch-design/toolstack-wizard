@@ -697,7 +697,8 @@
           "en": "The history in mind before the call."
         },
         "source": "https://developers.notion.com/guides/mcp/overview",
-        "icon": "meeting"
+        "icon": "meeting",
+        "scene": "notion-meeting"
       },
       {
         "title": {
@@ -713,7 +714,8 @@
           "en": "Your week in one answer."
         },
         "source": "https://developers.notion.com/guides/mcp/overview",
-        "icon": "week"
+        "icon": "week",
+        "scene": "notion-week"
       },
       {
         "title": {
@@ -729,7 +731,8 @@
           "en": "Follow-ups ready, database up to date."
         },
         "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools",
-        "icon": "invoice"
+        "icon": "invoice",
+        "scene": "notion-invoice"
       }
     ],
     "tips": [

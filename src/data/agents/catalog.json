@@ -1890,7 +1890,8 @@
               "en": "Two formats, one layout."
             },
             "source": "https://www.canva.com/help/mcp-canva-usage/",
-            "icon": "post"
+            "icon": "post",
+            "scene": "canva-post"
           },
           {
             "title": {
@@ -1906,7 +1907,8 @@
               "en": "Your notes become a PDF."
             },
             "source": "https://www.canva.com/help/mcp-canva-usage/",
-            "icon": "deck"
+            "icon": "deck",
+            "scene": "canva-deck"
           },
           {
             "title": {
@@ -1922,7 +1924,8 @@
               "en": "What's left to fix, at a glance."
             },
             "source": "https://www.canva.com/help/mcp-canva-usage/",
-            "icon": "feedback"
+            "icon": "feedback",
+            "scene": "canva-feedback"
           }
         ],
         "tips": [
@@ -5433,7 +5436,8 @@
               "en": "The history in mind before the call."
             },
             "source": "https://developers.notion.com/guides/mcp/overview",
-            "icon": "meeting"
+            "icon": "meeting",
+            "scene": "notion-meeting"
           },
           {
             "title": {
@@ -5449,7 +5453,8 @@
               "en": "Your week in one answer."
             },
             "source": "https://developers.notion.com/guides/mcp/overview",
-            "icon": "week"
+            "icon": "week",
+            "scene": "notion-week"
           },
           {
             "title": {
@@ -5465,7 +5470,8 @@
               "en": "Follow-ups ready, database up to date."
             },
             "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools",
-            "icon": "invoice"
+            "icon": "invoice",
+            "scene": "notion-invoice"
           }
         ],
         "tips": [
@@ -6669,7 +6675,8 @@
               "en": "An invoice ready to review."
             },
             "source": "https://docs.stripe.com/mcp",
-            "icon": "invoice"
+            "icon": "invoice",
+            "scene": "stripe-invoice"
           },
           {
             "title": {
@@ -6685,7 +6692,8 @@
               "en": "A link to paste into your quote."
             },
             "source": "https://docs.stripe.com/mcp",
-            "icon": "link"
+            "icon": "link",
+            "scene": "stripe-link"
           },
           {
             "title": {
@@ -6701,7 +6709,8 @@
               "en": "Who owes you what, in one question."
             },
             "source": "https://docs.stripe.com/mcp",
-            "icon": "unpaid"
+            "icon": "unpaid",
+            "scene": "stripe-unpaid"
           }
         ],
         "tips": [

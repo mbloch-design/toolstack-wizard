@@ -468,7 +468,8 @@
           "en": "Two formats, one layout."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/",
-        "icon": "post"
+        "icon": "post",
+        "scene": "canva-post"
       },
       {
         "title": {
@@ -484,7 +485,8 @@
           "en": "Your notes become a PDF."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/",
-        "icon": "deck"
+        "icon": "deck",
+        "scene": "canva-deck"
       },
       {
         "title": {
@@ -500,7 +502,8 @@
           "en": "What's left to fix, at a glance."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/",
-        "icon": "feedback"
+        "icon": "feedback",
+        "scene": "canva-feedback"
       }
     ],
     "tips": [

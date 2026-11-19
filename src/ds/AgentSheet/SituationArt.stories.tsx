@@ -1,21 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect } from "storybook/test";
 import catalog from "@/data/agents/catalog.json";
-import { say, type McpAdvice, type McpSheet } from "@/lib/agents";
+import { say, type McpAdvice, type McpSheet, type SituationScene } from "@/lib/agents";
 import { SituationCard } from "./AgentSheet";
 import sheet from "./AgentSheet.module.css";
-import SituationArt, { type SceneId } from "./SituationArt";
 import styles from "./SituationArt.module.css";
 
 /*
- * PROPOSITION du 19/11/2026, second tour, à valider par Michael. Sa direction, avec ses mots : « je veux ce genre de
- * style, tracé crayon, scène ou dessin avec de l'autodérision et du second degré ». Ses références (d'autres
- * illustrateurs) ne sont pas dans le dépôt : on n'en retient que des traits de style, sans copier ni décalquer.
- * Rien n'est branché sur les fiches avant son choix.
+ * The pencil scenes of the MCP sheets' situation cards (19/11/2026). Michael's direction: « je veux ce genre de style,
+ * tracé crayon, scène ou dessin avec de l'autodérision et du second degré », then « parfait, go sur ça ». His references
+ * (other illustrators' work) are not in the repository: only traits of style were kept, nothing copied or traced.
+ * Each card is the sheet's own SituationCard; the scene comes from the data (advice.situations[].scene).
  */
 
 const meta: Meta = {
-  title: "Agents/Illustrations (proposition)",
+  title: "Agents/Illustrations",
   tags: ["a-valider"],
   parameters: { layout: "padded" },
 };
@@ -24,14 +23,14 @@ type Story = StoryObj;
 
 const advice = (slug: string) => (catalog.servers as McpSheet[]).find((s) => s.slug === slug)!.advice!;
 
-const TOOLS = [
-  { name: "Notion", advice: advice("notion-mcp"), scenes: ["notion-meeting", "notion-week", "notion-invoice"] },
-  { name: "Canva", advice: advice("canva-mcp"), scenes: ["canva-post", "canva-deck", "canva-feedback"] },
-  { name: "Stripe", advice: advice("stripe-mcp"), scenes: ["stripe-invoice", "stripe-link", "stripe-unpaid"] },
-] as const satisfies readonly { name: string; advice: McpAdvice; scenes: readonly SceneId[] }[];
+const TOOLS: { name: string; advice: McpAdvice }[] = [
+  { name: "Notion", advice: advice("notion-mcp") },
+  { name: "Canva", advice: advice("canva-mcp") },
+  { name: "Stripe", advice: advice("stripe-mcp") },
+];
 
-/** The gag of each scene, for the reviewer and the illustrator's brief (the card itself never says it). */
-const GAGS: Record<SceneId, string> = {
+/** The gag of each scene, for the reviewer and whoever draws the next ones (the card itself never says it). */
+const GAGS: Record<SituationScene, string> = {
   "notion-meeting": "L'assistant plonge tête la première dans le grenier Notion ; la seule page utile s'envole.",
   "notion-week": "La semaine arrive en traînant sa tâche bloquée comme un boulet.",
   "notion-invoice": "La facture court après le client, qui sort déjà du cadre.",
@@ -49,11 +48,8 @@ function Board({ pencil }: { pencil: boolean }) {
       {TOOLS.map((tool) => (
         <section key={tool.name} className={styles.direction} aria-label={tool.name}>
           <p className={styles.tool}>{tool.name}</p>
-          {/* The sheet's own list and card (SituationCard), the drawing in place of the round. */}
           <ul className={sheet.cards}>
-            {tool.advice.situations.map((situation, i) => (
-              <SituationCard key={situation.ask.fr} situation={situation} lang="fr" art={<SituationArt scene={tool.scenes[i]} pencil={pencil} />} />
-            ))}
+            {tool.advice.situations.map((situation) => <SituationCard key={situation.ask.fr} situation={situation} lang="fr" pencil={pencil} />)}
           </ul>
         </section>
       ))}
@@ -61,64 +57,46 @@ function Board({ pencil }: { pencil: boolean }) {
   );
 }
 
-function Recommendation() {
+function Rule() {
   return (
-    <aside className={styles.reco} aria-label="Recommandation">
-      <h2 className={styles.title}>Tracé crayon : ce que le code donne, et comment aller plus loin</h2>
+    <aside className={styles.reco} aria-label="La règle">
+      <h2 className={styles.title}>Une scène au crayon, au second degré</h2>
       <p className={styles.text}>
-        Les neuf scènes ci-dessous sont codées en SVG : trait épais, une seule touche de la palette par dessin (ciel, beurre,
-        corail ou menthe), le reste à l'encre de la page. Un filtre de déplacement fait trembler le trait, une texture de
-        bruit le grène. La story « Sans crayon » montre les mêmes dessins sans ce filtre.
+        Une carte de situation d'une fiche MCP porte une scène dessinée : un gag sur la vie de free, trait épais à la main,
+        quasi monochrome, au plus une touche de la palette (ciel, beurre, corail ou menthe). Une bande de 96 px, calée sur le
+        bord gauche du texte, 24 au-dessus du surtitre, à la place de la pastille. Une situation sans scène garde sa
+        pastille. Le trait est simulé en SVG : un filtre de déplacement le fait trembler, une texture de bruit le grène.
+        aria-hidden, jamais de texte dans l'image.
       </p>
+      <p className={styles.text}>Les gags :</p>
       <ul className={styles.text}>
-        <li>SVG codé (cette planche). Pour : léger (quelques ko par dessin, rien à charger), couleurs en jetons, mode sombre sans effort (l'encre devient craie), net à toute taille, retouchable dans le code. Contre, franchement : le trait tremble mais ne vit pas. L'épaisseur est presque constante, sans pression ni accident de pinceau, et le grain est le même partout. Surtout, le dessin reste celui de quelqu'un qui place des coordonnées : personnages sommaires, expressions limitées, gags lisibles mais sans la main d'un illustrateur. Bon pour une maquette, pas au niveau des références.</li>
-        <li>Images générées, puis nettoyées et vectorisées. Pour : vraie texture, variantes rapides. Contre : cohérence difficile d'un dessin à l'autre, risque de reproduire de trop près les illustrateurs qu'on cite (exclu), provenance et droits flous, nettoyage à la main de chaque image, SVG vectorisés lourds (des dizaines de ko) et touche de couleur à reposer à la main.</li>
-        <li>Commande à un illustrateur. Pour : un vrai trait, une vraie autodérision, une cohérence garantie, des droits clairs par contrat. Contre : coût et délai sur devis, et chaque nouvelle fiche dépend de lui si l'on commande scène par scène.</li>
+        {TOOLS.flatMap((tool) => tool.advice.situations.map((situation) => situation.scene && <li key={situation.scene}>{tool.name} · {say("fr", situation.title)} : {GAGS[situation.scene]}</li>))}
       </ul>
-      <p className={styles.text}>
-        <strong>Recommandation : la commande à un illustrateur</strong>, sous forme d'une petite bibliothèque plutôt que de
-        scènes à l'unité. Une douzaine de personnages et d'objets récurrents (la facture qui marche, l'assistant, la page, la
-        pièce…), un guide de trait, livrés en SVG à une seule encre et un calque de couleur. On compose ensuite les scènes de
-        chaque fiche dans le code, avec la touche de palette en jeton. Cette planche sert de brief : les gags, le cadrage et
-        la place dans la carte sont posés. Limites : un budget et quelques semaines ; une cession de droits à prévoir pour le
-        web ; au-delà de la bibliothèque, une scène vraiment nouvelle repasse par lui.
-      </p>
-      <p className={styles.text}>Les gags, pour le brief :</p>
-      <ul className={styles.text}>
-        {TOOLS.flatMap((tool) => tool.scenes.map((scene) => <li key={scene}>{tool.name} · {GAGS[scene]}</li>))}
-      </ul>
-      <p className={styles.text}>
-        Emplacement : en tête de carte, à la place de la pastille, sur le gris de la carte, sans plateau. Une bande fixe de
-        96 px dans toutes les cartes, le dessin calé sur le bord gauche du texte et posé sur le bas de la bande, 24 au-dessus
-        du surtitre ; tous les dessins à la même échelle. Accessibilité : aria-hidden, jamais de texte dans l'image. Règle à amender, à toi Michael : le système
-        dit qu'une illustration montre « un fragment réel du produit sur un plateau teinté, jamais une forme abstraite » ;
-        ces scènes ne sont ni un fragment réel ni sur un plateau.
-      </p>
     </aside>
   );
 }
 
-/** The board: the recommendation, then the nine pilot situations drawn in pencil. */
+/** The nine pilot situations, as the sheets show them. */
 export const Planche: Story = {
   render: () => (
     <div className={styles.board}>
-      <Recommendation />
+      <Rule />
       <Board pencil />
     </div>
   ),
   play: async ({ canvasElement }) => {
-    const drawings = [...canvasElement.querySelectorAll("li svg[aria-hidden='true']")];
+    const drawings = [...canvasElement.querySelectorAll("[data-situation] > svg[aria-hidden='true']")];
     await expect(drawings.length).toBe(9);
     // No text in a drawing, and at most one palette touch per drawing.
-    await expect(canvasElement.querySelectorAll("li svg text").length).toBe(0);
+    await expect(canvasElement.querySelectorAll("[data-situation] svg text").length).toBe(0);
     for (const svg of drawings) {
-      const touches = new Set([...svg.querySelectorAll("[fill^='var(--tt-pal-']")].map((el) => el.getAttribute("fill")));
+      const touches = new Set([...svg.querySelectorAll<SVGElement>("[style*='--tt-pal-']")].map((el) => el.style.fill));
       await expect(touches.size).toBeLessThanOrEqual(1);
     }
   },
 };
 
-/** The same drawings without the pencil filter: what the trembling and the grain add, and what they cannot. */
+/** The same drawings without the pencil filter: what the trembling and the grain add. */
 export const SansCrayon: Story = {
   name: "Sans crayon",
   render: () => (
@@ -126,4 +104,17 @@ export const SansCrayon: Story = {
       <Board pencil={false} />
     </div>
   ),
+};
+
+/** A situation without a scene (the other sheets, the situations to come) keeps its icon round. */
+export const SansScene: Story = {
+  name: "Sans scène",
+  render: () => {
+    const situation = { ...advice("notion-mcp").situations[0], scene: undefined };
+    return <ul className={sheet.cards}><SituationCard situation={situation} lang="fr" /></ul>;
+  },
+  play: async ({ canvasElement }) => {
+    await expect(canvasElement.querySelector("[data-situation] [data-palette='sky'] > svg")).not.toBeNull();
+    await expect(canvasElement.querySelector("[data-situation] > svg")).toBeNull();
+  },
 };

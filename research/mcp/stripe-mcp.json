@@ -374,7 +374,8 @@
           "en": "An invoice ready to review."
         },
         "source": "https://docs.stripe.com/mcp",
-        "icon": "invoice"
+        "icon": "invoice",
+        "scene": "stripe-invoice"
       },
       {
         "title": {
@@ -390,7 +391,8 @@
           "en": "A link to paste into your quote."
         },
         "source": "https://docs.stripe.com/mcp",
-        "icon": "link"
+        "icon": "link",
+        "scene": "stripe-link"
       },
       {
         "title": {
@@ -406,7 +408,8 @@
           "en": "Who owes you what, in one question."
         },
         "source": "https://docs.stripe.com/mcp",
-        "icon": "unpaid"
+        "icon": "unpaid",
+        "scene": "stripe-unpaid"
       }
     ],
     "tips": [

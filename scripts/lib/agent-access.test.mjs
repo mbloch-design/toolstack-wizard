@@ -98,6 +98,16 @@ describe("agents hub and sheet contract", () => {
     expect(errors).toContain("examples");
     expect(errors).toContain("for et not_for");
   });
+
+  it("takes a situation's pencil scene from the closed list, and lets a situation go without one", () => {
+    const notion = servers.find((s) => s.slug === "notion-mcp");
+    const bare = structuredClone(notion);
+    delete bare.advice.situations[0].scene;
+    expect(validateMcpSheet(bare)).toEqual([]);
+    const odd = structuredClone(notion);
+    odd.advice.situations[0].scene = "notion-elsewhere";
+    expect(validateMcpSheet(odd).join("\n")).toContain("scène hors liste (notion-elsewhere)");
+  });
 });
 
 describe("recipes between two tools (step 6)", () => {
