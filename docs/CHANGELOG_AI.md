@@ -1,3 +1,10 @@
+## 2026-11-19 · Axe MCP · R2 : le SEO de l'avis de free (branche `claude/r2-seo-mcp-7c354f`, non poussée)
+
+- Descriptions de recherche : les 19 `meta_description` (fr/en, 140 à 155 signes) partent du verdict et d'une situation, sans prix, quota ni durée. Seul ce champ change dans `research/mcp/*.json`.
+- JSON-LD des fiches serveur (`src/lib/agentsSeo.ts`) : la FAQPage existante reçoit le verdict, les situations, les conseils et les pièges. Google n'affiche plus ni HowTo (depuis 2023) ni FAQ (depuis le 7 mai 2026) en résultat enrichi. FAQPage reste lue par Bing et les assistants. Le choix est justifié dans le commit.
+- `llms.txt` (section « AI Agents ») et `llms-full.txt` (avis complet fr/en avant le catalogue, sans crochet pour ne pas gêner `api/tool-md.ts`) via `scripts/lib/llms-agents.mjs`.
+- Vérifié : tsc, `npm test` (1 199), `test:seo-contracts`, `check:agents-seo` (54 pages, 0 écart), `validate:seo-generated`, `guard:agent-access`.
+
 ## 2026-11-17 · Axe MCP · section agents S1 bis : accompagner, pas un annuaire (même branche, non poussée)
 
 - Contenu ToolTrim : demandes types, « utile si » et « moins utile si » sur les 19 fiches serveur, écrits depuis les outils documentés ; 8 besoins du hub (`research/agents/needs.json`), garde-fou testé (un besoin mène toujours à une fiche).
