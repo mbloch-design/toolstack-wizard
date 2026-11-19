@@ -19,7 +19,7 @@ export default function Prompt({ text, lang, size = "reading", tone = "wash", ma
   /** reading: 17, a step's request; lead: 21, a card's request, the message to send. */
   size?: "reading" | "lead";
   /** wash: the message on a wash of ink (a step's request). sent (19/11): the reader's own message as a chat shows it,
-   *  ink ground, light words, its lower corner pinched; the anchor of a situation card. */
+   *  a breath of the brand blue, a hairline, its lower corner pinched; the anchor of a situation. */
   tone?: "wash" | "sent";
   /** The chosen assistant's mark (20 px), at the message's left, as in a conversation. */
   mark?: ReactNode;

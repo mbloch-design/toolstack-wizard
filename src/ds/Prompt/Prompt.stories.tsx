@@ -32,12 +32,17 @@ export const Copier: Story = {
 };
 export const Grande: Story = { render: (_args, { globals }) => <Prompt text={REQUEST} lang={globals.lang} size="lead" /> };
 
-/** The reader's message on a situation card (19/11): ink ground, light words, a pinched corner; the words stay AA. */
+/** The reader's message (19/11): a breath of the brand blue, a hairline, a pinched corner; never a flat of ink. */
 export const Envoyee: Story = {
   render: (_args, { globals }) => <Prompt text={REQUEST} lang={globals.lang} tone="sent" />,
   play: async ({ canvasElement }) => {
     const message = canvasElement.querySelector<HTMLElement>("[data-tone=sent]")!;
-    const words = message.querySelector("p")!;
-    await expect(getComputedStyle(message).backgroundColor).not.toBe(getComputedStyle(words).color);
+    // A light ground under the words, never a flat of ink.
+    // Read on a canvas: the browser may give oklch() or color(); the pixel is plain sRGB.
+    const context = document.createElement("canvas").getContext("2d")!;
+    context.fillStyle = getComputedStyle(message).backgroundColor;
+    context.fillRect(0, 0, 1, 1);
+    const [r, g, b] = context.getImageData(0, 0, 1, 1).data;
+    await expect(Math.min(r, g, b)).toBeGreaterThan(200);
   },
 };

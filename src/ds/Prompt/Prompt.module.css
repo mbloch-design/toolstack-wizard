@@ -32,14 +32,12 @@
   overflow-wrap: break-word;
 }
 
-/* The reader's own message (19/11, « manque de contraste »): the sent bubble of a chat, ink ground and light words. */
+/* The reader's own message (19/11): a sent bubble, in finesse — a breath of the brand blue, a hairline, its lower
+   corner pinched; the words in ink. Never a flat of ink (« jamais d'aplat noir »). */
 .message[data-tone="sent"] {
   border-end-end-radius: var(--tt-space-1);
-  background: var(--tt-ink);
-}
-
-.message[data-tone="sent"] .words {
-  color: var(--tt-bg);
+  background: var(--tt-message-sent-bg);
+  box-shadow: var(--tt-message-sent-edge);
 }
 
 .words[data-size="lead"] {

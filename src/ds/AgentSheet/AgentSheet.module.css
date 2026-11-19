@@ -106,6 +106,15 @@
    the button sits at the foot, at least 24 below. */
 .askCard[data-situation] {
   gap: var(--tt-space-6);
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+/* No box on the white sheet (19/11, « les box sur fond blanc »): the situations are columns laid on the page, held
+   apart by space alone. */
+.cards:has(> [data-situation]) {
+  gap: var(--tt-gap-head) var(--tt-space-12);
 }
 
 .askCard[data-situation] [data-prompt] {
