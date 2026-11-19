@@ -19,7 +19,7 @@ import { PILOTS } from "./scenes/pilots";
 import styles from "./SituationArt.module.css";
 
 /** Every scene, by the id a situation names in its data (advice.situations[].scene). */
-export const SCENES = {
+export const scenes = {
   ...PILOTS,
   ...LOT1,
   ...LOT2,
@@ -53,7 +53,7 @@ const PAD = 4; // elsewhere, half the line plus the pencil's tremble
 
 export default function SituationArt({ scene, pencil = true }: { scene: SceneId; pencil?: boolean }) {
   const id = `pencil-${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
-  const data: Scene = SCENES[scene];
+  const data: Scene = scenes[scene];
   const [x0, , x1, y1] = data.box;
   const viewBox = `${x0 - EDGE} ${y1 + PAD - BAND} ${x1 - x0 + EDGE + PAD} ${BAND}`;
   return (

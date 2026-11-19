@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect } from "storybook/test";
 import catalog from "@/data/agents/catalog.json";
 import { say, type McpAdvice, type McpSheet } from "@/lib/agents";
-import { SituationCard } from "./AgentSheet";
-import sheet from "./AgentSheet.module.css";
-import { SCENES } from "./SituationArt";
+import { SituationCard } from "./SituationCard";
+import sheet from "../AgentSheet/AgentSheet.module.css";
+import { scenes } from "./SituationArt";
 import styles from "./SituationArt.module.css";
 
 /*
@@ -61,7 +61,7 @@ function Rule() {
       </p>
       <p className={styles.text}>Les gags :</p>
       <ul className={styles.text}>
-        {TOOLS.flatMap((tool) => tool.advice.situations.map((situation) => situation.scene && <li key={`${tool.name}-${situation.scene}`}>{tool.name} · {say("fr", situation.title)} : {SCENES[situation.scene].gag}</li>))}
+        {TOOLS.flatMap((tool) => tool.advice.situations.map((situation) => situation.scene && <li key={`${tool.name}-${situation.scene}`}>{tool.name} · {say("fr", situation.title)} : {scenes[situation.scene].gag}</li>))}
       </ul>
     </aside>
   );

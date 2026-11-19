@@ -99,17 +99,6 @@
   gap: var(--tt-gap-group);
 }
 
-.situation {
-  display: grid;
-  grid-row: span 5;
-  grid-template-rows: subgrid;
-  row-gap: 0;
-  padding: var(--tt-space-8);
-  border-radius: var(--tt-r-tile);
-  background: var(--tt-tile);
-  min-width: 0;
-}
-
 /* ToolTrim's twist (19/11, « un twist d'ADN de ToolTrim »): the pictogram on a round of Ma stack's palette, in its
    night ink — sky for a moment of the week, mint for what works, butter for what gets stuck, coral for what deletes or
    pays. The cards stay calm and grey; the colour lives in the rounds. */
@@ -126,48 +115,6 @@
 .pastille > svg {
   width: var(--tt-icon-m);
   height: var(--tt-icon-m);
-}
-
-.situationIcon {
-  composes: pastille;
-  margin-bottom: var(--tt-space-4);
-}
-
-/* The eyebrow: what the moment is, a short name like a category, on one line (19/11, « adapte mieux le titre et le
-   sous-titre »). One step below the label: the note (14), its strong weight, in ink, 8 above the headline. */
-.situationEyebrow {
-  composes: note from "../atoms.module.css";
-  composes: strong from "../atoms.module.css";
-  padding-bottom: var(--tt-space-2);
-}
-
-/* The headline: what it brings, the box's largest words (21). */
-.situationHeadline {
-  composes: titleM from "../atoms.module.css";
-  padding-bottom: var(--tt-space-8);
-  text-wrap: balance;
-}
-
-/* Its weight above the atom's shorthand (the composed font would reset it): the emphasis step, never bold. */
-.situation .situationHeadline {
-  font-weight: var(--tt-w-em);
-}
-
-/* The request at the foot, the box's object: a white bubble, its lower corner pinched like a sent message. */
-.situationMessage {
-  composes: text from "../atoms.module.css";
-  align-self: end;
-  padding: var(--tt-space-4);
-  border-radius: var(--tt-r-card);
-  border-end-end-radius: var(--tt-space-1);
-  background: var(--tt-bg);
-}
-
-/* The copy button in the corner, as Apple's chevron. */
-.situationAction {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: var(--tt-space-4);
 }
 
 .srOnly {
