@@ -1,5 +1,6 @@
 /* A chapter on the white sheet (17/11: the grey of the navigation is never a content background): the rhythm comes
-   from the scale (42), the gaps (96 between chapters, 48 before the notes, 24 from title to content) and the objects;
+   from the scale (42), the gaps (96 between chapters, 48 from a head to its content and before the notes, 24 between
+   items: 19/11, « pas de rythme typographique ») and the objects;
    its content on two widths only, one left edge. */
 
 .chapters {
@@ -11,7 +12,7 @@
 
 .band {
   display: grid;
-  gap: var(--tt-gap-group);
+  gap: var(--tt-gap-head);
   min-width: 0;
 }
 

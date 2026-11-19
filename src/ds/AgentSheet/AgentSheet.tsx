@@ -577,7 +577,7 @@ function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
       <p className={styles.adviceIntro}>{say(lang, advice.intro)}</p>
       <div className={styles.advicePoints}>
       <section className={styles.adviceGroup} data-column="tips" aria-labelledby={`${id}-tips`}>
-        <h3 id={`${id}-tips`} className={styles.columnHead}>{t("Ce qui marche", "What works")}</h3>
+        <h3 id={`${id}-tips`} className={styles.adviceHead}>{t("Ce qui marche", "What works")}</h3>
         <ul className={styles.adviceList}>
           {advice.tips.map((tip) => (
             <li key={tip.fr} className={styles.adviceItem}>
@@ -589,7 +589,7 @@ function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
         </ul>
       </section>
       <section className={styles.adviceGroup} data-column="pitfalls" aria-labelledby={`${id}-pitfalls`}>
-        <h3 id={`${id}-pitfalls`} className={styles.columnHead}>{t("Là où ça coince", "Where it gets stuck")}</h3>
+        <h3 id={`${id}-pitfalls`} className={styles.adviceHead}>{t("Là où ça coince", "Where it gets stuck")}</h3>
         <ul className={styles.adviceList}>
           {advice.pitfalls.map((pitfall) => (
             <li key={pitfall.fr} className={styles.adviceItem}>
