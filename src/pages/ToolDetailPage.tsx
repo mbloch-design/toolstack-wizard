@@ -206,9 +206,14 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
         observer.unobserve(entry.target);
       }
     }, { rootMargin: "0px 0px -8% 0px" });
+    // A section already on screen (the hero and the tabs after a tab switch) shows at once: both classes land in the
+    // same frame, so nothing moves under the pointer. Only the sections further down rise as they come into view.
+    const fold = window.innerHeight * 0.92;
     targets.forEach((target) => {
       target.classList.add("td-reveal");
-      observer.observe(target);
+      const box = target.getBoundingClientRect();
+      if (box.top < fold && box.bottom > 0) target.classList.add("is-revealed");
+      else observer.observe(target);
     });
     return () => {
       observer.disconnect();
