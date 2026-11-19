@@ -92,6 +92,20 @@
   composes: eyebrow from "../atoms.module.css";
 }
 
+/* A situation card (19/11): its title leads (21), what you gain follows in the body (16), the request comes last. */
+.situationTitle {
+  composes: titleM from "../atoms.module.css";
+}
+
+.situationGain {
+  composes: text from "../atoms.module.css";
+  flex: 1;
+}
+
+.askCard[data-situation] {
+  gap: var(--tt-space-4);
+}
+
 /* The consequence's code, as in « Garder la main »: its icon and its tint, read without reading. */
 .askKind {
   composes: note from "../atoms.module.css";

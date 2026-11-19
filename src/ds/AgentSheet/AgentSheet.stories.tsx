@@ -69,7 +69,11 @@ export const Notion: Story = {
     await expect(canvas.getByRole("button", { name: fr ? /^Voir les 20 autres actions/ : /^Show the 20 other actions/ }).closest("table")).not.toBeNull();
     await expect(canvas.getByText(fr ? /Sur Business et Enterprise/ : /On Business and Enterprise/)).toBeVisible();
     // Each situation says what it gains (19/11), in place of the first requests and their check.
-    for (const card of canvasElement.querySelectorAll("[data-situation]")) await expect(card.textContent).toMatch(fr ? /Ce que vous y gagnez/ : /What you gain/);
+    // A situation card reads in one order: its title (h3), then what you gain, then the request; no step number.
+    for (const card of canvasElement.querySelectorAll("[data-situation]")) {
+      await expect(card.firstElementChild!.tagName).toBe("H3");
+      await expect(card.querySelector("[class*='stepNumber']")).toBeNull();
+    }
     // Tabs (step 8c): the assistants, then « Outil de code ▾ » and its menu.
     await expect(canvas.getByRole("tab", { name: /Claude/ })).toHaveAttribute("aria-selected", "true");
     await userEvent.click(canvas.getByRole("tab", { name: fr ? /Outil de code/ : /Coding tool/ }));

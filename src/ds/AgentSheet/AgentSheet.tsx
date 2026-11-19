@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { AlertTriangle, Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X, Lightbulb, Zap } from "@/lib/icons";
+import { AlertTriangle, Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X, Lightbulb } from "@/lib/icons";
 import { getToolLogoSources } from "@/lib/toolLogos";
 import {
   CONSEQUENCE, clientName, forEveryone, isCopyRow, say, skillTitle, typo,
@@ -83,12 +83,13 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
           <Chapter chapter="ask" width="wide" title={t("Ce que ça change pour vous", "What it changes for you")}
             lead={t("Des situations de free, et la demande à copier.", "Freelance situations, and the request to copy.")}>
             <ol className={styles.cards}>
-              {advice.situations.map((situation, index) => (
+              {advice.situations.map((situation) => (
+                // One reading order (19/11, « tout est au même plan »): the situation is the card's title, what you gain says
+                // why in plain text, then the request at reading size with its copy button. No number: no sequence.
                 <li key={situation.ask.fr} className={styles.askCard} data-situation="">
-                  <span className={styles.stepNumber} aria-hidden="true">{index + 1}</span>
-                  <p className={styles.askStage}>{say(lang, situation.title)}</p>
-                  <Prompt size="lead" text={lang === "en" ? situation.ask.en : situation.ask.fr} lang={lang} mark={<ClientMark client={assistantMark} size={20} />}
-                    note={<p className={styles.check}><Zap aria-hidden="true" /><span><span className={styles.strong}>{t("Ce que vous y gagnez", "What you gain")}</span>{t(" : ", ": ")}{lower(say(lang, situation.gain))}</span></p>} />
+                  <h3 className={styles.situationTitle}>{say(lang, situation.title)}</h3>
+                  <p className={styles.situationGain}>{raise(say(lang, situation.gain))}</p>
+                  <Prompt text={lang === "en" ? situation.ask.en : situation.ask.fr} lang={lang} mark={<ClientMark client={assistantMark} size={20} />} />
                 </li>
               ))}
             </ol>
