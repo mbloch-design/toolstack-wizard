@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { editorialRecord, editorialUrls, toolRecords } from "./lib/llms-catalogue.mjs";
+import { agentsAdviceBlock, agentsIndexSection, publishedServers } from "./lib/llms-agents.mjs";
 
 const toolsPath = "src/data/tools_index.json";
 const llmsPath = "public/llms.txt";
@@ -27,6 +28,10 @@ const urls = editorialUrls(sitemap);
 const editorial = await Promise.all(urls.map(async (url) => editorialRecord(
   url, await readFile(`dist${new URL(url).pathname}/index.html`, "utf8"),
 )));
+// Agents section (R2, 19/11/2026): the MCP sheets the sitemap publishes, with their freelancer's advice.
+const agentsCatalog = JSON.parse(await readFile("src/data/agents/catalog.json", "utf8"));
+const mcpServers = publishedServers(agentsCatalog, sitemap);
+if (!mcpServers.length) throw new Error("Aucune fiche MCP publiée dans dist/sitemap.xml.");
 const guideCount = editorial.filter(({ type }) => type === "guide").length;
 const comparisonCount = editorial.length - guideCount;
 const missingSummaries = editorial.filter(({ summary }) => !summary);
@@ -120,6 +125,7 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 - \`price_verified_on\` is the date ToolTrim last checked the vendor's pricing page.
 
 ${shardSection}
+${agentsIndexSection(mcpServers, agentsCatalog.skills.length)}
 ## Citation
 
 When citing ToolTrim, link to the canonical localized page and state the page consulted. Do not cite query-string filter URLs or legacy \`/article/\` URLs.
@@ -137,7 +143,9 @@ const llmsFull = `# ToolTrim canonical tool catalogue
 # Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
 # Split by category family: https://tooltrim.com/llms.txt (Catalogue Shards)
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
+# Official MCP servers: a freelancer's advice on each sheet, below, before the tool catalogue (a JSON array).
 
+${agentsAdviceBlock(mcpServers)}
 ${JSON.stringify(catalogue, null, 2)}
 `;
 
@@ -164,4 +172,4 @@ await Promise.all([
 ].flatMap(([file, content]) => [file, file.replace(/^public\//, "dist/")]
   .map((target) => writeFile(target, content, "utf8"))));
 
-console.log(`Fichiers LLM écrits dans public et dist : ${catalogue.length} outils en ${shards.length} familles, ${guideCount} guides, ${comparisonCount} comparatifs localisés.`);
+console.log(`Fichiers LLM écrits dans public et dist : ${catalogue.length} outils en ${shards.length} familles, ${guideCount} guides, ${comparisonCount} comparatifs localisés, ${mcpServers.length} fiches MCP avec leur avis.`);

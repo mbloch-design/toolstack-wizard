@@ -14,8 +14,8 @@
     "en": "Keep track of your payments and balance."
   },
   "meta_description": {
-    "fr": "Brancher Stripe à Claude ou ChatGPT : vos données de compte, création d'objets et, avec Treasury, envoi d'argent après confirmation. En bêta.",
-    "en": "Connect Stripe to Claude or ChatGPT: your account data in your assistant, creating objects and, with Treasury, sending money after confirmation. In beta."
+    "fr": "Stripe dans Claude ou ChatGPT : qui vous doit quoi, une facture ou un lien de paiement prêts à relire. Il agit sur votre vrai compte : testez d'abord.",
+    "en": "Stripe in Claude or ChatGPT: who owes you what, an invoice or payment link ready to review. It acts on your real account, so start in a test environment."
   },
   "examples": [
     {

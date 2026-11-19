@@ -59,6 +59,7 @@ Ordre recommandé : R1 puis R2 dans la foulée (ils transforment le travail fait
 2. Données structurées dans le prérendu (`src/lib/agentsSeo.ts`, source unique avec `vite.config.ts`) : les situations en `HowTo` ou les questions en `FAQPage`, selon ce que Google affiche encore ; vérifier avec `npm run check:agents-seo` et le test de résultats enrichis.
 3. Régénérer `public/llms*` (`scripts/gen-llms-files.mjs`, après un build qui produit `dist/sitemap.xml`) pour y inclure verdicts, situations, conseils et pièges.
 **Fait quand** : `validate:seo-generated` et `check:agents-seo` passent ; une fiche testée dans l'outil de résultats enrichis.
+**État au 19/11** : fait sur `claude/r2-seo-mcp-7c354f` (non poussé, à fusionner avec R1). Descriptions réécrites, FAQPage enrichie, `llms*` régénérés ; toutes les vérifications passent. Le test de résultats enrichis ne montrera rien pour la FAQ : Google a retiré ce résultat enrichi le 7 mai 2026 (et HowTo en 2023). Il reste à valider le balisage dans le validateur schema.org une fois en ligne.
 
 #### R3 — Faire circuler l'avis sur le site
 

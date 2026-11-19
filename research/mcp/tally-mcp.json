@@ -14,8 +14,8 @@
     "en": "Create a form and read its responses."
   },
   "meta_description": {
-    "fr": "Brancher Tally à Claude ou ChatGPT : créer un formulaire à partir d'une phrase, le publier et lire les réponses. Il ne supprime rien ; gratuit, en bêta.",
-    "en": "Connect Tally to Claude or ChatGPT: create a form from one sentence, publish it and read the submissions. It cannot delete anything; free, and in beta."
+    "fr": "Tally dans Claude ou ChatGPT : un formulaire de devis monté en une phrase, les retours clients lus pour vous. Il ne supprime rien ; en bêta, relisez avant.",
+    "en": "Tally in Claude or ChatGPT: a quote-request form built from one sentence, client feedback read for you. It deletes nothing; still in beta, so review first."
   },
   "examples": [
     {

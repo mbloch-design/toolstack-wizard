@@ -14,8 +14,8 @@
     "en": "Act in your apps through the actions you enable."
   },
   "meta_description": {
-    "fr": "Brancher Zapier à Claude ou ChatGPT : des milliers d'applications dans votre assistant. Vous choisissez ce qu'il expose ; deux tâches par appel réussi.",
-    "en": "Connect Zapier to Claude or ChatGPT: actions from thousands of apps in your assistant. You choose what it exposes; each successful call uses two tasks."
+    "fr": "Zapier dans Claude ou ChatGPT, le passe-partout des outils sans serveur : une relance client, un tableur à jour. Chaque action puise dans vos tâches.",
+    "en": "Zapier in Claude or ChatGPT, a master key for tools with no server: a client follow-up sent, a sheet kept up to date. Each action uses your Zapier tasks."
   },
   "examples": [
     {
