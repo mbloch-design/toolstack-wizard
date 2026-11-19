@@ -511,7 +511,8 @@
           "en": "Your follow-up list, ready."
         },
         "source": "https://airtable.com/developers/agents/mcp/tools",
-        "icon": "task"
+        "icon": "task",
+        "scene": "airtable-followup"
       },
       {
         "title": {
@@ -527,7 +528,8 @@
           "en": "Contacts entered, no copy-paste."
         },
         "source": "https://airtable.com/developers/agents/mcp/tools",
-        "icon": "data"
+        "icon": "data",
+        "scene": "airtable-prospects"
       },
       {
         "title": {
@@ -543,7 +545,8 @@
           "en": "A table ready in one sentence."
         },
         "source": "https://airtable.com/developers/agents/mcp/getting-started",
-        "icon": "invoice"
+        "icon": "invoice",
+        "scene": "airtable-table"
       }
     ],
     "tips": [

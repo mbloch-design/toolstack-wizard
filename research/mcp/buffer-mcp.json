@@ -344,7 +344,8 @@
           "en": "A draft waiting for your review."
         },
         "source": "https://buffer.com/mcp",
-        "icon": "post"
+        "icon": "post",
+        "scene": "buffer-draft"
       },
       {
         "title": {
@@ -360,7 +361,8 @@
           "en": "The same message, in the right format."
         },
         "source": "https://buffer.com/resources/how-to-post-on-social-media-from-claude/",
-        "icon": "social"
+        "icon": "social",
+        "scene": "canva-post"
       },
       {
         "title": {
@@ -376,7 +378,8 @@
           "en": "What works, no spreadsheet."
         },
         "source": "https://developers.buffer.com/guides/integrations/mcp.html",
-        "icon": "chart"
+        "icon": "chart",
+        "scene": "buffer-stats"
       }
     ],
     "tips": [

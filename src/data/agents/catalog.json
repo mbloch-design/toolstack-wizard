@@ -197,7 +197,8 @@
               "en": "The monthly report, no export needed."
             },
             "source": "https://ahrefs.com/blog/mcp-use-cases/",
-            "icon": "chart"
+            "icon": "chart",
+            "scene": "ahrefs-report"
           },
           {
             "title": {
@@ -213,7 +214,8 @@
               "en": "A list of sites to pitch."
             },
             "source": "https://ahrefs.com/blog/mcp-use-cases/",
-            "icon": "search"
+            "icon": "search",
+            "scene": "ahrefs-links"
           },
           {
             "title": {
@@ -229,7 +231,8 @@
               "en": "Topics built on real searches."
             },
             "source": "https://ahrefs.com/blog/mcp-use-cases/",
-            "icon": "doc"
+            "icon": "doc",
+            "scene": "ahrefs-ideas"
           }
         ],
         "tips": [
@@ -859,7 +862,8 @@
               "en": "Your follow-up list, ready."
             },
             "source": "https://airtable.com/developers/agents/mcp/tools",
-            "icon": "task"
+            "icon": "task",
+            "scene": "airtable-followup"
           },
           {
             "title": {
@@ -875,7 +879,8 @@
               "en": "Contacts entered, no copy-paste."
             },
             "source": "https://airtable.com/developers/agents/mcp/tools",
-            "icon": "data"
+            "icon": "data",
+            "scene": "airtable-prospects"
           },
           {
             "title": {
@@ -891,7 +896,8 @@
               "en": "A table ready in one sentence."
             },
             "source": "https://airtable.com/developers/agents/mcp/getting-started",
-            "icon": "invoice"
+            "icon": "invoice",
+            "scene": "airtable-table"
           }
         ],
         "tips": [
@@ -1380,7 +1386,8 @@
               "en": "A draft waiting for your review."
             },
             "source": "https://buffer.com/mcp",
-            "icon": "post"
+            "icon": "post",
+            "scene": "buffer-draft"
           },
           {
             "title": {
@@ -1396,7 +1403,8 @@
               "en": "The same message, in the right format."
             },
             "source": "https://buffer.com/resources/how-to-post-on-social-media-from-claude/",
-            "icon": "social"
+            "icon": "social",
+            "scene": "canva-post"
           },
           {
             "title": {
@@ -1412,7 +1420,8 @@
               "en": "What works, no spreadsheet."
             },
             "source": "https://developers.buffer.com/guides/integrations/mcp.html",
-            "icon": "chart"
+            "icon": "chart",
+            "scene": "buffer-stats"
           }
         ],
         "tips": [
@@ -1996,7 +2005,8 @@
               "en": "The meeting email, ready to send."
             },
             "source": "https://www.calendly.com/blog/mcp-server",
-            "icon": "calendar"
+            "icon": "calendar",
+            "scene": "calendly-slots"
           },
           {
             "title": {
@@ -2012,7 +2022,8 @@
               "en": "Your week, meeting by meeting."
             },
             "source": "https://community.calendly.com/featured-tips-tricks-32/connect-calendly-to-claude-and-other-ai-tools-5451",
-            "icon": "week"
+            "icon": "week",
+            "scene": "calendly-week"
           },
           {
             "title": {
@@ -2028,7 +2039,8 @@
               "en": "Your Fridays back for deep work."
             },
             "source": "https://www.calendly.com/blog/mcp-server",
-            "icon": "meeting"
+            "icon": "meeting",
+            "scene": "calendly-friday"
           }
         ],
         "tips": [

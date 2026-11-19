@@ -454,7 +454,8 @@
           "en": "The meeting email, ready to send."
         },
         "source": "https://www.calendly.com/blog/mcp-server",
-        "icon": "calendar"
+        "icon": "calendar",
+        "scene": "calendly-slots"
       },
       {
         "title": {
@@ -470,7 +471,8 @@
           "en": "Your week, meeting by meeting."
         },
         "source": "https://community.calendly.com/featured-tips-tricks-32/connect-calendly-to-claude-and-other-ai-tools-5451",
-        "icon": "week"
+        "icon": "week",
+        "scene": "calendly-week"
       },
       {
         "title": {
@@ -486,7 +488,8 @@
           "en": "Your Fridays back for deep work."
         },
         "source": "https://www.calendly.com/blog/mcp-server",
-        "icon": "meeting"
+        "icon": "meeting",
+        "scene": "calendly-friday"
       }
     ],
     "tips": [

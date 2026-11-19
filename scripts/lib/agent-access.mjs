@@ -154,7 +154,28 @@ export const CARD_MAX = 50;
 const SITUATION_ICONS = ["meeting", "week", "invoice", "post", "deck", "feedback", "link", "unpaid", "chat", "design", "chart", "shop", "automation", "task", "email", "form", "web", "doc", "search", "data", "social", "calendar"];
 /** A situation's pencil scene (19/11, « parfait, go sur ça »), optional: one of the scenes drawn in SituationArt.tsx
  *  (src/lib/agents.ts, SituationScene, holds the same list; TypeScript checks the drawings against it). */
-export const SITUATION_SCENES = ["notion-meeting", "notion-week", "notion-invoice", "canva-post", "canva-deck", "canva-feedback", "stripe-invoice", "stripe-link", "stripe-unpaid"];
+export const SITUATION_SCENES = [
+  "notion-meeting",
+  "notion-week",
+  "notion-invoice",
+  "canva-post",
+  "canva-deck",
+  "canva-feedback",
+  "stripe-invoice",
+  "stripe-link",
+  "stripe-unpaid",
+  "ahrefs-report",
+  "ahrefs-links",
+  "ahrefs-ideas",
+  "airtable-followup",
+  "airtable-prospects",
+  "airtable-table",
+  "buffer-draft",
+  "buffer-stats",
+  "calendly-slots",
+  "calendly-week",
+  "calendly-friday",
+];
 /** A tip's or a pitfall's own pictogram (19/11, « une variance de picto »), from a closed list drawn in AgentSheet. */
 const ADVICE_ICONS = ["title", "database", "approve", "suggest", "click", "guest", "slow", "limit", "rights", "brief", "refine", "copy", "brand", "settings", "draft", "credits", "link", "admin", "sandbox", "amount", "key", "mail", "invoice", "confirm", "blocked", "session"];
 const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "card", "meta_description", "examples", "for", "not_for", "control", "plan_words", "first_requests", "troubleshoot", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "claude_directory", "docs_url", "sources", "advice"]);

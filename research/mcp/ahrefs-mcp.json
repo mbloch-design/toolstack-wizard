@@ -195,7 +195,8 @@
           "en": "The monthly report, no export needed."
         },
         "source": "https://ahrefs.com/blog/mcp-use-cases/",
-        "icon": "chart"
+        "icon": "chart",
+        "scene": "ahrefs-report"
       },
       {
         "title": {
@@ -211,7 +212,8 @@
           "en": "A list of sites to pitch."
         },
         "source": "https://ahrefs.com/blog/mcp-use-cases/",
-        "icon": "search"
+        "icon": "search",
+        "scene": "ahrefs-links"
       },
       {
         "title": {
@@ -227,7 +229,8 @@
           "en": "Topics built on real searches."
         },
         "source": "https://ahrefs.com/blog/mcp-use-cases/",
-        "icon": "doc"
+        "icon": "doc",
+        "scene": "ahrefs-ideas"
       }
     ],
     "tips": [

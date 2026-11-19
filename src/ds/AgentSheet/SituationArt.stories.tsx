@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect } from "storybook/test";
 import catalog from "@/data/agents/catalog.json";
-import { say, type McpAdvice, type McpSheet, type SituationScene } from "@/lib/agents";
+import { say, type McpAdvice, type McpSheet } from "@/lib/agents";
 import { SituationCard } from "./AgentSheet";
 import sheet from "./AgentSheet.module.css";
+import { SCENES } from "./SituationArt";
 import styles from "./SituationArt.module.css";
 
 /*
@@ -21,26 +22,16 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
-const advice = (slug: string) => (catalog.servers as McpSheet[]).find((s) => s.slug === slug)!.advice!;
+const servers = (catalog.servers as McpSheet[]).filter((server) => server.advice);
+const advice = (slug: string) => servers.find((s) => s.slug === slug)!.advice!;
 
+/** Every sheet with a freelancer's advice: the three pilots first, then the others in the catalogue's order. */
+const PILOT = ["notion-mcp", "canva-mcp", "stripe-mcp"];
 const TOOLS: { name: string; advice: McpAdvice }[] = [
-  { name: "Notion", advice: advice("notion-mcp") },
-  { name: "Canva", advice: advice("canva-mcp") },
-  { name: "Stripe", advice: advice("stripe-mcp") },
-];
-
-/** The gag of each scene, for the reviewer and whoever draws the next ones (the card itself never says it). */
-const GAGS: Record<SituationScene, string> = {
-  "notion-meeting": "L'assistant plonge tête la première dans le grenier Notion ; la seule page utile s'envole.",
-  "notion-week": "La semaine arrive en traînant sa tâche bloquée comme un boulet.",
-  "notion-invoice": "La facture court après le client, qui sort déjà du cadre.",
-  "canva-post": "Le post carré et sa jumelle story : même tête, même soleil, l'une un peu gênée d'être si grande.",
-  "canva-deck": "Les notes froissées passent au hachoir, une diapositive propre en sort.",
-  "canva-feedback": "La présentation est ensevelie sous les commentaires ; une main dépasse du tas.",
-  "stripe-invoice": "Le brouillon de facture, genoux qui tremblent, sous la loupe de la relecture.",
-  "stripe-link": "La pêche au paiement : le lien sert d'hameçon, une pièce hésite.",
-  "stripe-unpaid": "Les factures ouvertes attendent sur un banc, assez longtemps pour qu'une barbe pousse.",
-};
+  ...PILOT.map((slug) => servers.find((s) => s.slug === slug)!),
+  ...servers.filter((s) => !PILOT.includes(s.slug)),
+].map((server) => ({ name: server.name, advice: server.advice! }));
+const situations = TOOLS.flatMap((tool) => tool.advice.situations);
 
 function Board({ pencil }: { pencil: boolean }) {
   return (
@@ -70,13 +61,13 @@ function Rule() {
       </p>
       <p className={styles.text}>Les gags :</p>
       <ul className={styles.text}>
-        {TOOLS.flatMap((tool) => tool.advice.situations.map((situation) => situation.scene && <li key={situation.scene}>{tool.name} · {say("fr", situation.title)} : {GAGS[situation.scene]}</li>))}
+        {TOOLS.flatMap((tool) => tool.advice.situations.map((situation) => situation.scene && <li key={`${tool.name}-${situation.scene}`}>{tool.name} · {say("fr", situation.title)} : {SCENES[situation.scene].gag}</li>))}
       </ul>
     </aside>
   );
 }
 
-/** The nine pilot situations, as the sheets show them. */
+/** Every situation of every sheet, server by server, as the sheets show them. */
 export const Planche: Story = {
   render: () => (
     <div className={styles.board}>
@@ -86,7 +77,7 @@ export const Planche: Story = {
   ),
   play: async ({ canvasElement }) => {
     const drawings = [...canvasElement.querySelectorAll("[data-situation] > svg[aria-hidden='true']")];
-    await expect(drawings.length).toBe(9);
+    await expect(drawings.length).toBe(situations.filter((situation) => situation.scene).length);
     // No text in a drawing, and at most one palette touch per drawing.
     await expect(canvasElement.querySelectorAll("[data-situation] svg text").length).toBe(0);
     for (const svg of drawings) {

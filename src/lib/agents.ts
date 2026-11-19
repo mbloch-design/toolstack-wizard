@@ -44,7 +44,27 @@ export interface McpSheet {
 export type SituationIcon = "meeting" | "week" | "invoice" | "post" | "deck" | "feedback" | "link" | "unpaid" | "chat" | "design" | "chart" | "shop" | "automation" | "task" | "email" | "form" | "web" | "doc" | "search" | "data" | "social" | "calendar";
 /** A situation's pencil scene (19/11), drawn in src/ds/AgentSheet/SituationArt.tsx; the guard (scripts/lib/agent-access.mjs,
  *  SITUATION_SCENES) holds the same list. A situation without one keeps its icon round. */
-export type SituationScene = "notion-meeting" | "notion-week" | "notion-invoice" | "canva-post" | "canva-deck" | "canva-feedback" | "stripe-invoice" | "stripe-link" | "stripe-unpaid";
+export type SituationScene =
+  | "notion-meeting"
+  | "notion-week"
+  | "notion-invoice"
+  | "canva-post"
+  | "canva-deck"
+  | "canva-feedback"
+  | "stripe-invoice"
+  | "stripe-link"
+  | "stripe-unpaid"
+  | "ahrefs-report"
+  | "ahrefs-links"
+  | "ahrefs-ideas"
+  | "airtable-followup"
+  | "airtable-prospects"
+  | "airtable-table"
+  | "buffer-draft"
+  | "buffer-stats"
+  | "calendly-slots"
+  | "calendly-week"
+  | "calendly-friday";
 export type AdviceIcon = "title" | "database" | "approve" | "suggest" | "click" | "guest" | "slow" | "limit" | "rights" | "brief" | "refine" | "copy" | "brand" | "settings" | "draft" | "credits" | "link" | "admin" | "sandbox" | "amount" | "key" | "mail" | "invoice" | "confirm" | "blocked" | "session";
 export type Sourced = Pair & { title: Pair; source: string; community?: boolean; icon: AdviceIcon };
 export interface McpAdvice {
