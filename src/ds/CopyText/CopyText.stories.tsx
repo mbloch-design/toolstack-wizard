@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, fn, userEvent, waitFor } from "storybook/test";
 import CopyText from "./CopyText";
+import { atoms } from "../atoms";
 
 // A technical name that copies itself: action identifiers, slugs, addresses.
 const meta: Meta<typeof CopyText> = { title: "Molécules/Texte copiable", component: CopyText, tags: ["a-valider"] };
@@ -9,7 +10,7 @@ type Story = StoryObj<typeof CopyText>;
 
 /** Click: the clipboard holds exactly the value, the icon turns to a check and « Copié » is said. */
 export const Copier: Story = {
-  render: (_args, { globals }) => <p>Mettre des pages à la corbeille <CopyText value="notion-delete-pages" lang={globals.lang} /></p>,
+  render: (_args, { globals }) => <p className={atoms.text}>Mettre des pages à la corbeille <CopyText value="notion-delete-pages" lang={globals.lang} /></p>,
   beforeEach: () => {
     const writeText = fn(async (_value: string) => {});
     Object.defineProperty(navigator, "clipboard", { value: { writeText }, configurable: true });

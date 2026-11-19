@@ -308,15 +308,15 @@ test('undoing the first free plan restores the unanswered question after reload'
  await page.emulateMedia({reducedMotion:'reduce'});
  await control(request,'seed',{email:'undo-plan@example.invalid',state:state(['notion'])});
  await page.goto('/en/ma-stack');await login(page,'en','undo-plan@example.invalid');await saved(page,'en');
- await expect(page.locator('[data-card="price"]')).toContainText("1 tool in your stack.");
+ await expect(page.locator('[data-card="price"]')).toContainText("It takes at least two to call it a stack.");
  await expect(page.locator('[data-plan]')).toHaveCount(3);
  await page.locator('[data-plan]').filter({hasText:'Free plan'}).first().click();
  await expect(page.locator('[data-card=decision]')).toHaveCount(0);
  await page.getByRole('button',{name:'Undo',exact:true}).click();
  await expect(page.locator('[data-card=decision]')).toContainText('Notion');
- await expect(page.locator('[data-card="price"]')).toContainText("1 tool in your stack.");
+ await expect(page.locator('[data-card="price"]')).toContainText("It takes at least two to call it a stack.");
  await saved(page,'en');await page.reload();await saved(page,'en');
- await expect(page.locator('[data-card="price"]')).toContainText("1 tool in your stack.");
+ await expect(page.locator('[data-card="price"]')).toContainText("It takes at least two to call it a stack.");
 });
 
 
@@ -470,5 +470,5 @@ test('invoice draft cannot cross a personal-stack scope change',async({page,requ
 test('invoice native cents remain visible in the recorded budget',async({page,request})=>{
  const value=state(['cursor','github','vercel']);value.billing={paid:['cursor','github'],reviewed:['cursor','github','vercel'],choices:{cursor:{source:'plan',label:'Teams',amount:40,currency:'USD',period:'monthly',perSeat:true,seats:5},github:{source:'custom',amount:12.5,currency:'USD',period:'monthly'}}};
  await control(request,'seed',{email:'cents-invoice@example.invalid',state:value});await page.goto('/en/ma-stack');await login(page,'en','cents-invoice@example.invalid');await saved(page);
- await expect(page.locator('[data-card="price"]')).toContainText('$212.50');
+ await expect(page.locator('[data-card="split"]')).toContainText('$12.50');
 });

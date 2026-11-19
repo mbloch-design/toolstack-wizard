@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent } from "storybook/test";
 import Table, { CompareMark, CompareTable } from "./Table";
+import { atoms } from "../atoms";
+import CopyText from "../CopyText/CopyText";
 
 const meta: Meta<typeof Table> = { title: "Molécules/Tableau", component: Table, tags: ["a-valider"], decorators: [(Story) => <div style={{ maxWidth: 720 }}><Story /></div>] };
 export default meta;
@@ -18,13 +20,13 @@ const ROWS = [
 export const Actions: Story = {
   render: (_args, { globals }) => {
     const fr = globals.lang !== "en";
-    const row = ([action, id]: string[]) => ({ key: id, cells: [action, <code key={id}>{id}</code>] });
+    const row = ([action, id]: string[]) => ({ key: id, cells: [action, <CopyText key={id} value={id} lang={fr ? "fr" : "en"} />] });
     return <>
-      <h3 id="story-table-title" style={{ margin: 0 }}>{fr ? "Ce qu'il peut faire" : "What it can do"}</h3>
+      <h3 id="story-table-title" className={atoms.titleM}>{fr ? "Ce qu'il peut faire" : "What it can do"}</h3>
       <Table labelledBy="story-table-title" columns={fr ? ["Action", "Identifiant"] : ["Action", "Identifier"]} sections={[
-        { key: "delete", group: "delete", head: <strong>{fr ? "Supprime des données · 7" : "Deletes data · 7"}</strong>, rows: ROWS.map(row), visible: 6,
+        { key: "delete", group: "delete", head: <span className={atoms.strong}>{fr ? "Supprime des données · 7" : "Deletes data · 7"}</span>, rows: ROWS.map(row), visible: 6,
           hideLabel: fr ? "Réduire" : "Show less", showLabel: (n: number) => (fr ? (n === 1 ? "Voir l'autre action" : `Voir les ${n} autres actions`) : (n === 1 ? "Show the other action" : `Show the ${n} other actions`)) },
-        { key: "read", group: "read", head: <strong>{fr ? "Lecture seule · 2" : "Read only · 2"}</strong>, rows: [["Lire une page", "data_pages_read"], ["Lister les sites", "sites_list"]].map(row) },
+        { key: "read", group: "read", head: <span className={atoms.strong}>{fr ? "Lecture seule · 2" : "Read only · 2"}</span>, rows: [["Lire une page", "data_pages_read"], ["Lister les sites", "sites_list"]].map(row) },
       ]} />
     </>;
   },

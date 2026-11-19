@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import Tabs from "./Tabs";
+import { atoms } from "../atoms";
 
 const meta: Meta<typeof Tabs> = { title: "Molécules/Onglets", component: Tabs, tags: ["a-valider"], decorators: [(Story) => <div style={{ maxWidth: 720 }}><Story /></div>] };
 export default meta;
@@ -18,7 +19,7 @@ function Demo({ start, lang }: { start: string; lang: "fr" | "en" }) {
       tabs={[{ value: "claude", label: "Claude", icon: MARK("#D97757") }, { value: "chatgpt", label: "ChatGPT", icon: MARK("#10A37F") }, { value: "gemini", label: "Gemini", icon: MARK("#8E75F0") }]}
       more={{ label: fr ? "Outil de code" : "Coding tool", short: "Code", menuLabel: fr ? "Outil de code" : "Coding tool", closeLabel: fr ? "Fermer" : "Close",
         options: [{ value: "claude-code", label: "Claude Code" }, { value: "cursor", label: "Cursor" }, { value: "vs-code", label: "VS Code" }, { value: "any", label: fr ? "Adresse du serveur (autre outil)" : "Server address (another tool)" }] }} />
-    <div id="story-panel" role="tabpanel" style={{ paddingTop: 24 }}>{fr ? "Étapes pour " : "Steps for "}<strong data-chosen="">{value}</strong></div>
+    <div id="story-panel" role="tabpanel" className={atoms.text} style={{ paddingTop: 24 }}>{fr ? "Étapes pour " : "Steps for "}<span className={atoms.strong} data-chosen="">{value}</span></div>
   </>;
 }
 

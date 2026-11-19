@@ -682,7 +682,7 @@
 
 .figure small {
   margin-left: var(--tt-space-1);
-  color: var(--tt-meta);
+  color: var(--tt-ink);
   font: var(--tt-unit-font);
   letter-spacing: var(--tt-unit-tracking);
 }

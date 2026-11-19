@@ -9,6 +9,7 @@ import Table from "../Table/Table";
 import CopyText from "../CopyText/CopyText";
 import { ToolRow, ToolRows } from "../ToolSheet/ToolSheet";
 import { stateProblems } from "../test/invariants";
+import { atoms } from "../atoms";
 
 // Every interactive piece of Ma stack's tiles on every surface of the palette (18/11/2026; Michael on « À faire » in
 // night: a hovered line turned white under white words). The play puts each one in each state and reads it.
@@ -83,7 +84,7 @@ export const Agents: Story = {
     <div style={{ display: "grid", gap: 32 }}>
       <Tabs label="Où utilisez-vous l'IA ?" value="claude" onChange={() => {}} tabs={[{ value: "claude", label: "Claude" }, { value: "chatgpt", label: "ChatGPT" }]}
         more={{ label: "Outil de code", short: "Code", menuLabel: "Outil de code", closeLabel: "Fermer", options: [{ value: "cursor", label: "Cursor" }, { value: "any", label: "Adresse du serveur (autre outil)" }] }} />
-      <Table columns={["Action", "Identifiant"]} sections={[{ key: "write", head: <strong>Modifie vos données · 8</strong>, visible: 6, hideLabel: "Réduire", showLabel: (n) => `Voir les ${n} autres actions`,
+      <Table columns={["Action", "Identifiant"]} sections={[{ key: "write", head: <span className={atoms.strong}>Modifie vos données · 8</span>, visible: 6, hideLabel: "Réduire", showLabel: (n) => `Voir les ${n} autres actions`,
         rows: Array.from({ length: 8 }, (_, i) => ({ key: String(i), cells: [`Action ${i + 1}`, <CopyText key={i} value={`tool_${i + 1}`} lang="fr" />] })) }]} />
       <ToolRows>
         <ToolRow logo={<span style={{ width: 40, height: 40, display: "inline-block" }} />} name="Notion" note="Retrouver, résumer et créer des pages." renderMain={(className, content) => <a className={className} href="#">{content}</a>} />

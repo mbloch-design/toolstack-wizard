@@ -49,7 +49,7 @@
 
 .meta {
   composes: note from "../atoms.module.css";
-  color: var(--tt-meta);
+  color: var(--tt-ink);
 }
 
 .actions {
@@ -61,7 +61,7 @@
 
 .trust {
   composes: note from "../atoms.module.css";
-  color: var(--tt-meta);
+  color: var(--tt-ink);
 }
 
 /* One card shape for the whole sheet: white on a grey band, light grey on a white band; 24 of padding, no shadow. */
@@ -98,7 +98,7 @@
   display: inline-flex;
   gap: var(--tt-space-1);
   align-items: center;
-  color: var(--tt-meta);
+  color: var(--tt-ink);
 }
 
 .askKind > svg {
@@ -115,7 +115,7 @@
   display: flex;
   gap: var(--tt-space-2);
   align-items: flex-start;
-  color: var(--tt-meta);
+  color: var(--tt-ink);
 }
 
 .check > svg {
@@ -366,7 +366,7 @@
 
 .menuHelp {
   composes: note from "../atoms.module.css";
-  color: var(--tt-meta);
+  color: var(--tt-ink);
 }
 
 .done {
@@ -585,10 +585,10 @@
 }
 
 .sectionCount {
-  color: var(--tt-meta);
+  color: var(--tt-ink);
 }
 
 .sectionNote {
   composes: note from "../atoms.module.css";
-  color: var(--tt-meta);
+  color: var(--tt-ink);
 }

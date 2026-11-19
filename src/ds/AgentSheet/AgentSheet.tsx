@@ -86,7 +86,7 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
                   <p className={styles.askStage}>{ask.kind === "write" ? t("Ensuite", "Then") : t("Pour commencer", "To start")}</p>
                   {ask.kind && <p className={styles.askKind} data-kind={ask.kind}>{KIND_ICON[ask.kind]}{say(lang, ABILITY_TAG[ask.kind])}</p>}
                   <Prompt size="lead" text={lang === "en" ? ask.words.en : ask.words.fr} lang={lang} mark={<ClientMark client={assistantMark} size={20} />}
-                    note={ask.check && <p className={styles.check}><CheckCircle2 aria-hidden="true" /><span><strong>{t("À vérifier", "Check")}</strong>{t(" : ", ": ")}{lower(say(lang, ask.check))}</span></p>} />
+                    note={ask.check && <p className={styles.check}><CheckCircle2 aria-hidden="true" /><span><span className={styles.strong}>{t("À vérifier", "Check")}</span>{t(" : ", ": ")}{lower(say(lang, ask.check))}</span></p>} />
                 </li>
               ))}
             </ol>

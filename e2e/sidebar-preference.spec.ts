@@ -8,7 +8,7 @@ test('sidebar defaults expanded and preserves explicit desktop choices across na
  const toggle=page.locator('[data-shell-sidebar] button[aria-expanded]');
  await expect(toggle).toHaveAttribute('aria-expanded','true');
  await toggle.click();await expect(toggle).toHaveAttribute('aria-expanded','false');
- await page.locator('[data-shell-sidebar] nav a').filter({hasText:'Tools'}).click();
+ await page.locator('[data-shell-sidebar] nav a').filter({hasText:/^Tools$/}).click();
  await expect(toggle).toHaveAttribute('aria-expanded','false');
  await page.reload();await expect(toggle).toHaveAttribute('aria-expanded','false');
  await toggle.click();await expect(toggle).toHaveAttribute('aria-expanded','true');

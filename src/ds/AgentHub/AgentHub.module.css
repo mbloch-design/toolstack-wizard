@@ -89,7 +89,7 @@
 }
 
 .shelfCount {
-  color: var(--tt-meta);
+  color: var(--tt-ink);
   font-weight: inherit;
 }
 
@@ -152,7 +152,7 @@
 
 .cardBy {
   composes: note from "../atoms.module.css";
-  color: var(--tt-meta);
+  color: var(--tt-ink);
 }
 
 .cardSummary {
@@ -171,7 +171,7 @@
   flex-wrap: wrap;
   gap: var(--tt-space-1) var(--tt-space-4);
   align-self: end;
-  color: var(--tt-meta);
+  color: var(--tt-ink);
 }
 
 /* Step 8 (18/11/2026): a server or a skill on the catalogue's row. Its sentence, then one quiet line of meta, 16 px
@@ -183,7 +183,7 @@
 .rowMeta {
   display: block;
   margin-top: var(--tt-space-1);
-  color: var(--tt-meta);
+  color: var(--tt-ink);
 }
 
 .rowPiece {

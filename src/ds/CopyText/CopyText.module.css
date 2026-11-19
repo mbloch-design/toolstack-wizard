@@ -17,7 +17,7 @@
   border: 0;
   border-radius: var(--tt-r-check);
   background: transparent;
-  color: var(--tt-meta);
+  color: var(--tt-ink);
   text-align: start;
   cursor: pointer;
   transition: background-color var(--tt-dur-state) var(--tt-ease), box-shadow var(--tt-dur-state) var(--tt-ease), color var(--tt-dur-state) var(--tt-ease);

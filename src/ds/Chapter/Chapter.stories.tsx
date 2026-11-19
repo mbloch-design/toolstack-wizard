@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect } from "storybook/test";
 import Chapter, { Chapters } from "./Chapter";
+import { atoms } from "../atoms";
 
 // A long page's chapters (step 1 bis of the agents section): title 42 (21 on a phone), standfirst 21 (17 on a phone),
 // content on the reading column or the wide grid, all on the white sheet; footnotes in the notes variant.
@@ -19,13 +20,13 @@ export const Bandes: Story = {
     return (
       <Chapters>
         <Chapter chapter="one" title={fr ? "Brancher Notion" : "Plug in Notion"} lead={fr ? "Choisissez votre assistant : les étapes s'adaptent." : "Pick your assistant: the steps follow."}>
-          <p>{fr ? "Le contenu d'un chapitre, sur la colonne de lecture." : "A chapter's content, on the reading column."}</p>
+          <p className={atoms.text}>{fr ? "Le contenu d'un chapitre, sur la colonne de lecture." : "A chapter's content, on the reading column."}</p>
         </Chapter>
         <Chapter chapter="two" width="wide" title={fr ? "Ce qu'il peut faire" : "What it can do"} lead={fr ? "L'assistant n'a jamais plus de droits que votre compte." : "The assistant never has more rights than your account."}>
-          <p>{fr ? "Le rythme vient de l'échelle, des écarts et des objets, jamais d'un fond gris." : "The rhythm comes from the scale, the gaps and the objects, never a grey background."}</p>
+          <p className={atoms.text}>{fr ? "Le rythme vient de l'échelle, des écarts et des objets, jamais d'un fond gris." : "The rhythm comes from the scale, the gaps and the objects, never a grey background."}</p>
         </Chapter>
         <Chapter chapter="notes" tone="notes">
-          <p>{fr ? "Des notes de bas de page, sans titre." : "Footnotes, untitled."}</p>
+          <p className={atoms.text}>{fr ? "Des notes de bas de page, sans titre." : "Footnotes, untitled."}</p>
         </Chapter>
       </Chapters>
     );
