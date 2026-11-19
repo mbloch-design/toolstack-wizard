@@ -92,18 +92,53 @@
   composes: eyebrow from "../atoms.module.css";
 }
 
-/* A situation card (19/11): its title leads (21), what you gain follows in the body (16), the request comes last. */
+/* A situation card (19/11): the situation as its title (21), the message to type, one line of result, the button. */
 .situationTitle {
   composes: titleM from "../atoms.module.css";
 }
 
-.situationGain {
+.situationResult {
   composes: text from "../atoms.module.css";
-  flex: 1;
 }
 
 .askCard[data-situation] {
   gap: var(--tt-space-4);
+}
+
+/* « D'un free à l'autre » (19/11): a text on the reading column, the introduction at 17, 48 between its parts,
+   24 between two items, the item's title over its sentence. */
+.advice {
+  display: grid;
+  gap: var(--tt-gap-head);
+  max-width: 720px;
+}
+
+.adviceIntro {
+  composes: text from "../atoms.module.css";
+  font-size: var(--tt-lead-size);
+}
+
+.adviceGroup {
+  display: grid;
+  gap: var(--tt-gap-group);
+}
+
+.adviceList {
+  display: grid;
+  gap: var(--tt-gap-group);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.adviceItem {
+  display: grid;
+  gap: var(--tt-space-1);
+}
+
+.adviceTitle {
+  composes: label from "../atoms.module.css";
+  composes: strong from "../atoms.module.css";
 }
 
 /* The consequence's code, as in « Garder la main »: its icon and its tint, read without reading. */
@@ -497,11 +532,6 @@
   grid-template-columns: minmax(0, 1fr);
 }
 
-/* « D'un free à l'autre » (19/11/2026): tips and pitfalls weigh the same, two equal columns. */
-.controlGrid[data-even] {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .controlColumn[data-few] .safeguards {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 }
@@ -522,8 +552,7 @@
 }
 
 @container (max-width: 760px) {
-  .controlGrid,
-  .controlGrid[data-even] {
+  .controlGrid {
     grid-template-columns: minmax(0, 1fr);
   }
 

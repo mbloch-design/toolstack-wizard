@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { AlertTriangle, Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X, Lightbulb } from "@/lib/icons";
+import { Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X } from "@/lib/icons";
 import { getToolLogoSources } from "@/lib/toolLogos";
 import {
   CONSEQUENCE, clientName, forEveryone, isCopyRow, say, skillTitle, typo,
@@ -81,15 +81,15 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
         {/* 2. What you could ask: reading first, the one that writes last with what to check. */}
         {advice && (
           <Chapter chapter="ask" width="wide" title={t("Ce que ça change pour vous", "What it changes for you")}
-            lead={t("Des situations de free, et la demande à copier.", "Freelance situations, and the request to copy.")}>
+            lead={t("Des moments de votre semaine, et la phrase à lui écrire.", "Moments of your week, and the sentence to write to it.")}>
             <ol className={styles.cards}>
               {advice.situations.map((situation) => (
-                // One reading order (19/11, « tout est au même plan »): the situation is the card's title, what you gain says
-                // why in plain text, then the request at reading size with its copy button. No number: no sequence.
+                // What the reader looks for (19/11): in which situation (the title), what to type (the message, yours: no
+                // assistant's mark), what comes out (one line), then the copy button. No number: no sequence.
                 <li key={situation.ask.fr} className={styles.askCard} data-situation="">
                   <h3 className={styles.situationTitle}>{say(lang, situation.title)}</h3>
-                  <p className={styles.situationGain}>{raise(say(lang, situation.gain))}</p>
-                  <Prompt text={lang === "en" ? situation.ask.en : situation.ask.fr} lang={lang} mark={<ClientMark client={assistantMark} size={20} />} />
+                  <Prompt text={lang === "en" ? situation.ask.en : situation.ask.fr} lang={lang}
+                    note={<p className={styles.situationResult}><span className={styles.strong}>{t("Résultat", "Result")}</span>{t(" : ", ": ")}{say(lang, situation.gain)}</p>} />
                 </li>
               ))}
             </ol>
@@ -116,9 +116,8 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
 
         {/* From one freelancer to another (19/11/2026): what works and what gets stuck, before the how-to. */}
         {advice && (
-          <Chapter chapter="advice" width="wide" title={t("D'un free à l'autre", "From one freelancer to another")}
-            lead={t("Ce qui marche, et ce qui coince.", "What works, and what gets stuck.")}>
-            <AdviceColumns advice={advice} lang={lang} />
+          <Chapter chapter="advice" title={t("D'un free à l'autre", "From one freelancer to another")}>
+            <AdviceText advice={advice} lang={lang} />
           </Chapter>
         )}
 
@@ -565,36 +564,40 @@ function ControlColumns({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
 }
 
 /**
- * « D'un free à l'autre » (19/11/2026): the tips and the pitfalls side by side on a computer, on the shape of « Garder la
- * main » (an icon in a round, the sentence on its centre line). A pitfall says its way around; a tip that comes from
- * users' accounts says so.
+ * « D'un free à l'autre » (19/11/2026, « mets-toi dans la peau d'un free qui explique »): a text, not two lists. The
+ * introduction sets the scene in a peer's voice, then the tips and what gets stuck, each opened by its short title and
+ * told in a sentence; a pitfall gives its way around. One reading column, like an article.
  */
-function AdviceColumns({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
+function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   const id = useId();
   const community = <p className={styles.meta}>{t("D'après des retours d'utilisateurs", "From users' accounts")}</p>;
   return (
-    <div className={styles.controlGrid} data-even="">
-      <section className={styles.controlColumn} data-column="tips" aria-labelledby={`${id}-tips`}>
-        <h3 id={`${id}-tips`} className={styles.columnHead}>{t("Nos conseils", "Our tips")}</h3>
-        <div className={styles.safeguards}>
+    <div className={styles.advice}>
+      <p className={styles.adviceIntro}>{say(lang, advice.intro)}</p>
+      <section className={styles.adviceGroup} data-column="tips" aria-labelledby={`${id}-tips`}>
+        <h3 id={`${id}-tips`} className={styles.columnHead}>{t("Ce qui marche", "What works")}</h3>
+        <ul className={styles.adviceList}>
           {advice.tips.map((tip) => (
-            <Entry key={tip.fr} icon={<Lightbulb />} title={raise(say(lang, tip))}>{tip.community && community}</Entry>
+            <li key={tip.fr} className={styles.adviceItem}>
+              <p className={styles.adviceTitle}>{say(lang, tip.title)}</p>
+              <p className={styles.text}>{say(lang, tip)}</p>
+              {tip.community && community}
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
-      <section className={styles.controlColumn} data-column="pitfalls" aria-labelledby={`${id}-pitfalls`}>
-        <h3 id={`${id}-pitfalls`} className={styles.columnHead}>{t("Ce qui coince", "What gets stuck")}</h3>
-        <div className={styles.safeguards}>
+      <section className={styles.adviceGroup} data-column="pitfalls" aria-labelledby={`${id}-pitfalls`}>
+        <h3 id={`${id}-pitfalls`} className={styles.columnHead}>{t("Là où ça coince", "Where it gets stuck")}</h3>
+        <ul className={styles.adviceList}>
           {advice.pitfalls.map((pitfall) => (
-            <Entry key={pitfall.fr} icon={<AlertTriangle />} alert title={raise(say(lang, pitfall))}>
-              {(pitfall.workaround || pitfall.community) && <>
-                {pitfall.workaround && <p className={styles.text}><span className={styles.strong}>{t("La parade", "The way around")}</span>{t(" : ", ": ")}{lower(say(lang, pitfall.workaround))}</p>}
-                {pitfall.community && community}
-              </>}
-            </Entry>
+            <li key={pitfall.fr} className={styles.adviceItem}>
+              <p className={styles.adviceTitle}>{say(lang, pitfall.title)}</p>
+              <p className={styles.text}>{say(lang, pitfall)}{pitfall.workaround && <> <span className={styles.strong}>{t("La parade", "The way around")}</span>{t(" : ", ": ")}{lower(say(lang, pitfall.workaround))}</>}</p>
+              {pitfall.community && community}
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
     </div>
   );

@@ -449,6 +449,10 @@
       "en": "If you already make your visuals in Canva, plug it in: it works with a free account. But it won't spare you Canva Pro: generating a design uses your Canva AI allowance, and resizing or background removal stay paid.",
       "source": "https://www.canva.com/help/mcp-canva-usage/"
     },
+    "intro": {
+      "fr": "Canva, c'est le couteau suisse du free qui n'est pas graphiste (et parfois de celui qui l'est). Avec votre assistant branché dessus, le premier jet d'un post ou d'une présentation sort d'une seule phrase. Le mot important, c'est « premier jet » : il vous épargne la page blanche, pas la finition. Et il ne remplace pas Canva Pro, il s'appuie dessus.",
+      "en": "Canva is the Swiss army knife of the freelancer who isn't a designer (and sometimes of the one who is). With your assistant plugged in, the first draft of a post or a deck comes out of a single sentence. The key words are “first draft”: it spares you the blank page, not the finishing. And it doesn't replace Canva Pro, it leans on it."
+    },
     "situations": [
       {
         "title": {
@@ -460,8 +464,8 @@
           "en": "Create an Instagram post announcing my Saturday workshop, then make a story version of it."
         },
         "gain": {
-          "fr": "Vous partez d'un brouillon modifiable dans Canva plutôt que d'une page blanche, sans refaire la mise en page pour le second format (le redimensionnement demande Canva Pro).",
-          "en": "You start from an editable draft in Canva instead of a blank page, without rebuilding the layout for the second format (resizing needs Canva Pro)."
+          "fr": "deux formats modifiables dans Canva, sans refaire la mise en page.",
+          "en": "two editable formats in Canva, without redoing the layout."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/"
       },
@@ -475,8 +479,8 @@
           "en": "Turn these notes into a short presentation for my client, then export it as a PDF."
         },
         "gain": {
-          "fr": "Rédaction et mise en page dans la même demande, et le fichier sans quitter la conversation.",
-          "en": "Writing and layout in one request, and the file without leaving the chat."
+          "fr": "une présentation mise en page et son PDF, sans quitter la conversation.",
+          "en": "a laid-out deck and its PDF, without leaving the chat."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/"
       },
@@ -490,48 +494,72 @@
           "en": "Show me the unresolved comments on the “Spring launch” deck."
         },
         "gain": {
-          "fr": "Ce qu'il reste à corriger d'un coup d'œil, sans ouvrir le design page par page.",
-          "en": "What still needs fixing at a glance, without opening the design page by page."
+          "fr": "la liste de ce qu'il reste à corriger.",
+          "en": "the list of what's left to fix."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/"
       }
     ],
     "tips": [
       {
-        "fr": "Rédigez votre demande comme un brief : format, couleurs, textes exacts, nom du design. Canva le conseille lui-même.",
-        "en": "Write your request like a brief: format, colours, exact text, design name. Canva itself recommends it.",
+        "title": {
+          "fr": "Briefez-le comme un graphiste",
+          "en": "Brief it like a designer"
+        },
+        "fr": "Format, couleurs, textes exacts, nom du design : plus la demande est précise, moins vous retouchez. Canva le conseille lui-même.",
+        "en": "Format, colours, exact text, design name: the sharper the request, the less you retouch. Canva itself recommends it.",
         "source": "https://www.canva.com/help/mcp-canva-usage/",
         "community": false
       },
       {
-        "fr": "Quand un résultat est presque bon, demandez une retouche précise plutôt que de tout relancer.",
-        "en": "When a result is almost right, ask for a targeted change instead of starting over.",
+        "title": {
+          "fr": "Retouchez, ne relancez pas",
+          "en": "Refine, don't restart"
+        },
+        "fr": "Quand c'est presque bon, demandez un changement précis. Tout relancer, c'est rejouer au loto.",
+        "en": "When it's almost right, ask for one precise change. Starting over is buying another lottery ticket.",
         "source": "https://www.canva.com/help/mcp-canva-usage/",
         "community": false
       },
       {
-        "fr": "Avant de faire modifier un design déjà livré, demandez d'abord une copie : l'original reste intact.",
-        "en": "Before having a delivered design edited, ask for a copy first: the original stays intact.",
+        "title": {
+          "fr": "Une copie avant de toucher au livré",
+          "en": "A copy before touching what you delivered"
+        },
+        "fr": "Avant de faire modifier un design déjà envoyé au client, demandez une copie : l'original reste intact.",
+        "en": "Before having a design already sent to the client edited, ask for a copy: the original stays intact.",
         "source": "https://www.canva.com/help/mcp-canva-usage/",
         "community": false
       },
       {
-        "fr": "Rangez votre kit de marque avant de vous lancer, et importez aussi vos logos dans vos fichiers Canva : ceux rangés seulement dans le kit sont souvent oubliés.",
-        "en": "Set up your brand kit before you start, and upload your logos to your Canva files too: those stored only in the kit are often skipped.",
+        "title": {
+          "fr": "Kit de marque rangé, logos en double",
+          "en": "Brand kit in order, logos twice"
+        },
+        "fr": "Couleurs et polices du kit sont bien reprises, mais les logos rangés seulement dans le kit sont souvent oubliés : importez-les aussi dans vos fichiers.",
+        "en": "The kit's colours and fonts are picked up, but logos stored only in the kit are often skipped: upload them to your files too.",
         "source": "https://www.mejba.me/blog/claude-canva-connector-design-workflow",
         "community": true
       },
       {
-        "fr": "Dans Claude, ouvrez les réglages de l'intégration Canva : coupez les actions inutiles et choisissez si l'assistant vous demande votre accord à chaque fois.",
-        "en": "In Claude, open the Canva integration's settings: switch off the actions you don't need and choose whether the assistant asks for your approval each time.",
+        "title": {
+          "fr": "Coupez ce qui ne sert pas",
+          "en": "Switch off what you don't use"
+        },
+        "fr": "Dans Claude, les réglages de l'intégration Canva permettent de désactiver des actions et de choisir s'il vous demande votre accord à chaque fois.",
+        "en": "In Claude, the Canva integration's settings let you switch actions off and choose whether it asks for your approval each time.",
         "source": "https://www.canva.com/help/mcp-canva-usage/",
         "community": false
       }
     ],
     "pitfalls": [
       {
-        "fr": "Un design généré reste un premier jet : polices par défaut, images banales et texte de remplissage quand la demande est vague.",
-        "en": "A generated design is a first draft: default fonts, generic images and filler text when the request is vague.",
+        "title": {
+          "fr": "Un premier jet reste un premier jet",
+          "en": "A first draft is a first draft"
+        },
+        "fr": "Demande vague, résultat sage : polices par défaut, images banales, texte de remplissage.",
+        "en": "Vague request, tame result: default fonts, generic images, filler text.",
         "workaround": {
           "fr": "Finissez typographie et images dans Canva, et partez d'un modèle à vous pour les formats qui reviennent.",
           "en": "Finish typography and images in Canva, and start from your own template for recurring formats."
@@ -540,8 +568,12 @@
         "community": true
       },
       {
-        "fr": "Créer un design ou générer une image consomme votre allocation IA Canva ; détourage, redimensionnement et vidéo demandent Canva Pro.",
-        "en": "Creating a design or generating an image uses your Canva AI allowance; background removal, resizing and video need Canva Pro.",
+        "title": {
+          "fr": "Il puise dans vos crédits Canva",
+          "en": "It draws on your Canva credits"
+        },
+        "fr": "Créer un design ou générer une image consomme votre allocation IA Canva ; détourer, redimensionner ou faire de la vidéo demande Canva Pro.",
+        "en": "Creating a design or generating an image uses your Canva AI allowance; background removal, resizing or video need Canva Pro.",
         "workaround": {
           "fr": "Gardez la génération pour les premiers jets, puis faites retoucher, copier ou exporter vos designs existants.",
           "en": "Keep generation for first drafts, then have your existing designs edited, copied or exported."
@@ -550,8 +582,12 @@
         "community": false
       },
       {
-        "fr": "Dans ChatGPT, seuls les designs que vous choisissez sont enregistrés, et certains liens ressemblent à des liens Canva sans mener à aucun design.",
-        "en": "In ChatGPT, only the designs you pick are saved, and some links look like Canva links but lead to no design.",
+        "title": {
+          "fr": "Dans ChatGPT, des liens trompeurs",
+          "en": "In ChatGPT, misleading links"
+        },
+        "fr": "Seuls les designs que vous choisissez sont enregistrés, et certains liens ressemblent à des liens Canva sans mener nulle part.",
+        "en": "Only the designs you pick are saved, and some links look like Canva links but lead nowhere.",
         "workaround": {
           "fr": "Choisissez « Enregistrer » ou « Ouvrir dans Canva » depuis l'aperçu, ou retrouvez le design dans vos projets Canva.",
           "en": "Choose Save or Open in Canva from the preview, or find the design in your Canva projects."
@@ -560,8 +596,12 @@
         "community": false
       },
       {
-        "fr": "Dans l'équipe Canva d'un client, l'administrateur peut couper le connecteur : l'action reste visible dans l'assistant, mais elle est refusée.",
-        "en": "In a client's Canva team, the admin can switch the connector off: the action still shows in the assistant, but it is refused.",
+        "title": {
+          "fr": "Chez un client, son admin décide",
+          "en": "At a client's, their admin decides"
+        },
+        "fr": "Dans l'équipe Canva d'un client, l'administrateur peut couper le connecteur : l'action apparaît, puis elle est refusée.",
+        "en": "In a client's Canva team, the admin can switch the connector off: the action shows up, then it is refused.",
         "workaround": {
           "fr": "Demandez au client de l'activer ; dans votre propre équipe, voyez Paramètres > Autorisations > Magic et IA.",
           "en": "Ask the client to turn it on; in your own team, see Settings > Permissions > Magic and AI."

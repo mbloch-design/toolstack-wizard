@@ -210,6 +210,9 @@ export function validateMcpSheet(sheet, { catalogSlugs, skillSlugs } = {}) {
   if ("advice" in (sheet || {})) {
     const a = sheet.advice, sourced = (item) => isUrl(item?.source) && (item.community === undefined || typeof item.community === "boolean");
     if (!a || !isPair(a.verdict) || !isUrl(a.verdict.source)) errors.push(`${at} : advice.verdict fr/en et sa source`);
+    // The peer's voice (19/11): an introduction that sets the scene, and a short title opening every tip and pitfall.
+    if (!isPair(a?.intro)) errors.push(`${at} : advice.intro fr/en`);
+    for (const item of [...(a?.tips ?? []), ...(a?.pitfalls ?? [])]) if (!isPair(item?.title)) errors.push(`${at} : advice, titre fr/en manquant (${item?.fr?.slice(0, 30)})`);
     if (!Array.isArray(a?.situations) || a.situations.length < 2 || a.situations.length > 3
       || !a.situations.every((x) => isPair(x?.title) && isPair(x?.ask) && isPair(x?.gain) && isUrl(x?.source))) errors.push(`${at} : advice.situations, 2 ou 3 (titre, demande, gain, source)`);
     if (!Array.isArray(a?.tips) || a.tips.length < 3 || a.tips.length > 5 || !a.tips.every((x) => isPair(x) && sourced(x))) errors.push(`${at} : advice.tips, 3 à 5 conseils fr/en sourcés`);

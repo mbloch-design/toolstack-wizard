@@ -46,9 +46,9 @@ export const Notion: Story = {
     await expect(canvasElement.querySelector("[data-chapter=head] [data-verdict]")).not.toBeNull();
     await expect(canvasElement.querySelectorAll("[data-chapter=ask] [data-situation]").length).toBeGreaterThanOrEqual(2);
     const advice = canvasElement.querySelector<HTMLElement>("[data-chapter=advice]")!;
-    await expect(advice.querySelectorAll("[data-column=tips] h3 ~ div > *").length).toBeGreaterThanOrEqual(3);
+    await expect(advice.querySelectorAll("[data-column=tips] li").length).toBeGreaterThanOrEqual(3);
     // Every pitfall says its way around; the advice says where it comes from.
-    const pitfalls = advice.querySelectorAll("[data-column=pitfalls] h3 ~ div > *");
+    const pitfalls = advice.querySelectorAll("[data-column=pitfalls] li");
     await expect(pitfalls.length).toBeGreaterThanOrEqual(2);
     for (const pitfall of pitfalls) await expect(pitfall.textContent).toMatch(fr ? /La parade/ : /The way around/);
     await expect(canvasElement.querySelector("[data-chapter=annex]")!.textContent).toMatch(fr ? /Nos conseils viennent de/ : /Our advice comes from/);
@@ -73,6 +73,8 @@ export const Notion: Story = {
     for (const card of canvasElement.querySelectorAll("[data-situation]")) {
       await expect(card.firstElementChild!.tagName).toBe("H3");
       await expect(card.querySelector("[class*='stepNumber']")).toBeNull();
+      // The message is the reader's: no assistant's mark in it.
+      await expect(card.querySelector("[data-prompt] > :first-child > [aria-hidden='true']")).toBeNull();
     }
     // Tabs (step 8c): the assistants, then « Outil de code ▾ » and its menu.
     await expect(canvas.getByRole("tab", { name: /Claude/ })).toHaveAttribute("aria-selected", "true");

@@ -678,6 +678,10 @@
       "en": "If your clients and projects already live in Notion and you use Claude or ChatGPT, plug it in: your assistant searches, summarises and writes in your pages, without you moving up to the plan that includes Notion AI.",
       "source": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
     },
+    "intro": {
+      "fr": "Soyons honnêtes : Notion, c'est souvent là où les bonnes intentions vont dormir. Des notes de réunion jamais relues, une base clients à moitié remplie… Brancher votre assistant, c'est lui confier la clé du grenier : il retrouve, résume et range à votre place. À une condition : que le grenier ait quelques étiquettes. Voici ce qui fait la différence, et les quelques portes qui restent fermées.",
+      "en": "Let's be honest: Notion is often where good intentions go to sleep. Meeting notes never reread, a half-filled client database… Plugging in your assistant hands it the attic key: it finds, sums up and tidies for you. On one condition: the attic needs a few labels. Here is what makes the difference, and the few doors that stay shut."
+    },
     "situations": [
       {
         "title": {
@@ -689,8 +693,8 @@
           "en": "Before my call with Dupont, summarise their latest meeting notes and any open decisions."
         },
         "gain": {
-          "fr": "Vous arrivez à l'appel avec l'historique en tête, sans rouvrir chaque page.",
-          "en": "You join the call with the history in mind, without reopening every page."
+          "fr": "l'historique en tête avant l'appel, sans rouvrir chaque page.",
+          "en": "the history in mind before the call, without reopening every page."
         },
         "source": "https://developers.notion.com/guides/mcp/overview"
       },
@@ -704,8 +708,8 @@
           "en": "In my Projects database, list what is late or blocked and what I must deliver next week."
         },
         "gain": {
-          "fr": "Un état des lieux en une réponse, tiré des tâches et des notes déjà reliées.",
-          "en": "A status overview in one answer, drawn from tasks and notes already linked."
+          "fr": "un état des lieux en une réponse.",
+          "en": "a status overview in one answer."
         },
         "source": "https://developers.notion.com/guides/mcp/overview"
       },
@@ -719,48 +723,72 @@
           "en": "In my Invoices database, find the ones still “Sent” for over a month and switch them to “Follow up”."
         },
         "gain": {
-          "fr": "La liste des relances est prête et la base à jour, sans filtrer à la main.",
-          "en": "Your follow-up list is ready and the database up to date, with no manual filtering."
+          "fr": "la liste des relances, et une base à jour.",
+          "en": "your follow-up list, and an up-to-date database."
         },
         "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
       }
     ],
     "tips": [
       {
-        "fr": "Donnez à vos pages des titres clairs (client, type de document, date) : l'assistant s'appuie sur les titres pour comprendre ce qu'il trouve.",
-        "en": "Give your pages clear titles (client, document type, date): the assistant relies on titles to understand what it finds.",
+        "title": {
+          "fr": "Des titres qui parlent",
+          "en": "Titles that speak"
+        },
+        "fr": "Client, type de document, date : l'assistant s'appuie sur les titres pour comprendre ce qu'il trouve. « Notes 3 » ne l'aidera pas plus que vous.",
+        "en": "Client, document type, date: the assistant relies on titles to understand what it finds. “Notes 3” won't help it any more than it helps you.",
         "source": "https://www.notion.com/help/notion-mcp",
         "community": false
       },
       {
-        "fr": "Reliez vos tâches aux pages client et aux notes de réunion, avec une base par sujet (clients, projets, factures) : l'assistant peut alors résumer l'avancement et les blocages.",
-        "en": "Link your tasks to client pages and meeting notes, with one database per subject (clients, projects, invoices): the assistant can then summarise progress and blockers.",
+        "title": {
+          "fr": "Une base par sujet, reliées entre elles",
+          "en": "One database per subject, linked together"
+        },
+        "fr": "Clients, projets, factures, chacun dans sa base, avec les tâches reliées aux pages client : c'est ce qui lui permet de vous résumer l'avancement et les blocages.",
+        "en": "Clients, projects, invoices, each in its own database, with tasks linked to client pages: that is what lets it sum up progress and blockers for you.",
         "source": "https://developers.notion.com/guides/mcp/overview",
         "community": false
       },
       {
-        "fr": "Dans les réglages du connecteur, laissez la lecture libre et gardez la modification et la suppression sous approbation.",
-        "en": "In the connector's settings, leave reading open and keep editing and deleting behind approval.",
+        "title": {
+          "fr": "Lecture libre, écriture sur demande",
+          "en": "Free reading, writing on request"
+        },
+        "fr": "Dans les réglages du connecteur, laissez-le lire librement, mais gardez la modification et la suppression sous votre approbation.",
+        "en": "In the connector's settings, let it read freely, but keep editing and deleting behind your approval.",
         "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
         "community": false
       },
       {
-        "fr": "Sur une page destinée à un client, demandez une suggestion de modification plutôt qu'une réécriture : vous l'acceptez ensuite dans Notion.",
-        "en": "On a page meant for a client, ask for a suggested edit rather than a rewrite: you accept it in Notion afterwards.",
+        "title": {
+          "fr": "Sur une page client, une suggestion plutôt qu'une réécriture",
+          "en": "On a client page, a suggestion rather than a rewrite"
+        },
+        "fr": "Demandez-lui de proposer une modification : vous l'acceptez dans Notion, et le texte que lit votre client reste le vôtre.",
+        "en": "Ask it to suggest an edit: you accept it in Notion, and the text your client reads stays yours.",
         "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools",
         "community": false
       },
       {
-        "fr": "Dans ChatGPT, attendez-vous à confirmer chaque mise à jour : c'est lassant pour des mises à jour en série, préférez de petits lots.",
-        "en": "In ChatGPT, expect to confirm each update: it gets tiring for batch updates, so prefer small batches.",
+        "title": {
+          "fr": "Dans ChatGPT, prévoyez de cliquer",
+          "en": "In ChatGPT, expect to click"
+        },
+        "fr": "Chaque mise à jour demande votre accord. Pour vingt fiches d'un coup, ça devient un exercice de patience : travaillez par petits lots.",
+        "en": "Every update asks for your approval. For twenty records at once, it turns into a patience exercise: work in small batches.",
         "source": "https://community.openai.com/t/trusted-approval-policy-for-repeated-connector-write-actions/1381447",
         "community": true
       }
     ],
     "pitfalls": [
       {
-        "fr": "Les invités d'un espace Notion ne peuvent pas se connecter : dans l'espace d'un client où vous êtes invité, l'assistant n'aura pas accès.",
-        "en": "Guests in a Notion workspace cannot connect: in a client's workspace where you are a guest, your assistant has no access.",
+        "title": {
+          "fr": "Invité chez un client ? Porte fermée",
+          "en": "A guest at a client's? Door shut"
+        },
+        "fr": "Les invités d'un espace Notion ne peuvent pas brancher d'assistant.",
+        "en": "Guests in a Notion workspace cannot plug in an assistant.",
         "workaround": {
           "fr": "Demandez au client de vous ajouter comme membre, ou copiez les pages utiles dans votre propre espace.",
           "en": "Ask the client to add you as a member, or copy the pages you need into your own workspace."
@@ -769,8 +797,12 @@
         "community": false
       },
       {
-        "fr": "Sur beaucoup de pages, l'assistant les ouvre une par une : c'est lent, et il peut en sauter.",
-        "en": "Across many pages, the assistant opens them one by one: it is slow, and it may skip some.",
+        "title": {
+          "fr": "Beaucoup de pages, lecture lente",
+          "en": "Many pages, slow reading"
+        },
+        "fr": "Il ouvre les pages une par une, et peut en sauter quand il y en a trop.",
+        "en": "It opens pages one by one, and may skip some when there are too many.",
         "workaround": {
           "fr": "Pointez une page ou une base précise et travaillez par petits lots ; pour un bilan complet, partez d'un export.",
           "en": "Point to a specific page or database and work in small batches; for a full review, start from an export."
@@ -779,8 +811,12 @@
         "community": true
       },
       {
-        "fr": "Chaque action compte dans les limites de requêtes de Notion : au-delà, elle s'arrête sur une erreur au lieu d'attendre.",
-        "en": "Every action counts toward Notion's request limits: past them, it stops with an error instead of waiting.",
+        "title": {
+          "fr": "Les limites de requêtes",
+          "en": "Request limits"
+        },
+        "fr": "Au-delà des limites de Notion, l'action s'arrête sur une erreur au lieu d'attendre.",
+        "en": "Past Notion's limits, the action stops with an error instead of waiting.",
         "workaround": {
           "fr": "Demandez-lui de faire moins de choses à la fois, ou réessayez un peu plus tard.",
           "en": "Ask it to do fewer things at once, or try again a little later."
@@ -789,8 +825,12 @@
         "community": false
       },
       {
-        "fr": "L'assistant agit avec tous vos droits : une demande mal comprise peut modifier ou mettre à la corbeille une page client.",
-        "en": "The assistant acts with all your rights: a misunderstood request can edit or trash a client page.",
+        "title": {
+          "fr": "Il a vos droits, tous vos droits",
+          "en": "It has your rights, all of them"
+        },
+        "fr": "Une demande mal comprise peut modifier ou mettre à la corbeille une page client.",
+        "en": "A misunderstood request can edit or trash a client page.",
         "workaround": {
           "fr": "Gardez l'écriture sous approbation et essayez d'abord vos demandes sur une page de test.",
           "en": "Keep writing behind approval and try your requests on a test page first."
