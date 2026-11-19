@@ -1,0 +1,118 @@
+/* PROPOSITION (19/11/2026), à valider par Michael : illustrations dessinées des cartes de situation.
+   Rien ici n'est branché sur les fiches ; la planche vit dans SituationArt.stories.tsx. */
+
+.board {
+  display: grid;
+  gap: var(--tt-space-12);
+  max-width: 1080px;
+}
+
+.direction {
+  display: grid;
+  gap: var(--tt-space-6);
+}
+
+.head {
+  display: grid;
+  gap: var(--tt-space-2);
+  max-width: 720px;
+}
+
+.title {
+  composes: titleM from "../atoms.module.css";
+}
+
+.text {
+  composes: text from "../atoms.module.css";
+}
+
+.tool {
+  composes: label from "../atoms.module.css";
+  composes: strong from "../atoms.module.css";
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--tt-gap-group);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The situation card as the sheet draws it (AgentSheet.module.css, .situation), the art in the round's row. */
+.card {
+  display: grid;
+  grid-row: span 5;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  padding: var(--tt-space-8);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
+  min-width: 0;
+}
+
+.eyebrow {
+  composes: label from "../atoms.module.css";
+  composes: strong from "../atoms.module.css";
+  padding-bottom: var(--tt-space-2);
+}
+
+.headline {
+  composes: titleM from "../atoms.module.css";
+  padding-bottom: var(--tt-space-8);
+}
+
+.card .headline {
+  font-weight: var(--tt-w-em);
+}
+
+.message {
+  composes: text from "../atoms.module.css";
+  align-self: end;
+  padding: var(--tt-space-4);
+  border-radius: var(--tt-r-card);
+  border-end-end-radius: var(--tt-space-1);
+  background: var(--tt-bg);
+}
+
+.action {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--tt-space-4);
+}
+
+/* The art's slot. A and B: a plate across the card's width, 12:7, the card's inner radius, 24 above the eyebrow.
+   C: the drawing alone, 88 high, where the round sits today. */
+.plate {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 12 / 7;
+  margin-bottom: var(--tt-space-6);
+  border-radius: var(--tt-r-card);
+}
+
+.line {
+  display: block;
+  width: auto;
+  height: 88px;
+  margin-bottom: var(--tt-space-4);
+  color: var(--tt-ink);
+}
+
+.reco {
+  display: grid;
+  gap: var(--tt-space-3);
+  max-width: 720px;
+  padding: var(--tt-space-8);
+  border-radius: var(--tt-r-tile);
+  background: var(--tt-tile);
+}
+
+.reco ul {
+  display: grid;
+  gap: var(--tt-space-2);
+  margin: 0;
+  padding-inline-start: var(--tt-space-6);
+}
