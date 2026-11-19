@@ -130,9 +130,16 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
   const shownTools = standaloneTools?.filter((tool) => tool.name.toLowerCase().includes(filter));
   const shownListings = listings?.filter((listing) => listing.name.toLowerCase().includes(filter));
   const shownClaims = claims.filter((claim) => claim.slug.toLowerCase().includes(filter));
+  const hasVisibleRecords = !!(tools?.length || listings?.length || claims.length);
+  const hasLoadError = loadErrors.tools || loadErrors.listings;
+  const allListsSettled = (tools !== null || loadErrors.tools) && (listings !== null || loadErrors.listings);
+  const showRecords = !allListsSettled || hasVisibleRecords || !hasLoadError;
   return <Page>
+    {!listingId && <p>{t("Proposez un outil à ToolTrim ou retrouvez vos demandes et vos fiches.", "Suggest a tool to ToolTrim or find your applications and listings.")}</p>}
     {(loadErrors.tools || loadErrors.listings) && <div role="alert" className={styles.section}>
-      <p>{t("Une partie de vos fiches n’a pas pu être chargée. Les informations disponibles restent consultables.", "Some of your listings could not be loaded. Available information remains accessible.")}</p>
+      <p>{hasVisibleRecords
+        ? t("Certaines fiches ou demandes n’ont pas pu être chargées.", "Some listings or applications could not be loaded.")
+        : t("Impossible de charger vos fiches et demandes. Réessayez pour accéder à votre espace éditeur.", "Your listings and applications could not be loaded. Try again to access your publisher workspace.")}</p>
       <div className={styles.actions}><Button onClick={() => setReload((value) => value + 1)}>{t("Réessayer", "Try again")}</Button></div>
     </div>}
     {listingId && <>
@@ -143,12 +150,12 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
         : <p role="status">{listings ? t("Ce dossier n’est pas accessible depuis votre compte.", "Your account cannot access this application.") : loadErrors.listings ? t("Dossier indisponible. Réessayez le chargement.", "Application unavailable. Retry loading.") : t("Recherche du dossier…", "Finding your application…")}</p>}
     </>}
     {!listingId && <>
-      <div className={styles.actions}>
+      {listings && <div className={styles.actions}>
         <a {...buttonAttrs("primary")} href="#publisher-new">{t("Ajouter un produit", "Add a product")}</a>
-      </div>
+      </div>}
       {!!notice && <p role="status">{notice}</p>}
       {!!error && <p role="alert" className={styles.error}>{error}</p>}
-      <section className={styles.section} aria-label={t("Fiches et demandes", "Listings and applications")}>
+      {showRecords && <section className={styles.section} aria-label={t("Fiches et demandes", "Listings and applications")}>
         {(standaloneTools?.length ?? 0) + (listings?.length ?? 0) + claims.length > 1 &&
           <Field type="search" label={t("Rechercher parmi mes fiches", "Search my listings")} value={toolFilter} onChange={(event) => setToolFilter(event.target.value)} />}
         {listings && tools && !shownTools?.length && !shownListings?.length && !shownClaims.length && <p>{filter
@@ -177,7 +184,7 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
             <h3>{claim.slug}</h3><p>{t("Demande d’accès en attente de vérification", "Access request awaiting verification")}</p>
           </article>)}
         </div>}
-      </section>
+      </section>}
 
       {listings && <section className={styles.section} aria-labelledby="publisher-new">
         <h2 id="publisher-new" ref={proposalHeading} tabIndex={-1}>{t("Proposer ou retrouver un outil", "Suggest or find a tool")}</h2>
@@ -240,6 +247,5 @@ export default function PublisherDashboard({ getToken }: { getToken: PublisherTo
         </form>
       </section>}
     </>}
-    {(tools === null || listings === null) && <div className={styles.actions}><Button onClick={() => setReload(reload + 1)}>{t("Actualiser mes fiches", "Refresh my listings")}</Button></div>}
   </Page>;
 }

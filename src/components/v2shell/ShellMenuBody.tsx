@@ -14,6 +14,7 @@ import { useStackAccount } from "@/hooks/useStackAccount";
 import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
 import { accountPath } from "@/lib/accountPaths";
 import { trackEvent } from "@/lib/analytics";
+import { usePublisherAccess } from "@/hooks/usePublisherAccess";
 import { publisherPath } from "@/lib/publisherCatalogApi";
 
 /** The router's link, for the system's shell (src/ds/Shell is router-free). */
@@ -44,13 +45,15 @@ export default function ShellMenuBody({ languageHref, places = false, onDone }: 
   const navigate = useNavigate();
   const experience = useAccountExperience();
   const who = useShellAccount();
+  const access = usePublisherAccess();
+  const hasPublisherActivity = access.tools.length + access.listings.length + access.claims.length > 0;
   return <>
     {who.kind === "user" && <MenuGroup><MenuIdentity name={who.name} detail={who.email !== who.name ? who.email : undefined} /></MenuGroup>}
-    {who.kind === "user" && who.publisher && <MenuGroup>
+    {who.kind === "user" && who.publisher && hasPublisherActivity && <MenuGroup>
       <MenuLink link={RouterLink} to={publisherPath(prefix)} icon={<FileText />} onClick={onDone}>{t("Mes fiches", "My listings")}</MenuLink>
     </MenuGroup>}
     {who.kind === "guest" && <MenuGroup>
-      <Button variant="primary" onClick={() => { onDone(); experience.openAuth("signin", `${prefix}/ma-stack`); }}>{who.expired ? t("Me reconnecter", "Sign in again") : t("Se connecter", "Sign in")}</Button>
+      <Button variant="primary" onClick={() => { onDone(); experience.openAuth("signin"); }}>{who.expired ? t("Me reconnecter", "Sign in again") : t("Se connecter", "Sign in")}</Button>
     </MenuGroup>}
     {places && <MenuGroup label={t("Explorer", "Explore")}>
       <MenuLink link={RouterLink} to={`${prefix}/stacks`} icon={<Boxes />} onClick={onDone}>{t("Stacks", "Stacks")}</MenuLink>

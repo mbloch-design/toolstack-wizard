@@ -25,6 +25,7 @@ export default function AccountAuthPage({ mode }: { mode: AuthMode }) {
   ].includes(returnTo.split("?")[0])
     ? `/${lang}/ma-stack`
     : returnTo;
+  const isPublisher = /^\/(fr|en)\/(publisher(?:[/?#]|$)|editeur(?:[/?#]|$))/.test(destination);
   const complete = useCallback(
     () => navigate(destination, { replace: true }),
     [destination, navigate],
@@ -37,16 +38,16 @@ export default function AccountAuthPage({ mode }: { mode: AuthMode }) {
           ? t("Créer un compte", "Create an account")
           : t("Se connecter", "Sign in")
       }
-      intro={t(
+      intro={isPublisher ? t("Connectez-vous pour reprendre votre demande ou gérer vos fiches outil.", "Sign in to continue your application or manage your listings.") : t(
         "Retrouvez vos outils et gérez votre stack, sur tous vos appareils.",
         "Keep your tools and manage your stack across your devices.",
       )}
     >
       {account.enabled ? (
-        <div className={`ac-auth-layout${mode === "signup" ? " ac-auth-layout--signup" : ""}`}>
-          {mode === "signup" && <AccountWelcome />}
+        <div className={`ac-auth-layout${mode === "signup" && !isPublisher ? " ac-auth-layout--signup" : ""}`}>
+          {mode === "signup" && !isPublisher && <AccountWelcome />}
           <div className="ac-auth-card">
-            <span className="ac-eyebrow">{mode === "signup" ? t("Un compte gratuit, une stack à vous", "A free account, a stack of your own") : t("Content de vous revoir", "Good to see you again")}</span>
+            <span className="ac-eyebrow">{mode === "signup" ? (isPublisher ? t("Votre espace éditeur", "Your publisher workspace") : t("Un compte gratuit, une stack à vous", "A free account, a stack of your own")) : t("Content de vous revoir", "Good to see you again")}</span>
           <AccountAuthJourney
             mode={mode}
             returnTo={destination}
