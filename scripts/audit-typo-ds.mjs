@@ -19,8 +19,18 @@ import { join } from "node:path";
 const root = join(import.meta.dirname, "..");
 const index = JSON.parse(readFileSync(join(root, "storybook-static/index.json"), "utf8"));
 const stories = Object.values(index.entries).filter((entry) => entry.type === "story");
-const server = spawn("node", [join(root, "visual/serve.mjs")]);
+const PORT = Number(process.env.STORYBOOK_STATIC_PORT) || 6007;
+const server = spawn("node", [join(root, "visual/serve.mjs")], { env: { ...process.env, STORYBOOK_STATIC_PORT: String(PORT) } });
 await new Promise((resolve) => setTimeout(resolve, 600));
+// Never audit someone else's server (19/11/2026: an old Storybook held 6007, every page came back empty and the audit
+// said « 0 écarts »). The served index must be this build's, story for story; otherwise stop and say so.
+const served = await fetch(`http://127.0.0.1:${PORT}/index.json`).then((res) => res.json()).catch(() => null);
+const servedStories = served ? Object.values(served.entries ?? {}).filter((entry) => entry.type === "story").length : -1;
+if (servedStories !== stories.length) {
+  console.error(`Le port ${PORT} ne sert pas ce storybook-static (${servedStories} stories servies, ${stories.length} attendues). Libérez le port ou lancez avec STORYBOOK_STATIC_PORT=<port libre>.`);
+  server.kill();
+  process.exit(2);
+}
 
 const audit = () => {
   const dark = document.documentElement.classList.contains("dark");
@@ -55,7 +65,7 @@ const browser = await chromium.launch();
 const found = new Map();
 for (const story of stories) for (const [width, theme] of [[390, "light"], [1280, "light"], [1280, "dark"]]) {
   const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: "reduce" });
-  await page.goto(`http://127.0.0.1:6007/iframe.html?id=${story.id}&viewMode=story&globals=lang:fr;theme:${theme}`);
+  await page.goto(`http://127.0.0.1:${PORT}/iframe.html?id=${story.id}&viewMode=story&globals=lang:fr;theme:${theme}`);
   await page.locator("#storybook-root > *").first().waitFor({ timeout: 10000 }).catch(() => {});
   await page.evaluate(() => document.fonts.ready);
   // Self-check: TYPO_PROBE=1 slips a wrong text into the first story; the audit must report it.

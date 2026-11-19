@@ -1,4 +1,5 @@
-// Serves storybook-static for the visual tests, with no dependency.
+// Serves storybook-static for the visual tests and the typography audit, with no dependency. Port 6007, or
+// STORYBOOK_STATIC_PORT when another process holds it.
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
@@ -15,4 +16,4 @@ createServer(async (req, res) => {
   } catch {
     res.writeHead(404); res.end();
   }
-}).listen(6007, "127.0.0.1");
+}).listen(Number(process.env.STORYBOOK_STATIC_PORT) || 6007, "127.0.0.1");
