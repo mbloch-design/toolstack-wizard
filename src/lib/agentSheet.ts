@@ -130,32 +130,36 @@ export function sheetMarkdown(sheet: McpSheet, { toolName, url, lang }: { toolNa
 }
 
 const HOOK_KINDS = ["read", "write", "delete", "send", "pay"] as const;
-const raiseFirst = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
-const VERBS = { read: ["lire", "read"], write: ["modifier", "edit"], delete: ["supprimer", "delete"], send: ["envoyer", "send"], pay: ["payer", "pay"] } as const;
-const PLAN_PHRASE = { all: ["Sur tous les forfaits", "On every plan"], paid: ["Sur les forfaits payants", "On paid plans"], specific: ["Sur certains forfaits", "On some plans"], unknown: null } as const;
+const lowerFirst = (text: string) => text.charAt(0).toLowerCase() + text.slice(1);
+const DATA_VERBS = { read: ["lire", "read"], write: ["modifier", "edit"], delete: ["supprimer", "delete"] } as const;
+const PLAN_PHRASE = { all: ["Le serveur est disponible sur tous les forfaits.", "The server is available on every plan."], paid: ["Le serveur demande un forfait payant.", "The server needs a paid plan."], specific: ["Le serveur n'est disponible que sur certains forfaits.", "The server is only available on some plans."], unknown: null } as const;
 
 /**
- * The hook under the title, composed from the data only (17/11): what the assistant can do, on which plan, and the
- * easiest way in. « Votre assistant peut lire, modifier et supprimer dans Notion. Fonctionne sur tous les forfaits
- * Notion. En un clic depuis Claude, ChatGPT ou Gemini. »
+ * The hook under the title, composed from the data only (17/11; rewritten 19/11 after the proofreading: every sentence
+ * has its subject and its verb, every verb its object). « Dans Notion, votre assistant peut lire, modifier et supprimer
+ * vos données. Côté forfait : fonctionne sur tous les forfaits Notion. Le branchement se fait en un clic depuis Claude,
+ * ChatGPT ou Gemini. »
  */
 export function hookSentence(sheet: McpSheet, toolName: string, lang: Lang) {
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
-  const kinds = HOOK_KINDS.filter((kind) => sheet.capabilities?.some((line) => line.kind === kind));
-  const words = kinds.map((kind) => (lang === "en" ? VERBS[kind][1] : VERBS[kind][0]));
   const join = (list: string[], last: string) => (list.length < 2 ? list.join("") : `${list.slice(0, -1).join(", ")} ${last} ${list[list.length - 1]}`);
-  const can = kinds.length === 1 && kinds[0] === "read"
-    ? t(`Votre assistant peut lire vos données ${toolName}, sans rien y modifier.`, `Your assistant can read your ${toolName} data, without changing anything.`)
-    : kinds.length ? t(`Votre assistant peut ${join(words, "et")} dans ${toolName}.`, `Your assistant can ${join(words, "and")} in ${toolName}.`)
+  const has = (kind: (typeof HOOK_KINDS)[number]) => !!sheet.capabilities?.some((line) => line.kind === kind);
+  const dataVerbs = (["read", "write", "delete"] as const).filter(has).map((kind) => (lang === "en" ? DATA_VERBS[kind][1] : DATA_VERBS[kind][0]));
+  const parts = [
+    dataVerbs.length ? t(`${join(dataVerbs, "et")} vos données`, `${join(dataVerbs, "and")} your data`) : null,
+    has("send") ? t("agir en votre nom (envoyer, publier ou partager)", "act on your behalf (send, publish or share)") : null,
+    has("pay") ? t("engager des paiements", "make payments") : null,
+  ].filter(Boolean) as string[];
+  const can = parts.length === 1 && dataVerbs.length === 1 && has("read")
+    ? t(`Dans ${toolName}, votre assistant peut lire vos données, sans rien y modifier.`, `In ${toolName}, your assistant can read your data without changing anything.`)
+    : parts.length ? t(`Dans ${toolName}, votre assistant peut ${join(parts, "et")}.`, `In ${toolName}, your assistant can ${join(parts, "and")}.`)
       : t(`Votre assistant peut travailler dans ${toolName}.`, `Your assistant can work in ${toolName}.`);
   const ways = (["claude", "chatgpt", "gemini", "copilot"] as const).filter((a) => sheet.setup?.some((w) => w.assistant === a && (w.how === "connector" || w.how === "plugin")));
   const names = ways.map((a) => ({ claude: "Claude", chatgpt: "ChatGPT", gemini: "Gemini", copilot: "Copilot" })[a]);
-  const path = names.length ? t(`en un clic depuis ${join(names, "ou")}`, `in one click from ${join(names, "or")}`)
-    : sheet.transport === "local" ? t("installé sur votre ordinateur", "installed on your computer")
-      : sheet.install.some((row) => row.client === "any" && row.type === "url") ? t("en ajoutant son adresse à votre assistant", "by adding its address to your assistant") : null;
-  const plan = sheet.plan_words ? say(lang, sheet.plan_words.common) : null;
-  const planPhrase = PLAN_PHRASE[sheet.plan];
-  if (plan) return [can, plan, path ? `${raiseFirst(path)}.` : null].filter(Boolean).join(" ");
-  const tail = [planPhrase ? (lang === "en" ? planPhrase[1] : planPhrase[0]) : null, path].filter(Boolean).join(", ");
-  return tail ? `${can} ${raiseFirst(tail)}.` : can;
+  const path = names.length ? t(`Le branchement se fait en un clic depuis ${join(names, "ou")}.`, `Connecting takes one click from ${join(names, "or")}.`)
+    : sheet.transport === "local" ? t("Le serveur tourne sur votre ordinateur.", "The server runs on your computer.")
+      : sheet.install.some((row) => row.client === "any" && row.type === "url") ? t("Le branchement se fait en ajoutant l'adresse du serveur à votre assistant.", "You connect it by adding the server's address to your assistant.") : null;
+  const planWords = sheet.plan_words ? say(lang, sheet.plan_words.common).replace(/\.$/, "") : null;
+  const plan = planWords ? t(`Côté forfait : ${lowerFirst(planWords)}.`, `Plans: ${lowerFirst(planWords)}.`) : (PLAN_PHRASE[sheet.plan]?.[lang === "en" ? 1 : 0] ?? null);
+  return [can, plan, path].filter(Boolean).join(" ");
 }

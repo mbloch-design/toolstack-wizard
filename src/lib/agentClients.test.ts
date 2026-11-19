@@ -76,8 +76,9 @@ describe("technical sheet and sources", () => {
 describe("the sheet's hook (step 1, 17/11)", () => {
   const sheet = (slug: string) => servers.find((s) => s.slug === slug)!;
   it("says what it can do, the plan and the easiest way in, from the data only", () => {
-    expect(hookSentence(notion, "Notion", "fr")).toBe("Votre assistant peut lire, modifier et supprimer dans Notion. Fonctionne sur tous les forfaits Notion. En un clic depuis Claude, ChatGPT ou Gemini.");
-    expect(hookSentence(sheet("google-analytics-mcp"), "Google Analytics", "fr")).toBe("Votre assistant peut lire vos données Google Analytics, sans rien y modifier. Installé sur votre ordinateur.");
-    expect(hookSentence(sheet("stripe-mcp"), "Stripe", "fr")).toBe("Votre assistant peut lire, modifier et payer dans Stripe. En un clic depuis Claude ou ChatGPT.");
+    // Every sentence has its subject and its verb, every verb its object (proofreading, 19/11).
+    expect(hookSentence(notion, "Notion", "fr")).toBe("Dans Notion, votre assistant peut lire, modifier et supprimer vos données. Côté forfait : fonctionne sur tous les forfaits Notion. Le branchement se fait en un clic depuis Claude, ChatGPT ou Gemini.");
+    expect(hookSentence(sheet("google-analytics-mcp"), "Google Analytics", "fr")).toMatch(/^Dans Google Analytics, votre assistant peut lire vos données, sans rien y modifier\..* Le serveur tourne sur votre ordinateur\.$/);
+    expect(hookSentence(sheet("stripe-mcp"), "Stripe", "fr")).toBe("Dans Stripe, votre assistant peut lire et modifier vos données et engager des paiements. Le branchement se fait en un clic depuis Claude ou ChatGPT.");
   });
 });
