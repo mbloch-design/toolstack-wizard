@@ -1865,6 +1865,148 @@
           "url": "https://claude.ai/directory/canva"
         }
       ],
+      "advice": {
+        "verdict": {
+          "fr": "Si vous faites déjà vos visuels dans Canva, branchez-le : il marche avec un compte gratuit. Mais il ne vous évite pas Canva Pro : générer un design puise dans votre allocation IA Canva, et redimensionner ou détourer reste payant.",
+          "en": "If you already make your visuals in Canva, plug it in: it works with a free account. But it won't spare you Canva Pro: generating a design uses your Canva AI allowance, and resizing or background removal stay paid.",
+          "source": "https://www.canva.com/help/mcp-canva-usage/"
+        },
+        "situations": [
+          {
+            "title": {
+              "fr": "Un post, puis sa version story",
+              "en": "One post, then its story version"
+            },
+            "ask": {
+              "fr": "Crée un post Instagram pour annoncer mon atelier de samedi, puis fais-en une version story.",
+              "en": "Create an Instagram post announcing my Saturday workshop, then make a story version of it."
+            },
+            "gain": {
+              "fr": "Vous partez d'un brouillon modifiable dans Canva plutôt que d'une page blanche, sans refaire la mise en page pour le second format (le redimensionnement demande Canva Pro).",
+              "en": "You start from an editable draft in Canva instead of a blank page, without rebuilding the layout for the second format (resizing needs Canva Pro)."
+            },
+            "source": "https://www.canva.com/help/mcp-canva-usage/"
+          },
+          {
+            "title": {
+              "fr": "Une présentation client tirée de vos notes",
+              "en": "A client deck built from your notes"
+            },
+            "ask": {
+              "fr": "Transforme ces notes en courte présentation pour mon client, puis exporte-la en PDF.",
+              "en": "Turn these notes into a short presentation for my client, then export it as a PDF."
+            },
+            "gain": {
+              "fr": "Rédaction et mise en page dans la même demande, et le fichier sans quitter la conversation.",
+              "en": "Writing and layout in one request, and the file without leaving the chat."
+            },
+            "source": "https://www.canva.com/help/mcp-canva-usage/"
+          },
+          {
+            "title": {
+              "fr": "Faire le point sur les retours d'un client",
+              "en": "Catching up on a client's feedback"
+            },
+            "ask": {
+              "fr": "Montre-moi les commentaires non résolus sur la présentation « Lancement printemps ».",
+              "en": "Show me the unresolved comments on the “Spring launch” deck."
+            },
+            "gain": {
+              "fr": "Ce qu'il reste à corriger d'un coup d'œil, sans ouvrir le design page par page.",
+              "en": "What still needs fixing at a glance, without opening the design page by page."
+            },
+            "source": "https://www.canva.com/help/mcp-canva-usage/"
+          }
+        ],
+        "tips": [
+          {
+            "fr": "Rédigez votre demande comme un brief : format, couleurs, textes exacts, nom du design. Canva le conseille lui-même.",
+            "en": "Write your request like a brief: format, colours, exact text, design name. Canva itself recommends it.",
+            "source": "https://www.canva.com/help/mcp-canva-usage/",
+            "community": false
+          },
+          {
+            "fr": "Quand un résultat est presque bon, demandez une retouche précise plutôt que de tout relancer.",
+            "en": "When a result is almost right, ask for a targeted change instead of starting over.",
+            "source": "https://www.canva.com/help/mcp-canva-usage/",
+            "community": false
+          },
+          {
+            "fr": "Avant de faire modifier un design déjà livré, demandez d'abord une copie : l'original reste intact.",
+            "en": "Before having a delivered design edited, ask for a copy first: the original stays intact.",
+            "source": "https://www.canva.com/help/mcp-canva-usage/",
+            "community": false
+          },
+          {
+            "fr": "Rangez votre kit de marque avant de vous lancer, et importez aussi vos logos dans vos fichiers Canva : ceux rangés seulement dans le kit sont souvent oubliés.",
+            "en": "Set up your brand kit before you start, and upload your logos to your Canva files too: those stored only in the kit are often skipped.",
+            "source": "https://www.mejba.me/blog/claude-canva-connector-design-workflow",
+            "community": true
+          },
+          {
+            "fr": "Dans Claude, ouvrez les réglages de l'intégration Canva : coupez les actions inutiles et choisissez si l'assistant vous demande votre accord à chaque fois.",
+            "en": "In Claude, open the Canva integration's settings: switch off the actions you don't need and choose whether the assistant asks for your approval each time.",
+            "source": "https://www.canva.com/help/mcp-canva-usage/",
+            "community": false
+          }
+        ],
+        "pitfalls": [
+          {
+            "fr": "Un design généré reste un premier jet : polices par défaut, images banales et texte de remplissage quand la demande est vague.",
+            "en": "A generated design is a first draft: default fonts, generic images and filler text when the request is vague.",
+            "workaround": {
+              "fr": "Finissez typographie et images dans Canva, et partez d'un modèle à vous pour les formats qui reviennent.",
+              "en": "Finish typography and images in Canva, and start from your own template for recurring formats."
+            },
+            "source": "https://www.mejba.me/blog/claude-canva-connector-design-workflow",
+            "community": true
+          },
+          {
+            "fr": "Créer un design ou générer une image consomme votre allocation IA Canva ; détourage, redimensionnement et vidéo demandent Canva Pro.",
+            "en": "Creating a design or generating an image uses your Canva AI allowance; background removal, resizing and video need Canva Pro.",
+            "workaround": {
+              "fr": "Gardez la génération pour les premiers jets, puis faites retoucher, copier ou exporter vos designs existants.",
+              "en": "Keep generation for first drafts, then have your existing designs edited, copied or exported."
+            },
+            "source": "https://www.canva.com/help/mcp-canva-usage/",
+            "community": false
+          },
+          {
+            "fr": "Dans ChatGPT, seuls les designs que vous choisissez sont enregistrés, et certains liens ressemblent à des liens Canva sans mener à aucun design.",
+            "en": "In ChatGPT, only the designs you pick are saved, and some links look like Canva links but lead to no design.",
+            "workaround": {
+              "fr": "Choisissez « Enregistrer » ou « Ouvrir dans Canva » depuis l'aperçu, ou retrouvez le design dans vos projets Canva.",
+              "en": "Choose Save or Open in Canva from the preview, or find the design in your Canva projects."
+            },
+            "source": "https://www.canva.com/help/connect-chatgpt-to-canva/",
+            "community": false
+          },
+          {
+            "fr": "Dans l'équipe Canva d'un client, l'administrateur peut couper le connecteur : l'action reste visible dans l'assistant, mais elle est refusée.",
+            "en": "In a client's Canva team, the admin can switch the connector off: the action still shows in the assistant, but it is refused.",
+            "workaround": {
+              "fr": "Demandez au client de l'activer ; dans votre propre équipe, voyez Paramètres > Autorisations > Magic et IA.",
+              "en": "Ask the client to turn it on; in your own team, see Settings > Permissions > Magic and AI."
+            },
+            "source": "https://www.canva.com/help/mcp-canva-usage/",
+            "community": false
+          }
+        ],
+        "sources": [
+          {
+            "label": "Canva — actions avec Canva MCP",
+            "url": "https://www.canva.com/help/mcp-canva-usage/"
+          },
+          {
+            "label": "Canva — Canva dans ChatGPT",
+            "url": "https://www.canva.com/help/connect-chatgpt-to-canva/"
+          },
+          {
+            "label": "Retour d'usage, Mejba Ahmed",
+            "url": "https://www.mejba.me/blog/claude-canva-connector-design-workflow"
+          }
+        ]
+      },
       "host_name": "Canva",
       "og_image": "/og-screenshots/canva.jpg"
     },
@@ -5214,6 +5356,168 @@
           "url": "https://claude.ai/directory/notion"
         }
       ],
+      "advice": {
+        "verdict": {
+          "fr": "Si vos clients et vos projets vivent déjà dans Notion et que vous utilisez Claude ou ChatGPT, branchez-le : votre assistant cherche, résume et rédige dans vos pages, sans que vous passiez au forfait qui inclut Notion AI.",
+          "en": "If your clients and projects already live in Notion and you use Claude or ChatGPT, plug it in: your assistant searches, summarises and writes in your pages, without you moving up to the plan that includes Notion AI.",
+          "source": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+        },
+        "situations": [
+          {
+            "title": {
+              "fr": "Préparer un rendez-vous client",
+              "en": "Prepare for a client meeting"
+            },
+            "ask": {
+              "fr": "Avant mon appel avec Dupont, résume ses dernières notes de réunion et les décisions en attente.",
+              "en": "Before my call with Dupont, summarise their latest meeting notes and any open decisions."
+            },
+            "gain": {
+              "fr": "Vous arrivez à l'appel avec l'historique en tête, sans rouvrir chaque page.",
+              "en": "You join the call with the history in mind, without reopening every page."
+            },
+            "source": "https://developers.notion.com/guides/mcp/overview"
+          },
+          {
+            "title": {
+              "fr": "Faire le point de la semaine",
+              "en": "Run your weekly review"
+            },
+            "ask": {
+              "fr": "Dans ma base Projets, liste ce qui est en retard ou bloqué et ce que je dois livrer la semaine prochaine.",
+              "en": "In my Projects database, list what is late or blocked and what I must deliver next week."
+            },
+            "gain": {
+              "fr": "Un état des lieux en une réponse, tiré des tâches et des notes déjà reliées.",
+              "en": "A status overview in one answer, drawn from tasks and notes already linked."
+            },
+            "source": "https://developers.notion.com/guides/mcp/overview"
+          },
+          {
+            "title": {
+              "fr": "Suivre les factures impayées",
+              "en": "Follow up on unpaid invoices"
+            },
+            "ask": {
+              "fr": "Dans ma base Factures, trouve celles encore « Envoyée » depuis plus d'un mois et passe-les en « À relancer ».",
+              "en": "In my Invoices database, find the ones still “Sent” for over a month and switch them to “Follow up”."
+            },
+            "gain": {
+              "fr": "La liste des relances est prête et la base à jour, sans filtrer à la main.",
+              "en": "Your follow-up list is ready and the database up to date, with no manual filtering."
+            },
+            "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
+          }
+        ],
+        "tips": [
+          {
+            "fr": "Donnez à vos pages des titres clairs (client, type de document, date) : l'assistant s'appuie sur les titres pour comprendre ce qu'il trouve.",
+            "en": "Give your pages clear titles (client, document type, date): the assistant relies on titles to understand what it finds.",
+            "source": "https://www.notion.com/help/notion-mcp",
+            "community": false
+          },
+          {
+            "fr": "Reliez vos tâches aux pages client et aux notes de réunion, avec une base par sujet (clients, projets, factures) : l'assistant peut alors résumer l'avancement et les blocages.",
+            "en": "Link your tasks to client pages and meeting notes, with one database per subject (clients, projects, invoices): the assistant can then summarise progress and blockers.",
+            "source": "https://developers.notion.com/guides/mcp/overview",
+            "community": false
+          },
+          {
+            "fr": "Dans les réglages du connecteur, laissez la lecture libre et gardez la modification et la suppression sous approbation.",
+            "en": "In the connector's settings, leave reading open and keep editing and deleting behind approval.",
+            "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
+            "community": false
+          },
+          {
+            "fr": "Sur une page destinée à un client, demandez une suggestion de modification plutôt qu'une réécriture : vous l'acceptez ensuite dans Notion.",
+            "en": "On a page meant for a client, ask for a suggested edit rather than a rewrite: you accept it in Notion afterwards.",
+            "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools",
+            "community": false
+          },
+          {
+            "fr": "Dans ChatGPT, attendez-vous à confirmer chaque mise à jour : c'est lassant pour des mises à jour en série, préférez de petits lots.",
+            "en": "In ChatGPT, expect to confirm each update: it gets tiring for batch updates, so prefer small batches.",
+            "source": "https://community.openai.com/t/trusted-approval-policy-for-repeated-connector-write-actions/1381447",
+            "community": true
+          }
+        ],
+        "pitfalls": [
+          {
+            "fr": "Les invités d'un espace Notion ne peuvent pas se connecter : dans l'espace d'un client où vous êtes invité, l'assistant n'aura pas accès.",
+            "en": "Guests in a Notion workspace cannot connect: in a client's workspace where you are a guest, your assistant has no access.",
+            "workaround": {
+              "fr": "Demandez au client de vous ajouter comme membre, ou copiez les pages utiles dans votre propre espace.",
+              "en": "Ask the client to add you as a member, or copy the pages you need into your own workspace."
+            },
+            "source": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+            "community": false
+          },
+          {
+            "fr": "Sur beaucoup de pages, l'assistant les ouvre une par une : c'est lent, et il peut en sauter.",
+            "en": "Across many pages, the assistant opens them one by one: it is slow, and it may skip some.",
+            "workaround": {
+              "fr": "Pointez une page ou une base précise et travaillez par petits lots ; pour un bilan complet, partez d'un export.",
+              "en": "Point to a specific page or database and work in small batches; for a full review, start from an export."
+            },
+            "source": "https://rahulsrivathsa-website.pages.dev/thoughts/mcp-learnings",
+            "community": true
+          },
+          {
+            "fr": "Chaque action compte dans les limites de requêtes de Notion : au-delà, elle s'arrête sur une erreur au lieu d'attendre.",
+            "en": "Every action counts toward Notion's request limits: past them, it stops with an error instead of waiting.",
+            "workaround": {
+              "fr": "Demandez-lui de faire moins de choses à la fois, ou réessayez un peu plus tard.",
+              "en": "Ask it to do fewer things at once, or try again a little later."
+            },
+            "source": "https://developers.notion.com/guides/mcp/rate-limits",
+            "community": false
+          },
+          {
+            "fr": "L'assistant agit avec tous vos droits : une demande mal comprise peut modifier ou mettre à la corbeille une page client.",
+            "en": "The assistant acts with all your rights: a misunderstood request can edit or trash a client page.",
+            "workaround": {
+              "fr": "Gardez l'écriture sous approbation et essayez d'abord vos demandes sur une page de test.",
+              "en": "Keep writing behind approval and try your requests on a test page first."
+            },
+            "source": "https://www.notion.com/help/notion-mcp",
+            "community": false
+          }
+        ],
+        "sources": [
+          {
+            "label": "Notion — connexion et forfaits",
+            "url": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+          },
+          {
+            "label": "Notion — présentation",
+            "url": "https://developers.notion.com/guides/mcp/overview"
+          },
+          {
+            "label": "Notion — outils",
+            "url": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
+          },
+          {
+            "label": "Notion — limites de requêtes",
+            "url": "https://developers.notion.com/guides/mcp/rate-limits"
+          },
+          {
+            "label": "Notion — aide MCP",
+            "url": "https://www.notion.com/help/notion-mcp"
+          },
+          {
+            "label": "Claude — connecteurs",
+            "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
+          },
+          {
+            "label": "Forum OpenAI",
+            "url": "https://community.openai.com/t/trusted-approval-policy-for-repeated-connector-write-actions/1381447"
+          },
+          {
+            "label": "Retour d'usage, Rahul Srivathsa",
+            "url": "https://rahulsrivathsa-website.pages.dev/thoughts/mcp-learnings"
+          }
+        ]
+      },
       "host_name": "Notion"
     },
     {
@@ -6236,6 +6540,160 @@
           "url": "https://claude.ai/directory/stripe"
         }
       ],
+      "advice": {
+        "verdict": {
+          "fr": "Si vous facturez déjà avec Stripe, ce serveur vaut l'essai pour repérer les impayés et préparer factures et liens de paiement depuis la conversation. Stripe n'annonce aucun abonnement en plus pour le serveur, mais il agit sur votre vrai compte et peut rembourser ou annuler une facture : commencez dans un environnement de test et validez chaque action d'écriture.",
+          "en": "If you already bill through Stripe, this server is worth trying for spotting unpaid invoices and preparing invoices and payment links from a chat. Stripe mentions no extra subscription for the server, but it works on your real account and can refund or void an invoice: start in a test environment and approve every write action yourself.",
+          "source": "https://docs.stripe.com/mcp"
+        },
+        "situations": [
+          {
+            "title": {
+              "fr": "Préparer une facture sans ouvrir le Dashboard",
+              "en": "Draft an invoice without opening the Dashboard"
+            },
+            "ask": {
+              "fr": "Prépare un brouillon de facture pour Studio Martin pour la refonte du site, je le relis avant de le finaliser.",
+              "en": "Draft an invoice for Studio Martin for the website redesign; I'll review it before you finalize it."
+            },
+            "gain": {
+              "fr": "Le client, les lignes et la facture sont créés en une demande ; vous gardez la main sur la finalisation.",
+              "en": "Customer, line items and invoice are created in one request, and you stay in charge of finalizing it."
+            },
+            "source": "https://docs.stripe.com/mcp"
+          },
+          {
+            "title": {
+              "fr": "Créer un lien de paiement pour une offre",
+              "en": "Create a payment link for an offer"
+            },
+            "ask": {
+              "fr": "Crée un lien de paiement pour mon forfait « Audit SEO » et donne-moi l'adresse à envoyer au client.",
+              "en": "Create a payment link for my “SEO audit” package and give me the URL to send the client."
+            },
+            "gain": {
+              "fr": "Le produit, le prix et le lien sont créés à la suite ; vous collez le lien dans votre e-mail ou votre devis.",
+              "en": "Product, price and link are created in one go; you paste the link into your email or quote."
+            },
+            "source": "https://docs.stripe.com/mcp"
+          },
+          {
+            "title": {
+              "fr": "Savoir qui ne vous a pas encore payé",
+              "en": "See who hasn't paid you yet"
+            },
+            "ask": {
+              "fr": "Quelles factures sont encore ouvertes, pour quels clients, et lesquelles ont dépassé leur échéance ?",
+              "en": "Which invoices are still open, for which clients, and which are past due?"
+            },
+            "gain": {
+              "fr": "Une liste de relance prête en une question, sans filtrer les factures à la main.",
+              "en": "A follow-up list in one question, without filtering invoices by hand."
+            },
+            "source": "https://docs.stripe.com/mcp"
+          }
+        ],
+        "tips": [
+          {
+            "fr": "Faites vos premiers essais dans un environnement de test : à la connexion, Stripe vous laisse choisir le compte réel ou un environnement de test, avec des droits différents pour chacun. Rien n'y est réellement encaissé ni remboursé.",
+            "en": "Run your first tries in a test environment: when you connect, Stripe lets you pick your live account or a test environment, with different rights for each. Nothing is really charged or refunded there.",
+            "source": "https://docs.stripe.com/mcp",
+            "community": false
+          },
+          {
+            "fr": "Gardez l'approbation des outils activée dans votre assistant, comme Stripe le recommande : dans Claude, laissez les outils d'écriture sur « Approbation requise » plutôt que « Toujours autoriser ».",
+            "en": "Keep tool approval on in your assistant, as Stripe recommends: in Claude, leave write tools on “Needs approval” rather than “Always allow”.",
+            "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
+            "community": false
+          },
+          {
+            "fr": "Avant d'approuver une action, relisez ce qui va être envoyé : client, montant, devise. Ne mémorisez votre accord que pour un outil en qui vous avez pleinement confiance.",
+            "en": "Before approving an action, read what will be sent: customer, amount, currency. Only remember your approval for a tool you fully trust.",
+            "source": "https://developers.openai.com/api/docs/guides/developer-mode",
+            "community": false
+          },
+          {
+            "fr": "Avec une clé plutôt que la connexion à votre compte (Claude Code, Codex) : créez une clé d'agent limitée aux seuls droits utiles, gardez-la hors de la conversation. Stripe soumet ces clés à des règles d'approbation pour les remboursements, les annulations d'abonnement et les virements.",
+            "en": "With a key instead of signing in (Claude Code, Codex): create an agent key limited to the rights you need and keep it out of the chat. Stripe puts these keys under approval rules for refunds, subscription cancellations and payouts.",
+            "source": "https://docs.stripe.com/account/approvals.md",
+            "community": false
+          },
+          {
+            "fr": "N'activez pas Stripe dans la même conversation qu'un serveur qui lit des contenus extérieurs (e-mails, pages web) : Stripe met en garde contre les consignes cachées dans ces contenus.",
+            "en": "Don't turn Stripe on in the same chat as a server that reads outside content (emails, web pages): Stripe warns about instructions hidden in such content.",
+            "source": "https://docs.stripe.com/mcp",
+            "community": false
+          }
+        ],
+        "pitfalls": [
+          {
+            "fr": "L'assistant peut créer et finaliser une facture, mais pas l'envoyer : une facture finalisée ne part pas forcément chez le client.",
+            "en": "The assistant can create and finalize an invoice, but not send it: a finalized invoice does not necessarily reach the client.",
+            "workaround": {
+              "fr": "Activez « Envoyer les factures finalisées aux clients » dans les réglages de facturation, ou cliquez sur « Envoyer la facture » dans le Dashboard.",
+              "en": "Turn on “Send finalized invoices to customers” in your billing settings, or click “Send invoice” in the Dashboard."
+            },
+            "source": "https://docs.stripe.com/invoicing/send-email",
+            "community": false
+          },
+          {
+            "fr": "Un seul outil sert à créer, modifier et supprimer. Seules certaines actions, comme un remboursement, demandent la confirmation de Stripe : annuler une facture ou supprimer un bon de réduction, non.",
+            "en": "A single tool creates, updates and deletes. Only some actions, such as a refund, ask for Stripe's confirmation: voiding an invoice or deleting a coupon does not.",
+            "workaround": {
+              "fr": "Ne mettez jamais cet outil en « Toujours autoriser » et lisez chaque demande d'écriture avant de l'accepter.",
+              "en": "Never set this tool to “Always allow”, and read every write request before accepting it."
+            },
+            "source": "https://docs.stripe.com/mcp",
+            "community": false
+          },
+          {
+            "fr": "Un utilisateur signale que son compte réel apparaît grisé à la connexion : seuls les environnements de test sont sélectionnables.",
+            "en": "One user reports that their live account showed greyed out at sign-in: only test environments could be picked.",
+            "workaround": {
+              "fr": "Vérifiez que l'accès MCP est activé pour le mode production dans les réglages « Accès MCP et CLI » du Dashboard et que votre rôle le permet.",
+              "en": "Check that MCP access is on for live mode in the Dashboard's “MCP and CLI access” settings and that your role allows it."
+            },
+            "source": "https://github.com/stripe/ai/issues/600",
+            "community": true
+          },
+          {
+            "fr": "La connexion n'est pas permanente : la session expire et l'assistant perd l'accès sans prévenir.",
+            "en": "The connection is not permanent: the session expires and the assistant loses access without warning.",
+            "workaround": {
+              "fr": "Reconnectez Stripe depuis votre assistant quand il ne répond plus.",
+              "en": "Reconnect Stripe from your assistant when it stops answering."
+            },
+            "source": "https://docs.stripe.com/mcp",
+            "community": false
+          }
+        ],
+        "sources": [
+          {
+            "label": "Stripe — MCP",
+            "url": "https://docs.stripe.com/mcp"
+          },
+          {
+            "label": "Stripe — règles d'approbation",
+            "url": "https://docs.stripe.com/account/approvals.md"
+          },
+          {
+            "label": "Stripe — e-mails de facturation",
+            "url": "https://docs.stripe.com/invoicing/send-email"
+          },
+          {
+            "label": "Claude — connecteurs",
+            "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
+          },
+          {
+            "label": "OpenAI — mode développeur",
+            "url": "https://developers.openai.com/api/docs/guides/developer-mode"
+          },
+          {
+            "label": "GitHub stripe/ai #600",
+            "url": "https://github.com/stripe/ai/issues/600"
+          }
+        ]
+      },
       "host_name": "Stripe"
     },
     {

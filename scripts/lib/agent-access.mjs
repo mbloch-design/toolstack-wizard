@@ -150,7 +150,7 @@ const INSTALL_TYPES = ["command", "url", "config", "steps"];
 /** A card sentence fits two lines of the narrowest card: a media card in a row of four (step 8d, 18/11); src/lib/agents.ts holds the same 50. */
 export const CARD_MAX = 50;
 
-const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "card", "meta_description", "examples", "for", "not_for", "control", "plan_words", "first_requests", "troubleshoot", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "claude_directory", "docs_url", "sources"]);
+const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "card", "meta_description", "examples", "for", "not_for", "control", "plan_words", "first_requests", "troubleshoot", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "claude_directory", "docs_url", "sources", "advice"]);
 const SKILL_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "server", "category", "summary", "agents", "install", "requires", "verified_on", "status", "docs_url", "sources",
   // Step 9 (18/11/2026), from the vendors' pages: what it does for you, a request to try, the search snippet, a readable name.
   "use_case", "example", "meta_description", "display_name"]);
@@ -205,6 +205,21 @@ export function validateMcpSheet(sheet, { catalogSlugs, skillSlugs } = {}) {
   if ("examples" in (sheet || {}) && (!Array.isArray(sheet.examples) || sheet.examples.length < 2 || sheet.examples.length > 3 || !sheet.examples.every(isPair))) errors.push(`${at} : examples, 2 ou 3 demandes fr/en`);
   for (const key of ["for", "not_for"]) if (key in (sheet || {}) && !isPair(sheet[key])) errors.push(`${at} : ${key} fr/en`);
   if (("for" in (sheet || {})) !== ("not_for" in (sheet || {}))) errors.push(`${at} : for et not_for vont ensemble`);
+  // A freelancer's advice to another (19/11/2026): a verdict, two or three situations, three to five tips, two to four
+  // pitfalls, each tip and pitfall with the public source it comes from (vendor docs or users' accounts, never « tested »).
+  if ("advice" in (sheet || {})) {
+    const a = sheet.advice, sourced = (item) => isUrl(item?.source) && (item.community === undefined || typeof item.community === "boolean");
+    if (!a || !isPair(a.verdict) || !isUrl(a.verdict.source)) errors.push(`${at} : advice.verdict fr/en et sa source`);
+    if (!Array.isArray(a?.situations) || a.situations.length < 2 || a.situations.length > 3
+      || !a.situations.every((x) => isPair(x?.title) && isPair(x?.ask) && isPair(x?.gain) && isUrl(x?.source))) errors.push(`${at} : advice.situations, 2 ou 3 (titre, demande, gain, source)`);
+    if (!Array.isArray(a?.tips) || a.tips.length < 3 || a.tips.length > 5 || !a.tips.every((x) => isPair(x) && sourced(x))) errors.push(`${at} : advice.tips, 3 à 5 conseils fr/en sourcés`);
+    if (!Array.isArray(a?.pitfalls) || a.pitfalls.length < 2 || a.pitfalls.length > 4
+      || !a.pitfalls.every((x) => isPair(x) && sourced(x) && (x.workaround === undefined || isPair(x.workaround)))) errors.push(`${at} : advice.pitfalls, 2 à 4 pièges fr/en sourcés`);
+    if (!Array.isArray(a?.sources) || !a.sources.length || !a.sources.every((x) => isText(x?.label) && isUrl(x?.url))) errors.push(`${at} : advice.sources requises`);
+    const listed = new Set((a?.sources ?? []).map((x) => x.url));
+    for (const url of [a?.verdict?.source, ...(a?.situations ?? []).map((x) => x.source), ...(a?.tips ?? []).map((x) => x.source), ...(a?.pitfalls ?? []).map((x) => x.source)])
+      if (url && !listed.has(url)) errors.push(`${at} : advice, source non listée ${url}`);
+  }
   // Reuse the block rules on the tool-level and server-level fields.
   const block = {
     mcp: "official", verified_on: sheet?.verified_on, sources: sheet?.sources,

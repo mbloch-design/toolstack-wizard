@@ -37,6 +37,17 @@ export interface McpSheet {
   /** Claude's directory page: « Ouvrir dans Claude » and the month added (never the tool list). */
   claude_directory?: { url: string; added: string; read_on: string };
   docs_url: string; sources: { label: string; url: string }[];
+  /** A freelancer's advice to another (19/11/2026): sourced, never « tested »; the verdict leads the sheet. */
+  advice?: McpAdvice;
+}
+
+export type Sourced = Pair & { source: string; community?: boolean };
+export interface McpAdvice {
+  verdict: Pair & { source: string };
+  situations: { title: Pair; ask: Pair; gain: Pair; source: string }[];
+  tips: Sourced[];
+  pitfalls: (Sourced & { workaround?: Pair })[];
+  sources: { label: string; url: string }[];
 }
 
 export interface SkillSheet {

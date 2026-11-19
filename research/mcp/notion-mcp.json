@@ -671,5 +671,167 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/notion"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vos clients et vos projets vivent déjà dans Notion et que vous utilisez Claude ou ChatGPT, branchez-le : votre assistant cherche, résume et rédige dans vos pages, sans que vous passiez au forfait qui inclut Notion AI.",
+      "en": "If your clients and projects already live in Notion and you use Claude or ChatGPT, plug it in: your assistant searches, summarises and writes in your pages, without you moving up to the plan that includes Notion AI.",
+      "source": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Préparer un rendez-vous client",
+          "en": "Prepare for a client meeting"
+        },
+        "ask": {
+          "fr": "Avant mon appel avec Dupont, résume ses dernières notes de réunion et les décisions en attente.",
+          "en": "Before my call with Dupont, summarise their latest meeting notes and any open decisions."
+        },
+        "gain": {
+          "fr": "Vous arrivez à l'appel avec l'historique en tête, sans rouvrir chaque page.",
+          "en": "You join the call with the history in mind, without reopening every page."
+        },
+        "source": "https://developers.notion.com/guides/mcp/overview"
+      },
+      {
+        "title": {
+          "fr": "Faire le point de la semaine",
+          "en": "Run your weekly review"
+        },
+        "ask": {
+          "fr": "Dans ma base Projets, liste ce qui est en retard ou bloqué et ce que je dois livrer la semaine prochaine.",
+          "en": "In my Projects database, list what is late or blocked and what I must deliver next week."
+        },
+        "gain": {
+          "fr": "Un état des lieux en une réponse, tiré des tâches et des notes déjà reliées.",
+          "en": "A status overview in one answer, drawn from tasks and notes already linked."
+        },
+        "source": "https://developers.notion.com/guides/mcp/overview"
+      },
+      {
+        "title": {
+          "fr": "Suivre les factures impayées",
+          "en": "Follow up on unpaid invoices"
+        },
+        "ask": {
+          "fr": "Dans ma base Factures, trouve celles encore « Envoyée » depuis plus d'un mois et passe-les en « À relancer ».",
+          "en": "In my Invoices database, find the ones still “Sent” for over a month and switch them to “Follow up”."
+        },
+        "gain": {
+          "fr": "La liste des relances est prête et la base à jour, sans filtrer à la main.",
+          "en": "Your follow-up list is ready and the database up to date, with no manual filtering."
+        },
+        "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
+      }
+    ],
+    "tips": [
+      {
+        "fr": "Donnez à vos pages des titres clairs (client, type de document, date) : l'assistant s'appuie sur les titres pour comprendre ce qu'il trouve.",
+        "en": "Give your pages clear titles (client, document type, date): the assistant relies on titles to understand what it finds.",
+        "source": "https://www.notion.com/help/notion-mcp",
+        "community": false
+      },
+      {
+        "fr": "Reliez vos tâches aux pages client et aux notes de réunion, avec une base par sujet (clients, projets, factures) : l'assistant peut alors résumer l'avancement et les blocages.",
+        "en": "Link your tasks to client pages and meeting notes, with one database per subject (clients, projects, invoices): the assistant can then summarise progress and blockers.",
+        "source": "https://developers.notion.com/guides/mcp/overview",
+        "community": false
+      },
+      {
+        "fr": "Dans les réglages du connecteur, laissez la lecture libre et gardez la modification et la suppression sous approbation.",
+        "en": "In the connector's settings, leave reading open and keep editing and deleting behind approval.",
+        "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
+        "community": false
+      },
+      {
+        "fr": "Sur une page destinée à un client, demandez une suggestion de modification plutôt qu'une réécriture : vous l'acceptez ensuite dans Notion.",
+        "en": "On a page meant for a client, ask for a suggested edit rather than a rewrite: you accept it in Notion afterwards.",
+        "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools",
+        "community": false
+      },
+      {
+        "fr": "Dans ChatGPT, attendez-vous à confirmer chaque mise à jour : c'est lassant pour des mises à jour en série, préférez de petits lots.",
+        "en": "In ChatGPT, expect to confirm each update: it gets tiring for batch updates, so prefer small batches.",
+        "source": "https://community.openai.com/t/trusted-approval-policy-for-repeated-connector-write-actions/1381447",
+        "community": true
+      }
+    ],
+    "pitfalls": [
+      {
+        "fr": "Les invités d'un espace Notion ne peuvent pas se connecter : dans l'espace d'un client où vous êtes invité, l'assistant n'aura pas accès.",
+        "en": "Guests in a Notion workspace cannot connect: in a client's workspace where you are a guest, your assistant has no access.",
+        "workaround": {
+          "fr": "Demandez au client de vous ajouter comme membre, ou copiez les pages utiles dans votre propre espace.",
+          "en": "Ask the client to add you as a member, or copy the pages you need into your own workspace."
+        },
+        "source": "https://developers.notion.com/guides/mcp/get-started-with-mcp",
+        "community": false
+      },
+      {
+        "fr": "Sur beaucoup de pages, l'assistant les ouvre une par une : c'est lent, et il peut en sauter.",
+        "en": "Across many pages, the assistant opens them one by one: it is slow, and it may skip some.",
+        "workaround": {
+          "fr": "Pointez une page ou une base précise et travaillez par petits lots ; pour un bilan complet, partez d'un export.",
+          "en": "Point to a specific page or database and work in small batches; for a full review, start from an export."
+        },
+        "source": "https://rahulsrivathsa-website.pages.dev/thoughts/mcp-learnings",
+        "community": true
+      },
+      {
+        "fr": "Chaque action compte dans les limites de requêtes de Notion : au-delà, elle s'arrête sur une erreur au lieu d'attendre.",
+        "en": "Every action counts toward Notion's request limits: past them, it stops with an error instead of waiting.",
+        "workaround": {
+          "fr": "Demandez-lui de faire moins de choses à la fois, ou réessayez un peu plus tard.",
+          "en": "Ask it to do fewer things at once, or try again a little later."
+        },
+        "source": "https://developers.notion.com/guides/mcp/rate-limits",
+        "community": false
+      },
+      {
+        "fr": "L'assistant agit avec tous vos droits : une demande mal comprise peut modifier ou mettre à la corbeille une page client.",
+        "en": "The assistant acts with all your rights: a misunderstood request can edit or trash a client page.",
+        "workaround": {
+          "fr": "Gardez l'écriture sous approbation et essayez d'abord vos demandes sur une page de test.",
+          "en": "Keep writing behind approval and try your requests on a test page first."
+        },
+        "source": "https://www.notion.com/help/notion-mcp",
+        "community": false
+      }
+    ],
+    "sources": [
+      {
+        "label": "Notion — connexion et forfaits",
+        "url": "https://developers.notion.com/guides/mcp/get-started-with-mcp"
+      },
+      {
+        "label": "Notion — présentation",
+        "url": "https://developers.notion.com/guides/mcp/overview"
+      },
+      {
+        "label": "Notion — outils",
+        "url": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
+      },
+      {
+        "label": "Notion — limites de requêtes",
+        "url": "https://developers.notion.com/guides/mcp/rate-limits"
+      },
+      {
+        "label": "Notion — aide MCP",
+        "url": "https://www.notion.com/help/notion-mcp"
+      },
+      {
+        "label": "Claude — connecteurs",
+        "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
+      },
+      {
+        "label": "Forum OpenAI",
+        "url": "https://community.openai.com/t/trusted-approval-policy-for-repeated-connector-write-actions/1381447"
+      },
+      {
+        "label": "Retour d'usage, Rahul Srivathsa",
+        "url": "https://rahulsrivathsa-website.pages.dev/thoughts/mcp-learnings"
+      }
+    ]
+  }
 }

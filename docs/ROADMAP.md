@@ -497,6 +497,15 @@ Cible :
 
 <a id="s1-bis"></a>
 
+### En cours — fiches MCP : l'avis d'un free à un autre (Michael, 19/11)
+
+Retour de Michael : les fiches restent un mode d'emploi (« trop annuaire »). Décision datée dans `DESIGN_DECISIONS.md` (19/11).
+
+- **Données** : bloc `advice` dans `research/mcp/<serveur>.json`, validé par `scripts/lib/agent-access.mjs` : `verdict` (fr/en + source), `situations` (2-3 : titre, demande, gain, source), `tips` (3-5), `pitfalls` (2-4, avec `workaround` facultatif), `sources` (chaque source citée y figure ; `community: true` quand l'information vient de retours d'utilisateurs).
+- **Fiche** (`AgentSheet`) : verdict en tête, accroche factuelle dessous ; « Ce que ça change pour vous » remplace les premières demandes ; chapitre « D'un free à l'autre » (conseils | ce qui coince) avant « Brancher » ; ligne « Nos conseils viennent de » dans les notes. Sans `advice`, la fiche reste telle quelle.
+- **Règles** : jamais « testé » ni de première personne inventée ; vouvoiement ; aucun montant, quota ni durée dans la prose ; un conseil non sourcé est retiré.
+- **Pilote** : Notion, Canva, Stripe (recherche sourcée par agent, relue avant intégration). Après validation de Michael : les 16 autres serveurs, par lots.
+
 ### Prochaine action — S1 bis : une section qui accompagne (Michael, 17/11)
 
 Retour de Michael sur S1 : « un peu brut de décoffrage. On doit accompagner, pas faire un énième annuaire » (règle dans `docs/DESIGN_DECISIONS.md`, « Section agents »). Plan accepté par Michael le 17/11 (« Oui, lance »). Même branche, les données de S1 restent ; on refait l'entrée et le récit.

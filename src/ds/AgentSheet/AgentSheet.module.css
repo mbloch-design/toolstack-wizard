@@ -483,6 +483,11 @@
   grid-template-columns: minmax(0, 1fr);
 }
 
+/* « D'un free à l'autre » (19/11/2026): tips and pitfalls weigh the same, two equal columns. */
+.controlGrid[data-even] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .controlColumn[data-few] .safeguards {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 }
@@ -503,7 +508,8 @@
 }
 
 @container (max-width: 760px) {
-  .controlGrid {
+  .controlGrid,
+  .controlGrid[data-even] {
     grid-template-columns: minmax(0, 1fr);
   }
 

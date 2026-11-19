@@ -1,9 +1,9 @@
 import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X } from "@/lib/icons";
+import { AlertTriangle, Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X, Lightbulb, Zap } from "@/lib/icons";
 import { getToolLogoSources } from "@/lib/toolLogos";
 import {
   CONSEQUENCE, clientName, forEveryone, isCopyRow, say, skillTitle, typo,
-  type InstallRow, type Lang, type McpSheet, type Pair, type SkillSheet,
+  type InstallRow, type Lang, type McpAdvice, type McpSheet, type Pair, type SkillSheet,
 } from "@/lib/agents";
 import { CLIENTS, CLIENT_MARKS, clientLabel, clientsOf, cursorInstallLink, plugCard, vsCodeInstallLink, type ClientId, type CopyAction } from "@/lib/agentClients";
 import { hookSentence, sheetMarkdown, sourceLinks } from "@/lib/agentSheet";
@@ -53,6 +53,7 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   const plugId = `${sheet.slug}-brancher`;
   const asks = askCards(sheet);
+  const advice = sheet.advice;
   // The reader's assistant, its mark beside each request (a conversation).
   const [assistant] = useAgentAssistant();
   const assistantMark: ClientId = assistant === "other" ? "any" : assistant;
@@ -65,7 +66,11 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
             {logo && <span className={styles.titleLogo} aria-hidden="true">{logo}</span>}
             <h1 className={styles.title}>{title}</h1>
           </div>
-          <p className={styles.lead}>{hookSentence(sheet, toolName, lang)}</p>
+          {/* A freelancer's advice (19/11/2026): the verdict leads, the facts of the hook follow. */}
+          {advice ? <>
+            <p className={styles.lead} data-verdict="">{raise(say(lang, advice.verdict))}</p>
+            <p className={styles.reading}>{hookSentence(sheet, toolName, lang)}</p>
+          </> : <p className={styles.lead}>{hookSentence(sheet, toolName, lang)}</p>}
           {sheet.note && <p className={styles.reading}>{say(lang, sheet.note)}</p>}
           <div className={styles.actions}>
             <CopyMenu sheet={sheet} lang={lang} toolName={toolName} pageUrl={pageUrl} />
@@ -74,7 +79,22 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
         </Chapter>
 
         {/* 2. What you could ask: reading first, the one that writes last with what to check. */}
-        {asks.length > 0 && (
+        {advice && (
+          <Chapter chapter="ask" width="wide" title={t("Ce que ça change pour vous", "What it changes for you")}
+            lead={t("Des situations de free, et la demande à copier.", "Freelance situations, and the request to copy.")}>
+            <ol className={styles.cards}>
+              {advice.situations.map((situation, index) => (
+                <li key={situation.ask.fr} className={styles.askCard} data-situation="">
+                  <span className={styles.stepNumber} aria-hidden="true">{index + 1}</span>
+                  <p className={styles.askStage}>{say(lang, situation.title)}</p>
+                  <Prompt size="lead" text={lang === "en" ? situation.ask.en : situation.ask.fr} lang={lang} mark={<ClientMark client={assistantMark} size={20} />}
+                    note={<p className={styles.check}><Zap aria-hidden="true" /><span><span className={styles.strong}>{t("Ce que vous y gagnez", "What you gain")}</span>{t(" : ", ": ")}{lower(say(lang, situation.gain))}</span></p>} />
+                </li>
+              ))}
+            </ol>
+          </Chapter>
+        )}
+        {!advice && asks.length > 0 && (
           <Chapter chapter="ask" width="wide" title={t("Ce que vous pourrez lui demander", "What you could ask it")}
             lead={t("Commencez par des demandes qui ne font que lire ; passez à l'écriture une fois rassuré.", "Start with requests that only read; move on to writing once reassured.")}>
             {/* The same template as « Brancher » (step 8c): a number, where it stands in the progression, what it does, then
@@ -90,6 +110,14 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
                 </li>
               ))}
             </ol>
+          </Chapter>
+        )}
+
+        {/* From one freelancer to another (19/11/2026): what works and what gets stuck, before the how-to. */}
+        {advice && (
+          <Chapter chapter="advice" width="wide" title={t("D'un free à l'autre", "From one freelancer to another")}
+            lead={t("Ce qui marche, et ce qui coince.", "What works, and what gets stuck.")}>
+            <AdviceColumns advice={advice} lang={lang} />
           </Chapter>
         )}
 
@@ -125,6 +153,7 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
         {/* 6. Footnotes: the sources on one line and « Signaler une erreur ». */}
         <Chapter chapter="annex" tone="notes" width="wide">
           <SourceLine lang={lang} publisher={sheet.publisher} sources={sheet.sources} reportHref={reportHref} />
+          {advice && <SourceLine lang={lang} publisher={sheet.publisher} sources={advice.sources} label={t("Nos conseils viennent de :", "Our advice comes from:")} />}
         </Chapter>
       </Chapters>
     </div>
@@ -156,16 +185,16 @@ function Disclosure({ label, children }: { label: string; children: ReactNode })
 }
 
 /** The sources on one line of short links, « Signaler une erreur » last on the same line; the date is said once, in the head. */
-function SourceLine({ lang, publisher, sources, reportHref }: { lang: Lang; publisher: string; sources: { label: string; url: string }[]; reportHref: string }) {
+function SourceLine({ lang, publisher, sources, reportHref, label }: { lang: Lang; publisher: string; sources: { label: string; url: string }[]; reportHref?: string; label?: string }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   return (
     <div className={styles.sourceLine} data-chapter-part="sources">
-      <p className={styles.meta}>{t(`Sources, chez ${publisher} :`, `Sources, at ${publisher}:`)}</p>
+      <p className={styles.meta}>{label ?? t(`Sources, chez ${publisher} :`, `Sources, at ${publisher}:`)}</p>
       <ul className={styles.sourceLinks}>
         {sourceLinks(sources, lang).map((source) => (
           <li key={source.url}><a className={styles.sourceLink} href={source.url} target="_blank" rel="noopener noreferrer" title={source.title}>{source.label}<ExternalLink aria-hidden="true" /></a></li>
         ))}
-        <li><a className={styles.sourceLink} href={reportHref}><Flag aria-hidden="true" />{t("Signaler une erreur", "Report an error")}</a></li>
+        {reportHref && <li><a className={styles.sourceLink} href={reportHref}><Flag aria-hidden="true" />{t("Signaler une erreur", "Report an error")}</a></li>}
       </ul>
     </div>
   );
@@ -534,3 +563,38 @@ function ControlColumns({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
   return <div className={styles.controlGrid} data-few={few || undefined}>{few ? <>{safeguards}{can}</> : <>{can}{safeguards}</>}</div>;
 }
 
+/**
+ * « D'un free à l'autre » (19/11/2026): the tips and the pitfalls side by side on a computer, on the shape of « Garder la
+ * main » (an icon in a round, the sentence on its centre line). A pitfall says its way around; a tip that comes from
+ * users' accounts says so.
+ */
+function AdviceColumns({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
+  const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
+  const id = useId();
+  const community = <p className={styles.meta}>{t("D'après des retours d'utilisateurs", "From users' accounts")}</p>;
+  return (
+    <div className={styles.controlGrid} data-even="">
+      <section className={styles.controlColumn} data-column="tips" aria-labelledby={`${id}-tips`}>
+        <h3 id={`${id}-tips`} className={styles.columnHead}>{t("Nos conseils", "Our tips")}</h3>
+        <div className={styles.safeguards}>
+          {advice.tips.map((tip) => (
+            <Entry key={tip.fr} icon={<Lightbulb />} title={raise(say(lang, tip))}>{tip.community && community}</Entry>
+          ))}
+        </div>
+      </section>
+      <section className={styles.controlColumn} data-column="pitfalls" aria-labelledby={`${id}-pitfalls`}>
+        <h3 id={`${id}-pitfalls`} className={styles.columnHead}>{t("Ce qui coince", "What gets stuck")}</h3>
+        <div className={styles.safeguards}>
+          {advice.pitfalls.map((pitfall) => (
+            <Entry key={pitfall.fr} icon={<AlertTriangle />} alert title={raise(say(lang, pitfall))}>
+              {(pitfall.workaround || pitfall.community) && <>
+                {pitfall.workaround && <p className={styles.text}><span className={styles.strong}>{t("La parade", "The way around")}</span>{t(" : ", ": ")}{lower(say(lang, pitfall.workaround))}</p>}
+                {pitfall.community && community}
+              </>}
+            </Entry>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}

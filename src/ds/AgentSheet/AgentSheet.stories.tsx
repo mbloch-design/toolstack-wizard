@@ -41,8 +41,17 @@ export const Notion: Story = {
   ...server("notion", "Notion"),
   play: async ({ canvas, canvasElement, globals }) => {
     const fr = globals.lang !== "en";
-    // Content contract: the hook and « Brancher » precede the technique.
-    await expect(chapters(canvasElement)).toEqual(["head", "ask", "plug", "control", "view", "annex"]);
+    // Content contract (19/11): the verdict leads, the situations, a freelancer's advice, then « Brancher » before the technique.
+    await expect(chapters(canvasElement)).toEqual(["head", "ask", "advice", "plug", "control", "view", "annex"]);
+    await expect(canvasElement.querySelector("[data-chapter=head] [data-verdict]")).not.toBeNull();
+    await expect(canvasElement.querySelectorAll("[data-chapter=ask] [data-situation]").length).toBeGreaterThanOrEqual(2);
+    const advice = canvasElement.querySelector<HTMLElement>("[data-chapter=advice]")!;
+    await expect(advice.querySelectorAll("[data-column=tips] h3 ~ div > *").length).toBeGreaterThanOrEqual(3);
+    // Every pitfall says its way around; the advice says where it comes from.
+    const pitfalls = advice.querySelectorAll("[data-column=pitfalls] h3 ~ div > *");
+    await expect(pitfalls.length).toBeGreaterThanOrEqual(2);
+    for (const pitfall of pitfalls) await expect(pitfall.textContent).toMatch(fr ? /La parade/ : /The way around/);
+    await expect(canvasElement.querySelector("[data-chapter=annex]")!.textContent).toMatch(fr ? /Nos conseils viennent de/ : /Our advice comes from/);
     await expect(canvas.getByRole("heading", { level: 1 })).toHaveTextContent(fr ? "Brancher Notion à votre assistant" : "Plug Notion into your assistant");
     // A fact has one place: the date, « official ». The plan is summed up in the hook and detailed once, on purpose.
     await expect(times(canvasElement, fr ? /16\s+novembre\s+2026/ : /16\s+November\s+2026/)).toBe(1);
@@ -59,7 +68,8 @@ export const Notion: Story = {
     await expect(canvas.queryByText(fr ? /^Et aussi\s:/ : /^And also:/)).toBeNull();
     await expect(canvas.getByRole("button", { name: fr ? /^Voir les 20 autres actions/ : /^Show the 20 other actions/ }).closest("table")).not.toBeNull();
     await expect(canvas.getByText(fr ? /Sur Business et Enterprise/ : /On Business and Enterprise/)).toBeVisible();
-    await expect(canvas.getByText(fr ? /ouvrez la page dans Notion/ : /open the page in Notion/)).toBeVisible();
+    // Each situation says what it gains (19/11), in place of the first requests and their check.
+    for (const card of canvasElement.querySelectorAll("[data-situation]")) await expect(card.textContent).toMatch(fr ? /Ce que vous y gagnez/ : /What you gain/);
     // Tabs (step 8c): the assistants, then « Outil de code ▾ » and its menu.
     await expect(canvas.getByRole("tab", { name: /Claude/ })).toHaveAttribute("aria-selected", "true");
     await userEvent.click(canvas.getByRole("tab", { name: fr ? /Outil de code/ : /Coding tool/ }));
@@ -225,10 +235,10 @@ export const FicheComplete: Story = {
       </CatalogSection>} />;
   },
   play: async ({ canvasElement }) => {
-    // Content contract: five chapters on the white sheet, then the annexes as footnotes.
-    await expect(chapters(canvasElement)).toEqual(["head", "ask", "plug", "control", "view", "annex"]);
+    // Content contract: six chapters on the white sheet, then the annexes as footnotes.
+    await expect(chapters(canvasElement)).toEqual(["head", "ask", "advice", "plug", "control", "view", "annex"]);
     const tones = [...canvasElement.querySelectorAll<HTMLElement>("[data-chapter]")].map((el) => el.dataset.tone);
-    await expect(tones).toEqual(["white", "white", "white", "white", "white", "notes"]);
+    await expect(tones).toEqual(["white", "white", "white", "white", "white", "white", "notes"]);
     // One vocabulary of consequence: no « Lit / Modifie / Supprime / Envoie / Paie » tag left anywhere.
     const words = new Set(Object.values(CONSEQUENCE).flatMap((pair) => [...pair]));
     for (const tag of canvasElement.querySelectorAll("span[data-tone]")) await expect(words.has((tag.textContent ?? "").trim())).toBe(true);

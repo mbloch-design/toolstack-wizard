@@ -348,5 +348,159 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/stripe"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vous facturez déjà avec Stripe, ce serveur vaut l'essai pour repérer les impayés et préparer factures et liens de paiement depuis la conversation. Stripe n'annonce aucun abonnement en plus pour le serveur, mais il agit sur votre vrai compte et peut rembourser ou annuler une facture : commencez dans un environnement de test et validez chaque action d'écriture.",
+      "en": "If you already bill through Stripe, this server is worth trying for spotting unpaid invoices and preparing invoices and payment links from a chat. Stripe mentions no extra subscription for the server, but it works on your real account and can refund or void an invoice: start in a test environment and approve every write action yourself.",
+      "source": "https://docs.stripe.com/mcp"
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Préparer une facture sans ouvrir le Dashboard",
+          "en": "Draft an invoice without opening the Dashboard"
+        },
+        "ask": {
+          "fr": "Prépare un brouillon de facture pour Studio Martin pour la refonte du site, je le relis avant de le finaliser.",
+          "en": "Draft an invoice for Studio Martin for the website redesign; I'll review it before you finalize it."
+        },
+        "gain": {
+          "fr": "Le client, les lignes et la facture sont créés en une demande ; vous gardez la main sur la finalisation.",
+          "en": "Customer, line items and invoice are created in one request, and you stay in charge of finalizing it."
+        },
+        "source": "https://docs.stripe.com/mcp"
+      },
+      {
+        "title": {
+          "fr": "Créer un lien de paiement pour une offre",
+          "en": "Create a payment link for an offer"
+        },
+        "ask": {
+          "fr": "Crée un lien de paiement pour mon forfait « Audit SEO » et donne-moi l'adresse à envoyer au client.",
+          "en": "Create a payment link for my “SEO audit” package and give me the URL to send the client."
+        },
+        "gain": {
+          "fr": "Le produit, le prix et le lien sont créés à la suite ; vous collez le lien dans votre e-mail ou votre devis.",
+          "en": "Product, price and link are created in one go; you paste the link into your email or quote."
+        },
+        "source": "https://docs.stripe.com/mcp"
+      },
+      {
+        "title": {
+          "fr": "Savoir qui ne vous a pas encore payé",
+          "en": "See who hasn't paid you yet"
+        },
+        "ask": {
+          "fr": "Quelles factures sont encore ouvertes, pour quels clients, et lesquelles ont dépassé leur échéance ?",
+          "en": "Which invoices are still open, for which clients, and which are past due?"
+        },
+        "gain": {
+          "fr": "Une liste de relance prête en une question, sans filtrer les factures à la main.",
+          "en": "A follow-up list in one question, without filtering invoices by hand."
+        },
+        "source": "https://docs.stripe.com/mcp"
+      }
+    ],
+    "tips": [
+      {
+        "fr": "Faites vos premiers essais dans un environnement de test : à la connexion, Stripe vous laisse choisir le compte réel ou un environnement de test, avec des droits différents pour chacun. Rien n'y est réellement encaissé ni remboursé.",
+        "en": "Run your first tries in a test environment: when you connect, Stripe lets you pick your live account or a test environment, with different rights for each. Nothing is really charged or refunded there.",
+        "source": "https://docs.stripe.com/mcp",
+        "community": false
+      },
+      {
+        "fr": "Gardez l'approbation des outils activée dans votre assistant, comme Stripe le recommande : dans Claude, laissez les outils d'écriture sur « Approbation requise » plutôt que « Toujours autoriser ».",
+        "en": "Keep tool approval on in your assistant, as Stripe recommends: in Claude, leave write tools on “Needs approval” rather than “Always allow”.",
+        "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
+        "community": false
+      },
+      {
+        "fr": "Avant d'approuver une action, relisez ce qui va être envoyé : client, montant, devise. Ne mémorisez votre accord que pour un outil en qui vous avez pleinement confiance.",
+        "en": "Before approving an action, read what will be sent: customer, amount, currency. Only remember your approval for a tool you fully trust.",
+        "source": "https://developers.openai.com/api/docs/guides/developer-mode",
+        "community": false
+      },
+      {
+        "fr": "Avec une clé plutôt que la connexion à votre compte (Claude Code, Codex) : créez une clé d'agent limitée aux seuls droits utiles, gardez-la hors de la conversation. Stripe soumet ces clés à des règles d'approbation pour les remboursements, les annulations d'abonnement et les virements.",
+        "en": "With a key instead of signing in (Claude Code, Codex): create an agent key limited to the rights you need and keep it out of the chat. Stripe puts these keys under approval rules for refunds, subscription cancellations and payouts.",
+        "source": "https://docs.stripe.com/account/approvals.md",
+        "community": false
+      },
+      {
+        "fr": "N'activez pas Stripe dans la même conversation qu'un serveur qui lit des contenus extérieurs (e-mails, pages web) : Stripe met en garde contre les consignes cachées dans ces contenus.",
+        "en": "Don't turn Stripe on in the same chat as a server that reads outside content (emails, web pages): Stripe warns about instructions hidden in such content.",
+        "source": "https://docs.stripe.com/mcp",
+        "community": false
+      }
+    ],
+    "pitfalls": [
+      {
+        "fr": "L'assistant peut créer et finaliser une facture, mais pas l'envoyer : une facture finalisée ne part pas forcément chez le client.",
+        "en": "The assistant can create and finalize an invoice, but not send it: a finalized invoice does not necessarily reach the client.",
+        "workaround": {
+          "fr": "Activez « Envoyer les factures finalisées aux clients » dans les réglages de facturation, ou cliquez sur « Envoyer la facture » dans le Dashboard.",
+          "en": "Turn on “Send finalized invoices to customers” in your billing settings, or click “Send invoice” in the Dashboard."
+        },
+        "source": "https://docs.stripe.com/invoicing/send-email",
+        "community": false
+      },
+      {
+        "fr": "Un seul outil sert à créer, modifier et supprimer. Seules certaines actions, comme un remboursement, demandent la confirmation de Stripe : annuler une facture ou supprimer un bon de réduction, non.",
+        "en": "A single tool creates, updates and deletes. Only some actions, such as a refund, ask for Stripe's confirmation: voiding an invoice or deleting a coupon does not.",
+        "workaround": {
+          "fr": "Ne mettez jamais cet outil en « Toujours autoriser » et lisez chaque demande d'écriture avant de l'accepter.",
+          "en": "Never set this tool to “Always allow”, and read every write request before accepting it."
+        },
+        "source": "https://docs.stripe.com/mcp",
+        "community": false
+      },
+      {
+        "fr": "Un utilisateur signale que son compte réel apparaît grisé à la connexion : seuls les environnements de test sont sélectionnables.",
+        "en": "One user reports that their live account showed greyed out at sign-in: only test environments could be picked.",
+        "workaround": {
+          "fr": "Vérifiez que l'accès MCP est activé pour le mode production dans les réglages « Accès MCP et CLI » du Dashboard et que votre rôle le permet.",
+          "en": "Check that MCP access is on for live mode in the Dashboard's “MCP and CLI access” settings and that your role allows it."
+        },
+        "source": "https://github.com/stripe/ai/issues/600",
+        "community": true
+      },
+      {
+        "fr": "La connexion n'est pas permanente : la session expire et l'assistant perd l'accès sans prévenir.",
+        "en": "The connection is not permanent: the session expires and the assistant loses access without warning.",
+        "workaround": {
+          "fr": "Reconnectez Stripe depuis votre assistant quand il ne répond plus.",
+          "en": "Reconnect Stripe from your assistant when it stops answering."
+        },
+        "source": "https://docs.stripe.com/mcp",
+        "community": false
+      }
+    ],
+    "sources": [
+      {
+        "label": "Stripe — MCP",
+        "url": "https://docs.stripe.com/mcp"
+      },
+      {
+        "label": "Stripe — règles d'approbation",
+        "url": "https://docs.stripe.com/account/approvals.md"
+      },
+      {
+        "label": "Stripe — e-mails de facturation",
+        "url": "https://docs.stripe.com/invoicing/send-email"
+      },
+      {
+        "label": "Claude — connecteurs",
+        "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
+      },
+      {
+        "label": "OpenAI — mode développeur",
+        "url": "https://developers.openai.com/api/docs/guides/developer-mode"
+      },
+      {
+        "label": "GitHub stripe/ai #600",
+        "url": "https://github.com/stripe/ai/issues/600"
+      }
+    ]
+  }
 }
