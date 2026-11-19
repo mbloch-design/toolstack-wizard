@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X, ArrowUpRight, Handshake, ListChecks as Checklist, Receipt, Megaphone, MessageSquare, Link2, Wallet, Tag, Database, PenLine, MessageCircle, Clock, Shield, PenTool, RefreshCw, Palette, SlidersHorizontal, WandSparkles, Boxes, Euro, Lock, ShieldAlert, Ban } from "@/lib/icons";
+import { Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X, ArrowUpRight, Handshake, ListChecks as Checklist, Receipt, Megaphone, MessageSquare, Link2, Wallet, Tag, Database, PenLine, MessageCircle, Clock, Shield, PenTool, RefreshCw, Palette, SlidersHorizontal, WandSparkles, Boxes, Euro, Lock, ShieldAlert, Ban, MessagesSquare, BarChart3, ShoppingCart, Workflow, ClipboardCheck, Globe, Search, Share2, Clock3 } from "@/lib/icons";
 import { getToolLogoSources } from "@/lib/toolLogos";
 import {
   CONSEQUENCE, clientName, forEveryone, isCopyRow, say, skillTitle, typo,
@@ -632,7 +632,7 @@ const ADVICE_ICON = {
   invoice: <Receipt />, confirm: <ShieldAlert />, blocked: <Ban />, session: <LogOut />,
 } as const;
 
-const SITUATION_ICON = { meeting: <Handshake />, week: <Checklist />, invoice: <Receipt />, post: <Megaphone />, deck: <FileText />, feedback: <MessageSquare />, link: <Link2 />, unpaid: <Wallet /> } as const;
+const SITUATION_ICON = { meeting: <Handshake />, week: <Checklist />, invoice: <Receipt />, post: <Megaphone />, deck: <FileText />, feedback: <MessageSquare />, link: <Link2 />, unpaid: <Wallet /> , chat: <MessagesSquare />, design: <Palette />, chart: <BarChart3 />, shop: <ShoppingCart />, automation: <Workflow />, task: <Checklist />, email: <Mail />, form: <ClipboardCheck />, web: <Globe />, doc: <FileText />, search: <Search />, data: <Database />, social: <Share2 />, calendar: <Clock3 />} as const;
 
 /** A situation with a scene (19/11) shows its pencil drawing in place of the icon round, in the same row: a band of 96
  *  on the text's left edge, 24 above the eyebrow. Without one, the round stays. */

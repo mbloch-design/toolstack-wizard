@@ -68,7 +68,7 @@
    As many cards per row as hold their 32 of padding and their button (280 at least): three on a computer. */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(280px, calc((100% - 2 * var(--tt-gap-group)) / 3))), 1fr));
   gap: var(--tt-gap-group);
   margin: 0;
   padding: 0;
@@ -198,7 +198,7 @@
 
 .adviceCards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, max(300px, calc((100% - 2 * var(--tt-gap-group)) / 3))), 1fr));
   gap: var(--tt-gap-group);
   margin: 0;
   padding: 0;

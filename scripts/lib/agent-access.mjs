@@ -151,7 +151,7 @@ const INSTALL_TYPES = ["command", "url", "config", "steps"];
 export const CARD_MAX = 50;
 
 /** A situation's icon (19/11): what the moment is, from a closed list drawn in AgentSheet. */
-const SITUATION_ICONS = ["meeting", "week", "invoice", "post", "deck", "feedback", "link", "unpaid"];
+const SITUATION_ICONS = ["meeting", "week", "invoice", "post", "deck", "feedback", "link", "unpaid", "chat", "design", "chart", "shop", "automation", "task", "email", "form", "web", "doc", "search", "data", "social", "calendar"];
 /** A situation's pencil scene (19/11, « parfait, go sur ça »), optional: one of the scenes drawn in SituationArt.tsx
  *  (src/lib/agents.ts, SituationScene, holds the same list; TypeScript checks the drawings against it). */
 export const SITUATION_SCENES = ["notion-meeting", "notion-week", "notion-invoice", "canva-post", "canva-deck", "canva-feedback", "stripe-invoice", "stripe-link", "stripe-unpaid"];

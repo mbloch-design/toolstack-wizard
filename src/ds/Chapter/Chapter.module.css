@@ -76,6 +76,8 @@
   max-width: 720px;
 }
 
+/* The wide grid holds the sheet's two edges (19/11, « un souci de grille… la marge de droite »): it fills the sheet, so
+   the right margin is the page's, never 264 px of empty white beside a column stopped at 1080. */
 .body[data-width="wide"] {
-  max-width: 1080px;
+  max-width: none;
 }
