@@ -307,8 +307,8 @@
     {
       "name": "remove-background",
       "kind": "write",
-      "fr": "Détourer une image",
-      "en": "Remove an image's background"
+      "fr": "Détourer une image (Pro)",
+      "en": "Remove an image's background (Pro)"
     },
     {
       "name": "separate-image-layers",

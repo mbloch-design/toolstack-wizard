@@ -366,8 +366,8 @@
     {
       "name": "theme_bash",
       "kind": "write",
-      "fr": "Modifier les fichiers du thème (en attente)",
-      "en": "Read and edit theme files (pending)"
+      "fr": "Modifier les fichiers du thème (à enregistrer ensuite)",
+      "en": "Read and edit theme files (saved in a separate step)"
     },
     {
       "name": "theme_commit",
