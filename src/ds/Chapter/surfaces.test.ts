@@ -12,7 +12,7 @@ import { describe, expect, it } from "vitest";
 const FILES = ["Chapter/Chapter.module.css", "AgentSheet/AgentSheet.module.css", "AgentHub/AgentHub.module.css", "AgentAccess/AgentAccess.module.css"];
 const NAV_GREY = /var\(--tt-(tile|chrome)\)/;
 /** The cards allowed the light grey (19/11): an object on the sheet, never a chapter's ground. */
-const CARDS = new Set([".situation", ".adviceCard", ".stepCard", ".askCard", ".entry", '.controlColumn[data-column="can"]']);
+const CARDS = new Set([".situation", ".adviceCard", ".stepCard", ".askCard"]);
 
 const rules = (css: string) => [...css.replace(/\/\*[\s\S]*?\*\//g, "").matchAll(/([^{}]+)\{([^{}]*)\}/g)].map(([, selector, body]) => ({ selector: selector.trim(), body }));
 

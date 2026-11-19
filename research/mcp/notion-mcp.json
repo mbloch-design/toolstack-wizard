@@ -696,7 +696,8 @@
           "fr": "L'historique en tête avant l'appel.",
           "en": "The history in mind before the call."
         },
-        "source": "https://developers.notion.com/guides/mcp/overview"
+        "source": "https://developers.notion.com/guides/mcp/overview",
+        "icon": "meeting"
       },
       {
         "title": {
@@ -711,7 +712,8 @@
           "fr": "Votre semaine en une réponse.",
           "en": "Your week in one answer."
         },
-        "source": "https://developers.notion.com/guides/mcp/overview"
+        "source": "https://developers.notion.com/guides/mcp/overview",
+        "icon": "week"
       },
       {
         "title": {
@@ -726,7 +728,8 @@
           "fr": "Les relances prêtes, la base à jour.",
           "en": "Follow-ups ready, database up to date."
         },
-        "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools"
+        "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools",
+        "icon": "invoice"
       }
     ],
     "tips": [

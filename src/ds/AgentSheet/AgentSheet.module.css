@@ -101,13 +101,36 @@
 
 .situation {
   display: grid;
-  grid-row: span 4;
+  grid-row: span 5;
   grid-template-rows: subgrid;
   row-gap: 0;
   padding: var(--tt-space-8);
   border-radius: var(--tt-r-tile);
   background: var(--tt-tile);
   min-width: 0;
+}
+
+/* ToolTrim's twist (19/11, « un twist d'ADN de ToolTrim »): the pictogram on a round of Ma stack's palette, in its
+   night ink — sky for a moment of the week, mint for what works, butter for what gets stuck, coral for what deletes or
+   pays. The cards stay calm and grey; the colour lives in the rounds. */
+.pastille {
+  display: inline-grid;
+  place-items: center;
+  width: var(--tt-space-10);
+  height: var(--tt-space-10);
+  border-radius: var(--tt-r-round);
+  background: var(--pal-bg);
+  color: var(--pal-ink);
+}
+
+.pastille > svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+.situationIcon {
+  composes: pastille;
+  margin-bottom: var(--tt-space-4);
 }
 
 /* The eyebrow: what the moment is, at the label's size and its strong weight. */
@@ -191,20 +214,9 @@
   background: var(--tt-tile);
 }
 
-/* The line icon in colour, as Apple's: the brand blue for what works, the overlap orange for what gets stuck. */
 .adviceIcon {
-  display: inline-flex;
+  composes: pastille;
   margin-bottom: var(--tt-space-4);
-  color: var(--tt-brand);
-}
-
-.adviceCard[data-kind="pitfalls"] .adviceIcon {
-  color: var(--tt-overlap);
-}
-
-.adviceIcon > svg {
-  width: var(--tt-space-8);
-  height: var(--tt-space-8);
 }
 
 /* The card's headline: 21, the emphasis weight. */
@@ -310,35 +322,111 @@
   padding-top: var(--tt-space-2);
 }
 
-/* The sources on one line of short links, « Signaler une erreur » last on the same line. */
-.sourceLine {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--tt-space-2) var(--tt-space-5);
-  align-items: center;
-}
-
-.sourceLinks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--tt-space-2) var(--tt-space-4);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.sourceLink {
+/* A card's source (19/11, « lis de manière plus maline »): at its foot, the site it comes from, a note with an arrow
+   out; a users' account says so. The claim and its proof together. */
+.cardSource {
   composes: note from "../atoms.module.css";
+  composes: focus from "../atoms.module.css";
   display: inline-flex;
   gap: var(--tt-space-1);
   align-items: center;
+  justify-self: start;
+  margin-top: var(--tt-space-2);
+  color: var(--tt-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--tt-line);
+  text-underline-offset: 3px;
+}
+
+.cardSource:hover {
+  text-decoration-color: currentColor;
+}
+
+.cardSource > svg {
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
+}
+
+/* The sources (19/11): a title (21), a column per origin under its marker, a source a row under a hairline — its
+   name (16), its site (14), an arrow out at the end; the report link 24 below. */
+.sources {
+  display: grid;
+  gap: var(--tt-gap-group);
+}
+
+.sourcesTitle {
+  composes: titleM from "../atoms.module.css";
+}
+
+.sourceGroups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: var(--tt-gap-group) var(--tt-space-12);
+  align-items: start;
+}
+
+.sourceGroup {
+  display: grid;
+  gap: var(--tt-space-3);
+}
+
+.sourceList {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  border-top: var(--tt-hairline-w) solid var(--tt-ink);
+  list-style: none;
+}
+
+.sourceList > li + li {
+  border-top: var(--tt-hairline-w) solid var(--tt-line);
+}
+
+.sourceItem {
+  composes: focus from "../atoms.module.css";
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: var(--tt-space-3);
+  align-items: baseline;
+  min-height: var(--tt-tap);
+  padding-block: var(--tt-space-3);
+  color: var(--tt-ink);
+  text-decoration: none;
+}
+
+.sourceName {
+  composes: text from "../atoms.module.css";
+}
+
+.sourceItem:hover .sourceName {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.sourceHost {
+  composes: note from "../atoms.module.css";
+}
+
+.sourceItem > svg {
+  align-self: center;
+  width: var(--tt-icon-s);
+  height: var(--tt-icon-s);
+}
+
+.report {
+  composes: note from "../atoms.module.css";
+  composes: focus from "../atoms.module.css";
+  display: inline-flex;
+  gap: var(--tt-space-1);
+  align-items: center;
+  justify-self: start;
   min-height: var(--tt-tap);
   color: var(--tt-ink);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.sourceLink svg {
+.report svg {
   width: var(--tt-icon-s);
   height: var(--tt-icon-s);
 }
@@ -606,12 +694,8 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 }
 
-/* The actions: the table in a light grey box, as the other cards; its rows' hairlines on the grey. */
 .controlColumn[data-column="can"] {
   container-type: inline-size;
-  padding: var(--tt-space-8);
-  border-radius: var(--tt-r-tile);
-  background: var(--tt-tile);
 }
 
 /* Without safeguards documented, the actions alone, at the three fifths they have beside them: no empty column, no
@@ -635,31 +719,27 @@
   }
 }
 
-/* A safeguard (19/11, « ça aussi »): the card of the sheet — light grey on the white sheet, no edge, no shadow, 32
-   inside; its line icon in colour on top, its title (21, emphasis), its sentence. */
+/* A safeguard (19/11, « trop de box, calme le jeu »): on the white sheet, no box — its line icon in colour, its title
+   (17), its sentence; a hairline between two safeguards, 24 on each side of it. */
 .entry {
   display: grid;
   align-content: start;
-  gap: var(--tt-space-2);
-  padding: var(--tt-space-8);
-  border-radius: var(--tt-r-tile);
-  background: var(--tt-tile);
+  gap: var(--tt-space-1);
+  padding-block: var(--tt-gap-group);
   min-width: 0;
 }
 
+.entry + .entry {
+  border-top: var(--tt-hairline-w) solid var(--tt-line);
+}
+
+.entry:first-child {
+  padding-top: 0;
+}
+
 .entryIcon {
-  display: inline-flex;
-  margin-bottom: var(--tt-space-4);
-  color: var(--tt-brand);
-}
-
-.entryIcon svg {
-  width: var(--tt-space-8);
-  height: var(--tt-space-8);
-}
-
-.entryIcon[data-alert] {
-  color: var(--tt-overlap);
+  composes: pastille;
+  margin-bottom: var(--tt-space-2);
 }
 
 .entryBody {
@@ -671,10 +751,9 @@
 .entryTitle {
   margin: 0;
   color: var(--tt-ink);
-  font: var(--tt-title-m-font);
-  font-weight: var(--tt-w-em);
-  letter-spacing: var(--tt-title-m-tracking);
-  text-wrap: balance;
+  font: var(--tt-card-name-font);
+  font-weight: var(--tt-w-amount);
+  letter-spacing: var(--tt-card-name-tracking);
 }
 
 .strong {
@@ -700,11 +779,23 @@
   color: var(--tt-overlap);
 }
 
+/* The count in superscript, the site's charter (the catalogue's titles): brand blue, the note's type, tabular. */
 .sectionCount {
-  color: var(--tt-ink);
+  margin-left: calc(var(--tt-space-1) * -1);
+  color: var(--tt-brand);
+  font: var(--tt-note-font);
+  letter-spacing: var(--tt-note-tracking);
+  font-variant-numeric: tabular-nums;
+  vertical-align: super;
 }
 
 .sectionNote {
   composes: note from "../atoms.module.css";
   color: var(--tt-ink);
+}
+
+/* « Notre avis » (19/11, « attention aux espaces »): the verdicts, then « Pour aller plus loin » 48 below, as two parts. */
+.view {
+  display: grid;
+  gap: var(--tt-gap-head);
 }

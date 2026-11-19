@@ -1,4 +1,6 @@
-/* A two-column data table (step 8b): column heads in the quiet note type, a hairline between rows, 12 inside a row. */
+/* A two-column data table (step 8b; structure 19/11, « de la structure, des règles d'espace, des titres dans le
+   tableau »): the column titles as 12 caps markers over a rule in ink; each group opened by its title (17), 48 above
+   it; a hairline between rows, 16 inside a row. */
 .frame {
   container-type: inline-size;
   min-width: 0;
@@ -16,10 +18,10 @@
 }
 
 .head {
-  composes: note from "../atoms.module.css";
-  padding: 0 var(--tt-space-6) var(--tt-space-2) 0;
+  composes: eyebrow from "../atoms.module.css";
+  padding: 0 var(--tt-space-6) var(--tt-space-3) 0;
+  border-bottom: var(--tt-hairline-w) solid var(--tt-ink);
   color: var(--tt-ink);
-  font-weight: inherit;
   text-align: start;
 }
 
@@ -29,31 +31,33 @@
 
 .first {
   composes: text from "../atoms.module.css";
-  padding: var(--tt-space-3) var(--tt-space-6) var(--tt-space-3) 0;
+  padding: var(--tt-space-4) var(--tt-space-6) var(--tt-space-4) 0;
   font-weight: inherit;
   text-align: start;
   vertical-align: baseline;
 }
 
 .cell {
-  padding: var(--tt-space-3) 0;
+  padding: var(--tt-space-4) 0;
   vertical-align: baseline;
 }
 
-/* A section's head (step 8d): its mark in its colour, the label in bold and its count, a note at its right; marked by
-   its type and 24 above it, no ground and no extra rule. */
+/* A group's title: 17 in the display face, its weight; 48 above it (24 for the first, under the column titles), 12
+   below it before the first row's hairline. */
 .section {
-  composes: label from "../atoms.module.css";
-  font-weight: inherit;
+  color: var(--tt-ink);
+  font: var(--tt-card-name-font);
+  font-weight: var(--tt-w-amount);
+  letter-spacing: var(--tt-card-name-tracking);
   text-align: start;
 }
 
 .sectionRow > .section {
-  padding: var(--tt-space-6) 0 var(--tt-space-2);
+  padding: var(--tt-gap-head) 0 var(--tt-space-3);
 }
 
 tbody:first-of-type > .sectionRow > .section {
-  padding-top: var(--tt-space-3);
+  padding-top: var(--tt-gap-group);
 }
 
 /* The fold is the table's last row: a full-width button on the columns' line, the same rhythm as a row. */
@@ -82,12 +86,14 @@ tbody:first-of-type > .sectionRow > .section {
   cursor: pointer;
 }
 
+/* Its hover is a link's (19/11, « c'est quoi ce hover ») — the words underline, no ground across the table. */
 .fold:hover {
-  background: var(--tt-state-hover);
+  text-decoration: underline;
+  text-underline-offset: .2em;
 }
 
 .fold:active {
-  background: var(--tt-state-press);
+  opacity: var(--tt-quiet);
 }
 
 .chevron {

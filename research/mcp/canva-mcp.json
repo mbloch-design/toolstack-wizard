@@ -467,7 +467,8 @@
           "fr": "Deux formats, une seule mise en page.",
           "en": "Two formats, one layout."
         },
-        "source": "https://www.canva.com/help/mcp-canva-usage/"
+        "source": "https://www.canva.com/help/mcp-canva-usage/",
+        "icon": "post"
       },
       {
         "title": {
@@ -482,7 +483,8 @@
           "fr": "Vos notes deviennent un PDF.",
           "en": "Your notes become a PDF."
         },
-        "source": "https://www.canva.com/help/mcp-canva-usage/"
+        "source": "https://www.canva.com/help/mcp-canva-usage/",
+        "icon": "deck"
       },
       {
         "title": {
@@ -497,7 +499,8 @@
           "fr": "Ce qu'il reste à corriger, d'un coup d'œil.",
           "en": "What's left to fix, at a glance."
         },
-        "source": "https://www.canva.com/help/mcp-canva-usage/"
+        "source": "https://www.canva.com/help/mcp-canva-usage/",
+        "icon": "feedback"
       }
     ],
     "tips": [

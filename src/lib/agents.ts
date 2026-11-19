@@ -41,12 +41,13 @@ export interface McpSheet {
   advice?: McpAdvice;
 }
 
+export type SituationIcon = "meeting" | "week" | "invoice" | "post" | "deck" | "feedback" | "link" | "unpaid";
 export type Sourced = Pair & { title: Pair; source: string; community?: boolean };
 export interface McpAdvice {
   verdict: Pair & { source: string };
   /** The peer's introduction to « D'un free à l'autre »: the scene, in a human voice. */
   intro: Pair;
-  situations: { title: Pair; ask: Pair; gain: Pair; source: string }[];
+  situations: { title: Pair; ask: Pair; gain: Pair; source: string; icon: SituationIcon }[];
   tips: Sourced[];
   pitfalls: (Sourced & { workaround?: Pair })[];
   sources: { label: string; url: string }[];

@@ -1,37 +1,33 @@
-/* Verdict cards: a soft tint of the system (gain, caution), the tile's radius, 24 of padding; same height side by side. */
+/* Verdict cards (19/11, « calme le jeu »): on the white sheet, no ground — the icon in its colour (gain green, caution
+   orange), the title as a 12 caps marker, the sentence at 21 in full; side by side, 48 apart, a hairline above each. */
 
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  gap: var(--tt-gap-item);
+  gap: var(--tt-gap-group) var(--tt-space-12);
   min-width: 0;
 }
 
 .card {
   display: grid;
-  gap: var(--tt-space-3);
+  gap: var(--tt-space-2);
   align-content: start;
-  padding: var(--tt-space-6);
-  border-radius: var(--tt-r-tile);
+  padding-top: var(--tt-gap-group);
+  border-top: var(--tt-hairline-w) solid var(--tt-line);
   min-width: 0;
 }
 
-.card[data-tone="gain"] {
-  background: var(--tt-delta-gain-bg);
-}
-
-.card[data-tone="caution"] {
-  background: var(--tt-delta-cost-bg);
-}
-
 .icon {
-  display: inline-grid;
-  place-items: center;
-  width: var(--tt-space-12);
-  height: var(--tt-space-12);
-  border-radius: var(--tt-r-round);
-  background: var(--tt-bg);
-  color: var(--tt-ink);
+  display: inline-flex;
+  margin-bottom: var(--tt-space-2);
+}
+
+.card[data-tone="gain"] .icon {
+  color: var(--tt-gain-ink);
+}
+
+.card[data-tone="caution"] .icon {
+  color: var(--tt-overlap);
 }
 
 .icon svg {
@@ -40,8 +36,7 @@
 }
 
 .title {
-  composes: label from "../atoms.module.css";
-  composes: strong from "../atoms.module.css";
+  composes: eyebrow from "../atoms.module.css";
 }
 
 .text {

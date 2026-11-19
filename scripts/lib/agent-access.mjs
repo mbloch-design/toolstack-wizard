@@ -150,6 +150,8 @@ const INSTALL_TYPES = ["command", "url", "config", "steps"];
 /** A card sentence fits two lines of the narrowest card: a media card in a row of four (step 8d, 18/11); src/lib/agents.ts holds the same 50. */
 export const CARD_MAX = 50;
 
+/** A situation's icon (19/11): what the moment is, from a closed list drawn in AgentSheet. */
+const SITUATION_ICONS = ["meeting", "week", "invoice", "post", "deck", "feedback", "link", "unpaid"];
 const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "card", "meta_description", "examples", "for", "not_for", "control", "plan_words", "first_requests", "troubleshoot", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "claude_directory", "docs_url", "sources", "advice"]);
 const SKILL_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "server", "category", "summary", "agents", "install", "requires", "verified_on", "status", "docs_url", "sources",
   // Step 9 (18/11/2026), from the vendors' pages: what it does for you, a request to try, the search snippet, a readable name.
@@ -214,7 +216,7 @@ export function validateMcpSheet(sheet, { catalogSlugs, skillSlugs } = {}) {
     if (!isPair(a?.intro)) errors.push(`${at} : advice.intro fr/en`);
     for (const item of [...(a?.tips ?? []), ...(a?.pitfalls ?? [])]) if (!isPair(item?.title)) errors.push(`${at} : advice, titre fr/en manquant (${item?.fr?.slice(0, 30)})`);
     if (!Array.isArray(a?.situations) || a.situations.length < 2 || a.situations.length > 3
-      || !a.situations.every((x) => isPair(x?.title) && isPair(x?.ask) && isPair(x?.gain) && isUrl(x?.source))) errors.push(`${at} : advice.situations, 2 ou 3 (titre, demande, gain, source)`);
+      || !a.situations.every((x) => isPair(x?.title) && isPair(x?.ask) && isPair(x?.gain) && isUrl(x?.source) && SITUATION_ICONS.includes(x?.icon))) errors.push(`${at} : advice.situations, 2 ou 3 (titre, demande, gain, source, icône parmi ${SITUATION_ICONS.join(", ")})`);
     if (!Array.isArray(a?.tips) || a.tips.length < 3 || a.tips.length > 5 || !a.tips.every((x) => isPair(x) && sourced(x))) errors.push(`${at} : advice.tips, 3 à 5 conseils fr/en sourcés`);
     if (!Array.isArray(a?.pitfalls) || a.pitfalls.length < 2 || a.pitfalls.length > 4
       || !a.pitfalls.every((x) => isPair(x) && sourced(x) && (x.workaround === undefined || isPair(x.workaround)))) errors.push(`${at} : advice.pitfalls, 2 à 4 pièges fr/en sourcés`);

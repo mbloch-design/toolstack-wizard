@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import { AlertTriangle, Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X, Lightbulb } from "@/lib/icons";
+import { AlertTriangle, Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X, ArrowUpRight, Lightbulb, Handshake, ListChecks as Checklist, Receipt, Megaphone, MessageSquare, Link2, Wallet } from "@/lib/icons";
 import { getToolLogoSources } from "@/lib/toolLogos";
 import {
   CONSEQUENCE, clientName, forEveryone, isCopyRow, say, skillTitle, typo,
@@ -136,18 +136,19 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
         {/* 5. Our view: two verdict cards, then « Pour aller plus loin », three cards on one template. */}
         {sheet.for && sheet.not_for && (
           <Chapter chapter="view" width="wide" title={t("Notre avis", "Our view")}>
-            <ToneCards>
-              <ToneCard tone="gain" icon={<Check />} title={t("Utile si", "Useful if")}>{raise(say(lang, sheet.for))}</ToneCard>
-              <ToneCard tone="caution" icon={<X />} title={t("Moins utile si", "Less useful if")}>{raise(say(lang, sheet.not_for))}</ToneCard>
-            </ToneCards>
-            {related}
+            <div className={styles.view}>
+              <ToneCards>
+                <ToneCard tone="gain" icon={<Check />} title={t("Utile si", "Useful if")}>{raise(say(lang, sheet.for))}</ToneCard>
+                <ToneCard tone="caution" icon={<X />} title={t("Moins utile si", "Less useful if")}>{raise(say(lang, sheet.not_for))}</ToneCard>
+              </ToneCards>
+              {related}
+            </div>
           </Chapter>
         )}
 
         {/* 6. Footnotes: the sources on one line and « Signaler une erreur ». */}
         <Chapter chapter="annex" tone="notes" width="wide">
-          <SourceLine lang={lang} publisher={sheet.publisher} sources={sheet.sources} reportHref={reportHref} />
-          {advice && <SourceLine lang={lang} publisher={sheet.publisher} sources={advice.sources} label={t("Nos conseils viennent de :", "Our advice comes from:")} />}
+          <Sources lang={lang} reportHref={reportHref} groups={[{ title: t(`Chez ${sheet.publisher}`, `At ${sheet.publisher}`), links: pageTitles(sheet.sources, lang) }]} />
         </Chapter>
       </Chapters>
     </div>
@@ -179,17 +180,43 @@ function Disclosure({ label, children }: { label: string; children: ReactNode })
 }
 
 /** The sources on one line of short links, « Signaler une erreur » last on the same line; the date is said once, in the head. */
-function SourceLine({ lang, publisher, sources, reportHref, label }: { lang: Lang; publisher: string; sources: { label: string; url: string }[]; reportHref?: string; label?: string }) {
+/**
+ * The sources (19/11, « meilleur design, mieux mis en avant »): a section of its own, not a line of notes — a marker
+ * per origin (the vendor's pages, then where our advice comes from), one source a row under a hairline: its name, its
+ * site in small, an arrow out. « Signaler une erreur » below, apart.
+ */
+/** The vendor's pages under their short French or English names, each name once (19/11, « Présentation 4 fois »). */
+function pageTitles(sources: { label: string; url: string }[], lang: Lang) {
+  const seen = new Set<string>();
+  return sourceLinks(sources, lang).filter((link) => !seen.has(link.label) && seen.add(link.label));
+}
+
+const siteOf = (url: string) => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return ""; } };
+
+function Sources({ lang, groups, reportHref }: { lang: Lang; groups: { title: string; links: { label: string; url: string; title?: string }[] }[]; reportHref: string }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   return (
-    <div className={styles.sourceLine} data-chapter-part="sources">
-      <p className={styles.meta}>{label ?? t(`Sources, chez ${publisher} :`, `Sources, at ${publisher}:`)}</p>
-      <ul className={styles.sourceLinks}>
-        {sourceLinks(sources, lang).map((source) => (
-          <li key={source.url}><a className={styles.sourceLink} href={source.url} target="_blank" rel="noopener noreferrer" title={source.title}>{source.label}<ExternalLink aria-hidden="true" /></a></li>
+    <div className={styles.sources} data-chapter-part="sources">
+      <h2 className={styles.sourcesTitle}>{t("Sources", "Sources")}</h2>
+      <div className={styles.sourceGroups}>
+        {groups.map((group) => (
+          <section key={group.title} className={styles.sourceGroup} aria-label={group.title}>
+            <h3 className={styles.columnHead}>{group.title}</h3>
+            <ul className={styles.sourceList}>
+              {group.links.map((link) => (
+                <li key={link.url}>
+                  <a className={styles.sourceItem} href={link.url} target="_blank" rel="noopener noreferrer" title={link.title}>
+                    <span className={styles.sourceName}>{link.label}</span>
+                    <span className={styles.sourceHost}>{siteOf(link.url)}</span>
+                    <ArrowUpRight aria-hidden="true" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
         ))}
-        {reportHref && <li><a className={styles.sourceLink} href={reportHref}><Flag aria-hidden="true" />{t("Signaler une erreur", "Report an error")}</a></li>}
-      </ul>
+      </div>
+      <a className={styles.report} href={reportHref}><Flag aria-hidden="true" />{t("Signaler une erreur", "Report an error")}</a>
     </div>
   );
 }
@@ -472,7 +499,7 @@ export function SkillSheetView({ skill, lang, logo, reportHref, related }: {
         {related && <Chapter chapter="further" width="wide" title={t("Pour aller plus loin", "Going further")}>{related}</Chapter>}
 
         <Chapter chapter="annex" tone="notes" width="wide">
-          <SourceLine lang={lang} publisher={skill.publisher} sources={skill.sources} reportHref={reportHref} />
+          <Sources lang={lang} reportHref={reportHref} groups={[{ title: t(`Chez ${skill.publisher}`, `At ${skill.publisher}`), links: pageTitles(skill.sources, lang) }]} />
         </Chapter>
       </Chapters>
     </div>
@@ -496,7 +523,7 @@ const KIND_ICON = { delete: <Trash2 />, pay: <CreditCard />, send: <Mail />, wri
 function Entry({ icon, title, titleId, alert = false, children }: { icon: ReactNode; title: string; titleId?: string; alert?: boolean; children?: ReactNode }) {
   return (
     <div className={styles.entry}>
-      <span className={styles.entryIcon} data-alert={alert || undefined} aria-hidden="true">{icon}</span>
+      <span className={styles.entryIcon} data-palette={alert ? "coral" : "sky"} aria-hidden="true">{icon}</span>
       <p id={titleId} className={styles.entryTitle}>{title}</p>
       {children && <div className={styles.entryBody}>{children}</div>}
     </div>
@@ -522,7 +549,7 @@ function ControlColumns({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
     const line = sheet.capabilities?.find((capability) => capability.kind === kind);
     const own = tools.filter((tool) => tool.kind === kind);
     const head = <span className={styles.sectionHead} data-alert={kind === "delete" || kind === "pay" || undefined}>
-      {KIND_ICON[kind]}<span className={styles.strong}>{say(lang, CONSEQUENCE[kind])}</span>{own.length > 0 && <span className={styles.sectionCount}>{`· ${own.length}`}</span>}
+      {KIND_ICON[kind]}<span className={styles.strong}>{say(lang, CONSEQUENCE[kind])}</span>{own.length > 0 && <sup className={styles.sectionCount} aria-label={t(`${own.length} actions`, `${own.length} actions`)}>{own.length}</sup>}
       {kind === "read" && <span className={styles.sectionNote}>{t("Sans effet sur vos données", "No effect on your data")}</span>}
     </span>;
     const rows = own.length
@@ -565,17 +592,18 @@ function ControlColumns({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
 function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   const id = useId();
-  const community = <p className={styles.meta}>{t("D'après des retours d'utilisateurs", "From users' accounts")}</p>;
   const group = (key: "tips" | "pitfalls", head: string, items: McpAdvice["pitfalls"]) => (
     <section className={styles.adviceGroup} data-column={key} aria-labelledby={`${id}-${key}`}>
       <h3 id={`${id}-${key}`} className={styles.adviceHead}>{head}</h3>
       <ul className={styles.adviceCards}>
         {items.map((item) => (
           <li key={item.fr} className={styles.adviceCard} data-kind={key}>
-            <span className={styles.adviceIcon} aria-hidden="true">{key === "tips" ? <Lightbulb /> : <AlertTriangle />}</span>
+            <span className={styles.adviceIcon} data-palette={key === "tips" ? "mint" : "butter"} aria-hidden="true">{key === "tips" ? <Lightbulb /> : <AlertTriangle />}</span>
             <p className={styles.adviceTitle}>{say(lang, item.title)}</p>
             <p className={styles.text}>{say(lang, item)}{item.workaround && <> <span className={styles.strong}>{t("La parade", "The way around")}</span>{t(" : ", ": ")}{lower(say(lang, item.workaround))}</>}</p>
-            {item.community && community}
+            <a className={styles.cardSource} href={item.source} target="_blank" rel="noopener noreferrer">
+              {item.community ? t("D'après des retours d'utilisateurs · ", "From users' accounts · ") : t("Source : ", "Source: ")}{siteOf(item.source)}<ArrowUpRight aria-hidden="true" />
+            </a>
           </li>
         ))}
       </ul>
@@ -594,6 +622,8 @@ function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
  * as the eyebrow, what it brings as the headline, then at the foot the request in a white bubble — the message to send —
  * and the round copy button in the corner.
  */
+const SITUATION_ICON = { meeting: <Handshake />, week: <Checklist />, invoice: <Receipt />, post: <Megaphone />, deck: <FileText />, feedback: <MessageSquare />, link: <Link2 />, unpaid: <Wallet /> } as const;
+
 function SituationCard({ situation, lang }: { situation: McpAdvice["situations"][number]; lang: Lang }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   const [copied, setCopied] = useState(false);
@@ -601,6 +631,7 @@ function SituationCard({ situation, lang }: { situation: McpAdvice["situations"]
   const copy = () => { void navigator.clipboard?.writeText(words).then(() => { setCopied(true); window.setTimeout(() => setCopied(false), 2000); }); };
   return (
     <li className={styles.situation} data-situation="">
+      <span className={styles.situationIcon} data-palette="sky" aria-hidden="true">{SITUATION_ICON[situation.icon]}</span>
       <p className={styles.situationEyebrow}>{say(lang, situation.title)}</p>
       <h3 className={styles.situationHeadline}>{say(lang, situation.gain)}</h3>
       <p className={styles.situationMessage}>{words}</p>

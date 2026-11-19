@@ -21,9 +21,12 @@ export default meta;
 
 type Story = StoryObj<typeof McpSheetView>;
 
-/** A consequence's head row in the actions table (« Supprime des données · 4 »), its label and count in separate spans. */
-const sectionHead = (root: HTMLElement, text: string) => [...root.querySelectorAll<HTMLElement>("th[scope=rowgroup]")].find((head) => norm(head.textContent!).includes(norm(text)))!;
-const norm = (text: string) => text.replace(/\s+/g, " ").replace(/ ?· ?/g, " · ");
+/** A consequence's head row in the actions table, asked as « Supprime des données · 4 »: the label in its words, the
+ *  count in superscript (19/11, the site's charter). */
+const sectionHead = (root: HTMLElement, text: string) => {
+  const [label, count] = text.split(" · ");
+  return [...root.querySelectorAll<HTMLElement>("th[scope=rowgroup]")].find((head) => head.textContent!.includes(label) && head.querySelector("sup")?.textContent === count)!;
+};
 const REPORT = "/fr/contact?subject=correction";
 const server = (name: keyof typeof sheetStates, toolName: string): Story => ({
   render: (_args, context) => <McpSheetView sheet={sheetStates[name]} toolName={toolName} lang={context.globals.lang}
@@ -51,7 +54,12 @@ export const Notion: Story = {
     const pitfalls = advice.querySelectorAll("[data-column=pitfalls] li");
     await expect(pitfalls.length).toBeGreaterThanOrEqual(2);
     for (const pitfall of pitfalls) await expect(pitfall.textContent).toMatch(fr ? /La parade/ : /The way around/);
-    await expect(canvasElement.querySelector("[data-chapter=annex]")!.textContent).toMatch(fr ? /Nos conseils viennent de/ : /Our advice comes from/);
+    // Every tip and pitfall says where it comes from, at its foot.
+    for (const card of advice.querySelectorAll("li")) await expect(card.querySelector("a[target=_blank]")).not.toBeNull();
+    // The sources are a section: a row per source, each name once (« Présentation 4 fois », 19/11).
+    const names = [...canvasElement.querySelectorAll<HTMLElement>("[data-chapter=annex] li a[target=_blank] span:first-child")].map((name) => name.textContent);
+    await expect(names.length).toBeGreaterThanOrEqual(3);
+    await expect(new Set(names).size).toBe(names.length);
     // Each point is a card: its icon, its title, its sentence.
     for (const card of advice.querySelectorAll("li")) await expect(card.querySelector("svg")).not.toBeNull();
     await expect(canvas.getByRole("heading", { level: 1 })).toHaveTextContent(fr ? "Brancher Notion à votre assistant" : "Plug Notion into your assistant");
