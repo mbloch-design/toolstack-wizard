@@ -7,7 +7,7 @@ const MAX_DERIVATIVE_BYTES = 2 * 1024 * 1024;
 const MAX_PIXELS = 20_000_000;
 const formats = { "image/png": "png", "image/jpeg": "jpeg", "image/webp": "webp" } as const;
 export type MediaMime = keyof typeof formats;
-export const isMediaMime = (value: unknown): value is MediaMime => typeof value === "string" && Object.hasOwn(formats, value);
+export const isMediaMime = (value: unknown): value is MediaMime => typeof value === "string" && Object.prototype.hasOwnProperty.call(formats, value);
 export const mediaRoles = ["logo", "cover", "gallery"] as const;
 export type MediaRole = typeof mediaRoles[number];
 const dimensions = { logo: [512, 512], gallery: [1920, 1920], cover: [1200, 630] } as const;

@@ -31,7 +31,7 @@ function parseSaveBody(body: unknown) {
     throw new AccountApiError(400, "INVALID_PUBLISHER_DRAFT");
   }
   const input = body as Record<string, unknown>;
-  if (Object.keys(input).length !== 3 || !["brandId", "version", "value"].every((key) => Object.hasOwn(input, key))
+  if (Object.keys(input).length !== 3 || !["brandId", "version", "value"].every((key) => Object.prototype.hasOwnProperty.call(input, key))
     || typeof input.brandId !== "string" || typeof input.version !== "number"
     || !Number.isSafeInteger(input.version) || input.version < 1) {
     throw new AccountApiError(400, "INVALID_PUBLISHER_DRAFT");

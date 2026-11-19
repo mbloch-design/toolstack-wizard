@@ -103,8 +103,8 @@ export function validateToolTrimDraft(value: unknown): CmsIssue[] {
     path, code, block: "analysis", severity: "error",
   });
   if (!record(value) || ![Object.prototype, null].includes(Object.getPrototypeOf(value))
-    || value.schemaVersion !== 1 || !Object.hasOwn(value, "schemaVersion")
-    || !Object.hasOwn(value, "fields") || !record(value.fields)
+    || value.schemaVersion !== 1 || !Object.prototype.hasOwnProperty.call(value, "schemaVersion")
+    || !Object.prototype.hasOwnProperty.call(value, "fields") || !record(value.fields)
     || Object.keys(value).some((key) => key !== "schemaVersion" && key !== "fields")) {
     return [issue("", "INVALID_TOOLTRIM_DRAFT")];
   }

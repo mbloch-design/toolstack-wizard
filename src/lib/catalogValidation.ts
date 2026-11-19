@@ -342,7 +342,7 @@ export function validateCatalogFieldValues(
   if (unsafe.length) return unsafe;
   const capabilities = catalogCapabilities({ isAdmin: true });
   return Object.entries(value).flatMap(([field, fieldValue]) =>
-    Object.hasOwn(catalogSchema, field)
+    Object.prototype.hasOwnProperty.call(catalogSchema, field)
       ? shape(catalogSchema[field], fieldValue, undefined, [field], capabilities)
       : [issue(field, "PROTECTED_PATH")],
   );

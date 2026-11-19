@@ -31,7 +31,7 @@ function readMutation(body: unknown) {
   if (!body || typeof body !== "object" || Array.isArray(body)) throw invalidListing();
   const input = body as Record<string, unknown>;
   const { action } = input;
-  if (typeof action !== "string" || !Object.hasOwn(fieldNames, action)
+  if (typeof action !== "string" || !Object.prototype.hasOwnProperty.call(fieldNames, action)
     || Object.keys(input).some((key) => key !== "action" && !fieldNames[action].includes(key))) {
     throw invalidListing();
   }

@@ -12,7 +12,7 @@ export function parseListingCommerce(input: unknown) {
   const { action, listingId, badgeUrl } = body;
   if (Object.keys(body).some((key) => !["action", "listingId", "badgeUrl"].includes(key))
     || !listingUuid(listingId) || typeof action !== "string" || !actions.has(action)
-    || (Object.hasOwn(body, "badgeUrl") && (action !== "checkBadge" || typeof badgeUrl !== "string" || badgeUrl.length > 2048))) {
+    || (Object.prototype.hasOwnProperty.call(body, "badgeUrl") && (action !== "checkBadge" || typeof badgeUrl !== "string" || badgeUrl.length > 2048))) {
     throw new AccountApiError(400, "INVALID_LISTING_COMMERCE");
   }
   return { action: action as CommerceAction, listingId, badgeUrl: badgeUrl as string | undefined };

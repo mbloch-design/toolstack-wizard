@@ -43,7 +43,7 @@ async function editorialRpc(name: string, args: Record<string, unknown>) {
 function parsePatch(value: unknown): EditorialPatch {
   if (!record(value) || !record(value.set) || !Array.isArray(value.remove)
     || Object.keys(value.set).some((key) => !reservedRoots.has(key))
-    || value.remove.some((key) => typeof key !== "string" || !reservedRoots.has(key) || Object.hasOwn(value.set as object, key))) {
+    || value.remove.some((key) => typeof key !== "string" || !reservedRoots.has(key) || Object.prototype.hasOwnProperty.call(value.set as object, key))) {
     throw new AccountApiError(409, "CMS_EDITORIAL_PATCH_INVALID");
   }
   return { set: value.set, remove: value.remove };
@@ -67,8 +67,8 @@ function editorialPatch(base: CatalogTool, value: CatalogTool) {
   const patch: EditorialPatch = { set: {}, remove: [] };
   for (const key of reservedRoots) {
     if (catalogHash(base[key] ?? null) === catalogHash(value[key] ?? null)
-      && Object.hasOwn(base, key) === Object.hasOwn(value, key)) continue;
-    if (Object.hasOwn(value, key)) patch.set[key] = value[key];
+      && Object.prototype.hasOwnProperty.call(base, key) === Object.prototype.hasOwnProperty.call(value, key)) continue;
+    if (Object.prototype.hasOwnProperty.call(value, key)) patch.set[key] = value[key];
     else patch.remove.push(key);
   }
   return patch;
