@@ -1,6 +1,10 @@
 {
   "slug": "stripe-pay",
   "name": "stripe-pay",
+  "display_name": {
+    "fr": "Payer une entreprise Stripe",
+    "en": "Pay a Stripe business"
+  },
   "publisher": "Stripe",
   "official": true,
   "host_tool": "stripe",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Envoyer des fonds à une autre entreprise Stripe.",
     "en": "Send funds to another Stripe business."
+  },
+  "use_case": {
+    "fr": "Aide à envoyer des fonds à une autre entreprise Stripe, ou à un identifiant de profil Stripe, et à vérifier qu'un agent peut payer une entreprise Stripe.",
+    "en": "Helps send funds to another Stripe business or Stripe Profile handle, and checks whether an agent can pay a Stripe business."
+  },
+  "example": {
+    "fr": "Puis-je payer cette entreprise Stripe depuis mon agent ?",
+    "en": "Can my agent pay this Stripe business?"
+  },
+  "meta_description": {
+    "fr": "Skill officiel Stripe pour Claude Code et Cursor : envoie des fonds à une entreprise Stripe. S'ajoute en une commande. Serveur : Stripe MCP.",
+    "en": "Official Stripe skill for Claude Code and Cursor: sends funds to a Stripe business. Added with one command. Server: Stripe MCP."
   },
   "agents": [
     "claude-code",
@@ -34,12 +50,16 @@
     "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
     "en": "A compatible coding agent; the Stripe MCP server for live account data."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://docs.stripe.com/skills.md",
   "sources": [
     {
       "label": "Stripe — skills",
       "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Stripe — source consultée",
+      "url": "https://docs.stripe.com/.well-known/skills/index.json"
     }
   ]
 }

@@ -10,6 +10,18 @@
     "fr": "Vérifier textes alternatifs et noms de fichiers pour le référencement.",
     "en": "Check alt text and file names for SEO."
   },
+  "use_case": {
+    "fr": "Repère les images sans texte alternatif ou aux noms peu adaptés au SEO, puis propose et applique des corrections.",
+    "en": "Finds images with no alt text or with names unfriendly to SEO, then proposes and applies fixes."
+  },
+  "example": {
+    "fr": "Repère les images de mon site sans texte alternatif et propose une description pour chacune.",
+    "en": "Find images on my site with no alt text and suggest a description for each."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : repère les images sans texte alternatif ou mal nommées. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: finds images with no alt text or poor file names. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

@@ -270,7 +270,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
       {/* The system's shell (src/ds/Shell, validated 11/11/2026). The wrappers only place it in the page. */}
       <div ref={sidebarRef as React.RefObject<HTMLDivElement>} className="shell-side" suppressHydrationWarning>
         <Sidebar link={RouterLink} lang={lang === "en" ? "en" : "fr"} home={prefix || "/"} expanded={shownExpanded} onToggle={onSidebarToggle}
-          logo={<img className="shell-logo-full" src={logoToolTrim} alt="" width={96} height={21} />} mark={<img src={pictoToolTrim} alt="" width={24} height={24} />}
+          logo={<img className="shell-logo-full" src={logoToolTrim} alt="ToolTrim" width={96} height={21} />} mark={<img src={pictoToolTrim} alt="" width={24} height={24} />}
           label={t("Navigation principale", "Main navigation")} items={sideItems}
           nav={isAdmin ? <BackofficeNavigation {...(adminNavigation ?? {})} lang={lang === "en" ? "en" : "fr"} homeHref={prefix} collapsed={!shownExpanded} /> : undefined}
           foot={isAdmin
@@ -292,7 +292,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           : <Topbar
             start={phone
               ? (mobileParent ? <BackLink link={RouterLink} to={mobileParent.href!} label={mobileParent.label} icon={<ChevronLeft />} />
-                : <Link to={prefix || "/"} aria-label="ToolTrim" className="shell-phone-logo"><img className="shell-logo-full" src={logoToolTrim} alt="" width={110} height={24} /></Link>)
+                : <Link to={prefix || "/"} aria-label="ToolTrim" className="shell-phone-logo"><img className="shell-logo-full" src={logoToolTrim} alt="ToolTrim" width={110} height={24} /></Link>)
               : isHome ? <HomeGreeting /> : breadcrumb ? <Crumbs link={RouterLink} homeIcon={<Home />} label={t("Fil d’Ariane", "Breadcrumb")} items={breadcrumb.map((item) => ({ label: item.label, to: item.href }))} /> : null}
             end={<>
               <SearchTrigger label={t("Rechercher", "Search")} shortcut={shortcut} onClick={() => setSearchOpen(true)} />

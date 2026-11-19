@@ -10,6 +10,18 @@
     "fr": "Auditer l'accessibilité selon les WCAG 2.1.",
     "en": "Audit accessibility against WCAG 2.1."
   },
+  "use_case": {
+    "fr": "Vérifie le site, ou une page donnée, selon la norme d'accessibilité WCAG 2.1.",
+    "en": "Checks the whole site, or one page, against the WCAG 2.1 accessibility standard."
+  },
+  "example": {
+    "fr": "Vérifie l'accessibilité de la page d'accueil de mon site selon WCAG 2.1.",
+    "en": "Check my site's home page for accessibility against WCAG 2.1."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : vérifie l'accessibilité du site ou d'une page selon WCAG 2.1. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: checks site or page accessibility against WCAG 2.1. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

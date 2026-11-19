@@ -200,3 +200,13 @@ export function setSeoTags({
   // Remove any previous noindex
   removeNoindex();
 }
+
+/**
+ * The agents section's tags, from src/lib/agentsSeo.ts (step 9): the same title, description, og:image and JSON-LD the
+ * prerender wrote, so that hydration changes nothing in the head.
+ */
+export function applyAgentsSeo(seo: { title: string; description: string; url: string; jsonLd: Record<string, unknown>; ogImage?: string }, jsonLdId: string, lang: string) {
+  setSeoTags({ title: seo.title, description: seo.description, url: seo.url, locale: lang === "en" ? "en_US" : "fr_FR" });
+  if (seo.ogImage) { setMeta("og:image", seo.ogImage); setMeta("twitter:image", seo.ogImage); }
+  setJsonLd(jsonLdId, seo.jsonLd);
+}

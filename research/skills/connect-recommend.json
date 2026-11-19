@@ -1,6 +1,10 @@
 {
   "slug": "connect-recommend",
   "name": "connect-recommend",
+  "display_name": {
+    "fr": "Recommandations Stripe Connect",
+    "en": "Stripe Connect recommendations"
+  },
   "publisher": "Stripe",
   "official": true,
   "host_tool": "stripe",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Recommander la configuration Stripe Connect d'une place de marché ou d'une plateforme.",
     "en": "Recommend the Stripe Connect setup for a marketplace or platform."
+  },
+  "use_case": {
+    "fr": "Recommande la configuration Stripe Connect d'une place de marché ou d'une plateforme : versements aux vendeurs, paiements partagés, vérification des vendeurs.",
+    "en": "Recommends the Stripe Connect setup for a marketplace or platform: payouts to sellers, split payments, verification of sellers."
+  },
+  "example": {
+    "fr": "Mon site met en relation des freelances et des clients : quelle configuration Stripe Connect choisir ?",
+    "en": "My site connects freelancers and clients: which Stripe Connect setup should I choose?"
+  },
+  "meta_description": {
+    "fr": "Skill officiel Stripe pour Claude Code et Cursor : recommande un montage Stripe Connect pour une plateforme. En une commande. Serveur : Stripe MCP.",
+    "en": "Official Stripe skill for Claude Code and Cursor: recommends a Stripe Connect setup for a platform. Added with one command. Server: Stripe MCP."
   },
   "agents": [
     "claude-code",
@@ -34,12 +50,16 @@
     "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
     "en": "A compatible coding agent; the Stripe MCP server for live account data."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://docs.stripe.com/skills.md",
   "sources": [
     {
       "label": "Stripe — skills",
       "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Stripe — source consultée",
+      "url": "https://docs.stripe.com/.well-known/skills/index.json"
     }
   ]
 }

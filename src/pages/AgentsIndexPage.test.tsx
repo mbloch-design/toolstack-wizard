@@ -39,9 +39,13 @@ it("/agents uses the catalogue bar, « À la une » and the catalogue's shelf ro
   expect(screen.queryByText("Cochez ceux que vous utilisez.")).toBeNull();
 });
 
-it("/mcp is the same hub without « À la une »", () => {
+it("/mcp compares the official servers, one row each, each leading to its sheet (step 9)", () => {
   view("/fr/mcp", "mcp");
-  expect(document.querySelector('[data-toolbar="catalog"]')).not.toBeNull();
+  expect(screen.getByRole("heading", { level: 1, name: "Serveurs MCP officiels" })).toBeInTheDocument();
+  const rows = document.querySelectorAll('[data-table="compare"] tbody tr');
+  expect(rows.length).toBe(SERVERS.length);
+  for (const card of SERVERS) expect(document.querySelector(`[data-table="compare"] a[href="/fr/mcp/${card.slug}"]`)).not.toBeNull();
+  expect(document.querySelector('a[href="/fr/agents"]')).not.toBeNull();
+  expect(document.querySelector('a[href="/fr/skills"]')).not.toBeNull();
   expect(screen.queryByRole("heading", { name: "À la une" })).toBeNull();
-  expect(document.querySelectorAll("[data-status]").length).toBe(SERVERS.length);
 });

@@ -198,7 +198,9 @@ export function compareAssistant(a: { slug: string; name: string }, b: { slug: s
       takeaway = en ? `Only ${quick} plugs into ${name} in one click.` : `Seul ${quick} se branche en un clic à ${name}.`;
     }
   }
-  return { a: cell(rows[0]), b: cell(rows[1]), ...(takeaway ? { takeaway: typo(takeaway) } : {}) };
+  // Each plugged side leads to its server's sheet (step 9: the comparison links both MCP sheets).
+  return { a: cell(rows[0]), b: cell(rows[1]), ...(rows[0].card ? { aSheet: rows[0].card.slug } : {}), ...(rows[1].card ? { bSheet: rows[1].card.slug } : {}),
+    ...(takeaway ? { takeaway: typo(takeaway) } : {}) };
 }
 
 /**

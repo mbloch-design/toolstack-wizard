@@ -10,6 +10,18 @@
     "fr": "Utiliser les commandes DevLink.",
     "en": "Use DevLink commands."
   },
+  "use_case": {
+    "fr": "Exporte des composants du Designer vers du code React ou Next.js.",
+    "en": "Exports Designer components as React or Next.js code."
+  },
+  "example": {
+    "fr": "Exporte le composant En-tête de mon Designer en code React.",
+    "en": "Export my Designer header component as React code."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : exporte des composants du Designer en code React ou Next.js. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: exports Designer components as React or Next.js code. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

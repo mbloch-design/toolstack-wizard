@@ -1,6 +1,10 @@
 {
   "slug": "stripe-directory",
   "name": "stripe-directory",
+  "display_name": {
+    "fr": "Annuaire de prestataires Stripe",
+    "en": "Stripe provider directory"
+  },
   "publisher": "Stripe",
   "official": true,
   "host_tool": "stripe",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Identifier un prestataire et la façon de le payer ou de s'y intégrer.",
     "en": "Identify a provider and how to pay or integrate with it."
+  },
+  "use_case": {
+    "fr": "Identifie un prestataire ou un service externe, et la façon documentée de le payer, le réserver ou l'intégrer, par exemple un hébergement, un CRM ou une base de données.",
+    "en": "Identifies an outside provider or service and the documented way to pay, book or integrate with it, for example hosting, a CRM or a database."
+  },
+  "example": {
+    "fr": "Trouve un CRM adapté à un freelance et dis-moi comment m'y abonner.",
+    "en": "Find a CRM suited to a freelancer and tell me how to subscribe to it."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Stripe pour Claude Code et Cursor : trouve un prestataire et comment le payer ou l'intégrer. S'ajoute en une commande. Serveur : Stripe MCP.",
+    "en": "Official Stripe skill for Claude Code and Cursor: identifies a provider and how to pay or integrate with it. Added with one command. Server: Stripe MCP."
   },
   "agents": [
     "claude-code",
@@ -34,12 +50,16 @@
     "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
     "en": "A compatible coding agent; the Stripe MCP server for live account data."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://docs.stripe.com/skills.md",
   "sources": [
     {
       "label": "Stripe — skills",
       "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Stripe — source consultée",
+      "url": "https://docs.stripe.com/.well-known/skills/index.json"
     }
   ]
 }

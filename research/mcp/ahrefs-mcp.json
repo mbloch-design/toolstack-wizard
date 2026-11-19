@@ -13,6 +13,10 @@
     "fr": "Vos mots-clés, liens et positions SEO.",
     "en": "Your SEO keywords, links and rankings."
   },
+  "meta_description": {
+    "fr": "Brancher Ahrefs à Claude ou ChatGPT : mots-clés, backlinks et positions dans votre assistant. Forfait payant dès Lite, ce qu'il peut modifier, comment.",
+    "en": "Connect Ahrefs to Claude or ChatGPT: keywords, backlinks and rankings in your assistant. Paid plan from Lite, what it can change, and how to set it up."
+  },
   "examples": [
     {
       "fr": "Sur quels mots-clés mon site a-t-il gagné des positions ce mois-ci ?",

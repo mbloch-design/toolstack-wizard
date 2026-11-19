@@ -13,6 +13,10 @@
     "fr": "Suivre vos paiements et votre solde.",
     "en": "Follow your payments and balance."
   },
+  "meta_description": {
+    "fr": "Brancher Stripe à Claude ou ChatGPT : vos données de compte, création d'objets et, avec Treasury, envoi d'argent après confirmation. En bêta.",
+    "en": "Connect Stripe to Claude or ChatGPT: your account data in your assistant, creating objects and, with Treasury, sending money after confirmation. In beta."
+  },
   "examples": [
     {
       "fr": "Quel est mon solde Stripe et combien ai-je encaissé ce mois-ci ?",

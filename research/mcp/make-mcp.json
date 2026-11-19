@@ -13,6 +13,10 @@
     "fr": "Lancer vos scénarios Make en une phrase.",
     "en": "Run your Make scenarios in one sentence."
   },
+  "meta_description": {
+    "fr": "Brancher Make à Claude : vos scénarios deviennent des actions que l'assistant lance. Sur forfait payant, il modifie aussi scénarios et connexions.",
+    "en": "Connect Make to Claude: your active scenarios become actions your assistant can run. On a paid plan it can also edit scenarios and connections. Our view."
+  },
   "examples": [
     {
       "fr": "Lance mon scénario de facturation pour ce client.",
@@ -161,7 +165,10 @@
     {
       "client": "claude",
       "type": "steps",
-      "value": "Customize > Connectors > Discover > search Make, click +; select Organization and scopes in OAuth consent; click Allow"
+      "value": {
+        "fr": "Personnaliser > Connecteurs > Découvrir > cherchez Make, cliquez sur + ; dans l'écran d'autorisation OAuth, choisissez l'organisation et les périmètres ; cliquez sur Autoriser.",
+        "en": "Customize > Connectors > Discover > search Make, click +; select Organization and scopes in OAuth consent; click Allow"
+      }
     },
     {
       "client": "claude-code",

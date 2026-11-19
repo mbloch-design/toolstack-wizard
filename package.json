@@ -53,6 +53,7 @@
     "audit:gsc-probe": "node scripts/gsc-inspect-plan.mjs",
     "analyze:gsc-performance": "node scripts/analyze-gsc-performance.mjs",
     "validate:seo-generated": "node scripts/validate-generated-seo.mjs",
+    "check:agents-seo": "node scripts/check-agents-seo-hydration.mjs",
     "validate:seo-redirects": "node scripts/validate-production-redirects.mjs",
     "verify:postdeploy": "node scripts/verify-production-postdeploy.mjs",
     "catalog:review:sync": "node scripts/catalog-review-ledger.mjs sync",

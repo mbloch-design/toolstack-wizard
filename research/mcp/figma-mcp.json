@@ -13,6 +13,10 @@
     "fr": "Lire vos maquettes et en créer, en ligne.",
     "en": "Read your mockups and create new ones, online."
   },
+  "meta_description": {
+    "fr": "Brancher Figma à Claude ou Copilot : composants, variables et mise en page dans l'assistant, et en bêta la modification de vos fichiers. Rien à installer.",
+    "en": "Connect Figma to Claude or Copilot: components, variables and layout in your assistant and, in beta, editing your files. Nothing to install; our view."
+  },
   "examples": [
     {
       "fr": "Décris cette maquette : ses pages, ses composants et ses couleurs.",

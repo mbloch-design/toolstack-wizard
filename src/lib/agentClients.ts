@@ -13,7 +13,7 @@
  * Not readable that day: Gemini's help on adding a server, so nothing is said about it. No prefilled-question link
  * is documented by ChatGPT or Claude: the sheet does not offer « open in ChatGPT / Claude with a question ».
  */
-import { typo, type InstallRow, type Lang, type McpSheet, type Pair } from "@/lib/agents";
+import { isCopyRow, typo, type InstallRow, type Lang, type McpSheet, type Pair } from "@/lib/agents";
 
 export type ClientId = "claude" | "chatgpt" | "gemini" | "copilot" | "claude-code" | "cursor" | "vs-code" | "codex" | "any";
 export type ClientGroup = "assistant" | "dev" | "other";
@@ -146,7 +146,7 @@ const isAddress = (value: string) => /^https:\/\/[^\s]+$/.test(value) && /mcp|ss
 export function plugCard(sheet: McpSheet, client: ClientId, toolName: string, lang: Lang): PlugStep[] {
   const t = (fr: string, en: string) => (lang === "en" ? en : fr);
   const who = clientLabel(client, lang);
-  const rows = sheet.install.filter((row) => row.client === client && row.type !== "steps");
+  const rows = sheet.install.filter(isCopyRow).filter((row) => row.client === client);
   const row = PRIMARY.map((type) => rows.find((r) => r.type === type)).find(Boolean);
   const way = sheet.setup?.find((w) => w.assistant === (client === "any" ? "other" : client));
   const steps: PlugStep[] = [];
@@ -188,7 +188,7 @@ export function plugCard(sheet: McpSheet, client: ClientId, toolName: string, la
       ? t(`Dans ${who}, ouvrez la liste des connecteurs et choisissez ${toolName}.`, `In ${who}, open the list of connectors and pick ${toolName}.`)
       : t(`Dans ${who}, ajoutez l'application ${toolName} depuis la liste des applications.`, `In ${who}, add the ${toolName} app from the list of apps.`) });
   } else {
-    const address = sheet.install.find((r) => r.client === "any" && r.type === "url");
+    const address = sheet.install.filter(isCopyRow).find((r) => r.client === "any" && r.type === "url");
     if (address && paste("url")) {
       steps.push({ text: t("Copiez l'adresse du serveur.", "Copy the server address."), action: { kind: "copy", value: address.value, label: t("Copier l'adresse", "Copy the address"), type: "url" } });
       steps.push({ text: say(paste("url")!, lang) });

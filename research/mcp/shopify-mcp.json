@@ -13,6 +13,10 @@
     "fr": "Suivre commandes et stocks, créer des produits.",
     "en": "Follow orders and stock, create products."
   },
+  "meta_description": {
+    "fr": "Brancher Shopify à Claude, ChatGPT ou Gemini : commandes, produits et réductions dans l'assistant. Remboursements et paiements restent bloqués.",
+    "en": "Connect Shopify to Claude, ChatGPT or Gemini: orders, products and discounts in your assistant. Refunds and payments stay blocked. How to set it up, here."
+  },
   "examples": [
     {
       "fr": "Montre-moi les commandes de la semaine.",

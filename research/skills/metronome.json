@@ -10,6 +10,18 @@
     "fr": "Guider une facturation à l'usage avec Metronome.",
     "en": "Guide usage-based billing with Metronome."
   },
+  "use_case": {
+    "fr": "Guide l'intégration de la facturation à l'usage avec Metronome : envoi d'événements, contrats, tarifs, factures, crédits et synchronisation avec Stripe Billing.",
+    "en": "Guides usage-based billing with Metronome: event ingestion, contracts, rate cards, invoices, credits and syncing with Stripe Billing."
+  },
+  "example": {
+    "fr": "Comment envoyer les événements d'usage de mon API à Metronome sans doublons ?",
+    "en": "How do I send my API usage events to Metronome without duplicates?"
+  },
+  "meta_description": {
+    "fr": "Skill officiel Stripe pour Claude Code et Cursor : guide la facturation à l'usage avec Metronome. S'ajoute en une commande. Serveur : Stripe MCP.",
+    "en": "Official Stripe skill for Claude Code and Cursor: guides usage-based billing with Metronome. Added with one command. Server: Stripe MCP."
+  },
   "agents": [
     "claude-code",
     "Codex",
@@ -34,12 +46,16 @@
     "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
     "en": "A compatible coding agent; the Stripe MCP server for live account data."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://docs.stripe.com/skills.md",
   "sources": [
     {
       "label": "Stripe — skills",
       "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Stripe — source consultée",
+      "url": "https://docs.stripe.com/.well-known/skills/index.json"
     }
   ]
 }

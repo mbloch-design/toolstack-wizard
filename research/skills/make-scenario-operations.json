@@ -10,6 +10,18 @@
     "fr": "Comprendre et déboguer l'exécution d'un scénario.",
     "en": "Understand and debug a scenario run."
   },
+  "use_case": {
+    "fr": "Lance, active et désactive des scénarios, examine et débogue leurs exécutions, et enquête sur un webhook.",
+    "en": "Runs, activates and deactivates scenarios, reviews and debugs their executions, and investigates a webhook."
+  },
+  "example": {
+    "fr": "Pourquoi mon scénario d'hier a-t-il échoué ? Montre-moi l'erreur.",
+    "en": "Why did my scenario fail yesterday? Show me the error."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Make pour Claude Code et Cursor : lance, active et débogue les exécutions de scénarios. S'ajoute en une commande. Serveur : Make MCP.",
+    "en": "Official Make skill for Claude Code and Cursor: runs, activates and debugs scenario executions. Added with one command. Server: Make MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -35,12 +47,16 @@
     "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
     "en": "A Make account; a paid Make plan for management scopes."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://skills.make.com/",
   "sources": [
     {
       "label": "Make — skills",
       "url": "https://skills.make.com/"
+    },
+    {
+      "label": "Make — source consultée",
+      "url": "https://github.com/integromat/make-skills"
     }
   ]
 }

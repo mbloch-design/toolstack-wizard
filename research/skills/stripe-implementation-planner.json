@@ -1,6 +1,10 @@
 {
   "slug": "stripe-implementation-planner",
   "name": "stripe-implementation-planner",
+  "display_name": {
+    "fr": "Planification d'intégration Stripe",
+    "en": "Stripe integration planning"
+  },
   "publisher": "Stripe",
   "official": true,
   "host_tool": "stripe",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Planifier le choix des produits Stripe et l'architecture d'intégration.",
     "en": "Plan Stripe product choice and integration architecture."
+  },
+  "use_case": {
+    "fr": "Prépare le choix des produits Stripe et l'architecture d'intégration, pour une première mise en place ou une extension importante, selon votre modèle économique.",
+    "en": "Plans Stripe product choice and integration architecture for a first setup or a major expansion, based on your business model."
+  },
+  "example": {
+    "fr": "Je vends des abonnements en France et à l'étranger : quels produits Stripe et quelle architecture ?",
+    "en": "I sell subscriptions in France and abroad: which Stripe products and architecture?"
+  },
+  "meta_description": {
+    "fr": "Skill officiel Stripe pour Claude Code et Cursor : planifie produits et architecture d'intégration Stripe. S'ajoute en une commande. Serveur : Stripe MCP.",
+    "en": "Official Stripe skill for Claude Code and Cursor: plans Stripe products and integration architecture. Added with one command. Server: Stripe MCP."
   },
   "agents": [
     "claude-code",
@@ -34,12 +50,16 @@
     "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
     "en": "A compatible coding agent; the Stripe MCP server for live account data."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://docs.stripe.com/skills.md",
   "sources": [
     {
       "label": "Stripe — skills",
       "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Stripe — source consultée",
+      "url": "https://docs.stripe.com/.well-known/skills/index.json"
     }
   ]
 }

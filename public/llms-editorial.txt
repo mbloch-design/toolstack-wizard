@@ -633,7 +633,7 @@
     "language": "en",
     "slug": "mcp-for-non-developer-freelancers",
     "url": "https://tooltrim.com/en/guide/mcp-for-non-developer-freelancers",
-    "title": "MCP for non-developer freelancers: the guide",
+    "title": "MCP for non-developer freelancers: the guide | ToolTrim",
     "summary": "What an MCP server lets your AI assistant do in Notion, Canva or Calendly, and what to check before connecting it: write access, plan, setup."
   },
   {

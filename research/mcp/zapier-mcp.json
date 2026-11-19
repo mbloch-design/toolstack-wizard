@@ -13,6 +13,10 @@
     "fr": "Agir dans vos applis via vos actions activées.",
     "en": "Act in your apps through the actions you enable."
   },
+  "meta_description": {
+    "fr": "Brancher Zapier à Claude ou ChatGPT : des milliers d'applications dans votre assistant. Vous choisissez ce qu'il expose ; deux tâches par appel réussi.",
+    "en": "Connect Zapier to Claude or ChatGPT: actions from thousands of apps in your assistant. You choose what it exposes; each successful call uses two tasks."
+  },
   "examples": [
     {
       "fr": "Envoie ce message de relance depuis mon adresse e-mail connectée.",
@@ -258,7 +262,10 @@
     {
       "client": "claude",
       "type": "steps",
-      "value": "Claude searches its connectors and shows a Zapier card. Click Connect on the Zapier card."
+      "value": {
+        "fr": "Claude cherche dans ses connecteurs et affiche une carte Zapier. Cliquez sur Connecter sur cette carte.",
+        "en": "Claude searches its connectors and shows a Zapier card. Click Connect on the Zapier card."
+      }
     },
     {
       "client": "chatgpt",

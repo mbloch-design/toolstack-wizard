@@ -1,6 +1,10 @@
 {
   "slug": "stripe-best-practices",
   "name": "stripe-best-practices",
+  "display_name": {
+    "fr": "Bonnes pratiques Stripe",
+    "en": "Stripe best practices"
+  },
   "publisher": "Stripe",
   "official": true,
   "host_tool": "stripe",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Guider les choix d'intégration : API, facturation, taxes, sécurité.",
     "en": "Guide integration choices: API, billing, tax, security."
+  },
+  "use_case": {
+    "fr": "Guide les choix d'intégration Stripe : environnement de test, API (Checkout ou PaymentIntents), abonnements, taxes, Connect et sécurité des clés.",
+    "en": "Guides Stripe integration choices: test environment, API (Checkout Sessions or PaymentIntents), subscriptions, tax, Connect and key security."
+  },
+  "example": {
+    "fr": "Faut-il utiliser Checkout ou PaymentIntents pour encaisser des abonnements sur mon site ?",
+    "en": "Should I use Checkout or PaymentIntents to take subscriptions on my site?"
+  },
+  "meta_description": {
+    "fr": "Skill officiel Stripe pour Claude Code et Cursor : guide les choix d'intégration, API, taxes et sécurité. S'ajoute en une commande. Serveur : Stripe MCP.",
+    "en": "Official Stripe skill for Claude Code and Cursor: guides integration choices: API, tax and security. Added with one command. Server: Stripe MCP."
   },
   "agents": [
     "claude-code",
@@ -34,12 +50,16 @@
     "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
     "en": "A compatible coding agent; the Stripe MCP server for live account data."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://docs.stripe.com/skills.md",
   "sources": [
     {
       "label": "Stripe — skills",
       "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Stripe — source consultée",
+      "url": "https://docs.stripe.com/.well-known/skills/index.json"
     }
   ]
 }

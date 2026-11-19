@@ -1,6 +1,10 @@
 {
   "slug": "figma-spec",
   "name": "figma-spec",
+  "display_name": {
+    "fr": "Spécifications Figma",
+    "en": "Figma Specs"
+  },
   "publisher": "Figma",
   "official": true,
   "host_tool": "figma",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Lire, créer et mettre à jour des Figma Specs (bêta ouverte).",
     "en": "Read, create and update Figma Specs (open beta)."
+  },
+  "use_case": {
+    "fr": "Lit, crée et met à jour des Figma Specs, seules ou intégrées à un fichier Design ou FigJam. Fonction en bêta ouverte.",
+    "en": "Reads, creates and updates Figma Specs, alone or inside a Design or FigJam file. Specs are in open beta."
+  },
+  "example": {
+    "fr": "Résume les règles de la spécification Figma du bouton et liste ce qui manque.",
+    "en": "Summarise the rules in the Figma spec for the button and list what is missing."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Figma pour Claude Code et Cursor : lit, crée et met à jour des Figma Specs (bêta ouverte). Inclus avec le plugin Figma. Serveur : Figma MCP.",
+    "en": "Official Figma skill for Claude Code and Cursor: reads, creates and updates Figma Specs (open beta). Included with the Figma plugin. Server: Figma MCP."
   },
   "agents": [
     "claude-code",
@@ -19,7 +35,10 @@
     {
       "client": "any",
       "type": "steps",
-      "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      "value": {
+        "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+        "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      }
     },
     {
       "client": "any",
@@ -31,7 +50,7 @@
     "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
     "en": "Figma remote server; edit access to the file to write."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
   "sources": [
     {

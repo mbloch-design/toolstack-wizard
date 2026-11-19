@@ -10,6 +10,18 @@
     "fr": "Guider le déploiement d'un Code Component.",
     "en": "Guide a Code Component deployment."
   },
+  "use_case": {
+    "fr": "Guide pas à pas pour déployer une bibliothèque de composants sur Webflow.",
+    "en": "Walks you step by step through deploying a component library to Webflow."
+  },
+  "example": {
+    "fr": "Explique-moi comment déployer ma bibliothèque de composants sur Webflow.",
+    "en": "Explain how to deploy my component library to Webflow."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : guide le déploiement d'une bibliothèque de composants. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: guides the deployment of a component library. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

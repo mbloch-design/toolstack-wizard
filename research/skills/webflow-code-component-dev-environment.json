@@ -10,6 +10,18 @@
     "fr": "Préparer l'environnement de développement.",
     "en": "Set up the development environment."
   },
+  "use_case": {
+    "fr": "Prépare un projet de Code Components vierge, avec son environnement de développement.",
+    "en": "Sets up a new Code Components project from scratch, with its development environment."
+  },
+  "example": {
+    "fr": "Prépare un projet de Code Components neuf pour mon site Webflow.",
+    "en": "Set up a new Code Components project for my Webflow site."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : prépare un projet Code Components vierge. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: sets up a blank Code Components project. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

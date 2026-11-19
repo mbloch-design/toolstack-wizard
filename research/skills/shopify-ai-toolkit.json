@@ -10,6 +10,18 @@
     "fr": "Aider un agent de code à développer pour Shopify : API Admin, Liquid, Polaris, Hydrogen, CLI.",
     "en": "Help a coding agent build for Shopify: Admin API, Liquid, Polaris, Hydrogen, CLI."
   },
+  "use_case": {
+    "fr": "Guide un agent de code sur les surfaces développeur Shopify : API Admin GraphQL, Functions, Polaris, Liquid, Hydrogen et CLI. Valide le code GraphQL, Liquid et extensions.",
+    "en": "Guides a coding agent across Shopify developer surfaces: Admin GraphQL API, Functions, Polaris, Liquid, Hydrogen and CLI. Validates GraphQL, Liquid and extension code."
+  },
+  "example": {
+    "fr": "Écris une section Liquid pour la page produit de ma boutique et vérifie le code.",
+    "en": "Write a Liquid section for my store's product page and check the code."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Shopify pour Claude Code et Cursor : guide le code Shopify (API, Liquid, Polaris, Hydrogen). En une commande. Serveur : Shopify MCP.",
+    "en": "Official Shopify skill for Claude Code and Cursor: guides Shopify code (API, Liquid, Polaris, Hydrogen). Added with one command. Server: Shopify MCP."
+  },
   "agents": [
     "claude-code",
     "Codex",
@@ -33,7 +45,7 @@
     "fr": "Node.js 18 ou plus.",
     "en": "Node.js 18 or higher."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://shopify.dev/docs/apps/build/ai-toolkit",
   "sources": [
     {

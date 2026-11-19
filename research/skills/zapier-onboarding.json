@@ -10,6 +10,18 @@
     "fr": "Faire découvrir Zapier MCP avec un premier enchaînement entre vos applications.",
     "en": "Introduce Zapier MCP with a first workflow across your apps."
   },
+  "use_case": {
+    "fr": "Présente Zapier MCP et lit vos applications connectées pour vous montrer un premier workflow exemple lors de la mise en route.",
+    "en": "Introduces Zapier MCP and reads your connected apps to show you a sample workflow when you first connect."
+  },
+  "example": {
+    "fr": "Montre-moi un premier workflow exemple avec les applications que j'ai connectées.",
+    "en": "Show me a sample workflow using the apps I have connected."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Zapier pour tout assistant connecté : présente Zapier MCP et un premier workflow exemple. Sans installation. Serveur : Zapier MCP.",
+    "en": "Official Zapier skill for any connected assistant: introduces Zapier MCP with a sample workflow. No install needed. Server: Zapier MCP."
+  },
   "agents": [
     "any"
   ],
@@ -18,7 +30,7 @@
     "fr": "Zapier MCP connecté ; les skills sont fournies sur chaque serveur.",
     "en": "Zapier MCP connected; the skills ship on every server."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://docs.zapier.com/mcp/manage/skills",
   "sources": [
     {

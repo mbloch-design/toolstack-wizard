@@ -13,6 +13,10 @@
     "fr": "Trouver, réserver ou annuler un rendez-vous.",
     "en": "Find a slot, book or cancel a meeting."
   },
+  "meta_description": {
+    "fr": "Brancher Calendly à Claude ou ChatGPT : trouver vos créneaux, réserver et annuler des rendez-vous. Sans forfait payant ; ce qu'il fait sans vous demander.",
+    "en": "Connect Calendly to Claude or ChatGPT: find open slots, book and cancel meetings from your assistant. No paid plan needed; what it does without asking."
+  },
   "examples": [
     {
       "fr": "Trouve-moi trois créneaux libres jeudi après-midi.",
@@ -376,12 +380,18 @@
     {
       "client": "claude",
       "type": "steps",
-      "value": "From the sidebar in Claude, select Customize. / Select Connect your tools and search Calendly. / Select Connect."
+      "value": {
+        "fr": "Dans la barre latérale de Claude, choisissez Personnaliser. / Choisissez Connecter vos outils et cherchez Calendly. / Choisissez Connecter.",
+        "en": "From the sidebar in Claude, select Customize. / Select Connect your tools and search Calendly. / Select Connect."
+      }
     },
     {
       "client": "chatgpt",
       "type": "steps",
-      "value": "From the sidebar in ChatGPT, select Plugins. / Search for and select Calendly. / Select Connect."
+      "value": {
+        "fr": "Dans la barre latérale de ChatGPT, choisissez Plugins. / Cherchez Calendly et sélectionnez-le. / Choisissez Connecter.",
+        "en": "From the sidebar in ChatGPT, select Plugins. / Search for and select Calendly. / Select Connect."
+      }
     },
     {
       "client": "any",

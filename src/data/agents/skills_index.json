@@ -15,7 +15,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -34,7 +34,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -56,7 +56,11 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Recommandations Stripe Connect",
+      "en": "Stripe Connect recommendations"
+    },
     "everyone": false
   },
   {
@@ -78,7 +82,11 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Informations de vérification Stripe Connect",
+      "en": "Stripe Connect verification information"
+    },
     "everyone": false
   },
   {
@@ -97,7 +105,11 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Relier les composants Figma à leur code",
+      "en": "Link Figma components to code"
+    },
     "everyone": false
   },
   {
@@ -116,7 +128,11 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Importer un projet local dans Figma",
+      "en": "Import a local project into Figma"
+    },
     "everyone": false
   },
   {
@@ -135,7 +151,11 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Créer un fichier Figma vierge",
+      "en": "Create a blank Figma file"
+    },
     "everyone": false
   },
   {
@@ -154,7 +174,11 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Générer des écrans Figma depuis le code",
+      "en": "Generate Figma screens from code"
+    },
     "everyone": false
   },
   {
@@ -173,7 +197,11 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Générer un diagramme FigJam",
+      "en": "Generate a FigJam diagram"
+    },
     "everyone": false
   },
   {
@@ -192,7 +220,11 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Construire une bibliothèque Figma depuis le code",
+      "en": "Build a Figma library from code"
+    },
     "everyone": false
   },
   {
@@ -211,7 +243,11 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Spécifications Figma",
+      "en": "Figma Specs"
+    },
     "everyone": false
   },
   {
@@ -230,7 +266,11 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Figma vers SwiftUI",
+      "en": "Figma to SwiftUI"
+    },
     "everyone": false
   },
   {
@@ -249,7 +289,11 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Modifier un tableau FigJam",
+      "en": "Edit a FigJam board"
+    },
     "everyone": false
   },
   {
@@ -268,7 +312,11 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Modifier une présentation Figma Slides",
+      "en": "Edit a Figma Slides deck"
+    },
     "everyone": false
   },
   {
@@ -287,7 +335,11 @@
       "Codex",
       "cursor"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Écrire dans un fichier Figma",
+      "en": "Write to a Figma file"
+    },
     "everyone": false
   },
   {
@@ -307,7 +359,11 @@
       "cursor",
       "Antigravity"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Google Analytics : API d'administration",
+      "en": "Google Analytics: Admin API basics"
+    },
     "everyone": false
   },
   {
@@ -327,7 +383,11 @@
       "cursor",
       "Antigravity"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Google Analytics : API Data",
+      "en": "Google Analytics: Data API basics"
+    },
     "everyone": false
   },
   {
@@ -350,7 +410,7 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -373,7 +433,7 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -396,7 +456,7 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -419,7 +479,7 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -442,7 +502,7 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -465,7 +525,7 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -488,7 +548,7 @@
       "Windsurf",
       "Cline"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -510,7 +570,7 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -530,7 +590,11 @@
       "Codex",
       "GitHub Copilot"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Expliquer le code sur un tableau Miro",
+      "en": "Explain code on a Miro board"
+    },
     "everyone": false
   },
   {
@@ -550,7 +614,11 @@
       "Codex",
       "GitHub Copilot"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Relecture de code sur tableau Miro",
+      "en": "Miro code review"
+    },
     "everyone": false
   },
   {
@@ -570,7 +638,11 @@
       "Codex",
       "GitHub Copilot"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Extraire les spécifications d'un tableau Miro",
+      "en": "Extract specs from a Miro board"
+    },
     "everyone": false
   },
   {
@@ -587,7 +659,7 @@
     "agents": [
       "any"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": true
   },
   {
@@ -608,7 +680,7 @@
       "vs-code",
       "Antigravity"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -627,7 +699,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -649,7 +721,11 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Applications et extensions Stripe",
+      "en": "Stripe Apps and extensions"
+    },
     "everyone": false
   },
   {
@@ -671,7 +747,11 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Bonnes pratiques Stripe",
+      "en": "Stripe best practices"
+    },
     "everyone": false
   },
   {
@@ -693,7 +773,11 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Annuaire de prestataires Stripe",
+      "en": "Stripe provider directory"
+    },
     "everyone": false
   },
   {
@@ -715,7 +799,11 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Documentation Stripe",
+      "en": "Stripe documentation"
+    },
     "everyone": false
   },
   {
@@ -737,7 +825,11 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Planification d'intégration Stripe",
+      "en": "Stripe integration planning"
+    },
     "everyone": false
   },
   {
@@ -759,7 +851,11 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Payer une entreprise Stripe",
+      "en": "Pay a Stripe business"
+    },
     "everyone": false
   },
   {
@@ -781,7 +877,11 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Services via Stripe Projects",
+      "en": "Services through Stripe Projects"
+    },
     "everyone": false
   },
   {
@@ -803,7 +903,11 @@
       "Kiro",
       "OpenClaw"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
+    "display_name": {
+      "fr": "Mise à niveau Stripe",
+      "en": "Stripe upgrades"
+    },
     "everyone": false
   },
   {
@@ -822,7 +926,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -841,7 +945,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -860,7 +964,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -879,7 +983,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -898,7 +1002,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -917,7 +1021,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -936,7 +1040,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -955,7 +1059,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -974,7 +1078,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -993,7 +1097,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -1012,7 +1116,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -1031,7 +1135,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -1050,7 +1154,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -1069,7 +1173,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -1088,7 +1192,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -1107,7 +1211,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -1126,7 +1230,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -1145,7 +1249,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -1164,7 +1268,7 @@
       "claude-code",
       "Grok Build"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": false
   },
   {
@@ -1198,7 +1302,7 @@
     "agents": [
       "any"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-18",
     "everyone": true
   }
 ]

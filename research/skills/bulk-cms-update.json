@@ -10,6 +10,18 @@
     "fr": "Mettre à jour le CMS en lot, avec validation et aperçu des différences.",
     "en": "Update the CMS in bulk, with validation and a diff preview."
   },
+  "use_case": {
+    "fr": "Crée ou met à jour plusieurs éléments d'une collection CMS d'un coup, avec validation et aperçu des modifications.",
+    "en": "Creates or updates several items in a CMS collection at once, with validation and a preview of changes."
+  },
+  "example": {
+    "fr": "Mets à jour le prix de tous les articles de ma collection Produits et montre-moi les changements.",
+    "en": "Update the price of every item in my Products collection and show me the changes."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : met à jour en lot les éléments du CMS, avec aperçu des changements. En une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: updates CMS items in bulk, with a preview of changes. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

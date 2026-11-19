@@ -10,6 +10,18 @@
     "fr": "Gérer les scripts personnalisés du site.",
     "en": "Manage the site's custom scripts."
   },
+  "use_case": {
+    "fr": "Ajoute, relit ou retire des scripts personnalisés en ligne, de 10 000 caractères au maximum.",
+    "en": "Adds, reviews or removes inline custom scripts of up to 10,000 characters."
+  },
+  "example": {
+    "fr": "Liste les scripts personnalisés actuellement présents sur mon site.",
+    "en": "List the custom scripts currently on my site."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : ajoute, relit ou retire les scripts personnalisés du site. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: adds, reviews or removes custom site scripts. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

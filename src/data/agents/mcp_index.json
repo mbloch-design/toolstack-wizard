@@ -4,6 +4,7 @@
     "name": "Ahrefs MCP",
     "publisher": "Ahrefs",
     "host_tool": "ahrefs",
+    "host_name": "Ahrefs",
     "category": "analytics",
     "summary": {
       "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités API du forfait.",
@@ -71,6 +72,7 @@
     "name": "Airtable MCP server",
     "publisher": "Airtable",
     "host_tool": "airtable",
+    "host_name": "Airtable",
     "category": "project-management",
     "summary": {
       "fr": "Le serveur officiel d'Airtable relie votre assistant à vos bases : enregistrements, tables, champs, interfaces et brouillons d'automatisations. Il peut aussi supprimer des enregistrements et des tables entières, et on peut le limiter à certaines bases.",
@@ -151,6 +153,7 @@
     "name": "Buffer MCP",
     "publisher": "Buffer",
     "host_tool": "buffer",
+    "host_name": "Buffer",
     "category": "creation",
     "summary": {
       "fr": "Le serveur officiel de Buffer permet à votre assistant de lire votre file d'attente et vos statistiques, de rédiger et programmer des posts, et de les publier tout de suite si on le lui demande. Il peut aussi supprimer définitivement un post ; il est inclus dans tous les forfaits, gratuit compris.",
@@ -223,6 +226,7 @@
     "name": "Calendly MCP server",
     "publisher": "Calendly",
     "host_tool": "calendly",
+    "host_name": "Calendly",
     "category": "communication",
     "summary": {
       "fr": "Le serveur officiel de Calendly permet à votre assistant de trouver vos créneaux, réserver et annuler des rendez-vous, et modifier vos types d'événements et disponibilités. Aucun forfait payant n'est requis, et Calendly ne documente pas de confirmation avant action.",
@@ -293,6 +297,7 @@
     "name": "Canva AI Connector",
     "publisher": "Canva",
     "host_tool": "canva",
+    "host_name": "Canva",
     "category": "creation",
     "summary": {
       "fr": "Le connecteur officiel de Canva laisse votre assistant chercher vos designs, en générer à partir d'une description, les modifier, les exporter et les commenter. La liste d'outils publiée ne comprend aucune suppression ; les fonctions de marque demandent un forfait Pro.",
@@ -346,6 +351,7 @@
     "name": "ClickUp MCP Server",
     "publisher": "ClickUp",
     "host_tool": "clickup",
+    "host_name": "ClickUp",
     "category": "project-management",
     "summary": {
       "fr": "Le serveur officiel de ClickUp permet à votre assistant de gérer tâches, documents, commentaires, temps passé et messages, en votre nom et avec vos droits. Il peut mettre une tâche à la corbeille et envoyer des messages de chat ; les appels sont plafonnés selon le forfait.",
@@ -413,13 +419,14 @@
     "tools": 65,
     "skills": 0,
     "in_stacks": 11,
-    "verified_on": "2026-11-16"
+    "verified_on": "2026-11-18"
   },
   {
     "slug": "figma-mcp-desktop",
     "name": "Figma MCP server (desktop)",
     "publisher": "Figma",
     "host_tool": "figma",
+    "host_name": "Figma",
     "category": "design-tools",
     "summary": {
       "fr": "Le serveur de bureau de Figma tourne dans l'application Figma, sur votre ordinateur. Il lit vos designs mais n'écrit pas dans vos fichiers, et demande un siège Dev ou Full sur un forfait payant.",
@@ -475,6 +482,7 @@
     "name": "Figma MCP server (remote)",
     "publisher": "Figma",
     "host_tool": "figma",
+    "host_name": "Figma",
     "category": "design-tools",
     "summary": {
       "fr": "Le serveur distant de Figma donne à votre assistant le contexte de vos designs (composants, variables, mise en page) et, en bêta, le droit de créer et de modifier dans vos fichiers. C'est le serveur à préférer : rien à installer.",
@@ -548,6 +556,7 @@
     "name": "Google Analytics MCP server",
     "publisher": "Google",
     "host_tool": "google-analytics",
+    "host_name": "Google Analytics",
     "category": "analytics",
     "summary": {
       "fr": "Le serveur officiel de Google Analytics permet à votre assistant de lire vos comptes, propriétés et rapports, y compris en temps réel. Il s'installe sur votre ordinateur avec Python et des identifiants Google Cloud : c'est le plus technique de la section.",
@@ -606,6 +615,7 @@
     "name": "HubSpot MCP server",
     "publisher": "HubSpot",
     "host_tool": "hubspot",
+    "host_name": "HubSpot",
     "category": "crm",
     "summary": {
       "fr": "Le serveur officiel de HubSpot ouvre à votre assistant le CRM, les campagnes, le contenu et les publications sociales. Les créations et modifications demandent une confirmation explicite, et aucune suppression n'est documentée.",
@@ -661,6 +671,7 @@
     "name": "Make MCP server",
     "publisher": "Make",
     "host_tool": "make",
+    "host_name": "Make",
     "category": "automation",
     "summary": {
       "fr": "Le serveur officiel de Make transforme vos scénarios actifs en actions que votre assistant peut lancer ; sur un forfait payant, il peut aussi consulter et modifier scénarios, connexions et data stores. Make ne publie pas de liste nominative d'outils : ils dépendent de vos scénarios et des portées choisies.",
@@ -730,6 +741,7 @@
     "name": "Miro MCP Server",
     "publisher": "Miro",
     "host_tool": "miro",
+    "host_name": "Miro",
     "category": "design-tools",
     "summary": {
       "fr": "Le serveur officiel de Miro permet à votre assistant de lire et résumer vos tableaux, d'y créer cadres, notes, schémas et commentaires, et de partager tableaux et espaces avec d'autres personnes. Il fonctionne sur tous les forfaits, gratuit compris.",
@@ -816,6 +828,7 @@
     "name": "Notion MCP",
     "publisher": "Notion",
     "host_tool": "notion",
+    "host_name": "Notion",
     "category": "organization",
     "summary": {
       "fr": "Le serveur officiel de Notion donne à votre assistant l'accès à vos pages, bases de données, commentaires, fichiers et agenda Notion. Il peut lire, créer, modifier et mettre à la corbeille, toujours dans la limite de vos droits.",
@@ -902,6 +915,7 @@
     "name": "Shopify AI tool integrations",
     "publisher": "Shopify",
     "host_tool": "shopify",
+    "host_name": "Shopify",
     "category": "nocode-web",
     "summary": {
       "fr": "Shopify propose des intégrations officielles pour Claude, ChatGPT, Gemini, Copilot et d'autres assistants : lire commandes et statistiques, créer produits, collections et réductions, modifier un thème. Remboursements, paiements et réglages de la boutique restent bloqués, même avec l'accès en écriture.",
@@ -983,6 +997,7 @@
     "name": "Slack MCP server",
     "publisher": "Slack",
     "host_tool": "slack",
+    "host_name": "Slack",
     "category": "communication-team",
     "summary": {
       "fr": "Le serveur officiel de Slack permet à votre assistant de chercher et lire messages, fils, fichiers et canvases, de créer des canaux et des canvases, et d'envoyer ou programmer des messages. Il est réservé aux applications publiées ou internes et à quelques assistants partenaires, sous le contrôle des administrateurs.",
@@ -1036,6 +1051,7 @@
     "name": "Stripe MCP",
     "publisher": "Stripe",
     "host_tool": "stripe",
+    "host_name": "Stripe",
     "category": "finance",
     "summary": {
       "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Il est en bêta.",
@@ -1117,6 +1133,7 @@
     "name": "Tally MCP server",
     "publisher": "Tally",
     "host_tool": "tally",
+    "host_name": "Tally",
     "category": "communication",
     "summary": {
       "fr": "Le serveur officiel de Tally, en bêta, permet à votre assistant de créer un formulaire à partir d'une description, de le modifier, de le publier et de lire les réponses. Il ne peut supprimer ni formulaire ni réponse, et il est gratuit sur tous les forfaits.",
@@ -1194,6 +1211,7 @@
     "name": "Webflow MCP server",
     "publisher": "Webflow",
     "host_tool": "webflow",
+    "host_name": "Webflow",
     "category": "nocode-web",
     "summary": {
       "fr": "Le serveur officiel de Webflow laisse votre assistant lire et modifier votre site : pages, styles, composants, CMS, fichiers, et le publier en ligne. Les droits se donnent site par site, par le propriétaire ou un administrateur.",
@@ -1269,6 +1287,7 @@
     "name": "Zapier MCP",
     "publisher": "Zapier",
     "host_tool": "zapier",
+    "host_name": "Zapier",
     "category": "automation",
     "summary": {
       "fr": "Zapier MCP met à la portée de votre assistant les actions de milliers d'applications connectées à votre compte Zapier : chercher, créer, envoyer. Vous choisissez les actions exposées, et chaque appel réussi consomme deux tâches du forfait.",

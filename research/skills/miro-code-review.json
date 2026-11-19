@@ -1,6 +1,10 @@
 {
   "slug": "miro-code-review",
   "name": "miro-code-review",
+  "display_name": {
+    "fr": "Relecture de code sur tableau Miro",
+    "en": "Miro code review"
+  },
   "publisher": "Miro",
   "official": true,
   "host_tool": "miro",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Relire visuellement des changements de code sur un tableau.",
     "en": "Review code changes visually on a board."
+  },
+  "use_case": {
+    "fr": "Relecture visuelle de code sur un tableau Miro, à partir de pull requests, de modifications locales ou de comparaisons de branches.",
+    "en": "Visual code review on a Miro board, from pull requests, local changes or branch comparisons."
+  },
+  "example": {
+    "fr": "Fais une relecture visuelle de la pull request 42 sur notre tableau Miro.",
+    "en": "Do a visual review of pull request 42 on our Miro board."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Miro pour Claude Code et Cursor : relit du code visuellement sur un tableau Miro. S'ajoute en une commande. Serveur : Miro MCP.",
+    "en": "Official Miro skill for Claude Code and Cursor: reviews code visually on a Miro board. Added with one command. Server: Miro MCP."
   },
   "agents": [
     "claude-code",
@@ -27,7 +43,7 @@
     "fr": "Connexion au serveur MCP Miro.",
     "en": "A connection to the Miro MCP server."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md",
   "sources": [
     {

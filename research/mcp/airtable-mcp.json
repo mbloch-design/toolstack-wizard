@@ -13,6 +13,10 @@
     "fr": "Chercher et modifier les fiches de vos bases.",
     "en": "Search, add and edit the records of your bases."
   },
+  "meta_description": {
+    "fr": "Brancher Airtable à Claude, ChatGPT ou Gemini : vos bases et enregistrements dans l'assistant. Ce qu'il peut supprimer, comment le limiter, en 3 étapes.",
+    "en": "Connect Airtable to Claude, ChatGPT or Gemini: your bases and records in your assistant. What it can delete, how to limit it, set up in three steps."
+  },
   "examples": [
     {
       "fr": "Dans ma base Clients, trouve ceux que je n'ai pas relancés depuis un mois.",

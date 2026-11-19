@@ -10,6 +10,18 @@
     "fr": "Créer la base d'un nouveau composant.",
     "en": "Scaffold a new component."
   },
+  "use_case": {
+    "fr": "Génère l'arborescence d'un Code Component, son composant React et son fichier de définition .webflow.tsx.",
+    "en": "Generates a Code Component's file structure, its React component and its .webflow.tsx definition file."
+  },
+  "example": {
+    "fr": "Crée la structure d'un nouveau composant carte de témoignage.",
+    "en": "Create the structure for a new testimonial card component."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : génère la structure d'un Code Component. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: generates the structure of a Code Component. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

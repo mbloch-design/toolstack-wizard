@@ -1,5 +1,5 @@
-import { useId, useState, type ReactNode } from "react";
-import { ChevronDown } from "@/lib/icons";
+import { useId, useState, type CSSProperties, type ReactNode } from "react";
+import { Check, ChevronDown, Minus } from "@/lib/icons";
 import styles from "./Table.module.css";
 
 export interface TableRow {
@@ -80,4 +80,58 @@ function Section({ section }: { section: TableSection }) {
       </tbody>
     </>}
   </>;
+}
+
+export interface CompareColumn {
+  key: string;
+  label: string;
+  /** A column of marks (yes or no): centred, narrow. */
+  marks?: boolean;
+}
+
+export interface CompareRow {
+  key: string;
+  /** The row's name, a link to its sheet most often; the logo sits before it. */
+  head: ReactNode;
+  logo?: ReactNode;
+  cells: Record<string, ReactNode>;
+}
+
+/**
+ * A comparison table (step 9, 19/11/2026; /mcp, « tableau comparatif des 19 serveurs »): one row per item, its name
+ * as the row head, then as many columns as facts; yes-or-no facts are marks, centred. In a narrow column each row
+ * becomes a block: the name on its own line, then each fact under its column's name.
+ */
+export function CompareTable({ columns, rows, headLabel, labelledBy, caption }: { columns: CompareColumn[]; rows: CompareRow[]; headLabel: string; labelledBy?: string; caption?: string }) {
+  return (
+    <div className={styles.frame}>
+      <table className={styles.compare} aria-labelledby={labelledBy} data-table="compare" style={{ "--marks": Math.max(1, columns.filter((column) => column.marks).length) } as CSSProperties}>
+        {caption && <caption className={styles.caption}>{caption}</caption>}
+        <thead>
+          <tr>
+            <th scope="col" className={styles.head}>{headLabel}</th>
+            {columns.map((column) => <th key={column.key} scope="col" className={styles.head} data-marks={column.marks || undefined}>{column.label}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row.key} className={styles.compareRow}>
+              <th scope="row" className={styles.compareHead}><span className={styles.compareTool}>{row.logo}<span className={styles.compareName}>{row.head}</span></span></th>
+              {columns.map((column) => <td key={column.key} className={styles.compareCell} data-label={column.label} data-marks={column.marks || undefined}>{row.cells[column.key]}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+/** A yes-or-no fact: a tick or a dash, said in words to assistive tech. */
+export function CompareMark({ on, label }: { on: boolean; label: string }) {
+  return (
+    <span className={styles.mark} data-on={on || undefined}>
+      {on ? <Check aria-hidden="true" /> : <Minus aria-hidden="true" />}
+      <span className={styles.sr}>{label}</span>
+    </span>
+  );
 }

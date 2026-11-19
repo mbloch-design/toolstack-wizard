@@ -13,6 +13,10 @@
     "fr": "Suivre vos tâches, documents et temps passé.",
     "en": "Follow your tasks, documents and time spent."
   },
+  "meta_description": {
+    "fr": "Brancher ClickUp à Claude ou ChatGPT : tâches, documents, temps passé et messages, avec vos droits. Corbeille, envoi de messages, plafonds par forfait.",
+    "en": "Connect ClickUp to Claude or ChatGPT: tasks, docs, time tracking and messages, with your own rights. Trash, chat messages and call caps by plan, explained."
+  },
   "examples": [
     {
       "fr": "Quelles tâches sont en retard sur le projet Refonte ?",
@@ -35,6 +39,17 @@
     "fr": "Votre espace est partagé et vous ne voulez aucun message en votre nom : l'assistant peut écrire dans le chat ClickUp.",
     "en": "Your workspace is shared and you want no message sent in your name: the assistant can write in ClickUp chat."
   },
+  "control": [
+    {
+      "title": {
+        "fr": "Vous vous connectez par OAuth",
+        "en": "You sign in through OAuth"
+      },
+      "icon": "account",
+      "fr": "à la connexion ; ClickUp n'accepte pas de clé API ni de jeton copié à la main.",
+      "en": "when connecting; ClickUp does not accept an API key or a token pasted by hand."
+    }
+  ],
   "plan_words": {
     "common": {
       "fr": "Fonctionne sur tous les forfaits ClickUp.",
@@ -77,7 +92,7 @@
       "en": "Once the daily limit is reached, it answers “RATE_LIMIT_EXCEEDED”; it cannot be reset, you have to wait."
     }
   ],
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "transport": "remote",
   "auth": [
     "oauth"

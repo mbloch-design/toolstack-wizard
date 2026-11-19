@@ -1,6 +1,10 @@
 {
   "slug": "connect-required-verification-information",
   "name": "connect-required-verification-information",
+  "display_name": {
+    "fr": "Informations de vérification Stripe Connect",
+    "en": "Stripe Connect verification information"
+  },
   "publisher": "Stripe",
   "official": true,
   "host_tool": "stripe",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Lister les informations de vérification demandées aux comptes connectés.",
     "en": "List the verification information connected accounts must provide."
+  },
+  "use_case": {
+    "fr": "Liste les informations de vérification que les comptes connectés doivent fournir, selon le pays, le type d'entreprise et la capacité demandée.",
+    "en": "Lists the verification information connected accounts must provide, by country, business type and capability."
+  },
+  "example": {
+    "fr": "Quels justificatifs un vendeur doit-il fournir pour être vérifié dans Stripe Connect, pour mon pays ?",
+    "en": "Which documents must a seller provide to be verified in Stripe Connect for my country?"
+  },
+  "meta_description": {
+    "fr": "Skill officiel Stripe pour Claude Code et Cursor : liste les vérifications exigées des comptes connectés. S'ajoute en une commande. Serveur : Stripe MCP.",
+    "en": "Official Stripe skill for Claude Code and Cursor: lists verification required for connected accounts. Added with one command. Server: Stripe MCP."
   },
   "agents": [
     "claude-code",
@@ -34,12 +50,16 @@
     "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
     "en": "A compatible coding agent; the Stripe MCP server for live account data."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://docs.stripe.com/skills.md",
   "sources": [
     {
       "label": "Stripe — skills",
       "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Stripe — source consultée",
+      "url": "https://docs.stripe.com/.well-known/skills/index.json"
     }
   ]
 }

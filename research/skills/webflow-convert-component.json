@@ -10,6 +10,18 @@
     "fr": "Convertir un composant existant.",
     "en": "Convert an existing component."
   },
+  "use_case": {
+    "fr": "Transforme un composant React existant en Code Component Webflow.",
+    "en": "Turns an existing React component into a Webflow Code Component."
+  },
+  "example": {
+    "fr": "Transforme mon composant React Carte projet en Code Component.",
+    "en": "Turn my React ProjectCard component into a Code Component."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : transforme un composant React en Code Component. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: turns a React component into a Code Component. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

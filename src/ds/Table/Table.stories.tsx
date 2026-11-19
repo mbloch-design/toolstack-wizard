@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, userEvent } from "storybook/test";
-import Table from "./Table";
+import Table, { CompareMark, CompareTable } from "./Table";
 
 const meta: Meta<typeof Table> = { title: "Molécules/Tableau", component: Table, tags: ["a-valider"], decorators: [(Story) => <div style={{ maxWidth: 720 }}><Story /></div>] };
 export default meta;
@@ -43,5 +43,33 @@ export const Actions: Story = {
     await expect(shown()).toBe(before + 1);
     await userEvent.click(canvas.getByRole("button", { name: fr ? /Réduire/ : /Show less/ }));
     await expect(shown()).toBe(before);
+  },
+};
+
+const SERVERS: [string, boolean[], [string, string], string][] = [
+  ["Notion", [true, true, true, false, false], ["Tous les forfaits", "Every plan"], "ChatGPT, Claude, Gemini"],
+  ["Stripe", [true, true, false, false, true], ["Forfait non précisé", "Plan not stated"], "ChatGPT, Claude"],
+  ["Google Analytics", [true, false, false, false, false], ["Forfait non précisé", "Plan not stated"], "Claude"],
+  ["Buffer", [true, true, true, true, false], ["Tous les forfaits", "Every plan"], "ChatGPT, Claude"],
+];
+
+/** /mcp (step 9): the official servers side by side; in a narrow column each row stacks, each fact under its name. */
+export const Comparatif: StoryObj = {
+  decorators: [(Story) => <div style={{ maxWidth: 1080 }}><Story /></div>],
+  render: (_args, { globals }) => {
+    const fr = globals.lang !== "en";
+    const kinds = fr ? ["Lit", "Modifie", "Supprime", "Envoie", "Paie"] : ["Reads", "Edits", "Deletes", "Sends", "Pays"];
+    return (
+      <CompareTable headLabel={fr ? "Outil" : "Tool"}
+        columns={[...kinds.map((label, i) => ({ key: `k${i}`, label, marks: true })), { key: "plan", label: fr ? "Forfait" : "Plan" }, { key: "assistants", label: fr ? "Assistants" : "Assistants" }]}
+        rows={SERVERS.map(([name, marks, plan, assistants]) => ({
+          key: name, head: <a href="#">{name}</a>,
+          cells: { ...Object.fromEntries(marks.map((on, i) => [`k${i}`, <CompareMark key={i} on={on} label={on ? (fr ? "Oui" : "Yes") : (fr ? "Non" : "No")} />])), plan: fr ? plan[0] : plan[1], assistants },
+        }))} />
+    );
+  },
+  play: async ({ canvasElement }) => {
+    await expect(canvasElement.querySelectorAll("tbody tr").length).toBe(4);
+    await expect(canvasElement.querySelectorAll("tbody th[scope=row]").length).toBe(4);
   },
 };

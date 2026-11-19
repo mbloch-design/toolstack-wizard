@@ -1,6 +1,10 @@
 {
   "slug": "stripe-projects",
   "name": "stripe-projects",
+  "display_name": {
+    "fr": "Services via Stripe Projects",
+    "en": "Services through Stripe Projects"
+  },
   "publisher": "Stripe",
   "official": true,
   "host_tool": "stripe",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Provisionner des services tiers avec Stripe Projects.",
     "en": "Provision third-party services with Stripe Projects."
+  },
+  "use_case": {
+    "fr": "Provisionne une infrastructure ou des services tiers (base de données, authentification, hébergement, e-mail) via Stripe Projects, après consultation du catalogue.",
+    "en": "Provisions infrastructure or third-party services (database, auth, hosting, email) through Stripe Projects, after checking the catalogue."
+  },
+  "example": {
+    "fr": "J'ai besoin d'une base de données Postgres pour mon projet : propose un service et mets-le en place.",
+    "en": "I need a Postgres database for my project: suggest a service and set it up."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Stripe pour Claude Code et Cursor : provisionne bases de données, hébergement, services tiers. En une commande. Serveur : Stripe MCP.",
+    "en": "Official Stripe skill for Claude Code and Cursor: provisions databases, hosting and third-party services. Added with one command. Server: Stripe MCP."
   },
   "agents": [
     "claude-code",
@@ -34,12 +50,16 @@
     "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
     "en": "A compatible coding agent; the Stripe MCP server for live account data."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://docs.stripe.com/skills.md",
   "sources": [
     {
       "label": "Stripe — skills",
       "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Stripe — source consultée",
+      "url": "https://docs.stripe.com/.well-known/skills/index.json"
     }
   ]
 }

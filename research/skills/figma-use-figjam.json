@@ -1,6 +1,10 @@
 {
   "slug": "figma-use-figjam",
   "name": "figma-use-figjam",
+  "display_name": {
+    "fr": "Modifier un tableau FigJam",
+    "en": "Edit a FigJam board"
+  },
   "publisher": "Figma",
   "official": true,
   "host_tool": "figma",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Travailler dans un tableau FigJam : post-its, sections, connecteurs.",
     "en": "Work in a FigJam board: stickies, sections, connectors."
+  },
+  "use_case": {
+    "fr": "Modifie un tableau FigJam : post-it, sections, connecteurs, formes, tableaux et blocs de code.",
+    "en": "Edits a FigJam board: stickies, sections, connectors, shapes, tables and code blocks."
+  },
+  "example": {
+    "fr": "Ajoute au tableau FigJam de l'atelier une section Idées avec des post-it.",
+    "en": "Add an Ideas section with stickies to the workshop FigJam board."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Figma pour Claude Code et Cursor : modifie un tableau FigJam : post-it, sections, connecteurs. Inclus au plugin Figma. Serveur : Figma MCP.",
+    "en": "Official Figma skill for Claude Code and Cursor: edits a FigJam board: stickies, sections, connectors. Included with the Figma plugin. Server: Figma MCP."
   },
   "agents": [
     "claude-code",
@@ -19,7 +35,10 @@
     {
       "client": "any",
       "type": "steps",
-      "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      "value": {
+        "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+        "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      }
     },
     {
       "client": "any",
@@ -31,7 +50,7 @@
     "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
     "en": "Figma remote server; edit access to the file to write."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
   "sources": [
     {

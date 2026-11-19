@@ -10,6 +10,18 @@
     "fr": "Utiliser les commandes Webflow Cloud.",
     "en": "Use Webflow Cloud commands."
   },
+  "use_case": {
+    "fr": "Crée un projet à partir d'un modèle et le déploie sur Webflow Cloud.",
+    "en": "Creates a project from a template and deploys it to Webflow Cloud."
+  },
+  "example": {
+    "fr": "Crée un projet Webflow Cloud à partir d'un modèle et déploie-le.",
+    "en": "Create a Webflow Cloud project from a template and deploy it."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : crée un projet depuis un modèle et le déploie sur Webflow Cloud. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: creates a project from a template and deploys to Webflow Cloud. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

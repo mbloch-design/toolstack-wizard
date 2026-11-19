@@ -10,6 +10,18 @@
     "fr": "Vérifier des Code Components.",
     "en": "Validate Code Components."
   },
+  "use_case": {
+    "fr": "Vérifie les composants avant déploiement et signale les problèmes à corriger.",
+    "en": "Checks components for problems before deployment and flags what to fix."
+  },
+  "example": {
+    "fr": "Vérifie mes composants avant de les déployer sur Webflow.",
+    "en": "Check my components before deploying them to Webflow."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : vérifie les Code Components avant déploiement. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: checks Code Components before deployment. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

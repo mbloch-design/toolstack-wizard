@@ -16,6 +16,7 @@ import { hasConfirmedFreeTier, hasGenuineFreeTier, isPriceUndisclosed, resolveMo
 import { formatToolPrice, nativePriceFromTool, usdFromEur } from "./src/lib/currencyRates";
 import { hasEditorialSubstance } from "./src/lib/editorialSubstance";
 import { fitBrandedTitle } from "./src/lib/seoTitle";
+import { AGENT_SHEET_JSONLD_ID, AGENTS_JSONLD_ID, agentsIndexSeo, serverSeo, skillSeo, type AgentsSeo } from "./src/lib/agentsSeo";
 import { comparisonJsonLdScript } from "./src/lib/comparisonSchema";
 import {
   appCategoryFor,
@@ -719,7 +720,10 @@ function sitemapPlugin(): Plugin {
         // ── Section agents (S1) : hub, index, fiches serveur et skill ─────────
         {
           const agents = JSON.parse(fs.readFileSync(path.resolve(__dirname, "src/data/agents/catalog.json"), "utf-8"));
-          for (const segment of ["agents", "mcp", "skills"]) addPair(`${BASE}/fr/${segment}`, `${BASE}/en/${segment}`, "weekly", "0.7");
+          // An index changes when one of its sheets does: its lastmod is the latest verification it lists (step 9).
+          const latest = (sheets: { verified_on: string }[]) => sheets.map((sheet) => sheet.verified_on).sort().at(-1);
+          const indexDates: Record<string, string | undefined> = { agents: latest(agents.servers), mcp: latest(agents.servers), skills: latest(agents.skills) };
+          for (const segment of ["agents", "mcp", "skills"]) addPair(`${BASE}/fr/${segment}`, `${BASE}/en/${segment}`, "weekly", "0.7", indexDates[segment]);
           for (const s of agents.servers) addPair(`${BASE}/fr/mcp/${s.slug}`, `${BASE}/en/mcp/${s.slug}`, "monthly", "0.6", s.verified_on);
           for (const k of agents.skills) addPair(`${BASE}/fr/skills/${k.slug}`, `${BASE}/en/skills/${k.slug}`, "monthly", "0.5", k.verified_on);
         }
@@ -1659,7 +1663,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         }
 
         // --- Prerender static section pages (/fr/tools, /fr/guides, etc.) ---
-        const SECTION_PAGES: { path: string; lang: string; title: string; description: string; noindex?: boolean; canonicalPath?: string }[] = [
+        const SECTION_PAGES: { path: string; lang: string; title: string; description: string; noindex?: boolean; canonicalPath?: string; jsonLd?: { id: string; data: Record<string, unknown> }; ogImage?: string }[] = [
           { path: "/fr/tools",      lang: "fr", title: "Tous les outils SaaS pour freelances | ToolTrim",         description: "Comparez plus de 1 000 outils SaaS : avis honnêtes, prix vérifiés et alternatives moins chères. Filtrez par catégorie et trouvez la meilleure stack pour votre activité." },
           { path: "/en/tools",      lang: "en", title: "All SaaS tools for freelancers | ToolTrim",               description: "Compare 1,000+ SaaS tools: honest reviews, verified pricing and cheaper alternatives. Filter by category and find the best stack for your business." },
           // No dedicated file existed for the bare index at all (only
@@ -1710,25 +1714,17 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           { path: "/en/my-stack",    lang: "en", title: "My stack — ToolTrim",  description: "Build and track your SaaS tool stack with ToolTrim.", canonicalPath: "/en/ma-stack", noindex: true },
         ];
 
-        // Section agents (S1, 16/11/2026) : hub, index et une fiche par serveur MCP et par skill, FR et EN.
+        // Section agents (S1, 16/11/2026) : hub, index et une fiche par serveur MCP et par skill, FR et EN. Titles,
+        // descriptions, JSON-LD et og:image viennent de src/lib/agentsSeo.ts, comme dans les pages (étape 9, 19/11).
         {
           const agents = JSON.parse(fs.readFileSync(path.resolve(__dirname, "src/data/agents/catalog.json"), "utf-8"));
-          const toolName = (slug: string) => tools.find((t: any) => (t.slug || t.id) === slug)?.name || slug;
           for (const lang of ["fr", "en"] as const) {
-            const fr = lang === "fr";
+            const page = (seo: AgentsSeo, id: string) => ({ path: seo.url.slice(BASE.length), lang, title: seo.title, description: seo.description,
+              jsonLd: { id, data: seo.jsonLd }, ...(seo.ogImage ? { ogImage: seo.ogImage } : {}) });
             SECTION_PAGES.push(
-              { path: `/${lang}/agents`, lang, title: fr ? "Agents IA : serveurs MCP et skills officiels | ToolTrim" : "AI agents: official MCP servers and skills | ToolTrim",
-                description: fr ? "Ce que votre assistant IA peut faire dans vos outils : serveurs MCP et skills officiels, vérifiés chez l'éditeur, avec le risque et le forfait." : "What your AI assistant can do in your tools: official MCP servers and skills, checked with the vendor, with the risk and the plan." },
-              { path: `/${lang}/mcp`, lang, title: fr ? "Serveurs MCP officiels des outils SaaS | ToolTrim" : "Official MCP servers of SaaS tools | ToolTrim",
-                description: fr ? "Les serveurs MCP officiels des outils du catalogue : ce que l'assistant peut lire, modifier, supprimer ou payer, et comment le brancher." : "Official MCP servers of the catalogue's tools: what the assistant can read, edit, delete or pay, and how to plug it in." },
-              { path: `/${lang}/skills`, lang, title: fr ? "Skills officiels pour agents IA | ToolTrim" : "Official skills for AI agents | ToolTrim",
-                description: fr ? "Les skills officiels publiés par les éditeurs : des instructions prêtes à l'emploi pour votre agent, à côté de leur serveur." : "Official skills published by vendors: ready-made instructions for your agent, next to their server." },
-              ...agents.servers.map((s: any) => ({ path: `/${lang}/mcp/${s.slug}`, lang,
-                title: fitBrandedTitle(fr ? `${s.name} : serveur MCP officiel de ${toolName(s.host_tool)}` : `${s.name}: ${toolName(s.host_tool)}'s official MCP server`),
-                description: fr ? s.summary.fr : s.summary.en })),
-              ...agents.skills.map((k: any) => ({ path: `/${lang}/skills/${k.slug}`, lang,
-                title: fitBrandedTitle(fr ? `${k.name} : skill officiel de ${k.publisher}` : `${k.name}: ${k.publisher}'s official skill`),
-                description: fr ? k.summary.fr : k.summary.en })),
+              ...(["all", "mcp", "skills"] as const).map((view) => page(agentsIndexSeo(view, lang, agents), AGENTS_JSONLD_ID)),
+              ...agents.servers.map((s: any) => page(serverSeo(s, lang, agents.servers.some((o: any) => o.host_tool === s.host_tool && o.slug !== s.slug)), AGENT_SHEET_JSONLD_ID)),
+              ...agents.skills.map((k: any) => page(skillSeo(k, lang), AGENT_SHEET_JSONLD_ID)),
             );
           }
         }
@@ -1756,9 +1752,15 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             `<meta property="og:title" content="${sp.title.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:description" content="${sp.description.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:url" content="${url}" />`,
+            ...(sp.ogImage ? [`<meta property="og:image" content="${sp.ogImage}" />`, `<meta name="twitter:image" content="${sp.ogImage}" />`] : []),
+            ...(sp.jsonLd ? [`<script id="${sp.jsonLd.id}" type="application/ld+json">${JSON.stringify(sp.jsonLd.data).replace(/</g, "\\u003c")}</script>`] : []),
           ].join("\n    ");
 
           let html = baseHtml;
+          if (sp.ogImage) {
+            html = html.replace(/<meta\s+property="og:image(:[a-z]+)?"[^>]*\/?>/g, "");
+            html = html.replace(/<meta\s+name="twitter:image"[^>]*\/?>/, "");
+          }
           html = html.replace(/(<html[^>]*)lang="[^"]*"/, `$1lang="${sp.lang}"`);
           html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
           html = html.replace(/<title>[^<]*<\/title>/, "");

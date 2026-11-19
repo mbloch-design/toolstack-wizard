@@ -4,7 +4,9 @@ import { isToolCoverBlocked } from "@/lib/toolImageBlocklist";
 import cardThumbs from "@/data/cardThumbs.json";
 
 /** Light thumbnails (720 px WebP on Cloudflare R2, scripts/card-thumbs.ts), when the site knows where they live. */
-const THUMBS_BASE = (import.meta.env.VITE_CARD_THUMBS_BASE as string | undefined)?.replace(/\/$/, "") || "";
+// A production build without the variable still serves them from the site's own /thumbs (vercel.json rewrites it to R2):
+// the prerendered covers, « À la une » first, never point at a vendor's server for the LCP (step 9, 19/11/2026).
+const THUMBS_BASE = (import.meta.env.VITE_CARD_THUMBS_BASE as string | undefined)?.replace(/\/$/, "") || (import.meta.env.PROD ? "/thumbs" : "");
 const THUMBS = cardThumbs as Record<string, string>;
 // Only worth a preconnect when the thumbnails live on another host (in production they come through /thumbs on
 // the site's own domain, vercel.json); a relative base has no origin of its own.

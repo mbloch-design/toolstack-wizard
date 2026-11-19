@@ -18,10 +18,10 @@ export function CatalogTitle({ title, count, countLabel, lead, sentinelRef }: { 
   sentinelRef?: Ref<HTMLDivElement> }) {
   return (
     <div className={styles.head}>
-      <h1 className={styles.title}>
-        {title}
-        {count !== undefined && <sup className={styles.count}><span aria-hidden="true">{count}</span>{countLabel && <span className={styles.sr}>{countLabel}</span>}</sup>}
-      </h1>
+      {/* The figure is drawn by the title's ::after (step 9, 19/11): the heading's text stays the title alone (« Outils »,
+          never « Outils1 000 ») for search engines and the tab; assistive tech hears the figure in words after it. */}
+      <h1 className={styles.title} data-count={count !== undefined ? count : undefined}>{title}</h1>
+      {count !== undefined && countLabel && <span className={styles.sr}>{`${count} ${countLabel}`}</span>}
       {lead && <p className={styles.lead}>{lead}</p>}
       {sentinelRef && <div ref={sentinelRef} className={styles.sentinel} aria-hidden="true" />}
     </div>
@@ -102,7 +102,7 @@ export function CatalogSection({ id, title, count, action, children, as = "h2" }
   return (
     <section className={styles.section} aria-labelledby={id}>
       <header className={styles.sectionHead}>
-        <Heading id={id} className={styles.sectionTitle}>{title}{count !== undefined && <span className={styles.sectionCount}>{count}</span>}</Heading>
+        <Heading id={id} className={styles.sectionTitle} data-count={count !== undefined ? count : undefined}>{title}</Heading>
         {action}
       </header>
       {children}
@@ -237,7 +237,7 @@ export function Chapter({ id, title, detail, count, children }: { id: string; ti
   return (
     <section className={styles.chapter} aria-labelledby={id}>
       <header className={styles.chapterHead}>
-        <h2 id={id} className={styles.sectionTitle}>{title}{count !== undefined && <span className={styles.sectionCount}>{count}</span>}</h2>
+        <h2 id={id} className={styles.sectionTitle} data-count={count !== undefined ? count : undefined}>{title}</h2>
         {detail && <p className={styles.chapterDetail}>{detail}</p>}
       </header>
       <div className={styles.chapterBody}>{children}</div>

@@ -13,6 +13,10 @@
     "fr": "Mettre à jour votre CRM et vos campagnes.",
     "en": "Read and update your CRM and campaigns."
   },
+  "meta_description": {
+    "fr": "Brancher HubSpot à votre assistant IA : CRM, campagnes et contenu. Chaque création demande votre accord, aucune suppression documentée. Le mode d'emploi.",
+    "en": "Connect HubSpot to your AI assistant: CRM, campaigns and content. Every change asks for your confirmation, and no deletion is documented. How to set up."
+  },
   "examples": [
     {
       "fr": "Quelles transactions sont encore ouvertes, de la plus grosse à la plus petite ?",

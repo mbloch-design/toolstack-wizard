@@ -10,6 +10,18 @@
     "fr": "Inventorier le site et lui donner un score de santé.",
     "en": "Inventory the site and give it a health score."
   },
+  "use_case": {
+    "fr": "Passe en revue les pages et les collections CMS du site, lui donne une note de santé et propose des actions concrètes.",
+    "en": "Reviews the site's pages and CMS collections, gives a health score and suggests concrete actions."
+  },
+  "example": {
+    "fr": "Fais un audit de santé de mon site Webflow et dis-moi les trois corrections les plus utiles.",
+    "en": "Run a health audit of my Webflow site and tell me the three most useful fixes."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : fait un audit de santé du site et de ses collections CMS. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: audits site health and CMS collections with a score. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

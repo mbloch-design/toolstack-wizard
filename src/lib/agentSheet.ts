@@ -122,7 +122,7 @@ export function sheetMarkdown(sheet: McpSheet, { toolName, url, lang }: { toolNa
   if (sheet.safeguards) lines.push("", `## ${t("Garde-fous", "Safeguards")}`, "", sheet.safeguards.length ? sheet.safeguards.map((s) => `- ${say(SAFEGUARD_WORDS[s])}`).join("\n") : `- ${t("Aucun documenté par l'éditeur", "None documented by the vendor")}`);
   if (sheet.install.length) {
     lines.push("", `## ${t("Installation (copiée de la documentation de l'éditeur)", "Install (copied from the vendor's documentation)")}`);
-    for (const row of sheet.install) lines.push("", `### ${row.client}`, "", row.type === "steps" ? row.value : `\`\`\`${row.type === "config" ? "json" : ""}\n${row.value}\n\`\`\``);
+    for (const row of sheet.install) lines.push("", `### ${row.client}`, "", row.type === "steps" ? say(row.value) : `\`\`\`${row.type === "config" ? "json" : ""}\n${row.value}\n\`\`\``);
   }
   if (sheet.examples?.length) lines.push("", `## ${t("Demandes types", "Example requests")}`, "", ...sheet.examples.map((e) => `- ${say(e)}`));
   lines.push("", `## Sources`, "", ...sheet.sources.map((s) => `- [${s.label}](${s.url})`), "");

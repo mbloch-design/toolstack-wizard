@@ -8,7 +8,8 @@
   text-wrap: balance;
 }
 
-.count {
+.title[data-count]::after {
+  content: attr(data-count);
   margin-left: var(--tt-space-2);
   color: var(--tt-brand);
   font: var(--tt-amount-font);
@@ -245,7 +246,8 @@
   letter-spacing: var(--tt-title-l-tracking);
 }
 
-.sectionCount {
+.sectionTitle[data-count]::after {
+  content: attr(data-count);
   margin-left: calc(var(--tt-space-1) * .75);
   color: var(--tt-meta);
   font: var(--tt-note-font);

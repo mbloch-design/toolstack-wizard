@@ -10,6 +10,18 @@
     "fr": "Résumer le journal d'activité du site (Enterprise).",
     "en": "Summarise the site activity log (Enterprise)."
   },
+  "use_case": {
+    "fr": "Résume le journal d'activité du site et le filtre par utilisateur, période ou type d'événement. Réservé au forfait Enterprise.",
+    "en": "Summarises the site activity log and filters it by user, time range or event type. Requires the Enterprise plan."
+  },
+  "example": {
+    "fr": "Résume les modifications faites sur mon site la semaine dernière, par utilisateur.",
+    "en": "Summarise last week's changes on my site, by user."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : résume le journal d'activité du site, réservé à Enterprise. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: summarises the site activity log, Enterprise plan only. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

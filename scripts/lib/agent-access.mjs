@@ -150,8 +150,10 @@ const INSTALL_TYPES = ["command", "url", "config", "steps"];
 /** A card sentence fits two lines of the narrowest card: a media card in a row of four (step 8d, 18/11); src/lib/agents.ts holds the same 50. */
 export const CARD_MAX = 50;
 
-const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "card", "examples", "for", "not_for", "control", "plan_words", "first_requests", "troubleshoot", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "claude_directory", "docs_url", "sources"]);
-const SKILL_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "server", "category", "summary", "agents", "install", "requires", "verified_on", "status", "docs_url", "sources"]);
+const SHEET_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "category", "summary", "card", "meta_description", "examples", "for", "not_for", "control", "plan_words", "first_requests", "troubleshoot", "verified_on", "status", "transport", "auth", "access", "plan", "plan_note", "capabilities", "setup", "safeguards", "tools", "tools_note", "install", "clients", "skills", "note", "claude_directory", "docs_url", "sources"]);
+const SKILL_KEYS = new Set(["slug", "name", "publisher", "official", "host_tool", "server", "category", "summary", "agents", "install", "requires", "verified_on", "status", "docs_url", "sources",
+  // Step 9 (18/11/2026), from the vendors' pages: what it does for you, a request to try, the search snippet, a readable name.
+  "use_case", "example", "meta_description", "display_name"]);
 const isPair = (value) => value && isText(value.fr) && isText(value.en);
 
 function validateInstall(rows, at, errors) {
@@ -159,7 +161,8 @@ function validateInstall(rows, at, errors) {
   rows.forEach((row, i) => {
     if (!isText(row?.client)) errors.push(`${at} : install[${i}].client requis`);
     if (!INSTALL_TYPES.includes(row?.type)) errors.push(`${at} : install[${i}].type hors vocabulaire (${row?.type})`);
-    if (!isText(row?.value)) errors.push(`${at} : install[${i}].value requis (recopié de la doc éditeur)`);
+    // Steps are words for the reader, so in both languages (step 9); every other value is the vendor's own text.
+    if (row?.type === "steps" ? !isPair(row?.value) : !isText(row?.value)) errors.push(`${at} : install[${i}].value requis (${row?.type === "steps" ? "étapes fr/en" : "recopié de la doc éditeur"})`);
   });
 }
 
@@ -195,6 +198,8 @@ export function validateMcpSheet(sheet, { catalogSlugs, skillSlugs } = {}) {
     if (f && "write" in f && (!isPair(f.write?.ask) || !isPair(f.write?.check))) errors.push(`${at} : first_requests.write { ask, check } fr/en`);
   }
   // One sentence written for the card (S1 bis; 17/11): whole on two lines in the narrowest card (280 px), so 50 signs (step 8d).
+  // Step 9: the server sheet's search snippet, 140 to 155 signs, required.
+  if (!isPair(sheet?.meta_description) || [sheet.meta_description.fr, sheet.meta_description.en].some((text) => text.length < 140 || text.length > 155)) errors.push(`${at} : meta_description fr/en, de 140 à 155 signes`);
   if ("card" in (sheet || {}) && (!isPair(sheet.card) || sheet.card.fr.length > CARD_MAX || sheet.card.en.length > CARD_MAX)) errors.push(`${at} : card fr/en, ${CARD_MAX} signes au plus`);
   // ToolTrim's words (S1 bis): 2 or 3 example requests, who it is for and not for. Absent when nothing allows writing them.
   if ("examples" in (sheet || {}) && (!Array.isArray(sheet.examples) || sheet.examples.length < 2 || sheet.examples.length > 3 || !sheet.examples.every(isPair))) errors.push(`${at} : examples, 2 ou 3 demandes fr/en`);
@@ -238,6 +243,11 @@ export function validateSkillSheet(skill, { catalogSlugs, serverSlugs } = {}) {
   if (serverSlugs && skill?.server && !serverSlugs.has(skill.server)) errors.push(`${at} : serveur inconnu (${skill.server})`);
   if (!Array.isArray(skill?.sources) || !skill.sources.length) errors.push(`${at} : sources requises`);
   validateInstall(skill?.install, at, errors);
+  // Step 9: the sheet's own words (use_case, example) and its search snippet (meta_description, 120 to 155 signs).
+  if ("use_case" in (skill || {}) && !isPair(skill.use_case)) errors.push(`${at} : use_case fr/en`);
+  if ("example" in (skill || {}) && (!isPair(skill.example) || [skill.example.fr, skill.example.en].some((text) => text.length > 120 || /[«»“”"]/.test(text)))) errors.push(`${at} : example fr/en, 120 signes au plus, sans guillemets`);
+  if ("meta_description" in (skill || {}) && (!isPair(skill.meta_description) || [skill.meta_description.fr, skill.meta_description.en].some((text) => text.length < 120 || text.length > 155))) errors.push(`${at} : meta_description fr/en, de 120 à 155 signes`);
+  if ("display_name" in (skill || {}) && !isPair(skill.display_name)) errors.push(`${at} : display_name fr/en`);
   return errors;
 }
 

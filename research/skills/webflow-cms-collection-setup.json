@@ -10,6 +10,18 @@
     "fr": "Créer des collections avec leurs champs et relations.",
     "en": "Create collections with their fields and relationships."
   },
+  "use_case": {
+    "fr": "Crée une nouvelle collection CMS avec les champs et les relations que vous indiquez.",
+    "en": "Creates a new CMS collection with the fields and relationships you specify."
+  },
+  "example": {
+    "fr": "Crée une collection Clients avec nom, e-mail, tarif horaire et lien vers les projets.",
+    "en": "Create a Clients collection with name, email, hourly rate and a link to projects."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : crée une collection CMS avec ses champs et relations. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: creates a CMS collection with its fields and relations. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

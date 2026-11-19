@@ -1,6 +1,10 @@
 {
   "slug": "figma-generate-library",
   "name": "figma-generate-library",
+  "display_name": {
+    "fr": "Construire une bibliothèque Figma depuis le code",
+    "en": "Build a Figma library from code"
+  },
   "publisher": "Figma",
   "official": true,
   "host_tool": "figma",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Construire une bibliothèque de design system à partir d'un code existant.",
     "en": "Build a design system library from an existing codebase."
+  },
+  "use_case": {
+    "fr": "Construit ou met à jour une bibliothèque de design system à partir du code, par étapes, avec une pause de relecture entre chacune.",
+    "en": "Builds or updates a design system library from your codebase in phases, with review pauses between them."
+  },
+  "example": {
+    "fr": "Construis la bibliothèque Figma de notre design system à partir du code, étape par étape.",
+    "en": "Build our design system's Figma library from the code, step by step."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Figma pour Claude Code et Cursor : construit une bibliothèque de design system depuis le code. Inclus au plugin Figma. Serveur : Figma MCP.",
+    "en": "Official Figma skill for Claude Code and Cursor: builds a design system library from the code. Included with the Figma plugin. Server: Figma MCP."
   },
   "agents": [
     "claude-code",
@@ -19,7 +35,10 @@
     {
       "client": "any",
       "type": "steps",
-      "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      "value": {
+        "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+        "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      }
     },
     {
       "client": "any",
@@ -31,7 +50,7 @@
     "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
     "en": "Figma remote server; edit access to the file to write."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
   "sources": [
     {

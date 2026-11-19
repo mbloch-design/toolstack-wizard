@@ -13,6 +13,10 @@
     "fr": "Lire et modifier votre site, jusqu'à le publier.",
     "en": "Read and edit your site, up to publishing it."
   },
+  "meta_description": {
+    "fr": "Brancher Webflow à Claude ou ChatGPT : modifier pages, styles et CMS, puis publier le site depuis l'assistant. Accès site par site ; ses suppressions.",
+    "en": "Connect Webflow to Claude or ChatGPT: edit pages, styles and the CMS, then publish your site from your assistant. Access site by site; what it can delete."
+  },
   "examples": [
     {
       "fr": "Liste les articles de blog en brouillon sur mon site.",
@@ -357,7 +361,10 @@
     {
       "client": "claude",
       "type": "steps",
-      "value": "Use the Webflow connector: click + in chat, then 'Add connectors', search 'Webflow', click Connect, grant access, select sites/Workspaces, 'Authorize App'"
+      "value": {
+        "fr": "Utilisez le connecteur Webflow : cliquez sur + dans la conversation, puis « Ajouter des connecteurs », cherchez « Webflow », cliquez sur Connecter, accordez l'accès, choisissez les sites ou espaces de travail, puis « Autoriser l'application ».",
+        "en": "Use the Webflow connector: click + in chat, then 'Add connectors', search 'Webflow', click Connect, grant access, select sites/Workspaces, 'Authorize App'"
+      }
     },
     {
       "client": "claude-code",

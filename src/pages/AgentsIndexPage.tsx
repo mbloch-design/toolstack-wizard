@@ -20,12 +20,15 @@ import { AgentRowNote, RecipeCards, type RecipeItem } from "@/ds/AgentHub/AgentH
 import { ClientMark } from "@/ds/AgentSheet/AgentSheet";
 import Tabs from "@/ds/Tabs/Tabs";
 import { Plug } from "@/lib/icons";
-import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { applyAgentsSeo, cleanupSeo } from "@/lib/seo";
+import { AGENTS_JSONLD_ID, AGENTS_LABELS, agentsIndexSeo, agentsTrail, type AgentsView } from "@/lib/agentsSeo";
+import { atoms } from "@/ds/atoms";
+import { CompareMark, CompareTable } from "@/ds/Table/Table";
 import { agentShelves } from "@/lib/agentShelves";
 import { SERVERS, featuredServers, hasVerdict, recipesFor, reportRows, serverFoot, stackHeadline, type HubAssistant } from "@/lib/agentReport";
 import { runCatalogFilter } from "@/hooks/useCatalogStickyToolbar";
 import skillsIndex from "@/data/agents/skills_index.json";
-import { cardLine, say, serverName, skillFoot, typo, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
+import { PLAN_WORDS, cardLine, skillTitle, say, serverName, skillFoot, typo, type Lang, type McpCard, type SkillCard } from "@/lib/agents";
 
 /*
  * The agents section on the hubs' template (step 8, 18/11/2026; Michael: « cette page n'utilise pas encore les codes
@@ -34,21 +37,16 @@ import { cardLine, say, serverName, skillFoot, typo, type Lang, type McpCard, ty
  * cards, then the shelves as the catalogue's compact rows. The report on your stack lives in Ma stack: here, one line
  * that leads there. /mcp is the same page without « À la une ». /skills stays an index. « MCP » stays in the SEO titles.
  */
-export type AgentsView = "all" | "mcp" | "skills";
+export type { AgentsView };
 const SKILLS = skillsIndex as SkillCard[];
 
-const TITLES: Record<AgentsView, [string, string]> = { all: ["Outils pour l'IA", "Tools for AI"], mcp: ["Outils à brancher", "Tools to plug in"], skills: ["Savoir-faire pour développeurs", "Know-how for developers"] };
-const SEO_TITLES: Record<AgentsView, [string, string]> = {
-  all: ["Outils pour l'IA : ce que votre assistant peut faire dans vos outils (MCP)", "Tools for AI: what your assistant can do in your tools (MCP)"],
-  mcp: ["Serveurs MCP officiels : brancher vos outils à votre assistant IA", "Official MCP servers: plug your tools into your AI assistant"],
-  skills: ["Skills officiels : le savoir-faire des éditeurs pour votre assistant IA", "Official skills: vendors' know-how for your AI assistant"],
-};
+// The names are the SEO module's, so that the H1, the breadcrumb and the JSON-LD say the same (step 9).
+const TITLES = Object.fromEntries((["all", "mcp", "skills"] as const).map((view) => [view, [AGENTS_LABELS[view].fr, AGENTS_LABELS[view].en]])) as Record<AgentsView, [string, string]>;
 const LEADS: Record<AgentsView, [string, string]> = {
   all: ["Les outils qui se branchent officiellement à votre assistant, et ce qu'il peut y faire.", "The tools that officially plug into your assistant, and what it can do there."],
-  mcp: ["Tous les outils du catalogue qui se branchent officiellement à votre assistant IA.", "Every catalogue tool that officially plugs into your AI assistant."],
+  mcp: ["Les serveurs officiels que les éditeurs du catalogue ouvrent à votre assistant IA, côte à côte : ce qu'il peut y faire, le forfait demandé, les assistants qui le branchent directement.", "The official servers the catalogue's vendors open to your AI assistant, side by side: what it can do there, the plan it needs, the assistants that plug it in directly."],
   skills: ["Pour développeurs : des modes d'emploi publiés par les éditeurs, que votre assistant de code suit pour mieux travailler dans leur outil. Ceux de Notion et de Zapier s'utilisent sans rien installer.", "For developers: instructions published by vendors that your coding assistant follows to work better in their tool. Notion's and Zapier's need nothing installed."],
 };
-const PATHS: Record<AgentsView, string> = { all: "agents", mcp: "mcp", skills: "skills" };
 const GUIDE = { fr: "mcp-freelances-non-developpeurs", en: "mcp-for-non-developer-freelancers" };
 const ASSISTANT_LABELS: Record<HubAssistant, [string, string]> = { claude: ["Claude", "Claude"], chatgpt: ["ChatGPT", "ChatGPT"], gemini: ["Gemini", "Gemini"], copilot: ["Copilot", "Copilot"], other: ["Autre", "Other"] };
 /** Rows a shelf shows before « Voir tout »: two rows of three on a computer. */
@@ -69,13 +67,10 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
   const assistantName = assistant === "other" ? null : ASSISTANT_LABELS[assistant][0];
 
   useEffect(() => {
-    const title = `${t(...SEO_TITLES[view])} | ToolTrim`;
-    const description = t(...LEADS[view]);
-    const url = `${SEO_BASE}${prefix}/${PATHS[view]}`;
-    setSeoTags({ title, description, url });
-    setJsonLd("agents-jsonld", { "@context": "https://schema.org", "@type": "CollectionPage", name: t(...SEO_TITLES[view]), description, url });
-    return () => cleanupSeo(["agents-jsonld"]);
-  }, [view, prefix, t]);
+    applyAgentsSeo(agentsIndexSeo(view, lang, { servers: SERVERS, skills: SKILLS }), AGENTS_JSONLD_ID, lang);
+    return () => cleanupSeo([AGENTS_JSONLD_ID]);
+  }, [view, lang]);
+  const trail = agentsTrail(lang, view).map((step) => ({ label: step.label, ...(step.path ? { href: `${prefix}${step.path}` } : {}) }));
 
   // Your stack, read only (Ma stack composes it): one line that leads to its report, and the recipes of two of its tools.
   const pinned = state.pinnedToolSlugs;
@@ -116,7 +111,7 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
 
   const skillRow = (skill: SkillCard) => {
     const tool = toolOf(skill.host_tool);
-    return <ToolRow key={skill.slug} logo={tool ? <Logo tool={tool} size={40} /> : <Plug />} name={skill.name}
+    return <ToolRow key={skill.slug} logo={tool ? <Logo tool={tool} size={40} /> : <Plug />} name={skillTitle(skill, lang)}
       note={<AgentRowNote lang={lang} summary={cardLine(say(lang, skill.summary))} meta={skillFoot(skill, lang)[0]} />}
       renderMain={(className, content) => <Link to={`${prefix}/skills/${skill.slug}`} className={className}>{content}</Link>} />;
   };
@@ -128,7 +123,7 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
       .sort((a, b) => Number(b.skills.some((k) => k.everyone)) - Number(a.skills.some((k) => k.everyone)) || b.skills.length - a.skills.length);
     return (
       <Page>
-        <Breadcrumb includeSchema={false} items={[{ label: t(...TITLES.all) as string, href: `${prefix}/agents` }, { label: t(...TITLES.skills) as string }]} />
+        <Breadcrumb includeSchema={false} items={trail} />
         <CatalogTitle title={t(...TITLES.skills) as string} count={SKILLS.length} countLabel={t("fiches", "sheets") as string} lead={t(...LEADS.skills) as string} />
         {skillShelves.map((shelf) => (
           <CatalogSection key={shelf.tool} id={`skills-shelf-${shelf.tool}`} title={shelf.name} count={shelf.skills.length}>
@@ -139,13 +134,59 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
     );
   }
 
+  if (view === "mcp") {
+    // /mcp, the official servers compared (step 9; Michael, 18/11: option b): one row per server, what the assistant can
+    // do there, the plan, the assistants that plug it in directly; then how to read it and where to start.
+    const KIND_COLUMNS = [["read", "Lit", "Reads"], ["write", "Modifie", "Edits"], ["delete", "Supprime", "Deletes"], ["send", "Envoie ou publie", "Sends or posts"], ["pay", "Paie", "Pays"]] as const;
+    const direct = (card: McpCard) => (["claude", "chatgpt", "gemini", "copilot"] as const).filter((a) => (card.setup ?? []).some((w) => w.assistant === a)).map((a) => ASSISTANT_LABELS[a][0]);
+    const sorted = [...SERVERS].sort((a, b) => toolName(a.host_tool).localeCompare(toolName(b.host_tool)) || a.slug.localeCompare(b.slug));
+    const p = (fr: string, en: string) => <p className={atoms.text}>{t(fr, en)}</p>;
+    return (
+      <Page>
+        <Breadcrumb includeSchema={false} items={trail} />
+        <CatalogTitle title={t(...TITLES.mcp) as string} lead={t(...LEADS.mcp) as string} />
+        <CatalogSection id="mcp-compare-title" title={t(`Les ${SERVERS.length} serveurs côte à côte`, `The ${SERVERS.length} servers side by side`)}>
+          <CompareTable labelledBy="mcp-compare-title" headLabel={t("Outil", "Tool") as string}
+            columns={[...KIND_COLUMNS.map(([key, fr, en]) => ({ key, label: t(fr, en) as string, marks: true })),
+              { key: "plan", label: t("Forfait", "Plan") as string }, { key: "assistants", label: t("Se branche directement à", "Plugs straight into") as string }]}
+            rows={sorted.map((card) => {
+              const tool = toolOf(card.host_tool);
+              const names = direct(card);
+              return {
+                key: card.slug, logo: tool ? <Logo tool={tool} size={24} /> : <Plug />,
+                head: <Link to={`${prefix}/mcp/${card.slug}`} className={linkClass()}>{serverName(card, toolName(card.host_tool), SERVERS.some((other) => other.host_tool === card.host_tool && other.slug !== card.slug), lang)}</Link>,
+                cells: {
+                  ...Object.fromEntries(KIND_COLUMNS.map(([key]) => [key, <CompareMark key={key} on={card.capability_kinds.includes(key)} label={t(card.capability_kinds.includes(key) ? "Oui" : "Non", card.capability_kinds.includes(key) ? "Yes" : "No") as string} />])),
+                  plan: t(PLAN_WORDS[card.plan][0], PLAN_WORDS[card.plan][1]),
+                  assistants: names.length ? names.join(", ") : t("Par une adresse ou une installation", "Through an address or an install"),
+                },
+              };
+            })} />
+        </CatalogSection>
+        <CatalogSection id="mcp-read-title" title={t("Comment lire ce tableau", "How to read this table")}>
+          {p("Un serveur MCP est la prise qu'un éditeur ouvre pour que votre assistant IA, Claude, ChatGPT, Gemini ou Copilot, travaille dans son outil à votre place. Chaque ligne résume la fiche du serveur, vérifiée dans la documentation de l'éditeur à la date indiquée sur la fiche.",
+            "An MCP server is the socket a vendor opens so that your AI assistant, Claude, ChatGPT, Gemini or Copilot, can work in its tool for you. Each row sums up the server's sheet, checked against the vendor's documentation on the date the sheet gives.")}
+          {p("Les colonnes d'actions disent ce que l'assistant peut faire une fois branché : lire vos données, les modifier, les supprimer, envoyer ou publier en votre nom, payer. Une coche ne veut pas dire qu'il le fera seul : plusieurs serveurs demandent une confirmation, et la connexion permet souvent de limiter l'accès.",
+            "The action columns say what the assistant can do once plugged in: read your data, change it, delete it, send or post in your name, pay. A tick does not mean it will act alone: several servers ask for a confirmation, and the connection often lets you limit access.")}
+          {p("La colonne Forfait dit si le serveur marche sur l'offre gratuite ou demande un abonnement. La dernière colonne cite les assistants qui le branchent sans configuration ; les autres passent par une adresse à coller ou une installation, détaillée sur chaque fiche.",
+            "The Plan column says whether the server works on the free offer or needs a subscription. The last column names the assistants that plug it in with no setup; the others go through an address to paste or an install, explained on each sheet.")}
+        </CatalogSection>
+        <CatalogSection id="mcp-start-title" title={t("Par où commencer", "Where to start")}>
+          {p("Commencez par un outil que vous ouvrez tous les jours et par des demandes de lecture : résumer, retrouver, lister. Gardez pour plus tard ce qui supprime, envoie ou paie, et regardez sur la fiche comment couper l'accès.",
+            "Start with a tool you open every day and with reading requests: summarise, find, list. Keep what deletes, sends or pays for later, and check on the sheet how to cut access.")}
+          <p className={atoms.text}><Link to={`${prefix}/guide/${lang === "en" ? GUIDE.en : GUIDE.fr}`} className={linkClass()}>{t("Le guide pour freelances non développeurs", "The guide for non-developer freelancers")}<LinkArrow shown /></Link></p>
+          <p className={atoms.text}><Link to={`${prefix}/agents`} className={linkClass()}>{t("Choisir par besoin, avec votre stack", "Choose by need, with your stack")}<LinkArrow shown /></Link></p>
+          <p className={atoms.text}><Link to={`${prefix}/skills`} className={linkClass()}>{t("Les skills officiels, pour développeurs", "Official skills, for developers")}<LinkArrow shown /></Link></p>
+        </CatalogSection>
+      </Page>
+    );
+  }
+
   const assistantLabel = (assistantName ? t(`Avec ${assistantName}`, `With ${assistantName}`) : t("Votre assistant", "Your assistant")) as string;
   return (
     <div className="tt-catalog-page" data-catalog="" data-agents-hub={view}>
       <Page>
-        <Breadcrumb includeSchema={false} items={view === "all"
-          ? [{ label: t(...TITLES.all) as string }]
-          : [{ label: t(...TITLES.all) as string, href: `${prefix}/agents` }, { label: t(...TITLES.mcp) as string }]} />
+        <Breadcrumb includeSchema={false} items={trail} />
         <CatalogTitle sentinelRef={toolbarSentinelRef} title={t(...TITLES[view]) as string} lead={t(...LEADS[view]) as string} />
         <CatalogToolbar
           stuck={toolbarStuck}
@@ -193,7 +234,10 @@ const AgentsIndexPage = ({ view }: { view: AgentsView }) => {
           );
         })}
 
-        <p><Link to={`${prefix}/guide/${lang === "en" ? GUIDE.en : GUIDE.fr}`} className={linkClass()}>{t("Le guide pour bien commencer", "The guide to get started")}<LinkArrow shown /></Link></p>
+        {/* The section's other pages (step 9): the servers compared, the skills, the guide. */}
+        <p className={atoms.text}><Link to={`${prefix}/guide/${lang === "en" ? GUIDE.en : GUIDE.fr}`} className={linkClass()}>{t("Le guide pour bien commencer", "The guide to get started")}<LinkArrow shown /></Link></p>
+        <p className={atoms.text}><Link to={`${prefix}/mcp`} className={linkClass()}>{t(`Comparer les ${SERVERS.length} serveurs MCP officiels`, `Compare the ${SERVERS.length} official MCP servers`)}<LinkArrow shown /></Link></p>
+        <p className={atoms.text}><Link to={`${prefix}/skills`} className={linkClass()}>{t("Les skills officiels, pour développeurs", "Official skills, for developers")}<LinkArrow shown /></Link></p>
       </Page>
     </div>
   );

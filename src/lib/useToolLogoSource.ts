@@ -41,6 +41,9 @@ export const SMALL_MARKS = new Set(["n8n", "datawrapper", "make", "tally", "airt
  * a source that hangs, and waits for the logo to come near the viewport.
  * Used by ToolLogo (site) and by Logo (design system).
  */
+/** A transparent 1×1 GIF: what a remote logo's <img> shows before it is near view. */
+export const BLANK_PIXEL = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
 export function useToolLogoSource(tool: LogoTool, size: number, allowRemoteSources = true) {
   const sources = useMemo(() => {
     // Ask remote sources for twice the display size: a 42px logo fed a 64px
@@ -116,7 +119,7 @@ export function useToolLogoSource(tool: LogoTool, size: number, allowRemoteSourc
     if (!src || loaded) return;
     // A cached image can be complete before React attaches onLoad, a local one
     // too (the same logo already shown higher on the page, 17/11/2026).
-    if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
+    if (imgRef.current?.complete && imgRef.current.naturalWidth > 0 && imgRef.current.getAttribute("src") === src) {
       setLoaded(true);
       return;
     }
@@ -134,11 +137,13 @@ export function useToolLogoSource(tool: LogoTool, size: number, allowRemoteSourc
     // What the <img> may actually request. Native lazy loading inside the app's own scroll container
     // fetched logos several screens below the fold (13/11/2026: 84 of 189 image requests on /fr/tools),
     // so a remote file waits until the logo is near view. Same-origin and inline files stay immediate.
-    shown: inView || !src?.startsWith("http") ? src : undefined,
+    // Until then the <img> holds a blank inline pixel, never an <img> without src (step 9, 19/11: the prerendered HTML
+    // carried src-less images); the blank's own load never counts as the logo's.
+    shown: inView || !src?.startsWith("http") ? src : BLANK_PIXEL,
     imgRef,
     loaded,
     loading: (eager ? "eager" : "lazy") as "eager" | "lazy",
-    onLoad: () => setLoaded(true),
+    onLoad: (event: { currentTarget: HTMLImageElement }) => { if (event.currentTarget.getAttribute("src") === src) setLoaded(true); },
     onError: () => setSourceIndex((index) => index + 1),
   };
 }

@@ -2,7 +2,7 @@ import { useEffect, useId, useRef, useState, type CSSProperties, type ReactNode 
 import { Check, CheckCircle2, ChevronDown, Code2, Copy, CreditCard, ExternalLink, Eye, FileText, Flag, Gauge, ListChecks, LogOut, Mail, Pencil, Plug, Settings2, ShieldCheck, Trash2, UserRound, X } from "@/lib/icons";
 import { getToolLogoSources } from "@/lib/toolLogos";
 import {
-  CONSEQUENCE, clientName, forEveryone, say, typo,
+  CONSEQUENCE, clientName, forEveryone, isCopyRow, say, skillTitle, typo,
   type InstallRow, type Lang, type McpSheet, type Pair, type SkillSheet,
 } from "@/lib/agents";
 import { CLIENTS, CLIENT_MARKS, clientLabel, clientsOf, cursorInstallLink, plugCard, vsCodeInstallLink, type ClientId, type CopyAction } from "@/lib/agentClients";
@@ -202,10 +202,11 @@ function CopyMenu({ sheet, lang, toolName, pageUrl }: { sheet: McpSheet; lang: L
     void navigator.clipboard?.writeText(value).then(() => { setSaid(done); window.setTimeout(() => setSaid(""), 2000); });
     setOpen(false);
   };
-  const claudeCode = sheet.install.find((row) => row.client === "claude-code" && row.type === "command");
-  const vsCode = sheet.install.find((row) => row.client === "vs-code" && row.type === "url" && row.value.startsWith("vscode:"))?.value ?? vsCodeInstallLink(sheet);
-  const cursor = sheet.install.find((row) => row.client === "cursor" && row.type === "url")?.value ?? cursorInstallLink(sheet);
-  const claude = sheet.claude_directory?.url ?? sheet.install.find((row) => row.client === "claude" && row.type === "url" && row.value.includes("claude.ai/directory"))?.value;
+  const copyRows = sheet.install.filter(isCopyRow);
+  const claudeCode = copyRows.find((row) => row.client === "claude-code" && row.type === "command");
+  const vsCode = copyRows.find((row) => row.client === "vs-code" && row.type === "url" && row.value.startsWith("vscode:"))?.value ?? vsCodeInstallLink(sheet);
+  const cursor = copyRows.find((row) => row.client === "cursor" && row.type === "url")?.value ?? cursorInstallLink(sheet);
+  const claude = sheet.claude_directory?.url ?? copyRows.find((row) => row.client === "claude" && row.type === "url" && row.value.includes("claude.ai/directory"))?.value;
   const entries: { label: string; help: string; icon: ReactNode; run?: () => void; href?: string }[] = [
     { label: t("Copier la fiche en Markdown", "Copy the sheet as Markdown"), help: t("À coller dans votre assistant", "To paste in your assistant"), icon: <FileText />,
       run: () => copy(sheetMarkdown(sheet, { toolName, url: pageUrl, lang }), t("Fiche copiée", "Sheet copied")) },
@@ -412,8 +413,10 @@ export function SkillSheetView({ skill, lang, logo, reportHref, related }: {
         <Chapter chapter="head" as="header">
           <div className={styles.titleRow}>
             {logo && <span className={styles.titleLogo} aria-hidden="true">{logo}</span>}
-            <h1 className={styles.title}>{everyone ? skill.name : t(`${skill.name}, pour développeurs`, `${skill.name}, for developers`)}</h1>
+            <h1 className={styles.title}>{everyone ? skillTitle(skill, lang) : t(`${skillTitle(skill, lang)}, pour développeurs`, `${skillTitle(skill, lang)}, for developers`)}</h1>
           </div>
+          {/* The technical name stays at hand (step 9): the slug the coding tool knows, copied in one click. */}
+          {skill.display_name && <p className={styles.meta}>{t("Nom technique : ", "Technical name: ")}<CopyText value={skill.name} lang={lang} /></p>}
           <p className={styles.lead}>{everyone
             ? t(`Un savoir-faire officiel de ${skill.publisher}, sans rien installer : il vient avec le branchement.`, `Official know-how from ${skill.publisher}, nothing to install: it comes with the connection.`)
             : t(`Pour développeurs : un savoir-faire officiel de ${skill.publisher}, à installer dans votre outil de code.`, `For developers: official know-how from ${skill.publisher}, to install in your coding tool.`)}</p>
@@ -421,7 +424,9 @@ export function SkillSheetView({ skill, lang, logo, reportHref, related }: {
         </Chapter>
 
         <Chapter chapter="teach" title={t("Ce qu'il apprend à votre assistant", "What it teaches your assistant")}>
-          <p className={styles.reading}>{say(lang, skill.summary)}</p>
+          <p className={styles.reading}>{say(lang, skill.use_case ?? skill.summary)}</p>
+          {/* A request to try once it is added, from the vendor's page (step 9). */}
+          {skill.example && <Prompt text={say(lang, skill.example)} lang={lang} />}
           {skill.requires && <p className={styles.reading}><span className={styles.strong}>{t("Il vous faut : ", "You need: ")}</span>{lower(say(lang, skill.requires))}</p>}
         </Chapter>
 
@@ -433,7 +438,7 @@ export function SkillSheetView({ skill, lang, logo, reportHref, related }: {
               {skill.install.map((row, index) => (
                 <li key={index} className={styles.stepCard}>
                   <p className={styles.entryTitle}>{row.client === "any" ? t("Tout outil", "Any tool") : clientName(row.client, lang)}</p>
-                  {row.type === "steps" ? <p className={styles.reading}>{row.value}</p> : <CopyBlock value={row.value} type={row.type} lang={lang}
+                  {row.type === "steps" ? <p className={styles.reading}>{say(lang, row.value)}</p> : <CopyBlock value={row.value} type={row.type} lang={lang}
                     label={{ url: t("Copier l'adresse", "Copy the address"), command: t("Copier la commande", "Copy the command"), config: t("Copier la configuration", "Copy the configuration"), steps: "" }[row.type]} />}
                 </li>
               ))}

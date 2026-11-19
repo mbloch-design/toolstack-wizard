@@ -1,6 +1,10 @@
 {
   "slug": "google-analytics-admin-api-basics",
   "name": "google-analytics-admin-api-basics",
+  "display_name": {
+    "fr": "Google Analytics : API d'administration",
+    "en": "Google Analytics: Admin API basics"
+  },
   "publisher": "Google",
   "official": true,
   "host_tool": "google-analytics",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Mettre en place l'API Admin : propriétés, flux, dimensions, événements clés.",
     "en": "Set up the Admin API: properties, streams, dimensions, key events."
+  },
+  "use_case": {
+    "fr": "Active l'API d'administration de Google Analytics et guide l'agent pour lister les comptes et gérer propriétés, flux de données, dimensions, métriques et événements clés. Accès en écriture.",
+    "en": "Enables the Google Analytics Admin API and guides the agent to list accounts and manage properties, data streams, dimensions, metrics and key events. It has write access."
+  },
+  "example": {
+    "fr": "Liste mes propriétés Google Analytics et montre-moi leurs flux de données.",
+    "en": "List my Google Analytics properties and show their data streams."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Google pour Claude Code et Cursor : gère propriétés et événements clés, en écriture. En une commande. Serveur : Google Analytics MCP.",
+    "en": "Official Google skill for Claude Code and Cursor: manages properties and key events, write access. Added with one command. Server: Google Analytics MCP."
   },
   "agents": [
     "claude-code",
@@ -27,7 +43,7 @@
     "fr": "Node.js et un accès à une propriété Google Analytics.",
     "en": "Node.js and access to a Google Analytics property."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.google.com/analytics/devguides/agent-skills",
   "sources": [
     {

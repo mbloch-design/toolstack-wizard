@@ -1,6 +1,10 @@
 {
   "slug": "figma-generate-design",
   "name": "figma-generate-design",
+  "display_name": {
+    "fr": "Générer des écrans Figma depuis le code",
+    "en": "Generate Figma screens from code"
+  },
   "publisher": "Figma",
   "official": true,
   "host_tool": "figma",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Composer des écrans complets avec les composants de votre design system.",
     "en": "Compose full screens from your design system's components."
+  },
+  "use_case": {
+    "fr": "Assemble des écrans complets dans Figma à partir de votre code, avec les composants, variables et styles du design system.",
+    "en": "Assembles full-page screens in Figma from your codebase, using design system components, variables and styles."
+  },
+  "example": {
+    "fr": "Compose la page d'accueil de mon application dans Figma avec les composants de notre design system.",
+    "en": "Compose my app's home page in Figma with components from our design system."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Figma pour Claude Code et Cursor : compose des écrans complets avec votre design system. Inclus avec le plugin Figma. Serveur : Figma MCP.",
+    "en": "Official Figma skill for Claude Code and Cursor: composes full screens with your design system. Included with the Figma plugin. Server: Figma MCP."
   },
   "agents": [
     "claude-code",
@@ -19,7 +35,10 @@
     {
       "client": "any",
       "type": "steps",
-      "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      "value": {
+        "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+        "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      }
     },
     {
       "client": "any",
@@ -31,7 +50,7 @@
     "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
     "en": "Figma remote server; edit access to the file to write."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
   "sources": [
     {

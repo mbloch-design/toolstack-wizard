@@ -10,6 +10,18 @@
     "fr": "Travailler sur des extensions du Designer.",
     "en": "Work on Designer extensions."
   },
+  "use_case": {
+    "fr": "Crée et développe des extensions pour le Designer Webflow, avec serveur de développement local et compilation.",
+    "en": "Creates and develops Designer Extensions, with a local dev server and bundling."
+  },
+  "example": {
+    "fr": "Crée une extension Designer qui affiche une liste de contrôle dans le panneau.",
+    "en": "Create a Designer extension that shows a checklist in the panel."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : crée et développe des extensions du Designer. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: creates and develops Designer extensions. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

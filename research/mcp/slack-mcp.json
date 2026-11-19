@@ -13,6 +13,10 @@
     "fr": "Retrouver un fil, résumer un canal, répondre.",
     "en": "Find a thread, summarise a channel, reply."
   },
+  "meta_description": {
+    "fr": "Le serveur MCP officiel de Slack : chercher et lire vos messages, créer des canvases, envoyer des messages. Réservé aux applis approuvées par l'admin.",
+    "en": "Slack's official MCP server: search and read your messages, create canvases, send messages from your assistant. Limited to admin-approved apps. Our view."
+  },
   "examples": [
     {
       "fr": "Résume ce qui s'est dit dans #projet-client depuis lundi.",

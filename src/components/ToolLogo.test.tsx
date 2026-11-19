@@ -1,6 +1,7 @@
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import ToolLogo from "./ToolLogo";
+import { BLANK_PIXEL } from "@/lib/useToolLogoSource";
 
 describe("ToolLogo deferred loading", () => {
   let top: number;
@@ -41,7 +42,8 @@ describe("ToolLogo deferred loading", () => {
     const remote = { name: "Zzz Remote", slug: "zzz-remote", websiteUrl: "https://zzz-remote.example" };
     render(<ToolLogo tool={remote} />);
     act(() => vi.advanceTimersByTime(6000));
-    expect(screen.getByRole("img")).not.toHaveAttribute("src");
+    // A blank inline pixel holds the place (never an <img> without src, step 9): nothing remote is asked for.
+    expect(screen.getByRole("img")).toHaveAttribute("src", BLANK_PIXEL);
     top = 100;
     fireEvent.scroll(window);
     expect(screen.getByRole("img").getAttribute("src")).toMatch(/^https:/);

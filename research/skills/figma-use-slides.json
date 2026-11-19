@@ -1,6 +1,10 @@
 {
   "slug": "figma-use-slides",
   "name": "figma-use-slides",
+  "display_name": {
+    "fr": "Modifier une présentation Figma Slides",
+    "en": "Edit a Figma Slides deck"
+  },
   "publisher": "Figma",
   "official": true,
   "host_tool": "figma",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Créer et modifier une présentation Figma Slides, notes comprises.",
     "en": "Create and edit a Figma Slides deck, notes included."
+  },
+  "use_case": {
+    "fr": "Modifie une présentation Figma Slides : diapositives, sections, thèmes, textes et notes de l'orateur.",
+    "en": "Edits a Figma Slides deck: slides, sections, themes, text and speaker notes."
+  },
+  "example": {
+    "fr": "Ajoute à ma présentation une diapositive Bilan avec des notes d'orateur.",
+    "en": "Add a Results slide with speaker notes to my deck."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Figma pour Claude Code et Cursor : modifie une présentation Figma Slides, notes comprises. Inclus avec le plugin Figma. Serveur : Figma MCP.",
+    "en": "Official Figma skill for Claude Code and Cursor: edits a Figma Slides deck, notes included. Included with the Figma plugin. Server: Figma MCP."
   },
   "agents": [
     "claude-code",
@@ -19,7 +35,10 @@
     {
       "client": "any",
       "type": "steps",
-      "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      "value": {
+        "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+        "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      }
     },
     {
       "client": "any",
@@ -31,7 +50,7 @@
     "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
     "en": "Figma remote server; edit access to the file to write."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
   "sources": [
     {

@@ -13,6 +13,10 @@
     "fr": "Lire vos chiffres de trafic, en temps réel aussi.",
     "en": "Read your traffic figures, realtime included."
   },
+  "meta_description": {
+    "fr": "Brancher Google Analytics à Claude : vos rapports et le temps réel dans l'assistant, en lecture seule. Installation avec Python et Google Cloud, pas à pas.",
+    "en": "Connect Google Analytics to Claude: your reports and realtime data in your assistant, read only. Setup with Python and Google Cloud, step by step, here."
+  },
   "examples": [
     {
       "fr": "Combien de visiteurs mon site a-t-il eus le mois dernier, et d'où venaient-ils ?",

@@ -7,11 +7,19 @@ import type { AgentCapabilityKind } from "@/data/types";
 
 export type Pair = { fr: string; en: string };
 export type Assistant = "claude" | "chatgpt" | "gemini" | "copilot" | "other";
-export type InstallRow = { client: string; type: "command" | "url" | "config" | "steps"; value: string };
+/** An install row: the vendor's own text to copy (command, address, configuration), or steps to read, in both languages (step 9). */
+export type InstallRow = { client: string; type: "command" | "url" | "config"; value: string } | { client: string; type: "steps"; value: Pair };
+export type CopyRow = Extract<InstallRow, { value: string }>;
+/** A row whose value is the vendor's text to copy (not steps to read). */
+export const isCopyRow = (row: InstallRow): row is CopyRow => row.type !== "steps";
 
 export interface McpSheet {
   slug: string; name: string; publisher: string; official: true; host_tool: string; category: string | null;
   summary: Pair; verified_on: string; status?: "ga" | "beta";
+  /** The search snippet, 140 to 155 signs (step 9). */
+  meta_description: Pair;
+  /** Projected: the host tool's name in the catalogue, and its social image when one is local (step 9). */
+  host_name?: string; og_image?: string;
   /** One sentence written for the card. */
   card?: Pair;
   /** ToolTrim's words (S1 bis): example requests, for whom it is and is not. */
@@ -34,8 +42,14 @@ export interface McpSheet {
 export interface SkillSheet {
   slug: string; name: string; publisher: string; official: true; host_tool: string; server: string | null; category: string | null;
   summary: Pair; agents: string[]; install: InstallRow[]; requires?: Pair; verified_on: string; status?: "ga" | "beta";
+  host_name?: string; og_image?: string;
   docs_url: string; sources: { label: string; url: string }[];
+  /** Step 9 (18/11/2026), from the vendor's pages: what it does for you, a request to try, the search snippet, a readable name. */
+  use_case?: Pair; example?: Pair; meta_description?: Pair; display_name?: Pair;
 }
+
+/** A skill's name for people: its readable name when it has one, else its own. */
+export const skillTitle = (skill: Pick<SkillSheet, "name" | "display_name">, lang: Lang) => (skill.display_name ? (lang === "en" ? skill.display_name.en : skill.display_name.fr) : skill.name);
 
 /**
  * A skill a non-developer can use (step 5, 17/11): nothing to install, it ships with the connected server (Notion
@@ -60,7 +74,7 @@ export function skillFoot(skill: { everyone?: boolean; install?: InstallRow[]; a
 }
 
 export interface McpCard {
-  slug: string; name: string; publisher: string; host_tool: string; category: string | null; summary: Pair; card?: Pair;
+  slug: string; name: string; publisher: string; host_tool: string; host_name?: string; category: string | null; summary: Pair; card?: Pair;
   status?: "ga" | "beta"; transport?: "remote" | "local"; auth?: ("oauth" | "key" | "none")[]; access?: string;
   plan: McpSheet["plan"]; kinds: AgentCapabilityKind[]; capability_kinds: AgentCapabilityKind[]; one_click: Assistant[]; clients?: string[];
   setup?: McpSheet["setup"]; safeguards?: McpSheet["safeguards"]; for?: Pair; not_for?: Pair;
@@ -72,7 +86,7 @@ export interface McpCard {
 
 export interface SkillCard {
   slug: string; name: string; publisher: string; host_tool: string; server: string | null; category: string | null;
-  summary: Pair; agents: string[]; verified_on: string;
+  summary: Pair; agents: string[]; verified_on: string; display_name?: Pair;
   /** Usable without a coding tool (forEveryone, projected). */
   everyone: boolean;
 }

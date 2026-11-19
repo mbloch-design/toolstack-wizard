@@ -13,6 +13,10 @@
     "fr": "Créer un visuel d'une phrase, exporter un design.",
     "en": "Create a visual from a sentence, export a design."
   },
+  "meta_description": {
+    "fr": "Brancher Canva à votre assistant IA : chercher, générer, modifier et exporter vos designs. Aucune suppression documentée ; marque avec Pro. Notre avis.",
+    "en": "Connect Canva to your AI assistant: search, generate, edit and export your designs. No deletion in the tool list; brand features need Pro. Our view."
+  },
   "examples": [
     {
       "fr": "Crée un visuel Instagram pour annoncer mon atelier de samedi.",

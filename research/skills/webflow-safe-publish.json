@@ -10,6 +10,18 @@
     "fr": "Préparer, faire confirmer puis publier le site.",
     "en": "Plan, confirm, then publish the site."
   },
+  "use_case": {
+    "fr": "Publie le site en trois temps : plan, confirmation, publication, avec aperçu des modifications et contrôles préalables.",
+    "en": "Publishes the site in three steps: plan, confirm, publish, with a preview of changes and checks beforehand."
+  },
+  "example": {
+    "fr": "Prépare la publication de mon site, montre les changements et attends ma confirmation avant de publier.",
+    "en": "Prepare my site's publication, show the changes and wait for my confirmation before publishing."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : publie le site en plan, confirmation, puis publication. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: publishes the site in plan, confirm, publish steps. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

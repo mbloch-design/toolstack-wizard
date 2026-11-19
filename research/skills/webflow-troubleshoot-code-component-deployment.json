@@ -10,6 +10,18 @@
     "fr": "Dépanner un déploiement de Code Component.",
     "en": "Troubleshoot a Code Component deployment."
   },
+  "use_case": {
+    "fr": "Cherche les causes d'un échec de déploiement de Code Component et aide à le corriger.",
+    "en": "Looks for the causes of a failed Code Component deployment and helps fix them."
+  },
+  "example": {
+    "fr": "Mon Code Component ne se déploie plus, aide-moi à trouver pourquoi.",
+    "en": "My Code Component no longer deploys, help me find out why."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : cherche les causes d'un échec de déploiement de Code Component. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: looks for the causes of a failed Code Component deployment. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

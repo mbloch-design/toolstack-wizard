@@ -15,6 +15,10 @@
         "fr": "Vos mots-clés, liens et positions SEO.",
         "en": "Your SEO keywords, links and rankings."
       },
+      "meta_description": {
+        "fr": "Brancher Ahrefs à Claude ou ChatGPT : mots-clés, backlinks et positions dans votre assistant. Forfait payant dès Lite, ce qu'il peut modifier, comment.",
+        "en": "Connect Ahrefs to Claude or ChatGPT: keywords, backlinks and rankings in your assistant. Paid plan from Lite, what it can change, and how to set it up."
+      },
       "examples": [
         {
           "fr": "Sur quels mots-clés mon site a-t-il gagné des positions ce mois-ci ?",
@@ -167,7 +171,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/ahrefs"
         }
-      ]
+      ],
+      "host_name": "Ahrefs"
     },
     {
       "slug": "airtable-mcp",
@@ -183,6 +188,10 @@
       "card": {
         "fr": "Chercher et modifier les fiches de vos bases.",
         "en": "Search, add and edit the records of your bases."
+      },
+      "meta_description": {
+        "fr": "Brancher Airtable à Claude, ChatGPT ou Gemini : vos bases et enregistrements dans l'assistant. Ce qu'il peut supprimer, comment le limiter, en 3 étapes.",
+        "en": "Connect Airtable to Claude, ChatGPT or Gemini: your bases and records in your assistant. What it can delete, how to limit it, set up in three steps."
       },
       "examples": [
         {
@@ -652,7 +661,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/airtable"
         }
-      ]
+      ],
+      "host_name": "Airtable"
     },
     {
       "slug": "buffer-mcp",
@@ -668,6 +678,10 @@
       "card": {
         "fr": "Publier vos posts et lire leurs chiffres.",
         "en": "Publish your posts and read their results."
+      },
+      "meta_description": {
+        "fr": "Brancher Buffer à Claude ou ChatGPT : rédiger, programmer et publier vos posts depuis l'assistant. Gratuit sur tous les forfaits ; ce qu'il peut supprimer.",
+        "en": "Connect Buffer to Claude or ChatGPT: draft, schedule and publish your posts from your assistant. Free on every plan; what it can delete, and how to set up."
       },
       "examples": [
         {
@@ -918,7 +932,10 @@
         {
           "client": "claude",
           "type": "steps",
-          "value": "Navigate to \"Customize\", then click \"Connectors\". Search for \"Buffer\" in the connector list, then select it. Click \"Connect\"."
+          "value": {
+            "fr": "Ouvrez « Personnaliser », puis « Connecteurs ». Cherchez « Buffer » dans la liste des connecteurs, sélectionnez-le, puis cliquez sur « Connecter ».",
+            "en": "Navigate to \"Customize\", then click \"Connectors\". Search for \"Buffer\" in the connector list, then select it. Click \"Connect\"."
+          }
         },
         {
           "client": "claude-code",
@@ -967,7 +984,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/buffer"
         }
-      ]
+      ],
+      "host_name": "Buffer"
     },
     {
       "slug": "calendly-mcp",
@@ -983,6 +1001,10 @@
       "card": {
         "fr": "Trouver, réserver ou annuler un rendez-vous.",
         "en": "Find a slot, book or cancel a meeting."
+      },
+      "meta_description": {
+        "fr": "Brancher Calendly à Claude ou ChatGPT : trouver vos créneaux, réserver et annuler des rendez-vous. Sans forfait payant ; ce qu'il fait sans vous demander.",
+        "en": "Connect Calendly to Claude or ChatGPT: find open slots, book and cancel meetings from your assistant. No paid plan needed; what it does without asking."
       },
       "examples": [
         {
@@ -1347,12 +1369,18 @@
         {
           "client": "claude",
           "type": "steps",
-          "value": "From the sidebar in Claude, select Customize. / Select Connect your tools and search Calendly. / Select Connect."
+          "value": {
+            "fr": "Dans la barre latérale de Claude, choisissez Personnaliser. / Choisissez Connecter vos outils et cherchez Calendly. / Choisissez Connecter.",
+            "en": "From the sidebar in Claude, select Customize. / Select Connect your tools and search Calendly. / Select Connect."
+          }
         },
         {
           "client": "chatgpt",
           "type": "steps",
-          "value": "From the sidebar in ChatGPT, select Plugins. / Search for and select Calendly. / Select Connect."
+          "value": {
+            "fr": "Dans la barre latérale de ChatGPT, choisissez Plugins. / Cherchez Calendly et sélectionnez-le. / Choisissez Connecter.",
+            "en": "From the sidebar in ChatGPT, select Plugins. / Search for and select Calendly. / Select Connect."
+          }
         },
         {
           "client": "any",
@@ -1389,7 +1417,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/calendly"
         }
-      ]
+      ],
+      "host_name": "Calendly"
     },
     {
       "slug": "canva-mcp",
@@ -1405,6 +1434,10 @@
       "card": {
         "fr": "Créer un visuel d'une phrase, exporter un design.",
         "en": "Create a visual from a sentence, export a design."
+      },
+      "meta_description": {
+        "fr": "Brancher Canva à votre assistant IA : chercher, générer, modifier et exporter vos designs. Aucune suppression documentée ; marque avec Pro. Notre avis.",
+        "en": "Connect Canva to your AI assistant: search, generate, edit and export your designs. No deletion in the tool list; brand features need Pro. Our view."
       },
       "examples": [
         {
@@ -1831,7 +1864,9 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/canva"
         }
-      ]
+      ],
+      "host_name": "Canva",
+      "og_image": "/og-screenshots/canva.jpg"
     },
     {
       "slug": "clickup-mcp",
@@ -1847,6 +1882,10 @@
       "card": {
         "fr": "Suivre vos tâches, documents et temps passé.",
         "en": "Follow your tasks, documents and time spent."
+      },
+      "meta_description": {
+        "fr": "Brancher ClickUp à Claude ou ChatGPT : tâches, documents, temps passé et messages, avec vos droits. Corbeille, envoi de messages, plafonds par forfait.",
+        "en": "Connect ClickUp to Claude or ChatGPT: tasks, docs, time tracking and messages, with your own rights. Trash, chat messages and call caps by plan, explained."
       },
       "examples": [
         {
@@ -1870,6 +1909,17 @@
         "fr": "Votre espace est partagé et vous ne voulez aucun message en votre nom : l'assistant peut écrire dans le chat ClickUp.",
         "en": "Your workspace is shared and you want no message sent in your name: the assistant can write in ClickUp chat."
       },
+      "control": [
+        {
+          "title": {
+            "fr": "Vous vous connectez par OAuth",
+            "en": "You sign in through OAuth"
+          },
+          "icon": "account",
+          "fr": "à la connexion ; ClickUp n'accepte pas de clé API ni de jeton copié à la main.",
+          "en": "when connecting; ClickUp does not accept an API key or a token pasted by hand."
+        }
+      ],
       "plan_words": {
         "common": {
           "fr": "Fonctionne sur tous les forfaits ClickUp.",
@@ -1912,7 +1962,7 @@
           "en": "Once the daily limit is reached, it answers “RATE_LIMIT_EXCEEDED”; it cannot be reset, you have to wait."
         }
       ],
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "transport": "remote",
       "auth": [
         "oauth"
@@ -2421,7 +2471,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/clickup"
         }
-      ]
+      ],
+      "host_name": "ClickUp"
     },
     {
       "slug": "figma-mcp-desktop",
@@ -2437,6 +2488,10 @@
       "card": {
         "fr": "Lire les maquettes ouvertes dans l'app de bureau.",
         "en": "Read the mockups open in the desktop app."
+      },
+      "meta_description": {
+        "fr": "Le serveur MCP de bureau de Figma : votre assistant lit vos designs depuis l'application, sans rien modifier. Siège Dev ou Full requis ; comment l'activer.",
+        "en": "Figma's desktop MCP server: your assistant reads your designs from the Figma app, without changing anything. Needs a Dev or Full seat; how to turn it on."
       },
       "examples": [
         {
@@ -2639,7 +2694,8 @@
           "label": "Figma Developer Docs — Tools and prompts",
           "url": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "figma-mcp",
@@ -2655,6 +2711,10 @@
       "card": {
         "fr": "Lire vos maquettes et en créer, en ligne.",
         "en": "Read your mockups and create new ones, online."
+      },
+      "meta_description": {
+        "fr": "Brancher Figma à Claude ou Copilot : composants, variables et mise en page dans l'assistant, et en bêta la modification de vos fichiers. Rien à installer.",
+        "en": "Connect Figma to Claude or Copilot: components, variables and layout in your assistant and, in beta, editing your files. Nothing to install; our view."
       },
       "examples": [
         {
@@ -3080,7 +3140,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/figma"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "google-analytics-mcp",
@@ -3096,6 +3157,10 @@
       "card": {
         "fr": "Lire vos chiffres de trafic, en temps réel aussi.",
         "en": "Read your traffic figures, realtime included."
+      },
+      "meta_description": {
+        "fr": "Brancher Google Analytics à Claude : vos rapports et le temps réel dans l'assistant, en lecture seule. Installation avec Python et Google Cloud, pas à pas.",
+        "en": "Connect Google Analytics to Claude: your reports and realtime data in your assistant, read only. Setup with Python and Google Cloud, step by step, here."
       },
       "examples": [
         {
@@ -3291,7 +3356,9 @@
           "label": "GitHub googleanalytics/google-analytics-mcp",
           "url": "https://github.com/googleanalytics/google-analytics-mcp"
         }
-      ]
+      ],
+      "host_name": "Google Analytics",
+      "og_image": "/og-screenshots/google-analytics.jpg"
     },
     {
       "slug": "hubspot-mcp",
@@ -3307,6 +3374,10 @@
       "card": {
         "fr": "Mettre à jour votre CRM et vos campagnes.",
         "en": "Read and update your CRM and campaigns."
+      },
+      "meta_description": {
+        "fr": "Brancher HubSpot à votre assistant IA : CRM, campagnes et contenu. Chaque création demande votre accord, aucune suppression documentée. Le mode d'emploi.",
+        "en": "Connect HubSpot to your AI assistant: CRM, campaigns and content. Every change asks for your confirmation, and no deletion is documented. How to set up."
       },
       "examples": [
         {
@@ -3688,7 +3759,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/hubspot"
         }
-      ]
+      ],
+      "host_name": "HubSpot"
     },
     {
       "slug": "make-mcp",
@@ -3704,6 +3776,10 @@
       "card": {
         "fr": "Lancer vos scénarios Make en une phrase.",
         "en": "Run your Make scenarios in one sentence."
+      },
+      "meta_description": {
+        "fr": "Brancher Make à Claude : vos scénarios deviennent des actions que l'assistant lance. Sur forfait payant, il modifie aussi scénarios et connexions.",
+        "en": "Connect Make to Claude: your active scenarios become actions your assistant can run. On a paid plan it can also edit scenarios and connections. Our view."
       },
       "examples": [
         {
@@ -3853,7 +3929,10 @@
         {
           "client": "claude",
           "type": "steps",
-          "value": "Customize > Connectors > Discover > search Make, click +; select Organization and scopes in OAuth consent; click Allow"
+          "value": {
+            "fr": "Personnaliser > Connecteurs > Découvrir > cherchez Make, cliquez sur + ; dans l'écran d'autorisation OAuth, choisissez l'organisation et les périmètres ; cliquez sur Autoriser.",
+            "en": "Customize > Connectors > Discover > search Make, click +; select Organization and scopes in OAuth consent; click Allow"
+          }
         },
         {
           "client": "claude-code",
@@ -3923,7 +4002,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/make"
         }
-      ]
+      ],
+      "host_name": "Make"
     },
     {
       "slug": "miro-mcp",
@@ -3939,6 +4019,10 @@
       "card": {
         "fr": "Résumer vos tableaux et en créer de nouveaux.",
         "en": "Summarise your boards and create new ones."
+      },
+      "meta_description": {
+        "fr": "Brancher Miro à Claude, ChatGPT ou Copilot : lire et résumer vos tableaux, y ajouter notes et schémas, les partager. Gratuit sur tous les forfaits.",
+        "en": "Connect Miro to Claude, ChatGPT or Copilot: read and summarise your boards, add notes and diagrams, share them. Works on every plan, free included. Guide."
       },
       "examples": [
         {
@@ -4453,7 +4537,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/miro"
         }
-      ]
+      ],
+      "host_name": "Miro"
     },
     {
       "slug": "notion-mcp",
@@ -4469,6 +4554,10 @@
       "card": {
         "fr": "Retrouver, résumer et créer des pages dans Notion.",
         "en": "Find, summarise and create pages in Notion."
+      },
+      "meta_description": {
+        "fr": "Brancher Notion à Claude, ChatGPT ou Gemini : retrouver vos notes, résumer vos réunions, créer des pages. Tous les forfaits ; ce qu'il peut effacer.",
+        "en": "Connect Notion to Claude, ChatGPT or Gemini: find your notes, summarise meetings, create pages. Every plan; what it can edit and delete, and how to set up."
       },
       "examples": [
         {
@@ -5044,7 +5133,10 @@
         {
           "client": "claude",
           "type": "steps",
-          "value": "Search \"Notion\" in the assistant's connector or plugin library and authorize."
+          "value": {
+            "fr": "Cherchez « Notion » dans la bibliothèque de connecteurs ou de plugins de l'assistant, puis autorisez l'accès.",
+            "en": "Search \"Notion\" in the assistant's connector or plugin library and authorize."
+          }
         },
         {
           "client": "claude-code",
@@ -5121,7 +5213,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/notion"
         }
-      ]
+      ],
+      "host_name": "Notion"
     },
     {
       "slug": "shopify-mcp",
@@ -5137,6 +5230,10 @@
       "card": {
         "fr": "Suivre commandes et stocks, créer des produits.",
         "en": "Follow orders and stock, create products."
+      },
+      "meta_description": {
+        "fr": "Brancher Shopify à Claude, ChatGPT ou Gemini : commandes, produits et réductions dans l'assistant. Remboursements et paiements restent bloqués.",
+        "en": "Connect Shopify to Claude, ChatGPT or Gemini: orders, products and discounts in your assistant. Refunds and payments stay blocked. How to set it up, here."
       },
       "examples": [
         {
@@ -5604,7 +5701,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/shopify"
         }
-      ]
+      ],
+      "host_name": "Shopify"
     },
     {
       "slug": "slack-mcp",
@@ -5620,6 +5718,10 @@
       "card": {
         "fr": "Retrouver un fil, résumer un canal, répondre.",
         "en": "Find a thread, summarise a channel, reply."
+      },
+      "meta_description": {
+        "fr": "Le serveur MCP officiel de Slack : chercher et lire vos messages, créer des canvases, envoyer des messages. Réservé aux applis approuvées par l'admin.",
+        "en": "Slack's official MCP server: search and read your messages, create canvases, send messages from your assistant. Limited to admin-approved apps. Our view."
       },
       "examples": [
         {
@@ -5780,7 +5882,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/slack"
         }
-      ]
+      ],
+      "host_name": "Slack"
     },
     {
       "slug": "stripe-mcp",
@@ -5796,6 +5899,10 @@
       "card": {
         "fr": "Suivre vos paiements et votre solde.",
         "en": "Follow your payments and balance."
+      },
+      "meta_description": {
+        "fr": "Brancher Stripe à Claude ou ChatGPT : vos données de compte, création d'objets et, avec Treasury, envoi d'argent après confirmation. En bêta.",
+        "en": "Connect Stripe to Claude or ChatGPT: your account data in your assistant, creating objects and, with Treasury, sending money after confirmation. In beta."
       },
       "examples": [
         {
@@ -6128,7 +6235,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/stripe"
         }
-      ]
+      ],
+      "host_name": "Stripe"
     },
     {
       "slug": "tally-mcp",
@@ -6144,6 +6252,10 @@
       "card": {
         "fr": "Créer un formulaire et lire ses réponses.",
         "en": "Create a form and read its answers."
+      },
+      "meta_description": {
+        "fr": "Brancher Tally à Claude ou ChatGPT : créer un formulaire à partir d'une phrase, le publier et lire les réponses. Il ne supprime rien ; gratuit, en bêta.",
+        "en": "Connect Tally to Claude or ChatGPT: create a form from one sentence, publish it and read the submissions. It cannot delete anything; free, and in beta."
       },
       "examples": [
         {
@@ -6281,7 +6393,10 @@
         {
           "client": "claude",
           "type": "steps",
-          "value": "Claude > Customize → Connectors → Browse connectors; search 'Tally'; click Connect"
+          "value": {
+            "fr": "Claude > Personnaliser → Connecteurs → Parcourir les connecteurs ; cherchez « Tally » ; cliquez sur Connecter.",
+            "en": "Claude > Customize → Connectors → Browse connectors; search 'Tally'; click Connect"
+          }
         },
         {
           "client": "claude-code",
@@ -6337,7 +6452,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/tally"
         }
-      ]
+      ],
+      "host_name": "Tally"
     },
     {
       "slug": "webflow-mcp",
@@ -6353,6 +6469,10 @@
       "card": {
         "fr": "Lire et modifier votre site, jusqu'à le publier.",
         "en": "Read and edit your site, up to publishing it."
+      },
+      "meta_description": {
+        "fr": "Brancher Webflow à Claude ou ChatGPT : modifier pages, styles et CMS, puis publier le site depuis l'assistant. Accès site par site ; ses suppressions.",
+        "en": "Connect Webflow to Claude or ChatGPT: edit pages, styles and the CMS, then publish your site from your assistant. Access site by site; what it can delete."
       },
       "examples": [
         {
@@ -6698,7 +6818,10 @@
         {
           "client": "claude",
           "type": "steps",
-          "value": "Use the Webflow connector: click + in chat, then 'Add connectors', search 'Webflow', click Connect, grant access, select sites/Workspaces, 'Authorize App'"
+          "value": {
+            "fr": "Utilisez le connecteur Webflow : cliquez sur + dans la conversation, puis « Ajouter des connecteurs », cherchez « Webflow », cliquez sur Connecter, accordez l'accès, choisissez les sites ou espaces de travail, puis « Autoriser l'application ».",
+            "en": "Use the Webflow connector: click + in chat, then 'Add connectors', search 'Webflow', click Connect, grant access, select sites/Workspaces, 'Authorize App'"
+          }
         },
         {
           "client": "claude-code",
@@ -6774,7 +6897,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/webflow"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "zapier-mcp",
@@ -6790,6 +6914,10 @@
       "card": {
         "fr": "Agir dans vos applis via vos actions activées.",
         "en": "Act in your apps through the actions you enable."
+      },
+      "meta_description": {
+        "fr": "Brancher Zapier à Claude ou ChatGPT : des milliers d'applications dans votre assistant. Vous choisissez ce qu'il expose ; deux tâches par appel réussi.",
+        "en": "Connect Zapier to Claude or ChatGPT: actions from thousands of apps in your assistant. You choose what it exposes; each successful call uses two tasks."
       },
       "examples": [
         {
@@ -7036,7 +7164,10 @@
         {
           "client": "claude",
           "type": "steps",
-          "value": "Claude searches its connectors and shows a Zapier card. Click Connect on the Zapier card."
+          "value": {
+            "fr": "Claude cherche dans ses connecteurs et affiche une carte Zapier. Cliquez sur Connecter sur cette carte.",
+            "en": "Claude searches its connectors and shows a Zapier card. Click Connect on the Zapier card."
+          }
         },
         {
           "client": "chatgpt",
@@ -7106,7 +7237,8 @@
           "label": "Répertoire Claude (relevé le 17/11/2026)",
           "url": "https://claude.ai/directory/zapier"
         }
-      ]
+      ],
+      "host_name": "Zapier"
     }
   ],
   "skills": [
@@ -7122,6 +7254,18 @@
         "fr": "Auditer l'accessibilité selon les WCAG 2.1.",
         "en": "Audit accessibility against WCAG 2.1."
       },
+      "use_case": {
+        "fr": "Vérifie le site, ou une page donnée, selon la norme d'accessibilité WCAG 2.1.",
+        "en": "Checks the whole site, or one page, against the WCAG 2.1 accessibility standard."
+      },
+      "example": {
+        "fr": "Vérifie l'accessibilité de la page d'accueil de mon site selon WCAG 2.1.",
+        "en": "Check my site's home page for accessibility against WCAG 2.1."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : vérifie l'accessibilité du site ou d'une page selon WCAG 2.1. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: checks site or page accessibility against WCAG 2.1. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -7148,14 +7292,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "bulk-cms-update",
@@ -7169,6 +7314,18 @@
         "fr": "Mettre à jour le CMS en lot, avec validation et aperçu des différences.",
         "en": "Update the CMS in bulk, with validation and a diff preview."
       },
+      "use_case": {
+        "fr": "Crée ou met à jour plusieurs éléments d'une collection CMS d'un coup, avec validation et aperçu des modifications.",
+        "en": "Creates or updates several items in a CMS collection at once, with validation and a preview of changes."
+      },
+      "example": {
+        "fr": "Mets à jour le prix de tous les articles de ma collection Produits et montre-moi les changements.",
+        "en": "Update the price of every item in my Products collection and show me the changes."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : met à jour en lot les éléments du CMS, avec aperçu des changements. En une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: updates CMS items in bulk, with a preview of changes. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -7195,18 +7352,23 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "connect-recommend",
       "name": "connect-recommend",
+      "display_name": {
+        "fr": "Recommandations Stripe Connect",
+        "en": "Stripe Connect recommendations"
+      },
       "publisher": "Stripe",
       "official": true,
       "host_tool": "stripe",
@@ -7216,6 +7378,18 @@
         "fr": "Recommander la configuration Stripe Connect d'une place de marché ou d'une plateforme.",
         "en": "Recommend the Stripe Connect setup for a marketplace or platform."
       },
+      "use_case": {
+        "fr": "Recommande la configuration Stripe Connect d'une place de marché ou d'une plateforme : versements aux vendeurs, paiements partagés, vérification des vendeurs.",
+        "en": "Recommends the Stripe Connect setup for a marketplace or platform: payouts to sellers, split payments, verification of sellers."
+      },
+      "example": {
+        "fr": "Mon site met en relation des freelances et des clients : quelle configuration Stripe Connect choisir ?",
+        "en": "My site connects freelancers and clients: which Stripe Connect setup should I choose?"
+      },
+      "meta_description": {
+        "fr": "Skill officiel Stripe pour Claude Code et Cursor : recommande un montage Stripe Connect pour une plateforme. En une commande. Serveur : Stripe MCP.",
+        "en": "Official Stripe skill for Claude Code and Cursor: recommends a Stripe Connect setup for a platform. Added with one command. Server: Stripe MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7240,18 +7414,27 @@
         "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
         "en": "A compatible coding agent; the Stripe MCP server for live account data."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://docs.stripe.com/skills.md",
       "sources": [
         {
           "label": "Stripe — skills",
           "url": "https://docs.stripe.com/skills.md"
+        },
+        {
+          "label": "Stripe — source consultée",
+          "url": "https://docs.stripe.com/.well-known/skills/index.json"
         }
-      ]
+      ],
+      "host_name": "Stripe"
     },
     {
       "slug": "connect-required-verification-information",
       "name": "connect-required-verification-information",
+      "display_name": {
+        "fr": "Informations de vérification Stripe Connect",
+        "en": "Stripe Connect verification information"
+      },
       "publisher": "Stripe",
       "official": true,
       "host_tool": "stripe",
@@ -7261,6 +7444,18 @@
         "fr": "Lister les informations de vérification demandées aux comptes connectés.",
         "en": "List the verification information connected accounts must provide."
       },
+      "use_case": {
+        "fr": "Liste les informations de vérification que les comptes connectés doivent fournir, selon le pays, le type d'entreprise et la capacité demandée.",
+        "en": "Lists the verification information connected accounts must provide, by country, business type and capability."
+      },
+      "example": {
+        "fr": "Quels justificatifs un vendeur doit-il fournir pour être vérifié dans Stripe Connect, pour mon pays ?",
+        "en": "Which documents must a seller provide to be verified in Stripe Connect for my country?"
+      },
+      "meta_description": {
+        "fr": "Skill officiel Stripe pour Claude Code et Cursor : liste les vérifications exigées des comptes connectés. S'ajoute en une commande. Serveur : Stripe MCP.",
+        "en": "Official Stripe skill for Claude Code and Cursor: lists verification required for connected accounts. Added with one command. Server: Stripe MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7285,18 +7480,27 @@
         "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
         "en": "A compatible coding agent; the Stripe MCP server for live account data."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://docs.stripe.com/skills.md",
       "sources": [
         {
           "label": "Stripe — skills",
           "url": "https://docs.stripe.com/skills.md"
+        },
+        {
+          "label": "Stripe — source consultée",
+          "url": "https://docs.stripe.com/.well-known/skills/index.json"
         }
-      ]
+      ],
+      "host_name": "Stripe"
     },
     {
       "slug": "figma-code-connect",
       "name": "figma-code-connect",
+      "display_name": {
+        "fr": "Relier les composants Figma à leur code",
+        "en": "Link Figma components to code"
+      },
       "publisher": "Figma",
       "official": true,
       "host_tool": "figma",
@@ -7306,6 +7510,18 @@
         "fr": "Relier les composants publiés à leur code pour le Dev Mode (forfait Professional ou plus).",
         "en": "Link published components to their code for Dev Mode (Professional plan or above)."
       },
+      "use_case": {
+        "fr": "Relie les composants publiés à leur code, pour que les développeurs accèdent à l'implémentation en Dev Mode.",
+        "en": "Links published components to their code, so developers can reach the implementation in Dev Mode."
+      },
+      "example": {
+        "fr": "Relie le composant Bouton publié dans ma bibliothèque à son code React.",
+        "en": "Link the published Button component in my library to its React code."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Figma pour Claude Code et Cursor : relie les composants publiés à leur code, pour le Dev Mode. Inclus au plugin Figma. Serveur : Figma MCP.",
+        "en": "Official Figma skill for Claude Code and Cursor: links published components to their code for Dev Mode. Included with the Figma plugin. Server: Figma MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7315,7 +7531,10 @@
         {
           "client": "any",
           "type": "steps",
-          "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          "value": {
+            "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+            "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          }
         },
         {
           "client": "any",
@@ -7327,7 +7546,7 @@
         "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
         "en": "Figma remote server; edit access to the file to write."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
       "sources": [
         {
@@ -7338,11 +7557,16 @@
           "label": "Figma — repository",
           "url": "https://github.com/figma/mcp-server-guide"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "figma-code-workflows",
       "name": "figma-code-workflows",
+      "display_name": {
+        "fr": "Importer un projet local dans Figma",
+        "en": "Import a local project into Figma"
+      },
       "publisher": "Figma",
       "official": true,
       "host_tool": "figma",
@@ -7352,6 +7576,18 @@
         "fr": "Importer un projet local dans Figma comme fichier Make, calque de code ou calques de design.",
         "en": "Import a local project into Figma as a Make file, code layer or design layers."
       },
+      "use_case": {
+        "fr": "Importe un projet local dans Figma, sous forme de calque de code, de fichier Figma Make ou de calques de design modifiables.",
+        "en": "Imports a local project into Figma as a code layer, a Figma Make file or editable design layers."
+      },
+      "example": {
+        "fr": "Importe mon projet local dans Figma sous forme de calques de design modifiables.",
+        "en": "Import my local project into Figma as editable design layers."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Figma pour Claude Code et Cursor : importe un projet local dans Figma. Inclus avec le plugin Figma. Serveur : Figma MCP.",
+        "en": "Official Figma skill for Claude Code and Cursor: imports a local project into Figma. Included with the Figma plugin. Server: Figma MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7361,7 +7597,10 @@
         {
           "client": "any",
           "type": "steps",
-          "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          "value": {
+            "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+            "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          }
         },
         {
           "client": "any",
@@ -7373,7 +7612,7 @@
         "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
         "en": "Figma remote server; edit access to the file to write."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
       "sources": [
         {
@@ -7384,11 +7623,16 @@
           "label": "Figma — repository",
           "url": "https://github.com/figma/mcp-server-guide"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "figma-create-new-file",
       "name": "figma-create-new-file",
+      "display_name": {
+        "fr": "Créer un fichier Figma vierge",
+        "en": "Create a blank Figma file"
+      },
       "publisher": "Figma",
       "official": true,
       "host_tool": "figma",
@@ -7398,6 +7642,18 @@
         "fr": "Créer un fichier Design ou FigJam vierge dans vos brouillons.",
         "en": "Create a blank Design or FigJam file in your drafts."
       },
+      "use_case": {
+        "fr": "Crée un fichier de design ou un tableau FigJam vierge dans vos brouillons.",
+        "en": "Creates a blank design file or FigJam board in your drafts."
+      },
+      "example": {
+        "fr": "Crée dans mes brouillons un tableau FigJam vierge intitulé Atelier juin.",
+        "en": "Create a blank FigJam board named June workshop in my drafts."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Figma pour Claude Code et Cursor : crée un fichier Design ou FigJam vierge dans vos brouillons. Inclus au plugin Figma. Serveur : Figma MCP.",
+        "en": "Official Figma skill for Claude Code and Cursor: creates a blank Design or FigJam file in your drafts. Included with the Figma plugin. Server: Figma MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7407,7 +7663,10 @@
         {
           "client": "any",
           "type": "steps",
-          "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          "value": {
+            "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+            "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          }
         },
         {
           "client": "any",
@@ -7419,7 +7678,7 @@
         "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
         "en": "Figma remote server; edit access to the file to write."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
       "sources": [
         {
@@ -7430,11 +7689,16 @@
           "label": "Figma — repository",
           "url": "https://github.com/figma/mcp-server-guide"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "figma-generate-design",
       "name": "figma-generate-design",
+      "display_name": {
+        "fr": "Générer des écrans Figma depuis le code",
+        "en": "Generate Figma screens from code"
+      },
       "publisher": "Figma",
       "official": true,
       "host_tool": "figma",
@@ -7444,6 +7708,18 @@
         "fr": "Composer des écrans complets avec les composants de votre design system.",
         "en": "Compose full screens from your design system's components."
       },
+      "use_case": {
+        "fr": "Assemble des écrans complets dans Figma à partir de votre code, avec les composants, variables et styles du design system.",
+        "en": "Assembles full-page screens in Figma from your codebase, using design system components, variables and styles."
+      },
+      "example": {
+        "fr": "Compose la page d'accueil de mon application dans Figma avec les composants de notre design system.",
+        "en": "Compose my app's home page in Figma with components from our design system."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Figma pour Claude Code et Cursor : compose des écrans complets avec votre design system. Inclus avec le plugin Figma. Serveur : Figma MCP.",
+        "en": "Official Figma skill for Claude Code and Cursor: composes full screens with your design system. Included with the Figma plugin. Server: Figma MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7453,7 +7729,10 @@
         {
           "client": "any",
           "type": "steps",
-          "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          "value": {
+            "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+            "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          }
         },
         {
           "client": "any",
@@ -7465,7 +7744,7 @@
         "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
         "en": "Figma remote server; edit access to the file to write."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
       "sources": [
         {
@@ -7476,11 +7755,16 @@
           "label": "Figma — repository",
           "url": "https://github.com/figma/mcp-server-guide"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "figma-generate-diagram",
       "name": "figma-generate-diagram",
+      "display_name": {
+        "fr": "Générer un diagramme FigJam",
+        "en": "Generate a FigJam diagram"
+      },
       "publisher": "Figma",
       "official": true,
       "host_tool": "figma",
@@ -7490,6 +7774,18 @@
         "fr": "Générer un diagramme FigJam modifiable depuis une description.",
         "en": "Generate an editable FigJam diagram from a description."
       },
+      "use_case": {
+        "fr": "Transforme une description ou un document en diagramme FigJam modifiable : organigramme, séquence, entité-association, états ou Gantt.",
+        "en": "Turns a description or source material into an editable FigJam diagram: flowchart, sequence, ER, state or Gantt."
+      },
+      "example": {
+        "fr": "Dessine un organigramme du processus de validation d'un devis.",
+        "en": "Draw a flowchart of the quote approval process."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Figma pour Claude Code et Cursor : transforme une description en diagramme FigJam modifiable. Inclus au plugin Figma. Serveur : Figma MCP.",
+        "en": "Official Figma skill for Claude Code and Cursor: turns a description into an editable FigJam diagram. Included with the Figma plugin. Server: Figma MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7499,7 +7795,10 @@
         {
           "client": "any",
           "type": "steps",
-          "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          "value": {
+            "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+            "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          }
         },
         {
           "client": "any",
@@ -7511,7 +7810,7 @@
         "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
         "en": "Figma remote server; edit access to the file to write."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
       "sources": [
         {
@@ -7522,11 +7821,16 @@
           "label": "Figma — repository",
           "url": "https://github.com/figma/mcp-server-guide"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "figma-generate-library",
       "name": "figma-generate-library",
+      "display_name": {
+        "fr": "Construire une bibliothèque Figma depuis le code",
+        "en": "Build a Figma library from code"
+      },
       "publisher": "Figma",
       "official": true,
       "host_tool": "figma",
@@ -7536,6 +7840,18 @@
         "fr": "Construire une bibliothèque de design system à partir d'un code existant.",
         "en": "Build a design system library from an existing codebase."
       },
+      "use_case": {
+        "fr": "Construit ou met à jour une bibliothèque de design system à partir du code, par étapes, avec une pause de relecture entre chacune.",
+        "en": "Builds or updates a design system library from your codebase in phases, with review pauses between them."
+      },
+      "example": {
+        "fr": "Construis la bibliothèque Figma de notre design system à partir du code, étape par étape.",
+        "en": "Build our design system's Figma library from the code, step by step."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Figma pour Claude Code et Cursor : construit une bibliothèque de design system depuis le code. Inclus au plugin Figma. Serveur : Figma MCP.",
+        "en": "Official Figma skill for Claude Code and Cursor: builds a design system library from the code. Included with the Figma plugin. Server: Figma MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7545,7 +7861,10 @@
         {
           "client": "any",
           "type": "steps",
-          "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          "value": {
+            "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+            "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          }
         },
         {
           "client": "any",
@@ -7557,7 +7876,7 @@
         "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
         "en": "Figma remote server; edit access to the file to write."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
       "sources": [
         {
@@ -7568,11 +7887,16 @@
           "label": "Figma — repository",
           "url": "https://github.com/figma/mcp-server-guide"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "figma-spec",
       "name": "figma-spec",
+      "display_name": {
+        "fr": "Spécifications Figma",
+        "en": "Figma Specs"
+      },
       "publisher": "Figma",
       "official": true,
       "host_tool": "figma",
@@ -7582,6 +7906,18 @@
         "fr": "Lire, créer et mettre à jour des Figma Specs (bêta ouverte).",
         "en": "Read, create and update Figma Specs (open beta)."
       },
+      "use_case": {
+        "fr": "Lit, crée et met à jour des Figma Specs, seules ou intégrées à un fichier Design ou FigJam. Fonction en bêta ouverte.",
+        "en": "Reads, creates and updates Figma Specs, alone or inside a Design or FigJam file. Specs are in open beta."
+      },
+      "example": {
+        "fr": "Résume les règles de la spécification Figma du bouton et liste ce qui manque.",
+        "en": "Summarise the rules in the Figma spec for the button and list what is missing."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Figma pour Claude Code et Cursor : lit, crée et met à jour des Figma Specs (bêta ouverte). Inclus avec le plugin Figma. Serveur : Figma MCP.",
+        "en": "Official Figma skill for Claude Code and Cursor: reads, creates and updates Figma Specs (open beta). Included with the Figma plugin. Server: Figma MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7591,7 +7927,10 @@
         {
           "client": "any",
           "type": "steps",
-          "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          "value": {
+            "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+            "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          }
         },
         {
           "client": "any",
@@ -7603,7 +7942,7 @@
         "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
         "en": "Figma remote server; edit access to the file to write."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
       "sources": [
         {
@@ -7614,11 +7953,16 @@
           "label": "Figma — repository",
           "url": "https://github.com/figma/mcp-server-guide"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "figma-swiftui",
       "name": "figma-swiftui",
+      "display_name": {
+        "fr": "Figma vers SwiftUI",
+        "en": "Figma to SwiftUI"
+      },
       "publisher": "Figma",
       "official": true,
       "host_tool": "figma",
@@ -7628,6 +7972,18 @@
         "fr": "Passer d'un design Figma à du SwiftUI, et inversement.",
         "en": "Go from a Figma design to SwiftUI, and back."
       },
+      "use_case": {
+        "fr": "Traduit une maquette Figma en code SwiftUI, et des vues SwiftUI vers Figma.",
+        "en": "Translates a Figma design into SwiftUI code, and SwiftUI views back into Figma."
+      },
+      "example": {
+        "fr": "Génère la vue SwiftUI de cet écran Figma.",
+        "en": "Generate the SwiftUI view for this Figma screen."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Figma pour Claude Code et Cursor : traduit une maquette Figma en SwiftUI, et l'inverse. Inclus avec le plugin Figma. Serveur : Figma MCP.",
+        "en": "Official Figma skill for Claude Code and Cursor: translates a Figma design to SwiftUI and back. Included with the Figma plugin. Server: Figma MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7637,7 +7993,10 @@
         {
           "client": "any",
           "type": "steps",
-          "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          "value": {
+            "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+            "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          }
         },
         {
           "client": "any",
@@ -7649,7 +8008,7 @@
         "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
         "en": "Figma remote server; edit access to the file to write."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
       "sources": [
         {
@@ -7660,11 +8019,16 @@
           "label": "Figma — repository",
           "url": "https://github.com/figma/mcp-server-guide"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "figma-use-figjam",
       "name": "figma-use-figjam",
+      "display_name": {
+        "fr": "Modifier un tableau FigJam",
+        "en": "Edit a FigJam board"
+      },
       "publisher": "Figma",
       "official": true,
       "host_tool": "figma",
@@ -7674,6 +8038,18 @@
         "fr": "Travailler dans un tableau FigJam : post-its, sections, connecteurs.",
         "en": "Work in a FigJam board: stickies, sections, connectors."
       },
+      "use_case": {
+        "fr": "Modifie un tableau FigJam : post-it, sections, connecteurs, formes, tableaux et blocs de code.",
+        "en": "Edits a FigJam board: stickies, sections, connectors, shapes, tables and code blocks."
+      },
+      "example": {
+        "fr": "Ajoute au tableau FigJam de l'atelier une section Idées avec des post-it.",
+        "en": "Add an Ideas section with stickies to the workshop FigJam board."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Figma pour Claude Code et Cursor : modifie un tableau FigJam : post-it, sections, connecteurs. Inclus au plugin Figma. Serveur : Figma MCP.",
+        "en": "Official Figma skill for Claude Code and Cursor: edits a FigJam board: stickies, sections, connectors. Included with the Figma plugin. Server: Figma MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7683,7 +8059,10 @@
         {
           "client": "any",
           "type": "steps",
-          "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          "value": {
+            "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+            "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          }
         },
         {
           "client": "any",
@@ -7695,7 +8074,7 @@
         "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
         "en": "Figma remote server; edit access to the file to write."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
       "sources": [
         {
@@ -7706,11 +8085,16 @@
           "label": "Figma — repository",
           "url": "https://github.com/figma/mcp-server-guide"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "figma-use-slides",
       "name": "figma-use-slides",
+      "display_name": {
+        "fr": "Modifier une présentation Figma Slides",
+        "en": "Edit a Figma Slides deck"
+      },
       "publisher": "Figma",
       "official": true,
       "host_tool": "figma",
@@ -7720,6 +8104,18 @@
         "fr": "Créer et modifier une présentation Figma Slides, notes comprises.",
         "en": "Create and edit a Figma Slides deck, notes included."
       },
+      "use_case": {
+        "fr": "Modifie une présentation Figma Slides : diapositives, sections, thèmes, textes et notes de l'orateur.",
+        "en": "Edits a Figma Slides deck: slides, sections, themes, text and speaker notes."
+      },
+      "example": {
+        "fr": "Ajoute à ma présentation une diapositive Bilan avec des notes d'orateur.",
+        "en": "Add a Results slide with speaker notes to my deck."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Figma pour Claude Code et Cursor : modifie une présentation Figma Slides, notes comprises. Inclus avec le plugin Figma. Serveur : Figma MCP.",
+        "en": "Official Figma skill for Claude Code and Cursor: edits a Figma Slides deck, notes included. Included with the Figma plugin. Server: Figma MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7729,7 +8125,10 @@
         {
           "client": "any",
           "type": "steps",
-          "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          "value": {
+            "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+            "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          }
         },
         {
           "client": "any",
@@ -7741,7 +8140,7 @@
         "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
         "en": "Figma remote server; edit access to the file to write."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
       "sources": [
         {
@@ -7752,11 +8151,16 @@
           "label": "Figma — repository",
           "url": "https://github.com/figma/mcp-server-guide"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "figma-use",
       "name": "figma-use",
+      "display_name": {
+        "fr": "Écrire dans un fichier Figma",
+        "en": "Write to a Figma file"
+      },
       "publisher": "Figma",
       "official": true,
       "host_tool": "figma",
@@ -7766,6 +8170,18 @@
         "fr": "La base pour écrire dans Figma : cadres, composants, variables et mise en page.",
         "en": "The foundation for writing to Figma: frames, components, variables and layout."
       },
+      "use_case": {
+        "fr": "Base pour écrire dans le canevas d'un fichier Figma Design : cadres, composants, variables et mise en page automatique.",
+        "en": "The base skill for writing to a Figma Design canvas: frames, components, variables and auto layout."
+      },
+      "example": {
+        "fr": "Crée dans mon fichier Figma un cadre de carte produit avec deux variantes.",
+        "en": "Create a product card frame in my Figma file with two variants."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Figma pour Claude Code et Cursor : écrit des cadres, composants et variables dans Figma. Inclus avec le plugin Figma. Serveur : Figma MCP.",
+        "en": "Official Figma skill for Claude Code and Cursor: writes frames, components and variables in Figma. Included with the Figma plugin. Server: Figma MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7775,7 +8191,10 @@
         {
           "client": "any",
           "type": "steps",
-          "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          "value": {
+            "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+            "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+          }
         },
         {
           "client": "any",
@@ -7787,7 +8206,7 @@
         "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
         "en": "Figma remote server; edit access to the file to write."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
       "sources": [
         {
@@ -7798,11 +8217,16 @@
           "label": "Figma — repository",
           "url": "https://github.com/figma/mcp-server-guide"
         }
-      ]
+      ],
+      "host_name": "Figma"
     },
     {
       "slug": "google-analytics-admin-api-basics",
       "name": "google-analytics-admin-api-basics",
+      "display_name": {
+        "fr": "Google Analytics : API d'administration",
+        "en": "Google Analytics: Admin API basics"
+      },
       "publisher": "Google",
       "official": true,
       "host_tool": "google-analytics",
@@ -7812,6 +8236,18 @@
         "fr": "Mettre en place l'API Admin : propriétés, flux, dimensions, événements clés.",
         "en": "Set up the Admin API: properties, streams, dimensions, key events."
       },
+      "use_case": {
+        "fr": "Active l'API d'administration de Google Analytics et guide l'agent pour lister les comptes et gérer propriétés, flux de données, dimensions, métriques et événements clés. Accès en écriture.",
+        "en": "Enables the Google Analytics Admin API and guides the agent to list accounts and manage properties, data streams, dimensions, metrics and key events. It has write access."
+      },
+      "example": {
+        "fr": "Liste mes propriétés Google Analytics et montre-moi leurs flux de données.",
+        "en": "List my Google Analytics properties and show their data streams."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Google pour Claude Code et Cursor : gère propriétés et événements clés, en écriture. En une commande. Serveur : Google Analytics MCP.",
+        "en": "Official Google skill for Claude Code and Cursor: manages properties and key events, write access. Added with one command. Server: Google Analytics MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7829,18 +8265,24 @@
         "fr": "Node.js et un accès à une propriété Google Analytics.",
         "en": "Node.js and access to a Google Analytics property."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.google.com/analytics/devguides/agent-skills",
       "sources": [
         {
           "label": "Google — skills",
           "url": "https://developers.google.com/analytics/devguides/agent-skills"
         }
-      ]
+      ],
+      "host_name": "Google Analytics",
+      "og_image": "/og-screenshots/google-analytics.jpg"
     },
     {
       "slug": "google-analytics-data-api-basics",
       "name": "google-analytics-data-api-basics",
+      "display_name": {
+        "fr": "Google Analytics : API Data",
+        "en": "Google Analytics: Data API basics"
+      },
       "publisher": "Google",
       "official": true,
       "host_tool": "google-analytics",
@@ -7850,6 +8292,18 @@
         "fr": "Mettre en place l'API Data et construire des requêtes de rapport.",
         "en": "Set up the Data API and build report queries."
       },
+      "use_case": {
+        "fr": "Active l'API Data de Google Analytics et aide l'agent à écrire des rapports, en vérifiant que les dimensions et métriques peuvent être interrogées ensemble. Lecture seule.",
+        "en": "Enables the Google Analytics Data API and helps the agent write reports, checking that dimensions and metrics can be queried together. Read-only."
+      },
+      "example": {
+        "fr": "Donne-moi les sessions et les utilisateurs actifs de mon site par ville le mois dernier.",
+        "en": "Give me sessions and active users by city for last month."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Google pour Claude Code et Cursor : écrit des rapports Data, en lecture seule. S'ajoute en une commande. Serveur : Google Analytics MCP.",
+        "en": "Official Google skill for Claude Code and Cursor: writes Data API reports, read-only. Added with one command. Server: Google Analytics MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -7867,14 +8321,16 @@
         "fr": "Node.js et un accès à une propriété Google Analytics.",
         "en": "Node.js and access to a Google Analytics property."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.google.com/analytics/devguides/agent-skills",
       "sources": [
         {
           "label": "Google — skills",
           "url": "https://developers.google.com/analytics/devguides/agent-skills"
         }
-      ]
+      ],
+      "host_name": "Google Analytics",
+      "og_image": "/og-screenshots/google-analytics.jpg"
     },
     {
       "slug": "make-credential-requests",
@@ -7888,6 +8344,18 @@
         "fr": "Gérer les demandes d'identifiants.",
         "en": "Handle credential requests."
       },
+      "use_case": {
+        "fr": "Permet à l'agent de demander des identifiants : vous les saisissez dans Make, puis l'agent reprend avec une connexion gérée par Make.",
+        "en": "Lets the agent request credentials: you enter the secrets in Make, then the agent resumes with a connection managed by Make."
+      },
+      "example": {
+        "fr": "Prépare la connexion à mon application pour que mon scénario puisse s'exécuter.",
+        "en": "Set up the connection my scenario needs so it can run."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Make pour Claude Code et Cursor : gère les demandes d'identifiants que vous saisissez dans Make. En une commande. Serveur : Make MCP.",
+        "en": "Official Make skill for Claude Code and Cursor: handles credential requests, which you enter in Make. Added with one command. Server: Make MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -7913,14 +8381,19 @@
         "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
         "en": "A Make account; a paid Make plan for management scopes."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://skills.make.com/",
       "sources": [
         {
           "label": "Make — skills",
           "url": "https://skills.make.com/"
+        },
+        {
+          "label": "Make — source consultée",
+          "url": "https://github.com/integromat/make-skills"
         }
-      ]
+      ],
+      "host_name": "Make"
     },
     {
       "slug": "make-endpoints",
@@ -7934,6 +8407,18 @@
         "fr": "Travailler avec les points d'accès de Make.",
         "en": "Work with Make endpoints."
       },
+      "use_case": {
+        "fr": "Lance des actions sur vos applications via le SDK ou la CLI Endpoints de Make : découverte, connexions, appels typés, écritures soumises à validation. Bêta fermée.",
+        "en": "Runs app actions through the Make Endpoints SDK or CLI: discovery, connections, typed calls and writes that need approval. Closed beta."
+      },
+      "example": {
+        "fr": "Liste les actions disponibles pour mon application connectée dans Make.",
+        "en": "List the actions available for my connected app in Make."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Make pour Claude Code et Cursor : lance des actions via le SDK Endpoints (bêta fermée). S'ajoute en une commande. Serveur : Make MCP.",
+        "en": "Official Make skill for Claude Code and Cursor: runs app actions via the Endpoints SDK (closed beta). Added with one command. Server: Make MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -7959,14 +8444,19 @@
         "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
         "en": "A Make account; a paid Make plan for management scopes."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://skills.make.com/",
       "sources": [
         {
           "label": "Make — skills",
           "url": "https://skills.make.com/"
+        },
+        {
+          "label": "Make — source consultée",
+          "url": "https://github.com/integromat/make-skills"
         }
-      ]
+      ],
+      "host_name": "Make"
     },
     {
       "slug": "make-functions-v2",
@@ -7980,6 +8470,18 @@
         "fr": "Utiliser les fonctions Make.",
         "en": "Use Make functions."
       },
+      "use_case": {
+        "fr": "Écrit, teste, publie et fait fonctionner des Functions TypeScript de Make via la connexion Make MCP existante. Accès au déploiement Functions v2 requis.",
+        "en": "Writes, tests, publishes and runs TypeScript Functions in Make through the existing Make MCP connection. Requires Functions v2 rollout access."
+      },
+      "example": {
+        "fr": "Écris une Function TypeScript qui formate les dates, teste-la, puis publie-la.",
+        "en": "Write a TypeScript Function that formats dates, test it, then publish it."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Make pour Claude Code et Cursor : écrit, teste et publie des Functions TypeScript. S'ajoute en une commande. Serveur : Make MCP.",
+        "en": "Official Make skill for Claude Code and Cursor: writes, tests and publishes TypeScript Functions. Added with one command. Server: Make MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -8005,14 +8507,19 @@
         "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
         "en": "A Make account; a paid Make plan for management scopes."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://skills.make.com/",
       "sources": [
         {
           "label": "Make — skills",
           "url": "https://skills.make.com/"
+        },
+        {
+          "label": "Make — source consultée",
+          "url": "https://github.com/integromat/make-skills"
         }
-      ]
+      ],
+      "host_name": "Make"
     },
     {
       "slug": "make-scenario-building",
@@ -8026,6 +8533,18 @@
         "fr": "Construire un scénario : structure, modules, connexions.",
         "en": "Build a scenario: structure, modules, connections."
       },
+      "use_case": {
+        "fr": "Crée et modifie des scénarios Make : choix des applications et modules, connexions, contrôle du flux, gestion des erreurs, sous-scénarios et agents IA.",
+        "en": "Creates and edits Make scenarios: choosing apps and modules, connections, flow control, error handling, subscenarios and AI agents."
+      },
+      "example": {
+        "fr": "Crée un scénario qui envoie un e-mail à chaque nouveau client ajouté à ma base.",
+        "en": "Create a scenario that sends an email for each new client added to my database."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Make pour Claude Code et Cursor : crée et modifie des scénarios, connexions et modules. S'ajoute en une commande. Serveur : Make MCP.",
+        "en": "Official Make skill for Claude Code and Cursor: creates and edits scenarios, connections and modules. Added with one command. Server: Make MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -8051,14 +8570,19 @@
         "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
         "en": "A Make account; a paid Make plan for management scopes."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://skills.make.com/",
       "sources": [
         {
           "label": "Make — skills",
           "url": "https://skills.make.com/"
+        },
+        {
+          "label": "Make — source consultée",
+          "url": "https://github.com/integromat/make-skills"
         }
-      ]
+      ],
+      "host_name": "Make"
     },
     {
       "slug": "make-scenario-explore",
@@ -8072,6 +8596,18 @@
         "fr": "Explorer les scénarios existants.",
         "en": "Explore existing scenarios."
       },
+      "use_case": {
+        "fr": "Aide à s'orienter dans un compte Make : organisations, équipes, liste des scénarios, explication de ce que fait un scénario, état des connexions.",
+        "en": "Helps you find your way in a Make account: organisations, teams, scenario list, what a scenario does, connection health."
+      },
+      "example": {
+        "fr": "Liste mes scénarios Make et dis-moi ce que fait chacun.",
+        "en": "List my Make scenarios and tell me what each one does."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Make pour Claude Code et Cursor : aide à s'orienter dans un compte Make et ses scénarios. S'ajoute en une commande. Serveur : Make MCP.",
+        "en": "Official Make skill for Claude Code and Cursor: helps you navigate a Make account and its scenarios. Added with one command. Server: Make MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -8097,14 +8633,19 @@
         "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
         "en": "A Make account; a paid Make plan for management scopes."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://skills.make.com/",
       "sources": [
         {
           "label": "Make — skills",
           "url": "https://skills.make.com/"
+        },
+        {
+          "label": "Make — source consultée",
+          "url": "https://github.com/integromat/make-skills"
         }
-      ]
+      ],
+      "host_name": "Make"
     },
     {
       "slug": "make-scenario-operations",
@@ -8118,6 +8659,18 @@
         "fr": "Comprendre et déboguer l'exécution d'un scénario.",
         "en": "Understand and debug a scenario run."
       },
+      "use_case": {
+        "fr": "Lance, active et désactive des scénarios, examine et débogue leurs exécutions, et enquête sur un webhook.",
+        "en": "Runs, activates and deactivates scenarios, reviews and debugs their executions, and investigates a webhook."
+      },
+      "example": {
+        "fr": "Pourquoi mon scénario d'hier a-t-il échoué ? Montre-moi l'erreur.",
+        "en": "Why did my scenario fail yesterday? Show me the error."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Make pour Claude Code et Cursor : lance, active et débogue les exécutions de scénarios. S'ajoute en une commande. Serveur : Make MCP.",
+        "en": "Official Make skill for Claude Code and Cursor: runs, activates and debugs scenario executions. Added with one command. Server: Make MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -8143,14 +8696,19 @@
         "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
         "en": "A Make account; a paid Make plan for management scopes."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://skills.make.com/",
       "sources": [
         {
           "label": "Make — skills",
           "url": "https://skills.make.com/"
+        },
+        {
+          "label": "Make — source consultée",
+          "url": "https://github.com/integromat/make-skills"
         }
-      ]
+      ],
+      "host_name": "Make"
     },
     {
       "slug": "make-scenario-reference",
@@ -8164,6 +8722,18 @@
         "fr": "Référence pour décrire un scénario Make.",
         "en": "Reference for describing a Make scenario."
       },
+      "use_case": {
+        "fr": "Rappelle les conventions communes à tous les outils Make, utiles quand un outil répond par une erreur 403 ou refuse une action.",
+        "en": "Explains the conventions shared by all Make tools, for when a tool returns a 403 or refuses an action."
+      },
+      "example": {
+        "fr": "Un outil Make me répond 403 : explique-moi pourquoi et quoi faire.",
+        "en": "A Make tool returns 403: explain why and what to do."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Make pour Claude Code et Cursor : rappelle les conventions Make, par exemple face à une 403. S'ajoute en une commande. Serveur : Make MCP.",
+        "en": "Official Make skill for Claude Code and Cursor: recalls Make conventions, e.g. for a 403 response. Added with one command. Server: Make MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -8189,14 +8759,19 @@
         "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
         "en": "A Make account; a paid Make plan for management scopes."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://skills.make.com/",
       "sources": [
         {
           "label": "Make — skills",
           "url": "https://skills.make.com/"
+        },
+        {
+          "label": "Make — source consultée",
+          "url": "https://github.com/integromat/make-skills"
         }
-      ]
+      ],
+      "host_name": "Make"
     },
     {
       "slug": "metronome",
@@ -8209,6 +8784,18 @@
       "summary": {
         "fr": "Guider une facturation à l'usage avec Metronome.",
         "en": "Guide usage-based billing with Metronome."
+      },
+      "use_case": {
+        "fr": "Guide l'intégration de la facturation à l'usage avec Metronome : envoi d'événements, contrats, tarifs, factures, crédits et synchronisation avec Stripe Billing.",
+        "en": "Guides usage-based billing with Metronome: event ingestion, contracts, rate cards, invoices, credits and syncing with Stripe Billing."
+      },
+      "example": {
+        "fr": "Comment envoyer les événements d'usage de mon API à Metronome sans doublons ?",
+        "en": "How do I send my API usage events to Metronome without duplicates?"
+      },
+      "meta_description": {
+        "fr": "Skill officiel Stripe pour Claude Code et Cursor : guide la facturation à l'usage avec Metronome. S'ajoute en une commande. Serveur : Stripe MCP.",
+        "en": "Official Stripe skill for Claude Code and Cursor: guides usage-based billing with Metronome. Added with one command. Server: Stripe MCP."
       },
       "agents": [
         "claude-code",
@@ -8234,18 +8821,27 @@
         "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
         "en": "A compatible coding agent; the Stripe MCP server for live account data."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://docs.stripe.com/skills.md",
       "sources": [
         {
           "label": "Stripe — skills",
           "url": "https://docs.stripe.com/skills.md"
+        },
+        {
+          "label": "Stripe — source consultée",
+          "url": "https://docs.stripe.com/.well-known/skills/index.json"
         }
-      ]
+      ],
+      "host_name": "Stripe"
     },
     {
       "slug": "miro-code-explain-on-board",
       "name": "miro-code-explain-on-board",
+      "display_name": {
+        "fr": "Expliquer le code sur un tableau Miro",
+        "en": "Explain code on a Miro board"
+      },
       "publisher": "Miro",
       "official": true,
       "host_tool": "miro",
@@ -8255,6 +8851,18 @@
         "fr": "Expliquer un code sur un tableau Miro, en schémas et document d'accompagnement.",
         "en": "Explain a codebase on a Miro board, as diagrams and a companion doc."
       },
+      "use_case": {
+        "fr": "Explique une base de code sur un tableau Miro, avec un petit jeu de diagrammes conformes à la notation et un document d'accompagnement.",
+        "en": "Explains a codebase on a Miro board as a small set of correctly notated diagrams plus a companion document."
+      },
+      "example": {
+        "fr": "Explique l'architecture de notre projet sur un tableau Miro, avec diagrammes et document.",
+        "en": "Explain our project's architecture on a Miro board, with diagrams and a document."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Miro pour Claude Code et Cursor : explique une base de code par diagrammes sur tableau Miro. S'ajoute en une commande. Serveur : Miro MCP.",
+        "en": "Official Miro skill for Claude Code and Cursor: explains a codebase with diagrams on a Miro board. Added with one command. Server: Miro MCP."
+      },
       "agents": [
         "claude-code",
         "cursor",
@@ -8272,18 +8880,23 @@
         "fr": "Connexion au serveur MCP Miro.",
         "en": "A connection to the Miro MCP server."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md",
       "sources": [
         {
           "label": "Miro — skills",
           "url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md"
         }
-      ]
+      ],
+      "host_name": "Miro"
     },
     {
       "slug": "miro-code-review",
       "name": "miro-code-review",
+      "display_name": {
+        "fr": "Relecture de code sur tableau Miro",
+        "en": "Miro code review"
+      },
       "publisher": "Miro",
       "official": true,
       "host_tool": "miro",
@@ -8293,6 +8906,18 @@
         "fr": "Relire visuellement des changements de code sur un tableau.",
         "en": "Review code changes visually on a board."
       },
+      "use_case": {
+        "fr": "Relecture visuelle de code sur un tableau Miro, à partir de pull requests, de modifications locales ou de comparaisons de branches.",
+        "en": "Visual code review on a Miro board, from pull requests, local changes or branch comparisons."
+      },
+      "example": {
+        "fr": "Fais une relecture visuelle de la pull request 42 sur notre tableau Miro.",
+        "en": "Do a visual review of pull request 42 on our Miro board."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Miro pour Claude Code et Cursor : relit du code visuellement sur un tableau Miro. S'ajoute en une commande. Serveur : Miro MCP.",
+        "en": "Official Miro skill for Claude Code and Cursor: reviews code visually on a Miro board. Added with one command. Server: Miro MCP."
+      },
       "agents": [
         "claude-code",
         "cursor",
@@ -8310,18 +8935,23 @@
         "fr": "Connexion au serveur MCP Miro.",
         "en": "A connection to the Miro MCP server."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md",
       "sources": [
         {
           "label": "Miro — skills",
           "url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md"
         }
-      ]
+      ],
+      "host_name": "Miro"
     },
     {
       "slug": "miro-code-spec",
       "name": "miro-code-spec",
+      "display_name": {
+        "fr": "Extraire les spécifications d'un tableau Miro",
+        "en": "Extract specs from a Miro board"
+      },
       "publisher": "Miro",
       "official": true,
       "host_tool": "miro",
@@ -8331,6 +8961,18 @@
         "fr": "Extraire les spécifications d'un tableau (documents, schémas, maquettes) vers le projet.",
         "en": "Extract specs from a board (docs, diagrams, prototypes) into the project."
       },
+      "use_case": {
+        "fr": "Extrait les spécifications d'un tableau Miro (documents, diagrammes, prototypes, tableaux, images) vers des fichiers locaux dans le dossier .miro/specs/.",
+        "en": "Extracts specs from a Miro board (documents, diagrams, prototypes, tables, images) into local files in .miro/specs/."
+      },
+      "example": {
+        "fr": "Extrais dans le projet les spécifications de notre tableau Miro de refonte.",
+        "en": "Extract the specs from our Miro redesign board into the project."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Miro pour Claude Code et Cursor : extrait les spécifications d'un tableau Miro vers le projet. S'ajoute en une commande. Serveur : Miro MCP.",
+        "en": "Official Miro skill for Claude Code and Cursor: extracts specs from a Miro board into the project. Added with one command. Server: Miro MCP."
+      },
       "agents": [
         "claude-code",
         "cursor",
@@ -8348,14 +8990,15 @@
         "fr": "Connexion au serveur MCP Miro.",
         "en": "A connection to the Miro MCP server."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md",
       "sources": [
         {
           "label": "Miro — skills",
           "url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md"
         }
-      ]
+      ],
+      "host_name": "Miro"
     },
     {
       "slug": "notion-skills",
@@ -8369,6 +9012,18 @@
         "fr": "Des pages d'instructions réutilisables, écrites et partagées dans Notion, que tout assistant connecté à Notion MCP peut suivre.",
         "en": "Reusable instruction pages, written and shared in Notion, that any assistant connected to Notion MCP can follow."
       },
+      "use_case": {
+        "fr": "Pages d'instructions réutilisables, créées et partagées dans Notion : l'assistant les suit quand la demande le justifie, et seulement si vous pouvez les voir.",
+        "en": "Reusable instruction pages written and shared in Notion: the assistant follows them when the request calls for it, and only if you can view them."
+      },
+      "example": {
+        "fr": "Prépare le compte rendu de réunion selon la page Skill de notre équipe.",
+        "en": "Prepare the meeting summary following our team's Skill page."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Notion pour tout assistant connecté : crée des instructions réutilisables dans Notion. Sans installation. Serveur : Notion MCP.",
+        "en": "Official Notion skill for any connected assistant: creates reusable instructions in Notion. No install needed. Server: Notion MCP."
+      },
       "agents": [
         "any"
       ],
@@ -8377,14 +9032,15 @@
         "fr": "Notion MCP connecté ; droit de modification pour transformer une page en Skill.",
         "en": "Notion MCP connected; edit access to turn a page into a Skill."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.notion.com/guides/mcp/notion-skills",
       "sources": [
         {
           "label": "Notion — skills",
           "url": "https://developers.notion.com/guides/mcp/notion-skills"
         }
-      ]
+      ],
+      "host_name": "Notion"
     },
     {
       "slug": "shopify-ai-toolkit",
@@ -8397,6 +9053,18 @@
       "summary": {
         "fr": "Aider un agent de code à développer pour Shopify : API Admin, Liquid, Polaris, Hydrogen, CLI.",
         "en": "Help a coding agent build for Shopify: Admin API, Liquid, Polaris, Hydrogen, CLI."
+      },
+      "use_case": {
+        "fr": "Guide un agent de code sur les surfaces développeur Shopify : API Admin GraphQL, Functions, Polaris, Liquid, Hydrogen et CLI. Valide le code GraphQL, Liquid et extensions.",
+        "en": "Guides a coding agent across Shopify developer surfaces: Admin GraphQL API, Functions, Polaris, Liquid, Hydrogen and CLI. Validates GraphQL, Liquid and extension code."
+      },
+      "example": {
+        "fr": "Écris une section Liquid pour la page produit de ma boutique et vérifie le code.",
+        "en": "Write a Liquid section for my store's product page and check the code."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Shopify pour Claude Code et Cursor : guide le code Shopify (API, Liquid, Polaris, Hydrogen). En une commande. Serveur : Shopify MCP.",
+        "en": "Official Shopify skill for Claude Code and Cursor: guides Shopify code (API, Liquid, Polaris, Hydrogen). Added with one command. Server: Shopify MCP."
       },
       "agents": [
         "claude-code",
@@ -8421,14 +9089,15 @@
         "fr": "Node.js 18 ou plus.",
         "en": "Node.js 18 or higher."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://shopify.dev/docs/apps/build/ai-toolkit",
       "sources": [
         {
           "label": "Shopify — skills",
           "url": "https://shopify.dev/docs/apps/build/ai-toolkit"
         }
-      ]
+      ],
+      "host_name": "Shopify"
     },
     {
       "slug": "site-audit",
@@ -8442,6 +9111,18 @@
         "fr": "Inventorier le site et lui donner un score de santé.",
         "en": "Inventory the site and give it a health score."
       },
+      "use_case": {
+        "fr": "Passe en revue les pages et les collections CMS du site, lui donne une note de santé et propose des actions concrètes.",
+        "en": "Reviews the site's pages and CMS collections, gives a health score and suggests concrete actions."
+      },
+      "example": {
+        "fr": "Fais un audit de santé de mon site Webflow et dis-moi les trois corrections les plus utiles.",
+        "en": "Run a health audit of my Webflow site and tell me the three most useful fixes."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : fait un audit de santé du site et de ses collections CMS. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: audits site health and CMS collections with a score. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -8468,18 +9149,23 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "stripe-apps",
       "name": "stripe-apps",
+      "display_name": {
+        "fr": "Applications et extensions Stripe",
+        "en": "Stripe Apps and extensions"
+      },
       "publisher": "Stripe",
       "official": true,
       "host_tool": "stripe",
@@ -8489,6 +9175,18 @@
         "fr": "Construire et relire des Stripe Apps et des extensions du Dashboard.",
         "en": "Build and review Stripe Apps and Dashboard extensions."
       },
+      "use_case": {
+        "fr": "Aide à créer, modifier ou relire des Stripe Apps et extensions pour le Dashboard Stripe : interface personnalisée, SDK, actions de workflow.",
+        "en": "Helps build, change or review Stripe Apps and Dashboard extensions: custom UI, SDKs and custom workflow actions."
+      },
+      "example": {
+        "fr": "Crée une extension Stripe Dashboard qui affiche le statut des abonnements d'un client.",
+        "en": "Create a Stripe Dashboard extension showing a customer's subscription status."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Stripe pour Claude Code et Cursor : crée et relit des Stripe Apps et extensions du Dashboard. En une commande. Serveur : Stripe MCP.",
+        "en": "Official Stripe skill for Claude Code and Cursor: builds and reviews Stripe Apps and Dashboard extensions. Added with one command. Server: Stripe MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -8513,18 +9211,27 @@
         "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
         "en": "A compatible coding agent; the Stripe MCP server for live account data."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://docs.stripe.com/skills.md",
       "sources": [
         {
           "label": "Stripe — skills",
           "url": "https://docs.stripe.com/skills.md"
+        },
+        {
+          "label": "Stripe — source consultée",
+          "url": "https://docs.stripe.com/.well-known/skills/index.json"
         }
-      ]
+      ],
+      "host_name": "Stripe"
     },
     {
       "slug": "stripe-best-practices",
       "name": "stripe-best-practices",
+      "display_name": {
+        "fr": "Bonnes pratiques Stripe",
+        "en": "Stripe best practices"
+      },
       "publisher": "Stripe",
       "official": true,
       "host_tool": "stripe",
@@ -8534,6 +9241,18 @@
         "fr": "Guider les choix d'intégration : API, facturation, taxes, sécurité.",
         "en": "Guide integration choices: API, billing, tax, security."
       },
+      "use_case": {
+        "fr": "Guide les choix d'intégration Stripe : environnement de test, API (Checkout ou PaymentIntents), abonnements, taxes, Connect et sécurité des clés.",
+        "en": "Guides Stripe integration choices: test environment, API (Checkout Sessions or PaymentIntents), subscriptions, tax, Connect and key security."
+      },
+      "example": {
+        "fr": "Faut-il utiliser Checkout ou PaymentIntents pour encaisser des abonnements sur mon site ?",
+        "en": "Should I use Checkout or PaymentIntents to take subscriptions on my site?"
+      },
+      "meta_description": {
+        "fr": "Skill officiel Stripe pour Claude Code et Cursor : guide les choix d'intégration, API, taxes et sécurité. S'ajoute en une commande. Serveur : Stripe MCP.",
+        "en": "Official Stripe skill for Claude Code and Cursor: guides integration choices: API, tax and security. Added with one command. Server: Stripe MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -8558,18 +9277,27 @@
         "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
         "en": "A compatible coding agent; the Stripe MCP server for live account data."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://docs.stripe.com/skills.md",
       "sources": [
         {
           "label": "Stripe — skills",
           "url": "https://docs.stripe.com/skills.md"
+        },
+        {
+          "label": "Stripe — source consultée",
+          "url": "https://docs.stripe.com/.well-known/skills/index.json"
         }
-      ]
+      ],
+      "host_name": "Stripe"
     },
     {
       "slug": "stripe-directory",
       "name": "stripe-directory",
+      "display_name": {
+        "fr": "Annuaire de prestataires Stripe",
+        "en": "Stripe provider directory"
+      },
       "publisher": "Stripe",
       "official": true,
       "host_tool": "stripe",
@@ -8579,6 +9307,18 @@
         "fr": "Identifier un prestataire et la façon de le payer ou de s'y intégrer.",
         "en": "Identify a provider and how to pay or integrate with it."
       },
+      "use_case": {
+        "fr": "Identifie un prestataire ou un service externe, et la façon documentée de le payer, le réserver ou l'intégrer, par exemple un hébergement, un CRM ou une base de données.",
+        "en": "Identifies an outside provider or service and the documented way to pay, book or integrate with it, for example hosting, a CRM or a database."
+      },
+      "example": {
+        "fr": "Trouve un CRM adapté à un freelance et dis-moi comment m'y abonner.",
+        "en": "Find a CRM suited to a freelancer and tell me how to subscribe to it."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Stripe pour Claude Code et Cursor : trouve un prestataire et comment le payer ou l'intégrer. S'ajoute en une commande. Serveur : Stripe MCP.",
+        "en": "Official Stripe skill for Claude Code and Cursor: identifies a provider and how to pay or integrate with it. Added with one command. Server: Stripe MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -8603,18 +9343,27 @@
         "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
         "en": "A compatible coding agent; the Stripe MCP server for live account data."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://docs.stripe.com/skills.md",
       "sources": [
         {
           "label": "Stripe — skills",
           "url": "https://docs.stripe.com/skills.md"
+        },
+        {
+          "label": "Stripe — source consultée",
+          "url": "https://docs.stripe.com/.well-known/skills/index.json"
         }
-      ]
+      ],
+      "host_name": "Stripe"
     },
     {
       "slug": "stripe-docs",
       "name": "stripe-docs",
+      "display_name": {
+        "fr": "Documentation Stripe",
+        "en": "Stripe documentation"
+      },
       "publisher": "Stripe",
       "official": true,
       "host_tool": "stripe",
@@ -8624,6 +9373,18 @@
         "fr": "Lire et chercher dans la documentation Stripe.",
         "en": "Read and search Stripe documentation."
       },
+      "use_case": {
+        "fr": "Lit, cherche et consulte la documentation et la référence API de Stripe, y compris les pages réservées, à la place de curl ou de WebFetch.",
+        "en": "Reads, searches and looks up Stripe documentation and API reference, including gated pages, instead of curl or WebFetch."
+      },
+      "example": {
+        "fr": "Explique-moi comment rembourser partiellement un paiement, d'après la documentation Stripe.",
+        "en": "Explain how to partially refund a payment, according to the Stripe documentation."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Stripe pour Claude Code et Cursor : consulte la documentation et la référence API de Stripe. S'ajoute en une commande. Serveur : Stripe MCP.",
+        "en": "Official Stripe skill for Claude Code and Cursor: looks up Stripe docs and API reference. Added with one command. Server: Stripe MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -8648,18 +9409,27 @@
         "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
         "en": "A compatible coding agent; the Stripe MCP server for live account data."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://docs.stripe.com/skills.md",
       "sources": [
         {
           "label": "Stripe — skills",
           "url": "https://docs.stripe.com/skills.md"
+        },
+        {
+          "label": "Stripe — source consultée",
+          "url": "https://docs.stripe.com/.well-known/skills/index.json"
         }
-      ]
+      ],
+      "host_name": "Stripe"
     },
     {
       "slug": "stripe-implementation-planner",
       "name": "stripe-implementation-planner",
+      "display_name": {
+        "fr": "Planification d'intégration Stripe",
+        "en": "Stripe integration planning"
+      },
       "publisher": "Stripe",
       "official": true,
       "host_tool": "stripe",
@@ -8669,6 +9439,18 @@
         "fr": "Planifier le choix des produits Stripe et l'architecture d'intégration.",
         "en": "Plan Stripe product choice and integration architecture."
       },
+      "use_case": {
+        "fr": "Prépare le choix des produits Stripe et l'architecture d'intégration, pour une première mise en place ou une extension importante, selon votre modèle économique.",
+        "en": "Plans Stripe product choice and integration architecture for a first setup or a major expansion, based on your business model."
+      },
+      "example": {
+        "fr": "Je vends des abonnements en France et à l'étranger : quels produits Stripe et quelle architecture ?",
+        "en": "I sell subscriptions in France and abroad: which Stripe products and architecture?"
+      },
+      "meta_description": {
+        "fr": "Skill officiel Stripe pour Claude Code et Cursor : planifie produits et architecture d'intégration Stripe. S'ajoute en une commande. Serveur : Stripe MCP.",
+        "en": "Official Stripe skill for Claude Code and Cursor: plans Stripe products and integration architecture. Added with one command. Server: Stripe MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -8693,18 +9475,27 @@
         "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
         "en": "A compatible coding agent; the Stripe MCP server for live account data."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://docs.stripe.com/skills.md",
       "sources": [
         {
           "label": "Stripe — skills",
           "url": "https://docs.stripe.com/skills.md"
+        },
+        {
+          "label": "Stripe — source consultée",
+          "url": "https://docs.stripe.com/.well-known/skills/index.json"
         }
-      ]
+      ],
+      "host_name": "Stripe"
     },
     {
       "slug": "stripe-pay",
       "name": "stripe-pay",
+      "display_name": {
+        "fr": "Payer une entreprise Stripe",
+        "en": "Pay a Stripe business"
+      },
       "publisher": "Stripe",
       "official": true,
       "host_tool": "stripe",
@@ -8714,6 +9505,18 @@
         "fr": "Envoyer des fonds à une autre entreprise Stripe.",
         "en": "Send funds to another Stripe business."
       },
+      "use_case": {
+        "fr": "Aide à envoyer des fonds à une autre entreprise Stripe, ou à un identifiant de profil Stripe, et à vérifier qu'un agent peut payer une entreprise Stripe.",
+        "en": "Helps send funds to another Stripe business or Stripe Profile handle, and checks whether an agent can pay a Stripe business."
+      },
+      "example": {
+        "fr": "Puis-je payer cette entreprise Stripe depuis mon agent ?",
+        "en": "Can my agent pay this Stripe business?"
+      },
+      "meta_description": {
+        "fr": "Skill officiel Stripe pour Claude Code et Cursor : envoie des fonds à une entreprise Stripe. S'ajoute en une commande. Serveur : Stripe MCP.",
+        "en": "Official Stripe skill for Claude Code and Cursor: sends funds to a Stripe business. Added with one command. Server: Stripe MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -8738,18 +9541,27 @@
         "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
         "en": "A compatible coding agent; the Stripe MCP server for live account data."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://docs.stripe.com/skills.md",
       "sources": [
         {
           "label": "Stripe — skills",
           "url": "https://docs.stripe.com/skills.md"
+        },
+        {
+          "label": "Stripe — source consultée",
+          "url": "https://docs.stripe.com/.well-known/skills/index.json"
         }
-      ]
+      ],
+      "host_name": "Stripe"
     },
     {
       "slug": "stripe-projects",
       "name": "stripe-projects",
+      "display_name": {
+        "fr": "Services via Stripe Projects",
+        "en": "Services through Stripe Projects"
+      },
       "publisher": "Stripe",
       "official": true,
       "host_tool": "stripe",
@@ -8759,6 +9571,18 @@
         "fr": "Provisionner des services tiers avec Stripe Projects.",
         "en": "Provision third-party services with Stripe Projects."
       },
+      "use_case": {
+        "fr": "Provisionne une infrastructure ou des services tiers (base de données, authentification, hébergement, e-mail) via Stripe Projects, après consultation du catalogue.",
+        "en": "Provisions infrastructure or third-party services (database, auth, hosting, email) through Stripe Projects, after checking the catalogue."
+      },
+      "example": {
+        "fr": "J'ai besoin d'une base de données Postgres pour mon projet : propose un service et mets-le en place.",
+        "en": "I need a Postgres database for my project: suggest a service and set it up."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Stripe pour Claude Code et Cursor : provisionne bases de données, hébergement, services tiers. En une commande. Serveur : Stripe MCP.",
+        "en": "Official Stripe skill for Claude Code and Cursor: provisions databases, hosting and third-party services. Added with one command. Server: Stripe MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -8783,18 +9607,27 @@
         "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
         "en": "A compatible coding agent; the Stripe MCP server for live account data."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://docs.stripe.com/skills.md",
       "sources": [
         {
           "label": "Stripe — skills",
           "url": "https://docs.stripe.com/skills.md"
+        },
+        {
+          "label": "Stripe — source consultée",
+          "url": "https://docs.stripe.com/.well-known/skills/index.json"
         }
-      ]
+      ],
+      "host_name": "Stripe"
     },
     {
       "slug": "upgrade-stripe",
       "name": "upgrade-stripe",
+      "display_name": {
+        "fr": "Mise à niveau Stripe",
+        "en": "Stripe upgrades"
+      },
       "publisher": "Stripe",
       "official": true,
       "host_tool": "stripe",
@@ -8804,6 +9637,18 @@
         "fr": "Guider la mise à jour des versions d'API, webhooks et SDK.",
         "en": "Guide upgrades of API versions, webhooks and SDKs."
       },
+      "use_case": {
+        "fr": "Guide la mise à niveau des versions d'API Stripe, des endpoints de webhook, des SDK serveur, de Stripe.js et des SDK mobiles.",
+        "en": "Guides upgrades of Stripe API versions, webhook endpoints, server SDKs, Stripe.js and mobile SDKs."
+      },
+      "example": {
+        "fr": "Mets mon intégration Stripe à la dernière version d'API et liste ce qui change.",
+        "en": "Upgrade my Stripe integration to the latest API version and list what changes."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Stripe pour Claude Code et Cursor : guide la mise à niveau d'API, webhooks et SDK. S'ajoute en une commande. Serveur : Stripe MCP.",
+        "en": "Official Stripe skill for Claude Code and Cursor: guides upgrades of API versions, webhooks and SDKs. Added with one command. Server: Stripe MCP."
+      },
       "agents": [
         "claude-code",
         "Codex",
@@ -8828,14 +9673,19 @@
         "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
         "en": "A compatible coding agent; the Stripe MCP server for live account data."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://docs.stripe.com/skills.md",
       "sources": [
         {
           "label": "Stripe — skills",
           "url": "https://docs.stripe.com/skills.md"
+        },
+        {
+          "label": "Stripe — source consultée",
+          "url": "https://docs.stripe.com/.well-known/skills/index.json"
         }
-      ]
+      ],
+      "host_name": "Stripe"
     },
     {
       "slug": "webflow-asset-audit",
@@ -8849,6 +9699,18 @@
         "fr": "Vérifier textes alternatifs et noms de fichiers pour le référencement.",
         "en": "Check alt text and file names for SEO."
       },
+      "use_case": {
+        "fr": "Repère les images sans texte alternatif ou aux noms peu adaptés au SEO, puis propose et applique des corrections.",
+        "en": "Finds images with no alt text or with names unfriendly to SEO, then proposes and applies fixes."
+      },
+      "example": {
+        "fr": "Repère les images de mon site sans texte alternatif et propose une description pour chacune.",
+        "en": "Find images on my site with no alt text and suggest a description for each."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : repère les images sans texte alternatif ou mal nommées. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: finds images with no alt text or poor file names. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -8875,14 +9737,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-cli-troubleshooter",
@@ -8896,6 +9759,18 @@
         "fr": "Dépanner la ligne de commande Webflow.",
         "en": "Troubleshoot the Webflow CLI."
       },
+      "use_case": {
+        "fr": "Diagnostique et aide à résoudre les problèmes de la CLI Webflow.",
+        "en": "Diagnoses and helps fix problems with the Webflow CLI."
+      },
+      "example": {
+        "fr": "Ma commande Webflow CLI échoue au démarrage, aide-moi à trouver pourquoi.",
+        "en": "My Webflow CLI command fails on startup, help me find out why."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : diagnostique les problèmes de la CLI Webflow. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: diagnoses and helps fix Webflow CLI problems. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -8922,14 +9797,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-cloud-commands",
@@ -8943,6 +9819,18 @@
         "fr": "Utiliser les commandes Webflow Cloud.",
         "en": "Use Webflow Cloud commands."
       },
+      "use_case": {
+        "fr": "Crée un projet à partir d'un modèle et le déploie sur Webflow Cloud.",
+        "en": "Creates a project from a template and deploys it to Webflow Cloud."
+      },
+      "example": {
+        "fr": "Crée un projet Webflow Cloud à partir d'un modèle et déploie-le.",
+        "en": "Create a Webflow Cloud project from a template and deploy it."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : crée un projet depuis un modèle et le déploie sur Webflow Cloud. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: creates a project from a template and deploys to Webflow Cloud. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -8969,14 +9857,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-cms-best-practices",
@@ -8990,6 +9879,18 @@
         "fr": "Conseiller l'architecture du CMS.",
         "en": "Advise on CMS architecture."
       },
+      "use_case": {
+        "fr": "Conseille sur l'architecture du CMS : relations entre collections, structure des contenus et dépannage.",
+        "en": "Advises on CMS architecture: relations between collections, content structure and troubleshooting."
+      },
+      "example": {
+        "fr": "Comment organiser mes collections CMS pour des projets, des clients et des articles liés entre eux ?",
+        "en": "How should I organise my CMS collections for projects, clients and linked articles?"
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : conseille sur l'architecture et les relations du CMS. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: advises on CMS architecture and relationships. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9016,14 +9917,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-cms-collection-setup",
@@ -9037,6 +9939,18 @@
         "fr": "Créer des collections avec leurs champs et relations.",
         "en": "Create collections with their fields and relationships."
       },
+      "use_case": {
+        "fr": "Crée une nouvelle collection CMS avec les champs et les relations que vous indiquez.",
+        "en": "Creates a new CMS collection with the fields and relationships you specify."
+      },
+      "example": {
+        "fr": "Crée une collection Clients avec nom, e-mail, tarif horaire et lien vers les projets.",
+        "en": "Create a Clients collection with name, email, hourly rate and a link to projects."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : crée une collection CMS avec ses champs et relations. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: creates a CMS collection with its fields and relations. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9063,14 +9977,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-code-component-deployment-guide",
@@ -9084,6 +9999,18 @@
         "fr": "Guider le déploiement d'un Code Component.",
         "en": "Guide a Code Component deployment."
       },
+      "use_case": {
+        "fr": "Guide pas à pas pour déployer une bibliothèque de composants sur Webflow.",
+        "en": "Walks you step by step through deploying a component library to Webflow."
+      },
+      "example": {
+        "fr": "Explique-moi comment déployer ma bibliothèque de composants sur Webflow.",
+        "en": "Explain how to deploy my component library to Webflow."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : guide le déploiement d'une bibliothèque de composants. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: guides the deployment of a component library. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9110,14 +10037,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-code-component-dev-environment",
@@ -9131,6 +10059,18 @@
         "fr": "Préparer l'environnement de développement.",
         "en": "Set up the development environment."
       },
+      "use_case": {
+        "fr": "Prépare un projet de Code Components vierge, avec son environnement de développement.",
+        "en": "Sets up a new Code Components project from scratch, with its development environment."
+      },
+      "example": {
+        "fr": "Prépare un projet de Code Components neuf pour mon site Webflow.",
+        "en": "Set up a new Code Components project for my Webflow site."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : prépare un projet Code Components vierge. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: sets up a blank Code Components project. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9157,14 +10097,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-code-components",
@@ -9178,6 +10119,18 @@
         "fr": "Travailler avec les Code Components.",
         "en": "Work with Code Components."
       },
+      "use_case": {
+        "fr": "Crée, compile et déploie des composants React dans le Designer Webflow, avec la CLI Webflow.",
+        "en": "Creates, builds and deploys React components to the Webflow Designer, using the Webflow CLI."
+      },
+      "example": {
+        "fr": "Crée un composant React de bouton et déploie-le dans le Designer Webflow.",
+        "en": "Create a React button component and deploy it to the Webflow Designer."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : crée, compile et déploie des composants React dans le Designer. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: creates, builds and deploys React components to the Designer. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9204,14 +10157,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-component-scaffold",
@@ -9225,6 +10179,18 @@
         "fr": "Créer la base d'un nouveau composant.",
         "en": "Scaffold a new component."
       },
+      "use_case": {
+        "fr": "Génère l'arborescence d'un Code Component, son composant React et son fichier de définition .webflow.tsx.",
+        "en": "Generates a Code Component's file structure, its React component and its .webflow.tsx definition file."
+      },
+      "example": {
+        "fr": "Crée la structure d'un nouveau composant carte de témoignage.",
+        "en": "Create the structure for a new testimonial card component."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : génère la structure d'un Code Component. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: generates the structure of a Code Component. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9251,14 +10217,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-convert-component",
@@ -9272,6 +10239,18 @@
         "fr": "Convertir un composant existant.",
         "en": "Convert an existing component."
       },
+      "use_case": {
+        "fr": "Transforme un composant React existant en Code Component Webflow.",
+        "en": "Turns an existing React component into a Webflow Code Component."
+      },
+      "example": {
+        "fr": "Transforme mon composant React Carte projet en Code Component.",
+        "en": "Turn my React ProjectCard component into a Code Component."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : transforme un composant React en Code Component. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: turns a React component into a Code Component. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9298,14 +10277,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-custom-code-management",
@@ -9319,6 +10299,18 @@
         "fr": "Gérer les scripts personnalisés du site.",
         "en": "Manage the site's custom scripts."
       },
+      "use_case": {
+        "fr": "Ajoute, relit ou retire des scripts personnalisés en ligne, de 10 000 caractères au maximum.",
+        "en": "Adds, reviews or removes inline custom scripts of up to 10,000 characters."
+      },
+      "example": {
+        "fr": "Liste les scripts personnalisés actuellement présents sur mon site.",
+        "en": "List the custom scripts currently on my site."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : ajoute, relit ou retire les scripts personnalisés du site. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: adds, reviews or removes custom site scripts. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9345,14 +10337,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-designer-extensions",
@@ -9366,6 +10359,18 @@
         "fr": "Travailler sur des extensions du Designer.",
         "en": "Work on Designer extensions."
       },
+      "use_case": {
+        "fr": "Crée et développe des extensions pour le Designer Webflow, avec serveur de développement local et compilation.",
+        "en": "Creates and develops Designer Extensions, with a local dev server and bundling."
+      },
+      "example": {
+        "fr": "Crée une extension Designer qui affiche une liste de contrôle dans le panneau.",
+        "en": "Create a Designer extension that shows a checklist in the panel."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : crée et développe des extensions du Designer. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: creates and develops Designer extensions. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9392,14 +10397,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-devlink-commands",
@@ -9413,6 +10419,18 @@
         "fr": "Utiliser les commandes DevLink.",
         "en": "Use DevLink commands."
       },
+      "use_case": {
+        "fr": "Exporte des composants du Designer vers du code React ou Next.js.",
+        "en": "Exports Designer components as React or Next.js code."
+      },
+      "example": {
+        "fr": "Exporte le composant En-tête de mon Designer en code React.",
+        "en": "Export my Designer header component as React code."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : exporte des composants du Designer en code React ou Next.js. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: exports Designer components as React or Next.js code. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9439,14 +10457,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-flowkit-naming",
@@ -9460,6 +10479,18 @@
         "fr": "Appliquer les conventions de nommage CSS Flowkit.",
         "en": "Apply Flowkit CSS naming conventions."
       },
+      "use_case": {
+        "fr": "Applique les conventions de nommage CSS Flowkit, ou vérifie que les noms de classes les respectent.",
+        "en": "Applies Flowkit CSS naming conventions, or checks that class names follow them."
+      },
+      "example": {
+        "fr": "Vérifie que les noms de classes CSS de mon site suivent les conventions Flowkit.",
+        "en": "Check that my site's CSS class names follow the Flowkit conventions."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : applique ou vérifie les noms de classes Flowkit. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: applies or checks Flowkit class naming. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9486,14 +10517,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-link-checker",
@@ -9507,6 +10539,18 @@
         "fr": "Trouver les liens cassés ou non sécurisés, CMS compris.",
         "en": "Find broken or insecure links, CMS included."
       },
+      "use_case": {
+        "fr": "Repère et corrige les liens cassés ou non sécurisés du site, y compris dans le contenu du CMS.",
+        "en": "Finds and fixes broken or insecure links across the site, including CMS content."
+      },
+      "example": {
+        "fr": "Trouve les liens cassés de mon site, y compris dans mes articles du CMS, et corrige-les.",
+        "en": "Find broken links on my site, including in my CMS articles, and fix them."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : trouve et corrige les liens cassés ou non sécurisés. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: finds and fixes broken or insecure links. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9533,14 +10577,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-safe-publish",
@@ -9554,6 +10599,18 @@
         "fr": "Préparer, faire confirmer puis publier le site.",
         "en": "Plan, confirm, then publish the site."
       },
+      "use_case": {
+        "fr": "Publie le site en trois temps : plan, confirmation, publication, avec aperçu des modifications et contrôles préalables.",
+        "en": "Publishes the site in three steps: plan, confirm, publish, with a preview of changes and checks beforehand."
+      },
+      "example": {
+        "fr": "Prépare la publication de mon site, montre les changements et attends ma confirmation avant de publier.",
+        "en": "Prepare my site's publication, show the changes and wait for my confirmation before publishing."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : publie le site en plan, confirmation, puis publication. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: publishes the site in plan, confirm, publish steps. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9580,14 +10637,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-site-activity-log",
@@ -9601,6 +10659,18 @@
         "fr": "Résumer le journal d'activité du site (Enterprise).",
         "en": "Summarise the site activity log (Enterprise)."
       },
+      "use_case": {
+        "fr": "Résume le journal d'activité du site et le filtre par utilisateur, période ou type d'événement. Réservé au forfait Enterprise.",
+        "en": "Summarises the site activity log and filters it by user, time range or event type. Requires the Enterprise plan."
+      },
+      "example": {
+        "fr": "Résume les modifications faites sur mon site la semaine dernière, par utilisateur.",
+        "en": "Summarise last week's changes on my site, by user."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : résume le journal d'activité du site, réservé à Enterprise. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: summarises the site activity log, Enterprise plan only. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9627,14 +10697,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-troubleshoot-code-component-deployment",
@@ -9648,6 +10719,18 @@
         "fr": "Dépanner un déploiement de Code Component.",
         "en": "Troubleshoot a Code Component deployment."
       },
+      "use_case": {
+        "fr": "Cherche les causes d'un échec de déploiement de Code Component et aide à le corriger.",
+        "en": "Looks for the causes of a failed Code Component deployment and helps fix them."
+      },
+      "example": {
+        "fr": "Mon Code Component ne se déploie plus, aide-moi à trouver pourquoi.",
+        "en": "My Code Component no longer deploys, help me find out why."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : cherche les causes d'un échec de déploiement de Code Component. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: looks for the causes of a failed Code Component deployment. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9674,14 +10757,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "webflow-validate-code-components",
@@ -9695,6 +10779,18 @@
         "fr": "Vérifier des Code Components.",
         "en": "Validate Code Components."
       },
+      "use_case": {
+        "fr": "Vérifie les composants avant déploiement et signale les problèmes à corriger.",
+        "en": "Checks components for problems before deployment and flags what to fix."
+      },
+      "example": {
+        "fr": "Vérifie mes composants avant de les déployer sur Webflow.",
+        "en": "Check my components before deploying them to Webflow."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Webflow pour Claude Code : vérifie les Code Components avant déploiement. S'ajoute en une commande. Serveur : Webflow MCP.",
+        "en": "Official Webflow skill for Claude Code: checks Code Components before deployment. Added with one command. Server: Webflow MCP."
+      },
       "agents": [
         "claude",
         "claude-code",
@@ -9721,14 +10817,15 @@
         "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
         "en": "An agent that supports skills, with the Webflow MCP server configured."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://developers.webflow.com/mcp/reference/skills",
       "sources": [
         {
           "label": "Webflow — skills",
           "url": "https://developers.webflow.com/mcp/reference/skills"
         }
-      ]
+      ],
+      "host_name": "Webflow"
     },
     {
       "slug": "zapier-build-workflows",
@@ -9757,7 +10854,8 @@
           "label": "Zapier — skills",
           "url": "https://docs.zapier.com/mcp/manage/skills"
         }
-      ]
+      ],
+      "host_name": "Zapier"
     },
     {
       "slug": "zapier-onboarding",
@@ -9771,6 +10869,18 @@
         "fr": "Faire découvrir Zapier MCP avec un premier enchaînement entre vos applications.",
         "en": "Introduce Zapier MCP with a first workflow across your apps."
       },
+      "use_case": {
+        "fr": "Présente Zapier MCP et lit vos applications connectées pour vous montrer un premier workflow exemple lors de la mise en route.",
+        "en": "Introduces Zapier MCP and reads your connected apps to show you a sample workflow when you first connect."
+      },
+      "example": {
+        "fr": "Montre-moi un premier workflow exemple avec les applications que j'ai connectées.",
+        "en": "Show me a sample workflow using the apps I have connected."
+      },
+      "meta_description": {
+        "fr": "Skill officiel Zapier pour tout assistant connecté : présente Zapier MCP et un premier workflow exemple. Sans installation. Serveur : Zapier MCP.",
+        "en": "Official Zapier skill for any connected assistant: introduces Zapier MCP with a sample workflow. No install needed. Server: Zapier MCP."
+      },
       "agents": [
         "any"
       ],
@@ -9779,14 +10889,15 @@
         "fr": "Zapier MCP connecté ; les skills sont fournies sur chaque serveur.",
         "en": "Zapier MCP connected; the skills ship on every server."
       },
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-18",
       "docs_url": "https://docs.zapier.com/mcp/manage/skills",
       "sources": [
         {
           "label": "Zapier — skills",
           "url": "https://docs.zapier.com/mcp/manage/skills"
         }
-      ]
+      ],
+      "host_name": "Zapier"
     }
   ]
 }

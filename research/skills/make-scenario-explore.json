@@ -10,6 +10,18 @@
     "fr": "Explorer les scénarios existants.",
     "en": "Explore existing scenarios."
   },
+  "use_case": {
+    "fr": "Aide à s'orienter dans un compte Make : organisations, équipes, liste des scénarios, explication de ce que fait un scénario, état des connexions.",
+    "en": "Helps you find your way in a Make account: organisations, teams, scenario list, what a scenario does, connection health."
+  },
+  "example": {
+    "fr": "Liste mes scénarios Make et dis-moi ce que fait chacun.",
+    "en": "List my Make scenarios and tell me what each one does."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Make pour Claude Code et Cursor : aide à s'orienter dans un compte Make et ses scénarios. S'ajoute en une commande. Serveur : Make MCP.",
+    "en": "Official Make skill for Claude Code and Cursor: helps you navigate a Make account and its scenarios. Added with one command. Server: Make MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -35,12 +47,16 @@
     "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
     "en": "A Make account; a paid Make plan for management scopes."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://skills.make.com/",
   "sources": [
     {
       "label": "Make — skills",
       "url": "https://skills.make.com/"
+    },
+    {
+      "label": "Make — source consultée",
+      "url": "https://github.com/integromat/make-skills"
     }
   ]
 }

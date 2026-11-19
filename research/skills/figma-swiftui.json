@@ -1,6 +1,10 @@
 {
   "slug": "figma-swiftui",
   "name": "figma-swiftui",
+  "display_name": {
+    "fr": "Figma vers SwiftUI",
+    "en": "Figma to SwiftUI"
+  },
   "publisher": "Figma",
   "official": true,
   "host_tool": "figma",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Passer d'un design Figma à du SwiftUI, et inversement.",
     "en": "Go from a Figma design to SwiftUI, and back."
+  },
+  "use_case": {
+    "fr": "Traduit une maquette Figma en code SwiftUI, et des vues SwiftUI vers Figma.",
+    "en": "Translates a Figma design into SwiftUI code, and SwiftUI views back into Figma."
+  },
+  "example": {
+    "fr": "Génère la vue SwiftUI de cet écran Figma.",
+    "en": "Generate the SwiftUI view for this Figma screen."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Figma pour Claude Code et Cursor : traduit une maquette Figma en SwiftUI, et l'inverse. Inclus avec le plugin Figma. Serveur : Figma MCP.",
+    "en": "Official Figma skill for Claude Code and Cursor: translates a Figma design to SwiftUI and back. Included with the Figma plugin. Server: Figma MCP."
   },
   "agents": [
     "claude-code",
@@ -19,7 +35,10 @@
     {
       "client": "any",
       "type": "steps",
-      "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      "value": {
+        "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+        "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      }
     },
     {
       "client": "any",
@@ -31,7 +50,7 @@
     "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
     "en": "Figma remote server; edit access to the file to write."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
   "sources": [
     {

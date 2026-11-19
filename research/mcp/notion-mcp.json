@@ -13,6 +13,10 @@
     "fr": "Retrouver, résumer et créer des pages dans Notion.",
     "en": "Find, summarise and create pages in Notion."
   },
+  "meta_description": {
+    "fr": "Brancher Notion à Claude, ChatGPT ou Gemini : retrouver vos notes, résumer vos réunions, créer des pages. Tous les forfaits ; ce qu'il peut effacer.",
+    "en": "Connect Notion to Claude, ChatGPT or Gemini: find your notes, summarise meetings, create pages. Every plan; what it can edit and delete, and how to set up."
+  },
   "examples": [
     {
       "fr": "Résume mes notes de réunion de cette semaine et liste les actions à faire.",
@@ -587,7 +591,10 @@
     {
       "client": "claude",
       "type": "steps",
-      "value": "Search \"Notion\" in the assistant's connector or plugin library and authorize."
+      "value": {
+        "fr": "Cherchez « Notion » dans la bibliothèque de connecteurs ou de plugins de l'assistant, puis autorisez l'accès.",
+        "en": "Search \"Notion\" in the assistant's connector or plugin library and authorize."
+      }
     },
     {
       "client": "claude-code",

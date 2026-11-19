@@ -10,6 +10,18 @@
     "fr": "Construire un scénario : structure, modules, connexions.",
     "en": "Build a scenario: structure, modules, connections."
   },
+  "use_case": {
+    "fr": "Crée et modifie des scénarios Make : choix des applications et modules, connexions, contrôle du flux, gestion des erreurs, sous-scénarios et agents IA.",
+    "en": "Creates and edits Make scenarios: choosing apps and modules, connections, flow control, error handling, subscenarios and AI agents."
+  },
+  "example": {
+    "fr": "Crée un scénario qui envoie un e-mail à chaque nouveau client ajouté à ma base.",
+    "en": "Create a scenario that sends an email for each new client added to my database."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Make pour Claude Code et Cursor : crée et modifie des scénarios, connexions et modules. S'ajoute en une commande. Serveur : Make MCP.",
+    "en": "Official Make skill for Claude Code and Cursor: creates and edits scenarios, connections and modules. Added with one command. Server: Make MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -35,12 +47,16 @@
     "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
     "en": "A Make account; a paid Make plan for management scopes."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://skills.make.com/",
   "sources": [
     {
       "label": "Make — skills",
       "url": "https://skills.make.com/"
+    },
+    {
+      "label": "Make — source consultée",
+      "url": "https://github.com/integromat/make-skills"
     }
   ]
 }

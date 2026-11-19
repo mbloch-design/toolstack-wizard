@@ -14,9 +14,12 @@ import { AgentRowNote } from "@/ds/AgentHub/AgentHub";
 import { CatalogSection } from "@/ds/Catalog/Catalog";
 import { ToolRow, ToolRows } from "@/ds/ToolSheet/ToolSheet";
 import { Plug } from "@/lib/icons";
-import { setSeoTags, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { applyAgentsSeo, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { AGENT_SHEET_JSONLD_ID, serverSeo, skillSeo } from "@/lib/agentsSeo";
+import { atoms } from "@/ds/atoms";
+import { LinkArrow, linkClass } from "@/ds/Button/Button";
 import catalog from "@/data/agents/catalog.json";
-import { cardLine, cardSentence, clientName, forEveryone, say, serverName, skillFoot, type Lang, type McpSheet, type SkillSheet } from "@/lib/agents";
+import { cardLine, skillTitle, cardSentence, clientName, forEveryone, say, serverName, skillFoot, type Lang, type McpSheet, type SkillSheet } from "@/lib/agents";
 import NotFound from "@/pages/NotFound";
 import { useAgentAssistant } from "@/hooks/useAgentAssistant";
 import { serverFoot } from "@/lib/agentReport";
@@ -43,24 +46,16 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
   const host = sheet ? tools.find((tool) => (tool.slug || tool.id) === sheet.host_tool) : undefined;
   const hostName = host?.name ?? sheet?.publisher ?? "";
 
+  // Title, description, og:image and JSON-LD from src/lib/agentsSeo.ts, as the prerender wrote them (step 9).
+  const hasSibling = !!server && SERVERS.some((s) => s.host_tool === server.host_tool && s.slug !== server.slug);
+  const seo = server ? serverSeo(server, lang, hasSibling) : skill ? skillSeo(skill, lang) : undefined;
   useEffect(() => {
-    if (!sheet) return;
-    const title = kind === "mcp"
-      ? t(`Brancher ${hostName} à votre assistant IA : ${sheet.name}, serveur MCP officiel`, `Plug ${hostName} into your AI assistant: ${sheet.name}, official MCP server`)
-      : t(`${sheet.name} : skill officiel de ${sheet.publisher} pour votre assistant IA`, `${sheet.name}: ${sheet.publisher}'s official skill for your AI assistant`);
-    const description = say(lang, sheet.summary);
-    const url = `${SEO_BASE}${prefix}/${kind === "mcp" ? "mcp" : "skills"}/${sheet.slug}`;
-    setSeoTags({ title: `${title} | ToolTrim`, description, url });
-    setJsonLd("agent-sheet-jsonld", {
-      "@context": "https://schema.org", "@type": "SoftwareApplication", name: sheet.name, description, url,
-      applicationCategory: kind === "mcp" ? "MCP server" : "Agent skill", publisher: { "@type": "Organization", name: sheet.publisher },
-      dateModified: sheet.verified_on,
-    });
-    return () => cleanupSeo(["agent-sheet-jsonld"]);
-  }, [sheet, kind, lang, prefix, t, hostName]);
+    if (!seo) return;
+    applyAgentsSeo(seo, AGENT_SHEET_JSONLD_ID, lang);
+    return () => cleanupSeo([AGENT_SHEET_JSONLD_ID]);
+  }, [seo?.url, lang]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!sheet) return <NotFound />;
-  const siblingCount = SERVERS.filter((s) => s.host_tool === sheet.host_tool && s.slug !== sheet.slug).length;
 
   const url = `${SEO_BASE}${prefix}/${kind === "mcp" ? "mcp" : "skills"}/${sheet.slug}`;
   const reportHref = `${prefix}/contact?subject=${encodeURIComponent(t(`Correction de fiche : ${sheet.name} (${url})`, `Page correction: ${sheet.name} (${url})`) as string)}`;
@@ -80,7 +75,7 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
       renderMain={(className, content) => <Link to={`${prefix}/mcp/${s.slug}`} className={className}>{content}</Link>} />
   );
   const skillCard = (k: SkillSheet) => (
-    <ToolRow key={k.slug} logo={rowLogo(k.host_tool)} name={k.name}
+    <ToolRow key={k.slug} logo={rowLogo(k.host_tool)} name={skillTitle(k, lang)}
       note={<AgentRowNote lang={lang} summary={cardLine(say(lang, k.summary))} meta={skillFoot(k, lang)[0]} />}
       renderMain={(className, content) => <Link to={`${prefix}/skills/${k.slug}`} className={className}>{content}</Link>} />
   );
@@ -111,13 +106,16 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
     const skillRelated = (k: SkillSheet) => {
       const tool = toolOf(k.host_tool);
       const reason = short(say(lang, k.summary));
-      return tool ? <MediaCard key={k.slug} size="s" lang={lang} tool={{ ...tool, name: k.name }} category={t("Savoir-faire", "Know-how") as string} {...(reason ? { reason } : {})}
+      return tool ? <MediaCard key={k.slug} size="s" lang={lang} tool={{ ...tool, name: skillTitle(k, lang) }} category={t("Savoir-faire", "Know-how") as string} {...(reason ? { reason } : {})}
         renderLink={(className, content) => <Link to={`${prefix}/skills/${k.slug}`} className={className}>{content}</Link>} /> : null;
     };
     const row = [toolRelated, ...alternatives.slice(0, 1).map(altRelated), ...(skills.length ? [skillRelated(skills[0])] : []),
       ...alternatives.slice(1).map(altRelated), ...siblings.map(altRelated)].filter(Boolean).slice(0, 3);
+    // The section around the sheet (step 9): the servers compared, and the guide.
     related = <CatalogSection as="h3" id="sheet-further-title" title={t("Pour aller plus loin", "Going further")}>
       <MediaCards size="s" label={t("Pour aller plus loin", "Going further") as string}>{row}</MediaCards>
+      <p className={atoms.text}><Link to={`${prefix}/mcp`} className={linkClass()}>{t(`Comparer les ${SERVERS.length} serveurs MCP officiels`, `Compare the ${SERVERS.length} official MCP servers`)}<LinkArrow shown /></Link></p>
+      <p className={atoms.text}><Link to={`${prefix}/guide/${lang === "en" ? "mcp-for-non-developer-freelancers" : "mcp-freelances-non-developpeurs"}`} className={linkClass()}>{t("Le guide pour bien commencer", "The guide to get started")}<LinkArrow shown /></Link></p>
     </CatalogSection>;
   } else if (skill) {
     const parent = SERVERS.find((s) => s.slug === skill.server);
@@ -134,11 +132,7 @@ const AgentSheetPage = ({ kind }: { kind: "mcp" | "skill" }) => {
 
   return (
     <Page>
-      <Breadcrumb includeSchema={false} items={[
-        { label: t("Outils pour l'IA", "Tools for AI") as string, href: `${prefix}/agents` },
-        kind === "mcp" ? { label: t("Outils à brancher", "Tools to plug in") as string, href: `${prefix}/mcp` } : { label: t("Savoir-faire", "Know-how") as string, href: `${prefix}/skills` },
-        { label: kind === "mcp" && siblingCount === 0 ? hostName : sheet.name },
-      ]} />
+      <Breadcrumb includeSchema={false} items={seo!.trail.map((step) => ({ label: step.label, ...(step.path ? { href: `${prefix}${step.path}` } : {}) }))} />
       {server
         ? <McpSheetView sheet={server} logo={host ? <Logo tool={host} size={40} /> : undefined} title={t(`Brancher ${hostName} à votre assistant`, `Plug ${hostName} into your assistant`) as string} toolName={hostName} lang={lang} pageUrl={url} reportHref={reportHref} related={related} />
         : <SkillSheetView skill={skill!} lang={lang} logo={host ? <Logo tool={host} size={40} /> : undefined} reportHref={reportHref} related={related} />}

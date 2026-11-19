@@ -10,6 +10,18 @@
     "fr": "Utiliser les fonctions Make.",
     "en": "Use Make functions."
   },
+  "use_case": {
+    "fr": "Écrit, teste, publie et fait fonctionner des Functions TypeScript de Make via la connexion Make MCP existante. Accès au déploiement Functions v2 requis.",
+    "en": "Writes, tests, publishes and runs TypeScript Functions in Make through the existing Make MCP connection. Requires Functions v2 rollout access."
+  },
+  "example": {
+    "fr": "Écris une Function TypeScript qui formate les dates, teste-la, puis publie-la.",
+    "en": "Write a TypeScript Function that formats dates, test it, then publish it."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Make pour Claude Code et Cursor : écrit, teste et publie des Functions TypeScript. S'ajoute en une commande. Serveur : Make MCP.",
+    "en": "Official Make skill for Claude Code and Cursor: writes, tests and publishes TypeScript Functions. Added with one command. Server: Make MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -35,12 +47,16 @@
     "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
     "en": "A Make account; a paid Make plan for management scopes."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://skills.make.com/",
   "sources": [
     {
       "label": "Make — skills",
       "url": "https://skills.make.com/"
+    },
+    {
+      "label": "Make — source consultée",
+      "url": "https://github.com/integromat/make-skills"
     }
   ]
 }

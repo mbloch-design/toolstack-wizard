@@ -43,11 +43,25 @@ for (const server of servers) for (const skill of skills.filter((k) => k.server 
   if (!(server.skills ?? []).includes(skill.slug)) errors.push(`${server.slug} : ne liste pas son skill ${skill.slug}`);
 }
 
+// Step 9 (19/11): the host tool's name and its social image travel with the sheet, so that the prerender and the page
+// write the same title, the same description and the same og:image (src/lib/agentsSeo.ts), without waiting for the catalogue.
+const hostName = (slug) => tools.find((t) => (t.slug || t.id) === slug)?.name;
+const OG_MAX_BYTES = 300 * 1024;
+const ogImage = (slug) => {
+  for (const [dir, exts] of [["og-images", ["jpg", "png", "webp"]], ["og-screenshots", ["jpg", "png"]]]) for (const ext of exts) {
+    const file = path.join(ROOT, "public", dir, `${slug}.${ext}`);
+    if (fs.existsSync(file) && fs.statSync(file).size <= OG_MAX_BYTES) return `/${dir}/${slug}.${ext}`;
+  }
+  return undefined;
+};
+const withHost = (sheet) => ({ ...sheet, ...(hostName(sheet.host_tool) ? { host_name: hostName(sheet.host_tool) } : {}),
+  ...(ogImage(sheet.host_tool) ? { og_image: ogImage(sheet.host_tool) } : {}) });
+
 const KINDS = ["read", "write", "delete", "send", "pay"];
 const ONE_CLICK = ["connector", "plugin"];
 const kindsOf = (s) => KINDS.filter((k) => (s.capabilities ?? []).some((c) => c.kind === k) || (s.tools ?? []).some((t) => t.kind === k));
 const mcpIndex = servers.map((s) => ({
-  slug: s.slug, name: s.name, publisher: s.publisher, host_tool: s.host_tool, category: s.category, summary: s.summary, ...(s.card ? { card: s.card } : {}),
+  slug: s.slug, name: s.name, publisher: s.publisher, host_tool: s.host_tool, ...(hostName(s.host_tool) ? { host_name: hostName(s.host_tool) } : {}), category: s.category, summary: s.summary, ...(s.card ? { card: s.card } : {}),
   ...(s.status ? { status: s.status } : {}), ...(s.transport ? { transport: s.transport } : {}), ...(s.auth ? { auth: s.auth } : {}),
   ...(s.access ? { access: s.access } : {}), plan: s.plan, kinds: kindsOf(s),
   // The risk said in words follows the capability lines shown on the sheet; the tools only when there are none.
@@ -58,7 +72,7 @@ const mcpIndex = servers.map((s) => ({
 }));
 const skillsIndex = skills.map((k) => ({
   slug: k.slug, name: k.name, publisher: k.publisher, host_tool: k.host_tool, server: k.server, category: k.category,
-  summary: k.summary, agents: k.agents, verified_on: k.verified_on,
+  summary: k.summary, agents: k.agents, verified_on: k.verified_on, ...(k.display_name ? { display_name: k.display_name } : {}),
   // Usable without a coding tool: nothing to install, it ships with the connected server (step 5, 17/11; forEveryone in src/lib/agents.ts).
   everyone: !(k.install ?? []).length,
 }));
@@ -86,7 +100,7 @@ const recipes = (recipesTable.recipes ?? []).map((recipe) => ({
 const outputs = {
   "src/data/agents/mcp_index.json": mcpIndex,
   "src/data/agents/skills_index.json": skillsIndex,
-  "src/data/agents/catalog.json": { servers, skills },
+  "src/data/agents/catalog.json": { servers: servers.map(withHost), skills: skills.map(withHost) },
   "src/data/agents/needs.json": needs,
   "src/data/agents/advice.json": advice,
   "src/data/agents/recipes.json": recipes,

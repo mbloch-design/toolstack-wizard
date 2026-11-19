@@ -10,6 +10,18 @@
     "fr": "Travailler avec les Code Components.",
     "en": "Work with Code Components."
   },
+  "use_case": {
+    "fr": "Crée, compile et déploie des composants React dans le Designer Webflow, avec la CLI Webflow.",
+    "en": "Creates, builds and deploys React components to the Webflow Designer, using the Webflow CLI."
+  },
+  "example": {
+    "fr": "Crée un composant React de bouton et déploie-le dans le Designer Webflow.",
+    "en": "Create a React button component and deploy it to the Webflow Designer."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : crée, compile et déploie des composants React dans le Designer. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: creates, builds and deploys React components to the Designer. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

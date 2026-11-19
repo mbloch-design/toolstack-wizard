@@ -10,6 +10,18 @@
     "fr": "Référence pour décrire un scénario Make.",
     "en": "Reference for describing a Make scenario."
   },
+  "use_case": {
+    "fr": "Rappelle les conventions communes à tous les outils Make, utiles quand un outil répond par une erreur 403 ou refuse une action.",
+    "en": "Explains the conventions shared by all Make tools, for when a tool returns a 403 or refuses an action."
+  },
+  "example": {
+    "fr": "Un outil Make me répond 403 : explique-moi pourquoi et quoi faire.",
+    "en": "A Make tool returns 403: explain why and what to do."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Make pour Claude Code et Cursor : rappelle les conventions Make, par exemple face à une 403. S'ajoute en une commande. Serveur : Make MCP.",
+    "en": "Official Make skill for Claude Code and Cursor: recalls Make conventions, e.g. for a 403 response. Added with one command. Server: Make MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -35,12 +47,16 @@
     "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
     "en": "A Make account; a paid Make plan for management scopes."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://skills.make.com/",
   "sources": [
     {
       "label": "Make — skills",
       "url": "https://skills.make.com/"
+    },
+    {
+      "label": "Make — source consultée",
+      "url": "https://github.com/integromat/make-skills"
     }
   ]
 }

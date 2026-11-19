@@ -1,6 +1,10 @@
 {
   "slug": "figma-create-new-file",
   "name": "figma-create-new-file",
+  "display_name": {
+    "fr": "Créer un fichier Figma vierge",
+    "en": "Create a blank Figma file"
+  },
   "publisher": "Figma",
   "official": true,
   "host_tool": "figma",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Créer un fichier Design ou FigJam vierge dans vos brouillons.",
     "en": "Create a blank Design or FigJam file in your drafts."
+  },
+  "use_case": {
+    "fr": "Crée un fichier de design ou un tableau FigJam vierge dans vos brouillons.",
+    "en": "Creates a blank design file or FigJam board in your drafts."
+  },
+  "example": {
+    "fr": "Crée dans mes brouillons un tableau FigJam vierge intitulé Atelier juin.",
+    "en": "Create a blank FigJam board named June workshop in my drafts."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Figma pour Claude Code et Cursor : crée un fichier Design ou FigJam vierge dans vos brouillons. Inclus au plugin Figma. Serveur : Figma MCP.",
+    "en": "Official Figma skill for Claude Code and Cursor: creates a blank Design or FigJam file in your drafts. Included with the Figma plugin. Server: Figma MCP."
   },
   "agents": [
     "claude-code",
@@ -19,7 +35,10 @@
     {
       "client": "any",
       "type": "steps",
-      "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      "value": {
+        "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+        "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      }
     },
     {
       "client": "any",
@@ -31,7 +50,7 @@
     "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
     "en": "Figma remote server; edit access to the file to write."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
   "sources": [
     {

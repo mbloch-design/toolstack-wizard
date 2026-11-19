@@ -138,3 +138,137 @@ tbody:first-of-type > .sectionRow > .section {
     padding: 0;
   }
 }
+
+/* The comparison table (step 9): the name as the row head, its logo before it; facts after it, marks centred. */
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.head[data-marks] {
+  padding-inline: var(--tt-space-2);
+  text-align: center;
+}
+
+.compareRow {
+  border-top: var(--tt-hairline-w) solid var(--tt-line);
+}
+
+.compareHead {
+  padding: var(--tt-space-3) var(--tt-space-6) var(--tt-space-3) 0;
+  font-weight: inherit;
+  text-align: start;
+  vertical-align: middle;
+}
+
+.compareTool {
+  display: flex;
+  gap: var(--tt-space-3);
+  align-items: center;
+}
+
+.compareName {
+  composes: label from "../atoms.module.css";
+}
+
+.compareCell {
+  composes: text from "../atoms.module.css";
+  padding: var(--tt-space-3) var(--tt-space-6) var(--tt-space-3) 0;
+  vertical-align: middle;
+}
+
+.compareCell[data-marks] {
+  padding-inline: var(--tt-space-2);
+  text-align: center;
+}
+
+.mark {
+  display: inline-grid;
+  place-items: center;
+  vertical-align: middle;
+  color: var(--tt-meta);
+}
+
+.mark[data-on] {
+  color: var(--tt-ink);
+}
+
+.mark svg {
+  width: var(--tt-icon-m);
+  height: var(--tt-icon-m);
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+/* A narrow column: each row is a block, its name on a line, then each fact under its column's name. */
+@container (max-width: 760px) {
+  .compare {
+    position: relative;
+    display: block;
+  }
+
+  .compare > tbody {
+    display: block;
+  }
+
+  .compare thead {
+    position: absolute;
+    inset-inline: 0;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* Its row keeps its own width out of sight: eight column names never widen the page. */
+  .compare thead tr {
+    position: absolute;
+  }
+
+  /* The marks share one line, their mark at the foot of the cell whatever the length of their name; the facts in words
+     take a line each, their name before them. */
+  .compareRow {
+    display: grid;
+    grid-template-columns: repeat(var(--marks), minmax(0, 1fr));
+    gap: var(--tt-space-3) var(--tt-space-2);
+    padding-block: var(--tt-space-4);
+  }
+
+  .compareHead {
+    grid-column: 1 / -1;
+    padding: 0;
+  }
+
+  .compareCell,
+  .compareCell[data-marks] {
+    display: grid;
+    align-content: start;
+    justify-items: start;
+    gap: var(--tt-space-1);
+    padding: 0;
+    text-align: start;
+  }
+
+  .compareCell[data-marks] {
+    grid-template-rows: 1fr auto;
+  }
+
+  .compareCell:not([data-marks]) {
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: var(--tt-space-2);
+  }
+
+  .compareCell::before {
+    content: attr(data-label);
+    color: var(--tt-meta);
+    font: var(--tt-note-font);
+    letter-spacing: var(--tt-note-tracking);
+  }
+}

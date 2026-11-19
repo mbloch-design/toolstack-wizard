@@ -10,6 +10,18 @@
     "fr": "Conseiller l'architecture du CMS.",
     "en": "Advise on CMS architecture."
   },
+  "use_case": {
+    "fr": "Conseille sur l'architecture du CMS : relations entre collections, structure des contenus et dépannage.",
+    "en": "Advises on CMS architecture: relations between collections, content structure and troubleshooting."
+  },
+  "example": {
+    "fr": "Comment organiser mes collections CMS pour des projets, des clients et des articles liés entre eux ?",
+    "en": "How should I organise my CMS collections for projects, clients and linked articles?"
+  },
+  "meta_description": {
+    "fr": "Skill officiel Webflow pour Claude Code : conseille sur l'architecture et les relations du CMS. S'ajoute en une commande. Serveur : Webflow MCP.",
+    "en": "Official Webflow skill for Claude Code: advises on CMS architecture and relationships. Added with one command. Server: Webflow MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -36,7 +48,7 @@
     "fr": "Un agent compatible avec les skills et le serveur MCP Webflow configuré.",
     "en": "An agent that supports skills, with the Webflow MCP server configured."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.webflow.com/mcp/reference/skills",
   "sources": [
     {

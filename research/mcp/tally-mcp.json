@@ -13,6 +13,10 @@
     "fr": "Créer un formulaire et lire ses réponses.",
     "en": "Create a form and read its answers."
   },
+  "meta_description": {
+    "fr": "Brancher Tally à Claude ou ChatGPT : créer un formulaire à partir d'une phrase, le publier et lire les réponses. Il ne supprime rien ; gratuit, en bêta.",
+    "en": "Connect Tally to Claude or ChatGPT: create a form from one sentence, publish it and read the submissions. It cannot delete anything; free, and in beta."
+  },
   "examples": [
     {
       "fr": "Crée un formulaire de demande de devis : nom, e-mail, budget et délai.",
@@ -149,7 +153,10 @@
     {
       "client": "claude",
       "type": "steps",
-      "value": "Claude > Customize → Connectors → Browse connectors; search 'Tally'; click Connect"
+      "value": {
+        "fr": "Claude > Personnaliser → Connecteurs → Parcourir les connecteurs ; cherchez « Tally » ; cliquez sur Connecter.",
+        "en": "Claude > Customize → Connectors → Browse connectors; search 'Tally'; click Connect"
+      }
     },
     {
       "client": "claude-code",

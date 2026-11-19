@@ -1,6 +1,10 @@
 {
   "slug": "stripe-docs",
   "name": "stripe-docs",
+  "display_name": {
+    "fr": "Documentation Stripe",
+    "en": "Stripe documentation"
+  },
   "publisher": "Stripe",
   "official": true,
   "host_tool": "stripe",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Lire et chercher dans la documentation Stripe.",
     "en": "Read and search Stripe documentation."
+  },
+  "use_case": {
+    "fr": "Lit, cherche et consulte la documentation et la référence API de Stripe, y compris les pages réservées, à la place de curl ou de WebFetch.",
+    "en": "Reads, searches and looks up Stripe documentation and API reference, including gated pages, instead of curl or WebFetch."
+  },
+  "example": {
+    "fr": "Explique-moi comment rembourser partiellement un paiement, d'après la documentation Stripe.",
+    "en": "Explain how to partially refund a payment, according to the Stripe documentation."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Stripe pour Claude Code et Cursor : consulte la documentation et la référence API de Stripe. S'ajoute en une commande. Serveur : Stripe MCP.",
+    "en": "Official Stripe skill for Claude Code and Cursor: looks up Stripe docs and API reference. Added with one command. Server: Stripe MCP."
   },
   "agents": [
     "claude-code",
@@ -34,12 +50,16 @@
     "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
     "en": "A compatible coding agent; the Stripe MCP server for live account data."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://docs.stripe.com/skills.md",
   "sources": [
     {
       "label": "Stripe — skills",
       "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Stripe — source consultée",
+      "url": "https://docs.stripe.com/.well-known/skills/index.json"
     }
   ]
 }

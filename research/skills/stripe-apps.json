@@ -1,6 +1,10 @@
 {
   "slug": "stripe-apps",
   "name": "stripe-apps",
+  "display_name": {
+    "fr": "Applications et extensions Stripe",
+    "en": "Stripe Apps and extensions"
+  },
   "publisher": "Stripe",
   "official": true,
   "host_tool": "stripe",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Construire et relire des Stripe Apps et des extensions du Dashboard.",
     "en": "Build and review Stripe Apps and Dashboard extensions."
+  },
+  "use_case": {
+    "fr": "Aide à créer, modifier ou relire des Stripe Apps et extensions pour le Dashboard Stripe : interface personnalisée, SDK, actions de workflow.",
+    "en": "Helps build, change or review Stripe Apps and Dashboard extensions: custom UI, SDKs and custom workflow actions."
+  },
+  "example": {
+    "fr": "Crée une extension Stripe Dashboard qui affiche le statut des abonnements d'un client.",
+    "en": "Create a Stripe Dashboard extension showing a customer's subscription status."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Stripe pour Claude Code et Cursor : crée et relit des Stripe Apps et extensions du Dashboard. En une commande. Serveur : Stripe MCP.",
+    "en": "Official Stripe skill for Claude Code and Cursor: builds and reviews Stripe Apps and Dashboard extensions. Added with one command. Server: Stripe MCP."
   },
   "agents": [
     "claude-code",
@@ -34,12 +50,16 @@
     "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
     "en": "A compatible coding agent; the Stripe MCP server for live account data."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://docs.stripe.com/skills.md",
   "sources": [
     {
       "label": "Stripe — skills",
       "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Stripe — source consultée",
+      "url": "https://docs.stripe.com/.well-known/skills/index.json"
     }
   ]
 }

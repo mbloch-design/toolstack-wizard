@@ -1,6 +1,10 @@
 {
   "slug": "miro-code-spec",
   "name": "miro-code-spec",
+  "display_name": {
+    "fr": "Extraire les spécifications d'un tableau Miro",
+    "en": "Extract specs from a Miro board"
+  },
   "publisher": "Miro",
   "official": true,
   "host_tool": "miro",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Extraire les spécifications d'un tableau (documents, schémas, maquettes) vers le projet.",
     "en": "Extract specs from a board (docs, diagrams, prototypes) into the project."
+  },
+  "use_case": {
+    "fr": "Extrait les spécifications d'un tableau Miro (documents, diagrammes, prototypes, tableaux, images) vers des fichiers locaux dans le dossier .miro/specs/.",
+    "en": "Extracts specs from a Miro board (documents, diagrams, prototypes, tables, images) into local files in .miro/specs/."
+  },
+  "example": {
+    "fr": "Extrais dans le projet les spécifications de notre tableau Miro de refonte.",
+    "en": "Extract the specs from our Miro redesign board into the project."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Miro pour Claude Code et Cursor : extrait les spécifications d'un tableau Miro vers le projet. S'ajoute en une commande. Serveur : Miro MCP.",
+    "en": "Official Miro skill for Claude Code and Cursor: extracts specs from a Miro board into the project. Added with one command. Server: Miro MCP."
   },
   "agents": [
     "claude-code",
@@ -27,7 +43,7 @@
     "fr": "Connexion au serveur MCP Miro.",
     "en": "A connection to the Miro MCP server."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://github.com/miroapp/miro-ai/blob/main/docs/agent-skills/overview.md",
   "sources": [
     {

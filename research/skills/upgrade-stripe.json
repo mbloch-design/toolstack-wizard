@@ -1,6 +1,10 @@
 {
   "slug": "upgrade-stripe",
   "name": "upgrade-stripe",
+  "display_name": {
+    "fr": "Mise à niveau Stripe",
+    "en": "Stripe upgrades"
+  },
   "publisher": "Stripe",
   "official": true,
   "host_tool": "stripe",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Guider la mise à jour des versions d'API, webhooks et SDK.",
     "en": "Guide upgrades of API versions, webhooks and SDKs."
+  },
+  "use_case": {
+    "fr": "Guide la mise à niveau des versions d'API Stripe, des endpoints de webhook, des SDK serveur, de Stripe.js et des SDK mobiles.",
+    "en": "Guides upgrades of Stripe API versions, webhook endpoints, server SDKs, Stripe.js and mobile SDKs."
+  },
+  "example": {
+    "fr": "Mets mon intégration Stripe à la dernière version d'API et liste ce qui change.",
+    "en": "Upgrade my Stripe integration to the latest API version and list what changes."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Stripe pour Claude Code et Cursor : guide la mise à niveau d'API, webhooks et SDK. S'ajoute en une commande. Serveur : Stripe MCP.",
+    "en": "Official Stripe skill for Claude Code and Cursor: guides upgrades of API versions, webhooks and SDKs. Added with one command. Server: Stripe MCP."
   },
   "agents": [
     "claude-code",
@@ -34,12 +50,16 @@
     "fr": "Un agent de code compatible ; le serveur MCP Stripe pour les données du compte en production.",
     "en": "A compatible coding agent; the Stripe MCP server for live account data."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://docs.stripe.com/skills.md",
   "sources": [
     {
       "label": "Stripe — skills",
       "url": "https://docs.stripe.com/skills.md"
+    },
+    {
+      "label": "Stripe — source consultée",
+      "url": "https://docs.stripe.com/.well-known/skills/index.json"
     }
   ]
 }

@@ -1,6 +1,10 @@
 {
   "slug": "figma-use",
   "name": "figma-use",
+  "display_name": {
+    "fr": "Écrire dans un fichier Figma",
+    "en": "Write to a Figma file"
+  },
   "publisher": "Figma",
   "official": true,
   "host_tool": "figma",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "La base pour écrire dans Figma : cadres, composants, variables et mise en page.",
     "en": "The foundation for writing to Figma: frames, components, variables and layout."
+  },
+  "use_case": {
+    "fr": "Base pour écrire dans le canevas d'un fichier Figma Design : cadres, composants, variables et mise en page automatique.",
+    "en": "The base skill for writing to a Figma Design canvas: frames, components, variables and auto layout."
+  },
+  "example": {
+    "fr": "Crée dans mon fichier Figma un cadre de carte produit avec deux variantes.",
+    "en": "Create a product card frame in my Figma file with two variants."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Figma pour Claude Code et Cursor : écrit des cadres, composants et variables dans Figma. Inclus avec le plugin Figma. Serveur : Figma MCP.",
+    "en": "Official Figma skill for Claude Code and Cursor: writes frames, components and variables in Figma. Included with the Figma plugin. Server: Figma MCP."
   },
   "agents": [
     "claude-code",
@@ -19,7 +35,10 @@
     {
       "client": "any",
       "type": "steps",
-      "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      "value": {
+        "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+        "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      }
     },
     {
       "client": "any",
@@ -31,7 +50,7 @@
     "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
     "en": "Figma remote server; edit access to the file to write."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
   "sources": [
     {

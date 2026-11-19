@@ -168,8 +168,8 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
               site, and the difference when there is one. No line when either tool has no data. */}
           {assistantLine && <div className="cp-spec-row" role="row" data-row="assistant">
             <span role="rowheader" className="cp-spec-label">{t('Avec votre assistant', 'With your assistant')}{assistantLine.takeaway && <small>{assistantLine.takeaway}</small>}</span>
-            <span role="cell">{assistantLine.a}</span>
-            <span role="cell">{assistantLine.b}</span>
+            <span role="cell">{assistantLine.aSheet ? <Link to={`${prefix}/mcp/${assistantLine.aSheet}`}>{assistantLine.a}</Link> : assistantLine.a}</span>
+            <span role="cell">{assistantLine.bSheet ? <Link to={`${prefix}/mcp/${assistantLine.bSheet}`}>{assistantLine.b}</Link> : assistantLine.b}</span>
           </div>}
         </div>
       </section>

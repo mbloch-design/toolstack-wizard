@@ -1,6 +1,10 @@
 {
   "slug": "google-analytics-data-api-basics",
   "name": "google-analytics-data-api-basics",
+  "display_name": {
+    "fr": "Google Analytics : API Data",
+    "en": "Google Analytics: Data API basics"
+  },
   "publisher": "Google",
   "official": true,
   "host_tool": "google-analytics",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Mettre en place l'API Data et construire des requêtes de rapport.",
     "en": "Set up the Data API and build report queries."
+  },
+  "use_case": {
+    "fr": "Active l'API Data de Google Analytics et aide l'agent à écrire des rapports, en vérifiant que les dimensions et métriques peuvent être interrogées ensemble. Lecture seule.",
+    "en": "Enables the Google Analytics Data API and helps the agent write reports, checking that dimensions and metrics can be queried together. Read-only."
+  },
+  "example": {
+    "fr": "Donne-moi les sessions et les utilisateurs actifs de mon site par ville le mois dernier.",
+    "en": "Give me sessions and active users by city for last month."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Google pour Claude Code et Cursor : écrit des rapports Data, en lecture seule. S'ajoute en une commande. Serveur : Google Analytics MCP.",
+    "en": "Official Google skill for Claude Code and Cursor: writes Data API reports, read-only. Added with one command. Server: Google Analytics MCP."
   },
   "agents": [
     "claude-code",
@@ -27,7 +43,7 @@
     "fr": "Node.js et un accès à une propriété Google Analytics.",
     "en": "Node.js and access to a Google Analytics property."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.google.com/analytics/devguides/agent-skills",
   "sources": [
     {

@@ -13,6 +13,10 @@
     "fr": "Lire les maquettes ouvertes dans l'app de bureau.",
     "en": "Read the mockups open in the desktop app."
   },
+  "meta_description": {
+    "fr": "Le serveur MCP de bureau de Figma : votre assistant lit vos designs depuis l'application, sans rien modifier. Siège Dev ou Full requis ; comment l'activer.",
+    "en": "Figma's desktop MCP server: your assistant reads your designs from the Figma app, without changing anything. Needs a Dev or Full seat; how to turn it on."
+  },
   "examples": [
     {
       "fr": "Donne-moi les couleurs et les typographies de la frame sélectionnée.",

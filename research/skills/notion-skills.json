@@ -10,6 +10,18 @@
     "fr": "Des pages d'instructions réutilisables, écrites et partagées dans Notion, que tout assistant connecté à Notion MCP peut suivre.",
     "en": "Reusable instruction pages, written and shared in Notion, that any assistant connected to Notion MCP can follow."
   },
+  "use_case": {
+    "fr": "Pages d'instructions réutilisables, créées et partagées dans Notion : l'assistant les suit quand la demande le justifie, et seulement si vous pouvez les voir.",
+    "en": "Reusable instruction pages written and shared in Notion: the assistant follows them when the request calls for it, and only if you can view them."
+  },
+  "example": {
+    "fr": "Prépare le compte rendu de réunion selon la page Skill de notre équipe.",
+    "en": "Prepare the meeting summary following our team's Skill page."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Notion pour tout assistant connecté : crée des instructions réutilisables dans Notion. Sans installation. Serveur : Notion MCP.",
+    "en": "Official Notion skill for any connected assistant: creates reusable instructions in Notion. No install needed. Server: Notion MCP."
+  },
   "agents": [
     "any"
   ],
@@ -18,7 +30,7 @@
     "fr": "Notion MCP connecté ; droit de modification pour transformer une page en Skill.",
     "en": "Notion MCP connected; edit access to turn a page into a Skill."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://developers.notion.com/guides/mcp/notion-skills",
   "sources": [
     {

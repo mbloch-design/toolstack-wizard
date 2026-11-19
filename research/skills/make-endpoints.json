@@ -10,6 +10,18 @@
     "fr": "Travailler avec les points d'accès de Make.",
     "en": "Work with Make endpoints."
   },
+  "use_case": {
+    "fr": "Lance des actions sur vos applications via le SDK ou la CLI Endpoints de Make : découverte, connexions, appels typés, écritures soumises à validation. Bêta fermée.",
+    "en": "Runs app actions through the Make Endpoints SDK or CLI: discovery, connections, typed calls and writes that need approval. Closed beta."
+  },
+  "example": {
+    "fr": "Liste les actions disponibles pour mon application connectée dans Make.",
+    "en": "List the actions available for my connected app in Make."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Make pour Claude Code et Cursor : lance des actions via le SDK Endpoints (bêta fermée). S'ajoute en une commande. Serveur : Make MCP.",
+    "en": "Official Make skill for Claude Code and Cursor: runs app actions via the Endpoints SDK (closed beta). Added with one command. Server: Make MCP."
+  },
   "agents": [
     "claude",
     "claude-code",
@@ -35,12 +47,16 @@
     "fr": "Un compte Make ; forfait Make payant pour les portées de gestion.",
     "en": "A Make account; a paid Make plan for management scopes."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://skills.make.com/",
   "sources": [
     {
       "label": "Make — skills",
       "url": "https://skills.make.com/"
+    },
+    {
+      "label": "Make — source consultée",
+      "url": "https://github.com/integromat/make-skills"
     }
   ]
 }

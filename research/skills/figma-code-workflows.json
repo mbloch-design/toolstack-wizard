@@ -1,6 +1,10 @@
 {
   "slug": "figma-code-workflows",
   "name": "figma-code-workflows",
+  "display_name": {
+    "fr": "Importer un projet local dans Figma",
+    "en": "Import a local project into Figma"
+  },
   "publisher": "Figma",
   "official": true,
   "host_tool": "figma",
@@ -9,6 +13,18 @@
   "summary": {
     "fr": "Importer un projet local dans Figma comme fichier Make, calque de code ou calques de design.",
     "en": "Import a local project into Figma as a Make file, code layer or design layers."
+  },
+  "use_case": {
+    "fr": "Importe un projet local dans Figma, sous forme de calque de code, de fichier Figma Make ou de calques de design modifiables.",
+    "en": "Imports a local project into Figma as a code layer, a Figma Make file or editable design layers."
+  },
+  "example": {
+    "fr": "Importe mon projet local dans Figma sous forme de calques de design modifiables.",
+    "en": "Import my local project into Figma as editable design layers."
+  },
+  "meta_description": {
+    "fr": "Skill officiel Figma pour Claude Code et Cursor : importe un projet local dans Figma. Inclus avec le plugin Figma. Serveur : Figma MCP.",
+    "en": "Official Figma skill for Claude Code and Cursor: imports a local project into Figma. Included with the Figma plugin. Server: Figma MCP."
   },
   "agents": [
     "claude-code",
@@ -19,7 +35,10 @@
     {
       "client": "any",
       "type": "steps",
-      "value": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      "value": {
+        "fr": "Installez le plugin Figma dans l'un de ces outils : les skills sont inclus automatiquement.",
+        "en": "When you install the Figma plugin in one of these tools, the skills are included automatically."
+      }
     },
     {
       "client": "any",
@@ -31,7 +50,7 @@
     "fr": "Serveur Figma distant ; droit de modification sur le fichier pour écrire.",
     "en": "Figma remote server; edit access to the file to write."
   },
-  "verified_on": "2026-11-16",
+  "verified_on": "2026-11-18",
   "docs_url": "https://help.figma.com/hc/en-us/articles/39166810751895",
   "sources": [
     {
