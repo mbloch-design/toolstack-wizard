@@ -27,14 +27,14 @@ Situations:
 - Article ideas: Topics built on real searches. Ask: “Using Ahrefs, find what people search for before buying a coffee table and suggest five blog topics for my client.”
 
 Tips:
-- Start with “Using Ahrefs”: Otherwise the assistant may search the web instead of your data. Ahrefs recommends it itself, especially in ChatGPT.
+- Start with “Using Ahrefs”: Otherwise the assistant may search the web instead of your data. Ahrefs itself recommends this, especially in ChatGPT.
 - A number, a time range: “The top ten keywords since last month” rather than “all my keywords”: the answer is sharper and the unit bill lighter.
-- A small sample is often enough: One user who combed through his logs found that a short keyword list led to the same conclusion as a long one, for far fewer units. Widen only if it changes your decision. (user feedback)
-- A starting point, not a verdict: Ahrefs warns the assistant can make things sound simpler than they are. Check the key figures in Ahrefs before they go into a client report.
+- A small sample is often enough: One user who combed through their logs found that a short keyword list led to the same conclusion as a long one, for far fewer units. Widen only if it changes your decision. (user feedback)
+- A starting point, not a verdict: Ahrefs warns that the assistant can make things sound simpler than they are. Check the key figures in Ahrefs before they go into a client report.
 
 Pitfalls:
-- API key isn't MCP key: A 401 error often comes from an API key pasted instead of the MCP key, an expired key or a lapsed subscription. Workaround: Generate an MCP key in Ahrefs, or use your assistant's official connector, which handles sign-in for you.
-- The meter that runs away: One user reports that three tools, including link lists and keyword ideas, ate most of his units. Workaround: Cap the number of results, estimate before a big batch, and watch your usage in your Ahrefs account settings. (user feedback)
+- An API key isn't an MCP key: A 401 error often comes from an API key pasted instead of the MCP key, an expired key or a lapsed subscription. Workaround: Generate an MCP key in Ahrefs, or use your assistant's official connector, which handles sign-in for you.
+- The meter that runs away: One user reports that three tools, including link lists and keyword ideas, ate most of their units. Workaround: Cap the number of results, estimate before a big batch, and watch your usage in your Ahrefs account settings. (user feedback)
 - Results cut off silently: Your plan caps the rows per request: an overly broad question gets truncated, not refused. Workaround: Split by country, time range or top N, and sanity-check totals before drawing conclusions. (user feedback)
 
 #### FR
@@ -53,7 +53,7 @@ Conseils :
 - Un départ, pas un verdict : Ahrefs prévient que l'assistant peut rendre les choses plus simples qu'elles ne sont. Vérifiez les chiffres clés dans Ahrefs avant de les mettre dans un rapport client.
 
 Pièges :
-- Clé API n'est pas clé MCP : Une erreur 401 vient souvent d'une clé d'API collée à la place de la clé MCP, d'une clé expirée ou d'un abonnement arrêté. Parade : Générez une clé MCP dans Ahrefs, ou passez par le connecteur officiel de votre assistant, qui gère la connexion pour vous.
+- Une clé d'API n'est pas une clé MCP : Une erreur 401 vient souvent d'une clé d'API collée à la place de la clé MCP, d'une clé expirée ou d'un abonnement arrêté. Parade : Générez une clé MCP dans Ahrefs, ou passez par le connecteur officiel de votre assistant, qui gère la connexion pour vous.
 - Le compteur qui file : Un utilisateur raconte que trois outils, dont les listes de liens et les idées de mots-clés, ont mangé l'essentiel de ses unités. Parade : Limitez le nombre de résultats, estimez avant un gros lot, et suivez votre consommation dans les réglages du compte Ahrefs. (retour d'utilisateurs)
 - Résultats coupés sans prévenir : Votre forfait plafonne le nombre de lignes par demande : une question trop large est tronquée, pas refusée. Parade : Découpez par pays, période ou top N, et vérifiez les totaux avant de conclure. (retour d'utilisateurs)
 
@@ -70,7 +70,7 @@ Sources:
 
 #### EN
 
-Verdict: If your clients, projects or content live in Airtable, plug it in: your assistant searches, adds and updates your records in plain language. Only open the bases it needs, because it can also delete whole tables.
+Verdict: If your clients, projects or content live in Airtable, plug it in: your assistant searches, adds and updates your records in plain language. Only give it access to the bases it needs, because it can also delete whole tables.
 
 Situations:
 - Client follow-ups: Your follow-up list, ready. Ask: “In my Clients base, find the ones I haven't followed up with for over a month and list them with their current project.”
@@ -78,21 +78,21 @@ Situations:
 - Invoice tracking: A table ready in one sentence. Ask: “In my Admin base, create an Invoices table with the client, amount, date sent and a status.”
 
 Tips:
-- Name the base: “In my Clients base” saves it from rummaging everywhere. No need for exact field names: just describe what you're after.
-- Tick only what's needed: When connecting, you choose which bases and workspaces it sees. Your accounting base doesn't have to be one of them.
-- Free reading, writing on request: Set the connector so the assistant asks before acting: it reads in peace, and you keep a hand on anything that edits or deletes.
-- A read-only key: If you go through a key (Claude Code, Cursor), give it read rights only: it can answer, not change.
-- Automations stay off: It can draft an automation, but it stays off until you turn it on in Airtable. Read it before flipping the switch.
+- Name the base: “In my Clients base” saves the assistant from rummaging everywhere. No need for exact field names: just describe what you're after.
+- Tick only what's needed: When connecting, you choose which bases and workspaces the assistant sees. Your accounting base doesn't have to be one of them.
+- Free reading, writing on request: Set the connector so the assistant asks before acting: it reads freely, and you stay in control of anything that edits or deletes.
+- A read-only key: If you connect with a key (Claude Code, Cursor), give the key read permissions only: the assistant can answer but not change anything.
+- Automations stay off: The assistant can draft an automation, but the automation stays off until you turn it on in Airtable. Read it before flipping the switch.
 
 Pitfalls:
-- A table deleted, contents and all: Deleting a table takes its records, fields and views with it, and Airtable documents no way back for that. Workaround: Keep deleting behind your approval and duplicate an important base before handing it a big clean-up.
-- Read-only at a client's? Reading only: With Commenter or Read-only access, it reads but changes nothing. Workaround: Ask the client for the Editor role on that base.
-- Additions, in small batches: It only creates a handful of records per request: a long list gets split up, or half done. Workaround: Send additions in small batches and check the count in the table; for a big import, use Airtable's CSV import.
-- Field type: hands off: It can rename a field, but not change its type or its dropdown options. Workaround: Make those changes directly in Airtable.
+- A table deleted, contents and all: Deleting a table takes its records, fields and views with it, and Airtable documents no way back for that. Workaround: Keep deleting behind your approval and duplicate an important base before handing the assistant a big clean-up.
+- Read-only access? So is the assistant: With Commenter or Read-only access, the assistant reads but changes nothing. Workaround: Ask the client for the Editor role on that base.
+- Additions, in small batches: The assistant only creates a handful of records per request: a long list gets split up, or half done. Workaround: Send additions in small batches and check the count in the table; for a big import, use Airtable's CSV import.
+- Field type: hands off: The assistant can rename a field, but not change its type or its dropdown options. Workaround: Make those changes directly in Airtable.
 
 #### FR
 
-Verdict : Si vos clients, projets ou contenus vivent dans Airtable, branchez-le : votre assistant cherche, ajoute et met à jour vos fiches en langage courant. Ne lui ouvrez que les bases utiles, car il peut aussi supprimer des tables entières.
+Verdict : Si vos clients, projets ou contenus vivent dans Airtable, branchez-le : votre assistant cherche, ajoute et met à jour vos enregistrements en langage courant. Ne lui ouvrez que les bases utiles, car il peut aussi supprimer des tables entières.
 
 Situations :
 - Relances clients : Votre liste de relances, prête. Demandez : « Dans ma base Clients, trouve ceux que je n'ai pas relancés depuis plus d'un mois et liste-les avec leur projet en cours. »
@@ -100,17 +100,17 @@ Situations :
 - Suivi des factures : Une table prête en une phrase. Demandez : « Dans ma base Gestion, crée une table Factures avec le client, le montant, la date d'envoi et un statut. »
 
 Conseils :
-- Nommez la base : « Dans ma base Clients » lui évite de fouiller partout. Pas besoin des noms de champs exacts : décrivez simplement ce que vous cherchez.
-- Ne cochez que l'utile : À la connexion, vous choisissez les bases et espaces qu'il voit. La base de votre comptabilité n'a pas forcément besoin d'en faire partie.
+- Nommez la base : « Dans ma base Clients » évite à l'assistant de fouiller partout. Pas besoin des noms de champs exacts : décrivez simplement ce que vous cherchez.
+- Ne cochez que l'utile : À la connexion, vous choisissez les bases et espaces que l'assistant voit. La base de votre comptabilité n'a pas forcément besoin d'en faire partie.
 - Lecture libre, écriture sur demande : Réglez le connecteur pour que l'assistant vous demande avant d'agir : il lit tranquillement, et vous gardez la main sur ce qui modifie ou supprime.
-- Une clé en lecture seule : Si vous passez par une clé (Claude Code, Cursor), ne lui donnez que les droits de lecture : il pourra répondre, pas modifier.
-- Les automatisations restent éteintes : Il peut préparer une automatisation, mais elle reste en brouillon tant que vous ne l'allumez pas dans Airtable. Relisez avant d'appuyer.
+- Une clé en lecture seule : Si vous passez par une clé (Claude Code, Cursor), ne donnez à la clé que les droits de lecture : l'assistant pourra répondre, pas modifier.
+- Les automatisations restent éteintes : L'assistant peut préparer une automatisation, mais elle reste en brouillon tant que vous ne l'allumez pas dans Airtable. Relisez avant d'appuyer.
 
 Pièges :
-- Une table supprimée, contenu compris : Supprimer une table emporte ses fiches, ses champs et ses vues, et Airtable ne documente pas de retour en arrière pour ça. Parade : Gardez la suppression sous votre approbation et dupliquez une base importante avant de lui confier un grand ménage.
-- Simple lecteur ? Lecture seule : Avec un accès Commentateur ou Lecture seule, il lit mais ne modifie rien. Parade : Demandez au client le rôle Éditeur sur la base concernée.
-- Les ajouts, par petits paquets : Il ne crée qu'un petit nombre de fiches par demande : une longue liste sera découpée, ou à moitié faite. Parade : Envoyez vos ajouts par petits lots et vérifiez le total dans la table ; pour un gros import, passez par l'import CSV d'Airtable.
-- Type de champ : pas touche : Il peut renommer un champ, mais pas changer son type ni ses choix de liste déroulante. Parade : Faites ces changements directement dans Airtable.
+- Une table supprimée, contenu compris : Supprimer une table emporte ses enregistrements, ses champs et ses vues, et Airtable ne documente pas de retour en arrière pour ça. Parade : Gardez la suppression sous votre approbation et dupliquez une base importante avant de confier un grand ménage à l'assistant.
+- Accès en lecture seule ? L'assistant aussi : Avec un accès Commentateur ou Lecture seule, l'assistant lit mais ne modifie rien. Parade : Demandez au client le rôle Éditeur sur la base concernée.
+- Les ajouts, par petits paquets : L'assistant ne crée qu'un petit nombre d'enregistrements par demande : une longue liste sera découpée, ou à moitié faite. Parade : Envoyez vos ajouts par petits lots et vérifiez le total dans la table ; pour un gros import, passez par l'import CSV d'Airtable.
+- Type de champ : pas touche : L'assistant peut renommer un champ, mais pas changer son type ni ses choix de liste déroulante. Parade : Faites ces changements directement dans Airtable.
 
 Sources:
 - https://airtable.com/developers/agents/mcp/getting-started
@@ -130,16 +130,16 @@ Verdict: If you already schedule your posts with Buffer, plug it in: your assist
 Situations:
 - This week's post: A draft waiting for your review. Ask: “Write a LinkedIn post about the website I just delivered for Studio Martin and save it as a draft in Buffer.”
 - One post, two networks: The same message, in the right format. Ask: “Take the LinkedIn post scheduled for Tuesday, make a shorter version for Threads and add it to my queue.”
-- Monthly review: What works, no spreadsheet. Ask: “Which of last month's LinkedIn posts did best, and what do they have in common?”
+- Monthly review: What works, without a spreadsheet. Ask: “Which of last month's LinkedIn posts did best, and what do they have in common?”
 
 Tips:
 - “Schedule”, not “publish”: By default the post joins your queue, but the assistant can also publish immediately. The right verb spares you a post that went out too soon.
-- Leave confirmations on: Buffer asks for it itself: an instant post or a deletion can't be taken back. One more click beats a post you have to apologise for.
+- Leave confirmations on: Buffer itself recommends it: an instant post or a deletion can't be taken back. One more click beats a post you have to apologise for.
 - Teach it your tone: Give it a few of your posts as examples, or save them in a reusable skill. And reread: the post should sound like you, not a press release.
-- Ideas for the rest: A video script or carousel text doesn't belong in the queue: ask it to save it in your Buffer Ideas for later.
+- Ideas for the rest: A video script or carousel text doesn't belong in the queue: ask the assistant to save it in your Buffer Ideas for later.
 
 Pitfalls:
-- The whole account, at once: The connection covers all your organisations and channels, including a client's you manage. Workaround: Name the network and organisation in every request, and cut access in Settings, then API, when you no longer need it.
+- The whole account, at once: The connection covers all your organisations and channels, including those of a client you manage. Workaround: Name the network and organisation in every request, and cut access in Settings, then API, when you no longer need it.
 - Fixing can move the post: When the assistant edits a post and resends its scheduling mode, Buffer reschedules it, even if nothing changed. Workaround: Say “don't touch the schedule”, then check the date in Buffer.
 - No home-made visuals: The assistant writes, but creates neither videos nor carousels. Workaround: Prepare your visuals separately and add them to the post in Buffer before it goes out.
 - Stats running a little late: Stats aren't live: yesterday's post may look shyer than it really is. Workaround: Give it a little time before judging a post.
@@ -155,7 +155,7 @@ Situations :
 
 Conseils :
 - « Programme », pas « publie » : Par défaut, le post rejoint votre file d'attente ; mais l'assistant peut aussi publier immédiatement. Le bon verbe vous évite un post parti trop tôt.
-- Laissez les confirmations allumées : Buffer le demande lui-même : une publication immédiate ou une suppression ne se rattrapent pas. Un clic de plus, c'est moins cher qu'un post à excuser.
+- Laissez les confirmations allumées : Buffer le conseille lui-même : une publication immédiate ou une suppression ne se rattrapent pas. Un clic de plus, c'est moins cher qu'un post à excuser.
 - Apprenez-lui votre ton : Donnez-lui quelques-uns de vos posts en exemple, ou enregistrez-les dans une compétence réutilisable. Et relisez : le post doit sonner comme vous, pas comme un communiqué.
 - Les idées pour le reste : Un script de vidéo ou le texte d'un carrousel n'a rien à faire dans la file d'attente : demandez-lui de l'enregistrer dans vos Idées Buffer pour plus tard.
 
@@ -186,9 +186,9 @@ Situations:
 
 Tips:
 - Switch it on in the chat: In Claude, Calendly is switched on chat by chat: the + button, Connectors, then Calendly. If it doesn't answer, that's often all it is.
-- Call meetings by their name: “My discovery call”, “my coaching session”: use your event types' names, as Calendly's own examples do. It'll know what you mean.
+- Call meetings by their name: “My discovery call”, “my coaching session”: use your event types' names, as Calendly's own examples do. The assistant will know what you mean.
 - A one-off link for a lead: Rather than your public page, ask for a single-use link: it works once and doesn't linger in someone's inbox.
-- Have it ask before acting: Set the connector so the assistant asks before each action: reading your slots is harmless, cancelling a client isn't.
+- Have it ask before acting: Set the connector so the assistant asks before each action: reading your slots is harmless, cancelling a client's meeting isn't.
 
 Pitfalls:
 - Cancelling happens instantly: A cancellation you ask for is applied right away in Calendly, and Calendly documents no confirmation step. Workaround: Give the day, time and person, and read the request before accepting it; to move a meeting, offer a rescheduling link instead.
@@ -201,19 +201,19 @@ Verdict : Si vos clients réservent déjà sur Calendly, branchez-le : votre ass
 
 Situations :
 - Proposer des créneaux : Le mail de rendez-vous, prêt à partir. Demandez : « Trouve trois créneaux libres la semaine prochaine pour mon appel découverte et rédige un mail au prospect avec un lien à usage unique. »
-- Semaine à venir : Votre semaine, rendez-vous par rendez-vous. Demandez : « Quels rendez-vous ai-je cette semaine, avec qui, et pour quel type de rendez-vous ? »
+- Semaine à venir : Votre semaine, rendez-vous par rendez-vous. Demandez : « Quels rendez-vous ai-je cette semaine, avec qui, et pour quel type d'événement ? »
 - Bloquer un jour : Vos vendredis rendus au travail de fond. Demandez : « Retire les vendredis de mes disponibilités pour l'appel découverte : je les garde pour la production. »
 
 Conseils :
 - Allumez-le dans la conversation : Dans Claude, Calendly s'active conversation par conversation : bouton +, Connecteurs, puis Calendly. S'il ne répond pas, c'est souvent juste ça.
-- Appelez les rendez-vous par leur nom : « Mon appel découverte », « ma séance de coaching » : reprenez le nom de vos types de rendez-vous, comme dans les exemples de Calendly. Il saura de quoi vous parlez.
+- Appelez les rendez-vous par leur nom : « Mon appel découverte », « ma séance de coaching » : reprenez le nom de vos types d'événements, comme dans les exemples de Calendly. L'assistant saura de quoi vous parlez.
 - Un lien unique pour un prospect : Plutôt que votre page publique, demandez un lien à usage unique : il ne sert qu'une fois et ne traîne pas dans une boîte mail.
-- Qu'il demande avant d'agir : Réglez le connecteur pour que l'assistant vous demande avant chaque action : lire vos créneaux ne risque rien, annuler un client si.
+- Qu'il demande avant d'agir : Réglez le connecteur pour que l'assistant vous demande avant chaque action : lire vos créneaux ne risque rien, annuler le rendez-vous d'un client, si.
 
 Pièges :
 - Annuler, c'est tout de suite : Une annulation demandée à l'assistant est appliquée aussitôt dans Calendly, et Calendly ne documente pas de confirmation. Parade : Donnez le jour, l'heure et la personne, et lisez la demande avant de l'accepter ; pour décaler, proposez plutôt un lien de report.
 - Pas de clé à coller : Un outil qui vous demande un identifiant et un secret, ou un jeton personnel, ne fonctionnera pas avec Calendly. Parade : Passez par le connecteur intégré de Claude ou de ChatGPT, ou par un outil qui gère lui-même la connexion à votre compte.
-- Selon le forfait, portes fermées : Certaines actions dépendent de votre forfait, de votre rôle ou de vos options, comme les résumés de réunion qui demandent Notetaker. Parade : Si l'assistant bute sur une action, vérifiez dans Calendly qu'elle est incluse dans votre compte.
+- Selon le forfait, portes fermées : Certaines actions dépendent de votre forfait, de votre rôle ou de vos options, comme les comptes rendus de réunion, qui demandent Notetaker. Parade : Si l'assistant bute sur une action, vérifiez dans Calendly qu'elle est incluse dans votre compte.
 
 Sources:
 - https://calendly.com/help/connect-calendly-to-your-ai-tools
@@ -230,7 +230,7 @@ Sources:
 
 #### EN
 
-Verdict: If you already make your visuals in Canva, plug it in: it works with a free account. But it won't spare you Canva Pro: generating a design uses your Canva AI allowance, and resizing or background removal stay paid.
+Verdict: If you already make your visuals in Canva, plug in the connector: it works with a free account. But it won't spare you Canva Pro: generating a design uses your Canva AI allowance, and resizing or background removal still need a paid plan.
 
 Situations:
 - Post and story: Two formats, one layout. Ask: “Create an Instagram post announcing my Saturday workshop, then make a story version of it.”
@@ -238,21 +238,21 @@ Situations:
 - Client feedback: What's left to fix, at a glance. Ask: “Show me the unresolved comments on the “Spring launch” deck.”
 
 Tips:
-- Brief it like a designer: Format, colours, exact text, design name: the sharper the request, the less you retouch. Canva itself recommends it.
+- Brief the assistant as you would a designer: Format, colours, exact text, design name: the sharper the request, the less you retouch. Canva itself recommends it.
 - Refine, don't restart: When it's almost right, ask for one precise change. Starting over is buying another lottery ticket.
-- A copy before touching what you delivered: Before having a design already sent to the client edited, ask for a copy: the original stays intact.
-- Brand kit in order, logos twice: The kit's colours and fonts are picked up, but logos stored only in the kit are often skipped: upload them to your files too. (user feedback)
+- A copy before touching what you delivered: Before having the assistant edit a design you've already sent to the client, ask for a copy: the original stays intact.
+- Logos: in the kit and in your files: The kit's colours and fonts are picked up, but logos stored only in the kit are often skipped: upload them to your files too. (user feedback)
 - Switch off what you don't use: In Claude, the Canva integration's settings let you switch actions off and choose whether it asks for your approval each time.
 
 Pitfalls:
 - A first draft is a first draft: Vague request, tame result: default fonts, generic images, filler text. Workaround: Finish typography and images in Canva, and start from your own template for recurring formats. (user feedback)
-- It draws on your Canva credits: Creating a design or generating an image uses your Canva AI allowance; background removal, resizing or video need Canva Pro. Workaround: Keep generation for first drafts, then have your existing designs edited, copied or exported.
-- In ChatGPT, misleading links: Only the designs you pick are saved, and some links look like Canva links but lead nowhere. Workaround: Choose Save or Open in Canva from the preview, or find the design in your Canva projects.
-- At a client's, their admin decides: In a client's Canva team, the admin can switch the connector off: the action shows up, then it is refused. Workaround: Ask the client to turn it on; in your own team, see Settings > Permissions > Magic and AI.
+- Generating draws on your Canva AI allowance: Creating a design or generating an image uses your Canva AI allowance; background removal, resizing or video need Canva Pro. Workaround: Save generation for first drafts, then have your existing designs edited, copied or exported.
+- In ChatGPT, misleading links: Only the designs you pick are saved, and some links look like Canva links but lead nowhere. Workaround: Choose “Save” or “Open in Canva” from the preview, or find the design in your Canva projects.
+- In a client's team, their admin decides: In a client's Canva team, the admin can switch the connector off: the action shows up, then it is refused. Workaround: Ask the client to turn it on; in your own team, see Settings > Permissions > Magic and AI.
 
 #### FR
 
-Verdict : Si vous faites déjà vos visuels dans Canva, branchez-le : il marche avec un compte gratuit. Mais il ne vous évite pas Canva Pro : générer un design puise dans votre allocation IA Canva, et redimensionner ou détourer reste payant.
+Verdict : Si vous faites déjà vos visuels dans Canva, branchez le connecteur : il marche avec un compte gratuit. Mais il ne vous dispense pas de Canva Pro : générer un design puise dans votre allocation IA Canva, et redimensionner ou détourer reste payant.
 
 Situations :
 - Post et story : Deux formats, une seule mise en page. Demandez : « Crée un post Instagram pour annoncer mon atelier de samedi, puis fais-en une version story. »
@@ -260,17 +260,17 @@ Situations :
 - Retours client : Ce qu'il reste à corriger, d'un coup d'œil. Demandez : « Montre-moi les commentaires non résolus sur la présentation « Lancement printemps ». »
 
 Conseils :
-- Briefez-le comme un graphiste : Format, couleurs, textes exacts, nom du design : plus la demande est précise, moins vous retouchez. Canva le conseille lui-même.
+- Briefez l'assistant comme un graphiste : Format, couleurs, textes exacts, nom du design : plus la demande est précise, moins vous retouchez. Canva le conseille lui-même.
 - Retouchez, ne relancez pas : Quand c'est presque bon, demandez un changement précis. Tout relancer, c'est rejouer au loto.
-- Une copie avant de toucher au livré : Avant de faire modifier un design déjà envoyé au client, demandez une copie : l'original reste intact.
-- Kit de marque rangé, logos en double : Couleurs et polices du kit sont bien reprises, mais les logos rangés seulement dans le kit sont souvent oubliés : importez-les aussi dans vos fichiers. (retour d'utilisateurs)
+- Une copie avant de toucher à un design livré : Avant de faire modifier un design déjà envoyé au client, demandez une copie : l'original reste intact.
+- Logos : dans le kit et dans vos fichiers : Couleurs et polices du kit sont bien reprises, mais les logos rangés seulement dans le kit sont souvent oubliés : importez-les aussi dans vos fichiers. (retour d'utilisateurs)
 - Coupez ce qui ne sert pas : Dans Claude, les réglages de l'intégration Canva permettent de désactiver des actions et de choisir s'il vous demande votre accord à chaque fois.
 
 Pièges :
 - Un premier jet reste un premier jet : Demande vague, résultat sage : polices par défaut, images banales, texte de remplissage. Parade : Finissez typographie et images dans Canva, et partez d'un modèle à vous pour les formats qui reviennent. (retour d'utilisateurs)
-- Il puise dans vos crédits Canva : Créer un design ou générer une image consomme votre allocation IA Canva ; détourer, redimensionner ou faire de la vidéo demande Canva Pro. Parade : Gardez la génération pour les premiers jets, puis faites retoucher, copier ou exporter vos designs existants.
+- La génération puise dans votre allocation IA : Créer un design ou générer une image consomme votre allocation IA Canva ; détourer, redimensionner ou faire de la vidéo demande Canva Pro. Parade : Gardez la génération pour les premiers jets, puis faites retoucher, copier ou exporter vos designs existants.
 - Dans ChatGPT, des liens trompeurs : Seuls les designs que vous choisissez sont enregistrés, et certains liens ressemblent à des liens Canva sans mener nulle part. Parade : Choisissez « Enregistrer » ou « Ouvrir dans Canva » depuis l'aperçu, ou retrouvez le design dans vos projets Canva.
-- Chez un client, son admin décide : Dans l'équipe Canva d'un client, l'administrateur peut couper le connecteur : l'action apparaît, puis elle est refusée. Parade : Demandez au client de l'activer ; dans votre propre équipe, voyez Paramètres > Autorisations > Magic et IA.
+- Chez un client, son admin décide : Dans l'équipe Canva d'un client, l'administrateur peut couper le connecteur : l'action apparaît, puis elle est refusée. Parade : Demandez au client de l'activer ; dans votre propre équipe, c'est dans Paramètres > Autorisations > Magic et IA.
 
 Sources:
 - https://www.canva.com/help/mcp-canva-usage/
@@ -284,7 +284,7 @@ Sources:
 
 #### EN
 
-Verdict: If your projects and hours live in ClickUp, plug it in: your assistant spots what's late, adds up your time and creates tasks for you. Keep writing behind approval, since it notifies your teammates and can post in chat as you.
+Verdict: If your projects and hours live in ClickUp, plug it in: your assistant spots what's late, adds up your time and creates tasks for you. Keep write actions behind approval, since it notifies your teammates and can post in chat as you.
 
 Situations:
 - Weekly review: Delays spotted without opening a list. Ask: “In the Redesign list, which tasks are overdue or waiting for review, and what is holding them up?”
@@ -294,14 +294,14 @@ Situations:
 Tips:
 - Tell it where to look: A space, a list or a time window in your request: fewer round trips, less of your daily allowance used. “What needs my attention?” sends it rummaging everywhere.
 - A read before a write: Start with a simple question to check it's connected to the right workspace. Only then create or move things.
-- Writing behind your approval: In the connector's settings, let reading run freely and keep creating, editing and sending messages on “Needs approval”.
+- Write actions need your approval: In the connector's settings, let reading run freely and keep creating, editing and sending messages on “Needs approval”.
 - Repetitive work to Automations: A fixed rule, like “task done, tell the client”, belongs in ClickUp Automations. The assistant is for when each case needs judgement.
 
 Pitfalls:
 - It speaks as you: A new task notifies its assignees, and a chat message goes out under your name, notifications included. Workaround: Try your requests in a test list with nobody assigned, and read every message before approving it.
-- The daily cap: Once the limit is hit, it answers with an error; no counter warns you beforehand, and nothing resets it. Workaround: Keep requests targeted, and wait for the window to free up rather than retrying.
-- Retry means duplicate: Asking again after an error can give you two tasks, two comments, or time counted twice. Workaround: After a hiccup, ask it to check first whether the item already exists.
-- Custom fields poorly filtered: One user reports it filters by list, status or tag, but not by custom field, so it ends up checking tasks one by one. Workaround: For that kind of sorting, use a filtered view in ClickUp, or a tag that carries the same information. (user feedback)
+- The daily cap: Once the limit is hit, the server returns an error; no counter warns you beforehand, and nothing resets the limit. Workaround: Keep requests targeted, and wait for the window to free up rather than retrying.
+- Retrying can mean duplicates: Asking again after an error can give you two tasks, two comments, or time counted twice. Workaround: After a hiccup, ask it to check first whether the item already exists.
+- Custom fields poorly filtered: One user reports that the assistant filters by list, status or tag, but not by custom field, so it ends up checking tasks one by one. Workaround: For that kind of sorting, use a filtered view in ClickUp, or a tag that carries the same information. (user feedback)
 
 #### FR
 
@@ -309,7 +309,7 @@ Verdict : Si vos projets et vos heures vivent dans ClickUp, branchez-le : votre 
 
 Situations :
 - Point de la semaine : Les retards repérés sans ouvrir une liste. Demandez : « Dans la liste Refonte, quelles tâches sont en retard ou attendent une relecture, et qu'est-ce qui les bloque ? »
-- Temps passé : Vos heures prêtes pour la facture. Demandez : « Combien de temps ai-je suivi sur les tâches du client Martin ce mois-ci, tâche par tâche ? »
+- Temps passé : Vos heures prêtes pour la facture. Demandez : « Combien de temps ai-je saisi sur les tâches du client Martin ce mois-ci, tâche par tâche ? »
 - Nouvelle tâche : Notée sans quitter la conversation. Demandez : « Crée une tâche « Envoyer le devis » pour vendredi dans ma liste Clients, priorité haute, avec l'étiquette Martin. »
 
 Conseils :
@@ -320,9 +320,9 @@ Conseils :
 
 Pièges :
 - Il parle en votre nom : Une tâche créée prévient les personnes assignées, et un message de chat part signé de votre nom, notifications comprises. Parade : Essayez vos demandes dans une liste de test sans personne assignée, et lisez chaque message avant de l'accepter.
-- Le plafond du jour : Une fois la limite atteinte, il répond par une erreur ; aucun compteur ne prévient avant, et rien ne la remet à zéro. Parade : Gardez des demandes ciblées, et attendez que la fenêtre se libère plutôt que d'insister.
+- Le plafond du jour : Une fois la limite atteinte, le serveur répond par une erreur ; aucun compteur ne prévient avant, et rien ne la remet à zéro. Parade : Gardez des demandes ciblées, et attendez que la fenêtre se libère plutôt que d'insister.
 - Relancer, c'est doubler : Redemander une création après une erreur peut donner deux tâches, deux commentaires, ou du temps compté deux fois. Parade : Après un raté, demandez-lui d'abord de vérifier si l'élément existe déjà.
-- Champs personnalisés mal filtrés : Un utilisateur signale qu'il filtre par liste, statut ou étiquette, mais pas par champ personnalisé, et qu'il doit alors vérifier les tâches une à une. Parade : Pour ce genre de tri, préférez une vue filtrée dans ClickUp, ou une étiquette qui reprend l'information. (retour d'utilisateurs)
+- Champs personnalisés mal filtrés : Un utilisateur signale que l'assistant filtre par liste, statut ou étiquette, mais pas par champ personnalisé, et qu'il doit alors vérifier les tâches une à une. Parade : Pour ce genre de tri, préférez une vue filtrée dans ClickUp, ou une étiquette qui reprend l'information. (retour d'utilisateurs)
 
 Sources:
 - https://developer.clickup.com/docs/mcp-tools
@@ -353,12 +353,12 @@ Tips:
 
 Pitfalls:
 - Not on the free plan: It needs a Dev or Full seat on a paid plan; the free Starter plan isn't included. Workaround: Use Figma's online server instead, open to every plan.
-- Built for coding tools: Figma documents connecting it from Claude Code, Codex, Cursor and VS Code, not from chat apps. Workaround: If you work in Claude or another chat assistant, take the online server.
-- “On”, yet silent: One user reports the server showed as on in Figma while nothing answered on the assistant's side, even after restarting. Workaround: Figma suggests checking that company security software isn't blocking the server, or switching to the online server meanwhile. (user feedback)
+- Built for coding tools: Figma documents connecting it from Claude Code, Codex, Cursor and VS Code, not from chat apps. Workaround: If you work in Claude or another chat assistant, use the online server.
+- “On”, yet silent: One user reports the server showed as on in Figma while nothing answered on the assistant's side, even after restarting. Workaround: Figma suggests checking that company security software isn't blocking the server, or switching to the online server in the meantime. (user feedback)
 
 #### FR
 
-Verdict : Réservé à ceux qui codent dans Claude Code, Cursor ou VS Code avec l'application Figma ouverte à côté : l'assistant lit la frame que vous sélectionnez, sans jamais toucher à la maquette. Pour tout le reste, Figma recommande lui-même son serveur en ligne.
+Verdict : Réservé aux personnes qui codent dans Claude Code, Cursor ou VS Code avec l'application Figma ouverte à côté : l'assistant lit la frame que vous sélectionnez, sans jamais toucher à la maquette. Pour tout le reste, Figma recommande lui-même son serveur en ligne.
 
 Situations :
 - Maquette en code : Un point de départ fidèle à la maquette. Demandez : « Transforme la frame sélectionnée dans Figma en composant React, en reprenant les variables du fichier. »
@@ -369,7 +369,7 @@ Conseils :
 - Sélectionnez, puis demandez : Sélectionnez la frame dans Figma et dites simplement « la sélection » : seul le serveur de bureau sait faire ça.
 - Application ouverte, serveur activé : Il s'active dans Dev Mode, depuis le panneau de droite, et ne répond que tant que Figma tourne. Pas de réponse ? Vérifiez d'abord qu'il est toujours activé.
 - Grande page : le plan d'abord : Sur une grosse sélection, demandez d'abord la structure, puis le détail d'un bloc à la fois. D'un coup, il reçoit trop d'informations.
-- Lecture seule, par construction : Il ne peut ni dessiner ni modifier vos maquettes : vous pouvez l'ouvrir sur celle validée par le client sans trembler.
+- Lecture seule, par construction : Il ne peut ni dessiner ni modifier vos maquettes : vous pouvez lui confier celle que le client a validée, sans trembler.
 
 Pièges :
 - Pas sur le forfait gratuit : Il demande un siège Dev ou Full sur un forfait payant ; le forfait gratuit Starter n'en fait pas partie. Parade : Passez par le serveur en ligne de Figma, ouvert à tous les forfaits.
@@ -388,7 +388,7 @@ Sources:
 
 #### EN
 
-Verdict: This is the version to pick by default: nothing to install, it works from Claude as well as from a code editor, and it's the only one that can draw in your files. Bear in mind that writing is in beta: what it produces gets reviewed before it reaches a client.
+Verdict: This is the version to pick by default: nothing to install, it works from Claude as well as from a code editor, and it's the only one that can draw in your files. Bear in mind that writing is in beta: what it produces needs reviewing before it reaches a client.
 
 Situations:
 - Mockup notes: A spec sheet you didn't have to write. Ask: “Here's the link to this frame: describe its components, colours and the variables it uses, for the client's developer.”
@@ -396,14 +396,14 @@ Situations:
 - New screen: A first version, built from your components. Ask: “In my draft, build a sign-in screen with the components and variables from my “Studio” library.”
 
 Tips:
-- Copy the link to selection: Right-click the frame, “Copy link to selection”, then paste it into your request. The assistant doesn't open the link, it just reads the frame's address from it.
+- Copy the selection link: Right-click the frame, “Copy link to selection”, then paste it into your request. The assistant doesn't open the link, it just reads the frame's address from it.
 - Name your library: Tell it every time to use your library and its variables: it doesn't spot it on its own. Otherwise it tends to hard-code colours. (user feedback)
-- On a copy first: Try it on a draft or a duplicate before touching the mockup your client signed off. Figma advises it too.
-- Big file: outline first: On a large mockup, ask for the structure first, then the detail of one part only. In one go, it gets too much at once.
+- On a copy first: Try it on a draft or a duplicate before touching the mockup your client signed off. Figma itself recommends this.
+- Big file: outline first: On a large mockup, ask for the structure first, then the detail of one part only. All in one go, it gets too much.
 - Refused? Ask “whoami”: It tells you which account you're signed in with, on which plan and with which seat. That's often where the explanation hides.
 
 Pitfalls:
-- Beta: needs review: Figma warns that what it draws may need manual review and cleanup. Workaround: Open the file in Figma after each step and fix things with small requests, in the same chat.
+- Beta: needs review: Figma warns that what the assistant draws may need manual review and cleanup. Workaround: Open the file in Figma after each step and fix things with small requests, in the same chat.
 - Light seat, counted reads: With a View or Collab seat, or on the free plan, file reads hit their cap very quickly. Workaround: Target one frame rather than the whole file; if you use it daily, a Full or Dev seat changes everything.
 - The write tool vanishes: A Claude user reports the write tool vanished overnight, while reading still worked. Workaround: Figma advises reinstalling the server with the current setup steps, since new tools may require it. (user feedback)
 - No images, no local fonts: It doesn't add images on its own, and only uses fonts uploaded to your Figma account, not those installed on your computer. Workaround: Upload your fonts to Figma and place images yourself, or ask it to upload them first.
@@ -413,7 +413,7 @@ Pitfalls:
 Verdict : C'est la version à choisir par défaut : rien à installer, elle marche depuis Claude comme depuis un éditeur de code, et c'est la seule qui peut dessiner dans vos fichiers. Gardez en tête que l'écriture est en bêta : ce qu'elle produit se relit avant de partir chez le client.
 
 Situations :
-- Fiche de maquette : Une fiche technique sans la rédiger. Demandez : « Voici le lien de cette frame : décris ses composants, ses couleurs et les variables qu'elle utilise, pour le développeur du client. »
+- Fiche de maquette : Une fiche technique, sans avoir à la rédiger. Demandez : « Voici le lien de cette frame : décris ses composants, ses couleurs et les variables qu'elle utilise, pour le développeur du client. »
 - Parcours client : Un schéma à montrer en atelier. Demandez : « Crée dans FigJam un diagramme du parcours de commande : panier, livraison, paiement, confirmation. »
 - Nouvel écran : Une première version, faite de vos composants. Demandez : « Dans mon brouillon, monte un écran de connexion avec les composants et les variables de ma bibliothèque « Studio ». »
 
@@ -425,7 +425,7 @@ Conseils :
 - Un refus ? Demandez « whoami » : Il vous dit avec quel compte vous êtes connecté, sur quel forfait et avec quel siège. C'est souvent là que se cache l'explication.
 
 Pièges :
-- Bêta : à relire : Figma prévient que ce qu'il dessine peut demander une relecture et du nettoyage à la main. Parade : Ouvrez le fichier dans Figma après chaque étape et corrigez par petites demandes, dans la même conversation.
+- Bêta : à relire : Figma prévient que ce que dessine l'assistant peut demander une relecture et du nettoyage à la main. Parade : Ouvrez le fichier dans Figma après chaque étape et corrigez par petites demandes, dans la même conversation.
 - Siège léger, lectures comptées : Avec un siège View ou Collab, ou sur le forfait gratuit, les lectures de fichiers sont très vite plafonnées. Parade : Ciblez une frame plutôt que tout le fichier ; si vous l'utilisez chaque jour, un siège Full ou Dev change la donne.
 - L'outil d'écriture disparaît : Un utilisateur de Claude raconte que l'outil d'écriture a disparu du jour au lendemain, alors que la lecture marchait toujours. Parade : Figma conseille de réinstaller le serveur en suivant la procédure à jour, les nouveaux outils pouvant l'exiger. (retour d'utilisateurs)
 - Ni images ni polices locales : Il n'ajoute pas d'image tout seul et n'utilise que les polices envoyées sur votre compte Figma, pas celles installées sur votre ordinateur. Parade : Envoyez vos polices sur Figma et placez les images vous-même, ou demandez-lui de les téléverser d'abord.
@@ -505,13 +505,13 @@ Situations:
 - Campaign review: Your numbers without opening reports. Ask: “How did my last email campaign do, and which campaign brought in the most last month?”
 
 Tips:
-- Writing behind approval: HubSpot recommends it itself: set write tools to “Needs approval”. On “Always allow”, edits go through without asking you.
+- Writing behind approval: HubSpot itself recommends it: set write tools to “Needs approval”. On “Always allow”, edits go through without asking you.
 - One record first, then the batch: Before a bulk update, try it on a single record and read what it proposes. Bulk changes go in small batches anyway.
 - At a client's, admin first: Only Super Admins can connect it without prior approval. On a client's HubSpot account, ask them to approve the connector before you start.
 - New rights, reconnect: When the admin opens up new data, the assistant doesn't see it right away: you have to disconnect and reconnect the connector.
 
 Pitfalls:
-- One HubSpot account only: A Claude account connects to one HubSpot account at a time. If you work in several clients' HubSpot, expect some juggling. Workaround: Disconnect and reconnect the right account before switching clients, and ask it which account it sees at the start of the chat.
+- One HubSpot account only: A Claude account connects to one HubSpot account at a time. If you work in several clients' HubSpot, expect some juggling. Workaround: Disconnect and reconnect the right account before switching clients, and ask the assistant which account it sees at the start of the chat.
 - No deleting, no invoices: It deletes no records, and invoices, orders or subscriptions stay read-only. Workaround: Do the clean-up and the billing directly in HubSpot.
 - Notes and tasks refused: One user reports notes and tasks failing with an authorisation error, while contacts and deals went through. Workaround: Check the connector's granted permissions with the admin, reconnect it, and meanwhile add the note in HubSpot. (user feedback)
 - Sensitive Data, inbox closed: If Sensitive Data is turned on for the account, it can no longer read inbox conversations. Workaround: To sum up a client exchange, open the conversation in HubSpot and paste the gist into your request.
@@ -521,7 +521,7 @@ Pitfalls:
 Verdict : Si votre suivi commercial vit dans HubSpot, branchez-le : votre assistant lit contacts et transactions et met vos fiches à jour, même avec les outils gratuits. Il ne supprime rien, et la création ou la modification d'une fiche attend votre accord.
 
 Situations :
-- Après un appel : La note et la relance, sans ouvrir HubSpot. Demandez : « Ajoute une note à la fiche de Claire Martin : elle valide le devis, et crée-moi une tâche pour la relancer mardi. »
+- Après un appel : La note et la relance, sans ouvrir HubSpot. Demandez : « Ajoute une note à la fiche de Claire Martin : « Elle valide le devis. » Puis crée-moi une tâche pour la relancer mardi. »
 - Transactions en cours : Votre pipeline en une réponse. Demandez : « Fais-moi le point sur mes transactions ouvertes : nom, montant, étape, triées par date de clôture prévue. »
 - Bilan de campagne : Vos chiffres sans ouvrir les rapports. Demandez : « Comment s'est passée ma dernière campagne d'e-mails, et quelle campagne a rapporté le plus le mois dernier ? »
 
@@ -532,10 +532,10 @@ Conseils :
 - Nouveaux droits, nouvelle connexion : Quand l'administrateur ouvre l'accès à de nouvelles données, l'assistant ne les voit pas tout de suite : il faut déconnecter puis reconnecter le connecteur.
 
 Pièges :
-- Un seul compte HubSpot : Un compte Claude ne se branche qu'à un compte HubSpot à la fois. Si vous travaillez dans le HubSpot de plusieurs clients, il faut jongler. Parade : Déconnectez puis reconnectez le bon compte avant de changer de client, et demandez-lui en début de conversation quel compte il voit.
+- Un seul compte HubSpot : Un compte Claude ne se branche qu'à un compte HubSpot à la fois. Si vous travaillez dans le HubSpot de plusieurs clients, il faut jongler. Parade : Déconnectez puis reconnectez le bon compte avant de changer de client, et demandez à l'assistant en début de conversation quel compte il voit.
 - Ni suppression ni factures : Il ne supprime aucune fiche, et factures, commandes ou abonnements restent en lecture seule. Parade : Faites le ménage et la facturation directement dans HubSpot.
 - Notes et tâches refusées : Un utilisateur signale que les notes et les tâches échouaient sur une erreur d'autorisation, alors que contacts et transactions passaient. Parade : Vérifiez avec l'administrateur les droits accordés au connecteur, reconnectez-le, et en attendant ajoutez la note dans HubSpot. (retour d'utilisateurs)
-- Données sensibles, conversations fermées : Si les données sensibles sont activées sur le compte, il ne peut plus lire les conversations de la boîte de réception. Parade : Pour résumer un échange avec un client, ouvrez la conversation dans HubSpot et collez l'essentiel dans votre demande.
+- Données sensibles, conversations fermées : Si l'option « Données sensibles » est activée sur le compte, il ne peut plus lire les conversations de la boîte de réception. Parade : Pour résumer un échange avec un client, ouvrez la conversation dans HubSpot et collez l'essentiel dans votre demande.
 
 Sources:
 - https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server
@@ -555,17 +555,17 @@ Verdict: If you already have Make scenarios running, plug it in: your assistant 
 Situations:
 - Client invoice: The scenario runs, Make stays closed. Ask: “Run my “Client invoice” scenario for Studio Martin, website redesign, and tell me what it returns.”
 - Your automations: The manual for your workshop. Ask: “Which Make scenarios can you run for me, and what does each one do?”
-- Monthly report: The result, even when it takes a while. Ask: “Where's the monthly report scenario you started earlier? Give me its result.”
+- Monthly report: The result, even when it takes a while. Ask: “What's the status of the monthly report scenario you started earlier? Give me its result.”
 
 Tips:
-- Describe your scenarios: Make says so: a detailed description helps the assistant pick the right scenario. “Scenario 7 copy” tells it nothing, and you neither.
+- Describe your scenarios: Make says so: a detailed description helps the assistant pick the right scenario. “Scenario 7 copy” tells it nothing, and tells you nothing either.
 - Well-named inputs: Scenario inputs are what the assistant fills in when it runs it. Name them clearly (client, amount, email) and it'll know what goes where.
 - Active and “on demand”: A scenario only shows up if it's active and scheduled “on demand”. If one is missing, check those two settings first.
 - Run first, manage later: When connecting, only tick the run permissions if you don't want it touching your scenarios. Management can be added the day you need it.
 - A made-to-measure toolbox: To expose only a few scenarios, use an MCP toolbox: you pick which ones, and mark as read-only those that change nothing.
 
 Pitfalls:
-- Long scenarios lose it: After a short wait, the assistant stops waiting for the answer, even though the scenario keeps running in Make. Workaround: Grant scenario read access when connecting, then ask it for the result a little later.
+- Long scenario, lost answer: After a short wait, the assistant stops waiting for the answer, even though the scenario keeps running in Make. Workaround: Grant scenario read access when connecting, then ask it for the result a little later.
 - Connected, but nothing runs: ChatGPT users report a working connection, but scenarios that never run. Workaround: Check the scenario is active and “on demand”, give it a description, then look at its history in Make. (user feedback)
 - Hand-edited config gets stuck: A Claude Desktop user who had added Make by hand to the config file kept hitting an authorisation error. Workaround: Remove Make from the config file and add it as a connector from Claude, signing in with your account. (user feedback)
 - On free, it only runs: On the free plan, it runs your scenarios but can neither inspect nor edit them. Workaround: Make your edits in Make, or move to a paid plan if you plan to hand it the workshop.
@@ -611,7 +611,7 @@ Verdict: If your workshops and project plans live in Miro, plug it in, even on t
 Situations:
 - Workshop minutes: The minutes, no sticky notes retyped. Ask: “Sum up yesterday's workshop board, comments included, then list the decisions made and the next actions.”
 - Project kickoff: The project skeleton, already in place. Ask: “Create a “Studio Martin redesign” board with one frame per stage: scoping, mock-ups, build, launch.”
-- Client comments: Comments sorted, threads closed. Ask: “List the comments still open on this board, and mark as resolved the ones I point out.”
+- Client comments: You see what's left to handle. Ask: “List the comments still open on this board, and mark as resolved the ones I point out.”
 
 Tips:
 - Paste the board's address: Put the board's full address in your request: it's Miro's own cure for “board not found”.
@@ -632,7 +632,7 @@ Verdict : Si vos ateliers et vos plans de projet vivent dans Miro, branchez-le, 
 Situations :
 - Compte rendu d'atelier : Le compte rendu, sans recopier les post-it. Demandez : « Résume le tableau de l'atelier d'hier, commentaires compris, puis liste les décisions prises et les actions à mener. »
 - Lancement de projet : Le squelette du projet, déjà posé. Demandez : « Crée un tableau « Refonte Studio Martin » avec un cadre par étape : cadrage, maquettes, développement, mise en ligne. »
-- Retours du client : Les retours triés, les fils refermés. Demandez : « Liste les commentaires encore ouverts sur ce tableau, et marque comme résolus ceux que je t'indique. »
+- Retours du client : Vous voyez ce qui reste à traiter. Demandez : « Liste les commentaires encore ouverts sur ce tableau, et marque comme résolus ceux que je t'indique. »
 
 Conseils :
 - Collez l'adresse du tableau : Donnez l'adresse complète du tableau dans votre demande : c'est le remède que Miro conseille contre le « tableau introuvable ».
@@ -663,22 +663,22 @@ Sources:
 Verdict: If your clients and projects already live in Notion and you use Claude or ChatGPT, plug it in: your assistant searches, summarises and writes in your pages, without you moving up to the plan that includes Notion AI.
 
 Situations:
-- Client meeting: The history in mind before the call. Ask: “Before my call with Dupont, summarise their latest meeting notes and any open decisions.”
+- Client meeting: The full history fresh in your mind before the call. Ask: “Before my call with Dupont, summarise their latest meeting notes and any open decisions.”
 - Weekly review: Your week in one answer. Ask: “In my Projects database, list what is late or blocked and what I must deliver next week.”
 - Unpaid invoices: Follow-ups ready, database up to date. Ask: “In my Invoices database, find the ones still “Sent” for over a month and switch them to “Follow up”.”
 
 Tips:
-- Titles that speak: Client, document type, date: the assistant relies on titles to understand what it finds. “Notes 3” won't help it any more than it helps you.
-- One database per subject, linked together: Clients, projects, invoices, each in its own database, with tasks linked to client pages: that is what lets it sum up progress and blockers for you.
+- Titles that say something: Client, document type, date: the assistant relies on titles to understand what it finds. “Notes 3” won't help it any more than it helps you.
+- One database per subject, linked together: Clients, projects, invoices, each in its own database, with tasks linked to client pages: that is what lets the assistant sum up progress and blockers for you.
 - Free reading, writing on request: In the connector's settings, let it read freely, but keep editing and deleting behind your approval.
-- On a client page, a suggestion rather than a rewrite: Ask it to suggest an edit: you accept it in Notion, and the text your client reads stays yours.
-- In ChatGPT, expect to click: Every update asks for your approval. For twenty records at once, it turns into a patience exercise: work in small batches. (user feedback)
+- On a client page, a suggestion rather than a rewrite: Ask the assistant to suggest an edit: you accept it in Notion, and the text your client reads stays yours.
+- In ChatGPT, expect to click: Every update asks for your approval. For twenty records at once, it becomes an exercise in patience: work in small batches. (user feedback)
 
 Pitfalls:
-- A guest at a client's? Door shut: Guests in a Notion workspace cannot plug in an assistant. Workaround: Ask the client to add you as a member, or copy the pages you need into your own workspace.
-- Many pages, slow reading: It opens pages one by one, and may skip some when there are too many. Workaround: Point to a specific page or database and work in small batches; for a full review, start from an export. (user feedback)
-- Request limits: Past Notion's limits, the action stops with an error instead of waiting. Workaround: Ask it to do fewer things at once, or try again a little later.
-- It has your rights, all of them: A misunderstood request can edit or trash a client page. Workaround: Keep writing behind approval and try your requests on a test page first.
+- Guest in a client's workspace? Door shut: Guests in a Notion workspace cannot plug in an assistant. Workaround: Ask the client to add you as a member, or copy the pages you need into your own workspace.
+- Many pages, slow reading: The assistant opens pages one by one, and may skip some when there are too many. Workaround: Point to a specific page or database and work in small batches; for a full review, start from an export. (user feedback)
+- Request limits: Past Notion's limits, the action stops with an error instead of waiting. Workaround: Ask the assistant to do fewer things at once, or try again a little later.
+- The assistant has your permissions, all of them: A misunderstood request can edit or trash a client page. Workaround: Keep writing behind approval and try your requests on a test page first.
 
 #### FR
 
@@ -690,17 +690,17 @@ Situations :
 - Factures impayées : Les relances prêtes, la base à jour. Demandez : « Dans ma base Factures, trouve celles encore « Envoyée » depuis plus d'un mois et passe-les en « À relancer ». »
 
 Conseils :
-- Des titres qui parlent : Client, type de document, date : l'assistant s'appuie sur les titres pour comprendre ce qu'il trouve. « Notes 3 » ne l'aidera pas plus que vous.
-- Une base par sujet, reliées entre elles : Clients, projets, factures, chacun dans sa base, avec les tâches reliées aux pages client : c'est ce qui lui permet de vous résumer l'avancement et les blocages.
+- Des titres qui parlent : Client, type de document, date : l'assistant s'appuie sur les titres pour comprendre ce qu'il trouve. « Notes 3 » ne l'aidera pas plus qu'il ne vous aide.
+- Une base par sujet, reliées entre elles : Clients, projets, factures, chacun dans sa base, avec les tâches reliées aux pages client : c'est ce qui permet à l'assistant de vous résumer l'avancement et les blocages.
 - Lecture libre, écriture sur demande : Dans les réglages du connecteur, laissez-le lire librement, mais gardez la modification et la suppression sous votre approbation.
-- Sur une page client, une suggestion plutôt qu'une réécriture : Demandez-lui de proposer une modification : vous l'acceptez dans Notion, et le texte que lit votre client reste le vôtre.
+- Sur une page client, une suggestion plutôt qu'une réécriture : Demandez à l'assistant de proposer une modification : vous l'acceptez dans Notion, et le texte que lit votre client reste le vôtre.
 - Dans ChatGPT, prévoyez de cliquer : Chaque mise à jour demande votre accord. Pour vingt fiches d'un coup, ça devient un exercice de patience : travaillez par petits lots. (retour d'utilisateurs)
 
 Pièges :
-- Invité chez un client ? Porte fermée : Les invités d'un espace Notion ne peuvent pas brancher d'assistant. Parade : Demandez au client de vous ajouter comme membre, ou copiez les pages utiles dans votre propre espace.
-- Beaucoup de pages, lecture lente : Il ouvre les pages une par une, et peut en sauter quand il y en a trop. Parade : Pointez une page ou une base précise et travaillez par petits lots ; pour un bilan complet, partez d'un export. (retour d'utilisateurs)
-- Les limites de requêtes : Au-delà des limites de Notion, l'action s'arrête sur une erreur au lieu d'attendre. Parade : Demandez-lui de faire moins de choses à la fois, ou réessayez un peu plus tard.
-- Il a vos droits, tous vos droits : Une demande mal comprise peut modifier ou mettre à la corbeille une page client. Parade : Gardez l'écriture sous approbation et essayez d'abord vos demandes sur une page de test.
+- Accès invité chez un client ? Porte fermée : Les invités d'un espace Notion ne peuvent pas brancher d'assistant. Parade : Demandez au client de vous ajouter comme membre, ou copiez les pages utiles dans votre propre espace.
+- Beaucoup de pages, lecture lente : L'assistant ouvre les pages une par une, et peut en sauter quand il y en a trop. Parade : Pointez une page ou une base précise et travaillez par petits lots ; pour un bilan complet, partez d'un export. (retour d'utilisateurs)
+- Les limites de requêtes : Au-delà des limites de Notion, l'action s'arrête sur une erreur au lieu d'attendre. Parade : Demandez à l'assistant de faire moins de choses à la fois, ou réessayez un peu plus tard.
+- L'assistant a vos droits, tous vos droits : Une demande mal comprise peut modifier ou mettre à la corbeille une page client. Parade : Gardez l'écriture sous approbation et essayez d'abord vos demandes sur une page de test.
 
 Sources:
 - https://developers.notion.com/guides/mcp/get-started-with-mcp
@@ -730,14 +730,14 @@ Tips:
 - Say “Shopify” every time: Name Shopify in the request and check the connector is on for the chat. Otherwise the assistant hands you generic advice instead of acting.
 - One request, one task: Shopify recommends one task per message, and short analytics questions asked one at a time.
 - Check stock before changing it: Ask for the current count before correcting stock: you see what you're about to overwrite.
-- The theme, on a copy: It won't touch the live theme: duplicate it, let it work on the copy, then publish it yourself once reviewed.
+- The theme, on a copy: It won't touch the live theme: duplicate it, let the assistant work on the copy, then publish it yourself once reviewed.
 - Read first, write later: It changes nothing until you approve write access. To take it back later, you have to uninstall and reinstall the integration.
 
 Pitfalls:
 - Big batches stop short: It changes items one by one, and a large batch can stop partway. Workaround: Work in small batches and finish the rest in the Shopify admin.
 - One store per chat: Only one store is connected at a time, and a chat started before a switch can keep using the old one. Workaround: Ask it which store is connected, and open a new chat after every switch.
 - Store switch, broken connection: One user running two stores reports that after a switch, every action asked for re-authorisation, and reconnecting fixed nothing. Workaround: If the connection won't come back, contact Anthropic support, which Shopify points to for connector access issues. (user feedback)
-- Its mistakes are yours: Shopify doesn't review what it does: a wrong product change remains your responsibility. Workaround: Keep writing behind approval and read every change before saying yes.
+- Its mistakes are yours: Shopify doesn't review what the assistant does: a wrong product change remains your responsibility. Workaround: Keep write actions behind approval and read every change before saying yes.
 
 #### FR
 
@@ -752,14 +752,14 @@ Conseils :
 - Dites « Shopify » à chaque fois : Citez Shopify dans la demande et vérifiez que le connecteur est activé dans la conversation. Sinon, l'assistant vous donne des conseils génériques au lieu d'agir.
 - Une demande, une tâche : Shopify conseille une tâche par message, et des questions d'analyse courtes, posées une à la fois.
 - Le stock avant la correction : Demandez le chiffre actuel avant de corriger un stock : vous voyez ce que vous allez écraser.
-- Le thème, sur une copie : Il ne touche pas au thème en ligne : dupliquez-le, laissez-le travailler sur la copie, puis publiez-la vous-même après relecture.
+- Le thème, sur une copie : Il ne touche pas au thème en ligne : dupliquez-le, laissez l'assistant travailler sur la copie, puis publiez-la vous-même après relecture.
 - Lecture d'abord, écriture ensuite : Il ne modifie rien tant que vous n'avez pas approuvé l'accès en écriture. Pour le retirer ensuite, il faut désinstaller puis réinstaller l'intégration.
 
 Pièges :
 - Les gros lots s'arrêtent : Il modifie les articles un par un, et un lot important peut s'interrompre en route. Parade : Travaillez par petits lots et terminez le reste dans l'administration Shopify.
 - Une boutique par conversation : Une seule boutique est branchée à la fois, et une conversation commencée avant un changement peut garder l'ancienne. Parade : Demandez-lui quelle boutique est connectée, et ouvrez une nouvelle conversation après chaque changement.
 - Changement de boutique, connexion cassée : Un utilisateur gérant deux boutiques signale qu'après un changement, chaque action réclamait une nouvelle autorisation, sans que la reconnexion règle rien. Parade : Si la connexion ne revient pas, contactez le support d'Anthropic, que Shopify désigne pour les problèmes d'accès au connecteur. (retour d'utilisateurs)
-- Ses erreurs sont les vôtres : Shopify ne valide pas ce qu'il fait : une mauvaise modification de produit reste sous votre responsabilité. Parade : Gardez l'écriture sous approbation et relisez chaque changement avant de dire oui.
+- Ses erreurs sont les vôtres : Shopify ne valide pas ce que fait l'assistant : une mauvaise modification de produit reste sous votre responsabilité. Parade : Gardez l'écriture sous approbation et relisez chaque changement avant de dire oui.
 
 Sources:
 - https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations
@@ -774,7 +774,7 @@ Sources:
 
 #### EN
 
-Verdict: If your clients write to you in Slack, plug it in to find a thread or a file without ten minutes of scrolling. Keep sending behind your approval: it can post in any conversation, under your name.
+Verdict: If your clients write to you in Slack, plug it in to find a thread or a file without ten minutes of scrolling. Keep sending behind your approval: the assistant can post in any conversation, under your name.
 
 Situations:
 - Client thread: Three days of thread, caught up. Ask: “Sum up what was said in #dupont-project since Monday and list the questions nobody answered.”
@@ -785,7 +785,7 @@ Tips:
 - Draft first, send later: Slack lets you draft and preview the message inside the chat before sending it. Always ask for that draft: rereading is cheaper than apologising.
 - Sending behind approval: In the connector's settings, leave reading free but keep sending messages on “Needs approval”.
 - Give a channel and a time frame: Search can be filtered by date, person and content type. “Paul's quote, last week” beats “the quote”.
-- Connect little, connect well: Slack points out that every server you add alongside it has its own security rules. In a chat where Slack is on, only turn on what you need.
+- Connect little, connect well: Slack points out that every server you add alongside it has its own security rules. When Slack is on in your assistant chat, only turn on the other servers you need.
 
 Pitfalls:
 - At a client's, the admin decides: In a client's Slack workspace, their admins approve connected assistants. Without them, you hit an install request. Workaround: Ask the admin for approval, or stick to your own workspace.
@@ -795,7 +795,7 @@ Pitfalls:
 
 #### FR
 
-Verdict : Si vos clients vous écrivent dans Slack, branchez-le pour retrouver un fil ou un fichier sans fouiller pendant dix minutes. Gardez l'envoi sous votre approbation : il peut écrire dans n'importe quelle conversation, en votre nom.
+Verdict : Si vos clients vous écrivent dans Slack, branchez-le pour retrouver un fil ou un fichier sans fouiller pendant dix minutes. Gardez l'envoi sous votre approbation : l'assistant peut écrire dans n'importe quelle conversation, en votre nom.
 
 Situations :
 - Fil client : Trois jours de fil rattrapés. Demandez : « Résume ce qui s'est dit dans #projet-dupont depuis lundi et liste les questions restées sans réponse. »
@@ -806,13 +806,13 @@ Conseils :
 - Brouillon d'abord, envoi ensuite : Slack permet de rédiger et de prévisualiser le message dans la conversation avant de l'envoyer. Demandez toujours ce brouillon : relire coûte moins cher que s'excuser.
 - L'envoi sous approbation : Dans les réglages du connecteur, laissez la lecture libre mais gardez l'envoi de messages sur « Approbation requise ».
 - Donnez un canal et une période : La recherche se filtre par date, par personne et par type de contenu. « Le devis de Paul, la semaine dernière » vaut mieux que « le devis ».
-- Branchez peu, branchez bien : Slack rappelle que chaque serveur ajouté à côté a ses propres règles de sécurité. Dans une conversation où Slack est actif, n'activez que ce dont vous avez besoin.
+- Branchez peu, branchez bien : Slack rappelle que chaque serveur ajouté à côté a ses propres règles de sécurité. Quand Slack est actif dans votre discussion avec l'assistant, n'activez à côté que les serveurs dont vous avez besoin.
 
 Pièges :
 - Chez un client, l'admin décide : Dans l'espace Slack d'un client, ce sont ses administrateurs qui approuvent les assistants branchés. Sans eux, vous tombez sur une demande d'installation. Parade : Demandez l'accord de l'administrateur, ou limitez-vous à votre propre espace.
 - Il écrit partout, en votre nom : L'assistant peut envoyer ou programmer un message dans n'importe quelle conversation à laquelle vous avez accès. Parade : Gardez l'envoi sous approbation et lisez le destinataire avant de dire oui.
 - Refusé hors des adresses autorisées : Si l'espace limite les adresses IP, les demandes de votre assistant venues d'ailleurs sont rejetées. Parade : Voyez avec l'administrateur de l'espace si l'adresse de votre assistant peut être ajoutée.
-- Dans Cursor, des outils manquants : Des utilisateurs ont vu seulement l'ancienne liste d'outils : les nouvelles permissions n'étaient pas approuvées côté Slack. Parade : Effacez les jetons MCP de Cursor, reconnectez-vous, et faites approuver les nouvelles permissions par l'administrateur. (retour d'utilisateurs)
+- Dans Cursor, des outils manquants : Des utilisateurs n'ont vu que l'ancienne liste d'outils : les nouvelles permissions n'étaient pas approuvées côté Slack. Parade : Effacez les jetons MCP de Cursor, reconnectez-vous, et faites approuver les nouvelles permissions par l'administrateur. (retour d'utilisateurs)
 
 Sources:
 - https://docs.slack.dev/ai/slack-mcp-server/
@@ -828,39 +828,39 @@ Sources:
 
 #### EN
 
-Verdict: If you already bill through Stripe, this server is worth trying for spotting unpaid invoices and preparing invoices and payment links from a chat. Stripe mentions no extra subscription for the server, but it works on your real account and can refund or void an invoice: start in a test environment and approve every write action yourself.
+Verdict: If you already bill through Stripe, this server is worth trying for spotting unpaid invoices and preparing invoices and payment links from a chat. Stripe mentions no extra subscription for the server, but the server acts on your live account and can refund or void an invoice: start in a test environment and approve every write action yourself.
 
 Situations:
 - New invoice: An invoice ready to review. Ask: “Draft an invoice for Studio Martin for the website redesign; I'll review it before you finalize it.”
-- Payment link: A link to paste into your quote. Ask: “Create a payment link for my “SEO audit” package and give me the URL to send the client.”
-- Unpaid: Who owes you what, in one question. Ask: “Which invoices are still open, for which clients, and which are past due?”
+- Payment link: A link to paste into your quote. Ask: “Create a payment link for my “SEO audit” package and give me the URL to send to the client.”
+- Unpaid invoices: Who owes you what, in one question. Ask: “Which invoices are still open, for which clients, and which are past due?”
 
 Tips:
 - Start in the sandbox: When you connect, Stripe lets you pick a test environment: nothing is really charged or refunded there. It's the place to make your mistakes.
 - Needs approval, always: Leave write tools on “Needs approval”, as Stripe recommends. “Always allow” on the account that collects your money is a no.
 - Read the amount before saying yes: Customer, amount, currency: three seconds of reading spare you an awkward refund. Only remember your approval for a tool you fully trust.
-- A key, but a small one: If you go through a key (Claude Code, Codex), create an agent key limited to the rights you need and keep it out of the chat. Stripe applies approval rules to it for refunds and payouts.
+- A key, but a small one: If you connect with a key (Claude Code, Codex), create an agent key limited to the permissions you need and keep it out of the chat. Stripe applies approval rules to it for refunds and payouts.
 - No Stripe next to your emails: Don't turn Stripe on in the same chat as a server that reads emails or web pages: Stripe warns about instructions hidden in such content.
 
 Pitfalls:
 - Finalized doesn't mean sent: The assistant can create and finalize an invoice, but not send it to the client. Workaround: Turn on “Send finalized invoices to customers” in your billing settings, or click “Send invoice” in the Dashboard.
 - Not everything asks for confirmation: A single tool creates, updates and deletes. A refund goes through Stripe's confirmation; voiding an invoice or deleting a coupon does not. Workaround: Never set this tool to “Always allow”, and read every write request before accepting it.
 - Live account greyed out at sign-in: One user reports that only test environments could be picked. Workaround: Check that MCP access is on for live mode in the Dashboard's “MCP and CLI access” settings and that your role allows it. (user feedback)
-- The session expires: The connection isn't permanent: the assistant loses access without warning. Workaround: Reconnect Stripe from your assistant when it stops answering.
+- The session expires: The connection isn't permanent: the assistant loses access without warning. Workaround: Reconnect Stripe from your assistant when Stripe stops responding.
 
 #### FR
 
-Verdict : Si vous facturez déjà avec Stripe, ce serveur vaut l'essai pour repérer les impayés et préparer factures et liens de paiement depuis la conversation. Stripe n'annonce aucun abonnement en plus pour le serveur, mais il agit sur votre vrai compte et peut rembourser ou annuler une facture : commencez dans un environnement de test et validez chaque action d'écriture.
+Verdict : Si vous facturez déjà avec Stripe, ce serveur vaut l'essai pour repérer les impayés et préparer factures et liens de paiement depuis la conversation. Stripe n'annonce aucun abonnement en plus pour le serveur, mais celui-ci agit sur votre vrai compte et peut rembourser ou annuler une facture : commencez dans un environnement de test et validez chaque action d'écriture.
 
 Situations :
-- Nouvelle facture : Une facture prête à relire. Demandez : « Prépare un brouillon de facture pour Studio Martin pour la refonte du site, je le relis avant de le finaliser. »
+- Nouvelle facture : Une facture prête à relire. Demandez : « Prépare un brouillon de facture pour la refonte du site de Studio Martin ; je le relirai avant que tu le finalises. »
 - Lien de paiement : Un lien à coller dans votre devis. Demandez : « Crée un lien de paiement pour mon forfait « Audit SEO » et donne-moi l'adresse à envoyer au client. »
 - Impayés : Qui vous doit quoi, en une question. Demandez : « Quelles factures sont encore ouvertes, pour quels clients, et lesquelles ont dépassé leur échéance ? »
 
 Conseils :
 - Commencez dans le bac à sable : À la connexion, Stripe vous laisse choisir un environnement de test : rien n'y est réellement encaissé ni remboursé. C'est l'endroit pour faire vos bêtises.
 - Approbation requise, toujours : Laissez les outils d'écriture sur « Approbation requise », comme Stripe le recommande. « Toujours autoriser » sur votre compte d'encaissement, c'est non.
-- Relisez le montant avant de dire oui : Client, montant, devise : trois secondes de lecture évitent un remboursement gênant. Ne mémorisez votre accord que pour un outil en qui vous avez pleinement confiance.
+- Relisez le montant avant de dire oui : Client, montant, devise : trois secondes de lecture évitent un remboursement gênant. Ne mémorisez votre accord que pour un outil auquel vous faites pleinement confiance.
 - Une clé, mais une petite : Si vous passez par une clé (Claude Code, Codex), créez une clé d'agent limitée aux droits utiles et gardez-la hors de la conversation. Stripe y applique des règles d'approbation pour les remboursements et les virements.
 - Pas de Stripe à côté de vos e-mails : N'activez pas Stripe dans la même conversation qu'un serveur qui lit des e-mails ou des pages web : Stripe met en garde contre les consignes cachées dans ces contenus.
 
@@ -868,7 +868,7 @@ Pièges :
 - Finalisée ne veut pas dire envoyée : L'assistant peut créer et finaliser une facture, mais pas l'envoyer au client. Parade : Activez « Envoyer les factures finalisées aux clients » dans les réglages de facturation, ou cliquez sur « Envoyer la facture » dans le Dashboard.
 - Tout ne demande pas confirmation : Un seul outil crée, modifie et supprime. Un remboursement passe par la confirmation de Stripe ; annuler une facture ou supprimer un bon de réduction, non. Parade : Ne mettez jamais cet outil en « Toujours autoriser » et lisez chaque demande d'écriture avant de l'accepter.
 - Compte réel grisé à la connexion : Un utilisateur signale que seuls les environnements de test étaient sélectionnables. Parade : Vérifiez que l'accès MCP est activé pour le mode production dans les réglages « Accès MCP et CLI » du Dashboard et que votre rôle le permet. (retour d'utilisateurs)
-- La session expire : La connexion n'est pas permanente : l'assistant perd l'accès sans prévenir. Parade : Reconnectez Stripe depuis votre assistant quand il ne répond plus.
+- La session expire : La connexion n'est pas permanente : l'assistant perd l'accès sans prévenir. Parade : Reconnectez Stripe depuis votre assistant quand Stripe ne répond plus.
 
 Sources:
 - https://docs.stripe.com/mcp
@@ -885,23 +885,23 @@ Sources:
 
 #### EN
 
-Verdict: If you collect quote requests, sign-ups or feedback with Tally, plug it in: it builds a form from one sentence and reads the answers for you. It deletes nothing, but it's still in beta: review before publishing.
+Verdict: If you collect quote requests, sign-ups or feedback with Tally, plug it in: it builds a form from one sentence and reads the responses for you. It deletes nothing, but it's still in beta: review before publishing.
 
 Situations:
-- Quote request: A ready form, as a private draft. Ask: “Create a quote request form: name, email, project type and deadline required, budget optional.”
+- Quote request: A form ready to go, as a private draft. Ask: “Create a quote request form: name, email, project type and deadline required, budget optional.”
 - Client feedback: The feedback, read for you. Ask: “Sum up the recurring themes in the long answers to my end-of-project survey.”
 - Sign-ups: The trend, no spreadsheet needed. Ask: “Show me how sign-ups to my workshop evolved, week by week, over the last three months.”
 
 Tips:
-- List your fields: Name each field and say whether it's required or optional. Otherwise it picks the usual fields, which aren't necessarily yours.
-- Give the form's URL: To edit an existing form, paste its link into the request: that's how it knows which one to touch.
+- List your fields: Name each field and say whether it's required or optional. Otherwise the assistant picks the usual fields, which aren't necessarily yours.
+- Give the form's URL: To edit an existing form, paste its link into the request: that's how the assistant knows which one to touch.
 - Publish when you're ready: A new form stays a private draft until you ask to publish it. Review it in Tally, then say “publish”.
-- A screenshot for your colours: Share a screenshot of your site or brand guide: it can use it to style the form to match.
-- Filter the answers: Ask for completed answers from a specific period rather than the whole history: the summary will be sharper.
+- A screenshot for your colours: Share a screenshot of your site or brand guide: the assistant can use it to style the form to match.
+- Filter the responses: Ask for completed responses from a specific period rather than the whole history: the summary will be sharper.
 
 Pitfalls:
-- Styling changes right away: On a live form, questions wait for publishing, but settings and styling apply immediately. Workaround: Try styling changes on a copy rather than on the form your clients are filling in.
-- It creates, but doesn't tidy: It can't delete forms or answers: test runs pile up in your workspace. Workaround: Delete the test drafts yourself in Tally now and then.
+- Styling changes right away: On a live form, question changes wait for publishing, but settings and styling changes apply immediately. Workaround: Try styling changes on a copy rather than on the form your clients are filling in.
+- It creates, but doesn't tidy: The assistant can't delete forms or responses: test runs pile up in your workspace. Workaround: Delete the test drafts yourself in Tally now and then.
 - Still in beta: Tally warns the server may change: today's behaviour may differ tomorrow. Workaround: Keep your essential forms in your own hands and check the result in Tally after each change.
 
 #### FR
@@ -914,15 +914,15 @@ Situations :
 - Inscriptions : La courbe sans passer par un tableur. Demandez : « Montre-moi l'évolution des inscriptions à mon atelier, semaine par semaine, sur les trois derniers mois. »
 
 Conseils :
-- Listez vos champs : Nommez chaque champ et dites s'il est obligatoire ou facultatif. Sinon, il choisit les champs habituels, qui ne sont pas forcément les vôtres.
-- Donnez l'adresse du formulaire : Pour modifier un formulaire existant, collez son lien dans la demande : c'est ainsi qu'il sait lequel toucher.
-- Publiez quand vous êtes prêt : Un nouveau formulaire reste un brouillon privé tant que vous ne demandez pas sa publication. Relisez-le dans Tally, puis dites « publie ».
-- Une capture pour vos couleurs : Partagez une capture de votre site ou de votre charte : il peut s'en servir pour habiller le formulaire à votre image.
+- Listez vos champs : Nommez chaque champ et dites s'il est obligatoire ou facultatif. Sinon, l'assistant choisit les champs habituels, qui ne sont pas forcément les vôtres.
+- Donnez l'adresse du formulaire : Pour modifier un formulaire existant, collez son lien dans la demande : c'est ainsi que l'assistant sait lequel toucher.
+- Publiez quand tout est prêt : Un nouveau formulaire reste un brouillon privé tant que vous ne demandez pas sa publication. Relisez-le dans Tally, puis dites « publie ».
+- Une capture pour vos couleurs : Partagez une capture de votre site ou de votre charte : l'assistant peut s'en servir pour habiller le formulaire à votre image.
 - Filtrez les réponses : Demandez les réponses complètes d'une période précise plutôt que tout l'historique : la synthèse sera plus juste.
 
 Pièges :
-- Le style change tout de suite : Sur un formulaire en ligne, les questions attendent la publication, mais les réglages et le style s'appliquent immédiatement. Parade : Testez vos changements de style sur une copie plutôt que sur le formulaire que vos clients remplissent.
-- Il crée, mais ne range pas : Il ne peut supprimer ni formulaire ni réponse : les essais s'accumulent dans votre espace. Parade : Supprimez vous-même les brouillons d'essai dans Tally de temps en temps.
+- Le style change tout de suite : Sur un formulaire en ligne, les changements de questions attendent la publication, mais ceux des réglages et du style s'appliquent immédiatement. Parade : Testez vos changements de style sur une copie plutôt que sur le formulaire que vos clients remplissent.
+- Il crée, mais ne range pas : L'assistant ne peut supprimer ni formulaire ni réponse : les essais s'accumulent dans votre espace. Parade : Supprimez vous-même les brouillons d'essai dans Tally de temps en temps.
 - Encore en bêta : Tally prévient que le serveur peut évoluer : un comportement d'aujourd'hui peut changer demain. Parade : Gardez la main sur vos formulaires essentiels et vérifiez le résultat dans Tally après chaque modification.
 
 Sources:
@@ -947,13 +947,13 @@ Situations:
 Tips:
 - Publish in two steps: The “safe publish” skill shows the changes, runs its checks and waits for your explicit go-ahead before going live. Ask for it by name.
 - Bulk CMS, with a preview: To change many items at once, the bulk update checks the data, shows the differences and asks for confirmation.
-- Instructions per site: Each site can have its own agent instructions: tone, class names, what not to touch. Handy when every client has their habits.
+- Instructions per site: Each site can have its own agent instructions: tone, class names, what not to touch. Handy when every client has their own habits.
 - Keep an eye on the log: Changes made by the assistant are recorded in the site's activity log. Handy for knowing who broke the menu: you, the client or the machine.
 
 Pitfalls:
-- Publishing means everything: Publishing the site makes all the latest changes live, unfinished ones included, with no confirmation step described. Workaround: Use the two-step publish and read the list of changes before accepting.
+- Publishing publishes everything: Publishing the site makes all the latest changes live, unfinished ones included, and Webflow describes no confirmation step. Workaround: Use the two-step publish and read the list of changes before accepting.
 - One workspace at a time: Each authorisation covers one workspace. To move to another client's sites, you have to reconnect. Workaround: In Claude, remove and reinstall the connector, picking the right workspace.
-- Deleted file, no way back: It can delete site files, and Webflow says they can't be restored this way. Workaround: Keep a copy of your images and refuse deletions you didn't ask for.
+- Deleted file, no way back: The assistant can delete site assets, and Webflow says they can't be restored this way. Workaround: Keep a copy of your images and refuse deletions you didn't ask for.
 - Tools gone missing in Claude: Webflow has already reported CMS and page tools missing in the Claude apps. Workaround: In the Webflow connector's settings, refresh the tool list.
 
 #### FR
@@ -963,19 +963,19 @@ Verdict : Si vos sites ou ceux de vos clients tournent sur Webflow, branchez-le 
 Situations :
 - Article de blog : L'article en place, pas encore en ligne. Demandez : « Crée un article dans ma collection Blog avec ce texte, en brouillon, sans le publier. »
 - Liens cassés : La chasse aux liens morts, déléguée. Demandez : « Vérifie les liens de mon site, CMS compris, et dis-moi lesquels sont cassés. »
-- Mise en ligne : Une publication relue avant de partir. Demandez : « Montre-moi ce qui a changé depuis la dernière publication, et publie si tout va bien. »
+- Mise en ligne : Une publication relue avant la mise en ligne. Demandez : « Montre-moi ce qui a changé depuis la dernière publication, et publie si tout va bien. »
 
 Conseils :
 - Publiez en deux temps : La compétence « safe publish » montre les changements, fait ses vérifications et attend votre accord explicite avant la mise en ligne. Demandez-la par son nom.
 - CMS en lot, avec aperçu : Pour modifier beaucoup d'éléments d'un coup, la mise à jour en lot vérifie les données, montre les différences et demande confirmation.
-- Des consignes par site : Chaque site peut avoir ses propres consignes d'agent : ton, noms de classes, ce qu'il ne doit pas toucher. Utile quand chaque client a ses habitudes.
+- Des consignes par site : Chaque site peut avoir ses propres consignes d'agent : ton, noms de classes, ce que l'assistant ne doit pas toucher. Utile quand chaque client a ses habitudes.
 - Un œil sur le journal : Les modifications faites par l'assistant sont notées dans le journal d'activité du site. Pratique pour savoir qui a cassé le menu : vous, le client ou la machine.
 
 Pièges :
-- Publier, c'est tout publier : La publication du site met en ligne toutes les dernières modifications, y compris celles en cours, sans étape de confirmation décrite. Parade : Passez par la publication en deux temps et lisez la liste des changements avant d'accepter.
+- Publier, c'est tout publier : La publication du site met en ligne toutes les dernières modifications, y compris celles en cours, et Webflow ne décrit aucune étape de confirmation. Parade : Passez par la publication en deux temps et lisez la liste des changements avant d'accepter.
 - Un espace de travail à la fois : Chaque autorisation couvre un seul espace de travail. Pour passer aux sites d'un autre client, il faut se reconnecter. Parade : Dans Claude, retirez puis réinstallez le connecteur en choisissant le bon espace.
-- Fichier supprimé, sans retour : Il peut supprimer des fichiers du site, et Webflow indique qu'ils ne se restaurent pas par ce biais. Parade : Gardez une copie de vos images et refusez les suppressions que vous n'avez pas demandées.
-- Des outils disparus dans Claude : Webflow a déjà signalé des outils CMS et pages absents dans les applis Claude. Parade : Dans les réglages du connecteur Webflow, actualisez la liste des outils.
+- Fichier supprimé, sans retour : L'assistant peut supprimer des fichiers du site, et Webflow indique qu'ils ne se restaurent pas par ce biais. Parade : Gardez une copie de vos images et refusez les suppressions que vous n'avez pas demandées.
+- Des outils disparus dans Claude : Webflow a déjà signalé des outils CMS et de pages absents dans les applis Claude. Parade : Dans les réglages du connecteur Webflow, actualisez la liste des outils.
 
 Sources:
 - https://developers.webflow.com/mcp/reference/overview
@@ -1005,10 +1005,10 @@ Tips:
 - Keep an eye on History: Every action run shows up in the History tab of mcp.zapier.com: the place to check what actually went out.
 
 Pitfalls:
-- The task counter runs: One user went over their limit without understanding why: the assistant's calls weren't in the usual Zap usage chart. Workaround: Follow the MCP task counter in the billing and usage settings. (user feedback)
+- The task counter keeps ticking: One user went over their limit without understanding why: the assistant's calls weren't in the usual Zap usage chart. Workaround: Watch the MCP task counter in the billing and usage settings. (user feedback)
 - Limit reached, everything stops: Once the task limit is reached, actions fail with an error until the next cycle, unless pay-per-task is on. Workaround: Wait for the reset, change plan, or do the action by hand in the meantime.
 - Shared connections left out: Connections another Zapier user shared with you aren't added automatically. Workaround: Connect the app with your own account in Zapier.
-- A link that opens everything: A connection token or URL grants access to your tools and their data, and lasts a long time. Workaround: Never paste it into a message, a document or a shared chat.
+- A link that opens everything: A connection token or URL grants access to your tools and their data, and lasts a long time. Workaround: Never paste the token or URL into a message, a document or a shared chat.
 
 #### FR
 
@@ -1023,14 +1023,14 @@ Conseils :
 - Figez les champs sensibles : Sur mcp.zapier.com, donnez une valeur fixe à un champ (expéditeur, tableur cible) : Zapier ignore alors ce que l'assistant propose.
 - Le bon compte par défaut : Choisissez votre compte pro comme connexion par défaut de chaque appli, pour qu'aucune action ne parte de votre adresse perso.
 - Une liste fixe, en mode géré : Par défaut, l'assistant peut chercher et activer de nouvelles actions lui-même. En mode géré, c'est vous qui fixez la liste.
-- L'accord pour la session, pas plus : Zapier suggère d'approuver pour la session afin d'éviter une demande à chaque action. Gardez-le pour les lectures ; pour un envoi, un clic de plus ne fait de mal à personne.
+- L'accord pour la session, pas plus : Zapier suggère d'approuver pour la session afin d'éviter une demande à chaque action. Réservez cette option aux lectures ; pour un envoi, un clic de plus ne fait de mal à personne.
 - Un œil sur l'historique : Chaque action lancée apparaît dans l'onglet Historique de mcp.zapier.com : le bon endroit pour vérifier ce qui est vraiment parti.
 
 Pièges :
-- Le compteur de tâches file : Un utilisateur s'est retrouvé hors limite sans comprendre : les appels de l'assistant ne figuraient pas dans le graphique habituel de ses Zaps. Parade : Suivez le compteur des tâches MCP dans les réglages de facturation et d'usage. (retour d'utilisateurs)
-- Limite atteinte, tout s'arrête : Une fois la limite de tâches atteinte, les actions échouent sur une erreur jusqu'au prochain cycle, sauf facturation à l'usage. Parade : Attendez le renouvellement, changez de forfait, ou faites l'action à la main en attendant.
+- Le compteur de tâches file : Un utilisateur a dépassé sa limite sans comprendre pourquoi : les appels de l'assistant ne figuraient pas dans le graphique habituel de ses Zaps. Parade : Suivez le compteur des tâches MCP dans les réglages de facturation et d'usage. (retour d'utilisateurs)
+- Limite atteinte, tout s'arrête : Une fois la limite de tâches atteinte, les actions échouent sur une erreur jusqu'au prochain cycle, sauf si la facturation à l'usage est activée. Parade : Attendez le renouvellement, changez de forfait, ou faites l'action à la main en attendant.
 - Connexions partagées non reprises : Les connexions qu'un autre utilisateur Zapier vous a partagées ne sont pas ajoutées d'office. Parade : Connectez l'appli avec votre propre compte dans Zapier.
-- Un lien qui ouvre tout : Un jeton ou une adresse de connexion donne accès à vos outils et à leurs données, sans date d'expiration rapprochée. Parade : Ne le collez jamais dans un message, un document ou une conversation partagée.
+- Un lien qui ouvre tout : Un jeton ou une adresse de connexion donne accès à vos outils et à leurs données, sans date d'expiration rapprochée. Parade : Ne collez jamais ce jeton ou cette adresse dans un message, un document ou une conversation partagée.
 
 Sources:
 - https://docs.zapier.com/mcp/get-started/connect/claude
