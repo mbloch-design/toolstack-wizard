@@ -530,5 +530,196 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/miro"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vos ateliers et vos plans de projet vivent dans Miro, branchez-le, même en gratuit : il résume vos tableaux et pose un premier jet de cadres et de notes. Il peut aussi partager vos tableaux, alors gardez la main sur ces actions-là.",
+      "en": "If your workshops and project plans live in Miro, plug it in, even on the free plan: it sums up your boards and lays down a first draft of frames and notes. It can also share your boards, so keep those actions in your own hands.",
+      "source": "https://developers.miro.com/docs/miro-mcp"
+    },
+    "intro": {
+      "fr": "Miro, c'est le tableau blanc où l'atelier client a laissé trois cents post-it et zéro compte rendu. Brancher votre assistant, c'est enfin avoir quelqu'un pour tout relire et en sortir les décisions. Il sait aussi monter un tableau neuf, cadre par cadre, mais le premier jet demande souvent une ou deux retouches. Et comme il agit avec vos droits, il peut ouvrir un tableau à d'autres : on en reparle plus bas.",
+      "en": "Miro is the whiteboard where the client workshop left three hundred sticky notes and zero minutes. Plugging in your assistant finally gives you someone to read it all and pull out the decisions. It can also build a fresh board, frame by frame, but the first draft often needs a pass or two. And since it acts with your rights, it can open a board to other people: more on that below."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Compte rendu d'atelier",
+          "en": "Workshop minutes"
+        },
+        "ask": {
+          "fr": "Résume le tableau de l'atelier d'hier, commentaires compris, puis liste les décisions prises et les actions à mener.",
+          "en": "Sum up yesterday's workshop board, comments included, then list the decisions made and the next actions."
+        },
+        "gain": {
+          "fr": "Le compte rendu, sans recopier les post-it.",
+          "en": "The minutes, no sticky notes retyped."
+        },
+        "source": "https://developers.miro.com/docs/miro-mcp",
+        "icon": "feedback"
+      },
+      {
+        "title": {
+          "fr": "Lancement de projet",
+          "en": "Project kickoff"
+        },
+        "ask": {
+          "fr": "Crée un tableau « Refonte Studio Martin » avec un cadre par étape : cadrage, maquettes, développement, mise en ligne.",
+          "en": "Create a “Studio Martin redesign” board with one frame per stage: scoping, mock-ups, build, launch."
+        },
+        "gain": {
+          "fr": "Le squelette du projet, déjà posé.",
+          "en": "The project skeleton, already in place."
+        },
+        "source": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions",
+        "icon": "task"
+      },
+      {
+        "title": {
+          "fr": "Retours du client",
+          "en": "Client comments"
+        },
+        "ask": {
+          "fr": "Liste les commentaires encore ouverts sur ce tableau, et marque comme résolus ceux que je t'indique.",
+          "en": "List the comments still open on this board, and mark as resolved the ones I point out."
+        },
+        "gain": {
+          "fr": "Les retours triés, les fils refermés.",
+          "en": "Comments sorted, threads closed."
+        },
+        "source": "https://developers.miro.com/docs/miro-mcp-tools",
+        "icon": "chat"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Collez l'adresse du tableau",
+          "en": "Paste the board's address"
+        },
+        "fr": "Donnez l'adresse complète du tableau dans votre demande : c'est le remède que Miro conseille contre le « tableau introuvable ».",
+        "en": "Put the board's full address in your request: it's Miro's own cure for “board not found”.",
+        "source": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions",
+        "community": false,
+        "icon": "link"
+      },
+      {
+        "title": {
+          "fr": "Dites-lui où poser",
+          "en": "Tell it where to put things"
+        },
+        "fr": "Précisez l'emplacement, par exemple une zone vide à côté de l'existant. Sinon, ses notes risquent de s'empiler sur les vôtres.",
+        "en": "Say where things go, for instance an empty area next to existing work. Otherwise its notes may land on top of yours.",
+        "source": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions",
+        "community": false,
+        "icon": "brief"
+      },
+      {
+        "title": {
+          "fr": "Un cadre à la fois",
+          "en": "One frame at a time"
+        },
+        "fr": "Miro conseille de travailler sur un cadre ou un élément à la fois, puis d'affiner. Attendre une mise en page impeccable du premier coup relève de l'optimisme.",
+        "en": "Miro advises working on one frame or item at a time, then refining. Expecting a flawless layout on the first try is optimism.",
+        "source": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions",
+        "community": false,
+        "icon": "refine"
+      },
+      {
+        "title": {
+          "fr": "Le partage sous approbation",
+          "en": "Sharing behind approval"
+        },
+        "fr": "Dans les réglages du connecteur, gardez le partage et les changements de rôle sous votre approbation : ce sont eux qui ouvrent vos tableaux à d'autres.",
+        "en": "In the connector's settings, keep sharing and role changes behind your approval: they are what open your boards to others.",
+        "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
+        "community": false,
+        "icon": "approve"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Il peut partager vos tableaux",
+          "en": "It can share your boards"
+        },
+        "fr": "Il peut donner accès à un tableau ou à un espace et changer les rôles, et Miro ne mentionne aucune confirmation de son côté.",
+        "en": "It can grant access to a board or space and change roles, and Miro mentions no confirmation on its side.",
+        "workaround": {
+          "fr": "Faites vos partages vous-même dans Miro, surtout avec un client, et n'acceptez jamais ces actions sans les lire.",
+          "en": "Do your sharing yourself in Miro, especially with a client, and never accept those actions without reading them."
+        },
+        "source": "https://developers.miro.com/docs/miro-mcp-tools",
+        "community": false,
+        "icon": "rights"
+      },
+      {
+        "title": {
+          "fr": "Une équipe à la fois",
+          "en": "One team at a time"
+        },
+        "fr": "Il n'est connecté qu'à une équipe : un tableau d'une autre équipe renvoie une erreur, et se connecter ailleurs remplace la connexion précédente.",
+        "en": "It's connected to one team only: a board from another team returns an error, and signing in elsewhere replaces the previous connection.",
+        "workaround": {
+          "fr": "Reconnectez-vous en ouvrant un tableau de la bonne équipe avant de passer d'un client à l'autre.",
+          "en": "Sign in again while viewing a board from the right team before switching between clients."
+        },
+        "source": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions",
+        "community": false,
+        "icon": "session"
+      },
+      {
+        "title": {
+          "fr": "Un plafond quotidien invisible",
+          "en": "An invisible daily cap"
+        },
+        "fr": "Chaque action compte dans une enveloppe quotidienne, et hors Enterprise vous ne voyez pas où vous en êtes avant d'être bloqué.",
+        "en": "Every action counts against a daily allowance, and outside Enterprise you can't see where you stand until you're blocked.",
+        "workaround": {
+          "fr": "Visez juste avec une demande précise par cadre plutôt que dix essais ; une fois bloqué, attendez la remise à zéro du lendemain.",
+          "en": "Aim precisely, one clear request per frame rather than ten attempts; once blocked, wait for the next day's reset."
+        },
+        "source": "https://developers.miro.com/docs/mcp-usage-and-daily-limits",
+        "community": false,
+        "icon": "limit"
+      },
+      {
+        "title": {
+          "fr": "Une retouche peut effacer",
+          "en": "An edit can erase"
+        },
+        "fr": "Quand il réécrit une zone du tableau, il peut aussi supprimer des éléments au passage.",
+        "en": "When it rewrites an area of the board, it can also delete items along the way.",
+        "workaround": {
+          "fr": "Faites-le travailler dans un cadre neuf, ou dupliquez le tableau avant de le laisser toucher à l'existant.",
+          "en": "Have it work in a fresh frame, or duplicate the board before letting it touch existing work."
+        },
+        "source": "https://developers.miro.com/docs/miro-mcp-tools",
+        "community": false,
+        "icon": "copy"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Miro — serveur MCP",
+        "url": "https://developers.miro.com/docs/miro-mcp"
+      },
+      {
+        "label": "Miro — questions fréquentes",
+        "url": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions"
+      },
+      {
+        "label": "Miro — outils",
+        "url": "https://developers.miro.com/docs/miro-mcp-tools"
+      },
+      {
+        "label": "Miro — limites quotidiennes",
+        "url": "https://developers.miro.com/docs/mcp-usage-and-daily-limits"
+      },
+      {
+        "label": "Claude — connecteurs",
+        "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
+      }
+    ]
+  }
 }

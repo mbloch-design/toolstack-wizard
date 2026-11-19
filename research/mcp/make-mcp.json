@@ -238,5 +238,207 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/make"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vous avez déjà des scénarios Make qui tournent, branchez-le : votre assistant les lance en une phrase, sur tous les forfaits. Sans scénario prêt, il n'a rien à lancer, et pour qu'il les modifie il faut un forfait payant.",
+      "en": "If you already have Make scenarios running, plug it in: your assistant runs them in one sentence, on every plan. With no scenario ready, it has nothing to run, and letting it edit them takes a paid plan.",
+      "source": "https://help.make.com/make-mcp-server"
+    },
+    "intro": {
+      "fr": "Make, c'est l'atelier où vous avez bricolé vos automatisations un dimanche, et que vous n'osez plus trop rouvrir. Le serveur MCP en fait une télécommande : votre assistant appuie sur le bouton à votre place et lui passe les bonnes infos. Mais il n'appuie que sur les boutons que vous avez préparés, et il les comprend aussi bien que vous les avez décrits. Voici comment lui faciliter la tâche.",
+      "en": "Make is the workshop where you tinkered with your automations one Sunday, and which you'd rather not reopen. The MCP server turns it into a remote control: your assistant presses the button for you and hands over the right details. But it only presses the buttons you've prepared, and it understands them only as well as you've described them. Here's how to make its job easy."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Facture client",
+          "en": "Client invoice"
+        },
+        "ask": {
+          "fr": "Lance mon scénario « Facture client » pour Studio Martin, refonte du site, et dis-moi ce qu'il renvoie.",
+          "en": "Run my “Client invoice” scenario for Studio Martin, website redesign, and tell me what it returns."
+        },
+        "gain": {
+          "fr": "Le scénario tourne, Make reste fermé.",
+          "en": "The scenario runs, Make stays closed."
+        },
+        "source": "https://developers.make.com/mcp-server/",
+        "icon": "invoice"
+      },
+      {
+        "title": {
+          "fr": "Vos automatisations",
+          "en": "Your automations"
+        },
+        "ask": {
+          "fr": "Quels scénarios Make peux-tu lancer pour moi, et que fait chacun d'eux ?",
+          "en": "Which Make scenarios can you run for me, and what does each one do?"
+        },
+        "gain": {
+          "fr": "Le mode d'emploi de votre atelier.",
+          "en": "The manual for your workshop."
+        },
+        "source": "https://help.make.com/make-mcp-server",
+        "icon": "automation"
+      },
+      {
+        "title": {
+          "fr": "Rapport du mois",
+          "en": "Monthly report"
+        },
+        "ask": {
+          "fr": "Où en est le scénario de rapport mensuel lancé tout à l'heure ? Donne-moi son résultat.",
+          "en": "Where's the monthly report scenario you started earlier? Give me its result."
+        },
+        "gain": {
+          "fr": "Le résultat, même quand c'est long.",
+          "en": "The result, even when it takes a while."
+        },
+        "source": "https://developers.make.com/mcp-server/",
+        "icon": "chart"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Décrivez vos scénarios",
+          "en": "Describe your scenarios"
+        },
+        "fr": "Make le dit : une description détaillée aide l'assistant à choisir le bon scénario. « Scénario 7 copie » ne lui dit rien, à vous non plus.",
+        "en": "Make says so: a detailed description helps the assistant pick the right scenario. “Scenario 7 copy” tells it nothing, and you neither.",
+        "source": "https://developers.make.com/mcp-server/",
+        "community": false,
+        "icon": "brief"
+      },
+      {
+        "title": {
+          "fr": "Des entrées bien nommées",
+          "en": "Well-named inputs"
+        },
+        "fr": "Les entrées du scénario, c'est ce que l'assistant remplit au lancement. Nommez-les clairement (client, montant, e-mail) et il saura quoi y mettre.",
+        "en": "Scenario inputs are what the assistant fills in when it runs it. Name them clearly (client, amount, email) and it'll know what goes where.",
+        "source": "https://developers.make.com/mcp-server/",
+        "community": false,
+        "icon": "title"
+      },
+      {
+        "title": {
+          "fr": "Actif et « à la demande »",
+          "en": "Active and “on demand”"
+        },
+        "fr": "Un scénario n'apparaît que s'il est actif et planifié « à la demande ». S'il manque à l'appel, vérifiez ces deux réglages avant tout.",
+        "en": "A scenario only shows up if it's active and scheduled “on demand”. If one is missing, check those two settings first.",
+        "source": "https://help.make.com/make-mcp-server",
+        "community": false,
+        "icon": "settings"
+      },
+      {
+        "title": {
+          "fr": "Lancer d'abord, gérer plus tard",
+          "en": "Run first, manage later"
+        },
+        "fr": "À la connexion, ne cochez que les autorisations de lancement si vous ne voulez pas qu'il touche à vos scénarios. La gestion s'ajoute le jour où vous en avez besoin.",
+        "en": "When connecting, only tick the run permissions if you don't want it touching your scenarios. Management can be added the day you need it.",
+        "source": "https://help.make.com/make-mcp-server",
+        "community": false,
+        "icon": "rights"
+      },
+      {
+        "title": {
+          "fr": "Une boîte à outils sur mesure",
+          "en": "A made-to-measure toolbox"
+        },
+        "fr": "Pour n'exposer que quelques scénarios, passez par une boîte à outils MCP : vous choisissez lesquels, et vous marquez en lecture seule ceux qui ne modifient rien.",
+        "en": "To expose only a few scenarios, use an MCP toolbox: you pick which ones, and mark as read-only those that change nothing.",
+        "source": "https://help.make.com/mcp-toolboxes",
+        "community": false,
+        "icon": "limit"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Scénario long, réponse perdue",
+          "en": "Long scenarios lose it"
+        },
+        "fr": "Passé un court délai, l'assistant n'attend plus la réponse, même si le scénario continue de tourner dans Make.",
+        "en": "After a short wait, the assistant stops waiting for the answer, even though the scenario keeps running in Make.",
+        "workaround": {
+          "fr": "Accordez la lecture des scénarios à la connexion, puis demandez-lui le résultat un peu plus tard.",
+          "en": "Grant scenario read access when connecting, then ask it for the result a little later."
+        },
+        "source": "https://developers.make.com/mcp-server/",
+        "community": false,
+        "icon": "slow"
+      },
+      {
+        "title": {
+          "fr": "Connecté, mais rien ne part",
+          "en": "Connected, but nothing runs"
+        },
+        "fr": "Des utilisateurs de ChatGPT signalent une connexion qui fonctionne, mais des scénarios qui ne s'exécutent jamais.",
+        "en": "ChatGPT users report a working connection, but scenarios that never run.",
+        "workaround": {
+          "fr": "Vérifiez que le scénario est actif et « à la demande », donnez-lui une description, puis regardez son historique dans Make.",
+          "en": "Check the scenario is active and “on demand”, give it a description, then look at its history in Make."
+        },
+        "source": "https://community.make.com/t/make-mcp-server-chatgpt-mcp-app-connects-but-scenarios-never-execute/102464",
+        "community": true,
+        "icon": "blocked"
+      },
+      {
+        "title": {
+          "fr": "La config à la main coince",
+          "en": "Hand-edited config gets stuck"
+        },
+        "fr": "Un utilisateur de Claude Desktop qui avait ajouté Make à la main dans le fichier de configuration se heurtait à une erreur d'autorisation.",
+        "en": "A Claude Desktop user who had added Make by hand to the config file kept hitting an authorisation error.",
+        "workaround": {
+          "fr": "Retirez Make du fichier de configuration et ajoutez-le comme connecteur depuis Claude, en passant par la connexion à votre compte.",
+          "en": "Remove Make from the config file and add it as a connector from Claude, signing in with your account."
+        },
+        "source": "https://community.make.com/t/failing-to-access-my-scenario-from-claude-desktop-via-makes-mcp-server/101061",
+        "community": true,
+        "icon": "key"
+      },
+      {
+        "title": {
+          "fr": "En gratuit, il lance seulement",
+          "en": "On free, it only runs"
+        },
+        "fr": "Sur le forfait gratuit, il lance vos scénarios mais ne peut ni les consulter en détail ni les modifier.",
+        "en": "On the free plan, it runs your scenarios but can neither inspect nor edit them.",
+        "workaround": {
+          "fr": "Faites vos modifications dans Make, ou passez à un forfait payant si vous comptez lui confier l'atelier.",
+          "en": "Make your edits in Make, or move to a paid plan if you plan to hand it the workshop."
+        },
+        "source": "https://help.make.com/make-mcp-server",
+        "community": false,
+        "icon": "credits"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Make — aide MCP",
+        "url": "https://help.make.com/make-mcp-server"
+      },
+      {
+        "label": "Make — documentation MCP",
+        "url": "https://developers.make.com/mcp-server/"
+      },
+      {
+        "label": "Make — boîtes à outils MCP",
+        "url": "https://help.make.com/mcp-toolboxes"
+      },
+      {
+        "label": "Forum Make, ChatGPT",
+        "url": "https://community.make.com/t/make-mcp-server-chatgpt-mcp-app-connects-but-scenarios-never-execute/102464"
+      },
+      {
+        "label": "Forum Make, Claude Desktop",
+        "url": "https://community.make.com/t/failing-to-access-my-scenario-from-claude-desktop-via-makes-mcp-server/101061"
+      }
+    ]
+  }
 }

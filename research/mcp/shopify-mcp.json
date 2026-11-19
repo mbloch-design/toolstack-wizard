@@ -483,5 +483,203 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/shopify"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vous vendez avec Shopify, branchez-le : commandes, stocks, produits et codes de réduction se gèrent depuis la conversation. Remboursements, paiements et réglages de la boutique lui restent interdits, ce qui rend l'essai plutôt reposant.",
+      "en": "If you sell with Shopify, plug it in: orders, stock, products and discount codes can be handled from the chat. Refunds, payments and store settings stay off-limits, which makes trying it fairly relaxing.",
+      "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations"
+    },
+    "intro": {
+      "fr": "Une boutique Shopify, c'est un deuxième métier qu'on exerce le soir : fiches produits, stocks, codes promo, et ce tableau de bord qu'on ouvre en se promettant de le comprendre un jour. Votre assistant branché dessus répond aux questions simples et prend les petites corvées. Bonne nouvelle : Shopify lui interdit de toucher à l'argent. Moins bonne : ce qu'il change dans vos produits, c'est vous qui en répondez.",
+      "en": "A Shopify store is a second job you do in the evenings: product pages, stock, promo codes, and that dashboard you open promising yourself you'll understand it one day. Your assistant, plugged in, answers the simple questions and takes the small chores. Good news: Shopify won't let it touch the money. Less good: whatever it changes in your products, you answer for."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Ventes de la semaine",
+          "en": "This week's sales"
+        },
+        "ask": {
+          "fr": "Montre-moi les commandes de la semaine et dis-moi quels produits se sont le mieux vendus.",
+          "en": "Show me this week's orders and tell me which products sold best."
+        },
+        "gain": {
+          "fr": "Votre semaine de ventes en une question.",
+          "en": "Your week of sales in one question."
+        },
+        "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
+        "icon": "shop"
+      },
+      {
+        "title": {
+          "fr": "Stock bas",
+          "en": "Low stock"
+        },
+        "ask": {
+          "fr": "Combien reste-t-il de bougies Vanille, et quels produits sont presque en rupture ?",
+          "en": "How many Vanilla candles are left, and which products are nearly sold out?"
+        },
+        "gain": {
+          "fr": "Les ruptures repérées avant vos clients.",
+          "en": "Stock-outs spotted before your customers do."
+        },
+        "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
+        "icon": "data"
+      },
+      {
+        "title": {
+          "fr": "Code promo",
+          "en": "Promo code"
+        },
+        "ask": {
+          "fr": "Crée un code de réduction « HIVER » en pourcentage, valable sur toute la boutique ce week-end.",
+          "en": "Create a percentage discount code “WINTER”, valid storewide this weekend."
+        },
+        "gain": {
+          "fr": "Le code prêt, sans fouiller l'administration.",
+          "en": "The code ready, no digging through the admin."
+        },
+        "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
+        "icon": "post"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Dites « Shopify » à chaque fois",
+          "en": "Say “Shopify” every time"
+        },
+        "fr": "Citez Shopify dans la demande et vérifiez que le connecteur est activé dans la conversation. Sinon, l'assistant vous donne des conseils génériques au lieu d'agir.",
+        "en": "Name Shopify in the request and check the connector is on for the chat. Otherwise the assistant hands you generic advice instead of acting.",
+        "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
+        "community": false,
+        "icon": "brief"
+      },
+      {
+        "title": {
+          "fr": "Une demande, une tâche",
+          "en": "One request, one task"
+        },
+        "fr": "Shopify conseille une tâche par message, et des questions d'analyse courtes, posées une à la fois.",
+        "en": "Shopify recommends one task per message, and short analytics questions asked one at a time.",
+        "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
+        "community": false,
+        "icon": "refine"
+      },
+      {
+        "title": {
+          "fr": "Le stock avant la correction",
+          "en": "Check stock before changing it"
+        },
+        "fr": "Demandez le chiffre actuel avant de corriger un stock : vous voyez ce que vous allez écraser.",
+        "en": "Ask for the current count before correcting stock: you see what you're about to overwrite.",
+        "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
+        "community": false,
+        "icon": "amount"
+      },
+      {
+        "title": {
+          "fr": "Le thème, sur une copie",
+          "en": "The theme, on a copy"
+        },
+        "fr": "Il ne touche pas au thème en ligne : dupliquez-le, laissez-le travailler sur la copie, puis publiez-la vous-même après relecture.",
+        "en": "It won't touch the live theme: duplicate it, let it work on the copy, then publish it yourself once reviewed.",
+        "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations",
+        "community": false,
+        "icon": "copy"
+      },
+      {
+        "title": {
+          "fr": "Lecture d'abord, écriture ensuite",
+          "en": "Read first, write later"
+        },
+        "fr": "Il ne modifie rien tant que vous n'avez pas approuvé l'accès en écriture. Pour le retirer ensuite, il faut désinstaller puis réinstaller l'intégration.",
+        "en": "It changes nothing until you approve write access. To take it back later, you have to uninstall and reinstall the integration.",
+        "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/authorizing-access",
+        "community": false,
+        "icon": "approve"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Les gros lots s'arrêtent",
+          "en": "Big batches stop short"
+        },
+        "fr": "Il modifie les articles un par un, et un lot important peut s'interrompre en route.",
+        "en": "It changes items one by one, and a large batch can stop partway.",
+        "workaround": {
+          "fr": "Travaillez par petits lots et terminez le reste dans l'administration Shopify.",
+          "en": "Work in small batches and finish the rest in the Shopify admin."
+        },
+        "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations",
+        "community": false,
+        "icon": "slow"
+      },
+      {
+        "title": {
+          "fr": "Une boutique par conversation",
+          "en": "One store per chat"
+        },
+        "fr": "Une seule boutique est branchée à la fois, et une conversation commencée avant un changement peut garder l'ancienne.",
+        "en": "Only one store is connected at a time, and a chat started before a switch can keep using the old one.",
+        "workaround": {
+          "fr": "Demandez-lui quelle boutique est connectée, et ouvrez une nouvelle conversation après chaque changement.",
+          "en": "Ask it which store is connected, and open a new chat after every switch."
+        },
+        "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/authorizing-access",
+        "community": false,
+        "icon": "session"
+      },
+      {
+        "title": {
+          "fr": "Changement de boutique, connexion cassée",
+          "en": "Store switch, broken connection"
+        },
+        "fr": "Un utilisateur gérant deux boutiques signale qu'après un changement, chaque action réclamait une nouvelle autorisation, sans que la reconnexion règle rien.",
+        "en": "One user running two stores reports that after a switch, every action asked for re-authorisation, and reconnecting fixed nothing.",
+        "workaround": {
+          "fr": "Si la connexion ne revient pas, contactez le support d'Anthropic, que Shopify désigne pour les problèmes d'accès au connecteur.",
+          "en": "If the connection won't come back, contact Anthropic support, which Shopify points to for connector access issues."
+        },
+        "source": "https://github.com/anthropics/claude-code/issues/61139",
+        "community": true,
+        "icon": "blocked"
+      },
+      {
+        "title": {
+          "fr": "Ses erreurs sont les vôtres",
+          "en": "Its mistakes are yours"
+        },
+        "fr": "Shopify ne valide pas ce qu'il fait : une mauvaise modification de produit reste sous votre responsabilité.",
+        "en": "Shopify doesn't review what it does: a wrong product change remains your responsibility.",
+        "workaround": {
+          "fr": "Gardez l'écriture sous approbation et relisez chaque changement avant de dire oui.",
+          "en": "Keep writing behind approval and read every change before saying yes."
+        },
+        "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations",
+        "community": false,
+        "icon": "rights"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Shopify — points d'attention",
+        "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations"
+      },
+      {
+        "label": "Shopify — connecteur pour Claude",
+        "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude"
+      },
+      {
+        "label": "Shopify — autoriser l'accès",
+        "url": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/authorizing-access"
+      },
+      {
+        "label": "GitHub anthropics/claude-code #61139",
+        "url": "https://github.com/anthropics/claude-code/issues/61139"
+      }
+    ]
+  }
 }

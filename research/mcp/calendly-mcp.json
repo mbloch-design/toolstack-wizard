@@ -428,5 +428,185 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/calendly"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vos clients réservent déjà sur Calendly, branchez-le : votre assistant trouve vos créneaux, crée un lien de réservation et vous dit qui vous voyez cette semaine. Il peut aussi annuler un rendez-vous, alors gardez la main sur chaque action.",
+      "en": "If your clients already book through Calendly, plug it in: your assistant finds your slots, creates a booking link and tells you who you're seeing this week. It can also cancel a meeting, so keep a hand on every action.",
+      "source": "https://calendly.com/help/connect-calendly-to-your-ai-tools"
+    },
+    "intro": {
+      "fr": "Le ping-pong de mails pour caler un rendez-vous, tout le monde connaît : « mardi ? », « plutôt jeudi », « ah non, jeudi je ne peux plus »… Calendly gagne déjà la moitié de la partie, votre assistant joue l'autre : il regarde vos créneaux, crée le lien, rédige le mail. Mais il tient aussi votre agenda en main, annulations comprises. Un peu de méthode évite d'annuler le mauvais lundi.",
+      "en": "Everyone knows the email ping-pong of booking a meeting: “Tuesday?”, “Thursday's better”, “oh no, Thursday's out now”… Calendly already wins half the game, and your assistant plays the other half: it checks your slots, creates the link, drafts the email. But it also holds your calendar, cancellations included. A little method saves you from cancelling the wrong Monday."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Proposer des créneaux",
+          "en": "Offering slots"
+        },
+        "ask": {
+          "fr": "Trouve trois créneaux libres la semaine prochaine pour mon appel découverte et rédige un mail au prospect avec un lien à usage unique.",
+          "en": "Find three open slots next week for my discovery call and draft an email to the lead with a single-use link."
+        },
+        "gain": {
+          "fr": "Le mail de rendez-vous, prêt à partir.",
+          "en": "The meeting email, ready to send."
+        },
+        "source": "https://www.calendly.com/blog/mcp-server",
+        "icon": "calendar"
+      },
+      {
+        "title": {
+          "fr": "Semaine à venir",
+          "en": "Week ahead"
+        },
+        "ask": {
+          "fr": "Quels rendez-vous ai-je cette semaine, avec qui, et pour quel type de rendez-vous ?",
+          "en": "Which meetings do I have this week, with whom, and for which event type?"
+        },
+        "gain": {
+          "fr": "Votre semaine, rendez-vous par rendez-vous.",
+          "en": "Your week, meeting by meeting."
+        },
+        "source": "https://community.calendly.com/featured-tips-tricks-32/connect-calendly-to-claude-and-other-ai-tools-5451",
+        "icon": "week"
+      },
+      {
+        "title": {
+          "fr": "Bloquer un jour",
+          "en": "Blocking a day"
+        },
+        "ask": {
+          "fr": "Retire les vendredis de mes disponibilités pour l'appel découverte : je les garde pour la production.",
+          "en": "Remove Fridays from my availability for the discovery call: I'm keeping them for production work."
+        },
+        "gain": {
+          "fr": "Vos vendredis rendus au travail de fond.",
+          "en": "Your Fridays back for deep work."
+        },
+        "source": "https://www.calendly.com/blog/mcp-server",
+        "icon": "meeting"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Allumez-le dans la conversation",
+          "en": "Switch it on in the chat"
+        },
+        "fr": "Dans Claude, Calendly s'active conversation par conversation : bouton +, Connecteurs, puis Calendly. S'il ne répond pas, c'est souvent juste ça.",
+        "en": "In Claude, Calendly is switched on chat by chat: the + button, Connectors, then Calendly. If it doesn't answer, that's often all it is.",
+        "source": "https://calendly.com/help/connect-calendly-to-your-ai-tools",
+        "community": false,
+        "icon": "click"
+      },
+      {
+        "title": {
+          "fr": "Appelez les rendez-vous par leur nom",
+          "en": "Call meetings by their name"
+        },
+        "fr": "« Mon appel découverte », « ma séance de coaching » : reprenez le nom de vos types de rendez-vous, comme dans les exemples de Calendly. Il saura de quoi vous parlez.",
+        "en": "“My discovery call”, “my coaching session”: use your event types' names, as Calendly's own examples do. It'll know what you mean.",
+        "source": "https://www.calendly.com/blog/mcp-server",
+        "community": false,
+        "icon": "title"
+      },
+      {
+        "title": {
+          "fr": "Un lien unique pour un prospect",
+          "en": "A one-off link for a lead"
+        },
+        "fr": "Plutôt que votre page publique, demandez un lien à usage unique : il ne sert qu'une fois et ne traîne pas dans une boîte mail.",
+        "en": "Rather than your public page, ask for a single-use link: it works once and doesn't linger in someone's inbox.",
+        "source": "https://developer.calendly.com/docs/mcp/supported-tools",
+        "community": false,
+        "icon": "link"
+      },
+      {
+        "title": {
+          "fr": "Qu'il demande avant d'agir",
+          "en": "Have it ask before acting"
+        },
+        "fr": "Réglez le connecteur pour que l'assistant vous demande avant chaque action : lire vos créneaux ne risque rien, annuler un client si.",
+        "en": "Set the connector so the assistant asks before each action: reading your slots is harmless, cancelling a client isn't.",
+        "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
+        "community": false,
+        "icon": "approve"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Annuler, c'est tout de suite",
+          "en": "Cancelling happens instantly"
+        },
+        "fr": "Une annulation demandée à l'assistant est appliquée aussitôt dans Calendly, et Calendly ne documente pas de confirmation.",
+        "en": "A cancellation you ask for is applied right away in Calendly, and Calendly documents no confirmation step.",
+        "workaround": {
+          "fr": "Donnez le jour, l'heure et la personne, et lisez la demande avant de l'accepter ; pour décaler, proposez plutôt un lien de report.",
+          "en": "Give the day, time and person, and read the request before accepting it; to move a meeting, offer a rescheduling link instead."
+        },
+        "source": "https://community.calendly.com/featured-tips-tricks-32/connect-calendly-to-claude-and-other-ai-tools-5451",
+        "community": false,
+        "icon": "confirm"
+      },
+      {
+        "title": {
+          "fr": "Pas de clé à coller",
+          "en": "No key to paste"
+        },
+        "fr": "Un outil qui vous demande un identifiant et un secret, ou un jeton personnel, ne fonctionnera pas avec Calendly.",
+        "en": "A tool that asks you for an ID and a secret, or a personal token, won't work with Calendly.",
+        "workaround": {
+          "fr": "Passez par le connecteur intégré de Claude ou de ChatGPT, ou par un outil qui gère lui-même la connexion à votre compte.",
+          "en": "Use the built-in connector in Claude or ChatGPT, or a tool that handles signing in to your account itself."
+        },
+        "source": "https://developer.calendly.com/docs/mcp/calendly-mcp-server",
+        "community": false,
+        "icon": "key"
+      },
+      {
+        "title": {
+          "fr": "Selon le forfait, portes fermées",
+          "en": "Some doors depend on your plan"
+        },
+        "fr": "Certaines actions dépendent de votre forfait, de votre rôle ou de vos options, comme les résumés de réunion qui demandent Notetaker.",
+        "en": "Some actions depend on your plan, role or add-ons, such as meeting recaps, which need Notetaker.",
+        "workaround": {
+          "fr": "Si l'assistant bute sur une action, vérifiez dans Calendly qu'elle est incluse dans votre compte.",
+          "en": "If the assistant stalls on an action, check in Calendly that it's included in your account."
+        },
+        "source": "https://calendly.com/help/connect-calendly-to-your-ai-tools",
+        "community": false,
+        "icon": "blocked"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Calendly — aide IA",
+        "url": "https://calendly.com/help/connect-calendly-to-your-ai-tools"
+      },
+      {
+        "label": "Calendly — annonce MCP",
+        "url": "https://www.calendly.com/blog/mcp-server"
+      },
+      {
+        "label": "Calendly — communauté",
+        "url": "https://community.calendly.com/featured-tips-tricks-32/connect-calendly-to-claude-and-other-ai-tools-5451"
+      },
+      {
+        "label": "Calendly — serveur MCP",
+        "url": "https://developer.calendly.com/docs/mcp/calendly-mcp-server"
+      },
+      {
+        "label": "Calendly — outils",
+        "url": "https://developer.calendly.com/docs/mcp/supported-tools"
+      },
+      {
+        "label": "Claude — connecteurs",
+        "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
+      }
+    ]
+  }
 }

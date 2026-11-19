@@ -335,5 +335,211 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/zapier"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vos outils n'ont pas leur propre serveur, Zapier sert de passe-partout : e-mail, tableur, gestion de projet, depuis la conversation. Chaque action réussie puise dans vos tâches Zapier, alors figez ce qui doit l'être et surveillez le compteur.",
+      "en": "If your tools have no server of their own, Zapier works as a master key: email, spreadsheet, project management, from the chat. Each successful action draws on your Zapier tasks, so lock what needs locking and watch the counter.",
+      "source": "https://docs.zapier.com/mcp/overview/usage"
+    },
+    "intro": {
+      "fr": "Zapier, c'est le couteau suisse du freelance : il y a une lame pour presque tout, et on finit toujours par se demander ce que fait celle-là. Branché à votre assistant, il lui donne accès aux actions de vos applis connectées : envoyer, créer, chercher. Pratique, mais chaque action compte, au sens propre. Quelques réglages évitent les mauvaises surprises, côté envois comme côté facture.",
+      "en": "Zapier is the freelancer's Swiss army knife: there's a blade for almost everything, and you always end up wondering what that one does. Plugged into your assistant, it opens up the actions of your connected apps: send, create, search. Handy, but every action counts, literally. A few settings spare you surprises, on sending as well as on the bill."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Relance client",
+          "en": "Client follow-up"
+        },
+        "ask": {
+          "fr": "Envoie ce message de relance à Claire depuis mon Gmail pro.",
+          "en": "Send this follow-up to Claire from my work Gmail."
+        },
+        "gain": {
+          "fr": "La relance partie sans changer d'onglet.",
+          "en": "Follow-up sent, no tab switching."
+        },
+        "source": "https://docs.zapier.com/mcp/get-started/connect/claude",
+        "icon": "email"
+      },
+      {
+        "title": {
+          "fr": "Tâche à caler",
+          "en": "Task to schedule"
+        },
+        "ask": {
+          "fr": "Crée une tâche « Envoyer les maquettes » pour jeudi dans mon outil de gestion de projet.",
+          "en": "Create a task “Send the mock-ups” for Thursday in my project tool."
+        },
+        "gain": {
+          "fr": "La tâche notée au bon endroit.",
+          "en": "The task logged in the right place."
+        },
+        "source": "https://docs.zapier.com/mcp/get-started/connect/claude",
+        "icon": "task"
+      },
+      {
+        "title": {
+          "fr": "Tableur de suivi",
+          "en": "Tracking sheet"
+        },
+        "ask": {
+          "fr": "Ajoute ces trois nouveaux contacts dans mon tableur de prospection.",
+          "en": "Add these three new contacts to my prospecting spreadsheet."
+        },
+        "gain": {
+          "fr": "Le tableur à jour, sans copier-coller.",
+          "en": "Sheet up to date, no copy-paste."
+        },
+        "source": "https://docs.zapier.com/mcp/overview/usage",
+        "icon": "data"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Figez les champs sensibles",
+          "en": "Lock sensitive fields"
+        },
+        "fr": "Sur mcp.zapier.com, donnez une valeur fixe à un champ (expéditeur, tableur cible) : Zapier ignore alors ce que l'assistant propose.",
+        "en": "On mcp.zapier.com, give a field a fixed value (sender, target sheet): Zapier then ignores whatever the assistant sends.",
+        "source": "https://docs.zapier.com/mcp/manage/configure-your-actions",
+        "community": false,
+        "icon": "settings"
+      },
+      {
+        "title": {
+          "fr": "Le bon compte par défaut",
+          "en": "The right default account"
+        },
+        "fr": "Choisissez votre compte pro comme connexion par défaut de chaque appli, pour qu'aucune action ne parte de votre adresse perso.",
+        "en": "Set your work account as each app's default connection, so no action goes out from your personal address.",
+        "source": "https://docs.zapier.com/mcp/manage/configure-your-actions",
+        "community": false,
+        "icon": "mail"
+      },
+      {
+        "title": {
+          "fr": "Une liste fixe, en mode géré",
+          "en": "A fixed list, in managed mode"
+        },
+        "fr": "Par défaut, l'assistant peut chercher et activer de nouvelles actions lui-même. En mode géré, c'est vous qui fixez la liste.",
+        "en": "By default, the assistant can find and turn on new actions by itself. In managed mode, you set the list.",
+        "source": "https://docs.zapier.com/mcp/overview/how-tools-work",
+        "community": false,
+        "icon": "limit"
+      },
+      {
+        "title": {
+          "fr": "L'accord pour la session, pas plus",
+          "en": "Approval for the session, no more"
+        },
+        "fr": "Zapier suggère d'approuver pour la session afin d'éviter une demande à chaque action. Gardez-le pour les lectures ; pour un envoi, un clic de plus ne fait de mal à personne.",
+        "en": "Zapier suggests approving for the session to skip a prompt on every action. Keep that for reads; for a send, one more click never hurt anyone.",
+        "source": "https://docs.zapier.com/mcp/get-started/quickstart",
+        "community": false,
+        "icon": "approve"
+      },
+      {
+        "title": {
+          "fr": "Un œil sur l'historique",
+          "en": "Keep an eye on History"
+        },
+        "fr": "Chaque action lancée apparaît dans l'onglet Historique de mcp.zapier.com : le bon endroit pour vérifier ce qui est vraiment parti.",
+        "en": "Every action run shows up in the History tab of mcp.zapier.com: the place to check what actually went out.",
+        "source": "https://docs.zapier.com/mcp/overview/how-tools-work",
+        "community": false,
+        "icon": "admin"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Le compteur de tâches file",
+          "en": "The task counter runs"
+        },
+        "fr": "Un utilisateur s'est retrouvé hors limite sans comprendre : les appels de l'assistant ne figuraient pas dans le graphique habituel de ses Zaps.",
+        "en": "One user went over their limit without understanding why: the assistant's calls weren't in the usual Zap usage chart.",
+        "workaround": {
+          "fr": "Suivez le compteur des tâches MCP dans les réglages de facturation et d'usage.",
+          "en": "Follow the MCP task counter in the billing and usage settings."
+        },
+        "source": "https://community.zapier.com/troubleshooting-99/zapier-says-i-m-over-my-100-task-limit-after-using-25-task-53856",
+        "community": true,
+        "icon": "credits"
+      },
+      {
+        "title": {
+          "fr": "Limite atteinte, tout s'arrête",
+          "en": "Limit reached, everything stops"
+        },
+        "fr": "Une fois la limite de tâches atteinte, les actions échouent sur une erreur jusqu'au prochain cycle, sauf facturation à l'usage.",
+        "en": "Once the task limit is reached, actions fail with an error until the next cycle, unless pay-per-task is on.",
+        "workaround": {
+          "fr": "Attendez le renouvellement, changez de forfait, ou faites l'action à la main en attendant.",
+          "en": "Wait for the reset, change plan, or do the action by hand in the meantime."
+        },
+        "source": "https://docs.zapier.com/mcp/overview/usage",
+        "community": false,
+        "icon": "blocked"
+      },
+      {
+        "title": {
+          "fr": "Connexions partagées non reprises",
+          "en": "Shared connections left out"
+        },
+        "fr": "Les connexions qu'un autre utilisateur Zapier vous a partagées ne sont pas ajoutées d'office.",
+        "en": "Connections another Zapier user shared with you aren't added automatically.",
+        "workaround": {
+          "fr": "Connectez l'appli avec votre propre compte dans Zapier.",
+          "en": "Connect the app with your own account in Zapier."
+        },
+        "source": "https://docs.zapier.com/mcp/overview/how-tools-work",
+        "community": false,
+        "icon": "guest"
+      },
+      {
+        "title": {
+          "fr": "Un lien qui ouvre tout",
+          "en": "A link that opens everything"
+        },
+        "fr": "Un jeton ou une adresse de connexion donne accès à vos outils et à leurs données, sans date d'expiration rapprochée.",
+        "en": "A connection token or URL grants access to your tools and their data, and lasts a long time.",
+        "workaround": {
+          "fr": "Ne le collez jamais dans un message, un document ou une conversation partagée.",
+          "en": "Never paste it into a message, a document or a shared chat."
+        },
+        "source": "https://docs.zapier.com/mcp/get-started/quickstart",
+        "community": false,
+        "icon": "key"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Zapier — connecter Claude",
+        "url": "https://docs.zapier.com/mcp/get-started/connect/claude"
+      },
+      {
+        "label": "Zapier — fonctionnement des outils",
+        "url": "https://docs.zapier.com/mcp/overview/how-tools-work"
+      },
+      {
+        "label": "Zapier — réglage des actions",
+        "url": "https://docs.zapier.com/mcp/manage/configure-your-actions"
+      },
+      {
+        "label": "Zapier — usage et facturation",
+        "url": "https://docs.zapier.com/mcp/overview/usage"
+      },
+      {
+        "label": "Zapier — démarrage rapide",
+        "url": "https://docs.zapier.com/mcp/get-started/quickstart"
+      },
+      {
+        "label": "Forum Zapier",
+        "url": "https://community.zapier.com/troubleshooting-99/zapier-says-i-m-over-my-100-task-limit-after-using-25-task-53856"
+      }
+    ]
+  }
 }

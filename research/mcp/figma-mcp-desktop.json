@@ -218,5 +218,173 @@
       "label": "Figma Developer Docs — Tools and prompts",
       "url": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Réservé à ceux qui codent dans Claude Code, Cursor ou VS Code avec l'application Figma ouverte à côté : l'assistant lit la frame que vous sélectionnez, sans jamais toucher à la maquette. Pour tout le reste, Figma recommande lui-même son serveur en ligne.",
+      "en": "Only for people who code in Claude Code, Cursor or VS Code with the Figma app open alongside: the assistant reads the frame you select, without ever touching the mockup. For everything else, Figma itself recommends its online server.",
+      "source": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/"
+    },
+    "intro": {
+      "fr": "Le serveur de bureau, c'est le petit frère casanier du serveur en ligne : il vit dans l'application Figma, sur votre ordinateur, et s'éteint quand vous la fermez. Il ne dessine rien et ne touche pas à vos maquettes : il lit. Son vrai atout : vous sélectionnez une frame dans Figma, vous posez la question dans votre éditeur de code, et il sait de quoi vous parlez, sans lien à copier. Si vous intégrez vous-même vos maquettes, c'est confortable ; si vous voulez surtout discuter avec Claude dans le navigateur, ce n'est pas lui qu'il vous faut.",
+      "en": "The desktop server is the stay-at-home sibling of the online one: it lives in the Figma app on your computer and switches off when you close it. It draws nothing and leaves your mockups alone: it reads. Its real perk: you select a frame in Figma, ask your question in your code editor, and it knows what you mean, no link to copy. If you build your own mockups into code, that's handy; if you mostly want to chat with Claude in the browser, it isn't the one for you."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Maquette en code",
+          "en": "Mockup to code"
+        },
+        "ask": {
+          "fr": "Transforme la frame sélectionnée dans Figma en composant React, en reprenant les variables du fichier.",
+          "en": "Turn the frame selected in Figma into a React component, using the file's variables."
+        },
+        "gain": {
+          "fr": "Un point de départ fidèle à la maquette.",
+          "en": "A starting point true to the mockup."
+        },
+        "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
+        "icon": "web"
+      },
+      {
+        "title": {
+          "fr": "Couleurs et typos",
+          "en": "Colours and type"
+        },
+        "ask": {
+          "fr": "Donne-moi les couleurs, typographies et espacements utilisés dans la frame sélectionnée.",
+          "en": "Give me the colours, typefaces and spacing used in the selected frame."
+        },
+        "gain": {
+          "fr": "Les bonnes valeurs, sans pipette.",
+          "en": "The right values, no eyedropper."
+        },
+        "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
+        "icon": "design"
+      },
+      {
+        "title": {
+          "fr": "Atelier FigJam",
+          "en": "FigJam workshop"
+        },
+        "ask": {
+          "fr": "Lis le diagramme FigJam sélectionné et liste les étapes du parcours, dans l'ordre.",
+          "en": "Read the selected FigJam diagram and list the journey's steps, in order."
+        },
+        "gain": {
+          "fr": "Le schéma devient une liste d'étapes.",
+          "en": "The diagram becomes a list of steps."
+        },
+        "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
+        "icon": "doc"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Sélectionnez, puis demandez",
+          "en": "Select, then ask"
+        },
+        "fr": "Sélectionnez la frame dans Figma et dites simplement « la sélection » : seul le serveur de bureau sait faire ça.",
+        "en": "Select the frame in Figma and just say “the selection”: only the desktop server can do that.",
+        "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
+        "community": false,
+        "icon": "click"
+      },
+      {
+        "title": {
+          "fr": "Application ouverte, serveur activé",
+          "en": "App open, server on"
+        },
+        "fr": "Il s'active dans Dev Mode, depuis le panneau de droite, et ne répond que tant que Figma tourne. Pas de réponse ? Vérifiez d'abord qu'il est toujours activé.",
+        "en": "You turn it on in Dev Mode, from the right-hand panel, and it only answers while Figma is running. No answer? First check it's still on.",
+        "source": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/",
+        "community": false,
+        "icon": "settings"
+      },
+      {
+        "title": {
+          "fr": "Grande page : le plan d'abord",
+          "en": "Big page: outline first"
+        },
+        "fr": "Sur une grosse sélection, demandez d'abord la structure, puis le détail d'un bloc à la fois. D'un coup, il reçoit trop d'informations.",
+        "en": "On a large selection, ask for the structure first, then one block's detail at a time. In one go, it gets too much information.",
+        "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
+        "community": false,
+        "icon": "refine"
+      },
+      {
+        "title": {
+          "fr": "Lecture seule, par construction",
+          "en": "Read only, by design"
+        },
+        "fr": "Il ne peut ni dessiner ni modifier vos maquettes : vous pouvez l'ouvrir sur celle validée par le client sans trembler.",
+        "en": "It can neither draw nor edit your mockups: you can point it at the one your client signed off without a second thought.",
+        "source": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/",
+        "community": false,
+        "icon": "rights"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Pas sur le forfait gratuit",
+          "en": "Not on the free plan"
+        },
+        "fr": "Il demande un siège Dev ou Full sur un forfait payant ; le forfait gratuit Starter n'en fait pas partie.",
+        "en": "It needs a Dev or Full seat on a paid plan; the free Starter plan isn't included.",
+        "workaround": {
+          "fr": "Passez par le serveur en ligne de Figma, ouvert à tous les forfaits.",
+          "en": "Use Figma's online server instead, open to every plan."
+        },
+        "source": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/",
+        "community": false,
+        "icon": "blocked"
+      },
+      {
+        "title": {
+          "fr": "Pensé pour les outils de code",
+          "en": "Built for coding tools"
+        },
+        "fr": "Figma documente son branchement dans Claude Code, Codex, Cursor et VS Code, pas dans les applications de conversation.",
+        "en": "Figma documents connecting it from Claude Code, Codex, Cursor and VS Code, not from chat apps.",
+        "workaround": {
+          "fr": "Si vous travaillez dans Claude ou un autre assistant de conversation, prenez le serveur en ligne.",
+          "en": "If you work in Claude or another chat assistant, take the online server."
+        },
+        "source": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/",
+        "community": false,
+        "icon": "link"
+      },
+      {
+        "title": {
+          "fr": "« Activé », mais muet",
+          "en": "“On”, yet silent"
+        },
+        "fr": "Un utilisateur signale un serveur affiché comme activé dans Figma, alors que rien ne répondait côté assistant, même après redémarrage.",
+        "en": "One user reports the server showed as on in Figma while nothing answered on the assistant's side, even after restarting.",
+        "workaround": {
+          "fr": "Figma suggère de vérifier qu'un outil de sécurité de l'entreprise ne bloque pas le serveur, ou de passer au serveur en ligne en attendant.",
+          "en": "Figma suggests checking that company security software isn't blocking the server, or switching to the online server meanwhile."
+        },
+        "source": "https://forum.figma.com/report-a-problem-6/dev-mode-mcp-server-shows-connected-but-isn-t-actually-working-57726",
+        "community": true,
+        "icon": "session"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Figma — installer le serveur de bureau",
+        "url": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/"
+      },
+      {
+        "label": "Figma — outils et demandes",
+        "url": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/"
+      },
+      {
+        "label": "Forum Figma — serveur activé mais muet",
+        "url": "https://forum.figma.com/report-a-problem-6/dev-mode-mcp-server-shows-connected-but-isn-t-actually-working-57726"
+      }
+    ]
+  }
 }

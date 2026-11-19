@@ -485,5 +485,203 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/airtable"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vos clients, projets ou contenus vivent dans Airtable, branchez-le : votre assistant cherche, ajoute et met à jour vos fiches en langage courant. Ne lui ouvrez que les bases utiles, car il peut aussi supprimer des tables entières.",
+      "en": "If your clients, projects or content live in Airtable, plug it in: your assistant searches, adds and updates your records in plain language. Only open the bases it needs, because it can also delete whole tables.",
+      "source": "https://airtable.com/developers/agents/mcp/getting-started"
+    },
+    "intro": {
+      "fr": "Airtable, c'est le tableur qui a pris des cours du soir : des bases bien pensées, qu'on finit souvent par remplir à moitié faute de temps. Avec votre assistant branché, vous dites « ajoute ces trois prospects » ou « qui n'ai-je pas relancé ? », et il s'en charge. Il respecte vos droits Airtable, ni plus ni moins. Ce qui veut dire qu'il peut effacer tout ce que vous pouvez effacer.",
+      "en": "Airtable is the spreadsheet that went to night school: well-designed bases that often end up half-filled for lack of time. With your assistant plugged in, you say “add these three leads” or “who haven't I followed up with?”, and it handles it. It respects your Airtable rights, no more, no less. Which means it can erase anything you can erase."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Relances clients",
+          "en": "Client follow-ups"
+        },
+        "ask": {
+          "fr": "Dans ma base Clients, trouve ceux que je n'ai pas relancés depuis plus d'un mois et liste-les avec leur projet en cours.",
+          "en": "In my Clients base, find the ones I haven't followed up with for over a month and list them with their current project."
+        },
+        "gain": {
+          "fr": "Votre liste de relances, prête.",
+          "en": "Your follow-up list, ready."
+        },
+        "source": "https://airtable.com/developers/agents/mcp/tools",
+        "icon": "task"
+      },
+      {
+        "title": {
+          "fr": "Nouveaux prospects",
+          "en": "New leads"
+        },
+        "ask": {
+          "fr": "Ajoute ces trois prospects rencontrés au salon dans ma table Contacts, avec leur entreprise et leur e-mail.",
+          "en": "Add these three leads I met at the trade show to my Contacts table, with their company and email."
+        },
+        "gain": {
+          "fr": "Les contacts saisis, sans copier-coller.",
+          "en": "Contacts entered, no copy-paste."
+        },
+        "source": "https://airtable.com/developers/agents/mcp/tools",
+        "icon": "data"
+      },
+      {
+        "title": {
+          "fr": "Suivi des factures",
+          "en": "Invoice tracking"
+        },
+        "ask": {
+          "fr": "Dans ma base Gestion, crée une table Factures avec le client, le montant, la date d'envoi et un statut.",
+          "en": "In my Admin base, create an Invoices table with the client, amount, date sent and a status."
+        },
+        "gain": {
+          "fr": "Une table prête en une phrase.",
+          "en": "A table ready in one sentence."
+        },
+        "source": "https://airtable.com/developers/agents/mcp/getting-started",
+        "icon": "invoice"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Nommez la base",
+          "en": "Name the base"
+        },
+        "fr": "« Dans ma base Clients » lui évite de fouiller partout. Pas besoin des noms de champs exacts : décrivez simplement ce que vous cherchez.",
+        "en": "“In my Clients base” saves it from rummaging everywhere. No need for exact field names: just describe what you're after.",
+        "source": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
+        "community": false,
+        "icon": "database"
+      },
+      {
+        "title": {
+          "fr": "Ne cochez que l'utile",
+          "en": "Tick only what's needed"
+        },
+        "fr": "À la connexion, vous choisissez les bases et espaces qu'il voit. La base de votre comptabilité n'a pas forcément besoin d'en faire partie.",
+        "en": "When connecting, you choose which bases and workspaces it sees. Your accounting base doesn't have to be one of them.",
+        "source": "https://airtable.com/developers/agents/mcp/getting-started",
+        "community": false,
+        "icon": "settings"
+      },
+      {
+        "title": {
+          "fr": "Lecture libre, écriture sur demande",
+          "en": "Free reading, writing on request"
+        },
+        "fr": "Réglez le connecteur pour que l'assistant vous demande avant d'agir : il lit tranquillement, et vous gardez la main sur ce qui modifie ou supprime.",
+        "en": "Set the connector so the assistant asks before acting: it reads in peace, and you keep a hand on anything that edits or deletes.",
+        "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
+        "community": false,
+        "icon": "approve"
+      },
+      {
+        "title": {
+          "fr": "Une clé en lecture seule",
+          "en": "A read-only key"
+        },
+        "fr": "Si vous passez par une clé (Claude Code, Cursor), ne lui donnez que les droits de lecture : il pourra répondre, pas modifier.",
+        "en": "If you go through a key (Claude Code, Cursor), give it read rights only: it can answer, not change.",
+        "source": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
+        "community": false,
+        "icon": "key"
+      },
+      {
+        "title": {
+          "fr": "Les automatisations restent éteintes",
+          "en": "Automations stay off"
+        },
+        "fr": "Il peut préparer une automatisation, mais elle reste en brouillon tant que vous ne l'allumez pas dans Airtable. Relisez avant d'appuyer.",
+        "en": "It can draft an automation, but it stays off until you turn it on in Airtable. Read it before flipping the switch.",
+        "source": "https://airtable.com/developers/agents/mcp/tools",
+        "community": false,
+        "icon": "draft"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Une table supprimée, contenu compris",
+          "en": "A table deleted, contents and all"
+        },
+        "fr": "Supprimer une table emporte ses fiches, ses champs et ses vues, et Airtable ne documente pas de retour en arrière pour ça.",
+        "en": "Deleting a table takes its records, fields and views with it, and Airtable documents no way back for that.",
+        "workaround": {
+          "fr": "Gardez la suppression sous votre approbation et dupliquez une base importante avant de lui confier un grand ménage.",
+          "en": "Keep deleting behind your approval and duplicate an important base before handing it a big clean-up."
+        },
+        "source": "https://airtable.com/developers/agents/mcp/tools",
+        "community": false,
+        "icon": "rights"
+      },
+      {
+        "title": {
+          "fr": "Simple lecteur ? Lecture seule",
+          "en": "Read-only at a client's? Reading only"
+        },
+        "fr": "Avec un accès Commentateur ou Lecture seule, il lit mais ne modifie rien.",
+        "en": "With Commenter or Read-only access, it reads but changes nothing.",
+        "workaround": {
+          "fr": "Demandez au client le rôle Éditeur sur la base concernée.",
+          "en": "Ask the client for the Editor role on that base."
+        },
+        "source": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
+        "community": false,
+        "icon": "guest"
+      },
+      {
+        "title": {
+          "fr": "Les ajouts, par petits paquets",
+          "en": "Additions, in small batches"
+        },
+        "fr": "Il ne crée qu'un petit nombre de fiches par demande : une longue liste sera découpée, ou à moitié faite.",
+        "en": "It only creates a handful of records per request: a long list gets split up, or half done.",
+        "workaround": {
+          "fr": "Envoyez vos ajouts par petits lots et vérifiez le total dans la table ; pour un gros import, passez par l'import CSV d'Airtable.",
+          "en": "Send additions in small batches and check the count in the table; for a big import, use Airtable's CSV import."
+        },
+        "source": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
+        "community": false,
+        "icon": "limit"
+      },
+      {
+        "title": {
+          "fr": "Type de champ : pas touche",
+          "en": "Field type: hands off"
+        },
+        "fr": "Il peut renommer un champ, mais pas changer son type ni ses choix de liste déroulante.",
+        "en": "It can rename a field, but not change its type or its dropdown options.",
+        "workaround": {
+          "fr": "Faites ces changements directement dans Airtable.",
+          "en": "Make those changes directly in Airtable."
+        },
+        "source": "https://airtable.com/developers/agents/mcp/tools",
+        "community": false,
+        "icon": "blocked"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Airtable — présentation du serveur",
+        "url": "https://airtable.com/developers/agents/mcp/getting-started"
+      },
+      {
+        "label": "Airtable — aide MCP",
+        "url": "https://support.airtable.com/docs/using-the-airtable-mcp-server"
+      },
+      {
+        "label": "Airtable — outils",
+        "url": "https://airtable.com/developers/agents/mcp/tools"
+      },
+      {
+        "label": "Claude — connecteurs",
+        "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
+      }
+    ]
+  }
 }

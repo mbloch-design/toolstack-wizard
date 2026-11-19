@@ -318,5 +318,188 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/buffer"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vous programmez déjà vos posts avec Buffer, branchez-le : votre assistant rédige, met en file d'attente et vous dit ce qui a marché, sans changer d'onglet. Gardez les demandes de confirmation, car il sait aussi publier tout de suite.",
+      "en": "If you already schedule your posts with Buffer, plug it in: your assistant drafts, queues and tells you what worked, without switching tabs. Keep the confirmation prompts on, because it can also post right away.",
+      "source": "https://developers.buffer.com/guides/integrations/mcp.html"
+    },
+    "intro": {
+      "fr": "Les réseaux sociaux, c'est le seul travail où l'on passe plus de temps à se demander quoi poster qu'à poster. Avec Buffer branché, vous parlez d'une idée, l'assistant en fait un post, l'adapte pour un autre réseau et le glisse dans votre file d'attente. Il ne filme pas vos vidéos et ne fabrique pas vos carrousels, hélas. Et il faut lui dire « programme », pas « publie ».",
+      "en": "Social media is the only job where you spend more time wondering what to post than posting. With Buffer plugged in, you talk through an idea, the assistant turns it into a post, adapts it for another network and slips it into your queue. Sadly, it won't film your videos or build your carousels. And you need to say “schedule”, not “publish”."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Post de la semaine",
+          "en": "This week's post"
+        },
+        "ask": {
+          "fr": "Rédige un post LinkedIn sur le site que je viens de livrer pour Studio Martin et enregistre-le en brouillon dans Buffer.",
+          "en": "Write a LinkedIn post about the website I just delivered for Studio Martin and save it as a draft in Buffer."
+        },
+        "gain": {
+          "fr": "Un brouillon qui attend votre relecture.",
+          "en": "A draft waiting for your review."
+        },
+        "source": "https://buffer.com/mcp",
+        "icon": "post"
+      },
+      {
+        "title": {
+          "fr": "Un post, deux réseaux",
+          "en": "One post, two networks"
+        },
+        "ask": {
+          "fr": "Reprends mon post LinkedIn programmé mardi, fais-en une version plus courte pour Threads et ajoute-la à ma file d'attente.",
+          "en": "Take the LinkedIn post scheduled for Tuesday, make a shorter version for Threads and add it to my queue."
+        },
+        "gain": {
+          "fr": "Le même message, au bon format.",
+          "en": "The same message, in the right format."
+        },
+        "source": "https://buffer.com/resources/how-to-post-on-social-media-from-claude/",
+        "icon": "social"
+      },
+      {
+        "title": {
+          "fr": "Bilan du mois",
+          "en": "Monthly review"
+        },
+        "ask": {
+          "fr": "Lesquels de mes posts LinkedIn du mois dernier ont le mieux marché, et qu'ont-ils en commun ?",
+          "en": "Which of last month's LinkedIn posts did best, and what do they have in common?"
+        },
+        "gain": {
+          "fr": "Ce qui marche, sans tableur.",
+          "en": "What works, no spreadsheet."
+        },
+        "source": "https://developers.buffer.com/guides/integrations/mcp.html",
+        "icon": "chart"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "« Programme », pas « publie »",
+          "en": "“Schedule”, not “publish”"
+        },
+        "fr": "Par défaut, le post rejoint votre file d'attente ; mais l'assistant peut aussi publier immédiatement. Le bon verbe vous évite un post parti trop tôt.",
+        "en": "By default the post joins your queue, but the assistant can also publish immediately. The right verb spares you a post that went out too soon.",
+        "source": "https://developers.buffer.com/guides/integrations/mcp.html",
+        "community": false,
+        "icon": "draft"
+      },
+      {
+        "title": {
+          "fr": "Laissez les confirmations allumées",
+          "en": "Leave confirmations on"
+        },
+        "fr": "Buffer le demande lui-même : une publication immédiate ou une suppression ne se rattrapent pas. Un clic de plus, c'est moins cher qu'un post à excuser.",
+        "en": "Buffer asks for it itself: an instant post or a deletion can't be taken back. One more click beats a post you have to apologise for.",
+        "source": "https://developers.buffer.com/guides/integrations/mcp.html",
+        "community": false,
+        "icon": "approve"
+      },
+      {
+        "title": {
+          "fr": "Apprenez-lui votre ton",
+          "en": "Teach it your tone"
+        },
+        "fr": "Donnez-lui quelques-uns de vos posts en exemple, ou enregistrez-les dans une compétence réutilisable. Et relisez : le post doit sonner comme vous, pas comme un communiqué.",
+        "en": "Give it a few of your posts as examples, or save them in a reusable skill. And reread: the post should sound like you, not a press release.",
+        "source": "https://buffer.com/resources/how-to-post-on-social-media-from-claude/",
+        "community": false,
+        "icon": "brand"
+      },
+      {
+        "title": {
+          "fr": "Les idées pour le reste",
+          "en": "Ideas for the rest"
+        },
+        "fr": "Un script de vidéo ou le texte d'un carrousel n'a rien à faire dans la file d'attente : demandez-lui de l'enregistrer dans vos Idées Buffer pour plus tard.",
+        "en": "A video script or carousel text doesn't belong in the queue: ask it to save it in your Buffer Ideas for later.",
+        "source": "https://buffer.com/resources/how-to-post-on-social-media-from-claude/",
+        "community": false,
+        "icon": "copy"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Tout le compte, d'un coup",
+          "en": "The whole account, at once"
+        },
+        "fr": "La connexion couvre toutes vos organisations et tous vos canaux, y compris ceux d'un client que vous gérez.",
+        "en": "The connection covers all your organisations and channels, including a client's you manage.",
+        "workaround": {
+          "fr": "Nommez le réseau et l'organisation dans chaque demande, et coupez l'accès dans Réglages, puis API, quand vous n'en avez plus besoin.",
+          "en": "Name the network and organisation in every request, and cut access in Settings, then API, when you no longer need it."
+        },
+        "source": "https://developers.buffer.com/guides/integrations/mcp.html",
+        "community": false,
+        "icon": "rights"
+      },
+      {
+        "title": {
+          "fr": "Corriger peut déplacer le post",
+          "en": "Fixing can move the post"
+        },
+        "fr": "Quand l'assistant modifie un post en renvoyant son mode de programmation, Buffer le replanifie, même si rien n'a changé.",
+        "en": "When the assistant edits a post and resends its scheduling mode, Buffer reschedules it, even if nothing changed.",
+        "workaround": {
+          "fr": "Précisez « ne touche pas à l'horaire », puis vérifiez la date dans Buffer.",
+          "en": "Say “don't touch the schedule”, then check the date in Buffer."
+        },
+        "source": "https://developers.buffer.com/guides/integrations/mcp.html",
+        "community": false,
+        "icon": "confirm"
+      },
+      {
+        "title": {
+          "fr": "Pas de visuels maison",
+          "en": "No home-made visuals"
+        },
+        "fr": "L'assistant écrit, mais ne crée ni vidéo ni carrousel.",
+        "en": "The assistant writes, but creates neither videos nor carousels.",
+        "workaround": {
+          "fr": "Préparez vos visuels à part et ajoutez-les au post dans Buffer avant qu'il parte.",
+          "en": "Prepare your visuals separately and add them to the post in Buffer before it goes out."
+        },
+        "source": "https://buffer.com/resources/how-to-post-on-social-media-from-claude/",
+        "community": false,
+        "icon": "blocked"
+      },
+      {
+        "title": {
+          "fr": "Des chiffres en léger retard",
+          "en": "Stats running a little late"
+        },
+        "fr": "Les statistiques ne sont pas en direct : le post d'hier peut sembler plus timide qu'il ne l'est.",
+        "en": "Stats aren't live: yesterday's post may look shyer than it really is.",
+        "workaround": {
+          "fr": "Attendez un peu avant de juger un post.",
+          "en": "Give it a little time before judging a post."
+        },
+        "source": "https://developers.buffer.com/guides/integrations/mcp.html",
+        "community": false,
+        "icon": "slow"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Buffer — documentation MCP",
+        "url": "https://developers.buffer.com/guides/integrations/mcp.html"
+      },
+      {
+        "label": "Buffer — présentation MCP",
+        "url": "https://buffer.com/mcp"
+      },
+      {
+        "label": "Buffer — publier depuis Claude",
+        "url": "https://buffer.com/resources/how-to-post-on-social-media-from-claude/"
+      }
+    ]
+  }
 }

@@ -440,5 +440,192 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/webflow"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vos sites ou ceux de vos clients tournent sur Webflow, branchez-le pour le CMS, les audits et les petites retouches. Publier reste l'acte à surveiller : demandez toujours de voir ce qui a changé avant la mise en ligne.",
+      "en": "If your sites or your clients' run on Webflow, plug it in for the CMS, audits and small fixes. Publishing is the step to watch: always ask to see what changed before going live.",
+      "source": "https://developers.webflow.com/mcp/tools/data-tools"
+    },
+    "intro": {
+      "fr": "Webflow, c'est le site que le client « veut juste mettre à jour un petit peu », de préférence vendredi à 18 h. Branché à votre assistant, il range le CMS, ajoute des articles en brouillon, traque les liens cassés. Il peut aussi supprimer des fichiers et publier le site entier. Le bon réflexe : brouillon, relecture, et seulement ensuite la mise en ligne.",
+      "en": "Webflow is the site the client “just wants to update a little”, ideally on Friday at 6 pm. Plugged into your assistant, it tidies the CMS, adds draft posts and hunts broken links. It can also delete files and publish the whole site. The right habit: draft, review, and only then go live."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Article de blog",
+          "en": "Blog post"
+        },
+        "ask": {
+          "fr": "Crée un article dans ma collection Blog avec ce texte, en brouillon, sans le publier.",
+          "en": "Create a post in my Blog collection with this text, as a draft, without publishing it."
+        },
+        "gain": {
+          "fr": "L'article en place, pas encore en ligne.",
+          "en": "The post in place, not live yet."
+        },
+        "source": "https://developers.webflow.com/mcp/tools/data-tools",
+        "icon": "post"
+      },
+      {
+        "title": {
+          "fr": "Liens cassés",
+          "en": "Broken links"
+        },
+        "ask": {
+          "fr": "Vérifie les liens de mon site, CMS compris, et dis-moi lesquels sont cassés.",
+          "en": "Check my site's links, CMS included, and tell me which ones are broken."
+        },
+        "gain": {
+          "fr": "La chasse aux liens morts, déléguée.",
+          "en": "The dead-link hunt, delegated."
+        },
+        "source": "https://developers.webflow.com/mcp/reference/skills",
+        "icon": "link"
+      },
+      {
+        "title": {
+          "fr": "Mise en ligne",
+          "en": "Going live"
+        },
+        "ask": {
+          "fr": "Montre-moi ce qui a changé depuis la dernière publication, et publie si tout va bien.",
+          "en": "Show me what changed since the last publish, and publish if it looks good."
+        },
+        "gain": {
+          "fr": "Une publication relue avant de partir.",
+          "en": "A publish checked before it ships."
+        },
+        "source": "https://developers.webflow.com/mcp/reference/skills",
+        "icon": "web"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Publiez en deux temps",
+          "en": "Publish in two steps"
+        },
+        "fr": "La compétence « safe publish » montre les changements, fait ses vérifications et attend votre accord explicite avant la mise en ligne. Demandez-la par son nom.",
+        "en": "The “safe publish” skill shows the changes, runs its checks and waits for your explicit go-ahead before going live. Ask for it by name.",
+        "source": "https://developers.webflow.com/mcp/reference/skills",
+        "community": false,
+        "icon": "confirm"
+      },
+      {
+        "title": {
+          "fr": "CMS en lot, avec aperçu",
+          "en": "Bulk CMS, with a preview"
+        },
+        "fr": "Pour modifier beaucoup d'éléments d'un coup, la mise à jour en lot vérifie les données, montre les différences et demande confirmation.",
+        "en": "To change many items at once, the bulk update checks the data, shows the differences and asks for confirmation.",
+        "source": "https://developers.webflow.com/mcp/reference/skills",
+        "community": false,
+        "icon": "database"
+      },
+      {
+        "title": {
+          "fr": "Des consignes par site",
+          "en": "Instructions per site"
+        },
+        "fr": "Chaque site peut avoir ses propres consignes d'agent : ton, noms de classes, ce qu'il ne doit pas toucher. Utile quand chaque client a ses habitudes.",
+        "en": "Each site can have its own agent instructions: tone, class names, what not to touch. Handy when every client has their habits.",
+        "source": "https://developers.webflow.com/mcp/reference/overview",
+        "community": false,
+        "icon": "brief"
+      },
+      {
+        "title": {
+          "fr": "Un œil sur le journal",
+          "en": "Keep an eye on the log"
+        },
+        "fr": "Les modifications faites par l'assistant sont notées dans le journal d'activité du site. Pratique pour savoir qui a cassé le menu : vous, le client ou la machine.",
+        "en": "Changes made by the assistant are recorded in the site's activity log. Handy for knowing who broke the menu: you, the client or the machine.",
+        "source": "https://developers.webflow.com/mcp/reference/overview",
+        "community": false,
+        "icon": "admin"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Publier, c'est tout publier",
+          "en": "Publishing means everything"
+        },
+        "fr": "La publication du site met en ligne toutes les dernières modifications, y compris celles en cours, sans étape de confirmation décrite.",
+        "en": "Publishing the site makes all the latest changes live, unfinished ones included, with no confirmation step described.",
+        "workaround": {
+          "fr": "Passez par la publication en deux temps et lisez la liste des changements avant d'accepter.",
+          "en": "Use the two-step publish and read the list of changes before accepting."
+        },
+        "source": "https://developers.webflow.com/mcp/tools/data-tools",
+        "community": false,
+        "icon": "rights"
+      },
+      {
+        "title": {
+          "fr": "Un espace de travail à la fois",
+          "en": "One workspace at a time"
+        },
+        "fr": "Chaque autorisation couvre un seul espace de travail. Pour passer aux sites d'un autre client, il faut se reconnecter.",
+        "en": "Each authorisation covers one workspace. To move to another client's sites, you have to reconnect.",
+        "workaround": {
+          "fr": "Dans Claude, retirez puis réinstallez le connecteur en choisissant le bon espace.",
+          "en": "In Claude, remove and reinstall the connector, picking the right workspace."
+        },
+        "source": "https://developers.webflow.com/mcp/reference/overview",
+        "community": false,
+        "icon": "guest"
+      },
+      {
+        "title": {
+          "fr": "Fichier supprimé, sans retour",
+          "en": "Deleted file, no way back"
+        },
+        "fr": "Il peut supprimer des fichiers du site, et Webflow indique qu'ils ne se restaurent pas par ce biais.",
+        "en": "It can delete site files, and Webflow says they can't be restored this way.",
+        "workaround": {
+          "fr": "Gardez une copie de vos images et refusez les suppressions que vous n'avez pas demandées.",
+          "en": "Keep a copy of your images and refuse deletions you didn't ask for."
+        },
+        "source": "https://developers.webflow.com/mcp/tools/data-tools",
+        "community": false,
+        "icon": "copy"
+      },
+      {
+        "title": {
+          "fr": "Des outils disparus dans Claude",
+          "en": "Tools gone missing in Claude"
+        },
+        "fr": "Webflow a déjà signalé des outils CMS et pages absents dans les applis Claude.",
+        "en": "Webflow has already reported CMS and page tools missing in the Claude apps.",
+        "workaround": {
+          "fr": "Dans les réglages du connecteur Webflow, actualisez la liste des outils.",
+          "en": "In the Webflow connector's settings, refresh the tool list."
+        },
+        "source": "https://status.webflow.com/incidents/xfkjg1vw4y8j",
+        "community": false,
+        "icon": "blocked"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Webflow — présentation MCP",
+        "url": "https://developers.webflow.com/mcp/reference/overview"
+      },
+      {
+        "label": "Webflow — outils de données",
+        "url": "https://developers.webflow.com/mcp/tools/data-tools"
+      },
+      {
+        "label": "Webflow — compétences",
+        "url": "https://developers.webflow.com/mcp/reference/skills"
+      },
+      {
+        "label": "Webflow — incident outils manquants",
+        "url": "https://status.webflow.com/incidents/xfkjg1vw4y8j"
+      }
+    ]
+  }
 }

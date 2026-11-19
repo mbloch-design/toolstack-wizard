@@ -212,5 +212,184 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/tally"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vous recueillez demandes de devis, inscriptions ou avis avec Tally, branchez-le : il monte un formulaire à partir d'une phrase et lit les réponses pour vous. Il ne supprime rien, mais il est encore en bêta : relisez avant de publier.",
+      "en": "If you collect quote requests, sign-ups or feedback with Tally, plug it in: it builds a form from one sentence and reads the answers for you. It deletes nothing, but it's still in beta: review before publishing.",
+      "source": "https://developers.tally.so/api-reference/mcp"
+    },
+    "intro": {
+      "fr": "Créer un formulaire, ce n'est jamais long… jusqu'à ce qu'on hésite vingt minutes entre « Budget » et « Fourchette de budget ». Avec Tally branché, vous décrivez ce que vous voulez et l'assistant construit le formulaire en brouillon. Il sait aussi lire les réponses et en tirer les grandes lignes. Il ne peut rien supprimer, ce qui rassure ; il reste en bêta, ce qui invite à relire.",
+      "en": "Building a form never takes long… until you spend twenty minutes choosing between “Budget” and “Budget range”. With Tally plugged in, you describe what you want and the assistant builds the form as a draft. It can also read the answers and pull out the main points. It can't delete anything, which is reassuring; it's still in beta, which is a reason to review."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Demande de devis",
+          "en": "Quote request"
+        },
+        "ask": {
+          "fr": "Crée un formulaire de demande de devis : nom, e-mail, type de projet et délai obligatoires, budget facultatif.",
+          "en": "Create a quote request form: name, email, project type and deadline required, budget optional."
+        },
+        "gain": {
+          "fr": "Un formulaire prêt, en brouillon privé.",
+          "en": "A ready form, as a private draft."
+        },
+        "source": "https://developers.tally.so/api-reference/mcp",
+        "icon": "form"
+      },
+      {
+        "title": {
+          "fr": "Retours clients",
+          "en": "Client feedback"
+        },
+        "ask": {
+          "fr": "Résume les thèmes qui reviennent dans les réponses longues de mon questionnaire de fin de mission.",
+          "en": "Sum up the recurring themes in the long answers to my end-of-project survey."
+        },
+        "gain": {
+          "fr": "Les retours lus pour vous.",
+          "en": "The feedback, read for you."
+        },
+        "source": "https://tally.so/help/mcp",
+        "icon": "feedback"
+      },
+      {
+        "title": {
+          "fr": "Inscriptions",
+          "en": "Sign-ups"
+        },
+        "ask": {
+          "fr": "Montre-moi l'évolution des inscriptions à mon atelier, semaine par semaine, sur les trois derniers mois.",
+          "en": "Show me how sign-ups to my workshop evolved, week by week, over the last three months."
+        },
+        "gain": {
+          "fr": "La courbe sans passer par un tableur.",
+          "en": "The trend, no spreadsheet needed."
+        },
+        "source": "https://tally.so/help/mcp",
+        "icon": "chart"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Listez vos champs",
+          "en": "List your fields"
+        },
+        "fr": "Nommez chaque champ et dites s'il est obligatoire ou facultatif. Sinon, il choisit les champs habituels, qui ne sont pas forcément les vôtres.",
+        "en": "Name each field and say whether it's required or optional. Otherwise it picks the usual fields, which aren't necessarily yours.",
+        "source": "https://developers.tally.so/api-reference/mcp",
+        "community": false,
+        "icon": "brief"
+      },
+      {
+        "title": {
+          "fr": "Donnez l'adresse du formulaire",
+          "en": "Give the form's URL"
+        },
+        "fr": "Pour modifier un formulaire existant, collez son lien dans la demande : c'est ainsi qu'il sait lequel toucher.",
+        "en": "To edit an existing form, paste its link into the request: that's how it knows which one to touch.",
+        "source": "https://developers.tally.so/api-reference/mcp",
+        "community": false,
+        "icon": "link"
+      },
+      {
+        "title": {
+          "fr": "Publiez quand vous êtes prêt",
+          "en": "Publish when you're ready"
+        },
+        "fr": "Un nouveau formulaire reste un brouillon privé tant que vous ne demandez pas sa publication. Relisez-le dans Tally, puis dites « publie ».",
+        "en": "A new form stays a private draft until you ask to publish it. Review it in Tally, then say “publish”.",
+        "source": "https://developers.tally.so/api-reference/mcp",
+        "community": false,
+        "icon": "confirm"
+      },
+      {
+        "title": {
+          "fr": "Une capture pour vos couleurs",
+          "en": "A screenshot for your colours"
+        },
+        "fr": "Partagez une capture de votre site ou de votre charte : il peut s'en servir pour habiller le formulaire à votre image.",
+        "en": "Share a screenshot of your site or brand guide: it can use it to style the form to match.",
+        "source": "https://tally.so/help/claude-connector",
+        "community": false,
+        "icon": "brand"
+      },
+      {
+        "title": {
+          "fr": "Filtrez les réponses",
+          "en": "Filter the answers"
+        },
+        "fr": "Demandez les réponses complètes d'une période précise plutôt que tout l'historique : la synthèse sera plus juste.",
+        "en": "Ask for completed answers from a specific period rather than the whole history: the summary will be sharper.",
+        "source": "https://developers.tally.so/api-reference/mcp",
+        "community": false,
+        "icon": "refine"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Le style change tout de suite",
+          "en": "Styling changes right away"
+        },
+        "fr": "Sur un formulaire en ligne, les questions attendent la publication, mais les réglages et le style s'appliquent immédiatement.",
+        "en": "On a live form, questions wait for publishing, but settings and styling apply immediately.",
+        "workaround": {
+          "fr": "Testez vos changements de style sur une copie plutôt que sur le formulaire que vos clients remplissent.",
+          "en": "Try styling changes on a copy rather than on the form your clients are filling in."
+        },
+        "source": "https://developers.tally.so/api-reference/mcp",
+        "community": false,
+        "icon": "settings"
+      },
+      {
+        "title": {
+          "fr": "Il crée, mais ne range pas",
+          "en": "It creates, but doesn't tidy"
+        },
+        "fr": "Il ne peut supprimer ni formulaire ni réponse : les essais s'accumulent dans votre espace.",
+        "en": "It can't delete forms or answers: test runs pile up in your workspace.",
+        "workaround": {
+          "fr": "Supprimez vous-même les brouillons d'essai dans Tally de temps en temps.",
+          "en": "Delete the test drafts yourself in Tally now and then."
+        },
+        "source": "https://tally.so/help/mcp",
+        "community": false,
+        "icon": "draft"
+      },
+      {
+        "title": {
+          "fr": "Encore en bêta",
+          "en": "Still in beta"
+        },
+        "fr": "Tally prévient que le serveur peut évoluer : un comportement d'aujourd'hui peut changer demain.",
+        "en": "Tally warns the server may change: today's behaviour may differ tomorrow.",
+        "workaround": {
+          "fr": "Gardez la main sur vos formulaires essentiels et vérifiez le résultat dans Tally après chaque modification.",
+          "en": "Keep your essential forms in your own hands and check the result in Tally after each change."
+        },
+        "source": "https://developers.tally.so/api-reference/mcp",
+        "community": false,
+        "icon": "limit"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Tally — documentation MCP",
+        "url": "https://developers.tally.so/api-reference/mcp"
+      },
+      {
+        "label": "Tally — aide MCP",
+        "url": "https://tally.so/help/mcp"
+      },
+      {
+        "label": "Tally — connecteur Claude",
+        "url": "https://tally.so/help/claude-connector"
+      }
+    ]
+  }
 }

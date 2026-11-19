@@ -601,5 +601,196 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/clickup"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vos projets et vos heures vivent dans ClickUp, branchez-le : votre assistant repère les retards, compte votre temps et crée des tâches à votre place. Gardez l'écriture sous approbation, car il prévient vos collègues et peut écrire dans le chat en votre nom.",
+      "en": "If your projects and hours live in ClickUp, plug it in: your assistant spots what's late, adds up your time and creates tasks for you. Keep writing behind approval, since it notifies your teammates and can post in chat as you.",
+      "source": "https://developer.clickup.com/docs/mcp-tools"
+    },
+    "intro": {
+      "fr": "ClickUp, c'est la grande armoire où tout est rangé… et où l'on ne retrouve rien le vendredi soir. Brancher votre assistant, c'est envoyer quelqu'un faire le tour des listes à votre place : retards, heures passées, tâches à créer. Il agit avec votre compte, donc vos collègues voient passer ses notifications comme si elles venaient de vous. Et le nombre d'appels par jour est compté : mieux vaut lui dire où chercher que lui demander « qu'est-ce qui m'attend ? ».",
+      "en": "ClickUp is the big cupboard where everything is filed… and nothing can be found on a Friday evening. Plugging in your assistant sends someone round the lists for you: what's late, hours spent, tasks to create. It acts as your account, so your teammates see its notifications as if they came from you. And daily calls are counted: better to tell it where to look than to ask “what needs my attention?”."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Point de la semaine",
+          "en": "Weekly review"
+        },
+        "ask": {
+          "fr": "Dans la liste Refonte, quelles tâches sont en retard ou attendent une relecture, et qu'est-ce qui les bloque ?",
+          "en": "In the Redesign list, which tasks are overdue or waiting for review, and what is holding them up?"
+        },
+        "gain": {
+          "fr": "Les retards repérés sans ouvrir une liste.",
+          "en": "Delays spotted without opening a list."
+        },
+        "source": "https://clickup.com/blog/how-to-use-clickup-mcp-server/",
+        "icon": "week"
+      },
+      {
+        "title": {
+          "fr": "Temps passé",
+          "en": "Time spent"
+        },
+        "ask": {
+          "fr": "Combien de temps ai-je suivi sur les tâches du client Martin ce mois-ci, tâche par tâche ?",
+          "en": "How much time did I track on client Martin's tasks this month, task by task?"
+        },
+        "gain": {
+          "fr": "Vos heures prêtes pour la facture.",
+          "en": "Your hours ready for the invoice."
+        },
+        "source": "https://developer.clickup.com/docs/mcp-tools",
+        "icon": "chart"
+      },
+      {
+        "title": {
+          "fr": "Nouvelle tâche",
+          "en": "New task"
+        },
+        "ask": {
+          "fr": "Crée une tâche « Envoyer le devis » pour vendredi dans ma liste Clients, priorité haute, avec l'étiquette Martin.",
+          "en": "Create a task “Send the quote” for Friday in my Clients list, high priority, tagged Martin."
+        },
+        "gain": {
+          "fr": "Notée sans quitter la conversation.",
+          "en": "Logged without leaving the chat."
+        },
+        "source": "https://clickup.com/blog/how-to-use-clickup-mcp-server/",
+        "icon": "task"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Dites-lui où chercher",
+          "en": "Tell it where to look"
+        },
+        "fr": "Un espace, une liste ou une période dans la demande : il fait moins d'allers-retours et use moins votre quota du jour. « Qu'est-ce qui m'attend ? » le fait fouiller partout.",
+        "en": "A space, a list or a time window in your request: fewer round trips, less of your daily allowance used. “What needs my attention?” sends it rummaging everywhere.",
+        "source": "https://clickup.com/blog/how-to-use-clickup-mcp-server/",
+        "community": false,
+        "icon": "brief"
+      },
+      {
+        "title": {
+          "fr": "Une lecture avant d'écrire",
+          "en": "A read before a write"
+        },
+        "fr": "Commencez par une question simple pour vérifier qu'il est branché sur le bon espace de travail. Ensuite seulement, créez ou déplacez.",
+        "en": "Start with a simple question to check it's connected to the right workspace. Only then create or move things.",
+        "source": "https://clickup.com/blog/how-to-use-clickup-mcp-server/",
+        "community": false,
+        "icon": "confirm"
+      },
+      {
+        "title": {
+          "fr": "L'écriture sous votre approbation",
+          "en": "Writing behind your approval"
+        },
+        "fr": "Dans les réglages du connecteur, laissez la lecture libre et gardez la création, la modification et l'envoi de messages sur « Approbation requise ».",
+        "en": "In the connector's settings, let reading run freely and keep creating, editing and sending messages on “Needs approval”.",
+        "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
+        "community": false,
+        "icon": "approve"
+      },
+      {
+        "title": {
+          "fr": "Le répétitif aux automatisations",
+          "en": "Repetitive work to Automations"
+        },
+        "fr": "Une règle fixe, comme « tâche terminée, on prévient le client », a sa place dans les automatisations ClickUp. L'assistant sert quand il faut juger au cas par cas.",
+        "en": "A fixed rule, like “task done, tell the client”, belongs in ClickUp Automations. The assistant is for when each case needs judgement.",
+        "source": "https://clickup.com/blog/how-to-use-clickup-mcp-server/",
+        "community": false,
+        "icon": "settings"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Il parle en votre nom",
+          "en": "It speaks as you"
+        },
+        "fr": "Une tâche créée prévient les personnes assignées, et un message de chat part signé de votre nom, notifications comprises.",
+        "en": "A new task notifies its assignees, and a chat message goes out under your name, notifications included.",
+        "workaround": {
+          "fr": "Essayez vos demandes dans une liste de test sans personne assignée, et lisez chaque message avant de l'accepter.",
+          "en": "Try your requests in a test list with nobody assigned, and read every message before approving it."
+        },
+        "source": "https://developer.clickup.com/docs/mcp-tools",
+        "community": false,
+        "icon": "mail"
+      },
+      {
+        "title": {
+          "fr": "Le plafond du jour",
+          "en": "The daily cap"
+        },
+        "fr": "Une fois la limite atteinte, il répond par une erreur ; aucun compteur ne prévient avant, et rien ne la remet à zéro.",
+        "en": "Once the limit is hit, it answers with an error; no counter warns you beforehand, and nothing resets it.",
+        "workaround": {
+          "fr": "Gardez des demandes ciblées, et attendez que la fenêtre se libère plutôt que d'insister.",
+          "en": "Keep requests targeted, and wait for the window to free up rather than retrying."
+        },
+        "source": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server",
+        "community": false,
+        "icon": "limit"
+      },
+      {
+        "title": {
+          "fr": "Relancer, c'est doubler",
+          "en": "Retry means duplicate"
+        },
+        "fr": "Redemander une création après une erreur peut donner deux tâches, deux commentaires, ou du temps compté deux fois.",
+        "en": "Asking again after an error can give you two tasks, two comments, or time counted twice.",
+        "workaround": {
+          "fr": "Après un raté, demandez-lui d'abord de vérifier si l'élément existe déjà.",
+          "en": "After a hiccup, ask it to check first whether the item already exists."
+        },
+        "source": "https://developer.clickup.com/docs/mcp-tools",
+        "community": false,
+        "icon": "copy"
+      },
+      {
+        "title": {
+          "fr": "Champs personnalisés mal filtrés",
+          "en": "Custom fields poorly filtered"
+        },
+        "fr": "Un utilisateur signale qu'il filtre par liste, statut ou étiquette, mais pas par champ personnalisé, et qu'il doit alors vérifier les tâches une à une.",
+        "en": "One user reports it filters by list, status or tag, but not by custom field, so it ends up checking tasks one by one.",
+        "workaround": {
+          "fr": "Pour ce genre de tri, préférez une vue filtrée dans ClickUp, ou une étiquette qui reprend l'information.",
+          "en": "For that kind of sorting, use a filtered view in ClickUp, or a tag that carries the same information."
+        },
+        "source": "https://feedback.clickup.com/feature-requests/p/mcp-feature-request-thread",
+        "community": true,
+        "icon": "blocked"
+      }
+    ],
+    "sources": [
+      {
+        "label": "ClickUp — outils MCP",
+        "url": "https://developer.clickup.com/docs/mcp-tools"
+      },
+      {
+        "label": "ClickUp — serveur MCP et limites",
+        "url": "https://developer.clickup.com/docs/connect-an-ai-assistant-to-clickups-mcp-server"
+      },
+      {
+        "label": "ClickUp — guide d'usage (blog)",
+        "url": "https://clickup.com/blog/how-to-use-clickup-mcp-server/"
+      },
+      {
+        "label": "ClickUp — demandes des utilisateurs",
+        "url": "https://feedback.clickup.com/feature-requests/p/mcp-feature-request-thread"
+      },
+      {
+        "label": "Claude — connecteurs",
+        "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities"
+      }
+    ]
+  }
 }

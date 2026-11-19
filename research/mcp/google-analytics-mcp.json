@@ -211,5 +211,181 @@
       "label": "GitHub googleanalytics/google-analytics-mcp",
       "url": "https://github.com/googleanalytics/google-analytics-mcp"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vous êtes à l'aise avec un terminal, ou si quelqu'un peut l'installer pour vous une fois, ça vaut l'effort : vous posez vos questions de trafic en français au lieu de construire des rapports. Sinon, passez votre tour : il faut Python, un projet Google Cloud et des identifiants à configurer.",
+      "en": "If you're comfortable with a terminal, or someone can set it up for you once, it's worth the effort: you ask your traffic questions in plain words instead of building reports. Otherwise, skip it: it takes Python, a Google Cloud project and credentials to configure.",
+      "source": "https://developers.google.com/analytics/devguides/MCP"
+    },
+    "intro": {
+      "fr": "Google Analytics, c'est la mine d'or que tout le monde a et que personne n'a le temps de creuser. Ce serveur vous donne une pioche qui parle : « d'où viennent mes visiteurs ? », « quelles pages amènent des demandes de devis ? ». Il ne fait que lire vos chiffres, rien à casser de ce côté-là. Le prix à payer est à l'entrée : l'installation se fait sur votre ordinateur, à la main. Un utilisateur résume bien : trop dur à installer, mais « magique » une fois en route.",
+      "en": "Google Analytics is the gold mine everyone has and nobody has time to dig. This server hands you a pickaxe that talks: “where do my visitors come from?”, “which pages bring in quote requests?”. It only reads your numbers, so nothing to break there. The price is paid at the door: setup happens on your computer, by hand. One user puts it well: too hard to install, but “magical” once it runs."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Bilan du mois",
+          "en": "Monthly review"
+        },
+        "ask": {
+          "fr": "Combien de visiteurs mon site a-t-il eus le mois dernier, d'où venaient-ils, et qu'est-ce qui a changé par rapport au mois d'avant ?",
+          "en": "How many visitors did my site get last month, where did they come from, and what changed from the month before?"
+        },
+        "gain": {
+          "fr": "Le bilan du mois sans ouvrir un rapport.",
+          "en": "The month's review without opening a report."
+        },
+        "source": "https://developers.google.com/analytics/devguides/MCP",
+        "icon": "chart"
+      },
+      {
+        "title": {
+          "fr": "En direct",
+          "en": "Live traffic"
+        },
+        "ask": {
+          "fr": "Combien de personnes sont sur mon site en ce moment, et sur quelles pages ?",
+          "en": "How many people are on my site right now, and on which pages?"
+        },
+        "gain": {
+          "fr": "Le pouls du site le jour du lancement.",
+          "en": "Your site's pulse on launch day."
+        },
+        "source": "https://github.com/googleanalytics/google-analytics-mcp",
+        "icon": "web"
+      },
+      {
+        "title": {
+          "fr": "Pages qui convertissent",
+          "en": "Converting pages"
+        },
+        "ask": {
+          "fr": "Quelles pages amènent le plus de demandes de devis ce trimestre, et par quel canal arrivent ces visiteurs ?",
+          "en": "Which pages bring in the most quote requests this quarter, and through which channel do those visitors arrive?"
+        },
+        "gain": {
+          "fr": "Les pages qui vous ramènent des clients.",
+          "en": "The pages that bring you clients."
+        },
+        "source": "https://github.com/googleanalytics/google-analytics-mcp",
+        "icon": "data"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Le rôle Lecteur suffit",
+          "en": "Viewer role is enough"
+        },
+        "fr": "Le compte utilisé n'a besoin que du rôle Lecteur sur la propriété. Pour le site d'un client, demandez-lui ce rôle, pas plus.",
+        "en": "The account used only needs the Viewer role on the property. For a client's site, ask them for that role, nothing more.",
+        "source": "https://developers.google.com/analytics/devguides/MCP",
+        "community": false,
+        "icon": "rights"
+      },
+      {
+        "title": {
+          "fr": "Des chemins complets",
+          "en": "Full paths"
+        },
+        "fr": "Dans le fichier de configuration, écrivez les chemins en entier : beaucoup d'assistants ne comprennent pas « ~ » ni les raccourcis du terminal.",
+        "en": "In the config file, write paths out in full: many assistants don't understand “~” or terminal shortcuts.",
+        "source": "https://developers.google.com/analytics/devguides/MCP",
+        "community": false,
+        "icon": "settings"
+      },
+      {
+        "title": {
+          "fr": "Le bon paquet",
+          "en": "The right package"
+        },
+        "fr": "Le serveur officiel s'appelle « analytics-mcp ». Un projet au nom presque identique existe, et l'équipe Google a déjà vu des utilisateurs installer le mauvais.",
+        "en": "The official server is called “analytics-mcp”. A project with an almost identical name exists, and the Google team has seen users install the wrong one.",
+        "source": "https://github.com/googleanalytics/google-analytics-mcp/issues/167",
+        "community": false,
+        "icon": "copy"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Une installation pour initiés",
+          "en": "A setup for insiders"
+        },
+        "fr": "Python, projet Google Cloud, API à activer, identifiants : des utilisateurs jugent l'installation hors de portée de la plupart des non-développeurs.",
+        "en": "Python, a Google Cloud project, APIs to turn on, credentials: users find setup out of reach for most non-developers.",
+        "workaround": {
+          "fr": "Faites-vous aider une fois par quelqu'un d'à l'aise, en suivant le guide de Google pas à pas.",
+          "en": "Get help once from someone comfortable with it, following Google's guide step by step."
+        },
+        "source": "https://github.com/googleanalytics/google-analytics-mcp/issues/106",
+        "community": true,
+        "icon": "admin"
+      },
+      {
+        "title": {
+          "fr": "Erreur 403 au premier essai",
+          "en": "Error 403 on first try"
+        },
+        "fr": "Avec vos identifiants personnels, Google exige un projet Cloud où les API Analytics sont activées ; sans lui, l'accès est refusé.",
+        "en": "With your personal credentials, Google requires a Cloud project with the Analytics APIs turned on; without it, access is denied.",
+        "workaround": {
+          "fr": "Activez les API Admin et Data dans votre projet et indiquez son identifiant dans la configuration.",
+          "en": "Turn on the Admin and Data APIs in your project and put its ID in the config."
+        },
+        "source": "https://developers.google.com/analytics/devguides/MCP",
+        "community": false,
+        "icon": "blocked"
+      },
+      {
+        "title": {
+          "fr": "Sous Windows, ça mouline",
+          "en": "On Windows, it hangs"
+        },
+        "fr": "Des utilisateurs de Claude sous Windows ont vu chaque question tourner dans le vide jusqu'à l'abandon.",
+        "en": "Claude users on Windows saw every question spin until it gave up.",
+        "workaround": {
+          "fr": "Mettez le serveur à jour : un utilisateur confirme que la dernière version a réglé le problème.",
+          "en": "Update the server: one user confirms the latest version fixed it."
+        },
+        "source": "https://github.com/googleanalytics/google-analytics-mcp/issues/167",
+        "community": true,
+        "icon": "slow"
+      },
+      {
+        "title": {
+          "fr": "Les identifiants expirent",
+          "en": "Credentials expire"
+        },
+        "fr": "L'accès accordé à votre ordinateur ne dure pas toujours, et un oubli de droits de lecture provoque une erreur de « scopes ».",
+        "en": "The access granted to your computer doesn't always last, and missing read rights cause a “scopes” error.",
+        "workaround": {
+          "fr": "Relancez la connexion Google depuis le terminal en demandant la lecture Analytics.",
+          "en": "Run the Google sign-in again from the terminal, asking for Analytics read access."
+        },
+        "source": "https://developers.google.com/analytics/devguides/MCP",
+        "community": false,
+        "icon": "session"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Google — serveur MCP Analytics",
+        "url": "https://developers.google.com/analytics/devguides/MCP"
+      },
+      {
+        "label": "GitHub googleanalytics/google-analytics-mcp",
+        "url": "https://github.com/googleanalytics/google-analytics-mcp"
+      },
+      {
+        "label": "GitHub — « trop dur à installer » (#106)",
+        "url": "https://github.com/googleanalytics/google-analytics-mcp/issues/106"
+      },
+      {
+        "label": "GitHub — lenteurs sous Windows (#167)",
+        "url": "https://github.com/googleanalytics/google-analytics-mcp/issues/167"
+      }
+    ]
+  }
 }

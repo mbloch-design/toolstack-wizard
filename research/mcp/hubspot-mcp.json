@@ -397,5 +397,192 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/hubspot"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si votre suivi commercial vit dans HubSpot, branchez-le : votre assistant lit contacts et transactions et met vos fiches à jour, même avec les outils gratuits. Il ne supprime rien, et la création ou la modification d'une fiche attend votre accord.",
+      "en": "If your sales follow-up lives in HubSpot, plug it in: your assistant reads contacts and deals and updates your records, even on the free tools. It deletes nothing, and creating or editing a record waits for your go-ahead.",
+      "source": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server"
+    },
+    "intro": {
+      "fr": "Un CRM, c'est un carnet d'adresses avec mauvaise conscience : on sait qu'il faudrait noter chaque appel, et on ne le fait jamais. Avec votre assistant branché sur HubSpot, la note se dicte en une phrase, et « où en est ce devis ? » trouve sa réponse sans fouiller. Il voit ce que vous voyez, pas plus, et il ne supprime rien. Reste à garder la main sur ce qu'il écrit, et à savoir quelles portes restent fermées.",
+      "en": "A CRM is an address book with a guilty conscience: you know every call should be logged, and it never is. With your assistant plugged into HubSpot, the note takes one sentence and “where's that quote at?” gets answered without digging. It sees what you see, nothing more, and it deletes nothing. What's left is keeping an eye on what it writes, and knowing which doors stay shut."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Après un appel",
+          "en": "After a call"
+        },
+        "ask": {
+          "fr": "Ajoute une note à la fiche de Claire Martin : elle valide le devis, et crée-moi une tâche pour la relancer mardi.",
+          "en": "Add a note to Claire Martin's record: she's approving the quote. And create a task to follow up with her on Tuesday."
+        },
+        "gain": {
+          "fr": "La note et la relance, sans ouvrir HubSpot.",
+          "en": "Note and follow-up logged, HubSpot unopened."
+        },
+        "source": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+        "icon": "meeting"
+      },
+      {
+        "title": {
+          "fr": "Transactions en cours",
+          "en": "Open deals"
+        },
+        "ask": {
+          "fr": "Fais-moi le point sur mes transactions ouvertes : nom, montant, étape, triées par date de clôture prévue.",
+          "en": "Give me a rundown of my open deals: name, amount, stage, sorted by expected close date."
+        },
+        "gain": {
+          "fr": "Votre pipeline en une réponse.",
+          "en": "Your pipeline in one answer."
+        },
+        "source": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude",
+        "icon": "chart"
+      },
+      {
+        "title": {
+          "fr": "Bilan de campagne",
+          "en": "Campaign review"
+        },
+        "ask": {
+          "fr": "Comment s'est passée ma dernière campagne d'e-mails, et quelle campagne a rapporté le plus le mois dernier ?",
+          "en": "How did my last email campaign do, and which campaign brought in the most last month?"
+        },
+        "gain": {
+          "fr": "Vos chiffres sans ouvrir les rapports.",
+          "en": "Your numbers without opening reports."
+        },
+        "source": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude",
+        "icon": "email"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "L'écriture sous approbation",
+          "en": "Writing behind approval"
+        },
+        "fr": "HubSpot le recommande lui-même : réglez les outils d'écriture sur « Approbation requise ». En « Toujours autoriser », les modifications passent sans vous demander.",
+        "en": "HubSpot recommends it itself: set write tools to “Needs approval”. On “Always allow”, edits go through without asking you.",
+        "source": "https://knowledge.hubspot.com/integrations/connect-your-hubspot-account-to-chatgpt",
+        "community": false,
+        "icon": "approve"
+      },
+      {
+        "title": {
+          "fr": "Une fiche d'abord, le lot ensuite",
+          "en": "One record first, then the batch"
+        },
+        "fr": "Avant une mise à jour en série, essayez sur une seule fiche et relisez ce qu'il propose. Les modifications en masse se font de toute façon par petits lots.",
+        "en": "Before a bulk update, try it on a single record and read what it proposes. Bulk changes go in small batches anyway.",
+        "source": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude",
+        "community": false,
+        "icon": "refine"
+      },
+      {
+        "title": {
+          "fr": "Chez un client, l'admin d'abord",
+          "en": "At a client's, admin first"
+        },
+        "fr": "Seuls les super administrateurs peuvent brancher le connecteur sans validation préalable. Sur le compte HubSpot d'un client, demandez-lui d'approuver le connecteur avant de vous lancer.",
+        "en": "Only Super Admins can connect it without prior approval. On a client's HubSpot account, ask them to approve the connector before you start.",
+        "source": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude",
+        "community": false,
+        "icon": "admin"
+      },
+      {
+        "title": {
+          "fr": "Nouveaux droits, nouvelle connexion",
+          "en": "New rights, reconnect"
+        },
+        "fr": "Quand l'administrateur ouvre l'accès à de nouvelles données, l'assistant ne les voit pas tout de suite : il faut déconnecter puis reconnecter le connecteur.",
+        "en": "When the admin opens up new data, the assistant doesn't see it right away: you have to disconnect and reconnect the connector.",
+        "source": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude",
+        "community": false,
+        "icon": "settings"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Un seul compte HubSpot",
+          "en": "One HubSpot account only"
+        },
+        "fr": "Un compte Claude ne se branche qu'à un compte HubSpot à la fois. Si vous travaillez dans le HubSpot de plusieurs clients, il faut jongler.",
+        "en": "A Claude account connects to one HubSpot account at a time. If you work in several clients' HubSpot, expect some juggling.",
+        "workaround": {
+          "fr": "Déconnectez puis reconnectez le bon compte avant de changer de client, et demandez-lui en début de conversation quel compte il voit.",
+          "en": "Disconnect and reconnect the right account before switching clients, and ask it which account it sees at the start of the chat."
+        },
+        "source": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude",
+        "community": false,
+        "icon": "session"
+      },
+      {
+        "title": {
+          "fr": "Ni suppression ni factures",
+          "en": "No deleting, no invoices"
+        },
+        "fr": "Il ne supprime aucune fiche, et factures, commandes ou abonnements restent en lecture seule.",
+        "en": "It deletes no records, and invoices, orders or subscriptions stay read-only.",
+        "workaround": {
+          "fr": "Faites le ménage et la facturation directement dans HubSpot.",
+          "en": "Do the clean-up and the billing directly in HubSpot."
+        },
+        "source": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+        "community": false,
+        "icon": "invoice"
+      },
+      {
+        "title": {
+          "fr": "Notes et tâches refusées",
+          "en": "Notes and tasks refused"
+        },
+        "fr": "Un utilisateur signale que les notes et les tâches échouaient sur une erreur d'autorisation, alors que contacts et transactions passaient.",
+        "en": "One user reports notes and tasks failing with an authorisation error, while contacts and deals went through.",
+        "workaround": {
+          "fr": "Vérifiez avec l'administrateur les droits accordés au connecteur, reconnectez-le, et en attendant ajoutez la note dans HubSpot.",
+          "en": "Check the connector's granted permissions with the admin, reconnect it, and meanwhile add the note in HubSpot."
+        },
+        "source": "https://community.hubspot.com/t/claude-connector-error/155274",
+        "community": true,
+        "icon": "blocked"
+      },
+      {
+        "title": {
+          "fr": "Données sensibles, conversations fermées",
+          "en": "Sensitive Data, inbox closed"
+        },
+        "fr": "Si les données sensibles sont activées sur le compte, il ne peut plus lire les conversations de la boîte de réception.",
+        "en": "If Sensitive Data is turned on for the account, it can no longer read inbox conversations.",
+        "workaround": {
+          "fr": "Pour résumer un échange avec un client, ouvrez la conversation dans HubSpot et collez l'essentiel dans votre demande.",
+          "en": "To sum up a client exchange, open the conversation in HubSpot and paste the gist into your request."
+        },
+        "source": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
+        "community": false,
+        "icon": "limit"
+      }
+    ],
+    "sources": [
+      {
+        "label": "HubSpot — serveur MCP",
+        "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server"
+      },
+      {
+        "label": "HubSpot — connecteur pour Claude",
+        "url": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude"
+      },
+      {
+        "label": "HubSpot — connecteur pour ChatGPT",
+        "url": "https://knowledge.hubspot.com/integrations/connect-your-hubspot-account-to-chatgpt"
+      },
+      {
+        "label": "Forum HubSpot",
+        "url": "https://community.hubspot.com/t/claude-connector-error/155274"
+      }
+    ]
+  }
 }

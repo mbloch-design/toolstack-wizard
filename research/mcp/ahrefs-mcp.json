@@ -169,5 +169,177 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/ahrefs"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "Si vous payez déjà Ahrefs et passez trop de temps à exporter des tableaux pour vos clients, branchez-le : votre assistant interroge mots-clés, liens et positions à votre place. Chaque question puise dans les unités de votre forfait, alors demandez court et précis.",
+      "en": "If you already pay for Ahrefs and spend too long exporting tables for clients, plug it in: your assistant queries keywords, links and rankings for you. Every question draws on your plan's units, so keep requests short and precise.",
+      "source": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp"
+    },
+    "intro": {
+      "fr": "Ahrefs, c'est une mine d'or… avec un compteur à l'entrée. Brancher votre assistant, c'est lui confier la pioche : il creuse les mots-clés d'un client, les liens d'un concurrent, les positions du mois, et vous rend une réponse lisible. Mais chaque coup de pioche se paie en unités, et une question trop large peut entamer sérieusement le mois. Voici comment creuser au bon endroit.",
+      "en": "Ahrefs is a gold mine… with a meter at the entrance. Plugging in your assistant hands it the pickaxe: it digs into a client's keywords, a competitor's links, this month's rankings, and gives you an answer you can read. But every swing is paid for in units, and one overly broad question can take a real bite out of the month. Here is how to dig in the right spot."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Bilan client",
+          "en": "Client report"
+        },
+        "ask": {
+          "fr": "Avec Ahrefs, sur quels mots-clés le site de la boulangerie Martin a-t-il gagné ou perdu des positions ce mois-ci ? Garde les dix plus importants.",
+          "en": "Using Ahrefs, which keywords did the Martin bakery's site gain or lose rankings on this month? Keep the ten that matter most."
+        },
+        "gain": {
+          "fr": "Le bilan du mois sans export.",
+          "en": "The monthly report, no export needed."
+        },
+        "source": "https://ahrefs.com/blog/mcp-use-cases/",
+        "icon": "chart"
+      },
+      {
+        "title": {
+          "fr": "Liens des concurrents",
+          "en": "Competitor links"
+        },
+        "ask": {
+          "fr": "Avec Ahrefs, quels sites font un lien vers les deux principaux concurrents de mon client, mais jamais vers lui ?",
+          "en": "Using Ahrefs, which sites link to my client's two main competitors but never to my client?"
+        },
+        "gain": {
+          "fr": "Une liste de sites à démarcher.",
+          "en": "A list of sites to pitch."
+        },
+        "source": "https://ahrefs.com/blog/mcp-use-cases/",
+        "icon": "search"
+      },
+      {
+        "title": {
+          "fr": "Idées d'articles",
+          "en": "Article ideas"
+        },
+        "ask": {
+          "fr": "Avec Ahrefs, trouve les recherches que font les gens avant d'acheter une table basse et propose cinq sujets d'articles pour le blog de mon client.",
+          "en": "Using Ahrefs, find what people search for before buying a coffee table and suggest five blog topics for my client."
+        },
+        "gain": {
+          "fr": "Des sujets qui partent des vraies recherches.",
+          "en": "Topics built on real searches."
+        },
+        "source": "https://ahrefs.com/blog/mcp-use-cases/",
+        "icon": "doc"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Commencez par « Avec Ahrefs »",
+          "en": "Start with “Using Ahrefs”"
+        },
+        "fr": "Sinon, l'assistant peut aller chercher sur le web au lieu d'interroger vos données. Ahrefs le recommande lui-même, surtout dans ChatGPT.",
+        "en": "Otherwise the assistant may search the web instead of your data. Ahrefs recommends it itself, especially in ChatGPT.",
+        "source": "https://ahrefs.com/blog/mcp-use-cases/",
+        "community": false,
+        "icon": "brief"
+      },
+      {
+        "title": {
+          "fr": "Un nombre, une période",
+          "en": "A number, a time range"
+        },
+        "fr": "« Les dix premiers mots-clés depuis le mois dernier » plutôt que « tous mes mots-clés » : la réponse est plus nette et la facture en unités plus légère.",
+        "en": "“The top ten keywords since last month” rather than “all my keywords”: the answer is sharper and the unit bill lighter.",
+        "source": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp",
+        "community": false,
+        "icon": "refine"
+      },
+      {
+        "title": {
+          "fr": "Un petit échantillon suffit souvent",
+          "en": "A small sample is often enough"
+        },
+        "fr": "Un utilisateur qui a épluché ses relevés constate qu'une liste courte de mots-clés menait à la même conclusion qu'une longue, pour bien moins d'unités. Élargissez seulement si ça change votre décision.",
+        "en": "One user who combed through his logs found that a short keyword list led to the same conclusion as a long one, for far fewer units. Widen only if it changes your decision.",
+        "source": "https://studiomeyer.io/en/blog/ahrefs-api-units-cost",
+        "community": true,
+        "icon": "credits"
+      },
+      {
+        "title": {
+          "fr": "Un départ, pas un verdict",
+          "en": "A starting point, not a verdict"
+        },
+        "fr": "Ahrefs prévient que l'assistant peut rendre les choses plus simples qu'elles ne sont. Vérifiez les chiffres clés dans Ahrefs avant de les mettre dans un rapport client.",
+        "en": "Ahrefs warns the assistant can make things sound simpler than they are. Check the key figures in Ahrefs before they go into a client report.",
+        "source": "https://ahrefs.com/blog/mcp-use-cases/",
+        "community": false,
+        "icon": "confirm"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Clé API n'est pas clé MCP",
+          "en": "API key isn't MCP key"
+        },
+        "fr": "Une erreur 401 vient souvent d'une clé d'API collée à la place de la clé MCP, d'une clé expirée ou d'un abonnement arrêté.",
+        "en": "A 401 error often comes from an API key pasted instead of the MCP key, an expired key or a lapsed subscription.",
+        "workaround": {
+          "fr": "Générez une clé MCP dans Ahrefs, ou passez par le connecteur officiel de votre assistant, qui gère la connexion pour vous.",
+          "en": "Generate an MCP key in Ahrefs, or use your assistant's official connector, which handles sign-in for you."
+        },
+        "source": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp",
+        "community": false,
+        "icon": "key"
+      },
+      {
+        "title": {
+          "fr": "Le compteur qui file",
+          "en": "The meter that runs away"
+        },
+        "fr": "Un utilisateur raconte que trois outils, dont les listes de liens et les idées de mots-clés, ont mangé l'essentiel de ses unités.",
+        "en": "One user reports that three tools, including link lists and keyword ideas, ate most of his units.",
+        "workaround": {
+          "fr": "Limitez le nombre de résultats, estimez avant un gros lot, et suivez votre consommation dans les réglages du compte Ahrefs.",
+          "en": "Cap the number of results, estimate before a big batch, and watch your usage in your Ahrefs account settings."
+        },
+        "source": "https://studiomeyer.io/en/blog/ahrefs-api-units-cost",
+        "community": true,
+        "icon": "credits"
+      },
+      {
+        "title": {
+          "fr": "Résultats coupés sans prévenir",
+          "en": "Results cut off silently"
+        },
+        "fr": "Votre forfait plafonne le nombre de lignes par demande : une question trop large est tronquée, pas refusée.",
+        "en": "Your plan caps the rows per request: an overly broad question gets truncated, not refused.",
+        "workaround": {
+          "fr": "Découpez par pays, période ou top N, et vérifiez les totaux avant de conclure.",
+          "en": "Split by country, time range or top N, and sanity-check totals before drawing conclusions."
+        },
+        "source": "https://aitoolsreview.co.uk/insights/ahrefs-claude-connector",
+        "community": true,
+        "icon": "limit"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Ahrefs — démarrer avec le MCP",
+        "url": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp"
+      },
+      {
+        "label": "Ahrefs — cas d'usage du MCP",
+        "url": "https://ahrefs.com/blog/mcp-use-cases/"
+      },
+      {
+        "label": "Retour d'usage, Matthias Meyer",
+        "url": "https://studiomeyer.io/en/blog/ahrefs-api-units-cost"
+      },
+      {
+        "label": "AI Tools Review — connecteur Ahrefs",
+        "url": "https://aitoolsreview.co.uk/insights/ahrefs-claude-connector"
+      }
+    ]
+  }
 }

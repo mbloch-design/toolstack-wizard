@@ -441,5 +441,215 @@
       "label": "Répertoire Claude (relevé le 17/11/2026)",
       "url": "https://claude.ai/directory/figma"
     }
-  ]
+  ],
+  "advice": {
+    "verdict": {
+      "fr": "C'est la version à choisir par défaut : rien à installer, elle marche depuis Claude comme depuis un éditeur de code, et c'est la seule qui peut dessiner dans vos fichiers. Gardez en tête que l'écriture est en bêta : ce qu'elle produit se relit avant de partir chez le client.",
+      "en": "This is the version to pick by default: nothing to install, it works from Claude as well as from a code editor, and it's the only one that can draw in your files. Bear in mind that writing is in beta: what it produces gets reviewed before it reaches a client.",
+      "source": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server"
+    },
+    "intro": {
+      "fr": "Le serveur en ligne de Figma tourne chez Figma, pas sur votre ordinateur : vous le branchez à votre assistant et il travaille sur vos fichiers, que l'application soit ouverte ou non. Il lit une maquette pour la décrire ou la traduire en code, et peut maintenant poser frames, composants et variables dans vos fichiers. Sur le papier, c'est un stagiaire qui connaît déjà votre bibliothèque. En pratique, il faut lui rappeler qu'elle existe, et passer derrière lui.",
+      "en": "Figma's online server runs on Figma's side, not on your computer: you plug it into your assistant and it works on your files, whether the app is open or not. It reads a mockup to describe it or turn it into code, and can now place frames, components and variables in your files. On paper, it's an intern who already knows your library. In practice, you have to remind it the library exists, and check its work."
+    },
+    "situations": [
+      {
+        "title": {
+          "fr": "Fiche de maquette",
+          "en": "Mockup notes"
+        },
+        "ask": {
+          "fr": "Voici le lien de cette frame : décris ses composants, ses couleurs et les variables qu'elle utilise, pour le développeur du client.",
+          "en": "Here's the link to this frame: describe its components, colours and the variables it uses, for the client's developer."
+        },
+        "gain": {
+          "fr": "Une fiche technique sans la rédiger.",
+          "en": "A spec sheet you didn't have to write."
+        },
+        "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
+        "icon": "doc"
+      },
+      {
+        "title": {
+          "fr": "Parcours client",
+          "en": "Customer journey"
+        },
+        "ask": {
+          "fr": "Crée dans FigJam un diagramme du parcours de commande : panier, livraison, paiement, confirmation.",
+          "en": "Create a FigJam diagram of the checkout journey: cart, delivery, payment, confirmation."
+        },
+        "gain": {
+          "fr": "Un schéma à montrer en atelier.",
+          "en": "A diagram ready for the workshop."
+        },
+        "source": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas",
+        "icon": "chart"
+      },
+      {
+        "title": {
+          "fr": "Nouvel écran",
+          "en": "New screen"
+        },
+        "ask": {
+          "fr": "Dans mon brouillon, monte un écran de connexion avec les composants et les variables de ma bibliothèque « Studio ».",
+          "en": "In my draft, build a sign-in screen with the components and variables from my “Studio” library."
+        },
+        "gain": {
+          "fr": "Une première version, faite de vos composants.",
+          "en": "A first version, built from your components."
+        },
+        "source": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas",
+        "icon": "design"
+      }
+    ],
+    "tips": [
+      {
+        "title": {
+          "fr": "Copiez le lien de la sélection",
+          "en": "Copy the link to selection"
+        },
+        "fr": "Clic droit sur la frame, « Copier le lien vers la sélection », puis collez-le dans votre demande. L'assistant n'ouvre pas le lien, il en tire juste l'adresse de la frame.",
+        "en": "Right-click the frame, “Copy link to selection”, then paste it into your request. The assistant doesn't open the link, it just reads the frame's address from it.",
+        "source": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/",
+        "community": false,
+        "icon": "link"
+      },
+      {
+        "title": {
+          "fr": "Nommez votre bibliothèque",
+          "en": "Name your library"
+        },
+        "fr": "Dites-lui à chaque fois d'utiliser votre bibliothèque et ses variables : il ne la repère pas tout seul. Sinon, il a tendance à coder les couleurs en dur.",
+        "en": "Tell it every time to use your library and its variables: it doesn't spot it on its own. Otherwise it tends to hard-code colours.",
+        "source": "https://bitovi.com/blog/figma-just-opened-the-canvas-to-agents.-heres-what-actually-happens",
+        "community": true,
+        "icon": "brand"
+      },
+      {
+        "title": {
+          "fr": "D'abord sur une copie",
+          "en": "On a copy first"
+        },
+        "fr": "Essayez sur un brouillon ou un double du fichier avant de toucher à la maquette validée par le client. Figma le conseille lui-même.",
+        "en": "Try it on a draft or a duplicate before touching the mockup your client signed off. Figma advises it too.",
+        "source": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas",
+        "community": false,
+        "icon": "draft"
+      },
+      {
+        "title": {
+          "fr": "Gros fichier : le plan d'abord",
+          "en": "Big file: outline first"
+        },
+        "fr": "Sur une grande maquette, demandez d'abord la structure, puis le détail d'une partie seulement. D'un bloc, il en reçoit trop.",
+        "en": "On a large mockup, ask for the structure first, then the detail of one part only. In one go, it gets too much at once.",
+        "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
+        "community": false,
+        "icon": "refine"
+      },
+      {
+        "title": {
+          "fr": "Un refus ? Demandez « whoami »",
+          "en": "Refused? Ask “whoami”"
+        },
+        "fr": "Il vous dit avec quel compte vous êtes connecté, sur quel forfait et avec quel siège. C'est souvent là que se cache l'explication.",
+        "en": "It tells you which account you're signed in with, on which plan and with which seat. That's often where the explanation hides.",
+        "source": "https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/",
+        "community": false,
+        "icon": "rights"
+      }
+    ],
+    "pitfalls": [
+      {
+        "title": {
+          "fr": "Bêta : à relire",
+          "en": "Beta: needs review"
+        },
+        "fr": "Figma prévient que ce qu'il dessine peut demander une relecture et du nettoyage à la main.",
+        "en": "Figma warns that what it draws may need manual review and cleanup.",
+        "workaround": {
+          "fr": "Ouvrez le fichier dans Figma après chaque étape et corrigez par petites demandes, dans la même conversation.",
+          "en": "Open the file in Figma after each step and fix things with small requests, in the same chat."
+        },
+        "source": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas",
+        "community": false,
+        "icon": "slow"
+      },
+      {
+        "title": {
+          "fr": "Siège léger, lectures comptées",
+          "en": "Light seat, counted reads"
+        },
+        "fr": "Avec un siège View ou Collab, ou sur le forfait gratuit, les lectures de fichiers sont très vite plafonnées.",
+        "en": "With a View or Collab seat, or on the free plan, file reads hit their cap very quickly.",
+        "workaround": {
+          "fr": "Ciblez une frame plutôt que tout le fichier ; si vous l'utilisez chaque jour, un siège Full ou Dev change la donne.",
+          "en": "Target one frame rather than the whole file; if you use it daily, a Full or Dev seat changes everything."
+        },
+        "source": "https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/",
+        "community": false,
+        "icon": "limit"
+      },
+      {
+        "title": {
+          "fr": "L'outil d'écriture disparaît",
+          "en": "The write tool vanishes"
+        },
+        "fr": "Un utilisateur de Claude raconte que l'outil d'écriture a disparu du jour au lendemain, alors que la lecture marchait toujours.",
+        "en": "A Claude user reports the write tool vanished overnight, while reading still worked.",
+        "workaround": {
+          "fr": "Figma conseille de réinstaller le serveur en suivant la procédure à jour, les nouveaux outils pouvant l'exiger.",
+          "en": "Figma advises reinstalling the server with the current setup steps, since new tools may require it."
+        },
+        "source": "https://forum.figma.com/report-a-problem-6/use-figma-write-to-canvas-tool-missing-read-tools-work-fine-full-seat-56176",
+        "community": true,
+        "icon": "blocked"
+      },
+      {
+        "title": {
+          "fr": "Ni images ni polices locales",
+          "en": "No images, no local fonts"
+        },
+        "fr": "Il n'ajoute pas d'image tout seul et n'utilise que les polices envoyées sur votre compte Figma, pas celles installées sur votre ordinateur.",
+        "en": "It doesn't add images on its own, and only uses fonts uploaded to your Figma account, not those installed on your computer.",
+        "workaround": {
+          "fr": "Envoyez vos polices sur Figma et placez les images vous-même, ou demandez-lui de les téléverser d'abord.",
+          "en": "Upload your fonts to Figma and place images yourself, or ask it to upload them first."
+        },
+        "source": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas",
+        "community": false,
+        "icon": "brand"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Figma — guide du serveur MCP",
+        "url": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server"
+      },
+      {
+        "label": "Figma — installer le serveur en ligne",
+        "url": "https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/"
+      },
+      {
+        "label": "Figma — écrire dans les fichiers",
+        "url": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas"
+      },
+      {
+        "label": "Figma — outils et demandes",
+        "url": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/"
+      },
+      {
+        "label": "Figma — accès et limites",
+        "url": "https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/"
+      },
+      {
+        "label": "Forum Figma — outil d'écriture absent",
+        "url": "https://forum.figma.com/report-a-problem-6/use-figma-write-to-canvas-tool-missing-read-tools-work-fine-full-seat-56176"
+      },
+      {
+        "label": "Retour d'usage, Bitovi",
+        "url": "https://bitovi.com/blog/figma-just-opened-the-canvas-to-agents.-heres-what-actually-happens"
+      }
+    ]
+  }
 }
