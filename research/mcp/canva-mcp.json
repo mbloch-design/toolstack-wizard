@@ -456,8 +456,8 @@
     "situations": [
       {
         "title": {
-          "fr": "Un post, puis sa version story",
-          "en": "One post, then its story version"
+          "fr": "Post et story",
+          "en": "Post and story"
         },
         "ask": {
           "fr": "Crée un post Instagram pour annoncer mon atelier de samedi, puis fais-en une version story.",
@@ -472,8 +472,8 @@
       },
       {
         "title": {
-          "fr": "Une présentation client tirée de vos notes",
-          "en": "A client deck built from your notes"
+          "fr": "Présentation client",
+          "en": "Client deck"
         },
         "ask": {
           "fr": "Transforme ces notes en courte présentation pour mon client, puis exporte-la en PDF.",
@@ -488,8 +488,8 @@
       },
       {
         "title": {
-          "fr": "Faire le point sur les retours d'un client",
-          "en": "Catching up on a client's feedback"
+          "fr": "Retours client",
+          "en": "Client feedback"
         },
         "ask": {
           "fr": "Montre-moi les commentaires non résolus sur la présentation « Lancement printemps ».",

@@ -35,7 +35,7 @@ type Scene = { box: [number, number, number, number]; touch: Touch; draw: (t: To
 
 /** The nine pilot situations (research/mcp/{notion,canva,stripe}-mcp.json, advice.situations, in order). */
 export const SCENES = {
-  /** Notion · Préparer un rendez-vous client: the assistant dives head first into the Notion attic; the one page that
+  /** Notion · Rendez-vous client: the assistant dives head first into the Notion attic; the one page that
    *  matters flies out. */
   "notion-meeting": { box: [34, 17, 208, 140], touch: "butter", draw: (t) => (
     <>
@@ -56,7 +56,7 @@ export const SCENES = {
       <path d="M60 140H162" {...fine} />
     </>
   ) },
-  /** Notion · Faire le point de la semaine: the week walks in, dragging its blocked task like a ball and chain. */
+  /** Notion · Point de la semaine: the week walks in, dragging its blocked task like a ball and chain. */
   "notion-week": { box: [16, 33, 170, 137], touch: "coral", draw: (t) => (
     <>
       <path d="M48 92C44 100 40 108 36 114" {...fine} />
@@ -74,7 +74,7 @@ export const SCENES = {
       <path d="M150 116q10 -2 20 2M156 124q8 -1 14 1" {...fine} />
     </>
   ) },
-  /** Notion · Suivre les factures impayées: the invoice runs after the client, who is already leaving the frame. */
+  /** Notion · Factures impayées: the invoice runs after the client, who is already leaving the frame. */
   "notion-invoice": { box: [22, 26, 251, 124], touch: "butter", draw: (t) => (
     <>
       <path d="M26 62H46M22 76H42M28 90H48" {...fine} />
@@ -95,7 +95,7 @@ export const SCENES = {
       <path d="M182 52H194M178 64H192M184 76H196" {...fine} />
     </>
   ) },
-  /** Canva · Un post, puis sa version story: the square post and its tall twin, same face, same sun, one embarrassed. */
+  /** Canva · Post et story: the square post and its tall twin, same face, same sun, one embarrassed. */
   "canva-post": { box: [40, 6, 198, 138], touch: "butter", draw: (t) => (
     <>
       <path d="M40 64L100 62L101 122L41 123Z" {...hide} />
@@ -116,7 +116,7 @@ export const SCENES = {
       <path d="M190 32h8M190 112h8M130 32h-6M130 112h-6" {...fine} />
     </>
   ) },
-  /** Canva · Une présentation client tirée de vos notes: the crumpled notes go in the mincer, a neat slide comes out. */
+  /** Canva · Présentation client: the crumpled notes go in the mincer, a neat slide comes out. */
   "canva-deck": { box: [22, 29, 191, 128], touch: "mint", draw: (t) => (
     <>
       <path d="M92 66L80 34H142L130 66" {...hide} />
@@ -134,7 +134,7 @@ export const SCENES = {
       <path d="M178 66q5 -4 2 -10M184 72q8 -4 6 -14" {...fine} />
     </>
   ) },
-  /** Canva · Faire le point sur les retours d'un client: the slide buried under comments, a hand waving from the pile. */
+  /** Canva · Retours client: the slide buried under comments, a hand waving from the pile. */
   "canva-feedback": { box: [36, 30, 220, 136], touch: "butter", draw: (t) => (
     <>
       <path d="M36 98H204V136H36Z" {...hide} />
@@ -153,7 +153,7 @@ export const SCENES = {
       <path d="M208 52q5 2 6 8M210 44q8 3 10 12" {...fine} />
     </>
   ) },
-  /** Stripe · Préparer une facture: the draft, knees knocking, under the magnifying glass of the review. */
+  /** Stripe · Nouvelle facture: the draft, knees knocking, under the magnifying glass of the review. */
   "stripe-invoice": { box: [57, 22, 204, 134], touch: "sky", draw: (t) => (
     <>
       <path d="M70 56H112V122H70Z" {...hide} />
@@ -171,7 +171,7 @@ export const SCENES = {
       <path d="M128 50q-4 -6 -2 -12M150 30q2 -6 8 -8" {...fine} />
     </>
   ) },
-  /** Stripe · Créer un lien de paiement: fishing for a payment, the link as the hook, a coin that wonders. */
+  /** Stripe · Lien de paiement: fishing for a payment, the link as the hook, a coin that wonders. */
   "stripe-link": { box: [8, 30, 207, 146], touch: "butter", draw: (t) => (
     <>
       <path d="M58 82q10 -6 20 0t20 0t20 0t20 0t20 0t20 0t20 0" {...fine} />
@@ -187,7 +187,7 @@ export const SCENES = {
       <path d="M8 146c4 -12 16 -12 18 -2" {...line} />
     </>
   ) },
-  /** Stripe · Savoir qui ne vous a pas encore payé: the open invoices wait on a bench, long enough to grow a beard. */
+  /** Stripe · Impayés: the open invoices wait on a bench, long enough to grow a beard. */
   "stripe-unpaid": { box: [28, 10, 212, 136], touch: "coral", draw: (t) => (
     <>
       <circle cx="120" cy="22" r="12" {...touch(t)} />

@@ -633,14 +633,15 @@ const ADVICE_ICON = {
 
 const SITUATION_ICON = { meeting: <Handshake />, week: <Checklist />, invoice: <Receipt />, post: <Megaphone />, deck: <FileText />, feedback: <MessageSquare />, link: <Link2 />, unpaid: <Wallet /> } as const;
 
-function SituationCard({ situation, lang }: { situation: McpAdvice["situations"][number]; lang: Lang }) {
+/** `art` (proposal of 19/11, not wired into the sheet yet): a drawing in place of the round, in the same row. */
+export function SituationCard({ situation, lang, art }: { situation: McpAdvice["situations"][number]; lang: Lang; art?: ReactNode }) {
   const t = (fr: string, en: string) => typo(lang === "en" ? en : fr);
   const [copied, setCopied] = useState(false);
   const words = lang === "en" ? situation.ask.en : situation.ask.fr;
   const copy = () => { void navigator.clipboard?.writeText(words).then(() => { setCopied(true); window.setTimeout(() => setCopied(false), 2000); }); };
   return (
     <li className={styles.situation} data-situation="">
-      <span className={styles.situationIcon} data-palette="sky" aria-hidden="true">{SITUATION_ICON[situation.icon]}</span>
+      {art ?? <span className={styles.situationIcon} data-palette="sky" aria-hidden="true">{SITUATION_ICON[situation.icon]}</span>}
       <p className={styles.situationEyebrow}>{say(lang, situation.title)}</p>
       <h3 className={styles.situationHeadline}>{say(lang, situation.gain)}</h3>
       <p className={styles.situationMessage}>{words}</p>

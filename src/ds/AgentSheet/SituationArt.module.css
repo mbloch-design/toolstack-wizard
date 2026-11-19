@@ -12,12 +12,6 @@
   gap: var(--tt-space-6);
 }
 
-.head {
-  display: grid;
-  gap: var(--tt-space-2);
-  max-width: 720px;
-}
-
 .title {
   composes: titleM from "../atoms.module.css";
 }
@@ -29,57 +23,6 @@
 .tool {
   composes: label from "../atoms.module.css";
   composes: strong from "../atoms.module.css";
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: var(--tt-gap-group);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* The situation card as the sheet draws it (AgentSheet.module.css, .situation), the art in the round's row. */
-.card {
-  display: grid;
-  grid-row: span 5;
-  grid-template-rows: subgrid;
-  row-gap: 0;
-  padding: var(--tt-space-8);
-  border-radius: var(--tt-r-tile);
-  background: var(--tt-tile);
-  min-width: 0;
-}
-
-.eyebrow {
-  composes: label from "../atoms.module.css";
-  composes: strong from "../atoms.module.css";
-  padding-bottom: var(--tt-space-2);
-}
-
-.headline {
-  composes: titleM from "../atoms.module.css";
-  padding-bottom: var(--tt-space-8);
-}
-
-.card .headline {
-  font-weight: var(--tt-w-em);
-}
-
-.message {
-  composes: text from "../atoms.module.css";
-  align-self: end;
-  padding: var(--tt-space-4);
-  border-radius: var(--tt-r-card);
-  border-end-end-radius: var(--tt-space-1);
-  background: var(--tt-bg);
-}
-
-.action {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: var(--tt-space-4);
 }
 
 /* The drawing (second pass, 19/11, « ça prend légèrement trop de place, le texte flotte »): a fixed band of 96

@@ -1878,8 +1878,8 @@
         "situations": [
           {
             "title": {
-              "fr": "Un post, puis sa version story",
-              "en": "One post, then its story version"
+              "fr": "Post et story",
+              "en": "Post and story"
             },
             "ask": {
               "fr": "Crée un post Instagram pour annoncer mon atelier de samedi, puis fais-en une version story.",
@@ -1894,8 +1894,8 @@
           },
           {
             "title": {
-              "fr": "Une présentation client tirée de vos notes",
-              "en": "A client deck built from your notes"
+              "fr": "Présentation client",
+              "en": "Client deck"
             },
             "ask": {
               "fr": "Transforme ces notes en courte présentation pour mon client, puis exporte-la en PDF.",
@@ -1910,8 +1910,8 @@
           },
           {
             "title": {
-              "fr": "Faire le point sur les retours d'un client",
-              "en": "Catching up on a client's feedback"
+              "fr": "Retours client",
+              "en": "Client feedback"
             },
             "ask": {
               "fr": "Montre-moi les commentaires non résolus sur la présentation « Lancement printemps ».",
@@ -5421,8 +5421,8 @@
         "situations": [
           {
             "title": {
-              "fr": "Préparer un rendez-vous client",
-              "en": "Prepare for a client meeting"
+              "fr": "Rendez-vous client",
+              "en": "Client meeting"
             },
             "ask": {
               "fr": "Avant mon appel avec Dupont, résume ses dernières notes de réunion et les décisions en attente.",
@@ -5437,8 +5437,8 @@
           },
           {
             "title": {
-              "fr": "Faire le point de la semaine",
-              "en": "Run your weekly review"
+              "fr": "Point de la semaine",
+              "en": "Weekly review"
             },
             "ask": {
               "fr": "Dans ma base Projets, liste ce qui est en retard ou bloqué et ce que je dois livrer la semaine prochaine.",
@@ -5453,8 +5453,8 @@
           },
           {
             "title": {
-              "fr": "Suivre les factures impayées",
-              "en": "Follow up on unpaid invoices"
+              "fr": "Factures impayées",
+              "en": "Unpaid invoices"
             },
             "ask": {
               "fr": "Dans ma base Factures, trouve celles encore « Envoyée » depuis plus d'un mois et passe-les en « À relancer ».",
@@ -6657,8 +6657,8 @@
         "situations": [
           {
             "title": {
-              "fr": "Préparer une facture sans ouvrir le Dashboard",
-              "en": "Draft an invoice without opening the Dashboard"
+              "fr": "Nouvelle facture",
+              "en": "New invoice"
             },
             "ask": {
               "fr": "Prépare un brouillon de facture pour Studio Martin pour la refonte du site, je le relis avant de le finaliser.",
@@ -6673,8 +6673,8 @@
           },
           {
             "title": {
-              "fr": "Créer un lien de paiement pour une offre",
-              "en": "Create a payment link for an offer"
+              "fr": "Lien de paiement",
+              "en": "Payment link"
             },
             "ask": {
               "fr": "Crée un lien de paiement pour mon forfait « Audit SEO » et donne-moi l'adresse à envoyer au client.",
@@ -6689,8 +6689,8 @@
           },
           {
             "title": {
-              "fr": "Savoir qui ne vous a pas encore payé",
-              "en": "See who hasn't paid you yet"
+              "fr": "Impayés",
+              "en": "Unpaid"
             },
             "ask": {
               "fr": "Quelles factures sont encore ouvertes, pour quels clients, et lesquelles ont dépassé leur échéance ?",

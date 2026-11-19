@@ -133,9 +133,10 @@
   margin-bottom: var(--tt-space-4);
 }
 
-/* The eyebrow: what the moment is, at the label's size and its strong weight. */
+/* The eyebrow: what the moment is, a short name like a category, on one line (19/11, « adapte mieux le titre et le
+   sous-titre »). One step below the label: the note (14), its strong weight, in ink, 8 above the headline. */
 .situationEyebrow {
-  composes: label from "../atoms.module.css";
+  composes: note from "../atoms.module.css";
   composes: strong from "../atoms.module.css";
   padding-bottom: var(--tt-space-2);
 }

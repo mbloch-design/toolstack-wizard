@@ -685,8 +685,8 @@
     "situations": [
       {
         "title": {
-          "fr": "Préparer un rendez-vous client",
-          "en": "Prepare for a client meeting"
+          "fr": "Rendez-vous client",
+          "en": "Client meeting"
         },
         "ask": {
           "fr": "Avant mon appel avec Dupont, résume ses dernières notes de réunion et les décisions en attente.",
@@ -701,8 +701,8 @@
       },
       {
         "title": {
-          "fr": "Faire le point de la semaine",
-          "en": "Run your weekly review"
+          "fr": "Point de la semaine",
+          "en": "Weekly review"
         },
         "ask": {
           "fr": "Dans ma base Projets, liste ce qui est en retard ou bloqué et ce que je dois livrer la semaine prochaine.",
@@ -717,8 +717,8 @@
       },
       {
         "title": {
-          "fr": "Suivre les factures impayées",
-          "en": "Follow up on unpaid invoices"
+          "fr": "Factures impayées",
+          "en": "Unpaid invoices"
         },
         "ask": {
           "fr": "Dans ma base Factures, trouve celles encore « Envoyée » depuis plus d'un mois et passe-les en « À relancer ».",

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect } from "storybook/test";
 import catalog from "@/data/agents/catalog.json";
-import { Copy } from "@/lib/icons";
-import { IconButton } from "../Button/Button";
 import { say, type McpAdvice, type McpSheet } from "@/lib/agents";
+import { SituationCard } from "./AgentSheet";
+import sheet from "./AgentSheet.module.css";
 import SituationArt, { type SceneId } from "./SituationArt";
 import styles from "./SituationArt.module.css";
 
@@ -30,7 +30,7 @@ const TOOLS = [
   { name: "Stripe", advice: advice("stripe-mcp"), scenes: ["stripe-invoice", "stripe-link", "stripe-unpaid"] },
 ] as const satisfies readonly { name: string; advice: McpAdvice; scenes: readonly SceneId[] }[];
 
-/** The gag of each scene, said once for the reviewer (the card itself never says it). */
+/** The gag of each scene, for the reviewer and the illustrator's brief (the card itself never says it). */
 const GAGS: Record<SceneId, string> = {
   "notion-meeting": "L'assistant plonge tête la première dans le grenier Notion ; la seule page utile s'envole.",
   "notion-week": "La semaine arrive en traînant sa tâche bloquée comme un boulet.",
@@ -43,27 +43,16 @@ const GAGS: Record<SceneId, string> = {
   "stripe-unpaid": "Les factures ouvertes attendent sur un banc, assez longtemps pour qu'une barbe pousse.",
 };
 
-function Card({ situation, scene, pencil }: { situation: McpAdvice["situations"][number]; scene: SceneId; pencil: boolean }) {
-  return (
-    <li className={styles.card} title={GAGS[scene]}>
-      <SituationArt scene={scene} pencil={pencil} />
-      <p className={styles.eyebrow}>{say("fr", situation.title)}</p>
-      <h3 className={styles.headline}>{say("fr", situation.gain)}</h3>
-      <p className={styles.message}>{situation.ask.fr}</p>
-      <div className={styles.action}><IconButton tone="grey" label="Copier la demande" icon={<Copy />} /></div>
-    </li>
-  );
-}
-
 function Board({ pencil }: { pencil: boolean }) {
   return (
     <>
       {TOOLS.map((tool) => (
         <section key={tool.name} className={styles.direction} aria-label={tool.name}>
           <p className={styles.tool}>{tool.name}</p>
-          <ul className={styles.cards}>
+          {/* The sheet's own list and card (SituationCard), the drawing in place of the round. */}
+          <ul className={sheet.cards}>
             {tool.advice.situations.map((situation, i) => (
-              <Card key={situation.ask.fr} situation={situation} scene={tool.scenes[i]} pencil={pencil} />
+              <SituationCard key={situation.ask.fr} situation={situation} lang="fr" art={<SituationArt scene={tool.scenes[i]} pencil={pencil} />} />
             ))}
           </ul>
         </section>
@@ -94,6 +83,10 @@ function Recommendation() {
         la place dans la carte sont posés. Limites : un budget et quelques semaines ; une cession de droits à prévoir pour le
         web ; au-delà de la bibliothèque, une scène vraiment nouvelle repasse par lui.
       </p>
+      <p className={styles.text}>Les gags, pour le brief :</p>
+      <ul className={styles.text}>
+        {TOOLS.flatMap((tool) => tool.scenes.map((scene) => <li key={scene}>{tool.name} · {GAGS[scene]}</li>))}
+      </ul>
       <p className={styles.text}>
         Emplacement : en tête de carte, à la place de la pastille, sur le gris de la carte, sans plateau. Une bande fixe de
         96 px dans toutes les cartes, le dessin calé sur le bord gauche du texte et posé sur le bas de la bande, 24 au-dessus

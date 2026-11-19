@@ -362,8 +362,8 @@
     "situations": [
       {
         "title": {
-          "fr": "Préparer une facture sans ouvrir le Dashboard",
-          "en": "Draft an invoice without opening the Dashboard"
+          "fr": "Nouvelle facture",
+          "en": "New invoice"
         },
         "ask": {
           "fr": "Prépare un brouillon de facture pour Studio Martin pour la refonte du site, je le relis avant de le finaliser.",
@@ -378,8 +378,8 @@
       },
       {
         "title": {
-          "fr": "Créer un lien de paiement pour une offre",
-          "en": "Create a payment link for an offer"
+          "fr": "Lien de paiement",
+          "en": "Payment link"
         },
         "ask": {
           "fr": "Crée un lien de paiement pour mon forfait « Audit SEO » et donne-moi l'adresse à envoyer au client.",
@@ -394,8 +394,8 @@
       },
       {
         "title": {
-          "fr": "Savoir qui ne vous a pas encore payé",
-          "en": "See who hasn't paid you yet"
+          "fr": "Impayés",
+          "en": "Unpaid"
         },
         "ask": {
           "fr": "Quelles factures sont encore ouvertes, pour quels clients, et lesquelles ont dépassé leur échéance ?",
