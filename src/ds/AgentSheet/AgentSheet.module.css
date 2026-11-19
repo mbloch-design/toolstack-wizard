@@ -92,60 +92,73 @@
   composes: eyebrow from "../atoms.module.css";
 }
 
-/* A situation card (19/11): the situation as its title (21), the message to type, one line of result, the button. */
-.situationTitle {
-  composes: titleM from "../atoms.module.css";
+/* The situations (19/11): columns on the white sheet, no box (« les box sur fond blanc »), held on shared rows
+   (« tout flotte »): title, message, result and button sit at the same height across the columns. Inside a column,
+   24 under the title, 8 between the message and its result, 24 above the button (padding: the type atoms reset
+   margins). */
+.cards:has(> [data-situation]) {
+  gap: var(--tt-gap-head) var(--tt-space-12);
 }
 
-/* The result supports the message: a note (14), close under it. */
-.situationResult {
-  composes: note from "../atoms.module.css";
-}
-
-/* Rhythm (19/11, « manque de rythme »): the title stands apart (24), the message and its result hold together (8),
-   the button sits at the foot, at least 24 below. */
 .askCard[data-situation] {
-  gap: var(--tt-space-6);
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  row-gap: 0;
   padding: 0;
   background: none;
   box-shadow: none;
 }
 
-/* No box on the white sheet (19/11, « les box sur fond blanc »): the situations are columns laid on the page, held
-   apart by space alone. */
-.cards:has(> [data-situation]) {
-  gap: var(--tt-gap-head) var(--tt-space-12);
-}
-
 .askCard[data-situation] [data-prompt] {
-  gap: var(--tt-space-2);
+  display: contents;
 }
 
-.askCard[data-situation] [data-prompt] [data-foot] {
-  padding-top: var(--tt-space-4);
+.situationTitle {
+  composes: titleM from "../atoms.module.css";
+  padding-bottom: var(--tt-space-6);
 }
 
-/* « D'un free à l'autre » (19/11): a text on the reading column, the introduction at 17, 48 between its parts,
-   24 between two items, the item's title over its sentence. */
+/* The result supports the message: a note (14), close under it. */
+.situationResult {
+  composes: note from "../atoms.module.css";
+  padding-top: var(--tt-space-2);
+}
+
+.askCard[data-situation] [data-foot] {
+  margin-top: 0;
+  padding-top: var(--tt-space-6);
+}
+
+/* « D'un free à l'autre » (19/11, « tout flotte »): the chapter holds both edges of the sheet, as Apple lays out a
+   feature list — the introduction on the left, kept in view; the points on the right, on the reading width. */
 .advice {
   display: grid;
-  gap: var(--tt-gap-head);
-  max-width: 720px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: var(--tt-gap-head) var(--tt-space-12);
+  align-items: start;
 }
 
 .adviceIntro {
   composes: text from "../atoms.module.css";
+  position: sticky;
+  top: var(--tt-space-6);
   font-size: var(--tt-lead-size);
+}
+
+.advicePoints {
+  display: grid;
+  gap: var(--tt-gap-head);
 }
 
 .adviceGroup {
   display: grid;
-  gap: var(--tt-gap-group);
+  gap: var(--tt-space-2);
 }
 
+/* A list in Apple's manner: a hairline between two points, 24 on each side of it. */
 .adviceList {
   display: grid;
-  gap: var(--tt-gap-group);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -154,11 +167,26 @@
 .adviceItem {
   display: grid;
   gap: var(--tt-space-1);
+  padding-block: var(--tt-gap-group);
+}
+
+.adviceItem + .adviceItem {
+  border-top: var(--tt-hairline-w) solid var(--tt-line);
 }
 
 .adviceTitle {
   composes: label from "../atoms.module.css";
   composes: strong from "../atoms.module.css";
+}
+
+@container (max-width: 760px) {
+  .advice {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .adviceIntro {
+    position: static;
+  }
 }
 
 /* The consequence's code, as in « Garder la main »: its icon and its tint, read without reading. */

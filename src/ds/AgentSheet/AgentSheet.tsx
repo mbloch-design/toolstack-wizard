@@ -116,7 +116,7 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
 
         {/* From one freelancer to another (19/11/2026): what works and what gets stuck, before the how-to. */}
         {advice && (
-          <Chapter chapter="advice" title={t("D'un free à l'autre", "From one freelancer to another")}>
+          <Chapter chapter="advice" width="wide" title={t("D'un free à l'autre", "From one freelancer to another")}>
             <AdviceText advice={advice} lang={lang} />
           </Chapter>
         )}
@@ -575,6 +575,7 @@ function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
   return (
     <div className={styles.advice}>
       <p className={styles.adviceIntro}>{say(lang, advice.intro)}</p>
+      <div className={styles.advicePoints}>
       <section className={styles.adviceGroup} data-column="tips" aria-labelledby={`${id}-tips`}>
         <h3 id={`${id}-tips`} className={styles.columnHead}>{t("Ce qui marche", "What works")}</h3>
         <ul className={styles.adviceList}>
@@ -599,6 +600,7 @@ function AdviceText({ advice, lang }: { advice: McpAdvice; lang: Lang }) {
           ))}
         </ul>
       </section>
+      </div>
     </div>
   );
 }
