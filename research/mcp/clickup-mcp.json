@@ -7,11 +7,11 @@
   "category": "project-management",
   "summary": {
     "fr": "Le serveur officiel de ClickUp permet à votre assistant de gérer tâches, documents, commentaires, temps passé et messages, en votre nom et avec vos droits. Il peut mettre une tâche à la corbeille et envoyer des messages de chat ; les appels sont plafonnés selon le forfait.",
-    "en": "ClickUp's official server lets your assistant manage tasks, docs, comments, time and messages, as you and with your rights. It can send a task to Trash and post chat messages; calls are capped by plan."
+    "en": "ClickUp's official server lets your assistant manage tasks, docs, comments, time and messages, in your name and with your permissions. It can send a task to Trash and post chat messages; calls are capped by plan."
   },
   "card": {
     "fr": "Suivre vos tâches, documents et temps passé.",
-    "en": "Follow your tasks, documents and time spent."
+    "en": "Track your tasks, docs and time spent."
   },
   "meta_description": {
     "fr": "Brancher ClickUp à Claude ou ChatGPT : tâches, documents, temps passé et messages, avec vos droits. Corbeille, envoi de messages, plafonds par forfait.",
@@ -24,7 +24,7 @@
     },
     {
       "fr": "Crée une tâche « Envoyer le devis » pour vendredi dans ma liste Clients.",
-      "en": "Create a task \"Send the quote\" for Friday in my Clients list."
+      "en": "Create a task “Send the quote” for Friday in my Clients list."
     },
     {
       "fr": "Combien de temps ai-je passé sur ce client ce mois-ci ?",
@@ -37,7 +37,7 @@
   },
   "not_for": {
     "fr": "Votre espace est partagé et vous ne voulez aucun message en votre nom : l'assistant peut écrire dans le chat ClickUp.",
-    "en": "Your workspace is shared and you want no message sent in your name: the assistant can write in ClickUp chat."
+    "en": "Your workspace is shared and you don't want any message sent in your name: the assistant can write in ClickUp chat."
   },
   "control": [
     {
@@ -46,8 +46,8 @@
         "en": "You sign in through OAuth"
       },
       "icon": "account",
-      "fr": "à la connexion ; ClickUp n'accepte pas de clé API ni de jeton copié à la main.",
-      "en": "when connecting; ClickUp does not accept an API key or a token pasted by hand."
+      "fr": "La connexion passe par OAuth ; ClickUp n'accepte pas de clé API ni de jeton copié à la main.",
+      "en": "Sign-in goes through OAuth; ClickUp does not accept an API key or a token pasted by hand."
     }
   ],
   "plan_words": {
@@ -56,8 +56,8 @@
       "en": "Works on every ClickUp plan."
     },
     "advanced": {
-      "fr": "Le nombre de demandes par jour dépend du forfait : 100 sur Free Forever, 300 sur Unlimited, 1 000 sur Business.",
-      "en": "The number of requests per day depends on the plan: 100 on Free Forever, 300 on Unlimited, 1,000 on Business."
+      "fr": "Le nombre d'appels par jour dépend du forfait : 100 sur Free Forever, 300 sur Unlimited, 1 000 sur Business.",
+      "en": "The number of calls per day depends on the plan: 100 on Free Forever, 300 on Unlimited, 1,000 on Business."
     }
   },
   "first_requests": {
@@ -71,7 +71,7 @@
         "en": "Who are the members of my workspace?"
       },
       {
-        "fr": "Combien de temps ai-je suivi aujourd'hui ?",
+        "fr": "Combien de temps ai-je saisi aujourd'hui ?",
         "en": "How much time did I track today?"
       }
     ],
@@ -88,8 +88,8 @@
   },
   "troubleshoot": [
     {
-      "fr": "Une fois la limite du jour atteinte, il répond « RATE_LIMIT_EXCEEDED » ; elle ne se réinitialise pas, il faut attendre.",
-      "en": "Once the daily limit is reached, it answers “RATE_LIMIT_EXCEEDED”; it cannot be reset, you have to wait."
+      "fr": "Une fois la limite du jour atteinte, le serveur répond « RATE_LIMIT_EXCEEDED » ; elle ne se réinitialise pas, il faut attendre.",
+      "en": "Once the daily limit is reached, the server answers “RATE_LIMIT_EXCEEDED”; the limit cannot be reset, so you have to wait."
     }
   ],
   "verified_on": "2026-11-18",
@@ -605,12 +605,12 @@
   "advice": {
     "verdict": {
       "fr": "Si vos projets et vos heures vivent dans ClickUp, branchez-le : votre assistant repère les retards, compte votre temps et crée des tâches à votre place. Gardez l'écriture sous approbation, car il prévient vos collègues et peut écrire dans le chat en votre nom.",
-      "en": "If your projects and hours live in ClickUp, plug it in: your assistant spots what's late, adds up your time and creates tasks for you. Keep writing behind approval, since it notifies your teammates and can post in chat as you.",
+      "en": "If your projects and hours live in ClickUp, plug it in: your assistant spots what's late, adds up your time and creates tasks for you. Keep write actions behind approval, since it notifies your teammates and can post in chat as you.",
       "source": "https://developer.clickup.com/docs/mcp-tools"
     },
     "intro": {
       "fr": "ClickUp, c'est la grande armoire où tout est rangé… et où l'on ne retrouve rien le vendredi soir. Brancher votre assistant, c'est envoyer quelqu'un faire le tour des listes à votre place : retards, heures passées, tâches à créer. Il agit avec votre compte, donc vos collègues voient passer ses notifications comme si elles venaient de vous. Et le nombre d'appels par jour est compté : mieux vaut lui dire où chercher que lui demander « qu'est-ce qui m'attend ? ».",
-      "en": "ClickUp is the big cupboard where everything is filed… and nothing can be found on a Friday evening. Plugging in your assistant sends someone round the lists for you: what's late, hours spent, tasks to create. It acts as your account, so your teammates see its notifications as if they came from you. And daily calls are counted: better to tell it where to look than to ask “what needs my attention?”."
+      "en": "ClickUp is the big cupboard where everything is filed… and nothing can be found on a Friday evening. Plugging in your assistant sends someone round the lists for you: what's late, hours spent, tasks to create. It acts through your account, so your teammates see its notifications as if they came from you. And daily calls are limited: better to tell it where to look than to ask “what needs my attention?”."
     },
     "situations": [
       {
@@ -636,7 +636,7 @@
           "en": "Time spent"
         },
         "ask": {
-          "fr": "Combien de temps ai-je suivi sur les tâches du client Martin ce mois-ci, tâche par tâche ?",
+          "fr": "Combien de temps ai-je saisi sur les tâches du client Martin ce mois-ci, tâche par tâche ?",
           "en": "How much time did I track on client Martin's tasks this month, task by task?"
         },
         "gain": {
@@ -691,7 +691,7 @@
       {
         "title": {
           "fr": "L'écriture sous votre approbation",
-          "en": "Writing behind your approval"
+          "en": "Write actions need your approval"
         },
         "fr": "Dans les réglages du connecteur, laissez la lecture libre et gardez la création, la modification et l'envoi de messages sur « Approbation requise ».",
         "en": "In the connector's settings, let reading run freely and keep creating, editing and sending messages on “Needs approval”.",
@@ -732,8 +732,8 @@
           "fr": "Le plafond du jour",
           "en": "The daily cap"
         },
-        "fr": "Une fois la limite atteinte, il répond par une erreur ; aucun compteur ne prévient avant, et rien ne la remet à zéro.",
-        "en": "Once the limit is hit, it answers with an error; no counter warns you beforehand, and nothing resets it.",
+        "fr": "Une fois la limite atteinte, le serveur répond par une erreur ; aucun compteur ne prévient avant, et rien ne la remet à zéro.",
+        "en": "Once the limit is hit, the server returns an error; no counter warns you beforehand, and nothing resets the limit.",
         "workaround": {
           "fr": "Gardez des demandes ciblées, et attendez que la fenêtre se libère plutôt que d'insister.",
           "en": "Keep requests targeted, and wait for the window to free up rather than retrying."
@@ -745,7 +745,7 @@
       {
         "title": {
           "fr": "Relancer, c'est doubler",
-          "en": "Retry means duplicate"
+          "en": "Retrying can mean duplicates"
         },
         "fr": "Redemander une création après une erreur peut donner deux tâches, deux commentaires, ou du temps compté deux fois.",
         "en": "Asking again after an error can give you two tasks, two comments, or time counted twice.",
@@ -762,8 +762,8 @@
           "fr": "Champs personnalisés mal filtrés",
           "en": "Custom fields poorly filtered"
         },
-        "fr": "Un utilisateur signale qu'il filtre par liste, statut ou étiquette, mais pas par champ personnalisé, et qu'il doit alors vérifier les tâches une à une.",
-        "en": "One user reports it filters by list, status or tag, but not by custom field, so it ends up checking tasks one by one.",
+        "fr": "Un utilisateur signale que l'assistant filtre par liste, statut ou étiquette, mais pas par champ personnalisé, et qu'il doit alors vérifier les tâches une à une.",
+        "en": "One user reports that the assistant filters by list, status or tag, but not by custom field, so it ends up checking tasks one by one.",
         "workaround": {
           "fr": "Pour ce genre de tri, préférez une vue filtrée dans ClickUp, ou une étiquette qui reprend l'information.",
           "en": "For that kind of sorting, use a filtered view in ClickUp, or a tag that carries the same information."

@@ -6,11 +6,11 @@
   "host_tool": "hubspot",
   "category": "crm",
   "summary": {
-    "fr": "Le serveur officiel de HubSpot ouvre à votre assistant le CRM, les campagnes, le contenu et les publications sociales. Les créations et modifications demandent une confirmation explicite, et aucune suppression n'est documentée.",
-    "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating and editing require explicit confirmation, and no deletion is documented."
+    "fr": "Le serveur officiel de HubSpot ouvre à votre assistant le CRM, les campagnes, le contenu et les publications sociales. La création ou la modification d'une fiche du CRM demande une confirmation explicite, et aucune suppression n'est documentée.",
+    "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating or editing a CRM record requires explicit confirmation, and no deletion is documented."
   },
   "card": {
-    "fr": "Mettre à jour votre CRM et vos campagnes.",
+    "fr": "Consulter et mettre à jour CRM et campagnes.",
     "en": "Read and update your CRM and campaigns."
   },
   "meta_description": {
@@ -64,8 +64,8 @@
         "en": "Your records, no more"
       },
       "icon": "limit",
-      "fr": "Il ne voit que les fiches auxquelles votre utilisateur a accès.",
-      "en": "It only sees the records your user can access."
+      "fr": "Il ne voit que les fiches auxquelles votre compte utilisateur a accès.",
+      "en": "It only sees the records your user account can access."
     }
   ],
   "plan_words": {
@@ -106,12 +106,12 @@
   },
   "troubleshoot": [
     {
-      "fr": "Les outils disponibles dépendent de votre abonnement et de vos droits : demandez-lui de vérifier votre compte (outil get_user_details).",
-      "en": "The tools available depend on your subscription and rights: ask it to check your account (get_user_details tool)."
+      "fr": "Les outils disponibles dépendent de votre abonnement et de vos droits : demandez à l'assistant de vérifier votre compte (outil get_user_details).",
+      "en": "The tools available depend on your subscription and rights: ask the assistant to check your account (get_user_details tool)."
     },
     {
-      "fr": "Après l'ajout d'autorisations, reconnectez l'application.",
-      "en": "After permissions are added, reconnect the app."
+      "fr": "Après l'ajout d'autorisations, reconnectez le connecteur.",
+      "en": "After permissions are added, reconnect the connector."
     }
   ],
   "verified_on": "2026-11-16",
@@ -123,8 +123,8 @@
   "access": "read_write",
   "plan": "all",
   "plan_note": {
-    "fr": "Utilisable avec les outils gratuits ; certains outils exigent Marketing Hub ou Revenue Hub Professional ou Enterprise.",
-    "en": "Works with free tools; some tools require Marketing Hub or Revenue Hub Professional or Enterprise."
+    "fr": "Utilisable avec les outils gratuits ; certains outils exigent Marketing Hub ou Revenue Hub, en version Professional ou Enterprise.",
+    "en": "Works with free tools; some tools require Marketing Hub or Revenue Hub, on Professional or Enterprise."
   },
   "capabilities": [
     {
@@ -405,7 +405,7 @@
       "source": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server"
     },
     "intro": {
-      "fr": "Un CRM, c'est un carnet d'adresses avec mauvaise conscience : on sait qu'il faudrait noter chaque appel, et on ne le fait jamais. Avec votre assistant branché sur HubSpot, la note se dicte en une phrase, et « où en est ce devis ? » trouve sa réponse sans fouiller. Il voit ce que vous voyez, pas plus, et il ne supprime rien. Reste à garder la main sur ce qu'il écrit, et à savoir quelles portes restent fermées.",
+      "fr": "Un CRM, c'est un carnet d'adresses avec mauvaise conscience : on sait qu'il faudrait noter chaque appel, et on ne le fait jamais. Avec votre assistant branché sur HubSpot, la note se dicte en une phrase, et « où en est ce devis ? » trouve sa réponse sans fouiller. Il voit ce que vous voyez, pas plus, et il ne supprime rien. Reste à garder la main sur ce qu'il écrit, et à savoir quelles portes lui sont fermées.",
       "en": "A CRM is an address book with a guilty conscience: you know every call should be logged, and it never is. With your assistant plugged into HubSpot, the note takes one sentence and “where's that quote at?” gets answered without digging. It sees what you see, nothing more, and it deletes nothing. What's left is keeping an eye on what it writes, and knowing which doors stay shut."
     },
     "situations": [
@@ -415,7 +415,7 @@
           "en": "After a call"
         },
         "ask": {
-          "fr": "Ajoute une note à la fiche de Claire Martin : elle valide le devis, et crée-moi une tâche pour la relancer mardi.",
+          "fr": "Ajoute une note à la fiche de Claire Martin : « Elle valide le devis. » Puis crée-moi une tâche pour la relancer mardi.",
           "en": "Add a note to Claire Martin's record: she's approving the quote. And create a task to follow up with her on Tuesday."
         },
         "gain": {
@@ -468,7 +468,7 @@
           "en": "Writing behind approval"
         },
         "fr": "HubSpot le recommande lui-même : réglez les outils d'écriture sur « Approbation requise ». En « Toujours autoriser », les modifications passent sans vous demander.",
-        "en": "HubSpot recommends it itself: set write tools to “Needs approval”. On “Always allow”, edits go through without asking you.",
+        "en": "HubSpot itself recommends it: set write tools to “Needs approval”. On “Always allow”, edits go through without asking you.",
         "source": "https://knowledge.hubspot.com/integrations/connect-your-hubspot-account-to-chatgpt",
         "community": false,
         "icon": "approve"
@@ -516,8 +516,8 @@
         "fr": "Un compte Claude ne se branche qu'à un compte HubSpot à la fois. Si vous travaillez dans le HubSpot de plusieurs clients, il faut jongler.",
         "en": "A Claude account connects to one HubSpot account at a time. If you work in several clients' HubSpot, expect some juggling.",
         "workaround": {
-          "fr": "Déconnectez puis reconnectez le bon compte avant de changer de client, et demandez-lui en début de conversation quel compte il voit.",
-          "en": "Disconnect and reconnect the right account before switching clients, and ask it which account it sees at the start of the chat."
+          "fr": "Déconnectez puis reconnectez le bon compte avant de changer de client, et demandez à l'assistant en début de conversation quel compte il voit.",
+          "en": "Disconnect and reconnect the right account before switching clients, and ask the assistant which account it sees at the start of the chat."
         },
         "source": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude",
         "community": false,
@@ -558,7 +558,7 @@
           "fr": "Données sensibles, conversations fermées",
           "en": "Sensitive Data, inbox closed"
         },
-        "fr": "Si les données sensibles sont activées sur le compte, il ne peut plus lire les conversations de la boîte de réception.",
+        "fr": "Si l'option « Données sensibles » est activée sur le compte, il ne peut plus lire les conversations de la boîte de réception.",
         "en": "If Sensitive Data is turned on for the account, it can no longer read inbox conversations.",
         "workaround": {
           "fr": "Pour résumer un échange avec un client, ouvrez la conversation dans HubSpot et collez l'essentiel dans votre demande.",

@@ -36,8 +36,8 @@
     "en": "You track your site in Google Analytics and want answers without building a report."
   },
   "not_for": {
-    "fr": "Vous voulez un branchement en un clic : il s'installe sur votre ordinateur, avec Python et des identifiants Google Cloud.",
-    "en": "You want a one-click setup: it is installed on your computer, with Python and Google Cloud credentials."
+    "fr": "Vous voulez un branchement en un clic : ce serveur s'installe sur votre ordinateur, avec Python et des identifiants Google Cloud.",
+    "en": "You want a one-click setup: this server is installed on your computer, with Python and Google Cloud credentials."
   },
   "control": [
     {
@@ -46,7 +46,7 @@
         "en": "Read only"
       },
       "icon": "read",
-      "fr": "Il ne fait que lire : l'accès demandé est la lecture seule de vos données Analytics.",
+      "fr": "Il ne fait que lire : il ne demande qu'un accès en lecture seule à vos données Analytics.",
       "en": "It only reads: the access requested is read-only on your Analytics data."
     },
     {
@@ -171,7 +171,7 @@
     }
   ],
   "tools_note": {
-    "fr": "La documentation Google dit le serveur en lecture seule ; le dépôt officiel décrit aussi trois outils d'écriture facultatifs, désactivés par défaut. Seule la liste Google est reprise ici.",
+    "fr": "La documentation Google présente le serveur comme en lecture seule ; le dépôt officiel décrit aussi trois outils d'écriture facultatifs, désactivés par défaut. Seule la liste de Google est reprise ici.",
     "en": "Google's documentation says the server is read-only; the official repository also describes three optional write tools, off by default. Only Google's list is shown here."
   },
   "install": [

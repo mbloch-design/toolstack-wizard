@@ -6,8 +6,8 @@
   "host_tool": "make",
   "category": "automation",
   "summary": {
-    "fr": "Le serveur officiel de Make transforme vos scénarios actifs en actions que votre assistant peut lancer ; sur un forfait payant, il peut aussi consulter et modifier scénarios, connexions et data stores. Make ne publie pas de liste nominative d'outils : ils dépendent de vos scénarios et des portées choisies.",
-    "en": "Make's official server turns your active scenarios into actions your assistant can run; on a paid plan it can also view and edit scenarios, connections and data stores. Make publishes no named tool list: tools depend on your scenarios and the scopes you grant."
+    "fr": "Le serveur officiel de Make transforme vos scénarios actifs en actions que votre assistant peut lancer ; sur un forfait payant, il peut aussi consulter et modifier scénarios, connexions et data stores. Make ne publie pas de liste nominative d'outils : ils dépendent de vos scénarios et des autorisations choisies.",
+    "en": "Make's official server turns your active scenarios into actions your assistant can run; on a paid plan it can also view and edit scenarios, connections and data stores. Make publishes no named tool list: tools depend on your scenarios and the permissions you grant."
   },
   "card": {
     "fr": "Lancer vos scénarios Make en une phrase.",
@@ -51,7 +51,7 @@
         "en": "A single organisation"
       },
       "icon": "limit",
-      "fr": "Avec la connexion au compte, vous pouvez limiter l'accès à une seule organisation Make.",
+      "fr": "En vous connectant avec votre compte Make, vous pouvez limiter l'accès à une seule organisation.",
       "en": "With account sign-in, you can limit access to a single Make organisation."
     },
     {
@@ -66,12 +66,12 @@
   ],
   "plan_words": {
     "common": {
-      "fr": "Lancer vos scénarios : sur tous les forfaits Make.",
-      "en": "Running your scenarios: on every Make plan."
+      "fr": "Lancer vos scénarios est possible sur tous les forfaits Make.",
+      "en": "Running your scenarios works on every Make plan."
     },
     "advanced": {
       "fr": "En plus, sur les forfaits payants : gérer vos scénarios, connexions et data stores.",
-      "en": "On top, on paid plans: managing your scenarios, connections and data stores."
+      "en": "Plus, on paid plans: managing your scenarios, connections and data stores."
     }
   },
   "first_requests": {
@@ -98,8 +98,8 @@
   },
   "troubleshoot": [
     {
-      "fr": "Au-delà de 25 secondes, la réponse s'arrête mais le scénario continue jusqu'à 40 minutes dans Make : demandez le résultat ensuite.",
-      "en": "Past 25 seconds the answer stops but the scenario keeps running for up to 40 minutes in Make: ask for the result afterwards."
+      "fr": "Au-delà de 25 secondes, l'assistant n'attend plus la réponse, mais le scénario continue jusqu'à 40 minutes dans Make : demandez le résultat ensuite.",
+      "en": "Past 25 seconds the assistant stops waiting for the answer, but the scenario keeps running for up to 40 minutes in Make: ask for the result afterwards."
     },
     {
       "fr": "Un scénario n'apparaît que s'il est actif et planifié « à la demande ».",
@@ -115,14 +115,14 @@
   "access": "read_write",
   "plan": "all",
   "plan_note": {
-    "fr": "Lancer des scénarios : tous les forfaits. Modifier les scénarios (portées de gestion) : forfaits payants.",
-    "en": "Running scenarios: every plan. Editing scenarios (management scopes): paid plans."
+    "fr": "Lancer des scénarios : tous les forfaits. Modifier les scénarios (autorisations de gestion) : forfaits payants.",
+    "en": "Running scenarios: every plan. Editing scenarios (management permissions): paid plans."
   },
   "capabilities": [
     {
       "kind": "read",
-      "fr": "Consulter scénarios, équipes, connexions, webhooks et data stores",
-      "en": "View scenarios, teams, connections, webhooks and data stores"
+      "fr": "Consulter scénarios, équipes, connexions, webhooks et data stores (forfaits payants)",
+      "en": "View scenarios, teams, connections, webhooks and data stores (paid plans)"
     },
     {
       "kind": "write",
@@ -158,8 +158,8 @@
     }
   ],
   "tools_note": {
-    "fr": "Make ne nomme pas ses outils : ils sont générés depuis vos scénarios et les portées accordées.",
-    "en": "Make does not name its tools: they are generated from your scenarios and granted scopes."
+    "fr": "Make ne nomme pas ses outils : ils sont générés depuis vos scénarios et les autorisations accordées.",
+    "en": "Make does not name its tools: they are generated from your scenarios and granted permissions."
   },
   "install": [
     {
@@ -246,7 +246,7 @@
       "source": "https://help.make.com/make-mcp-server"
     },
     "intro": {
-      "fr": "Make, c'est l'atelier où vous avez bricolé vos automatisations un dimanche, et que vous n'osez plus trop rouvrir. Le serveur MCP en fait une télécommande : votre assistant appuie sur le bouton à votre place et lui passe les bonnes infos. Mais il n'appuie que sur les boutons que vous avez préparés, et il les comprend aussi bien que vous les avez décrits. Voici comment lui faciliter la tâche.",
+      "fr": "Make, c'est l'atelier où vous avez bricolé vos automatisations un dimanche, et que vous n'osez plus trop rouvrir. Le serveur MCP en fait une télécommande : votre assistant appuie sur le bouton à votre place et transmet les bonnes infos au scénario. Mais il n'appuie que sur les boutons que vous avez préparés, et il les comprend aussi bien que vous les avez décrits. Voici comment lui faciliter la tâche.",
       "en": "Make is the workshop where you tinkered with your automations one Sunday, and which you'd rather not reopen. The MCP server turns it into a remote control: your assistant presses the button for you and hands over the right details. But it only presses the buttons you've prepared, and it understands them only as well as you've described them. Here's how to make its job easy."
     },
     "situations": [
@@ -291,7 +291,7 @@
         },
         "ask": {
           "fr": "Où en est le scénario de rapport mensuel lancé tout à l'heure ? Donne-moi son résultat.",
-          "en": "Where's the monthly report scenario you started earlier? Give me its result."
+          "en": "What's the status of the monthly report scenario you started earlier? Give me its result."
         },
         "gain": {
           "fr": "Le résultat, même quand c'est long.",
@@ -309,7 +309,7 @@
           "en": "Describe your scenarios"
         },
         "fr": "Make le dit : une description détaillée aide l'assistant à choisir le bon scénario. « Scénario 7 copie » ne lui dit rien, à vous non plus.",
-        "en": "Make says so: a detailed description helps the assistant pick the right scenario. “Scenario 7 copy” tells it nothing, and you neither.",
+        "en": "Make says so: a detailed description helps the assistant pick the right scenario. “Scenario 7 copy” tells it nothing, and tells you nothing either.",
         "source": "https://developers.make.com/mcp-server/",
         "community": false,
         "icon": "brief"
@@ -363,7 +363,7 @@
       {
         "title": {
           "fr": "Scénario long, réponse perdue",
-          "en": "Long scenarios lose it"
+          "en": "Long scenario, lost answer"
         },
         "fr": "Passé un court délai, l'assistant n'attend plus la réponse, même si le scénario continue de tourner dans Make.",
         "en": "After a short wait, the assistant stops waiting for the answer, even though the scenario keeps running in Make.",

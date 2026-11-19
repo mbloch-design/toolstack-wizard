@@ -6,12 +6,12 @@
   "host_tool": "webflow",
   "category": "nocode-web",
   "summary": {
-    "fr": "Le serveur officiel de Webflow laisse votre assistant lire et modifier votre site : pages, styles, composants, CMS, fichiers, et le publier en ligne. Les droits se donnent site par site, par le propriétaire ou un administrateur.",
-    "en": "Webflow's official server lets your assistant read and edit your site: pages, styles, components, CMS, assets, and publish it live. Access is granted site by site, by the owner or an admin."
+    "fr": "Le serveur officiel de Webflow laisse votre assistant lire et modifier votre site (pages, styles, composants, CMS, fichiers), puis le publier en ligne. Les droits se donnent site par site, par le propriétaire ou un administrateur.",
+    "en": "Webflow's official server lets your assistant read and edit your site (pages, styles, components, CMS, assets), then publish it live. Access is granted site by site, by the owner or an admin."
   },
   "card": {
     "fr": "Lire et modifier votre site, jusqu'à le publier.",
-    "en": "Read and edit your site, up to publishing it."
+    "en": "Read and edit your site, then publish it."
   },
   "meta_description": {
     "fr": "Brancher Webflow à Claude ou ChatGPT : modifier pages, styles et CMS, puis publier le site depuis l'assistant. Accès site par site ; ses suppressions.",
@@ -28,22 +28,22 @@
     }
   ],
   "for": {
-    "fr": "Votre site, ou ceux de vos clients, est construit sur Webflow.",
-    "en": "Your site, or your clients' sites, is built on Webflow."
+    "fr": "Vous construisez votre site, ou ceux de vos clients, sur Webflow.",
+    "en": "You build your site, or your clients' sites, on Webflow."
   },
   "not_for": {
     "fr": "Vous craignez une mise en ligne par erreur : l'assistant peut publier le site.",
-    "en": "You fear publishing by mistake: the assistant can publish the site."
+    "en": "You're worried about publishing by mistake: the assistant can publish the site."
   },
   "control": [
     {
       "title": {
-        "fr": "Vous autorisez vos sites",
-        "en": "You authorise your sites"
+        "fr": "Vous choisissez vos sites",
+        "en": "You pick your sites"
       },
       "icon": "account",
       "fr": "À la connexion, vous autorisez l'assistant sur vos sites ; une application de liaison s'installe pendant cette étape.",
-      "en": "When connecting, you authorise the assistant on your sites; a bridge app installs during this step."
+      "en": "When connecting, you authorise the assistant on your sites; a bridge app gets installed during this step."
     }
   ],
   "first_requests": {
@@ -86,8 +86,8 @@
   "access": "read_write",
   "plan": "all",
   "plan_note": {
-    "fr": "Tous les forfaits de site, y compris Starter gratuit. Gestion des accès au Workspace : Workspace Enterprise.",
-    "en": "All Site plans, including the free Starter plan. Workspace access management: Enterprise Workspace."
+    "fr": "Tous les forfaits de site, y compris le forfait Starter gratuit. La gestion des accès au Workspace demande un Workspace Enterprise.",
+    "en": "All Site plans, including the free Starter plan. Workspace access management requires an Enterprise Workspace."
   },
   "capabilities": [
     {
@@ -354,8 +354,8 @@
     }
   ],
   "tools_note": {
-    "fr": "Chaque outil de données regroupe plusieurs actions ; le niveau indiqué est le plus risqué de ses actions.",
-    "en": "Each data tool groups several actions; the level shown is its riskiest action."
+    "fr": "Chaque outil de données regroupe plusieurs actions ; le niveau indiqué est celui de son action la plus risquée.",
+    "en": "Each data tool groups several actions; the level shown is that of its riskiest action."
   },
   "install": [
     {
@@ -448,8 +448,8 @@
       "source": "https://developers.webflow.com/mcp/tools/data-tools"
     },
     "intro": {
-      "fr": "Webflow, c'est le site que le client « veut juste mettre à jour un petit peu », de préférence vendredi à 18 h. Branché à votre assistant, il range le CMS, ajoute des articles en brouillon, traque les liens cassés. Il peut aussi supprimer des fichiers et publier le site entier. Le bon réflexe : brouillon, relecture, et seulement ensuite la mise en ligne.",
-      "en": "Webflow is the site the client “just wants to update a little”, ideally on Friday at 6 pm. Plugged into your assistant, it tidies the CMS, adds draft posts and hunts broken links. It can also delete files and publish the whole site. The right habit: draft, review, and only then go live."
+      "fr": "Webflow, c'est le site que le client « veut juste mettre à jour un petit peu », de préférence vendredi à 18 h. Une fois Webflow branché, votre assistant range le CMS, ajoute des articles en brouillon, traque les liens cassés. Il peut aussi supprimer des fichiers et publier le site entier. Le bon réflexe : brouillon, relecture, et seulement ensuite la mise en ligne.",
+      "en": "Webflow is the site the client “just wants to update a little”, ideally on Friday at 6 pm. With Webflow plugged in, your assistant tidies the CMS, adds draft posts and hunts down broken links. It can also delete assets and publish the whole site. The right habit: draft, review, and only then go live."
     },
     "situations": [
       {
@@ -496,7 +496,7 @@
           "en": "Show me what changed since the last publish, and publish if it looks good."
         },
         "gain": {
-          "fr": "Une publication relue avant de partir.",
+          "fr": "Une publication relue avant la mise en ligne.",
           "en": "A publish checked before it ships."
         },
         "source": "https://developers.webflow.com/mcp/reference/skills",
@@ -532,8 +532,8 @@
           "fr": "Des consignes par site",
           "en": "Instructions per site"
         },
-        "fr": "Chaque site peut avoir ses propres consignes d'agent : ton, noms de classes, ce qu'il ne doit pas toucher. Utile quand chaque client a ses habitudes.",
-        "en": "Each site can have its own agent instructions: tone, class names, what not to touch. Handy when every client has their habits.",
+        "fr": "Chaque site peut avoir ses propres consignes d'agent : ton, noms de classes, ce que l'assistant ne doit pas toucher. Utile quand chaque client a ses habitudes.",
+        "en": "Each site can have its own agent instructions: tone, class names, what not to touch. Handy when every client has their own habits.",
         "source": "https://developers.webflow.com/mcp/reference/overview",
         "community": false,
         "icon": "brief"
@@ -554,10 +554,10 @@
       {
         "title": {
           "fr": "Publier, c'est tout publier",
-          "en": "Publishing means everything"
+          "en": "Publishing publishes everything"
         },
-        "fr": "La publication du site met en ligne toutes les dernières modifications, y compris celles en cours, sans étape de confirmation décrite.",
-        "en": "Publishing the site makes all the latest changes live, unfinished ones included, with no confirmation step described.",
+        "fr": "La publication du site met en ligne toutes les dernières modifications, y compris celles en cours, et Webflow ne décrit aucune étape de confirmation.",
+        "en": "Publishing the site makes all the latest changes live, unfinished ones included, and Webflow describes no confirmation step.",
         "workaround": {
           "fr": "Passez par la publication en deux temps et lisez la liste des changements avant d'accepter.",
           "en": "Use the two-step publish and read the list of changes before accepting."
@@ -586,8 +586,8 @@
           "fr": "Fichier supprimé, sans retour",
           "en": "Deleted file, no way back"
         },
-        "fr": "Il peut supprimer des fichiers du site, et Webflow indique qu'ils ne se restaurent pas par ce biais.",
-        "en": "It can delete site files, and Webflow says they can't be restored this way.",
+        "fr": "L'assistant peut supprimer des fichiers du site, et Webflow indique qu'ils ne se restaurent pas par ce biais.",
+        "en": "The assistant can delete site assets, and Webflow says they can't be restored this way.",
         "workaround": {
           "fr": "Gardez une copie de vos images et refusez les suppressions que vous n'avez pas demandées.",
           "en": "Keep a copy of your images and refuse deletions you didn't ask for."
@@ -601,7 +601,7 @@
           "fr": "Des outils disparus dans Claude",
           "en": "Tools gone missing in Claude"
         },
-        "fr": "Webflow a déjà signalé des outils CMS et pages absents dans les applis Claude.",
+        "fr": "Webflow a déjà signalé des outils CMS et de pages absents dans les applis Claude.",
         "en": "Webflow has already reported CMS and page tools missing in the Claude apps.",
         "workaround": {
           "fr": "Dans les réglages du connecteur Webflow, actualisez la liste des outils.",

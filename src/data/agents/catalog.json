@@ -8,7 +8,7 @@
       "host_tool": "ahrefs",
       "category": "analytics",
       "summary": {
-        "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités API du forfait.",
+        "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités d'API du forfait.",
         "en": "Ahrefs' official server brings your SEO data (keywords, backlinks, rankings) into your assistant, and can manage social media posts. It needs a paid plan from Lite and uses your plan's API units."
       },
       "card": {
@@ -22,7 +22,7 @@
       "examples": [
         {
           "fr": "Sur quels mots-clés mon site a-t-il gagné des positions ce mois-ci ?",
-          "en": "Which keywords did my site climb on this month?"
+          "en": "Which keywords did my site move up for this month?"
         },
         {
           "fr": "Quels sites ont fait un lien vers mon site récemment ?",
@@ -31,11 +31,11 @@
       ],
       "for": {
         "fr": "Vous avez un forfait Ahrefs payant et suivez le référencement de votre site ou de ceux de vos clients.",
-        "en": "You pay for Ahrefs and follow the search ranking of your site or your clients' sites."
+        "en": "You pay for Ahrefs and track the search rankings of your site or your clients' sites."
       },
       "not_for": {
-        "fr": "Vous n'avez pas de forfait payant : le serveur n'y est pas ouvert.",
-        "en": "You have no paid plan: the server is not open to you."
+        "fr": "Vous n'avez pas de forfait payant : le serveur est réservé aux forfaits payants.",
+        "en": "You don't have a paid plan: the server is only available on paid plans."
       },
       "control": [
         {
@@ -50,12 +50,12 @@
       ],
       "plan_words": {
         "common": {
-          "fr": "Sur les forfaits Lite, Standard, Advanced et Enterprise : pas sur le gratuit.",
-          "en": "On Lite, Standard, Advanced and Enterprise plans: not on the free one."
+          "fr": "Sur les forfaits Lite, Standard, Advanced et Enterprise, pas sur le gratuit.",
+          "en": "On Lite, Standard, Advanced and Enterprise plans, not on the free one."
         },
         "advanced": {
-          "fr": "Les unités et les lignes par demande grandissent avec le forfait : 200 000 unités et 100 lignes en Lite.",
-          "en": "Units and rows per request grow with the plan: 200,000 units and 100 rows on Lite."
+          "fr": "Le quota d'unités et le nombre de lignes par demande augmentent avec le forfait : 200 000 unités et 100 lignes en Lite.",
+          "en": "Your unit allowance and rows per request grow with the plan: 200,000 units and 100 rows on Lite."
         }
       },
       "first_requests": {
@@ -80,8 +80,8 @@
           "en": "A 401 error comes from an expired key, an inactive subscription or an API key used instead of the MCP key."
         },
         {
-          "fr": "L'installation sur l'ordinateur n'est plus prise en charge : branchez le serveur en ligne.",
-          "en": "Installing on your computer is no longer supported: plug in the online server."
+          "fr": "L'installation sur votre ordinateur n'est plus prise en charge : branchez le serveur en ligne.",
+          "en": "Installing on your computer is no longer supported: use the online server instead."
         }
       ],
       "verified_on": "2026-11-16",
@@ -93,7 +93,7 @@
       "access": "read_write",
       "plan": "paid",
       "plan_note": {
-        "fr": "Forfaits payants à partir de Lite ; chaque appel consomme des unités API du quota mensuel du forfait.",
+        "fr": "Forfaits payants à partir de Lite ; chaque appel consomme des unités d'API du quota mensuel du forfait.",
         "en": "Paid plans from Lite up; each call uses API units from the plan's monthly allowance."
       },
       "capabilities": [
@@ -126,7 +126,7 @@
       "safeguards": [],
       "tools_note": {
         "fr": "Ahrefs ne publie pas de liste d'outils lisible à ce jour (pages de documentation en erreur).",
-        "en": "Ahrefs publishes no readable tool list today (documentation pages return errors)."
+        "en": "Ahrefs does not publish a readable tool list at the moment (its documentation pages return errors)."
       },
       "install": [
         {
@@ -179,8 +179,8 @@
           "source": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp"
         },
         "intro": {
-          "fr": "Ahrefs, c'est une mine d'or… avec un compteur à l'entrée. Brancher votre assistant, c'est lui confier la pioche : il creuse les mots-clés d'un client, les liens d'un concurrent, les positions du mois, et vous rend une réponse lisible. Mais chaque coup de pioche se paie en unités, et une question trop large peut entamer sérieusement le mois. Voici comment creuser au bon endroit.",
-          "en": "Ahrefs is a gold mine… with a meter at the entrance. Plugging in your assistant hands it the pickaxe: it digs into a client's keywords, a competitor's links, this month's rankings, and gives you an answer you can read. But every swing is paid for in units, and one overly broad question can take a real bite out of the month. Here is how to dig in the right spot."
+          "fr": "Ahrefs, c'est une mine d'or… avec un compteur à l'entrée. Brancher votre assistant, c'est lui confier la pioche : il creuse les mots-clés d'un client, les liens d'un concurrent, les positions du mois, et vous rend une réponse lisible. Mais chaque coup de pioche se paie en unités, et une question trop large peut entamer sérieusement le quota du mois. Voici comment creuser au bon endroit.",
+          "en": "Ahrefs is a gold mine… with a meter at the entrance. Plugging in your assistant hands it the pickaxe: it digs into a client's keywords, a competitor's links, this month's rankings, and gives you an answer you can read. But every swing is paid for in units, and one overly broad question can take a real bite out of your monthly allowance. Here is how to dig in the right spot."
         },
         "situations": [
           {
@@ -242,7 +242,7 @@
               "en": "Start with “Using Ahrefs”"
             },
             "fr": "Sinon, l'assistant peut aller chercher sur le web au lieu d'interroger vos données. Ahrefs le recommande lui-même, surtout dans ChatGPT.",
-            "en": "Otherwise the assistant may search the web instead of your data. Ahrefs recommends it itself, especially in ChatGPT.",
+            "en": "Otherwise the assistant may search the web instead of your data. Ahrefs itself recommends this, especially in ChatGPT.",
             "source": "https://ahrefs.com/blog/mcp-use-cases/",
             "community": false,
             "icon": "brief"
@@ -264,7 +264,7 @@
               "en": "A small sample is often enough"
             },
             "fr": "Un utilisateur qui a épluché ses relevés constate qu'une liste courte de mots-clés menait à la même conclusion qu'une longue, pour bien moins d'unités. Élargissez seulement si ça change votre décision.",
-            "en": "One user who combed through his logs found that a short keyword list led to the same conclusion as a long one, for far fewer units. Widen only if it changes your decision.",
+            "en": "One user who combed through their logs found that a short keyword list led to the same conclusion as a long one, for far fewer units. Widen only if it changes your decision.",
             "source": "https://studiomeyer.io/en/blog/ahrefs-api-units-cost",
             "community": true,
             "icon": "credits"
@@ -275,7 +275,7 @@
               "en": "A starting point, not a verdict"
             },
             "fr": "Ahrefs prévient que l'assistant peut rendre les choses plus simples qu'elles ne sont. Vérifiez les chiffres clés dans Ahrefs avant de les mettre dans un rapport client.",
-            "en": "Ahrefs warns the assistant can make things sound simpler than they are. Check the key figures in Ahrefs before they go into a client report.",
+            "en": "Ahrefs warns that the assistant can make things sound simpler than they are. Check the key figures in Ahrefs before they go into a client report.",
             "source": "https://ahrefs.com/blog/mcp-use-cases/",
             "community": false,
             "icon": "confirm"
@@ -284,8 +284,8 @@
         "pitfalls": [
           {
             "title": {
-              "fr": "Clé API n'est pas clé MCP",
-              "en": "API key isn't MCP key"
+              "fr": "Une clé d'API n'est pas une clé MCP",
+              "en": "An API key isn't an MCP key"
             },
             "fr": "Une erreur 401 vient souvent d'une clé d'API collée à la place de la clé MCP, d'une clé expirée ou d'un abonnement arrêté.",
             "en": "A 401 error often comes from an API key pasted instead of the MCP key, an expired key or a lapsed subscription.",
@@ -303,7 +303,7 @@
               "en": "The meter that runs away"
             },
             "fr": "Un utilisateur raconte que trois outils, dont les listes de liens et les idées de mots-clés, ont mangé l'essentiel de ses unités.",
-            "en": "One user reports that three tools, including link lists and keyword ideas, ate most of his units.",
+            "en": "One user reports that three tools, including link lists and keyword ideas, ate most of their units.",
             "workaround": {
               "fr": "Limitez le nombre de résultats, estimez avant un gros lot, et suivez votre consommation dans les réglages du compte Ahrefs.",
               "en": "Cap the number of results, estimate before a big batch, and watch your usage in your Ahrefs account settings."
@@ -361,7 +361,7 @@
         "en": "Airtable's official server connects your assistant to your bases: records, tables, fields, interfaces and automation drafts. It can also delete records and whole tables, and can be limited to chosen bases."
       },
       "card": {
-        "fr": "Chercher et modifier les fiches de vos bases.",
+        "fr": "Chercher, ajouter et modifier vos enregistrements.",
         "en": "Search, add and edit the records of your bases."
       },
       "meta_description": {
@@ -393,8 +393,8 @@
       "control": [
         {
           "title": {
-            "fr": "Vous choisissez ce qu'il voit",
-            "en": "You choose what it sees"
+            "fr": "Vous choisissez ce que l'assistant voit",
+            "en": "You choose what the assistant sees"
           },
           "icon": "account",
           "fr": "À la connexion, vous choisissez exactement les bases, applications et espaces qu'il voit.",
@@ -403,20 +403,20 @@
         {
           "title": {
             "fr": "Lecture seule possible",
-            "en": "Read-only possible"
+            "en": "Read-only is an option"
           },
           "icon": "read",
-          "fr": "Pour qu'il ne fasse que lire, n'accordez que les autorisations de lecture.",
-          "en": "For reading only, grant only the read permissions."
+          "fr": "Pour que l'assistant ne fasse que lire, n'accordez que les autorisations de lecture.",
+          "en": "For read-only use, grant only read permissions."
         },
         {
           "title": {
             "fr": "Vous ajustez ou coupez",
-            "en": "You adjust or cut"
+            "en": "You adjust or cut it off"
           },
           "icon": "cut",
           "fr": "Pour ajouter ou retirer des bases, ou couper l'accès : votre profil, Intégrations, puis Intégrations tierces.",
-          "en": "To add or remove bases, or cut access: your profile, Integrations, then Third-party integrations."
+          "en": "To add or remove bases, or cut off access: your profile, Integrations, then Third-party integrations."
         },
         {
           "title": {
@@ -462,16 +462,16 @@
       },
       "troubleshoot": [
         {
-          "fr": "Avec un accès Commentateur ou Lecture seule, il lit sans modifier : il faut au moins le rôle Éditeur.",
-          "en": "With Commenter or Read-only access, it reads without editing: you need the Editor role at least."
+          "fr": "Avec un accès Commentateur ou Lecture seule, l'assistant peut lire mais pas modifier : il faut au moins le rôle Éditeur.",
+          "en": "With Commenter or Read-only access, the assistant can read but not edit: you need at least the Editor role."
         },
         {
           "fr": "Créer une base demande le rôle Créateur dans l'espace.",
           "en": "Creating a base needs the Creator role in the workspace."
         },
         {
-          "fr": "Il crée au plus 10 enregistrements par demande.",
-          "en": "It creates at most 10 records per request."
+          "fr": "L'assistant crée au plus 10 enregistrements par demande.",
+          "en": "The assistant creates at most 10 records per request."
         }
       ],
       "verified_on": "2026-11-16",
@@ -839,13 +839,13 @@
       ],
       "advice": {
         "verdict": {
-          "fr": "Si vos clients, projets ou contenus vivent dans Airtable, branchez-le : votre assistant cherche, ajoute et met à jour vos fiches en langage courant. Ne lui ouvrez que les bases utiles, car il peut aussi supprimer des tables entières.",
-          "en": "If your clients, projects or content live in Airtable, plug it in: your assistant searches, adds and updates your records in plain language. Only open the bases it needs, because it can also delete whole tables.",
+          "fr": "Si vos clients, projets ou contenus vivent dans Airtable, branchez-le : votre assistant cherche, ajoute et met à jour vos enregistrements en langage courant. Ne lui ouvrez que les bases utiles, car il peut aussi supprimer des tables entières.",
+          "en": "If your clients, projects or content live in Airtable, plug it in: your assistant searches, adds and updates your records in plain language. Only give it access to the bases it needs, because it can also delete whole tables.",
           "source": "https://airtable.com/developers/agents/mcp/getting-started"
         },
         "intro": {
           "fr": "Airtable, c'est le tableur qui a pris des cours du soir : des bases bien pensées, qu'on finit souvent par remplir à moitié faute de temps. Avec votre assistant branché, vous dites « ajoute ces trois prospects » ou « qui n'ai-je pas relancé ? », et il s'en charge. Il respecte vos droits Airtable, ni plus ni moins. Ce qui veut dire qu'il peut effacer tout ce que vous pouvez effacer.",
-          "en": "Airtable is the spreadsheet that went to night school: well-designed bases that often end up half-filled for lack of time. With your assistant plugged in, you say “add these three leads” or “who haven't I followed up with?”, and it handles it. It respects your Airtable rights, no more, no less. Which means it can erase anything you can erase."
+          "en": "Airtable is the spreadsheet that went to night school: well-designed bases that often end up half-filled for lack of time. With your assistant plugged in, you say “add these three leads” or “who haven't I followed up with?”, and it handles it. It respects your Airtable permissions, no more, no less. Which means it can erase anything you can erase."
         },
         "situations": [
           {
@@ -906,8 +906,8 @@
               "fr": "Nommez la base",
               "en": "Name the base"
             },
-            "fr": "« Dans ma base Clients » lui évite de fouiller partout. Pas besoin des noms de champs exacts : décrivez simplement ce que vous cherchez.",
-            "en": "“In my Clients base” saves it from rummaging everywhere. No need for exact field names: just describe what you're after.",
+            "fr": "« Dans ma base Clients » évite à l'assistant de fouiller partout. Pas besoin des noms de champs exacts : décrivez simplement ce que vous cherchez.",
+            "en": "“In my Clients base” saves the assistant from rummaging everywhere. No need for exact field names: just describe what you're after.",
             "source": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
             "community": false,
             "icon": "database"
@@ -917,8 +917,8 @@
               "fr": "Ne cochez que l'utile",
               "en": "Tick only what's needed"
             },
-            "fr": "À la connexion, vous choisissez les bases et espaces qu'il voit. La base de votre comptabilité n'a pas forcément besoin d'en faire partie.",
-            "en": "When connecting, you choose which bases and workspaces it sees. Your accounting base doesn't have to be one of them.",
+            "fr": "À la connexion, vous choisissez les bases et espaces que l'assistant voit. La base de votre comptabilité n'a pas forcément besoin d'en faire partie.",
+            "en": "When connecting, you choose which bases and workspaces the assistant sees. Your accounting base doesn't have to be one of them.",
             "source": "https://airtable.com/developers/agents/mcp/getting-started",
             "community": false,
             "icon": "settings"
@@ -929,7 +929,7 @@
               "en": "Free reading, writing on request"
             },
             "fr": "Réglez le connecteur pour que l'assistant vous demande avant d'agir : il lit tranquillement, et vous gardez la main sur ce qui modifie ou supprime.",
-            "en": "Set the connector so the assistant asks before acting: it reads in peace, and you keep a hand on anything that edits or deletes.",
+            "en": "Set the connector so the assistant asks before acting: it reads freely, and you stay in control of anything that edits or deletes.",
             "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
             "community": false,
             "icon": "approve"
@@ -939,8 +939,8 @@
               "fr": "Une clé en lecture seule",
               "en": "A read-only key"
             },
-            "fr": "Si vous passez par une clé (Claude Code, Cursor), ne lui donnez que les droits de lecture : il pourra répondre, pas modifier.",
-            "en": "If you go through a key (Claude Code, Cursor), give it read rights only: it can answer, not change.",
+            "fr": "Si vous passez par une clé (Claude Code, Cursor), ne donnez à la clé que les droits de lecture : l'assistant pourra répondre, pas modifier.",
+            "en": "If you connect with a key (Claude Code, Cursor), give the key read permissions only: the assistant can answer but not change anything.",
             "source": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
             "community": false,
             "icon": "key"
@@ -950,8 +950,8 @@
               "fr": "Les automatisations restent éteintes",
               "en": "Automations stay off"
             },
-            "fr": "Il peut préparer une automatisation, mais elle reste en brouillon tant que vous ne l'allumez pas dans Airtable. Relisez avant d'appuyer.",
-            "en": "It can draft an automation, but it stays off until you turn it on in Airtable. Read it before flipping the switch.",
+            "fr": "L'assistant peut préparer une automatisation, mais elle reste en brouillon tant que vous ne l'allumez pas dans Airtable. Relisez avant d'appuyer.",
+            "en": "The assistant can draft an automation, but the automation stays off until you turn it on in Airtable. Read it before flipping the switch.",
             "source": "https://airtable.com/developers/agents/mcp/tools",
             "community": false,
             "icon": "draft"
@@ -963,11 +963,11 @@
               "fr": "Une table supprimée, contenu compris",
               "en": "A table deleted, contents and all"
             },
-            "fr": "Supprimer une table emporte ses fiches, ses champs et ses vues, et Airtable ne documente pas de retour en arrière pour ça.",
+            "fr": "Supprimer une table emporte ses enregistrements, ses champs et ses vues, et Airtable ne documente pas de retour en arrière pour ça.",
             "en": "Deleting a table takes its records, fields and views with it, and Airtable documents no way back for that.",
             "workaround": {
-              "fr": "Gardez la suppression sous votre approbation et dupliquez une base importante avant de lui confier un grand ménage.",
-              "en": "Keep deleting behind your approval and duplicate an important base before handing it a big clean-up."
+              "fr": "Gardez la suppression sous votre approbation et dupliquez une base importante avant de confier un grand ménage à l'assistant.",
+              "en": "Keep deleting behind your approval and duplicate an important base before handing the assistant a big clean-up."
             },
             "source": "https://airtable.com/developers/agents/mcp/tools",
             "community": false,
@@ -975,11 +975,11 @@
           },
           {
             "title": {
-              "fr": "Simple lecteur ? Lecture seule",
-              "en": "Read-only at a client's? Reading only"
+              "fr": "Accès en lecture seule ? L'assistant aussi",
+              "en": "Read-only access? So is the assistant"
             },
-            "fr": "Avec un accès Commentateur ou Lecture seule, il lit mais ne modifie rien.",
-            "en": "With Commenter or Read-only access, it reads but changes nothing.",
+            "fr": "Avec un accès Commentateur ou Lecture seule, l'assistant lit mais ne modifie rien.",
+            "en": "With Commenter or Read-only access, the assistant reads but changes nothing.",
             "workaround": {
               "fr": "Demandez au client le rôle Éditeur sur la base concernée.",
               "en": "Ask the client for the Editor role on that base."
@@ -993,8 +993,8 @@
               "fr": "Les ajouts, par petits paquets",
               "en": "Additions, in small batches"
             },
-            "fr": "Il ne crée qu'un petit nombre de fiches par demande : une longue liste sera découpée, ou à moitié faite.",
-            "en": "It only creates a handful of records per request: a long list gets split up, or half done.",
+            "fr": "L'assistant ne crée qu'un petit nombre d'enregistrements par demande : une longue liste sera découpée, ou à moitié faite.",
+            "en": "The assistant only creates a handful of records per request: a long list gets split up, or half done.",
             "workaround": {
               "fr": "Envoyez vos ajouts par petits lots et vérifiez le total dans la table ; pour un gros import, passez par l'import CSV d'Airtable.",
               "en": "Send additions in small batches and check the count in the table; for a big import, use Airtable's CSV import."
@@ -1008,8 +1008,8 @@
               "fr": "Type de champ : pas touche",
               "en": "Field type: hands off"
             },
-            "fr": "Il peut renommer un champ, mais pas changer son type ni ses choix de liste déroulante.",
-            "en": "It can rename a field, but not change its type or its dropdown options.",
+            "fr": "L'assistant peut renommer un champ, mais pas changer son type ni ses choix de liste déroulante.",
+            "en": "The assistant can rename a field, but not change its type or its dropdown options.",
             "workaround": {
               "fr": "Faites ces changements directement dans Airtable.",
               "en": "Make those changes directly in Airtable."
@@ -1048,8 +1048,8 @@
       "host_tool": "buffer",
       "category": "creation",
       "summary": {
-        "fr": "Le serveur officiel de Buffer permet à votre assistant de lire votre file d'attente et vos statistiques, de rédiger et programmer des posts, et de les publier tout de suite si on le lui demande. Il peut aussi supprimer définitivement un post ; il est inclus dans tous les forfaits, gratuit compris.",
-        "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post; it is included on every plan, free included."
+        "fr": "Le serveur officiel de Buffer permet à votre assistant de lire votre file d'attente et vos statistiques, de rédiger et programmer des posts, et de les publier tout de suite si on le lui demande. Il peut aussi supprimer définitivement un post. Le serveur est inclus dans tous les forfaits, gratuit compris.",
+        "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post. The server is included on every plan, including the free one."
       },
       "card": {
         "fr": "Publier vos posts et lire leurs chiffres.",
@@ -1069,8 +1069,8 @@
           "en": "Which of this month's posts did best?"
         },
         {
-          "fr": "Ajoute cette idée de post à mes idées.",
-          "en": "Add this post idea to my ideas."
+          "fr": "Enregistre cette idée de post dans mes Idées Buffer.",
+          "en": "Save this post idea to my Buffer Ideas."
         }
       ],
       "for": {
@@ -1078,8 +1078,8 @@
         "en": "You post regularly on several networks with Buffer."
       },
       "not_for": {
-        "fr": "Vous ne voulez rien publier sans relire : l'assistant peut publier tout de suite, et Buffer ne documente pas de confirmation.",
-        "en": "You never want anything posted unread: the assistant can post right away, and Buffer documents no confirmation."
+        "fr": "Vous ne voulez rien publier sans relire : l'assistant peut publier tout de suite, et Buffer ne documente aucune étape de confirmation.",
+        "en": "You never want anything to go out before you've reread it: the assistant can post right away, and Buffer documents no confirmation step."
       },
       "control": [
         {
@@ -1088,8 +1088,8 @@
             "en": "The whole account"
           },
           "icon": "account",
-          "fr": "La connexion couvre tout votre compte Buffer, sans choix d'organisation.",
-          "en": "The connection covers your whole Buffer account, with no organisation choice."
+          "fr": "La connexion couvre tout votre compte Buffer, sans possibilité de choisir une organisation.",
+          "en": "The connection covers your whole Buffer account, with no way to pick an organisation."
         },
         {
           "title": {
@@ -1097,23 +1097,23 @@
             "en": "You confirm first"
           },
           "icon": "confirm",
-          "fr": "Laissez les demandes de confirmation de votre assistant : la plupart attendent votre accord avant de publier, modifier ou supprimer.",
-          "en": "Keep your assistant's confirmation prompts: most wait for your approval before posting, editing or deleting."
+          "fr": "Gardez les demandes de confirmation de votre assistant : la plupart des assistants attendent votre accord avant de publier, modifier ou supprimer.",
+          "en": "Keep your assistant's confirmation prompts on: most assistants wait for your approval before posting, editing or deleting."
         },
         {
           "title": {
             "fr": "Vous coupez quand vous voulez",
-            "en": "You cut whenever you want"
+            "en": "You can cut access anytime"
           },
           "icon": "cut",
           "fr": "Pour couper l'accès : Réglages, puis API, dans Buffer.",
-          "en": "To cut access: Settings, then API, in Buffer."
+          "en": "To revoke access: Settings, then API, in Buffer."
         }
       ],
       "plan_words": {
         "common": {
           "fr": "Fonctionne sur tous les forfaits Buffer, y compris le gratuit.",
-          "en": "Works on every Buffer plan, free included."
+          "en": "Works on every Buffer plan, including the free one."
         },
         "advanced": {
           "fr": "Sur le gratuit, les statistiques ne remontent qu'aux 31 derniers jours.",
@@ -1141,8 +1141,8 @@
             "en": "Add a post idea “ToolTrim test”."
           },
           "check": {
-            "fr": "Dans Buffer, rubrique Idées, elle y est ; supprimez-la ensuite.",
-            "en": "In Buffer, under Ideas, it is there; delete it afterwards."
+            "fr": "Elle apparaît dans Buffer, rubrique Idées ; supprimez-la ensuite.",
+            "en": "It shows up in Buffer under Ideas; delete it afterwards."
           }
         }
       },
@@ -1417,7 +1417,7 @@
             },
             "gain": {
               "fr": "Ce qui marche, sans tableur.",
-              "en": "What works, no spreadsheet."
+              "en": "What works, without a spreadsheet."
             },
             "source": "https://developers.buffer.com/guides/integrations/mcp.html",
             "icon": "chart",
@@ -1441,8 +1441,8 @@
               "fr": "Laissez les confirmations allumées",
               "en": "Leave confirmations on"
             },
-            "fr": "Buffer le demande lui-même : une publication immédiate ou une suppression ne se rattrapent pas. Un clic de plus, c'est moins cher qu'un post à excuser.",
-            "en": "Buffer asks for it itself: an instant post or a deletion can't be taken back. One more click beats a post you have to apologise for.",
+            "fr": "Buffer le conseille lui-même : une publication immédiate ou une suppression ne se rattrapent pas. Un clic de plus, c'est moins cher qu'un post à excuser.",
+            "en": "Buffer itself recommends it: an instant post or a deletion can't be taken back. One more click beats a post you have to apologise for.",
             "source": "https://developers.buffer.com/guides/integrations/mcp.html",
             "community": false,
             "icon": "approve"
@@ -1464,7 +1464,7 @@
               "en": "Ideas for the rest"
             },
             "fr": "Un script de vidéo ou le texte d'un carrousel n'a rien à faire dans la file d'attente : demandez-lui de l'enregistrer dans vos Idées Buffer pour plus tard.",
-            "en": "A video script or carousel text doesn't belong in the queue: ask it to save it in your Buffer Ideas for later.",
+            "en": "A video script or carousel text doesn't belong in the queue: ask the assistant to save it in your Buffer Ideas for later.",
             "source": "https://buffer.com/resources/how-to-post-on-social-media-from-claude/",
             "community": false,
             "icon": "copy"
@@ -1477,7 +1477,7 @@
               "en": "The whole account, at once"
             },
             "fr": "La connexion couvre toutes vos organisations et tous vos canaux, y compris ceux d'un client que vous gérez.",
-            "en": "The connection covers all your organisations and channels, including a client's you manage.",
+            "en": "The connection covers all your organisations and channels, including those of a client you manage.",
             "workaround": {
               "fr": "Nommez le réseau et l'organisation dans chaque demande, et coupez l'accès dans Réglages, puis API, quand vous n'en avez plus besoin.",
               "en": "Name the network and organisation in every request, and cut access in Settings, then API, when you no longer need it."
@@ -1557,8 +1557,8 @@
       "host_tool": "calendly",
       "category": "communication",
       "summary": {
-        "fr": "Le serveur officiel de Calendly permet à votre assistant de trouver vos créneaux, réserver et annuler des rendez-vous, et modifier vos types d'événements et disponibilités. Aucun forfait payant n'est requis, et Calendly ne documente pas de confirmation avant action.",
-        "en": "Calendly's official server lets your assistant find your open slots, book and cancel meetings, and edit your event types and availability. No paid plan is required, and Calendly documents no confirmation before acting."
+        "fr": "Le serveur officiel de Calendly permet à votre assistant de trouver vos créneaux, réserver et annuler des rendez-vous, et modifier vos types d'événements et disponibilités. Aucun forfait payant n'est requis. Calendly ne documente aucune étape de confirmation avant d'agir.",
+        "en": "Calendly's official server lets your assistant find your open slots, book and cancel meetings, and edit your event types and availability. No paid plan is required. Calendly documents no confirmation step before acting."
       },
       "card": {
         "fr": "Trouver, réserver ou annuler un rendez-vous.",
@@ -1578,7 +1578,7 @@
           "en": "Which meetings do I have next week?"
         },
         {
-          "fr": "Crée un lien de réservation à usage unique pour mon rendez-vous découverte.",
+          "fr": "Crée un lien de réservation à usage unique pour mon appel découverte.",
           "en": "Create a single-use booking link for my discovery call."
         }
       ],
@@ -1604,7 +1604,7 @@
       "plan_words": {
         "common": {
           "fr": "Fonctionne sur tous les forfaits Calendly, y compris le gratuit.",
-          "en": "Works on every Calendly plan, free included."
+          "en": "Works on every Calendly plan, including the free one."
         },
         "advanced": {
           "fr": "Certaines actions dépendent de votre forfait ; Calendly ne dit pas lesquelles.",
@@ -1618,7 +1618,7 @@
             "en": "Which meetings do I have tomorrow?"
           },
           {
-            "fr": "Quels types de rendez-vous ai-je ?",
+            "fr": "Quels types d'événements ai-je ?",
             "en": "Which event types do I have?"
           },
           {
@@ -1628,7 +1628,7 @@
         ],
         "write": {
           "ask": {
-            "fr": "Crée un lien de réservation à usage unique pour mon rendez-vous découverte.",
+            "fr": "Crée un lien de réservation à usage unique pour mon appel découverte.",
             "en": "Create a single-use booking link for my discovery call."
           },
           "check": {
@@ -1852,7 +1852,7 @@
           "name": "users-get_current_user",
           "kind": "read",
           "fr": "Lire votre compte",
-          "en": "Read your user"
+          "en": "Read your account"
         },
         {
           "name": "users-get_user",
@@ -1988,7 +1988,7 @@
         },
         "intro": {
           "fr": "Le ping-pong de mails pour caler un rendez-vous, tout le monde connaît : « mardi ? », « plutôt jeudi », « ah non, jeudi je ne peux plus »… Calendly gagne déjà la moitié de la partie, votre assistant joue l'autre : il regarde vos créneaux, crée le lien, rédige le mail. Mais il tient aussi votre agenda en main, annulations comprises. Un peu de méthode évite d'annuler le mauvais lundi.",
-          "en": "Everyone knows the email ping-pong of booking a meeting: “Tuesday?”, “Thursday's better”, “oh no, Thursday's out now”… Calendly already wins half the game, and your assistant plays the other half: it checks your slots, creates the link, drafts the email. But it also holds your calendar, cancellations included. A little method saves you from cancelling the wrong Monday."
+          "en": "Everyone knows the email ping-pong of booking a meeting: “Tuesday?”, “Thursday's better”, “oh no, Thursday's out now”… Calendly already wins half the game, and your assistant plays the other half: it checks your slots, creates the link, drafts the email. But it also has its hands on your calendar, cancellations included. A little method saves you from cancelling the wrong Monday."
         },
         "situations": [
           {
@@ -2014,7 +2014,7 @@
               "en": "Week ahead"
             },
             "ask": {
-              "fr": "Quels rendez-vous ai-je cette semaine, avec qui, et pour quel type de rendez-vous ?",
+              "fr": "Quels rendez-vous ai-je cette semaine, avec qui, et pour quel type d'événement ?",
               "en": "Which meetings do I have this week, with whom, and for which event type?"
             },
             "gain": {
@@ -2060,8 +2060,8 @@
               "fr": "Appelez les rendez-vous par leur nom",
               "en": "Call meetings by their name"
             },
-            "fr": "« Mon appel découverte », « ma séance de coaching » : reprenez le nom de vos types de rendez-vous, comme dans les exemples de Calendly. Il saura de quoi vous parlez.",
-            "en": "“My discovery call”, “my coaching session”: use your event types' names, as Calendly's own examples do. It'll know what you mean.",
+            "fr": "« Mon appel découverte », « ma séance de coaching » : reprenez le nom de vos types d'événements, comme dans les exemples de Calendly. L'assistant saura de quoi vous parlez.",
+            "en": "“My discovery call”, “my coaching session”: use your event types' names, as Calendly's own examples do. The assistant will know what you mean.",
             "source": "https://www.calendly.com/blog/mcp-server",
             "community": false,
             "icon": "title"
@@ -2082,8 +2082,8 @@
               "fr": "Qu'il demande avant d'agir",
               "en": "Have it ask before acting"
             },
-            "fr": "Réglez le connecteur pour que l'assistant vous demande avant chaque action : lire vos créneaux ne risque rien, annuler un client si.",
-            "en": "Set the connector so the assistant asks before each action: reading your slots is harmless, cancelling a client isn't.",
+            "fr": "Réglez le connecteur pour que l'assistant vous demande avant chaque action : lire vos créneaux ne risque rien, annuler le rendez-vous d'un client, si.",
+            "en": "Set the connector so the assistant asks before each action: reading your slots is harmless, cancelling a client's meeting isn't.",
             "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
             "community": false,
             "icon": "approve"
@@ -2125,7 +2125,7 @@
               "fr": "Selon le forfait, portes fermées",
               "en": "Some doors depend on your plan"
             },
-            "fr": "Certaines actions dépendent de votre forfait, de votre rôle ou de vos options, comme les résumés de réunion qui demandent Notetaker.",
+            "fr": "Certaines actions dépendent de votre forfait, de votre rôle ou de vos options, comme les comptes rendus de réunion, qui demandent Notetaker.",
             "en": "Some actions depend on your plan, role or add-ons, such as meeting recaps, which need Notetaker.",
             "workaround": {
               "fr": "Si l'assistant bute sur une action, vérifiez dans Calendly qu'elle est incluse dans votre compte.",
@@ -2206,7 +2206,7 @@
         {
           "title": {
             "fr": "Vos droits, pas plus",
-            "en": "Your rights, no more"
+            "en": "Your permissions, no more"
           },
           "icon": "account",
           "fr": "L'assistant n'agit que sur les designs et fichiers que votre compte peut voir ou modifier.",
@@ -2219,8 +2219,8 @@
           "en": "Works on every Canva plan."
         },
         "advanced": {
-          "fr": "En plus, avec Canva Pro et au-delà : redimensionner un design, remplissage automatique, kits et modèles de marque.",
-          "en": "On top, with Canva Pro and up: resizing a design, autofill, brand kits and brand templates."
+          "fr": "En plus, avec Canva Pro et au-delà : redimensionnement des designs, remplissage automatique, kits et modèles de marque.",
+          "en": "On top of that, with Canva Pro and above: design resizing, autofill, brand kits and brand templates."
         }
       },
       "first_requests": {
@@ -2235,7 +2235,7 @@
           },
           {
             "fr": "Quels formats d'export sont possibles pour mon dernier design ?",
-            "en": "Which export formats are possible for my latest design?"
+            "en": "Which export formats are available for my latest design?"
           }
         ],
         "write": {
@@ -2612,13 +2612,13 @@
       ],
       "advice": {
         "verdict": {
-          "fr": "Si vous faites déjà vos visuels dans Canva, branchez-le : il marche avec un compte gratuit. Mais il ne vous évite pas Canva Pro : générer un design puise dans votre allocation IA Canva, et redimensionner ou détourer reste payant.",
-          "en": "If you already make your visuals in Canva, plug it in: it works with a free account. But it won't spare you Canva Pro: generating a design uses your Canva AI allowance, and resizing or background removal stay paid.",
+          "fr": "Si vous faites déjà vos visuels dans Canva, branchez le connecteur : il marche avec un compte gratuit. Mais il ne vous dispense pas de Canva Pro : générer un design puise dans votre allocation IA Canva, et redimensionner ou détourer reste payant.",
+          "en": "If you already make your visuals in Canva, plug in the connector: it works with a free account. But it won't spare you Canva Pro: generating a design uses your Canva AI allowance, and resizing or background removal still need a paid plan.",
           "source": "https://www.canva.com/help/mcp-canva-usage/"
         },
         "intro": {
-          "fr": "Canva, c'est le couteau suisse du free qui n'est pas graphiste (et parfois de celui qui l'est). Avec votre assistant branché dessus, le premier jet d'un post ou d'une présentation sort d'une seule phrase. Le mot important, c'est « premier jet » : il vous épargne la page blanche, pas la finition. Et il ne remplace pas Canva Pro, il s'appuie dessus.",
-          "en": "Canva is the Swiss army knife of the freelancer who isn't a designer (and sometimes of the one who is). With your assistant plugged in, the first draft of a post or a deck comes out of a single sentence. The key words are “first draft”: it spares you the blank page, not the finishing. And it doesn't replace Canva Pro, it leans on it."
+          "fr": "Canva, c'est le couteau suisse quand on n'est pas graphiste (et parfois même quand on l'est). Avec votre assistant branché dessus, le premier jet d'un post ou d'une présentation sort d'une seule phrase. Les mots importants, ce sont « premier jet » : il vous épargne la page blanche, pas la finition. Et l'assistant ne remplace pas Canva Pro : il s'appuie dessus.",
+          "en": "Canva is the Swiss army knife for freelancers who aren't designers (and sometimes for those who are). With your assistant plugged in, the first draft of a post or a deck comes out of a single sentence. The key words are “first draft”: it spares you the blank page, not the finishing. And the assistant doesn't replace Canva Pro: it relies on it."
         },
         "situations": [
           {
@@ -2676,8 +2676,8 @@
         "tips": [
           {
             "title": {
-              "fr": "Briefez-le comme un graphiste",
-              "en": "Brief it like a designer"
+              "fr": "Briefez l'assistant comme un graphiste",
+              "en": "Brief the assistant as you would a designer"
             },
             "fr": "Format, couleurs, textes exacts, nom du design : plus la demande est précise, moins vous retouchez. Canva le conseille lui-même.",
             "en": "Format, colours, exact text, design name: the sharper the request, the less you retouch. Canva itself recommends it.",
@@ -2698,19 +2698,19 @@
           },
           {
             "title": {
-              "fr": "Une copie avant de toucher au livré",
+              "fr": "Une copie avant de toucher à un design livré",
               "en": "A copy before touching what you delivered"
             },
             "fr": "Avant de faire modifier un design déjà envoyé au client, demandez une copie : l'original reste intact.",
-            "en": "Before having a design already sent to the client edited, ask for a copy: the original stays intact.",
+            "en": "Before having the assistant edit a design you've already sent to the client, ask for a copy: the original stays intact.",
             "source": "https://www.canva.com/help/mcp-canva-usage/",
             "community": false,
             "icon": "copy"
           },
           {
             "title": {
-              "fr": "Kit de marque rangé, logos en double",
-              "en": "Brand kit in order, logos twice"
+              "fr": "Logos : dans le kit et dans vos fichiers",
+              "en": "Logos: in the kit and in your files"
             },
             "fr": "Couleurs et polices du kit sont bien reprises, mais les logos rangés seulement dans le kit sont souvent oubliés : importez-les aussi dans vos fichiers.",
             "en": "The kit's colours and fonts are picked up, but logos stored only in the kit are often skipped: upload them to your files too.",
@@ -2748,14 +2748,14 @@
           },
           {
             "title": {
-              "fr": "Il puise dans vos crédits Canva",
-              "en": "It draws on your Canva credits"
+              "fr": "La génération puise dans votre allocation IA",
+              "en": "Generating draws on your Canva AI allowance"
             },
             "fr": "Créer un design ou générer une image consomme votre allocation IA Canva ; détourer, redimensionner ou faire de la vidéo demande Canva Pro.",
             "en": "Creating a design or generating an image uses your Canva AI allowance; background removal, resizing or video need Canva Pro.",
             "workaround": {
               "fr": "Gardez la génération pour les premiers jets, puis faites retoucher, copier ou exporter vos designs existants.",
-              "en": "Keep generation for first drafts, then have your existing designs edited, copied or exported."
+              "en": "Save generation for first drafts, then have your existing designs edited, copied or exported."
             },
             "source": "https://www.canva.com/help/mcp-canva-usage/",
             "community": false,
@@ -2770,7 +2770,7 @@
             "en": "Only the designs you pick are saved, and some links look like Canva links but lead nowhere.",
             "workaround": {
               "fr": "Choisissez « Enregistrer » ou « Ouvrir dans Canva » depuis l'aperçu, ou retrouvez le design dans vos projets Canva.",
-              "en": "Choose Save or Open in Canva from the preview, or find the design in your Canva projects."
+              "en": "Choose “Save” or “Open in Canva” from the preview, or find the design in your Canva projects."
             },
             "source": "https://www.canva.com/help/connect-chatgpt-to-canva/",
             "community": false,
@@ -2779,12 +2779,12 @@
           {
             "title": {
               "fr": "Chez un client, son admin décide",
-              "en": "At a client's, their admin decides"
+              "en": "In a client's team, their admin decides"
             },
             "fr": "Dans l'équipe Canva d'un client, l'administrateur peut couper le connecteur : l'action apparaît, puis elle est refusée.",
             "en": "In a client's Canva team, the admin can switch the connector off: the action shows up, then it is refused.",
             "workaround": {
-              "fr": "Demandez au client de l'activer ; dans votre propre équipe, voyez Paramètres > Autorisations > Magic et IA.",
+              "fr": "Demandez au client de l'activer ; dans votre propre équipe, c'est dans Paramètres > Autorisations > Magic et IA.",
               "en": "Ask the client to turn it on; in your own team, see Settings > Permissions > Magic and AI."
             },
             "source": "https://www.canva.com/help/mcp-canva-usage/",
@@ -2819,11 +2819,11 @@
       "category": "project-management",
       "summary": {
         "fr": "Le serveur officiel de ClickUp permet à votre assistant de gérer tâches, documents, commentaires, temps passé et messages, en votre nom et avec vos droits. Il peut mettre une tâche à la corbeille et envoyer des messages de chat ; les appels sont plafonnés selon le forfait.",
-        "en": "ClickUp's official server lets your assistant manage tasks, docs, comments, time and messages, as you and with your rights. It can send a task to Trash and post chat messages; calls are capped by plan."
+        "en": "ClickUp's official server lets your assistant manage tasks, docs, comments, time and messages, in your name and with your permissions. It can send a task to Trash and post chat messages; calls are capped by plan."
       },
       "card": {
         "fr": "Suivre vos tâches, documents et temps passé.",
-        "en": "Follow your tasks, documents and time spent."
+        "en": "Track your tasks, docs and time spent."
       },
       "meta_description": {
         "fr": "Brancher ClickUp à Claude ou ChatGPT : tâches, documents, temps passé et messages, avec vos droits. Corbeille, envoi de messages, plafonds par forfait.",
@@ -2836,7 +2836,7 @@
         },
         {
           "fr": "Crée une tâche « Envoyer le devis » pour vendredi dans ma liste Clients.",
-          "en": "Create a task \"Send the quote\" for Friday in my Clients list."
+          "en": "Create a task “Send the quote” for Friday in my Clients list."
         },
         {
           "fr": "Combien de temps ai-je passé sur ce client ce mois-ci ?",
@@ -2849,7 +2849,7 @@
       },
       "not_for": {
         "fr": "Votre espace est partagé et vous ne voulez aucun message en votre nom : l'assistant peut écrire dans le chat ClickUp.",
-        "en": "Your workspace is shared and you want no message sent in your name: the assistant can write in ClickUp chat."
+        "en": "Your workspace is shared and you don't want any message sent in your name: the assistant can write in ClickUp chat."
       },
       "control": [
         {
@@ -2858,8 +2858,8 @@
             "en": "You sign in through OAuth"
           },
           "icon": "account",
-          "fr": "à la connexion ; ClickUp n'accepte pas de clé API ni de jeton copié à la main.",
-          "en": "when connecting; ClickUp does not accept an API key or a token pasted by hand."
+          "fr": "La connexion passe par OAuth ; ClickUp n'accepte pas de clé API ni de jeton copié à la main.",
+          "en": "Sign-in goes through OAuth; ClickUp does not accept an API key or a token pasted by hand."
         }
       ],
       "plan_words": {
@@ -2868,8 +2868,8 @@
           "en": "Works on every ClickUp plan."
         },
         "advanced": {
-          "fr": "Le nombre de demandes par jour dépend du forfait : 100 sur Free Forever, 300 sur Unlimited, 1 000 sur Business.",
-          "en": "The number of requests per day depends on the plan: 100 on Free Forever, 300 on Unlimited, 1,000 on Business."
+          "fr": "Le nombre d'appels par jour dépend du forfait : 100 sur Free Forever, 300 sur Unlimited, 1 000 sur Business.",
+          "en": "The number of calls per day depends on the plan: 100 on Free Forever, 300 on Unlimited, 1,000 on Business."
         }
       },
       "first_requests": {
@@ -2883,7 +2883,7 @@
             "en": "Who are the members of my workspace?"
           },
           {
-            "fr": "Combien de temps ai-je suivi aujourd'hui ?",
+            "fr": "Combien de temps ai-je saisi aujourd'hui ?",
             "en": "How much time did I track today?"
           }
         ],
@@ -2900,8 +2900,8 @@
       },
       "troubleshoot": [
         {
-          "fr": "Une fois la limite du jour atteinte, il répond « RATE_LIMIT_EXCEEDED » ; elle ne se réinitialise pas, il faut attendre.",
-          "en": "Once the daily limit is reached, it answers “RATE_LIMIT_EXCEEDED”; it cannot be reset, you have to wait."
+          "fr": "Une fois la limite du jour atteinte, le serveur répond « RATE_LIMIT_EXCEEDED » ; elle ne se réinitialise pas, il faut attendre.",
+          "en": "Once the daily limit is reached, the server answers “RATE_LIMIT_EXCEEDED”; the limit cannot be reset, so you have to wait."
         }
       ],
       "verified_on": "2026-11-18",
@@ -3417,12 +3417,12 @@
       "advice": {
         "verdict": {
           "fr": "Si vos projets et vos heures vivent dans ClickUp, branchez-le : votre assistant repère les retards, compte votre temps et crée des tâches à votre place. Gardez l'écriture sous approbation, car il prévient vos collègues et peut écrire dans le chat en votre nom.",
-          "en": "If your projects and hours live in ClickUp, plug it in: your assistant spots what's late, adds up your time and creates tasks for you. Keep writing behind approval, since it notifies your teammates and can post in chat as you.",
+          "en": "If your projects and hours live in ClickUp, plug it in: your assistant spots what's late, adds up your time and creates tasks for you. Keep write actions behind approval, since it notifies your teammates and can post in chat as you.",
           "source": "https://developer.clickup.com/docs/mcp-tools"
         },
         "intro": {
           "fr": "ClickUp, c'est la grande armoire où tout est rangé… et où l'on ne retrouve rien le vendredi soir. Brancher votre assistant, c'est envoyer quelqu'un faire le tour des listes à votre place : retards, heures passées, tâches à créer. Il agit avec votre compte, donc vos collègues voient passer ses notifications comme si elles venaient de vous. Et le nombre d'appels par jour est compté : mieux vaut lui dire où chercher que lui demander « qu'est-ce qui m'attend ? ».",
-          "en": "ClickUp is the big cupboard where everything is filed… and nothing can be found on a Friday evening. Plugging in your assistant sends someone round the lists for you: what's late, hours spent, tasks to create. It acts as your account, so your teammates see its notifications as if they came from you. And daily calls are counted: better to tell it where to look than to ask “what needs my attention?”."
+          "en": "ClickUp is the big cupboard where everything is filed… and nothing can be found on a Friday evening. Plugging in your assistant sends someone round the lists for you: what's late, hours spent, tasks to create. It acts through your account, so your teammates see its notifications as if they came from you. And daily calls are limited: better to tell it where to look than to ask “what needs my attention?”."
         },
         "situations": [
           {
@@ -3448,7 +3448,7 @@
               "en": "Time spent"
             },
             "ask": {
-              "fr": "Combien de temps ai-je suivi sur les tâches du client Martin ce mois-ci, tâche par tâche ?",
+              "fr": "Combien de temps ai-je saisi sur les tâches du client Martin ce mois-ci, tâche par tâche ?",
               "en": "How much time did I track on client Martin's tasks this month, task by task?"
             },
             "gain": {
@@ -3503,7 +3503,7 @@
           {
             "title": {
               "fr": "L'écriture sous votre approbation",
-              "en": "Writing behind your approval"
+              "en": "Write actions need your approval"
             },
             "fr": "Dans les réglages du connecteur, laissez la lecture libre et gardez la création, la modification et l'envoi de messages sur « Approbation requise ».",
             "en": "In the connector's settings, let reading run freely and keep creating, editing and sending messages on “Needs approval”.",
@@ -3544,8 +3544,8 @@
               "fr": "Le plafond du jour",
               "en": "The daily cap"
             },
-            "fr": "Une fois la limite atteinte, il répond par une erreur ; aucun compteur ne prévient avant, et rien ne la remet à zéro.",
-            "en": "Once the limit is hit, it answers with an error; no counter warns you beforehand, and nothing resets it.",
+            "fr": "Une fois la limite atteinte, le serveur répond par une erreur ; aucun compteur ne prévient avant, et rien ne la remet à zéro.",
+            "en": "Once the limit is hit, the server returns an error; no counter warns you beforehand, and nothing resets the limit.",
             "workaround": {
               "fr": "Gardez des demandes ciblées, et attendez que la fenêtre se libère plutôt que d'insister.",
               "en": "Keep requests targeted, and wait for the window to free up rather than retrying."
@@ -3557,7 +3557,7 @@
           {
             "title": {
               "fr": "Relancer, c'est doubler",
-              "en": "Retry means duplicate"
+              "en": "Retrying can mean duplicates"
             },
             "fr": "Redemander une création après une erreur peut donner deux tâches, deux commentaires, ou du temps compté deux fois.",
             "en": "Asking again after an error can give you two tasks, two comments, or time counted twice.",
@@ -3574,8 +3574,8 @@
               "fr": "Champs personnalisés mal filtrés",
               "en": "Custom fields poorly filtered"
             },
-            "fr": "Un utilisateur signale qu'il filtre par liste, statut ou étiquette, mais pas par champ personnalisé, et qu'il doit alors vérifier les tâches une à une.",
-            "en": "One user reports it filters by list, status or tag, but not by custom field, so it ends up checking tasks one by one.",
+            "fr": "Un utilisateur signale que l'assistant filtre par liste, statut ou étiquette, mais pas par champ personnalisé, et qu'il doit alors vérifier les tâches une à une.",
+            "en": "One user reports that the assistant filters by list, status or tag, but not by custom field, so it ends up checking tasks one by one.",
             "workaround": {
               "fr": "Pour ce genre de tri, préférez une vue filtrée dans ClickUp, ou une étiquette qui reprend l'information.",
               "en": "For that kind of sorting, use a filtered view in ClickUp, or a tag that carries the same information."
@@ -3650,7 +3650,7 @@
       "control": [
         {
           "title": {
-            "fr": "Seulement application ouverte",
+            "fr": "Seulement quand l'application est ouverte",
             "en": "Only while the app is open"
           },
           "icon": "limit",
@@ -3683,7 +3683,7 @@
       "troubleshoot": [
         {
           "fr": "Si rien n'apparaît, vérifiez que le serveur est toujours activé dans l'application Figma.",
-          "en": "If nothing shows, check that the server is still on in the Figma app."
+          "en": "If nothing shows up, check that the server is still on in the Figma app."
         },
         {
           "fr": "Avec VS Code, redémarrez Figma et VS Code.",
@@ -3833,7 +3833,7 @@
       ],
       "advice": {
         "verdict": {
-          "fr": "Réservé à ceux qui codent dans Claude Code, Cursor ou VS Code avec l'application Figma ouverte à côté : l'assistant lit la frame que vous sélectionnez, sans jamais toucher à la maquette. Pour tout le reste, Figma recommande lui-même son serveur en ligne.",
+          "fr": "Réservé aux personnes qui codent dans Claude Code, Cursor ou VS Code avec l'application Figma ouverte à côté : l'assistant lit la frame que vous sélectionnez, sans jamais toucher à la maquette. Pour tout le reste, Figma recommande lui-même son serveur en ligne.",
           "en": "Only for people who code in Claude Code, Cursor or VS Code with the Figma app open alongside: the assistant reads the frame you select, without ever touching the mockup. For everything else, Figma itself recommends its online server.",
           "source": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/"
         },
@@ -3933,7 +3933,7 @@
               "fr": "Lecture seule, par construction",
               "en": "Read only, by design"
             },
-            "fr": "Il ne peut ni dessiner ni modifier vos maquettes : vous pouvez l'ouvrir sur celle validée par le client sans trembler.",
+            "fr": "Il ne peut ni dessiner ni modifier vos maquettes : vous pouvez lui confier celle que le client a validée, sans trembler.",
             "en": "It can neither draw nor edit your mockups: you can point it at the one your client signed off without a second thought.",
             "source": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/",
             "community": false,
@@ -3965,7 +3965,7 @@
             "en": "Figma documents connecting it from Claude Code, Codex, Cursor and VS Code, not from chat apps.",
             "workaround": {
               "fr": "Si vous travaillez dans Claude ou un autre assistant de conversation, prenez le serveur en ligne.",
-              "en": "If you work in Claude or another chat assistant, take the online server."
+              "en": "If you work in Claude or another chat assistant, use the online server."
             },
             "source": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/",
             "community": false,
@@ -3980,7 +3980,7 @@
             "en": "One user reports the server showed as on in Figma while nothing answered on the assistant's side, even after restarting.",
             "workaround": {
               "fr": "Figma suggère de vérifier qu'un outil de sécurité de l'entreprise ne bloque pas le serveur, ou de passer au serveur en ligne en attendant.",
-              "en": "Figma suggests checking that company security software isn't blocking the server, or switching to the online server meanwhile."
+              "en": "Figma suggests checking that company security software isn't blocking the server, or switching to the online server in the meantime."
             },
             "source": "https://forum.figma.com/report-a-problem-6/dev-mode-mcp-server-shows-connected-but-isn-t-actually-working-57726",
             "community": true,
@@ -4012,8 +4012,8 @@
       "host_tool": "figma",
       "category": "design-tools",
       "summary": {
-        "fr": "Le serveur distant de Figma donne à votre assistant le contexte de vos designs (composants, variables, mise en page) et, en bêta, le droit de créer et de modifier dans vos fichiers. C'est le serveur à préférer : rien à installer.",
-        "en": "Figma's remote server gives your assistant your designs' context (components, variables, layout) and, in beta, the ability to create and edit in your files. It is the one to prefer: nothing to install."
+        "fr": "Le serveur en ligne de Figma donne à votre assistant le contexte de vos designs (composants, variables, mise en page) et, en bêta, le droit de créer et de modifier dans vos fichiers. C'est le serveur à préférer : rien à installer.",
+        "en": "Figma's online server gives your assistant your designs' context (components, variables, layout) and, in beta, the ability to create and edit in your files. It is the one to prefer: nothing to install."
       },
       "card": {
         "fr": "Lire vos maquettes et en créer, en ligne.",
@@ -4048,8 +4048,8 @@
             "en": "Your files, no more"
           },
           "icon": "account",
-          "fr": "Il n'accède qu'aux fichiers Figma auxquels votre compte a déjà accès.",
-          "en": "It only reaches the Figma files your account already has access to."
+          "fr": "Le serveur n'accède qu'aux fichiers Figma auxquels votre compte a déjà accès.",
+          "en": "The server only reaches the Figma files your account already has access to."
         }
       ],
       "plan_words": {
@@ -4058,8 +4058,8 @@
           "en": "Works on every Figma plan."
         },
         "advanced": {
-          "fr": "Lire un fichier compte dans une limite : 20 demandes par mois avec un siège View ou Collab, jusqu'à 200 par jour avec un siège Full ou Dev en Professional. Écrire dans les fichiers est gratuit pendant la bêta, payant à l'usage ensuite.",
-          "en": "Reading a file counts towards a limit: 20 requests a month with a View or Collab seat, up to 200 a day with a Full or Dev seat on Professional. Writing to files is free during the beta, usage-based later."
+          "fr": "Les lectures de fichiers sont plafonnées : 20 appels par mois avec un siège View ou Collab, jusqu'à 200 par jour avec un siège Full ou Dev en Professional. Écrire dans les fichiers est gratuit pendant la bêta, payant à l'usage ensuite.",
+          "en": "File reads are capped: 20 calls a month with a View or Collab seat, up to 200 a day with a Full or Dev seat on Professional. Writing to files is free during the beta, usage-based later."
         }
       },
       "first_requests": {
@@ -4098,8 +4098,8 @@
           "en": "The file must belong to your account's plan."
         },
         {
-          "fr": "Dans une organisation, l'administrateur peut avoir bloqué l'installation.",
-          "en": "In an organisation, the admin may have blocked the install."
+          "fr": "Dans une organisation, l'administrateur peut avoir bloqué l'ajout du serveur.",
+          "en": "In an organisation, the admin may have blocked adding the server."
         }
       ],
       "verified_on": "2026-11-16",
@@ -4107,7 +4107,7 @@
       "access": "read_write",
       "plan": "all",
       "plan_note": {
-        "fr": "Tous les forfaits, mais 20 appels par mois sur le forfait Starter et les sièges View ou Collab ; 200 par jour avec un siège Full ou Dev payant. Écrire hors de ses brouillons demande un siège Full.",
+        "fr": "Tous les forfaits, mais 20 appels par mois sur le forfait Starter et les sièges View ou Collab ; 200 par jour avec un siège Full ou Dev payant. Écrire hors de vos brouillons demande un siège Full.",
         "en": "All plans, but 20 tool calls per month on the Starter plan and on View or Collab seats; 200 per day with a paid Full or Dev seat. Writing outside your drafts requires a Full seat."
       },
       "capabilities": [
@@ -4451,7 +4451,7 @@
       "advice": {
         "verdict": {
           "fr": "C'est la version à choisir par défaut : rien à installer, elle marche depuis Claude comme depuis un éditeur de code, et c'est la seule qui peut dessiner dans vos fichiers. Gardez en tête que l'écriture est en bêta : ce qu'elle produit se relit avant de partir chez le client.",
-          "en": "This is the version to pick by default: nothing to install, it works from Claude as well as from a code editor, and it's the only one that can draw in your files. Bear in mind that writing is in beta: what it produces gets reviewed before it reaches a client.",
+          "en": "This is the version to pick by default: nothing to install, it works from Claude as well as from a code editor, and it's the only one that can draw in your files. Bear in mind that writing is in beta: what it produces needs reviewing before it reaches a client.",
           "source": "https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Figma-MCP-server"
         },
         "intro": {
@@ -4469,7 +4469,7 @@
               "en": "Here's the link to this frame: describe its components, colours and the variables it uses, for the client's developer."
             },
             "gain": {
-              "fr": "Une fiche technique sans la rédiger.",
+              "fr": "Une fiche technique, sans avoir à la rédiger.",
               "en": "A spec sheet you didn't have to write."
             },
             "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
@@ -4515,7 +4515,7 @@
           {
             "title": {
               "fr": "Copiez le lien de la sélection",
-              "en": "Copy the link to selection"
+              "en": "Copy the selection link"
             },
             "fr": "Clic droit sur la frame, « Copier le lien vers la sélection », puis collez-le dans votre demande. L'assistant n'ouvre pas le lien, il en tire juste l'adresse de la frame.",
             "en": "Right-click the frame, “Copy link to selection”, then paste it into your request. The assistant doesn't open the link, it just reads the frame's address from it.",
@@ -4540,7 +4540,7 @@
               "en": "On a copy first"
             },
             "fr": "Essayez sur un brouillon ou un double du fichier avant de toucher à la maquette validée par le client. Figma le conseille lui-même.",
-            "en": "Try it on a draft or a duplicate before touching the mockup your client signed off. Figma advises it too.",
+            "en": "Try it on a draft or a duplicate before touching the mockup your client signed off. Figma itself recommends this.",
             "source": "https://developers.figma.com/docs/figma-mcp-server/write-to-canvas",
             "community": false,
             "icon": "draft"
@@ -4551,7 +4551,7 @@
               "en": "Big file: outline first"
             },
             "fr": "Sur une grande maquette, demandez d'abord la structure, puis le détail d'une partie seulement. D'un bloc, il en reçoit trop.",
-            "en": "On a large mockup, ask for the structure first, then the detail of one part only. In one go, it gets too much at once.",
+            "en": "On a large mockup, ask for the structure first, then the detail of one part only. All in one go, it gets too much.",
             "source": "https://developers.figma.com/docs/figma-mcp-server/tools-and-prompts/",
             "community": false,
             "icon": "refine"
@@ -4574,8 +4574,8 @@
               "fr": "Bêta : à relire",
               "en": "Beta: needs review"
             },
-            "fr": "Figma prévient que ce qu'il dessine peut demander une relecture et du nettoyage à la main.",
-            "en": "Figma warns that what it draws may need manual review and cleanup.",
+            "fr": "Figma prévient que ce que dessine l'assistant peut demander une relecture et du nettoyage à la main.",
+            "en": "Figma warns that what the assistant draws may need manual review and cleanup.",
             "workaround": {
               "fr": "Ouvrez le fichier dans Figma après chaque étape et corrigez par petites demandes, dans la même conversation.",
               "en": "Open the file in Figma after each step and fix things with small requests, in the same chat."
@@ -4701,8 +4701,8 @@
         "en": "You track your site in Google Analytics and want answers without building a report."
       },
       "not_for": {
-        "fr": "Vous voulez un branchement en un clic : il s'installe sur votre ordinateur, avec Python et des identifiants Google Cloud.",
-        "en": "You want a one-click setup: it is installed on your computer, with Python and Google Cloud credentials."
+        "fr": "Vous voulez un branchement en un clic : ce serveur s'installe sur votre ordinateur, avec Python et des identifiants Google Cloud.",
+        "en": "You want a one-click setup: this server is installed on your computer, with Python and Google Cloud credentials."
       },
       "control": [
         {
@@ -4711,7 +4711,7 @@
             "en": "Read only"
           },
           "icon": "read",
-          "fr": "Il ne fait que lire : l'accès demandé est la lecture seule de vos données Analytics.",
+          "fr": "Il ne fait que lire : il ne demande qu'un accès en lecture seule à vos données Analytics.",
           "en": "It only reads: the access requested is read-only on your Analytics data."
         },
         {
@@ -4836,7 +4836,7 @@
         }
       ],
       "tools_note": {
-        "fr": "La documentation Google dit le serveur en lecture seule ; le dépôt officiel décrit aussi trois outils d'écriture facultatifs, désactivés par défaut. Seule la liste Google est reprise ici.",
+        "fr": "La documentation Google présente le serveur comme en lecture seule ; le dépôt officiel décrit aussi trois outils d'écriture facultatifs, désactivés par défaut. Seule la liste de Google est reprise ici.",
         "en": "Google's documentation says the server is read-only; the official repository also describes three optional write tools, off by default. Only Google's list is shown here."
       },
       "install": [
@@ -5067,11 +5067,11 @@
       "host_tool": "hubspot",
       "category": "crm",
       "summary": {
-        "fr": "Le serveur officiel de HubSpot ouvre à votre assistant le CRM, les campagnes, le contenu et les publications sociales. Les créations et modifications demandent une confirmation explicite, et aucune suppression n'est documentée.",
-        "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating and editing require explicit confirmation, and no deletion is documented."
+        "fr": "Le serveur officiel de HubSpot ouvre à votre assistant le CRM, les campagnes, le contenu et les publications sociales. La création ou la modification d'une fiche du CRM demande une confirmation explicite, et aucune suppression n'est documentée.",
+        "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating or editing a CRM record requires explicit confirmation, and no deletion is documented."
       },
       "card": {
-        "fr": "Mettre à jour votre CRM et vos campagnes.",
+        "fr": "Consulter et mettre à jour CRM et campagnes.",
         "en": "Read and update your CRM and campaigns."
       },
       "meta_description": {
@@ -5125,8 +5125,8 @@
             "en": "Your records, no more"
           },
           "icon": "limit",
-          "fr": "Il ne voit que les fiches auxquelles votre utilisateur a accès.",
-          "en": "It only sees the records your user can access."
+          "fr": "Il ne voit que les fiches auxquelles votre compte utilisateur a accès.",
+          "en": "It only sees the records your user account can access."
         }
       ],
       "plan_words": {
@@ -5167,12 +5167,12 @@
       },
       "troubleshoot": [
         {
-          "fr": "Les outils disponibles dépendent de votre abonnement et de vos droits : demandez-lui de vérifier votre compte (outil get_user_details).",
-          "en": "The tools available depend on your subscription and rights: ask it to check your account (get_user_details tool)."
+          "fr": "Les outils disponibles dépendent de votre abonnement et de vos droits : demandez à l'assistant de vérifier votre compte (outil get_user_details).",
+          "en": "The tools available depend on your subscription and rights: ask the assistant to check your account (get_user_details tool)."
         },
         {
-          "fr": "Après l'ajout d'autorisations, reconnectez l'application.",
-          "en": "After permissions are added, reconnect the app."
+          "fr": "Après l'ajout d'autorisations, reconnectez le connecteur.",
+          "en": "After permissions are added, reconnect the connector."
         }
       ],
       "verified_on": "2026-11-16",
@@ -5184,8 +5184,8 @@
       "access": "read_write",
       "plan": "all",
       "plan_note": {
-        "fr": "Utilisable avec les outils gratuits ; certains outils exigent Marketing Hub ou Revenue Hub Professional ou Enterprise.",
-        "en": "Works with free tools; some tools require Marketing Hub or Revenue Hub Professional or Enterprise."
+        "fr": "Utilisable avec les outils gratuits ; certains outils exigent Marketing Hub ou Revenue Hub, en version Professional ou Enterprise.",
+        "en": "Works with free tools; some tools require Marketing Hub or Revenue Hub, on Professional or Enterprise."
       },
       "capabilities": [
         {
@@ -5466,7 +5466,7 @@
           "source": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server"
         },
         "intro": {
-          "fr": "Un CRM, c'est un carnet d'adresses avec mauvaise conscience : on sait qu'il faudrait noter chaque appel, et on ne le fait jamais. Avec votre assistant branché sur HubSpot, la note se dicte en une phrase, et « où en est ce devis ? » trouve sa réponse sans fouiller. Il voit ce que vous voyez, pas plus, et il ne supprime rien. Reste à garder la main sur ce qu'il écrit, et à savoir quelles portes restent fermées.",
+          "fr": "Un CRM, c'est un carnet d'adresses avec mauvaise conscience : on sait qu'il faudrait noter chaque appel, et on ne le fait jamais. Avec votre assistant branché sur HubSpot, la note se dicte en une phrase, et « où en est ce devis ? » trouve sa réponse sans fouiller. Il voit ce que vous voyez, pas plus, et il ne supprime rien. Reste à garder la main sur ce qu'il écrit, et à savoir quelles portes lui sont fermées.",
           "en": "A CRM is an address book with a guilty conscience: you know every call should be logged, and it never is. With your assistant plugged into HubSpot, the note takes one sentence and “where's that quote at?” gets answered without digging. It sees what you see, nothing more, and it deletes nothing. What's left is keeping an eye on what it writes, and knowing which doors stay shut."
         },
         "situations": [
@@ -5476,7 +5476,7 @@
               "en": "After a call"
             },
             "ask": {
-              "fr": "Ajoute une note à la fiche de Claire Martin : elle valide le devis, et crée-moi une tâche pour la relancer mardi.",
+              "fr": "Ajoute une note à la fiche de Claire Martin : « Elle valide le devis. » Puis crée-moi une tâche pour la relancer mardi.",
               "en": "Add a note to Claire Martin's record: she's approving the quote. And create a task to follow up with her on Tuesday."
             },
             "gain": {
@@ -5529,7 +5529,7 @@
               "en": "Writing behind approval"
             },
             "fr": "HubSpot le recommande lui-même : réglez les outils d'écriture sur « Approbation requise ». En « Toujours autoriser », les modifications passent sans vous demander.",
-            "en": "HubSpot recommends it itself: set write tools to “Needs approval”. On “Always allow”, edits go through without asking you.",
+            "en": "HubSpot itself recommends it: set write tools to “Needs approval”. On “Always allow”, edits go through without asking you.",
             "source": "https://knowledge.hubspot.com/integrations/connect-your-hubspot-account-to-chatgpt",
             "community": false,
             "icon": "approve"
@@ -5577,8 +5577,8 @@
             "fr": "Un compte Claude ne se branche qu'à un compte HubSpot à la fois. Si vous travaillez dans le HubSpot de plusieurs clients, il faut jongler.",
             "en": "A Claude account connects to one HubSpot account at a time. If you work in several clients' HubSpot, expect some juggling.",
             "workaround": {
-              "fr": "Déconnectez puis reconnectez le bon compte avant de changer de client, et demandez-lui en début de conversation quel compte il voit.",
-              "en": "Disconnect and reconnect the right account before switching clients, and ask it which account it sees at the start of the chat."
+              "fr": "Déconnectez puis reconnectez le bon compte avant de changer de client, et demandez à l'assistant en début de conversation quel compte il voit.",
+              "en": "Disconnect and reconnect the right account before switching clients, and ask the assistant which account it sees at the start of the chat."
             },
             "source": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude",
             "community": false,
@@ -5619,7 +5619,7 @@
               "fr": "Données sensibles, conversations fermées",
               "en": "Sensitive Data, inbox closed"
             },
-            "fr": "Si les données sensibles sont activées sur le compte, il ne peut plus lire les conversations de la boîte de réception.",
+            "fr": "Si l'option « Données sensibles » est activée sur le compte, il ne peut plus lire les conversations de la boîte de réception.",
             "en": "If Sensitive Data is turned on for the account, it can no longer read inbox conversations.",
             "workaround": {
               "fr": "Pour résumer un échange avec un client, ouvrez la conversation dans HubSpot et collez l'essentiel dans votre demande.",
@@ -5659,8 +5659,8 @@
       "host_tool": "make",
       "category": "automation",
       "summary": {
-        "fr": "Le serveur officiel de Make transforme vos scénarios actifs en actions que votre assistant peut lancer ; sur un forfait payant, il peut aussi consulter et modifier scénarios, connexions et data stores. Make ne publie pas de liste nominative d'outils : ils dépendent de vos scénarios et des portées choisies.",
-        "en": "Make's official server turns your active scenarios into actions your assistant can run; on a paid plan it can also view and edit scenarios, connections and data stores. Make publishes no named tool list: tools depend on your scenarios and the scopes you grant."
+        "fr": "Le serveur officiel de Make transforme vos scénarios actifs en actions que votre assistant peut lancer ; sur un forfait payant, il peut aussi consulter et modifier scénarios, connexions et data stores. Make ne publie pas de liste nominative d'outils : ils dépendent de vos scénarios et des autorisations choisies.",
+        "en": "Make's official server turns your active scenarios into actions your assistant can run; on a paid plan it can also view and edit scenarios, connections and data stores. Make publishes no named tool list: tools depend on your scenarios and the permissions you grant."
       },
       "card": {
         "fr": "Lancer vos scénarios Make en une phrase.",
@@ -5704,7 +5704,7 @@
             "en": "A single organisation"
           },
           "icon": "limit",
-          "fr": "Avec la connexion au compte, vous pouvez limiter l'accès à une seule organisation Make.",
+          "fr": "En vous connectant avec votre compte Make, vous pouvez limiter l'accès à une seule organisation.",
           "en": "With account sign-in, you can limit access to a single Make organisation."
         },
         {
@@ -5719,12 +5719,12 @@
       ],
       "plan_words": {
         "common": {
-          "fr": "Lancer vos scénarios : sur tous les forfaits Make.",
-          "en": "Running your scenarios: on every Make plan."
+          "fr": "Lancer vos scénarios est possible sur tous les forfaits Make.",
+          "en": "Running your scenarios works on every Make plan."
         },
         "advanced": {
           "fr": "En plus, sur les forfaits payants : gérer vos scénarios, connexions et data stores.",
-          "en": "On top, on paid plans: managing your scenarios, connections and data stores."
+          "en": "Plus, on paid plans: managing your scenarios, connections and data stores."
         }
       },
       "first_requests": {
@@ -5751,8 +5751,8 @@
       },
       "troubleshoot": [
         {
-          "fr": "Au-delà de 25 secondes, la réponse s'arrête mais le scénario continue jusqu'à 40 minutes dans Make : demandez le résultat ensuite.",
-          "en": "Past 25 seconds the answer stops but the scenario keeps running for up to 40 minutes in Make: ask for the result afterwards."
+          "fr": "Au-delà de 25 secondes, l'assistant n'attend plus la réponse, mais le scénario continue jusqu'à 40 minutes dans Make : demandez le résultat ensuite.",
+          "en": "Past 25 seconds the assistant stops waiting for the answer, but the scenario keeps running for up to 40 minutes in Make: ask for the result afterwards."
         },
         {
           "fr": "Un scénario n'apparaît que s'il est actif et planifié « à la demande ».",
@@ -5768,14 +5768,14 @@
       "access": "read_write",
       "plan": "all",
       "plan_note": {
-        "fr": "Lancer des scénarios : tous les forfaits. Modifier les scénarios (portées de gestion) : forfaits payants.",
-        "en": "Running scenarios: every plan. Editing scenarios (management scopes): paid plans."
+        "fr": "Lancer des scénarios : tous les forfaits. Modifier les scénarios (autorisations de gestion) : forfaits payants.",
+        "en": "Running scenarios: every plan. Editing scenarios (management permissions): paid plans."
       },
       "capabilities": [
         {
           "kind": "read",
-          "fr": "Consulter scénarios, équipes, connexions, webhooks et data stores",
-          "en": "View scenarios, teams, connections, webhooks and data stores"
+          "fr": "Consulter scénarios, équipes, connexions, webhooks et data stores (forfaits payants)",
+          "en": "View scenarios, teams, connections, webhooks and data stores (paid plans)"
         },
         {
           "kind": "write",
@@ -5811,8 +5811,8 @@
         }
       ],
       "tools_note": {
-        "fr": "Make ne nomme pas ses outils : ils sont générés depuis vos scénarios et les portées accordées.",
-        "en": "Make does not name its tools: they are generated from your scenarios and granted scopes."
+        "fr": "Make ne nomme pas ses outils : ils sont générés depuis vos scénarios et les autorisations accordées.",
+        "en": "Make does not name its tools: they are generated from your scenarios and granted permissions."
       },
       "install": [
         {
@@ -5899,7 +5899,7 @@
           "source": "https://help.make.com/make-mcp-server"
         },
         "intro": {
-          "fr": "Make, c'est l'atelier où vous avez bricolé vos automatisations un dimanche, et que vous n'osez plus trop rouvrir. Le serveur MCP en fait une télécommande : votre assistant appuie sur le bouton à votre place et lui passe les bonnes infos. Mais il n'appuie que sur les boutons que vous avez préparés, et il les comprend aussi bien que vous les avez décrits. Voici comment lui faciliter la tâche.",
+          "fr": "Make, c'est l'atelier où vous avez bricolé vos automatisations un dimanche, et que vous n'osez plus trop rouvrir. Le serveur MCP en fait une télécommande : votre assistant appuie sur le bouton à votre place et transmet les bonnes infos au scénario. Mais il n'appuie que sur les boutons que vous avez préparés, et il les comprend aussi bien que vous les avez décrits. Voici comment lui faciliter la tâche.",
           "en": "Make is the workshop where you tinkered with your automations one Sunday, and which you'd rather not reopen. The MCP server turns it into a remote control: your assistant presses the button for you and hands over the right details. But it only presses the buttons you've prepared, and it understands them only as well as you've described them. Here's how to make its job easy."
         },
         "situations": [
@@ -5944,7 +5944,7 @@
             },
             "ask": {
               "fr": "Où en est le scénario de rapport mensuel lancé tout à l'heure ? Donne-moi son résultat.",
-              "en": "Where's the monthly report scenario you started earlier? Give me its result."
+              "en": "What's the status of the monthly report scenario you started earlier? Give me its result."
             },
             "gain": {
               "fr": "Le résultat, même quand c'est long.",
@@ -5962,7 +5962,7 @@
               "en": "Describe your scenarios"
             },
             "fr": "Make le dit : une description détaillée aide l'assistant à choisir le bon scénario. « Scénario 7 copie » ne lui dit rien, à vous non plus.",
-            "en": "Make says so: a detailed description helps the assistant pick the right scenario. “Scenario 7 copy” tells it nothing, and you neither.",
+            "en": "Make says so: a detailed description helps the assistant pick the right scenario. “Scenario 7 copy” tells it nothing, and tells you nothing either.",
             "source": "https://developers.make.com/mcp-server/",
             "community": false,
             "icon": "brief"
@@ -6016,7 +6016,7 @@
           {
             "title": {
               "fr": "Scénario long, réponse perdue",
-              "en": "Long scenarios lose it"
+              "en": "Long scenario, lost answer"
             },
             "fr": "Passé un court délai, l'assistant n'attend plus la réponse, même si le scénario continue de tourner dans Make.",
             "en": "After a short wait, the assistant stops waiting for the answer, even though the scenario keeps running in Make.",
@@ -6161,14 +6161,14 @@
             "en": "The admin sets the frame"
           },
           "icon": "admin",
-          "fr": "En Enterprise, l'administrateur l'ouvre à toute l'organisation ou à certaines équipes : Paramètres d'administration, Apps et intégrations, MCP.",
-          "en": "On Enterprise, the admin opens it to the whole organisation or some teams: Admin settings, Apps and integrations, MCP."
+          "fr": "En Enterprise, l'administrateur l'ouvre à toute l'organisation ou à certaines équipes, dans Paramètres d'administration › Apps et intégrations › MCP.",
+          "en": "On Enterprise, the admin opens it to the whole organisation or some teams, under Admin settings › Apps and integrations › MCP."
         }
       ],
       "plan_words": {
         "common": {
           "fr": "Fonctionne sur tous les forfaits Miro, y compris les équipes gratuites.",
-          "en": "Works on every Miro plan, free teams included."
+          "en": "Works on every Miro plan, including free teams."
         },
         "advanced": {
           "fr": "En Enterprise, un administrateur doit d'abord l'autoriser.",
@@ -6223,7 +6223,7 @@
       "access": "read_write",
       "plan": "all",
       "plan_note": {
-        "fr": "Tous les forfaits. Sur Enterprise, désactivé par défaut jusqu'à activation par un administrateur.",
+        "fr": "Tous les forfaits. En Enterprise, désactivé par défaut jusqu'à activation par un administrateur.",
         "en": "All plans. On Enterprise, off by default until an admin turns it on."
       },
       "capabilities": [
@@ -6321,7 +6321,7 @@
         {
           "name": "board_create_format",
           "kind": "write",
-          "fr": "Créer un tableau, une frise ou un kanban",
+          "fr": "Créer une table, une frise ou un kanban",
           "en": "Create a table, timeline or kanban"
         },
         {
@@ -6640,7 +6640,7 @@
         },
         "intro": {
           "fr": "Miro, c'est le tableau blanc où l'atelier client a laissé trois cents post-it et zéro compte rendu. Brancher votre assistant, c'est enfin avoir quelqu'un pour tout relire et en sortir les décisions. Il sait aussi monter un tableau neuf, cadre par cadre, mais le premier jet demande souvent une ou deux retouches. Et comme il agit avec vos droits, il peut ouvrir un tableau à d'autres : on en reparle plus bas.",
-          "en": "Miro is the whiteboard where the client workshop left three hundred sticky notes and zero minutes. Plugging in your assistant finally gives you someone to read it all and pull out the decisions. It can also build a fresh board, frame by frame, but the first draft often needs a pass or two. And since it acts with your rights, it can open a board to other people: more on that below."
+          "en": "Miro is the whiteboard where the client workshop left three hundred sticky notes and no write-up. Plugging in your assistant finally gives you someone to read it all and pull out the decisions. It can also build a fresh board, frame by frame, but the first draft often needs a pass or two. And since it acts with your rights, it can open a board to other people: more on that below."
         },
         "situations": [
           {
@@ -6687,8 +6687,8 @@
               "en": "List the comments still open on this board, and mark as resolved the ones I point out."
             },
             "gain": {
-              "fr": "Les retours triés, les fils refermés.",
-              "en": "Comments sorted, threads closed."
+              "fr": "Vous voyez ce qui reste à traiter.",
+              "en": "You see what's left to handle."
             },
             "source": "https://developers.miro.com/docs/miro-mcp-tools",
             "icon": "chat",
@@ -6837,7 +6837,7 @@
       "category": "organization",
       "summary": {
         "fr": "Le serveur officiel de Notion donne à votre assistant l'accès à vos pages, bases de données, commentaires, fichiers et agenda Notion. Il peut lire, créer, modifier et mettre à la corbeille, toujours dans la limite de vos droits.",
-        "en": "Notion's official server gives your assistant access to your Notion pages, databases, comments, files and calendar. It can read, create, edit and move to trash, always within your own rights."
+        "en": "Notion's official server gives your assistant access to your Notion pages, databases, comments, files and calendar. It can read, create, edit and move things to trash, always within your own permissions."
       },
       "card": {
         "fr": "Retrouver, résumer et créer des pages dans Notion.",
@@ -6866,7 +6866,7 @@
         "en": "You already keep your notes, clients or projects in Notion and lose time finding them again."
       },
       "not_for": {
-        "fr": "Vous êtes invité dans l'espace d'un client : les invités ne peuvent pas se connecter.",
+        "fr": "Vous n'avez qu'un accès invité dans l'espace d'un client : les invités ne peuvent pas se connecter.",
         "en": "You are a guest in a client's workspace: guests cannot connect."
       },
       "control": [
@@ -6881,8 +6881,8 @@
         },
         {
           "title": {
-            "fr": "L'administrateur encadre",
-            "en": "The admin sets the frame"
+            "fr": "Un administrateur fixe les limites",
+            "en": "An admin sets the limits"
           },
           "icon": "admin",
           "fr": "dans les contrôles d'administration de Notion.",
@@ -6891,11 +6891,11 @@
         {
           "title": {
             "fr": "Vous coupez quand vous voulez",
-            "en": "You cut whenever you want"
+            "en": "You can cut it off anytime"
           },
           "icon": "cut",
-          "fr": "« Déconnecter » ou « Effacer l'authentification » dans les réglages de l'assistant.",
-          "en": "“Disconnect” or “Clear authentication” in the assistant's settings."
+          "fr": "avec « Déconnecter » ou « Effacer l'authentification » dans les réglages de l'assistant.",
+          "en": "with “Disconnect” or “Clear authentication” in the assistant's settings."
         }
       ],
       "plan_words": {
@@ -6904,8 +6904,8 @@
           "en": "Works on every Notion plan."
         },
         "advanced": {
-          "fr": "En plus, sur Business et Enterprise : connexion sans passer par le navigateur (utile aux outils de développeur) et recherche dans les outils reliés à Notion, avec Notion AI.",
-          "en": "On top, on Business and Enterprise: connecting without a browser (useful for developer tools) and searching the tools linked to Notion, with Notion AI."
+          "fr": "En plus, sur Business et Enterprise : connexion sans passer par le navigateur (utile aux outils de développeur) et recherche dans les sources connectées à Notion, avec Notion AI.",
+          "en": "On top of that, on Business and Enterprise: connecting without a browser (useful for developer tools) and searching connected sources, with Notion AI."
         }
       },
       "first_requests": {
@@ -6926,7 +6926,7 @@
         "write": {
           "ask": {
             "fr": "Ajoute un commentaire « À relire » sur une page de test.",
-            "en": "Add a comment “To review” on a test page."
+            "en": "Add a “To review” comment to a test page."
           },
           "check": {
             "fr": "Ouvrez la page dans Notion : le commentaire y est, à votre nom.",
@@ -6940,8 +6940,8 @@
           "en": "Check your rights in the Notion workspace you target: the assistant only does what your account allows."
         },
         {
-          "fr": "Dans une entreprise, un administrateur peut interdire l'ajout de nouveaux branchements à l'assistant.",
-          "en": "In a company, an admin may forbid adding new connections to the assistant."
+          "fr": "Dans une entreprise, un administrateur peut interdire d'ajouter de nouveaux connecteurs à l'assistant.",
+          "en": "In a company, an admin may block adding new connectors to the assistant."
         }
       ],
       "verified_on": "2026-11-16",
@@ -7524,7 +7524,7 @@
             },
             "gain": {
               "fr": "L'historique en tête avant l'appel.",
-              "en": "The history in mind before the call."
+              "en": "The full history fresh in your mind before the call."
             },
             "source": "https://developers.notion.com/guides/mcp/overview",
             "icon": "meeting",
@@ -7569,9 +7569,9 @@
           {
             "title": {
               "fr": "Des titres qui parlent",
-              "en": "Titles that speak"
+              "en": "Titles that say something"
             },
-            "fr": "Client, type de document, date : l'assistant s'appuie sur les titres pour comprendre ce qu'il trouve. « Notes 3 » ne l'aidera pas plus que vous.",
+            "fr": "Client, type de document, date : l'assistant s'appuie sur les titres pour comprendre ce qu'il trouve. « Notes 3 » ne l'aidera pas plus qu'il ne vous aide.",
             "en": "Client, document type, date: the assistant relies on titles to understand what it finds. “Notes 3” won't help it any more than it helps you.",
             "source": "https://www.notion.com/help/notion-mcp",
             "community": false,
@@ -7582,8 +7582,8 @@
               "fr": "Une base par sujet, reliées entre elles",
               "en": "One database per subject, linked together"
             },
-            "fr": "Clients, projets, factures, chacun dans sa base, avec les tâches reliées aux pages client : c'est ce qui lui permet de vous résumer l'avancement et les blocages.",
-            "en": "Clients, projects, invoices, each in its own database, with tasks linked to client pages: that is what lets it sum up progress and blockers for you.",
+            "fr": "Clients, projets, factures, chacun dans sa base, avec les tâches reliées aux pages client : c'est ce qui permet à l'assistant de vous résumer l'avancement et les blocages.",
+            "en": "Clients, projects, invoices, each in its own database, with tasks linked to client pages: that is what lets the assistant sum up progress and blockers for you.",
             "source": "https://developers.notion.com/guides/mcp/overview",
             "community": false,
             "icon": "database"
@@ -7604,8 +7604,8 @@
               "fr": "Sur une page client, une suggestion plutôt qu'une réécriture",
               "en": "On a client page, a suggestion rather than a rewrite"
             },
-            "fr": "Demandez-lui de proposer une modification : vous l'acceptez dans Notion, et le texte que lit votre client reste le vôtre.",
-            "en": "Ask it to suggest an edit: you accept it in Notion, and the text your client reads stays yours.",
+            "fr": "Demandez à l'assistant de proposer une modification : vous l'acceptez dans Notion, et le texte que lit votre client reste le vôtre.",
+            "en": "Ask the assistant to suggest an edit: you accept it in Notion, and the text your client reads stays yours.",
             "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools",
             "community": false,
             "icon": "suggest"
@@ -7616,7 +7616,7 @@
               "en": "In ChatGPT, expect to click"
             },
             "fr": "Chaque mise à jour demande votre accord. Pour vingt fiches d'un coup, ça devient un exercice de patience : travaillez par petits lots.",
-            "en": "Every update asks for your approval. For twenty records at once, it turns into a patience exercise: work in small batches.",
+            "en": "Every update asks for your approval. For twenty records at once, it becomes an exercise in patience: work in small batches.",
             "source": "https://community.openai.com/t/trusted-approval-policy-for-repeated-connector-write-actions/1381447",
             "community": true,
             "icon": "click"
@@ -7625,8 +7625,8 @@
         "pitfalls": [
           {
             "title": {
-              "fr": "Invité chez un client ? Porte fermée",
-              "en": "A guest at a client's? Door shut"
+              "fr": "Accès invité chez un client ? Porte fermée",
+              "en": "Guest in a client's workspace? Door shut"
             },
             "fr": "Les invités d'un espace Notion ne peuvent pas brancher d'assistant.",
             "en": "Guests in a Notion workspace cannot plug in an assistant.",
@@ -7643,8 +7643,8 @@
               "fr": "Beaucoup de pages, lecture lente",
               "en": "Many pages, slow reading"
             },
-            "fr": "Il ouvre les pages une par une, et peut en sauter quand il y en a trop.",
-            "en": "It opens pages one by one, and may skip some when there are too many.",
+            "fr": "L'assistant ouvre les pages une par une, et peut en sauter quand il y en a trop.",
+            "en": "The assistant opens pages one by one, and may skip some when there are too many.",
             "workaround": {
               "fr": "Pointez une page ou une base précise et travaillez par petits lots ; pour un bilan complet, partez d'un export.",
               "en": "Point to a specific page or database and work in small batches; for a full review, start from an export."
@@ -7661,8 +7661,8 @@
             "fr": "Au-delà des limites de Notion, l'action s'arrête sur une erreur au lieu d'attendre.",
             "en": "Past Notion's limits, the action stops with an error instead of waiting.",
             "workaround": {
-              "fr": "Demandez-lui de faire moins de choses à la fois, ou réessayez un peu plus tard.",
-              "en": "Ask it to do fewer things at once, or try again a little later."
+              "fr": "Demandez à l'assistant de faire moins de choses à la fois, ou réessayez un peu plus tard.",
+              "en": "Ask the assistant to do fewer things at once, or try again a little later."
             },
             "source": "https://developers.notion.com/guides/mcp/rate-limits",
             "community": false,
@@ -7670,8 +7670,8 @@
           },
           {
             "title": {
-              "fr": "Il a vos droits, tous vos droits",
-              "en": "It has your rights, all of them"
+              "fr": "L'assistant a vos droits, tous vos droits",
+              "en": "The assistant has your permissions, all of them"
             },
             "fr": "Une demande mal comprise peut modifier ou mettre à la corbeille une page client.",
             "en": "A misunderstood request can edit or trash a client page.",
@@ -7734,7 +7734,7 @@
       },
       "card": {
         "fr": "Suivre commandes et stocks, créer des produits.",
-        "en": "Follow orders and stock, create products."
+        "en": "Track orders and stock, create products."
       },
       "meta_description": {
         "fr": "Brancher Shopify à Claude, ChatGPT ou Gemini : commandes, produits et réductions dans l'assistant. Remboursements et paiements restent bloqués.",
@@ -7793,7 +7793,7 @@
         {
           "title": {
             "fr": "Vous coupez quand vous voulez",
-            "en": "You cut whenever you want"
+            "en": "Cut access anytime"
           },
           "icon": "cut",
           "fr": "Pour couper l'accès : désinstallez l'intégration dans l'administration Shopify.",
@@ -7808,7 +7808,7 @@
           },
           {
             "fr": "Quels produits ont moins de cinq articles en stock ?",
-            "en": "Which products have fewer than five items in stock?"
+            "en": "Which products have fewer than five units in stock?"
           },
           {
             "fr": "Donne-moi les informations de ma boutique.",
@@ -7836,8 +7836,8 @@
           "en": "A large batch of changes can stop partway: finish it in the admin."
         },
         {
-          "fr": "Ses droits dépendent de ceux de votre compte employé.",
-          "en": "Its rights depend on your staff account's."
+          "fr": "Les droits de l'assistant dépendent de ceux de votre compte employé.",
+          "en": "The assistant's rights depend on those of your staff account."
         }
       ],
       "verified_on": "2026-11-16",
@@ -7897,7 +7897,7 @@
         {
           "name": "bulk-update-product-status",
           "kind": "write",
-          "fr": "Changer le statut de 50 produits",
+          "fr": "Changer le statut de 50 produits maximum",
           "en": "Set up to 50 products active, draft or archived"
         },
         {
@@ -8149,7 +8149,7 @@
       ],
       "tools_note": {
         "fr": "Liste du connecteur pour Claude ; l'application pour ChatGPT ajoute l'envoi d'images.",
-        "en": "List of the Claude connector; the ChatGPT app adds image upload."
+        "en": "The Claude connector's list; the ChatGPT app adds image upload."
       },
       "install": [
         {
@@ -8215,7 +8215,7 @@
         },
         "intro": {
           "fr": "Une boutique Shopify, c'est un deuxième métier qu'on exerce le soir : fiches produits, stocks, codes promo, et ce tableau de bord qu'on ouvre en se promettant de le comprendre un jour. Votre assistant branché dessus répond aux questions simples et prend les petites corvées. Bonne nouvelle : Shopify lui interdit de toucher à l'argent. Moins bonne : ce qu'il change dans vos produits, c'est vous qui en répondez.",
-          "en": "A Shopify store is a second job you do in the evenings: product pages, stock, promo codes, and that dashboard you open promising yourself you'll understand it one day. Your assistant, plugged in, answers the simple questions and takes the small chores. Good news: Shopify won't let it touch the money. Less good: whatever it changes in your products, you answer for."
+          "en": "A Shopify store is a second job you do in the evenings: product pages, stock, promo codes, and that dashboard you open promising yourself you'll understand it one day. Your assistant, plugged in, answers the simple questions and takes on the small chores. Good news: Shopify won't let it touch the money. Less good: whatever it changes in your products, you answer for."
         },
         "situations": [
           {
@@ -8309,8 +8309,8 @@
               "fr": "Le thème, sur une copie",
               "en": "The theme, on a copy"
             },
-            "fr": "Il ne touche pas au thème en ligne : dupliquez-le, laissez-le travailler sur la copie, puis publiez-la vous-même après relecture.",
-            "en": "It won't touch the live theme: duplicate it, let it work on the copy, then publish it yourself once reviewed.",
+            "fr": "Il ne touche pas au thème en ligne : dupliquez-le, laissez l'assistant travailler sur la copie, puis publiez-la vous-même après relecture.",
+            "en": "It won't touch the live theme: duplicate it, let the assistant work on the copy, then publish it yourself once reviewed.",
             "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations",
             "community": false,
             "icon": "copy"
@@ -8378,11 +8378,11 @@
               "fr": "Ses erreurs sont les vôtres",
               "en": "Its mistakes are yours"
             },
-            "fr": "Shopify ne valide pas ce qu'il fait : une mauvaise modification de produit reste sous votre responsabilité.",
-            "en": "Shopify doesn't review what it does: a wrong product change remains your responsibility.",
+            "fr": "Shopify ne valide pas ce que fait l'assistant : une mauvaise modification de produit reste sous votre responsabilité.",
+            "en": "Shopify doesn't review what the assistant does: a wrong product change remains your responsibility.",
             "workaround": {
               "fr": "Gardez l'écriture sous approbation et relisez chaque changement avant de dire oui.",
-              "en": "Keep writing behind approval and read every change before saying yes."
+              "en": "Keep write actions behind approval and read every change before saying yes."
             },
             "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations",
             "community": false,
@@ -8449,7 +8449,7 @@
       },
       "not_for": {
         "fr": "Vous ne voulez aucun message envoyé en votre nom : l'assistant peut écrire dans n'importe quelle conversation.",
-        "en": "You want no message sent in your name: the assistant can write in any conversation."
+        "en": "You don't want any message sent in your name: the assistant can write in any conversation."
       },
       "control": [
         {
@@ -8464,7 +8464,7 @@
         {
           "title": {
             "fr": "L'administrateur encadre",
-            "en": "The admin sets the frame"
+            "en": "The admin sets the rules"
           },
           "icon": "admin",
           "fr": "Les administrateurs de l'espace approuvent et gèrent les assistants branchés, et suivent leur activité dans les journaux d'audit.",
@@ -8482,7 +8482,7 @@
             "en": "Find the messages about the Martin quote."
           },
           {
-            "fr": "Quels canaux suis-je ?",
+            "fr": "Dans quels canaux suis-je ?",
             "en": "Which channels am I in?"
           }
         ],
@@ -8503,8 +8503,8 @@
           "en": "If your workspace limits IP addresses, requests from elsewhere are refused."
         },
         {
-          "fr": "L'assistant doit être une application publiée dans le répertoire Slack ou interne à votre entreprise.",
-          "en": "The assistant must be an app published in the Slack directory or internal to your company."
+          "fr": "L'assistant doit être une application publiée dans le Slack Marketplace ou interne à votre entreprise.",
+          "en": "The assistant must be an app published in the Slack Marketplace or internal to your company."
         }
       ],
       "verified_on": "2026-11-16",
@@ -8591,13 +8591,13 @@
       ],
       "advice": {
         "verdict": {
-          "fr": "Si vos clients vous écrivent dans Slack, branchez-le pour retrouver un fil ou un fichier sans fouiller pendant dix minutes. Gardez l'envoi sous votre approbation : il peut écrire dans n'importe quelle conversation, en votre nom.",
-          "en": "If your clients write to you in Slack, plug it in to find a thread or a file without ten minutes of scrolling. Keep sending behind your approval: it can post in any conversation, under your name.",
+          "fr": "Si vos clients vous écrivent dans Slack, branchez-le pour retrouver un fil ou un fichier sans fouiller pendant dix minutes. Gardez l'envoi sous votre approbation : l'assistant peut écrire dans n'importe quelle conversation, en votre nom.",
+          "en": "If your clients write to you in Slack, plug it in to find a thread or a file without ten minutes of scrolling. Keep sending behind your approval: the assistant can post in any conversation, under your name.",
           "source": "https://docs.slack.dev/ai/slack-mcp-server/"
         },
         "intro": {
-          "fr": "Slack, c'est la machine à café du freelance : tout s'y dit, presque rien ne s'y retrouve. Le devis envoyé « quelque part dans un fil », la décision prise pendant votre jour off… Votre assistant fouille, lit et résume à votre place. Il sait aussi écrire, et c'est là qu'il faut rester attentif : un message parti ne revient pas. Voici comment en profiter sans faire parler l'assistant à votre place.",
-          "en": "Slack is the freelancer's coffee machine: everything gets said there, almost nothing gets found again. The quote sent “somewhere in a thread”, the decision made on your day off… Your assistant digs, reads and sums up for you. It can also write, and that's where you stay alert: a sent message doesn't come back. Here is how to enjoy it without letting the assistant speak for you."
+          "fr": "Slack, c'est la machine à café du freelance : tout s'y dit, presque rien ne s'y retrouve. Le devis envoyé « quelque part dans un fil », la décision prise pendant votre jour off… Votre assistant fouille, lit et résume à votre place. Il sait aussi écrire, et c'est là que la vigilance s'impose : un message parti ne revient pas. Voici comment en profiter sans faire parler l'assistant à votre place.",
+          "en": "Slack is the freelancer's coffee machine: everything gets said there, almost nothing gets found again. The quote sent “somewhere in a thread”, the decision made on your day off… Your assistant digs, reads and sums up for you. It can also write, and that's where you need to stay alert: a sent message doesn't come back. Here is how to make the most of it without letting the assistant speak for you."
         },
         "situations": [
           {
@@ -8691,8 +8691,8 @@
               "fr": "Branchez peu, branchez bien",
               "en": "Connect little, connect well"
             },
-            "fr": "Slack rappelle que chaque serveur ajouté à côté a ses propres règles de sécurité. Dans une conversation où Slack est actif, n'activez que ce dont vous avez besoin.",
-            "en": "Slack points out that every server you add alongside it has its own security rules. In a chat where Slack is on, only turn on what you need.",
+            "fr": "Slack rappelle que chaque serveur ajouté à côté a ses propres règles de sécurité. Quand Slack est actif dans votre discussion avec l'assistant, n'activez à côté que les serveurs dont vous avez besoin.",
+            "en": "Slack points out that every server you add alongside it has its own security rules. When Slack is on in your assistant chat, only turn on the other servers you need.",
             "source": "https://docs.slack.dev/ai/slack-mcp-server/",
             "community": false,
             "icon": "settings"
@@ -8749,7 +8749,7 @@
               "fr": "Dans Cursor, des outils manquants",
               "en": "In Cursor, missing tools"
             },
-            "fr": "Des utilisateurs ont vu seulement l'ancienne liste d'outils : les nouvelles permissions n'étaient pas approuvées côté Slack.",
+            "fr": "Des utilisateurs n'ont vu que l'ancienne liste d'outils : les nouvelles permissions n'étaient pas approuvées côté Slack.",
             "en": "Users only saw the older tool list: the new permissions weren't approved on Slack's side.",
             "workaround": {
               "fr": "Effacez les jetons MCP de Cursor, reconnectez-vous, et faites approuver les nouvelles permissions par l'administrateur.",
@@ -8793,12 +8793,12 @@
       "host_tool": "stripe",
       "category": "finance",
       "summary": {
-        "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Il est en bêta.",
-        "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. It is in beta."
+        "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Le serveur est en bêta.",
+        "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. The server is in beta."
       },
       "card": {
         "fr": "Suivre vos paiements et votre solde.",
-        "en": "Follow your payments and balance."
+        "en": "Keep track of your payments and balance."
       },
       "meta_description": {
         "fr": "Brancher Stripe à Claude ou ChatGPT : vos données de compte, création d'objets et, avec Treasury, envoi d'argent après confirmation. En bêta.",
@@ -8819,8 +8819,8 @@
         }
       ],
       "for": {
-        "fr": "Vous encaissez avec Stripe et voulez suivre paiements et solde sans ouvrir le tableau de bord.",
-        "en": "You take payments with Stripe and want to follow payments and balance without opening the dashboard."
+        "fr": "Vous encaissez avec Stripe et voulez suivre paiements et solde sans ouvrir le Dashboard.",
+        "en": "You take payments with Stripe and want to keep track of payments and balance without opening the Dashboard."
       },
       "not_for": {
         "fr": "Vous voulez confier vos virements à l'assistant : le serveur est en bêta et chaque envoi d'argent attend votre confirmation.",
@@ -8834,7 +8834,7 @@
           },
           "icon": "account",
           "fr": "À la connexion, vous choisissez les comptes et les environnements, production ou test, avec des droits pour chacun.",
-          "en": "When connecting, you pick the accounts and environments, live or test, with rights for each."
+          "en": "When connecting, you pick the accounts and environments, live or test, with permissions for each."
         },
         {
           "title": {
@@ -8847,17 +8847,17 @@
         },
         {
           "title": {
-            "fr": "L'administrateur encadre",
-            "en": "The admin sets the frame"
+            "fr": "Un administrateur fixe les limites",
+            "en": "An admin sets the limits"
           },
           "icon": "admin",
-          "fr": "Un administrateur active ou coupe l'accès pour toute l'équipe dans les réglages du Dashboard, rubrique accès MCP et CLI.",
-          "en": "An admin turns access on or off for the whole team in the Dashboard settings, under MCP and CLI access."
+          "fr": "Un administrateur active ou coupe l'accès pour toute l'équipe dans les réglages du Dashboard, rubrique « Accès MCP et CLI ».",
+          "en": "An admin turns access on or off for the whole team in the Dashboard settings, under “MCP and CLI access”."
         },
         {
           "title": {
             "fr": "Vous coupez quand vous voulez",
-            "en": "You cut whenever you want"
+            "en": "You can cut it off anytime"
           },
           "icon": "cut",
           "fr": "Pour retirer l'accès : réglages de votre profil, « Sessions OAuth », puis « Révoquer l'accès ».",
@@ -8900,8 +8900,8 @@
           "en": "For a connected account (Connect), signing in does not work: you need an agent access key."
         },
         {
-          "fr": "Remplacez avant le 30 novembre 2026 les clés sans restriction par des clés d'agent : les autres seront refusées.",
-          "en": "Replace unrestricted keys with agent keys before 30 November 2026: the others will be refused."
+          "fr": "Avant le 30 novembre 2026, remplacez vos clés sans restriction par des clés d'agent : passé cette date, les clés sans restriction seront refusées.",
+          "en": "Replace unrestricted keys with agent keys before 30 November 2026: after that date, unrestricted keys will be rejected."
         }
       ],
       "verified_on": "2026-11-16",
@@ -9138,8 +9138,8 @@
       ],
       "advice": {
         "verdict": {
-          "fr": "Si vous facturez déjà avec Stripe, ce serveur vaut l'essai pour repérer les impayés et préparer factures et liens de paiement depuis la conversation. Stripe n'annonce aucun abonnement en plus pour le serveur, mais il agit sur votre vrai compte et peut rembourser ou annuler une facture : commencez dans un environnement de test et validez chaque action d'écriture.",
-          "en": "If you already bill through Stripe, this server is worth trying for spotting unpaid invoices and preparing invoices and payment links from a chat. Stripe mentions no extra subscription for the server, but it works on your real account and can refund or void an invoice: start in a test environment and approve every write action yourself.",
+          "fr": "Si vous facturez déjà avec Stripe, ce serveur vaut l'essai pour repérer les impayés et préparer factures et liens de paiement depuis la conversation. Stripe n'annonce aucun abonnement en plus pour le serveur, mais celui-ci agit sur votre vrai compte et peut rembourser ou annuler une facture : commencez dans un environnement de test et validez chaque action d'écriture.",
+          "en": "If you already bill through Stripe, this server is worth trying for spotting unpaid invoices and preparing invoices and payment links from a chat. Stripe mentions no extra subscription for the server, but the server acts on your live account and can refund or void an invoice: start in a test environment and approve every write action yourself.",
           "source": "https://docs.stripe.com/mcp"
         },
         "intro": {
@@ -9153,7 +9153,7 @@
               "en": "New invoice"
             },
             "ask": {
-              "fr": "Prépare un brouillon de facture pour Studio Martin pour la refonte du site, je le relis avant de le finaliser.",
+              "fr": "Prépare un brouillon de facture pour la refonte du site de Studio Martin ; je le relirai avant que tu le finalises.",
               "en": "Draft an invoice for Studio Martin for the website redesign; I'll review it before you finalize it."
             },
             "gain": {
@@ -9171,7 +9171,7 @@
             },
             "ask": {
               "fr": "Crée un lien de paiement pour mon forfait « Audit SEO » et donne-moi l'adresse à envoyer au client.",
-              "en": "Create a payment link for my “SEO audit” package and give me the URL to send the client."
+              "en": "Create a payment link for my “SEO audit” package and give me the URL to send to the client."
             },
             "gain": {
               "fr": "Un lien à coller dans votre devis.",
@@ -9184,7 +9184,7 @@
           {
             "title": {
               "fr": "Impayés",
-              "en": "Unpaid"
+              "en": "Unpaid invoices"
             },
             "ask": {
               "fr": "Quelles factures sont encore ouvertes, pour quels clients, et lesquelles ont dépassé leur échéance ?",
@@ -9227,7 +9227,7 @@
               "fr": "Relisez le montant avant de dire oui",
               "en": "Read the amount before saying yes"
             },
-            "fr": "Client, montant, devise : trois secondes de lecture évitent un remboursement gênant. Ne mémorisez votre accord que pour un outil en qui vous avez pleinement confiance.",
+            "fr": "Client, montant, devise : trois secondes de lecture évitent un remboursement gênant. Ne mémorisez votre accord que pour un outil auquel vous faites pleinement confiance.",
             "en": "Customer, amount, currency: three seconds of reading spare you an awkward refund. Only remember your approval for a tool you fully trust.",
             "source": "https://developers.openai.com/api/docs/guides/developer-mode",
             "community": false,
@@ -9239,7 +9239,7 @@
               "en": "A key, but a small one"
             },
             "fr": "Si vous passez par une clé (Claude Code, Codex), créez une clé d'agent limitée aux droits utiles et gardez-la hors de la conversation. Stripe y applique des règles d'approbation pour les remboursements et les virements.",
-            "en": "If you go through a key (Claude Code, Codex), create an agent key limited to the rights you need and keep it out of the chat. Stripe applies approval rules to it for refunds and payouts.",
+            "en": "If you connect with a key (Claude Code, Codex), create an agent key limited to the permissions you need and keep it out of the chat. Stripe applies approval rules to it for refunds and payouts.",
             "source": "https://docs.stripe.com/account/approvals.md",
             "community": false,
             "icon": "key"
@@ -9310,8 +9310,8 @@
             "fr": "La connexion n'est pas permanente : l'assistant perd l'accès sans prévenir.",
             "en": "The connection isn't permanent: the assistant loses access without warning.",
             "workaround": {
-              "fr": "Reconnectez Stripe depuis votre assistant quand il ne répond plus.",
-              "en": "Reconnect Stripe from your assistant when it stops answering."
+              "fr": "Reconnectez Stripe depuis votre assistant quand Stripe ne répond plus.",
+              "en": "Reconnect Stripe from your assistant when Stripe stops responding."
             },
             "source": "https://docs.stripe.com/mcp",
             "community": false,
@@ -9356,11 +9356,11 @@
       "category": "communication",
       "summary": {
         "fr": "Le serveur officiel de Tally, en bêta, permet à votre assistant de créer un formulaire à partir d'une description, de le modifier, de le publier et de lire les réponses. Il ne peut supprimer ni formulaire ni réponse, et il est gratuit sur tous les forfaits.",
-        "en": "Tally's official server, in beta, lets your assistant create a form from a description, edit it, publish it and read submissions. It cannot delete forms or submissions, and it is free on every plan."
+        "en": "Tally's official server, in beta, lets your assistant create a form from a description, edit it, publish it and read responses. It cannot delete forms or responses, and it is free on every plan."
       },
       "card": {
         "fr": "Créer un formulaire et lire ses réponses.",
-        "en": "Create a form and read its answers."
+        "en": "Create a form and read its responses."
       },
       "meta_description": {
         "fr": "Brancher Tally à Claude ou ChatGPT : créer un formulaire à partir d'une phrase, le publier et lire les réponses. Il ne supprime rien ; gratuit, en bêta.",
@@ -9373,7 +9373,7 @@
         },
         {
           "fr": "Résume les réponses à mon formulaire de satisfaction.",
-          "en": "Summarise the answers to my satisfaction form."
+          "en": "Summarise the responses to my satisfaction form."
         }
       ],
       "for": {
@@ -9391,8 +9391,8 @@
             "en": "No deleting"
           },
           "icon": "limit",
-          "fr": "Il ne peut supprimer ni un formulaire ni une réponse.",
-          "en": "It cannot delete a form or a response."
+          "fr": "L'assistant ne peut supprimer ni un formulaire ni une réponse.",
+          "en": "The assistant cannot delete a form or a response."
         },
         {
           "title": {
@@ -9409,14 +9409,14 @@
             "en": "Your responses, on request"
           },
           "icon": "read",
-          "fr": "Il ne lit vos réponses que si vous le demandez.",
-          "en": "It only reads your responses when you ask."
+          "fr": "L'assistant ne lit vos réponses que si vous le demandez.",
+          "en": "The assistant only reads your responses when you ask."
         }
       ],
       "plan_words": {
         "common": {
           "fr": "Fonctionne sur tous les forfaits Tally, y compris le gratuit.",
-          "en": "Works on every Tally plan, free included."
+          "en": "Works on every Tally plan, including the free one."
         }
       },
       "first_requests": {
@@ -9464,7 +9464,7 @@
         {
           "kind": "read",
           "fr": "Lire vos formulaires et leurs réponses",
-          "en": "Read your forms and their submissions"
+          "en": "Read your forms and their responses"
         },
         {
           "kind": "write",
@@ -9496,7 +9496,7 @@
       ],
       "tools_note": {
         "fr": "Tally décrit ce que fait le serveur (créer, modifier, publier un formulaire ; lister les formulaires ; lire les réponses) sans nommer ses outils.",
-        "en": "Tally describes what the server does (create, edit, publish a form; list forms; read submissions) without naming its tools."
+        "en": "Tally describes what the server does (create, edit, publish a form; list forms; read responses) without naming its tools."
       },
       "install": [
         {
@@ -9565,12 +9565,12 @@
       "advice": {
         "verdict": {
           "fr": "Si vous recueillez demandes de devis, inscriptions ou avis avec Tally, branchez-le : il monte un formulaire à partir d'une phrase et lit les réponses pour vous. Il ne supprime rien, mais il est encore en bêta : relisez avant de publier.",
-          "en": "If you collect quote requests, sign-ups or feedback with Tally, plug it in: it builds a form from one sentence and reads the answers for you. It deletes nothing, but it's still in beta: review before publishing.",
+          "en": "If you collect quote requests, sign-ups or feedback with Tally, plug it in: it builds a form from one sentence and reads the responses for you. It deletes nothing, but it's still in beta: review before publishing.",
           "source": "https://developers.tally.so/api-reference/mcp"
         },
         "intro": {
           "fr": "Créer un formulaire, ce n'est jamais long… jusqu'à ce qu'on hésite vingt minutes entre « Budget » et « Fourchette de budget ». Avec Tally branché, vous décrivez ce que vous voulez et l'assistant construit le formulaire en brouillon. Il sait aussi lire les réponses et en tirer les grandes lignes. Il ne peut rien supprimer, ce qui rassure ; il reste en bêta, ce qui invite à relire.",
-          "en": "Building a form never takes long… until you spend twenty minutes choosing between “Budget” and “Budget range”. With Tally plugged in, you describe what you want and the assistant builds the form as a draft. It can also read the answers and pull out the main points. It can't delete anything, which is reassuring; it's still in beta, which is a reason to review."
+          "en": "Building a form never takes long… until you spend twenty minutes choosing between “Budget” and “Budget range”. With Tally plugged in, you describe what you want and the assistant builds the form as a draft. It can also read the responses and pull out the main points. It can't delete anything, which is reassuring; it's still in beta, which is a good reason to review."
         },
         "situations": [
           {
@@ -9584,7 +9584,7 @@
             },
             "gain": {
               "fr": "Un formulaire prêt, en brouillon privé.",
-              "en": "A ready form, as a private draft."
+              "en": "A form ready to go, as a private draft."
             },
             "source": "https://developers.tally.so/api-reference/mcp",
             "icon": "form",
@@ -9631,8 +9631,8 @@
               "fr": "Listez vos champs",
               "en": "List your fields"
             },
-            "fr": "Nommez chaque champ et dites s'il est obligatoire ou facultatif. Sinon, il choisit les champs habituels, qui ne sont pas forcément les vôtres.",
-            "en": "Name each field and say whether it's required or optional. Otherwise it picks the usual fields, which aren't necessarily yours.",
+            "fr": "Nommez chaque champ et dites s'il est obligatoire ou facultatif. Sinon, l'assistant choisit les champs habituels, qui ne sont pas forcément les vôtres.",
+            "en": "Name each field and say whether it's required or optional. Otherwise the assistant picks the usual fields, which aren't necessarily yours.",
             "source": "https://developers.tally.so/api-reference/mcp",
             "community": false,
             "icon": "brief"
@@ -9642,15 +9642,15 @@
               "fr": "Donnez l'adresse du formulaire",
               "en": "Give the form's URL"
             },
-            "fr": "Pour modifier un formulaire existant, collez son lien dans la demande : c'est ainsi qu'il sait lequel toucher.",
-            "en": "To edit an existing form, paste its link into the request: that's how it knows which one to touch.",
+            "fr": "Pour modifier un formulaire existant, collez son lien dans la demande : c'est ainsi que l'assistant sait lequel toucher.",
+            "en": "To edit an existing form, paste its link into the request: that's how the assistant knows which one to touch.",
             "source": "https://developers.tally.so/api-reference/mcp",
             "community": false,
             "icon": "link"
           },
           {
             "title": {
-              "fr": "Publiez quand vous êtes prêt",
+              "fr": "Publiez quand tout est prêt",
               "en": "Publish when you're ready"
             },
             "fr": "Un nouveau formulaire reste un brouillon privé tant que vous ne demandez pas sa publication. Relisez-le dans Tally, puis dites « publie ».",
@@ -9664,8 +9664,8 @@
               "fr": "Une capture pour vos couleurs",
               "en": "A screenshot for your colours"
             },
-            "fr": "Partagez une capture de votre site ou de votre charte : il peut s'en servir pour habiller le formulaire à votre image.",
-            "en": "Share a screenshot of your site or brand guide: it can use it to style the form to match.",
+            "fr": "Partagez une capture de votre site ou de votre charte : l'assistant peut s'en servir pour habiller le formulaire à votre image.",
+            "en": "Share a screenshot of your site or brand guide: the assistant can use it to style the form to match.",
             "source": "https://tally.so/help/claude-connector",
             "community": false,
             "icon": "brand"
@@ -9673,10 +9673,10 @@
           {
             "title": {
               "fr": "Filtrez les réponses",
-              "en": "Filter the answers"
+              "en": "Filter the responses"
             },
             "fr": "Demandez les réponses complètes d'une période précise plutôt que tout l'historique : la synthèse sera plus juste.",
-            "en": "Ask for completed answers from a specific period rather than the whole history: the summary will be sharper.",
+            "en": "Ask for completed responses from a specific period rather than the whole history: the summary will be sharper.",
             "source": "https://developers.tally.so/api-reference/mcp",
             "community": false,
             "icon": "refine"
@@ -9688,8 +9688,8 @@
               "fr": "Le style change tout de suite",
               "en": "Styling changes right away"
             },
-            "fr": "Sur un formulaire en ligne, les questions attendent la publication, mais les réglages et le style s'appliquent immédiatement.",
-            "en": "On a live form, questions wait for publishing, but settings and styling apply immediately.",
+            "fr": "Sur un formulaire en ligne, les changements de questions attendent la publication, mais ceux des réglages et du style s'appliquent immédiatement.",
+            "en": "On a live form, question changes wait for publishing, but settings and styling changes apply immediately.",
             "workaround": {
               "fr": "Testez vos changements de style sur une copie plutôt que sur le formulaire que vos clients remplissent.",
               "en": "Try styling changes on a copy rather than on the form your clients are filling in."
@@ -9703,8 +9703,8 @@
               "fr": "Il crée, mais ne range pas",
               "en": "It creates, but doesn't tidy"
             },
-            "fr": "Il ne peut supprimer ni formulaire ni réponse : les essais s'accumulent dans votre espace.",
-            "en": "It can't delete forms or answers: test runs pile up in your workspace.",
+            "fr": "L'assistant ne peut supprimer ni formulaire ni réponse : les essais s'accumulent dans votre espace.",
+            "en": "The assistant can't delete forms or responses: test runs pile up in your workspace.",
             "workaround": {
               "fr": "Supprimez vous-même les brouillons d'essai dans Tally de temps en temps.",
               "en": "Delete the test drafts yourself in Tally now and then."
@@ -9754,12 +9754,12 @@
       "host_tool": "webflow",
       "category": "nocode-web",
       "summary": {
-        "fr": "Le serveur officiel de Webflow laisse votre assistant lire et modifier votre site : pages, styles, composants, CMS, fichiers, et le publier en ligne. Les droits se donnent site par site, par le propriétaire ou un administrateur.",
-        "en": "Webflow's official server lets your assistant read and edit your site: pages, styles, components, CMS, assets, and publish it live. Access is granted site by site, by the owner or an admin."
+        "fr": "Le serveur officiel de Webflow laisse votre assistant lire et modifier votre site (pages, styles, composants, CMS, fichiers), puis le publier en ligne. Les droits se donnent site par site, par le propriétaire ou un administrateur.",
+        "en": "Webflow's official server lets your assistant read and edit your site (pages, styles, components, CMS, assets), then publish it live. Access is granted site by site, by the owner or an admin."
       },
       "card": {
         "fr": "Lire et modifier votre site, jusqu'à le publier.",
-        "en": "Read and edit your site, up to publishing it."
+        "en": "Read and edit your site, then publish it."
       },
       "meta_description": {
         "fr": "Brancher Webflow à Claude ou ChatGPT : modifier pages, styles et CMS, puis publier le site depuis l'assistant. Accès site par site ; ses suppressions.",
@@ -9776,22 +9776,22 @@
         }
       ],
       "for": {
-        "fr": "Votre site, ou ceux de vos clients, est construit sur Webflow.",
-        "en": "Your site, or your clients' sites, is built on Webflow."
+        "fr": "Vous construisez votre site, ou ceux de vos clients, sur Webflow.",
+        "en": "You build your site, or your clients' sites, on Webflow."
       },
       "not_for": {
         "fr": "Vous craignez une mise en ligne par erreur : l'assistant peut publier le site.",
-        "en": "You fear publishing by mistake: the assistant can publish the site."
+        "en": "You're worried about publishing by mistake: the assistant can publish the site."
       },
       "control": [
         {
           "title": {
-            "fr": "Vous autorisez vos sites",
-            "en": "You authorise your sites"
+            "fr": "Vous choisissez vos sites",
+            "en": "You pick your sites"
           },
           "icon": "account",
           "fr": "À la connexion, vous autorisez l'assistant sur vos sites ; une application de liaison s'installe pendant cette étape.",
-          "en": "When connecting, you authorise the assistant on your sites; a bridge app installs during this step."
+          "en": "When connecting, you authorise the assistant on your sites; a bridge app gets installed during this step."
         }
       ],
       "first_requests": {
@@ -9834,8 +9834,8 @@
       "access": "read_write",
       "plan": "all",
       "plan_note": {
-        "fr": "Tous les forfaits de site, y compris Starter gratuit. Gestion des accès au Workspace : Workspace Enterprise.",
-        "en": "All Site plans, including the free Starter plan. Workspace access management: Enterprise Workspace."
+        "fr": "Tous les forfaits de site, y compris le forfait Starter gratuit. La gestion des accès au Workspace demande un Workspace Enterprise.",
+        "en": "All Site plans, including the free Starter plan. Workspace access management requires an Enterprise Workspace."
       },
       "capabilities": [
         {
@@ -10102,8 +10102,8 @@
         }
       ],
       "tools_note": {
-        "fr": "Chaque outil de données regroupe plusieurs actions ; le niveau indiqué est le plus risqué de ses actions.",
-        "en": "Each data tool groups several actions; the level shown is its riskiest action."
+        "fr": "Chaque outil de données regroupe plusieurs actions ; le niveau indiqué est celui de son action la plus risquée.",
+        "en": "Each data tool groups several actions; the level shown is that of its riskiest action."
       },
       "install": [
         {
@@ -10196,8 +10196,8 @@
           "source": "https://developers.webflow.com/mcp/tools/data-tools"
         },
         "intro": {
-          "fr": "Webflow, c'est le site que le client « veut juste mettre à jour un petit peu », de préférence vendredi à 18 h. Branché à votre assistant, il range le CMS, ajoute des articles en brouillon, traque les liens cassés. Il peut aussi supprimer des fichiers et publier le site entier. Le bon réflexe : brouillon, relecture, et seulement ensuite la mise en ligne.",
-          "en": "Webflow is the site the client “just wants to update a little”, ideally on Friday at 6 pm. Plugged into your assistant, it tidies the CMS, adds draft posts and hunts broken links. It can also delete files and publish the whole site. The right habit: draft, review, and only then go live."
+          "fr": "Webflow, c'est le site que le client « veut juste mettre à jour un petit peu », de préférence vendredi à 18 h. Une fois Webflow branché, votre assistant range le CMS, ajoute des articles en brouillon, traque les liens cassés. Il peut aussi supprimer des fichiers et publier le site entier. Le bon réflexe : brouillon, relecture, et seulement ensuite la mise en ligne.",
+          "en": "Webflow is the site the client “just wants to update a little”, ideally on Friday at 6 pm. With Webflow plugged in, your assistant tidies the CMS, adds draft posts and hunts down broken links. It can also delete assets and publish the whole site. The right habit: draft, review, and only then go live."
         },
         "situations": [
           {
@@ -10244,7 +10244,7 @@
               "en": "Show me what changed since the last publish, and publish if it looks good."
             },
             "gain": {
-              "fr": "Une publication relue avant de partir.",
+              "fr": "Une publication relue avant la mise en ligne.",
               "en": "A publish checked before it ships."
             },
             "source": "https://developers.webflow.com/mcp/reference/skills",
@@ -10280,8 +10280,8 @@
               "fr": "Des consignes par site",
               "en": "Instructions per site"
             },
-            "fr": "Chaque site peut avoir ses propres consignes d'agent : ton, noms de classes, ce qu'il ne doit pas toucher. Utile quand chaque client a ses habitudes.",
-            "en": "Each site can have its own agent instructions: tone, class names, what not to touch. Handy when every client has their habits.",
+            "fr": "Chaque site peut avoir ses propres consignes d'agent : ton, noms de classes, ce que l'assistant ne doit pas toucher. Utile quand chaque client a ses habitudes.",
+            "en": "Each site can have its own agent instructions: tone, class names, what not to touch. Handy when every client has their own habits.",
             "source": "https://developers.webflow.com/mcp/reference/overview",
             "community": false,
             "icon": "brief"
@@ -10302,10 +10302,10 @@
           {
             "title": {
               "fr": "Publier, c'est tout publier",
-              "en": "Publishing means everything"
+              "en": "Publishing publishes everything"
             },
-            "fr": "La publication du site met en ligne toutes les dernières modifications, y compris celles en cours, sans étape de confirmation décrite.",
-            "en": "Publishing the site makes all the latest changes live, unfinished ones included, with no confirmation step described.",
+            "fr": "La publication du site met en ligne toutes les dernières modifications, y compris celles en cours, et Webflow ne décrit aucune étape de confirmation.",
+            "en": "Publishing the site makes all the latest changes live, unfinished ones included, and Webflow describes no confirmation step.",
             "workaround": {
               "fr": "Passez par la publication en deux temps et lisez la liste des changements avant d'accepter.",
               "en": "Use the two-step publish and read the list of changes before accepting."
@@ -10334,8 +10334,8 @@
               "fr": "Fichier supprimé, sans retour",
               "en": "Deleted file, no way back"
             },
-            "fr": "Il peut supprimer des fichiers du site, et Webflow indique qu'ils ne se restaurent pas par ce biais.",
-            "en": "It can delete site files, and Webflow says they can't be restored this way.",
+            "fr": "L'assistant peut supprimer des fichiers du site, et Webflow indique qu'ils ne se restaurent pas par ce biais.",
+            "en": "The assistant can delete site assets, and Webflow says they can't be restored this way.",
             "workaround": {
               "fr": "Gardez une copie de vos images et refusez les suppressions que vous n'avez pas demandées.",
               "en": "Keep a copy of your images and refuse deletions you didn't ask for."
@@ -10349,7 +10349,7 @@
               "fr": "Des outils disparus dans Claude",
               "en": "Tools gone missing in Claude"
             },
-            "fr": "Webflow a déjà signalé des outils CMS et pages absents dans les applis Claude.",
+            "fr": "Webflow a déjà signalé des outils CMS et de pages absents dans les applis Claude.",
             "en": "Webflow has already reported CMS and page tools missing in the Claude apps.",
             "workaround": {
               "fr": "Dans les réglages du connecteur Webflow, actualisez la liste des outils.",
@@ -10389,8 +10389,8 @@
       "host_tool": "zapier",
       "category": "automation",
       "summary": {
-        "fr": "Zapier MCP met à la portée de votre assistant les actions de milliers d'applications connectées à votre compte Zapier : chercher, créer, envoyer. Vous choisissez les actions exposées, et chaque appel réussi consomme deux tâches du forfait.",
-        "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful call uses two tasks from your plan."
+        "fr": "Zapier MCP met à la portée de votre assistant les actions de milliers d'applications connectées à votre compte Zapier : chercher, créer, envoyer. Vous choisissez les actions exposées, et chaque action réussie consomme deux tâches du forfait.",
+        "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful action uses two tasks from your plan."
       },
       "card": {
         "fr": "Agir dans vos applis via vos actions activées.",
@@ -10449,11 +10449,11 @@
       ],
       "plan_words": {
         "common": {
-          "fr": "Utilise votre forfait Zapier actuel : chaque action réussie compte pour 2 tâches.",
-          "en": "Uses your current Zapier plan: each successful action counts as 2 tasks."
+          "fr": "Le serveur puise dans votre forfait Zapier actuel, chaque action réussie comptant pour 2 tâches.",
+          "en": "The server draws on your current Zapier plan, each successful action counting as 2 tasks."
         },
         "advanced": {
-          "fr": "Les outils de workflow demandent l'accès anticipé.",
+          "fr": "Les outils de workflow demandent un accès anticipé.",
           "en": "Workflow tools need early access."
         }
       },
@@ -10482,11 +10482,11 @@
       "troubleshoot": [
         {
           "fr": "Quand votre compte atteint sa limite de tâches, les actions échouent : attendez le nouveau cycle ou changez de forfait.",
-          "en": "When your account hits its task limit, actions fail: wait for the new cycle or change plan."
+          "en": "When your account hits its task limit, actions fail: wait for the next cycle or change plans."
         },
         {
-          "fr": "Sans application connectée dans Zapier, il n'a aucune action.",
-          "en": "With no app connected in Zapier, it has no action."
+          "fr": "Sans application connectée dans Zapier, l'assistant n'a accès à aucune action.",
+          "en": "With no app connected in Zapier, the assistant has no actions available."
         },
         {
           "fr": "Les connexions partagées par un autre utilisateur ne sont pas reprises.",
@@ -10501,8 +10501,8 @@
       "access": "read_write",
       "plan": "all",
       "plan_note": {
-        "fr": "Tous les comptes ; chaque appel réussi consomme deux tâches du forfait.",
-        "en": "All accounts; each successful call uses two tasks from your plan."
+        "fr": "Tous les comptes ; chaque action réussie consomme deux tâches du forfait.",
+        "en": "All accounts; each successful action uses two tasks from your plan."
       },
       "capabilities": [
         {
@@ -10727,7 +10727,7 @@
         },
         "intro": {
           "fr": "Zapier, c'est le couteau suisse du freelance : il y a une lame pour presque tout, et on finit toujours par se demander ce que fait celle-là. Branché à votre assistant, il lui donne accès aux actions de vos applis connectées : envoyer, créer, chercher. Pratique, mais chaque action compte, au sens propre. Quelques réglages évitent les mauvaises surprises, côté envois comme côté facture.",
-          "en": "Zapier is the freelancer's Swiss army knife: there's a blade for almost everything, and you always end up wondering what that one does. Plugged into your assistant, it opens up the actions of your connected apps: send, create, search. Handy, but every action counts, literally. A few settings spare you surprises, on sending as well as on the bill."
+          "en": "Zapier is the freelancer's Swiss army knife: there's a blade for almost everything, and you always end up wondering what that one does. Plugged into your assistant, it opens up the actions of your connected apps: send, create, search. Handy, but every action counts, literally. A few settings spare you nasty surprises, both in what gets sent and on the bill."
         },
         "situations": [
           {
@@ -10821,7 +10821,7 @@
               "fr": "L'accord pour la session, pas plus",
               "en": "Approval for the session, no more"
             },
-            "fr": "Zapier suggère d'approuver pour la session afin d'éviter une demande à chaque action. Gardez-le pour les lectures ; pour un envoi, un clic de plus ne fait de mal à personne.",
+            "fr": "Zapier suggère d'approuver pour la session afin d'éviter une demande à chaque action. Réservez cette option aux lectures ; pour un envoi, un clic de plus ne fait de mal à personne.",
             "en": "Zapier suggests approving for the session to skip a prompt on every action. Keep that for reads; for a send, one more click never hurt anyone.",
             "source": "https://docs.zapier.com/mcp/get-started/quickstart",
             "community": false,
@@ -10843,13 +10843,13 @@
           {
             "title": {
               "fr": "Le compteur de tâches file",
-              "en": "The task counter runs"
+              "en": "The task counter keeps ticking"
             },
-            "fr": "Un utilisateur s'est retrouvé hors limite sans comprendre : les appels de l'assistant ne figuraient pas dans le graphique habituel de ses Zaps.",
+            "fr": "Un utilisateur a dépassé sa limite sans comprendre pourquoi : les appels de l'assistant ne figuraient pas dans le graphique habituel de ses Zaps.",
             "en": "One user went over their limit without understanding why: the assistant's calls weren't in the usual Zap usage chart.",
             "workaround": {
               "fr": "Suivez le compteur des tâches MCP dans les réglages de facturation et d'usage.",
-              "en": "Follow the MCP task counter in the billing and usage settings."
+              "en": "Watch the MCP task counter in the billing and usage settings."
             },
             "source": "https://community.zapier.com/troubleshooting-99/zapier-says-i-m-over-my-100-task-limit-after-using-25-task-53856",
             "community": true,
@@ -10860,7 +10860,7 @@
               "fr": "Limite atteinte, tout s'arrête",
               "en": "Limit reached, everything stops"
             },
-            "fr": "Une fois la limite de tâches atteinte, les actions échouent sur une erreur jusqu'au prochain cycle, sauf facturation à l'usage.",
+            "fr": "Une fois la limite de tâches atteinte, les actions échouent sur une erreur jusqu'au prochain cycle, sauf si la facturation à l'usage est activée.",
             "en": "Once the task limit is reached, actions fail with an error until the next cycle, unless pay-per-task is on.",
             "workaround": {
               "fr": "Attendez le renouvellement, changez de forfait, ou faites l'action à la main en attendant.",
@@ -10893,8 +10893,8 @@
             "fr": "Un jeton ou une adresse de connexion donne accès à vos outils et à leurs données, sans date d'expiration rapprochée.",
             "en": "A connection token or URL grants access to your tools and their data, and lasts a long time.",
             "workaround": {
-              "fr": "Ne le collez jamais dans un message, un document ou une conversation partagée.",
-              "en": "Never paste it into a message, a document or a shared chat."
+              "fr": "Ne collez jamais ce jeton ou cette adresse dans un message, un document ou une conversation partagée.",
+              "en": "Never paste the token or URL into a message, a document or a shared chat."
             },
             "source": "https://docs.zapier.com/mcp/get-started/quickstart",
             "community": false,

@@ -7,11 +7,11 @@
   "category": "communication",
   "summary": {
     "fr": "Le serveur officiel de Tally, en bêta, permet à votre assistant de créer un formulaire à partir d'une description, de le modifier, de le publier et de lire les réponses. Il ne peut supprimer ni formulaire ni réponse, et il est gratuit sur tous les forfaits.",
-    "en": "Tally's official server, in beta, lets your assistant create a form from a description, edit it, publish it and read submissions. It cannot delete forms or submissions, and it is free on every plan."
+    "en": "Tally's official server, in beta, lets your assistant create a form from a description, edit it, publish it and read responses. It cannot delete forms or responses, and it is free on every plan."
   },
   "card": {
     "fr": "Créer un formulaire et lire ses réponses.",
-    "en": "Create a form and read its answers."
+    "en": "Create a form and read its responses."
   },
   "meta_description": {
     "fr": "Brancher Tally à Claude ou ChatGPT : créer un formulaire à partir d'une phrase, le publier et lire les réponses. Il ne supprime rien ; gratuit, en bêta.",
@@ -24,7 +24,7 @@
     },
     {
       "fr": "Résume les réponses à mon formulaire de satisfaction.",
-      "en": "Summarise the answers to my satisfaction form."
+      "en": "Summarise the responses to my satisfaction form."
     }
   ],
   "for": {
@@ -42,8 +42,8 @@
         "en": "No deleting"
       },
       "icon": "limit",
-      "fr": "Il ne peut supprimer ni un formulaire ni une réponse.",
-      "en": "It cannot delete a form or a response."
+      "fr": "L'assistant ne peut supprimer ni un formulaire ni une réponse.",
+      "en": "The assistant cannot delete a form or a response."
     },
     {
       "title": {
@@ -60,14 +60,14 @@
         "en": "Your responses, on request"
       },
       "icon": "read",
-      "fr": "Il ne lit vos réponses que si vous le demandez.",
-      "en": "It only reads your responses when you ask."
+      "fr": "L'assistant ne lit vos réponses que si vous le demandez.",
+      "en": "The assistant only reads your responses when you ask."
     }
   ],
   "plan_words": {
     "common": {
       "fr": "Fonctionne sur tous les forfaits Tally, y compris le gratuit.",
-      "en": "Works on every Tally plan, free included."
+      "en": "Works on every Tally plan, including the free one."
     }
   },
   "first_requests": {
@@ -115,7 +115,7 @@
     {
       "kind": "read",
       "fr": "Lire vos formulaires et leurs réponses",
-      "en": "Read your forms and their submissions"
+      "en": "Read your forms and their responses"
     },
     {
       "kind": "write",
@@ -147,7 +147,7 @@
   ],
   "tools_note": {
     "fr": "Tally décrit ce que fait le serveur (créer, modifier, publier un formulaire ; lister les formulaires ; lire les réponses) sans nommer ses outils.",
-    "en": "Tally describes what the server does (create, edit, publish a form; list forms; read submissions) without naming its tools."
+    "en": "Tally describes what the server does (create, edit, publish a form; list forms; read responses) without naming its tools."
   },
   "install": [
     {
@@ -216,12 +216,12 @@
   "advice": {
     "verdict": {
       "fr": "Si vous recueillez demandes de devis, inscriptions ou avis avec Tally, branchez-le : il monte un formulaire à partir d'une phrase et lit les réponses pour vous. Il ne supprime rien, mais il est encore en bêta : relisez avant de publier.",
-      "en": "If you collect quote requests, sign-ups or feedback with Tally, plug it in: it builds a form from one sentence and reads the answers for you. It deletes nothing, but it's still in beta: review before publishing.",
+      "en": "If you collect quote requests, sign-ups or feedback with Tally, plug it in: it builds a form from one sentence and reads the responses for you. It deletes nothing, but it's still in beta: review before publishing.",
       "source": "https://developers.tally.so/api-reference/mcp"
     },
     "intro": {
       "fr": "Créer un formulaire, ce n'est jamais long… jusqu'à ce qu'on hésite vingt minutes entre « Budget » et « Fourchette de budget ». Avec Tally branché, vous décrivez ce que vous voulez et l'assistant construit le formulaire en brouillon. Il sait aussi lire les réponses et en tirer les grandes lignes. Il ne peut rien supprimer, ce qui rassure ; il reste en bêta, ce qui invite à relire.",
-      "en": "Building a form never takes long… until you spend twenty minutes choosing between “Budget” and “Budget range”. With Tally plugged in, you describe what you want and the assistant builds the form as a draft. It can also read the answers and pull out the main points. It can't delete anything, which is reassuring; it's still in beta, which is a reason to review."
+      "en": "Building a form never takes long… until you spend twenty minutes choosing between “Budget” and “Budget range”. With Tally plugged in, you describe what you want and the assistant builds the form as a draft. It can also read the responses and pull out the main points. It can't delete anything, which is reassuring; it's still in beta, which is a good reason to review."
     },
     "situations": [
       {
@@ -235,7 +235,7 @@
         },
         "gain": {
           "fr": "Un formulaire prêt, en brouillon privé.",
-          "en": "A ready form, as a private draft."
+          "en": "A form ready to go, as a private draft."
         },
         "source": "https://developers.tally.so/api-reference/mcp",
         "icon": "form",
@@ -282,8 +282,8 @@
           "fr": "Listez vos champs",
           "en": "List your fields"
         },
-        "fr": "Nommez chaque champ et dites s'il est obligatoire ou facultatif. Sinon, il choisit les champs habituels, qui ne sont pas forcément les vôtres.",
-        "en": "Name each field and say whether it's required or optional. Otherwise it picks the usual fields, which aren't necessarily yours.",
+        "fr": "Nommez chaque champ et dites s'il est obligatoire ou facultatif. Sinon, l'assistant choisit les champs habituels, qui ne sont pas forcément les vôtres.",
+        "en": "Name each field and say whether it's required or optional. Otherwise the assistant picks the usual fields, which aren't necessarily yours.",
         "source": "https://developers.tally.so/api-reference/mcp",
         "community": false,
         "icon": "brief"
@@ -293,15 +293,15 @@
           "fr": "Donnez l'adresse du formulaire",
           "en": "Give the form's URL"
         },
-        "fr": "Pour modifier un formulaire existant, collez son lien dans la demande : c'est ainsi qu'il sait lequel toucher.",
-        "en": "To edit an existing form, paste its link into the request: that's how it knows which one to touch.",
+        "fr": "Pour modifier un formulaire existant, collez son lien dans la demande : c'est ainsi que l'assistant sait lequel toucher.",
+        "en": "To edit an existing form, paste its link into the request: that's how the assistant knows which one to touch.",
         "source": "https://developers.tally.so/api-reference/mcp",
         "community": false,
         "icon": "link"
       },
       {
         "title": {
-          "fr": "Publiez quand vous êtes prêt",
+          "fr": "Publiez quand tout est prêt",
           "en": "Publish when you're ready"
         },
         "fr": "Un nouveau formulaire reste un brouillon privé tant que vous ne demandez pas sa publication. Relisez-le dans Tally, puis dites « publie ».",
@@ -315,8 +315,8 @@
           "fr": "Une capture pour vos couleurs",
           "en": "A screenshot for your colours"
         },
-        "fr": "Partagez une capture de votre site ou de votre charte : il peut s'en servir pour habiller le formulaire à votre image.",
-        "en": "Share a screenshot of your site or brand guide: it can use it to style the form to match.",
+        "fr": "Partagez une capture de votre site ou de votre charte : l'assistant peut s'en servir pour habiller le formulaire à votre image.",
+        "en": "Share a screenshot of your site or brand guide: the assistant can use it to style the form to match.",
         "source": "https://tally.so/help/claude-connector",
         "community": false,
         "icon": "brand"
@@ -324,10 +324,10 @@
       {
         "title": {
           "fr": "Filtrez les réponses",
-          "en": "Filter the answers"
+          "en": "Filter the responses"
         },
         "fr": "Demandez les réponses complètes d'une période précise plutôt que tout l'historique : la synthèse sera plus juste.",
-        "en": "Ask for completed answers from a specific period rather than the whole history: the summary will be sharper.",
+        "en": "Ask for completed responses from a specific period rather than the whole history: the summary will be sharper.",
         "source": "https://developers.tally.so/api-reference/mcp",
         "community": false,
         "icon": "refine"
@@ -339,8 +339,8 @@
           "fr": "Le style change tout de suite",
           "en": "Styling changes right away"
         },
-        "fr": "Sur un formulaire en ligne, les questions attendent la publication, mais les réglages et le style s'appliquent immédiatement.",
-        "en": "On a live form, questions wait for publishing, but settings and styling apply immediately.",
+        "fr": "Sur un formulaire en ligne, les changements de questions attendent la publication, mais ceux des réglages et du style s'appliquent immédiatement.",
+        "en": "On a live form, question changes wait for publishing, but settings and styling changes apply immediately.",
         "workaround": {
           "fr": "Testez vos changements de style sur une copie plutôt que sur le formulaire que vos clients remplissent.",
           "en": "Try styling changes on a copy rather than on the form your clients are filling in."
@@ -354,8 +354,8 @@
           "fr": "Il crée, mais ne range pas",
           "en": "It creates, but doesn't tidy"
         },
-        "fr": "Il ne peut supprimer ni formulaire ni réponse : les essais s'accumulent dans votre espace.",
-        "en": "It can't delete forms or answers: test runs pile up in your workspace.",
+        "fr": "L'assistant ne peut supprimer ni formulaire ni réponse : les essais s'accumulent dans votre espace.",
+        "en": "The assistant can't delete forms or responses: test runs pile up in your workspace.",
         "workaround": {
           "fr": "Supprimez vous-même les brouillons d'essai dans Tally de temps en temps.",
           "en": "Delete the test drafts yourself in Tally now and then."

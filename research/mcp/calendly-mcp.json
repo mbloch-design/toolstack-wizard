@@ -6,8 +6,8 @@
   "host_tool": "calendly",
   "category": "communication",
   "summary": {
-    "fr": "Le serveur officiel de Calendly permet à votre assistant de trouver vos créneaux, réserver et annuler des rendez-vous, et modifier vos types d'événements et disponibilités. Aucun forfait payant n'est requis, et Calendly ne documente pas de confirmation avant action.",
-    "en": "Calendly's official server lets your assistant find your open slots, book and cancel meetings, and edit your event types and availability. No paid plan is required, and Calendly documents no confirmation before acting."
+    "fr": "Le serveur officiel de Calendly permet à votre assistant de trouver vos créneaux, réserver et annuler des rendez-vous, et modifier vos types d'événements et disponibilités. Aucun forfait payant n'est requis. Calendly ne documente aucune étape de confirmation avant d'agir.",
+    "en": "Calendly's official server lets your assistant find your open slots, book and cancel meetings, and edit your event types and availability. No paid plan is required. Calendly documents no confirmation step before acting."
   },
   "card": {
     "fr": "Trouver, réserver ou annuler un rendez-vous.",
@@ -27,7 +27,7 @@
       "en": "Which meetings do I have next week?"
     },
     {
-      "fr": "Crée un lien de réservation à usage unique pour mon rendez-vous découverte.",
+      "fr": "Crée un lien de réservation à usage unique pour mon appel découverte.",
       "en": "Create a single-use booking link for my discovery call."
     }
   ],
@@ -53,7 +53,7 @@
   "plan_words": {
     "common": {
       "fr": "Fonctionne sur tous les forfaits Calendly, y compris le gratuit.",
-      "en": "Works on every Calendly plan, free included."
+      "en": "Works on every Calendly plan, including the free one."
     },
     "advanced": {
       "fr": "Certaines actions dépendent de votre forfait ; Calendly ne dit pas lesquelles.",
@@ -67,7 +67,7 @@
         "en": "Which meetings do I have tomorrow?"
       },
       {
-        "fr": "Quels types de rendez-vous ai-je ?",
+        "fr": "Quels types d'événements ai-je ?",
         "en": "Which event types do I have?"
       },
       {
@@ -77,7 +77,7 @@
     ],
     "write": {
       "ask": {
-        "fr": "Crée un lien de réservation à usage unique pour mon rendez-vous découverte.",
+        "fr": "Crée un lien de réservation à usage unique pour mon appel découverte.",
         "en": "Create a single-use booking link for my discovery call."
       },
       "check": {
@@ -301,7 +301,7 @@
       "name": "users-get_current_user",
       "kind": "read",
       "fr": "Lire votre compte",
-      "en": "Read your user"
+      "en": "Read your account"
     },
     {
       "name": "users-get_user",
@@ -437,7 +437,7 @@
     },
     "intro": {
       "fr": "Le ping-pong de mails pour caler un rendez-vous, tout le monde connaît : « mardi ? », « plutôt jeudi », « ah non, jeudi je ne peux plus »… Calendly gagne déjà la moitié de la partie, votre assistant joue l'autre : il regarde vos créneaux, crée le lien, rédige le mail. Mais il tient aussi votre agenda en main, annulations comprises. Un peu de méthode évite d'annuler le mauvais lundi.",
-      "en": "Everyone knows the email ping-pong of booking a meeting: “Tuesday?”, “Thursday's better”, “oh no, Thursday's out now”… Calendly already wins half the game, and your assistant plays the other half: it checks your slots, creates the link, drafts the email. But it also holds your calendar, cancellations included. A little method saves you from cancelling the wrong Monday."
+      "en": "Everyone knows the email ping-pong of booking a meeting: “Tuesday?”, “Thursday's better”, “oh no, Thursday's out now”… Calendly already wins half the game, and your assistant plays the other half: it checks your slots, creates the link, drafts the email. But it also has its hands on your calendar, cancellations included. A little method saves you from cancelling the wrong Monday."
     },
     "situations": [
       {
@@ -463,7 +463,7 @@
           "en": "Week ahead"
         },
         "ask": {
-          "fr": "Quels rendez-vous ai-je cette semaine, avec qui, et pour quel type de rendez-vous ?",
+          "fr": "Quels rendez-vous ai-je cette semaine, avec qui, et pour quel type d'événement ?",
           "en": "Which meetings do I have this week, with whom, and for which event type?"
         },
         "gain": {
@@ -509,8 +509,8 @@
           "fr": "Appelez les rendez-vous par leur nom",
           "en": "Call meetings by their name"
         },
-        "fr": "« Mon appel découverte », « ma séance de coaching » : reprenez le nom de vos types de rendez-vous, comme dans les exemples de Calendly. Il saura de quoi vous parlez.",
-        "en": "“My discovery call”, “my coaching session”: use your event types' names, as Calendly's own examples do. It'll know what you mean.",
+        "fr": "« Mon appel découverte », « ma séance de coaching » : reprenez le nom de vos types d'événements, comme dans les exemples de Calendly. L'assistant saura de quoi vous parlez.",
+        "en": "“My discovery call”, “my coaching session”: use your event types' names, as Calendly's own examples do. The assistant will know what you mean.",
         "source": "https://www.calendly.com/blog/mcp-server",
         "community": false,
         "icon": "title"
@@ -531,8 +531,8 @@
           "fr": "Qu'il demande avant d'agir",
           "en": "Have it ask before acting"
         },
-        "fr": "Réglez le connecteur pour que l'assistant vous demande avant chaque action : lire vos créneaux ne risque rien, annuler un client si.",
-        "en": "Set the connector so the assistant asks before each action: reading your slots is harmless, cancelling a client isn't.",
+        "fr": "Réglez le connecteur pour que l'assistant vous demande avant chaque action : lire vos créneaux ne risque rien, annuler le rendez-vous d'un client, si.",
+        "en": "Set the connector so the assistant asks before each action: reading your slots is harmless, cancelling a client's meeting isn't.",
         "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
         "community": false,
         "icon": "approve"
@@ -574,7 +574,7 @@
           "fr": "Selon le forfait, portes fermées",
           "en": "Some doors depend on your plan"
         },
-        "fr": "Certaines actions dépendent de votre forfait, de votre rôle ou de vos options, comme les résumés de réunion qui demandent Notetaker.",
+        "fr": "Certaines actions dépendent de votre forfait, de votre rôle ou de vos options, comme les comptes rendus de réunion, qui demandent Notetaker.",
         "en": "Some actions depend on your plan, role or add-ons, such as meeting recaps, which need Notetaker.",
         "workaround": {
           "fr": "Si l'assistant bute sur une action, vérifiez dans Calendly qu'elle est incluse dans votre compte.",

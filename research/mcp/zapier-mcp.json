@@ -6,8 +6,8 @@
   "host_tool": "zapier",
   "category": "automation",
   "summary": {
-    "fr": "Zapier MCP met à la portée de votre assistant les actions de milliers d'applications connectées à votre compte Zapier : chercher, créer, envoyer. Vous choisissez les actions exposées, et chaque appel réussi consomme deux tâches du forfait.",
-    "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful call uses two tasks from your plan."
+    "fr": "Zapier MCP met à la portée de votre assistant les actions de milliers d'applications connectées à votre compte Zapier : chercher, créer, envoyer. Vous choisissez les actions exposées, et chaque action réussie consomme deux tâches du forfait.",
+    "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful action uses two tasks from your plan."
   },
   "card": {
     "fr": "Agir dans vos applis via vos actions activées.",
@@ -66,11 +66,11 @@
   ],
   "plan_words": {
     "common": {
-      "fr": "Utilise votre forfait Zapier actuel : chaque action réussie compte pour 2 tâches.",
-      "en": "Uses your current Zapier plan: each successful action counts as 2 tasks."
+      "fr": "Le serveur puise dans votre forfait Zapier actuel, chaque action réussie comptant pour 2 tâches.",
+      "en": "The server draws on your current Zapier plan, each successful action counting as 2 tasks."
     },
     "advanced": {
-      "fr": "Les outils de workflow demandent l'accès anticipé.",
+      "fr": "Les outils de workflow demandent un accès anticipé.",
       "en": "Workflow tools need early access."
     }
   },
@@ -99,11 +99,11 @@
   "troubleshoot": [
     {
       "fr": "Quand votre compte atteint sa limite de tâches, les actions échouent : attendez le nouveau cycle ou changez de forfait.",
-      "en": "When your account hits its task limit, actions fail: wait for the new cycle or change plan."
+      "en": "When your account hits its task limit, actions fail: wait for the next cycle or change plans."
     },
     {
-      "fr": "Sans application connectée dans Zapier, il n'a aucune action.",
-      "en": "With no app connected in Zapier, it has no action."
+      "fr": "Sans application connectée dans Zapier, l'assistant n'a accès à aucune action.",
+      "en": "With no app connected in Zapier, the assistant has no actions available."
     },
     {
       "fr": "Les connexions partagées par un autre utilisateur ne sont pas reprises.",
@@ -118,8 +118,8 @@
   "access": "read_write",
   "plan": "all",
   "plan_note": {
-    "fr": "Tous les comptes ; chaque appel réussi consomme deux tâches du forfait.",
-    "en": "All accounts; each successful call uses two tasks from your plan."
+    "fr": "Tous les comptes ; chaque action réussie consomme deux tâches du forfait.",
+    "en": "All accounts; each successful action uses two tasks from your plan."
   },
   "capabilities": [
     {
@@ -344,7 +344,7 @@
     },
     "intro": {
       "fr": "Zapier, c'est le couteau suisse du freelance : il y a une lame pour presque tout, et on finit toujours par se demander ce que fait celle-là. Branché à votre assistant, il lui donne accès aux actions de vos applis connectées : envoyer, créer, chercher. Pratique, mais chaque action compte, au sens propre. Quelques réglages évitent les mauvaises surprises, côté envois comme côté facture.",
-      "en": "Zapier is the freelancer's Swiss army knife: there's a blade for almost everything, and you always end up wondering what that one does. Plugged into your assistant, it opens up the actions of your connected apps: send, create, search. Handy, but every action counts, literally. A few settings spare you surprises, on sending as well as on the bill."
+      "en": "Zapier is the freelancer's Swiss army knife: there's a blade for almost everything, and you always end up wondering what that one does. Plugged into your assistant, it opens up the actions of your connected apps: send, create, search. Handy, but every action counts, literally. A few settings spare you nasty surprises, both in what gets sent and on the bill."
     },
     "situations": [
       {
@@ -438,7 +438,7 @@
           "fr": "L'accord pour la session, pas plus",
           "en": "Approval for the session, no more"
         },
-        "fr": "Zapier suggère d'approuver pour la session afin d'éviter une demande à chaque action. Gardez-le pour les lectures ; pour un envoi, un clic de plus ne fait de mal à personne.",
+        "fr": "Zapier suggère d'approuver pour la session afin d'éviter une demande à chaque action. Réservez cette option aux lectures ; pour un envoi, un clic de plus ne fait de mal à personne.",
         "en": "Zapier suggests approving for the session to skip a prompt on every action. Keep that for reads; for a send, one more click never hurt anyone.",
         "source": "https://docs.zapier.com/mcp/get-started/quickstart",
         "community": false,
@@ -460,13 +460,13 @@
       {
         "title": {
           "fr": "Le compteur de tâches file",
-          "en": "The task counter runs"
+          "en": "The task counter keeps ticking"
         },
-        "fr": "Un utilisateur s'est retrouvé hors limite sans comprendre : les appels de l'assistant ne figuraient pas dans le graphique habituel de ses Zaps.",
+        "fr": "Un utilisateur a dépassé sa limite sans comprendre pourquoi : les appels de l'assistant ne figuraient pas dans le graphique habituel de ses Zaps.",
         "en": "One user went over their limit without understanding why: the assistant's calls weren't in the usual Zap usage chart.",
         "workaround": {
           "fr": "Suivez le compteur des tâches MCP dans les réglages de facturation et d'usage.",
-          "en": "Follow the MCP task counter in the billing and usage settings."
+          "en": "Watch the MCP task counter in the billing and usage settings."
         },
         "source": "https://community.zapier.com/troubleshooting-99/zapier-says-i-m-over-my-100-task-limit-after-using-25-task-53856",
         "community": true,
@@ -477,7 +477,7 @@
           "fr": "Limite atteinte, tout s'arrête",
           "en": "Limit reached, everything stops"
         },
-        "fr": "Une fois la limite de tâches atteinte, les actions échouent sur une erreur jusqu'au prochain cycle, sauf facturation à l'usage.",
+        "fr": "Une fois la limite de tâches atteinte, les actions échouent sur une erreur jusqu'au prochain cycle, sauf si la facturation à l'usage est activée.",
         "en": "Once the task limit is reached, actions fail with an error until the next cycle, unless pay-per-task is on.",
         "workaround": {
           "fr": "Attendez le renouvellement, changez de forfait, ou faites l'action à la main en attendant.",
@@ -510,8 +510,8 @@
         "fr": "Un jeton ou une adresse de connexion donne accès à vos outils et à leurs données, sans date d'expiration rapprochée.",
         "en": "A connection token or URL grants access to your tools and their data, and lasts a long time.",
         "workaround": {
-          "fr": "Ne le collez jamais dans un message, un document ou une conversation partagée.",
-          "en": "Never paste it into a message, a document or a shared chat."
+          "fr": "Ne collez jamais ce jeton ou cette adresse dans un message, un document ou une conversation partagée.",
+          "en": "Never paste the token or URL into a message, a document or a shared chat."
         },
         "source": "https://docs.zapier.com/mcp/get-started/quickstart",
         "community": false,

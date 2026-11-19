@@ -10,7 +10,7 @@
     "en": "Airtable's official server connects your assistant to your bases: records, tables, fields, interfaces and automation drafts. It can also delete records and whole tables, and can be limited to chosen bases."
   },
   "card": {
-    "fr": "Chercher et modifier les fiches de vos bases.",
+    "fr": "Chercher, ajouter et modifier vos enregistrements.",
     "en": "Search, add and edit the records of your bases."
   },
   "meta_description": {
@@ -42,8 +42,8 @@
   "control": [
     {
       "title": {
-        "fr": "Vous choisissez ce qu'il voit",
-        "en": "You choose what it sees"
+        "fr": "Vous choisissez ce que l'assistant voit",
+        "en": "You choose what the assistant sees"
       },
       "icon": "account",
       "fr": "À la connexion, vous choisissez exactement les bases, applications et espaces qu'il voit.",
@@ -52,20 +52,20 @@
     {
       "title": {
         "fr": "Lecture seule possible",
-        "en": "Read-only possible"
+        "en": "Read-only is an option"
       },
       "icon": "read",
-      "fr": "Pour qu'il ne fasse que lire, n'accordez que les autorisations de lecture.",
-      "en": "For reading only, grant only the read permissions."
+      "fr": "Pour que l'assistant ne fasse que lire, n'accordez que les autorisations de lecture.",
+      "en": "For read-only use, grant only read permissions."
     },
     {
       "title": {
         "fr": "Vous ajustez ou coupez",
-        "en": "You adjust or cut"
+        "en": "You adjust or cut it off"
       },
       "icon": "cut",
       "fr": "Pour ajouter ou retirer des bases, ou couper l'accès : votre profil, Intégrations, puis Intégrations tierces.",
-      "en": "To add or remove bases, or cut access: your profile, Integrations, then Third-party integrations."
+      "en": "To add or remove bases, or cut off access: your profile, Integrations, then Third-party integrations."
     },
     {
       "title": {
@@ -111,16 +111,16 @@
   },
   "troubleshoot": [
     {
-      "fr": "Avec un accès Commentateur ou Lecture seule, il lit sans modifier : il faut au moins le rôle Éditeur.",
-      "en": "With Commenter or Read-only access, it reads without editing: you need the Editor role at least."
+      "fr": "Avec un accès Commentateur ou Lecture seule, l'assistant peut lire mais pas modifier : il faut au moins le rôle Éditeur.",
+      "en": "With Commenter or Read-only access, the assistant can read but not edit: you need at least the Editor role."
     },
     {
       "fr": "Créer une base demande le rôle Créateur dans l'espace.",
       "en": "Creating a base needs the Creator role in the workspace."
     },
     {
-      "fr": "Il crée au plus 10 enregistrements par demande.",
-      "en": "It creates at most 10 records per request."
+      "fr": "L'assistant crée au plus 10 enregistrements par demande.",
+      "en": "The assistant creates at most 10 records per request."
     }
   ],
   "verified_on": "2026-11-16",
@@ -488,13 +488,13 @@
   ],
   "advice": {
     "verdict": {
-      "fr": "Si vos clients, projets ou contenus vivent dans Airtable, branchez-le : votre assistant cherche, ajoute et met à jour vos fiches en langage courant. Ne lui ouvrez que les bases utiles, car il peut aussi supprimer des tables entières.",
-      "en": "If your clients, projects or content live in Airtable, plug it in: your assistant searches, adds and updates your records in plain language. Only open the bases it needs, because it can also delete whole tables.",
+      "fr": "Si vos clients, projets ou contenus vivent dans Airtable, branchez-le : votre assistant cherche, ajoute et met à jour vos enregistrements en langage courant. Ne lui ouvrez que les bases utiles, car il peut aussi supprimer des tables entières.",
+      "en": "If your clients, projects or content live in Airtable, plug it in: your assistant searches, adds and updates your records in plain language. Only give it access to the bases it needs, because it can also delete whole tables.",
       "source": "https://airtable.com/developers/agents/mcp/getting-started"
     },
     "intro": {
       "fr": "Airtable, c'est le tableur qui a pris des cours du soir : des bases bien pensées, qu'on finit souvent par remplir à moitié faute de temps. Avec votre assistant branché, vous dites « ajoute ces trois prospects » ou « qui n'ai-je pas relancé ? », et il s'en charge. Il respecte vos droits Airtable, ni plus ni moins. Ce qui veut dire qu'il peut effacer tout ce que vous pouvez effacer.",
-      "en": "Airtable is the spreadsheet that went to night school: well-designed bases that often end up half-filled for lack of time. With your assistant plugged in, you say “add these three leads” or “who haven't I followed up with?”, and it handles it. It respects your Airtable rights, no more, no less. Which means it can erase anything you can erase."
+      "en": "Airtable is the spreadsheet that went to night school: well-designed bases that often end up half-filled for lack of time. With your assistant plugged in, you say “add these three leads” or “who haven't I followed up with?”, and it handles it. It respects your Airtable permissions, no more, no less. Which means it can erase anything you can erase."
     },
     "situations": [
       {
@@ -555,8 +555,8 @@
           "fr": "Nommez la base",
           "en": "Name the base"
         },
-        "fr": "« Dans ma base Clients » lui évite de fouiller partout. Pas besoin des noms de champs exacts : décrivez simplement ce que vous cherchez.",
-        "en": "“In my Clients base” saves it from rummaging everywhere. No need for exact field names: just describe what you're after.",
+        "fr": "« Dans ma base Clients » évite à l'assistant de fouiller partout. Pas besoin des noms de champs exacts : décrivez simplement ce que vous cherchez.",
+        "en": "“In my Clients base” saves the assistant from rummaging everywhere. No need for exact field names: just describe what you're after.",
         "source": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
         "community": false,
         "icon": "database"
@@ -566,8 +566,8 @@
           "fr": "Ne cochez que l'utile",
           "en": "Tick only what's needed"
         },
-        "fr": "À la connexion, vous choisissez les bases et espaces qu'il voit. La base de votre comptabilité n'a pas forcément besoin d'en faire partie.",
-        "en": "When connecting, you choose which bases and workspaces it sees. Your accounting base doesn't have to be one of them.",
+        "fr": "À la connexion, vous choisissez les bases et espaces que l'assistant voit. La base de votre comptabilité n'a pas forcément besoin d'en faire partie.",
+        "en": "When connecting, you choose which bases and workspaces the assistant sees. Your accounting base doesn't have to be one of them.",
         "source": "https://airtable.com/developers/agents/mcp/getting-started",
         "community": false,
         "icon": "settings"
@@ -578,7 +578,7 @@
           "en": "Free reading, writing on request"
         },
         "fr": "Réglez le connecteur pour que l'assistant vous demande avant d'agir : il lit tranquillement, et vous gardez la main sur ce qui modifie ou supprime.",
-        "en": "Set the connector so the assistant asks before acting: it reads in peace, and you keep a hand on anything that edits or deletes.",
+        "en": "Set the connector so the assistant asks before acting: it reads freely, and you stay in control of anything that edits or deletes.",
         "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
         "community": false,
         "icon": "approve"
@@ -588,8 +588,8 @@
           "fr": "Une clé en lecture seule",
           "en": "A read-only key"
         },
-        "fr": "Si vous passez par une clé (Claude Code, Cursor), ne lui donnez que les droits de lecture : il pourra répondre, pas modifier.",
-        "en": "If you go through a key (Claude Code, Cursor), give it read rights only: it can answer, not change.",
+        "fr": "Si vous passez par une clé (Claude Code, Cursor), ne donnez à la clé que les droits de lecture : l'assistant pourra répondre, pas modifier.",
+        "en": "If you connect with a key (Claude Code, Cursor), give the key read permissions only: the assistant can answer but not change anything.",
         "source": "https://support.airtable.com/docs/using-the-airtable-mcp-server",
         "community": false,
         "icon": "key"
@@ -599,8 +599,8 @@
           "fr": "Les automatisations restent éteintes",
           "en": "Automations stay off"
         },
-        "fr": "Il peut préparer une automatisation, mais elle reste en brouillon tant que vous ne l'allumez pas dans Airtable. Relisez avant d'appuyer.",
-        "en": "It can draft an automation, but it stays off until you turn it on in Airtable. Read it before flipping the switch.",
+        "fr": "L'assistant peut préparer une automatisation, mais elle reste en brouillon tant que vous ne l'allumez pas dans Airtable. Relisez avant d'appuyer.",
+        "en": "The assistant can draft an automation, but the automation stays off until you turn it on in Airtable. Read it before flipping the switch.",
         "source": "https://airtable.com/developers/agents/mcp/tools",
         "community": false,
         "icon": "draft"
@@ -612,11 +612,11 @@
           "fr": "Une table supprimée, contenu compris",
           "en": "A table deleted, contents and all"
         },
-        "fr": "Supprimer une table emporte ses fiches, ses champs et ses vues, et Airtable ne documente pas de retour en arrière pour ça.",
+        "fr": "Supprimer une table emporte ses enregistrements, ses champs et ses vues, et Airtable ne documente pas de retour en arrière pour ça.",
         "en": "Deleting a table takes its records, fields and views with it, and Airtable documents no way back for that.",
         "workaround": {
-          "fr": "Gardez la suppression sous votre approbation et dupliquez une base importante avant de lui confier un grand ménage.",
-          "en": "Keep deleting behind your approval and duplicate an important base before handing it a big clean-up."
+          "fr": "Gardez la suppression sous votre approbation et dupliquez une base importante avant de confier un grand ménage à l'assistant.",
+          "en": "Keep deleting behind your approval and duplicate an important base before handing the assistant a big clean-up."
         },
         "source": "https://airtable.com/developers/agents/mcp/tools",
         "community": false,
@@ -624,11 +624,11 @@
       },
       {
         "title": {
-          "fr": "Simple lecteur ? Lecture seule",
-          "en": "Read-only at a client's? Reading only"
+          "fr": "Accès en lecture seule ? L'assistant aussi",
+          "en": "Read-only access? So is the assistant"
         },
-        "fr": "Avec un accès Commentateur ou Lecture seule, il lit mais ne modifie rien.",
-        "en": "With Commenter or Read-only access, it reads but changes nothing.",
+        "fr": "Avec un accès Commentateur ou Lecture seule, l'assistant lit mais ne modifie rien.",
+        "en": "With Commenter or Read-only access, the assistant reads but changes nothing.",
         "workaround": {
           "fr": "Demandez au client le rôle Éditeur sur la base concernée.",
           "en": "Ask the client for the Editor role on that base."
@@ -642,8 +642,8 @@
           "fr": "Les ajouts, par petits paquets",
           "en": "Additions, in small batches"
         },
-        "fr": "Il ne crée qu'un petit nombre de fiches par demande : une longue liste sera découpée, ou à moitié faite.",
-        "en": "It only creates a handful of records per request: a long list gets split up, or half done.",
+        "fr": "L'assistant ne crée qu'un petit nombre d'enregistrements par demande : une longue liste sera découpée, ou à moitié faite.",
+        "en": "The assistant only creates a handful of records per request: a long list gets split up, or half done.",
         "workaround": {
           "fr": "Envoyez vos ajouts par petits lots et vérifiez le total dans la table ; pour un gros import, passez par l'import CSV d'Airtable.",
           "en": "Send additions in small batches and check the count in the table; for a big import, use Airtable's CSV import."
@@ -657,8 +657,8 @@
           "fr": "Type de champ : pas touche",
           "en": "Field type: hands off"
         },
-        "fr": "Il peut renommer un champ, mais pas changer son type ni ses choix de liste déroulante.",
-        "en": "It can rename a field, but not change its type or its dropdown options.",
+        "fr": "L'assistant peut renommer un champ, mais pas changer son type ni ses choix de liste déroulante.",
+        "en": "The assistant can rename a field, but not change its type or its dropdown options.",
         "workaround": {
           "fr": "Faites ces changements directement dans Airtable.",
           "en": "Make those changes directly in Airtable."

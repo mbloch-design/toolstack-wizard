@@ -60,14 +60,14 @@
         "en": "The admin sets the frame"
       },
       "icon": "admin",
-      "fr": "En Enterprise, l'administrateur l'ouvre à toute l'organisation ou à certaines équipes : Paramètres d'administration, Apps et intégrations, MCP.",
-      "en": "On Enterprise, the admin opens it to the whole organisation or some teams: Admin settings, Apps and integrations, MCP."
+      "fr": "En Enterprise, l'administrateur l'ouvre à toute l'organisation ou à certaines équipes, dans Paramètres d'administration › Apps et intégrations › MCP.",
+      "en": "On Enterprise, the admin opens it to the whole organisation or some teams, under Admin settings › Apps and integrations › MCP."
     }
   ],
   "plan_words": {
     "common": {
       "fr": "Fonctionne sur tous les forfaits Miro, y compris les équipes gratuites.",
-      "en": "Works on every Miro plan, free teams included."
+      "en": "Works on every Miro plan, including free teams."
     },
     "advanced": {
       "fr": "En Enterprise, un administrateur doit d'abord l'autoriser.",
@@ -122,7 +122,7 @@
   "access": "read_write",
   "plan": "all",
   "plan_note": {
-    "fr": "Tous les forfaits. Sur Enterprise, désactivé par défaut jusqu'à activation par un administrateur.",
+    "fr": "Tous les forfaits. En Enterprise, désactivé par défaut jusqu'à activation par un administrateur.",
     "en": "All plans. On Enterprise, off by default until an admin turns it on."
   },
   "capabilities": [
@@ -220,7 +220,7 @@
     {
       "name": "board_create_format",
       "kind": "write",
-      "fr": "Créer un tableau, une frise ou un kanban",
+      "fr": "Créer une table, une frise ou un kanban",
       "en": "Create a table, timeline or kanban"
     },
     {
@@ -539,7 +539,7 @@
     },
     "intro": {
       "fr": "Miro, c'est le tableau blanc où l'atelier client a laissé trois cents post-it et zéro compte rendu. Brancher votre assistant, c'est enfin avoir quelqu'un pour tout relire et en sortir les décisions. Il sait aussi monter un tableau neuf, cadre par cadre, mais le premier jet demande souvent une ou deux retouches. Et comme il agit avec vos droits, il peut ouvrir un tableau à d'autres : on en reparle plus bas.",
-      "en": "Miro is the whiteboard where the client workshop left three hundred sticky notes and zero minutes. Plugging in your assistant finally gives you someone to read it all and pull out the decisions. It can also build a fresh board, frame by frame, but the first draft often needs a pass or two. And since it acts with your rights, it can open a board to other people: more on that below."
+      "en": "Miro is the whiteboard where the client workshop left three hundred sticky notes and no write-up. Plugging in your assistant finally gives you someone to read it all and pull out the decisions. It can also build a fresh board, frame by frame, but the first draft often needs a pass or two. And since it acts with your rights, it can open a board to other people: more on that below."
     },
     "situations": [
       {
@@ -586,8 +586,8 @@
           "en": "List the comments still open on this board, and mark as resolved the ones I point out."
         },
         "gain": {
-          "fr": "Les retours triés, les fils refermés.",
-          "en": "Comments sorted, threads closed."
+          "fr": "Vous voyez ce qui reste à traiter.",
+          "en": "You see what's left to handle."
         },
         "source": "https://developers.miro.com/docs/miro-mcp-tools",
         "icon": "chat",

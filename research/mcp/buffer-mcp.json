@@ -6,8 +6,8 @@
   "host_tool": "buffer",
   "category": "creation",
   "summary": {
-    "fr": "Le serveur officiel de Buffer permet à votre assistant de lire votre file d'attente et vos statistiques, de rédiger et programmer des posts, et de les publier tout de suite si on le lui demande. Il peut aussi supprimer définitivement un post ; il est inclus dans tous les forfaits, gratuit compris.",
-    "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post; it is included on every plan, free included."
+    "fr": "Le serveur officiel de Buffer permet à votre assistant de lire votre file d'attente et vos statistiques, de rédiger et programmer des posts, et de les publier tout de suite si on le lui demande. Il peut aussi supprimer définitivement un post. Le serveur est inclus dans tous les forfaits, gratuit compris.",
+    "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post. The server is included on every plan, including the free one."
   },
   "card": {
     "fr": "Publier vos posts et lire leurs chiffres.",
@@ -27,8 +27,8 @@
       "en": "Which of this month's posts did best?"
     },
     {
-      "fr": "Ajoute cette idée de post à mes idées.",
-      "en": "Add this post idea to my ideas."
+      "fr": "Enregistre cette idée de post dans mes Idées Buffer.",
+      "en": "Save this post idea to my Buffer Ideas."
     }
   ],
   "for": {
@@ -36,8 +36,8 @@
     "en": "You post regularly on several networks with Buffer."
   },
   "not_for": {
-    "fr": "Vous ne voulez rien publier sans relire : l'assistant peut publier tout de suite, et Buffer ne documente pas de confirmation.",
-    "en": "You never want anything posted unread: the assistant can post right away, and Buffer documents no confirmation."
+    "fr": "Vous ne voulez rien publier sans relire : l'assistant peut publier tout de suite, et Buffer ne documente aucune étape de confirmation.",
+    "en": "You never want anything to go out before you've reread it: the assistant can post right away, and Buffer documents no confirmation step."
   },
   "control": [
     {
@@ -46,8 +46,8 @@
         "en": "The whole account"
       },
       "icon": "account",
-      "fr": "La connexion couvre tout votre compte Buffer, sans choix d'organisation.",
-      "en": "The connection covers your whole Buffer account, with no organisation choice."
+      "fr": "La connexion couvre tout votre compte Buffer, sans possibilité de choisir une organisation.",
+      "en": "The connection covers your whole Buffer account, with no way to pick an organisation."
     },
     {
       "title": {
@@ -55,23 +55,23 @@
         "en": "You confirm first"
       },
       "icon": "confirm",
-      "fr": "Laissez les demandes de confirmation de votre assistant : la plupart attendent votre accord avant de publier, modifier ou supprimer.",
-      "en": "Keep your assistant's confirmation prompts: most wait for your approval before posting, editing or deleting."
+      "fr": "Gardez les demandes de confirmation de votre assistant : la plupart des assistants attendent votre accord avant de publier, modifier ou supprimer.",
+      "en": "Keep your assistant's confirmation prompts on: most assistants wait for your approval before posting, editing or deleting."
     },
     {
       "title": {
         "fr": "Vous coupez quand vous voulez",
-        "en": "You cut whenever you want"
+        "en": "You can cut access anytime"
       },
       "icon": "cut",
       "fr": "Pour couper l'accès : Réglages, puis API, dans Buffer.",
-      "en": "To cut access: Settings, then API, in Buffer."
+      "en": "To revoke access: Settings, then API, in Buffer."
     }
   ],
   "plan_words": {
     "common": {
       "fr": "Fonctionne sur tous les forfaits Buffer, y compris le gratuit.",
-      "en": "Works on every Buffer plan, free included."
+      "en": "Works on every Buffer plan, including the free one."
     },
     "advanced": {
       "fr": "Sur le gratuit, les statistiques ne remontent qu'aux 31 derniers jours.",
@@ -99,8 +99,8 @@
         "en": "Add a post idea “ToolTrim test”."
       },
       "check": {
-        "fr": "Dans Buffer, rubrique Idées, elle y est ; supprimez-la ensuite.",
-        "en": "In Buffer, under Ideas, it is there; delete it afterwards."
+        "fr": "Elle apparaît dans Buffer, rubrique Idées ; supprimez-la ensuite.",
+        "en": "It shows up in Buffer under Ideas; delete it afterwards."
       }
     }
   },
@@ -375,7 +375,7 @@
         },
         "gain": {
           "fr": "Ce qui marche, sans tableur.",
-          "en": "What works, no spreadsheet."
+          "en": "What works, without a spreadsheet."
         },
         "source": "https://developers.buffer.com/guides/integrations/mcp.html",
         "icon": "chart",
@@ -399,8 +399,8 @@
           "fr": "Laissez les confirmations allumées",
           "en": "Leave confirmations on"
         },
-        "fr": "Buffer le demande lui-même : une publication immédiate ou une suppression ne se rattrapent pas. Un clic de plus, c'est moins cher qu'un post à excuser.",
-        "en": "Buffer asks for it itself: an instant post or a deletion can't be taken back. One more click beats a post you have to apologise for.",
+        "fr": "Buffer le conseille lui-même : une publication immédiate ou une suppression ne se rattrapent pas. Un clic de plus, c'est moins cher qu'un post à excuser.",
+        "en": "Buffer itself recommends it: an instant post or a deletion can't be taken back. One more click beats a post you have to apologise for.",
         "source": "https://developers.buffer.com/guides/integrations/mcp.html",
         "community": false,
         "icon": "approve"
@@ -422,7 +422,7 @@
           "en": "Ideas for the rest"
         },
         "fr": "Un script de vidéo ou le texte d'un carrousel n'a rien à faire dans la file d'attente : demandez-lui de l'enregistrer dans vos Idées Buffer pour plus tard.",
-        "en": "A video script or carousel text doesn't belong in the queue: ask it to save it in your Buffer Ideas for later.",
+        "en": "A video script or carousel text doesn't belong in the queue: ask the assistant to save it in your Buffer Ideas for later.",
         "source": "https://buffer.com/resources/how-to-post-on-social-media-from-claude/",
         "community": false,
         "icon": "copy"
@@ -435,7 +435,7 @@
           "en": "The whole account, at once"
         },
         "fr": "La connexion couvre toutes vos organisations et tous vos canaux, y compris ceux d'un client que vous gérez.",
-        "en": "The connection covers all your organisations and channels, including a client's you manage.",
+        "en": "The connection covers all your organisations and channels, including those of a client you manage.",
         "workaround": {
           "fr": "Nommez le réseau et l'organisation dans chaque demande, et coupez l'accès dans Réglages, puis API, quand vous n'en avez plus besoin.",
           "en": "Name the network and organisation in every request, and cut access in Settings, then API, when you no longer need it."

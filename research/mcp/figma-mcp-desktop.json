@@ -38,7 +38,7 @@
   "control": [
     {
       "title": {
-        "fr": "Seulement application ouverte",
+        "fr": "Seulement quand l'application est ouverte",
         "en": "Only while the app is open"
       },
       "icon": "limit",
@@ -71,7 +71,7 @@
   "troubleshoot": [
     {
       "fr": "Si rien n'apparaît, vérifiez que le serveur est toujours activé dans l'application Figma.",
-      "en": "If nothing shows, check that the server is still on in the Figma app."
+      "en": "If nothing shows up, check that the server is still on in the Figma app."
     },
     {
       "fr": "Avec VS Code, redémarrez Figma et VS Code.",
@@ -221,7 +221,7 @@
   ],
   "advice": {
     "verdict": {
-      "fr": "Réservé à ceux qui codent dans Claude Code, Cursor ou VS Code avec l'application Figma ouverte à côté : l'assistant lit la frame que vous sélectionnez, sans jamais toucher à la maquette. Pour tout le reste, Figma recommande lui-même son serveur en ligne.",
+      "fr": "Réservé aux personnes qui codent dans Claude Code, Cursor ou VS Code avec l'application Figma ouverte à côté : l'assistant lit la frame que vous sélectionnez, sans jamais toucher à la maquette. Pour tout le reste, Figma recommande lui-même son serveur en ligne.",
       "en": "Only for people who code in Claude Code, Cursor or VS Code with the Figma app open alongside: the assistant reads the frame you select, without ever touching the mockup. For everything else, Figma itself recommends its online server.",
       "source": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/"
     },
@@ -321,7 +321,7 @@
           "fr": "Lecture seule, par construction",
           "en": "Read only, by design"
         },
-        "fr": "Il ne peut ni dessiner ni modifier vos maquettes : vous pouvez l'ouvrir sur celle validée par le client sans trembler.",
+        "fr": "Il ne peut ni dessiner ni modifier vos maquettes : vous pouvez lui confier celle que le client a validée, sans trembler.",
         "en": "It can neither draw nor edit your mockups: you can point it at the one your client signed off without a second thought.",
         "source": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/",
         "community": false,
@@ -353,7 +353,7 @@
         "en": "Figma documents connecting it from Claude Code, Codex, Cursor and VS Code, not from chat apps.",
         "workaround": {
           "fr": "Si vous travaillez dans Claude ou un autre assistant de conversation, prenez le serveur en ligne.",
-          "en": "If you work in Claude or another chat assistant, take the online server."
+          "en": "If you work in Claude or another chat assistant, use the online server."
         },
         "source": "https://developers.figma.com/docs/figma-mcp-server/local-server-installation/",
         "community": false,
@@ -368,7 +368,7 @@
         "en": "One user reports the server showed as on in Figma while nothing answered on the assistant's side, even after restarting.",
         "workaround": {
           "fr": "Figma suggère de vérifier qu'un outil de sécurité de l'entreprise ne bloque pas le serveur, ou de passer au serveur en ligne en attendant.",
-          "en": "Figma suggests checking that company security software isn't blocking the server, or switching to the online server meanwhile."
+          "en": "Figma suggests checking that company security software isn't blocking the server, or switching to the online server in the meantime."
         },
         "source": "https://forum.figma.com/report-a-problem-6/dev-mode-mcp-server-shows-connected-but-isn-t-actually-working-57726",
         "community": true,

@@ -7,7 +7,7 @@
   "category": "organization",
   "summary": {
     "fr": "Le serveur officiel de Notion donne à votre assistant l'accès à vos pages, bases de données, commentaires, fichiers et agenda Notion. Il peut lire, créer, modifier et mettre à la corbeille, toujours dans la limite de vos droits.",
-    "en": "Notion's official server gives your assistant access to your Notion pages, databases, comments, files and calendar. It can read, create, edit and move to trash, always within your own rights."
+    "en": "Notion's official server gives your assistant access to your Notion pages, databases, comments, files and calendar. It can read, create, edit and move things to trash, always within your own permissions."
   },
   "card": {
     "fr": "Retrouver, résumer et créer des pages dans Notion.",
@@ -36,7 +36,7 @@
     "en": "You already keep your notes, clients or projects in Notion and lose time finding them again."
   },
   "not_for": {
-    "fr": "Vous êtes invité dans l'espace d'un client : les invités ne peuvent pas se connecter.",
+    "fr": "Vous n'avez qu'un accès invité dans l'espace d'un client : les invités ne peuvent pas se connecter.",
     "en": "You are a guest in a client's workspace: guests cannot connect."
   },
   "control": [
@@ -51,8 +51,8 @@
     },
     {
       "title": {
-        "fr": "L'administrateur encadre",
-        "en": "The admin sets the frame"
+        "fr": "Un administrateur fixe les limites",
+        "en": "An admin sets the limits"
       },
       "icon": "admin",
       "fr": "dans les contrôles d'administration de Notion.",
@@ -61,11 +61,11 @@
     {
       "title": {
         "fr": "Vous coupez quand vous voulez",
-        "en": "You cut whenever you want"
+        "en": "You can cut it off anytime"
       },
       "icon": "cut",
-      "fr": "« Déconnecter » ou « Effacer l'authentification » dans les réglages de l'assistant.",
-      "en": "“Disconnect” or “Clear authentication” in the assistant's settings."
+      "fr": "avec « Déconnecter » ou « Effacer l'authentification » dans les réglages de l'assistant.",
+      "en": "with “Disconnect” or “Clear authentication” in the assistant's settings."
     }
   ],
   "plan_words": {
@@ -74,8 +74,8 @@
       "en": "Works on every Notion plan."
     },
     "advanced": {
-      "fr": "En plus, sur Business et Enterprise : connexion sans passer par le navigateur (utile aux outils de développeur) et recherche dans les outils reliés à Notion, avec Notion AI.",
-      "en": "On top, on Business and Enterprise: connecting without a browser (useful for developer tools) and searching the tools linked to Notion, with Notion AI."
+      "fr": "En plus, sur Business et Enterprise : connexion sans passer par le navigateur (utile aux outils de développeur) et recherche dans les sources connectées à Notion, avec Notion AI.",
+      "en": "On top of that, on Business and Enterprise: connecting without a browser (useful for developer tools) and searching connected sources, with Notion AI."
     }
   },
   "first_requests": {
@@ -96,7 +96,7 @@
     "write": {
       "ask": {
         "fr": "Ajoute un commentaire « À relire » sur une page de test.",
-        "en": "Add a comment “To review” on a test page."
+        "en": "Add a “To review” comment to a test page."
       },
       "check": {
         "fr": "Ouvrez la page dans Notion : le commentaire y est, à votre nom.",
@@ -110,8 +110,8 @@
       "en": "Check your rights in the Notion workspace you target: the assistant only does what your account allows."
     },
     {
-      "fr": "Dans une entreprise, un administrateur peut interdire l'ajout de nouveaux branchements à l'assistant.",
-      "en": "In a company, an admin may forbid adding new connections to the assistant."
+      "fr": "Dans une entreprise, un administrateur peut interdire d'ajouter de nouveaux connecteurs à l'assistant.",
+      "en": "In a company, an admin may block adding new connectors to the assistant."
     }
   ],
   "verified_on": "2026-11-16",
@@ -694,7 +694,7 @@
         },
         "gain": {
           "fr": "L'historique en tête avant l'appel.",
-          "en": "The history in mind before the call."
+          "en": "The full history fresh in your mind before the call."
         },
         "source": "https://developers.notion.com/guides/mcp/overview",
         "icon": "meeting",
@@ -739,9 +739,9 @@
       {
         "title": {
           "fr": "Des titres qui parlent",
-          "en": "Titles that speak"
+          "en": "Titles that say something"
         },
-        "fr": "Client, type de document, date : l'assistant s'appuie sur les titres pour comprendre ce qu'il trouve. « Notes 3 » ne l'aidera pas plus que vous.",
+        "fr": "Client, type de document, date : l'assistant s'appuie sur les titres pour comprendre ce qu'il trouve. « Notes 3 » ne l'aidera pas plus qu'il ne vous aide.",
         "en": "Client, document type, date: the assistant relies on titles to understand what it finds. “Notes 3” won't help it any more than it helps you.",
         "source": "https://www.notion.com/help/notion-mcp",
         "community": false,
@@ -752,8 +752,8 @@
           "fr": "Une base par sujet, reliées entre elles",
           "en": "One database per subject, linked together"
         },
-        "fr": "Clients, projets, factures, chacun dans sa base, avec les tâches reliées aux pages client : c'est ce qui lui permet de vous résumer l'avancement et les blocages.",
-        "en": "Clients, projects, invoices, each in its own database, with tasks linked to client pages: that is what lets it sum up progress and blockers for you.",
+        "fr": "Clients, projets, factures, chacun dans sa base, avec les tâches reliées aux pages client : c'est ce qui permet à l'assistant de vous résumer l'avancement et les blocages.",
+        "en": "Clients, projects, invoices, each in its own database, with tasks linked to client pages: that is what lets the assistant sum up progress and blockers for you.",
         "source": "https://developers.notion.com/guides/mcp/overview",
         "community": false,
         "icon": "database"
@@ -774,8 +774,8 @@
           "fr": "Sur une page client, une suggestion plutôt qu'une réécriture",
           "en": "On a client page, a suggestion rather than a rewrite"
         },
-        "fr": "Demandez-lui de proposer une modification : vous l'acceptez dans Notion, et le texte que lit votre client reste le vôtre.",
-        "en": "Ask it to suggest an edit: you accept it in Notion, and the text your client reads stays yours.",
+        "fr": "Demandez à l'assistant de proposer une modification : vous l'acceptez dans Notion, et le texte que lit votre client reste le vôtre.",
+        "en": "Ask the assistant to suggest an edit: you accept it in Notion, and the text your client reads stays yours.",
         "source": "https://developers.notion.com/guides/mcp/mcp-supported-tools",
         "community": false,
         "icon": "suggest"
@@ -786,7 +786,7 @@
           "en": "In ChatGPT, expect to click"
         },
         "fr": "Chaque mise à jour demande votre accord. Pour vingt fiches d'un coup, ça devient un exercice de patience : travaillez par petits lots.",
-        "en": "Every update asks for your approval. For twenty records at once, it turns into a patience exercise: work in small batches.",
+        "en": "Every update asks for your approval. For twenty records at once, it becomes an exercise in patience: work in small batches.",
         "source": "https://community.openai.com/t/trusted-approval-policy-for-repeated-connector-write-actions/1381447",
         "community": true,
         "icon": "click"
@@ -795,8 +795,8 @@
     "pitfalls": [
       {
         "title": {
-          "fr": "Invité chez un client ? Porte fermée",
-          "en": "A guest at a client's? Door shut"
+          "fr": "Accès invité chez un client ? Porte fermée",
+          "en": "Guest in a client's workspace? Door shut"
         },
         "fr": "Les invités d'un espace Notion ne peuvent pas brancher d'assistant.",
         "en": "Guests in a Notion workspace cannot plug in an assistant.",
@@ -813,8 +813,8 @@
           "fr": "Beaucoup de pages, lecture lente",
           "en": "Many pages, slow reading"
         },
-        "fr": "Il ouvre les pages une par une, et peut en sauter quand il y en a trop.",
-        "en": "It opens pages one by one, and may skip some when there are too many.",
+        "fr": "L'assistant ouvre les pages une par une, et peut en sauter quand il y en a trop.",
+        "en": "The assistant opens pages one by one, and may skip some when there are too many.",
         "workaround": {
           "fr": "Pointez une page ou une base précise et travaillez par petits lots ; pour un bilan complet, partez d'un export.",
           "en": "Point to a specific page or database and work in small batches; for a full review, start from an export."
@@ -831,8 +831,8 @@
         "fr": "Au-delà des limites de Notion, l'action s'arrête sur une erreur au lieu d'attendre.",
         "en": "Past Notion's limits, the action stops with an error instead of waiting.",
         "workaround": {
-          "fr": "Demandez-lui de faire moins de choses à la fois, ou réessayez un peu plus tard.",
-          "en": "Ask it to do fewer things at once, or try again a little later."
+          "fr": "Demandez à l'assistant de faire moins de choses à la fois, ou réessayez un peu plus tard.",
+          "en": "Ask the assistant to do fewer things at once, or try again a little later."
         },
         "source": "https://developers.notion.com/guides/mcp/rate-limits",
         "community": false,
@@ -840,8 +840,8 @@
       },
       {
         "title": {
-          "fr": "Il a vos droits, tous vos droits",
-          "en": "It has your rights, all of them"
+          "fr": "L'assistant a vos droits, tous vos droits",
+          "en": "The assistant has your permissions, all of them"
         },
         "fr": "Une demande mal comprise peut modifier ou mettre à la corbeille une page client.",
         "en": "A misunderstood request can edit or trash a client page.",

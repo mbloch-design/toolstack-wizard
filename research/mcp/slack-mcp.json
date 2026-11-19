@@ -37,7 +37,7 @@
   },
   "not_for": {
     "fr": "Vous ne voulez aucun message envoyé en votre nom : l'assistant peut écrire dans n'importe quelle conversation.",
-    "en": "You want no message sent in your name: the assistant can write in any conversation."
+    "en": "You don't want any message sent in your name: the assistant can write in any conversation."
   },
   "control": [
     {
@@ -52,7 +52,7 @@
     {
       "title": {
         "fr": "L'administrateur encadre",
-        "en": "The admin sets the frame"
+        "en": "The admin sets the rules"
       },
       "icon": "admin",
       "fr": "Les administrateurs de l'espace approuvent et gèrent les assistants branchés, et suivent leur activité dans les journaux d'audit.",
@@ -70,7 +70,7 @@
         "en": "Find the messages about the Martin quote."
       },
       {
-        "fr": "Quels canaux suis-je ?",
+        "fr": "Dans quels canaux suis-je ?",
         "en": "Which channels am I in?"
       }
     ],
@@ -91,8 +91,8 @@
       "en": "If your workspace limits IP addresses, requests from elsewhere are refused."
     },
     {
-      "fr": "L'assistant doit être une application publiée dans le répertoire Slack ou interne à votre entreprise.",
-      "en": "The assistant must be an app published in the Slack directory or internal to your company."
+      "fr": "L'assistant doit être une application publiée dans le Slack Marketplace ou interne à votre entreprise.",
+      "en": "The assistant must be an app published in the Slack Marketplace or internal to your company."
     }
   ],
   "verified_on": "2026-11-16",
@@ -179,13 +179,13 @@
   ],
   "advice": {
     "verdict": {
-      "fr": "Si vos clients vous écrivent dans Slack, branchez-le pour retrouver un fil ou un fichier sans fouiller pendant dix minutes. Gardez l'envoi sous votre approbation : il peut écrire dans n'importe quelle conversation, en votre nom.",
-      "en": "If your clients write to you in Slack, plug it in to find a thread or a file without ten minutes of scrolling. Keep sending behind your approval: it can post in any conversation, under your name.",
+      "fr": "Si vos clients vous écrivent dans Slack, branchez-le pour retrouver un fil ou un fichier sans fouiller pendant dix minutes. Gardez l'envoi sous votre approbation : l'assistant peut écrire dans n'importe quelle conversation, en votre nom.",
+      "en": "If your clients write to you in Slack, plug it in to find a thread or a file without ten minutes of scrolling. Keep sending behind your approval: the assistant can post in any conversation, under your name.",
       "source": "https://docs.slack.dev/ai/slack-mcp-server/"
     },
     "intro": {
-      "fr": "Slack, c'est la machine à café du freelance : tout s'y dit, presque rien ne s'y retrouve. Le devis envoyé « quelque part dans un fil », la décision prise pendant votre jour off… Votre assistant fouille, lit et résume à votre place. Il sait aussi écrire, et c'est là qu'il faut rester attentif : un message parti ne revient pas. Voici comment en profiter sans faire parler l'assistant à votre place.",
-      "en": "Slack is the freelancer's coffee machine: everything gets said there, almost nothing gets found again. The quote sent “somewhere in a thread”, the decision made on your day off… Your assistant digs, reads and sums up for you. It can also write, and that's where you stay alert: a sent message doesn't come back. Here is how to enjoy it without letting the assistant speak for you."
+      "fr": "Slack, c'est la machine à café du freelance : tout s'y dit, presque rien ne s'y retrouve. Le devis envoyé « quelque part dans un fil », la décision prise pendant votre jour off… Votre assistant fouille, lit et résume à votre place. Il sait aussi écrire, et c'est là que la vigilance s'impose : un message parti ne revient pas. Voici comment en profiter sans faire parler l'assistant à votre place.",
+      "en": "Slack is the freelancer's coffee machine: everything gets said there, almost nothing gets found again. The quote sent “somewhere in a thread”, the decision made on your day off… Your assistant digs, reads and sums up for you. It can also write, and that's where you need to stay alert: a sent message doesn't come back. Here is how to make the most of it without letting the assistant speak for you."
     },
     "situations": [
       {
@@ -279,8 +279,8 @@
           "fr": "Branchez peu, branchez bien",
           "en": "Connect little, connect well"
         },
-        "fr": "Slack rappelle que chaque serveur ajouté à côté a ses propres règles de sécurité. Dans une conversation où Slack est actif, n'activez que ce dont vous avez besoin.",
-        "en": "Slack points out that every server you add alongside it has its own security rules. In a chat where Slack is on, only turn on what you need.",
+        "fr": "Slack rappelle que chaque serveur ajouté à côté a ses propres règles de sécurité. Quand Slack est actif dans votre discussion avec l'assistant, n'activez à côté que les serveurs dont vous avez besoin.",
+        "en": "Slack points out that every server you add alongside it has its own security rules. When Slack is on in your assistant chat, only turn on the other servers you need.",
         "source": "https://docs.slack.dev/ai/slack-mcp-server/",
         "community": false,
         "icon": "settings"
@@ -337,7 +337,7 @@
           "fr": "Dans Cursor, des outils manquants",
           "en": "In Cursor, missing tools"
         },
-        "fr": "Des utilisateurs ont vu seulement l'ancienne liste d'outils : les nouvelles permissions n'étaient pas approuvées côté Slack.",
+        "fr": "Des utilisateurs n'ont vu que l'ancienne liste d'outils : les nouvelles permissions n'étaient pas approuvées côté Slack.",
         "en": "Users only saw the older tool list: the new permissions weren't approved on Slack's side.",
         "workaround": {
           "fr": "Effacez les jetons MCP de Cursor, reconnectez-vous, et faites approuver les nouvelles permissions par l'administrateur.",

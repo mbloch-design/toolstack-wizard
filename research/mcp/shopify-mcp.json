@@ -11,7 +11,7 @@
   },
   "card": {
     "fr": "Suivre commandes et stocks, créer des produits.",
-    "en": "Follow orders and stock, create products."
+    "en": "Track orders and stock, create products."
   },
   "meta_description": {
     "fr": "Brancher Shopify à Claude, ChatGPT ou Gemini : commandes, produits et réductions dans l'assistant. Remboursements et paiements restent bloqués.",
@@ -70,7 +70,7 @@
     {
       "title": {
         "fr": "Vous coupez quand vous voulez",
-        "en": "You cut whenever you want"
+        "en": "Cut access anytime"
       },
       "icon": "cut",
       "fr": "Pour couper l'accès : désinstallez l'intégration dans l'administration Shopify.",
@@ -85,7 +85,7 @@
       },
       {
         "fr": "Quels produits ont moins de cinq articles en stock ?",
-        "en": "Which products have fewer than five items in stock?"
+        "en": "Which products have fewer than five units in stock?"
       },
       {
         "fr": "Donne-moi les informations de ma boutique.",
@@ -113,8 +113,8 @@
       "en": "A large batch of changes can stop partway: finish it in the admin."
     },
     {
-      "fr": "Ses droits dépendent de ceux de votre compte employé.",
-      "en": "Its rights depend on your staff account's."
+      "fr": "Les droits de l'assistant dépendent de ceux de votre compte employé.",
+      "en": "The assistant's rights depend on those of your staff account."
     }
   ],
   "verified_on": "2026-11-16",
@@ -174,7 +174,7 @@
     {
       "name": "bulk-update-product-status",
       "kind": "write",
-      "fr": "Changer le statut de 50 produits",
+      "fr": "Changer le statut de 50 produits maximum",
       "en": "Set up to 50 products active, draft or archived"
     },
     {
@@ -426,7 +426,7 @@
   ],
   "tools_note": {
     "fr": "Liste du connecteur pour Claude ; l'application pour ChatGPT ajoute l'envoi d'images.",
-    "en": "List of the Claude connector; the ChatGPT app adds image upload."
+    "en": "The Claude connector's list; the ChatGPT app adds image upload."
   },
   "install": [
     {
@@ -492,7 +492,7 @@
     },
     "intro": {
       "fr": "Une boutique Shopify, c'est un deuxième métier qu'on exerce le soir : fiches produits, stocks, codes promo, et ce tableau de bord qu'on ouvre en se promettant de le comprendre un jour. Votre assistant branché dessus répond aux questions simples et prend les petites corvées. Bonne nouvelle : Shopify lui interdit de toucher à l'argent. Moins bonne : ce qu'il change dans vos produits, c'est vous qui en répondez.",
-      "en": "A Shopify store is a second job you do in the evenings: product pages, stock, promo codes, and that dashboard you open promising yourself you'll understand it one day. Your assistant, plugged in, answers the simple questions and takes the small chores. Good news: Shopify won't let it touch the money. Less good: whatever it changes in your products, you answer for."
+      "en": "A Shopify store is a second job you do in the evenings: product pages, stock, promo codes, and that dashboard you open promising yourself you'll understand it one day. Your assistant, plugged in, answers the simple questions and takes on the small chores. Good news: Shopify won't let it touch the money. Less good: whatever it changes in your products, you answer for."
     },
     "situations": [
       {
@@ -586,8 +586,8 @@
           "fr": "Le thème, sur une copie",
           "en": "The theme, on a copy"
         },
-        "fr": "Il ne touche pas au thème en ligne : dupliquez-le, laissez-le travailler sur la copie, puis publiez-la vous-même après relecture.",
-        "en": "It won't touch the live theme: duplicate it, let it work on the copy, then publish it yourself once reviewed.",
+        "fr": "Il ne touche pas au thème en ligne : dupliquez-le, laissez l'assistant travailler sur la copie, puis publiez-la vous-même après relecture.",
+        "en": "It won't touch the live theme: duplicate it, let the assistant work on the copy, then publish it yourself once reviewed.",
         "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations",
         "community": false,
         "icon": "copy"
@@ -655,11 +655,11 @@
           "fr": "Ses erreurs sont les vôtres",
           "en": "Its mistakes are yours"
         },
-        "fr": "Shopify ne valide pas ce qu'il fait : une mauvaise modification de produit reste sous votre responsabilité.",
-        "en": "Shopify doesn't review what it does: a wrong product change remains your responsibility.",
+        "fr": "Shopify ne valide pas ce que fait l'assistant : une mauvaise modification de produit reste sous votre responsabilité.",
+        "en": "Shopify doesn't review what the assistant does: a wrong product change remains your responsibility.",
         "workaround": {
           "fr": "Gardez l'écriture sous approbation et relisez chaque changement avant de dire oui.",
-          "en": "Keep writing behind approval and read every change before saying yes."
+          "en": "Keep write actions behind approval and read every change before saying yes."
         },
         "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/considerations",
         "community": false,

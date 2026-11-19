@@ -6,12 +6,12 @@
   "host_tool": "stripe",
   "category": "finance",
   "summary": {
-    "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Il est en bêta.",
-    "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. It is in beta."
+    "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Le serveur est en bêta.",
+    "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. The server is in beta."
   },
   "card": {
     "fr": "Suivre vos paiements et votre solde.",
-    "en": "Follow your payments and balance."
+    "en": "Keep track of your payments and balance."
   },
   "meta_description": {
     "fr": "Brancher Stripe à Claude ou ChatGPT : vos données de compte, création d'objets et, avec Treasury, envoi d'argent après confirmation. En bêta.",
@@ -32,8 +32,8 @@
     }
   ],
   "for": {
-    "fr": "Vous encaissez avec Stripe et voulez suivre paiements et solde sans ouvrir le tableau de bord.",
-    "en": "You take payments with Stripe and want to follow payments and balance without opening the dashboard."
+    "fr": "Vous encaissez avec Stripe et voulez suivre paiements et solde sans ouvrir le Dashboard.",
+    "en": "You take payments with Stripe and want to keep track of payments and balance without opening the Dashboard."
   },
   "not_for": {
     "fr": "Vous voulez confier vos virements à l'assistant : le serveur est en bêta et chaque envoi d'argent attend votre confirmation.",
@@ -47,7 +47,7 @@
       },
       "icon": "account",
       "fr": "À la connexion, vous choisissez les comptes et les environnements, production ou test, avec des droits pour chacun.",
-      "en": "When connecting, you pick the accounts and environments, live or test, with rights for each."
+      "en": "When connecting, you pick the accounts and environments, live or test, with permissions for each."
     },
     {
       "title": {
@@ -60,17 +60,17 @@
     },
     {
       "title": {
-        "fr": "L'administrateur encadre",
-        "en": "The admin sets the frame"
+        "fr": "Un administrateur fixe les limites",
+        "en": "An admin sets the limits"
       },
       "icon": "admin",
-      "fr": "Un administrateur active ou coupe l'accès pour toute l'équipe dans les réglages du Dashboard, rubrique accès MCP et CLI.",
-      "en": "An admin turns access on or off for the whole team in the Dashboard settings, under MCP and CLI access."
+      "fr": "Un administrateur active ou coupe l'accès pour toute l'équipe dans les réglages du Dashboard, rubrique « Accès MCP et CLI ».",
+      "en": "An admin turns access on or off for the whole team in the Dashboard settings, under “MCP and CLI access”."
     },
     {
       "title": {
         "fr": "Vous coupez quand vous voulez",
-        "en": "You cut whenever you want"
+        "en": "You can cut it off anytime"
       },
       "icon": "cut",
       "fr": "Pour retirer l'accès : réglages de votre profil, « Sessions OAuth », puis « Révoquer l'accès ».",
@@ -113,8 +113,8 @@
       "en": "For a connected account (Connect), signing in does not work: you need an agent access key."
     },
     {
-      "fr": "Remplacez avant le 30 novembre 2026 les clés sans restriction par des clés d'agent : les autres seront refusées.",
-      "en": "Replace unrestricted keys with agent keys before 30 November 2026: the others will be refused."
+      "fr": "Avant le 30 novembre 2026, remplacez vos clés sans restriction par des clés d'agent : passé cette date, les clés sans restriction seront refusées.",
+      "en": "Replace unrestricted keys with agent keys before 30 November 2026: after that date, unrestricted keys will be rejected."
     }
   ],
   "verified_on": "2026-11-16",
@@ -351,8 +351,8 @@
   ],
   "advice": {
     "verdict": {
-      "fr": "Si vous facturez déjà avec Stripe, ce serveur vaut l'essai pour repérer les impayés et préparer factures et liens de paiement depuis la conversation. Stripe n'annonce aucun abonnement en plus pour le serveur, mais il agit sur votre vrai compte et peut rembourser ou annuler une facture : commencez dans un environnement de test et validez chaque action d'écriture.",
-      "en": "If you already bill through Stripe, this server is worth trying for spotting unpaid invoices and preparing invoices and payment links from a chat. Stripe mentions no extra subscription for the server, but it works on your real account and can refund or void an invoice: start in a test environment and approve every write action yourself.",
+      "fr": "Si vous facturez déjà avec Stripe, ce serveur vaut l'essai pour repérer les impayés et préparer factures et liens de paiement depuis la conversation. Stripe n'annonce aucun abonnement en plus pour le serveur, mais celui-ci agit sur votre vrai compte et peut rembourser ou annuler une facture : commencez dans un environnement de test et validez chaque action d'écriture.",
+      "en": "If you already bill through Stripe, this server is worth trying for spotting unpaid invoices and preparing invoices and payment links from a chat. Stripe mentions no extra subscription for the server, but the server acts on your live account and can refund or void an invoice: start in a test environment and approve every write action yourself.",
       "source": "https://docs.stripe.com/mcp"
     },
     "intro": {
@@ -366,7 +366,7 @@
           "en": "New invoice"
         },
         "ask": {
-          "fr": "Prépare un brouillon de facture pour Studio Martin pour la refonte du site, je le relis avant de le finaliser.",
+          "fr": "Prépare un brouillon de facture pour la refonte du site de Studio Martin ; je le relirai avant que tu le finalises.",
           "en": "Draft an invoice for Studio Martin for the website redesign; I'll review it before you finalize it."
         },
         "gain": {
@@ -384,7 +384,7 @@
         },
         "ask": {
           "fr": "Crée un lien de paiement pour mon forfait « Audit SEO » et donne-moi l'adresse à envoyer au client.",
-          "en": "Create a payment link for my “SEO audit” package and give me the URL to send the client."
+          "en": "Create a payment link for my “SEO audit” package and give me the URL to send to the client."
         },
         "gain": {
           "fr": "Un lien à coller dans votre devis.",
@@ -397,7 +397,7 @@
       {
         "title": {
           "fr": "Impayés",
-          "en": "Unpaid"
+          "en": "Unpaid invoices"
         },
         "ask": {
           "fr": "Quelles factures sont encore ouvertes, pour quels clients, et lesquelles ont dépassé leur échéance ?",
@@ -440,7 +440,7 @@
           "fr": "Relisez le montant avant de dire oui",
           "en": "Read the amount before saying yes"
         },
-        "fr": "Client, montant, devise : trois secondes de lecture évitent un remboursement gênant. Ne mémorisez votre accord que pour un outil en qui vous avez pleinement confiance.",
+        "fr": "Client, montant, devise : trois secondes de lecture évitent un remboursement gênant. Ne mémorisez votre accord que pour un outil auquel vous faites pleinement confiance.",
         "en": "Customer, amount, currency: three seconds of reading spare you an awkward refund. Only remember your approval for a tool you fully trust.",
         "source": "https://developers.openai.com/api/docs/guides/developer-mode",
         "community": false,
@@ -452,7 +452,7 @@
           "en": "A key, but a small one"
         },
         "fr": "Si vous passez par une clé (Claude Code, Codex), créez une clé d'agent limitée aux droits utiles et gardez-la hors de la conversation. Stripe y applique des règles d'approbation pour les remboursements et les virements.",
-        "en": "If you go through a key (Claude Code, Codex), create an agent key limited to the rights you need and keep it out of the chat. Stripe applies approval rules to it for refunds and payouts.",
+        "en": "If you connect with a key (Claude Code, Codex), create an agent key limited to the permissions you need and keep it out of the chat. Stripe applies approval rules to it for refunds and payouts.",
         "source": "https://docs.stripe.com/account/approvals.md",
         "community": false,
         "icon": "key"
@@ -523,8 +523,8 @@
         "fr": "La connexion n'est pas permanente : l'assistant perd l'accès sans prévenir.",
         "en": "The connection isn't permanent: the assistant loses access without warning.",
         "workaround": {
-          "fr": "Reconnectez Stripe depuis votre assistant quand il ne répond plus.",
-          "en": "Reconnect Stripe from your assistant when it stops answering."
+          "fr": "Reconnectez Stripe depuis votre assistant quand Stripe ne répond plus.",
+          "en": "Reconnect Stripe from your assistant when Stripe stops responding."
         },
         "source": "https://docs.stripe.com/mcp",
         "community": false,

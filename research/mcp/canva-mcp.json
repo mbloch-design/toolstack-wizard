@@ -39,7 +39,7 @@
     {
       "title": {
         "fr": "Vos droits, pas plus",
-        "en": "Your rights, no more"
+        "en": "Your permissions, no more"
       },
       "icon": "account",
       "fr": "L'assistant n'agit que sur les designs et fichiers que votre compte peut voir ou modifier.",
@@ -52,8 +52,8 @@
       "en": "Works on every Canva plan."
     },
     "advanced": {
-      "fr": "En plus, avec Canva Pro et au-delà : redimensionner un design, remplissage automatique, kits et modèles de marque.",
-      "en": "On top, with Canva Pro and up: resizing a design, autofill, brand kits and brand templates."
+      "fr": "En plus, avec Canva Pro et au-delà : redimensionnement des designs, remplissage automatique, kits et modèles de marque.",
+      "en": "On top of that, with Canva Pro and above: design resizing, autofill, brand kits and brand templates."
     }
   },
   "first_requests": {
@@ -68,7 +68,7 @@
       },
       {
         "fr": "Quels formats d'export sont possibles pour mon dernier design ?",
-        "en": "Which export formats are possible for my latest design?"
+        "en": "Which export formats are available for my latest design?"
       }
     ],
     "write": {
@@ -445,13 +445,13 @@
   ],
   "advice": {
     "verdict": {
-      "fr": "Si vous faites déjà vos visuels dans Canva, branchez-le : il marche avec un compte gratuit. Mais il ne vous évite pas Canva Pro : générer un design puise dans votre allocation IA Canva, et redimensionner ou détourer reste payant.",
-      "en": "If you already make your visuals in Canva, plug it in: it works with a free account. But it won't spare you Canva Pro: generating a design uses your Canva AI allowance, and resizing or background removal stay paid.",
+      "fr": "Si vous faites déjà vos visuels dans Canva, branchez le connecteur : il marche avec un compte gratuit. Mais il ne vous dispense pas de Canva Pro : générer un design puise dans votre allocation IA Canva, et redimensionner ou détourer reste payant.",
+      "en": "If you already make your visuals in Canva, plug in the connector: it works with a free account. But it won't spare you Canva Pro: generating a design uses your Canva AI allowance, and resizing or background removal still need a paid plan.",
       "source": "https://www.canva.com/help/mcp-canva-usage/"
     },
     "intro": {
-      "fr": "Canva, c'est le couteau suisse du free qui n'est pas graphiste (et parfois de celui qui l'est). Avec votre assistant branché dessus, le premier jet d'un post ou d'une présentation sort d'une seule phrase. Le mot important, c'est « premier jet » : il vous épargne la page blanche, pas la finition. Et il ne remplace pas Canva Pro, il s'appuie dessus.",
-      "en": "Canva is the Swiss army knife of the freelancer who isn't a designer (and sometimes of the one who is). With your assistant plugged in, the first draft of a post or a deck comes out of a single sentence. The key words are “first draft”: it spares you the blank page, not the finishing. And it doesn't replace Canva Pro, it leans on it."
+      "fr": "Canva, c'est le couteau suisse quand on n'est pas graphiste (et parfois même quand on l'est). Avec votre assistant branché dessus, le premier jet d'un post ou d'une présentation sort d'une seule phrase. Les mots importants, ce sont « premier jet » : il vous épargne la page blanche, pas la finition. Et l'assistant ne remplace pas Canva Pro : il s'appuie dessus.",
+      "en": "Canva is the Swiss army knife for freelancers who aren't designers (and sometimes for those who are). With your assistant plugged in, the first draft of a post or a deck comes out of a single sentence. The key words are “first draft”: it spares you the blank page, not the finishing. And the assistant doesn't replace Canva Pro: it relies on it."
     },
     "situations": [
       {
@@ -509,8 +509,8 @@
     "tips": [
       {
         "title": {
-          "fr": "Briefez-le comme un graphiste",
-          "en": "Brief it like a designer"
+          "fr": "Briefez l'assistant comme un graphiste",
+          "en": "Brief the assistant as you would a designer"
         },
         "fr": "Format, couleurs, textes exacts, nom du design : plus la demande est précise, moins vous retouchez. Canva le conseille lui-même.",
         "en": "Format, colours, exact text, design name: the sharper the request, the less you retouch. Canva itself recommends it.",
@@ -531,19 +531,19 @@
       },
       {
         "title": {
-          "fr": "Une copie avant de toucher au livré",
+          "fr": "Une copie avant de toucher à un design livré",
           "en": "A copy before touching what you delivered"
         },
         "fr": "Avant de faire modifier un design déjà envoyé au client, demandez une copie : l'original reste intact.",
-        "en": "Before having a design already sent to the client edited, ask for a copy: the original stays intact.",
+        "en": "Before having the assistant edit a design you've already sent to the client, ask for a copy: the original stays intact.",
         "source": "https://www.canva.com/help/mcp-canva-usage/",
         "community": false,
         "icon": "copy"
       },
       {
         "title": {
-          "fr": "Kit de marque rangé, logos en double",
-          "en": "Brand kit in order, logos twice"
+          "fr": "Logos : dans le kit et dans vos fichiers",
+          "en": "Logos: in the kit and in your files"
         },
         "fr": "Couleurs et polices du kit sont bien reprises, mais les logos rangés seulement dans le kit sont souvent oubliés : importez-les aussi dans vos fichiers.",
         "en": "The kit's colours and fonts are picked up, but logos stored only in the kit are often skipped: upload them to your files too.",
@@ -581,14 +581,14 @@
       },
       {
         "title": {
-          "fr": "Il puise dans vos crédits Canva",
-          "en": "It draws on your Canva credits"
+          "fr": "La génération puise dans votre allocation IA",
+          "en": "Generating draws on your Canva AI allowance"
         },
         "fr": "Créer un design ou générer une image consomme votre allocation IA Canva ; détourer, redimensionner ou faire de la vidéo demande Canva Pro.",
         "en": "Creating a design or generating an image uses your Canva AI allowance; background removal, resizing or video need Canva Pro.",
         "workaround": {
           "fr": "Gardez la génération pour les premiers jets, puis faites retoucher, copier ou exporter vos designs existants.",
-          "en": "Keep generation for first drafts, then have your existing designs edited, copied or exported."
+          "en": "Save generation for first drafts, then have your existing designs edited, copied or exported."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/",
         "community": false,
@@ -603,7 +603,7 @@
         "en": "Only the designs you pick are saved, and some links look like Canva links but lead nowhere.",
         "workaround": {
           "fr": "Choisissez « Enregistrer » ou « Ouvrir dans Canva » depuis l'aperçu, ou retrouvez le design dans vos projets Canva.",
-          "en": "Choose Save or Open in Canva from the preview, or find the design in your Canva projects."
+          "en": "Choose “Save” or “Open in Canva” from the preview, or find the design in your Canva projects."
         },
         "source": "https://www.canva.com/help/connect-chatgpt-to-canva/",
         "community": false,
@@ -612,12 +612,12 @@
       {
         "title": {
           "fr": "Chez un client, son admin décide",
-          "en": "At a client's, their admin decides"
+          "en": "In a client's team, their admin decides"
         },
         "fr": "Dans l'équipe Canva d'un client, l'administrateur peut couper le connecteur : l'action apparaît, puis elle est refusée.",
         "en": "In a client's Canva team, the admin can switch the connector off: the action shows up, then it is refused.",
         "workaround": {
-          "fr": "Demandez au client de l'activer ; dans votre propre équipe, voyez Paramètres > Autorisations > Magic et IA.",
+          "fr": "Demandez au client de l'activer ; dans votre propre équipe, c'est dans Paramètres > Autorisations > Magic et IA.",
           "en": "Ask the client to turn it on; in your own team, see Settings > Permissions > Magic and AI."
         },
         "source": "https://www.canva.com/help/mcp-canva-usage/",

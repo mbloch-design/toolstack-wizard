@@ -178,7 +178,7 @@ export const GoogleAnalyticsReadOnly: Story = {
     // « Sans effet sur vos données » sits in the section's head, at the label's right (step 8d).
     await expect(sectionHead(canvasElement, fr ? "Lecture seule · 9" : "Read only · 9").textContent).toContain(fr ? "Sans effet sur vos données" : "No effect on your data");
     await expect(canvas.getByRole("button", { name: fr ? /^Voir les 3 autres actions/ : /^Show the 3 other actions/ })).toBeVisible();
-    await expect(canvas.getByText(fr ? /Votre assistant peut lire vos données Google Analytics, sans rien y modifier\./ : /Your assistant can read your Google Analytics data, without changing anything\./)).toBeVisible();
+    await expect(canvas.getByText(fr ? /Dans Google Analytics, votre assistant peut lire vos données, sans rien y modifier\./ : /In Google Analytics, your assistant can read your data without changing anything\./)).toBeVisible();
     await expect(canvas.queryByText(fr ? /À vérifier/ : /Check:/)).toBeNull();
   },
 };

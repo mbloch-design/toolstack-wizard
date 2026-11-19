@@ -6,7 +6,7 @@
   "host_tool": "ahrefs",
   "category": "analytics",
   "summary": {
-    "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités API du forfait.",
+    "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités d'API du forfait.",
     "en": "Ahrefs' official server brings your SEO data (keywords, backlinks, rankings) into your assistant, and can manage social media posts. It needs a paid plan from Lite and uses your plan's API units."
   },
   "card": {
@@ -20,7 +20,7 @@
   "examples": [
     {
       "fr": "Sur quels mots-clés mon site a-t-il gagné des positions ce mois-ci ?",
-      "en": "Which keywords did my site climb on this month?"
+      "en": "Which keywords did my site move up for this month?"
     },
     {
       "fr": "Quels sites ont fait un lien vers mon site récemment ?",
@@ -29,11 +29,11 @@
   ],
   "for": {
     "fr": "Vous avez un forfait Ahrefs payant et suivez le référencement de votre site ou de ceux de vos clients.",
-    "en": "You pay for Ahrefs and follow the search ranking of your site or your clients' sites."
+    "en": "You pay for Ahrefs and track the search rankings of your site or your clients' sites."
   },
   "not_for": {
-    "fr": "Vous n'avez pas de forfait payant : le serveur n'y est pas ouvert.",
-    "en": "You have no paid plan: the server is not open to you."
+    "fr": "Vous n'avez pas de forfait payant : le serveur est réservé aux forfaits payants.",
+    "en": "You don't have a paid plan: the server is only available on paid plans."
   },
   "control": [
     {
@@ -48,12 +48,12 @@
   ],
   "plan_words": {
     "common": {
-      "fr": "Sur les forfaits Lite, Standard, Advanced et Enterprise : pas sur le gratuit.",
-      "en": "On Lite, Standard, Advanced and Enterprise plans: not on the free one."
+      "fr": "Sur les forfaits Lite, Standard, Advanced et Enterprise, pas sur le gratuit.",
+      "en": "On Lite, Standard, Advanced and Enterprise plans, not on the free one."
     },
     "advanced": {
-      "fr": "Les unités et les lignes par demande grandissent avec le forfait : 200 000 unités et 100 lignes en Lite.",
-      "en": "Units and rows per request grow with the plan: 200,000 units and 100 rows on Lite."
+      "fr": "Le quota d'unités et le nombre de lignes par demande augmentent avec le forfait : 200 000 unités et 100 lignes en Lite.",
+      "en": "Your unit allowance and rows per request grow with the plan: 200,000 units and 100 rows on Lite."
     }
   },
   "first_requests": {
@@ -78,8 +78,8 @@
       "en": "A 401 error comes from an expired key, an inactive subscription or an API key used instead of the MCP key."
     },
     {
-      "fr": "L'installation sur l'ordinateur n'est plus prise en charge : branchez le serveur en ligne.",
-      "en": "Installing on your computer is no longer supported: plug in the online server."
+      "fr": "L'installation sur votre ordinateur n'est plus prise en charge : branchez le serveur en ligne.",
+      "en": "Installing on your computer is no longer supported: use the online server instead."
     }
   ],
   "verified_on": "2026-11-16",
@@ -91,7 +91,7 @@
   "access": "read_write",
   "plan": "paid",
   "plan_note": {
-    "fr": "Forfaits payants à partir de Lite ; chaque appel consomme des unités API du quota mensuel du forfait.",
+    "fr": "Forfaits payants à partir de Lite ; chaque appel consomme des unités d'API du quota mensuel du forfait.",
     "en": "Paid plans from Lite up; each call uses API units from the plan's monthly allowance."
   },
   "capabilities": [
@@ -124,7 +124,7 @@
   "safeguards": [],
   "tools_note": {
     "fr": "Ahrefs ne publie pas de liste d'outils lisible à ce jour (pages de documentation en erreur).",
-    "en": "Ahrefs publishes no readable tool list today (documentation pages return errors)."
+    "en": "Ahrefs does not publish a readable tool list at the moment (its documentation pages return errors)."
   },
   "install": [
     {
@@ -177,8 +177,8 @@
       "source": "https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp"
     },
     "intro": {
-      "fr": "Ahrefs, c'est une mine d'or… avec un compteur à l'entrée. Brancher votre assistant, c'est lui confier la pioche : il creuse les mots-clés d'un client, les liens d'un concurrent, les positions du mois, et vous rend une réponse lisible. Mais chaque coup de pioche se paie en unités, et une question trop large peut entamer sérieusement le mois. Voici comment creuser au bon endroit.",
-      "en": "Ahrefs is a gold mine… with a meter at the entrance. Plugging in your assistant hands it the pickaxe: it digs into a client's keywords, a competitor's links, this month's rankings, and gives you an answer you can read. But every swing is paid for in units, and one overly broad question can take a real bite out of the month. Here is how to dig in the right spot."
+      "fr": "Ahrefs, c'est une mine d'or… avec un compteur à l'entrée. Brancher votre assistant, c'est lui confier la pioche : il creuse les mots-clés d'un client, les liens d'un concurrent, les positions du mois, et vous rend une réponse lisible. Mais chaque coup de pioche se paie en unités, et une question trop large peut entamer sérieusement le quota du mois. Voici comment creuser au bon endroit.",
+      "en": "Ahrefs is a gold mine… with a meter at the entrance. Plugging in your assistant hands it the pickaxe: it digs into a client's keywords, a competitor's links, this month's rankings, and gives you an answer you can read. But every swing is paid for in units, and one overly broad question can take a real bite out of your monthly allowance. Here is how to dig in the right spot."
     },
     "situations": [
       {
@@ -240,7 +240,7 @@
           "en": "Start with “Using Ahrefs”"
         },
         "fr": "Sinon, l'assistant peut aller chercher sur le web au lieu d'interroger vos données. Ahrefs le recommande lui-même, surtout dans ChatGPT.",
-        "en": "Otherwise the assistant may search the web instead of your data. Ahrefs recommends it itself, especially in ChatGPT.",
+        "en": "Otherwise the assistant may search the web instead of your data. Ahrefs itself recommends this, especially in ChatGPT.",
         "source": "https://ahrefs.com/blog/mcp-use-cases/",
         "community": false,
         "icon": "brief"
@@ -262,7 +262,7 @@
           "en": "A small sample is often enough"
         },
         "fr": "Un utilisateur qui a épluché ses relevés constate qu'une liste courte de mots-clés menait à la même conclusion qu'une longue, pour bien moins d'unités. Élargissez seulement si ça change votre décision.",
-        "en": "One user who combed through his logs found that a short keyword list led to the same conclusion as a long one, for far fewer units. Widen only if it changes your decision.",
+        "en": "One user who combed through their logs found that a short keyword list led to the same conclusion as a long one, for far fewer units. Widen only if it changes your decision.",
         "source": "https://studiomeyer.io/en/blog/ahrefs-api-units-cost",
         "community": true,
         "icon": "credits"
@@ -273,7 +273,7 @@
           "en": "A starting point, not a verdict"
         },
         "fr": "Ahrefs prévient que l'assistant peut rendre les choses plus simples qu'elles ne sont. Vérifiez les chiffres clés dans Ahrefs avant de les mettre dans un rapport client.",
-        "en": "Ahrefs warns the assistant can make things sound simpler than they are. Check the key figures in Ahrefs before they go into a client report.",
+        "en": "Ahrefs warns that the assistant can make things sound simpler than they are. Check the key figures in Ahrefs before they go into a client report.",
         "source": "https://ahrefs.com/blog/mcp-use-cases/",
         "community": false,
         "icon": "confirm"
@@ -282,8 +282,8 @@
     "pitfalls": [
       {
         "title": {
-          "fr": "Clé API n'est pas clé MCP",
-          "en": "API key isn't MCP key"
+          "fr": "Une clé d'API n'est pas une clé MCP",
+          "en": "An API key isn't an MCP key"
         },
         "fr": "Une erreur 401 vient souvent d'une clé d'API collée à la place de la clé MCP, d'une clé expirée ou d'un abonnement arrêté.",
         "en": "A 401 error often comes from an API key pasted instead of the MCP key, an expired key or a lapsed subscription.",
@@ -301,7 +301,7 @@
           "en": "The meter that runs away"
         },
         "fr": "Un utilisateur raconte que trois outils, dont les listes de liens et les idées de mots-clés, ont mangé l'essentiel de ses unités.",
-        "en": "One user reports that three tools, including link lists and keyword ideas, ate most of his units.",
+        "en": "One user reports that three tools, including link lists and keyword ideas, ate most of their units.",
         "workaround": {
           "fr": "Limitez le nombre de résultats, estimez avant un gros lot, et suivez votre consommation dans les réglages du compte Ahrefs.",
           "en": "Cap the number of results, estimate before a big batch, and watch your usage in your Ahrefs account settings."
