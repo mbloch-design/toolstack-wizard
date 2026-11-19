@@ -22,7 +22,8 @@ jobs:
   verify:
     name: Verify app
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    # Around 25 min since the agents pages joined the build and the e2e runs (19/11/2026): room for a slow runner.
+    timeout-minutes: 45
 
     steps:
       - name: Checkout
