@@ -75,7 +75,18 @@ export type SituationScene =
   | "figma-screen"
   | "ga-report"
   | "ga-live"
-  | "ga-convert";
+  | "ga-convert"
+  | "hubspot-call"
+  | "hubspot-pipeline"
+  | "hubspot-campaign"
+  | "make-invoice"
+  | "make-scenarios"
+  | "make-report"
+  | "miro-recap"
+  | "miro-kickoff"
+  | "shopify-sales"
+  | "shopify-stock"
+  | "shopify-promo";
 export type AdviceIcon = "title" | "database" | "approve" | "suggest" | "click" | "guest" | "slow" | "limit" | "rights" | "brief" | "refine" | "copy" | "brand" | "settings" | "draft" | "credits" | "link" | "admin" | "sandbox" | "amount" | "key" | "mail" | "invoice" | "confirm" | "blocked" | "session";
 export type Sourced = Pair & { title: Pair; source: string; community?: boolean; icon: AdviceIcon };
 export interface McpAdvice {

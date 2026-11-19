@@ -423,7 +423,8 @@
           "en": "Note and follow-up logged, HubSpot unopened."
         },
         "source": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
-        "icon": "meeting"
+        "icon": "meeting",
+        "scene": "hubspot-call"
       },
       {
         "title": {
@@ -439,7 +440,8 @@
           "en": "Your pipeline in one answer."
         },
         "source": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude",
-        "icon": "chart"
+        "icon": "chart",
+        "scene": "hubspot-pipeline"
       },
       {
         "title": {
@@ -455,7 +457,8 @@
           "en": "Your numbers without opening reports."
         },
         "source": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude",
-        "icon": "email"
+        "icon": "email",
+        "scene": "hubspot-campaign"
       }
     ],
     "tips": [

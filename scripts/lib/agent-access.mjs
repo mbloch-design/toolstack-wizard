@@ -186,6 +186,17 @@ export const SITUATION_SCENES = [
   "ga-report",
   "ga-live",
   "ga-convert",
+  "hubspot-call",
+  "hubspot-pipeline",
+  "hubspot-campaign",
+  "make-invoice",
+  "make-scenarios",
+  "make-report",
+  "miro-recap",
+  "miro-kickoff",
+  "shopify-sales",
+  "shopify-stock",
+  "shopify-promo",
 ];
 /** A tip's or a pitfall's own pictogram (19/11, « une variance de picto »), from a closed list drawn in AgentSheet. */
 const ADVICE_ICONS = ["title", "database", "approve", "suggest", "click", "guest", "slow", "limit", "rights", "brief", "refine", "copy", "brand", "settings", "draft", "credits", "link", "admin", "sandbox", "amount", "key", "mail", "invoice", "confirm", "blocked", "session"];

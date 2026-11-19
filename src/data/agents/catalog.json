@@ -5484,7 +5484,8 @@
               "en": "Note and follow-up logged, HubSpot unopened."
             },
             "source": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server",
-            "icon": "meeting"
+            "icon": "meeting",
+            "scene": "hubspot-call"
           },
           {
             "title": {
@@ -5500,7 +5501,8 @@
               "en": "Your pipeline in one answer."
             },
             "source": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude",
-            "icon": "chart"
+            "icon": "chart",
+            "scene": "hubspot-pipeline"
           },
           {
             "title": {
@@ -5516,7 +5518,8 @@
               "en": "Your numbers without opening reports."
             },
             "source": "https://knowledge.hubspot.com/integrations/set-up-and-use-the-hubspot-connector-for-claude",
-            "icon": "email"
+            "icon": "email",
+            "scene": "hubspot-campaign"
           }
         ],
         "tips": [
@@ -5914,7 +5917,8 @@
               "en": "The scenario runs, Make stays closed."
             },
             "source": "https://developers.make.com/mcp-server/",
-            "icon": "invoice"
+            "icon": "invoice",
+            "scene": "make-invoice"
           },
           {
             "title": {
@@ -5930,7 +5934,8 @@
               "en": "The manual for your workshop."
             },
             "source": "https://help.make.com/make-mcp-server",
-            "icon": "automation"
+            "icon": "automation",
+            "scene": "make-scenarios"
           },
           {
             "title": {
@@ -5946,7 +5951,8 @@
               "en": "The result, even when it takes a while."
             },
             "source": "https://developers.make.com/mcp-server/",
-            "icon": "chart"
+            "icon": "chart",
+            "scene": "make-report"
           }
         ],
         "tips": [
@@ -6651,7 +6657,8 @@
               "en": "The minutes, no sticky notes retyped."
             },
             "source": "https://developers.miro.com/docs/miro-mcp",
-            "icon": "feedback"
+            "icon": "feedback",
+            "scene": "miro-recap"
           },
           {
             "title": {
@@ -6667,7 +6674,8 @@
               "en": "The project skeleton, already in place."
             },
             "source": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions",
-            "icon": "task"
+            "icon": "task",
+            "scene": "miro-kickoff"
           },
           {
             "title": {
@@ -6683,7 +6691,8 @@
               "en": "Comments sorted, threads closed."
             },
             "source": "https://developers.miro.com/docs/miro-mcp-tools",
-            "icon": "chat"
+            "icon": "chat",
+            "scene": "canva-feedback"
           }
         ],
         "tips": [
@@ -8223,7 +8232,8 @@
               "en": "Your week of sales in one question."
             },
             "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
-            "icon": "shop"
+            "icon": "shop",
+            "scene": "shopify-sales"
           },
           {
             "title": {
@@ -8239,7 +8249,8 @@
               "en": "Stock-outs spotted before your customers do."
             },
             "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
-            "icon": "data"
+            "icon": "data",
+            "scene": "shopify-stock"
           },
           {
             "title": {
@@ -8255,7 +8266,8 @@
               "en": "The code ready, no digging through the admin."
             },
             "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
-            "icon": "post"
+            "icon": "post",
+            "scene": "shopify-promo"
           }
         ],
         "tips": [

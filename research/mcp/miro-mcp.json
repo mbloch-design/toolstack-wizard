@@ -556,7 +556,8 @@
           "en": "The minutes, no sticky notes retyped."
         },
         "source": "https://developers.miro.com/docs/miro-mcp",
-        "icon": "feedback"
+        "icon": "feedback",
+        "scene": "miro-recap"
       },
       {
         "title": {
@@ -572,7 +573,8 @@
           "en": "The project skeleton, already in place."
         },
         "source": "https://developers.miro.com/docs/miro-mcp-server-frequently-asked-questions",
-        "icon": "task"
+        "icon": "task",
+        "scene": "miro-kickoff"
       },
       {
         "title": {
@@ -588,7 +590,8 @@
           "en": "Comments sorted, threads closed."
         },
         "source": "https://developers.miro.com/docs/miro-mcp-tools",
-        "icon": "chat"
+        "icon": "chat",
+        "scene": "canva-feedback"
       }
     ],
     "tips": [

@@ -264,7 +264,8 @@
           "en": "The scenario runs, Make stays closed."
         },
         "source": "https://developers.make.com/mcp-server/",
-        "icon": "invoice"
+        "icon": "invoice",
+        "scene": "make-invoice"
       },
       {
         "title": {
@@ -280,7 +281,8 @@
           "en": "The manual for your workshop."
         },
         "source": "https://help.make.com/make-mcp-server",
-        "icon": "automation"
+        "icon": "automation",
+        "scene": "make-scenarios"
       },
       {
         "title": {
@@ -296,7 +298,8 @@
           "en": "The result, even when it takes a while."
         },
         "source": "https://developers.make.com/mcp-server/",
-        "icon": "chart"
+        "icon": "chart",
+        "scene": "make-report"
       }
     ],
     "tips": [

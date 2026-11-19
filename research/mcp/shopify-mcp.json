@@ -509,7 +509,8 @@
           "en": "Your week of sales in one question."
         },
         "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
-        "icon": "shop"
+        "icon": "shop",
+        "scene": "shopify-sales"
       },
       {
         "title": {
@@ -525,7 +526,8 @@
           "en": "Stock-outs spotted before your customers do."
         },
         "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
-        "icon": "data"
+        "icon": "data",
+        "scene": "shopify-stock"
       },
       {
         "title": {
@@ -541,7 +543,8 @@
           "en": "The code ready, no digging through the admin."
         },
         "source": "https://help.shopify.com/en/manual/ai-powered-tools/connecting-ai-tools/shopify-connector-for-claude",
-        "icon": "post"
+        "icon": "post",
+        "scene": "shopify-promo"
       }
     ],
     "tips": [
