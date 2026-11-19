@@ -3,12 +3,12 @@
     "examples": [
       {
         "fr": "Sur quels mots-clés mon site a-t-il gagné des positions ce mois-ci ?",
-        "en": "Which keywords did my site climb on this month?"
+        "en": "Which keywords did my site move up for this month?"
       }
     ],
     "for": {
       "fr": "Vous avez un forfait Ahrefs payant et suivez le référencement de votre site ou de ceux de vos clients.",
-      "en": "You pay for Ahrefs and follow the search ranking of your site or your clients' sites."
+      "en": "You pay for Ahrefs and track the search rankings of your site or your clients' sites."
     }
   },
   "airtable-mcp": {
@@ -187,8 +187,8 @@
       }
     ],
     "for": {
-      "fr": "Vous encaissez avec Stripe et voulez suivre paiements et solde sans ouvrir le tableau de bord.",
-      "en": "You take payments with Stripe and want to follow payments and balance without opening the dashboard."
+      "fr": "Vous encaissez avec Stripe et voulez suivre paiements et solde sans ouvrir le Dashboard.",
+      "en": "You take payments with Stripe and want to keep track of payments and balance without opening the Dashboard."
     }
   },
   "tally-mcp": {
@@ -211,8 +211,8 @@
       }
     ],
     "for": {
-      "fr": "Votre site, ou ceux de vos clients, est construit sur Webflow.",
-      "en": "Your site, or your clients' sites, is built on Webflow."
+      "fr": "Vous construisez votre site, ou ceux de vos clients, sur Webflow.",
+      "en": "You build your site, or your clients' sites, on Webflow."
     }
   },
   "zapier-mcp": {

@@ -7,7 +7,7 @@
     "host_name": "Ahrefs",
     "category": "analytics",
     "summary": {
-      "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités API du forfait.",
+      "fr": "Le serveur officiel d'Ahrefs apporte vos données SEO (mots-clés, backlinks, positions) dans votre assistant, et peut gérer des publications pour les réseaux sociaux. Il demande un forfait payant dès Lite et consomme les unités d'API du forfait.",
       "en": "Ahrefs' official server brings your SEO data (keywords, backlinks, rankings) into your assistant, and can manage social media posts. It needs a paid plan from Lite and uses your plan's API units."
     },
     "card": {
@@ -56,11 +56,11 @@
     "safeguards": [],
     "for": {
       "fr": "Vous avez un forfait Ahrefs payant et suivez le référencement de votre site ou de ceux de vos clients.",
-      "en": "You pay for Ahrefs and follow the search ranking of your site or your clients' sites."
+      "en": "You pay for Ahrefs and track the search rankings of your site or your clients' sites."
     },
     "not_for": {
-      "fr": "Vous n'avez pas de forfait payant : le serveur n'y est pas ouvert.",
-      "en": "You have no paid plan: the server is not open to you."
+      "fr": "Vous n'avez pas de forfait payant : le serveur est réservé aux forfaits payants.",
+      "en": "You don't have a paid plan: the server is only available on paid plans."
     },
     "tools": 0,
     "skills": 0,
@@ -79,7 +79,7 @@
       "en": "Airtable's official server connects your assistant to your bases: records, tables, fields, interfaces and automation drafts. It can also delete records and whole tables, and can be limited to chosen bases."
     },
     "card": {
-      "fr": "Chercher et modifier les fiches de vos bases.",
+      "fr": "Chercher, ajouter et modifier vos enregistrements.",
       "en": "Search, add and edit the records of your bases."
     },
     "transport": "remote",
@@ -156,8 +156,8 @@
     "host_name": "Buffer",
     "category": "creation",
     "summary": {
-      "fr": "Le serveur officiel de Buffer permet à votre assistant de lire votre file d'attente et vos statistiques, de rédiger et programmer des posts, et de les publier tout de suite si on le lui demande. Il peut aussi supprimer définitivement un post ; il est inclus dans tous les forfaits, gratuit compris.",
-      "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post; it is included on every plan, free included."
+      "fr": "Le serveur officiel de Buffer permet à votre assistant de lire votre file d'attente et vos statistiques, de rédiger et programmer des posts, et de les publier tout de suite si on le lui demande. Il peut aussi supprimer définitivement un post. Le serveur est inclus dans tous les forfaits, gratuit compris.",
+      "en": "Buffer's official server lets your assistant read your queue and analytics, draft and schedule posts, and publish them right away if asked. It can also permanently delete a post. The server is included on every plan, including the free one."
     },
     "card": {
       "fr": "Publier vos posts et lire leurs chiffres.",
@@ -213,8 +213,8 @@
       "en": "You post regularly on several networks with Buffer."
     },
     "not_for": {
-      "fr": "Vous ne voulez rien publier sans relire : l'assistant peut publier tout de suite, et Buffer ne documente pas de confirmation.",
-      "en": "You never want anything posted unread: the assistant can post right away, and Buffer documents no confirmation."
+      "fr": "Vous ne voulez rien publier sans relire : l'assistant peut publier tout de suite, et Buffer ne documente aucune étape de confirmation.",
+      "en": "You never want anything to go out before you've reread it: the assistant can post right away, and Buffer documents no confirmation step."
     },
     "tools": 17,
     "skills": 0,
@@ -229,8 +229,8 @@
     "host_name": "Calendly",
     "category": "communication",
     "summary": {
-      "fr": "Le serveur officiel de Calendly permet à votre assistant de trouver vos créneaux, réserver et annuler des rendez-vous, et modifier vos types d'événements et disponibilités. Aucun forfait payant n'est requis, et Calendly ne documente pas de confirmation avant action.",
-      "en": "Calendly's official server lets your assistant find your open slots, book and cancel meetings, and edit your event types and availability. No paid plan is required, and Calendly documents no confirmation before acting."
+      "fr": "Le serveur officiel de Calendly permet à votre assistant de trouver vos créneaux, réserver et annuler des rendez-vous, et modifier vos types d'événements et disponibilités. Aucun forfait payant n'est requis. Calendly ne documente aucune étape de confirmation avant d'agir.",
+      "en": "Calendly's official server lets your assistant find your open slots, book and cancel meetings, and edit your event types and availability. No paid plan is required. Calendly documents no confirmation step before acting."
     },
     "card": {
       "fr": "Trouver, réserver ou annuler un rendez-vous.",
@@ -355,11 +355,11 @@
     "category": "project-management",
     "summary": {
       "fr": "Le serveur officiel de ClickUp permet à votre assistant de gérer tâches, documents, commentaires, temps passé et messages, en votre nom et avec vos droits. Il peut mettre une tâche à la corbeille et envoyer des messages de chat ; les appels sont plafonnés selon le forfait.",
-      "en": "ClickUp's official server lets your assistant manage tasks, docs, comments, time and messages, as you and with your rights. It can send a task to Trash and post chat messages; calls are capped by plan."
+      "en": "ClickUp's official server lets your assistant manage tasks, docs, comments, time and messages, in your name and with your permissions. It can send a task to Trash and post chat messages; calls are capped by plan."
     },
     "card": {
       "fr": "Suivre vos tâches, documents et temps passé.",
-      "en": "Follow your tasks, documents and time spent."
+      "en": "Track your tasks, docs and time spent."
     },
     "transport": "remote",
     "auth": [
@@ -414,7 +414,7 @@
     },
     "not_for": {
       "fr": "Votre espace est partagé et vous ne voulez aucun message en votre nom : l'assistant peut écrire dans le chat ClickUp.",
-      "en": "Your workspace is shared and you want no message sent in your name: the assistant can write in ClickUp chat."
+      "en": "Your workspace is shared and you don't want any message sent in your name: the assistant can write in ClickUp chat."
     },
     "tools": 65,
     "skills": 0,
@@ -485,8 +485,8 @@
     "host_name": "Figma",
     "category": "design-tools",
     "summary": {
-      "fr": "Le serveur distant de Figma donne à votre assistant le contexte de vos designs (composants, variables, mise en page) et, en bêta, le droit de créer et de modifier dans vos fichiers. C'est le serveur à préférer : rien à installer.",
-      "en": "Figma's remote server gives your assistant your designs' context (components, variables, layout) and, in beta, the ability to create and edit in your files. It is the one to prefer: nothing to install."
+      "fr": "Le serveur en ligne de Figma donne à votre assistant le contexte de vos designs (composants, variables, mise en page) et, en bêta, le droit de créer et de modifier dans vos fichiers. C'est le serveur à préférer : rien à installer.",
+      "en": "Figma's online server gives your assistant your designs' context (components, variables, layout) and, in beta, the ability to create and edit in your files. It is the one to prefer: nothing to install."
     },
     "card": {
       "fr": "Lire vos maquettes et en créer, en ligne.",
@@ -602,8 +602,8 @@
       "en": "You track your site in Google Analytics and want answers without building a report."
     },
     "not_for": {
-      "fr": "Vous voulez un branchement en un clic : il s'installe sur votre ordinateur, avec Python et des identifiants Google Cloud.",
-      "en": "You want a one-click setup: it is installed on your computer, with Python and Google Cloud credentials."
+      "fr": "Vous voulez un branchement en un clic : ce serveur s'installe sur votre ordinateur, avec Python et des identifiants Google Cloud.",
+      "en": "You want a one-click setup: this server is installed on your computer, with Python and Google Cloud credentials."
     },
     "tools": 9,
     "skills": 2,
@@ -618,11 +618,11 @@
     "host_name": "HubSpot",
     "category": "crm",
     "summary": {
-      "fr": "Le serveur officiel de HubSpot ouvre à votre assistant le CRM, les campagnes, le contenu et les publications sociales. Les créations et modifications demandent une confirmation explicite, et aucune suppression n'est documentée.",
-      "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating and editing require explicit confirmation, and no deletion is documented."
+      "fr": "Le serveur officiel de HubSpot ouvre à votre assistant le CRM, les campagnes, le contenu et les publications sociales. La création ou la modification d'une fiche du CRM demande une confirmation explicite, et aucune suppression n'est documentée.",
+      "en": "HubSpot's official server opens the CRM, campaigns, content and social posts to your assistant. Creating or editing a CRM record requires explicit confirmation, and no deletion is documented."
     },
     "card": {
-      "fr": "Mettre à jour votre CRM et vos campagnes.",
+      "fr": "Consulter et mettre à jour CRM et campagnes.",
       "en": "Read and update your CRM and campaigns."
     },
     "status": "ga",
@@ -674,8 +674,8 @@
     "host_name": "Make",
     "category": "automation",
     "summary": {
-      "fr": "Le serveur officiel de Make transforme vos scénarios actifs en actions que votre assistant peut lancer ; sur un forfait payant, il peut aussi consulter et modifier scénarios, connexions et data stores. Make ne publie pas de liste nominative d'outils : ils dépendent de vos scénarios et des portées choisies.",
-      "en": "Make's official server turns your active scenarios into actions your assistant can run; on a paid plan it can also view and edit scenarios, connections and data stores. Make publishes no named tool list: tools depend on your scenarios and the scopes you grant."
+      "fr": "Le serveur officiel de Make transforme vos scénarios actifs en actions que votre assistant peut lancer ; sur un forfait payant, il peut aussi consulter et modifier scénarios, connexions et data stores. Make ne publie pas de liste nominative d'outils : ils dépendent de vos scénarios et des autorisations choisies.",
+      "en": "Make's official server turns your active scenarios into actions your assistant can run; on a paid plan it can also view and edit scenarios, connections and data stores. Make publishes no named tool list: tools depend on your scenarios and the permissions you grant."
     },
     "card": {
       "fr": "Lancer vos scénarios Make en une phrase.",
@@ -832,7 +832,7 @@
     "category": "organization",
     "summary": {
       "fr": "Le serveur officiel de Notion donne à votre assistant l'accès à vos pages, bases de données, commentaires, fichiers et agenda Notion. Il peut lire, créer, modifier et mettre à la corbeille, toujours dans la limite de vos droits.",
-      "en": "Notion's official server gives your assistant access to your Notion pages, databases, comments, files and calendar. It can read, create, edit and move to trash, always within your own rights."
+      "en": "Notion's official server gives your assistant access to your Notion pages, databases, comments, files and calendar. It can read, create, edit and move things to trash, always within your own permissions."
     },
     "card": {
       "fr": "Retrouver, résumer et créer des pages dans Notion.",
@@ -902,7 +902,7 @@
       "en": "You already keep your notes, clients or projects in Notion and lose time finding them again."
     },
     "not_for": {
-      "fr": "Vous êtes invité dans l'espace d'un client : les invités ne peuvent pas se connecter.",
+      "fr": "Vous n'avez qu'un accès invité dans l'espace d'un client : les invités ne peuvent pas se connecter.",
       "en": "You are a guest in a client's workspace: guests cannot connect."
     },
     "tools": 70,
@@ -923,7 +923,7 @@
     },
     "card": {
       "fr": "Suivre commandes et stocks, créer des produits.",
-      "en": "Follow orders and stock, create products."
+      "en": "Track orders and stock, create products."
     },
     "access": "read_write",
     "plan": "unknown",
@@ -1039,7 +1039,7 @@
     },
     "not_for": {
       "fr": "Vous ne voulez aucun message envoyé en votre nom : l'assistant peut écrire dans n'importe quelle conversation.",
-      "en": "You want no message sent in your name: the assistant can write in any conversation."
+      "en": "You don't want any message sent in your name: the assistant can write in any conversation."
     },
     "tools": 2,
     "skills": 0,
@@ -1054,12 +1054,12 @@
     "host_name": "Stripe",
     "category": "finance",
     "summary": {
-      "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Il est en bêta.",
-      "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. It is in beta."
+      "fr": "Le serveur officiel de Stripe donne à votre assistant l'accès à votre compte : lecture des données, création d'objets, et, avec Treasury, envoi ou conversion d'argent après une confirmation humaine dans le Dashboard. Le serveur est en bêta.",
+      "en": "Stripe's official server gives your assistant access to your account: reading data, creating objects and, with Treasury, sending or converting money after a human confirmation in the Dashboard. The server is in beta."
     },
     "card": {
       "fr": "Suivre vos paiements et votre solde.",
-      "en": "Follow your payments and balance."
+      "en": "Keep track of your payments and balance."
     },
     "status": "beta",
     "transport": "remote",
@@ -1116,8 +1116,8 @@
       "scoped_keys"
     ],
     "for": {
-      "fr": "Vous encaissez avec Stripe et voulez suivre paiements et solde sans ouvrir le tableau de bord.",
-      "en": "You take payments with Stripe and want to follow payments and balance without opening the dashboard."
+      "fr": "Vous encaissez avec Stripe et voulez suivre paiements et solde sans ouvrir le Dashboard.",
+      "en": "You take payments with Stripe and want to keep track of payments and balance without opening the Dashboard."
     },
     "not_for": {
       "fr": "Vous voulez confier vos virements à l'assistant : le serveur est en bêta et chaque envoi d'argent attend votre confirmation.",
@@ -1137,11 +1137,11 @@
     "category": "communication",
     "summary": {
       "fr": "Le serveur officiel de Tally, en bêta, permet à votre assistant de créer un formulaire à partir d'une description, de le modifier, de le publier et de lire les réponses. Il ne peut supprimer ni formulaire ni réponse, et il est gratuit sur tous les forfaits.",
-      "en": "Tally's official server, in beta, lets your assistant create a form from a description, edit it, publish it and read submissions. It cannot delete forms or submissions, and it is free on every plan."
+      "en": "Tally's official server, in beta, lets your assistant create a form from a description, edit it, publish it and read responses. It cannot delete forms or responses, and it is free on every plan."
     },
     "card": {
       "fr": "Créer un formulaire et lire ses réponses.",
-      "en": "Create a form and read its answers."
+      "en": "Create a form and read its responses."
     },
     "status": "beta",
     "transport": "remote",
@@ -1214,12 +1214,12 @@
     "host_name": "Webflow",
     "category": "nocode-web",
     "summary": {
-      "fr": "Le serveur officiel de Webflow laisse votre assistant lire et modifier votre site : pages, styles, composants, CMS, fichiers, et le publier en ligne. Les droits se donnent site par site, par le propriétaire ou un administrateur.",
-      "en": "Webflow's official server lets your assistant read and edit your site: pages, styles, components, CMS, assets, and publish it live. Access is granted site by site, by the owner or an admin."
+      "fr": "Le serveur officiel de Webflow laisse votre assistant lire et modifier votre site (pages, styles, composants, CMS, fichiers), puis le publier en ligne. Les droits se donnent site par site, par le propriétaire ou un administrateur.",
+      "en": "Webflow's official server lets your assistant read and edit your site (pages, styles, components, CMS, assets), then publish it live. Access is granted site by site, by the owner or an admin."
     },
     "card": {
       "fr": "Lire et modifier votre site, jusqu'à le publier.",
-      "en": "Read and edit your site, up to publishing it."
+      "en": "Read and edit your site, then publish it."
     },
     "transport": "remote",
     "auth": [
@@ -1270,12 +1270,12 @@
       "scoped_keys"
     ],
     "for": {
-      "fr": "Votre site, ou ceux de vos clients, est construit sur Webflow.",
-      "en": "Your site, or your clients' sites, is built on Webflow."
+      "fr": "Vous construisez votre site, ou ceux de vos clients, sur Webflow.",
+      "en": "You build your site, or your clients' sites, on Webflow."
     },
     "not_for": {
       "fr": "Vous craignez une mise en ligne par erreur : l'assistant peut publier le site.",
-      "en": "You fear publishing by mistake: the assistant can publish the site."
+      "en": "You're worried about publishing by mistake: the assistant can publish the site."
     },
     "tools": 37,
     "skills": 22,
@@ -1290,8 +1290,8 @@
     "host_name": "Zapier",
     "category": "automation",
     "summary": {
-      "fr": "Zapier MCP met à la portée de votre assistant les actions de milliers d'applications connectées à votre compte Zapier : chercher, créer, envoyer. Vous choisissez les actions exposées, et chaque appel réussi consomme deux tâches du forfait.",
-      "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful call uses two tasks from your plan."
+      "fr": "Zapier MCP met à la portée de votre assistant les actions de milliers d'applications connectées à votre compte Zapier : chercher, créer, envoyer. Vous choisissez les actions exposées, et chaque action réussie consomme deux tâches du forfait.",
+      "en": "Zapier MCP puts the actions of thousands of apps connected to your Zapier account within your assistant's reach: search, create, send. You choose the actions exposed, and each successful action uses two tasks from your plan."
     },
     "card": {
       "fr": "Agir dans vos applis via vos actions activées.",
