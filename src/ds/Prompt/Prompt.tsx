@@ -12,12 +12,15 @@ type Lang = "fr" | "en";
  * message). Under it an optional note (« À vérifier »), then « Copier la demande », the system's secondary button, at
  * the foot: in a row of cards whose content stretches, the buttons line up. « Copié » is said to screen readers.
  */
-export default function Prompt({ text, lang, size = "reading", mark, note }: {
+export default function Prompt({ text, lang, size = "reading", tone = "wash", mark, note }: {
   /** The request itself. */
   text: string;
   lang: Lang;
   /** reading: 17, a step's request; lead: 21, a card's request, the message to send. */
   size?: "reading" | "lead";
+  /** wash: the message on a wash of ink (a step's request). sent (19/11): the reader's own message as a chat shows it,
+   *  ink ground, light words, its lower corner pinched; the anchor of a situation card. */
+  tone?: "wash" | "sent";
   /** The chosen assistant's mark (20 px), at the message's left, as in a conversation. */
   mark?: ReactNode;
   /** What to check after sending it, between the message and the button. */
@@ -31,7 +34,7 @@ export default function Prompt({ text, lang, size = "reading", mark, note }: {
   };
   return (
     <div className={styles.prompt} data-prompt="">
-      <div className={styles.message}>
+      <div className={styles.message} data-tone={tone}>
         {mark && <span className={styles.mark} aria-hidden="true">{mark}</span>}
         <p className={styles.words} data-size={size}>{text}</p>
       </div>

@@ -32,6 +32,16 @@
   overflow-wrap: break-word;
 }
 
+/* The reader's own message (19/11, « manque de contraste »): the sent bubble of a chat, ink ground and light words. */
+.message[data-tone="sent"] {
+  border-end-end-radius: var(--tt-space-1);
+  background: var(--tt-ink);
+}
+
+.message[data-tone="sent"] .words {
+  color: var(--tt-bg);
+}
+
 .words[data-size="lead"] {
   font: var(--tt-title-m-font);
   letter-spacing: var(--tt-title-m-tracking);

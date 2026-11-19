@@ -88,7 +88,7 @@ export function McpSheetView({ sheet, lang, title, logo, toolName = sheet.publis
                 // assistant's mark), what comes out (one line), then the copy button. No number: no sequence.
                 <li key={situation.ask.fr} className={styles.askCard} data-situation="">
                   <h3 className={styles.situationTitle}>{say(lang, situation.title)}</h3>
-                  <Prompt text={lang === "en" ? situation.ask.en : situation.ask.fr} lang={lang}
+                  <Prompt tone="sent" text={lang === "en" ? situation.ask.en : situation.ask.fr} lang={lang}
                     note={<p className={styles.situationResult}><span className={styles.strong}>{t("Résultat", "Result")}</span>{t(" : ", ": ")}{say(lang, situation.gain)}</p>} />
                 </li>
               ))}

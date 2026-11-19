@@ -97,12 +97,23 @@
   composes: titleM from "../atoms.module.css";
 }
 
+/* The result supports the message: a note (14), close under it. */
 .situationResult {
-  composes: text from "../atoms.module.css";
+  composes: note from "../atoms.module.css";
 }
 
+/* Rhythm (19/11, « manque de rythme »): the title stands apart (24), the message and its result hold together (8),
+   the button sits at the foot, at least 24 below. */
 .askCard[data-situation] {
-  gap: var(--tt-space-4);
+  gap: var(--tt-space-6);
+}
+
+.askCard[data-situation] [data-prompt] {
+  gap: var(--tt-space-2);
+}
+
+.askCard[data-situation] [data-prompt] [data-foot] {
+  padding-top: var(--tt-space-4);
 }
 
 /* « D'un free à l'autre » (19/11): a text on the reading column, the introduction at 17, 48 between its parts,
