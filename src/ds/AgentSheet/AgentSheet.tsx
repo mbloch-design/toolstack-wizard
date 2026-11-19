@@ -499,7 +499,7 @@ function ControlColumns({ sheet, lang }: { sheet: McpSheet; lang: Lang }) {
     const line = sheet.capabilities?.find((capability) => capability.kind === kind);
     const own = tools.filter((tool) => tool.kind === kind);
     const head = <span className={styles.sectionHead} data-alert={kind === "delete" || kind === "pay" || undefined}>
-      {KIND_ICON[kind]}<strong>{say(lang, CONSEQUENCE[kind])}</strong>{own.length > 0 && <span className={styles.sectionCount}>{`· ${own.length}`}</span>}
+      {KIND_ICON[kind]}<span className={styles.strong}>{say(lang, CONSEQUENCE[kind])}</span>{own.length > 0 && <span className={styles.sectionCount}>{`· ${own.length}`}</span>}
       {kind === "read" && <span className={styles.sectionNote}>{t("Sans effet sur vos données", "No effect on your data")}</span>}
     </span>;
     const rows = own.length
