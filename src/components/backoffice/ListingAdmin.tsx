@@ -12,7 +12,9 @@ import styles from "./ContributionQueue.module.css";
 
 type Claim = { ownerId: string; toolId: string; slug: string; confirmedEmail: string; createdAt: string };
 type Invitation = { id: string; toolId: string; expiresAt: string; status: "pending" | "accepted" | "revoked" | "expired" };
-type ListingRow = Pick<ListingRequest, "id" | "name" | "status" | "offer" | "commercialStatus" | "toolId" | "deliveryStatus"> & { confirmedEmail: string | null };
+type ListingRow = Pick<ListingRequest, "id" | "name" | "status" | "offer" | "commercialStatus" | "toolId" | "deliveryStatus"> & {
+  confirmedEmail: string | null; historicalReviewRequested?: boolean;
+};
 type Directory = {
   claims: Claim[];
   listings: ListingRow[];
@@ -143,14 +145,18 @@ export function ListingAdmin({ onBack, onReviewBatch }: { onBack: () => void; on
             {row.confirmedEmail && <p>{row.confirmedEmail}</p>}
             {(row.offer === "standard_badge" || row.offer === "priority_paid") && <>
               <p>{listingOfferLabel(row.offer, t)}</p>
-              <p>{listingCommercialLabel(row.offer, row.commercialStatus, t)}</p>
+              <p>{row.historicalReviewRequested
+                ? t("Ancien paiement à rapprocher", "Previous payment to match")
+                : listingCommercialLabel(row.offer, row.commercialStatus, t)}</p>
             </>}
             {row.status && <p>{row.toolId
               ? row.deliveryStatus === "publishing" ? t("Mise en ligne à vérifier", "Deployment verification pending")
                 : t("Dans le lot de publication", "In the publication batch")
               : adminListingStatus(row.status, t)}</p>}
           </div>
-          <Button disabled={busy} onClick={() => openListing(row.id)}>{t("Examiner la fiche", "Review listing")}</Button>
+          <Button disabled={busy} onClick={() => openListing(row.id)}>{row.historicalReviewRequested
+            ? t("Vérifier l’ancien paiement", "Review previous payment")
+            : t("Examiner la fiche", "Review listing")}</Button>
         </li>)}</ul> : <p>{t("Aucune demande de nouvelle fiche en cours.", "No new listing requests in progress.")}</p>}
       </section>
       <section className={styles.content}>

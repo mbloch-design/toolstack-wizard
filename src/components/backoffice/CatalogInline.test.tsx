@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen, within } from "@testing-library/react";
+import { act, fireEvent, render, screen, within, waitFor } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
 const api = vi.hoisted(() => ({
   list: vi.fn(),
@@ -6,6 +6,7 @@ const api = vi.hoisted(() => ({
   save: vi.fn(),
   publish: vi.fn(),
   discard: vi.fn(),
+  approve: vi.fn(),
 }));
 vi.mock("@/lib/backofficeCatalogApi", () => ({
   loadCatalogWorkspace: api.list,
@@ -13,6 +14,7 @@ vi.mock("@/lib/backofficeCatalogApi", () => ({
   saveCatalogDraft: api.save,
   discardCatalogDraft: api.discard,
   publishCatalogDrafts: api.publish,
+  approveCatalogEditorialDraft: api.approve,
 }));
 vi.mock("@/hooks/useSupabaseData", async original => ({
   ...(await original<typeof import("@/hooks/useSupabaseData")>()),
@@ -58,6 +60,25 @@ it("makes the complete direct editor the primary record entry", async () => {
   expect(
     await screen.findByRole("button", { name: "Édition directe · Notion" }),
   ).toBeVisible();
+});
+
+it("keeps publisher-owned facts read-only and approves the saved ToolTrim revision", async () => {
+  window.history.replaceState({}, "", "/fr/back-office?view=catalog&tool=notion&editor=inline");
+  const editorialCaps = catalogCapabilities({ isAdmin: true, editablePaths: ["longDescription", "longDescriptionEn"] });
+  const editorial = { ...detail, baseHash: "editorial-hash", version: 3, editorial: "draft" as const,
+    tool: { ...tool, longDescription: "Analyse indépendante" },
+    capabilities: editorialCaps,
+    draft: { slug: "notion", name: "Notion", version: 3, updatedAt: "2026-11-18", fields: ["longDescription"] },
+  };
+  api.detail.mockResolvedValue(editorial);
+  api.approve.mockResolvedValue({ ...editorial, editorial: "approved" });
+  render(<MemoryRouter><CatalogEditor /></MemoryRouter>);
+  expect(await screen.findByRole("button", { name: "Modifier les points forts et limites" })).toBeVisible();
+  expect(screen.queryByRole("button", { name: "Modifier la description" })).not.toBeInTheDocument();
+  fireEvent.click(screen.getByRole("button", { name: "Valider pour le prochain lot" }));
+  await waitFor(() => expect(api.approve).toHaveBeenCalledWith({ slug: "notion", version: 3, baseHash: "editorial-hash" }));
+  expect(await screen.findByText("Validée pour le prochain lot")).toBeVisible();
+  expect(screen.getByRole("button", { name: "Vérifier le lot de publication" })).toBeEnabled();
 });
 
 it("ignores a detail response after the account workspace unmounts", async () => {

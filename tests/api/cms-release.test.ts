@@ -86,3 +86,31 @@ it("rejects legacy writers for a retained CMS workspace even without an approved
     legacyDrafts: [{ tool: linked, baseHash: catalogHash(linked), version: 2 }],
   })).toThrow("CMS_RELEASE_DRAFT_OVERLAP");
 });
+
+it("publishes facts, independent editorial edits and the verified offer in one merged record", () => {
+  const result = assembleCmsRelease(source, {
+    expectedHead: headSha,attachedToolIds:[linked.id],changes:[approved],overlays:[
+      {kind:"editorial",approvalId:"editorial",version:2,toolId:linked.id,apply:tool=>({...tool,verdict:{summary:"New ToolTrim verdict"}})},
+      {kind:"commercial",approvalId:"paid-upgrade",version:4,toolId:linked.id,metadata:{offer:"priority_paid",commercialStatus:"satisfied"},
+        apply:tool=>({...tool,listingCommercial:{offer:"priority_paid",status:"active"}})},
+    ],
+  });
+  expect(result.tools).toHaveLength(2);
+  expect(result.tools[0]).toMatchObject({name:approved.tool.name,verdict:{summary:"New ToolTrim verdict"},listingCommercial:{offer:"priority_paid",status:"active"}});
+  const hash=catalogHash(result.tools[0]);
+  expect(result.manifest.items[0].hash).toBe(hash);
+  expect(result.manifest.editorialItems[0].hash).toBe(hash);
+  expect(result.manifest.commercialItems[0].hash).toBe(hash);
+  expect(result.tools[1]).toBe(witness);
+});
+
+it("can publish an offer upgrade alone without replacing product content or analysis", () => {
+  const result=assembleCmsRelease(source,{expectedHead:headSha,attachedToolIds:[linked.id],changes:[],overlays:[
+    {kind:"commercial",approvalId:"upgrade",version:2,toolId:linked.id,
+      apply:tool=>({...tool,listingCommercial:{offer:"priority_paid",status:"active"}})},
+  ]});
+  expect(result.manifest.items).toEqual([]);
+  expect(result.manifest.commercialItems).toHaveLength(1);
+  expect(result.tools[0].verdict).toEqual(linked.verdict);
+  expect(result.tools[0].name).toBe(linked.name);
+});

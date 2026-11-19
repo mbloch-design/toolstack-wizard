@@ -5,6 +5,10 @@ import { parseProductDraft, type ProductDraft } from "../src/lib/publisherCatalo
 export type CmsActor = { userId: string; sessionId: string };
 type DraftSnapshot = { brandId: string; version: number; updatedAt: string; canEdit: boolean; value: ProductDraft };
 
+export function requirePublisherCmsEnabled() {
+  if (process.env.PUBLISHER_CMS_ENABLED !== "true") throw new AccountApiError(503, "CMS_DISABLED");
+}
+
 const rpcErrors = {
   PT400: [400, "INVALID_PUBLISHER_DRAFT"],
   PT401: [401, "ACCOUNT_SESSION_INVALID"],

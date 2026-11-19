@@ -144,13 +144,15 @@ export function relPourLienOutil(
   hrefEmis: string | null | undefined,
   affiliateLink: string | null | undefined,
   websiteUrl: string | null | undefined,
+  approvedWebsiteUrl?: string,
 ): string {
   const href = (hrefEmis || "").trim();
   const affilie = (affiliateLink || "").trim();
   const officiel = (websiteUrl || "").trim();
   const declareAffilie = !!href && !!affilie && href === affilie && affilie !== officiel;
   const remunere = declareAffilie || estLienRemunere(href);
-  if (!remunere && estLienEditorialDofollow(href)) return BASE;
+  const approved = safeExternalUrl(approvedWebsiteUrl);
+  if (!remunere && (estLienEditorialDofollow(href) || (approved && href === approved && safeExternalUrl(officiel) === approved))) return BASE;
   return relExterne(remunere ? "affilie" : "source");
 }
 

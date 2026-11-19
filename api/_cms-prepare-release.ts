@@ -1,9 +1,10 @@
+import { applyEditorialPatch, editorialBaseHash } from "./_cms-editorial.js";
 import { AccountApiError, getAccountServiceClient } from "./_account-auth.js";
 import { catalogValidationIssues } from "../src/lib/catalogValidation.js";
 import { getCatalogSnapshot } from "./_backoffice-catalog-store.js";
 import { readCatalog } from "./_backoffice-catalog-github.js";
 import { cmsActorArgs, requireCmsRpcSuccess, type CmsActor } from "./_cms-store.js";
-import { assembleCmsRelease, projectPublisherFacts } from "./_cms-release.js";
+import { assembleCmsRelease, projectPublisherFacts, type ReleaseOverlay } from "./_cms-release.js";
 import type { CatalogTool } from "../src/lib/backofficeCatalog.js";
 import { verifyBadgeOnPage } from "./_badge-verification.js";
 import { materializePublisherMedia } from "./_catalog-media.js";
@@ -14,6 +15,12 @@ import { parseProductDraft } from "../src/lib/publisherCatalog.js";
 export async function preparePublisherRelease(actor: CmsActor, verifyCommercial = false) {
   const client = getAccountServiceClient();
   const args = cmsActorArgs(actor);
+  const extraRpc = client.rpc.bind(client) as unknown as (name: string, args: Record<string, unknown>) => PromiseLike<{data: unknown; error: {code:string;message:string}|null}>;
+  const [editorialResult, commercialResult] = await Promise.all([
+    extraRpc("cms_editorial_release_inputs", args), extraRpc("cms_commercial_release_inputs", args),
+  ]);
+  requireCmsRpcSuccess(editorialResult.error); requireCmsRpcSuccess(commercialResult.error);
+  if (!Array.isArray(editorialResult.data) || !Array.isArray(commercialResult.data)) throw new AccountApiError(503,"CMS_WORKSPACE_UNAVAILABLE");
   const [{ data, error }, protectedResult, initialResult] = await Promise.all([
     client.rpc("cms_approved_release_inputs", args),
     client.rpc("cms_protected_tool_ids", args),
@@ -105,6 +112,30 @@ export async function preparePublisherRelease(actor: CmsActor, verifyCommercial 
     }
     if (alternateText.length) change.tool.publisherMediaAlts = alternateText;
   }
-  const assembled = assembleCmsRelease(source, { expectedHead: source.headSha, attachedToolIds, changes, legacyDrafts });
+  const overlays: ReleaseOverlay[] = [];
+  for (const input of editorialResult.data) {
+    if (!input || typeof input !== "object" || typeof input.approvalId !== "string" || typeof input.toolId !== "string"
+      || !Number.isSafeInteger(input.version)) throw new AccountApiError(503,"CMS_WORKSPACE_UNAVAILABLE");
+    if (!input.attached) { blocked.push({toolId:input.toolId,approvalId:input.approvalId}); continue; }
+    const base = toolsById.get(input.toolId);
+    if (!base || editorialBaseHash(base) !== input.baseHash) throw new AccountApiError(409,"CMS_RELEASE_SOURCE_CHANGED");
+    overlays.push({kind:"editorial",approvalId:input.approvalId,version:input.version,toolId:input.toolId,
+      apply: tool => applyEditorialPatch(tool,input.patch)});
+  }
+  for (const input of commercialResult.data) {
+    if (!input || typeof input !== "object" || typeof input.approvalId !== "string" || typeof input.toolId !== "string"
+      || !Number.isSafeInteger(input.version) || !["standard_badge","priority_paid"].includes(input.offer)) throw new AccountApiError(503,"CMS_WORKSPACE_UNAVAILABLE");
+    const evidence = input.evidence;
+    if (!input.attached || (evidence?.type === "priority_paid" && evidence.mode !== cmsCreemMode())) {
+      blocked.push({toolId:input.toolId,approvalId:input.approvalId}); continue;
+    }
+    if (!toolsById.has(input.toolId) && !changes.some(change=>change.toolId===input.toolId)) continue;
+    overlays.push({kind:"commercial",approvalId:input.approvalId,version:input.version,toolId:input.toolId,
+      metadata:{offer:input.offer,commercialStatus:input.status,evidence:input.evidence},
+      apply: tool => ({...tool,listingCommercial:{offer:input.offer,status:input.status === "satisfied" ? "active" : "review_required",
+        ...(input.offer === "priority_paid" && input.status === "satisfied" && typeof tool.websiteUrl === "string"
+          ? { approvedWebsiteUrl: tool.websiteUrl } : {})}})});
+  }
+  const assembled = assembleCmsRelease(source, { expectedHead: source.headSha, attachedToolIds, changes, legacyDrafts, overlays });
   return { ...assembled, blocked, source, legacyDrafts: legacy.drafts, mediaFiles: [...new Map(assets.map((item) => [item.path, { path: item.path, bytes: item.bytes }])).values()] };
 }

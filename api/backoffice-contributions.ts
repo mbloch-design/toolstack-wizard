@@ -1,6 +1,6 @@
 import { AccountApiError, getAccountServiceClient, requireAccount } from "./_account-auth.js";
 import { readAccountBody } from "./_account-body.js";
-import { cmsActorArgs, requireCmsRpcSuccess } from "./_cms-store.js";
+import { cmsActorArgs, requireCmsRpcSuccess, requirePublisherCmsEnabled } from "./_cms-store.js";
 import { catalogHash } from "./_backoffice-catalog-contract.js";
 import { cancelPreparedRelease, deliverPublisherRelease, verifyPublisherRelease } from "./_cms-delivery.js";
 import { readCatalog } from "./_backoffice-catalog-github.js";
@@ -18,6 +18,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     return;
   }
   try {
+    requirePublisherCmsEnabled();
     const actor = await requireAccount(req);
     const allowed = (process.env.BACKOFFICE_ADMIN_EMAILS ?? "").split(",").map((email) => email.trim().toLowerCase());
     if (!actor.email || !allowed.includes(actor.email.trim().toLowerCase())) {

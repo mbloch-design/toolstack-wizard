@@ -75,3 +75,11 @@ La migration additive `20261117193000_cms_commerce_account.sql` est locale, non 
 Vérifications de ce lot : 60 tests UI/navigation ciblés (dont 4 sur le suivi commercial), 29 tests API/PostgreSQL commerce, scénario PostgreSQL dossiers, typecheck app/node/API, 290 tests du système de design et 48 captures ciblées des contrôles/formulaires FR/EN clair/sombre. Les cinq scénarios éditeur existants et le nouveau parcours de démonstration passent. La recette fournisseur réelle reste distincte de ces preuves locales.
 
 Construction de production complète : PASS (SSR, pré-rendu, sitemap, contrats SEO/routage et budgets de sortie). Construction Storybook : PASS. Ces résultats ne constituent pas un déploiement.
+
+## Vérification distante du 18 novembre — raccordement non livré
+
+Lecture réelle du projet ToolTrim : les tables CMS de ce chantier ne sont pas déployées. Le contrôle indépendant constate également l’absence des fonctions publiques `cms_*` et du bucket `catalog-drafts`. Le catalogue en ligne ne peut donc pas utiliser les nouvelles routes CMS telles quelles. Les anciennes voies de contribution authentifiées doivent être revues avant activation.
+
+Les révisions éditoriales et commerciales rejoignent le lot groupé. La liste admin expose les demandes de rapprochement historique ouvertes, même quand le dossier est en brouillon. Une offre prioritaire confirmée peut publier le lien officiel dofollow à l’URL exacte de la fiche contrôlée lors de la publication. Un changement d’URL ne reprend pas automatiquement cette autorisation.
+
+L’inventaire des variables par la CLI Vercel montre que les variables du CMS restent à configurer. La recette hébergée doit confirmer le webhook Creem, la publication Vercel et le rendu de la fiche. Aucun secret ni configuration distante n’a été modifié.

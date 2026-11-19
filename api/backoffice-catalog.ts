@@ -26,6 +26,7 @@ import {
   cleanupCatalogDrafts,
 } from "./_backoffice-catalog-store.js";
 import { cmsActorArgs, requireCmsRpcSuccess } from "./_cms-store.js";
+import { editorialDraftSummaries, editorialWorkspace } from "./_cms-editorial.js";
 import { readCatalog, publishCatalog } from "./_backoffice-catalog-github.js";
 const query = (req: VercelRequest, key: string, fallback = "") => {
   const v = req.query[key] ?? fallback;
@@ -58,8 +59,8 @@ function version(v: unknown): number {
 }
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Cache-Control", "no-store");
-  if (!["GET", "PUT", "DELETE", "POST"].includes(req.method ?? "")) {
-    res.setHeader("Allow", "GET, PUT, DELETE, POST");
+  if (!["GET", "PUT", "PATCH", "DELETE", "POST"].includes(req.method ?? "")) {
+    res.setHeader("Allow", "GET, PUT, PATCH, DELETE, POST");
     return res.status(405).json({ error: { code: "METHOD_NOT_ALLOWED" } });
   }
   try {
@@ -154,7 +155,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         .json({ ...commit, published: snapshot.drafts.length, cleanupPending });
     }
     if (req.method === "GET" && mode === "list") {
-      const drafts = snapshot.drafts.map(draftSummary);
+      const editorialDrafts = cmsActive ? await editorialDraftSummaries(account, source.tools) : [];
+      const rawDrafts = snapshot.drafts.map(draftSummary);
+      const legacySlugs = new Set(rawDrafts.map(({ slug }) => slug));
+      const drafts = [...rawDrafts, ...editorialDrafts.filter(({ slug }) => !legacySlugs.has(slug))];
       const summaries = new Map(drafts.map((d) => [d.slug, d]));
       const needle = search.trim().toLowerCase();
       const filtered = source.tools.filter(
@@ -183,9 +187,31 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const tool = bySlug.get(slug);
     if (!tool) throw catalogError(404, "CATALOG_TOOL_NOT_FOUND");
     const draft = snapshot.drafts.find((d) => d.slug === slug);
+    if (cmsActive && req.method === "GET") {
+      const editorial = await editorialWorkspace(account, tool);
+      if (editorial) {
+        // An existing JSON draft is kept recoverable before switching its writer.
+        return res.status(200).json(draft ? {
+          ...detail(tool, { ...capabilities, canSaveDraft: false, editablePaths: [] }, draft),
+          conflict: true,
+        } : editorial);
+      }
+    }
     if (req.method === "GET")
       return res.status(200).json(detail(tool, capabilities, draft));
     const expected = version(body.version);
+    if (cmsActive && !draft) {
+      const action = req.method === "PUT" ? "save" : req.method === "PATCH" ? "approve" : "discard";
+      if (action === "save" && body.value && typeof body.value === "object" &&
+        "category" in body.value) {
+        const category = body.value.category;
+        if (category !== tool.category && category !== "" && category != null &&
+          !source.tools.some((entry) => entry.category === category)) throw catalogError(400, "INVALID_CATALOG_TOOL");
+      }
+      const editorial = await editorialWorkspace(account, tool, action, { ...body, version: expected });
+      if (editorial) return res.status(200).json(req.method === "DELETE" ? { ok: true } : editorial);
+    }
+    if (req.method === "PATCH") throw catalogError(409, "CMS_TOOL_REQUIRES_WORKSPACE");
     if (req.method === "DELETE") {
       if (!capabilities.canDiscardDraft)
         throw catalogError(403, "BACKOFFICE_FORBIDDEN");

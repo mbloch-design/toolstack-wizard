@@ -58,3 +58,11 @@ describe("relPourLienOutil", () => {
     },
   );
 });
+
+it("follows only the official URL approved in the published paid listing", () => {
+  const approved = "https://publisher.example.org/";
+  const changed = "https://other.example.org/";
+  expect(relPourLienOutil(approved, "", approved, approved)).toBe("noopener noreferrer");
+  expect(relPourLienOutil(changed, "", changed, approved)).toBe("nofollow noopener noreferrer");
+  expect(relPourLienOutil(approved + "?via=partner", "", approved, approved)).toContain("sponsored");
+});

@@ -1,4 +1,4 @@
-import { beforeEach, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { httpFixture } from "./http";
 const auth = vi.hoisted(() => ({ rpc: vi.fn(), requireAccount: vi.fn() }));
 vi.mock("../../api/_account-auth.js", async (original) => ({
@@ -7,6 +7,7 @@ vi.mock("../../api/_account-auth.js", async (original) => ({
   requireAccount: auth.requireAccount,
 }));
 import handler from "../../api/publisher-catalog";
+import contributions from "../../api/publisher-contributions";
 
 const brandId = "00000000-0000-0000-0000-000000000004";
 const locale = { shortDescription: null, productDescription: null, features: [], useCases: [] };
@@ -17,8 +18,22 @@ const value = {
 const draft = { brandId, value, version: 2, updatedAt: "2026-11-16T15:00:00Z", canEdit: true };
 
 beforeEach(() => {
+  vi.stubEnv("PUBLISHER_CMS_ENABLED", "true");
   auth.rpc.mockReset().mockResolvedValue({ data: draft, error: null });
   auth.requireAccount.mockReset().mockResolvedValue({ userId: "account", sessionId: "session", emailConfirmed: true });
+});
+afterEach(() => vi.unstubAllEnvs());
+
+it("closes catalogue and contribution routes while the CMS is disabled", async () => {
+  vi.stubEnv("PUBLISHER_CMS_ENABLED", "false");
+  for (const [route, method] of [[handler, "GET"], [handler, "PUT"], [contributions, "POST"], [contributions, "DELETE"]] as const) {
+    const fixture = httpFixture(undefined, method);
+    await route(fixture.req, fixture.res);
+    expect(fixture.res.statusCode).toBe(503);
+    expect(fixture.body).toEqual({ error: { code: "CMS_DISABLED" } });
+  }
+  expect(auth.requireAccount).not.toHaveBeenCalled();
+  expect(auth.rpc).not.toHaveBeenCalled();
 });
 
 async function invoke(method = "GET", body?: unknown) {

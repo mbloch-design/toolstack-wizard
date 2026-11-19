@@ -8,10 +8,12 @@ const m = vi.hoisted(() => ({
   save: vi.fn(),
   remove: vi.fn(),
   cleanup: vi.fn(),
+  rpc: vi.fn(),
 }));
 vi.mock("../../api/_account-auth", async (original) => ({
   ...(await original<object>()),
   requireAccount: m.auth,
+  getAccountServiceClient: () => ({ rpc: m.rpc }),
 }));
 vi.mock("../../api/_backoffice-catalog-github", () => ({
   readCatalog: m.read,
@@ -25,6 +27,7 @@ vi.mock("../../api/_backoffice-catalog-store", () => ({
 }));
 import handler from "../../api/backoffice-catalog";
 import { catalogHash } from "../../api/_backoffice-catalog-contract";
+import { applyEditorialPatch, editorialBaseHash } from "../../api/_cms-editorial";
 const tool = { id: "one", slug: "one", name: "One", description: "Before" };
 const draft = {
   slug: "one",
@@ -36,6 +39,7 @@ const draft = {
 };
 beforeEach(() => {
   vi.resetAllMocks();
+  vi.stubEnv("PUBLISHER_CMS_ENABLED", "false");
   vi.stubEnv("BACKOFFICE_ADMIN_EMAILS", "admin@example.com");
   m.auth.mockResolvedValue({ email: "admin@example.com" });
   m.read.mockResolvedValue({
@@ -52,6 +56,49 @@ beforeEach(() => {
       "https://github.com/mbloch-design/toolstack-wizard/commit/" +
       "c".repeat(40),
   });
+});
+
+it("routes a linked tool to the admin editorial writer, seals its exact revision, and lists it", async () => {
+  vi.stubEnv("PUBLISHER_CMS_ENABLED", "true");
+  m.snapshot.mockResolvedValue({ revision: 1, drafts: [] });
+  const baseHash = editorialBaseHash(tool);
+  const patch = { set: { longDescription: "Independent analysis", longDescriptionEn: "English analysis" }, remove: [] };
+  let snapshot: { version: number; baseHash: string | null; patch: typeof patch | null; updatedAt: string | null; state: string | null } = {
+    version: 0, baseHash: null, patch: null, updatedAt: null, state: null,
+  };
+  m.rpc.mockImplementation(async (name: string, args: { p_action: string; p_expected?: number }) => {
+    if (name === "cms_list_editorial_workspaces") return { data: [{
+      toolId: tool.id, version: 1, updatedAt: draft.updatedAt, state: "approved", fields: Object.keys(patch.set),
+    }], error: null };
+    expect(name).toBe("cms_editorial_workspace");
+    if (args.p_action === "save") {
+      expect(args.p_expected).toBe(0);
+      expect(args).toMatchObject({ p_base: baseHash, p_patch: patch });
+      snapshot = { version: 1, baseHash, patch, updatedAt: draft.updatedAt, state: null };
+    }
+    if (args.p_action === "approve") {
+      expect(args.p_expected).toBe(1);
+      snapshot = { ...snapshot, state: "approved" };
+    }
+    return { data: snapshot, error: null };
+  });
+  const detail = await call("GET", undefined, { mode: "detail", slug: tool.slug });
+  expect(detail.body).toMatchObject({ editorial: "empty", baseHash });
+  expect(detail.body).toMatchObject({ capabilities: { editablePaths: expect.not.arrayContaining(["shortDescription"]) } });
+  const outOfScope = await call("PUT", { slug: tool.slug, version: 0, baseHash, value: { ...tool, shortDescription: "Fact" } });
+  expect(outOfScope.res.statusCode).toBe(400);
+  const saved = await call("PUT", { slug: tool.slug, version: 0, baseHash, value: { ...tool, ...patch.set } });
+  expect(saved.body).toMatchObject({ editorial: "draft", version: 1, tool: patch.set });
+  expect(m.save).not.toHaveBeenCalled();
+  const stale = await call("PATCH", { slug: tool.slug, version: 0, baseHash });
+  expect(stale.res.statusCode).toBe(409);
+  expect((await call("PATCH", { slug: tool.slug, version: 1, baseHash })).body).toMatchObject({ editorial: "approved" });
+  expect((await call("GET", undefined, { mode: "list", draftsOnly: "true" })).body).toMatchObject({
+    total: 1, tools: [{ slug: tool.slug, draft: { editorial: "approved" } }],
+  });
+  const changedFacts = { ...tool, shortDescription: "New and independent facts" };
+  expect(editorialBaseHash(changedFacts)).toBe(baseHash);
+  expect(applyEditorialPatch(changedFacts, patch)).toMatchObject({ ...changedFacts, ...patch.set });
 });
 async function call(
   method = "GET",

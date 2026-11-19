@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { AccountApiError, getAccountServiceClient, requireAccount } from "./_account-auth.js";
 import { readAccountBody } from "./_account-body.js";
-import { cmsActorArgs, readPublisherDraft, requireCmsRpcSuccess, savePublisherDraft } from "./_cms-store.js";
+import { cmsActorArgs, readPublisherDraft, requireCmsRpcSuccess, requirePublisherCmsEnabled, savePublisherDraft } from "./_cms-store.js";
 import { parseProductDraft, type ProductDraft } from "../src/lib/publisherCatalog.js";
 import { assertProductPatchAllowed, PublisherDraftError } from "../src/lib/publisherFieldPolicy.js";
 import type { VercelRequest, VercelResponse } from "../types/vercel-http.js";
@@ -87,6 +87,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     return;
   }
   try {
+    requirePublisherCmsEnabled();
     const actor = await requireAccount(req);
     if (!actor.emailConfirmed) throw new AccountApiError(403, "CMS_ACCESS_DENIED");
     const toolId = req.query.tool;

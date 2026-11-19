@@ -1,3 +1,4 @@
+import HistoricalListingPayment from "./HistoricalListingPayment";
 import { useEffect, useRef, useState } from "react";
 import BackofficePageHeading from "@/ds/BackofficePageHeading/BackofficePageHeading";
 import Button, { linkClass } from "@/ds/Button/Button";
@@ -174,6 +175,11 @@ export default function InitialListingAdminReview({ listingId, brands, onBack, o
         </dl>
         {offer === "standard_badge" && review.badgeUrl && <a href={review.badgeUrl} className={linkClass("inline")} target="_blank" rel="noreferrer">{t("Ouvrir la page du badge", "Open the badge page")}</a>}
       </section>
+      {listing.commercialStatus !== "satisfied" && <HistoricalListingPayment key={listing.id} listingId={listing.id} getToken={getToken}
+        disabled={busy || factEdits} onAttached={() => {
+          setNotice(t("Paiement vérifié et rattaché. Aucun nouveau débit.", "Payment verified and attached. No new charge."));
+          setReload(value => value + 1);
+        }} />}
       {review.confirmation && <Notice title={confirmed ? t("Cette version factuelle est confirmée.", "This factual version is confirmed.")
         : t("Le représentant a demandé des corrections.", "The representative requested corrections.")}>
         {review.confirmation.note && <p>{review.confirmation.note}</p>}

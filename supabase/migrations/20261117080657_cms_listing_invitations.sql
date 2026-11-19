@@ -66,12 +66,24 @@ begin
       ), '[]'::jsonb),
       'listings', coalesce((
         select jsonb_agg(catalog_contrib.cms_listing_dto(r) || jsonb_build_object(
-          'ownerId', r.owner_id, 'confirmedEmail', case when u.email_confirmed_at is not null then u.email end
+          'ownerId', r.owner_id, 'confirmedEmail', case when u.email_confirmed_at is not null then u.email end,
+          'historicalReviewRequested', exists (
+            select from catalog_private.cms_listing_historical_reviews h
+            where h.listing_id = r.id and h.resolved_at is null
+          )
         ) order by r.updated_at, r.id)
         from (
-          select * from catalog_contrib.listing_requests
-          where status in ('submitted', 'in_preparation', 'facts_to_review', 'changes_requested', 'ready')
-            and (canonical_tool_id is null or (status = 'ready' and delivery_status in ('unpublished', 'publishing')))
+          select * from catalog_contrib.listing_requests r
+          where (
+            r.status in ('submitted', 'in_preparation', 'facts_to_review', 'changes_requested', 'ready')
+            and (r.canonical_tool_id is null or (r.status = 'ready' and r.delivery_status in ('unpublished', 'publishing')))
+          ) or (
+            r.status not in ('archived', 'rejected')
+            and exists (
+              select from catalog_private.cms_listing_historical_reviews h
+              where h.listing_id = r.id and h.resolved_at is null
+            )
+          )
           order by updated_at, id limit 100
         ) r join auth.users u on u.id = r.owner_id
       ), '[]'::jsonb),

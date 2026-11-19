@@ -111,6 +111,13 @@ export async function saveCatalogDraft(input: {
 }): Promise<CatalogEditorDetail> {
   return parseDetail(await request("PUT", {}, input));
 }
+export async function approveCatalogEditorialDraft(input: {
+  slug: string;
+  version: number;
+  baseHash: string;
+}): Promise<CatalogEditorDetail> {
+  return parseDetail(await request("PATCH", {}, input));
+}
 export async function discardCatalogDraft(
   slug: string,
   version: number,

@@ -280,6 +280,8 @@ function ListingOfferStatus({ listing, getToken, returnedFromPayment, clearPayme
     <h2 id="publisher-listing-offer-heading">{t("Offre et paiements", "Payments")}</h2>
     {busy && <p role="status">{t("Actualisation de l’offre et des paiements…", "Refreshing the offer and payments…")}</p>}
     {!busy && status && status !== "present" && status !== "paid" && <p role="status">{labels[status]}</p>}
+    {commerce?.publication === "pending" && <p role="status">{t("Votre offre est enregistrée. Sa mise à jour sur le site attend la prochaine publication ToolTrim.", "Your offer is recorded. Its website update is awaiting the next ToolTrim publication.")}</p>}
+    {commerce?.publication === "published" && <p>{t("Cette offre est intégrée à la version publiée de la fiche.", "This offer is included in the published listing version.")}</p>}
     {locked && <p className={styles.muted}>{t("Enregistrez ou annulez vos changements pour continuer.", "Save or cancel your changes to continue.")}</p>}
     {errorAction && <div className={styles.fields}>
       <p role="alert" className={styles.error}>{t("Impossible d’actualiser l’offre ou le paiement.", "The offer or payment could not be updated.")}</p>

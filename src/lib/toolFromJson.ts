@@ -50,6 +50,7 @@ export function mapToolFromJson(raw: unknown): Tool {
     promoCode: t.promoCode,
     promoDescriptionFr: t.promoDescriptionFr,
     promoDescriptionEn: t.promoDescriptionEn,
+    listingCommercial: t.listingCommercial,
     websiteUrl: asLocalizedText(t.websiteUrl || t.website_url || t.affiliateLink || t.affiliate_link, ""),
     logo: asLocalizedText(t.logo, ""),
     ogImageUrl: t.ogImageUrl || t.og_image_url || null,

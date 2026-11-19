@@ -48,6 +48,26 @@ describe("CMS Creem payment verification", () => {
     });
   });
 
+  it("reconciles legacy receipts by their original tool and reference without starting a payment", async () => {
+    const legacy={...receipt,metadata:{tooltrim_submission_id:attempt.id,tooltrim_tool_url:attempt.websiteUrl}};
+    fetchCreem.mockResolvedValueOnce(new Response(JSON.stringify(legacy)));
+    const {readHistoricalListingReceipt}=await commercial();
+    expect(await readHistoricalListingReceipt("ch_one",attempt.id,attempt.websiteUrl)).toMatchObject({amountPaidMinor:3509,state:"paid"});
+    expect(fetchCreem.mock.calls.every(([,options])=>options?.method!=="POST")).toBe(true);
+    fetchCreem.mockResolvedValueOnce(new Response(JSON.stringify(legacy)));
+    await expect(readHistoricalListingReceipt("ch_one",attempt.id,"https://wrong.example/")).rejects.toThrow("CREEM_RECEIPT_MISMATCH");
+    fetchCreem.mockResolvedValueOnce(new Response(JSON.stringify({...legacy,metadata:{...legacy.metadata,tooltrim_submission_id:actor.userId}})));
+    await expect(readHistoricalListingReceipt("ch_one",attempt.id,attempt.websiteUrl)).rejects.toThrow("CREEM_RECEIPT_MISMATCH");
+  });
+
+  it("can reconcile an attached legacy receipt again and observes later payment incidents", async()=>{
+    const legacy={...receipt,metadata:{tooltrim_submission_id:attempt.id,tooltrim_tool_url:attempt.websiteUrl}};
+    fetchCreem.mockResolvedValueOnce(new Response(JSON.stringify(legacy)))
+      .mockResolvedValueOnce(new Response(JSON.stringify({...transaction,status:"refunded"})));
+    const {readListingReceipt}=await commercial();
+    expect(await readListingReceipt({...attempt,legacyReference:attempt.id},"ch_one")).toMatchObject({state:"review_required",amountPaidMinor:3509});
+  });
+
   it("accepts a tax-inclusive quoted base only if the subtotal and tax reconcile to it", async () => {
     fetchCreem.mockResolvedValueOnce(new Response(JSON.stringify({ ...receipt, order: {
       ...receipt.order, sub_total: 2500, tax_amount: 400, amount: 2900, amount_paid: 2900,

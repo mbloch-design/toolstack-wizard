@@ -18,14 +18,18 @@ export default function PublisherPage() {
   const location = useLocation();
   const { slug, invitationToken } = useParams();
   const navigate = useNavigate();
+  const cmsEnabled = import.meta.env.VITE_PUBLISHER_CMS_ENABLED === "true";
   const query = new URLSearchParams(location.search);
   const title = query.has("listingId") ? t("Suivi de la fiche", "Listing progress") : t("Mes fiches", "My listings");
   useEffect(() => {
-    if (!invitationToken) return;
+    if (!cmsEnabled || !invitationToken) return;
     const kept = keepPublisherInvitation(invitationToken);
     navigate(publisherPath(prefix) + (kept ? "?invite=continue" : "?invite=manual"), { replace: true });
-  }, [invitationToken, navigate, prefix]);
+  }, [cmsEnabled, invitationToken, navigate, prefix]);
 
+  if (!cmsEnabled) return <AccountPageFrame title={title} wide>
+    <p>{t("L’espace éditeur est indisponible pour le moment.", "The publisher workspace is temporarily unavailable.")}</p>
+  </AccountPageFrame>;
   if (invitationToken) return <AccountPageFrame title={title} wide>
     <p role="status">{t("Ouverture de l’invitation…", "Opening invitation…")}</p>
   </AccountPageFrame>;

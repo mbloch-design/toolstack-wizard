@@ -13,5 +13,5 @@ export default defineConfig({
   use: { baseURL, trace: "retain-on-failure", serviceWorkers: "block" },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: { command: "node e2e/fixtures/accounts-server.mjs", url: baseURL, reuseExistingServer: false,
-    env: { PLAYWRIGHT_ACCOUNTS_PORT: port }, timeout: 120_000 },
+    env: { PLAYWRIGHT_ACCOUNTS_PORT: port, PLAYWRIGHT_PUBLISHER_CMS_ENABLED: "true" }, timeout: 120_000 },
 });

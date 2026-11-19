@@ -28,6 +28,7 @@ import {
   loadCatalogDetail,
   saveCatalogDraft,
   discardCatalogDraft,
+  approveCatalogEditorialDraft,
   publishCatalogDrafts,
 } from "@/lib/backofficeCatalogApi";
 import { CatalogField, CatalogValue, catalogFieldLabel } from "./CatalogFields";
@@ -300,6 +301,26 @@ export function CatalogEditor({
       if (id === requestId.current) setBusy(false);
     }
   }
+  async function approveEditorial() {
+    const slug = inlineSlug;
+    if (!slug || busy || session.stagedEditing) return;
+    const id = ++requestId.current;
+    setBusy(true);
+    setError("");
+    try {
+      await session.flush();
+      const detail = session.get(slug)?.detail;
+      if (detail?.editorial !== "draft" || detail.conflict) return;
+      const result = await approveCatalogEditorialDraft({ slug, version: detail.version, baseHash: detail.baseHash });
+      if (id !== requestId.current) return;
+      session.adopt(result, true);
+      setReload((n) => n + 1);
+    } catch (e) {
+      if (id === requestId.current) setError(message(e));
+    } finally {
+      if (id === requestId.current) setBusy(false);
+    }
+  }
   async function backToRecords() {
     if (session.stagedEditing) { blockedExit(); return; }
     setBusy(true);
@@ -384,6 +405,14 @@ export function CatalogEditor({
     try {
       const result = await loadCatalogDetail(slug);
       if (id !== requestId.current) return;
+      if (result.editorial) {
+        session.adopt(result);
+        setInlineSlug(slug);
+        setDetail(null);
+        setValue(null);
+        link(slug);
+        return;
+      }
       setInlineSlug(null);
       link(null);
       setDetail(result);
@@ -762,6 +791,10 @@ export function CatalogEditor({
           locked={busy || Boolean(review)}
           onReload={() => void reloadInline(false)}
           onRemoveDraft={(version) => void reloadInline(true, version)}
+          onApproveEditorial={() => void approveEditorial()}
+          onReviewEditorialBatch={() => void backToRecords().then(() => {
+            if (!session.stagedEditing && !session.dirty) setContributionsOpen(true);
+          })}
           onBack={() => void backToRecords()}
           onError={(e) => setError(message(e))}
         />

@@ -23,6 +23,8 @@ type ReleasePreview = {
   sourceHead: string;
   legacyItems: { slug: string; name?: string; version: number }[];
   items: { approvalId: string; toolId: string; name?: string; version: number }[];
+  editorialItems?: { approvalId: string; toolId: string; name?: string; version: number }[];
+  commercialItems?: { approvalId: string; toolId: string; name?: string; version: number; offer?: string }[];
 };
 type ReleaseHistory = { batch_key: string; prepared_at: string; commit_sha: string | null; verified_at: string | null; cancelled_at: string | null; leased_until: string };
 type Decision = "approved" | "changes_requested" | "rejected" | "cancel_approval";
@@ -68,6 +70,8 @@ export function ContributionQueue({ onBack, fromListing }: { onBack: () => void;
   const back = useRef<HTMLButtonElement>(null);
   const selected = useRef<string>();
   const needsInitialPreview = useRef(Boolean(fromListing));
+  const releaseCount = release ? release.items.length + release.legacyItems.length
+    + (release.editorialItems?.length ?? 0) + (release.commercialItems?.length ?? 0) : 0;
 
   useEffect(() => {
     if (fromListing) return;
@@ -234,7 +238,7 @@ export function ContributionQueue({ onBack, fromListing }: { onBack: () => void;
         <NoticeText>{t("Le rattachement ou les conditions de mise en ligne doivent être revérifiés.", "The assignment or publication requirements need checking.")}</NoticeText>
         <ul>{blocked.map((item) => <li key={item.approvalId}>{item.toolId}</li>)}</ul>
       </Notice>}
-      {release && <Notice title={(release.items.length || release.legacyItems.length)
+      {release && <Notice title={releaseCount
         ? t("Lot prêt pour vérification", "Batch ready for verification")
         : t("Aucun changement approuvé à préparer", "No approved changes to prepare")}>
         <ul>
@@ -244,8 +248,16 @@ export function ContributionQueue({ onBack, fromListing }: { onBack: () => void;
           {release.legacyItems.map((item) => <li key={item.slug}>
             {item.name || item.slug} · {t("Brouillon ToolTrim", "ToolTrim draft")} · {t("Version", "Version")} {item.version}
           </li>)}
+          {release.editorialItems?.map((item) => <li key={"editorial-" + item.approvalId}>
+            {item.name || item.toolId} · {t("Analyse et paramètres ToolTrim", "ToolTrim analysis and settings")} · {t("Version", "Version")} {item.version}
+          </li>)}
+          {release.commercialItems?.map((item) => <li key={"commercial-" + item.approvalId}>
+            {item.name || item.toolId} · {item.offer === "priority_paid"
+              ? t("Offre prioritaire sans badge", "Priority offer without a badge")
+              : t("Offre gratuite avec badge", "Free offer with a badge")} · {t("Version", "Version")} {item.version}
+          </li>)}
         </ul>
-        {batchKey && canDeliver && (release.items.length > 0 || release.legacyItems.length > 0) && <div className={styles.actions}>
+        {batchKey && canDeliver && releaseCount > 0 && <div className={styles.actions}>
           {!releaseState && <Button variant="primary" disabled={busy} onClick={() => void deliver("publish-release")}>
             {t("Publier le lot complet", "Publish the whole batch")}
           </Button>}

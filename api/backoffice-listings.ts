@@ -1,6 +1,7 @@
 import { randomBytes } from "node:crypto";
 import { AccountApiError, requireAccount } from "./_account-auth.js";
 import { readAccountBody } from "./_account-body.js";
+import { requirePublisherCmsEnabled } from "./_cms-store.js";
 import { catalogHash } from "./_backoffice-catalog-contract.js";
 import { readCatalog } from "./_backoffice-catalog-github.js";
 import {
@@ -45,6 +46,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     return;
   }
   try {
+    requirePublisherCmsEnabled();
     const actor = await requireAccount(req);
     if (!actor.emailConfirmed) throw new AccountApiError(403, "CMS_ACCESS_DENIED");
     if (req.method === "GET") {

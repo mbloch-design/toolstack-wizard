@@ -412,8 +412,13 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
   const verifiedOn    = tool.pricing_v5?.verified_on || null;
   const sourceDomain  = tool.pricing_v5?.source_domain;
   const domain        = getDomainFromUrl(tool.websiteUrl) || getToolDomain(tool);
-  const safeAffiliateUrl = safeExternalUrl(tool.affiliateLink);
   const safeWebsiteUrl = safeExternalUrl(tool.websiteUrl);
+  const commercial = tool.listingCommercial;
+  const approvedWebsiteUrl = commercial?.offer === "priority_paid" && commercial.status === "active"
+    ? commercial.approvedWebsiteUrl : undefined;
+  const useApprovedWebsite = !!safeWebsiteUrl && safeWebsiteUrl === safeExternalUrl(approvedWebsiteUrl)
+    && relPourLienOutil(safeWebsiteUrl, tool.affiliateLink, tool.websiteUrl, approvedWebsiteUrl) === "noopener noreferrer";
+  const safeAffiliateUrl = useApprovedWebsite ? undefined : safeExternalUrl(tool.affiliateLink);
   const primaryCtaUrl = safeAffiliateUrl || safeWebsiteUrl;
   const isFree        = displayPrice === 0 && !tool.pricing?.paid;
   const primaryCtaLabel = tool.slug === "tapstitch" ? t("Créer mon premier produit", "Create my first product") : (lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr) || t(`Visiter ${tool.name}`, `Visit ${tool.name}`);
@@ -569,7 +574,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
               <a
                 href={primaryCtaUrl}
                 target="_blank"
-                rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
+                rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl, approvedWebsiteUrl)}
                 className="td-localnav-cta"
                 onClick={() => !privateMode && trackEvent("outbound_tool_click", {
                   tool_slug: tool.slug || tool.id,
@@ -649,7 +654,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                         {!authorMode && primaryCtaUrl && <a
                           href={primaryCtaUrl}
                           target="_blank"
-                          rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
+                          rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl, approvedWebsiteUrl)}
                           className="td-hero-site-link"
                           onClick={() => !privateMode && trackEvent("outbound_tool_click", {
                             tool_slug: tool.slug || tool.id,
@@ -822,7 +827,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                   {!authorMode && primaryCtaUrl && (
                     <section className="td-editorial-fact-group">
                       <h3>{t("Lien", "Link")}</h3>
-                      <a className="td-editorial-official-link" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => !privateMode && trackEvent("outbound_tool_click", {
+                      <a className="td-editorial-official-link" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl, approvedWebsiteUrl)} onClick={() => !privateMode && trackEvent("outbound_tool_click", {
                         tool_slug: tool.slug || tool.id,
                         tool_name: tool.name,
                         cta_location: "tool_facts_rail",
@@ -1192,7 +1197,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                       )}
 
                       {!authorMode && primaryCtaUrl && <div className="td-decision-cta">
-                        <a className="td-decision-cta-main" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackOutbound("tool_review", "decided_visit")}>
+                        <a className="td-decision-cta-main" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl, approvedWebsiteUrl)} onClick={() => trackOutbound("tool_review", "decided_visit")}>
                           {t(`Ta décision est prise ? Visiter ${tool.name}`, `Decided? Visit ${tool.name}`)}<ExternalLink aria-hidden />
                         </a>
                         <Link className="td-decision-cta-alt" to={`${baseToolPath}/alternatives`} onClick={() => trackAlternative("alternatives_page", "tool_review")}>
@@ -1334,7 +1339,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                 <a
                   href={primaryCtaUrl}
                   target="_blank"
-                  rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
+                  rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl, approvedWebsiteUrl)}
                   className="td-mobile-actionbar-cta"
                   aria-label={primaryCtaLabel}
                   onClick={() => !privateMode && trackEvent("outbound_tool_click", {
@@ -1355,7 +1360,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
 
             {!authorMode && <div className="td-sidebar-mobile td-reading-actions">
               <h2 className="td-title">{t("Ta prochaine étape.", "Your next step.")}</h2>
-              {primaryCtaUrl && <a className="td-next-primary" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackOutbound("tool_next_step", primaryCtaLabel)}>
+              {primaryCtaUrl && <a className="td-next-primary" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl, approvedWebsiteUrl)} onClick={() => trackOutbound("tool_next_step", primaryCtaLabel)}>
                 {primaryCtaLabel}<ExternalLink aria-hidden />
               </a>}
               {clusterTools[0] && <Link className="td-next-alt" to={`${prefix}/tool/${clusterTools[0].slug || clusterTools[0].id}`} onClick={() => trackAlternative(clusterTools[0].slug || clusterTools[0].id, "tool_next_step")}>

@@ -39,3 +39,27 @@ it("lets ToolTrim examine a sealed proposal and request a correction with a note
     body: JSON.stringify({ status: "changes_requested", note: "Ajoutez la source du tarif." }),
   }));
 });
+
+it("shows and publishes a batch containing only ToolTrim and commercial revisions", async () => {
+  const fetch = vi.fn(async (url: string) => {
+    const mode = new URL(url, "http://localhost").searchParams.get("mode");
+    if (mode === "release-preview") return Response.json({
+      manifest: { sourceHead: "a".repeat(40), items: [], legacyItems: [],
+        editorialItems: [{ approvalId: "editorial-1", toolId: "tool-1", name: "Example", version: 3 }],
+        commercialItems: [{ approvalId: "commercial-1", toolId: "tool-1", name: "Example", version: 2, offer: "priority_paid" }],
+      }, canDeliver: true, batchKey: "b".repeat(64), blocked: [],
+    });
+    if (mode === "publish-release") return Response.json({
+      release: { commit_sha: "c".repeat(40), verified_at: null }, cleanupPending: false,
+    });
+    return Response.json({ submissions: [] });
+  });
+  vi.stubGlobal("fetch", fetch);
+  render(<ContributionQueue onBack={() => {}} />);
+  fireEvent.click(await screen.findByRole("button", { name: "Vérifier le lot approuvé" }));
+  expect(await screen.findByText("Example · Analyse et paramètres ToolTrim · Version 3")).toBeVisible();
+  expect(screen.getByText("Example · Offre prioritaire sans badge · Version 2")).toBeVisible();
+  fireEvent.click(screen.getByRole("button", { name: "Publier le lot complet" }));
+  expect(await screen.findByText("Commit créé. Mise en ligne à vérifier.")).toBeVisible();
+  expect(screen.getByRole("button", { name: "Vérifier la mise en ligne" })).toBeVisible();
+});

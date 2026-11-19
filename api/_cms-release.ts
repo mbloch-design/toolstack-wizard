@@ -11,7 +11,13 @@ type ApprovedChange = {
   baseHash: string | null;
   tool: CatalogTool;
 };
+export type ReleaseOverlay = {
+  kind: "editorial" | "commercial"; approvalId: string; version: number; toolId: string;
+  apply: (tool: CatalogTool) => CatalogTool;
+  metadata?: Record<string, unknown>;
+};
 type Assembly = {
+  overlays?: readonly ReleaseOverlay[];
   expectedHead: string;
   attachedToolIds: readonly string[];
   archivedSlugs?: readonly string[];
@@ -22,7 +28,7 @@ type Assembly = {
 /** Assemble server-approved projections against one immutable Git revision. */
 export function assembleCmsRelease(
   source: Pick<CatalogSource, "headSha" | "tools">,
-  { expectedHead, attachedToolIds, archivedSlugs = [], changes, legacyDrafts = [] }: Assembly,
+  { expectedHead, attachedToolIds, archivedSlugs = [], changes, legacyDrafts = [], overlays = [] }: Assembly,
 ) {
   if (source.headSha !== expectedHead) throw catalogError(409, "CMS_RELEASE_SOURCE_CHANGED");
   const allowed = new Set(attachedToolIds);
@@ -56,19 +62,38 @@ export function assembleCmsRelease(
     }
     updated.set(tool.id, tool);
   }
+  const overlayKeys = new Set<string>();
+  for (const overlay of overlays) {
+    if (!allowed.has(overlay.toolId)) throw catalogError(403, "CMS_TOOL_NOT_ATTACHED");
+    const key = `${overlay.kind}:${overlay.toolId}`;
+    if (overlayKeys.has(key)) throw catalogError(409, "CMS_RELEASE_DUPLICATE");
+    overlayKeys.add(key);
+    const current = updated.get(overlay.toolId) ?? byId.get(overlay.toolId);
+    if (!current || !overlay.approvalId || !Number.isSafeInteger(overlay.version) || overlay.version < 1) throw catalogError(409, "CMS_RELEASE_INVALID");
+    const next = overlay.apply(current);
+    if (next.id !== current.id || next.slug !== current.slug) throw catalogError(409, "CMS_RELEASE_IDENTITY_CONFLICT");
+    updated.set(overlay.toolId, next);
+  }
+  const overlayManifest = (kind: ReleaseOverlay["kind"]) => overlays.filter(item => item.kind === kind).map(item => {
+    const tool = updated.get(item.toolId)!;
+    return { ...item.metadata, approvalId: item.approvalId, version: item.version, toolId: item.toolId,
+      slug: tool.slug, name: tool.name, baseHash: byId.has(item.toolId) ? catalogHash(byId.get(item.toolId)) : null, hash: catalogHash(tool) };
+  }).sort((a,b) => a.toolId.localeCompare(b.toolId,"en"));
   const additions = [...updated.values()].filter((tool) => !byId.has(tool.id))
     .sort((a, b) => a.slug.localeCompare(b.slug, "en"));
   const tools = [...source.tools.map((tool) => updated.get(tool.id) ?? tool), ...additions];
   return {
     tools,
     manifest: {
+      editorialItems: overlayManifest("editorial"),
+      commercialItems: overlayManifest("commercial"),
       sourceHead: source.headSha,
       catalogueHash: catalogHash(tools),
       legacyItems: legacyDrafts.map(({ tool, version }) => ({
         slug: tool.slug, name: tool.name, version, hash: catalogHash(tool),
       })).sort((a, b) => a.slug.localeCompare(b.slug, "en")),
       items: changes.map(({ approvalId, version, toolId, tool }) => ({
-        approvalId, version, toolId, slug: tool.slug, name: tool.name, hash: catalogHash(tool),
+        approvalId, version, toolId, slug: tool.slug, name: tool.name, hash: catalogHash(updated.get(toolId) ?? tool),
       })).sort((a, b) => a.toolId.localeCompare(b.toolId, "en")),
     },
   };

@@ -8,6 +8,17 @@ do $baseline$
 declare
   present_count integer;
 begin
+  -- Promotions and invitation imports both insert these five fields.
+  perform t.id, t.slug, t.name, t.website_url, t.content_status from public.tools t limit 0;
+  if exists (
+    select from pg_catalog.pg_attribute
+    where attrelid = 'public.tools'::regclass and not attisdropped and attnum > 0
+      and attnotnull and not atthasdef and attidentity = '' and attgenerated = ''
+      and attname not in ('id', 'slug', 'name', 'website_url', 'content_status')
+  ) then
+    raise exception 'CMS tool insert baseline drift';
+  end if;
+
   select count(*) into present_count
   from pg_catalog.pg_class c join pg_catalog.pg_namespace n on n.oid = c.relnamespace
   where n.nspname = 'catalog_contrib'
@@ -59,16 +70,21 @@ begin
     revoke all on catalog_contrib.brands, catalog_contrib.brand_memberships,
       catalog_contrib.brand_tool_assignments from public, anon, authenticated;
   elsif present_count <> 3 or not exists (
-    select from pg_catalog.pg_index
-    where indexrelid = to_regclass('catalog_contrib.brand_tool_one_primary_idx')
-      and indisunique and indisvalid and indpred is not null
+    select from pg_catalog.pg_index i
+    join pg_catalog.pg_attribute a on a.attrelid = i.indrelid and a.attnum = i.indkey[0]
+    where i.indexrelid = to_regclass('catalog_contrib.brand_tool_one_primary_idx')
+      and i.indrelid = to_regclass('catalog_contrib.brand_tool_assignments')
+      and i.indisunique and i.indisvalid and i.indnkeyatts = 1 and a.attname = 'tool_id'
+      and regexp_replace(lower(pg_get_expr(i.indpred, i.indrelid)), '[[:space:]()]', '', 'g')
+        in ('status=''verified''::textandis_primary', 'is_primaryandstatus=''verified''::text')
   ) then
     raise exception 'CMS attribution baseline drift';
   end if;
 
   -- Compile the column contract in both upgrade paths before granting access.
   perform b.id, b.name, b.website_domain, b.status, b.created_by,
-    m.user_id, m.role, m.status, m.accepted_at, a.tool_id, a.status,
+    m.brand_id, m.user_id, m.role, m.status, m.invited_by, m.accepted_at,
+    a.brand_id, a.tool_id, a.status,
     a.is_primary, a.verified_by, a.verification_method, a.verified_at
     from catalog_contrib.brands b
     join catalog_contrib.brand_memberships m on m.brand_id = b.id

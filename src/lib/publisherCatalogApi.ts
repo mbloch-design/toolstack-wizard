@@ -16,6 +16,7 @@ export type ListingRequest = {
 };
 export type ListingCandidate = { kind: "tool" | "listing"; id: string; slug: string; name: string; websiteUrl: string };
 export type ListingCommerce = {
+  publication?: "not_published" | "pending" | "published";
   state: "unchecked" | "missing" | "unreachable" | "present" | "pending" | "paid" | "review_required" | "contact";
   checkedAt?: string; checkoutUrl?: string; attemptId?: string;
   canUpgrade?: boolean;

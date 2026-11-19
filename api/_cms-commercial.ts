@@ -44,6 +44,7 @@ type CommerceSnapshot = {
   checkedAt: string | null;
   dispatch: boolean;
   canUpgrade: boolean;
+  publication?: "not_published" | "pending" | "published";
   payments: Array<{ reference: string; paidAt: string; amountPaidMinor: number | null; currency: string | null; status: "paid" | "review_required"; mode: "prod" | "test" }>;
 };
 
@@ -66,6 +67,7 @@ function visible(snapshot: CommerceSnapshot) {
   return {
     state,
     payments: snapshot.payments ?? [],
+    ...(snapshot.publication && { publication: snapshot.publication }),
     canUpgrade: snapshot.canUpgrade === true,
     ...(snapshot.checkedAt && { checkedAt: snapshot.checkedAt }),
     ...(snapshot.attempt && { attemptId: snapshot.attempt.id }),

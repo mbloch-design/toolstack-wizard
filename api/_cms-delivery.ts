@@ -43,6 +43,17 @@ async function cleanupReleaseDrafts(manifest: ReleaseManifest) {
 }
 
 export async function deliverPublisherRelease(actor: CmsActor, batchKey: string) {
+  // Do not commit a release that this environment cannot subsequently verify.
+  if (!process.env.CMS_VERCEL_TOKEN?.trim() || !process.env.CMS_VERCEL_PROJECT_ID?.trim()) {
+    throw new AccountApiError(503, "CMS_RELEASE_VERIFICATION_NOT_CONFIGURED");
+  }
+  let publicOrigin: URL;
+  try { publicOrigin = new URL(process.env.CMS_PUBLIC_ORIGIN ?? "https://tooltrim.com"); }
+  catch { throw new AccountApiError(503, "CMS_RELEASE_VERIFICATION_NOT_CONFIGURED"); }
+  if (publicOrigin.protocol !== "https:" || publicOrigin.pathname !== "/" || publicOrigin.search || publicOrigin.hash
+    || publicOrigin.username || publicOrigin.password || publicOrigin.port) {
+    throw new AccountApiError(503, "CMS_RELEASE_VERIFICATION_NOT_CONFIGURED");
+  }
   if (process.env.CMS_CREEM_MODE === "test"
     && (!process.env.CMS_CATALOG_BRANCH || process.env.CMS_CATALOG_BRANCH === "main"
       || !process.env.CMS_PUBLIC_ORIGIN || new URL(process.env.CMS_PUBLIC_ORIGIN).hostname === "tooltrim.com")) {
@@ -66,7 +77,8 @@ export async function deliverPublisherRelease(actor: CmsActor, batchKey: string)
 
   const prepared = await preparePublisherRelease(actor, true);
   if (catalogHash(prepared.manifest) !== batchKey ||
-    (!prepared.manifest.items.length && !prepared.manifest.legacyItems.length)) {
+    (!prepared.manifest.items.length && !prepared.manifest.legacyItems.length
+      && !prepared.manifest.editorialItems?.length && !prepared.manifest.commercialItems?.length)) {
     throw new AccountApiError(409, "CMS_RELEASE_SOURCE_CHANGED");
   }
   const sealed = await client.rpc("cms_seal_release_batch", { ...args, p_manifest: prepared.manifest });
@@ -138,7 +150,8 @@ export async function verifyPublisherRelease(actor: CmsActor, batchKey: string) 
   if (body.batchKey !== batchKey || body.catalogueHash !== release.manifest.catalogueHash) {
     throw new AccountApiError(409, "CMS_RELEASE_AWAITING_DEPLOYMENT");
   }
-  const items = [...release.manifest.items, ...release.manifest.legacyItems];
+  const items = [...release.manifest.items, ...release.manifest.legacyItems,
+    ...(release.manifest.editorialItems ?? []), ...(release.manifest.commercialItems ?? [])];
   // Check all changed records in small groups to stay within the HTTP runtime budget.
   if (sha !== release.commit_sha) {
     const candidate = await readPublishedDescendant(release.commit_sha, sha);

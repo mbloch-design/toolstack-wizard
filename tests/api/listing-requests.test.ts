@@ -1,4 +1,4 @@
-import { beforeEach, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { httpFixture } from "./http";
 
 const auth = vi.hoisted(() => ({ rpc: vi.fn(), requireAccount: vi.fn() }));
@@ -19,10 +19,12 @@ import handler from "../../api/listing-requests";
 import { AccountApiError } from "../../api/_account-auth";
 
 beforeEach(() => {
+  vi.stubEnv("PUBLISHER_CMS_ENABLED", "true");
   auth.rpc.mockReset().mockResolvedValue({ data: {}, error: null });
   commerce.verify.mockReset().mockResolvedValue({ state: "missing" });
   auth.requireAccount.mockReset().mockResolvedValue({ userId: "account", sessionId: "session", emailConfirmed: true });
 });
+afterEach(() => vi.unstubAllEnvs());
 
 async function invoke(method = "GET", body?: unknown, query = {}) {
   const fixture = httpFixture(body, method);
@@ -30,6 +32,20 @@ async function invoke(method = "GET", body?: unknown, query = {}) {
   await handler(fixture.req, fixture.res);
   return fixture;
 }
+
+it("rejects direct new listings and invitation acceptance while the CMS is disabled", async () => {
+  vi.stubEnv("PUBLISHER_CMS_ENABLED", "");
+  for (const input of [
+    { action: "create", name: "Draft", websiteUrl: "https://example.com", offer: "standard_badge", idempotencyKey: "original-key" },
+    { action: "acceptInvitation", token: "5".repeat(43) },
+  ]) {
+    const result = await invoke("POST", input);
+    expect(result.res.statusCode).toBe(503);
+    expect(result.body).toEqual({ error: { code: "CMS_DISABLED" } });
+  }
+  expect(auth.requireAccount).not.toHaveBeenCalled();
+  expect(auth.rpc).not.toHaveBeenCalled();
+});
 
 it("requires a valid authenticated account before serving candidate data", async () => {
   auth.requireAccount.mockRejectedValue(new AccountApiError(401, "ACCOUNT_SESSION_INVALID"));

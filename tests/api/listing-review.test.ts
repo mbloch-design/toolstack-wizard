@@ -1,4 +1,4 @@
-import { beforeEach, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { httpFixture } from "./http";
 
 const dependencies = vi.hoisted(() => ({ rpc: vi.fn(), requireAccount: vi.fn(), readCatalog: vi.fn(), verifyBadge: vi.fn() }));
@@ -18,10 +18,30 @@ const editorialRevisionId = "00000000-0000-0000-0000-000000000003";
 const role = { userId: "account", sessionId: "session", emailConfirmed: true };
 
 beforeEach(() => {
+  vi.stubEnv("PUBLISHER_CMS_ENABLED", "true");
   dependencies.rpc.mockReset().mockResolvedValue({ data: { review: {} }, error: null });
   dependencies.requireAccount.mockReset().mockResolvedValue(role);
   dependencies.readCatalog.mockReset().mockResolvedValue({ tools: [] });
   dependencies.verifyBadge.mockReset().mockResolvedValue(undefined);
+});
+afterEach(() => vi.unstubAllEnvs());
+
+it("does not accept factual confirmation when the CMS is disabled", async () => {
+  vi.stubEnv("PUBLISHER_CMS_ENABLED", "false");
+  const fixture = httpFixture({ action: "respondFactualReview", id, version: 2, productRevisionId, hash: "a".repeat(64), decision: "confirm", note: "" });
+  await ownerReview(fixture.req, fixture.res);
+  expect(fixture.res.statusCode).toBe(503);
+  expect(fixture.body).toEqual({ error: { code: "CMS_DISABLED" } });
+  expect(dependencies.rpc).not.toHaveBeenCalled();
+});
+
+it("keeps initial admin review closed while the CMS is disabled", async () => {
+  vi.stubEnv("PUBLISHER_CMS_ENABLED", "false");
+  const fixture = httpFixture({ action: "approveInitialEditorial", id, version: 3 });
+  await adminReview(fixture.req, fixture.res);
+  expect(fixture.res.statusCode).toBe(503);
+  expect(fixture.body).toEqual({ error: { code: "CMS_DISABLED" } });
+  expect(dependencies.rpc).not.toHaveBeenCalled();
 });
 
 it("the owner endpoint only accepts a response tied to the exact revision ID and digest", async () => {

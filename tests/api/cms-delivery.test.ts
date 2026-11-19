@@ -28,6 +28,8 @@ const media = [{ path: "public/tool-media/cms/sample.webp", bytes: new Uint8Arra
 
 beforeEach(() => {
   vi.resetAllMocks();
+  vi.stubEnv("CMS_VERCEL_TOKEN", "test-token");
+  vi.stubEnv("CMS_VERCEL_PROJECT_ID", "test-project");
   mocks.prepare.mockResolvedValue({ tools, manifest, source: { headSha: manifest.sourceHead }, legacyDrafts: [], mediaFiles: media });
   mocks.publish.mockResolvedValue({ commitSha: committed.commit_sha });
   mocks.rpc.mockImplementation(async (name: string) => ({
@@ -86,4 +88,25 @@ it("requires the matching READY Vercel deployment, public marker and localized p
   expect(mocks.rpc).toHaveBeenCalledWith("cms_record_verified_release", {
     p_actor: "admin", p_session: "session", p_key: key, p_commit: committed.commit_sha,
   });
+});
+
+it("refuses delivery before reserving a batch when deployment verification is not configured", async () => {
+  vi.stubEnv("CMS_VERCEL_TOKEN", "");
+  await expect(deliverPublisherRelease(actor, key)).rejects.toMatchObject({ code: "CMS_RELEASE_VERIFICATION_NOT_CONFIGURED" });
+  expect(mocks.rpc).not.toHaveBeenCalled();
+  expect(mocks.publish).not.toHaveBeenCalled();
+});
+
+it.each(["http://tooltrim.com", "https://tooltrim.com/path", "not-a-url"])("rejects invalid verification origin %s before any release mutation", async (origin) => {
+  vi.stubEnv("CMS_PUBLIC_ORIGIN", origin);
+  await expect(deliverPublisherRelease(actor, key)).rejects.toMatchObject({ code: "CMS_RELEASE_VERIFICATION_NOT_CONFIGURED" });
+  expect(mocks.rpc).not.toHaveBeenCalled();
+  expect(mocks.publish).not.toHaveBeenCalled();
+});
+
+it.each(['editorialItems', 'commercialItems'])('publishes a batch containing only %s', async lane => {
+  const only = { ...manifest, items: [], legacyItems: [], [lane]: [{ approvalId: 'overlay', version: 1, toolId: 't1', slug: 'example', hash: catalogHash(tools[0]) }] };
+  mocks.prepare.mockResolvedValue({ tools, manifest: only, source: { headSha: manifest.sourceHead }, legacyDrafts: [], mediaFiles: [] });
+  await deliverPublisherRelease(actor, catalogHash(only));
+  expect(mocks.publish).toHaveBeenCalledOnce();
 });

@@ -10,6 +10,7 @@ export type CatalogDraftSummary = {
   version: number;
   updatedAt: string;
   fields: string[];
+  editorial?: "draft" | "approved" | "delivered";
 };
 export type CatalogWorkspace = {
   revision: number;
@@ -35,6 +36,7 @@ export type CatalogEditorDetail = {
   conflict: boolean;
   capabilities?: import("./catalogPolicy.js").CatalogCapabilities;
   validation?: import("./catalogValidation.js").CatalogValidationIssue[];
+  editorial?: "empty" | "draft" | "approved" | "delivered";
 };
 export type CatalogPublication = {
   commitSha: string;

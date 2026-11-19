@@ -178,3 +178,5 @@ Fil d'Ariane, barre latérale et onglets, recherche ⌘K, pied de page, question
 ## 18 novembre 2026 — Offre et suivi commercial éditeur
 
 Demandé par Michael : voir ce qui a été payé, passer du gratuit au payant et ajouter plusieurs produits depuis un même compte. Gardé : une offre et un historique par dossier, droits indépendants du paiement, publication groupée. Corrigé : le paiement ne disparaît plus après confirmation et les boutons de souscription rejoignent le dossier. À vérifier avant production : les reçus réels et les conséquences publiées de la montée en offre sur une fiche déjà en ligne. Aucun changement des composants de référence Storybook.
+
+- **Confirmé par Michael le 19/11/2026 :** le lien dofollow fait partie de l’offre prioritaire à 29 $ US. La publication valide une URL officielle précise pour la fiche. Un changement de destination ne bénéficie pas de la validation précédente.

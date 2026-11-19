@@ -250,6 +250,7 @@ export interface Tool {
   relevantFor: string[];
   personas?: string[];
   websiteUrl?: string;
+  listingCommercial?: { offer: string; status: string; approvedWebsiteUrl?: string };
   affiliateLink: string;
   affiliateDisclosureFr?: string;
   affiliateDisclosureEn?: string;

@@ -33,6 +33,49 @@ try {
   await run("migrations/" + baseline);
   // A local instance upgrades an existing set of attribution relations too.
   await run("migrations/" + baseline);
+  await db.exec(`
+    drop index catalog_contrib.brand_tool_one_primary_idx;
+    create unique index brand_tool_one_primary_idx on catalog_contrib.brand_tool_assignments(tool_id) where status = 'revoked' and is_primary;
+  `);
+  await assert.rejects(run("migrations/" + baseline), /CMS attribution baseline drift/);
+  await db.exec(`
+    rollback;
+    drop index catalog_contrib.brand_tool_one_primary_idx;
+    create unique index brand_tool_one_primary_idx on catalog_contrib.brand_tool_assignments(tool_id) where status = 'verified' and is_primary;
+    alter table public.tools add column new_required_field text not null;
+  `);
+  await assert.rejects(run("migrations/" + baseline), /CMS tool insert baseline drift/);
+  await db.exec(`
+    rollback;
+    alter table public.tools drop column new_required_field;
+
+    create table catalog_contrib.tool_change_requests(id uuid primary key, status text);
+    insert into catalog_contrib.tool_change_requests(id, status) values (gen_random_uuid(), 'submitted');
+    create table catalog_contrib.tool_change_request_items(id uuid primary key, requested_change text);
+    create table catalog_contrib.tool_change_request_events(id uuid primary key);
+    create function catalog_contrib.submit_tool_change_request(p_request_id uuid) returns uuid
+      language sql security definer set search_path = '' as $$ select p_request_id $$;
+    create function catalog_contrib.withdraw_tool_change_request(p_request_id uuid) returns uuid
+      language sql security definer set search_path = '' as $$ select p_request_id $$;
+    grant usage on schema catalog_contrib to authenticated;
+    grant select on catalog_contrib.tool_change_requests, catalog_contrib.tool_change_request_items to authenticated;
+    grant insert(id), update(status) on catalog_contrib.tool_change_requests to authenticated;
+    grant insert(id), update(requested_change), delete on catalog_contrib.tool_change_request_items to authenticated;
+    grant insert on catalog_contrib.tool_change_request_events to service_role;
+    grant execute on function catalog_contrib.submit_tool_change_request(uuid), catalog_contrib.withdraw_tool_change_request(uuid) to authenticated;
+  `);
+  const retired = migrations.find((name) => name.endsWith("_cms_legacy_writer_retirement.sql"));
+  assert.ok(retired);
+  await run("migrations/" + retired);
+  await as("authenticated", async () => {
+    await assert.rejects(db.exec("insert into catalog_contrib.tool_change_requests(id) values (gen_random_uuid())"), { code: "42501" });
+    await assert.rejects(db.exec("update catalog_contrib.tool_change_request_items set requested_change = 'bypass'"), { code: "42501" });
+    await assert.rejects(db.exec("delete from catalog_contrib.tool_change_request_items"), { code: "42501" });
+    await assert.rejects(db.exec("select catalog_contrib.submit_tool_change_request(gen_random_uuid())"), { code: "42501" });
+    await assert.rejects(db.exec("select catalog_contrib.withdraw_tool_change_request(gen_random_uuid())"), { code: "42501" });
+    assert.deepEqual((await db.query("select status from catalog_contrib.tool_change_requests")).rows, [{ status: "submitted" }]);
+  });
+  await as("service_role", () => db.exec("insert into catalog_contrib.tool_change_request_events(id) values (gen_random_uuid())"));
   const matches = migrations.filter((name) => name.endsWith("_cms_tool_drafts.sql"));
   assert.equal(matches.length, 1, "CMS SQL migration is required");
   await run("migrations/" + matches[0]);

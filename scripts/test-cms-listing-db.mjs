@@ -49,7 +49,7 @@ try {
   `);
   await run("migrations/20261116200000_cms_assignment_baseline.sql");
   const migrations = await readdir(new URL("../supabase/migrations/", import.meta.url));
-  for (const filename of migrations.filter((name) => /_cms_(tool_drafts|tool_submissions|listing_requests|listing_invitations|commerce|commerce_account|media|initial_listing_review|release_batches|media_release)\.sql$/.test(name)).sort()) {
+  for (const filename of migrations.filter((name) => /_cms_(tool_drafts|tool_submissions|listing_requests|listing_invitations|commerce|commerce_account|media|initial_listing_review|release_batches|media_release|editorial_workspace|commercial_publication)\.sql$/.test(name)).sort()) {
     await run("migrations/" + filename);
   }
   await db.exec(`
@@ -256,6 +256,127 @@ try {
   assert.equal((await call("read", { id: initial.id })).listing.deliveryStatus, "published");
   assert.equal((await adminCall("list")).listings.some((row) => row.id === initial.id), false);
   await db.exec("reset role");
+
+  const commerceInput = async () => (await db.query("select public.cms_commercial_release_inputs($1,$2) result", [admin,adminSession])).rows[0].result;
+  const commercial = (await commerceInput()).find(item=>item.toolId===promoted.toolId);
+  assert.equal(commercial.offer,"priority_paid");
+  await db.query("update catalog_private.cms_listing_payments set state=state where listing_id=$1",[initial.id]);
+  assert.equal((await commerceInput()).find(item=>item.toolId===promoted.toolId).version,commercial.version);
+  const commercialManifest = {...manifest,items:[],commercialItems:[{approvalId:commercial.approvalId,toolId:commercial.toolId,version:commercial.version,
+    offer:commercial.offer,commercialStatus:commercial.status,evidence:commercial.evidence,slug:inputs[0].base.slug,hash:"f".repeat(64)}]};
+  await db.exec("set role service_role");
+  await assert.rejects(seal(admin,adminSession,"a".repeat(64),{...commercialManifest,commercialItems:[{...commercialManifest.commercialItems[0],version:999}]}),{code:"PT409"});
+  await seal(admin,adminSession,"a".repeat(64),commercialManifest);
+  await db.exec("reset role");
+  await assert.rejects(db.query("update catalog_private.cms_listing_payments set state='review_required' where listing_id=$1",[initial.id]),{code:"PT409"});
+  await db.exec("set role service_role");
+  await db.query("select public.cms_record_release_commit($1,$2,$3,$4)",[admin,adminSession,"a".repeat(64),"a".repeat(40)]);
+  await db.query("select public.cms_record_verified_release($1,$2,$3,$4)",[admin,adminSession,"a".repeat(64),"a".repeat(40)]);
+  assert.equal((await commerceInput()).some(item=>item.toolId===promoted.toolId),false);
+  const recovered=(await call("create",{...create,name:"Old Receipt",slug:"old-receipt",idempotencyKey:"old-receipt",offer:"priority_paid"})).listing;
+  assert.equal((await adminCall("list")).listings.some(row=>row.id===recovered.id),false);
+  await db.query("select public.cms_listing_commerce($1,$2,$3,'requestHistoricalReview','{}')",[owner,session,recovered.id]);
+  const reviewRequested=(await adminCall("list")).listings.find(row=>row.id===recovered.id);
+  assert.equal(reviewRequested?.status,"draft");
+  assert.equal(reviewRequested?.historicalReviewRequested,true);
+  const reconcile = (id,proof,actor=admin,token=adminSession) => db.query("select public.cms_admin_listing_payment($1,$2,$3,'attach',$4) result",[actor,token,id,JSON.stringify(proof)]);
+  const historicalProof={websiteUrl:create.websiteUrl,reviewNote:"Confirmed representative and original purchaser using matching provider receipt.",paymentReference:"10000000-0000-4000-8000-000000000001",
+    checkoutId:"ch_legacy",orderId:"ord_legacy",transactionId:"tran_legacy",state:"paid",paidAt:"2026-11-17T08:00:00Z",amountPaidMinor:3509,currency:"USD"};
+  await assert.rejects(reconcile(recovered.id,historicalProof,owner,session),{code:"PT403"});
+  assert.equal((await reconcile(recovered.id,historicalProof)).rows[0].result.amountPaidMinor,3509);
+  assert.equal((await reconcile(recovered.id,historicalProof)).rows[0].result.reference,"ord_legacy");
+  assert.equal((await db.query("select public.cms_listing_commerce($1,$2,$3,'status','{}') result",[owner,session,recovered.id])).rows[0].result.state,"paid");
+  assert.equal((await adminCall("list")).listings.some(row=>row.id===recovered.id),false);
+  const secondRecovery=(await call("create",{...create,name:"Other Receipt",slug:"other-receipt",idempotencyKey:"other-receipt",offer:"priority_paid"})).listing;
+  await db.query("select public.cms_listing_commerce($1,$2,$3,'requestHistoricalReview','{}')",[owner,session,secondRecovery.id]);
+  await assert.rejects(reconcile(secondRecovery.id,historicalProof),{code:"23505"});
+  await db.exec("reset role");
+
+  const editorialRpc = async (action, version = null, base = null, patch = null, actor = admin, token = adminSession) =>
+    (await db.query("select public.cms_editorial_workspace($1,$2,$3,$4,$5,$6,$7) result",
+      [actor,token,promoted.toolId,action,version,base,patch && JSON.stringify(patch)])).rows[0].result;
+  const editorialHash = "2".repeat(64);
+  const editorialPatch = {set:{longDescription:"Independent update",longDescriptionEn:"Independent English update"},remove:[]};
+  await db.exec("set role service_role");
+  await assert.rejects(editorialRpc("read",null,null,null,owner,session),{code:"PT403"});
+  assert.equal((await editorialRpc("read")).version,0);
+  assert.equal((await editorialRpc("save",0,editorialHash,editorialPatch)).version,1);
+  await assert.rejects(editorialRpc("save",0,editorialHash,editorialPatch),{code:"PT409"});
+  assert.equal((await editorialRpc("read")).patch.set.longDescription,"Independent update");
+  assert.equal((await editorialRpc("approve",1,editorialHash)).state,"approved");
+  const editorialInput=(await db.query("select public.cms_editorial_release_inputs($1,$2) result",[admin,adminSession])).rows[0].result[0];
+  assert.equal(editorialInput.attached,true);
+  const editorialToolDraft=(await db.query("select public.cms_read_tool_draft($1,$2,$3) result",[owner,session,promoted.toolId])).rows[0].result;
+  const currentProductHash=(await db.query("select base_hash from catalog_contrib.cms_tool_drafts where tool_id=$1",[promoted.toolId])).rows[0].base_hash;
+  const productSubmission=(await db.query("select public.cms_submit_tool_draft($1,$2,$3,$4,$5) result",
+    [owner,session,promoted.toolId,editorialToolDraft.brandId,editorialToolDraft.version])).rows[0].result;
+  const editorialManifest={...manifest,items:[],commercialItems:[],editorialItems:[{
+    approvalId:editorialInput.approvalId,version:1,toolId:promoted.toolId,slug:inputs[0].base.slug,
+    hash:"3".repeat(64),baseHash:currentProductHash,
+  }]};
+  await seal(admin,adminSession,"2".repeat(64),editorialManifest);
+  await assert.rejects(editorialRpc("save",1,editorialHash,editorialPatch),{code:"PT409",message:"CMS_RELEASE_IN_PROGRESS"});
+  await db.exec("reset role");
+  await assert.rejects(db.query("update catalog_contrib.brand_tool_assignments set status='revoked' where tool_id=$1",
+    [promoted.toolId]),{code:"PT409",message:"CMS_RELEASE_IN_PROGRESS"});
+  await db.exec("set role service_role");
+  await db.query("select public.cms_record_release_commit($1,$2,$3,$4)",[admin,adminSession,"2".repeat(64),"2".repeat(40)]);
+  assert.equal((await editorialRpc("read")).state,"delivered");
+  await assert.rejects(editorialRpc("save",1,editorialHash,editorialPatch),{code:"PT409"});
+  assert.equal((await db.query("select base_hash from catalog_contrib.cms_tool_submissions where id=$1",[productSubmission.id])).rows[0].base_hash,"3".repeat(64));
+  await db.query("select public.cms_record_verified_release($1,$2,$3,$4)",[admin,adminSession,"2".repeat(64),"2".repeat(40)]);
+  const afterEditorial=await editorialRpc("read");
+  assert.equal(afterEditorial.version,2);
+  assert.deepEqual(afterEditorial.patch,{set:{},remove:[]});
+  assert.equal((await db.query("select public.cms_editorial_release_inputs($1,$2) result",[admin,adminSession])).rows[0].result.length,0);
+  await db.exec("reset role");
+
+  // A dispatched but abandoned optional upgrade must not freeze normal publication.
+  // Isolate this free-offer scenario from the paid fixture exercised above.
+  await db.exec("begin");
+  await db.query("delete from catalog_private.cms_listing_payments where listing_id=$1",[initial.id]);
+  await db.query("update catalog_contrib.listing_requests set offer='standard_badge',commercial_status='satisfied' where id=$1",[initial.id]);
+  await db.query("insert into catalog_private.cms_listing_badges(listing_id,website_url,badge_url,state) values($1,$2,$2,'present')",[initial.id,initial.websiteUrl]);
+  await db.exec("set role service_role");
+  const upgradeAction=async(action,payload={})=>(await db.query("select public.cms_listing_commerce($1,$2,$3,$4,$5) result",
+    [owner,session,initial.id,action,JSON.stringify(payload)])).rows[0].result;
+  const waitingUpgrade=await upgradeAction("prepare");
+  await upgradeAction("dispatch");
+  await upgradeAction("bind",{attemptId:waitingUpgrade.attempt.id,checkoutId:"ch_abandoned",checkoutUrl:"https://checkout.creem.io/abandoned"});
+  const freeInput=(await commerceInput()).find(item=>item.toolId===promoted.toolId);
+  assert.equal(freeInput.offer,"standard_badge");
+  assert.equal(freeInput.status,"satisfied");
+  await editorialRpc("save",2,editorialHash,editorialPatch);
+  await editorialRpc("approve",3,editorialHash);
+  const nextEditorial=(await db.query("select public.cms_editorial_release_inputs($1,$2) result",[admin,adminSession])).rows[0].result[0];
+  await db.query("select public.cms_review_tool_submission($1,$2,$3,'approved','Verified product correction')",[admin,adminSession,productSubmission.id]);
+  const nextProduct=(await db.query("select public.cms_approved_release_inputs($1,$2) result",[admin,adminSession])).rows[0].result[0];
+  const freeManifest={...manifest,items:[{approvalId:nextProduct.approvalId,version:nextProduct.version,toolId:promoted.toolId,slug:initial.slug,hash:"4".repeat(64)}],
+    editorialItems:[{approvalId:nextEditorial.approvalId,version:nextEditorial.version,toolId:promoted.toolId,slug:initial.slug,hash:"4".repeat(64),baseHash:"3".repeat(64)}],
+    commercialItems:[{approvalId:freeInput.approvalId,version:freeInput.version,toolId:promoted.toolId,offer:freeInput.offer,commercialStatus:freeInput.status,evidence:freeInput.evidence,slug:initial.slug,hash:"4".repeat(64),baseHash:"3".repeat(64)}]};
+  await seal(admin,adminSession,"4".repeat(64),freeManifest);
+  assert.equal((await upgradeAction("status")).state,"pending");
+  const lateProof={attemptId:waitingUpgrade.attempt.id,checkoutId:"ch_abandoned",orderId:"ord_late_upgrade",transactionId:"tran_late_upgrade",paidAt:"2026-11-18T08:00:00Z",amountPaidMinor:3509,currency:"USD",state:"paid"};
+  const receiveLatePayment=()=>db.query("select public.cms_apply_listing_billing('evt_late_upgrade','checkout.completed',now(),$1) result",[JSON.stringify(lateProof)]);
+  // Receipt cannot mutate the exact commercial proof while the free lot is in flight.
+  await db.exec("savepoint pending_receipt");
+  await assert.rejects(receiveLatePayment(),{code:"PT409",message:"CMS_RELEASE_IN_PROGRESS"});
+  await db.exec("rollback to savepoint pending_receipt");
+  assert.equal((await upgradeAction("status")).checkoutUrl,"https://checkout.creem.io/abandoned");
+  await db.exec("reset role");
+  assert.equal((await db.query("select count(*)::int n from catalog_private.cms_listing_billing_events where id='evt_late_upgrade'")).rows[0].n,0);
+  await db.exec("set role service_role");
+  await db.query("select public.cms_record_release_commit($1,$2,$3,$4)",[admin,adminSession,"4".repeat(64),"4".repeat(40)]);
+  assert.equal((await receiveLatePayment()).rows[0].result.state,"paid");
+  assert.equal((await receiveLatePayment()).rows[0].result.duplicate,true);
+  await db.query("select public.cms_record_verified_release($1,$2,$3,$4)",[admin,adminSession,"4".repeat(64),"4".repeat(40)]);
+  // The old free revision was published; paid rights remain queued for their own next lot.
+  const queuedUpgrade=(await commerceInput()).find(item=>item.toolId===promoted.toolId);
+  assert.equal(queuedUpgrade.offer,"priority_paid");
+  assert.ok(queuedUpgrade.version>freeInput.version);
+  assert.equal((await upgradeAction("status")).publication,"pending");
+  assert.equal((await upgradeAction("status")).payments[0].reference,"ord_late_upgrade");
+  await db.exec("rollback");
 
   for (const role of ["anon", "authenticated"]) {
     await db.exec("set role " + role);

@@ -26,6 +26,7 @@ export type CheckoutAttempt = {
   mode: "prod" | "test";
   productId: string;
   checkoutId?: string | null;
+  legacyReference?: string | null;
 };
 
 const unavailable = () => new AccountApiError(503, "CREEM_UNAVAILABLE");
@@ -128,8 +129,17 @@ export type Receipt = {
 export async function readListingReceipt(attempt: CheckoutAttempt, checkoutId: string): Promise<Receipt | null> {
   if (!creemCheckoutId(checkoutId) || (attempt.checkoutId && attempt.checkoutId !== checkoutId)) throw mismatch();
   const checkout = await creem(`checkouts?checkout_id=${encodeURIComponent(checkoutId)}`, attempt.mode);
-  if (assertCheckout(attempt, checkout) !== checkoutId) throw mismatch();
+  if (attempt.legacyReference) {
+    const metadata=asObject(checkout.metadata);
+    if (checkout.id !== checkoutId || checkout.mode !== attempt.mode || entityId(checkout.product) !== attempt.productId
+      || metadata.tooltrim_submission_id !== attempt.legacyReference || metadata.tooltrim_tool_url !== attempt.websiteUrl) throw mismatch();
+  } else if (assertCheckout(attempt, checkout) !== checkoutId) throw mismatch();
   if (checkout.status !== "completed") return null;
+  return readPaidCheckoutReceipt(attempt, checkout);
+}
+
+async function readPaidCheckoutReceipt(attempt: Pick<CheckoutAttempt, "mode" | "productId">, checkout: Record<string, unknown>): Promise<Receipt | null> {
+  const checkoutId = String(checkout.id);
   const order = asObject(checkout.order);
   const matchesBasePrice = (order.sub_total ?? order.amount) === PRIORITY_AMOUNT
     || (order.amount === PRIORITY_AMOUNT && typeof order.sub_total === "number" && order.sub_total > 0
@@ -148,6 +158,19 @@ export async function readListingReceipt(attempt: CheckoutAttempt, checkoutId: s
   if ((typeof paidAt !== "string" && typeof paidAt !== "number") || !Number.isFinite(new Date(paidAt).getTime())) throw mismatch();
   return { checkoutId, orderId: order.id, transactionId: order.transaction, state: incident ? "review_required" : "paid", paidAt: new Date(paidAt).toISOString(),
     amountPaidMinor: order.amount_paid, currency: "USD" };
+}
+
+/** Legacy receipts are matched by their original immutable submission metadata, never by email alone. */
+export async function readHistoricalListingReceipt(checkoutId: string, paymentReference: string, websiteUrl: string): Promise<Receipt> {
+  if (!creemCheckoutId(checkoutId) || !listingUuid(paymentReference) || cmsCreemMode() !== "prod") throw mismatch();
+  const checkout = await creem(`checkouts?checkout_id=${encodeURIComponent(checkoutId)}`, "prod");
+  const metadata = asObject(checkout.metadata);
+  if (checkout.id !== checkoutId || checkout.mode !== "prod" || checkout.status !== "completed"
+    || entityId(checkout.product) !== PRIORITY_PRODUCT_ID
+    || metadata.tooltrim_submission_id !== paymentReference || metadata.tooltrim_tool_url !== websiteUrl) throw mismatch();
+  const receipt = await readPaidCheckoutReceipt({ mode: "prod", productId: PRIORITY_PRODUCT_ID }, checkout);
+  if (!receipt || receipt.state !== "paid") throw mismatch();
+  return receipt;
 }
 
 export function parseCreemEvent(raw: Buffer, signature: unknown, secret: string) {

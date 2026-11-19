@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { beforeEach, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { httpFixture } from "./http";
 
 const deps = vi.hoisted(() => ({ rpc: vi.fn(), requireAccount: vi.fn(), readCatalog: vi.fn() }));
@@ -21,9 +21,21 @@ const tool = {
 const invite = { action: "invite", ownerId, toolId: tool.id, brandName: "Example", brandDomain: "example.com", role: "owner" };
 
 beforeEach(() => {
+  vi.stubEnv("PUBLISHER_CMS_ENABLED", "true");
   deps.requireAccount.mockReset().mockResolvedValue({ userId: "admin", sessionId: "session", emailConfirmed: true });
   deps.rpc.mockReset().mockResolvedValue({ data: { claim: { toolId: tool.id, slug: tool.slug } }, error: null });
   deps.readCatalog.mockReset().mockResolvedValue({ headSha: "4".repeat(40), tools: [tool] });
+});
+afterEach(() => vi.unstubAllEnvs());
+
+it("does not create or revoke assignments while the CMS is disabled", async () => {
+  vi.stubEnv("PUBLISHER_CMS_ENABLED", "false");
+  const result = httpFixture(invite);
+  await handler(result.req, result.res);
+  expect(result.res.statusCode).toBe(503);
+  expect(result.body).toEqual({ error: { code: "CMS_DISABLED" } });
+  expect(deps.rpc).not.toHaveBeenCalled();
+  expect(deps.readCatalog).not.toHaveBeenCalled();
 });
 
 it("checks admin rights and pending claim before allowing import from Git", async () => {

@@ -21,12 +21,16 @@ export function CatalogInlineFiche({
   locked,
   onReload,
   onRemoveDraft,
+  onApproveEditorial,
+  onReviewEditorialBatch,
   onReauthenticate,
 }: {
   onReauthenticate?: () => void;
   locked: boolean;
   onReload: () => void;
   onRemoveDraft: (version: number) => void;
+  onApproveEditorial?: () => void;
+  onReviewEditorialBatch?: () => void;
   session: CatalogDraftSession;
   slug: string;
   lang: "fr" | "en";
@@ -81,16 +85,32 @@ export function CatalogInlineFiche({
                 ? t("Modification en cours", "Editing in progress")
                 : dirty
                   ? t("Modifications locales", "Local changes")
+                : detail.editorial === "approved"
+                  ? t("Validée pour le prochain lot", "Approved for the next batch")
+                : detail.editorial === "delivered"
+                  ? t("Publication en cours de vérification", "Publication awaiting verification")
                 : detail.draft
                   ? t("Brouillon enregistré", "Draft saved")
                   : t("Version publiée", "Published version")}
         </p>
         <p>
           {t(
-            "Terminez un bloc pour enregistrer ses modifications dans le brouillon.",
-            "Finish a block to save its changes to the draft.",
+            detail.editorial
+              ? "Cette fiche est rattachée à un éditeur. Modifiez les rubriques ToolTrim ici, puis validez le brouillon pour le prochain lot."
+              : "Terminez un bloc pour enregistrer ses modifications dans le brouillon.",
+            detail.editorial
+              ? "This record is assigned to a publisher. Edit the ToolTrim sections here, then approve the draft for the next batch."
+              : "Finish a block to save its changes to the draft.",
           )}
         </p>
+        {detail.editorial === "draft" && onApproveEditorial && <Button variant="primary"
+          disabled={blockOpen || locked || entry.saving || dirty || !!error || detail.conflict || issues.some((issue) => issue.severity === "error")}
+          onClick={onApproveEditorial}>
+          {t("Valider pour le prochain lot", "Approve for the next batch")}
+        </Button>}
+        {detail.editorial === "approved" && onReviewEditorialBatch && <Button variant="primary"
+          disabled={blockOpen || locked || entry.saving || dirty || !!error || detail.conflict}
+          onClick={onReviewEditorialBatch}>{t("Vérifier le lot de publication", "Check the publication batch")}</Button>}
       </CatalogToolbar>
       {!caps.canSaveDraft && (
         <p role="alert">
