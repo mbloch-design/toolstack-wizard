@@ -14,8 +14,8 @@
     "en": "Find a slot, book or cancel a meeting."
   },
   "meta_description": {
-    "fr": "Calendly dans Claude ou ChatGPT : des créneaux à proposer au client, votre semaine résumée. L'avis d'un free : il peut annuler, alors gardez la main.",
-    "en": "Calendly in Claude or ChatGPT: offer open slots to a client, get your week summed up. A freelancer's view: it can cancel a meeting, so stay in control."
+    "fr": "Calendly dans Claude ou ChatGPT : des créneaux à proposer au client, votre semaine résumée. L'avis d'un free : l'assistant peut annuler, gardez la main.",
+    "en": "Calendly in Claude or ChatGPT: offer open slots to a client, get your week summed up. A freelancer's view: the assistant can cancel, so stay in control."
   },
   "examples": [
     {

@@ -14,8 +14,8 @@
     "en": "Create a form and read its responses."
   },
   "meta_description": {
-    "fr": "Tally dans Claude ou ChatGPT : un formulaire de devis monté en une phrase, les retours clients lus pour vous. Il ne supprime rien ; en bêta, relisez avant.",
-    "en": "Tally in Claude or ChatGPT: a quote-request form built from one sentence, client feedback read for you. It deletes nothing; still in beta, so review first."
+    "fr": "Tally dans Claude ou ChatGPT : un formulaire de devis en une phrase, les retours clients lus pour vous. Rien n'est supprimé ; serveur en bêta, relisez.",
+    "en": "Tally in Claude or ChatGPT: a quote-request form from one sentence, client feedback read for you. Nothing gets deleted; the server is in beta, so review."
   },
   "examples": [
     {

@@ -14,8 +14,8 @@
     "en": "Find a thread, summarise a channel, reply."
   },
   "meta_description": {
-    "fr": "Slack dans votre assistant IA : un fil client rattrapé, le fichier égaré retrouvé sans faire défiler. L'avis d'un free : l'envoi sous votre approbation.",
-    "en": "Slack in your AI assistant: a client thread caught up, the lost file found without scrolling. A freelancer's view: keep sending behind your approval."
+    "fr": "Slack dans votre assistant IA : un fil client rattrapé, le fichier égaré retrouvé sans défiler. L'avis d'un free : chaque envoi passe par votre accord.",
+    "en": "Slack in your AI assistant: a client thread caught up, the lost file found without scrolling. A freelancer's view: every message waits for your approval."
   },
   "examples": [
     {

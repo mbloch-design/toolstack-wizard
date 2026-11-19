@@ -14,8 +14,8 @@
     "en": "Read and update your CRM and campaigns."
   },
   "meta_description": {
-    "fr": "HubSpot dans votre assistant IA : la note et la relance après un appel, votre pipeline en une réponse. Il ne supprime rien et attend votre accord.",
-    "en": "HubSpot in your AI assistant: the note and follow-up after a call, your pipeline in one answer. It deletes nothing and waits for your go-ahead to write."
+    "fr": "HubSpot dans votre assistant IA : la note et la relance après un appel, votre pipeline en une réponse. L'assistant ne supprime rien et attend votre accord.",
+    "en": "HubSpot in your AI assistant: the note and follow-up after a call, your pipeline in one answer. The assistant deletes nothing and waits for your go-ahead."
   },
   "examples": [
     {

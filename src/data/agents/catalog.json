@@ -365,7 +365,7 @@
         "en": "Search, add and edit the records of your bases."
       },
       "meta_description": {
-        "fr": "Airtable dans Claude, ChatGPT ou Gemini : vos relances clients et prospects gérés en langage courant. Notre avis de free : n'ouvrez que les bases utiles.",
+        "fr": "Airtable dans Claude, ChatGPT ou Gemini : vos relances clients et prospects gérées en langage courant. L'avis d'un free : n'ouvrez que les bases utiles.",
         "en": "Airtable in Claude, ChatGPT or Gemini: client follow-ups and new leads handled in plain language. Our freelancer's advice: open only the bases it needs."
       },
       "examples": [
@@ -1565,8 +1565,8 @@
         "en": "Find a slot, book or cancel a meeting."
       },
       "meta_description": {
-        "fr": "Calendly dans Claude ou ChatGPT : des créneaux à proposer au client, votre semaine résumée. L'avis d'un free : il peut annuler, alors gardez la main.",
-        "en": "Calendly in Claude or ChatGPT: offer open slots to a client, get your week summed up. A freelancer's view: it can cancel a meeting, so stay in control."
+        "fr": "Calendly dans Claude ou ChatGPT : des créneaux à proposer au client, votre semaine résumée. L'avis d'un free : l'assistant peut annuler, gardez la main.",
+        "en": "Calendly in Claude or ChatGPT: offer open slots to a client, get your week summed up. A freelancer's view: the assistant can cancel, so stay in control."
       },
       "examples": [
         {
@@ -2181,8 +2181,8 @@
         "en": "Create a visual from a sentence, export a design."
       },
       "meta_description": {
-        "fr": "Canva dans votre assistant IA : un post et sa story d'une seule mise en page, une présentation client tirée de vos notes. Et ce que Canva Pro garde.",
-        "en": "Canva in your AI assistant: a post and its story from one layout, a client deck from your notes. A freelancer's view, and what Canva Pro keeps for itself."
+        "fr": "Canva dans votre assistant IA : un post et sa story d'une seule mise en page, une présentation tirée de vos notes. Et ce qui reste réservé à Canva Pro.",
+        "en": "Canva in your AI assistant: a post and its story from one layout, a client deck from your notes. A freelancer's view, and what still needs Canva Pro."
       },
       "examples": [
         {
@@ -2826,8 +2826,8 @@
         "en": "Track your tasks, docs and time spent."
       },
       "meta_description": {
-        "fr": "ClickUp dans Claude ou ChatGPT : retards repérés, heures prêtes pour la facture, tâches créées. L'avis d'un free : il écrit en votre nom, gardez l'accord.",
-        "en": "ClickUp in Claude or ChatGPT: delays spotted, hours ready for the invoice, tasks created. A freelancer's view: it writes as you, so keep approval on."
+        "fr": "ClickUp dans Claude ou ChatGPT : retards repérés, heures prêtes pour la facture, tâches créées. L'avis d'un free : l'assistant écrit en votre nom, validez.",
+        "en": "ClickUp in Claude or ChatGPT: delays spotted, hours ready for the invoice, tasks created. A freelancer's view: the assistant writes as you, so approve."
       },
       "examples": [
         {
@@ -4020,8 +4020,8 @@
         "en": "Read your mockups and create new ones, online."
       },
       "meta_description": {
-        "fr": "Le serveur Figma en ligne, à choisir par défaut : rien à installer, une fiche de maquette sans la rédiger, un écran fait de vos composants, à relire.",
-        "en": "Figma's online server, the one to pick by default: nothing to install, mockup notes you don't have to write, a screen built from your components to review."
+        "fr": "Le serveur Figma en ligne, à choisir par défaut : rien à installer, la doc d'une maquette sans l'écrire, un écran fait de vos composants, à relire.",
+        "en": "Figma's online server, the one to pick by default: nothing to install, a mockup's spec without writing it, a screen built from your components to review."
       },
       "examples": [
         {
@@ -5075,8 +5075,8 @@
         "en": "Read and update your CRM and campaigns."
       },
       "meta_description": {
-        "fr": "HubSpot dans votre assistant IA : la note et la relance après un appel, votre pipeline en une réponse. Il ne supprime rien et attend votre accord.",
-        "en": "HubSpot in your AI assistant: the note and follow-up after a call, your pipeline in one answer. It deletes nothing and waits for your go-ahead to write."
+        "fr": "HubSpot dans votre assistant IA : la note et la relance après un appel, votre pipeline en une réponse. L'assistant ne supprime rien et attend votre accord.",
+        "en": "HubSpot in your AI assistant: the note and follow-up after a call, your pipeline in one answer. The assistant deletes nothing and waits for your go-ahead."
       },
       "examples": [
         {
@@ -6115,8 +6115,8 @@
         "en": "Summarise your boards and create new ones."
       },
       "meta_description": {
-        "fr": "Miro dans Claude, ChatGPT ou Copilot : le compte rendu d'atelier sans recopier les post-it, le squelette du projet posé. Il partage aussi : gardez la main.",
-        "en": "Miro in Claude, ChatGPT or Copilot: workshop minutes without retyping sticky notes, a project skeleton laid out. It can share boards, so stay in control."
+        "fr": "Miro dans Claude, ChatGPT ou Copilot : le compte rendu d'atelier sans recopier les post-it, le projet posé. L'assistant peut partager : gardez la main.",
+        "en": "Miro in Claude, ChatGPT or Copilot: workshop minutes without retyping sticky notes, a project laid out. The assistant can share boards: stay in control."
       },
       "examples": [
         {
@@ -6844,7 +6844,7 @@
         "en": "Find, summarise and create pages in Notion."
       },
       "meta_description": {
-        "fr": "Notion dans Claude, ChatGPT ou Gemini : l'historique d'un client avant l'appel, vos relances d'impayés prêtes. L'avis d'un free, sans passer à Notion AI.",
+        "fr": "Notion dans Claude, ChatGPT ou Gemini : l'historique d'un client avant l'appel, vos relances d'impayés prêtes. L'avis d'un free, sans payer Notion AI.",
         "en": "Notion in Claude, ChatGPT or Gemini: a client's history before the call, unpaid-invoice follow-ups ready. A freelancer's view, no Notion AI plan needed."
       },
       "examples": [
@@ -7738,7 +7738,7 @@
       },
       "meta_description": {
         "fr": "Shopify dans Claude, ChatGPT ou Gemini : vos ventes de la semaine en une question, les ruptures repérées à temps. Remboursements et paiements bloqués.",
-        "en": "Shopify in Claude, ChatGPT or Gemini: your week of sales in one question, stock-outs spotted in time. Refunds and payments stay off-limits. Our view."
+        "en": "Shopify in Claude, ChatGPT or Gemini: your week of sales in one question, stock-outs spotted in time. The assistant can't touch refunds or payments."
       },
       "examples": [
         {
@@ -8426,8 +8426,8 @@
         "en": "Find a thread, summarise a channel, reply."
       },
       "meta_description": {
-        "fr": "Slack dans votre assistant IA : un fil client rattrapé, le fichier égaré retrouvé sans faire défiler. L'avis d'un free : l'envoi sous votre approbation.",
-        "en": "Slack in your AI assistant: a client thread caught up, the lost file found without scrolling. A freelancer's view: keep sending behind your approval."
+        "fr": "Slack dans votre assistant IA : un fil client rattrapé, le fichier égaré retrouvé sans défiler. L'avis d'un free : chaque envoi passe par votre accord.",
+        "en": "Slack in your AI assistant: a client thread caught up, the lost file found without scrolling. A freelancer's view: every message waits for your approval."
       },
       "examples": [
         {
@@ -8801,8 +8801,8 @@
         "en": "Keep track of your payments and balance."
       },
       "meta_description": {
-        "fr": "Stripe dans Claude ou ChatGPT : qui vous doit quoi, une facture ou un lien de paiement prêts à relire. Il agit sur votre vrai compte : testez d'abord.",
-        "en": "Stripe in Claude or ChatGPT: who owes you what, an invoice or payment link ready to review. It acts on your real account, so start in a test environment."
+        "fr": "Stripe dans Claude ou ChatGPT : qui vous doit quoi, une facture ou un lien de paiement à relire. L'assistant agit sur votre vrai compte : testez d'abord.",
+        "en": "Stripe in Claude or ChatGPT: who owes you what, an invoice or payment link ready to review. The assistant acts on your real account: start in a test setup."
       },
       "examples": [
         {
@@ -9363,8 +9363,8 @@
         "en": "Create a form and read its responses."
       },
       "meta_description": {
-        "fr": "Tally dans Claude ou ChatGPT : un formulaire de devis monté en une phrase, les retours clients lus pour vous. Il ne supprime rien ; en bêta, relisez avant.",
-        "en": "Tally in Claude or ChatGPT: a quote-request form built from one sentence, client feedback read for you. It deletes nothing; still in beta, so review first."
+        "fr": "Tally dans Claude ou ChatGPT : un formulaire de devis en une phrase, les retours clients lus pour vous. Rien n'est supprimé ; serveur en bêta, relisez.",
+        "en": "Tally in Claude or ChatGPT: a quote-request form from one sentence, client feedback read for you. Nothing gets deleted; the server is in beta, so review."
       },
       "examples": [
         {
