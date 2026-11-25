@@ -1,7 +1,7 @@
 import ComparisonDecisionPage from "@/components/compare/ComparisonDecisionPage";
 import { activeCampaignKlaviyoGuides, chatgptClaudeGuides } from "@/data/comparisonDecisionGuides";
 import { affiliateComparisonGuides } from "@/data/affiliateComparisonGuides";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import { useToolPair } from "@/hooks/useSupabaseData";
@@ -9,7 +9,7 @@ import { useEffect, useMemo, useState } from "react";
 import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo, setNoindex, removeNoindex, SEO_BASE } from "@/lib/seo";
 import { translateBattleCopy } from "@/data/comparisonBattlesEn";
 import type { Tool } from "@/data/types";
-import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
+import { COMPARISON_SLUG_REDIRECTS, FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
 import { BATTLE_COMPARISON_DATA, type BattleComparisonSlug } from "@/data/comparisonBattles";
 import { trackEvent } from "@/lib/analytics";
 import { comparisonPriceDisplay, comparisonPriceText } from "@/lib/comparisonPricing";
@@ -1964,7 +1964,17 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
 }
 
 /* ─── Main page ──────────────────────────────────────────────────────────── */
+/* A pair retired in favour of its reverse order: redirect before any hook runs
+   (vercel.json does the same with a 301 for crawlers and direct visits). */
 const ComparePage = () => {
+  const { slugPair } = useParams<{ slugPair: string }>();
+  const { prefix } = useLang();
+  const target = slugPair ? COMPARISON_SLUG_REDIRECTS[slugPair] : undefined;
+  if (target) return <Navigate to={`${prefix}/comparatif/${target}`} replace />;
+  return <ComparePageContent />;
+};
+
+const ComparePageContent = () => {
   const { slugPair } = useParams<{ slugPair: string }>();
   const { lang, t, prefix } = useLang();
   const [staleLoading, setStaleLoading] = useState(false);

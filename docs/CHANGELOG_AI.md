@@ -1,3 +1,12 @@
+## 2026-11-25 · SEO · comparatifs : fin des paires inversées indexées deux fois
+
+- Audit « source primaire » des 83 comparatifs FR (contexte : core updates Google 2026, recul des agrégateurs en mars, requêtes complexes visées en décembre). Deux requêtes avaient chacune deux pages indexables et auto-canoniques : `zapier-vs-make` / `make-vs-zapier` et `asana-vs-clickup` / `clickup-vs-asana`.
+- Pages gardées : `make-vs-zapier` et `clickup-vs-asana`, qui portent le verdict rédigé (fichiers `comparison-battles`). Les deux autres n'affichaient que le rendu générique (`buildFallbackContent`, 287 mots de corps pour Zapier vs Make).
+- `COMPARISON_SLUG_REDIRECTS` (`src/data/comparisons.ts`) retire les deux slugs de `FEATURED_COMPARISONS`, donc du sitemap, du prérendu, de l'index de recherche et des fichiers llms. `ComparePage` redirige côté client avant tout hook. `vercel.json` ajoute deux 301 `/:lang(fr|en)/comparatif/…`, et les anciennes redirections de guide `zapier-vs-make-comparatif|comparison-2026` (vercel.json et `App.tsx`) visent directement `make-vs-zapier`, sans chaîne.
+- Vérification : `tsc` app PASS, vitest 1152 tests PASS (un dépassement de délai backoffice repasse à la relance), build production PASS, validation SEO PASS (10 722 URLs, 162 comparatifs), audit statique des redirections : 0 chaîne, 0 cible morte, 0 doublon.
+- Fausse alerte de l'audit écartée : les 7 guides de décision récents affichent bien leur date (« Revue éditoriale », `dateTime`).
+- Reste du chantier : aucune des 83 pages ne revendique d'usage réel (mention « Aucun benchmark pratique ToolTrim » sur toutes). Prochaine étape : bloc de preuve datée et section agentique issue de `research/agent-trial/`.
+
 ## 2026-11-19 · Axe MCP · R2 : le SEO de l'avis de free (branche `claude/r2-seo-mcp-7c354f`, non poussée)
 
 - Descriptions de recherche : les 19 `meta_description` (fr/en, 140 à 155 signes) partent du verdict et d'une situation, sans prix, quota ni durée. Seul ce champ change dans `research/mcp/*.json`.

@@ -6,6 +6,17 @@ export interface FeaturedComparison {
   summaryEn: string;
 }
 
+/**
+ * Pages retirées au profit de la même paire dans l'autre ordre : deux URL
+ * indexées pour une même requête se concurrençaient. La page gardée porte le
+ * verdict rédigé (fichier battle) ; l'autre n'était qu'un rendu générique.
+ * Redirigées en 301 dans vercel.json, et côté client par ComparePage.
+ */
+export const COMPARISON_SLUG_REDIRECTS: Record<string, string> = {
+  "zapier-vs-make": "make-vs-zapier",
+  "asana-vs-clickup": "clickup-vs-asana",
+};
+
 export const FEATURED_COMPARISONS: FeaturedComparison[] = [
   { slugPair: 'b12-vs-wix', toolA: 'b12', toolB: 'wix', summary: 'Créer et entretenir un site professionnel : comparez édition, fonctions métier et coût complet.', summaryEn: 'Build and maintain a business website: compare editing, business features and total cost.' },
   { slugPair: 'pdf-agile-vs-adobe-acrobat', toolA: 'pdf-agile', toolB: 'adobe-acrobat', summary: 'Paiement unique ou abonnement : comparez édition PDF, exports et circuit de validation.', summaryEn: 'One-time purchase or subscription: compare PDF editing, exports and approvals.' },
@@ -33,7 +44,6 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
   { slugPair: "notion-vs-clickup", summary: "Centraliser les documents ou piloter l’exécution : comparez la coordination nécessaire et le temps de configuration.", summaryEn: "Centralise documents or manage execution: compare coordination needs and setup time.", toolA: "notion", toolB: "clickup" },
   { slugPair: "notion-vs-coda", summary: "Votre document doit-il expliquer le travail ou le faire fonctionner ? Comparez tables, logique et collaboration.", summaryEn: "Should your document explain the work or run it? Compare tables, logic and collaboration.", toolA: "notion", toolB: "coda" },
   { slugPair: "asana-vs-trello", summary: "Un tableau suffit-il, ou faut-il coordonner plusieurs projets ? Partez des dépendances et du suivi attendu.", summaryEn: "Is one board enough, or do you need to coordinate projects? Start with dependencies and tracking needs.", toolA: "asana", toolB: "trello" },
-  { slugPair: "asana-vs-clickup", summary: "Aligner vite l’équipe ou configurer un espace plus complet : arbitrez entre adoption et personnalisation.", summaryEn: "Align the team quickly or configure a broader workspace: weigh adoption against customisation.", toolA: "asana", toolB: "clickup" },
   { slugPair: "clickup-vs-asana", summary: "Personnalisation ou coordination immédiate : mesurez ce que votre équipe utilisera vraiment.", summaryEn: "Customisation or immediate coordination: assess what your team will actually use.", toolA: "clickup", toolB: "asana" },
   { slugPair: "clickup-vs-trello", summary: "Votre Kanban suffit-il encore ? Comparez le besoin de reporting et d’organisation au coût de la complexité.", summaryEn: "Is your Kanban board still enough? Weigh reporting and organisation needs against added complexity.", toolA: "clickup", toolB: "trello" },
   {
@@ -49,7 +59,6 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
   { slugPair: "linear-vs-jira", summary: "Fluidité de livraison ou processus détaillés : comparez les exigences réelles de votre équipe produit.", summaryEn: "Delivery flow or detailed processes: compare your product team's actual requirements.", toolA: "linear", toolB: "jira" },
 
   // Automation
-  { slugPair: "zapier-vs-make", summary: "Connecter vite quelques apps ou modéliser plusieurs branches : comptez aussi la maintenance des automatisations.", summaryEn: "Connect a few apps quickly or model multiple branches: include automation maintenance in the decision.", toolA: "zapier", toolB: "make" },
   { slugPair: "make-vs-zapier", summary: "Scénarios complexes ou connexions rapides : comparez logique, volume et temps de maintenance.", summaryEn: "Complex scenarios or quick connections: compare logic, volume and maintenance time.", toolA: "make", toolB: "zapier" },
   { slugPair: "zapier-vs-albato", summary: "Vos applications et vos volumes départagent-ils ces outils ? Vérifiez le scénario complet avant le prix affiché.", summaryEn: "Do your apps and volumes decide the choice? Check the complete workflow before the advertised price.", toolA: "zapier", toolB: "albato" },
 
