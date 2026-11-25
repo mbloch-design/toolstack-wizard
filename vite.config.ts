@@ -15,6 +15,7 @@ import { computeToolTrimScore } from "./src/lib/toolTrimScore";
 import { hasConfirmedFreeTier, hasGenuineFreeTier, isPriceUndisclosed, resolveMonthlyPrice } from "./src/lib/pricing";
 import { formatToolPrice, nativePriceFromTool, usdFromEur } from "./src/lib/currencyRates";
 import { hasEditorialSubstance } from "./src/lib/editorialSubstance";
+import { isToolSubpageIndexable } from "./src/lib/toolSubpageSeo";
 import { fitBrandedTitle } from "./src/lib/seoTitle";
 import { AGENT_SHEET_JSONLD_ID, AGENTS_JSONLD_ID, agentsIndexSeo, serverSeo, skillSeo, type AgentsSeo } from "./src/lib/agentsSeo";
 import { comparisonJsonLdScript } from "./src/lib/comparisonSchema";
@@ -624,9 +625,17 @@ function sitemapPlugin(): Plugin {
           if (DEPRECATED_TOOL_SLUGS.has(slug)) continue;
           const toolLastmod = toolDataDate(t);
           addPair(`${BASE}/fr/tool/${slug}`,              `${BASE}/en/tool/${slug}`,              "weekly",  "0.8", toolLastmod);
-          addPair(`${BASE}/fr/tool/${slug}/prix`,         `${BASE}/en/tool/${slug}/pricing`,      "monthly", "0.7", toolLastmod);
-          addPair(`${BASE}/fr/tool/${slug}/alternatives`, `${BASE}/en/tool/${slug}/alternatives`, "monthly", "0.7", toolLastmod);
-          addPair(`${BASE}/fr/tool/${slug}/avis`,         `${BASE}/en/tool/${slug}/reviews`,      "monthly", "0.6", toolLastmod);
+          // Thin sub-pages are noindex (src/lib/toolSubpageSeo.ts): keep them
+          // out, and drop the hreflang pair when only one language remains.
+          for (const [kind, frSeg, enSeg, prio] of [["prix", "prix", "pricing", "0.7"], ["alternatives", "alternatives", "alternatives", "0.7"], ["avis", "avis", "reviews", "0.6"]] as const) {
+            const frLoc = `${BASE}/fr/tool/${slug}/${frSeg}`;
+            const enLoc = `${BASE}/en/tool/${slug}/${enSeg}`;
+            const frIn = isToolSubpageIndexable("fr", slug, kind);
+            const enIn = isToolSubpageIndexable("en", slug, kind);
+            if (frIn && enIn) addPair(frLoc, enLoc, "monthly", prio, toolLastmod);
+            else if (frIn) addSingle(frLoc, "monthly", prio, toolLastmod);
+            else if (enIn) addSingle(enLoc, "monthly", prio, toolLastmod);
+          }
           // `/faq` is deliberately absent: it canonicalises to the fiche (see
           // the prerenderer and DynamicCanonical), and a sitemap must not
           // advertise a URL whose own canonical points elsewhere.
@@ -1253,11 +1262,17 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 publisher: { "@type": "Organization", name: "ToolTrim", url: BASE },
               };
 
+              const subKind = sub.path as "prix" | "alternatives" | "avis";
+              const subIndexable = isToolSubpageIndexable(isFr ? "fr" : "en", slug, subKind);
+              const subPaired = isToolSubpageIndexable("fr", slug, subKind) && isToolSubpageIndexable("en", slug, subKind);
               const metaTags = [
                 `<link rel="canonical" href="${url}" />`,
-                `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
-                `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
-                `<link rel="alternate" hreflang="x-default" href="${enUrl}" />`,
+                ...(subPaired ? [
+                  `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
+                  `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
+                  `<link rel="alternate" hreflang="x-default" href="${enUrl}" />`,
+                ] : []),
+                ...(subIndexable ? [] : [`<meta name="robots" content="noindex, follow" />`]),
                 `<title>${title}</title>`,
                 `<meta name="description" content="${desc.replace(/"/g, "&quot;")}" />`,
                 `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
@@ -1283,6 +1298,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
               html = html.replace(/<title>[^<]*<\/title>/, "");
               html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+              // baseHtml says "index, follow": drop it so only the noindex remains.
+              if (!subIndexable) html = html.replace(/<meta\s+name="robots"[^>]*\/?>/, "");
               html = html.replace("</head>", `    ${metaTags}\n  </head>`);
               html = html.replace("</body>", `    <noscript><p>${bodyText.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
 

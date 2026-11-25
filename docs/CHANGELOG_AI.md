@@ -1,3 +1,11 @@
+## 2026-11-25 · SEO · 1 094 sous-pages outil minces sorties de l'index
+
+- Décision prise à partir des exports Search Console du 25/11/2026 (Performances, 3 mois, un export par segment : `/prix`, `/pricing`, `/alternatives`, `/avis`, `/reviews`). Juin à septembre, les sous-pages pesaient 40 % des clics (`/alternatives` 22 %, `/prix` 18 %) : une désindexation en masse aurait coupé du trafic. La règle ne retire donc que des pages sans demande.
+- Règles, appliquées par `scripts/gen-tool-subpage-noindex.mjs` (relancé après un build et de nouveaux exports) : `/prix` et `/pricing` à 0 impression et moins de 250 mots rendus (704) ; `/alternatives` qui affichent « Pas de substitut établi » avec 0 clic et moins de 100 impressions (388) ; `ruby/alternatives` FR et EN, qui se classe sur le langage Ruby alors que la fiche est un service d'accueil téléphonique (2). L'export `/alternatives` est tronqué à 1 000 lignes : aucune page n'est retirée sur la seule absence de l'export.
+- `src/data/toolSubpageNoindex.json` est lu par `src/lib/toolSubpageSeo.ts`, partagé par le sitemap (page retirée ; page seule sans hreflang si l'autre langue sort), le prérendu (`noindex, follow`, sans hreflang), `getAlternateLinks` et `ToolDetailPage`. Les pages restent accessibles et leurs liens suivis ; une page revient dans l'index en sortant de la liste. Aucune page `/avis` n'est touchée.
+- Vérification : typecheck app et node PASS, vitest 1156 tests PASS (dont le contrat `toolSubpageSeo`), build production PASS, validation SEO PASS (9 628 URLs, contre 10 722), routage généré PASS. Navigateur : DOM hydraté conforme au HTML servi sur une page sortie, une paire indexée et une page restée seule.
+- À suivre : les `/alternatives` EN remontées par l'update de novembre (Supabase position 3,2, 21 947 impressions, 0 clic ; Unity, Vault, Google Chat) sont à enrichir, c'est le gain principal.
+
 ## 2026-11-25 · SEO · comparatifs : fin des paires inversées indexées deux fois
 
 - Audit « source primaire » des 83 comparatifs FR (contexte : core updates Google 2026, recul des agrégateurs en mars, requêtes complexes visées en décembre). Deux requêtes avaient chacune deux pages indexables et auto-canoniques : `zapier-vs-make` / `make-vs-zapier` et `asana-vs-clickup` / `clickup-vs-asana`.

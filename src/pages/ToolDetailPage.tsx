@@ -13,7 +13,8 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink, Lightbulb } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { setSeoTags, setMeta, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { isToolSubpageIndexable } from "@/lib/toolSubpageSeo";
 import { trackEvent } from "@/lib/analytics";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { getToolDomain, getDomainFromUrl, formatPriceLabel, isOneTimePrice, resolveVerdict, resolveToolOverview } from "@/lib/toolUtils";
@@ -183,6 +184,8 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
     // differentes, et la seconde etait fausse.
     if (tool.pricing_v5?.verified_on) setMeta("article:modified_time", tool.pricing_v5.verified_on);
     setHreflang(canonicalPath);
+    // Same list as the prerender: a thin sub-page stays reachable, out of the index.
+    if (seoPage !== "presentation" && !isToolSubpageIndexable(lang, baseSlug, seoPage)) setNoindex();
     return () => cleanupSeo([]);
   }, [tool, lang, subPage, privateMode]);
 
