@@ -1,3 +1,15 @@
+## 2026-11-25 · Catalogue · 8 fiches et 6 relations pour les pages /alternatives à forte demande
+
+- Cible : les `/alternatives` EN remontées par l'update de novembre, classées sans être cliquées (Supabase position 3,2 et 21 947 impressions pour 0 clic ; Unity 25 972 ; Vault 16 652 ; Google Chat sans aucun substitut). Les pages n'offraient que 2 ou 3 alternatives et leurs titres annonçaient cette liste courte.
+- 8 fiches créées depuis les dossiers `research/tool-pages/` (sources officielles lues le 25/11/2026) : GameMaker, Defold, Cocos Creator, Appwrite, PocketBase, Convex, AWS Secrets Manager, Akeyless. FR et EN, tutoiement, verdict, avantages, limites, titres SEO. Grille `pricing_v5` vérifiée pour GameMaker (99,99 $ en achat unique), Convex (25 $ par développeur) et AWS Secrets Manager (0,40 $ par secret, lu dans les exemples de la page) ; les autres n'ont pas de montant de plan relevé.
+- Relations : Google Chat et Teams (Slack, Discord et l'un l'autre), Unreal (Unity et Godot devant Twinmotion et Blender, qui ne sont pas des moteurs de jeu), Supabase (+ Appwrite, Convex, PocketBase, PlanetScale), Unity (+ GameMaker, Defold, Cocos Creator), Vault (+ AWS Secrets Manager, Akeyless). Titres et descriptions des pages Unity, Supabase et Vault réécrits sur la nouvelle liste ; description de Teams passée au tutoiement.
+- `scripts/apply-alternatives-batch-2026-11-25.mjs` applique le lot par édition de texte (diff minimal, relançable). Le commit ne contient que ces 14 fiches : les modifications d'un autre chantier dans `tools_v4.json` et les fichiers générés (`tools_index.json`, `llms-full*`) restent hors du commit, régénérés au build.
+- Noindex : `gen-tool-subpage-noindex.mjs` exige `--window-start` et épargne les fiches absentes du catalogue au début de la période (état git), qui n'ont pas pu accumuler d'impressions. Liste : 1 028 sous-pages (660 `/prix`, 366 `/alternatives`, 2 manuelles), Google Chat FR revient dans l'index.
+- Budget de fichiers du build relevé à 15 350 (15 342 mesurés), budgets en octets inchangés.
+- Vérification : build production PASS (9 758 URLs), validation SEO et routage PASS, vitest 1 156 PASS (dont le contrôle des prix cités dans les surcharges SEO), typecheck PASS.
+- Supabase non modifié : pas de clé service_role locale. Lecture publique : Supabase diverge déjà du JSON (Unity y a une liste vide) et ne contient pas les 8 fiches. Le HTML indexé vient du JSON (source Supabase désactivée au build). Sync à lancer avec la clé, d'abord sans `--apply`.
+- Restent à relever dans un navigateur : prix Pro d'Appwrite, limites Free d'Akeyless (conflit 500/50), prix Enterprise de GameMaker, licence de PocketBase.
+
 ## 2026-11-25 · SEO · 1 094 sous-pages outil minces sorties de l'index
 
 - Décision prise à partir des exports Search Console du 25/11/2026 (Performances, 3 mois, un export par segment : `/prix`, `/pricing`, `/alternatives`, `/avis`, `/reviews`). Juin à septembre, les sous-pages pesaient 40 % des clics (`/alternatives` 22 %, `/prix` 18 %) : une désindexation en masse aurait coupé du trafic. La règle ne retire donc que des pages sans demande.

@@ -19,16 +19,22 @@
  *     /alternatives est tronqué : on ne retire que les pages vides par
  *     construction, jamais sur la seule absence de l'export ;
  *   - EXTRA_PATHS : exclusions manuelles motivées.
+ *   - Grâce : une fiche absente du catalogue au début de la période (état git
+ *     du dernier commit avant --window-start) n'a pas pu accumuler
+ *     d'impressions ; elle n'est jamais retirée sur ce motif.
  * Une page sortie redevient indexable dès qu'elle quitte la liste.
  */
 import fs from "node:fs";
 import path from "node:path";
+import { execSync } from "node:child_process";
 
 const args = process.argv.slice(2);
 const sourceIdx = args.indexOf("--source");
 const source = sourceIdx >= 0 ? args.splice(sourceIdx, 2)[1] : "";
-if (!source || args.length === 0) {
-  console.error("Usage: gen-tool-subpage-noindex.mjs --source <libellé> <export Pages.csv>…");
+const windowIdx = args.indexOf("--window-start");
+const windowStart = windowIdx >= 0 ? args.splice(windowIdx, 2)[1] : "";
+if (!source || !/^\d{4}-\d{2}-\d{2}$/.test(windowStart) || args.length === 0) {
+  console.error("Usage: gen-tool-subpage-noindex.mjs --source <libellé> --window-start AAAA-MM-JJ <export Pages.csv>…");
   process.exit(1);
 }
 
@@ -68,6 +74,13 @@ for (const file of args) {
   }
 }
 
+const slugsOf = (tools) => new Set(tools.map((tool) => tool.slug || tool.id));
+const windowCommit = execSync(`git rev-list -1 --before=${windowStart} HEAD`, { encoding: "utf8" }).trim();
+if (!windowCommit) throw new Error(`aucun commit avant ${windowStart}`);
+const catalogAtWindowStart = slugsOf(JSON.parse(execSync(`git show ${windowCommit}:src/data/tools_v4.json`, { encoding: "utf8", maxBuffer: 1 << 30 })));
+const recentTools = new Set(
+  [...slugsOf(JSON.parse(fs.readFileSync("src/data/tools_v4.json", "utf8")))].filter((slug) => !catalogAtWindowStart.has(slug)),
+);
 const sitemap = fs.readFileSync("dist/sitemap.xml", "utf8");
 const subpages = [...new Set([...sitemap.matchAll(/<loc>https:\/\/tooltrim\.com(\/(?:fr|en)\/tool\/[^/<]+\/(?:prix|pricing|alternatives))<\/loc>/g)].map((m) => m[1]))];
 // Pages déjà sorties : elles ne sont plus au sitemap mais restent à évaluer.
@@ -101,6 +114,7 @@ for (const pathname of [...new Set(subpages)].sort()) {
   const { clicks = 0, impressions = 0 } = gsc.get(pathname) ?? {};
   let out = false;
   if (EXTRA_PATHS[pathname]) { out = true; counts.manual++; }
+  else if (recentTools.has(slug)) out = false;
   else if (kind === "prix") out = impressions === 0 && renderedWords(html) < 250;
   else if (kind === "alternatives") {
     const noSubstitute = html.includes("Pas de substitut établi") || html.includes("No established substitute");
