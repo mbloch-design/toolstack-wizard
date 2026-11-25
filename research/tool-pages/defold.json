@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "slug": "defold",
+  "researchedOn": "2026-11-25",
+  "researcher": "Claude Code",
+  "status": "needs_review",
+  "purpose": "Candidat au catalogue pour enrichir une page /alternatives à forte demande (Search Console, 3 mois au 2026-11-25)",
+  "identity": {
+    "officialName": "Defold",
+    "vendor": "Defold Foundation",
+    "officialUrl": "https://defold.com/",
+    "pricingUrl": "https://defold.com/",
+    "docsUrl": "https://defold.com/manuals/",
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "pricing.free",
+      "value": "Gratuit, sans redevance ni frais d’exécution",
+      "sourceUrl": "https://defold.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "« No licensing cost », « No royalties », « No runtime fee »",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "pricing.no-subscription",
+      "value": "Engagement de ne jamais passer à l’abonnement ou aux redevances",
+      "sourceUrl": "https://defold.com/license/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Page licence : ni abonnement, ni redevance, ni frais",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "licence",
+      "value": "Defold License 1.0, dérivée d’Apache 2.0 ; jeux commercialisables",
+      "sourceUrl": "https://defold.com/license/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Licence de mai 2020 dérivée d’Apache 2.0",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "platforms",
+      "value": "Windows, macOS, Linux, iOS, Android, HTML5, consoles (PS4, PS5, Switch, Xbox)",
+      "sourceUrl": "https://defold.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Liste des cibles de publication sur l’accueil",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "limit.3d",
+      "value": "Outillage pensé pour la 2D ; la 3D demande beaucoup de travail",
+      "sourceUrl": "https://defold.com/faq/faq/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "FAQ : 3D possible mais lourde, meilleure prise en charge prévue",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "language",
+      "value": "Logique de jeu en Lua",
+      "sourceUrl": "https://defold.com/faq/faq/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "FAQ : Lua 5.1/LuaJIT, C# en extension",
+      "confidence": "high",
+      "volatility": "low"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": null,
+    "billingContext": "gratuit",
+    "taxIncluded": null,
+    "freePlan": true,
+    "plans": [
+      {
+        "name": "Defold",
+        "price": 0,
+        "claim": "pricing.free"
+      }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [],
+    "cautions": [
+      "Accès aux consoles sur autorisation"
+    ]
+  },
+  "capabilities": [
+    "Moteur 2D gratuit, export multiplateforme jusqu’aux consoles"
+  ],
+  "limitations": [
+    "3D limitée",
+    "Lua obligatoire"
+  ],
+  "integrations": [],
+  "audiences": [
+    "Développeurs de jeux 2D et web"
+  ],
+  "useCases": [],
+  "alternatives": [
+    "unity",
+    "godot",
+    "gamemaker"
+  ],
+  "editorialNotes": [
+    "Alternative gratuite à Unity pour la 2D et le web"
+  ],
+  "unknowns": [
+    "Prix des contrats de support",
+    "Modalités d’accès aux consoles"
+  ],
+  "conflicts": []
+}

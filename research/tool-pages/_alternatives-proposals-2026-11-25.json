@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "researchedOn": "2026-11-25",
+  "researcher": "Claude Code",
+  "status": "needs_review",
+  "note": "Propositions de relations « alternatives ». Rien n’est appliqué à tools_v4.json ni à Supabase.",
+  "proposals": [
+    {
+      "slug": "google-chat",
+      "current": [],
+      "proposed": [
+        "slack",
+        "microsoft-teams",
+        "discord"
+      ],
+      "why": "Même besoin : messagerie d’équipe. Page /alternatives EN : 1 378 impressions, position 9, affiche aucun substitut.",
+      "sources": [
+        {
+          "url": "https://workspace.google.com/products/chat/",
+          "evidence": "Plateforme de communication pour les entreprises",
+          "accessedOn": "2026-11-25",
+          "confidence": "medium"
+        },
+        {
+          "url": "https://slack.com/",
+          "evidence": "Relie les équipes",
+          "accessedOn": "2026-11-25"
+        },
+        {
+          "url": "https://discord.com/",
+          "evidence": "Messagerie de groupe et communautés",
+          "accessedOn": "2026-11-25"
+        }
+      ],
+      "unknowns": [
+        "Page Microsoft Teams non lue (délai dépassé)"
+      ]
+    },
+    {
+      "slug": "microsoft-teams",
+      "current": [],
+      "proposed": [
+        "slack",
+        "google-chat",
+        "discord"
+      ],
+      "why": "Symétrique de Google Chat ; Slack liste déjà Teams comme alternative.",
+      "sources": [],
+      "unknowns": [
+        "Page officielle Teams non lue"
+      ]
+    },
+    {
+      "slug": "unreal-engine",
+      "current": [
+        "twinmotion",
+        "blender"
+      ],
+      "proposed": [
+        "unity",
+        "godot",
+        "twinmotion",
+        "blender"
+      ],
+      "why": "Les alternatives actuelles sont des outils de rendu et de modélisation ; les substituts directs sont des moteurs de jeu. « alternatives to unreal engine » : 7 156 impressions.",
+      "sources": [
+        {
+          "url": "https://unity.com/products/unity-engine",
+          "evidence": "Logiciel de développement de jeux et d’apps, plus de 20 plateformes",
+          "accessedOn": "2026-11-25"
+        },
+        {
+          "url": "https://godotengine.org/",
+          "evidence": "Moteur de jeu 2D et 3D libre et open source",
+          "accessedOn": "2026-11-25"
+        }
+      ],
+      "unknowns": [
+        "unrealengine.com refuse la lecture automatisée (403)"
+      ]
+    },
+    {
+      "slug": "supabase",
+      "current": [
+        "firebase",
+        "neon",
+        "mongodb-atlas"
+      ],
+      "proposed": [
+        "firebase",
+        "neon",
+        "mongodb-atlas",
+        "planetscale",
+        "appwrite",
+        "convex",
+        "pocketbase"
+      ],
+      "why": "PlanetScale héberge Postgres (même moteur que Supabase) ; Appwrite, Convex et PocketBase sont des backends complets. Page EN position 3,2, 21 947 impressions, 0 clic.",
+      "sources": [
+        {
+          "url": "https://planetscale.com/",
+          "evidence": "Hébergement Vitess, Neki et Postgres",
+          "accessedOn": "2026-11-25"
+        },
+        {
+          "url": "https://supabase.com/",
+          "evidence": "Plateforme de développement Postgres, backend open source",
+          "accessedOn": "2026-11-25"
+        }
+      ],
+      "requires": [
+        "Création au catalogue : appwrite, convex, pocketbase (dossiers joints)"
+      ]
+    },
+    {
+      "slug": "unity",
+      "current": [
+        "unreal-engine",
+        "godot"
+      ],
+      "proposed": [
+        "unreal-engine",
+        "godot",
+        "gamemaker",
+        "defold",
+        "cocos-creator"
+      ],
+      "why": "Requête « alternatives to unity » : 18 491 impressions, position 7,7.",
+      "sources": [],
+      "requires": [
+        "Création au catalogue : gamemaker, defold, cocos-creator (dossiers joints)"
+      ]
+    },
+    {
+      "slug": "vault",
+      "current": [
+        "doppler",
+        "infisical"
+      ],
+      "proposed": [
+        "doppler",
+        "infisical",
+        "aws-secrets-manager",
+        "akeyless"
+      ],
+      "why": "Requête « alternatives to vault » : 16 283 impressions, position 5,8.",
+      "sources": [],
+      "requires": [
+        "Création au catalogue : aws-secrets-manager, akeyless (dossiers joints)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "slug": "gamemaker",
+  "researchedOn": "2026-11-25",
+  "researcher": "Claude Code",
+  "status": "needs_review",
+  "purpose": "Candidat au catalogue pour enrichir une page /alternatives à forte demande (Search Console, 3 mois au 2026-11-25)",
+  "identity": {
+    "officialName": "GameMaker",
+    "vendor": "Opera Norway AS",
+    "officialUrl": "https://gamemaker.io/",
+    "pricingUrl": "https://gamemaker.io/en/get",
+    "docsUrl": null,
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "pricing.free",
+      "value": "Gratuit pour un usage non commercial",
+      "sourceUrl": "https://gamemaker.io/en/get",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Palier « FREE TO USE », gratuit à vie en non commercial",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.professional",
+      "value": "Professional : 99,99 USD, achat unique, licence commerciale",
+      "sourceUrl": "https://gamemaker.io/en/get",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Carte « ONE-TIME PURCHASE », FAQ : licence commerciale à 99,99 $",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.enterprise",
+      "value": "Enterprise : abonnement mensuel ou annuel, montant non lu",
+      "sourceUrl": "https://gamemaker.io/en/get",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Bascule mensuel/annuel sans montant dans le texte extrait",
+      "confidence": "medium",
+      "volatility": "high"
+    },
+    {
+      "id": "exports.free",
+      "value": "Gratuit : exports desktop, web, mobile, GX.games ; pas de console",
+      "sourceUrl": "https://gamemaker.io/en/get",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Liste des exports inclus sur la carte Free",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "exports.console",
+      "value": "Console réservée à Enterprise",
+      "sourceUrl": "https://gamemaker.io/en/get",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "FAQ : export console = abonnement Enterprise",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "vendor",
+      "value": "Fait partie d’Opera",
+      "sourceUrl": "https://gamemaker.io/en/get",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Pied de page « Part of Opera », © Opera Norway AS",
+      "confidence": "high",
+      "volatility": "low"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": "USD",
+    "billingContext": "achat unique (Professional), abonnement (Enterprise)",
+    "taxIncluded": null,
+    "freePlan": true,
+    "plans": [
+      {
+        "name": "Free",
+        "price": 0,
+        "claim": "pricing.free"
+      },
+      {
+        "name": "Professional",
+        "price": 99.99,
+        "period": "one_time",
+        "claim": "pricing.professional"
+      },
+      {
+        "name": "Enterprise",
+        "price": null,
+        "period": "monthly|yearly",
+        "claim": "pricing.enterprise"
+      }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [],
+    "cautions": [
+      "La vente d’un jeu exige la licence Professional",
+      "Export console seulement en Enterprise"
+    ]
+  },
+  "capabilities": [
+    "Moteur 2D orienté jeu, exports desktop, web et mobile dès le palier gratuit"
+  ],
+  "limitations": [
+    "Console réservée à Enterprise"
+  ],
+  "integrations": [],
+  "audiences": [
+    "Développeurs indépendants de jeux 2D"
+  ],
+  "useCases": [],
+  "alternatives": [
+    "unity",
+    "godot",
+    "defold"
+  ],
+  "editorialNotes": [
+    "Alternative à Unity pour la 2D, avec licence commerciale en achat unique"
+  ],
+  "unknowns": [
+    "Montant de l’abonnement Enterprise",
+    "Conditions par poste ou par équipe",
+    "Note de bas de page sur les exports console"
+  ],
+  "conflicts": []
+}

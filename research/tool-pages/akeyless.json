@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "slug": "akeyless",
+  "researchedOn": "2026-11-25",
+  "researcher": "Claude Code",
+  "status": "needs_review",
+  "purpose": "Candidat au catalogue pour enrichir une page /alternatives à forte demande (Search Console, 3 mois au 2026-11-25)",
+  "identity": {
+    "officialName": "Akeyless",
+    "vendor": "Akeyless",
+    "officialUrl": "https://www.akeyless.io/",
+    "pricingUrl": "https://www.akeyless.io/pricing/",
+    "docsUrl": "https://docs.akeyless.io/",
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "pricing.plans",
+      "value": "Deux plans : Free et Enterprise (sur devis)",
+      "sourceUrl": "https://www.akeyless.io/pricing/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Colonnes FREE et ENTERPRISE, Enterprise via « Talk to an expert »",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.free.clients",
+      "value": "Free : 5 clients",
+      "sourceUrl": "https://www.akeyless.io/pricing/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Tableau des limites",
+      "confidence": "medium",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.free.dynamic",
+      "value": "Free : 5 secrets dynamiques, 5 secrets à rotation",
+      "sourceUrl": "https://www.akeyless.io/pricing/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Tableau des limites",
+      "confidence": "medium",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.free.audit",
+      "value": "Free : journal d’audit conservé 3 jours",
+      "sourceUrl": "https://www.akeyless.io/pricing/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Tableau des limites",
+      "confidence": "medium",
+      "volatility": "high"
+    },
+    {
+      "id": "deployment",
+      "value": "SaaS pur ou SaaS hybride avec passerelles sur site",
+      "sourceUrl": "https://www.akeyless.io/pricing/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Page tarifs, choix de déploiement",
+      "confidence": "high",
+      "volatility": "low"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": null,
+    "billingContext": "Free ou devis",
+    "taxIncluded": null,
+    "freePlan": true,
+    "plans": [
+      {
+        "name": "Free",
+        "price": 0,
+        "claim": "pricing.plans"
+      },
+      {
+        "name": "Enterprise",
+        "price": null,
+        "claim": "pricing.plans"
+      }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [
+      "5 clients"
+    ],
+    "cautions": [
+      "Enterprise sans prix public"
+    ]
+  },
+  "capabilities": [
+    "Gestion de secrets en SaaS, secrets dynamiques et rotation, PKI, KMS"
+  ],
+  "limitations": [
+    "Prix Enterprise non public"
+  ],
+  "integrations": [],
+  "audiences": [
+    "Équipes plateforme et sécurité"
+  ],
+  "useCases": [],
+  "alternatives": [
+    "vault",
+    "doppler",
+    "infisical"
+  ],
+  "editorialNotes": [
+    "Alternative SaaS à Vault, sans cluster à opérer"
+  ],
+  "unknowns": [
+    "Prix Enterprise"
+  ],
+  "conflicts": [
+    {
+      "field": "pricing.free.static-secrets",
+      "values": [
+        "500",
+        "50"
+      ],
+      "note": "Tableau lu : 500 ; résumé : 50. À trancher dans un navigateur."
+    },
+    {
+      "field": "pricing.free.users",
+      "values": [
+        "5",
+        "3"
+      ],
+      "note": "Tableau lu : 5 ; résumé : 3."
+    }
+  ]
+}
