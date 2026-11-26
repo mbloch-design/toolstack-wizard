@@ -94,9 +94,11 @@ export function resolveToolAlternatives(tool: any, tools: any[], limit = 6): any
     .filter(Boolean);
   const seen = new Set<string>();
   const resolved: any[] = [];
+  // Every curated alternative is shown (26/11/2026: a grid, no carousel); the cover overlap only fills up to `limit`.
+  const cap = Math.max(limit, new Set(curated.map((candidate: any) => candidate.id)).size);
   for (const list of [curated, coverOverlap]) {
     for (const candidate of list) {
-      if (resolved.length >= limit || seen.has(candidate.id)) continue;
+      if (resolved.length >= cap || seen.has(candidate.id)) continue;
       seen.add(candidate.id);
       resolved.push(candidate);
     }
