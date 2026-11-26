@@ -1,0 +1,349 @@
+{
+  "id": "bracketview",
+  "slug": "bracketview",
+  "name": "BracketView",
+  "category": "nocode-web",
+  "shortDescription": "Espace de travail JSON dans le navigateur ou sur Windows et Linux : formater, valider, interroger (JSONPath, jq) et comparer des données d'API, en texte, arbre, graphe, nœuds ou tableau.",
+  "shortDescriptionEn": "JSON workspace in the browser or on Windows and Linux: format, validate, query (JSONPath, jq) and diff API data, as text, tree, graph, nodes or a table.",
+  "description": "BracketView regroupe les outils JSON qu'un développeur ouvre chaque jour dans des onglets séparés : formatage, validation en direct, requêtes JSONPath et jq, comparaison de deux documents, validation par schéma et génération de types. Le même contenu s'affiche en texte, en arbre, en graphe, en cartes de nœuds ou en tableau. Les outils de base tournent dans le navigateur, sans compte ; l'IA, les liens de partage et le testeur de webhooks passent par le serveur, seulement quand tu les utilises.",
+  "longDescription": "BracketView part d'un agacement courant : les visionneuses JSON en ligne sont souvent encombrées de publicités, lentes sur les gros fichiers, ou envoient les données à un serveur par défaut. L'espace de travail, sur app.bracketview.in, traite le formatage, la validation, l'affichage et les requêtes dans le navigateur. Une application Windows et Linux fait la même chose hors ligne, sans compte ni IA, sur des fichiers locaux plus lourds.\n\nLe JSON s'affiche de cinq façons : texte dans un éditeur Monaco, arbre repliable avec recherche, graphe des relations, cartes de nœuds reliées et tableau imbriqué. Le mode double garde l'éditeur à gauche et une vue à droite. Autour, on trouve jq complet compilé en WebAssembly, JSONPath, une comparaison côte à côte, la validation par JSON Schema ou OpenAPI, la génération de schéma et de types (TypeScript, Python, Go, Rust), un décodeur JWT et l'import YAML. L'interface existe en neuf langues, dont le français.\n\nLes fonctions serveur sont optionnelles : réparation et explication par IA (via Groq ou Google Gemini), génération de données de test, liens de partage chiffrés et temporaires, et un testeur de webhooks qui enregistre les requêtes reçues. L'éditeur prévient que ces liens et ces adresses de webhook sont publics pour qui les connaît, et qu'ils ne doivent pas servir à des secrets.\n\nLe gratuit couvre tous les outils de base. Pro sert aux fichiers volumineux, aux liens qui doivent durer et à un usage intensif de l'IA. Le produit est porté par un fondateur seul, Jameel Shaikh, sans société nommée, et l'application de bureau n'est pas signée : Windows peut l'avertir à l'installation.",
+  "longDescriptionEn": "BracketView starts from a common annoyance: online JSON viewers are often cluttered with ads, slow on large files, or send data to a server by default. The workspace, at app.bracketview.in, handles formatting, validation, display and queries in the browser. A Windows and Linux app does the same offline, with no account or AI, on heavier local files.\n\nJSON shows in five ways: text in a Monaco editor, a collapsible tree with search, a relationship graph, linked node cards and a nested table. Dual mode keeps the editor on the left and a view on the right. Around them: full jq compiled to WebAssembly, JSONPath, side-by-side diff, JSON Schema or OpenAPI validation, schema and type generation (TypeScript, Python, Go, Rust), a JWT decoder and YAML import. The interface comes in nine languages.\n\nServer features are optional: AI repair and explanation (through Groq or Google Gemini), test data generation, encrypted temporary share links, and a webhook tester that records incoming requests. The publisher warns that these links and webhook URLs are public to anyone who has them, and must not carry secrets.\n\nThe free tier covers every core tool. Pro is for large files, links that must last longer and heavy AI use. The product is run by a solo founder, Jameel Shaikh, with no company named, and the desktop app is unsigned: Windows may warn at install.",
+  "pricing": {
+    "free": "Plan gratuit durable : tous les outils de base, imports web jusqu'à 5 Mo, 20 actions IA par mois, 5 liens partagés par mois.",
+    "paid": "Pro : 3 $/mois ou 27 $/an."
+  },
+  "pricingEn": {
+    "free": "Durable free plan: every core tool, web uploads up to 5 MB, 20 AI actions a month, 5 shared links a month.",
+    "paid": "Pro: $3/month or $27/year."
+  },
+  "defaultMonthlyPrice": 2.58,
+  "compareMonthlyPrice": 2.58,
+  "pricing_v5": {
+    "compare_price_monthly_eur": 2.58,
+    "compare_plan_name": "Pro",
+    "compare_plan_kind": "account",
+    "price_reliability": "official_explicit",
+    "verification_status": "official_explicit",
+    "verified_on": "2026-11-25",
+    "official_source_url": "https://bracketview.in/pricing",
+    "source_domain": "bracketview.in",
+    "location_sensitive": true,
+    "usage_sensitive": false,
+    "cautions": [
+      "Prix affichés en dollars ; Razorpay facture dans la monnaie locale. TVA non précisée.",
+      "L'IA « illimitée » de Pro reste soumise à un usage raisonnable.",
+      "Le site vitrine peut afficher des publicités Google AdSense ; l'espace de travail n'en affiche pas."
+    ],
+    "plans": [
+      {
+        "planKey": "free",
+        "displayName": "Free",
+        "summary": "Gratuit sans limite de durée : tous les outils de base, avec des plafonds sur l'IA, les imports et les liens partagés.",
+        "featureHighlights": [
+          "Vues texte, arbre, graphe, nœuds, tableau",
+          "Imports web jusqu'à 5 Mo",
+          "20 actions IA par mois"
+        ],
+        "detailsSourceUrl": "https://bracketview.in/pricing",
+        "pricingUnit": "account",
+        "isFree": true,
+        "isComparePlan": false,
+        "nativeAmount": 0,
+        "nativeCurrency": "USD",
+        "billingPeriod": "monthly",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      },
+      {
+        "planKey": "pro-monthly",
+        "displayName": "Pro",
+        "summary": "Imports jusqu'à 50 Mo, mode Performance, IA sans plafond mensuel (usage raisonnable), liens partagés jusqu'à 2 heures.",
+        "featureHighlights": [
+          "Imports web jusqu'à 50 Mo",
+          "Mode Performance",
+          "IA sans plafond mensuel"
+        ],
+        "detailsSourceUrl": "https://bracketview.in/pricing",
+        "pricingUnit": "account",
+        "isFree": false,
+        "isComparePlan": true,
+        "nativeAmount": 3,
+        "nativeCurrency": "USD",
+        "billingPeriod": "monthly",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      },
+      {
+        "planKey": "pro-yearly",
+        "displayName": "Pro annuel",
+        "summary": "Mêmes avantages que Pro, facturés une fois par an.",
+        "featureHighlights": [
+          "27 $ par an",
+          "Mêmes plafonds que Pro"
+        ],
+        "detailsSourceUrl": "https://bracketview.in/pricing",
+        "pricingUnit": "account",
+        "isFree": false,
+        "isComparePlan": false,
+        "nativeAmount": 27,
+        "nativeCurrency": "USD",
+        "billingPeriod": "yearly",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      }
+    ],
+    "cautionsEn": [
+      "Prices shown in US dollars; Razorpay bills in local currency. VAT not stated.",
+      "Pro's \"unlimited\" AI is subject to fair use.",
+      "The marketing site may show Google AdSense ads; the workspace does not."
+    ]
+  },
+  "pricing_v5En": {
+    "compare_price_monthly_eur": 2.58,
+    "compare_plan_name": "Pro",
+    "compare_plan_kind": "account",
+    "price_reliability": "official_explicit",
+    "verification_status": "official_explicit",
+    "verified_on": "2026-11-25",
+    "official_source_url": "https://bracketview.in/pricing",
+    "source_domain": "bracketview.in",
+    "location_sensitive": true,
+    "usage_sensitive": false,
+    "cautions": [
+      "Prices shown in US dollars; Razorpay bills in local currency. VAT not stated.",
+      "Pro's \"unlimited\" AI is subject to fair use.",
+      "The marketing site may show Google AdSense ads; the workspace does not."
+    ],
+    "plans": [
+      {
+        "planKey": "free",
+        "displayName": "Free",
+        "summary": "Free with no time limit: all core tools, with caps on AI, uploads and shared links.",
+        "featureHighlights": [
+          "Text, tree, graph, node, table views",
+          "Web uploads up to 5 MB",
+          "20 AI actions a month"
+        ],
+        "detailsSourceUrl": "https://bracketview.in/pricing",
+        "pricingUnit": "account",
+        "isFree": true,
+        "isComparePlan": false,
+        "nativeAmount": 0,
+        "nativeCurrency": "USD",
+        "billingPeriod": "monthly",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      },
+      {
+        "planKey": "pro-monthly",
+        "displayName": "Pro",
+        "summary": "Uploads up to 50 MB, Performance Mode, AI with no monthly cap (fair use), shared links up to 2 hours.",
+        "featureHighlights": [
+          "Web uploads up to 50 MB",
+          "Performance Mode",
+          "AI with no monthly cap"
+        ],
+        "detailsSourceUrl": "https://bracketview.in/pricing",
+        "pricingUnit": "account",
+        "isFree": false,
+        "isComparePlan": true,
+        "nativeAmount": 3,
+        "nativeCurrency": "USD",
+        "billingPeriod": "monthly",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      },
+      {
+        "planKey": "pro-yearly",
+        "displayName": "Pro yearly",
+        "summary": "Same benefits as Pro, billed once a year.",
+        "featureHighlights": [
+          "$27 a year",
+          "Same caps as Pro"
+        ],
+        "detailsSourceUrl": "https://bracketview.in/pricing",
+        "pricingUnit": "account",
+        "isFree": false,
+        "isComparePlan": false,
+        "nativeAmount": 27,
+        "nativeCurrency": "USD",
+        "billingPeriod": "yearly",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      }
+    ]
+  },
+  "websiteUrl": "https://bracketview.in/",
+  "affiliateLink": "",
+  "logo": "https://bracketview.in/favicon.ico",
+  "ogImageUrl": "https://bracketview.in/og-image.webp",
+  "pros": [
+    "Les outils de base tournent dans le navigateur : ton JSON ne quitte pas ta machine pour être formaté ou interrogé.",
+    "Cinq vues et jq complet au même endroit, gratuitement, sans compte.",
+    "Une application hors ligne pour Windows et Linux ouvre de gros fichiers locaux."
+  ],
+  "prosEn": [
+    "Core tools run in the browser: your JSON stays on your machine to be formatted or queried.",
+    "Five views and full jq in one place, for free, with no account.",
+    "An offline Windows and Linux app opens large local files."
+  ],
+  "cons": [
+    "Les liens de partage et les adresses de webhook sont publics pour qui les connaît : rien de sensible dedans.",
+    "Projet porté par un fondateur seul, sans société nommée.",
+    "Application de bureau non signée et pas de version Mac."
+  ],
+  "consEn": [
+    "Share links and webhook URLs are public to anyone who has them: nothing sensitive in them.",
+    "A solo-founder project, with no company named.",
+    "Unsigned desktop app and no Mac version."
+  ],
+  "useCases": [
+    "Lire et déboguer une réponse d'API trop longue pour être parcourue à l'œil.",
+    "Extraire une partie d'un gros document avec jq ou JSONPath, sans écrire de script.",
+    "Comparer deux versions d'une configuration ou d'une réponse.",
+    "Recevoir et inspecter les webhooks d'un service pendant une intégration."
+  ],
+  "useCasesEn": [
+    "Read and debug an API response too long to scan by eye.",
+    "Pull part of a large document with jq or JSONPath, without writing a script.",
+    "Compare two versions of a config or a response.",
+    "Receive and inspect a service's webhooks during an integration."
+  ],
+  "relevantFor": [
+    "Développeurs freelances qui intègrent des API",
+    "Créateurs no-code qui manipulent des réponses JSON d'automatisations",
+    "Analystes qui reçoivent des exports en JSON"
+  ],
+  "relevantForEn": [
+    "Freelance developers integrating APIs",
+    "No-code builders handling JSON from automations",
+    "Analysts receiving JSON exports"
+  ],
+  "verdict": {
+    "keepIf": [
+      "Tu ouvres du JSON chaque semaine et tu jongles entre plusieurs sites de formatage.",
+      "Tu veux que tes données restent dans le navigateur pour les opérations courantes."
+    ],
+    "avoidIf": [
+      "Tu travailles déjà dans un client d'API comme Postman ou Insomnia, qui couvre ton besoin.",
+      "Tu manipules des données sensibles et comptais sur les liens de partage ou le testeur de webhooks."
+    ],
+    "threshold": "Le gratuit suffit à la plupart des usages. Pro ne se justifie que si tu dépasses régulièrement 5 Mo par fichier sur le web ou les 20 actions IA mensuelles."
+  },
+  "verdictEn": {
+    "keepIf": [
+      "You open JSON every week and juggle several formatting sites.",
+      "You want your data to stay in the browser for everyday operations."
+    ],
+    "avoidIf": [
+      "You already work in an API client like Postman or Insomnia that covers your needs.",
+      "You handle sensitive data and planned to use share links or the webhook tester."
+    ],
+    "threshold": "The free tier covers most uses. Pro only makes sense if you regularly go past 5 MB per file on the web or the 20 monthly AI actions."
+  },
+  "alternatives": [
+    "postman",
+    "insomnia"
+  ],
+  "soloRelevance": "high",
+  "teamRelevance": "medium",
+  "tool_type": "satellite",
+  "substitutable": true,
+  "verticals": [
+    "dev-freelance",
+    "developpeur-solo",
+    "ai-builder",
+    "data-analyst"
+  ],
+  "functional_needs": [
+    "json-tools",
+    "api-debugging",
+    "webhook-testing"
+  ],
+  "prescription_quality": "question",
+  "prescription_output": null,
+  "prescription_block_reasons": [],
+  "prescription_context_questions": [
+    "json_frequency",
+    "data_sensitivity"
+  ],
+  "substitution_cluster_v2": "api-client",
+  "decision_policy_v3": {
+    "auto_cancel_allowed": false,
+    "auto_replace_allowed": false,
+    "auto_downgrade_allowed": false,
+    "requires_context_questions": true,
+    "never_auto_cancel_reason": "L'intérêt dépend de la fréquence à laquelle tu manipules du JSON et de la sensibilité des données.",
+    "default_decision_lane": "review_then_prescribe"
+  },
+  "toolTrimRating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 5,
+    "notedOn": "2026-11-25",
+    "lastActivityVerifiedOn": "2026-11-25",
+    "evidence": {
+      "valeurAjoutee": "Remplace plusieurs sites de formatage, de requête et de comparaison par un seul espace, gratuit pour l'essentiel. Source : bracketview.in, 25 novembre 2026.",
+      "simplicite": "Coller, puis choisir une vue ; aucun compte pour les outils de base. Source : bracketview.in et bracketview.in/features, 25 novembre 2026.",
+      "utilisation": "Cinq vues, jq, JSONPath, comparaison, schéma, types, JWT, YAML, webhooks, IA. Source : bracketview.in/features, 25 novembre 2026.",
+      "puissance": "jq complet en WebAssembly, fichiers jusqu'à 50 Mo en Pro sur le web et 200 Mo sur l'application de bureau. Source : bracketview.in/pricing et bracketview.in/downloads, 25 novembre 2026.",
+      "reversibilite": "Aucune donnée enfermée : le JSON reste un fichier texte, traité localement pour les outils de base. Source : bracketview.in/privacy, 25 novembre 2026."
+    },
+    "evidenceEn": {
+      "valeurAjoutee": "Replaces several formatting, query and diff sites with one workspace, free for the essentials. Source: bracketview.in, November 25, 2026.",
+      "simplicite": "Paste, then pick a view; no account for core tools. Source: bracketview.in and bracketview.in/features, November 25, 2026.",
+      "utilisation": "Five views, jq, JSONPath, diff, schema, types, JWT, YAML, webhooks, AI. Source: bracketview.in/features, November 25, 2026.",
+      "puissance": "Full jq in WebAssembly, files up to 50 MB on Pro on the web and 200 MB in the desktop app. Source: bracketview.in/pricing and bracketview.in/downloads, November 25, 2026.",
+      "reversibilite": "No data lock-in: JSON stays a text file, processed locally for core tools. Source: bracketview.in/privacy, November 25, 2026."
+    }
+  },
+  "tagline": {
+    "fr": "Tout le JSON au même endroit",
+    "en": "All your JSON work in one place"
+  },
+  "seo": {
+    "metaDescription": "BracketView : avis, prix et limites de l'espace de travail JSON qui formate, valide, interroge et compare tes données dans le navigateur.",
+    "metaDescriptionEn": "BracketView review, pricing and limits: the JSON workspace that formats, validates, queries and diffs your data in the browser.",
+    "presentationTitleFr": "BracketView : lire, interroger et comparer du JSON",
+    "presentationTitleEn": "BracketView: read, query and diff JSON",
+    "idealForFr": "Développeurs, créateurs no-code et analystes qui manipulent du JSON chaque semaine.",
+    "idealForEn": "Developers, no-code builders and analysts who handle JSON every week.",
+    "presentationMetaDescriptionFr": "BracketView affiche ton JSON en texte, arbre, graphe, nœuds ou tableau, avec jq, JSONPath, comparaison et schéma, dans le navigateur.",
+    "presentationMetaDescriptionEn": "BracketView shows your JSON as text, tree, graph, nodes or a table, with jq, JSONPath, diff and schema, in the browser.",
+    "prixTitleFr": "Prix de BracketView : Pro dès {price}",
+    "prixTitleEn": "BracketView pricing: Pro from {price}",
+    "prixMetaDescriptionFr": "Prix de BracketView : plan gratuit durable avec tous les outils de base, Pro dès {price} par mois pour les gros fichiers et l'IA sans plafond.",
+    "prixMetaDescriptionEn": "BracketView pricing: a durable free plan with every core tool, Pro from {price} a month for large files and uncapped AI.",
+    "altTitleFr": "Alternatives à BracketView : Postman, Insomnia",
+    "altTitleEn": "BracketView alternatives: Postman, Insomnia",
+    "altMetaDescriptionFr": "Besoin d'envoyer des requêtes, pas seulement de lire du JSON ? Postman et Insomnia comparés à BracketView sur l'usage et le coût.",
+    "altMetaDescriptionEn": "Need to send requests, not just read JSON? Postman and Insomnia compared with BracketView on use and cost.",
+    "avisTitleFr": "Avis BracketView : un vrai couteau suisse du JSON",
+    "avisTitleEn": "BracketView review: a real JSON multitool",
+    "avisMetaDescriptionFr": "Avis BracketView, noté {rating} : cinq vues, jq et traitement local, gratuit pour l'essentiel ; projet solo, liens de partage publics.",
+    "avisMetaDescriptionEn": "BracketView review, rated {rating}: five views, jq and local processing, free for the essentials; solo project, public share links."
+  },
+  "lifecycle": {
+    "status": "active",
+    "note": null,
+    "checkedOn": "2026-11-25"
+  },
+  "research": {
+    "researchedOn": "2026-11-25",
+    "sources": 7
+  }
+}

@@ -300047,5 +300047,2112 @@
     },
     "logo": "/tool-media/logos/noryzia.png",
     "ogImageUrl": "/og-images/noryzia.webp"
+  },
+  {
+    "id": "keybrum",
+    "slug": "keybrum",
+    "name": "Keybrum",
+    "category": "security",
+    "shortDescription": "Pentest automatisé pour les apps construites avec Lovable, Bolt, Cursor ou Claude Code : Keybrum attaque l'app en ligne, prouve chaque faille et donne le prompt pour la corriger.",
+    "shortDescriptionEn": "Automated pentesting for apps built with Lovable, Bolt, Cursor or Claude Code: Keybrum attacks the live app, proves each flaw and hands you the prompt to fix it.",
+    "description": "Keybrum attaque de l'extérieur une app construite avec un outil d'IA, comme le ferait un attaquant, une fois que tu as prouvé qu'elle t'appartient. Il ne remonte que les failles qu'il a pu démontrer, avec une preuve masquée, un prompt de correction pour ton agent de code et un contre-test qui ne ferme la faille que lorsque la même attaque échoue. Les tests de lecture laissent les données en place, les tests d'écriture sont construits pour ne rien écrire, et la suppression n'est jamais testée. Un passage sans faille ne prouve pas que l'app est sûre : il dit que les attaques de la bibliothèque ont échoué ce jour-là.",
+    "longDescription": "Keybrum vise un problème précis : les apps générées avec Lovable, Bolt, Replit, v0, Cursor ou Claude Code arrivent en production sans que personne ne les ait attaquées. L'outil lance une bibliothèque d'attaques publique contre l'app déployée, sur Supabase, Firebase ou un backend maison, et ne signale que ce qu'il a prouvé. Chaque faille arrive avec le nombre de lignes exposées, les noms de colonnes, une ligne d'exemple masquée et la requête qui la démontre.\n\nAvant toute attaque, tu prouves que l'app est à toi par une balise, un enregistrement DNS ou un fichier publié ; la preuve est revérifiée tous les 30 jours. Keybrum vérifie aussi que le projet Supabase ou Firebase relié t'appartient. Sinon, ce backend n'est pas attaqué. Il crée un compte ordinaire jetable quand l'inscription est ouverte et n'utilise jamais un compte client ou administrateur réel.\n\nLa correction passe par ton agent : prompts prêts pour Lovable, Bolt, Cursor ou Claude Code, migration SQL, étapes de rotation de clé, et un serveur MCP qui permet à l'agent de lire la faille, d'appliquer le correctif et de relancer le contre-test. Les formules mensuelles ajoutent un contrôle dans la CI à chaque pull request, des attaques à chaque déploiement, une veille des vulnérabilités connues sur tes dépendances, une page de confiance publique et des alertes Slack ou Discord. L'audit du code reste optionnel et se fait sur ta machine : seuls les résultats remontent.\n\nCe que Keybrum ne fait pas compte autant. Il ne teste pas la suppression, ne lance ni test de charge ni force brute, ne contourne ni CAPTCHA, ni connexion uniquement sociale, ni passkey, ni code SMS. Il ne remplace pas un pentest manuel, ne délivre aucune certification et refuse les adresses privées. Les pages consultées ne nomment ni la société éditrice ni son pays.",
+    "longDescriptionEn": "Keybrum targets one problem: apps generated with Lovable, Bolt, Replit, v0, Cursor or Claude Code reach production without anyone attacking them. It runs a public attack library against the deployed app, on Supabase, Firebase or a custom backend, and only reports what it has proven. Each finding comes with the number of exposed rows, the column names, one redacted example row and the request that proves it.\n\nBefore any attack, you prove the app is yours with a tag, a DNS record or a published file; the proof is checked again every 30 days. Keybrum also checks that the linked Supabase or Firebase project is yours, and leaves that backend alone when it cannot. It creates one ordinary throwaway account when sign-up is open and never uses a real customer or admin account.\n\nFixing goes through your coding agent: ready prompts for Lovable, Bolt, Cursor or Claude Code, an SQL migration, key-rotation steps, and an MCP server that lets the agent read the finding, apply the fix and call the retest itself. Monthly plans add a CI check on each pull request, attacks on each deploy, a watch on known vulnerabilities in your dependencies, a public trust page and Slack or Discord alerts. The code audit is optional and runs on your machine: only the findings are sent.\n\nWhat Keybrum leaves out matters as much. It does not test deletes, runs no load test or brute force, and does not get past CAPTCHA, social-only login, passkeys or SMS codes. It is not a manual pentest, issues no certification and refuses private addresses. The pages reviewed name neither the company behind it nor its country.",
+    "pricing": {
+      "free": "Pas de plan gratuit ni d'essai. Aperçu gratuit sans compte, limité à ce que le navigateur télécharge déjà.",
+      "paid": "Report : 99 € HT une fois ; Maker : 59 € HT/mois (590 €/an) ; Team : 199 € HT/mois (1 990 €/an)."
+    },
+    "pricingEn": {
+      "free": "No free plan and no trial. A free preview with no account, limited to what a browser already downloads.",
+      "paid": "Report: €99 excl. VAT, once; Maker: €59 excl. VAT/month (€590/year); Team: €199 excl. VAT/month (€1,990/year)."
+    },
+    "defaultMonthlyPrice": 59,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 59,
+      "compare_plan_name": "Maker",
+      "compare_plan_kind": "monthly",
+      "price_reliability": "official_explicit",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-11-25",
+      "official_source_url": "https://keybrum.com/pricing",
+      "source_domain": "keybrum.com",
+      "location_sensitive": false,
+      "usage_sensitive": false,
+      "cautions": [
+        "Les prix sont affichés hors TVA. Paiement géré par Polar, revendeur officiel, qui émet les factures et collecte la TVA.",
+        "Pas de plan gratuit ni d'essai : l'aperçu gratuit montre seulement ce que le navigateur télécharge déjà, l'attaque commence avec un rapport ou un forfait.",
+        "Maker et Team existent aussi à l'année, avec deux mois offerts. Pas de remboursement des périodes entamées, sauf obligation légale.",
+        "La page d'accueil annonce des contre-tests illimités sur chaque formule ; le tableau des prix les limite à 7 jours pour Report."
+      ],
+      "plans": [
+        {
+          "planKey": "report",
+          "displayName": "Report",
+          "summary": "Une app, une attaque complète, contre-tests pendant 7 jours et rapport PDF. Paiement unique, rien ne se renouvelle.",
+          "featureHighlights": [
+            "1 app",
+            "1 attaque complète",
+            "Contre-tests pendant 7 jours",
+            "Rapport PDF"
+          ],
+          "detailsSourceUrl": "https://keybrum.com/pricing",
+          "pricingUnit": "one_time",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 99,
+          "nativeCurrency": "EUR",
+          "taxInclusion": "excluded",
+          "observedMarket": "France",
+          "observedLocale": "en",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25",
+          "billingPeriod": "one_time"
+        },
+        {
+          "planKey": "maker",
+          "displayName": "Maker",
+          "summary": "Cinq apps, deux membres, attaques planifiées, contrôle dans la CI et alertes Slack ou Discord.",
+          "featureHighlights": [
+            "5 apps, 2 membres",
+            "200 attaques complètes par mois",
+            "Contre-tests illimités",
+            "Contrôle CI, page de confiance et badge"
+          ],
+          "detailsSourceUrl": "https://keybrum.com/pricing",
+          "pricingUnit": "plan",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 59,
+          "nativeCurrency": "EUR",
+          "taxInclusion": "excluded",
+          "observedMarket": "France",
+          "observedLocale": "en",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25",
+          "billingPeriod": "monthly"
+        },
+        {
+          "planKey": "team",
+          "displayName": "Team",
+          "summary": "Vingt-cinq apps, dix membres, marque sur les rapports et découverte des apps Vercel, Netlify ou Supabase.",
+          "featureHighlights": [
+            "25 apps, 10 membres",
+            "1 000 attaques complètes par mois",
+            "Tout Maker",
+            "Marque sur rapports et pages de confiance"
+          ],
+          "detailsSourceUrl": "https://keybrum.com/pricing",
+          "pricingUnit": "plan",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 199,
+          "nativeCurrency": "EUR",
+          "taxInclusion": "excluded",
+          "observedMarket": "France",
+          "observedLocale": "en",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25",
+          "billingPeriod": "monthly"
+        }
+      ],
+      "cautionsEn": [
+        "Prices exclude VAT. Billing runs through Polar, the merchant of record, which issues invoices and collects VAT.",
+        "No free plan and no trial: the free preview only shows what a browser already downloads; the attack starts with a report or a plan.",
+        "Maker and Team are also sold yearly, with two months free. Partial periods are not refunded, except where the law requires it.",
+        "The homepage says retests are unlimited on every plan; the pricing table limits them to 7 days on Report."
+      ]
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 59,
+      "compare_plan_name": "Maker",
+      "compare_plan_kind": "monthly",
+      "price_reliability": "official_explicit",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-11-25",
+      "official_source_url": "https://keybrum.com/pricing",
+      "source_domain": "keybrum.com",
+      "location_sensitive": false,
+      "usage_sensitive": false,
+      "cautions": [
+        "Prices exclude VAT. Billing runs through Polar, the merchant of record, which issues invoices and collects VAT.",
+        "No free plan and no trial: the free preview only shows what a browser already downloads; the attack starts with a report or a plan.",
+        "Maker and Team are also sold yearly, with two months free. Partial periods are not refunded, except where the law requires it.",
+        "The homepage says retests are unlimited on every plan; the pricing table limits them to 7 days on Report."
+      ],
+      "plans": [
+        {
+          "planKey": "report",
+          "displayName": "Report",
+          "summary": "One app, one full attack run, retests for 7 days and a PDF report. One payment, nothing renews.",
+          "featureHighlights": [
+            "1 app",
+            "1 full attack run",
+            "Retests for 7 days",
+            "PDF report"
+          ],
+          "detailsSourceUrl": "https://keybrum.com/pricing",
+          "pricingUnit": "one_time",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 99,
+          "nativeCurrency": "EUR",
+          "taxInclusion": "excluded",
+          "observedMarket": "France",
+          "observedLocale": "en",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25",
+          "billingPeriod": "one_time"
+        },
+        {
+          "planKey": "maker",
+          "displayName": "Maker",
+          "summary": "Five apps, two members, scheduled attacks, a CI check and Slack or Discord alerts.",
+          "featureHighlights": [
+            "5 apps, 2 members",
+            "200 full attack runs a month",
+            "Unlimited retests",
+            "CI check, trust page and badge"
+          ],
+          "detailsSourceUrl": "https://keybrum.com/pricing",
+          "pricingUnit": "plan",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 59,
+          "nativeCurrency": "EUR",
+          "taxInclusion": "excluded",
+          "observedMarket": "France",
+          "observedLocale": "en",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25",
+          "billingPeriod": "monthly"
+        },
+        {
+          "planKey": "team",
+          "displayName": "Team",
+          "summary": "Twenty-five apps, ten members, your brand on reports and Vercel, Netlify or Supabase app discovery.",
+          "featureHighlights": [
+            "25 apps, 10 members",
+            "1,000 full attack runs a month",
+            "Everything in Maker",
+            "Your brand on reports and trust pages"
+          ],
+          "detailsSourceUrl": "https://keybrum.com/pricing",
+          "pricingUnit": "plan",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 199,
+          "nativeCurrency": "EUR",
+          "taxInclusion": "excluded",
+          "observedMarket": "France",
+          "observedLocale": "en",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25",
+          "billingPeriod": "monthly"
+        }
+      ]
+    },
+    "websiteUrl": "https://keybrum.com/",
+    "affiliateLink": "",
+    "logo": "https://keybrum.com/favicon.ico",
+    "ogImageUrl": "https://keybrum.com/social/keybrum-poster.jpg",
+    "pros": [
+      "Ne remonte que des failles prouvées, avec la requête qui les démontre : pas de liste de suspicions à trier.",
+      "La correction part directement dans ton agent de code, et le serveur MCP lui laisse relancer le contre-test.",
+      "Les garde-fous sont écrits : preuve de propriété, aucune écriture réelle, aucune suppression testée, données masquées."
+    ],
+    "prosEn": [
+      "Only proven flaws are reported, with the request that proves them: no list of suspicions to sort.",
+      "The fix goes straight to your coding agent, and the MCP server lets it call the retest itself.",
+      "The safeguards are written down: proof of ownership, no real writes, no delete tests, redacted data."
+    ],
+    "cons": [
+      "Pas de plan gratuit ni d'essai : l'aperçu gratuit ne lance aucune attaque.",
+      "Les pages consultées ne nomment ni la société éditrice, ni son pays, ni l'hébergeur des données de l'app.",
+      "Ne couvre pas la suppression, la force brute, les connexions par passkey ou SMS, ni un pentest manuel.",
+      "Le site s'affiche en anglais, même par le lien de la version française."
+    ],
+    "consEn": [
+      "No free plan and no trial: the free preview runs no attack.",
+      "The pages reviewed name neither the company, nor its country, nor the host of app data.",
+      "Leaves out delete tests, brute force, passkey or SMS logins, and manual pentesting."
+    ],
+    "useCases": [
+      "Attaquer une app Lovable ou Bolt avant de l'ouvrir à de vrais utilisateurs.",
+      "Vérifier que les règles d'accès Supabase ou Firebase ne laissent pas lire la base.",
+      "Bloquer une pull request qui rouvre une faille déjà corrigée.",
+      "Montrer à un client une page de confiance datée après chaque livraison."
+    ],
+    "useCasesEn": [
+      "Attack a Lovable or Bolt app before opening it to real users.",
+      "Check that Supabase or Firebase access rules do not let anyone read the database.",
+      "Block a pull request that reopens a flaw already fixed.",
+      "Show a client a dated trust page after each delivery."
+    ],
+    "relevantFor": [
+      "Fondateurs qui lancent une app construite avec Lovable, Bolt, Replit ou Cursor",
+      "Agences et freelances qui livrent des apps générées par IA à leurs clients",
+      "Petites équipes sur Supabase ou Firebase sans profil sécurité en interne"
+    ],
+    "relevantForEn": [
+      "Founders shipping an app built with Lovable, Bolt, Replit or Cursor",
+      "Agencies and freelancers delivering AI-built apps to clients",
+      "Small teams on Supabase or Firebase with no security person in-house"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu mets en production une app générée par IA, avec des données d'utilisateurs, et personne ne l'a attaquée.",
+        "Tu livres des apps à des clients et veux une preuve datée, refaite à chaque déploiement."
+      ],
+      "avoidIf": [
+        "Ton app n'a ni compte utilisateur ni base de données : l'aperçu gratuit suffit pour voir ce qu'elle expose.",
+        "Un client ou un assureur exige un pentest manuel ou une certification : Keybrum n'en délivre pas."
+      ],
+      "threshold": "Commence par l'aperçu gratuit. S'il montre des clés ou des appels à ta base dans le code envoyé au navigateur, une attaque complète se justifie avant d'ouvrir l'app. Prends un forfait mensuel seulement si tu déploies souvent ou si tu gères plusieurs apps."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You are shipping an AI-built app with user data, and nobody has attacked it.",
+        "You deliver apps to clients and want dated proof, redone on every deploy."
+      ],
+      "avoidIf": [
+        "Your app has no user accounts and no database: the free preview is enough to see what it exposes.",
+        "A client or insurer requires a manual pentest or a certification: Keybrum issues neither."
+      ],
+      "threshold": "Start with the free preview. If it shows keys or calls to your database in the code sent to the browser, a full attack is worth it before you open the app. Take a monthly plan only if you deploy often or run several apps."
+    },
+    "alternatives": [
+      "maced-ai",
+      "snyk",
+      "owasp-zap",
+      "burp-suite"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "verticals": [
+      "ai-builder",
+      "fondateur-saas",
+      "dev-freelance",
+      "developpeur-solo"
+    ],
+    "functional_needs": [
+      "security",
+      "pentest",
+      "vulnerability-scanning"
+    ],
+    "personas": [
+      "THEO"
+    ],
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "app_has_user_data",
+      "backend_platform",
+      "deploy_frequency",
+      "client_security_requirements"
+    ],
+    "substitution_cluster_v2": "security",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "L'intérêt dépend des données que l'app manipule, de la fréquence des déploiements et des exigences des clients.",
+      "default_decision_lane": "review_then_prescribe"
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "notedOn": "2026-11-25",
+      "lastActivityVerifiedOn": "2026-11-25",
+      "evidence": {
+        "valeurAjoutee": "Failles prouvées, prompt de correction pour l'agent et contre-test qui ne ferme la faille que si l'attaque échoue : une réponse directe au risque des apps générées par IA. Source : keybrum.com, 25 novembre 2026.",
+        "simplicite": "On colle une adresse, on prouve la propriété par balise, DNS ou fichier, et une attaque complète prend environ une minute selon l'éditeur. Source : keybrum.com et keybrum.com/docs, 25 novembre 2026.",
+        "utilisation": "Bibliothèque de 339 attaques publiée, contrôle CI, attaques à chaque déploiement, veille des vulnérabilités, serveur MCP. Source : keybrum.com, 25 novembre 2026.",
+        "puissance": "Pas de test de suppression, de force brute ni de contournement de CAPTCHA, passkey ou SMS, et aucun pentest manuel : la couverture s'arrête à la bibliothèque d'attaques. Source : keybrum.com/security et keybrum.com/docs, 25 novembre 2026.",
+        "reversibilite": "Note neutre : suppression du compte et des données depuis les réglages, rapports PDF ; aucun export structuré des failles n'est décrit. Source : keybrum.com/terms et keybrum.com/pricing, 25 novembre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Proven flaws, a fix prompt for the agent and a retest that only closes a finding when the attack fails: a direct answer to the risk of AI-built apps. Source: keybrum.com, November 25, 2026.",
+        "simplicite": "Paste an address, prove ownership by tag, DNS or file, and a full run takes about a minute according to the publisher. Source: keybrum.com and keybrum.com/docs, November 25, 2026.",
+        "utilisation": "A published library of 339 attacks, CI check, attacks on each deploy, vulnerability watch, MCP server. Source: keybrum.com, November 25, 2026.",
+        "puissance": "No delete tests, brute force, or CAPTCHA, passkey or SMS bypass, and no manual pentest: coverage stops at the attack library. Source: keybrum.com/security and keybrum.com/docs, November 25, 2026.",
+        "reversibilite": "Neutral score: account and data deletion from settings, PDF reports; no structured export of findings is described. Source: keybrum.com/terms and keybrum.com/pricing, November 25, 2026."
+      }
+    },
+    "tagline": {
+      "fr": "Pentest automatisé des apps faites avec l'IA",
+      "en": "Automated pentesting for AI-built apps"
+    },
+    "seo": {
+      "metaDescription": "Keybrum : avis, tarifs et limites du pentest automatisé pour les apps Lovable, Bolt, Cursor ou Claude Code, sur Supabase ou Firebase.",
+      "metaDescriptionEn": "Keybrum review, pricing and limits: automated pentesting for apps built with Lovable, Bolt, Cursor or Claude Code, on Supabase or Firebase.",
+      "presentationTitleFr": "Keybrum : attaquer son app IA avant les autres",
+      "presentationTitleEn": "Keybrum: attack your AI-built app first",
+      "idealForFr": "Fondateurs, freelances et agences qui mettent en production des apps générées par IA avec des données d'utilisateurs.",
+      "idealForEn": "Founders, freelancers and agencies shipping AI-built apps that hold user data.",
+      "presentationMetaDescriptionFr": "Keybrum attaque ton app Lovable, Bolt ou Cursor en ligne, ne garde que les failles prouvées et donne à ton agent le prompt pour les corriger.",
+      "presentationMetaDescriptionEn": "Keybrum attacks your live Lovable, Bolt or Cursor app, keeps only proven flaws and gives your agent the prompt to fix them.",
+      "prixTitleFr": "Prix de Keybrum : Maker dès {price}",
+      "prixTitleEn": "Keybrum pricing: Maker from {price}",
+      "prixMetaDescriptionFr": "Prix de Keybrum : rapport unique, Maker dès {price} par mois hors TVA, Team pour 25 apps. Pas de plan gratuit ni d'essai, un aperçu gratuit.",
+      "prixMetaDescriptionEn": "Keybrum pricing: a one-off report, Maker from {price} a month excl. VAT, Team for 25 apps. No free plan or trial, a free preview.",
+      "altTitleFr": "Alternatives à Keybrum : Maced, Snyk, OWASP ZAP",
+      "altTitleEn": "Keybrum alternatives: Maced, Snyk, OWASP ZAP",
+      "altMetaDescriptionFr": "Besoin d'un pentest manuel ou d'un scanner gratuit ? Maced, Snyk, OWASP ZAP et Burp Suite comparés à Keybrum sur la couverture, la mise en route et le coût.",
+      "altMetaDescriptionEn": "Need a manual pentest or a free scanner? Maced, Snyk, OWASP ZAP and Burp Suite compared with Keybrum on coverage, setup and cost.",
+      "avisTitleFr": "Avis Keybrum : des failles prouvées, pas supposées",
+      "avisTitleEn": "Keybrum review: proven flaws, not guesses",
+      "avisMetaDescriptionFr": "Avis Keybrum, noté {rating} : des failles prouvées et corrigées par ton agent ; ni plan gratuit, ni pentest manuel, éditeur non nommé.",
+      "avisMetaDescriptionEn": "Keybrum review, rated {rating}: proven flaws fixed by your agent; no free plan, no manual pentest, publisher not named."
+    },
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-11-25"
+    },
+    "research": {
+      "researchedOn": "2026-11-25",
+      "sources": 7
+    }
+  },
+  {
+    "id": "ln2crm",
+    "slug": "ln2crm",
+    "name": "Ln2CRM",
+    "category": "crm",
+    "shortDescription": "Extension Chrome qui relie un profil LinkedIn à ton CRM (Pipedrive, HubSpot, Salesforce, Zoho, Capsule) : vérifier, créer ou mettre à jour le contact sans changer d'onglet.",
+    "shortDescriptionEn": "Chrome extension that links a LinkedIn profile to your CRM (Pipedrive, HubSpot, Salesforce, Zoho, Capsule): check, create or update the contact without switching tabs.",
+    "description": "Ln2CRM ouvre un panneau sur les pages LinkedIn de personnes et d'entreprises, et seulement là. Une pastille indique si la personne est déjà dans ton CRM, si sa fiche a vieilli ou si elle est nouvelle. En un clic, tu crées ou mets à jour le contact, l'entreprise et l'affaire, sans doublon, et tu enregistres la conversation LinkedIn en note. L'outil ne prospecte pas à ta place : il n'envoie ni message ni invitation et n'aspire pas de profils en masse.",
+    "longDescription": "Ln2CRM règle un geste répétitif de la prospection sur LinkedIn : recopier un profil dans le CRM. L'extension Chrome s'ouvre sur la page d'une personne ou d'une entreprise, cherche d'abord la fiche existante par l'URL LinkedIn, l'e-mail et le nom, puis pré-remplit les champs, y compris les champs personnalisés du CRM. Une pastille verte, jaune ou rouge dit si la personne est déjà enregistrée, si son poste ou son entreprise a changé, ou si elle est nouvelle.\n\nLe CRM reste la référence. Ln2CRM fonctionne avec Pipedrive, HubSpot, Salesforce, Zoho et Capsule, sans Sales Navigator, et aussi à l'intérieur de Sales Navigator. Les conversations LinkedIn s'enregistrent en notes, à la demande ou automatiquement, et les invitations que tu envoies deviennent des tâches faites. La recherche d'e-mail est incluse dans chaque formule ; le téléphone passe par ta propre clé FullEnrich ou Apollo, au prix du fournisseur.\n\nLe Copilot rédige relances, réponses et commentaires à partir de la conversation et de l'historique du CRM, avec OpenAI comme fournisseur. La dictée vocale transforme un appel en note. L'extension existe en six langues, dont le français.\n\nLe positionnement est net : pas d'automatisation. Ln2CRM n'agit que sur ton clic, sur le profil affiché, sans tourner en arrière-plan. Cela limite le risque pour ton compte LinkedIn sans le supprimer : aucune extension tierce n'est approuvée par LinkedIn, et les conditions te laissent seul responsable du respect de celles de LinkedIn. L'éditeur est une petite équipe basée à Prague, lancée en novembre 2025 ; la société et l'hébergeur ne sont pas nommés.",
+    "longDescriptionEn": "Ln2CRM fixes one repetitive step of LinkedIn prospecting: copying a profile into the CRM. The Chrome extension opens on a person's or a company's page, looks for the existing record by LinkedIn URL, email and name, then pre-fills the fields, custom CRM fields included. A green, yellow or red badge says whether the person is already saved, whether their title or company has changed, or whether they are new.\n\nThe CRM stays the source of truth. Ln2CRM works with Pipedrive, HubSpot, Salesforce, Zoho and Capsule, without Sales Navigator, and inside Sales Navigator too. LinkedIn conversations are logged as notes, on demand or automatically, and the invitations you send become done tasks. Email finding is included in every plan; phone numbers go through your own FullEnrich or Apollo key, at the provider's price.\n\nThe Copilot drafts follow-ups, replies and comments from the conversation and the CRM history, with OpenAI as its provider. Voice dictation turns a call into a note. The extension comes in six languages, French included.\n\nThe stance is clear: no automation. Ln2CRM only acts on your click, on the profile you are viewing, and never runs in the background. That lowers the risk to your LinkedIn account without removing it: no third-party extension is approved by LinkedIn, and the terms make you solely responsible for following LinkedIn's. The publisher is a small team in Prague that started in November 2025; the company and the host are not named.",
+    "pricing": {
+      "free": "Plan gratuit durable (Test free), sans carte : 15 créations, 15 mises à jour, 5 brouillons Copilot et 5 e-mails trouvés par mois. Un CRM reste nécessaire.",
+      "paid": "Base : 16 $/mois par utilisateur (13 $ en annuel) ; Pro : 23 $/mois par utilisateur (18 $ en annuel) ; Enterprise sur devis."
+    },
+    "pricingEn": {
+      "free": "A durable free plan (Test free), no card: 15 creates, 15 updates, 5 Copilot drafts and 5 email finds a month. You still need a CRM.",
+      "paid": "Base: $16/month per user ($13 yearly); Pro: $23/month per user ($18 yearly); Enterprise by quote."
+    },
+    "defaultMonthlyPrice": 13.74,
+    "compareMonthlyPrice": 13.74,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 13.74,
+      "compare_plan_name": "Base",
+      "compare_plan_kind": "user",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-11-25",
+      "official_source_url": "https://ln2crm.com/pricing.html",
+      "source_domain": "ln2crm.com",
+      "location_sensitive": false,
+      "usage_sensitive": true,
+      "cautions": [
+        "Prix par utilisateur, affichés en dollars ; la TVA n'est pas précisée. Paiement géré par Paddle.",
+        "Le plan gratuit est durable, mais le coût total n'est pas nul : il faut un CRM, et le téléphone ou l'enrichissement avancé passent par ta propre clé FullEnrich ou Apollo, au prix du fournisseur.",
+        "Quotas remis à zéro chaque mois par utilisateur, sans dépassement facturé : un quota atteint se met en pause jusqu'au mois suivant.",
+        "Mensuel non remboursable ; l'annuel est remboursé au prorata dans les 30 jours, mais les conditions demandent la réclamation sous 14 jours."
+      ],
+      "plans": [
+        {
+          "planKey": "test-free",
+          "displayName": "Test free",
+          "summary": "Plan gratuit sans limite de durée et sans carte, avec de petits quotas mensuels.",
+          "featureHighlights": [
+            "15 créations et 15 mises à jour par mois",
+            "5 brouillons Copilot",
+            "5 e-mails trouvés et 10 vérifications"
+          ],
+          "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+          "pricingUnit": "user",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25",
+          "billingPeriod": "monthly"
+        },
+        {
+          "planKey": "base",
+          "displayName": "Base",
+          "summary": "Par utilisateur ; 13 $/mois par utilisateur en facturation annuelle.",
+          "featureHighlights": [
+            "500 créations et 500 mises à jour par mois",
+            "30 brouillons Copilot",
+            "100 e-mails trouvés et 250 vérifications"
+          ],
+          "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+          "pricingUnit": "user",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 16,
+          "nativeCurrency": "USD",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25",
+          "billingPeriod": "monthly"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "Par utilisateur ; 18 $/mois par utilisateur en facturation annuelle.",
+          "featureHighlights": [
+            "2 000 créations et 2 000 mises à jour par mois",
+            "500 brouillons Copilot",
+            "300 e-mails trouvés et 750 vérifications"
+          ],
+          "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+          "pricingUnit": "user",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 23,
+          "nativeCurrency": "USD",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25",
+          "billingPeriod": "monthly"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Enterprise",
+          "summary": "Sur devis, pour les équipes commerciales de plus de dix personnes.",
+          "featureHighlights": [
+            "Limites sur demande",
+            "Quotas mutualisés possibles",
+            "Conditions sur mesure"
+          ],
+          "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+          "pricingUnit": "custom",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        }
+      ],
+      "cautionsEn": [
+        "Prices are per user, shown in US dollars; VAT is not stated. Billing runs through Paddle.",
+        "The free plan is durable, but the total cost is not zero: you need a CRM, and phone or advanced enrichment uses your own FullEnrich or Apollo key, at the provider's price.",
+        "Quotas reset monthly per user, with no overage billing: a quota that runs out pauses until next month.",
+        "Monthly payments are non-refundable; yearly is refunded pro rata within 30 days, but the terms ask for the request within 14 days."
+      ]
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 13.74,
+      "compare_plan_name": "Base",
+      "compare_plan_kind": "user",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-11-25",
+      "official_source_url": "https://ln2crm.com/pricing.html",
+      "source_domain": "ln2crm.com",
+      "location_sensitive": false,
+      "usage_sensitive": true,
+      "cautions": [
+        "Prices are per user, shown in US dollars; VAT is not stated. Billing runs through Paddle.",
+        "The free plan is durable, but the total cost is not zero: you need a CRM, and phone or advanced enrichment uses your own FullEnrich or Apollo key, at the provider's price.",
+        "Quotas reset monthly per user, with no overage billing: a quota that runs out pauses until next month.",
+        "Monthly payments are non-refundable; yearly is refunded pro rata within 30 days, but the terms ask for the request within 14 days."
+      ],
+      "plans": [
+        {
+          "planKey": "test-free",
+          "displayName": "Test free",
+          "summary": "A free plan with no time limit and no card, with small monthly quotas.",
+          "featureHighlights": [
+            "15 creates and 15 updates a month",
+            "5 Copilot drafts",
+            "5 email finds and 10 checks"
+          ],
+          "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+          "pricingUnit": "user",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25",
+          "billingPeriod": "monthly"
+        },
+        {
+          "planKey": "base",
+          "displayName": "Base",
+          "summary": "Per user; $13 a month per user billed yearly.",
+          "featureHighlights": [
+            "500 creates and 500 updates a month",
+            "30 Copilot drafts",
+            "100 email finds and 250 checks"
+          ],
+          "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+          "pricingUnit": "user",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 16,
+          "nativeCurrency": "USD",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25",
+          "billingPeriod": "monthly"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "Per user; $18 a month per user billed yearly.",
+          "featureHighlights": [
+            "2,000 creates and 2,000 updates a month",
+            "500 Copilot drafts",
+            "300 email finds and 750 checks"
+          ],
+          "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+          "pricingUnit": "user",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 23,
+          "nativeCurrency": "USD",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25",
+          "billingPeriod": "monthly"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Enterprise",
+          "summary": "By quote, for sales teams of more than ten people.",
+          "featureHighlights": [
+            "Limits on request",
+            "Pooled quotas possible",
+            "Custom terms"
+          ],
+          "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+          "pricingUnit": "custom",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        }
+      ]
+    },
+    "websiteUrl": "https://ln2crm.com/",
+    "affiliateLink": "",
+    "logo": "https://ln2crm.com/assets/img/favicon-32.png",
+    "pros": [
+      "Cherche la fiche existante avant de créer : moins de doublons dans le CRM.",
+      "La pastille de présence signale un contact déjà saisi ou une fiche devenue obsolète.",
+      "N'automatise rien : l'outil agit seulement sur ton clic, profil par profil."
+    ],
+    "prosEn": [
+      "Looks for the existing record before creating one: fewer duplicates in the CRM.",
+      "The presence badge flags a contact already saved or a record gone stale.",
+      "Automates nothing: it only acts on your click, one profile at a time."
+    ],
+    "cons": [
+      "Chrome uniquement : ni Firefox, ni Safari, ni application web.",
+      "Le plan gratuit sert à tester, pas à travailler : ses quotas mensuels s'épuisent en quelques jours de prospection.",
+      "Aucune extension n'étant approuvée par LinkedIn, le risque pour ton compte reste à ta charge.",
+      "La société éditrice et l'hébergeur des données ne sont pas nommés."
+    ],
+    "consEn": [
+      "Chrome only: no Firefox, no Safari, no web app.",
+      "The free plan is for testing, not for working: its monthly quotas run out in a few days of prospecting.",
+      "Since no extension is approved by LinkedIn, the risk to your account stays yours.",
+      "The publishing company and the data host are not named."
+    ],
+    "useCases": [
+      "Ajouter un prospect LinkedIn dans Pipedrive ou HubSpot sans recopier sa fiche.",
+      "Voir d'un coup d'œil si un profil est déjà dans le CRM avant de le contacter.",
+      "Garder la trace des échanges LinkedIn dans le CRM, en notes.",
+      "Trouver l'e-mail professionnel d'un prospect au moment de l'enregistrer."
+    ],
+    "useCasesEn": [
+      "Add a LinkedIn prospect to Pipedrive or HubSpot without retyping the profile.",
+      "See at a glance whether a profile is already in the CRM before reaching out.",
+      "Keep LinkedIn conversations in the CRM, as notes.",
+      "Find a prospect's work email while saving them."
+    ],
+    "relevantFor": [
+      "Consultants et fondateurs qui prospectent sur LinkedIn avec un CRM",
+      "Petites équipes commerciales sur Pipedrive, HubSpot, Salesforce, Zoho ou Capsule",
+      "Commerciaux qui veulent un CRM à jour sans payer Sales Navigator"
+    ],
+    "relevantForEn": [
+      "Consultants and founders prospecting on LinkedIn with a CRM",
+      "Small sales teams on Pipedrive, HubSpot, Salesforce, Zoho or Capsule",
+      "Salespeople who want an up-to-date CRM without paying for Sales Navigator"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu prospectes chaque semaine sur LinkedIn et tu recopies les profils à la main dans ton CRM.",
+        "Tu veux un CRM propre, sans doublon, avec les échanges LinkedIn dedans, sans outil d'automatisation."
+      ],
+      "avoidIf": [
+        "Tu n'as pas de CRM, ou ton CRM n'est pas l'un des cinq gérés.",
+        "Tu cherches à envoyer des invitations ou des messages en série : l'outil ne le fait pas, par choix."
+      ],
+      "threshold": "Teste le plan gratuit sur une semaine de prospection réelle. Si tu atteins ses quotas avant la fin, Base couvre un rythme régulier ; Pro ne se justifie que si tu enregistres plusieurs centaines de profils par mois ou si tu utilises beaucoup le Copilot."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You prospect on LinkedIn every week and copy profiles into your CRM by hand.",
+        "You want a clean CRM, without duplicates, with LinkedIn conversations in it, and no automation tool."
+      ],
+      "avoidIf": [
+        "You have no CRM, or yours is not one of the five supported.",
+        "You want to send invitations or messages in bulk: it does not, by design."
+      ],
+      "threshold": "Try the free plan over a week of real prospecting. If you hit its quotas before the week ends, Base covers a steady pace; Pro only makes sense if you save several hundred profiles a month or lean on the Copilot."
+    },
+    "alternatives": [
+      "apollo-io",
+      "lusha",
+      "waalaxy"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas",
+      "sales-ops"
+    ],
+    "functional_needs": [
+      "crm-enrichment",
+      "linkedin-crm-sync",
+      "email-finder",
+      "prospecting-followup"
+    ],
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "crm_in_use",
+      "linkedin_prospecting_volume",
+      "team_size"
+    ],
+    "substitution_cluster_v2": "crm-prospection",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "L'intérêt dépend du CRM utilisé, du volume de prospection sur LinkedIn et du nombre d'utilisateurs.",
+      "default_decision_lane": "review_then_prescribe"
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 4,
+      "notedOn": "2026-11-25",
+      "lastActivityVerifiedOn": "2026-11-25",
+      "evidence": {
+        "valeurAjoutee": "Supprime la saisie manuelle d'un profil LinkedIn dans le CRM, avec contrôle des doublons et pastille de présence. Source : ln2crm.com, 25 novembre 2026.",
+        "simplicite": "Extension Chrome qui s'ouvre sur la page LinkedIn affichée ; connexion au CRM puis action au clic. Source : ln2crm.com et ln2crm.com/install.html, 25 novembre 2026.",
+        "utilisation": "Création et mise à jour de contacts, entreprises et affaires, notes de conversation, recherche d'e-mail, Copilot, dictée. Source : ln2crm.com, 25 novembre 2026.",
+        "puissance": "Cinq CRM, Chrome seulement, quotas mensuels par utilisateur, aucune automatisation par choix. Source : ln2crm.com/pricing.html et ln2crm.com/about.html, 25 novembre 2026.",
+        "reversibilite": "Les données restent dans ton CRM ; l'index de contacts est supprimé à la déconnexion du CRM ou à la suppression du compte. Source : ln2crm.com/legal/privacy.html, 25 novembre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Removes manual entry of a LinkedIn profile into the CRM, with duplicate checks and a presence badge. Source: ln2crm.com, November 25, 2026.",
+        "simplicite": "A Chrome extension that opens on the LinkedIn page you are viewing; connect the CRM, then act on click. Source: ln2crm.com and ln2crm.com/install.html, November 25, 2026.",
+        "utilisation": "Creates and updates contacts, companies and deals, conversation notes, email finding, Copilot, dictation. Source: ln2crm.com, November 25, 2026.",
+        "puissance": "Five CRMs, Chrome only, monthly quotas per user, no automation by design. Source: ln2crm.com/pricing.html and ln2crm.com/about.html, November 25, 2026.",
+        "reversibilite": "Data stays in your CRM; the contact index is deleted when you disconnect the CRM or delete the account. Source: ln2crm.com/legal/privacy.html, November 25, 2026."
+      }
+    },
+    "tagline": {
+      "fr": "De LinkedIn au CRM, en un clic",
+      "en": "From LinkedIn to your CRM, in one click"
+    },
+    "seo": {
+      "metaDescription": "Ln2CRM : avis, tarifs et limites de l'extension Chrome qui relie LinkedIn à Pipedrive, HubSpot, Salesforce, Zoho ou Capsule, sans automatisation.",
+      "metaDescriptionEn": "Ln2CRM review, pricing and limits: the Chrome extension linking LinkedIn to Pipedrive, HubSpot, Salesforce, Zoho or Capsule, without automation.",
+      "presentationTitleFr": "Ln2CRM : LinkedIn dans ton CRM, sans doublon",
+      "presentationTitleEn": "Ln2CRM: LinkedIn into your CRM, no duplicates",
+      "idealForFr": "Consultants, fondateurs et petites équipes commerciales qui prospectent sur LinkedIn et tiennent un CRM.",
+      "idealForEn": "Consultants, founders and small sales teams who prospect on LinkedIn and keep a CRM.",
+      "presentationMetaDescriptionFr": "Ln2CRM enregistre un profil LinkedIn dans ton CRM en un clic, vérifie les doublons et garde tes conversations en notes, sans rien automatiser.",
+      "presentationMetaDescriptionEn": "Ln2CRM saves a LinkedIn profile to your CRM in one click, checks for duplicates and keeps your conversations as notes, automating nothing.",
+      "prixTitleFr": "Prix de Ln2CRM : Base dès {price} par utilisateur",
+      "prixTitleEn": "Ln2CRM pricing: Base from {price} per user",
+      "prixMetaDescriptionFr": "Prix de Ln2CRM : plan gratuit durable avec quotas, Base dès {price} par utilisateur et par mois, Pro, Enterprise sur devis. Moins cher en annuel.",
+      "prixMetaDescriptionEn": "Ln2CRM pricing: a durable free plan with quotas, Base from {price} per user a month, Pro, Enterprise by quote. Cheaper billed yearly.",
+      "altTitleFr": "Alternatives à Ln2CRM : Apollo, Lusha, Waalaxy",
+      "altTitleEn": "Ln2CRM alternatives: Apollo, Lusha, Waalaxy",
+      "altMetaDescriptionFr": "Besoin d'enrichissement ou d'automatisation LinkedIn ? Apollo, Lusha et Waalaxy comparés à Ln2CRM sur les données, l'automatisation et le coût.",
+      "altMetaDescriptionEn": "Need enrichment or LinkedIn automation? Apollo, Lusha and Waalaxy compared with Ln2CRM on data, automation and cost.",
+      "avisTitleFr": "Avis Ln2CRM : un CRM à jour depuis LinkedIn",
+      "avisTitleEn": "Ln2CRM review: an up-to-date CRM from LinkedIn",
+      "avisMetaDescriptionFr": "Avis Ln2CRM, noté {rating} : moins de saisie et de doublons dans le CRM ; Chrome seulement, quotas mensuels, éditeur peu identifié.",
+      "avisMetaDescriptionEn": "Ln2CRM review, rated {rating}: less typing and fewer CRM duplicates; Chrome only, monthly quotas, publisher barely identified."
+    },
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-11-25"
+    },
+    "research": {
+      "researchedOn": "2026-11-25",
+      "sources": 7
+    },
+    "ogImageUrl": "https://ln2crm.com/assets/img/og-image-v2.png"
+  },
+  {
+    "id": "commenty",
+    "slug": "commenty",
+    "name": "Commenty",
+    "category": "creation",
+    "shortDescription": "Extension Chrome qui t'aide à écrire tes commentaires LinkedIn dans ta propre voix : tu commences, elle continue, tu relis et tu publies toi-même.",
+    "shortDescriptionEn": "Chrome extension that helps you write LinkedIn comments in your own voice: you start, it continues, you review and post it yourself.",
+    "description": "Commenty s'ajoute sous chaque zone de commentaire LinkedIn. Tu tapes les premiers mots de ce que tu penses, l'extension continue dans ton style, ou rédige un brouillon complet si tu le demandes. Rien ne part sans toi : tu relis, tu modifies et tu cliques sur Publier. Avec ton accord, elle apprend ta voix à partir des commentaires que tu publies vraiment, et chaque dimanche un bilan propose jusqu'à cinq conversations à relancer avec des gens que tu connais déjà.",
+    "longDescription": "Commenty part d'un constat simple : un commentaire générique abîme plus une réputation qu'il ne l'aide. L'extension Chrome propose trois modes sous chaque commentaire LinkedIn : écrire seul, faire continuer ta phrase, ou demander un brouillon complet, avec quatre tons au choix et une consigne libre. Elle lit le contexte du post (texte, auteur, sujet) et mesure, sur le commentaire final, la part de formulation qui vient de toi.\n\nLe profil de voix est optionnel et désactivé par défaut. Une fois activé, il apprend ton vocabulaire, ton rythme et tes tournures à partir des commentaires que tu publies, en priorité ceux que tu as écrits seul. Pendant la première semaine, tu peux importer tes anciens commentaires depuis ta page d'activité LinkedIn. Commenty écrit en anglais et dans la langue du post ; l'éditeur dit l'avoir testé sur les langues européennes, le russe, l'ukrainien, l'arabe et le persan.\n\nLe second volet porte sur les relations : réponses, mentions et mentions J'aime autour de tes commentaires sont regroupées par personne, et un bilan hebdomadaire désigne jusqu'à cinq conversations qui méritent une suite. Ce ne sont pas des prospects : ce sont des gens avec qui tu as déjà échangé.\n\nCommenty ne demande ni mot de passe ni cookie LinkedIn, ne publie rien automatiquement et ne travaille que sur la page ouverte. L'éditeur reconnaît qu'aucun outil tiers ne peut garantir l'absence de restriction de compte, et Commenty n'est pas affilié à LinkedIn. Les serveurs sont aux États-Unis, chez Hivelocity, et les fonctions d'IA passent notamment par Google Gemini. Les pages consultées ne nomment pas la société éditrice.",
+    "longDescriptionEn": "Commenty starts from a simple point: a generic comment hurts a reputation more than it helps. The Chrome extension offers three modes under each LinkedIn comment box: write alone, have it continue your sentence, or ask for a full draft, with four tones and a free instruction. It reads the post's context (text, author, topic) and measures, on the final comment, how much of the wording came from you.\n\nThe voice profile is optional and off by default. Once on, it learns your vocabulary, rhythm and phrasing from the comments you actually post, favouring those you wrote alone. During the first week you can import your earlier comments from your LinkedIn activity page. Commenty writes in English or in the post's language; the publisher says it tested European languages, Russian, Ukrainian, Arabic and Persian.\n\nThe second part is about relationships: replies, mentions and likes around your comments are grouped by person, and a weekly brief points to up to five conversations worth continuing. These are not prospects: they are people you have already talked with.\n\nCommenty asks for no LinkedIn password or cookie, posts nothing automatically and only works on the page you have open. The publisher admits no third-party tool can guarantee your account will not be restricted, and Commenty is not affiliated with LinkedIn. Servers are in the United States, at Hivelocity, and AI features go through Google Gemini among others. The pages reviewed do not name the company behind it.",
+    "pricing": {
+      "free": "Essai gratuit de 14 jours sans carte, jusqu'à 20 commentaires par jour. Pas de plan gratuit garanti ensuite (CGU et FAQ divergent).",
+      "paid": "Starter : 15 $/mois ou 100 $/an ; Professional : 29 $/mois ou 200 $/an. Taxes incluses."
+    },
+    "pricingEn": {
+      "free": "A 14-day free trial with no card, up to 20 comments a day. No guaranteed free plan afterwards (terms and FAQ disagree).",
+      "paid": "Starter: $15/month or $100/year; Professional: $29/month or $200/year. Taxes included."
+    },
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 12.88,
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "account",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-11-25",
+      "official_source_url": "https://commenty.ai/#pricing",
+      "source_domain": "commenty.ai",
+      "location_sensitive": false,
+      "usage_sensitive": false,
+      "cautions": [
+        "Prix en dollars, taxes incluses selon les CGU. Starter et Professional ne diffèrent que par la limite quotidienne.",
+        "Essai gratuit de 14 jours, pas un plan gratuit garanti : les CGU coupent les suggestions à la fin de l'essai, la FAQ annonce 5 commentaires par jour aux comptes gratuits.",
+        "Remboursement complet possible dans les 14 jours suivant le premier paiement. Offres à vie vendues via AppSumo, avec leurs propres règles."
+      ],
+      "plans": [
+        {
+          "planKey": "trial",
+          "displayName": "Free (essai 14 jours)",
+          "summary": "Essai de 14 jours sans carte, jusqu'à 20 commentaires assistés publiés par jour.",
+          "featureHighlights": [
+            "20 commentaires par jour pendant 14 jours",
+            "Profil de voix",
+            "Suggestions selon le contexte"
+          ],
+          "detailsSourceUrl": "https://commenty.ai/#pricing",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "taxInclusion": "included",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "20 commentaires assistés par jour ; 100 $ par an en annuel.",
+          "featureHighlights": [
+            "20 commentaires par jour",
+            "Profil de voix",
+            "Suivi des relations"
+          ],
+          "detailsSourceUrl": "https://commenty.ai/#pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "taxInclusion": "included",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        },
+        {
+          "planKey": "professional",
+          "displayName": "Professional",
+          "summary": "50 commentaires assistés par jour ; 200 $ par an en annuel.",
+          "featureHighlights": [
+            "50 commentaires par jour",
+            "Profil de voix",
+            "Suivi des relations"
+          ],
+          "detailsSourceUrl": "https://commenty.ai/#pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 29,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "taxInclusion": "included",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        }
+      ],
+      "cautionsEn": [
+        "Prices in US dollars, taxes included according to the terms. Starter and Professional differ only by the daily limit.",
+        "A 14-day free trial, not a guaranteed free plan: the terms stop suggestions when the trial ends, the FAQ says free accounts keep 5 comments a day.",
+        "Full refund possible within 14 days of the first payment. Lifetime deals are sold through AppSumo, under their own rules."
+      ]
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 12.88,
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "account",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-11-25",
+      "official_source_url": "https://commenty.ai/#pricing",
+      "source_domain": "commenty.ai",
+      "location_sensitive": false,
+      "usage_sensitive": false,
+      "cautions": [
+        "Prices in US dollars, taxes included according to the terms. Starter and Professional differ only by the daily limit.",
+        "A 14-day free trial, not a guaranteed free plan: the terms stop suggestions when the trial ends, the FAQ says free accounts keep 5 comments a day.",
+        "Full refund possible within 14 days of the first payment. Lifetime deals are sold through AppSumo, under their own rules."
+      ],
+      "plans": [
+        {
+          "planKey": "trial",
+          "displayName": "Free (14-day trial)",
+          "summary": "A 14-day trial with no card, up to 20 assisted comments published a day.",
+          "featureHighlights": [
+            "20 comments a day for 14 days",
+            "Voice profile",
+            "Context-aware suggestions"
+          ],
+          "detailsSourceUrl": "https://commenty.ai/#pricing",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "taxInclusion": "included",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "20 assisted comments a day; $100 a year billed yearly.",
+          "featureHighlights": [
+            "20 comments a day",
+            "Voice profile",
+            "Relationship tracking"
+          ],
+          "detailsSourceUrl": "https://commenty.ai/#pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "taxInclusion": "included",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        },
+        {
+          "planKey": "professional",
+          "displayName": "Professional",
+          "summary": "50 assisted comments a day; $200 a year billed yearly.",
+          "featureHighlights": [
+            "50 comments a day",
+            "Voice profile",
+            "Relationship tracking"
+          ],
+          "detailsSourceUrl": "https://commenty.ai/#pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 29,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "taxInclusion": "included",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        }
+      ]
+    },
+    "websiteUrl": "https://commenty.ai/",
+    "affiliateLink": "",
+    "logo": "https://commenty.ai/favicon.ico",
+    "ogImageUrl": "https://commenty.ai/og-banner.png",
+    "pros": [
+      "Part de tes propres mots au lieu d'écrire à ta place : le commentaire reste le tien.",
+      "Ne publie jamais seul et ne demande ni mot de passe ni cookie LinkedIn.",
+      "Le bilan du dimanche transforme les commentaires en quelques relations à entretenir."
+    ],
+    "prosEn": [
+      "Starts from your own words instead of writing for you: the comment stays yours.",
+      "Never posts on its own and asks for no LinkedIn password or cookie.",
+      "The Sunday brief turns comments into a few relationships worth keeping up."
+    ],
+    "cons": [
+      "Chrome uniquement : les autres navigateurs Chromium ne sont ni pris en charge ni testés.",
+      "Ce qui reste gratuit après l'essai n'est pas clair : les CGU et la FAQ se contredisent.",
+      "Limite quotidienne de commentaires assistés, même sur la formule la plus chère.",
+      "Société éditrice non nommée ; données hébergées aux États-Unis."
+    ],
+    "consEn": [
+      "Chrome only: other Chromium browsers are neither supported nor tested.",
+      "What stays free after the trial is unclear: the terms and the FAQ contradict each other.",
+      "A daily cap on assisted comments, even on the most expensive plan.",
+      "The company is not named; data is hosted in the United States."
+    ],
+    "useCases": [
+      "Commenter chaque jour les posts de ton secteur sans y passer une heure.",
+      "Terminer un commentaire dont tu as l'idée mais pas la formulation.",
+      "Garder un style constant sur LinkedIn, même en anglais ou dans une autre langue.",
+      "Savoir chaque semaine quelles conversations relancer."
+    ],
+    "useCasesEn": [
+      "Comment on your industry's posts every day without spending an hour on it.",
+      "Finish a comment when you have the idea but not the wording.",
+      "Keep a consistent style on LinkedIn, in English or another language.",
+      "Know each week which conversations to pick up again."
+    ],
+    "relevantFor": [
+      "Consultants et freelances dont la visibilité passe par LinkedIn",
+      "Fondateurs qui veulent rester présents sans publier de commentaires génériques",
+      "Rédacteurs et experts qui tiennent à écrire avec leurs propres mots"
+    ],
+    "relevantForEn": [
+      "Consultants and freelancers whose visibility depends on LinkedIn",
+      "Founders who want to stay present without posting generic comments",
+      "Writers and experts who want to keep their own words"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu commentes sur LinkedIn plusieurs fois par semaine et tu bloques sur la formulation, pas sur l'idée.",
+        "Tu refuses les outils qui commentent à ta place mais veux gagner du temps."
+      ],
+      "avoidIf": [
+        "Tu veux automatiser ta présence LinkedIn : Commenty ne publie rien sans ton clic.",
+        "Tu commentes rarement : l'essai de 14 jours suffit à savoir si l'habitude tient."
+      ],
+      "threshold": "Utilise les 14 jours d'essai sur ton rythme réel. Si tu publies moins de vingt commentaires assistés par jour, Starter suffit ; Professional ne sert qu'au-delà. L'annuel coûte nettement moins cher, mais seulement si l'habitude a tenu pendant l'essai."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You comment on LinkedIn several times a week and get stuck on the wording, not the idea.",
+        "You refuse tools that comment for you but still want to save time."
+      ],
+      "avoidIf": [
+        "You want to automate your LinkedIn presence: Commenty posts nothing without your click.",
+        "You rarely comment: the 14-day trial is enough to see whether the habit sticks."
+      ],
+      "threshold": "Use the 14-day trial at your real pace. If you publish fewer than twenty assisted comments a day, Starter is enough; Professional only matters beyond that. Yearly billing is much cheaper, but only once the habit has held through the trial."
+    },
+    "alternatives": [
+      "taplio",
+      "authoredup",
+      "typefully"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas",
+      "createur-contenu"
+    ],
+    "functional_needs": [
+      "redaction",
+      "linkedin-engagement",
+      "creator-workflow"
+    ],
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "linkedin_comment_frequency",
+      "writing_language"
+    ],
+    "substitution_cluster_v2": "linkedin-content-tools",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "L'intérêt dépend de la fréquence à laquelle tu commentes sur LinkedIn et de la langue dans laquelle tu écris.",
+      "default_decision_lane": "review_then_prescribe"
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "notedOn": "2026-11-25",
+      "lastActivityVerifiedOn": "2026-11-25",
+      "evidence": {
+        "valeurAjoutee": "Aide à formuler des commentaires dans ta voix et suit les relations qui en naissent ; utile si tu commentes souvent, accessoire sinon. Source : commenty.ai, 25 novembre 2026.",
+        "simplicite": "Extension Chrome, boutons sous chaque zone de commentaire, trois modes et quatre tons. Source : commenty.ai et commenty.ai/docs, 25 novembre 2026.",
+        "utilisation": "Continuation, brouillon, profil de voix, import d'anciens commentaires, bilan hebdomadaire des relations. Source : commenty.ai et commenty.ai/faq, 25 novembre 2026.",
+        "puissance": "Chrome seulement, limite quotidienne de 20 ou 50 commentaires assistés, pas de publication de posts. Source : commenty.ai/faq, 25 novembre 2026.",
+        "reversibilite": "Suppression du compte et des données sur demande ; aucun export des données décrit hors arrêt du service. Source : commenty.ai/privacy et commenty.ai/terms, 25 novembre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Helps you word comments in your voice and tracks the relationships they create; useful if you comment often, minor otherwise. Source: commenty.ai, November 25, 2026.",
+        "simplicite": "A Chrome extension with buttons under each comment box, three modes and four tones. Source: commenty.ai and commenty.ai/docs, November 25, 2026.",
+        "utilisation": "Continuation, drafts, voice profile, import of earlier comments, weekly relationship brief. Source: commenty.ai and commenty.ai/faq, November 25, 2026.",
+        "puissance": "Chrome only, a daily cap of 20 or 50 assisted comments, no post writing. Source: commenty.ai/faq, November 25, 2026.",
+        "reversibilite": "Account and data deletion on request; no data export described except if the service shuts down. Source: commenty.ai/privacy and commenty.ai/terms, November 25, 2026."
+      }
+    },
+    "tagline": {
+      "fr": "Tes commentaires LinkedIn, dans ta voix",
+      "en": "Your LinkedIn comments, in your voice"
+    },
+    "seo": {
+      "metaDescription": "Commenty : avis, tarifs et limites de l'extension Chrome qui aide à écrire ses commentaires LinkedIn dans sa propre voix, sans publication automatique.",
+      "metaDescriptionEn": "Commenty review, pricing and limits: the Chrome extension that helps you write LinkedIn comments in your own voice, with no automatic posting.",
+      "presentationTitleFr": "Commenty : commenter sur LinkedIn avec tes mots",
+      "presentationTitleEn": "Commenty: comment on LinkedIn in your own words",
+      "idealForFr": "Consultants, freelances et fondateurs qui commentent souvent sur LinkedIn et tiennent à garder leur voix.",
+      "idealForEn": "Consultants, freelancers and founders who comment often on LinkedIn and want to keep their voice.",
+      "presentationMetaDescriptionFr": "Commenty continue les commentaires LinkedIn que tu commences, apprend ton style et te dit chaque semaine quelles conversations relancer.",
+      "presentationMetaDescriptionEn": "Commenty continues the LinkedIn comments you start, learns your style and tells you each week which conversations to pick up.",
+      "prixTitleFr": "Prix de Commenty : Starter dès {price}",
+      "prixTitleEn": "Commenty pricing: Starter from {price}",
+      "prixMetaDescriptionFr": "Prix de Commenty : essai de 14 jours sans carte, Starter dès {price} par mois, Professional pour 50 commentaires par jour. Moins cher en annuel.",
+      "prixMetaDescriptionEn": "Commenty pricing: a 14-day trial with no card, Starter from {price} a month, Professional for 50 comments a day. Cheaper billed yearly.",
+      "altTitleFr": "Alternatives à Commenty : Taplio, AuthoredUp, Typefully",
+      "altTitleEn": "Commenty alternatives: Taplio, AuthoredUp, Typefully",
+      "altMetaDescriptionFr": "Tu veux aussi écrire et planifier tes posts ? Taplio, AuthoredUp et Typefully comparés à Commenty sur la rédaction, la planification et le coût.",
+      "altMetaDescriptionEn": "Also want to write and schedule posts? Taplio, AuthoredUp and Typefully compared with Commenty on writing, scheduling and cost.",
+      "avisTitleFr": "Avis Commenty : l'IA qui finit ta phrase, pas ton avis",
+      "avisTitleEn": "Commenty review: AI that finishes your sentence, not your opinion",
+      "avisMetaDescriptionFr": "Avis Commenty, noté {rating} : des commentaires qui restent les tiens et aucune publication automatique ; Chrome seulement, limite quotidienne.",
+      "avisMetaDescriptionEn": "Commenty review, rated {rating}: comments that stay yours and no automatic posting; Chrome only, daily cap."
+    },
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-11-25"
+    },
+    "research": {
+      "researchedOn": "2026-11-25",
+      "sources": 5
+    }
+  },
+  {
+    "id": "billxpert",
+    "slug": "billxpert",
+    "name": "BillXpert",
+    "category": "finance",
+    "shortDescription": "Logiciel de comptabilité local et gratuit pour artisans, indépendants et TPE : devis, factures, règlements, écritures et TVA dans une application Windows, encore en bêta.",
+    "shortDescriptionEn": "Free, local accounting software for tradespeople, freelancers and very small businesses: quotes, invoices, payments, entries and VAT in a Windows app, still in beta.",
+    "description": "BillXpert est un logiciel de comptabilité qui s'installe sur Windows, sans abonnement. Il réunit la gestion courante (clients, fournisseurs, devis, factures, règlements) et la comptabilité (écritures, journaux, grand livre, balance, TVA, bilan simplifié) dans une même application, avec des contrôles avant validation. Le cœur est gratuit ; les fonctions spécialisées doivent arriver sous forme de plugins. C'est une bêta : l'éditeur demande de garder des sauvegardes séparées et de vérifier les résultats avant tout usage officiel.",
+    "longDescription": "BillXpert part d'un choix assumé : une application locale plutôt qu'un service en ligne. Tu télécharges l'installateur Windows sans créer de compte, tu crées le dossier de l'entreprise et tu travailles sur ta machine. Un compte en ligne n'est utile que pour les services connectés et le suivi du projet.\n\nLe cœur couvre la gestion quotidienne et la comptabilité d'une petite structure : clients et fournisseurs, devis et factures, achats, règlements et échéances, comptes bancaires et rapprochement, écritures regroupées par pièce, journaux, grand livre, balance, TVA, compte de résultat et bilan simplifiés, exports. Chaque document reste relié à son tiers, à son règlement et à son écriture, et les incohérences sont signalées avant la validation ou la clôture. Les premières fonctions multiutilisateur existent, et une édition School vise l'enseignement.\n\nLa suite repose sur des plugins optionnels, pour que le cœur reste simple. Le premier annoncé concerne la facturation électronique : il doit permettre de recevoir les factures électroniques dans BillXpert, puis de les émettre. Il est en développement, alors que l'obligation de réception s'applique depuis le 1er septembre 2026. BillXpert n'est pas une Plateforme Agréée.\n\nLe projet mise aussi sur la participation : les utilisateurs signalent des problèmes, proposent des améliorations et peuvent gagner des crédits Bexium censés réduire le prix des futurs modules payants. L'éditeur est une SAS parisienne, M.R.I., et le site est hébergé en France chez o2switch. La version actuelle est une bêta de production : utilisable, mais pas définitive.",
+    "longDescriptionEn": "BillXpert makes a clear choice: a local app rather than an online service. You download the Windows installer without creating an account, create the company file and work on your own machine. An online account is only needed for connected services and project follow-up.\n\nThe core covers the daily management and accounting of a small business: customers and suppliers, quotes and invoices, purchases, payments and due dates, bank accounts and reconciliation, entries grouped by document, journals, general ledger, trial balance, VAT, simplified P&L and balance sheet, exports. Each document stays linked to its party, its payment and its entry, and inconsistencies are flagged before validation or closing. The first multi-user features exist, and a School edition targets teaching.\n\nWhat comes next relies on optional plugins, so the core stays simple. The first one announced is for e-invoicing: it should let you receive e-invoices inside BillXpert, then send them. It is still in development, while the obligation to receive e-invoices in France has applied since 1 September 2026. BillXpert is not an approved e-invoicing platform (Plateforme Agréée).\n\nThe project also relies on participation: users report problems, suggest improvements and can earn Bexium credits meant to lower the price of future paid modules. The publisher is a Paris company, M.R.I., and the site is hosted in France by o2switch. The current version is a production beta: usable, but not final.",
+    "pricing": {
+      "free": "Cœur comptable gratuit, sans compte obligatoire. Aucune offre payante pendant la bêta.",
+      "paid": "Aucune offre payante à ce jour. Des plugins payants sont annoncés, sans prix publié."
+    },
+    "pricingEn": {
+      "free": "Free accounting core, no account required. No paid offer during the beta.",
+      "paid": "No paid offer yet. Paid plugins are announced, with no published price."
+    },
+    "defaultMonthlyPrice": 0,
+    "compareMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Cœur comptable",
+      "compare_plan_kind": "account",
+      "price_reliability": "official_explicit",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-11-25",
+      "official_source_url": "https://billxpert.fr/telecharger",
+      "source_domain": "billxpert.fr",
+      "location_sensitive": false,
+      "usage_sensitive": false,
+      "cautions": [
+        "Aucune offre payante à ce jour : l'éditeur M.R.I. déclare ne rien vendre ni facturer pendant la bêta. Des plugins payants sont annoncés pour plus tard.",
+        "Gratuit ne veut pas dire sans coût : en bêta, il faut garder des sauvegardes séparées et faire vérifier les résultats comptables et fiscaux."
+      ],
+      "plans": [
+        {
+          "planKey": "core",
+          "displayName": "Cœur comptable",
+          "summary": "Application Windows gratuite, téléchargeable sans compte, en bêta publique.",
+          "featureHighlights": [
+            "Clients, fournisseurs, devis, factures",
+            "Écritures, journaux, grand livre, balance",
+            "TVA, bilan et compte de résultat simplifiés"
+          ],
+          "detailsSourceUrl": "https://billxpert.fr/telecharger",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "France",
+          "observedLocale": "fr",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        }
+      ],
+      "cautionsEn": [
+        "No paid offer today: the publisher, M.R.I., says it sells and bills nothing during the beta. Paid plugins are announced for later.",
+        "Free does not mean no cost: in beta, you must keep separate backups and have accounting and tax results checked."
+      ]
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Accounting core",
+      "compare_plan_kind": "account",
+      "price_reliability": "official_explicit",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-11-25",
+      "official_source_url": "https://billxpert.fr/telecharger",
+      "source_domain": "billxpert.fr",
+      "location_sensitive": false,
+      "usage_sensitive": false,
+      "cautions": [
+        "No paid offer today: the publisher, M.R.I., says it sells and bills nothing during the beta. Paid plugins are announced for later.",
+        "Free does not mean no cost: in beta, you must keep separate backups and have accounting and tax results checked."
+      ],
+      "plans": [
+        {
+          "planKey": "core",
+          "displayName": "Accounting core",
+          "summary": "Free Windows app, downloadable without an account, in public beta.",
+          "featureHighlights": [
+            "Customers, suppliers, quotes, invoices",
+            "Entries, journals, ledger, trial balance",
+            "VAT, simplified balance sheet and P&L"
+          ],
+          "detailsSourceUrl": "https://billxpert.fr/telecharger",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "France",
+          "observedLocale": "fr",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        }
+      ]
+    },
+    "websiteUrl": "https://billxpert.fr/",
+    "affiliateLink": "",
+    "logo": "https://billxpert.fr/assets/img/logo-bx.png",
+    "ogImageUrl": "https://billxpert.fr/assets/img/product/overview.png",
+    "pros": [
+      "Gestion courante et comptabilité dans la même application, sans abonnement.",
+      "Les données restent sur ta machine : pas de service en ligne obligatoire.",
+      "Chaque facture reste reliée à son règlement et à son écriture, avec des contrôles avant validation."
+    ],
+    "prosEn": [
+      "Daily management and accounting in the same app, with no subscription.",
+      "Your data stays on your machine: no mandatory online service.",
+      "Each invoice stays linked to its payment and its entry, with checks before validation."
+    ],
+    "cons": [
+      "Version bêta : l'éditeur demande des sauvegardes séparées et une vérification des résultats avant usage officiel.",
+      "Windows uniquement, sans version Mac, web ou mobile.",
+      "La réception des factures électroniques, obligatoire depuis septembre 2026, n'est pas encore disponible.",
+      "Le modèle économique futur repose sur des plugins dont les prix ne sont pas publiés."
+    ],
+    "consEn": [
+      "Beta version: the publisher asks for separate backups and checked results before official use.",
+      "Windows only, with no Mac, web or mobile version.",
+      "Receiving e-invoices, required in France since September 2026, is not available yet.",
+      "The future business model relies on plugins with unpublished prices."
+    ],
+    "useCases": [
+      "Tenir la comptabilité d'une TPE ou d'un artisan sans abonnement mensuel.",
+      "Faire devis, factures et suivi des règlements au même endroit que les écritures.",
+      "Préparer la TVA, la balance et un bilan simplifié en local.",
+      "Former des élèves à la comptabilité avec l'édition School."
+    ],
+    "useCasesEn": [
+      "Keep the books of a very small business or tradesperson with no monthly subscription.",
+      "Handle quotes, invoices and payment tracking in the same place as the entries.",
+      "Prepare VAT, the trial balance and a simplified balance sheet locally.",
+      "Teach accounting with the School edition."
+    ],
+    "relevantFor": [
+      "Artisans, indépendants et TPE qui tiennent eux-mêmes leur comptabilité",
+      "Petites entreprises qui préfèrent garder leurs données en local",
+      "Enseignants et organismes de formation en comptabilité"
+    ],
+    "relevantForEn": [
+      "Tradespeople, freelancers and very small businesses who keep their own books",
+      "Small businesses that prefer to keep their data locally",
+      "Accounting teachers and training organisations"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu tiens toi-même ta comptabilité, sur Windows, et tu refuses un abonnement mensuel.",
+        "Tu acceptes une bêta, avec des sauvegardes séparées et une vérification par ton comptable."
+      ],
+      "avoidIf": [
+        "Tu dois recevoir tes factures électroniques dès maintenant : le plugin n'est pas encore sorti.",
+        "Tu travailles sur Mac, à plusieurs à distance, ou tu veux un expert-comptable intégré."
+      ],
+      "threshold": "Installe-le sur un dossier de test et reprends un mois réel d'activité. Si les écritures, la TVA et la balance tombent juste, garde-le en parallèle de ton outil actuel jusqu'à la sortie de la version finale et du plugin de facturation électronique."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You keep your own books, on Windows, and refuse a monthly subscription.",
+        "You accept a beta, with separate backups and a check by your accountant."
+      ],
+      "avoidIf": [
+        "You need to receive e-invoices right now: the plugin is not out yet.",
+        "You work on a Mac, with several people remotely, or want an accountant built in."
+      ],
+      "threshold": "Install it on a test file and replay one real month of activity. If entries, VAT and the trial balance come out right, run it alongside your current tool until the final version and the e-invoicing plugin are out."
+    },
+    "alternatives": [
+      "indy",
+      "tiime",
+      "vulko"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "gestion",
+    "substitutable": true,
+    "verticals": [
+      "business-ops",
+      "finance-ops",
+      "consultant-b2b"
+    ],
+    "functional_needs": [
+      "comptabilite",
+      "facturation",
+      "devis-facturation-btp"
+    ],
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "operating_system",
+      "e_invoicing_reception_needs",
+      "accountant_involvement"
+    ],
+    "substitution_cluster_v2": "accounting-ops",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "Le choix dépend du système utilisé, des obligations de facturation électronique et du rôle de l'expert-comptable.",
+      "default_decision_lane": "review_then_prescribe"
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 4,
+      "notedOn": "2026-11-25",
+      "lastActivityVerifiedOn": "2026-11-25",
+      "evidence": {
+        "valeurAjoutee": "Gestion courante et comptabilité gratuites en local ; la valeur reste limitée tant que la version est en bêta et que la facturation électronique manque. Source : billxpert.fr, 25 novembre 2026.",
+        "simplicite": "Téléchargement sans compte, vue d'ensemble puis détail, contrôles signalés avant validation ; 19 guides d'aide. Source : billxpert.fr/produit et billxpert.fr/aide, 25 novembre 2026.",
+        "utilisation": "Devis, factures, règlements, banque, écritures, journaux, balance, TVA, bilan simplifié. Source : billxpert.fr/produit et billxpert.fr/beta, 25 novembre 2026.",
+        "puissance": "Windows seulement, bêta, multiutilisateur encore en premières fonctions, facturation électronique en développement. Source : billxpert.fr/beta et billxpert.fr/facturation-electronique, 25 novembre 2026.",
+        "reversibilite": "Données locales, avec export et restauration documentés dans l'aide. Source : billxpert.fr/aide, 25 novembre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Free local daily management and accounting; value stays limited while the version is in beta and e-invoicing is missing. Source: billxpert.fr, November 25, 2026.",
+        "simplicite": "Download without an account, overview then detail, checks flagged before validation; 19 help guides. Source: billxpert.fr/produit and billxpert.fr/aide, November 25, 2026.",
+        "utilisation": "Quotes, invoices, payments, bank, entries, journals, trial balance, VAT, simplified balance sheet. Source: billxpert.fr/produit and billxpert.fr/beta, November 25, 2026.",
+        "puissance": "Windows only, beta, early multi-user features, e-invoicing in development. Source: billxpert.fr/beta and billxpert.fr/facturation-electronique, November 25, 2026.",
+        "reversibilite": "Local data, with export and restore documented in the help center. Source: billxpert.fr/aide, November 25, 2026."
+      }
+    },
+    "tagline": {
+      "fr": "Comptabilité locale et gratuite pour TPE",
+      "en": "Free local accounting for small businesses"
+    },
+    "seo": {
+      "metaDescription": "BillXpert : avis, prix et limites du logiciel de comptabilité local et gratuit pour artisans, indépendants et TPE, sur Windows et en bêta.",
+      "metaDescriptionEn": "BillXpert review, pricing and limits: free local accounting software for tradespeople, freelancers and small businesses, on Windows and in beta.",
+      "presentationTitleFr": "BillXpert : la comptabilité gratuite, en local",
+      "presentationTitleEn": "BillXpert: free accounting, on your machine",
+      "idealForFr": "Artisans, indépendants et TPE sur Windows qui tiennent leur comptabilité eux-mêmes, sans abonnement.",
+      "idealForEn": "Tradespeople, freelancers and small businesses on Windows who keep their own books, with no subscription.",
+      "presentationMetaDescriptionFr": "BillXpert réunit devis, factures, règlements, écritures et TVA dans une application Windows gratuite, installée en local. Version bêta.",
+      "presentationMetaDescriptionEn": "BillXpert brings quotes, invoices, payments, entries and VAT together in a free Windows app installed locally. Beta version.",
+      "prixTitleFr": "Prix de BillXpert : cœur comptable gratuit",
+      "prixTitleEn": "BillXpert pricing: a free accounting core",
+      "prixMetaDescriptionFr": "Prix de BillXpert : le cœur comptable est gratuit et aucune offre payante n'existe pendant la bêta. Des plugins payants sont annoncés, sans prix.",
+      "prixMetaDescriptionEn": "BillXpert pricing: the accounting core is free and there is no paid offer during the beta. Paid plugins are announced, with no price.",
+      "altTitleFr": "Alternatives à BillXpert : Indy, Tiime, Vulko",
+      "altTitleEn": "BillXpert alternatives: Indy, Tiime, Vulko",
+      "altMetaDescriptionFr": "Besoin du cloud, du Mac ou de la facture électronique tout de suite ? Indy, Tiime et Vulko comparés à BillXpert sur l'usage, la conformité et le coût.",
+      "altMetaDescriptionEn": "Need the cloud, a Mac or e-invoicing right now? Indy, Tiime and Vulko compared with BillXpert on use, compliance and cost.",
+      "avisTitleFr": "Avis BillXpert : gratuit et local, mais encore en bêta",
+      "avisTitleEn": "BillXpert review: free and local, but still in beta",
+      "avisMetaDescriptionFr": "Avis BillXpert, noté {rating} : comptabilité complète, gratuite et locale ; Windows seulement, bêta, facturation électronique à venir.",
+      "avisMetaDescriptionEn": "BillXpert review, rated {rating}: complete, free and local accounting; Windows only, beta, e-invoicing still to come."
+    },
+    "lifecycle": {
+      "status": "active",
+      "note": "Bêta publique (version Windows 1.0.19).",
+      "checkedOn": "2026-11-25"
+    },
+    "research": {
+      "researchedOn": "2026-11-25",
+      "sources": 9
+    }
+  },
+  {
+    "id": "bracketview",
+    "slug": "bracketview",
+    "name": "BracketView",
+    "category": "nocode-web",
+    "shortDescription": "Espace de travail JSON dans le navigateur ou sur Windows et Linux : formater, valider, interroger (JSONPath, jq) et comparer des données d'API, en texte, arbre, graphe, nœuds ou tableau.",
+    "shortDescriptionEn": "JSON workspace in the browser or on Windows and Linux: format, validate, query (JSONPath, jq) and diff API data, as text, tree, graph, nodes or a table.",
+    "description": "BracketView regroupe les outils JSON qu'un développeur ouvre chaque jour dans des onglets séparés : formatage, validation en direct, requêtes JSONPath et jq, comparaison de deux documents, validation par schéma et génération de types. Le même contenu s'affiche en texte, en arbre, en graphe, en cartes de nœuds ou en tableau. Les outils de base tournent dans le navigateur, sans compte ; l'IA, les liens de partage et le testeur de webhooks passent par le serveur, seulement quand tu les utilises.",
+    "longDescription": "BracketView part d'un agacement courant : les visionneuses JSON en ligne sont souvent encombrées de publicités, lentes sur les gros fichiers, ou envoient les données à un serveur par défaut. L'espace de travail, sur app.bracketview.in, traite le formatage, la validation, l'affichage et les requêtes dans le navigateur. Une application Windows et Linux fait la même chose hors ligne, sans compte ni IA, sur des fichiers locaux plus lourds.\n\nLe JSON s'affiche de cinq façons : texte dans un éditeur Monaco, arbre repliable avec recherche, graphe des relations, cartes de nœuds reliées et tableau imbriqué. Le mode double garde l'éditeur à gauche et une vue à droite. Autour, on trouve jq complet compilé en WebAssembly, JSONPath, une comparaison côte à côte, la validation par JSON Schema ou OpenAPI, la génération de schéma et de types (TypeScript, Python, Go, Rust), un décodeur JWT et l'import YAML. L'interface existe en neuf langues, dont le français.\n\nLes fonctions serveur sont optionnelles : réparation et explication par IA (via Groq ou Google Gemini), génération de données de test, liens de partage chiffrés et temporaires, et un testeur de webhooks qui enregistre les requêtes reçues. L'éditeur prévient que ces liens et ces adresses de webhook sont publics pour qui les connaît, et qu'ils ne doivent pas servir à des secrets.\n\nLe gratuit couvre tous les outils de base. Pro sert aux fichiers volumineux, aux liens qui doivent durer et à un usage intensif de l'IA. Le produit est porté par un fondateur seul, Jameel Shaikh, sans société nommée, et l'application de bureau n'est pas signée : Windows peut l'avertir à l'installation.",
+    "longDescriptionEn": "BracketView starts from a common annoyance: online JSON viewers are often cluttered with ads, slow on large files, or send data to a server by default. The workspace, at app.bracketview.in, handles formatting, validation, display and queries in the browser. A Windows and Linux app does the same offline, with no account or AI, on heavier local files.\n\nJSON shows in five ways: text in a Monaco editor, a collapsible tree with search, a relationship graph, linked node cards and a nested table. Dual mode keeps the editor on the left and a view on the right. Around them: full jq compiled to WebAssembly, JSONPath, side-by-side diff, JSON Schema or OpenAPI validation, schema and type generation (TypeScript, Python, Go, Rust), a JWT decoder and YAML import. The interface comes in nine languages.\n\nServer features are optional: AI repair and explanation (through Groq or Google Gemini), test data generation, encrypted temporary share links, and a webhook tester that records incoming requests. The publisher warns that these links and webhook URLs are public to anyone who has them, and must not carry secrets.\n\nThe free tier covers every core tool. Pro is for large files, links that must last longer and heavy AI use. The product is run by a solo founder, Jameel Shaikh, with no company named, and the desktop app is unsigned: Windows may warn at install.",
+    "pricing": {
+      "free": "Plan gratuit durable : tous les outils de base, imports web jusqu'à 5 Mo, 20 actions IA par mois, 5 liens partagés par mois.",
+      "paid": "Pro : 3 $/mois ou 27 $/an."
+    },
+    "pricingEn": {
+      "free": "Durable free plan: every core tool, web uploads up to 5 MB, 20 AI actions a month, 5 shared links a month.",
+      "paid": "Pro: $3/month or $27/year."
+    },
+    "defaultMonthlyPrice": 2.58,
+    "compareMonthlyPrice": 2.58,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 2.58,
+      "compare_plan_name": "Pro",
+      "compare_plan_kind": "account",
+      "price_reliability": "official_explicit",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-11-25",
+      "official_source_url": "https://bracketview.in/pricing",
+      "source_domain": "bracketview.in",
+      "location_sensitive": true,
+      "usage_sensitive": false,
+      "cautions": [
+        "Prix affichés en dollars ; Razorpay facture dans la monnaie locale. TVA non précisée.",
+        "L'IA « illimitée » de Pro reste soumise à un usage raisonnable.",
+        "Le site vitrine peut afficher des publicités Google AdSense ; l'espace de travail n'en affiche pas."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Gratuit sans limite de durée : tous les outils de base, avec des plafonds sur l'IA, les imports et les liens partagés.",
+          "featureHighlights": [
+            "Vues texte, arbre, graphe, nœuds, tableau",
+            "Imports web jusqu'à 5 Mo",
+            "20 actions IA par mois"
+          ],
+          "detailsSourceUrl": "https://bracketview.in/pricing",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        },
+        {
+          "planKey": "pro-monthly",
+          "displayName": "Pro",
+          "summary": "Imports jusqu'à 50 Mo, mode Performance, IA sans plafond mensuel (usage raisonnable), liens partagés jusqu'à 2 heures.",
+          "featureHighlights": [
+            "Imports web jusqu'à 50 Mo",
+            "Mode Performance",
+            "IA sans plafond mensuel"
+          ],
+          "detailsSourceUrl": "https://bracketview.in/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 3,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        },
+        {
+          "planKey": "pro-yearly",
+          "displayName": "Pro annuel",
+          "summary": "Mêmes avantages que Pro, facturés une fois par an.",
+          "featureHighlights": [
+            "27 $ par an",
+            "Mêmes plafonds que Pro"
+          ],
+          "detailsSourceUrl": "https://bracketview.in/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 27,
+          "nativeCurrency": "USD",
+          "billingPeriod": "yearly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        }
+      ],
+      "cautionsEn": [
+        "Prices shown in US dollars; Razorpay bills in local currency. VAT not stated.",
+        "Pro's \"unlimited\" AI is subject to fair use.",
+        "The marketing site may show Google AdSense ads; the workspace does not."
+      ]
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 2.58,
+      "compare_plan_name": "Pro",
+      "compare_plan_kind": "account",
+      "price_reliability": "official_explicit",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-11-25",
+      "official_source_url": "https://bracketview.in/pricing",
+      "source_domain": "bracketview.in",
+      "location_sensitive": true,
+      "usage_sensitive": false,
+      "cautions": [
+        "Prices shown in US dollars; Razorpay bills in local currency. VAT not stated.",
+        "Pro's \"unlimited\" AI is subject to fair use.",
+        "The marketing site may show Google AdSense ads; the workspace does not."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Free with no time limit: all core tools, with caps on AI, uploads and shared links.",
+          "featureHighlights": [
+            "Text, tree, graph, node, table views",
+            "Web uploads up to 5 MB",
+            "20 AI actions a month"
+          ],
+          "detailsSourceUrl": "https://bracketview.in/pricing",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        },
+        {
+          "planKey": "pro-monthly",
+          "displayName": "Pro",
+          "summary": "Uploads up to 50 MB, Performance Mode, AI with no monthly cap (fair use), shared links up to 2 hours.",
+          "featureHighlights": [
+            "Web uploads up to 50 MB",
+            "Performance Mode",
+            "AI with no monthly cap"
+          ],
+          "detailsSourceUrl": "https://bracketview.in/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 3,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        },
+        {
+          "planKey": "pro-yearly",
+          "displayName": "Pro yearly",
+          "summary": "Same benefits as Pro, billed once a year.",
+          "featureHighlights": [
+            "$27 a year",
+            "Same caps as Pro"
+          ],
+          "detailsSourceUrl": "https://bracketview.in/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 27,
+          "nativeCurrency": "USD",
+          "billingPeriod": "yearly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        }
+      ]
+    },
+    "websiteUrl": "https://bracketview.in/",
+    "affiliateLink": "",
+    "logo": "https://bracketview.in/favicon.ico",
+    "ogImageUrl": "https://bracketview.in/og-image.webp",
+    "pros": [
+      "Les outils de base tournent dans le navigateur : ton JSON ne quitte pas ta machine pour être formaté ou interrogé.",
+      "Cinq vues et jq complet au même endroit, gratuitement, sans compte.",
+      "Une application hors ligne pour Windows et Linux ouvre de gros fichiers locaux."
+    ],
+    "prosEn": [
+      "Core tools run in the browser: your JSON stays on your machine to be formatted or queried.",
+      "Five views and full jq in one place, for free, with no account.",
+      "An offline Windows and Linux app opens large local files."
+    ],
+    "cons": [
+      "Les liens de partage et les adresses de webhook sont publics pour qui les connaît : rien de sensible dedans.",
+      "Projet porté par un fondateur seul, sans société nommée.",
+      "Application de bureau non signée et pas de version Mac."
+    ],
+    "consEn": [
+      "Share links and webhook URLs are public to anyone who has them: nothing sensitive in them.",
+      "A solo-founder project, with no company named.",
+      "Unsigned desktop app and no Mac version."
+    ],
+    "useCases": [
+      "Lire et déboguer une réponse d'API trop longue pour être parcourue à l'œil.",
+      "Extraire une partie d'un gros document avec jq ou JSONPath, sans écrire de script.",
+      "Comparer deux versions d'une configuration ou d'une réponse.",
+      "Recevoir et inspecter les webhooks d'un service pendant une intégration."
+    ],
+    "useCasesEn": [
+      "Read and debug an API response too long to scan by eye.",
+      "Pull part of a large document with jq or JSONPath, without writing a script.",
+      "Compare two versions of a config or a response.",
+      "Receive and inspect a service's webhooks during an integration."
+    ],
+    "relevantFor": [
+      "Développeurs freelances qui intègrent des API",
+      "Créateurs no-code qui manipulent des réponses JSON d'automatisations",
+      "Analystes qui reçoivent des exports en JSON"
+    ],
+    "relevantForEn": [
+      "Freelance developers integrating APIs",
+      "No-code builders handling JSON from automations",
+      "Analysts receiving JSON exports"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu ouvres du JSON chaque semaine et tu jongles entre plusieurs sites de formatage.",
+        "Tu veux que tes données restent dans le navigateur pour les opérations courantes."
+      ],
+      "avoidIf": [
+        "Tu travailles déjà dans un client d'API comme Postman ou Insomnia, qui couvre ton besoin.",
+        "Tu manipules des données sensibles et comptais sur les liens de partage ou le testeur de webhooks."
+      ],
+      "threshold": "Le gratuit suffit à la plupart des usages. Pro ne se justifie que si tu dépasses régulièrement 5 Mo par fichier sur le web ou les 20 actions IA mensuelles."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You open JSON every week and juggle several formatting sites.",
+        "You want your data to stay in the browser for everyday operations."
+      ],
+      "avoidIf": [
+        "You already work in an API client like Postman or Insomnia that covers your needs.",
+        "You handle sensitive data and planned to use share links or the webhook tester."
+      ],
+      "threshold": "The free tier covers most uses. Pro only makes sense if you regularly go past 5 MB per file on the web or the 20 monthly AI actions."
+    },
+    "alternatives": [
+      "postman",
+      "insomnia"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo",
+      "ai-builder",
+      "data-analyst"
+    ],
+    "functional_needs": [
+      "json-tools",
+      "api-debugging",
+      "webhook-testing"
+    ],
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "json_frequency",
+      "data_sensitivity"
+    ],
+    "substitution_cluster_v2": "api-client",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "L'intérêt dépend de la fréquence à laquelle tu manipules du JSON et de la sensibilité des données.",
+      "default_decision_lane": "review_then_prescribe"
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 5,
+      "notedOn": "2026-11-25",
+      "lastActivityVerifiedOn": "2026-11-25",
+      "evidence": {
+        "valeurAjoutee": "Remplace plusieurs sites de formatage, de requête et de comparaison par un seul espace, gratuit pour l'essentiel. Source : bracketview.in, 25 novembre 2026.",
+        "simplicite": "Coller, puis choisir une vue ; aucun compte pour les outils de base. Source : bracketview.in et bracketview.in/features, 25 novembre 2026.",
+        "utilisation": "Cinq vues, jq, JSONPath, comparaison, schéma, types, JWT, YAML, webhooks, IA. Source : bracketview.in/features, 25 novembre 2026.",
+        "puissance": "jq complet en WebAssembly, fichiers jusqu'à 50 Mo en Pro sur le web et 200 Mo sur l'application de bureau. Source : bracketview.in/pricing et bracketview.in/downloads, 25 novembre 2026.",
+        "reversibilite": "Aucune donnée enfermée : le JSON reste un fichier texte, traité localement pour les outils de base. Source : bracketview.in/privacy, 25 novembre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Replaces several formatting, query and diff sites with one workspace, free for the essentials. Source: bracketview.in, November 25, 2026.",
+        "simplicite": "Paste, then pick a view; no account for core tools. Source: bracketview.in and bracketview.in/features, November 25, 2026.",
+        "utilisation": "Five views, jq, JSONPath, diff, schema, types, JWT, YAML, webhooks, AI. Source: bracketview.in/features, November 25, 2026.",
+        "puissance": "Full jq in WebAssembly, files up to 50 MB on Pro on the web and 200 MB in the desktop app. Source: bracketview.in/pricing and bracketview.in/downloads, November 25, 2026.",
+        "reversibilite": "No data lock-in: JSON stays a text file, processed locally for core tools. Source: bracketview.in/privacy, November 25, 2026."
+      }
+    },
+    "tagline": {
+      "fr": "Tout le JSON au même endroit",
+      "en": "All your JSON work in one place"
+    },
+    "seo": {
+      "metaDescription": "BracketView : avis, prix et limites de l'espace de travail JSON qui formate, valide, interroge et compare tes données dans le navigateur.",
+      "metaDescriptionEn": "BracketView review, pricing and limits: the JSON workspace that formats, validates, queries and diffs your data in the browser.",
+      "presentationTitleFr": "BracketView : lire, interroger et comparer du JSON",
+      "presentationTitleEn": "BracketView: read, query and diff JSON",
+      "idealForFr": "Développeurs, créateurs no-code et analystes qui manipulent du JSON chaque semaine.",
+      "idealForEn": "Developers, no-code builders and analysts who handle JSON every week.",
+      "presentationMetaDescriptionFr": "BracketView affiche ton JSON en texte, arbre, graphe, nœuds ou tableau, avec jq, JSONPath, comparaison et schéma, dans le navigateur.",
+      "presentationMetaDescriptionEn": "BracketView shows your JSON as text, tree, graph, nodes or a table, with jq, JSONPath, diff and schema, in the browser.",
+      "prixTitleFr": "Prix de BracketView : Pro dès {price}",
+      "prixTitleEn": "BracketView pricing: Pro from {price}",
+      "prixMetaDescriptionFr": "Prix de BracketView : plan gratuit durable avec tous les outils de base, Pro dès {price} par mois pour les gros fichiers et l'IA sans plafond.",
+      "prixMetaDescriptionEn": "BracketView pricing: a durable free plan with every core tool, Pro from {price} a month for large files and uncapped AI.",
+      "altTitleFr": "Alternatives à BracketView : Postman, Insomnia",
+      "altTitleEn": "BracketView alternatives: Postman, Insomnia",
+      "altMetaDescriptionFr": "Besoin d'envoyer des requêtes, pas seulement de lire du JSON ? Postman et Insomnia comparés à BracketView sur l'usage et le coût.",
+      "altMetaDescriptionEn": "Need to send requests, not just read JSON? Postman and Insomnia compared with BracketView on use and cost.",
+      "avisTitleFr": "Avis BracketView : un vrai couteau suisse du JSON",
+      "avisTitleEn": "BracketView review: a real JSON multitool",
+      "avisMetaDescriptionFr": "Avis BracketView, noté {rating} : cinq vues, jq et traitement local, gratuit pour l'essentiel ; projet solo, liens de partage publics.",
+      "avisMetaDescriptionEn": "BracketView review, rated {rating}: five views, jq and local processing, free for the essentials; solo project, public share links."
+    },
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-11-25"
+    },
+    "research": {
+      "researchedOn": "2026-11-25",
+      "sources": 7
+    }
+  },
+  {
+    "id": "makelead",
+    "slug": "makelead",
+    "name": "Makelead",
+    "category": "automation",
+    "shortDescription": "Outil de prospection automatisée sur LinkedIn et X, avec agents IA, relances, setter IA et rédaction de posts dans ta voix, pour indépendants et petites équipes commerciales.",
+    "shortDescriptionEn": "Automated prospecting on LinkedIn and X, with AI agents, follow-ups, an AI setter and posts written in your voice, for freelancers and small sales teams.",
+    "description": "Makelead automatise la prospection B2B sur LinkedIn et X. Tu décris ta cible, valides le message et le rythme ; des agents IA trouvent ensuite les prospects chaque jour, envoient invitations, message et deux relances, et un setter IA répond pour caler le rendez-vous. L'outil écrit aussi tes posts LinkedIn et X dans ta voix, et les personnes qui y réagissent entrent dans ta prospection. Les envois sont plafonnés pour protéger ton compte, mais c'est bien de l'automatisation : le risque de restriction par LinkedIn n'est jamais nul.",
+    "longDescription": "Makelead s'adresse aux indépendants, fondateurs et petites équipes qui vendent en B2B et veulent un flux régulier de prospects sans y passer leurs journées. Il réunit deux métiers : la prospection et la création de contenu.\n\nCôté prospection, la recherche se fait par poste, secteur et lieu, à partir des personnes qui réagissent à un post, ou depuis un fichier importé. Les agents IA cherchent chaque jour selon ta cible, envoient l'invitation, puis un message et deux relances au plus, stoppées dès que la personne répond. À partir de Growth, l'IA rédige les messages, un setter IA répond aux prospects pour proposer ton lien de rendez-vous, et la prospection s'étend à X. Business ajoute l'e-mail, avec des adresses professionnelles trouvées par des fournisseurs tiers.\n\nCôté contenu, Makelead rédige tes posts LinkedIn et X à partir de tes projets et d'une base de posts B2B ; rien n'est publié sans ta relecture. Les intégrations couvrent HubSpot, Calendly, Google Agenda, Zapier, Make et n8n, ainsi que ChatGPT et Claude par MCP.\n\nLe point à peser est le compte LinkedIn. Makelead plafonne les invitations à 80 par jour et 200 sur sept jours, fait monter un compte neuf sur trois semaines et coupe tout pendant 24 heures au moindre signal de LinkedIn. L'éditeur reconnaît qu'aucun outil ne peut promettre un risque nul : les conditions de LinkedIn n'autorisent pas l'automatisation d'actions. Makelead est édité par un entrepreneur individuel basé à Montrouge, et ses données sont hébergées à Francfort.",
+    "longDescriptionEn": "Makelead targets freelancers, founders and small teams selling B2B who want a steady flow of prospects without spending their days on it. It combines two jobs: prospecting and content creation.\n\nFor prospecting, search works by title, industry and location, from the people who react to a post, or from an imported file. AI agents search daily against your target, send the invitation, then a message and at most two follow-ups, stopped as soon as the person replies. From Growth, AI writes the messages, an AI setter replies to prospects to offer your booking link, and prospecting extends to X. Business adds email, with work addresses found by third-party providers.\n\nFor content, Makelead writes your LinkedIn and X posts from your projects and a base of B2B posts; nothing is published without your review. Integrations cover HubSpot, Calendly, Google Calendar, Zapier, Make and n8n, plus ChatGPT and Claude through MCP.\n\nThe point to weigh is your LinkedIn account. Makelead caps invitations at 80 a day and 200 over seven days, ramps a new account up over three weeks and stops everything for 24 hours at the first LinkedIn warning. The publisher admits no tool can promise zero risk: LinkedIn's terms do not allow automated actions. Makelead is published by a sole trader based near Paris, and its data is hosted in Frankfurt.",
+    "pricing": {
+      "free": "Pas de plan gratuit ni d'essai annoncé ; carte demandée pour commencer.",
+      "paid": "Starter : 49 €/mois ; Growth : 99 €/mois ; Business : 169 €/mois. Sans TVA (franchise). −15 % en trimestriel, −30 % en annuel. Offre équipe par commercial."
+    },
+    "pricingEn": {
+      "free": "No free plan or trial announced; a card is required to start.",
+      "paid": "Starter: €49/month; Growth: €99/month; Business: €169/month. No VAT (exemption). −15% quarterly, −30% yearly. Team offer per sales rep."
+    },
+    "defaultMonthlyPrice": 49,
+    "compareMonthlyPrice": 49,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 49,
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "monthly",
+      "price_reliability": "official_explicit",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-11-25",
+      "official_source_url": "https://makelead.io/prix",
+      "source_domain": "makelead.io",
+      "location_sensitive": true,
+      "usage_sensitive": false,
+      "cautions": [
+        "Prix sans TVA : l'éditeur est un entrepreneur individuel en franchise (art. 293 B du CGI). Paiement trimestriel à −15 %, annuel à −30 %.",
+        "Pas de plan gratuit ni d'essai annoncé ; une carte est demandée pour commencer. Sans engagement, résiliation en un clic.",
+        "La page anglaise affiche d'autres montants, en dollars ; cette fiche suit la page française.",
+        "Offre équipe par commercial, avec −10 % dès 3 et −20 % dès 6 commerciaux."
+      ],
+      "plans": [
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "Prospection LinkedIn : 400 invitations par mois, message et deux relances, 2 agents IA, 45 posts.",
+          "featureHighlights": [
+            "400 invitations LinkedIn par mois",
+            "2 agents IA",
+            "45 posts par mois"
+          ],
+          "detailsSourceUrl": "https://makelead.io/prix",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 49,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "not_applicable",
+          "observedMarket": "France",
+          "observedLocale": "fr",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        },
+        {
+          "planKey": "growth",
+          "displayName": "Growth",
+          "summary": "Ajoute la prospection sur X, les messages IA, le setter IA et les prospects chauds.",
+          "featureHighlights": [
+            "600 invitations par mois",
+            "3 agents IA",
+            "Setter IA et prospection X"
+          ],
+          "detailsSourceUrl": "https://makelead.io/prix",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "not_applicable",
+          "observedMarket": "France",
+          "observedLocale": "fr",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "summary": "Ajoute la prospection par e-mail, 500 e-mails professionnels trouvés et un accompagnement hebdomadaire.",
+          "featureHighlights": [
+            "800 invitations par mois",
+            "5 agents IA",
+            "Prospection e-mail"
+          ],
+          "detailsSourceUrl": "https://makelead.io/prix",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 169,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "not_applicable",
+          "observedMarket": "France",
+          "observedLocale": "fr",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        }
+      ],
+      "cautionsEn": [
+        "No VAT: the publisher is a sole trader under the French VAT exemption (art. 293 B CGI). Quarterly billing −15%, yearly −30%.",
+        "No free plan or trial announced; a card is required to start. No commitment, one-click cancellation.",
+        "The English page shows other amounts, in US dollars; this listing follows the French page.",
+        "A team offer per sales rep, −10% from 3 reps and −20% from 6."
+      ]
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 49,
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "monthly",
+      "price_reliability": "official_explicit",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-11-25",
+      "official_source_url": "https://makelead.io/prix",
+      "source_domain": "makelead.io",
+      "location_sensitive": true,
+      "usage_sensitive": false,
+      "cautions": [
+        "No VAT: the publisher is a sole trader under the French VAT exemption (art. 293 B CGI). Quarterly billing −15%, yearly −30%.",
+        "No free plan or trial announced; a card is required to start. No commitment, one-click cancellation.",
+        "The English page shows other amounts, in US dollars; this listing follows the French page.",
+        "A team offer per sales rep, −10% from 3 reps and −20% from 6."
+      ],
+      "plans": [
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "LinkedIn prospecting: 400 invitations a month, a message and two follow-ups, 2 AI agents, 45 posts.",
+          "featureHighlights": [
+            "400 LinkedIn invitations a month",
+            "2 AI agents",
+            "45 posts a month"
+          ],
+          "detailsSourceUrl": "https://makelead.io/prix",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 49,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "not_applicable",
+          "observedMarket": "France",
+          "observedLocale": "fr",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        },
+        {
+          "planKey": "growth",
+          "displayName": "Growth",
+          "summary": "Adds X prospecting, AI messages, the AI setter and warm prospects.",
+          "featureHighlights": [
+            "600 invitations a month",
+            "3 AI agents",
+            "AI setter and X prospecting"
+          ],
+          "detailsSourceUrl": "https://makelead.io/prix",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "not_applicable",
+          "observedMarket": "France",
+          "observedLocale": "fr",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "summary": "Adds email prospecting, 500 business emails found and weekly coaching.",
+          "featureHighlights": [
+            "800 invitations a month",
+            "5 AI agents",
+            "Email prospecting"
+          ],
+          "detailsSourceUrl": "https://makelead.io/prix",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 169,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "not_applicable",
+          "observedMarket": "France",
+          "observedLocale": "fr",
+          "observedOn": "2026-11-25",
+          "lastConfirmedOn": "2026-11-25"
+        }
+      ]
+    },
+    "websiteUrl": "https://makelead.io/",
+    "affiliateLink": "",
+    "logo": "https://makelead.io/favicon.ico",
+    "ogImageUrl": "https://makelead.io/og-lp-fr-v4.png",
+    "pros": [
+      "Prospection, relances, réponses et posts dans un seul outil, pensé pour un indépendant.",
+      "Plafonds d'envoi chiffrés et publiés, avec montée progressive et arrêt automatique au moindre signal.",
+      "Données hébergées dans l'Union européenne, et une page pour que les prospects demandent à ne plus être contactés."
+    ],
+    "prosEn": [
+      "Prospecting, follow-ups, replies and posts in one tool, built for a solo seller.",
+      "Sending caps stated in figures, with a gradual ramp-up and an automatic stop at the first warning.",
+      "Data hosted in the EU, and a page where prospects can ask not to be contacted again."
+    ],
+    "cons": [
+      "Automatiser des actions sur LinkedIn va contre ses conditions : le risque de restriction du compte reste réel.",
+      "Pas de plan gratuit ni d'essai annoncé, carte demandée dès le départ.",
+      "Un setter IA qui répond à ta place peut donner aux prospects une réponse qui ne te ressemble pas.",
+      "Éditeur entrepreneur individuel, et montants différents entre les pages française et anglaise."
+    ],
+    "consEn": [
+      "Automating actions on LinkedIn goes against its terms: the risk of account restriction is real.",
+      "No free plan or trial announced, and a card is required from the start.",
+      "An AI setter replying for you can give prospects an answer that does not sound like you.",
+      "A sole-trader publisher, and different amounts on the French and English pages."
+    ],
+    "useCases": [
+      "Lancer une prospection LinkedIn régulière sans y passer ses journées.",
+      "Transformer les personnes qui réagissent à tes posts en prospects contactés.",
+      "Relancer automatiquement et arrêter dès que le prospect répond.",
+      "Écrire et programmer des posts LinkedIn et X dans ta voix."
+    ],
+    "useCasesEn": [
+      "Run steady LinkedIn prospecting without spending your days on it.",
+      "Turn the people who react to your posts into contacted prospects.",
+      "Follow up automatically and stop as soon as the prospect replies.",
+      "Write and schedule LinkedIn and X posts in your voice."
+    ],
+    "relevantFor": [
+      "Indépendants et consultants qui cherchent des clients B2B sur LinkedIn",
+      "Fondateurs qui vendent eux-mêmes et manquent de temps pour prospecter",
+      "Petites équipes commerciales qui veulent un agent par commercial"
+    ],
+    "relevantForEn": [
+      "Freelancers and consultants looking for B2B clients on LinkedIn",
+      "Founders who sell themselves and lack time to prospect",
+      "Small sales teams wanting one agent per rep"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu vends en B2B, LinkedIn est ton canal principal, et tu acceptes le risque lié à l'automatisation.",
+        "Tu veux réunir prospection et création de posts dans un seul abonnement."
+      ],
+      "avoidIf": [
+        "Ton compte LinkedIn est trop précieux pour courir un risque de restriction.",
+        "Tu préfères écrire et envoyer chaque message toi-même : un outil d'aide sans automatisation te conviendra mieux."
+      ],
+      "threshold": "Commence par Starter, en mensuel, sur un mois complet. Compte les rendez-vous obtenus : si un seul client couvre plusieurs mois d'abonnement, passe à Growth pour le setter IA ; sinon, revois ta cible avant de monter en gamme."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You sell B2B, LinkedIn is your main channel, and you accept the risk that comes with automation.",
+        "You want prospecting and post writing in one subscription."
+      ],
+      "avoidIf": [
+        "Your LinkedIn account is too valuable to risk a restriction.",
+        "You prefer to write and send every message yourself: an assistant without automation will suit you better."
+      ],
+      "threshold": "Start with Starter, monthly, for one full month. Count the meetings booked: if one client covers several months of subscription, move to Growth for the AI setter; if not, rework your target before upgrading."
+    },
+    "alternatives": [
+      "waalaxy",
+      "la-growth-machine",
+      "lemlist",
+      "taplio"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas",
+      "business-ops"
+    ],
+    "functional_needs": [
+      "automatisation",
+      "prospection",
+      "lead-generation",
+      "content-generation"
+    ],
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "linkedin_account_risk_tolerance",
+      "prospecting_volume",
+      "sales_cycle"
+    ],
+    "substitution_cluster_v2": "linkedin-automation",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "L'intérêt dépend des rendez-vous réellement obtenus et du risque accepté sur le compte LinkedIn.",
+      "default_decision_lane": "review_then_prescribe"
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-11-25",
+      "lastActivityVerifiedOn": "2026-11-25",
+      "evidence": {
+        "valeurAjoutee": "Réunit recherche de prospects, séquences, réponses et posts pour un indépendant B2B. Source : makelead.io et makelead.io/prix, 25 novembre 2026.",
+        "simplicite": "Mise en place annoncée en quelques minutes : connexion du compte, description de la cible. Source : makelead.io/faq, 25 novembre 2026.",
+        "utilisation": "Agents IA, séquences, setter IA, prospection X et e-mail, posts, intégrations et MCP. Source : makelead.io/fonctionnalites, 25 novembre 2026.",
+        "puissance": "Jusqu'à 800 invitations par mois et 5 agents en Business, plafonnés par les limites de LinkedIn. Source : makelead.io/prix et makelead.io/securite, 25 novembre 2026.",
+        "reversibilite": "Sans engagement et résiliation en un clic ; l'export des données n'est pas détaillé sur les pages consultées. Source : makelead.io/prix, 25 novembre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Combines prospect search, sequences, replies and posts for a B2B freelancer. Source: makelead.io and makelead.io/prix, November 25, 2026.",
+        "simplicite": "Setup announced in a few minutes: connect the account, describe the target. Source: makelead.io/faq, November 25, 2026.",
+        "utilisation": "AI agents, sequences, AI setter, X and email prospecting, posts, integrations and MCP. Source: makelead.io/fonctionnalites, November 25, 2026.",
+        "puissance": "Up to 800 invitations a month and 5 agents on Business, capped by LinkedIn's limits. Source: makelead.io/prix and makelead.io/securite, November 25, 2026.",
+        "reversibilite": "No commitment and one-click cancellation; data export is not detailed on the pages reviewed. Source: makelead.io/prix, November 25, 2026."
+      }
+    },
+    "tagline": {
+      "fr": "Prospection LinkedIn et X par agents IA",
+      "en": "LinkedIn and X prospecting with AI agents"
+    },
+    "seo": {
+      "metaDescription": "Makelead : avis, prix et limites de l'outil de prospection automatisée LinkedIn et X, avec agents IA, setter IA et posts, pour indépendants.",
+      "metaDescriptionEn": "Makelead review, pricing and limits: automated LinkedIn and X prospecting with AI agents, an AI setter and posts, for freelancers.",
+      "presentationTitleFr": "Makelead : prospecter sur LinkedIn avec des agents IA",
+      "presentationTitleEn": "Makelead: LinkedIn prospecting with AI agents",
+      "idealForFr": "Indépendants, consultants et fondateurs qui vendent en B2B sur LinkedIn et acceptent une prospection automatisée.",
+      "idealForEn": "Freelancers, consultants and founders selling B2B on LinkedIn who accept automated prospecting.",
+      "presentationMetaDescriptionFr": "Makelead trouve tes prospects sur LinkedIn et X, envoie invitations et relances, répond avec un setter IA et écrit tes posts. Envois plafonnés.",
+      "presentationMetaDescriptionEn": "Makelead finds your prospects on LinkedIn and X, sends invitations and follow-ups, replies with an AI setter and writes your posts. Capped sending.",
+      "prixTitleFr": "Prix de Makelead : Starter dès {price}",
+      "prixTitleEn": "Makelead pricing: Starter from {price}",
+      "prixMetaDescriptionFr": "Prix de Makelead : Starter dès {price} par mois, Growth avec setter IA, Business avec e-mail. Sans TVA, −30 % en annuel, sans engagement.",
+      "prixMetaDescriptionEn": "Makelead pricing: Starter from {price} a month, Growth with an AI setter, Business with email. No VAT, −30% yearly, no commitment.",
+      "altTitleFr": "Alternatives à Makelead : Waalaxy, La Growth Machine, lemlist",
+      "altTitleEn": "Makelead alternatives: Waalaxy, La Growth Machine, lemlist",
+      "altMetaDescriptionFr": "Waalaxy, La Growth Machine, lemlist et Taplio comparés à Makelead sur l'automatisation LinkedIn, l'e-mail, le contenu et le coût.",
+      "altMetaDescriptionEn": "Waalaxy, La Growth Machine, lemlist and Taplio compared with Makelead on LinkedIn automation, email, content and cost.",
+      "avisTitleFr": "Avis Makelead : la prospection qui tourne sans toi",
+      "avisTitleEn": "Makelead review: prospecting that runs without you",
+      "avisMetaDescriptionFr": "Avis Makelead, noté {rating} : prospection, relances et posts réunis, envois plafonnés ; risque LinkedIn réel, pas d'essai gratuit.",
+      "avisMetaDescriptionEn": "Makelead review, rated {rating}: prospecting, follow-ups and posts together, capped sending; real LinkedIn risk, no free trial."
+    },
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-11-25"
+    },
+    "research": {
+      "researchedOn": "2026-11-25",
+      "sources": 8
+    }
   }
 ]

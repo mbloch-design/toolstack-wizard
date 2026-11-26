@@ -1,0 +1,353 @@
+{
+  "id": "commenty",
+  "slug": "commenty",
+  "name": "Commenty",
+  "category": "creation",
+  "shortDescription": "Extension Chrome qui t'aide à écrire tes commentaires LinkedIn dans ta propre voix : tu commences, elle continue, tu relis et tu publies toi-même.",
+  "shortDescriptionEn": "Chrome extension that helps you write LinkedIn comments in your own voice: you start, it continues, you review and post it yourself.",
+  "description": "Commenty s'ajoute sous chaque zone de commentaire LinkedIn. Tu tapes les premiers mots de ce que tu penses, l'extension continue dans ton style, ou rédige un brouillon complet si tu le demandes. Rien ne part sans toi : tu relis, tu modifies et tu cliques sur Publier. Avec ton accord, elle apprend ta voix à partir des commentaires que tu publies vraiment, et chaque dimanche un bilan propose jusqu'à cinq conversations à relancer avec des gens que tu connais déjà.",
+  "longDescription": "Commenty part d'un constat simple : un commentaire générique abîme plus une réputation qu'il ne l'aide. L'extension Chrome propose trois modes sous chaque commentaire LinkedIn : écrire seul, faire continuer ta phrase, ou demander un brouillon complet, avec quatre tons au choix et une consigne libre. Elle lit le contexte du post (texte, auteur, sujet) et mesure, sur le commentaire final, la part de formulation qui vient de toi.\n\nLe profil de voix est optionnel et désactivé par défaut. Une fois activé, il apprend ton vocabulaire, ton rythme et tes tournures à partir des commentaires que tu publies, en priorité ceux que tu as écrits seul. Pendant la première semaine, tu peux importer tes anciens commentaires depuis ta page d'activité LinkedIn. Commenty écrit en anglais et dans la langue du post ; l'éditeur dit l'avoir testé sur les langues européennes, le russe, l'ukrainien, l'arabe et le persan.\n\nLe second volet porte sur les relations : réponses, mentions et mentions J'aime autour de tes commentaires sont regroupées par personne, et un bilan hebdomadaire désigne jusqu'à cinq conversations qui méritent une suite. Ce ne sont pas des prospects : ce sont des gens avec qui tu as déjà échangé.\n\nCommenty ne demande ni mot de passe ni cookie LinkedIn, ne publie rien automatiquement et ne travaille que sur la page ouverte. L'éditeur reconnaît qu'aucun outil tiers ne peut garantir l'absence de restriction de compte, et Commenty n'est pas affilié à LinkedIn. Les serveurs sont aux États-Unis, chez Hivelocity, et les fonctions d'IA passent notamment par Google Gemini. Les pages consultées ne nomment pas la société éditrice.",
+  "longDescriptionEn": "Commenty starts from a simple point: a generic comment hurts a reputation more than it helps. The Chrome extension offers three modes under each LinkedIn comment box: write alone, have it continue your sentence, or ask for a full draft, with four tones and a free instruction. It reads the post's context (text, author, topic) and measures, on the final comment, how much of the wording came from you.\n\nThe voice profile is optional and off by default. Once on, it learns your vocabulary, rhythm and phrasing from the comments you actually post, favouring those you wrote alone. During the first week you can import your earlier comments from your LinkedIn activity page. Commenty writes in English or in the post's language; the publisher says it tested European languages, Russian, Ukrainian, Arabic and Persian.\n\nThe second part is about relationships: replies, mentions and likes around your comments are grouped by person, and a weekly brief points to up to five conversations worth continuing. These are not prospects: they are people you have already talked with.\n\nCommenty asks for no LinkedIn password or cookie, posts nothing automatically and only works on the page you have open. The publisher admits no third-party tool can guarantee your account will not be restricted, and Commenty is not affiliated with LinkedIn. Servers are in the United States, at Hivelocity, and AI features go through Google Gemini among others. The pages reviewed do not name the company behind it.",
+  "pricing": {
+    "free": "Essai gratuit de 14 jours sans carte, jusqu'à 20 commentaires par jour. Pas de plan gratuit garanti ensuite (CGU et FAQ divergent).",
+    "paid": "Starter : 15 $/mois ou 100 $/an ; Professional : 29 $/mois ou 200 $/an. Taxes incluses."
+  },
+  "pricingEn": {
+    "free": "A 14-day free trial with no card, up to 20 comments a day. No guaranteed free plan afterwards (terms and FAQ disagree).",
+    "paid": "Starter: $15/month or $100/year; Professional: $29/month or $200/year. Taxes included."
+  },
+  "defaultMonthlyPrice": 12.88,
+  "compareMonthlyPrice": 12.88,
+  "pricing_v5": {
+    "compare_price_monthly_eur": 12.88,
+    "compare_plan_name": "Starter",
+    "compare_plan_kind": "account",
+    "price_reliability": "high",
+    "verification_status": "official_explicit",
+    "verified_on": "2026-11-25",
+    "official_source_url": "https://commenty.ai/#pricing",
+    "source_domain": "commenty.ai",
+    "location_sensitive": false,
+    "usage_sensitive": false,
+    "cautions": [
+      "Prix en dollars, taxes incluses selon les CGU. Starter et Professional ne diffèrent que par la limite quotidienne.",
+      "Essai gratuit de 14 jours, pas un plan gratuit garanti : les CGU coupent les suggestions à la fin de l'essai, la FAQ annonce 5 commentaires par jour aux comptes gratuits.",
+      "Remboursement complet possible dans les 14 jours suivant le premier paiement. Offres à vie vendues via AppSumo, avec leurs propres règles."
+    ],
+    "plans": [
+      {
+        "planKey": "trial",
+        "displayName": "Free (essai 14 jours)",
+        "summary": "Essai de 14 jours sans carte, jusqu'à 20 commentaires assistés publiés par jour.",
+        "featureHighlights": [
+          "20 commentaires par jour pendant 14 jours",
+          "Profil de voix",
+          "Suggestions selon le contexte"
+        ],
+        "detailsSourceUrl": "https://commenty.ai/#pricing",
+        "pricingUnit": "account",
+        "isFree": true,
+        "isComparePlan": false,
+        "nativeAmount": 0,
+        "nativeCurrency": "USD",
+        "billingPeriod": "monthly",
+        "taxInclusion": "included",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      },
+      {
+        "planKey": "starter",
+        "displayName": "Starter",
+        "summary": "20 commentaires assistés par jour ; 100 $ par an en annuel.",
+        "featureHighlights": [
+          "20 commentaires par jour",
+          "Profil de voix",
+          "Suivi des relations"
+        ],
+        "detailsSourceUrl": "https://commenty.ai/#pricing",
+        "pricingUnit": "account",
+        "isFree": false,
+        "isComparePlan": true,
+        "nativeAmount": 15,
+        "nativeCurrency": "USD",
+        "billingPeriod": "monthly",
+        "taxInclusion": "included",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      },
+      {
+        "planKey": "professional",
+        "displayName": "Professional",
+        "summary": "50 commentaires assistés par jour ; 200 $ par an en annuel.",
+        "featureHighlights": [
+          "50 commentaires par jour",
+          "Profil de voix",
+          "Suivi des relations"
+        ],
+        "detailsSourceUrl": "https://commenty.ai/#pricing",
+        "pricingUnit": "account",
+        "isFree": false,
+        "isComparePlan": false,
+        "nativeAmount": 29,
+        "nativeCurrency": "USD",
+        "billingPeriod": "monthly",
+        "taxInclusion": "included",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      }
+    ],
+    "cautionsEn": [
+      "Prices in US dollars, taxes included according to the terms. Starter and Professional differ only by the daily limit.",
+      "A 14-day free trial, not a guaranteed free plan: the terms stop suggestions when the trial ends, the FAQ says free accounts keep 5 comments a day.",
+      "Full refund possible within 14 days of the first payment. Lifetime deals are sold through AppSumo, under their own rules."
+    ]
+  },
+  "pricing_v5En": {
+    "compare_price_monthly_eur": 12.88,
+    "compare_plan_name": "Starter",
+    "compare_plan_kind": "account",
+    "price_reliability": "high",
+    "verification_status": "official_explicit",
+    "verified_on": "2026-11-25",
+    "official_source_url": "https://commenty.ai/#pricing",
+    "source_domain": "commenty.ai",
+    "location_sensitive": false,
+    "usage_sensitive": false,
+    "cautions": [
+      "Prices in US dollars, taxes included according to the terms. Starter and Professional differ only by the daily limit.",
+      "A 14-day free trial, not a guaranteed free plan: the terms stop suggestions when the trial ends, the FAQ says free accounts keep 5 comments a day.",
+      "Full refund possible within 14 days of the first payment. Lifetime deals are sold through AppSumo, under their own rules."
+    ],
+    "plans": [
+      {
+        "planKey": "trial",
+        "displayName": "Free (14-day trial)",
+        "summary": "A 14-day trial with no card, up to 20 assisted comments published a day.",
+        "featureHighlights": [
+          "20 comments a day for 14 days",
+          "Voice profile",
+          "Context-aware suggestions"
+        ],
+        "detailsSourceUrl": "https://commenty.ai/#pricing",
+        "pricingUnit": "account",
+        "isFree": true,
+        "isComparePlan": false,
+        "nativeAmount": 0,
+        "nativeCurrency": "USD",
+        "billingPeriod": "monthly",
+        "taxInclusion": "included",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      },
+      {
+        "planKey": "starter",
+        "displayName": "Starter",
+        "summary": "20 assisted comments a day; $100 a year billed yearly.",
+        "featureHighlights": [
+          "20 comments a day",
+          "Voice profile",
+          "Relationship tracking"
+        ],
+        "detailsSourceUrl": "https://commenty.ai/#pricing",
+        "pricingUnit": "account",
+        "isFree": false,
+        "isComparePlan": true,
+        "nativeAmount": 15,
+        "nativeCurrency": "USD",
+        "billingPeriod": "monthly",
+        "taxInclusion": "included",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      },
+      {
+        "planKey": "professional",
+        "displayName": "Professional",
+        "summary": "50 assisted comments a day; $200 a year billed yearly.",
+        "featureHighlights": [
+          "50 comments a day",
+          "Voice profile",
+          "Relationship tracking"
+        ],
+        "detailsSourceUrl": "https://commenty.ai/#pricing",
+        "pricingUnit": "account",
+        "isFree": false,
+        "isComparePlan": false,
+        "nativeAmount": 29,
+        "nativeCurrency": "USD",
+        "billingPeriod": "monthly",
+        "taxInclusion": "included",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      }
+    ]
+  },
+  "websiteUrl": "https://commenty.ai/",
+  "affiliateLink": "",
+  "logo": "https://commenty.ai/favicon.ico",
+  "ogImageUrl": "https://commenty.ai/og-banner.png",
+  "pros": [
+    "Part de tes propres mots au lieu d'écrire à ta place : le commentaire reste le tien.",
+    "Ne publie jamais seul et ne demande ni mot de passe ni cookie LinkedIn.",
+    "Le bilan du dimanche transforme les commentaires en quelques relations à entretenir."
+  ],
+  "prosEn": [
+    "Starts from your own words instead of writing for you: the comment stays yours.",
+    "Never posts on its own and asks for no LinkedIn password or cookie.",
+    "The Sunday brief turns comments into a few relationships worth keeping up."
+  ],
+  "cons": [
+    "Chrome uniquement : les autres navigateurs Chromium ne sont ni pris en charge ni testés.",
+    "Ce qui reste gratuit après l'essai n'est pas clair : les CGU et la FAQ se contredisent.",
+    "Limite quotidienne de commentaires assistés, même sur la formule la plus chère.",
+    "Société éditrice non nommée ; données hébergées aux États-Unis."
+  ],
+  "consEn": [
+    "Chrome only: other Chromium browsers are neither supported nor tested.",
+    "What stays free after the trial is unclear: the terms and the FAQ contradict each other.",
+    "A daily cap on assisted comments, even on the most expensive plan.",
+    "The company is not named; data is hosted in the United States."
+  ],
+  "useCases": [
+    "Commenter chaque jour les posts de ton secteur sans y passer une heure.",
+    "Terminer un commentaire dont tu as l'idée mais pas la formulation.",
+    "Garder un style constant sur LinkedIn, même en anglais ou dans une autre langue.",
+    "Savoir chaque semaine quelles conversations relancer."
+  ],
+  "useCasesEn": [
+    "Comment on your industry's posts every day without spending an hour on it.",
+    "Finish a comment when you have the idea but not the wording.",
+    "Keep a consistent style on LinkedIn, in English or another language.",
+    "Know each week which conversations to pick up again."
+  ],
+  "relevantFor": [
+    "Consultants et freelances dont la visibilité passe par LinkedIn",
+    "Fondateurs qui veulent rester présents sans publier de commentaires génériques",
+    "Rédacteurs et experts qui tiennent à écrire avec leurs propres mots"
+  ],
+  "relevantForEn": [
+    "Consultants and freelancers whose visibility depends on LinkedIn",
+    "Founders who want to stay present without posting generic comments",
+    "Writers and experts who want to keep their own words"
+  ],
+  "verdict": {
+    "keepIf": [
+      "Tu commentes sur LinkedIn plusieurs fois par semaine et tu bloques sur la formulation, pas sur l'idée.",
+      "Tu refuses les outils qui commentent à ta place mais veux gagner du temps."
+    ],
+    "avoidIf": [
+      "Tu veux automatiser ta présence LinkedIn : Commenty ne publie rien sans ton clic.",
+      "Tu commentes rarement : l'essai de 14 jours suffit à savoir si l'habitude tient."
+    ],
+    "threshold": "Utilise les 14 jours d'essai sur ton rythme réel. Si tu publies moins de vingt commentaires assistés par jour, Starter suffit ; Professional ne sert qu'au-delà. L'annuel coûte nettement moins cher, mais seulement si l'habitude a tenu pendant l'essai."
+  },
+  "verdictEn": {
+    "keepIf": [
+      "You comment on LinkedIn several times a week and get stuck on the wording, not the idea.",
+      "You refuse tools that comment for you but still want to save time."
+    ],
+    "avoidIf": [
+      "You want to automate your LinkedIn presence: Commenty posts nothing without your click.",
+      "You rarely comment: the 14-day trial is enough to see whether the habit sticks."
+    ],
+    "threshold": "Use the 14-day trial at your real pace. If you publish fewer than twenty assisted comments a day, Starter is enough; Professional only matters beyond that. Yearly billing is much cheaper, but only once the habit has held through the trial."
+  },
+  "alternatives": [
+    "taplio",
+    "authoredup",
+    "typefully"
+  ],
+  "soloRelevance": "high",
+  "teamRelevance": "low",
+  "tool_type": "specialise",
+  "substitutable": true,
+  "verticals": [
+    "consultant-b2b",
+    "fondateur-saas",
+    "createur-contenu"
+  ],
+  "functional_needs": [
+    "redaction",
+    "linkedin-engagement",
+    "creator-workflow"
+  ],
+  "prescription_quality": "question",
+  "prescription_output": null,
+  "prescription_block_reasons": [],
+  "prescription_context_questions": [
+    "linkedin_comment_frequency",
+    "writing_language"
+  ],
+  "substitution_cluster_v2": "linkedin-content-tools",
+  "decision_policy_v3": {
+    "auto_cancel_allowed": false,
+    "auto_replace_allowed": false,
+    "auto_downgrade_allowed": false,
+    "requires_context_questions": true,
+    "never_auto_cancel_reason": "L'intérêt dépend de la fréquence à laquelle tu commentes sur LinkedIn et de la langue dans laquelle tu écris.",
+    "default_decision_lane": "review_then_prescribe"
+  },
+  "toolTrimRating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "notedOn": "2026-11-25",
+    "lastActivityVerifiedOn": "2026-11-25",
+    "evidence": {
+      "valeurAjoutee": "Aide à formuler des commentaires dans ta voix et suit les relations qui en naissent ; utile si tu commentes souvent, accessoire sinon. Source : commenty.ai, 25 novembre 2026.",
+      "simplicite": "Extension Chrome, boutons sous chaque zone de commentaire, trois modes et quatre tons. Source : commenty.ai et commenty.ai/docs, 25 novembre 2026.",
+      "utilisation": "Continuation, brouillon, profil de voix, import d'anciens commentaires, bilan hebdomadaire des relations. Source : commenty.ai et commenty.ai/faq, 25 novembre 2026.",
+      "puissance": "Chrome seulement, limite quotidienne de 20 ou 50 commentaires assistés, pas de publication de posts. Source : commenty.ai/faq, 25 novembre 2026.",
+      "reversibilite": "Suppression du compte et des données sur demande ; aucun export des données décrit hors arrêt du service. Source : commenty.ai/privacy et commenty.ai/terms, 25 novembre 2026."
+    },
+    "evidenceEn": {
+      "valeurAjoutee": "Helps you word comments in your voice and tracks the relationships they create; useful if you comment often, minor otherwise. Source: commenty.ai, November 25, 2026.",
+      "simplicite": "A Chrome extension with buttons under each comment box, three modes and four tones. Source: commenty.ai and commenty.ai/docs, November 25, 2026.",
+      "utilisation": "Continuation, drafts, voice profile, import of earlier comments, weekly relationship brief. Source: commenty.ai and commenty.ai/faq, November 25, 2026.",
+      "puissance": "Chrome only, a daily cap of 20 or 50 assisted comments, no post writing. Source: commenty.ai/faq, November 25, 2026.",
+      "reversibilite": "Account and data deletion on request; no data export described except if the service shuts down. Source: commenty.ai/privacy and commenty.ai/terms, November 25, 2026."
+    }
+  },
+  "tagline": {
+    "fr": "Tes commentaires LinkedIn, dans ta voix",
+    "en": "Your LinkedIn comments, in your voice"
+  },
+  "seo": {
+    "metaDescription": "Commenty : avis, tarifs et limites de l'extension Chrome qui aide à écrire ses commentaires LinkedIn dans sa propre voix, sans publication automatique.",
+    "metaDescriptionEn": "Commenty review, pricing and limits: the Chrome extension that helps you write LinkedIn comments in your own voice, with no automatic posting.",
+    "presentationTitleFr": "Commenty : commenter sur LinkedIn avec tes mots",
+    "presentationTitleEn": "Commenty: comment on LinkedIn in your own words",
+    "idealForFr": "Consultants, freelances et fondateurs qui commentent souvent sur LinkedIn et tiennent à garder leur voix.",
+    "idealForEn": "Consultants, freelancers and founders who comment often on LinkedIn and want to keep their voice.",
+    "presentationMetaDescriptionFr": "Commenty continue les commentaires LinkedIn que tu commences, apprend ton style et te dit chaque semaine quelles conversations relancer.",
+    "presentationMetaDescriptionEn": "Commenty continues the LinkedIn comments you start, learns your style and tells you each week which conversations to pick up.",
+    "prixTitleFr": "Prix de Commenty : Starter dès {price}",
+    "prixTitleEn": "Commenty pricing: Starter from {price}",
+    "prixMetaDescriptionFr": "Prix de Commenty : essai de 14 jours sans carte, Starter dès {price} par mois, Professional pour 50 commentaires par jour. Moins cher en annuel.",
+    "prixMetaDescriptionEn": "Commenty pricing: a 14-day trial with no card, Starter from {price} a month, Professional for 50 comments a day. Cheaper billed yearly.",
+    "altTitleFr": "Alternatives à Commenty : Taplio, AuthoredUp, Typefully",
+    "altTitleEn": "Commenty alternatives: Taplio, AuthoredUp, Typefully",
+    "altMetaDescriptionFr": "Tu veux aussi écrire et planifier tes posts ? Taplio, AuthoredUp et Typefully comparés à Commenty sur la rédaction, la planification et le coût.",
+    "altMetaDescriptionEn": "Also want to write and schedule posts? Taplio, AuthoredUp and Typefully compared with Commenty on writing, scheduling and cost.",
+    "avisTitleFr": "Avis Commenty : l'IA qui finit ta phrase, pas ton avis",
+    "avisTitleEn": "Commenty review: AI that finishes your sentence, not your opinion",
+    "avisMetaDescriptionFr": "Avis Commenty, noté {rating} : des commentaires qui restent les tiens et aucune publication automatique ; Chrome seulement, limite quotidienne.",
+    "avisMetaDescriptionEn": "Commenty review, rated {rating}: comments that stay yours and no automatic posting; Chrome only, daily cap."
+  },
+  "lifecycle": {
+    "status": "active",
+    "note": null,
+    "checkedOn": "2026-11-25"
+  },
+  "research": {
+    "researchedOn": "2026-11-25",
+    "sources": 5
+  }
+}

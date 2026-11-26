@@ -16,6 +16,9 @@ describe("safeExternalUrl", () => {
 });
 
 describe("relPourLienOutil", () => {
+  it.each(["https://keybrum.com/", "https://www.keybrum.com/"])("keeps Keybrum's official link dofollow: %s", (url) => {
+    expect(relPourLienOutil(url, "", url)).toBe("noopener noreferrer");
+  });
   it.each(["https://sovkern.com/", "https://www.sovkern.com/"])("keeps Sovkern dofollow: %s", (url) => {
     expect(relPourLienOutil(url, "", url)).toBe("noopener noreferrer");
   });

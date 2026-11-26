@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — security
 # Generated from src/data/tools_index.json
-# Family: security (35 of 1251 canonical tools)
+# Family: security (36 of 1257 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
@@ -1521,6 +1521,53 @@
       "weaknesses": [
         "No permanent free plan and no monthly billing in the published grid",
         "Dark web alerts and file storage sold as add-ons"
+      ]
+    }
+  },
+  {
+    "name": "Keybrum",
+    "slug": "keybrum",
+    "url_fr": "https://tooltrim.com/fr/tool/keybrum",
+    "url_en": "https://tooltrim.com/en/tool/keybrum",
+    "website": "https://keybrum.com/",
+    "category": "security",
+    "pricing": {
+      "free": "Pas de plan gratuit ni d'essai. Aperçu gratuit sans compte, limité à ce que le navigateur télécharge déjà.",
+      "paid": "Report : 99 € HT une fois ; Maker : 59 € HT/mois (590 €/an) ; Team : 199 € HT/mois (1 990 €/an)."
+    },
+    "description_fr": "Pentest automatisé pour les apps construites avec Lovable, Bolt, Cursor ou Claude Code : Keybrum attaque l'app en ligne, prouve chaque faille et donne le prompt pour la corriger.",
+    "description_en": "Automated pentesting for apps built with Lovable, Bolt, Cursor or Claude Code: Keybrum attacks the live app, proves each flaw and hands you the prompt to fix it.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu mets en production une app générée par IA, avec des données d'utilisateurs, et personne ne l'a attaquée",
+      "avoid_if": "Ton app n'a ni compte utilisateur ni base de données : l'aperçu gratuit suffit pour voir ce qu'elle expose",
+      "strengths": [
+        "Ne remonte que des failles prouvées, avec la requête qui les démontre : pas de liste de suspicions à trier",
+        "La correction part directement dans ton agent de code, et le serveur MCP lui laisse relancer le contre-test",
+        "Les garde-fous sont écrits : preuve de propriété, aucune écriture réelle, aucune suppression testée, données masquées"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit ni d'essai : l'aperçu gratuit ne lance aucune attaque",
+        "Les pages consultées ne nomment ni la société éditrice, ni son pays, ni l'hébergeur des données de l'app",
+        "Ne couvre pas la suppression, la force brute, les connexions par passkey ou SMS, ni un pentest manuel"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You are shipping an AI-built app with user data, and nobody has attacked it",
+      "avoid_if": "Your app has no user accounts and no database: the free preview is enough to see what it exposes",
+      "strengths": [
+        "Only proven flaws are reported, with the request that proves them: no list of suspicions to sort",
+        "The fix goes straight to your coding agent, and the MCP server lets it call the retest itself",
+        "The safeguards are written down: proof of ownership, no real writes, no delete tests, redacted data"
+      ],
+      "weaknesses": [
+        "No free plan and no trial: the free preview runs no attack",
+        "The pages reviewed name neither the company, nor its country, nor the host of app data",
+        "Leaves out delete tests, brute force, passkey or SMS logins, and manual pentesting"
       ]
     }
   }

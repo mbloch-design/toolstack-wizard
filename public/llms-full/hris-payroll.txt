@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — hris-payroll
 # Generated from src/data/tools_index.json
-# Family: hris-payroll (27 of 1251 canonical tools)
+# Family: hris-payroll (27 of 1257 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.

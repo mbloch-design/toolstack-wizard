@@ -77,6 +77,8 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.sovkern.com",
   "nebulasoftware.com",
   "www.nebulasoftware.com",
+  "keybrum.com",
+  "www.keybrum.com",
 ]);
 
 /** Refuse les valeurs éditoriales corrompues que le navigateur interpréterait

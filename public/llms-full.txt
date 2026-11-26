@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1251
+# Records: 1257
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
@@ -55118,6 +55118,288 @@ Sources:
         "Access controls and source selection require initial setup",
         "Advanced requirements are priced on request",
         "Answers about sensitive records require review"
+      ]
+    }
+  },
+  {
+    "name": "Keybrum",
+    "slug": "keybrum",
+    "url_fr": "https://tooltrim.com/fr/tool/keybrum",
+    "url_en": "https://tooltrim.com/en/tool/keybrum",
+    "website": "https://keybrum.com/",
+    "category": "security",
+    "pricing": {
+      "free": "Pas de plan gratuit ni d'essai. Aperçu gratuit sans compte, limité à ce que le navigateur télécharge déjà.",
+      "paid": "Report : 99 € HT une fois ; Maker : 59 € HT/mois (590 €/an) ; Team : 199 € HT/mois (1 990 €/an)."
+    },
+    "description_fr": "Pentest automatisé pour les apps construites avec Lovable, Bolt, Cursor ou Claude Code : Keybrum attaque l'app en ligne, prouve chaque faille et donne le prompt pour la corriger.",
+    "description_en": "Automated pentesting for apps built with Lovable, Bolt, Cursor or Claude Code: Keybrum attacks the live app, proves each flaw and hands you the prompt to fix it.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "score": "3.6/5",
+      "label": "Très bon",
+      "keep_if": "Tu mets en production une app générée par IA, avec des données d'utilisateurs, et personne ne l'a attaquée",
+      "avoid_if": "Ton app n'a ni compte utilisateur ni base de données : l'aperçu gratuit suffit pour voir ce qu'elle expose",
+      "strengths": [
+        "Ne remonte que des failles prouvées, avec la requête qui les démontre : pas de liste de suspicions à trier",
+        "La correction part directement dans ton agent de code, et le serveur MCP lui laisse relancer le contre-test",
+        "Les garde-fous sont écrits : preuve de propriété, aucune écriture réelle, aucune suppression testée, données masquées"
+      ],
+      "weaknesses": [
+        "Pas de plan gratuit ni d'essai : l'aperçu gratuit ne lance aucune attaque",
+        "Les pages consultées ne nomment ni la société éditrice, ni son pays, ni l'hébergeur des données de l'app",
+        "Ne couvre pas la suppression, la force brute, les connexions par passkey ou SMS, ni un pentest manuel"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.6/5",
+      "label": "Very good",
+      "keep_if": "You are shipping an AI-built app with user data, and nobody has attacked it",
+      "avoid_if": "Your app has no user accounts and no database: the free preview is enough to see what it exposes",
+      "strengths": [
+        "Only proven flaws are reported, with the request that proves them: no list of suspicions to sort",
+        "The fix goes straight to your coding agent, and the MCP server lets it call the retest itself",
+        "The safeguards are written down: proof of ownership, no real writes, no delete tests, redacted data"
+      ],
+      "weaknesses": [
+        "No free plan and no trial: the free preview runs no attack",
+        "The pages reviewed name neither the company, nor its country, nor the host of app data",
+        "Leaves out delete tests, brute force, passkey or SMS logins, and manual pentesting"
+      ]
+    }
+  },
+  {
+    "name": "Ln2CRM",
+    "slug": "ln2crm",
+    "url_fr": "https://tooltrim.com/fr/tool/ln2crm",
+    "url_en": "https://tooltrim.com/en/tool/ln2crm",
+    "website": "https://ln2crm.com/",
+    "category": "crm",
+    "pricing": {
+      "free": "Plan gratuit durable (Test free), sans carte : 15 créations, 15 mises à jour, 5 brouillons Copilot et 5 e-mails trouvés par mois. Un CRM reste nécessaire.",
+      "paid": "Base : 16 $/mois par utilisateur (13 $ en annuel) ; Pro : 23 $/mois par utilisateur (18 $ en annuel) ; Enterprise sur devis."
+    },
+    "description_fr": "Extension Chrome qui relie un profil LinkedIn à ton CRM (Pipedrive, HubSpot, Salesforce, Zoho, Capsule) : vérifier, créer ou mettre à jour le contact sans changer d'onglet.",
+    "description_en": "Chrome extension that links a LinkedIn profile to your CRM (Pipedrive, HubSpot, Salesforce, Zoho, Capsule): check, create or update the contact without switching tabs.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu prospectes chaque semaine sur LinkedIn et tu recopies les profils à la main dans ton CRM",
+      "avoid_if": "Tu n'as pas de CRM, ou ton CRM n'est pas l'un des cinq gérés",
+      "strengths": [
+        "Cherche la fiche existante avant de créer : moins de doublons dans le CRM",
+        "La pastille de présence signale un contact déjà saisi ou une fiche devenue obsolète",
+        "N'automatise rien : l'outil agit seulement sur ton clic, profil par profil"
+      ],
+      "weaknesses": [
+        "Chrome uniquement : ni Firefox, ni Safari, ni application web",
+        "Le plan gratuit sert à tester, pas à travailler : ses quotas mensuels s'épuisent en quelques jours de prospection",
+        "Aucune extension n'étant approuvée par LinkedIn, le risque pour ton compte reste à ta charge"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You prospect on LinkedIn every week and copy profiles into your CRM by hand",
+      "avoid_if": "You have no CRM, or yours is not one of the five supported",
+      "strengths": [
+        "Looks for the existing record before creating one: fewer duplicates in the CRM",
+        "The presence badge flags a contact already saved or a record gone stale",
+        "Automates nothing: it only acts on your click, one profile at a time"
+      ],
+      "weaknesses": [
+        "Chrome only: no Firefox, no Safari, no web app",
+        "The free plan is for testing, not for working: its monthly quotas run out in a few days of prospecting",
+        "Since no extension is approved by LinkedIn, the risk to your account stays yours"
+      ]
+    }
+  },
+  {
+    "name": "Commenty",
+    "slug": "commenty",
+    "url_fr": "https://tooltrim.com/fr/tool/commenty",
+    "url_en": "https://tooltrim.com/en/tool/commenty",
+    "website": "https://commenty.ai/",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai gratuit de 14 jours sans carte, jusqu'à 20 commentaires par jour. Pas de plan gratuit garanti ensuite (CGU et FAQ divergent).",
+      "paid": "Starter : 15 $/mois ou 100 $/an ; Professional : 29 $/mois ou 200 $/an. Taxes incluses."
+    },
+    "description_fr": "Extension Chrome qui t'aide à écrire tes commentaires LinkedIn dans ta propre voix : tu commences, elle continue, tu relis et tu publies toi-même.",
+    "description_en": "Chrome extension that helps you write LinkedIn comments in your own voice: you start, it continues, you review and post it yourself.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu commentes sur LinkedIn plusieurs fois par semaine et tu bloques sur la formulation, pas sur l'idée",
+      "avoid_if": "Tu veux automatiser ta présence LinkedIn : Commenty ne publie rien sans ton clic",
+      "strengths": [
+        "Part de tes propres mots au lieu d'écrire à ta place : le commentaire reste le tien",
+        "Ne publie jamais seul et ne demande ni mot de passe ni cookie LinkedIn",
+        "Le bilan du dimanche transforme les commentaires en quelques relations à entretenir"
+      ],
+      "weaknesses": [
+        "Chrome uniquement : les autres navigateurs Chromium ne sont ni pris en charge ni testés",
+        "Ce qui reste gratuit après l'essai n'est pas clair : les CGU et la FAQ se contredisent",
+        "Limite quotidienne de commentaires assistés, même sur la formule la plus chère"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You comment on LinkedIn several times a week and get stuck on the wording, not the idea",
+      "avoid_if": "You want to automate your LinkedIn presence: Commenty posts nothing without your click",
+      "strengths": [
+        "Starts from your own words instead of writing for you: the comment stays yours",
+        "Never posts on its own and asks for no LinkedIn password or cookie",
+        "The Sunday brief turns comments into a few relationships worth keeping up"
+      ],
+      "weaknesses": [
+        "Chrome only: other Chromium browsers are neither supported nor tested",
+        "What stays free after the trial is unclear: the terms and the FAQ contradict each other",
+        "A daily cap on assisted comments, even on the most expensive plan"
+      ]
+    }
+  },
+  {
+    "name": "BillXpert",
+    "slug": "billxpert",
+    "url_fr": "https://tooltrim.com/fr/tool/billxpert",
+    "url_en": "https://tooltrim.com/en/tool/billxpert",
+    "website": "https://billxpert.fr/",
+    "category": "finance",
+    "pricing": {
+      "free": "Cœur comptable gratuit, sans compte obligatoire. Aucune offre payante pendant la bêta.",
+      "paid": "Aucune offre payante à ce jour. Des plugins payants sont annoncés, sans prix publié."
+    },
+    "description_fr": "Logiciel de comptabilité local et gratuit pour artisans, indépendants et TPE : devis, factures, règlements, écritures et TVA dans une application Windows, encore en bêta.",
+    "description_en": "Free, local accounting software for tradespeople, freelancers and very small businesses: quotes, invoices, payments, entries and VAT in a Windows app, still in beta.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu tiens toi-même ta comptabilité, sur Windows, et tu refuses un abonnement mensuel",
+      "avoid_if": "Tu dois recevoir tes factures électroniques dès maintenant : le plugin n'est pas encore sorti",
+      "strengths": [
+        "Gestion courante et comptabilité dans la même application, sans abonnement",
+        "Les données restent sur ta machine : pas de service en ligne obligatoire",
+        "Chaque facture reste reliée à son règlement et à son écriture, avec des contrôles avant validation"
+      ],
+      "weaknesses": [
+        "Version bêta : l'éditeur demande des sauvegardes séparées et une vérification des résultats avant usage officiel",
+        "Windows uniquement, sans version Mac, web ou mobile",
+        "La réception des factures électroniques, obligatoire depuis septembre 2026, n'est pas encore disponible"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You keep your own books, on Windows, and refuse a monthly subscription",
+      "avoid_if": "You need to receive e-invoices right now: the plugin is not out yet",
+      "strengths": [
+        "Daily management and accounting in the same app, with no subscription",
+        "Your data stays on your machine: no mandatory online service",
+        "Each invoice stays linked to its payment and its entry, with checks before validation"
+      ],
+      "weaknesses": [
+        "Beta version: the publisher asks for separate backups and checked results before official use",
+        "Windows only, with no Mac, web or mobile version",
+        "Receiving e-invoices, required in France since September 2026, is not available yet"
+      ]
+    }
+  },
+  {
+    "name": "BracketView",
+    "slug": "bracketview",
+    "url_fr": "https://tooltrim.com/fr/tool/bracketview",
+    "url_en": "https://tooltrim.com/en/tool/bracketview",
+    "website": "https://bracketview.in/",
+    "category": "nocode-web",
+    "pricing": {
+      "free": "Plan gratuit durable : tous les outils de base, imports web jusqu'à 5 Mo, 20 actions IA par mois, 5 liens partagés par mois.",
+      "paid": "Pro : 3 $/mois ou 27 $/an."
+    },
+    "description_fr": "Espace de travail JSON dans le navigateur ou sur Windows et Linux : formater, valider, interroger (JSONPath, jq) et comparer des données d'API, en texte, arbre, graphe, nœuds ou tableau.",
+    "description_en": "JSON workspace in the browser or on Windows and Linux: format, validate, query (JSONPath, jq) and diff API data, as text, tree, graph, nodes or a table.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu ouvres du JSON chaque semaine et tu jongles entre plusieurs sites de formatage",
+      "avoid_if": "Tu travailles déjà dans un client d'API comme Postman ou Insomnia, qui couvre ton besoin",
+      "strengths": [
+        "Les outils de base tournent dans le navigateur : ton JSON ne quitte pas ta machine pour être formaté ou interrogé",
+        "Cinq vues et jq complet au même endroit, gratuitement, sans compte",
+        "Une application hors ligne pour Windows et Linux ouvre de gros fichiers locaux"
+      ],
+      "weaknesses": [
+        "Les liens de partage et les adresses de webhook sont publics pour qui les connaît : rien de sensible dedans",
+        "Projet porté par un fondateur seul, sans société nommée",
+        "Application de bureau non signée et pas de version Mac"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You open JSON every week and juggle several formatting sites",
+      "avoid_if": "You already work in an API client like Postman or Insomnia that covers your needs",
+      "strengths": [
+        "Core tools run in the browser: your JSON stays on your machine to be formatted or queried",
+        "Five views and full jq in one place, for free, with no account",
+        "An offline Windows and Linux app opens large local files"
+      ],
+      "weaknesses": [
+        "Share links and webhook URLs are public to anyone who has them: nothing sensitive in them",
+        "A solo-founder project, with no company named",
+        "Unsigned desktop app and no Mac version"
+      ]
+    }
+  },
+  {
+    "name": "Makelead",
+    "slug": "makelead",
+    "url_fr": "https://tooltrim.com/fr/tool/makelead",
+    "url_en": "https://tooltrim.com/en/tool/makelead",
+    "website": "https://makelead.io/",
+    "category": "automation",
+    "pricing": {
+      "free": "Pas de plan gratuit ni d'essai annoncé ; carte demandée pour commencer.",
+      "paid": "Starter : 49 €/mois ; Growth : 99 €/mois ; Business : 169 €/mois. Sans TVA (franchise). −15 % en trimestriel, −30 % en annuel. Offre équipe par commercial."
+    },
+    "description_fr": "Outil de prospection automatisée sur LinkedIn et X, avec agents IA, relances, setter IA et rédaction de posts dans ta voix, pour indépendants et petites équipes commerciales.",
+    "description_en": "Automated prospecting on LinkedIn and X, with AI agents, follow-ups, an AI setter and posts written in your voice, for freelancers and small sales teams.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu vends en B2B, LinkedIn est ton canal principal, et tu acceptes le risque lié à l'automatisation",
+      "avoid_if": "Ton compte LinkedIn est trop précieux pour courir un risque de restriction",
+      "strengths": [
+        "Prospection, relances, réponses et posts dans un seul outil, pensé pour un indépendant",
+        "Plafonds d'envoi chiffrés et publiés, avec montée progressive et arrêt automatique au moindre signal",
+        "Données hébergées dans l'Union européenne, et une page pour que les prospects demandent à ne plus être contactés"
+      ],
+      "weaknesses": [
+        "Automatiser des actions sur LinkedIn va contre ses conditions : le risque de restriction du compte reste réel",
+        "Pas de plan gratuit ni d'essai annoncé, carte demandée dès le départ",
+        "Un setter IA qui répond à ta place peut donner aux prospects une réponse qui ne te ressemble pas"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You sell B2B, LinkedIn is your main channel, and you accept the risk that comes with automation",
+      "avoid_if": "Your LinkedIn account is too valuable to risk a restriction",
+      "strengths": [
+        "Prospecting, follow-ups, replies and posts in one tool, built for a solo seller",
+        "Sending caps stated in figures, with a gradual ramp-up and an automatic stop at the first warning",
+        "Data hosted in the EU, and a page where prospects can ask not to be contacted again"
+      ],
+      "weaknesses": [
+        "Automating actions on LinkedIn goes against its terms: the risk of account restriction is real",
+        "No free plan or trial announced, and a card is required from the start",
+        "An AI setter replying for you can give prospects an answer that does not sound like you"
       ]
     }
   }

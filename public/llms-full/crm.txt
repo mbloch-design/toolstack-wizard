@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — crm
 # Generated from src/data/tools_index.json
-# Family: crm (17 of 1251 canonical tools)
+# Family: crm (18 of 1257 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
@@ -741,6 +741,53 @@
         "Account for per-user prices and contact caps",
         "Advanced automation requires higher tiers",
         "Verify history and automation migration separately"
+      ]
+    }
+  },
+  {
+    "name": "Ln2CRM",
+    "slug": "ln2crm",
+    "url_fr": "https://tooltrim.com/fr/tool/ln2crm",
+    "url_en": "https://tooltrim.com/en/tool/ln2crm",
+    "website": "https://ln2crm.com/",
+    "category": "crm",
+    "pricing": {
+      "free": "Plan gratuit durable (Test free), sans carte : 15 créations, 15 mises à jour, 5 brouillons Copilot et 5 e-mails trouvés par mois. Un CRM reste nécessaire.",
+      "paid": "Base : 16 $/mois par utilisateur (13 $ en annuel) ; Pro : 23 $/mois par utilisateur (18 $ en annuel) ; Enterprise sur devis."
+    },
+    "description_fr": "Extension Chrome qui relie un profil LinkedIn à ton CRM (Pipedrive, HubSpot, Salesforce, Zoho, Capsule) : vérifier, créer ou mettre à jour le contact sans changer d'onglet.",
+    "description_en": "Chrome extension that links a LinkedIn profile to your CRM (Pipedrive, HubSpot, Salesforce, Zoho, Capsule): check, create or update the contact without switching tabs.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu prospectes chaque semaine sur LinkedIn et tu recopies les profils à la main dans ton CRM",
+      "avoid_if": "Tu n'as pas de CRM, ou ton CRM n'est pas l'un des cinq gérés",
+      "strengths": [
+        "Cherche la fiche existante avant de créer : moins de doublons dans le CRM",
+        "La pastille de présence signale un contact déjà saisi ou une fiche devenue obsolète",
+        "N'automatise rien : l'outil agit seulement sur ton clic, profil par profil"
+      ],
+      "weaknesses": [
+        "Chrome uniquement : ni Firefox, ni Safari, ni application web",
+        "Le plan gratuit sert à tester, pas à travailler : ses quotas mensuels s'épuisent en quelques jours de prospection",
+        "Aucune extension n'étant approuvée par LinkedIn, le risque pour ton compte reste à ta charge"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You prospect on LinkedIn every week and copy profiles into your CRM by hand",
+      "avoid_if": "You have no CRM, or yours is not one of the five supported",
+      "strengths": [
+        "Looks for the existing record before creating one: fewer duplicates in the CRM",
+        "The presence badge flags a contact already saved or a record gone stale",
+        "Automates nothing: it only acts on your click, one profile at a time"
+      ],
+      "weaknesses": [
+        "Chrome only: no Firefox, no Safari, no web app",
+        "The free plan is for testing, not for working: its monthly quotas run out in a few days of prospecting",
+        "Since no extension is approved by LinkedIn, the risk to your account stays yours"
       ]
     }
   }
