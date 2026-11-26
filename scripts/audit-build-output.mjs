@@ -95,8 +95,9 @@ const budgets = {
   // 2026-10-02 (US-NAV-01): shell search and menu buttons on every page,
   // measured 34.5 MiB.
   // 2026-11-26: the same ~60 critical-CSS variants of the MediaCard on tool pages, measured 38.3 MiB.
-  // 2026-11-26: plus six submitted fiches and their critical CSS, measured 38.7 MiB.
-  cssBytes: 38.9 * MiB,
+  // 2026-11-26: plus six submitted fiches and their critical CSS, measured 38.7 MiB
+  // locally and 39.0 MiB in CI with the account flags on: the ceiling follows CI.
+  cssBytes: 39.3 * MiB,
   duplicateBytes: 3 * MiB,
 };
 
