@@ -27,7 +27,11 @@ import ToolPricingSection from "@/components/tool/ToolPricingSection";
 import EvidenceInfo from "@/components/tool/EvidenceInfo";
 import ToolBundleSection from "@/components/tool/ToolBundleSection";
 import ToolFeaturesBlock from "@/components/tool/ToolFeaturesBlock";
-import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
+import { MediaCards } from "@/ds/MediaCard/MediaCard";
+import ToolMediaCard from "@/components/tool/ToolMediaCard";
+import { toolTagline } from "@/data/toolTaglines";
+import { getToolPresentation } from "@/lib/toolPresentation";
+import { formatToolPrice } from "@/lib/currencyRates";
 import ToolAudienceBlock from "@/components/tool/ToolAudienceBlock";
 import ToolPluginsBlock from "@/components/tool/ToolPluginsBlock";
 import ToolProfitabilityBlock from "@/components/tool/ToolProfitabilityBlock";
@@ -379,6 +383,19 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
 
   // App Store style "you might also like" list: real logo, name and the
   // tool's one-line pitch, instead of name-only chips with 18px logos.
+  // The entry price as the card's tag: « Gratuit » (green) when a real free tier exists, else « Dès X/mois », or
+  // the plan of a one-time licence. Nothing when the price is unknown.
+  const alternativePrice = (alt: any): { label: string; free?: boolean } | undefined => {
+    const fr = lang !== "en";
+    if (hasGenuineFreeTier(alt.pricing?.free)) return { label: t("Gratuit", "Free"), free: true };
+    const presentation = getToolPresentation(alt, fr ? "fr" : "en");
+    if (alt.pricing_v5?.compare_plan_kind === "one_time") return presentation.planLabel ? { label: presentation.planLabel } : undefined;
+    if (presentation.monthlyPrice > 0) {
+      const amount = formatToolPrice(alt, presentation.monthlyPrice, fr ? "EUR" : "USD", fr ? "fr" : "en").text;
+      return { label: t(`Dès ${amount}/mois`, `From ${amount}/mo`) };
+    }
+    return undefined;
+  };
   const renderAltShelf = (list: any[]) => (
     <ul className="td-alt-shelf">
       {list.map((ct: any) => {
@@ -993,11 +1010,22 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
 
                   {editing?.block(["alternatives", "betterAlternative", "freeAlternative", "downgradePlan", "migrationGuide", "relations"], t("Alternatives et migration", "Alternatives and migration"), { advanced: true })}
                   {!authorMode && <>
+                  {/* All the alternatives, in the catalogue's media cards (26/11/2026: the card system, no
+                      carousel): the entry price as the tag, what the tool does as the reason. No category tag:
+                      alternatives share the page's category, as on a category page. */}
                   {alternatives.length > 0 && (
-                    <ToolComparisonTable
-                      tool={tool} alternatives={alternatives}
-                      prefix={prefix} lang={lang} t={t}
-                    />
+                    <MediaCards label={t(`Alternatives à ${tool.name}`, `${tool.name} alternatives`)}>
+                      {alternatives.map((alt: any) => {
+                        const altSlug = alt.slug || alt.id;
+                        const reason = toolTagline(altSlug, lang) || (lang === "en" ? alt.shortDescriptionEn || alt.shortDescription : alt.shortDescription);
+                        return (
+                          <ToolMediaCard key={alt.id} lang={lang === "en" ? "en" : "fr"} tool={alt} dataTool={altSlug}
+                            price={alternativePrice(alt)} reason={reason || undefined}
+                            renderLink={(className, content) => <Link to={`${prefix}/tool/${altSlug}`} className={className}
+                              onClick={() => trackEvent("alternative_click", { tool_slug: tool.slug || tool.id, to_slug: altSlug, source: "alternatives_cards" })}>{content}</Link>} />
+                        );
+                      })}
+                    </MediaCards>
                   )}
                   {subPage === "alternatives" && renderSubpageLinks("alternatives")}
 
@@ -1013,7 +1041,7 @@ function ToolDetailPresentationContent({ tool, tools, categories, lang, currency
                        to show. */}
                   {/* Tools already shown as cards above are not listed twice. */}
                   {(() => {
-                    const shown = new Set(alternatives.slice(0, 6).map((alt: any) => alt.id));
+                    const shown = new Set(alternatives.map((alt: any) => alt.id));
                     const extra = clusterTools.filter((ct: any) => !shown.has(ct.id));
                     return extra.length > 0 && (
                       <div className="td-subs td-alt-more">

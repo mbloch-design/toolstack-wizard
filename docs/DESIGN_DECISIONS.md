@@ -90,6 +90,12 @@ Ce que la page doit toujours dire, quel que soit son dessin (testé) :
 |---|---|---|---|
 | 12/11/2026 | « le champ `situation` des scénarios n'est jamais affiché : rends-le visible dans la carte de scénario pour qu'on comprenne à quel cas d'usage la recommandation répond » | La carte « Notre avis » affiche la situation du scénario au-dessus du choix, en 12 px muted : le cas d'usage d'abord, l'outil ensuite | `ComparisonDecisionPage`, `.cp-glance-situation` |
 
+## Fiche outil
+
+| Date | Décision | Règle | Où |
+|---|---|---|---|
+| 26/11/2026 | « Dans la page alternative, je ne pense pas que le carrousel soit la meilleure solution d'affichage, on a de la place pour les mettre tous, non ? » ; puis, sur une première grille à cartes propres : « tu ne respectes pas la logique de design des cards ici, non ? » | Les alternatives d'un outil s'affichent toutes, jamais en carrousel, dans la carte du système : `MediaCard` via `ToolMediaCard` (capture ou logo seul, comme le catalogue), rangées par `MediaCards` (rangée toujours pleine de 2 à 4, grille du catalogue au-delà). Étiquette : le prix d'entrée (vert si gratuit), sans catégorie (les alternatives partagent celle de la page, comme sur une page de catégorie) ; raison : l'accroche de l'outil. Aucune carte propre à la fiche. Le complément automatique ne sert qu'à atteindre 6 | `ToolDetailPage`, `resolveToolAlternatives` ; Storybook « Catalogue / Cartes : toutes les vues » |
+
 ## Section agents (chantier ouvert le 16/11/2026)
 
 | Date | Décision | Règle | Où |

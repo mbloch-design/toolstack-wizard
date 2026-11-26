@@ -4611,44 +4611,6 @@
 
   /* Hero metadata row */
 
-  /* Editorial comparison rows (alternatives section) */
-  .td-compare { display: grid; gap: 12px; }
-  .td-compare-controls {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 16px;
-  }
-  .td-compare-grid {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 6px;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    overscroll-behavior-inline: contain;
-    /* Cards are routinely cut mid-content by the scroll edges — fade them
-       out instead of hard-cropping, so a partial card on either side reads
-       as "more to scroll" rather than a broken layout. */
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 40px), transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 40px), transparent 100%);
-  }
-  .td-compare-grid::-webkit-scrollbar { display: none; }
-  /* The card itself is just the carousel's sizing/snap unit — it renders
-     the exact same ToolCardEditorial (variant="media") used everywhere
-     else on the site, so it automatically gets identical anatomy, image
-     radius and hover behavior instead of a hand-rolled lookalike. */
-  .td-compare-card {
-    position: relative;
-    flex: 0 0 min(236px, 78vw);
-    min-width: 0;
-    scroll-snap-align: start;
-  }
-  @media (max-width: 700px) {
-    .td-compare-card { flex-basis: min(226px, 82vw); }
-  }
-
   /* Alternatives as an App Store list: squircle icon, name, one-line pitch,
      inset dividers that start after the icon, soft highlight on hover. */
   .td-alt-shelf {
@@ -13197,7 +13159,6 @@ section[id]:not(.cp-guide-section) {
 .td-tool-page .td-review-rationale,
 .td-tool-page .td-review-rationale-v2,
 .td-tool-page .td-score-axis-card,
-.td-tool-page .td-compare-card,
 .td-tool-page .td-tile,
 .td-tool-page .tg-hero-cell,
 .td-tool-page .td-tool-faq .rounded-xl {
@@ -17798,52 +17759,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 @layer components {
-  /* Zone 5 (alternatives), 2026-10-15: decision cards instead of share images,
-     arrows like the hero gallery (under, right), comparisons as a light grid. */
-  .td-tool-page .td-compare { margin-top: 24px; }
-  .td-tool-page .td-compare .td-compare-grid {
-    display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
-    padding: 0; margin: 0;
-    /* Clean crop at the column edge, no fade. */
-    -webkit-mask-image: none; mask-image: none;
-  }
-  .td-tool-page .td-compare .td-compare-grid::-webkit-scrollbar { display: none; }
-  .td-tool-page .td-compare .td-compare-grid:focus-visible { outline: 2px solid var(--color-text); outline-offset: 4px; border-radius: var(--radius-lg); }
-  .td-tool-page .td-compare .td-alt-card {
-    flex: 0 0 calc((100% - 24px) / 3); scroll-snap-align: start;
-    display: flex; flex-direction: column; gap: 12px; min-width: 0;
-    padding: 20px; border: 0; border-radius: var(--radius-lg); background: var(--color-surface-soft);
-    color: var(--color-text); text-decoration: none;
-    transition: background-color 160ms ease-out, transform 160ms ease-out;
-  }
-  .td-tool-page .td-compare .td-alt-card:hover { background: color-mix(in srgb, var(--color-text) 5%, var(--color-surface-soft)); }
-  .td-tool-page .td-compare .td-alt-card:active { transform: scale(0.99); }
-  .td-tool-page .td-compare .td-alt-card:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
-  @media (max-width: 900px) { .td-tool-page .td-compare .td-alt-card { flex-basis: calc((100% - 12px) / 2); } }
-  @media (max-width: 560px) { .td-tool-page .td-compare .td-alt-card { flex-basis: 82%; } }
-  .td-alt-card-head { display: flex; align-items: center; gap: 12px; min-width: 0; }
-  .td-alt-card-logo { flex: none; }
-  .td-alt-card-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: var(--font-ui); font-size: 17px; font-weight: 600; line-height: 1.3; }
-  .td-alt-card-facts { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--font-ui); font-size: 14px; line-height: 1.4; color: var(--color-text-meta); }
-  .td-alt-card-facts strong { font-weight: 600; color: var(--color-text); }
-  .td-alt-card-desc {
-    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-    font-family: var(--font-ui); font-size: 15px; line-height: 1.5; color: var(--color-text-secondary);
-  }
-  .td-tool-page .td-compare .td-compare-controls { display: flex; justify-content: flex-end; margin: 12px 0 0; position: static; }
-  .td-tool-page .td-compare .tt-carousel-controls { display: flex; gap: 8px; }
-  .td-tool-page .td-compare .tt-carousel-arrow {
-    position: relative; display: inline-grid; place-items: center; width: 36px; height: 36px; padding: 0;
-    border: 1px solid var(--color-border); border-radius: var(--radius-circle);
-    background: var(--color-surface); color: var(--color-text); box-shadow: none; cursor: pointer;
-    transition: background-color 160ms ease-out, border-color 160ms ease-out, opacity 160ms ease-out, transform 120ms ease-out;
-  }
-  .td-tool-page .td-compare .tt-carousel-arrow::after { content: ""; position: absolute; inset: -4px; }
-  .td-tool-page .td-compare .tt-carousel-arrow svg { width: 16px; height: 16px; }
-  .td-tool-page .td-compare .tt-carousel-arrow:hover:not(:disabled) { background: var(--color-surface-soft); border-color: var(--color-border-strong); }
-  .td-tool-page .td-compare .tt-carousel-arrow:active:not(:disabled) { transform: scale(0.94); }
-  .td-tool-page .td-compare .tt-carousel-arrow:disabled { opacity: 0.35; cursor: default; }
-
   .td-tool-page .td-vs { margin-top: 40px; }
   .td-tool-page .td-alt-more { margin-top: 40px; }
   .td-tool-page .td-alt-more .td-subtitle { margin: 0 0 16px; }
@@ -17881,7 +17796,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .td-vs-arrow { width: 16px; height: 16px; color: var(--color-text-meta); transition: transform 160ms ease-out; }
   .td-vs-link:hover .td-vs-arrow { transform: translateX(3px); color: var(--color-text); }
   @media (prefers-reduced-motion: reduce) {
-    .td-tool-page .td-compare .td-alt-card, .td-tool-page .td-compare .tt-carousel-arrow, .td-vs-arrow { transition: none; }
+    .td-vs-arrow { transition: none; }
   }
 }
 
@@ -18346,9 +18261,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     .td-breakeven-control input[type="range"]::-moz-range-thumb { transition: transform 140ms ease-out; }
     .td-breakeven-control input[type="range"]:active::-moz-range-thumb { transform: scale(1.25); }
 
-    /* 6 · Alternative cards lift on hover. */
-    .td-tool-page .td-compare .td-alt-card { transition: background-color 160ms ease-out, transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1); }
-    .td-tool-page .td-compare .td-alt-card:hover { transform: translateY(-2px); }
   }
 }
 
