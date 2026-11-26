@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — nocode-web
 # Generated from src/data/tools_index.json
-# Family: nocode-web (134 of 1257 canonical tools)
+# Family: nocode-web (137 of 1265 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
@@ -5683,6 +5683,127 @@
       "weaknesses": [
         "SMS verification only works if you bring your own Twilio account and manage its cost separately",
         "Monthly billing costs 40 to 48% more per month than the annual rate on paid plans"
+      ]
+    }
+  },
+  {
+    "name": "Appwrite",
+    "slug": "appwrite",
+    "url_fr": "https://tooltrim.com/fr/tool/appwrite",
+    "url_en": "https://tooltrim.com/en/tool/appwrite",
+    "website": "https://appwrite.io/",
+    "category": "nocode-web",
+    "pricing": {
+      "free": "Free : une organisation, deux projets, gel au dépassement",
+      "paid": "Pro par organisation, dépassements à l’usage ; base dédiée dès 10 $/mois"
+    },
+    "description_fr": "Backend open source : base, auth, stockage, fonctions, en cloud ou auto-hébergé.",
+    "description_en": "Open-source backend: database, auth, storage, functions, in the cloud or self-hosted.",
+    "verdict_fr": {
+      "keep_if": "Tu veux un backend complet que tu pourras auto-héberger si le cloud ne te convient plus",
+      "avoid_if": "Tu veux du Postgres et du SQL : Supabase colle mieux",
+      "strengths": [
+        "Open source et auto-hébergeable",
+        "Plafond de budget sur le plan Pro",
+        "Base, auth, stockage et fonctions au même endroit"
+      ],
+      "weaknesses": [
+        "Free limité à deux projets, gelés au dépassement",
+        "Auto-hébergement : du temps d’exploitation à prévoir"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a complete backend you can self-host if the cloud stops suiting you",
+      "avoid_if": "You want Postgres and SQL: Supabase fits better",
+      "strengths": [
+        "Open source and self-hostable",
+        "Budget cap on the Pro plan",
+        "Database, auth, storage and functions in one place"
+      ],
+      "weaknesses": [
+        "Free limited to two projects, frozen over the limit",
+        "Self-hosting: plan for operations time"
+      ]
+    }
+  },
+  {
+    "name": "PocketBase",
+    "slug": "pocketbase",
+    "url_fr": "https://tooltrim.com/fr/tool/pocketbase",
+    "url_en": "https://tooltrim.com/en/tool/pocketbase",
+    "website": "https://pocketbase.io/",
+    "category": "nocode-web",
+    "pricing": {
+      "free": "Gratuit, auto-hébergé",
+      "paid": "Aucune offre payante ; coût de ton serveur uniquement"
+    },
+    "description_fr": "Backend open source en un seul fichier : SQLite, auth, temps réel, auto-hébergé.",
+    "description_en": "Open-source backend in a single file: SQLite, auth, realtime, self-hosted.",
+    "verdict_fr": {
+      "keep_if": "Tu lances un petit projet et tu veux un backend gratuit que tu maîtrises de bout en bout",
+      "avoid_if": "Ton app doit monter en charge sur plusieurs serveurs, ou tu ne veux pas suivre le journal des versions",
+      "strengths": [
+        "Un seul binaire à déployer",
+        "Gratuit, sans dépendance à un fournisseur",
+        "Auth et temps réel inclus"
+      ],
+      "weaknesses": [
+        "Avant la v1.0 : rétrocompatibilité non garantie",
+        "SQLite seulement, un seul serveur, pas de fonctions cloud"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You’re launching a small project and want a free backend you fully control",
+      "avoid_if": "Your app must scale across several servers, or you won’t follow the changelog",
+      "strengths": [
+        "A single binary to deploy",
+        "Free, no vendor dependency",
+        "Auth and realtime included"
+      ],
+      "weaknesses": [
+        "Pre-1.0: no backward-compatibility guarantee",
+        "SQLite only, single server, no cloud functions"
+      ]
+    }
+  },
+  {
+    "name": "Convex",
+    "slug": "convex",
+    "url_fr": "https://tooltrim.com/fr/tool/convex",
+    "url_en": "https://tooltrim.com/en/tool/convex",
+    "website": "https://www.convex.dev/",
+    "category": "nocode-web",
+    "pricing": {
+      "free": "Free & Starter : 0 $/mois, 1 M appels et 0,5 Go inclus, puis à l’usage",
+      "paid": "Professional : 25 $ par développeur et par mois ; Business dès 2 500 $/mois"
+    },
+    "description_fr": "Base de données réactive et fonctions serveur en TypeScript, avec palier gratuit.",
+    "description_en": "Reactive database and server functions in TypeScript, with a free tier.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "keep_if": "Ton app vit en temps réel et ton équipe code en TypeScript",
+      "avoid_if": "Tu veux du SQL et la portabilité de Postgres",
+      "strengths": [
+        "Données synchronisées en temps réel sans code de plomberie",
+        "Tout en TypeScript, du schéma aux fonctions",
+        "Grille d’usage publique et détaillée"
+      ],
+      "weaknesses": [
+        "Modèle de données propre à Convex, pas de SQL",
+        "Pro facturé par développeur"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your app lives in realtime and your team writes TypeScript",
+      "avoid_if": "You want SQL and Postgres portability",
+      "strengths": [
+        "Realtime-synced data without plumbing code",
+        "All TypeScript, from schema to functions",
+        "Public, detailed usage pricing"
+      ],
+      "weaknesses": [
+        "Convex-specific data model, no SQL",
+        "Pro billed per developer"
       ]
     }
   },

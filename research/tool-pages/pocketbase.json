@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "slug": "pocketbase",
+  "researchedOn": "2026-11-25",
+  "researcher": "Claude Code",
+  "status": "needs_review",
+  "purpose": "Candidat au catalogue pour enrichir une page /alternatives à forte demande (Search Console, 3 mois au 2026-11-25)",
+  "identity": {
+    "officialName": "PocketBase",
+    "vendor": "Projet open source personnel (bénévole)",
+    "officialUrl": "https://pocketbase.io/",
+    "pricingUrl": null,
+    "docsUrl": "https://pocketbase.io/docs/",
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "what",
+      "value": "Backend en un fichier : SQLite embarqué, temps réel, auth, tableau de bord",
+      "sourceUrl": "https://pocketbase.io/docs/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Doc : SQLite embarqué, abonnements temps réel, auth intégrée",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "pricing.free",
+      "value": "Aucun prix ni offre payante ; projet bénévole",
+      "sourceUrl": "https://pocketbase.io/faq/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "FAQ : ni startup ni entreprise, pas d’équipe payée",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "hosting",
+      "value": "Auto-hébergement uniquement, pas d’offre hébergée",
+      "sourceUrl": "https://pocketbase.io/faq/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "FAQ : « self-hosted only »",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "db",
+      "value": "SQLite seulement, pas de Postgres ni MySQL prévu",
+      "sourceUrl": "https://pocketbase.io/faq/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "FAQ",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "stability",
+      "value": "Avant la v1.0 : rétrocompatibilité non garantie (v0.42.3 vue)",
+      "sourceUrl": "https://pocketbase.io/docs/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Doc : compatibilité non garantie avant v1.0.0",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "scaling",
+      "value": "Montée en charge verticale, un seul serveur",
+      "sourceUrl": "https://pocketbase.io/faq/",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "FAQ",
+      "confidence": "high",
+      "volatility": "low"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": null,
+    "billingContext": "gratuit, auto-hébergé",
+    "taxIncluded": null,
+    "freePlan": true,
+    "plans": [
+      {
+        "name": "PocketBase",
+        "price": 0,
+        "claim": "pricing.free"
+      }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [
+      "Un seul serveur"
+    ],
+    "cautions": [
+      "Avant v1.0 : migrations manuelles possibles",
+      "Aucune offre de support"
+    ]
+  },
+  "capabilities": [
+    "Backend minimal, déployable en un binaire"
+  ],
+  "limitations": [
+    "SQLite seulement",
+    "Pas de fonctions cloud",
+    "Pas de réplication intégrée"
+  ],
+  "integrations": [],
+  "audiences": [
+    "Développeurs solo, petits projets"
+  ],
+  "useCases": [],
+  "alternatives": [
+    "supabase",
+    "appwrite",
+    "firebase"
+  ],
+  "editorialNotes": [
+    "Alternative minimale et gratuite à Supabase, pour un petit projet maîtrisé"
+  ],
+  "unknowns": [
+    "Licence (non lue ; ne pas la remplir de mémoire)"
+  ],
+  "conflicts": []
+}

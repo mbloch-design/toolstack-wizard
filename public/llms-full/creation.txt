@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — creation
 # Generated from src/data/tools_index.json
-# Family: creation (352 of 1257 canonical tools)
+# Family: creation (355 of 1265 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
@@ -15350,6 +15350,127 @@
         "Rights and costs vary by offer",
         "The choice depends on the creators available in your niche",
         "You are responsible for approving the content and measuring the campaign"
+      ]
+    }
+  },
+  {
+    "name": "GameMaker",
+    "slug": "gamemaker",
+    "url_fr": "https://tooltrim.com/fr/tool/gamemaker",
+    "url_en": "https://tooltrim.com/en/tool/gamemaker",
+    "website": "https://gamemaker.io/",
+    "category": "creation",
+    "pricing": {
+      "free": "Gratuit pour un usage non commercial",
+      "paid": "Professional : 99,99 $ en achat unique ; Enterprise sur abonnement (console)"
+    },
+    "description_fr": "Moteur de jeu 2D d’Opera, gratuit en non commercial, licence commerciale en achat unique.",
+    "description_en": "Opera’s 2D game engine, free for non-commercial use, commercial licence as a one-time purchase.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "keep_if": "Tu fais un jeu 2D et tu veux payer ta licence commerciale une seule fois",
+      "avoid_if": "Tu vises la 3D ou la console sans budget pour un abonnement Enterprise",
+      "strengths": [
+        "Licence commerciale en achat unique, sans abonnement",
+        "Exports desktop, web et mobile dès la version gratuite",
+        "Aucun écran de démarrage imposé"
+      ],
+      "weaknesses": [
+        "Pensé pour la 2D",
+        "L’export console exige l’abonnement Enterprise"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You make a 2D game and want to pay for your commercial licence once",
+      "avoid_if": "You target 3D or consoles without a budget for an Enterprise subscription",
+      "strengths": [
+        "Commercial licence as a one-time purchase, no subscription",
+        "Desktop, web and mobile exports from the free version",
+        "No forced splash screen"
+      ],
+      "weaknesses": [
+        "Built for 2D",
+        "Console export requires the Enterprise subscription"
+      ]
+    }
+  },
+  {
+    "name": "Defold",
+    "slug": "defold",
+    "url_fr": "https://tooltrim.com/fr/tool/defold",
+    "url_en": "https://tooltrim.com/en/tool/defold",
+    "website": "https://defold.com/",
+    "category": "creation",
+    "pricing": {
+      "free": "Gratuit, sans redevance ni frais d’exécution",
+      "paid": "Contrats de support payants, prix non publié"
+    },
+    "description_fr": "Moteur de jeu 2D gratuit, sans redevance, porté par une fondation.",
+    "description_en": "Free, royalty-free 2D game engine run by a foundation.",
+    "verdict_fr": {
+      "keep_if": "Tu fais un jeu 2D pour le web ou le mobile et tu ne veux jamais payer le moteur",
+      "avoid_if": "Ton jeu repose sur de la 3D, ou ton équipe refuse le Lua",
+      "strengths": [
+        "Gratuit, sans redevance, engagement écrit de ne jamais facturer",
+        "Publication vers mobile, web, desktop et consoles",
+        "Léger, adapté aux jeux web et mobiles"
+      ],
+      "weaknesses": [
+        "La 3D demande beaucoup de travail",
+        "Logique de jeu en Lua"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You make a 2D game for web or mobile and never want to pay for the engine",
+      "avoid_if": "Your game relies on 3D, or your team won’t use Lua",
+      "strengths": [
+        "Free, royalty-free, with a written pledge never to charge",
+        "Publishes to mobile, web, desktop and consoles",
+        "Lightweight, suited to web and mobile games"
+      ],
+      "weaknesses": [
+        "3D takes a lot of work",
+        "Game logic in Lua"
+      ]
+    }
+  },
+  {
+    "name": "Cocos Creator",
+    "slug": "cocos-creator",
+    "url_fr": "https://tooltrim.com/fr/tool/cocos-creator",
+    "url_en": "https://tooltrim.com/en/tool/cocos-creator",
+    "website": "https://www.cocos.com/en/creator",
+    "category": "creation",
+    "pricing": {
+      "free": "Gratuit pour développer des jeux",
+      "paid": "Usage hors jeu sur autorisation, frais possibles"
+    },
+    "description_fr": "Moteur de jeu 2D et 3D gratuit pour le jeu, fort sur le web, le mobile et les mini-jeux.",
+    "description_en": "2D and 3D game engine, free for games, strong on web, mobile and mini-games.",
+    "verdict_fr": {
+      "keep_if": "Ton jeu vise le web, le mobile ou les mini-jeux et tu veux de la 2D et de la 3D sans licence",
+      "avoid_if": "Tu veux une garantie de gratuité dans la durée ou un usage hors jeu",
+      "strengths": [
+        "Gratuit pour le jeu, en 2D comme en 3D",
+        "Très présent sur le web et les plateformes de mini-jeux",
+        "Moteur open source"
+      ],
+      "weaknesses": [
+        "Éditeur propriétaire, gratuité révisable avec préavis",
+        "Usage hors jeu soumis à autorisation"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your game targets web, mobile or mini-games and you want 2D and 3D without a licence fee",
+      "avoid_if": "You need a long-term guarantee of free use, or a non-game use",
+      "strengths": [
+        "Free for games, in both 2D and 3D",
+        "Strong on the web and mini-game platforms",
+        "Open-source engine"
+      ],
+      "weaknesses": [
+        "Proprietary editor, free use can be revised with notice",
+        "Non-game use requires authorisation"
       ]
     }
   },

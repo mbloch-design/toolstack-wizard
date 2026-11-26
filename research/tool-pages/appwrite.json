@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "slug": "appwrite",
+  "researchedOn": "2026-11-25",
+  "researcher": "Claude Code",
+  "status": "needs_review",
+  "purpose": "Candidat au catalogue pour enrichir une page /alternatives à forte demande (Search Console, 3 mois au 2026-11-25)",
+  "identity": {
+    "officialName": "Appwrite",
+    "vendor": "Appwrite",
+    "officialUrl": "https://appwrite.io/",
+    "pricingUrl": "https://appwrite.io/pricing",
+    "docsUrl": "https://appwrite.io/docs",
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "pricing.plans",
+      "value": "Plans : Free, Pro, Enterprise, Open source",
+      "sourceUrl": "https://appwrite.io/docs/advanced/billing",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Navigation de la doc facturation",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.free.projects",
+      "value": "Free : une organisation et 2 projets par compte",
+      "sourceUrl": "https://appwrite.io/docs/advanced/billing/free",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Doc Free : 1 organisation, 2 projets",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.free.overlimit",
+      "value": "Free : projet gelé au dépassement, console en lecture seule",
+      "sourceUrl": "https://appwrite.io/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "FAQ tarifs",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.unit",
+      "value": "Plan facturé par organisation, ressources par projet",
+      "sourceUrl": "https://appwrite.io/docs/advanced/billing/pro",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Doc Pro : plan d’organisation, ressources par projet",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.pro.overage",
+      "value": "Pro : dépassement facturé automatiquement, plafond de budget possible",
+      "sourceUrl": "https://appwrite.io/docs/advanced/billing/pro",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Doc Pro : achat automatique, budget cap",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.db.dedicated",
+      "value": "Base dédiée dès 10 $/mois par base",
+      "sourceUrl": "https://appwrite.io/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "« From $10/mo per database »",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "selfhost",
+      "value": "Open source, auto-hébergeable via Docker ou Kubernetes",
+      "sourceUrl": "https://appwrite.io/docs/advanced/self-hosting",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Doc self-hosting",
+      "confidence": "high",
+      "volatility": "low"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": "USD",
+    "billingContext": "mensuel, par organisation",
+    "taxIncluded": null,
+    "freePlan": true,
+    "plans": [
+      {
+        "name": "Free",
+        "price": 0,
+        "claim": "pricing.free.projects"
+      },
+      {
+        "name": "Pro",
+        "price": null,
+        "claim": "pricing.plans"
+      },
+      {
+        "name": "Enterprise",
+        "price": null,
+        "claim": "pricing.plans"
+      }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [
+      "Free : 2 projets, ressources partagées"
+    ],
+    "cautions": [
+      "Free gelé au dépassement",
+      "Pro : dépassements facturés automatiquement"
+    ]
+  },
+  "capabilities": [
+    "Backend complet : base, auth, stockage, fonctions, temps réel",
+    "Auto-hébergement open source"
+  ],
+  "limitations": [
+    "Free limité à 2 projets"
+  ],
+  "integrations": [],
+  "audiences": [
+    "Développeurs web et mobile"
+  ],
+  "useCases": [],
+  "alternatives": [
+    "supabase",
+    "firebase",
+    "pocketbase"
+  ],
+  "editorialNotes": [
+    "Alternative à Supabase sans Postgres obligatoire, auto-hébergeable"
+  ],
+  "unknowns": [
+    "PRIX DU PLAN PRO : la grille se rend côté client et n’a pas pu être lue — à relever dans un navigateur",
+    "Quotas chiffrés du plan Free",
+    "Licence nommée"
+  ],
+  "conflicts": []
+}

@@ -50,9 +50,13 @@ const budgets = {
   // 15,260 files and 852.7 MiB total, HTML unchanged at 735.0 MiB: the shards
   // add 24 files and 2.5 MiB, nothing per-page. Without this the audit failed
   // on file count and total bytes, which would have stopped the Vercel build.
-  // 2026-11-25: six submitted fiches (Keybrum, Ln2CRM, Commenty, BillXpert,
-  // BracketView, Makelead), about 9 files each. Measured 15,524 with five.
-  files: 15_560,
+  // 2026-11-25: eight sourced fiches for the high-demand /alternatives pages
+  // (GameMaker, Defold, Cocos Creator, Appwrite, PocketBase, Convex, AWS
+  // Secrets Manager, Akeyless) on top of main: measured 15,552 files.
+  // Byte limits unchanged.
+  // 2026-11-26: six submitted fiches (Keybrum, Ln2CRM, Commenty, BillXpert,
+  // BracketView, Makelead), about 9 files each, on top of main. Measured 15,619 files.
+  files: 15_640,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
   // 2026-10-02 (US-NAV-01): search and menu buttons in the shared topbar add
   // about 2 KB of markup and critical CSS to each of the ~13,100 pages, plus

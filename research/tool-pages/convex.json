@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "slug": "convex",
+  "researchedOn": "2026-11-25",
+  "researcher": "Claude Code",
+  "status": "needs_review",
+  "purpose": "Candidat au catalogue pour enrichir une page /alternatives à forte demande (Search Console, 3 mois au 2026-11-25)",
+  "identity": {
+    "officialName": "Convex",
+    "vendor": "Convex",
+    "officialUrl": "https://www.convex.dev/",
+    "pricingUrl": "https://www.convex.dev/pricing",
+    "docsUrl": "https://docs.convex.dev",
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "pricing.free",
+      "value": "Free & Starter : 0 $/mois puis paiement à l’usage",
+      "sourceUrl": "https://www.convex.dev/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "« $0/month and pay as you go »",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.pro",
+      "value": "Professional : 25 $ par développeur et par mois",
+      "sourceUrl": "https://www.convex.dev/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "« $25 per developer/month »",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.business",
+      "value": "Business & Enterprise : minimum de 2 500 $/mois",
+      "sourceUrl": "https://www.convex.dev/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "« $2,500 monthly minimum »",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "quota.free",
+      "value": "Gratuit : 1 M appels de fonction, 0,5 Go de base, 1 Go de fichiers, 1 Go de sortie",
+      "sourceUrl": "https://www.convex.dev/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Tableau des ressources",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "quota.pro",
+      "value": "Pro : 25 M appels, 50 Go de base, 100 Go de fichiers, 50 Go de sortie",
+      "sourceUrl": "https://www.convex.dev/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Tableau des ressources",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "overage.free",
+      "value": "Dépassement : 2,20 $ par million d’appels, 0,22 $/Go de base",
+      "sourceUrl": "https://www.convex.dev/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Tableau des ressources",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "selfhost",
+      "value": "Auto-hébergeable ; licence FSL Apache 2.0 (Apache 2.0 après deux ans)",
+      "sourceUrl": "https://docs.convex.dev/self-hosting",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Doc self-hosting",
+      "confidence": "high",
+      "volatility": "low"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": "USD",
+    "billingContext": "mensuel",
+    "taxIncluded": null,
+    "freePlan": true,
+    "plans": [
+      {
+        "name": "Free & Starter",
+        "price": 0,
+        "claim": "pricing.free"
+      },
+      {
+        "name": "Professional",
+        "price": 25,
+        "unit": "developer",
+        "period": "monthly",
+        "claim": "pricing.pro"
+      },
+      {
+        "name": "Business & Enterprise",
+        "price": 2500,
+        "period": "monthly_minimum",
+        "claim": "pricing.business"
+      }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [
+      "Free : 1 M appels, 0,5 Go de base"
+    ],
+    "cautions": [
+      "Prix Pro par développeur",
+      "Licence FSL : pas d’offre concurrente de Convex Cloud"
+    ]
+  },
+  "capabilities": [
+    "Base réactive en TypeScript, fonctions serveur, temps réel"
+  ],
+  "limitations": [
+    "Modèle de données propre à Convex (pas de SQL)"
+  ],
+  "integrations": [],
+  "audiences": [
+    "Développeurs TypeScript"
+  ],
+  "useCases": [],
+  "alternatives": [
+    "supabase",
+    "firebase",
+    "appwrite"
+  ],
+  "editorialNotes": [
+    "Alternative à Supabase pour une app temps réel en TypeScript"
+  ],
+  "unknowns": [
+    "Unité de facturation du palier gratuit",
+    "Tarifs de dépassement Business"
+  ],
+  "conflicts": []
+}

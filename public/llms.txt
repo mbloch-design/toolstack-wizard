@@ -33,11 +33,11 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 
 ## Catalogue
 
-- 1257 canonical tool records are included in the generated catalogue.
+- 1265 canonical tool records are included in the generated catalogue.
 - [Machine-readable catalogue](https://tooltrim.com/llms-full.txt) — every record in a single file.
 - The same records are also published split by category family: one shard per family, same schema (see Catalogue Shards below).
 - [Editorial index: guide and comparison summaries](https://tooltrim.com/llms-editorial.txt)
-- 108 localized guide pages and 166 localized comparison pages are included in the editorial index, generated from the same build as the sitemap.
+- 108 localized guide pages and 162 localized comparison pages are included in the editorial index, generated from the same build as the sitemap.
 - Editorial records provide localized titles, summaries and canonical URLs, not full articles. Read the linked page for the complete analysis.
 - Pricing text retains the stated currency and billing period. Missing prices are unknown, not zero; annual or lifetime offers are not converted into monthly EUR prices.
 - Prices and descriptions are editorial data, not a promise that a vendor has not changed its offer since publication.
@@ -47,7 +47,7 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 
 ## Catalogue Shards
 
-The 1257 records of llms-full.txt are also published split by category family, so an agent can fetch one family instead of the whole catalogue. Every shard is a JSON array with the same record schema and the same editorial rules.
+The 1265 records of llms-full.txt are also published split by category family, so an agent can fetch one family instead of the whole catalogue. Every shard is a JSON array with the same record schema and the same editorial rules.
 
 - ai-general — 66 tools: https://tooltrim.com/llms-full/ai-general.txt
 - analytics — 81 tools: https://tooltrim.com/llms-full/analytics.txt
@@ -55,7 +55,7 @@ The 1257 records of llms-full.txt are also published split by category family, s
 - budgeting-fpa — 2 tools: https://tooltrim.com/llms-full/budgeting-fpa.txt
 - communication — 60 tools: https://tooltrim.com/llms-full/communication.txt
 - communication-team — 3 tools: https://tooltrim.com/llms-full/communication-team.txt
-- creation — 352 tools: https://tooltrim.com/llms-full/creation.txt
+- creation — 355 tools: https://tooltrim.com/llms-full/creation.txt
 - crm — 18 tools: https://tooltrim.com/llms-full/crm.txt
 - design-tools — 129 tools: https://tooltrim.com/llms-full/design-tools.txt
 - email-productivity — 50 tools: https://tooltrim.com/llms-full/email-productivity.txt
@@ -64,12 +64,12 @@ The 1257 records of llms-full.txt are also published split by category family, s
 - formation-education — 11 tools: https://tooltrim.com/llms-full/formation-education.txt
 - hris-payroll — 27 tools: https://tooltrim.com/llms-full/hris-payroll.txt
 - legal-contracts — 24 tools: https://tooltrim.com/llms-full/legal-contracts.txt
-- nocode-web — 134 tools: https://tooltrim.com/llms-full/nocode-web.txt
+- nocode-web — 137 tools: https://tooltrim.com/llms-full/nocode-web.txt
 - organization — 64 tools: https://tooltrim.com/llms-full/organization.txt
 - productivity-tracking — 13 tools: https://tooltrim.com/llms-full/productivity-tracking.txt
 - project-management — 27 tools: https://tooltrim.com/llms-full/project-management.txt
 - prototyping — 6 tools: https://tooltrim.com/llms-full/prototyping.txt
-- security — 36 tools: https://tooltrim.com/llms-full/security.txt
+- security — 38 tools: https://tooltrim.com/llms-full/security.txt
 - storage — 9 tools: https://tooltrim.com/llms-full/storage.txt
 - ui-components — 35 tools: https://tooltrim.com/llms-full/ui-components.txt
 - vendor-risk-data — 5 tools: https://tooltrim.com/llms-full/vendor-risk-data.txt

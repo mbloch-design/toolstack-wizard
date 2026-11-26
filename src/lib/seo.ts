@@ -1,5 +1,6 @@
 import { accountPath, type AccountPathKind } from "./accountPaths";
 import bestOfGuides from "../data/bestOfGuides.json";
+import { isToolSubpagePairIndexable, parseToolSubpagePath } from "./toolSubpageSeo";
 /**
  * SEO utility: set meta tags, canonical, and JSON-LD dynamically.
  */
@@ -134,6 +135,11 @@ export function getAlternateLinks(path: string, base = SEO_BASE): [string, strin
     ]);
     return entries;
   }
+
+  // A tool sub-page whose other language is out of the index has no
+  // alternate: hreflang must only pair indexable pages.
+  const subpage = parseToolSubpagePath(path);
+  if (subpage && !isToolSubpagePairIndexable(subpage.slug, subpage.kind)) return [];
 
   const frPath = cleanPath.replace(/\/pricing$/, "/prix").replace(/\/reviews$/, "/avis");
   const enPath = cleanPath.replace(/\/prix$/, "/pricing").replace(/\/avis$/, "/reviews");

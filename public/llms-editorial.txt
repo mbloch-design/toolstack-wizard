@@ -1,6 +1,6 @@
 # ToolTrim editorial index
 # Generated from dist/sitemap.xml and its canonical prerendered pages.
-# Records: 274 (108 guides, 166 comparisons, localized FR/EN pages)
+# Records: 270 (108 guides, 162 comparisons, localized FR/EN pages)
 # Titles and available source summaries only. A missing summary is not inferred. Consult each canonical URL for full content and current offers.
 
 [
@@ -1015,22 +1015,6 @@
   {
     "type": "comparison",
     "language": "fr",
-    "slug": "asana-vs-clickup",
-    "url": "https://tooltrim.com/fr/comparatif/asana-vs-clickup",
-    "title": "Asana vs ClickUp : comparatif 2026 | ToolTrim",
-    "summary": "Comparatif Asana vs ClickUp : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
-  },
-  {
-    "type": "comparison",
-    "language": "en",
-    "slug": "asana-vs-clickup",
-    "url": "https://tooltrim.com/en/comparatif/asana-vs-clickup",
-    "title": "Asana vs ClickUp: comparison 2026 | ToolTrim",
-    "summary": "Asana vs ClickUp comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
-  },
-  {
-    "type": "comparison",
-    "language": "fr",
     "slug": "clickup-vs-asana",
     "url": "https://tooltrim.com/fr/comparatif/clickup-vs-asana",
     "title": "ClickUp vs Asana : comparatif 2026 | ToolTrim",
@@ -1171,22 +1155,6 @@
     "url": "https://tooltrim.com/en/comparatif/linear-vs-jira",
     "title": "Linear vs Jira: comparison 2026 | ToolTrim",
     "summary": "Linear vs Jira comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
-  },
-  {
-    "type": "comparison",
-    "language": "fr",
-    "slug": "zapier-vs-make",
-    "url": "https://tooltrim.com/fr/comparatif/zapier-vs-make",
-    "title": "Zapier vs Make : comparatif 2026 | ToolTrim",
-    "summary": "Comparatif Zapier vs Make : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
-  },
-  {
-    "type": "comparison",
-    "language": "en",
-    "slug": "zapier-vs-make",
-    "url": "https://tooltrim.com/en/comparatif/zapier-vs-make",
-    "title": "Zapier vs Make: comparison 2026 | ToolTrim",
-    "summary": "Zapier vs Make comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
   },
   {
     "type": "comparison",

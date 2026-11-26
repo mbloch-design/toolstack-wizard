@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "slug": "cocos-creator",
+  "researchedOn": "2026-11-25",
+  "researcher": "Claude Code",
+  "status": "needs_review",
+  "purpose": "Candidat au catalogue pour enrichir une page /alternatives à forte demande (Search Console, 3 mois au 2026-11-25)",
+  "identity": {
+    "officialName": "Cocos Creator",
+    "vendor": "Xiamen Yaji Software Co., Ltd. (Cocos)",
+    "officialUrl": "https://www.cocos.com/en/creator",
+    "pricingUrl": null,
+    "docsUrl": "https://docs.cocos.com/creator/manual/en/",
+    "changelogUrl": "https://www.cocos.com/en/creator-download"
+  },
+  "claims": [
+    {
+      "id": "pricing.free",
+      "value": "Gratuit pour développer des jeux",
+      "sourceUrl": "https://download.cocos.com/CocosUdc/agreement/Cocos_User_Service_Agreement_en_20220901.html",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Contrat utilisateur, section 2.2.1 : usage gratuit pour le jeu",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.non-game",
+      "value": "Usage hors jeu : autorisation écrite, frais possibles",
+      "sourceUrl": "https://download.cocos.com/CocosUdc/agreement/Cocos_User_Service_Agreement_en_20220901.html",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Section 2.2.1 : autorisation et frais pour les autres usages",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.may-change",
+      "value": "L’éditeur se réserve de rendre le logiciel payant avec préavis public",
+      "sourceUrl": "https://download.cocos.com/CocosUdc/agreement/Cocos_User_Service_Agreement_en_20220901.html",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Section 2.2.1",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "licence",
+      "value": "Éditeur propriétaire ; moteur sous sa propre licence open source",
+      "sourceUrl": "https://download.cocos.com/CocosUdc/agreement/Cocos_User_Service_Agreement_en_20220901.html",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Section 2.2 : éditeurs fermés, framework open source",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "2d3d",
+      "value": "Moteur 2D et 3D",
+      "sourceUrl": "https://www.cocos.com/en/creator",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Page produit : moteur 3D/2D",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "platforms",
+      "value": "Android, iOS, web, Windows, macOS, HarmonyOS, mini-jeux (WeChat, Douyin…)",
+      "sourceUrl": "https://download.cocos.com/CocosUdc/agreement/Cocos_User_Service_Agreement_en_20220901.html",
+      "sourceTier": 1,
+      "accessedOn": "2026-11-25",
+      "evidence": "Section 2.2.1 et notes de version 3.8.7–3.8.8",
+      "confidence": "medium",
+      "volatility": "high"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": null,
+    "billingContext": "gratuit pour le jeu",
+    "taxIncluded": null,
+    "freePlan": true,
+    "plans": [
+      {
+        "name": "Cocos Creator",
+        "price": 0,
+        "claim": "pricing.free"
+      }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [],
+    "cautions": [
+      "Gratuit pour le jeu seulement",
+      "Contrat de 2022 : l’éditeur peut devenir payant"
+    ]
+  },
+  "capabilities": [
+    "2D et 3D, fort sur le web et les mini-jeux"
+  ],
+  "limitations": [
+    "Console non mentionnée",
+    "Éditeur propriétaire"
+  ],
+  "integrations": [],
+  "audiences": [
+    "Studios mobiles et web, marché chinois"
+  ],
+  "useCases": [],
+  "alternatives": [
+    "unity",
+    "godot",
+    "defold"
+  ],
+  "editorialNotes": [
+    "Alternative à Unity pour le mobile et le web léger"
+  ],
+  "unknowns": [
+    "Licence nommée du moteur",
+    "Redevances (non mentionnées)",
+    "Contrat spécifique Cocos Creator non lu",
+    "Dernière version lue : 3.8.8 du 16/12/2025"
+  ],
+  "conflicts": []
+}

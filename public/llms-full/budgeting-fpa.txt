@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — budgeting-fpa
 # Generated from src/data/tools_index.json
-# Family: budgeting-fpa (2 of 1257 canonical tools)
+# Family: budgeting-fpa (2 of 1265 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.

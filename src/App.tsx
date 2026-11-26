@@ -119,8 +119,8 @@ const GUIDE_COMPARISON_REDIRECTS: Record<string, string> = {
   "notion-vs-coda-comparison-2026": "notion-vs-coda",
   "chatgpt-vs-claude-comparatif-2026": "chatgpt-vs-claude",
   "chatgpt-vs-claude-comparison-2026": "chatgpt-vs-claude",
-  "zapier-vs-make-comparatif-2026": "zapier-vs-make",
-  "zapier-vs-make-comparison-2026": "zapier-vs-make",
+  "zapier-vs-make-comparatif-2026": "make-vs-zapier",
+  "zapier-vs-make-comparison-2026": "make-vs-zapier",
   "figma-vs-canva-comparatif-2026": "figma-vs-canva",
   "figma-vs-canva-comparison-2026": "figma-vs-canva",
 };

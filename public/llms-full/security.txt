@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — security
 # Generated from src/data/tools_index.json
-# Family: security (36 of 1257 canonical tools)
+# Family: security (38 of 1265 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
@@ -1521,6 +1521,87 @@
       "weaknesses": [
         "No permanent free plan and no monthly billing in the published grid",
         "Dark web alerts and file storage sold as add-ons"
+      ]
+    }
+  },
+  {
+    "name": "AWS Secrets Manager",
+    "slug": "aws-secrets-manager",
+    "url_fr": "https://tooltrim.com/fr/tool/aws-secrets-manager",
+    "url_en": "https://tooltrim.com/en/tool/aws-secrets-manager",
+    "website": "https://aws.amazon.com/secrets-manager/",
+    "category": "security",
+    "pricing": {
+      "free": "Pas de plan gratuit dédié ; crédits AWS Free Tier pour les nouveaux comptes",
+      "paid": "0,40 $ par secret et par mois + 0,05 $ par 10 000 appels"
+    },
+    "description_fr": "Service AWS pour stocker et faire tourner les secrets, facturé au secret et à l’appel.",
+    "description_en": "AWS service to store and rotate secrets, billed per secret and per call.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "keep_if": "Ton infrastructure tourne déjà sur AWS et tu ne veux plus opérer Vault",
+      "avoid_if": "Ton équipe est multi-cloud, ou tu veux une interface simple pour toute l’équipe",
+      "strengths": [
+        "Rien à opérer : service géré par AWS",
+        "Facturation à l’usage, sans engagement",
+        "Rotation automatique des secrets"
+      ],
+      "weaknesses": [
+        "Pensé pour les équipes déjà sur AWS",
+        "La facture grimpe avec le nombre de secrets"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "Your infrastructure already runs on AWS and you no longer want to operate Vault",
+      "avoid_if": "Your team is multi-cloud, or you want a simple interface for the whole team",
+      "strengths": [
+        "Nothing to operate: managed by AWS",
+        "Usage-based billing, no commitment",
+        "Automatic secret rotation"
+      ],
+      "weaknesses": [
+        "Built for teams already on AWS",
+        "The bill grows with the number of secrets"
+      ]
+    }
+  },
+  {
+    "name": "Akeyless",
+    "slug": "akeyless",
+    "url_fr": "https://tooltrim.com/fr/tool/akeyless",
+    "url_en": "https://tooltrim.com/en/tool/akeyless",
+    "website": "https://www.akeyless.io/",
+    "category": "security",
+    "pricing": {
+      "free": "Free : 5 clients, 5 secrets dynamiques, 5 à rotation, audit 3 jours",
+      "paid": "Enterprise sur devis"
+    },
+    "description_fr": "Gestion de secrets en SaaS : secrets dynamiques, rotation, PKI, plan gratuit limité.",
+    "description_en": "SaaS secrets management: dynamic secrets, rotation, PKI, limited free plan.",
+    "verdict_fr": {
+      "keep_if": "Tu as besoin de secrets dynamiques comme avec Vault, sans opérer de cluster",
+      "avoid_if": "Tu veux un prix public avant de t’engager",
+      "strengths": [
+        "Pas de cluster à opérer, contrairement à Vault",
+        "Secrets dynamiques et rotation, aussi en plan gratuit",
+        "Option hybride avec passerelles sur site"
+      ],
+      "weaknesses": [
+        "Prix Enterprise non public",
+        "Plan gratuit très limité (5 clients, audit 3 jours)"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You need dynamic secrets like Vault, without operating a cluster",
+      "avoid_if": "You want a public price before committing",
+      "strengths": [
+        "No cluster to operate, unlike Vault",
+        "Dynamic secrets and rotation, even on the free plan",
+        "Hybrid option with on-prem gateways"
+      ],
+      "weaknesses": [
+        "Enterprise price not public",
+        "Very limited free plan (5 clients, 3-day audit)"
       ]
     }
   },
