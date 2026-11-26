@@ -1,0 +1,269 @@
+{
+  "id": "billxpert",
+  "slug": "billxpert",
+  "name": "BillXpert",
+  "category": "finance",
+  "shortDescription": "Logiciel de comptabilité local et gratuit pour artisans, indépendants et TPE : devis, factures, règlements, écritures et TVA dans une application Windows, encore en bêta.",
+  "shortDescriptionEn": "Free, local accounting software for tradespeople, freelancers and very small businesses: quotes, invoices, payments, entries and VAT in a Windows app, still in beta.",
+  "description": "BillXpert est un logiciel de comptabilité qui s'installe sur Windows, sans abonnement. Il réunit la gestion courante (clients, fournisseurs, devis, factures, règlements) et la comptabilité (écritures, journaux, grand livre, balance, TVA, bilan simplifié) dans une même application, avec des contrôles avant validation. Le cœur est gratuit ; les fonctions spécialisées doivent arriver sous forme de plugins. C'est une bêta : l'éditeur demande de garder des sauvegardes séparées et de vérifier les résultats avant tout usage officiel.",
+  "longDescription": "BillXpert part d'un choix assumé : une application locale plutôt qu'un service en ligne. Tu télécharges l'installateur Windows sans créer de compte, tu crées le dossier de l'entreprise et tu travailles sur ta machine. Un compte en ligne n'est utile que pour les services connectés et le suivi du projet.\n\nLe cœur couvre la gestion quotidienne et la comptabilité d'une petite structure : clients et fournisseurs, devis et factures, achats, règlements et échéances, comptes bancaires et rapprochement, écritures regroupées par pièce, journaux, grand livre, balance, TVA, compte de résultat et bilan simplifiés, exports. Chaque document reste relié à son tiers, à son règlement et à son écriture, et les incohérences sont signalées avant la validation ou la clôture. Les premières fonctions multiutilisateur existent, et une édition School vise l'enseignement.\n\nLa suite repose sur des plugins optionnels, pour que le cœur reste simple. Le premier annoncé concerne la facturation électronique : il doit permettre de recevoir les factures électroniques dans BillXpert, puis de les émettre. Il est en développement, alors que l'obligation de réception s'applique depuis le 1er septembre 2026. BillXpert n'est pas une Plateforme Agréée.\n\nLe projet mise aussi sur la participation : les utilisateurs signalent des problèmes, proposent des améliorations et peuvent gagner des crédits Bexium censés réduire le prix des futurs modules payants. L'éditeur est une SAS parisienne, M.R.I., et le site est hébergé en France chez o2switch. La version actuelle est une bêta de production : utilisable, mais pas définitive.",
+  "longDescriptionEn": "BillXpert makes a clear choice: a local app rather than an online service. You download the Windows installer without creating an account, create the company file and work on your own machine. An online account is only needed for connected services and project follow-up.\n\nThe core covers the daily management and accounting of a small business: customers and suppliers, quotes and invoices, purchases, payments and due dates, bank accounts and reconciliation, entries grouped by document, journals, general ledger, trial balance, VAT, simplified P&L and balance sheet, exports. Each document stays linked to its party, its payment and its entry, and inconsistencies are flagged before validation or closing. The first multi-user features exist, and a School edition targets teaching.\n\nWhat comes next relies on optional plugins, so the core stays simple. The first one announced is for e-invoicing: it should let you receive e-invoices inside BillXpert, then send them. It is still in development, while the obligation to receive e-invoices in France has applied since 1 September 2026. BillXpert is not an approved e-invoicing platform (Plateforme Agréée).\n\nThe project also relies on participation: users report problems, suggest improvements and can earn Bexium credits meant to lower the price of future paid modules. The publisher is a Paris company, M.R.I., and the site is hosted in France by o2switch. The current version is a production beta: usable, but not final.",
+  "pricing": {
+    "free": "Cœur comptable gratuit, sans compte obligatoire. Aucune offre payante pendant la bêta.",
+    "paid": "Aucune offre payante à ce jour. Des plugins payants sont annoncés, sans prix publié."
+  },
+  "pricingEn": {
+    "free": "Free accounting core, no account required. No paid offer during the beta.",
+    "paid": "No paid offer yet. Paid plugins are announced, with no published price."
+  },
+  "defaultMonthlyPrice": 0,
+  "compareMonthlyPrice": 0,
+  "pricing_v5": {
+    "compare_price_monthly_eur": 0,
+    "compare_plan_name": "Cœur comptable",
+    "compare_plan_kind": "account",
+    "price_reliability": "official_explicit",
+    "verification_status": "official_explicit",
+    "verified_on": "2026-11-25",
+    "official_source_url": "https://billxpert.fr/telecharger",
+    "source_domain": "billxpert.fr",
+    "location_sensitive": false,
+    "usage_sensitive": false,
+    "cautions": [
+      "Aucune offre payante à ce jour : l'éditeur M.R.I. déclare ne rien vendre ni facturer pendant la bêta. Des plugins payants sont annoncés pour plus tard.",
+      "Gratuit ne veut pas dire sans coût : en bêta, il faut garder des sauvegardes séparées et faire vérifier les résultats comptables et fiscaux."
+    ],
+    "plans": [
+      {
+        "planKey": "core",
+        "displayName": "Cœur comptable",
+        "summary": "Application Windows gratuite, téléchargeable sans compte, en bêta publique.",
+        "featureHighlights": [
+          "Clients, fournisseurs, devis, factures",
+          "Écritures, journaux, grand livre, balance",
+          "TVA, bilan et compte de résultat simplifiés"
+        ],
+        "detailsSourceUrl": "https://billxpert.fr/telecharger",
+        "pricingUnit": "account",
+        "isFree": true,
+        "isComparePlan": true,
+        "nativeAmount": 0,
+        "nativeCurrency": "EUR",
+        "billingPeriod": "monthly",
+        "taxInclusion": "unknown",
+        "observedMarket": "France",
+        "observedLocale": "fr",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      }
+    ],
+    "cautionsEn": [
+      "No paid offer today: the publisher, M.R.I., says it sells and bills nothing during the beta. Paid plugins are announced for later.",
+      "Free does not mean no cost: in beta, you must keep separate backups and have accounting and tax results checked."
+    ]
+  },
+  "pricing_v5En": {
+    "compare_price_monthly_eur": 0,
+    "compare_plan_name": "Accounting core",
+    "compare_plan_kind": "account",
+    "price_reliability": "official_explicit",
+    "verification_status": "official_explicit",
+    "verified_on": "2026-11-25",
+    "official_source_url": "https://billxpert.fr/telecharger",
+    "source_domain": "billxpert.fr",
+    "location_sensitive": false,
+    "usage_sensitive": false,
+    "cautions": [
+      "No paid offer today: the publisher, M.R.I., says it sells and bills nothing during the beta. Paid plugins are announced for later.",
+      "Free does not mean no cost: in beta, you must keep separate backups and have accounting and tax results checked."
+    ],
+    "plans": [
+      {
+        "planKey": "core",
+        "displayName": "Accounting core",
+        "summary": "Free Windows app, downloadable without an account, in public beta.",
+        "featureHighlights": [
+          "Customers, suppliers, quotes, invoices",
+          "Entries, journals, ledger, trial balance",
+          "VAT, simplified balance sheet and P&L"
+        ],
+        "detailsSourceUrl": "https://billxpert.fr/telecharger",
+        "pricingUnit": "account",
+        "isFree": true,
+        "isComparePlan": true,
+        "nativeAmount": 0,
+        "nativeCurrency": "EUR",
+        "billingPeriod": "monthly",
+        "taxInclusion": "unknown",
+        "observedMarket": "France",
+        "observedLocale": "fr",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      }
+    ]
+  },
+  "websiteUrl": "https://billxpert.fr/",
+  "affiliateLink": "",
+  "logo": "https://billxpert.fr/assets/img/logo-bx.png",
+  "ogImageUrl": "https://billxpert.fr/assets/img/product/overview.png",
+  "pros": [
+    "Gestion courante et comptabilité dans la même application, sans abonnement.",
+    "Les données restent sur ta machine : pas de service en ligne obligatoire.",
+    "Chaque facture reste reliée à son règlement et à son écriture, avec des contrôles avant validation."
+  ],
+  "prosEn": [
+    "Daily management and accounting in the same app, with no subscription.",
+    "Your data stays on your machine: no mandatory online service.",
+    "Each invoice stays linked to its payment and its entry, with checks before validation."
+  ],
+  "cons": [
+    "Version bêta : l'éditeur demande des sauvegardes séparées et une vérification des résultats avant usage officiel.",
+    "Windows uniquement, sans version Mac, web ou mobile.",
+    "La réception des factures électroniques, obligatoire depuis septembre 2026, n'est pas encore disponible.",
+    "Le modèle économique futur repose sur des plugins dont les prix ne sont pas publiés."
+  ],
+  "consEn": [
+    "Beta version: the publisher asks for separate backups and checked results before official use.",
+    "Windows only, with no Mac, web or mobile version.",
+    "Receiving e-invoices, required in France since September 2026, is not available yet.",
+    "The future business model relies on plugins with unpublished prices."
+  ],
+  "useCases": [
+    "Tenir la comptabilité d'une TPE ou d'un artisan sans abonnement mensuel.",
+    "Faire devis, factures et suivi des règlements au même endroit que les écritures.",
+    "Préparer la TVA, la balance et un bilan simplifié en local.",
+    "Former des élèves à la comptabilité avec l'édition School."
+  ],
+  "useCasesEn": [
+    "Keep the books of a very small business or tradesperson with no monthly subscription.",
+    "Handle quotes, invoices and payment tracking in the same place as the entries.",
+    "Prepare VAT, the trial balance and a simplified balance sheet locally.",
+    "Teach accounting with the School edition."
+  ],
+  "relevantFor": [
+    "Artisans, indépendants et TPE qui tiennent eux-mêmes leur comptabilité",
+    "Petites entreprises qui préfèrent garder leurs données en local",
+    "Enseignants et organismes de formation en comptabilité"
+  ],
+  "relevantForEn": [
+    "Tradespeople, freelancers and very small businesses who keep their own books",
+    "Small businesses that prefer to keep their data locally",
+    "Accounting teachers and training organisations"
+  ],
+  "verdict": {
+    "keepIf": [
+      "Tu tiens toi-même ta comptabilité, sur Windows, et tu refuses un abonnement mensuel.",
+      "Tu acceptes une bêta, avec des sauvegardes séparées et une vérification par ton comptable."
+    ],
+    "avoidIf": [
+      "Tu dois recevoir tes factures électroniques dès maintenant : le plugin n'est pas encore sorti.",
+      "Tu travailles sur Mac, à plusieurs à distance, ou tu veux un expert-comptable intégré."
+    ],
+    "threshold": "Installe-le sur un dossier de test et reprends un mois réel d'activité. Si les écritures, la TVA et la balance tombent juste, garde-le en parallèle de ton outil actuel jusqu'à la sortie de la version finale et du plugin de facturation électronique."
+  },
+  "verdictEn": {
+    "keepIf": [
+      "You keep your own books, on Windows, and refuse a monthly subscription.",
+      "You accept a beta, with separate backups and a check by your accountant."
+    ],
+    "avoidIf": [
+      "You need to receive e-invoices right now: the plugin is not out yet.",
+      "You work on a Mac, with several people remotely, or want an accountant built in."
+    ],
+    "threshold": "Install it on a test file and replay one real month of activity. If entries, VAT and the trial balance come out right, run it alongside your current tool until the final version and the e-invoicing plugin are out."
+  },
+  "alternatives": [
+    "indy",
+    "tiime",
+    "vulko"
+  ],
+  "soloRelevance": "high",
+  "teamRelevance": "medium",
+  "tool_type": "gestion",
+  "substitutable": true,
+  "verticals": [
+    "business-ops",
+    "finance-ops",
+    "consultant-b2b"
+  ],
+  "functional_needs": [
+    "comptabilite",
+    "facturation",
+    "devis-facturation-btp"
+  ],
+  "prescription_quality": "question",
+  "prescription_output": null,
+  "prescription_block_reasons": [],
+  "prescription_context_questions": [
+    "operating_system",
+    "e_invoicing_reception_needs",
+    "accountant_involvement"
+  ],
+  "substitution_cluster_v2": "accounting-ops",
+  "decision_policy_v3": {
+    "auto_cancel_allowed": false,
+    "auto_replace_allowed": false,
+    "auto_downgrade_allowed": false,
+    "requires_context_questions": true,
+    "never_auto_cancel_reason": "Le choix dépend du système utilisé, des obligations de facturation électronique et du rôle de l'expert-comptable.",
+    "default_decision_lane": "review_then_prescribe"
+  },
+  "toolTrimRating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 4,
+    "notedOn": "2026-11-25",
+    "lastActivityVerifiedOn": "2026-11-25",
+    "evidence": {
+      "valeurAjoutee": "Gestion courante et comptabilité gratuites en local ; la valeur reste limitée tant que la version est en bêta et que la facturation électronique manque. Source : billxpert.fr, 25 novembre 2026.",
+      "simplicite": "Téléchargement sans compte, vue d'ensemble puis détail, contrôles signalés avant validation ; 19 guides d'aide. Source : billxpert.fr/produit et billxpert.fr/aide, 25 novembre 2026.",
+      "utilisation": "Devis, factures, règlements, banque, écritures, journaux, balance, TVA, bilan simplifié. Source : billxpert.fr/produit et billxpert.fr/beta, 25 novembre 2026.",
+      "puissance": "Windows seulement, bêta, multiutilisateur encore en premières fonctions, facturation électronique en développement. Source : billxpert.fr/beta et billxpert.fr/facturation-electronique, 25 novembre 2026.",
+      "reversibilite": "Données locales, avec export et restauration documentés dans l'aide. Source : billxpert.fr/aide, 25 novembre 2026."
+    },
+    "evidenceEn": {
+      "valeurAjoutee": "Free local daily management and accounting; value stays limited while the version is in beta and e-invoicing is missing. Source: billxpert.fr, November 25, 2026.",
+      "simplicite": "Download without an account, overview then detail, checks flagged before validation; 19 help guides. Source: billxpert.fr/produit and billxpert.fr/aide, November 25, 2026.",
+      "utilisation": "Quotes, invoices, payments, bank, entries, journals, trial balance, VAT, simplified balance sheet. Source: billxpert.fr/produit and billxpert.fr/beta, November 25, 2026.",
+      "puissance": "Windows only, beta, early multi-user features, e-invoicing in development. Source: billxpert.fr/beta and billxpert.fr/facturation-electronique, November 25, 2026.",
+      "reversibilite": "Local data, with export and restore documented in the help center. Source: billxpert.fr/aide, November 25, 2026."
+    }
+  },
+  "tagline": {
+    "fr": "Comptabilité locale et gratuite pour TPE",
+    "en": "Free local accounting for small businesses"
+  },
+  "seo": {
+    "metaDescription": "BillXpert : avis, prix et limites du logiciel de comptabilité local et gratuit pour artisans, indépendants et TPE, sur Windows et en bêta.",
+    "metaDescriptionEn": "BillXpert review, pricing and limits: free local accounting software for tradespeople, freelancers and small businesses, on Windows and in beta.",
+    "presentationTitleFr": "BillXpert : la comptabilité gratuite, en local",
+    "presentationTitleEn": "BillXpert: free accounting, on your machine",
+    "idealForFr": "Artisans, indépendants et TPE sur Windows qui tiennent leur comptabilité eux-mêmes, sans abonnement.",
+    "idealForEn": "Tradespeople, freelancers and small businesses on Windows who keep their own books, with no subscription.",
+    "presentationMetaDescriptionFr": "BillXpert réunit devis, factures, règlements, écritures et TVA dans une application Windows gratuite, installée en local. Version bêta.",
+    "presentationMetaDescriptionEn": "BillXpert brings quotes, invoices, payments, entries and VAT together in a free Windows app installed locally. Beta version.",
+    "prixTitleFr": "Prix de BillXpert : cœur comptable gratuit",
+    "prixTitleEn": "BillXpert pricing: a free accounting core",
+    "prixMetaDescriptionFr": "Prix de BillXpert : le cœur comptable est gratuit et aucune offre payante n'existe pendant la bêta. Des plugins payants sont annoncés, sans prix.",
+    "prixMetaDescriptionEn": "BillXpert pricing: the accounting core is free and there is no paid offer during the beta. Paid plugins are announced, with no price.",
+    "altTitleFr": "Alternatives à BillXpert : Indy, Tiime, Vulko",
+    "altTitleEn": "BillXpert alternatives: Indy, Tiime, Vulko",
+    "altMetaDescriptionFr": "Besoin du cloud, du Mac ou de la facture électronique tout de suite ? Indy, Tiime et Vulko comparés à BillXpert sur l'usage, la conformité et le coût.",
+    "altMetaDescriptionEn": "Need the cloud, a Mac or e-invoicing right now? Indy, Tiime and Vulko compared with BillXpert on use, compliance and cost.",
+    "avisTitleFr": "Avis BillXpert : gratuit et local, mais encore en bêta",
+    "avisTitleEn": "BillXpert review: free and local, but still in beta",
+    "avisMetaDescriptionFr": "Avis BillXpert, noté {rating} : comptabilité complète, gratuite et locale ; Windows seulement, bêta, facturation électronique à venir.",
+    "avisMetaDescriptionEn": "BillXpert review, rated {rating}: complete, free and local accounting; Windows only, beta, e-invoicing still to come."
+  },
+  "lifecycle": {
+    "status": "active",
+    "note": "Bêta publique (version Windows 1.0.19).",
+    "checkedOn": "2026-11-25"
+  },
+  "research": {
+    "researchedOn": "2026-11-25",
+    "sources": 9
+  }
+}

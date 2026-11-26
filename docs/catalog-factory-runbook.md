@@ -88,6 +88,38 @@ collecte déterministe → **dossier factuel (work order)** → **agent éditori
 **agent arbitre uniquement pour les outils bloqués**. Chaque sous-agent reçoit un work order borné et **retourne du
 JSON structuré** — jamais de relecture du dépôt complet, jamais de discussion libre ni de rapport narratif intermédiaire.
 
+## Fiche soumise : circuit court (25/11/2026)
+
+Pour une fiche isolée (soumission, partenaire, demande ponctuelle) qui va directement dans
+`src/data/tools_v4.json`, sans passer par Supabase. But : une seule lecture du site, une seule
+rédaction, des contrôles par script, un seul build par lot.
+
+1. **Collecte, sans modèle.**
+   `node scripts/catalog/submission-intake.mjs --url=https://exemple.com --slug=exemple`
+   Un passage sur le sitemap (40 pages au plus) : badge ToolTrim présent ou absent, page et `rel`,
+   images og et favicon, texte des pages utiles (accueil, prix, à propos, CGU, confidentialité,
+   sécurité, FAQ, docs ; blog exclu) dans `research/submissions/<slug>/intake.json` (~50 Ko).
+   Si le badge doit être actif et que le script le dit absent, s'arrêter là et prévenir Michael.
+2. **Rédaction, un seul passage.** Copier `research/submissions/_gabarit.json` (la fiche Keybrum)
+   en `research/submissions/<slug>/entry.json` et le remplir à partir de `intake.json` seulement,
+   selon le prompt A0 de `docs/tooltrim-strategy/07-prompts-claude-codex.md`. Ne rouvrir le site
+   que pour un fait manquant. Les prix vont uniquement dans `pricing`, `pricingEn`, `pricing_v5`
+   et `pricing_v5En` ; un prix en dollars est converti au taux des autres fiches (5,11/5,95) dans
+   `compare_price_monthly_eur`. Sonnet suffit pour cette étape ; Opus si le produit est technique.
+3. **Contrôle et insertion, sans modèle.**
+   `node scripts/catalog/add-submitted-tool.mjs --slug=exemple --check`, puis sans `--check`.
+   Ajouter `--dofollow` seulement sur décision de Michael (lien officiel hors `nofollow`), et
+   `--replace` pour mettre à jour une fiche existante. Le script refuse un champ vide, moins de
+   3 avantages, limites ou usages, une alternative absente du catalogue, un montant dans le texte,
+   le vouvoiement et les mots interdits, puis régénère `tools_index.json`.
+   Il supprime ensuite `intake.json` : c'est une copie brute du site, ignorée par Git, qui ne
+   sert qu'à rédiger. Une mise à jour (`--replace`) relance donc d'abord la collecte.
+4. **Un build par lot**, pas par fiche : `npm run build` une fois les fiches du lot insérées,
+   puis vérifier le `rel` du lien officiel dans `dist/fr/tool/<slug>/index.html`. Chaque fiche
+   ajoute des pages : relever le plafond de fichiers de `scripts/audit-build-output.mjs` d'après
+   le compte mesuré, avec une ligne datée.
+5. **Rapport** de 12 lignes au plus (prompt A0), puis commit des seuls fichiers de la fiche.
+
 ## Git
 `git status` d'abord ; **jamais** `git add -A` ; stage **explicite** des seuls fichiers de la mission ;
 préserver toute modification sans rapport ; commit conventionnel ; push après validations.

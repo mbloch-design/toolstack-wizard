@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — finance
 # Generated from src/data/tools_index.json
-# Family: finance (62 of 1259 canonical tools)
+# Family: finance (63 of 1265 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
@@ -2662,6 +2662,53 @@
         "Solo is limited to one contact",
         "Each electronic invoice is charged individually",
         "The product is focused on the French micro-enterprise regime"
+      ]
+    }
+  },
+  {
+    "name": "BillXpert",
+    "slug": "billxpert",
+    "url_fr": "https://tooltrim.com/fr/tool/billxpert",
+    "url_en": "https://tooltrim.com/en/tool/billxpert",
+    "website": "https://billxpert.fr/",
+    "category": "finance",
+    "pricing": {
+      "free": "Cœur comptable gratuit, sans compte obligatoire. Aucune offre payante pendant la bêta.",
+      "paid": "Aucune offre payante à ce jour. Des plugins payants sont annoncés, sans prix publié."
+    },
+    "description_fr": "Logiciel de comptabilité local et gratuit pour artisans, indépendants et TPE : devis, factures, règlements, écritures et TVA dans une application Windows, encore en bêta.",
+    "description_en": "Free, local accounting software for tradespeople, freelancers and very small businesses: quotes, invoices, payments, entries and VAT in a Windows app, still in beta.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu tiens toi-même ta comptabilité, sur Windows, et tu refuses un abonnement mensuel",
+      "avoid_if": "Tu dois recevoir tes factures électroniques dès maintenant : le plugin n'est pas encore sorti",
+      "strengths": [
+        "Gestion courante et comptabilité dans la même application, sans abonnement",
+        "Les données restent sur ta machine : pas de service en ligne obligatoire",
+        "Chaque facture reste reliée à son règlement et à son écriture, avec des contrôles avant validation"
+      ],
+      "weaknesses": [
+        "Version bêta : l'éditeur demande des sauvegardes séparées et une vérification des résultats avant usage officiel",
+        "Windows uniquement, sans version Mac, web ou mobile",
+        "La réception des factures électroniques, obligatoire depuis septembre 2026, n'est pas encore disponible"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You keep your own books, on Windows, and refuse a monthly subscription",
+      "avoid_if": "You need to receive e-invoices right now: the plugin is not out yet",
+      "strengths": [
+        "Daily management and accounting in the same app, with no subscription",
+        "Your data stays on your machine: no mandatory online service",
+        "Each invoice stays linked to its payment and its entry, with checks before validation"
+      ],
+      "weaknesses": [
+        "Beta version: the publisher asks for separate backups and checked results before official use",
+        "Windows only, with no Mac, web or mobile version",
+        "Receiving e-invoices, required in France since September 2026, is not available yet"
       ]
     }
   }

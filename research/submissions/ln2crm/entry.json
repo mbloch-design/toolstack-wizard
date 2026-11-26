@@ -1,0 +1,398 @@
+{
+  "id": "ln2crm",
+  "slug": "ln2crm",
+  "name": "Ln2CRM",
+  "category": "crm",
+  "shortDescription": "Extension Chrome qui relie un profil LinkedIn à ton CRM (Pipedrive, HubSpot, Salesforce, Zoho, Capsule) : vérifier, créer ou mettre à jour le contact sans changer d'onglet.",
+  "shortDescriptionEn": "Chrome extension that links a LinkedIn profile to your CRM (Pipedrive, HubSpot, Salesforce, Zoho, Capsule): check, create or update the contact without switching tabs.",
+  "description": "Ln2CRM ouvre un panneau sur les pages LinkedIn de personnes et d'entreprises, et seulement là. Une pastille indique si la personne est déjà dans ton CRM, si sa fiche a vieilli ou si elle est nouvelle. En un clic, tu crées ou mets à jour le contact, l'entreprise et l'affaire, sans doublon, et tu enregistres la conversation LinkedIn en note. L'outil ne prospecte pas à ta place : il n'envoie ni message ni invitation et n'aspire pas de profils en masse.",
+  "longDescription": "Ln2CRM règle un geste répétitif de la prospection sur LinkedIn : recopier un profil dans le CRM. L'extension Chrome s'ouvre sur la page d'une personne ou d'une entreprise, cherche d'abord la fiche existante par l'URL LinkedIn, l'e-mail et le nom, puis pré-remplit les champs, y compris les champs personnalisés du CRM. Une pastille verte, jaune ou rouge dit si la personne est déjà enregistrée, si son poste ou son entreprise a changé, ou si elle est nouvelle.\n\nLe CRM reste la référence. Ln2CRM fonctionne avec Pipedrive, HubSpot, Salesforce, Zoho et Capsule, sans Sales Navigator, et aussi à l'intérieur de Sales Navigator. Les conversations LinkedIn s'enregistrent en notes, à la demande ou automatiquement, et les invitations que tu envoies deviennent des tâches faites. La recherche d'e-mail est incluse dans chaque formule ; le téléphone passe par ta propre clé FullEnrich ou Apollo, au prix du fournisseur.\n\nLe Copilot rédige relances, réponses et commentaires à partir de la conversation et de l'historique du CRM, avec OpenAI comme fournisseur. La dictée vocale transforme un appel en note. L'extension existe en six langues, dont le français.\n\nLe positionnement est net : pas d'automatisation. Ln2CRM n'agit que sur ton clic, sur le profil affiché, sans tourner en arrière-plan. Cela limite le risque pour ton compte LinkedIn sans le supprimer : aucune extension tierce n'est approuvée par LinkedIn, et les conditions te laissent seul responsable du respect de celles de LinkedIn. L'éditeur est une petite équipe basée à Prague, lancée en novembre 2025 ; la société et l'hébergeur ne sont pas nommés.",
+  "longDescriptionEn": "Ln2CRM fixes one repetitive step of LinkedIn prospecting: copying a profile into the CRM. The Chrome extension opens on a person's or a company's page, looks for the existing record by LinkedIn URL, email and name, then pre-fills the fields, custom CRM fields included. A green, yellow or red badge says whether the person is already saved, whether their title or company has changed, or whether they are new.\n\nThe CRM stays the source of truth. Ln2CRM works with Pipedrive, HubSpot, Salesforce, Zoho and Capsule, without Sales Navigator, and inside Sales Navigator too. LinkedIn conversations are logged as notes, on demand or automatically, and the invitations you send become done tasks. Email finding is included in every plan; phone numbers go through your own FullEnrich or Apollo key, at the provider's price.\n\nThe Copilot drafts follow-ups, replies and comments from the conversation and the CRM history, with OpenAI as its provider. Voice dictation turns a call into a note. The extension comes in six languages, French included.\n\nThe stance is clear: no automation. Ln2CRM only acts on your click, on the profile you are viewing, and never runs in the background. That lowers the risk to your LinkedIn account without removing it: no third-party extension is approved by LinkedIn, and the terms make you solely responsible for following LinkedIn's. The publisher is a small team in Prague that started in November 2025; the company and the host are not named.",
+  "pricing": {
+    "free": "Plan gratuit durable (Test free), sans carte : 15 créations, 15 mises à jour, 5 brouillons Copilot et 5 e-mails trouvés par mois. Un CRM reste nécessaire.",
+    "paid": "Base : 16 $/mois par utilisateur (13 $ en annuel) ; Pro : 23 $/mois par utilisateur (18 $ en annuel) ; Enterprise sur devis."
+  },
+  "pricingEn": {
+    "free": "A durable free plan (Test free), no card: 15 creates, 15 updates, 5 Copilot drafts and 5 email finds a month. You still need a CRM.",
+    "paid": "Base: $16/month per user ($13 yearly); Pro: $23/month per user ($18 yearly); Enterprise by quote."
+  },
+  "defaultMonthlyPrice": 13.74,
+  "compareMonthlyPrice": 13.74,
+  "pricing_v5": {
+    "compare_price_monthly_eur": 13.74,
+    "compare_plan_name": "Base",
+    "compare_plan_kind": "user",
+    "price_reliability": "high",
+    "verification_status": "official_explicit",
+    "verified_on": "2026-11-25",
+    "official_source_url": "https://ln2crm.com/pricing.html",
+    "source_domain": "ln2crm.com",
+    "location_sensitive": false,
+    "usage_sensitive": true,
+    "cautions": [
+      "Prix par utilisateur, affichés en dollars ; la TVA n'est pas précisée. Paiement géré par Paddle.",
+      "Le plan gratuit est durable, mais le coût total n'est pas nul : il faut un CRM, et le téléphone ou l'enrichissement avancé passent par ta propre clé FullEnrich ou Apollo, au prix du fournisseur.",
+      "Quotas remis à zéro chaque mois par utilisateur, sans dépassement facturé : un quota atteint se met en pause jusqu'au mois suivant.",
+      "Mensuel non remboursable ; l'annuel est remboursé au prorata dans les 30 jours, mais les conditions demandent la réclamation sous 14 jours."
+    ],
+    "plans": [
+      {
+        "planKey": "test-free",
+        "displayName": "Test free",
+        "summary": "Plan gratuit sans limite de durée et sans carte, avec de petits quotas mensuels.",
+        "featureHighlights": [
+          "15 créations et 15 mises à jour par mois",
+          "5 brouillons Copilot",
+          "5 e-mails trouvés et 10 vérifications"
+        ],
+        "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+        "pricingUnit": "user",
+        "isFree": true,
+        "isComparePlan": false,
+        "nativeAmount": 0,
+        "nativeCurrency": "USD",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25",
+        "billingPeriod": "monthly"
+      },
+      {
+        "planKey": "base",
+        "displayName": "Base",
+        "summary": "Par utilisateur ; 13 $/mois par utilisateur en facturation annuelle.",
+        "featureHighlights": [
+          "500 créations et 500 mises à jour par mois",
+          "30 brouillons Copilot",
+          "100 e-mails trouvés et 250 vérifications"
+        ],
+        "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+        "pricingUnit": "user",
+        "isFree": false,
+        "isComparePlan": true,
+        "nativeAmount": 16,
+        "nativeCurrency": "USD",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25",
+        "billingPeriod": "monthly"
+      },
+      {
+        "planKey": "pro",
+        "displayName": "Pro",
+        "summary": "Par utilisateur ; 18 $/mois par utilisateur en facturation annuelle.",
+        "featureHighlights": [
+          "2 000 créations et 2 000 mises à jour par mois",
+          "500 brouillons Copilot",
+          "300 e-mails trouvés et 750 vérifications"
+        ],
+        "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+        "pricingUnit": "user",
+        "isFree": false,
+        "isComparePlan": false,
+        "nativeAmount": 23,
+        "nativeCurrency": "USD",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25",
+        "billingPeriod": "monthly"
+      },
+      {
+        "planKey": "enterprise",
+        "displayName": "Enterprise",
+        "summary": "Sur devis, pour les équipes commerciales de plus de dix personnes.",
+        "featureHighlights": [
+          "Limites sur demande",
+          "Quotas mutualisés possibles",
+          "Conditions sur mesure"
+        ],
+        "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+        "pricingUnit": "custom",
+        "isFree": false,
+        "isComparePlan": false,
+        "nativeAmount": null,
+        "nativeCurrency": "USD",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      }
+    ],
+    "cautionsEn": [
+      "Prices are per user, shown in US dollars; VAT is not stated. Billing runs through Paddle.",
+      "The free plan is durable, but the total cost is not zero: you need a CRM, and phone or advanced enrichment uses your own FullEnrich or Apollo key, at the provider's price.",
+      "Quotas reset monthly per user, with no overage billing: a quota that runs out pauses until next month.",
+      "Monthly payments are non-refundable; yearly is refunded pro rata within 30 days, but the terms ask for the request within 14 days."
+    ]
+  },
+  "pricing_v5En": {
+    "compare_price_monthly_eur": 13.74,
+    "compare_plan_name": "Base",
+    "compare_plan_kind": "user",
+    "price_reliability": "high",
+    "verification_status": "official_explicit",
+    "verified_on": "2026-11-25",
+    "official_source_url": "https://ln2crm.com/pricing.html",
+    "source_domain": "ln2crm.com",
+    "location_sensitive": false,
+    "usage_sensitive": true,
+    "cautions": [
+      "Prices are per user, shown in US dollars; VAT is not stated. Billing runs through Paddle.",
+      "The free plan is durable, but the total cost is not zero: you need a CRM, and phone or advanced enrichment uses your own FullEnrich or Apollo key, at the provider's price.",
+      "Quotas reset monthly per user, with no overage billing: a quota that runs out pauses until next month.",
+      "Monthly payments are non-refundable; yearly is refunded pro rata within 30 days, but the terms ask for the request within 14 days."
+    ],
+    "plans": [
+      {
+        "planKey": "test-free",
+        "displayName": "Test free",
+        "summary": "A free plan with no time limit and no card, with small monthly quotas.",
+        "featureHighlights": [
+          "15 creates and 15 updates a month",
+          "5 Copilot drafts",
+          "5 email finds and 10 checks"
+        ],
+        "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+        "pricingUnit": "user",
+        "isFree": true,
+        "isComparePlan": false,
+        "nativeAmount": 0,
+        "nativeCurrency": "USD",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25",
+        "billingPeriod": "monthly"
+      },
+      {
+        "planKey": "base",
+        "displayName": "Base",
+        "summary": "Per user; $13 a month per user billed yearly.",
+        "featureHighlights": [
+          "500 creates and 500 updates a month",
+          "30 Copilot drafts",
+          "100 email finds and 250 checks"
+        ],
+        "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+        "pricingUnit": "user",
+        "isFree": false,
+        "isComparePlan": true,
+        "nativeAmount": 16,
+        "nativeCurrency": "USD",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25",
+        "billingPeriod": "monthly"
+      },
+      {
+        "planKey": "pro",
+        "displayName": "Pro",
+        "summary": "Per user; $18 a month per user billed yearly.",
+        "featureHighlights": [
+          "2,000 creates and 2,000 updates a month",
+          "500 Copilot drafts",
+          "300 email finds and 750 checks"
+        ],
+        "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+        "pricingUnit": "user",
+        "isFree": false,
+        "isComparePlan": false,
+        "nativeAmount": 23,
+        "nativeCurrency": "USD",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25",
+        "billingPeriod": "monthly"
+      },
+      {
+        "planKey": "enterprise",
+        "displayName": "Enterprise",
+        "summary": "By quote, for sales teams of more than ten people.",
+        "featureHighlights": [
+          "Limits on request",
+          "Pooled quotas possible",
+          "Custom terms"
+        ],
+        "detailsSourceUrl": "https://ln2crm.com/pricing.html",
+        "pricingUnit": "custom",
+        "isFree": false,
+        "isComparePlan": false,
+        "nativeAmount": null,
+        "nativeCurrency": "USD",
+        "taxInclusion": "unknown",
+        "observedMarket": "US",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25"
+      }
+    ]
+  },
+  "websiteUrl": "https://ln2crm.com/",
+  "affiliateLink": "",
+  "logo": "https://ln2crm.com/assets/img/favicon-32.png",
+  "pros": [
+    "Cherche la fiche existante avant de créer : moins de doublons dans le CRM.",
+    "La pastille de présence signale un contact déjà saisi ou une fiche devenue obsolète.",
+    "N'automatise rien : l'outil agit seulement sur ton clic, profil par profil."
+  ],
+  "prosEn": [
+    "Looks for the existing record before creating one: fewer duplicates in the CRM.",
+    "The presence badge flags a contact already saved or a record gone stale.",
+    "Automates nothing: it only acts on your click, one profile at a time."
+  ],
+  "cons": [
+    "Chrome uniquement : ni Firefox, ni Safari, ni application web.",
+    "Le plan gratuit sert à tester, pas à travailler : ses quotas mensuels s'épuisent en quelques jours de prospection.",
+    "Aucune extension n'étant approuvée par LinkedIn, le risque pour ton compte reste à ta charge.",
+    "La société éditrice et l'hébergeur des données ne sont pas nommés."
+  ],
+  "consEn": [
+    "Chrome only: no Firefox, no Safari, no web app.",
+    "The free plan is for testing, not for working: its monthly quotas run out in a few days of prospecting.",
+    "Since no extension is approved by LinkedIn, the risk to your account stays yours.",
+    "The publishing company and the data host are not named."
+  ],
+  "useCases": [
+    "Ajouter un prospect LinkedIn dans Pipedrive ou HubSpot sans recopier sa fiche.",
+    "Voir d'un coup d'œil si un profil est déjà dans le CRM avant de le contacter.",
+    "Garder la trace des échanges LinkedIn dans le CRM, en notes.",
+    "Trouver l'e-mail professionnel d'un prospect au moment de l'enregistrer."
+  ],
+  "useCasesEn": [
+    "Add a LinkedIn prospect to Pipedrive or HubSpot without retyping the profile.",
+    "See at a glance whether a profile is already in the CRM before reaching out.",
+    "Keep LinkedIn conversations in the CRM, as notes.",
+    "Find a prospect's work email while saving them."
+  ],
+  "relevantFor": [
+    "Consultants et fondateurs qui prospectent sur LinkedIn avec un CRM",
+    "Petites équipes commerciales sur Pipedrive, HubSpot, Salesforce, Zoho ou Capsule",
+    "Commerciaux qui veulent un CRM à jour sans payer Sales Navigator"
+  ],
+  "relevantForEn": [
+    "Consultants and founders prospecting on LinkedIn with a CRM",
+    "Small sales teams on Pipedrive, HubSpot, Salesforce, Zoho or Capsule",
+    "Salespeople who want an up-to-date CRM without paying for Sales Navigator"
+  ],
+  "verdict": {
+    "keepIf": [
+      "Tu prospectes chaque semaine sur LinkedIn et tu recopies les profils à la main dans ton CRM.",
+      "Tu veux un CRM propre, sans doublon, avec les échanges LinkedIn dedans, sans outil d'automatisation."
+    ],
+    "avoidIf": [
+      "Tu n'as pas de CRM, ou ton CRM n'est pas l'un des cinq gérés.",
+      "Tu cherches à envoyer des invitations ou des messages en série : l'outil ne le fait pas, par choix."
+    ],
+    "threshold": "Teste le plan gratuit sur une semaine de prospection réelle. Si tu atteins ses quotas avant la fin, Base couvre un rythme régulier ; Pro ne se justifie que si tu enregistres plusieurs centaines de profils par mois ou si tu utilises beaucoup le Copilot."
+  },
+  "verdictEn": {
+    "keepIf": [
+      "You prospect on LinkedIn every week and copy profiles into your CRM by hand.",
+      "You want a clean CRM, without duplicates, with LinkedIn conversations in it, and no automation tool."
+    ],
+    "avoidIf": [
+      "You have no CRM, or yours is not one of the five supported.",
+      "You want to send invitations or messages in bulk: it does not, by design."
+    ],
+    "threshold": "Try the free plan over a week of real prospecting. If you hit its quotas before the week ends, Base covers a steady pace; Pro only makes sense if you save several hundred profiles a month or lean on the Copilot."
+  },
+  "alternatives": [
+    "apollo-io",
+    "lusha",
+    "waalaxy"
+  ],
+  "soloRelevance": "high",
+  "teamRelevance": "high",
+  "tool_type": "satellite",
+  "substitutable": true,
+  "verticals": [
+    "consultant-b2b",
+    "fondateur-saas",
+    "sales-ops"
+  ],
+  "functional_needs": [
+    "crm-enrichment",
+    "linkedin-crm-sync",
+    "email-finder",
+    "prospecting-followup"
+  ],
+  "prescription_quality": "question",
+  "prescription_output": null,
+  "prescription_block_reasons": [],
+  "prescription_context_questions": [
+    "crm_in_use",
+    "linkedin_prospecting_volume",
+    "team_size"
+  ],
+  "substitution_cluster_v2": "crm-prospection",
+  "decision_policy_v3": {
+    "auto_cancel_allowed": false,
+    "auto_replace_allowed": false,
+    "auto_downgrade_allowed": false,
+    "requires_context_questions": true,
+    "never_auto_cancel_reason": "L'intérêt dépend du CRM utilisé, du volume de prospection sur LinkedIn et du nombre d'utilisateurs.",
+    "default_decision_lane": "review_then_prescribe"
+  },
+  "toolTrimRating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 4,
+    "notedOn": "2026-11-25",
+    "lastActivityVerifiedOn": "2026-11-25",
+    "evidence": {
+      "valeurAjoutee": "Supprime la saisie manuelle d'un profil LinkedIn dans le CRM, avec contrôle des doublons et pastille de présence. Source : ln2crm.com, 25 novembre 2026.",
+      "simplicite": "Extension Chrome qui s'ouvre sur la page LinkedIn affichée ; connexion au CRM puis action au clic. Source : ln2crm.com et ln2crm.com/install.html, 25 novembre 2026.",
+      "utilisation": "Création et mise à jour de contacts, entreprises et affaires, notes de conversation, recherche d'e-mail, Copilot, dictée. Source : ln2crm.com, 25 novembre 2026.",
+      "puissance": "Cinq CRM, Chrome seulement, quotas mensuels par utilisateur, aucune automatisation par choix. Source : ln2crm.com/pricing.html et ln2crm.com/about.html, 25 novembre 2026.",
+      "reversibilite": "Les données restent dans ton CRM ; l'index de contacts est supprimé à la déconnexion du CRM ou à la suppression du compte. Source : ln2crm.com/legal/privacy.html, 25 novembre 2026."
+    },
+    "evidenceEn": {
+      "valeurAjoutee": "Removes manual entry of a LinkedIn profile into the CRM, with duplicate checks and a presence badge. Source: ln2crm.com, November 25, 2026.",
+      "simplicite": "A Chrome extension that opens on the LinkedIn page you are viewing; connect the CRM, then act on click. Source: ln2crm.com and ln2crm.com/install.html, November 25, 2026.",
+      "utilisation": "Creates and updates contacts, companies and deals, conversation notes, email finding, Copilot, dictation. Source: ln2crm.com, November 25, 2026.",
+      "puissance": "Five CRMs, Chrome only, monthly quotas per user, no automation by design. Source: ln2crm.com/pricing.html and ln2crm.com/about.html, November 25, 2026.",
+      "reversibilite": "Data stays in your CRM; the contact index is deleted when you disconnect the CRM or delete the account. Source: ln2crm.com/legal/privacy.html, November 25, 2026."
+    }
+  },
+  "tagline": {
+    "fr": "De LinkedIn au CRM, en un clic",
+    "en": "From LinkedIn to your CRM, in one click"
+  },
+  "seo": {
+    "metaDescription": "Ln2CRM : avis, tarifs et limites de l'extension Chrome qui relie LinkedIn à Pipedrive, HubSpot, Salesforce, Zoho ou Capsule, sans automatisation.",
+    "metaDescriptionEn": "Ln2CRM review, pricing and limits: the Chrome extension linking LinkedIn to Pipedrive, HubSpot, Salesforce, Zoho or Capsule, without automation.",
+    "presentationTitleFr": "Ln2CRM : LinkedIn dans ton CRM, sans doublon",
+    "presentationTitleEn": "Ln2CRM: LinkedIn into your CRM, no duplicates",
+    "idealForFr": "Consultants, fondateurs et petites équipes commerciales qui prospectent sur LinkedIn et tiennent un CRM.",
+    "idealForEn": "Consultants, founders and small sales teams who prospect on LinkedIn and keep a CRM.",
+    "presentationMetaDescriptionFr": "Ln2CRM enregistre un profil LinkedIn dans ton CRM en un clic, vérifie les doublons et garde tes conversations en notes, sans rien automatiser.",
+    "presentationMetaDescriptionEn": "Ln2CRM saves a LinkedIn profile to your CRM in one click, checks for duplicates and keeps your conversations as notes, automating nothing.",
+    "prixTitleFr": "Prix de Ln2CRM : Base dès {price} par utilisateur",
+    "prixTitleEn": "Ln2CRM pricing: Base from {price} per user",
+    "prixMetaDescriptionFr": "Prix de Ln2CRM : plan gratuit durable avec quotas, Base dès {price} par utilisateur et par mois, Pro, Enterprise sur devis. Moins cher en annuel.",
+    "prixMetaDescriptionEn": "Ln2CRM pricing: a durable free plan with quotas, Base from {price} per user a month, Pro, Enterprise by quote. Cheaper billed yearly.",
+    "altTitleFr": "Alternatives à Ln2CRM : Apollo, Lusha, Waalaxy",
+    "altTitleEn": "Ln2CRM alternatives: Apollo, Lusha, Waalaxy",
+    "altMetaDescriptionFr": "Besoin d'enrichissement ou d'automatisation LinkedIn ? Apollo, Lusha et Waalaxy comparés à Ln2CRM sur les données, l'automatisation et le coût.",
+    "altMetaDescriptionEn": "Need enrichment or LinkedIn automation? Apollo, Lusha and Waalaxy compared with Ln2CRM on data, automation and cost.",
+    "avisTitleFr": "Avis Ln2CRM : un CRM à jour depuis LinkedIn",
+    "avisTitleEn": "Ln2CRM review: an up-to-date CRM from LinkedIn",
+    "avisMetaDescriptionFr": "Avis Ln2CRM, noté {rating} : moins de saisie et de doublons dans le CRM ; Chrome seulement, quotas mensuels, éditeur peu identifié.",
+    "avisMetaDescriptionEn": "Ln2CRM review, rated {rating}: less typing and fewer CRM duplicates; Chrome only, monthly quotas, publisher barely identified."
+  },
+  "lifecycle": {
+    "status": "active",
+    "note": null,
+    "checkedOn": "2026-11-25"
+  },
+  "research": {
+    "researchedOn": "2026-11-25",
+    "sources": 7
+  },
+  "ogImageUrl": "https://ln2crm.com/assets/img/og-image-v2.png"
+}

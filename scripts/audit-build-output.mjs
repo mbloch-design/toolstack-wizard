@@ -57,7 +57,9 @@ const budgets = {
   // 2026-11-26: the tool pages show their alternatives in the catalogue's MediaCard (no carousel). Its
   // combinations (screenshot or logo, free price or not, rows of 2 to 4) add about 60 shared critical-CSS
   // files; each page still loads one critical file of the usual size. Measured 15,619 files.
-  files: 15_640,
+  // 2026-11-26: six submitted fiches (Keybrum, Ln2CRM, Commenty, BillXpert,
+  // BracketView, Makelead), about 9 files each, on top of main. Both together: measured 15,689 files.
+  files: 15_700,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
   // 2026-10-02 (US-NAV-01): search and menu buttons in the shared topbar add
   // about 2 KB of markup and critical CSS to each of the ~13,100 pages, plus
@@ -93,7 +95,8 @@ const budgets = {
   // 2026-10-02 (US-NAV-01): shell search and menu buttons on every page,
   // measured 34.5 MiB.
   // 2026-11-26: the same ~60 critical-CSS variants of the MediaCard on tool pages, measured 38.3 MiB.
-  cssBytes: 38.6 * MiB,
+  // 2026-11-26: plus six submitted fiches and their critical CSS, measured 38.7 MiB.
+  cssBytes: 38.9 * MiB,
   duplicateBytes: 3 * MiB,
 };
 

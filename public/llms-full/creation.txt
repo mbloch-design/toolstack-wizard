@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — creation
 # Generated from src/data/tools_index.json
-# Family: creation (354 of 1259 canonical tools)
+# Family: creation (355 of 1265 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
@@ -15471,6 +15471,53 @@
       "weaknesses": [
         "Proprietary editor, free use can be revised with notice",
         "Non-game use requires authorisation"
+      ]
+    }
+  },
+  {
+    "name": "Commenty",
+    "slug": "commenty",
+    "url_fr": "https://tooltrim.com/fr/tool/commenty",
+    "url_en": "https://tooltrim.com/en/tool/commenty",
+    "website": "https://commenty.ai/",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai gratuit de 14 jours sans carte, jusqu'à 20 commentaires par jour. Pas de plan gratuit garanti ensuite (CGU et FAQ divergent).",
+      "paid": "Starter : 15 $/mois ou 100 $/an ; Professional : 29 $/mois ou 200 $/an. Taxes incluses."
+    },
+    "description_fr": "Extension Chrome qui t'aide à écrire tes commentaires LinkedIn dans ta propre voix : tu commences, elle continue, tu relis et tu publies toi-même.",
+    "description_en": "Chrome extension that helps you write LinkedIn comments in your own voice: you start, it continues, you review and post it yourself.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu commentes sur LinkedIn plusieurs fois par semaine et tu bloques sur la formulation, pas sur l'idée",
+      "avoid_if": "Tu veux automatiser ta présence LinkedIn : Commenty ne publie rien sans ton clic",
+      "strengths": [
+        "Part de tes propres mots au lieu d'écrire à ta place : le commentaire reste le tien",
+        "Ne publie jamais seul et ne demande ni mot de passe ni cookie LinkedIn",
+        "Le bilan du dimanche transforme les commentaires en quelques relations à entretenir"
+      ],
+      "weaknesses": [
+        "Chrome uniquement : les autres navigateurs Chromium ne sont ni pris en charge ni testés",
+        "Ce qui reste gratuit après l'essai n'est pas clair : les CGU et la FAQ se contredisent",
+        "Limite quotidienne de commentaires assistés, même sur la formule la plus chère"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You comment on LinkedIn several times a week and get stuck on the wording, not the idea",
+      "avoid_if": "You want to automate your LinkedIn presence: Commenty posts nothing without your click",
+      "strengths": [
+        "Starts from your own words instead of writing for you: the comment stays yours",
+        "Never posts on its own and asks for no LinkedIn password or cookie",
+        "The Sunday brief turns comments into a few relationships worth keeping up"
+      ],
+      "weaknesses": [
+        "Chrome only: other Chromium browsers are neither supported nor tested",
+        "What stays free after the trial is unclear: the terms and the FAQ contradict each other",
+        "A daily cap on assisted comments, even on the most expensive plan"
       ]
     }
   }

@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — legal-contracts
 # Generated from src/data/tools_index.json
-# Family: legal-contracts (24 of 1259 canonical tools)
+# Family: legal-contracts (24 of 1265 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.

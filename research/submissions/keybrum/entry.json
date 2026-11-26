@@ -1,0 +1,373 @@
+{
+  "id": "keybrum",
+  "slug": "keybrum",
+  "name": "Keybrum",
+  "category": "security",
+  "shortDescription": "Pentest automatisé pour les apps construites avec Lovable, Bolt, Cursor ou Claude Code : Keybrum attaque l'app en ligne, prouve chaque faille et donne le prompt pour la corriger.",
+  "shortDescriptionEn": "Automated pentesting for apps built with Lovable, Bolt, Cursor or Claude Code: Keybrum attacks the live app, proves each flaw and hands you the prompt to fix it.",
+  "description": "Keybrum attaque de l'extérieur une app construite avec un outil d'IA, comme le ferait un attaquant, une fois que tu as prouvé qu'elle t'appartient. Il ne remonte que les failles qu'il a pu démontrer, avec une preuve masquée, un prompt de correction pour ton agent de code et un contre-test qui ne ferme la faille que lorsque la même attaque échoue. Les tests de lecture laissent les données en place, les tests d'écriture sont construits pour ne rien écrire, et la suppression n'est jamais testée. Un passage sans faille ne prouve pas que l'app est sûre : il dit que les attaques de la bibliothèque ont échoué ce jour-là.",
+  "longDescription": "Keybrum vise un problème précis : les apps générées avec Lovable, Bolt, Replit, v0, Cursor ou Claude Code arrivent en production sans que personne ne les ait attaquées. L'outil lance une bibliothèque d'attaques publique contre l'app déployée, sur Supabase, Firebase ou un backend maison, et ne signale que ce qu'il a prouvé. Chaque faille arrive avec le nombre de lignes exposées, les noms de colonnes, une ligne d'exemple masquée et la requête qui la démontre.\n\nAvant toute attaque, tu prouves que l'app est à toi par une balise, un enregistrement DNS ou un fichier publié ; la preuve est revérifiée tous les 30 jours. Keybrum vérifie aussi que le projet Supabase ou Firebase relié t'appartient. Sinon, ce backend n'est pas attaqué. Il crée un compte ordinaire jetable quand l'inscription est ouverte et n'utilise jamais un compte client ou administrateur réel.\n\nLa correction passe par ton agent : prompts prêts pour Lovable, Bolt, Cursor ou Claude Code, migration SQL, étapes de rotation de clé, et un serveur MCP qui permet à l'agent de lire la faille, d'appliquer le correctif et de relancer le contre-test. Les formules mensuelles ajoutent un contrôle dans la CI à chaque pull request, des attaques à chaque déploiement, une veille des vulnérabilités connues sur tes dépendances, une page de confiance publique et des alertes Slack ou Discord. L'audit du code reste optionnel et se fait sur ta machine : seuls les résultats remontent.\n\nCe que Keybrum ne fait pas compte autant. Il ne teste pas la suppression, ne lance ni test de charge ni force brute, ne contourne ni CAPTCHA, ni connexion uniquement sociale, ni passkey, ni code SMS. Il ne remplace pas un pentest manuel, ne délivre aucune certification et refuse les adresses privées. Les pages consultées ne nomment ni la société éditrice ni son pays.",
+  "longDescriptionEn": "Keybrum targets one problem: apps generated with Lovable, Bolt, Replit, v0, Cursor or Claude Code reach production without anyone attacking them. It runs a public attack library against the deployed app, on Supabase, Firebase or a custom backend, and only reports what it has proven. Each finding comes with the number of exposed rows, the column names, one redacted example row and the request that proves it.\n\nBefore any attack, you prove the app is yours with a tag, a DNS record or a published file; the proof is checked again every 30 days. Keybrum also checks that the linked Supabase or Firebase project is yours, and leaves that backend alone when it cannot. It creates one ordinary throwaway account when sign-up is open and never uses a real customer or admin account.\n\nFixing goes through your coding agent: ready prompts for Lovable, Bolt, Cursor or Claude Code, an SQL migration, key-rotation steps, and an MCP server that lets the agent read the finding, apply the fix and call the retest itself. Monthly plans add a CI check on each pull request, attacks on each deploy, a watch on known vulnerabilities in your dependencies, a public trust page and Slack or Discord alerts. The code audit is optional and runs on your machine: only the findings are sent.\n\nWhat Keybrum leaves out matters as much. It does not test deletes, runs no load test or brute force, and does not get past CAPTCHA, social-only login, passkeys or SMS codes. It is not a manual pentest, issues no certification and refuses private addresses. The pages reviewed name neither the company behind it nor its country.",
+  "pricing": {
+    "free": "Pas de plan gratuit ni d'essai. Aperçu gratuit sans compte, limité à ce que le navigateur télécharge déjà.",
+    "paid": "Report : 99 € HT une fois ; Maker : 59 € HT/mois (590 €/an) ; Team : 199 € HT/mois (1 990 €/an)."
+  },
+  "pricingEn": {
+    "free": "No free plan and no trial. A free preview with no account, limited to what a browser already downloads.",
+    "paid": "Report: €99 excl. VAT, once; Maker: €59 excl. VAT/month (€590/year); Team: €199 excl. VAT/month (€1,990/year)."
+  },
+  "defaultMonthlyPrice": 59,
+  "pricing_v5": {
+    "compare_price_monthly_eur": 59,
+    "compare_plan_name": "Maker",
+    "compare_plan_kind": "monthly",
+    "price_reliability": "official_explicit",
+    "verification_status": "official_explicit",
+    "verified_on": "2026-11-25",
+    "official_source_url": "https://keybrum.com/pricing",
+    "source_domain": "keybrum.com",
+    "location_sensitive": false,
+    "usage_sensitive": false,
+    "cautions": [
+      "Les prix sont affichés hors TVA. Paiement géré par Polar, revendeur officiel, qui émet les factures et collecte la TVA.",
+      "Pas de plan gratuit ni d'essai : l'aperçu gratuit montre seulement ce que le navigateur télécharge déjà, l'attaque commence avec un rapport ou un forfait.",
+      "Maker et Team existent aussi à l'année, avec deux mois offerts. Pas de remboursement des périodes entamées, sauf obligation légale.",
+      "La page d'accueil annonce des contre-tests illimités sur chaque formule ; le tableau des prix les limite à 7 jours pour Report."
+    ],
+    "plans": [
+      {
+        "planKey": "report",
+        "displayName": "Report",
+        "summary": "Une app, une attaque complète, contre-tests pendant 7 jours et rapport PDF. Paiement unique, rien ne se renouvelle.",
+        "featureHighlights": [
+          "1 app",
+          "1 attaque complète",
+          "Contre-tests pendant 7 jours",
+          "Rapport PDF"
+        ],
+        "detailsSourceUrl": "https://keybrum.com/pricing",
+        "pricingUnit": "one_time",
+        "isFree": false,
+        "isComparePlan": false,
+        "nativeAmount": 99,
+        "nativeCurrency": "EUR",
+        "taxInclusion": "excluded",
+        "observedMarket": "France",
+        "observedLocale": "en",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25",
+        "billingPeriod": "one_time"
+      },
+      {
+        "planKey": "maker",
+        "displayName": "Maker",
+        "summary": "Cinq apps, deux membres, attaques planifiées, contrôle dans la CI et alertes Slack ou Discord.",
+        "featureHighlights": [
+          "5 apps, 2 membres",
+          "200 attaques complètes par mois",
+          "Contre-tests illimités",
+          "Contrôle CI, page de confiance et badge"
+        ],
+        "detailsSourceUrl": "https://keybrum.com/pricing",
+        "pricingUnit": "plan",
+        "isFree": false,
+        "isComparePlan": true,
+        "nativeAmount": 59,
+        "nativeCurrency": "EUR",
+        "taxInclusion": "excluded",
+        "observedMarket": "France",
+        "observedLocale": "en",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25",
+        "billingPeriod": "monthly"
+      },
+      {
+        "planKey": "team",
+        "displayName": "Team",
+        "summary": "Vingt-cinq apps, dix membres, marque sur les rapports et découverte des apps Vercel, Netlify ou Supabase.",
+        "featureHighlights": [
+          "25 apps, 10 membres",
+          "1 000 attaques complètes par mois",
+          "Tout Maker",
+          "Marque sur rapports et pages de confiance"
+        ],
+        "detailsSourceUrl": "https://keybrum.com/pricing",
+        "pricingUnit": "plan",
+        "isFree": false,
+        "isComparePlan": false,
+        "nativeAmount": 199,
+        "nativeCurrency": "EUR",
+        "taxInclusion": "excluded",
+        "observedMarket": "France",
+        "observedLocale": "en",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25",
+        "billingPeriod": "monthly"
+      }
+    ],
+    "cautionsEn": [
+      "Prices exclude VAT. Billing runs through Polar, the merchant of record, which issues invoices and collects VAT.",
+      "No free plan and no trial: the free preview only shows what a browser already downloads; the attack starts with a report or a plan.",
+      "Maker and Team are also sold yearly, with two months free. Partial periods are not refunded, except where the law requires it.",
+      "The homepage says retests are unlimited on every plan; the pricing table limits them to 7 days on Report."
+    ]
+  },
+  "pricing_v5En": {
+    "compare_price_monthly_eur": 59,
+    "compare_plan_name": "Maker",
+    "compare_plan_kind": "monthly",
+    "price_reliability": "official_explicit",
+    "verification_status": "official_explicit",
+    "verified_on": "2026-11-25",
+    "official_source_url": "https://keybrum.com/pricing",
+    "source_domain": "keybrum.com",
+    "location_sensitive": false,
+    "usage_sensitive": false,
+    "cautions": [
+      "Prices exclude VAT. Billing runs through Polar, the merchant of record, which issues invoices and collects VAT.",
+      "No free plan and no trial: the free preview only shows what a browser already downloads; the attack starts with a report or a plan.",
+      "Maker and Team are also sold yearly, with two months free. Partial periods are not refunded, except where the law requires it.",
+      "The homepage says retests are unlimited on every plan; the pricing table limits them to 7 days on Report."
+    ],
+    "plans": [
+      {
+        "planKey": "report",
+        "displayName": "Report",
+        "summary": "One app, one full attack run, retests for 7 days and a PDF report. One payment, nothing renews.",
+        "featureHighlights": [
+          "1 app",
+          "1 full attack run",
+          "Retests for 7 days",
+          "PDF report"
+        ],
+        "detailsSourceUrl": "https://keybrum.com/pricing",
+        "pricingUnit": "one_time",
+        "isFree": false,
+        "isComparePlan": false,
+        "nativeAmount": 99,
+        "nativeCurrency": "EUR",
+        "taxInclusion": "excluded",
+        "observedMarket": "France",
+        "observedLocale": "en",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25",
+        "billingPeriod": "one_time"
+      },
+      {
+        "planKey": "maker",
+        "displayName": "Maker",
+        "summary": "Five apps, two members, scheduled attacks, a CI check and Slack or Discord alerts.",
+        "featureHighlights": [
+          "5 apps, 2 members",
+          "200 full attack runs a month",
+          "Unlimited retests",
+          "CI check, trust page and badge"
+        ],
+        "detailsSourceUrl": "https://keybrum.com/pricing",
+        "pricingUnit": "plan",
+        "isFree": false,
+        "isComparePlan": true,
+        "nativeAmount": 59,
+        "nativeCurrency": "EUR",
+        "taxInclusion": "excluded",
+        "observedMarket": "France",
+        "observedLocale": "en",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25",
+        "billingPeriod": "monthly"
+      },
+      {
+        "planKey": "team",
+        "displayName": "Team",
+        "summary": "Twenty-five apps, ten members, your brand on reports and Vercel, Netlify or Supabase app discovery.",
+        "featureHighlights": [
+          "25 apps, 10 members",
+          "1,000 full attack runs a month",
+          "Everything in Maker",
+          "Your brand on reports and trust pages"
+        ],
+        "detailsSourceUrl": "https://keybrum.com/pricing",
+        "pricingUnit": "plan",
+        "isFree": false,
+        "isComparePlan": false,
+        "nativeAmount": 199,
+        "nativeCurrency": "EUR",
+        "taxInclusion": "excluded",
+        "observedMarket": "France",
+        "observedLocale": "en",
+        "observedOn": "2026-11-25",
+        "lastConfirmedOn": "2026-11-25",
+        "billingPeriod": "monthly"
+      }
+    ]
+  },
+  "websiteUrl": "https://keybrum.com/",
+  "affiliateLink": "",
+  "logo": "https://keybrum.com/favicon.ico",
+  "ogImageUrl": "https://keybrum.com/social/keybrum-poster.jpg",
+  "pros": [
+    "Ne remonte que des failles prouvées, avec la requête qui les démontre : pas de liste de suspicions à trier.",
+    "La correction part directement dans ton agent de code, et le serveur MCP lui laisse relancer le contre-test.",
+    "Les garde-fous sont écrits : preuve de propriété, aucune écriture réelle, aucune suppression testée, données masquées."
+  ],
+  "prosEn": [
+    "Only proven flaws are reported, with the request that proves them: no list of suspicions to sort.",
+    "The fix goes straight to your coding agent, and the MCP server lets it call the retest itself.",
+    "The safeguards are written down: proof of ownership, no real writes, no delete tests, redacted data."
+  ],
+  "cons": [
+    "Pas de plan gratuit ni d'essai : l'aperçu gratuit ne lance aucune attaque.",
+    "Les pages consultées ne nomment ni la société éditrice, ni son pays, ni l'hébergeur des données de l'app.",
+    "Ne couvre pas la suppression, la force brute, les connexions par passkey ou SMS, ni un pentest manuel.",
+    "Le site s'affiche en anglais, même par le lien de la version française."
+  ],
+  "consEn": [
+    "No free plan and no trial: the free preview runs no attack.",
+    "The pages reviewed name neither the company, nor its country, nor the host of app data.",
+    "Leaves out delete tests, brute force, passkey or SMS logins, and manual pentesting."
+  ],
+  "useCases": [
+    "Attaquer une app Lovable ou Bolt avant de l'ouvrir à de vrais utilisateurs.",
+    "Vérifier que les règles d'accès Supabase ou Firebase ne laissent pas lire la base.",
+    "Bloquer une pull request qui rouvre une faille déjà corrigée.",
+    "Montrer à un client une page de confiance datée après chaque livraison."
+  ],
+  "useCasesEn": [
+    "Attack a Lovable or Bolt app before opening it to real users.",
+    "Check that Supabase or Firebase access rules do not let anyone read the database.",
+    "Block a pull request that reopens a flaw already fixed.",
+    "Show a client a dated trust page after each delivery."
+  ],
+  "relevantFor": [
+    "Fondateurs qui lancent une app construite avec Lovable, Bolt, Replit ou Cursor",
+    "Agences et freelances qui livrent des apps générées par IA à leurs clients",
+    "Petites équipes sur Supabase ou Firebase sans profil sécurité en interne"
+  ],
+  "relevantForEn": [
+    "Founders shipping an app built with Lovable, Bolt, Replit or Cursor",
+    "Agencies and freelancers delivering AI-built apps to clients",
+    "Small teams on Supabase or Firebase with no security person in-house"
+  ],
+  "verdict": {
+    "keepIf": [
+      "Tu mets en production une app générée par IA, avec des données d'utilisateurs, et personne ne l'a attaquée.",
+      "Tu livres des apps à des clients et veux une preuve datée, refaite à chaque déploiement."
+    ],
+    "avoidIf": [
+      "Ton app n'a ni compte utilisateur ni base de données : l'aperçu gratuit suffit pour voir ce qu'elle expose.",
+      "Un client ou un assureur exige un pentest manuel ou une certification : Keybrum n'en délivre pas."
+    ],
+    "threshold": "Commence par l'aperçu gratuit. S'il montre des clés ou des appels à ta base dans le code envoyé au navigateur, une attaque complète se justifie avant d'ouvrir l'app. Prends un forfait mensuel seulement si tu déploies souvent ou si tu gères plusieurs apps."
+  },
+  "verdictEn": {
+    "keepIf": [
+      "You are shipping an AI-built app with user data, and nobody has attacked it.",
+      "You deliver apps to clients and want dated proof, redone on every deploy."
+    ],
+    "avoidIf": [
+      "Your app has no user accounts and no database: the free preview is enough to see what it exposes.",
+      "A client or insurer requires a manual pentest or a certification: Keybrum issues neither."
+    ],
+    "threshold": "Start with the free preview. If it shows keys or calls to your database in the code sent to the browser, a full attack is worth it before you open the app. Take a monthly plan only if you deploy often or run several apps."
+  },
+  "alternatives": [
+    "maced-ai",
+    "snyk",
+    "owasp-zap",
+    "burp-suite"
+  ],
+  "soloRelevance": "high",
+  "teamRelevance": "high",
+  "tool_type": "satellite",
+  "substitutable": true,
+  "verticals": [
+    "ai-builder",
+    "fondateur-saas",
+    "dev-freelance",
+    "developpeur-solo"
+  ],
+  "functional_needs": [
+    "security",
+    "pentest",
+    "vulnerability-scanning"
+  ],
+  "personas": [
+    "THEO"
+  ],
+  "prescription_quality": "question",
+  "prescription_output": null,
+  "prescription_block_reasons": [],
+  "prescription_context_questions": [
+    "app_has_user_data",
+    "backend_platform",
+    "deploy_frequency",
+    "client_security_requirements"
+  ],
+  "substitution_cluster_v2": "security",
+  "decision_policy_v3": {
+    "auto_cancel_allowed": false,
+    "auto_replace_allowed": false,
+    "auto_downgrade_allowed": false,
+    "requires_context_questions": true,
+    "never_auto_cancel_reason": "L'intérêt dépend des données que l'app manipule, de la fréquence des déploiements et des exigences des clients.",
+    "default_decision_lane": "review_then_prescribe"
+  },
+  "toolTrimRating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "notedOn": "2026-11-25",
+    "lastActivityVerifiedOn": "2026-11-25",
+    "evidence": {
+      "valeurAjoutee": "Failles prouvées, prompt de correction pour l'agent et contre-test qui ne ferme la faille que si l'attaque échoue : une réponse directe au risque des apps générées par IA. Source : keybrum.com, 25 novembre 2026.",
+      "simplicite": "On colle une adresse, on prouve la propriété par balise, DNS ou fichier, et une attaque complète prend environ une minute selon l'éditeur. Source : keybrum.com et keybrum.com/docs, 25 novembre 2026.",
+      "utilisation": "Bibliothèque de 339 attaques publiée, contrôle CI, attaques à chaque déploiement, veille des vulnérabilités, serveur MCP. Source : keybrum.com, 25 novembre 2026.",
+      "puissance": "Pas de test de suppression, de force brute ni de contournement de CAPTCHA, passkey ou SMS, et aucun pentest manuel : la couverture s'arrête à la bibliothèque d'attaques. Source : keybrum.com/security et keybrum.com/docs, 25 novembre 2026.",
+      "reversibilite": "Note neutre : suppression du compte et des données depuis les réglages, rapports PDF ; aucun export structuré des failles n'est décrit. Source : keybrum.com/terms et keybrum.com/pricing, 25 novembre 2026."
+    },
+    "evidenceEn": {
+      "valeurAjoutee": "Proven flaws, a fix prompt for the agent and a retest that only closes a finding when the attack fails: a direct answer to the risk of AI-built apps. Source: keybrum.com, November 25, 2026.",
+      "simplicite": "Paste an address, prove ownership by tag, DNS or file, and a full run takes about a minute according to the publisher. Source: keybrum.com and keybrum.com/docs, November 25, 2026.",
+      "utilisation": "A published library of 339 attacks, CI check, attacks on each deploy, vulnerability watch, MCP server. Source: keybrum.com, November 25, 2026.",
+      "puissance": "No delete tests, brute force, or CAPTCHA, passkey or SMS bypass, and no manual pentest: coverage stops at the attack library. Source: keybrum.com/security and keybrum.com/docs, November 25, 2026.",
+      "reversibilite": "Neutral score: account and data deletion from settings, PDF reports; no structured export of findings is described. Source: keybrum.com/terms and keybrum.com/pricing, November 25, 2026."
+    }
+  },
+  "tagline": {
+    "fr": "Pentest automatisé des apps faites avec l'IA",
+    "en": "Automated pentesting for AI-built apps"
+  },
+  "seo": {
+    "metaDescription": "Keybrum : avis, tarifs et limites du pentest automatisé pour les apps Lovable, Bolt, Cursor ou Claude Code, sur Supabase ou Firebase.",
+    "metaDescriptionEn": "Keybrum review, pricing and limits: automated pentesting for apps built with Lovable, Bolt, Cursor or Claude Code, on Supabase or Firebase.",
+    "presentationTitleFr": "Keybrum : attaquer son app IA avant les autres",
+    "presentationTitleEn": "Keybrum: attack your AI-built app first",
+    "idealForFr": "Fondateurs, freelances et agences qui mettent en production des apps générées par IA avec des données d'utilisateurs.",
+    "idealForEn": "Founders, freelancers and agencies shipping AI-built apps that hold user data.",
+    "presentationMetaDescriptionFr": "Keybrum attaque ton app Lovable, Bolt ou Cursor en ligne, ne garde que les failles prouvées et donne à ton agent le prompt pour les corriger.",
+    "presentationMetaDescriptionEn": "Keybrum attacks your live Lovable, Bolt or Cursor app, keeps only proven flaws and gives your agent the prompt to fix them.",
+    "prixTitleFr": "Prix de Keybrum : Maker dès {price}",
+    "prixTitleEn": "Keybrum pricing: Maker from {price}",
+    "prixMetaDescriptionFr": "Prix de Keybrum : rapport unique, Maker dès {price} par mois hors TVA, Team pour 25 apps. Pas de plan gratuit ni d'essai, un aperçu gratuit.",
+    "prixMetaDescriptionEn": "Keybrum pricing: a one-off report, Maker from {price} a month excl. VAT, Team for 25 apps. No free plan or trial, a free preview.",
+    "altTitleFr": "Alternatives à Keybrum : Maced, Snyk, OWASP ZAP",
+    "altTitleEn": "Keybrum alternatives: Maced, Snyk, OWASP ZAP",
+    "altMetaDescriptionFr": "Besoin d'un pentest manuel ou d'un scanner gratuit ? Maced, Snyk, OWASP ZAP et Burp Suite comparés à Keybrum sur la couverture, la mise en route et le coût.",
+    "altMetaDescriptionEn": "Need a manual pentest or a free scanner? Maced, Snyk, OWASP ZAP and Burp Suite compared with Keybrum on coverage, setup and cost.",
+    "avisTitleFr": "Avis Keybrum : des failles prouvées, pas supposées",
+    "avisTitleEn": "Keybrum review: proven flaws, not guesses",
+    "avisMetaDescriptionFr": "Avis Keybrum, noté {rating} : des failles prouvées et corrigées par ton agent ; ni plan gratuit, ni pentest manuel, éditeur non nommé.",
+    "avisMetaDescriptionEn": "Keybrum review, rated {rating}: proven flaws fixed by your agent; no free plan, no manual pentest, publisher not named."
+  },
+  "lifecycle": {
+    "status": "active",
+    "note": null,
+    "checkedOn": "2026-11-25"
+  },
+  "research": {
+    "researchedOn": "2026-11-25",
+    "sources": 7
+  }
+}

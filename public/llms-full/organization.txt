@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — organization
 # Generated from src/data/tools_index.json
-# Family: organization (64 of 1259 canonical tools)
+# Family: organization (64 of 1265 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.

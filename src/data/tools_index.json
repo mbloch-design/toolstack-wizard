@@ -61398,5 +61398,361 @@
       "infisical",
       "aws-secrets-manager"
     ]
+  },
+  {
+    "id": "keybrum",
+    "slug": "keybrum",
+    "name": "Keybrum",
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "notedOn": "2026-11-25",
+      "lastActivityVerifiedOn": "2026-11-25"
+    },
+    "categoryId": "security",
+    "shortDescription": "Pentest automatisé pour les apps construites avec Lovable, Bolt, Cursor ou Claude Code : Keybrum attaque l'app en ligne, prouve chaque faille et donne le prompt pour la corriger.",
+    "shortDescriptionEn": "Automated pentesting for apps built with Lovable, Bolt, Cursor or Claude Code: Keybrum attacks the live app, proves each flaw and hands you the prompt to fix it.",
+    "pricing": {
+      "free": "Pas de plan gratuit ni d'essai. Aperçu gratuit sans compte, limité à ce que le navigateur télécharge déjà.",
+      "paid": "Report : 99 € HT une fois ; Maker : 59 € HT/mois (590 €/an) ; Team : 199 € HT/mois (1 990 €/an)."
+    },
+    "pricingEn": {
+      "free": "No free plan and no trial. A free preview with no account, limited to what a browser already downloads.",
+      "paid": "Report: €99 excl. VAT, once; Maker: €59 excl. VAT/month (€590/year); Team: €199 excl. VAT/month (€1,990/year)."
+    },
+    "defaultMonthlyPrice": 59,
+    "compareMonthlyPrice": 59,
+    "nativePrices": [
+      {
+        "amount": 59,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://keybrum.com/",
+    "ogImageUrl": "https://keybrum.com/social/keybrum-poster.jpg",
+    "logo": "https://keybrum.com/favicon.ico",
+    "substitution_cluster_v2": "security",
+    "functional_needs": [
+      "security",
+      "pentest",
+      "vulnerability-scanning"
+    ],
+    "verticals": [
+      "ai-builder",
+      "fondateur-saas",
+      "dev-freelance",
+      "developpeur-solo"
+    ],
+    "relevantFor": [
+      "Fondateurs qui lancent une app construite avec Lovable, Bolt, Replit ou Cursor",
+      "Agences et freelances qui livrent des apps générées par IA à leurs clients",
+      "Petites équipes sur Supabase ou Firebase sans profil sécurité en interne"
+    ],
+    "prescription_quality": "question",
+    "personas": [
+      "THEO"
+    ],
+    "alternatives": [
+      "maced-ai",
+      "snyk",
+      "owasp-zap",
+      "burp-suite"
+    ]
+  },
+  {
+    "id": "ln2crm",
+    "slug": "ln2crm",
+    "name": "Ln2CRM",
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 4,
+      "notedOn": "2026-11-25",
+      "lastActivityVerifiedOn": "2026-11-25"
+    },
+    "categoryId": "crm",
+    "shortDescription": "Extension Chrome qui relie un profil LinkedIn à ton CRM (Pipedrive, HubSpot, Salesforce, Zoho, Capsule) : vérifier, créer ou mettre à jour le contact sans changer d'onglet.",
+    "shortDescriptionEn": "Chrome extension that links a LinkedIn profile to your CRM (Pipedrive, HubSpot, Salesforce, Zoho, Capsule): check, create or update the contact without switching tabs.",
+    "pricing": {
+      "free": "Plan gratuit durable (Test free), sans carte : 15 créations, 15 mises à jour, 5 brouillons Copilot et 5 e-mails trouvés par mois. Un CRM reste nécessaire.",
+      "paid": "Base : 16 $/mois par utilisateur (13 $ en annuel) ; Pro : 23 $/mois par utilisateur (18 $ en annuel) ; Enterprise sur devis."
+    },
+    "pricingEn": {
+      "free": "A durable free plan (Test free), no card: 15 creates, 15 updates, 5 Copilot drafts and 5 email finds a month. You still need a CRM.",
+      "paid": "Base: $16/month per user ($13 yearly); Pro: $23/month per user ($18 yearly); Enterprise by quote."
+    },
+    "defaultMonthlyPrice": 13.74,
+    "compareMonthlyPrice": 13.74,
+    "nativePrices": [
+      {
+        "amount": 16,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://ln2crm.com/",
+    "ogImageUrl": "https://ln2crm.com/assets/img/og-image-v2.png",
+    "logo": "https://ln2crm.com/assets/img/favicon-32.png",
+    "substitution_cluster_v2": "crm-prospection",
+    "functional_needs": [
+      "crm-enrichment",
+      "linkedin-crm-sync",
+      "email-finder",
+      "prospecting-followup"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas",
+      "sales-ops"
+    ],
+    "relevantFor": [
+      "Consultants et fondateurs qui prospectent sur LinkedIn avec un CRM",
+      "Petites équipes commerciales sur Pipedrive, HubSpot, Salesforce, Zoho ou Capsule",
+      "Commerciaux qui veulent un CRM à jour sans payer Sales Navigator"
+    ],
+    "prescription_quality": "question",
+    "alternatives": [
+      "apollo-io",
+      "lusha",
+      "waalaxy"
+    ]
+  },
+  {
+    "id": "commenty",
+    "slug": "commenty",
+    "name": "Commenty",
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "notedOn": "2026-11-25",
+      "lastActivityVerifiedOn": "2026-11-25"
+    },
+    "categoryId": "creation",
+    "shortDescription": "Extension Chrome qui t'aide à écrire tes commentaires LinkedIn dans ta propre voix : tu commences, elle continue, tu relis et tu publies toi-même.",
+    "shortDescriptionEn": "Chrome extension that helps you write LinkedIn comments in your own voice: you start, it continues, you review and post it yourself.",
+    "pricing": {
+      "free": "Essai gratuit de 14 jours sans carte, jusqu'à 20 commentaires par jour. Pas de plan gratuit garanti ensuite (CGU et FAQ divergent).",
+      "paid": "Starter : 15 $/mois ou 100 $/an ; Professional : 29 $/mois ou 200 $/an. Taxes incluses."
+    },
+    "pricingEn": {
+      "free": "A 14-day free trial with no card, up to 20 comments a day. No guaranteed free plan afterwards (terms and FAQ disagree).",
+      "paid": "Starter: $15/month or $100/year; Professional: $29/month or $200/year. Taxes included."
+    },
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://commenty.ai/",
+    "ogImageUrl": "https://commenty.ai/og-banner.png",
+    "logo": "https://commenty.ai/favicon.ico",
+    "tool_type": "specialise",
+    "substitution_cluster_v2": "linkedin-content-tools",
+    "functional_needs": [
+      "redaction",
+      "linkedin-engagement",
+      "creator-workflow"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas",
+      "createur-contenu"
+    ],
+    "relevantFor": [
+      "Consultants et freelances dont la visibilité passe par LinkedIn",
+      "Fondateurs qui veulent rester présents sans publier de commentaires génériques",
+      "Rédacteurs et experts qui tiennent à écrire avec leurs propres mots"
+    ],
+    "prescription_quality": "question",
+    "alternatives": [
+      "taplio",
+      "authoredup",
+      "typefully"
+    ]
+  },
+  {
+    "id": "billxpert",
+    "slug": "billxpert",
+    "name": "BillXpert",
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 4,
+      "notedOn": "2026-11-25",
+      "lastActivityVerifiedOn": "2026-11-25"
+    },
+    "categoryId": "finance",
+    "shortDescription": "Logiciel de comptabilité local et gratuit pour artisans, indépendants et TPE : devis, factures, règlements, écritures et TVA dans une application Windows, encore en bêta.",
+    "shortDescriptionEn": "Free, local accounting software for tradespeople, freelancers and very small businesses: quotes, invoices, payments, entries and VAT in a Windows app, still in beta.",
+    "pricing": {
+      "free": "Cœur comptable gratuit, sans compte obligatoire. Aucune offre payante pendant la bêta.",
+      "paid": "Aucune offre payante à ce jour. Des plugins payants sont annoncés, sans prix publié."
+    },
+    "pricingEn": {
+      "free": "Free accounting core, no account required. No paid offer during the beta.",
+      "paid": "No paid offer yet. Paid plugins are announced, with no published price."
+    },
+    "compareMonthlyPrice": 0,
+    "websiteUrl": "https://billxpert.fr/",
+    "ogImageUrl": "https://billxpert.fr/assets/img/product/overview.png",
+    "logo": "https://billxpert.fr/assets/img/logo-bx.png",
+    "tool_type": "gestion",
+    "substitution_cluster_v2": "accounting-ops",
+    "functional_needs": [
+      "comptabilite",
+      "facturation",
+      "devis-facturation-btp"
+    ],
+    "verticals": [
+      "business-ops",
+      "finance-ops",
+      "consultant-b2b"
+    ],
+    "relevantFor": [
+      "Artisans, indépendants et TPE qui tiennent eux-mêmes leur comptabilité",
+      "Petites entreprises qui préfèrent garder leurs données en local",
+      "Enseignants et organismes de formation en comptabilité"
+    ],
+    "prescription_quality": "question",
+    "alternatives": [
+      "indy",
+      "tiime",
+      "vulko"
+    ]
+  },
+  {
+    "id": "bracketview",
+    "slug": "bracketview",
+    "name": "BracketView",
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 5,
+      "notedOn": "2026-11-25",
+      "lastActivityVerifiedOn": "2026-11-25"
+    },
+    "categoryId": "nocode-web",
+    "shortDescription": "Espace de travail JSON dans le navigateur ou sur Windows et Linux : formater, valider, interroger (JSONPath, jq) et comparer des données d'API, en texte, arbre, graphe, nœuds ou tableau.",
+    "shortDescriptionEn": "JSON workspace in the browser or on Windows and Linux: format, validate, query (JSONPath, jq) and diff API data, as text, tree, graph, nodes or a table.",
+    "pricing": {
+      "free": "Plan gratuit durable : tous les outils de base, imports web jusqu'à 5 Mo, 20 actions IA par mois, 5 liens partagés par mois.",
+      "paid": "Pro : 3 $/mois ou 27 $/an."
+    },
+    "pricingEn": {
+      "free": "Durable free plan: every core tool, web uploads up to 5 MB, 20 AI actions a month, 5 shared links a month.",
+      "paid": "Pro: $3/month or $27/year."
+    },
+    "defaultMonthlyPrice": 2.58,
+    "compareMonthlyPrice": 2.58,
+    "nativePrices": [
+      {
+        "amount": 3,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://bracketview.in/",
+    "ogImageUrl": "https://bracketview.in/og-image.webp",
+    "logo": "https://bracketview.in/favicon.ico",
+    "substitution_cluster_v2": "api-client",
+    "functional_needs": [
+      "json-tools",
+      "api-debugging",
+      "webhook-testing"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo",
+      "ai-builder",
+      "data-analyst"
+    ],
+    "relevantFor": [
+      "Développeurs freelances qui intègrent des API",
+      "Créateurs no-code qui manipulent des réponses JSON d'automatisations",
+      "Analystes qui reçoivent des exports en JSON"
+    ],
+    "prescription_quality": "question",
+    "alternatives": [
+      "postman",
+      "insomnia"
+    ]
+  },
+  {
+    "id": "makelead",
+    "slug": "makelead",
+    "name": "Makelead",
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-11-25",
+      "lastActivityVerifiedOn": "2026-11-25"
+    },
+    "categoryId": "automation",
+    "shortDescription": "Outil de prospection automatisée sur LinkedIn et X, avec agents IA, relances, setter IA et rédaction de posts dans ta voix, pour indépendants et petites équipes commerciales.",
+    "shortDescriptionEn": "Automated prospecting on LinkedIn and X, with AI agents, follow-ups, an AI setter and posts written in your voice, for freelancers and small sales teams.",
+    "pricing": {
+      "free": "Pas de plan gratuit ni d'essai annoncé ; carte demandée pour commencer.",
+      "paid": "Starter : 49 €/mois ; Growth : 99 €/mois ; Business : 169 €/mois. Sans TVA (franchise). −15 % en trimestriel, −30 % en annuel. Offre équipe par commercial."
+    },
+    "pricingEn": {
+      "free": "No free plan or trial announced; a card is required to start.",
+      "paid": "Starter: €49/month; Growth: €99/month; Business: €169/month. No VAT (exemption). −15% quarterly, −30% yearly. Team offer per sales rep."
+    },
+    "defaultMonthlyPrice": 49,
+    "compareMonthlyPrice": 49,
+    "nativePrices": [
+      {
+        "amount": 49,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://makelead.io/",
+    "ogImageUrl": "https://makelead.io/og-lp-fr-v4.png",
+    "logo": "https://makelead.io/favicon.ico",
+    "substitution_cluster_v2": "linkedin-automation",
+    "functional_needs": [
+      "automatisation",
+      "prospection",
+      "lead-generation",
+      "content-generation"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas",
+      "business-ops"
+    ],
+    "relevantFor": [
+      "Indépendants et consultants qui cherchent des clients B2B sur LinkedIn",
+      "Fondateurs qui vendent eux-mêmes et manquent de temps pour prospecter",
+      "Petites équipes commerciales qui veulent un agent par commercial"
+    ],
+    "prescription_quality": "question",
+    "alternatives": [
+      "waalaxy",
+      "la-growth-machine",
+      "lemlist",
+      "taplio"
+    ]
   }
 ]

@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — nocode-web
 # Generated from src/data/tools_index.json
-# Family: nocode-web (136 of 1259 canonical tools)
+# Family: nocode-web (137 of 1265 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.
@@ -5804,6 +5804,53 @@
       "weaknesses": [
         "Convex-specific data model, no SQL",
         "Pro billed per developer"
+      ]
+    }
+  },
+  {
+    "name": "BracketView",
+    "slug": "bracketview",
+    "url_fr": "https://tooltrim.com/fr/tool/bracketview",
+    "url_en": "https://tooltrim.com/en/tool/bracketview",
+    "website": "https://bracketview.in/",
+    "category": "nocode-web",
+    "pricing": {
+      "free": "Plan gratuit durable : tous les outils de base, imports web jusqu'à 5 Mo, 20 actions IA par mois, 5 liens partagés par mois.",
+      "paid": "Pro : 3 $/mois ou 27 $/an."
+    },
+    "description_fr": "Espace de travail JSON dans le navigateur ou sur Windows et Linux : formater, valider, interroger (JSONPath, jq) et comparer des données d'API, en texte, arbre, graphe, nœuds ou tableau.",
+    "description_en": "JSON workspace in the browser or on Windows and Linux: format, validate, query (JSONPath, jq) and diff API data, as text, tree, graph, nodes or a table.",
+    "price_verified_on": "2026-11-25",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu ouvres du JSON chaque semaine et tu jongles entre plusieurs sites de formatage",
+      "avoid_if": "Tu travailles déjà dans un client d'API comme Postman ou Insomnia, qui couvre ton besoin",
+      "strengths": [
+        "Les outils de base tournent dans le navigateur : ton JSON ne quitte pas ta machine pour être formaté ou interrogé",
+        "Cinq vues et jq complet au même endroit, gratuitement, sans compte",
+        "Une application hors ligne pour Windows et Linux ouvre de gros fichiers locaux"
+      ],
+      "weaknesses": [
+        "Les liens de partage et les adresses de webhook sont publics pour qui les connaît : rien de sensible dedans",
+        "Projet porté par un fondateur seul, sans société nommée",
+        "Application de bureau non signée et pas de version Mac"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You open JSON every week and juggle several formatting sites",
+      "avoid_if": "You already work in an API client like Postman or Insomnia that covers your needs",
+      "strengths": [
+        "Core tools run in the browser: your JSON stays on your machine to be formatted or queried",
+        "Five views and full jq in one place, for free, with no account",
+        "An offline Windows and Linux app opens large local files"
+      ],
+      "weaknesses": [
+        "Share links and webhook URLs are public to anyone who has them: nothing sensitive in them",
+        "A solo-founder project, with no company named",
+        "Unsigned desktop app and no Mac version"
       ]
     }
   }
