@@ -82,3 +82,6 @@ skills-lock.json
 # Card thumbnails, built locally then sent to Cloudflare R2 (scripts/card-thumbs.ts)
 .cache/card-thumbs/
 .cache/logo-thumbs/
+
+# Collecte brute des fiches soumises : copie du texte des sites, jamais versionnée.
+research/submissions/*/intake.json
