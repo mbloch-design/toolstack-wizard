@@ -1,6 +1,6 @@
 # ToolTrim tool catalogue — formation-education
 # Generated from src/data/tools_index.json
-# Family: formation-education (11 of 1251 canonical tools)
+# Family: formation-education (11 of 1259 canonical tools)
 # Complete catalogue: https://tooltrim.com/llms-full.txt
 # Record schema and citation rules: https://tooltrim.com/llms.txt
 # Prices can change; verify current vendor pricing before citation. Missing means unknown, not free.

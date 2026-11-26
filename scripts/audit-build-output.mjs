@@ -52,7 +52,7 @@ const budgets = {
   // on file count and total bytes, which would have stopped the Vercel build.
   // 2026-11-25: eight sourced fiches for the high-demand /alternatives pages
   // (GameMaker, Defold, Cocos Creator, Appwrite, PocketBase, Convex, AWS
-  // Secrets Manager, Akeyless), about 80 files on top of main's 15,480.
+  // Secrets Manager, Akeyless) on top of main: measured 15,552 files.
   // Byte limits unchanged.
   files: 15_560,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.

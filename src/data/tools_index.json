@@ -18247,7 +18247,12 @@
       "Organisations asynchrone-first",
       "Équipes distribuées avec intégrations tiers lourdes"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "slack",
+      "microsoft-teams",
+      "discord"
+    ]
   },
   {
     "id": "gcp",
@@ -19626,7 +19631,9 @@
     ],
     "alternatives": [
       "doppler",
-      "infisical"
+      "infisical",
+      "aws-secrets-manager",
+      "akeyless"
     ]
   },
   {
@@ -28406,7 +28413,12 @@
       "Organisations conformité-lourde",
       "Teams IT d'entreprise"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "alternatives": [
+      "slack",
+      "google-chat",
+      "discord"
+    ]
   },
   {
     "id": "midjourney",
@@ -44397,7 +44409,11 @@
     "alternatives": [
       "firebase",
       "neon",
-      "mongodb-atlas"
+      "appwrite",
+      "convex",
+      "pocketbase",
+      "mongodb-atlas",
+      "planetscale"
     ]
   },
   {
@@ -48267,8 +48283,11 @@
       "THEO"
     ],
     "alternatives": [
+      "godot",
       "unreal-engine",
-      "godot"
+      "gamemaker",
+      "defold",
+      "cocos-creator"
     ]
   },
   {
@@ -48309,6 +48328,8 @@
       "designer"
     ],
     "alternatives": [
+      "unity",
+      "godot",
       "twinmotion",
       "blender"
     ]
@@ -61034,6 +61055,348 @@
     "alternatives": [
       "notion-ai",
       "notebook-lm"
+    ]
+  },
+  {
+    "id": "gamemaker",
+    "slug": "gamemaker",
+    "name": "GameMaker",
+    "categoryId": "creation",
+    "shortDescription": "Moteur de jeu 2D d’Opera, gratuit en non commercial, licence commerciale en achat unique.",
+    "shortDescriptionEn": "Opera’s 2D game engine, free for non-commercial use, commercial licence as a one-time purchase.",
+    "pricing": {
+      "free": "Gratuit pour un usage non commercial",
+      "paid": "Professional : 99,99 $ en achat unique ; Enterprise sur abonnement (console)"
+    },
+    "pricingEn": {
+      "free": "Free for non-commercial use",
+      "paid": "Professional: $99.99 one-time; Enterprise subscription (console)"
+    },
+    "hasConfirmedFreePlan": true,
+    "nativePrices": [
+      {
+        "amount": 99.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://gamemaker.io/",
+    "substitution_cluster_v2": "real-time-3d",
+    "functional_needs": [
+      "creation",
+      "3d",
+      "animation"
+    ],
+    "verticals": [
+      "creative"
+    ],
+    "relevantFor": [
+      "Développeurs indépendants",
+      "Studios de petite taille"
+    ],
+    "prescription_quality": "contextual",
+    "personas": [
+      "THEO"
+    ],
+    "alternatives": [
+      "unity",
+      "godot",
+      "defold"
+    ]
+  },
+  {
+    "id": "defold",
+    "slug": "defold",
+    "name": "Defold",
+    "categoryId": "creation",
+    "shortDescription": "Moteur de jeu 2D gratuit, sans redevance, porté par une fondation.",
+    "shortDescriptionEn": "Free, royalty-free 2D game engine run by a foundation.",
+    "pricing": {
+      "free": "Gratuit, sans redevance ni frais d’exécution",
+      "paid": "Contrats de support payants, prix non publié"
+    },
+    "pricingEn": {
+      "free": "Free, no royalties or runtime fees",
+      "paid": "Paid support contracts, price not published"
+    },
+    "websiteUrl": "https://defold.com/",
+    "substitution_cluster_v2": "real-time-3d",
+    "functional_needs": [
+      "creation",
+      "3d",
+      "animation"
+    ],
+    "verticals": [
+      "creative"
+    ],
+    "relevantFor": [
+      "Développeurs indépendants",
+      "Studios de petite taille"
+    ],
+    "prescription_quality": "contextual",
+    "personas": [
+      "THEO"
+    ],
+    "alternatives": [
+      "godot",
+      "unity",
+      "gamemaker"
+    ]
+  },
+  {
+    "id": "cocos-creator",
+    "slug": "cocos-creator",
+    "name": "Cocos Creator",
+    "categoryId": "creation",
+    "shortDescription": "Moteur de jeu 2D et 3D gratuit pour le jeu, fort sur le web, le mobile et les mini-jeux.",
+    "shortDescriptionEn": "2D and 3D game engine, free for games, strong on web, mobile and mini-games.",
+    "pricing": {
+      "free": "Gratuit pour développer des jeux",
+      "paid": "Usage hors jeu sur autorisation, frais possibles"
+    },
+    "pricingEn": {
+      "free": "Free for game development",
+      "paid": "Non-game use by authorisation, fees possible"
+    },
+    "websiteUrl": "https://www.cocos.com/en/creator",
+    "substitution_cluster_v2": "real-time-3d",
+    "functional_needs": [
+      "creation",
+      "3d",
+      "animation"
+    ],
+    "verticals": [
+      "creative"
+    ],
+    "relevantFor": [
+      "Développeurs indépendants",
+      "Studios de petite taille"
+    ],
+    "prescription_quality": "contextual",
+    "personas": [
+      "THEO"
+    ],
+    "alternatives": [
+      "unity",
+      "godot",
+      "defold"
+    ]
+  },
+  {
+    "id": "appwrite",
+    "slug": "appwrite",
+    "name": "Appwrite",
+    "categoryId": "nocode-web",
+    "shortDescription": "Backend open source : base, auth, stockage, fonctions, en cloud ou auto-hébergé.",
+    "shortDescriptionEn": "Open-source backend: database, auth, storage, functions, in the cloud or self-hosted.",
+    "pricing": {
+      "free": "Free : une organisation, deux projets, gel au dépassement",
+      "paid": "Pro par organisation, dépassements à l’usage ; base dédiée dès 10 $/mois"
+    },
+    "pricingEn": {
+      "free": "Free: one organisation, two projects, frozen over the limit",
+      "paid": "Pro per organisation, usage-based overages; dedicated database from $10/mo"
+    },
+    "websiteUrl": "https://appwrite.io/",
+    "tool_type": "metier",
+    "substitution_cluster_v2": "backend-database-platform",
+    "functional_needs": [
+      "app-builder",
+      "nocode-web",
+      "devops"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
+    "relevantFor": [
+      "Développeurs freelance",
+      "Développeurs solo"
+    ],
+    "prescription_quality": "contextual",
+    "personas": [
+      "THEO"
+    ],
+    "alternatives": [
+      "supabase",
+      "firebase",
+      "pocketbase",
+      "convex"
+    ]
+  },
+  {
+    "id": "pocketbase",
+    "slug": "pocketbase",
+    "name": "PocketBase",
+    "categoryId": "nocode-web",
+    "shortDescription": "Backend open source en un seul fichier : SQLite, auth, temps réel, auto-hébergé.",
+    "shortDescriptionEn": "Open-source backend in a single file: SQLite, auth, realtime, self-hosted.",
+    "pricing": {
+      "free": "Gratuit, auto-hébergé",
+      "paid": "Aucune offre payante ; coût de ton serveur uniquement"
+    },
+    "pricingEn": {
+      "free": "Free, self-hosted",
+      "paid": "No paid offer; only your server costs"
+    },
+    "websiteUrl": "https://pocketbase.io/",
+    "tool_type": "metier",
+    "substitution_cluster_v2": "backend-database-platform",
+    "functional_needs": [
+      "app-builder",
+      "nocode-web",
+      "devops"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
+    "relevantFor": [
+      "Développeurs freelance",
+      "Développeurs solo"
+    ],
+    "prescription_quality": "contextual",
+    "personas": [
+      "THEO"
+    ],
+    "alternatives": [
+      "supabase",
+      "appwrite",
+      "firebase"
+    ]
+  },
+  {
+    "id": "convex",
+    "slug": "convex",
+    "name": "Convex",
+    "categoryId": "nocode-web",
+    "shortDescription": "Base de données réactive et fonctions serveur en TypeScript, avec palier gratuit.",
+    "shortDescriptionEn": "Reactive database and server functions in TypeScript, with a free tier.",
+    "pricing": {
+      "free": "Free & Starter : 0 $/mois, 1 M appels et 0,5 Go inclus, puis à l’usage",
+      "paid": "Professional : 25 $ par développeur et par mois ; Business dès 2 500 $/mois"
+    },
+    "pricingEn": {
+      "free": "Free & Starter: $0/month, 1M calls and 0.5 GB included, then usage-based",
+      "paid": "Professional: $25 per developer per month; Business from $2,500/month"
+    },
+    "compareMonthlyPrice": 21.47,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://www.convex.dev/",
+    "tool_type": "metier",
+    "substitution_cluster_v2": "backend-database-platform",
+    "functional_needs": [
+      "app-builder",
+      "nocode-web",
+      "devops"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
+    "relevantFor": [
+      "Développeurs freelance",
+      "Développeurs solo"
+    ],
+    "prescription_quality": "contextual",
+    "personas": [
+      "THEO"
+    ],
+    "alternatives": [
+      "supabase",
+      "firebase",
+      "appwrite"
+    ]
+  },
+  {
+    "id": "aws-secrets-manager",
+    "slug": "aws-secrets-manager",
+    "name": "AWS Secrets Manager",
+    "categoryId": "security",
+    "shortDescription": "Service AWS pour stocker et faire tourner les secrets, facturé au secret et à l’appel.",
+    "shortDescriptionEn": "AWS service to store and rotate secrets, billed per secret and per call.",
+    "pricing": {
+      "free": "Pas de plan gratuit dédié ; crédits AWS Free Tier pour les nouveaux comptes",
+      "paid": "0,40 $ par secret et par mois + 0,05 $ par 10 000 appels"
+    },
+    "pricingEn": {
+      "free": "No dedicated free plan; AWS Free Tier credits for new accounts",
+      "paid": "$0.40 per secret per month + $0.05 per 10,000 calls"
+    },
+    "hasConfirmedFreePlan": false,
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
+    "websiteUrl": "https://aws.amazon.com/secrets-manager/",
+    "tool_type": "core",
+    "substitution_cluster_v2": "secrets-management",
+    "functional_needs": [
+      "security",
+      "devops"
+    ],
+    "verticals": [
+      "cto-lead-tech",
+      "dev-freelance"
+    ],
+    "relevantFor": [
+      "Équipes plateforme",
+      "CTO / lead tech"
+    ],
+    "prescription_quality": "contextual",
+    "personas": [
+      "THEO"
+    ],
+    "alternatives": [
+      "vault",
+      "doppler",
+      "infisical",
+      "akeyless"
+    ]
+  },
+  {
+    "id": "akeyless",
+    "slug": "akeyless",
+    "name": "Akeyless",
+    "categoryId": "security",
+    "shortDescription": "Gestion de secrets en SaaS : secrets dynamiques, rotation, PKI, plan gratuit limité.",
+    "shortDescriptionEn": "SaaS secrets management: dynamic secrets, rotation, PKI, limited free plan.",
+    "pricing": {
+      "free": "Free : 5 clients, 5 secrets dynamiques, 5 à rotation, audit 3 jours",
+      "paid": "Enterprise sur devis"
+    },
+    "pricingEn": {
+      "free": "Free: 5 clients, 5 dynamic secrets, 5 rotated, 3-day audit",
+      "paid": "Enterprise on quote"
+    },
+    "websiteUrl": "https://www.akeyless.io/",
+    "tool_type": "core",
+    "substitution_cluster_v2": "secrets-management",
+    "functional_needs": [
+      "security",
+      "devops"
+    ],
+    "verticals": [
+      "cto-lead-tech",
+      "dev-freelance"
+    ],
+    "relevantFor": [
+      "Équipes plateforme",
+      "CTO / lead tech"
+    ],
+    "prescription_quality": "contextual",
+    "personas": [
+      "THEO"
+    ],
+    "alternatives": [
+      "vault",
+      "doppler",
+      "infisical",
+      "aws-secrets-manager"
     ]
   }
 ]
